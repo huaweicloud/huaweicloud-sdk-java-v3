@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowRequestPropertyRequest  {
-
-
+/** Request Object */
+public class ShowRequestPropertyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_id")
-    
+    @JsonProperty(value = "service_id")
+
     private String serviceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="command_id")
-    
+    @JsonProperty(value = "command_id")
+
     private Integer commandId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="property_id")
-    
+    @JsonProperty(value = "property_id")
+
     private Integer propertyId;
 
     public ShowRequestPropertyRequest withInstanceId(String instanceId) {
@@ -46,13 +33,9 @@ public class ShowRequestPropertyRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -61,20 +44,14 @@ public class ShowRequestPropertyRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ShowRequestPropertyRequest withServiceId(String serviceId) {
         this.serviceId = serviceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务ID
-     * @return serviceId
-     */
+    /** 服务ID
+     * 
+     * @return serviceId */
     public String getServiceId() {
         return serviceId;
     }
@@ -83,22 +60,14 @@ public class ShowRequestPropertyRequest  {
         this.serviceId = serviceId;
     }
 
-    
-
     public ShowRequestPropertyRequest withCommandId(Integer commandId) {
         this.commandId = commandId;
         return this;
     }
 
-    
-
-
-    /**
-     * 命令ID
-     * minimum: 0
-     * maximum: 200376420520689663
-     * @return commandId
-     */
+    /** 命令ID minimum: 0 maximum: 200376420520689663
+     * 
+     * @return commandId */
     public Integer getCommandId() {
         return commandId;
     }
@@ -107,22 +76,14 @@ public class ShowRequestPropertyRequest  {
         this.commandId = commandId;
     }
 
-    
-
     public ShowRequestPropertyRequest withPropertyId(Integer propertyId) {
         this.propertyId = propertyId;
         return this;
     }
 
-    
-
-
-    /**
-     * 属性/请求属性/响应属性ID
-     * minimum: 0
-     * maximum: 200376420520689663
-     * @return propertyId
-     */
+    /** 属性/请求属性/响应属性ID minimum: 0 maximum: 200376420520689663
+     * 
+     * @return propertyId */
     public Integer getPropertyId() {
         return propertyId;
     }
@@ -130,8 +91,6 @@ public class ShowRequestPropertyRequest  {
     public void setPropertyId(Integer propertyId) {
         this.propertyId = propertyId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -142,15 +101,17 @@ public class ShowRequestPropertyRequest  {
             return false;
         }
         ShowRequestPropertyRequest showRequestPropertyRequest = (ShowRequestPropertyRequest) o;
-        return Objects.equals(this.instanceId, showRequestPropertyRequest.instanceId) &&
-            Objects.equals(this.serviceId, showRequestPropertyRequest.serviceId) &&
-            Objects.equals(this.commandId, showRequestPropertyRequest.commandId) &&
-            Objects.equals(this.propertyId, showRequestPropertyRequest.propertyId);
+        return Objects.equals(this.instanceId, showRequestPropertyRequest.instanceId)
+            && Objects.equals(this.serviceId, showRequestPropertyRequest.serviceId)
+            && Objects.equals(this.commandId, showRequestPropertyRequest.commandId)
+            && Objects.equals(this.propertyId, showRequestPropertyRequest.propertyId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, serviceId, commandId, propertyId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -162,16 +123,13 @@ public class ShowRequestPropertyRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

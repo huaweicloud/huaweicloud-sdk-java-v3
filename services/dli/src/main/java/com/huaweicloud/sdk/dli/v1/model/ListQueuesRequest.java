@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.dli.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListQueuesRequest  {
-
-
+/** Request Object */
+public class ListQueuesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="with-priv")
-    
+    @JsonProperty(value = "with-priv")
+
     private Boolean withPriv;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="with-charge-info")
-    
+    @JsonProperty(value = "with-charge-info")
+
     private Boolean withChargeInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="queue_type")
-    
+    @JsonProperty(value = "queue_type")
+
     private String queueType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private String tags;
 
     public ListQueuesRequest withWithPriv(Boolean withPriv) {
@@ -46,13 +33,9 @@ public class ListQueuesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 是否返回权限信息。
-     * @return withPriv
-     */
+    /** 是否返回权限信息。
+     * 
+     * @return withPriv */
     public Boolean getWithPriv() {
         return withPriv;
     }
@@ -61,20 +44,14 @@ public class ListQueuesRequest  {
         this.withPriv = withPriv;
     }
 
-    
-
     public ListQueuesRequest withWithChargeInfo(Boolean withChargeInfo) {
         this.withChargeInfo = withChargeInfo;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否返回收费信息
-     * @return withChargeInfo
-     */
+    /** 是否返回收费信息
+     * 
+     * @return withChargeInfo */
     public Boolean getWithChargeInfo() {
         return withChargeInfo;
     }
@@ -83,20 +60,14 @@ public class ListQueuesRequest  {
         this.withChargeInfo = withChargeInfo;
     }
 
-    
-
     public ListQueuesRequest withQueueType(String queueType) {
         this.queueType = queueType;
         return this;
     }
 
-    
-
-
-    /**
-     * 队列的类型,。有如下三种类型： sql general all 如果不指定，默认为sql。
-     * @return queueType
-     */
+    /** 队列的类型,。有如下三种类型： sql general all 如果不指定，默认为sql。
+     * 
+     * @return queueType */
     public String getQueueType() {
         return queueType;
     }
@@ -105,20 +76,14 @@ public class ListQueuesRequest  {
         this.queueType = queueType;
     }
 
-    
-
     public ListQueuesRequest withTags(String tags) {
         this.tags = tags;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询根据标签进行过滤
-     * @return tags
-     */
+    /** 查询根据标签进行过滤
+     * 
+     * @return tags */
     public String getTags() {
         return tags;
     }
@@ -126,8 +91,6 @@ public class ListQueuesRequest  {
     public void setTags(String tags) {
         this.tags = tags;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class ListQueuesRequest  {
             return false;
         }
         ListQueuesRequest listQueuesRequest = (ListQueuesRequest) o;
-        return Objects.equals(this.withPriv, listQueuesRequest.withPriv) &&
-            Objects.equals(this.withChargeInfo, listQueuesRequest.withChargeInfo) &&
-            Objects.equals(this.queueType, listQueuesRequest.queueType) &&
-            Objects.equals(this.tags, listQueuesRequest.tags);
+        return Objects.equals(this.withPriv, listQueuesRequest.withPriv)
+            && Objects.equals(this.withChargeInfo, listQueuesRequest.withChargeInfo)
+            && Objects.equals(this.queueType, listQueuesRequest.queueType)
+            && Objects.equals(this.tags, listQueuesRequest.tags);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(withPriv, withChargeInfo, queueType, tags);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class ListQueuesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

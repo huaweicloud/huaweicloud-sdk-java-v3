@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowBigkeyScanTaskDetailsRequest  {
-
-
+/** Request Object */
+public class ShowBigkeyScanTaskDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bigkey_id")
-    
+    @JsonProperty(value = "bigkey_id")
+
     private String bigkeyId;
 
     public ShowBigkeyScanTaskDetailsRequest withInstanceId(String instanceId) {
@@ -34,13 +23,9 @@ public class ShowBigkeyScanTaskDetailsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -49,20 +34,14 @@ public class ShowBigkeyScanTaskDetailsRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ShowBigkeyScanTaskDetailsRequest withBigkeyId(String bigkeyId) {
         this.bigkeyId = bigkeyId;
         return this;
     }
 
-    
-
-
-    /**
-     * 大key分析任务ID。
-     * @return bigkeyId
-     */
+    /** 大key分析任务ID。
+     * 
+     * @return bigkeyId */
     public String getBigkeyId() {
         return bigkeyId;
     }
@@ -70,8 +49,6 @@ public class ShowBigkeyScanTaskDetailsRequest  {
     public void setBigkeyId(String bigkeyId) {
         this.bigkeyId = bigkeyId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class ShowBigkeyScanTaskDetailsRequest  {
             return false;
         }
         ShowBigkeyScanTaskDetailsRequest showBigkeyScanTaskDetailsRequest = (ShowBigkeyScanTaskDetailsRequest) o;
-        return Objects.equals(this.instanceId, showBigkeyScanTaskDetailsRequest.instanceId) &&
-            Objects.equals(this.bigkeyId, showBigkeyScanTaskDetailsRequest.bigkeyId);
+        return Objects.equals(this.instanceId, showBigkeyScanTaskDetailsRequest.instanceId)
+            && Objects.equals(this.bigkeyId, showBigkeyScanTaskDetailsRequest.bigkeyId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, bigkeyId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class ShowBigkeyScanTaskDetailsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

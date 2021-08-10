@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowMessagesRequest  {
-
-
+/** Request Object */
+public class ShowMessagesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic")
-    
+    @JsonProperty(value = "topic")
+
     private String topic;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="partition")
-    
+    @JsonProperty(value = "partition")
+
     private String partition;
 
     public ShowMessagesRequest withInstanceId(String instanceId) {
@@ -64,13 +48,9 @@ public class ShowMessagesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -79,20 +59,14 @@ public class ShowMessagesRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ShowMessagesRequest withTopic(String topic) {
         this.topic = topic;
         return this;
     }
 
-    
-
-
-    /**
-     * Topic名称。
-     * @return topic
-     */
+    /** Topic名称。
+     * 
+     * @return topic */
     public String getTopic() {
         return topic;
     }
@@ -101,20 +75,14 @@ public class ShowMessagesRequest  {
         this.topic = topic;
     }
 
-    
-
     public ShowMessagesRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询起始时间，为unix时间戳格式，默认值为0。
-     * @return startTime
-     */
+    /** 查询起始时间，为unix时间戳格式，默认值为0。
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -123,20 +91,14 @@ public class ShowMessagesRequest  {
         this.startTime = startTime;
     }
 
-    
-
     public ShowMessagesRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询结束时间，为unix时间戳格式，默认值为系统当前时间。
-     * @return endTime
-     */
+    /** 查询结束时间，为unix时间戳格式，默认值为系统当前时间。
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -145,20 +107,14 @@ public class ShowMessagesRequest  {
         this.endTime = endTime;
     }
 
-    
-
     public ShowMessagesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 单页返回消息数，默认值为10。
-     * @return limit
-     */
+    /** 单页返回消息数，默认值为10。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -167,20 +123,14 @@ public class ShowMessagesRequest  {
         this.limit = limit;
     }
 
-    
-
     public ShowMessagesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询的页码，默认值为1。
-     * @return offset
-     */
+    /** 查询的页码，默认值为1。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -189,20 +139,14 @@ public class ShowMessagesRequest  {
         this.offset = offset;
     }
 
-    
-
     public ShowMessagesRequest withPartition(String partition) {
         this.partition = partition;
         return this;
     }
 
-    
-
-
-    /**
-     * 分区编号，默认值为-1，若传入值为-1，则查询所有分区。
-     * @return partition
-     */
+    /** 分区编号，默认值为-1，若传入值为-1，则查询所有分区。
+     * 
+     * @return partition */
     public String getPartition() {
         return partition;
     }
@@ -210,8 +154,6 @@ public class ShowMessagesRequest  {
     public void setPartition(String partition) {
         this.partition = partition;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -222,18 +164,20 @@ public class ShowMessagesRequest  {
             return false;
         }
         ShowMessagesRequest showMessagesRequest = (ShowMessagesRequest) o;
-        return Objects.equals(this.instanceId, showMessagesRequest.instanceId) &&
-            Objects.equals(this.topic, showMessagesRequest.topic) &&
-            Objects.equals(this.startTime, showMessagesRequest.startTime) &&
-            Objects.equals(this.endTime, showMessagesRequest.endTime) &&
-            Objects.equals(this.limit, showMessagesRequest.limit) &&
-            Objects.equals(this.offset, showMessagesRequest.offset) &&
-            Objects.equals(this.partition, showMessagesRequest.partition);
+        return Objects.equals(this.instanceId, showMessagesRequest.instanceId)
+            && Objects.equals(this.topic, showMessagesRequest.topic)
+            && Objects.equals(this.startTime, showMessagesRequest.startTime)
+            && Objects.equals(this.endTime, showMessagesRequest.endTime)
+            && Objects.equals(this.limit, showMessagesRequest.limit)
+            && Objects.equals(this.offset, showMessagesRequest.offset)
+            && Objects.equals(this.partition, showMessagesRequest.partition);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, topic, startTime, endTime, limit, offset, partition);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,16 +192,13 @@ public class ShowMessagesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

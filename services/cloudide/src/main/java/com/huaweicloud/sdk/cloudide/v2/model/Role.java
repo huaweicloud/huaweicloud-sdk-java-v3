@@ -1,63 +1,46 @@
 package com.huaweicloud.sdk.cloudide.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cloudide.v2.model.RoleAction;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Role
- */
-public class Role  {
-
-
+/** Role */
+public class Role {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="c_role")
-    
+    @JsonProperty(value = "c_role")
+
     private String cRole;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="role")
-    
+    @JsonProperty(value = "role")
+
     private String role;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="role_actionses")
-    
+    @JsonProperty(value = "role_actionses")
+
     private List<RoleAction> roleActionses = null;
-    
+
     public Role withCRole(String cRole) {
         this.cRole = cRole;
         return this;
     }
 
-    
-
-
-    /**
-     * 子角色
-     * @return cRole
-     */
+    /** 子角色
+     * 
+     * @return cRole */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="c_role")
+    @JsonProperty(value = "c_role")
     public String getCRole() {
         return cRole;
     }
@@ -66,20 +49,14 @@ public class Role  {
         this.cRole = cRole;
     }
 
-    
-
     public Role withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * id
-     * @return id
-     */
+    /** id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -88,20 +65,14 @@ public class Role  {
         this.id = id;
     }
 
-    
-
     public Role withRole(String role) {
         this.role = role;
         return this;
     }
 
-    
-
-
-    /**
-     * 角色
-     * @return role
-     */
+    /** 角色
+     * 
+     * @return role */
     public String getRole() {
         return role;
     }
@@ -110,16 +81,13 @@ public class Role  {
         this.role = role;
     }
 
-    
-
     public Role withRoleActionses(List<RoleAction> roleActionses) {
         this.roleActionses = roleActionses;
         return this;
     }
 
-    
     public Role addRoleActionsesItem(RoleAction roleActionsesItem) {
-        if(this.roleActionses == null) {
+        if (this.roleActionses == null) {
             this.roleActionses = new ArrayList<>();
         }
         this.roleActionses.add(roleActionsesItem);
@@ -127,17 +95,16 @@ public class Role  {
     }
 
     public Role withRoleActionses(Consumer<List<RoleAction>> roleActionsesSetter) {
-        if(this.roleActionses == null) {
+        if (this.roleActionses == null) {
             this.roleActionses = new ArrayList<>();
         }
         roleActionsesSetter.accept(this.roleActionses);
         return this;
     }
 
-    /**
-     * 角色执行操作列表
-     * @return roleActionses
-     */
+    /** 角色执行操作列表
+     * 
+     * @return roleActionses */
     public List<RoleAction> getRoleActionses() {
         return roleActionses;
     }
@@ -145,8 +112,6 @@ public class Role  {
     public void setRoleActionses(List<RoleAction> roleActionses) {
         this.roleActionses = roleActionses;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -157,15 +122,15 @@ public class Role  {
             return false;
         }
         Role role = (Role) o;
-        return Objects.equals(this.cRole, role.cRole) &&
-            Objects.equals(this.id, role.id) &&
-            Objects.equals(this.role, role.role) &&
-            Objects.equals(this.roleActionses, role.roleActionses);
+        return Objects.equals(this.cRole, role.cRole) && Objects.equals(this.id, role.id)
+            && Objects.equals(this.role, role.role) && Objects.equals(this.roleActionses, role.roleActionses);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(cRole, id, role, roleActionses);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -177,16 +142,13 @@ public class Role  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

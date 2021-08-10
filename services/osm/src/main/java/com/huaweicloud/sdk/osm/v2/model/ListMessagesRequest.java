@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListMessagesRequest  {
-
-
+/** Request Object */
+public class ListMessagesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="case_id")
-    
+    @JsonProperty(value = "case_id")
+
     private String caseId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site")
-    
+    @JsonProperty(value = "X-Site")
+
     private Integer xSite;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Time-Zone")
-    
+    @JsonProperty(value = "X-Time-Zone")
+
     private String xTimeZone;
 
     public ListMessagesRequest withCaseId(String caseId) {
@@ -64,13 +48,9 @@ public class ListMessagesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 工单id
-     * @return caseId
-     */
+    /** 工单id
+     * 
+     * @return caseId */
     public String getCaseId() {
         return caseId;
     }
@@ -79,20 +59,14 @@ public class ListMessagesRequest  {
         this.caseId = caseId;
     }
 
-    
-
     public ListMessagesRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 组id
-     * @return groupId
-     */
+    /** 组id
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -101,22 +75,14 @@ public class ListMessagesRequest  {
         this.groupId = groupId;
     }
 
-    
-
     public ListMessagesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询偏移量
-     * minimum: 0
-     * maximum: 65535
-     * @return offset
-     */
+    /** 查询偏移量 minimum: 0 maximum: 65535
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -125,22 +91,14 @@ public class ListMessagesRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListMessagesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询数量
-     * minimum: 0
-     * maximum: 100
-     * @return limit
-     */
+    /** 查询数量 minimum: 0 maximum: 100
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -149,24 +107,16 @@ public class ListMessagesRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListMessagesRequest withXSite(Integer xSite) {
         this.xSite = xSite;
         return this;
     }
 
-    
-
-
-    /**
-     * 对接站点信息。  0（中国站） 1（国际站），不填的话默认为0。
-     * minimum: 0
-     * maximum: 1
-     * @return xSite
-     */
+    /** 对接站点信息。 0（中国站） 1（国际站），不填的话默认为0。 minimum: 0 maximum: 1
+     * 
+     * @return xSite */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site")
+    @JsonProperty(value = "X-Site")
     public Integer getXSite() {
         return xSite;
     }
@@ -175,22 +125,16 @@ public class ListMessagesRequest  {
         this.xSite = xSite;
     }
 
-    
-
     public ListMessagesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。  会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
-     * @return xLanguage
-     */
+    /** 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。 会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -199,22 +143,16 @@ public class ListMessagesRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListMessagesRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。  涉及时间的数据会根据环境时区处理。
-     * @return xTimeZone
-     */
+    /** 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。 涉及时间的数据会根据环境时区处理。
+     * 
+     * @return xTimeZone */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Time-Zone")
+    @JsonProperty(value = "X-Time-Zone")
     public String getXTimeZone() {
         return xTimeZone;
     }
@@ -222,8 +160,6 @@ public class ListMessagesRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -234,18 +170,20 @@ public class ListMessagesRequest  {
             return false;
         }
         ListMessagesRequest listMessagesRequest = (ListMessagesRequest) o;
-        return Objects.equals(this.caseId, listMessagesRequest.caseId) &&
-            Objects.equals(this.groupId, listMessagesRequest.groupId) &&
-            Objects.equals(this.offset, listMessagesRequest.offset) &&
-            Objects.equals(this.limit, listMessagesRequest.limit) &&
-            Objects.equals(this.xSite, listMessagesRequest.xSite) &&
-            Objects.equals(this.xLanguage, listMessagesRequest.xLanguage) &&
-            Objects.equals(this.xTimeZone, listMessagesRequest.xTimeZone);
+        return Objects.equals(this.caseId, listMessagesRequest.caseId)
+            && Objects.equals(this.groupId, listMessagesRequest.groupId)
+            && Objects.equals(this.offset, listMessagesRequest.offset)
+            && Objects.equals(this.limit, listMessagesRequest.limit)
+            && Objects.equals(this.xSite, listMessagesRequest.xSite)
+            && Objects.equals(this.xLanguage, listMessagesRequest.xLanguage)
+            && Objects.equals(this.xTimeZone, listMessagesRequest.xTimeZone);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(caseId, groupId, offset, limit, xSite, xLanguage, xTimeZone);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -260,16 +198,13 @@ public class ListMessagesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

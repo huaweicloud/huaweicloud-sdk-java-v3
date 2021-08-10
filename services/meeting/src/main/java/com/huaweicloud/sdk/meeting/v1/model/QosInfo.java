@@ -1,46 +1,32 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.QosCpuInfo;
-import com.huaweicloud.sdk.meeting.v1.model.QosSendReceiveInfo;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * QoS数据。
- */
-public class QosInfo  {
-
-
+/** QoS数据。 */
+public class QosInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="send")
-    
+    @JsonProperty(value = "send")
+
     private QosSendReceiveInfo send;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="receive")
-    
+    @JsonProperty(value = "receive")
+
     private QosSendReceiveInfo receive;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cpu")
-    
+    @JsonProperty(value = "cpu")
+
     private QosCpuInfo cpu;
 
     public QosInfo withType(String type) {
@@ -48,13 +34,9 @@ public class QosInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * Qos类型 - aduio：音频 - video：视频 - screen：屏幕共享 - cpu：cpu
-     * @return type
-     */
+    /** Qos类型 - aduio：音频 - video：视频 - screen：屏幕共享 - cpu：cpu
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -63,27 +45,23 @@ public class QosInfo  {
         this.type = type;
     }
 
-    
-
     public QosInfo withSend(QosSendReceiveInfo send) {
         this.send = send;
         return this;
     }
 
     public QosInfo withSend(Consumer<QosSendReceiveInfo> sendSetter) {
-        if(this.send == null ){
+        if (this.send == null) {
             this.send = new QosSendReceiveInfo();
             sendSetter.accept(this.send);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get send
-     * @return send
-     */
+    /** Get send
+     * 
+     * @return send */
     public QosSendReceiveInfo getSend() {
         return send;
     }
@@ -92,27 +70,23 @@ public class QosInfo  {
         this.send = send;
     }
 
-    
-
     public QosInfo withReceive(QosSendReceiveInfo receive) {
         this.receive = receive;
         return this;
     }
 
     public QosInfo withReceive(Consumer<QosSendReceiveInfo> receiveSetter) {
-        if(this.receive == null ){
+        if (this.receive == null) {
             this.receive = new QosSendReceiveInfo();
             receiveSetter.accept(this.receive);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get receive
-     * @return receive
-     */
+    /** Get receive
+     * 
+     * @return receive */
     public QosSendReceiveInfo getReceive() {
         return receive;
     }
@@ -121,27 +95,23 @@ public class QosInfo  {
         this.receive = receive;
     }
 
-    
-
     public QosInfo withCpu(QosCpuInfo cpu) {
         this.cpu = cpu;
         return this;
     }
 
     public QosInfo withCpu(Consumer<QosCpuInfo> cpuSetter) {
-        if(this.cpu == null ){
+        if (this.cpu == null) {
             this.cpu = new QosCpuInfo();
             cpuSetter.accept(this.cpu);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get cpu
-     * @return cpu
-     */
+    /** Get cpu
+     * 
+     * @return cpu */
     public QosCpuInfo getCpu() {
         return cpu;
     }
@@ -149,8 +119,6 @@ public class QosInfo  {
     public void setCpu(QosCpuInfo cpu) {
         this.cpu = cpu;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -161,15 +129,15 @@ public class QosInfo  {
             return false;
         }
         QosInfo qosInfo = (QosInfo) o;
-        return Objects.equals(this.type, qosInfo.type) &&
-            Objects.equals(this.send, qosInfo.send) &&
-            Objects.equals(this.receive, qosInfo.receive) &&
-            Objects.equals(this.cpu, qosInfo.cpu);
+        return Objects.equals(this.type, qosInfo.type) && Objects.equals(this.send, qosInfo.send)
+            && Objects.equals(this.receive, qosInfo.receive) && Objects.equals(this.cpu, qosInfo.cpu);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, send, receive, cpu);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -181,16 +149,13 @@ public class QosInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

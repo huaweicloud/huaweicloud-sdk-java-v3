@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 规则有效时间段
- */
-public class TimeRange  {
-
-
+/** 规则有效时间段 */
+public class TimeRange {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="days_of_week")
-    
+    @JsonProperty(value = "days_of_week")
+
     private String daysOfWeek;
 
     public TimeRange withStartTime(String startTime) {
@@ -40,13 +28,9 @@ public class TimeRange  {
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：规则条件触发的开始时间，格式：HH:mm。
-     * @return startTime
-     */
+    /** **参数说明**：规则条件触发的开始时间，格式：HH:mm。
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -55,20 +39,14 @@ public class TimeRange  {
         this.startTime = startTime;
     }
 
-    
-
     public TimeRange withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：规则条件触发的结束时间，格式：HH:mm。若结束时间与开始时间一致，则时间为全天。
-     * @return endTime
-     */
+    /** **参数说明**：规则条件触发的结束时间，格式：HH:mm。若结束时间与开始时间一致，则时间为全天。
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -77,20 +55,14 @@ public class TimeRange  {
         this.endTime = endTime;
     }
 
-    
-
     public TimeRange withDaysOfWeek(String daysOfWeek) {
         this.daysOfWeek = daysOfWeek;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：星期列表，以逗号分隔。1代表周日，2代表周一，依次类推，默认为每天。星期列表中的日期为开始时间的日期。 **取值范围**：只允许数字和逗号的组合，数字不小于1不大于7，数量不超过7个，以逗号隔开
-     * @return daysOfWeek
-     */
+    /** **参数说明**：星期列表，以逗号分隔。1代表周日，2代表周一，依次类推，默认为每天。星期列表中的日期为开始时间的日期。 **取值范围**：只允许数字和逗号的组合，数字不小于1不大于7，数量不超过7个，以逗号隔开
+     * 
+     * @return daysOfWeek */
     public String getDaysOfWeek() {
         return daysOfWeek;
     }
@@ -98,8 +70,6 @@ public class TimeRange  {
     public void setDaysOfWeek(String daysOfWeek) {
         this.daysOfWeek = daysOfWeek;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,15 @@ public class TimeRange  {
             return false;
         }
         TimeRange timeRange = (TimeRange) o;
-        return Objects.equals(this.startTime, timeRange.startTime) &&
-            Objects.equals(this.endTime, timeRange.endTime) &&
-            Objects.equals(this.daysOfWeek, timeRange.daysOfWeek);
+        return Objects.equals(this.startTime, timeRange.startTime) && Objects.equals(this.endTime, timeRange.endTime)
+            && Objects.equals(this.daysOfWeek, timeRange.daysOfWeek);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(startTime, endTime, daysOfWeek);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +99,13 @@ public class TimeRange  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

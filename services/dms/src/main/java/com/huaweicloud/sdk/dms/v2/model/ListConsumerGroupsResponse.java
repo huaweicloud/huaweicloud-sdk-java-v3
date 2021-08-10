@@ -1,64 +1,45 @@
 package com.huaweicloud.sdk.dms.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dms.v2.model.ListQueueGroupsRespGroups;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListConsumerGroupsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="queue_id")
-    
+    @JsonProperty(value = "queue_id")
+
     private String queueId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="queue_name")
-    
+    @JsonProperty(value = "queue_name")
+
     private String queueName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="groups")
-    
+    @JsonProperty(value = "groups")
+
     private List<ListQueueGroupsRespGroups> groups = null;
-        /**
-     * 该队列是否开启死信消息。仅当include_deadletter为true时，才有该响应参数。 - enable：表示开启。 - disable：表示不开启。
-     */
+
+    /** 该队列是否开启死信消息。仅当include_deadletter为true时，才有该响应参数。 - enable：表示开启。 - disable：表示不开启。 */
     public static final class RedrivePolicyEnum {
 
-        
-        /**
-         * Enum ENABLE for value: "enable"
-         */
+        /** Enum ENABLE for value: "enable" */
         public static final RedrivePolicyEnum ENABLE = new RedrivePolicyEnum("enable");
-        
-        /**
-         * Enum DISABLE for value: "disable"
-         */
+
+        /** Enum DISABLE for value: "disable" */
         public static final RedrivePolicyEnum DISABLE = new RedrivePolicyEnum("disable");
-        
 
         private static final Map<String, RedrivePolicyEnum> STATIC_FIELDS = createStaticFields();
 
@@ -87,7 +68,7 @@ public class ListConsumerGroupsResponse extends SdkResponse {
 
         @JsonCreator
         public static RedrivePolicyEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             RedrivePolicyEnum result = STATIC_FIELDS.get(value);
@@ -98,7 +79,7 @@ public class ListConsumerGroupsResponse extends SdkResponse {
         }
 
         public static RedrivePolicyEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             RedrivePolicyEnum result = STATIC_FIELDS.get(value);
@@ -122,10 +103,9 @@ public class ListConsumerGroupsResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="redrive_policy")
-    
+    @JsonProperty(value = "redrive_policy")
+
     private RedrivePolicyEnum redrivePolicy;
 
     public ListConsumerGroupsResponse withQueueId(String queueId) {
@@ -133,13 +113,9 @@ public class ListConsumerGroupsResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 队列ID。
-     * @return queueId
-     */
+    /** 队列ID。
+     * 
+     * @return queueId */
     public String getQueueId() {
         return queueId;
     }
@@ -148,20 +124,14 @@ public class ListConsumerGroupsResponse extends SdkResponse {
         this.queueId = queueId;
     }
 
-    
-
     public ListConsumerGroupsResponse withQueueName(String queueName) {
         this.queueName = queueName;
         return this;
     }
 
-    
-
-
-    /**
-     * 队列的名称。
-     * @return queueName
-     */
+    /** 队列的名称。
+     * 
+     * @return queueName */
     public String getQueueName() {
         return queueName;
     }
@@ -170,16 +140,13 @@ public class ListConsumerGroupsResponse extends SdkResponse {
         this.queueName = queueName;
     }
 
-    
-
     public ListConsumerGroupsResponse withGroups(List<ListQueueGroupsRespGroups> groups) {
         this.groups = groups;
         return this;
     }
 
-    
     public ListConsumerGroupsResponse addGroupsItem(ListQueueGroupsRespGroups groupsItem) {
-        if(this.groups == null) {
+        if (this.groups == null) {
             this.groups = new ArrayList<>();
         }
         this.groups.add(groupsItem);
@@ -187,17 +154,16 @@ public class ListConsumerGroupsResponse extends SdkResponse {
     }
 
     public ListConsumerGroupsResponse withGroups(Consumer<List<ListQueueGroupsRespGroups>> groupsSetter) {
-        if(this.groups == null) {
+        if (this.groups == null) {
             this.groups = new ArrayList<>();
         }
         groupsSetter.accept(this.groups);
         return this;
     }
 
-    /**
-     * 消费组列表。
-     * @return groups
-     */
+    /** 消费组列表。
+     * 
+     * @return groups */
     public List<ListQueueGroupsRespGroups> getGroups() {
         return groups;
     }
@@ -206,20 +172,14 @@ public class ListConsumerGroupsResponse extends SdkResponse {
         this.groups = groups;
     }
 
-    
-
     public ListConsumerGroupsResponse withRedrivePolicy(RedrivePolicyEnum redrivePolicy) {
         this.redrivePolicy = redrivePolicy;
         return this;
     }
 
-    
-
-
-    /**
-     * 该队列是否开启死信消息。仅当include_deadletter为true时，才有该响应参数。 - enable：表示开启。 - disable：表示不开启。
-     * @return redrivePolicy
-     */
+    /** 该队列是否开启死信消息。仅当include_deadletter为true时，才有该响应参数。 - enable：表示开启。 - disable：表示不开启。
+     * 
+     * @return redrivePolicy */
     public RedrivePolicyEnum getRedrivePolicy() {
         return redrivePolicy;
     }
@@ -227,8 +187,6 @@ public class ListConsumerGroupsResponse extends SdkResponse {
     public void setRedrivePolicy(RedrivePolicyEnum redrivePolicy) {
         this.redrivePolicy = redrivePolicy;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -239,15 +197,17 @@ public class ListConsumerGroupsResponse extends SdkResponse {
             return false;
         }
         ListConsumerGroupsResponse listConsumerGroupsResponse = (ListConsumerGroupsResponse) o;
-        return Objects.equals(this.queueId, listConsumerGroupsResponse.queueId) &&
-            Objects.equals(this.queueName, listConsumerGroupsResponse.queueName) &&
-            Objects.equals(this.groups, listConsumerGroupsResponse.groups) &&
-            Objects.equals(this.redrivePolicy, listConsumerGroupsResponse.redrivePolicy);
+        return Objects.equals(this.queueId, listConsumerGroupsResponse.queueId)
+            && Objects.equals(this.queueName, listConsumerGroupsResponse.queueName)
+            && Objects.equals(this.groups, listConsumerGroupsResponse.groups)
+            && Objects.equals(this.redrivePolicy, listConsumerGroupsResponse.redrivePolicy);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(queueId, queueName, groups, redrivePolicy);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -259,16 +219,13 @@ public class ListConsumerGroupsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

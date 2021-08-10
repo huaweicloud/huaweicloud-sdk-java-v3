@@ -1,265 +1,215 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dcs.v2.model.BackupPolicy;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowInstanceResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_name")
-    
+    @JsonProperty(value = "vpc_name")
+
     private String vpcName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charging_mode")
-    
+    @JsonProperty(value = "charging_mode")
+
     private Integer chargingMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_name")
-    
+    @JsonProperty(value = "user_name")
+
     private String userName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_id")
-    
+    @JsonProperty(value = "security_group_id")
+
     private String securityGroupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_name")
-    
+    @JsonProperty(value = "security_group_name")
+
     private String securityGroupName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_memory")
-    
+    @JsonProperty(value = "max_memory")
+
     private Integer maxMemory;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="used_memory")
-    
+    @JsonProperty(value = "used_memory")
+
     private Integer usedMemory;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="capacity")
-    
+    @JsonProperty(value = "capacity")
+
     private Integer capacity;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="capacity_minor")
-    
+    @JsonProperty(value = "capacity_minor")
+
     private String capacityMinor;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maintain_begin")
-    
+    @JsonProperty(value = "maintain_begin")
+
     private String maintainBegin;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maintain_end")
-    
+    @JsonProperty(value = "maintain_end")
+
     private String maintainEnd;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engine")
-    
+    @JsonProperty(value = "engine")
+
     private String engine;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="no_password_access")
-    
+    @JsonProperty(value = "no_password_access")
+
     private String noPasswordAccess;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip")
-    
+    @JsonProperty(value = "ip")
+
     private String ip;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_backup_policy")
-    
+    @JsonProperty(value = "instance_backup_policy")
+
     private BackupPolicy instanceBackupPolicy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="az_codes")
-    
+    @JsonProperty(value = "az_codes")
+
     private List<String> azCodes = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_user")
-    
+    @JsonProperty(value = "access_user")
+
     private String accessUser;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
+
     private Integer port;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_id")
-    
+    @JsonProperty(value = "user_id")
+
     private String userId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec_code")
-    
+    @JsonProperty(value = "spec_code")
+
     private String specCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
+
     private String subnetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_name")
-    
+    @JsonProperty(value = "subnet_name")
+
     private String subnetName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_cidr")
-    
+    @JsonProperty(value = "subnet_cidr")
+
     private String subnetCidr;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engine_version")
-    
+    @JsonProperty(value = "engine_version")
+
     private String engineVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_id")
-    
+    @JsonProperty(value = "order_id")
+
     private String orderId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_name")
-    
+    @JsonProperty(value = "domain_name")
+
     private String domainName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable_publicip")
-    
+    @JsonProperty(value = "enable_publicip")
+
     private Boolean enablePublicip;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publicip_id")
-    
+    @JsonProperty(value = "publicip_id")
+
     private String publicipId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publicip_address")
-    
+    @JsonProperty(value = "publicip_address")
+
     private String publicipAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable_ssl")
-    
+    @JsonProperty(value = "enable_ssl")
+
     private Boolean enableSsl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_upgrade")
-    
+    @JsonProperty(value = "service_upgrade")
+
     private Boolean serviceUpgrade;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_task_id")
-    
+    @JsonProperty(value = "service_task_id")
+
     private String serviceTaskId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backend_addrs")
-    
+    @JsonProperty(value = "backend_addrs")
+
     private String backendAddrs;
 
     public ShowInstanceResponse withVpcName(String vpcName) {
@@ -267,13 +217,9 @@ public class ShowInstanceResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * VPC的名称。
-     * @return vpcName
-     */
+    /** VPC的名称。
+     * 
+     * @return vpcName */
     public String getVpcName() {
         return vpcName;
     }
@@ -282,20 +228,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.vpcName = vpcName;
     }
 
-    
-
     public ShowInstanceResponse withChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 付费模式，0表示按需计费，1表示包年/包月计费。
-     * @return chargingMode
-     */
+    /** 付费模式，0表示按需计费，1表示包年/包月计费。
+     * 
+     * @return chargingMode */
     public Integer getChargingMode() {
         return chargingMode;
     }
@@ -304,20 +244,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.chargingMode = chargingMode;
     }
 
-    
-
     public ShowInstanceResponse withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
-    
-
-
-    /**
-     * VPC ID
-     * @return vpcId
-     */
+    /** VPC ID
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -326,20 +260,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.vpcId = vpcId;
     }
 
-    
-
     public ShowInstanceResponse withUserName(String userName) {
         this.userName = userName;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户名。
-     * @return userName
-     */
+    /** 用户名。
+     * 
+     * @return userName */
     public String getUserName() {
         return userName;
     }
@@ -348,20 +276,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.userName = userName;
     }
 
-    
-
     public ShowInstanceResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 完成创建时间。格式为：2017-03-31T12:24:46.297Z
-     * @return createdAt
-     */
+    /** 完成创建时间。格式为：2017-03-31T12:24:46.297Z
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -370,20 +292,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.createdAt = createdAt;
     }
 
-    
-
     public ShowInstanceResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例描述。
-     * @return description
-     */
+    /** 实例描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -392,20 +308,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public ShowInstanceResponse withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组ID。
-     * @return securityGroupId
-     */
+    /** 安全组ID。
+     * 
+     * @return securityGroupId */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -414,20 +324,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.securityGroupId = securityGroupId;
     }
 
-    
-
     public ShowInstanceResponse withSecurityGroupName(String securityGroupName) {
         this.securityGroupName = securityGroupName;
         return this;
     }
 
-    
-
-
-    /**
-     * 租户安全组名称。
-     * @return securityGroupName
-     */
+    /** 租户安全组名称。
+     * 
+     * @return securityGroupName */
     public String getSecurityGroupName() {
         return securityGroupName;
     }
@@ -436,20 +340,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.securityGroupName = securityGroupName;
     }
 
-    
-
     public ShowInstanceResponse withMaxMemory(Integer maxMemory) {
         this.maxMemory = maxMemory;
         return this;
     }
 
-    
-
-
-    /**
-     * 总内存，单位：MB。
-     * @return maxMemory
-     */
+    /** 总内存，单位：MB。
+     * 
+     * @return maxMemory */
     public Integer getMaxMemory() {
         return maxMemory;
     }
@@ -458,20 +356,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.maxMemory = maxMemory;
     }
 
-    
-
     public ShowInstanceResponse withUsedMemory(Integer usedMemory) {
         this.usedMemory = usedMemory;
         return this;
     }
 
-    
-
-
-    /**
-     * 已使用的内存，单位：MB。
-     * @return usedMemory
-     */
+    /** 已使用的内存，单位：MB。
+     * 
+     * @return usedMemory */
     public Integer getUsedMemory() {
         return usedMemory;
     }
@@ -480,20 +372,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.usedMemory = usedMemory;
     }
 
-    
-
     public ShowInstanceResponse withCapacity(Integer capacity) {
         this.capacity = capacity;
         return this;
     }
 
-    
-
-
-    /**
-     * 缓存实例的容量（G Byte）。
-     * @return capacity
-     */
+    /** 缓存实例的容量（G Byte）。
+     * 
+     * @return capacity */
     public Integer getCapacity() {
         return capacity;
     }
@@ -502,20 +388,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.capacity = capacity;
     }
 
-    
-
     public ShowInstanceResponse withCapacityMinor(String capacityMinor) {
         this.capacityMinor = capacityMinor;
         return this;
     }
 
-    
-
-
-    /**
-     * 单机小规格的缓存容量。
-     * @return capacityMinor
-     */
+    /** 单机小规格的缓存容量。
+     * 
+     * @return capacityMinor */
     public String getCapacityMinor() {
         return capacityMinor;
     }
@@ -524,20 +404,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.capacityMinor = capacityMinor;
     }
 
-    
-
     public ShowInstanceResponse withMaintainBegin(String maintainBegin) {
         this.maintainBegin = maintainBegin;
         return this;
     }
 
-    
-
-
-    /**
-     * 维护时间窗开始时间，为UTC时间，格式为HH:mm:ss
-     * @return maintainBegin
-     */
+    /** 维护时间窗开始时间，为UTC时间，格式为HH:mm:ss
+     * 
+     * @return maintainBegin */
     public String getMaintainBegin() {
         return maintainBegin;
     }
@@ -546,20 +420,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.maintainBegin = maintainBegin;
     }
 
-    
-
     public ShowInstanceResponse withMaintainEnd(String maintainEnd) {
         this.maintainEnd = maintainEnd;
         return this;
     }
 
-    
-
-
-    /**
-     * 维护时间窗结束时间，为UTC时间，格式为HH:mm:ss
-     * @return maintainEnd
-     */
+    /** 维护时间窗结束时间，为UTC时间，格式为HH:mm:ss
+     * 
+     * @return maintainEnd */
     public String getMaintainEnd() {
         return maintainEnd;
     }
@@ -568,20 +436,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.maintainEnd = maintainEnd;
     }
 
-    
-
     public ShowInstanceResponse withEngine(String engine) {
         this.engine = engine;
         return this;
     }
 
-    
-
-
-    /**
-     * 缓存实例的引擎类型。
-     * @return engine
-     */
+    /** 缓存实例的引擎类型。
+     * 
+     * @return engine */
     public String getEngine() {
         return engine;
     }
@@ -590,20 +452,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.engine = engine;
     }
 
-    
-
     public ShowInstanceResponse withNoPasswordAccess(String noPasswordAccess) {
         this.noPasswordAccess = noPasswordAccess;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否允许免密码访问缓存实例。 - true：该实例无需密码即可访问。 - false：该实例必须通过密码认证才能访问。 
-     * @return noPasswordAccess
-     */
+    /** 是否允许免密码访问缓存实例。 - true：该实例无需密码即可访问。 - false：该实例必须通过密码认证才能访问。
+     * 
+     * @return noPasswordAccess */
     public String getNoPasswordAccess() {
         return noPasswordAccess;
     }
@@ -612,20 +468,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.noPasswordAccess = noPasswordAccess;
     }
 
-    
-
     public ShowInstanceResponse withIp(String ip) {
         this.ip = ip;
         return this;
     }
 
-    
-
-
-    /**
-     * 连接缓存实例的IP地址。如果是集群实例，返回多个IP地址，使用逗号分隔。如：192.168.0.1，192.168.0.2。
-     * @return ip
-     */
+    /** 连接缓存实例的IP地址。如果是集群实例，返回多个IP地址，使用逗号分隔。如：192.168.0.1，192.168.0.2。
+     * 
+     * @return ip */
     public String getIp() {
         return ip;
     }
@@ -634,27 +484,23 @@ public class ShowInstanceResponse extends SdkResponse {
         this.ip = ip;
     }
 
-    
-
     public ShowInstanceResponse withInstanceBackupPolicy(BackupPolicy instanceBackupPolicy) {
         this.instanceBackupPolicy = instanceBackupPolicy;
         return this;
     }
 
     public ShowInstanceResponse withInstanceBackupPolicy(Consumer<BackupPolicy> instanceBackupPolicySetter) {
-        if(this.instanceBackupPolicy == null ){
+        if (this.instanceBackupPolicy == null) {
             this.instanceBackupPolicy = new BackupPolicy();
             instanceBackupPolicySetter.accept(this.instanceBackupPolicy);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get instanceBackupPolicy
-     * @return instanceBackupPolicy
-     */
+    /** Get instanceBackupPolicy
+     * 
+     * @return instanceBackupPolicy */
     public BackupPolicy getInstanceBackupPolicy() {
         return instanceBackupPolicy;
     }
@@ -663,16 +509,13 @@ public class ShowInstanceResponse extends SdkResponse {
         this.instanceBackupPolicy = instanceBackupPolicy;
     }
 
-    
-
     public ShowInstanceResponse withAzCodes(List<String> azCodes) {
         this.azCodes = azCodes;
         return this;
     }
 
-    
     public ShowInstanceResponse addAzCodesItem(String azCodesItem) {
-        if(this.azCodes == null) {
+        if (this.azCodes == null) {
             this.azCodes = new ArrayList<>();
         }
         this.azCodes.add(azCodesItem);
@@ -680,17 +523,16 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     public ShowInstanceResponse withAzCodes(Consumer<List<String>> azCodesSetter) {
-        if(this.azCodes == null) {
+        if (this.azCodes == null) {
             this.azCodes = new ArrayList<>();
         }
         azCodesSetter.accept(this.azCodes);
         return this;
     }
 
-    /**
-     * 实例所在的可用区。返回“可用区Code”
-     * @return azCodes
-     */
+    /** 实例所在的可用区。返回“可用区Code”
+     * 
+     * @return azCodes */
     public List<String> getAzCodes() {
         return azCodes;
     }
@@ -699,20 +541,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.azCodes = azCodes;
     }
 
-    
-
     public ShowInstanceResponse withAccessUser(String accessUser) {
         this.accessUser = accessUser;
         return this;
     }
 
-    
-
-
-    /**
-     * 通过密码认证访问缓存实例的认证用户名。
-     * @return accessUser
-     */
+    /** 通过密码认证访问缓存实例的认证用户名。
+     * 
+     * @return accessUser */
     public String getAccessUser() {
         return accessUser;
     }
@@ -721,20 +557,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.accessUser = accessUser;
     }
 
-    
-
     public ShowInstanceResponse withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -743,20 +573,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.instanceId = instanceId;
     }
 
-    
-
     public ShowInstanceResponse withPort(Integer port) {
         this.port = port;
         return this;
     }
 
-    
-
-
-    /**
-     * 缓存的端口。
-     * @return port
-     */
+    /** 缓存的端口。
+     * 
+     * @return port */
     public Integer getPort() {
         return port;
     }
@@ -765,20 +589,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.port = port;
     }
 
-    
-
     public ShowInstanceResponse withUserId(String userId) {
         this.userId = userId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户id。
-     * @return userId
-     */
+    /** 用户id。
+     * 
+     * @return userId */
     public String getUserId() {
         return userId;
     }
@@ -787,20 +605,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.userId = userId;
     }
 
-    
-
     public ShowInstanceResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例名称。
-     * @return name
-     */
+    /** 实例名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -809,20 +621,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowInstanceResponse withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品规格编码
-     * @return specCode
-     */
+    /** 产品规格编码
+     * 
+     * @return specCode */
     public String getSpecCode() {
         return specCode;
     }
@@ -831,20 +637,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.specCode = specCode;
     }
 
-    
-
     public ShowInstanceResponse withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网ID。
-     * @return subnetId
-     */
+    /** 子网ID。
+     * 
+     * @return subnetId */
     public String getSubnetId() {
         return subnetId;
     }
@@ -853,20 +653,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.subnetId = subnetId;
     }
 
-    
-
     public ShowInstanceResponse withSubnetName(String subnetName) {
         this.subnetName = subnetName;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网名称。
-     * @return subnetName
-     */
+    /** 子网名称。
+     * 
+     * @return subnetName */
     public String getSubnetName() {
         return subnetName;
     }
@@ -875,20 +669,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.subnetName = subnetName;
     }
 
-    
-
     public ShowInstanceResponse withSubnetCidr(String subnetCidr) {
         this.subnetCidr = subnetCidr;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网网段。
-     * @return subnetCidr
-     */
+    /** 子网网段。
+     * 
+     * @return subnetCidr */
     public String getSubnetCidr() {
         return subnetCidr;
     }
@@ -897,20 +685,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.subnetCidr = subnetCidr;
     }
 
-    
-
     public ShowInstanceResponse withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * 缓存版本。
-     * @return engineVersion
-     */
+    /** 缓存版本。
+     * 
+     * @return engineVersion */
     public String getEngineVersion() {
         return engineVersion;
     }
@@ -919,20 +701,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.engineVersion = engineVersion;
     }
 
-    
-
     public ShowInstanceResponse withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
     }
 
-    
-
-
-    /**
-     * 订单ID。
-     * @return orderId
-     */
+    /** 订单ID。
+     * 
+     * @return orderId */
     public String getOrderId() {
         return orderId;
     }
@@ -941,20 +717,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.orderId = orderId;
     }
 
-    
-
     public ShowInstanceResponse withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 缓存实例的状态。详细状态说明见[缓存实例状态说明](https://support.huaweicloud.com/api-dcs/dcs-api-0312047.html)
-     * @return status
-     */
+    /** 缓存实例的状态。详细状态说明见[缓存实例状态说明](https://support.huaweicloud.com/api-dcs/dcs-api-0312047.html)
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -963,20 +733,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public ShowInstanceResponse withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例的域名。
-     * @return domainName
-     */
+    /** 实例的域名。
+     * 
+     * @return domainName */
     public String getDomainName() {
         return domainName;
     }
@@ -985,20 +749,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.domainName = domainName;
     }
 
-    
-
     public ShowInstanceResponse withEnablePublicip(Boolean enablePublicip) {
         this.enablePublicip = enablePublicip;
         return this;
     }
 
-    
-
-
-    /**
-     * Redis缓存实例是否开启公网访问功能。 - true：开启 - false：不开启 
-     * @return enablePublicip
-     */
+    /** Redis缓存实例是否开启公网访问功能。 - true：开启 - false：不开启
+     * 
+     * @return enablePublicip */
     public Boolean getEnablePublicip() {
         return enablePublicip;
     }
@@ -1007,20 +765,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.enablePublicip = enablePublicip;
     }
 
-    
-
     public ShowInstanceResponse withPublicipId(String publicipId) {
         this.publicipId = publicipId;
         return this;
     }
 
-    
-
-
-    /**
-     * Redis缓存实例绑定的弹性IP地址的id。 如果未开启公网访问功能，该字段值为null。 
-     * @return publicipId
-     */
+    /** Redis缓存实例绑定的弹性IP地址的id。 如果未开启公网访问功能，该字段值为null。
+     * 
+     * @return publicipId */
     public String getPublicipId() {
         return publicipId;
     }
@@ -1029,20 +781,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.publicipId = publicipId;
     }
 
-    
-
     public ShowInstanceResponse withPublicipAddress(String publicipAddress) {
         this.publicipAddress = publicipAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * Redis缓存实例绑定的弹性IP地址。 如果未开启公网访问功能，该字段值为null。 
-     * @return publicipAddress
-     */
+    /** Redis缓存实例绑定的弹性IP地址。 如果未开启公网访问功能，该字段值为null。
+     * 
+     * @return publicipAddress */
     public String getPublicipAddress() {
         return publicipAddress;
     }
@@ -1051,20 +797,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.publicipAddress = publicipAddress;
     }
 
-    
-
     public ShowInstanceResponse withEnableSsl(Boolean enableSsl) {
         this.enableSsl = enableSsl;
         return this;
     }
 
-    
-
-
-    /**
-     * Redis缓存实例开启公网访问功能时，是否选择支持ssl。 - true：开启 - false：不开启 
-     * @return enableSsl
-     */
+    /** Redis缓存实例开启公网访问功能时，是否选择支持ssl。 - true：开启 - false：不开启
+     * 
+     * @return enableSsl */
     public Boolean getEnableSsl() {
         return enableSsl;
     }
@@ -1073,20 +813,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.enableSsl = enableSsl;
     }
 
-    
-
     public ShowInstanceResponse withServiceUpgrade(Boolean serviceUpgrade) {
         this.serviceUpgrade = serviceUpgrade;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例是否存在升级任务。 - true：存在 - false：不存在 
-     * @return serviceUpgrade
-     */
+    /** 实例是否存在升级任务。 - true：存在 - false：不存在
+     * 
+     * @return serviceUpgrade */
     public Boolean getServiceUpgrade() {
         return serviceUpgrade;
     }
@@ -1095,20 +829,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.serviceUpgrade = serviceUpgrade;
     }
 
-    
-
     public ShowInstanceResponse withServiceTaskId(String serviceTaskId) {
         this.serviceTaskId = serviceTaskId;
         return this;
     }
 
-    
-
-
-    /**
-     * 升级任务的ID。 - 当service_upgrade为true时，为升级任务的ID。 - 当service_upgrade为false时，该参数为空。 
-     * @return serviceTaskId
-     */
+    /** 升级任务的ID。 - 当service_upgrade为true时，为升级任务的ID。 - 当service_upgrade为false时，该参数为空。
+     * 
+     * @return serviceTaskId */
     public String getServiceTaskId() {
         return serviceTaskId;
     }
@@ -1117,20 +845,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.serviceTaskId = serviceTaskId;
     }
 
-    
-
     public ShowInstanceResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID。
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -1139,20 +861,14 @@ public class ShowInstanceResponse extends SdkResponse {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public ShowInstanceResponse withBackendAddrs(String backendAddrs) {
         this.backendAddrs = backendAddrs;
         return this;
     }
 
-    
-
-
-    /**
-     * 集群实例的后端服务地址。
-     * @return backendAddrs
-     */
+    /** 集群实例的后端服务地址。
+     * 
+     * @return backendAddrs */
     public String getBackendAddrs() {
         return backendAddrs;
     }
@@ -1160,8 +876,6 @@ public class ShowInstanceResponse extends SdkResponse {
     public void setBackendAddrs(String backendAddrs) {
         this.backendAddrs = backendAddrs;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -1172,51 +886,92 @@ public class ShowInstanceResponse extends SdkResponse {
             return false;
         }
         ShowInstanceResponse showInstanceResponse = (ShowInstanceResponse) o;
-        return Objects.equals(this.vpcName, showInstanceResponse.vpcName) &&
-            Objects.equals(this.chargingMode, showInstanceResponse.chargingMode) &&
-            Objects.equals(this.vpcId, showInstanceResponse.vpcId) &&
-            Objects.equals(this.userName, showInstanceResponse.userName) &&
-            Objects.equals(this.createdAt, showInstanceResponse.createdAt) &&
-            Objects.equals(this.description, showInstanceResponse.description) &&
-            Objects.equals(this.securityGroupId, showInstanceResponse.securityGroupId) &&
-            Objects.equals(this.securityGroupName, showInstanceResponse.securityGroupName) &&
-            Objects.equals(this.maxMemory, showInstanceResponse.maxMemory) &&
-            Objects.equals(this.usedMemory, showInstanceResponse.usedMemory) &&
-            Objects.equals(this.capacity, showInstanceResponse.capacity) &&
-            Objects.equals(this.capacityMinor, showInstanceResponse.capacityMinor) &&
-            Objects.equals(this.maintainBegin, showInstanceResponse.maintainBegin) &&
-            Objects.equals(this.maintainEnd, showInstanceResponse.maintainEnd) &&
-            Objects.equals(this.engine, showInstanceResponse.engine) &&
-            Objects.equals(this.noPasswordAccess, showInstanceResponse.noPasswordAccess) &&
-            Objects.equals(this.ip, showInstanceResponse.ip) &&
-            Objects.equals(this.instanceBackupPolicy, showInstanceResponse.instanceBackupPolicy) &&
-            Objects.equals(this.azCodes, showInstanceResponse.azCodes) &&
-            Objects.equals(this.accessUser, showInstanceResponse.accessUser) &&
-            Objects.equals(this.instanceId, showInstanceResponse.instanceId) &&
-            Objects.equals(this.port, showInstanceResponse.port) &&
-            Objects.equals(this.userId, showInstanceResponse.userId) &&
-            Objects.equals(this.name, showInstanceResponse.name) &&
-            Objects.equals(this.specCode, showInstanceResponse.specCode) &&
-            Objects.equals(this.subnetId, showInstanceResponse.subnetId) &&
-            Objects.equals(this.subnetName, showInstanceResponse.subnetName) &&
-            Objects.equals(this.subnetCidr, showInstanceResponse.subnetCidr) &&
-            Objects.equals(this.engineVersion, showInstanceResponse.engineVersion) &&
-            Objects.equals(this.orderId, showInstanceResponse.orderId) &&
-            Objects.equals(this.status, showInstanceResponse.status) &&
-            Objects.equals(this.domainName, showInstanceResponse.domainName) &&
-            Objects.equals(this.enablePublicip, showInstanceResponse.enablePublicip) &&
-            Objects.equals(this.publicipId, showInstanceResponse.publicipId) &&
-            Objects.equals(this.publicipAddress, showInstanceResponse.publicipAddress) &&
-            Objects.equals(this.enableSsl, showInstanceResponse.enableSsl) &&
-            Objects.equals(this.serviceUpgrade, showInstanceResponse.serviceUpgrade) &&
-            Objects.equals(this.serviceTaskId, showInstanceResponse.serviceTaskId) &&
-            Objects.equals(this.enterpriseProjectId, showInstanceResponse.enterpriseProjectId) &&
-            Objects.equals(this.backendAddrs, showInstanceResponse.backendAddrs);
+        return Objects.equals(this.vpcName, showInstanceResponse.vpcName)
+            && Objects.equals(this.chargingMode, showInstanceResponse.chargingMode)
+            && Objects.equals(this.vpcId, showInstanceResponse.vpcId)
+            && Objects.equals(this.userName, showInstanceResponse.userName)
+            && Objects.equals(this.createdAt, showInstanceResponse.createdAt)
+            && Objects.equals(this.description, showInstanceResponse.description)
+            && Objects.equals(this.securityGroupId, showInstanceResponse.securityGroupId)
+            && Objects.equals(this.securityGroupName, showInstanceResponse.securityGroupName)
+            && Objects.equals(this.maxMemory, showInstanceResponse.maxMemory)
+            && Objects.equals(this.usedMemory, showInstanceResponse.usedMemory)
+            && Objects.equals(this.capacity, showInstanceResponse.capacity)
+            && Objects.equals(this.capacityMinor, showInstanceResponse.capacityMinor)
+            && Objects.equals(this.maintainBegin, showInstanceResponse.maintainBegin)
+            && Objects.equals(this.maintainEnd, showInstanceResponse.maintainEnd)
+            && Objects.equals(this.engine, showInstanceResponse.engine)
+            && Objects.equals(this.noPasswordAccess, showInstanceResponse.noPasswordAccess)
+            && Objects.equals(this.ip, showInstanceResponse.ip)
+            && Objects.equals(this.instanceBackupPolicy, showInstanceResponse.instanceBackupPolicy)
+            && Objects.equals(this.azCodes, showInstanceResponse.azCodes)
+            && Objects.equals(this.accessUser, showInstanceResponse.accessUser)
+            && Objects.equals(this.instanceId, showInstanceResponse.instanceId)
+            && Objects.equals(this.port, showInstanceResponse.port)
+            && Objects.equals(this.userId, showInstanceResponse.userId)
+            && Objects.equals(this.name, showInstanceResponse.name)
+            && Objects.equals(this.specCode, showInstanceResponse.specCode)
+            && Objects.equals(this.subnetId, showInstanceResponse.subnetId)
+            && Objects.equals(this.subnetName, showInstanceResponse.subnetName)
+            && Objects.equals(this.subnetCidr, showInstanceResponse.subnetCidr)
+            && Objects.equals(this.engineVersion, showInstanceResponse.engineVersion)
+            && Objects.equals(this.orderId, showInstanceResponse.orderId)
+            && Objects.equals(this.status, showInstanceResponse.status)
+            && Objects.equals(this.domainName, showInstanceResponse.domainName)
+            && Objects.equals(this.enablePublicip, showInstanceResponse.enablePublicip)
+            && Objects.equals(this.publicipId, showInstanceResponse.publicipId)
+            && Objects.equals(this.publicipAddress, showInstanceResponse.publicipAddress)
+            && Objects.equals(this.enableSsl, showInstanceResponse.enableSsl)
+            && Objects.equals(this.serviceUpgrade, showInstanceResponse.serviceUpgrade)
+            && Objects.equals(this.serviceTaskId, showInstanceResponse.serviceTaskId)
+            && Objects.equals(this.enterpriseProjectId, showInstanceResponse.enterpriseProjectId)
+            && Objects.equals(this.backendAddrs, showInstanceResponse.backendAddrs);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(vpcName, chargingMode, vpcId, userName, createdAt, description, securityGroupId, securityGroupName, maxMemory, usedMemory, capacity, capacityMinor, maintainBegin, maintainEnd, engine, noPasswordAccess, ip, instanceBackupPolicy, azCodes, accessUser, instanceId, port, userId, name, specCode, subnetId, subnetName, subnetCidr, engineVersion, orderId, status, domainName, enablePublicip, publicipId, publicipAddress, enableSsl, serviceUpgrade, serviceTaskId, enterpriseProjectId, backendAddrs);
+        return Objects.hash(vpcName,
+            chargingMode,
+            vpcId,
+            userName,
+            createdAt,
+            description,
+            securityGroupId,
+            securityGroupName,
+            maxMemory,
+            usedMemory,
+            capacity,
+            capacityMinor,
+            maintainBegin,
+            maintainEnd,
+            engine,
+            noPasswordAccess,
+            ip,
+            instanceBackupPolicy,
+            azCodes,
+            accessUser,
+            instanceId,
+            port,
+            userId,
+            name,
+            specCode,
+            subnetId,
+            subnetName,
+            subnetCidr,
+            engineVersion,
+            orderId,
+            status,
+            domainName,
+            enablePublicip,
+            publicipId,
+            publicipAddress,
+            enableSsl,
+            serviceUpgrade,
+            serviceTaskId,
+            enterpriseProjectId,
+            backendAddrs);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1264,16 +1019,13 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

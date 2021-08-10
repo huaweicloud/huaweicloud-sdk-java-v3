@@ -1,41 +1,26 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 操作
- */
-public class PolicyAction  {
+/** 操作 */
+public class PolicyAction {
 
-    /**
-     * 防护等级（log为仅记录、block为拦截）
-     */
+    /** 防护等级（log为仅记录、block为拦截） */
     public static final class CategoryEnum {
 
-        
-        /**
-         * Enum BLOCK for value: "block"
-         */
+        /** Enum BLOCK for value: "block" */
         public static final CategoryEnum BLOCK = new CategoryEnum("block");
-        
-        /**
-         * Enum LOG for value: "log"
-         */
+
+        /** Enum LOG for value: "log" */
         public static final CategoryEnum LOG = new CategoryEnum("log");
-        
 
         private static final Map<String, CategoryEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +49,7 @@ public class PolicyAction  {
 
         @JsonCreator
         public static CategoryEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CategoryEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +60,7 @@ public class PolicyAction  {
         }
 
         public static CategoryEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CategoryEnum result = STATIC_FIELDS.get(value);
@@ -99,10 +84,9 @@ public class PolicyAction  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="category")
-    
+    @JsonProperty(value = "category")
+
     private CategoryEnum category;
 
     public PolicyAction withCategory(CategoryEnum category) {
@@ -110,13 +94,9 @@ public class PolicyAction  {
         return this;
     }
 
-    
-
-
-    /**
-     * 防护等级（log为仅记录、block为拦截）
-     * @return category
-     */
+    /** 防护等级（log为仅记录、block为拦截）
+     * 
+     * @return category */
     public CategoryEnum getCategory() {
         return category;
     }
@@ -124,8 +104,6 @@ public class PolicyAction  {
     public void setCategory(CategoryEnum category) {
         this.category = category;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,10 +116,12 @@ public class PolicyAction  {
         PolicyAction policyAction = (PolicyAction) o;
         return Objects.equals(this.category, policyAction.category);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(category);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -150,16 +130,13 @@ public class PolicyAction  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

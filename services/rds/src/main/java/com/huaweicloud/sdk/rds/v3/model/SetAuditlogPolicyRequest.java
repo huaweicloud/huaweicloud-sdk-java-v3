@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.SetAuditlogPolicyRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class SetAuditlogPolicyRequest  {
-
-
+/** Request Object */
+public class SetAuditlogPolicyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private SetAuditlogPolicyRequestBody body;
 
     public SetAuditlogPolicyRequest withXLanguage(String xLanguage) {
@@ -41,15 +29,11 @@ public class SetAuditlogPolicyRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -58,20 +42,14 @@ public class SetAuditlogPolicyRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public SetAuditlogPolicyRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -80,27 +58,23 @@ public class SetAuditlogPolicyRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public SetAuditlogPolicyRequest withBody(SetAuditlogPolicyRequestBody body) {
         this.body = body;
         return this;
     }
 
     public SetAuditlogPolicyRequest withBody(Consumer<SetAuditlogPolicyRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new SetAuditlogPolicyRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public SetAuditlogPolicyRequestBody getBody() {
         return body;
     }
@@ -108,8 +82,6 @@ public class SetAuditlogPolicyRequest  {
     public void setBody(SetAuditlogPolicyRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -120,14 +92,16 @@ public class SetAuditlogPolicyRequest  {
             return false;
         }
         SetAuditlogPolicyRequest setAuditlogPolicyRequest = (SetAuditlogPolicyRequest) o;
-        return Objects.equals(this.xLanguage, setAuditlogPolicyRequest.xLanguage) &&
-            Objects.equals(this.instanceId, setAuditlogPolicyRequest.instanceId) &&
-            Objects.equals(this.body, setAuditlogPolicyRequest.body);
+        return Objects.equals(this.xLanguage, setAuditlogPolicyRequest.xLanguage)
+            && Objects.equals(this.instanceId, setAuditlogPolicyRequest.instanceId)
+            && Objects.equals(this.body, setAuditlogPolicyRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -138,16 +112,13 @@ public class SetAuditlogPolicyRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

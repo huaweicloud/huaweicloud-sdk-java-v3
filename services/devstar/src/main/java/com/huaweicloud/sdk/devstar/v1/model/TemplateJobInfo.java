@@ -1,65 +1,49 @@
 package com.huaweicloud.sdk.devstar.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.devstar.v1.model.RepositoryInfo;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * TemplateJobInfo
- */
-public class TemplateJobInfo  {
-
-
+/** TemplateJobInfo */
+public class TemplateJobInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="application_name")
-    
+    @JsonProperty(value = "application_name")
+
     private String applicationName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_id")
-    
+    @JsonProperty(value = "template_id")
+
     private String templateId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_name")
-    
+    @JsonProperty(value = "project_name")
+
     private String projectName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repo_type")
-    
+    @JsonProperty(value = "repo_type")
+
     private Integer repoType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="properties")
-    
+    @JsonProperty(value = "properties")
+
     private Object properties;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_dependencies")
-    
+    @JsonProperty(value = "template_dependencies")
+
     private List<String> templateDependencies = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repo_info")
-    
+    @JsonProperty(value = "repo_info")
+
     private RepositoryInfo repoInfo;
 
     public TemplateJobInfo withApplicationName(String applicationName) {
@@ -67,13 +51,9 @@ public class TemplateJobInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名称
-     * @return applicationName
-     */
+    /** 应用名称
+     * 
+     * @return applicationName */
     public String getApplicationName() {
         return applicationName;
     }
@@ -82,20 +62,14 @@ public class TemplateJobInfo  {
         this.applicationName = applicationName;
     }
 
-    
-
     public TemplateJobInfo withTemplateId(String templateId) {
         this.templateId = templateId;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务依赖的模板id
-     * @return templateId
-     */
+    /** 任务依赖的模板id
+     * 
+     * @return templateId */
     public String getTemplateId() {
         return templateId;
     }
@@ -104,20 +78,14 @@ public class TemplateJobInfo  {
         this.templateId = templateId;
     }
 
-    
-
     public TemplateJobInfo withProjectName(String projectName) {
         this.projectName = projectName;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名称
-     * @return projectName
-     */
+    /** 应用名称
+     * 
+     * @return projectName */
     public String getProjectName() {
         return projectName;
     }
@@ -126,22 +94,14 @@ public class TemplateJobInfo  {
         this.projectName = projectName;
     }
 
-    
-
     public TemplateJobInfo withRepoType(Integer repoType) {
         this.repoType = repoType;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用代码生成后的地址类型，目前支持0：codehub地址和1：压缩包下载地址
-     * minimum: 0
-     * maximum: 3
-     * @return repoType
-     */
+    /** 应用代码生成后的地址类型，目前支持0：codehub地址和1：压缩包下载地址 minimum: 0 maximum: 3
+     * 
+     * @return repoType */
     public Integer getRepoType() {
         return repoType;
     }
@@ -150,20 +110,14 @@ public class TemplateJobInfo  {
         this.repoType = repoType;
     }
 
-    
-
     public TemplateJobInfo withProperties(Object properties) {
         this.properties = properties;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用的动态参数json
-     * @return properties
-     */
+    /** 应用的动态参数json
+     * 
+     * @return properties */
     public Object getProperties() {
         return properties;
     }
@@ -172,16 +126,13 @@ public class TemplateJobInfo  {
         this.properties = properties;
     }
 
-    
-
     public TemplateJobInfo withTemplateDependencies(List<String> templateDependencies) {
         this.templateDependencies = templateDependencies;
         return this;
     }
 
-    
     public TemplateJobInfo addTemplateDependenciesItem(String templateDependenciesItem) {
-        if(this.templateDependencies == null) {
+        if (this.templateDependencies == null) {
             this.templateDependencies = new ArrayList<>();
         }
         this.templateDependencies.add(templateDependenciesItem);
@@ -189,17 +140,16 @@ public class TemplateJobInfo  {
     }
 
     public TemplateJobInfo withTemplateDependencies(Consumer<List<String>> templateDependenciesSetter) {
-        if(this.templateDependencies == null) {
+        if (this.templateDependencies == null) {
             this.templateDependencies = new ArrayList<>();
         }
         templateDependenciesSetter.accept(this.templateDependencies);
         return this;
     }
 
-    /**
-     * 模板 dependency ID 集合
-     * @return templateDependencies
-     */
+    /** 模板 dependency ID 集合
+     * 
+     * @return templateDependencies */
     public List<String> getTemplateDependencies() {
         return templateDependencies;
     }
@@ -208,27 +158,23 @@ public class TemplateJobInfo  {
         this.templateDependencies = templateDependencies;
     }
 
-    
-
     public TemplateJobInfo withRepoInfo(RepositoryInfo repoInfo) {
         this.repoInfo = repoInfo;
         return this;
     }
 
     public TemplateJobInfo withRepoInfo(Consumer<RepositoryInfo> repoInfoSetter) {
-        if(this.repoInfo == null ){
+        if (this.repoInfo == null) {
             this.repoInfo = new RepositoryInfo();
             repoInfoSetter.accept(this.repoInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get repoInfo
-     * @return repoInfo
-     */
+    /** Get repoInfo
+     * 
+     * @return repoInfo */
     public RepositoryInfo getRepoInfo() {
         return repoInfo;
     }
@@ -236,8 +182,6 @@ public class TemplateJobInfo  {
     public void setRepoInfo(RepositoryInfo repoInfo) {
         this.repoInfo = repoInfo;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -248,18 +192,21 @@ public class TemplateJobInfo  {
             return false;
         }
         TemplateJobInfo templateJobInfo = (TemplateJobInfo) o;
-        return Objects.equals(this.applicationName, templateJobInfo.applicationName) &&
-            Objects.equals(this.templateId, templateJobInfo.templateId) &&
-            Objects.equals(this.projectName, templateJobInfo.projectName) &&
-            Objects.equals(this.repoType, templateJobInfo.repoType) &&
-            Objects.equals(this.properties, templateJobInfo.properties) &&
-            Objects.equals(this.templateDependencies, templateJobInfo.templateDependencies) &&
-            Objects.equals(this.repoInfo, templateJobInfo.repoInfo);
+        return Objects.equals(this.applicationName, templateJobInfo.applicationName)
+            && Objects.equals(this.templateId, templateJobInfo.templateId)
+            && Objects.equals(this.projectName, templateJobInfo.projectName)
+            && Objects.equals(this.repoType, templateJobInfo.repoType)
+            && Objects.equals(this.properties, templateJobInfo.properties)
+            && Objects.equals(this.templateDependencies, templateJobInfo.templateDependencies)
+            && Objects.equals(this.repoInfo, templateJobInfo.repoInfo);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(applicationName, templateId, projectName, repoType, properties, templateDependencies, repoInfo);
+        return Objects
+            .hash(applicationName, templateId, projectName, repoType, properties, templateDependencies, repoInfo);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -274,16 +221,13 @@ public class TemplateJobInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

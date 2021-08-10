@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 属性值
- */
-public class AdditionalProperties  {
-
-
+/** 属性值 */
+public class AdditionalProperties {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
     public AdditionalProperties withType(String type) {
@@ -28,13 +18,9 @@ public class AdditionalProperties  {
         return this;
     }
 
-    
-
-
-    /**
-     * 类型
-     * @return type
-     */
+    /** 类型
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -42,8 +28,6 @@ public class AdditionalProperties  {
     public void setType(String type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class AdditionalProperties  {
         AdditionalProperties additionalProperties = (AdditionalProperties) o;
         return Objects.equals(this.type, additionalProperties.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class AdditionalProperties  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

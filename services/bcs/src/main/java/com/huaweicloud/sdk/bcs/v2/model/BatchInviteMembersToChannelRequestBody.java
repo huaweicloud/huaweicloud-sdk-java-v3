@@ -1,61 +1,44 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bcs.v2.model.InvitedDomain;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 邀请联盟成员
- */
-public class BatchInviteMembersToChannelRequestBody  {
-
-
+/** 邀请联盟成员 */
+public class BatchInviteMembersToChannelRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bcs_id")
-    
+    @JsonProperty(value = "bcs_id")
+
     private String bcsId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="channel_name")
-    
+    @JsonProperty(value = "channel_name")
+
     private String channelName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invitor_username")
-    
+    @JsonProperty(value = "invitor_username")
+
     private String invitorUsername;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invited_userinfo")
-    
+    @JsonProperty(value = "invited_userinfo")
+
     private List<InvitedDomain> invitedUserinfo = null;
-    
+
     public BatchInviteMembersToChannelRequestBody withBcsId(String bcsId) {
         this.bcsId = bcsId;
         return this;
     }
 
-    
-
-
-    /**
-     * 邀请实例id
-     * @return bcsId
-     */
+    /** 邀请实例id
+     * 
+     * @return bcsId */
     public String getBcsId() {
         return bcsId;
     }
@@ -64,20 +47,14 @@ public class BatchInviteMembersToChannelRequestBody  {
         this.bcsId = bcsId;
     }
 
-    
-
     public BatchInviteMembersToChannelRequestBody withChannelName(String channelName) {
         this.channelName = channelName;
         return this;
     }
 
-    
-
-
-    /**
-     * 邀请加入的通道名
-     * @return channelName
-     */
+    /** 邀请加入的通道名
+     * 
+     * @return channelName */
     public String getChannelName() {
         return channelName;
     }
@@ -86,20 +63,14 @@ public class BatchInviteMembersToChannelRequestBody  {
         this.channelName = channelName;
     }
 
-    
-
     public BatchInviteMembersToChannelRequestBody withInvitorUsername(String invitorUsername) {
         this.invitorUsername = invitorUsername;
         return this;
     }
 
-    
-
-
-    /**
-     * 发出邀请的租户名
-     * @return invitorUsername
-     */
+    /** 发出邀请的租户名
+     * 
+     * @return invitorUsername */
     public String getInvitorUsername() {
         return invitorUsername;
     }
@@ -108,34 +79,31 @@ public class BatchInviteMembersToChannelRequestBody  {
         this.invitorUsername = invitorUsername;
     }
 
-    
-
     public BatchInviteMembersToChannelRequestBody withInvitedUserinfo(List<InvitedDomain> invitedUserinfo) {
         this.invitedUserinfo = invitedUserinfo;
         return this;
     }
 
-    
     public BatchInviteMembersToChannelRequestBody addInvitedUserinfoItem(InvitedDomain invitedUserinfoItem) {
-        if(this.invitedUserinfo == null) {
+        if (this.invitedUserinfo == null) {
             this.invitedUserinfo = new ArrayList<>();
         }
         this.invitedUserinfo.add(invitedUserinfoItem);
         return this;
     }
 
-    public BatchInviteMembersToChannelRequestBody withInvitedUserinfo(Consumer<List<InvitedDomain>> invitedUserinfoSetter) {
-        if(this.invitedUserinfo == null) {
+    public BatchInviteMembersToChannelRequestBody withInvitedUserinfo(
+        Consumer<List<InvitedDomain>> invitedUserinfoSetter) {
+        if (this.invitedUserinfo == null) {
             this.invitedUserinfo = new ArrayList<>();
         }
         invitedUserinfoSetter.accept(this.invitedUserinfo);
         return this;
     }
 
-    /**
-     * 被邀请的用户列表
-     * @return invitedUserinfo
-     */
+    /** 被邀请的用户列表
+     * 
+     * @return invitedUserinfo */
     public List<InvitedDomain> getInvitedUserinfo() {
         return invitedUserinfo;
     }
@@ -143,8 +111,6 @@ public class BatchInviteMembersToChannelRequestBody  {
     public void setInvitedUserinfo(List<InvitedDomain> invitedUserinfo) {
         this.invitedUserinfo = invitedUserinfo;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -154,16 +120,19 @@ public class BatchInviteMembersToChannelRequestBody  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        BatchInviteMembersToChannelRequestBody batchInviteMembersToChannelRequestBody = (BatchInviteMembersToChannelRequestBody) o;
-        return Objects.equals(this.bcsId, batchInviteMembersToChannelRequestBody.bcsId) &&
-            Objects.equals(this.channelName, batchInviteMembersToChannelRequestBody.channelName) &&
-            Objects.equals(this.invitorUsername, batchInviteMembersToChannelRequestBody.invitorUsername) &&
-            Objects.equals(this.invitedUserinfo, batchInviteMembersToChannelRequestBody.invitedUserinfo);
+        BatchInviteMembersToChannelRequestBody batchInviteMembersToChannelRequestBody =
+            (BatchInviteMembersToChannelRequestBody) o;
+        return Objects.equals(this.bcsId, batchInviteMembersToChannelRequestBody.bcsId)
+            && Objects.equals(this.channelName, batchInviteMembersToChannelRequestBody.channelName)
+            && Objects.equals(this.invitorUsername, batchInviteMembersToChannelRequestBody.invitorUsername)
+            && Objects.equals(this.invitedUserinfo, batchInviteMembersToChannelRequestBody.invitedUserinfo);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(bcsId, channelName, invitorUsername, invitedUserinfo);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -175,16 +144,13 @@ public class BatchInviteMembersToChannelRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

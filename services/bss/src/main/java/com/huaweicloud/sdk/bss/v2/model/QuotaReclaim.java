@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * QuotaReclaim
- */
-public class QuotaReclaim  {
-
-
+/** QuotaReclaim */
+public class QuotaReclaim {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quota_id")
-    
+    @JsonProperty(value = "quota_id")
+
     private String quotaId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quota_balance")
-    
+    @JsonProperty(value = "quota_balance")
+
     private Double quotaBalance;
 
     public QuotaReclaim withQuotaId(String quotaId) {
@@ -34,13 +23,9 @@ public class QuotaReclaim  {
         return this;
     }
 
-    
-
-
-    /**
-     * 被回收的精英服务商的代金券额度ID。
-     * @return quotaId
-     */
+    /** 被回收的精英服务商的代金券额度ID。
+     * 
+     * @return quotaId */
     public String getQuotaId() {
         return quotaId;
     }
@@ -49,20 +34,14 @@ public class QuotaReclaim  {
         this.quotaId = quotaId;
     }
 
-    
-
     public QuotaReclaim withQuotaBalance(Double quotaBalance) {
         this.quotaBalance = quotaBalance;
         return this;
     }
 
-    
-
-
-    /**
-     * 被回收额度后的代金券额度余额。单位：元。
-     * @return quotaBalance
-     */
+    /** 被回收额度后的代金券额度余额。单位：元。
+     * 
+     * @return quotaBalance */
     public Double getQuotaBalance() {
         return quotaBalance;
     }
@@ -70,8 +49,6 @@ public class QuotaReclaim  {
     public void setQuotaBalance(Double quotaBalance) {
         this.quotaBalance = quotaBalance;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class QuotaReclaim  {
             return false;
         }
         QuotaReclaim quotaReclaim = (QuotaReclaim) o;
-        return Objects.equals(this.quotaId, quotaReclaim.quotaId) &&
-            Objects.equals(this.quotaBalance, quotaReclaim.quotaBalance);
+        return Objects.equals(this.quotaId, quotaReclaim.quotaId)
+            && Objects.equals(this.quotaBalance, quotaReclaim.quotaBalance);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(quotaId, quotaBalance);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class QuotaReclaim  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

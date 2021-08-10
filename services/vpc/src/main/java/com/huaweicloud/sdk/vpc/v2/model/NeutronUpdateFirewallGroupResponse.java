@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vpc.v2.model.NeutronFirewallGroup;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class NeutronUpdateFirewallGroupResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="firewall_group")
-    
+    @JsonProperty(value = "firewall_group")
+
     private NeutronFirewallGroup firewallGroup;
 
     public NeutronUpdateFirewallGroupResponse withFirewallGroup(NeutronFirewallGroup firewallGroup) {
@@ -32,19 +21,17 @@ public class NeutronUpdateFirewallGroupResponse extends SdkResponse {
     }
 
     public NeutronUpdateFirewallGroupResponse withFirewallGroup(Consumer<NeutronFirewallGroup> firewallGroupSetter) {
-        if(this.firewallGroup == null ){
+        if (this.firewallGroup == null) {
             this.firewallGroup = new NeutronFirewallGroup();
             firewallGroupSetter.accept(this.firewallGroup);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get firewallGroup
-     * @return firewallGroup
-     */
+    /** Get firewallGroup
+     * 
+     * @return firewallGroup */
     public NeutronFirewallGroup getFirewallGroup() {
         return firewallGroup;
     }
@@ -52,8 +39,6 @@ public class NeutronUpdateFirewallGroupResponse extends SdkResponse {
     public void setFirewallGroup(NeutronFirewallGroup firewallGroup) {
         this.firewallGroup = firewallGroup;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class NeutronUpdateFirewallGroupResponse extends SdkResponse {
         NeutronUpdateFirewallGroupResponse neutronUpdateFirewallGroupResponse = (NeutronUpdateFirewallGroupResponse) o;
         return Objects.equals(this.firewallGroup, neutronUpdateFirewallGroupResponse.firewallGroup);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(firewallGroup);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class NeutronUpdateFirewallGroupResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

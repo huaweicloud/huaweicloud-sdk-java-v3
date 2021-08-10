@@ -1,53 +1,34 @@
 package com.huaweicloud.sdk.cloudide.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * InstanceParam
- */
-public class InstanceParam  {
-
-
+/** InstanceParam */
+public class InstanceParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="agent_id")
-    
+    @JsonProperty(value = "agent_id")
+
     private String agentId;
-    /**
-     * cpu架构 x86|arm
-     */
+
+    /** cpu架构 x86|arm */
     public static final class ArchEnum {
 
-        
-        /**
-         * Enum X86 for value: "x86"
-         */
+        /** Enum X86 for value: "x86" */
         public static final ArchEnum X86 = new ArchEnum("x86");
-        
-        /**
-         * Enum ARM for value: "arm"
-         */
+
+        /** Enum ARM for value: "arm" */
         public static final ArchEnum ARM = new ArchEnum("arm");
-        
 
         private static final Map<String, ArchEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,7 +57,7 @@ public class InstanceParam  {
 
         @JsonCreator
         public static ArchEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ArchEnum result = STATIC_FIELDS.get(value);
@@ -87,7 +68,7 @@ public class InstanceParam  {
         }
 
         public static ArchEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ArchEnum result = STATIC_FIELDS.get(value);
@@ -111,37 +92,26 @@ public class InstanceParam  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arch")
-    
+    @JsonProperty(value = "arch")
+
     private ArchEnum arch;
-    /**
-     * cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacksByTag接口获取。如果标签不为空，以标签配置的技术栈规格为准。 quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G
-     */
+
+    /** cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacksByTag接口获取。如果标签不为空，以标签配置的技术栈规格为准。
+     * quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G */
     public static final class CpuMemoryEnum {
 
-        
-        /**
-         * Enum _1U1G for value: "1U1G"
-         */
+        /** Enum _1U1G for value: "1U1G" */
         public static final CpuMemoryEnum _1U1G = new CpuMemoryEnum("1U1G");
-        
-        /**
-         * Enum _2U4G for value: "2U4G"
-         */
+
+        /** Enum _2U4G for value: "2U4G" */
         public static final CpuMemoryEnum _2U4G = new CpuMemoryEnum("2U4G");
-        
-        /**
-         * Enum _2U8G for value: "2U8G"
-         */
+
+        /** Enum _2U8G for value: "2U8G" */
         public static final CpuMemoryEnum _2U8G = new CpuMemoryEnum("2U8G");
-        
-        /**
-         * Enum _4U8G for value: "4U8G"
-         */
+
+        /** Enum _4U8G for value: "4U8G" */
         public static final CpuMemoryEnum _4U8G = new CpuMemoryEnum("4U8G");
-        
 
         private static final Map<String, CpuMemoryEnum> STATIC_FIELDS = createStaticFields();
 
@@ -172,7 +142,7 @@ public class InstanceParam  {
 
         @JsonCreator
         public static CpuMemoryEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CpuMemoryEnum result = STATIC_FIELDS.get(value);
@@ -183,7 +153,7 @@ public class InstanceParam  {
         }
 
         public static CpuMemoryEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CpuMemoryEnum result = STATIC_FIELDS.get(value);
@@ -207,80 +177,62 @@ public class InstanceParam  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cpu_memory")
-    
+    @JsonProperty(value = "cpu_memory")
+
     private CpuMemoryEnum cpuMemory;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="display_name")
-    
+    @JsonProperty(value = "display_name")
+
     private String displayName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_temporary")
-    
+    @JsonProperty(value = "is_temporary")
+
     private Boolean isTemporary;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="label_tag")
-    
+    @JsonProperty(value = "label_tag")
+
     private String labelTag;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="plugin_enable_list")
-    
+    @JsonProperty(value = "plugin_enable_list")
+
     private List<String> pluginEnableList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="plugin_vars")
-    
+    @JsonProperty(value = "plugin_vars")
+
     private Map<String, String> pluginVars = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port_id")
-    
+    @JsonProperty(value = "port_id")
+
     private String portId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="private_ip")
-    
+    @JsonProperty(value = "private_ip")
+
     private String privateIp;
-    /**
-     * PVC规格 5GB|10GB|20GB
-     */
+
+    /** PVC规格 5GB|10GB|20GB */
     public static final class PvcQuantityEnum {
 
-        
-        /**
-         * Enum _5GB for value: "5GB"
-         */
+        /** Enum _5GB for value: "5GB" */
         public static final PvcQuantityEnum _5GB = new PvcQuantityEnum("5GB");
-        
-        /**
-         * Enum _10GB for value: "10GB"
-         */
+
+        /** Enum _10GB for value: "10GB" */
         public static final PvcQuantityEnum _10GB = new PvcQuantityEnum("10GB");
-        
-        /**
-         * Enum _20GB for value: "20GB"
-         */
+
+        /** Enum _20GB for value: "20GB" */
         public static final PvcQuantityEnum _20GB = new PvcQuantityEnum("20GB");
-        
 
         private static final Map<String, PvcQuantityEnum> STATIC_FIELDS = createStaticFields();
 
@@ -310,7 +262,7 @@ public class InstanceParam  {
 
         @JsonCreator
         public static PvcQuantityEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             PvcQuantityEnum result = STATIC_FIELDS.get(value);
@@ -321,7 +273,7 @@ public class InstanceParam  {
         }
 
         public static PvcQuantityEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             PvcQuantityEnum result = STATIC_FIELDS.get(value);
@@ -345,58 +297,49 @@ public class InstanceParam  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pvc_quantity")
-    
+    @JsonProperty(value = "pvc_quantity")
+
     private PvcQuantityEnum pvcQuantity;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="refresh_interval")
-    
+    @JsonProperty(value = "refresh_interval")
+
     private String refreshInterval;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repository_id")
-    
+    @JsonProperty(value = "repository_id")
+
     private Long repositoryId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stack_id")
-    
+    @JsonProperty(value = "stack_id")
+
     private String stackId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_type")
-    
+    @JsonProperty(value = "task_type")
+
     private String taskType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="token")
-    
+    @JsonProperty(value = "token")
+
     private String token;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_user_domain_name")
-    
+    @JsonProperty(value = "instance_user_domain_name")
+
     private String instanceUserDomainName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_user_name")
-    
+    @JsonProperty(value = "instance_user_name")
+
     private String instanceUserName;
 
     public InstanceParam withAgentId(String agentId) {
@@ -404,13 +347,9 @@ public class InstanceParam  {
         return this;
     }
 
-    
-
-
-    /**
-     * 代理商id，教程活动场景下使用
-     * @return agentId
-     */
+    /** 代理商id，教程活动场景下使用
+     * 
+     * @return agentId */
     public String getAgentId() {
         return agentId;
     }
@@ -419,20 +358,14 @@ public class InstanceParam  {
         this.agentId = agentId;
     }
 
-    
-
     public InstanceParam withArch(ArchEnum arch) {
         this.arch = arch;
         return this;
     }
 
-    
-
-
-    /**
-     * cpu架构 x86|arm
-     * @return arch
-     */
+    /** cpu架构 x86|arm
+     * 
+     * @return arch */
     public ArchEnum getArch() {
         return arch;
     }
@@ -441,20 +374,15 @@ public class InstanceParam  {
         this.arch = arch;
     }
 
-    
-
     public InstanceParam withCpuMemory(CpuMemoryEnum cpuMemory) {
         this.cpuMemory = cpuMemory;
         return this;
     }
 
-    
-
-
-    /**
-     * cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacksByTag接口获取。如果标签不为空，以标签配置的技术栈规格为准。 quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G
-     * @return cpuMemory
-     */
+    /** cpu规格.arm架构支持4U8G，x86架构支持1U1G,2U4G,2U8G 与技术栈配置的规格对应，可通过技术栈管理ListStacksByTag接口获取。如果标签不为空，以标签配置的技术栈规格为准。
+     * quantum技术栈，x86架构cpu规格为2U8G;其他技术栈，x86架构cpu规格为1U1G,2U4G
+     * 
+     * @return cpuMemory */
     public CpuMemoryEnum getCpuMemory() {
         return cpuMemory;
     }
@@ -463,20 +391,14 @@ public class InstanceParam  {
         this.cpuMemory = cpuMemory;
     }
 
-    
-
     public InstanceParam withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述
-     * @return description
-     */
+    /** 描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -485,20 +407,14 @@ public class InstanceParam  {
         this.description = description;
     }
 
-    
-
     public InstanceParam withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例名。 可以输入中文、数字、字母、下划线、点、破折号。长度介于3-100之间
-     * @return displayName
-     */
+    /** 实例名。 可以输入中文、数字、字母、下划线、点、破折号。长度介于3-100之间
+     * 
+     * @return displayName */
     public String getDisplayName() {
         return displayName;
     }
@@ -507,20 +423,14 @@ public class InstanceParam  {
         this.displayName = displayName;
     }
 
-    
-
     public InstanceParam withIsTemporary(Boolean isTemporary) {
         this.isTemporary = isTemporary;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否页面显示（以标签配置为准）
-     * @return isTemporary
-     */
+    /** 是否页面显示（以标签配置为准）
+     * 
+     * @return isTemporary */
     public Boolean getIsTemporary() {
         return isTemporary;
     }
@@ -529,20 +439,14 @@ public class InstanceParam  {
         this.isTemporary = isTemporary;
     }
 
-    
-
     public InstanceParam withLabelTag(String labelTag) {
         this.labelTag = labelTag;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例标签（不同的第三方需要和CloudIDE服务共同设定标签），不传默认为default
-     * @return labelTag
-     */
+    /** 实例标签（不同的第三方需要和CloudIDE服务共同设定标签），不传默认为default
+     * 
+     * @return labelTag */
     public String getLabelTag() {
         return labelTag;
     }
@@ -551,16 +455,13 @@ public class InstanceParam  {
         this.labelTag = labelTag;
     }
 
-    
-
     public InstanceParam withPluginEnableList(List<String> pluginEnableList) {
         this.pluginEnableList = pluginEnableList;
         return this;
     }
 
-    
     public InstanceParam addPluginEnableListItem(String pluginEnableListItem) {
-        if(this.pluginEnableList == null) {
+        if (this.pluginEnableList == null) {
             this.pluginEnableList = new ArrayList<>();
         }
         this.pluginEnableList.add(pluginEnableListItem);
@@ -568,17 +469,16 @@ public class InstanceParam  {
     }
 
     public InstanceParam withPluginEnableList(Consumer<List<String>> pluginEnableListSetter) {
-        if(this.pluginEnableList == null) {
+        if (this.pluginEnableList == null) {
             this.pluginEnableList = new ArrayList<>();
         }
         pluginEnableListSetter.accept(this.pluginEnableList);
         return this;
     }
 
-    /**
-     * 预装插件列表
-     * @return pluginEnableList
-     */
+    /** 预装插件列表
+     * 
+     * @return pluginEnableList */
     public List<String> getPluginEnableList() {
         return pluginEnableList;
     }
@@ -587,17 +487,13 @@ public class InstanceParam  {
         this.pluginEnableList = pluginEnableList;
     }
 
-    
-
     public InstanceParam withPluginVars(Map<String, String> pluginVars) {
         this.pluginVars = pluginVars;
         return this;
     }
 
-    
-
     public InstanceParam putPluginVarsItem(String key, String pluginVarsItem) {
-        if(this.pluginVars == null) {
+        if (this.pluginVars == null) {
             this.pluginVars = new HashMap<>();
         }
         this.pluginVars.put(key, pluginVarsItem);
@@ -605,16 +501,16 @@ public class InstanceParam  {
     }
 
     public InstanceParam withPluginVars(Consumer<Map<String, String>> pluginVarsSetter) {
-        if(this.pluginVars == null) {
+        if (this.pluginVars == null) {
             this.pluginVars = new HashMap<>();
         }
         pluginVarsSetter.accept(this.pluginVars);
         return this;
     }
-    /**
-     * 预装插件参数
-     * @return pluginVars
-     */
+
+    /** 预装插件参数
+     * 
+     * @return pluginVars */
     public Map<String, String> getPluginVars() {
         return pluginVars;
     }
@@ -623,20 +519,14 @@ public class InstanceParam  {
         this.pluginVars = pluginVars;
     }
 
-    
-
     public InstanceParam withPortId(String portId) {
         this.portId = portId;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务器对应的portId，小网连接ecs的场景下使用
-     * @return portId
-     */
+    /** 云服务器对应的portId，小网连接ecs的场景下使用
+     * 
+     * @return portId */
     public String getPortId() {
         return portId;
     }
@@ -645,20 +535,14 @@ public class InstanceParam  {
         this.portId = portId;
     }
 
-    
-
     public InstanceParam withPrivateIp(String privateIp) {
         this.privateIp = privateIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务器ip，小网连接ecs的场景下使用
-     * @return privateIp
-     */
+    /** 云服务器ip，小网连接ecs的场景下使用
+     * 
+     * @return privateIp */
     public String getPrivateIp() {
         return privateIp;
     }
@@ -667,20 +551,14 @@ public class InstanceParam  {
         this.privateIp = privateIp;
     }
 
-    
-
     public InstanceParam withPvcQuantity(PvcQuantityEnum pvcQuantity) {
         this.pvcQuantity = pvcQuantity;
         return this;
     }
 
-    
-
-
-    /**
-     * PVC规格 5GB|10GB|20GB
-     * @return pvcQuantity
-     */
+    /** PVC规格 5GB|10GB|20GB
+     * 
+     * @return pvcQuantity */
     public PvcQuantityEnum getPvcQuantity() {
         return pvcQuantity;
     }
@@ -689,20 +567,15 @@ public class InstanceParam  {
         this.pvcQuantity = pvcQuantity;
     }
 
-    
-
     public InstanceParam withRefreshInterval(String refreshInterval) {
         this.refreshInterval = refreshInterval;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例的生命周期。 arm架构,生命周期只能设置成30，60。x86架构可取值为30，60，240，1440和-1。除-1外，其它值的单位为“分钟”。实例在到达生命周期后，将会被暂停（已保存的数据不会被删除）。-1表示实例不会自动停止。
-     * @return refreshInterval
-     */
+    /** 实例的生命周期。
+     * arm架构,生命周期只能设置成30，60。x86架构可取值为30，60，240，1440和-1。除-1外，其它值的单位为“分钟”。实例在到达生命周期后，将会被暂停（已保存的数据不会被删除）。-1表示实例不会自动停止。
+     * 
+     * @return refreshInterval */
     public String getRefreshInterval() {
         return refreshInterval;
     }
@@ -711,22 +584,14 @@ public class InstanceParam  {
         this.refreshInterval = refreshInterval;
     }
 
-    
-
     public InstanceParam withRepositoryId(Long repositoryId) {
         this.repositoryId = repositoryId;
         return this;
     }
 
-    
-
-
-    /**
-     * 解放号的仓库id，解放号场景下使用
-     * minimum: 1
-     * maximum: -9223372036854775616
-     * @return repositoryId
-     */
+    /** 解放号的仓库id，解放号场景下使用 minimum: 1 maximum: -9223372036854775616
+     * 
+     * @return repositoryId */
     public Long getRepositoryId() {
         return repositoryId;
     }
@@ -735,20 +600,14 @@ public class InstanceParam  {
         this.repositoryId = repositoryId;
     }
 
-    
-
     public InstanceParam withStackId(String stackId) {
         this.stackId = stackId;
         return this;
     }
 
-    
-
-
-    /**
-     * 技术栈ID，通过技术栈管理ListStacksByTag接口获取。
-     * @return stackId
-     */
+    /** 技术栈ID，通过技术栈管理ListStacksByTag接口获取。
+     * 
+     * @return stackId */
     public String getStackId() {
         return stackId;
     }
@@ -757,20 +616,14 @@ public class InstanceParam  {
         this.stackId = stackId;
     }
 
-    
-
     public InstanceParam withTaskType(String taskType) {
         this.taskType = taskType;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务类型，教程活动场景下使用
-     * @return taskType
-     */
+    /** 任务类型，教程活动场景下使用
+     * 
+     * @return taskType */
     public String getTaskType() {
         return taskType;
     }
@@ -779,20 +632,14 @@ public class InstanceParam  {
         this.taskType = taskType;
     }
 
-    
-
     public InstanceParam withToken(String token) {
         this.token = token;
         return this;
     }
 
-    
-
-
-    /**
-     * 解放号的token，解放号场景下使用
-     * @return token
-     */
+    /** 解放号的token，解放号场景下使用
+     * 
+     * @return token */
     public String getToken() {
         return token;
     }
@@ -801,20 +648,14 @@ public class InstanceParam  {
         this.token = token;
     }
 
-    
-
     public InstanceParam withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务器对应的vpcId，小网连接ecs的场景下使用
-     * @return vpcId
-     */
+    /** 云服务器对应的vpcId，小网连接ecs的场景下使用
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -823,20 +664,14 @@ public class InstanceParam  {
         this.vpcId = vpcId;
     }
 
-    
-
     public InstanceParam withInstanceUserDomainName(String instanceUserDomainName) {
         this.instanceUserDomainName = instanceUserDomainName;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例授权用户组织名
-     * @return instanceUserDomainName
-     */
+    /** 实例授权用户组织名
+     * 
+     * @return instanceUserDomainName */
     public String getInstanceUserDomainName() {
         return instanceUserDomainName;
     }
@@ -845,20 +680,14 @@ public class InstanceParam  {
         this.instanceUserDomainName = instanceUserDomainName;
     }
 
-    
-
     public InstanceParam withInstanceUserName(String instanceUserName) {
         this.instanceUserName = instanceUserName;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例授权用户名
-     * @return instanceUserName
-     */
+    /** 实例授权用户名
+     * 
+     * @return instanceUserName */
     public String getInstanceUserName() {
         return instanceUserName;
     }
@@ -866,8 +695,6 @@ public class InstanceParam  {
     public void setInstanceUserName(String instanceUserName) {
         this.instanceUserName = instanceUserName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -878,31 +705,50 @@ public class InstanceParam  {
             return false;
         }
         InstanceParam instanceParam = (InstanceParam) o;
-        return Objects.equals(this.agentId, instanceParam.agentId) &&
-            Objects.equals(this.arch, instanceParam.arch) &&
-            Objects.equals(this.cpuMemory, instanceParam.cpuMemory) &&
-            Objects.equals(this.description, instanceParam.description) &&
-            Objects.equals(this.displayName, instanceParam.displayName) &&
-            Objects.equals(this.isTemporary, instanceParam.isTemporary) &&
-            Objects.equals(this.labelTag, instanceParam.labelTag) &&
-            Objects.equals(this.pluginEnableList, instanceParam.pluginEnableList) &&
-            Objects.equals(this.pluginVars, instanceParam.pluginVars) &&
-            Objects.equals(this.portId, instanceParam.portId) &&
-            Objects.equals(this.privateIp, instanceParam.privateIp) &&
-            Objects.equals(this.pvcQuantity, instanceParam.pvcQuantity) &&
-            Objects.equals(this.refreshInterval, instanceParam.refreshInterval) &&
-            Objects.equals(this.repositoryId, instanceParam.repositoryId) &&
-            Objects.equals(this.stackId, instanceParam.stackId) &&
-            Objects.equals(this.taskType, instanceParam.taskType) &&
-            Objects.equals(this.token, instanceParam.token) &&
-            Objects.equals(this.vpcId, instanceParam.vpcId) &&
-            Objects.equals(this.instanceUserDomainName, instanceParam.instanceUserDomainName) &&
-            Objects.equals(this.instanceUserName, instanceParam.instanceUserName);
+        return Objects.equals(this.agentId, instanceParam.agentId) && Objects.equals(this.arch, instanceParam.arch)
+            && Objects.equals(this.cpuMemory, instanceParam.cpuMemory)
+            && Objects.equals(this.description, instanceParam.description)
+            && Objects.equals(this.displayName, instanceParam.displayName)
+            && Objects.equals(this.isTemporary, instanceParam.isTemporary)
+            && Objects.equals(this.labelTag, instanceParam.labelTag)
+            && Objects.equals(this.pluginEnableList, instanceParam.pluginEnableList)
+            && Objects.equals(this.pluginVars, instanceParam.pluginVars)
+            && Objects.equals(this.portId, instanceParam.portId)
+            && Objects.equals(this.privateIp, instanceParam.privateIp)
+            && Objects.equals(this.pvcQuantity, instanceParam.pvcQuantity)
+            && Objects.equals(this.refreshInterval, instanceParam.refreshInterval)
+            && Objects.equals(this.repositoryId, instanceParam.repositoryId)
+            && Objects.equals(this.stackId, instanceParam.stackId)
+            && Objects.equals(this.taskType, instanceParam.taskType) && Objects.equals(this.token, instanceParam.token)
+            && Objects.equals(this.vpcId, instanceParam.vpcId)
+            && Objects.equals(this.instanceUserDomainName, instanceParam.instanceUserDomainName)
+            && Objects.equals(this.instanceUserName, instanceParam.instanceUserName);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(agentId, arch, cpuMemory, description, displayName, isTemporary, labelTag, pluginEnableList, pluginVars, portId, privateIp, pvcQuantity, refreshInterval, repositoryId, stackId, taskType, token, vpcId, instanceUserDomainName, instanceUserName);
+        return Objects.hash(agentId,
+            arch,
+            cpuMemory,
+            description,
+            displayName,
+            isTemporary,
+            labelTag,
+            pluginEnableList,
+            pluginVars,
+            portId,
+            privateIp,
+            pvcQuantity,
+            refreshInterval,
+            repositoryId,
+            stackId,
+            taskType,
+            token,
+            vpcId,
+            instanceUserDomainName,
+            instanceUserName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -930,16 +776,13 @@ public class InstanceParam  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

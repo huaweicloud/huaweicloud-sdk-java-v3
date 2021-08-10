@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CheckSubcustomerUserReq
- */
-public class CheckSubcustomerUserReq  {
-
-
+/** CheckSubcustomerUserReq */
+public class CheckSubcustomerUserReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="search_type")
-    
+    @JsonProperty(value = "search_type")
+
     private String searchType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="search_value")
-    
+    @JsonProperty(value = "search_value")
+
     private String searchValue;
 
     public CheckSubcustomerUserReq withSearchType(String searchType) {
@@ -34,13 +23,9 @@ public class CheckSubcustomerUserReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 该字段内容可填为：“email”、“mobile”或“name”。
-     * @return searchType
-     */
+    /** 该字段内容可填为：“email”、“mobile”或“name”。
+     * 
+     * @return searchType */
     public String getSearchType() {
         return searchType;
     }
@@ -49,20 +34,15 @@ public class CheckSubcustomerUserReq  {
         this.searchType = searchType;
     }
 
-    
-
     public CheckSubcustomerUserReq withSearchValue(String searchValue) {
         this.searchValue = searchValue;
         return this;
     }
 
-    
-
-
-    /**
-     * 手机号、邮箱或登录名称。 手机号需符合正则表达式 ^\\d{4}-\\d+$；包括国家码，以00开头，格式：00XX-XXXXXXXX。目前手机号仅支持以86开头的国家码。name：符合正则表达式^([a-zA-Z-]([a-zA-Z0-9_-]){4,31})$，长度5-32；不能以“op_”或“shadow_”开头且不能全为数字，且只能以字母（不区分大小写）或者-开头。
-     * @return searchValue
-     */
+    /** 手机号、邮箱或登录名称。 手机号需符合正则表达式
+     * ^\\d{4}-\\d+$；包括国家码，以00开头，格式：00XX-XXXXXXXX。目前手机号仅支持以86开头的国家码。name：符合正则表达式^([a-zA-Z-]([a-zA-Z0-9_-]){4,31})$，长度5-32；不能以“op_”或“shadow_”开头且不能全为数字，且只能以字母（不区分大小写）或者-开头。
+     * 
+     * @return searchValue */
     public String getSearchValue() {
         return searchValue;
     }
@@ -70,8 +50,6 @@ public class CheckSubcustomerUserReq  {
     public void setSearchValue(String searchValue) {
         this.searchValue = searchValue;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +60,15 @@ public class CheckSubcustomerUserReq  {
             return false;
         }
         CheckSubcustomerUserReq checkSubcustomerUserReq = (CheckSubcustomerUserReq) o;
-        return Objects.equals(this.searchType, checkSubcustomerUserReq.searchType) &&
-            Objects.equals(this.searchValue, checkSubcustomerUserReq.searchValue);
+        return Objects.equals(this.searchType, checkSubcustomerUserReq.searchType)
+            && Objects.equals(this.searchValue, checkSubcustomerUserReq.searchValue);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(searchType, searchValue);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +78,13 @@ public class CheckSubcustomerUserReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

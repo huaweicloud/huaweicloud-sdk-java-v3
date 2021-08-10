@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.QueryDataGuardMonitorResponse;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 容灾任务监控数据响应体
- */
-public class QueryDataGuardMonitorAndChartResp  {
-
-
+/** 容灾任务监控数据响应体 */
+public class QueryDataGuardMonitorAndChartResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_guard_minitor")
-    
+    @JsonProperty(value = "data_guard_minitor")
+
     private QueryDataGuardMonitorResponse dataGuardMinitor;
 
     public QueryDataGuardMonitorAndChartResp withId(String id) {
@@ -35,13 +24,9 @@ public class QueryDataGuardMonitorAndChartResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务id
-     * @return id
-     */
+    /** 任务id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -50,27 +35,24 @@ public class QueryDataGuardMonitorAndChartResp  {
         this.id = id;
     }
 
-    
-
     public QueryDataGuardMonitorAndChartResp withDataGuardMinitor(QueryDataGuardMonitorResponse dataGuardMinitor) {
         this.dataGuardMinitor = dataGuardMinitor;
         return this;
     }
 
-    public QueryDataGuardMonitorAndChartResp withDataGuardMinitor(Consumer<QueryDataGuardMonitorResponse> dataGuardMinitorSetter) {
-        if(this.dataGuardMinitor == null ){
+    public QueryDataGuardMonitorAndChartResp withDataGuardMinitor(
+        Consumer<QueryDataGuardMonitorResponse> dataGuardMinitorSetter) {
+        if (this.dataGuardMinitor == null) {
             this.dataGuardMinitor = new QueryDataGuardMonitorResponse();
             dataGuardMinitorSetter.accept(this.dataGuardMinitor);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get dataGuardMinitor
-     * @return dataGuardMinitor
-     */
+    /** Get dataGuardMinitor
+     * 
+     * @return dataGuardMinitor */
     public QueryDataGuardMonitorResponse getDataGuardMinitor() {
         return dataGuardMinitor;
     }
@@ -78,8 +60,6 @@ public class QueryDataGuardMonitorAndChartResp  {
     public void setDataGuardMinitor(QueryDataGuardMonitorResponse dataGuardMinitor) {
         this.dataGuardMinitor = dataGuardMinitor;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +70,15 @@ public class QueryDataGuardMonitorAndChartResp  {
             return false;
         }
         QueryDataGuardMonitorAndChartResp queryDataGuardMonitorAndChartResp = (QueryDataGuardMonitorAndChartResp) o;
-        return Objects.equals(this.id, queryDataGuardMonitorAndChartResp.id) &&
-            Objects.equals(this.dataGuardMinitor, queryDataGuardMonitorAndChartResp.dataGuardMinitor);
+        return Objects.equals(this.id, queryDataGuardMonitorAndChartResp.id)
+            && Objects.equals(this.dataGuardMinitor, queryDataGuardMonitorAndChartResp.dataGuardMinitor);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, dataGuardMinitor);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +88,13 @@ public class QueryDataGuardMonitorAndChartResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

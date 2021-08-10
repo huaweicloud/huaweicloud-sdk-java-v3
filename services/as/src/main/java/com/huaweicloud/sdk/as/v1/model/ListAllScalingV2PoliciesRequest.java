@@ -1,53 +1,31 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListAllScalingV2PoliciesRequest  {
-
-
+/** Request Object */
+public class ListAllScalingV2PoliciesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_resource_id")
-    
+    @JsonProperty(value = "scaling_resource_id")
+
     private String scalingResourceId;
-    /**
-     * 伸缩资源类型：伸缩组：SCALING_GROUP；带宽：BANDWIDTH
-     */
+
+    /** 伸缩资源类型：伸缩组：SCALING_GROUP；带宽：BANDWIDTH */
     public static final class ScalingResourceTypeEnum {
 
-        
-        /**
-         * Enum SCALING_GROUP for value: "SCALING_GROUP"
-         */
+        /** Enum SCALING_GROUP for value: "SCALING_GROUP" */
         public static final ScalingResourceTypeEnum SCALING_GROUP = new ScalingResourceTypeEnum("SCALING_GROUP");
-        
-        /**
-         * Enum BANDWIDTH for value: "BANDWIDTH"
-         */
+
+        /** Enum BANDWIDTH for value: "BANDWIDTH" */
         public static final ScalingResourceTypeEnum BANDWIDTH = new ScalingResourceTypeEnum("BANDWIDTH");
-        
 
         private static final Map<String, ScalingResourceTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,7 +54,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
         @JsonCreator
         public static ScalingResourceTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ScalingResourceTypeEnum result = STATIC_FIELDS.get(value);
@@ -87,7 +65,7 @@ public class ListAllScalingV2PoliciesRequest  {
         }
 
         public static ScalingResourceTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ScalingResourceTypeEnum result = STATIC_FIELDS.get(value);
@@ -111,38 +89,27 @@ public class ListAllScalingV2PoliciesRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_resource_type")
-    
+    @JsonProperty(value = "scaling_resource_type")
+
     private ScalingResourceTypeEnum scalingResourceType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_policy_name")
-    
+    @JsonProperty(value = "scaling_policy_name")
+
     private String scalingPolicyName;
-    /**
-     * 策略类型。  告警策略：ALARM ,定时策略：SCHEDULED, 周期策略：RECURRENCE
-     */
+
+    /** 策略类型。 告警策略：ALARM ,定时策略：SCHEDULED, 周期策略：RECURRENCE */
     public static final class ScalingPolicyTypeEnum {
 
-        
-        /**
-         * Enum ALARM for value: "ALARM"
-         */
+        /** Enum ALARM for value: "ALARM" */
         public static final ScalingPolicyTypeEnum ALARM = new ScalingPolicyTypeEnum("ALARM");
-        
-        /**
-         * Enum SCHEDULED for value: "SCHEDULED"
-         */
+
+        /** Enum SCHEDULED for value: "SCHEDULED" */
         public static final ScalingPolicyTypeEnum SCHEDULED = new ScalingPolicyTypeEnum("SCHEDULED");
-        
-        /**
-         * Enum RECURRENCE for value: "RECURRENCE"
-         */
+
+        /** Enum RECURRENCE for value: "RECURRENCE" */
         public static final ScalingPolicyTypeEnum RECURRENCE = new ScalingPolicyTypeEnum("RECURRENCE");
-        
 
         private static final Map<String, ScalingPolicyTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -172,7 +139,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
         @JsonCreator
         public static ScalingPolicyTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ScalingPolicyTypeEnum result = STATIC_FIELDS.get(value);
@@ -183,7 +150,7 @@ public class ListAllScalingV2PoliciesRequest  {
         }
 
         public static ScalingPolicyTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ScalingPolicyTypeEnum result = STATIC_FIELDS.get(value);
@@ -207,50 +174,37 @@ public class ListAllScalingV2PoliciesRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_policy_type")
-    
+    @JsonProperty(value = "scaling_policy_type")
+
     private ScalingPolicyTypeEnum scalingPolicyType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_policy_id")
-    
+    @JsonProperty(value = "scaling_policy_id")
+
     private String scalingPolicyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_number")
-    
+    @JsonProperty(value = "start_number")
+
     private Integer startNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
-    /**
-     * 排序方法POLICY_NAME：根据策略名称排序;TRIGGER_CONDITION：根据触发条件排序，如升序下，告警策略最先，其余根据最近一次触发时间升序排列;CREATE_TIME：根据策略的创建时间排序。
-     */
+
+    /** 排序方法POLICY_NAME：根据策略名称排序;TRIGGER_CONDITION：根据触发条件排序，如升序下，告警策略最先，其余根据最近一次触发时间升序排列;CREATE_TIME：根据策略的创建时间排序。 */
     public static final class SortByEnum {
 
-        
-        /**
-         * Enum POLICY_NAME for value: "POLICY_NAME"
-         */
+        /** Enum POLICY_NAME for value: "POLICY_NAME" */
         public static final SortByEnum POLICY_NAME = new SortByEnum("POLICY_NAME");
-        
-        /**
-         * Enum TRIGGER_CONDITION for value: "TRIGGER_CONDITION"
-         */
+
+        /** Enum TRIGGER_CONDITION for value: "TRIGGER_CONDITION" */
         public static final SortByEnum TRIGGER_CONDITION = new SortByEnum("TRIGGER_CONDITION");
-        
-        /**
-         * Enum CREATE_TIME for value: "CREATE_TIME"
-         */
+
+        /** Enum CREATE_TIME for value: "CREATE_TIME" */
         public static final SortByEnum CREATE_TIME = new SortByEnum("CREATE_TIME");
-        
 
         private static final Map<String, SortByEnum> STATIC_FIELDS = createStaticFields();
 
@@ -280,7 +234,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
         @JsonCreator
         public static SortByEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SortByEnum result = STATIC_FIELDS.get(value);
@@ -291,7 +245,7 @@ public class ListAllScalingV2PoliciesRequest  {
         }
 
         public static SortByEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SortByEnum result = STATIC_FIELDS.get(value);
@@ -315,27 +269,19 @@ public class ListAllScalingV2PoliciesRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sort_by")
-    
+    @JsonProperty(value = "sort_by")
+
     private SortByEnum sortBy;
-    /**
-     * 排序顺序ASC：升序；DESC：降序
-     */
+
+    /** 排序顺序ASC：升序；DESC：降序 */
     public static final class OrderEnum {
 
-        
-        /**
-         * Enum ASC for value: "ASC"
-         */
+        /** Enum ASC for value: "ASC" */
         public static final OrderEnum ASC = new OrderEnum("ASC");
-        
-        /**
-         * Enum DESC for value: "DESC"
-         */
+
+        /** Enum DESC for value: "DESC" */
         public static final OrderEnum DESC = new OrderEnum("DESC");
-        
 
         private static final Map<String, OrderEnum> STATIC_FIELDS = createStaticFields();
 
@@ -364,7 +310,7 @@ public class ListAllScalingV2PoliciesRequest  {
 
         @JsonCreator
         public static OrderEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OrderEnum result = STATIC_FIELDS.get(value);
@@ -375,7 +321,7 @@ public class ListAllScalingV2PoliciesRequest  {
         }
 
         public static OrderEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OrderEnum result = STATIC_FIELDS.get(value);
@@ -399,16 +345,14 @@ public class ListAllScalingV2PoliciesRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order")
-    
+    @JsonProperty(value = "order")
+
     private OrderEnum order;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public ListAllScalingV2PoliciesRequest withScalingResourceId(String scalingResourceId) {
@@ -416,13 +360,9 @@ public class ListAllScalingV2PoliciesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩组ID。
-     * @return scalingResourceId
-     */
+    /** 伸缩组ID。
+     * 
+     * @return scalingResourceId */
     public String getScalingResourceId() {
         return scalingResourceId;
     }
@@ -431,20 +371,14 @@ public class ListAllScalingV2PoliciesRequest  {
         this.scalingResourceId = scalingResourceId;
     }
 
-    
-
     public ListAllScalingV2PoliciesRequest withScalingResourceType(ScalingResourceTypeEnum scalingResourceType) {
         this.scalingResourceType = scalingResourceType;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩资源类型：伸缩组：SCALING_GROUP；带宽：BANDWIDTH
-     * @return scalingResourceType
-     */
+    /** 伸缩资源类型：伸缩组：SCALING_GROUP；带宽：BANDWIDTH
+     * 
+     * @return scalingResourceType */
     public ScalingResourceTypeEnum getScalingResourceType() {
         return scalingResourceType;
     }
@@ -453,20 +387,14 @@ public class ListAllScalingV2PoliciesRequest  {
         this.scalingResourceType = scalingResourceType;
     }
 
-    
-
     public ListAllScalingV2PoliciesRequest withScalingPolicyName(String scalingPolicyName) {
         this.scalingPolicyName = scalingPolicyName;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩策略名称。
-     * @return scalingPolicyName
-     */
+    /** 伸缩策略名称。
+     * 
+     * @return scalingPolicyName */
     public String getScalingPolicyName() {
         return scalingPolicyName;
     }
@@ -475,20 +403,14 @@ public class ListAllScalingV2PoliciesRequest  {
         this.scalingPolicyName = scalingPolicyName;
     }
 
-    
-
     public ListAllScalingV2PoliciesRequest withScalingPolicyType(ScalingPolicyTypeEnum scalingPolicyType) {
         this.scalingPolicyType = scalingPolicyType;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略类型。  告警策略：ALARM ,定时策略：SCHEDULED, 周期策略：RECURRENCE
-     * @return scalingPolicyType
-     */
+    /** 策略类型。 告警策略：ALARM ,定时策略：SCHEDULED, 周期策略：RECURRENCE
+     * 
+     * @return scalingPolicyType */
     public ScalingPolicyTypeEnum getScalingPolicyType() {
         return scalingPolicyType;
     }
@@ -497,20 +419,14 @@ public class ListAllScalingV2PoliciesRequest  {
         this.scalingPolicyType = scalingPolicyType;
     }
 
-    
-
     public ListAllScalingV2PoliciesRequest withScalingPolicyId(String scalingPolicyId) {
         this.scalingPolicyId = scalingPolicyId;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩策略ID。
-     * @return scalingPolicyId
-     */
+    /** 伸缩策略ID。
+     * 
+     * @return scalingPolicyId */
     public String getScalingPolicyId() {
         return scalingPolicyId;
     }
@@ -519,20 +435,14 @@ public class ListAllScalingV2PoliciesRequest  {
         this.scalingPolicyId = scalingPolicyId;
     }
 
-    
-
     public ListAllScalingV2PoliciesRequest withStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询的起始行号，默认为0。
-     * @return startNumber
-     */
+    /** 查询的起始行号，默认为0。
+     * 
+     * @return startNumber */
     public Integer getStartNumber() {
         return startNumber;
     }
@@ -541,20 +451,14 @@ public class ListAllScalingV2PoliciesRequest  {
         this.startNumber = startNumber;
     }
 
-    
-
     public ListAllScalingV2PoliciesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询记录数，默认20，最大100。
-     * @return limit
-     */
+    /** 查询记录数，默认20，最大100。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -563,20 +467,14 @@ public class ListAllScalingV2PoliciesRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListAllScalingV2PoliciesRequest withSortBy(SortByEnum sortBy) {
         this.sortBy = sortBy;
         return this;
     }
 
-    
-
-
-    /**
-     * 排序方法POLICY_NAME：根据策略名称排序;TRIGGER_CONDITION：根据触发条件排序，如升序下，告警策略最先，其余根据最近一次触发时间升序排列;CREATE_TIME：根据策略的创建时间排序。
-     * @return sortBy
-     */
+    /** 排序方法POLICY_NAME：根据策略名称排序;TRIGGER_CONDITION：根据触发条件排序，如升序下，告警策略最先，其余根据最近一次触发时间升序排列;CREATE_TIME：根据策略的创建时间排序。
+     * 
+     * @return sortBy */
     public SortByEnum getSortBy() {
         return sortBy;
     }
@@ -585,20 +483,14 @@ public class ListAllScalingV2PoliciesRequest  {
         this.sortBy = sortBy;
     }
 
-    
-
     public ListAllScalingV2PoliciesRequest withOrder(OrderEnum order) {
         this.order = order;
         return this;
     }
 
-    
-
-
-    /**
-     * 排序顺序ASC：升序；DESC：降序
-     * @return order
-     */
+    /** 排序顺序ASC：升序；DESC：降序
+     * 
+     * @return order */
     public OrderEnum getOrder() {
         return order;
     }
@@ -607,20 +499,14 @@ public class ListAllScalingV2PoliciesRequest  {
         this.order = order;
     }
 
-    
-
     public ListAllScalingV2PoliciesRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID，当传入all_granted_eps时表示查询该用户所有授权的企业项目下的伸缩组列表。
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID，当传入all_granted_eps时表示查询该用户所有授权的企业项目下的伸缩组列表。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -628,8 +514,6 @@ public class ListAllScalingV2PoliciesRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -640,21 +524,32 @@ public class ListAllScalingV2PoliciesRequest  {
             return false;
         }
         ListAllScalingV2PoliciesRequest listAllScalingV2PoliciesRequest = (ListAllScalingV2PoliciesRequest) o;
-        return Objects.equals(this.scalingResourceId, listAllScalingV2PoliciesRequest.scalingResourceId) &&
-            Objects.equals(this.scalingResourceType, listAllScalingV2PoliciesRequest.scalingResourceType) &&
-            Objects.equals(this.scalingPolicyName, listAllScalingV2PoliciesRequest.scalingPolicyName) &&
-            Objects.equals(this.scalingPolicyType, listAllScalingV2PoliciesRequest.scalingPolicyType) &&
-            Objects.equals(this.scalingPolicyId, listAllScalingV2PoliciesRequest.scalingPolicyId) &&
-            Objects.equals(this.startNumber, listAllScalingV2PoliciesRequest.startNumber) &&
-            Objects.equals(this.limit, listAllScalingV2PoliciesRequest.limit) &&
-            Objects.equals(this.sortBy, listAllScalingV2PoliciesRequest.sortBy) &&
-            Objects.equals(this.order, listAllScalingV2PoliciesRequest.order) &&
-            Objects.equals(this.enterpriseProjectId, listAllScalingV2PoliciesRequest.enterpriseProjectId);
+        return Objects.equals(this.scalingResourceId, listAllScalingV2PoliciesRequest.scalingResourceId)
+            && Objects.equals(this.scalingResourceType, listAllScalingV2PoliciesRequest.scalingResourceType)
+            && Objects.equals(this.scalingPolicyName, listAllScalingV2PoliciesRequest.scalingPolicyName)
+            && Objects.equals(this.scalingPolicyType, listAllScalingV2PoliciesRequest.scalingPolicyType)
+            && Objects.equals(this.scalingPolicyId, listAllScalingV2PoliciesRequest.scalingPolicyId)
+            && Objects.equals(this.startNumber, listAllScalingV2PoliciesRequest.startNumber)
+            && Objects.equals(this.limit, listAllScalingV2PoliciesRequest.limit)
+            && Objects.equals(this.sortBy, listAllScalingV2PoliciesRequest.sortBy)
+            && Objects.equals(this.order, listAllScalingV2PoliciesRequest.order)
+            && Objects.equals(this.enterpriseProjectId, listAllScalingV2PoliciesRequest.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(scalingResourceId, scalingResourceType, scalingPolicyName, scalingPolicyType, scalingPolicyId, startNumber, limit, sortBy, order, enterpriseProjectId);
+        return Objects.hash(scalingResourceId,
+            scalingResourceType,
+            scalingPolicyName,
+            scalingPolicyType,
+            scalingPolicyId,
+            startNumber,
+            limit,
+            sortBy,
+            order,
+            enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -672,16 +567,13 @@ public class ListAllScalingV2PoliciesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

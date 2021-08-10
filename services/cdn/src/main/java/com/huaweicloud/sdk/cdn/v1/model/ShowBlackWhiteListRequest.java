@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowBlackWhiteListRequest  {
-
-
+/** Request Object */
+public class ShowBlackWhiteListRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
     public ShowBlackWhiteListRequest withDomainId(String domainId) {
@@ -28,13 +18,9 @@ public class ShowBlackWhiteListRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 需要查询IP黑白名单的域名id。获取方法请参见查询加速域名。
-     * @return domainId
-     */
+    /** 需要查询IP黑白名单的域名id。获取方法请参见查询加速域名。
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -42,8 +28,6 @@ public class ShowBlackWhiteListRequest  {
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class ShowBlackWhiteListRequest  {
         ShowBlackWhiteListRequest showBlackWhiteListRequest = (ShowBlackWhiteListRequest) o;
         return Objects.equals(this.domainId, showBlackWhiteListRequest.domainId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domainId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class ShowBlackWhiteListRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

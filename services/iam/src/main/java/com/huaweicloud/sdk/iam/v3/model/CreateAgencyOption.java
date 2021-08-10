@@ -1,71 +1,53 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 
  */
-public class CreateAgencyOption  {
-
-
+public class CreateAgencyOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trust_domain_id")
-    
+    @JsonProperty(value = "trust_domain_id")
+
     private String trustDomainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trust_domain_name")
-    
+    @JsonProperty(value = "trust_domain_name")
+
     private String trustDomainName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
-    /**
-     * 委托的期限。取值为“FOREVER\"表示委托的期限为永久，取值为\"ONEDAY\"表示委托的期限为一天。不填写该参数则默认为\"null\"也表示委托的期限为永久。
-     */
+
+    /** 委托的期限。取值为“FOREVER\"表示委托的期限为永久，取值为\"ONEDAY\"表示委托的期限为一天。不填写该参数则默认为\"null\"也表示委托的期限为永久。 */
     public static final class DurationEnum {
 
-        
-        /**
-         * Enum FOREVER for value: "FOREVER"
-         */
+        /** Enum FOREVER for value: "FOREVER" */
         public static final DurationEnum FOREVER = new DurationEnum("FOREVER");
-        
-        /**
-         * Enum ONEDAY for value: "ONEDAY"
-         */
+
+        /** Enum ONEDAY for value: "ONEDAY" */
         public static final DurationEnum ONEDAY = new DurationEnum("ONEDAY");
-        
 
         private static final Map<String, DurationEnum> STATIC_FIELDS = createStaticFields();
 
@@ -94,7 +76,7 @@ public class CreateAgencyOption  {
 
         @JsonCreator
         public static DurationEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DurationEnum result = STATIC_FIELDS.get(value);
@@ -105,7 +87,7 @@ public class CreateAgencyOption  {
         }
 
         public static DurationEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DurationEnum result = STATIC_FIELDS.get(value);
@@ -129,10 +111,9 @@ public class CreateAgencyOption  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="duration")
-    
+    @JsonProperty(value = "duration")
+
     private DurationEnum duration;
 
     public CreateAgencyOption withName(String name) {
@@ -140,13 +121,9 @@ public class CreateAgencyOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 委托名，长度不大于64位。
-     * @return name
-     */
+    /** 委托名，长度不大于64位。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -155,20 +132,14 @@ public class CreateAgencyOption  {
         this.name = name;
     }
 
-    
-
     public CreateAgencyOption withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
     }
 
-    
-
-
-    /**
-     * 委托方账号ID。
-     * @return domainId
-     */
+    /** 委托方账号ID。
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -177,20 +148,14 @@ public class CreateAgencyOption  {
         this.domainId = domainId;
     }
 
-    
-
     public CreateAgencyOption withTrustDomainId(String trustDomainId) {
         this.trustDomainId = trustDomainId;
         return this;
     }
 
-    
-
-
-    /**
-     * 被委托方账号ID。trust_domain_id和trust_domain_name至少填写一个，若都填写优先校验trust_domain_name。
-     * @return trustDomainId
-     */
+    /** 被委托方账号ID。trust_domain_id和trust_domain_name至少填写一个，若都填写优先校验trust_domain_name。
+     * 
+     * @return trustDomainId */
     public String getTrustDomainId() {
         return trustDomainId;
     }
@@ -199,20 +164,14 @@ public class CreateAgencyOption  {
         this.trustDomainId = trustDomainId;
     }
 
-    
-
     public CreateAgencyOption withTrustDomainName(String trustDomainName) {
         this.trustDomainName = trustDomainName;
         return this;
     }
 
-    
-
-
-    /**
-     * 被委托方账号名。trust_domain_id和trust_domain_name至少填写一个，若都填写优先校验trust_domain_name。
-     * @return trustDomainName
-     */
+    /** 被委托方账号名。trust_domain_id和trust_domain_name至少填写一个，若都填写优先校验trust_domain_name。
+     * 
+     * @return trustDomainName */
     public String getTrustDomainName() {
         return trustDomainName;
     }
@@ -221,20 +180,14 @@ public class CreateAgencyOption  {
         this.trustDomainName = trustDomainName;
     }
 
-    
-
     public CreateAgencyOption withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 委托描述信息，长度不大于255位。
-     * @return description
-     */
+    /** 委托描述信息，长度不大于255位。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -243,20 +196,14 @@ public class CreateAgencyOption  {
         this.description = description;
     }
 
-    
-
     public CreateAgencyOption withDuration(DurationEnum duration) {
         this.duration = duration;
         return this;
     }
 
-    
-
-
-    /**
-     * 委托的期限。取值为“FOREVER\"表示委托的期限为永久，取值为\"ONEDAY\"表示委托的期限为一天。不填写该参数则默认为\"null\"也表示委托的期限为永久。
-     * @return duration
-     */
+    /** 委托的期限。取值为“FOREVER\"表示委托的期限为永久，取值为\"ONEDAY\"表示委托的期限为一天。不填写该参数则默认为\"null\"也表示委托的期限为永久。
+     * 
+     * @return duration */
     public DurationEnum getDuration() {
         return duration;
     }
@@ -264,8 +211,6 @@ public class CreateAgencyOption  {
     public void setDuration(DurationEnum duration) {
         this.duration = duration;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -276,17 +221,19 @@ public class CreateAgencyOption  {
             return false;
         }
         CreateAgencyOption createAgencyOption = (CreateAgencyOption) o;
-        return Objects.equals(this.name, createAgencyOption.name) &&
-            Objects.equals(this.domainId, createAgencyOption.domainId) &&
-            Objects.equals(this.trustDomainId, createAgencyOption.trustDomainId) &&
-            Objects.equals(this.trustDomainName, createAgencyOption.trustDomainName) &&
-            Objects.equals(this.description, createAgencyOption.description) &&
-            Objects.equals(this.duration, createAgencyOption.duration);
+        return Objects.equals(this.name, createAgencyOption.name)
+            && Objects.equals(this.domainId, createAgencyOption.domainId)
+            && Objects.equals(this.trustDomainId, createAgencyOption.trustDomainId)
+            && Objects.equals(this.trustDomainName, createAgencyOption.trustDomainName)
+            && Objects.equals(this.description, createAgencyOption.description)
+            && Objects.equals(this.duration, createAgencyOption.duration);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, domainId, trustDomainId, trustDomainName, description, duration);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -300,16 +247,13 @@ public class CreateAgencyOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

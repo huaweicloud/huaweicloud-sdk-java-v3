@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListDbUsersRequest  {
-
-
+/** Request Object */
+public class ListDbUsersRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page")
-    
+    @JsonProperty(value = "page")
+
     private Integer page;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
     public ListDbUsersRequest withXLanguage(String xLanguage) {
@@ -46,15 +33,11 @@ public class ListDbUsersRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -63,20 +46,14 @@ public class ListDbUsersRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListDbUsersRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -85,20 +62,14 @@ public class ListDbUsersRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListDbUsersRequest withPage(Integer page) {
         this.page = page;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页页码，从1开始。
-     * @return page
-     */
+    /** 分页页码，从1开始。
+     * 
+     * @return page */
     public Integer getPage() {
         return page;
     }
@@ -107,20 +78,14 @@ public class ListDbUsersRequest  {
         this.page = page;
     }
 
-    
-
     public ListDbUsersRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页数据条数。取值范围[1, 100]。
-     * @return limit
-     */
+    /** 每页数据条数。取值范围[1, 100]。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -128,8 +93,6 @@ public class ListDbUsersRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -140,15 +103,17 @@ public class ListDbUsersRequest  {
             return false;
         }
         ListDbUsersRequest listDbUsersRequest = (ListDbUsersRequest) o;
-        return Objects.equals(this.xLanguage, listDbUsersRequest.xLanguage) &&
-            Objects.equals(this.instanceId, listDbUsersRequest.instanceId) &&
-            Objects.equals(this.page, listDbUsersRequest.page) &&
-            Objects.equals(this.limit, listDbUsersRequest.limit);
+        return Objects.equals(this.xLanguage, listDbUsersRequest.xLanguage)
+            && Objects.equals(this.instanceId, listDbUsersRequest.instanceId)
+            && Objects.equals(this.page, listDbUsersRequest.page)
+            && Objects.equals(this.limit, listDbUsersRequest.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, page, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -160,16 +125,13 @@ public class ListDbUsersRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

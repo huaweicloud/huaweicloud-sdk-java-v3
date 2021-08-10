@@ -1,32 +1,23 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class NeutronUpdateSecurityGroupOption  {
-
-
+public class NeutronUpdateSecurityGroupOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public NeutronUpdateSecurityGroupOption withDescription(String description) {
@@ -34,13 +25,9 @@ public class NeutronUpdateSecurityGroupOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：安全组描述 取值范围：0-255个字符
-     * @return description
-     */
+    /** 功能说明：安全组描述 取值范围：0-255个字符
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -49,20 +36,14 @@ public class NeutronUpdateSecurityGroupOption  {
         this.description = description;
     }
 
-    
-
     public NeutronUpdateSecurityGroupOption withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：安全组名称 取值范围：0-255个字符 约束：不允许为“default”
-     * @return name
-     */
+    /** 功能说明：安全组名称 取值范围：0-255个字符 约束：不允许为“default”
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -70,8 +51,6 @@ public class NeutronUpdateSecurityGroupOption  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +61,15 @@ public class NeutronUpdateSecurityGroupOption  {
             return false;
         }
         NeutronUpdateSecurityGroupOption neutronUpdateSecurityGroupOption = (NeutronUpdateSecurityGroupOption) o;
-        return Objects.equals(this.description, neutronUpdateSecurityGroupOption.description) &&
-            Objects.equals(this.name, neutronUpdateSecurityGroupOption.name);
+        return Objects.equals(this.description, neutronUpdateSecurityGroupOption.description)
+            && Objects.equals(this.name, neutronUpdateSecurityGroupOption.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(description, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +79,13 @@ public class NeutronUpdateSecurityGroupOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

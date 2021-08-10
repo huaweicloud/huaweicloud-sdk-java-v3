@@ -1,48 +1,34 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * QueryProjectTagItem
- */
-public class QueryProjectTagItem  {
-
-
+/** QueryProjectTagItem */
+public class QueryProjectTagItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="values")
-    
+    @JsonProperty(value = "values")
+
     private List<String> values = null;
-    
+
     public QueryProjectTagItem withKey(String key) {
         this.key = key;
         return this;
     }
 
-    
-
-
-    /**
-     * 标签键。最大长度36个unicode字符，key不能为空。 字符集：0-9，A-Z，a-z，“_”，“-”，中文。
-     * @return key
-     */
+    /** 标签键。最大长度36个unicode字符，key不能为空。 字符集：0-9，A-Z，a-z，“_”，“-”，中文。
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -51,16 +37,13 @@ public class QueryProjectTagItem  {
         this.key = key;
     }
 
-    
-
     public QueryProjectTagItem withValues(List<String> values) {
         this.values = values;
         return this;
     }
 
-    
     public QueryProjectTagItem addValuesItem(String valuesItem) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new ArrayList<>();
         }
         this.values.add(valuesItem);
@@ -68,17 +51,16 @@ public class QueryProjectTagItem  {
     }
 
     public QueryProjectTagItem withValues(Consumer<List<String>> valuesSetter) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new ArrayList<>();
         }
         valuesSetter.accept(this.values);
         return this;
     }
 
-    /**
-     * 标签值。最大长度43个unicode字符，可以为空字符串。 字符集：0-9，A-Z，a-z，“_”，“.”，“-”，中文。
-     * @return values
-     */
+    /** 标签值。最大长度43个unicode字符，可以为空字符串。 字符集：0-9，A-Z，a-z，“_”，“.”，“-”，中文。
+     * 
+     * @return values */
     public List<String> getValues() {
         return values;
     }
@@ -86,8 +68,6 @@ public class QueryProjectTagItem  {
     public void setValues(List<String> values) {
         this.values = values;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -98,13 +78,15 @@ public class QueryProjectTagItem  {
             return false;
         }
         QueryProjectTagItem queryProjectTagItem = (QueryProjectTagItem) o;
-        return Objects.equals(this.key, queryProjectTagItem.key) &&
-            Objects.equals(this.values, queryProjectTagItem.values);
+        return Objects.equals(this.key, queryProjectTagItem.key)
+            && Objects.equals(this.values, queryProjectTagItem.values);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(key, values);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,16 +96,13 @@ public class QueryProjectTagItem  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

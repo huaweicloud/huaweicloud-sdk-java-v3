@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * UpdatePublicZoneInfo
- */
-public class UpdatePublicZoneInfo  {
-
-
+/** UpdatePublicZoneInfo */
+public class UpdatePublicZoneInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="email")
-    
+    @JsonProperty(value = "email")
+
     private String email;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ttl")
-    
+    @JsonProperty(value = "ttl")
+
     private String ttl;
 
     public UpdatePublicZoneInfo withDescription(String description) {
@@ -40,13 +28,9 @@ public class UpdatePublicZoneInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 域名的描述信息。长度不超过255个字符。
-     * @return description
-     */
+    /** 域名的描述信息。长度不超过255个字符。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -55,20 +39,14 @@ public class UpdatePublicZoneInfo  {
         this.description = description;
     }
 
-    
-
     public UpdatePublicZoneInfo withEmail(String email) {
         this.email = email;
         return this;
     }
 
-    
-
-
-    /**
-     * 管理该zone的管理员邮箱。  如果为空，表示维持原值。  默认值为空。
-     * @return email
-     */
+    /** 管理该zone的管理员邮箱。 如果为空，表示维持原值。 默认值为空。
+     * 
+     * @return email */
     public String getEmail() {
         return email;
     }
@@ -77,20 +55,14 @@ public class UpdatePublicZoneInfo  {
         this.email = email;
     }
 
-    
-
     public UpdatePublicZoneInfo withTtl(String ttl) {
         this.ttl = ttl;
         return this;
     }
 
-    
-
-
-    /**
-     * 用于填写默认生成的SOA记录中有效缓存时间，以秒为单位。
-     * @return ttl
-     */
+    /** 用于填写默认生成的SOA记录中有效缓存时间，以秒为单位。
+     * 
+     * @return ttl */
     public String getTtl() {
         return ttl;
     }
@@ -98,8 +70,6 @@ public class UpdatePublicZoneInfo  {
     public void setTtl(String ttl) {
         this.ttl = ttl;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class UpdatePublicZoneInfo  {
             return false;
         }
         UpdatePublicZoneInfo updatePublicZoneInfo = (UpdatePublicZoneInfo) o;
-        return Objects.equals(this.description, updatePublicZoneInfo.description) &&
-            Objects.equals(this.email, updatePublicZoneInfo.email) &&
-            Objects.equals(this.ttl, updatePublicZoneInfo.ttl);
+        return Objects.equals(this.description, updatePublicZoneInfo.description)
+            && Objects.equals(this.email, updatePublicZoneInfo.email)
+            && Objects.equals(this.ttl, updatePublicZoneInfo.ttl);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(description, email, ttl);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class UpdatePublicZoneInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListOffSiteRestoreTimesRequest  {
-
-
+/** Request Object */
+public class ListOffSiteRestoreTimesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="date")
-    
+    @JsonProperty(value = "date")
+
     private String date;
 
     public ListOffSiteRestoreTimesRequest withXLanguage(String xLanguage) {
@@ -40,15 +28,11 @@ public class ListOffSiteRestoreTimesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -57,20 +41,14 @@ public class ListOffSiteRestoreTimesRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListOffSiteRestoreTimesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -79,20 +57,14 @@ public class ListOffSiteRestoreTimesRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListOffSiteRestoreTimesRequest withDate(String date) {
         this.date = date;
         return this;
     }
 
-    
-
-
-    /**
-     * 所需查询的日期，为yyyy-mm-dd字符串格式，时区为UTC。
-     * @return date
-     */
+    /** 所需查询的日期，为yyyy-mm-dd字符串格式，时区为UTC。
+     * 
+     * @return date */
     public String getDate() {
         return date;
     }
@@ -100,8 +72,6 @@ public class ListOffSiteRestoreTimesRequest  {
     public void setDate(String date) {
         this.date = date;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +82,16 @@ public class ListOffSiteRestoreTimesRequest  {
             return false;
         }
         ListOffSiteRestoreTimesRequest listOffSiteRestoreTimesRequest = (ListOffSiteRestoreTimesRequest) o;
-        return Objects.equals(this.xLanguage, listOffSiteRestoreTimesRequest.xLanguage) &&
-            Objects.equals(this.instanceId, listOffSiteRestoreTimesRequest.instanceId) &&
-            Objects.equals(this.date, listOffSiteRestoreTimesRequest.date);
+        return Objects.equals(this.xLanguage, listOffSiteRestoreTimesRequest.xLanguage)
+            && Objects.equals(this.instanceId, listOffSiteRestoreTimesRequest.instanceId)
+            && Objects.equals(this.date, listOffSiteRestoreTimesRequest.date);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, date);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +102,13 @@ public class ListOffSiteRestoreTimesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

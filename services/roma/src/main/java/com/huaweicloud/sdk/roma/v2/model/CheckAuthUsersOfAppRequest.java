@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class CheckAuthUsersOfAppRequest  {
-
-
+/** Request Object */
+public class CheckAuthUsersOfAppRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_name")
-    
+    @JsonProperty(value = "user_name")
+
     private String userName;
 
     public CheckAuthUsersOfAppRequest withAppId(String appId) {
@@ -40,13 +28,9 @@ public class CheckAuthUsersOfAppRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 应用ID
-     * @return appId
-     */
+    /** 应用ID
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -55,20 +39,14 @@ public class CheckAuthUsersOfAppRequest  {
         this.appId = appId;
     }
 
-    
-
     public CheckAuthUsersOfAppRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -77,20 +55,14 @@ public class CheckAuthUsersOfAppRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public CheckAuthUsersOfAppRequest withUserName(String userName) {
         this.userName = userName;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询应用的指定名称的成员，精确匹配
-     * @return userName
-     */
+    /** 查询应用的指定名称的成员，精确匹配
+     * 
+     * @return userName */
     public String getUserName() {
         return userName;
     }
@@ -98,8 +70,6 @@ public class CheckAuthUsersOfAppRequest  {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class CheckAuthUsersOfAppRequest  {
             return false;
         }
         CheckAuthUsersOfAppRequest checkAuthUsersOfAppRequest = (CheckAuthUsersOfAppRequest) o;
-        return Objects.equals(this.appId, checkAuthUsersOfAppRequest.appId) &&
-            Objects.equals(this.instanceId, checkAuthUsersOfAppRequest.instanceId) &&
-            Objects.equals(this.userName, checkAuthUsersOfAppRequest.userName);
+        return Objects.equals(this.appId, checkAuthUsersOfAppRequest.appId)
+            && Objects.equals(this.instanceId, checkAuthUsersOfAppRequest.instanceId)
+            && Objects.equals(this.userName, checkAuthUsersOfAppRequest.userName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(appId, instanceId, userName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class CheckAuthUsersOfAppRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

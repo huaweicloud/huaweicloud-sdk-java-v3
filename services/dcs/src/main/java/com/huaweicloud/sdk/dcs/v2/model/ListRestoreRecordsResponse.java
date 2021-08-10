@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dcs.v2.model.InstanceRestoreInfo;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListRestoreRecordsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="restore_record_response")
-    
+    @JsonProperty(value = "restore_record_response")
+
     private List<InstanceRestoreInfo> restoreRecordResponse = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_num")
-    
+    @JsonProperty(value = "total_num")
+
     private Integer totalNum;
 
     public ListRestoreRecordsResponse withRestoreRecordResponse(List<InstanceRestoreInfo> restoreRecordResponse) {
@@ -39,27 +27,26 @@ public class ListRestoreRecordsResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListRestoreRecordsResponse addRestoreRecordResponseItem(InstanceRestoreInfo restoreRecordResponseItem) {
-        if(this.restoreRecordResponse == null) {
+        if (this.restoreRecordResponse == null) {
             this.restoreRecordResponse = new ArrayList<>();
         }
         this.restoreRecordResponse.add(restoreRecordResponseItem);
         return this;
     }
 
-    public ListRestoreRecordsResponse withRestoreRecordResponse(Consumer<List<InstanceRestoreInfo>> restoreRecordResponseSetter) {
-        if(this.restoreRecordResponse == null) {
+    public ListRestoreRecordsResponse withRestoreRecordResponse(
+        Consumer<List<InstanceRestoreInfo>> restoreRecordResponseSetter) {
+        if (this.restoreRecordResponse == null) {
             this.restoreRecordResponse = new ArrayList<>();
         }
         restoreRecordResponseSetter.accept(this.restoreRecordResponse);
         return this;
     }
 
-    /**
-     * 实例恢复记录的详情数组。
-     * @return restoreRecordResponse
-     */
+    /** 实例恢复记录的详情数组。
+     * 
+     * @return restoreRecordResponse */
     public List<InstanceRestoreInfo> getRestoreRecordResponse() {
         return restoreRecordResponse;
     }
@@ -68,20 +55,14 @@ public class ListRestoreRecordsResponse extends SdkResponse {
         this.restoreRecordResponse = restoreRecordResponse;
     }
 
-    
-
     public ListRestoreRecordsResponse withTotalNum(Integer totalNum) {
         this.totalNum = totalNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 返回记录数。
-     * @return totalNum
-     */
+    /** 返回记录数。
+     * 
+     * @return totalNum */
     public Integer getTotalNum() {
         return totalNum;
     }
@@ -89,8 +70,6 @@ public class ListRestoreRecordsResponse extends SdkResponse {
     public void setTotalNum(Integer totalNum) {
         this.totalNum = totalNum;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +80,15 @@ public class ListRestoreRecordsResponse extends SdkResponse {
             return false;
         }
         ListRestoreRecordsResponse listRestoreRecordsResponse = (ListRestoreRecordsResponse) o;
-        return Objects.equals(this.restoreRecordResponse, listRestoreRecordsResponse.restoreRecordResponse) &&
-            Objects.equals(this.totalNum, listRestoreRecordsResponse.totalNum);
+        return Objects.equals(this.restoreRecordResponse, listRestoreRecordsResponse.restoreRecordResponse)
+            && Objects.equals(this.totalNum, listRestoreRecordsResponse.totalNum);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(restoreRecordResponse, totalNum);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +98,13 @@ public class ListRestoreRecordsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

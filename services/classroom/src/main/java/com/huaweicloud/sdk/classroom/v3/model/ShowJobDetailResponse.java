@@ -1,64 +1,47 @@
 package com.huaweicloud.sdk.classroom.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowJobDetailResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="accept_job_num")
-    
+    @JsonProperty(value = "accept_job_num")
+
     private Integer acceptJobNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_answer_visibility")
-    
+    @JsonProperty(value = "is_answer_visibility")
+
     private String isAnswerVisibility;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_score_visibility")
-    
+    @JsonProperty(value = "is_score_visibility")
+
     private String isScoreVisibility;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="average_score")
-    
+    @JsonProperty(value = "average_score")
+
     private String averageScore;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="score_job_num")
-    
+    @JsonProperty(value = "score_job_num")
+
     private Integer scoreJobNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="submit_job_num")
-    
+    @JsonProperty(value = "submit_job_num")
+
     private Integer submitJobNum;
 
     public ShowJobDetailResponse withAcceptJobNum(Integer acceptJobNum) {
@@ -66,13 +49,9 @@ public class ShowJobDetailResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 作业下发人数
-     * @return acceptJobNum
-     */
+    /** 作业下发人数
+     * 
+     * @return acceptJobNum */
     public Integer getAcceptJobNum() {
         return acceptJobNum;
     }
@@ -81,20 +60,14 @@ public class ShowJobDetailResponse extends SdkResponse {
         this.acceptJobNum = acceptJobNum;
     }
 
-    
-
     public ShowJobDetailResponse withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业截止时间, 日期格式：yyyy-MM-dd HH:mm:ss
-     * @return endTime
-     */
+    /** 作业截止时间, 日期格式：yyyy-MM-dd HH:mm:ss
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -103,20 +76,14 @@ public class ShowJobDetailResponse extends SdkResponse {
         this.endTime = endTime;
     }
 
-    
-
     public ShowJobDetailResponse withIsAnswerVisibility(String isAnswerVisibility) {
         this.isAnswerVisibility = isAnswerVisibility;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业答案是否公布(unpublish:表示未公布答案, publish:表示已公布答案)
-     * @return isAnswerVisibility
-     */
+    /** 作业答案是否公布(unpublish:表示未公布答案, publish:表示已公布答案)
+     * 
+     * @return isAnswerVisibility */
     public String getIsAnswerVisibility() {
         return isAnswerVisibility;
     }
@@ -125,20 +92,14 @@ public class ShowJobDetailResponse extends SdkResponse {
         this.isAnswerVisibility = isAnswerVisibility;
     }
 
-    
-
     public ShowJobDetailResponse withIsScoreVisibility(String isScoreVisibility) {
         this.isScoreVisibility = isScoreVisibility;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业成绩是否公布(unpublish:表示未公布成绩, publish:表示已公布成绩)
-     * @return isScoreVisibility
-     */
+    /** 作业成绩是否公布(unpublish:表示未公布成绩, publish:表示已公布成绩)
+     * 
+     * @return isScoreVisibility */
     public String getIsScoreVisibility() {
         return isScoreVisibility;
     }
@@ -147,20 +108,14 @@ public class ShowJobDetailResponse extends SdkResponse {
         this.isScoreVisibility = isScoreVisibility;
     }
 
-    
-
     public ShowJobDetailResponse withAverageScore(String averageScore) {
         this.averageScore = averageScore;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业均分
-     * @return averageScore
-     */
+    /** 作业均分
+     * 
+     * @return averageScore */
     public String getAverageScore() {
         return averageScore;
     }
@@ -169,20 +124,14 @@ public class ShowJobDetailResponse extends SdkResponse {
         this.averageScore = averageScore;
     }
 
-    
-
     public ShowJobDetailResponse withScoreJobNum(Integer scoreJobNum) {
         this.scoreJobNum = scoreJobNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 老师手动评分人数
-     * @return scoreJobNum
-     */
+    /** 老师手动评分人数
+     * 
+     * @return scoreJobNum */
     public Integer getScoreJobNum() {
         return scoreJobNum;
     }
@@ -191,20 +140,14 @@ public class ShowJobDetailResponse extends SdkResponse {
         this.scoreJobNum = scoreJobNum;
     }
 
-    
-
     public ShowJobDetailResponse withSubmitJobNum(Integer submitJobNum) {
         this.submitJobNum = submitJobNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业提交人数
-     * @return submitJobNum
-     */
+    /** 作业提交人数
+     * 
+     * @return submitJobNum */
     public Integer getSubmitJobNum() {
         return submitJobNum;
     }
@@ -212,8 +155,6 @@ public class ShowJobDetailResponse extends SdkResponse {
     public void setSubmitJobNum(Integer submitJobNum) {
         this.submitJobNum = submitJobNum;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -224,18 +165,26 @@ public class ShowJobDetailResponse extends SdkResponse {
             return false;
         }
         ShowJobDetailResponse showJobDetailResponse = (ShowJobDetailResponse) o;
-        return Objects.equals(this.acceptJobNum, showJobDetailResponse.acceptJobNum) &&
-            Objects.equals(this.endTime, showJobDetailResponse.endTime) &&
-            Objects.equals(this.isAnswerVisibility, showJobDetailResponse.isAnswerVisibility) &&
-            Objects.equals(this.isScoreVisibility, showJobDetailResponse.isScoreVisibility) &&
-            Objects.equals(this.averageScore, showJobDetailResponse.averageScore) &&
-            Objects.equals(this.scoreJobNum, showJobDetailResponse.scoreJobNum) &&
-            Objects.equals(this.submitJobNum, showJobDetailResponse.submitJobNum);
+        return Objects.equals(this.acceptJobNum, showJobDetailResponse.acceptJobNum)
+            && Objects.equals(this.endTime, showJobDetailResponse.endTime)
+            && Objects.equals(this.isAnswerVisibility, showJobDetailResponse.isAnswerVisibility)
+            && Objects.equals(this.isScoreVisibility, showJobDetailResponse.isScoreVisibility)
+            && Objects.equals(this.averageScore, showJobDetailResponse.averageScore)
+            && Objects.equals(this.scoreJobNum, showJobDetailResponse.scoreJobNum)
+            && Objects.equals(this.submitJobNum, showJobDetailResponse.submitJobNum);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(acceptJobNum, endTime, isAnswerVisibility, isScoreVisibility, averageScore, scoreJobNum, submitJobNum);
+        return Objects.hash(acceptJobNum,
+            endTime,
+            isAnswerVisibility,
+            isScoreVisibility,
+            averageScore,
+            scoreJobNum,
+            submitJobNum);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -250,16 +199,13 @@ public class ShowJobDetailResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

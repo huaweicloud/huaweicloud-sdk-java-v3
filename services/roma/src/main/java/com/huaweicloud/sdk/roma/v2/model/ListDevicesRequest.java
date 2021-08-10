@@ -1,104 +1,81 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListDevicesRequest  {
-
-
+/** Request Object */
+public class ListDevicesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
-    
+    @JsonProperty(value = "product_id")
+
     private Integer productId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_name")
-    
+    @JsonProperty(value = "product_name")
+
     private String productName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_name")
-    
+    @JsonProperty(value = "device_name")
+
     private String deviceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="client_id")
-    
+    @JsonProperty(value = "client_id")
+
     private String clientId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
+
     private String nodeId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_type")
-    
+    @JsonProperty(value = "node_type")
+
     private Integer nodeType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="online_status")
-    
+    @JsonProperty(value = "online_status")
+
     private String onlineStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_date_start")
-    
+    @JsonProperty(value = "created_date_start")
+
     private Long createdDateStart;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_date_end")
-    
+    @JsonProperty(value = "created_date_end")
+
     private Long createdDateEnd;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag")
-    
+    @JsonProperty(value = "tag")
+
     private String tag;
 
     public ListDevicesRequest withInstanceId(String instanceId) {
@@ -106,13 +83,9 @@ public class ListDevicesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -121,22 +94,14 @@ public class ListDevicesRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListDevicesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示条目数量，最大数量999，超过999后只返回999
-     * minimum: 0
-     * maximum: 999
-     * @return limit
-     */
+    /** 每页显示条目数量，最大数量999，超过999后只返回999 minimum: 0 maximum: 999
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -145,22 +110,14 @@ public class ListDevicesRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListDevicesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于0
-     * minimum: 0
-     * maximum: 999999
-     * @return offset
-     */
+    /** 偏移量，表示从此偏移量开始查询， offset大于等于0 minimum: 0 maximum: 999999
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -169,20 +126,14 @@ public class ListDevicesRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListDevicesRequest withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用ID
-     * @return appId
-     */
+    /** 应用ID
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -191,22 +142,14 @@ public class ListDevicesRequest  {
         this.appId = appId;
     }
 
-    
-
     public ListDevicesRequest withProductId(Integer productId) {
         this.productId = productId;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备归属的产品ID
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return productId
-     */
+    /** 设备归属的产品ID minimum: 1 maximum: 999999999999999999
+     * 
+     * @return productId */
     public Integer getProductId() {
         return productId;
     }
@@ -215,20 +158,14 @@ public class ListDevicesRequest  {
         this.productId = productId;
     }
 
-    
-
     public ListDevicesRequest withProductName(String productName) {
         this.productName = productName;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备归属的产品名称
-     * @return productName
-     */
+    /** 设备归属的产品名称
+     * 
+     * @return productName */
     public String getProductName() {
         return productName;
     }
@@ -237,20 +174,14 @@ public class ListDevicesRequest  {
         this.productName = productName;
     }
 
-    
-
     public ListDevicesRequest withDeviceName(String deviceName) {
         this.deviceName = deviceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备名称，支持中文、中文标点符号（）。；，：“”、？《》及英文大小写、数字及英文符号()_,#.?'-@%&!, 长度2-64
-     * @return deviceName
-     */
+    /** 设备名称，支持中文、中文标点符号（）。；，：“”、？《》及英文大小写、数字及英文符号()_,#.?'-@%&!, 长度2-64
+     * 
+     * @return deviceName */
     public String getDeviceName() {
         return deviceName;
     }
@@ -259,20 +190,14 @@ public class ListDevicesRequest  {
         this.deviceName = deviceName;
     }
 
-    
-
     public ListDevicesRequest withClientId(String clientId) {
         this.clientId = clientId;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备客户端ID，平台生成的设备唯一标识
-     * @return clientId
-     */
+    /** 设备客户端ID，平台生成的设备唯一标识
+     * 
+     * @return clientId */
     public String getClientId() {
         return clientId;
     }
@@ -281,20 +206,14 @@ public class ListDevicesRequest  {
         this.clientId = clientId;
     }
 
-    
-
     public ListDevicesRequest withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备物理编号，通常使用MAC或者IMEI号，支持英文大小写，数字，下划线和中划线，长度2-64
-     * @return nodeId
-     */
+    /** 设备物理编号，通常使用MAC或者IMEI号，支持英文大小写，数字，下划线和中划线，长度2-64
+     * 
+     * @return nodeId */
     public String getNodeId() {
         return nodeId;
     }
@@ -303,22 +222,14 @@ public class ListDevicesRequest  {
         this.nodeId = nodeId;
     }
 
-    
-
     public ListDevicesRequest withNodeType(Integer nodeType) {
         this.nodeType = nodeType;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点类型 0-直连 1-网关 2-子设备，不传默认查询所有
-     * minimum: 0
-     * maximum: 10
-     * @return nodeType
-     */
+    /** 节点类型 0-直连 1-网关 2-子设备，不传默认查询所有 minimum: 0 maximum: 10
+     * 
+     * @return nodeType */
     public Integer getNodeType() {
         return nodeType;
     }
@@ -327,20 +238,14 @@ public class ListDevicesRequest  {
         this.nodeType = nodeType;
     }
 
-    
-
     public ListDevicesRequest withOnlineStatus(String onlineStatus) {
         this.onlineStatus = onlineStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否在线 0-未连接 1-在线 2-离线，支持传入多个值以逗号分隔
-     * @return onlineStatus
-     */
+    /** 是否在线 0-未连接 1-在线 2-离线，支持传入多个值以逗号分隔
+     * 
+     * @return onlineStatus */
     public String getOnlineStatus() {
         return onlineStatus;
     }
@@ -349,22 +254,14 @@ public class ListDevicesRequest  {
         this.onlineStatus = onlineStatus;
     }
 
-    
-
     public ListDevicesRequest withCreatedDateStart(Long createdDateStart) {
         this.createdDateStart = createdDateStart;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间起始，格式timestamp(ms)，使用UTC时区
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return createdDateStart
-     */
+    /** 创建时间起始，格式timestamp(ms)，使用UTC时区 minimum: 1 maximum: 999999999999999999
+     * 
+     * @return createdDateStart */
     public Long getCreatedDateStart() {
         return createdDateStart;
     }
@@ -373,22 +270,14 @@ public class ListDevicesRequest  {
         this.createdDateStart = createdDateStart;
     }
 
-    
-
     public ListDevicesRequest withCreatedDateEnd(Long createdDateEnd) {
         this.createdDateEnd = createdDateEnd;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间截止，格式timestamp(ms)，使用UTC时区
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return createdDateEnd
-     */
+    /** 创建时间截止，格式timestamp(ms)，使用UTC时区 minimum: 1 maximum: 999999999999999999
+     * 
+     * @return createdDateEnd */
     public Long getCreatedDateEnd() {
         return createdDateEnd;
     }
@@ -397,20 +286,14 @@ public class ListDevicesRequest  {
         this.createdDateEnd = createdDateEnd;
     }
 
-    
-
     public ListDevicesRequest withTag(String tag) {
         this.tag = tag;
         return this;
     }
 
-    
-
-
-    /**
-     * 标签
-     * @return tag
-     */
+    /** 标签
+     * 
+     * @return tag */
     public String getTag() {
         return tag;
     }
@@ -418,8 +301,6 @@ public class ListDevicesRequest  {
     public void setTag(String tag) {
         this.tag = tag;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -430,25 +311,40 @@ public class ListDevicesRequest  {
             return false;
         }
         ListDevicesRequest listDevicesRequest = (ListDevicesRequest) o;
-        return Objects.equals(this.instanceId, listDevicesRequest.instanceId) &&
-            Objects.equals(this.limit, listDevicesRequest.limit) &&
-            Objects.equals(this.offset, listDevicesRequest.offset) &&
-            Objects.equals(this.appId, listDevicesRequest.appId) &&
-            Objects.equals(this.productId, listDevicesRequest.productId) &&
-            Objects.equals(this.productName, listDevicesRequest.productName) &&
-            Objects.equals(this.deviceName, listDevicesRequest.deviceName) &&
-            Objects.equals(this.clientId, listDevicesRequest.clientId) &&
-            Objects.equals(this.nodeId, listDevicesRequest.nodeId) &&
-            Objects.equals(this.nodeType, listDevicesRequest.nodeType) &&
-            Objects.equals(this.onlineStatus, listDevicesRequest.onlineStatus) &&
-            Objects.equals(this.createdDateStart, listDevicesRequest.createdDateStart) &&
-            Objects.equals(this.createdDateEnd, listDevicesRequest.createdDateEnd) &&
-            Objects.equals(this.tag, listDevicesRequest.tag);
+        return Objects.equals(this.instanceId, listDevicesRequest.instanceId)
+            && Objects.equals(this.limit, listDevicesRequest.limit)
+            && Objects.equals(this.offset, listDevicesRequest.offset)
+            && Objects.equals(this.appId, listDevicesRequest.appId)
+            && Objects.equals(this.productId, listDevicesRequest.productId)
+            && Objects.equals(this.productName, listDevicesRequest.productName)
+            && Objects.equals(this.deviceName, listDevicesRequest.deviceName)
+            && Objects.equals(this.clientId, listDevicesRequest.clientId)
+            && Objects.equals(this.nodeId, listDevicesRequest.nodeId)
+            && Objects.equals(this.nodeType, listDevicesRequest.nodeType)
+            && Objects.equals(this.onlineStatus, listDevicesRequest.onlineStatus)
+            && Objects.equals(this.createdDateStart, listDevicesRequest.createdDateStart)
+            && Objects.equals(this.createdDateEnd, listDevicesRequest.createdDateEnd)
+            && Objects.equals(this.tag, listDevicesRequest.tag);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, limit, offset, appId, productId, productName, deviceName, clientId, nodeId, nodeType, onlineStatus, createdDateStart, createdDateEnd, tag);
+        return Objects.hash(instanceId,
+            limit,
+            offset,
+            appId,
+            productId,
+            productName,
+            deviceName,
+            clientId,
+            nodeId,
+            nodeType,
+            onlineStatus,
+            createdDateStart,
+            createdDateEnd,
+            tag);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -470,16 +366,13 @@ public class ListDevicesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

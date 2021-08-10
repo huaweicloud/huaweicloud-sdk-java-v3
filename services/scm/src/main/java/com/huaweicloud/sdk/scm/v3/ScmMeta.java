@@ -6,14 +6,12 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.scm.v3.model.*;
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class ScmMeta {
 
-    public static final HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificate = genFordeleteCertificate();
+    public static final HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificate =
+        genFordeleteCertificate();
 
     private static HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> genFordeleteCertificate() {
         // basic
@@ -24,23 +22,21 @@ public class ScmMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("certificate_id",
+        builder.<String>withRequestField("certificate_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteCertificateRequest::getCertificateId, (req, v) -> {
                 req.setCertificateId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ExportCertificateRequest, ExportCertificateResponse> exportCertificate = genForexportCertificate();
+    public static final HttpRequestDef<ExportCertificateRequest, ExportCertificateResponse> exportCertificate =
+        genForexportCertificate();
 
     private static HttpRequestDef<ExportCertificateRequest, ExportCertificateResponse> genForexportCertificate() {
         // basic
@@ -51,23 +47,21 @@ public class ScmMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("certificate_id",
+        builder.<String>withRequestField("certificate_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExportCertificateRequest::getCertificateId, (req, v) -> {
                 req.setCertificateId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ImportCertificateRequest, ImportCertificateResponse> importCertificate = genForimportCertificate();
+    public static final HttpRequestDef<ImportCertificateRequest, ImportCertificateResponse> importCertificate =
+        genForimportCertificate();
 
     private static HttpRequestDef<ImportCertificateRequest, ImportCertificateResponse> genForimportCertificate() {
         // basic
@@ -78,23 +72,21 @@ public class ScmMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<ImportCertificateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ImportCertificateRequestBody.class,
+            TypeCasts.uncheckedConversion(ImportCertificateRequestBody.class),
             f -> f.withMarshaller(ImportCertificateRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> listCertificates = genForlistCertificates();
+    public static final HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> listCertificates =
+        genForlistCertificates();
 
     private static HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> genForlistCertificates() {
         // basic
@@ -105,55 +97,49 @@ public class ScmMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListCertificatesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListCertificatesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("sort_dir",
+            }));
+        builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCertificatesRequest::getSortDir, (req, v) -> {
                 req.setSortDir(v);
-            })
-        );
-        builder.withRequestField("sort_key",
+            }));
+        builder.<String>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCertificatesRequest::getSortKey, (req, v) -> {
                 req.setSortKey(v);
-            })
-        );
-        builder.withRequestField("status",
+            }));
+        builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCertificatesRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<PushCertificateRequest, PushCertificateResponse> pushCertificate = genForpushCertificate();
+    public static final HttpRequestDef<PushCertificateRequest, PushCertificateResponse> pushCertificate =
+        genForpushCertificate();
 
     private static HttpRequestDef<PushCertificateRequest, PushCertificateResponse> genForpushCertificate() {
         // basic
@@ -164,31 +150,28 @@ public class ScmMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("certificate_id",
+        builder.<String>withRequestField("certificate_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(PushCertificateRequest::getCertificateId, (req, v) -> {
                 req.setCertificateId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<PushCertificateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            PushCertificateRequestBody.class,
+            TypeCasts.uncheckedConversion(PushCertificateRequestBody.class),
             f -> f.withMarshaller(PushCertificateRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> showCertificate = genForshowCertificate();
+    public static final HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> showCertificate =
+        genForshowCertificate();
 
     private static HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> genForshowCertificate() {
         // basic
@@ -199,18 +182,15 @@ public class ScmMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("certificate_id",
+        builder.<String>withRequestField("certificate_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCertificateRequest::getCertificateId, (req, v) -> {
                 req.setCertificateId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

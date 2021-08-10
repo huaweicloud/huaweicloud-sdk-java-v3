@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.evs.v2.model.RollbackSnapshotRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class RollbackSnapshotRequest  {
-
-
+/** Request Object */
+public class RollbackSnapshotRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="snapshot_id")
-    
+    @JsonProperty(value = "snapshot_id")
+
     private String snapshotId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private RollbackSnapshotRequestBody body;
 
     public RollbackSnapshotRequest withSnapshotId(String snapshotId) {
@@ -35,13 +24,9 @@ public class RollbackSnapshotRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 快照ID
-     * @return snapshotId
-     */
+    /** 快照ID
+     * 
+     * @return snapshotId */
     public String getSnapshotId() {
         return snapshotId;
     }
@@ -50,27 +35,23 @@ public class RollbackSnapshotRequest  {
         this.snapshotId = snapshotId;
     }
 
-    
-
     public RollbackSnapshotRequest withBody(RollbackSnapshotRequestBody body) {
         this.body = body;
         return this;
     }
 
     public RollbackSnapshotRequest withBody(Consumer<RollbackSnapshotRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new RollbackSnapshotRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public RollbackSnapshotRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class RollbackSnapshotRequest  {
     public void setBody(RollbackSnapshotRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class RollbackSnapshotRequest  {
             return false;
         }
         RollbackSnapshotRequest rollbackSnapshotRequest = (RollbackSnapshotRequest) o;
-        return Objects.equals(this.snapshotId, rollbackSnapshotRequest.snapshotId) &&
-            Objects.equals(this.body, rollbackSnapshotRequest.body);
+        return Objects.equals(this.snapshotId, rollbackSnapshotRequest.snapshotId)
+            && Objects.equals(this.body, rollbackSnapshotRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(snapshotId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class RollbackSnapshotRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

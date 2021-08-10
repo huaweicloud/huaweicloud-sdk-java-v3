@@ -1,68 +1,51 @@
 package com.huaweicloud.sdk.oms.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * This is a auto create Body Object
- */
-public class StartTaskReq  {
-
-
+/** This is a auto create Body Object */
+public class StartTaskReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="src_ak")
-    
+    @JsonProperty(value = "src_ak")
+
     private String srcAk;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="src_sk")
-    
+    @JsonProperty(value = "src_sk")
+
     private String srcSk;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="src_security_token")
-    
+    @JsonProperty(value = "src_security_token")
+
     private String srcSecurityToken;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dst_ak")
-    
+    @JsonProperty(value = "dst_ak")
+
     private String dstAk;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dst_sk")
-    
+    @JsonProperty(value = "dst_sk")
+
     private String dstSk;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dst_security_token")
-    
+    @JsonProperty(value = "dst_security_token")
+
     private String dstSecurityToken;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_cdn_authentication_key")
-    
+    @JsonProperty(value = "source_cdn_authentication_key")
+
     private String sourceCdnAuthenticationKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="migrate_failed_object")
-    
+    @JsonProperty(value = "migrate_failed_object")
+
     private Boolean migrateFailedObject;
 
     public StartTaskReq withSrcAk(String srcAk) {
@@ -70,13 +53,9 @@ public class StartTaskReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 源端节点AK（最大长度100个字符）。URL列表迁移任务不需要填写此参数。
-     * @return srcAk
-     */
+    /** 源端节点AK（最大长度100个字符）。URL列表迁移任务不需要填写此参数。
+     * 
+     * @return srcAk */
     public String getSrcAk() {
         return srcAk;
     }
@@ -85,20 +64,14 @@ public class StartTaskReq  {
         this.srcAk = srcAk;
     }
 
-    
-
     public StartTaskReq withSrcSk(String srcSk) {
         this.srcSk = srcSk;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端节点SK（最大长度100个字符）。URL列表迁移任务不需要填写此参数。
-     * @return srcSk
-     */
+    /** 源端节点SK（最大长度100个字符）。URL列表迁移任务不需要填写此参数。
+     * 
+     * @return srcSk */
     public String getSrcSk() {
         return srcSk;
     }
@@ -107,20 +80,14 @@ public class StartTaskReq  {
         this.srcSk = srcSk;
     }
 
-    
-
     public StartTaskReq withSrcSecurityToken(String srcSecurityToken) {
         this.srcSecurityToken = srcSecurityToken;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端节点临时Token
-     * @return srcSecurityToken
-     */
+    /** 源端节点临时Token
+     * 
+     * @return srcSecurityToken */
     public String getSrcSecurityToken() {
         return srcSecurityToken;
     }
@@ -129,20 +96,14 @@ public class StartTaskReq  {
         this.srcSecurityToken = srcSecurityToken;
     }
 
-    
-
     public StartTaskReq withDstAk(String dstAk) {
         this.dstAk = dstAk;
         return this;
     }
 
-    
-
-
-    /**
-     * 目的端节点AK（最大长度100个字符）。
-     * @return dstAk
-     */
+    /** 目的端节点AK（最大长度100个字符）。
+     * 
+     * @return dstAk */
     public String getDstAk() {
         return dstAk;
     }
@@ -151,20 +112,14 @@ public class StartTaskReq  {
         this.dstAk = dstAk;
     }
 
-    
-
     public StartTaskReq withDstSk(String dstSk) {
         this.dstSk = dstSk;
         return this;
     }
 
-    
-
-
-    /**
-     * 目的端节点SK（最大长度100个字符）。
-     * @return dstSk
-     */
+    /** 目的端节点SK（最大长度100个字符）。
+     * 
+     * @return dstSk */
     public String getDstSk() {
         return dstSk;
     }
@@ -173,20 +128,14 @@ public class StartTaskReq  {
         this.dstSk = dstSk;
     }
 
-    
-
     public StartTaskReq withDstSecurityToken(String dstSecurityToken) {
         this.dstSecurityToken = dstSecurityToken;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标端节点临时Token
-     * @return dstSecurityToken
-     */
+    /** 目标端节点临时Token
+     * 
+     * @return dstSecurityToken */
     public String getDstSecurityToken() {
         return dstSecurityToken;
     }
@@ -195,20 +144,14 @@ public class StartTaskReq  {
         this.dstSecurityToken = dstSecurityToken;
     }
 
-    
-
     public StartTaskReq withSourceCdnAuthenticationKey(String sourceCdnAuthenticationKey) {
         this.sourceCdnAuthenticationKey = sourceCdnAuthenticationKey;
         return this;
     }
 
-    
-
-
-    /**
-     * CDN鉴权秘钥。
-     * @return sourceCdnAuthenticationKey
-     */
+    /** CDN鉴权秘钥。
+     * 
+     * @return sourceCdnAuthenticationKey */
     public String getSourceCdnAuthenticationKey() {
         return sourceCdnAuthenticationKey;
     }
@@ -217,20 +160,14 @@ public class StartTaskReq  {
         this.sourceCdnAuthenticationKey = sourceCdnAuthenticationKey;
     }
 
-    
-
     public StartTaskReq withMigrateFailedObject(Boolean migrateFailedObject) {
         this.migrateFailedObject = migrateFailedObject;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移类型，标识是否为全量迁移，默认false（全量迁移）。 值为true时表示只重传失败对象。 值为空或者为false时表示全量迁移。
-     * @return migrateFailedObject
-     */
+    /** 迁移类型，标识是否为全量迁移，默认false（全量迁移）。 值为true时表示只重传失败对象。 值为空或者为false时表示全量迁移。
+     * 
+     * @return migrateFailedObject */
     public Boolean getMigrateFailedObject() {
         return migrateFailedObject;
     }
@@ -238,8 +175,6 @@ public class StartTaskReq  {
     public void setMigrateFailedObject(Boolean migrateFailedObject) {
         this.migrateFailedObject = migrateFailedObject;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -250,19 +185,26 @@ public class StartTaskReq  {
             return false;
         }
         StartTaskReq startTaskReq = (StartTaskReq) o;
-        return Objects.equals(this.srcAk, startTaskReq.srcAk) &&
-            Objects.equals(this.srcSk, startTaskReq.srcSk) &&
-            Objects.equals(this.srcSecurityToken, startTaskReq.srcSecurityToken) &&
-            Objects.equals(this.dstAk, startTaskReq.dstAk) &&
-            Objects.equals(this.dstSk, startTaskReq.dstSk) &&
-            Objects.equals(this.dstSecurityToken, startTaskReq.dstSecurityToken) &&
-            Objects.equals(this.sourceCdnAuthenticationKey, startTaskReq.sourceCdnAuthenticationKey) &&
-            Objects.equals(this.migrateFailedObject, startTaskReq.migrateFailedObject);
+        return Objects.equals(this.srcAk, startTaskReq.srcAk) && Objects.equals(this.srcSk, startTaskReq.srcSk)
+            && Objects.equals(this.srcSecurityToken, startTaskReq.srcSecurityToken)
+            && Objects.equals(this.dstAk, startTaskReq.dstAk) && Objects.equals(this.dstSk, startTaskReq.dstSk)
+            && Objects.equals(this.dstSecurityToken, startTaskReq.dstSecurityToken)
+            && Objects.equals(this.sourceCdnAuthenticationKey, startTaskReq.sourceCdnAuthenticationKey)
+            && Objects.equals(this.migrateFailedObject, startTaskReq.migrateFailedObject);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(srcAk, srcSk, srcSecurityToken, dstAk, dstSk, dstSecurityToken, sourceCdnAuthenticationKey, migrateFailedObject);
+        return Objects.hash(srcAk,
+            srcSk,
+            srcSecurityToken,
+            dstAk,
+            dstSk,
+            dstSecurityToken,
+            sourceCdnAuthenticationKey,
+            migrateFailedObject);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -278,16 +220,13 @@ public class StartTaskReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

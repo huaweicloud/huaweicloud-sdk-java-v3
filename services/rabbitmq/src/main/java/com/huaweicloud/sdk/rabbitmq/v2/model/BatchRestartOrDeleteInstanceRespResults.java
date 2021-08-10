@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.rabbitmq.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * BatchRestartOrDeleteInstanceRespResults
- */
-public class BatchRestartOrDeleteInstanceRespResults  {
-
-
+/** BatchRestartOrDeleteInstanceRespResults */
+public class BatchRestartOrDeleteInstanceRespResults {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="result")
-    
+    @JsonProperty(value = "result")
+
     private String result;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance")
-    
+    @JsonProperty(value = "instance")
+
     private String instance;
 
     public BatchRestartOrDeleteInstanceRespResults withResult(String result) {
@@ -34,13 +23,9 @@ public class BatchRestartOrDeleteInstanceRespResults  {
         return this;
     }
 
-    
-
-
-    /**
-     * 操作结果：   - success: 操作成功   - failed: 操作失败
-     * @return result
-     */
+    /** 操作结果： - success: 操作成功 - failed: 操作失败
+     * 
+     * @return result */
     public String getResult() {
         return result;
     }
@@ -49,20 +34,14 @@ public class BatchRestartOrDeleteInstanceRespResults  {
         this.result = result;
     }
 
-    
-
     public BatchRestartOrDeleteInstanceRespResults withInstance(String instance) {
         this.instance = instance;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instance
-     */
+    /** 实例ID。
+     * 
+     * @return instance */
     public String getInstance() {
         return instance;
     }
@@ -70,8 +49,6 @@ public class BatchRestartOrDeleteInstanceRespResults  {
     public void setInstance(String instance) {
         this.instance = instance;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -81,14 +58,17 @@ public class BatchRestartOrDeleteInstanceRespResults  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        BatchRestartOrDeleteInstanceRespResults batchRestartOrDeleteInstanceRespResults = (BatchRestartOrDeleteInstanceRespResults) o;
-        return Objects.equals(this.result, batchRestartOrDeleteInstanceRespResults.result) &&
-            Objects.equals(this.instance, batchRestartOrDeleteInstanceRespResults.instance);
+        BatchRestartOrDeleteInstanceRespResults batchRestartOrDeleteInstanceRespResults =
+            (BatchRestartOrDeleteInstanceRespResults) o;
+        return Objects.equals(this.result, batchRestartOrDeleteInstanceRespResults.result)
+            && Objects.equals(this.instance, batchRestartOrDeleteInstanceRespResults.instance);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(result, instance);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +78,13 @@ public class BatchRestartOrDeleteInstanceRespResults  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

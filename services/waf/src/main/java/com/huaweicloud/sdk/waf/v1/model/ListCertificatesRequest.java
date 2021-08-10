@@ -1,70 +1,49 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListCertificatesRequest  {
-
-
+/** Request Object */
+public class ListCertificatesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page")
-    
+    @JsonProperty(value = "page")
+
     private Integer page;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pagesize")
-    
+    @JsonProperty(value = "pagesize")
+
     private Integer pagesize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host")
-    
+    @JsonProperty(value = "host")
+
     private Boolean host;
-    /**
-     * 证书过期状态，0-未过期，1-已过期，2-即将过期
-     */
+
+    /** 证书过期状态，0-未过期，1-已过期，2-即将过期 */
     public static final class ExpStatusEnum {
 
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
+        /** Enum NUMBER_0 for value: 0 */
         public static final ExpStatusEnum NUMBER_0 = new ExpStatusEnum(0);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
+
+        /** Enum NUMBER_1 for value: 1 */
         public static final ExpStatusEnum NUMBER_1 = new ExpStatusEnum(1);
-        
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
+
+        /** Enum NUMBER_2 for value: 2 */
         public static final ExpStatusEnum NUMBER_2 = new ExpStatusEnum(2);
-        
 
         private static final Map<Integer, ExpStatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -94,7 +73,7 @@ public class ListCertificatesRequest  {
 
         @JsonCreator
         public static ExpStatusEnum fromValue(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ExpStatusEnum result = STATIC_FIELDS.get(value);
@@ -105,7 +84,7 @@ public class ListCertificatesRequest  {
         }
 
         public static ExpStatusEnum valueOf(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ExpStatusEnum result = STATIC_FIELDS.get(value);
@@ -129,10 +108,9 @@ public class ListCertificatesRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="exp_status")
-    
+    @JsonProperty(value = "exp_status")
+
     private ExpStatusEnum expStatus;
 
     public ListCertificatesRequest withPage(Integer page) {
@@ -140,13 +118,9 @@ public class ListCertificatesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 页码
-     * @return page
-     */
+    /** 页码
+     * 
+     * @return page */
     public Integer getPage() {
         return page;
     }
@@ -155,20 +129,14 @@ public class ListCertificatesRequest  {
         this.page = page;
     }
 
-    
-
     public ListCertificatesRequest withPagesize(Integer pagesize) {
         this.pagesize = pagesize;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页条数
-     * @return pagesize
-     */
+    /** 每页条数
+     * 
+     * @return pagesize */
     public Integer getPagesize() {
         return pagesize;
     }
@@ -177,20 +145,14 @@ public class ListCertificatesRequest  {
         this.pagesize = pagesize;
     }
 
-    
-
     public ListCertificatesRequest withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书名称
-     * @return name
-     */
+    /** 证书名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -199,20 +161,14 @@ public class ListCertificatesRequest  {
         this.name = name;
     }
 
-    
-
     public ListCertificatesRequest withHost(Boolean host) {
         this.host = host;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否获取证书关联的域名
-     * @return host
-     */
+    /** 是否获取证书关联的域名
+     * 
+     * @return host */
     public Boolean getHost() {
         return host;
     }
@@ -221,20 +177,14 @@ public class ListCertificatesRequest  {
         this.host = host;
     }
 
-    
-
     public ListCertificatesRequest withExpStatus(ExpStatusEnum expStatus) {
         this.expStatus = expStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书过期状态，0-未过期，1-已过期，2-即将过期
-     * @return expStatus
-     */
+    /** 证书过期状态，0-未过期，1-已过期，2-即将过期
+     * 
+     * @return expStatus */
     public ExpStatusEnum getExpStatus() {
         return expStatus;
     }
@@ -242,8 +192,6 @@ public class ListCertificatesRequest  {
     public void setExpStatus(ExpStatusEnum expStatus) {
         this.expStatus = expStatus;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -254,16 +202,18 @@ public class ListCertificatesRequest  {
             return false;
         }
         ListCertificatesRequest listCertificatesRequest = (ListCertificatesRequest) o;
-        return Objects.equals(this.page, listCertificatesRequest.page) &&
-            Objects.equals(this.pagesize, listCertificatesRequest.pagesize) &&
-            Objects.equals(this.name, listCertificatesRequest.name) &&
-            Objects.equals(this.host, listCertificatesRequest.host) &&
-            Objects.equals(this.expStatus, listCertificatesRequest.expStatus);
+        return Objects.equals(this.page, listCertificatesRequest.page)
+            && Objects.equals(this.pagesize, listCertificatesRequest.pagesize)
+            && Objects.equals(this.name, listCertificatesRequest.name)
+            && Objects.equals(this.host, listCertificatesRequest.host)
+            && Objects.equals(this.expStatus, listCertificatesRequest.expStatus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(page, pagesize, name, host, expStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -276,16 +226,13 @@ public class ListCertificatesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.ccm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteCertificateAuthorityRequest  {
-
-
+/** Request Object */
+public class DeleteCertificateAuthorityRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ca_id")
-    
+    @JsonProperty(value = "ca_id")
+
     private String caId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pending_days")
-    
+    @JsonProperty(value = "pending_days")
+
     private String pendingDays;
 
     public DeleteCertificateAuthorityRequest withCaId(String caId) {
@@ -34,13 +23,9 @@ public class DeleteCertificateAuthorityRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * ca_id
-     * @return caId
-     */
+    /** ca_id
+     * 
+     * @return caId */
     public String getCaId() {
         return caId;
     }
@@ -49,20 +34,14 @@ public class DeleteCertificateAuthorityRequest  {
         this.caId = caId;
     }
 
-    
-
     public DeleteCertificateAuthorityRequest withPendingDays(String pendingDays) {
         this.pendingDays = pendingDays;
         return this;
     }
 
-    
-
-
-    /**
-     * pending_days
-     * @return pendingDays
-     */
+    /** pending_days
+     * 
+     * @return pendingDays */
     public String getPendingDays() {
         return pendingDays;
     }
@@ -70,8 +49,6 @@ public class DeleteCertificateAuthorityRequest  {
     public void setPendingDays(String pendingDays) {
         this.pendingDays = pendingDays;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class DeleteCertificateAuthorityRequest  {
             return false;
         }
         DeleteCertificateAuthorityRequest deleteCertificateAuthorityRequest = (DeleteCertificateAuthorityRequest) o;
-        return Objects.equals(this.caId, deleteCertificateAuthorityRequest.caId) &&
-            Objects.equals(this.pendingDays, deleteCertificateAuthorityRequest.pendingDays);
+        return Objects.equals(this.caId, deleteCertificateAuthorityRequest.caId)
+            && Objects.equals(this.pendingDays, deleteCertificateAuthorityRequest.pendingDays);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(caId, pendingDays);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class DeleteCertificateAuthorityRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

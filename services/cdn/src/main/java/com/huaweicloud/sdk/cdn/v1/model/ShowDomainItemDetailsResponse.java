@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cdn.v1.model.DomainItemDetail;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowDomainItemDetailsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_item_details")
-    
+    @JsonProperty(value = "domain_item_details")
+
     private DomainItemDetail domainItemDetails;
 
     public ShowDomainItemDetailsResponse withDomainItemDetails(DomainItemDetail domainItemDetails) {
@@ -32,19 +21,17 @@ public class ShowDomainItemDetailsResponse extends SdkResponse {
     }
 
     public ShowDomainItemDetailsResponse withDomainItemDetails(Consumer<DomainItemDetail> domainItemDetailsSetter) {
-        if(this.domainItemDetails == null ){
+        if (this.domainItemDetails == null) {
             this.domainItemDetails = new DomainItemDetail();
             domainItemDetailsSetter.accept(this.domainItemDetails);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get domainItemDetails
-     * @return domainItemDetails
-     */
+    /** Get domainItemDetails
+     * 
+     * @return domainItemDetails */
     public DomainItemDetail getDomainItemDetails() {
         return domainItemDetails;
     }
@@ -52,8 +39,6 @@ public class ShowDomainItemDetailsResponse extends SdkResponse {
     public void setDomainItemDetails(DomainItemDetail domainItemDetails) {
         this.domainItemDetails = domainItemDetails;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class ShowDomainItemDetailsResponse extends SdkResponse {
         ShowDomainItemDetailsResponse showDomainItemDetailsResponse = (ShowDomainItemDetailsResponse) o;
         return Objects.equals(this.domainItemDetails, showDomainItemDetailsResponse.domainItemDetails);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domainItemDetails);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class ShowDomainItemDetailsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

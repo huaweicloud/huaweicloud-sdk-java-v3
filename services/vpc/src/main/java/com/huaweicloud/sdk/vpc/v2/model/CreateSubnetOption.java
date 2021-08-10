@@ -1,109 +1,86 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vpc.v2.model.ExtraDhcpOption;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class CreateSubnetOption  {
-
-
+public class CreateSubnetOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cidr")
-    
+    @JsonProperty(value = "cidr")
+
     private String cidr;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gateway_ip")
-    
+    @JsonProperty(value = "gateway_ip")
+
     private String gatewayIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ipv6_enable")
-    
+    @JsonProperty(value = "ipv6_enable")
+
     private Boolean ipv6Enable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dhcp_enable")
-    
+    @JsonProperty(value = "dhcp_enable")
+
     private Boolean dhcpEnable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="primary_dns")
-    
+    @JsonProperty(value = "primary_dns")
+
     private String primaryDns;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="secondary_dns")
-    
+    @JsonProperty(value = "secondary_dns")
+
     private String secondaryDns;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dnsList")
-    
+    @JsonProperty(value = "dnsList")
+
     private List<String> dnsList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="availability_zone")
-    
+    @JsonProperty(value = "availability_zone")
+
     private String availabilityZone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extra_dhcp_opts")
-    
+    @JsonProperty(value = "extra_dhcp_opts")
+
     private List<ExtraDhcpOption> extraDhcpOpts = null;
-    
+
     public CreateSubnetOption withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：子网名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
-     * @return name
-     */
+    /** 功能说明：子网名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -112,20 +89,14 @@ public class CreateSubnetOption  {
         this.name = name;
     }
 
-    
-
     public CreateSubnetOption withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：子网描述 取值范围：0-255个字符，不能包含“<”和“>”。
-     * @return description
-     */
+    /** 功能说明：子网描述 取值范围：0-255个字符，不能包含“<”和“>”。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -134,20 +105,14 @@ public class CreateSubnetOption  {
         this.description = description;
     }
 
-    
-
     public CreateSubnetOption withCidr(String cidr) {
         this.cidr = cidr;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：子网的网段 取值范围：必须在vpc对应cidr范围内 约束：必须是cidr格式。掩码长度不能大于28
-     * @return cidr
-     */
+    /** 功能说明：子网的网段 取值范围：必须在vpc对应cidr范围内 约束：必须是cidr格式。掩码长度不能大于28
+     * 
+     * @return cidr */
     public String getCidr() {
         return cidr;
     }
@@ -156,20 +121,14 @@ public class CreateSubnetOption  {
         this.cidr = cidr;
     }
 
-    
-
     public CreateSubnetOption withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网所在VPC标识
-     * @return vpcId
-     */
+    /** 子网所在VPC标识
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -178,20 +137,14 @@ public class CreateSubnetOption  {
         this.vpcId = vpcId;
     }
 
-    
-
     public CreateSubnetOption withGatewayIp(String gatewayIp) {
         this.gatewayIp = gatewayIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：子网的网关 取值范围：子网网段中的IP地址 约束：必须是ip格式
-     * @return gatewayIp
-     */
+    /** 功能说明：子网的网关 取值范围：子网网段中的IP地址 约束：必须是ip格式
+     * 
+     * @return gatewayIp */
     public String getGatewayIp() {
         return gatewayIp;
     }
@@ -200,20 +153,14 @@ public class CreateSubnetOption  {
         this.gatewayIp = gatewayIp;
     }
 
-    
-
     public CreateSubnetOption withIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：是否创建cidr_v6 取值范围：true（开启），false（关闭） 约束：不填时默认为false > 说明 该参数目前仅在“华北-北京四”区域开放，且申请IPv6公测后才可设置。
-     * @return ipv6Enable
-     */
+    /** 功能说明：是否创建cidr_v6 取值范围：true（开启），false（关闭） 约束：不填时默认为false > 说明 该参数目前仅在“华北-北京四”区域开放，且申请IPv6公测后才可设置。
+     * 
+     * @return ipv6Enable */
     public Boolean getIpv6Enable() {
         return ipv6Enable;
     }
@@ -222,20 +169,14 @@ public class CreateSubnetOption  {
         this.ipv6Enable = ipv6Enable;
     }
 
-    
-
     public CreateSubnetOption withDhcpEnable(Boolean dhcpEnable) {
         this.dhcpEnable = dhcpEnable;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：子网是否开启dhcp功能 取值范围：true（开启），false（关闭） 约束：不填时默认为true。当设置为false时，会导致新创建的ECS无法获取IP地址，cloudinit无法注入账号密码，请谨慎操作。
-     * @return dhcpEnable
-     */
+    /** 功能说明：子网是否开启dhcp功能 取值范围：true（开启），false（关闭） 约束：不填时默认为true。当设置为false时，会导致新创建的ECS无法获取IP地址，cloudinit无法注入账号密码，请谨慎操作。
+     * 
+     * @return dhcpEnable */
     public Boolean getDhcpEnable() {
         return dhcpEnable;
     }
@@ -244,20 +185,16 @@ public class CreateSubnetOption  {
         this.dhcpEnable = dhcpEnable;
     }
 
-    
-
     public CreateSubnetOption withPrimaryDns(String primaryDns) {
         this.primaryDns = primaryDns;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：子网dns服务器地址1 约束：ip格式，不支持IPv6地址 默认值：不填时为空 [内网DNS地址请参见](https://support.huaweicloud.com/dns_faq/dns_faq_002.html) [通过API获取请参见](https://support.huaweicloud.com/api-dns/dns_api_69001.html)
-     * @return primaryDns
-     */
+    /** 功能说明：子网dns服务器地址1 约束：ip格式，不支持IPv6地址 默认值：不填时为空
+     * [内网DNS地址请参见](https://support.huaweicloud.com/dns_faq/dns_faq_002.html)
+     * [通过API获取请参见](https://support.huaweicloud.com/api-dns/dns_api_69001.html)
+     * 
+     * @return primaryDns */
     public String getPrimaryDns() {
         return primaryDns;
     }
@@ -266,20 +203,16 @@ public class CreateSubnetOption  {
         this.primaryDns = primaryDns;
     }
 
-    
-
     public CreateSubnetOption withSecondaryDns(String secondaryDns) {
         this.secondaryDns = secondaryDns;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：子网dns服务器地址2 约束：ip格式，不支持IPv6地址 默认值：不填时为空 [内网DNS地址请参见](https://support.huaweicloud.com/dns_faq/dns_faq_002.html) [通过API获取请参见](https://support.huaweicloud.com/api-dns/dns_api_69001.html)
-     * @return secondaryDns
-     */
+    /** 功能说明：子网dns服务器地址2 约束：ip格式，不支持IPv6地址 默认值：不填时为空
+     * [内网DNS地址请参见](https://support.huaweicloud.com/dns_faq/dns_faq_002.html)
+     * [通过API获取请参见](https://support.huaweicloud.com/api-dns/dns_api_69001.html)
+     * 
+     * @return secondaryDns */
     public String getSecondaryDns() {
         return secondaryDns;
     }
@@ -288,16 +221,13 @@ public class CreateSubnetOption  {
         this.secondaryDns = secondaryDns;
     }
 
-    
-
     public CreateSubnetOption withDnsList(List<String> dnsList) {
         this.dnsList = dnsList;
         return this;
     }
 
-    
     public CreateSubnetOption addDnsListItem(String dnsListItem) {
-        if(this.dnsList == null) {
+        if (this.dnsList == null) {
             this.dnsList = new ArrayList<>();
         }
         this.dnsList.add(dnsListItem);
@@ -305,17 +235,18 @@ public class CreateSubnetOption  {
     }
 
     public CreateSubnetOption withDnsList(Consumer<List<String>> dnsListSetter) {
-        if(this.dnsList == null) {
+        if (this.dnsList == null) {
             this.dnsList = new ArrayList<>();
         }
         dnsListSetter.accept(this.dnsList);
         return this;
     }
 
-    /**
-     * 功能说明：子网dns服务器地址的集合；如果想使用两个以上dns服务器，请使用该字段 约束：是子网dns服务器地址1跟子网dns服务器地址2的合集的父集，不支持IPv6地址。 默认值：不填时为空，无法使用云内网DNS功能 [内网DNS地址请参见](https://support.huaweicloud.com/dns_faq/dns_faq_002.html) [通过API获取请参见](https://support.huaweicloud.com/api-dns/dns_api_69001.html)
-     * @return dnsList
-     */
+    /** 功能说明：子网dns服务器地址的集合；如果想使用两个以上dns服务器，请使用该字段 约束：是子网dns服务器地址1跟子网dns服务器地址2的合集的父集，不支持IPv6地址。 默认值：不填时为空，无法使用云内网DNS功能
+     * [内网DNS地址请参见](https://support.huaweicloud.com/dns_faq/dns_faq_002.html)
+     * [通过API获取请参见](https://support.huaweicloud.com/api-dns/dns_api_69001.html)
+     * 
+     * @return dnsList */
     public List<String> getDnsList() {
         return dnsList;
     }
@@ -324,20 +255,14 @@ public class CreateSubnetOption  {
         this.dnsList = dnsList;
     }
 
-    
-
     public CreateSubnetOption withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：子网所在的可用分区标识 约束：系统存在的可用分区标识
-     * @return availabilityZone
-     */
+    /** 功能说明：子网所在的可用分区标识 约束：系统存在的可用分区标识
+     * 
+     * @return availabilityZone */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -346,16 +271,13 @@ public class CreateSubnetOption  {
         this.availabilityZone = availabilityZone;
     }
 
-    
-
     public CreateSubnetOption withExtraDhcpOpts(List<ExtraDhcpOption> extraDhcpOpts) {
         this.extraDhcpOpts = extraDhcpOpts;
         return this;
     }
 
-    
     public CreateSubnetOption addExtraDhcpOptsItem(ExtraDhcpOption extraDhcpOptsItem) {
-        if(this.extraDhcpOpts == null) {
+        if (this.extraDhcpOpts == null) {
             this.extraDhcpOpts = new ArrayList<>();
         }
         this.extraDhcpOpts.add(extraDhcpOptsItem);
@@ -363,17 +285,16 @@ public class CreateSubnetOption  {
     }
 
     public CreateSubnetOption withExtraDhcpOpts(Consumer<List<ExtraDhcpOption>> extraDhcpOptsSetter) {
-        if(this.extraDhcpOpts == null) {
+        if (this.extraDhcpOpts == null) {
             this.extraDhcpOpts = new ArrayList<>();
         }
         extraDhcpOptsSetter.accept(this.extraDhcpOpts);
         return this;
     }
 
-    /**
-     * 子网配置的NTP地址
-     * @return extraDhcpOpts
-     */
+    /** 子网配置的NTP地址
+     * 
+     * @return extraDhcpOpts */
     public List<ExtraDhcpOption> getExtraDhcpOpts() {
         return extraDhcpOpts;
     }
@@ -381,8 +302,6 @@ public class CreateSubnetOption  {
     public void setExtraDhcpOpts(List<ExtraDhcpOption> extraDhcpOpts) {
         this.extraDhcpOpts = extraDhcpOpts;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -393,23 +312,36 @@ public class CreateSubnetOption  {
             return false;
         }
         CreateSubnetOption createSubnetOption = (CreateSubnetOption) o;
-        return Objects.equals(this.name, createSubnetOption.name) &&
-            Objects.equals(this.description, createSubnetOption.description) &&
-            Objects.equals(this.cidr, createSubnetOption.cidr) &&
-            Objects.equals(this.vpcId, createSubnetOption.vpcId) &&
-            Objects.equals(this.gatewayIp, createSubnetOption.gatewayIp) &&
-            Objects.equals(this.ipv6Enable, createSubnetOption.ipv6Enable) &&
-            Objects.equals(this.dhcpEnable, createSubnetOption.dhcpEnable) &&
-            Objects.equals(this.primaryDns, createSubnetOption.primaryDns) &&
-            Objects.equals(this.secondaryDns, createSubnetOption.secondaryDns) &&
-            Objects.equals(this.dnsList, createSubnetOption.dnsList) &&
-            Objects.equals(this.availabilityZone, createSubnetOption.availabilityZone) &&
-            Objects.equals(this.extraDhcpOpts, createSubnetOption.extraDhcpOpts);
+        return Objects.equals(this.name, createSubnetOption.name)
+            && Objects.equals(this.description, createSubnetOption.description)
+            && Objects.equals(this.cidr, createSubnetOption.cidr)
+            && Objects.equals(this.vpcId, createSubnetOption.vpcId)
+            && Objects.equals(this.gatewayIp, createSubnetOption.gatewayIp)
+            && Objects.equals(this.ipv6Enable, createSubnetOption.ipv6Enable)
+            && Objects.equals(this.dhcpEnable, createSubnetOption.dhcpEnable)
+            && Objects.equals(this.primaryDns, createSubnetOption.primaryDns)
+            && Objects.equals(this.secondaryDns, createSubnetOption.secondaryDns)
+            && Objects.equals(this.dnsList, createSubnetOption.dnsList)
+            && Objects.equals(this.availabilityZone, createSubnetOption.availabilityZone)
+            && Objects.equals(this.extraDhcpOpts, createSubnetOption.extraDhcpOpts);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, cidr, vpcId, gatewayIp, ipv6Enable, dhcpEnable, primaryDns, secondaryDns, dnsList, availabilityZone, extraDhcpOpts);
+        return Objects.hash(name,
+            description,
+            cidr,
+            vpcId,
+            gatewayIp,
+            ipv6Enable,
+            dhcpEnable,
+            primaryDns,
+            secondaryDns,
+            dnsList,
+            availabilityZone,
+            extraDhcpOpts);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -429,16 +361,13 @@ public class CreateSubnetOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

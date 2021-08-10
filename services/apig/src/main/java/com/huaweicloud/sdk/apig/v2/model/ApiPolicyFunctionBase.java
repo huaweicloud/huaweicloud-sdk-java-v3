@@ -1,47 +1,31 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * ApiPolicyFunctionBase
- */
-public class ApiPolicyFunctionBase  {
-
-
+/** ApiPolicyFunctionBase */
+public class ApiPolicyFunctionBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="function_urn")
-    
+    @JsonProperty(value = "function_urn")
+
     private String functionUrn;
-    /**
-     * 调用类型 - async： 异步 - sync：同步
-     */
+
+    /** 调用类型 - async： 异步 - sync：同步 */
     public static final class InvocationTypeEnum {
 
-        
-        /**
-         * Enum ASYNC for value: "async"
-         */
+        /** Enum ASYNC for value: "async" */
         public static final InvocationTypeEnum ASYNC = new InvocationTypeEnum("async");
-        
-        /**
-         * Enum SYNC for value: "sync"
-         */
+
+        /** Enum SYNC for value: "sync" */
         public static final InvocationTypeEnum SYNC = new InvocationTypeEnum("sync");
-        
 
         private static final Map<String, InvocationTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,7 +54,7 @@ public class ApiPolicyFunctionBase  {
 
         @JsonCreator
         public static InvocationTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             InvocationTypeEnum result = STATIC_FIELDS.get(value);
@@ -81,7 +65,7 @@ public class ApiPolicyFunctionBase  {
         }
 
         public static InvocationTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             InvocationTypeEnum result = STATIC_FIELDS.get(value);
@@ -105,22 +89,19 @@ public class ApiPolicyFunctionBase  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invocation_type")
-    
+    @JsonProperty(value = "invocation_type")
+
     private InvocationTypeEnum invocationType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timeout")
-    
+    @JsonProperty(value = "timeout")
+
     private Integer timeout;
 
     public ApiPolicyFunctionBase withFunctionUrn(String functionUrn) {
@@ -128,13 +109,9 @@ public class ApiPolicyFunctionBase  {
         return this;
     }
 
-    
-
-
-    /**
-     * 函数URN
-     * @return functionUrn
-     */
+    /** 函数URN
+     * 
+     * @return functionUrn */
     public String getFunctionUrn() {
         return functionUrn;
     }
@@ -143,20 +120,14 @@ public class ApiPolicyFunctionBase  {
         this.functionUrn = functionUrn;
     }
 
-    
-
     public ApiPolicyFunctionBase withInvocationType(InvocationTypeEnum invocationType) {
         this.invocationType = invocationType;
         return this;
     }
 
-    
-
-
-    /**
-     * 调用类型 - async： 异步 - sync：同步
-     * @return invocationType
-     */
+    /** 调用类型 - async： 异步 - sync：同步
+     * 
+     * @return invocationType */
     public InvocationTypeEnum getInvocationType() {
         return invocationType;
     }
@@ -165,20 +136,14 @@ public class ApiPolicyFunctionBase  {
         this.invocationType = invocationType;
     }
 
-    
-
     public ApiPolicyFunctionBase withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 版本。字符长度不超过64
-     * @return version
-     */
+    /** 版本。字符长度不超过64
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -187,21 +152,14 @@ public class ApiPolicyFunctionBase  {
         this.version = version;
     }
 
-    
-
     public ApiPolicyFunctionBase withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
     }
 
-    
-
-
-    /**
-     * API网关请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000。  单位：毫秒。
-     * minimum: 1
-     * @return timeout
-     */
+    /** API网关请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000。 单位：毫秒。 minimum: 1
+     * 
+     * @return timeout */
     public Integer getTimeout() {
         return timeout;
     }
@@ -209,8 +167,6 @@ public class ApiPolicyFunctionBase  {
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -221,15 +177,17 @@ public class ApiPolicyFunctionBase  {
             return false;
         }
         ApiPolicyFunctionBase apiPolicyFunctionBase = (ApiPolicyFunctionBase) o;
-        return Objects.equals(this.functionUrn, apiPolicyFunctionBase.functionUrn) &&
-            Objects.equals(this.invocationType, apiPolicyFunctionBase.invocationType) &&
-            Objects.equals(this.version, apiPolicyFunctionBase.version) &&
-            Objects.equals(this.timeout, apiPolicyFunctionBase.timeout);
+        return Objects.equals(this.functionUrn, apiPolicyFunctionBase.functionUrn)
+            && Objects.equals(this.invocationType, apiPolicyFunctionBase.invocationType)
+            && Objects.equals(this.version, apiPolicyFunctionBase.version)
+            && Objects.equals(this.timeout, apiPolicyFunctionBase.timeout);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(functionUrn, invocationType, version, timeout);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -241,16 +199,13 @@ public class ApiPolicyFunctionBase  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

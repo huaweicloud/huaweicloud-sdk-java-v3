@@ -1,41 +1,26 @@
 package com.huaweicloud.sdk.cloudide.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * ResourcePrice
- */
-public class ResourcePrice  {
+/** ResourcePrice */
+public class ResourcePrice {
 
-    /**
-     * cpu架构 x86|arm
-     */
+    /** cpu架构 x86|arm */
     public static final class ArchEnum {
 
-        
-        /**
-         * Enum X86 for value: "x86"
-         */
+        /** Enum X86 for value: "x86" */
         public static final ArchEnum X86 = new ArchEnum("x86");
-        
-        /**
-         * Enum ARM for value: "arm"
-         */
+
+        /** Enum ARM for value: "arm" */
         public static final ArchEnum ARM = new ArchEnum("arm");
-        
 
         private static final Map<String, ArchEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +49,7 @@ public class ResourcePrice  {
 
         @JsonCreator
         public static ArchEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ArchEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +60,7 @@ public class ResourcePrice  {
         }
 
         public static ArchEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ArchEnum result = STATIC_FIELDS.get(value);
@@ -99,28 +84,24 @@ public class ResourcePrice  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arch")
-    
+    @JsonProperty(value = "arch")
+
     private ArchEnum arch;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="price")
-    
+    @JsonProperty(value = "price")
+
     private Float price;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private String size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
     public ResourcePrice withArch(ArchEnum arch) {
@@ -128,13 +109,9 @@ public class ResourcePrice  {
         return this;
     }
 
-    
-
-
-    /**
-     * cpu架构 x86|arm
-     * @return arch
-     */
+    /** cpu架构 x86|arm
+     * 
+     * @return arch */
     public ArchEnum getArch() {
         return arch;
     }
@@ -143,22 +120,14 @@ public class ResourcePrice  {
         this.arch = arch;
     }
 
-    
-
     public ResourcePrice withPrice(Float price) {
         this.price = price;
         return this;
     }
 
-    
-
-
-    /**
-     * 价格
-     * minimum: 0
-     * maximum: 1E+8
-     * @return price
-     */
+    /** 价格 minimum: 0 maximum: 1E+8
+     * 
+     * @return price */
     public Float getPrice() {
         return price;
     }
@@ -167,20 +136,14 @@ public class ResourcePrice  {
         this.price = price;
     }
 
-    
-
     public ResourcePrice withSize(String size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 规格。 类型为'storage'时，size值可以为5GB，10GB，20GB。 类型为'cpuMemory'时，arch为'x86'，size值可以为1U1G，2U4G；arch为'arm'，size值可以为4U8G。
-     * @return size
-     */
+    /** 规格。 类型为'storage'时，size值可以为5GB，10GB，20GB。 类型为'cpuMemory'时，arch为'x86'，size值可以为1U1G，2U4G；arch为'arm'，size值可以为4U8G。
+     * 
+     * @return size */
     public String getSize() {
         return size;
     }
@@ -189,20 +152,14 @@ public class ResourcePrice  {
         this.size = size;
     }
 
-    
-
     public ResourcePrice withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 类型。目前可以取值storage，cpuMemory
-     * @return type
-     */
+    /** 类型。目前可以取值storage，cpuMemory
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -210,8 +167,6 @@ public class ResourcePrice  {
     public void setType(String type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -222,15 +177,15 @@ public class ResourcePrice  {
             return false;
         }
         ResourcePrice resourcePrice = (ResourcePrice) o;
-        return Objects.equals(this.arch, resourcePrice.arch) &&
-            Objects.equals(this.price, resourcePrice.price) &&
-            Objects.equals(this.size, resourcePrice.size) &&
-            Objects.equals(this.type, resourcePrice.type);
+        return Objects.equals(this.arch, resourcePrice.arch) && Objects.equals(this.price, resourcePrice.price)
+            && Objects.equals(this.size, resourcePrice.size) && Objects.equals(this.type, resourcePrice.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(arch, price, size, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -242,16 +197,13 @@ public class ResourcePrice  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

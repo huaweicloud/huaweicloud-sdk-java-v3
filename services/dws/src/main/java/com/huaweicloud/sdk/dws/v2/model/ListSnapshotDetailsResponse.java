@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.dws.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dws.v2.model.SnapshoDetail;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ListSnapshotDetailsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="snapshot")
-    
+    @JsonProperty(value = "snapshot")
+
     private SnapshoDetail snapshot;
 
     public ListSnapshotDetailsResponse withSnapshot(SnapshoDetail snapshot) {
@@ -32,19 +21,17 @@ public class ListSnapshotDetailsResponse extends SdkResponse {
     }
 
     public ListSnapshotDetailsResponse withSnapshot(Consumer<SnapshoDetail> snapshotSetter) {
-        if(this.snapshot == null ){
+        if (this.snapshot == null) {
             this.snapshot = new SnapshoDetail();
             snapshotSetter.accept(this.snapshot);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get snapshot
-     * @return snapshot
-     */
+    /** Get snapshot
+     * 
+     * @return snapshot */
     public SnapshoDetail getSnapshot() {
         return snapshot;
     }
@@ -52,8 +39,6 @@ public class ListSnapshotDetailsResponse extends SdkResponse {
     public void setSnapshot(SnapshoDetail snapshot) {
         this.snapshot = snapshot;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class ListSnapshotDetailsResponse extends SdkResponse {
         ListSnapshotDetailsResponse listSnapshotDetailsResponse = (ListSnapshotDetailsResponse) o;
         return Objects.equals(this.snapshot, listSnapshotDetailsResponse.snapshot);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(snapshot);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class ListSnapshotDetailsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

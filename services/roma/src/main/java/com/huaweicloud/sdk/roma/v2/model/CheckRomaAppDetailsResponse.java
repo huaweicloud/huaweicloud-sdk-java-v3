@@ -1,81 +1,55 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.ServerAppInfoCreatedUser;
-import com.huaweicloud.sdk.roma.v2.model.ServerAppInfoLastUpdatedUser;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CheckRomaAppDetailsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
+
     private String remark;
-    /**
-     * Gets or Sets roles
-     */
+
+    /** Gets or Sets roles */
     public static final class RolesEnum {
 
-        
-        /**
-         * Enum READ for value: "read"
-         */
+        /** Enum READ for value: "read" */
         public static final RolesEnum READ = new RolesEnum("read");
-        
-        /**
-         * Enum ACCESS for value: "access"
-         */
+
+        /** Enum ACCESS for value: "access" */
         public static final RolesEnum ACCESS = new RolesEnum("access");
-        
-        /**
-         * Enum DELETE for value: "delete"
-         */
+
+        /** Enum DELETE for value: "delete" */
         public static final RolesEnum DELETE = new RolesEnum("delete");
-        
-        /**
-         * Enum MODIFY for value: "modify"
-         */
+
+        /** Enum MODIFY for value: "modify" */
         public static final RolesEnum MODIFY = new RolesEnum("modify");
-        
-        /**
-         * Enum ADMIN for value: "admin"
-         */
+
+        /** Enum ADMIN for value: "admin" */
         public static final RolesEnum ADMIN = new RolesEnum("admin");
-        
 
         private static final Map<String, RolesEnum> STATIC_FIELDS = createStaticFields();
 
@@ -107,7 +81,7 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
 
         @JsonCreator
         public static RolesEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             RolesEnum result = STATIC_FIELDS.get(value);
@@ -118,7 +92,7 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         }
 
         public static RolesEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             RolesEnum result = STATIC_FIELDS.get(value);
@@ -142,52 +116,44 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roles")
-    
+    @JsonProperty(value = "roles")
+
     private List<RolesEnum> roles = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private BigDecimal createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private BigDecimal updateTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_user")
-    
+    @JsonProperty(value = "created_user")
+
     private ServerAppInfoCreatedUser createdUser;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_updated_user")
-    
+    @JsonProperty(value = "last_updated_user")
+
     private ServerAppInfoLastUpdatedUser lastUpdatedUser;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="owner")
-    
+    @JsonProperty(value = "owner")
+
     private Boolean owner;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="favorite")
-    
+    @JsonProperty(value = "favorite")
+
     private Boolean favorite;
 
     public CheckRomaAppDetailsResponse withId(String id) {
@@ -195,13 +161,9 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 应用ID
-     * @return id
-     */
+    /** 应用ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -210,20 +172,14 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public CheckRomaAppDetailsResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名称 - 字符集：支持中文、英文字母、数字、中划线、下划线、点、空格和中英文圆括号 - 约束：实例下唯一
-     * @return name
-     */
+    /** 应用名称 - 字符集：支持中文、英文字母、数字、中划线、下划线、点、空格和中英文圆括号 - 约束：实例下唯一
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -232,20 +188,14 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public CheckRomaAppDetailsResponse withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用描述
-     * @return remark
-     */
+    /** 应用描述
+     * 
+     * @return remark */
     public String getRemark() {
         return remark;
     }
@@ -254,16 +204,13 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         this.remark = remark;
     }
 
-    
-
     public CheckRomaAppDetailsResponse withRoles(List<RolesEnum> roles) {
         this.roles = roles;
         return this;
     }
 
-    
     public CheckRomaAppDetailsResponse addRolesItem(RolesEnum rolesItem) {
-        if(this.roles == null) {
+        if (this.roles == null) {
             this.roles = new ArrayList<>();
         }
         this.roles.add(rolesItem);
@@ -271,17 +218,17 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
     }
 
     public CheckRomaAppDetailsResponse withRoles(Consumer<List<RolesEnum>> rolesSetter) {
-        if(this.roles == null) {
+        if (this.roles == null) {
             this.roles = new ArrayList<>();
         }
         rolesSetter.accept(this.roles);
         return this;
     }
 
-    /**
-     * 应用权限角色 - read：应用下资源只读权限，至少要存在此权限，包括API调试 - access：应用下资源的访问管理权限 - delete：应用下资源的删除权限 - modify：应用下资源的修改权限，包括API发布、下线 - admin：应用和应用下资源的权限 - 仅提供admin时，会自动应用其它所有权限 - 未提供read时会自动应用read权限
-     * @return roles
-     */
+    /** 应用权限角色 - read：应用下资源只读权限，至少要存在此权限，包括API调试 - access：应用下资源的访问管理权限 - delete：应用下资源的删除权限 -
+     * modify：应用下资源的修改权限，包括API发布、下线 - admin：应用和应用下资源的权限 - 仅提供admin时，会自动应用其它所有权限 - 未提供read时会自动应用read权限
+     * 
+     * @return roles */
     public List<RolesEnum> getRoles() {
         return roles;
     }
@@ -290,22 +237,14 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         this.roles = roles;
     }
 
-    
-
     public CheckRomaAppDetailsResponse withCreateTime(BigDecimal createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建UTC时间
-     * minimum: 1
-     * maximum: 128
-     * @return createTime
-     */
+    /** 创建UTC时间 minimum: 1 maximum: 128
+     * 
+     * @return createTime */
     public BigDecimal getCreateTime() {
         return createTime;
     }
@@ -314,22 +253,14 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public CheckRomaAppDetailsResponse withUpdateTime(BigDecimal updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建UTC时间
-     * minimum: 1
-     * maximum: 128
-     * @return updateTime
-     */
+    /** 创建UTC时间 minimum: 1 maximum: 128
+     * 
+     * @return updateTime */
     public BigDecimal getUpdateTime() {
         return updateTime;
     }
@@ -338,27 +269,23 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     public CheckRomaAppDetailsResponse withCreatedUser(ServerAppInfoCreatedUser createdUser) {
         this.createdUser = createdUser;
         return this;
     }
 
     public CheckRomaAppDetailsResponse withCreatedUser(Consumer<ServerAppInfoCreatedUser> createdUserSetter) {
-        if(this.createdUser == null ){
+        if (this.createdUser == null) {
             this.createdUser = new ServerAppInfoCreatedUser();
             createdUserSetter.accept(this.createdUser);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get createdUser
-     * @return createdUser
-     */
+    /** Get createdUser
+     * 
+     * @return createdUser */
     public ServerAppInfoCreatedUser getCreatedUser() {
         return createdUser;
     }
@@ -367,27 +294,24 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         this.createdUser = createdUser;
     }
 
-    
-
     public CheckRomaAppDetailsResponse withLastUpdatedUser(ServerAppInfoLastUpdatedUser lastUpdatedUser) {
         this.lastUpdatedUser = lastUpdatedUser;
         return this;
     }
 
-    public CheckRomaAppDetailsResponse withLastUpdatedUser(Consumer<ServerAppInfoLastUpdatedUser> lastUpdatedUserSetter) {
-        if(this.lastUpdatedUser == null ){
+    public CheckRomaAppDetailsResponse withLastUpdatedUser(
+        Consumer<ServerAppInfoLastUpdatedUser> lastUpdatedUserSetter) {
+        if (this.lastUpdatedUser == null) {
             this.lastUpdatedUser = new ServerAppInfoLastUpdatedUser();
             lastUpdatedUserSetter.accept(this.lastUpdatedUser);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get lastUpdatedUser
-     * @return lastUpdatedUser
-     */
+    /** Get lastUpdatedUser
+     * 
+     * @return lastUpdatedUser */
     public ServerAppInfoLastUpdatedUser getLastUpdatedUser() {
         return lastUpdatedUser;
     }
@@ -396,20 +320,14 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         this.lastUpdatedUser = lastUpdatedUser;
     }
 
-    
-
     public CheckRomaAppDetailsResponse withOwner(Boolean owner) {
         this.owner = owner;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否是应用拥有者
-     * @return owner
-     */
+    /** 是否是应用拥有者
+     * 
+     * @return owner */
     public Boolean getOwner() {
         return owner;
     }
@@ -418,20 +336,14 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         this.owner = owner;
     }
 
-    
-
     public CheckRomaAppDetailsResponse withKey(String key) {
         this.key = key;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用认证访问KEY,未提供时随机生成 - 字符集：支持中文、英文字母、数字、中划线、下划线、@号和点，以字母或中文或数字开头 - 约束：实例下唯一
-     * @return key
-     */
+    /** 应用认证访问KEY,未提供时随机生成 - 字符集：支持中文、英文字母、数字、中划线、下划线、@号和点，以字母或中文或数字开头 - 约束：实例下唯一
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -440,20 +352,14 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         this.key = key;
     }
 
-    
-
     public CheckRomaAppDetailsResponse withFavorite(Boolean favorite) {
         this.favorite = favorite;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否收藏应用，收藏的应用会在列表里优先显示
-     * @return favorite
-     */
+    /** 是否收藏应用，收藏的应用会在列表里优先显示
+     * 
+     * @return favorite */
     public Boolean getFavorite() {
         return favorite;
     }
@@ -461,8 +367,6 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
     public void setFavorite(Boolean favorite) {
         this.favorite = favorite;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -473,22 +377,25 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
             return false;
         }
         CheckRomaAppDetailsResponse checkRomaAppDetailsResponse = (CheckRomaAppDetailsResponse) o;
-        return Objects.equals(this.id, checkRomaAppDetailsResponse.id) &&
-            Objects.equals(this.name, checkRomaAppDetailsResponse.name) &&
-            Objects.equals(this.remark, checkRomaAppDetailsResponse.remark) &&
-            Objects.equals(this.roles, checkRomaAppDetailsResponse.roles) &&
-            Objects.equals(this.createTime, checkRomaAppDetailsResponse.createTime) &&
-            Objects.equals(this.updateTime, checkRomaAppDetailsResponse.updateTime) &&
-            Objects.equals(this.createdUser, checkRomaAppDetailsResponse.createdUser) &&
-            Objects.equals(this.lastUpdatedUser, checkRomaAppDetailsResponse.lastUpdatedUser) &&
-            Objects.equals(this.owner, checkRomaAppDetailsResponse.owner) &&
-            Objects.equals(this.key, checkRomaAppDetailsResponse.key) &&
-            Objects.equals(this.favorite, checkRomaAppDetailsResponse.favorite);
+        return Objects.equals(this.id, checkRomaAppDetailsResponse.id)
+            && Objects.equals(this.name, checkRomaAppDetailsResponse.name)
+            && Objects.equals(this.remark, checkRomaAppDetailsResponse.remark)
+            && Objects.equals(this.roles, checkRomaAppDetailsResponse.roles)
+            && Objects.equals(this.createTime, checkRomaAppDetailsResponse.createTime)
+            && Objects.equals(this.updateTime, checkRomaAppDetailsResponse.updateTime)
+            && Objects.equals(this.createdUser, checkRomaAppDetailsResponse.createdUser)
+            && Objects.equals(this.lastUpdatedUser, checkRomaAppDetailsResponse.lastUpdatedUser)
+            && Objects.equals(this.owner, checkRomaAppDetailsResponse.owner)
+            && Objects.equals(this.key, checkRomaAppDetailsResponse.key)
+            && Objects.equals(this.favorite, checkRomaAppDetailsResponse.favorite);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, remark, roles, createTime, updateTime, createdUser, lastUpdatedUser, owner, key, favorite);
+        return Objects
+            .hash(id, name, remark, roles, createTime, updateTime, createdUser, lastUpdatedUser, owner, key, favorite);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -507,16 +414,13 @@ public class CheckRomaAppDetailsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

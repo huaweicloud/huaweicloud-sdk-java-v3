@@ -1,38 +1,25 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rms.v1.model.PageInfo;
-import com.huaweicloud.sdk.rms.v1.model.PolicyState;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListPolicyStatesByAssignmentIdResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private List<PolicyState> value = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_info")
-    
+    @JsonProperty(value = "page_info")
+
     private PageInfo pageInfo;
 
     public ListPolicyStatesByAssignmentIdResponse withValue(List<PolicyState> value) {
@@ -40,9 +27,8 @@ public class ListPolicyStatesByAssignmentIdResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListPolicyStatesByAssignmentIdResponse addValueItem(PolicyState valueItem) {
-        if(this.value == null) {
+        if (this.value == null) {
             this.value = new ArrayList<>();
         }
         this.value.add(valueItem);
@@ -50,17 +36,16 @@ public class ListPolicyStatesByAssignmentIdResponse extends SdkResponse {
     }
 
     public ListPolicyStatesByAssignmentIdResponse withValue(Consumer<List<PolicyState>> valueSetter) {
-        if(this.value == null) {
+        if (this.value == null) {
             this.value = new ArrayList<>();
         }
         valueSetter.accept(this.value);
         return this;
     }
 
-    /**
-     * 合规结果查询返回值
-     * @return value
-     */
+    /** 合规结果查询返回值
+     * 
+     * @return value */
     public List<PolicyState> getValue() {
         return value;
     }
@@ -69,27 +54,23 @@ public class ListPolicyStatesByAssignmentIdResponse extends SdkResponse {
         this.value = value;
     }
 
-    
-
     public ListPolicyStatesByAssignmentIdResponse withPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
         return this;
     }
 
     public ListPolicyStatesByAssignmentIdResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
-        if(this.pageInfo == null ){
+        if (this.pageInfo == null) {
             this.pageInfo = new PageInfo();
             pageInfoSetter.accept(this.pageInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get pageInfo
-     * @return pageInfo
-     */
+    /** Get pageInfo
+     * 
+     * @return pageInfo */
     public PageInfo getPageInfo() {
         return pageInfo;
     }
@@ -97,8 +78,6 @@ public class ListPolicyStatesByAssignmentIdResponse extends SdkResponse {
     public void setPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -108,14 +87,17 @@ public class ListPolicyStatesByAssignmentIdResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListPolicyStatesByAssignmentIdResponse listPolicyStatesByAssignmentIdResponse = (ListPolicyStatesByAssignmentIdResponse) o;
-        return Objects.equals(this.value, listPolicyStatesByAssignmentIdResponse.value) &&
-            Objects.equals(this.pageInfo, listPolicyStatesByAssignmentIdResponse.pageInfo);
+        ListPolicyStatesByAssignmentIdResponse listPolicyStatesByAssignmentIdResponse =
+            (ListPolicyStatesByAssignmentIdResponse) o;
+        return Objects.equals(this.value, listPolicyStatesByAssignmentIdResponse.value)
+            && Objects.equals(this.pageInfo, listPolicyStatesByAssignmentIdResponse.pageInfo);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(value, pageInfo);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -125,16 +107,13 @@ public class ListPolicyStatesByAssignmentIdResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

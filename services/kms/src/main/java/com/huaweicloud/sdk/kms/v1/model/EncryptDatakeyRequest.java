@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.EncryptDatakeyRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class EncryptDatakeyRequest  {
-
-
+/** Request Object */
+public class EncryptDatakeyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version_id")
-    
+    @JsonProperty(value = "version_id")
+
     private String versionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private EncryptDatakeyRequestBody body;
 
     public EncryptDatakeyRequest withVersionId(String versionId) {
@@ -35,13 +24,9 @@ public class EncryptDatakeyRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * API版本号
-     * @return versionId
-     */
+    /** API版本号
+     * 
+     * @return versionId */
     public String getVersionId() {
         return versionId;
     }
@@ -50,27 +35,23 @@ public class EncryptDatakeyRequest  {
         this.versionId = versionId;
     }
 
-    
-
     public EncryptDatakeyRequest withBody(EncryptDatakeyRequestBody body) {
         this.body = body;
         return this;
     }
 
     public EncryptDatakeyRequest withBody(Consumer<EncryptDatakeyRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new EncryptDatakeyRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public EncryptDatakeyRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class EncryptDatakeyRequest  {
     public void setBody(EncryptDatakeyRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class EncryptDatakeyRequest  {
             return false;
         }
         EncryptDatakeyRequest encryptDatakeyRequest = (EncryptDatakeyRequest) o;
-        return Objects.equals(this.versionId, encryptDatakeyRequest.versionId) &&
-            Objects.equals(this.body, encryptDatakeyRequest.body);
+        return Objects.equals(this.versionId, encryptDatakeyRequest.versionId)
+            && Objects.equals(this.body, encryptDatakeyRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(versionId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class EncryptDatakeyRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

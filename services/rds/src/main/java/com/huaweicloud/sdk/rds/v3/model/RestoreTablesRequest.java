@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.RestoreTablesRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class RestoreTablesRequest  {
-
-
+/** Request Object */
+public class RestoreTablesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private RestoreTablesRequestBody body;
 
     public RestoreTablesRequest withXLanguage(String xLanguage) {
@@ -41,15 +29,11 @@ public class RestoreTablesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -58,20 +42,14 @@ public class RestoreTablesRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public RestoreTablesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -80,27 +58,23 @@ public class RestoreTablesRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public RestoreTablesRequest withBody(RestoreTablesRequestBody body) {
         this.body = body;
         return this;
     }
 
     public RestoreTablesRequest withBody(Consumer<RestoreTablesRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new RestoreTablesRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public RestoreTablesRequestBody getBody() {
         return body;
     }
@@ -108,8 +82,6 @@ public class RestoreTablesRequest  {
     public void setBody(RestoreTablesRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -120,14 +92,16 @@ public class RestoreTablesRequest  {
             return false;
         }
         RestoreTablesRequest restoreTablesRequest = (RestoreTablesRequest) o;
-        return Objects.equals(this.xLanguage, restoreTablesRequest.xLanguage) &&
-            Objects.equals(this.instanceId, restoreTablesRequest.instanceId) &&
-            Objects.equals(this.body, restoreTablesRequest.body);
+        return Objects.equals(this.xLanguage, restoreTablesRequest.xLanguage)
+            && Objects.equals(this.instanceId, restoreTablesRequest.instanceId)
+            && Objects.equals(this.body, restoreTablesRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -138,16 +112,13 @@ public class RestoreTablesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

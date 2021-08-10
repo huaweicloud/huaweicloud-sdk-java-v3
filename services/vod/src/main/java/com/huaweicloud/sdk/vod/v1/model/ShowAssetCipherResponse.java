@@ -1,40 +1,27 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowAssetCipherResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="asset_id")
-    
+    @JsonProperty(value = "asset_id")
+
     private String assetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edk")
-    
+    @JsonProperty(value = "edk")
+
     private String edk;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dk")
-    
+    @JsonProperty(value = "dk")
+
     private String dk;
 
     public ShowAssetCipherResponse withAssetId(String assetId) {
@@ -42,13 +29,9 @@ public class ShowAssetCipherResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 媒资ID。
-     * @return assetId
-     */
+    /** 媒资ID。
+     * 
+     * @return assetId */
     public String getAssetId() {
         return assetId;
     }
@@ -57,20 +40,14 @@ public class ShowAssetCipherResponse extends SdkResponse {
         this.assetId = assetId;
     }
 
-    
-
     public ShowAssetCipherResponse withEdk(String edk) {
         this.edk = edk;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥密文。
-     * @return edk
-     */
+    /** 密钥密文。
+     * 
+     * @return edk */
     public String getEdk() {
         return edk;
     }
@@ -79,20 +56,14 @@ public class ShowAssetCipherResponse extends SdkResponse {
         this.edk = edk;
     }
 
-    
-
     public ShowAssetCipherResponse withDk(String dk) {
         this.dk = dk;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥明文。
-     * @return dk
-     */
+    /** 密钥明文。
+     * 
+     * @return dk */
     public String getDk() {
         return dk;
     }
@@ -100,8 +71,6 @@ public class ShowAssetCipherResponse extends SdkResponse {
     public void setDk(String dk) {
         this.dk = dk;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +81,16 @@ public class ShowAssetCipherResponse extends SdkResponse {
             return false;
         }
         ShowAssetCipherResponse showAssetCipherResponse = (ShowAssetCipherResponse) o;
-        return Objects.equals(this.assetId, showAssetCipherResponse.assetId) &&
-            Objects.equals(this.edk, showAssetCipherResponse.edk) &&
-            Objects.equals(this.dk, showAssetCipherResponse.dk);
+        return Objects.equals(this.assetId, showAssetCipherResponse.assetId)
+            && Objects.equals(this.edk, showAssetCipherResponse.edk)
+            && Objects.equals(this.dk, showAssetCipherResponse.dk);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(assetId, edk, dk);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +101,13 @@ public class ShowAssetCipherResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

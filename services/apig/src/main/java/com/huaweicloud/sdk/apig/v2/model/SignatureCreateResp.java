@@ -1,75 +1,57 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.time.OffsetDateTime;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * SignatureCreateResp
- */
-public class SignatureCreateResp  {
-
-
+/** SignatureCreateResp */
+public class SignatureCreateResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sign_secret")
-    
+    @JsonProperty(value = "sign_secret")
+
     private String signSecret;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private OffsetDateTime updateTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private OffsetDateTime createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sign_key")
-    
+    @JsonProperty(value = "sign_key")
+
     private String signKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sign_type")
-    
+    @JsonProperty(value = "sign_type")
+
     private String signType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bind_num")
-    
+    @JsonProperty(value = "bind_num")
+
     private Integer bindNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ldapi_bind_num")
-    
+    @JsonProperty(value = "ldapi_bind_num")
+
     private Integer ldapiBindNum;
 
     public SignatureCreateResp withSignSecret(String signSecret) {
@@ -77,13 +59,9 @@ public class SignatureCreateResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 签名密钥的密钥
-     * @return signSecret
-     */
+    /** 签名密钥的密钥
+     * 
+     * @return signSecret */
     public String getSignSecret() {
         return signSecret;
     }
@@ -92,20 +70,14 @@ public class SignatureCreateResp  {
         this.signSecret = signSecret;
     }
 
-    
-
     public SignatureCreateResp withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间
-     * @return updateTime
-     */
+    /** 更新时间
+     * 
+     * @return updateTime */
     public OffsetDateTime getUpdateTime() {
         return updateTime;
     }
@@ -114,20 +86,14 @@ public class SignatureCreateResp  {
         this.updateTime = updateTime;
     }
 
-    
-
     public SignatureCreateResp withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return createTime
-     */
+    /** 创建时间
+     * 
+     * @return createTime */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -136,20 +102,14 @@ public class SignatureCreateResp  {
         this.createTime = createTime;
     }
 
-    
-
     public SignatureCreateResp withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 签名密钥的名称
-     * @return name
-     */
+    /** 签名密钥的名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -158,20 +118,14 @@ public class SignatureCreateResp  {
         this.name = name;
     }
 
-    
-
     public SignatureCreateResp withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 签名密钥的编号
-     * @return id
-     */
+    /** 签名密钥的编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -180,20 +134,14 @@ public class SignatureCreateResp  {
         this.id = id;
     }
 
-    
-
     public SignatureCreateResp withSignKey(String signKey) {
         this.signKey = signKey;
         return this;
     }
 
-    
-
-
-    /**
-     * 签名密钥的key
-     * @return signKey
-     */
+    /** 签名密钥的key
+     * 
+     * @return signKey */
     public String getSignKey() {
         return signKey;
     }
@@ -202,20 +150,14 @@ public class SignatureCreateResp  {
         this.signKey = signKey;
     }
 
-    
-
     public SignatureCreateResp withSignType(String signType) {
         this.signType = signType;
         return this;
     }
 
-    
-
-
-    /**
-     * 签名密钥的类型
-     * @return signType
-     */
+    /** 签名密钥的类型
+     * 
+     * @return signType */
     public String getSignType() {
         return signType;
     }
@@ -224,20 +166,14 @@ public class SignatureCreateResp  {
         this.signType = signType;
     }
 
-    
-
     public SignatureCreateResp withBindNum(Integer bindNum) {
         this.bindNum = bindNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 绑定的API数量
-     * @return bindNum
-     */
+    /** 绑定的API数量
+     * 
+     * @return bindNum */
     public Integer getBindNum() {
         return bindNum;
     }
@@ -246,20 +182,14 @@ public class SignatureCreateResp  {
         this.bindNum = bindNum;
     }
 
-    
-
     public SignatureCreateResp withLdapiBindNum(Integer ldapiBindNum) {
         this.ldapiBindNum = ldapiBindNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 绑定的自定义后端数量  暂不支持
-     * @return ldapiBindNum
-     */
+    /** 绑定的自定义后端数量 暂不支持
+     * 
+     * @return ldapiBindNum */
     public Integer getLdapiBindNum() {
         return ldapiBindNum;
     }
@@ -267,8 +197,6 @@ public class SignatureCreateResp  {
     public void setLdapiBindNum(Integer ldapiBindNum) {
         this.ldapiBindNum = ldapiBindNum;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -279,20 +207,21 @@ public class SignatureCreateResp  {
             return false;
         }
         SignatureCreateResp signatureCreateResp = (SignatureCreateResp) o;
-        return Objects.equals(this.signSecret, signatureCreateResp.signSecret) &&
-            Objects.equals(this.updateTime, signatureCreateResp.updateTime) &&
-            Objects.equals(this.createTime, signatureCreateResp.createTime) &&
-            Objects.equals(this.name, signatureCreateResp.name) &&
-            Objects.equals(this.id, signatureCreateResp.id) &&
-            Objects.equals(this.signKey, signatureCreateResp.signKey) &&
-            Objects.equals(this.signType, signatureCreateResp.signType) &&
-            Objects.equals(this.bindNum, signatureCreateResp.bindNum) &&
-            Objects.equals(this.ldapiBindNum, signatureCreateResp.ldapiBindNum);
+        return Objects.equals(this.signSecret, signatureCreateResp.signSecret)
+            && Objects.equals(this.updateTime, signatureCreateResp.updateTime)
+            && Objects.equals(this.createTime, signatureCreateResp.createTime)
+            && Objects.equals(this.name, signatureCreateResp.name) && Objects.equals(this.id, signatureCreateResp.id)
+            && Objects.equals(this.signKey, signatureCreateResp.signKey)
+            && Objects.equals(this.signType, signatureCreateResp.signType)
+            && Objects.equals(this.bindNum, signatureCreateResp.bindNum)
+            && Objects.equals(this.ldapiBindNum, signatureCreateResp.ldapiBindNum);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(signSecret, updateTime, createTime, name, id, signKey, signType, bindNum, ldapiBindNum);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -309,16 +238,13 @@ public class SignatureCreateResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

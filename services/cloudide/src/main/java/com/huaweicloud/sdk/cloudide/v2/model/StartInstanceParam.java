@@ -1,46 +1,35 @@
 package com.huaweicloud.sdk.cloudide.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * StartInstanceParam
- */
-public class StartInstanceParam  {
-
-
+/** StartInstanceParam */
+public class StartInstanceParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="plugin_enable_list")
-    
+    @JsonProperty(value = "plugin_enable_list")
+
     private List<String> pluginEnableList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="plugin_vars")
-    
+    @JsonProperty(value = "plugin_vars")
+
     private Map<String, String> pluginVars = null;
-    
+
     public StartInstanceParam withPluginEnableList(List<String> pluginEnableList) {
         this.pluginEnableList = pluginEnableList;
         return this;
     }
 
-    
     public StartInstanceParam addPluginEnableListItem(String pluginEnableListItem) {
-        if(this.pluginEnableList == null) {
+        if (this.pluginEnableList == null) {
             this.pluginEnableList = new ArrayList<>();
         }
         this.pluginEnableList.add(pluginEnableListItem);
@@ -48,17 +37,16 @@ public class StartInstanceParam  {
     }
 
     public StartInstanceParam withPluginEnableList(Consumer<List<String>> pluginEnableListSetter) {
-        if(this.pluginEnableList == null) {
+        if (this.pluginEnableList == null) {
             this.pluginEnableList = new ArrayList<>();
         }
         pluginEnableListSetter.accept(this.pluginEnableList);
         return this;
     }
 
-    /**
-     * 插件列表
-     * @return pluginEnableList
-     */
+    /** 插件列表
+     * 
+     * @return pluginEnableList */
     public List<String> getPluginEnableList() {
         return pluginEnableList;
     }
@@ -67,17 +55,13 @@ public class StartInstanceParam  {
         this.pluginEnableList = pluginEnableList;
     }
 
-    
-
     public StartInstanceParam withPluginVars(Map<String, String> pluginVars) {
         this.pluginVars = pluginVars;
         return this;
     }
 
-    
-
     public StartInstanceParam putPluginVarsItem(String key, String pluginVarsItem) {
-        if(this.pluginVars == null) {
+        if (this.pluginVars == null) {
             this.pluginVars = new HashMap<>();
         }
         this.pluginVars.put(key, pluginVarsItem);
@@ -85,16 +69,16 @@ public class StartInstanceParam  {
     }
 
     public StartInstanceParam withPluginVars(Consumer<Map<String, String>> pluginVarsSetter) {
-        if(this.pluginVars == null) {
+        if (this.pluginVars == null) {
             this.pluginVars = new HashMap<>();
         }
         pluginVarsSetter.accept(this.pluginVars);
         return this;
     }
-    /**
-     * 插件参数
-     * @return pluginVars
-     */
+
+    /** 插件参数
+     * 
+     * @return pluginVars */
     public Map<String, String> getPluginVars() {
         return pluginVars;
     }
@@ -102,8 +86,6 @@ public class StartInstanceParam  {
     public void setPluginVars(Map<String, String> pluginVars) {
         this.pluginVars = pluginVars;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -114,13 +96,15 @@ public class StartInstanceParam  {
             return false;
         }
         StartInstanceParam startInstanceParam = (StartInstanceParam) o;
-        return Objects.equals(this.pluginEnableList, startInstanceParam.pluginEnableList) &&
-            Objects.equals(this.pluginVars, startInstanceParam.pluginVars);
+        return Objects.equals(this.pluginEnableList, startInstanceParam.pluginEnableList)
+            && Objects.equals(this.pluginVars, startInstanceParam.pluginVars);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(pluginEnableList, pluginVars);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +114,13 @@ public class StartInstanceParam  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

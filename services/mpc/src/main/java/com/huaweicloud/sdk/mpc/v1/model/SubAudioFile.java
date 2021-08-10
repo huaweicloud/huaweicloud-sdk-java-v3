@@ -1,49 +1,34 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.AudioFile;
-import com.huaweicloud.sdk.mpc.v1.model.ObsObjInfo;
-import com.huaweicloud.sdk.mpc.v1.model.TracksInfo;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * SubAudioFile
- */
-public class SubAudioFile  {
-
-
+/** SubAudioFile */
+public class SubAudioFile {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tracks_info")
-    
+    @JsonProperty(value = "tracks_info")
+
     private List<TracksInfo> tracksInfo = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="input")
-    
+    @JsonProperty(value = "input")
+
     private ObsObjInfo input;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output")
-    
+    @JsonProperty(value = "output")
+
     private ObsObjInfo output;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output_filename")
-    
+    @JsonProperty(value = "output_filename")
+
     private String outputFilename;
 
     public SubAudioFile withTracksInfo(List<TracksInfo> tracksInfo) {
@@ -51,9 +36,8 @@ public class SubAudioFile  {
         return this;
     }
 
-    
     public SubAudioFile addTracksInfoItem(TracksInfo tracksInfoItem) {
-        if(this.tracksInfo == null) {
+        if (this.tracksInfo == null) {
             this.tracksInfo = new ArrayList<>();
         }
         this.tracksInfo.add(tracksInfoItem);
@@ -61,17 +45,16 @@ public class SubAudioFile  {
     }
 
     public SubAudioFile withTracksInfo(Consumer<List<TracksInfo>> tracksInfoSetter) {
-        if(this.tracksInfo == null) {
+        if (this.tracksInfo == null) {
             this.tracksInfo = new ArrayList<>();
         }
         tracksInfoSetter.accept(this.tracksInfo);
         return this;
     }
 
-    /**
-     * 音轨信息
-     * @return tracksInfo
-     */
+    /** 音轨信息
+     * 
+     * @return tracksInfo */
     public List<TracksInfo> getTracksInfo() {
         return tracksInfo;
     }
@@ -80,27 +63,23 @@ public class SubAudioFile  {
         this.tracksInfo = tracksInfo;
     }
 
-    
-
     public SubAudioFile withInput(ObsObjInfo input) {
         this.input = input;
         return this;
     }
 
     public SubAudioFile withInput(Consumer<ObsObjInfo> inputSetter) {
-        if(this.input == null ){
+        if (this.input == null) {
             this.input = new ObsObjInfo();
             inputSetter.accept(this.input);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get input
-     * @return input
-     */
+    /** Get input
+     * 
+     * @return input */
     public ObsObjInfo getInput() {
         return input;
     }
@@ -109,27 +88,23 @@ public class SubAudioFile  {
         this.input = input;
     }
 
-    
-
     public SubAudioFile withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
     }
 
     public SubAudioFile withOutput(Consumer<ObsObjInfo> outputSetter) {
-        if(this.output == null ){
+        if (this.output == null) {
             this.output = new ObsObjInfo();
             outputSetter.accept(this.output);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get output
-     * @return output
-     */
+    /** Get output
+     * 
+     * @return output */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -138,20 +113,14 @@ public class SubAudioFile  {
         this.output = output;
     }
 
-    
-
     public SubAudioFile withOutputFilename(String outputFilename) {
         this.outputFilename = outputFilename;
         return this;
     }
 
-    
-
-
-    /**
-     * 输出文件名。 
-     * @return outputFilename
-     */
+    /** 输出文件名。
+     * 
+     * @return outputFilename */
     public String getOutputFilename() {
         return outputFilename;
     }
@@ -159,8 +128,6 @@ public class SubAudioFile  {
     public void setOutputFilename(String outputFilename) {
         this.outputFilename = outputFilename;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -171,15 +138,16 @@ public class SubAudioFile  {
             return false;
         }
         SubAudioFile subAudioFile = (SubAudioFile) o;
-        return Objects.equals(this.tracksInfo, subAudioFile.tracksInfo) &&
-            Objects.equals(this.input, subAudioFile.input) &&
-            Objects.equals(this.output, subAudioFile.output) &&
-            Objects.equals(this.outputFilename, subAudioFile.outputFilename);
+        return Objects.equals(this.tracksInfo, subAudioFile.tracksInfo)
+            && Objects.equals(this.input, subAudioFile.input) && Objects.equals(this.output, subAudioFile.output)
+            && Objects.equals(this.outputFilename, subAudioFile.outputFilename);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(tracksInfo, input, output, outputFilename);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -191,16 +159,13 @@ public class SubAudioFile  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.devstar.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * TemplateViewHistory
- */
-public class TemplateViewHistory  {
-
-
+/** TemplateViewHistory */
+public class TemplateViewHistory {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_id")
-    
+    @JsonProperty(value = "template_id")
+
     private String templateId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_title")
-    
+    @JsonProperty(value = "template_title")
+
     private String templateTitle;
 
     public TemplateViewHistory withTemplateId(String templateId) {
@@ -34,13 +23,9 @@ public class TemplateViewHistory  {
         return this;
     }
 
-    
-
-
-    /**
-     * 模板的id。
-     * @return templateId
-     */
+    /** 模板的id。
+     * 
+     * @return templateId */
     public String getTemplateId() {
         return templateId;
     }
@@ -49,20 +34,14 @@ public class TemplateViewHistory  {
         this.templateId = templateId;
     }
 
-    
-
     public TemplateViewHistory withTemplateTitle(String templateTitle) {
         this.templateTitle = templateTitle;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板的名称。
-     * @return templateTitle
-     */
+    /** 模板的名称。
+     * 
+     * @return templateTitle */
     public String getTemplateTitle() {
         return templateTitle;
     }
@@ -70,8 +49,6 @@ public class TemplateViewHistory  {
     public void setTemplateTitle(String templateTitle) {
         this.templateTitle = templateTitle;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class TemplateViewHistory  {
             return false;
         }
         TemplateViewHistory templateViewHistory = (TemplateViewHistory) o;
-        return Objects.equals(this.templateId, templateViewHistory.templateId) &&
-            Objects.equals(this.templateTitle, templateViewHistory.templateTitle);
+        return Objects.equals(this.templateId, templateViewHistory.templateId)
+            && Objects.equals(this.templateTitle, templateViewHistory.templateTitle);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(templateId, templateTitle);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class TemplateViewHistory  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

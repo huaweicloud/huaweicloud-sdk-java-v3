@@ -1,62 +1,44 @@
 package com.huaweicloud.sdk.projectman.v4.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.projectman.v4.model.IssueRecordV4Details;
-import com.huaweicloud.sdk.projectman.v4.model.IssueRecordV4User;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 历史记录
- */
-public class IssueRecordV4  {
-
-
+/** 历史记录 */
+public class IssueRecordV4 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Integer id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_time")
-    
+    @JsonProperty(value = "created_time")
+
     private Long createdTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user")
-    
+    @JsonProperty(value = "user")
+
     private IssueRecordV4User user;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="details")
-    
+    @JsonProperty(value = "details")
+
     private List<IssueRecordV4Details> details = null;
-    
+
     public IssueRecordV4 withId(Integer id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作记录id
-     * @return id
-     */
+    /** 操作记录id
+     * 
+     * @return id */
     public Integer getId() {
         return id;
     }
@@ -65,20 +47,14 @@ public class IssueRecordV4  {
         this.id = id;
     }
 
-    
-
     public IssueRecordV4 withCreatedTime(Long createdTime) {
         this.createdTime = createdTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作记录创建时间
-     * @return createdTime
-     */
+    /** 操作记录创建时间
+     * 
+     * @return createdTime */
     public Long getCreatedTime() {
         return createdTime;
     }
@@ -87,27 +63,23 @@ public class IssueRecordV4  {
         this.createdTime = createdTime;
     }
 
-    
-
     public IssueRecordV4 withUser(IssueRecordV4User user) {
         this.user = user;
         return this;
     }
 
     public IssueRecordV4 withUser(Consumer<IssueRecordV4User> userSetter) {
-        if(this.user == null ){
+        if (this.user == null) {
             this.user = new IssueRecordV4User();
             userSetter.accept(this.user);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get user
-     * @return user
-     */
+    /** Get user
+     * 
+     * @return user */
     public IssueRecordV4User getUser() {
         return user;
     }
@@ -116,16 +88,13 @@ public class IssueRecordV4  {
         this.user = user;
     }
 
-    
-
     public IssueRecordV4 withDetails(List<IssueRecordV4Details> details) {
         this.details = details;
         return this;
     }
 
-    
     public IssueRecordV4 addDetailsItem(IssueRecordV4Details detailsItem) {
-        if(this.details == null) {
+        if (this.details == null) {
             this.details = new ArrayList<>();
         }
         this.details.add(detailsItem);
@@ -133,17 +102,16 @@ public class IssueRecordV4  {
     }
 
     public IssueRecordV4 withDetails(Consumer<List<IssueRecordV4Details>> detailsSetter) {
-        if(this.details == null) {
+        if (this.details == null) {
             this.details = new ArrayList<>();
         }
         detailsSetter.accept(this.details);
         return this;
     }
 
-    /**
-     * 操作的记录
-     * @return details
-     */
+    /** 操作的记录
+     * 
+     * @return details */
     public List<IssueRecordV4Details> getDetails() {
         return details;
     }
@@ -151,8 +119,6 @@ public class IssueRecordV4  {
     public void setDetails(List<IssueRecordV4Details> details) {
         this.details = details;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -163,15 +129,15 @@ public class IssueRecordV4  {
             return false;
         }
         IssueRecordV4 issueRecordV4 = (IssueRecordV4) o;
-        return Objects.equals(this.id, issueRecordV4.id) &&
-            Objects.equals(this.createdTime, issueRecordV4.createdTime) &&
-            Objects.equals(this.user, issueRecordV4.user) &&
-            Objects.equals(this.details, issueRecordV4.details);
+        return Objects.equals(this.id, issueRecordV4.id) && Objects.equals(this.createdTime, issueRecordV4.createdTime)
+            && Objects.equals(this.user, issueRecordV4.user) && Objects.equals(this.details, issueRecordV4.details);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, createdTime, user, details);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -183,16 +149,13 @@ public class IssueRecordV4  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

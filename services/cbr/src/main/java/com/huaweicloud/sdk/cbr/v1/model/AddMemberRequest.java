@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.AddMembersReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class AddMemberRequest  {
-
-
+/** Request Object */
+public class AddMemberRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_id")
-    
+    @JsonProperty(value = "backup_id")
+
     private String backupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private AddMembersReq body;
 
     public AddMemberRequest withBackupId(String backupId) {
@@ -35,13 +24,9 @@ public class AddMemberRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 备份副本id
-     * @return backupId
-     */
+    /** 备份副本id
+     * 
+     * @return backupId */
     public String getBackupId() {
         return backupId;
     }
@@ -50,27 +35,23 @@ public class AddMemberRequest  {
         this.backupId = backupId;
     }
 
-    
-
     public AddMemberRequest withBody(AddMembersReq body) {
         this.body = body;
         return this;
     }
 
     public AddMemberRequest withBody(Consumer<AddMembersReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new AddMembersReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public AddMembersReq getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class AddMemberRequest  {
     public void setBody(AddMembersReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class AddMemberRequest  {
             return false;
         }
         AddMemberRequest addMemberRequest = (AddMemberRequest) o;
-        return Objects.equals(this.backupId, addMemberRequest.backupId) &&
-            Objects.equals(this.body, addMemberRequest.body);
+        return Objects.equals(this.backupId, addMemberRequest.backupId)
+            && Objects.equals(this.body, addMemberRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(backupId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class AddMemberRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

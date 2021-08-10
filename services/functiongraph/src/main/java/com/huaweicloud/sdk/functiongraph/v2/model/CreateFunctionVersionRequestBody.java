@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CreateFunctionVersionRequestBody
- */
-public class CreateFunctionVersionRequestBody  {
-
-
+/** CreateFunctionVersionRequestBody */
+public class CreateFunctionVersionRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="digest")
-    
+    @JsonProperty(value = "digest")
+
     private String digest;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public CreateFunctionVersionRequestBody withDigest(String digest) {
@@ -40,13 +28,9 @@ public class CreateFunctionVersionRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * md5键值
-     * @return digest
-     */
+    /** md5键值
+     * 
+     * @return digest */
     public String getDigest() {
         return digest;
     }
@@ -55,20 +39,14 @@ public class CreateFunctionVersionRequestBody  {
         this.digest = digest;
     }
 
-    
-
     public CreateFunctionVersionRequestBody withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 发布版本名称
-     * @return version
-     */
+    /** 发布版本名称
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -77,20 +55,14 @@ public class CreateFunctionVersionRequestBody  {
         this.version = version;
     }
 
-    
-
     public CreateFunctionVersionRequestBody withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 发布版本描述
-     * @return description
-     */
+    /** 发布版本描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -98,8 +70,6 @@ public class CreateFunctionVersionRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class CreateFunctionVersionRequestBody  {
             return false;
         }
         CreateFunctionVersionRequestBody createFunctionVersionRequestBody = (CreateFunctionVersionRequestBody) o;
-        return Objects.equals(this.digest, createFunctionVersionRequestBody.digest) &&
-            Objects.equals(this.version, createFunctionVersionRequestBody.version) &&
-            Objects.equals(this.description, createFunctionVersionRequestBody.description);
+        return Objects.equals(this.digest, createFunctionVersionRequestBody.digest)
+            && Objects.equals(this.version, createFunctionVersionRequestBody.version)
+            && Objects.equals(this.description, createFunctionVersionRequestBody.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(digest, version, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class CreateFunctionVersionRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,35 +1,23 @@
 package com.huaweicloud.sdk.codecheck.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.codecheck.v2.model.ProgressDetailV2;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowProgressDetailResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_status")
-    
+    @JsonProperty(value = "task_status")
+
     private String taskStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="progress")
-    
+    @JsonProperty(value = "progress")
+
     private ProgressDetailV2 progress;
 
     public ShowProgressDetailResponse withTaskStatus(String taskStatus) {
@@ -37,13 +25,9 @@ public class ShowProgressDetailResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务状态,0表示检查中，1表示检查失败，2表示检查成功，3表示任务中止
-     * @return taskStatus
-     */
+    /** 任务状态,0表示检查中，1表示检查失败，2表示检查成功，3表示任务中止
+     * 
+     * @return taskStatus */
     public String getTaskStatus() {
         return taskStatus;
     }
@@ -52,27 +36,23 @@ public class ShowProgressDetailResponse extends SdkResponse {
         this.taskStatus = taskStatus;
     }
 
-    
-
     public ShowProgressDetailResponse withProgress(ProgressDetailV2 progress) {
         this.progress = progress;
         return this;
     }
 
     public ShowProgressDetailResponse withProgress(Consumer<ProgressDetailV2> progressSetter) {
-        if(this.progress == null ){
+        if (this.progress == null) {
             this.progress = new ProgressDetailV2();
             progressSetter.accept(this.progress);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get progress
-     * @return progress
-     */
+    /** Get progress
+     * 
+     * @return progress */
     public ProgressDetailV2 getProgress() {
         return progress;
     }
@@ -80,8 +60,6 @@ public class ShowProgressDetailResponse extends SdkResponse {
     public void setProgress(ProgressDetailV2 progress) {
         this.progress = progress;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -92,13 +70,15 @@ public class ShowProgressDetailResponse extends SdkResponse {
             return false;
         }
         ShowProgressDetailResponse showProgressDetailResponse = (ShowProgressDetailResponse) o;
-        return Objects.equals(this.taskStatus, showProgressDetailResponse.taskStatus) &&
-            Objects.equals(this.progress, showProgressDetailResponse.progress);
+        return Objects.equals(this.taskStatus, showProgressDetailResponse.taskStatus)
+            && Objects.equals(this.progress, showProgressDetailResponse.progress);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(taskStatus, progress);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -108,16 +88,13 @@ public class ShowProgressDetailResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

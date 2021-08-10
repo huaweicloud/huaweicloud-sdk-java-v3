@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.UpdateLifeCycleHookOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateLifeCycleHookRequest  {
-
-
+/** Request Object */
+public class UpdateLifeCycleHookRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_group_id")
-    
+    @JsonProperty(value = "scaling_group_id")
+
     private String scalingGroupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lifecycle_hook_name")
-    
+    @JsonProperty(value = "lifecycle_hook_name")
+
     private String lifecycleHookName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateLifeCycleHookOption body;
 
     public UpdateLifeCycleHookRequest withScalingGroupId(String scalingGroupId) {
@@ -41,13 +29,9 @@ public class UpdateLifeCycleHookRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩组标识。
-     * @return scalingGroupId
-     */
+    /** 伸缩组标识。
+     * 
+     * @return scalingGroupId */
     public String getScalingGroupId() {
         return scalingGroupId;
     }
@@ -56,20 +40,14 @@ public class UpdateLifeCycleHookRequest  {
         this.scalingGroupId = scalingGroupId;
     }
 
-    
-
     public UpdateLifeCycleHookRequest withLifecycleHookName(String lifecycleHookName) {
         this.lifecycleHookName = lifecycleHookName;
         return this;
     }
 
-    
-
-
-    /**
-     * 生命周期挂钩标识。
-     * @return lifecycleHookName
-     */
+    /** 生命周期挂钩标识。
+     * 
+     * @return lifecycleHookName */
     public String getLifecycleHookName() {
         return lifecycleHookName;
     }
@@ -78,27 +56,23 @@ public class UpdateLifeCycleHookRequest  {
         this.lifecycleHookName = lifecycleHookName;
     }
 
-    
-
     public UpdateLifeCycleHookRequest withBody(UpdateLifeCycleHookOption body) {
         this.body = body;
         return this;
     }
 
     public UpdateLifeCycleHookRequest withBody(Consumer<UpdateLifeCycleHookOption> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateLifeCycleHookOption();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateLifeCycleHookOption getBody() {
         return body;
     }
@@ -106,8 +80,6 @@ public class UpdateLifeCycleHookRequest  {
     public void setBody(UpdateLifeCycleHookOption body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class UpdateLifeCycleHookRequest  {
             return false;
         }
         UpdateLifeCycleHookRequest updateLifeCycleHookRequest = (UpdateLifeCycleHookRequest) o;
-        return Objects.equals(this.scalingGroupId, updateLifeCycleHookRequest.scalingGroupId) &&
-            Objects.equals(this.lifecycleHookName, updateLifeCycleHookRequest.lifecycleHookName) &&
-            Objects.equals(this.body, updateLifeCycleHookRequest.body);
+        return Objects.equals(this.scalingGroupId, updateLifeCycleHookRequest.scalingGroupId)
+            && Objects.equals(this.lifecycleHookName, updateLifeCycleHookRequest.lifecycleHookName)
+            && Objects.equals(this.body, updateLifeCycleHookRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(scalingGroupId, lifecycleHookName, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class UpdateLifeCycleHookRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

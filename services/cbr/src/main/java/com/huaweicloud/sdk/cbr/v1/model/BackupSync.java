@@ -1,68 +1,51 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * BackupSync
- */
-public class BackupSync  {
-
-
+/** BackupSync */
+public class BackupSync {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_id")
-    
+    @JsonProperty(value = "backup_id")
+
     private String backupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_name")
-    
+    @JsonProperty(value = "backup_name")
+
     private String backupName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bucket_name")
-    
+    @JsonProperty(value = "bucket_name")
+
     private String bucketName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_path")
-    
+    @JsonProperty(value = "image_path")
+
     private String imagePath;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
+    @JsonProperty(value = "resource_id")
+
     private String resourceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_name")
-    
+    @JsonProperty(value = "resource_name")
+
     private String resourceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type")
-    
+    @JsonProperty(value = "resource_type")
+
     private String resourceType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private Integer createdAt;
 
     public BackupSync withBackupId(String backupId) {
@@ -70,13 +53,9 @@ public class BackupSync  {
         return this;
     }
 
-    
-
-
-    /**
-     * 备份副本ID
-     * @return backupId
-     */
+    /** 备份副本ID
+     * 
+     * @return backupId */
     public String getBackupId() {
         return backupId;
     }
@@ -85,20 +64,14 @@ public class BackupSync  {
         this.backupId = backupId;
     }
 
-    
-
     public BackupSync withBackupName(String backupName) {
         this.backupName = backupName;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份名称
-     * @return backupName
-     */
+    /** 备份名称
+     * 
+     * @return backupName */
     public String getBackupName() {
         return backupName;
     }
@@ -107,20 +80,14 @@ public class BackupSync  {
         this.backupName = backupName;
     }
 
-    
-
     public BackupSync withBucketName(String bucketName) {
         this.bucketName = bucketName;
         return this;
     }
 
-    
-
-
-    /**
-     * 桶名
-     * @return bucketName
-     */
+    /** 桶名
+     * 
+     * @return bucketName */
     public String getBucketName() {
         return bucketName;
     }
@@ -129,20 +96,14 @@ public class BackupSync  {
         this.bucketName = bucketName;
     }
 
-    
-
     public BackupSync withImagePath(String imagePath) {
         this.imagePath = imagePath;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份链在存储单元上的路径
-     * @return imagePath
-     */
+    /** 备份链在存储单元上的路径
+     * 
+     * @return imagePath */
     public String getImagePath() {
         return imagePath;
     }
@@ -151,20 +112,14 @@ public class BackupSync  {
         this.imagePath = imagePath;
     }
 
-    
-
     public BackupSync withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份对象ID
-     * @return resourceId
-     */
+    /** 备份对象ID
+     * 
+     * @return resourceId */
     public String getResourceId() {
         return resourceId;
     }
@@ -173,20 +128,14 @@ public class BackupSync  {
         this.resourceId = resourceId;
     }
 
-    
-
     public BackupSync withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份对象名称
-     * @return resourceName
-     */
+    /** 备份对象名称
+     * 
+     * @return resourceName */
     public String getResourceName() {
         return resourceName;
     }
@@ -195,20 +144,14 @@ public class BackupSync  {
         this.resourceName = resourceName;
     }
 
-    
-
     public BackupSync withResourceType(String resourceType) {
         this.resourceType = resourceType;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份对象资源类型
-     * @return resourceType
-     */
+    /** 备份对象资源类型
+     * 
+     * @return resourceType */
     public String getResourceType() {
         return resourceType;
     }
@@ -217,20 +160,14 @@ public class BackupSync  {
         this.resourceType = resourceType;
     }
 
-    
-
     public BackupSync withCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份时间戳，例如1548898428
-     * @return createdAt
-     */
+    /** 备份时间戳，例如1548898428
+     * 
+     * @return createdAt */
     public Integer getCreatedAt() {
         return createdAt;
     }
@@ -238,8 +175,6 @@ public class BackupSync  {
     public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -250,19 +185,22 @@ public class BackupSync  {
             return false;
         }
         BackupSync backupSync = (BackupSync) o;
-        return Objects.equals(this.backupId, backupSync.backupId) &&
-            Objects.equals(this.backupName, backupSync.backupName) &&
-            Objects.equals(this.bucketName, backupSync.bucketName) &&
-            Objects.equals(this.imagePath, backupSync.imagePath) &&
-            Objects.equals(this.resourceId, backupSync.resourceId) &&
-            Objects.equals(this.resourceName, backupSync.resourceName) &&
-            Objects.equals(this.resourceType, backupSync.resourceType) &&
-            Objects.equals(this.createdAt, backupSync.createdAt);
+        return Objects.equals(this.backupId, backupSync.backupId)
+            && Objects.equals(this.backupName, backupSync.backupName)
+            && Objects.equals(this.bucketName, backupSync.bucketName)
+            && Objects.equals(this.imagePath, backupSync.imagePath)
+            && Objects.equals(this.resourceId, backupSync.resourceId)
+            && Objects.equals(this.resourceName, backupSync.resourceName)
+            && Objects.equals(this.resourceType, backupSync.resourceType)
+            && Objects.equals(this.createdAt, backupSync.createdAt);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(backupId, backupName, bucketName, imagePath, resourceId, resourceName, resourceType, createdAt);
+        return Objects
+            .hash(backupId, backupName, bucketName, imagePath, resourceId, resourceName, resourceType, createdAt);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -278,16 +216,13 @@ public class BackupSync  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

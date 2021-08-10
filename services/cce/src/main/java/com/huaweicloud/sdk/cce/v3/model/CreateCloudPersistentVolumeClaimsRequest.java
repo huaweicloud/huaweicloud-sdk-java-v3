@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.PersistentVolumeClaim;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateCloudPersistentVolumeClaimsRequest  {
-
-
+/** Request Object */
+public class CreateCloudPersistentVolumeClaimsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
+
     private String namespace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Cluster-ID")
-    
+    @JsonProperty(value = "X-Cluster-ID")
+
     private String xClusterID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private PersistentVolumeClaim body;
 
     public CreateCloudPersistentVolumeClaimsRequest withNamespace(String namespace) {
@@ -41,13 +29,11 @@ public class CreateCloudPersistentVolumeClaimsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。以小写字母开头，由小写字母、数字、中划线（-）组成，且不能以中划线（-）结尾。  使用namespace有如下约束：  - 用户自定义的namespace，使用前必须先[[创建Namespace](https://support.huaweicloud.com/api-cce/cce_02_0050.html)](tag:hws)[[创建Namespace](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0050.html)](tag:hws_hk)  - 系统自带的namespace：default  - 不能使用kube-system与kube-public 
-     * @return namespace
-     */
+    /** Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。以小写字母开头，由小写字母、数字、中划线（-）组成，且不能以中划线（-）结尾。 使用namespace有如下约束： -
+     * 用户自定义的namespace，使用前必须先[[创建Namespace](https://support.huaweicloud.com/api-cce/cce_02_0050.html)](tag:hws)[[创建Namespace](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0050.html)](tag:hws_hk)
+     * - 系统自带的namespace：default - 不能使用kube-system与kube-public
+     * 
+     * @return namespace */
     public String getNamespace() {
         return namespace;
     }
@@ -56,22 +42,16 @@ public class CreateCloudPersistentVolumeClaimsRequest  {
         this.namespace = namespace;
     }
 
-    
-
     public CreateCloudPersistentVolumeClaimsRequest withXClusterID(String xClusterID) {
         this.xClusterID = xClusterID;
         return this;
     }
 
-    
-
-
-    /**
-     * 集群ID，使用**https://Endpoint/uri**这种URL格式时必须指定此参数。获取方式请参见[[如何获取接口URI中参数](https://support.huaweicloud.com/api-cce/cce_02_0271.html)](tag:hws)[[如何获取接口URI中参数](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0271.html)](tag:hws_hk)
-     * @return xClusterID
-     */
+    /** 集群ID，使用**https://Endpoint/uri**这种URL格式时必须指定此参数。获取方式请参见[[如何获取接口URI中参数](https://support.huaweicloud.com/api-cce/cce_02_0271.html)](tag:hws)[[如何获取接口URI中参数](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0271.html)](tag:hws_hk)
+     * 
+     * @return xClusterID */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Cluster-ID")
+    @JsonProperty(value = "X-Cluster-ID")
     public String getXClusterID() {
         return xClusterID;
     }
@@ -80,27 +60,23 @@ public class CreateCloudPersistentVolumeClaimsRequest  {
         this.xClusterID = xClusterID;
     }
 
-    
-
     public CreateCloudPersistentVolumeClaimsRequest withBody(PersistentVolumeClaim body) {
         this.body = body;
         return this;
     }
 
     public CreateCloudPersistentVolumeClaimsRequest withBody(Consumer<PersistentVolumeClaim> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new PersistentVolumeClaim();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public PersistentVolumeClaim getBody() {
         return body;
     }
@@ -108,8 +84,6 @@ public class CreateCloudPersistentVolumeClaimsRequest  {
     public void setBody(PersistentVolumeClaim body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -119,15 +93,18 @@ public class CreateCloudPersistentVolumeClaimsRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CreateCloudPersistentVolumeClaimsRequest createCloudPersistentVolumeClaimsRequest = (CreateCloudPersistentVolumeClaimsRequest) o;
-        return Objects.equals(this.namespace, createCloudPersistentVolumeClaimsRequest.namespace) &&
-            Objects.equals(this.xClusterID, createCloudPersistentVolumeClaimsRequest.xClusterID) &&
-            Objects.equals(this.body, createCloudPersistentVolumeClaimsRequest.body);
+        CreateCloudPersistentVolumeClaimsRequest createCloudPersistentVolumeClaimsRequest =
+            (CreateCloudPersistentVolumeClaimsRequest) o;
+        return Objects.equals(this.namespace, createCloudPersistentVolumeClaimsRequest.namespace)
+            && Objects.equals(this.xClusterID, createCloudPersistentVolumeClaimsRequest.xClusterID)
+            && Objects.equals(this.body, createCloudPersistentVolumeClaimsRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(namespace, xClusterID, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -138,16 +115,13 @@ public class CreateCloudPersistentVolumeClaimsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

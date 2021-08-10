@@ -1,276 +1,217 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.CycleParams;
-import com.huaweicloud.sdk.meeting.v1.model.PartAttendee;
-import com.huaweicloud.sdk.meeting.v1.model.PasswordEntry;
-import com.huaweicloud.sdk.meeting.v1.model.RestConfConfigDTO;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 会议信息
- */
-public class ConferenceInfo  {
-
-
+/** 会议信息 */
+public class ConferenceInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="conferenceID")
-    
+    @JsonProperty(value = "conferenceID")
+
     private String conferenceID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subject")
-    
+    @JsonProperty(value = "subject")
+
     private String subject;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timeZoneID")
-    
+    @JsonProperty(value = "timeZoneID")
+
     private String timeZoneID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="startTime")
-    
+    @JsonProperty(value = "startTime")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endTime")
-    
+    @JsonProperty(value = "endTime")
+
     private String endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mediaTypes")
-    
+    @JsonProperty(value = "mediaTypes")
+
     private String mediaTypes;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="conferenceState")
-    
+    @JsonProperty(value = "conferenceState")
+
     private String conferenceState;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="language")
-    
+    @JsonProperty(value = "language")
+
     private String language;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="accessNumber")
-    
+    @JsonProperty(value = "accessNumber")
+
     private String accessNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="passwordEntry")
-    
+    @JsonProperty(value = "passwordEntry")
+
     private List<PasswordEntry> passwordEntry = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="userUUID")
-    
+    @JsonProperty(value = "userUUID")
+
     private String userUUID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scheduserName")
-    
+    @JsonProperty(value = "scheduserName")
+
     private String scheduserName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="conferenceType")
-    
+    @JsonProperty(value = "conferenceType")
+
     private Integer conferenceType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confType")
-    
+    @JsonProperty(value = "confType")
+
     private String confType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cycleParams")
-    
+    @JsonProperty(value = "cycleParams")
+
     private CycleParams cycleParams;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isAutoMute")
-    
+    @JsonProperty(value = "isAutoMute")
+
     private Integer isAutoMute;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isAutoRecord")
-    
+    @JsonProperty(value = "isAutoRecord")
+
     private Integer isAutoRecord;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="chairJoinUri")
-    
+    @JsonProperty(value = "chairJoinUri")
+
     private String chairJoinUri;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="guestJoinUri")
-    
+    @JsonProperty(value = "guestJoinUri")
+
     private String guestJoinUri;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audienceJoinUri")
-    
+    @JsonProperty(value = "audienceJoinUri")
+
     private String audienceJoinUri;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="recordType")
-    
+    @JsonProperty(value = "recordType")
+
     private Integer recordType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auxAddress")
-    
+    @JsonProperty(value = "auxAddress")
+
     private String auxAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="liveAddress")
-    
+    @JsonProperty(value = "liveAddress")
+
     private String liveAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="recordAuxStream")
-    
+    @JsonProperty(value = "recordAuxStream")
+
     private Integer recordAuxStream;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="recordAuthType")
-    
+    @JsonProperty(value = "recordAuthType")
+
     private Integer recordAuthType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="liveUrl")
-    
+    @JsonProperty(value = "liveUrl")
+
     private String liveUrl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confConfigInfo")
-    
+    @JsonProperty(value = "confConfigInfo")
+
     private RestConfConfigDTO confConfigInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrFlag")
-    
+    @JsonProperty(value = "vmrFlag")
+
     private Integer vmrFlag;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isHasRecordFile")
-    
+    @JsonProperty(value = "isHasRecordFile")
+
     private Boolean isHasRecordFile;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrConferenceID")
-    
+    @JsonProperty(value = "vmrConferenceID")
+
     private String vmrConferenceID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confUUID")
-    
+    @JsonProperty(value = "confUUID")
+
     private String confUUID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="partAttendeeInfo")
-    
+    @JsonProperty(value = "partAttendeeInfo")
+
     private List<PartAttendee> partAttendeeInfo = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="terminlCount")
-    
+    @JsonProperty(value = "terminlCount")
+
     private Integer terminlCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="normalCount")
-    
+    @JsonProperty(value = "normalCount")
+
     private Integer normalCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deptName")
-    
+    @JsonProperty(value = "deptName")
+
     private String deptName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrID")
-    
+    @JsonProperty(value = "vmrID")
+
     private String vmrID;
-    /**
-     * 会议角色
-     */
+
+    /** 会议角色 */
     public static final class RoleEnum {
 
-        
-        /**
-         * Enum CHAIR for value: "chair"
-         */
+        /** Enum CHAIR for value: "chair" */
         public static final RoleEnum CHAIR = new RoleEnum("chair");
-        
-        /**
-         * Enum GENERAL for value: "general"
-         */
+
+        /** Enum GENERAL for value: "general" */
         public static final RoleEnum GENERAL = new RoleEnum("general");
-        
-        /**
-         * Enum AUDIENCE for value: "audience"
-         */
+
+        /** Enum AUDIENCE for value: "audience" */
         public static final RoleEnum AUDIENCE = new RoleEnum("audience");
-        
 
         private static final Map<String, RoleEnum> STATIC_FIELDS = createStaticFields();
 
@@ -300,7 +241,7 @@ public class ConferenceInfo  {
 
         @JsonCreator
         public static RoleEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             RoleEnum result = STATIC_FIELDS.get(value);
@@ -311,7 +252,7 @@ public class ConferenceInfo  {
         }
 
         public static RoleEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             RoleEnum result = STATIC_FIELDS.get(value);
@@ -335,39 +276,29 @@ public class ConferenceInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="role")
-    
+    @JsonProperty(value = "role")
+
     private RoleEnum role;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="webinar")
-    
+    @JsonProperty(value = "webinar")
+
     private Boolean webinar;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="multiStreamFlag")
-    
+    @JsonProperty(value = "multiStreamFlag")
+
     private Integer multiStreamFlag;
-    /**
-     * 会议类型
-     */
+
+    /** 会议类型 */
     public static final class ConfModeEnum {
 
-        
-        /**
-         * Enum COMMON for value: "COMMON"
-         */
+        /** Enum COMMON for value: "COMMON" */
         public static final ConfModeEnum COMMON = new ConfModeEnum("COMMON");
-        
-        /**
-         * Enum RTC for value: "RTC"
-         */
+
+        /** Enum RTC for value: "RTC" */
         public static final ConfModeEnum RTC = new ConfModeEnum("RTC");
-        
 
         private static final Map<String, ConfModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -396,7 +327,7 @@ public class ConferenceInfo  {
 
         @JsonCreator
         public static ConfModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ConfModeEnum result = STATIC_FIELDS.get(value);
@@ -407,7 +338,7 @@ public class ConferenceInfo  {
         }
 
         public static ConfModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ConfModeEnum result = STATIC_FIELDS.get(value);
@@ -431,28 +362,24 @@ public class ConferenceInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confMode")
-    
+    @JsonProperty(value = "confMode")
+
     private ConfModeEnum confMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scheduleVmr")
-    
+    @JsonProperty(value = "scheduleVmr")
+
     private Boolean scheduleVmr;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="concurrentParticipants")
-    
+    @JsonProperty(value = "concurrentParticipants")
+
     private Integer concurrentParticipants;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="picDisplay")
-    
+    @JsonProperty(value = "picDisplay")
+
     private Object picDisplay;
 
     public ConferenceInfo withConferenceID(String conferenceID) {
@@ -460,13 +387,9 @@ public class ConferenceInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 会议ID。长度限制为32个字符。
-     * @return conferenceID
-     */
+    /** 会议ID。长度限制为32个字符。
+     * 
+     * @return conferenceID */
     public String getConferenceID() {
         return conferenceID;
     }
@@ -475,20 +398,14 @@ public class ConferenceInfo  {
         this.conferenceID = conferenceID;
     }
 
-    
-
     public ConferenceInfo withSubject(String subject) {
         this.subject = subject;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议主题。长度限制为128个字符。
-     * @return subject
-     */
+    /** 会议主题。长度限制为128个字符。
+     * 
+     * @return subject */
     public String getSubject() {
         return subject;
     }
@@ -497,20 +414,14 @@ public class ConferenceInfo  {
         this.subject = subject;
     }
 
-    
-
     public ConferenceInfo withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议方数。
-     * @return size
-     */
+    /** 会议方数。
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -519,20 +430,14 @@ public class ConferenceInfo  {
         this.size = size;
     }
 
-    
-
     public ConferenceInfo withTimeZoneID(String timeZoneID) {
         this.timeZoneID = timeZoneID;
         return this;
     }
 
-    
-
-
-    /**
-     * 时区参考。
-     * @return timeZoneID
-     */
+    /** 时区参考。
+     * 
+     * @return timeZoneID */
     public String getTimeZoneID() {
         return timeZoneID;
     }
@@ -541,20 +446,14 @@ public class ConferenceInfo  {
         this.timeZoneID = timeZoneID;
     }
 
-    
-
     public ConferenceInfo withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议起始时间 (YYYY-MM-DD HH:MM )。
-     * @return startTime
-     */
+    /** 会议起始时间 (YYYY-MM-DD HH:MM )。
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -563,20 +462,14 @@ public class ConferenceInfo  {
         this.startTime = startTime;
     }
 
-    
-
     public ConferenceInfo withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议结束时间 (YYYY-MM-DD HH:MM )。
-     * @return endTime
-     */
+    /** 会议结束时间 (YYYY-MM-DD HH:MM )。
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -585,20 +478,16 @@ public class ConferenceInfo  {
         this.endTime = endTime;
     }
 
-    
-
     public ConferenceInfo withMediaTypes(String mediaTypes) {
         this.mediaTypes = mediaTypes;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议的媒体类型。 由1个或多个枚举String组成，多个枚举时，每个枚举值之间通过”,”逗号分隔。 - Voice: 语音。 - Video: 标清视频。 - HDVideo: 高清视频（与Video互斥，如果同时选择Video、HDVideo，则系统默认选择Video）。 - Telepresence: 智真(与HDVideo、Video互斥，如果同时选择，系统使用Telepresence)。（预留字段） - Data: 多媒体。
-     * @return mediaTypes
-     */
+    /** 会议的媒体类型。 由1个或多个枚举String组成，多个枚举时，每个枚举值之间通过”,”逗号分隔。 - Voice: 语音。 - Video: 标清视频。 - HDVideo:
+     * 高清视频（与Video互斥，如果同时选择Video、HDVideo，则系统默认选择Video）。 - Telepresence:
+     * 智真(与HDVideo、Video互斥，如果同时选择，系统使用Telepresence)。（预留字段） - Data: 多媒体。
+     * 
+     * @return mediaTypes */
     public String getMediaTypes() {
         return mediaTypes;
     }
@@ -607,20 +496,15 @@ public class ConferenceInfo  {
         this.mediaTypes = mediaTypes;
     }
 
-    
-
     public ConferenceInfo withConferenceState(String conferenceState) {
         this.conferenceState = conferenceState;
         return this;
     }
 
-    
-
-
-    /**
-     * 目前只会返回Created和Schedule状态， 如果会议已经召开返回Created状态，否则返回Schedule状态。 - Schedule: 预定状态。 - Creating: 正在创建状态。 - Created: 会议已经被创建，并正在召开。 - Destroyed: 会议已经关闭。
-     * @return conferenceState
-     */
+    /** 目前只会返回Created和Schedule状态， 如果会议已经召开返回Created状态，否则返回Schedule状态。 - Schedule: 预定状态。 - Creating: 正在创建状态。 - Created:
+     * 会议已经被创建，并正在召开。 - Destroyed: 会议已经关闭。
+     * 
+     * @return conferenceState */
     public String getConferenceState() {
         return conferenceState;
     }
@@ -629,20 +513,14 @@ public class ConferenceInfo  {
         this.conferenceState = conferenceState;
     }
 
-    
-
     public ConferenceInfo withLanguage(String language) {
         this.language = language;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议语言。
-     * @return language
-     */
+    /** 会议语言。
+     * 
+     * @return language */
     public String getLanguage() {
         return language;
     }
@@ -651,20 +529,14 @@ public class ConferenceInfo  {
         this.language = language;
     }
 
-    
-
     public ConferenceInfo withAccessNumber(String accessNumber) {
         this.accessNumber = accessNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议接入码。
-     * @return accessNumber
-     */
+    /** 会议接入码。
+     * 
+     * @return accessNumber */
     public String getAccessNumber() {
         return accessNumber;
     }
@@ -673,16 +545,13 @@ public class ConferenceInfo  {
         this.accessNumber = accessNumber;
     }
 
-    
-
     public ConferenceInfo withPasswordEntry(List<PasswordEntry> passwordEntry) {
         this.passwordEntry = passwordEntry;
         return this;
     }
 
-    
     public ConferenceInfo addPasswordEntryItem(PasswordEntry passwordEntryItem) {
-        if(this.passwordEntry == null) {
+        if (this.passwordEntry == null) {
             this.passwordEntry = new ArrayList<>();
         }
         this.passwordEntry.add(passwordEntryItem);
@@ -690,17 +559,16 @@ public class ConferenceInfo  {
     }
 
     public ConferenceInfo withPasswordEntry(Consumer<List<PasswordEntry>> passwordEntrySetter) {
-        if(this.passwordEntry == null) {
+        if (this.passwordEntry == null) {
             this.passwordEntry = new ArrayList<>();
         }
         passwordEntrySetter.accept(this.passwordEntry);
         return this;
     }
 
-    /**
-     * 会议密码条目。预订者返回主持人密码和来宾密码。 - 主持人查询时返回主持人密码。 - 来宾查询时返回来宾密码。
-     * @return passwordEntry
-     */
+    /** 会议密码条目。预订者返回主持人密码和来宾密码。 - 主持人查询时返回主持人密码。 - 来宾查询时返回来宾密码。
+     * 
+     * @return passwordEntry */
     public List<PasswordEntry> getPasswordEntry() {
         return passwordEntry;
     }
@@ -709,20 +577,14 @@ public class ConferenceInfo  {
         this.passwordEntry = passwordEntry;
     }
 
-    
-
     public ConferenceInfo withUserUUID(String userUUID) {
         this.userUUID = userUUID;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议预订者UUID。
-     * @return userUUID
-     */
+    /** 会议预订者UUID。
+     * 
+     * @return userUUID */
     public String getUserUUID() {
         return userUUID;
     }
@@ -731,20 +593,14 @@ public class ConferenceInfo  {
         this.userUUID = userUUID;
     }
 
-    
-
     public ConferenceInfo withScheduserName(String scheduserName) {
         this.scheduserName = scheduserName;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议预订者帐号名称。长度最大限制为96个字符。
-     * @return scheduserName
-     */
+    /** 会议预订者帐号名称。长度最大限制为96个字符。
+     * 
+     * @return scheduserName */
     public String getScheduserName() {
         return scheduserName;
     }
@@ -753,20 +609,14 @@ public class ConferenceInfo  {
         this.scheduserName = scheduserName;
     }
 
-    
-
     public ConferenceInfo withConferenceType(Integer conferenceType) {
         this.conferenceType = conferenceType;
         return this;
     }
 
-    
-
-
-    /**
-     * - 0: 普通会议。 - 1: 周期会议。
-     * @return conferenceType
-     */
+    /** - 0: 普通会议。 - 1: 周期会议。
+     * 
+     * @return conferenceType */
     public Integer getConferenceType() {
         return conferenceType;
     }
@@ -775,20 +625,14 @@ public class ConferenceInfo  {
         this.conferenceType = conferenceType;
     }
 
-    
-
     public ConferenceInfo withConfType(String confType) {
         this.confType = confType;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议类型。 - FUTURE - IMMEDIATELY - CYCLE
-     * @return confType
-     */
+    /** 会议类型。 - FUTURE - IMMEDIATELY - CYCLE
+     * 
+     * @return confType */
     public String getConfType() {
         return confType;
     }
@@ -797,27 +641,23 @@ public class ConferenceInfo  {
         this.confType = confType;
     }
 
-    
-
     public ConferenceInfo withCycleParams(CycleParams cycleParams) {
         this.cycleParams = cycleParams;
         return this;
     }
 
     public ConferenceInfo withCycleParams(Consumer<CycleParams> cycleParamsSetter) {
-        if(this.cycleParams == null ){
+        if (this.cycleParams == null) {
             this.cycleParams = new CycleParams();
             cycleParamsSetter.accept(this.cycleParams);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get cycleParams
-     * @return cycleParams
-     */
+    /** Get cycleParams
+     * 
+     * @return cycleParams */
     public CycleParams getCycleParams() {
         return cycleParams;
     }
@@ -826,20 +666,14 @@ public class ConferenceInfo  {
         this.cycleParams = cycleParams;
     }
 
-    
-
     public ConferenceInfo withIsAutoMute(Integer isAutoMute) {
         this.isAutoMute = isAutoMute;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否入会自动静音。 - 0: 不自动静音 - 1: 自动静音
-     * @return isAutoMute
-     */
+    /** 是否入会自动静音。 - 0: 不自动静音 - 1: 自动静音
+     * 
+     * @return isAutoMute */
     public Integer getIsAutoMute() {
         return isAutoMute;
     }
@@ -848,20 +682,14 @@ public class ConferenceInfo  {
         this.isAutoMute = isAutoMute;
     }
 
-    
-
     public ConferenceInfo withIsAutoRecord(Integer isAutoRecord) {
         this.isAutoRecord = isAutoRecord;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否自动开启录音。 - 0: 不自动启动。 - 1: 自动启动。
-     * @return isAutoRecord
-     */
+    /** 是否自动开启录音。 - 0: 不自动启动。 - 1: 自动启动。
+     * 
+     * @return isAutoRecord */
     public Integer getIsAutoRecord() {
         return isAutoRecord;
     }
@@ -870,20 +698,14 @@ public class ConferenceInfo  {
         this.isAutoRecord = isAutoRecord;
     }
 
-    
-
     public ConferenceInfo withChairJoinUri(String chairJoinUri) {
         this.chairJoinUri = chairJoinUri;
         return this;
     }
 
-    
-
-
-    /**
-     * 主持人会议链接地址。
-     * @return chairJoinUri
-     */
+    /** 主持人会议链接地址。
+     * 
+     * @return chairJoinUri */
     public String getChairJoinUri() {
         return chairJoinUri;
     }
@@ -892,20 +714,14 @@ public class ConferenceInfo  {
         this.chairJoinUri = chairJoinUri;
     }
 
-    
-
     public ConferenceInfo withGuestJoinUri(String guestJoinUri) {
         this.guestJoinUri = guestJoinUri;
         return this;
     }
 
-    
-
-
-    /**
-     * 普通与会者会议链接地址。最大长度1024。
-     * @return guestJoinUri
-     */
+    /** 普通与会者会议链接地址。最大长度1024。
+     * 
+     * @return guestJoinUri */
     public String getGuestJoinUri() {
         return guestJoinUri;
     }
@@ -914,20 +730,14 @@ public class ConferenceInfo  {
         this.guestJoinUri = guestJoinUri;
     }
 
-    
-
     public ConferenceInfo withAudienceJoinUri(String audienceJoinUri) {
         this.audienceJoinUri = audienceJoinUri;
         return this;
     }
 
-    
-
-
-    /**
-     * 旁听者会议链接地址。最大长度1024。（预留字段）
-     * @return audienceJoinUri
-     */
+    /** 旁听者会议链接地址。最大长度1024。（预留字段）
+     * 
+     * @return audienceJoinUri */
     public String getAudienceJoinUri() {
         return audienceJoinUri;
     }
@@ -936,20 +746,14 @@ public class ConferenceInfo  {
         this.audienceJoinUri = audienceJoinUri;
     }
 
-    
-
     public ConferenceInfo withRecordType(Integer recordType) {
         this.recordType = recordType;
         return this;
     }
 
-    
-
-
-    /**
-     * 录播类型。 - 0: 禁用 。 - 1: 直播 。 - 2: 录播 。 - 3: 直播+录播。
-     * @return recordType
-     */
+    /** 录播类型。 - 0: 禁用 。 - 1: 直播 。 - 2: 录播 。 - 3: 直播+录播。
+     * 
+     * @return recordType */
     public Integer getRecordType() {
         return recordType;
     }
@@ -958,20 +762,14 @@ public class ConferenceInfo  {
         this.recordType = recordType;
     }
 
-    
-
     public ConferenceInfo withAuxAddress(String auxAddress) {
         this.auxAddress = auxAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 辅流直播地址。
-     * @return auxAddress
-     */
+    /** 辅流直播地址。
+     * 
+     * @return auxAddress */
     public String getAuxAddress() {
         return auxAddress;
     }
@@ -980,20 +778,14 @@ public class ConferenceInfo  {
         this.auxAddress = auxAddress;
     }
 
-    
-
     public ConferenceInfo withLiveAddress(String liveAddress) {
         this.liveAddress = liveAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 主流直播地址。
-     * @return liveAddress
-     */
+    /** 主流直播地址。
+     * 
+     * @return liveAddress */
     public String getLiveAddress() {
         return liveAddress;
     }
@@ -1002,20 +794,14 @@ public class ConferenceInfo  {
         this.liveAddress = liveAddress;
     }
 
-    
-
     public ConferenceInfo withRecordAuxStream(Integer recordAuxStream) {
         this.recordAuxStream = recordAuxStream;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否录制辅流。  - 0: 否。  - 1: 是。
-     * @return recordAuxStream
-     */
+    /** 是否录制辅流。 - 0: 否。 - 1: 是。
+     * 
+     * @return recordAuxStream */
     public Integer getRecordAuxStream() {
         return recordAuxStream;
     }
@@ -1024,20 +810,14 @@ public class ConferenceInfo  {
         this.recordAuxStream = recordAuxStream;
     }
 
-    
-
     public ConferenceInfo withRecordAuthType(Integer recordAuthType) {
         this.recordAuthType = recordAuthType;
         return this;
     }
 
-    
-
-
-    /**
-     * 录播鉴权方式。录播类型为:录播、直播+录播时有效。  - 0: 老的鉴权方式，url中携带token鉴权。  - 1: 企业内会议用户鉴权。  - 2: 会议内会议用户鉴权。
-     * @return recordAuthType
-     */
+    /** 录播鉴权方式。录播类型为:录播、直播+录播时有效。 - 0: 老的鉴权方式，url中携带token鉴权。 - 1: 企业内会议用户鉴权。 - 2: 会议内会议用户鉴权。
+     * 
+     * @return recordAuthType */
     public Integer getRecordAuthType() {
         return recordAuthType;
     }
@@ -1046,20 +826,14 @@ public class ConferenceInfo  {
         this.recordAuthType = recordAuthType;
     }
 
-    
-
     public ConferenceInfo withLiveUrl(String liveUrl) {
         this.liveUrl = liveUrl;
         return this;
     }
 
-    
-
-
-    /**
-     * 直播地址。（配置直播房间时会返回）
-     * @return liveUrl
-     */
+    /** 直播地址。（配置直播房间时会返回）
+     * 
+     * @return liveUrl */
     public String getLiveUrl() {
         return liveUrl;
     }
@@ -1068,27 +842,23 @@ public class ConferenceInfo  {
         this.liveUrl = liveUrl;
     }
 
-    
-
     public ConferenceInfo withConfConfigInfo(RestConfConfigDTO confConfigInfo) {
         this.confConfigInfo = confConfigInfo;
         return this;
     }
 
     public ConferenceInfo withConfConfigInfo(Consumer<RestConfConfigDTO> confConfigInfoSetter) {
-        if(this.confConfigInfo == null ){
+        if (this.confConfigInfo == null) {
             this.confConfigInfo = new RestConfConfigDTO();
             confConfigInfoSetter.accept(this.confConfigInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get confConfigInfo
-     * @return confConfigInfo
-     */
+    /** Get confConfigInfo
+     * 
+     * @return confConfigInfo */
     public RestConfConfigDTO getConfConfigInfo() {
         return confConfigInfo;
     }
@@ -1097,20 +867,15 @@ public class ConferenceInfo  {
         this.confConfigInfo = confConfigInfo;
     }
 
-    
-
     public ConferenceInfo withVmrFlag(Integer vmrFlag) {
         this.vmrFlag = vmrFlag;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否使用云会议室召开预约会议。 - 0: 不使用云会议室; - 1: 使用云会议室。 界面显示会议ID需要使用vmrConferenceID作为会议ID；查询会议详情、登录会控、一键入会等会议业务操作依然使用conferenceID字段。
-     * @return vmrFlag
-     */
+    /** 是否使用云会议室召开预约会议。 - 0: 不使用云会议室; - 1: 使用云会议室。
+     * 界面显示会议ID需要使用vmrConferenceID作为会议ID；查询会议详情、登录会控、一键入会等会议业务操作依然使用conferenceID字段。
+     * 
+     * @return vmrFlag */
     public Integer getVmrFlag() {
         return vmrFlag;
     }
@@ -1119,20 +884,14 @@ public class ConferenceInfo  {
         this.vmrFlag = vmrFlag;
     }
 
-    
-
     public ConferenceInfo withIsHasRecordFile(Boolean isHasRecordFile) {
         this.isHasRecordFile = isHasRecordFile;
         return this;
     }
 
-    
-
-
-    /**
-     * 仅历史会议返回值有效。默认没有录制文件。 - True: 有录制文件。 - False: 没有录制文件。
-     * @return isHasRecordFile
-     */
+    /** 仅历史会议返回值有效。默认没有录制文件。 - True: 有录制文件。 - False: 没有录制文件。
+     * 
+     * @return isHasRecordFile */
     public Boolean getIsHasRecordFile() {
         return isHasRecordFile;
     }
@@ -1141,20 +900,14 @@ public class ConferenceInfo  {
         this.isHasRecordFile = isHasRecordFile;
     }
 
-    
-
     public ConferenceInfo withVmrConferenceID(String vmrConferenceID) {
         this.vmrConferenceID = vmrConferenceID;
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室id，如果vmrFlag为1，则该字段不为空。
-     * @return vmrConferenceID
-     */
+    /** 云会议室id，如果vmrFlag为1，则该字段不为空。
+     * 
+     * @return vmrConferenceID */
     public String getVmrConferenceID() {
         return vmrConferenceID;
     }
@@ -1163,20 +916,14 @@ public class ConferenceInfo  {
         this.vmrConferenceID = vmrConferenceID;
     }
 
-    
-
     public ConferenceInfo withConfUUID(String confUUID) {
         this.confUUID = confUUID;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议的UUID。
-     * @return confUUID
-     */
+    /** 会议的UUID。
+     * 
+     * @return confUUID */
     public String getConfUUID() {
         return confUUID;
     }
@@ -1185,16 +932,13 @@ public class ConferenceInfo  {
         this.confUUID = confUUID;
     }
 
-    
-
     public ConferenceInfo withPartAttendeeInfo(List<PartAttendee> partAttendeeInfo) {
         this.partAttendeeInfo = partAttendeeInfo;
         return this;
     }
 
-    
     public ConferenceInfo addPartAttendeeInfoItem(PartAttendee partAttendeeInfoItem) {
-        if(this.partAttendeeInfo == null) {
+        if (this.partAttendeeInfo == null) {
             this.partAttendeeInfo = new ArrayList<>();
         }
         this.partAttendeeInfo.add(partAttendeeInfoItem);
@@ -1202,17 +946,16 @@ public class ConferenceInfo  {
     }
 
     public ConferenceInfo withPartAttendeeInfo(Consumer<List<PartAttendee>> partAttendeeInfoSetter) {
-        if(this.partAttendeeInfo == null) {
+        if (this.partAttendeeInfo == null) {
             this.partAttendeeInfo = new ArrayList<>();
         }
         partAttendeeInfoSetter.accept(this.partAttendeeInfo);
         return this;
     }
 
-    /**
-     * 与会方信息。硬件终端/与会人最多各显示20条记录。
-     * @return partAttendeeInfo
-     */
+    /** 与会方信息。硬件终端/与会人最多各显示20条记录。
+     * 
+     * @return partAttendeeInfo */
     public List<PartAttendee> getPartAttendeeInfo() {
         return partAttendeeInfo;
     }
@@ -1221,20 +964,14 @@ public class ConferenceInfo  {
         this.partAttendeeInfo = partAttendeeInfo;
     }
 
-    
-
     public ConferenceInfo withTerminlCount(Integer terminlCount) {
         this.terminlCount = terminlCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 硬终端个数。
-     * @return terminlCount
-     */
+    /** 硬终端个数。
+     * 
+     * @return terminlCount */
     public Integer getTerminlCount() {
         return terminlCount;
     }
@@ -1243,20 +980,14 @@ public class ConferenceInfo  {
         this.terminlCount = terminlCount;
     }
 
-    
-
     public ConferenceInfo withNormalCount(Integer normalCount) {
         this.normalCount = normalCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 普通终端个数。
-     * @return normalCount
-     */
+    /** 普通终端个数。
+     * 
+     * @return normalCount */
     public Integer getNormalCount() {
         return normalCount;
     }
@@ -1265,20 +996,14 @@ public class ConferenceInfo  {
         this.normalCount = normalCount;
     }
 
-    
-
     public ConferenceInfo withDeptName(String deptName) {
         this.deptName = deptName;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议预定者的企业名称。最大长度96。
-     * @return deptName
-     */
+    /** 会议预定者的企业名称。最大长度96。
+     * 
+     * @return deptName */
     public String getDeptName() {
         return deptName;
     }
@@ -1287,20 +1012,14 @@ public class ConferenceInfo  {
         this.deptName = deptName;
     }
 
-    
-
     public ConferenceInfo withVmrID(String vmrID) {
         this.vmrID = vmrID;
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室的ID。
-     * @return vmrID
-     */
+    /** 云会议室的ID。
+     * 
+     * @return vmrID */
     public String getVmrID() {
         return vmrID;
     }
@@ -1309,20 +1028,14 @@ public class ConferenceInfo  {
         this.vmrID = vmrID;
     }
 
-    
-
     public ConferenceInfo withRole(RoleEnum role) {
         this.role = role;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议角色
-     * @return role
-     */
+    /** 会议角色
+     * 
+     * @return role */
     public RoleEnum getRole() {
         return role;
     }
@@ -1331,20 +1044,14 @@ public class ConferenceInfo  {
         this.role = role;
     }
 
-    
-
     public ConferenceInfo withWebinar(Boolean webinar) {
         this.webinar = webinar;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否网络研讨会
-     * @return webinar
-     */
+    /** 是否网络研讨会
+     * 
+     * @return webinar */
     public Boolean getWebinar() {
         return webinar;
     }
@@ -1353,22 +1060,14 @@ public class ConferenceInfo  {
         this.webinar = webinar;
     }
 
-    
-
     public ConferenceInfo withMultiStreamFlag(Integer multiStreamFlag) {
         this.multiStreamFlag = multiStreamFlag;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识是否为多流视频会议。 枚举值如下 1：多流会议
-     * minimum: 1
-     * maximum: 1
-     * @return multiStreamFlag
-     */
+    /** 标识是否为多流视频会议。 枚举值如下 1：多流会议 minimum: 1 maximum: 1
+     * 
+     * @return multiStreamFlag */
     public Integer getMultiStreamFlag() {
         return multiStreamFlag;
     }
@@ -1377,20 +1076,14 @@ public class ConferenceInfo  {
         this.multiStreamFlag = multiStreamFlag;
     }
 
-    
-
     public ConferenceInfo withConfMode(ConfModeEnum confMode) {
         this.confMode = confMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议类型
-     * @return confMode
-     */
+    /** 会议类型
+     * 
+     * @return confMode */
     public ConfModeEnum getConfMode() {
         return confMode;
     }
@@ -1399,20 +1092,14 @@ public class ConferenceInfo  {
         this.confMode = confMode;
     }
 
-    
-
     public ConferenceInfo withScheduleVmr(Boolean scheduleVmr) {
         this.scheduleVmr = scheduleVmr;
         return this;
     }
 
-    
-
-
-    /**
-     * True: VMR预约记录（如果为true则该记录不支持根据会议ID查询会议详情） False：普通会议
-     * @return scheduleVmr
-     */
+    /** True: VMR预约记录（如果为true则该记录不支持根据会议ID查询会议详情） False：普通会议
+     * 
+     * @return scheduleVmr */
     public Boolean getScheduleVmr() {
         return scheduleVmr;
     }
@@ -1421,20 +1108,14 @@ public class ConferenceInfo  {
         this.scheduleVmr = scheduleVmr;
     }
 
-    
-
     public ConferenceInfo withConcurrentParticipants(Integer concurrentParticipants) {
         this.concurrentParticipants = concurrentParticipants;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议方数，会议最大与会人数限制
-     * @return concurrentParticipants
-     */
+    /** 会议方数，会议最大与会人数限制
+     * 
+     * @return concurrentParticipants */
     public Integer getConcurrentParticipants() {
         return concurrentParticipants;
     }
@@ -1443,20 +1124,14 @@ public class ConferenceInfo  {
         this.concurrentParticipants = concurrentParticipants;
     }
 
-    
-
     public ConferenceInfo withPicDisplay(Object picDisplay) {
         this.picDisplay = picDisplay;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前多画面信息。
-     * @return picDisplay
-     */
+    /** 当前多画面信息。
+     * 
+     * @return picDisplay */
     public Object getPicDisplay() {
         return picDisplay;
     }
@@ -1464,8 +1139,6 @@ public class ConferenceInfo  {
     public void setPicDisplay(Object picDisplay) {
         this.picDisplay = picDisplay;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -1476,55 +1149,98 @@ public class ConferenceInfo  {
             return false;
         }
         ConferenceInfo conferenceInfo = (ConferenceInfo) o;
-        return Objects.equals(this.conferenceID, conferenceInfo.conferenceID) &&
-            Objects.equals(this.subject, conferenceInfo.subject) &&
-            Objects.equals(this.size, conferenceInfo.size) &&
-            Objects.equals(this.timeZoneID, conferenceInfo.timeZoneID) &&
-            Objects.equals(this.startTime, conferenceInfo.startTime) &&
-            Objects.equals(this.endTime, conferenceInfo.endTime) &&
-            Objects.equals(this.mediaTypes, conferenceInfo.mediaTypes) &&
-            Objects.equals(this.conferenceState, conferenceInfo.conferenceState) &&
-            Objects.equals(this.language, conferenceInfo.language) &&
-            Objects.equals(this.accessNumber, conferenceInfo.accessNumber) &&
-            Objects.equals(this.passwordEntry, conferenceInfo.passwordEntry) &&
-            Objects.equals(this.userUUID, conferenceInfo.userUUID) &&
-            Objects.equals(this.scheduserName, conferenceInfo.scheduserName) &&
-            Objects.equals(this.conferenceType, conferenceInfo.conferenceType) &&
-            Objects.equals(this.confType, conferenceInfo.confType) &&
-            Objects.equals(this.cycleParams, conferenceInfo.cycleParams) &&
-            Objects.equals(this.isAutoMute, conferenceInfo.isAutoMute) &&
-            Objects.equals(this.isAutoRecord, conferenceInfo.isAutoRecord) &&
-            Objects.equals(this.chairJoinUri, conferenceInfo.chairJoinUri) &&
-            Objects.equals(this.guestJoinUri, conferenceInfo.guestJoinUri) &&
-            Objects.equals(this.audienceJoinUri, conferenceInfo.audienceJoinUri) &&
-            Objects.equals(this.recordType, conferenceInfo.recordType) &&
-            Objects.equals(this.auxAddress, conferenceInfo.auxAddress) &&
-            Objects.equals(this.liveAddress, conferenceInfo.liveAddress) &&
-            Objects.equals(this.recordAuxStream, conferenceInfo.recordAuxStream) &&
-            Objects.equals(this.recordAuthType, conferenceInfo.recordAuthType) &&
-            Objects.equals(this.liveUrl, conferenceInfo.liveUrl) &&
-            Objects.equals(this.confConfigInfo, conferenceInfo.confConfigInfo) &&
-            Objects.equals(this.vmrFlag, conferenceInfo.vmrFlag) &&
-            Objects.equals(this.isHasRecordFile, conferenceInfo.isHasRecordFile) &&
-            Objects.equals(this.vmrConferenceID, conferenceInfo.vmrConferenceID) &&
-            Objects.equals(this.confUUID, conferenceInfo.confUUID) &&
-            Objects.equals(this.partAttendeeInfo, conferenceInfo.partAttendeeInfo) &&
-            Objects.equals(this.terminlCount, conferenceInfo.terminlCount) &&
-            Objects.equals(this.normalCount, conferenceInfo.normalCount) &&
-            Objects.equals(this.deptName, conferenceInfo.deptName) &&
-            Objects.equals(this.vmrID, conferenceInfo.vmrID) &&
-            Objects.equals(this.role, conferenceInfo.role) &&
-            Objects.equals(this.webinar, conferenceInfo.webinar) &&
-            Objects.equals(this.multiStreamFlag, conferenceInfo.multiStreamFlag) &&
-            Objects.equals(this.confMode, conferenceInfo.confMode) &&
-            Objects.equals(this.scheduleVmr, conferenceInfo.scheduleVmr) &&
-            Objects.equals(this.concurrentParticipants, conferenceInfo.concurrentParticipants) &&
-            Objects.equals(this.picDisplay, conferenceInfo.picDisplay);
+        return Objects.equals(this.conferenceID, conferenceInfo.conferenceID)
+            && Objects.equals(this.subject, conferenceInfo.subject) && Objects.equals(this.size, conferenceInfo.size)
+            && Objects.equals(this.timeZoneID, conferenceInfo.timeZoneID)
+            && Objects.equals(this.startTime, conferenceInfo.startTime)
+            && Objects.equals(this.endTime, conferenceInfo.endTime)
+            && Objects.equals(this.mediaTypes, conferenceInfo.mediaTypes)
+            && Objects.equals(this.conferenceState, conferenceInfo.conferenceState)
+            && Objects.equals(this.language, conferenceInfo.language)
+            && Objects.equals(this.accessNumber, conferenceInfo.accessNumber)
+            && Objects.equals(this.passwordEntry, conferenceInfo.passwordEntry)
+            && Objects.equals(this.userUUID, conferenceInfo.userUUID)
+            && Objects.equals(this.scheduserName, conferenceInfo.scheduserName)
+            && Objects.equals(this.conferenceType, conferenceInfo.conferenceType)
+            && Objects.equals(this.confType, conferenceInfo.confType)
+            && Objects.equals(this.cycleParams, conferenceInfo.cycleParams)
+            && Objects.equals(this.isAutoMute, conferenceInfo.isAutoMute)
+            && Objects.equals(this.isAutoRecord, conferenceInfo.isAutoRecord)
+            && Objects.equals(this.chairJoinUri, conferenceInfo.chairJoinUri)
+            && Objects.equals(this.guestJoinUri, conferenceInfo.guestJoinUri)
+            && Objects.equals(this.audienceJoinUri, conferenceInfo.audienceJoinUri)
+            && Objects.equals(this.recordType, conferenceInfo.recordType)
+            && Objects.equals(this.auxAddress, conferenceInfo.auxAddress)
+            && Objects.equals(this.liveAddress, conferenceInfo.liveAddress)
+            && Objects.equals(this.recordAuxStream, conferenceInfo.recordAuxStream)
+            && Objects.equals(this.recordAuthType, conferenceInfo.recordAuthType)
+            && Objects.equals(this.liveUrl, conferenceInfo.liveUrl)
+            && Objects.equals(this.confConfigInfo, conferenceInfo.confConfigInfo)
+            && Objects.equals(this.vmrFlag, conferenceInfo.vmrFlag)
+            && Objects.equals(this.isHasRecordFile, conferenceInfo.isHasRecordFile)
+            && Objects.equals(this.vmrConferenceID, conferenceInfo.vmrConferenceID)
+            && Objects.equals(this.confUUID, conferenceInfo.confUUID)
+            && Objects.equals(this.partAttendeeInfo, conferenceInfo.partAttendeeInfo)
+            && Objects.equals(this.terminlCount, conferenceInfo.terminlCount)
+            && Objects.equals(this.normalCount, conferenceInfo.normalCount)
+            && Objects.equals(this.deptName, conferenceInfo.deptName)
+            && Objects.equals(this.vmrID, conferenceInfo.vmrID) && Objects.equals(this.role, conferenceInfo.role)
+            && Objects.equals(this.webinar, conferenceInfo.webinar)
+            && Objects.equals(this.multiStreamFlag, conferenceInfo.multiStreamFlag)
+            && Objects.equals(this.confMode, conferenceInfo.confMode)
+            && Objects.equals(this.scheduleVmr, conferenceInfo.scheduleVmr)
+            && Objects.equals(this.concurrentParticipants, conferenceInfo.concurrentParticipants)
+            && Objects.equals(this.picDisplay, conferenceInfo.picDisplay);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(conferenceID, subject, size, timeZoneID, startTime, endTime, mediaTypes, conferenceState, language, accessNumber, passwordEntry, userUUID, scheduserName, conferenceType, confType, cycleParams, isAutoMute, isAutoRecord, chairJoinUri, guestJoinUri, audienceJoinUri, recordType, auxAddress, liveAddress, recordAuxStream, recordAuthType, liveUrl, confConfigInfo, vmrFlag, isHasRecordFile, vmrConferenceID, confUUID, partAttendeeInfo, terminlCount, normalCount, deptName, vmrID, role, webinar, multiStreamFlag, confMode, scheduleVmr, concurrentParticipants, picDisplay);
+        return Objects.hash(conferenceID,
+            subject,
+            size,
+            timeZoneID,
+            startTime,
+            endTime,
+            mediaTypes,
+            conferenceState,
+            language,
+            accessNumber,
+            passwordEntry,
+            userUUID,
+            scheduserName,
+            conferenceType,
+            confType,
+            cycleParams,
+            isAutoMute,
+            isAutoRecord,
+            chairJoinUri,
+            guestJoinUri,
+            audienceJoinUri,
+            recordType,
+            auxAddress,
+            liveAddress,
+            recordAuxStream,
+            recordAuthType,
+            liveUrl,
+            confConfigInfo,
+            vmrFlag,
+            isHasRecordFile,
+            vmrConferenceID,
+            confUUID,
+            partAttendeeInfo,
+            terminlCount,
+            normalCount,
+            deptName,
+            vmrID,
+            role,
+            webinar,
+            multiStreamFlag,
+            confMode,
+            scheduleVmr,
+            concurrentParticipants,
+            picDisplay);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1576,16 +1292,13 @@ public class ConferenceInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

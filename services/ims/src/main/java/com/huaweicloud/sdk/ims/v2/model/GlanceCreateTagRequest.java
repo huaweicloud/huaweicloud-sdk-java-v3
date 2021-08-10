@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class GlanceCreateTagRequest  {
-
-
+/** Request Object */
+public class GlanceCreateTagRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_id")
-    
+    @JsonProperty(value = "image_id")
+
     private String imageId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag")
-    
+    @JsonProperty(value = "tag")
+
     private String tag;
 
     public GlanceCreateTagRequest withImageId(String imageId) {
@@ -34,13 +23,9 @@ public class GlanceCreateTagRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像id
-     * @return imageId
-     */
+    /** 镜像id
+     * 
+     * @return imageId */
     public String getImageId() {
         return imageId;
     }
@@ -49,20 +34,14 @@ public class GlanceCreateTagRequest  {
         this.imageId = imageId;
     }
 
-    
-
     public GlanceCreateTagRequest withTag(String tag) {
         this.tag = tag;
         return this;
     }
 
-    
-
-
-    /**
-     * 新增的tag。字符串中不能包含“=”和“.”。
-     * @return tag
-     */
+    /** 新增的tag。字符串中不能包含“=”和“.”。
+     * 
+     * @return tag */
     public String getTag() {
         return tag;
     }
@@ -70,8 +49,6 @@ public class GlanceCreateTagRequest  {
     public void setTag(String tag) {
         this.tag = tag;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class GlanceCreateTagRequest  {
             return false;
         }
         GlanceCreateTagRequest glanceCreateTagRequest = (GlanceCreateTagRequest) o;
-        return Objects.equals(this.imageId, glanceCreateTagRequest.imageId) &&
-            Objects.equals(this.tag, glanceCreateTagRequest.tag);
+        return Objects.equals(this.imageId, glanceCreateTagRequest.imageId)
+            && Objects.equals(this.tag, glanceCreateTagRequest.tag);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(imageId, tag);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class GlanceCreateTagRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,43 +1,29 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.NodeCreateRequest;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateNodeRequest  {
-
-
+/** Request Object */
+public class CreateNodeRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
+
     private String clusterId;
-    /**
-     * 标明是否为nodepool下发的请求。若不为“NodepoolScaleUp”将自动更新对应节点池的实例数
-     */
+
+    /** 标明是否为nodepool下发的请求。若不为“NodepoolScaleUp”将自动更新对应节点池的实例数 */
     public static final class NodepoolScaleUpEnum {
 
-        
-        /**
-         * Enum NODEPOOLSCALEUP for value: "NodepoolScaleUp"
-         */
+        /** Enum NODEPOOLSCALEUP for value: "NodepoolScaleUp" */
         public static final NodepoolScaleUpEnum NODEPOOLSCALEUP = new NodepoolScaleUpEnum("NodepoolScaleUp");
-        
 
         private static final Map<String, NodepoolScaleUpEnum> STATIC_FIELDS = createStaticFields();
 
@@ -65,7 +51,7 @@ public class CreateNodeRequest  {
 
         @JsonCreator
         public static NodepoolScaleUpEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             NodepoolScaleUpEnum result = STATIC_FIELDS.get(value);
@@ -76,7 +62,7 @@ public class CreateNodeRequest  {
         }
 
         public static NodepoolScaleUpEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             NodepoolScaleUpEnum result = STATIC_FIELDS.get(value);
@@ -100,16 +86,14 @@ public class CreateNodeRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodepoolScaleUp")
-    
+    @JsonProperty(value = "nodepoolScaleUp")
+
     private NodepoolScaleUpEnum nodepoolScaleUp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private NodeCreateRequest body;
 
     public CreateNodeRequest withClusterId(String clusterId) {
@@ -117,13 +101,10 @@ public class CreateNodeRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 集群 ID，获取方式请参见[[如何获取接口URI中参数](https://support.huaweicloud.com/api-cce/cce_02_0271.html)](tag:hws)[[如何获取接口URI中参数](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0271.html)](tag:hws_hk)
-     * @return clusterId
-     */
+    /** 集群
+     * ID，获取方式请参见[[如何获取接口URI中参数](https://support.huaweicloud.com/api-cce/cce_02_0271.html)](tag:hws)[[如何获取接口URI中参数](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0271.html)](tag:hws_hk)
+     * 
+     * @return clusterId */
     public String getClusterId() {
         return clusterId;
     }
@@ -132,20 +113,14 @@ public class CreateNodeRequest  {
         this.clusterId = clusterId;
     }
 
-    
-
     public CreateNodeRequest withNodepoolScaleUp(NodepoolScaleUpEnum nodepoolScaleUp) {
         this.nodepoolScaleUp = nodepoolScaleUp;
         return this;
     }
 
-    
-
-
-    /**
-     * 标明是否为nodepool下发的请求。若不为“NodepoolScaleUp”将自动更新对应节点池的实例数
-     * @return nodepoolScaleUp
-     */
+    /** 标明是否为nodepool下发的请求。若不为“NodepoolScaleUp”将自动更新对应节点池的实例数
+     * 
+     * @return nodepoolScaleUp */
     public NodepoolScaleUpEnum getNodepoolScaleUp() {
         return nodepoolScaleUp;
     }
@@ -154,27 +129,23 @@ public class CreateNodeRequest  {
         this.nodepoolScaleUp = nodepoolScaleUp;
     }
 
-    
-
     public CreateNodeRequest withBody(NodeCreateRequest body) {
         this.body = body;
         return this;
     }
 
     public CreateNodeRequest withBody(Consumer<NodeCreateRequest> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new NodeCreateRequest();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public NodeCreateRequest getBody() {
         return body;
     }
@@ -182,8 +153,6 @@ public class CreateNodeRequest  {
     public void setBody(NodeCreateRequest body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,14 +163,16 @@ public class CreateNodeRequest  {
             return false;
         }
         CreateNodeRequest createNodeRequest = (CreateNodeRequest) o;
-        return Objects.equals(this.clusterId, createNodeRequest.clusterId) &&
-            Objects.equals(this.nodepoolScaleUp, createNodeRequest.nodepoolScaleUp) &&
-            Objects.equals(this.body, createNodeRequest.body);
+        return Objects.equals(this.clusterId, createNodeRequest.clusterId)
+            && Objects.equals(this.nodepoolScaleUp, createNodeRequest.nodepoolScaleUp)
+            && Objects.equals(this.body, createNodeRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clusterId, nodepoolScaleUp, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -212,16 +183,13 @@ public class CreateNodeRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

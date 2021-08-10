@@ -1,63 +1,42 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 数据库对象选择信息
- */
-public class DatabaseInfo  {
-
-
+/** 数据库对象选择信息 */
+public class DatabaseInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parent_id")
-    
+    @JsonProperty(value = "parent_id")
+
     private String parentId;
-    /**
-     * 类型
-     */
+
+    /** 类型 */
     public static final class ObjectTypeEnum {
 
-        
-        /**
-         * Enum DATABASE for value: "database"
-         */
+        /** Enum DATABASE for value: "database" */
         public static final ObjectTypeEnum DATABASE = new ObjectTypeEnum("database");
-        
-        /**
-         * Enum TABLE for value: "table"
-         */
+
+        /** Enum TABLE for value: "table" */
         public static final ObjectTypeEnum TABLE = new ObjectTypeEnum("table");
-        
-        /**
-         * Enum SCHEMA for value: "schema"
-         */
+
+        /** Enum SCHEMA for value: "schema" */
         public static final ObjectTypeEnum SCHEMA = new ObjectTypeEnum("schema");
-        
-        /**
-         * Enum VIEW for value: "view"
-         */
+
+        /** Enum VIEW for value: "view" */
         public static final ObjectTypeEnum VIEW = new ObjectTypeEnum("view");
-        
 
         private static final Map<String, ObjectTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -88,7 +67,7 @@ public class DatabaseInfo  {
 
         @JsonCreator
         public static ObjectTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ObjectTypeEnum result = STATIC_FIELDS.get(value);
@@ -99,7 +78,7 @@ public class DatabaseInfo  {
         }
 
         public static ObjectTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ObjectTypeEnum result = STATIC_FIELDS.get(value);
@@ -123,28 +102,24 @@ public class DatabaseInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="object_type")
-    
+    @JsonProperty(value = "object_type")
+
     private ObjectTypeEnum objectType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="object_name")
-    
+    @JsonProperty(value = "object_name")
+
     private String objectName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="object_alias_name")
-    
+    @JsonProperty(value = "object_alias_name")
+
     private String objectAliasName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="select")
-    
+    @JsonProperty(value = "select")
+
     private String select;
 
     public DatabaseInfo withId(String id) {
@@ -152,13 +127,9 @@ public class DatabaseInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * object_type为database时，为库名；object_type为table或者view时，字段值参考示例。
-     * @return id
-     */
+    /** object_type为database时，为库名；object_type为table或者view时，字段值参考示例。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -167,20 +138,14 @@ public class DatabaseInfo  {
         this.id = id;
     }
 
-    
-
     public DatabaseInfo withParentId(String parentId) {
         this.parentId = parentId;
         return this;
     }
 
-    
-
-
-    /**
-     * object_type为table或view时需要填写，为库名
-     * @return parentId
-     */
+    /** object_type为table或view时需要填写，为库名
+     * 
+     * @return parentId */
     public String getParentId() {
         return parentId;
     }
@@ -189,20 +154,14 @@ public class DatabaseInfo  {
         this.parentId = parentId;
     }
 
-    
-
     public DatabaseInfo withObjectType(ObjectTypeEnum objectType) {
         this.objectType = objectType;
         return this;
     }
 
-    
-
-
-    /**
-     * 类型
-     * @return objectType
-     */
+    /** 类型
+     * 
+     * @return objectType */
     public ObjectTypeEnum getObjectType() {
         return objectType;
     }
@@ -211,20 +170,14 @@ public class DatabaseInfo  {
         this.objectType = objectType;
     }
 
-    
-
     public DatabaseInfo withObjectName(String objectName) {
         this.objectName = objectName;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库对象名称，库名、表名、视图名
-     * @return objectName
-     */
+    /** 数据库对象名称，库名、表名、视图名
+     * 
+     * @return objectName */
     public String getObjectName() {
         return objectName;
     }
@@ -233,20 +186,14 @@ public class DatabaseInfo  {
         this.objectName = objectName;
     }
 
-    
-
     public DatabaseInfo withObjectAliasName(String objectAliasName) {
         this.objectAliasName = objectAliasName;
         return this;
     }
 
-    
-
-
-    /**
-     * 别名，映射的新名称。
-     * @return objectAliasName
-     */
+    /** 别名，映射的新名称。
+     * 
+     * @return objectAliasName */
     public String getObjectAliasName() {
         return objectAliasName;
     }
@@ -255,20 +202,14 @@ public class DatabaseInfo  {
         this.objectAliasName = objectAliasName;
     }
 
-    
-
     public DatabaseInfo withSelect(String select) {
         this.select = select;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否选中，值为true会进行迁移，false该数据库对象不会迁移，partial为迁移库下面的部分表，不填默认为false
-     * @return select
-     */
+    /** 是否选中，值为true会进行迁移，false该数据库对象不会迁移，partial为迁移库下面的部分表，不填默认为false
+     * 
+     * @return select */
     public String getSelect() {
         return select;
     }
@@ -276,8 +217,6 @@ public class DatabaseInfo  {
     public void setSelect(String select) {
         this.select = select;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -288,17 +227,18 @@ public class DatabaseInfo  {
             return false;
         }
         DatabaseInfo databaseInfo = (DatabaseInfo) o;
-        return Objects.equals(this.id, databaseInfo.id) &&
-            Objects.equals(this.parentId, databaseInfo.parentId) &&
-            Objects.equals(this.objectType, databaseInfo.objectType) &&
-            Objects.equals(this.objectName, databaseInfo.objectName) &&
-            Objects.equals(this.objectAliasName, databaseInfo.objectAliasName) &&
-            Objects.equals(this.select, databaseInfo.select);
+        return Objects.equals(this.id, databaseInfo.id) && Objects.equals(this.parentId, databaseInfo.parentId)
+            && Objects.equals(this.objectType, databaseInfo.objectType)
+            && Objects.equals(this.objectName, databaseInfo.objectName)
+            && Objects.equals(this.objectAliasName, databaseInfo.objectAliasName)
+            && Objects.equals(this.select, databaseInfo.select);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, parentId, objectType, objectName, objectAliasName, select);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -312,16 +252,13 @@ public class DatabaseInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

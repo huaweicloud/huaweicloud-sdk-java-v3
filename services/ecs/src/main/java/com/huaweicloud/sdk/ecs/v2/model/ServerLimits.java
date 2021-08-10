@@ -1,193 +1,156 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.ProjectFlavorLimit;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class ServerLimits  {
-
-
+public class ServerLimits {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxImageMeta")
-    
+    @JsonProperty(value = "maxImageMeta")
+
     private Integer maxImageMeta;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxPersonality")
-    
+    @JsonProperty(value = "maxPersonality")
+
     private Integer maxPersonality;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxPersonalitySize")
-    
+    @JsonProperty(value = "maxPersonalitySize")
+
     private Integer maxPersonalitySize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxSecurityGroupRules")
-    
+    @JsonProperty(value = "maxSecurityGroupRules")
+
     private Integer maxSecurityGroupRules;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxSecurityGroups")
-    
+    @JsonProperty(value = "maxSecurityGroups")
+
     private Integer maxSecurityGroups;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxServerGroupMembers")
-    
+    @JsonProperty(value = "maxServerGroupMembers")
+
     private Integer maxServerGroupMembers;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxServerGroups")
-    
+    @JsonProperty(value = "maxServerGroups")
+
     private Integer maxServerGroups;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxServerMeta")
-    
+    @JsonProperty(value = "maxServerMeta")
+
     private Integer maxServerMeta;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxTotalCores")
-    
+    @JsonProperty(value = "maxTotalCores")
+
     private Integer maxTotalCores;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxTotalFloatingIps")
-    
+    @JsonProperty(value = "maxTotalFloatingIps")
+
     private Integer maxTotalFloatingIps;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxTotalInstances")
-    
+    @JsonProperty(value = "maxTotalInstances")
+
     private Integer maxTotalInstances;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxTotalKeypairs")
-    
+    @JsonProperty(value = "maxTotalKeypairs")
+
     private Integer maxTotalKeypairs;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxTotalRAMSize")
-    
+    @JsonProperty(value = "maxTotalRAMSize")
+
     private Integer maxTotalRAMSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="totalCoresUsed")
-    
+    @JsonProperty(value = "totalCoresUsed")
+
     private Integer totalCoresUsed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="totalFloatingIpsUsed")
-    
+    @JsonProperty(value = "totalFloatingIpsUsed")
+
     private Integer totalFloatingIpsUsed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="totalInstancesUsed")
-    
+    @JsonProperty(value = "totalInstancesUsed")
+
     private Integer totalInstancesUsed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="totalRAMUsed")
-    
+    @JsonProperty(value = "totalRAMUsed")
+
     private Integer totalRAMUsed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="totalSecurityGroupsUsed")
-    
+    @JsonProperty(value = "totalSecurityGroupsUsed")
+
     private Integer totalSecurityGroupsUsed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="totalServerGroupsUsed")
-    
+    @JsonProperty(value = "totalServerGroupsUsed")
+
     private Integer totalServerGroupsUsed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxTotalSpotInstances")
-    
+    @JsonProperty(value = "maxTotalSpotInstances")
+
     private Integer maxTotalSpotInstances;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxTotalSpotCores")
-    
+    @JsonProperty(value = "maxTotalSpotCores")
+
     private Integer maxTotalSpotCores;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxTotalSpotRAMSize")
-    
+    @JsonProperty(value = "maxTotalSpotRAMSize")
+
     private Integer maxTotalSpotRAMSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="totalSpotInstancesUsed")
-    
+    @JsonProperty(value = "totalSpotInstancesUsed")
+
     private Integer totalSpotInstancesUsed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="totalSpotCoresUsed")
-    
+    @JsonProperty(value = "totalSpotCoresUsed")
+
     private Integer totalSpotCoresUsed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="totalSpotRAMUsed")
-    
+    @JsonProperty(value = "totalSpotRAMUsed")
+
     private Integer totalSpotRAMUsed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit_by_flavor")
-    
+    @JsonProperty(value = "limit_by_flavor")
+
     private List<ProjectFlavorLimit> limitByFlavor = null;
-    
+
     public ServerLimits withMaxImageMeta(Integer maxImageMeta) {
         this.maxImageMeta = maxImageMeta;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像元数据最大的长度。
-     * @return maxImageMeta
-     */
+    /** 镜像元数据最大的长度。
+     * 
+     * @return maxImageMeta */
     public Integer getMaxImageMeta() {
         return maxImageMeta;
     }
@@ -196,20 +159,14 @@ public class ServerLimits  {
         this.maxImageMeta = maxImageMeta;
     }
 
-    
-
     public ServerLimits withMaxPersonality(Integer maxPersonality) {
         this.maxPersonality = maxPersonality;
         return this;
     }
 
-    
-
-
-    /**
-     * 可注入文件的最大个数。
-     * @return maxPersonality
-     */
+    /** 可注入文件的最大个数。
+     * 
+     * @return maxPersonality */
     public Integer getMaxPersonality() {
         return maxPersonality;
     }
@@ -218,20 +175,14 @@ public class ServerLimits  {
         this.maxPersonality = maxPersonality;
     }
 
-    
-
     public ServerLimits withMaxPersonalitySize(Integer maxPersonalitySize) {
         this.maxPersonalitySize = maxPersonalitySize;
         return this;
     }
 
-    
-
-
-    /**
-     * 注入文件内容的最大长度（单位：Byte）。
-     * @return maxPersonalitySize
-     */
+    /** 注入文件内容的最大长度（单位：Byte）。
+     * 
+     * @return maxPersonalitySize */
     public Integer getMaxPersonalitySize() {
         return maxPersonalitySize;
     }
@@ -240,20 +191,14 @@ public class ServerLimits  {
         this.maxPersonalitySize = maxPersonalitySize;
     }
 
-    
-
     public ServerLimits withMaxSecurityGroupRules(Integer maxSecurityGroupRules) {
         this.maxSecurityGroupRules = maxSecurityGroupRules;
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组中安全组规则最大的配置个数。   > 说明：  - 具体配额限制请以VPC配额限制为准。
-     * @return maxSecurityGroupRules
-     */
+    /** 安全组中安全组规则最大的配置个数。 > 说明： - 具体配额限制请以VPC配额限制为准。
+     * 
+     * @return maxSecurityGroupRules */
     public Integer getMaxSecurityGroupRules() {
         return maxSecurityGroupRules;
     }
@@ -262,20 +207,14 @@ public class ServerLimits  {
         this.maxSecurityGroupRules = maxSecurityGroupRules;
     }
 
-    
-
     public ServerLimits withMaxSecurityGroups(Integer maxSecurityGroups) {
         this.maxSecurityGroups = maxSecurityGroups;
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组最大使用个数。  > 说明：  - 具体配额限制请以VPC配额限制为准。
-     * @return maxSecurityGroups
-     */
+    /** 安全组最大使用个数。 > 说明： - 具体配额限制请以VPC配额限制为准。
+     * 
+     * @return maxSecurityGroups */
     public Integer getMaxSecurityGroups() {
         return maxSecurityGroups;
     }
@@ -284,20 +223,14 @@ public class ServerLimits  {
         this.maxSecurityGroups = maxSecurityGroups;
     }
 
-    
-
     public ServerLimits withMaxServerGroupMembers(Integer maxServerGroupMembers) {
         this.maxServerGroupMembers = maxServerGroupMembers;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务器组中的最大虚拟机数。
-     * @return maxServerGroupMembers
-     */
+    /** 服务器组中的最大虚拟机数。
+     * 
+     * @return maxServerGroupMembers */
     public Integer getMaxServerGroupMembers() {
         return maxServerGroupMembers;
     }
@@ -306,20 +239,14 @@ public class ServerLimits  {
         this.maxServerGroupMembers = maxServerGroupMembers;
     }
 
-    
-
     public ServerLimits withMaxServerGroups(Integer maxServerGroups) {
         this.maxServerGroups = maxServerGroups;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务器组的最大个数。
-     * @return maxServerGroups
-     */
+    /** 服务器组的最大个数。
+     * 
+     * @return maxServerGroups */
     public Integer getMaxServerGroups() {
         return maxServerGroups;
     }
@@ -328,20 +255,14 @@ public class ServerLimits  {
         this.maxServerGroups = maxServerGroups;
     }
 
-    
-
     public ServerLimits withMaxServerMeta(Integer maxServerMeta) {
         this.maxServerMeta = maxServerMeta;
         return this;
     }
 
-    
-
-
-    /**
-     * 可输入元数据的最大长度。
-     * @return maxServerMeta
-     */
+    /** 可输入元数据的最大长度。
+     * 
+     * @return maxServerMeta */
     public Integer getMaxServerMeta() {
         return maxServerMeta;
     }
@@ -350,20 +271,14 @@ public class ServerLimits  {
         this.maxServerMeta = maxServerMeta;
     }
 
-    
-
     public ServerLimits withMaxTotalCores(Integer maxTotalCores) {
         this.maxTotalCores = maxTotalCores;
         return this;
     }
 
-    
-
-
-    /**
-     * CPU核数最大申请数量。
-     * @return maxTotalCores
-     */
+    /** CPU核数最大申请数量。
+     * 
+     * @return maxTotalCores */
     public Integer getMaxTotalCores() {
         return maxTotalCores;
     }
@@ -372,20 +287,14 @@ public class ServerLimits  {
         this.maxTotalCores = maxTotalCores;
     }
 
-    
-
     public ServerLimits withMaxTotalFloatingIps(Integer maxTotalFloatingIps) {
         this.maxTotalFloatingIps = maxTotalFloatingIps;
         return this;
     }
 
-    
-
-
-    /**
-     * 最大的浮动IP使用个数。
-     * @return maxTotalFloatingIps
-     */
+    /** 最大的浮动IP使用个数。
+     * 
+     * @return maxTotalFloatingIps */
     public Integer getMaxTotalFloatingIps() {
         return maxTotalFloatingIps;
     }
@@ -394,20 +303,14 @@ public class ServerLimits  {
         this.maxTotalFloatingIps = maxTotalFloatingIps;
     }
 
-    
-
     public ServerLimits withMaxTotalInstances(Integer maxTotalInstances) {
         this.maxTotalInstances = maxTotalInstances;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务器最大申请数量。
-     * @return maxTotalInstances
-     */
+    /** 云服务器最大申请数量。
+     * 
+     * @return maxTotalInstances */
     public Integer getMaxTotalInstances() {
         return maxTotalInstances;
     }
@@ -416,20 +319,14 @@ public class ServerLimits  {
         this.maxTotalInstances = maxTotalInstances;
     }
 
-    
-
     public ServerLimits withMaxTotalKeypairs(Integer maxTotalKeypairs) {
         this.maxTotalKeypairs = maxTotalKeypairs;
         return this;
     }
 
-    
-
-
-    /**
-     * 可以申请的SSH密钥对最大数量。
-     * @return maxTotalKeypairs
-     */
+    /** 可以申请的SSH密钥对最大数量。
+     * 
+     * @return maxTotalKeypairs */
     public Integer getMaxTotalKeypairs() {
         return maxTotalKeypairs;
     }
@@ -438,20 +335,14 @@ public class ServerLimits  {
         this.maxTotalKeypairs = maxTotalKeypairs;
     }
 
-    
-
     public ServerLimits withMaxTotalRAMSize(Integer maxTotalRAMSize) {
         this.maxTotalRAMSize = maxTotalRAMSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 内存最大申请容量（单位：MB）。
-     * @return maxTotalRAMSize
-     */
+    /** 内存最大申请容量（单位：MB）。
+     * 
+     * @return maxTotalRAMSize */
     public Integer getMaxTotalRAMSize() {
         return maxTotalRAMSize;
     }
@@ -460,20 +351,14 @@ public class ServerLimits  {
         this.maxTotalRAMSize = maxTotalRAMSize;
     }
 
-    
-
     public ServerLimits withTotalCoresUsed(Integer totalCoresUsed) {
         this.totalCoresUsed = totalCoresUsed;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前已使用CPU核数。
-     * @return totalCoresUsed
-     */
+    /** 当前已使用CPU核数。
+     * 
+     * @return totalCoresUsed */
     public Integer getTotalCoresUsed() {
         return totalCoresUsed;
     }
@@ -482,20 +367,14 @@ public class ServerLimits  {
         this.totalCoresUsed = totalCoresUsed;
     }
 
-    
-
     public ServerLimits withTotalFloatingIpsUsed(Integer totalFloatingIpsUsed) {
         this.totalFloatingIpsUsed = totalFloatingIpsUsed;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前浮动IP使用个数。
-     * @return totalFloatingIpsUsed
-     */
+    /** 当前浮动IP使用个数。
+     * 
+     * @return totalFloatingIpsUsed */
     public Integer getTotalFloatingIpsUsed() {
         return totalFloatingIpsUsed;
     }
@@ -504,20 +383,14 @@ public class ServerLimits  {
         this.totalFloatingIpsUsed = totalFloatingIpsUsed;
     }
 
-    
-
     public ServerLimits withTotalInstancesUsed(Integer totalInstancesUsed) {
         this.totalInstancesUsed = totalInstancesUsed;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前云服务器使用个数。
-     * @return totalInstancesUsed
-     */
+    /** 当前云服务器使用个数。
+     * 
+     * @return totalInstancesUsed */
     public Integer getTotalInstancesUsed() {
         return totalInstancesUsed;
     }
@@ -526,20 +399,14 @@ public class ServerLimits  {
         this.totalInstancesUsed = totalInstancesUsed;
     }
 
-    
-
     public ServerLimits withTotalRAMUsed(Integer totalRAMUsed) {
         this.totalRAMUsed = totalRAMUsed;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前内存使用容量（单位：MB）。
-     * @return totalRAMUsed
-     */
+    /** 当前内存使用容量（单位：MB）。
+     * 
+     * @return totalRAMUsed */
     public Integer getTotalRAMUsed() {
         return totalRAMUsed;
     }
@@ -548,20 +415,14 @@ public class ServerLimits  {
         this.totalRAMUsed = totalRAMUsed;
     }
 
-    
-
     public ServerLimits withTotalSecurityGroupsUsed(Integer totalSecurityGroupsUsed) {
         this.totalSecurityGroupsUsed = totalSecurityGroupsUsed;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前安全组使用个数。
-     * @return totalSecurityGroupsUsed
-     */
+    /** 当前安全组使用个数。
+     * 
+     * @return totalSecurityGroupsUsed */
     public Integer getTotalSecurityGroupsUsed() {
         return totalSecurityGroupsUsed;
     }
@@ -570,20 +431,14 @@ public class ServerLimits  {
         this.totalSecurityGroupsUsed = totalSecurityGroupsUsed;
     }
 
-    
-
     public ServerLimits withTotalServerGroupsUsed(Integer totalServerGroupsUsed) {
         this.totalServerGroupsUsed = totalServerGroupsUsed;
         return this;
     }
 
-    
-
-
-    /**
-     * 已使用的服务器组个数。
-     * @return totalServerGroupsUsed
-     */
+    /** 已使用的服务器组个数。
+     * 
+     * @return totalServerGroupsUsed */
     public Integer getTotalServerGroupsUsed() {
         return totalServerGroupsUsed;
     }
@@ -592,20 +447,14 @@ public class ServerLimits  {
         this.totalServerGroupsUsed = totalServerGroupsUsed;
     }
 
-    
-
     public ServerLimits withMaxTotalSpotInstances(Integer maxTotalSpotInstances) {
         this.maxTotalSpotInstances = maxTotalSpotInstances;
         return this;
     }
 
-    
-
-
-    /**
-     * 竞价实例的最大申请数量。
-     * @return maxTotalSpotInstances
-     */
+    /** 竞价实例的最大申请数量。
+     * 
+     * @return maxTotalSpotInstances */
     public Integer getMaxTotalSpotInstances() {
         return maxTotalSpotInstances;
     }
@@ -614,20 +463,14 @@ public class ServerLimits  {
         this.maxTotalSpotInstances = maxTotalSpotInstances;
     }
 
-    
-
     public ServerLimits withMaxTotalSpotCores(Integer maxTotalSpotCores) {
         this.maxTotalSpotCores = maxTotalSpotCores;
         return this;
     }
 
-    
-
-
-    /**
-     * 竞价实例的CPU核数最大申请数量。
-     * @return maxTotalSpotCores
-     */
+    /** 竞价实例的CPU核数最大申请数量。
+     * 
+     * @return maxTotalSpotCores */
     public Integer getMaxTotalSpotCores() {
         return maxTotalSpotCores;
     }
@@ -636,20 +479,14 @@ public class ServerLimits  {
         this.maxTotalSpotCores = maxTotalSpotCores;
     }
 
-    
-
     public ServerLimits withMaxTotalSpotRAMSize(Integer maxTotalSpotRAMSize) {
         this.maxTotalSpotRAMSize = maxTotalSpotRAMSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 竞价实例的内存最大申请容量（单位：MB）。
-     * @return maxTotalSpotRAMSize
-     */
+    /** 竞价实例的内存最大申请容量（单位：MB）。
+     * 
+     * @return maxTotalSpotRAMSize */
     public Integer getMaxTotalSpotRAMSize() {
         return maxTotalSpotRAMSize;
     }
@@ -658,20 +495,14 @@ public class ServerLimits  {
         this.maxTotalSpotRAMSize = maxTotalSpotRAMSize;
     }
 
-    
-
     public ServerLimits withTotalSpotInstancesUsed(Integer totalSpotInstancesUsed) {
         this.totalSpotInstancesUsed = totalSpotInstancesUsed;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前竞价实例的使用个数。
-     * @return totalSpotInstancesUsed
-     */
+    /** 当前竞价实例的使用个数。
+     * 
+     * @return totalSpotInstancesUsed */
     public Integer getTotalSpotInstancesUsed() {
         return totalSpotInstancesUsed;
     }
@@ -680,20 +511,14 @@ public class ServerLimits  {
         this.totalSpotInstancesUsed = totalSpotInstancesUsed;
     }
 
-    
-
     public ServerLimits withTotalSpotCoresUsed(Integer totalSpotCoresUsed) {
         this.totalSpotCoresUsed = totalSpotCoresUsed;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前竞价实例已使用的CPU核数。
-     * @return totalSpotCoresUsed
-     */
+    /** 当前竞价实例已使用的CPU核数。
+     * 
+     * @return totalSpotCoresUsed */
     public Integer getTotalSpotCoresUsed() {
         return totalSpotCoresUsed;
     }
@@ -702,20 +527,14 @@ public class ServerLimits  {
         this.totalSpotCoresUsed = totalSpotCoresUsed;
     }
 
-    
-
     public ServerLimits withTotalSpotRAMUsed(Integer totalSpotRAMUsed) {
         this.totalSpotRAMUsed = totalSpotRAMUsed;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前竞价实例的内存使用容量（单位：MB）。
-     * @return totalSpotRAMUsed
-     */
+    /** 当前竞价实例的内存使用容量（单位：MB）。
+     * 
+     * @return totalSpotRAMUsed */
     public Integer getTotalSpotRAMUsed() {
         return totalSpotRAMUsed;
     }
@@ -724,16 +543,13 @@ public class ServerLimits  {
         this.totalSpotRAMUsed = totalSpotRAMUsed;
     }
 
-    
-
     public ServerLimits withLimitByFlavor(List<ProjectFlavorLimit> limitByFlavor) {
         this.limitByFlavor = limitByFlavor;
         return this;
     }
 
-    
     public ServerLimits addLimitByFlavorItem(ProjectFlavorLimit limitByFlavorItem) {
-        if(this.limitByFlavor == null) {
+        if (this.limitByFlavor == null) {
             this.limitByFlavor = new ArrayList<>();
         }
         this.limitByFlavor.add(limitByFlavorItem);
@@ -741,17 +557,16 @@ public class ServerLimits  {
     }
 
     public ServerLimits withLimitByFlavor(Consumer<List<ProjectFlavorLimit>> limitByFlavorSetter) {
-        if(this.limitByFlavor == null) {
+        if (this.limitByFlavor == null) {
             this.limitByFlavor = new ArrayList<>();
         }
         limitByFlavorSetter.accept(this.limitByFlavor);
         return this;
     }
 
-    /**
-     * 使用该flavor可以申请的弹性云服务器数量。  值为“-1”时，表示无数量限制。
-     * @return limitByFlavor
-     */
+    /** 使用该flavor可以申请的弹性云服务器数量。 值为“-1”时，表示无数量限制。
+     * 
+     * @return limitByFlavor */
     public List<ProjectFlavorLimit> getLimitByFlavor() {
         return limitByFlavor;
     }
@@ -759,8 +574,6 @@ public class ServerLimits  {
     public void setLimitByFlavor(List<ProjectFlavorLimit> limitByFlavor) {
         this.limitByFlavor = limitByFlavor;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -771,37 +584,64 @@ public class ServerLimits  {
             return false;
         }
         ServerLimits serverLimits = (ServerLimits) o;
-        return Objects.equals(this.maxImageMeta, serverLimits.maxImageMeta) &&
-            Objects.equals(this.maxPersonality, serverLimits.maxPersonality) &&
-            Objects.equals(this.maxPersonalitySize, serverLimits.maxPersonalitySize) &&
-            Objects.equals(this.maxSecurityGroupRules, serverLimits.maxSecurityGroupRules) &&
-            Objects.equals(this.maxSecurityGroups, serverLimits.maxSecurityGroups) &&
-            Objects.equals(this.maxServerGroupMembers, serverLimits.maxServerGroupMembers) &&
-            Objects.equals(this.maxServerGroups, serverLimits.maxServerGroups) &&
-            Objects.equals(this.maxServerMeta, serverLimits.maxServerMeta) &&
-            Objects.equals(this.maxTotalCores, serverLimits.maxTotalCores) &&
-            Objects.equals(this.maxTotalFloatingIps, serverLimits.maxTotalFloatingIps) &&
-            Objects.equals(this.maxTotalInstances, serverLimits.maxTotalInstances) &&
-            Objects.equals(this.maxTotalKeypairs, serverLimits.maxTotalKeypairs) &&
-            Objects.equals(this.maxTotalRAMSize, serverLimits.maxTotalRAMSize) &&
-            Objects.equals(this.totalCoresUsed, serverLimits.totalCoresUsed) &&
-            Objects.equals(this.totalFloatingIpsUsed, serverLimits.totalFloatingIpsUsed) &&
-            Objects.equals(this.totalInstancesUsed, serverLimits.totalInstancesUsed) &&
-            Objects.equals(this.totalRAMUsed, serverLimits.totalRAMUsed) &&
-            Objects.equals(this.totalSecurityGroupsUsed, serverLimits.totalSecurityGroupsUsed) &&
-            Objects.equals(this.totalServerGroupsUsed, serverLimits.totalServerGroupsUsed) &&
-            Objects.equals(this.maxTotalSpotInstances, serverLimits.maxTotalSpotInstances) &&
-            Objects.equals(this.maxTotalSpotCores, serverLimits.maxTotalSpotCores) &&
-            Objects.equals(this.maxTotalSpotRAMSize, serverLimits.maxTotalSpotRAMSize) &&
-            Objects.equals(this.totalSpotInstancesUsed, serverLimits.totalSpotInstancesUsed) &&
-            Objects.equals(this.totalSpotCoresUsed, serverLimits.totalSpotCoresUsed) &&
-            Objects.equals(this.totalSpotRAMUsed, serverLimits.totalSpotRAMUsed) &&
-            Objects.equals(this.limitByFlavor, serverLimits.limitByFlavor);
+        return Objects.equals(this.maxImageMeta, serverLimits.maxImageMeta)
+            && Objects.equals(this.maxPersonality, serverLimits.maxPersonality)
+            && Objects.equals(this.maxPersonalitySize, serverLimits.maxPersonalitySize)
+            && Objects.equals(this.maxSecurityGroupRules, serverLimits.maxSecurityGroupRules)
+            && Objects.equals(this.maxSecurityGroups, serverLimits.maxSecurityGroups)
+            && Objects.equals(this.maxServerGroupMembers, serverLimits.maxServerGroupMembers)
+            && Objects.equals(this.maxServerGroups, serverLimits.maxServerGroups)
+            && Objects.equals(this.maxServerMeta, serverLimits.maxServerMeta)
+            && Objects.equals(this.maxTotalCores, serverLimits.maxTotalCores)
+            && Objects.equals(this.maxTotalFloatingIps, serverLimits.maxTotalFloatingIps)
+            && Objects.equals(this.maxTotalInstances, serverLimits.maxTotalInstances)
+            && Objects.equals(this.maxTotalKeypairs, serverLimits.maxTotalKeypairs)
+            && Objects.equals(this.maxTotalRAMSize, serverLimits.maxTotalRAMSize)
+            && Objects.equals(this.totalCoresUsed, serverLimits.totalCoresUsed)
+            && Objects.equals(this.totalFloatingIpsUsed, serverLimits.totalFloatingIpsUsed)
+            && Objects.equals(this.totalInstancesUsed, serverLimits.totalInstancesUsed)
+            && Objects.equals(this.totalRAMUsed, serverLimits.totalRAMUsed)
+            && Objects.equals(this.totalSecurityGroupsUsed, serverLimits.totalSecurityGroupsUsed)
+            && Objects.equals(this.totalServerGroupsUsed, serverLimits.totalServerGroupsUsed)
+            && Objects.equals(this.maxTotalSpotInstances, serverLimits.maxTotalSpotInstances)
+            && Objects.equals(this.maxTotalSpotCores, serverLimits.maxTotalSpotCores)
+            && Objects.equals(this.maxTotalSpotRAMSize, serverLimits.maxTotalSpotRAMSize)
+            && Objects.equals(this.totalSpotInstancesUsed, serverLimits.totalSpotInstancesUsed)
+            && Objects.equals(this.totalSpotCoresUsed, serverLimits.totalSpotCoresUsed)
+            && Objects.equals(this.totalSpotRAMUsed, serverLimits.totalSpotRAMUsed)
+            && Objects.equals(this.limitByFlavor, serverLimits.limitByFlavor);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(maxImageMeta, maxPersonality, maxPersonalitySize, maxSecurityGroupRules, maxSecurityGroups, maxServerGroupMembers, maxServerGroups, maxServerMeta, maxTotalCores, maxTotalFloatingIps, maxTotalInstances, maxTotalKeypairs, maxTotalRAMSize, totalCoresUsed, totalFloatingIpsUsed, totalInstancesUsed, totalRAMUsed, totalSecurityGroupsUsed, totalServerGroupsUsed, maxTotalSpotInstances, maxTotalSpotCores, maxTotalSpotRAMSize, totalSpotInstancesUsed, totalSpotCoresUsed, totalSpotRAMUsed, limitByFlavor);
+        return Objects.hash(maxImageMeta,
+            maxPersonality,
+            maxPersonalitySize,
+            maxSecurityGroupRules,
+            maxSecurityGroups,
+            maxServerGroupMembers,
+            maxServerGroups,
+            maxServerMeta,
+            maxTotalCores,
+            maxTotalFloatingIps,
+            maxTotalInstances,
+            maxTotalKeypairs,
+            maxTotalRAMSize,
+            totalCoresUsed,
+            totalFloatingIpsUsed,
+            totalInstancesUsed,
+            totalRAMUsed,
+            totalSecurityGroupsUsed,
+            totalServerGroupsUsed,
+            maxTotalSpotInstances,
+            maxTotalSpotCores,
+            maxTotalSpotRAMSize,
+            totalSpotInstancesUsed,
+            totalSpotCoresUsed,
+            totalSpotRAMUsed,
+            limitByFlavor);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -835,16 +675,13 @@ public class ServerLimits  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

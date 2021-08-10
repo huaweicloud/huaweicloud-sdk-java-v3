@@ -1,66 +1,47 @@
 package com.huaweicloud.sdk.clouddeploy.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.clouddeploy.v2.model.DeploymentHostAuthorizationBody;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 主机信息body体
- */
-public class DeploymentHostInfo  {
-
-
+/** 主机信息body体 */
+public class DeploymentHostInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host_name")
-    
+    @JsonProperty(value = "host_name")
+
     private String hostName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip")
-    
+    @JsonProperty(value = "ip")
+
     private String ip;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
+
     private Integer port;
-    /**
-     * 操作系统：windows|linux，需要和主机组保持一致
-     */
+
+    /** 操作系统：windows|linux，需要和主机组保持一致 */
     public static final class OsEnum {
 
-        
-        /**
-         * Enum WINDOWS for value: "windows"
-         */
+        /** Enum WINDOWS for value: "windows" */
         public static final OsEnum WINDOWS = new OsEnum("windows");
-        
-        /**
-         * Enum LINUX for value: "linux"
-         */
+
+        /** Enum LINUX for value: "linux" */
         public static final OsEnum LINUX = new OsEnum("linux");
-        
 
         private static final Map<String, OsEnum> STATIC_FIELDS = createStaticFields();
 
@@ -89,7 +70,7 @@ public class DeploymentHostInfo  {
 
         @JsonCreator
         public static OsEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsEnum result = STATIC_FIELDS.get(value);
@@ -100,7 +81,7 @@ public class DeploymentHostInfo  {
         }
 
         public static OsEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsEnum result = STATIC_FIELDS.get(value);
@@ -124,34 +105,29 @@ public class DeploymentHostInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os")
-    
+    @JsonProperty(value = "os")
+
     private OsEnum os;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="as_proxy")
-    
+    @JsonProperty(value = "as_proxy")
+
     private Boolean asProxy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="proxy_host_id")
-    
+    @JsonProperty(value = "proxy_host_id")
+
     private String proxyHostId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="authorization")
-    
+    @JsonProperty(value = "authorization")
+
     private DeploymentHostAuthorizationBody authorization;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="install_icagent")
-    
+    @JsonProperty(value = "install_icagent")
+
     private Boolean installIcagent;
 
     public DeploymentHostInfo withGroupId(String groupId) {
@@ -159,13 +135,9 @@ public class DeploymentHostInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 主机组id
-     * @return groupId
-     */
+    /** 主机组id
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -174,20 +146,14 @@ public class DeploymentHostInfo  {
         this.groupId = groupId;
     }
 
-    
-
     public DeploymentHostInfo withHostName(String hostName) {
         this.hostName = hostName;
         return this;
     }
 
-    
-
-
-    /**
-     * 主机名称
-     * @return hostName
-     */
+    /** 主机名称
+     * 
+     * @return hostName */
     public String getHostName() {
         return hostName;
     }
@@ -196,20 +162,14 @@ public class DeploymentHostInfo  {
         this.hostName = hostName;
     }
 
-    
-
     public DeploymentHostInfo withIp(String ip) {
         this.ip = ip;
         return this;
     }
 
-    
-
-
-    /**
-     * IP，请输入弹性ip格式：161.17.101.12
-     * @return ip
-     */
+    /** IP，请输入弹性ip格式：161.17.101.12
+     * 
+     * @return ip */
     public String getIp() {
         return ip;
     }
@@ -218,20 +178,14 @@ public class DeploymentHostInfo  {
         this.ip = ip;
     }
 
-    
-
     public DeploymentHostInfo withPort(Integer port) {
         this.port = port;
         return this;
     }
 
-    
-
-
-    /**
-     * ssh端口，如：22
-     * @return port
-     */
+    /** ssh端口，如：22
+     * 
+     * @return port */
     public Integer getPort() {
         return port;
     }
@@ -240,20 +194,14 @@ public class DeploymentHostInfo  {
         this.port = port;
     }
 
-    
-
     public DeploymentHostInfo withOs(OsEnum os) {
         this.os = os;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作系统：windows|linux，需要和主机组保持一致
-     * @return os
-     */
+    /** 操作系统：windows|linux，需要和主机组保持一致
+     * 
+     * @return os */
     public OsEnum getOs() {
         return os;
     }
@@ -262,20 +210,14 @@ public class DeploymentHostInfo  {
         this.os = os;
     }
 
-    
-
     public DeploymentHostInfo withAsProxy(Boolean asProxy) {
         this.asProxy = asProxy;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否为代理机
-     * @return asProxy
-     */
+    /** 是否为代理机
+     * 
+     * @return asProxy */
     public Boolean getAsProxy() {
         return asProxy;
     }
@@ -284,20 +226,14 @@ public class DeploymentHostInfo  {
         this.asProxy = asProxy;
     }
 
-    
-
     public DeploymentHostInfo withProxyHostId(String proxyHostId) {
         this.proxyHostId = proxyHostId;
         return this;
     }
 
-    
-
-
-    /**
-     * 代理机id
-     * @return proxyHostId
-     */
+    /** 代理机id
+     * 
+     * @return proxyHostId */
     public String getProxyHostId() {
         return proxyHostId;
     }
@@ -306,27 +242,23 @@ public class DeploymentHostInfo  {
         this.proxyHostId = proxyHostId;
     }
 
-    
-
     public DeploymentHostInfo withAuthorization(DeploymentHostAuthorizationBody authorization) {
         this.authorization = authorization;
         return this;
     }
 
     public DeploymentHostInfo withAuthorization(Consumer<DeploymentHostAuthorizationBody> authorizationSetter) {
-        if(this.authorization == null ){
+        if (this.authorization == null) {
             this.authorization = new DeploymentHostAuthorizationBody();
             authorizationSetter.accept(this.authorization);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get authorization
-     * @return authorization
-     */
+    /** Get authorization
+     * 
+     * @return authorization */
     public DeploymentHostAuthorizationBody getAuthorization() {
         return authorization;
     }
@@ -335,20 +267,14 @@ public class DeploymentHostInfo  {
         this.authorization = authorization;
     }
 
-    
-
     public DeploymentHostInfo withInstallIcagent(Boolean installIcagent) {
         this.installIcagent = installIcagent;
         return this;
     }
 
-    
-
-
-    /**
-     * 免费启用应用运维服务（AOM），提供指标监控、日志查询、告警功能（自动安装数据采集器 ICAgent，仅支持华为云linux主机）
-     * @return installIcagent
-     */
+    /** 免费启用应用运维服务（AOM），提供指标监控、日志查询、告警功能（自动安装数据采集器 ICAgent，仅支持华为云linux主机）
+     * 
+     * @return installIcagent */
     public Boolean getInstallIcagent() {
         return installIcagent;
     }
@@ -356,8 +282,6 @@ public class DeploymentHostInfo  {
     public void setInstallIcagent(Boolean installIcagent) {
         this.installIcagent = installIcagent;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -368,20 +292,21 @@ public class DeploymentHostInfo  {
             return false;
         }
         DeploymentHostInfo deploymentHostInfo = (DeploymentHostInfo) o;
-        return Objects.equals(this.groupId, deploymentHostInfo.groupId) &&
-            Objects.equals(this.hostName, deploymentHostInfo.hostName) &&
-            Objects.equals(this.ip, deploymentHostInfo.ip) &&
-            Objects.equals(this.port, deploymentHostInfo.port) &&
-            Objects.equals(this.os, deploymentHostInfo.os) &&
-            Objects.equals(this.asProxy, deploymentHostInfo.asProxy) &&
-            Objects.equals(this.proxyHostId, deploymentHostInfo.proxyHostId) &&
-            Objects.equals(this.authorization, deploymentHostInfo.authorization) &&
-            Objects.equals(this.installIcagent, deploymentHostInfo.installIcagent);
+        return Objects.equals(this.groupId, deploymentHostInfo.groupId)
+            && Objects.equals(this.hostName, deploymentHostInfo.hostName)
+            && Objects.equals(this.ip, deploymentHostInfo.ip) && Objects.equals(this.port, deploymentHostInfo.port)
+            && Objects.equals(this.os, deploymentHostInfo.os)
+            && Objects.equals(this.asProxy, deploymentHostInfo.asProxy)
+            && Objects.equals(this.proxyHostId, deploymentHostInfo.proxyHostId)
+            && Objects.equals(this.authorization, deploymentHostInfo.authorization)
+            && Objects.equals(this.installIcagent, deploymentHostInfo.installIcagent);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(groupId, hostName, ip, port, os, asProxy, proxyHostId, authorization, installIcagent);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -398,16 +323,13 @@ public class DeploymentHostInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.sa.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * DataSource
- */
-public class DataSource  {
-
-
+/** DataSource */
+public class DataSource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private Integer type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="company_name")
-    
+    @JsonProperty(value = "company_name")
+
     private String companyName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_name")
-    
+    @JsonProperty(value = "product_name")
+
     private String productName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_feature")
-    
+    @JsonProperty(value = "product_feature")
+
     private String productFeature;
 
     public DataSource withType(Integer type) {
@@ -64,15 +48,9 @@ public class DataSource  {
         return this;
     }
 
-    
-
-
-    /**
-     * 数据源类型，取值范围如下： 1 - 华为产品 2 - 第三方产品 3 - 租户私有产品
-     * minimum: 1
-     * maximum: 3
-     * @return type
-     */
+    /** 数据源类型，取值范围如下： 1 - 华为产品 2 - 第三方产品 3 - 租户私有产品 minimum: 1 maximum: 3
+     * 
+     * @return type */
     public Integer getType() {
         return type;
     }
@@ -81,20 +59,14 @@ public class DataSource  {
         this.type = type;
     }
 
-    
-
     public DataSource withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据源产品所属管理账号的ID，最大36个字符。
-     * @return domainId
-     */
+    /** 数据源产品所属管理账号的ID，最大36个字符。
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -103,20 +75,14 @@ public class DataSource  {
         this.domainId = domainId;
     }
 
-    
-
     public DataSource withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据源产品所属项目的ID，最大36个字符。
-     * @return projectId
-     */
+    /** 数据源产品所属项目的ID，最大36个字符。
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -125,20 +91,14 @@ public class DataSource  {
         this.projectId = projectId;
     }
 
-    
-
     public DataSource withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据源产品所在区域，具体取值范围查看华为云地区和终端节点定义。
-     * @return region
-     */
+    /** 数据源产品所在区域，具体取值范围查看华为云地区和终端节点定义。
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -147,20 +107,14 @@ public class DataSource  {
         this.region = region;
     }
 
-    
-
     public DataSource withCompanyName(String companyName) {
         this.companyName = companyName;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据源产品所属公司的名称。
-     * @return companyName
-     */
+    /** 数据源产品所属公司的名称。
+     * 
+     * @return companyName */
     public String getCompanyName() {
         return companyName;
     }
@@ -169,20 +123,14 @@ public class DataSource  {
         this.companyName = companyName;
     }
 
-    
-
     public DataSource withProductName(String productName) {
         this.productName = productName;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据源产品的名称。
-     * @return productName
-     */
+    /** 数据源产品的名称。
+     * 
+     * @return productName */
     public String getProductName() {
         return productName;
     }
@@ -191,20 +139,14 @@ public class DataSource  {
         this.productName = productName;
     }
 
-    
-
     public DataSource withProductFeature(String productFeature) {
         this.productFeature = productFeature;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品功能特性名称，用来指明检测到当前事件的产品的功能特性。
-     * @return productFeature
-     */
+    /** 产品功能特性名称，用来指明检测到当前事件的产品的功能特性。
+     * 
+     * @return productFeature */
     public String getProductFeature() {
         return productFeature;
     }
@@ -212,8 +154,6 @@ public class DataSource  {
     public void setProductFeature(String productFeature) {
         this.productFeature = productFeature;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -224,18 +164,18 @@ public class DataSource  {
             return false;
         }
         DataSource dataSource = (DataSource) o;
-        return Objects.equals(this.type, dataSource.type) &&
-            Objects.equals(this.domainId, dataSource.domainId) &&
-            Objects.equals(this.projectId, dataSource.projectId) &&
-            Objects.equals(this.region, dataSource.region) &&
-            Objects.equals(this.companyName, dataSource.companyName) &&
-            Objects.equals(this.productName, dataSource.productName) &&
-            Objects.equals(this.productFeature, dataSource.productFeature);
+        return Objects.equals(this.type, dataSource.type) && Objects.equals(this.domainId, dataSource.domainId)
+            && Objects.equals(this.projectId, dataSource.projectId) && Objects.equals(this.region, dataSource.region)
+            && Objects.equals(this.companyName, dataSource.companyName)
+            && Objects.equals(this.productName, dataSource.productName)
+            && Objects.equals(this.productFeature, dataSource.productFeature);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, domainId, projectId, region, companyName, productName, productFeature);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -250,16 +190,13 @@ public class DataSource  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

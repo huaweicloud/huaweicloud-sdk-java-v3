@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.cloudtest.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 计划周期信息
- */
-public class PlanCycle  {
-
-
+/** 计划周期信息 */
+public class PlanCycle {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_date")
-    
+    @JsonProperty(value = "start_date")
+
     private String startDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_date")
-    
+    @JsonProperty(value = "end_date")
+
     private String endDate;
 
     public PlanCycle withStartDate(String startDate) {
@@ -34,13 +23,9 @@ public class PlanCycle  {
         return this;
     }
 
-    
-
-
-    /**
-     * 计划开始时间，要求用UTC时间表示。如2020-03-04
-     * @return startDate
-     */
+    /** 计划开始时间，要求用UTC时间表示。如2020-03-04
+     * 
+     * @return startDate */
     public String getStartDate() {
         return startDate;
     }
@@ -49,20 +34,14 @@ public class PlanCycle  {
         this.startDate = startDate;
     }
 
-    
-
     public PlanCycle withEndDate(String endDate) {
         this.endDate = endDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 计划结束时间，要求用UTC时间表示。如2020-03-31
-     * @return endDate
-     */
+    /** 计划结束时间，要求用UTC时间表示。如2020-03-31
+     * 
+     * @return endDate */
     public String getEndDate() {
         return endDate;
     }
@@ -70,8 +49,6 @@ public class PlanCycle  {
     public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,14 @@ public class PlanCycle  {
             return false;
         }
         PlanCycle planCycle = (PlanCycle) o;
-        return Objects.equals(this.startDate, planCycle.startDate) &&
-            Objects.equals(this.endDate, planCycle.endDate);
+        return Objects.equals(this.startDate, planCycle.startDate) && Objects.equals(this.endDate, planCycle.endDate);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(startDate, endDate);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +76,13 @@ public class PlanCycle  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

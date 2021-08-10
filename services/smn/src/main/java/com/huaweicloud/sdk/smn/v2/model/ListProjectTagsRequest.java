@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.smn.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListProjectTagsRequest  {
-
-
+/** Request Object */
+public class ListProjectTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type")
-    
+    @JsonProperty(value = "resource_type")
+
     private String resourceType;
 
     public ListProjectTagsRequest withResourceType(String resourceType) {
@@ -28,13 +18,9 @@ public class ListProjectTagsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 资源类型 目前有: smn_topic，主题 smn_sms，短信 smn_application，移动推送
-     * @return resourceType
-     */
+    /** 资源类型 目前有: smn_topic，主题 smn_sms，短信 smn_application，移动推送
+     * 
+     * @return resourceType */
     public String getResourceType() {
         return resourceType;
     }
@@ -42,8 +28,6 @@ public class ListProjectTagsRequest  {
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class ListProjectTagsRequest  {
         ListProjectTagsRequest listProjectTagsRequest = (ListProjectTagsRequest) o;
         return Objects.equals(this.resourceType, listProjectTagsRequest.resourceType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resourceType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class ListProjectTagsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

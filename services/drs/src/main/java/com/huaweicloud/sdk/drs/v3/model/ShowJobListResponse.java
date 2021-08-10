@@ -1,51 +1,35 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.JobInfo;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowJobListResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_record")
-    
+    @JsonProperty(value = "total_record")
+
     private Integer totalRecord;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobs")
-    
+    @JsonProperty(value = "jobs")
+
     private List<JobInfo> jobs = null;
-    
+
     public ShowJobListResponse withTotalRecord(Integer totalRecord) {
         this.totalRecord = totalRecord;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务总数
-     * @return totalRecord
-     */
+    /** 任务总数
+     * 
+     * @return totalRecord */
     public Integer getTotalRecord() {
         return totalRecord;
     }
@@ -54,16 +38,13 @@ public class ShowJobListResponse extends SdkResponse {
         this.totalRecord = totalRecord;
     }
 
-    
-
     public ShowJobListResponse withJobs(List<JobInfo> jobs) {
         this.jobs = jobs;
         return this;
     }
 
-    
     public ShowJobListResponse addJobsItem(JobInfo jobsItem) {
-        if(this.jobs == null) {
+        if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
         this.jobs.add(jobsItem);
@@ -71,17 +52,16 @@ public class ShowJobListResponse extends SdkResponse {
     }
 
     public ShowJobListResponse withJobs(Consumer<List<JobInfo>> jobsSetter) {
-        if(this.jobs == null) {
+        if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
         jobsSetter.accept(this.jobs);
         return this;
     }
 
-    /**
-     * 任务信息列表
-     * @return jobs
-     */
+    /** 任务信息列表
+     * 
+     * @return jobs */
     public List<JobInfo> getJobs() {
         return jobs;
     }
@@ -89,8 +69,6 @@ public class ShowJobListResponse extends SdkResponse {
     public void setJobs(List<JobInfo> jobs) {
         this.jobs = jobs;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ShowJobListResponse extends SdkResponse {
             return false;
         }
         ShowJobListResponse showJobListResponse = (ShowJobListResponse) o;
-        return Objects.equals(this.totalRecord, showJobListResponse.totalRecord) &&
-            Objects.equals(this.jobs, showJobListResponse.jobs);
+        return Objects.equals(this.totalRecord, showJobListResponse.totalRecord)
+            && Objects.equals(this.jobs, showJobListResponse.jobs);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(totalRecord, jobs);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ShowJobListResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

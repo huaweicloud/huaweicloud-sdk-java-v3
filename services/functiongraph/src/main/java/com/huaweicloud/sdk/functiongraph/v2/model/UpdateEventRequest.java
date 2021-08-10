@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.functiongraph.v2.model.UpdateEventRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateEventRequest  {
-
-
+/** Request Object */
+public class UpdateEventRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="event_id")
-    
+    @JsonProperty(value = "event_id")
+
     private String eventId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="function_urn")
-    
+    @JsonProperty(value = "function_urn")
+
     private String functionUrn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateEventRequestBody body;
 
     public UpdateEventRequest withEventId(String eventId) {
@@ -41,13 +29,9 @@ public class UpdateEventRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 事件ID。
-     * @return eventId
-     */
+    /** 事件ID。
+     * 
+     * @return eventId */
     public String getEventId() {
         return eventId;
     }
@@ -56,20 +40,14 @@ public class UpdateEventRequest  {
         this.eventId = eventId;
     }
 
-    
-
     public UpdateEventRequest withFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数的URN（Uniform Resource Name），唯一标识函数。
-     * @return functionUrn
-     */
+    /** 函数的URN（Uniform Resource Name），唯一标识函数。
+     * 
+     * @return functionUrn */
     public String getFunctionUrn() {
         return functionUrn;
     }
@@ -78,27 +56,23 @@ public class UpdateEventRequest  {
         this.functionUrn = functionUrn;
     }
 
-    
-
     public UpdateEventRequest withBody(UpdateEventRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdateEventRequest withBody(Consumer<UpdateEventRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateEventRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateEventRequestBody getBody() {
         return body;
     }
@@ -106,8 +80,6 @@ public class UpdateEventRequest  {
     public void setBody(UpdateEventRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class UpdateEventRequest  {
             return false;
         }
         UpdateEventRequest updateEventRequest = (UpdateEventRequest) o;
-        return Objects.equals(this.eventId, updateEventRequest.eventId) &&
-            Objects.equals(this.functionUrn, updateEventRequest.functionUrn) &&
-            Objects.equals(this.body, updateEventRequest.body);
+        return Objects.equals(this.eventId, updateEventRequest.eventId)
+            && Objects.equals(this.functionUrn, updateEventRequest.functionUrn)
+            && Objects.equals(this.body, updateEventRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(eventId, functionUrn, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class UpdateEventRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

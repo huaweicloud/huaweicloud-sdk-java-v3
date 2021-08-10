@@ -1,83 +1,58 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 
  */
-public class CompareTaskList  {
-
-
+public class CompareTaskList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="compare_task_id")
-    
+    @JsonProperty(value = "compare_task_id")
+
     private String compareTaskId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="compare_type")
-    
+    @JsonProperty(value = "compare_type")
+
     private String compareType;
-    /**
-     * 对比任务的状态。
-     */
+
+    /** 对比任务的状态。 */
     public static final class CompareTaskStatusEnum {
 
-        
-        /**
-         * Enum RUNNING_ for value: "RUNNING-运行中"
-         */
+        /** Enum RUNNING_ for value: "RUNNING-运行中" */
         public static final CompareTaskStatusEnum RUNNING_ = new CompareTaskStatusEnum("RUNNING-运行中");
-        
-        /**
-         * Enum WAITING_FOR_RUNNING_ for value: "WAITING_FOR_RUNNING-等待启动中"
-         */
-        public static final CompareTaskStatusEnum WAITING_FOR_RUNNING_ = new CompareTaskStatusEnum("WAITING_FOR_RUNNING-等待启动中");
-        
-        /**
-         * Enum SUCCESSFUL_ for value: "SUCCESSFUL-完成"
-         */
+
+        /** Enum WAITING_FOR_RUNNING_ for value: "WAITING_FOR_RUNNING-等待启动中" */
+        public static final CompareTaskStatusEnum WAITING_FOR_RUNNING_ =
+            new CompareTaskStatusEnum("WAITING_FOR_RUNNING-等待启动中");
+
+        /** Enum SUCCESSFUL_ for value: "SUCCESSFUL-完成" */
         public static final CompareTaskStatusEnum SUCCESSFUL_ = new CompareTaskStatusEnum("SUCCESSFUL-完成");
-        
-        /**
-         * Enum FAILED_ for value: "FAILED-失败"
-         */
+
+        /** Enum FAILED_ for value: "FAILED-失败" */
         public static final CompareTaskStatusEnum FAILED_ = new CompareTaskStatusEnum("FAILED-失败");
-        
-        /**
-         * Enum CANCELLED_ for value: "CANCELLED-已取消"
-         */
+
+        /** Enum CANCELLED_ for value: "CANCELLED-已取消" */
         public static final CompareTaskStatusEnum CANCELLED_ = new CompareTaskStatusEnum("CANCELLED-已取消");
-        
-        /**
-         * Enum TIMEOUT_INTERRUPT_ for value: "TIMEOUT_INTERRUPT-超时中断"
-         */
-        public static final CompareTaskStatusEnum TIMEOUT_INTERRUPT_ = new CompareTaskStatusEnum("TIMEOUT_INTERRUPT-超时中断");
-        
-        /**
-         * Enum FULL_DOING_ for value: "FULL_DOING-全量校验中"
-         */
+
+        /** Enum TIMEOUT_INTERRUPT_ for value: "TIMEOUT_INTERRUPT-超时中断" */
+        public static final CompareTaskStatusEnum TIMEOUT_INTERRUPT_ =
+            new CompareTaskStatusEnum("TIMEOUT_INTERRUPT-超时中断");
+
+        /** Enum FULL_DOING_ for value: "FULL_DOING-全量校验中" */
         public static final CompareTaskStatusEnum FULL_DOING_ = new CompareTaskStatusEnum("FULL_DOING-全量校验中");
-        
-        /**
-         * Enum INCRE_DOING_ for value: "INCRE_DOING-增量校验中"
-         */
+
+        /** Enum INCRE_DOING_ for value: "INCRE_DOING-增量校验中" */
         public static final CompareTaskStatusEnum INCRE_DOING_ = new CompareTaskStatusEnum("INCRE_DOING-增量校验中");
-        
 
         private static final Map<String, CompareTaskStatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -112,7 +87,7 @@ public class CompareTaskList  {
 
         @JsonCreator
         public static CompareTaskStatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CompareTaskStatusEnum result = STATIC_FIELDS.get(value);
@@ -123,7 +98,7 @@ public class CompareTaskList  {
         }
 
         public static CompareTaskStatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CompareTaskStatusEnum result = STATIC_FIELDS.get(value);
@@ -147,22 +122,19 @@ public class CompareTaskList  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="compare_task_status")
-    
+    @JsonProperty(value = "compare_task_status")
+
     private CompareTaskStatusEnum compareTaskStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private String createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
     public CompareTaskList withCompareTaskId(String compareTaskId) {
@@ -170,13 +142,9 @@ public class CompareTaskList  {
         return this;
     }
 
-    
-
-
-    /**
-     * 对比任务的id。
-     * @return compareTaskId
-     */
+    /** 对比任务的id。
+     * 
+     * @return compareTaskId */
     public String getCompareTaskId() {
         return compareTaskId;
     }
@@ -185,20 +153,14 @@ public class CompareTaskList  {
         this.compareTaskId = compareTaskId;
     }
 
-    
-
     public CompareTaskList withCompareType(String compareType) {
         this.compareType = compareType;
         return this;
     }
 
-    
-
-
-    /**
-     * 对比任务的类型。
-     * @return compareType
-     */
+    /** 对比任务的类型。
+     * 
+     * @return compareType */
     public String getCompareType() {
         return compareType;
     }
@@ -207,20 +169,14 @@ public class CompareTaskList  {
         this.compareType = compareType;
     }
 
-    
-
     public CompareTaskList withCompareTaskStatus(CompareTaskStatusEnum compareTaskStatus) {
         this.compareTaskStatus = compareTaskStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 对比任务的状态。
-     * @return compareTaskStatus
-     */
+    /** 对比任务的状态。
+     * 
+     * @return compareTaskStatus */
     public CompareTaskStatusEnum getCompareTaskStatus() {
         return compareTaskStatus;
     }
@@ -229,20 +185,14 @@ public class CompareTaskList  {
         this.compareTaskStatus = compareTaskStatus;
     }
 
-    
-
     public CompareTaskList withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 对比开始时间。
-     * @return createTime
-     */
+    /** 对比开始时间。
+     * 
+     * @return createTime */
     public String getCreateTime() {
         return createTime;
     }
@@ -251,20 +201,14 @@ public class CompareTaskList  {
         this.createTime = createTime;
     }
 
-    
-
     public CompareTaskList withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 对比结束时间。
-     * @return endTime
-     */
+    /** 对比结束时间。
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -272,8 +216,6 @@ public class CompareTaskList  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -284,16 +226,18 @@ public class CompareTaskList  {
             return false;
         }
         CompareTaskList compareTaskList = (CompareTaskList) o;
-        return Objects.equals(this.compareTaskId, compareTaskList.compareTaskId) &&
-            Objects.equals(this.compareType, compareTaskList.compareType) &&
-            Objects.equals(this.compareTaskStatus, compareTaskList.compareTaskStatus) &&
-            Objects.equals(this.createTime, compareTaskList.createTime) &&
-            Objects.equals(this.endTime, compareTaskList.endTime);
+        return Objects.equals(this.compareTaskId, compareTaskList.compareTaskId)
+            && Objects.equals(this.compareType, compareTaskList.compareType)
+            && Objects.equals(this.compareTaskStatus, compareTaskList.compareTaskStatus)
+            && Objects.equals(this.createTime, compareTaskList.createTime)
+            && Objects.equals(this.endTime, compareTaskList.endTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(compareTaskId, compareType, compareTaskStatus, createTime, endTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -306,16 +250,13 @@ public class CompareTaskList  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

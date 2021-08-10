@@ -1,39 +1,29 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.ProtocolLinks;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class ProtocolResult  {
-
-
+public class ProtocolResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mapping_id")
-    
+    @JsonProperty(value = "mapping_id")
+
     private String mappingId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private ProtocolLinks links;
 
     public ProtocolResult withId(String id) {
@@ -41,13 +31,9 @@ public class ProtocolResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 协议ID。
-     * @return id
-     */
+    /** 协议ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -56,20 +42,14 @@ public class ProtocolResult  {
         this.id = id;
     }
 
-    
-
     public ProtocolResult withMappingId(String mappingId) {
         this.mappingId = mappingId;
         return this;
     }
 
-    
-
-
-    /**
-     * 映射ID。
-     * @return mappingId
-     */
+    /** 映射ID。
+     * 
+     * @return mappingId */
     public String getMappingId() {
         return mappingId;
     }
@@ -78,27 +58,23 @@ public class ProtocolResult  {
         this.mappingId = mappingId;
     }
 
-    
-
     public ProtocolResult withLinks(ProtocolLinks links) {
         this.links = links;
         return this;
     }
 
     public ProtocolResult withLinks(Consumer<ProtocolLinks> linksSetter) {
-        if(this.links == null ){
+        if (this.links == null) {
             this.links = new ProtocolLinks();
             linksSetter.accept(this.links);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get links
-     * @return links
-     */
+    /** Get links
+     * 
+     * @return links */
     public ProtocolLinks getLinks() {
         return links;
     }
@@ -106,8 +82,6 @@ public class ProtocolResult  {
     public void setLinks(ProtocolLinks links) {
         this.links = links;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +92,15 @@ public class ProtocolResult  {
             return false;
         }
         ProtocolResult protocolResult = (ProtocolResult) o;
-        return Objects.equals(this.id, protocolResult.id) &&
-            Objects.equals(this.mappingId, protocolResult.mappingId) &&
-            Objects.equals(this.links, protocolResult.links);
+        return Objects.equals(this.id, protocolResult.id) && Objects.equals(this.mappingId, protocolResult.mappingId)
+            && Objects.equals(this.links, protocolResult.links);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, mappingId, links);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +111,13 @@ public class ProtocolResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -23,10 +23,9 @@ package com.huaweicloud.sdk.core;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public class SdkResponse {
+
     @JsonIgnore
     private int httpStatusCode;
 

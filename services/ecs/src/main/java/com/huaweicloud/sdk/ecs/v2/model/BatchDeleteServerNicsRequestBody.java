@@ -1,39 +1,28 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.BatchDeleteServerNicOption;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * This is a auto create Body Object
- */
-public class BatchDeleteServerNicsRequestBody  {
-
-
+/** This is a auto create Body Object */
+public class BatchDeleteServerNicsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nics")
-    
+    @JsonProperty(value = "nics")
+
     private List<BatchDeleteServerNicOption> nics = null;
-    
+
     public BatchDeleteServerNicsRequestBody withNics(List<BatchDeleteServerNicOption> nics) {
         this.nics = nics;
         return this;
     }
 
-    
     public BatchDeleteServerNicsRequestBody addNicsItem(BatchDeleteServerNicOption nicsItem) {
-        if(this.nics == null) {
+        if (this.nics == null) {
             this.nics = new ArrayList<>();
         }
         this.nics.add(nicsItem);
@@ -41,17 +30,16 @@ public class BatchDeleteServerNicsRequestBody  {
     }
 
     public BatchDeleteServerNicsRequestBody withNics(Consumer<List<BatchDeleteServerNicOption>> nicsSetter) {
-        if(this.nics == null) {
+        if (this.nics == null) {
             this.nics = new ArrayList<>();
         }
         nicsSetter.accept(this.nics);
         return this;
     }
 
-    /**
-     * 需要删除的网卡列表信息。  说明： 主网卡是弹性云服务器上配置了路由规则的网卡，不可删除。
-     * @return nics
-     */
+    /** 需要删除的网卡列表信息。 说明： 主网卡是弹性云服务器上配置了路由规则的网卡，不可删除。
+     * 
+     * @return nics */
     public List<BatchDeleteServerNicOption> getNics() {
         return nics;
     }
@@ -59,8 +47,6 @@ public class BatchDeleteServerNicsRequestBody  {
     public void setNics(List<BatchDeleteServerNicOption> nics) {
         this.nics = nics;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -73,10 +59,12 @@ public class BatchDeleteServerNicsRequestBody  {
         BatchDeleteServerNicsRequestBody batchDeleteServerNicsRequestBody = (BatchDeleteServerNicsRequestBody) o;
         return Objects.equals(this.nics, batchDeleteServerNicsRequestBody.nics);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nics);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -85,16 +73,13 @@ public class BatchDeleteServerNicsRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

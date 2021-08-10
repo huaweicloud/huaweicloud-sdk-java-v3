@@ -1,32 +1,23 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class VpcInfo  {
-
-
+public class VpcInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
+
     private String tenantId;
 
     public VpcInfo withVpcId(String vpcId) {
@@ -34,13 +25,9 @@ public class VpcInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 对等连接其中一端vpc ID
-     * @return vpcId
-     */
+    /** 对等连接其中一端vpc ID
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -49,20 +36,14 @@ public class VpcInfo  {
         this.vpcId = vpcId;
     }
 
-    
-
     public VpcInfo withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
 
-    
-
-
-    /**
-     * 对等连接其中一端vpc所属的租户ID 约束：跨租户VPC创建对等连接时必选
-     * @return tenantId
-     */
+    /** 对等连接其中一端vpc所属的租户ID 约束：跨租户VPC创建对等连接时必选
+     * 
+     * @return tenantId */
     public String getTenantId() {
         return tenantId;
     }
@@ -70,8 +51,6 @@ public class VpcInfo  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +61,14 @@ public class VpcInfo  {
             return false;
         }
         VpcInfo vpcInfo = (VpcInfo) o;
-        return Objects.equals(this.vpcId, vpcInfo.vpcId) &&
-            Objects.equals(this.tenantId, vpcInfo.tenantId);
+        return Objects.equals(this.vpcId, vpcInfo.vpcId) && Objects.equals(this.tenantId, vpcInfo.tenantId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(vpcId, tenantId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +78,13 @@ public class VpcInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

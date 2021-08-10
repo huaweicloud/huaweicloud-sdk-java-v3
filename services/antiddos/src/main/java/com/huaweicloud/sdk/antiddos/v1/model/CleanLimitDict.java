@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.antiddos.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 连接数限制列表
- */
-public class CleanLimitDict  {
-
-
+/** 连接数限制列表 */
+public class CleanLimitDict {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cleaning_access_pos_id")
-    
+    @JsonProperty(value = "cleaning_access_pos_id")
+
     private Long cleaningAccessPosId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="new_connection_limited")
-    
+    @JsonProperty(value = "new_connection_limited")
+
     private Long newConnectionLimited;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_connection_limited")
-    
+    @JsonProperty(value = "total_connection_limited")
+
     private Long totalConnectionLimited;
 
     public CleanLimitDict withCleaningAccessPosId(Long cleaningAccessPosId) {
@@ -40,13 +28,9 @@ public class CleanLimitDict  {
         return this;
     }
 
-    
-
-
-    /**
-     * 清洗时访问限制分段ID
-     * @return cleaningAccessPosId
-     */
+    /** 清洗时访问限制分段ID
+     * 
+     * @return cleaningAccessPosId */
     public Long getCleaningAccessPosId() {
         return cleaningAccessPosId;
     }
@@ -55,20 +39,14 @@ public class CleanLimitDict  {
         this.cleaningAccessPosId = cleaningAccessPosId;
     }
 
-    
-
     public CleanLimitDict withNewConnectionLimited(Long newConnectionLimited) {
         this.newConnectionLimited = newConnectionLimited;
         return this;
     }
 
-    
-
-
-    /**
-     * 单一源IP新建连接个数
-     * @return newConnectionLimited
-     */
+    /** 单一源IP新建连接个数
+     * 
+     * @return newConnectionLimited */
     public Long getNewConnectionLimited() {
         return newConnectionLimited;
     }
@@ -77,20 +55,14 @@ public class CleanLimitDict  {
         this.newConnectionLimited = newConnectionLimited;
     }
 
-    
-
     public CleanLimitDict withTotalConnectionLimited(Long totalConnectionLimited) {
         this.totalConnectionLimited = totalConnectionLimited;
         return this;
     }
 
-    
-
-
-    /**
-     * 单一源IP连接数总个数
-     * @return totalConnectionLimited
-     */
+    /** 单一源IP连接数总个数
+     * 
+     * @return totalConnectionLimited */
     public Long getTotalConnectionLimited() {
         return totalConnectionLimited;
     }
@@ -98,8 +70,6 @@ public class CleanLimitDict  {
     public void setTotalConnectionLimited(Long totalConnectionLimited) {
         this.totalConnectionLimited = totalConnectionLimited;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class CleanLimitDict  {
             return false;
         }
         CleanLimitDict cleanLimitDict = (CleanLimitDict) o;
-        return Objects.equals(this.cleaningAccessPosId, cleanLimitDict.cleaningAccessPosId) &&
-            Objects.equals(this.newConnectionLimited, cleanLimitDict.newConnectionLimited) &&
-            Objects.equals(this.totalConnectionLimited, cleanLimitDict.totalConnectionLimited);
+        return Objects.equals(this.cleaningAccessPosId, cleanLimitDict.cleaningAccessPosId)
+            && Objects.equals(this.newConnectionLimited, cleanLimitDict.newConnectionLimited)
+            && Objects.equals(this.totalConnectionLimited, cleanLimitDict.totalConnectionLimited);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(cleaningAccessPosId, newConnectionLimited, totalConnectionLimited);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class CleanLimitDict  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.BatchCreateListenerTagsRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class BatchCreateListenerTagsRequest  {
-
-
+/** Request Object */
+public class BatchCreateListenerTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="listener_id")
-    
+    @JsonProperty(value = "listener_id")
+
     private String listenerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private BatchCreateListenerTagsRequestBody body;
 
     public BatchCreateListenerTagsRequest withListenerId(String listenerId) {
@@ -35,13 +24,9 @@ public class BatchCreateListenerTagsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器ID。
-     * @return listenerId
-     */
+    /** 监听器ID。
+     * 
+     * @return listenerId */
     public String getListenerId() {
         return listenerId;
     }
@@ -50,27 +35,23 @@ public class BatchCreateListenerTagsRequest  {
         this.listenerId = listenerId;
     }
 
-    
-
     public BatchCreateListenerTagsRequest withBody(BatchCreateListenerTagsRequestBody body) {
         this.body = body;
         return this;
     }
 
     public BatchCreateListenerTagsRequest withBody(Consumer<BatchCreateListenerTagsRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new BatchCreateListenerTagsRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public BatchCreateListenerTagsRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class BatchCreateListenerTagsRequest  {
     public void setBody(BatchCreateListenerTagsRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class BatchCreateListenerTagsRequest  {
             return false;
         }
         BatchCreateListenerTagsRequest batchCreateListenerTagsRequest = (BatchCreateListenerTagsRequest) o;
-        return Objects.equals(this.listenerId, batchCreateListenerTagsRequest.listenerId) &&
-            Objects.equals(this.body, batchCreateListenerTagsRequest.body);
+        return Objects.equals(this.listenerId, batchCreateListenerTagsRequest.listenerId)
+            && Objects.equals(this.body, batchCreateListenerTagsRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(listenerId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class BatchCreateListenerTagsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

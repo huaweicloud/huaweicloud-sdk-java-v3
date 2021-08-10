@@ -1,95 +1,62 @@
 package com.huaweicloud.sdk.oms.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.oms.v2.model.ListFile;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 源端节点信息。
- */
-public class SrcNodeResp  {
-
-
+/** 源端节点信息。 */
+public class SrcNodeResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bucket")
-    
+    @JsonProperty(value = "bucket")
+
     private String bucket;
-    /**
-     * 源端云服务提供商。  可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、URLSource或者UCloud。默认值为Aliyun。
-     */
+
+    /** 源端云服务提供商。
+     * 可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、URLSource或者UCloud。默认值为Aliyun。 */
     public static final class CloudTypeEnum {
 
-        
-        /**
-         * Enum AWS for value: "AWS"
-         */
+        /** Enum AWS for value: "AWS" */
         public static final CloudTypeEnum AWS = new CloudTypeEnum("AWS");
-        
-        /**
-         * Enum AZURE for value: "Azure"
-         */
+
+        /** Enum AZURE for value: "Azure" */
         public static final CloudTypeEnum AZURE = new CloudTypeEnum("Azure");
-        
-        /**
-         * Enum ALIYUN for value: "Aliyun"
-         */
+
+        /** Enum ALIYUN for value: "Aliyun" */
         public static final CloudTypeEnum ALIYUN = new CloudTypeEnum("Aliyun");
-        
-        /**
-         * Enum TENCENT for value: "Tencent"
-         */
+
+        /** Enum TENCENT for value: "Tencent" */
         public static final CloudTypeEnum TENCENT = new CloudTypeEnum("Tencent");
-        
-        /**
-         * Enum HUAWEICLOUD for value: "HuaweiCloud"
-         */
+
+        /** Enum HUAWEICLOUD for value: "HuaweiCloud" */
         public static final CloudTypeEnum HUAWEICLOUD = new CloudTypeEnum("HuaweiCloud");
-        
-        /**
-         * Enum QINGCLOUD for value: "QingCloud"
-         */
+
+        /** Enum QINGCLOUD for value: "QingCloud" */
         public static final CloudTypeEnum QINGCLOUD = new CloudTypeEnum("QingCloud");
-        
-        /**
-         * Enum KINGSOFTCLOUD for value: "KingsoftCloud"
-         */
+
+        /** Enum KINGSOFTCLOUD for value: "KingsoftCloud" */
         public static final CloudTypeEnum KINGSOFTCLOUD = new CloudTypeEnum("KingsoftCloud");
-        
-        /**
-         * Enum BAIDU for value: "Baidu"
-         */
+
+        /** Enum BAIDU for value: "Baidu" */
         public static final CloudTypeEnum BAIDU = new CloudTypeEnum("Baidu");
-        
-        /**
-         * Enum QINIU for value: "Qiniu"
-         */
+
+        /** Enum QINIU for value: "Qiniu" */
         public static final CloudTypeEnum QINIU = new CloudTypeEnum("Qiniu");
-        
-        /**
-         * Enum URLSOURCE for value: "URLSource"
-         */
+
+        /** Enum URLSOURCE for value: "URLSource" */
         public static final CloudTypeEnum URLSOURCE = new CloudTypeEnum("URLSource");
-        
-        /**
-         * Enum UCLOUD for value: "UCloud"
-         */
+
+        /** Enum UCLOUD for value: "UCloud" */
         public static final CloudTypeEnum UCLOUD = new CloudTypeEnum("UCloud");
-        
 
         private static final Map<String, CloudTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -127,7 +94,7 @@ public class SrcNodeResp  {
 
         @JsonCreator
         public static CloudTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CloudTypeEnum result = STATIC_FIELDS.get(value);
@@ -138,7 +105,7 @@ public class SrcNodeResp  {
         }
 
         public static CloudTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CloudTypeEnum result = STATIC_FIELDS.get(value);
@@ -162,34 +129,29 @@ public class SrcNodeResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cloud_type")
-    
+    @JsonProperty(value = "cloud_type")
+
     private CloudTypeEnum cloudType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="object_key")
-    
+    @JsonProperty(value = "object_key")
+
     private List<String> objectKey = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="list_file")
-    
+    @JsonProperty(value = "list_file")
+
     private ListFile listFile;
 
     public SrcNodeResp withBucket(String bucket) {
@@ -197,13 +159,9 @@ public class SrcNodeResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 源端桶的名称。
-     * @return bucket
-     */
+    /** 源端桶的名称。
+     * 
+     * @return bucket */
     public String getBucket() {
         return bucket;
     }
@@ -212,20 +170,15 @@ public class SrcNodeResp  {
         this.bucket = bucket;
     }
 
-    
-
     public SrcNodeResp withCloudType(CloudTypeEnum cloudType) {
         this.cloudType = cloudType;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端云服务提供商。  可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、URLSource或者UCloud。默认值为Aliyun。
-     * @return cloudType
-     */
+    /** 源端云服务提供商。
+     * 可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、URLSource或者UCloud。默认值为Aliyun。
+     * 
+     * @return cloudType */
     public CloudTypeEnum getCloudType() {
         return cloudType;
     }
@@ -234,20 +187,14 @@ public class SrcNodeResp  {
         this.cloudType = cloudType;
     }
 
-    
-
     public SrcNodeResp withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端桶所处的区域。
-     * @return region
-     */
+    /** 源端桶所处的区域。
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -256,20 +203,14 @@ public class SrcNodeResp  {
         this.region = region;
     }
 
-    
-
     public SrcNodeResp withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 当源端为腾讯云时，会返回此参数。
-     * @return appId
-     */
+    /** 当源端为腾讯云时，会返回此参数。
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -278,16 +219,13 @@ public class SrcNodeResp  {
         this.appId = appId;
     }
 
-    
-
     public SrcNodeResp withObjectKey(List<String> objectKey) {
         this.objectKey = objectKey;
         return this;
     }
 
-    
     public SrcNodeResp addObjectKeyItem(String objectKeyItem) {
-        if(this.objectKey == null) {
+        if (this.objectKey == null) {
             this.objectKey = new ArrayList<>();
         }
         this.objectKey.add(objectKeyItem);
@@ -295,17 +233,16 @@ public class SrcNodeResp  {
     }
 
     public SrcNodeResp withObjectKey(Consumer<List<String>> objectKeySetter) {
-        if(this.objectKey == null) {
+        if (this.objectKey == null) {
             this.objectKey = new ArrayList<>();
         }
         objectKeySetter.accept(this.objectKey);
         return this;
     }
 
-    /**
-     * 任务类型为对象迁移任务时，表示待迁移对象名称； 任务类型为前缀迁移任务时，表示待迁移前缀。
-     * @return objectKey
-     */
+    /** 任务类型为对象迁移任务时，表示待迁移对象名称； 任务类型为前缀迁移任务时，表示待迁移前缀。
+     * 
+     * @return objectKey */
     public List<String> getObjectKey() {
         return objectKey;
     }
@@ -314,27 +251,23 @@ public class SrcNodeResp  {
         this.objectKey = objectKey;
     }
 
-    
-
     public SrcNodeResp withListFile(ListFile listFile) {
         this.listFile = listFile;
         return this;
     }
 
     public SrcNodeResp withListFile(Consumer<ListFile> listFileSetter) {
-        if(this.listFile == null ){
+        if (this.listFile == null) {
             this.listFile = new ListFile();
             listFileSetter.accept(this.listFile);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get listFile
-     * @return listFile
-     */
+    /** Get listFile
+     * 
+     * @return listFile */
     public ListFile getListFile() {
         return listFile;
     }
@@ -342,8 +275,6 @@ public class SrcNodeResp  {
     public void setListFile(ListFile listFile) {
         this.listFile = listFile;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -354,17 +285,17 @@ public class SrcNodeResp  {
             return false;
         }
         SrcNodeResp srcNodeResp = (SrcNodeResp) o;
-        return Objects.equals(this.bucket, srcNodeResp.bucket) &&
-            Objects.equals(this.cloudType, srcNodeResp.cloudType) &&
-            Objects.equals(this.region, srcNodeResp.region) &&
-            Objects.equals(this.appId, srcNodeResp.appId) &&
-            Objects.equals(this.objectKey, srcNodeResp.objectKey) &&
-            Objects.equals(this.listFile, srcNodeResp.listFile);
+        return Objects.equals(this.bucket, srcNodeResp.bucket) && Objects.equals(this.cloudType, srcNodeResp.cloudType)
+            && Objects.equals(this.region, srcNodeResp.region) && Objects.equals(this.appId, srcNodeResp.appId)
+            && Objects.equals(this.objectKey, srcNodeResp.objectKey)
+            && Objects.equals(this.listFile, srcNodeResp.listFile);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(bucket, cloudType, region, appId, objectKey, listFile);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -378,16 +309,13 @@ public class SrcNodeResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

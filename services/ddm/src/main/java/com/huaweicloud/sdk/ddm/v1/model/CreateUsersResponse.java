@@ -1,41 +1,29 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ddm.v1.model.CreateUsersDetailResponses;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateUsersResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="users")
-    
+    @JsonProperty(value = "users")
+
     private List<CreateUsersDetailResponses> users = null;
-    
+
     public CreateUsersResponse withUsers(List<CreateUsersDetailResponses> users) {
         this.users = users;
         return this;
     }
 
-    
     public CreateUsersResponse addUsersItem(CreateUsersDetailResponses usersItem) {
-        if(this.users == null) {
+        if (this.users == null) {
             this.users = new ArrayList<>();
         }
         this.users.add(usersItem);
@@ -43,17 +31,16 @@ public class CreateUsersResponse extends SdkResponse {
     }
 
     public CreateUsersResponse withUsers(Consumer<List<CreateUsersDetailResponses>> usersSetter) {
-        if(this.users == null) {
+        if (this.users == null) {
             this.users = new ArrayList<>();
         }
         usersSetter.accept(this.users);
         return this;
     }
 
-    /**
-     * DDM实例帐号相关信息的集合。
-     * @return users
-     */
+    /** DDM实例帐号相关信息的集合。
+     * 
+     * @return users */
     public List<CreateUsersDetailResponses> getUsers() {
         return users;
     }
@@ -61,8 +48,6 @@ public class CreateUsersResponse extends SdkResponse {
     public void setUsers(List<CreateUsersDetailResponses> users) {
         this.users = users;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -75,10 +60,12 @@ public class CreateUsersResponse extends SdkResponse {
         CreateUsersResponse createUsersResponse = (CreateUsersResponse) o;
         return Objects.equals(this.users, createUsersResponse.users);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(users);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -87,16 +74,13 @@ public class CreateUsersResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

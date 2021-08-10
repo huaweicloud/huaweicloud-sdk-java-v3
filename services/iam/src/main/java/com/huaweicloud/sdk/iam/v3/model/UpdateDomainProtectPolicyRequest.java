@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.UpdateDomainProtectPolicyRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateDomainProtectPolicyRequest  {
-
-
+/** Request Object */
+public class UpdateDomainProtectPolicyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateDomainProtectPolicyRequestBody body;
 
     public UpdateDomainProtectPolicyRequest withDomainId(String domainId) {
@@ -35,13 +24,9 @@ public class UpdateDomainProtectPolicyRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 待修改的账号ID，获取方式请参见：[获取账号、IAM用户、项目、用户组、委托的名称和ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * @return domainId
-     */
+    /** 待修改的账号ID，获取方式请参见：[获取账号、IAM用户、项目、用户组、委托的名称和ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -50,27 +35,23 @@ public class UpdateDomainProtectPolicyRequest  {
         this.domainId = domainId;
     }
 
-    
-
     public UpdateDomainProtectPolicyRequest withBody(UpdateDomainProtectPolicyRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdateDomainProtectPolicyRequest withBody(Consumer<UpdateDomainProtectPolicyRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateDomainProtectPolicyRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateDomainProtectPolicyRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdateDomainProtectPolicyRequest  {
     public void setBody(UpdateDomainProtectPolicyRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdateDomainProtectPolicyRequest  {
             return false;
         }
         UpdateDomainProtectPolicyRequest updateDomainProtectPolicyRequest = (UpdateDomainProtectPolicyRequest) o;
-        return Objects.equals(this.domainId, updateDomainProtectPolicyRequest.domainId) &&
-            Objects.equals(this.body, updateDomainProtectPolicyRequest.body);
+        return Objects.equals(this.domainId, updateDomainProtectPolicyRequest.domainId)
+            && Objects.equals(this.body, updateDomainProtectPolicyRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domainId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdateDomainProtectPolicyRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

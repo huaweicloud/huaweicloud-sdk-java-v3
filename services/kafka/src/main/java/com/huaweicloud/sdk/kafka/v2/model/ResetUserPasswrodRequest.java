@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kafka.v2.model.ResetUserPasswrodReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ResetUserPasswrodRequest  {
-
-
+/** Request Object */
+public class ResetUserPasswrodRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_name")
-    
+    @JsonProperty(value = "user_name")
+
     private String userName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ResetUserPasswrodReq body;
 
     public ResetUserPasswrodRequest withInstanceId(String instanceId) {
@@ -41,13 +29,9 @@ public class ResetUserPasswrodRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -56,20 +40,14 @@ public class ResetUserPasswrodRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ResetUserPasswrodRequest withUserName(String userName) {
         this.userName = userName;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户名称。
-     * @return userName
-     */
+    /** 用户名称。
+     * 
+     * @return userName */
     public String getUserName() {
         return userName;
     }
@@ -78,27 +56,23 @@ public class ResetUserPasswrodRequest  {
         this.userName = userName;
     }
 
-    
-
     public ResetUserPasswrodRequest withBody(ResetUserPasswrodReq body) {
         this.body = body;
         return this;
     }
 
     public ResetUserPasswrodRequest withBody(Consumer<ResetUserPasswrodReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ResetUserPasswrodReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ResetUserPasswrodReq getBody() {
         return body;
     }
@@ -106,8 +80,6 @@ public class ResetUserPasswrodRequest  {
     public void setBody(ResetUserPasswrodReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class ResetUserPasswrodRequest  {
             return false;
         }
         ResetUserPasswrodRequest resetUserPasswrodRequest = (ResetUserPasswrodRequest) o;
-        return Objects.equals(this.instanceId, resetUserPasswrodRequest.instanceId) &&
-            Objects.equals(this.userName, resetUserPasswrodRequest.userName) &&
-            Objects.equals(this.body, resetUserPasswrodRequest.body);
+        return Objects.equals(this.instanceId, resetUserPasswrodRequest.instanceId)
+            && Objects.equals(this.userName, resetUserPasswrodRequest.userName)
+            && Objects.equals(this.body, resetUserPasswrodRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, userName, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class ResetUserPasswrodRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

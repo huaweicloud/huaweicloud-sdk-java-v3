@@ -1,41 +1,29 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.VersionInfo;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListApiVersionsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="versions")
-    
+    @JsonProperty(value = "versions")
+
     private List<VersionInfo> versions = null;
-    
+
     public ListApiVersionsResponse withVersions(List<VersionInfo> versions) {
         this.versions = versions;
         return this;
     }
 
-    
     public ListApiVersionsResponse addVersionsItem(VersionInfo versionsItem) {
-        if(this.versions == null) {
+        if (this.versions == null) {
             this.versions = new ArrayList<>();
         }
         this.versions.add(versionsItem);
@@ -43,17 +31,16 @@ public class ListApiVersionsResponse extends SdkResponse {
     }
 
     public ListApiVersionsResponse withVersions(Consumer<List<VersionInfo>> versionsSetter) {
-        if(this.versions == null) {
+        if (this.versions == null) {
             this.versions = new ArrayList<>();
         }
         versionsSetter.accept(this.versions);
         return this;
     }
 
-    /**
-     * 弹性伸缩API版本信息。
-     * @return versions
-     */
+    /** 弹性伸缩API版本信息。
+     * 
+     * @return versions */
     public List<VersionInfo> getVersions() {
         return versions;
     }
@@ -61,8 +48,6 @@ public class ListApiVersionsResponse extends SdkResponse {
     public void setVersions(List<VersionInfo> versions) {
         this.versions = versions;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -75,10 +60,12 @@ public class ListApiVersionsResponse extends SdkResponse {
         ListApiVersionsResponse listApiVersionsResponse = (ListApiVersionsResponse) o;
         return Objects.equals(this.versions, listApiVersionsResponse.versions);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(versions);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -87,16 +74,13 @@ public class ListApiVersionsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

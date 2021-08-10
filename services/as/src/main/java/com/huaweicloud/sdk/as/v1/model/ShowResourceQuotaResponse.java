@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.AllQuotas;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowResourceQuotaResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quotas")
-    
+    @JsonProperty(value = "quotas")
+
     private AllQuotas quotas;
 
     public ShowResourceQuotaResponse withQuotas(AllQuotas quotas) {
@@ -32,19 +21,17 @@ public class ShowResourceQuotaResponse extends SdkResponse {
     }
 
     public ShowResourceQuotaResponse withQuotas(Consumer<AllQuotas> quotasSetter) {
-        if(this.quotas == null ){
+        if (this.quotas == null) {
             this.quotas = new AllQuotas();
             quotasSetter.accept(this.quotas);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get quotas
-     * @return quotas
-     */
+    /** Get quotas
+     * 
+     * @return quotas */
     public AllQuotas getQuotas() {
         return quotas;
     }
@@ -52,8 +39,6 @@ public class ShowResourceQuotaResponse extends SdkResponse {
     public void setQuotas(AllQuotas quotas) {
         this.quotas = quotas;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class ShowResourceQuotaResponse extends SdkResponse {
         ShowResourceQuotaResponse showResourceQuotaResponse = (ShowResourceQuotaResponse) o;
         return Objects.equals(this.quotas, showResourceQuotaResponse.quotas);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(quotas);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class ShowResourceQuotaResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,36 +1,23 @@
 package com.huaweicloud.sdk.ugo.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowApiVersionRequest  {
+/** Request Object */
+public class ShowApiVersionRequest {
 
-    /**
-     * 需要查询的API的版本号
-     */
+    /** 需要查询的API的版本号 */
     public static final class ApiVersionEnum {
 
-        
-        /**
-         * Enum V1 for value: "v1"
-         */
+        /** Enum V1 for value: "v1" */
         public static final ApiVersionEnum V1 = new ApiVersionEnum("v1");
-        
 
         private static final Map<String, ApiVersionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -58,7 +45,7 @@ public class ShowApiVersionRequest  {
 
         @JsonCreator
         public static ApiVersionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ApiVersionEnum result = STATIC_FIELDS.get(value);
@@ -69,7 +56,7 @@ public class ShowApiVersionRequest  {
         }
 
         public static ApiVersionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ApiVersionEnum result = STATIC_FIELDS.get(value);
@@ -93,10 +80,9 @@ public class ShowApiVersionRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_version")
-    
+    @JsonProperty(value = "api_version")
+
     private ApiVersionEnum apiVersion;
 
     public ShowApiVersionRequest withApiVersion(ApiVersionEnum apiVersion) {
@@ -104,13 +90,9 @@ public class ShowApiVersionRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 需要查询的API的版本号
-     * @return apiVersion
-     */
+    /** 需要查询的API的版本号
+     * 
+     * @return apiVersion */
     public ApiVersionEnum getApiVersion() {
         return apiVersion;
     }
@@ -118,8 +100,6 @@ public class ShowApiVersionRequest  {
     public void setApiVersion(ApiVersionEnum apiVersion) {
         this.apiVersion = apiVersion;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -132,10 +112,12 @@ public class ShowApiVersionRequest  {
         ShowApiVersionRequest showApiVersionRequest = (ShowApiVersionRequest) o;
         return Objects.equals(this.apiVersion, showApiVersionRequest.apiVersion);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(apiVersion);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -144,16 +126,13 @@ public class ShowApiVersionRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

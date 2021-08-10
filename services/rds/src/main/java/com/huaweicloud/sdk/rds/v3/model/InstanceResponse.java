@@ -1,240 +1,189 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.BackupStrategyForResponse;
-import com.huaweicloud.sdk.rds.v3.model.ChargeInfoResponse;
-import com.huaweicloud.sdk.rds.v3.model.Datastore;
-import com.huaweicloud.sdk.rds.v3.model.HaResponse;
-import com.huaweicloud.sdk.rds.v3.model.NodeResponse;
-import com.huaweicloud.sdk.rds.v3.model.RelatedInstance;
-import com.huaweicloud.sdk.rds.v3.model.TagResponse;
-import com.huaweicloud.sdk.rds.v3.model.Volume;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 实例信息。
- */
-public class InstanceResponse  {
-
-
+/** 实例信息。 */
+public class InstanceResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="private_ips")
-    
+    @JsonProperty(value = "private_ips")
+
     private List<String> privateIps = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="private_dns_names")
-    
+    @JsonProperty(value = "private_dns_names")
+
     private List<String> privateDnsNames = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="public_ips")
-    
+    @JsonProperty(value = "public_ips")
+
     private List<String> publicIps = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
+    @JsonProperty(value = "created")
+
     private String created;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
+
     private String updated;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_user_name")
-    
+    @JsonProperty(value = "db_user_name")
+
     private String dbUserName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="switch_strategy")
-    
+    @JsonProperty(value = "switch_strategy")
+
     private String switchStrategy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maintenance_window")
-    
+    @JsonProperty(value = "maintenance_window")
+
     private String maintenanceWindow;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodes")
-    
+    @JsonProperty(value = "nodes")
+
     private List<NodeResponse> nodes = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="related_instance")
-    
+    @JsonProperty(value = "related_instance")
+
     private List<RelatedInstance> relatedInstance = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore")
-    
+    @JsonProperty(value = "datastore")
+
     private Datastore datastore;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ha")
-    
+    @JsonProperty(value = "ha")
+
     private HaResponse ha;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
+
     private Integer port;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_strategy")
-    
+    @JsonProperty(value = "backup_strategy")
+
     private BackupStrategyForResponse backupStrategy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disk_encryption_id")
-    
+    @JsonProperty(value = "disk_encryption_id")
+
     private String diskEncryptionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flavor_ref")
-    
+    @JsonProperty(value = "flavor_ref")
+
     private String flavorRef;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cpu")
-    
+    @JsonProperty(value = "cpu")
+
     private String cpu;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mem")
-    
+    @JsonProperty(value = "mem")
+
     private String mem;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume")
-    
+    @JsonProperty(value = "volume")
+
     private Volume volume;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
+
     private String subnetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_id")
-    
+    @JsonProperty(value = "security_group_id")
+
     private String securityGroupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_info")
-    
+    @JsonProperty(value = "charge_info")
+
     private ChargeInfoResponse chargeInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time_zone")
-    
+    @JsonProperty(value = "time_zone")
+
     private String timeZone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<TagResponse> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_used_space")
-    
+    @JsonProperty(value = "backup_used_space")
+
     private Double backupUsedSpace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="storage_used_space")
-    
+    @JsonProperty(value = "storage_used_space")
+
     private Double storageUsedSpace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_id")
-    
+    @JsonProperty(value = "order_id")
+
     private String orderId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="associated_with_ddm")
-    
+    @JsonProperty(value = "associated_with_ddm")
+
     private Boolean associatedWithDdm;
 
     public InstanceResponse withId(String id) {
@@ -242,13 +191,9 @@ public class InstanceResponse  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return id
-     */
+    /** 实例ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -257,20 +202,17 @@ public class InstanceResponse  {
         this.id = id;
     }
 
-    
-
     public InstanceResponse withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例状态。 - 值为“BUILD”，表示实例正在创建。 - 值为“ACTIVE”，表示实例正常。 - 值为“FAILED”，表示实例异常。 - 值为“FROZEN”，表示实例冻结。 - 值为“MODIFYING”，表示实例正在扩容。 - 值为“REBOOTING”，表示实例正在重启。 - 值为“RESTORING”，表示实例正在恢复。 - 值为“MODIFYING INSTANCE TYPE”，表示实例正在转主备。 - 值为“SWITCHOVER”，表示实例正在主备切换。 - 值为“MIGRATING”，表示实例正在迁移。 - 值为“BACKING UP”，表示实例正在进行备份。 - 值为“MODIFYING DATABASE PORT”，表示实例正在修改数据库端口。 - 值为“STORAGE FULL”，表示实例磁盘空间满。
-     * @return status
-     */
+    /** 实例状态。 - 值为“BUILD”，表示实例正在创建。 - 值为“ACTIVE”，表示实例正常。 - 值为“FAILED”，表示实例异常。 - 值为“FROZEN”，表示实例冻结。 -
+     * 值为“MODIFYING”，表示实例正在扩容。 - 值为“REBOOTING”，表示实例正在重启。 - 值为“RESTORING”，表示实例正在恢复。 - 值为“MODIFYING INSTANCE
+     * TYPE”，表示实例正在转主备。 - 值为“SWITCHOVER”，表示实例正在主备切换。 - 值为“MIGRATING”，表示实例正在迁移。 - 值为“BACKING UP”，表示实例正在进行备份。 -
+     * 值为“MODIFYING DATABASE PORT”，表示实例正在修改数据库端口。 - 值为“STORAGE FULL”，表示实例磁盘空间满。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -279,16 +221,13 @@ public class InstanceResponse  {
         this.status = status;
     }
 
-    
-
     public InstanceResponse withPrivateIps(List<String> privateIps) {
         this.privateIps = privateIps;
         return this;
     }
 
-    
     public InstanceResponse addPrivateIpsItem(String privateIpsItem) {
-        if(this.privateIps == null) {
+        if (this.privateIps == null) {
             this.privateIps = new ArrayList<>();
         }
         this.privateIps.add(privateIpsItem);
@@ -296,17 +235,16 @@ public class InstanceResponse  {
     }
 
     public InstanceResponse withPrivateIps(Consumer<List<String>> privateIpsSetter) {
-        if(this.privateIps == null) {
+        if (this.privateIps == null) {
             this.privateIps = new ArrayList<>();
         }
         privateIpsSetter.accept(this.privateIps);
         return this;
     }
 
-    /**
-     * 实例内网IP地址列表。弹性云服务器创建成功后该值存在，其他情况下为空字符串。
-     * @return privateIps
-     */
+    /** 实例内网IP地址列表。弹性云服务器创建成功后该值存在，其他情况下为空字符串。
+     * 
+     * @return privateIps */
     public List<String> getPrivateIps() {
         return privateIps;
     }
@@ -315,16 +253,13 @@ public class InstanceResponse  {
         this.privateIps = privateIps;
     }
 
-    
-
     public InstanceResponse withPrivateDnsNames(List<String> privateDnsNames) {
         this.privateDnsNames = privateDnsNames;
         return this;
     }
 
-    
     public InstanceResponse addPrivateDnsNamesItem(String privateDnsNamesItem) {
-        if(this.privateDnsNames == null) {
+        if (this.privateDnsNames == null) {
             this.privateDnsNames = new ArrayList<>();
         }
         this.privateDnsNames.add(privateDnsNamesItem);
@@ -332,17 +267,16 @@ public class InstanceResponse  {
     }
 
     public InstanceResponse withPrivateDnsNames(Consumer<List<String>> privateDnsNamesSetter) {
-        if(this.privateDnsNames == null) {
+        if (this.privateDnsNames == null) {
             this.privateDnsNames = new ArrayList<>();
         }
         privateDnsNamesSetter.accept(this.privateDnsNames);
         return this;
     }
 
-    /**
-     * Get privateDnsNames
-     * @return privateDnsNames
-     */
+    /** Get privateDnsNames
+     * 
+     * @return privateDnsNames */
     public List<String> getPrivateDnsNames() {
         return privateDnsNames;
     }
@@ -351,16 +285,13 @@ public class InstanceResponse  {
         this.privateDnsNames = privateDnsNames;
     }
 
-    
-
     public InstanceResponse withPublicIps(List<String> publicIps) {
         this.publicIps = publicIps;
         return this;
     }
 
-    
     public InstanceResponse addPublicIpsItem(String publicIpsItem) {
-        if(this.publicIps == null) {
+        if (this.publicIps == null) {
             this.publicIps = new ArrayList<>();
         }
         this.publicIps.add(publicIpsItem);
@@ -368,17 +299,16 @@ public class InstanceResponse  {
     }
 
     public InstanceResponse withPublicIps(Consumer<List<String>> publicIpsSetter) {
-        if(this.publicIps == null) {
+        if (this.publicIps == null) {
             this.publicIps = new ArrayList<>();
         }
         publicIpsSetter.accept(this.publicIps);
         return this;
     }
 
-    /**
-     * 实例外网IP地址列表。
-     * @return publicIps
-     */
+    /** 实例外网IP地址列表。
+     * 
+     * @return publicIps */
     public List<String> getPublicIps() {
         return publicIps;
     }
@@ -387,20 +317,14 @@ public class InstanceResponse  {
         this.publicIps = publicIps;
     }
 
-    
-
     public InstanceResponse withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例类型，取值为“Single”，“Ha”或“Replica”，分别对应于单机实例、主备实例、只读实例。
-     * @return type
-     */
+    /** 实例类型，取值为“Single”，“Ha”或“Replica”，分别对应于单机实例、主备实例、只读实例。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -409,20 +333,14 @@ public class InstanceResponse  {
         this.type = type;
     }
 
-    
-
     public InstanceResponse withCreated(String created) {
         this.created = created;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。  说明：创建时返回值为空，数据库实例创建成功后该值不为空。
-     * @return created
-     */
+    /** 创建时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。 说明：创建时返回值为空，数据库实例创建成功后该值不为空。
+     * 
+     * @return created */
     public String getCreated() {
         return created;
     }
@@ -431,20 +349,14 @@ public class InstanceResponse  {
         this.created = created;
     }
 
-    
-
     public InstanceResponse withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间，格式与“created”字段对应格式完全相同。  说明：创建时返回值为空，数据库实例创建成功后该值不为空。
-     * @return updated
-     */
+    /** 更新时间，格式与“created”字段对应格式完全相同。 说明：创建时返回值为空，数据库实例创建成功后该值不为空。
+     * 
+     * @return updated */
     public String getUpdated() {
         return updated;
     }
@@ -453,20 +365,14 @@ public class InstanceResponse  {
         this.updated = updated;
     }
 
-    
-
     public InstanceResponse withDbUserName(String dbUserName) {
         this.dbUserName = dbUserName;
         return this;
     }
 
-    
-
-
-    /**
-     * 默认用户名。
-     * @return dbUserName
-     */
+    /** 默认用户名。
+     * 
+     * @return dbUserName */
     public String getDbUserName() {
         return dbUserName;
     }
@@ -475,20 +381,14 @@ public class InstanceResponse  {
         this.dbUserName = dbUserName;
     }
 
-    
-
     public InstanceResponse withSwitchStrategy(String switchStrategy) {
         this.switchStrategy = switchStrategy;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库切换策略。取值为“reliability”或“availability”，分别对应于可靠性优先和可用性优先。
-     * @return switchStrategy
-     */
+    /** 数据库切换策略。取值为“reliability”或“availability”，分别对应于可靠性优先和可用性优先。
+     * 
+     * @return switchStrategy */
     public String getSwitchStrategy() {
         return switchStrategy;
     }
@@ -497,20 +397,14 @@ public class InstanceResponse  {
         this.switchStrategy = switchStrategy;
     }
 
-    
-
     public InstanceResponse withMaintenanceWindow(String maintenanceWindow) {
         this.maintenanceWindow = maintenanceWindow;
         return this;
     }
 
-    
-
-
-    /**
-     * 可维护时间窗，为UTC时间。
-     * @return maintenanceWindow
-     */
+    /** 可维护时间窗，为UTC时间。
+     * 
+     * @return maintenanceWindow */
     public String getMaintenanceWindow() {
         return maintenanceWindow;
     }
@@ -519,16 +413,13 @@ public class InstanceResponse  {
         this.maintenanceWindow = maintenanceWindow;
     }
 
-    
-
     public InstanceResponse withNodes(List<NodeResponse> nodes) {
         this.nodes = nodes;
         return this;
     }
 
-    
     public InstanceResponse addNodesItem(NodeResponse nodesItem) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         this.nodes.add(nodesItem);
@@ -536,17 +427,16 @@ public class InstanceResponse  {
     }
 
     public InstanceResponse withNodes(Consumer<List<NodeResponse>> nodesSetter) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         nodesSetter.accept(this.nodes);
         return this;
     }
 
-    /**
-     * Get nodes
-     * @return nodes
-     */
+    /** Get nodes
+     * 
+     * @return nodes */
     public List<NodeResponse> getNodes() {
         return nodes;
     }
@@ -555,16 +445,13 @@ public class InstanceResponse  {
         this.nodes = nodes;
     }
 
-    
-
     public InstanceResponse withRelatedInstance(List<RelatedInstance> relatedInstance) {
         this.relatedInstance = relatedInstance;
         return this;
     }
 
-    
     public InstanceResponse addRelatedInstanceItem(RelatedInstance relatedInstanceItem) {
-        if(this.relatedInstance == null) {
+        if (this.relatedInstance == null) {
             this.relatedInstance = new ArrayList<>();
         }
         this.relatedInstance.add(relatedInstanceItem);
@@ -572,17 +459,16 @@ public class InstanceResponse  {
     }
 
     public InstanceResponse withRelatedInstance(Consumer<List<RelatedInstance>> relatedInstanceSetter) {
-        if(this.relatedInstance == null) {
+        if (this.relatedInstance == null) {
             this.relatedInstance = new ArrayList<>();
         }
         relatedInstanceSetter.accept(this.relatedInstance);
         return this;
     }
 
-    /**
-     * Get relatedInstance
-     * @return relatedInstance
-     */
+    /** Get relatedInstance
+     * 
+     * @return relatedInstance */
     public List<RelatedInstance> getRelatedInstance() {
         return relatedInstance;
     }
@@ -591,20 +477,14 @@ public class InstanceResponse  {
         this.relatedInstance = relatedInstance;
     }
 
-    
-
     public InstanceResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例名称。
-     * @return name
-     */
+    /** 实例名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -613,27 +493,23 @@ public class InstanceResponse  {
         this.name = name;
     }
 
-    
-
     public InstanceResponse withDatastore(Datastore datastore) {
         this.datastore = datastore;
         return this;
     }
 
     public InstanceResponse withDatastore(Consumer<Datastore> datastoreSetter) {
-        if(this.datastore == null ){
+        if (this.datastore == null) {
             this.datastore = new Datastore();
             datastoreSetter.accept(this.datastore);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get datastore
-     * @return datastore
-     */
+    /** Get datastore
+     * 
+     * @return datastore */
     public Datastore getDatastore() {
         return datastore;
     }
@@ -642,27 +518,23 @@ public class InstanceResponse  {
         this.datastore = datastore;
     }
 
-    
-
     public InstanceResponse withHa(HaResponse ha) {
         this.ha = ha;
         return this;
     }
 
     public InstanceResponse withHa(Consumer<HaResponse> haSetter) {
-        if(this.ha == null ){
+        if (this.ha == null) {
             this.ha = new HaResponse();
             haSetter.accept(this.ha);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get ha
-     * @return ha
-     */
+    /** Get ha
+     * 
+     * @return ha */
     public HaResponse getHa() {
         return ha;
     }
@@ -671,20 +543,16 @@ public class InstanceResponse  {
         this.ha = ha;
     }
 
-    
-
     public InstanceResponse withPort(Integer port) {
         this.port = port;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库端口信息。  - MySQL数据库端口设置范围为1024～65535（其中12017和33071被RDS系统占用不可设置）。 - PostgreSQL数据库端口修改范围为2100～9500。 - Microsoft SQL Server实例的端口设置范围为1433和2100~9500（其中5355和5985不可设置。对于2017 EE版，5050、5353和5986不可设置）。  当不传该参数时，默认端口如下：  - MySQL默认3306。 - PostgreSQL默认5432。 - Microsoft SQL Server默认1433。
-     * @return port
-     */
+    /** 数据库端口信息。 - MySQL数据库端口设置范围为1024～65535（其中12017和33071被RDS系统占用不可设置）。 - PostgreSQL数据库端口修改范围为2100～9500。 - Microsoft
+     * SQL Server实例的端口设置范围为1433和2100~9500（其中5355和5985不可设置。对于2017 EE版，5050、5353和5986不可设置）。 当不传该参数时，默认端口如下： - MySQL默认3306。
+     * - PostgreSQL默认5432。 - Microsoft SQL Server默认1433。
+     * 
+     * @return port */
     public Integer getPort() {
         return port;
     }
@@ -693,27 +561,23 @@ public class InstanceResponse  {
         this.port = port;
     }
 
-    
-
     public InstanceResponse withBackupStrategy(BackupStrategyForResponse backupStrategy) {
         this.backupStrategy = backupStrategy;
         return this;
     }
 
     public InstanceResponse withBackupStrategy(Consumer<BackupStrategyForResponse> backupStrategySetter) {
-        if(this.backupStrategy == null ){
+        if (this.backupStrategy == null) {
             this.backupStrategy = new BackupStrategyForResponse();
             backupStrategySetter.accept(this.backupStrategy);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get backupStrategy
-     * @return backupStrategy
-     */
+    /** Get backupStrategy
+     * 
+     * @return backupStrategy */
     public BackupStrategyForResponse getBackupStrategy() {
         return backupStrategy;
     }
@@ -722,20 +586,14 @@ public class InstanceResponse  {
         this.backupStrategy = backupStrategy;
     }
 
-    
-
     public InstanceResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID。
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -744,20 +602,14 @@ public class InstanceResponse  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public InstanceResponse withDiskEncryptionId(String diskEncryptionId) {
         this.diskEncryptionId = diskEncryptionId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用于磁盘加密的密钥ID。
-     * @return diskEncryptionId
-     */
+    /** 用于磁盘加密的密钥ID。
+     * 
+     * @return diskEncryptionId */
     public String getDiskEncryptionId() {
         return diskEncryptionId;
     }
@@ -766,20 +618,14 @@ public class InstanceResponse  {
         this.diskEncryptionId = diskEncryptionId;
     }
 
-    
-
     public InstanceResponse withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
     }
 
-    
-
-
-    /**
-     * 规格码。
-     * @return flavorRef
-     */
+    /** 规格码。
+     * 
+     * @return flavorRef */
     public String getFlavorRef() {
         return flavorRef;
     }
@@ -788,20 +634,14 @@ public class InstanceResponse  {
         this.flavorRef = flavorRef;
     }
 
-    
-
     public InstanceResponse withCpu(String cpu) {
         this.cpu = cpu;
         return this;
     }
 
-    
-
-
-    /**
-     * CPU大小。例如，1表示1U。
-     * @return cpu
-     */
+    /** CPU大小。例如，1表示1U。
+     * 
+     * @return cpu */
     public String getCpu() {
         return cpu;
     }
@@ -810,20 +650,14 @@ public class InstanceResponse  {
         this.cpu = cpu;
     }
 
-    
-
     public InstanceResponse withMem(String mem) {
         this.mem = mem;
         return this;
     }
 
-    
-
-
-    /**
-     * 内存大小（单位：GB）。
-     * @return mem
-     */
+    /** 内存大小（单位：GB）。
+     * 
+     * @return mem */
     public String getMem() {
         return mem;
     }
@@ -832,27 +666,23 @@ public class InstanceResponse  {
         this.mem = mem;
     }
 
-    
-
     public InstanceResponse withVolume(Volume volume) {
         this.volume = volume;
         return this;
     }
 
     public InstanceResponse withVolume(Consumer<Volume> volumeSetter) {
-        if(this.volume == null ){
+        if (this.volume == null) {
             this.volume = new Volume();
             volumeSetter.accept(this.volume);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get volume
-     * @return volume
-     */
+    /** Get volume
+     * 
+     * @return volume */
     public Volume getVolume() {
         return volume;
     }
@@ -861,20 +691,14 @@ public class InstanceResponse  {
         this.volume = volume;
     }
 
-    
-
     public InstanceResponse withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * 区域ID。
-     * @return region
-     */
+    /** 区域ID。
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -883,20 +707,14 @@ public class InstanceResponse  {
         this.region = region;
     }
 
-    
-
     public InstanceResponse withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟私有云ID。
-     * @return vpcId
-     */
+    /** 虚拟私有云ID。
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -905,20 +723,14 @@ public class InstanceResponse  {
         this.vpcId = vpcId;
     }
 
-    
-
     public InstanceResponse withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网ID。
-     * @return subnetId
-     */
+    /** 子网ID。
+     * 
+     * @return subnetId */
     public String getSubnetId() {
         return subnetId;
     }
@@ -927,20 +739,14 @@ public class InstanceResponse  {
         this.subnetId = subnetId;
     }
 
-    
-
     public InstanceResponse withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组ID。
-     * @return securityGroupId
-     */
+    /** 安全组ID。
+     * 
+     * @return securityGroupId */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -949,27 +755,23 @@ public class InstanceResponse  {
         this.securityGroupId = securityGroupId;
     }
 
-    
-
     public InstanceResponse withChargeInfo(ChargeInfoResponse chargeInfo) {
         this.chargeInfo = chargeInfo;
         return this;
     }
 
     public InstanceResponse withChargeInfo(Consumer<ChargeInfoResponse> chargeInfoSetter) {
-        if(this.chargeInfo == null ){
+        if (this.chargeInfo == null) {
             this.chargeInfo = new ChargeInfoResponse();
             chargeInfoSetter.accept(this.chargeInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get chargeInfo
-     * @return chargeInfo
-     */
+    /** Get chargeInfo
+     * 
+     * @return chargeInfo */
     public ChargeInfoResponse getChargeInfo() {
         return chargeInfo;
     }
@@ -978,20 +780,14 @@ public class InstanceResponse  {
         this.chargeInfo = chargeInfo;
     }
 
-    
-
     public InstanceResponse withTimeZone(String timeZone) {
         this.timeZone = timeZone;
         return this;
     }
 
-    
-
-
-    /**
-     * 时区。
-     * @return timeZone
-     */
+    /** 时区。
+     * 
+     * @return timeZone */
     public String getTimeZone() {
         return timeZone;
     }
@@ -1000,16 +796,13 @@ public class InstanceResponse  {
         this.timeZone = timeZone;
     }
 
-    
-
     public InstanceResponse withTags(List<TagResponse> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public InstanceResponse addTagsItem(TagResponse tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -1017,17 +810,16 @@ public class InstanceResponse  {
     }
 
     public InstanceResponse withTags(Consumer<List<TagResponse>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * Get tags
-     * @return tags
-     */
+    /** Get tags
+     * 
+     * @return tags */
     public List<TagResponse> getTags() {
         return tags;
     }
@@ -1036,20 +828,14 @@ public class InstanceResponse  {
         this.tags = tags;
     }
 
-    
-
     public InstanceResponse withBackupUsedSpace(Double backupUsedSpace) {
         this.backupUsedSpace = backupUsedSpace;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份空间使用量，单位GB。  该字段仅用于查询指定SQL Server实例信息时返回。
-     * @return backupUsedSpace
-     */
+    /** 备份空间使用量，单位GB。 该字段仅用于查询指定SQL Server实例信息时返回。
+     * 
+     * @return backupUsedSpace */
     public Double getBackupUsedSpace() {
         return backupUsedSpace;
     }
@@ -1058,20 +844,14 @@ public class InstanceResponse  {
         this.backupUsedSpace = backupUsedSpace;
     }
 
-    
-
     public InstanceResponse withStorageUsedSpace(Double storageUsedSpace) {
         this.storageUsedSpace = storageUsedSpace;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘空间使用量，单位GB。  该字段仅用于查询指定SQL Server实例信息时返回。
-     * @return storageUsedSpace
-     */
+    /** 磁盘空间使用量，单位GB。 该字段仅用于查询指定SQL Server实例信息时返回。
+     * 
+     * @return storageUsedSpace */
     public Double getStorageUsedSpace() {
         return storageUsedSpace;
     }
@@ -1080,20 +860,14 @@ public class InstanceResponse  {
         this.storageUsedSpace = storageUsedSpace;
     }
 
-    
-
     public InstanceResponse withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
     }
 
-    
-
-
-    /**
-     * 订单ID，仅包周期场景返回。
-     * @return orderId
-     */
+    /** 订单ID，仅包周期场景返回。
+     * 
+     * @return orderId */
     public String getOrderId() {
         return orderId;
     }
@@ -1102,20 +876,14 @@ public class InstanceResponse  {
         this.orderId = orderId;
     }
 
-    
-
     public InstanceResponse withAssociatedWithDdm(Boolean associatedWithDdm) {
         this.associatedWithDdm = associatedWithDdm;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否已被DDM实例关联。
-     * @return associatedWithDdm
-     */
+    /** 是否已被DDM实例关联。
+     * 
+     * @return associatedWithDdm */
     public Boolean getAssociatedWithDdm() {
         return associatedWithDdm;
     }
@@ -1123,8 +891,6 @@ public class InstanceResponse  {
     public void setAssociatedWithDdm(Boolean associatedWithDdm) {
         this.associatedWithDdm = associatedWithDdm;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -1135,46 +901,79 @@ public class InstanceResponse  {
             return false;
         }
         InstanceResponse instanceResponse = (InstanceResponse) o;
-        return Objects.equals(this.id, instanceResponse.id) &&
-            Objects.equals(this.status, instanceResponse.status) &&
-            Objects.equals(this.privateIps, instanceResponse.privateIps) &&
-            Objects.equals(this.privateDnsNames, instanceResponse.privateDnsNames) &&
-            Objects.equals(this.publicIps, instanceResponse.publicIps) &&
-            Objects.equals(this.type, instanceResponse.type) &&
-            Objects.equals(this.created, instanceResponse.created) &&
-            Objects.equals(this.updated, instanceResponse.updated) &&
-            Objects.equals(this.dbUserName, instanceResponse.dbUserName) &&
-            Objects.equals(this.switchStrategy, instanceResponse.switchStrategy) &&
-            Objects.equals(this.maintenanceWindow, instanceResponse.maintenanceWindow) &&
-            Objects.equals(this.nodes, instanceResponse.nodes) &&
-            Objects.equals(this.relatedInstance, instanceResponse.relatedInstance) &&
-            Objects.equals(this.name, instanceResponse.name) &&
-            Objects.equals(this.datastore, instanceResponse.datastore) &&
-            Objects.equals(this.ha, instanceResponse.ha) &&
-            Objects.equals(this.port, instanceResponse.port) &&
-            Objects.equals(this.backupStrategy, instanceResponse.backupStrategy) &&
-            Objects.equals(this.enterpriseProjectId, instanceResponse.enterpriseProjectId) &&
-            Objects.equals(this.diskEncryptionId, instanceResponse.diskEncryptionId) &&
-            Objects.equals(this.flavorRef, instanceResponse.flavorRef) &&
-            Objects.equals(this.cpu, instanceResponse.cpu) &&
-            Objects.equals(this.mem, instanceResponse.mem) &&
-            Objects.equals(this.volume, instanceResponse.volume) &&
-            Objects.equals(this.region, instanceResponse.region) &&
-            Objects.equals(this.vpcId, instanceResponse.vpcId) &&
-            Objects.equals(this.subnetId, instanceResponse.subnetId) &&
-            Objects.equals(this.securityGroupId, instanceResponse.securityGroupId) &&
-            Objects.equals(this.chargeInfo, instanceResponse.chargeInfo) &&
-            Objects.equals(this.timeZone, instanceResponse.timeZone) &&
-            Objects.equals(this.tags, instanceResponse.tags) &&
-            Objects.equals(this.backupUsedSpace, instanceResponse.backupUsedSpace) &&
-            Objects.equals(this.storageUsedSpace, instanceResponse.storageUsedSpace) &&
-            Objects.equals(this.orderId, instanceResponse.orderId) &&
-            Objects.equals(this.associatedWithDdm, instanceResponse.associatedWithDdm);
+        return Objects.equals(this.id, instanceResponse.id) && Objects.equals(this.status, instanceResponse.status)
+            && Objects.equals(this.privateIps, instanceResponse.privateIps)
+            && Objects.equals(this.privateDnsNames, instanceResponse.privateDnsNames)
+            && Objects.equals(this.publicIps, instanceResponse.publicIps)
+            && Objects.equals(this.type, instanceResponse.type)
+            && Objects.equals(this.created, instanceResponse.created)
+            && Objects.equals(this.updated, instanceResponse.updated)
+            && Objects.equals(this.dbUserName, instanceResponse.dbUserName)
+            && Objects.equals(this.switchStrategy, instanceResponse.switchStrategy)
+            && Objects.equals(this.maintenanceWindow, instanceResponse.maintenanceWindow)
+            && Objects.equals(this.nodes, instanceResponse.nodes)
+            && Objects.equals(this.relatedInstance, instanceResponse.relatedInstance)
+            && Objects.equals(this.name, instanceResponse.name)
+            && Objects.equals(this.datastore, instanceResponse.datastore)
+            && Objects.equals(this.ha, instanceResponse.ha) && Objects.equals(this.port, instanceResponse.port)
+            && Objects.equals(this.backupStrategy, instanceResponse.backupStrategy)
+            && Objects.equals(this.enterpriseProjectId, instanceResponse.enterpriseProjectId)
+            && Objects.equals(this.diskEncryptionId, instanceResponse.diskEncryptionId)
+            && Objects.equals(this.flavorRef, instanceResponse.flavorRef)
+            && Objects.equals(this.cpu, instanceResponse.cpu) && Objects.equals(this.mem, instanceResponse.mem)
+            && Objects.equals(this.volume, instanceResponse.volume)
+            && Objects.equals(this.region, instanceResponse.region)
+            && Objects.equals(this.vpcId, instanceResponse.vpcId)
+            && Objects.equals(this.subnetId, instanceResponse.subnetId)
+            && Objects.equals(this.securityGroupId, instanceResponse.securityGroupId)
+            && Objects.equals(this.chargeInfo, instanceResponse.chargeInfo)
+            && Objects.equals(this.timeZone, instanceResponse.timeZone)
+            && Objects.equals(this.tags, instanceResponse.tags)
+            && Objects.equals(this.backupUsedSpace, instanceResponse.backupUsedSpace)
+            && Objects.equals(this.storageUsedSpace, instanceResponse.storageUsedSpace)
+            && Objects.equals(this.orderId, instanceResponse.orderId)
+            && Objects.equals(this.associatedWithDdm, instanceResponse.associatedWithDdm);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, status, privateIps, privateDnsNames, publicIps, type, created, updated, dbUserName, switchStrategy, maintenanceWindow, nodes, relatedInstance, name, datastore, ha, port, backupStrategy, enterpriseProjectId, diskEncryptionId, flavorRef, cpu, mem, volume, region, vpcId, subnetId, securityGroupId, chargeInfo, timeZone, tags, backupUsedSpace, storageUsedSpace, orderId, associatedWithDdm);
+        return Objects.hash(id,
+            status,
+            privateIps,
+            privateDnsNames,
+            publicIps,
+            type,
+            created,
+            updated,
+            dbUserName,
+            switchStrategy,
+            maintenanceWindow,
+            nodes,
+            relatedInstance,
+            name,
+            datastore,
+            ha,
+            port,
+            backupStrategy,
+            enterpriseProjectId,
+            diskEncryptionId,
+            flavorRef,
+            cpu,
+            mem,
+            volume,
+            region,
+            vpcId,
+            subnetId,
+            securityGroupId,
+            chargeInfo,
+            timeZone,
+            tags,
+            backupUsedSpace,
+            storageUsedSpace,
+            orderId,
+            associatedWithDdm);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1217,16 +1016,13 @@ public class InstanceResponse  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

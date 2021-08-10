@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteManualBackupRequest  {
-
-
+/** Request Object */
+public class DeleteManualBackupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_id")
-    
+    @JsonProperty(value = "backup_id")
+
     private String backupId;
 
     public DeleteManualBackupRequest withBackupId(String backupId) {
@@ -28,13 +18,9 @@ public class DeleteManualBackupRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 备份文件ID。
-     * @return backupId
-     */
+    /** 备份文件ID。
+     * 
+     * @return backupId */
     public String getBackupId() {
         return backupId;
     }
@@ -42,8 +28,6 @@ public class DeleteManualBackupRequest  {
     public void setBackupId(String backupId) {
         this.backupId = backupId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class DeleteManualBackupRequest  {
         DeleteManualBackupRequest deleteManualBackupRequest = (DeleteManualBackupRequest) o;
         return Objects.equals(this.backupId, deleteManualBackupRequest.backupId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(backupId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class DeleteManualBackupRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

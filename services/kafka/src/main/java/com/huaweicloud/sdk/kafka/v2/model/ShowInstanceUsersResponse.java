@@ -1,41 +1,29 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceUsersRespUsers;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowInstanceUsersResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="users")
-    
+    @JsonProperty(value = "users")
+
     private List<ShowInstanceUsersRespUsers> users = null;
-    
+
     public ShowInstanceUsersResponse withUsers(List<ShowInstanceUsersRespUsers> users) {
         this.users = users;
         return this;
     }
 
-    
     public ShowInstanceUsersResponse addUsersItem(ShowInstanceUsersRespUsers usersItem) {
-        if(this.users == null) {
+        if (this.users == null) {
             this.users = new ArrayList<>();
         }
         this.users.add(usersItem);
@@ -43,17 +31,16 @@ public class ShowInstanceUsersResponse extends SdkResponse {
     }
 
     public ShowInstanceUsersResponse withUsers(Consumer<List<ShowInstanceUsersRespUsers>> usersSetter) {
-        if(this.users == null) {
+        if (this.users == null) {
             this.users = new ArrayList<>();
         }
         usersSetter.accept(this.users);
         return this;
     }
 
-    /**
-     * 用户列表。
-     * @return users
-     */
+    /** 用户列表。
+     * 
+     * @return users */
     public List<ShowInstanceUsersRespUsers> getUsers() {
         return users;
     }
@@ -61,8 +48,6 @@ public class ShowInstanceUsersResponse extends SdkResponse {
     public void setUsers(List<ShowInstanceUsersRespUsers> users) {
         this.users = users;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -75,10 +60,12 @@ public class ShowInstanceUsersResponse extends SdkResponse {
         ShowInstanceUsersResponse showInstanceUsersResponse = (ShowInstanceUsersResponse) o;
         return Objects.equals(this.users, showInstanceUsersResponse.users);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(users);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -87,16 +74,13 @@ public class ShowInstanceUsersResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

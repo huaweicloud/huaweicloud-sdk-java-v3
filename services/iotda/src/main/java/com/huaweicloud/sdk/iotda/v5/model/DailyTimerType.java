@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 条件中每日定时类型的信息，自定义结构。
- */
-public class DailyTimerType  {
-
-
+/** 条件中每日定时类型的信息，自定义结构。 */
+public class DailyTimerType {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time")
-    
+    @JsonProperty(value = "time")
+
     private String time;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="days_of_week")
-    
+    @JsonProperty(value = "days_of_week")
+
     private String daysOfWeek;
 
     public DailyTimerType withTime(String time) {
@@ -34,13 +23,9 @@ public class DailyTimerType  {
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：规则触发的时间，格式：HH:MM。
-     * @return time
-     */
+    /** **参数说明**：规则触发的时间，格式：HH:MM。
+     * 
+     * @return time */
     public String getTime() {
         return time;
     }
@@ -49,20 +34,14 @@ public class DailyTimerType  {
         this.time = time;
     }
 
-    
-
     public DailyTimerType withDaysOfWeek(String daysOfWeek) {
         this.daysOfWeek = daysOfWeek;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：星期列表，以逗号分隔。1代表周日，2代表周一，依次类推，默认为每天。 **取值范围**：只允许数字和逗号的组合，数字不小于1不大于7，数量不超过7个，以逗号隔开
-     * @return daysOfWeek
-     */
+    /** **参数说明**：星期列表，以逗号分隔。1代表周日，2代表周一，依次类推，默认为每天。 **取值范围**：只允许数字和逗号的组合，数字不小于1不大于7，数量不超过7个，以逗号隔开
+     * 
+     * @return daysOfWeek */
     public String getDaysOfWeek() {
         return daysOfWeek;
     }
@@ -70,8 +49,6 @@ public class DailyTimerType  {
     public void setDaysOfWeek(String daysOfWeek) {
         this.daysOfWeek = daysOfWeek;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class DailyTimerType  {
             return false;
         }
         DailyTimerType dailyTimerType = (DailyTimerType) o;
-        return Objects.equals(this.time, dailyTimerType.time) &&
-            Objects.equals(this.daysOfWeek, dailyTimerType.daysOfWeek);
+        return Objects.equals(this.time, dailyTimerType.time)
+            && Objects.equals(this.daysOfWeek, dailyTimerType.daysOfWeek);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(time, daysOfWeek);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class DailyTimerType  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 数据库schema信息。
- */
-public class PostgresqlDatabaseForListSchema  {
-
-
+/** 数据库schema信息。 */
+public class PostgresqlDatabaseForListSchema {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="schema_name")
-    
+    @JsonProperty(value = "schema_name")
+
     private String schemaName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="owner")
-    
+    @JsonProperty(value = "owner")
+
     private String owner;
 
     public PostgresqlDatabaseForListSchema withSchemaName(String schemaName) {
@@ -34,13 +23,9 @@ public class PostgresqlDatabaseForListSchema  {
         return this;
     }
 
-    
-
-
-    /**
-     * schema名称。
-     * @return schemaName
-     */
+    /** schema名称。
+     * 
+     * @return schemaName */
     public String getSchemaName() {
         return schemaName;
     }
@@ -49,20 +34,14 @@ public class PostgresqlDatabaseForListSchema  {
         this.schemaName = schemaName;
     }
 
-    
-
     public PostgresqlDatabaseForListSchema withOwner(String owner) {
         this.owner = owner;
         return this;
     }
 
-    
-
-
-    /**
-     * schema所属用户。
-     * @return owner
-     */
+    /** schema所属用户。
+     * 
+     * @return owner */
     public String getOwner() {
         return owner;
     }
@@ -70,8 +49,6 @@ public class PostgresqlDatabaseForListSchema  {
     public void setOwner(String owner) {
         this.owner = owner;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class PostgresqlDatabaseForListSchema  {
             return false;
         }
         PostgresqlDatabaseForListSchema postgresqlDatabaseForListSchema = (PostgresqlDatabaseForListSchema) o;
-        return Objects.equals(this.schemaName, postgresqlDatabaseForListSchema.schemaName) &&
-            Objects.equals(this.owner, postgresqlDatabaseForListSchema.owner);
+        return Objects.equals(this.schemaName, postgresqlDatabaseForListSchema.schemaName)
+            && Objects.equals(this.owner, postgresqlDatabaseForListSchema.owner);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(schemaName, owner);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class PostgresqlDatabaseForListSchema  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

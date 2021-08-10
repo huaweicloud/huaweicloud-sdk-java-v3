@@ -1,47 +1,31 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Identity
- */
-public class Identity  {
-
-
+/** Identity */
+public class Identity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 参数位置
-     */
+
+    /** 参数位置 */
     public static final class LocationEnum {
 
-        
-        /**
-         * Enum HEADER for value: "HEADER"
-         */
+        /** Enum HEADER for value: "HEADER" */
         public static final LocationEnum HEADER = new LocationEnum("HEADER");
-        
-        /**
-         * Enum QUERY for value: "QUERY"
-         */
+
+        /** Enum QUERY for value: "QUERY" */
         public static final LocationEnum QUERY = new LocationEnum("QUERY");
-        
 
         private static final Map<String, LocationEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,7 +54,7 @@ public class Identity  {
 
         @JsonCreator
         public static LocationEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             LocationEnum result = STATIC_FIELDS.get(value);
@@ -81,7 +65,7 @@ public class Identity  {
         }
 
         public static LocationEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             LocationEnum result = STATIC_FIELDS.get(value);
@@ -105,16 +89,14 @@ public class Identity  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="location")
-    
+    @JsonProperty(value = "location")
+
     private LocationEnum location;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="validation")
-    
+    @JsonProperty(value = "validation")
+
     private String validation;
 
     public Identity withName(String name) {
@@ -122,13 +104,9 @@ public class Identity  {
         return this;
     }
 
-    
-
-
-    /**
-     * 参数名称。  支持数字，英文，下划线，中划线，点，且只能以数字或英文开头。
-     * @return name
-     */
+    /** 参数名称。 支持数字，英文，下划线，中划线，点，且只能以数字或英文开头。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -137,20 +115,14 @@ public class Identity  {
         this.name = name;
     }
 
-    
-
     public Identity withLocation(LocationEnum location) {
         this.location = location;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数位置
-     * @return location
-     */
+    /** 参数位置
+     * 
+     * @return location */
     public LocationEnum getLocation() {
         return location;
     }
@@ -159,20 +131,14 @@ public class Identity  {
         this.location = location;
     }
 
-    
-
     public Identity withValidation(String validation) {
         this.validation = validation;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数校验表达式，默认为null，不做校验
-     * @return validation
-     */
+    /** 参数校验表达式，默认为null，不做校验
+     * 
+     * @return validation */
     public String getValidation() {
         return validation;
     }
@@ -180,8 +146,6 @@ public class Identity  {
     public void setValidation(String validation) {
         this.validation = validation;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -192,14 +156,15 @@ public class Identity  {
             return false;
         }
         Identity identity = (Identity) o;
-        return Objects.equals(this.name, identity.name) &&
-            Objects.equals(this.location, identity.location) &&
-            Objects.equals(this.validation, identity.validation);
+        return Objects.equals(this.name, identity.name) && Objects.equals(this.location, identity.location)
+            && Objects.equals(this.validation, identity.validation);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, location, validation);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -210,16 +175,13 @@ public class Identity  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

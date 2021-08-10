@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowVpcRouteRequest  {
-
-
+/** Request Object */
+public class ShowVpcRouteRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="route_id")
-    
+    @JsonProperty(value = "route_id")
+
     private String routeId;
 
     public ShowVpcRouteRequest withRouteId(String routeId) {
@@ -28,13 +18,9 @@ public class ShowVpcRouteRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 路由ID
-     * @return routeId
-     */
+    /** 路由ID
+     * 
+     * @return routeId */
     public String getRouteId() {
         return routeId;
     }
@@ -42,8 +28,6 @@ public class ShowVpcRouteRequest  {
     public void setRouteId(String routeId) {
         this.routeId = routeId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class ShowVpcRouteRequest  {
         ShowVpcRouteRequest showVpcRouteRequest = (ShowVpcRouteRequest) o;
         return Objects.equals(this.routeId, showVpcRouteRequest.routeId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(routeId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class ShowVpcRouteRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

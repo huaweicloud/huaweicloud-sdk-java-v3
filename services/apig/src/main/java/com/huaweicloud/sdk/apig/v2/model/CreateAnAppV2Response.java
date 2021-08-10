@@ -1,46 +1,28 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.time.OffsetDateTime;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateAnAppV2Response extends SdkResponse {
 
-    /**
-     * APP的创建者 - USER：用户自行创建 - MARKET：云市场分配
-     */
+    /** APP的创建者 - USER：用户自行创建 - MARKET：云市场分配 */
     public static final class CreatorEnum {
 
-        
-        /**
-         * Enum USER for value: "USER"
-         */
+        /** Enum USER for value: "USER" */
         public static final CreatorEnum USER = new CreatorEnum("USER");
-        
-        /**
-         * Enum MARKET for value: "MARKET"
-         */
+
+        /** Enum MARKET for value: "MARKET" */
         public static final CreatorEnum MARKET = new CreatorEnum("MARKET");
-        
 
         private static final Map<String, CreatorEnum> STATIC_FIELDS = createStaticFields();
 
@@ -69,7 +51,7 @@ public class CreateAnAppV2Response extends SdkResponse {
 
         @JsonCreator
         public static CreatorEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CreatorEnum result = STATIC_FIELDS.get(value);
@@ -80,7 +62,7 @@ public class CreateAnAppV2Response extends SdkResponse {
         }
 
         public static CreatorEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CreatorEnum result = STATIC_FIELDS.get(value);
@@ -104,75 +86,59 @@ public class CreateAnAppV2Response extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator")
-    
+    @JsonProperty(value = "creator")
+
     private CreatorEnum creator;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private OffsetDateTime updateTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_key")
-    
+    @JsonProperty(value = "app_key")
+
     private String appKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
+
     private String remark;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_secret")
-    
+    @JsonProperty(value = "app_secret")
+
     private String appSecret;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="register_time")
-    
+    @JsonProperty(value = "register_time")
+
     private OffsetDateTime registerTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
-    /**
-     * APP的类型  默认为apig，暂不支持其他类型
-     */
+
+    /** APP的类型 默认为apig，暂不支持其他类型 */
     public static final class AppTypeEnum {
 
-        
-        /**
-         * Enum APIG for value: "apig"
-         */
+        /** Enum APIG for value: "apig" */
         public static final AppTypeEnum APIG = new AppTypeEnum("apig");
-        
-        /**
-         * Enum ROMA for value: "roma"
-         */
+
+        /** Enum ROMA for value: "roma" */
         public static final AppTypeEnum ROMA = new AppTypeEnum("roma");
-        
 
         private static final Map<String, AppTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -201,7 +167,7 @@ public class CreateAnAppV2Response extends SdkResponse {
 
         @JsonCreator
         public static AppTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AppTypeEnum result = STATIC_FIELDS.get(value);
@@ -212,7 +178,7 @@ public class CreateAnAppV2Response extends SdkResponse {
         }
 
         public static AppTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AppTypeEnum result = STATIC_FIELDS.get(value);
@@ -236,10 +202,9 @@ public class CreateAnAppV2Response extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_type")
-    
+    @JsonProperty(value = "app_type")
+
     private AppTypeEnum appType;
 
     public CreateAnAppV2Response withCreator(CreatorEnum creator) {
@@ -247,13 +212,9 @@ public class CreateAnAppV2Response extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * APP的创建者 - USER：用户自行创建 - MARKET：云市场分配
-     * @return creator
-     */
+    /** APP的创建者 - USER：用户自行创建 - MARKET：云市场分配
+     * 
+     * @return creator */
     public CreatorEnum getCreator() {
         return creator;
     }
@@ -262,20 +223,14 @@ public class CreateAnAppV2Response extends SdkResponse {
         this.creator = creator;
     }
 
-    
-
     public CreateAnAppV2Response withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间
-     * @return updateTime
-     */
+    /** 更新时间
+     * 
+     * @return updateTime */
     public OffsetDateTime getUpdateTime() {
         return updateTime;
     }
@@ -284,20 +239,14 @@ public class CreateAnAppV2Response extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     public CreateAnAppV2Response withAppKey(String appKey) {
         this.appKey = appKey;
         return this;
     }
 
-    
-
-
-    /**
-     * APP的key
-     * @return appKey
-     */
+    /** APP的key
+     * 
+     * @return appKey */
     public String getAppKey() {
         return appKey;
     }
@@ -306,20 +255,14 @@ public class CreateAnAppV2Response extends SdkResponse {
         this.appKey = appKey;
     }
 
-    
-
     public CreateAnAppV2Response withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 名称
-     * @return name
-     */
+    /** 名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -328,20 +271,14 @@ public class CreateAnAppV2Response extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public CreateAnAppV2Response withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述
-     * @return remark
-     */
+    /** 描述
+     * 
+     * @return remark */
     public String getRemark() {
         return remark;
     }
@@ -350,20 +287,14 @@ public class CreateAnAppV2Response extends SdkResponse {
         this.remark = remark;
     }
 
-    
-
     public CreateAnAppV2Response withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 编号
-     * @return id
-     */
+    /** 编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -372,20 +303,14 @@ public class CreateAnAppV2Response extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public CreateAnAppV2Response withAppSecret(String appSecret) {
         this.appSecret = appSecret;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥
-     * @return appSecret
-     */
+    /** 密钥
+     * 
+     * @return appSecret */
     public String getAppSecret() {
         return appSecret;
     }
@@ -394,20 +319,14 @@ public class CreateAnAppV2Response extends SdkResponse {
         this.appSecret = appSecret;
     }
 
-    
-
     public CreateAnAppV2Response withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 注册时间
-     * @return registerTime
-     */
+    /** 注册时间
+     * 
+     * @return registerTime */
     public OffsetDateTime getRegisterTime() {
         return registerTime;
     }
@@ -416,20 +335,14 @@ public class CreateAnAppV2Response extends SdkResponse {
         this.registerTime = registerTime;
     }
 
-    
-
     public CreateAnAppV2Response withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态
-     * @return status
-     */
+    /** 状态
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -438,20 +351,14 @@ public class CreateAnAppV2Response extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public CreateAnAppV2Response withAppType(AppTypeEnum appType) {
         this.appType = appType;
         return this;
     }
 
-    
-
-
-    /**
-     * APP的类型  默认为apig，暂不支持其他类型
-     * @return appType
-     */
+    /** APP的类型 默认为apig，暂不支持其他类型
+     * 
+     * @return appType */
     public AppTypeEnum getAppType() {
         return appType;
     }
@@ -459,8 +366,6 @@ public class CreateAnAppV2Response extends SdkResponse {
     public void setAppType(AppTypeEnum appType) {
         this.appType = appType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -471,21 +376,23 @@ public class CreateAnAppV2Response extends SdkResponse {
             return false;
         }
         CreateAnAppV2Response createAnAppV2Response = (CreateAnAppV2Response) o;
-        return Objects.equals(this.creator, createAnAppV2Response.creator) &&
-            Objects.equals(this.updateTime, createAnAppV2Response.updateTime) &&
-            Objects.equals(this.appKey, createAnAppV2Response.appKey) &&
-            Objects.equals(this.name, createAnAppV2Response.name) &&
-            Objects.equals(this.remark, createAnAppV2Response.remark) &&
-            Objects.equals(this.id, createAnAppV2Response.id) &&
-            Objects.equals(this.appSecret, createAnAppV2Response.appSecret) &&
-            Objects.equals(this.registerTime, createAnAppV2Response.registerTime) &&
-            Objects.equals(this.status, createAnAppV2Response.status) &&
-            Objects.equals(this.appType, createAnAppV2Response.appType);
+        return Objects.equals(this.creator, createAnAppV2Response.creator)
+            && Objects.equals(this.updateTime, createAnAppV2Response.updateTime)
+            && Objects.equals(this.appKey, createAnAppV2Response.appKey)
+            && Objects.equals(this.name, createAnAppV2Response.name)
+            && Objects.equals(this.remark, createAnAppV2Response.remark)
+            && Objects.equals(this.id, createAnAppV2Response.id)
+            && Objects.equals(this.appSecret, createAnAppV2Response.appSecret)
+            && Objects.equals(this.registerTime, createAnAppV2Response.registerTime)
+            && Objects.equals(this.status, createAnAppV2Response.status)
+            && Objects.equals(this.appType, createAnAppV2Response.appType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(creator, updateTime, appKey, name, remark, id, appSecret, registerTime, status, appType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -503,16 +410,13 @@ public class CreateAnAppV2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

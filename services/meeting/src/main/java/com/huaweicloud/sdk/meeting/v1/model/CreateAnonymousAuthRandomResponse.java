@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateAnonymousAuthRandomResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="siteUrl")
-    
+    @JsonProperty(value = "siteUrl")
+
     private String siteUrl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="random")
-    
+    @JsonProperty(value = "random")
+
     private String random;
 
     public CreateAnonymousAuthRandomResponse withSiteUrl(String siteUrl) {
@@ -36,13 +24,9 @@ public class CreateAnonymousAuthRandomResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 下一跳URL。
-     * @return siteUrl
-     */
+    /** 下一跳URL。
+     * 
+     * @return siteUrl */
     public String getSiteUrl() {
         return siteUrl;
     }
@@ -51,20 +35,14 @@ public class CreateAnonymousAuthRandomResponse extends SdkResponse {
         this.siteUrl = siteUrl;
     }
 
-    
-
     public CreateAnonymousAuthRandomResponse withRandom(String random) {
         this.random = random;
         return this;
     }
 
-    
-
-
-    /**
-     * 鉴权随机数。
-     * @return random
-     */
+    /** 鉴权随机数。
+     * 
+     * @return random */
     public String getRandom() {
         return random;
     }
@@ -72,8 +50,6 @@ public class CreateAnonymousAuthRandomResponse extends SdkResponse {
     public void setRandom(String random) {
         this.random = random;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +60,15 @@ public class CreateAnonymousAuthRandomResponse extends SdkResponse {
             return false;
         }
         CreateAnonymousAuthRandomResponse createAnonymousAuthRandomResponse = (CreateAnonymousAuthRandomResponse) o;
-        return Objects.equals(this.siteUrl, createAnonymousAuthRandomResponse.siteUrl) &&
-            Objects.equals(this.random, createAnonymousAuthRandomResponse.random);
+        return Objects.equals(this.siteUrl, createAnonymousAuthRandomResponse.siteUrl)
+            && Objects.equals(this.random, createAnonymousAuthRandomResponse.random);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(siteUrl, random);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +78,13 @@ public class CreateAnonymousAuthRandomResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.KeystoneCreateUserTokenByPasswordAndMfaRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class KeystoneCreateUserTokenByPasswordAndMfaRequest  {
-
-
+/** Request Object */
+public class KeystoneCreateUserTokenByPasswordAndMfaRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nocatalog")
-    
+    @JsonProperty(value = "nocatalog")
+
     private String nocatalog;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private KeystoneCreateUserTokenByPasswordAndMfaRequestBody body;
 
     public KeystoneCreateUserTokenByPasswordAndMfaRequest withNocatalog(String nocatalog) {
@@ -35,13 +24,9 @@ public class KeystoneCreateUserTokenByPasswordAndMfaRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 如果设置该参数，返回的响应体中将不显示catalog信息。任何非空字符串都将解释为true，并使该字段生效。
-     * @return nocatalog
-     */
+    /** 如果设置该参数，返回的响应体中将不显示catalog信息。任何非空字符串都将解释为true，并使该字段生效。
+     * 
+     * @return nocatalog */
     public String getNocatalog() {
         return nocatalog;
     }
@@ -50,27 +35,25 @@ public class KeystoneCreateUserTokenByPasswordAndMfaRequest  {
         this.nocatalog = nocatalog;
     }
 
-    
-
-    public KeystoneCreateUserTokenByPasswordAndMfaRequest withBody(KeystoneCreateUserTokenByPasswordAndMfaRequestBody body) {
+    public KeystoneCreateUserTokenByPasswordAndMfaRequest withBody(
+        KeystoneCreateUserTokenByPasswordAndMfaRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public KeystoneCreateUserTokenByPasswordAndMfaRequest withBody(Consumer<KeystoneCreateUserTokenByPasswordAndMfaRequestBody> bodySetter) {
-        if(this.body == null ){
+    public KeystoneCreateUserTokenByPasswordAndMfaRequest withBody(
+        Consumer<KeystoneCreateUserTokenByPasswordAndMfaRequestBody> bodySetter) {
+        if (this.body == null) {
             this.body = new KeystoneCreateUserTokenByPasswordAndMfaRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public KeystoneCreateUserTokenByPasswordAndMfaRequestBody getBody() {
         return body;
     }
@@ -78,8 +61,6 @@ public class KeystoneCreateUserTokenByPasswordAndMfaRequest  {
     public void setBody(KeystoneCreateUserTokenByPasswordAndMfaRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -89,14 +70,17 @@ public class KeystoneCreateUserTokenByPasswordAndMfaRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        KeystoneCreateUserTokenByPasswordAndMfaRequest keystoneCreateUserTokenByPasswordAndMfaRequest = (KeystoneCreateUserTokenByPasswordAndMfaRequest) o;
-        return Objects.equals(this.nocatalog, keystoneCreateUserTokenByPasswordAndMfaRequest.nocatalog) &&
-            Objects.equals(this.body, keystoneCreateUserTokenByPasswordAndMfaRequest.body);
+        KeystoneCreateUserTokenByPasswordAndMfaRequest keystoneCreateUserTokenByPasswordAndMfaRequest =
+            (KeystoneCreateUserTokenByPasswordAndMfaRequest) o;
+        return Objects.equals(this.nocatalog, keystoneCreateUserTokenByPasswordAndMfaRequest.nocatalog)
+            && Objects.equals(this.body, keystoneCreateUserTokenByPasswordAndMfaRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nocatalog, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +90,13 @@ public class KeystoneCreateUserTokenByPasswordAndMfaRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

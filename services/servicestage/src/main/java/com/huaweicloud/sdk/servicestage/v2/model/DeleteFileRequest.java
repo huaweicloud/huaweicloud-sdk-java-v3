@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteFileRequest  {
-
-
+/** Request Object */
+public class DeleteFileRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Repo-Auth")
-    
+    @JsonProperty(value = "X-Repo-Auth")
+
     private String xRepoAuth;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
+
     private String namespace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project")
-    
+    @JsonProperty(value = "project")
+
     private String project;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path")
-    
+    @JsonProperty(value = "path")
+
     private String path;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ref")
-    
+    @JsonProperty(value = "ref")
+
     private String ref;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message")
-    
+    @JsonProperty(value = "message")
+
     private String message;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sha")
-    
+    @JsonProperty(value = "sha")
+
     private String sha;
 
     public DeleteFileRequest withXRepoAuth(String xRepoAuth) {
@@ -64,15 +48,11 @@ public class DeleteFileRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 授权名称。
-     * @return xRepoAuth
-     */
+    /** 授权名称。
+     * 
+     * @return xRepoAuth */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Repo-Auth")
+    @JsonProperty(value = "X-Repo-Auth")
     public String getXRepoAuth() {
         return xRepoAuth;
     }
@@ -81,20 +61,14 @@ public class DeleteFileRequest  {
         this.xRepoAuth = xRepoAuth;
     }
 
-    
-
     public DeleteFileRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
     }
 
-    
-
-
-    /**
-     * 组织ID。
-     * @return namespace
-     */
+    /** 组织ID。
+     * 
+     * @return namespace */
     public String getNamespace() {
         return namespace;
     }
@@ -103,20 +77,14 @@ public class DeleteFileRequest  {
         this.namespace = namespace;
     }
 
-    
-
     public DeleteFileRequest withProject(String project) {
         this.project = project;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
-     * @return project
-     */
+    /** 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
+     * 
+     * @return project */
     public String getProject() {
         return project;
     }
@@ -125,20 +93,14 @@ public class DeleteFileRequest  {
         this.project = project;
     }
 
-    
-
     public DeleteFileRequest withPath(String path) {
         this.path = path;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件路径，需要将“/”替换为“:”。
-     * @return path
-     */
+    /** 文件路径，需要将“/”替换为“:”。
+     * 
+     * @return path */
     public String getPath() {
         return path;
     }
@@ -147,20 +109,14 @@ public class DeleteFileRequest  {
         this.path = path;
     }
 
-    
-
     public DeleteFileRequest withRef(String ref) {
         this.ref = ref;
         return this;
     }
 
-    
-
-
-    /**
-     * 分支名称或者tag标签名称或者commit sha。
-     * @return ref
-     */
+    /** 分支名称或者tag标签名称或者commit sha。
+     * 
+     * @return ref */
     public String getRef() {
         return ref;
     }
@@ -169,20 +125,14 @@ public class DeleteFileRequest  {
         this.ref = ref;
     }
 
-    
-
     public DeleteFileRequest withMessage(String message) {
         this.message = message;
         return this;
     }
 
-    
-
-
-    /**
-     * 提交描述。
-     * @return message
-     */
+    /** 提交描述。
+     * 
+     * @return message */
     public String getMessage() {
         return message;
     }
@@ -191,20 +141,14 @@ public class DeleteFileRequest  {
         this.message = message;
     }
 
-    
-
     public DeleteFileRequest withSha(String sha) {
         this.sha = sha;
         return this;
     }
 
-    
-
-
-    /**
-     * 最后一次提交的commit sha值。
-     * @return sha
-     */
+    /** 最后一次提交的commit sha值。
+     * 
+     * @return sha */
     public String getSha() {
         return sha;
     }
@@ -212,8 +156,6 @@ public class DeleteFileRequest  {
     public void setSha(String sha) {
         this.sha = sha;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -224,18 +166,19 @@ public class DeleteFileRequest  {
             return false;
         }
         DeleteFileRequest deleteFileRequest = (DeleteFileRequest) o;
-        return Objects.equals(this.xRepoAuth, deleteFileRequest.xRepoAuth) &&
-            Objects.equals(this.namespace, deleteFileRequest.namespace) &&
-            Objects.equals(this.project, deleteFileRequest.project) &&
-            Objects.equals(this.path, deleteFileRequest.path) &&
-            Objects.equals(this.ref, deleteFileRequest.ref) &&
-            Objects.equals(this.message, deleteFileRequest.message) &&
-            Objects.equals(this.sha, deleteFileRequest.sha);
+        return Objects.equals(this.xRepoAuth, deleteFileRequest.xRepoAuth)
+            && Objects.equals(this.namespace, deleteFileRequest.namespace)
+            && Objects.equals(this.project, deleteFileRequest.project)
+            && Objects.equals(this.path, deleteFileRequest.path) && Objects.equals(this.ref, deleteFileRequest.ref)
+            && Objects.equals(this.message, deleteFileRequest.message)
+            && Objects.equals(this.sha, deleteFileRequest.sha);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xRepoAuth, namespace, project, path, ref, message, sha);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -250,16 +193,13 @@ public class DeleteFileRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,80 +1,61 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListServicesRequest  {
-
-
+/** Request Object */
+public class ListServicesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_id")
-    
+    @JsonProperty(value = "service_id")
+
     private Integer serviceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_name")
-    
+    @JsonProperty(value = "service_name")
+
     private String serviceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_template_id")
-    
+    @JsonProperty(value = "product_template_id")
+
     private Integer productTemplateId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
-    
+    @JsonProperty(value = "product_id")
+
     private Integer productId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_user_name")
-    
+    @JsonProperty(value = "created_user_name")
+
     private String createdUserName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_date_start")
-    
+    @JsonProperty(value = "created_date_start")
+
     private Long createdDateStart;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_date_end")
-    
+    @JsonProperty(value = "created_date_end")
+
     private Long createdDateEnd;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
     public ListServicesRequest withInstanceId(String instanceId) {
@@ -82,13 +63,9 @@ public class ListServicesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -97,22 +74,14 @@ public class ListServicesRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListServicesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示条目数量，最大数量999，超过999后只返回999
-     * minimum: 0
-     * maximum: 999
-     * @return limit
-     */
+    /** 每页显示条目数量，最大数量999，超过999后只返回999 minimum: 0 maximum: 999
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -121,22 +90,14 @@ public class ListServicesRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListServicesRequest withServiceId(Integer serviceId) {
         this.serviceId = serviceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务ID
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return serviceId
-     */
+    /** 服务ID minimum: 1 maximum: 999999999999999999
+     * 
+     * @return serviceId */
     public Integer getServiceId() {
         return serviceId;
     }
@@ -145,20 +106,14 @@ public class ListServicesRequest  {
         this.serviceId = serviceId;
     }
 
-    
-
     public ListServicesRequest withServiceName(String serviceName) {
         this.serviceName = serviceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务名称
-     * @return serviceName
-     */
+    /** 服务名称
+     * 
+     * @return serviceName */
     public String getServiceName() {
         return serviceName;
     }
@@ -167,22 +122,14 @@ public class ListServicesRequest  {
         this.serviceName = serviceName;
     }
 
-    
-
     public ListServicesRequest withProductTemplateId(Integer productTemplateId) {
         this.productTemplateId = productTemplateId;
         return this;
     }
 
-    
-
-
-    /**
-     * 归属产品模板ID，product_template_id和product_id二选一
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return productTemplateId
-     */
+    /** 归属产品模板ID，product_template_id和product_id二选一 minimum: 1 maximum: 999999999999999999
+     * 
+     * @return productTemplateId */
     public Integer getProductTemplateId() {
         return productTemplateId;
     }
@@ -191,22 +138,14 @@ public class ListServicesRequest  {
         this.productTemplateId = productTemplateId;
     }
 
-    
-
     public ListServicesRequest withProductId(Integer productId) {
         this.productId = productId;
         return this;
     }
 
-    
-
-
-    /**
-     * 归属产品ID，product_template_id和product_id二选一
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return productId
-     */
+    /** 归属产品ID，product_template_id和product_id二选一 minimum: 1 maximum: 999999999999999999
+     * 
+     * @return productId */
     public Integer getProductId() {
         return productId;
     }
@@ -215,20 +154,14 @@ public class ListServicesRequest  {
         this.productId = productId;
     }
 
-    
-
     public ListServicesRequest withCreatedUserName(String createdUserName) {
         this.createdUserName = createdUserName;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建用户名
-     * @return createdUserName
-     */
+    /** 创建用户名
+     * 
+     * @return createdUserName */
     public String getCreatedUserName() {
         return createdUserName;
     }
@@ -237,22 +170,14 @@ public class ListServicesRequest  {
         this.createdUserName = createdUserName;
     }
 
-    
-
     public ListServicesRequest withCreatedDateStart(Long createdDateStart) {
         this.createdDateStart = createdDateStart;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间起始，格式timestamp(ms)，使用UTC时区
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return createdDateStart
-     */
+    /** 创建时间起始，格式timestamp(ms)，使用UTC时区 minimum: 1 maximum: 999999999999999999
+     * 
+     * @return createdDateStart */
     public Long getCreatedDateStart() {
         return createdDateStart;
     }
@@ -261,22 +186,14 @@ public class ListServicesRequest  {
         this.createdDateStart = createdDateStart;
     }
 
-    
-
     public ListServicesRequest withCreatedDateEnd(Long createdDateEnd) {
         this.createdDateEnd = createdDateEnd;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间截止，格式timestamp(ms)。使用UTC时区
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return createdDateEnd
-     */
+    /** 创建时间截止，格式timestamp(ms)。使用UTC时区 minimum: 1 maximum: 999999999999999999
+     * 
+     * @return createdDateEnd */
     public Long getCreatedDateEnd() {
         return createdDateEnd;
     }
@@ -285,22 +202,14 @@ public class ListServicesRequest  {
         this.createdDateEnd = createdDateEnd;
     }
 
-    
-
     public ListServicesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于0
-     * minimum: 0
-     * maximum: 999999
-     * @return offset
-     */
+    /** 偏移量，表示从此偏移量开始查询， offset大于等于0 minimum: 0 maximum: 999999
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -308,8 +217,6 @@ public class ListServicesRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -320,21 +227,32 @@ public class ListServicesRequest  {
             return false;
         }
         ListServicesRequest listServicesRequest = (ListServicesRequest) o;
-        return Objects.equals(this.instanceId, listServicesRequest.instanceId) &&
-            Objects.equals(this.limit, listServicesRequest.limit) &&
-            Objects.equals(this.serviceId, listServicesRequest.serviceId) &&
-            Objects.equals(this.serviceName, listServicesRequest.serviceName) &&
-            Objects.equals(this.productTemplateId, listServicesRequest.productTemplateId) &&
-            Objects.equals(this.productId, listServicesRequest.productId) &&
-            Objects.equals(this.createdUserName, listServicesRequest.createdUserName) &&
-            Objects.equals(this.createdDateStart, listServicesRequest.createdDateStart) &&
-            Objects.equals(this.createdDateEnd, listServicesRequest.createdDateEnd) &&
-            Objects.equals(this.offset, listServicesRequest.offset);
+        return Objects.equals(this.instanceId, listServicesRequest.instanceId)
+            && Objects.equals(this.limit, listServicesRequest.limit)
+            && Objects.equals(this.serviceId, listServicesRequest.serviceId)
+            && Objects.equals(this.serviceName, listServicesRequest.serviceName)
+            && Objects.equals(this.productTemplateId, listServicesRequest.productTemplateId)
+            && Objects.equals(this.productId, listServicesRequest.productId)
+            && Objects.equals(this.createdUserName, listServicesRequest.createdUserName)
+            && Objects.equals(this.createdDateStart, listServicesRequest.createdDateStart)
+            && Objects.equals(this.createdDateEnd, listServicesRequest.createdDateEnd)
+            && Objects.equals(this.offset, listServicesRequest.offset);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, limit, serviceId, serviceName, productTemplateId, productId, createdUserName, createdDateStart, createdDateEnd, offset);
+        return Objects.hash(instanceId,
+            limit,
+            serviceId,
+            serviceName,
+            productTemplateId,
+            productId,
+            createdUserName,
+            createdDateStart,
+            createdDateEnd,
+            offset);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -352,16 +270,13 @@ public class ListServicesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

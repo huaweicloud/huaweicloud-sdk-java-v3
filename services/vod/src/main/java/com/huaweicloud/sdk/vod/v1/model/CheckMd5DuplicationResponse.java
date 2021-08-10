@@ -1,50 +1,35 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CheckMd5DuplicationResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_duplicated")
-    
+    @JsonProperty(value = "is_duplicated")
+
     private Integer isDuplicated;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="asset_ids")
-    
+    @JsonProperty(value = "asset_ids")
+
     private List<String> assetIds = null;
-    
+
     public CheckMd5DuplicationResponse withIsDuplicated(Integer isDuplicated) {
         this.isDuplicated = isDuplicated;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否重复。  取值如下： - 0：表示不重复。 - 1：表示重复。
-     * @return isDuplicated
-     */
+    /** 是否重复。 取值如下： - 0：表示不重复。 - 1：表示重复。
+     * 
+     * @return isDuplicated */
     public Integer getIsDuplicated() {
         return isDuplicated;
     }
@@ -53,16 +38,13 @@ public class CheckMd5DuplicationResponse extends SdkResponse {
         this.isDuplicated = isDuplicated;
     }
 
-    
-
     public CheckMd5DuplicationResponse withAssetIds(List<String> assetIds) {
         this.assetIds = assetIds;
         return this;
     }
 
-    
     public CheckMd5DuplicationResponse addAssetIdsItem(String assetIdsItem) {
-        if(this.assetIds == null) {
+        if (this.assetIds == null) {
             this.assetIds = new ArrayList<>();
         }
         this.assetIds.add(assetIdsItem);
@@ -70,17 +52,16 @@ public class CheckMd5DuplicationResponse extends SdkResponse {
     }
 
     public CheckMd5DuplicationResponse withAssetIds(Consumer<List<String>> assetIdsSetter) {
-        if(this.assetIds == null) {
+        if (this.assetIds == null) {
             this.assetIds = new ArrayList<>();
         }
         assetIdsSetter.accept(this.assetIds);
         return this;
     }
 
-    /**
-     * 重复的媒资ID
-     * @return assetIds
-     */
+    /** 重复的媒资ID
+     * 
+     * @return assetIds */
     public List<String> getAssetIds() {
         return assetIds;
     }
@@ -88,8 +69,6 @@ public class CheckMd5DuplicationResponse extends SdkResponse {
     public void setAssetIds(List<String> assetIds) {
         this.assetIds = assetIds;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -100,13 +79,15 @@ public class CheckMd5DuplicationResponse extends SdkResponse {
             return false;
         }
         CheckMd5DuplicationResponse checkMd5DuplicationResponse = (CheckMd5DuplicationResponse) o;
-        return Objects.equals(this.isDuplicated, checkMd5DuplicationResponse.isDuplicated) &&
-            Objects.equals(this.assetIds, checkMd5DuplicationResponse.assetIds);
+        return Objects.equals(this.isDuplicated, checkMd5DuplicationResponse.isDuplicated)
+            && Objects.equals(this.assetIds, checkMd5DuplicationResponse.assetIds);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(isDuplicated, assetIds);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -116,16 +97,13 @@ public class CheckMd5DuplicationResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

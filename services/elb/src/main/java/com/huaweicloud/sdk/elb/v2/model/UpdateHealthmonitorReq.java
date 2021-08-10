@@ -1,86 +1,66 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 更新健康检查请求
- */
-public class UpdateHealthmonitorReq  {
-
-
+/** 更新健康检查请求 */
+public class UpdateHealthmonitorReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
-    
+    @JsonProperty(value = "admin_state_up")
+
     private Boolean adminStateUp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="monitor_port")
-    
+    @JsonProperty(value = "monitor_port")
+
     private Integer monitorPort;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timeout")
-    
+    @JsonProperty(value = "timeout")
+
     private Integer timeout;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expected_codes")
-    
+    @JsonProperty(value = "expected_codes")
+
     private String expectedCodes;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_name")
-    
+    @JsonProperty(value = "domain_name")
+
     private String domainName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url_path")
-    
+    @JsonProperty(value = "url_path")
+
     private String urlPath;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="http_method")
-    
+    @JsonProperty(value = "http_method")
+
     private String httpMethod;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="delay")
-    
+    @JsonProperty(value = "delay")
+
     private Integer delay;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_retries")
-    
+    @JsonProperty(value = "max_retries")
+
     private Integer maxRetries;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
     public UpdateHealthmonitorReq withName(String name) {
@@ -88,13 +68,9 @@ public class UpdateHealthmonitorReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查名称。
-     * @return name
-     */
+    /** 健康检查名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -103,20 +79,14 @@ public class UpdateHealthmonitorReq  {
         this.name = name;
     }
 
-    
-
     public UpdateHealthmonitorReq withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查的管理状态；该字段虽然支持创建、更新，但实际取值决定于后端云服务器对应的弹性云服务器是否存在。该字段虽然支持创建、更新，但实际取值决定于member对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
-     * @return adminStateUp
-     */
+    /** 健康检查的管理状态；该字段虽然支持创建、更新，但实际取值决定于后端云服务器对应的弹性云服务器是否存在。该字段虽然支持创建、更新，但实际取值决定于member对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
+     * 
+     * @return adminStateUp */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -125,22 +95,14 @@ public class UpdateHealthmonitorReq  {
         this.adminStateUp = adminStateUp;
     }
 
-    
-
     public UpdateHealthmonitorReq withMonitorPort(Integer monitorPort) {
         this.monitorPort = monitorPort;
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查端口号。默认为空，表示使用后端云服务器组的端口。
-     * minimum: 1
-     * maximum: 65535
-     * @return monitorPort
-     */
+    /** 健康检查端口号。默认为空，表示使用后端云服务器组的端口。 minimum: 1 maximum: 65535
+     * 
+     * @return monitorPort */
     public Integer getMonitorPort() {
         return monitorPort;
     }
@@ -149,22 +111,14 @@ public class UpdateHealthmonitorReq  {
         this.monitorPort = monitorPort;
     }
 
-    
-
     public UpdateHealthmonitorReq withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查的超时时间。建议该值小于delay的值。
-     * minimum: 1
-     * maximum: 50
-     * @return timeout
-     */
+    /** 健康检查的超时时间。建议该值小于delay的值。 minimum: 1 maximum: 50
+     * 
+     * @return timeout */
     public Integer getTimeout() {
         return timeout;
     }
@@ -173,20 +127,14 @@ public class UpdateHealthmonitorReq  {
         this.timeout = timeout;
     }
 
-    
-
     public UpdateHealthmonitorReq withExpectedCodes(String expectedCodes) {
         this.expectedCodes = expectedCodes;
         return this;
     }
 
-    
-
-
-    /**
-     * 期望HTTP响应状态码，指定下列值：单值，例如200；列表，例如200，202；区间，例如200-204。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
-     * @return expectedCodes
-     */
+    /** 期望HTTP响应状态码，指定下列值：单值，例如200；列表，例如200，202；区间，例如200-204。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
+     * 
+     * @return expectedCodes */
     public String getExpectedCodes() {
         return expectedCodes;
     }
@@ -195,20 +143,14 @@ public class UpdateHealthmonitorReq  {
         this.expectedCodes = expectedCodes;
     }
 
-    
-
     public UpdateHealthmonitorReq withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：健康检查测试member健康状态时，发送的http请求的域名。仅当type为HTTP时生效。使用说明：默认为空，表示使用负载均衡器的vip作为http请求的目的地址。以数字或字母开头，只能包含数字、字母、’-’、’.’。
-     * @return domainName
-     */
+    /** 功能说明：健康检查测试member健康状态时，发送的http请求的域名。仅当type为HTTP时生效。使用说明：默认为空，表示使用负载均衡器的vip作为http请求的目的地址。以数字或字母开头，只能包含数字、字母、’-’、’.’。
+     * 
+     * @return domainName */
     public String getDomainName() {
         return domainName;
     }
@@ -217,20 +159,14 @@ public class UpdateHealthmonitorReq  {
         this.domainName = domainName;
     }
 
-    
-
     public UpdateHealthmonitorReq withUrlPath(String urlPath) {
         this.urlPath = urlPath;
         return this;
     }
 
-    
-
-
-    /**
-     * HTTP方法，可以为GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
-     * @return urlPath
-     */
+    /** HTTP方法，可以为GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
+     * 
+     * @return urlPath */
     public String getUrlPath() {
         return urlPath;
     }
@@ -239,20 +175,14 @@ public class UpdateHealthmonitorReq  {
         this.urlPath = urlPath;
     }
 
-    
-
     public UpdateHealthmonitorReq withHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
         return this;
     }
 
-    
-
-
-    /**
-     * HTTP方法，可以为GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
-     * @return httpMethod
-     */
+    /** HTTP方法，可以为GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
+     * 
+     * @return httpMethod */
     public String getHttpMethod() {
         return httpMethod;
     }
@@ -261,22 +191,14 @@ public class UpdateHealthmonitorReq  {
         this.httpMethod = httpMethod;
     }
 
-    
-
     public UpdateHealthmonitorReq withDelay(Integer delay) {
         this.delay = delay;
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查间隔
-     * minimum: 1
-     * maximum: 50
-     * @return delay
-     */
+    /** 健康检查间隔 minimum: 1 maximum: 50
+     * 
+     * @return delay */
     public Integer getDelay() {
         return delay;
     }
@@ -285,22 +207,14 @@ public class UpdateHealthmonitorReq  {
         this.delay = delay;
     }
 
-    
-
     public UpdateHealthmonitorReq withMaxRetries(Integer maxRetries) {
         this.maxRetries = maxRetries;
         return this;
     }
 
-    
-
-
-    /**
-     * 最大重试次数
-     * minimum: 1
-     * maximum: 10
-     * @return maxRetries
-     */
+    /** 最大重试次数 minimum: 1 maximum: 10
+     * 
+     * @return maxRetries */
     public Integer getMaxRetries() {
         return maxRetries;
     }
@@ -309,20 +223,14 @@ public class UpdateHealthmonitorReq  {
         this.maxRetries = maxRetries;
     }
 
-    
-
     public UpdateHealthmonitorReq withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查的类型。  取值范围：TCP、UDP_CONNECT、HTTP。
-     * @return type
-     */
+    /** 健康检查的类型。 取值范围：TCP、UDP_CONNECT、HTTP。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -330,8 +238,6 @@ public class UpdateHealthmonitorReq  {
     public void setType(String type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -342,22 +248,34 @@ public class UpdateHealthmonitorReq  {
             return false;
         }
         UpdateHealthmonitorReq updateHealthmonitorReq = (UpdateHealthmonitorReq) o;
-        return Objects.equals(this.name, updateHealthmonitorReq.name) &&
-            Objects.equals(this.adminStateUp, updateHealthmonitorReq.adminStateUp) &&
-            Objects.equals(this.monitorPort, updateHealthmonitorReq.monitorPort) &&
-            Objects.equals(this.timeout, updateHealthmonitorReq.timeout) &&
-            Objects.equals(this.expectedCodes, updateHealthmonitorReq.expectedCodes) &&
-            Objects.equals(this.domainName, updateHealthmonitorReq.domainName) &&
-            Objects.equals(this.urlPath, updateHealthmonitorReq.urlPath) &&
-            Objects.equals(this.httpMethod, updateHealthmonitorReq.httpMethod) &&
-            Objects.equals(this.delay, updateHealthmonitorReq.delay) &&
-            Objects.equals(this.maxRetries, updateHealthmonitorReq.maxRetries) &&
-            Objects.equals(this.type, updateHealthmonitorReq.type);
+        return Objects.equals(this.name, updateHealthmonitorReq.name)
+            && Objects.equals(this.adminStateUp, updateHealthmonitorReq.adminStateUp)
+            && Objects.equals(this.monitorPort, updateHealthmonitorReq.monitorPort)
+            && Objects.equals(this.timeout, updateHealthmonitorReq.timeout)
+            && Objects.equals(this.expectedCodes, updateHealthmonitorReq.expectedCodes)
+            && Objects.equals(this.domainName, updateHealthmonitorReq.domainName)
+            && Objects.equals(this.urlPath, updateHealthmonitorReq.urlPath)
+            && Objects.equals(this.httpMethod, updateHealthmonitorReq.httpMethod)
+            && Objects.equals(this.delay, updateHealthmonitorReq.delay)
+            && Objects.equals(this.maxRetries, updateHealthmonitorReq.maxRetries)
+            && Objects.equals(this.type, updateHealthmonitorReq.type);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, adminStateUp, monitorPort, timeout, expectedCodes, domainName, urlPath, httpMethod, delay, maxRetries, type);
+        return Objects.hash(name,
+            adminStateUp,
+            monitorPort,
+            timeout,
+            expectedCodes,
+            domainName,
+            urlPath,
+            httpMethod,
+            delay,
+            maxRetries,
+            type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -376,16 +294,13 @@ public class UpdateHealthmonitorReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,56 +1,40 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowDetailsOfAppAclResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_acl_type")
-    
+    @JsonProperty(value = "app_acl_type")
+
     private String appAclType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_acl_values")
-    
+    @JsonProperty(value = "app_acl_values")
+
     private List<String> appAclValues = null;
-    
+
     public ShowDetailsOfAppAclResponse withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * APP编号
-     * @return appId
-     */
+    /** APP编号
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -59,20 +43,14 @@ public class ShowDetailsOfAppAclResponse extends SdkResponse {
         this.appId = appId;
     }
 
-    
-
     public ShowDetailsOfAppAclResponse withAppAclType(String appAclType) {
         this.appAclType = appAclType;
         return this;
     }
 
-    
-
-
-    /**
-     * 类型 -  PERMIT (白名单类型) -  DENY (黑名单类型)
-     * @return appAclType
-     */
+    /** 类型 - PERMIT (白名单类型) - DENY (黑名单类型)
+     * 
+     * @return appAclType */
     public String getAppAclType() {
         return appAclType;
     }
@@ -81,16 +59,13 @@ public class ShowDetailsOfAppAclResponse extends SdkResponse {
         this.appAclType = appAclType;
     }
 
-    
-
     public ShowDetailsOfAppAclResponse withAppAclValues(List<String> appAclValues) {
         this.appAclValues = appAclValues;
         return this;
     }
 
-    
     public ShowDetailsOfAppAclResponse addAppAclValuesItem(String appAclValuesItem) {
-        if(this.appAclValues == null) {
+        if (this.appAclValues == null) {
             this.appAclValues = new ArrayList<>();
         }
         this.appAclValues.add(appAclValuesItem);
@@ -98,17 +73,16 @@ public class ShowDetailsOfAppAclResponse extends SdkResponse {
     }
 
     public ShowDetailsOfAppAclResponse withAppAclValues(Consumer<List<String>> appAclValuesSetter) {
-        if(this.appAclValues == null) {
+        if (this.appAclValues == null) {
             this.appAclValues = new ArrayList<>();
         }
         appAclValuesSetter.accept(this.appAclValues);
         return this;
     }
 
-    /**
-     * ACL策略值，支持IP、IP范围和CIDR方式。IP范围以英文中划线分隔。
-     * @return appAclValues
-     */
+    /** ACL策略值，支持IP、IP范围和CIDR方式。IP范围以英文中划线分隔。
+     * 
+     * @return appAclValues */
     public List<String> getAppAclValues() {
         return appAclValues;
     }
@@ -116,8 +90,6 @@ public class ShowDetailsOfAppAclResponse extends SdkResponse {
     public void setAppAclValues(List<String> appAclValues) {
         this.appAclValues = appAclValues;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -128,14 +100,16 @@ public class ShowDetailsOfAppAclResponse extends SdkResponse {
             return false;
         }
         ShowDetailsOfAppAclResponse showDetailsOfAppAclResponse = (ShowDetailsOfAppAclResponse) o;
-        return Objects.equals(this.appId, showDetailsOfAppAclResponse.appId) &&
-            Objects.equals(this.appAclType, showDetailsOfAppAclResponse.appAclType) &&
-            Objects.equals(this.appAclValues, showDetailsOfAppAclResponse.appAclValues);
+        return Objects.equals(this.appId, showDetailsOfAppAclResponse.appId)
+            && Objects.equals(this.appAclType, showDetailsOfAppAclResponse.appAclType)
+            && Objects.equals(this.appAclValues, showDetailsOfAppAclResponse.appAclValues);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(appId, appAclType, appAclValues);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -146,16 +120,13 @@ public class ShowDetailsOfAppAclResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

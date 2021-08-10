@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowUserDetailRequest  {
-
-
+/** Request Object */
+public class ShowUserDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Request-Id")
-    
+    @JsonProperty(value = "X-Request-Id")
+
     private String xRequestId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Accept-Language")
-    
+    @JsonProperty(value = "Accept-Language")
+
     private String acceptLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="account")
-    
+    @JsonProperty(value = "account")
+
     private String account;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="accountType")
-    
+    @JsonProperty(value = "accountType")
+
     private Integer accountType;
 
     public ShowUserDetailRequest withXRequestId(String xRequestId) {
@@ -46,15 +33,11 @@ public class ShowUserDetailRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
-     * @return xRequestId
-     */
+    /** 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * 
+     * @return xRequestId */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Request-Id")
+    @JsonProperty(value = "X-Request-Id")
     public String getXRequestId() {
         return xRequestId;
     }
@@ -63,20 +46,14 @@ public class ShowUserDetailRequest  {
         this.xRequestId = xRequestId;
     }
 
-    
-
     public ShowUserDetailRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言参数，默认为中文zh_CN, 英文为en_US
-     * @return acceptLanguage
-     */
+    /** 语言参数，默认为中文zh_CN, 英文为en_US
+     * 
+     * @return acceptLanguage */
     public String getAcceptLanguage() {
         return acceptLanguage;
     }
@@ -85,20 +62,14 @@ public class ShowUserDetailRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
-    
-
     public ShowUserDetailRequest withAccount(String account) {
         this.account = account;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业用户帐号。
-     * @return account
-     */
+    /** 企业用户帐号。
+     * 
+     * @return account */
     public String getAccount() {
         return account;
     }
@@ -107,22 +78,14 @@ public class ShowUserDetailRequest  {
         this.account = account;
     }
 
-    
-
     public ShowUserDetailRequest withAccountType(Integer accountType) {
         this.accountType = accountType;
         return this;
     }
 
-    
-
-
-    /**
-     * 账号类型 * 0：会议账号； * 1：第三方账号，默认0。 
-     * minimum: 0
-     * maximum: 1
-     * @return accountType
-     */
+    /** 账号类型 * 0：会议账号； * 1：第三方账号，默认0。 minimum: 0 maximum: 1
+     * 
+     * @return accountType */
     public Integer getAccountType() {
         return accountType;
     }
@@ -130,8 +93,6 @@ public class ShowUserDetailRequest  {
     public void setAccountType(Integer accountType) {
         this.accountType = accountType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -142,15 +103,17 @@ public class ShowUserDetailRequest  {
             return false;
         }
         ShowUserDetailRequest showUserDetailRequest = (ShowUserDetailRequest) o;
-        return Objects.equals(this.xRequestId, showUserDetailRequest.xRequestId) &&
-            Objects.equals(this.acceptLanguage, showUserDetailRequest.acceptLanguage) &&
-            Objects.equals(this.account, showUserDetailRequest.account) &&
-            Objects.equals(this.accountType, showUserDetailRequest.accountType);
+        return Objects.equals(this.xRequestId, showUserDetailRequest.xRequestId)
+            && Objects.equals(this.acceptLanguage, showUserDetailRequest.acceptLanguage)
+            && Objects.equals(this.account, showUserDetailRequest.account)
+            && Objects.equals(this.accountType, showUserDetailRequest.accountType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xRequestId, acceptLanguage, account, accountType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -162,16 +125,13 @@ public class ShowUserDetailRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

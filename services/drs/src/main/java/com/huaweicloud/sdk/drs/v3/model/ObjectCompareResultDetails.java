@@ -1,50 +1,38 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class ObjectCompareResultDetails  {
-
-
+public class ObjectCompareResultDetails {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_db_name")
-    
+    @JsonProperty(value = "source_db_name")
+
     private String sourceDbName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target_db_name")
-    
+    @JsonProperty(value = "target_db_name")
+
     private String targetDbName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_db_value")
-    
+    @JsonProperty(value = "source_db_value")
+
     private String sourceDbValue;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target_db_value")
-    
+    @JsonProperty(value = "target_db_value")
+
     private String targetDbValue;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_message")
-    
+    @JsonProperty(value = "error_message")
+
     private String errorMessage;
 
     public ObjectCompareResultDetails withSourceDbName(String sourceDbName) {
@@ -52,13 +40,9 @@ public class ObjectCompareResultDetails  {
         return this;
     }
 
-    
-
-
-    /**
-     * 源库名称。
-     * @return sourceDbName
-     */
+    /** 源库名称。
+     * 
+     * @return sourceDbName */
     public String getSourceDbName() {
         return sourceDbName;
     }
@@ -67,20 +51,14 @@ public class ObjectCompareResultDetails  {
         this.sourceDbName = sourceDbName;
     }
 
-    
-
     public ObjectCompareResultDetails withTargetDbName(String targetDbName) {
         this.targetDbName = targetDbName;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标库名称。
-     * @return targetDbName
-     */
+    /** 目标库名称。
+     * 
+     * @return targetDbName */
     public String getTargetDbName() {
         return targetDbName;
     }
@@ -89,20 +67,14 @@ public class ObjectCompareResultDetails  {
         this.targetDbName = targetDbName;
     }
 
-    
-
     public ObjectCompareResultDetails withSourceDbValue(String sourceDbValue) {
         this.sourceDbValue = sourceDbValue;
         return this;
     }
 
-    
-
-
-    /**
-     * 在源库的值。
-     * @return sourceDbValue
-     */
+    /** 在源库的值。
+     * 
+     * @return sourceDbValue */
     public String getSourceDbValue() {
         return sourceDbValue;
     }
@@ -111,20 +83,14 @@ public class ObjectCompareResultDetails  {
         this.sourceDbValue = sourceDbValue;
     }
 
-    
-
     public ObjectCompareResultDetails withTargetDbValue(String targetDbValue) {
         this.targetDbValue = targetDbValue;
         return this;
     }
 
-    
-
-
-    /**
-     * 在目标库的值。
-     * @return targetDbValue
-     */
+    /** 在目标库的值。
+     * 
+     * @return targetDbValue */
     public String getTargetDbValue() {
         return targetDbValue;
     }
@@ -133,20 +99,14 @@ public class ObjectCompareResultDetails  {
         this.targetDbValue = targetDbValue;
     }
 
-    
-
     public ObjectCompareResultDetails withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误信息。
-     * @return errorMessage
-     */
+    /** 错误信息。
+     * 
+     * @return errorMessage */
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -154,8 +114,6 @@ public class ObjectCompareResultDetails  {
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +124,18 @@ public class ObjectCompareResultDetails  {
             return false;
         }
         ObjectCompareResultDetails objectCompareResultDetails = (ObjectCompareResultDetails) o;
-        return Objects.equals(this.sourceDbName, objectCompareResultDetails.sourceDbName) &&
-            Objects.equals(this.targetDbName, objectCompareResultDetails.targetDbName) &&
-            Objects.equals(this.sourceDbValue, objectCompareResultDetails.sourceDbValue) &&
-            Objects.equals(this.targetDbValue, objectCompareResultDetails.targetDbValue) &&
-            Objects.equals(this.errorMessage, objectCompareResultDetails.errorMessage);
+        return Objects.equals(this.sourceDbName, objectCompareResultDetails.sourceDbName)
+            && Objects.equals(this.targetDbName, objectCompareResultDetails.targetDbName)
+            && Objects.equals(this.sourceDbValue, objectCompareResultDetails.sourceDbValue)
+            && Objects.equals(this.targetDbValue, objectCompareResultDetails.targetDbValue)
+            && Objects.equals(this.errorMessage, objectCompareResultDetails.errorMessage);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sourceDbName, targetDbName, sourceDbValue, targetDbValue, errorMessage);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +148,13 @@ public class ObjectCompareResultDetails  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

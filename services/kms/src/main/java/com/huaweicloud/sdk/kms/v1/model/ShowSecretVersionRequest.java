@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowSecretVersionRequest  {
-
-
+/** Request Object */
+public class ShowSecretVersionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="secret_id")
-    
+    @JsonProperty(value = "secret_id")
+
     private String secretId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version_id")
-    
+    @JsonProperty(value = "version_id")
+
     private String versionId;
 
     public ShowSecretVersionRequest withSecretId(String secretId) {
@@ -34,13 +23,9 @@ public class ShowSecretVersionRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 凭据的资源标识符。
-     * @return secretId
-     */
+    /** 凭据的资源标识符。
+     * 
+     * @return secretId */
     public String getSecretId() {
         return secretId;
     }
@@ -49,20 +34,14 @@ public class ShowSecretVersionRequest  {
         this.secretId = secretId;
     }
 
-    
-
     public ShowSecretVersionRequest withVersionId(String versionId) {
         this.versionId = versionId;
         return this;
     }
 
-    
-
-
-    /**
-     * 凭据的版本标识符。
-     * @return versionId
-     */
+    /** 凭据的版本标识符。
+     * 
+     * @return versionId */
     public String getVersionId() {
         return versionId;
     }
@@ -70,8 +49,6 @@ public class ShowSecretVersionRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class ShowSecretVersionRequest  {
             return false;
         }
         ShowSecretVersionRequest showSecretVersionRequest = (ShowSecretVersionRequest) o;
-        return Objects.equals(this.secretId, showSecretVersionRequest.secretId) &&
-            Objects.equals(this.versionId, showSecretVersionRequest.versionId);
+        return Objects.equals(this.secretId, showSecretVersionRequest.secretId)
+            && Objects.equals(this.versionId, showSecretVersionRequest.versionId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(secretId, versionId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class ShowSecretVersionRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

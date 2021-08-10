@@ -1,53 +1,35 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.MigprojectsResponseBody;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListMigprojectsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
+
     private Integer count;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="migprojects")
-    
+    @JsonProperty(value = "migprojects")
+
     private List<MigprojectsResponseBody> migprojects = null;
-    
+
     public ListMigprojectsResponse withCount(Integer count) {
         this.count = count;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询到的迁移项目的数量
-     * minimum: 0
-     * maximum: 2147483647
-     * @return count
-     */
+    /** 查询到的迁移项目的数量 minimum: 0 maximum: 2147483647
+     * 
+     * @return count */
     public Integer getCount() {
         return count;
     }
@@ -56,16 +38,13 @@ public class ListMigprojectsResponse extends SdkResponse {
         this.count = count;
     }
 
-    
-
     public ListMigprojectsResponse withMigprojects(List<MigprojectsResponseBody> migprojects) {
         this.migprojects = migprojects;
         return this;
     }
 
-    
     public ListMigprojectsResponse addMigprojectsItem(MigprojectsResponseBody migprojectsItem) {
-        if(this.migprojects == null) {
+        if (this.migprojects == null) {
             this.migprojects = new ArrayList<>();
         }
         this.migprojects.add(migprojectsItem);
@@ -73,17 +52,16 @@ public class ListMigprojectsResponse extends SdkResponse {
     }
 
     public ListMigprojectsResponse withMigprojects(Consumer<List<MigprojectsResponseBody>> migprojectsSetter) {
-        if(this.migprojects == null) {
+        if (this.migprojects == null) {
             this.migprojects = new ArrayList<>();
         }
         migprojectsSetter.accept(this.migprojects);
         return this;
     }
 
-    /**
-     * 查询到的迁移项目详情
-     * @return migprojects
-     */
+    /** 查询到的迁移项目详情
+     * 
+     * @return migprojects */
     public List<MigprojectsResponseBody> getMigprojects() {
         return migprojects;
     }
@@ -91,8 +69,6 @@ public class ListMigprojectsResponse extends SdkResponse {
     public void setMigprojects(List<MigprojectsResponseBody> migprojects) {
         this.migprojects = migprojects;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -103,13 +79,15 @@ public class ListMigprojectsResponse extends SdkResponse {
             return false;
         }
         ListMigprojectsResponse listMigprojectsResponse = (ListMigprojectsResponse) o;
-        return Objects.equals(this.count, listMigprojectsResponse.count) &&
-            Objects.equals(this.migprojects, listMigprojectsResponse.migprojects);
+        return Objects.equals(this.count, listMigprojectsResponse.count)
+            && Objects.equals(this.migprojects, listMigprojectsResponse.migprojects);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(count, migprojects);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -119,16 +97,13 @@ public class ListMigprojectsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

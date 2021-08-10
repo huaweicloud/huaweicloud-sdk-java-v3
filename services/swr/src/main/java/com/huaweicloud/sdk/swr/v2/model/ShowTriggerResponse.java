@@ -1,115 +1,90 @@
 package com.huaweicloud.sdk.swr.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.swr.v2.model.TriggerHistories;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowTriggerResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private String action;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_type")
-    
+    @JsonProperty(value = "app_type")
+
     private String appType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="application")
-    
+    @JsonProperty(value = "application")
+
     private String application;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
+
     private String clusterId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_name")
-    
+    @JsonProperty(value = "cluster_name")
+
     private String clusterName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_ns")
-    
+    @JsonProperty(value = "cluster_ns")
+
     private String clusterNs;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="condition")
-    
+    @JsonProperty(value = "condition")
+
     private String condition;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="container")
-    
+    @JsonProperty(value = "container")
+
     private String container;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator_name")
-    
+    @JsonProperty(value = "creator_name")
+
     private String creatorName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable")
-    
+    @JsonProperty(value = "enable")
+
     private String enable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trigger_history")
-    
+    @JsonProperty(value = "trigger_history")
+
     private List<TriggerHistories> triggerHistory = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trigger_mode")
-    
+    @JsonProperty(value = "trigger_mode")
+
     private String triggerMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trigger_type")
-    
+    @JsonProperty(value = "trigger_type")
+
     private String triggerType;
 
     public ShowTriggerResponse withAction(String action) {
@@ -117,13 +92,9 @@ public class ShowTriggerResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 触发动作，update
-     * @return action
-     */
+    /** 触发动作，update
+     * 
+     * @return action */
     public String getAction() {
         return action;
     }
@@ -132,20 +103,14 @@ public class ShowTriggerResponse extends SdkResponse {
         this.action = action;
     }
 
-    
-
     public ShowTriggerResponse withAppType(String appType) {
         this.appType = appType;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用类型，deployments、statefulsets
-     * @return appType
-     */
+    /** 应用类型，deployments、statefulsets
+     * 
+     * @return appType */
     public String getAppType() {
         return appType;
     }
@@ -154,20 +119,14 @@ public class ShowTriggerResponse extends SdkResponse {
         this.appType = appType;
     }
 
-    
-
     public ShowTriggerResponse withApplication(String application) {
         this.application = application;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名
-     * @return application
-     */
+    /** 应用名
+     * 
+     * @return application */
     public String getApplication() {
         return application;
     }
@@ -176,20 +135,14 @@ public class ShowTriggerResponse extends SdkResponse {
         this.application = application;
     }
 
-    
-
     public ShowTriggerResponse withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
     }
 
-    
-
-
-    /**
-     * 集群ID（cci时为空）
-     * @return clusterId
-     */
+    /** 集群ID（cci时为空）
+     * 
+     * @return clusterId */
     public String getClusterId() {
         return clusterId;
     }
@@ -198,20 +151,14 @@ public class ShowTriggerResponse extends SdkResponse {
         this.clusterId = clusterId;
     }
 
-    
-
     public ShowTriggerResponse withClusterName(String clusterName) {
         this.clusterName = clusterName;
         return this;
     }
 
-    
-
-
-    /**
-     * 集群名（cci时为空）
-     * @return clusterName
-     */
+    /** 集群名（cci时为空）
+     * 
+     * @return clusterName */
     public String getClusterName() {
         return clusterName;
     }
@@ -220,20 +167,14 @@ public class ShowTriggerResponse extends SdkResponse {
         this.clusterName = clusterName;
     }
 
-    
-
     public ShowTriggerResponse withClusterNs(String clusterNs) {
         this.clusterNs = clusterNs;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名所在的namespace
-     * @return clusterNs
-     */
+    /** 应用名所在的namespace
+     * 
+     * @return clusterNs */
     public String getClusterNs() {
         return clusterNs;
     }
@@ -242,20 +183,14 @@ public class ShowTriggerResponse extends SdkResponse {
         this.clusterNs = clusterNs;
     }
 
-    
-
     public ShowTriggerResponse withCondition(String condition) {
         this.condition = condition;
         return this;
     }
 
-    
-
-
-    /**
-     * 触发条件，type为all时为.*,type为tag时为tag名,type为regular时为正则表达式
-     * @return condition
-     */
+    /** 触发条件，type为all时为.*,type为tag时为tag名,type为regular时为正则表达式
+     * 
+     * @return condition */
     public String getCondition() {
         return condition;
     }
@@ -264,20 +199,14 @@ public class ShowTriggerResponse extends SdkResponse {
         this.condition = condition;
     }
 
-    
-
     public ShowTriggerResponse withContainer(String container) {
         this.container = container;
         return this;
     }
 
-    
-
-
-    /**
-     * 需更新的container名，默认为所有container
-     * @return container
-     */
+    /** 需更新的container名，默认为所有container
+     * 
+     * @return container */
     public String getContainer() {
         return container;
     }
@@ -286,20 +215,14 @@ public class ShowTriggerResponse extends SdkResponse {
         this.container = container;
     }
 
-    
-
     public ShowTriggerResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return createdAt
-     */
+    /** 创建时间
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -308,20 +231,14 @@ public class ShowTriggerResponse extends SdkResponse {
         this.createdAt = createdAt;
     }
 
-    
-
     public ShowTriggerResponse withCreatorName(String creatorName) {
         this.creatorName = creatorName;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建人
-     * @return creatorName
-     */
+    /** 创建人
+     * 
+     * @return creatorName */
     public String getCreatorName() {
         return creatorName;
     }
@@ -330,20 +247,14 @@ public class ShowTriggerResponse extends SdkResponse {
         this.creatorName = creatorName;
     }
 
-    
-
     public ShowTriggerResponse withEnable(String enable) {
         this.enable = enable;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否生效
-     * @return enable
-     */
+    /** 是否生效
+     * 
+     * @return enable */
     public String getEnable() {
         return enable;
     }
@@ -352,20 +263,14 @@ public class ShowTriggerResponse extends SdkResponse {
         this.enable = enable;
     }
 
-    
-
     public ShowTriggerResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 触发器名
-     * @return name
-     */
+    /** 触发器名
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -374,16 +279,13 @@ public class ShowTriggerResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowTriggerResponse withTriggerHistory(List<TriggerHistories> triggerHistory) {
         this.triggerHistory = triggerHistory;
         return this;
     }
 
-    
     public ShowTriggerResponse addTriggerHistoryItem(TriggerHistories triggerHistoryItem) {
-        if(this.triggerHistory == null) {
+        if (this.triggerHistory == null) {
             this.triggerHistory = new ArrayList<>();
         }
         this.triggerHistory.add(triggerHistoryItem);
@@ -391,17 +293,16 @@ public class ShowTriggerResponse extends SdkResponse {
     }
 
     public ShowTriggerResponse withTriggerHistory(Consumer<List<TriggerHistories>> triggerHistorySetter) {
-        if(this.triggerHistory == null) {
+        if (this.triggerHistory == null) {
             this.triggerHistory = new ArrayList<>();
         }
         triggerHistorySetter.accept(this.triggerHistory);
         return this;
     }
 
-    /**
-     * 触发器历史
-     * @return triggerHistory
-     */
+    /** 触发器历史
+     * 
+     * @return triggerHistory */
     public List<TriggerHistories> getTriggerHistory() {
         return triggerHistory;
     }
@@ -410,20 +311,14 @@ public class ShowTriggerResponse extends SdkResponse {
         this.triggerHistory = triggerHistory;
     }
 
-    
-
     public ShowTriggerResponse withTriggerMode(String triggerMode) {
         this.triggerMode = triggerMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 触发器类型，cce、cci
-     * @return triggerMode
-     */
+    /** 触发器类型，cce、cci
+     * 
+     * @return triggerMode */
     public String getTriggerMode() {
         return triggerMode;
     }
@@ -432,20 +327,14 @@ public class ShowTriggerResponse extends SdkResponse {
         this.triggerMode = triggerMode;
     }
 
-    
-
     public ShowTriggerResponse withTriggerType(String triggerType) {
         this.triggerType = triggerType;
         return this;
     }
 
-    
-
-
-    /**
-     * 触发条件，all、tag、regular
-     * @return triggerType
-     */
+    /** 触发条件，all、tag、regular
+     * 
+     * @return triggerType */
     public String getTriggerType() {
         return triggerType;
     }
@@ -453,8 +342,6 @@ public class ShowTriggerResponse extends SdkResponse {
     public void setTriggerType(String triggerType) {
         this.triggerType = triggerType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -465,26 +352,42 @@ public class ShowTriggerResponse extends SdkResponse {
             return false;
         }
         ShowTriggerResponse showTriggerResponse = (ShowTriggerResponse) o;
-        return Objects.equals(this.action, showTriggerResponse.action) &&
-            Objects.equals(this.appType, showTriggerResponse.appType) &&
-            Objects.equals(this.application, showTriggerResponse.application) &&
-            Objects.equals(this.clusterId, showTriggerResponse.clusterId) &&
-            Objects.equals(this.clusterName, showTriggerResponse.clusterName) &&
-            Objects.equals(this.clusterNs, showTriggerResponse.clusterNs) &&
-            Objects.equals(this.condition, showTriggerResponse.condition) &&
-            Objects.equals(this.container, showTriggerResponse.container) &&
-            Objects.equals(this.createdAt, showTriggerResponse.createdAt) &&
-            Objects.equals(this.creatorName, showTriggerResponse.creatorName) &&
-            Objects.equals(this.enable, showTriggerResponse.enable) &&
-            Objects.equals(this.name, showTriggerResponse.name) &&
-            Objects.equals(this.triggerHistory, showTriggerResponse.triggerHistory) &&
-            Objects.equals(this.triggerMode, showTriggerResponse.triggerMode) &&
-            Objects.equals(this.triggerType, showTriggerResponse.triggerType);
+        return Objects.equals(this.action, showTriggerResponse.action)
+            && Objects.equals(this.appType, showTriggerResponse.appType)
+            && Objects.equals(this.application, showTriggerResponse.application)
+            && Objects.equals(this.clusterId, showTriggerResponse.clusterId)
+            && Objects.equals(this.clusterName, showTriggerResponse.clusterName)
+            && Objects.equals(this.clusterNs, showTriggerResponse.clusterNs)
+            && Objects.equals(this.condition, showTriggerResponse.condition)
+            && Objects.equals(this.container, showTriggerResponse.container)
+            && Objects.equals(this.createdAt, showTriggerResponse.createdAt)
+            && Objects.equals(this.creatorName, showTriggerResponse.creatorName)
+            && Objects.equals(this.enable, showTriggerResponse.enable)
+            && Objects.equals(this.name, showTriggerResponse.name)
+            && Objects.equals(this.triggerHistory, showTriggerResponse.triggerHistory)
+            && Objects.equals(this.triggerMode, showTriggerResponse.triggerMode)
+            && Objects.equals(this.triggerType, showTriggerResponse.triggerType);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(action, appType, application, clusterId, clusterName, clusterNs, condition, container, createdAt, creatorName, enable, name, triggerHistory, triggerMode, triggerType);
+        return Objects.hash(action,
+            appType,
+            application,
+            clusterId,
+            clusterName,
+            clusterNs,
+            condition,
+            container,
+            createdAt,
+            creatorName,
+            enable,
+            name,
+            triggerHistory,
+            triggerMode,
+            triggerType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -507,16 +410,13 @@ public class ShowTriggerResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

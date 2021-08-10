@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Nameserver
- */
-public class Nameserver  {
-
-
+/** Nameserver */
+public class Nameserver {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hostname")
-    
+    @JsonProperty(value = "hostname")
+
     private String hostname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="priority")
-    
+    @JsonProperty(value = "priority")
+
     private Integer priority;
 
     public Nameserver withHostname(String hostname) {
@@ -34,13 +23,9 @@ public class Nameserver  {
         return this;
     }
 
-    
-
-
-    /**
-     * 主机名。
-     * @return hostname
-     */
+    /** 主机名。
+     * 
+     * @return hostname */
     public String getHostname() {
         return hostname;
     }
@@ -49,20 +34,14 @@ public class Nameserver  {
         this.hostname = hostname;
     }
 
-    
-
     public Nameserver withPriority(Integer priority) {
         this.priority = priority;
         return this;
     }
 
-    
-
-
-    /**
-     * 优先级。
-     * @return priority
-     */
+    /** 优先级。
+     * 
+     * @return priority */
     public Integer getPriority() {
         return priority;
     }
@@ -70,8 +49,6 @@ public class Nameserver  {
     public void setPriority(Integer priority) {
         this.priority = priority;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,14 @@ public class Nameserver  {
             return false;
         }
         Nameserver nameserver = (Nameserver) o;
-        return Objects.equals(this.hostname, nameserver.hostname) &&
-            Objects.equals(this.priority, nameserver.priority);
+        return Objects.equals(this.hostname, nameserver.hostname) && Objects.equals(this.priority, nameserver.priority);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(hostname, priority);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +76,13 @@ public class Nameserver  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

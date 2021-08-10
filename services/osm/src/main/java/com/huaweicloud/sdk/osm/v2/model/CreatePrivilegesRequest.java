@@ -1,45 +1,32 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.osm.v2.model.CreateAndDeletePrivilegeReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreatePrivilegesRequest  {
-
-
+/** Request Object */
+public class CreatePrivilegesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site")
-    
+    @JsonProperty(value = "X-Site")
+
     private Integer xSite;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Time-Zone")
-    
+    @JsonProperty(value = "X-Time-Zone")
+
     private String xTimeZone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private CreateAndDeletePrivilegeReq body;
 
     public CreatePrivilegesRequest withXSite(Integer xSite) {
@@ -47,17 +34,11 @@ public class CreatePrivilegesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 对接站点信息。  0（中国站） 1（国际站），不填的话默认为0。
-     * minimum: 0
-     * maximum: 1
-     * @return xSite
-     */
+    /** 对接站点信息。 0（中国站） 1（国际站），不填的话默认为0。 minimum: 0 maximum: 1
+     * 
+     * @return xSite */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site")
+    @JsonProperty(value = "X-Site")
     public Integer getXSite() {
         return xSite;
     }
@@ -66,22 +47,16 @@ public class CreatePrivilegesRequest  {
         this.xSite = xSite;
     }
 
-    
-
     public CreatePrivilegesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。  会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
-     * @return xLanguage
-     */
+    /** 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。 会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -90,22 +65,16 @@ public class CreatePrivilegesRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public CreatePrivilegesRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。  涉及时间的数据会根据环境时区处理。
-     * @return xTimeZone
-     */
+    /** 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。 涉及时间的数据会根据环境时区处理。
+     * 
+     * @return xTimeZone */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Time-Zone")
+    @JsonProperty(value = "X-Time-Zone")
     public String getXTimeZone() {
         return xTimeZone;
     }
@@ -114,27 +83,23 @@ public class CreatePrivilegesRequest  {
         this.xTimeZone = xTimeZone;
     }
 
-    
-
     public CreatePrivilegesRequest withBody(CreateAndDeletePrivilegeReq body) {
         this.body = body;
         return this;
     }
 
     public CreatePrivilegesRequest withBody(Consumer<CreateAndDeletePrivilegeReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CreateAndDeletePrivilegeReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public CreateAndDeletePrivilegeReq getBody() {
         return body;
     }
@@ -142,8 +107,6 @@ public class CreatePrivilegesRequest  {
     public void setBody(CreateAndDeletePrivilegeReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -154,15 +117,17 @@ public class CreatePrivilegesRequest  {
             return false;
         }
         CreatePrivilegesRequest createPrivilegesRequest = (CreatePrivilegesRequest) o;
-        return Objects.equals(this.xSite, createPrivilegesRequest.xSite) &&
-            Objects.equals(this.xLanguage, createPrivilegesRequest.xLanguage) &&
-            Objects.equals(this.xTimeZone, createPrivilegesRequest.xTimeZone) &&
-            Objects.equals(this.body, createPrivilegesRequest.body);
+        return Objects.equals(this.xSite, createPrivilegesRequest.xSite)
+            && Objects.equals(this.xLanguage, createPrivilegesRequest.xLanguage)
+            && Objects.equals(this.xTimeZone, createPrivilegesRequest.xTimeZone)
+            && Objects.equals(this.body, createPrivilegesRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xSite, xLanguage, xTimeZone, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -174,16 +139,13 @@ public class CreatePrivilegesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

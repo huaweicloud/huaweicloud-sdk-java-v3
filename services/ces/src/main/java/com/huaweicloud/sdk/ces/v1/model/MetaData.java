@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 查询结果元数据信息，包括分页信息等。
- */
-public class MetaData  {
-
-
+/** 查询结果元数据信息，包括分页信息等。 */
+public class MetaData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
+
     private Integer count;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
     public MetaData withCount(Integer count) {
@@ -40,13 +28,9 @@ public class MetaData  {
         return this;
     }
 
-    
-
-
-    /**
-     * 当前返回结果条数。
-     * @return count
-     */
+    /** 当前返回结果条数。
+     * 
+     * @return count */
     public Integer getCount() {
         return count;
     }
@@ -55,20 +39,14 @@ public class MetaData  {
         this.count = count;
     }
 
-    
-
     public MetaData withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * 总条数。
-     * @return total
-     */
+    /** 总条数。
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -77,20 +55,14 @@ public class MetaData  {
         this.total = total;
     }
 
-    
-
     public MetaData withMarker(String marker) {
         this.marker = marker;
         return this;
     }
 
-    
-
-
-    /**
-     * 下一个开始的标记，用于分页。
-     * @return marker
-     */
+    /** 下一个开始的标记，用于分页。
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -98,8 +70,6 @@ public class MetaData  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,15 @@ public class MetaData  {
             return false;
         }
         MetaData metaData = (MetaData) o;
-        return Objects.equals(this.count, metaData.count) &&
-            Objects.equals(this.total, metaData.total) &&
-            Objects.equals(this.marker, metaData.marker);
+        return Objects.equals(this.count, metaData.count) && Objects.equals(this.total, metaData.total)
+            && Objects.equals(this.marker, metaData.marker);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(count, total, marker);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +99,13 @@ public class MetaData  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

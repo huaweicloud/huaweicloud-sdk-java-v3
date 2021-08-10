@@ -1,32 +1,23 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class CloudImageRegionInfo  {
-
-
+public class CloudImageRegionInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_id")
-    
+    @JsonProperty(value = "region_id")
+
     private String regionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_id")
-    
+    @JsonProperty(value = "image_id")
+
     private String imageId;
 
     public CloudImageRegionInfo withRegionId(String regionId) {
@@ -34,13 +25,9 @@ public class CloudImageRegionInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 区域ID
-     * @return regionId
-     */
+    /** 区域ID
+     * 
+     * @return regionId */
     public String getRegionId() {
         return regionId;
     }
@@ -49,20 +36,14 @@ public class CloudImageRegionInfo  {
         this.regionId = regionId;
     }
 
-    
-
     public CloudImageRegionInfo withImageId(String imageId) {
         this.imageId = imageId;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像ID
-     * @return imageId
-     */
+    /** 镜像ID
+     * 
+     * @return imageId */
     public String getImageId() {
         return imageId;
     }
@@ -70,8 +51,6 @@ public class CloudImageRegionInfo  {
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +61,15 @@ public class CloudImageRegionInfo  {
             return false;
         }
         CloudImageRegionInfo cloudImageRegionInfo = (CloudImageRegionInfo) o;
-        return Objects.equals(this.regionId, cloudImageRegionInfo.regionId) &&
-            Objects.equals(this.imageId, cloudImageRegionInfo.imageId);
+        return Objects.equals(this.regionId, cloudImageRegionInfo.regionId)
+            && Objects.equals(this.imageId, cloudImageRegionInfo.imageId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(regionId, imageId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +79,13 @@ public class CloudImageRegionInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

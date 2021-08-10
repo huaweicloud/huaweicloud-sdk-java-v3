@@ -1,51 +1,35 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bss.v2.model.IQueryUserPartnerCouponsResultV2;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListIssuedPartnerCouponsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
-    
+    @JsonProperty(value = "total_count")
+
     private Integer totalCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_coupons")
-    
+    @JsonProperty(value = "user_coupons")
+
     private List<IQueryUserPartnerCouponsResultV2> userCoupons = null;
-    
+
     public ListIssuedPartnerCouponsResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 总数。
-     * @return totalCount
-     */
+    /** 总数。
+     * 
+     * @return totalCount */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -54,34 +38,31 @@ public class ListIssuedPartnerCouponsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
-    
-
     public ListIssuedPartnerCouponsResponse withUserCoupons(List<IQueryUserPartnerCouponsResultV2> userCoupons) {
         this.userCoupons = userCoupons;
         return this;
     }
 
-    
     public ListIssuedPartnerCouponsResponse addUserCouponsItem(IQueryUserPartnerCouponsResultV2 userCouponsItem) {
-        if(this.userCoupons == null) {
+        if (this.userCoupons == null) {
             this.userCoupons = new ArrayList<>();
         }
         this.userCoupons.add(userCouponsItem);
         return this;
     }
 
-    public ListIssuedPartnerCouponsResponse withUserCoupons(Consumer<List<IQueryUserPartnerCouponsResultV2>> userCouponsSetter) {
-        if(this.userCoupons == null) {
+    public ListIssuedPartnerCouponsResponse withUserCoupons(
+        Consumer<List<IQueryUserPartnerCouponsResultV2>> userCouponsSetter) {
+        if (this.userCoupons == null) {
             this.userCoupons = new ArrayList<>();
         }
         userCouponsSetter.accept(this.userCoupons);
         return this;
     }
 
-    /**
-     * 发放的优惠券记录。 具体请参见表2。
-     * @return userCoupons
-     */
+    /** 发放的优惠券记录。 具体请参见表2。
+     * 
+     * @return userCoupons */
     public List<IQueryUserPartnerCouponsResultV2> getUserCoupons() {
         return userCoupons;
     }
@@ -89,8 +70,6 @@ public class ListIssuedPartnerCouponsResponse extends SdkResponse {
     public void setUserCoupons(List<IQueryUserPartnerCouponsResultV2> userCoupons) {
         this.userCoupons = userCoupons;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +80,15 @@ public class ListIssuedPartnerCouponsResponse extends SdkResponse {
             return false;
         }
         ListIssuedPartnerCouponsResponse listIssuedPartnerCouponsResponse = (ListIssuedPartnerCouponsResponse) o;
-        return Objects.equals(this.totalCount, listIssuedPartnerCouponsResponse.totalCount) &&
-            Objects.equals(this.userCoupons, listIssuedPartnerCouponsResponse.userCoupons);
+        return Objects.equals(this.totalCount, listIssuedPartnerCouponsResponse.totalCount)
+            && Objects.equals(this.userCoupons, listIssuedPartnerCouponsResponse.userCoupons);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(totalCount, userCoupons);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +98,13 @@ public class ListIssuedPartnerCouponsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

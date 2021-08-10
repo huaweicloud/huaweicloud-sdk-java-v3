@@ -1,50 +1,32 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ThumbnailPara
- */
-public class ThumbnailPara  {
+/** ThumbnailPara */
+public class ThumbnailPara {
 
-    /**
-     * 采样类型。  取值如下： - \"TIME\"：根据时间间隔采样截图。 - \"DOTS\"：指定时间点截图。 默认值：\"TIME\" 
-     */
+    /** 采样类型。 取值如下： - \"TIME\"：根据时间间隔采样截图。 - \"DOTS\"：指定时间点截图。 默认值：\"TIME\" */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum PERCENT for value: "PERCENT"
-         */
+        /** Enum PERCENT for value: "PERCENT" */
         public static final TypeEnum PERCENT = new TypeEnum("PERCENT");
-        
-        /**
-         * Enum TIME for value: "TIME"
-         */
+
+        /** Enum TIME for value: "TIME" */
         public static final TypeEnum TIME = new TypeEnum("TIME");
-        
-        /**
-         * Enum DOTS for value: "DOTS"
-         */
+
+        /** Enum DOTS for value: "DOTS" */
         public static final TypeEnum DOTS = new TypeEnum("DOTS");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -74,7 +56,7 @@ public class ThumbnailPara  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -85,7 +67,7 @@ public class ThumbnailPara  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -109,174 +91,69 @@ public class ThumbnailPara  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="percent")
-    
-    private Integer percent;
+    @JsonProperty(value = "time")
 
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time")
-    
     private Integer time;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private Integer startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="duration")
-    
+    @JsonProperty(value = "duration")
+
     private Integer duration;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dots")
-    
+    @JsonProperty(value = "dots")
+
     private List<Integer> dots = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output_filename")
-    
+    @JsonProperty(value = "output_filename")
+
     private String outputFilename;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="format")
-    
+    @JsonProperty(value = "format")
+
     private Integer format;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="aspect_ratio")
-    
+    @JsonProperty(value = "aspect_ratio")
+
     private Integer aspectRatio;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="width")
-    
+    @JsonProperty(value = "width")
+
     private Integer width;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="height")
-    
+    @JsonProperty(value = "height")
+
     private Integer height;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_length")
-    
+    @JsonProperty(value = "max_length")
+
     private Integer maxLength;
-    /**
-     * 截图的帧类型 
-     */
-    public static final class FrameTypeEnum {
-
-        
-        /**
-         * Enum INTRA for value: "INTRA"
-         */
-        public static final FrameTypeEnum INTRA = new FrameTypeEnum("INTRA");
-        
-        /**
-         * Enum NORMAL for value: "NORMAL"
-         */
-        public static final FrameTypeEnum NORMAL = new FrameTypeEnum("NORMAL");
-        
-
-        private static final Map<String, FrameTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, FrameTypeEnum> createStaticFields() {
-            Map<String, FrameTypeEnum> map = new HashMap<>();
-            map.put("INTRA", INTRA);
-            map.put("NORMAL", NORMAL);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        FrameTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static FrameTypeEnum fromValue(String value) {
-            if( value == null ){
-                return null;
-            }
-            FrameTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FrameTypeEnum(value);
-            }
-            return result;
-        }
-
-        public static FrameTypeEnum valueOf(String value) {
-            if( value == null ){
-                return null;
-            }
-            FrameTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof FrameTypeEnum) {
-                return this.value.equals(((FrameTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="frame_type")
-    
-    private FrameTypeEnum frameType;
 
     public ThumbnailPara withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 采样类型。  取值如下： - \"TIME\"：根据时间间隔采样截图。 - \"DOTS\"：指定时间点截图。 默认值：\"TIME\" 
-     * @return type
-     */
+    /** 采样类型。 取值如下： - \"TIME\"：根据时间间隔采样截图。 - \"DOTS\"：指定时间点截图。 默认值：\"TIME\"
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -285,46 +162,14 @@ public class ThumbnailPara  {
         this.type = type;
     }
 
-    
-
-    public ThumbnailPara withPercent(Integer percent) {
-        this.percent = percent;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 根据视频时长百分比间隔采样时的百分比值。 
-     * minimum: 0
-     * maximum: 2147483647
-     * @return percent
-     */
-    public Integer getPercent() {
-        return percent;
-    }
-
-    public void setPercent(Integer percent) {
-        this.percent = percent;
-    }
-
-    
-
     public ThumbnailPara withTime(Integer time) {
         this.time = time;
         return this;
     }
 
-    
-
-
-    /**
-     * 采样截图的时间间隔值。  默认值：12。  单位：秒 
-     * minimum: 1
-     * maximum: 100
-     * @return time
-     */
+    /** 采样截图的时间间隔值。 默认值：12。 单位：秒 minimum: 1 maximum: 100
+     * 
+     * @return time */
     public Integer getTime() {
         return time;
     }
@@ -333,22 +178,14 @@ public class ThumbnailPara  {
         this.time = time;
     }
 
-    
-
     public ThumbnailPara withStartTime(Integer startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 采样类型为“TIME”模式的开始时间，和“time”配合使用。  默认值：0。  单位：秒。 
-     * minimum: 0
-     * maximum: 2147483647
-     * @return startTime
-     */
+    /** 采样类型为“TIME”模式的开始时间，和“time”配合使用。 默认值：0。 单位：秒。 minimum: 0 maximum: 2147483647
+     * 
+     * @return startTime */
     public Integer getStartTime() {
         return startTime;
     }
@@ -357,22 +194,16 @@ public class ThumbnailPara  {
         this.startTime = startTime;
     }
 
-    
-
     public ThumbnailPara withDuration(Integer duration) {
         this.duration = duration;
         return this;
     }
 
-    
-
-
-    /**
-     * 采样类型为“TIME”模式的持续时间，和“time”、“start_time”配合使用，表示从视频文件的第“start_time”开始，持续时间为“duration”，每间隔“time”生成一张截图。 取值范围：[数字，ToEND]。“ToEND”表示持续到视频结束。  默认值： ToEND。  单位：秒。 > “duration”必须大于等0，若设置为0，则截图持续时间从“start_time”到视频结束。 
-     * minimum: 0
-     * maximum: 2147483647
-     * @return duration
-     */
+    /** 采样类型为“TIME”模式的持续时间，和“time”、“start_time”配合使用，表示从视频文件的第“start_time”开始，持续时间为“duration”，每间隔“time”生成一张截图。
+     * 取值范围：[数字，ToEND]。“ToEND”表示持续到视频结束。 默认值： ToEND。 单位：秒。 > “duration”必须大于等0，若设置为0，则截图持续时间从“start_time”到视频结束。 minimum:
+     * 0 maximum: 2147483647
+     * 
+     * @return duration */
     public Integer getDuration() {
         return duration;
     }
@@ -381,16 +212,13 @@ public class ThumbnailPara  {
         this.duration = duration;
     }
 
-    
-
     public ThumbnailPara withDots(List<Integer> dots) {
         this.dots = dots;
         return this;
     }
 
-    
     public ThumbnailPara addDotsItem(Integer dotsItem) {
-        if(this.dots == null) {
+        if (this.dots == null) {
             this.dots = new ArrayList<>();
         }
         this.dots.add(dotsItem);
@@ -398,17 +226,16 @@ public class ThumbnailPara  {
     }
 
     public ThumbnailPara withDots(Consumer<List<Integer>> dotsSetter) {
-        if(this.dots == null) {
+        if (this.dots == null) {
             this.dots = new ArrayList<>();
         }
         dotsSetter.accept(this.dots);
         return this;
     }
 
-    /**
-     * 指定时间截图时的时间点数组，最多支持10个。 
-     * @return dots
-     */
+    /** 指定时间截图时的时间点数组，最多支持10个。
+     * 
+     * @return dots */
     public List<Integer> getDots() {
         return dots;
     }
@@ -417,20 +244,16 @@ public class ThumbnailPara  {
         this.dots = dots;
     }
 
-    
-
     public ThumbnailPara withOutputFilename(String outputFilename) {
         this.outputFilename = outputFilename;
         return this;
     }
 
-    
-
-
-    /**
-     * 截图输出文件名。  - 如果只抽一张图（即：按DOTS方式，指定1个时间点）则按该指定文件名输出图片。  - 如果抽多张图（即：按DOTS方式指定多个时间点或按TIME间隔截图）则输出图片名在该指定文件名基础上在增加时间点（示例：output_filename_10.jpg）。  - 如果指定了压缩抽帧图片生成tar包，则tar包按该指定文件名输出。 
-     * @return outputFilename
-     */
+    /** 截图输出文件名。 - 如果只抽一张图（即：按DOTS方式，指定1个时间点）则按该指定文件名输出图片。 -
+     * 如果抽多张图（即：按DOTS方式指定多个时间点或按TIME间隔截图）则输出图片名在该指定文件名基础上在增加时间点（示例：output_filename_10.jpg）。 -
+     * 如果指定了压缩抽帧图片生成tar包，则tar包按该指定文件名输出。
+     * 
+     * @return outputFilename */
     public String getOutputFilename() {
         return outputFilename;
     }
@@ -439,22 +262,14 @@ public class ThumbnailPara  {
         this.outputFilename = outputFilename;
     }
 
-    
-
     public ThumbnailPara withFormat(Integer format) {
         this.format = format;
         return this;
     }
 
-    
-
-
-    /**
-     * 截图文件格式。  取值如下：  1：表示jpg格式 
-     * minimum: 0
-     * maximum: 100
-     * @return format
-     */
+    /** 截图文件格式。 取值如下： 1：表示jpg格式 minimum: 0 maximum: 100
+     * 
+     * @return format */
     public Integer getFormat() {
         return format;
     }
@@ -463,22 +278,14 @@ public class ThumbnailPara  {
         this.format = format;
     }
 
-    
-
     public ThumbnailPara withAspectRatio(Integer aspectRatio) {
         this.aspectRatio = aspectRatio;
         return this;
     }
 
-    
-
-
-    /**
-     * 纵横比。 
-     * minimum: 0
-     * maximum: 2147483647
-     * @return aspectRatio
-     */
+    /** 纵横比。 minimum: 0 maximum: 2147483647
+     * 
+     * @return aspectRatio */
     public Integer getAspectRatio() {
         return aspectRatio;
     }
@@ -487,22 +294,14 @@ public class ThumbnailPara  {
         this.aspectRatio = aspectRatio;
     }
 
-    
-
     public ThumbnailPara withWidth(Integer width) {
         this.width = width;
         return this;
     }
 
-    
-
-
-    /**
-     * 图片宽度  取值范围：(96,3840]  单位：px 
-     * minimum: 0
-     * maximum: 3840
-     * @return width
-     */
+    /** 图片宽度 取值范围：(96,3840] 单位：px minimum: 0 maximum: 3840
+     * 
+     * @return width */
     public Integer getWidth() {
         return width;
     }
@@ -511,22 +310,14 @@ public class ThumbnailPara  {
         this.width = width;
     }
 
-    
-
     public ThumbnailPara withHeight(Integer height) {
         this.height = height;
         return this;
     }
 
-    
-
-
-    /**
-     * 图片高度  取值范围：(96,2160]  单位：px 
-     * minimum: 0
-     * maximum: 2160
-     * @return height
-     */
+    /** 图片高度 取值范围：(96,2160] 单位：px minimum: 0 maximum: 2160
+     * 
+     * @return height */
     public Integer getHeight() {
         return height;
     }
@@ -535,22 +326,16 @@ public class ThumbnailPara  {
         this.height = height;
     }
 
-    
-
     public ThumbnailPara withMaxLength(Integer maxLength) {
         this.maxLength = maxLength;
         return this;
     }
 
-    
-
-
-    /**
-     * 截图最长边的尺寸。宽边尺寸按照该尺寸与原始视频像素等比缩放计算。  取值范围：[240,3840]  默认值：480  单位：像素 > 该参数和width/height选择使用，以width/height优先，若width/height都不等于0，则图片尺寸按width/height得出；反之，则图片尺寸按 max_length 得出。 > 若该参数和width/height都未选择，则取max_length默认为480 
-     * minimum: 0
-     * maximum: 3840
-     * @return maxLength
-     */
+    /** 截图最长边的尺寸。宽边尺寸按照该尺寸与原始视频像素等比缩放计算。 取值范围：[240,3840] 默认值：480 单位：像素 >
+     * 该参数和width/height选择使用，以width/height优先，若width/height都不等于0，则图片尺寸按width/height得出；反之，则图片尺寸按 max_length 得出。 >
+     * 若该参数和width/height都未选择，则取max_length默认为480 minimum: 0 maximum: 3840
+     * 
+     * @return maxLength */
     public Integer getMaxLength() {
         return maxLength;
     }
@@ -558,30 +343,6 @@ public class ThumbnailPara  {
     public void setMaxLength(Integer maxLength) {
         this.maxLength = maxLength;
     }
-
-    
-
-    public ThumbnailPara withFrameType(FrameTypeEnum frameType) {
-        this.frameType = frameType;
-        return this;
-    }
-
-    
-
-
-    /**
-     * 截图的帧类型 
-     * @return frameType
-     */
-    public FrameTypeEnum getFrameType() {
-        return frameType;
-    }
-
-    public void setFrameType(FrameTypeEnum frameType) {
-        this.frameType = frameType;
-    }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -592,30 +353,27 @@ public class ThumbnailPara  {
             return false;
         }
         ThumbnailPara thumbnailPara = (ThumbnailPara) o;
-        return Objects.equals(this.type, thumbnailPara.type) &&
-            Objects.equals(this.percent, thumbnailPara.percent) &&
-            Objects.equals(this.time, thumbnailPara.time) &&
-            Objects.equals(this.startTime, thumbnailPara.startTime) &&
-            Objects.equals(this.duration, thumbnailPara.duration) &&
-            Objects.equals(this.dots, thumbnailPara.dots) &&
-            Objects.equals(this.outputFilename, thumbnailPara.outputFilename) &&
-            Objects.equals(this.format, thumbnailPara.format) &&
-            Objects.equals(this.aspectRatio, thumbnailPara.aspectRatio) &&
-            Objects.equals(this.width, thumbnailPara.width) &&
-            Objects.equals(this.height, thumbnailPara.height) &&
-            Objects.equals(this.maxLength, thumbnailPara.maxLength) &&
-            Objects.equals(this.frameType, thumbnailPara.frameType);
+        return Objects.equals(this.type, thumbnailPara.type) && Objects.equals(this.time, thumbnailPara.time)
+            && Objects.equals(this.startTime, thumbnailPara.startTime)
+            && Objects.equals(this.duration, thumbnailPara.duration) && Objects.equals(this.dots, thumbnailPara.dots)
+            && Objects.equals(this.outputFilename, thumbnailPara.outputFilename)
+            && Objects.equals(this.format, thumbnailPara.format)
+            && Objects.equals(this.aspectRatio, thumbnailPara.aspectRatio)
+            && Objects.equals(this.width, thumbnailPara.width) && Objects.equals(this.height, thumbnailPara.height)
+            && Objects.equals(this.maxLength, thumbnailPara.maxLength);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(type, percent, time, startTime, duration, dots, outputFilename, format, aspectRatio, width, height, maxLength, frameType);
+        return Objects
+            .hash(type, time, startTime, duration, dots, outputFilename, format, aspectRatio, width, height, maxLength);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ThumbnailPara {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    percent: ").append(toIndentedString(percent)).append("\n");
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
@@ -626,20 +384,16 @@ public class ThumbnailPara  {
         sb.append("    width: ").append(toIndentedString(width)).append("\n");
         sb.append("    height: ").append(toIndentedString(height)).append("\n");
         sb.append("    maxLength: ").append(toIndentedString(maxLength)).append("\n");
-        sb.append("    frameType: ").append(toIndentedString(frameType)).append("\n");
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

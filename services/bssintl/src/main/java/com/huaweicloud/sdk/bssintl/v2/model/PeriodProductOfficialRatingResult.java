@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.bssintl.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * PeriodProductOfficialRatingResult
- */
-public class PeriodProductOfficialRatingResult  {
-
-
+/** PeriodProductOfficialRatingResult */
+public class PeriodProductOfficialRatingResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
-    
+    @JsonProperty(value = "product_id")
+
     private String productId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="official_website_amount")
-    
+    @JsonProperty(value = "official_website_amount")
+
     private Double officialWebsiteAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="measure_id")
-    
+    @JsonProperty(value = "measure_id")
+
     private Integer measureId;
 
     public PeriodProductOfficialRatingResult withId(String id) {
@@ -46,13 +33,9 @@ public class PeriodProductOfficialRatingResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：ID标识，来源于请求中的ID| |参数约束及描述：ID标识，来源于请求中的ID|
-     * @return id
-     */
+    /** |参数名称：ID标识，来源于请求中的ID| |参数约束及描述：ID标识，来源于请求中的ID|
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -61,20 +44,14 @@ public class PeriodProductOfficialRatingResult  {
         this.id = id;
     }
 
-    
-
     public PeriodProductOfficialRatingResult withProductId(String productId) {
         this.productId = productId;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：产品ID| |参数约束及描述：产品ID|
-     * @return productId
-     */
+    /** |参数名称：产品ID| |参数约束及描述：产品ID|
+     * 
+     * @return productId */
     public String getProductId() {
         return productId;
     }
@@ -83,20 +60,14 @@ public class PeriodProductOfficialRatingResult  {
         this.productId = productId;
     }
 
-    
-
     public PeriodProductOfficialRatingResult withOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：官网价| |参数约束及描述：官网价|
-     * @return officialWebsiteAmount
-     */
+    /** |参数名称：官网价| |参数约束及描述：官网价|
+     * 
+     * @return officialWebsiteAmount */
     public Double getOfficialWebsiteAmount() {
         return officialWebsiteAmount;
     }
@@ -105,20 +76,14 @@ public class PeriodProductOfficialRatingResult  {
         this.officialWebsiteAmount = officialWebsiteAmount;
     }
 
-    
-
     public PeriodProductOfficialRatingResult withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：度量单位标识1：元|
-     * @return measureId
-     */
+    /** |参数名称：度量单位标识1：元|
+     * 
+     * @return measureId */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -126,8 +91,6 @@ public class PeriodProductOfficialRatingResult  {
     public void setMeasureId(Integer measureId) {
         this.measureId = measureId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class PeriodProductOfficialRatingResult  {
             return false;
         }
         PeriodProductOfficialRatingResult periodProductOfficialRatingResult = (PeriodProductOfficialRatingResult) o;
-        return Objects.equals(this.id, periodProductOfficialRatingResult.id) &&
-            Objects.equals(this.productId, periodProductOfficialRatingResult.productId) &&
-            Objects.equals(this.officialWebsiteAmount, periodProductOfficialRatingResult.officialWebsiteAmount) &&
-            Objects.equals(this.measureId, periodProductOfficialRatingResult.measureId);
+        return Objects.equals(this.id, periodProductOfficialRatingResult.id)
+            && Objects.equals(this.productId, periodProductOfficialRatingResult.productId)
+            && Objects.equals(this.officialWebsiteAmount, periodProductOfficialRatingResult.officialWebsiteAmount)
+            && Objects.equals(this.measureId, periodProductOfficialRatingResult.measureId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, productId, officialWebsiteAmount, measureId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class PeriodProductOfficialRatingResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

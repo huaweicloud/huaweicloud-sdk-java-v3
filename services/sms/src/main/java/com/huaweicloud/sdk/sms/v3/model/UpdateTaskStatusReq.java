@@ -1,67 +1,42 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * This is a auto create Body Object
- */
-public class UpdateTaskStatusReq  {
+/** This is a auto create Body Object */
+public class UpdateTaskStatusReq {
 
-    /**
-     * 操作任务的具体动作
-     */
+    /** 操作任务的具体动作 */
     public static final class OperationEnum {
 
-        
-        /**
-         * Enum START for value: "start"
-         */
+        /** Enum START for value: "start" */
         public static final OperationEnum START = new OperationEnum("start");
-        
-        /**
-         * Enum STOP for value: "stop"
-         */
+
+        /** Enum STOP for value: "stop" */
         public static final OperationEnum STOP = new OperationEnum("stop");
-        
-        /**
-         * Enum COLLECT_LOG for value: "collect_log"
-         */
+
+        /** Enum COLLECT_LOG for value: "collect_log" */
         public static final OperationEnum COLLECT_LOG = new OperationEnum("collect_log");
-        
-        /**
-         * Enum TEST for value: "test"
-         */
+
+        /** Enum TEST for value: "test" */
         public static final OperationEnum TEST = new OperationEnum("test");
-        
-        /**
-         * Enum CLONE_TEST for value: "clone_test"
-         */
+
+        /** Enum CLONE_TEST for value: "clone_test" */
         public static final OperationEnum CLONE_TEST = new OperationEnum("clone_test");
-        
-        /**
-         * Enum RESTART for value: "restart"
-         */
+
+        /** Enum RESTART for value: "restart" */
         public static final OperationEnum RESTART = new OperationEnum("restart");
-        
-        /**
-         * Enum SYNC_FAILED_ROLLBACK for value: "sync_failed_rollback"
-         */
+
+        /** Enum SYNC_FAILED_ROLLBACK for value: "sync_failed_rollback" */
         public static final OperationEnum SYNC_FAILED_ROLLBACK = new OperationEnum("sync_failed_rollback");
-        
 
         private static final Map<String, OperationEnum> STATIC_FIELDS = createStaticFields();
 
@@ -95,7 +70,7 @@ public class UpdateTaskStatusReq  {
 
         @JsonCreator
         public static OperationEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OperationEnum result = STATIC_FIELDS.get(value);
@@ -106,7 +81,7 @@ public class UpdateTaskStatusReq  {
         }
 
         public static OperationEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OperationEnum result = STATIC_FIELDS.get(value);
@@ -130,30 +105,24 @@ public class UpdateTaskStatusReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operation")
-    
+    @JsonProperty(value = "operation")
+
     private OperationEnum operation;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="param")
-    
+    @JsonProperty(value = "param")
+
     private Map<String, String> param = null;
-    
+
     public UpdateTaskStatusReq withOperation(OperationEnum operation) {
         this.operation = operation;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作任务的具体动作
-     * @return operation
-     */
+    /** 操作任务的具体动作
+     * 
+     * @return operation */
     public OperationEnum getOperation() {
         return operation;
     }
@@ -162,17 +131,13 @@ public class UpdateTaskStatusReq  {
         this.operation = operation;
     }
 
-    
-
     public UpdateTaskStatusReq withParam(Map<String, String> param) {
         this.param = param;
         return this;
     }
 
-    
-
     public UpdateTaskStatusReq putParamItem(String key, String paramItem) {
-        if(this.param == null) {
+        if (this.param == null) {
             this.param = new HashMap<>();
         }
         this.param.put(key, paramItem);
@@ -180,16 +145,16 @@ public class UpdateTaskStatusReq  {
     }
 
     public UpdateTaskStatusReq withParam(Consumer<Map<String, String>> paramSetter) {
-        if(this.param == null) {
+        if (this.param == null) {
             this.param = new HashMap<>();
         }
         paramSetter.accept(this.param);
         return this;
     }
-    /**
-     * 操作参数
-     * @return param
-     */
+
+    /** 操作参数
+     * 
+     * @return param */
     public Map<String, String> getParam() {
         return param;
     }
@@ -197,8 +162,6 @@ public class UpdateTaskStatusReq  {
     public void setParam(Map<String, String> param) {
         this.param = param;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -209,13 +172,15 @@ public class UpdateTaskStatusReq  {
             return false;
         }
         UpdateTaskStatusReq updateTaskStatusReq = (UpdateTaskStatusReq) o;
-        return Objects.equals(this.operation, updateTaskStatusReq.operation) &&
-            Objects.equals(this.param, updateTaskStatusReq.param);
+        return Objects.equals(this.operation, updateTaskStatusReq.operation)
+            && Objects.equals(this.param, updateTaskStatusReq.param);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(operation, param);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -225,16 +190,13 @@ public class UpdateTaskStatusReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,45 +1,32 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.HookCreate;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateHookRequest  {
-
-
+/** Request Object */
+public class CreateHookRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Repo-Auth")
-    
+    @JsonProperty(value = "X-Repo-Auth")
+
     private String xRepoAuth;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
+
     private String namespace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project")
-    
+    @JsonProperty(value = "project")
+
     private String project;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private HookCreate body;
 
     public CreateHookRequest withXRepoAuth(String xRepoAuth) {
@@ -47,15 +34,11 @@ public class CreateHookRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 授权名称。
-     * @return xRepoAuth
-     */
+    /** 授权名称。
+     * 
+     * @return xRepoAuth */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Repo-Auth")
+    @JsonProperty(value = "X-Repo-Auth")
     public String getXRepoAuth() {
         return xRepoAuth;
     }
@@ -64,20 +47,14 @@ public class CreateHookRequest  {
         this.xRepoAuth = xRepoAuth;
     }
 
-    
-
     public CreateHookRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
     }
 
-    
-
-
-    /**
-     * 组织ID。
-     * @return namespace
-     */
+    /** 组织ID。
+     * 
+     * @return namespace */
     public String getNamespace() {
         return namespace;
     }
@@ -86,20 +63,14 @@ public class CreateHookRequest  {
         this.namespace = namespace;
     }
 
-    
-
     public CreateHookRequest withProject(String project) {
         this.project = project;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
-     * @return project
-     */
+    /** 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
+     * 
+     * @return project */
     public String getProject() {
         return project;
     }
@@ -108,27 +79,23 @@ public class CreateHookRequest  {
         this.project = project;
     }
 
-    
-
     public CreateHookRequest withBody(HookCreate body) {
         this.body = body;
         return this;
     }
 
     public CreateHookRequest withBody(Consumer<HookCreate> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new HookCreate();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public HookCreate getBody() {
         return body;
     }
@@ -136,8 +103,6 @@ public class CreateHookRequest  {
     public void setBody(HookCreate body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -148,15 +113,17 @@ public class CreateHookRequest  {
             return false;
         }
         CreateHookRequest createHookRequest = (CreateHookRequest) o;
-        return Objects.equals(this.xRepoAuth, createHookRequest.xRepoAuth) &&
-            Objects.equals(this.namespace, createHookRequest.namespace) &&
-            Objects.equals(this.project, createHookRequest.project) &&
-            Objects.equals(this.body, createHookRequest.body);
+        return Objects.equals(this.xRepoAuth, createHookRequest.xRepoAuth)
+            && Objects.equals(this.namespace, createHookRequest.namespace)
+            && Objects.equals(this.project, createHookRequest.project)
+            && Objects.equals(this.body, createHookRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xRepoAuth, namespace, project, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -168,16 +135,13 @@ public class CreateHookRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

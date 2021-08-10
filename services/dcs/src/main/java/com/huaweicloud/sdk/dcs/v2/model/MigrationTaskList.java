@@ -1,67 +1,42 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 查询迁移任务列表
- */
-public class MigrationTaskList  {
-
-
+/** 查询迁移任务列表 */
+public class MigrationTaskList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
+    @JsonProperty(value = "task_id")
+
     private String taskId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_name")
-    
+    @JsonProperty(value = "task_name")
+
     private String taskName;
-    /**
-     * 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED
-     */
+
+    /** 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum SUCCESS for value: "SUCCESS"
-         */
+        /** Enum SUCCESS for value: "SUCCESS" */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
-        
-        /**
-         * Enum FAILED for value: "FAILED"
-         */
+
+        /** Enum FAILED for value: "FAILED" */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
-        
-        /**
-         * Enum MIGRATING for value: "MIGRATING"
-         */
+
+        /** Enum MIGRATING for value: "MIGRATING" */
         public static final StatusEnum MIGRATING = new StatusEnum("MIGRATING");
-        
-        /**
-         * Enum TERMINATED for value: "TERMINATED"
-         */
+
+        /** Enum TERMINATED for value: "TERMINATED" */
         public static final StatusEnum TERMINATED = new StatusEnum("TERMINATED");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -92,7 +67,7 @@ public class MigrationTaskList  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -103,7 +78,7 @@ public class MigrationTaskList  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -127,27 +102,19 @@ public class MigrationTaskList  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
-    /**
-     * 迁移任务类型,包括备份文件导入和在线迁移两种类型。
-     */
+
+    /** 迁移任务类型,包括备份文件导入和在线迁移两种类型。 */
     public static final class MigrationTypeEnum {
 
-        
-        /**
-         * Enum BACKUPFILE_IMPORT for value: "backupfile_import"
-         */
+        /** Enum BACKUPFILE_IMPORT for value: "backupfile_import" */
         public static final MigrationTypeEnum BACKUPFILE_IMPORT = new MigrationTypeEnum("backupfile_import");
-        
-        /**
-         * Enum ONLINE_MIGRATION for value: "online_migration"
-         */
+
+        /** Enum ONLINE_MIGRATION for value: "online_migration" */
         public static final MigrationTypeEnum ONLINE_MIGRATION = new MigrationTypeEnum("online_migration");
-        
 
         private static final Map<String, MigrationTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -176,7 +143,7 @@ public class MigrationTaskList  {
 
         @JsonCreator
         public static MigrationTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MigrationTypeEnum result = STATIC_FIELDS.get(value);
@@ -187,7 +154,7 @@ public class MigrationTaskList  {
         }
 
         public static MigrationTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MigrationTypeEnum result = STATIC_FIELDS.get(value);
@@ -211,27 +178,21 @@ public class MigrationTaskList  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="migration_type")
-    
+    @JsonProperty(value = "migration_type")
+
     private MigrationTypeEnum migrationType;
-    /**
-     * 迁移方式，包括全量迁移和增量迁移两种类型。
-     */
+
+    /** 迁移方式，包括全量迁移和增量迁移两种类型。 */
     public static final class MigrationMethodEnum {
 
-        
-        /**
-         * Enum FULL_AMOUNT_MIGRATION for value: "full_amount_migration"
-         */
-        public static final MigrationMethodEnum FULL_AMOUNT_MIGRATION = new MigrationMethodEnum("full_amount_migration");
-        
-        /**
-         * Enum INCREMENTAL_MIGRATION for value: "incremental_migration"
-         */
-        public static final MigrationMethodEnum INCREMENTAL_MIGRATION = new MigrationMethodEnum("incremental_migration");
-        
+        /** Enum FULL_AMOUNT_MIGRATION for value: "full_amount_migration" */
+        public static final MigrationMethodEnum FULL_AMOUNT_MIGRATION =
+            new MigrationMethodEnum("full_amount_migration");
+
+        /** Enum INCREMENTAL_MIGRATION for value: "incremental_migration" */
+        public static final MigrationMethodEnum INCREMENTAL_MIGRATION =
+            new MigrationMethodEnum("incremental_migration");
 
         private static final Map<String, MigrationMethodEnum> STATIC_FIELDS = createStaticFields();
 
@@ -260,7 +221,7 @@ public class MigrationTaskList  {
 
         @JsonCreator
         public static MigrationMethodEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MigrationMethodEnum result = STATIC_FIELDS.get(value);
@@ -271,7 +232,7 @@ public class MigrationTaskList  {
         }
 
         public static MigrationMethodEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MigrationMethodEnum result = STATIC_FIELDS.get(value);
@@ -295,28 +256,24 @@ public class MigrationTaskList  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="migration_method")
-    
+    @JsonProperty(value = "migration_method")
+
     private MigrationMethodEnum migrationMethod;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target_instance_name")
-    
+    @JsonProperty(value = "target_instance_name")
+
     private String targetInstanceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_source")
-    
+    @JsonProperty(value = "data_source")
+
     private String dataSource;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
     public MigrationTaskList withTaskId(String taskId) {
@@ -324,13 +281,9 @@ public class MigrationTaskList  {
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移任务ID。
-     * @return taskId
-     */
+    /** 迁移任务ID。
+     * 
+     * @return taskId */
     public String getTaskId() {
         return taskId;
     }
@@ -339,20 +292,14 @@ public class MigrationTaskList  {
         this.taskId = taskId;
     }
 
-    
-
     public MigrationTaskList withTaskName(String taskName) {
         this.taskName = taskName;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移任务名称。
-     * @return taskName
-     */
+    /** 迁移任务名称。
+     * 
+     * @return taskName */
     public String getTaskName() {
         return taskName;
     }
@@ -361,20 +308,14 @@ public class MigrationTaskList  {
         this.taskName = taskName;
     }
 
-    
-
     public MigrationTaskList withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED
-     * @return status
-     */
+    /** 迁移任务状态，这个字段的值包括：SUCCESS, FAILED, MIGRATING，TERMINATED
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -383,20 +324,14 @@ public class MigrationTaskList  {
         this.status = status;
     }
 
-    
-
     public MigrationTaskList withMigrationType(MigrationTypeEnum migrationType) {
         this.migrationType = migrationType;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移任务类型,包括备份文件导入和在线迁移两种类型。
-     * @return migrationType
-     */
+    /** 迁移任务类型,包括备份文件导入和在线迁移两种类型。
+     * 
+     * @return migrationType */
     public MigrationTypeEnum getMigrationType() {
         return migrationType;
     }
@@ -405,20 +340,14 @@ public class MigrationTaskList  {
         this.migrationType = migrationType;
     }
 
-    
-
     public MigrationTaskList withMigrationMethod(MigrationMethodEnum migrationMethod) {
         this.migrationMethod = migrationMethod;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移方式，包括全量迁移和增量迁移两种类型。
-     * @return migrationMethod
-     */
+    /** 迁移方式，包括全量迁移和增量迁移两种类型。
+     * 
+     * @return migrationMethod */
     public MigrationMethodEnum getMigrationMethod() {
         return migrationMethod;
     }
@@ -427,20 +356,14 @@ public class MigrationTaskList  {
         this.migrationMethod = migrationMethod;
     }
 
-    
-
     public MigrationTaskList withTargetInstanceName(String targetInstanceName) {
         this.targetInstanceName = targetInstanceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标实例名称。
-     * @return targetInstanceName
-     */
+    /** 目标实例名称。
+     * 
+     * @return targetInstanceName */
     public String getTargetInstanceName() {
         return targetInstanceName;
     }
@@ -449,20 +372,14 @@ public class MigrationTaskList  {
         this.targetInstanceName = targetInstanceName;
     }
 
-    
-
     public MigrationTaskList withDataSource(String dataSource) {
         this.dataSource = dataSource;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据源，格式为ip:port或者桶名。
-     * @return dataSource
-     */
+    /** 数据源，格式为ip:port或者桶名。
+     * 
+     * @return dataSource */
     public String getDataSource() {
         return dataSource;
     }
@@ -471,20 +388,14 @@ public class MigrationTaskList  {
         this.dataSource = dataSource;
     }
 
-    
-
     public MigrationTaskList withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移任务创建时间
-     * @return createdAt
-     */
+    /** 迁移任务创建时间
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -492,8 +403,6 @@ public class MigrationTaskList  {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -504,19 +413,22 @@ public class MigrationTaskList  {
             return false;
         }
         MigrationTaskList migrationTaskList = (MigrationTaskList) o;
-        return Objects.equals(this.taskId, migrationTaskList.taskId) &&
-            Objects.equals(this.taskName, migrationTaskList.taskName) &&
-            Objects.equals(this.status, migrationTaskList.status) &&
-            Objects.equals(this.migrationType, migrationTaskList.migrationType) &&
-            Objects.equals(this.migrationMethod, migrationTaskList.migrationMethod) &&
-            Objects.equals(this.targetInstanceName, migrationTaskList.targetInstanceName) &&
-            Objects.equals(this.dataSource, migrationTaskList.dataSource) &&
-            Objects.equals(this.createdAt, migrationTaskList.createdAt);
+        return Objects.equals(this.taskId, migrationTaskList.taskId)
+            && Objects.equals(this.taskName, migrationTaskList.taskName)
+            && Objects.equals(this.status, migrationTaskList.status)
+            && Objects.equals(this.migrationType, migrationTaskList.migrationType)
+            && Objects.equals(this.migrationMethod, migrationTaskList.migrationMethod)
+            && Objects.equals(this.targetInstanceName, migrationTaskList.targetInstanceName)
+            && Objects.equals(this.dataSource, migrationTaskList.dataSource)
+            && Objects.equals(this.createdAt, migrationTaskList.createdAt);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, taskName, status, migrationType, migrationMethod, targetInstanceName, dataSource, createdAt);
+        return Objects
+            .hash(taskId, taskName, status, migrationType, migrationMethod, targetInstanceName, dataSource, createdAt);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -532,16 +444,13 @@ public class MigrationTaskList  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

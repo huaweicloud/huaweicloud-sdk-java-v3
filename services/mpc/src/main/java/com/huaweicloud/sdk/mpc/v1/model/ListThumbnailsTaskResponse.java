@@ -1,43 +1,30 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.ThumbTask;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListThumbnailsTaskResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_array")
-    
+    @JsonProperty(value = "task_array")
+
     private List<ThumbTask> taskArray = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_truncated")
-    
+    @JsonProperty(value = "is_truncated")
+
     private Integer isTruncated;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
     public ListThumbnailsTaskResponse withTaskArray(List<ThumbTask> taskArray) {
@@ -45,9 +32,8 @@ public class ListThumbnailsTaskResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListThumbnailsTaskResponse addTaskArrayItem(ThumbTask taskArrayItem) {
-        if(this.taskArray == null) {
+        if (this.taskArray == null) {
             this.taskArray = new ArrayList<>();
         }
         this.taskArray.add(taskArrayItem);
@@ -55,17 +41,16 @@ public class ListThumbnailsTaskResponse extends SdkResponse {
     }
 
     public ListThumbnailsTaskResponse withTaskArray(Consumer<List<ThumbTask>> taskArraySetter) {
-        if(this.taskArray == null) {
+        if (this.taskArray == null) {
             this.taskArray = new ArrayList<>();
         }
         taskArraySetter.accept(this.taskArray);
         return this;
     }
 
-    /**
-     * 截图任务组
-     * @return taskArray
-     */
+    /** 截图任务组
+     * 
+     * @return taskArray */
     public List<ThumbTask> getTaskArray() {
         return taskArray;
     }
@@ -74,22 +59,14 @@ public class ListThumbnailsTaskResponse extends SdkResponse {
         this.taskArray = taskArray;
     }
 
-    
-
     public ListThumbnailsTaskResponse withIsTruncated(Integer isTruncated) {
         this.isTruncated = isTruncated;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询结果是否被截取。 - 1代表被截取，即还有结果未被返回，可以通过设置page和size参数继续查询。 - 0代表未被截取，即所有结果已被返回。 
-     * minimum: 0
-     * maximum: 1
-     * @return isTruncated
-     */
+    /** 查询结果是否被截取。 - 1代表被截取，即还有结果未被返回，可以通过设置page和size参数继续查询。 - 0代表未被截取，即所有结果已被返回。 minimum: 0 maximum: 1
+     * 
+     * @return isTruncated */
     public Integer getIsTruncated() {
         return isTruncated;
     }
@@ -98,22 +75,14 @@ public class ListThumbnailsTaskResponse extends SdkResponse {
         this.isTruncated = isTruncated;
     }
 
-    
-
     public ListThumbnailsTaskResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询结果的数量。 
-     * minimum: 0
-     * maximum: 2147483647
-     * @return total
-     */
+    /** 查询结果的数量。 minimum: 0 maximum: 2147483647
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -121,8 +90,6 @@ public class ListThumbnailsTaskResponse extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -133,14 +100,16 @@ public class ListThumbnailsTaskResponse extends SdkResponse {
             return false;
         }
         ListThumbnailsTaskResponse listThumbnailsTaskResponse = (ListThumbnailsTaskResponse) o;
-        return Objects.equals(this.taskArray, listThumbnailsTaskResponse.taskArray) &&
-            Objects.equals(this.isTruncated, listThumbnailsTaskResponse.isTruncated) &&
-            Objects.equals(this.total, listThumbnailsTaskResponse.total);
+        return Objects.equals(this.taskArray, listThumbnailsTaskResponse.taskArray)
+            && Objects.equals(this.isTruncated, listThumbnailsTaskResponse.isTruncated)
+            && Objects.equals(this.total, listThumbnailsTaskResponse.total);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(taskArray, isTruncated, total);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -151,16 +120,13 @@ public class ListThumbnailsTaskResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.InstanceRequest;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateAddonInstanceRequest  {
-
-
+/** Request Object */
+public class UpdateAddonInstanceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private InstanceRequest body;
 
     public UpdateAddonInstanceRequest withId(String id) {
@@ -35,13 +24,9 @@ public class UpdateAddonInstanceRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 插件实例id
-     * @return id
-     */
+    /** 插件实例id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -50,27 +35,23 @@ public class UpdateAddonInstanceRequest  {
         this.id = id;
     }
 
-    
-
     public UpdateAddonInstanceRequest withBody(InstanceRequest body) {
         this.body = body;
         return this;
     }
 
     public UpdateAddonInstanceRequest withBody(Consumer<InstanceRequest> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new InstanceRequest();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public InstanceRequest getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdateAddonInstanceRequest  {
     public void setBody(InstanceRequest body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdateAddonInstanceRequest  {
             return false;
         }
         UpdateAddonInstanceRequest updateAddonInstanceRequest = (UpdateAddonInstanceRequest) o;
-        return Objects.equals(this.id, updateAddonInstanceRequest.id) &&
-            Objects.equals(this.body, updateAddonInstanceRequest.body);
+        return Objects.equals(this.id, updateAddonInstanceRequest.id)
+            && Objects.equals(this.body, updateAddonInstanceRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdateAddonInstanceRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

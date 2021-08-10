@@ -23,25 +23,20 @@ package com.huaweicloud.sdk.core.utils;
 
 import java.util.Locale;
 
-/**
- * Utilities for encoding and decoding binary data to and from different forms.
+/** Utilities for encoding and decoding binary data to and from different forms.
  *
- * @author HuaweiCloud_SDK
- */
+ * @author HuaweiCloud_SDK */
 public final class BinaryUtils {
-    /**
-     * The utility class should hide the public constructor
-     */
+
+    /** The utility class should hide the public constructor */
     private BinaryUtils() {
 
     }
 
-    /**
-     * Converts byte data to a Hex-encoded string.
+    /** Converts byte data to a Hex-encoded string.
      *
      * @param data data to hex encode.
-     * @return hex-encoded string.
-     */
+     * @return hex-encoded string. */
     public static String toHex(byte[] data) {
         final int capacityTimes = 2;
         final int hexLength = 8;

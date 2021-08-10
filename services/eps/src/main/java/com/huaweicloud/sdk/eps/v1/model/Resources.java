@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.eps.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 资源列表
- */
-public class Resources  {
-
-
+/** 资源列表 */
+public class Resources {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_name")
-    
+    @JsonProperty(value = "project_name")
+
     private String projectName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_detail")
-    
+    @JsonProperty(value = "resource_detail")
+
     private Object resourceDetail;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
+    @JsonProperty(value = "resource_id")
+
     private String resourceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_name")
-    
+    @JsonProperty(value = "resource_name")
+
     private String resourceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type")
-    
+    @JsonProperty(value = "resource_type")
+
     private String resourceType;
 
     public Resources withEnterpriseProjectId(String enterpriseProjectId) {
@@ -64,13 +48,9 @@ public class Resources  {
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -79,20 +59,14 @@ public class Resources  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public Resources withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * ProjectID
-     * @return projectId
-     */
+    /** ProjectID
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -101,20 +75,14 @@ public class Resources  {
         this.projectId = projectId;
     }
 
-    
-
     public Resources withProjectName(String projectName) {
         this.projectName = projectName;
         return this;
     }
 
-    
-
-
-    /**
-     * Project名称
-     * @return projectName
-     */
+    /** Project名称
+     * 
+     * @return projectName */
     public String getProjectName() {
         return projectName;
     }
@@ -123,20 +91,14 @@ public class Resources  {
         this.projectName = projectName;
     }
 
-    
-
     public Resources withResourceDetail(Object resourceDetail) {
         this.resourceDetail = resourceDetail;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源详情
-     * @return resourceDetail
-     */
+    /** 资源详情
+     * 
+     * @return resourceDetail */
     public Object getResourceDetail() {
         return resourceDetail;
     }
@@ -145,20 +107,14 @@ public class Resources  {
         this.resourceDetail = resourceDetail;
     }
 
-    
-
     public Resources withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源ID
-     * @return resourceId
-     */
+    /** 资源ID
+     * 
+     * @return resourceId */
     public String getResourceId() {
         return resourceId;
     }
@@ -167,20 +123,14 @@ public class Resources  {
         this.resourceId = resourceId;
     }
 
-    
-
     public Resources withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源名称
-     * @return resourceName
-     */
+    /** 资源名称
+     * 
+     * @return resourceName */
     public String getResourceName() {
         return resourceName;
     }
@@ -189,20 +139,14 @@ public class Resources  {
         this.resourceName = resourceName;
     }
 
-    
-
     public Resources withResourceType(String resourceType) {
         this.resourceType = resourceType;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源类型
-     * @return resourceType
-     */
+    /** 资源类型
+     * 
+     * @return resourceType */
     public String getResourceType() {
         return resourceType;
     }
@@ -210,8 +154,6 @@ public class Resources  {
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -222,18 +164,21 @@ public class Resources  {
             return false;
         }
         Resources resources = (Resources) o;
-        return Objects.equals(this.enterpriseProjectId, resources.enterpriseProjectId) &&
-            Objects.equals(this.projectId, resources.projectId) &&
-            Objects.equals(this.projectName, resources.projectName) &&
-            Objects.equals(this.resourceDetail, resources.resourceDetail) &&
-            Objects.equals(this.resourceId, resources.resourceId) &&
-            Objects.equals(this.resourceName, resources.resourceName) &&
-            Objects.equals(this.resourceType, resources.resourceType);
+        return Objects.equals(this.enterpriseProjectId, resources.enterpriseProjectId)
+            && Objects.equals(this.projectId, resources.projectId)
+            && Objects.equals(this.projectName, resources.projectName)
+            && Objects.equals(this.resourceDetail, resources.resourceDetail)
+            && Objects.equals(this.resourceId, resources.resourceId)
+            && Objects.equals(this.resourceName, resources.resourceName)
+            && Objects.equals(this.resourceType, resources.resourceType);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, projectId, projectName, resourceDetail, resourceId, resourceName, resourceType);
+        return Objects
+            .hash(enterpriseProjectId, projectId, projectName, resourceDetail, resourceId, resourceName, resourceType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,16 +193,13 @@ public class Resources  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

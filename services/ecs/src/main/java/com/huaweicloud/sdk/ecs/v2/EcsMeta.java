@@ -6,49 +6,44 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.ecs.v2.model.*;
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class EcsMeta {
 
-    public static final HttpRequestDef<AddServerGroupMemberRequest, AddServerGroupMemberResponse> addServerGroupMember = genForaddServerGroupMember();
+    public static final HttpRequestDef<AddServerGroupMemberRequest, AddServerGroupMemberResponse> addServerGroupMember =
+        genForaddServerGroupMember();
 
     private static HttpRequestDef<AddServerGroupMemberRequest, AddServerGroupMemberResponse> genForaddServerGroupMember() {
         // basic
-        HttpRequestDef.Builder<AddServerGroupMemberRequest, AddServerGroupMemberResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, AddServerGroupMemberRequest.class, AddServerGroupMemberResponse.class)
-                .withName("AddServerGroupMember")
-                .withUri("/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}/action")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<AddServerGroupMemberRequest, AddServerGroupMemberResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AddServerGroupMemberRequest.class, AddServerGroupMemberResponse.class)
+            .withName("AddServerGroupMember")
+            .withUri("/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}/action")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("server_group_id",
+        builder.<String>withRequestField("server_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AddServerGroupMemberRequest::getServerGroupId, (req, v) -> {
                 req.setServerGroupId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<AddServerGroupMemberRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            AddServerGroupMemberRequestBody.class,
+            TypeCasts.uncheckedConversion(AddServerGroupMemberRequestBody.class),
             f -> f.withMarshaller(AddServerGroupMemberRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AttachServerVolumeRequest, AttachServerVolumeResponse> attachServerVolume = genForattachServerVolume();
+    public static final HttpRequestDef<AttachServerVolumeRequest, AttachServerVolumeResponse> attachServerVolume =
+        genForattachServerVolume();
 
     private static HttpRequestDef<AttachServerVolumeRequest, AttachServerVolumeResponse> genForattachServerVolume() {
         // basic
@@ -59,31 +54,28 @@ public class EcsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AttachServerVolumeRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<AttachServerVolumeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            AttachServerVolumeRequestBody.class,
+            TypeCasts.uncheckedConversion(AttachServerVolumeRequestBody.class),
             f -> f.withMarshaller(AttachServerVolumeRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchAddServerNicsRequest, BatchAddServerNicsResponse> batchAddServerNics = genForbatchAddServerNics();
+    public static final HttpRequestDef<BatchAddServerNicsRequest, BatchAddServerNicsResponse> batchAddServerNics =
+        genForbatchAddServerNics();
 
     private static HttpRequestDef<BatchAddServerNicsRequest, BatchAddServerNicsResponse> genForbatchAddServerNics() {
         // basic
@@ -94,136 +86,124 @@ public class EcsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchAddServerNicsRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<BatchAddServerNicsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchAddServerNicsRequestBody.class,
+            TypeCasts.uncheckedConversion(BatchAddServerNicsRequestBody.class),
             f -> f.withMarshaller(BatchAddServerNicsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchCreateServerTagsRequest, BatchCreateServerTagsResponse> batchCreateServerTags = genForbatchCreateServerTags();
+    public static final HttpRequestDef<BatchCreateServerTagsRequest, BatchCreateServerTagsResponse> batchCreateServerTags =
+        genForbatchCreateServerTags();
 
     private static HttpRequestDef<BatchCreateServerTagsRequest, BatchCreateServerTagsResponse> genForbatchCreateServerTags() {
         // basic
-        HttpRequestDef.Builder<BatchCreateServerTagsRequest, BatchCreateServerTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchCreateServerTagsRequest.class, BatchCreateServerTagsResponse.class)
-                .withName("BatchCreateServerTags")
-                .withUri("/v1/{project_id}/cloudservers/{server_id}/tags/action")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<BatchCreateServerTagsRequest, BatchCreateServerTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchCreateServerTagsRequest.class, BatchCreateServerTagsResponse.class)
+            .withName("BatchCreateServerTags")
+            .withUri("/v1/{project_id}/cloudservers/{server_id}/tags/action")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchCreateServerTagsRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<BatchCreateServerTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchCreateServerTagsRequestBody.class,
+            TypeCasts.uncheckedConversion(BatchCreateServerTagsRequestBody.class),
             f -> f.withMarshaller(BatchCreateServerTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchDeleteServerNicsRequest, BatchDeleteServerNicsResponse> batchDeleteServerNics = genForbatchDeleteServerNics();
+    public static final HttpRequestDef<BatchDeleteServerNicsRequest, BatchDeleteServerNicsResponse> batchDeleteServerNics =
+        genForbatchDeleteServerNics();
 
     private static HttpRequestDef<BatchDeleteServerNicsRequest, BatchDeleteServerNicsResponse> genForbatchDeleteServerNics() {
         // basic
-        HttpRequestDef.Builder<BatchDeleteServerNicsRequest, BatchDeleteServerNicsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteServerNicsRequest.class, BatchDeleteServerNicsResponse.class)
-                .withName("BatchDeleteServerNics")
-                .withUri("/v1/{project_id}/cloudservers/{server_id}/nics/delete")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<BatchDeleteServerNicsRequest, BatchDeleteServerNicsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDeleteServerNicsRequest.class, BatchDeleteServerNicsResponse.class)
+            .withName("BatchDeleteServerNics")
+            .withUri("/v1/{project_id}/cloudservers/{server_id}/nics/delete")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchDeleteServerNicsRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<BatchDeleteServerNicsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchDeleteServerNicsRequestBody.class,
+            TypeCasts.uncheckedConversion(BatchDeleteServerNicsRequestBody.class),
             f -> f.withMarshaller(BatchDeleteServerNicsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchDeleteServerTagsRequest, BatchDeleteServerTagsResponse> batchDeleteServerTags = genForbatchDeleteServerTags();
+    public static final HttpRequestDef<BatchDeleteServerTagsRequest, BatchDeleteServerTagsResponse> batchDeleteServerTags =
+        genForbatchDeleteServerTags();
 
     private static HttpRequestDef<BatchDeleteServerTagsRequest, BatchDeleteServerTagsResponse> genForbatchDeleteServerTags() {
         // basic
-        HttpRequestDef.Builder<BatchDeleteServerTagsRequest, BatchDeleteServerTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteServerTagsRequest.class, BatchDeleteServerTagsResponse.class)
-                .withName("BatchDeleteServerTags")
-                .withUri("/v1/{project_id}/cloudservers/{server_id}/tags/action")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<BatchDeleteServerTagsRequest, BatchDeleteServerTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDeleteServerTagsRequest.class, BatchDeleteServerTagsResponse.class)
+            .withName("BatchDeleteServerTags")
+            .withUri("/v1/{project_id}/cloudservers/{server_id}/tags/action")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchDeleteServerTagsRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<BatchDeleteServerTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchDeleteServerTagsRequestBody.class,
+            TypeCasts.uncheckedConversion(BatchDeleteServerTagsRequestBody.class),
             f -> f.withMarshaller(BatchDeleteServerTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchRebootServersRequest, BatchRebootServersResponse> batchRebootServers = genForbatchRebootServers();
+    public static final HttpRequestDef<BatchRebootServersRequest, BatchRebootServersResponse> batchRebootServers =
+        genForbatchRebootServers();
 
     private static HttpRequestDef<BatchRebootServersRequest, BatchRebootServersResponse> genForbatchRebootServers() {
         // basic
@@ -234,23 +214,21 @@ public class EcsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<BatchRebootServersRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchRebootServersRequestBody.class,
+            TypeCasts.uncheckedConversion(BatchRebootServersRequestBody.class),
             f -> f.withMarshaller(BatchRebootServersRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchStartServersRequest, BatchStartServersResponse> batchStartServers = genForbatchStartServers();
+    public static final HttpRequestDef<BatchStartServersRequest, BatchStartServersResponse> batchStartServers =
+        genForbatchStartServers();
 
     private static HttpRequestDef<BatchStartServersRequest, BatchStartServersResponse> genForbatchStartServers() {
         // basic
@@ -261,23 +239,21 @@ public class EcsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<BatchStartServersRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchStartServersRequestBody.class,
+            TypeCasts.uncheckedConversion(BatchStartServersRequestBody.class),
             f -> f.withMarshaller(BatchStartServersRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchStopServersRequest, BatchStopServersResponse> batchStopServers = genForbatchStopServers();
+    public static final HttpRequestDef<BatchStopServersRequest, BatchStopServersResponse> batchStopServers =
+        genForbatchStopServers();
 
     private static HttpRequestDef<BatchStopServersRequest, BatchStopServersResponse> genForbatchStopServers() {
         // basic
@@ -288,85 +264,81 @@ public class EcsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<BatchStopServersRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchStopServersRequestBody.class,
+            TypeCasts.uncheckedConversion(BatchStopServersRequestBody.class),
             f -> f.withMarshaller(BatchStopServersRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ChangeServerOsWithCloudInitRequest, ChangeServerOsWithCloudInitResponse> changeServerOsWithCloudInit = genForchangeServerOsWithCloudInit();
+    public static final HttpRequestDef<ChangeServerOsWithCloudInitRequest, ChangeServerOsWithCloudInitResponse> changeServerOsWithCloudInit =
+        genForchangeServerOsWithCloudInit();
 
     private static HttpRequestDef<ChangeServerOsWithCloudInitRequest, ChangeServerOsWithCloudInitResponse> genForchangeServerOsWithCloudInit() {
         // basic
         HttpRequestDef.Builder<ChangeServerOsWithCloudInitRequest, ChangeServerOsWithCloudInitResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ChangeServerOsWithCloudInitRequest.class, ChangeServerOsWithCloudInitResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ChangeServerOsWithCloudInitRequest.class,
+                    ChangeServerOsWithCloudInitResponse.class)
                 .withName("ChangeServerOsWithCloudInit")
                 .withUri("/v2/{project_id}/cloudservers/{server_id}/changeos")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ChangeServerOsWithCloudInitRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ChangeServerOsWithCloudInitRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ChangeServerOsWithCloudInitRequestBody.class,
+            TypeCasts.uncheckedConversion(ChangeServerOsWithCloudInitRequestBody.class),
             f -> f.withMarshaller(ChangeServerOsWithCloudInitRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreatePostPaidServersRequest, CreatePostPaidServersResponse> createPostPaidServers = genForcreatePostPaidServers();
+    public static final HttpRequestDef<CreatePostPaidServersRequest, CreatePostPaidServersResponse> createPostPaidServers =
+        genForcreatePostPaidServers();
 
     private static HttpRequestDef<CreatePostPaidServersRequest, CreatePostPaidServersResponse> genForcreatePostPaidServers() {
         // basic
-        HttpRequestDef.Builder<CreatePostPaidServersRequest, CreatePostPaidServersResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreatePostPaidServersRequest.class, CreatePostPaidServersResponse.class)
-                .withName("CreatePostPaidServers")
-                .withUri("/v1/{project_id}/cloudservers")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<CreatePostPaidServersRequest, CreatePostPaidServersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreatePostPaidServersRequest.class, CreatePostPaidServersResponse.class)
+            .withName("CreatePostPaidServers")
+            .withUri("/v1/{project_id}/cloudservers")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreatePostPaidServersRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreatePostPaidServersRequestBody.class,
+            TypeCasts.uncheckedConversion(CreatePostPaidServersRequestBody.class),
             f -> f.withMarshaller(CreatePostPaidServersRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateServerGroupRequest, CreateServerGroupResponse> createServerGroup = genForcreateServerGroup();
+    public static final HttpRequestDef<CreateServerGroupRequest, CreateServerGroupResponse> createServerGroup =
+        genForcreateServerGroup();
 
     private static HttpRequestDef<CreateServerGroupRequest, CreateServerGroupResponse> genForcreateServerGroup() {
         // basic
@@ -377,23 +349,21 @@ public class EcsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateServerGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateServerGroupRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateServerGroupRequestBody.class),
             f -> f.withMarshaller(CreateServerGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateServersRequest, CreateServersResponse> createServers = genForcreateServers();
+    public static final HttpRequestDef<CreateServersRequest, CreateServersResponse> createServers =
+        genForcreateServers();
 
     private static HttpRequestDef<CreateServersRequest, CreateServersResponse> genForcreateServers() {
         // basic
@@ -404,23 +374,21 @@ public class EcsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateServersRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateServersRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateServersRequestBody.class),
             f -> f.withMarshaller(CreateServersRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteServerGroupRequest, DeleteServerGroupResponse> deleteServerGroup = genFordeleteServerGroup();
+    public static final HttpRequestDef<DeleteServerGroupRequest, DeleteServerGroupResponse> deleteServerGroup =
+        genFordeleteServerGroup();
 
     private static HttpRequestDef<DeleteServerGroupRequest, DeleteServerGroupResponse> genFordeleteServerGroup() {
         // basic
@@ -431,93 +399,85 @@ public class EcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("server_group_id",
+        builder.<String>withRequestField("server_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteServerGroupRequest::getServerGroupId, (req, v) -> {
                 req.setServerGroupId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteServerGroupMemberRequest, DeleteServerGroupMemberResponse> deleteServerGroupMember = genFordeleteServerGroupMember();
+    public static final HttpRequestDef<DeleteServerGroupMemberRequest, DeleteServerGroupMemberResponse> deleteServerGroupMember =
+        genFordeleteServerGroupMember();
 
     private static HttpRequestDef<DeleteServerGroupMemberRequest, DeleteServerGroupMemberResponse> genFordeleteServerGroupMember() {
         // basic
-        HttpRequestDef.Builder<DeleteServerGroupMemberRequest, DeleteServerGroupMemberResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, DeleteServerGroupMemberRequest.class, DeleteServerGroupMemberResponse.class)
-                .withName("DeleteServerGroupMember")
-                .withUri("/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}/action")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<DeleteServerGroupMemberRequest, DeleteServerGroupMemberResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DeleteServerGroupMemberRequest.class, DeleteServerGroupMemberResponse.class)
+            .withName("DeleteServerGroupMember")
+            .withUri("/v1/{project_id}/cloudservers/os-server-groups/{server_group_id}/action")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("server_group_id",
+        builder.<String>withRequestField("server_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteServerGroupMemberRequest::getServerGroupId, (req, v) -> {
                 req.setServerGroupId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<DeleteServerGroupMemberRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DeleteServerGroupMemberRequestBody.class,
+            TypeCasts.uncheckedConversion(DeleteServerGroupMemberRequestBody.class),
             f -> f.withMarshaller(DeleteServerGroupMemberRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteServerMetadataRequest, DeleteServerMetadataResponse> deleteServerMetadata = genFordeleteServerMetadata();
+    public static final HttpRequestDef<DeleteServerMetadataRequest, DeleteServerMetadataResponse> deleteServerMetadata =
+        genFordeleteServerMetadata();
 
     private static HttpRequestDef<DeleteServerMetadataRequest, DeleteServerMetadataResponse> genFordeleteServerMetadata() {
         // basic
-        HttpRequestDef.Builder<DeleteServerMetadataRequest, DeleteServerMetadataResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteServerMetadataRequest.class, DeleteServerMetadataResponse.class)
-                .withName("DeleteServerMetadata")
-                .withUri("/v1/{project_id}/cloudservers/{server_id}/metadata/{key}")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<DeleteServerMetadataRequest, DeleteServerMetadataResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteServerMetadataRequest.class, DeleteServerMetadataResponse.class)
+            .withName("DeleteServerMetadata")
+            .withUri("/v1/{project_id}/cloudservers/{server_id}/metadata/{key}")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("key",
+        builder.<String>withRequestField("key",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteServerMetadataRequest::getKey, (req, v) -> {
                 req.setKey(v);
-            })
-        );
-        builder.withRequestField("server_id",
+            }));
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteServerMetadataRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteServersRequest, DeleteServersResponse> deleteServers = genFordeleteServers();
+    public static final HttpRequestDef<DeleteServersRequest, DeleteServersResponse> deleteServers =
+        genFordeleteServers();
 
     private static HttpRequestDef<DeleteServersRequest, DeleteServersResponse> genFordeleteServers() {
         // basic
@@ -528,23 +488,21 @@ public class EcsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<DeleteServersRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DeleteServersRequestBody.class,
+            TypeCasts.uncheckedConversion(DeleteServersRequestBody.class),
             f -> f.withMarshaller(DeleteServersRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DetachServerVolumeRequest, DetachServerVolumeResponse> detachServerVolume = genFordetachServerVolume();
+    public static final HttpRequestDef<DetachServerVolumeRequest, DetachServerVolumeResponse> detachServerVolume =
+        genFordetachServerVolume();
 
     private static HttpRequestDef<DetachServerVolumeRequest, DetachServerVolumeResponse> genFordetachServerVolume() {
         // basic
@@ -555,34 +513,29 @@ public class EcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DetachServerVolumeRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
-        builder.withRequestField("volume_id",
+            }));
+        builder.<String>withRequestField("volume_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DetachServerVolumeRequest::getVolumeId, (req, v) -> {
                 req.setVolumeId(v);
-            })
-        );
-        builder.withRequestField("delete_flag",
+            }));
+        builder.<DetachServerVolumeRequest.DeleteFlagEnum>withRequestField("delete_flag",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            DetachServerVolumeRequest.DeleteFlagEnum.class,
+            TypeCasts.uncheckedConversion(DetachServerVolumeRequest.DeleteFlagEnum.class),
             f -> f.withMarshaller(DetachServerVolumeRequest::getDeleteFlag, (req, v) -> {
                 req.setDeleteFlag(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -598,23 +551,21 @@ public class EcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("availability_zone",
+        builder.<String>withRequestField("availability_zone",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlavorsRequest::getAvailabilityZone, (req, v) -> {
                 req.setAvailabilityZone(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListResizeFlavorsRequest, ListResizeFlavorsResponse> listResizeFlavors = genForlistResizeFlavors();
+    public static final HttpRequestDef<ListResizeFlavorsRequest, ListResizeFlavorsResponse> listResizeFlavors =
+        genForlistResizeFlavors();
 
     private static HttpRequestDef<ListResizeFlavorsRequest, ListResizeFlavorsResponse> genForlistResizeFlavors() {
         // basic
@@ -625,98 +576,88 @@ public class EcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_uuid",
+        builder.<String>withRequestField("instance_uuid",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResizeFlavorsRequest::getInstanceUuid, (req, v) -> {
                 req.setInstanceUuid(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListResizeFlavorsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResizeFlavorsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("sort_dir",
+            }));
+        builder.<ListResizeFlavorsRequest.SortDirEnum>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListResizeFlavorsRequest.SortDirEnum.class,
+            TypeCasts.uncheckedConversion(ListResizeFlavorsRequest.SortDirEnum.class),
             f -> f.withMarshaller(ListResizeFlavorsRequest::getSortDir, (req, v) -> {
                 req.setSortDir(v);
-            })
-        );
-        builder.withRequestField("sort_key",
+            }));
+        builder.<ListResizeFlavorsRequest.SortKeyEnum>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListResizeFlavorsRequest.SortKeyEnum.class,
+            TypeCasts.uncheckedConversion(ListResizeFlavorsRequest.SortKeyEnum.class),
             f -> f.withMarshaller(ListResizeFlavorsRequest::getSortKey, (req, v) -> {
                 req.setSortKey(v);
-            })
-        );
-        builder.withRequestField("source_flavor_id",
+            }));
+        builder.<String>withRequestField("source_flavor_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResizeFlavorsRequest::getSourceFlavorId, (req, v) -> {
                 req.setSourceFlavorId(v);
-            })
-        );
-        builder.withRequestField("source_flavor_name",
+            }));
+        builder.<String>withRequestField("source_flavor_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResizeFlavorsRequest::getSourceFlavorName, (req, v) -> {
                 req.setSourceFlavorName(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListServerBlockDevicesRequest, ListServerBlockDevicesResponse> listServerBlockDevices = genForlistServerBlockDevices();
+    public static final HttpRequestDef<ListServerBlockDevicesRequest, ListServerBlockDevicesResponse> listServerBlockDevices =
+        genForlistServerBlockDevices();
 
     private static HttpRequestDef<ListServerBlockDevicesRequest, ListServerBlockDevicesResponse> genForlistServerBlockDevices() {
         // basic
-        HttpRequestDef.Builder<ListServerBlockDevicesRequest, ListServerBlockDevicesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListServerBlockDevicesRequest.class, ListServerBlockDevicesResponse.class)
-                .withName("ListServerBlockDevices")
-                .withUri("/v1/{project_id}/cloudservers/{server_id}/block_device")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ListServerBlockDevicesRequest, ListServerBlockDevicesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListServerBlockDevicesRequest.class, ListServerBlockDevicesResponse.class)
+            .withName("ListServerBlockDevices")
+            .withUri("/v1/{project_id}/cloudservers/{server_id}/block_device")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServerBlockDevicesRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListServerGroupsRequest, ListServerGroupsResponse> listServerGroups = genForlistServerGroups();
+    public static final HttpRequestDef<ListServerGroupsRequest, ListServerGroupsResponse> listServerGroups =
+        genForlistServerGroups();
 
     private static HttpRequestDef<ListServerGroupsRequest, ListServerGroupsResponse> genForlistServerGroups() {
         // basic
@@ -727,58 +668,53 @@ public class EcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListServerGroupsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServerGroupsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListServerInterfacesRequest, ListServerInterfacesResponse> listServerInterfaces = genForlistServerInterfaces();
+    public static final HttpRequestDef<ListServerInterfacesRequest, ListServerInterfacesResponse> listServerInterfaces =
+        genForlistServerInterfaces();
 
     private static HttpRequestDef<ListServerInterfacesRequest, ListServerInterfacesResponse> genForlistServerInterfaces() {
         // basic
-        HttpRequestDef.Builder<ListServerInterfacesRequest, ListServerInterfacesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListServerInterfacesRequest.class, ListServerInterfacesResponse.class)
-                .withName("ListServerInterfaces")
-                .withUri("/v1/{project_id}/cloudservers/{server_id}/os-interface")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ListServerInterfacesRequest, ListServerInterfacesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListServerInterfacesRequest.class, ListServerInterfacesResponse.class)
+            .withName("ListServerInterfaces")
+            .withUri("/v1/{project_id}/cloudservers/{server_id}/os-interface")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServerInterfacesRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListServersDetailsRequest, ListServersDetailsResponse> listServersDetails = genForlistServersDetails();
+    public static final HttpRequestDef<ListServersDetailsRequest, ListServersDetailsResponse> listServersDetails =
+        genForlistServersDetails();
 
     private static HttpRequestDef<ListServersDetailsRequest, ListServersDetailsResponse> genForlistServersDetails() {
         // basic
@@ -789,130 +725,119 @@ public class EcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("enterprise_project_id",
+        builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServersDetailsRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
-            })
-        );
-        builder.withRequestField("flavor",
+            }));
+        builder.<String>withRequestField("flavor",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServersDetailsRequest::getFlavor, (req, v) -> {
                 req.setFlavor(v);
-            })
-        );
-        builder.withRequestField("ip",
+            }));
+        builder.<String>withRequestField("ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServersDetailsRequest::getIp, (req, v) -> {
                 req.setIp(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListServersDetailsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServersDetailsRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("not-tags",
+            }));
+        builder.<String>withRequestField("not-tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServersDetailsRequest::getNotTags, (req, v) -> {
                 req.setNotTags(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListServersDetailsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("reservation_id",
+            }));
+        builder.<String>withRequestField("reservation_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServersDetailsRequest::getReservationId, (req, v) -> {
                 req.setReservationId(v);
-            })
-        );
-        builder.withRequestField("status",
+            }));
+        builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServersDetailsRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
-            })
-        );
-        builder.withRequestField("tags",
+            }));
+        builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServersDetailsRequest::getTags, (req, v) -> {
                 req.setTags(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NovaAssociateSecurityGroupRequest, NovaAssociateSecurityGroupResponse> novaAssociateSecurityGroup = genFornovaAssociateSecurityGroup();
+    public static final HttpRequestDef<NovaAssociateSecurityGroupRequest, NovaAssociateSecurityGroupResponse> novaAssociateSecurityGroup =
+        genFornovaAssociateSecurityGroup();
 
     private static HttpRequestDef<NovaAssociateSecurityGroupRequest, NovaAssociateSecurityGroupResponse> genFornovaAssociateSecurityGroup() {
         // basic
         HttpRequestDef.Builder<NovaAssociateSecurityGroupRequest, NovaAssociateSecurityGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, NovaAssociateSecurityGroupRequest.class, NovaAssociateSecurityGroupResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    NovaAssociateSecurityGroupRequest.class,
+                    NovaAssociateSecurityGroupResponse.class)
                 .withName("NovaAssociateSecurityGroup")
                 .withUri("/v2.1/{project_id}/servers/{server_id}/action")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaAssociateSecurityGroupRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<NovaAssociateSecurityGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            NovaAssociateSecurityGroupRequestBody.class,
+            TypeCasts.uncheckedConversion(NovaAssociateSecurityGroupRequestBody.class),
             f -> f.withMarshaller(NovaAssociateSecurityGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NovaCreateKeypairRequest, NovaCreateKeypairResponse> novaCreateKeypair = genFornovaCreateKeypair();
+    public static final HttpRequestDef<NovaCreateKeypairRequest, NovaCreateKeypairResponse> novaCreateKeypair =
+        genFornovaCreateKeypair();
 
     private static HttpRequestDef<NovaCreateKeypairRequest, NovaCreateKeypairResponse> genFornovaCreateKeypair() {
         // basic
@@ -923,31 +848,28 @@ public class EcsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("OpenStack-API-Version",
+        builder.<String>withRequestField("OpenStack-API-Version",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaCreateKeypairRequest::getOpenStackAPIVersion, (req, v) -> {
                 req.setOpenStackAPIVersion(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<NovaCreateKeypairRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            NovaCreateKeypairRequestBody.class,
+            TypeCasts.uncheckedConversion(NovaCreateKeypairRequestBody.class),
             f -> f.withMarshaller(NovaCreateKeypairRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NovaCreateServersRequest, NovaCreateServersResponse> novaCreateServers = genFornovaCreateServers();
+    public static final HttpRequestDef<NovaCreateServersRequest, NovaCreateServersResponse> novaCreateServers =
+        genFornovaCreateServers();
 
     private static HttpRequestDef<NovaCreateServersRequest, NovaCreateServersResponse> genFornovaCreateServers() {
         // basic
@@ -958,31 +880,28 @@ public class EcsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("OpenStack-API-Version",
+        builder.<String>withRequestField("OpenStack-API-Version",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaCreateServersRequest::getOpenStackAPIVersion, (req, v) -> {
                 req.setOpenStackAPIVersion(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<NovaCreateServersRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            NovaCreateServersRequestBody.class,
+            TypeCasts.uncheckedConversion(NovaCreateServersRequestBody.class),
             f -> f.withMarshaller(NovaCreateServersRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NovaDeleteKeypairRequest, NovaDeleteKeypairResponse> novaDeleteKeypair = genFornovaDeleteKeypair();
+    public static final HttpRequestDef<NovaDeleteKeypairRequest, NovaDeleteKeypairResponse> novaDeleteKeypair =
+        genFornovaDeleteKeypair();
 
     private static HttpRequestDef<NovaDeleteKeypairRequest, NovaDeleteKeypairResponse> genFornovaDeleteKeypair() {
         // basic
@@ -993,23 +912,21 @@ public class EcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("keypair_name",
+        builder.<String>withRequestField("keypair_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaDeleteKeypairRequest::getKeypairName, (req, v) -> {
                 req.setKeypairName(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NovaDeleteServerRequest, NovaDeleteServerResponse> novaDeleteServer = genFornovaDeleteServer();
+    public static final HttpRequestDef<NovaDeleteServerRequest, NovaDeleteServerResponse> novaDeleteServer =
+        genFornovaDeleteServer();
 
     private static HttpRequestDef<NovaDeleteServerRequest, NovaDeleteServerResponse> genFornovaDeleteServer() {
         // basic
@@ -1020,63 +937,64 @@ public class EcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaDeleteServerRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NovaDisassociateSecurityGroupRequest, NovaDisassociateSecurityGroupResponse> novaDisassociateSecurityGroup = genFornovaDisassociateSecurityGroup();
+    public static final HttpRequestDef<NovaDisassociateSecurityGroupRequest, NovaDisassociateSecurityGroupResponse> novaDisassociateSecurityGroup =
+        genFornovaDisassociateSecurityGroup();
 
     private static HttpRequestDef<NovaDisassociateSecurityGroupRequest, NovaDisassociateSecurityGroupResponse> genFornovaDisassociateSecurityGroup() {
         // basic
         HttpRequestDef.Builder<NovaDisassociateSecurityGroupRequest, NovaDisassociateSecurityGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, NovaDisassociateSecurityGroupRequest.class, NovaDisassociateSecurityGroupResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    NovaDisassociateSecurityGroupRequest.class,
+                    NovaDisassociateSecurityGroupResponse.class)
                 .withName("NovaDisassociateSecurityGroup")
                 .withUri("/v2.1/{project_id}/servers/{server_id}/action")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaDisassociateSecurityGroupRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<NovaDisassociateSecurityGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            NovaDisassociateSecurityGroupRequestBody.class,
+            TypeCasts.uncheckedConversion(NovaDisassociateSecurityGroupRequestBody.class),
             f -> f.withMarshaller(NovaDisassociateSecurityGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NovaListAvailabilityZonesRequest, NovaListAvailabilityZonesResponse> novaListAvailabilityZones = genFornovaListAvailabilityZones();
+    public static final HttpRequestDef<NovaListAvailabilityZonesRequest, NovaListAvailabilityZonesResponse> novaListAvailabilityZones =
+        genFornovaListAvailabilityZones();
 
     private static HttpRequestDef<NovaListAvailabilityZonesRequest, NovaListAvailabilityZonesResponse> genFornovaListAvailabilityZones() {
         // basic
         HttpRequestDef.Builder<NovaListAvailabilityZonesRequest, NovaListAvailabilityZonesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, NovaListAvailabilityZonesRequest.class, NovaListAvailabilityZonesResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    NovaListAvailabilityZonesRequest.class,
+                    NovaListAvailabilityZonesResponse.class)
                 .withName("NovaListAvailabilityZones")
                 .withUri("/v2.1/{project_id}/os-availability-zone")
                 .withContentType("application/json");
@@ -1084,13 +1002,12 @@ public class EcsMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NovaListKeypairsRequest, NovaListKeypairsResponse> novaListKeypairs = genFornovaListKeypairs();
+    public static final HttpRequestDef<NovaListKeypairsRequest, NovaListKeypairsResponse> novaListKeypairs =
+        genFornovaListKeypairs();
 
     private static HttpRequestDef<NovaListKeypairsRequest, NovaListKeypairsResponse> genFornovaListKeypairs() {
         // basic
@@ -1101,189 +1018,172 @@ public class EcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(NovaListKeypairsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaListKeypairsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("OpenStack-API-Version",
+            }));
+        builder.<String>withRequestField("OpenStack-API-Version",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaListKeypairsRequest::getOpenStackAPIVersion, (req, v) -> {
                 req.setOpenStackAPIVersion(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NovaListServerSecurityGroupsRequest, NovaListServerSecurityGroupsResponse> novaListServerSecurityGroups = genFornovaListServerSecurityGroups();
+    public static final HttpRequestDef<NovaListServerSecurityGroupsRequest, NovaListServerSecurityGroupsResponse> novaListServerSecurityGroups =
+        genFornovaListServerSecurityGroups();
 
     private static HttpRequestDef<NovaListServerSecurityGroupsRequest, NovaListServerSecurityGroupsResponse> genFornovaListServerSecurityGroups() {
         // basic
         HttpRequestDef.Builder<NovaListServerSecurityGroupsRequest, NovaListServerSecurityGroupsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, NovaListServerSecurityGroupsRequest.class, NovaListServerSecurityGroupsResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    NovaListServerSecurityGroupsRequest.class,
+                    NovaListServerSecurityGroupsResponse.class)
                 .withName("NovaListServerSecurityGroups")
                 .withUri("/v2.1/{project_id}/servers/{server_id}/os-security-groups")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaListServerSecurityGroupsRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NovaListServersDetailsRequest, NovaListServersDetailsResponse> novaListServersDetails = genFornovaListServersDetails();
+    public static final HttpRequestDef<NovaListServersDetailsRequest, NovaListServersDetailsResponse> novaListServersDetails =
+        genFornovaListServersDetails();
 
     private static HttpRequestDef<NovaListServersDetailsRequest, NovaListServersDetailsResponse> genFornovaListServersDetails() {
         // basic
-        HttpRequestDef.Builder<NovaListServersDetailsRequest, NovaListServersDetailsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, NovaListServersDetailsRequest.class, NovaListServersDetailsResponse.class)
-                .withName("NovaListServersDetails")
-                .withUri("/v2.1/{project_id}/servers/detail")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<NovaListServersDetailsRequest, NovaListServersDetailsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, NovaListServersDetailsRequest.class, NovaListServersDetailsResponse.class)
+            .withName("NovaListServersDetails")
+            .withUri("/v2.1/{project_id}/servers/detail")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("changes-since",
+        builder.<String>withRequestField("changes-since",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaListServersDetailsRequest::getChangesSince, (req, v) -> {
                 req.setChangesSince(v);
-            })
-        );
-        builder.withRequestField("flavor",
+            }));
+        builder.<String>withRequestField("flavor",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaListServersDetailsRequest::getFlavor, (req, v) -> {
                 req.setFlavor(v);
-            })
-        );
-        builder.withRequestField("image",
+            }));
+        builder.<String>withRequestField("image",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaListServersDetailsRequest::getImage, (req, v) -> {
                 req.setImage(v);
-            })
-        );
-        builder.withRequestField("ip",
+            }));
+        builder.<String>withRequestField("ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaListServersDetailsRequest::getIp, (req, v) -> {
                 req.setIp(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(NovaListServersDetailsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaListServersDetailsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaListServersDetailsRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("not-tags",
+            }));
+        builder.<String>withRequestField("not-tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaListServersDetailsRequest::getNotTags, (req, v) -> {
                 req.setNotTags(v);
-            })
-        );
-        builder.withRequestField("reservation_id",
+            }));
+        builder.<String>withRequestField("reservation_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaListServersDetailsRequest::getReservationId, (req, v) -> {
                 req.setReservationId(v);
-            })
-        );
-        builder.withRequestField("sort_key",
+            }));
+        builder.<NovaListServersDetailsRequest.SortKeyEnum>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            NovaListServersDetailsRequest.SortKeyEnum.class,
+            TypeCasts.uncheckedConversion(NovaListServersDetailsRequest.SortKeyEnum.class),
             f -> f.withMarshaller(NovaListServersDetailsRequest::getSortKey, (req, v) -> {
                 req.setSortKey(v);
-            })
-        );
-        builder.withRequestField("status",
+            }));
+        builder.<NovaListServersDetailsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            NovaListServersDetailsRequest.StatusEnum.class,
+            TypeCasts.uncheckedConversion(NovaListServersDetailsRequest.StatusEnum.class),
             f -> f.withMarshaller(NovaListServersDetailsRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
-            })
-        );
-        builder.withRequestField("tags",
+            }));
+        builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaListServersDetailsRequest::getTags, (req, v) -> {
                 req.setTags(v);
-            })
-        );
-        builder.withRequestField("OpenStack-API-Version",
+            }));
+        builder.<String>withRequestField("OpenStack-API-Version",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaListServersDetailsRequest::getOpenStackAPIVersion, (req, v) -> {
                 req.setOpenStackAPIVersion(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NovaShowKeypairRequest, NovaShowKeypairResponse> novaShowKeypair = genFornovaShowKeypair();
+    public static final HttpRequestDef<NovaShowKeypairRequest, NovaShowKeypairResponse> novaShowKeypair =
+        genFornovaShowKeypair();
 
     private static HttpRequestDef<NovaShowKeypairRequest, NovaShowKeypairResponse> genFornovaShowKeypair() {
         // basic
@@ -1294,31 +1194,28 @@ public class EcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("keypair_name",
+        builder.<String>withRequestField("keypair_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaShowKeypairRequest::getKeypairName, (req, v) -> {
                 req.setKeypairName(v);
-            })
-        );
-        builder.withRequestField("OpenStack-API-Version",
+            }));
+        builder.<String>withRequestField("OpenStack-API-Version",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaShowKeypairRequest::getOpenStackAPIVersion, (req, v) -> {
                 req.setOpenStackAPIVersion(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NovaShowServerRequest, NovaShowServerResponse> novaShowServer = genFornovaShowServer();
+    public static final HttpRequestDef<NovaShowServerRequest, NovaShowServerResponse> novaShowServer =
+        genFornovaShowServer();
 
     private static HttpRequestDef<NovaShowServerRequest, NovaShowServerResponse> genFornovaShowServer() {
         // basic
@@ -1329,66 +1226,63 @@ public class EcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaShowServerRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
-        builder.withRequestField("OpenStack-API-Version",
+            }));
+        builder.<String>withRequestField("OpenStack-API-Version",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaShowServerRequest::getOpenStackAPIVersion, (req, v) -> {
                 req.setOpenStackAPIVersion(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ReinstallServerWithCloudInitRequest, ReinstallServerWithCloudInitResponse> reinstallServerWithCloudInit = genForreinstallServerWithCloudInit();
+    public static final HttpRequestDef<ReinstallServerWithCloudInitRequest, ReinstallServerWithCloudInitResponse> reinstallServerWithCloudInit =
+        genForreinstallServerWithCloudInit();
 
     private static HttpRequestDef<ReinstallServerWithCloudInitRequest, ReinstallServerWithCloudInitResponse> genForreinstallServerWithCloudInit() {
         // basic
         HttpRequestDef.Builder<ReinstallServerWithCloudInitRequest, ReinstallServerWithCloudInitResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ReinstallServerWithCloudInitRequest.class, ReinstallServerWithCloudInitResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ReinstallServerWithCloudInitRequest.class,
+                    ReinstallServerWithCloudInitResponse.class)
                 .withName("ReinstallServerWithCloudInit")
                 .withUri("/v2/{project_id}/cloudservers/{server_id}/reinstallos")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ReinstallServerWithCloudInitRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ReinstallServerWithCloudInitRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ReinstallServerWithCloudInitRequestBody.class,
+            TypeCasts.uncheckedConversion(ReinstallServerWithCloudInitRequestBody.class),
             f -> f.withMarshaller(ReinstallServerWithCloudInitRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResetServerPasswordRequest, ResetServerPasswordResponse> resetServerPassword = genForresetServerPassword();
+    public static final HttpRequestDef<ResetServerPasswordRequest, ResetServerPasswordResponse> resetServerPassword =
+        genForresetServerPassword();
 
     private static HttpRequestDef<ResetServerPasswordRequest, ResetServerPasswordResponse> genForresetServerPassword() {
         // basic
@@ -1399,61 +1293,54 @@ public class EcsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResetServerPasswordRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ResetServerPasswordRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ResetServerPasswordRequestBody.class,
+            TypeCasts.uncheckedConversion(ResetServerPasswordRequestBody.class),
             f -> f.withMarshaller(ResetServerPasswordRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResizePostPaidServerRequest, ResizePostPaidServerResponse> resizePostPaidServer = genForresizePostPaidServer();
+    public static final HttpRequestDef<ResizePostPaidServerRequest, ResizePostPaidServerResponse> resizePostPaidServer =
+        genForresizePostPaidServer();
 
     private static HttpRequestDef<ResizePostPaidServerRequest, ResizePostPaidServerResponse> genForresizePostPaidServer() {
         // basic
-        HttpRequestDef.Builder<ResizePostPaidServerRequest, ResizePostPaidServerResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ResizePostPaidServerRequest.class, ResizePostPaidServerResponse.class)
-                .withName("ResizePostPaidServer")
-                .withUri("/v1/{project_id}/cloudservers/{server_id}/resize")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<ResizePostPaidServerRequest, ResizePostPaidServerResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ResizePostPaidServerRequest.class, ResizePostPaidServerResponse.class)
+            .withName("ResizePostPaidServer")
+            .withUri("/v1/{project_id}/cloudservers/{server_id}/resize")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResizePostPaidServerRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ResizePostPaidServerRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ResizePostPaidServerRequestBody.class,
+            TypeCasts.uncheckedConversion(ResizePostPaidServerRequestBody.class),
             f -> f.withMarshaller(ResizePostPaidServerRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1469,53 +1356,47 @@ public class EcsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResizeServerRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ResizeServerRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ResizeServerRequestBody.class,
+            TypeCasts.uncheckedConversion(ResizeServerRequestBody.class),
             f -> f.withMarshaller(ResizeServerRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowResetPasswordFlagRequest, ShowResetPasswordFlagResponse> showResetPasswordFlag = genForshowResetPasswordFlag();
+    public static final HttpRequestDef<ShowResetPasswordFlagRequest, ShowResetPasswordFlagResponse> showResetPasswordFlag =
+        genForshowResetPasswordFlag();
 
     private static HttpRequestDef<ShowResetPasswordFlagRequest, ShowResetPasswordFlagResponse> genForshowResetPasswordFlag() {
         // basic
-        HttpRequestDef.Builder<ShowResetPasswordFlagRequest, ShowResetPasswordFlagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowResetPasswordFlagRequest.class, ShowResetPasswordFlagResponse.class)
-                .withName("ShowResetPasswordFlag")
-                .withUri("/v1/{project_id}/cloudservers/{server_id}/os-resetpwd-flag")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowResetPasswordFlagRequest, ShowResetPasswordFlagResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowResetPasswordFlagRequest.class, ShowResetPasswordFlagResponse.class)
+            .withName("ShowResetPasswordFlag")
+            .withUri("/v1/{project_id}/cloudservers/{server_id}/os-resetpwd-flag")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowResetPasswordFlagRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1531,23 +1412,21 @@ public class EcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowServerRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowServerGroupRequest, ShowServerGroupResponse> showServerGroup = genForshowServerGroup();
+    public static final HttpRequestDef<ShowServerGroupRequest, ShowServerGroupResponse> showServerGroup =
+        genForshowServerGroup();
 
     private static HttpRequestDef<ShowServerGroupRequest, ShowServerGroupResponse> genForshowServerGroup() {
         // basic
@@ -1558,23 +1437,21 @@ public class EcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("server_group_id",
+        builder.<String>withRequestField("server_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowServerGroupRequest::getServerGroupId, (req, v) -> {
                 req.setServerGroupId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowServerLimitsRequest, ShowServerLimitsResponse> showServerLimits = genForshowServerLimits();
+    public static final HttpRequestDef<ShowServerLimitsRequest, ShowServerLimitsResponse> showServerLimits =
+        genForshowServerLimits();
 
     private static HttpRequestDef<ShowServerLimitsRequest, ShowServerLimitsResponse> genForshowServerLimits() {
         // basic
@@ -1587,48 +1464,44 @@ public class EcsMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse> showServerRemoteConsole = genForshowServerRemoteConsole();
+    public static final HttpRequestDef<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse> showServerRemoteConsole =
+        genForshowServerRemoteConsole();
 
     private static HttpRequestDef<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse> genForshowServerRemoteConsole() {
         // basic
-        HttpRequestDef.Builder<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ShowServerRemoteConsoleRequest.class, ShowServerRemoteConsoleResponse.class)
-                .withName("ShowServerRemoteConsole")
-                .withUri("/v1/{project_id}/cloudservers/{server_id}/remote_console")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<ShowServerRemoteConsoleRequest, ShowServerRemoteConsoleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ShowServerRemoteConsoleRequest.class, ShowServerRemoteConsoleResponse.class)
+            .withName("ShowServerRemoteConsole")
+            .withUri("/v1/{project_id}/cloudservers/{server_id}/remote_console")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowServerRemoteConsoleRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ShowServerRemoteConsoleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ShowServerRemoteConsoleRequestBody.class,
+            TypeCasts.uncheckedConversion(ShowServerRemoteConsoleRequestBody.class),
             f -> f.withMarshaller(ShowServerRemoteConsoleRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowServerTagsRequest, ShowServerTagsResponse> showServerTags = genForshowServerTags();
+    public static final HttpRequestDef<ShowServerTagsRequest, ShowServerTagsResponse> showServerTags =
+        genForshowServerTags();
 
     private static HttpRequestDef<ShowServerTagsRequest, ShowServerTagsResponse> genForshowServerTags() {
         // basic
@@ -1639,18 +1512,15 @@ public class EcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowServerTagsRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1666,96 +1536,89 @@ public class EcsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateServerRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateServerRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateServerRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateServerRequestBody.class),
             f -> f.withMarshaller(UpdateServerRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateServerAutoTerminateTimeRequest, UpdateServerAutoTerminateTimeResponse> updateServerAutoTerminateTime = genForupdateServerAutoTerminateTime();
+    public static final HttpRequestDef<UpdateServerAutoTerminateTimeRequest, UpdateServerAutoTerminateTimeResponse> updateServerAutoTerminateTime =
+        genForupdateServerAutoTerminateTime();
 
     private static HttpRequestDef<UpdateServerAutoTerminateTimeRequest, UpdateServerAutoTerminateTimeResponse> genForupdateServerAutoTerminateTime() {
         // basic
         HttpRequestDef.Builder<UpdateServerAutoTerminateTimeRequest, UpdateServerAutoTerminateTimeResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UpdateServerAutoTerminateTimeRequest.class, UpdateServerAutoTerminateTimeResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpdateServerAutoTerminateTimeRequest.class,
+                    UpdateServerAutoTerminateTimeResponse.class)
                 .withName("UpdateServerAutoTerminateTime")
                 .withUri("/v1/{project_id}/cloudservers/{server_id}/actions/update-auto-terminate-time")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateServerAutoTerminateTimeRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateServerAutoTerminateTimeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateServerAutoTerminateTimeRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateServerAutoTerminateTimeRequestBody.class),
             f -> f.withMarshaller(UpdateServerAutoTerminateTimeRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateServerMetadataRequest, UpdateServerMetadataResponse> updateServerMetadata = genForupdateServerMetadata();
+    public static final HttpRequestDef<UpdateServerMetadataRequest, UpdateServerMetadataResponse> updateServerMetadata =
+        genForupdateServerMetadata();
 
     private static HttpRequestDef<UpdateServerMetadataRequest, UpdateServerMetadataResponse> genForupdateServerMetadata() {
         // basic
-        HttpRequestDef.Builder<UpdateServerMetadataRequest, UpdateServerMetadataResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UpdateServerMetadataRequest.class, UpdateServerMetadataResponse.class)
-                .withName("UpdateServerMetadata")
-                .withUri("/v1/{project_id}/cloudservers/{server_id}/metadata")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<UpdateServerMetadataRequest, UpdateServerMetadataResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpdateServerMetadataRequest.class, UpdateServerMetadataResponse.class)
+            .withName("UpdateServerMetadata")
+            .withUri("/v1/{project_id}/cloudservers/{server_id}/metadata")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateServerMetadataRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateServerMetadataRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateServerMetadataRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateServerMetadataRequestBody.class),
             f -> f.withMarshaller(UpdateServerMetadataRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1771,18 +1634,15 @@ public class EcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("job_id",
+        builder.<String>withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowJobRequest::getJobId, (req, v) -> {
                 req.setJobId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

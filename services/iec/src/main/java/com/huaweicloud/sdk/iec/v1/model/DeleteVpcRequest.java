@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteVpcRequest  {
-
-
+/** Request Object */
+public class DeleteVpcRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
     public DeleteVpcRequest withVpcId(String vpcId) {
@@ -28,13 +18,9 @@ public class DeleteVpcRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟私有云ID。
-     * @return vpcId
-     */
+    /** 虚拟私有云ID。
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -42,8 +28,6 @@ public class DeleteVpcRequest  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class DeleteVpcRequest  {
         DeleteVpcRequest deleteVpcRequest = (DeleteVpcRequest) o;
         return Objects.equals(this.vpcId, deleteVpcRequest.vpcId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(vpcId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class DeleteVpcRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

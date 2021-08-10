@@ -1,19 +1,17 @@
 package com.huaweicloud.sdk.cloudbuild.v3;
 
+import com.huaweicloud.sdk.cloudbuild.v3.model.*;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.cloudbuild.v3.model.*;
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class CloudBuildMeta {
 
-    public static final HttpRequestDef<DownloadKeystoreRequest, DownloadKeystoreResponse> downloadKeystore = genFordownloadKeystore();
+    public static final HttpRequestDef<DownloadKeystoreRequest, DownloadKeystoreResponse> downloadKeystore =
+        genFordownloadKeystore();
 
     private static HttpRequestDef<DownloadKeystoreRequest, DownloadKeystoreResponse> genFordownloadKeystore() {
         // basic
@@ -24,26 +22,22 @@ public class CloudBuildMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("file_name",
+        builder.<String>withRequestField("file_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DownloadKeystoreRequest::getFileName, (req, v) -> {
                 req.setFileName(v);
-            })
-        );
-        builder.withRequestField("domain_id",
+            }));
+        builder.<String>withRequestField("domain_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DownloadKeystoreRequest::getDomainId, (req, v) -> {
                 req.setDomainId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -59,66 +53,60 @@ public class CloudBuildMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<RunJobRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            RunJobRequestBody.class,
+            TypeCasts.uncheckedConversion(RunJobRequestBody.class),
             f -> f.withMarshaller(RunJobRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobListByProjectIdRequest, ShowJobListByProjectIdResponse> showJobListByProjectId = genForshowJobListByProjectId();
+    public static final HttpRequestDef<ShowJobListByProjectIdRequest, ShowJobListByProjectIdResponse> showJobListByProjectId =
+        genForshowJobListByProjectId();
 
     private static HttpRequestDef<ShowJobListByProjectIdRequest, ShowJobListByProjectIdResponse> genForshowJobListByProjectId() {
         // basic
-        HttpRequestDef.Builder<ShowJobListByProjectIdRequest, ShowJobListByProjectIdResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowJobListByProjectIdRequest.class, ShowJobListByProjectIdResponse.class)
-                .withName("ShowJobListByProjectId")
-                .withUri("/v3/{project_id}/jobs")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowJobListByProjectIdRequest, ShowJobListByProjectIdResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowJobListByProjectIdRequest.class, ShowJobListByProjectIdResponse.class)
+            .withName("ShowJobListByProjectId")
+            .withUri("/v3/{project_id}/jobs")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("project_id",
+        builder.<String>withRequestField("project_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowJobListByProjectIdRequest::getProjectId, (req, v) -> {
                 req.setProjectId(v);
-            })
-        );
-        builder.withRequestField("page_index",
+            }));
+        builder.<Integer>withRequestField("page_index",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowJobListByProjectIdRequest::getPageIndex, (req, v) -> {
                 req.setPageIndex(v);
-            })
-        );
-        builder.withRequestField("page_size",
+            }));
+        builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowJobListByProjectIdRequest::getPageSize, (req, v) -> {
                 req.setPageSize(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobStatusRequest, ShowJobStatusResponse> showJobStatus = genForshowJobStatus();
+    public static final HttpRequestDef<ShowJobStatusRequest, ShowJobStatusResponse> showJobStatus =
+        genForshowJobStatus();
 
     private static HttpRequestDef<ShowJobStatusRequest, ShowJobStatusResponse> genForshowJobStatus() {
         // basic
@@ -129,23 +117,53 @@ public class CloudBuildMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("job_id",
+        builder.<String>withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowJobStatusRequest::getJobId, (req, v) -> {
                 req.setJobId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowListHistoryRequest, ShowListHistoryResponse> showListHistory = genForshowListHistory();
+    public static final HttpRequestDef<ShowLastHistoryRequest, ShowLastHistoryResponse> showLastHistory =
+        genForshowLastHistory();
+
+    private static HttpRequestDef<ShowLastHistoryRequest, ShowLastHistoryResponse> genForshowLastHistory() {
+        // basic
+        HttpRequestDef.Builder<ShowLastHistoryRequest, ShowLastHistoryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLastHistoryRequest.class, ShowLastHistoryResponse.class)
+                .withName("ShowLastHistory")
+                .withUri("/v3/jobs/{project_id}/last-history")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLastHistoryRequest::getProjectId, (req, v) -> {
+                req.setProjectId(v);
+            }));
+        builder.<String>withRequestField("repository_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLastHistoryRequest::getRepositoryName, (req, v) -> {
+                req.setRepositoryName(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowListHistoryRequest, ShowListHistoryResponse> showListHistory =
+        genForshowListHistory();
 
     private static HttpRequestDef<ShowListHistoryRequest, ShowListHistoryResponse> genForshowListHistory() {
         // basic
@@ -156,101 +174,89 @@ public class CloudBuildMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("job_id",
+        builder.<String>withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowListHistoryRequest::getJobId, (req, v) -> {
                 req.setJobId(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowListHistoryRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowListHistoryRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("interval",
+            }));
+        builder.<Integer>withRequestField("interval",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowListHistoryRequest::getInterval, (req, v) -> {
                 req.setInterval(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowListPeriodHistoryRequest, ShowListPeriodHistoryResponse> showListPeriodHistory = genForshowListPeriodHistory();
+    public static final HttpRequestDef<ShowListPeriodHistoryRequest, ShowListPeriodHistoryResponse> showListPeriodHistory =
+        genForshowListPeriodHistory();
 
     private static HttpRequestDef<ShowListPeriodHistoryRequest, ShowListPeriodHistoryResponse> genForshowListPeriodHistory() {
         // basic
-        HttpRequestDef.Builder<ShowListPeriodHistoryRequest, ShowListPeriodHistoryResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowListPeriodHistoryRequest.class, ShowListPeriodHistoryResponse.class)
-                .withName("ShowListPeriodHistory")
-                .withUri("/v3/jobs/{job_id}/period-history")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowListPeriodHistoryRequest, ShowListPeriodHistoryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowListPeriodHistoryRequest.class, ShowListPeriodHistoryResponse.class)
+            .withName("ShowListPeriodHistory")
+            .withUri("/v3/jobs/{job_id}/period-history")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("job_id",
+        builder.<String>withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowListPeriodHistoryRequest::getJobId, (req, v) -> {
                 req.setJobId(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowListPeriodHistoryRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowListPeriodHistoryRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("start_time",
+            }));
+        builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowListPeriodHistoryRequest::getStartTime, (req, v) -> {
                 req.setStartTime(v);
-            })
-        );
-        builder.withRequestField("end_time",
+            }));
+        builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowListPeriodHistoryRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

@@ -1,46 +1,32 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowOverviewResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="waiting")
-    
+    @JsonProperty(value = "waiting")
+
     private Integer waiting;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replicating")
-    
+    @JsonProperty(value = "replicating")
+
     private Integer replicating;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="syncing")
-    
+    @JsonProperty(value = "syncing")
+
     private Integer syncing;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="other")
-    
+    @JsonProperty(value = "other")
+
     private Integer other;
 
     public ShowOverviewResponse withWaiting(Integer waiting) {
@@ -48,15 +34,9 @@ public class ShowOverviewResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 等待中
-     * minimum: 0
-     * maximum: 1000
-     * @return waiting
-     */
+    /** 等待中 minimum: 0 maximum: 1000
+     * 
+     * @return waiting */
     public Integer getWaiting() {
         return waiting;
     }
@@ -65,22 +45,14 @@ public class ShowOverviewResponse extends SdkResponse {
         this.waiting = waiting;
     }
 
-    
-
     public ShowOverviewResponse withReplicating(Integer replicating) {
         this.replicating = replicating;
         return this;
     }
 
-    
-
-
-    /**
-     * 复制中
-     * minimum: 0
-     * maximum: 1000
-     * @return replicating
-     */
+    /** 复制中 minimum: 0 maximum: 1000
+     * 
+     * @return replicating */
     public Integer getReplicating() {
         return replicating;
     }
@@ -89,22 +61,14 @@ public class ShowOverviewResponse extends SdkResponse {
         this.replicating = replicating;
     }
 
-    
-
     public ShowOverviewResponse withSyncing(Integer syncing) {
         this.syncing = syncing;
         return this;
     }
 
-    
-
-
-    /**
-     * 同步中
-     * minimum: 0
-     * maximum: 1000
-     * @return syncing
-     */
+    /** 同步中 minimum: 0 maximum: 1000
+     * 
+     * @return syncing */
     public Integer getSyncing() {
         return syncing;
     }
@@ -113,22 +77,14 @@ public class ShowOverviewResponse extends SdkResponse {
         this.syncing = syncing;
     }
 
-    
-
     public ShowOverviewResponse withOther(Integer other) {
         this.other = other;
         return this;
     }
 
-    
-
-
-    /**
-     * 其它
-     * minimum: 0
-     * maximum: 1000
-     * @return other
-     */
+    /** 其它 minimum: 0 maximum: 1000
+     * 
+     * @return other */
     public Integer getOther() {
         return other;
     }
@@ -136,8 +92,6 @@ public class ShowOverviewResponse extends SdkResponse {
     public void setOther(Integer other) {
         this.other = other;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -148,15 +102,17 @@ public class ShowOverviewResponse extends SdkResponse {
             return false;
         }
         ShowOverviewResponse showOverviewResponse = (ShowOverviewResponse) o;
-        return Objects.equals(this.waiting, showOverviewResponse.waiting) &&
-            Objects.equals(this.replicating, showOverviewResponse.replicating) &&
-            Objects.equals(this.syncing, showOverviewResponse.syncing) &&
-            Objects.equals(this.other, showOverviewResponse.other);
+        return Objects.equals(this.waiting, showOverviewResponse.waiting)
+            && Objects.equals(this.replicating, showOverviewResponse.replicating)
+            && Objects.equals(this.syncing, showOverviewResponse.syncing)
+            && Objects.equals(this.other, showOverviewResponse.other);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(waiting, replicating, syncing, other);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -168,16 +124,13 @@ public class ShowOverviewResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

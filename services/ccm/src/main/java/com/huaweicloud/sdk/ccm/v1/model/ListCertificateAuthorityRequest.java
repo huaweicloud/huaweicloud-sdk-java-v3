@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.ccm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListCertificateAuthorityRequest  {
-
-
+/** Request Object */
+public class ListCertificateAuthorityRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private String limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private String offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
     public ListCertificateAuthorityRequest withLimit(String limit) {
@@ -52,13 +38,9 @@ public class ListCertificateAuthorityRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * limit
-     * @return limit
-     */
+    /** limit
+     * 
+     * @return limit */
     public String getLimit() {
         return limit;
     }
@@ -67,20 +49,14 @@ public class ListCertificateAuthorityRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListCertificateAuthorityRequest withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * name
-     * @return name
-     */
+    /** name
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -89,20 +65,14 @@ public class ListCertificateAuthorityRequest  {
         this.name = name;
     }
 
-    
-
     public ListCertificateAuthorityRequest withOffset(String offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * offset
-     * @return offset
-     */
+    /** offset
+     * 
+     * @return offset */
     public String getOffset() {
         return offset;
     }
@@ -111,20 +81,14 @@ public class ListCertificateAuthorityRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListCertificateAuthorityRequest withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * status
-     * @return status
-     */
+    /** status
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -133,20 +97,14 @@ public class ListCertificateAuthorityRequest  {
         this.status = status;
     }
 
-    
-
     public ListCertificateAuthorityRequest withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * type
-     * @return type
-     */
+    /** type
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -154,8 +112,6 @@ public class ListCertificateAuthorityRequest  {
     public void setType(String type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,18 @@ public class ListCertificateAuthorityRequest  {
             return false;
         }
         ListCertificateAuthorityRequest listCertificateAuthorityRequest = (ListCertificateAuthorityRequest) o;
-        return Objects.equals(this.limit, listCertificateAuthorityRequest.limit) &&
-            Objects.equals(this.name, listCertificateAuthorityRequest.name) &&
-            Objects.equals(this.offset, listCertificateAuthorityRequest.offset) &&
-            Objects.equals(this.status, listCertificateAuthorityRequest.status) &&
-            Objects.equals(this.type, listCertificateAuthorityRequest.type);
+        return Objects.equals(this.limit, listCertificateAuthorityRequest.limit)
+            && Objects.equals(this.name, listCertificateAuthorityRequest.name)
+            && Objects.equals(this.offset, listCertificateAuthorityRequest.offset)
+            && Objects.equals(this.status, listCertificateAuthorityRequest.status)
+            && Objects.equals(this.type, listCertificateAuthorityRequest.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(limit, name, offset, status, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class ListCertificateAuthorityRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

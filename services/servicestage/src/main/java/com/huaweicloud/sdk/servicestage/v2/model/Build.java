@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.BuildInfoParameters;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 构建工程。
- */
-public class Build  {
-
-
+/** 构建工程。 */
+public class Build {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parameters")
-    
+    @JsonProperty(value = "parameters")
+
     private BuildInfoParameters parameters;
 
     public Build withParameters(BuildInfoParameters parameters) {
@@ -30,19 +20,17 @@ public class Build  {
     }
 
     public Build withParameters(Consumer<BuildInfoParameters> parametersSetter) {
-        if(this.parameters == null ){
+        if (this.parameters == null) {
             this.parameters = new BuildInfoParameters();
             parametersSetter.accept(this.parameters);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get parameters
-     * @return parameters
-     */
+    /** Get parameters
+     * 
+     * @return parameters */
     public BuildInfoParameters getParameters() {
         return parameters;
     }
@@ -50,8 +38,6 @@ public class Build  {
     public void setParameters(BuildInfoParameters parameters) {
         this.parameters = parameters;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class Build  {
         Build build = (Build) o;
         return Objects.equals(this.parameters, build.parameters);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(parameters);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class Build  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

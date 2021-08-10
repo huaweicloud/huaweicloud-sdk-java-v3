@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 规格相关快捷链接地址。
- */
-public class FlavorLink  {
-
-
+/** 规格相关快捷链接地址。 */
+public class FlavorLink {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="href")
-    
+    @JsonProperty(value = "href")
+
     private String href;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rel")
-    
+    @JsonProperty(value = "rel")
+
     private String rel;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
     public FlavorLink withHref(String href) {
@@ -40,13 +28,9 @@ public class FlavorLink  {
         return this;
     }
 
-    
-
-
-    /**
-     * 对应快捷链接。
-     * @return href
-     */
+    /** 对应快捷链接。
+     * 
+     * @return href */
     public String getHref() {
         return href;
     }
@@ -55,20 +39,14 @@ public class FlavorLink  {
         this.href = href;
     }
 
-    
-
     public FlavorLink withRel(String rel) {
         this.rel = rel;
         return this;
     }
 
-    
-
-
-    /**
-     * 快捷链接标记名称。
-     * @return rel
-     */
+    /** 快捷链接标记名称。
+     * 
+     * @return rel */
     public String getRel() {
         return rel;
     }
@@ -77,20 +55,14 @@ public class FlavorLink  {
         this.rel = rel;
     }
 
-    
-
     public FlavorLink withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 快捷链接类型，当前接口未使用，缺省值为null。
-     * @return type
-     */
+    /** 快捷链接类型，当前接口未使用，缺省值为null。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -98,8 +70,6 @@ public class FlavorLink  {
     public void setType(String type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,15 @@ public class FlavorLink  {
             return false;
         }
         FlavorLink flavorLink = (FlavorLink) o;
-        return Objects.equals(this.href, flavorLink.href) &&
-            Objects.equals(this.rel, flavorLink.rel) &&
-            Objects.equals(this.type, flavorLink.type);
+        return Objects.equals(this.href, flavorLink.href) && Objects.equals(this.rel, flavorLink.rel)
+            && Objects.equals(this.type, flavorLink.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(href, rel, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +99,13 @@ public class FlavorLink  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

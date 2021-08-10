@@ -1,57 +1,42 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.evs.v2.model.VolumeTypeExtraSpecs;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * VolumeType
- */
-public class VolumeType  {
-
-
+/** VolumeType */
+public class VolumeType {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extra_specs")
-    
+    @JsonProperty(value = "extra_specs")
+
     private VolumeTypeExtraSpecs extraSpecs;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="qos_specs_id")
-    
+    @JsonProperty(value = "qos_specs_id")
+
     private String qosSpecsId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_public")
-    
+    @JsonProperty(value = "is_public")
+
     private Boolean isPublic;
 
     public VolumeType withId(String id) {
@@ -59,13 +44,9 @@ public class VolumeType  {
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘类型的ID。
-     * @return id
-     */
+    /** 云硬盘类型的ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -74,20 +55,14 @@ public class VolumeType  {
         this.id = id;
     }
 
-    
-
     public VolumeType withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘类型名称。
-     * @return name
-     */
+    /** 云硬盘类型名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -96,27 +71,23 @@ public class VolumeType  {
         this.name = name;
     }
 
-    
-
     public VolumeType withExtraSpecs(VolumeTypeExtraSpecs extraSpecs) {
         this.extraSpecs = extraSpecs;
         return this;
     }
 
     public VolumeType withExtraSpecs(Consumer<VolumeTypeExtraSpecs> extraSpecsSetter) {
-        if(this.extraSpecs == null ){
+        if (this.extraSpecs == null) {
             this.extraSpecs = new VolumeTypeExtraSpecs();
             extraSpecsSetter.accept(this.extraSpecs);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get extraSpecs
-     * @return extraSpecs
-     */
+    /** Get extraSpecs
+     * 
+     * @return extraSpecs */
     public VolumeTypeExtraSpecs getExtraSpecs() {
         return extraSpecs;
     }
@@ -125,20 +96,14 @@ public class VolumeType  {
         this.extraSpecs = extraSpecs;
     }
 
-    
-
     public VolumeType withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘类型的描述信息。
-     * @return description
-     */
+    /** 云硬盘类型的描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -147,20 +112,14 @@ public class VolumeType  {
         this.description = description;
     }
 
-    
-
     public VolumeType withQosSpecsId(String qosSpecsId) {
         this.qosSpecsId = qosSpecsId;
         return this;
     }
 
-    
-
-
-    /**
-     * 预留属性。
-     * @return qosSpecsId
-     */
+    /** 预留属性。
+     * 
+     * @return qosSpecsId */
     public String getQosSpecsId() {
         return qosSpecsId;
     }
@@ -169,20 +128,14 @@ public class VolumeType  {
         this.qosSpecsId = qosSpecsId;
     }
 
-    
-
     public VolumeType withIsPublic(Boolean isPublic) {
         this.isPublic = isPublic;
         return this;
     }
 
-    
-
-
-    /**
-     * 预留属性。
-     * @return isPublic
-     */
+    /** 预留属性。
+     * 
+     * @return isPublic */
     public Boolean getIsPublic() {
         return isPublic;
     }
@@ -190,8 +143,6 @@ public class VolumeType  {
     public void setIsPublic(Boolean isPublic) {
         this.isPublic = isPublic;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -202,17 +153,18 @@ public class VolumeType  {
             return false;
         }
         VolumeType volumeType = (VolumeType) o;
-        return Objects.equals(this.id, volumeType.id) &&
-            Objects.equals(this.name, volumeType.name) &&
-            Objects.equals(this.extraSpecs, volumeType.extraSpecs) &&
-            Objects.equals(this.description, volumeType.description) &&
-            Objects.equals(this.qosSpecsId, volumeType.qosSpecsId) &&
-            Objects.equals(this.isPublic, volumeType.isPublic);
+        return Objects.equals(this.id, volumeType.id) && Objects.equals(this.name, volumeType.name)
+            && Objects.equals(this.extraSpecs, volumeType.extraSpecs)
+            && Objects.equals(this.description, volumeType.description)
+            && Objects.equals(this.qosSpecsId, volumeType.qosSpecsId)
+            && Objects.equals(this.isPublic, volumeType.isPublic);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, extraSpecs, description, qosSpecsId, isPublic);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -226,16 +178,13 @@ public class VolumeType  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

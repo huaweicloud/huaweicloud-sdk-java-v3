@@ -1,59 +1,44 @@
 package com.huaweicloud.sdk.codecheck.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.codecheck.v2.model.TypeInfo;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 对于java类中字段的描述
- */
-public class FieldInfo  {
-
-
+/** 对于java类中字段的描述 */
+public class FieldInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="accessibility")
-    
+    @JsonProperty(value = "accessibility")
+
     private String accessibility;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="init_value")
-    
+    @JsonProperty(value = "init_value")
+
     private String initValue;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="owner_classes")
-    
+    @JsonProperty(value = "owner_classes")
+
     private List<String> ownerClasses = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="package_name")
-    
+    @JsonProperty(value = "package_name")
+
     private String packageName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeInfo type;
 
     public FieldInfo withAccessibility(String accessibility) {
@@ -61,13 +46,9 @@ public class FieldInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 访问等级：public protected \"\" priate null
-     * @return accessibility
-     */
+    /** 访问等级：public protected \"\" priate null
+     * 
+     * @return accessibility */
     public String getAccessibility() {
         return accessibility;
     }
@@ -76,20 +57,14 @@ public class FieldInfo  {
         this.accessibility = accessibility;
     }
 
-    
-
     public FieldInfo withInitValue(String initValue) {
         this.initValue = initValue;
         return this;
     }
 
-    
-
-
-    /**
-     * 初始化值，可以直接置为null
-     * @return initValue
-     */
+    /** 初始化值，可以直接置为null
+     * 
+     * @return initValue */
     public String getInitValue() {
         return initValue;
     }
@@ -98,20 +73,14 @@ public class FieldInfo  {
         this.initValue = initValue;
     }
 
-    
-
     public FieldInfo withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * field的名称
-     * @return name
-     */
+    /** field的名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -120,16 +89,13 @@ public class FieldInfo  {
         this.name = name;
     }
 
-    
-
     public FieldInfo withOwnerClasses(List<String> ownerClasses) {
         this.ownerClasses = ownerClasses;
         return this;
     }
 
-    
     public FieldInfo addOwnerClassesItem(String ownerClassesItem) {
-        if(this.ownerClasses == null) {
+        if (this.ownerClasses == null) {
             this.ownerClasses = new ArrayList<>();
         }
         this.ownerClasses.add(ownerClassesItem);
@@ -137,17 +103,16 @@ public class FieldInfo  {
     }
 
     public FieldInfo withOwnerClasses(Consumer<List<String>> ownerClassesSetter) {
-        if(this.ownerClasses == null) {
+        if (this.ownerClasses == null) {
             this.ownerClasses = new ArrayList<>();
         }
         ownerClassesSetter.accept(this.ownerClasses);
         return this;
     }
 
-    /**
-     * 该类的包含的所有类的名称，从内部类往外部类排序（0是内部类）
-     * @return ownerClasses
-     */
+    /** 该类的包含的所有类的名称，从内部类往外部类排序（0是内部类）
+     * 
+     * @return ownerClasses */
     public List<String> getOwnerClasses() {
         return ownerClasses;
     }
@@ -156,20 +121,14 @@ public class FieldInfo  {
         this.ownerClasses = ownerClasses;
     }
 
-    
-
     public FieldInfo withPackageName(String packageName) {
         this.packageName = packageName;
         return this;
     }
 
-    
-
-
-    /**
-     * filed的package路径名称
-     * @return packageName
-     */
+    /** filed的package路径名称
+     * 
+     * @return packageName */
     public String getPackageName() {
         return packageName;
     }
@@ -178,27 +137,23 @@ public class FieldInfo  {
         this.packageName = packageName;
     }
 
-    
-
     public FieldInfo withType(TypeInfo type) {
         this.type = type;
         return this;
     }
 
     public FieldInfo withType(Consumer<TypeInfo> typeSetter) {
-        if(this.type == null ){
+        if (this.type == null) {
             this.type = new TypeInfo();
             typeSetter.accept(this.type);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get type
-     * @return type
-     */
+    /** Get type
+     * 
+     * @return type */
     public TypeInfo getType() {
         return type;
     }
@@ -206,8 +161,6 @@ public class FieldInfo  {
     public void setType(TypeInfo type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -218,17 +171,17 @@ public class FieldInfo  {
             return false;
         }
         FieldInfo fieldInfo = (FieldInfo) o;
-        return Objects.equals(this.accessibility, fieldInfo.accessibility) &&
-            Objects.equals(this.initValue, fieldInfo.initValue) &&
-            Objects.equals(this.name, fieldInfo.name) &&
-            Objects.equals(this.ownerClasses, fieldInfo.ownerClasses) &&
-            Objects.equals(this.packageName, fieldInfo.packageName) &&
-            Objects.equals(this.type, fieldInfo.type);
+        return Objects.equals(this.accessibility, fieldInfo.accessibility)
+            && Objects.equals(this.initValue, fieldInfo.initValue) && Objects.equals(this.name, fieldInfo.name)
+            && Objects.equals(this.ownerClasses, fieldInfo.ownerClasses)
+            && Objects.equals(this.packageName, fieldInfo.packageName) && Objects.equals(this.type, fieldInfo.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(accessibility, initValue, name, ownerClasses, packageName, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -242,16 +195,13 @@ public class FieldInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

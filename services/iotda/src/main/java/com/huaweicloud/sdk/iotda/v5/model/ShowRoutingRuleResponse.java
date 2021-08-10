@@ -1,77 +1,58 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotda.v5.model.RoutingRuleSubject;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowRoutingRuleResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rule_id")
-    
+    @JsonProperty(value = "rule_id")
+
     private String ruleId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rule_name")
-    
+    @JsonProperty(value = "rule_name")
+
     private String ruleName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subject")
-    
+    @JsonProperty(value = "subject")
+
     private RoutingRuleSubject subject;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_type")
-    
+    @JsonProperty(value = "app_type")
+
     private String appType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="select")
-    
+    @JsonProperty(value = "select")
+
     private String select;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="where")
-    
+    @JsonProperty(value = "where")
+
     private String where;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="active")
-    
+    @JsonProperty(value = "active")
+
     private Boolean active;
 
     public ShowRoutingRuleResponse withRuleId(String ruleId) {
@@ -79,13 +60,9 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 规则触发条件ID，用于唯一标识一个规则触发条件，在创建规则条件时由物联网平台分配获得。
-     * @return ruleId
-     */
+    /** 规则触发条件ID，用于唯一标识一个规则触发条件，在创建规则条件时由物联网平台分配获得。
+     * 
+     * @return ruleId */
     public String getRuleId() {
         return ruleId;
     }
@@ -94,20 +71,14 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         this.ruleId = ruleId;
     }
 
-    
-
     public ShowRoutingRuleResponse withRuleName(String ruleName) {
         this.ruleName = ruleName;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户自定义的规则名称。
-     * @return ruleName
-     */
+    /** 用户自定义的规则名称。
+     * 
+     * @return ruleName */
     public String getRuleName() {
         return ruleName;
     }
@@ -116,20 +87,14 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         this.ruleName = ruleName;
     }
 
-    
-
     public ShowRoutingRuleResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户自定义的规则描述。
-     * @return description
-     */
+    /** 用户自定义的规则描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -138,27 +103,23 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public ShowRoutingRuleResponse withSubject(RoutingRuleSubject subject) {
         this.subject = subject;
         return this;
     }
 
     public ShowRoutingRuleResponse withSubject(Consumer<RoutingRuleSubject> subjectSetter) {
-        if(this.subject == null ){
+        if (this.subject == null) {
             this.subject = new RoutingRuleSubject();
             subjectSetter.accept(this.subject);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get subject
-     * @return subject
-     */
+    /** Get subject
+     * 
+     * @return subject */
     public RoutingRuleSubject getSubject() {
         return subject;
     }
@@ -167,20 +128,14 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         this.subject = subject;
     }
 
-    
-
     public ShowRoutingRuleResponse withAppType(String appType) {
         this.appType = appType;
         return this;
     }
 
-    
-
-
-    /**
-     * 租户规则的生效范围，取值如下： - GLOBAL：生效范围为租户级 - APP：生效范围为资源空间级。 
-     * @return appType
-     */
+    /** 租户规则的生效范围，取值如下： - GLOBAL：生效范围为租户级 - APP：生效范围为资源空间级。
+     * 
+     * @return appType */
     public String getAppType() {
         return appType;
     }
@@ -189,20 +144,14 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         this.appType = appType;
     }
 
-    
-
     public ShowRoutingRuleResponse withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源空间ID
-     * @return appId
-     */
+    /** 资源空间ID
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -211,20 +160,14 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         this.appId = appId;
     }
 
-    
-
     public ShowRoutingRuleResponse withSelect(String select) {
         this.select = select;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户自定义sql select语句，最大长度500，该参数仅供标准版和企业版用户使用。
-     * @return select
-     */
+    /** 用户自定义sql select语句，最大长度500，该参数仅供标准版和企业版用户使用。
+     * 
+     * @return select */
     public String getSelect() {
         return select;
     }
@@ -233,20 +176,14 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         this.select = select;
     }
 
-    
-
     public ShowRoutingRuleResponse withWhere(String where) {
         this.where = where;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户自定义sql where语句，最大长度500，该参数仅供标准版和企业版用户使用。
-     * @return where
-     */
+    /** 用户自定义sql where语句，最大长度500，该参数仅供标准版和企业版用户使用。
+     * 
+     * @return where */
     public String getWhere() {
         return where;
     }
@@ -255,20 +192,14 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         this.where = where;
     }
 
-    
-
     public ShowRoutingRuleResponse withActive(Boolean active) {
         this.active = active;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则条件的状态是否为激活。
-     * @return active
-     */
+    /** 规则条件的状态是否为激活。
+     * 
+     * @return active */
     public Boolean getActive() {
         return active;
     }
@@ -276,8 +207,6 @@ public class ShowRoutingRuleResponse extends SdkResponse {
     public void setActive(Boolean active) {
         this.active = active;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -288,20 +217,22 @@ public class ShowRoutingRuleResponse extends SdkResponse {
             return false;
         }
         ShowRoutingRuleResponse showRoutingRuleResponse = (ShowRoutingRuleResponse) o;
-        return Objects.equals(this.ruleId, showRoutingRuleResponse.ruleId) &&
-            Objects.equals(this.ruleName, showRoutingRuleResponse.ruleName) &&
-            Objects.equals(this.description, showRoutingRuleResponse.description) &&
-            Objects.equals(this.subject, showRoutingRuleResponse.subject) &&
-            Objects.equals(this.appType, showRoutingRuleResponse.appType) &&
-            Objects.equals(this.appId, showRoutingRuleResponse.appId) &&
-            Objects.equals(this.select, showRoutingRuleResponse.select) &&
-            Objects.equals(this.where, showRoutingRuleResponse.where) &&
-            Objects.equals(this.active, showRoutingRuleResponse.active);
+        return Objects.equals(this.ruleId, showRoutingRuleResponse.ruleId)
+            && Objects.equals(this.ruleName, showRoutingRuleResponse.ruleName)
+            && Objects.equals(this.description, showRoutingRuleResponse.description)
+            && Objects.equals(this.subject, showRoutingRuleResponse.subject)
+            && Objects.equals(this.appType, showRoutingRuleResponse.appType)
+            && Objects.equals(this.appId, showRoutingRuleResponse.appId)
+            && Objects.equals(this.select, showRoutingRuleResponse.select)
+            && Objects.equals(this.where, showRoutingRuleResponse.where)
+            && Objects.equals(this.active, showRoutingRuleResponse.active);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(ruleId, ruleName, description, subject, appType, appId, select, where, active);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -318,16 +249,13 @@ public class ShowRoutingRuleResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

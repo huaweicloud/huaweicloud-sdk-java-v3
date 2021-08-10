@@ -1,40 +1,27 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CancelEipResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
+
     private String jobId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
+
     private String nodeId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_name")
-    
+    @JsonProperty(value = "node_name")
+
     private String nodeName;
 
     public CancelEipResponse withJobId(String jobId) {
@@ -42,13 +29,9 @@ public class CancelEipResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID。
-     * @return jobId
-     */
+    /** 任务ID。
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -57,20 +40,14 @@ public class CancelEipResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
-    
-
     public CancelEipResponse withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点ID。
-     * @return nodeId
-     */
+    /** 节点ID。
+     * 
+     * @return nodeId */
     public String getNodeId() {
         return nodeId;
     }
@@ -79,20 +56,14 @@ public class CancelEipResponse extends SdkResponse {
         this.nodeId = nodeId;
     }
 
-    
-
     public CancelEipResponse withNodeName(String nodeName) {
         this.nodeName = nodeName;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点名称。
-     * @return nodeName
-     */
+    /** 节点名称。
+     * 
+     * @return nodeName */
     public String getNodeName() {
         return nodeName;
     }
@@ -100,8 +71,6 @@ public class CancelEipResponse extends SdkResponse {
     public void setNodeName(String nodeName) {
         this.nodeName = nodeName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +81,16 @@ public class CancelEipResponse extends SdkResponse {
             return false;
         }
         CancelEipResponse cancelEipResponse = (CancelEipResponse) o;
-        return Objects.equals(this.jobId, cancelEipResponse.jobId) &&
-            Objects.equals(this.nodeId, cancelEipResponse.nodeId) &&
-            Objects.equals(this.nodeName, cancelEipResponse.nodeName);
+        return Objects.equals(this.jobId, cancelEipResponse.jobId)
+            && Objects.equals(this.nodeId, cancelEipResponse.nodeId)
+            && Objects.equals(this.nodeName, cancelEipResponse.nodeName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobId, nodeId, nodeName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +101,13 @@ public class CancelEipResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

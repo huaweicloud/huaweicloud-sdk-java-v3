@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 分页对象
- */
-public class PageInfo  {
-
-
+/** 分页对象 */
+public class PageInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="current_count")
-    
+    @JsonProperty(value = "current_count")
+
     private Integer currentCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="next_marker")
-    
+    @JsonProperty(value = "next_marker")
+
     private String nextMarker;
 
     public PageInfo withCurrentCount(Integer currentCount) {
@@ -34,15 +23,9 @@ public class PageInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 当前页的资源数量
-     * minimum: 0
-     * maximum: 200
-     * @return currentCount
-     */
+    /** 当前页的资源数量 minimum: 0 maximum: 200
+     * 
+     * @return currentCount */
     public Integer getCurrentCount() {
         return currentCount;
     }
@@ -51,20 +34,14 @@ public class PageInfo  {
         this.currentCount = currentCount;
     }
 
-    
-
     public PageInfo withNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
         return this;
     }
 
-    
-
-
-    /**
-     * 下一页的marker
-     * @return nextMarker
-     */
+    /** 下一页的marker
+     * 
+     * @return nextMarker */
     public String getNextMarker() {
         return nextMarker;
     }
@@ -72,8 +49,6 @@ public class PageInfo  {
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +59,15 @@ public class PageInfo  {
             return false;
         }
         PageInfo pageInfo = (PageInfo) o;
-        return Objects.equals(this.currentCount, pageInfo.currentCount) &&
-            Objects.equals(this.nextMarker, pageInfo.nextMarker);
+        return Objects.equals(this.currentCount, pageInfo.currentCount)
+            && Objects.equals(this.nextMarker, pageInfo.nextMarker);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(currentCount, nextMarker);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +77,13 @@ public class PageInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

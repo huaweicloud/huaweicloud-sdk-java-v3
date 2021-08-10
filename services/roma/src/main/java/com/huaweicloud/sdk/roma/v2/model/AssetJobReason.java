@@ -1,41 +1,26 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * AssetJobReason
- */
-public class AssetJobReason  {
+/** AssetJobReason */
+public class AssetJobReason {
 
-    /**
-     * 资源类型
-     */
+    /** 资源类型 */
     public static final class ResourceTypeEnum {
 
-        
-        /**
-         * Enum APPLICATION for value: "application"
-         */
+        /** Enum APPLICATION for value: "application" */
         public static final ResourceTypeEnum APPLICATION = new ResourceTypeEnum("application");
-        
-        /**
-         * Enum TASK for value: "task"
-         */
+
+        /** Enum TASK for value: "task" */
         public static final ResourceTypeEnum TASK = new ResourceTypeEnum("task");
-        
 
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +49,7 @@ public class AssetJobReason  {
 
         @JsonCreator
         public static ResourceTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ResourceTypeEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +60,7 @@ public class AssetJobReason  {
         }
 
         public static ResourceTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ResourceTypeEnum result = STATIC_FIELDS.get(value);
@@ -99,28 +84,24 @@ public class AssetJobReason  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type")
-    
+    @JsonProperty(value = "resource_type")
+
     private ResourceTypeEnum resourceType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_name")
-    
+    @JsonProperty(value = "resource_name")
+
     private String resourceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
+
     private String errorCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_msg")
-    
+    @JsonProperty(value = "error_msg")
+
     private String errorMsg;
 
     public AssetJobReason withResourceType(ResourceTypeEnum resourceType) {
@@ -128,13 +109,9 @@ public class AssetJobReason  {
         return this;
     }
 
-    
-
-
-    /**
-     * 资源类型
-     * @return resourceType
-     */
+    /** 资源类型
+     * 
+     * @return resourceType */
     public ResourceTypeEnum getResourceType() {
         return resourceType;
     }
@@ -143,20 +120,14 @@ public class AssetJobReason  {
         this.resourceType = resourceType;
     }
 
-    
-
     public AssetJobReason withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源名称
-     * @return resourceName
-     */
+    /** 资源名称
+     * 
+     * @return resourceName */
     public String getResourceName() {
         return resourceName;
     }
@@ -165,20 +136,14 @@ public class AssetJobReason  {
         this.resourceName = resourceName;
     }
 
-    
-
     public AssetJobReason withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误码
-     * @return errorCode
-     */
+    /** 错误码
+     * 
+     * @return errorCode */
     public String getErrorCode() {
         return errorCode;
     }
@@ -187,20 +152,14 @@ public class AssetJobReason  {
         this.errorCode = errorCode;
     }
 
-    
-
     public AssetJobReason withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误信息
-     * @return errorMsg
-     */
+    /** 错误信息
+     * 
+     * @return errorMsg */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -208,8 +167,6 @@ public class AssetJobReason  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -220,15 +177,17 @@ public class AssetJobReason  {
             return false;
         }
         AssetJobReason assetJobReason = (AssetJobReason) o;
-        return Objects.equals(this.resourceType, assetJobReason.resourceType) &&
-            Objects.equals(this.resourceName, assetJobReason.resourceName) &&
-            Objects.equals(this.errorCode, assetJobReason.errorCode) &&
-            Objects.equals(this.errorMsg, assetJobReason.errorMsg);
+        return Objects.equals(this.resourceType, assetJobReason.resourceType)
+            && Objects.equals(this.resourceName, assetJobReason.resourceName)
+            && Objects.equals(this.errorCode, assetJobReason.errorCode)
+            && Objects.equals(this.errorMsg, assetJobReason.errorMsg);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resourceType, resourceName, errorCode, errorMsg);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -240,16 +199,13 @@ public class AssetJobReason  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

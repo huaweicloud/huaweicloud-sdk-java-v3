@@ -1,79 +1,59 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bss.v2.model.DemandDiscountRatingResult;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * DemandProductRatingResult
- */
-public class DemandProductRatingResult  {
-
-
+/** DemandProductRatingResult */
+public class DemandProductRatingResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
-    
+    @JsonProperty(value = "product_id")
+
     private String productId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amount")
-    
+    @JsonProperty(value = "amount")
+
     private Double amount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="discount_amount")
-    
+    @JsonProperty(value = "discount_amount")
+
     private Double discountAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="official_website_amount")
-    
+    @JsonProperty(value = "official_website_amount")
+
     private Double officialWebsiteAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="measure_id")
-    
+    @JsonProperty(value = "measure_id")
+
     private Integer measureId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="discount_rating_results")
-    
+    @JsonProperty(value = "discount_rating_results")
+
     private List<DemandDiscountRatingResult> discountRatingResults = null;
-    
+
     public DemandProductRatingResult withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 同一次询价中不能重复，用于标识返回询价结果和请求的映射关系。
-     * @return id
-     */
+    /** 同一次询价中不能重复，用于标识返回询价结果和请求的映射关系。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -82,20 +62,14 @@ public class DemandProductRatingResult  {
         this.id = id;
     }
 
-    
-
     public DemandProductRatingResult withProductId(String productId) {
         this.productId = productId;
         return this;
     }
 
-    
-
-
-    /**
-     * 按需产品的ID。
-     * @return productId
-     */
+    /** 按需产品的ID。
+     * 
+     * @return productId */
     public String getProductId() {
         return productId;
     }
@@ -104,20 +78,14 @@ public class DemandProductRatingResult  {
         this.productId = productId;
     }
 
-    
-
     public DemandProductRatingResult withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
 
-    
-
-
-    /**
-     * 折扣的金额。
-     * @return amount
-     */
+    /** 折扣的金额。
+     * 
+     * @return amount */
     public Double getAmount() {
         return amount;
     }
@@ -126,20 +94,14 @@ public class DemandProductRatingResult  {
         this.amount = amount;
     }
 
-    
-
     public DemandProductRatingResult withDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 优惠额（官网价和总价的差）。
-     * @return discountAmount
-     */
+    /** 优惠额（官网价和总价的差）。
+     * 
+     * @return discountAmount */
     public Double getDiscountAmount() {
         return discountAmount;
     }
@@ -148,20 +110,14 @@ public class DemandProductRatingResult  {
         this.discountAmount = discountAmount;
     }
 
-    
-
     public DemandProductRatingResult withOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 按需产品的官网价。
-     * @return officialWebsiteAmount
-     */
+    /** 按需产品的官网价。
+     * 
+     * @return officialWebsiteAmount */
     public Double getOfficialWebsiteAmount() {
         return officialWebsiteAmount;
     }
@@ -170,20 +126,14 @@ public class DemandProductRatingResult  {
         this.officialWebsiteAmount = officialWebsiteAmount;
     }
 
-    
-
     public DemandProductRatingResult withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
     }
 
-    
-
-
-    /**
-     * 度量单位标识。 1：元
-     * @return measureId
-     */
+    /** 度量单位标识。 1：元
+     * 
+     * @return measureId */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -192,34 +142,32 @@ public class DemandProductRatingResult  {
         this.measureId = measureId;
     }
 
-    
-
     public DemandProductRatingResult withDiscountRatingResults(List<DemandDiscountRatingResult> discountRatingResults) {
         this.discountRatingResults = discountRatingResults;
         return this;
     }
 
-    
-    public DemandProductRatingResult addDiscountRatingResultsItem(DemandDiscountRatingResult discountRatingResultsItem) {
-        if(this.discountRatingResults == null) {
+    public DemandProductRatingResult addDiscountRatingResultsItem(
+        DemandDiscountRatingResult discountRatingResultsItem) {
+        if (this.discountRatingResults == null) {
             this.discountRatingResults = new ArrayList<>();
         }
         this.discountRatingResults.add(discountRatingResultsItem);
         return this;
     }
 
-    public DemandProductRatingResult withDiscountRatingResults(Consumer<List<DemandDiscountRatingResult>> discountRatingResultsSetter) {
-        if(this.discountRatingResults == null) {
+    public DemandProductRatingResult withDiscountRatingResults(
+        Consumer<List<DemandDiscountRatingResult>> discountRatingResultsSetter) {
+        if (this.discountRatingResults == null) {
             this.discountRatingResults = new ArrayList<>();
         }
         discountRatingResultsSetter.accept(this.discountRatingResults);
         return this;
     }
 
-    /**
-     * 折扣优惠明细，包含产品本身的促销信息，同时包含商务或者伙伴折扣的优惠信息，具体参见表3。
-     * @return discountRatingResults
-     */
+    /** 折扣优惠明细，包含产品本身的促销信息，同时包含商务或者伙伴折扣的优惠信息，具体参见表3。
+     * 
+     * @return discountRatingResults */
     public List<DemandDiscountRatingResult> getDiscountRatingResults() {
         return discountRatingResults;
     }
@@ -227,8 +175,6 @@ public class DemandProductRatingResult  {
     public void setDiscountRatingResults(List<DemandDiscountRatingResult> discountRatingResults) {
         this.discountRatingResults = discountRatingResults;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -239,18 +185,21 @@ public class DemandProductRatingResult  {
             return false;
         }
         DemandProductRatingResult demandProductRatingResult = (DemandProductRatingResult) o;
-        return Objects.equals(this.id, demandProductRatingResult.id) &&
-            Objects.equals(this.productId, demandProductRatingResult.productId) &&
-            Objects.equals(this.amount, demandProductRatingResult.amount) &&
-            Objects.equals(this.discountAmount, demandProductRatingResult.discountAmount) &&
-            Objects.equals(this.officialWebsiteAmount, demandProductRatingResult.officialWebsiteAmount) &&
-            Objects.equals(this.measureId, demandProductRatingResult.measureId) &&
-            Objects.equals(this.discountRatingResults, demandProductRatingResult.discountRatingResults);
+        return Objects.equals(this.id, demandProductRatingResult.id)
+            && Objects.equals(this.productId, demandProductRatingResult.productId)
+            && Objects.equals(this.amount, demandProductRatingResult.amount)
+            && Objects.equals(this.discountAmount, demandProductRatingResult.discountAmount)
+            && Objects.equals(this.officialWebsiteAmount, demandProductRatingResult.officialWebsiteAmount)
+            && Objects.equals(this.measureId, demandProductRatingResult.measureId)
+            && Objects.equals(this.discountRatingResults, demandProductRatingResult.discountRatingResults);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, productId, amount, discountAmount, officialWebsiteAmount, measureId, discountRatingResults);
+        return Objects
+            .hash(id, productId, amount, discountAmount, officialWebsiteAmount, measureId, discountRatingResults);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -265,16 +214,13 @@ public class DemandProductRatingResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

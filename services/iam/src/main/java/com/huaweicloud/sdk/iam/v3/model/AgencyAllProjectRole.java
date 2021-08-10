@@ -1,39 +1,29 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.LinksSelf;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class AgencyAllProjectRole  {
-
-
+public class AgencyAllProjectRole {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private LinksSelf links;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public AgencyAllProjectRole withId(String id) {
@@ -41,13 +31,9 @@ public class AgencyAllProjectRole  {
         return this;
     }
 
-    
-
-
-    /**
-     * 权限ID。
-     * @return id
-     */
+    /** 权限ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -56,27 +42,23 @@ public class AgencyAllProjectRole  {
         this.id = id;
     }
 
-    
-
     public AgencyAllProjectRole withLinks(LinksSelf links) {
         this.links = links;
         return this;
     }
 
     public AgencyAllProjectRole withLinks(Consumer<LinksSelf> linksSetter) {
-        if(this.links == null ){
+        if (this.links == null) {
             this.links = new LinksSelf();
             linksSetter.accept(this.links);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get links
-     * @return links
-     */
+    /** Get links
+     * 
+     * @return links */
     public LinksSelf getLinks() {
         return links;
     }
@@ -85,20 +67,14 @@ public class AgencyAllProjectRole  {
         this.links = links;
     }
 
-    
-
     public AgencyAllProjectRole withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 权限名。
-     * @return name
-     */
+    /** 权限名。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -106,8 +82,6 @@ public class AgencyAllProjectRole  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +92,16 @@ public class AgencyAllProjectRole  {
             return false;
         }
         AgencyAllProjectRole agencyAllProjectRole = (AgencyAllProjectRole) o;
-        return Objects.equals(this.id, agencyAllProjectRole.id) &&
-            Objects.equals(this.links, agencyAllProjectRole.links) &&
-            Objects.equals(this.name, agencyAllProjectRole.name);
+        return Objects.equals(this.id, agencyAllProjectRole.id)
+            && Objects.equals(this.links, agencyAllProjectRole.links)
+            && Objects.equals(this.name, agencyAllProjectRole.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, links, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +112,13 @@ public class AgencyAllProjectRole  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

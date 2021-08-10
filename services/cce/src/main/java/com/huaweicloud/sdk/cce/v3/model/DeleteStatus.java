@@ -1,50 +1,38 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class DeleteStatus  {
-
-
+public class DeleteStatus {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="previous_total")
-    
+    @JsonProperty(value = "previous_total")
+
     private Integer previousTotal;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="current_total")
-    
+    @JsonProperty(value = "current_total")
+
     private Integer currentTotal;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
+
     private Integer updated;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="added")
-    
+    @JsonProperty(value = "added")
+
     private Integer added;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deleted")
-    
+    @JsonProperty(value = "deleted")
+
     private Integer deleted;
 
     public DeleteStatus withPreviousTotal(Integer previousTotal) {
@@ -52,13 +40,9 @@ public class DeleteStatus  {
         return this;
     }
 
-    
-
-
-    /**
-     * 集群删除时已经存在的集群资源记录总数
-     * @return previousTotal
-     */
+    /** 集群删除时已经存在的集群资源记录总数
+     * 
+     * @return previousTotal */
     public Integer getPreviousTotal() {
         return previousTotal;
     }
@@ -67,20 +51,14 @@ public class DeleteStatus  {
         this.previousTotal = previousTotal;
     }
 
-    
-
     public DeleteStatus withCurrentTotal(Integer currentTotal) {
         this.currentTotal = currentTotal;
         return this;
     }
 
-    
-
-
-    /**
-     * 基于当前集群资源记录信息，生成实际最新资源记录总数
-     * @return currentTotal
-     */
+    /** 基于当前集群资源记录信息，生成实际最新资源记录总数
+     * 
+     * @return currentTotal */
     public Integer getCurrentTotal() {
         return currentTotal;
     }
@@ -89,20 +67,14 @@ public class DeleteStatus  {
         this.currentTotal = currentTotal;
     }
 
-    
-
     public DeleteStatus withUpdated(Integer updated) {
         this.updated = updated;
         return this;
     }
 
-    
-
-
-    /**
-     * 集群删除时更新的资源记录总数
-     * @return updated
-     */
+    /** 集群删除时更新的资源记录总数
+     * 
+     * @return updated */
     public Integer getUpdated() {
         return updated;
     }
@@ -111,20 +83,14 @@ public class DeleteStatus  {
         this.updated = updated;
     }
 
-    
-
     public DeleteStatus withAdded(Integer added) {
         this.added = added;
         return this;
     }
 
-    
-
-
-    /**
-     * 集群删除时更新的资源记录总数
-     * @return added
-     */
+    /** 集群删除时更新的资源记录总数
+     * 
+     * @return added */
     public Integer getAdded() {
         return added;
     }
@@ -133,20 +99,14 @@ public class DeleteStatus  {
         this.added = added;
     }
 
-    
-
     public DeleteStatus withDeleted(Integer deleted) {
         this.deleted = deleted;
         return this;
     }
 
-    
-
-
-    /**
-     * 集群删除时删除的资源记录总数
-     * @return deleted
-     */
+    /** 集群删除时删除的资源记录总数
+     * 
+     * @return deleted */
     public Integer getDeleted() {
         return deleted;
     }
@@ -154,8 +114,6 @@ public class DeleteStatus  {
     public void setDeleted(Integer deleted) {
         this.deleted = deleted;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +124,17 @@ public class DeleteStatus  {
             return false;
         }
         DeleteStatus deleteStatus = (DeleteStatus) o;
-        return Objects.equals(this.previousTotal, deleteStatus.previousTotal) &&
-            Objects.equals(this.currentTotal, deleteStatus.currentTotal) &&
-            Objects.equals(this.updated, deleteStatus.updated) &&
-            Objects.equals(this.added, deleteStatus.added) &&
-            Objects.equals(this.deleted, deleteStatus.deleted);
+        return Objects.equals(this.previousTotal, deleteStatus.previousTotal)
+            && Objects.equals(this.currentTotal, deleteStatus.currentTotal)
+            && Objects.equals(this.updated, deleteStatus.updated) && Objects.equals(this.added, deleteStatus.added)
+            && Objects.equals(this.deleted, deleteStatus.deleted);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(previousTotal, currentTotal, updated, added, deleted);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +147,13 @@ public class DeleteStatus  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,68 +1,47 @@
 package com.huaweicloud.sdk.clouddeploy.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.clouddeploy.v2.model.KeyValueDO;
-import com.huaweicloud.sdk.clouddeploy.v2.model.ParamTypeLimits;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 部署任务执行时传递的参数
- */
-public class DynamicConfigInfo  {
-
-
+/** 部署任务执行时传递的参数 */
+public class DynamicConfigInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private String value;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limits")
-    
+    @JsonProperty(value = "limits")
+
     private List<ParamTypeLimits> limits = null;
-        /**
-     * 类型，如果填写动态参数，则类型必选
-     */
+
+    /** 类型，如果填写动态参数，则类型必选 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum TEXT for value: "text"
-         */
+        /** Enum TEXT for value: "text" */
         public static final TypeEnum TEXT = new TypeEnum("text");
-        
-        /**
-         * Enum HOST_GROUP for value: "host_group"
-         */
+
+        /** Enum HOST_GROUP for value: "host_group" */
         public static final TypeEnum HOST_GROUP = new TypeEnum("host_group");
-        
-        /**
-         * Enum ENCRYPT for value: "encrypt"
-         */
+
+        /** Enum ENCRYPT for value: "encrypt" */
         public static final TypeEnum ENCRYPT = new TypeEnum("encrypt");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -92,7 +71,7 @@ public class DynamicConfigInfo  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -103,7 +82,7 @@ public class DynamicConfigInfo  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -127,16 +106,14 @@ public class DynamicConfigInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public DynamicConfigInfo withName(String name) {
@@ -144,13 +121,9 @@ public class DynamicConfigInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 执行部署任务时传递的参数名称
-     * @return name
-     */
+    /** 执行部署任务时传递的参数名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -159,20 +132,14 @@ public class DynamicConfigInfo  {
         this.name = name;
     }
 
-    
-
     public DynamicConfigInfo withValue(String value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 执行部署任务时传递的参数值
-     * @return value
-     */
+    /** 执行部署任务时传递的参数值
+     * 
+     * @return value */
     public String getValue() {
         return value;
     }
@@ -181,16 +148,13 @@ public class DynamicConfigInfo  {
         this.value = value;
     }
 
-    
-
     public DynamicConfigInfo withLimits(List<ParamTypeLimits> limits) {
         this.limits = limits;
         return this;
     }
 
-    
     public DynamicConfigInfo addLimitsItem(ParamTypeLimits limitsItem) {
-        if(this.limits == null) {
+        if (this.limits == null) {
             this.limits = new ArrayList<>();
         }
         this.limits.add(limitsItem);
@@ -198,17 +162,16 @@ public class DynamicConfigInfo  {
     }
 
     public DynamicConfigInfo withLimits(Consumer<List<ParamTypeLimits>> limitsSetter) {
-        if(this.limits == null) {
+        if (this.limits == null) {
             this.limits = new ArrayList<>();
         }
         limitsSetter.accept(this.limits);
         return this;
     }
 
-    /**
-     * 参数值为枚举类型时，返回可选值列表
-     * @return limits
-     */
+    /** 参数值为枚举类型时，返回可选值列表
+     * 
+     * @return limits */
     public List<ParamTypeLimits> getLimits() {
         return limits;
     }
@@ -217,20 +180,14 @@ public class DynamicConfigInfo  {
         this.limits = limits;
     }
 
-    
-
     public DynamicConfigInfo withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 类型，如果填写动态参数，则类型必选
-     * @return type
-     */
+    /** 类型，如果填写动态参数，则类型必选
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -239,20 +196,14 @@ public class DynamicConfigInfo  {
         this.type = type;
     }
 
-    
-
     public DynamicConfigInfo withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述
-     * @return description
-     */
+    /** 描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -260,8 +211,6 @@ public class DynamicConfigInfo  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -272,16 +221,17 @@ public class DynamicConfigInfo  {
             return false;
         }
         DynamicConfigInfo dynamicConfigInfo = (DynamicConfigInfo) o;
-        return Objects.equals(this.name, dynamicConfigInfo.name) &&
-            Objects.equals(this.value, dynamicConfigInfo.value) &&
-            Objects.equals(this.limits, dynamicConfigInfo.limits) &&
-            Objects.equals(this.type, dynamicConfigInfo.type) &&
-            Objects.equals(this.description, dynamicConfigInfo.description);
+        return Objects.equals(this.name, dynamicConfigInfo.name) && Objects.equals(this.value, dynamicConfigInfo.value)
+            && Objects.equals(this.limits, dynamicConfigInfo.limits)
+            && Objects.equals(this.type, dynamicConfigInfo.type)
+            && Objects.equals(this.description, dynamicConfigInfo.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, value, limits, type, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -294,16 +244,13 @@ public class DynamicConfigInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

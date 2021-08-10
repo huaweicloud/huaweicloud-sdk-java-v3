@@ -1,49 +1,34 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ces.v1.model.CreateResourceGroup;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 创建资源分组，请求参数。
- */
-public class CreateResourceGroupRequestBody  {
-
-
+/** 创建资源分组，请求参数。 */
+public class CreateResourceGroupRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_name")
-    
+    @JsonProperty(value = "group_name")
+
     private String groupName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resources")
-    
+    @JsonProperty(value = "resources")
+
     private List<CreateResourceGroup> resources = null;
-    
+
     public CreateResourceGroupRequestBody withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源分组的名称；长度为1-128，只能包含0-9/a-z/A-Z/_/-或汉字；如：ResourceGroup-Test01。
-     * @return groupName
-     */
+    /** 资源分组的名称；长度为1-128，只能包含0-9/a-z/A-Z/_/-或汉字；如：ResourceGroup-Test01。
+     * 
+     * @return groupName */
     public String getGroupName() {
         return groupName;
     }
@@ -52,16 +37,13 @@ public class CreateResourceGroupRequestBody  {
         this.groupName = groupName;
     }
 
-    
-
     public CreateResourceGroupRequestBody withResources(List<CreateResourceGroup> resources) {
         this.resources = resources;
         return this;
     }
 
-    
     public CreateResourceGroupRequestBody addResourcesItem(CreateResourceGroup resourcesItem) {
-        if(this.resources == null) {
+        if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
         this.resources.add(resourcesItem);
@@ -69,17 +51,16 @@ public class CreateResourceGroupRequestBody  {
     }
 
     public CreateResourceGroupRequestBody withResources(Consumer<List<CreateResourceGroup>> resourcesSetter) {
-        if(this.resources == null) {
+        if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);
         return this;
     }
 
-    /**
-     * 创建的资源分组选择一个或者多个资源。
-     * @return resources
-     */
+    /** 创建的资源分组选择一个或者多个资源。
+     * 
+     * @return resources */
     public List<CreateResourceGroup> getResources() {
         return resources;
     }
@@ -87,8 +68,6 @@ public class CreateResourceGroupRequestBody  {
     public void setResources(List<CreateResourceGroup> resources) {
         this.resources = resources;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -99,13 +78,15 @@ public class CreateResourceGroupRequestBody  {
             return false;
         }
         CreateResourceGroupRequestBody createResourceGroupRequestBody = (CreateResourceGroupRequestBody) o;
-        return Objects.equals(this.groupName, createResourceGroupRequestBody.groupName) &&
-            Objects.equals(this.resources, createResourceGroupRequestBody.resources);
+        return Objects.equals(this.groupName, createResourceGroupRequestBody.groupName)
+            && Objects.equals(this.resources, createResourceGroupRequestBody.resources);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(groupName, resources);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -115,16 +96,13 @@ public class CreateResourceGroupRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

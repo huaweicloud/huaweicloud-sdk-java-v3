@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.nat.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteNatGatewaySnatRuleRequest  {
-
-
+/** Request Object */
+public class DeleteNatGatewaySnatRuleRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nat_gateway_id")
-    
+    @JsonProperty(value = "nat_gateway_id")
+
     private String natGatewayId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="snat_rule_id")
-    
+    @JsonProperty(value = "snat_rule_id")
+
     private String snatRuleId;
 
     public DeleteNatGatewaySnatRuleRequest withNatGatewayId(String natGatewayId) {
@@ -34,13 +23,9 @@ public class DeleteNatGatewaySnatRuleRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 公网NAT网关实例的ID。
-     * @return natGatewayId
-     */
+    /** 公网NAT网关实例的ID。
+     * 
+     * @return natGatewayId */
     public String getNatGatewayId() {
         return natGatewayId;
     }
@@ -49,20 +34,14 @@ public class DeleteNatGatewaySnatRuleRequest  {
         this.natGatewayId = natGatewayId;
     }
 
-    
-
     public DeleteNatGatewaySnatRuleRequest withSnatRuleId(String snatRuleId) {
         this.snatRuleId = snatRuleId;
         return this;
     }
 
-    
-
-
-    /**
-     * SNAT规则的ID。
-     * @return snatRuleId
-     */
+    /** SNAT规则的ID。
+     * 
+     * @return snatRuleId */
     public String getSnatRuleId() {
         return snatRuleId;
     }
@@ -70,8 +49,6 @@ public class DeleteNatGatewaySnatRuleRequest  {
     public void setSnatRuleId(String snatRuleId) {
         this.snatRuleId = snatRuleId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class DeleteNatGatewaySnatRuleRequest  {
             return false;
         }
         DeleteNatGatewaySnatRuleRequest deleteNatGatewaySnatRuleRequest = (DeleteNatGatewaySnatRuleRequest) o;
-        return Objects.equals(this.natGatewayId, deleteNatGatewaySnatRuleRequest.natGatewayId) &&
-            Objects.equals(this.snatRuleId, deleteNatGatewaySnatRuleRequest.snatRuleId);
+        return Objects.equals(this.natGatewayId, deleteNatGatewaySnatRuleRequest.natGatewayId)
+            && Objects.equals(this.snatRuleId, deleteNatGatewaySnatRuleRequest.snatRuleId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(natGatewayId, snatRuleId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class DeleteNatGatewaySnatRuleRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

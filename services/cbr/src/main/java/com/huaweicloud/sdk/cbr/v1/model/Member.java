@@ -1,46 +1,31 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 
  */
-public class Member  {
+public class Member {
 
-    /**
-     * 共享状态
-     */
+    /** 共享状态 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum PENDING for value: "pending"
-         */
+        /** Enum PENDING for value: "pending" */
         public static final StatusEnum PENDING = new StatusEnum("pending");
-        
-        /**
-         * Enum ACCEPTED for value: "accepted"
-         */
+
+        /** Enum ACCEPTED for value: "accepted" */
         public static final StatusEnum ACCEPTED = new StatusEnum("accepted");
-        
-        /**
-         * Enum REJECTED for value: "rejected"
-         */
+
+        /** Enum REJECTED for value: "rejected" */
         public static final StatusEnum REJECTED = new StatusEnum("rejected");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,7 +55,7 @@ public class Member  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -81,7 +66,7 @@ public class Member  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -105,52 +90,44 @@ public class Member  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private String updatedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_id")
-    
+    @JsonProperty(value = "backup_id")
+
     private String backupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_id")
-    
+    @JsonProperty(value = "image_id")
+
     private String imageId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dest_project_id")
-    
+    @JsonProperty(value = "dest_project_id")
+
     private String destProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vault_id")
-    
+    @JsonProperty(value = "vault_id")
+
     private String vaultId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
     public Member withStatus(StatusEnum status) {
@@ -158,13 +135,9 @@ public class Member  {
         return this;
     }
 
-    
-
-
-    /**
-     * 共享状态
-     * @return status
-     */
+    /** 共享状态
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -173,20 +146,14 @@ public class Member  {
         this.status = status;
     }
 
-    
-
     public Member withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 共享时间，例如:\"2020-02-05T10:38:34.209782\"
-     * @return createdAt
-     */
+    /** 共享时间，例如:\"2020-02-05T10:38:34.209782\"
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -195,20 +162,14 @@ public class Member  {
         this.createdAt = createdAt;
     }
 
-    
-
     public Member withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间，例如:\"2020-02-05T10:38:34.209782\"
-     * @return updatedAt
-     */
+    /** 更新时间，例如:\"2020-02-05T10:38:34.209782\"
+     * 
+     * @return updatedAt */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -217,20 +178,14 @@ public class Member  {
         this.updatedAt = updatedAt;
     }
 
-    
-
     public Member withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份副本id
-     * @return backupId
-     */
+    /** 备份副本id
+     * 
+     * @return backupId */
     public String getBackupId() {
         return backupId;
     }
@@ -239,20 +194,14 @@ public class Member  {
         this.backupId = backupId;
     }
 
-    
-
     public Member withImageId(String imageId) {
         this.imageId = imageId;
         return this;
     }
 
-    
-
-
-    /**
-     * 接受的共享备份副本注册的镜像id
-     * @return imageId
-     */
+    /** 接受的共享备份副本注册的镜像id
+     * 
+     * @return imageId */
     public String getImageId() {
         return imageId;
     }
@@ -261,20 +210,14 @@ public class Member  {
         this.imageId = imageId;
     }
 
-    
-
     public Member withDestProjectId(String destProjectId) {
         this.destProjectId = destProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 接受备份共享的项目id
-     * @return destProjectId
-     */
+    /** 接受备份共享的项目id
+     * 
+     * @return destProjectId */
     public String getDestProjectId() {
         return destProjectId;
     }
@@ -283,20 +226,14 @@ public class Member  {
         this.destProjectId = destProjectId;
     }
 
-    
-
     public Member withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标端接受共享备份的存储库id
-     * @return vaultId
-     */
+    /** 目标端接受共享备份的存储库id
+     * 
+     * @return vaultId */
     public String getVaultId() {
         return vaultId;
     }
@@ -305,20 +242,14 @@ public class Member  {
         this.vaultId = vaultId;
     }
 
-    
-
     public Member withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 共享记录id
-     * @return id
-     */
+    /** 共享记录id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -326,8 +257,6 @@ public class Member  {
     public void setId(String id) {
         this.id = id;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -338,19 +267,17 @@ public class Member  {
             return false;
         }
         Member member = (Member) o;
-        return Objects.equals(this.status, member.status) &&
-            Objects.equals(this.createdAt, member.createdAt) &&
-            Objects.equals(this.updatedAt, member.updatedAt) &&
-            Objects.equals(this.backupId, member.backupId) &&
-            Objects.equals(this.imageId, member.imageId) &&
-            Objects.equals(this.destProjectId, member.destProjectId) &&
-            Objects.equals(this.vaultId, member.vaultId) &&
-            Objects.equals(this.id, member.id);
+        return Objects.equals(this.status, member.status) && Objects.equals(this.createdAt, member.createdAt)
+            && Objects.equals(this.updatedAt, member.updatedAt) && Objects.equals(this.backupId, member.backupId)
+            && Objects.equals(this.imageId, member.imageId) && Objects.equals(this.destProjectId, member.destProjectId)
+            && Objects.equals(this.vaultId, member.vaultId) && Objects.equals(this.id, member.id);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(status, createdAt, updatedAt, backupId, imageId, destProjectId, vaultId, id);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -366,16 +293,13 @@ public class Member  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

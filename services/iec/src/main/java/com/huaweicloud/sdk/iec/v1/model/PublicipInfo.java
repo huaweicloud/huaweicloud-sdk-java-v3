@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 弹性公网IP信息
- */
-public class PublicipInfo  {
-
-
+/** 弹性公网IP信息 */
+public class PublicipInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_version")
-    
+    @JsonProperty(value = "ip_version")
+
     private Integer ipVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publicip_address")
-    
+    @JsonProperty(value = "publicip_address")
+
     private String publicipAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publicip_id")
-    
+    @JsonProperty(value = "publicip_id")
+
     private String publicipId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publicip_type")
-    
+    @JsonProperty(value = "publicip_type")
+
     private String publicipType;
 
     public PublicipInfo withIpVersion(Integer ipVersion) {
@@ -46,13 +33,9 @@ public class PublicipInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     *   IP版本的信息
-     * @return ipVersion
-     */
+    /** IP版本的信息
+     * 
+     * @return ipVersion */
     public Integer getIpVersion() {
         return ipVersion;
     }
@@ -61,20 +44,14 @@ public class PublicipInfo  {
         this.ipVersion = ipVersion;
     }
 
-    
-
     public PublicipInfo withPublicipAddress(String publicipAddress) {
         this.publicipAddress = publicipAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 弹性公网IP
-     * @return publicipAddress
-     */
+    /** 弹性公网IP
+     * 
+     * @return publicipAddress */
     public String getPublicipAddress() {
         return publicipAddress;
     }
@@ -83,20 +60,14 @@ public class PublicipInfo  {
         this.publicipAddress = publicipAddress;
     }
 
-    
-
     public PublicipInfo withPublicipId(String publicipId) {
         this.publicipId = publicipId;
         return this;
     }
 
-    
-
-
-    /**
-     * 弹性公网IP的ID。
-     * @return publicipId
-     */
+    /** 弹性公网IP的ID。
+     * 
+     * @return publicipId */
     public String getPublicipId() {
         return publicipId;
     }
@@ -105,20 +76,14 @@ public class PublicipInfo  {
         this.publicipId = publicipId;
     }
 
-    
-
     public PublicipInfo withPublicipType(String publicipType) {
         this.publicipType = publicipType;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：弹性公网IP的类型
-     * @return publicipType
-     */
+    /** 功能说明：弹性公网IP的类型
+     * 
+     * @return publicipType */
     public String getPublicipType() {
         return publicipType;
     }
@@ -126,8 +91,6 @@ public class PublicipInfo  {
     public void setPublicipType(String publicipType) {
         this.publicipType = publicipType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class PublicipInfo  {
             return false;
         }
         PublicipInfo publicipInfo = (PublicipInfo) o;
-        return Objects.equals(this.ipVersion, publicipInfo.ipVersion) &&
-            Objects.equals(this.publicipAddress, publicipInfo.publicipAddress) &&
-            Objects.equals(this.publicipId, publicipInfo.publicipId) &&
-            Objects.equals(this.publicipType, publicipInfo.publicipType);
+        return Objects.equals(this.ipVersion, publicipInfo.ipVersion)
+            && Objects.equals(this.publicipAddress, publicipInfo.publicipAddress)
+            && Objects.equals(this.publicipId, publicipInfo.publicipId)
+            && Objects.equals(this.publicipType, publicipInfo.publicipType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(ipVersion, publicipAddress, publicipId, publicipType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class PublicipInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

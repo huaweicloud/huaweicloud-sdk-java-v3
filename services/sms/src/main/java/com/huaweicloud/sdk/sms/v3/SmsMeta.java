@@ -6,14 +6,12 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.sms.v3.model.*;
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class SmsMeta {
 
-    public static final HttpRequestDef<CreateMigprojectRequest, CreateMigprojectResponse> createMigproject = genForcreateMigproject();
+    public static final HttpRequestDef<CreateMigprojectRequest, CreateMigprojectResponse> createMigproject =
+        genForcreateMigproject();
 
     private static HttpRequestDef<CreateMigprojectRequest, CreateMigprojectResponse> genForcreateMigproject() {
         // basic
@@ -24,27 +22,23 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<PostMigProjectBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            PostMigProjectBody.class,
+            TypeCasts.uncheckedConversion(PostMigProjectBody.class),
             f -> f.withMarshaller(CreateMigprojectRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreateMigprojectResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(CreateMigprojectResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
@@ -60,23 +54,21 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<PostTask>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            PostTask.class,
+            TypeCasts.uncheckedConversion(PostTask.class),
             f -> f.withMarshaller(CreateTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateTemplateRequest, CreateTemplateResponse> createTemplate = genForcreateTemplate();
+    public static final HttpRequestDef<CreateTemplateRequest, CreateTemplateResponse> createTemplate =
+        genForcreateTemplate();
 
     private static HttpRequestDef<CreateTemplateRequest, CreateTemplateResponse> genForcreateTemplate() {
         // basic
@@ -87,23 +79,21 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateTemplateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateTemplateReq.class,
+            TypeCasts.uncheckedConversion(CreateTemplateReq.class),
             f -> f.withMarshaller(CreateTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteMigprojectRequest, DeleteMigprojectResponse> deleteMigproject = genFordeleteMigproject();
+    public static final HttpRequestDef<DeleteMigprojectRequest, DeleteMigprojectResponse> deleteMigproject =
+        genFordeleteMigproject();
 
     private static HttpRequestDef<DeleteMigprojectRequest, DeleteMigprojectResponse> genFordeleteMigproject() {
         // basic
@@ -114,18 +104,15 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("mig_project_id",
+        builder.<String>withRequestField("mig_project_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteMigprojectRequest::getMigProjectId, (req, v) -> {
                 req.setMigProjectId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -141,23 +128,21 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("source_id",
+        builder.<String>withRequestField("source_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteServerRequest::getSourceId, (req, v) -> {
                 req.setSourceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteServersRequest, DeleteServersResponse> deleteServers = genFordeleteServers();
+    public static final HttpRequestDef<DeleteServersRequest, DeleteServersResponse> deleteServers =
+        genFordeleteServers();
 
     private static HttpRequestDef<DeleteServersRequest, DeleteServersResponse> genFordeleteServers() {
         // basic
@@ -168,18 +153,15 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<DeleteIds>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DeleteIds.class,
+            TypeCasts.uncheckedConversion(DeleteIds.class),
             f -> f.withMarshaller(DeleteServersRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -195,18 +177,15 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -222,23 +201,21 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<DeleteTasksReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DeleteTasksReq.class,
+            TypeCasts.uncheckedConversion(DeleteTasksReq.class),
             f -> f.withMarshaller(DeleteTasksRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplate = genFordeleteTemplate();
+    public static final HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplate =
+        genFordeleteTemplate();
 
     private static HttpRequestDef<DeleteTemplateRequest, DeleteTemplateResponse> genFordeleteTemplate() {
         // basic
@@ -249,23 +226,21 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("id",
+        builder.<String>withRequestField("id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTemplateRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTemplatesRequest, DeleteTemplatesResponse> deleteTemplates = genFordeleteTemplates();
+    public static final HttpRequestDef<DeleteTemplatesRequest, DeleteTemplatesResponse> deleteTemplates =
+        genFordeleteTemplates();
 
     private static HttpRequestDef<DeleteTemplatesRequest, DeleteTemplatesResponse> genFordeleteTemplates() {
         // basic
@@ -276,23 +251,21 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<DeletetemplatesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            DeletetemplatesReq.class,
+            TypeCasts.uncheckedConversion(DeletetemplatesReq.class),
             f -> f.withMarshaller(DeleteTemplatesRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListErrorServersRequest, ListErrorServersResponse> listErrorServers = genForlistErrorServers();
+    public static final HttpRequestDef<ListErrorServersRequest, ListErrorServersResponse> listErrorServers =
+        genForlistErrorServers();
 
     private static HttpRequestDef<ListErrorServersRequest, ListErrorServersResponse> genForlistErrorServers() {
         // basic
@@ -303,47 +276,42 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListErrorServersRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListErrorServersRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("migproject",
+            }));
+        builder.<String>withRequestField("migproject",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListErrorServersRequest::getMigproject, (req, v) -> {
                 req.setMigproject(v);
-            })
-        );
-        builder.withRequestField("enterprise_project_id",
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListErrorServersRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListMigprojectsRequest, ListMigprojectsResponse> listMigprojects = genForlistMigprojects();
+    public static final HttpRequestDef<ListMigprojectsRequest, ListMigprojectsResponse> listMigprojects =
+        genForlistMigprojects();
 
     private static HttpRequestDef<ListMigprojectsRequest, ListMigprojectsResponse> genForlistMigprojects() {
         // basic
@@ -354,26 +322,22 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListMigprojectsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListMigprojectsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -389,90 +353,78 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("state",
+        builder.<ListServersRequest.StateEnum>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListServersRequest.StateEnum.class,
+            TypeCasts.uncheckedConversion(ListServersRequest.StateEnum.class),
             f -> f.withMarshaller(ListServersRequest::getState, (req, v) -> {
                 req.setState(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServersRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServersRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("ip",
+            }));
+        builder.<String>withRequestField("ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServersRequest::getIp, (req, v) -> {
                 req.setIp(v);
-            })
-        );
-        builder.withRequestField("migproject",
+            }));
+        builder.<String>withRequestField("migproject",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServersRequest::getMigproject, (req, v) -> {
                 req.setMigproject(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListServersRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListServersRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("migration_cycle",
+            }));
+        builder.<String>withRequestField("migration_cycle",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServersRequest::getMigrationCycle, (req, v) -> {
                 req.setMigrationCycle(v);
-            })
-        );
-        builder.withRequestField("connected",
+            }));
+        builder.<Boolean>withRequestField("connected",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListServersRequest::getConnected, (req, v) -> {
                 req.setConnected(v);
-            })
-        );
-        builder.withRequestField("enterprise_project_id",
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServersRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -488,71 +440,63 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("state",
+        builder.<ListTasksRequest.StateEnum>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListTasksRequest.StateEnum.class,
+            TypeCasts.uncheckedConversion(ListTasksRequest.StateEnum.class),
             f -> f.withMarshaller(ListTasksRequest::getState, (req, v) -> {
                 req.setState(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTasksRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTasksRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("source_server_id",
+            }));
+        builder.<String>withRequestField("source_server_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTasksRequest::getSourceServerId, (req, v) -> {
                 req.setSourceServerId(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTasksRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTasksRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("enterprise_project_id",
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTasksRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> listTemplates = genForlistTemplates();
+    public static final HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> listTemplates =
+        genForlistTemplates();
 
     private static HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> genForlistTemplates() {
         // basic
@@ -563,55 +507,49 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("name",
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTemplatesRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("availability_zone",
+            }));
+        builder.<String>withRequestField("availability_zone",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTemplatesRequest::getAvailabilityZone, (req, v) -> {
                 req.setAvailabilityZone(v);
-            })
-        );
-        builder.withRequestField("region",
+            }));
+        builder.<String>withRequestField("region",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTemplatesRequest::getRegion, (req, v) -> {
                 req.setRegion(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTemplatesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTemplatesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RegisterServerRequest, RegisterServerResponse> registerServer = genForregisterServer();
+    public static final HttpRequestDef<RegisterServerRequest, RegisterServerResponse> registerServer =
+        genForregisterServer();
 
     private static HttpRequestDef<RegisterServerRequest, RegisterServerResponse> genForregisterServer() {
         // basic
@@ -622,18 +560,15 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<PostSourceServerBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            PostSourceServerBody.class,
+            TypeCasts.uncheckedConversion(PostSourceServerBody.class),
             f -> f.withMarshaller(RegisterServerRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -649,18 +584,15 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCertKeyRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -676,23 +608,21 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCommandRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowMigprojectRequest, ShowMigprojectResponse> showMigproject = genForshowMigproject();
+    public static final HttpRequestDef<ShowMigprojectRequest, ShowMigprojectResponse> showMigproject =
+        genForshowMigproject();
 
     private static HttpRequestDef<ShowMigprojectRequest, ShowMigprojectResponse> genForshowMigproject() {
         // basic
@@ -703,18 +633,15 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("mig_project_id",
+        builder.<String>withRequestField("mig_project_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMigprojectRequest::getMigProjectId, (req, v) -> {
                 req.setMigProjectId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -732,8 +659,6 @@ public class SmsMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
@@ -749,18 +674,15 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("source_id",
+        builder.<String>withRequestField("source_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowServerRequest::getSourceId, (req, v) -> {
                 req.setSourceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -776,18 +698,15 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -803,23 +722,21 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("id",
+        builder.<String>withRequestField("id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTemplateRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowsSpeedLimitsRequest, ShowsSpeedLimitsResponse> showsSpeedLimits = genForshowsSpeedLimits();
+    public static final HttpRequestDef<ShowsSpeedLimitsRequest, ShowsSpeedLimitsResponse> showsSpeedLimits =
+        genForshowsSpeedLimits();
 
     private static HttpRequestDef<ShowsSpeedLimitsRequest, ShowsSpeedLimitsResponse> genForshowsSpeedLimits() {
         // basic
@@ -830,23 +747,21 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowsSpeedLimitsRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateCommandResultRequest, UpdateCommandResultResponse> updateCommandResult = genForupdateCommandResult();
+    public static final HttpRequestDef<UpdateCommandResultRequest, UpdateCommandResultResponse> updateCommandResult =
+        genForupdateCommandResult();
 
     private static HttpRequestDef<UpdateCommandResultRequest, UpdateCommandResultResponse> genForupdateCommandResult() {
         // basic
@@ -857,31 +772,28 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateCommandResultRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CommandBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CommandBody.class,
+            TypeCasts.uncheckedConversion(CommandBody.class),
             f -> f.withMarshaller(UpdateCommandResultRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateCopyStateRequest, UpdateCopyStateResponse> updateCopyState = genForupdateCopyState();
+    public static final HttpRequestDef<UpdateCopyStateRequest, UpdateCopyStateResponse> updateCopyState =
+        genForupdateCopyState();
 
     private static HttpRequestDef<UpdateCopyStateRequest, UpdateCopyStateResponse> genForupdateCopyState() {
         // basic
@@ -892,58 +804,53 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("source_id",
+        builder.<String>withRequestField("source_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateCopyStateRequest::getSourceId, (req, v) -> {
                 req.setSourceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<PutCopyStateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            PutCopyStateReq.class,
+            TypeCasts.uncheckedConversion(PutCopyStateReq.class),
             f -> f.withMarshaller(UpdateCopyStateRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateDefaultMigprojectRequest, UpdateDefaultMigprojectResponse> updateDefaultMigproject = genForupdateDefaultMigproject();
+    public static final HttpRequestDef<UpdateDefaultMigprojectRequest, UpdateDefaultMigprojectResponse> updateDefaultMigproject =
+        genForupdateDefaultMigproject();
 
     private static HttpRequestDef<UpdateDefaultMigprojectRequest, UpdateDefaultMigprojectResponse> genForupdateDefaultMigproject() {
         // basic
-        HttpRequestDef.Builder<UpdateDefaultMigprojectRequest, UpdateDefaultMigprojectResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateDefaultMigprojectRequest.class, UpdateDefaultMigprojectResponse.class)
-                .withName("UpdateDefaultMigproject")
-                .withUri("/v3/migprojects/{mig_project_id}/default")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<UpdateDefaultMigprojectRequest, UpdateDefaultMigprojectResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateDefaultMigprojectRequest.class, UpdateDefaultMigprojectResponse.class)
+            .withName("UpdateDefaultMigproject")
+            .withUri("/v3/migprojects/{mig_project_id}/default")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("mig_project_id",
+        builder.<String>withRequestField("mig_project_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateDefaultMigprojectRequest::getMigProjectId, (req, v) -> {
                 req.setMigProjectId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateDiskInfoRequest, UpdateDiskInfoResponse> updateDiskInfo = genForupdateDiskInfo();
+    public static final HttpRequestDef<UpdateDiskInfoRequest, UpdateDiskInfoResponse> updateDiskInfo =
+        genForupdateDiskInfo();
 
     private static HttpRequestDef<UpdateDiskInfoRequest, UpdateDiskInfoResponse> genForupdateDiskInfo() {
         // basic
@@ -954,31 +861,28 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("source_id",
+        builder.<String>withRequestField("source_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateDiskInfoRequest::getSourceId, (req, v) -> {
                 req.setSourceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<PutDiskInfoReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            PutDiskInfoReq.class,
+            TypeCasts.uncheckedConversion(PutDiskInfoReq.class),
             f -> f.withMarshaller(UpdateDiskInfoRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateMigprojectRequest, UpdateMigprojectResponse> updateMigproject = genForupdateMigproject();
+    public static final HttpRequestDef<UpdateMigprojectRequest, UpdateMigprojectResponse> updateMigproject =
+        genForupdateMigproject();
 
     private static HttpRequestDef<UpdateMigprojectRequest, UpdateMigprojectResponse> genForupdateMigproject() {
         // basic
@@ -989,40 +893,36 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("mig_project_id",
+        builder.<String>withRequestField("mig_project_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateMigprojectRequest::getMigProjectId, (req, v) -> {
                 req.setMigProjectId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<MigProject>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            MigProject.class,
+            TypeCasts.uncheckedConversion(MigProject.class),
             f -> f.withMarshaller(UpdateMigprojectRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UpdateMigprojectResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(UpdateMigprojectResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateServerNameRequest, UpdateServerNameResponse> updateServerName = genForupdateServerName();
+    public static final HttpRequestDef<UpdateServerNameRequest, UpdateServerNameResponse> updateServerName =
+        genForupdateServerName();
 
     private static HttpRequestDef<UpdateServerNameRequest, UpdateServerNameResponse> genForupdateServerName() {
         // basic
@@ -1033,26 +933,22 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("source_id",
+        builder.<String>withRequestField("source_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateServerNameRequest::getSourceId, (req, v) -> {
                 req.setSourceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<PutSourceServerBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            PutSourceServerBody.class,
+            TypeCasts.uncheckedConversion(PutSourceServerBody.class),
             f -> f.withMarshaller(UpdateServerNameRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1068,26 +964,22 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateSpeedRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<SpeedLimit>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            SpeedLimit.class,
+            TypeCasts.uncheckedConversion(SpeedLimit.class),
             f -> f.withMarshaller(UpdateSpeedRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1103,40 +995,36 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<PutTaskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            PutTaskReq.class,
+            TypeCasts.uncheckedConversion(PutTaskReq.class),
             f -> f.withMarshaller(UpdateTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UpdateTaskResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(UpdateTaskResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateTaskSpeedRequest, UpdateTaskSpeedResponse> updateTaskSpeed = genForupdateTaskSpeed();
+    public static final HttpRequestDef<UpdateTaskSpeedRequest, UpdateTaskSpeedResponse> updateTaskSpeed =
+        genForupdateTaskSpeed();
 
     private static HttpRequestDef<UpdateTaskSpeedRequest, UpdateTaskSpeedResponse> genForupdateTaskSpeed() {
         // basic
@@ -1147,31 +1035,28 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateTaskSpeedRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateTaskSpeedReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            UpdateTaskSpeedReq.class,
+            TypeCasts.uncheckedConversion(UpdateTaskSpeedReq.class),
             f -> f.withMarshaller(UpdateTaskSpeedRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateTaskStatusRequest, UpdateTaskStatusResponse> updateTaskStatus = genForupdateTaskStatus();
+    public static final HttpRequestDef<UpdateTaskStatusRequest, UpdateTaskStatusResponse> updateTaskStatus =
+        genForupdateTaskStatus();
 
     private static HttpRequestDef<UpdateTaskStatusRequest, UpdateTaskStatusResponse> genForupdateTaskStatus() {
         // basic
@@ -1182,31 +1067,28 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateTaskStatusRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateTaskStatusReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateTaskStatusReq.class,
+            TypeCasts.uncheckedConversion(UpdateTaskStatusReq.class),
             f -> f.withMarshaller(UpdateTaskStatusRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateTemplateRequest, UpdateTemplateResponse> updateTemplate = genForupdateTemplate();
+    public static final HttpRequestDef<UpdateTemplateRequest, UpdateTemplateResponse> updateTemplate =
+        genForupdateTemplate();
 
     private static HttpRequestDef<UpdateTemplateRequest, UpdateTemplateResponse> genForupdateTemplate() {
         // basic
@@ -1217,26 +1099,22 @@ public class SmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("id",
+        builder.<String>withRequestField("id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateTemplateRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateTemplateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            UpdateTemplateReq.class,
+            TypeCasts.uncheckedConversion(UpdateTemplateReq.class),
             f -> f.withMarshaller(UpdateTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

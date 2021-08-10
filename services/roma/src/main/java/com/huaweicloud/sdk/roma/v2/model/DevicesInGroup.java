@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * DevicesInGroup
- */
-public class DevicesInGroup  {
-
-
+/** DevicesInGroup */
+public class DevicesInGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_id")
-    
+    @JsonProperty(value = "device_id")
+
     private Integer deviceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_name")
-    
+    @JsonProperty(value = "device_name")
+
     private String deviceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
-    
+    @JsonProperty(value = "product_id")
+
     private Integer productId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_name")
-    
+    @JsonProperty(value = "product_name")
+
     private String productName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="online_status")
-    
+    @JsonProperty(value = "online_status")
+
     private Integer onlineStatus;
 
     public DevicesInGroup withDeviceId(Integer deviceId) {
@@ -58,15 +43,9 @@ public class DevicesInGroup  {
         return this;
     }
 
-    
-
-
-    /**
-     * 设备ID
-     * minimum: 1
-     * maximum: -8446744073709551617
-     * @return deviceId
-     */
+    /** 设备ID minimum: 1 maximum: -8446744073709551617
+     * 
+     * @return deviceId */
     public Integer getDeviceId() {
         return deviceId;
     }
@@ -75,20 +54,14 @@ public class DevicesInGroup  {
         this.deviceId = deviceId;
     }
 
-    
-
     public DevicesInGroup withDeviceName(String deviceName) {
         this.deviceName = deviceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备名称
-     * @return deviceName
-     */
+    /** 设备名称
+     * 
+     * @return deviceName */
     public String getDeviceName() {
         return deviceName;
     }
@@ -97,22 +70,14 @@ public class DevicesInGroup  {
         this.deviceName = deviceName;
     }
 
-    
-
     public DevicesInGroup withProductId(Integer productId) {
         this.productId = productId;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品ID
-     * minimum: 1
-     * maximum: -8446744073709551617
-     * @return productId
-     */
+    /** 产品ID minimum: 1 maximum: -8446744073709551617
+     * 
+     * @return productId */
     public Integer getProductId() {
         return productId;
     }
@@ -121,20 +86,14 @@ public class DevicesInGroup  {
         this.productId = productId;
     }
 
-    
-
     public DevicesInGroup withProductName(String productName) {
         this.productName = productName;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品名称
-     * @return productName
-     */
+    /** 产品名称
+     * 
+     * @return productName */
     public String getProductName() {
         return productName;
     }
@@ -143,22 +102,14 @@ public class DevicesInGroup  {
         this.productName = productName;
     }
 
-    
-
     public DevicesInGroup withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备状态 0-启用 1-禁用
-     * minimum: 0
-     * maximum: 10
-     * @return status
-     */
+    /** 设备状态 0-启用 1-禁用 minimum: 0 maximum: 10
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -167,22 +118,14 @@ public class DevicesInGroup  {
         this.status = status;
     }
 
-    
-
     public DevicesInGroup withOnlineStatus(Integer onlineStatus) {
         this.onlineStatus = onlineStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否在线 0-未连接 1-在线 2-离线
-     * minimum: 0
-     * maximum: 10
-     * @return onlineStatus
-     */
+    /** 是否在线 0-未连接 1-在线 2-离线 minimum: 0 maximum: 10
+     * 
+     * @return onlineStatus */
     public Integer getOnlineStatus() {
         return onlineStatus;
     }
@@ -190,8 +133,6 @@ public class DevicesInGroup  {
     public void setOnlineStatus(Integer onlineStatus) {
         this.onlineStatus = onlineStatus;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -202,17 +143,19 @@ public class DevicesInGroup  {
             return false;
         }
         DevicesInGroup devicesInGroup = (DevicesInGroup) o;
-        return Objects.equals(this.deviceId, devicesInGroup.deviceId) &&
-            Objects.equals(this.deviceName, devicesInGroup.deviceName) &&
-            Objects.equals(this.productId, devicesInGroup.productId) &&
-            Objects.equals(this.productName, devicesInGroup.productName) &&
-            Objects.equals(this.status, devicesInGroup.status) &&
-            Objects.equals(this.onlineStatus, devicesInGroup.onlineStatus);
+        return Objects.equals(this.deviceId, devicesInGroup.deviceId)
+            && Objects.equals(this.deviceName, devicesInGroup.deviceName)
+            && Objects.equals(this.productId, devicesInGroup.productId)
+            && Objects.equals(this.productName, devicesInGroup.productName)
+            && Objects.equals(this.status, devicesInGroup.status)
+            && Objects.equals(this.onlineStatus, devicesInGroup.onlineStatus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(deviceId, deviceName, productId, productName, status, onlineStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -226,16 +169,13 @@ public class DevicesInGroup  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

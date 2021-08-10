@@ -1,53 +1,36 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * ThrottleSpecialReq
- */
-public class ThrottleSpecialReq  {
-
-
+/** ThrottleSpecialReq */
+public class ThrottleSpecialReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="call_limits")
-    
+    @JsonProperty(value = "call_limits")
+
     private Integer callLimits;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="object_id")
-    
+    @JsonProperty(value = "object_id")
+
     private String objectId;
-    /**
-     * 特殊对象类型
-     */
+
+    /** 特殊对象类型 */
     public static final class ObjectTypeEnum {
 
-        
-        /**
-         * Enum APP for value: "APP"
-         */
+        /** Enum APP for value: "APP" */
         public static final ObjectTypeEnum APP = new ObjectTypeEnum("APP");
-        
-        /**
-         * Enum USER for value: "USER"
-         */
+
+        /** Enum USER for value: "USER" */
         public static final ObjectTypeEnum USER = new ObjectTypeEnum("USER");
-        
 
         private static final Map<String, ObjectTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,7 +59,7 @@ public class ThrottleSpecialReq  {
 
         @JsonCreator
         public static ObjectTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ObjectTypeEnum result = STATIC_FIELDS.get(value);
@@ -87,7 +70,7 @@ public class ThrottleSpecialReq  {
         }
 
         public static ObjectTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ObjectTypeEnum result = STATIC_FIELDS.get(value);
@@ -111,10 +94,9 @@ public class ThrottleSpecialReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="object_type")
-    
+    @JsonProperty(value = "object_type")
+
     private ObjectTypeEnum objectType;
 
     public ThrottleSpecialReq withCallLimits(Integer callLimits) {
@@ -122,13 +104,9 @@ public class ThrottleSpecialReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 流控时间内特殊对象能够访问API的最大次数限制
-     * @return callLimits
-     */
+    /** 流控时间内特殊对象能够访问API的最大次数限制
+     * 
+     * @return callLimits */
     public Integer getCallLimits() {
         return callLimits;
     }
@@ -137,20 +115,14 @@ public class ThrottleSpecialReq  {
         this.callLimits = callLimits;
     }
 
-    
-
     public ThrottleSpecialReq withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 特殊APP的编号或特殊租户的帐号ID
-     * @return objectId
-     */
+    /** 特殊APP的编号或特殊租户的帐号ID
+     * 
+     * @return objectId */
     public String getObjectId() {
         return objectId;
     }
@@ -159,20 +131,14 @@ public class ThrottleSpecialReq  {
         this.objectId = objectId;
     }
 
-    
-
     public ThrottleSpecialReq withObjectType(ObjectTypeEnum objectType) {
         this.objectType = objectType;
         return this;
     }
 
-    
-
-
-    /**
-     * 特殊对象类型
-     * @return objectType
-     */
+    /** 特殊对象类型
+     * 
+     * @return objectType */
     public ObjectTypeEnum getObjectType() {
         return objectType;
     }
@@ -180,8 +146,6 @@ public class ThrottleSpecialReq  {
     public void setObjectType(ObjectTypeEnum objectType) {
         this.objectType = objectType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -192,14 +156,16 @@ public class ThrottleSpecialReq  {
             return false;
         }
         ThrottleSpecialReq throttleSpecialReq = (ThrottleSpecialReq) o;
-        return Objects.equals(this.callLimits, throttleSpecialReq.callLimits) &&
-            Objects.equals(this.objectId, throttleSpecialReq.objectId) &&
-            Objects.equals(this.objectType, throttleSpecialReq.objectType);
+        return Objects.equals(this.callLimits, throttleSpecialReq.callLimits)
+            && Objects.equals(this.objectId, throttleSpecialReq.objectId)
+            && Objects.equals(this.objectType, throttleSpecialReq.objectType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(callLimits, objectId, objectType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -210,16 +176,13 @@ public class ThrottleSpecialReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

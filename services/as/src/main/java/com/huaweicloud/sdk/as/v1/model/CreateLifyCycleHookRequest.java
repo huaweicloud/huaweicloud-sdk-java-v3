@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.CreateLifeCycleHookOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateLifyCycleHookRequest  {
-
-
+/** Request Object */
+public class CreateLifyCycleHookRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_group_id")
-    
+    @JsonProperty(value = "scaling_group_id")
+
     private String scalingGroupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private CreateLifeCycleHookOption body;
 
     public CreateLifyCycleHookRequest withScalingGroupId(String scalingGroupId) {
@@ -35,13 +24,9 @@ public class CreateLifyCycleHookRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩组标识。
-     * @return scalingGroupId
-     */
+    /** 伸缩组标识。
+     * 
+     * @return scalingGroupId */
     public String getScalingGroupId() {
         return scalingGroupId;
     }
@@ -50,27 +35,23 @@ public class CreateLifyCycleHookRequest  {
         this.scalingGroupId = scalingGroupId;
     }
 
-    
-
     public CreateLifyCycleHookRequest withBody(CreateLifeCycleHookOption body) {
         this.body = body;
         return this;
     }
 
     public CreateLifyCycleHookRequest withBody(Consumer<CreateLifeCycleHookOption> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CreateLifeCycleHookOption();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public CreateLifeCycleHookOption getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class CreateLifyCycleHookRequest  {
     public void setBody(CreateLifeCycleHookOption body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class CreateLifyCycleHookRequest  {
             return false;
         }
         CreateLifyCycleHookRequest createLifyCycleHookRequest = (CreateLifyCycleHookRequest) o;
-        return Objects.equals(this.scalingGroupId, createLifyCycleHookRequest.scalingGroupId) &&
-            Objects.equals(this.body, createLifyCycleHookRequest.body);
+        return Objects.equals(this.scalingGroupId, createLifyCycleHookRequest.scalingGroupId)
+            && Objects.equals(this.body, createLifyCycleHookRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(scalingGroupId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class CreateLifyCycleHookRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

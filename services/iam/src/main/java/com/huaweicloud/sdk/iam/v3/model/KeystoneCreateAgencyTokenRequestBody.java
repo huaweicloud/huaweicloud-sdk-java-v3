@@ -1,27 +1,19 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.AgencyTokenAuth;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class KeystoneCreateAgencyTokenRequestBody  {
-
-
+public class KeystoneCreateAgencyTokenRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth")
-    
+    @JsonProperty(value = "auth")
+
     private AgencyTokenAuth auth;
 
     public KeystoneCreateAgencyTokenRequestBody withAuth(AgencyTokenAuth auth) {
@@ -30,19 +22,17 @@ public class KeystoneCreateAgencyTokenRequestBody  {
     }
 
     public KeystoneCreateAgencyTokenRequestBody withAuth(Consumer<AgencyTokenAuth> authSetter) {
-        if(this.auth == null ){
+        if (this.auth == null) {
             this.auth = new AgencyTokenAuth();
             authSetter.accept(this.auth);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get auth
-     * @return auth
-     */
+    /** Get auth
+     * 
+     * @return auth */
     public AgencyTokenAuth getAuth() {
         return auth;
     }
@@ -50,8 +40,6 @@ public class KeystoneCreateAgencyTokenRequestBody  {
     public void setAuth(AgencyTokenAuth auth) {
         this.auth = auth;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -61,13 +49,16 @@ public class KeystoneCreateAgencyTokenRequestBody  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        KeystoneCreateAgencyTokenRequestBody keystoneCreateAgencyTokenRequestBody = (KeystoneCreateAgencyTokenRequestBody) o;
+        KeystoneCreateAgencyTokenRequestBody keystoneCreateAgencyTokenRequestBody =
+            (KeystoneCreateAgencyTokenRequestBody) o;
         return Objects.equals(this.auth, keystoneCreateAgencyTokenRequestBody.auth);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(auth);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +67,13 @@ public class KeystoneCreateAgencyTokenRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

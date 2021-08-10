@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 恢复目标对象。
- */
-public class RestoreToExistingInstanceRequestBodyTarget  {
-
-
+/** 恢复目标对象。 */
+public class RestoreToExistingInstanceRequestBodyTarget {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
     public RestoreToExistingInstanceRequestBodyTarget withInstanceId(String instanceId) {
@@ -28,13 +18,9 @@ public class RestoreToExistingInstanceRequestBodyTarget  {
         return this;
     }
 
-    
-
-
-    /**
-     * 恢复目标实例ID。
-     * @return instanceId
-     */
+    /** 恢复目标实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -42,8 +28,6 @@ public class RestoreToExistingInstanceRequestBodyTarget  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -53,13 +37,16 @@ public class RestoreToExistingInstanceRequestBodyTarget  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        RestoreToExistingInstanceRequestBodyTarget restoreToExistingInstanceRequestBodyTarget = (RestoreToExistingInstanceRequestBodyTarget) o;
+        RestoreToExistingInstanceRequestBodyTarget restoreToExistingInstanceRequestBodyTarget =
+            (RestoreToExistingInstanceRequestBodyTarget) o;
         return Objects.equals(this.instanceId, restoreToExistingInstanceRequestBodyTarget.instanceId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +55,13 @@ public class RestoreToExistingInstanceRequestBodyTarget  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

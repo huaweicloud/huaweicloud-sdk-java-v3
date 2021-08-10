@@ -1,86 +1,66 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ShowInstanceMessagesRespMessages
- */
-public class ShowInstanceMessagesRespMessages  {
-
-
+/** ShowInstanceMessagesRespMessages */
+public class ShowInstanceMessagesRespMessages {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic")
-    
+    @JsonProperty(value = "topic")
+
     private String topic;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="partition")
-    
+    @JsonProperty(value = "partition")
+
     private Integer partition;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private String value;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timestamp")
-    
+    @JsonProperty(value = "timestamp")
+
     private Long timestamp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="huge_message")
-    
+    @JsonProperty(value = "huge_message")
+
     private Boolean hugeMessage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message_offset")
-    
+    @JsonProperty(value = "message_offset")
+
     private Integer messageOffset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message_id")
-    
+    @JsonProperty(value = "message_id")
+
     private String messageId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag")
-    
+    @JsonProperty(value = "tag")
+
     private String tag;
 
     public ShowInstanceMessagesRespMessages withTopic(String topic) {
@@ -88,13 +68,9 @@ public class ShowInstanceMessagesRespMessages  {
         return this;
     }
 
-    
-
-
-    /**
-     * topic名称。
-     * @return topic
-     */
+    /** topic名称。
+     * 
+     * @return topic */
     public String getTopic() {
         return topic;
     }
@@ -103,20 +79,14 @@ public class ShowInstanceMessagesRespMessages  {
         this.topic = topic;
     }
 
-    
-
     public ShowInstanceMessagesRespMessages withPartition(Integer partition) {
         this.partition = partition;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息所在的分区。
-     * @return partition
-     */
+    /** 消息所在的分区。
+     * 
+     * @return partition */
     public Integer getPartition() {
         return partition;
     }
@@ -125,20 +95,14 @@ public class ShowInstanceMessagesRespMessages  {
         this.partition = partition;
     }
 
-    
-
     public ShowInstanceMessagesRespMessages withKey(String key) {
         this.key = key;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息key。
-     * @return key
-     */
+    /** 消息key。
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -147,20 +111,14 @@ public class ShowInstanceMessagesRespMessages  {
         this.key = key;
     }
 
-    
-
     public ShowInstanceMessagesRespMessages withValue(String value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息内容。
-     * @return value
-     */
+    /** 消息内容。
+     * 
+     * @return value */
     public String getValue() {
         return value;
     }
@@ -169,20 +127,14 @@ public class ShowInstanceMessagesRespMessages  {
         this.value = value;
     }
 
-    
-
     public ShowInstanceMessagesRespMessages withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息大小。
-     * @return size
-     */
+    /** 消息大小。
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -191,20 +143,14 @@ public class ShowInstanceMessagesRespMessages  {
         this.size = size;
     }
 
-    
-
     public ShowInstanceMessagesRespMessages withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
 
-    
-
-
-    /**
-     * topic名称。
-     * @return timestamp
-     */
+    /** topic名称。
+     * 
+     * @return timestamp */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -213,20 +159,14 @@ public class ShowInstanceMessagesRespMessages  {
         this.timestamp = timestamp;
     }
 
-    
-
     public ShowInstanceMessagesRespMessages withHugeMessage(Boolean hugeMessage) {
         this.hugeMessage = hugeMessage;
         return this;
     }
 
-    
-
-
-    /**
-     * 大数据标识。
-     * @return hugeMessage
-     */
+    /** 大数据标识。
+     * 
+     * @return hugeMessage */
     public Boolean getHugeMessage() {
         return hugeMessage;
     }
@@ -235,20 +175,14 @@ public class ShowInstanceMessagesRespMessages  {
         this.hugeMessage = hugeMessage;
     }
 
-    
-
     public ShowInstanceMessagesRespMessages withMessageOffset(Integer messageOffset) {
         this.messageOffset = messageOffset;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息偏移量。
-     * @return messageOffset
-     */
+    /** 消息偏移量。
+     * 
+     * @return messageOffset */
     public Integer getMessageOffset() {
         return messageOffset;
     }
@@ -257,20 +191,14 @@ public class ShowInstanceMessagesRespMessages  {
         this.messageOffset = messageOffset;
     }
 
-    
-
     public ShowInstanceMessagesRespMessages withMessageId(String messageId) {
         this.messageId = messageId;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息ID。
-     * @return messageId
-     */
+    /** 消息ID。
+     * 
+     * @return messageId */
     public String getMessageId() {
         return messageId;
     }
@@ -279,20 +207,14 @@ public class ShowInstanceMessagesRespMessages  {
         this.messageId = messageId;
     }
 
-    
-
     public ShowInstanceMessagesRespMessages withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用ID。
-     * @return appId
-     */
+    /** 应用ID。
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -301,20 +223,14 @@ public class ShowInstanceMessagesRespMessages  {
         this.appId = appId;
     }
 
-    
-
     public ShowInstanceMessagesRespMessages withTag(String tag) {
         this.tag = tag;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息标签。
-     * @return tag
-     */
+    /** 消息标签。
+     * 
+     * @return tag */
     public String getTag() {
         return tag;
     }
@@ -322,8 +238,6 @@ public class ShowInstanceMessagesRespMessages  {
     public void setTag(String tag) {
         this.tag = tag;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -334,22 +248,25 @@ public class ShowInstanceMessagesRespMessages  {
             return false;
         }
         ShowInstanceMessagesRespMessages showInstanceMessagesRespMessages = (ShowInstanceMessagesRespMessages) o;
-        return Objects.equals(this.topic, showInstanceMessagesRespMessages.topic) &&
-            Objects.equals(this.partition, showInstanceMessagesRespMessages.partition) &&
-            Objects.equals(this.key, showInstanceMessagesRespMessages.key) &&
-            Objects.equals(this.value, showInstanceMessagesRespMessages.value) &&
-            Objects.equals(this.size, showInstanceMessagesRespMessages.size) &&
-            Objects.equals(this.timestamp, showInstanceMessagesRespMessages.timestamp) &&
-            Objects.equals(this.hugeMessage, showInstanceMessagesRespMessages.hugeMessage) &&
-            Objects.equals(this.messageOffset, showInstanceMessagesRespMessages.messageOffset) &&
-            Objects.equals(this.messageId, showInstanceMessagesRespMessages.messageId) &&
-            Objects.equals(this.appId, showInstanceMessagesRespMessages.appId) &&
-            Objects.equals(this.tag, showInstanceMessagesRespMessages.tag);
+        return Objects.equals(this.topic, showInstanceMessagesRespMessages.topic)
+            && Objects.equals(this.partition, showInstanceMessagesRespMessages.partition)
+            && Objects.equals(this.key, showInstanceMessagesRespMessages.key)
+            && Objects.equals(this.value, showInstanceMessagesRespMessages.value)
+            && Objects.equals(this.size, showInstanceMessagesRespMessages.size)
+            && Objects.equals(this.timestamp, showInstanceMessagesRespMessages.timestamp)
+            && Objects.equals(this.hugeMessage, showInstanceMessagesRespMessages.hugeMessage)
+            && Objects.equals(this.messageOffset, showInstanceMessagesRespMessages.messageOffset)
+            && Objects.equals(this.messageId, showInstanceMessagesRespMessages.messageId)
+            && Objects.equals(this.appId, showInstanceMessagesRespMessages.appId)
+            && Objects.equals(this.tag, showInstanceMessagesRespMessages.tag);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(topic, partition, key, value, size, timestamp, hugeMessage, messageOffset, messageId, appId, tag);
+        return Objects
+            .hash(topic, partition, key, value, size, timestamp, hugeMessage, messageOffset, messageId, appId, tag);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -368,16 +285,13 @@ public class ShowInstanceMessagesRespMessages  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

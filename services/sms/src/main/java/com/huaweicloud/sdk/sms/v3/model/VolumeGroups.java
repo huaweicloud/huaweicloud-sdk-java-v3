@@ -1,53 +1,39 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.LogicalVolumes;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 逻辑卷组信息
- */
-public class VolumeGroups  {
-
-
+/** 逻辑卷组信息 */
+public class VolumeGroups {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="components")
-    
+    @JsonProperty(value = "components")
+
     private String components;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="free_size")
-    
+    @JsonProperty(value = "free_size")
+
     private Long freeSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="logical_volumes")
-    
+    @JsonProperty(value = "logical_volumes")
+
     private List<LogicalVolumes> logicalVolumes = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Long size;
 
     public VolumeGroups withComponents(String components) {
@@ -55,13 +41,9 @@ public class VolumeGroups  {
         return this;
     }
 
-    
-
-
-    /**
-     * Pv信息
-     * @return components
-     */
+    /** Pv信息
+     * 
+     * @return components */
     public String getComponents() {
         return components;
     }
@@ -70,22 +52,14 @@ public class VolumeGroups  {
         this.components = components;
     }
 
-    
-
     public VolumeGroups withFreeSize(Long freeSize) {
         this.freeSize = freeSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 剩余空间
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return freeSize
-     */
+    /** 剩余空间 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return freeSize */
     public Long getFreeSize() {
         return freeSize;
     }
@@ -94,16 +68,13 @@ public class VolumeGroups  {
         this.freeSize = freeSize;
     }
 
-    
-
     public VolumeGroups withLogicalVolumes(List<LogicalVolumes> logicalVolumes) {
         this.logicalVolumes = logicalVolumes;
         return this;
     }
 
-    
     public VolumeGroups addLogicalVolumesItem(LogicalVolumes logicalVolumesItem) {
-        if(this.logicalVolumes == null) {
+        if (this.logicalVolumes == null) {
             this.logicalVolumes = new ArrayList<>();
         }
         this.logicalVolumes.add(logicalVolumesItem);
@@ -111,17 +82,16 @@ public class VolumeGroups  {
     }
 
     public VolumeGroups withLogicalVolumes(Consumer<List<LogicalVolumes>> logicalVolumesSetter) {
-        if(this.logicalVolumes == null) {
+        if (this.logicalVolumes == null) {
             this.logicalVolumes = new ArrayList<>();
         }
         logicalVolumesSetter.accept(this.logicalVolumes);
         return this;
     }
 
-    /**
-     * lv信息
-     * @return logicalVolumes
-     */
+    /** lv信息
+     * 
+     * @return logicalVolumes */
     public List<LogicalVolumes> getLogicalVolumes() {
         return logicalVolumes;
     }
@@ -130,20 +100,14 @@ public class VolumeGroups  {
         this.logicalVolumes = logicalVolumes;
     }
 
-    
-
     public VolumeGroups withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 名称
-     * @return name
-     */
+    /** 名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -152,22 +116,14 @@ public class VolumeGroups  {
         this.name = name;
     }
 
-    
-
     public VolumeGroups withSize(Long size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 大小
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return size
-     */
+    /** 大小 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return size */
     public Long getSize() {
         return size;
     }
@@ -175,8 +131,6 @@ public class VolumeGroups  {
     public void setSize(Long size) {
         this.size = size;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -187,16 +141,17 @@ public class VolumeGroups  {
             return false;
         }
         VolumeGroups volumeGroups = (VolumeGroups) o;
-        return Objects.equals(this.components, volumeGroups.components) &&
-            Objects.equals(this.freeSize, volumeGroups.freeSize) &&
-            Objects.equals(this.logicalVolumes, volumeGroups.logicalVolumes) &&
-            Objects.equals(this.name, volumeGroups.name) &&
-            Objects.equals(this.size, volumeGroups.size);
+        return Objects.equals(this.components, volumeGroups.components)
+            && Objects.equals(this.freeSize, volumeGroups.freeSize)
+            && Objects.equals(this.logicalVolumes, volumeGroups.logicalVolumes)
+            && Objects.equals(this.name, volumeGroups.name) && Objects.equals(this.size, volumeGroups.size);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(components, freeSize, logicalVolumes, name, size);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -209,16 +164,13 @@ public class VolumeGroups  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

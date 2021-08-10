@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.CreateProductTopicRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateProductTopicRequest  {
-
-
+/** Request Object */
+public class CreateProductTopicRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
-    
+    @JsonProperty(value = "product_id")
+
     private Integer productId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private CreateProductTopicRequestBody body;
 
     public CreateProductTopicRequest withInstanceId(String instanceId) {
@@ -41,13 +29,9 @@ public class CreateProductTopicRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -56,22 +40,14 @@ public class CreateProductTopicRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public CreateProductTopicRequest withProductId(Integer productId) {
         this.productId = productId;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品ID
-     * minimum: 0
-     * maximum: 200376420520689663
-     * @return productId
-     */
+    /** 产品ID minimum: 0 maximum: 200376420520689663
+     * 
+     * @return productId */
     public Integer getProductId() {
         return productId;
     }
@@ -80,27 +56,23 @@ public class CreateProductTopicRequest  {
         this.productId = productId;
     }
 
-    
-
     public CreateProductTopicRequest withBody(CreateProductTopicRequestBody body) {
         this.body = body;
         return this;
     }
 
     public CreateProductTopicRequest withBody(Consumer<CreateProductTopicRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CreateProductTopicRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public CreateProductTopicRequestBody getBody() {
         return body;
     }
@@ -108,8 +80,6 @@ public class CreateProductTopicRequest  {
     public void setBody(CreateProductTopicRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -120,14 +90,16 @@ public class CreateProductTopicRequest  {
             return false;
         }
         CreateProductTopicRequest createProductTopicRequest = (CreateProductTopicRequest) o;
-        return Objects.equals(this.instanceId, createProductTopicRequest.instanceId) &&
-            Objects.equals(this.productId, createProductTopicRequest.productId) &&
-            Objects.equals(this.body, createProductTopicRequest.body);
+        return Objects.equals(this.instanceId, createProductTopicRequest.instanceId)
+            && Objects.equals(this.productId, createProductTopicRequest.productId)
+            && Objects.equals(this.body, createProductTopicRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, productId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -138,16 +110,13 @@ public class CreateProductTopicRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

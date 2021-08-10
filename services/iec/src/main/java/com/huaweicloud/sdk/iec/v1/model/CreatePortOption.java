@@ -1,39 +1,26 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iec.v1.model.FixedIp;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 创建端口参数对象。
- */
-public class CreatePortOption  {
+/** 创建端口参数对象。 */
+public class CreatePortOption {
 
-    /**
-     * 端口设备所属。  取值范围：目前只支持指定\"neutron:VIP_PORT\"，neutron:VIP_PORT表示创建的是VIP
-     */
+    /** 端口设备所属。 取值范围：目前只支持指定\"neutron:VIP_PORT\"，neutron:VIP_PORT表示创建的是VIP */
     public static final class DeviceOwnerEnum {
 
-        
-        /**
-         * Enum NEUTRON_VIP_PORT for value: "neutron:VIP_PORT"
-         */
+        /** Enum NEUTRON_VIP_PORT for value: "neutron:VIP_PORT" */
         public static final DeviceOwnerEnum NEUTRON_VIP_PORT = new DeviceOwnerEnum("neutron:VIP_PORT");
-        
 
         private static final Map<String, DeviceOwnerEnum> STATIC_FIELDS = createStaticFields();
 
@@ -61,7 +48,7 @@ public class CreatePortOption  {
 
         @JsonCreator
         public static DeviceOwnerEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DeviceOwnerEnum result = STATIC_FIELDS.get(value);
@@ -72,7 +59,7 @@ public class CreatePortOption  {
         }
 
         public static DeviceOwnerEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DeviceOwnerEnum result = STATIC_FIELDS.get(value);
@@ -96,36 +83,29 @@ public class CreatePortOption  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_owner")
-    
+    @JsonProperty(value = "device_owner")
+
     private DeviceOwnerEnum deviceOwner;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="network_id")
-    
+    @JsonProperty(value = "network_id")
+
     private String networkId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fixed_ips")
-    
+    @JsonProperty(value = "fixed_ips")
+
     private List<FixedIp> fixedIps = null;
-    
+
     public CreatePortOption withDeviceOwner(DeviceOwnerEnum deviceOwner) {
         this.deviceOwner = deviceOwner;
         return this;
     }
 
-    
-
-
-    /**
-     * 端口设备所属。  取值范围：目前只支持指定\"neutron:VIP_PORT\"，neutron:VIP_PORT表示创建的是VIP
-     * @return deviceOwner
-     */
+    /** 端口设备所属。 取值范围：目前只支持指定\"neutron:VIP_PORT\"，neutron:VIP_PORT表示创建的是VIP
+     * 
+     * @return deviceOwner */
     public DeviceOwnerEnum getDeviceOwner() {
         return deviceOwner;
     }
@@ -134,20 +114,14 @@ public class CreatePortOption  {
         this.deviceOwner = deviceOwner;
     }
 
-    
-
     public CreatePortOption withNetworkId(String networkId) {
         this.networkId = networkId;
         return this;
     }
 
-    
-
-
-    /**
-     * 端口所属网络的ID。  约束：必须是存在的网络ID。
-     * @return networkId
-     */
+    /** 端口所属网络的ID。 约束：必须是存在的网络ID。
+     * 
+     * @return networkId */
     public String getNetworkId() {
         return networkId;
     }
@@ -156,16 +130,13 @@ public class CreatePortOption  {
         this.networkId = networkId;
     }
 
-    
-
     public CreatePortOption withFixedIps(List<FixedIp> fixedIps) {
         this.fixedIps = fixedIps;
         return this;
     }
 
-    
     public CreatePortOption addFixedIpsItem(FixedIp fixedIpsItem) {
-        if(this.fixedIps == null) {
+        if (this.fixedIps == null) {
             this.fixedIps = new ArrayList<>();
         }
         this.fixedIps.add(fixedIpsItem);
@@ -173,17 +144,16 @@ public class CreatePortOption  {
     }
 
     public CreatePortOption withFixedIps(Consumer<List<FixedIp>> fixedIpsSetter) {
-        if(this.fixedIps == null) {
+        if (this.fixedIps == null) {
             this.fixedIps = new ArrayList<>();
         }
         fixedIpsSetter.accept(this.fixedIps);
         return this;
     }
 
-    /**
-     * 端口IP  约束：一个端口只支持一个fixed_ip，且不支持更新。
-     * @return fixedIps
-     */
+    /** 端口IP 约束：一个端口只支持一个fixed_ip，且不支持更新。
+     * 
+     * @return fixedIps */
     public List<FixedIp> getFixedIps() {
         return fixedIps;
     }
@@ -191,8 +161,6 @@ public class CreatePortOption  {
     public void setFixedIps(List<FixedIp> fixedIps) {
         this.fixedIps = fixedIps;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -203,14 +171,16 @@ public class CreatePortOption  {
             return false;
         }
         CreatePortOption createPortOption = (CreatePortOption) o;
-        return Objects.equals(this.deviceOwner, createPortOption.deviceOwner) &&
-            Objects.equals(this.networkId, createPortOption.networkId) &&
-            Objects.equals(this.fixedIps, createPortOption.fixedIps);
+        return Objects.equals(this.deviceOwner, createPortOption.deviceOwner)
+            && Objects.equals(this.networkId, createPortOption.networkId)
+            && Objects.equals(this.fixedIps, createPortOption.fixedIps);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(deviceOwner, networkId, fixedIps);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -221,16 +191,13 @@ public class CreatePortOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

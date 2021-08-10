@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.antiddos.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowNewTaskStatusRequest  {
-
-
+/** Request Object */
+public class ShowNewTaskStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
+    @JsonProperty(value = "task_id")
+
     private String taskId;
 
     public ShowNewTaskStatusRequest withTaskId(String taskId) {
@@ -28,13 +18,9 @@ public class ShowNewTaskStatusRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID（非负整数）的字符串
-     * @return taskId
-     */
+    /** 任务ID（非负整数）的字符串
+     * 
+     * @return taskId */
     public String getTaskId() {
         return taskId;
     }
@@ -42,8 +28,6 @@ public class ShowNewTaskStatusRequest  {
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class ShowNewTaskStatusRequest  {
         ShowNewTaskStatusRequest showNewTaskStatusRequest = (ShowNewTaskStatusRequest) o;
         return Objects.equals(this.taskId, showNewTaskStatusRequest.taskId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(taskId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class ShowNewTaskStatusRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

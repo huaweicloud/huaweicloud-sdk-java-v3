@@ -1,27 +1,19 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.LoginPolicyOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class UpdateDomainLoginPolicyRequestBody  {
-
-
+public class UpdateDomainLoginPolicyRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="login_policy")
-    
+    @JsonProperty(value = "login_policy")
+
     private LoginPolicyOption loginPolicy;
 
     public UpdateDomainLoginPolicyRequestBody withLoginPolicy(LoginPolicyOption loginPolicy) {
@@ -30,19 +22,17 @@ public class UpdateDomainLoginPolicyRequestBody  {
     }
 
     public UpdateDomainLoginPolicyRequestBody withLoginPolicy(Consumer<LoginPolicyOption> loginPolicySetter) {
-        if(this.loginPolicy == null ){
+        if (this.loginPolicy == null) {
             this.loginPolicy = new LoginPolicyOption();
             loginPolicySetter.accept(this.loginPolicy);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get loginPolicy
-     * @return loginPolicy
-     */
+    /** Get loginPolicy
+     * 
+     * @return loginPolicy */
     public LoginPolicyOption getLoginPolicy() {
         return loginPolicy;
     }
@@ -50,8 +40,6 @@ public class UpdateDomainLoginPolicyRequestBody  {
     public void setLoginPolicy(LoginPolicyOption loginPolicy) {
         this.loginPolicy = loginPolicy;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +52,12 @@ public class UpdateDomainLoginPolicyRequestBody  {
         UpdateDomainLoginPolicyRequestBody updateDomainLoginPolicyRequestBody = (UpdateDomainLoginPolicyRequestBody) o;
         return Objects.equals(this.loginPolicy, updateDomainLoginPolicyRequestBody.loginPolicy);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(loginPolicy);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +66,13 @@ public class UpdateDomainLoginPolicyRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

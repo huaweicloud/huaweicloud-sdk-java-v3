@@ -1,104 +1,81 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 用户查询的vmr详情
- */
-public class QueryVmrResultDTO  {
-
-
+/** 用户查询的vmr详情 */
+public class QueryVmrResultDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrId")
-    
+    @JsonProperty(value = "vmrId")
+
     private String vmrId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrName")
-    
+    @JsonProperty(value = "vmrName")
+
     private String vmrName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gustPwd")
-    
+    @JsonProperty(value = "gustPwd")
+
     private String gustPwd;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gustJoinUrl")
-    
+    @JsonProperty(value = "gustJoinUrl")
+
     private String gustJoinUrl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="chairPwd")
-    
+    @JsonProperty(value = "chairPwd")
+
     private String chairPwd;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="chairJoinUrl")
-    
+    @JsonProperty(value = "chairJoinUrl")
+
     private String chairJoinUrl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="allowGustFirst")
-    
+    @JsonProperty(value = "allowGustFirst")
+
     private Boolean allowGustFirst;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gustFirstNotice")
-    
+    @JsonProperty(value = "gustFirstNotice")
+
     private Boolean gustFirstNotice;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrMode")
-    
+    @JsonProperty(value = "vmrMode")
+
     private Integer vmrMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrPkgId")
-    
+    @JsonProperty(value = "vmrPkgId")
+
     private String vmrPkgId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrPkgName")
-    
+    @JsonProperty(value = "vmrPkgName")
+
     private String vmrPkgName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrPkgParties")
-    
+    @JsonProperty(value = "vmrPkgParties")
+
     private Integer vmrPkgParties;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
     public QueryVmrResultDTO withId(String id) {
@@ -106,13 +83,9 @@ public class QueryVmrResultDTO  {
         return this;
     }
 
-    
-
-
-    /**
-     * 唯一标识
-     * @return id
-     */
+    /** 唯一标识
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -121,20 +94,14 @@ public class QueryVmrResultDTO  {
         this.id = id;
     }
 
-    
-
     public QueryVmrResultDTO withVmrId(String vmrId) {
         this.vmrId = vmrId;
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室ID
-     * @return vmrId
-     */
+    /** 云会议室ID
+     * 
+     * @return vmrId */
     public String getVmrId() {
         return vmrId;
     }
@@ -143,20 +110,14 @@ public class QueryVmrResultDTO  {
         this.vmrId = vmrId;
     }
 
-    
-
     public QueryVmrResultDTO withVmrName(String vmrName) {
         this.vmrName = vmrName;
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室名称
-     * @return vmrName
-     */
+    /** 云会议室名称
+     * 
+     * @return vmrName */
     public String getVmrName() {
         return vmrName;
     }
@@ -165,20 +126,14 @@ public class QueryVmrResultDTO  {
         this.vmrName = vmrName;
     }
 
-    
-
     public QueryVmrResultDTO withGustPwd(String gustPwd) {
         this.gustPwd = gustPwd;
         return this;
     }
 
-    
-
-
-    /**
-     * 来宾密码
-     * @return gustPwd
-     */
+    /** 来宾密码
+     * 
+     * @return gustPwd */
     public String getGustPwd() {
         return gustPwd;
     }
@@ -187,20 +142,14 @@ public class QueryVmrResultDTO  {
         this.gustPwd = gustPwd;
     }
 
-    
-
     public QueryVmrResultDTO withGustJoinUrl(String gustJoinUrl) {
         this.gustJoinUrl = gustJoinUrl;
         return this;
     }
 
-    
-
-
-    /**
-     * 来宾与会链接
-     * @return gustJoinUrl
-     */
+    /** 来宾与会链接
+     * 
+     * @return gustJoinUrl */
     public String getGustJoinUrl() {
         return gustJoinUrl;
     }
@@ -209,20 +158,14 @@ public class QueryVmrResultDTO  {
         this.gustJoinUrl = gustJoinUrl;
     }
 
-    
-
     public QueryVmrResultDTO withChairPwd(String chairPwd) {
         this.chairPwd = chairPwd;
         return this;
     }
 
-    
-
-
-    /**
-     * 主席密码
-     * @return chairPwd
-     */
+    /** 主席密码
+     * 
+     * @return chairPwd */
     public String getChairPwd() {
         return chairPwd;
     }
@@ -231,20 +174,14 @@ public class QueryVmrResultDTO  {
         this.chairPwd = chairPwd;
     }
 
-    
-
     public QueryVmrResultDTO withChairJoinUrl(String chairJoinUrl) {
         this.chairJoinUrl = chairJoinUrl;
         return this;
     }
 
-    
-
-
-    /**
-     * 主席与会链接
-     * @return chairJoinUrl
-     */
+    /** 主席与会链接
+     * 
+     * @return chairJoinUrl */
     public String getChairJoinUrl() {
         return chairJoinUrl;
     }
@@ -253,20 +190,14 @@ public class QueryVmrResultDTO  {
         this.chairJoinUrl = chairJoinUrl;
     }
 
-    
-
     public QueryVmrResultDTO withAllowGustFirst(Boolean allowGustFirst) {
         this.allowGustFirst = allowGustFirst;
         return this;
     }
 
-    
-
-
-    /**
-     * 允许来宾先入会
-     * @return allowGustFirst
-     */
+    /** 允许来宾先入会
+     * 
+     * @return allowGustFirst */
     public Boolean getAllowGustFirst() {
         return allowGustFirst;
     }
@@ -275,20 +206,14 @@ public class QueryVmrResultDTO  {
         this.allowGustFirst = allowGustFirst;
     }
 
-    
-
     public QueryVmrResultDTO withGustFirstNotice(Boolean gustFirstNotice) {
         this.gustFirstNotice = gustFirstNotice;
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室被使用后是否通知会议室所有者
-     * @return gustFirstNotice
-     */
+    /** 云会议室被使用后是否通知会议室所有者
+     * 
+     * @return gustFirstNotice */
     public Boolean getGustFirstNotice() {
         return gustFirstNotice;
     }
@@ -297,20 +222,14 @@ public class QueryVmrResultDTO  {
         this.gustFirstNotice = gustFirstNotice;
     }
 
-    
-
     public QueryVmrResultDTO withVmrMode(Integer vmrMode) {
         this.vmrMode = vmrMode;
         return this;
     }
 
-    
-
-
-    /**
-     * VMR模式 * 0: 个人会议ID * 1: 云会议室 * 2: 网络研讨会 
-     * @return vmrMode
-     */
+    /** VMR模式 * 0: 个人会议ID * 1: 云会议室 * 2: 网络研讨会
+     * 
+     * @return vmrMode */
     public Integer getVmrMode() {
         return vmrMode;
     }
@@ -319,20 +238,14 @@ public class QueryVmrResultDTO  {
         this.vmrMode = vmrMode;
     }
 
-    
-
     public QueryVmrResultDTO withVmrPkgId(String vmrPkgId) {
         this.vmrPkgId = vmrPkgId;
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室套餐包的id，仅专用云会议室返回
-     * @return vmrPkgId
-     */
+    /** 云会议室套餐包的id，仅专用云会议室返回
+     * 
+     * @return vmrPkgId */
     public String getVmrPkgId() {
         return vmrPkgId;
     }
@@ -341,20 +254,14 @@ public class QueryVmrResultDTO  {
         this.vmrPkgId = vmrPkgId;
     }
 
-    
-
     public QueryVmrResultDTO withVmrPkgName(String vmrPkgName) {
         this.vmrPkgName = vmrPkgName;
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室套餐包的名称，仅专用云会议室返回
-     * @return vmrPkgName
-     */
+    /** 云会议室套餐包的名称，仅专用云会议室返回
+     * 
+     * @return vmrPkgName */
     public String getVmrPkgName() {
         return vmrPkgName;
     }
@@ -363,20 +270,14 @@ public class QueryVmrResultDTO  {
         this.vmrPkgName = vmrPkgName;
     }
 
-    
-
     public QueryVmrResultDTO withVmrPkgParties(Integer vmrPkgParties) {
         this.vmrPkgParties = vmrPkgParties;
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室套餐包的会议并发方数，仅专用云会议室返回
-     * @return vmrPkgParties
-     */
+    /** 云会议室套餐包的会议并发方数，仅专用云会议室返回
+     * 
+     * @return vmrPkgParties */
     public Integer getVmrPkgParties() {
         return vmrPkgParties;
     }
@@ -385,20 +286,14 @@ public class QueryVmrResultDTO  {
         this.vmrPkgParties = vmrPkgParties;
     }
 
-    
-
     public QueryVmrResultDTO withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室状态: * 0、正常 * 1、停用 * 2、未分配 
-     * @return status
-     */
+    /** 云会议室状态: * 0、正常 * 1、停用 * 2、未分配
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -406,8 +301,6 @@ public class QueryVmrResultDTO  {
     public void setStatus(Integer status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -418,25 +311,39 @@ public class QueryVmrResultDTO  {
             return false;
         }
         QueryVmrResultDTO queryVmrResultDTO = (QueryVmrResultDTO) o;
-        return Objects.equals(this.id, queryVmrResultDTO.id) &&
-            Objects.equals(this.vmrId, queryVmrResultDTO.vmrId) &&
-            Objects.equals(this.vmrName, queryVmrResultDTO.vmrName) &&
-            Objects.equals(this.gustPwd, queryVmrResultDTO.gustPwd) &&
-            Objects.equals(this.gustJoinUrl, queryVmrResultDTO.gustJoinUrl) &&
-            Objects.equals(this.chairPwd, queryVmrResultDTO.chairPwd) &&
-            Objects.equals(this.chairJoinUrl, queryVmrResultDTO.chairJoinUrl) &&
-            Objects.equals(this.allowGustFirst, queryVmrResultDTO.allowGustFirst) &&
-            Objects.equals(this.gustFirstNotice, queryVmrResultDTO.gustFirstNotice) &&
-            Objects.equals(this.vmrMode, queryVmrResultDTO.vmrMode) &&
-            Objects.equals(this.vmrPkgId, queryVmrResultDTO.vmrPkgId) &&
-            Objects.equals(this.vmrPkgName, queryVmrResultDTO.vmrPkgName) &&
-            Objects.equals(this.vmrPkgParties, queryVmrResultDTO.vmrPkgParties) &&
-            Objects.equals(this.status, queryVmrResultDTO.status);
+        return Objects.equals(this.id, queryVmrResultDTO.id) && Objects.equals(this.vmrId, queryVmrResultDTO.vmrId)
+            && Objects.equals(this.vmrName, queryVmrResultDTO.vmrName)
+            && Objects.equals(this.gustPwd, queryVmrResultDTO.gustPwd)
+            && Objects.equals(this.gustJoinUrl, queryVmrResultDTO.gustJoinUrl)
+            && Objects.equals(this.chairPwd, queryVmrResultDTO.chairPwd)
+            && Objects.equals(this.chairJoinUrl, queryVmrResultDTO.chairJoinUrl)
+            && Objects.equals(this.allowGustFirst, queryVmrResultDTO.allowGustFirst)
+            && Objects.equals(this.gustFirstNotice, queryVmrResultDTO.gustFirstNotice)
+            && Objects.equals(this.vmrMode, queryVmrResultDTO.vmrMode)
+            && Objects.equals(this.vmrPkgId, queryVmrResultDTO.vmrPkgId)
+            && Objects.equals(this.vmrPkgName, queryVmrResultDTO.vmrPkgName)
+            && Objects.equals(this.vmrPkgParties, queryVmrResultDTO.vmrPkgParties)
+            && Objects.equals(this.status, queryVmrResultDTO.status);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, vmrId, vmrName, gustPwd, gustJoinUrl, chairPwd, chairJoinUrl, allowGustFirst, gustFirstNotice, vmrMode, vmrPkgId, vmrPkgName, vmrPkgParties, status);
+        return Objects.hash(id,
+            vmrId,
+            vmrName,
+            gustPwd,
+            gustJoinUrl,
+            chairPwd,
+            chairJoinUrl,
+            allowGustFirst,
+            gustFirstNotice,
+            vmrMode,
+            vmrPkgId,
+            vmrPkgName,
+            vmrPkgParties,
+            status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -458,16 +365,13 @@ public class QueryVmrResultDTO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

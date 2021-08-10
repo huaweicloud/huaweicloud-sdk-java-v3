@@ -1,42 +1,27 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bms.v1.model.VersionLinks;
+
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 描述裸金属服务器API版本信息列表
- */
-public class Versions  {
+/** 描述裸金属服务器API版本信息列表 */
+public class Versions {
 
-    /**
-     * API版本ID
-     */
+    /** API版本ID */
     public static final class IdEnum {
 
-        
-        /**
-         * Enum V1 for value: "v1"
-         */
+        /** Enum V1 for value: "v1" */
         public static final IdEnum V1 = new IdEnum("v1");
-        
 
         private static final Map<String, IdEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +49,7 @@ public class Versions  {
 
         @JsonCreator
         public static IdEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             IdEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +60,7 @@ public class Versions  {
         }
 
         public static IdEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             IdEnum result = STATIC_FIELDS.get(value);
@@ -99,44 +84,32 @@ public class Versions  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private IdEnum id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private List<VersionLinks> links = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="min_version")
-    
+    @JsonProperty(value = "min_version")
+
     private String minVersion;
-    /**
-     * 这个是API版本的状态。可以是：CURRENT这是使用的API的首选版本；SUPPORTED：这是一个较老的，但仍然支持的API版本；DEPRECATED：一个被废弃的API版本，该版本将被删除
-     */
+
+    /** 这个是API版本的状态。可以是：CURRENT这是使用的API的首选版本；SUPPORTED：这是一个较老的，但仍然支持的API版本；DEPRECATED：一个被废弃的API版本，该版本将被删除 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum CURRENT for value: "CURRENT"
-         */
+        /** Enum CURRENT for value: "CURRENT" */
         public static final StatusEnum CURRENT = new StatusEnum("CURRENT");
-        
-        /**
-         * Enum SUPPORTED for value: "SUPPORTED"
-         */
+
+        /** Enum SUPPORTED for value: "SUPPORTED" */
         public static final StatusEnum SUPPORTED = new StatusEnum("SUPPORTED");
-        
-        /**
-         * Enum DEPRECATED for value: "DEPRECATED"
-         */
+
+        /** Enum DEPRECATED for value: "DEPRECATED" */
         public static final StatusEnum DEPRECATED = new StatusEnum("DEPRECATED");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -166,7 +139,7 @@ public class Versions  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -177,7 +150,7 @@ public class Versions  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -201,22 +174,19 @@ public class Versions  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
+
     private OffsetDateTime updated;
 
     public Versions withId(IdEnum id) {
@@ -224,13 +194,9 @@ public class Versions  {
         return this;
     }
 
-    
-
-
-    /**
-     * API版本ID
-     * @return id
-     */
+    /** API版本ID
+     * 
+     * @return id */
     public IdEnum getId() {
         return id;
     }
@@ -239,16 +205,13 @@ public class Versions  {
         this.id = id;
     }
 
-    
-
     public Versions withLinks(List<VersionLinks> links) {
         this.links = links;
         return this;
     }
 
-    
     public Versions addLinksItem(VersionLinks linksItem) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         this.links.add(linksItem);
@@ -256,17 +219,16 @@ public class Versions  {
     }
 
     public Versions withLinks(Consumer<List<VersionLinks>> linksSetter) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);
         return this;
     }
 
-    /**
-     * API的url地址
-     * @return links
-     */
+    /** API的url地址
+     * 
+     * @return links */
     public List<VersionLinks> getLinks() {
         return links;
     }
@@ -275,20 +237,14 @@ public class Versions  {
         this.links = links;
     }
 
-    
-
     public Versions withMinVersion(String minVersion) {
         this.minVersion = minVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * API支持的最小微版本号
-     * @return minVersion
-     */
+    /** API支持的最小微版本号
+     * 
+     * @return minVersion */
     public String getMinVersion() {
         return minVersion;
     }
@@ -297,20 +253,14 @@ public class Versions  {
         this.minVersion = minVersion;
     }
 
-    
-
     public Versions withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 这个是API版本的状态。可以是：CURRENT这是使用的API的首选版本；SUPPORTED：这是一个较老的，但仍然支持的API版本；DEPRECATED：一个被废弃的API版本，该版本将被删除
-     * @return status
-     */
+    /** 这个是API版本的状态。可以是：CURRENT这是使用的API的首选版本；SUPPORTED：这是一个较老的，但仍然支持的API版本；DEPRECATED：一个被废弃的API版本，该版本将被删除
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -319,20 +269,14 @@ public class Versions  {
         this.status = status;
     }
 
-    
-
     public Versions withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * API支持的最大微版本号
-     * @return version
-     */
+    /** API支持的最大微版本号
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -341,20 +285,14 @@ public class Versions  {
         this.version = version;
     }
 
-    
-
     public Versions withUpdated(OffsetDateTime updated) {
         this.updated = updated;
         return this;
     }
 
-    
-
-
-    /**
-     * API版本发布时间
-     * @return updated
-     */
+    /** API版本发布时间
+     * 
+     * @return updated */
     public OffsetDateTime getUpdated() {
         return updated;
     }
@@ -362,8 +300,6 @@ public class Versions  {
     public void setUpdated(OffsetDateTime updated) {
         this.updated = updated;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -374,17 +310,16 @@ public class Versions  {
             return false;
         }
         Versions versions = (Versions) o;
-        return Objects.equals(this.id, versions.id) &&
-            Objects.equals(this.links, versions.links) &&
-            Objects.equals(this.minVersion, versions.minVersion) &&
-            Objects.equals(this.status, versions.status) &&
-            Objects.equals(this.version, versions.version) &&
-            Objects.equals(this.updated, versions.updated);
+        return Objects.equals(this.id, versions.id) && Objects.equals(this.links, versions.links)
+            && Objects.equals(this.minVersion, versions.minVersion) && Objects.equals(this.status, versions.status)
+            && Objects.equals(this.version, versions.version) && Objects.equals(this.updated, versions.updated);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, links, minVersion, status, version, updated);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -398,16 +333,13 @@ public class Versions  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,55 +1,39 @@
 package com.huaweicloud.sdk.lts.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 参数集
- */
-public class LogContents  {
-
-
+/** 参数集 */
+public class LogContents {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content")
-    
+    @JsonProperty(value = "content")
+
     private String content;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="line_num")
-    
+    @JsonProperty(value = "line_num")
+
     private String lineNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="labels")
-    
+    @JsonProperty(value = "labels")
+
     private Map<String, String> labels = null;
-    
+
     public LogContents withContent(String content) {
         this.content = content;
         return this;
     }
 
-    
-
-
-    /**
-     * 日志原数据。
-     * @return content
-     */
+    /** 日志原数据。
+     * 
+     * @return content */
     public String getContent() {
         return content;
     }
@@ -58,20 +42,14 @@ public class LogContents  {
         this.content = content;
     }
 
-    
-
     public LogContents withLineNum(String lineNum) {
         this.lineNum = lineNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 日志单行序列号。
-     * @return lineNum
-     */
+    /** 日志单行序列号。
+     * 
+     * @return lineNum */
     public String getLineNum() {
         return lineNum;
     }
@@ -80,17 +58,13 @@ public class LogContents  {
         this.lineNum = lineNum;
     }
 
-    
-
     public LogContents withLabels(Map<String, String> labels) {
         this.labels = labels;
         return this;
     }
 
-    
-
     public LogContents putLabelsItem(String key, String labelsItem) {
-        if(this.labels == null) {
+        if (this.labels == null) {
             this.labels = new HashMap<>();
         }
         this.labels.put(key, labelsItem);
@@ -98,16 +72,16 @@ public class LogContents  {
     }
 
     public LogContents withLabels(Consumer<Map<String, String>> labelsSetter) {
-        if(this.labels == null) {
+        if (this.labels == null) {
             this.labels = new HashMap<>();
         }
         labelsSetter.accept(this.labels);
         return this;
     }
-    /**
-     * 该条日志包含的 labels。
-     * @return labels
-     */
+
+    /** 该条日志包含的 labels。
+     * 
+     * @return labels */
     public Map<String, String> getLabels() {
         return labels;
     }
@@ -115,8 +89,6 @@ public class LogContents  {
     public void setLabels(Map<String, String> labels) {
         this.labels = labels;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,14 +99,15 @@ public class LogContents  {
             return false;
         }
         LogContents logContents = (LogContents) o;
-        return Objects.equals(this.content, logContents.content) &&
-            Objects.equals(this.lineNum, logContents.lineNum) &&
-            Objects.equals(this.labels, logContents.labels);
+        return Objects.equals(this.content, logContents.content) && Objects.equals(this.lineNum, logContents.lineNum)
+            && Objects.equals(this.labels, logContents.labels);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(content, lineNum, labels);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -145,16 +118,13 @@ public class LogContents  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,46 +1,29 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class KeystoneListEndpointsRequest  {
+/** Request Object */
+public class KeystoneListEndpointsRequest {
 
-    /**
-     * 终端节点平面。可能取值为：public、internal或admin。public： 用户可在公共网络接口上看到。internal：用户可在内部网络接口上看到。admin：管理员可以在安全的网络接口上看到。
-     */
+    /** 终端节点平面。可能取值为：public、internal或admin。public： 用户可在公共网络接口上看到。internal：用户可在内部网络接口上看到。admin：管理员可以在安全的网络接口上看到。 */
     public static final class InterfaceEnum {
 
-        
-        /**
-         * Enum PUBLIC for value: "public"
-         */
+        /** Enum PUBLIC for value: "public" */
         public static final InterfaceEnum PUBLIC = new InterfaceEnum("public");
-        
-        /**
-         * Enum INTERNAL for value: "internal"
-         */
+
+        /** Enum INTERNAL for value: "internal" */
         public static final InterfaceEnum INTERNAL = new InterfaceEnum("internal");
-        
-        /**
-         * Enum ADMIN for value: "admin"
-         */
+
+        /** Enum ADMIN for value: "admin" */
         public static final InterfaceEnum ADMIN = new InterfaceEnum("admin");
-        
 
         private static final Map<String, InterfaceEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,7 +53,7 @@ public class KeystoneListEndpointsRequest  {
 
         @JsonCreator
         public static InterfaceEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             InterfaceEnum result = STATIC_FIELDS.get(value);
@@ -81,7 +64,7 @@ public class KeystoneListEndpointsRequest  {
         }
 
         public static InterfaceEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             InterfaceEnum result = STATIC_FIELDS.get(value);
@@ -105,16 +88,14 @@ public class KeystoneListEndpointsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="interface")
-    
+    @JsonProperty(value = "interface")
+
     private InterfaceEnum _interface;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_id")
-    
+    @JsonProperty(value = "service_id")
+
     private String serviceId;
 
     public KeystoneListEndpointsRequest withInterface(InterfaceEnum _interface) {
@@ -122,13 +103,9 @@ public class KeystoneListEndpointsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 终端节点平面。可能取值为：public、internal或admin。public： 用户可在公共网络接口上看到。internal：用户可在内部网络接口上看到。admin：管理员可以在安全的网络接口上看到。
-     * @return _interface
-     */
+    /** 终端节点平面。可能取值为：public、internal或admin。public： 用户可在公共网络接口上看到。internal：用户可在内部网络接口上看到。admin：管理员可以在安全的网络接口上看到。
+     * 
+     * @return _interface */
     public InterfaceEnum getInterface() {
         return _interface;
     }
@@ -137,20 +114,14 @@ public class KeystoneListEndpointsRequest  {
         this._interface = _interface;
     }
 
-    
-
     public KeystoneListEndpointsRequest withServiceId(String serviceId) {
         this.serviceId = serviceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务ID。
-     * @return serviceId
-     */
+    /** 服务ID。
+     * 
+     * @return serviceId */
     public String getServiceId() {
         return serviceId;
     }
@@ -158,8 +129,6 @@ public class KeystoneListEndpointsRequest  {
     public void setServiceId(String serviceId) {
         this.serviceId = serviceId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -170,13 +139,15 @@ public class KeystoneListEndpointsRequest  {
             return false;
         }
         KeystoneListEndpointsRequest keystoneListEndpointsRequest = (KeystoneListEndpointsRequest) o;
-        return Objects.equals(this._interface, keystoneListEndpointsRequest._interface) &&
-            Objects.equals(this.serviceId, keystoneListEndpointsRequest.serviceId);
+        return Objects.equals(this._interface, keystoneListEndpointsRequest._interface)
+            && Objects.equals(this.serviceId, keystoneListEndpointsRequest.serviceId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(_interface, serviceId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -186,16 +157,13 @@ public class KeystoneListEndpointsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

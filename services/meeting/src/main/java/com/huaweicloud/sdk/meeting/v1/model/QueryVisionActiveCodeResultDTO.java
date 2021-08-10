@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 搜索激活码的返回结果DTO对象
- */
-public class QueryVisionActiveCodeResultDTO  {
-
-
+/** 搜索激活码的返回结果DTO对象 */
+public class QueryVisionActiveCodeResultDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="activeCode")
-    
+    @JsonProperty(value = "activeCode")
+
     private String activeCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="devName")
-    
+    @JsonProperty(value = "devName")
+
     private String devName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="devType")
-    
+    @JsonProperty(value = "devType")
+
     private String devType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deptCode")
-    
+    @JsonProperty(value = "deptCode")
+
     private String deptCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deptName")
-    
+    @JsonProperty(value = "deptName")
+
     private String deptName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expireDate")
-    
+    @JsonProperty(value = "expireDate")
+
     private Long expireDate;
 
     public QueryVisionActiveCodeResultDTO withId(String id) {
@@ -64,13 +48,9 @@ public class QueryVisionActiveCodeResultDTO  {
         return this;
     }
 
-    
-
-
-    /**
-     * 激活码唯一标识
-     * @return id
-     */
+    /** 激活码唯一标识
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -79,20 +59,14 @@ public class QueryVisionActiveCodeResultDTO  {
         this.id = id;
     }
 
-    
-
     public QueryVisionActiveCodeResultDTO withActiveCode(String activeCode) {
         this.activeCode = activeCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 激活码
-     * @return activeCode
-     */
+    /** 激活码
+     * 
+     * @return activeCode */
     public String getActiveCode() {
         return activeCode;
     }
@@ -101,20 +75,14 @@ public class QueryVisionActiveCodeResultDTO  {
         this.activeCode = activeCode;
     }
 
-    
-
     public QueryVisionActiveCodeResultDTO withDevName(String devName) {
         this.devName = devName;
         return this;
     }
 
-    
-
-
-    /**
-     * 终端名称
-     * @return devName
-     */
+    /** 终端名称
+     * 
+     * @return devName */
     public String getDevName() {
         return devName;
     }
@@ -123,20 +91,14 @@ public class QueryVisionActiveCodeResultDTO  {
         this.devName = devName;
     }
 
-    
-
     public QueryVisionActiveCodeResultDTO withDevType(String devType) {
         this.devType = devType;
         return this;
     }
 
-    
-
-
-    /**
-     * 终端类型
-     * @return devType
-     */
+    /** 终端类型
+     * 
+     * @return devType */
     public String getDevType() {
         return devType;
     }
@@ -145,20 +107,14 @@ public class QueryVisionActiveCodeResultDTO  {
         this.devType = devType;
     }
 
-    
-
     public QueryVisionActiveCodeResultDTO withDeptCode(String deptCode) {
         this.deptCode = deptCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 部门编码
-     * @return deptCode
-     */
+    /** 部门编码
+     * 
+     * @return deptCode */
     public String getDeptCode() {
         return deptCode;
     }
@@ -167,20 +123,14 @@ public class QueryVisionActiveCodeResultDTO  {
         this.deptCode = deptCode;
     }
 
-    
-
     public QueryVisionActiveCodeResultDTO withDeptName(String deptName) {
         this.deptName = deptName;
         return this;
     }
 
-    
-
-
-    /**
-     * 部门名称
-     * @return deptName
-     */
+    /** 部门名称
+     * 
+     * @return deptName */
     public String getDeptName() {
         return deptName;
     }
@@ -189,20 +139,14 @@ public class QueryVisionActiveCodeResultDTO  {
         this.deptName = deptName;
     }
 
-    
-
     public QueryVisionActiveCodeResultDTO withExpireDate(Long expireDate) {
         this.expireDate = expireDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 失效时间戳
-     * @return expireDate
-     */
+    /** 失效时间戳
+     * 
+     * @return expireDate */
     public Long getExpireDate() {
         return expireDate;
     }
@@ -210,8 +154,6 @@ public class QueryVisionActiveCodeResultDTO  {
     public void setExpireDate(Long expireDate) {
         this.expireDate = expireDate;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -222,18 +164,20 @@ public class QueryVisionActiveCodeResultDTO  {
             return false;
         }
         QueryVisionActiveCodeResultDTO queryVisionActiveCodeResultDTO = (QueryVisionActiveCodeResultDTO) o;
-        return Objects.equals(this.id, queryVisionActiveCodeResultDTO.id) &&
-            Objects.equals(this.activeCode, queryVisionActiveCodeResultDTO.activeCode) &&
-            Objects.equals(this.devName, queryVisionActiveCodeResultDTO.devName) &&
-            Objects.equals(this.devType, queryVisionActiveCodeResultDTO.devType) &&
-            Objects.equals(this.deptCode, queryVisionActiveCodeResultDTO.deptCode) &&
-            Objects.equals(this.deptName, queryVisionActiveCodeResultDTO.deptName) &&
-            Objects.equals(this.expireDate, queryVisionActiveCodeResultDTO.expireDate);
+        return Objects.equals(this.id, queryVisionActiveCodeResultDTO.id)
+            && Objects.equals(this.activeCode, queryVisionActiveCodeResultDTO.activeCode)
+            && Objects.equals(this.devName, queryVisionActiveCodeResultDTO.devName)
+            && Objects.equals(this.devType, queryVisionActiveCodeResultDTO.devType)
+            && Objects.equals(this.deptCode, queryVisionActiveCodeResultDTO.deptCode)
+            && Objects.equals(this.deptName, queryVisionActiveCodeResultDTO.deptName)
+            && Objects.equals(this.expireDate, queryVisionActiveCodeResultDTO.expireDate);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, activeCode, devName, devType, deptCode, deptName, expireDate);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,16 +192,13 @@ public class QueryVisionActiveCodeResultDTO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

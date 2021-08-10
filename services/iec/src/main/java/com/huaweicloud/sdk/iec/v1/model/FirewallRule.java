@@ -1,50 +1,29 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 网络ACL规则。
- */
-public class FirewallRule  {
+/** 网络ACL规则。 */
+public class FirewallRule {
 
-    /**
-     * 策略是否允许  取值范围：allow，deny，reject
-     */
+    /** 策略是否允许 取值范围：allow，deny，reject */
     public static final class ActionEnum {
 
-        
-        /**
-         * Enum ALLOW for value: "allow"
-         */
+        /** Enum ALLOW for value: "allow" */
         public static final ActionEnum ALLOW = new ActionEnum("allow");
-        
-        /**
-         * Enum DENY for value: "deny"
-         */
+
+        /** Enum DENY for value: "deny" */
         public static final ActionEnum DENY = new ActionEnum("deny");
-        
-        /**
-         * Enum REJECT for value: "reject"
-         */
+
+        /** Enum REJECT for value: "reject" */
         public static final ActionEnum REJECT = new ActionEnum("reject");
-        
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -74,7 +53,7 @@ public class FirewallRule  {
 
         @JsonCreator
         public static ActionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -85,7 +64,7 @@ public class FirewallRule  {
         }
 
         public static ActionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -109,74 +88,58 @@ public class FirewallRule  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private ActionEnum action;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination_ip_address")
-    
+    @JsonProperty(value = "destination_ip_address")
+
     private String destinationIpAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination_port")
-    
+    @JsonProperty(value = "destination_port")
+
     private String destinationPort;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enabled")
-    
+    @JsonProperty(value = "enabled")
+
     private Boolean enabled;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_version")
-    
+    @JsonProperty(value = "ip_version")
+
     private Integer ipVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 网络ACL规则操作状态，作为请求时取值为\"add\"/\"modify\"/\"delete\"，作为返回值时为\"normal\"。 当请求更新规则时，本参数值为delete时，除id之外，本请求体其他参数均可为空。
-     */
+
+    /** 网络ACL规则操作状态，作为请求时取值为\"add\"/\"modify\"/\"delete\"，作为返回值时为\"normal\"。
+     * 当请求更新规则时，本参数值为delete时，除id之外，本请求体其他参数均可为空。 */
     public static final class OperateTypeEnum {
 
-        
-        /**
-         * Enum ADD for value: "add"
-         */
+        /** Enum ADD for value: "add" */
         public static final OperateTypeEnum ADD = new OperateTypeEnum("add");
-        
-        /**
-         * Enum MODIFY for value: "modify"
-         */
+
+        /** Enum MODIFY for value: "modify" */
         public static final OperateTypeEnum MODIFY = new OperateTypeEnum("modify");
-        
-        /**
-         * Enum DELETE for value: "delete"
-         */
+
+        /** Enum DELETE for value: "delete" */
         public static final OperateTypeEnum DELETE = new OperateTypeEnum("delete");
-        
 
         private static final Map<String, OperateTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -206,7 +169,7 @@ public class FirewallRule  {
 
         @JsonCreator
         public static OperateTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OperateTypeEnum result = STATIC_FIELDS.get(value);
@@ -217,7 +180,7 @@ public class FirewallRule  {
         }
 
         public static OperateTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OperateTypeEnum result = STATIC_FIELDS.get(value);
@@ -241,37 +204,25 @@ public class FirewallRule  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operate_type")
-    
+    @JsonProperty(value = "operate_type")
+
     private OperateTypeEnum operateType;
-    /**
-     * IP协议，为any时代表所有协议  取值范围：icmp，tcp，udp，[icmpv6，](tag:hide)any 
-     */
+
+    /** IP协议，为any时代表所有协议 取值范围：icmp，tcp，udp，[icmpv6，](tag:hide)any */
     public static final class ProtocolEnum {
 
-        
-        /**
-         * Enum ICMP for value: "icmp"
-         */
+        /** Enum ICMP for value: "icmp" */
         public static final ProtocolEnum ICMP = new ProtocolEnum("icmp");
-        
-        /**
-         * Enum TCP for value: "tcp"
-         */
+
+        /** Enum TCP for value: "tcp" */
         public static final ProtocolEnum TCP = new ProtocolEnum("tcp");
-        
-        /**
-         * Enum UDP for value: "udp"
-         */
+
+        /** Enum UDP for value: "udp" */
         public static final ProtocolEnum UDP = new ProtocolEnum("udp");
-        
-        /**
-         * Enum ANY_ for value: "any "
-         */
+
+        /** Enum ANY_ for value: "any " */
         public static final ProtocolEnum ANY_ = new ProtocolEnum("any ");
-        
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
 
@@ -302,7 +253,7 @@ public class FirewallRule  {
 
         @JsonCreator
         public static ProtocolEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtocolEnum result = STATIC_FIELDS.get(value);
@@ -313,7 +264,7 @@ public class FirewallRule  {
         }
 
         public static ProtocolEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtocolEnum result = STATIC_FIELDS.get(value);
@@ -337,22 +288,19 @@ public class FirewallRule  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
+
     private ProtocolEnum protocol;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_ip_address")
-    
+    @JsonProperty(value = "source_ip_address")
+
     private String sourceIpAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_port")
-    
+    @JsonProperty(value = "source_port")
+
     private String sourcePort;
 
     public FirewallRule withAction(ActionEnum action) {
@@ -360,13 +308,9 @@ public class FirewallRule  {
         return this;
     }
 
-    
-
-
-    /**
-     * 策略是否允许  取值范围：allow，deny，reject
-     * @return action
-     */
+    /** 策略是否允许 取值范围：allow，deny，reject
+     * 
+     * @return action */
     public ActionEnum getAction() {
         return action;
     }
@@ -375,20 +319,14 @@ public class FirewallRule  {
         this.action = action;
     }
 
-    
-
     public FirewallRule withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 网络ACL规则描述。
-     * @return description
-     */
+    /** 网络ACL规则描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -397,20 +335,14 @@ public class FirewallRule  {
         this.description = description;
     }
 
-    
-
     public FirewallRule withDestinationIpAddress(String destinationIpAddress) {
         this.destinationIpAddress = destinationIpAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 目的地IP地址，IPv4[或IPv6](tag:hide)的CIDR格式
-     * @return destinationIpAddress
-     */
+    /** 目的地IP地址，IPv4[或IPv6](tag:hide)的CIDR格式
+     * 
+     * @return destinationIpAddress */
     public String getDestinationIpAddress() {
         return destinationIpAddress;
     }
@@ -419,20 +351,14 @@ public class FirewallRule  {
         this.destinationIpAddress = destinationIpAddress;
     }
 
-    
-
     public FirewallRule withDestinationPort(String destinationPort) {
         this.destinationPort = destinationPort;
         return this;
     }
 
-    
-
-
-    /**
-     * 目的地端口范围  取值范围：整数，比如80，或者以\"-\"隔开的范围，比如80-90
-     * @return destinationPort
-     */
+    /** 目的地端口范围 取值范围：整数，比如80，或者以\"-\"隔开的范围，比如80-90
+     * 
+     * @return destinationPort */
     public String getDestinationPort() {
         return destinationPort;
     }
@@ -441,20 +367,14 @@ public class FirewallRule  {
         this.destinationPort = destinationPort;
     }
 
-    
-
     public FirewallRule withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
     }
 
-    
-
-
-    /**
-     * 网络ACL规则使能开关。  取值范围：true，false
-     * @return enabled
-     */
+    /** 网络ACL规则使能开关。 取值范围：true，false
+     * 
+     * @return enabled */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -463,20 +383,14 @@ public class FirewallRule  {
         this.enabled = enabled;
     }
 
-    
-
     public FirewallRule withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 网络ACL规则ID。  进行更新规则时，如果operate_type为add，则该值为空。
-     * @return id
-     */
+    /** 网络ACL规则ID。 进行更新规则时，如果operate_type为add，则该值为空。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -485,20 +399,14 @@ public class FirewallRule  {
         this.id = id;
     }
 
-    
-
     public FirewallRule withIpVersion(Integer ipVersion) {
         this.ipVersion = ipVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * IP协议版本  取值范围：4[、6](tag:hide)
-     * @return ipVersion
-     */
+    /** IP协议版本 取值范围：4[、6](tag:hide)
+     * 
+     * @return ipVersion */
     public Integer getIpVersion() {
         return ipVersion;
     }
@@ -507,20 +415,14 @@ public class FirewallRule  {
         this.ipVersion = ipVersion;
     }
 
-    
-
     public FirewallRule withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 网络ACL规则名称。
-     * @return name
-     */
+    /** 网络ACL规则名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -529,20 +431,14 @@ public class FirewallRule  {
         this.name = name;
     }
 
-    
-
     public FirewallRule withOperateType(OperateTypeEnum operateType) {
         this.operateType = operateType;
         return this;
     }
 
-    
-
-
-    /**
-     * 网络ACL规则操作状态，作为请求时取值为\"add\"/\"modify\"/\"delete\"，作为返回值时为\"normal\"。 当请求更新规则时，本参数值为delete时，除id之外，本请求体其他参数均可为空。
-     * @return operateType
-     */
+    /** 网络ACL规则操作状态，作为请求时取值为\"add\"/\"modify\"/\"delete\"，作为返回值时为\"normal\"。 当请求更新规则时，本参数值为delete时，除id之外，本请求体其他参数均可为空。
+     * 
+     * @return operateType */
     public OperateTypeEnum getOperateType() {
         return operateType;
     }
@@ -551,20 +447,14 @@ public class FirewallRule  {
         this.operateType = operateType;
     }
 
-    
-
     public FirewallRule withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
         return this;
     }
 
-    
-
-
-    /**
-     * IP协议，为any时代表所有协议  取值范围：icmp，tcp，udp，[icmpv6，](tag:hide)any 
-     * @return protocol
-     */
+    /** IP协议，为any时代表所有协议 取值范围：icmp，tcp，udp，[icmpv6，](tag:hide)any
+     * 
+     * @return protocol */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -573,20 +463,14 @@ public class FirewallRule  {
         this.protocol = protocol;
     }
 
-    
-
     public FirewallRule withSourceIpAddress(String sourceIpAddress) {
         this.sourceIpAddress = sourceIpAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 源IP地址，IPv4[或IPv6](tag:hide)的CIDR格式
-     * @return sourceIpAddress
-     */
+    /** 源IP地址，IPv4[或IPv6](tag:hide)的CIDR格式
+     * 
+     * @return sourceIpAddress */
     public String getSourceIpAddress() {
         return sourceIpAddress;
     }
@@ -595,20 +479,14 @@ public class FirewallRule  {
         this.sourceIpAddress = sourceIpAddress;
     }
 
-    
-
     public FirewallRule withSourcePort(String sourcePort) {
         this.sourcePort = sourcePort;
         return this;
     }
 
-    
-
-
-    /**
-     * 源地端口范围  取值范围：整数，比如80，或者以\"-\"隔开的范围，比如80-90
-     * @return sourcePort
-     */
+    /** 源地端口范围 取值范围：整数，比如80，或者以\"-\"隔开的范围，比如80-90
+     * 
+     * @return sourcePort */
     public String getSourcePort() {
         return sourcePort;
     }
@@ -616,8 +494,6 @@ public class FirewallRule  {
     public void setSourcePort(String sourcePort) {
         this.sourcePort = sourcePort;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -628,23 +504,34 @@ public class FirewallRule  {
             return false;
         }
         FirewallRule firewallRule = (FirewallRule) o;
-        return Objects.equals(this.action, firewallRule.action) &&
-            Objects.equals(this.description, firewallRule.description) &&
-            Objects.equals(this.destinationIpAddress, firewallRule.destinationIpAddress) &&
-            Objects.equals(this.destinationPort, firewallRule.destinationPort) &&
-            Objects.equals(this.enabled, firewallRule.enabled) &&
-            Objects.equals(this.id, firewallRule.id) &&
-            Objects.equals(this.ipVersion, firewallRule.ipVersion) &&
-            Objects.equals(this.name, firewallRule.name) &&
-            Objects.equals(this.operateType, firewallRule.operateType) &&
-            Objects.equals(this.protocol, firewallRule.protocol) &&
-            Objects.equals(this.sourceIpAddress, firewallRule.sourceIpAddress) &&
-            Objects.equals(this.sourcePort, firewallRule.sourcePort);
+        return Objects.equals(this.action, firewallRule.action)
+            && Objects.equals(this.description, firewallRule.description)
+            && Objects.equals(this.destinationIpAddress, firewallRule.destinationIpAddress)
+            && Objects.equals(this.destinationPort, firewallRule.destinationPort)
+            && Objects.equals(this.enabled, firewallRule.enabled) && Objects.equals(this.id, firewallRule.id)
+            && Objects.equals(this.ipVersion, firewallRule.ipVersion) && Objects.equals(this.name, firewallRule.name)
+            && Objects.equals(this.operateType, firewallRule.operateType)
+            && Objects.equals(this.protocol, firewallRule.protocol)
+            && Objects.equals(this.sourceIpAddress, firewallRule.sourceIpAddress)
+            && Objects.equals(this.sourcePort, firewallRule.sourcePort);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(action, description, destinationIpAddress, destinationPort, enabled, id, ipVersion, name, operateType, protocol, sourceIpAddress, sourcePort);
+        return Objects.hash(action,
+            description,
+            destinationIpAddress,
+            destinationPort,
+            enabled,
+            id,
+            ipVersion,
+            name,
+            operateType,
+            protocol,
+            sourceIpAddress,
+            sourcePort);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -664,16 +551,13 @@ public class FirewallRule  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

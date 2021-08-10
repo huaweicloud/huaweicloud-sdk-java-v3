@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.evs.v2.model.CinderExportToImageRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CinderExportToImageRequest  {
-
-
+/** Request Object */
+public class CinderExportToImageRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_id")
-    
+    @JsonProperty(value = "volume_id")
+
     private String volumeId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private CinderExportToImageRequestBody body;
 
     public CinderExportToImageRequest withVolumeId(String volumeId) {
@@ -35,13 +24,9 @@ public class CinderExportToImageRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘ID。
-     * @return volumeId
-     */
+    /** 云硬盘ID。
+     * 
+     * @return volumeId */
     public String getVolumeId() {
         return volumeId;
     }
@@ -50,27 +35,23 @@ public class CinderExportToImageRequest  {
         this.volumeId = volumeId;
     }
 
-    
-
     public CinderExportToImageRequest withBody(CinderExportToImageRequestBody body) {
         this.body = body;
         return this;
     }
 
     public CinderExportToImageRequest withBody(Consumer<CinderExportToImageRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CinderExportToImageRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public CinderExportToImageRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class CinderExportToImageRequest  {
     public void setBody(CinderExportToImageRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class CinderExportToImageRequest  {
             return false;
         }
         CinderExportToImageRequest cinderExportToImageRequest = (CinderExportToImageRequest) o;
-        return Objects.equals(this.volumeId, cinderExportToImageRequest.volumeId) &&
-            Objects.equals(this.body, cinderExportToImageRequest.body);
+        return Objects.equals(this.volumeId, cinderExportToImageRequest.volumeId)
+            && Objects.equals(this.body, cinderExportToImageRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(volumeId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class CinderExportToImageRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * domain信息
- */
-public class DomainInfo  {
-
-
+/** domain信息 */
+public class DomainInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public DomainInfo withId(String id) {
@@ -34,13 +23,9 @@ public class DomainInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 租户id
-     * @return id
-     */
+    /** 租户id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -49,20 +34,14 @@ public class DomainInfo  {
         this.id = id;
     }
 
-    
-
     public DomainInfo withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 租户name
-     * @return name
-     */
+    /** 租户name
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -70,8 +49,6 @@ public class DomainInfo  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,14 @@ public class DomainInfo  {
             return false;
         }
         DomainInfo domainInfo = (DomainInfo) o;
-        return Objects.equals(this.id, domainInfo.id) &&
-            Objects.equals(this.name, domainInfo.name);
+        return Objects.equals(this.id, domainInfo.id) && Objects.equals(this.name, domainInfo.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +76,13 @@ public class DomainInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

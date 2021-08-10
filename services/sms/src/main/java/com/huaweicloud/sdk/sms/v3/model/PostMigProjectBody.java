@@ -1,89 +1,66 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * SMS迁移项目信息
- */
-public class PostMigProjectBody  {
-
-
+/** SMS迁移项目信息 */
+public class PostMigProjectBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isdefault")
-    
+    @JsonProperty(value = "isdefault")
+
     private Boolean isdefault;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_target_server")
-    
+    @JsonProperty(value = "start_target_server")
+
     private Boolean startTargetServer;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="speed_limit")
-    
+    @JsonProperty(value = "speed_limit")
+
     private Integer speedLimit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="use_public_ip")
-    
+    @JsonProperty(value = "use_public_ip")
+
     private Boolean usePublicIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="exist_server")
-    
+    @JsonProperty(value = "exist_server")
+
     private Boolean existServer;
-    /**
-     * 迁移项目类型
-     */
+
+    /** 迁移项目类型 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum MIGRATE_BLOCK_ for value: "MIGRATE_BLOCK：块迁移"
-         */
+        /** Enum MIGRATE_BLOCK_ for value: "MIGRATE_BLOCK：块迁移" */
         public static final TypeEnum MIGRATE_BLOCK_ = new TypeEnum("MIGRATE_BLOCK：块迁移");
-        
-        /**
-         * Enum MIGRATE_FILE_ for value: "MIGRATE_FILE：文件级迁移"
-         */
+
+        /** Enum MIGRATE_FILE_ for value: "MIGRATE_FILE：文件级迁移" */
         public static final TypeEnum MIGRATE_FILE_ = new TypeEnum("MIGRATE_FILE：文件级迁移");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -112,7 +89,7 @@ public class PostMigProjectBody  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -123,7 +100,7 @@ public class PostMigProjectBody  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -147,22 +124,19 @@ public class PostMigProjectBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project")
-    
+    @JsonProperty(value = "enterprise_project")
+
     private String enterpriseProject;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="syncing")
-    
+    @JsonProperty(value = "syncing")
+
     private Boolean syncing;
 
     public PostMigProjectBody withName(String name) {
@@ -170,13 +144,9 @@ public class PostMigProjectBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移项目名称
-     * @return name
-     */
+    /** 迁移项目名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -185,20 +155,14 @@ public class PostMigProjectBody  {
         this.name = name;
     }
 
-    
-
     public PostMigProjectBody withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移项目描述
-     * @return description
-     */
+    /** 迁移项目描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -207,20 +171,14 @@ public class PostMigProjectBody  {
         this.description = description;
     }
 
-    
-
     public PostMigProjectBody withIsdefault(Boolean isdefault) {
         this.isdefault = isdefault;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否为默认模板
-     * @return isdefault
-     */
+    /** 是否为默认模板
+     * 
+     * @return isdefault */
     public Boolean getIsdefault() {
         return isdefault;
     }
@@ -229,20 +187,14 @@ public class PostMigProjectBody  {
         this.isdefault = isdefault;
     }
 
-    
-
     public PostMigProjectBody withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * 区域名称
-     * @return region
-     */
+    /** 区域名称
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -251,20 +203,14 @@ public class PostMigProjectBody  {
         this.region = region;
     }
 
-    
-
     public PostMigProjectBody withStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移后是否启动目的端虚拟机
-     * @return startTargetServer
-     */
+    /** 迁移后是否启动目的端虚拟机
+     * 
+     * @return startTargetServer */
     public Boolean getStartTargetServer() {
         return startTargetServer;
     }
@@ -273,22 +219,14 @@ public class PostMigProjectBody  {
         this.startTargetServer = startTargetServer;
     }
 
-    
-
     public PostMigProjectBody withSpeedLimit(Integer speedLimit) {
         this.speedLimit = speedLimit;
         return this;
     }
 
-    
-
-
-    /**
-     * 限制迁移速率，单位：Mbps
-     * minimum: 0
-     * maximum: 10000
-     * @return speedLimit
-     */
+    /** 限制迁移速率，单位：Mbps minimum: 0 maximum: 10000
+     * 
+     * @return speedLimit */
     public Integer getSpeedLimit() {
         return speedLimit;
     }
@@ -297,20 +235,14 @@ public class PostMigProjectBody  {
         this.speedLimit = speedLimit;
     }
 
-    
-
     public PostMigProjectBody withUsePublicIp(Boolean usePublicIp) {
         this.usePublicIp = usePublicIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否使用公网IP迁移
-     * @return usePublicIp
-     */
+    /** 是否使用公网IP迁移
+     * 
+     * @return usePublicIp */
     public Boolean getUsePublicIp() {
         return usePublicIp;
     }
@@ -319,20 +251,14 @@ public class PostMigProjectBody  {
         this.usePublicIp = usePublicIp;
     }
 
-    
-
     public PostMigProjectBody withExistServer(Boolean existServer) {
         this.existServer = existServer;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否是已经存在的服务器
-     * @return existServer
-     */
+    /** 是否是已经存在的服务器
+     * 
+     * @return existServer */
     public Boolean getExistServer() {
         return existServer;
     }
@@ -341,20 +267,14 @@ public class PostMigProjectBody  {
         this.existServer = existServer;
     }
 
-    
-
     public PostMigProjectBody withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移项目类型
-     * @return type
-     */
+    /** 迁移项目类型
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -363,20 +283,14 @@ public class PostMigProjectBody  {
         this.type = type;
     }
 
-    
-
     public PostMigProjectBody withEnterpriseProject(String enterpriseProject) {
         this.enterpriseProject = enterpriseProject;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目名称
-     * @return enterpriseProject
-     */
+    /** 企业项目名称
+     * 
+     * @return enterpriseProject */
     public String getEnterpriseProject() {
         return enterpriseProject;
     }
@@ -385,20 +299,14 @@ public class PostMigProjectBody  {
         this.enterpriseProject = enterpriseProject;
     }
 
-    
-
     public PostMigProjectBody withSyncing(Boolean syncing) {
         this.syncing = syncing;
         return this;
     }
 
-    
-
-
-    /**
-     * 首次复制或者同步后 是否继续持续同步
-     * @return syncing
-     */
+    /** 首次复制或者同步后 是否继续持续同步
+     * 
+     * @return syncing */
     public Boolean getSyncing() {
         return syncing;
     }
@@ -406,8 +314,6 @@ public class PostMigProjectBody  {
     public void setSyncing(Boolean syncing) {
         this.syncing = syncing;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -418,22 +324,34 @@ public class PostMigProjectBody  {
             return false;
         }
         PostMigProjectBody postMigProjectBody = (PostMigProjectBody) o;
-        return Objects.equals(this.name, postMigProjectBody.name) &&
-            Objects.equals(this.description, postMigProjectBody.description) &&
-            Objects.equals(this.isdefault, postMigProjectBody.isdefault) &&
-            Objects.equals(this.region, postMigProjectBody.region) &&
-            Objects.equals(this.startTargetServer, postMigProjectBody.startTargetServer) &&
-            Objects.equals(this.speedLimit, postMigProjectBody.speedLimit) &&
-            Objects.equals(this.usePublicIp, postMigProjectBody.usePublicIp) &&
-            Objects.equals(this.existServer, postMigProjectBody.existServer) &&
-            Objects.equals(this.type, postMigProjectBody.type) &&
-            Objects.equals(this.enterpriseProject, postMigProjectBody.enterpriseProject) &&
-            Objects.equals(this.syncing, postMigProjectBody.syncing);
+        return Objects.equals(this.name, postMigProjectBody.name)
+            && Objects.equals(this.description, postMigProjectBody.description)
+            && Objects.equals(this.isdefault, postMigProjectBody.isdefault)
+            && Objects.equals(this.region, postMigProjectBody.region)
+            && Objects.equals(this.startTargetServer, postMigProjectBody.startTargetServer)
+            && Objects.equals(this.speedLimit, postMigProjectBody.speedLimit)
+            && Objects.equals(this.usePublicIp, postMigProjectBody.usePublicIp)
+            && Objects.equals(this.existServer, postMigProjectBody.existServer)
+            && Objects.equals(this.type, postMigProjectBody.type)
+            && Objects.equals(this.enterpriseProject, postMigProjectBody.enterpriseProject)
+            && Objects.equals(this.syncing, postMigProjectBody.syncing);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, isdefault, region, startTargetServer, speedLimit, usePublicIp, existServer, type, enterpriseProject, syncing);
+        return Objects.hash(name,
+            description,
+            isdefault,
+            region,
+            startTargetServer,
+            speedLimit,
+            usePublicIp,
+            existServer,
+            type,
+            enterpriseProject,
+            syncing);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -452,16 +370,13 @@ public class PostMigProjectBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

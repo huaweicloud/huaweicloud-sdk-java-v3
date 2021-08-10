@@ -1,75 +1,47 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.LdApiCreate;
-import com.huaweicloud.sdk.roma.v2.model.LdApiParameter;
-import com.huaweicloud.sdk.roma.v2.model.LdApiScript;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateLiveDataApiScriptV2Response extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path")
-    
+    @JsonProperty(value = "path")
+
     private String path;
-    /**
-     * 后端API请求方法。  支持GET、PUT、POST、DELETE
-     */
+
+    /** 后端API请求方法。 支持GET、PUT、POST、DELETE */
     public static final class MethodEnum {
 
-        
-        /**
-         * Enum GET for value: "GET"
-         */
+        /** Enum GET for value: "GET" */
         public static final MethodEnum GET = new MethodEnum("GET");
-        
-        /**
-         * Enum PUT for value: "PUT"
-         */
+
+        /** Enum PUT for value: "PUT" */
         public static final MethodEnum PUT = new MethodEnum("PUT");
-        
-        /**
-         * Enum POST for value: "POST"
-         */
+
+        /** Enum POST for value: "POST" */
         public static final MethodEnum POST = new MethodEnum("POST");
-        
-        /**
-         * Enum DELETE for value: "DELETE"
-         */
+
+        /** Enum DELETE for value: "DELETE" */
         public static final MethodEnum DELETE = new MethodEnum("DELETE");
-        
 
         private static final Map<String, MethodEnum> STATIC_FIELDS = createStaticFields();
 
@@ -100,7 +72,7 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
 
         @JsonCreator
         public static MethodEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MethodEnum result = STATIC_FIELDS.get(value);
@@ -111,7 +83,7 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         }
 
         public static MethodEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MethodEnum result = STATIC_FIELDS.get(value);
@@ -135,44 +107,32 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="method")
-    
+    @JsonProperty(value = "method")
+
     private MethodEnum method;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
-    /**
-     * 后端API返回类型
-     */
+
+    /** 后端API返回类型 */
     public static final class ContentTypeEnum {
 
-        
-        /**
-         * Enum JSON for value: "json"
-         */
+        /** Enum JSON for value: "json" */
         public static final ContentTypeEnum JSON = new ContentTypeEnum("json");
-        
-        /**
-         * Enum XML for value: "xml"
-         */
+
+        /** Enum XML for value: "xml" */
         public static final ContentTypeEnum XML = new ContentTypeEnum("xml");
-        
-        /**
-         * Enum STREAM for value: "stream"
-         */
+
+        /** Enum STREAM for value: "stream" */
         public static final ContentTypeEnum STREAM = new ContentTypeEnum("stream");
-        
 
         private static final Map<String, ContentTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -202,7 +162,7 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
 
         @JsonCreator
         public static ContentTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ContentTypeEnum result = STATIC_FIELDS.get(value);
@@ -213,7 +173,7 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         }
 
         public static ContentTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ContentTypeEnum result = STATIC_FIELDS.get(value);
@@ -237,63 +197,49 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content_type")
-    
+    @JsonProperty(value = "content_type")
+
     private ContentTypeEnum contentType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_signature_id")
-    
+    @JsonProperty(value = "api_signature_id")
+
     private String apiSignatureId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roma_app_id")
-    
+    @JsonProperty(value = "roma_app_id")
+
     private String romaAppId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="return_format")
-    
+    @JsonProperty(value = "return_format")
+
     private Boolean returnFormat;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parameters")
-    
+    @JsonProperty(value = "parameters")
+
     private List<LdApiParameter> parameters = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance")
-    
+    @JsonProperty(value = "instance")
+
     private String instance;
-    /**
-     * 后端API类型： - data：数据后端 - function： 函数后端
-     */
+
+    /** 后端API类型： - data：数据后端 - function： 函数后端 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum DATA for value: "data"
-         */
+        /** Enum DATA for value: "data" */
         public static final TypeEnum DATA = new TypeEnum("data");
-        
-        /**
-         * Enum FUNCTION for value: "function"
-         */
+
+        /** Enum FUNCTION for value: "function" */
         public static final TypeEnum FUNCTION = new TypeEnum("function");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -322,7 +268,7 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -333,7 +279,7 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -357,40 +303,34 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_time")
-    
+    @JsonProperty(value = "created_time")
+
     private OffsetDateTime createdTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="modified_time")
-    
+    @JsonProperty(value = "modified_time")
+
     private OffsetDateTime modifiedTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scripts")
-    
+    @JsonProperty(value = "scripts")
+
     private List<LdApiScript> scripts = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roma_app_name")
-    
+    @JsonProperty(value = "roma_app_name")
+
     private String romaAppName;
 
     public CreateLiveDataApiScriptV2Response withName(String name) {
@@ -398,13 +338,9 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API名称。  支持汉字、英文、数字、中划线、下划线、点、斜杠、中英文格式下的小括号和冒号、中文格式下的顿号，且只能以英文、汉字和数字开头。
-     * @return name
-     */
+    /** 后端API名称。 支持汉字、英文、数字、中划线、下划线、点、斜杠、中英文格式下的小括号和冒号、中文格式下的顿号，且只能以英文、汉字和数字开头。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -413,20 +349,14 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public CreateLiveDataApiScriptV2Response withPath(String path) {
         this.path = path;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API请求路径。  支持英文、数字、中划线、下划线、点等，且以斜杠（/）开头。
-     * @return path
-     */
+    /** 后端API请求路径。 支持英文、数字、中划线、下划线、点等，且以斜杠（/）开头。
+     * 
+     * @return path */
     public String getPath() {
         return path;
     }
@@ -435,20 +365,14 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         this.path = path;
     }
 
-    
-
     public CreateLiveDataApiScriptV2Response withMethod(MethodEnum method) {
         this.method = method;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API请求方法。  支持GET、PUT、POST、DELETE
-     * @return method
-     */
+    /** 后端API请求方法。 支持GET、PUT、POST、DELETE
+     * 
+     * @return method */
     public MethodEnum getMethod() {
         return method;
     }
@@ -457,20 +381,14 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         this.method = method;
     }
 
-    
-
     public CreateLiveDataApiScriptV2Response withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API描述。  不支持<，>字符
-     * @return description
-     */
+    /** 后端API描述。 不支持<，>字符
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -479,20 +397,14 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public CreateLiveDataApiScriptV2Response withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API版本  支持英文，数字，下划线，中划线，点。
-     * @return version
-     */
+    /** 后端API版本 支持英文，数字，下划线，中划线，点。
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -501,20 +413,14 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         this.version = version;
     }
 
-    
-
     public CreateLiveDataApiScriptV2Response withContentType(ContentTypeEnum contentType) {
         this.contentType = contentType;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API返回类型
-     * @return contentType
-     */
+    /** 后端API返回类型
+     * 
+     * @return contentType */
     public ContentTypeEnum getContentType() {
         return contentType;
     }
@@ -523,20 +429,14 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         this.contentType = contentType;
     }
 
-    
-
     public CreateLiveDataApiScriptV2Response withApiSignatureId(String apiSignatureId) {
         this.apiSignatureId = apiSignatureId;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API为签名认证时绑定的签名密钥编号
-     * @return apiSignatureId
-     */
+    /** 后端API为签名认证时绑定的签名密钥编号
+     * 
+     * @return apiSignatureId */
     public String getApiSignatureId() {
         return apiSignatureId;
     }
@@ -545,20 +445,14 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         this.apiSignatureId = apiSignatureId;
     }
 
-    
-
     public CreateLiveDataApiScriptV2Response withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API归属的集成应用编号
-     * @return romaAppId
-     */
+    /** 后端API归属的集成应用编号
+     * 
+     * @return romaAppId */
     public String getRomaAppId() {
         return romaAppId;
     }
@@ -567,20 +461,14 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         this.romaAppId = romaAppId;
     }
 
-    
-
     public CreateLiveDataApiScriptV2Response withReturnFormat(Boolean returnFormat) {
         this.returnFormat = returnFormat;
         return this;
     }
 
-    
-
-
-    /**
-     * API响应信息是否格式化  true： 对响应信息进行格式化  false：对响应信息格式化不进行格式化 
-     * @return returnFormat
-     */
+    /** API响应信息是否格式化 true： 对响应信息进行格式化 false：对响应信息格式化不进行格式化
+     * 
+     * @return returnFormat */
     public Boolean getReturnFormat() {
         return returnFormat;
     }
@@ -589,16 +477,13 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         this.returnFormat = returnFormat;
     }
 
-    
-
     public CreateLiveDataApiScriptV2Response withParameters(List<LdApiParameter> parameters) {
         this.parameters = parameters;
         return this;
     }
 
-    
     public CreateLiveDataApiScriptV2Response addParametersItem(LdApiParameter parametersItem) {
-        if(this.parameters == null) {
+        if (this.parameters == null) {
             this.parameters = new ArrayList<>();
         }
         this.parameters.add(parametersItem);
@@ -606,17 +491,16 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
     }
 
     public CreateLiveDataApiScriptV2Response withParameters(Consumer<List<LdApiParameter>> parametersSetter) {
-        if(this.parameters == null) {
+        if (this.parameters == null) {
             this.parameters = new ArrayList<>();
         }
         parametersSetter.accept(this.parameters);
         return this;
     }
 
-    /**
-     * 后端API的请求参数列表
-     * @return parameters
-     */
+    /** 后端API的请求参数列表
+     * 
+     * @return parameters */
     public List<LdApiParameter> getParameters() {
         return parameters;
     }
@@ -625,20 +509,14 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         this.parameters = parameters;
     }
 
-    
-
     public CreateLiveDataApiScriptV2Response withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API编号
-     * @return id
-     */
+    /** 后端API编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -647,20 +525,14 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public CreateLiveDataApiScriptV2Response withInstance(String instance) {
         this.instance = instance;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API所属实例编号
-     * @return instance
-     */
+    /** 后端API所属实例编号
+     * 
+     * @return instance */
     public String getInstance() {
         return instance;
     }
@@ -669,20 +541,14 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         this.instance = instance;
     }
 
-    
-
     public CreateLiveDataApiScriptV2Response withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API类型： - data：数据后端 - function： 函数后端
-     * @return type
-     */
+    /** 后端API类型： - data：数据后端 - function： 函数后端
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -691,20 +557,14 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         this.type = type;
     }
 
-    
-
     public CreateLiveDataApiScriptV2Response withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API状态： - 1：待开发 - 3：开发中 - 4：已部署
-     * @return status
-     */
+    /** 后端API状态： - 1：待开发 - 3：开发中 - 4：已部署
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -713,20 +573,14 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public CreateLiveDataApiScriptV2Response withCreatedTime(OffsetDateTime createdTime) {
         this.createdTime = createdTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API创建时间
-     * @return createdTime
-     */
+    /** 后端API创建时间
+     * 
+     * @return createdTime */
     public OffsetDateTime getCreatedTime() {
         return createdTime;
     }
@@ -735,20 +589,14 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         this.createdTime = createdTime;
     }
 
-    
-
     public CreateLiveDataApiScriptV2Response withModifiedTime(OffsetDateTime modifiedTime) {
         this.modifiedTime = modifiedTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API修改时间
-     * @return modifiedTime
-     */
+    /** 后端API修改时间
+     * 
+     * @return modifiedTime */
     public OffsetDateTime getModifiedTime() {
         return modifiedTime;
     }
@@ -757,16 +605,13 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         this.modifiedTime = modifiedTime;
     }
 
-    
-
     public CreateLiveDataApiScriptV2Response withScripts(List<LdApiScript> scripts) {
         this.scripts = scripts;
         return this;
     }
 
-    
     public CreateLiveDataApiScriptV2Response addScriptsItem(LdApiScript scriptsItem) {
-        if(this.scripts == null) {
+        if (this.scripts == null) {
             this.scripts = new ArrayList<>();
         }
         this.scripts.add(scriptsItem);
@@ -774,17 +619,16 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
     }
 
     public CreateLiveDataApiScriptV2Response withScripts(Consumer<List<LdApiScript>> scriptsSetter) {
-        if(this.scripts == null) {
+        if (this.scripts == null) {
             this.scripts = new ArrayList<>();
         }
         scriptsSetter.accept(this.scripts);
         return this;
     }
 
-    /**
-     * 后端API脚本信息
-     * @return scripts
-     */
+    /** 后端API脚本信息
+     * 
+     * @return scripts */
     public List<LdApiScript> getScripts() {
         return scripts;
     }
@@ -793,20 +637,14 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         this.scripts = scripts;
     }
 
-    
-
     public CreateLiveDataApiScriptV2Response withRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API归属的集成应用名称
-     * @return romaAppName
-     */
+    /** 后端API归属的集成应用名称
+     * 
+     * @return romaAppName */
     public String getRomaAppName() {
         return romaAppName;
     }
@@ -814,8 +652,6 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
     public void setRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -826,29 +662,48 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
             return false;
         }
         CreateLiveDataApiScriptV2Response createLiveDataApiScriptV2Response = (CreateLiveDataApiScriptV2Response) o;
-        return Objects.equals(this.name, createLiveDataApiScriptV2Response.name) &&
-            Objects.equals(this.path, createLiveDataApiScriptV2Response.path) &&
-            Objects.equals(this.method, createLiveDataApiScriptV2Response.method) &&
-            Objects.equals(this.description, createLiveDataApiScriptV2Response.description) &&
-            Objects.equals(this.version, createLiveDataApiScriptV2Response.version) &&
-            Objects.equals(this.contentType, createLiveDataApiScriptV2Response.contentType) &&
-            Objects.equals(this.apiSignatureId, createLiveDataApiScriptV2Response.apiSignatureId) &&
-            Objects.equals(this.romaAppId, createLiveDataApiScriptV2Response.romaAppId) &&
-            Objects.equals(this.returnFormat, createLiveDataApiScriptV2Response.returnFormat) &&
-            Objects.equals(this.parameters, createLiveDataApiScriptV2Response.parameters) &&
-            Objects.equals(this.id, createLiveDataApiScriptV2Response.id) &&
-            Objects.equals(this.instance, createLiveDataApiScriptV2Response.instance) &&
-            Objects.equals(this.type, createLiveDataApiScriptV2Response.type) &&
-            Objects.equals(this.status, createLiveDataApiScriptV2Response.status) &&
-            Objects.equals(this.createdTime, createLiveDataApiScriptV2Response.createdTime) &&
-            Objects.equals(this.modifiedTime, createLiveDataApiScriptV2Response.modifiedTime) &&
-            Objects.equals(this.scripts, createLiveDataApiScriptV2Response.scripts) &&
-            Objects.equals(this.romaAppName, createLiveDataApiScriptV2Response.romaAppName);
+        return Objects.equals(this.name, createLiveDataApiScriptV2Response.name)
+            && Objects.equals(this.path, createLiveDataApiScriptV2Response.path)
+            && Objects.equals(this.method, createLiveDataApiScriptV2Response.method)
+            && Objects.equals(this.description, createLiveDataApiScriptV2Response.description)
+            && Objects.equals(this.version, createLiveDataApiScriptV2Response.version)
+            && Objects.equals(this.contentType, createLiveDataApiScriptV2Response.contentType)
+            && Objects.equals(this.apiSignatureId, createLiveDataApiScriptV2Response.apiSignatureId)
+            && Objects.equals(this.romaAppId, createLiveDataApiScriptV2Response.romaAppId)
+            && Objects.equals(this.returnFormat, createLiveDataApiScriptV2Response.returnFormat)
+            && Objects.equals(this.parameters, createLiveDataApiScriptV2Response.parameters)
+            && Objects.equals(this.id, createLiveDataApiScriptV2Response.id)
+            && Objects.equals(this.instance, createLiveDataApiScriptV2Response.instance)
+            && Objects.equals(this.type, createLiveDataApiScriptV2Response.type)
+            && Objects.equals(this.status, createLiveDataApiScriptV2Response.status)
+            && Objects.equals(this.createdTime, createLiveDataApiScriptV2Response.createdTime)
+            && Objects.equals(this.modifiedTime, createLiveDataApiScriptV2Response.modifiedTime)
+            && Objects.equals(this.scripts, createLiveDataApiScriptV2Response.scripts)
+            && Objects.equals(this.romaAppName, createLiveDataApiScriptV2Response.romaAppName);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, path, method, description, version, contentType, apiSignatureId, romaAppId, returnFormat, parameters, id, instance, type, status, createdTime, modifiedTime, scripts, romaAppName);
+        return Objects.hash(name,
+            path,
+            method,
+            description,
+            version,
+            contentType,
+            apiSignatureId,
+            romaAppId,
+            returnFormat,
+            parameters,
+            id,
+            instance,
+            type,
+            status,
+            createdTime,
+            modifiedTime,
+            scripts,
+            romaAppName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -874,16 +729,13 @@ public class CreateLiveDataApiScriptV2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

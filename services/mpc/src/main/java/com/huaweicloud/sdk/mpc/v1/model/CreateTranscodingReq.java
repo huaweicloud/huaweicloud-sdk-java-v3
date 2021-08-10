@@ -1,129 +1,94 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.AudioProcess;
-import com.huaweicloud.sdk.mpc.v1.model.AudioTrack;
-import com.huaweicloud.sdk.mpc.v1.model.AvParameters;
-import com.huaweicloud.sdk.mpc.v1.model.Crop;
-import com.huaweicloud.sdk.mpc.v1.model.Encryption;
-import com.huaweicloud.sdk.mpc.v1.model.MultiAudio;
-import com.huaweicloud.sdk.mpc.v1.model.ObsObjInfo;
-import com.huaweicloud.sdk.mpc.v1.model.Subtitle;
-import com.huaweicloud.sdk.mpc.v1.model.Thumbnail;
-import com.huaweicloud.sdk.mpc.v1.model.VideoProcess;
-import com.huaweicloud.sdk.mpc.v1.model.WatermarkRequest;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * CreateTranscodingReq
- */
-public class CreateTranscodingReq  {
-
-
+/** CreateTranscodingReq */
+public class CreateTranscodingReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="input")
-    
+    @JsonProperty(value = "input")
+
     private ObsObjInfo input;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output")
-    
+    @JsonProperty(value = "output")
+
     private ObsObjInfo output;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trans_template_id")
-    
+    @JsonProperty(value = "trans_template_id")
+
     private List<Integer> transTemplateId = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="av_parameters")
-    
+    @JsonProperty(value = "av_parameters")
+
     private List<AvParameters> avParameters = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output_filenames")
-    
+    @JsonProperty(value = "output_filenames")
+
     private List<String> outputFilenames = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_data")
-    
+    @JsonProperty(value = "user_data")
+
     private String userData;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="watermarks")
-    
+    @JsonProperty(value = "watermarks")
+
     private List<WatermarkRequest> watermarks = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="thumbnail")
-    
+    @JsonProperty(value = "thumbnail")
+
     private Thumbnail thumbnail;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="priority")
-    
+    @JsonProperty(value = "priority")
+
     private Integer priority;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subtitle")
-    
+    @JsonProperty(value = "subtitle")
+
     private Subtitle subtitle;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="encryption")
-    
+    @JsonProperty(value = "encryption")
+
     private Encryption encryption;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="crop")
-    
+    @JsonProperty(value = "crop")
+
     private Crop crop;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audio_track")
-    
+    @JsonProperty(value = "audio_track")
+
     private AudioTrack audioTrack;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="multi_audio")
-    
+    @JsonProperty(value = "multi_audio")
+
     private MultiAudio multiAudio;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="video_process")
-    
+    @JsonProperty(value = "video_process")
+
     private VideoProcess videoProcess;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audio_process")
-    
+    @JsonProperty(value = "audio_process")
+
     private AudioProcess audioProcess;
 
     public CreateTranscodingReq withInput(ObsObjInfo input) {
@@ -132,19 +97,17 @@ public class CreateTranscodingReq  {
     }
 
     public CreateTranscodingReq withInput(Consumer<ObsObjInfo> inputSetter) {
-        if(this.input == null ){
+        if (this.input == null) {
             this.input = new ObsObjInfo();
             inputSetter.accept(this.input);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get input
-     * @return input
-     */
+    /** Get input
+     * 
+     * @return input */
     public ObsObjInfo getInput() {
         return input;
     }
@@ -153,27 +116,23 @@ public class CreateTranscodingReq  {
         this.input = input;
     }
 
-    
-
     public CreateTranscodingReq withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
     }
 
     public CreateTranscodingReq withOutput(Consumer<ObsObjInfo> outputSetter) {
-        if(this.output == null ){
+        if (this.output == null) {
             this.output = new ObsObjInfo();
             outputSetter.accept(this.output);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get output
-     * @return output
-     */
+    /** Get output
+     * 
+     * @return output */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -182,16 +141,13 @@ public class CreateTranscodingReq  {
         this.output = output;
     }
 
-    
-
     public CreateTranscodingReq withTransTemplateId(List<Integer> transTemplateId) {
         this.transTemplateId = transTemplateId;
         return this;
     }
 
-    
     public CreateTranscodingReq addTransTemplateIdItem(Integer transTemplateIdItem) {
-        if(this.transTemplateId == null) {
+        if (this.transTemplateId == null) {
             this.transTemplateId = new ArrayList<>();
         }
         this.transTemplateId.add(transTemplateIdItem);
@@ -199,17 +155,17 @@ public class CreateTranscodingReq  {
     }
 
     public CreateTranscodingReq withTransTemplateId(Consumer<List<Integer>> transTemplateIdSetter) {
-        if(this.transTemplateId == null) {
+        if (this.transTemplateId == null) {
             this.transTemplateId = new ArrayList<>();
         }
         transTemplateIdSetter.accept(this.transTemplateId);
         return this;
     }
 
-    /**
-     * 转码模板ID，没带av_parameter参数时，必须带该参数，数组，每一路转码输出对应一个转码配置模板ID，最多支持9个模板ID。  多个转码模板中如下参数可变，其他都必须一致：  - 视频bitrate，height，width。 
-     * @return transTemplateId
-     */
+    /** 转码模板ID，没带av_parameter参数时，必须带该参数，数组，每一路转码输出对应一个转码配置模板ID，最多支持9个模板ID。 多个转码模板中如下参数可变，其他都必须一致： -
+     * 视频bitrate，height，width。
+     * 
+     * @return transTemplateId */
     public List<Integer> getTransTemplateId() {
         return transTemplateId;
     }
@@ -218,16 +174,13 @@ public class CreateTranscodingReq  {
         this.transTemplateId = transTemplateId;
     }
 
-    
-
     public CreateTranscodingReq withAvParameters(List<AvParameters> avParameters) {
         this.avParameters = avParameters;
         return this;
     }
 
-    
     public CreateTranscodingReq addAvParametersItem(AvParameters avParametersItem) {
-        if(this.avParameters == null) {
+        if (this.avParameters == null) {
             this.avParameters = new ArrayList<>();
         }
         this.avParameters.add(avParametersItem);
@@ -235,17 +188,16 @@ public class CreateTranscodingReq  {
     }
 
     public CreateTranscodingReq withAvParameters(Consumer<List<AvParameters>> avParametersSetter) {
-        if(this.avParameters == null) {
+        if (this.avParameters == null) {
             this.avParameters = new ArrayList<>();
         }
         avParametersSetter.accept(this.avParameters);
         return this;
     }
 
-    /**
-     * 转码参数。  若同时设置“trans_template_id”和此参数，则优先使用此参数进行转码，不带trans_template_id时，该参数必选。 
-     * @return avParameters
-     */
+    /** 转码参数。 若同时设置“trans_template_id”和此参数，则优先使用此参数进行转码，不带trans_template_id时，该参数必选。
+     * 
+     * @return avParameters */
     public List<AvParameters> getAvParameters() {
         return avParameters;
     }
@@ -254,16 +206,13 @@ public class CreateTranscodingReq  {
         this.avParameters = avParameters;
     }
 
-    
-
     public CreateTranscodingReq withOutputFilenames(List<String> outputFilenames) {
         this.outputFilenames = outputFilenames;
         return this;
     }
 
-    
     public CreateTranscodingReq addOutputFilenamesItem(String outputFilenamesItem) {
-        if(this.outputFilenames == null) {
+        if (this.outputFilenames == null) {
             this.outputFilenames = new ArrayList<>();
         }
         this.outputFilenames.add(outputFilenamesItem);
@@ -271,17 +220,16 @@ public class CreateTranscodingReq  {
     }
 
     public CreateTranscodingReq withOutputFilenames(Consumer<List<String>> outputFilenamesSetter) {
-        if(this.outputFilenames == null) {
+        if (this.outputFilenames == null) {
             this.outputFilenames = new ArrayList<>();
         }
         outputFilenamesSetter.accept(this.outputFilenames);
         return this;
     }
 
-    /**
-     * 输出文件名称，每一路转码输出对应一个名称，需要与转码模板ID数组的顺序对应。  - 若设置该参数，表示输出文件按该参数命名。 - 若不设置该参数，表示输出文件按默认方式命名。 
-     * @return outputFilenames
-     */
+    /** 输出文件名称，每一路转码输出对应一个名称，需要与转码模板ID数组的顺序对应。 - 若设置该参数，表示输出文件按该参数命名。 - 若不设置该参数，表示输出文件按默认方式命名。
+     * 
+     * @return outputFilenames */
     public List<String> getOutputFilenames() {
         return outputFilenames;
     }
@@ -290,20 +238,14 @@ public class CreateTranscodingReq  {
         this.outputFilenames = outputFilenames;
     }
 
-    
-
     public CreateTranscodingReq withUserData(String userData) {
         this.userData = userData;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户自定义数据，该字段可在查询接口或消息通知中按原内容透传给用户。 
-     * @return userData
-     */
+    /** 用户自定义数据，该字段可在查询接口或消息通知中按原内容透传给用户。
+     * 
+     * @return userData */
     public String getUserData() {
         return userData;
     }
@@ -312,16 +254,13 @@ public class CreateTranscodingReq  {
         this.userData = userData;
     }
 
-    
-
     public CreateTranscodingReq withWatermarks(List<WatermarkRequest> watermarks) {
         this.watermarks = watermarks;
         return this;
     }
 
-    
     public CreateTranscodingReq addWatermarksItem(WatermarkRequest watermarksItem) {
-        if(this.watermarks == null) {
+        if (this.watermarks == null) {
             this.watermarks = new ArrayList<>();
         }
         this.watermarks.add(watermarksItem);
@@ -329,17 +268,16 @@ public class CreateTranscodingReq  {
     }
 
     public CreateTranscodingReq withWatermarks(Consumer<List<WatermarkRequest>> watermarksSetter) {
-        if(this.watermarks == null) {
+        if (this.watermarks == null) {
             this.watermarks = new ArrayList<>();
         }
         watermarksSetter.accept(this.watermarks);
         return this;
     }
 
-    /**
-     * 图片水印参数，数组，最多支持20个成员。 
-     * @return watermarks
-     */
+    /** 图片水印参数，数组，最多支持20个成员。
+     * 
+     * @return watermarks */
     public List<WatermarkRequest> getWatermarks() {
         return watermarks;
     }
@@ -348,27 +286,23 @@ public class CreateTranscodingReq  {
         this.watermarks = watermarks;
     }
 
-    
-
     public CreateTranscodingReq withThumbnail(Thumbnail thumbnail) {
         this.thumbnail = thumbnail;
         return this;
     }
 
     public CreateTranscodingReq withThumbnail(Consumer<Thumbnail> thumbnailSetter) {
-        if(this.thumbnail == null ){
+        if (this.thumbnail == null) {
             this.thumbnail = new Thumbnail();
             thumbnailSetter.accept(this.thumbnail);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get thumbnail
-     * @return thumbnail
-     */
+    /** Get thumbnail
+     * 
+     * @return thumbnail */
     public Thumbnail getThumbnail() {
         return thumbnail;
     }
@@ -377,22 +311,14 @@ public class CreateTranscodingReq  {
         this.thumbnail = thumbnail;
     }
 
-    
-
     public CreateTranscodingReq withPriority(Integer priority) {
         this.priority = priority;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务优先级，取值如下： - 9代表高优先级。 - 6代表中优先级，默认为6。  暂时只支持6和9。 
-     * minimum: 0
-     * maximum: 9
-     * @return priority
-     */
+    /** 任务优先级，取值如下： - 9代表高优先级。 - 6代表中优先级，默认为6。 暂时只支持6和9。 minimum: 0 maximum: 9
+     * 
+     * @return priority */
     public Integer getPriority() {
         return priority;
     }
@@ -401,27 +327,23 @@ public class CreateTranscodingReq  {
         this.priority = priority;
     }
 
-    
-
     public CreateTranscodingReq withSubtitle(Subtitle subtitle) {
         this.subtitle = subtitle;
         return this;
     }
 
     public CreateTranscodingReq withSubtitle(Consumer<Subtitle> subtitleSetter) {
-        if(this.subtitle == null ){
+        if (this.subtitle == null) {
             this.subtitle = new Subtitle();
             subtitleSetter.accept(this.subtitle);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get subtitle
-     * @return subtitle
-     */
+    /** Get subtitle
+     * 
+     * @return subtitle */
     public Subtitle getSubtitle() {
         return subtitle;
     }
@@ -430,27 +352,23 @@ public class CreateTranscodingReq  {
         this.subtitle = subtitle;
     }
 
-    
-
     public CreateTranscodingReq withEncryption(Encryption encryption) {
         this.encryption = encryption;
         return this;
     }
 
     public CreateTranscodingReq withEncryption(Consumer<Encryption> encryptionSetter) {
-        if(this.encryption == null ){
+        if (this.encryption == null) {
             this.encryption = new Encryption();
             encryptionSetter.accept(this.encryption);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get encryption
-     * @return encryption
-     */
+    /** Get encryption
+     * 
+     * @return encryption */
     public Encryption getEncryption() {
         return encryption;
     }
@@ -459,27 +377,23 @@ public class CreateTranscodingReq  {
         this.encryption = encryption;
     }
 
-    
-
     public CreateTranscodingReq withCrop(Crop crop) {
         this.crop = crop;
         return this;
     }
 
     public CreateTranscodingReq withCrop(Consumer<Crop> cropSetter) {
-        if(this.crop == null ){
+        if (this.crop == null) {
             this.crop = new Crop();
             cropSetter.accept(this.crop);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get crop
-     * @return crop
-     */
+    /** Get crop
+     * 
+     * @return crop */
     public Crop getCrop() {
         return crop;
     }
@@ -488,27 +402,23 @@ public class CreateTranscodingReq  {
         this.crop = crop;
     }
 
-    
-
     public CreateTranscodingReq withAudioTrack(AudioTrack audioTrack) {
         this.audioTrack = audioTrack;
         return this;
     }
 
     public CreateTranscodingReq withAudioTrack(Consumer<AudioTrack> audioTrackSetter) {
-        if(this.audioTrack == null ){
+        if (this.audioTrack == null) {
             this.audioTrack = new AudioTrack();
             audioTrackSetter.accept(this.audioTrack);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get audioTrack
-     * @return audioTrack
-     */
+    /** Get audioTrack
+     * 
+     * @return audioTrack */
     public AudioTrack getAudioTrack() {
         return audioTrack;
     }
@@ -517,27 +427,23 @@ public class CreateTranscodingReq  {
         this.audioTrack = audioTrack;
     }
 
-    
-
     public CreateTranscodingReq withMultiAudio(MultiAudio multiAudio) {
         this.multiAudio = multiAudio;
         return this;
     }
 
     public CreateTranscodingReq withMultiAudio(Consumer<MultiAudio> multiAudioSetter) {
-        if(this.multiAudio == null ){
+        if (this.multiAudio == null) {
             this.multiAudio = new MultiAudio();
             multiAudioSetter.accept(this.multiAudio);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get multiAudio
-     * @return multiAudio
-     */
+    /** Get multiAudio
+     * 
+     * @return multiAudio */
     public MultiAudio getMultiAudio() {
         return multiAudio;
     }
@@ -546,27 +452,23 @@ public class CreateTranscodingReq  {
         this.multiAudio = multiAudio;
     }
 
-    
-
     public CreateTranscodingReq withVideoProcess(VideoProcess videoProcess) {
         this.videoProcess = videoProcess;
         return this;
     }
 
     public CreateTranscodingReq withVideoProcess(Consumer<VideoProcess> videoProcessSetter) {
-        if(this.videoProcess == null ){
+        if (this.videoProcess == null) {
             this.videoProcess = new VideoProcess();
             videoProcessSetter.accept(this.videoProcess);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get videoProcess
-     * @return videoProcess
-     */
+    /** Get videoProcess
+     * 
+     * @return videoProcess */
     public VideoProcess getVideoProcess() {
         return videoProcess;
     }
@@ -575,27 +477,23 @@ public class CreateTranscodingReq  {
         this.videoProcess = videoProcess;
     }
 
-    
-
     public CreateTranscodingReq withAudioProcess(AudioProcess audioProcess) {
         this.audioProcess = audioProcess;
         return this;
     }
 
     public CreateTranscodingReq withAudioProcess(Consumer<AudioProcess> audioProcessSetter) {
-        if(this.audioProcess == null ){
+        if (this.audioProcess == null) {
             this.audioProcess = new AudioProcess();
             audioProcessSetter.accept(this.audioProcess);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get audioProcess
-     * @return audioProcess
-     */
+    /** Get audioProcess
+     * 
+     * @return audioProcess */
     public AudioProcess getAudioProcess() {
         return audioProcess;
     }
@@ -603,8 +501,6 @@ public class CreateTranscodingReq  {
     public void setAudioProcess(AudioProcess audioProcess) {
         this.audioProcess = audioProcess;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -615,27 +511,44 @@ public class CreateTranscodingReq  {
             return false;
         }
         CreateTranscodingReq createTranscodingReq = (CreateTranscodingReq) o;
-        return Objects.equals(this.input, createTranscodingReq.input) &&
-            Objects.equals(this.output, createTranscodingReq.output) &&
-            Objects.equals(this.transTemplateId, createTranscodingReq.transTemplateId) &&
-            Objects.equals(this.avParameters, createTranscodingReq.avParameters) &&
-            Objects.equals(this.outputFilenames, createTranscodingReq.outputFilenames) &&
-            Objects.equals(this.userData, createTranscodingReq.userData) &&
-            Objects.equals(this.watermarks, createTranscodingReq.watermarks) &&
-            Objects.equals(this.thumbnail, createTranscodingReq.thumbnail) &&
-            Objects.equals(this.priority, createTranscodingReq.priority) &&
-            Objects.equals(this.subtitle, createTranscodingReq.subtitle) &&
-            Objects.equals(this.encryption, createTranscodingReq.encryption) &&
-            Objects.equals(this.crop, createTranscodingReq.crop) &&
-            Objects.equals(this.audioTrack, createTranscodingReq.audioTrack) &&
-            Objects.equals(this.multiAudio, createTranscodingReq.multiAudio) &&
-            Objects.equals(this.videoProcess, createTranscodingReq.videoProcess) &&
-            Objects.equals(this.audioProcess, createTranscodingReq.audioProcess);
+        return Objects.equals(this.input, createTranscodingReq.input)
+            && Objects.equals(this.output, createTranscodingReq.output)
+            && Objects.equals(this.transTemplateId, createTranscodingReq.transTemplateId)
+            && Objects.equals(this.avParameters, createTranscodingReq.avParameters)
+            && Objects.equals(this.outputFilenames, createTranscodingReq.outputFilenames)
+            && Objects.equals(this.userData, createTranscodingReq.userData)
+            && Objects.equals(this.watermarks, createTranscodingReq.watermarks)
+            && Objects.equals(this.thumbnail, createTranscodingReq.thumbnail)
+            && Objects.equals(this.priority, createTranscodingReq.priority)
+            && Objects.equals(this.subtitle, createTranscodingReq.subtitle)
+            && Objects.equals(this.encryption, createTranscodingReq.encryption)
+            && Objects.equals(this.crop, createTranscodingReq.crop)
+            && Objects.equals(this.audioTrack, createTranscodingReq.audioTrack)
+            && Objects.equals(this.multiAudio, createTranscodingReq.multiAudio)
+            && Objects.equals(this.videoProcess, createTranscodingReq.videoProcess)
+            && Objects.equals(this.audioProcess, createTranscodingReq.audioProcess);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(input, output, transTemplateId, avParameters, outputFilenames, userData, watermarks, thumbnail, priority, subtitle, encryption, crop, audioTrack, multiAudio, videoProcess, audioProcess);
+        return Objects.hash(input,
+            output,
+            transTemplateId,
+            avParameters,
+            outputFilenames,
+            userData,
+            watermarks,
+            thumbnail,
+            priority,
+            subtitle,
+            encryption,
+            crop,
+            audioTrack,
+            multiAudio,
+            videoProcess,
+            audioProcess);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -659,16 +572,13 @@ public class CreateTranscodingReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

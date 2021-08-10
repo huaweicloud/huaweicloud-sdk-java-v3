@@ -1,53 +1,36 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 函数后端详情
- */
-public class FunctionApiBaseInfo  {
-
-
+/** 函数后端详情 */
+public class FunctionApiBaseInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="function_urn")
-    
+    @JsonProperty(value = "function_urn")
+
     private String functionUrn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
+
     private String remark;
-    /**
-     * 调用类型 - async： 异步 - sync：同步
-     */
+
+    /** 调用类型 - async： 异步 - sync：同步 */
     public static final class InvocationTypeEnum {
 
-        
-        /**
-         * Enum ASYNC for value: "async"
-         */
+        /** Enum ASYNC for value: "async" */
         public static final InvocationTypeEnum ASYNC = new InvocationTypeEnum("async");
-        
-        /**
-         * Enum SYNC for value: "sync"
-         */
+
+        /** Enum SYNC for value: "sync" */
         public static final InvocationTypeEnum SYNC = new InvocationTypeEnum("sync");
-        
 
         private static final Map<String, InvocationTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,7 +59,7 @@ public class FunctionApiBaseInfo  {
 
         @JsonCreator
         public static InvocationTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             InvocationTypeEnum result = STATIC_FIELDS.get(value);
@@ -87,7 +70,7 @@ public class FunctionApiBaseInfo  {
         }
 
         public static InvocationTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             InvocationTypeEnum result = STATIC_FIELDS.get(value);
@@ -111,28 +94,24 @@ public class FunctionApiBaseInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invocation_type")
-    
+    @JsonProperty(value = "invocation_type")
+
     private InvocationTypeEnum invocationType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timeout")
-    
+    @JsonProperty(value = "timeout")
+
     private Integer timeout;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="authorizer_id")
-    
+    @JsonProperty(value = "authorizer_id")
+
     private String authorizerId;
 
     public FunctionApiBaseInfo withFunctionUrn(String functionUrn) {
@@ -140,13 +119,9 @@ public class FunctionApiBaseInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 函数URN
-     * @return functionUrn
-     */
+    /** 函数URN
+     * 
+     * @return functionUrn */
     public String getFunctionUrn() {
         return functionUrn;
     }
@@ -155,20 +130,14 @@ public class FunctionApiBaseInfo  {
         this.functionUrn = functionUrn;
     }
 
-    
-
     public FunctionApiBaseInfo withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述信息。 > 中文字符必须为UTF-8或者unicode编码。
-     * @return remark
-     */
+    /** 描述信息。 > 中文字符必须为UTF-8或者unicode编码。
+     * 
+     * @return remark */
     public String getRemark() {
         return remark;
     }
@@ -177,20 +146,14 @@ public class FunctionApiBaseInfo  {
         this.remark = remark;
     }
 
-    
-
     public FunctionApiBaseInfo withInvocationType(InvocationTypeEnum invocationType) {
         this.invocationType = invocationType;
         return this;
     }
 
-    
-
-
-    /**
-     * 调用类型 - async： 异步 - sync：同步
-     * @return invocationType
-     */
+    /** 调用类型 - async： 异步 - sync：同步
+     * 
+     * @return invocationType */
     public InvocationTypeEnum getInvocationType() {
         return invocationType;
     }
@@ -199,20 +162,14 @@ public class FunctionApiBaseInfo  {
         this.invocationType = invocationType;
     }
 
-    
-
     public FunctionApiBaseInfo withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 版本。
-     * @return version
-     */
+    /** 版本。
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -221,21 +178,14 @@ public class FunctionApiBaseInfo  {
         this.version = version;
     }
 
-    
-
     public FunctionApiBaseInfo withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
     }
 
-    
-
-
-    /**
-     * ROMA Connect APIC请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000  单位：毫秒。
-     * minimum: 1
-     * @return timeout
-     */
+    /** ROMA Connect APIC请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000 单位：毫秒。 minimum: 1
+     * 
+     * @return timeout */
     public Integer getTimeout() {
         return timeout;
     }
@@ -244,20 +194,14 @@ public class FunctionApiBaseInfo  {
         this.timeout = timeout;
     }
 
-    
-
     public FunctionApiBaseInfo withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端自定义认证ID
-     * @return authorizerId
-     */
+    /** 后端自定义认证ID
+     * 
+     * @return authorizerId */
     public String getAuthorizerId() {
         return authorizerId;
     }
@@ -265,8 +209,6 @@ public class FunctionApiBaseInfo  {
     public void setAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -277,17 +219,19 @@ public class FunctionApiBaseInfo  {
             return false;
         }
         FunctionApiBaseInfo functionApiBaseInfo = (FunctionApiBaseInfo) o;
-        return Objects.equals(this.functionUrn, functionApiBaseInfo.functionUrn) &&
-            Objects.equals(this.remark, functionApiBaseInfo.remark) &&
-            Objects.equals(this.invocationType, functionApiBaseInfo.invocationType) &&
-            Objects.equals(this.version, functionApiBaseInfo.version) &&
-            Objects.equals(this.timeout, functionApiBaseInfo.timeout) &&
-            Objects.equals(this.authorizerId, functionApiBaseInfo.authorizerId);
+        return Objects.equals(this.functionUrn, functionApiBaseInfo.functionUrn)
+            && Objects.equals(this.remark, functionApiBaseInfo.remark)
+            && Objects.equals(this.invocationType, functionApiBaseInfo.invocationType)
+            && Objects.equals(this.version, functionApiBaseInfo.version)
+            && Objects.equals(this.timeout, functionApiBaseInfo.timeout)
+            && Objects.equals(this.authorizerId, functionApiBaseInfo.authorizerId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(functionUrn, remark, invocationType, version, timeout, authorizerId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -301,16 +245,13 @@ public class FunctionApiBaseInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

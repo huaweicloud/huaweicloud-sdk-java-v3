@@ -1,28 +1,17 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class UpdateUserResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public UpdateUserResponse withName(String name) {
@@ -30,13 +19,9 @@ public class UpdateUserResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * DDM实例帐号名称。
-     * @return name
-     */
+    /** DDM实例帐号名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -44,8 +29,6 @@ public class UpdateUserResponse extends SdkResponse {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -58,10 +41,12 @@ public class UpdateUserResponse extends SdkResponse {
         UpdateUserResponse updateUserResponse = (UpdateUserResponse) o;
         return Objects.equals(this.name, updateUserResponse.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -70,16 +55,13 @@ public class UpdateUserResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

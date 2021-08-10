@@ -1,32 +1,23 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class AgencyTokenUserDomain  {
-
-
+public class AgencyTokenUserDomain {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public AgencyTokenUserDomain withId(String id) {
@@ -34,13 +25,9 @@ public class AgencyTokenUserDomain  {
         return this;
     }
 
-    
-
-
-    /**
-     * 委托方A的账号ID。
-     * @return id
-     */
+    /** 委托方A的账号ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -49,20 +36,14 @@ public class AgencyTokenUserDomain  {
         this.id = id;
     }
 
-    
-
     public AgencyTokenUserDomain withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 委托方A的账号名称。
-     * @return name
-     */
+    /** 委托方A的账号名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -70,8 +51,6 @@ public class AgencyTokenUserDomain  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +61,15 @@ public class AgencyTokenUserDomain  {
             return false;
         }
         AgencyTokenUserDomain agencyTokenUserDomain = (AgencyTokenUserDomain) o;
-        return Objects.equals(this.id, agencyTokenUserDomain.id) &&
-            Objects.equals(this.name, agencyTokenUserDomain.name);
+        return Objects.equals(this.id, agencyTokenUserDomain.id)
+            && Objects.equals(this.name, agencyTokenUserDomain.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +79,13 @@ public class AgencyTokenUserDomain  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

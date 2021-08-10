@@ -1,61 +1,45 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.SlowLogStatistics;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListSlowlogStatisticsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pageNumber")
-    
+    @JsonProperty(value = "pageNumber")
+
     private Integer pageNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pageRecord")
-    
+    @JsonProperty(value = "pageRecord")
+
     private Integer pageRecord;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="slowLogList")
-    
+    @JsonProperty(value = "slowLogList")
+
     private List<SlowLogStatistics> slowLogList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="totalRecord")
-    
+    @JsonProperty(value = "totalRecord")
+
     private Integer totalRecord;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="startTime")
-    
+    @JsonProperty(value = "startTime")
+
     private Long startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endTime")
-    
+    @JsonProperty(value = "endTime")
+
     private Long endTime;
 
     public ListSlowlogStatisticsResponse withPageNumber(Integer pageNumber) {
@@ -63,13 +47,9 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 当前页码
-     * @return pageNumber
-     */
+    /** 当前页码
+     * 
+     * @return pageNumber */
     public Integer getPageNumber() {
         return pageNumber;
     }
@@ -78,20 +58,14 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
         this.pageNumber = pageNumber;
     }
 
-    
-
     public ListSlowlogStatisticsResponse withPageRecord(Integer pageRecord) {
         this.pageRecord = pageRecord;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页条数
-     * @return pageRecord
-     */
+    /** 每页条数
+     * 
+     * @return pageRecord */
     public Integer getPageRecord() {
         return pageRecord;
     }
@@ -100,16 +74,13 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
         this.pageRecord = pageRecord;
     }
 
-    
-
     public ListSlowlogStatisticsResponse withSlowLogList(List<SlowLogStatistics> slowLogList) {
         this.slowLogList = slowLogList;
         return this;
     }
 
-    
     public ListSlowlogStatisticsResponse addSlowLogListItem(SlowLogStatistics slowLogListItem) {
-        if(this.slowLogList == null) {
+        if (this.slowLogList == null) {
             this.slowLogList = new ArrayList<>();
         }
         this.slowLogList.add(slowLogListItem);
@@ -117,17 +88,16 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
     }
 
     public ListSlowlogStatisticsResponse withSlowLogList(Consumer<List<SlowLogStatistics>> slowLogListSetter) {
-        if(this.slowLogList == null) {
+        if (this.slowLogList == null) {
             this.slowLogList = new ArrayList<>();
         }
         slowLogListSetter.accept(this.slowLogList);
         return this;
     }
 
-    /**
-     * 慢日志列表
-     * @return slowLogList
-     */
+    /** 慢日志列表
+     * 
+     * @return slowLogList */
     public List<SlowLogStatistics> getSlowLogList() {
         return slowLogList;
     }
@@ -136,20 +106,14 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
         this.slowLogList = slowLogList;
     }
 
-    
-
     public ListSlowlogStatisticsResponse withTotalRecord(Integer totalRecord) {
         this.totalRecord = totalRecord;
         return this;
     }
 
-    
-
-
-    /**
-     * 总条数
-     * @return totalRecord
-     */
+    /** 总条数
+     * 
+     * @return totalRecord */
     public Integer getTotalRecord() {
         return totalRecord;
     }
@@ -158,20 +122,14 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
         this.totalRecord = totalRecord;
     }
 
-    
-
     public ListSlowlogStatisticsResponse withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 开始时间
-     * @return startTime
-     */
+    /** 开始时间
+     * 
+     * @return startTime */
     public Long getStartTime() {
         return startTime;
     }
@@ -180,20 +138,14 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
         this.startTime = startTime;
     }
 
-    
-
     public ListSlowlogStatisticsResponse withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 结束时间
-     * @return endTime
-     */
+    /** 结束时间
+     * 
+     * @return endTime */
     public Long getEndTime() {
         return endTime;
     }
@@ -201,8 +153,6 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
     public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -213,17 +163,19 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
             return false;
         }
         ListSlowlogStatisticsResponse listSlowlogStatisticsResponse = (ListSlowlogStatisticsResponse) o;
-        return Objects.equals(this.pageNumber, listSlowlogStatisticsResponse.pageNumber) &&
-            Objects.equals(this.pageRecord, listSlowlogStatisticsResponse.pageRecord) &&
-            Objects.equals(this.slowLogList, listSlowlogStatisticsResponse.slowLogList) &&
-            Objects.equals(this.totalRecord, listSlowlogStatisticsResponse.totalRecord) &&
-            Objects.equals(this.startTime, listSlowlogStatisticsResponse.startTime) &&
-            Objects.equals(this.endTime, listSlowlogStatisticsResponse.endTime);
+        return Objects.equals(this.pageNumber, listSlowlogStatisticsResponse.pageNumber)
+            && Objects.equals(this.pageRecord, listSlowlogStatisticsResponse.pageRecord)
+            && Objects.equals(this.slowLogList, listSlowlogStatisticsResponse.slowLogList)
+            && Objects.equals(this.totalRecord, listSlowlogStatisticsResponse.totalRecord)
+            && Objects.equals(this.startTime, listSlowlogStatisticsResponse.startTime)
+            && Objects.equals(this.endTime, listSlowlogStatisticsResponse.endTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(pageNumber, pageRecord, slowLogList, totalRecord, startTime, endTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -237,16 +189,13 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

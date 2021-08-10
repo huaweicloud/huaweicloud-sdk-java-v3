@@ -1,122 +1,96 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 即将召开研讨会议信息
- */
-public class OpenWebinarUpcomingInfo  {
-
-
+/** 即将召开研讨会议信息 */
+public class OpenWebinarUpcomingInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="conferenceId")
-    
+    @JsonProperty(value = "conferenceId")
+
     private String conferenceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="corpId")
-    
+    @JsonProperty(value = "corpId")
+
     private String corpId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subject")
-    
+    @JsonProperty(value = "subject")
+
     private String subject;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="startTime")
-    
+    @JsonProperty(value = "startTime")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="duration")
-    
+    @JsonProperty(value = "duration")
+
     private Integer duration;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timeZoneId")
-    
+    @JsonProperty(value = "timeZoneId")
+
     private Integer timeZoneId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scheduserId")
-    
+    @JsonProperty(value = "scheduserId")
+
     private String scheduserId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deptName")
-    
+    @JsonProperty(value = "deptName")
+
     private String deptName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scheduserName")
-    
+    @JsonProperty(value = "scheduserName")
+
     private String scheduserName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrPkgName")
-    
+    @JsonProperty(value = "vmrPkgName")
+
     private String vmrPkgName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="chairJoinUri")
-    
+    @JsonProperty(value = "chairJoinUri")
+
     private String chairJoinUri;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="chairPasswd")
-    
+    @JsonProperty(value = "chairPasswd")
+
     private String chairPasswd;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="guestJoinUri")
-    
+    @JsonProperty(value = "guestJoinUri")
+
     private String guestJoinUri;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="guestPasswd")
-    
+    @JsonProperty(value = "guestPasswd")
+
     private String guestPasswd;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audienceJoinUri")
-    
+    @JsonProperty(value = "audienceJoinUri")
+
     private String audienceJoinUri;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audiencePasswd")
-    
+    @JsonProperty(value = "audiencePasswd")
+
     private String audiencePasswd;
 
     public OpenWebinarUpcomingInfo withConferenceId(String conferenceId) {
@@ -124,13 +98,9 @@ public class OpenWebinarUpcomingInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 会议ID。长度限制为32个字符。
-     * @return conferenceId
-     */
+    /** 会议ID。长度限制为32个字符。
+     * 
+     * @return conferenceId */
     public String getConferenceId() {
         return conferenceId;
     }
@@ -139,20 +109,14 @@ public class OpenWebinarUpcomingInfo  {
         this.conferenceId = conferenceId;
     }
 
-    
-
     public OpenWebinarUpcomingInfo withCorpId(String corpId) {
         this.corpId = corpId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业id
-     * @return corpId
-     */
+    /** 企业id
+     * 
+     * @return corpId */
     public String getCorpId() {
         return corpId;
     }
@@ -161,20 +125,14 @@ public class OpenWebinarUpcomingInfo  {
         this.corpId = corpId;
     }
 
-    
-
     public OpenWebinarUpcomingInfo withSubject(String subject) {
         this.subject = subject;
         return this;
     }
 
-    
-
-
-    /**
-     * 主题
-     * @return subject
-     */
+    /** 主题
+     * 
+     * @return subject */
     public String getSubject() {
         return subject;
     }
@@ -183,20 +141,14 @@ public class OpenWebinarUpcomingInfo  {
         this.subject = subject;
     }
 
-    
-
     public OpenWebinarUpcomingInfo withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述
-     * @return description
-     */
+    /** 描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -205,20 +157,14 @@ public class OpenWebinarUpcomingInfo  {
         this.description = description;
     }
 
-    
-
     public OpenWebinarUpcomingInfo withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 开始时间
-     * @return startTime
-     */
+    /** 开始时间
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -227,20 +173,14 @@ public class OpenWebinarUpcomingInfo  {
         this.startTime = startTime;
     }
 
-    
-
     public OpenWebinarUpcomingInfo withDuration(Integer duration) {
         this.duration = duration;
         return this;
     }
 
-    
-
-
-    /**
-     * 时长，单位分钟
-     * @return duration
-     */
+    /** 时长，单位分钟
+     * 
+     * @return duration */
     public Integer getDuration() {
         return duration;
     }
@@ -249,20 +189,14 @@ public class OpenWebinarUpcomingInfo  {
         this.duration = duration;
     }
 
-    
-
     public OpenWebinarUpcomingInfo withTimeZoneId(Integer timeZoneId) {
         this.timeZoneId = timeZoneId;
         return this;
     }
 
-    
-
-
-    /**
-     * 时区ID
-     * @return timeZoneId
-     */
+    /** 时区ID
+     * 
+     * @return timeZoneId */
     public Integer getTimeZoneId() {
         return timeZoneId;
     }
@@ -271,20 +205,14 @@ public class OpenWebinarUpcomingInfo  {
         this.timeZoneId = timeZoneId;
     }
 
-    
-
     public OpenWebinarUpcomingInfo withScheduserId(String scheduserId) {
         this.scheduserId = scheduserId;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议预订者ID
-     * @return scheduserId
-     */
+    /** 会议预订者ID
+     * 
+     * @return scheduserId */
     public String getScheduserId() {
         return scheduserId;
     }
@@ -293,20 +221,14 @@ public class OpenWebinarUpcomingInfo  {
         this.scheduserId = scheduserId;
     }
 
-    
-
     public OpenWebinarUpcomingInfo withDeptName(String deptName) {
         this.deptName = deptName;
         return this;
     }
 
-    
-
-
-    /**
-     * 预订人部门
-     * @return deptName
-     */
+    /** 预订人部门
+     * 
+     * @return deptName */
     public String getDeptName() {
         return deptName;
     }
@@ -315,20 +237,14 @@ public class OpenWebinarUpcomingInfo  {
         this.deptName = deptName;
     }
 
-    
-
     public OpenWebinarUpcomingInfo withScheduserName(String scheduserName) {
         this.scheduserName = scheduserName;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议预订者帐号名称。长度最大限制为96个字符。
-     * @return scheduserName
-     */
+    /** 会议预订者帐号名称。长度最大限制为96个字符。
+     * 
+     * @return scheduserName */
     public String getScheduserName() {
         return scheduserName;
     }
@@ -337,20 +253,14 @@ public class OpenWebinarUpcomingInfo  {
         this.scheduserName = scheduserName;
     }
 
-    
-
     public OpenWebinarUpcomingInfo withVmrPkgName(String vmrPkgName) {
         this.vmrPkgName = vmrPkgName;
         return this;
     }
 
-    
-
-
-    /**
-     * 网络研讨会资源名
-     * @return vmrPkgName
-     */
+    /** 网络研讨会资源名
+     * 
+     * @return vmrPkgName */
     public String getVmrPkgName() {
         return vmrPkgName;
     }
@@ -359,20 +269,14 @@ public class OpenWebinarUpcomingInfo  {
         this.vmrPkgName = vmrPkgName;
     }
 
-    
-
     public OpenWebinarUpcomingInfo withChairJoinUri(String chairJoinUri) {
         this.chairJoinUri = chairJoinUri;
         return this;
     }
 
-    
-
-
-    /**
-     * 主持人入会地址。
-     * @return chairJoinUri
-     */
+    /** 主持人入会地址。
+     * 
+     * @return chairJoinUri */
     public String getChairJoinUri() {
         return chairJoinUri;
     }
@@ -381,20 +285,14 @@ public class OpenWebinarUpcomingInfo  {
         this.chairJoinUri = chairJoinUri;
     }
 
-    
-
     public OpenWebinarUpcomingInfo withChairPasswd(String chairPasswd) {
         this.chairPasswd = chairPasswd;
         return this;
     }
 
-    
-
-
-    /**
-     * 主持人密码。
-     * @return chairPasswd
-     */
+    /** 主持人密码。
+     * 
+     * @return chairPasswd */
     public String getChairPasswd() {
         return chairPasswd;
     }
@@ -403,20 +301,14 @@ public class OpenWebinarUpcomingInfo  {
         this.chairPasswd = chairPasswd;
     }
 
-    
-
     public OpenWebinarUpcomingInfo withGuestJoinUri(String guestJoinUri) {
         this.guestJoinUri = guestJoinUri;
         return this;
     }
 
-    
-
-
-    /**
-     * 嘉宾入会地址。
-     * @return guestJoinUri
-     */
+    /** 嘉宾入会地址。
+     * 
+     * @return guestJoinUri */
     public String getGuestJoinUri() {
         return guestJoinUri;
     }
@@ -425,20 +317,14 @@ public class OpenWebinarUpcomingInfo  {
         this.guestJoinUri = guestJoinUri;
     }
 
-    
-
     public OpenWebinarUpcomingInfo withGuestPasswd(String guestPasswd) {
         this.guestPasswd = guestPasswd;
         return this;
     }
 
-    
-
-
-    /**
-     * 嘉宾密码。
-     * @return guestPasswd
-     */
+    /** 嘉宾密码。
+     * 
+     * @return guestPasswd */
     public String getGuestPasswd() {
         return guestPasswd;
     }
@@ -447,20 +333,14 @@ public class OpenWebinarUpcomingInfo  {
         this.guestPasswd = guestPasswd;
     }
 
-    
-
     public OpenWebinarUpcomingInfo withAudienceJoinUri(String audienceJoinUri) {
         this.audienceJoinUri = audienceJoinUri;
         return this;
     }
 
-    
-
-
-    /**
-     * 观众入会地址。
-     * @return audienceJoinUri
-     */
+    /** 观众入会地址。
+     * 
+     * @return audienceJoinUri */
     public String getAudienceJoinUri() {
         return audienceJoinUri;
     }
@@ -469,20 +349,14 @@ public class OpenWebinarUpcomingInfo  {
         this.audienceJoinUri = audienceJoinUri;
     }
 
-    
-
     public OpenWebinarUpcomingInfo withAudiencePasswd(String audiencePasswd) {
         this.audiencePasswd = audiencePasswd;
         return this;
     }
 
-    
-
-
-    /**
-     * 观众密码。
-     * @return audiencePasswd
-     */
+    /** 观众密码。
+     * 
+     * @return audiencePasswd */
     public String getAudiencePasswd() {
         return audiencePasswd;
     }
@@ -490,8 +364,6 @@ public class OpenWebinarUpcomingInfo  {
     public void setAudiencePasswd(String audiencePasswd) {
         this.audiencePasswd = audiencePasswd;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -502,28 +374,46 @@ public class OpenWebinarUpcomingInfo  {
             return false;
         }
         OpenWebinarUpcomingInfo openWebinarUpcomingInfo = (OpenWebinarUpcomingInfo) o;
-        return Objects.equals(this.conferenceId, openWebinarUpcomingInfo.conferenceId) &&
-            Objects.equals(this.corpId, openWebinarUpcomingInfo.corpId) &&
-            Objects.equals(this.subject, openWebinarUpcomingInfo.subject) &&
-            Objects.equals(this.description, openWebinarUpcomingInfo.description) &&
-            Objects.equals(this.startTime, openWebinarUpcomingInfo.startTime) &&
-            Objects.equals(this.duration, openWebinarUpcomingInfo.duration) &&
-            Objects.equals(this.timeZoneId, openWebinarUpcomingInfo.timeZoneId) &&
-            Objects.equals(this.scheduserId, openWebinarUpcomingInfo.scheduserId) &&
-            Objects.equals(this.deptName, openWebinarUpcomingInfo.deptName) &&
-            Objects.equals(this.scheduserName, openWebinarUpcomingInfo.scheduserName) &&
-            Objects.equals(this.vmrPkgName, openWebinarUpcomingInfo.vmrPkgName) &&
-            Objects.equals(this.chairJoinUri, openWebinarUpcomingInfo.chairJoinUri) &&
-            Objects.equals(this.chairPasswd, openWebinarUpcomingInfo.chairPasswd) &&
-            Objects.equals(this.guestJoinUri, openWebinarUpcomingInfo.guestJoinUri) &&
-            Objects.equals(this.guestPasswd, openWebinarUpcomingInfo.guestPasswd) &&
-            Objects.equals(this.audienceJoinUri, openWebinarUpcomingInfo.audienceJoinUri) &&
-            Objects.equals(this.audiencePasswd, openWebinarUpcomingInfo.audiencePasswd);
+        return Objects.equals(this.conferenceId, openWebinarUpcomingInfo.conferenceId)
+            && Objects.equals(this.corpId, openWebinarUpcomingInfo.corpId)
+            && Objects.equals(this.subject, openWebinarUpcomingInfo.subject)
+            && Objects.equals(this.description, openWebinarUpcomingInfo.description)
+            && Objects.equals(this.startTime, openWebinarUpcomingInfo.startTime)
+            && Objects.equals(this.duration, openWebinarUpcomingInfo.duration)
+            && Objects.equals(this.timeZoneId, openWebinarUpcomingInfo.timeZoneId)
+            && Objects.equals(this.scheduserId, openWebinarUpcomingInfo.scheduserId)
+            && Objects.equals(this.deptName, openWebinarUpcomingInfo.deptName)
+            && Objects.equals(this.scheduserName, openWebinarUpcomingInfo.scheduserName)
+            && Objects.equals(this.vmrPkgName, openWebinarUpcomingInfo.vmrPkgName)
+            && Objects.equals(this.chairJoinUri, openWebinarUpcomingInfo.chairJoinUri)
+            && Objects.equals(this.chairPasswd, openWebinarUpcomingInfo.chairPasswd)
+            && Objects.equals(this.guestJoinUri, openWebinarUpcomingInfo.guestJoinUri)
+            && Objects.equals(this.guestPasswd, openWebinarUpcomingInfo.guestPasswd)
+            && Objects.equals(this.audienceJoinUri, openWebinarUpcomingInfo.audienceJoinUri)
+            && Objects.equals(this.audiencePasswd, openWebinarUpcomingInfo.audiencePasswd);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(conferenceId, corpId, subject, description, startTime, duration, timeZoneId, scheduserId, deptName, scheduserName, vmrPkgName, chairJoinUri, chairPasswd, guestJoinUri, guestPasswd, audienceJoinUri, audiencePasswd);
+        return Objects.hash(conferenceId,
+            corpId,
+            subject,
+            description,
+            startTime,
+            duration,
+            timeZoneId,
+            scheduserId,
+            deptName,
+            scheduserName,
+            vmrPkgName,
+            chairJoinUri,
+            chairPasswd,
+            guestJoinUri,
+            guestPasswd,
+            audienceJoinUri,
+            audiencePasswd);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -548,16 +438,13 @@ public class OpenWebinarUpcomingInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

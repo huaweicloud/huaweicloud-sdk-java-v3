@@ -1,67 +1,49 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dgc.v1.model.DependJob;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Cron
- */
-public class Cron  {
-
-
+/** Cron */
+public class Cron {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="startTime")
-    
+    @JsonProperty(value = "startTime")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endTime")
-    
+    @JsonProperty(value = "endTime")
+
     private String endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expression")
-    
+    @JsonProperty(value = "expression")
+
     private String expression;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dependPrePeriod")
-    
+    @JsonProperty(value = "dependPrePeriod")
+
     private Boolean dependPrePeriod;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dependJobs")
-    
+    @JsonProperty(value = "dependJobs")
+
     private List<DependJob> dependJobs = null;
-    
+
     public Cron withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * Get startTime
-     * @return startTime
-     */
+    /** Get startTime
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -70,20 +52,14 @@ public class Cron  {
         this.startTime = startTime;
     }
 
-    
-
     public Cron withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * Get endTime
-     * @return endTime
-     */
+    /** Get endTime
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -92,20 +68,14 @@ public class Cron  {
         this.endTime = endTime;
     }
 
-    
-
     public Cron withExpression(String expression) {
         this.expression = expression;
         return this;
     }
 
-    
-
-
-    /**
-     * Cron表达式
-     * @return expression
-     */
+    /** Cron表达式
+     * 
+     * @return expression */
     public String getExpression() {
         return expression;
     }
@@ -114,20 +84,14 @@ public class Cron  {
         this.expression = expression;
     }
 
-    
-
     public Cron withDependPrePeriod(Boolean dependPrePeriod) {
         this.dependPrePeriod = dependPrePeriod;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否依赖本作业上一个运行周期任务的执行结果
-     * @return dependPrePeriod
-     */
+    /** 是否依赖本作业上一个运行周期任务的执行结果
+     * 
+     * @return dependPrePeriod */
     public Boolean getDependPrePeriod() {
         return dependPrePeriod;
     }
@@ -136,16 +100,13 @@ public class Cron  {
         this.dependPrePeriod = dependPrePeriod;
     }
 
-    
-
     public Cron withDependJobs(List<DependJob> dependJobs) {
         this.dependJobs = dependJobs;
         return this;
     }
 
-    
     public Cron addDependJobsItem(DependJob dependJobsItem) {
-        if(this.dependJobs == null) {
+        if (this.dependJobs == null) {
             this.dependJobs = new ArrayList<>();
         }
         this.dependJobs.add(dependJobsItem);
@@ -153,17 +114,16 @@ public class Cron  {
     }
 
     public Cron withDependJobs(Consumer<List<DependJob>> dependJobsSetter) {
-        if(this.dependJobs == null) {
+        if (this.dependJobs == null) {
             this.dependJobs = new ArrayList<>();
         }
         dependJobsSetter.accept(this.dependJobs);
         return this;
     }
 
-    /**
-     * 依赖其它作业列表
-     * @return dependJobs
-     */
+    /** 依赖其它作业列表
+     * 
+     * @return dependJobs */
     public List<DependJob> getDependJobs() {
         return dependJobs;
     }
@@ -171,8 +131,6 @@ public class Cron  {
     public void setDependJobs(List<DependJob> dependJobs) {
         this.dependJobs = dependJobs;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -183,16 +141,17 @@ public class Cron  {
             return false;
         }
         Cron cron = (Cron) o;
-        return Objects.equals(this.startTime, cron.startTime) &&
-            Objects.equals(this.endTime, cron.endTime) &&
-            Objects.equals(this.expression, cron.expression) &&
-            Objects.equals(this.dependPrePeriod, cron.dependPrePeriod) &&
-            Objects.equals(this.dependJobs, cron.dependJobs);
+        return Objects.equals(this.startTime, cron.startTime) && Objects.equals(this.endTime, cron.endTime)
+            && Objects.equals(this.expression, cron.expression)
+            && Objects.equals(this.dependPrePeriod, cron.dependPrePeriod)
+            && Objects.equals(this.dependJobs, cron.dependJobs);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(startTime, endTime, expression, dependPrePeriod, dependJobs);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -205,16 +164,13 @@ public class Cron  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,70 +1,49 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 参数模板信息。
- */
-public class ConfigurationSummaryForCreate  {
-
-
+/** 参数模板信息。 */
+public class ConfigurationSummaryForCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore_version_name")
-    
+    @JsonProperty(value = "datastore_version_name")
+
     private String datastoreVersionName;
-    /**
-     * 引擎名。
-     */
+
+    /** 引擎名。 */
     public static final class DatastoreNameEnum {
 
-        
-        /**
-         * Enum MYSQL for value: "mysql"
-         */
+        /** Enum MYSQL for value: "mysql" */
         public static final DatastoreNameEnum MYSQL = new DatastoreNameEnum("mysql");
-        
-        /**
-         * Enum POSTGRESQL for value: "postgresql"
-         */
+
+        /** Enum POSTGRESQL for value: "postgresql" */
         public static final DatastoreNameEnum POSTGRESQL = new DatastoreNameEnum("postgresql");
-        
-        /**
-         * Enum SQLSERVER for value: "sqlserver"
-         */
+
+        /** Enum SQLSERVER for value: "sqlserver" */
         public static final DatastoreNameEnum SQLSERVER = new DatastoreNameEnum("sqlserver");
-        
 
         private static final Map<String, DatastoreNameEnum> STATIC_FIELDS = createStaticFields();
 
@@ -94,7 +73,7 @@ public class ConfigurationSummaryForCreate  {
 
         @JsonCreator
         public static DatastoreNameEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DatastoreNameEnum result = STATIC_FIELDS.get(value);
@@ -105,7 +84,7 @@ public class ConfigurationSummaryForCreate  {
         }
 
         public static DatastoreNameEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DatastoreNameEnum result = STATIC_FIELDS.get(value);
@@ -129,22 +108,19 @@ public class ConfigurationSummaryForCreate  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore_name")
-    
+    @JsonProperty(value = "datastore_name")
+
     private DatastoreNameEnum datastoreName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
+    @JsonProperty(value = "created")
+
     private String created;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
+
     private String updated;
 
     public ConfigurationSummaryForCreate withId(String id) {
@@ -152,13 +128,9 @@ public class ConfigurationSummaryForCreate  {
         return this;
     }
 
-    
-
-
-    /**
-     * 参数组ID。
-     * @return id
-     */
+    /** 参数组ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -167,20 +139,14 @@ public class ConfigurationSummaryForCreate  {
         this.id = id;
     }
 
-    
-
     public ConfigurationSummaryForCreate withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数组名称。
-     * @return name
-     */
+    /** 参数组名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -189,20 +155,14 @@ public class ConfigurationSummaryForCreate  {
         this.name = name;
     }
 
-    
-
     public ConfigurationSummaryForCreate withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数组描述。
-     * @return description
-     */
+    /** 参数组描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -211,20 +171,14 @@ public class ConfigurationSummaryForCreate  {
         this.description = description;
     }
 
-    
-
     public ConfigurationSummaryForCreate withDatastoreVersionName(String datastoreVersionName) {
         this.datastoreVersionName = datastoreVersionName;
         return this;
     }
 
-    
-
-
-    /**
-     * 引擎版本。
-     * @return datastoreVersionName
-     */
+    /** 引擎版本。
+     * 
+     * @return datastoreVersionName */
     public String getDatastoreVersionName() {
         return datastoreVersionName;
     }
@@ -233,20 +187,14 @@ public class ConfigurationSummaryForCreate  {
         this.datastoreVersionName = datastoreVersionName;
     }
 
-    
-
     public ConfigurationSummaryForCreate withDatastoreName(DatastoreNameEnum datastoreName) {
         this.datastoreName = datastoreName;
         return this;
     }
 
-    
-
-
-    /**
-     * 引擎名。
-     * @return datastoreName
-     */
+    /** 引擎名。
+     * 
+     * @return datastoreName */
     public DatastoreNameEnum getDatastoreName() {
         return datastoreName;
     }
@@ -255,20 +203,14 @@ public class ConfigurationSummaryForCreate  {
         this.datastoreName = datastoreName;
     }
 
-    
-
     public ConfigurationSummaryForCreate withCreated(String created) {
         this.created = created;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * @return created
-     */
+    /** 创建时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * 
+     * @return created */
     public String getCreated() {
         return created;
     }
@@ -277,20 +219,14 @@ public class ConfigurationSummaryForCreate  {
         this.created = created;
     }
 
-    
-
     public ConfigurationSummaryForCreate withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * @return updated
-     */
+    /** 更新时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * 
+     * @return updated */
     public String getUpdated() {
         return updated;
     }
@@ -298,8 +234,6 @@ public class ConfigurationSummaryForCreate  {
     public void setUpdated(String updated) {
         this.updated = updated;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -310,18 +244,20 @@ public class ConfigurationSummaryForCreate  {
             return false;
         }
         ConfigurationSummaryForCreate configurationSummaryForCreate = (ConfigurationSummaryForCreate) o;
-        return Objects.equals(this.id, configurationSummaryForCreate.id) &&
-            Objects.equals(this.name, configurationSummaryForCreate.name) &&
-            Objects.equals(this.description, configurationSummaryForCreate.description) &&
-            Objects.equals(this.datastoreVersionName, configurationSummaryForCreate.datastoreVersionName) &&
-            Objects.equals(this.datastoreName, configurationSummaryForCreate.datastoreName) &&
-            Objects.equals(this.created, configurationSummaryForCreate.created) &&
-            Objects.equals(this.updated, configurationSummaryForCreate.updated);
+        return Objects.equals(this.id, configurationSummaryForCreate.id)
+            && Objects.equals(this.name, configurationSummaryForCreate.name)
+            && Objects.equals(this.description, configurationSummaryForCreate.description)
+            && Objects.equals(this.datastoreVersionName, configurationSummaryForCreate.datastoreVersionName)
+            && Objects.equals(this.datastoreName, configurationSummaryForCreate.datastoreName)
+            && Objects.equals(this.created, configurationSummaryForCreate.created)
+            && Objects.equals(this.updated, configurationSummaryForCreate.updated);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, description, datastoreVersionName, datastoreName, created, updated);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -336,16 +272,13 @@ public class ConfigurationSummaryForCreate  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

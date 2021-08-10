@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 导入函数请求结构体
- */
-public class ImportFunctionRequestBody  {
-
-
+/** 导入函数请求结构体 */
+public class ImportFunctionRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="func_name")
-    
+    @JsonProperty(value = "func_name")
+
     private String funcName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_name")
-    
+    @JsonProperty(value = "file_name")
+
     private String fileName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_type")
-    
+    @JsonProperty(value = "file_type")
+
     private String fileType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_code")
-    
+    @JsonProperty(value = "file_code")
+
     private String fileCode;
 
     public ImportFunctionRequestBody withFuncName(String funcName) {
@@ -46,13 +33,9 @@ public class ImportFunctionRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 函数名
-     * @return funcName
-     */
+    /** 函数名
+     * 
+     * @return funcName */
     public String getFuncName() {
         return funcName;
     }
@@ -61,20 +44,14 @@ public class ImportFunctionRequestBody  {
         this.funcName = funcName;
     }
 
-    
-
     public ImportFunctionRequestBody withFileName(String fileName) {
         this.fileName = fileName;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件名
-     * @return fileName
-     */
+    /** 文件名
+     * 
+     * @return fileName */
     public String getFileName() {
         return fileName;
     }
@@ -83,20 +60,14 @@ public class ImportFunctionRequestBody  {
         this.fileName = fileName;
     }
 
-    
-
     public ImportFunctionRequestBody withFileType(String fileType) {
         this.fileType = fileType;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件类型
-     * @return fileType
-     */
+    /** 文件类型
+     * 
+     * @return fileType */
     public String getFileType() {
         return fileType;
     }
@@ -105,20 +76,14 @@ public class ImportFunctionRequestBody  {
         this.fileType = fileType;
     }
 
-    
-
     public ImportFunctionRequestBody withFileCode(String fileCode) {
         this.fileCode = fileCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数代码。代码必须要进行base64编码
-     * @return fileCode
-     */
+    /** 函数代码。代码必须要进行base64编码
+     * 
+     * @return fileCode */
     public String getFileCode() {
         return fileCode;
     }
@@ -126,8 +91,6 @@ public class ImportFunctionRequestBody  {
     public void setFileCode(String fileCode) {
         this.fileCode = fileCode;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class ImportFunctionRequestBody  {
             return false;
         }
         ImportFunctionRequestBody importFunctionRequestBody = (ImportFunctionRequestBody) o;
-        return Objects.equals(this.funcName, importFunctionRequestBody.funcName) &&
-            Objects.equals(this.fileName, importFunctionRequestBody.fileName) &&
-            Objects.equals(this.fileType, importFunctionRequestBody.fileType) &&
-            Objects.equals(this.fileCode, importFunctionRequestBody.fileCode);
+        return Objects.equals(this.funcName, importFunctionRequestBody.funcName)
+            && Objects.equals(this.fileName, importFunctionRequestBody.fileName)
+            && Objects.equals(this.fileType, importFunctionRequestBody.fileType)
+            && Objects.equals(this.fileCode, importFunctionRequestBody.fileCode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(funcName, fileName, fileType, fileCode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class ImportFunctionRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

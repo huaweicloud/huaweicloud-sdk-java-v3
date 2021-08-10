@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * EnvVariableReq
- */
-public class EnvVariableReq  {
-
-
+/** EnvVariableReq */
+public class EnvVariableReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="variable_value")
-    
+    @JsonProperty(value = "variable_value")
+
     private String variableValue;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_id")
-    
+    @JsonProperty(value = "env_id")
+
     private String envId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="variable_name")
-    
+    @JsonProperty(value = "variable_name")
+
     private String variableName;
 
     public EnvVariableReq withVariableValue(String variableValue) {
@@ -46,13 +33,9 @@ public class EnvVariableReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 变量值支持英文字母、数字、英文格式的下划线、中划线，斜线（/）、点、冒号，1 ~ 255个字符。
-     * @return variableValue
-     */
+    /** 变量值支持英文字母、数字、英文格式的下划线、中划线，斜线（/）、点、冒号，1 ~ 255个字符。
+     * 
+     * @return variableValue */
     public String getVariableValue() {
         return variableValue;
     }
@@ -61,20 +44,14 @@ public class EnvVariableReq  {
         this.variableValue = variableValue;
     }
 
-    
-
     public EnvVariableReq withEnvId(String envId) {
         this.envId = envId;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境编号
-     * @return envId
-     */
+    /** 环境编号
+     * 
+     * @return envId */
     public String getEnvId() {
         return envId;
     }
@@ -83,20 +60,14 @@ public class EnvVariableReq  {
         this.envId = envId;
     }
 
-    
-
     public EnvVariableReq withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * API分组编号
-     * @return groupId
-     */
+    /** API分组编号
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -105,20 +76,15 @@ public class EnvVariableReq  {
         this.groupId = groupId;
     }
 
-    
-
     public EnvVariableReq withVariableName(String variableName) {
         this.variableName = variableName;
         return this;
     }
 
-    
-
-
-    /**
-     * 变量名，支持英文字母、数字、英文格式的下划线、中划线，必须以英文字母开头, 3 ~ 32个字符。在API定义中等于#Name的值#部分（区分大小写），发布到环境里的API被变量值换。 > 中文字符必须为UTF-8或者unicode编码。
-     * @return variableName
-     */
+    /** 变量名，支持英文字母、数字、英文格式的下划线、中划线，必须以英文字母开头, 3 ~ 32个字符。在API定义中等于#Name的值#部分（区分大小写），发布到环境里的API被变量值换。 >
+     * 中文字符必须为UTF-8或者unicode编码。
+     * 
+     * @return variableName */
     public String getVariableName() {
         return variableName;
     }
@@ -126,8 +92,6 @@ public class EnvVariableReq  {
     public void setVariableName(String variableName) {
         this.variableName = variableName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +102,16 @@ public class EnvVariableReq  {
             return false;
         }
         EnvVariableReq envVariableReq = (EnvVariableReq) o;
-        return Objects.equals(this.variableValue, envVariableReq.variableValue) &&
-            Objects.equals(this.envId, envVariableReq.envId) &&
-            Objects.equals(this.groupId, envVariableReq.groupId) &&
-            Objects.equals(this.variableName, envVariableReq.variableName);
+        return Objects.equals(this.variableValue, envVariableReq.variableValue)
+            && Objects.equals(this.envId, envVariableReq.envId) && Objects.equals(this.groupId, envVariableReq.groupId)
+            && Objects.equals(this.variableName, envVariableReq.variableName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(variableValue, envId, groupId, variableName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class EnvVariableReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

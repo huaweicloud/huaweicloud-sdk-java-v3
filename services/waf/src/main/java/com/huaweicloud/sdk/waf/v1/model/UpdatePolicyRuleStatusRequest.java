@@ -1,58 +1,38 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.waf.v1.model.UpdateRuleStatusRequestBody;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdatePolicyRuleStatusRequest  {
-
-
+/** Request Object */
+public class UpdatePolicyRuleStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_id")
-    
+    @JsonProperty(value = "policy_id")
+
     private String policyId;
-    /**
-     * 策略类型
-     */
+
+    /** 策略类型 */
     public static final class RuletypeEnum {
 
-        
-        /**
-         * Enum WHITEBLACKIP for value: "whiteblackip"
-         */
+        /** Enum WHITEBLACKIP for value: "whiteblackip" */
         public static final RuletypeEnum WHITEBLACKIP = new RuletypeEnum("whiteblackip");
-        
-        /**
-         * Enum GEOIP for value: "geoip"
-         */
+
+        /** Enum GEOIP for value: "geoip" */
         public static final RuletypeEnum GEOIP = new RuletypeEnum("geoip");
-        
-        /**
-         * Enum PRIVACY for value: "privacy"
-         */
+
+        /** Enum PRIVACY for value: "privacy" */
         public static final RuletypeEnum PRIVACY = new RuletypeEnum("privacy");
-        
-        /**
-         * Enum ANTITAMPER for value: "antitamper"
-         */
+
+        /** Enum ANTITAMPER for value: "antitamper" */
         public static final RuletypeEnum ANTITAMPER = new RuletypeEnum("antitamper");
-        
 
         private static final Map<String, RuletypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -83,7 +63,7 @@ public class UpdatePolicyRuleStatusRequest  {
 
         @JsonCreator
         public static RuletypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             RuletypeEnum result = STATIC_FIELDS.get(value);
@@ -94,7 +74,7 @@ public class UpdatePolicyRuleStatusRequest  {
         }
 
         public static RuletypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             RuletypeEnum result = STATIC_FIELDS.get(value);
@@ -118,22 +98,19 @@ public class UpdatePolicyRuleStatusRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ruletype")
-    
+    @JsonProperty(value = "ruletype")
+
     private RuletypeEnum ruletype;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rule_id")
-    
+    @JsonProperty(value = "rule_id")
+
     private String ruleId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateRuleStatusRequestBody body;
 
     public UpdatePolicyRuleStatusRequest withPolicyId(String policyId) {
@@ -141,13 +118,9 @@ public class UpdatePolicyRuleStatusRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 策略id（策略id从查询防护策略列表接口获取）
-     * @return policyId
-     */
+    /** 策略id（策略id从查询防护策略列表接口获取）
+     * 
+     * @return policyId */
     public String getPolicyId() {
         return policyId;
     }
@@ -156,20 +129,14 @@ public class UpdatePolicyRuleStatusRequest  {
         this.policyId = policyId;
     }
 
-    
-
     public UpdatePolicyRuleStatusRequest withRuletype(RuletypeEnum ruletype) {
         this.ruletype = ruletype;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略类型
-     * @return ruletype
-     */
+    /** 策略类型
+     * 
+     * @return ruletype */
     public RuletypeEnum getRuletype() {
         return ruletype;
     }
@@ -178,20 +145,14 @@ public class UpdatePolicyRuleStatusRequest  {
         this.ruletype = ruletype;
     }
 
-    
-
     public UpdatePolicyRuleStatusRequest withRuleId(String ruleId) {
         this.ruleId = ruleId;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则id（根据不同的ruletype调用规则列表接口获取规则id）
-     * @return ruleId
-     */
+    /** 规则id（根据不同的ruletype调用规则列表接口获取规则id）
+     * 
+     * @return ruleId */
     public String getRuleId() {
         return ruleId;
     }
@@ -200,27 +161,23 @@ public class UpdatePolicyRuleStatusRequest  {
         this.ruleId = ruleId;
     }
 
-    
-
     public UpdatePolicyRuleStatusRequest withBody(UpdateRuleStatusRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdatePolicyRuleStatusRequest withBody(Consumer<UpdateRuleStatusRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateRuleStatusRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateRuleStatusRequestBody getBody() {
         return body;
     }
@@ -228,8 +185,6 @@ public class UpdatePolicyRuleStatusRequest  {
     public void setBody(UpdateRuleStatusRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -240,15 +195,17 @@ public class UpdatePolicyRuleStatusRequest  {
             return false;
         }
         UpdatePolicyRuleStatusRequest updatePolicyRuleStatusRequest = (UpdatePolicyRuleStatusRequest) o;
-        return Objects.equals(this.policyId, updatePolicyRuleStatusRequest.policyId) &&
-            Objects.equals(this.ruletype, updatePolicyRuleStatusRequest.ruletype) &&
-            Objects.equals(this.ruleId, updatePolicyRuleStatusRequest.ruleId) &&
-            Objects.equals(this.body, updatePolicyRuleStatusRequest.body);
+        return Objects.equals(this.policyId, updatePolicyRuleStatusRequest.policyId)
+            && Objects.equals(this.ruletype, updatePolicyRuleStatusRequest.ruletype)
+            && Objects.equals(this.ruleId, updatePolicyRuleStatusRequest.ruleId)
+            && Objects.equals(this.body, updatePolicyRuleStatusRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(policyId, ruletype, ruleId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -260,16 +217,13 @@ public class UpdatePolicyRuleStatusRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

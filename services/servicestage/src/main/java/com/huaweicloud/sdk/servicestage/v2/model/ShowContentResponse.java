@@ -1,55 +1,37 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
-
-
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowContentResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path")
-    
+    @JsonProperty(value = "path")
+
     private String path;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sha")
-    
+    @JsonProperty(value = "sha")
+
     private String sha;
-    /**
-     * 编码方式：base64或者text/plain。
-     */
+
+    /** 编码方式：base64或者text/plain。 */
     public static final class EncodingEnum {
 
-        
-        /**
-         * Enum BASE64 for value: "base64"
-         */
+        /** Enum BASE64 for value: "base64" */
         public static final EncodingEnum BASE64 = new EncodingEnum("base64");
-        
-        /**
-         * Enum TEXT_PLAIN for value: "text/plain"
-         */
+
+        /** Enum TEXT_PLAIN for value: "text/plain" */
         public static final EncodingEnum TEXT_PLAIN = new EncodingEnum("text/plain");
-        
 
         private static final Map<String, EncodingEnum> STATIC_FIELDS = createStaticFields();
 
@@ -78,7 +60,7 @@ public class ShowContentResponse extends SdkResponse {
 
         @JsonCreator
         public static EncodingEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             EncodingEnum result = STATIC_FIELDS.get(value);
@@ -89,7 +71,7 @@ public class ShowContentResponse extends SdkResponse {
         }
 
         public static EncodingEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             EncodingEnum result = STATIC_FIELDS.get(value);
@@ -113,16 +95,14 @@ public class ShowContentResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="encoding")
-    
+    @JsonProperty(value = "encoding")
+
     private EncodingEnum encoding;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content")
-    
+    @JsonProperty(value = "content")
+
     private String content;
 
     public ShowContentResponse withPath(String path) {
@@ -130,13 +110,9 @@ public class ShowContentResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 文件路径。
-     * @return path
-     */
+    /** 文件路径。
+     * 
+     * @return path */
     public String getPath() {
         return path;
     }
@@ -145,20 +121,14 @@ public class ShowContentResponse extends SdkResponse {
         this.path = path;
     }
 
-    
-
     public ShowContentResponse withSha(String sha) {
         this.sha = sha;
         return this;
     }
 
-    
-
-
-    /**
-     * commit 哈希。
-     * @return sha
-     */
+    /** commit 哈希。
+     * 
+     * @return sha */
     public String getSha() {
         return sha;
     }
@@ -167,20 +137,14 @@ public class ShowContentResponse extends SdkResponse {
         this.sha = sha;
     }
 
-    
-
     public ShowContentResponse withEncoding(EncodingEnum encoding) {
         this.encoding = encoding;
         return this;
     }
 
-    
-
-
-    /**
-     * 编码方式：base64或者text/plain。
-     * @return encoding
-     */
+    /** 编码方式：base64或者text/plain。
+     * 
+     * @return encoding */
     public EncodingEnum getEncoding() {
         return encoding;
     }
@@ -189,20 +153,14 @@ public class ShowContentResponse extends SdkResponse {
         this.encoding = encoding;
     }
 
-    
-
     public ShowContentResponse withContent(String content) {
         this.content = content;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件内容。
-     * @return content
-     */
+    /** 文件内容。
+     * 
+     * @return content */
     public String getContent() {
         return content;
     }
@@ -210,8 +168,6 @@ public class ShowContentResponse extends SdkResponse {
     public void setContent(String content) {
         this.content = content;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -222,15 +178,16 @@ public class ShowContentResponse extends SdkResponse {
             return false;
         }
         ShowContentResponse showContentResponse = (ShowContentResponse) o;
-        return Objects.equals(this.path, showContentResponse.path) &&
-            Objects.equals(this.sha, showContentResponse.sha) &&
-            Objects.equals(this.encoding, showContentResponse.encoding) &&
-            Objects.equals(this.content, showContentResponse.content);
+        return Objects.equals(this.path, showContentResponse.path) && Objects.equals(this.sha, showContentResponse.sha)
+            && Objects.equals(this.encoding, showContentResponse.encoding)
+            && Objects.equals(this.content, showContentResponse.content);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(path, sha, encoding, content);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -242,16 +199,13 @@ public class ShowContentResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

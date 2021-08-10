@@ -1,71 +1,52 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.AudioInfo;
-import com.huaweicloud.sdk.mpc.v1.model.VideoInfo;
-import com.huaweicloud.sdk.mpc.v1.model.XCodeError;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * OutputVideoPara
- */
-public class OutputVideoPara  {
-
-
+/** OutputVideoPara */
+public class OutputVideoPara {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_id")
-    
+    @JsonProperty(value = "template_id")
+
     private Integer templateId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Long size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pack")
-    
+    @JsonProperty(value = "pack")
+
     private String pack;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="video")
-    
+    @JsonProperty(value = "video")
+
     private VideoInfo video;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audio")
-    
+    @JsonProperty(value = "audio")
+
     private AudioInfo audio;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_name")
-    
+    @JsonProperty(value = "file_name")
+
     private String fileName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="conver_duration")
-    
+    @JsonProperty(value = "conver_duration")
+
     private Double converDuration;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error")
-    
+    @JsonProperty(value = "error")
+
     private XCodeError error;
 
     public OutputVideoPara withTemplateId(Integer templateId) {
@@ -73,15 +54,9 @@ public class OutputVideoPara  {
         return this;
     }
 
-    
-
-
-    /**
-     * 输出视频对应的模板ID 
-     * minimum: 0
-     * maximum: 2147483647
-     * @return templateId
-     */
+    /** 输出视频对应的模板ID minimum: 0 maximum: 2147483647
+     * 
+     * @return templateId */
     public Integer getTemplateId() {
         return templateId;
     }
@@ -90,22 +65,14 @@ public class OutputVideoPara  {
         this.templateId = templateId;
     }
 
-    
-
     public OutputVideoPara withSize(Long size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 视频大小 
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return size
-     */
+    /** 视频大小 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return size */
     public Long getSize() {
         return size;
     }
@@ -114,20 +81,14 @@ public class OutputVideoPara  {
         this.size = size;
     }
 
-    
-
     public OutputVideoPara withPack(String pack) {
         this.pack = pack;
         return this;
     }
 
-    
-
-
-    /**
-     * 视频封装格式 
-     * @return pack
-     */
+    /** 视频封装格式
+     * 
+     * @return pack */
     public String getPack() {
         return pack;
     }
@@ -136,27 +97,23 @@ public class OutputVideoPara  {
         this.pack = pack;
     }
 
-    
-
     public OutputVideoPara withVideo(VideoInfo video) {
         this.video = video;
         return this;
     }
 
     public OutputVideoPara withVideo(Consumer<VideoInfo> videoSetter) {
-        if(this.video == null ){
+        if (this.video == null) {
             this.video = new VideoInfo();
             videoSetter.accept(this.video);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get video
-     * @return video
-     */
+    /** Get video
+     * 
+     * @return video */
     public VideoInfo getVideo() {
         return video;
     }
@@ -165,27 +122,23 @@ public class OutputVideoPara  {
         this.video = video;
     }
 
-    
-
     public OutputVideoPara withAudio(AudioInfo audio) {
         this.audio = audio;
         return this;
     }
 
     public OutputVideoPara withAudio(Consumer<AudioInfo> audioSetter) {
-        if(this.audio == null ){
+        if (this.audio == null) {
             this.audio = new AudioInfo();
             audioSetter.accept(this.audio);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get audio
-     * @return audio
-     */
+    /** Get audio
+     * 
+     * @return audio */
     public AudioInfo getAudio() {
         return audio;
     }
@@ -194,20 +147,14 @@ public class OutputVideoPara  {
         this.audio = audio;
     }
 
-    
-
     public OutputVideoPara withFileName(String fileName) {
         this.fileName = fileName;
         return this;
     }
 
-    
-
-
-    /**
-     * 输出片源文件名 
-     * @return fileName
-     */
+    /** 输出片源文件名
+     * 
+     * @return fileName */
     public String getFileName() {
         return fileName;
     }
@@ -216,22 +163,14 @@ public class OutputVideoPara  {
         this.fileName = fileName;
     }
 
-    
-
     public OutputVideoPara withConverDuration(Double converDuration) {
         this.converDuration = converDuration;
         return this;
     }
 
-    
-
-
-    /**
-     * 折算后视频时长 
-     * minimum: 0
-     * maximum: 2147483647
-     * @return converDuration
-     */
+    /** 折算后视频时长 minimum: 0 maximum: 2147483647
+     * 
+     * @return converDuration */
     public Double getConverDuration() {
         return converDuration;
     }
@@ -240,27 +179,23 @@ public class OutputVideoPara  {
         this.converDuration = converDuration;
     }
 
-    
-
     public OutputVideoPara withError(XCodeError error) {
         this.error = error;
         return this;
     }
 
     public OutputVideoPara withError(Consumer<XCodeError> errorSetter) {
-        if(this.error == null ){
+        if (this.error == null) {
             this.error = new XCodeError();
             errorSetter.accept(this.error);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get error
-     * @return error
-     */
+    /** Get error
+     * 
+     * @return error */
     public XCodeError getError() {
         return error;
     }
@@ -268,8 +203,6 @@ public class OutputVideoPara  {
     public void setError(XCodeError error) {
         this.error = error;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -280,19 +213,19 @@ public class OutputVideoPara  {
             return false;
         }
         OutputVideoPara outputVideoPara = (OutputVideoPara) o;
-        return Objects.equals(this.templateId, outputVideoPara.templateId) &&
-            Objects.equals(this.size, outputVideoPara.size) &&
-            Objects.equals(this.pack, outputVideoPara.pack) &&
-            Objects.equals(this.video, outputVideoPara.video) &&
-            Objects.equals(this.audio, outputVideoPara.audio) &&
-            Objects.equals(this.fileName, outputVideoPara.fileName) &&
-            Objects.equals(this.converDuration, outputVideoPara.converDuration) &&
-            Objects.equals(this.error, outputVideoPara.error);
+        return Objects.equals(this.templateId, outputVideoPara.templateId)
+            && Objects.equals(this.size, outputVideoPara.size) && Objects.equals(this.pack, outputVideoPara.pack)
+            && Objects.equals(this.video, outputVideoPara.video) && Objects.equals(this.audio, outputVideoPara.audio)
+            && Objects.equals(this.fileName, outputVideoPara.fileName)
+            && Objects.equals(this.converDuration, outputVideoPara.converDuration)
+            && Objects.equals(this.error, outputVideoPara.error);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(templateId, size, pack, video, audio, fileName, converDuration, error);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -308,16 +241,13 @@ public class OutputVideoPara  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

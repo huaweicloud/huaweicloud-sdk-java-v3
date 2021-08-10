@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bcs.v2.model.CfgRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class DownloadBlockchainSdkConfigRequest  {
-
-
+/** Request Object */
+public class DownloadBlockchainSdkConfigRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="blockchain_id")
-    
+    @JsonProperty(value = "blockchain_id")
+
     private String blockchainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private CfgRequestBody body;
 
     public DownloadBlockchainSdkConfigRequest withBlockchainId(String blockchainId) {
@@ -35,13 +24,9 @@ public class DownloadBlockchainSdkConfigRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * blockchainID
-     * @return blockchainId
-     */
+    /** blockchainID
+     * 
+     * @return blockchainId */
     public String getBlockchainId() {
         return blockchainId;
     }
@@ -50,27 +35,23 @@ public class DownloadBlockchainSdkConfigRequest  {
         this.blockchainId = blockchainId;
     }
 
-    
-
     public DownloadBlockchainSdkConfigRequest withBody(CfgRequestBody body) {
         this.body = body;
         return this;
     }
 
     public DownloadBlockchainSdkConfigRequest withBody(Consumer<CfgRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CfgRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public CfgRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class DownloadBlockchainSdkConfigRequest  {
     public void setBody(CfgRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class DownloadBlockchainSdkConfigRequest  {
             return false;
         }
         DownloadBlockchainSdkConfigRequest downloadBlockchainSdkConfigRequest = (DownloadBlockchainSdkConfigRequest) o;
-        return Objects.equals(this.blockchainId, downloadBlockchainSdkConfigRequest.blockchainId) &&
-            Objects.equals(this.body, downloadBlockchainSdkConfigRequest.body);
+        return Objects.equals(this.blockchainId, downloadBlockchainSdkConfigRequest.blockchainId)
+            && Objects.equals(this.body, downloadBlockchainSdkConfigRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(blockchainId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class DownloadBlockchainSdkConfigRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

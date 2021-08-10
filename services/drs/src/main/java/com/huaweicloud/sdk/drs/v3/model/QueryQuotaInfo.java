@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.QuotaResource;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 配额信息
- */
-public class QueryQuotaInfo  {
-
-
+/** 配额信息 */
+public class QueryQuotaInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource")
-    
+    @JsonProperty(value = "resource")
+
     private QuotaResource resource;
 
     public QueryQuotaInfo withResource(QuotaResource resource) {
@@ -30,19 +20,17 @@ public class QueryQuotaInfo  {
     }
 
     public QueryQuotaInfo withResource(Consumer<QuotaResource> resourceSetter) {
-        if(this.resource == null ){
+        if (this.resource == null) {
             this.resource = new QuotaResource();
             resourceSetter.accept(this.resource);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get resource
-     * @return resource
-     */
+    /** Get resource
+     * 
+     * @return resource */
     public QuotaResource getResource() {
         return resource;
     }
@@ -50,8 +38,6 @@ public class QueryQuotaInfo  {
     public void setResource(QuotaResource resource) {
         this.resource = resource;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class QueryQuotaInfo  {
         QueryQuotaInfo queryQuotaInfo = (QueryQuotaInfo) o;
         return Objects.equals(this.resource, queryQuotaInfo.resource);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resource);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class QueryQuotaInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

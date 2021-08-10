@@ -1,38 +1,28 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class EventDataInfo  {
-
-
+public class EventDataInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timestamp")
-    
+    @JsonProperty(value = "timestamp")
+
     private Long timestamp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private String value;
 
     public EventDataInfo withType(String type) {
@@ -40,13 +30,9 @@ public class EventDataInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 事件类型，例如instance_host_info。
-     * @return type
-     */
+    /** 事件类型，例如instance_host_info。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -55,20 +41,14 @@ public class EventDataInfo  {
         this.type = type;
     }
 
-    
-
     public EventDataInfo withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
 
-    
-
-
-    /**
-     * 事件上报时间。
-     * @return timestamp
-     */
+    /** 事件上报时间。
+     * 
+     * @return timestamp */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -77,20 +57,14 @@ public class EventDataInfo  {
         this.timestamp = timestamp;
     }
 
-    
-
     public EventDataInfo withValue(String value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 主机配置信息。
-     * @return value
-     */
+    /** 主机配置信息。
+     * 
+     * @return value */
     public String getValue() {
         return value;
     }
@@ -98,8 +72,6 @@ public class EventDataInfo  {
     public void setValue(String value) {
         this.value = value;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +82,15 @@ public class EventDataInfo  {
             return false;
         }
         EventDataInfo eventDataInfo = (EventDataInfo) o;
-        return Objects.equals(this.type, eventDataInfo.type) &&
-            Objects.equals(this.timestamp, eventDataInfo.timestamp) &&
-            Objects.equals(this.value, eventDataInfo.value);
+        return Objects.equals(this.type, eventDataInfo.type) && Objects.equals(this.timestamp, eventDataInfo.timestamp)
+            && Objects.equals(this.value, eventDataInfo.value);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, timestamp, value);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +101,13 @@ public class EventDataInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

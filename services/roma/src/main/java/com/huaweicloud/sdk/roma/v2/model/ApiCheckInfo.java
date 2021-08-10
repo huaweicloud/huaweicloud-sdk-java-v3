@@ -1,79 +1,49 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * ApiCheckInfo
- */
-public class ApiCheckInfo  {
-
-
+/** ApiCheckInfo */
+public class ApiCheckInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 请求方式。  type = path时必填
-     */
+
+    /** 请求方式。 type = path时必填 */
     public static final class ReqMethodEnum {
 
-        
-        /**
-         * Enum GET for value: "GET"
-         */
+        /** Enum GET for value: "GET" */
         public static final ReqMethodEnum GET = new ReqMethodEnum("GET");
-        
-        /**
-         * Enum POST for value: "POST"
-         */
+
+        /** Enum POST for value: "POST" */
         public static final ReqMethodEnum POST = new ReqMethodEnum("POST");
-        
-        /**
-         * Enum PUT for value: "PUT"
-         */
+
+        /** Enum PUT for value: "PUT" */
         public static final ReqMethodEnum PUT = new ReqMethodEnum("PUT");
-        
-        /**
-         * Enum DELETE for value: "DELETE"
-         */
+
+        /** Enum DELETE for value: "DELETE" */
         public static final ReqMethodEnum DELETE = new ReqMethodEnum("DELETE");
-        
-        /**
-         * Enum HEAD for value: "HEAD"
-         */
+
+        /** Enum HEAD for value: "HEAD" */
         public static final ReqMethodEnum HEAD = new ReqMethodEnum("HEAD");
-        
-        /**
-         * Enum PATCH for value: "PATCH"
-         */
+
+        /** Enum PATCH for value: "PATCH" */
         public static final ReqMethodEnum PATCH = new ReqMethodEnum("PATCH");
-        
-        /**
-         * Enum OPTIONS for value: "OPTIONS"
-         */
+
+        /** Enum OPTIONS for value: "OPTIONS" */
         public static final ReqMethodEnum OPTIONS = new ReqMethodEnum("OPTIONS");
-        
-        /**
-         * Enum ANY for value: "ANY"
-         */
+
+        /** Enum ANY for value: "ANY" */
         public static final ReqMethodEnum ANY = new ReqMethodEnum("ANY");
-        
 
         private static final Map<String, ReqMethodEnum> STATIC_FIELDS = createStaticFields();
 
@@ -108,7 +78,7 @@ public class ApiCheckInfo  {
 
         @JsonCreator
         public static ReqMethodEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ReqMethodEnum result = STATIC_FIELDS.get(value);
@@ -119,7 +89,7 @@ public class ApiCheckInfo  {
         }
 
         public static ReqMethodEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ReqMethodEnum result = STATIC_FIELDS.get(value);
@@ -143,33 +113,24 @@ public class ApiCheckInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_method")
-    
+    @JsonProperty(value = "req_method")
+
     private ReqMethodEnum reqMethod;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_uri")
-    
+    @JsonProperty(value = "req_uri")
+
     private String reqUri;
-    /**
-     * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配）  type = path时必填
-     */
+
+    /** API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） type = path时必填 */
     public static final class MatchModeEnum {
 
-        
-        /**
-         * Enum SWA for value: "SWA"
-         */
+        /** Enum SWA for value: "SWA" */
         public static final MatchModeEnum SWA = new MatchModeEnum("SWA");
-        
-        /**
-         * Enum NORMAL for value: "NORMAL"
-         */
+
+        /** Enum NORMAL for value: "NORMAL" */
         public static final MatchModeEnum NORMAL = new MatchModeEnum("NORMAL");
-        
 
         private static final Map<String, MatchModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -198,7 +159,7 @@ public class ApiCheckInfo  {
 
         @JsonCreator
         public static MatchModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MatchModeEnum result = STATIC_FIELDS.get(value);
@@ -209,7 +170,7 @@ public class ApiCheckInfo  {
         }
 
         public static MatchModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MatchModeEnum result = STATIC_FIELDS.get(value);
@@ -233,28 +194,24 @@ public class ApiCheckInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="match_mode")
-    
+    @JsonProperty(value = "match_mode")
+
     private MatchModeEnum matchMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roma_app_id")
-    
+    @JsonProperty(value = "roma_app_id")
+
     private String romaAppId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_id")
-    
+    @JsonProperty(value = "api_id")
+
     private String apiId;
 
     public ApiCheckInfo withName(String name) {
@@ -262,13 +219,9 @@ public class ApiCheckInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * API名称。  type = name时必填
-     * @return name
-     */
+    /** API名称。 type = name时必填
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -277,20 +230,14 @@ public class ApiCheckInfo  {
         this.name = name;
     }
 
-    
-
     public ApiCheckInfo withReqMethod(ReqMethodEnum reqMethod) {
         this.reqMethod = reqMethod;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求方式。  type = path时必填
-     * @return reqMethod
-     */
+    /** 请求方式。 type = path时必填
+     * 
+     * @return reqMethod */
     public ReqMethodEnum getReqMethod() {
         return reqMethod;
     }
@@ -299,20 +246,14 @@ public class ApiCheckInfo  {
         this.reqMethod = reqMethod;
     }
 
-    
-
     public ApiCheckInfo withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
     }
 
-    
-
-
-    /**
-     * API的访问地址。  type = path时必填
-     * @return reqUri
-     */
+    /** API的访问地址。 type = path时必填
+     * 
+     * @return reqUri */
     public String getReqUri() {
         return reqUri;
     }
@@ -321,20 +262,14 @@ public class ApiCheckInfo  {
         this.reqUri = reqUri;
     }
 
-    
-
     public ApiCheckInfo withMatchMode(MatchModeEnum matchMode) {
         this.matchMode = matchMode;
         return this;
     }
 
-    
-
-
-    /**
-     * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配）  type = path时必填
-     * @return matchMode
-     */
+    /** API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） type = path时必填
+     * 
+     * @return matchMode */
     public MatchModeEnum getMatchMode() {
         return matchMode;
     }
@@ -343,20 +278,14 @@ public class ApiCheckInfo  {
         this.matchMode = matchMode;
     }
 
-    
-
     public ApiCheckInfo withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 分组ID。  校验分组下API定义是否重复时必填
-     * @return groupId
-     */
+    /** 分组ID。 校验分组下API定义是否重复时必填
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -365,20 +294,14 @@ public class ApiCheckInfo  {
         this.groupId = groupId;
     }
 
-    
-
     public ApiCheckInfo withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
         return this;
     }
 
-    
-
-
-    /**
-     * 集成应用ID。  校验应用下API定义是否重复时必填
-     * @return romaAppId
-     */
+    /** 集成应用ID。 校验应用下API定义是否重复时必填
+     * 
+     * @return romaAppId */
     public String getRomaAppId() {
         return romaAppId;
     }
@@ -387,20 +310,14 @@ public class ApiCheckInfo  {
         this.romaAppId = romaAppId;
     }
 
-    
-
     public ApiCheckInfo withApiId(String apiId) {
         this.apiId = apiId;
         return this;
     }
 
-    
-
-
-    /**
-     * 需要对比的API ID
-     * @return apiId
-     */
+    /** 需要对比的API ID
+     * 
+     * @return apiId */
     public String getApiId() {
         return apiId;
     }
@@ -408,8 +325,6 @@ public class ApiCheckInfo  {
     public void setApiId(String apiId) {
         this.apiId = apiId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -420,18 +335,18 @@ public class ApiCheckInfo  {
             return false;
         }
         ApiCheckInfo apiCheckInfo = (ApiCheckInfo) o;
-        return Objects.equals(this.name, apiCheckInfo.name) &&
-            Objects.equals(this.reqMethod, apiCheckInfo.reqMethod) &&
-            Objects.equals(this.reqUri, apiCheckInfo.reqUri) &&
-            Objects.equals(this.matchMode, apiCheckInfo.matchMode) &&
-            Objects.equals(this.groupId, apiCheckInfo.groupId) &&
-            Objects.equals(this.romaAppId, apiCheckInfo.romaAppId) &&
-            Objects.equals(this.apiId, apiCheckInfo.apiId);
+        return Objects.equals(this.name, apiCheckInfo.name) && Objects.equals(this.reqMethod, apiCheckInfo.reqMethod)
+            && Objects.equals(this.reqUri, apiCheckInfo.reqUri)
+            && Objects.equals(this.matchMode, apiCheckInfo.matchMode)
+            && Objects.equals(this.groupId, apiCheckInfo.groupId)
+            && Objects.equals(this.romaAppId, apiCheckInfo.romaAppId) && Objects.equals(this.apiId, apiCheckInfo.apiId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, reqMethod, reqUri, matchMode, groupId, romaAppId, apiId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -446,16 +361,13 @@ public class ApiCheckInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,59 +1,47 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.InterfaceAttachment;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListServerInterfacesResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="interfaceAttachments")
-    
+    @JsonProperty(value = "interfaceAttachments")
+
     private List<InterfaceAttachment> interfaceAttachments = null;
-    
+
     public ListServerInterfacesResponse withInterfaceAttachments(List<InterfaceAttachment> interfaceAttachments) {
         this.interfaceAttachments = interfaceAttachments;
         return this;
     }
 
-    
     public ListServerInterfacesResponse addInterfaceAttachmentsItem(InterfaceAttachment interfaceAttachmentsItem) {
-        if(this.interfaceAttachments == null) {
+        if (this.interfaceAttachments == null) {
             this.interfaceAttachments = new ArrayList<>();
         }
         this.interfaceAttachments.add(interfaceAttachmentsItem);
         return this;
     }
 
-    public ListServerInterfacesResponse withInterfaceAttachments(Consumer<List<InterfaceAttachment>> interfaceAttachmentsSetter) {
-        if(this.interfaceAttachments == null) {
+    public ListServerInterfacesResponse withInterfaceAttachments(
+        Consumer<List<InterfaceAttachment>> interfaceAttachmentsSetter) {
+        if (this.interfaceAttachments == null) {
             this.interfaceAttachments = new ArrayList<>();
         }
         interfaceAttachmentsSetter.accept(this.interfaceAttachments);
         return this;
     }
 
-    /**
-     * 云服务器网卡信息列表
-     * @return interfaceAttachments
-     */
+    /** 云服务器网卡信息列表
+     * 
+     * @return interfaceAttachments */
     public List<InterfaceAttachment> getInterfaceAttachments() {
         return interfaceAttachments;
     }
@@ -61,8 +49,6 @@ public class ListServerInterfacesResponse extends SdkResponse {
     public void setInterfaceAttachments(List<InterfaceAttachment> interfaceAttachments) {
         this.interfaceAttachments = interfaceAttachments;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -75,10 +61,12 @@ public class ListServerInterfacesResponse extends SdkResponse {
         ListServerInterfacesResponse listServerInterfacesResponse = (ListServerInterfacesResponse) o;
         return Objects.equals(this.interfaceAttachments, listServerInterfacesResponse.interfaceAttachments);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(interfaceAttachments);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -87,16 +75,13 @@ public class ListServerInterfacesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

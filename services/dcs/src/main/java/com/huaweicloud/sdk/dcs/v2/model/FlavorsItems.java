@@ -1,134 +1,104 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dcs.v2.model.AttrsObject;
-import com.huaweicloud.sdk.dcs.v2.model.FlavorAzObject;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * FlavorsItems
- */
-public class FlavorsItems  {
-
-
+/** FlavorsItems */
+public class FlavorsItems {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec_code")
-    
+    @JsonProperty(value = "spec_code")
+
     private String specCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cloud_service_type_code")
-    
+    @JsonProperty(value = "cloud_service_type_code")
+
     private String cloudServiceTypeCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cloud_resource_type_code")
-    
+    @JsonProperty(value = "cloud_resource_type_code")
+
     private String cloudResourceTypeCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cache_mode")
-    
+    @JsonProperty(value = "cache_mode")
+
     private String cacheMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engine")
-    
+    @JsonProperty(value = "engine")
+
     private String engine;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engine_version")
-    
+    @JsonProperty(value = "engine_version")
+
     private String engineVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_type")
-    
+    @JsonProperty(value = "product_type")
+
     private String productType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cpu_type")
-    
+    @JsonProperty(value = "cpu_type")
+
     private String cpuType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="storage_type")
-    
+    @JsonProperty(value = "storage_type")
+
     private String storageType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="capacity")
-    
+    @JsonProperty(value = "capacity")
+
     private List<String> capacity = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="billing_mode")
-    
+    @JsonProperty(value = "billing_mode")
+
     private List<String> billingMode = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_ip_count")
-    
+    @JsonProperty(value = "tenant_ip_count")
+
     private Integer tenantIpCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pricing_type")
-    
+    @JsonProperty(value = "pricing_type")
+
     private String pricingType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_dec")
-    
+    @JsonProperty(value = "is_dec")
+
     private Boolean isDec;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="attrs")
-    
+    @JsonProperty(value = "attrs")
+
     private List<AttrsObject> attrs = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flavors_available_zones")
-    
+    @JsonProperty(value = "flavors_available_zones")
+
     private List<FlavorAzObject> flavorsAvailableZones = null;
-    
+
     public FlavorsItems withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品规格编码。
-     * @return specCode
-     */
+    /** 产品规格编码。
+     * 
+     * @return specCode */
     public String getSpecCode() {
         return specCode;
     }
@@ -137,20 +107,14 @@ public class FlavorsItems  {
         this.specCode = specCode;
     }
 
-    
-
     public FlavorsItems withCloudServiceTypeCode(String cloudServiceTypeCode) {
         this.cloudServiceTypeCode = cloudServiceTypeCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务类型编码。
-     * @return cloudServiceTypeCode
-     */
+    /** 云服务类型编码。
+     * 
+     * @return cloudServiceTypeCode */
     public String getCloudServiceTypeCode() {
         return cloudServiceTypeCode;
     }
@@ -159,20 +123,14 @@ public class FlavorsItems  {
         this.cloudServiceTypeCode = cloudServiceTypeCode;
     }
 
-    
-
     public FlavorsItems withCloudResourceTypeCode(String cloudResourceTypeCode) {
         this.cloudResourceTypeCode = cloudResourceTypeCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 云资源类型编码。
-     * @return cloudResourceTypeCode
-     */
+    /** 云资源类型编码。
+     * 
+     * @return cloudResourceTypeCode */
     public String getCloudResourceTypeCode() {
         return cloudResourceTypeCode;
     }
@@ -181,20 +139,14 @@ public class FlavorsItems  {
         this.cloudResourceTypeCode = cloudResourceTypeCode;
     }
 
-    
-
     public FlavorsItems withCacheMode(String cacheMode) {
         this.cacheMode = cacheMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 缓存实例类型。取值范围如下： - single：表示单机实例 - ha：表示主备实例 - cluster：表示cluster集群实例 - proxy：表示Proxy集群实例 - ha_rw_split： 表示读写分离实例 
-     * @return cacheMode
-     */
+    /** 缓存实例类型。取值范围如下： - single：表示单机实例 - ha：表示主备实例 - cluster：表示cluster集群实例 - proxy：表示Proxy集群实例 - ha_rw_split： 表示读写分离实例
+     * 
+     * @return cacheMode */
     public String getCacheMode() {
         return cacheMode;
     }
@@ -203,20 +155,14 @@ public class FlavorsItems  {
         this.cacheMode = cacheMode;
     }
 
-    
-
     public FlavorsItems withEngine(String engine) {
         this.engine = engine;
         return this;
     }
 
-    
-
-
-    /**
-     * 缓存引擎类型。
-     * @return engine
-     */
+    /** 缓存引擎类型。
+     * 
+     * @return engine */
     public String getEngine() {
         return engine;
     }
@@ -225,20 +171,14 @@ public class FlavorsItems  {
         this.engine = engine;
     }
 
-    
-
     public FlavorsItems withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * 缓存版本，当缓存引擎为Redis时，取值为3.0、4.0或5.0。
-     * @return engineVersion
-     */
+    /** 缓存版本，当缓存引擎为Redis时，取值为3.0、4.0或5.0。
+     * 
+     * @return engineVersion */
     public String getEngineVersion() {
         return engineVersion;
     }
@@ -247,20 +187,14 @@ public class FlavorsItems  {
         this.engineVersion = engineVersion;
     }
 
-    
-
     public FlavorsItems withProductType(String productType) {
         this.productType = productType;
         return this;
     }
 
-    
-
-
-    /**
-     * Redis缓存实例的产品类型。取值当前仅支持： generic：标准类型 
-     * @return productType
-     */
+    /** Redis缓存实例的产品类型。取值当前仅支持： generic：标准类型
+     * 
+     * @return productType */
     public String getProductType() {
         return productType;
     }
@@ -269,20 +203,14 @@ public class FlavorsItems  {
         this.productType = productType;
     }
 
-    
-
     public FlavorsItems withCpuType(String cpuType) {
         this.cpuType = cpuType;
         return this;
     }
 
-    
-
-
-    /**
-     * CPU架构类型。取值范围如下： - x86_64：X86架构 - aarch64: ARM架构 
-     * @return cpuType
-     */
+    /** CPU架构类型。取值范围如下： - x86_64：X86架构 - aarch64: ARM架构
+     * 
+     * @return cpuType */
     public String getCpuType() {
         return cpuType;
     }
@@ -291,20 +219,14 @@ public class FlavorsItems  {
         this.cpuType = cpuType;
     }
 
-    
-
     public FlavorsItems withStorageType(String storageType) {
         this.storageType = storageType;
         return this;
     }
 
-    
-
-
-    /**
-     * 存储类型，取值当前仅支持： DRAM:内存存储 
-     * @return storageType
-     */
+    /** 存储类型，取值当前仅支持： DRAM:内存存储
+     * 
+     * @return storageType */
     public String getStorageType() {
         return storageType;
     }
@@ -313,16 +235,13 @@ public class FlavorsItems  {
         this.storageType = storageType;
     }
 
-    
-
     public FlavorsItems withCapacity(List<String> capacity) {
         this.capacity = capacity;
         return this;
     }
 
-    
     public FlavorsItems addCapacityItem(String capacityItem) {
-        if(this.capacity == null) {
+        if (this.capacity == null) {
             this.capacity = new ArrayList<>();
         }
         this.capacity.add(capacityItem);
@@ -330,17 +249,16 @@ public class FlavorsItems  {
     }
 
     public FlavorsItems withCapacity(Consumer<List<String>> capacitySetter) {
-        if(this.capacity == null) {
+        if (this.capacity == null) {
             this.capacity = new ArrayList<>();
         }
         capacitySetter.accept(this.capacity);
         return this;
     }
 
-    /**
-     * 缓存容量（G Byte）。
-     * @return capacity
-     */
+    /** 缓存容量（G Byte）。
+     * 
+     * @return capacity */
     public List<String> getCapacity() {
         return capacity;
     }
@@ -349,16 +267,13 @@ public class FlavorsItems  {
         this.capacity = capacity;
     }
 
-    
-
     public FlavorsItems withBillingMode(List<String> billingMode) {
         this.billingMode = billingMode;
         return this;
     }
 
-    
     public FlavorsItems addBillingModeItem(String billingModeItem) {
-        if(this.billingMode == null) {
+        if (this.billingMode == null) {
             this.billingMode = new ArrayList<>();
         }
         this.billingMode.add(billingModeItem);
@@ -366,17 +281,16 @@ public class FlavorsItems  {
     }
 
     public FlavorsItems withBillingMode(Consumer<List<String>> billingModeSetter) {
-        if(this.billingMode == null) {
+        if (this.billingMode == null) {
             this.billingMode = new ArrayList<>();
         }
         billingModeSetter.accept(this.billingMode);
         return this;
     }
 
-    /**
-     * 计费模式，取值范围如下： - Hourly：按需计费 - Monthly: 包月计费 - Yearly: 包周期计费 
-     * @return billingMode
-     */
+    /** 计费模式，取值范围如下： - Hourly：按需计费 - Monthly: 包月计费 - Yearly: 包周期计费
+     * 
+     * @return billingMode */
     public List<String> getBillingMode() {
         return billingMode;
     }
@@ -385,20 +299,14 @@ public class FlavorsItems  {
         this.billingMode = billingMode;
     }
 
-    
-
     public FlavorsItems withTenantIpCount(Integer tenantIpCount) {
         this.tenantIpCount = tenantIpCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 租户侧IP数量。
-     * @return tenantIpCount
-     */
+    /** 租户侧IP数量。
+     * 
+     * @return tenantIpCount */
     public Integer getTenantIpCount() {
         return tenantIpCount;
     }
@@ -407,20 +315,14 @@ public class FlavorsItems  {
         this.tenantIpCount = tenantIpCount;
     }
 
-    
-
     public FlavorsItems withPricingType(String pricingType) {
         this.pricingType = pricingType;
         return this;
     }
 
-    
-
-
-    /**
-     * 定价类型，取值如下： - tier: 阶梯定价，一个规格对应多个容量 - normal: 规格和容量一一对应 
-     * @return pricingType
-     */
+    /** 定价类型，取值如下： - tier: 阶梯定价，一个规格对应多个容量 - normal: 规格和容量一一对应
+     * 
+     * @return pricingType */
     public String getPricingType() {
         return pricingType;
     }
@@ -429,20 +331,14 @@ public class FlavorsItems  {
         this.pricingType = pricingType;
     }
 
-    
-
     public FlavorsItems withIsDec(Boolean isDec) {
         this.isDec = isDec;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否支持专属云。
-     * @return isDec
-     */
+    /** 是否支持专属云。
+     * 
+     * @return isDec */
     public Boolean getIsDec() {
         return isDec;
     }
@@ -451,16 +347,13 @@ public class FlavorsItems  {
         this.isDec = isDec;
     }
 
-    
-
     public FlavorsItems withAttrs(List<AttrsObject> attrs) {
         this.attrs = attrs;
         return this;
     }
 
-    
     public FlavorsItems addAttrsItem(AttrsObject attrsItem) {
-        if(this.attrs == null) {
+        if (this.attrs == null) {
             this.attrs = new ArrayList<>();
         }
         this.attrs.add(attrsItem);
@@ -468,17 +361,16 @@ public class FlavorsItems  {
     }
 
     public FlavorsItems withAttrs(Consumer<List<AttrsObject>> attrsSetter) {
-        if(this.attrs == null) {
+        if (this.attrs == null) {
             this.attrs = new ArrayList<>();
         }
         attrsSetter.accept(this.attrs);
         return this;
     }
 
-    /**
-     * 规格的其他信息。
-     * @return attrs
-     */
+    /** 规格的其他信息。
+     * 
+     * @return attrs */
     public List<AttrsObject> getAttrs() {
         return attrs;
     }
@@ -487,16 +379,13 @@ public class FlavorsItems  {
         this.attrs = attrs;
     }
 
-    
-
     public FlavorsItems withFlavorsAvailableZones(List<FlavorAzObject> flavorsAvailableZones) {
         this.flavorsAvailableZones = flavorsAvailableZones;
         return this;
     }
 
-    
     public FlavorsItems addFlavorsAvailableZonesItem(FlavorAzObject flavorsAvailableZonesItem) {
-        if(this.flavorsAvailableZones == null) {
+        if (this.flavorsAvailableZones == null) {
             this.flavorsAvailableZones = new ArrayList<>();
         }
         this.flavorsAvailableZones.add(flavorsAvailableZonesItem);
@@ -504,17 +393,16 @@ public class FlavorsItems  {
     }
 
     public FlavorsItems withFlavorsAvailableZones(Consumer<List<FlavorAzObject>> flavorsAvailableZonesSetter) {
-        if(this.flavorsAvailableZones == null) {
+        if (this.flavorsAvailableZones == null) {
             this.flavorsAvailableZones = new ArrayList<>();
         }
         flavorsAvailableZonesSetter.accept(this.flavorsAvailableZones);
         return this;
     }
 
-    /**
-     * 有资源的可用区。
-     * @return flavorsAvailableZones
-     */
+    /** 有资源的可用区。
+     * 
+     * @return flavorsAvailableZones */
     public List<FlavorAzObject> getFlavorsAvailableZones() {
         return flavorsAvailableZones;
     }
@@ -522,8 +410,6 @@ public class FlavorsItems  {
     public void setFlavorsAvailableZones(List<FlavorAzObject> flavorsAvailableZones) {
         this.flavorsAvailableZones = flavorsAvailableZones;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -534,27 +420,43 @@ public class FlavorsItems  {
             return false;
         }
         FlavorsItems flavorsItems = (FlavorsItems) o;
-        return Objects.equals(this.specCode, flavorsItems.specCode) &&
-            Objects.equals(this.cloudServiceTypeCode, flavorsItems.cloudServiceTypeCode) &&
-            Objects.equals(this.cloudResourceTypeCode, flavorsItems.cloudResourceTypeCode) &&
-            Objects.equals(this.cacheMode, flavorsItems.cacheMode) &&
-            Objects.equals(this.engine, flavorsItems.engine) &&
-            Objects.equals(this.engineVersion, flavorsItems.engineVersion) &&
-            Objects.equals(this.productType, flavorsItems.productType) &&
-            Objects.equals(this.cpuType, flavorsItems.cpuType) &&
-            Objects.equals(this.storageType, flavorsItems.storageType) &&
-            Objects.equals(this.capacity, flavorsItems.capacity) &&
-            Objects.equals(this.billingMode, flavorsItems.billingMode) &&
-            Objects.equals(this.tenantIpCount, flavorsItems.tenantIpCount) &&
-            Objects.equals(this.pricingType, flavorsItems.pricingType) &&
-            Objects.equals(this.isDec, flavorsItems.isDec) &&
-            Objects.equals(this.attrs, flavorsItems.attrs) &&
-            Objects.equals(this.flavorsAvailableZones, flavorsItems.flavorsAvailableZones);
+        return Objects.equals(this.specCode, flavorsItems.specCode)
+            && Objects.equals(this.cloudServiceTypeCode, flavorsItems.cloudServiceTypeCode)
+            && Objects.equals(this.cloudResourceTypeCode, flavorsItems.cloudResourceTypeCode)
+            && Objects.equals(this.cacheMode, flavorsItems.cacheMode)
+            && Objects.equals(this.engine, flavorsItems.engine)
+            && Objects.equals(this.engineVersion, flavorsItems.engineVersion)
+            && Objects.equals(this.productType, flavorsItems.productType)
+            && Objects.equals(this.cpuType, flavorsItems.cpuType)
+            && Objects.equals(this.storageType, flavorsItems.storageType)
+            && Objects.equals(this.capacity, flavorsItems.capacity)
+            && Objects.equals(this.billingMode, flavorsItems.billingMode)
+            && Objects.equals(this.tenantIpCount, flavorsItems.tenantIpCount)
+            && Objects.equals(this.pricingType, flavorsItems.pricingType)
+            && Objects.equals(this.isDec, flavorsItems.isDec) && Objects.equals(this.attrs, flavorsItems.attrs)
+            && Objects.equals(this.flavorsAvailableZones, flavorsItems.flavorsAvailableZones);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(specCode, cloudServiceTypeCode, cloudResourceTypeCode, cacheMode, engine, engineVersion, productType, cpuType, storageType, capacity, billingMode, tenantIpCount, pricingType, isDec, attrs, flavorsAvailableZones);
+        return Objects.hash(specCode,
+            cloudServiceTypeCode,
+            cloudResourceTypeCode,
+            cacheMode,
+            engine,
+            engineVersion,
+            productType,
+            cpuType,
+            storageType,
+            capacity,
+            billingMode,
+            tenantIpCount,
+            pricingType,
+            isDec,
+            attrs,
+            flavorsAvailableZones);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -578,16 +480,13 @@ public class FlavorsItems  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

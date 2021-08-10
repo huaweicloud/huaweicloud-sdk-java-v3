@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rms.v1.model.TrackerOBSChannelConfigBody;
-import com.huaweicloud.sdk.rms.v1.model.TrackerSMNChannelConfigBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * tracker通道配置
- */
-public class ChannelConfigBody  {
-
-
+/** tracker通道配置 */
+public class ChannelConfigBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="smn")
-    
+    @JsonProperty(value = "smn")
+
     private TrackerSMNChannelConfigBody smn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="obs")
-    
+    @JsonProperty(value = "obs")
+
     private TrackerOBSChannelConfigBody obs;
 
     public ChannelConfigBody withSmn(TrackerSMNChannelConfigBody smn) {
@@ -37,19 +25,17 @@ public class ChannelConfigBody  {
     }
 
     public ChannelConfigBody withSmn(Consumer<TrackerSMNChannelConfigBody> smnSetter) {
-        if(this.smn == null ){
+        if (this.smn == null) {
             this.smn = new TrackerSMNChannelConfigBody();
             smnSetter.accept(this.smn);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get smn
-     * @return smn
-     */
+    /** Get smn
+     * 
+     * @return smn */
     public TrackerSMNChannelConfigBody getSmn() {
         return smn;
     }
@@ -58,27 +44,23 @@ public class ChannelConfigBody  {
         this.smn = smn;
     }
 
-    
-
     public ChannelConfigBody withObs(TrackerOBSChannelConfigBody obs) {
         this.obs = obs;
         return this;
     }
 
     public ChannelConfigBody withObs(Consumer<TrackerOBSChannelConfigBody> obsSetter) {
-        if(this.obs == null ){
+        if (this.obs == null) {
             this.obs = new TrackerOBSChannelConfigBody();
             obsSetter.accept(this.obs);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get obs
-     * @return obs
-     */
+    /** Get obs
+     * 
+     * @return obs */
     public TrackerOBSChannelConfigBody getObs() {
         return obs;
     }
@@ -86,8 +68,6 @@ public class ChannelConfigBody  {
     public void setObs(TrackerOBSChannelConfigBody obs) {
         this.obs = obs;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -98,13 +78,14 @@ public class ChannelConfigBody  {
             return false;
         }
         ChannelConfigBody channelConfigBody = (ChannelConfigBody) o;
-        return Objects.equals(this.smn, channelConfigBody.smn) &&
-            Objects.equals(this.obs, channelConfigBody.obs);
+        return Objects.equals(this.smn, channelConfigBody.smn) && Objects.equals(this.obs, channelConfigBody.obs);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(smn, obs);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,16 +95,13 @@ public class ChannelConfigBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

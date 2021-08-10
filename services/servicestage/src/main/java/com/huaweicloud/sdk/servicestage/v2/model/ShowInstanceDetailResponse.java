@@ -1,121 +1,92 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.ExternalAccesses;
-import com.huaweicloud.sdk.servicestage.v2.model.FlavorId;
-import com.huaweicloud.sdk.servicestage.v2.model.InstancePlatformType;
-import com.huaweicloud.sdk.servicestage.v2.model.InstanceStatusView;
-import com.huaweicloud.sdk.servicestage.v2.model.ReferResources;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowInstanceDetailResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="environment_id")
-    
+    @JsonProperty(value = "environment_id")
+
     private String environmentId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="platform_type")
-    
+    @JsonProperty(value = "platform_type")
+
     private InstancePlatformType platformType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flavor_id")
-    
+    @JsonProperty(value = "flavor_id")
+
     private FlavorId flavorId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="artifacts")
-    
+    @JsonProperty(value = "artifacts")
+
     private Map<String, Object> artifacts = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="configuration")
-    
+    @JsonProperty(value = "configuration")
+
     private Object _configuration;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator")
-    
+    @JsonProperty(value = "creator")
+
     private String creator;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private Long createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private Long updateTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="external_accesses")
-    
+    @JsonProperty(value = "external_accesses")
+
     private List<ExternalAccesses> externalAccesses = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="refer_resources")
-    
+    @JsonProperty(value = "refer_resources")
+
     private List<ReferResources> referResources = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status_detail")
-    
+    @JsonProperty(value = "status_detail")
+
     private InstanceStatusView statusDetail;
 
     public ShowInstanceDetailResponse withId(String id) {
@@ -123,13 +94,9 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 应用组件实例ID。
-     * @return id
-     */
+    /** 应用组件实例ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -138,20 +105,14 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowInstanceDetailResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用组件实例名称。
-     * @return name
-     */
+    /** 应用组件实例名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -160,20 +121,14 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowInstanceDetailResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例描述。
-     * @return description
-     */
+    /** 实例描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -182,20 +137,14 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public ShowInstanceDetailResponse withEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用组件环境ID。
-     * @return environmentId
-     */
+    /** 应用组件环境ID。
+     * 
+     * @return environmentId */
     public String getEnvironmentId() {
         return environmentId;
     }
@@ -204,20 +153,14 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this.environmentId = environmentId;
     }
 
-    
-
     public ShowInstanceDetailResponse withPlatformType(InstancePlatformType platformType) {
         this.platformType = platformType;
         return this;
     }
 
-    
-
-
-    /**
-     * Get platformType
-     * @return platformType
-     */
+    /** Get platformType
+     * 
+     * @return platformType */
     public InstancePlatformType getPlatformType() {
         return platformType;
     }
@@ -226,20 +169,14 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this.platformType = platformType;
     }
 
-    
-
     public ShowInstanceDetailResponse withFlavorId(FlavorId flavorId) {
         this.flavorId = flavorId;
         return this;
     }
 
-    
-
-
-    /**
-     * Get flavorId
-     * @return flavorId
-     */
+    /** Get flavorId
+     * 
+     * @return flavorId */
     public FlavorId getFlavorId() {
         return flavorId;
     }
@@ -248,17 +185,13 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this.flavorId = flavorId;
     }
 
-    
-
     public ShowInstanceDetailResponse withArtifacts(Map<String, Object> artifacts) {
         this.artifacts = artifacts;
         return this;
     }
 
-    
-
     public ShowInstanceDetailResponse putArtifactsItem(String key, Object artifactsItem) {
-        if(this.artifacts == null) {
+        if (this.artifacts == null) {
             this.artifacts = new HashMap<>();
         }
         this.artifacts.put(key, artifactsItem);
@@ -266,16 +199,16 @@ public class ShowInstanceDetailResponse extends SdkResponse {
     }
 
     public ShowInstanceDetailResponse withArtifacts(Consumer<Map<String, Object>> artifactsSetter) {
-        if(this.artifacts == null) {
+        if (this.artifacts == null) {
             this.artifacts = new HashMap<>();
         }
         artifactsSetter.accept(this.artifacts);
         return this;
     }
-    /**
-     * 组件部署件。key为组件component_name，对于Docker多容器场景，key为容器名称。
-     * @return artifacts
-     */
+
+    /** 组件部署件。key为组件component_name，对于Docker多容器场景，key为容器名称。
+     * 
+     * @return artifacts */
     public Map<String, Object> getArtifacts() {
         return artifacts;
     }
@@ -284,20 +217,14 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this.artifacts = artifacts;
     }
 
-    
-
     public ShowInstanceDetailResponse withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用组件版本号。
-     * @return version
-     */
+    /** 应用组件版本号。
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -306,20 +233,14 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this.version = version;
     }
 
-    
-
     public ShowInstanceDetailResponse withConfiguration(Object _configuration) {
         this._configuration = _configuration;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用组件配置，如环境变量。
-     * @return _configuration
-     */
+    /** 应用组件配置，如环境变量。
+     * 
+     * @return _configuration */
     public Object getConfiguration() {
         return _configuration;
     }
@@ -328,20 +249,14 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this._configuration = _configuration;
     }
 
-    
-
     public ShowInstanceDetailResponse withCreator(String creator) {
         this.creator = creator;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建人。
-     * @return creator
-     */
+    /** 创建人。
+     * 
+     * @return creator */
     public String getCreator() {
         return creator;
     }
@@ -350,20 +265,14 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this.creator = creator;
     }
 
-    
-
     public ShowInstanceDetailResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间。
-     * @return createTime
-     */
+    /** 创建时间。
+     * 
+     * @return createTime */
     public Long getCreateTime() {
         return createTime;
     }
@@ -372,20 +281,14 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public ShowInstanceDetailResponse withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 修改时间。
-     * @return updateTime
-     */
+    /** 修改时间。
+     * 
+     * @return updateTime */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -394,16 +297,13 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     public ShowInstanceDetailResponse withExternalAccesses(List<ExternalAccesses> externalAccesses) {
         this.externalAccesses = externalAccesses;
         return this;
     }
 
-    
     public ShowInstanceDetailResponse addExternalAccessesItem(ExternalAccesses externalAccessesItem) {
-        if(this.externalAccesses == null) {
+        if (this.externalAccesses == null) {
             this.externalAccesses = new ArrayList<>();
         }
         this.externalAccesses.add(externalAccessesItem);
@@ -411,17 +311,16 @@ public class ShowInstanceDetailResponse extends SdkResponse {
     }
 
     public ShowInstanceDetailResponse withExternalAccesses(Consumer<List<ExternalAccesses>> externalAccessesSetter) {
-        if(this.externalAccesses == null) {
+        if (this.externalAccesses == null) {
             this.externalAccesses = new ArrayList<>();
         }
         externalAccessesSetter.accept(this.externalAccesses);
         return this;
     }
 
-    /**
-     * 访问方式列表。
-     * @return externalAccesses
-     */
+    /** 访问方式列表。
+     * 
+     * @return externalAccesses */
     public List<ExternalAccesses> getExternalAccesses() {
         return externalAccesses;
     }
@@ -430,16 +329,13 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this.externalAccesses = externalAccesses;
     }
 
-    
-
     public ShowInstanceDetailResponse withReferResources(List<ReferResources> referResources) {
         this.referResources = referResources;
         return this;
     }
 
-    
     public ShowInstanceDetailResponse addReferResourcesItem(ReferResources referResourcesItem) {
-        if(this.referResources == null) {
+        if (this.referResources == null) {
             this.referResources = new ArrayList<>();
         }
         this.referResources.add(referResourcesItem);
@@ -447,17 +343,16 @@ public class ShowInstanceDetailResponse extends SdkResponse {
     }
 
     public ShowInstanceDetailResponse withReferResources(Consumer<List<ReferResources>> referResourcesSetter) {
-        if(this.referResources == null) {
+        if (this.referResources == null) {
             this.referResources = new ArrayList<>();
         }
         referResourcesSetter.accept(this.referResources);
         return this;
     }
 
-    /**
-     * 部署资源列表。
-     * @return referResources
-     */
+    /** 部署资源列表。
+     * 
+     * @return referResources */
     public List<ReferResources> getReferResources() {
         return referResources;
     }
@@ -466,27 +361,23 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         this.referResources = referResources;
     }
 
-    
-
     public ShowInstanceDetailResponse withStatusDetail(InstanceStatusView statusDetail) {
         this.statusDetail = statusDetail;
         return this;
     }
 
     public ShowInstanceDetailResponse withStatusDetail(Consumer<InstanceStatusView> statusDetailSetter) {
-        if(this.statusDetail == null ){
+        if (this.statusDetail == null) {
             this.statusDetail = new InstanceStatusView();
             statusDetailSetter.accept(this.statusDetail);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get statusDetail
-     * @return statusDetail
-     */
+    /** Get statusDetail
+     * 
+     * @return statusDetail */
     public InstanceStatusView getStatusDetail() {
         return statusDetail;
     }
@@ -494,8 +385,6 @@ public class ShowInstanceDetailResponse extends SdkResponse {
     public void setStatusDetail(InstanceStatusView statusDetail) {
         this.statusDetail = statusDetail;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -506,26 +395,42 @@ public class ShowInstanceDetailResponse extends SdkResponse {
             return false;
         }
         ShowInstanceDetailResponse showInstanceDetailResponse = (ShowInstanceDetailResponse) o;
-        return Objects.equals(this.id, showInstanceDetailResponse.id) &&
-            Objects.equals(this.name, showInstanceDetailResponse.name) &&
-            Objects.equals(this.description, showInstanceDetailResponse.description) &&
-            Objects.equals(this.environmentId, showInstanceDetailResponse.environmentId) &&
-            Objects.equals(this.platformType, showInstanceDetailResponse.platformType) &&
-            Objects.equals(this.flavorId, showInstanceDetailResponse.flavorId) &&
-            Objects.equals(this.artifacts, showInstanceDetailResponse.artifacts) &&
-            Objects.equals(this.version, showInstanceDetailResponse.version) &&
-            Objects.equals(this._configuration, showInstanceDetailResponse._configuration) &&
-            Objects.equals(this.creator, showInstanceDetailResponse.creator) &&
-            Objects.equals(this.createTime, showInstanceDetailResponse.createTime) &&
-            Objects.equals(this.updateTime, showInstanceDetailResponse.updateTime) &&
-            Objects.equals(this.externalAccesses, showInstanceDetailResponse.externalAccesses) &&
-            Objects.equals(this.referResources, showInstanceDetailResponse.referResources) &&
-            Objects.equals(this.statusDetail, showInstanceDetailResponse.statusDetail);
+        return Objects.equals(this.id, showInstanceDetailResponse.id)
+            && Objects.equals(this.name, showInstanceDetailResponse.name)
+            && Objects.equals(this.description, showInstanceDetailResponse.description)
+            && Objects.equals(this.environmentId, showInstanceDetailResponse.environmentId)
+            && Objects.equals(this.platformType, showInstanceDetailResponse.platformType)
+            && Objects.equals(this.flavorId, showInstanceDetailResponse.flavorId)
+            && Objects.equals(this.artifacts, showInstanceDetailResponse.artifacts)
+            && Objects.equals(this.version, showInstanceDetailResponse.version)
+            && Objects.equals(this._configuration, showInstanceDetailResponse._configuration)
+            && Objects.equals(this.creator, showInstanceDetailResponse.creator)
+            && Objects.equals(this.createTime, showInstanceDetailResponse.createTime)
+            && Objects.equals(this.updateTime, showInstanceDetailResponse.updateTime)
+            && Objects.equals(this.externalAccesses, showInstanceDetailResponse.externalAccesses)
+            && Objects.equals(this.referResources, showInstanceDetailResponse.referResources)
+            && Objects.equals(this.statusDetail, showInstanceDetailResponse.statusDetail);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, environmentId, platformType, flavorId, artifacts, version, _configuration, creator, createTime, updateTime, externalAccesses, referResources, statusDetail);
+        return Objects.hash(id,
+            name,
+            description,
+            environmentId,
+            platformType,
+            flavorId,
+            artifacts,
+            version,
+            _configuration,
+            creator,
+            createTime,
+            updateTime,
+            externalAccesses,
+            referResources,
+            statusDetail);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -548,16 +453,13 @@ public class ShowInstanceDetailResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

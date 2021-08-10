@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.cts.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Quota
- */
-public class Quota  {
-
-
+/** Quota */
+public class Quota {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="used")
-    
+    @JsonProperty(value = "used")
+
     private Long used;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quota")
-    
+    @JsonProperty(value = "quota")
+
     private Long quota;
 
     public Quota withType(String type) {
@@ -40,13 +28,9 @@ public class Quota  {
         return this;
     }
 
-    
-
-
-    /**
-     * quota资源类型。
-     * @return type
-     */
+    /** quota资源类型。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -55,22 +39,14 @@ public class Quota  {
         this.type = type;
     }
 
-    
-
     public Quota withUsed(Long used) {
         this.used = used;
         return this;
     }
 
-    
-
-
-    /**
-     * 已使用的资源个数。
-     * minimum: 0
-     * maximum: 10000
-     * @return used
-     */
+    /** 已使用的资源个数。 minimum: 0 maximum: 10000
+     * 
+     * @return used */
     public Long getUsed() {
         return used;
     }
@@ -79,22 +55,14 @@ public class Quota  {
         this.used = used;
     }
 
-    
-
     public Quota withQuota(Long quota) {
         this.quota = quota;
         return this;
     }
 
-    
-
-
-    /**
-     * 总资源个数。
-     * minimum: 0
-     * maximum: 10000
-     * @return quota
-     */
+    /** 总资源个数。 minimum: 0 maximum: 10000
+     * 
+     * @return quota */
     public Long getQuota() {
         return quota;
     }
@@ -102,8 +70,6 @@ public class Quota  {
     public void setQuota(Long quota) {
         this.quota = quota;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -114,14 +80,15 @@ public class Quota  {
             return false;
         }
         Quota quota = (Quota) o;
-        return Objects.equals(this.type, quota.type) &&
-            Objects.equals(this.used, quota.used) &&
-            Objects.equals(this.quota, quota.quota);
+        return Objects.equals(this.type, quota.type) && Objects.equals(this.used, quota.used)
+            && Objects.equals(this.quota, quota.quota);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, used, quota);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -132,16 +99,13 @@ public class Quota  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

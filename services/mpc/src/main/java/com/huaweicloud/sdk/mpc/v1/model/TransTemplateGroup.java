@@ -1,56 +1,39 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.Audio;
-import com.huaweicloud.sdk.mpc.v1.model.Common;
-import com.huaweicloud.sdk.mpc.v1.model.VideoCommon;
-import com.huaweicloud.sdk.mpc.v1.model.VideoObj;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * TransTemplateGroup
- */
-public class TransTemplateGroup  {
-
-
+/** TransTemplateGroup */
+public class TransTemplateGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="videos")
-    
+    @JsonProperty(value = "videos")
+
     private List<VideoObj> videos = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audio")
-    
+    @JsonProperty(value = "audio")
+
     private Audio audio;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="video_common")
-    
+    @JsonProperty(value = "video_common")
+
     private VideoCommon videoCommon;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="common")
-    
+    @JsonProperty(value = "common")
+
     private Common common;
 
     public TransTemplateGroup withName(String name) {
@@ -58,13 +41,9 @@ public class TransTemplateGroup  {
         return this;
     }
 
-    
-
-
-    /**
-     * 模板组名称 
-     * @return name
-     */
+    /** 模板组名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -73,16 +52,13 @@ public class TransTemplateGroup  {
         this.name = name;
     }
 
-    
-
     public TransTemplateGroup withVideos(List<VideoObj> videos) {
         this.videos = videos;
         return this;
     }
 
-    
     public TransTemplateGroup addVideosItem(VideoObj videosItem) {
-        if(this.videos == null) {
+        if (this.videos == null) {
             this.videos = new ArrayList<>();
         }
         this.videos.add(videosItem);
@@ -90,17 +66,16 @@ public class TransTemplateGroup  {
     }
 
     public TransTemplateGroup withVideos(Consumer<List<VideoObj>> videosSetter) {
-        if(this.videos == null) {
+        if (this.videos == null) {
             this.videos = new ArrayList<>();
         }
         videosSetter.accept(this.videos);
         return this;
     }
 
-    /**
-     * 视频信息列表 
-     * @return videos
-     */
+    /** 视频信息列表
+     * 
+     * @return videos */
     public List<VideoObj> getVideos() {
         return videos;
     }
@@ -109,27 +84,23 @@ public class TransTemplateGroup  {
         this.videos = videos;
     }
 
-    
-
     public TransTemplateGroup withAudio(Audio audio) {
         this.audio = audio;
         return this;
     }
 
     public TransTemplateGroup withAudio(Consumer<Audio> audioSetter) {
-        if(this.audio == null ){
+        if (this.audio == null) {
             this.audio = new Audio();
             audioSetter.accept(this.audio);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get audio
-     * @return audio
-     */
+    /** Get audio
+     * 
+     * @return audio */
     public Audio getAudio() {
         return audio;
     }
@@ -138,27 +109,23 @@ public class TransTemplateGroup  {
         this.audio = audio;
     }
 
-    
-
     public TransTemplateGroup withVideoCommon(VideoCommon videoCommon) {
         this.videoCommon = videoCommon;
         return this;
     }
 
     public TransTemplateGroup withVideoCommon(Consumer<VideoCommon> videoCommonSetter) {
-        if(this.videoCommon == null ){
+        if (this.videoCommon == null) {
             this.videoCommon = new VideoCommon();
             videoCommonSetter.accept(this.videoCommon);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get videoCommon
-     * @return videoCommon
-     */
+    /** Get videoCommon
+     * 
+     * @return videoCommon */
     public VideoCommon getVideoCommon() {
         return videoCommon;
     }
@@ -167,27 +134,23 @@ public class TransTemplateGroup  {
         this.videoCommon = videoCommon;
     }
 
-    
-
     public TransTemplateGroup withCommon(Common common) {
         this.common = common;
         return this;
     }
 
     public TransTemplateGroup withCommon(Consumer<Common> commonSetter) {
-        if(this.common == null ){
+        if (this.common == null) {
             this.common = new Common();
             commonSetter.accept(this.common);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get common
-     * @return common
-     */
+    /** Get common
+     * 
+     * @return common */
     public Common getCommon() {
         return common;
     }
@@ -195,8 +158,6 @@ public class TransTemplateGroup  {
     public void setCommon(Common common) {
         this.common = common;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -207,16 +168,18 @@ public class TransTemplateGroup  {
             return false;
         }
         TransTemplateGroup transTemplateGroup = (TransTemplateGroup) o;
-        return Objects.equals(this.name, transTemplateGroup.name) &&
-            Objects.equals(this.videos, transTemplateGroup.videos) &&
-            Objects.equals(this.audio, transTemplateGroup.audio) &&
-            Objects.equals(this.videoCommon, transTemplateGroup.videoCommon) &&
-            Objects.equals(this.common, transTemplateGroup.common);
+        return Objects.equals(this.name, transTemplateGroup.name)
+            && Objects.equals(this.videos, transTemplateGroup.videos)
+            && Objects.equals(this.audio, transTemplateGroup.audio)
+            && Objects.equals(this.videoCommon, transTemplateGroup.videoCommon)
+            && Objects.equals(this.common, transTemplateGroup.common);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, videos, audio, videoCommon, common);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -229,16 +192,13 @@ public class TransTemplateGroup  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

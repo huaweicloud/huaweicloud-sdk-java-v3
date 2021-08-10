@@ -1,68 +1,51 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 企业基本信息
- */
-public class QueryCorpBasicResultDTO  {
-
-
+/** 企业基本信息 */
+public class QueryCorpBasicResultDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="phone")
-    
+    @JsonProperty(value = "phone")
+
     private String phone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="country")
-    
+    @JsonProperty(value = "country")
+
     private String country;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fax")
-    
+    @JsonProperty(value = "fax")
+
     private String fax;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="email")
-    
+    @JsonProperty(value = "email")
+
     private String email;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="address")
-    
+    @JsonProperty(value = "address")
+
     private String address;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spId")
-    
+    @JsonProperty(value = "spId")
+
     private String spId;
 
     public QueryCorpBasicResultDTO withName(String name) {
@@ -70,13 +53,9 @@ public class QueryCorpBasicResultDTO  {
         return this;
     }
 
-    
-
-
-    /**
-     * 企业名称
-     * @return name
-     */
+    /** 企业名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -85,20 +64,14 @@ public class QueryCorpBasicResultDTO  {
         this.name = name;
     }
 
-    
-
     public QueryCorpBasicResultDTO withPhone(String phone) {
         this.phone = phone;
         return this;
     }
 
-    
-
-
-    /**
-     * 联系号码
-     * @return phone
-     */
+    /** 联系号码
+     * 
+     * @return phone */
     public String getPhone() {
         return phone;
     }
@@ -107,20 +80,14 @@ public class QueryCorpBasicResultDTO  {
         this.phone = phone;
     }
 
-    
-
     public QueryCorpBasicResultDTO withCountry(String country) {
         this.country = country;
         return this;
     }
 
-    
-
-
-    /**
-     * 联系号码所属的国家
-     * @return country
-     */
+    /** 联系号码所属的国家
+     * 
+     * @return country */
     public String getCountry() {
         return country;
     }
@@ -129,20 +96,14 @@ public class QueryCorpBasicResultDTO  {
         this.country = country;
     }
 
-    
-
     public QueryCorpBasicResultDTO withFax(String fax) {
         this.fax = fax;
         return this;
     }
 
-    
-
-
-    /**
-     * 传真号码
-     * @return fax
-     */
+    /** 传真号码
+     * 
+     * @return fax */
     public String getFax() {
         return fax;
     }
@@ -151,20 +112,14 @@ public class QueryCorpBasicResultDTO  {
         this.fax = fax;
     }
 
-    
-
     public QueryCorpBasicResultDTO withEmail(String email) {
         this.email = email;
         return this;
     }
 
-    
-
-
-    /**
-     * 邮箱地址
-     * @return email
-     */
+    /** 邮箱地址
+     * 
+     * @return email */
     public String getEmail() {
         return email;
     }
@@ -173,20 +128,14 @@ public class QueryCorpBasicResultDTO  {
         this.email = email;
     }
 
-    
-
     public QueryCorpBasicResultDTO withAddress(String address) {
         this.address = address;
         return this;
     }
 
-    
-
-
-    /**
-     * 地址
-     * @return address
-     */
+    /** 地址
+     * 
+     * @return address */
     public String getAddress() {
         return address;
     }
@@ -195,20 +144,14 @@ public class QueryCorpBasicResultDTO  {
         this.address = address;
     }
 
-    
-
     public QueryCorpBasicResultDTO withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 备注
-     * @return description
-     */
+    /** 备注
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -217,20 +160,14 @@ public class QueryCorpBasicResultDTO  {
         this.description = description;
     }
 
-    
-
     public QueryCorpBasicResultDTO withSpId(String spId) {
         this.spId = spId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业所属spId
-     * @return spId
-     */
+    /** 企业所属spId
+     * 
+     * @return spId */
     public String getSpId() {
         return spId;
     }
@@ -238,8 +175,6 @@ public class QueryCorpBasicResultDTO  {
     public void setSpId(String spId) {
         this.spId = spId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -250,19 +185,21 @@ public class QueryCorpBasicResultDTO  {
             return false;
         }
         QueryCorpBasicResultDTO queryCorpBasicResultDTO = (QueryCorpBasicResultDTO) o;
-        return Objects.equals(this.name, queryCorpBasicResultDTO.name) &&
-            Objects.equals(this.phone, queryCorpBasicResultDTO.phone) &&
-            Objects.equals(this.country, queryCorpBasicResultDTO.country) &&
-            Objects.equals(this.fax, queryCorpBasicResultDTO.fax) &&
-            Objects.equals(this.email, queryCorpBasicResultDTO.email) &&
-            Objects.equals(this.address, queryCorpBasicResultDTO.address) &&
-            Objects.equals(this.description, queryCorpBasicResultDTO.description) &&
-            Objects.equals(this.spId, queryCorpBasicResultDTO.spId);
+        return Objects.equals(this.name, queryCorpBasicResultDTO.name)
+            && Objects.equals(this.phone, queryCorpBasicResultDTO.phone)
+            && Objects.equals(this.country, queryCorpBasicResultDTO.country)
+            && Objects.equals(this.fax, queryCorpBasicResultDTO.fax)
+            && Objects.equals(this.email, queryCorpBasicResultDTO.email)
+            && Objects.equals(this.address, queryCorpBasicResultDTO.address)
+            && Objects.equals(this.description, queryCorpBasicResultDTO.description)
+            && Objects.equals(this.spId, queryCorpBasicResultDTO.spId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, phone, country, fax, email, address, description, spId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -278,16 +215,13 @@ public class QueryCorpBasicResultDTO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

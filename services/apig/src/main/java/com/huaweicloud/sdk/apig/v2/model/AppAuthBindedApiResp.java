@@ -1,112 +1,85 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * AppAuthBindedApiResp
- */
-public class AppAuthBindedApiResp  {
-
-
+/** AppAuthBindedApiResp */
+public class AppAuthBindedApiResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_id")
-    
+    @JsonProperty(value = "api_id")
+
     private String apiId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_name")
-    
+    @JsonProperty(value = "app_name")
+
     private String appName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_id")
-    
+    @JsonProperty(value = "env_id")
+
     private String envId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_name")
-    
+    @JsonProperty(value = "env_name")
+
     private String envName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_name")
-    
+    @JsonProperty(value = "group_name")
+
     private String groupName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_type")
-    
+    @JsonProperty(value = "api_type")
+
     private Integer apiType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_name")
-    
+    @JsonProperty(value = "api_name")
+
     private String apiName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth_time")
-    
+    @JsonProperty(value = "auth_time")
+
     private OffsetDateTime authTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_creator")
-    
+    @JsonProperty(value = "app_creator")
+
     private String appCreator;
-    /**
-     * APP的类型  默认为apig，暂不支持其他类型
-     */
+
+    /** APP的类型 默认为apig，暂不支持其他类型 */
     public static final class AppTypeEnum {
 
-        
-        /**
-         * Enum APIG for value: "apig"
-         */
+        /** Enum APIG for value: "apig" */
         public static final AppTypeEnum APIG = new AppTypeEnum("apig");
-        
-        /**
-         * Enum ROMA for value: "roma"
-         */
+
+        /** Enum ROMA for value: "roma" */
         public static final AppTypeEnum ROMA = new AppTypeEnum("roma");
-        
 
         private static final Map<String, AppTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -135,7 +108,7 @@ public class AppAuthBindedApiResp  {
 
         @JsonCreator
         public static AppTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AppTypeEnum result = STATIC_FIELDS.get(value);
@@ -146,7 +119,7 @@ public class AppAuthBindedApiResp  {
         }
 
         public static AppTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AppTypeEnum result = STATIC_FIELDS.get(value);
@@ -170,45 +143,34 @@ public class AppAuthBindedApiResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_type")
-    
+    @JsonProperty(value = "app_type")
+
     private AppTypeEnum appType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_remark")
-    
+    @JsonProperty(value = "api_remark")
+
     private String apiRemark;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth_role")
-    
+    @JsonProperty(value = "auth_role")
+
     private String authRole;
-    /**
-     * 授权通道类型 - NORMAL：普通通道 - GREEN：绿色通道  暂不支持，默认NORMAL
-     */
+
+    /** 授权通道类型 - NORMAL：普通通道 - GREEN：绿色通道 暂不支持，默认NORMAL */
     public static final class AuthTunnelEnum {
 
-        
-        /**
-         * Enum NORMAL for value: "NORMAL"
-         */
+        /** Enum NORMAL for value: "NORMAL" */
         public static final AuthTunnelEnum NORMAL = new AuthTunnelEnum("NORMAL");
-        
-        /**
-         * Enum GREEN for value: "GREEN"
-         */
+
+        /** Enum GREEN for value: "GREEN" */
         public static final AuthTunnelEnum GREEN = new AuthTunnelEnum("GREEN");
-        
 
         private static final Map<String, AuthTunnelEnum> STATIC_FIELDS = createStaticFields();
 
@@ -237,7 +199,7 @@ public class AppAuthBindedApiResp  {
 
         @JsonCreator
         public static AuthTunnelEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AuthTunnelEnum result = STATIC_FIELDS.get(value);
@@ -248,7 +210,7 @@ public class AppAuthBindedApiResp  {
         }
 
         public static AuthTunnelEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AuthTunnelEnum result = STATIC_FIELDS.get(value);
@@ -272,36 +234,29 @@ public class AppAuthBindedApiResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth_tunnel")
-    
+    @JsonProperty(value = "auth_tunnel")
+
     private AuthTunnelEnum authTunnel;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth_whitelist")
-    
+    @JsonProperty(value = "auth_whitelist")
+
     private List<String> authWhitelist = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth_blacklist")
-    
+    @JsonProperty(value = "auth_blacklist")
+
     private List<String> authBlacklist = null;
-    
+
     public AppAuthBindedApiResp withApiId(String apiId) {
         this.apiId = apiId;
         return this;
     }
 
-    
-
-
-    /**
-     * API的编号
-     * @return apiId
-     */
+    /** API的编号
+     * 
+     * @return apiId */
     public String getApiId() {
         return apiId;
     }
@@ -310,20 +265,14 @@ public class AppAuthBindedApiResp  {
         this.apiId = apiId;
     }
 
-    
-
     public AppAuthBindedApiResp withAppName(String appName) {
         this.appName = appName;
         return this;
     }
 
-    
-
-
-    /**
-     * APP的名称
-     * @return appName
-     */
+    /** APP的名称
+     * 
+     * @return appName */
     public String getAppName() {
         return appName;
     }
@@ -332,20 +281,14 @@ public class AppAuthBindedApiResp  {
         this.appName = appName;
     }
 
-    
-
     public AppAuthBindedApiResp withEnvId(String envId) {
         this.envId = envId;
         return this;
     }
 
-    
-
-
-    /**
-     * api授权绑定的环境ID
-     * @return envId
-     */
+    /** api授权绑定的环境ID
+     * 
+     * @return envId */
     public String getEnvId() {
         return envId;
     }
@@ -354,20 +297,14 @@ public class AppAuthBindedApiResp  {
         this.envId = envId;
     }
 
-    
-
     public AppAuthBindedApiResp withEnvName(String envName) {
         this.envName = envName;
         return this;
     }
 
-    
-
-
-    /**
-     * api授权绑定的环境名称
-     * @return envName
-     */
+    /** api授权绑定的环境名称
+     * 
+     * @return envName */
     public String getEnvName() {
         return envName;
     }
@@ -376,20 +313,14 @@ public class AppAuthBindedApiResp  {
         this.envName = envName;
     }
 
-    
-
     public AppAuthBindedApiResp withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * API绑定的分组ID
-     * @return groupId
-     */
+    /** API绑定的分组ID
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -398,20 +329,14 @@ public class AppAuthBindedApiResp  {
         this.groupId = groupId;
     }
 
-    
-
     public AppAuthBindedApiResp withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
     }
 
-    
-
-
-    /**
-     * API绑定的分组名称
-     * @return groupName
-     */
+    /** API绑定的分组名称
+     * 
+     * @return groupName */
     public String getGroupName() {
         return groupName;
     }
@@ -420,20 +345,14 @@ public class AppAuthBindedApiResp  {
         this.groupName = groupName;
     }
 
-    
-
     public AppAuthBindedApiResp withApiType(Integer apiType) {
         this.apiType = apiType;
         return this;
     }
 
-    
-
-
-    /**
-     * API类型
-     * @return apiType
-     */
+    /** API类型
+     * 
+     * @return apiType */
     public Integer getApiType() {
         return apiType;
     }
@@ -442,20 +361,14 @@ public class AppAuthBindedApiResp  {
         this.apiType = apiType;
     }
 
-    
-
     public AppAuthBindedApiResp withApiName(String apiName) {
         this.apiName = apiName;
         return this;
     }
 
-    
-
-
-    /**
-     * API的名称
-     * @return apiName
-     */
+    /** API的名称
+     * 
+     * @return apiName */
     public String getApiName() {
         return apiName;
     }
@@ -464,20 +377,14 @@ public class AppAuthBindedApiResp  {
         this.apiName = apiName;
     }
 
-    
-
     public AppAuthBindedApiResp withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * APP的编号
-     * @return appId
-     */
+    /** APP的编号
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -486,20 +393,14 @@ public class AppAuthBindedApiResp  {
         this.appId = appId;
     }
 
-    
-
     public AppAuthBindedApiResp withAuthTime(OffsetDateTime authTime) {
         this.authTime = authTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 授权创建的时间
-     * @return authTime
-     */
+    /** 授权创建的时间
+     * 
+     * @return authTime */
     public OffsetDateTime getAuthTime() {
         return authTime;
     }
@@ -508,20 +409,14 @@ public class AppAuthBindedApiResp  {
         this.authTime = authTime;
     }
 
-    
-
     public AppAuthBindedApiResp withAppCreator(String appCreator) {
         this.appCreator = appCreator;
         return this;
     }
 
-    
-
-
-    /**
-     * APP的创建者，取值如下： - USER：租户自己创建 - MARKET：API市场分配
-     * @return appCreator
-     */
+    /** APP的创建者，取值如下： - USER：租户自己创建 - MARKET：API市场分配
+     * 
+     * @return appCreator */
     public String getAppCreator() {
         return appCreator;
     }
@@ -530,20 +425,14 @@ public class AppAuthBindedApiResp  {
         this.appCreator = appCreator;
     }
 
-    
-
     public AppAuthBindedApiResp withAppType(AppTypeEnum appType) {
         this.appType = appType;
         return this;
     }
 
-    
-
-
-    /**
-     * APP的类型  默认为apig，暂不支持其他类型
-     * @return appType
-     */
+    /** APP的类型 默认为apig，暂不支持其他类型
+     * 
+     * @return appType */
     public AppTypeEnum getAppType() {
         return appType;
     }
@@ -552,20 +441,14 @@ public class AppAuthBindedApiResp  {
         this.appType = appType;
     }
 
-    
-
     public AppAuthBindedApiResp withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 授权关系编号
-     * @return id
-     */
+    /** 授权关系编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -574,20 +457,14 @@ public class AppAuthBindedApiResp  {
         this.id = id;
     }
 
-    
-
     public AppAuthBindedApiResp withApiRemark(String apiRemark) {
         this.apiRemark = apiRemark;
         return this;
     }
 
-    
-
-
-    /**
-     * API的描述信息
-     * @return apiRemark
-     */
+    /** API的描述信息
+     * 
+     * @return apiRemark */
     public String getApiRemark() {
         return apiRemark;
     }
@@ -596,20 +473,14 @@ public class AppAuthBindedApiResp  {
         this.apiRemark = apiRemark;
     }
 
-    
-
     public AppAuthBindedApiResp withAuthRole(String authRole) {
         this.authRole = authRole;
         return this;
     }
 
-    
-
-
-    /**
-     * 授权者
-     * @return authRole
-     */
+    /** 授权者
+     * 
+     * @return authRole */
     public String getAuthRole() {
         return authRole;
     }
@@ -618,20 +489,14 @@ public class AppAuthBindedApiResp  {
         this.authRole = authRole;
     }
 
-    
-
     public AppAuthBindedApiResp withAuthTunnel(AuthTunnelEnum authTunnel) {
         this.authTunnel = authTunnel;
         return this;
     }
 
-    
-
-
-    /**
-     * 授权通道类型 - NORMAL：普通通道 - GREEN：绿色通道  暂不支持，默认NORMAL
-     * @return authTunnel
-     */
+    /** 授权通道类型 - NORMAL：普通通道 - GREEN：绿色通道 暂不支持，默认NORMAL
+     * 
+     * @return authTunnel */
     public AuthTunnelEnum getAuthTunnel() {
         return authTunnel;
     }
@@ -640,16 +505,13 @@ public class AppAuthBindedApiResp  {
         this.authTunnel = authTunnel;
     }
 
-    
-
     public AppAuthBindedApiResp withAuthWhitelist(List<String> authWhitelist) {
         this.authWhitelist = authWhitelist;
         return this;
     }
 
-    
     public AppAuthBindedApiResp addAuthWhitelistItem(String authWhitelistItem) {
-        if(this.authWhitelist == null) {
+        if (this.authWhitelist == null) {
             this.authWhitelist = new ArrayList<>();
         }
         this.authWhitelist.add(authWhitelistItem);
@@ -657,17 +519,16 @@ public class AppAuthBindedApiResp  {
     }
 
     public AppAuthBindedApiResp withAuthWhitelist(Consumer<List<String>> authWhitelistSetter) {
-        if(this.authWhitelist == null) {
+        if (this.authWhitelist == null) {
             this.authWhitelist = new ArrayList<>();
         }
         authWhitelistSetter.accept(this.authWhitelist);
         return this;
     }
 
-    /**
-     * 绿色通道的白名单配置
-     * @return authWhitelist
-     */
+    /** 绿色通道的白名单配置
+     * 
+     * @return authWhitelist */
     public List<String> getAuthWhitelist() {
         return authWhitelist;
     }
@@ -676,16 +537,13 @@ public class AppAuthBindedApiResp  {
         this.authWhitelist = authWhitelist;
     }
 
-    
-
     public AppAuthBindedApiResp withAuthBlacklist(List<String> authBlacklist) {
         this.authBlacklist = authBlacklist;
         return this;
     }
 
-    
     public AppAuthBindedApiResp addAuthBlacklistItem(String authBlacklistItem) {
-        if(this.authBlacklist == null) {
+        if (this.authBlacklist == null) {
             this.authBlacklist = new ArrayList<>();
         }
         this.authBlacklist.add(authBlacklistItem);
@@ -693,17 +551,16 @@ public class AppAuthBindedApiResp  {
     }
 
     public AppAuthBindedApiResp withAuthBlacklist(Consumer<List<String>> authBlacklistSetter) {
-        if(this.authBlacklist == null) {
+        if (this.authBlacklist == null) {
             this.authBlacklist = new ArrayList<>();
         }
         authBlacklistSetter.accept(this.authBlacklist);
         return this;
     }
 
-    /**
-     * 绿色通道的黑名单配置
-     * @return authBlacklist
-     */
+    /** 绿色通道的黑名单配置
+     * 
+     * @return authBlacklist */
     public List<String> getAuthBlacklist() {
         return authBlacklist;
     }
@@ -711,8 +568,6 @@ public class AppAuthBindedApiResp  {
     public void setAuthBlacklist(List<String> authBlacklist) {
         this.authBlacklist = authBlacklist;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -723,29 +578,48 @@ public class AppAuthBindedApiResp  {
             return false;
         }
         AppAuthBindedApiResp appAuthBindedApiResp = (AppAuthBindedApiResp) o;
-        return Objects.equals(this.apiId, appAuthBindedApiResp.apiId) &&
-            Objects.equals(this.appName, appAuthBindedApiResp.appName) &&
-            Objects.equals(this.envId, appAuthBindedApiResp.envId) &&
-            Objects.equals(this.envName, appAuthBindedApiResp.envName) &&
-            Objects.equals(this.groupId, appAuthBindedApiResp.groupId) &&
-            Objects.equals(this.groupName, appAuthBindedApiResp.groupName) &&
-            Objects.equals(this.apiType, appAuthBindedApiResp.apiType) &&
-            Objects.equals(this.apiName, appAuthBindedApiResp.apiName) &&
-            Objects.equals(this.appId, appAuthBindedApiResp.appId) &&
-            Objects.equals(this.authTime, appAuthBindedApiResp.authTime) &&
-            Objects.equals(this.appCreator, appAuthBindedApiResp.appCreator) &&
-            Objects.equals(this.appType, appAuthBindedApiResp.appType) &&
-            Objects.equals(this.id, appAuthBindedApiResp.id) &&
-            Objects.equals(this.apiRemark, appAuthBindedApiResp.apiRemark) &&
-            Objects.equals(this.authRole, appAuthBindedApiResp.authRole) &&
-            Objects.equals(this.authTunnel, appAuthBindedApiResp.authTunnel) &&
-            Objects.equals(this.authWhitelist, appAuthBindedApiResp.authWhitelist) &&
-            Objects.equals(this.authBlacklist, appAuthBindedApiResp.authBlacklist);
+        return Objects.equals(this.apiId, appAuthBindedApiResp.apiId)
+            && Objects.equals(this.appName, appAuthBindedApiResp.appName)
+            && Objects.equals(this.envId, appAuthBindedApiResp.envId)
+            && Objects.equals(this.envName, appAuthBindedApiResp.envName)
+            && Objects.equals(this.groupId, appAuthBindedApiResp.groupId)
+            && Objects.equals(this.groupName, appAuthBindedApiResp.groupName)
+            && Objects.equals(this.apiType, appAuthBindedApiResp.apiType)
+            && Objects.equals(this.apiName, appAuthBindedApiResp.apiName)
+            && Objects.equals(this.appId, appAuthBindedApiResp.appId)
+            && Objects.equals(this.authTime, appAuthBindedApiResp.authTime)
+            && Objects.equals(this.appCreator, appAuthBindedApiResp.appCreator)
+            && Objects.equals(this.appType, appAuthBindedApiResp.appType)
+            && Objects.equals(this.id, appAuthBindedApiResp.id)
+            && Objects.equals(this.apiRemark, appAuthBindedApiResp.apiRemark)
+            && Objects.equals(this.authRole, appAuthBindedApiResp.authRole)
+            && Objects.equals(this.authTunnel, appAuthBindedApiResp.authTunnel)
+            && Objects.equals(this.authWhitelist, appAuthBindedApiResp.authWhitelist)
+            && Objects.equals(this.authBlacklist, appAuthBindedApiResp.authBlacklist);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(apiId, appName, envId, envName, groupId, groupName, apiType, apiName, appId, authTime, appCreator, appType, id, apiRemark, authRole, authTunnel, authWhitelist, authBlacklist);
+        return Objects.hash(apiId,
+            appName,
+            envId,
+            envName,
+            groupId,
+            groupName,
+            apiType,
+            apiName,
+            appId,
+            authTime,
+            appCreator,
+            appType,
+            id,
+            apiRemark,
+            authRole,
+            authTunnel,
+            authWhitelist,
+            authBlacklist);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -771,16 +645,13 @@ public class AppAuthBindedApiResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

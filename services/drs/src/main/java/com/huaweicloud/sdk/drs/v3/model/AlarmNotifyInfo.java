@@ -1,69 +1,49 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.SubscriptionInfo;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 异常通知信息
- */
-public class AlarmNotifyInfo  {
-
-
+/** 异常通知信息 */
+public class AlarmNotifyInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="delay_time")
-    
+    @JsonProperty(value = "delay_time")
+
     private Long delayTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rto_delay")
-    
+    @JsonProperty(value = "rto_delay")
+
     private Long rtoDelay;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rpo_delay")
-    
+    @JsonProperty(value = "rpo_delay")
+
     private Long rpoDelay;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_to_user")
-    
+    @JsonProperty(value = "alarm_to_user")
+
     private Boolean alarmToUser;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subscriptions")
-    
+    @JsonProperty(value = "subscriptions")
+
     private List<SubscriptionInfo> subscriptions = null;
-    
+
     public AlarmNotifyInfo withDelayTime(Long delayTime) {
         this.delayTime = delayTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 订阅延迟时间(单位为s)
-     * minimum: 1
-     * maximum: 3600
-     * @return delayTime
-     */
+    /** 订阅延迟时间(单位为s) minimum: 1 maximum: 3600
+     * 
+     * @return delayTime */
     public Long getDelayTime() {
         return delayTime;
     }
@@ -72,22 +52,14 @@ public class AlarmNotifyInfo  {
         this.delayTime = delayTime;
     }
 
-    
-
     public AlarmNotifyInfo withRtoDelay(Long rtoDelay) {
         this.rtoDelay = rtoDelay;
         return this;
     }
 
-    
-
-
-    /**
-     * rto延迟时间
-     * minimum: 1
-     * maximum: 3600
-     * @return rtoDelay
-     */
+    /** rto延迟时间 minimum: 1 maximum: 3600
+     * 
+     * @return rtoDelay */
     public Long getRtoDelay() {
         return rtoDelay;
     }
@@ -96,22 +68,14 @@ public class AlarmNotifyInfo  {
         this.rtoDelay = rtoDelay;
     }
 
-    
-
     public AlarmNotifyInfo withRpoDelay(Long rpoDelay) {
         this.rpoDelay = rpoDelay;
         return this;
     }
 
-    
-
-
-    /**
-     * rpo延迟时间
-     * minimum: 1
-     * maximum: 3600
-     * @return rpoDelay
-     */
+    /** rpo延迟时间 minimum: 1 maximum: 3600
+     * 
+     * @return rpoDelay */
     public Long getRpoDelay() {
         return rpoDelay;
     }
@@ -120,20 +84,14 @@ public class AlarmNotifyInfo  {
         this.rpoDelay = rpoDelay;
     }
 
-    
-
     public AlarmNotifyInfo withAlarmToUser(Boolean alarmToUser) {
         this.alarmToUser = alarmToUser;
         return this;
     }
 
-    
-
-
-    /**
-     * 异常告警是否通知用户
-     * @return alarmToUser
-     */
+    /** 异常告警是否通知用户
+     * 
+     * @return alarmToUser */
     public Boolean getAlarmToUser() {
         return alarmToUser;
     }
@@ -142,16 +100,13 @@ public class AlarmNotifyInfo  {
         this.alarmToUser = alarmToUser;
     }
 
-    
-
     public AlarmNotifyInfo withSubscriptions(List<SubscriptionInfo> subscriptions) {
         this.subscriptions = subscriptions;
         return this;
     }
 
-    
     public AlarmNotifyInfo addSubscriptionsItem(SubscriptionInfo subscriptionsItem) {
-        if(this.subscriptions == null) {
+        if (this.subscriptions == null) {
             this.subscriptions = new ArrayList<>();
         }
         this.subscriptions.add(subscriptionsItem);
@@ -159,17 +114,16 @@ public class AlarmNotifyInfo  {
     }
 
     public AlarmNotifyInfo withSubscriptions(Consumer<List<SubscriptionInfo>> subscriptionsSetter) {
-        if(this.subscriptions == null) {
+        if (this.subscriptions == null) {
             this.subscriptions = new ArrayList<>();
         }
         subscriptionsSetter.accept(this.subscriptions);
         return this;
     }
 
-    /**
-     * 收件方式与信息体
-     * @return subscriptions
-     */
+    /** 收件方式与信息体
+     * 
+     * @return subscriptions */
     public List<SubscriptionInfo> getSubscriptions() {
         return subscriptions;
     }
@@ -177,8 +131,6 @@ public class AlarmNotifyInfo  {
     public void setSubscriptions(List<SubscriptionInfo> subscriptions) {
         this.subscriptions = subscriptions;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -189,16 +141,18 @@ public class AlarmNotifyInfo  {
             return false;
         }
         AlarmNotifyInfo alarmNotifyInfo = (AlarmNotifyInfo) o;
-        return Objects.equals(this.delayTime, alarmNotifyInfo.delayTime) &&
-            Objects.equals(this.rtoDelay, alarmNotifyInfo.rtoDelay) &&
-            Objects.equals(this.rpoDelay, alarmNotifyInfo.rpoDelay) &&
-            Objects.equals(this.alarmToUser, alarmNotifyInfo.alarmToUser) &&
-            Objects.equals(this.subscriptions, alarmNotifyInfo.subscriptions);
+        return Objects.equals(this.delayTime, alarmNotifyInfo.delayTime)
+            && Objects.equals(this.rtoDelay, alarmNotifyInfo.rtoDelay)
+            && Objects.equals(this.rpoDelay, alarmNotifyInfo.rpoDelay)
+            && Objects.equals(this.alarmToUser, alarmNotifyInfo.alarmToUser)
+            && Objects.equals(this.subscriptions, alarmNotifyInfo.subscriptions);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(delayTime, rtoDelay, rpoDelay, alarmToUser, subscriptions);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -211,16 +165,13 @@ public class AlarmNotifyInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 函数挂载结构体。
- */
-public class FuncMount  {
-
-
+/** 函数挂载结构体。 */
+public class FuncMount {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mount_type")
-    
+    @JsonProperty(value = "mount_type")
+
     private String mountType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mount_resource")
-    
+    @JsonProperty(value = "mount_resource")
+
     private String mountResource;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mount_share_path")
-    
+    @JsonProperty(value = "mount_share_path")
+
     private String mountSharePath;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="local_mount_path")
-    
+    @JsonProperty(value = "local_mount_path")
+
     private String localMountPath;
 
     public FuncMount withMountType(String mountType) {
@@ -46,13 +33,9 @@ public class FuncMount  {
         return this;
     }
 
-    
-
-
-    /**
-     * 挂载类型(sfs/sfsTurbo/ecs)，func_mounts非空时必选。
-     * @return mountType
-     */
+    /** 挂载类型(sfs/sfsTurbo/ecs)，func_mounts非空时必选。
+     * 
+     * @return mountType */
     public String getMountType() {
         return mountType;
     }
@@ -61,20 +44,14 @@ public class FuncMount  {
         this.mountType = mountType;
     }
 
-    
-
     public FuncMount withMountResource(String mountResource) {
         this.mountResource = mountResource;
         return this;
     }
 
-    
-
-
-    /**
-     * 挂载资源ID（对应云服务ID），func_mounts非空时必选。
-     * @return mountResource
-     */
+    /** 挂载资源ID（对应云服务ID），func_mounts非空时必选。
+     * 
+     * @return mountResource */
     public String getMountResource() {
         return mountResource;
     }
@@ -83,20 +60,14 @@ public class FuncMount  {
         this.mountResource = mountResource;
     }
 
-    
-
     public FuncMount withMountSharePath(String mountSharePath) {
         this.mountSharePath = mountSharePath;
         return this;
     }
 
-    
-
-
-    /**
-     * 远端挂载路径（例如192.168.0.12:/data），如果mount_type为ecs，必选。
-     * @return mountSharePath
-     */
+    /** 远端挂载路径（例如192.168.0.12:/data），如果mount_type为ecs，必选。
+     * 
+     * @return mountSharePath */
     public String getMountSharePath() {
         return mountSharePath;
     }
@@ -105,20 +76,14 @@ public class FuncMount  {
         this.mountSharePath = mountSharePath;
     }
 
-    
-
     public FuncMount withLocalMountPath(String localMountPath) {
         this.localMountPath = localMountPath;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数访问路径，func_mounts非空时必选。
-     * @return localMountPath
-     */
+    /** 函数访问路径，func_mounts非空时必选。
+     * 
+     * @return localMountPath */
     public String getLocalMountPath() {
         return localMountPath;
     }
@@ -126,8 +91,6 @@ public class FuncMount  {
     public void setLocalMountPath(String localMountPath) {
         this.localMountPath = localMountPath;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class FuncMount  {
             return false;
         }
         FuncMount funcMount = (FuncMount) o;
-        return Objects.equals(this.mountType, funcMount.mountType) &&
-            Objects.equals(this.mountResource, funcMount.mountResource) &&
-            Objects.equals(this.mountSharePath, funcMount.mountSharePath) &&
-            Objects.equals(this.localMountPath, funcMount.localMountPath);
+        return Objects.equals(this.mountType, funcMount.mountType)
+            && Objects.equals(this.mountResource, funcMount.mountResource)
+            && Objects.equals(this.mountSharePath, funcMount.mountSharePath)
+            && Objects.equals(this.localMountPath, funcMount.localMountPath);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(mountType, mountResource, mountSharePath, localMountPath);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class FuncMount  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

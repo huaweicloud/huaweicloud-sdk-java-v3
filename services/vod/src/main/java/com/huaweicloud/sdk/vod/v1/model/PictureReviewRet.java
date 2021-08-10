@@ -1,49 +1,32 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vod.v1.model.ReviewDetail;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 图片审核结果
- */
-public class PictureReviewRet  {
+/** 图片审核结果 */
+public class PictureReviewRet {
 
-    /**
-     * 检测结果是否通过。  取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。
-     */
+    /** 检测结果是否通过。 取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。 */
     public static final class SuggestionEnum {
 
-        
-        /**
-         * Enum BLOCK for value: "block"
-         */
+        /** Enum BLOCK for value: "block" */
         public static final SuggestionEnum BLOCK = new SuggestionEnum("block");
-        
-        /**
-         * Enum PASS for value: "pass"
-         */
+
+        /** Enum PASS for value: "pass" */
         public static final SuggestionEnum PASS = new SuggestionEnum("pass");
-        
-        /**
-         * Enum REVIEW for value: "review"
-         */
+
+        /** Enum REVIEW for value: "review" */
         public static final SuggestionEnum REVIEW = new SuggestionEnum("review");
-        
 
         private static final Map<String, SuggestionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -73,7 +56,7 @@ public class PictureReviewRet  {
 
         @JsonCreator
         public static SuggestionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SuggestionEnum result = STATIC_FIELDS.get(value);
@@ -84,7 +67,7 @@ public class PictureReviewRet  {
         }
 
         public static SuggestionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SuggestionEnum result = STATIC_FIELDS.get(value);
@@ -108,54 +91,44 @@ public class PictureReviewRet  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="suggestion")
-    
+    @JsonProperty(value = "suggestion")
+
     private SuggestionEnum suggestion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private String url;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="politics")
-    
+    @JsonProperty(value = "politics")
+
     private List<ReviewDetail> politics = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="terrorism")
-    
+    @JsonProperty(value = "terrorism")
+
     private List<ReviewDetail> terrorism = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="porn")
-    
+    @JsonProperty(value = "porn")
+
     private List<ReviewDetail> porn = null;
-    
+
     public PictureReviewRet withSuggestion(SuggestionEnum suggestion) {
         this.suggestion = suggestion;
         return this;
     }
 
-    
-
-
-    /**
-     * 检测结果是否通过。  取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。
-     * @return suggestion
-     */
+    /** 检测结果是否通过。 取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。
+     * 
+     * @return suggestion */
     public SuggestionEnum getSuggestion() {
         return suggestion;
     }
@@ -164,20 +137,14 @@ public class PictureReviewRet  {
         this.suggestion = suggestion;
     }
 
-    
-
     public PictureReviewRet withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 截图在视频中的时间偏移值。封面不涉及此字段  单位：秒。
-     * @return offset
-     */
+    /** 截图在视频中的时间偏移值。封面不涉及此字段 单位：秒。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -186,20 +153,14 @@ public class PictureReviewRet  {
         this.offset = offset;
     }
 
-    
-
     public PictureReviewRet withUrl(String url) {
         this.url = url;
         return this;
     }
 
-    
-
-
-    /**
-     * 对应截图/封面的访问URL。
-     * @return url
-     */
+    /** 对应截图/封面的访问URL。
+     * 
+     * @return url */
     public String getUrl() {
         return url;
     }
@@ -208,16 +169,13 @@ public class PictureReviewRet  {
         this.url = url;
     }
 
-    
-
     public PictureReviewRet withPolitics(List<ReviewDetail> politics) {
         this.politics = politics;
         return this;
     }
 
-    
     public PictureReviewRet addPoliticsItem(ReviewDetail politicsItem) {
-        if(this.politics == null) {
+        if (this.politics == null) {
             this.politics = new ArrayList<>();
         }
         this.politics.add(politicsItem);
@@ -225,17 +183,16 @@ public class PictureReviewRet  {
     }
 
     public PictureReviewRet withPolitics(Consumer<List<ReviewDetail>> politicsSetter) {
-        if(this.politics == null) {
+        if (this.politics == null) {
             this.politics = new ArrayList<>();
         }
         politicsSetter.accept(this.politics);
         return this;
     }
 
-    /**
-     * 政治因素审核结果。
-     * @return politics
-     */
+    /** 政治因素审核结果。
+     * 
+     * @return politics */
     public List<ReviewDetail> getPolitics() {
         return politics;
     }
@@ -244,16 +201,13 @@ public class PictureReviewRet  {
         this.politics = politics;
     }
 
-    
-
     public PictureReviewRet withTerrorism(List<ReviewDetail> terrorism) {
         this.terrorism = terrorism;
         return this;
     }
 
-    
     public PictureReviewRet addTerrorismItem(ReviewDetail terrorismItem) {
-        if(this.terrorism == null) {
+        if (this.terrorism == null) {
             this.terrorism = new ArrayList<>();
         }
         this.terrorism.add(terrorismItem);
@@ -261,17 +215,16 @@ public class PictureReviewRet  {
     }
 
     public PictureReviewRet withTerrorism(Consumer<List<ReviewDetail>> terrorismSetter) {
-        if(this.terrorism == null) {
+        if (this.terrorism == null) {
             this.terrorism = new ArrayList<>();
         }
         terrorismSetter.accept(this.terrorism);
         return this;
     }
 
-    /**
-     * 暴恐元素审核结果。
-     * @return terrorism
-     */
+    /** 暴恐元素审核结果。
+     * 
+     * @return terrorism */
     public List<ReviewDetail> getTerrorism() {
         return terrorism;
     }
@@ -280,16 +233,13 @@ public class PictureReviewRet  {
         this.terrorism = terrorism;
     }
 
-    
-
     public PictureReviewRet withPorn(List<ReviewDetail> porn) {
         this.porn = porn;
         return this;
     }
 
-    
     public PictureReviewRet addPornItem(ReviewDetail pornItem) {
-        if(this.porn == null) {
+        if (this.porn == null) {
             this.porn = new ArrayList<>();
         }
         this.porn.add(pornItem);
@@ -297,17 +247,16 @@ public class PictureReviewRet  {
     }
 
     public PictureReviewRet withPorn(Consumer<List<ReviewDetail>> pornSetter) {
-        if(this.porn == null) {
+        if (this.porn == null) {
             this.porn = new ArrayList<>();
         }
         pornSetter.accept(this.porn);
         return this;
     }
 
-    /**
-     * 涉黄内容审核结果。
-     * @return porn
-     */
+    /** 涉黄内容审核结果。
+     * 
+     * @return porn */
     public List<ReviewDetail> getPorn() {
         return porn;
     }
@@ -315,8 +264,6 @@ public class PictureReviewRet  {
     public void setPorn(List<ReviewDetail> porn) {
         this.porn = porn;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -327,17 +274,18 @@ public class PictureReviewRet  {
             return false;
         }
         PictureReviewRet pictureReviewRet = (PictureReviewRet) o;
-        return Objects.equals(this.suggestion, pictureReviewRet.suggestion) &&
-            Objects.equals(this.offset, pictureReviewRet.offset) &&
-            Objects.equals(this.url, pictureReviewRet.url) &&
-            Objects.equals(this.politics, pictureReviewRet.politics) &&
-            Objects.equals(this.terrorism, pictureReviewRet.terrorism) &&
-            Objects.equals(this.porn, pictureReviewRet.porn);
+        return Objects.equals(this.suggestion, pictureReviewRet.suggestion)
+            && Objects.equals(this.offset, pictureReviewRet.offset) && Objects.equals(this.url, pictureReviewRet.url)
+            && Objects.equals(this.politics, pictureReviewRet.politics)
+            && Objects.equals(this.terrorism, pictureReviewRet.terrorism)
+            && Objects.equals(this.porn, pictureReviewRet.porn);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(suggestion, offset, url, politics, terrorism, porn);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -351,16 +299,13 @@ public class PictureReviewRet  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,50 +1,32 @@
 package com.huaweicloud.sdk.kps.v3.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kps.v3.model.KeyProtection;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 创建密钥对请求体请求参数
- */
-public class CreateKeypairAction  {
-
-
+/** 创建密钥对请求体请求参数 */
+public class CreateKeypairAction {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * SSH密钥对的类型
-     */
+
+    /** SSH密钥对的类型 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum SSH for value: "ssh"
-         */
+        /** Enum SSH for value: "ssh" */
         public static final TypeEnum SSH = new TypeEnum("ssh");
-        
-        /**
-         * Enum X509 for value: "x509"
-         */
+
+        /** Enum X509 for value: "x509" */
         public static final TypeEnum X509 = new TypeEnum("x509");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -73,7 +55,7 @@ public class CreateKeypairAction  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -84,7 +66,7 @@ public class CreateKeypairAction  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -108,33 +90,24 @@ public class CreateKeypairAction  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="public_key")
-    
+    @JsonProperty(value = "public_key")
+
     private String publicKey;
-    /**
-     * 租户级或者用户级
-     */
+
+    /** 租户级或者用户级 */
     public static final class ScopeEnum {
 
-        
-        /**
-         * Enum DOMAIN for value: "domain"
-         */
+        /** Enum DOMAIN for value: "domain" */
         public static final ScopeEnum DOMAIN = new ScopeEnum("domain");
-        
-        /**
-         * Enum USER for value: "user"
-         */
+
+        /** Enum USER for value: "user" */
         public static final ScopeEnum USER = new ScopeEnum("user");
-        
 
         private static final Map<String, ScopeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -163,7 +136,7 @@ public class CreateKeypairAction  {
 
         @JsonCreator
         public static ScopeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ScopeEnum result = STATIC_FIELDS.get(value);
@@ -174,7 +147,7 @@ public class CreateKeypairAction  {
         }
 
         public static ScopeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ScopeEnum result = STATIC_FIELDS.get(value);
@@ -198,22 +171,19 @@ public class CreateKeypairAction  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scope")
-    
+    @JsonProperty(value = "scope")
+
     private ScopeEnum scope;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_id")
-    
+    @JsonProperty(value = "user_id")
+
     private String userId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_protection")
-    
+    @JsonProperty(value = "key_protection")
+
     private KeyProtection keyProtection;
 
     public CreateKeypairAction withName(String name) {
@@ -221,13 +191,9 @@ public class CreateKeypairAction  {
         return this;
     }
 
-    
-
-
-    /**
-     * SSH密钥对的名称。 - 新创建的密钥对名称不能和已有密钥对的名称相同。 - SSH密钥对名称由英文字母、数字、下划线、中划线组成，长度不能超过64个字节
-     * @return name
-     */
+    /** SSH密钥对的名称。 - 新创建的密钥对名称不能和已有密钥对的名称相同。 - SSH密钥对名称由英文字母、数字、下划线、中划线组成，长度不能超过64个字节
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -236,20 +202,14 @@ public class CreateKeypairAction  {
         this.name = name;
     }
 
-    
-
     public CreateKeypairAction withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * SSH密钥对的类型
-     * @return type
-     */
+    /** SSH密钥对的类型
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -258,20 +218,14 @@ public class CreateKeypairAction  {
         this.type = type;
     }
 
-    
-
     public CreateKeypairAction withPublicKey(String publicKey) {
         this.publicKey = publicKey;
         return this;
     }
 
-    
-
-
-    /**
-     * 导入公钥的字符串信息。
-     * @return publicKey
-     */
+    /** 导入公钥的字符串信息。
+     * 
+     * @return publicKey */
     public String getPublicKey() {
         return publicKey;
     }
@@ -280,20 +234,14 @@ public class CreateKeypairAction  {
         this.publicKey = publicKey;
     }
 
-    
-
     public CreateKeypairAction withScope(ScopeEnum scope) {
         this.scope = scope;
         return this;
     }
 
-    
-
-
-    /**
-     * 租户级或者用户级
-     * @return scope
-     */
+    /** 租户级或者用户级
+     * 
+     * @return scope */
     public ScopeEnum getScope() {
         return scope;
     }
@@ -302,20 +250,14 @@ public class CreateKeypairAction  {
         this.scope = scope;
     }
 
-    
-
     public CreateKeypairAction withUserId(String userId) {
         this.userId = userId;
         return this;
     }
 
-    
-
-
-    /**
-     * SSH密钥对所属的用户信息
-     * @return userId
-     */
+    /** SSH密钥对所属的用户信息
+     * 
+     * @return userId */
     public String getUserId() {
         return userId;
     }
@@ -324,27 +266,23 @@ public class CreateKeypairAction  {
         this.userId = userId;
     }
 
-    
-
     public CreateKeypairAction withKeyProtection(KeyProtection keyProtection) {
         this.keyProtection = keyProtection;
         return this;
     }
 
     public CreateKeypairAction withKeyProtection(Consumer<KeyProtection> keyProtectionSetter) {
-        if(this.keyProtection == null ){
+        if (this.keyProtection == null) {
             this.keyProtection = new KeyProtection();
             keyProtectionSetter.accept(this.keyProtection);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get keyProtection
-     * @return keyProtection
-     */
+    /** Get keyProtection
+     * 
+     * @return keyProtection */
     public KeyProtection getKeyProtection() {
         return keyProtection;
     }
@@ -352,8 +290,6 @@ public class CreateKeypairAction  {
     public void setKeyProtection(KeyProtection keyProtection) {
         this.keyProtection = keyProtection;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -364,17 +300,19 @@ public class CreateKeypairAction  {
             return false;
         }
         CreateKeypairAction createKeypairAction = (CreateKeypairAction) o;
-        return Objects.equals(this.name, createKeypairAction.name) &&
-            Objects.equals(this.type, createKeypairAction.type) &&
-            Objects.equals(this.publicKey, createKeypairAction.publicKey) &&
-            Objects.equals(this.scope, createKeypairAction.scope) &&
-            Objects.equals(this.userId, createKeypairAction.userId) &&
-            Objects.equals(this.keyProtection, createKeypairAction.keyProtection);
+        return Objects.equals(this.name, createKeypairAction.name)
+            && Objects.equals(this.type, createKeypairAction.type)
+            && Objects.equals(this.publicKey, createKeypairAction.publicKey)
+            && Objects.equals(this.scope, createKeypairAction.scope)
+            && Objects.equals(this.userId, createKeypairAction.userId)
+            && Objects.equals(this.keyProtection, createKeypairAction.keyProtection);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, type, publicKey, scope, userId, keyProtection);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -388,16 +326,13 @@ public class CreateKeypairAction  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

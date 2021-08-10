@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ValidateTokenReqDTO
- */
-public class ValidateTokenReqDTO  {
-
-
+/** ValidateTokenReqDTO */
+public class ValidateTokenReqDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="token")
-    
+    @JsonProperty(value = "token")
+
     private String token;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="needGenNewToken")
-    
+    @JsonProperty(value = "needGenNewToken")
+
     private Boolean needGenNewToken;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="needAccountInfo")
-    
+    @JsonProperty(value = "needAccountInfo")
+
     private Boolean needAccountInfo;
 
     public ValidateTokenReqDTO withToken(String token) {
@@ -40,13 +28,9 @@ public class ValidateTokenReqDTO  {
         return this;
     }
 
-    
-
-
-    /**
-     * 登录用账号的token字符串
-     * @return token
-     */
+    /** 登录用账号的token字符串
+     * 
+     * @return token */
     public String getToken() {
         return token;
     }
@@ -55,20 +39,14 @@ public class ValidateTokenReqDTO  {
         this.token = token;
     }
 
-    
-
     public ValidateTokenReqDTO withNeedGenNewToken(Boolean needGenNewToken) {
         this.needGenNewToken = needGenNewToken;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否生成新的token，内部使用参数。 true：生成新的token值。 false：不生成新的token值。 
-     * @return needGenNewToken
-     */
+    /** 是否生成新的token，内部使用参数。 true：生成新的token值。 false：不生成新的token值。
+     * 
+     * @return needGenNewToken */
     public Boolean getNeedGenNewToken() {
         return needGenNewToken;
     }
@@ -77,20 +55,14 @@ public class ValidateTokenReqDTO  {
         this.needGenNewToken = needGenNewToken;
     }
 
-    
-
     public ValidateTokenReqDTO withNeedAccountInfo(Boolean needAccountInfo) {
         this.needAccountInfo = needAccountInfo;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否需要返回用户可见帐号信息（帐号、用户姓名等信息）。
-     * @return needAccountInfo
-     */
+    /** 是否需要返回用户可见帐号信息（帐号、用户姓名等信息）。
+     * 
+     * @return needAccountInfo */
     public Boolean getNeedAccountInfo() {
         return needAccountInfo;
     }
@@ -98,8 +70,6 @@ public class ValidateTokenReqDTO  {
     public void setNeedAccountInfo(Boolean needAccountInfo) {
         this.needAccountInfo = needAccountInfo;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class ValidateTokenReqDTO  {
             return false;
         }
         ValidateTokenReqDTO validateTokenReqDTO = (ValidateTokenReqDTO) o;
-        return Objects.equals(this.token, validateTokenReqDTO.token) &&
-            Objects.equals(this.needGenNewToken, validateTokenReqDTO.needGenNewToken) &&
-            Objects.equals(this.needAccountInfo, validateTokenReqDTO.needAccountInfo);
+        return Objects.equals(this.token, validateTokenReqDTO.token)
+            && Objects.equals(this.needGenNewToken, validateTokenReqDTO.needGenNewToken)
+            && Objects.equals(this.needAccountInfo, validateTokenReqDTO.needAccountInfo);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(token, needGenNewToken, needAccountInfo);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class ValidateTokenReqDTO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

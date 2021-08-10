@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.kps.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kps.v3.model.EcsServerInfo;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 绑定密钥对描述消息体
- */
-public class AssociateKeypairRequestBody  {
-
-
+/** 绑定密钥对描述消息体 */
+public class AssociateKeypairRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="keypair_name")
-    
+    @JsonProperty(value = "keypair_name")
+
     private String keypairName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server")
-    
+    @JsonProperty(value = "server")
+
     private EcsServerInfo server;
 
     public AssociateKeypairRequestBody withKeypairName(String keypairName) {
@@ -35,13 +24,9 @@ public class AssociateKeypairRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * SSH密钥对的名称
-     * @return keypairName
-     */
+    /** SSH密钥对的名称
+     * 
+     * @return keypairName */
     public String getKeypairName() {
         return keypairName;
     }
@@ -50,27 +35,23 @@ public class AssociateKeypairRequestBody  {
         this.keypairName = keypairName;
     }
 
-    
-
     public AssociateKeypairRequestBody withServer(EcsServerInfo server) {
         this.server = server;
         return this;
     }
 
     public AssociateKeypairRequestBody withServer(Consumer<EcsServerInfo> serverSetter) {
-        if(this.server == null ){
+        if (this.server == null) {
             this.server = new EcsServerInfo();
             serverSetter.accept(this.server);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get server
-     * @return server
-     */
+    /** Get server
+     * 
+     * @return server */
     public EcsServerInfo getServer() {
         return server;
     }
@@ -78,8 +59,6 @@ public class AssociateKeypairRequestBody  {
     public void setServer(EcsServerInfo server) {
         this.server = server;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class AssociateKeypairRequestBody  {
             return false;
         }
         AssociateKeypairRequestBody associateKeypairRequestBody = (AssociateKeypairRequestBody) o;
-        return Objects.equals(this.keypairName, associateKeypairRequestBody.keypairName) &&
-            Objects.equals(this.server, associateKeypairRequestBody.server);
+        return Objects.equals(this.keypairName, associateKeypairRequestBody.keypairName)
+            && Objects.equals(this.server, associateKeypairRequestBody.server);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(keypairName, server);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class AssociateKeypairRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

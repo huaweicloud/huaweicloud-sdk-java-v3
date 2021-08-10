@@ -1,35 +1,24 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bss.v2.model.CustomerInfoV2;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * QueryCustomersBalancesReq
- */
-public class QueryCustomersBalancesReq  {
-
-
+/** QueryCustomersBalancesReq */
+public class QueryCustomersBalancesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_infos")
-    
+    @JsonProperty(value = "customer_infos")
+
     private List<CustomerInfoV2> customerInfos = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="indirect_partner_id")
-    
+    @JsonProperty(value = "indirect_partner_id")
+
     private String indirectPartnerId;
 
     public QueryCustomersBalancesReq withCustomerInfos(List<CustomerInfoV2> customerInfos) {
@@ -37,9 +26,8 @@ public class QueryCustomersBalancesReq  {
         return this;
     }
 
-    
     public QueryCustomersBalancesReq addCustomerInfosItem(CustomerInfoV2 customerInfosItem) {
-        if(this.customerInfos == null) {
+        if (this.customerInfos == null) {
             this.customerInfos = new ArrayList<>();
         }
         this.customerInfos.add(customerInfosItem);
@@ -47,17 +35,16 @@ public class QueryCustomersBalancesReq  {
     }
 
     public QueryCustomersBalancesReq withCustomerInfos(Consumer<List<CustomerInfoV2>> customerInfosSetter) {
-        if(this.customerInfos == null) {
+        if (this.customerInfos == null) {
             this.customerInfos = new ArrayList<>();
         }
         customerInfosSetter.accept(this.customerInfos);
         return this;
     }
 
-    /**
-     * 客户信息列表。 具体请参见表1。
-     * @return customerInfos
-     */
+    /** 客户信息列表。 具体请参见表1。
+     * 
+     * @return customerInfos */
     public List<CustomerInfoV2> getCustomerInfos() {
         return customerInfos;
     }
@@ -66,20 +53,14 @@ public class QueryCustomersBalancesReq  {
         this.customerInfos = customerInfos;
     }
 
-    
-
     public QueryCustomersBalancesReq withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 精英服务商ID。获取方法请参见查询精英服务商列表。 华为云伙伴能力中心（一级经销商）查询精英服务商（二级经销商）子客户的账户余额时，需要携带该参数。
-     * @return indirectPartnerId
-     */
+    /** 精英服务商ID。获取方法请参见查询精英服务商列表。 华为云伙伴能力中心（一级经销商）查询精英服务商（二级经销商）子客户的账户余额时，需要携带该参数。
+     * 
+     * @return indirectPartnerId */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -87,8 +68,6 @@ public class QueryCustomersBalancesReq  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -99,13 +78,15 @@ public class QueryCustomersBalancesReq  {
             return false;
         }
         QueryCustomersBalancesReq queryCustomersBalancesReq = (QueryCustomersBalancesReq) o;
-        return Objects.equals(this.customerInfos, queryCustomersBalancesReq.customerInfos) &&
-            Objects.equals(this.indirectPartnerId, queryCustomersBalancesReq.indirectPartnerId);
+        return Objects.equals(this.customerInfos, queryCustomersBalancesReq.customerInfos)
+            && Objects.equals(this.indirectPartnerId, queryCustomersBalancesReq.indirectPartnerId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(customerInfos, indirectPartnerId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -115,16 +96,13 @@ public class QueryCustomersBalancesReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

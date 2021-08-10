@@ -1,51 +1,39 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.LinksSelf;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class Domains  {
-
-
+public class Domains {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enabled")
-    
+    @JsonProperty(value = "enabled")
+
     private Boolean enabled;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private LinksSelf links;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public Domains withEnabled(Boolean enabled) {
@@ -53,13 +41,9 @@ public class Domains  {
         return this;
     }
 
-    
-
-
-    /**
-     * 是否启用账号，true为启用，false为停用，默认为true。
-     * @return enabled
-     */
+    /** 是否启用账号，true为启用，false为停用，默认为true。
+     * 
+     * @return enabled */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -68,20 +52,14 @@ public class Domains  {
         this.enabled = enabled;
     }
 
-    
-
     public Domains withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 账号ID。
-     * @return id
-     */
+    /** 账号ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -90,20 +68,14 @@ public class Domains  {
         this.id = id;
     }
 
-    
-
     public Domains withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 账号名。
-     * @return name
-     */
+    /** 账号名。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -112,27 +84,23 @@ public class Domains  {
         this.name = name;
     }
 
-    
-
     public Domains withLinks(LinksSelf links) {
         this.links = links;
         return this;
     }
 
     public Domains withLinks(Consumer<LinksSelf> linksSetter) {
-        if(this.links == null ){
+        if (this.links == null) {
             this.links = new LinksSelf();
             linksSetter.accept(this.links);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get links
-     * @return links
-     */
+    /** Get links
+     * 
+     * @return links */
     public LinksSelf getLinks() {
         return links;
     }
@@ -141,20 +109,14 @@ public class Domains  {
         this.links = links;
     }
 
-    
-
     public Domains withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 账号的描述信息。
-     * @return description
-     */
+    /** 账号的描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -162,8 +124,6 @@ public class Domains  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -174,16 +134,16 @@ public class Domains  {
             return false;
         }
         Domains domains = (Domains) o;
-        return Objects.equals(this.enabled, domains.enabled) &&
-            Objects.equals(this.id, domains.id) &&
-            Objects.equals(this.name, domains.name) &&
-            Objects.equals(this.links, domains.links) &&
-            Objects.equals(this.description, domains.description);
+        return Objects.equals(this.enabled, domains.enabled) && Objects.equals(this.id, domains.id)
+            && Objects.equals(this.name, domains.name) && Objects.equals(this.links, domains.links)
+            && Objects.equals(this.description, domains.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(enabled, id, name, links, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -196,16 +156,13 @@ public class Domains  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

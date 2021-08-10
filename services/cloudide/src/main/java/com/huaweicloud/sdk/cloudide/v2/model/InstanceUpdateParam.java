@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.cloudide.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * InstanceUpdateParam
- */
-public class InstanceUpdateParam  {
-
-
+/** InstanceUpdateParam */
+public class InstanceUpdateParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="display_name")
-    
+    @JsonProperty(value = "display_name")
+
     private String displayName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="refresh_interval")
-    
+    @JsonProperty(value = "refresh_interval")
+
     private String refreshInterval;
 
     public InstanceUpdateParam withDescription(String description) {
@@ -40,13 +28,9 @@ public class InstanceUpdateParam  {
         return this;
     }
 
-    
-
-
-    /**
-     * 描述
-     * @return description
-     */
+    /** 描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -55,20 +39,14 @@ public class InstanceUpdateParam  {
         this.description = description;
     }
 
-    
-
     public InstanceUpdateParam withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例名。 可以输入中文、数字、字母、下划线、点、破折号。长度介于3-100之间
-     * @return displayName
-     */
+    /** 实例名。 可以输入中文、数字、字母、下划线、点、破折号。长度介于3-100之间
+     * 
+     * @return displayName */
     public String getDisplayName() {
         return displayName;
     }
@@ -77,20 +55,15 @@ public class InstanceUpdateParam  {
         this.displayName = displayName;
     }
 
-    
-
     public InstanceUpdateParam withRefreshInterval(String refreshInterval) {
         this.refreshInterval = refreshInterval;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例的生命周期。 arm架构,生命周期只能设置成30，60。x86架构可取值为30，60，240，1440和-1。除-1外，其它值的单位为“分钟”。实例在到达生命周期后，将会被暂停（已保存的数据不会被删除）。-1表示实例不会自动停止。
-     * @return refreshInterval
-     */
+    /** 实例的生命周期。
+     * arm架构,生命周期只能设置成30，60。x86架构可取值为30，60，240，1440和-1。除-1外，其它值的单位为“分钟”。实例在到达生命周期后，将会被暂停（已保存的数据不会被删除）。-1表示实例不会自动停止。
+     * 
+     * @return refreshInterval */
     public String getRefreshInterval() {
         return refreshInterval;
     }
@@ -98,8 +71,6 @@ public class InstanceUpdateParam  {
     public void setRefreshInterval(String refreshInterval) {
         this.refreshInterval = refreshInterval;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +81,16 @@ public class InstanceUpdateParam  {
             return false;
         }
         InstanceUpdateParam instanceUpdateParam = (InstanceUpdateParam) o;
-        return Objects.equals(this.description, instanceUpdateParam.description) &&
-            Objects.equals(this.displayName, instanceUpdateParam.displayName) &&
-            Objects.equals(this.refreshInterval, instanceUpdateParam.refreshInterval);
+        return Objects.equals(this.description, instanceUpdateParam.description)
+            && Objects.equals(this.displayName, instanceUpdateParam.displayName)
+            && Objects.equals(this.refreshInterval, instanceUpdateParam.refreshInterval);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(description, displayName, refreshInterval);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +101,13 @@ public class InstanceUpdateParam  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

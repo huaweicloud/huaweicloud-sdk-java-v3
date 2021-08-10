@@ -1,41 +1,29 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotda.v5.model.ApplicationDTO;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowApplicationsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="applications")
-    
+    @JsonProperty(value = "applications")
+
     private List<ApplicationDTO> applications = null;
-    
+
     public ShowApplicationsResponse withApplications(List<ApplicationDTO> applications) {
         this.applications = applications;
         return this;
     }
 
-    
     public ShowApplicationsResponse addApplicationsItem(ApplicationDTO applicationsItem) {
-        if(this.applications == null) {
+        if (this.applications == null) {
             this.applications = new ArrayList<>();
         }
         this.applications.add(applicationsItem);
@@ -43,17 +31,16 @@ public class ShowApplicationsResponse extends SdkResponse {
     }
 
     public ShowApplicationsResponse withApplications(Consumer<List<ApplicationDTO>> applicationsSetter) {
-        if(this.applications == null) {
+        if (this.applications == null) {
             this.applications = new ArrayList<>();
         }
         applicationsSetter.accept(this.applications);
         return this;
     }
 
-    /**
-     * 资源空间信息列表。
-     * @return applications
-     */
+    /** 资源空间信息列表。
+     * 
+     * @return applications */
     public List<ApplicationDTO> getApplications() {
         return applications;
     }
@@ -61,8 +48,6 @@ public class ShowApplicationsResponse extends SdkResponse {
     public void setApplications(List<ApplicationDTO> applications) {
         this.applications = applications;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -75,10 +60,12 @@ public class ShowApplicationsResponse extends SdkResponse {
         ShowApplicationsResponse showApplicationsResponse = (ShowApplicationsResponse) o;
         return Objects.equals(this.applications, showApplicationsResponse.applications);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(applications);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -87,16 +74,13 @@ public class ShowApplicationsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

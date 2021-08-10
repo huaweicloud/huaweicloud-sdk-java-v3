@@ -1,103 +1,75 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.InsertHeader;
-import com.huaweicloud.sdk.elb.v2.model.ResourceList;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 监听器响应体
- */
-public class ListenerResp  {
-
-
+/** 监听器响应体 */
+public class ListenerResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
+
     private String tenantId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
-    
+    @JsonProperty(value = "admin_state_up")
+
     private Boolean adminStateUp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="loadbalancers")
-    
+    @JsonProperty(value = "loadbalancers")
+
     private List<ResourceList> loadbalancers = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="connection_limit")
-    
+    @JsonProperty(value = "connection_limit")
+
     private Integer connectionLimit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="http2_enable")
-    
+    @JsonProperty(value = "http2_enable")
+
     private Boolean http2Enable;
-    /**
-     * 监听器的监听协议
-     */
+
+    /** 监听器的监听协议 */
     public static final class ProtocolEnum {
 
-        
-        /**
-         * Enum UDP for value: "UDP"
-         */
+        /** Enum UDP for value: "UDP" */
         public static final ProtocolEnum UDP = new ProtocolEnum("UDP");
-        
-        /**
-         * Enum TCP for value: "TCP"
-         */
+
+        /** Enum TCP for value: "TCP" */
         public static final ProtocolEnum TCP = new ProtocolEnum("TCP");
-        
-        /**
-         * Enum HTTP for value: "HTTP"
-         */
+
+        /** Enum HTTP for value: "HTTP" */
         public static final ProtocolEnum HTTP = new ProtocolEnum("HTTP");
-        
-        /**
-         * Enum TERMINATED_HTTPS for value: "TERMINATED_HTTPS"
-         */
+
+        /** Enum TERMINATED_HTTPS for value: "TERMINATED_HTTPS" */
         public static final ProtocolEnum TERMINATED_HTTPS = new ProtocolEnum("TERMINATED_HTTPS");
-        
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
 
@@ -128,7 +100,7 @@ public class ListenerResp  {
 
         @JsonCreator
         public static ProtocolEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtocolEnum result = STATIC_FIELDS.get(value);
@@ -139,7 +111,7 @@ public class ListenerResp  {
         }
 
         public static ProtocolEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtocolEnum result = STATIC_FIELDS.get(value);
@@ -163,76 +135,64 @@ public class ListenerResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
+
     private ProtocolEnum protocol;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol_port")
-    
+    @JsonProperty(value = "protocol_port")
+
     private Integer protocolPort;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="default_pool_id")
-    
+    @JsonProperty(value = "default_pool_id")
+
     private String defaultPoolId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="default_tls_container_ref")
-    
+    @JsonProperty(value = "default_tls_container_ref")
+
     private String defaultTlsContainerRef;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="client_ca_tls_container_ref")
-    
+    @JsonProperty(value = "client_ca_tls_container_ref")
+
     private String clientCaTlsContainerRef;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sni_container_refs")
-    
+    @JsonProperty(value = "sni_container_refs")
+
     private List<String> sniContainerRefs = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<String> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private String updatedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="insert_headers")
-    
+    @JsonProperty(value = "insert_headers")
+
     private InsertHeader insertHeaders;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tls_ciphers_policy")
-    
+    @JsonProperty(value = "tls_ciphers_policy")
+
     private String tlsCiphersPolicy;
 
     public ListenerResp withId(String id) {
@@ -240,13 +200,9 @@ public class ListenerResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器ID
-     * @return id
-     */
+    /** 监听器ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -255,20 +211,14 @@ public class ListenerResp  {
         this.id = id;
     }
 
-    
-
     public ListenerResp withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器所在的项目ID。
-     * @return tenantId
-     */
+    /** 监听器所在的项目ID。
+     * 
+     * @return tenantId */
     public String getTenantId() {
         return tenantId;
     }
@@ -277,20 +227,14 @@ public class ListenerResp  {
         this.tenantId = tenantId;
     }
 
-    
-
     public ListenerResp withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器名称。
-     * @return name
-     */
+    /** 监听器名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -299,20 +243,14 @@ public class ListenerResp  {
         this.name = name;
     }
 
-    
-
     public ListenerResp withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器的描述信息
-     * @return description
-     */
+    /** 监听器的描述信息
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -321,20 +259,14 @@ public class ListenerResp  {
         this.description = description;
     }
 
-    
-
     public ListenerResp withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器的管理状态。只支持设定为true，该字段的值无实际意义。
-     * @return adminStateUp
-     */
+    /** 监听器的管理状态。只支持设定为true，该字段的值无实际意义。
+     * 
+     * @return adminStateUp */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -343,16 +275,13 @@ public class ListenerResp  {
         this.adminStateUp = adminStateUp;
     }
 
-    
-
     public ListenerResp withLoadbalancers(List<ResourceList> loadbalancers) {
         this.loadbalancers = loadbalancers;
         return this;
     }
 
-    
     public ListenerResp addLoadbalancersItem(ResourceList loadbalancersItem) {
-        if(this.loadbalancers == null) {
+        if (this.loadbalancers == null) {
             this.loadbalancers = new ArrayList<>();
         }
         this.loadbalancers.add(loadbalancersItem);
@@ -360,17 +289,16 @@ public class ListenerResp  {
     }
 
     public ListenerResp withLoadbalancers(Consumer<List<ResourceList>> loadbalancersSetter) {
-        if(this.loadbalancers == null) {
+        if (this.loadbalancers == null) {
             this.loadbalancers = new ArrayList<>();
         }
         loadbalancersSetter.accept(this.loadbalancers);
         return this;
     }
 
-    /**
-     * 监听器绑定的负载均衡器ID的列表。
-     * @return loadbalancers
-     */
+    /** 监听器绑定的负载均衡器ID的列表。
+     * 
+     * @return loadbalancers */
     public List<ResourceList> getLoadbalancers() {
         return loadbalancers;
     }
@@ -379,22 +307,14 @@ public class ListenerResp  {
         this.loadbalancers = loadbalancers;
     }
 
-    
-
     public ListenerResp withConnectionLimit(Integer connectionLimit) {
         this.connectionLimit = connectionLimit;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器的最大连接数。该字段为预留字段，暂未启用。默认为-1。
-     * minimum: -1
-     * maximum: 2147483647
-     * @return connectionLimit
-     */
+    /** 监听器的最大连接数。该字段为预留字段，暂未启用。默认为-1。 minimum: -1 maximum: 2147483647
+     * 
+     * @return connectionLimit */
     public Integer getConnectionLimit() {
         return connectionLimit;
     }
@@ -403,20 +323,14 @@ public class ListenerResp  {
         this.connectionLimit = connectionLimit;
     }
 
-    
-
     public ListenerResp withHttp2Enable(Boolean http2Enable) {
         this.http2Enable = http2Enable;
         return this;
     }
 
-    
-
-
-    /**
-     * HTTP2功能的开启状态。该字段只有当监听器的协议是TERMINATED_HTTPS时生效。
-     * @return http2Enable
-     */
+    /** HTTP2功能的开启状态。该字段只有当监听器的协议是TERMINATED_HTTPS时生效。
+     * 
+     * @return http2Enable */
     public Boolean getHttp2Enable() {
         return http2Enable;
     }
@@ -425,20 +339,14 @@ public class ListenerResp  {
         this.http2Enable = http2Enable;
     }
 
-    
-
     public ListenerResp withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器的监听协议
-     * @return protocol
-     */
+    /** 监听器的监听协议
+     * 
+     * @return protocol */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -447,22 +355,14 @@ public class ListenerResp  {
         this.protocol = protocol;
     }
 
-    
-
     public ListenerResp withProtocolPort(Integer protocolPort) {
         this.protocolPort = protocolPort;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器的监听端口。
-     * minimum: 1
-     * maximum: 65535
-     * @return protocolPort
-     */
+    /** 监听器的监听端口。 minimum: 1 maximum: 65535
+     * 
+     * @return protocolPort */
     public Integer getProtocolPort() {
         return protocolPort;
     }
@@ -471,20 +371,14 @@ public class ListenerResp  {
         this.protocolPort = protocolPort;
     }
 
-    
-
     public ListenerResp withDefaultPoolId(String defaultPoolId) {
         this.defaultPoolId = defaultPoolId;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器的默认后端云服务器组ID。当请求没有匹配的转发策略时，转发到默认后端云服务器上处理。
-     * @return defaultPoolId
-     */
+    /** 监听器的默认后端云服务器组ID。当请求没有匹配的转发策略时，转发到默认后端云服务器上处理。
+     * 
+     * @return defaultPoolId */
     public String getDefaultPoolId() {
         return defaultPoolId;
     }
@@ -493,20 +387,14 @@ public class ListenerResp  {
         this.defaultPoolId = defaultPoolId;
     }
 
-    
-
     public ListenerResp withDefaultTlsContainerRef(String defaultTlsContainerRef) {
         this.defaultTlsContainerRef = defaultTlsContainerRef;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器使用的服务器证书ID。
-     * @return defaultTlsContainerRef
-     */
+    /** 监听器使用的服务器证书ID。
+     * 
+     * @return defaultTlsContainerRef */
     public String getDefaultTlsContainerRef() {
         return defaultTlsContainerRef;
     }
@@ -515,20 +403,14 @@ public class ListenerResp  {
         this.defaultTlsContainerRef = defaultTlsContainerRef;
     }
 
-    
-
     public ListenerResp withClientCaTlsContainerRef(String clientCaTlsContainerRef) {
         this.clientCaTlsContainerRef = clientCaTlsContainerRef;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器使用的CA证书ID。
-     * @return clientCaTlsContainerRef
-     */
+    /** 监听器使用的CA证书ID。
+     * 
+     * @return clientCaTlsContainerRef */
     public String getClientCaTlsContainerRef() {
         return clientCaTlsContainerRef;
     }
@@ -537,16 +419,13 @@ public class ListenerResp  {
         this.clientCaTlsContainerRef = clientCaTlsContainerRef;
     }
 
-    
-
     public ListenerResp withSniContainerRefs(List<String> sniContainerRefs) {
         this.sniContainerRefs = sniContainerRefs;
         return this;
     }
 
-    
     public ListenerResp addSniContainerRefsItem(String sniContainerRefsItem) {
-        if(this.sniContainerRefs == null) {
+        if (this.sniContainerRefs == null) {
             this.sniContainerRefs = new ArrayList<>();
         }
         this.sniContainerRefs.add(sniContainerRefsItem);
@@ -554,17 +433,16 @@ public class ListenerResp  {
     }
 
     public ListenerResp withSniContainerRefs(Consumer<List<String>> sniContainerRefsSetter) {
-        if(this.sniContainerRefs == null) {
+        if (this.sniContainerRefs == null) {
             this.sniContainerRefs = new ArrayList<>();
         }
         sniContainerRefsSetter.accept(this.sniContainerRefs);
         return this;
     }
 
-    /**
-     * 监听器使用的SNI证书（带域名的服务器证书）ID的列表。
-     * @return sniContainerRefs
-     */
+    /** 监听器使用的SNI证书（带域名的服务器证书）ID的列表。
+     * 
+     * @return sniContainerRefs */
     public List<String> getSniContainerRefs() {
         return sniContainerRefs;
     }
@@ -573,16 +451,13 @@ public class ListenerResp  {
         this.sniContainerRefs = sniContainerRefs;
     }
 
-    
-
     public ListenerResp withTags(List<String> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public ListenerResp addTagsItem(String tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -590,17 +465,16 @@ public class ListenerResp  {
     }
 
     public ListenerResp withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 监听器的标签。
-     * @return tags
-     */
+    /** 监听器的标签。
+     * 
+     * @return tags */
     public List<String> getTags() {
         return tags;
     }
@@ -609,20 +483,14 @@ public class ListenerResp  {
         this.tags = tags;
     }
 
-    
-
     public ListenerResp withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器的创建时间。
-     * @return createdAt
-     */
+    /** 监听器的创建时间。
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -631,20 +499,14 @@ public class ListenerResp  {
         this.createdAt = createdAt;
     }
 
-    
-
     public ListenerResp withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器的更新时间。
-     * @return updatedAt
-     */
+    /** 监听器的更新时间。
+     * 
+     * @return updatedAt */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -653,27 +515,23 @@ public class ListenerResp  {
         this.updatedAt = updatedAt;
     }
 
-    
-
     public ListenerResp withInsertHeaders(InsertHeader insertHeaders) {
         this.insertHeaders = insertHeaders;
         return this;
     }
 
     public ListenerResp withInsertHeaders(Consumer<InsertHeader> insertHeadersSetter) {
-        if(this.insertHeaders == null ){
+        if (this.insertHeaders == null) {
             this.insertHeaders = new InsertHeader();
             insertHeadersSetter.accept(this.insertHeaders);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get insertHeaders
-     * @return insertHeaders
-     */
+    /** Get insertHeaders
+     * 
+     * @return insertHeaders */
     public InsertHeader getInsertHeaders() {
         return insertHeaders;
     }
@@ -682,20 +540,14 @@ public class ListenerResp  {
         this.insertHeaders = insertHeaders;
     }
 
-    
-
     public ListenerResp withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器所在的项目ID。
-     * @return projectId
-     */
+    /** 监听器所在的项目ID。
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -704,20 +556,14 @@ public class ListenerResp  {
         this.projectId = projectId;
     }
 
-    
-
     public ListenerResp withTlsCiphersPolicy(String tlsCiphersPolicy) {
         this.tlsCiphersPolicy = tlsCiphersPolicy;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器使用的安全策略，仅对TERMINATED_HTTPS协议类型的监听器有效，且默认值为tls-1-0。  取值包括：tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict多种安全策略
-     * @return tlsCiphersPolicy
-     */
+    /** 监听器使用的安全策略，仅对TERMINATED_HTTPS协议类型的监听器有效，且默认值为tls-1-0。 取值包括：tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict多种安全策略
+     * 
+     * @return tlsCiphersPolicy */
     public String getTlsCiphersPolicy() {
         return tlsCiphersPolicy;
     }
@@ -725,8 +571,6 @@ public class ListenerResp  {
     public void setTlsCiphersPolicy(String tlsCiphersPolicy) {
         this.tlsCiphersPolicy = tlsCiphersPolicy;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -737,31 +581,50 @@ public class ListenerResp  {
             return false;
         }
         ListenerResp listenerResp = (ListenerResp) o;
-        return Objects.equals(this.id, listenerResp.id) &&
-            Objects.equals(this.tenantId, listenerResp.tenantId) &&
-            Objects.equals(this.name, listenerResp.name) &&
-            Objects.equals(this.description, listenerResp.description) &&
-            Objects.equals(this.adminStateUp, listenerResp.adminStateUp) &&
-            Objects.equals(this.loadbalancers, listenerResp.loadbalancers) &&
-            Objects.equals(this.connectionLimit, listenerResp.connectionLimit) &&
-            Objects.equals(this.http2Enable, listenerResp.http2Enable) &&
-            Objects.equals(this.protocol, listenerResp.protocol) &&
-            Objects.equals(this.protocolPort, listenerResp.protocolPort) &&
-            Objects.equals(this.defaultPoolId, listenerResp.defaultPoolId) &&
-            Objects.equals(this.defaultTlsContainerRef, listenerResp.defaultTlsContainerRef) &&
-            Objects.equals(this.clientCaTlsContainerRef, listenerResp.clientCaTlsContainerRef) &&
-            Objects.equals(this.sniContainerRefs, listenerResp.sniContainerRefs) &&
-            Objects.equals(this.tags, listenerResp.tags) &&
-            Objects.equals(this.createdAt, listenerResp.createdAt) &&
-            Objects.equals(this.updatedAt, listenerResp.updatedAt) &&
-            Objects.equals(this.insertHeaders, listenerResp.insertHeaders) &&
-            Objects.equals(this.projectId, listenerResp.projectId) &&
-            Objects.equals(this.tlsCiphersPolicy, listenerResp.tlsCiphersPolicy);
+        return Objects.equals(this.id, listenerResp.id) && Objects.equals(this.tenantId, listenerResp.tenantId)
+            && Objects.equals(this.name, listenerResp.name)
+            && Objects.equals(this.description, listenerResp.description)
+            && Objects.equals(this.adminStateUp, listenerResp.adminStateUp)
+            && Objects.equals(this.loadbalancers, listenerResp.loadbalancers)
+            && Objects.equals(this.connectionLimit, listenerResp.connectionLimit)
+            && Objects.equals(this.http2Enable, listenerResp.http2Enable)
+            && Objects.equals(this.protocol, listenerResp.protocol)
+            && Objects.equals(this.protocolPort, listenerResp.protocolPort)
+            && Objects.equals(this.defaultPoolId, listenerResp.defaultPoolId)
+            && Objects.equals(this.defaultTlsContainerRef, listenerResp.defaultTlsContainerRef)
+            && Objects.equals(this.clientCaTlsContainerRef, listenerResp.clientCaTlsContainerRef)
+            && Objects.equals(this.sniContainerRefs, listenerResp.sniContainerRefs)
+            && Objects.equals(this.tags, listenerResp.tags) && Objects.equals(this.createdAt, listenerResp.createdAt)
+            && Objects.equals(this.updatedAt, listenerResp.updatedAt)
+            && Objects.equals(this.insertHeaders, listenerResp.insertHeaders)
+            && Objects.equals(this.projectId, listenerResp.projectId)
+            && Objects.equals(this.tlsCiphersPolicy, listenerResp.tlsCiphersPolicy);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, tenantId, name, description, adminStateUp, loadbalancers, connectionLimit, http2Enable, protocol, protocolPort, defaultPoolId, defaultTlsContainerRef, clientCaTlsContainerRef, sniContainerRefs, tags, createdAt, updatedAt, insertHeaders, projectId, tlsCiphersPolicy);
+        return Objects.hash(id,
+            tenantId,
+            name,
+            description,
+            adminStateUp,
+            loadbalancers,
+            connectionLimit,
+            http2Enable,
+            protocol,
+            protocolPort,
+            defaultPoolId,
+            defaultTlsContainerRef,
+            clientCaTlsContainerRef,
+            sniContainerRefs,
+            tags,
+            createdAt,
+            updatedAt,
+            insertHeaders,
+            projectId,
+            tlsCiphersPolicy);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -789,16 +652,13 @@ public class ListenerResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

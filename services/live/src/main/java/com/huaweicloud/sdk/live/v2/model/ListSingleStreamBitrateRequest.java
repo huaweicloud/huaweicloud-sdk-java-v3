@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.live.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListSingleStreamBitrateRequest  {
-
-
+/** Request Object */
+public class ListSingleStreamBitrateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
+
     private String domain;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app")
-    
+    @JsonProperty(value = "app")
+
     private String app;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stream")
-    
+    @JsonProperty(value = "stream")
+
     private String stream;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
     public ListSingleStreamBitrateRequest withDomain(String domain) {
@@ -52,13 +38,9 @@ public class ListSingleStreamBitrateRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 推流域名。 
-     * @return domain
-     */
+    /** 推流域名。
+     * 
+     * @return domain */
     public String getDomain() {
         return domain;
     }
@@ -67,20 +49,14 @@ public class ListSingleStreamBitrateRequest  {
         this.domain = domain;
     }
 
-    
-
     public ListSingleStreamBitrateRequest withApp(String app) {
         this.app = app;
         return this;
     }
 
-    
-
-
-    /**
-     * App名。 
-     * @return app
-     */
+    /** App名。
+     * 
+     * @return app */
     public String getApp() {
         return app;
     }
@@ -89,20 +65,14 @@ public class ListSingleStreamBitrateRequest  {
         this.app = app;
     }
 
-    
-
     public ListSingleStreamBitrateRequest withStream(String stream) {
         this.stream = stream;
         return this;
     }
 
-    
-
-
-    /**
-     * 流名。 
-     * @return stream
-     */
+    /** 流名。
+     * 
+     * @return stream */
     public String getStream() {
         return stream;
     }
@@ -111,20 +81,14 @@ public class ListSingleStreamBitrateRequest  {
         this.stream = stream;
     }
 
-    
-
     public ListSingleStreamBitrateRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度6小时，最大查询周期7天。  若参数为空，默认查询最近1小时数据。 
-     * @return startTime
-     */
+    /** 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度6小时，最大查询周期7天。 若参数为空，默认查询最近1小时数据。
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -133,20 +97,14 @@ public class ListSingleStreamBitrateRequest  {
         this.startTime = startTime;
     }
 
-    
-
     public ListSingleStreamBitrateRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。  若参数为空，默认为当前时间。结束时间需大于起始时间。 
-     * @return endTime
-     */
+    /** 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。 若参数为空，默认为当前时间。结束时间需大于起始时间。
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -154,8 +112,6 @@ public class ListSingleStreamBitrateRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,18 @@ public class ListSingleStreamBitrateRequest  {
             return false;
         }
         ListSingleStreamBitrateRequest listSingleStreamBitrateRequest = (ListSingleStreamBitrateRequest) o;
-        return Objects.equals(this.domain, listSingleStreamBitrateRequest.domain) &&
-            Objects.equals(this.app, listSingleStreamBitrateRequest.app) &&
-            Objects.equals(this.stream, listSingleStreamBitrateRequest.stream) &&
-            Objects.equals(this.startTime, listSingleStreamBitrateRequest.startTime) &&
-            Objects.equals(this.endTime, listSingleStreamBitrateRequest.endTime);
+        return Objects.equals(this.domain, listSingleStreamBitrateRequest.domain)
+            && Objects.equals(this.app, listSingleStreamBitrateRequest.app)
+            && Objects.equals(this.stream, listSingleStreamBitrateRequest.stream)
+            && Objects.equals(this.startTime, listSingleStreamBitrateRequest.startTime)
+            && Objects.equals(this.endTime, listSingleStreamBitrateRequest.endTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domain, app, stream, startTime, endTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class ListSingleStreamBitrateRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

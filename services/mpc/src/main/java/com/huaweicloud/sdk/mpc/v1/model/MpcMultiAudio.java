@@ -1,42 +1,29 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.AudioFile;
-import com.huaweicloud.sdk.mpc.v1.model.ObsObjInfo;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * MpcMultiAudio
- */
-public class MpcMultiAudio  {
-
-
+/** MpcMultiAudio */
+public class MpcMultiAudio {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output")
-    
+    @JsonProperty(value = "output")
+
     private ObsObjInfo output;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audio_files")
-    
+    @JsonProperty(value = "audio_files")
+
     private List<AudioFile> audioFiles = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output_filename")
-    
+    @JsonProperty(value = "output_filename")
+
     private String outputFilename;
 
     public MpcMultiAudio withOutput(ObsObjInfo output) {
@@ -45,19 +32,17 @@ public class MpcMultiAudio  {
     }
 
     public MpcMultiAudio withOutput(Consumer<ObsObjInfo> outputSetter) {
-        if(this.output == null ){
+        if (this.output == null) {
             this.output = new ObsObjInfo();
             outputSetter.accept(this.output);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get output
-     * @return output
-     */
+    /** Get output
+     * 
+     * @return output */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -66,16 +51,13 @@ public class MpcMultiAudio  {
         this.output = output;
     }
 
-    
-
     public MpcMultiAudio withAudioFiles(List<AudioFile> audioFiles) {
         this.audioFiles = audioFiles;
         return this;
     }
 
-    
     public MpcMultiAudio addAudioFilesItem(AudioFile audioFilesItem) {
-        if(this.audioFiles == null) {
+        if (this.audioFiles == null) {
             this.audioFiles = new ArrayList<>();
         }
         this.audioFiles.add(audioFilesItem);
@@ -83,17 +65,16 @@ public class MpcMultiAudio  {
     }
 
     public MpcMultiAudio withAudioFiles(Consumer<List<AudioFile>> audioFilesSetter) {
-        if(this.audioFiles == null) {
+        if (this.audioFiles == null) {
             this.audioFiles = new ArrayList<>();
         }
         audioFilesSetter.accept(this.audioFiles);
         return this;
     }
 
-    /**
-     * 音频文件列表
-     * @return audioFiles
-     */
+    /** 音频文件列表
+     * 
+     * @return audioFiles */
     public List<AudioFile> getAudioFiles() {
         return audioFiles;
     }
@@ -102,20 +83,14 @@ public class MpcMultiAudio  {
         this.audioFiles = audioFiles;
     }
 
-    
-
     public MpcMultiAudio withOutputFilename(String outputFilename) {
         this.outputFilename = outputFilename;
         return this;
     }
 
-    
-
-
-    /**
-     * 输出文件名。 
-     * @return outputFilename
-     */
+    /** 输出文件名。
+     * 
+     * @return outputFilename */
     public String getOutputFilename() {
         return outputFilename;
     }
@@ -123,8 +98,6 @@ public class MpcMultiAudio  {
     public void setOutputFilename(String outputFilename) {
         this.outputFilename = outputFilename;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -135,14 +108,16 @@ public class MpcMultiAudio  {
             return false;
         }
         MpcMultiAudio mpcMultiAudio = (MpcMultiAudio) o;
-        return Objects.equals(this.output, mpcMultiAudio.output) &&
-            Objects.equals(this.audioFiles, mpcMultiAudio.audioFiles) &&
-            Objects.equals(this.outputFilename, mpcMultiAudio.outputFilename);
+        return Objects.equals(this.output, mpcMultiAudio.output)
+            && Objects.equals(this.audioFiles, mpcMultiAudio.audioFiles)
+            && Objects.equals(this.outputFilename, mpcMultiAudio.outputFilename);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(output, audioFiles, outputFilename);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -153,16 +128,13 @@ public class MpcMultiAudio  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

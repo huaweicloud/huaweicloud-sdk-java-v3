@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vpc.v2.model.NetworkIpAvailability;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowNetworkIpAvailabilitiesResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="network_ip_availability")
-    
+    @JsonProperty(value = "network_ip_availability")
+
     private NetworkIpAvailability networkIpAvailability;
 
     public ShowNetworkIpAvailabilitiesResponse withNetworkIpAvailability(NetworkIpAvailability networkIpAvailability) {
@@ -31,20 +20,19 @@ public class ShowNetworkIpAvailabilitiesResponse extends SdkResponse {
         return this;
     }
 
-    public ShowNetworkIpAvailabilitiesResponse withNetworkIpAvailability(Consumer<NetworkIpAvailability> networkIpAvailabilitySetter) {
-        if(this.networkIpAvailability == null ){
+    public ShowNetworkIpAvailabilitiesResponse withNetworkIpAvailability(
+        Consumer<NetworkIpAvailability> networkIpAvailabilitySetter) {
+        if (this.networkIpAvailability == null) {
             this.networkIpAvailability = new NetworkIpAvailability();
             networkIpAvailabilitySetter.accept(this.networkIpAvailability);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get networkIpAvailability
-     * @return networkIpAvailability
-     */
+    /** Get networkIpAvailability
+     * 
+     * @return networkIpAvailability */
     public NetworkIpAvailability getNetworkIpAvailability() {
         return networkIpAvailability;
     }
@@ -52,8 +40,6 @@ public class ShowNetworkIpAvailabilitiesResponse extends SdkResponse {
     public void setNetworkIpAvailability(NetworkIpAvailability networkIpAvailability) {
         this.networkIpAvailability = networkIpAvailability;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -63,13 +49,16 @@ public class ShowNetworkIpAvailabilitiesResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ShowNetworkIpAvailabilitiesResponse showNetworkIpAvailabilitiesResponse = (ShowNetworkIpAvailabilitiesResponse) o;
+        ShowNetworkIpAvailabilitiesResponse showNetworkIpAvailabilitiesResponse =
+            (ShowNetworkIpAvailabilitiesResponse) o;
         return Objects.equals(this.networkIpAvailability, showNetworkIpAvailabilitiesResponse.networkIpAvailability);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(networkIpAvailability);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +67,13 @@ public class ShowNetworkIpAvailabilitiesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

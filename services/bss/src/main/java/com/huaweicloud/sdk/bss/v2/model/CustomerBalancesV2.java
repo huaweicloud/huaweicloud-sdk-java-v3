@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CustomerBalancesV2
- */
-public class CustomerBalancesV2  {
-
-
+/** CustomerBalancesV2 */
+public class CustomerBalancesV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_id")
-    
+    @JsonProperty(value = "customer_id")
+
     private String customerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="debt_amount")
-    
+    @JsonProperty(value = "debt_amount")
+
     private Double debtAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amount")
-    
+    @JsonProperty(value = "amount")
+
     private Double amount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="currency")
-    
+    @JsonProperty(value = "currency")
+
     private String currency;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="measure_id")
-    
+    @JsonProperty(value = "measure_id")
+
     private Integer measureId;
 
     public CustomerBalancesV2 withCustomerId(String customerId) {
@@ -52,13 +38,9 @@ public class CustomerBalancesV2  {
         return this;
     }
 
-    
-
-
-    /**
-     * 客户账号ID。
-     * @return customerId
-     */
+    /** 客户账号ID。
+     * 
+     * @return customerId */
     public String getCustomerId() {
         return customerId;
     }
@@ -67,20 +49,14 @@ public class CustomerBalancesV2  {
         this.customerId = customerId;
     }
 
-    
-
     public CustomerBalancesV2 withDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 客户欠款总额度。
-     * @return debtAmount
-     */
+    /** 客户欠款总额度。
+     * 
+     * @return debtAmount */
     public Double getDebtAmount() {
         return debtAmount;
     }
@@ -89,20 +65,14 @@ public class CustomerBalancesV2  {
         this.debtAmount = debtAmount;
     }
 
-    
-
     public CustomerBalancesV2 withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
 
-    
-
-
-    /**
-     * 客户可用总额度。
-     * @return amount
-     */
+    /** 客户可用总额度。
+     * 
+     * @return amount */
     public Double getAmount() {
         return amount;
     }
@@ -111,20 +81,14 @@ public class CustomerBalancesV2  {
         this.amount = amount;
     }
 
-    
-
     public CustomerBalancesV2 withCurrency(String currency) {
         this.currency = currency;
         return this;
     }
 
-    
-
-
-    /**
-     * 币种。 CNY：人民币。
-     * @return currency
-     */
+    /** 币种。 CNY：人民币。
+     * 
+     * @return currency */
     public String getCurrency() {
         return currency;
     }
@@ -133,20 +97,14 @@ public class CustomerBalancesV2  {
         this.currency = currency;
     }
 
-    
-
     public CustomerBalancesV2 withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
     }
 
-    
-
-
-    /**
-     * 度量单位： 1：元
-     * @return measureId
-     */
+    /** 度量单位： 1：元
+     * 
+     * @return measureId */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -154,8 +112,6 @@ public class CustomerBalancesV2  {
     public void setMeasureId(Integer measureId) {
         this.measureId = measureId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,18 @@ public class CustomerBalancesV2  {
             return false;
         }
         CustomerBalancesV2 customerBalancesV2 = (CustomerBalancesV2) o;
-        return Objects.equals(this.customerId, customerBalancesV2.customerId) &&
-            Objects.equals(this.debtAmount, customerBalancesV2.debtAmount) &&
-            Objects.equals(this.amount, customerBalancesV2.amount) &&
-            Objects.equals(this.currency, customerBalancesV2.currency) &&
-            Objects.equals(this.measureId, customerBalancesV2.measureId);
+        return Objects.equals(this.customerId, customerBalancesV2.customerId)
+            && Objects.equals(this.debtAmount, customerBalancesV2.debtAmount)
+            && Objects.equals(this.amount, customerBalancesV2.amount)
+            && Objects.equals(this.currency, customerBalancesV2.currency)
+            && Objects.equals(this.measureId, customerBalancesV2.measureId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(customerId, debtAmount, amount, currency, measureId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class CustomerBalancesV2  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,79 +1,55 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dgc.v1.model.BasicInfo;
-import com.huaweicloud.sdk.dgc.v1.model.JobParam;
-import com.huaweicloud.sdk.dgc.v1.model.Node;
-import com.huaweicloud.sdk.dgc.v1.model.Schedule;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowJobResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodes")
-    
+    @JsonProperty(value = "nodes")
+
     private List<Node> nodes = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="schedule")
-    
+    @JsonProperty(value = "schedule")
+
     private Schedule schedule;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="params")
-    
+    @JsonProperty(value = "params")
+
     private List<JobParam> params = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="directory")
-    
+    @JsonProperty(value = "directory")
+
     private String directory;
-    /**
-     * Gets or Sets jobType
-     */
+
+    /** Gets or Sets jobType */
     public static final class JobTypeEnum {
 
-        
-        /**
-         * Enum BATCH for value: "BATCH"
-         */
+        /** Enum BATCH for value: "BATCH" */
         public static final JobTypeEnum BATCH = new JobTypeEnum("BATCH");
-        
-        /**
-         * Enum REAL_TIME for value: "REAL_TIME"
-         */
+
+        /** Enum REAL_TIME for value: "REAL_TIME" */
         public static final JobTypeEnum REAL_TIME = new JobTypeEnum("REAL_TIME");
-        
 
         private static final Map<String, JobTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -102,7 +78,7 @@ public class ShowJobResponse extends SdkResponse {
 
         @JsonCreator
         public static JobTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             JobTypeEnum result = STATIC_FIELDS.get(value);
@@ -113,7 +89,7 @@ public class ShowJobResponse extends SdkResponse {
         }
 
         public static JobTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             JobTypeEnum result = STATIC_FIELDS.get(value);
@@ -137,16 +113,14 @@ public class ShowJobResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobType")
-    
+    @JsonProperty(value = "jobType")
+
     private JobTypeEnum jobType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="basicConfig")
-    
+    @JsonProperty(value = "basicConfig")
+
     private BasicInfo basicConfig;
 
     public ShowJobResponse withName(String name) {
@@ -154,13 +128,9 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * Get name
-     * @return name
-     */
+    /** Get name
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -169,16 +139,13 @@ public class ShowJobResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowJobResponse withNodes(List<Node> nodes) {
         this.nodes = nodes;
         return this;
     }
 
-    
     public ShowJobResponse addNodesItem(Node nodesItem) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         this.nodes.add(nodesItem);
@@ -186,17 +153,16 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     public ShowJobResponse withNodes(Consumer<List<Node>> nodesSetter) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         nodesSetter.accept(this.nodes);
         return this;
     }
 
-    /**
-     * Get nodes
-     * @return nodes
-     */
+    /** Get nodes
+     * 
+     * @return nodes */
     public List<Node> getNodes() {
         return nodes;
     }
@@ -205,27 +171,23 @@ public class ShowJobResponse extends SdkResponse {
         this.nodes = nodes;
     }
 
-    
-
     public ShowJobResponse withSchedule(Schedule schedule) {
         this.schedule = schedule;
         return this;
     }
 
     public ShowJobResponse withSchedule(Consumer<Schedule> scheduleSetter) {
-        if(this.schedule == null ){
+        if (this.schedule == null) {
             this.schedule = new Schedule();
             scheduleSetter.accept(this.schedule);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get schedule
-     * @return schedule
-     */
+    /** Get schedule
+     * 
+     * @return schedule */
     public Schedule getSchedule() {
         return schedule;
     }
@@ -234,16 +196,13 @@ public class ShowJobResponse extends SdkResponse {
         this.schedule = schedule;
     }
 
-    
-
     public ShowJobResponse withParams(List<JobParam> params) {
         this.params = params;
         return this;
     }
 
-    
     public ShowJobResponse addParamsItem(JobParam paramsItem) {
-        if(this.params == null) {
+        if (this.params == null) {
             this.params = new ArrayList<>();
         }
         this.params.add(paramsItem);
@@ -251,17 +210,16 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     public ShowJobResponse withParams(Consumer<List<JobParam>> paramsSetter) {
-        if(this.params == null) {
+        if (this.params == null) {
             this.params = new ArrayList<>();
         }
         paramsSetter.accept(this.params);
         return this;
     }
 
-    /**
-     * Get params
-     * @return params
-     */
+    /** Get params
+     * 
+     * @return params */
     public List<JobParam> getParams() {
         return params;
     }
@@ -270,20 +228,14 @@ public class ShowJobResponse extends SdkResponse {
         this.params = params;
     }
 
-    
-
     public ShowJobResponse withDirectory(String directory) {
         this.directory = directory;
         return this;
     }
 
-    
-
-
-    /**
-     * Get directory
-     * @return directory
-     */
+    /** Get directory
+     * 
+     * @return directory */
     public String getDirectory() {
         return directory;
     }
@@ -292,20 +244,14 @@ public class ShowJobResponse extends SdkResponse {
         this.directory = directory;
     }
 
-    
-
     public ShowJobResponse withJobType(JobTypeEnum jobType) {
         this.jobType = jobType;
         return this;
     }
 
-    
-
-
-    /**
-     * Get jobType
-     * @return jobType
-     */
+    /** Get jobType
+     * 
+     * @return jobType */
     public JobTypeEnum getJobType() {
         return jobType;
     }
@@ -314,27 +260,23 @@ public class ShowJobResponse extends SdkResponse {
         this.jobType = jobType;
     }
 
-    
-
     public ShowJobResponse withBasicConfig(BasicInfo basicConfig) {
         this.basicConfig = basicConfig;
         return this;
     }
 
     public ShowJobResponse withBasicConfig(Consumer<BasicInfo> basicConfigSetter) {
-        if(this.basicConfig == null ){
+        if (this.basicConfig == null) {
             this.basicConfig = new BasicInfo();
             basicConfigSetter.accept(this.basicConfig);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get basicConfig
-     * @return basicConfig
-     */
+    /** Get basicConfig
+     * 
+     * @return basicConfig */
     public BasicInfo getBasicConfig() {
         return basicConfig;
     }
@@ -342,8 +284,6 @@ public class ShowJobResponse extends SdkResponse {
     public void setBasicConfig(BasicInfo basicConfig) {
         this.basicConfig = basicConfig;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -354,18 +294,19 @@ public class ShowJobResponse extends SdkResponse {
             return false;
         }
         ShowJobResponse showJobResponse = (ShowJobResponse) o;
-        return Objects.equals(this.name, showJobResponse.name) &&
-            Objects.equals(this.nodes, showJobResponse.nodes) &&
-            Objects.equals(this.schedule, showJobResponse.schedule) &&
-            Objects.equals(this.params, showJobResponse.params) &&
-            Objects.equals(this.directory, showJobResponse.directory) &&
-            Objects.equals(this.jobType, showJobResponse.jobType) &&
-            Objects.equals(this.basicConfig, showJobResponse.basicConfig);
+        return Objects.equals(this.name, showJobResponse.name) && Objects.equals(this.nodes, showJobResponse.nodes)
+            && Objects.equals(this.schedule, showJobResponse.schedule)
+            && Objects.equals(this.params, showJobResponse.params)
+            && Objects.equals(this.directory, showJobResponse.directory)
+            && Objects.equals(this.jobType, showJobResponse.jobType)
+            && Objects.equals(this.basicConfig, showJobResponse.basicConfig);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, nodes, schedule, params, directory, jobType, basicConfig);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -380,16 +321,13 @@ public class ShowJobResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

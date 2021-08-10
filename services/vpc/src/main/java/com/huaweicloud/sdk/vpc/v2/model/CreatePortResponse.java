@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vpc.v2.model.Port;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class CreatePortResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
+
     private Port port;
 
     public CreatePortResponse withPort(Port port) {
@@ -32,19 +21,17 @@ public class CreatePortResponse extends SdkResponse {
     }
 
     public CreatePortResponse withPort(Consumer<Port> portSetter) {
-        if(this.port == null ){
+        if (this.port == null) {
             this.port = new Port();
             portSetter.accept(this.port);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get port
-     * @return port
-     */
+    /** Get port
+     * 
+     * @return port */
     public Port getPort() {
         return port;
     }
@@ -52,8 +39,6 @@ public class CreatePortResponse extends SdkResponse {
     public void setPort(Port port) {
         this.port = port;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class CreatePortResponse extends SdkResponse {
         CreatePortResponse createPortResponse = (CreatePortResponse) o;
         return Objects.equals(this.port, createPortResponse.port);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(port);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class CreatePortResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

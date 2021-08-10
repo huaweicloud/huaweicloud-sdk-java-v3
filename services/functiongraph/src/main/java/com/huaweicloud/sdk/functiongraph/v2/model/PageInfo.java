@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 分页结构体。
- */
-public class PageInfo  {
-
-
+/** 分页结构体。 */
+public class PageInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="next_marker")
-    
+    @JsonProperty(value = "next_marker")
+
     private Long nextMarker;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="previous_marker")
-    
+    @JsonProperty(value = "previous_marker")
+
     private Long previousMarker;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="current_count")
-    
+    @JsonProperty(value = "current_count")
+
     private Long currentCount;
 
     public PageInfo withNextMarker(Long nextMarker) {
@@ -40,14 +28,9 @@ public class PageInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 返回下一页查询地址。
-     * minimum: 0
-     * @return nextMarker
-     */
+    /** 返回下一页查询地址。 minimum: 0
+     * 
+     * @return nextMarker */
     public Long getNextMarker() {
         return nextMarker;
     }
@@ -56,21 +39,14 @@ public class PageInfo  {
         this.nextMarker = nextMarker;
     }
 
-    
-
     public PageInfo withPreviousMarker(Long previousMarker) {
         this.previousMarker = previousMarker;
         return this;
     }
 
-    
-
-
-    /**
-     * 返回前一页查询地址。
-     * minimum: 0
-     * @return previousMarker
-     */
+    /** 返回前一页查询地址。 minimum: 0
+     * 
+     * @return previousMarker */
     public Long getPreviousMarker() {
         return previousMarker;
     }
@@ -79,21 +55,14 @@ public class PageInfo  {
         this.previousMarker = previousMarker;
     }
 
-    
-
     public PageInfo withCurrentCount(Long currentCount) {
         this.currentCount = currentCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 本页返回条目数量。
-     * minimum: 0
-     * @return currentCount
-     */
+    /** 本页返回条目数量。 minimum: 0
+     * 
+     * @return currentCount */
     public Long getCurrentCount() {
         return currentCount;
     }
@@ -101,8 +70,6 @@ public class PageInfo  {
     public void setCurrentCount(Long currentCount) {
         this.currentCount = currentCount;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -113,14 +80,16 @@ public class PageInfo  {
             return false;
         }
         PageInfo pageInfo = (PageInfo) o;
-        return Objects.equals(this.nextMarker, pageInfo.nextMarker) &&
-            Objects.equals(this.previousMarker, pageInfo.previousMarker) &&
-            Objects.equals(this.currentCount, pageInfo.currentCount);
+        return Objects.equals(this.nextMarker, pageInfo.nextMarker)
+            && Objects.equals(this.previousMarker, pageInfo.previousMarker)
+            && Objects.equals(this.currentCount, pageInfo.currentCount);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nextMarker, previousMarker, currentCount);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -131,16 +100,13 @@ public class PageInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,47 +1,34 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vod.v1.model.ThumbnailRsp;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 截图信息。  &gt; 仅当截图成功后才能查询到此信息，未截图、正在截图以及截图失败时，无此字段信息。
- */
-public class ThumbnailInfo  {
-
-
+/** 截图信息。 &gt; 仅当截图成功后才能查询到此信息，未截图、正在截图以及截图失败时，无此字段信息。 */
+public class ThumbnailInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sample")
-    
+    @JsonProperty(value = "sample")
+
     private List<ThumbnailRsp> sample = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dots")
-    
+    @JsonProperty(value = "dots")
+
     private List<ThumbnailRsp> dots = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="exec_desc")
-    
+    @JsonProperty(value = "exec_desc")
+
     private String execDesc;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="thumbnail_status")
-    
+    @JsonProperty(value = "thumbnail_status")
+
     private String thumbnailStatus;
 
     public ThumbnailInfo withSample(List<ThumbnailRsp> sample) {
@@ -49,9 +36,8 @@ public class ThumbnailInfo  {
         return this;
     }
 
-    
     public ThumbnailInfo addSampleItem(ThumbnailRsp sampleItem) {
-        if(this.sample == null) {
+        if (this.sample == null) {
             this.sample = new ArrayList<>();
         }
         this.sample.add(sampleItem);
@@ -59,17 +45,16 @@ public class ThumbnailInfo  {
     }
 
     public ThumbnailInfo withSample(Consumer<List<ThumbnailRsp>> sampleSetter) {
-        if(this.sample == null) {
+        if (this.sample == null) {
             this.sample = new ArrayList<>();
         }
         sampleSetter.accept(this.sample);
         return this;
     }
 
-    /**
-     * 视频截图信息。
-     * @return sample
-     */
+    /** 视频截图信息。
+     * 
+     * @return sample */
     public List<ThumbnailRsp> getSample() {
         return sample;
     }
@@ -78,16 +63,13 @@ public class ThumbnailInfo  {
         this.sample = sample;
     }
 
-    
-
     public ThumbnailInfo withDots(List<ThumbnailRsp> dots) {
         this.dots = dots;
         return this;
     }
 
-    
     public ThumbnailInfo addDotsItem(ThumbnailRsp dotsItem) {
-        if(this.dots == null) {
+        if (this.dots == null) {
             this.dots = new ArrayList<>();
         }
         this.dots.add(dotsItem);
@@ -95,17 +77,16 @@ public class ThumbnailInfo  {
     }
 
     public ThumbnailInfo withDots(Consumer<List<ThumbnailRsp>> dotsSetter) {
-        if(this.dots == null) {
+        if (this.dots == null) {
             this.dots = new ArrayList<>();
         }
         dotsSetter.accept(this.dots);
         return this;
     }
 
-    /**
-     * Get dots
-     * @return dots
-     */
+    /** Get dots
+     * 
+     * @return dots */
     public List<ThumbnailRsp> getDots() {
         return dots;
     }
@@ -114,20 +95,14 @@ public class ThumbnailInfo  {
         this.dots = dots;
     }
 
-    
-
     public ThumbnailInfo withExecDesc(String execDesc) {
         this.execDesc = execDesc;
         return this;
     }
 
-    
-
-
-    /**
-     * 执行情况描述。
-     * @return execDesc
-     */
+    /** 执行情况描述。
+     * 
+     * @return execDesc */
     public String getExecDesc() {
         return execDesc;
     }
@@ -136,20 +111,14 @@ public class ThumbnailInfo  {
         this.execDesc = execDesc;
     }
 
-    
-
     public ThumbnailInfo withThumbnailStatus(String thumbnailStatus) {
         this.thumbnailStatus = thumbnailStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 截图状态。  取值如下： - UN_THUMBNAIL：未截图 - THUMBNAILING：截图中 - THUMBNAIL_SUCCEED：截图成功 - THUMBNAIL_FAILED：截图失败
-     * @return thumbnailStatus
-     */
+    /** 截图状态。 取值如下： - UN_THUMBNAIL：未截图 - THUMBNAILING：截图中 - THUMBNAIL_SUCCEED：截图成功 - THUMBNAIL_FAILED：截图失败
+     * 
+     * @return thumbnailStatus */
     public String getThumbnailStatus() {
         return thumbnailStatus;
     }
@@ -157,8 +126,6 @@ public class ThumbnailInfo  {
     public void setThumbnailStatus(String thumbnailStatus) {
         this.thumbnailStatus = thumbnailStatus;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -169,15 +136,16 @@ public class ThumbnailInfo  {
             return false;
         }
         ThumbnailInfo thumbnailInfo = (ThumbnailInfo) o;
-        return Objects.equals(this.sample, thumbnailInfo.sample) &&
-            Objects.equals(this.dots, thumbnailInfo.dots) &&
-            Objects.equals(this.execDesc, thumbnailInfo.execDesc) &&
-            Objects.equals(this.thumbnailStatus, thumbnailInfo.thumbnailStatus);
+        return Objects.equals(this.sample, thumbnailInfo.sample) && Objects.equals(this.dots, thumbnailInfo.dots)
+            && Objects.equals(this.execDesc, thumbnailInfo.execDesc)
+            && Objects.equals(this.thumbnailStatus, thumbnailInfo.thumbnailStatus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sample, dots, execDesc, thumbnailStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -189,16 +157,13 @@ public class ThumbnailInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

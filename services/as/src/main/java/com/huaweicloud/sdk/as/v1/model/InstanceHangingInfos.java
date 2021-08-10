@@ -1,70 +1,49 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 挂钩实例信息
- */
-public class InstanceHangingInfos  {
-
-
+/** 挂钩实例信息 */
+public class InstanceHangingInfos {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lifecycle_hook_name")
-    
+    @JsonProperty(value = "lifecycle_hook_name")
+
     private String lifecycleHookName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lifecycle_action_key")
-    
+    @JsonProperty(value = "lifecycle_action_key")
+
     private String lifecycleActionKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_group_id")
-    
+    @JsonProperty(value = "scaling_group_id")
+
     private String scalingGroupId;
-    /**
-     * 伸缩实例挂钩的挂起状态。HANGING：挂起。CONTINUE：继续。ABANDON：终止。
-     */
+
+    /** 伸缩实例挂钩的挂起状态。HANGING：挂起。CONTINUE：继续。ABANDON：终止。 */
     public static final class LifecycleHookStatusEnum {
 
-        
-        /**
-         * Enum HANGING for value: "HANGING"
-         */
+        /** Enum HANGING for value: "HANGING" */
         public static final LifecycleHookStatusEnum HANGING = new LifecycleHookStatusEnum("HANGING");
-        
-        /**
-         * Enum CONTINUE for value: "CONTINUE"
-         */
+
+        /** Enum CONTINUE for value: "CONTINUE" */
         public static final LifecycleHookStatusEnum CONTINUE = new LifecycleHookStatusEnum("CONTINUE");
-        
-        /**
-         * Enum ABANDON for value: "ABANDON"
-         */
+
+        /** Enum ABANDON for value: "ABANDON" */
         public static final LifecycleHookStatusEnum ABANDON = new LifecycleHookStatusEnum("ABANDON");
-        
 
         private static final Map<String, LifecycleHookStatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -94,7 +73,7 @@ public class InstanceHangingInfos  {
 
         @JsonCreator
         public static LifecycleHookStatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             LifecycleHookStatusEnum result = STATIC_FIELDS.get(value);
@@ -105,7 +84,7 @@ public class InstanceHangingInfos  {
         }
 
         public static LifecycleHookStatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             LifecycleHookStatusEnum result = STATIC_FIELDS.get(value);
@@ -129,22 +108,19 @@ public class InstanceHangingInfos  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lifecycle_hook_status")
-    
+    @JsonProperty(value = "lifecycle_hook_status")
+
     private LifecycleHookStatusEnum lifecycleHookStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timeout")
-    
+    @JsonProperty(value = "timeout")
+
     private String timeout;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="default_result")
-    
+    @JsonProperty(value = "default_result")
+
     private String defaultResult;
 
     public InstanceHangingInfos withLifecycleHookName(String lifecycleHookName) {
@@ -152,13 +128,9 @@ public class InstanceHangingInfos  {
         return this;
     }
 
-    
-
-
-    /**
-     * 生命周期挂钩名称。
-     * @return lifecycleHookName
-     */
+    /** 生命周期挂钩名称。
+     * 
+     * @return lifecycleHookName */
     public String getLifecycleHookName() {
         return lifecycleHookName;
     }
@@ -167,20 +139,14 @@ public class InstanceHangingInfos  {
         this.lifecycleHookName = lifecycleHookName;
     }
 
-    
-
     public InstanceHangingInfos withLifecycleActionKey(String lifecycleActionKey) {
         this.lifecycleActionKey = lifecycleActionKey;
         return this;
     }
 
-    
-
-
-    /**
-     * 生命周期操作令牌，用于指定生命周期回调对象。
-     * @return lifecycleActionKey
-     */
+    /** 生命周期操作令牌，用于指定生命周期回调对象。
+     * 
+     * @return lifecycleActionKey */
     public String getLifecycleActionKey() {
         return lifecycleActionKey;
     }
@@ -189,20 +155,14 @@ public class InstanceHangingInfos  {
         this.lifecycleActionKey = lifecycleActionKey;
     }
 
-    
-
     public InstanceHangingInfos withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩实例ID。
-     * @return instanceId
-     */
+    /** 伸缩实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -211,20 +171,14 @@ public class InstanceHangingInfos  {
         this.instanceId = instanceId;
     }
 
-    
-
     public InstanceHangingInfos withScalingGroupId(String scalingGroupId) {
         this.scalingGroupId = scalingGroupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩组ID。
-     * @return scalingGroupId
-     */
+    /** 伸缩组ID。
+     * 
+     * @return scalingGroupId */
     public String getScalingGroupId() {
         return scalingGroupId;
     }
@@ -233,20 +187,14 @@ public class InstanceHangingInfos  {
         this.scalingGroupId = scalingGroupId;
     }
 
-    
-
     public InstanceHangingInfos withLifecycleHookStatus(LifecycleHookStatusEnum lifecycleHookStatus) {
         this.lifecycleHookStatus = lifecycleHookStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩实例挂钩的挂起状态。HANGING：挂起。CONTINUE：继续。ABANDON：终止。
-     * @return lifecycleHookStatus
-     */
+    /** 伸缩实例挂钩的挂起状态。HANGING：挂起。CONTINUE：继续。ABANDON：终止。
+     * 
+     * @return lifecycleHookStatus */
     public LifecycleHookStatusEnum getLifecycleHookStatus() {
         return lifecycleHookStatus;
     }
@@ -255,20 +203,14 @@ public class InstanceHangingInfos  {
         this.lifecycleHookStatus = lifecycleHookStatus;
     }
 
-    
-
     public InstanceHangingInfos withTimeout(String timeout) {
         this.timeout = timeout;
         return this;
     }
 
-    
-
-
-    /**
-     * 超时时间，遵循UTC时间，格式为：YYYY-MM-DDThh:mm:ssZZ。
-     * @return timeout
-     */
+    /** 超时时间，遵循UTC时间，格式为：YYYY-MM-DDThh:mm:ssZZ。
+     * 
+     * @return timeout */
     public String getTimeout() {
         return timeout;
     }
@@ -277,20 +219,14 @@ public class InstanceHangingInfos  {
         this.timeout = timeout;
     }
 
-    
-
     public InstanceHangingInfos withDefaultResult(String defaultResult) {
         this.defaultResult = defaultResult;
         return this;
     }
 
-    
-
-
-    /**
-     * 生命周期挂钩默认回调操作。
-     * @return defaultResult
-     */
+    /** 生命周期挂钩默认回调操作。
+     * 
+     * @return defaultResult */
     public String getDefaultResult() {
         return defaultResult;
     }
@@ -298,8 +234,6 @@ public class InstanceHangingInfos  {
     public void setDefaultResult(String defaultResult) {
         this.defaultResult = defaultResult;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -310,18 +244,26 @@ public class InstanceHangingInfos  {
             return false;
         }
         InstanceHangingInfos instanceHangingInfos = (InstanceHangingInfos) o;
-        return Objects.equals(this.lifecycleHookName, instanceHangingInfos.lifecycleHookName) &&
-            Objects.equals(this.lifecycleActionKey, instanceHangingInfos.lifecycleActionKey) &&
-            Objects.equals(this.instanceId, instanceHangingInfos.instanceId) &&
-            Objects.equals(this.scalingGroupId, instanceHangingInfos.scalingGroupId) &&
-            Objects.equals(this.lifecycleHookStatus, instanceHangingInfos.lifecycleHookStatus) &&
-            Objects.equals(this.timeout, instanceHangingInfos.timeout) &&
-            Objects.equals(this.defaultResult, instanceHangingInfos.defaultResult);
+        return Objects.equals(this.lifecycleHookName, instanceHangingInfos.lifecycleHookName)
+            && Objects.equals(this.lifecycleActionKey, instanceHangingInfos.lifecycleActionKey)
+            && Objects.equals(this.instanceId, instanceHangingInfos.instanceId)
+            && Objects.equals(this.scalingGroupId, instanceHangingInfos.scalingGroupId)
+            && Objects.equals(this.lifecycleHookStatus, instanceHangingInfos.lifecycleHookStatus)
+            && Objects.equals(this.timeout, instanceHangingInfos.timeout)
+            && Objects.equals(this.defaultResult, instanceHangingInfos.defaultResult);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(lifecycleHookName, lifecycleActionKey, instanceId, scalingGroupId, lifecycleHookStatus, timeout, defaultResult);
+        return Objects.hash(lifecycleHookName,
+            lifecycleActionKey,
+            instanceId,
+            scalingGroupId,
+            lifecycleHookStatus,
+            timeout,
+            defaultResult);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -336,16 +278,13 @@ public class InstanceHangingInfos  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

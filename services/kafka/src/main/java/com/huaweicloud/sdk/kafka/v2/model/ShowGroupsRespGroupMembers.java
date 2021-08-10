@@ -1,47 +1,34 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kafka.v2.model.ShowGroupsRespGroupAssignment;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ShowGroupsRespGroupMembers
- */
-public class ShowGroupsRespGroupMembers  {
-
-
+/** ShowGroupsRespGroupMembers */
+public class ShowGroupsRespGroupMembers {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host")
-    
+    @JsonProperty(value = "host")
+
     private String host;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="assignment")
-    
+    @JsonProperty(value = "assignment")
+
     private List<ShowGroupsRespGroupAssignment> assignment = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="member_id")
-    
+    @JsonProperty(value = "member_id")
+
     private String memberId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="client_id")
-    
+    @JsonProperty(value = "client_id")
+
     private String clientId;
 
     public ShowGroupsRespGroupMembers withHost(String host) {
@@ -49,13 +36,9 @@ public class ShowGroupsRespGroupMembers  {
         return this;
     }
 
-    
-
-
-    /**
-     * 消费组consumer地址。
-     * @return host
-     */
+    /** 消费组consumer地址。
+     * 
+     * @return host */
     public String getHost() {
         return host;
     }
@@ -64,16 +47,13 @@ public class ShowGroupsRespGroupMembers  {
         this.host = host;
     }
 
-    
-
     public ShowGroupsRespGroupMembers withAssignment(List<ShowGroupsRespGroupAssignment> assignment) {
         this.assignment = assignment;
         return this;
     }
 
-    
     public ShowGroupsRespGroupMembers addAssignmentItem(ShowGroupsRespGroupAssignment assignmentItem) {
-        if(this.assignment == null) {
+        if (this.assignment == null) {
             this.assignment = new ArrayList<>();
         }
         this.assignment.add(assignmentItem);
@@ -81,17 +61,16 @@ public class ShowGroupsRespGroupMembers  {
     }
 
     public ShowGroupsRespGroupMembers withAssignment(Consumer<List<ShowGroupsRespGroupAssignment>> assignmentSetter) {
-        if(this.assignment == null) {
+        if (this.assignment == null) {
             this.assignment = new ArrayList<>();
         }
         assignmentSetter.accept(this.assignment);
         return this;
     }
 
-    /**
-     * consumer分配到的分区信息。
-     * @return assignment
-     */
+    /** consumer分配到的分区信息。
+     * 
+     * @return assignment */
     public List<ShowGroupsRespGroupAssignment> getAssignment() {
         return assignment;
     }
@@ -100,20 +79,14 @@ public class ShowGroupsRespGroupMembers  {
         this.assignment = assignment;
     }
 
-    
-
     public ShowGroupsRespGroupMembers withMemberId(String memberId) {
         this.memberId = memberId;
         return this;
     }
 
-    
-
-
-    /**
-     * 消费组consumer的ID。
-     * @return memberId
-     */
+    /** 消费组consumer的ID。
+     * 
+     * @return memberId */
     public String getMemberId() {
         return memberId;
     }
@@ -122,20 +95,14 @@ public class ShowGroupsRespGroupMembers  {
         this.memberId = memberId;
     }
 
-    
-
     public ShowGroupsRespGroupMembers withClientId(String clientId) {
         this.clientId = clientId;
         return this;
     }
 
-    
-
-
-    /**
-     * 客户端ID。
-     * @return clientId
-     */
+    /** 客户端ID。
+     * 
+     * @return clientId */
     public String getClientId() {
         return clientId;
     }
@@ -143,8 +110,6 @@ public class ShowGroupsRespGroupMembers  {
     public void setClientId(String clientId) {
         this.clientId = clientId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -155,15 +120,17 @@ public class ShowGroupsRespGroupMembers  {
             return false;
         }
         ShowGroupsRespGroupMembers showGroupsRespGroupMembers = (ShowGroupsRespGroupMembers) o;
-        return Objects.equals(this.host, showGroupsRespGroupMembers.host) &&
-            Objects.equals(this.assignment, showGroupsRespGroupMembers.assignment) &&
-            Objects.equals(this.memberId, showGroupsRespGroupMembers.memberId) &&
-            Objects.equals(this.clientId, showGroupsRespGroupMembers.clientId);
+        return Objects.equals(this.host, showGroupsRespGroupMembers.host)
+            && Objects.equals(this.assignment, showGroupsRespGroupMembers.assignment)
+            && Objects.equals(this.memberId, showGroupsRespGroupMembers.memberId)
+            && Objects.equals(this.clientId, showGroupsRespGroupMembers.clientId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(host, assignment, memberId, clientId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -175,16 +142,13 @@ public class ShowGroupsRespGroupMembers  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

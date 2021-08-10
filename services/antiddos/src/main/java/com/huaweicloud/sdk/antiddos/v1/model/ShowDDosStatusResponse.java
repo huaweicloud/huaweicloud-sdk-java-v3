@@ -1,28 +1,17 @@
 package com.huaweicloud.sdk.antiddos.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowDDosStatusResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
     public ShowDDosStatusResponse withStatus(String status) {
@@ -30,13 +19,9 @@ public class ShowDDosStatusResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 防护状态，可选范围：   - normal：表示正常   - configging：表示设置中   - notConfig：表示未设置   - packetcleaning：表示清洗   - packetdropping：表示黑洞
-     * @return status
-     */
+    /** 防护状态，可选范围： - normal：表示正常 - configging：表示设置中 - notConfig：表示未设置 - packetcleaning：表示清洗 - packetdropping：表示黑洞
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -44,8 +29,6 @@ public class ShowDDosStatusResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -58,10 +41,12 @@ public class ShowDDosStatusResponse extends SdkResponse {
         ShowDDosStatusResponse showDDosStatusResponse = (ShowDDosStatusResponse) o;
         return Objects.equals(this.status, showDDosStatusResponse.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -70,16 +55,13 @@ public class ShowDDosStatusResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

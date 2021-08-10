@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * OpErrorInfo
- */
-public class OpErrorInfo  {
-
-
+/** OpErrorInfo */
+public class OpErrorInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code")
-    
+    @JsonProperty(value = "code")
+
     private String code;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message")
-    
+    @JsonProperty(value = "message")
+
     private String message;
 
     public OpErrorInfo withCode(String code) {
@@ -34,13 +23,9 @@ public class OpErrorInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 请参见[错误码](ErrorCode.xml)。
-     * @return code
-     */
+    /** 请参见[错误码](ErrorCode.xml)。
+     * 
+     * @return code */
     public String getCode() {
         return code;
     }
@@ -49,20 +34,14 @@ public class OpErrorInfo  {
         this.code = code;
     }
 
-    
-
     public OpErrorInfo withMessage(String message) {
         this.message = message;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误信息
-     * @return message
-     */
+    /** 错误信息
+     * 
+     * @return message */
     public String getMessage() {
         return message;
     }
@@ -70,8 +49,6 @@ public class OpErrorInfo  {
     public void setMessage(String message) {
         this.message = message;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,14 @@ public class OpErrorInfo  {
             return false;
         }
         OpErrorInfo opErrorInfo = (OpErrorInfo) o;
-        return Objects.equals(this.code, opErrorInfo.code) &&
-            Objects.equals(this.message, opErrorInfo.message);
+        return Objects.equals(this.code, opErrorInfo.code) && Objects.equals(this.message, opErrorInfo.message);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(code, message);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +76,13 @@ public class OpErrorInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

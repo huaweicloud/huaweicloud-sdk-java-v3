@@ -1,135 +1,107 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.waf.v1.model.ListEventResponseBodyHeaders;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 攻击类型
- */
-public class ListEventResponseBodyItems  {
-
-
+/** 攻击类型 */
+public class ListEventResponseBodyItems {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time")
-    
+    @JsonProperty(value = "time")
+
     private Long time;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policyid")
-    
+    @JsonProperty(value = "policyid")
+
     private String policyid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sip")
-    
+    @JsonProperty(value = "sip")
+
     private String sip;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host")
-    
+    @JsonProperty(value = "host")
+
     private String host;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private String url;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="attack")
-    
+    @JsonProperty(value = "attack")
+
     private String attack;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rule")
-    
+    @JsonProperty(value = "rule")
+
     private String rule;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="payload")
-    
+    @JsonProperty(value = "payload")
+
     private String payload;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private String action;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="request_line")
-    
+    @JsonProperty(value = "request_line")
+
     private String requestLine;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="headers")
-    
+    @JsonProperty(value = "headers")
+
     private ListEventResponseBodyHeaders headers;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cookie")
-    
+    @JsonProperty(value = "cookie")
+
     private String cookie;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host_id")
-    
+    @JsonProperty(value = "host_id")
+
     private String hostId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="response_time")
-    
+    @JsonProperty(value = "response_time")
+
     private Long responseTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="response_size")
-    
+    @JsonProperty(value = "response_size")
+
     private Integer responseSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="response_body")
-    
+    @JsonProperty(value = "response_body")
+
     private String responseBody;
 
     public ListEventResponseBodyItems withId(String id) {
@@ -137,13 +109,9 @@ public class ListEventResponseBodyItems  {
         return this;
     }
 
-    
-
-
-    /**
-     * 事件id
-     * @return id
-     */
+    /** 事件id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -152,20 +120,14 @@ public class ListEventResponseBodyItems  {
         this.id = id;
     }
 
-    
-
     public ListEventResponseBodyItems withTime(Long time) {
         this.time = time;
         return this;
     }
 
-    
-
-
-    /**
-     * 次数
-     * @return time
-     */
+    /** 次数
+     * 
+     * @return time */
     public Long getTime() {
         return time;
     }
@@ -174,20 +136,14 @@ public class ListEventResponseBodyItems  {
         this.time = time;
     }
 
-    
-
     public ListEventResponseBodyItems withPolicyid(String policyid) {
         this.policyid = policyid;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略id
-     * @return policyid
-     */
+    /** 策略id
+     * 
+     * @return policyid */
     public String getPolicyid() {
         return policyid;
     }
@@ -196,20 +152,14 @@ public class ListEventResponseBodyItems  {
         this.policyid = policyid;
     }
 
-    
-
     public ListEventResponseBodyItems withSip(String sip) {
         this.sip = sip;
         return this;
     }
 
-    
-
-
-    /**
-     * 源ip
-     * @return sip
-     */
+    /** 源ip
+     * 
+     * @return sip */
     public String getSip() {
         return sip;
     }
@@ -218,20 +168,14 @@ public class ListEventResponseBodyItems  {
         this.sip = sip;
     }
 
-    
-
     public ListEventResponseBodyItems withHost(String host) {
         this.host = host;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名
-     * @return host
-     */
+    /** 域名
+     * 
+     * @return host */
     public String getHost() {
         return host;
     }
@@ -240,20 +184,14 @@ public class ListEventResponseBodyItems  {
         this.host = host;
     }
 
-    
-
     public ListEventResponseBodyItems withUrl(String url) {
         this.url = url;
         return this;
     }
 
-    
-
-
-    /**
-     * 攻击的url链接
-     * @return url
-     */
+    /** 攻击的url链接
+     * 
+     * @return url */
     public String getUrl() {
         return url;
     }
@@ -262,20 +200,14 @@ public class ListEventResponseBodyItems  {
         this.url = url;
     }
 
-    
-
     public ListEventResponseBodyItems withAttack(String attack) {
         this.attack = attack;
         return this;
     }
 
-    
-
-
-    /**
-     * 攻击类型
-     * @return attack
-     */
+    /** 攻击类型
+     * 
+     * @return attack */
     public String getAttack() {
         return attack;
     }
@@ -284,20 +216,14 @@ public class ListEventResponseBodyItems  {
         this.attack = attack;
     }
 
-    
-
     public ListEventResponseBodyItems withRule(String rule) {
         this.rule = rule;
         return this;
     }
 
-    
-
-
-    /**
-     * 命中的规则id
-     * @return rule
-     */
+    /** 命中的规则id
+     * 
+     * @return rule */
     public String getRule() {
         return rule;
     }
@@ -306,20 +232,14 @@ public class ListEventResponseBodyItems  {
         this.rule = rule;
     }
 
-    
-
     public ListEventResponseBodyItems withPayload(String payload) {
         this.payload = payload;
         return this;
     }
 
-    
-
-
-    /**
-     * 命中的载荷
-     * @return payload
-     */
+    /** 命中的载荷
+     * 
+     * @return payload */
     public String getPayload() {
         return payload;
     }
@@ -328,20 +248,14 @@ public class ListEventResponseBodyItems  {
         this.payload = payload;
     }
 
-    
-
     public ListEventResponseBodyItems withAction(String action) {
         this.action = action;
         return this;
     }
 
-    
-
-
-    /**
-     * 防护动作
-     * @return action
-     */
+    /** 防护动作
+     * 
+     * @return action */
     public String getAction() {
         return action;
     }
@@ -350,20 +264,14 @@ public class ListEventResponseBodyItems  {
         this.action = action;
     }
 
-    
-
     public ListEventResponseBodyItems withRequestLine(String requestLine) {
         this.requestLine = requestLine;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求方法和路径
-     * @return requestLine
-     */
+    /** 请求方法和路径
+     * 
+     * @return requestLine */
     public String getRequestLine() {
         return requestLine;
     }
@@ -372,27 +280,23 @@ public class ListEventResponseBodyItems  {
         this.requestLine = requestLine;
     }
 
-    
-
     public ListEventResponseBodyItems withHeaders(ListEventResponseBodyHeaders headers) {
         this.headers = headers;
         return this;
     }
 
     public ListEventResponseBodyItems withHeaders(Consumer<ListEventResponseBodyHeaders> headersSetter) {
-        if(this.headers == null ){
+        if (this.headers == null) {
             this.headers = new ListEventResponseBodyHeaders();
             headersSetter.accept(this.headers);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get headers
-     * @return headers
-     */
+    /** Get headers
+     * 
+     * @return headers */
     public ListEventResponseBodyHeaders getHeaders() {
         return headers;
     }
@@ -401,20 +305,14 @@ public class ListEventResponseBodyItems  {
         this.headers = headers;
     }
 
-    
-
     public ListEventResponseBodyItems withCookie(String cookie) {
         this.cookie = cookie;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求cookie
-     * @return cookie
-     */
+    /** 请求cookie
+     * 
+     * @return cookie */
     public String getCookie() {
         return cookie;
     }
@@ -423,20 +321,14 @@ public class ListEventResponseBodyItems  {
         this.cookie = cookie;
     }
 
-    
-
     public ListEventResponseBodyItems withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 响应码状态
-     * @return status
-     */
+    /** 响应码状态
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -445,20 +337,14 @@ public class ListEventResponseBodyItems  {
         this.status = status;
     }
 
-    
-
     public ListEventResponseBodyItems withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * 区域
-     * @return region
-     */
+    /** 区域
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -467,20 +353,14 @@ public class ListEventResponseBodyItems  {
         this.region = region;
     }
 
-    
-
     public ListEventResponseBodyItems withHostId(String hostId) {
         this.hostId = hostId;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名id
-     * @return hostId
-     */
+    /** 域名id
+     * 
+     * @return hostId */
     public String getHostId() {
         return hostId;
     }
@@ -489,20 +369,14 @@ public class ListEventResponseBodyItems  {
         this.hostId = hostId;
     }
 
-    
-
     public ListEventResponseBodyItems withResponseTime(Long responseTime) {
         this.responseTime = responseTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 响应时长
-     * @return responseTime
-     */
+    /** 响应时长
+     * 
+     * @return responseTime */
     public Long getResponseTime() {
         return responseTime;
     }
@@ -511,20 +385,14 @@ public class ListEventResponseBodyItems  {
         this.responseTime = responseTime;
     }
 
-    
-
     public ListEventResponseBodyItems withResponseSize(Integer responseSize) {
         this.responseSize = responseSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 响应体大小
-     * @return responseSize
-     */
+    /** 响应体大小
+     * 
+     * @return responseSize */
     public Integer getResponseSize() {
         return responseSize;
     }
@@ -533,20 +401,14 @@ public class ListEventResponseBodyItems  {
         this.responseSize = responseSize;
     }
 
-    
-
     public ListEventResponseBodyItems withResponseBody(String responseBody) {
         this.responseBody = responseBody;
         return this;
     }
 
-    
-
-
-    /**
-     * 响应体
-     * @return responseBody
-     */
+    /** 响应体
+     * 
+     * @return responseBody */
     public String getResponseBody() {
         return responseBody;
     }
@@ -554,8 +416,6 @@ public class ListEventResponseBodyItems  {
     public void setResponseBody(String responseBody) {
         this.responseBody = responseBody;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -566,30 +426,50 @@ public class ListEventResponseBodyItems  {
             return false;
         }
         ListEventResponseBodyItems listEventResponseBodyItems = (ListEventResponseBodyItems) o;
-        return Objects.equals(this.id, listEventResponseBodyItems.id) &&
-            Objects.equals(this.time, listEventResponseBodyItems.time) &&
-            Objects.equals(this.policyid, listEventResponseBodyItems.policyid) &&
-            Objects.equals(this.sip, listEventResponseBodyItems.sip) &&
-            Objects.equals(this.host, listEventResponseBodyItems.host) &&
-            Objects.equals(this.url, listEventResponseBodyItems.url) &&
-            Objects.equals(this.attack, listEventResponseBodyItems.attack) &&
-            Objects.equals(this.rule, listEventResponseBodyItems.rule) &&
-            Objects.equals(this.payload, listEventResponseBodyItems.payload) &&
-            Objects.equals(this.action, listEventResponseBodyItems.action) &&
-            Objects.equals(this.requestLine, listEventResponseBodyItems.requestLine) &&
-            Objects.equals(this.headers, listEventResponseBodyItems.headers) &&
-            Objects.equals(this.cookie, listEventResponseBodyItems.cookie) &&
-            Objects.equals(this.status, listEventResponseBodyItems.status) &&
-            Objects.equals(this.region, listEventResponseBodyItems.region) &&
-            Objects.equals(this.hostId, listEventResponseBodyItems.hostId) &&
-            Objects.equals(this.responseTime, listEventResponseBodyItems.responseTime) &&
-            Objects.equals(this.responseSize, listEventResponseBodyItems.responseSize) &&
-            Objects.equals(this.responseBody, listEventResponseBodyItems.responseBody);
+        return Objects.equals(this.id, listEventResponseBodyItems.id)
+            && Objects.equals(this.time, listEventResponseBodyItems.time)
+            && Objects.equals(this.policyid, listEventResponseBodyItems.policyid)
+            && Objects.equals(this.sip, listEventResponseBodyItems.sip)
+            && Objects.equals(this.host, listEventResponseBodyItems.host)
+            && Objects.equals(this.url, listEventResponseBodyItems.url)
+            && Objects.equals(this.attack, listEventResponseBodyItems.attack)
+            && Objects.equals(this.rule, listEventResponseBodyItems.rule)
+            && Objects.equals(this.payload, listEventResponseBodyItems.payload)
+            && Objects.equals(this.action, listEventResponseBodyItems.action)
+            && Objects.equals(this.requestLine, listEventResponseBodyItems.requestLine)
+            && Objects.equals(this.headers, listEventResponseBodyItems.headers)
+            && Objects.equals(this.cookie, listEventResponseBodyItems.cookie)
+            && Objects.equals(this.status, listEventResponseBodyItems.status)
+            && Objects.equals(this.region, listEventResponseBodyItems.region)
+            && Objects.equals(this.hostId, listEventResponseBodyItems.hostId)
+            && Objects.equals(this.responseTime, listEventResponseBodyItems.responseTime)
+            && Objects.equals(this.responseSize, listEventResponseBodyItems.responseSize)
+            && Objects.equals(this.responseBody, listEventResponseBodyItems.responseBody);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, time, policyid, sip, host, url, attack, rule, payload, action, requestLine, headers, cookie, status, region, hostId, responseTime, responseSize, responseBody);
+        return Objects.hash(id,
+            time,
+            policyid,
+            sip,
+            host,
+            url,
+            attack,
+            rule,
+            payload,
+            action,
+            requestLine,
+            headers,
+            cookie,
+            status,
+            region,
+            hostId,
+            responseTime,
+            responseSize,
+            responseBody);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -616,16 +496,13 @@ public class ListEventResponseBodyItems  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

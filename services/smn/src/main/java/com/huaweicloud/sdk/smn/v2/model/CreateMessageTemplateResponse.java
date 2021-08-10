@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.smn.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateMessageTemplateResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="request_id")
-    
+    @JsonProperty(value = "request_id")
+
     private String requestId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message_template_id")
-    
+    @JsonProperty(value = "message_template_id")
+
     private String messageTemplateId;
 
     public CreateMessageTemplateResponse withRequestId(String requestId) {
@@ -36,13 +24,9 @@ public class CreateMessageTemplateResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 请求的唯一标识ID。
-     * @return requestId
-     */
+    /** 请求的唯一标识ID。
+     * 
+     * @return requestId */
     public String getRequestId() {
         return requestId;
     }
@@ -51,20 +35,14 @@ public class CreateMessageTemplateResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    
-
     public CreateMessageTemplateResponse withMessageTemplateId(String messageTemplateId) {
         this.messageTemplateId = messageTemplateId;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板唯一的资源标识。
-     * @return messageTemplateId
-     */
+    /** 模板唯一的资源标识。
+     * 
+     * @return messageTemplateId */
     public String getMessageTemplateId() {
         return messageTemplateId;
     }
@@ -72,8 +50,6 @@ public class CreateMessageTemplateResponse extends SdkResponse {
     public void setMessageTemplateId(String messageTemplateId) {
         this.messageTemplateId = messageTemplateId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +60,15 @@ public class CreateMessageTemplateResponse extends SdkResponse {
             return false;
         }
         CreateMessageTemplateResponse createMessageTemplateResponse = (CreateMessageTemplateResponse) o;
-        return Objects.equals(this.requestId, createMessageTemplateResponse.requestId) &&
-            Objects.equals(this.messageTemplateId, createMessageTemplateResponse.messageTemplateId);
+        return Objects.equals(this.requestId, createMessageTemplateResponse.requestId)
+            && Objects.equals(this.messageTemplateId, createMessageTemplateResponse.messageTemplateId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(requestId, messageTemplateId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +78,13 @@ public class CreateMessageTemplateResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

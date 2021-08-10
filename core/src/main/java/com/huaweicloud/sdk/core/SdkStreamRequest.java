@@ -25,9 +25,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.io.InputStream;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public class SdkStreamRequest {
 
     @JsonIgnore

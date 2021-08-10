@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteConfigurationRequest  {
-
-
+/** Request Object */
+public class DeleteConfigurationRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="config_id")
-    
+    @JsonProperty(value = "config_id")
+
     private String configId;
 
     public DeleteConfigurationRequest withXLanguage(String xLanguage) {
@@ -34,15 +23,11 @@ public class DeleteConfigurationRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -51,20 +36,14 @@ public class DeleteConfigurationRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public DeleteConfigurationRequest withConfigId(String configId) {
         this.configId = configId;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数模板ID。
-     * @return configId
-     */
+    /** 参数模板ID。
+     * 
+     * @return configId */
     public String getConfigId() {
         return configId;
     }
@@ -72,8 +51,6 @@ public class DeleteConfigurationRequest  {
     public void setConfigId(String configId) {
         this.configId = configId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +61,15 @@ public class DeleteConfigurationRequest  {
             return false;
         }
         DeleteConfigurationRequest deleteConfigurationRequest = (DeleteConfigurationRequest) o;
-        return Objects.equals(this.xLanguage, deleteConfigurationRequest.xLanguage) &&
-            Objects.equals(this.configId, deleteConfigurationRequest.configId);
+        return Objects.equals(this.xLanguage, deleteConfigurationRequest.xLanguage)
+            && Objects.equals(this.configId, deleteConfigurationRequest.configId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, configId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +79,13 @@ public class DeleteConfigurationRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

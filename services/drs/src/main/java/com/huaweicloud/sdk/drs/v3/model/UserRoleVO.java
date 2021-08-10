@@ -1,58 +1,44 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 用户的角色信息
- */
-public class UserRoleVO  {
-
-
+/** 用户的角色信息 */
+public class UserRoleVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="role")
-    
+    @JsonProperty(value = "role")
+
     private String role;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="comment")
-    
+    @JsonProperty(value = "comment")
+
     private String comment;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_transfer")
-    
+    @JsonProperty(value = "is_transfer")
+
     private Boolean isTransfer;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="privileges")
-    
+    @JsonProperty(value = "privileges")
+
     private String privileges;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="inherits_roles")
-    
+    @JsonProperty(value = "inherits_roles")
+
     private List<String> inheritsRoles = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="selected")
-    
+    @JsonProperty(value = "selected")
+
     private Boolean selected;
 
     public UserRoleVO withRole(String role) {
@@ -60,13 +46,9 @@ public class UserRoleVO  {
         return this;
     }
 
-    
-
-
-    /**
-     * 角色
-     * @return role
-     */
+    /** 角色
+     * 
+     * @return role */
     public String getRole() {
         return role;
     }
@@ -75,20 +57,14 @@ public class UserRoleVO  {
         this.role = role;
     }
 
-    
-
     public UserRoleVO withComment(String comment) {
         this.comment = comment;
         return this;
     }
 
-    
-
-
-    /**
-     * 说明
-     * @return comment
-     */
+    /** 说明
+     * 
+     * @return comment */
     public String getComment() {
         return comment;
     }
@@ -97,20 +73,14 @@ public class UserRoleVO  {
         this.comment = comment;
     }
 
-    
-
     public UserRoleVO withIsTransfer(Boolean isTransfer) {
         this.isTransfer = isTransfer;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否支持迁移。
-     * @return isTransfer
-     */
+    /** 是否支持迁移。
+     * 
+     * @return isTransfer */
     public Boolean getIsTransfer() {
         return isTransfer;
     }
@@ -119,20 +89,14 @@ public class UserRoleVO  {
         this.isTransfer = isTransfer;
     }
 
-    
-
     public UserRoleVO withPrivileges(String privileges) {
         this.privileges = privileges;
         return this;
     }
 
-    
-
-
-    /**
-     * 权限
-     * @return privileges
-     */
+    /** 权限
+     * 
+     * @return privileges */
     public String getPrivileges() {
         return privileges;
     }
@@ -141,16 +105,13 @@ public class UserRoleVO  {
         this.privileges = privileges;
     }
 
-    
-
     public UserRoleVO withInheritsRoles(List<String> inheritsRoles) {
         this.inheritsRoles = inheritsRoles;
         return this;
     }
 
-    
     public UserRoleVO addInheritsRolesItem(String inheritsRolesItem) {
-        if(this.inheritsRoles == null) {
+        if (this.inheritsRoles == null) {
             this.inheritsRoles = new ArrayList<>();
         }
         this.inheritsRoles.add(inheritsRolesItem);
@@ -158,17 +119,16 @@ public class UserRoleVO  {
     }
 
     public UserRoleVO withInheritsRoles(Consumer<List<String>> inheritsRolesSetter) {
-        if(this.inheritsRoles == null) {
+        if (this.inheritsRoles == null) {
             this.inheritsRoles = new ArrayList<>();
         }
         inheritsRolesSetter.accept(this.inheritsRoles);
         return this;
     }
 
-    /**
-     * 继承角色列表
-     * @return inheritsRoles
-     */
+    /** 继承角色列表
+     * 
+     * @return inheritsRoles */
     public List<String> getInheritsRoles() {
         return inheritsRoles;
     }
@@ -177,20 +137,14 @@ public class UserRoleVO  {
         this.inheritsRoles = inheritsRoles;
     }
 
-    
-
     public UserRoleVO withSelected(Boolean selected) {
         this.selected = selected;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否选择。
-     * @return selected
-     */
+    /** 是否选择。
+     * 
+     * @return selected */
     public Boolean getSelected() {
         return selected;
     }
@@ -198,8 +152,6 @@ public class UserRoleVO  {
     public void setSelected(Boolean selected) {
         this.selected = selected;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -210,17 +162,18 @@ public class UserRoleVO  {
             return false;
         }
         UserRoleVO userRoleVO = (UserRoleVO) o;
-        return Objects.equals(this.role, userRoleVO.role) &&
-            Objects.equals(this.comment, userRoleVO.comment) &&
-            Objects.equals(this.isTransfer, userRoleVO.isTransfer) &&
-            Objects.equals(this.privileges, userRoleVO.privileges) &&
-            Objects.equals(this.inheritsRoles, userRoleVO.inheritsRoles) &&
-            Objects.equals(this.selected, userRoleVO.selected);
+        return Objects.equals(this.role, userRoleVO.role) && Objects.equals(this.comment, userRoleVO.comment)
+            && Objects.equals(this.isTransfer, userRoleVO.isTransfer)
+            && Objects.equals(this.privileges, userRoleVO.privileges)
+            && Objects.equals(this.inheritsRoles, userRoleVO.inheritsRoles)
+            && Objects.equals(this.selected, userRoleVO.selected);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(role, comment, isTransfer, privileges, inheritsRoles, selected);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -234,16 +187,13 @@ public class UserRoleVO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

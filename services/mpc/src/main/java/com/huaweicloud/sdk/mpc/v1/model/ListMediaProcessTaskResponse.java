@@ -1,43 +1,30 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.MediaProcessTaskInfo;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListMediaProcessTaskResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_array")
-    
+    @JsonProperty(value = "task_array")
+
     private List<MediaProcessTaskInfo> taskArray = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_truncated")
-    
+    @JsonProperty(value = "is_truncated")
+
     private Integer isTruncated;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
     public ListMediaProcessTaskResponse withTaskArray(List<MediaProcessTaskInfo> taskArray) {
@@ -45,9 +32,8 @@ public class ListMediaProcessTaskResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListMediaProcessTaskResponse addTaskArrayItem(MediaProcessTaskInfo taskArrayItem) {
-        if(this.taskArray == null) {
+        if (this.taskArray == null) {
             this.taskArray = new ArrayList<>();
         }
         this.taskArray.add(taskArrayItem);
@@ -55,17 +41,16 @@ public class ListMediaProcessTaskResponse extends SdkResponse {
     }
 
     public ListMediaProcessTaskResponse withTaskArray(Consumer<List<MediaProcessTaskInfo>> taskArraySetter) {
-        if(this.taskArray == null) {
+        if (this.taskArray == null) {
             this.taskArray = new ArrayList<>();
         }
         taskArraySetter.accept(this.taskArray);
         return this;
     }
 
-    /**
-     * 任务列表
-     * @return taskArray
-     */
+    /** 任务列表
+     * 
+     * @return taskArray */
     public List<MediaProcessTaskInfo> getTaskArray() {
         return taskArray;
     }
@@ -74,22 +59,14 @@ public class ListMediaProcessTaskResponse extends SdkResponse {
         this.taskArray = taskArray;
     }
 
-    
-
     public ListMediaProcessTaskResponse withIsTruncated(Integer isTruncated) {
         this.isTruncated = isTruncated;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否截断
-     * minimum: 0
-     * maximum: 2
-     * @return isTruncated
-     */
+    /** 是否截断 minimum: 0 maximum: 2
+     * 
+     * @return isTruncated */
     public Integer getIsTruncated() {
         return isTruncated;
     }
@@ -98,22 +75,14 @@ public class ListMediaProcessTaskResponse extends SdkResponse {
         this.isTruncated = isTruncated;
     }
 
-    
-
     public ListMediaProcessTaskResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务总数
-     * minimum: 0
-     * maximum: 2147483647
-     * @return total
-     */
+    /** 任务总数 minimum: 0 maximum: 2147483647
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -121,8 +90,6 @@ public class ListMediaProcessTaskResponse extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -133,14 +100,16 @@ public class ListMediaProcessTaskResponse extends SdkResponse {
             return false;
         }
         ListMediaProcessTaskResponse listMediaProcessTaskResponse = (ListMediaProcessTaskResponse) o;
-        return Objects.equals(this.taskArray, listMediaProcessTaskResponse.taskArray) &&
-            Objects.equals(this.isTruncated, listMediaProcessTaskResponse.isTruncated) &&
-            Objects.equals(this.total, listMediaProcessTaskResponse.total);
+        return Objects.equals(this.taskArray, listMediaProcessTaskResponse.taskArray)
+            && Objects.equals(this.isTruncated, listMediaProcessTaskResponse.isTruncated)
+            && Objects.equals(this.total, listMediaProcessTaskResponse.total);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(taskArray, isTruncated, total);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -151,16 +120,13 @@ public class ListMediaProcessTaskResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

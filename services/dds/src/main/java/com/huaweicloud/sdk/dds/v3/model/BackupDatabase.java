@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * BackupDatabase
- */
-public class BackupDatabase  {
-
-
+/** BackupDatabase */
+public class BackupDatabase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
     public BackupDatabase withType(String type) {
@@ -34,13 +23,9 @@ public class BackupDatabase  {
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库引擎。 取值：DDS-Community。
-     * @return type
-     */
+    /** 数据库引擎。 取值：DDS-Community。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -49,20 +34,14 @@ public class BackupDatabase  {
         this.type = type;
     }
 
-    
-
     public BackupDatabase withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库版本。取值：“3.2”、“3.4”或“4.0”。
-     * @return version
-     */
+    /** 数据库版本。取值：“3.2”、“3.4”或“4.0”。
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -70,8 +49,6 @@ public class BackupDatabase  {
     public void setVersion(String version) {
         this.version = version;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,14 @@ public class BackupDatabase  {
             return false;
         }
         BackupDatabase backupDatabase = (BackupDatabase) o;
-        return Objects.equals(this.type, backupDatabase.type) &&
-            Objects.equals(this.version, backupDatabase.version);
+        return Objects.equals(this.type, backupDatabase.type) && Objects.equals(this.version, backupDatabase.version);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, version);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +76,13 @@ public class BackupDatabase  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

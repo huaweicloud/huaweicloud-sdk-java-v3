@@ -1,58 +1,39 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * ShowTopicAccessPolicyRespPolicies
- */
-public class ShowTopicAccessPolicyRespPolicies  {
-
-
+/** ShowTopicAccessPolicyRespPolicies */
+public class ShowTopicAccessPolicyRespPolicies {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="owner")
-    
+    @JsonProperty(value = "owner")
+
     private Boolean owner;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_name")
-    
+    @JsonProperty(value = "user_name")
+
     private String userName;
-    /**
-     * 权限类型。 - all：拥有发布、订阅权限; - pub：拥有发布权限; - sub：拥有订阅权限。
-     */
+
+    /** 权限类型。 - all：拥有发布、订阅权限; - pub：拥有发布权限; - sub：拥有订阅权限。 */
     public static final class AccessPolicyEnum {
 
-        
-        /**
-         * Enum ALL for value: "all"
-         */
+        /** Enum ALL for value: "all" */
         public static final AccessPolicyEnum ALL = new AccessPolicyEnum("all");
-        
-        /**
-         * Enum PUB for value: "pub"
-         */
+
+        /** Enum PUB for value: "pub" */
         public static final AccessPolicyEnum PUB = new AccessPolicyEnum("pub");
-        
-        /**
-         * Enum SUB for value: "sub"
-         */
+
+        /** Enum SUB for value: "sub" */
         public static final AccessPolicyEnum SUB = new AccessPolicyEnum("sub");
-        
 
         private static final Map<String, AccessPolicyEnum> STATIC_FIELDS = createStaticFields();
 
@@ -82,7 +63,7 @@ public class ShowTopicAccessPolicyRespPolicies  {
 
         @JsonCreator
         public static AccessPolicyEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AccessPolicyEnum result = STATIC_FIELDS.get(value);
@@ -93,7 +74,7 @@ public class ShowTopicAccessPolicyRespPolicies  {
         }
 
         public static AccessPolicyEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AccessPolicyEnum result = STATIC_FIELDS.get(value);
@@ -117,10 +98,9 @@ public class ShowTopicAccessPolicyRespPolicies  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_policy")
-    
+    @JsonProperty(value = "access_policy")
+
     private AccessPolicyEnum accessPolicy;
 
     public ShowTopicAccessPolicyRespPolicies withOwner(Boolean owner) {
@@ -128,13 +108,9 @@ public class ShowTopicAccessPolicyRespPolicies  {
         return this;
     }
 
-    
-
-
-    /**
-     * 是否为创建topic时所选择的用户。
-     * @return owner
-     */
+    /** 是否为创建topic时所选择的用户。
+     * 
+     * @return owner */
     public Boolean getOwner() {
         return owner;
     }
@@ -143,20 +119,14 @@ public class ShowTopicAccessPolicyRespPolicies  {
         this.owner = owner;
     }
 
-    
-
     public ShowTopicAccessPolicyRespPolicies withUserName(String userName) {
         this.userName = userName;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户名。
-     * @return userName
-     */
+    /** 用户名。
+     * 
+     * @return userName */
     public String getUserName() {
         return userName;
     }
@@ -165,20 +135,14 @@ public class ShowTopicAccessPolicyRespPolicies  {
         this.userName = userName;
     }
 
-    
-
     public ShowTopicAccessPolicyRespPolicies withAccessPolicy(AccessPolicyEnum accessPolicy) {
         this.accessPolicy = accessPolicy;
         return this;
     }
 
-    
-
-
-    /**
-     * 权限类型。 - all：拥有发布、订阅权限; - pub：拥有发布权限; - sub：拥有订阅权限。
-     * @return accessPolicy
-     */
+    /** 权限类型。 - all：拥有发布、订阅权限; - pub：拥有发布权限; - sub：拥有订阅权限。
+     * 
+     * @return accessPolicy */
     public AccessPolicyEnum getAccessPolicy() {
         return accessPolicy;
     }
@@ -186,8 +150,6 @@ public class ShowTopicAccessPolicyRespPolicies  {
     public void setAccessPolicy(AccessPolicyEnum accessPolicy) {
         this.accessPolicy = accessPolicy;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -198,14 +160,16 @@ public class ShowTopicAccessPolicyRespPolicies  {
             return false;
         }
         ShowTopicAccessPolicyRespPolicies showTopicAccessPolicyRespPolicies = (ShowTopicAccessPolicyRespPolicies) o;
-        return Objects.equals(this.owner, showTopicAccessPolicyRespPolicies.owner) &&
-            Objects.equals(this.userName, showTopicAccessPolicyRespPolicies.userName) &&
-            Objects.equals(this.accessPolicy, showTopicAccessPolicyRespPolicies.accessPolicy);
+        return Objects.equals(this.owner, showTopicAccessPolicyRespPolicies.owner)
+            && Objects.equals(this.userName, showTopicAccessPolicyRespPolicies.userName)
+            && Objects.equals(this.accessPolicy, showTopicAccessPolicyRespPolicies.accessPolicy);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(owner, userName, accessPolicy);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -216,16 +180,13 @@ public class ShowTopicAccessPolicyRespPolicies  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.UpdateMember;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateMemberStatusRequest  {
-
-
+/** Request Object */
+public class UpdateMemberStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="member_id")
-    
+    @JsonProperty(value = "member_id")
+
     private String memberId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_id")
-    
+    @JsonProperty(value = "backup_id")
+
     private String backupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateMember body;
 
     public UpdateMemberStatusRequest withMemberId(String memberId) {
@@ -41,13 +29,9 @@ public class UpdateMemberStatusRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 成员id，成员id与项目id为同一个。
-     * @return memberId
-     */
+    /** 成员id，成员id与项目id为同一个。
+     * 
+     * @return memberId */
     public String getMemberId() {
         return memberId;
     }
@@ -56,20 +40,14 @@ public class UpdateMemberStatusRequest  {
         this.memberId = memberId;
     }
 
-    
-
     public UpdateMemberStatusRequest withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份副本id
-     * @return backupId
-     */
+    /** 备份副本id
+     * 
+     * @return backupId */
     public String getBackupId() {
         return backupId;
     }
@@ -78,27 +56,23 @@ public class UpdateMemberStatusRequest  {
         this.backupId = backupId;
     }
 
-    
-
     public UpdateMemberStatusRequest withBody(UpdateMember body) {
         this.body = body;
         return this;
     }
 
     public UpdateMemberStatusRequest withBody(Consumer<UpdateMember> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateMember();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateMember getBody() {
         return body;
     }
@@ -106,8 +80,6 @@ public class UpdateMemberStatusRequest  {
     public void setBody(UpdateMember body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class UpdateMemberStatusRequest  {
             return false;
         }
         UpdateMemberStatusRequest updateMemberStatusRequest = (UpdateMemberStatusRequest) o;
-        return Objects.equals(this.memberId, updateMemberStatusRequest.memberId) &&
-            Objects.equals(this.backupId, updateMemberStatusRequest.backupId) &&
-            Objects.equals(this.body, updateMemberStatusRequest.body);
+        return Objects.equals(this.memberId, updateMemberStatusRequest.memberId)
+            && Objects.equals(this.backupId, updateMemberStatusRequest.backupId)
+            && Objects.equals(this.body, updateMemberStatusRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(memberId, backupId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class UpdateMemberStatusRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

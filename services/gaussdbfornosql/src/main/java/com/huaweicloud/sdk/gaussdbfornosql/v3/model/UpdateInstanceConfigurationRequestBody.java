@@ -1,40 +1,28 @@
 package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * UpdateInstanceConfigurationRequestBody
- */
-public class UpdateInstanceConfigurationRequestBody  {
-
-
+/** UpdateInstanceConfigurationRequestBody */
+public class UpdateInstanceConfigurationRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="values")
-    
+    @JsonProperty(value = "values")
+
     private Map<String, String> values = null;
-    
+
     public UpdateInstanceConfigurationRequestBody withValues(Map<String, String> values) {
         this.values = values;
         return this;
     }
 
-    
-
     public UpdateInstanceConfigurationRequestBody putValuesItem(String key, String valuesItem) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new HashMap<>();
         }
         this.values.put(key, valuesItem);
@@ -42,16 +30,16 @@ public class UpdateInstanceConfigurationRequestBody  {
     }
 
     public UpdateInstanceConfigurationRequestBody withValues(Consumer<Map<String, String>> valuesSetter) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new HashMap<>();
         }
         valuesSetter.accept(this.values);
         return this;
     }
-    /**
-     * 参数值对象，用户基于默认参数模板自定义的参数值。
-     * @return values
-     */
+
+    /** 参数值对象，用户基于默认参数模板自定义的参数值。
+     * 
+     * @return values */
     public Map<String, String> getValues() {
         return values;
     }
@@ -59,8 +47,6 @@ public class UpdateInstanceConfigurationRequestBody  {
     public void setValues(Map<String, String> values) {
         this.values = values;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -70,13 +56,16 @@ public class UpdateInstanceConfigurationRequestBody  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        UpdateInstanceConfigurationRequestBody updateInstanceConfigurationRequestBody = (UpdateInstanceConfigurationRequestBody) o;
+        UpdateInstanceConfigurationRequestBody updateInstanceConfigurationRequestBody =
+            (UpdateInstanceConfigurationRequestBody) o;
         return Objects.equals(this.values, updateInstanceConfigurationRequestBody.values);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(values);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -85,16 +74,13 @@ public class UpdateInstanceConfigurationRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

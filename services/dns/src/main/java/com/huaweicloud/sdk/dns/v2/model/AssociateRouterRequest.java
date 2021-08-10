@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dns.v2.model.AssociateRouterReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class AssociateRouterRequest  {
-
-
+/** Request Object */
+public class AssociateRouterRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="zone_id")
-    
+    @JsonProperty(value = "zone_id")
+
     private String zoneId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private AssociateRouterReq body;
 
     public AssociateRouterRequest withZoneId(String zoneId) {
@@ -35,13 +24,9 @@ public class AssociateRouterRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 关联VPC的Zone ID。
-     * @return zoneId
-     */
+    /** 关联VPC的Zone ID。
+     * 
+     * @return zoneId */
     public String getZoneId() {
         return zoneId;
     }
@@ -50,27 +35,23 @@ public class AssociateRouterRequest  {
         this.zoneId = zoneId;
     }
 
-    
-
     public AssociateRouterRequest withBody(AssociateRouterReq body) {
         this.body = body;
         return this;
     }
 
     public AssociateRouterRequest withBody(Consumer<AssociateRouterReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new AssociateRouterReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public AssociateRouterReq getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class AssociateRouterRequest  {
     public void setBody(AssociateRouterReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class AssociateRouterRequest  {
             return false;
         }
         AssociateRouterRequest associateRouterRequest = (AssociateRouterRequest) o;
-        return Objects.equals(this.zoneId, associateRouterRequest.zoneId) &&
-            Objects.equals(this.body, associateRouterRequest.body);
+        return Objects.equals(this.zoneId, associateRouterRequest.zoneId)
+            && Objects.equals(this.body, associateRouterRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(zoneId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class AssociateRouterRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

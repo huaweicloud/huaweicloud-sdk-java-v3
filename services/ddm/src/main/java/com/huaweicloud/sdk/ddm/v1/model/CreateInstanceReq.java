@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ddm.v1.model.CreateInstanceDetail;
-import com.huaweicloud.sdk.ddm.v1.model.CreateInstanceExtendParam;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * This is a auto create Body Object
- */
-public class CreateInstanceReq  {
-
-
+/** This is a auto create Body Object */
+public class CreateInstanceReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance")
-    
+    @JsonProperty(value = "instance")
+
     private CreateInstanceDetail instance;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extend_param")
-    
+    @JsonProperty(value = "extend_param")
+
     private CreateInstanceExtendParam extendParam;
 
     public CreateInstanceReq withInstance(CreateInstanceDetail instance) {
@@ -37,19 +25,17 @@ public class CreateInstanceReq  {
     }
 
     public CreateInstanceReq withInstance(Consumer<CreateInstanceDetail> instanceSetter) {
-        if(this.instance == null ){
+        if (this.instance == null) {
             this.instance = new CreateInstanceDetail();
             instanceSetter.accept(this.instance);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get instance
-     * @return instance
-     */
+    /** Get instance
+     * 
+     * @return instance */
     public CreateInstanceDetail getInstance() {
         return instance;
     }
@@ -58,27 +44,23 @@ public class CreateInstanceReq  {
         this.instance = instance;
     }
 
-    
-
     public CreateInstanceReq withExtendParam(CreateInstanceExtendParam extendParam) {
         this.extendParam = extendParam;
         return this;
     }
 
     public CreateInstanceReq withExtendParam(Consumer<CreateInstanceExtendParam> extendParamSetter) {
-        if(this.extendParam == null ){
+        if (this.extendParam == null) {
             this.extendParam = new CreateInstanceExtendParam();
             extendParamSetter.accept(this.extendParam);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get extendParam
-     * @return extendParam
-     */
+    /** Get extendParam
+     * 
+     * @return extendParam */
     public CreateInstanceExtendParam getExtendParam() {
         return extendParam;
     }
@@ -86,8 +68,6 @@ public class CreateInstanceReq  {
     public void setExtendParam(CreateInstanceExtendParam extendParam) {
         this.extendParam = extendParam;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -98,13 +78,15 @@ public class CreateInstanceReq  {
             return false;
         }
         CreateInstanceReq createInstanceReq = (CreateInstanceReq) o;
-        return Objects.equals(this.instance, createInstanceReq.instance) &&
-            Objects.equals(this.extendParam, createInstanceReq.extendParam);
+        return Objects.equals(this.instance, createInstanceReq.instance)
+            && Objects.equals(this.extendParam, createInstanceReq.extendParam);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instance, extendParam);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,16 +96,13 @@ public class CreateInstanceReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

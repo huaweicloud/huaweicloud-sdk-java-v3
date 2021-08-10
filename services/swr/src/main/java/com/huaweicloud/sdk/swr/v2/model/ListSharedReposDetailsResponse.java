@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.swr.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.swr.v2.model.ShowReposResp;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListSharedReposDetailsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private List<ShowReposResp> body = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Content-Range")
-    
+    @JsonProperty(value = "Content-Range")
+
     private String contentRange;
 
     public ListSharedReposDetailsResponse withBody(List<ShowReposResp> body) {
@@ -39,9 +27,8 @@ public class ListSharedReposDetailsResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListSharedReposDetailsResponse addBodyItem(ShowReposResp bodyItem) {
-        if(this.body == null) {
+        if (this.body == null) {
             this.body = new ArrayList<>();
         }
         this.body.add(bodyItem);
@@ -49,17 +36,16 @@ public class ListSharedReposDetailsResponse extends SdkResponse {
     }
 
     public ListSharedReposDetailsResponse withBody(Consumer<List<ShowReposResp>> bodySetter) {
-        if(this.body == null) {
+        if (this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);
         return this;
     }
 
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public List<ShowReposResp> getBody() {
         return body;
     }
@@ -68,20 +54,14 @@ public class ListSharedReposDetailsResponse extends SdkResponse {
         this.body = body;
     }
 
-    
-
     public ListSharedReposDetailsResponse withContentRange(String contentRange) {
         this.contentRange = contentRange;
         return this;
     }
 
-    
-
-
-    /**
-     * Get contentRange
-     * @return contentRange
-     */
+    /** Get contentRange
+     * 
+     * @return contentRange */
     public String getContentRange() {
         return contentRange;
     }
@@ -89,8 +69,6 @@ public class ListSharedReposDetailsResponse extends SdkResponse {
     public void setContentRange(String contentRange) {
         this.contentRange = contentRange;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ListSharedReposDetailsResponse extends SdkResponse {
             return false;
         }
         ListSharedReposDetailsResponse listSharedReposDetailsResponse = (ListSharedReposDetailsResponse) o;
-        return Objects.equals(this.body, listSharedReposDetailsResponse.body) &&
-            Objects.equals(this.contentRange, listSharedReposDetailsResponse.contentRange);
+        return Objects.equals(this.body, listSharedReposDetailsResponse.body)
+            && Objects.equals(this.contentRange, listSharedReposDetailsResponse.contentRange);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(body, contentRange);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ListSharedReposDetailsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

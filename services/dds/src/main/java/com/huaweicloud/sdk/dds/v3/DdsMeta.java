@@ -6,14 +6,12 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.dds.v3.model.*;
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class DdsMeta {
 
-    public static final HttpRequestDef<AddShardingNodeRequest, AddShardingNodeResponse> addShardingNode = genForaddShardingNode();
+    public static final HttpRequestDef<AddShardingNodeRequest, AddShardingNodeResponse> addShardingNode =
+        genForaddShardingNode();
 
     private static HttpRequestDef<AddShardingNodeRequest, AddShardingNodeResponse> genForaddShardingNode() {
         // basic
@@ -24,26 +22,22 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AddShardingNodeRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<EnlargeInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            EnlargeInstanceRequestBody.class,
+            TypeCasts.uncheckedConversion(EnlargeInstanceRequestBody.class),
             f -> f.withMarshaller(AddShardingNodeRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -59,31 +53,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("node_id",
+        builder.<String>withRequestField("node_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AttachEipRequest::getNodeId, (req, v) -> {
                 req.setNodeId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<AttachEipRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            AttachEipRequestBody.class,
+            TypeCasts.uncheckedConversion(AttachEipRequestBody.class),
             f -> f.withMarshaller(AttachEipRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AttachInternalIpRequest, AttachInternalIpResponse> attachInternalIp = genForattachInternalIp();
+    public static final HttpRequestDef<AttachInternalIpRequest, AttachInternalIpResponse> attachInternalIp =
+        genForattachInternalIp();
 
     private static HttpRequestDef<AttachInternalIpRequest, AttachInternalIpResponse> genForattachInternalIp() {
         // basic
@@ -94,31 +85,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AttachInternalIpRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<AttachInternalIpRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            AttachInternalIpRequestBody.class,
+            TypeCasts.uncheckedConversion(AttachInternalIpRequestBody.class),
             f -> f.withMarshaller(AttachInternalIpRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchTagActionRequest, BatchTagActionResponse> batchTagAction = genForbatchTagAction();
+    public static final HttpRequestDef<BatchTagActionRequest, BatchTagActionResponse> batchTagAction =
+        genForbatchTagAction();
 
     private static HttpRequestDef<BatchTagActionRequest, BatchTagActionResponse> genForbatchTagAction() {
         // basic
@@ -129,26 +117,22 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchTagActionRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<BatchOperateInstanceTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchOperateInstanceTagRequestBody.class,
+            TypeCasts.uncheckedConversion(BatchOperateInstanceTagRequestBody.class),
             f -> f.withMarshaller(BatchTagActionRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -164,23 +148,21 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("node_id",
+        builder.<String>withRequestField("node_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CancelEipRequest::getNodeId, (req, v) -> {
                 req.setNodeId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CheckPasswordRequest, CheckPasswordResponse> checkPassword = genForcheckPassword();
+    public static final HttpRequestDef<CheckPasswordRequest, CheckPasswordResponse> checkPassword =
+        genForcheckPassword();
 
     private static HttpRequestDef<CheckPasswordRequest, CheckPasswordResponse> genForcheckPassword() {
         // basic
@@ -191,31 +173,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CheckPasswordRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CheckPasswordRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CheckPasswordRequestBody.class,
+            TypeCasts.uncheckedConversion(CheckPasswordRequestBody.class),
             f -> f.withMarshaller(CheckPasswordRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateDatabaseRoleRequest, CreateDatabaseRoleResponse> createDatabaseRole = genForcreateDatabaseRole();
+    public static final HttpRequestDef<CreateDatabaseRoleRequest, CreateDatabaseRoleResponse> createDatabaseRole =
+        genForcreateDatabaseRole();
 
     private static HttpRequestDef<CreateDatabaseRoleRequest, CreateDatabaseRoleResponse> genForcreateDatabaseRole() {
         // basic
@@ -226,31 +205,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateDatabaseRoleRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateDatabaseRoleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateDatabaseRoleRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateDatabaseRoleRequestBody.class),
             f -> f.withMarshaller(CreateDatabaseRoleRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateDatabaseUserRequest, CreateDatabaseUserResponse> createDatabaseUser = genForcreateDatabaseUser();
+    public static final HttpRequestDef<CreateDatabaseUserRequest, CreateDatabaseUserResponse> createDatabaseUser =
+        genForcreateDatabaseUser();
 
     private static HttpRequestDef<CreateDatabaseUserRequest, CreateDatabaseUserResponse> genForcreateDatabaseUser() {
         // basic
@@ -261,31 +237,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateDatabaseUserRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateDatabaseUserRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateDatabaseUserRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateDatabaseUserRequestBody.class),
             f -> f.withMarshaller(CreateDatabaseUserRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> createInstance = genForcreateInstance();
+    public static final HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> createInstance =
+        genForcreateInstance();
 
     private static HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> genForcreateInstance() {
         // basic
@@ -296,18 +269,15 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateInstanceRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateInstanceRequestBody.class),
             f -> f.withMarshaller(CreateInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -323,31 +293,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateIpRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateIpRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateIpRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateIpRequestBody.class),
             f -> f.withMarshaller(CreateIpRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateManualBackupRequest, CreateManualBackupResponse> createManualBackup = genForcreateManualBackup();
+    public static final HttpRequestDef<CreateManualBackupRequest, CreateManualBackupResponse> createManualBackup =
+        genForcreateManualBackup();
 
     private static HttpRequestDef<CreateManualBackupRequest, CreateManualBackupResponse> genForcreateManualBackup() {
         // basic
@@ -358,23 +325,21 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateManualBackupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateManualBackupRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateManualBackupRequestBody.class),
             f -> f.withMarshaller(CreateManualBackupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteDatabaseRoleRequest, DeleteDatabaseRoleResponse> deleteDatabaseRole = genFordeleteDatabaseRole();
+    public static final HttpRequestDef<DeleteDatabaseRoleRequest, DeleteDatabaseRoleResponse> deleteDatabaseRole =
+        genFordeleteDatabaseRole();
 
     private static HttpRequestDef<DeleteDatabaseRoleRequest, DeleteDatabaseRoleResponse> genFordeleteDatabaseRole() {
         // basic
@@ -385,31 +350,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDatabaseRoleRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<DeleteDatabaseRoleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DeleteDatabaseRoleRequestBody.class,
+            TypeCasts.uncheckedConversion(DeleteDatabaseRoleRequestBody.class),
             f -> f.withMarshaller(DeleteDatabaseRoleRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteDatabaseUserRequest, DeleteDatabaseUserResponse> deleteDatabaseUser = genFordeleteDatabaseUser();
+    public static final HttpRequestDef<DeleteDatabaseUserRequest, DeleteDatabaseUserResponse> deleteDatabaseUser =
+        genFordeleteDatabaseUser();
 
     private static HttpRequestDef<DeleteDatabaseUserRequest, DeleteDatabaseUserResponse> genFordeleteDatabaseUser() {
         // basic
@@ -420,31 +382,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDatabaseUserRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<DeleteDatabaseUserRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DeleteDatabaseUserRequestBody.class,
+            TypeCasts.uncheckedConversion(DeleteDatabaseUserRequestBody.class),
             f -> f.withMarshaller(DeleteDatabaseUserRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstance = genFordeleteInstance();
+    public static final HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstance =
+        genFordeleteInstance();
 
     private static HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> genFordeleteInstance() {
         // basic
@@ -455,23 +414,21 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteManualBackupRequest, DeleteManualBackupResponse> deleteManualBackup = genFordeleteManualBackup();
+    public static final HttpRequestDef<DeleteManualBackupRequest, DeleteManualBackupResponse> deleteManualBackup =
+        genFordeleteManualBackup();
 
     private static HttpRequestDef<DeleteManualBackupRequest, DeleteManualBackupResponse> genFordeleteManualBackup() {
         // basic
@@ -482,23 +439,21 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("backup_id",
+        builder.<String>withRequestField("backup_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteManualBackupRequest::getBackupId, (req, v) -> {
                 req.setBackupId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteSessionRequest, DeleteSessionResponse> deleteSession = genFordeleteSession();
+    public static final HttpRequestDef<DeleteSessionRequest, DeleteSessionResponse> deleteSession =
+        genFordeleteSession();
 
     private static HttpRequestDef<DeleteSessionRequest, DeleteSessionResponse> genFordeleteSession() {
         // basic
@@ -509,31 +464,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("node_id",
+        builder.<String>withRequestField("node_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSessionRequest::getNodeId, (req, v) -> {
                 req.setNodeId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<DeleteSessionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DeleteSessionRequestBody.class,
+            TypeCasts.uncheckedConversion(DeleteSessionRequestBody.class),
             f -> f.withMarshaller(DeleteSessionRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DownloadErrorlogRequest, DownloadErrorlogResponse> downloadErrorlog = genFordownloadErrorlog();
+    public static final HttpRequestDef<DownloadErrorlogRequest, DownloadErrorlogResponse> downloadErrorlog =
+        genFordownloadErrorlog();
 
     private static HttpRequestDef<DownloadErrorlogRequest, DownloadErrorlogResponse> genFordownloadErrorlog() {
         // basic
@@ -544,31 +496,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DownloadErrorlogRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<DownloadErrorlogRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DownloadErrorlogRequestBody.class,
+            TypeCasts.uncheckedConversion(DownloadErrorlogRequestBody.class),
             f -> f.withMarshaller(DownloadErrorlogRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DownloadSlowlogRequest, DownloadSlowlogResponse> downloadSlowlog = genFordownloadSlowlog();
+    public static final HttpRequestDef<DownloadSlowlogRequest, DownloadSlowlogResponse> downloadSlowlog =
+        genFordownloadSlowlog();
 
     private static HttpRequestDef<DownloadSlowlogRequest, DownloadSlowlogResponse> genFordownloadSlowlog() {
         // basic
@@ -579,31 +528,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DownloadSlowlogRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<DownloadSlowlogRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DownloadSlowlogRequestBody.class,
+            TypeCasts.uncheckedConversion(DownloadSlowlogRequestBody.class),
             f -> f.withMarshaller(DownloadSlowlogRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAuditlogLinksRequest, ListAuditlogLinksResponse> listAuditlogLinks = genForlistAuditlogLinks();
+    public static final HttpRequestDef<ListAuditlogLinksRequest, ListAuditlogLinksResponse> listAuditlogLinks =
+        genForlistAuditlogLinks();
 
     private static HttpRequestDef<ListAuditlogLinksRequest, ListAuditlogLinksResponse> genForlistAuditlogLinks() {
         // basic
@@ -614,31 +560,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAuditlogLinksRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ProduceAuditlogLinksRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ProduceAuditlogLinksRequestBody.class,
+            TypeCasts.uncheckedConversion(ProduceAuditlogLinksRequestBody.class),
             f -> f.withMarshaller(ListAuditlogLinksRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAuditlogsRequest, ListAuditlogsResponse> listAuditlogs = genForlistAuditlogs();
+    public static final HttpRequestDef<ListAuditlogsRequest, ListAuditlogsResponse> listAuditlogs =
+        genForlistAuditlogs();
 
     private static HttpRequestDef<ListAuditlogsRequest, ListAuditlogsResponse> genForlistAuditlogs() {
         // basic
@@ -649,71 +592,63 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAuditlogsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("node_id",
+            }));
+        builder.<String>withRequestField("node_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAuditlogsRequest::getNodeId, (req, v) -> {
                 req.setNodeId(v);
-            })
-        );
-        builder.withRequestField("start_time",
+            }));
+        builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAuditlogsRequest::getStartTime, (req, v) -> {
                 req.setStartTime(v);
-            })
-        );
-        builder.withRequestField("end_time",
+            }));
+        builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAuditlogsRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAuditlogsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAuditlogsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAuditlogsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAz2MigrateRequest, ListAz2MigrateResponse> listAz2Migrate = genForlistAz2Migrate();
+    public static final HttpRequestDef<ListAz2MigrateRequest, ListAz2MigrateResponse> listAz2Migrate =
+        genForlistAz2Migrate();
 
     private static HttpRequestDef<ListAz2MigrateRequest, ListAz2MigrateResponse> genForlistAz2Migrate() {
         // basic
@@ -724,18 +659,15 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAz2MigrateRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -751,79 +683,70 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBackupsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("backup_id",
+            }));
+        builder.<String>withRequestField("backup_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBackupsRequest::getBackupId, (req, v) -> {
                 req.setBackupId(v);
-            })
-        );
-        builder.withRequestField("backup_type",
+            }));
+        builder.<ListBackupsRequest.BackupTypeEnum>withRequestField("backup_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListBackupsRequest.BackupTypeEnum.class,
+            TypeCasts.uncheckedConversion(ListBackupsRequest.BackupTypeEnum.class),
             f -> f.withMarshaller(ListBackupsRequest::getBackupType, (req, v) -> {
                 req.setBackupType(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListBackupsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListBackupsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("begin_time",
+            }));
+        builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBackupsRequest::getBeginTime, (req, v) -> {
                 req.setBeginTime(v);
-            })
-        );
-        builder.withRequestField("end_time",
+            }));
+        builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBackupsRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
-            })
-        );
-        builder.withRequestField("mode",
+            }));
+        builder.<ListBackupsRequest.ModeEnum>withRequestField("mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListBackupsRequest.ModeEnum.class,
+            TypeCasts.uncheckedConversion(ListBackupsRequest.ModeEnum.class),
             f -> f.withMarshaller(ListBackupsRequest::getMode, (req, v) -> {
                 req.setMode(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDatabaseRolesRequest, ListDatabaseRolesResponse> listDatabaseRoles = genForlistDatabaseRoles();
+    public static final HttpRequestDef<ListDatabaseRolesRequest, ListDatabaseRolesResponse> listDatabaseRoles =
+        genForlistDatabaseRoles();
 
     private static HttpRequestDef<ListDatabaseRolesRequest, ListDatabaseRolesResponse> genForlistDatabaseRoles() {
         // basic
@@ -834,55 +757,49 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDatabaseRolesRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("role_name",
+            }));
+        builder.<String>withRequestField("role_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDatabaseRolesRequest::getRoleName, (req, v) -> {
                 req.setRoleName(v);
-            })
-        );
-        builder.withRequestField("db_name",
+            }));
+        builder.<String>withRequestField("db_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDatabaseRolesRequest::getDbName, (req, v) -> {
                 req.setDbName(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDatabaseRolesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDatabaseRolesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDatabaseUsersRequest, ListDatabaseUsersResponse> listDatabaseUsers = genForlistDatabaseUsers();
+    public static final HttpRequestDef<ListDatabaseUsersRequest, ListDatabaseUsersResponse> listDatabaseUsers =
+        genForlistDatabaseUsers();
 
     private static HttpRequestDef<ListDatabaseUsersRequest, ListDatabaseUsersResponse> genForlistDatabaseUsers() {
         // basic
@@ -893,82 +810,74 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDatabaseUsersRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("user_name",
+            }));
+        builder.<String>withRequestField("user_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDatabaseUsersRequest::getUserName, (req, v) -> {
                 req.setUserName(v);
-            })
-        );
-        builder.withRequestField("db_name",
+            }));
+        builder.<String>withRequestField("db_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDatabaseUsersRequest::getDbName, (req, v) -> {
                 req.setDbName(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDatabaseUsersRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDatabaseUsersRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDatastoreVersionsRequest, ListDatastoreVersionsResponse> listDatastoreVersions = genForlistDatastoreVersions();
+    public static final HttpRequestDef<ListDatastoreVersionsRequest, ListDatastoreVersionsResponse> listDatastoreVersions =
+        genForlistDatastoreVersions();
 
     private static HttpRequestDef<ListDatastoreVersionsRequest, ListDatastoreVersionsResponse> genForlistDatastoreVersions() {
         // basic
-        HttpRequestDef.Builder<ListDatastoreVersionsRequest, ListDatastoreVersionsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListDatastoreVersionsRequest.class, ListDatastoreVersionsResponse.class)
-                .withName("ListDatastoreVersions")
-                .withUri("/v3/{project_id}/datastores/{datastore_name}/versions")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ListDatastoreVersionsRequest, ListDatastoreVersionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDatastoreVersionsRequest.class, ListDatastoreVersionsResponse.class)
+            .withName("ListDatastoreVersions")
+            .withUri("/v3/{project_id}/datastores/{datastore_name}/versions")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("datastore_name",
+        builder.<ListDatastoreVersionsRequest.DatastoreNameEnum>withRequestField("datastore_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ListDatastoreVersionsRequest.DatastoreNameEnum.class,
+            TypeCasts.uncheckedConversion(ListDatastoreVersionsRequest.DatastoreNameEnum.class),
             f -> f.withMarshaller(ListDatastoreVersionsRequest::getDatastoreName, (req, v) -> {
                 req.setDatastoreName(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListErrorLogsRequest, ListErrorLogsResponse> listErrorLogs = genForlistErrorLogs();
+    public static final HttpRequestDef<ListErrorLogsRequest, ListErrorLogsResponse> listErrorLogs =
+        genForlistErrorLogs();
 
     private static HttpRequestDef<ListErrorLogsRequest, ListErrorLogsResponse> genForlistErrorLogs() {
         // basic
@@ -979,66 +888,57 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListErrorLogsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("start_date",
+            }));
+        builder.<String>withRequestField("start_date",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListErrorLogsRequest::getStartDate, (req, v) -> {
                 req.setStartDate(v);
-            })
-        );
-        builder.withRequestField("end_date",
+            }));
+        builder.<String>withRequestField("end_date",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListErrorLogsRequest::getEndDate, (req, v) -> {
                 req.setEndDate(v);
-            })
-        );
-        builder.withRequestField("node_id",
+            }));
+        builder.<String>withRequestField("node_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListErrorLogsRequest::getNodeId, (req, v) -> {
                 req.setNodeId(v);
-            })
-        );
-        builder.withRequestField("type",
+            }));
+        builder.<ListErrorLogsRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListErrorLogsRequest.TypeEnum.class,
+            TypeCasts.uncheckedConversion(ListErrorLogsRequest.TypeEnum.class),
             f -> f.withMarshaller(ListErrorLogsRequest::getType, (req, v) -> {
                 req.setType(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListErrorLogsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListErrorLogsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1054,31 +954,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("region",
+        builder.<String>withRequestField("region",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlavorsRequest::getRegion, (req, v) -> {
                 req.setRegion(v);
-            })
-        );
-        builder.withRequestField("engine_name",
+            }));
+        builder.<ListFlavorsRequest.EngineNameEnum>withRequestField("engine_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListFlavorsRequest.EngineNameEnum.class,
+            TypeCasts.uncheckedConversion(ListFlavorsRequest.EngineNameEnum.class),
             f -> f.withMarshaller(ListFlavorsRequest::getEngineName, (req, v) -> {
                 req.setEngineName(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTags = genForlistInstanceTags();
+    public static final HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTags =
+        genForlistInstanceTags();
 
     private static HttpRequestDef<ListInstanceTagsRequest, ListInstanceTagsResponse> genForlistInstanceTags() {
         // basic
@@ -1089,23 +986,21 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstanceTagsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListInstancesRequest, ListInstancesResponse> listInstances = genForlistInstances();
+    public static final HttpRequestDef<ListInstancesRequest, ListInstancesResponse> listInstances =
+        genForlistInstances();
 
     private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForlistInstances() {
         // basic
@@ -1116,79 +1011,70 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("id",
+        builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("mode",
+            }));
+        builder.<ListInstancesRequest.ModeEnum>withRequestField("mode",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListInstancesRequest.ModeEnum.class,
+            TypeCasts.uncheckedConversion(ListInstancesRequest.ModeEnum.class),
             f -> f.withMarshaller(ListInstancesRequest::getMode, (req, v) -> {
                 req.setMode(v);
-            })
-        );
-        builder.withRequestField("datastore_type",
+            }));
+        builder.<ListInstancesRequest.DatastoreTypeEnum>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListInstancesRequest.DatastoreTypeEnum.class,
+            TypeCasts.uncheckedConversion(ListInstancesRequest.DatastoreTypeEnum.class),
             f -> f.withMarshaller(ListInstancesRequest::getDatastoreType, (req, v) -> {
                 req.setDatastoreType(v);
-            })
-        );
-        builder.withRequestField("vpc_id",
+            }));
+        builder.<String>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
-            })
-        );
-        builder.withRequestField("subnet_id",
+            }));
+        builder.<String>withRequestField("subnet_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesRequest::getSubnetId, (req, v) -> {
                 req.setSubnetId(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListInstancesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListInstancesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListInstancesByTagsRequest, ListInstancesByTagsResponse> listInstancesByTags = genForlistInstancesByTags();
+    public static final HttpRequestDef<ListInstancesByTagsRequest, ListInstancesByTagsResponse> listInstancesByTags =
+        genForlistInstancesByTags();
 
     private static HttpRequestDef<ListInstancesByTagsRequest, ListInstancesByTagsResponse> genForlistInstancesByTags() {
         // basic
@@ -1199,23 +1085,21 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<ListInstancesByTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ListInstancesByTagsRequestBody.class,
+            TypeCasts.uncheckedConversion(ListInstancesByTagsRequestBody.class),
             f -> f.withMarshaller(ListInstancesByTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags = genForlistProjectTags();
+    public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags =
+        genForlistProjectTags();
 
     private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForlistProjectTags() {
         // basic
@@ -1228,139 +1112,125 @@ public class DdsMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRestoreCollectionsRequest, ListRestoreCollectionsResponse> listRestoreCollections = genForlistRestoreCollections();
+    public static final HttpRequestDef<ListRestoreCollectionsRequest, ListRestoreCollectionsResponse> listRestoreCollections =
+        genForlistRestoreCollections();
 
     private static HttpRequestDef<ListRestoreCollectionsRequest, ListRestoreCollectionsResponse> genForlistRestoreCollections() {
         // basic
-        HttpRequestDef.Builder<ListRestoreCollectionsRequest, ListRestoreCollectionsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListRestoreCollectionsRequest.class, ListRestoreCollectionsResponse.class)
-                .withName("ListRestoreCollections")
-                .withUri("/v3/{project_id}/instances/{instance_id}/restore-collection")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ListRestoreCollectionsRequest, ListRestoreCollectionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListRestoreCollectionsRequest.class, ListRestoreCollectionsResponse.class)
+            .withName("ListRestoreCollections")
+            .withUri("/v3/{project_id}/instances/{instance_id}/restore-collection")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRestoreCollectionsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("db_name",
+            }));
+        builder.<String>withRequestField("db_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRestoreCollectionsRequest::getDbName, (req, v) -> {
                 req.setDbName(v);
-            })
-        );
-        builder.withRequestField("restore_time",
+            }));
+        builder.<String>withRequestField("restore_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRestoreCollectionsRequest::getRestoreTime, (req, v) -> {
                 req.setRestoreTime(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRestoreCollectionsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRestoreCollectionsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRestoreCollectionsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse> listRestoreDatabases = genForlistRestoreDatabases();
+    public static final HttpRequestDef<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse> listRestoreDatabases =
+        genForlistRestoreDatabases();
 
     private static HttpRequestDef<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse> genForlistRestoreDatabases() {
         // basic
-        HttpRequestDef.Builder<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListRestoreDatabasesRequest.class, ListRestoreDatabasesResponse.class)
-                .withName("ListRestoreDatabases")
-                .withUri("/v3/{project_id}/instances/{instance_id}/restore-database")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ListRestoreDatabasesRequest, ListRestoreDatabasesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListRestoreDatabasesRequest.class, ListRestoreDatabasesResponse.class)
+            .withName("ListRestoreDatabases")
+            .withUri("/v3/{project_id}/instances/{instance_id}/restore-database")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRestoreDatabasesRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("restore_time",
+            }));
+        builder.<String>withRequestField("restore_time",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRestoreDatabasesRequest::getRestoreTime, (req, v) -> {
                 req.setRestoreTime(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRestoreDatabasesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRestoreDatabasesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRestoreDatabasesRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRestoreTimesRequest, ListRestoreTimesResponse> listRestoreTimes = genForlistRestoreTimes();
+    public static final HttpRequestDef<ListRestoreTimesRequest, ListRestoreTimesResponse> listRestoreTimes =
+        genForlistRestoreTimes();
 
     private static HttpRequestDef<ListRestoreTimesRequest, ListRestoreTimesResponse> genForlistRestoreTimes() {
         // basic
@@ -1371,34 +1241,29 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRestoreTimesRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("date",
+            }));
+        builder.<String>withRequestField("date",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRestoreTimesRequest::getDate, (req, v) -> {
                 req.setDate(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRestoreTimesRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1414,66 +1279,57 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("node_id",
+        builder.<String>withRequestField("node_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSessionsRequest::getNodeId, (req, v) -> {
                 req.setNodeId(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSessionsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSessionsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("plan_summary",
+            }));
+        builder.<String>withRequestField("plan_summary",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSessionsRequest::getPlanSummary, (req, v) -> {
                 req.setPlanSummary(v);
-            })
-        );
-        builder.withRequestField("type",
+            }));
+        builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSessionsRequest::getType, (req, v) -> {
                 req.setType(v);
-            })
-        );
-        builder.withRequestField("namespace",
+            }));
+        builder.<String>withRequestField("namespace",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSessionsRequest::getNamespace, (req, v) -> {
                 req.setNamespace(v);
-            })
-        );
-        builder.withRequestField("cost_time",
+            }));
+        builder.<Integer>withRequestField("cost_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSessionsRequest::getCostTime, (req, v) -> {
                 req.setCostTime(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1489,71 +1345,63 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSlowLogsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("start_date",
+            }));
+        builder.<String>withRequestField("start_date",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSlowLogsRequest::getStartDate, (req, v) -> {
                 req.setStartDate(v);
-            })
-        );
-        builder.withRequestField("end_date",
+            }));
+        builder.<String>withRequestField("end_date",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSlowLogsRequest::getEndDate, (req, v) -> {
                 req.setEndDate(v);
-            })
-        );
-        builder.withRequestField("node_id",
+            }));
+        builder.<String>withRequestField("node_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSlowLogsRequest::getNodeId, (req, v) -> {
                 req.setNodeId(v);
-            })
-        );
-        builder.withRequestField("type",
+            }));
+        builder.<ListSlowLogsRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListSlowLogsRequest.TypeEnum.class,
+            TypeCasts.uncheckedConversion(ListSlowLogsRequest.TypeEnum.class),
             f -> f.withMarshaller(ListSlowLogsRequest::getType, (req, v) -> {
                 req.setType(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSlowLogsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSlowLogsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListStorageTypeRequest, ListStorageTypeResponse> listStorageType = genForlistStorageType();
+    public static final HttpRequestDef<ListStorageTypeRequest, ListStorageTypeResponse> listStorageType =
+        genForlistStorageType();
 
     private static HttpRequestDef<ListStorageTypeRequest, ListStorageTypeResponse> genForlistStorageType() {
         // basic
@@ -1564,18 +1412,15 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("engine_name",
+        builder.<ListStorageTypeRequest.EngineNameEnum>withRequestField("engine_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListStorageTypeRequest.EngineNameEnum.class,
+            TypeCasts.uncheckedConversion(ListStorageTypeRequest.EngineNameEnum.class),
             f -> f.withMarshaller(ListStorageTypeRequest::getEngineName, (req, v) -> {
                 req.setEngineName(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1591,31 +1436,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(MigrateAzRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<MigrateAzRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            MigrateAzRequestBody.class,
+            TypeCasts.uncheckedConversion(MigrateAzRequestBody.class),
             f -> f.withMarshaller(MigrateAzRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> resetPassword = genForresetPassword();
+    public static final HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> resetPassword =
+        genForresetPassword();
 
     private static HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> genForresetPassword() {
         // basic
@@ -1626,31 +1468,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResetPasswordRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ResetPasswordRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ResetPasswordRequestBody.class,
+            TypeCasts.uncheckedConversion(ResetPasswordRequestBody.class),
             f -> f.withMarshaller(ResetPasswordRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstance = genForresizeInstance();
+    public static final HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstance =
+        genForresizeInstance();
 
     private static HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> genForresizeInstance() {
         // basic
@@ -1661,66 +1500,60 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResizeInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ResizeInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ResizeInstanceRequestBody.class,
+            TypeCasts.uncheckedConversion(ResizeInstanceRequestBody.class),
             f -> f.withMarshaller(ResizeInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResizeInstanceVolumeRequest, ResizeInstanceVolumeResponse> resizeInstanceVolume = genForresizeInstanceVolume();
+    public static final HttpRequestDef<ResizeInstanceVolumeRequest, ResizeInstanceVolumeResponse> resizeInstanceVolume =
+        genForresizeInstanceVolume();
 
     private static HttpRequestDef<ResizeInstanceVolumeRequest, ResizeInstanceVolumeResponse> genForresizeInstanceVolume() {
         // basic
-        HttpRequestDef.Builder<ResizeInstanceVolumeRequest, ResizeInstanceVolumeResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ResizeInstanceVolumeRequest.class, ResizeInstanceVolumeResponse.class)
-                .withName("ResizeInstanceVolume")
-                .withUri("/v3/{project_id}/instances/{instance_id}/enlarge-volume")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ResizeInstanceVolumeRequest, ResizeInstanceVolumeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ResizeInstanceVolumeRequest.class, ResizeInstanceVolumeResponse.class)
+            .withName("ResizeInstanceVolume")
+            .withUri("/v3/{project_id}/instances/{instance_id}/enlarge-volume")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResizeInstanceVolumeRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ResizeInstanceVolumeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ResizeInstanceVolumeRequestBody.class,
+            TypeCasts.uncheckedConversion(ResizeInstanceVolumeRequestBody.class),
             f -> f.withMarshaller(ResizeInstanceVolumeRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RestartInstanceRequest, RestartInstanceResponse> restartInstance = genForrestartInstance();
+    public static final HttpRequestDef<RestartInstanceRequest, RestartInstanceResponse> restartInstance =
+        genForrestartInstance();
 
     private static HttpRequestDef<RestartInstanceRequest, RestartInstanceResponse> genForrestartInstance() {
         // basic
@@ -1731,31 +1564,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RestartInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<RestartInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            RestartInstanceRequestBody.class,
+            TypeCasts.uncheckedConversion(RestartInstanceRequestBody.class),
             f -> f.withMarshaller(RestartInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RestoreInstanceRequest, RestoreInstanceResponse> restoreInstance = genForrestoreInstance();
+    public static final HttpRequestDef<RestoreInstanceRequest, RestoreInstanceResponse> restoreInstance =
+        genForrestoreInstance();
 
     private static HttpRequestDef<RestoreInstanceRequest, RestoreInstanceResponse> genForrestoreInstance() {
         // basic
@@ -1766,74 +1596,70 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("X-Language",
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RestoreInstanceRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<RestoreInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            RestoreInstanceRequestBody.class,
+            TypeCasts.uncheckedConversion(RestoreInstanceRequestBody.class),
             f -> f.withMarshaller(RestoreInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RestoreInstanceFromCollectionRequest, RestoreInstanceFromCollectionResponse> restoreInstanceFromCollection = genForrestoreInstanceFromCollection();
+    public static final HttpRequestDef<RestoreInstanceFromCollectionRequest, RestoreInstanceFromCollectionResponse> restoreInstanceFromCollection =
+        genForrestoreInstanceFromCollection();
 
     private static HttpRequestDef<RestoreInstanceFromCollectionRequest, RestoreInstanceFromCollectionResponse> genForrestoreInstanceFromCollection() {
         // basic
         HttpRequestDef.Builder<RestoreInstanceFromCollectionRequest, RestoreInstanceFromCollectionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RestoreInstanceFromCollectionRequest.class, RestoreInstanceFromCollectionResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RestoreInstanceFromCollectionRequest.class,
+                    RestoreInstanceFromCollectionResponse.class)
                 .withName("RestoreInstanceFromCollection")
                 .withUri("/v3/{project_id}/instances/{instance_id}/restore/collections")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RestoreInstanceFromCollectionRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RestoreInstanceFromCollectionRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<RestoreInstanceFromCollectionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            RestoreInstanceFromCollectionRequestBody.class,
+            TypeCasts.uncheckedConversion(RestoreInstanceFromCollectionRequestBody.class),
             f -> f.withMarshaller(RestoreInstanceFromCollectionRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RestoreNewInstanceRequest, RestoreNewInstanceResponse> restoreNewInstance = genForrestoreNewInstance();
+    public static final HttpRequestDef<RestoreNewInstanceRequest, RestoreNewInstanceResponse> restoreNewInstance =
+        genForrestoreNewInstance();
 
     private static HttpRequestDef<RestoreNewInstanceRequest, RestoreNewInstanceResponse> genForrestoreNewInstance() {
         // basic
@@ -1844,23 +1670,21 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<RestoreNewInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            RestoreNewInstanceRequestBody.class,
+            TypeCasts.uncheckedConversion(RestoreNewInstanceRequestBody.class),
             f -> f.withMarshaller(RestoreNewInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SetAuditlogPolicyRequest, SetAuditlogPolicyResponse> setAuditlogPolicy = genForsetAuditlogPolicy();
+    public static final HttpRequestDef<SetAuditlogPolicyRequest, SetAuditlogPolicyResponse> setAuditlogPolicy =
+        genForsetAuditlogPolicy();
 
     private static HttpRequestDef<SetAuditlogPolicyRequest, SetAuditlogPolicyResponse> genForsetAuditlogPolicy() {
         // basic
@@ -1871,31 +1695,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SetAuditlogPolicyRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<SetAuditlogPolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            SetAuditlogPolicyRequestBody.class,
+            TypeCasts.uncheckedConversion(SetAuditlogPolicyRequestBody.class),
             f -> f.withMarshaller(SetAuditlogPolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SetBackupPolicyRequest, SetBackupPolicyResponse> setBackupPolicy = genForsetBackupPolicy();
+    public static final HttpRequestDef<SetBackupPolicyRequest, SetBackupPolicyResponse> setBackupPolicy =
+        genForsetBackupPolicy();
 
     private static HttpRequestDef<SetBackupPolicyRequest, SetBackupPolicyResponse> genForsetBackupPolicy() {
         // basic
@@ -1906,31 +1727,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SetBackupPolicyRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<SetBackupPolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            SetBackupPolicyRequestBody.class,
+            TypeCasts.uncheckedConversion(SetBackupPolicyRequestBody.class),
             f -> f.withMarshaller(SetBackupPolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SetBalancerSwitchRequest, SetBalancerSwitchResponse> setBalancerSwitch = genForsetBalancerSwitch();
+    public static final HttpRequestDef<SetBalancerSwitchRequest, SetBalancerSwitchResponse> setBalancerSwitch =
+        genForsetBalancerSwitch();
 
     private static HttpRequestDef<SetBalancerSwitchRequest, SetBalancerSwitchResponse> genForsetBalancerSwitch() {
         // basic
@@ -1941,31 +1759,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SetBalancerSwitchRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("action",
+            }));
+        builder.<SetBalancerSwitchRequest.ActionEnum>withRequestField("action",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            SetBalancerSwitchRequest.ActionEnum.class,
+            TypeCasts.uncheckedConversion(SetBalancerSwitchRequest.ActionEnum.class),
             f -> f.withMarshaller(SetBalancerSwitchRequest::getAction, (req, v) -> {
                 req.setAction(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SetBalancerWindowRequest, SetBalancerWindowResponse> setBalancerWindow = genForsetBalancerWindow();
+    public static final HttpRequestDef<SetBalancerWindowRequest, SetBalancerWindowResponse> setBalancerWindow =
+        genForsetBalancerWindow();
 
     private static HttpRequestDef<SetBalancerWindowRequest, SetBalancerWindowResponse> genForsetBalancerWindow() {
         // basic
@@ -1976,31 +1791,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SetBalancerWindowRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<BalancerActiveWindow>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BalancerActiveWindow.class,
+            TypeCasts.uncheckedConversion(BalancerActiveWindow.class),
             f -> f.withMarshaller(SetBalancerWindowRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAuditlogPolicyRequest, ShowAuditlogPolicyResponse> showAuditlogPolicy = genForshowAuditlogPolicy();
+    public static final HttpRequestDef<ShowAuditlogPolicyRequest, ShowAuditlogPolicyResponse> showAuditlogPolicy =
+        genForshowAuditlogPolicy();
 
     private static HttpRequestDef<ShowAuditlogPolicyRequest, ShowAuditlogPolicyResponse> genForshowAuditlogPolicy() {
         // basic
@@ -2011,74 +1823,67 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAuditlogPolicyRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAuditlogPolicyRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse> showBackupDownloadLink = genForshowBackupDownloadLink();
+    public static final HttpRequestDef<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse> showBackupDownloadLink =
+        genForshowBackupDownloadLink();
 
     private static HttpRequestDef<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse> genForshowBackupDownloadLink() {
         // basic
-        HttpRequestDef.Builder<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowBackupDownloadLinkRequest.class, ShowBackupDownloadLinkResponse.class)
-                .withName("ShowBackupDownloadLink")
-                .withUri("/v3/{project_id}/backups/download-file")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowBackupDownloadLinkRequest, ShowBackupDownloadLinkResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowBackupDownloadLinkRequest.class, ShowBackupDownloadLinkResponse.class)
+            .withName("ShowBackupDownloadLink")
+            .withUri("/v3/{project_id}/backups/download-file")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBackupDownloadLinkRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("backup_id",
+            }));
+        builder.<String>withRequestField("backup_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBackupDownloadLinkRequest::getBackupId, (req, v) -> {
                 req.setBackupId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBackupDownloadLinkRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowBackupPolicyRequest, ShowBackupPolicyResponse> showBackupPolicy = genForshowBackupPolicy();
+    public static final HttpRequestDef<ShowBackupPolicyRequest, ShowBackupPolicyResponse> showBackupPolicy =
+        genForshowBackupPolicy();
 
     private static HttpRequestDef<ShowBackupPolicyRequest, ShowBackupPolicyResponse> genForshowBackupPolicy() {
         // basic
@@ -2089,53 +1894,48 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBackupPolicyRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowConnectionStatisticsRequest, ShowConnectionStatisticsResponse> showConnectionStatistics = genForshowConnectionStatistics();
+    public static final HttpRequestDef<ShowConnectionStatisticsRequest, ShowConnectionStatisticsResponse> showConnectionStatistics =
+        genForshowConnectionStatistics();
 
     private static HttpRequestDef<ShowConnectionStatisticsRequest, ShowConnectionStatisticsResponse> genForshowConnectionStatistics() {
         // basic
         HttpRequestDef.Builder<ShowConnectionStatisticsRequest, ShowConnectionStatisticsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowConnectionStatisticsRequest.class, ShowConnectionStatisticsResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowConnectionStatisticsRequest.class, ShowConnectionStatisticsResponse.class)
                 .withName("ShowConnectionStatistics")
                 .withUri("/v3/{project_id}/instances/{instance_id}/conn-statistics")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowConnectionStatisticsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("node_id",
+            }));
+        builder.<String>withRequestField("node_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowConnectionStatisticsRequest::getNodeId, (req, v) -> {
                 req.setNodeId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2153,35 +1953,31 @@ public class DdsMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowShardingBalancerRequest, ShowShardingBalancerResponse> showShardingBalancer = genForshowShardingBalancer();
+    public static final HttpRequestDef<ShowShardingBalancerRequest, ShowShardingBalancerResponse> showShardingBalancer =
+        genForshowShardingBalancer();
 
     private static HttpRequestDef<ShowShardingBalancerRequest, ShowShardingBalancerResponse> genForshowShardingBalancer() {
         // basic
-        HttpRequestDef.Builder<ShowShardingBalancerRequest, ShowShardingBalancerResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowShardingBalancerRequest.class, ShowShardingBalancerResponse.class)
-                .withName("ShowShardingBalancer")
-                .withUri("/v3/{project_id}/instances/{instance_id}/balancer")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowShardingBalancerRequest, ShowShardingBalancerResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowShardingBalancerRequest.class, ShowShardingBalancerResponse.class)
+            .withName("ShowShardingBalancer")
+            .withUri("/v3/{project_id}/instances/{instance_id}/balancer")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowShardingBalancerRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2197,58 +1993,53 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SwitchSslRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<SwitchSslRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            SwitchSslRequestBody.class,
+            TypeCasts.uncheckedConversion(SwitchSslRequestBody.class),
             f -> f.withMarshaller(SwitchSslRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<SwitchoverReplicaSetRequest, SwitchoverReplicaSetResponse> switchoverReplicaSet = genForswitchoverReplicaSet();
+    public static final HttpRequestDef<SwitchoverReplicaSetRequest, SwitchoverReplicaSetResponse> switchoverReplicaSet =
+        genForswitchoverReplicaSet();
 
     private static HttpRequestDef<SwitchoverReplicaSetRequest, SwitchoverReplicaSetResponse> genForswitchoverReplicaSet() {
         // basic
-        HttpRequestDef.Builder<SwitchoverReplicaSetRequest, SwitchoverReplicaSetResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, SwitchoverReplicaSetRequest.class, SwitchoverReplicaSetResponse.class)
-                .withName("SwitchoverReplicaSet")
-                .withUri("/v3/{project_id}/instances/{instance_id}/switchover")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<SwitchoverReplicaSetRequest, SwitchoverReplicaSetResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SwitchoverReplicaSetRequest.class, SwitchoverReplicaSetResponse.class)
+            .withName("SwitchoverReplicaSet")
+            .withUri("/v3/{project_id}/instances/{instance_id}/switchover")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SwitchoverReplicaSetRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateClientNetworkRequest, UpdateClientNetworkResponse> updateClientNetwork = genForupdateClientNetwork();
+    public static final HttpRequestDef<UpdateClientNetworkRequest, UpdateClientNetworkResponse> updateClientNetwork =
+        genForupdateClientNetwork();
 
     private static HttpRequestDef<UpdateClientNetworkRequest, UpdateClientNetworkResponse> genForupdateClientNetwork() {
         // basic
@@ -2259,31 +2050,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateClientNetworkRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ClientNetworkRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ClientNetworkRequestBody.class,
+            TypeCasts.uncheckedConversion(ClientNetworkRequestBody.class),
             f -> f.withMarshaller(UpdateClientNetworkRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateInstanceNameRequest, UpdateInstanceNameResponse> updateInstanceName = genForupdateInstanceName();
+    public static final HttpRequestDef<UpdateInstanceNameRequest, UpdateInstanceNameResponse> updateInstanceName =
+        genForupdateInstanceName();
 
     private static HttpRequestDef<UpdateInstanceNameRequest, UpdateInstanceNameResponse> genForupdateInstanceName() {
         // basic
@@ -2294,31 +2082,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateInstanceNameRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateNameRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateNameRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateNameRequestBody.class),
             f -> f.withMarshaller(UpdateInstanceNameRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateInstancePortRequest, UpdateInstancePortResponse> updateInstancePort = genForupdateInstancePort();
+    public static final HttpRequestDef<UpdateInstancePortRequest, UpdateInstancePortResponse> updateInstancePort =
+        genForupdateInstancePort();
 
     private static HttpRequestDef<UpdateInstancePortRequest, UpdateInstancePortResponse> genForupdateInstancePort() {
         // basic
@@ -2329,31 +2114,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateInstancePortRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdatePortRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdatePortRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdatePortRequestBody.class),
             f -> f.withMarshaller(UpdateInstancePortRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse> updateSecurityGroup = genForupdateSecurityGroup();
+    public static final HttpRequestDef<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse> updateSecurityGroup =
+        genForupdateSecurityGroup();
 
     private static HttpRequestDef<UpdateSecurityGroupRequest, UpdateSecurityGroupResponse> genForupdateSecurityGroup() {
         // basic
@@ -2364,31 +2146,28 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateSecurityGroupRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateSecurityGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateSecurityGroupRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateSecurityGroupRequestBody.class),
             f -> f.withMarshaller(UpdateSecurityGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListApiVersionRequest, ListApiVersionResponse> listApiVersion = genForlistApiVersion();
+    public static final HttpRequestDef<ListApiVersionRequest, ListApiVersionResponse> listApiVersion =
+        genForlistApiVersion();
 
     private static HttpRequestDef<ListApiVersionRequest, ListApiVersionResponse> genForlistApiVersion() {
         // basic
@@ -2401,13 +2180,12 @@ public class DdsMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersion = genForshowApiVersion();
+    public static final HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersion =
+        genForshowApiVersion();
 
     private static HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> genForshowApiVersion() {
         // basic
@@ -2418,18 +2196,15 @@ public class DdsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("version",
+        builder.<String>withRequestField("version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowApiVersionRequest::getVersion, (req, v) -> {
                 req.setVersion(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

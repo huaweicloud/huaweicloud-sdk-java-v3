@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.DeleteServerGroupMemberRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class DeleteServerGroupMemberRequest  {
-
-
+/** Request Object */
+public class DeleteServerGroupMemberRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server_group_id")
-    
+    @JsonProperty(value = "server_group_id")
+
     private String serverGroupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private DeleteServerGroupMemberRequestBody body;
 
     public DeleteServerGroupMemberRequest withServerGroupId(String serverGroupId) {
@@ -35,13 +24,9 @@ public class DeleteServerGroupMemberRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务器组ID。
-     * @return serverGroupId
-     */
+    /** 云服务器组ID。
+     * 
+     * @return serverGroupId */
     public String getServerGroupId() {
         return serverGroupId;
     }
@@ -50,27 +35,23 @@ public class DeleteServerGroupMemberRequest  {
         this.serverGroupId = serverGroupId;
     }
 
-    
-
     public DeleteServerGroupMemberRequest withBody(DeleteServerGroupMemberRequestBody body) {
         this.body = body;
         return this;
     }
 
     public DeleteServerGroupMemberRequest withBody(Consumer<DeleteServerGroupMemberRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new DeleteServerGroupMemberRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public DeleteServerGroupMemberRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class DeleteServerGroupMemberRequest  {
     public void setBody(DeleteServerGroupMemberRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class DeleteServerGroupMemberRequest  {
             return false;
         }
         DeleteServerGroupMemberRequest deleteServerGroupMemberRequest = (DeleteServerGroupMemberRequest) o;
-        return Objects.equals(this.serverGroupId, deleteServerGroupMemberRequest.serverGroupId) &&
-            Objects.equals(this.body, deleteServerGroupMemberRequest.body);
+        return Objects.equals(this.serverGroupId, deleteServerGroupMemberRequest.serverGroupId)
+            && Objects.equals(this.body, deleteServerGroupMemberRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(serverGroupId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class DeleteServerGroupMemberRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

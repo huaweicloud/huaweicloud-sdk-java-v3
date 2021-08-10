@@ -1,92 +1,71 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 邀请者的信息
- */
-public class InvitorInfo  {
-
-
+/** 邀请者的信息 */
+public class InvitorInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invitor_id")
-    
+    @JsonProperty(value = "invitor_id")
+
     private String invitorId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invitor_name")
-    
+    @JsonProperty(value = "invitor_name")
+
     private String invitorName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invitor_bcs_id")
-    
+    @JsonProperty(value = "invitor_bcs_id")
+
     private String invitorBcsId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invitor_bcs_name")
-    
+    @JsonProperty(value = "invitor_bcs_name")
+
     private String invitorBcsName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invitor_consensus")
-    
+    @JsonProperty(value = "invitor_consensus")
+
     private String invitorConsensus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invitor_project_id")
-    
+    @JsonProperty(value = "invitor_project_id")
+
     private String invitorProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invitor_cluster_type")
-    
+    @JsonProperty(value = "invitor_cluster_type")
+
     private String invitorClusterType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invitor_database_type")
-    
+    @JsonProperty(value = "invitor_database_type")
+
     private String invitorDatabaseType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invitor_signature_algorithm")
-    
+    @JsonProperty(value = "invitor_signature_algorithm")
+
     private String invitorSignatureAlgorithm;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invitor_fabric_version")
-    
+    @JsonProperty(value = "invitor_fabric_version")
+
     private String invitorFabricVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_fade_enabled")
-    
+    @JsonProperty(value = "order_fade_enabled")
+
     private Boolean orderFadeEnabled;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_fade_cache")
-    
+    @JsonProperty(value = "order_fade_cache")
+
     private Integer orderFadeCache;
 
     public InvitorInfo withInvitorId(String invitorId) {
@@ -94,13 +73,9 @@ public class InvitorInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 邀请方用户id
-     * @return invitorId
-     */
+    /** 邀请方用户id
+     * 
+     * @return invitorId */
     public String getInvitorId() {
         return invitorId;
     }
@@ -109,20 +84,14 @@ public class InvitorInfo  {
         this.invitorId = invitorId;
     }
 
-    
-
     public InvitorInfo withInvitorName(String invitorName) {
         this.invitorName = invitorName;
         return this;
     }
 
-    
-
-
-    /**
-     * 邀请方用户名
-     * @return invitorName
-     */
+    /** 邀请方用户名
+     * 
+     * @return invitorName */
     public String getInvitorName() {
         return invitorName;
     }
@@ -131,20 +100,14 @@ public class InvitorInfo  {
         this.invitorName = invitorName;
     }
 
-    
-
     public InvitorInfo withInvitorBcsId(String invitorBcsId) {
         this.invitorBcsId = invitorBcsId;
         return this;
     }
 
-    
-
-
-    /**
-     * 邀请方的服务id
-     * @return invitorBcsId
-     */
+    /** 邀请方的服务id
+     * 
+     * @return invitorBcsId */
     public String getInvitorBcsId() {
         return invitorBcsId;
     }
@@ -153,20 +116,14 @@ public class InvitorInfo  {
         this.invitorBcsId = invitorBcsId;
     }
 
-    
-
     public InvitorInfo withInvitorBcsName(String invitorBcsName) {
         this.invitorBcsName = invitorBcsName;
         return this;
     }
 
-    
-
-
-    /**
-     * 邀请方的服务名
-     * @return invitorBcsName
-     */
+    /** 邀请方的服务名
+     * 
+     * @return invitorBcsName */
     public String getInvitorBcsName() {
         return invitorBcsName;
     }
@@ -175,20 +132,14 @@ public class InvitorInfo  {
         this.invitorBcsName = invitorBcsName;
     }
 
-    
-
     public InvitorInfo withInvitorConsensus(String invitorConsensus) {
         this.invitorConsensus = invitorConsensus;
         return this;
     }
 
-    
-
-
-    /**
-     * 邀请方的共识
-     * @return invitorConsensus
-     */
+    /** 邀请方的共识
+     * 
+     * @return invitorConsensus */
     public String getInvitorConsensus() {
         return invitorConsensus;
     }
@@ -197,20 +148,14 @@ public class InvitorInfo  {
         this.invitorConsensus = invitorConsensus;
     }
 
-    
-
     public InvitorInfo withInvitorProjectId(String invitorProjectId) {
         this.invitorProjectId = invitorProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 邀请方的projectID
-     * @return invitorProjectId
-     */
+    /** 邀请方的projectID
+     * 
+     * @return invitorProjectId */
     public String getInvitorProjectId() {
         return invitorProjectId;
     }
@@ -219,20 +164,14 @@ public class InvitorInfo  {
         this.invitorProjectId = invitorProjectId;
     }
 
-    
-
     public InvitorInfo withInvitorClusterType(String invitorClusterType) {
         this.invitorClusterType = invitorClusterType;
         return this;
     }
 
-    
-
-
-    /**
-     * 邀请方的集群类型
-     * @return invitorClusterType
-     */
+    /** 邀请方的集群类型
+     * 
+     * @return invitorClusterType */
     public String getInvitorClusterType() {
         return invitorClusterType;
     }
@@ -241,20 +180,14 @@ public class InvitorInfo  {
         this.invitorClusterType = invitorClusterType;
     }
 
-    
-
     public InvitorInfo withInvitorDatabaseType(String invitorDatabaseType) {
         this.invitorDatabaseType = invitorDatabaseType;
         return this;
     }
 
-    
-
-
-    /**
-     * 邀请方数据库类型
-     * @return invitorDatabaseType
-     */
+    /** 邀请方数据库类型
+     * 
+     * @return invitorDatabaseType */
     public String getInvitorDatabaseType() {
         return invitorDatabaseType;
     }
@@ -263,20 +196,14 @@ public class InvitorInfo  {
         this.invitorDatabaseType = invitorDatabaseType;
     }
 
-    
-
     public InvitorInfo withInvitorSignatureAlgorithm(String invitorSignatureAlgorithm) {
         this.invitorSignatureAlgorithm = invitorSignatureAlgorithm;
         return this;
     }
 
-    
-
-
-    /**
-     * 邀请方的签名算法
-     * @return invitorSignatureAlgorithm
-     */
+    /** 邀请方的签名算法
+     * 
+     * @return invitorSignatureAlgorithm */
     public String getInvitorSignatureAlgorithm() {
         return invitorSignatureAlgorithm;
     }
@@ -285,20 +212,14 @@ public class InvitorInfo  {
         this.invitorSignatureAlgorithm = invitorSignatureAlgorithm;
     }
 
-    
-
     public InvitorInfo withInvitorFabricVersion(String invitorFabricVersion) {
         this.invitorFabricVersion = invitorFabricVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * 邀请方的fabric版本
-     * @return invitorFabricVersion
-     */
+    /** 邀请方的fabric版本
+     * 
+     * @return invitorFabricVersion */
     public String getInvitorFabricVersion() {
         return invitorFabricVersion;
     }
@@ -307,20 +228,14 @@ public class InvitorInfo  {
         this.invitorFabricVersion = invitorFabricVersion;
     }
 
-    
-
     public InvitorInfo withOrderFadeEnabled(Boolean orderFadeEnabled) {
         this.orderFadeEnabled = orderFadeEnabled;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否允许order老化
-     * @return orderFadeEnabled
-     */
+    /** 是否允许order老化
+     * 
+     * @return orderFadeEnabled */
     public Boolean getOrderFadeEnabled() {
         return orderFadeEnabled;
     }
@@ -329,20 +244,14 @@ public class InvitorInfo  {
         this.orderFadeEnabled = orderFadeEnabled;
     }
 
-    
-
     public InvitorInfo withOrderFadeCache(Integer orderFadeCache) {
         this.orderFadeCache = orderFadeCache;
         return this;
     }
 
-    
-
-
-    /**
-     * order老化阈值
-     * @return orderFadeCache
-     */
+    /** order老化阈值
+     * 
+     * @return orderFadeCache */
     public Integer getOrderFadeCache() {
         return orderFadeCache;
     }
@@ -350,8 +259,6 @@ public class InvitorInfo  {
     public void setOrderFadeCache(Integer orderFadeCache) {
         this.orderFadeCache = orderFadeCache;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -362,23 +269,36 @@ public class InvitorInfo  {
             return false;
         }
         InvitorInfo invitorInfo = (InvitorInfo) o;
-        return Objects.equals(this.invitorId, invitorInfo.invitorId) &&
-            Objects.equals(this.invitorName, invitorInfo.invitorName) &&
-            Objects.equals(this.invitorBcsId, invitorInfo.invitorBcsId) &&
-            Objects.equals(this.invitorBcsName, invitorInfo.invitorBcsName) &&
-            Objects.equals(this.invitorConsensus, invitorInfo.invitorConsensus) &&
-            Objects.equals(this.invitorProjectId, invitorInfo.invitorProjectId) &&
-            Objects.equals(this.invitorClusterType, invitorInfo.invitorClusterType) &&
-            Objects.equals(this.invitorDatabaseType, invitorInfo.invitorDatabaseType) &&
-            Objects.equals(this.invitorSignatureAlgorithm, invitorInfo.invitorSignatureAlgorithm) &&
-            Objects.equals(this.invitorFabricVersion, invitorInfo.invitorFabricVersion) &&
-            Objects.equals(this.orderFadeEnabled, invitorInfo.orderFadeEnabled) &&
-            Objects.equals(this.orderFadeCache, invitorInfo.orderFadeCache);
+        return Objects.equals(this.invitorId, invitorInfo.invitorId)
+            && Objects.equals(this.invitorName, invitorInfo.invitorName)
+            && Objects.equals(this.invitorBcsId, invitorInfo.invitorBcsId)
+            && Objects.equals(this.invitorBcsName, invitorInfo.invitorBcsName)
+            && Objects.equals(this.invitorConsensus, invitorInfo.invitorConsensus)
+            && Objects.equals(this.invitorProjectId, invitorInfo.invitorProjectId)
+            && Objects.equals(this.invitorClusterType, invitorInfo.invitorClusterType)
+            && Objects.equals(this.invitorDatabaseType, invitorInfo.invitorDatabaseType)
+            && Objects.equals(this.invitorSignatureAlgorithm, invitorInfo.invitorSignatureAlgorithm)
+            && Objects.equals(this.invitorFabricVersion, invitorInfo.invitorFabricVersion)
+            && Objects.equals(this.orderFadeEnabled, invitorInfo.orderFadeEnabled)
+            && Objects.equals(this.orderFadeCache, invitorInfo.orderFadeCache);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(invitorId, invitorName, invitorBcsId, invitorBcsName, invitorConsensus, invitorProjectId, invitorClusterType, invitorDatabaseType, invitorSignatureAlgorithm, invitorFabricVersion, orderFadeEnabled, orderFadeCache);
+        return Objects.hash(invitorId,
+            invitorName,
+            invitorBcsId,
+            invitorBcsName,
+            invitorConsensus,
+            invitorProjectId,
+            invitorClusterType,
+            invitorDatabaseType,
+            invitorSignatureAlgorithm,
+            invitorFabricVersion,
+            orderFadeEnabled,
+            orderFadeCache);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -398,16 +318,13 @@ public class InvitorInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

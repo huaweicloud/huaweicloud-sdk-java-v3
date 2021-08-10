@@ -1,89 +1,69 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.QueryVmrPkgResResultDTO;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 企业资源信息
- */
-public class QueryCorpVcResResultDTO  {
-
-
+/** 企业资源信息 */
+public class QueryCorpVcResResultDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrPkgList")
-    
+    @JsonProperty(value = "vmrPkgList")
+
     private List<QueryVmrPkgResResultDTO> vmrPkgList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="te1080pHardCount")
-    
+    @JsonProperty(value = "te1080pHardCount")
+
     private Integer te1080pHardCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="te720pHardCount")
-    
+    @JsonProperty(value = "te720pHardCount")
+
     private Integer te720pHardCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="teSoftCount")
-    
+    @JsonProperty(value = "teSoftCount")
+
     private Integer teSoftCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roomCount")
-    
+    @JsonProperty(value = "roomCount")
+
     private Integer roomCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="recordCapability")
-    
+    @JsonProperty(value = "recordCapability")
+
     private Integer recordCapability;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confCallCount")
-    
+    @JsonProperty(value = "confCallCount")
+
     private Integer confCallCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="liveCount")
-    
+    @JsonProperty(value = "liveCount")
+
     private Integer liveCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="thirdPartyHardCount")
-    
+    @JsonProperty(value = "thirdPartyHardCount")
+
     private Integer thirdPartyHardCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hwVisionCount")
-    
+    @JsonProperty(value = "hwVisionCount")
+
     private Integer hwVisionCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ideaHubCount")
-    
+    @JsonProperty(value = "ideaHubCount")
+
     private Integer ideaHubCount;
 
     public QueryCorpVcResResultDTO withVmrPkgList(List<QueryVmrPkgResResultDTO> vmrPkgList) {
@@ -91,9 +71,8 @@ public class QueryCorpVcResResultDTO  {
         return this;
     }
 
-    
     public QueryCorpVcResResultDTO addVmrPkgListItem(QueryVmrPkgResResultDTO vmrPkgListItem) {
-        if(this.vmrPkgList == null) {
+        if (this.vmrPkgList == null) {
             this.vmrPkgList = new ArrayList<>();
         }
         this.vmrPkgList.add(vmrPkgListItem);
@@ -101,17 +80,16 @@ public class QueryCorpVcResResultDTO  {
     }
 
     public QueryCorpVcResResultDTO withVmrPkgList(Consumer<List<QueryVmrPkgResResultDTO>> vmrPkgListSetter) {
-        if(this.vmrPkgList == null) {
+        if (this.vmrPkgList == null) {
             this.vmrPkgList = new ArrayList<>();
         }
         vmrPkgListSetter.accept(this.vmrPkgList);
         return this;
     }
 
-    /**
-     * 虚拟会议室类型列表,最多支持8个，暂不限制
-     * @return vmrPkgList
-     */
+    /** 虚拟会议室类型列表,最多支持8个，暂不限制
+     * 
+     * @return vmrPkgList */
     public List<QueryVmrPkgResResultDTO> getVmrPkgList() {
         return vmrPkgList;
     }
@@ -120,20 +98,14 @@ public class QueryCorpVcResResultDTO  {
         this.vmrPkgList = vmrPkgList;
     }
 
-    
-
     public QueryCorpVcResResultDTO withTe1080pHardCount(Integer te1080pHardCount) {
         this.te1080pHardCount = te1080pHardCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 1080P硬终端账户数
-     * @return te1080pHardCount
-     */
+    /** 1080P硬终端账户数
+     * 
+     * @return te1080pHardCount */
     public Integer getTe1080pHardCount() {
         return te1080pHardCount;
     }
@@ -142,20 +114,14 @@ public class QueryCorpVcResResultDTO  {
         this.te1080pHardCount = te1080pHardCount;
     }
 
-    
-
     public QueryCorpVcResResultDTO withTe720pHardCount(Integer te720pHardCount) {
         this.te720pHardCount = te720pHardCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 720P硬终端账户数
-     * @return te720pHardCount
-     */
+    /** 720P硬终端账户数
+     * 
+     * @return te720pHardCount */
     public Integer getTe720pHardCount() {
         return te720pHardCount;
     }
@@ -164,20 +130,14 @@ public class QueryCorpVcResResultDTO  {
         this.te720pHardCount = te720pHardCount;
     }
 
-    
-
     public QueryCorpVcResResultDTO withTeSoftCount(Integer teSoftCount) {
         this.teSoftCount = teSoftCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 软终端账户数
-     * @return teSoftCount
-     */
+    /** 软终端账户数
+     * 
+     * @return teSoftCount */
     public Integer getTeSoftCount() {
         return teSoftCount;
     }
@@ -186,20 +146,14 @@ public class QueryCorpVcResResultDTO  {
         this.teSoftCount = teSoftCount;
     }
 
-    
-
     public QueryCorpVcResResultDTO withRoomCount(Integer roomCount) {
         this.roomCount = roomCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 大屏软终端数量
-     * @return roomCount
-     */
+    /** 大屏软终端数量
+     * 
+     * @return roomCount */
     public Integer getRoomCount() {
         return roomCount;
     }
@@ -208,20 +162,14 @@ public class QueryCorpVcResResultDTO  {
         this.roomCount = roomCount;
     }
 
-    
-
     public QueryCorpVcResResultDTO withRecordCapability(Integer recordCapability) {
         this.recordCapability = recordCapability;
         return this;
     }
 
-    
-
-
-    /**
-     * 录播存储空间 （单位：G）
-     * @return recordCapability
-     */
+    /** 录播存储空间 （单位：G）
+     * 
+     * @return recordCapability */
     public Integer getRecordCapability() {
         return recordCapability;
     }
@@ -230,20 +178,14 @@ public class QueryCorpVcResResultDTO  {
         this.recordCapability = recordCapability;
     }
 
-    
-
     public QueryCorpVcResResultDTO withConfCallCount(Integer confCallCount) {
         this.confCallCount = confCallCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议并发方数
-     * @return confCallCount
-     */
+    /** 会议并发方数
+     * 
+     * @return confCallCount */
     public Integer getConfCallCount() {
         return confCallCount;
     }
@@ -252,20 +194,14 @@ public class QueryCorpVcResResultDTO  {
         this.confCallCount = confCallCount;
     }
 
-    
-
     public QueryCorpVcResResultDTO withLiveCount(Integer liveCount) {
         this.liveCount = liveCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 推流并发数量
-     * @return liveCount
-     */
+    /** 推流并发数量
+     * 
+     * @return liveCount */
     public Integer getLiveCount() {
         return liveCount;
     }
@@ -274,20 +210,14 @@ public class QueryCorpVcResResultDTO  {
         this.liveCount = liveCount;
     }
 
-    
-
     public QueryCorpVcResResultDTO withThirdPartyHardCount(Integer thirdPartyHardCount) {
         this.thirdPartyHardCount = thirdPartyHardCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 第三方硬终端接入数
-     * @return thirdPartyHardCount
-     */
+    /** 第三方硬终端接入数
+     * 
+     * @return thirdPartyHardCount */
     public Integer getThirdPartyHardCount() {
         return thirdPartyHardCount;
     }
@@ -296,20 +226,14 @@ public class QueryCorpVcResResultDTO  {
         this.thirdPartyHardCount = thirdPartyHardCount;
     }
 
-    
-
     public QueryCorpVcResResultDTO withHwVisionCount(Integer hwVisionCount) {
         this.hwVisionCount = hwVisionCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 智慧屏终端接入数
-     * @return hwVisionCount
-     */
+    /** 智慧屏终端接入数
+     * 
+     * @return hwVisionCount */
     public Integer getHwVisionCount() {
         return hwVisionCount;
     }
@@ -318,20 +242,14 @@ public class QueryCorpVcResResultDTO  {
         this.hwVisionCount = hwVisionCount;
     }
 
-    
-
     public QueryCorpVcResResultDTO withIdeaHubCount(Integer ideaHubCount) {
         this.ideaHubCount = ideaHubCount;
         return this;
     }
 
-    
-
-
-    /**
-     * ideahub终端接入数
-     * @return ideaHubCount
-     */
+    /** ideahub终端接入数
+     * 
+     * @return ideaHubCount */
     public Integer getIdeaHubCount() {
         return ideaHubCount;
     }
@@ -339,8 +257,6 @@ public class QueryCorpVcResResultDTO  {
     public void setIdeaHubCount(Integer ideaHubCount) {
         this.ideaHubCount = ideaHubCount;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -351,22 +267,34 @@ public class QueryCorpVcResResultDTO  {
             return false;
         }
         QueryCorpVcResResultDTO queryCorpVcResResultDTO = (QueryCorpVcResResultDTO) o;
-        return Objects.equals(this.vmrPkgList, queryCorpVcResResultDTO.vmrPkgList) &&
-            Objects.equals(this.te1080pHardCount, queryCorpVcResResultDTO.te1080pHardCount) &&
-            Objects.equals(this.te720pHardCount, queryCorpVcResResultDTO.te720pHardCount) &&
-            Objects.equals(this.teSoftCount, queryCorpVcResResultDTO.teSoftCount) &&
-            Objects.equals(this.roomCount, queryCorpVcResResultDTO.roomCount) &&
-            Objects.equals(this.recordCapability, queryCorpVcResResultDTO.recordCapability) &&
-            Objects.equals(this.confCallCount, queryCorpVcResResultDTO.confCallCount) &&
-            Objects.equals(this.liveCount, queryCorpVcResResultDTO.liveCount) &&
-            Objects.equals(this.thirdPartyHardCount, queryCorpVcResResultDTO.thirdPartyHardCount) &&
-            Objects.equals(this.hwVisionCount, queryCorpVcResResultDTO.hwVisionCount) &&
-            Objects.equals(this.ideaHubCount, queryCorpVcResResultDTO.ideaHubCount);
+        return Objects.equals(this.vmrPkgList, queryCorpVcResResultDTO.vmrPkgList)
+            && Objects.equals(this.te1080pHardCount, queryCorpVcResResultDTO.te1080pHardCount)
+            && Objects.equals(this.te720pHardCount, queryCorpVcResResultDTO.te720pHardCount)
+            && Objects.equals(this.teSoftCount, queryCorpVcResResultDTO.teSoftCount)
+            && Objects.equals(this.roomCount, queryCorpVcResResultDTO.roomCount)
+            && Objects.equals(this.recordCapability, queryCorpVcResResultDTO.recordCapability)
+            && Objects.equals(this.confCallCount, queryCorpVcResResultDTO.confCallCount)
+            && Objects.equals(this.liveCount, queryCorpVcResResultDTO.liveCount)
+            && Objects.equals(this.thirdPartyHardCount, queryCorpVcResResultDTO.thirdPartyHardCount)
+            && Objects.equals(this.hwVisionCount, queryCorpVcResResultDTO.hwVisionCount)
+            && Objects.equals(this.ideaHubCount, queryCorpVcResResultDTO.ideaHubCount);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(vmrPkgList, te1080pHardCount, te720pHardCount, teSoftCount, roomCount, recordCapability, confCallCount, liveCount, thirdPartyHardCount, hwVisionCount, ideaHubCount);
+        return Objects.hash(vmrPkgList,
+            te1080pHardCount,
+            te720pHardCount,
+            teSoftCount,
+            roomCount,
+            recordCapability,
+            confCallCount,
+            liveCount,
+            thirdPartyHardCount,
+            hwVisionCount,
+            ideaHubCount);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -385,16 +313,13 @@ public class QueryCorpVcResResultDTO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

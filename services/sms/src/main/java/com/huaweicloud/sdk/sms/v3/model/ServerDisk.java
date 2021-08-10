@@ -1,52 +1,34 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.PhysicalVolume;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 磁盘信息
- */
-public class ServerDisk  {
-
-
+/** 磁盘信息 */
+public class ServerDisk {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 磁盘的分区类型，添加源端时源端磁盘必选
-     */
+
+    /** 磁盘的分区类型，添加源端时源端磁盘必选 */
     public static final class PartitionStyleEnum {
 
-        
-        /**
-         * Enum MBR for value: "MBR"
-         */
+        /** Enum MBR for value: "MBR" */
         public static final PartitionStyleEnum MBR = new PartitionStyleEnum("MBR");
-        
-        /**
-         * Enum GPT for value: "GPT"
-         */
+
+        /** Enum GPT for value: "GPT" */
         public static final PartitionStyleEnum GPT = new PartitionStyleEnum("GPT");
-        
 
         private static final Map<String, PartitionStyleEnum> STATIC_FIELDS = createStaticFields();
 
@@ -75,7 +57,7 @@ public class ServerDisk  {
 
         @JsonCreator
         public static PartitionStyleEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             PartitionStyleEnum result = STATIC_FIELDS.get(value);
@@ -86,7 +68,7 @@ public class ServerDisk  {
         }
 
         public static PartitionStyleEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             PartitionStyleEnum result = STATIC_FIELDS.get(value);
@@ -110,27 +92,19 @@ public class ServerDisk  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="partition_style")
-    
+    @JsonProperty(value = "partition_style")
+
     private PartitionStyleEnum partitionStyle;
-    /**
-     * 磁盘类型
-     */
+
+    /** 磁盘类型 */
     public static final class DeviceUseEnum {
 
-        
-        /**
-         * Enum BOOT for value: "BOOT"
-         */
+        /** Enum BOOT for value: "BOOT" */
         public static final DeviceUseEnum BOOT = new DeviceUseEnum("BOOT");
-        
-        /**
-         * Enum OS for value: "OS"
-         */
+
+        /** Enum OS for value: "OS" */
         public static final DeviceUseEnum OS = new DeviceUseEnum("OS");
-        
 
         private static final Map<String, DeviceUseEnum> STATIC_FIELDS = createStaticFields();
 
@@ -159,7 +133,7 @@ public class ServerDisk  {
 
         @JsonCreator
         public static DeviceUseEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DeviceUseEnum result = STATIC_FIELDS.get(value);
@@ -170,7 +144,7 @@ public class ServerDisk  {
         }
 
         public static DeviceUseEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DeviceUseEnum result = STATIC_FIELDS.get(value);
@@ -194,46 +168,39 @@ public class ServerDisk  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_use")
-    
+    @JsonProperty(value = "device_use")
+
     private DeviceUseEnum deviceUse;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Long size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="used_size")
-    
+    @JsonProperty(value = "used_size")
+
     private Long usedSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="physical_volumes")
-    
+    @JsonProperty(value = "physical_volumes")
+
     private List<PhysicalVolume> physicalVolumes = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disk_id")
-    
+    @JsonProperty(value = "disk_id")
+
     private String diskId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os_disk")
-    
+    @JsonProperty(value = "os_disk")
+
     private Boolean osDisk;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="relation_name")
-    
+    @JsonProperty(value = "relation_name")
+
     private String relationName;
 
     public ServerDisk withName(String name) {
@@ -241,13 +208,9 @@ public class ServerDisk  {
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘名称
-     * @return name
-     */
+    /** 磁盘名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -256,20 +219,14 @@ public class ServerDisk  {
         this.name = name;
     }
 
-    
-
     public ServerDisk withPartitionStyle(PartitionStyleEnum partitionStyle) {
         this.partitionStyle = partitionStyle;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘的分区类型，添加源端时源端磁盘必选
-     * @return partitionStyle
-     */
+    /** 磁盘的分区类型，添加源端时源端磁盘必选
+     * 
+     * @return partitionStyle */
     public PartitionStyleEnum getPartitionStyle() {
         return partitionStyle;
     }
@@ -278,20 +235,14 @@ public class ServerDisk  {
         this.partitionStyle = partitionStyle;
     }
 
-    
-
     public ServerDisk withDeviceUse(DeviceUseEnum deviceUse) {
         this.deviceUse = deviceUse;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘类型
-     * @return deviceUse
-     */
+    /** 磁盘类型
+     * 
+     * @return deviceUse */
     public DeviceUseEnum getDeviceUse() {
         return deviceUse;
     }
@@ -300,22 +251,14 @@ public class ServerDisk  {
         this.deviceUse = deviceUse;
     }
 
-    
-
     public ServerDisk withSize(Long size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘总大小，以字节为单位
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return size
-     */
+    /** 磁盘总大小，以字节为单位 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return size */
     public Long getSize() {
         return size;
     }
@@ -324,22 +267,14 @@ public class ServerDisk  {
         this.size = size;
     }
 
-    
-
     public ServerDisk withUsedSize(Long usedSize) {
         this.usedSize = usedSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘已使用大小，以字节为单位
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return usedSize
-     */
+    /** 磁盘已使用大小，以字节为单位 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return usedSize */
     public Long getUsedSize() {
         return usedSize;
     }
@@ -348,16 +283,13 @@ public class ServerDisk  {
         this.usedSize = usedSize;
     }
 
-    
-
     public ServerDisk withPhysicalVolumes(List<PhysicalVolume> physicalVolumes) {
         this.physicalVolumes = physicalVolumes;
         return this;
     }
 
-    
     public ServerDisk addPhysicalVolumesItem(PhysicalVolume physicalVolumesItem) {
-        if(this.physicalVolumes == null) {
+        if (this.physicalVolumes == null) {
             this.physicalVolumes = new ArrayList<>();
         }
         this.physicalVolumes.add(physicalVolumesItem);
@@ -365,17 +297,16 @@ public class ServerDisk  {
     }
 
     public ServerDisk withPhysicalVolumes(Consumer<List<PhysicalVolume>> physicalVolumesSetter) {
-        if(this.physicalVolumes == null) {
+        if (this.physicalVolumes == null) {
             this.physicalVolumes = new ArrayList<>();
         }
         physicalVolumesSetter.accept(this.physicalVolumes);
         return this;
     }
 
-    /**
-     * 磁盘上的物理分区信息
-     * @return physicalVolumes
-     */
+    /** 磁盘上的物理分区信息
+     * 
+     * @return physicalVolumes */
     public List<PhysicalVolume> getPhysicalVolumes() {
         return physicalVolumes;
     }
@@ -384,20 +315,14 @@ public class ServerDisk  {
         this.physicalVolumes = physicalVolumes;
     }
 
-    
-
     public ServerDisk withDiskId(String diskId) {
         this.diskId = diskId;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建任务时，如果选择已有虚拟机，此参数必选
-     * @return diskId
-     */
+    /** 创建任务时，如果选择已有虚拟机，此参数必选
+     * 
+     * @return diskId */
     public String getDiskId() {
         return diskId;
     }
@@ -406,20 +331,14 @@ public class ServerDisk  {
         this.diskId = diskId;
     }
 
-    
-
     public ServerDisk withOsDisk(Boolean osDisk) {
         this.osDisk = osDisk;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否为系统盘
-     * @return osDisk
-     */
+    /** 是否为系统盘
+     * 
+     * @return osDisk */
     public Boolean getOsDisk() {
         return osDisk;
     }
@@ -428,20 +347,14 @@ public class ServerDisk  {
         this.osDisk = osDisk;
     }
 
-    
-
     public ServerDisk withRelationName(String relationName) {
         this.relationName = relationName;
         return this;
     }
 
-    
-
-
-    /**
-     * Linux系统 目的端ECS中与源端关联的磁盘名称
-     * @return relationName
-     */
+    /** Linux系统 目的端ECS中与源端关联的磁盘名称
+     * 
+     * @return relationName */
     public String getRelationName() {
         return relationName;
     }
@@ -449,8 +362,6 @@ public class ServerDisk  {
     public void setRelationName(String relationName) {
         this.relationName = relationName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -461,20 +372,21 @@ public class ServerDisk  {
             return false;
         }
         ServerDisk serverDisk = (ServerDisk) o;
-        return Objects.equals(this.name, serverDisk.name) &&
-            Objects.equals(this.partitionStyle, serverDisk.partitionStyle) &&
-            Objects.equals(this.deviceUse, serverDisk.deviceUse) &&
-            Objects.equals(this.size, serverDisk.size) &&
-            Objects.equals(this.usedSize, serverDisk.usedSize) &&
-            Objects.equals(this.physicalVolumes, serverDisk.physicalVolumes) &&
-            Objects.equals(this.diskId, serverDisk.diskId) &&
-            Objects.equals(this.osDisk, serverDisk.osDisk) &&
-            Objects.equals(this.relationName, serverDisk.relationName);
+        return Objects.equals(this.name, serverDisk.name)
+            && Objects.equals(this.partitionStyle, serverDisk.partitionStyle)
+            && Objects.equals(this.deviceUse, serverDisk.deviceUse) && Objects.equals(this.size, serverDisk.size)
+            && Objects.equals(this.usedSize, serverDisk.usedSize)
+            && Objects.equals(this.physicalVolumes, serverDisk.physicalVolumes)
+            && Objects.equals(this.diskId, serverDisk.diskId) && Objects.equals(this.osDisk, serverDisk.osDisk)
+            && Objects.equals(this.relationName, serverDisk.relationName);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, partitionStyle, deviceUse, size, usedSize, physicalVolumes, diskId, osDisk, relationName);
+        return Objects
+            .hash(name, partitionStyle, deviceUse, size, usedSize, physicalVolumes, diskId, osDisk, relationName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -491,16 +403,13 @@ public class ServerDisk  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

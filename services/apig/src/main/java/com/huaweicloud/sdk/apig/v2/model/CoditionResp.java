@@ -1,55 +1,34 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.apig.v2.model.ApiConditionBase;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * CoditionResp
- */
-public class CoditionResp  {
-
-
+/** CoditionResp */
+public class CoditionResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_param_name")
-    
+    @JsonProperty(value = "req_param_name")
+
     private String reqParamName;
-    /**
-     * 策略条件 - exact：绝对匹配 - enum：枚举 - pattern：正则  策略类型为param时必选 
-     */
+
+    /** 策略条件 - exact：绝对匹配 - enum：枚举 - pattern：正则 策略类型为param时必选 */
     public static final class ConditionTypeEnum {
 
-        
-        /**
-         * Enum EXACT for value: "exact"
-         */
+        /** Enum EXACT for value: "exact" */
         public static final ConditionTypeEnum EXACT = new ConditionTypeEnum("exact");
-        
-        /**
-         * Enum ENUM for value: "enum"
-         */
+
+        /** Enum ENUM for value: "enum" */
         public static final ConditionTypeEnum ENUM = new ConditionTypeEnum("enum");
-        
-        /**
-         * Enum PATTERN for value: "pattern"
-         */
+
+        /** Enum PATTERN for value: "pattern" */
         public static final ConditionTypeEnum PATTERN = new ConditionTypeEnum("pattern");
-        
 
         private static final Map<String, ConditionTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -79,7 +58,7 @@ public class CoditionResp  {
 
         @JsonCreator
         public static ConditionTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ConditionTypeEnum result = STATIC_FIELDS.get(value);
@@ -90,7 +69,7 @@ public class CoditionResp  {
         }
 
         public static ConditionTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ConditionTypeEnum result = STATIC_FIELDS.get(value);
@@ -114,27 +93,19 @@ public class CoditionResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="condition_type")
-    
+    @JsonProperty(value = "condition_type")
+
     private ConditionTypeEnum conditionType;
-    /**
-     * 策略类型 - param：参数 - source：源IP
-     */
+
+    /** 策略类型 - param：参数 - source：源IP */
     public static final class ConditionOriginEnum {
 
-        
-        /**
-         * Enum PARAM for value: "param"
-         */
+        /** Enum PARAM for value: "param" */
         public static final ConditionOriginEnum PARAM = new ConditionOriginEnum("param");
-        
-        /**
-         * Enum SOURCE for value: "source"
-         */
+
+        /** Enum SOURCE for value: "source" */
         public static final ConditionOriginEnum SOURCE = new ConditionOriginEnum("source");
-        
 
         private static final Map<String, ConditionOriginEnum> STATIC_FIELDS = createStaticFields();
 
@@ -163,7 +134,7 @@ public class CoditionResp  {
 
         @JsonCreator
         public static ConditionOriginEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ConditionOriginEnum result = STATIC_FIELDS.get(value);
@@ -174,7 +145,7 @@ public class CoditionResp  {
         }
 
         public static ConditionOriginEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ConditionOriginEnum result = STATIC_FIELDS.get(value);
@@ -198,34 +169,29 @@ public class CoditionResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="condition_origin")
-    
+    @JsonProperty(value = "condition_origin")
+
     private ConditionOriginEnum conditionOrigin;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="condition_value")
-    
+    @JsonProperty(value = "condition_value")
+
     private String conditionValue;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_param_id")
-    
+    @JsonProperty(value = "req_param_id")
+
     private String reqParamId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_param_location")
-    
+    @JsonProperty(value = "req_param_location")
+
     private String reqParamLocation;
 
     public CoditionResp withReqParamName(String reqParamName) {
@@ -233,13 +199,9 @@ public class CoditionResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 关联的请求参数对象名称。策略类型为param时必选
-     * @return reqParamName
-     */
+    /** 关联的请求参数对象名称。策略类型为param时必选
+     * 
+     * @return reqParamName */
     public String getReqParamName() {
         return reqParamName;
     }
@@ -248,20 +210,14 @@ public class CoditionResp  {
         this.reqParamName = reqParamName;
     }
 
-    
-
     public CoditionResp withConditionType(ConditionTypeEnum conditionType) {
         this.conditionType = conditionType;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略条件 - exact：绝对匹配 - enum：枚举 - pattern：正则  策略类型为param时必选 
-     * @return conditionType
-     */
+    /** 策略条件 - exact：绝对匹配 - enum：枚举 - pattern：正则 策略类型为param时必选
+     * 
+     * @return conditionType */
     public ConditionTypeEnum getConditionType() {
         return conditionType;
     }
@@ -270,20 +226,14 @@ public class CoditionResp  {
         this.conditionType = conditionType;
     }
 
-    
-
     public CoditionResp withConditionOrigin(ConditionOriginEnum conditionOrigin) {
         this.conditionOrigin = conditionOrigin;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略类型 - param：参数 - source：源IP
-     * @return conditionOrigin
-     */
+    /** 策略类型 - param：参数 - source：源IP
+     * 
+     * @return conditionOrigin */
     public ConditionOriginEnum getConditionOrigin() {
         return conditionOrigin;
     }
@@ -292,20 +242,14 @@ public class CoditionResp  {
         this.conditionOrigin = conditionOrigin;
     }
 
-    
-
     public CoditionResp withConditionValue(String conditionValue) {
         this.conditionValue = conditionValue;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略值
-     * @return conditionValue
-     */
+    /** 策略值
+     * 
+     * @return conditionValue */
     public String getConditionValue() {
         return conditionValue;
     }
@@ -314,20 +258,14 @@ public class CoditionResp  {
         this.conditionValue = conditionValue;
     }
 
-    
-
     public CoditionResp withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 编号
-     * @return id
-     */
+    /** 编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -336,20 +274,14 @@ public class CoditionResp  {
         this.id = id;
     }
 
-    
-
     public CoditionResp withReqParamId(String reqParamId) {
         this.reqParamId = reqParamId;
         return this;
     }
 
-    
-
-
-    /**
-     * 关联的请求参数对象编号
-     * @return reqParamId
-     */
+    /** 关联的请求参数对象编号
+     * 
+     * @return reqParamId */
     public String getReqParamId() {
         return reqParamId;
     }
@@ -358,20 +290,14 @@ public class CoditionResp  {
         this.reqParamId = reqParamId;
     }
 
-    
-
     public CoditionResp withReqParamLocation(String reqParamLocation) {
         this.reqParamLocation = reqParamLocation;
         return this;
     }
 
-    
-
-
-    /**
-     * 关联的请求参数对象位置
-     * @return reqParamLocation
-     */
+    /** 关联的请求参数对象位置
+     * 
+     * @return reqParamLocation */
     public String getReqParamLocation() {
         return reqParamLocation;
     }
@@ -379,8 +305,6 @@ public class CoditionResp  {
     public void setReqParamLocation(String reqParamLocation) {
         this.reqParamLocation = reqParamLocation;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -391,18 +315,20 @@ public class CoditionResp  {
             return false;
         }
         CoditionResp coditionResp = (CoditionResp) o;
-        return Objects.equals(this.reqParamName, coditionResp.reqParamName) &&
-            Objects.equals(this.conditionType, coditionResp.conditionType) &&
-            Objects.equals(this.conditionOrigin, coditionResp.conditionOrigin) &&
-            Objects.equals(this.conditionValue, coditionResp.conditionValue) &&
-            Objects.equals(this.id, coditionResp.id) &&
-            Objects.equals(this.reqParamId, coditionResp.reqParamId) &&
-            Objects.equals(this.reqParamLocation, coditionResp.reqParamLocation);
+        return Objects.equals(this.reqParamName, coditionResp.reqParamName)
+            && Objects.equals(this.conditionType, coditionResp.conditionType)
+            && Objects.equals(this.conditionOrigin, coditionResp.conditionOrigin)
+            && Objects.equals(this.conditionValue, coditionResp.conditionValue)
+            && Objects.equals(this.id, coditionResp.id) && Objects.equals(this.reqParamId, coditionResp.reqParamId)
+            && Objects.equals(this.reqParamLocation, coditionResp.reqParamLocation);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(reqParamName, conditionType, conditionOrigin, conditionValue, id, reqParamId, reqParamLocation);
+        return Objects
+            .hash(reqParamName, conditionType, conditionOrigin, conditionValue, id, reqParamId, reqParamLocation);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -417,16 +343,13 @@ public class CoditionResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

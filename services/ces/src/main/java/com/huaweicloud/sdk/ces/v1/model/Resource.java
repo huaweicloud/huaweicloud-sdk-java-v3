@@ -1,44 +1,33 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class Resource  {
-
-
+public class Resource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="used")
-    
+    @JsonProperty(value = "used")
+
     private Integer used;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unit")
-    
+    @JsonProperty(value = "unit")
+
     private String unit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quota")
-    
+    @JsonProperty(value = "quota")
+
     private Integer quota;
 
     public Resource withType(String type) {
@@ -46,13 +35,9 @@ public class Resource  {
         return this;
     }
 
-    
-
-
-    /**
-     * 配额类型。  枚举值说明：  alarm，告警规则
-     * @return type
-     */
+    /** 配额类型。 枚举值说明： alarm，告警规则
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -61,20 +46,14 @@ public class Resource  {
         this.type = type;
     }
 
-    
-
     public Resource withUsed(Integer used) {
         this.used = used;
         return this;
     }
 
-    
-
-
-    /**
-     * 已使用配额数。
-     * @return used
-     */
+    /** 已使用配额数。
+     * 
+     * @return used */
     public Integer getUsed() {
         return used;
     }
@@ -83,20 +62,14 @@ public class Resource  {
         this.used = used;
     }
 
-    
-
     public Resource withUnit(String unit) {
         this.unit = unit;
         return this;
     }
 
-    
-
-
-    /**
-     * 单位。
-     * @return unit
-     */
+    /** 单位。
+     * 
+     * @return unit */
     public String getUnit() {
         return unit;
     }
@@ -105,20 +78,14 @@ public class Resource  {
         this.unit = unit;
     }
 
-    
-
     public Resource withQuota(Integer quota) {
         this.quota = quota;
         return this;
     }
 
-    
-
-
-    /**
-     * 配额总数。
-     * @return quota
-     */
+    /** 配额总数。
+     * 
+     * @return quota */
     public Integer getQuota() {
         return quota;
     }
@@ -126,8 +93,6 @@ public class Resource  {
     public void setQuota(Integer quota) {
         this.quota = quota;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +103,15 @@ public class Resource  {
             return false;
         }
         Resource resource = (Resource) o;
-        return Objects.equals(this.type, resource.type) &&
-            Objects.equals(this.used, resource.used) &&
-            Objects.equals(this.unit, resource.unit) &&
-            Objects.equals(this.quota, resource.quota);
+        return Objects.equals(this.type, resource.type) && Objects.equals(this.used, resource.used)
+            && Objects.equals(this.unit, resource.unit) && Objects.equals(this.quota, resource.quota);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, used, unit, quota);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class Resource  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

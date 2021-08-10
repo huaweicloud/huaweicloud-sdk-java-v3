@@ -1,61 +1,41 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListSlowlogRequest  {
-
-
+/** Request Object */
+public class ListSlowlogRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
-    /**
-     * 返回结果按该关键字排序，支持start_time，duration，默认为“start_time”
-     */
+
+    /** 返回结果按该关键字排序，支持start_time，duration，默认为“start_time” */
     public static final class SortKeyEnum {
 
-        
-        /**
-         * Enum START_TIME for value: "start_time"
-         */
+        /** Enum START_TIME for value: "start_time" */
         public static final SortKeyEnum START_TIME = new SortKeyEnum("start_time");
-        
-        /**
-         * Enum DURATION for value: "duration"
-         */
+
+        /** Enum DURATION for value: "duration" */
         public static final SortKeyEnum DURATION = new SortKeyEnum("duration");
-        
 
         private static final Map<String, SortKeyEnum> STATIC_FIELDS = createStaticFields();
 
@@ -84,7 +64,7 @@ public class ListSlowlogRequest  {
 
         @JsonCreator
         public static SortKeyEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SortKeyEnum result = STATIC_FIELDS.get(value);
@@ -95,7 +75,7 @@ public class ListSlowlogRequest  {
         }
 
         public static SortKeyEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SortKeyEnum result = STATIC_FIELDS.get(value);
@@ -119,27 +99,19 @@ public class ListSlowlogRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sort_key")
-    
+    @JsonProperty(value = "sort_key")
+
     private SortKeyEnum sortKey;
-    /**
-     * 降序或升序（分别对应desc和asc，默认为“desc”）
-     */
+
+    /** 降序或升序（分别对应desc和asc，默认为“desc”） */
     public static final class SortDirEnum {
 
-        
-        /**
-         * Enum DESC for value: "desc"
-         */
+        /** Enum DESC for value: "desc" */
         public static final SortDirEnum DESC = new SortDirEnum("desc");
-        
-        /**
-         * Enum ASC for value: "asc"
-         */
+
+        /** Enum ASC for value: "asc" */
         public static final SortDirEnum ASC = new SortDirEnum("asc");
-        
 
         private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
 
@@ -168,7 +140,7 @@ public class ListSlowlogRequest  {
 
         @JsonCreator
         public static SortDirEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SortDirEnum result = STATIC_FIELDS.get(value);
@@ -179,7 +151,7 @@ public class ListSlowlogRequest  {
         }
 
         public static SortDirEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SortDirEnum result = STATIC_FIELDS.get(value);
@@ -203,22 +175,19 @@ public class ListSlowlogRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sort_dir")
-    
+    @JsonProperty(value = "sort_dir")
+
     private SortDirEnum sortDir;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
     public ListSlowlogRequest withInstanceId(String instanceId) {
@@ -226,13 +195,9 @@ public class ListSlowlogRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -241,20 +206,14 @@ public class ListSlowlogRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListSlowlogRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于0
-     * @return offset
-     */
+    /** 偏移量，表示从此偏移量开始查询， offset大于等于0
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -263,20 +222,14 @@ public class ListSlowlogRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListSlowlogRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示的条目数量。
-     * @return limit
-     */
+    /** 每页显示的条目数量。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -285,20 +238,14 @@ public class ListSlowlogRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListSlowlogRequest withSortKey(SortKeyEnum sortKey) {
         this.sortKey = sortKey;
         return this;
     }
 
-    
-
-
-    /**
-     * 返回结果按该关键字排序，支持start_time，duration，默认为“start_time”
-     * @return sortKey
-     */
+    /** 返回结果按该关键字排序，支持start_time，duration，默认为“start_time”
+     * 
+     * @return sortKey */
     public SortKeyEnum getSortKey() {
         return sortKey;
     }
@@ -307,20 +254,14 @@ public class ListSlowlogRequest  {
         this.sortKey = sortKey;
     }
 
-    
-
     public ListSlowlogRequest withSortDir(SortDirEnum sortDir) {
         this.sortDir = sortDir;
         return this;
     }
 
-    
-
-
-    /**
-     * 降序或升序（分别对应desc和asc，默认为“desc”）
-     * @return sortDir
-     */
+    /** 降序或升序（分别对应desc和asc，默认为“desc”）
+     * 
+     * @return sortDir */
     public SortDirEnum getSortDir() {
         return sortDir;
     }
@@ -329,20 +270,14 @@ public class ListSlowlogRequest  {
         this.sortDir = sortDir;
     }
 
-    
-
     public ListSlowlogRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询开始时间，时间为UTC时间的Unix时间戳。如：1598803200000。
-     * @return startTime
-     */
+    /** 查询开始时间，时间为UTC时间的Unix时间戳。如：1598803200000。
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -351,20 +286,14 @@ public class ListSlowlogRequest  {
         this.startTime = startTime;
     }
 
-    
-
     public ListSlowlogRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询结束时间，时间为UTC时间的Unix时间戳。如：1599494399000。
-     * @return endTime
-     */
+    /** 查询结束时间，时间为UTC时间的Unix时间戳。如：1599494399000。
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -372,8 +301,6 @@ public class ListSlowlogRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -384,18 +311,20 @@ public class ListSlowlogRequest  {
             return false;
         }
         ListSlowlogRequest listSlowlogRequest = (ListSlowlogRequest) o;
-        return Objects.equals(this.instanceId, listSlowlogRequest.instanceId) &&
-            Objects.equals(this.offset, listSlowlogRequest.offset) &&
-            Objects.equals(this.limit, listSlowlogRequest.limit) &&
-            Objects.equals(this.sortKey, listSlowlogRequest.sortKey) &&
-            Objects.equals(this.sortDir, listSlowlogRequest.sortDir) &&
-            Objects.equals(this.startTime, listSlowlogRequest.startTime) &&
-            Objects.equals(this.endTime, listSlowlogRequest.endTime);
+        return Objects.equals(this.instanceId, listSlowlogRequest.instanceId)
+            && Objects.equals(this.offset, listSlowlogRequest.offset)
+            && Objects.equals(this.limit, listSlowlogRequest.limit)
+            && Objects.equals(this.sortKey, listSlowlogRequest.sortKey)
+            && Objects.equals(this.sortDir, listSlowlogRequest.sortDir)
+            && Objects.equals(this.startTime, listSlowlogRequest.startTime)
+            && Objects.equals(this.endTime, listSlowlogRequest.endTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, offset, limit, sortKey, sortDir, startTime, endTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -410,16 +339,13 @@ public class ListSlowlogRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

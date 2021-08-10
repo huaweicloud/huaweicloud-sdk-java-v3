@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowKmsTagsRequest  {
-
-
+/** Request Object */
+public class ShowKmsTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version_id")
-    
+    @JsonProperty(value = "version_id")
+
     private String versionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_id")
-    
+    @JsonProperty(value = "key_id")
+
     private String keyId;
 
     public ShowKmsTagsRequest withVersionId(String versionId) {
@@ -34,13 +23,9 @@ public class ShowKmsTagsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * API版本号
-     * @return versionId
-     */
+    /** API版本号
+     * 
+     * @return versionId */
     public String getVersionId() {
         return versionId;
     }
@@ -49,20 +34,14 @@ public class ShowKmsTagsRequest  {
         this.versionId = versionId;
     }
 
-    
-
     public ShowKmsTagsRequest withKeyId(String keyId) {
         this.keyId = keyId;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥ID
-     * @return keyId
-     */
+    /** 密钥ID
+     * 
+     * @return keyId */
     public String getKeyId() {
         return keyId;
     }
@@ -70,8 +49,6 @@ public class ShowKmsTagsRequest  {
     public void setKeyId(String keyId) {
         this.keyId = keyId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class ShowKmsTagsRequest  {
             return false;
         }
         ShowKmsTagsRequest showKmsTagsRequest = (ShowKmsTagsRequest) o;
-        return Objects.equals(this.versionId, showKmsTagsRequest.versionId) &&
-            Objects.equals(this.keyId, showKmsTagsRequest.keyId);
+        return Objects.equals(this.versionId, showKmsTagsRequest.versionId)
+            && Objects.equals(this.keyId, showKmsTagsRequest.keyId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(versionId, keyId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class ShowKmsTagsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

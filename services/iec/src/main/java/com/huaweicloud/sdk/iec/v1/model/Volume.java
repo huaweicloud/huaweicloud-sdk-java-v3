@@ -1,111 +1,86 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iec.v1.model.Attachment;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 硬盘对象
- */
-public class Volume  {
-
-
+/** 硬盘对象 */
+public class Volume {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="availability_zone")
-    
+    @JsonProperty(value = "availability_zone")
+
     private String availabilityZone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="attachments")
-    
+    @JsonProperty(value = "attachments")
+
     private List<Attachment> attachments = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_type")
-    
+    @JsonProperty(value = "volume_type")
+
     private String volumeType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bootable")
-    
+    @JsonProperty(value = "bootable")
+
     private String bootable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="encrypted")
-    
+    @JsonProperty(value = "encrypted")
+
     private Boolean encrypted;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="multiattach")
-    
+    @JsonProperty(value = "multiattach")
+
     private Boolean multiattach;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata")
-    
+    @JsonProperty(value = "metadata")
+
     private Map<String, String> metadata = null;
-    
+
     public Volume withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 硬盘ID。
-     * @return id
-     */
+    /** 硬盘ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -114,20 +89,14 @@ public class Volume  {
         this.id = id;
     }
 
-    
-
     public Volume withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘状态。
-     * @return status
-     */
+    /** 磁盘状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -136,20 +105,14 @@ public class Volume  {
         this.status = status;
     }
 
-    
-
     public Volume withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘大小。
-     * @return size
-     */
+    /** 磁盘大小。
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -158,20 +121,14 @@ public class Volume  {
         this.size = size;
     }
 
-    
-
     public Volume withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
     }
 
-    
-
-
-    /**
-     * 硬盘所属的AZ信息。
-     * @return availabilityZone
-     */
+    /** 硬盘所属的AZ信息。
+     * 
+     * @return availabilityZone */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -180,16 +137,13 @@ public class Volume  {
         this.availabilityZone = availabilityZone;
     }
 
-    
-
     public Volume withAttachments(List<Attachment> attachments) {
         this.attachments = attachments;
         return this;
     }
 
-    
     public Volume addAttachmentsItem(Attachment attachmentsItem) {
-        if(this.attachments == null) {
+        if (this.attachments == null) {
             this.attachments = new ArrayList<>();
         }
         this.attachments.add(attachmentsItem);
@@ -197,17 +151,16 @@ public class Volume  {
     }
 
     public Volume withAttachments(Consumer<List<Attachment>> attachmentsSetter) {
-        if(this.attachments == null) {
+        if (this.attachments == null) {
             this.attachments = new ArrayList<>();
         }
         attachmentsSetter.accept(this.attachments);
         return this;
     }
 
-    /**
-     * 硬盘的挂载信息。
-     * @return attachments
-     */
+    /** 硬盘的挂载信息。
+     * 
+     * @return attachments */
     public List<Attachment> getAttachments() {
         return attachments;
     }
@@ -216,20 +169,14 @@ public class Volume  {
         this.attachments = attachments;
     }
 
-    
-
     public Volume withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘名称。
-     * @return name
-     */
+    /** 磁盘名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -238,20 +185,14 @@ public class Volume  {
         this.name = name;
     }
 
-    
-
     public Volume withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述。
-     * @return description
-     */
+    /** 描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -260,20 +201,14 @@ public class Volume  {
         this.description = description;
     }
 
-    
-
     public Volume withVolumeType(String volumeType) {
         this.volumeType = volumeType;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘类型。
-     * @return volumeType
-     */
+    /** 磁盘类型。
+     * 
+     * @return volumeType */
     public String getVolumeType() {
         return volumeType;
     }
@@ -282,20 +217,14 @@ public class Volume  {
         this.volumeType = volumeType;
     }
 
-    
-
     public Volume withBootable(String bootable) {
         this.bootable = bootable;
         return this;
     }
 
-    
-
-
-    /**
-     * 显示这个卷是否可启动。
-     * @return bootable
-     */
+    /** 显示这个卷是否可启动。
+     * 
+     * @return bootable */
     public String getBootable() {
         return bootable;
     }
@@ -304,20 +233,14 @@ public class Volume  {
         this.bootable = bootable;
     }
 
-    
-
     public Volume withEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;
         return this;
     }
 
-    
-
-
-    /**
-     * 显示该卷是否已被加密。
-     * @return encrypted
-     */
+    /** 显示该卷是否已被加密。
+     * 
+     * @return encrypted */
     public Boolean getEncrypted() {
         return encrypted;
     }
@@ -326,20 +249,14 @@ public class Volume  {
         this.encrypted = encrypted;
     }
 
-    
-
     public Volume withMultiattach(Boolean multiattach) {
         this.multiattach = multiattach;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘是否多挂载。
-     * @return multiattach
-     */
+    /** 磁盘是否多挂载。
+     * 
+     * @return multiattach */
     public Boolean getMultiattach() {
         return multiattach;
     }
@@ -348,17 +265,13 @@ public class Volume  {
         this.multiattach = multiattach;
     }
 
-    
-
     public Volume withMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    
-
     public Volume putMetadataItem(String key, String metadataItem) {
-        if(this.metadata == null) {
+        if (this.metadata == null) {
             this.metadata = new HashMap<>();
         }
         this.metadata.put(key, metadataItem);
@@ -366,16 +279,16 @@ public class Volume  {
     }
 
     public Volume withMetadata(Consumer<Map<String, String>> metadataSetter) {
-        if(this.metadata == null) {
+        if (this.metadata == null) {
             this.metadata = new HashMap<>();
         }
         metadataSetter.accept(this.metadata);
         return this;
     }
-    /**
-     * 硬盘的元数据。
-     * @return metadata
-     */
+
+    /** 硬盘的元数据。
+     * 
+     * @return metadata */
     public Map<String, String> getMetadata() {
         return metadata;
     }
@@ -383,8 +296,6 @@ public class Volume  {
     public void setMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -395,23 +306,31 @@ public class Volume  {
             return false;
         }
         Volume volume = (Volume) o;
-        return Objects.equals(this.id, volume.id) &&
-            Objects.equals(this.status, volume.status) &&
-            Objects.equals(this.size, volume.size) &&
-            Objects.equals(this.availabilityZone, volume.availabilityZone) &&
-            Objects.equals(this.attachments, volume.attachments) &&
-            Objects.equals(this.name, volume.name) &&
-            Objects.equals(this.description, volume.description) &&
-            Objects.equals(this.volumeType, volume.volumeType) &&
-            Objects.equals(this.bootable, volume.bootable) &&
-            Objects.equals(this.encrypted, volume.encrypted) &&
-            Objects.equals(this.multiattach, volume.multiattach) &&
-            Objects.equals(this.metadata, volume.metadata);
+        return Objects.equals(this.id, volume.id) && Objects.equals(this.status, volume.status)
+            && Objects.equals(this.size, volume.size) && Objects.equals(this.availabilityZone, volume.availabilityZone)
+            && Objects.equals(this.attachments, volume.attachments) && Objects.equals(this.name, volume.name)
+            && Objects.equals(this.description, volume.description)
+            && Objects.equals(this.volumeType, volume.volumeType) && Objects.equals(this.bootable, volume.bootable)
+            && Objects.equals(this.encrypted, volume.encrypted) && Objects.equals(this.multiattach, volume.multiattach)
+            && Objects.equals(this.metadata, volume.metadata);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, status, size, availabilityZone, attachments, name, description, volumeType, bootable, encrypted, multiattach, metadata);
+        return Objects.hash(id,
+            status,
+            size,
+            availabilityZone,
+            attachments,
+            name,
+            description,
+            volumeType,
+            bootable,
+            encrypted,
+            multiattach,
+            metadata);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -431,16 +350,13 @@ public class Volume  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

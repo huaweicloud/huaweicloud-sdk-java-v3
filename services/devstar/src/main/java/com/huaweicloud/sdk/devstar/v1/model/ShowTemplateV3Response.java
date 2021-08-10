@@ -1,202 +1,160 @@
 package com.huaweicloud.sdk.devstar.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.devstar.v1.model.TagInfo;
-import com.huaweicloud.sdk.devstar.v1.model.TopicCategory;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowTemplateV3Response extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="title")
-    
+    @JsonProperty(value = "title")
+
     private String title;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator_id")
-    
+    @JsonProperty(value = "creator_id")
+
     private String creatorId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator")
-    
+    @JsonProperty(value = "creator")
+
     private String creator;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nickname")
-    
+    @JsonProperty(value = "nickname")
+
     private String nickname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="score")
-    
+    @JsonProperty(value = "score")
+
     private Integer score;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="view_count")
-    
+    @JsonProperty(value = "view_count")
+
     private Integer viewCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="usage_count")
-    
+    @JsonProperty(value = "usage_count")
+
     private Integer usageCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private String updatedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="published_at")
-    
+    @JsonProperty(value = "published_at")
+
     private String publishedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="favorite_state")
-    
+    @JsonProperty(value = "favorite_state")
+
     private Integer favoriteState;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maintainers")
-    
+    @JsonProperty(value = "maintainers")
+
     private List<String> maintainers = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="platform_source")
-    
+    @JsonProperty(value = "platform_source")
+
     private Integer platformSource;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="properties")
-    
+    @JsonProperty(value = "properties")
+
     private Object properties;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dependencies")
-    
+    @JsonProperty(value = "dependencies")
+
     private List<Object> dependencies = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dependency_type")
-    
+    @JsonProperty(value = "dependency_type")
+
     private String dependencyType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="store")
-    
+    @JsonProperty(value = "store")
+
     private Integer store;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="store_info")
-    
+    @JsonProperty(value = "store_info")
+
     private String storeInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_size")
-    
+    @JsonProperty(value = "file_size")
+
     private Integer fileSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deployment")
-    
+    @JsonProperty(value = "deployment")
+
     private Object deployment;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_static")
-    
+    @JsonProperty(value = "is_static")
+
     private Integer isStatic;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_id")
-    
+    @JsonProperty(value = "update_id")
+
     private String updateId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic")
-    
+    @JsonProperty(value = "topic")
+
     private List<TopicCategory> topic = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<TagInfo> tags = null;
-    
+
     public ShowTemplateV3Response withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板id。
-     * @return id
-     */
+    /** 模板id。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -205,20 +163,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowTemplateV3Response withTitle(String title) {
         this.title = title;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板名称。
-     * @return title
-     */
+    /** 模板名称。
+     * 
+     * @return title */
     public String getTitle() {
         return title;
     }
@@ -227,20 +179,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.title = title;
     }
 
-    
-
     public ShowTemplateV3Response withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板描述。
-     * @return description
-     */
+    /** 模板描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -249,20 +195,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public ShowTemplateV3Response withCreatorId(String creatorId) {
         this.creatorId = creatorId;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板创建者id。
-     * @return creatorId
-     */
+    /** 模板创建者id。
+     * 
+     * @return creatorId */
     public String getCreatorId() {
         return creatorId;
     }
@@ -271,20 +211,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.creatorId = creatorId;
     }
 
-    
-
     public ShowTemplateV3Response withCreator(String creator) {
         this.creator = creator;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板创建者，有别名返回别名。
-     * @return creator
-     */
+    /** 模板创建者，有别名返回别名。
+     * 
+     * @return creator */
     public String getCreator() {
         return creator;
     }
@@ -293,20 +227,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.creator = creator;
     }
 
-    
-
     public ShowTemplateV3Response withNickname(String nickname) {
         this.nickname = nickname;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板创建者，有别名返回别名。
-     * @return nickname
-     */
+    /** 模板创建者，有别名返回别名。
+     * 
+     * @return nickname */
     public String getNickname() {
         return nickname;
     }
@@ -315,22 +243,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.nickname = nickname;
     }
 
-    
-
     public ShowTemplateV3Response withScore(Integer score) {
         this.score = score;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板评分（点赞数）。
-     * minimum: 1
-     * maximum: 99999
-     * @return score
-     */
+    /** 模板评分（点赞数）。 minimum: 1 maximum: 99999
+     * 
+     * @return score */
     public Integer getScore() {
         return score;
     }
@@ -339,22 +259,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.score = score;
     }
 
-    
-
     public ShowTemplateV3Response withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板状态： - 0：审核中 - 1：已上架 - 2：未上架（已下架） - 3：未上架（合规检查不通过） - 4：未上架（待上架） - 5：已删除 
-     * minimum: 0
-     * maximum: 5
-     * @return status
-     */
+    /** 模板状态： - 0：审核中 - 1：已上架 - 2：未上架（已下架） - 3：未上架（合规检查不通过） - 4：未上架（待上架） - 5：已删除 minimum: 0 maximum: 5
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -363,22 +275,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public ShowTemplateV3Response withViewCount(Integer viewCount) {
         this.viewCount = viewCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 访问量。
-     * minimum: 1
-     * maximum: 99999
-     * @return viewCount
-     */
+    /** 访问量。 minimum: 1 maximum: 99999
+     * 
+     * @return viewCount */
     public Integer getViewCount() {
         return viewCount;
     }
@@ -387,22 +291,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.viewCount = viewCount;
     }
 
-    
-
     public ShowTemplateV3Response withUsageCount(Integer usageCount) {
         this.usageCount = usageCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 引用量。
-     * minimum: 1
-     * maximum: 99999
-     * @return usageCount
-     */
+    /** 引用量。 minimum: 1 maximum: 99999
+     * 
+     * @return usageCount */
     public Integer getUsageCount() {
         return usageCount;
     }
@@ -411,20 +307,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.usageCount = usageCount;
     }
 
-    
-
     public ShowTemplateV3Response withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间。
-     * @return createdAt
-     */
+    /** 创建时间。
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -433,20 +323,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.createdAt = createdAt;
     }
 
-    
-
     public ShowTemplateV3Response withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间。
-     * @return updatedAt
-     */
+    /** 更新时间。
+     * 
+     * @return updatedAt */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -455,20 +339,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.updatedAt = updatedAt;
     }
 
-    
-
     public ShowTemplateV3Response withPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 上架时间。
-     * @return publishedAt
-     */
+    /** 上架时间。
+     * 
+     * @return publishedAt */
     public String getPublishedAt() {
         return publishedAt;
     }
@@ -477,22 +355,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.publishedAt = publishedAt;
     }
 
-    
-
     public ShowTemplateV3Response withFavoriteState(Integer favoriteState) {
         this.favoriteState = favoriteState;
         return this;
     }
 
-    
-
-
-    /**
-     * 点赞状态： - 1：点赞 - 0：未点赞 
-     * minimum: 0
-     * maximum: 1
-     * @return favoriteState
-     */
+    /** 点赞状态： - 1：点赞 - 0：未点赞 minimum: 0 maximum: 1
+     * 
+     * @return favoriteState */
     public Integer getFavoriteState() {
         return favoriteState;
     }
@@ -501,16 +371,13 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.favoriteState = favoriteState;
     }
 
-    
-
     public ShowTemplateV3Response withMaintainers(List<String> maintainers) {
         this.maintainers = maintainers;
         return this;
     }
 
-    
     public ShowTemplateV3Response addMaintainersItem(String maintainersItem) {
-        if(this.maintainers == null) {
+        if (this.maintainers == null) {
             this.maintainers = new ArrayList<>();
         }
         this.maintainers.add(maintainersItem);
@@ -518,17 +385,16 @@ public class ShowTemplateV3Response extends SdkResponse {
     }
 
     public ShowTemplateV3Response withMaintainers(Consumer<List<String>> maintainersSetter) {
-        if(this.maintainers == null) {
+        if (this.maintainers == null) {
             this.maintainers = new ArrayList<>();
         }
         maintainersSetter.accept(this.maintainers);
         return this;
     }
 
-    /**
-     * 模板相关联的所有维护人账号名称。
-     * @return maintainers
-     */
+    /** 模板相关联的所有维护人账号名称。
+     * 
+     * @return maintainers */
     public List<String> getMaintainers() {
         return maintainers;
     }
@@ -537,22 +403,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.maintainers = maintainers;
     }
 
-    
-
     public ShowTemplateV3Response withPlatformSource(Integer platformSource) {
         this.platformSource = platformSource;
         return this;
     }
 
-    
-
-
-    /**
-     * 平台来源： - 0：codelabs - 1：devstar 
-     * minimum: 0
-     * maximum: 1
-     * @return platformSource
-     */
+    /** 平台来源： - 0：codelabs - 1：devstar minimum: 0 maximum: 1
+     * 
+     * @return platformSource */
     public Integer getPlatformSource() {
         return platformSource;
     }
@@ -561,20 +419,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.platformSource = platformSource;
     }
 
-    
-
     public ShowTemplateV3Response withProperties(Object properties) {
         this.properties = properties;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板自定义参数列表。
-     * @return properties
-     */
+    /** 模板自定义参数列表。
+     * 
+     * @return properties */
     public Object getProperties() {
         return properties;
     }
@@ -583,16 +435,13 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.properties = properties;
     }
 
-    
-
     public ShowTemplateV3Response withDependencies(List<Object> dependencies) {
         this.dependencies = dependencies;
         return this;
     }
 
-    
     public ShowTemplateV3Response addDependenciesItem(Object dependenciesItem) {
-        if(this.dependencies == null) {
+        if (this.dependencies == null) {
             this.dependencies = new ArrayList<>();
         }
         this.dependencies.add(dependenciesItem);
@@ -600,17 +449,16 @@ public class ShowTemplateV3Response extends SdkResponse {
     }
 
     public ShowTemplateV3Response withDependencies(Consumer<List<Object>> dependenciesSetter) {
-        if(this.dependencies == null) {
+        if (this.dependencies == null) {
             this.dependencies = new ArrayList<>();
         }
         dependenciesSetter.accept(this.dependencies);
         return this;
     }
 
-    /**
-     * dependency信息。
-     * @return dependencies
-     */
+    /** dependency信息。
+     * 
+     * @return dependencies */
     public List<Object> getDependencies() {
         return dependencies;
     }
@@ -619,20 +467,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.dependencies = dependencies;
     }
 
-    
-
     public ShowTemplateV3Response withDependencyType(String dependencyType) {
         this.dependencyType = dependencyType;
         return this;
     }
 
-    
-
-
-    /**
-     * dependency类型： - '0'：非分组的依赖类型 - '1'：分组依赖类型 
-     * @return dependencyType
-     */
+    /** dependency类型： - '0'：非分组的依赖类型 - '1'：分组依赖类型
+     * 
+     * @return dependencyType */
     public String getDependencyType() {
         return dependencyType;
     }
@@ -641,22 +483,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.dependencyType = dependencyType;
     }
 
-    
-
     public ShowTemplateV3Response withStore(Integer store) {
         this.store = store;
         return this;
     }
 
-    
-
-
-    /**
-     * 代码存储位置： - 0：codehub - 1：Obs - 2：efs - 3：网络公开代码仓 
-     * minimum: 0
-     * maximum: 9
-     * @return store
-     */
+    /** 代码存储位置： - 0：codehub - 1：Obs - 2：efs - 3：网络公开代码仓 minimum: 0 maximum: 9
+     * 
+     * @return store */
     public Integer getStore() {
         return store;
     }
@@ -665,20 +499,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.store = store;
     }
 
-    
-
     public ShowTemplateV3Response withStoreInfo(String storeInfo) {
         this.storeInfo = storeInfo;
         return this;
     }
 
-    
-
-
-    /**
-     * 获取代码模版所需的信息。
-     * @return storeInfo
-     */
+    /** 获取代码模版所需的信息。
+     * 
+     * @return storeInfo */
     public String getStoreInfo() {
         return storeInfo;
     }
@@ -687,22 +515,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.storeInfo = storeInfo;
     }
 
-    
-
     public ShowTemplateV3Response withFileSize(Integer fileSize) {
         this.fileSize = fileSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板文件解压缩之后的大小(单位:KB)。
-     * minimum: 0
-     * maximum: 2147483647
-     * @return fileSize
-     */
+    /** 模板文件解压缩之后的大小(单位:KB)。 minimum: 0 maximum: 2147483647
+     * 
+     * @return fileSize */
     public Integer getFileSize() {
         return fileSize;
     }
@@ -711,20 +531,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.fileSize = fileSize;
     }
 
-    
-
     public ShowTemplateV3Response withDeployment(Object deployment) {
         this.deployment = deployment;
         return this;
     }
 
-    
-
-
-    /**
-     * 部署信息。
-     * @return deployment
-     */
+    /** 部署信息。
+     * 
+     * @return deployment */
     public Object getDeployment() {
         return deployment;
     }
@@ -733,22 +547,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.deployment = deployment;
     }
 
-    
-
     public ShowTemplateV3Response withIsStatic(Integer isStatic) {
         this.isStatic = isStatic;
         return this;
     }
 
-    
-
-
-    /**
-     * 动、静态代码模板标识： - 0：动态模板codetemplate - 1：静态模板codesample 
-     * minimum: 0
-     * maximum: 1
-     * @return isStatic
-     */
+    /** 动、静态代码模板标识： - 0：动态模板codetemplate - 1：静态模板codesample minimum: 0 maximum: 1
+     * 
+     * @return isStatic */
     public Integer getIsStatic() {
         return isStatic;
     }
@@ -757,20 +563,14 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.isStatic = isStatic;
     }
 
-    
-
     public ShowTemplateV3Response withUpdateId(String updateId) {
         this.updateId = updateId;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板关联更新态Id。
-     * @return updateId
-     */
+    /** 模板关联更新态Id。
+     * 
+     * @return updateId */
     public String getUpdateId() {
         return updateId;
     }
@@ -779,16 +579,13 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.updateId = updateId;
     }
 
-    
-
     public ShowTemplateV3Response withTopic(List<TopicCategory> topic) {
         this.topic = topic;
         return this;
     }
 
-    
     public ShowTemplateV3Response addTopicItem(TopicCategory topicItem) {
-        if(this.topic == null) {
+        if (this.topic == null) {
             this.topic = new ArrayList<>();
         }
         this.topic.add(topicItem);
@@ -796,17 +593,16 @@ public class ShowTemplateV3Response extends SdkResponse {
     }
 
     public ShowTemplateV3Response withTopic(Consumer<List<TopicCategory>> topicSetter) {
-        if(this.topic == null) {
+        if (this.topic == null) {
             this.topic = new ArrayList<>();
         }
         topicSetter.accept(this.topic);
         return this;
     }
 
-    /**
-     * 模板标签。
-     * @return topic
-     */
+    /** 模板标签。
+     * 
+     * @return topic */
     public List<TopicCategory> getTopic() {
         return topic;
     }
@@ -815,16 +611,13 @@ public class ShowTemplateV3Response extends SdkResponse {
         this.topic = topic;
     }
 
-    
-
     public ShowTemplateV3Response withTags(List<TagInfo> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public ShowTemplateV3Response addTagsItem(TagInfo tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -832,17 +625,16 @@ public class ShowTemplateV3Response extends SdkResponse {
     }
 
     public ShowTemplateV3Response withTags(Consumer<List<TagInfo>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 自定义标签。
-     * @return tags
-     */
+    /** 自定义标签。
+     * 
+     * @return tags */
     public List<TagInfo> getTags() {
         return tags;
     }
@@ -850,8 +642,6 @@ public class ShowTemplateV3Response extends SdkResponse {
     public void setTags(List<TagInfo> tags) {
         this.tags = tags;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -862,38 +652,66 @@ public class ShowTemplateV3Response extends SdkResponse {
             return false;
         }
         ShowTemplateV3Response showTemplateV3Response = (ShowTemplateV3Response) o;
-        return Objects.equals(this.id, showTemplateV3Response.id) &&
-            Objects.equals(this.title, showTemplateV3Response.title) &&
-            Objects.equals(this.description, showTemplateV3Response.description) &&
-            Objects.equals(this.creatorId, showTemplateV3Response.creatorId) &&
-            Objects.equals(this.creator, showTemplateV3Response.creator) &&
-            Objects.equals(this.nickname, showTemplateV3Response.nickname) &&
-            Objects.equals(this.score, showTemplateV3Response.score) &&
-            Objects.equals(this.status, showTemplateV3Response.status) &&
-            Objects.equals(this.viewCount, showTemplateV3Response.viewCount) &&
-            Objects.equals(this.usageCount, showTemplateV3Response.usageCount) &&
-            Objects.equals(this.createdAt, showTemplateV3Response.createdAt) &&
-            Objects.equals(this.updatedAt, showTemplateV3Response.updatedAt) &&
-            Objects.equals(this.publishedAt, showTemplateV3Response.publishedAt) &&
-            Objects.equals(this.favoriteState, showTemplateV3Response.favoriteState) &&
-            Objects.equals(this.maintainers, showTemplateV3Response.maintainers) &&
-            Objects.equals(this.platformSource, showTemplateV3Response.platformSource) &&
-            Objects.equals(this.properties, showTemplateV3Response.properties) &&
-            Objects.equals(this.dependencies, showTemplateV3Response.dependencies) &&
-            Objects.equals(this.dependencyType, showTemplateV3Response.dependencyType) &&
-            Objects.equals(this.store, showTemplateV3Response.store) &&
-            Objects.equals(this.storeInfo, showTemplateV3Response.storeInfo) &&
-            Objects.equals(this.fileSize, showTemplateV3Response.fileSize) &&
-            Objects.equals(this.deployment, showTemplateV3Response.deployment) &&
-            Objects.equals(this.isStatic, showTemplateV3Response.isStatic) &&
-            Objects.equals(this.updateId, showTemplateV3Response.updateId) &&
-            Objects.equals(this.topic, showTemplateV3Response.topic) &&
-            Objects.equals(this.tags, showTemplateV3Response.tags);
+        return Objects.equals(this.id, showTemplateV3Response.id)
+            && Objects.equals(this.title, showTemplateV3Response.title)
+            && Objects.equals(this.description, showTemplateV3Response.description)
+            && Objects.equals(this.creatorId, showTemplateV3Response.creatorId)
+            && Objects.equals(this.creator, showTemplateV3Response.creator)
+            && Objects.equals(this.nickname, showTemplateV3Response.nickname)
+            && Objects.equals(this.score, showTemplateV3Response.score)
+            && Objects.equals(this.status, showTemplateV3Response.status)
+            && Objects.equals(this.viewCount, showTemplateV3Response.viewCount)
+            && Objects.equals(this.usageCount, showTemplateV3Response.usageCount)
+            && Objects.equals(this.createdAt, showTemplateV3Response.createdAt)
+            && Objects.equals(this.updatedAt, showTemplateV3Response.updatedAt)
+            && Objects.equals(this.publishedAt, showTemplateV3Response.publishedAt)
+            && Objects.equals(this.favoriteState, showTemplateV3Response.favoriteState)
+            && Objects.equals(this.maintainers, showTemplateV3Response.maintainers)
+            && Objects.equals(this.platformSource, showTemplateV3Response.platformSource)
+            && Objects.equals(this.properties, showTemplateV3Response.properties)
+            && Objects.equals(this.dependencies, showTemplateV3Response.dependencies)
+            && Objects.equals(this.dependencyType, showTemplateV3Response.dependencyType)
+            && Objects.equals(this.store, showTemplateV3Response.store)
+            && Objects.equals(this.storeInfo, showTemplateV3Response.storeInfo)
+            && Objects.equals(this.fileSize, showTemplateV3Response.fileSize)
+            && Objects.equals(this.deployment, showTemplateV3Response.deployment)
+            && Objects.equals(this.isStatic, showTemplateV3Response.isStatic)
+            && Objects.equals(this.updateId, showTemplateV3Response.updateId)
+            && Objects.equals(this.topic, showTemplateV3Response.topic)
+            && Objects.equals(this.tags, showTemplateV3Response.tags);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, description, creatorId, creator, nickname, score, status, viewCount, usageCount, createdAt, updatedAt, publishedAt, favoriteState, maintainers, platformSource, properties, dependencies, dependencyType, store, storeInfo, fileSize, deployment, isStatic, updateId, topic, tags);
+        return Objects.hash(id,
+            title,
+            description,
+            creatorId,
+            creator,
+            nickname,
+            score,
+            status,
+            viewCount,
+            usageCount,
+            createdAt,
+            updatedAt,
+            publishedAt,
+            favoriteState,
+            maintainers,
+            platformSource,
+            properties,
+            dependencies,
+            dependencyType,
+            store,
+            storeInfo,
+            fileSize,
+            deployment,
+            isStatic,
+            updateId,
+            topic,
+            tags);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -928,16 +746,13 @@ public class ShowTemplateV3Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

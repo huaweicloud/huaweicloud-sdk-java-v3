@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.classroom.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListJobsRequest  {
-
-
+/** Request Object */
+public class ListJobsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_from")
-    
+    @JsonProperty(value = "source_from")
+
     private String sourceFrom;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_id")
-    
+    @JsonProperty(value = "source_id")
+
     private String sourceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
     public ListJobsRequest withSourceFrom(String sourceFrom) {
@@ -46,13 +33,9 @@ public class ListJobsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 作业来源于课堂或课程。 取值范围： classroom:课堂作业 course:课程作业
-     * @return sourceFrom
-     */
+    /** 作业来源于课堂或课程。 取值范围： classroom:课堂作业 course:课程作业
+     * 
+     * @return sourceFrom */
     public String getSourceFrom() {
         return sourceFrom;
     }
@@ -61,20 +44,14 @@ public class ListJobsRequest  {
         this.sourceFrom = sourceFrom;
     }
 
-    
-
     public ListJobsRequest withSourceId(String sourceId) {
         this.sourceId = sourceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂ID或者课程ID。
-     * @return sourceId
-     */
+    /** 课堂ID或者课程ID。
+     * 
+     * @return sourceId */
     public String getSourceId() {
         return sourceId;
     }
@@ -83,22 +60,14 @@ public class ListJobsRequest  {
         this.sourceId = sourceId;
     }
 
-    
-
     public ListJobsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 信息记录的起始编号
-     * minimum: 1
-     * maximum: 1000
-     * @return offset
-     */
+    /** 信息记录的起始编号 minimum: 1 maximum: 1000
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -107,22 +76,14 @@ public class ListJobsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListJobsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页包含的信息记录数
-     * minimum: 1
-     * maximum: 100
-     * @return limit
-     */
+    /** 每页包含的信息记录数 minimum: 1 maximum: 100
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -130,8 +91,6 @@ public class ListJobsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -142,15 +101,16 @@ public class ListJobsRequest  {
             return false;
         }
         ListJobsRequest listJobsRequest = (ListJobsRequest) o;
-        return Objects.equals(this.sourceFrom, listJobsRequest.sourceFrom) &&
-            Objects.equals(this.sourceId, listJobsRequest.sourceId) &&
-            Objects.equals(this.offset, listJobsRequest.offset) &&
-            Objects.equals(this.limit, listJobsRequest.limit);
+        return Objects.equals(this.sourceFrom, listJobsRequest.sourceFrom)
+            && Objects.equals(this.sourceId, listJobsRequest.sourceId)
+            && Objects.equals(this.offset, listJobsRequest.offset) && Objects.equals(this.limit, listJobsRequest.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sourceFrom, sourceId, offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -162,16 +122,13 @@ public class ListJobsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,68 +1,48 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * oidc配置详细信息
- */
-public class OpenIdConnectConfig  {
-
-
+/** oidc配置详细信息 */
+public class OpenIdConnectConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_mode")
-    
+    @JsonProperty(value = "access_mode")
+
     private String accessMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="idp_url")
-    
+    @JsonProperty(value = "idp_url")
+
     private String idpUrl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="client_id")
-    
+    @JsonProperty(value = "client_id")
+
     private String clientId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="authorization_endpoint")
-    
+    @JsonProperty(value = "authorization_endpoint")
+
     private String authorizationEndpoint;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scope")
-    
+    @JsonProperty(value = "scope")
+
     private String scope;
-    /**
-     * 授权请求返回的类型；id_token ；编程访问和管理控制台访问方式值不为空，编程访问方式值可为空 
-     */
+
+    /** 授权请求返回的类型；id_token ；编程访问和管理控制台访问方式值不为空，编程访问方式值可为空 */
     public static final class ResponseTypeEnum {
 
-        
-        /**
-         * Enum ID_TOKEN for value: "id_token"
-         */
+        /** Enum ID_TOKEN for value: "id_token" */
         public static final ResponseTypeEnum ID_TOKEN = new ResponseTypeEnum("id_token");
-        
 
         private static final Map<String, ResponseTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -90,7 +70,7 @@ public class OpenIdConnectConfig  {
 
         @JsonCreator
         public static ResponseTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ResponseTypeEnum result = STATIC_FIELDS.get(value);
@@ -101,7 +81,7 @@ public class OpenIdConnectConfig  {
         }
 
         public static ResponseTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ResponseTypeEnum result = STATIC_FIELDS.get(value);
@@ -125,27 +105,19 @@ public class OpenIdConnectConfig  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="response_type")
-    
+    @JsonProperty(value = "response_type")
+
     private ResponseTypeEnum responseType;
-    /**
-     * 授权请求返回方式， form_post 或 fragment ；编程访问和管理控制台访问方式值不为空，编程访问方式值可为空
-     */
+
+    /** 授权请求返回方式， form_post 或 fragment ；编程访问和管理控制台访问方式值不为空，编程访问方式值可为空 */
     public static final class ResponseModeEnum {
 
-        
-        /**
-         * Enum FRAGMENT for value: "fragment"
-         */
+        /** Enum FRAGMENT for value: "fragment" */
         public static final ResponseModeEnum FRAGMENT = new ResponseModeEnum("fragment");
-        
-        /**
-         * Enum FORM_POST for value: "form_post"
-         */
+
+        /** Enum FORM_POST for value: "form_post" */
         public static final ResponseModeEnum FORM_POST = new ResponseModeEnum("form_post");
-        
 
         private static final Map<String, ResponseModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -174,7 +146,7 @@ public class OpenIdConnectConfig  {
 
         @JsonCreator
         public static ResponseModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ResponseModeEnum result = STATIC_FIELDS.get(value);
@@ -185,7 +157,7 @@ public class OpenIdConnectConfig  {
         }
 
         public static ResponseModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ResponseModeEnum result = STATIC_FIELDS.get(value);
@@ -209,16 +181,14 @@ public class OpenIdConnectConfig  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="response_mode")
-    
+    @JsonProperty(value = "response_mode")
+
     private ResponseModeEnum responseMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="signing_key")
-    
+    @JsonProperty(value = "signing_key")
+
     private String signingKey;
 
     public OpenIdConnectConfig withAccessMode(String accessMode) {
@@ -226,13 +196,9 @@ public class OpenIdConnectConfig  {
         return this;
     }
 
-    
-
-
-    /**
-     * 访问方式: program_console: 支持编程访问和管理控制台访问方式; program: 支持编程访问方式
-     * @return accessMode
-     */
+    /** 访问方式: program_console: 支持编程访问和管理控制台访问方式; program: 支持编程访问方式
+     * 
+     * @return accessMode */
     public String getAccessMode() {
         return accessMode;
     }
@@ -241,20 +207,14 @@ public class OpenIdConnectConfig  {
         this.accessMode = accessMode;
     }
 
-    
-
     public OpenIdConnectConfig withIdpUrl(String idpUrl) {
         this.idpUrl = idpUrl;
         return this;
     }
 
-    
-
-
-    /**
-     * OpenID Connect身份提供商标识, 对应ID token 中 iss
-     * @return idpUrl
-     */
+    /** OpenID Connect身份提供商标识, 对应ID token 中 iss
+     * 
+     * @return idpUrl */
     public String getIdpUrl() {
         return idpUrl;
     }
@@ -263,20 +223,14 @@ public class OpenIdConnectConfig  {
         this.idpUrl = idpUrl;
     }
 
-    
-
     public OpenIdConnectConfig withClientId(String clientId) {
         this.clientId = clientId;
         return this;
     }
 
-    
-
-
-    /**
-     * 在OpenID Connect身份提供商注册的客户端ID
-     * @return clientId
-     */
+    /** 在OpenID Connect身份提供商注册的客户端ID
+     * 
+     * @return clientId */
     public String getClientId() {
         return clientId;
     }
@@ -285,20 +239,14 @@ public class OpenIdConnectConfig  {
         this.clientId = clientId;
     }
 
-    
-
     public OpenIdConnectConfig withAuthorizationEndpoint(String authorizationEndpoint) {
         this.authorizationEndpoint = authorizationEndpoint;
         return this;
     }
 
-    
-
-
-    /**
-     * OpenID Connect身份提供商授权地址; 编程访问和管理控制台访问方式值不为空，编程访问方式值可为空
-     * @return authorizationEndpoint
-     */
+    /** OpenID Connect身份提供商授权地址; 编程访问和管理控制台访问方式值不为空，编程访问方式值可为空
+     * 
+     * @return authorizationEndpoint */
     public String getAuthorizationEndpoint() {
         return authorizationEndpoint;
     }
@@ -307,20 +255,16 @@ public class OpenIdConnectConfig  {
         this.authorizationEndpoint = authorizationEndpoint;
     }
 
-    
-
     public OpenIdConnectConfig withScope(String scope) {
         this.scope = scope;
         return this;
     }
 
-    
-
-
-    /**
-     * 授权请求信息范围，编程访问和管理控制台访问方式必选，编程访问方式不可选，可选值：openid 、email、profile，IDP自定义scope，字符集a-zA-Z_0-9 ，1-10个可选值组合空格分割，至少包括openid，顺序无关，总长度最长255字符，例如：\"openid\"、\"openid email\"、\"openid profile\" 、\"openid email profile\"
-     * @return scope
-     */
+    /** 授权请求信息范围，编程访问和管理控制台访问方式必选，编程访问方式不可选，可选值：openid 、email、profile，IDP自定义scope，字符集a-zA-Z_0-9
+     * ，1-10个可选值组合空格分割，至少包括openid，顺序无关，总长度最长255字符，例如：\"openid\"、\"openid email\"、\"openid profile\" 、\"openid email
+     * profile\"
+     * 
+     * @return scope */
     public String getScope() {
         return scope;
     }
@@ -329,20 +273,14 @@ public class OpenIdConnectConfig  {
         this.scope = scope;
     }
 
-    
-
     public OpenIdConnectConfig withResponseType(ResponseTypeEnum responseType) {
         this.responseType = responseType;
         return this;
     }
 
-    
-
-
-    /**
-     * 授权请求返回的类型；id_token ；编程访问和管理控制台访问方式值不为空，编程访问方式值可为空 
-     * @return responseType
-     */
+    /** 授权请求返回的类型；id_token ；编程访问和管理控制台访问方式值不为空，编程访问方式值可为空
+     * 
+     * @return responseType */
     public ResponseTypeEnum getResponseType() {
         return responseType;
     }
@@ -351,20 +289,14 @@ public class OpenIdConnectConfig  {
         this.responseType = responseType;
     }
 
-    
-
     public OpenIdConnectConfig withResponseMode(ResponseModeEnum responseMode) {
         this.responseMode = responseMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 授权请求返回方式， form_post 或 fragment ；编程访问和管理控制台访问方式值不为空，编程访问方式值可为空
-     * @return responseMode
-     */
+    /** 授权请求返回方式， form_post 或 fragment ；编程访问和管理控制台访问方式值不为空，编程访问方式值可为空
+     * 
+     * @return responseMode */
     public ResponseModeEnum getResponseMode() {
         return responseMode;
     }
@@ -373,20 +305,14 @@ public class OpenIdConnectConfig  {
         this.responseMode = responseMode;
     }
 
-    
-
     public OpenIdConnectConfig withSigningKey(String signingKey) {
         this.signingKey = signingKey;
         return this;
     }
 
-    
-
-
-    /**
-     * OpenID Connect身份提供商ID Token签名的公钥
-     * @return signingKey
-     */
+    /** OpenID Connect身份提供商ID Token签名的公钥
+     * 
+     * @return signingKey */
     public String getSigningKey() {
         return signingKey;
     }
@@ -394,8 +320,6 @@ public class OpenIdConnectConfig  {
     public void setSigningKey(String signingKey) {
         this.signingKey = signingKey;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -406,19 +330,22 @@ public class OpenIdConnectConfig  {
             return false;
         }
         OpenIdConnectConfig openIdConnectConfig = (OpenIdConnectConfig) o;
-        return Objects.equals(this.accessMode, openIdConnectConfig.accessMode) &&
-            Objects.equals(this.idpUrl, openIdConnectConfig.idpUrl) &&
-            Objects.equals(this.clientId, openIdConnectConfig.clientId) &&
-            Objects.equals(this.authorizationEndpoint, openIdConnectConfig.authorizationEndpoint) &&
-            Objects.equals(this.scope, openIdConnectConfig.scope) &&
-            Objects.equals(this.responseType, openIdConnectConfig.responseType) &&
-            Objects.equals(this.responseMode, openIdConnectConfig.responseMode) &&
-            Objects.equals(this.signingKey, openIdConnectConfig.signingKey);
+        return Objects.equals(this.accessMode, openIdConnectConfig.accessMode)
+            && Objects.equals(this.idpUrl, openIdConnectConfig.idpUrl)
+            && Objects.equals(this.clientId, openIdConnectConfig.clientId)
+            && Objects.equals(this.authorizationEndpoint, openIdConnectConfig.authorizationEndpoint)
+            && Objects.equals(this.scope, openIdConnectConfig.scope)
+            && Objects.equals(this.responseType, openIdConnectConfig.responseType)
+            && Objects.equals(this.responseMode, openIdConnectConfig.responseMode)
+            && Objects.equals(this.signingKey, openIdConnectConfig.signingKey);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(accessMode, idpUrl, clientId, authorizationEndpoint, scope, responseType, responseMode, signingKey);
+        return Objects
+            .hash(accessMode, idpUrl, clientId, authorizationEndpoint, scope, responseType, responseMode, signingKey);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -434,16 +361,13 @@ public class OpenIdConnectConfig  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

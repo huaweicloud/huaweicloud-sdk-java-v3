@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteMigprojectRequest  {
-
-
+/** Request Object */
+public class DeleteMigprojectRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mig_project_id")
-    
+    @JsonProperty(value = "mig_project_id")
+
     private String migProjectId;
 
     public DeleteMigprojectRequest withMigProjectId(String migProjectId) {
@@ -28,13 +18,9 @@ public class DeleteMigprojectRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 需要删除的迁移项目的id
-     * @return migProjectId
-     */
+    /** 需要删除的迁移项目的id
+     * 
+     * @return migProjectId */
     public String getMigProjectId() {
         return migProjectId;
     }
@@ -42,8 +28,6 @@ public class DeleteMigprojectRequest  {
     public void setMigProjectId(String migProjectId) {
         this.migProjectId = migProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class DeleteMigprojectRequest  {
         DeleteMigprojectRequest deleteMigprojectRequest = (DeleteMigprojectRequest) o;
         return Objects.equals(this.migProjectId, deleteMigprojectRequest.migProjectId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(migProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class DeleteMigprojectRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

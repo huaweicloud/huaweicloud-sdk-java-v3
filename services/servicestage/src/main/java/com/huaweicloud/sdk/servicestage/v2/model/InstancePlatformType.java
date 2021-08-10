@@ -1,34 +1,20 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
-/**
- * 运行平台类型。  应用可以在不同的平台上运行，可选用的平台的类型有以下几种：cce、vmapp。 
- */
+/** 运行平台类型。 应用可以在不同的平台上运行，可选用的平台的类型有以下几种：cce、vmapp。 */
 public class InstancePlatformType {
-    
-    /**
-     * Enum CCE for value: "cce"
-     */
+
+    /** Enum CCE for value: "cce" */
     public static final InstancePlatformType CCE = new InstancePlatformType("cce");
-    
-    /**
-     * Enum VMAPP for value: "vmapp"
-     */
+
+    /** Enum VMAPP for value: "vmapp" */
     public static final InstancePlatformType VMAPP = new InstancePlatformType("vmapp");
-    
 
     private static final Map<String, InstancePlatformType> STATIC_FIELDS = createStaticFields();
 
@@ -57,7 +43,7 @@ public class InstancePlatformType {
 
     @JsonCreator
     public static InstancePlatformType fromValue(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         InstancePlatformType result = STATIC_FIELDS.get(value);
@@ -68,7 +54,7 @@ public class InstancePlatformType {
     }
 
     public static InstancePlatformType valueOf(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         InstancePlatformType result = STATIC_FIELDS.get(value);
@@ -91,4 +77,3 @@ public class InstancePlatformType {
         return this.value.hashCode();
     }
 }
-

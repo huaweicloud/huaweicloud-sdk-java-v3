@@ -1,81 +1,62 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.time.OffsetDateTime;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * AclBindApiInfo
- */
-public class AclBindApiInfo  {
-
-
+/** AclBindApiInfo */
+public class AclBindApiInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_id")
-    
+    @JsonProperty(value = "api_id")
+
     private String apiId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_name")
-    
+    @JsonProperty(value = "api_name")
+
     private String apiName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_name")
-    
+    @JsonProperty(value = "group_name")
+
     private String groupName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_type")
-    
+    @JsonProperty(value = "api_type")
+
     private String apiType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_remark")
-    
+    @JsonProperty(value = "api_remark")
+
     private String apiRemark;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_id")
-    
+    @JsonProperty(value = "env_id")
+
     private String envId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_name")
-    
+    @JsonProperty(value = "env_name")
+
     private String envName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bind_id")
-    
+    @JsonProperty(value = "bind_id")
+
     private String bindId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bind_time")
-    
+    @JsonProperty(value = "bind_time")
+
     private OffsetDateTime bindTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publish_id")
-    
+    @JsonProperty(value = "publish_id")
+
     private String publishId;
 
     public AclBindApiInfo withApiId(String apiId) {
@@ -83,13 +64,9 @@ public class AclBindApiInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * API编号
-     * @return apiId
-     */
+    /** API编号
+     * 
+     * @return apiId */
     public String getApiId() {
         return apiId;
     }
@@ -98,20 +75,14 @@ public class AclBindApiInfo  {
         this.apiId = apiId;
     }
 
-    
-
     public AclBindApiInfo withApiName(String apiName) {
         this.apiName = apiName;
         return this;
     }
 
-    
-
-
-    /**
-     * API名称
-     * @return apiName
-     */
+    /** API名称
+     * 
+     * @return apiName */
     public String getApiName() {
         return apiName;
     }
@@ -120,20 +91,14 @@ public class AclBindApiInfo  {
         this.apiName = apiName;
     }
 
-    
-
     public AclBindApiInfo withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
     }
 
-    
-
-
-    /**
-     * API分组名称
-     * @return groupName
-     */
+    /** API分组名称
+     * 
+     * @return groupName */
     public String getGroupName() {
         return groupName;
     }
@@ -142,20 +107,14 @@ public class AclBindApiInfo  {
         this.groupName = groupName;
     }
 
-    
-
     public AclBindApiInfo withApiType(String apiType) {
         this.apiType = apiType;
         return this;
     }
 
-    
-
-
-    /**
-     * API类型
-     * @return apiType
-     */
+    /** API类型
+     * 
+     * @return apiType */
     public String getApiType() {
         return apiType;
     }
@@ -164,20 +123,14 @@ public class AclBindApiInfo  {
         this.apiType = apiType;
     }
 
-    
-
     public AclBindApiInfo withApiRemark(String apiRemark) {
         this.apiRemark = apiRemark;
         return this;
     }
 
-    
-
-
-    /**
-     * API的描述信息
-     * @return apiRemark
-     */
+    /** API的描述信息
+     * 
+     * @return apiRemark */
     public String getApiRemark() {
         return apiRemark;
     }
@@ -186,20 +139,14 @@ public class AclBindApiInfo  {
         this.apiRemark = apiRemark;
     }
 
-    
-
     public AclBindApiInfo withEnvId(String envId) {
         this.envId = envId;
         return this;
     }
 
-    
-
-
-    /**
-     * 生效的环境编号
-     * @return envId
-     */
+    /** 生效的环境编号
+     * 
+     * @return envId */
     public String getEnvId() {
         return envId;
     }
@@ -208,20 +155,14 @@ public class AclBindApiInfo  {
         this.envId = envId;
     }
 
-    
-
     public AclBindApiInfo withEnvName(String envName) {
         this.envName = envName;
         return this;
     }
 
-    
-
-
-    /**
-     * 生效的环境名称
-     * @return envName
-     */
+    /** 生效的环境名称
+     * 
+     * @return envName */
     public String getEnvName() {
         return envName;
     }
@@ -230,20 +171,14 @@ public class AclBindApiInfo  {
         this.envName = envName;
     }
 
-    
-
     public AclBindApiInfo withBindId(String bindId) {
         this.bindId = bindId;
         return this;
     }
 
-    
-
-
-    /**
-     * 绑定关系编号
-     * @return bindId
-     */
+    /** 绑定关系编号
+     * 
+     * @return bindId */
     public String getBindId() {
         return bindId;
     }
@@ -252,20 +187,14 @@ public class AclBindApiInfo  {
         this.bindId = bindId;
     }
 
-    
-
     public AclBindApiInfo withBindTime(OffsetDateTime bindTime) {
         this.bindTime = bindTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 绑定时间
-     * @return bindTime
-     */
+    /** 绑定时间
+     * 
+     * @return bindTime */
     public OffsetDateTime getBindTime() {
         return bindTime;
     }
@@ -274,20 +203,14 @@ public class AclBindApiInfo  {
         this.bindTime = bindTime;
     }
 
-    
-
     public AclBindApiInfo withPublishId(String publishId) {
         this.publishId = publishId;
         return this;
     }
 
-    
-
-
-    /**
-     * API发布记录编号
-     * @return publishId
-     */
+    /** API发布记录编号
+     * 
+     * @return publishId */
     public String getPublishId() {
         return publishId;
     }
@@ -295,8 +218,6 @@ public class AclBindApiInfo  {
     public void setPublishId(String publishId) {
         this.publishId = publishId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -307,21 +228,21 @@ public class AclBindApiInfo  {
             return false;
         }
         AclBindApiInfo aclBindApiInfo = (AclBindApiInfo) o;
-        return Objects.equals(this.apiId, aclBindApiInfo.apiId) &&
-            Objects.equals(this.apiName, aclBindApiInfo.apiName) &&
-            Objects.equals(this.groupName, aclBindApiInfo.groupName) &&
-            Objects.equals(this.apiType, aclBindApiInfo.apiType) &&
-            Objects.equals(this.apiRemark, aclBindApiInfo.apiRemark) &&
-            Objects.equals(this.envId, aclBindApiInfo.envId) &&
-            Objects.equals(this.envName, aclBindApiInfo.envName) &&
-            Objects.equals(this.bindId, aclBindApiInfo.bindId) &&
-            Objects.equals(this.bindTime, aclBindApiInfo.bindTime) &&
-            Objects.equals(this.publishId, aclBindApiInfo.publishId);
+        return Objects.equals(this.apiId, aclBindApiInfo.apiId) && Objects.equals(this.apiName, aclBindApiInfo.apiName)
+            && Objects.equals(this.groupName, aclBindApiInfo.groupName)
+            && Objects.equals(this.apiType, aclBindApiInfo.apiType)
+            && Objects.equals(this.apiRemark, aclBindApiInfo.apiRemark)
+            && Objects.equals(this.envId, aclBindApiInfo.envId) && Objects.equals(this.envName, aclBindApiInfo.envName)
+            && Objects.equals(this.bindId, aclBindApiInfo.bindId)
+            && Objects.equals(this.bindTime, aclBindApiInfo.bindTime)
+            && Objects.equals(this.publishId, aclBindApiInfo.publishId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(apiId, apiName, groupName, apiType, apiRemark, envId, envName, bindId, bindTime, publishId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -339,16 +260,13 @@ public class AclBindApiInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

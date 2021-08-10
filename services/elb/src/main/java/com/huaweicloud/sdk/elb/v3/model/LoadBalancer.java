@@ -1,108 +1,73 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v3.model.BandwidthRef;
-import com.huaweicloud.sdk.elb.v3.model.EipInfo;
-import com.huaweicloud.sdk.elb.v3.model.ListenerRef;
-import com.huaweicloud.sdk.elb.v3.model.PoolRef;
-import com.huaweicloud.sdk.elb.v3.model.PublicIpInfo;
-import com.huaweicloud.sdk.elb.v3.model.Tag;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 创建loadbalancer的消息返回体
- */
-public class LoadBalancer  {
-
-
+/** 创建loadbalancer的消息返回体 */
+public class LoadBalancer {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provisioning_status")
-    
+    @JsonProperty(value = "provisioning_status")
+
     private String provisioningStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
-    
+    @JsonProperty(value = "admin_state_up")
+
     private Boolean adminStateUp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provider")
-    
+    @JsonProperty(value = "provider")
+
     private String provider;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pools")
-    
+    @JsonProperty(value = "pools")
+
     private List<PoolRef> pools = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="listeners")
-    
+    @JsonProperty(value = "listeners")
+
     private List<ListenerRef> listeners = null;
-        /**
-     * 功能描述：负载均衡器的操作状态。 取值范围：ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。 约束：该字段为预留字段，暂未启用，默认为ONLINE。
-     */
+
+    /** 功能描述：负载均衡器的操作状态。 取值范围：ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。 约束：该字段为预留字段，暂未启用，默认为ONLINE。 */
     public static final class OperatingStatusEnum {
 
-        
-        /**
-         * Enum ONLINE for value: "ONLINE"
-         */
+        /** Enum ONLINE for value: "ONLINE" */
         public static final OperatingStatusEnum ONLINE = new OperatingStatusEnum("ONLINE");
-        
-        /**
-         * Enum OFFLINE for value: "OFFLINE"
-         */
+
+        /** Enum OFFLINE for value: "OFFLINE" */
         public static final OperatingStatusEnum OFFLINE = new OperatingStatusEnum("OFFLINE");
-        
-        /**
-         * Enum DEGRADED for value: "DEGRADED"
-         */
+
+        /** Enum DEGRADED for value: "DEGRADED" */
         public static final OperatingStatusEnum DEGRADED = new OperatingStatusEnum("DEGRADED");
-        
-        /**
-         * Enum DISABLED for value: "DISABLED"
-         */
+
+        /** Enum DISABLED for value: "DISABLED" */
         public static final OperatingStatusEnum DISABLED = new OperatingStatusEnum("DISABLED");
-        
-        /**
-         * Enum NO_MONITOR for value: "NO_MONITOR"
-         */
+
+        /** Enum NO_MONITOR for value: "NO_MONITOR" */
         public static final OperatingStatusEnum NO_MONITOR = new OperatingStatusEnum("NO_MONITOR");
-        
 
         private static final Map<String, OperatingStatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -134,7 +99,7 @@ public class LoadBalancer  {
 
         @JsonCreator
         public static OperatingStatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OperatingStatusEnum result = STATIC_FIELDS.get(value);
@@ -145,7 +110,7 @@ public class LoadBalancer  {
         }
 
         public static OperatingStatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OperatingStatusEnum result = STATIC_FIELDS.get(value);
@@ -169,159 +134,129 @@ public class LoadBalancer  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operating_status")
-    
+    @JsonProperty(value = "operating_status")
+
     private OperatingStatusEnum operatingStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vip_address")
-    
+    @JsonProperty(value = "vip_address")
+
     private String vipAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vip_subnet_cidr_id")
-    
+    @JsonProperty(value = "vip_subnet_cidr_id")
+
     private String vipSubnetCidrId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vip_port_id")
-    
+    @JsonProperty(value = "vip_port_id")
+
     private String vipPortId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<Tag> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private String updatedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="guaranteed")
-    
+    @JsonProperty(value = "guaranteed")
+
     private Boolean guaranteed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="eips")
-    
+    @JsonProperty(value = "eips")
+
     private List<EipInfo> eips = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ipv6_vip_address")
-    
+    @JsonProperty(value = "ipv6_vip_address")
+
     private String ipv6VipAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ipv6_vip_virsubnet_id")
-    
+    @JsonProperty(value = "ipv6_vip_virsubnet_id")
+
     private String ipv6VipVirsubnetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ipv6_vip_port_id")
-    
+    @JsonProperty(value = "ipv6_vip_port_id")
+
     private String ipv6VipPortId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="availability_zone_list")
-    
+    @JsonProperty(value = "availability_zone_list")
+
     private List<String> availabilityZoneList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="l4_flavor_id")
-    
+    @JsonProperty(value = "l4_flavor_id")
+
     private String l4FlavorId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="l4_scale_flavor_id")
-    
+    @JsonProperty(value = "l4_scale_flavor_id")
+
     private String l4ScaleFlavorId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="l7_flavor_id")
-    
+    @JsonProperty(value = "l7_flavor_id")
+
     private String l7FlavorId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="l7_scale_flavor_id")
-    
+    @JsonProperty(value = "l7_scale_flavor_id")
+
     private String l7ScaleFlavorId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publicips")
-    
+    @JsonProperty(value = "publicips")
+
     private List<PublicIpInfo> publicips = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="elb_virsubnet_ids")
-    
+    @JsonProperty(value = "elb_virsubnet_ids")
+
     private List<String> elbVirsubnetIds = null;
-        /**
-     * 功能描述：下联面子网类型
-     */
+
+    /** 功能描述：下联面子网类型 */
     public static final class ElbVirsubnetTypeEnum {
 
-        
-        /**
-         * Enum IPV4 for value: "ipv4"
-         */
+        /** Enum IPV4 for value: "ipv4" */
         public static final ElbVirsubnetTypeEnum IPV4 = new ElbVirsubnetTypeEnum("ipv4");
-        
-        /**
-         * Enum DUALSTACK for value: "dualstack"
-         */
+
+        /** Enum DUALSTACK for value: "dualstack" */
         public static final ElbVirsubnetTypeEnum DUALSTACK = new ElbVirsubnetTypeEnum("dualstack");
-        
 
         private static final Map<String, ElbVirsubnetTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -350,7 +285,7 @@ public class LoadBalancer  {
 
         @JsonCreator
         public static ElbVirsubnetTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ElbVirsubnetTypeEnum result = STATIC_FIELDS.get(value);
@@ -361,7 +296,7 @@ public class LoadBalancer  {
         }
 
         public static ElbVirsubnetTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ElbVirsubnetTypeEnum result = STATIC_FIELDS.get(value);
@@ -385,34 +320,29 @@ public class LoadBalancer  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="elb_virsubnet_type")
-    
+    @JsonProperty(value = "elb_virsubnet_type")
+
     private ElbVirsubnetTypeEnum elbVirsubnetType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_target_enable")
-    
+    @JsonProperty(value = "ip_target_enable")
+
     private Boolean ipTargetEnable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deletion_protection_enable")
-    
+    @JsonProperty(value = "deletion_protection_enable")
+
     private String deletionProtectionEnable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="frozen_scene")
-    
+    @JsonProperty(value = "frozen_scene")
+
     private String frozenScene;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ipv6_bandwidth")
-    
+    @JsonProperty(value = "ipv6_bandwidth")
+
     private BandwidthRef ipv6Bandwidth;
 
     public LoadBalancer withId(String id) {
@@ -420,13 +350,9 @@ public class LoadBalancer  {
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：负载均衡器ID。
-     * @return id
-     */
+    /** 功能描述：负载均衡器ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -435,20 +361,14 @@ public class LoadBalancer  {
         this.id = id;
     }
 
-    
-
     public LoadBalancer withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：负载均衡器描述信息。
-     * @return description
-     */
+    /** 功能描述：负载均衡器描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -457,20 +377,14 @@ public class LoadBalancer  {
         this.description = description;
     }
 
-    
-
     public LoadBalancer withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：负载均衡器的配置状态。 取值范围：ACTIVE、PENDING_CREATE 或者ERROR。 约束：该字段为预留字段，暂未启用，默认为ACTIVE。
-     * @return provisioningStatus
-     */
+    /** 功能描述：负载均衡器的配置状态。 取值范围：ACTIVE、PENDING_CREATE 或者ERROR。 约束：该字段为预留字段，暂未启用，默认为ACTIVE。
+     * 
+     * @return provisioningStatus */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -479,20 +393,14 @@ public class LoadBalancer  {
         this.provisioningStatus = provisioningStatus;
     }
 
-    
-
     public LoadBalancer withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：负载均衡器的管理状态。 约束：只支持设定为true。
-     * @return adminStateUp
-     */
+    /** 功能描述：负载均衡器的管理状态。 约束：只支持设定为true。
+     * 
+     * @return adminStateUp */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -501,20 +409,14 @@ public class LoadBalancer  {
         this.adminStateUp = adminStateUp;
     }
 
-    
-
     public LoadBalancer withProvider(String provider) {
         this.provider = provider;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：负载均衡器的生产者名称。 约束：只支持vlb。
-     * @return provider
-     */
+    /** 功能描述：负载均衡器的生产者名称。 约束：只支持vlb。
+     * 
+     * @return provider */
     public String getProvider() {
         return provider;
     }
@@ -523,16 +425,13 @@ public class LoadBalancer  {
         this.provider = provider;
     }
 
-    
-
     public LoadBalancer withPools(List<PoolRef> pools) {
         this.pools = pools;
         return this;
     }
 
-    
     public LoadBalancer addPoolsItem(PoolRef poolsItem) {
-        if(this.pools == null) {
+        if (this.pools == null) {
             this.pools = new ArrayList<>();
         }
         this.pools.add(poolsItem);
@@ -540,17 +439,16 @@ public class LoadBalancer  {
     }
 
     public LoadBalancer withPools(Consumer<List<PoolRef>> poolsSetter) {
-        if(this.pools == null) {
+        if (this.pools == null) {
             this.pools = new ArrayList<>();
         }
         poolsSetter.accept(this.pools);
         return this;
     }
 
-    /**
-     * 功能描述：负载均衡器关联的后端云服务器组ID的列表。
-     * @return pools
-     */
+    /** 功能描述：负载均衡器关联的后端云服务器组ID的列表。
+     * 
+     * @return pools */
     public List<PoolRef> getPools() {
         return pools;
     }
@@ -559,16 +457,13 @@ public class LoadBalancer  {
         this.pools = pools;
     }
 
-    
-
     public LoadBalancer withListeners(List<ListenerRef> listeners) {
         this.listeners = listeners;
         return this;
     }
 
-    
     public LoadBalancer addListenersItem(ListenerRef listenersItem) {
-        if(this.listeners == null) {
+        if (this.listeners == null) {
             this.listeners = new ArrayList<>();
         }
         this.listeners.add(listenersItem);
@@ -576,17 +471,16 @@ public class LoadBalancer  {
     }
 
     public LoadBalancer withListeners(Consumer<List<ListenerRef>> listenersSetter) {
-        if(this.listeners == null) {
+        if (this.listeners == null) {
             this.listeners = new ArrayList<>();
         }
         listenersSetter.accept(this.listeners);
         return this;
     }
 
-    /**
-     * 功能描述：负载均衡器关联的监听器ID的列表。
-     * @return listeners
-     */
+    /** 功能描述：负载均衡器关联的监听器ID的列表。
+     * 
+     * @return listeners */
     public List<ListenerRef> getListeners() {
         return listeners;
     }
@@ -595,20 +489,14 @@ public class LoadBalancer  {
         this.listeners = listeners;
     }
 
-    
-
     public LoadBalancer withOperatingStatus(OperatingStatusEnum operatingStatus) {
         this.operatingStatus = operatingStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：负载均衡器的操作状态。 取值范围：ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。 约束：该字段为预留字段，暂未启用，默认为ONLINE。
-     * @return operatingStatus
-     */
+    /** 功能描述：负载均衡器的操作状态。 取值范围：ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。 约束：该字段为预留字段，暂未启用，默认为ONLINE。
+     * 
+     * @return operatingStatus */
     public OperatingStatusEnum getOperatingStatus() {
         return operatingStatus;
     }
@@ -617,20 +505,14 @@ public class LoadBalancer  {
         this.operatingStatus = operatingStatus;
     }
 
-    
-
     public LoadBalancer withVipAddress(String vipAddress) {
         this.vipAddress = vipAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：负载均衡器的虚拟IP。
-     * @return vipAddress
-     */
+    /** 功能描述：负载均衡器的虚拟IP。
+     * 
+     * @return vipAddress */
     public String getVipAddress() {
         return vipAddress;
     }
@@ -639,20 +521,14 @@ public class LoadBalancer  {
         this.vipAddress = vipAddress;
     }
 
-    
-
     public LoadBalancer withVipSubnetCidrId(String vipSubnetCidrId) {
         this.vipSubnetCidrId = vipSubnetCidrId;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：负载均衡器所在的子网ID。 约束：vpc_id , vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
-     * @return vipSubnetCidrId
-     */
+    /** 功能描述：负载均衡器所在的子网ID。 约束：vpc_id , vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
+     * 
+     * @return vipSubnetCidrId */
     public String getVipSubnetCidrId() {
         return vipSubnetCidrId;
     }
@@ -661,20 +537,14 @@ public class LoadBalancer  {
         this.vipSubnetCidrId = vipSubnetCidrId;
     }
 
-    
-
     public LoadBalancer withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：负载均衡器的负载均衡器名称。
-     * @return name
-     */
+    /** 功能描述：负载均衡器的负载均衡器名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -683,20 +553,14 @@ public class LoadBalancer  {
         this.name = name;
     }
 
-    
-
     public LoadBalancer withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器所在的项目ID。
-     * @return projectId
-     */
+    /** 负载均衡器所在的项目ID。
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -705,20 +569,14 @@ public class LoadBalancer  {
         this.projectId = projectId;
     }
 
-    
-
     public LoadBalancer withVipPortId(String vipPortId) {
         this.vipPortId = vipPortId;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器虚拟IP对应的端口ID。
-     * @return vipPortId
-     */
+    /** 负载均衡器虚拟IP对应的端口ID。
+     * 
+     * @return vipPortId */
     public String getVipPortId() {
         return vipPortId;
     }
@@ -727,16 +585,13 @@ public class LoadBalancer  {
         this.vipPortId = vipPortId;
     }
 
-    
-
     public LoadBalancer withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public LoadBalancer addTagsItem(Tag tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -744,17 +599,16 @@ public class LoadBalancer  {
     }
 
     public LoadBalancer withTags(Consumer<List<Tag>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 功能描述：负载均衡的标签列表。
-     * @return tags
-     */
+    /** 功能描述：负载均衡的标签列表。
+     * 
+     * @return tags */
     public List<Tag> getTags() {
         return tags;
     }
@@ -763,20 +617,14 @@ public class LoadBalancer  {
         this.tags = tags;
     }
 
-    
-
     public LoadBalancer withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：负载均衡器的创建时间。
-     * @return createdAt
-     */
+    /** 功能描述：负载均衡器的创建时间。
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -785,20 +633,14 @@ public class LoadBalancer  {
         this.createdAt = createdAt;
     }
 
-    
-
     public LoadBalancer withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：负载均衡器的更新时间。
-     * @return updatedAt
-     */
+    /** 功能描述：负载均衡器的更新时间。
+     * 
+     * @return updatedAt */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -807,20 +649,14 @@ public class LoadBalancer  {
         this.updatedAt = updatedAt;
     }
 
-    
-
     public LoadBalancer withGuaranteed(Boolean guaranteed) {
         this.guaranteed = guaranteed;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：是否是性能保障性实例 取值范围：共享型：false；性能保障型：true
-     * @return guaranteed
-     */
+    /** 功能描述：是否是性能保障性实例 取值范围：共享型：false；性能保障型：true
+     * 
+     * @return guaranteed */
     public Boolean getGuaranteed() {
         return guaranteed;
     }
@@ -829,20 +665,15 @@ public class LoadBalancer  {
         this.guaranteed = guaranteed;
     }
 
-    
-
     public LoadBalancer withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：实例对应的vpc属性。若无，则从vip_subnet_cidr_id获取。  约束：vpc_id , vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
-     * @return vpcId
-     */
+    /** 功能描述：实例对应的vpc属性。若无，则从vip_subnet_cidr_id获取。 约束：vpc_id , vip_subnet_cidr_id,
+     * ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -851,16 +682,13 @@ public class LoadBalancer  {
         this.vpcId = vpcId;
     }
 
-    
-
     public LoadBalancer withEips(List<EipInfo> eips) {
         this.eips = eips;
         return this;
     }
 
-    
     public LoadBalancer addEipsItem(EipInfo eipsItem) {
-        if(this.eips == null) {
+        if (this.eips == null) {
             this.eips = new ArrayList<>();
         }
         this.eips.add(eipsItem);
@@ -868,17 +696,16 @@ public class LoadBalancer  {
     }
 
     public LoadBalancer withEips(Consumer<List<EipInfo>> eipsSetter) {
-        if(this.eips == null) {
+        if (this.eips == null) {
             this.eips = new ArrayList<>();
         }
         eipsSetter.accept(this.eips);
         return this;
     }
 
-    /**
-     * 功能描述：公网ELB实例绑定EIP信息。
-     * @return eips
-     */
+    /** 功能描述：公网ELB实例绑定EIP信息。
+     * 
+     * @return eips */
     public List<EipInfo> getEips() {
         return eips;
     }
@@ -887,20 +714,14 @@ public class LoadBalancer  {
         this.eips = eips;
     }
 
-    
-
     public LoadBalancer withIpv6VipAddress(String ipv6VipAddress) {
         this.ipv6VipAddress = ipv6VipAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：双栈实例对应v6的ip地址。 
-     * @return ipv6VipAddress
-     */
+    /** 功能描述：双栈实例对应v6的ip地址。
+     * 
+     * @return ipv6VipAddress */
     public String getIpv6VipAddress() {
         return ipv6VipAddress;
     }
@@ -909,20 +730,15 @@ public class LoadBalancer  {
         this.ipv6VipAddress = ipv6VipAddress;
     }
 
-    
-
     public LoadBalancer withIpv6VipVirsubnetId(String ipv6VipVirsubnetId) {
         this.ipv6VipVirsubnetId = ipv6VipVirsubnetId;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：双栈实例对应v6的网络id 。 约束： 1、默认为空，只有开启IPv6时才会传入。 2、vpc_id , vip_subnet_cidr_id, ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
-     * @return ipv6VipVirsubnetId
-     */
+    /** 功能描述：双栈实例对应v6的网络id 。 约束： 1、默认为空，只有开启IPv6时才会传入。 2、vpc_id , vip_subnet_cidr_id,
+     * ipv6_vip_virsubnet_id不能同时为空，且需要在同一个vpc下。
+     * 
+     * @return ipv6VipVirsubnetId */
     public String getIpv6VipVirsubnetId() {
         return ipv6VipVirsubnetId;
     }
@@ -931,20 +747,14 @@ public class LoadBalancer  {
         this.ipv6VipVirsubnetId = ipv6VipVirsubnetId;
     }
 
-    
-
     public LoadBalancer withIpv6VipPortId(String ipv6VipPortId) {
         this.ipv6VipPortId = ipv6VipPortId;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：IPv6的VIP端口id。
-     * @return ipv6VipPortId
-     */
+    /** 功能描述：IPv6的VIP端口id。
+     * 
+     * @return ipv6VipPortId */
     public String getIpv6VipPortId() {
         return ipv6VipPortId;
     }
@@ -953,16 +763,13 @@ public class LoadBalancer  {
         this.ipv6VipPortId = ipv6VipPortId;
     }
 
-    
-
     public LoadBalancer withAvailabilityZoneList(List<String> availabilityZoneList) {
         this.availabilityZoneList = availabilityZoneList;
         return this;
     }
 
-    
     public LoadBalancer addAvailabilityZoneListItem(String availabilityZoneListItem) {
-        if(this.availabilityZoneList == null) {
+        if (this.availabilityZoneList == null) {
             this.availabilityZoneList = new ArrayList<>();
         }
         this.availabilityZoneList.add(availabilityZoneListItem);
@@ -970,17 +777,16 @@ public class LoadBalancer  {
     }
 
     public LoadBalancer withAvailabilityZoneList(Consumer<List<String>> availabilityZoneListSetter) {
-        if(this.availabilityZoneList == null) {
+        if (this.availabilityZoneList == null) {
             this.availabilityZoneList = new ArrayList<>();
         }
         availabilityZoneListSetter.accept(this.availabilityZoneList);
         return this;
     }
 
-    /**
-     * 功能描述：可用区列表。默认指定所有可利用的AZ。可调用nova接口（/v2/{project_id}/os-availability-zone）查询可用AZ
-     * @return availabilityZoneList
-     */
+    /** 功能描述：可用区列表。默认指定所有可利用的AZ。可调用nova接口（/v2/{project_id}/os-availability-zone）查询可用AZ
+     * 
+     * @return availabilityZoneList */
     public List<String> getAvailabilityZoneList() {
         return availabilityZoneList;
     }
@@ -989,20 +795,14 @@ public class LoadBalancer  {
         this.availabilityZoneList = availabilityZoneList;
     }
 
-    
-
     public LoadBalancer withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：企业项目ID
-     * @return enterpriseProjectId
-     */
+    /** 功能描述：企业项目ID
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -1011,20 +811,14 @@ public class LoadBalancer  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public LoadBalancer withL4FlavorId(String l4FlavorId) {
         this.l4FlavorId = l4FlavorId;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：四层Flavor。
-     * @return l4FlavorId
-     */
+    /** 功能描述：四层Flavor。
+     * 
+     * @return l4FlavorId */
     public String getL4FlavorId() {
         return l4FlavorId;
     }
@@ -1033,20 +827,14 @@ public class LoadBalancer  {
         this.l4FlavorId = l4FlavorId;
     }
 
-    
-
     public LoadBalancer withL4ScaleFlavorId(String l4ScaleFlavorId) {
         this.l4ScaleFlavorId = l4ScaleFlavorId;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：预留L4 弹性flavor。
-     * @return l4ScaleFlavorId
-     */
+    /** 功能描述：预留L4 弹性flavor。
+     * 
+     * @return l4ScaleFlavorId */
     public String getL4ScaleFlavorId() {
         return l4ScaleFlavorId;
     }
@@ -1055,20 +843,14 @@ public class LoadBalancer  {
         this.l4ScaleFlavorId = l4ScaleFlavorId;
     }
 
-    
-
     public LoadBalancer withL7FlavorId(String l7FlavorId) {
         this.l7FlavorId = l7FlavorId;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：七层Flavor。
-     * @return l7FlavorId
-     */
+    /** 功能描述：七层Flavor。
+     * 
+     * @return l7FlavorId */
     public String getL7FlavorId() {
         return l7FlavorId;
     }
@@ -1077,20 +859,14 @@ public class LoadBalancer  {
         this.l7FlavorId = l7FlavorId;
     }
 
-    
-
     public LoadBalancer withL7ScaleFlavorId(String l7ScaleFlavorId) {
         this.l7ScaleFlavorId = l7ScaleFlavorId;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：预留弹性flavor。 
-     * @return l7ScaleFlavorId
-     */
+    /** 功能描述：预留弹性flavor。
+     * 
+     * @return l7ScaleFlavorId */
     public String getL7ScaleFlavorId() {
         return l7ScaleFlavorId;
     }
@@ -1099,16 +875,13 @@ public class LoadBalancer  {
         this.l7ScaleFlavorId = l7ScaleFlavorId;
     }
 
-    
-
     public LoadBalancer withPublicips(List<PublicIpInfo> publicips) {
         this.publicips = publicips;
         return this;
     }
 
-    
     public LoadBalancer addPublicipsItem(PublicIpInfo publicipsItem) {
-        if(this.publicips == null) {
+        if (this.publicips == null) {
             this.publicips = new ArrayList<>();
         }
         this.publicips.add(publicipsItem);
@@ -1116,17 +889,16 @@ public class LoadBalancer  {
     }
 
     public LoadBalancer withPublicips(Consumer<List<PublicIpInfo>> publicipsSetter) {
-        if(this.publicips == null) {
+        if (this.publicips == null) {
             this.publicips = new ArrayList<>();
         }
         publicipsSetter.accept(this.publicips);
         return this;
     }
 
-    /**
-     * 功能描述：弹性公网EIP信息
-     * @return publicips
-     */
+    /** 功能描述：弹性公网EIP信息
+     * 
+     * @return publicips */
     public List<PublicIpInfo> getPublicips() {
         return publicips;
     }
@@ -1135,16 +907,13 @@ public class LoadBalancer  {
         this.publicips = publicips;
     }
 
-    
-
     public LoadBalancer withElbVirsubnetIds(List<String> elbVirsubnetIds) {
         this.elbVirsubnetIds = elbVirsubnetIds;
         return this;
     }
 
-    
     public LoadBalancer addElbVirsubnetIdsItem(String elbVirsubnetIdsItem) {
-        if(this.elbVirsubnetIds == null) {
+        if (this.elbVirsubnetIds == null) {
             this.elbVirsubnetIds = new ArrayList<>();
         }
         this.elbVirsubnetIds.add(elbVirsubnetIdsItem);
@@ -1152,17 +921,16 @@ public class LoadBalancer  {
     }
 
     public LoadBalancer withElbVirsubnetIds(Consumer<List<String>> elbVirsubnetIdsSetter) {
-        if(this.elbVirsubnetIds == null) {
+        if (this.elbVirsubnetIds == null) {
             this.elbVirsubnetIds = new ArrayList<>();
         }
         elbVirsubnetIdsSetter.accept(this.elbVirsubnetIds);
         return this;
     }
 
-    /**
-     * 功能描述：下联面子网ID  loadbalancer使用的下联面端口会动态的从这些网络中占用IP
-     * @return elbVirsubnetIds
-     */
+    /** 功能描述：下联面子网ID loadbalancer使用的下联面端口会动态的从这些网络中占用IP
+     * 
+     * @return elbVirsubnetIds */
     public List<String> getElbVirsubnetIds() {
         return elbVirsubnetIds;
     }
@@ -1171,20 +939,14 @@ public class LoadBalancer  {
         this.elbVirsubnetIds = elbVirsubnetIds;
     }
 
-    
-
     public LoadBalancer withElbVirsubnetType(ElbVirsubnetTypeEnum elbVirsubnetType) {
         this.elbVirsubnetType = elbVirsubnetType;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能描述：下联面子网类型
-     * @return elbVirsubnetType
-     */
+    /** 功能描述：下联面子网类型
+     * 
+     * @return elbVirsubnetType */
     public ElbVirsubnetTypeEnum getElbVirsubnetType() {
         return elbVirsubnetType;
     }
@@ -1193,20 +955,14 @@ public class LoadBalancer  {
         this.elbVirsubnetType = elbVirsubnetType;
     }
 
-    
-
     public LoadBalancer withIpTargetEnable(Boolean ipTargetEnable) {
         this.ipTargetEnable = ipTargetEnable;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否启用跨VPC后端转发
-     * @return ipTargetEnable
-     */
+    /** 是否启用跨VPC后端转发
+     * 
+     * @return ipTargetEnable */
     public Boolean getIpTargetEnable() {
         return ipTargetEnable;
     }
@@ -1215,20 +971,14 @@ public class LoadBalancer  {
         this.ipTargetEnable = ipTargetEnable;
     }
 
-    
-
     public LoadBalancer withDeletionProtectionEnable(String deletionProtectionEnable) {
         this.deletionProtectionEnable = deletionProtectionEnable;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启删除保护
-     * @return deletionProtectionEnable
-     */
+    /** 是否开启删除保护
+     * 
+     * @return deletionProtectionEnable */
     public String getDeletionProtectionEnable() {
         return deletionProtectionEnable;
     }
@@ -1237,20 +987,15 @@ public class LoadBalancer  {
         this.deletionProtectionEnable = deletionProtectionEnable;
     }
 
-    
-
     public LoadBalancer withFrozenScene(String frozenScene) {
         this.frozenScene = frozenScene;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器的冻结场景。若负载均衡器有多个冻结场景，用逗号分隔 POLICE：公安冻结场景。 ILLEGAL：违规冻结场景。 VERIFY：客户未实名认证冻结场景。 PARTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。 ARREAR：欠费冻结场景。
-     * @return frozenScene
-     */
+    /** 负载均衡器的冻结场景。若负载均衡器有多个冻结场景，用逗号分隔 POLICE：公安冻结场景。 ILLEGAL：违规冻结场景。 VERIFY：客户未实名认证冻结场景。 PARTNER：合作伙伴冻结（合作伙伴冻结子客户资源）。
+     * ARREAR：欠费冻结场景。
+     * 
+     * @return frozenScene */
     public String getFrozenScene() {
         return frozenScene;
     }
@@ -1259,27 +1004,23 @@ public class LoadBalancer  {
         this.frozenScene = frozenScene;
     }
 
-    
-
     public LoadBalancer withIpv6Bandwidth(BandwidthRef ipv6Bandwidth) {
         this.ipv6Bandwidth = ipv6Bandwidth;
         return this;
     }
 
     public LoadBalancer withIpv6Bandwidth(Consumer<BandwidthRef> ipv6BandwidthSetter) {
-        if(this.ipv6Bandwidth == null ){
+        if (this.ipv6Bandwidth == null) {
             this.ipv6Bandwidth = new BandwidthRef();
             ipv6BandwidthSetter.accept(this.ipv6Bandwidth);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get ipv6Bandwidth
-     * @return ipv6Bandwidth
-     */
+    /** Get ipv6Bandwidth
+     * 
+     * @return ipv6Bandwidth */
     public BandwidthRef getIpv6Bandwidth() {
         return ipv6Bandwidth;
     }
@@ -1287,8 +1028,6 @@ public class LoadBalancer  {
     public void setIpv6Bandwidth(BandwidthRef ipv6Bandwidth) {
         this.ipv6Bandwidth = ipv6Bandwidth;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -1299,46 +1038,77 @@ public class LoadBalancer  {
             return false;
         }
         LoadBalancer loadBalancer = (LoadBalancer) o;
-        return Objects.equals(this.id, loadBalancer.id) &&
-            Objects.equals(this.description, loadBalancer.description) &&
-            Objects.equals(this.provisioningStatus, loadBalancer.provisioningStatus) &&
-            Objects.equals(this.adminStateUp, loadBalancer.adminStateUp) &&
-            Objects.equals(this.provider, loadBalancer.provider) &&
-            Objects.equals(this.pools, loadBalancer.pools) &&
-            Objects.equals(this.listeners, loadBalancer.listeners) &&
-            Objects.equals(this.operatingStatus, loadBalancer.operatingStatus) &&
-            Objects.equals(this.vipAddress, loadBalancer.vipAddress) &&
-            Objects.equals(this.vipSubnetCidrId, loadBalancer.vipSubnetCidrId) &&
-            Objects.equals(this.name, loadBalancer.name) &&
-            Objects.equals(this.projectId, loadBalancer.projectId) &&
-            Objects.equals(this.vipPortId, loadBalancer.vipPortId) &&
-            Objects.equals(this.tags, loadBalancer.tags) &&
-            Objects.equals(this.createdAt, loadBalancer.createdAt) &&
-            Objects.equals(this.updatedAt, loadBalancer.updatedAt) &&
-            Objects.equals(this.guaranteed, loadBalancer.guaranteed) &&
-            Objects.equals(this.vpcId, loadBalancer.vpcId) &&
-            Objects.equals(this.eips, loadBalancer.eips) &&
-            Objects.equals(this.ipv6VipAddress, loadBalancer.ipv6VipAddress) &&
-            Objects.equals(this.ipv6VipVirsubnetId, loadBalancer.ipv6VipVirsubnetId) &&
-            Objects.equals(this.ipv6VipPortId, loadBalancer.ipv6VipPortId) &&
-            Objects.equals(this.availabilityZoneList, loadBalancer.availabilityZoneList) &&
-            Objects.equals(this.enterpriseProjectId, loadBalancer.enterpriseProjectId) &&
-            Objects.equals(this.l4FlavorId, loadBalancer.l4FlavorId) &&
-            Objects.equals(this.l4ScaleFlavorId, loadBalancer.l4ScaleFlavorId) &&
-            Objects.equals(this.l7FlavorId, loadBalancer.l7FlavorId) &&
-            Objects.equals(this.l7ScaleFlavorId, loadBalancer.l7ScaleFlavorId) &&
-            Objects.equals(this.publicips, loadBalancer.publicips) &&
-            Objects.equals(this.elbVirsubnetIds, loadBalancer.elbVirsubnetIds) &&
-            Objects.equals(this.elbVirsubnetType, loadBalancer.elbVirsubnetType) &&
-            Objects.equals(this.ipTargetEnable, loadBalancer.ipTargetEnable) &&
-            Objects.equals(this.deletionProtectionEnable, loadBalancer.deletionProtectionEnable) &&
-            Objects.equals(this.frozenScene, loadBalancer.frozenScene) &&
-            Objects.equals(this.ipv6Bandwidth, loadBalancer.ipv6Bandwidth);
+        return Objects.equals(this.id, loadBalancer.id) && Objects.equals(this.description, loadBalancer.description)
+            && Objects.equals(this.provisioningStatus, loadBalancer.provisioningStatus)
+            && Objects.equals(this.adminStateUp, loadBalancer.adminStateUp)
+            && Objects.equals(this.provider, loadBalancer.provider) && Objects.equals(this.pools, loadBalancer.pools)
+            && Objects.equals(this.listeners, loadBalancer.listeners)
+            && Objects.equals(this.operatingStatus, loadBalancer.operatingStatus)
+            && Objects.equals(this.vipAddress, loadBalancer.vipAddress)
+            && Objects.equals(this.vipSubnetCidrId, loadBalancer.vipSubnetCidrId)
+            && Objects.equals(this.name, loadBalancer.name) && Objects.equals(this.projectId, loadBalancer.projectId)
+            && Objects.equals(this.vipPortId, loadBalancer.vipPortId) && Objects.equals(this.tags, loadBalancer.tags)
+            && Objects.equals(this.createdAt, loadBalancer.createdAt)
+            && Objects.equals(this.updatedAt, loadBalancer.updatedAt)
+            && Objects.equals(this.guaranteed, loadBalancer.guaranteed)
+            && Objects.equals(this.vpcId, loadBalancer.vpcId) && Objects.equals(this.eips, loadBalancer.eips)
+            && Objects.equals(this.ipv6VipAddress, loadBalancer.ipv6VipAddress)
+            && Objects.equals(this.ipv6VipVirsubnetId, loadBalancer.ipv6VipVirsubnetId)
+            && Objects.equals(this.ipv6VipPortId, loadBalancer.ipv6VipPortId)
+            && Objects.equals(this.availabilityZoneList, loadBalancer.availabilityZoneList)
+            && Objects.equals(this.enterpriseProjectId, loadBalancer.enterpriseProjectId)
+            && Objects.equals(this.l4FlavorId, loadBalancer.l4FlavorId)
+            && Objects.equals(this.l4ScaleFlavorId, loadBalancer.l4ScaleFlavorId)
+            && Objects.equals(this.l7FlavorId, loadBalancer.l7FlavorId)
+            && Objects.equals(this.l7ScaleFlavorId, loadBalancer.l7ScaleFlavorId)
+            && Objects.equals(this.publicips, loadBalancer.publicips)
+            && Objects.equals(this.elbVirsubnetIds, loadBalancer.elbVirsubnetIds)
+            && Objects.equals(this.elbVirsubnetType, loadBalancer.elbVirsubnetType)
+            && Objects.equals(this.ipTargetEnable, loadBalancer.ipTargetEnable)
+            && Objects.equals(this.deletionProtectionEnable, loadBalancer.deletionProtectionEnable)
+            && Objects.equals(this.frozenScene, loadBalancer.frozenScene)
+            && Objects.equals(this.ipv6Bandwidth, loadBalancer.ipv6Bandwidth);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, description, provisioningStatus, adminStateUp, provider, pools, listeners, operatingStatus, vipAddress, vipSubnetCidrId, name, projectId, vipPortId, tags, createdAt, updatedAt, guaranteed, vpcId, eips, ipv6VipAddress, ipv6VipVirsubnetId, ipv6VipPortId, availabilityZoneList, enterpriseProjectId, l4FlavorId, l4ScaleFlavorId, l7FlavorId, l7ScaleFlavorId, publicips, elbVirsubnetIds, elbVirsubnetType, ipTargetEnable, deletionProtectionEnable, frozenScene, ipv6Bandwidth);
+        return Objects.hash(id,
+            description,
+            provisioningStatus,
+            adminStateUp,
+            provider,
+            pools,
+            listeners,
+            operatingStatus,
+            vipAddress,
+            vipSubnetCidrId,
+            name,
+            projectId,
+            vipPortId,
+            tags,
+            createdAt,
+            updatedAt,
+            guaranteed,
+            vpcId,
+            eips,
+            ipv6VipAddress,
+            ipv6VipVirsubnetId,
+            ipv6VipPortId,
+            availabilityZoneList,
+            enterpriseProjectId,
+            l4FlavorId,
+            l4ScaleFlavorId,
+            l7FlavorId,
+            l7ScaleFlavorId,
+            publicips,
+            elbVirsubnetIds,
+            elbVirsubnetType,
+            ipTargetEnable,
+            deletionProtectionEnable,
+            frozenScene,
+            ipv6Bandwidth);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1381,16 +1151,13 @@ public class LoadBalancer  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

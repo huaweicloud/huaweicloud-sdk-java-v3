@@ -1,95 +1,70 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rms.v1.model.PolicyFilterDefinition;
-import com.huaweicloud.sdk.rms.v1.model.PolicyParameterValue;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class UpdatePolicyAssignmentResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_filter")
-    
+    @JsonProperty(value = "policy_filter")
+
     private PolicyFilterDefinition policyFilter;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
+
     private String state;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
+    @JsonProperty(value = "created")
+
     private String created;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
+
     private String updated;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_definition_id")
-    
+    @JsonProperty(value = "policy_definition_id")
+
     private String policyDefinitionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parameters")
-    
+    @JsonProperty(value = "parameters")
+
     private Map<String, PolicyParameterValue> parameters = null;
-    
+
     public UpdatePolicyAssignmentResponse withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则ID
-     * @return id
-     */
+    /** 规则ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -98,20 +73,14 @@ public class UpdatePolicyAssignmentResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public UpdatePolicyAssignmentResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则名字
-     * @return name
-     */
+    /** 规则名字
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -120,20 +89,14 @@ public class UpdatePolicyAssignmentResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public UpdatePolicyAssignmentResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则描述
-     * @return description
-     */
+    /** 规则描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -142,27 +105,23 @@ public class UpdatePolicyAssignmentResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public UpdatePolicyAssignmentResponse withPolicyFilter(PolicyFilterDefinition policyFilter) {
         this.policyFilter = policyFilter;
         return this;
     }
 
     public UpdatePolicyAssignmentResponse withPolicyFilter(Consumer<PolicyFilterDefinition> policyFilterSetter) {
-        if(this.policyFilter == null ){
+        if (this.policyFilter == null) {
             this.policyFilter = new PolicyFilterDefinition();
             policyFilterSetter.accept(this.policyFilter);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get policyFilter
-     * @return policyFilter
-     */
+    /** Get policyFilter
+     * 
+     * @return policyFilter */
     public PolicyFilterDefinition getPolicyFilter() {
         return policyFilter;
     }
@@ -171,20 +130,14 @@ public class UpdatePolicyAssignmentResponse extends SdkResponse {
         this.policyFilter = policyFilter;
     }
 
-    
-
     public UpdatePolicyAssignmentResponse withState(String state) {
         this.state = state;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则状态
-     * @return state
-     */
+    /** 规则状态
+     * 
+     * @return state */
     public String getState() {
         return state;
     }
@@ -193,20 +146,14 @@ public class UpdatePolicyAssignmentResponse extends SdkResponse {
         this.state = state;
     }
 
-    
-
     public UpdatePolicyAssignmentResponse withCreated(String created) {
         this.created = created;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则创建时间
-     * @return created
-     */
+    /** 规则创建时间
+     * 
+     * @return created */
     public String getCreated() {
         return created;
     }
@@ -215,20 +162,14 @@ public class UpdatePolicyAssignmentResponse extends SdkResponse {
         this.created = created;
     }
 
-    
-
     public UpdatePolicyAssignmentResponse withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则更新时间
-     * @return updated
-     */
+    /** 规则更新时间
+     * 
+     * @return updated */
     public String getUpdated() {
         return updated;
     }
@@ -237,20 +178,14 @@ public class UpdatePolicyAssignmentResponse extends SdkResponse {
         this.updated = updated;
     }
 
-    
-
     public UpdatePolicyAssignmentResponse withPolicyDefinitionId(String policyDefinitionId) {
         this.policyDefinitionId = policyDefinitionId;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则的策略ID
-     * @return policyDefinitionId
-     */
+    /** 规则的策略ID
+     * 
+     * @return policyDefinitionId */
     public String getPolicyDefinitionId() {
         return policyDefinitionId;
     }
@@ -259,17 +194,13 @@ public class UpdatePolicyAssignmentResponse extends SdkResponse {
         this.policyDefinitionId = policyDefinitionId;
     }
 
-    
-
     public UpdatePolicyAssignmentResponse withParameters(Map<String, PolicyParameterValue> parameters) {
         this.parameters = parameters;
         return this;
     }
 
-    
-
     public UpdatePolicyAssignmentResponse putParametersItem(String key, PolicyParameterValue parametersItem) {
-        if(this.parameters == null) {
+        if (this.parameters == null) {
             this.parameters = new HashMap<>();
         }
         this.parameters.put(key, parametersItem);
@@ -277,16 +208,16 @@ public class UpdatePolicyAssignmentResponse extends SdkResponse {
     }
 
     public UpdatePolicyAssignmentResponse withParameters(Consumer<Map<String, PolicyParameterValue>> parametersSetter) {
-        if(this.parameters == null) {
+        if (this.parameters == null) {
             this.parameters = new HashMap<>();
         }
         parametersSetter.accept(this.parameters);
         return this;
     }
-    /**
-     * 规则参数
-     * @return parameters
-     */
+
+    /** 规则参数
+     * 
+     * @return parameters */
     public Map<String, PolicyParameterValue> getParameters() {
         return parameters;
     }
@@ -294,8 +225,6 @@ public class UpdatePolicyAssignmentResponse extends SdkResponse {
     public void setParameters(Map<String, PolicyParameterValue> parameters) {
         this.parameters = parameters;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -306,20 +235,23 @@ public class UpdatePolicyAssignmentResponse extends SdkResponse {
             return false;
         }
         UpdatePolicyAssignmentResponse updatePolicyAssignmentResponse = (UpdatePolicyAssignmentResponse) o;
-        return Objects.equals(this.id, updatePolicyAssignmentResponse.id) &&
-            Objects.equals(this.name, updatePolicyAssignmentResponse.name) &&
-            Objects.equals(this.description, updatePolicyAssignmentResponse.description) &&
-            Objects.equals(this.policyFilter, updatePolicyAssignmentResponse.policyFilter) &&
-            Objects.equals(this.state, updatePolicyAssignmentResponse.state) &&
-            Objects.equals(this.created, updatePolicyAssignmentResponse.created) &&
-            Objects.equals(this.updated, updatePolicyAssignmentResponse.updated) &&
-            Objects.equals(this.policyDefinitionId, updatePolicyAssignmentResponse.policyDefinitionId) &&
-            Objects.equals(this.parameters, updatePolicyAssignmentResponse.parameters);
+        return Objects.equals(this.id, updatePolicyAssignmentResponse.id)
+            && Objects.equals(this.name, updatePolicyAssignmentResponse.name)
+            && Objects.equals(this.description, updatePolicyAssignmentResponse.description)
+            && Objects.equals(this.policyFilter, updatePolicyAssignmentResponse.policyFilter)
+            && Objects.equals(this.state, updatePolicyAssignmentResponse.state)
+            && Objects.equals(this.created, updatePolicyAssignmentResponse.created)
+            && Objects.equals(this.updated, updatePolicyAssignmentResponse.updated)
+            && Objects.equals(this.policyDefinitionId, updatePolicyAssignmentResponse.policyDefinitionId)
+            && Objects.equals(this.parameters, updatePolicyAssignmentResponse.parameters);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, policyFilter, state, created, updated, policyDefinitionId, parameters);
+        return Objects
+            .hash(id, name, description, policyFilter, state, created, updated, policyDefinitionId, parameters);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -336,16 +268,13 @@ public class UpdatePolicyAssignmentResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

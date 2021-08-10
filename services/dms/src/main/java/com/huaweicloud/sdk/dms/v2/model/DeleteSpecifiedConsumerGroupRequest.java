@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.dms.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteSpecifiedConsumerGroupRequest  {
-
-
+/** Request Object */
+public class DeleteSpecifiedConsumerGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="queue_id")
-    
+    @JsonProperty(value = "queue_id")
+
     private String queueId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
     public DeleteSpecifiedConsumerGroupRequest withQueueId(String queueId) {
@@ -34,13 +23,9 @@ public class DeleteSpecifiedConsumerGroupRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 队列ID
-     * @return queueId
-     */
+    /** 队列ID
+     * 
+     * @return queueId */
     public String getQueueId() {
         return queueId;
     }
@@ -49,20 +34,14 @@ public class DeleteSpecifiedConsumerGroupRequest  {
         this.queueId = queueId;
     }
 
-    
-
     public DeleteSpecifiedConsumerGroupRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 待删除的消费组ID
-     * @return groupId
-     */
+    /** 待删除的消费组ID
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -70,8 +49,6 @@ public class DeleteSpecifiedConsumerGroupRequest  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -81,14 +58,17 @@ public class DeleteSpecifiedConsumerGroupRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        DeleteSpecifiedConsumerGroupRequest deleteSpecifiedConsumerGroupRequest = (DeleteSpecifiedConsumerGroupRequest) o;
-        return Objects.equals(this.queueId, deleteSpecifiedConsumerGroupRequest.queueId) &&
-            Objects.equals(this.groupId, deleteSpecifiedConsumerGroupRequest.groupId);
+        DeleteSpecifiedConsumerGroupRequest deleteSpecifiedConsumerGroupRequest =
+            (DeleteSpecifiedConsumerGroupRequest) o;
+        return Objects.equals(this.queueId, deleteSpecifiedConsumerGroupRequest.queueId)
+            && Objects.equals(this.groupId, deleteSpecifiedConsumerGroupRequest.groupId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(queueId, groupId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +78,13 @@ public class DeleteSpecifiedConsumerGroupRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

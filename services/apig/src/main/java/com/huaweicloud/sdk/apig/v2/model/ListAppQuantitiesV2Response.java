@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListAppQuantitiesV2Response extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="authed_nums")
-    
+    @JsonProperty(value = "authed_nums")
+
     private Integer authedNums;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unauthed_nums")
-    
+    @JsonProperty(value = "unauthed_nums")
+
     private Integer unauthedNums;
 
     public ListAppQuantitiesV2Response withAuthedNums(Integer authedNums) {
@@ -36,13 +24,9 @@ public class ListAppQuantitiesV2Response extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 已进行API访问授权的APP个数
-     * @return authedNums
-     */
+    /** 已进行API访问授权的APP个数
+     * 
+     * @return authedNums */
     public Integer getAuthedNums() {
         return authedNums;
     }
@@ -51,20 +35,14 @@ public class ListAppQuantitiesV2Response extends SdkResponse {
         this.authedNums = authedNums;
     }
 
-    
-
     public ListAppQuantitiesV2Response withUnauthedNums(Integer unauthedNums) {
         this.unauthedNums = unauthedNums;
         return this;
     }
 
-    
-
-
-    /**
-     * 未进行API访问授权的APP个数
-     * @return unauthedNums
-     */
+    /** 未进行API访问授权的APP个数
+     * 
+     * @return unauthedNums */
     public Integer getUnauthedNums() {
         return unauthedNums;
     }
@@ -72,8 +50,6 @@ public class ListAppQuantitiesV2Response extends SdkResponse {
     public void setUnauthedNums(Integer unauthedNums) {
         this.unauthedNums = unauthedNums;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +60,15 @@ public class ListAppQuantitiesV2Response extends SdkResponse {
             return false;
         }
         ListAppQuantitiesV2Response listAppQuantitiesV2Response = (ListAppQuantitiesV2Response) o;
-        return Objects.equals(this.authedNums, listAppQuantitiesV2Response.authedNums) &&
-            Objects.equals(this.unauthedNums, listAppQuantitiesV2Response.unauthedNums);
+        return Objects.equals(this.authedNums, listAppQuantitiesV2Response.authedNums)
+            && Objects.equals(this.unauthedNums, listAppQuantitiesV2Response.unauthedNums);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(authedNums, unauthedNums);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +78,13 @@ public class ListAppQuantitiesV2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

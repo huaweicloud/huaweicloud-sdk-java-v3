@@ -1,107 +1,81 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * KeyDetails
- */
-public class KeyDetails  {
-
-
+/** KeyDetails */
+public class KeyDetails {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_id")
-    
+    @JsonProperty(value = "key_id")
+
     private String keyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_alias")
-    
+    @JsonProperty(value = "key_alias")
+
     private String keyAlias;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="realm")
-    
+    @JsonProperty(value = "realm")
+
     private String realm;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_description")
-    
+    @JsonProperty(value = "key_description")
+
     private String keyDescription;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creation_date")
-    
+    @JsonProperty(value = "creation_date")
+
     private String creationDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scheduled_deletion_date")
-    
+    @JsonProperty(value = "scheduled_deletion_date")
+
     private String scheduledDeletionDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_state")
-    
+    @JsonProperty(value = "key_state")
+
     private String keyState;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="default_key_flag")
-    
+    @JsonProperty(value = "default_key_flag")
+
     private String defaultKeyFlag;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_type")
-    
+    @JsonProperty(value = "key_type")
+
     private String keyType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expiration_time")
-    
+    @JsonProperty(value = "expiration_time")
+
     private String expirationTime;
-    /**
-     * 密钥来源，默认为“kms”，枚举如下：  - kms表示密钥材料由kms生成kms表示密钥材料由kms生成  - external表示密钥材料由外部导入
-     */
+
+    /** 密钥来源，默认为“kms”，枚举如下： - kms表示密钥材料由kms生成kms表示密钥材料由kms生成 - external表示密钥材料由外部导入 */
     public static final class OriginEnum {
 
-        
-        /**
-         * Enum KMS for value: "kms"
-         */
+        /** Enum KMS for value: "kms" */
         public static final OriginEnum KMS = new OriginEnum("kms");
-        
-        /**
-         * Enum EXTERNAL for value: "external"
-         */
+
+        /** Enum EXTERNAL for value: "external" */
         public static final OriginEnum EXTERNAL = new OriginEnum("external");
-        
 
         private static final Map<String, OriginEnum> STATIC_FIELDS = createStaticFields();
 
@@ -130,7 +104,7 @@ public class KeyDetails  {
 
         @JsonCreator
         public static OriginEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OriginEnum result = STATIC_FIELDS.get(value);
@@ -141,7 +115,7 @@ public class KeyDetails  {
         }
 
         public static OriginEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OriginEnum result = STATIC_FIELDS.get(value);
@@ -165,22 +139,19 @@ public class KeyDetails  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="origin")
-    
+    @JsonProperty(value = "origin")
+
     private OriginEnum origin;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_rotation_enabled")
-    
+    @JsonProperty(value = "key_rotation_enabled")
+
     private String keyRotationEnabled;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sys_enterprise_project_id")
-    
+    @JsonProperty(value = "sys_enterprise_project_id")
+
     private String sysEnterpriseProjectId;
 
     public KeyDetails withKeyId(String keyId) {
@@ -188,13 +159,9 @@ public class KeyDetails  {
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥ID。
-     * @return keyId
-     */
+    /** 密钥ID。
+     * 
+     * @return keyId */
     public String getKeyId() {
         return keyId;
     }
@@ -203,20 +170,14 @@ public class KeyDetails  {
         this.keyId = keyId;
     }
 
-    
-
     public KeyDetails withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户域ID。
-     * @return domainId
-     */
+    /** 用户域ID。
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -225,20 +186,14 @@ public class KeyDetails  {
         this.domainId = domainId;
     }
 
-    
-
     public KeyDetails withKeyAlias(String keyAlias) {
         this.keyAlias = keyAlias;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥别名。
-     * @return keyAlias
-     */
+    /** 密钥别名。
+     * 
+     * @return keyAlias */
     public String getKeyAlias() {
         return keyAlias;
     }
@@ -247,20 +202,14 @@ public class KeyDetails  {
         this.keyAlias = keyAlias;
     }
 
-    
-
     public KeyDetails withRealm(String realm) {
         this.realm = realm;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥区域。
-     * @return realm
-     */
+    /** 密钥区域。
+     * 
+     * @return realm */
     public String getRealm() {
         return realm;
     }
@@ -269,20 +218,14 @@ public class KeyDetails  {
         this.realm = realm;
     }
 
-    
-
     public KeyDetails withKeyDescription(String keyDescription) {
         this.keyDescription = keyDescription;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥描述。
-     * @return keyDescription
-     */
+    /** 密钥描述。
+     * 
+     * @return keyDescription */
     public String getKeyDescription() {
         return keyDescription;
     }
@@ -291,20 +234,14 @@ public class KeyDetails  {
         this.keyDescription = keyDescription;
     }
 
-    
-
     public KeyDetails withCreationDate(String creationDate) {
         this.creationDate = creationDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥创建时间，时间戳，即从1970年1月1日至该时间的总秒数。
-     * @return creationDate
-     */
+    /** 密钥创建时间，时间戳，即从1970年1月1日至该时间的总秒数。
+     * 
+     * @return creationDate */
     public String getCreationDate() {
         return creationDate;
     }
@@ -313,20 +250,14 @@ public class KeyDetails  {
         this.creationDate = creationDate;
     }
 
-    
-
     public KeyDetails withScheduledDeletionDate(String scheduledDeletionDate) {
         this.scheduledDeletionDate = scheduledDeletionDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥计划删除时间，时间戳，即从1970年1月1日至该时间的总秒数。
-     * @return scheduledDeletionDate
-     */
+    /** 密钥计划删除时间，时间戳，即从1970年1月1日至该时间的总秒数。
+     * 
+     * @return scheduledDeletionDate */
     public String getScheduledDeletionDate() {
         return scheduledDeletionDate;
     }
@@ -335,20 +266,14 @@ public class KeyDetails  {
         this.scheduledDeletionDate = scheduledDeletionDate;
     }
 
-    
-
     public KeyDetails withKeyState(String keyState) {
         this.keyState = keyState;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥状态，满足正则匹配“^[1-5]{1}$”，枚举如下：  - “1”表示待激活状态  - “2”表示启用状态  - “3”表示禁用状态  - “4”表示计划删除状态  - “5”表示等待导入状态
-     * @return keyState
-     */
+    /** 密钥状态，满足正则匹配“^[1-5]{1}$”，枚举如下： - “1”表示待激活状态 - “2”表示启用状态 - “3”表示禁用状态 - “4”表示计划删除状态 - “5”表示等待导入状态
+     * 
+     * @return keyState */
     public String getKeyState() {
         return keyState;
     }
@@ -357,20 +282,14 @@ public class KeyDetails  {
         this.keyState = keyState;
     }
 
-    
-
     public KeyDetails withDefaultKeyFlag(String defaultKeyFlag) {
         this.defaultKeyFlag = defaultKeyFlag;
         return this;
     }
 
-    
-
-
-    /**
-     * 默认主密钥标识，默认主密钥标识为1，非默认标识为0。
-     * @return defaultKeyFlag
-     */
+    /** 默认主密钥标识，默认主密钥标识为1，非默认标识为0。
+     * 
+     * @return defaultKeyFlag */
     public String getDefaultKeyFlag() {
         return defaultKeyFlag;
     }
@@ -379,20 +298,14 @@ public class KeyDetails  {
         this.defaultKeyFlag = defaultKeyFlag;
     }
 
-    
-
     public KeyDetails withKeyType(String keyType) {
         this.keyType = keyType;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥类型。
-     * @return keyType
-     */
+    /** 密钥类型。
+     * 
+     * @return keyType */
     public String getKeyType() {
         return keyType;
     }
@@ -401,20 +314,14 @@ public class KeyDetails  {
         this.keyType = keyType;
     }
 
-    
-
     public KeyDetails withExpirationTime(String expirationTime) {
         this.expirationTime = expirationTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥材料失效时间，时间戳，即从1970年1月1日至该时间的总秒数。
-     * @return expirationTime
-     */
+    /** 密钥材料失效时间，时间戳，即从1970年1月1日至该时间的总秒数。
+     * 
+     * @return expirationTime */
     public String getExpirationTime() {
         return expirationTime;
     }
@@ -423,20 +330,14 @@ public class KeyDetails  {
         this.expirationTime = expirationTime;
     }
 
-    
-
     public KeyDetails withOrigin(OriginEnum origin) {
         this.origin = origin;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥来源，默认为“kms”，枚举如下：  - kms表示密钥材料由kms生成kms表示密钥材料由kms生成  - external表示密钥材料由外部导入
-     * @return origin
-     */
+    /** 密钥来源，默认为“kms”，枚举如下： - kms表示密钥材料由kms生成kms表示密钥材料由kms生成 - external表示密钥材料由外部导入
+     * 
+     * @return origin */
     public OriginEnum getOrigin() {
         return origin;
     }
@@ -445,20 +346,14 @@ public class KeyDetails  {
         this.origin = origin;
     }
 
-    
-
     public KeyDetails withKeyRotationEnabled(String keyRotationEnabled) {
         this.keyRotationEnabled = keyRotationEnabled;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥轮换状态，默认为“false”，表示关闭密钥轮换功能。
-     * @return keyRotationEnabled
-     */
+    /** 密钥轮换状态，默认为“false”，表示关闭密钥轮换功能。
+     * 
+     * @return keyRotationEnabled */
     public String getKeyRotationEnabled() {
         return keyRotationEnabled;
     }
@@ -467,20 +362,14 @@ public class KeyDetails  {
         this.keyRotationEnabled = keyRotationEnabled;
     }
 
-    
-
     public KeyDetails withSysEnterpriseProjectId(String sysEnterpriseProjectId) {
         this.sysEnterpriseProjectId = sysEnterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID，默认为“0”。  - 对于开通企业项目的用户，表示资源处于默认企业项目下。  - 对于未开通企业项目的用户，表示资源未处于企业项目下。
-     * @return sysEnterpriseProjectId
-     */
+    /** 企业项目ID，默认为“0”。 - 对于开通企业项目的用户，表示资源处于默认企业项目下。 - 对于未开通企业项目的用户，表示资源未处于企业项目下。
+     * 
+     * @return sysEnterpriseProjectId */
     public String getSysEnterpriseProjectId() {
         return sysEnterpriseProjectId;
     }
@@ -488,8 +377,6 @@ public class KeyDetails  {
     public void setSysEnterpriseProjectId(String sysEnterpriseProjectId) {
         this.sysEnterpriseProjectId = sysEnterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -500,25 +387,38 @@ public class KeyDetails  {
             return false;
         }
         KeyDetails keyDetails = (KeyDetails) o;
-        return Objects.equals(this.keyId, keyDetails.keyId) &&
-            Objects.equals(this.domainId, keyDetails.domainId) &&
-            Objects.equals(this.keyAlias, keyDetails.keyAlias) &&
-            Objects.equals(this.realm, keyDetails.realm) &&
-            Objects.equals(this.keyDescription, keyDetails.keyDescription) &&
-            Objects.equals(this.creationDate, keyDetails.creationDate) &&
-            Objects.equals(this.scheduledDeletionDate, keyDetails.scheduledDeletionDate) &&
-            Objects.equals(this.keyState, keyDetails.keyState) &&
-            Objects.equals(this.defaultKeyFlag, keyDetails.defaultKeyFlag) &&
-            Objects.equals(this.keyType, keyDetails.keyType) &&
-            Objects.equals(this.expirationTime, keyDetails.expirationTime) &&
-            Objects.equals(this.origin, keyDetails.origin) &&
-            Objects.equals(this.keyRotationEnabled, keyDetails.keyRotationEnabled) &&
-            Objects.equals(this.sysEnterpriseProjectId, keyDetails.sysEnterpriseProjectId);
+        return Objects.equals(this.keyId, keyDetails.keyId) && Objects.equals(this.domainId, keyDetails.domainId)
+            && Objects.equals(this.keyAlias, keyDetails.keyAlias) && Objects.equals(this.realm, keyDetails.realm)
+            && Objects.equals(this.keyDescription, keyDetails.keyDescription)
+            && Objects.equals(this.creationDate, keyDetails.creationDate)
+            && Objects.equals(this.scheduledDeletionDate, keyDetails.scheduledDeletionDate)
+            && Objects.equals(this.keyState, keyDetails.keyState)
+            && Objects.equals(this.defaultKeyFlag, keyDetails.defaultKeyFlag)
+            && Objects.equals(this.keyType, keyDetails.keyType)
+            && Objects.equals(this.expirationTime, keyDetails.expirationTime)
+            && Objects.equals(this.origin, keyDetails.origin)
+            && Objects.equals(this.keyRotationEnabled, keyDetails.keyRotationEnabled)
+            && Objects.equals(this.sysEnterpriseProjectId, keyDetails.sysEnterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(keyId, domainId, keyAlias, realm, keyDescription, creationDate, scheduledDeletionDate, keyState, defaultKeyFlag, keyType, expirationTime, origin, keyRotationEnabled, sysEnterpriseProjectId);
+        return Objects.hash(keyId,
+            domainId,
+            keyAlias,
+            realm,
+            keyDescription,
+            creationDate,
+            scheduledDeletionDate,
+            keyState,
+            defaultKeyFlag,
+            keyType,
+            expirationTime,
+            origin,
+            keyRotationEnabled,
+            sysEnterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -540,16 +440,13 @@ public class KeyDetails  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

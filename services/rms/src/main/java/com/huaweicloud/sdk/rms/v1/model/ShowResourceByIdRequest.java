@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowResourceByIdRequest  {
-
-
+/** Request Object */
+public class ShowResourceByIdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provider")
-    
+    @JsonProperty(value = "provider")
+
     private String provider;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
+    @JsonProperty(value = "resource_id")
+
     private String resourceId;
 
     public ShowResourceByIdRequest withProvider(String provider) {
@@ -40,13 +28,9 @@ public class ShowResourceByIdRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务英文简写
-     * @return provider
-     */
+    /** 云服务英文简写
+     * 
+     * @return provider */
     public String getProvider() {
         return provider;
     }
@@ -55,20 +39,14 @@ public class ShowResourceByIdRequest  {
         this.provider = provider;
     }
 
-    
-
     public ShowResourceByIdRequest withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务资源类型名称
-     * @return type
-     */
+    /** 云服务资源类型名称
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -77,20 +55,14 @@ public class ShowResourceByIdRequest  {
         this.type = type;
     }
 
-    
-
     public ShowResourceByIdRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源ID
-     * @return resourceId
-     */
+    /** 资源ID
+     * 
+     * @return resourceId */
     public String getResourceId() {
         return resourceId;
     }
@@ -98,8 +70,6 @@ public class ShowResourceByIdRequest  {
     public void setResourceId(String resourceId) {
         this.resourceId = resourceId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class ShowResourceByIdRequest  {
             return false;
         }
         ShowResourceByIdRequest showResourceByIdRequest = (ShowResourceByIdRequest) o;
-        return Objects.equals(this.provider, showResourceByIdRequest.provider) &&
-            Objects.equals(this.type, showResourceByIdRequest.type) &&
-            Objects.equals(this.resourceId, showResourceByIdRequest.resourceId);
+        return Objects.equals(this.provider, showResourceByIdRequest.provider)
+            && Objects.equals(this.type, showResourceByIdRequest.type)
+            && Objects.equals(this.resourceId, showResourceByIdRequest.resourceId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(provider, type, resourceId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class ShowResourceByIdRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

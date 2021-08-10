@@ -1,86 +1,66 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListSnapshotsRequest  {
-
-
+/** Request Object */
+public class ListSnapshotsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_id")
-    
+    @JsonProperty(value = "volume_id")
+
     private String volumeId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="availability_zone")
-    
+    @JsonProperty(value = "availability_zone")
+
     private String availabilityZone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dedicated_storage_name")
-    
+    @JsonProperty(value = "dedicated_storage_name")
+
     private String dedicatedStorageName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dedicated_storage_id")
-    
+    @JsonProperty(value = "dedicated_storage_id")
+
     private String dedicatedStorageId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_type")
-    
+    @JsonProperty(value = "service_type")
+
     private String serviceType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public ListSnapshotsRequest withOffset(Integer offset) {
@@ -88,13 +68,9 @@ public class ListSnapshotsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量。 说明:分页查询快照时使用，与limit配合使用。假如共有30个快照，设置offset为11，limit为10，即为从第12个快照开始查询，一次最多可读取10个快照。
-     * @return offset
-     */
+    /** 偏移量。 说明:分页查询快照时使用，与limit配合使用。假如共有30个快照，设置offset为11，limit为10，即为从第12个快照开始查询，一次最多可读取10个快照。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -103,20 +79,14 @@ public class ListSnapshotsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListSnapshotsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 返回结果个数限制，值为大于0的整数。默认值为1000。
-     * @return limit
-     */
+    /** 返回结果个数限制，值为大于0的整数。默认值为1000。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -125,20 +95,14 @@ public class ListSnapshotsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListSnapshotsRequest withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘快照名称。最大支持255个字节。
-     * @return name
-     */
+    /** 云硬盘快照名称。最大支持255个字节。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -147,20 +111,14 @@ public class ListSnapshotsRequest  {
         this.name = name;
     }
 
-    
-
     public ListSnapshotsRequest withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘快照状态，具体请参见A.3 云硬盘快照状态。
-     * @return status
-     */
+    /** 云硬盘快照状态，具体请参见A.3 云硬盘快照状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -169,20 +127,14 @@ public class ListSnapshotsRequest  {
         this.status = status;
     }
 
-    
-
     public ListSnapshotsRequest withVolumeId(String volumeId) {
         this.volumeId = volumeId;
         return this;
     }
 
-    
-
-
-    /**
-     * 快照所属云硬盘的ID。
-     * @return volumeId
-     */
+    /** 快照所属云硬盘的ID。
+     * 
+     * @return volumeId */
     public String getVolumeId() {
         return volumeId;
     }
@@ -191,20 +143,14 @@ public class ListSnapshotsRequest  {
         this.volumeId = volumeId;
     }
 
-    
-
     public ListSnapshotsRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
     }
 
-    
-
-
-    /**
-     * 快照所属云硬盘的可用区。
-     * @return availabilityZone
-     */
+    /** 快照所属云硬盘的可用区。
+     * 
+     * @return availabilityZone */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -213,20 +159,14 @@ public class ListSnapshotsRequest  {
         this.availabilityZone = availabilityZone;
     }
 
-    
-
     public ListSnapshotsRequest withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 指定快照id进行过滤。
-     * @return id
-     */
+    /** 指定快照id进行过滤。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -235,20 +175,14 @@ public class ListSnapshotsRequest  {
         this.id = id;
     }
 
-    
-
     public ListSnapshotsRequest withDedicatedStorageName(String dedicatedStorageName) {
         this.dedicatedStorageName = dedicatedStorageName;
         return this;
     }
 
-    
-
-
-    /**
-     * 专属存储的名称。
-     * @return dedicatedStorageName
-     */
+    /** 专属存储的名称。
+     * 
+     * @return dedicatedStorageName */
     public String getDedicatedStorageName() {
         return dedicatedStorageName;
     }
@@ -257,20 +191,14 @@ public class ListSnapshotsRequest  {
         this.dedicatedStorageName = dedicatedStorageName;
     }
 
-    
-
     public ListSnapshotsRequest withDedicatedStorageId(String dedicatedStorageId) {
         this.dedicatedStorageId = dedicatedStorageId;
         return this;
     }
 
-    
-
-
-    /**
-     * 专属存储ID。
-     * @return dedicatedStorageId
-     */
+    /** 专属存储ID。
+     * 
+     * @return dedicatedStorageId */
     public String getDedicatedStorageId() {
         return dedicatedStorageId;
     }
@@ -279,20 +207,14 @@ public class ListSnapshotsRequest  {
         this.dedicatedStorageId = dedicatedStorageId;
     }
 
-    
-
     public ListSnapshotsRequest withServiceType(String serviceType) {
         this.serviceType = serviceType;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务类型。仅支持EVS、DSS、DESS。
-     * @return serviceType
-     */
+    /** 服务类型。仅支持EVS、DSS、DESS。
+     * 
+     * @return serviceType */
     public String getServiceType() {
         return serviceType;
     }
@@ -301,20 +223,15 @@ public class ListSnapshotsRequest  {
         this.serviceType = serviceType;
     }
 
-    
-
     public ListSnapshotsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 指定企业项目id进行过滤。 传入“all_granted_eps”，代表查询权限范围内的所有企业项目下的云硬盘。 > 说明： >  > 关于企业项目ID的获取及企业项目特性的详细信息，请参考：\"[企业管理用户指南](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0123692049.html)\"。
-     * @return enterpriseProjectId
-     */
+    /** 指定企业项目id进行过滤。 传入“all_granted_eps”，代表查询权限范围内的所有企业项目下的云硬盘。 > 说明： > >
+     * 关于企业项目ID的获取及企业项目特性的详细信息，请参考：\"[企业管理用户指南](https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0123692049.html)\"。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -322,8 +239,6 @@ public class ListSnapshotsRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -334,22 +249,34 @@ public class ListSnapshotsRequest  {
             return false;
         }
         ListSnapshotsRequest listSnapshotsRequest = (ListSnapshotsRequest) o;
-        return Objects.equals(this.offset, listSnapshotsRequest.offset) &&
-            Objects.equals(this.limit, listSnapshotsRequest.limit) &&
-            Objects.equals(this.name, listSnapshotsRequest.name) &&
-            Objects.equals(this.status, listSnapshotsRequest.status) &&
-            Objects.equals(this.volumeId, listSnapshotsRequest.volumeId) &&
-            Objects.equals(this.availabilityZone, listSnapshotsRequest.availabilityZone) &&
-            Objects.equals(this.id, listSnapshotsRequest.id) &&
-            Objects.equals(this.dedicatedStorageName, listSnapshotsRequest.dedicatedStorageName) &&
-            Objects.equals(this.dedicatedStorageId, listSnapshotsRequest.dedicatedStorageId) &&
-            Objects.equals(this.serviceType, listSnapshotsRequest.serviceType) &&
-            Objects.equals(this.enterpriseProjectId, listSnapshotsRequest.enterpriseProjectId);
+        return Objects.equals(this.offset, listSnapshotsRequest.offset)
+            && Objects.equals(this.limit, listSnapshotsRequest.limit)
+            && Objects.equals(this.name, listSnapshotsRequest.name)
+            && Objects.equals(this.status, listSnapshotsRequest.status)
+            && Objects.equals(this.volumeId, listSnapshotsRequest.volumeId)
+            && Objects.equals(this.availabilityZone, listSnapshotsRequest.availabilityZone)
+            && Objects.equals(this.id, listSnapshotsRequest.id)
+            && Objects.equals(this.dedicatedStorageName, listSnapshotsRequest.dedicatedStorageName)
+            && Objects.equals(this.dedicatedStorageId, listSnapshotsRequest.dedicatedStorageId)
+            && Objects.equals(this.serviceType, listSnapshotsRequest.serviceType)
+            && Objects.equals(this.enterpriseProjectId, listSnapshotsRequest.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, name, status, volumeId, availabilityZone, id, dedicatedStorageName, dedicatedStorageId, serviceType, enterpriseProjectId);
+        return Objects.hash(offset,
+            limit,
+            name,
+            status,
+            volumeId,
+            availabilityZone,
+            id,
+            dedicatedStorageName,
+            dedicatedStorageId,
+            serviceType,
+            enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -368,16 +295,13 @@ public class ListSnapshotsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

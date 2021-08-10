@@ -1,69 +1,47 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 后端云服务器对象列表，用于状态树中
- */
-public class MembersInStatusResp  {
-
-
+/** 后端云服务器对象列表，用于状态树中 */
+public class MembersInStatusResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="address")
-    
+    @JsonProperty(value = "address")
+
     private String address;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol_port")
-    
+    @JsonProperty(value = "protocol_port")
+
     private Integer protocolPort;
-    /**
-     * 后端云服务器的健康检状态；可以为：ONLINE：健康检查在线；OFFLINE：健康检查离线；DISABLED：后端云服务器无对应的弹性云服务器；NO_MONITOR：健康检查未开启
-     */
+
+    /** 后端云服务器的健康检状态；可以为：ONLINE：健康检查在线；OFFLINE：健康检查离线；DISABLED：后端云服务器无对应的弹性云服务器；NO_MONITOR：健康检查未开启 */
     public static final class OperatingStatusEnum {
 
-        
-        /**
-         * Enum ONLINE for value: "ONLINE"
-         */
+        /** Enum ONLINE for value: "ONLINE" */
         public static final OperatingStatusEnum ONLINE = new OperatingStatusEnum("ONLINE");
-        
-        /**
-         * Enum OFFLINE for value: "OFFLINE"
-         */
+
+        /** Enum OFFLINE for value: "OFFLINE" */
         public static final OperatingStatusEnum OFFLINE = new OperatingStatusEnum("OFFLINE");
-        
-        /**
-         * Enum DISABLED for value: "DISABLED"
-         */
+
+        /** Enum DISABLED for value: "DISABLED" */
         public static final OperatingStatusEnum DISABLED = new OperatingStatusEnum("DISABLED");
-        
-        /**
-         * Enum NO_MONITOR for value: "NO_MONITOR"
-         */
+
+        /** Enum NO_MONITOR for value: "NO_MONITOR" */
         public static final OperatingStatusEnum NO_MONITOR = new OperatingStatusEnum("NO_MONITOR");
-        
 
         private static final Map<String, OperatingStatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -94,7 +72,7 @@ public class MembersInStatusResp  {
 
         @JsonCreator
         public static OperatingStatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OperatingStatusEnum result = STATIC_FIELDS.get(value);
@@ -105,7 +83,7 @@ public class MembersInStatusResp  {
         }
 
         public static OperatingStatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OperatingStatusEnum result = STATIC_FIELDS.get(value);
@@ -129,16 +107,14 @@ public class MembersInStatusResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operating_status")
-    
+    @JsonProperty(value = "operating_status")
+
     private OperatingStatusEnum operatingStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provisioning_status")
-    
+    @JsonProperty(value = "provisioning_status")
+
     private String provisioningStatus;
 
     public MembersInStatusResp withId(String id) {
@@ -146,13 +122,9 @@ public class MembersInStatusResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 后端云服务器ID
-     * @return id
-     */
+    /** 后端云服务器ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -161,20 +133,14 @@ public class MembersInStatusResp  {
         this.id = id;
     }
 
-    
-
     public MembersInStatusResp withAddress(String address) {
         this.address = address;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端云服务器的IP地址
-     * @return address
-     */
+    /** 后端云服务器的IP地址
+     * 
+     * @return address */
     public String getAddress() {
         return address;
     }
@@ -183,22 +149,14 @@ public class MembersInStatusResp  {
         this.address = address;
     }
 
-    
-
     public MembersInStatusResp withProtocolPort(Integer protocolPort) {
         this.protocolPort = protocolPort;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端云服务器的端口号
-     * minimum: 0
-     * maximum: 65535
-     * @return protocolPort
-     */
+    /** 后端云服务器的端口号 minimum: 0 maximum: 65535
+     * 
+     * @return protocolPort */
     public Integer getProtocolPort() {
         return protocolPort;
     }
@@ -207,20 +165,14 @@ public class MembersInStatusResp  {
         this.protocolPort = protocolPort;
     }
 
-    
-
     public MembersInStatusResp withOperatingStatus(OperatingStatusEnum operatingStatus) {
         this.operatingStatus = operatingStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端云服务器的健康检状态；可以为：ONLINE：健康检查在线；OFFLINE：健康检查离线；DISABLED：后端云服务器无对应的弹性云服务器；NO_MONITOR：健康检查未开启
-     * @return operatingStatus
-     */
+    /** 后端云服务器的健康检状态；可以为：ONLINE：健康检查在线；OFFLINE：健康检查离线；DISABLED：后端云服务器无对应的弹性云服务器；NO_MONITOR：健康检查未开启
+     * 
+     * @return operatingStatus */
     public OperatingStatusEnum getOperatingStatus() {
         return operatingStatus;
     }
@@ -229,20 +181,14 @@ public class MembersInStatusResp  {
         this.operatingStatus = operatingStatus;
     }
 
-    
-
     public MembersInStatusResp withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
-     * @return provisioningStatus
-     */
+    /** 监听器的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
+     * 
+     * @return provisioningStatus */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -250,8 +196,6 @@ public class MembersInStatusResp  {
     public void setProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -262,16 +206,18 @@ public class MembersInStatusResp  {
             return false;
         }
         MembersInStatusResp membersInStatusResp = (MembersInStatusResp) o;
-        return Objects.equals(this.id, membersInStatusResp.id) &&
-            Objects.equals(this.address, membersInStatusResp.address) &&
-            Objects.equals(this.protocolPort, membersInStatusResp.protocolPort) &&
-            Objects.equals(this.operatingStatus, membersInStatusResp.operatingStatus) &&
-            Objects.equals(this.provisioningStatus, membersInStatusResp.provisioningStatus);
+        return Objects.equals(this.id, membersInStatusResp.id)
+            && Objects.equals(this.address, membersInStatusResp.address)
+            && Objects.equals(this.protocolPort, membersInStatusResp.protocolPort)
+            && Objects.equals(this.operatingStatus, membersInStatusResp.operatingStatus)
+            && Objects.equals(this.provisioningStatus, membersInStatusResp.provisioningStatus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, address, protocolPort, operatingStatus, provisioningStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -284,16 +230,13 @@ public class MembersInStatusResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

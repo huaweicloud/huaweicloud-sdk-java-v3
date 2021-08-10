@@ -1,40 +1,29 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * AdjustCouponQuotasReq
- */
-public class AdjustCouponQuotasReq  {
-
-
+/** AdjustCouponQuotasReq */
+public class AdjustCouponQuotasReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quota_id")
-    
+    @JsonProperty(value = "quota_id")
+
     private String quotaId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="indirect_partner_ids")
-    
+    @JsonProperty(value = "indirect_partner_ids")
+
     private List<String> indirectPartnerIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quota_amount")
-    
+    @JsonProperty(value = "quota_amount")
+
     private Double quotaAmount;
 
     public AdjustCouponQuotasReq withQuotaId(String quotaId) {
@@ -42,13 +31,9 @@ public class AdjustCouponQuotasReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 华为云伙伴能力中心发放的代金券额度的ID。
-     * @return quotaId
-     */
+    /** 华为云伙伴能力中心发放的代金券额度的ID。
+     * 
+     * @return quotaId */
     public String getQuotaId() {
         return quotaId;
     }
@@ -57,16 +42,13 @@ public class AdjustCouponQuotasReq  {
         this.quotaId = quotaId;
     }
 
-    
-
     public AdjustCouponQuotasReq withIndirectPartnerIds(List<String> indirectPartnerIds) {
         this.indirectPartnerIds = indirectPartnerIds;
         return this;
     }
 
-    
     public AdjustCouponQuotasReq addIndirectPartnerIdsItem(String indirectPartnerIdsItem) {
-        if(this.indirectPartnerIds == null) {
+        if (this.indirectPartnerIds == null) {
             this.indirectPartnerIds = new ArrayList<>();
         }
         this.indirectPartnerIds.add(indirectPartnerIdsItem);
@@ -74,17 +56,16 @@ public class AdjustCouponQuotasReq  {
     }
 
     public AdjustCouponQuotasReq withIndirectPartnerIds(Consumer<List<String>> indirectPartnerIdsSetter) {
-        if(this.indirectPartnerIds == null) {
+        if (this.indirectPartnerIds == null) {
             this.indirectPartnerIds = new ArrayList<>();
         }
         indirectPartnerIdsSetter.accept(this.indirectPartnerIds);
         return this;
     }
 
-    /**
-     * 精英服务商ID列表。
-     * @return indirectPartnerIds
-     */
+    /** 精英服务商ID列表。
+     * 
+     * @return indirectPartnerIds */
     public List<String> getIndirectPartnerIds() {
         return indirectPartnerIds;
     }
@@ -93,22 +74,14 @@ public class AdjustCouponQuotasReq  {
         this.indirectPartnerIds = indirectPartnerIds;
     }
 
-    
-
     public AdjustCouponQuotasReq withQuotaAmount(Double quotaAmount) {
         this.quotaAmount = quotaAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 华为云伙伴能力中心向精英服务商发放的代金券额度值。 单位：元。取值大于0且精确到小数点后2位。
-     * minimum: 0.01
-     * maximum: 1E+8
-     * @return quotaAmount
-     */
+    /** 华为云伙伴能力中心向精英服务商发放的代金券额度值。 单位：元。取值大于0且精确到小数点后2位。 minimum: 0.01 maximum: 1E+8
+     * 
+     * @return quotaAmount */
     public Double getQuotaAmount() {
         return quotaAmount;
     }
@@ -116,8 +89,6 @@ public class AdjustCouponQuotasReq  {
     public void setQuotaAmount(Double quotaAmount) {
         this.quotaAmount = quotaAmount;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -128,14 +99,16 @@ public class AdjustCouponQuotasReq  {
             return false;
         }
         AdjustCouponQuotasReq adjustCouponQuotasReq = (AdjustCouponQuotasReq) o;
-        return Objects.equals(this.quotaId, adjustCouponQuotasReq.quotaId) &&
-            Objects.equals(this.indirectPartnerIds, adjustCouponQuotasReq.indirectPartnerIds) &&
-            Objects.equals(this.quotaAmount, adjustCouponQuotasReq.quotaAmount);
+        return Objects.equals(this.quotaId, adjustCouponQuotasReq.quotaId)
+            && Objects.equals(this.indirectPartnerIds, adjustCouponQuotasReq.indirectPartnerIds)
+            && Objects.equals(this.quotaAmount, adjustCouponQuotasReq.quotaAmount);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(quotaId, indirectPartnerIds, quotaAmount);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -146,16 +119,13 @@ public class AdjustCouponQuotasReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

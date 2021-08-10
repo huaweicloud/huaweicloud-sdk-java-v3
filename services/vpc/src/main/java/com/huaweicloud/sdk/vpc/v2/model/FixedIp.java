@@ -1,32 +1,23 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class FixedIp  {
-
-
+public class FixedIp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_address")
-    
+    @JsonProperty(value = "ip_address")
+
     private String ipAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
+
     private String subnetId;
 
     public FixedIp withIpAddress(String ipAddress) {
@@ -34,13 +25,10 @@ public class FixedIp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：端口IP地址,如果同时指定子网ID和IP地址，会尝试将该子网上的IP地址分配给该端口。 如果仅指定子网ID，会将该子网中的可用IP分配给该端口。 如果仅指定IP地址，会尝试分配IP地址（如果该地址是指定网络上任何子网的有效IP）
-     * @return ipAddress
-     */
+    /** 功能说明：端口IP地址,如果同时指定子网ID和IP地址，会尝试将该子网上的IP地址分配给该端口。 如果仅指定子网ID，会将该子网中的可用IP分配给该端口。
+     * 如果仅指定IP地址，会尝试分配IP地址（如果该地址是指定网络上任何子网的有效IP）
+     * 
+     * @return ipAddress */
     public String getIpAddress() {
         return ipAddress;
     }
@@ -49,20 +37,15 @@ public class FixedIp  {
         this.ipAddress = ipAddress;
     }
 
-    
-
     public FixedIp withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：端口所属子网ID,如果同时指定子网ID和IP地址，会尝试将该子网上的IP地址分配给该端口。 如果仅指定子网ID，会将该子网中的可用IP分配给该端口。 如果仅指定IP地址，会尝试分配IP地址（如果该地址是指定网络上任何子网的有效IP）
-     * @return subnetId
-     */
+    /** 功能说明：端口所属子网ID,如果同时指定子网ID和IP地址，会尝试将该子网上的IP地址分配给该端口。 如果仅指定子网ID，会将该子网中的可用IP分配给该端口。
+     * 如果仅指定IP地址，会尝试分配IP地址（如果该地址是指定网络上任何子网的有效IP）
+     * 
+     * @return subnetId */
     public String getSubnetId() {
         return subnetId;
     }
@@ -70,8 +53,6 @@ public class FixedIp  {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +63,14 @@ public class FixedIp  {
             return false;
         }
         FixedIp fixedIp = (FixedIp) o;
-        return Objects.equals(this.ipAddress, fixedIp.ipAddress) &&
-            Objects.equals(this.subnetId, fixedIp.subnetId);
+        return Objects.equals(this.ipAddress, fixedIp.ipAddress) && Objects.equals(this.subnetId, fixedIp.subnetId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(ipAddress, subnetId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +80,13 @@ public class FixedIp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

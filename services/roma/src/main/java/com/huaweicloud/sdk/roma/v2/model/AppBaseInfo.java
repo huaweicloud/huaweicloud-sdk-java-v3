@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * AppBaseInfo
- */
-public class AppBaseInfo  {
-
-
+/** AppBaseInfo */
+public class AppBaseInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
+
     private String remark;
 
     public AppBaseInfo withId(String id) {
@@ -40,13 +28,9 @@ public class AppBaseInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 编号
-     * @return id
-     */
+    /** 编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -55,20 +39,14 @@ public class AppBaseInfo  {
         this.id = id;
     }
 
-    
-
     public AppBaseInfo withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 名称
-     * @return name
-     */
+    /** 名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -77,20 +55,14 @@ public class AppBaseInfo  {
         this.name = name;
     }
 
-    
-
     public AppBaseInfo withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述
-     * @return remark
-     */
+    /** 描述
+     * 
+     * @return remark */
     public String getRemark() {
         return remark;
     }
@@ -98,8 +70,6 @@ public class AppBaseInfo  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,15 @@ public class AppBaseInfo  {
             return false;
         }
         AppBaseInfo appBaseInfo = (AppBaseInfo) o;
-        return Objects.equals(this.id, appBaseInfo.id) &&
-            Objects.equals(this.name, appBaseInfo.name) &&
-            Objects.equals(this.remark, appBaseInfo.remark);
+        return Objects.equals(this.id, appBaseInfo.id) && Objects.equals(this.name, appBaseInfo.name)
+            && Objects.equals(this.remark, appBaseInfo.remark);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, remark);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +99,13 @@ public class AppBaseInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

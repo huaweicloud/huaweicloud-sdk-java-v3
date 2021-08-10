@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowListenerTagsRequest  {
-
-
+/** Request Object */
+public class ShowListenerTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="listener_id")
-    
+    @JsonProperty(value = "listener_id")
+
     private String listenerId;
 
     public ShowListenerTagsRequest withListenerId(String listenerId) {
@@ -28,13 +18,9 @@ public class ShowListenerTagsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器ID。
-     * @return listenerId
-     */
+    /** 监听器ID。
+     * 
+     * @return listenerId */
     public String getListenerId() {
         return listenerId;
     }
@@ -42,8 +28,6 @@ public class ShowListenerTagsRequest  {
     public void setListenerId(String listenerId) {
         this.listenerId = listenerId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class ShowListenerTagsRequest  {
         ShowListenerTagsRequest showListenerTagsRequest = (ShowListenerTagsRequest) o;
         return Objects.equals(this.listenerId, showListenerTagsRequest.listenerId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(listenerId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class ShowListenerTagsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

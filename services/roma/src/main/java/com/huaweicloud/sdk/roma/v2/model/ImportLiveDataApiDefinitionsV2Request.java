@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.ImportLiveDataApiDefinitionsV2RequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ImportLiveDataApiDefinitionsV2Request  {
-
-
+/** Request Object */
+public class ImportLiveDataApiDefinitionsV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ImportLiveDataApiDefinitionsV2RequestBody body;
 
     public ImportLiveDataApiDefinitionsV2Request withInstanceId(String instanceId) {
@@ -35,13 +24,9 @@ public class ImportLiveDataApiDefinitionsV2Request  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -50,27 +35,24 @@ public class ImportLiveDataApiDefinitionsV2Request  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ImportLiveDataApiDefinitionsV2Request withBody(ImportLiveDataApiDefinitionsV2RequestBody body) {
         this.body = body;
         return this;
     }
 
-    public ImportLiveDataApiDefinitionsV2Request withBody(Consumer<ImportLiveDataApiDefinitionsV2RequestBody> bodySetter) {
-        if(this.body == null ){
+    public ImportLiveDataApiDefinitionsV2Request withBody(
+        Consumer<ImportLiveDataApiDefinitionsV2RequestBody> bodySetter) {
+        if (this.body == null) {
             this.body = new ImportLiveDataApiDefinitionsV2RequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ImportLiveDataApiDefinitionsV2RequestBody getBody() {
         return body;
     }
@@ -78,8 +60,6 @@ public class ImportLiveDataApiDefinitionsV2Request  {
     public void setBody(ImportLiveDataApiDefinitionsV2RequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -89,14 +69,17 @@ public class ImportLiveDataApiDefinitionsV2Request  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ImportLiveDataApiDefinitionsV2Request importLiveDataApiDefinitionsV2Request = (ImportLiveDataApiDefinitionsV2Request) o;
-        return Objects.equals(this.instanceId, importLiveDataApiDefinitionsV2Request.instanceId) &&
-            Objects.equals(this.body, importLiveDataApiDefinitionsV2Request.body);
+        ImportLiveDataApiDefinitionsV2Request importLiveDataApiDefinitionsV2Request =
+            (ImportLiveDataApiDefinitionsV2Request) o;
+        return Objects.equals(this.instanceId, importLiveDataApiDefinitionsV2Request.instanceId)
+            && Objects.equals(this.body, importLiveDataApiDefinitionsV2Request.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +89,13 @@ public class ImportLiveDataApiDefinitionsV2Request  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CouponSimpleInfoOrderPay
- */
-public class CouponSimpleInfoOrderPay  {
-
-
+/** CouponSimpleInfoOrderPay */
+public class CouponSimpleInfoOrderPay {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private Integer type;
 
     public CouponSimpleInfoOrderPay withId(String id) {
@@ -34,13 +23,9 @@ public class CouponSimpleInfoOrderPay  {
         return this;
     }
 
-    
-
-
-    /**
-     * 折扣ID。
-     * @return id
-     */
+    /** 折扣ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -49,22 +34,14 @@ public class CouponSimpleInfoOrderPay  {
         this.id = id;
     }
 
-    
-
     public CouponSimpleInfoOrderPay withType(Integer type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 折扣类型： 1：合同折扣2：商务优惠3：合作伙伴授予折扣609：订单调价折扣 说明： 订单支付时，如果包含609折扣（订单调价折扣），则必须使用，不能再更换折扣类型。
-     * minimum: 300
-     * maximum: 303
-     * @return type
-     */
+    /** 折扣类型： 1：合同折扣2：商务优惠3：合作伙伴授予折扣609：订单调价折扣 说明： 订单支付时，如果包含609折扣（订单调价折扣），则必须使用，不能再更换折扣类型。 minimum: 300 maximum: 303
+     * 
+     * @return type */
     public Integer getType() {
         return type;
     }
@@ -72,8 +49,6 @@ public class CouponSimpleInfoOrderPay  {
     public void setType(Integer type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +59,15 @@ public class CouponSimpleInfoOrderPay  {
             return false;
         }
         CouponSimpleInfoOrderPay couponSimpleInfoOrderPay = (CouponSimpleInfoOrderPay) o;
-        return Objects.equals(this.id, couponSimpleInfoOrderPay.id) &&
-            Objects.equals(this.type, couponSimpleInfoOrderPay.type);
+        return Objects.equals(this.id, couponSimpleInfoOrderPay.id)
+            && Objects.equals(this.type, couponSimpleInfoOrderPay.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +77,13 @@ public class CouponSimpleInfoOrderPay  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

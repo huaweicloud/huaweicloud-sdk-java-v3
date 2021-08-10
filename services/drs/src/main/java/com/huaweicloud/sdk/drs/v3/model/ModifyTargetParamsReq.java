@@ -1,44 +1,29 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.ParamsReqBean;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 修改数据库参数请求体
- */
-public class ModifyTargetParamsReq  {
+/** 修改数据库参数请求体 */
+public class ModifyTargetParamsReq {
 
-    /**
-     * 参数分组
-     */
+    /** 参数分组 */
     public static final class GroupEnum {
 
-        
-        /**
-         * Enum COMMON for value: "common"
-         */
+        /** Enum COMMON for value: "common" */
         public static final GroupEnum COMMON = new GroupEnum("common");
-        
-        /**
-         * Enum PERFORMANCE for value: "performance"
-         */
+
+        /** Enum PERFORMANCE for value: "performance" */
         public static final GroupEnum PERFORMANCE = new GroupEnum("performance");
-        
 
         private static final Map<String, GroupEnum> STATIC_FIELDS = createStaticFields();
 
@@ -67,7 +52,7 @@ public class ModifyTargetParamsReq  {
 
         @JsonCreator
         public static GroupEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             GroupEnum result = STATIC_FIELDS.get(value);
@@ -78,7 +63,7 @@ public class ModifyTargetParamsReq  {
         }
 
         public static GroupEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             GroupEnum result = STATIC_FIELDS.get(value);
@@ -102,30 +87,24 @@ public class ModifyTargetParamsReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group")
-    
+    @JsonProperty(value = "group")
+
     private GroupEnum group;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="params")
-    
+    @JsonProperty(value = "params")
+
     private List<ParamsReqBean> params = null;
-    
+
     public ModifyTargetParamsReq withGroup(GroupEnum group) {
         this.group = group;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数分组
-     * @return group
-     */
+    /** 参数分组
+     * 
+     * @return group */
     public GroupEnum getGroup() {
         return group;
     }
@@ -134,16 +113,13 @@ public class ModifyTargetParamsReq  {
         this.group = group;
     }
 
-    
-
     public ModifyTargetParamsReq withParams(List<ParamsReqBean> params) {
         this.params = params;
         return this;
     }
 
-    
     public ModifyTargetParamsReq addParamsItem(ParamsReqBean paramsItem) {
-        if(this.params == null) {
+        if (this.params == null) {
             this.params = new ArrayList<>();
         }
         this.params.add(paramsItem);
@@ -151,17 +127,16 @@ public class ModifyTargetParamsReq  {
     }
 
     public ModifyTargetParamsReq withParams(Consumer<List<ParamsReqBean>> paramsSetter) {
-        if(this.params == null) {
+        if (this.params == null) {
             this.params = new ArrayList<>();
         }
         paramsSetter.accept(this.params);
         return this;
     }
 
-    /**
-     * 修改的参数信息
-     * @return params
-     */
+    /** 修改的参数信息
+     * 
+     * @return params */
     public List<ParamsReqBean> getParams() {
         return params;
     }
@@ -169,8 +144,6 @@ public class ModifyTargetParamsReq  {
     public void setParams(List<ParamsReqBean> params) {
         this.params = params;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -181,13 +154,15 @@ public class ModifyTargetParamsReq  {
             return false;
         }
         ModifyTargetParamsReq modifyTargetParamsReq = (ModifyTargetParamsReq) o;
-        return Objects.equals(this.group, modifyTargetParamsReq.group) &&
-            Objects.equals(this.params, modifyTargetParamsReq.params);
+        return Objects.equals(this.group, modifyTargetParamsReq.group)
+            && Objects.equals(this.params, modifyTargetParamsReq.params);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(group, params);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -197,16 +172,13 @@ public class ModifyTargetParamsReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

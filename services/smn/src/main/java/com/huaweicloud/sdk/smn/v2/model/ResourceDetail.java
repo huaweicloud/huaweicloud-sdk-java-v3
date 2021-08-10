@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.smn.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ResourceDetail
- */
-public class ResourceDetail  {
-
-
+/** ResourceDetail */
+public class ResourceDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="detailId")
-    
+    @JsonProperty(value = "detailId")
+
     private String detailId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic_urn")
-    
+    @JsonProperty(value = "topic_urn")
+
     private String topicUrn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="display_name")
-    
+    @JsonProperty(value = "display_name")
+
     private String displayName;
 
     public ResourceDetail withEnterpriseProjectId(String enterpriseProjectId) {
@@ -46,13 +33,9 @@ public class ResourceDetail  {
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -61,20 +44,14 @@ public class ResourceDetail  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public ResourceDetail withDetailId(String detailId) {
         this.detailId = detailId;
         return this;
     }
 
-    
-
-
-    /**
-     * 详情ID
-     * @return detailId
-     */
+    /** 详情ID
+     * 
+     * @return detailId */
     public String getDetailId() {
         return detailId;
     }
@@ -83,20 +60,14 @@ public class ResourceDetail  {
         this.detailId = detailId;
     }
 
-    
-
     public ResourceDetail withTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
         return this;
     }
 
-    
-
-
-    /**
-     * topic唯一标识
-     * @return topicUrn
-     */
+    /** topic唯一标识
+     * 
+     * @return topicUrn */
     public String getTopicUrn() {
         return topicUrn;
     }
@@ -105,20 +76,14 @@ public class ResourceDetail  {
         this.topicUrn = topicUrn;
     }
 
-    
-
     public ResourceDetail withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
     }
 
-    
-
-
-    /**
-     * 显示名
-     * @return displayName
-     */
+    /** 显示名
+     * 
+     * @return displayName */
     public String getDisplayName() {
         return displayName;
     }
@@ -126,8 +91,6 @@ public class ResourceDetail  {
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class ResourceDetail  {
             return false;
         }
         ResourceDetail resourceDetail = (ResourceDetail) o;
-        return Objects.equals(this.enterpriseProjectId, resourceDetail.enterpriseProjectId) &&
-            Objects.equals(this.detailId, resourceDetail.detailId) &&
-            Objects.equals(this.topicUrn, resourceDetail.topicUrn) &&
-            Objects.equals(this.displayName, resourceDetail.displayName);
+        return Objects.equals(this.enterpriseProjectId, resourceDetail.enterpriseProjectId)
+            && Objects.equals(this.detailId, resourceDetail.detailId)
+            && Objects.equals(this.topicUrn, resourceDetail.topicUrn)
+            && Objects.equals(this.displayName, resourceDetail.displayName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(enterpriseProjectId, detailId, topicUrn, displayName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class ResourceDetail  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

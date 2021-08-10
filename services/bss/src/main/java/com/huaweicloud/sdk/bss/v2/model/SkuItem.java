@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * SkuItem
- */
-public class SkuItem  {
-
-
+/** SkuItem */
+public class SkuItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
-    
+    @JsonProperty(value = "product_id")
+
     private String productId;
 
     public SkuItem withProductId(String productId) {
@@ -28,13 +18,9 @@ public class SkuItem  {
         return this;
     }
 
-    
-
-
-    /**
-     * 库存产品的ID。
-     * @return productId
-     */
+    /** 库存产品的ID。
+     * 
+     * @return productId */
     public String getProductId() {
         return productId;
     }
@@ -42,8 +28,6 @@ public class SkuItem  {
     public void setProductId(String productId) {
         this.productId = productId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class SkuItem  {
         SkuItem skuItem = (SkuItem) o;
         return Objects.equals(this.productId, skuItem.productId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(productId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class SkuItem  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

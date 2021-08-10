@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.ScalingConfiguration;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowScalingConfigResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_configuration")
-    
+    @JsonProperty(value = "scaling_configuration")
+
     private ScalingConfiguration scalingConfiguration;
 
     public ShowScalingConfigResponse withScalingConfiguration(ScalingConfiguration scalingConfiguration) {
@@ -31,20 +20,19 @@ public class ShowScalingConfigResponse extends SdkResponse {
         return this;
     }
 
-    public ShowScalingConfigResponse withScalingConfiguration(Consumer<ScalingConfiguration> scalingConfigurationSetter) {
-        if(this.scalingConfiguration == null ){
+    public ShowScalingConfigResponse withScalingConfiguration(
+        Consumer<ScalingConfiguration> scalingConfigurationSetter) {
+        if (this.scalingConfiguration == null) {
             this.scalingConfiguration = new ScalingConfiguration();
             scalingConfigurationSetter.accept(this.scalingConfiguration);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get scalingConfiguration
-     * @return scalingConfiguration
-     */
+    /** Get scalingConfiguration
+     * 
+     * @return scalingConfiguration */
     public ScalingConfiguration getScalingConfiguration() {
         return scalingConfiguration;
     }
@@ -52,8 +40,6 @@ public class ShowScalingConfigResponse extends SdkResponse {
     public void setScalingConfiguration(ScalingConfiguration scalingConfiguration) {
         this.scalingConfiguration = scalingConfiguration;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +52,12 @@ public class ShowScalingConfigResponse extends SdkResponse {
         ShowScalingConfigResponse showScalingConfigResponse = (ShowScalingConfigResponse) o;
         return Objects.equals(this.scalingConfiguration, showScalingConfigResponse.scalingConfiguration);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(scalingConfiguration);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +66,13 @@ public class ShowScalingConfigResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 创建设备组请求结构体
- */
-public class AddDeviceGroupDTO  {
-
-
+/** 创建设备组请求结构体 */
+public class AddDeviceGroupDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="super_group_id")
-    
+    @JsonProperty(value = "super_group_id")
+
     private String superGroupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
     public AddDeviceGroupDTO withName(String name) {
@@ -46,13 +33,9 @@ public class AddDeviceGroupDTO  {
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：设备组名称，单个资源空间下不可重复。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_? '#().,&%@!-等字符的组合。
-     * @return name
-     */
+    /** **参数说明**：设备组名称，单个资源空间下不可重复。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_? '#().,&%@!-等字符的组合。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -61,20 +44,14 @@ public class AddDeviceGroupDTO  {
         this.name = name;
     }
 
-    
-
     public AddDeviceGroupDTO withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：设备组描述。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_? '#().,&%@!-等字符的组合。
-     * @return description
-     */
+    /** **参数说明**：设备组描述。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_? '#().,&%@!-等字符的组合。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -83,20 +60,14 @@ public class AddDeviceGroupDTO  {
         this.description = description;
     }
 
-    
-
     public AddDeviceGroupDTO withSuperGroupId(String superGroupId) {
         this.superGroupId = superGroupId;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：父设备组ID，携带该参数时表示在该设备组下创建一个子设备组。 **取值范围**：长度不超过36，十六进制字符串和连接符（-）的组合。
-     * @return superGroupId
-     */
+    /** **参数说明**：父设备组ID，携带该参数时表示在该设备组下创建一个子设备组。 **取值范围**：长度不超过36，十六进制字符串和连接符（-）的组合。
+     * 
+     * @return superGroupId */
     public String getSuperGroupId() {
         return superGroupId;
     }
@@ -105,20 +76,15 @@ public class AddDeviceGroupDTO  {
         this.superGroupId = superGroupId;
     }
 
-    
-
     public AddDeviceGroupDTO withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：资源空间ID。此参数为非必选参数，存在多资源空间的用户需要使用该接口时，建议携带该参数指定创建的设备组归属到哪个资源空间下，否则创建的设备组将会归属到[默认资源空间](https://support.huaweicloud.com/usermanual-iothub/iot_01_0006.html#section0)下。 **取值范围**：长度不超过36，只允许字母、数字、下划线（_）、连接符（-）的组合。
-     * @return appId
-     */
+    /** **参数说明**：资源空间ID。此参数为非必选参数，存在多资源空间的用户需要使用该接口时，建议携带该参数指定创建的设备组归属到哪个资源空间下，否则创建的设备组将会归属到[默认资源空间](https://support.huaweicloud.com/usermanual-iothub/iot_01_0006.html#section0)下。
+     * **取值范围**：长度不超过36，只允许字母、数字、下划线（_）、连接符（-）的组合。
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -126,8 +92,6 @@ public class AddDeviceGroupDTO  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +102,17 @@ public class AddDeviceGroupDTO  {
             return false;
         }
         AddDeviceGroupDTO addDeviceGroupDTO = (AddDeviceGroupDTO) o;
-        return Objects.equals(this.name, addDeviceGroupDTO.name) &&
-            Objects.equals(this.description, addDeviceGroupDTO.description) &&
-            Objects.equals(this.superGroupId, addDeviceGroupDTO.superGroupId) &&
-            Objects.equals(this.appId, addDeviceGroupDTO.appId);
+        return Objects.equals(this.name, addDeviceGroupDTO.name)
+            && Objects.equals(this.description, addDeviceGroupDTO.description)
+            && Objects.equals(this.superGroupId, addDeviceGroupDTO.superGroupId)
+            && Objects.equals(this.appId, addDeviceGroupDTO.appId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, description, superGroupId, appId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +124,13 @@ public class AddDeviceGroupDTO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

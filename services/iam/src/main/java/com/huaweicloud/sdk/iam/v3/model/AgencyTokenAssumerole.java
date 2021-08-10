@@ -1,38 +1,28 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class AgencyTokenAssumerole  {
-
-
+public class AgencyTokenAssumerole {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_name")
-    
+    @JsonProperty(value = "domain_name")
+
     private String domainName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="agency_name")
-    
+    @JsonProperty(value = "agency_name")
+
     private String agencyName;
 
     public AgencyTokenAssumerole withDomainId(String domainId) {
@@ -40,13 +30,9 @@ public class AgencyTokenAssumerole  {
         return this;
     }
 
-    
-
-
-    /**
-     * 委托方A的账号ID。“domain_id”与“domain_name”至少填写一个。
-     * @return domainId
-     */
+    /** 委托方A的账号ID。“domain_id”与“domain_name”至少填写一个。
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -55,20 +41,14 @@ public class AgencyTokenAssumerole  {
         this.domainId = domainId;
     }
 
-    
-
     public AgencyTokenAssumerole withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
     }
 
-    
-
-
-    /**
-     * 委托方A的账号名称。“domain_id”与“domain_name”至少填写一个。
-     * @return domainName
-     */
+    /** 委托方A的账号名称。“domain_id”与“domain_name”至少填写一个。
+     * 
+     * @return domainName */
     public String getDomainName() {
         return domainName;
     }
@@ -77,20 +57,14 @@ public class AgencyTokenAssumerole  {
         this.domainName = domainName;
     }
 
-    
-
     public AgencyTokenAssumerole withAgencyName(String agencyName) {
         this.agencyName = agencyName;
         return this;
     }
 
-    
-
-
-    /**
-     * 委托方A创建的委托的名称。
-     * @return agencyName
-     */
+    /** 委托方A创建的委托的名称。
+     * 
+     * @return agencyName */
     public String getAgencyName() {
         return agencyName;
     }
@@ -98,8 +72,6 @@ public class AgencyTokenAssumerole  {
     public void setAgencyName(String agencyName) {
         this.agencyName = agencyName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +82,16 @@ public class AgencyTokenAssumerole  {
             return false;
         }
         AgencyTokenAssumerole agencyTokenAssumerole = (AgencyTokenAssumerole) o;
-        return Objects.equals(this.domainId, agencyTokenAssumerole.domainId) &&
-            Objects.equals(this.domainName, agencyTokenAssumerole.domainName) &&
-            Objects.equals(this.agencyName, agencyTokenAssumerole.agencyName);
+        return Objects.equals(this.domainId, agencyTokenAssumerole.domainId)
+            && Objects.equals(this.domainName, agencyTokenAssumerole.domainName)
+            && Objects.equals(this.agencyName, agencyTokenAssumerole.agencyName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domainId, domainName, agencyName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +102,13 @@ public class AgencyTokenAssumerole  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

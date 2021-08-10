@@ -1,51 +1,39 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.AssumeroleSessionuser;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class IdentityAssumerole  {
-
-
+public class IdentityAssumerole {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="agency_name")
-    
+    @JsonProperty(value = "agency_name")
+
     private String agencyName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_name")
-    
+    @JsonProperty(value = "domain_name")
+
     private String domainName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="duration_seconds")
-    
+    @JsonProperty(value = "duration_seconds")
+
     private Integer durationSeconds;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="session_user")
-    
+    @JsonProperty(value = "session_user")
+
     private AssumeroleSessionuser sessionUser;
 
     public IdentityAssumerole withAgencyName(String agencyName) {
@@ -53,13 +41,9 @@ public class IdentityAssumerole  {
         return this;
     }
 
-    
-
-
-    /**
-     * 委托名。
-     * @return agencyName
-     */
+    /** 委托名。
+     * 
+     * @return agencyName */
     public String getAgencyName() {
         return agencyName;
     }
@@ -68,20 +52,14 @@ public class IdentityAssumerole  {
         this.agencyName = agencyName;
     }
 
-    
-
     public IdentityAssumerole withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
     }
 
-    
-
-
-    /**
-     * 委托方的账号ID。“domain_id”与“domain_name”至少填写一个。
-     * @return domainId
-     */
+    /** 委托方的账号ID。“domain_id”与“domain_name”至少填写一个。
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -90,20 +68,14 @@ public class IdentityAssumerole  {
         this.domainId = domainId;
     }
 
-    
-
     public IdentityAssumerole withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
     }
 
-    
-
-
-    /**
-     * 委托方的账号名。“domain_id”与“domain_name”至少填写一个。
-     * @return domainName
-     */
+    /** 委托方的账号名。“domain_id”与“domain_name”至少填写一个。
+     * 
+     * @return domainName */
     public String getDomainName() {
         return domainName;
     }
@@ -112,22 +84,14 @@ public class IdentityAssumerole  {
         this.domainName = domainName;
     }
 
-    
-
     public IdentityAssumerole withDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
         return this;
     }
 
-    
-
-
-    /**
-     * AK/SK和securitytoken的有效期，时间单位为秒。取值范围：15min ~ 24h ，默认为15min。
-     * minimum: 900
-     * maximum: 86400
-     * @return durationSeconds
-     */
+    /** AK/SK和securitytoken的有效期，时间单位为秒。取值范围：15min ~ 24h ，默认为15min。 minimum: 900 maximum: 86400
+     * 
+     * @return durationSeconds */
     public Integer getDurationSeconds() {
         return durationSeconds;
     }
@@ -136,27 +100,23 @@ public class IdentityAssumerole  {
         this.durationSeconds = durationSeconds;
     }
 
-    
-
     public IdentityAssumerole withSessionUser(AssumeroleSessionuser sessionUser) {
         this.sessionUser = sessionUser;
         return this;
     }
 
     public IdentityAssumerole withSessionUser(Consumer<AssumeroleSessionuser> sessionUserSetter) {
-        if(this.sessionUser == null ){
+        if (this.sessionUser == null) {
             this.sessionUser = new AssumeroleSessionuser();
             sessionUserSetter.accept(this.sessionUser);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get sessionUser
-     * @return sessionUser
-     */
+    /** Get sessionUser
+     * 
+     * @return sessionUser */
     public AssumeroleSessionuser getSessionUser() {
         return sessionUser;
     }
@@ -164,8 +124,6 @@ public class IdentityAssumerole  {
     public void setSessionUser(AssumeroleSessionuser sessionUser) {
         this.sessionUser = sessionUser;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -176,16 +134,18 @@ public class IdentityAssumerole  {
             return false;
         }
         IdentityAssumerole identityAssumerole = (IdentityAssumerole) o;
-        return Objects.equals(this.agencyName, identityAssumerole.agencyName) &&
-            Objects.equals(this.domainId, identityAssumerole.domainId) &&
-            Objects.equals(this.domainName, identityAssumerole.domainName) &&
-            Objects.equals(this.durationSeconds, identityAssumerole.durationSeconds) &&
-            Objects.equals(this.sessionUser, identityAssumerole.sessionUser);
+        return Objects.equals(this.agencyName, identityAssumerole.agencyName)
+            && Objects.equals(this.domainId, identityAssumerole.domainId)
+            && Objects.equals(this.domainName, identityAssumerole.domainName)
+            && Objects.equals(this.durationSeconds, identityAssumerole.durationSeconds)
+            && Objects.equals(this.sessionUser, identityAssumerole.sessionUser);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(agencyName, domainId, domainName, durationSeconds, sessionUser);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -198,16 +158,13 @@ public class IdentityAssumerole  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

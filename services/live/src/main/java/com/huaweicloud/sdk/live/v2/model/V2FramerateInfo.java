@@ -1,72 +1,54 @@
 package com.huaweicloud.sdk.live.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 实时帧率
- */
-public class V2FramerateInfo  {
-
-
+/** 实时帧率 */
+public class V2FramerateInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publish_domain")
-    
+    @JsonProperty(value = "publish_domain")
+
     private String publishDomain;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app")
-    
+    @JsonProperty(value = "app")
+
     private String app;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stream")
-    
+    @JsonProperty(value = "stream")
+
     private String stream;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_list")
-    
+    @JsonProperty(value = "data_list")
+
     private List<Long> dataList = null;
-    
+
     public V2FramerateInfo withPublishDomain(String publishDomain) {
         this.publishDomain = publishDomain;
         return this;
     }
 
-    
-
-
-    /**
-     * 推流域名。
-     * @return publishDomain
-     */
+    /** 推流域名。
+     * 
+     * @return publishDomain */
     public String getPublishDomain() {
         return publishDomain;
     }
@@ -75,20 +57,14 @@ public class V2FramerateInfo  {
         this.publishDomain = publishDomain;
     }
 
-    
-
     public V2FramerateInfo withApp(String app) {
         this.app = app;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名称。
-     * @return app
-     */
+    /** 应用名称。
+     * 
+     * @return app */
     public String getApp() {
         return app;
     }
@@ -97,20 +73,14 @@ public class V2FramerateInfo  {
         this.app = app;
     }
 
-    
-
     public V2FramerateInfo withStream(String stream) {
         this.stream = stream;
         return this;
     }
 
-    
-
-
-    /**
-     * 流名。
-     * @return stream
-     */
+    /** 流名。
+     * 
+     * @return stream */
     public String getStream() {
         return stream;
     }
@@ -119,20 +89,14 @@ public class V2FramerateInfo  {
         this.stream = stream;
     }
 
-    
-
     public V2FramerateInfo withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 采样开始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。
-     * @return startTime
-     */
+    /** 采样开始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -141,20 +105,14 @@ public class V2FramerateInfo  {
         this.startTime = startTime;
     }
 
-    
-
     public V2FramerateInfo withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 采样结束时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。
-     * @return endTime
-     */
+    /** 采样结束时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -163,16 +121,13 @@ public class V2FramerateInfo  {
         this.endTime = endTime;
     }
 
-    
-
     public V2FramerateInfo withDataList(List<Long> dataList) {
         this.dataList = dataList;
         return this;
     }
 
-    
     public V2FramerateInfo addDataListItem(Long dataListItem) {
-        if(this.dataList == null) {
+        if (this.dataList == null) {
             this.dataList = new ArrayList<>();
         }
         this.dataList.add(dataListItem);
@@ -180,17 +135,16 @@ public class V2FramerateInfo  {
     }
 
     public V2FramerateInfo withDataList(Consumer<List<Long>> dataListSetter) {
-        if(this.dataList == null) {
+        if (this.dataList == null) {
             this.dataList = new ArrayList<>();
         }
         dataListSetter.accept(this.dataList);
         return this;
     }
 
-    /**
-     * 帧率信息列表。
-     * @return dataList
-     */
+    /** 帧率信息列表。
+     * 
+     * @return dataList */
     public List<Long> getDataList() {
         return dataList;
     }
@@ -198,8 +152,6 @@ public class V2FramerateInfo  {
     public void setDataList(List<Long> dataList) {
         this.dataList = dataList;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -210,17 +162,18 @@ public class V2FramerateInfo  {
             return false;
         }
         V2FramerateInfo v2FramerateInfo = (V2FramerateInfo) o;
-        return Objects.equals(this.publishDomain, v2FramerateInfo.publishDomain) &&
-            Objects.equals(this.app, v2FramerateInfo.app) &&
-            Objects.equals(this.stream, v2FramerateInfo.stream) &&
-            Objects.equals(this.startTime, v2FramerateInfo.startTime) &&
-            Objects.equals(this.endTime, v2FramerateInfo.endTime) &&
-            Objects.equals(this.dataList, v2FramerateInfo.dataList);
+        return Objects.equals(this.publishDomain, v2FramerateInfo.publishDomain)
+            && Objects.equals(this.app, v2FramerateInfo.app) && Objects.equals(this.stream, v2FramerateInfo.stream)
+            && Objects.equals(this.startTime, v2FramerateInfo.startTime)
+            && Objects.equals(this.endTime, v2FramerateInfo.endTime)
+            && Objects.equals(this.dataList, v2FramerateInfo.dataList);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(publishDomain, app, stream, startTime, endTime, dataList);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -234,16 +187,13 @@ public class V2FramerateInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,87 +1,56 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="visibility")
-    
+    @JsonProperty(value = "visibility")
+
     private String visibility;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protected")
-    
+    @JsonProperty(value = "protected")
+
     private Boolean _protected;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="container_format")
-    
+    @JsonProperty(value = "container_format")
+
     private String containerFormat;
-    /**
-     * 镜像文件格式。目前支持vhd、zvhd、raw、qcow2。默认值是vhd。
-     */
+
+    /** 镜像文件格式。目前支持vhd、zvhd、raw、qcow2。默认值是vhd。 */
     public static final class DiskFormatEnum {
 
-        
-        /**
-         * Enum VHD for value: "vhd"
-         */
+        /** Enum VHD for value: "vhd" */
         public static final DiskFormatEnum VHD = new DiskFormatEnum("vhd");
-        
-        /**
-         * Enum ZVHD for value: "zvhd"
-         */
+
+        /** Enum ZVHD for value: "zvhd" */
         public static final DiskFormatEnum ZVHD = new DiskFormatEnum("zvhd");
-        
-        /**
-         * Enum RAW for value: "raw"
-         */
+
+        /** Enum RAW for value: "raw" */
         public static final DiskFormatEnum RAW = new DiskFormatEnum("raw");
-        
-        /**
-         * Enum QCOW2 for value: "qcow2"
-         */
+
+        /** Enum QCOW2 for value: "qcow2" */
         public static final DiskFormatEnum QCOW2 = new DiskFormatEnum("qcow2");
-        
 
         private static final Map<String, DiskFormatEnum> STATIC_FIELDS = createStaticFields();
 
@@ -112,7 +81,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
         @JsonCreator
         public static DiskFormatEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DiskFormatEnum result = STATIC_FIELDS.get(value);
@@ -123,7 +92,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         }
 
         public static DiskFormatEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DiskFormatEnum result = STATIC_FIELDS.get(value);
@@ -147,60 +116,43 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disk_format")
-    
+    @JsonProperty(value = "disk_format")
+
     private DiskFormatEnum diskFormat;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<String> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="min_ram")
-    
+    @JsonProperty(value = "min_ram")
+
     private Integer minRam;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="min_disk")
-    
+    @JsonProperty(value = "min_disk")
+
     private Integer minDisk;
-    /**
-     * 镜像状态。取值如下：queued：表示镜像元数据已经创建成功，等待上传镜像文件。saving：表示镜像正在上传文件到后端存储。deleted：表示镜像已经删除。killed：表示镜像上传错误。active：表示镜像可以正常使用。
-     */
+
+    /** 镜像状态。取值如下：queued：表示镜像元数据已经创建成功，等待上传镜像文件。saving：表示镜像正在上传文件到后端存储。deleted：表示镜像已经删除。killed：表示镜像上传错误。active：表示镜像可以正常使用。 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum QUEUED for value: "queued"
-         */
+        /** Enum QUEUED for value: "queued" */
         public static final StatusEnum QUEUED = new StatusEnum("queued");
-        
-        /**
-         * Enum SAVING for value: "saving"
-         */
+
+        /** Enum SAVING for value: "saving" */
         public static final StatusEnum SAVING = new StatusEnum("saving");
-        
-        /**
-         * Enum DELETED for value: "deleted"
-         */
+
+        /** Enum DELETED for value: "deleted" */
         public static final StatusEnum DELETED = new StatusEnum("deleted");
-        
-        /**
-         * Enum KILLED for value: "killed"
-         */
+
+        /** Enum KILLED for value: "killed" */
         public static final StatusEnum KILLED = new StatusEnum("killed");
-        
-        /**
-         * Enum ACTIVE for value: "active"
-         */
+
+        /** Enum ACTIVE for value: "active" */
         public static final StatusEnum ACTIVE = new StatusEnum("active");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -232,7 +184,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -243,7 +195,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -267,92 +219,72 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private String updatedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="self")
-    
+    @JsonProperty(value = "self")
+
     private String self;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file")
-    
+    @JsonProperty(value = "file")
+
     private String file;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="schema")
-    
+    @JsonProperty(value = "schema")
+
     private String schema;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__image_source_type")
-    
+    @JsonProperty(value = "__image_source_type")
+
     private String imageSourceType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__image_size")
-    
+    @JsonProperty(value = "__image_size")
+
     private String imageSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__isregistered")
-    
+    @JsonProperty(value = "__isregistered")
+
     private String isregistered;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__os_version")
-    
+    @JsonProperty(value = "__os_version")
+
     private String osVersion;
-    /**
-     * 镜像的操作系统类型，取值由__os_version确定。支持Windows、Linux和other。
-     */
+
+    /** 镜像的操作系统类型，取值由__os_version确定。支持Windows、Linux和other。 */
     public static final class OsTypeEnum {
 
-        
-        /**
-         * Enum WINDOWS for value: "Windows"
-         */
+        /** Enum WINDOWS for value: "Windows" */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("Windows");
-        
-        /**
-         * Enum LINUX for value: "Linux"
-         */
+
+        /** Enum LINUX for value: "Linux" */
         public static final OsTypeEnum LINUX = new OsTypeEnum("Linux");
-        
-        /**
-         * Enum OTHER for value: "other"
-         */
+
+        /** Enum OTHER for value: "other" */
         public static final OsTypeEnum OTHER = new OsTypeEnum("other");
-        
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -382,7 +314,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
         @JsonCreator
         public static OsTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsTypeEnum result = STATIC_FIELDS.get(value);
@@ -393,7 +325,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         }
 
         public static OsTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsTypeEnum result = STATIC_FIELDS.get(value);
@@ -417,33 +349,24 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__os_type")
-    
+    @JsonProperty(value = "__os_type")
+
     private OsTypeEnum osType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__platform")
-    
+    @JsonProperty(value = "__platform")
+
     private String platform;
-    /**
-     * 表示操作系统位数。取值由__os_version确定，取值为32或64。
-     */
+
+    /** 表示操作系统位数。取值由__os_version确定，取值为32或64。 */
     public static final class OsBitEnum {
 
-        
-        /**
-         * Enum _32 for value: "32"
-         */
+        /** Enum _32 for value: "32" */
         public static final OsBitEnum _32 = new OsBitEnum("32");
-        
-        /**
-         * Enum _64 for value: "64"
-         */
+
+        /** Enum _64 for value: "64" */
         public static final OsBitEnum _64 = new OsBitEnum("64");
-        
 
         private static final Map<String, OsBitEnum> STATIC_FIELDS = createStaticFields();
 
@@ -472,7 +395,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
         @JsonCreator
         public static OsBitEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsBitEnum result = STATIC_FIELDS.get(value);
@@ -483,7 +406,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         }
 
         public static OsBitEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsBitEnum result = STATIC_FIELDS.get(value);
@@ -507,38 +430,27 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__os_bit")
-    
+    @JsonProperty(value = "__os_bit")
+
     private OsBitEnum osBit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__imagetype")
-    
+    @JsonProperty(value = "__imagetype")
+
     private String imagetype;
-    /**
-     * 平台类型。镜像使用环境类型：FusionCompute、Ironic、DataImage。如果是云主机云服务器镜像，则取值为FusionCompute。如果是数据卷镜像则取值是DataImage。如果是物理机裸金属服务器镜像，则取值是Ironic。
-     */
+
+    /** 平台类型。镜像使用环境类型：FusionCompute、Ironic、DataImage。如果是云主机云服务器镜像，则取值为FusionCompute。如果是数据卷镜像则取值是DataImage。如果是物理机裸金属服务器镜像，则取值是Ironic。 */
     public static final class VirtualEnvTypeEnum {
 
-        
-        /**
-         * Enum FUSIONCOMPUTE for value: "FusionCompute"
-         */
+        /** Enum FUSIONCOMPUTE for value: "FusionCompute" */
         public static final VirtualEnvTypeEnum FUSIONCOMPUTE = new VirtualEnvTypeEnum("FusionCompute");
-        
-        /**
-         * Enum IRONIC for value: "Ironic"
-         */
+
+        /** Enum IRONIC for value: "Ironic" */
         public static final VirtualEnvTypeEnum IRONIC = new VirtualEnvTypeEnum("Ironic");
-        
-        /**
-         * Enum DATAIMAGE for value: "DataImage"
-         */
+
+        /** Enum DATAIMAGE for value: "DataImage" */
         public static final VirtualEnvTypeEnum DATAIMAGE = new VirtualEnvTypeEnum("DataImage");
-        
 
         private static final Map<String, VirtualEnvTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -568,7 +480,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
 
         @JsonCreator
         public static VirtualEnvTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             VirtualEnvTypeEnum result = STATIC_FIELDS.get(value);
@@ -579,7 +491,7 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         }
 
         public static VirtualEnvTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             VirtualEnvTypeEnum result = STATIC_FIELDS.get(value);
@@ -603,46 +515,39 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="virtual_env_type")
-    
+    @JsonProperty(value = "virtual_env_type")
+
     private VirtualEnvTypeEnum virtualEnvType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="owner")
-    
+    @JsonProperty(value = "owner")
+
     private String owner;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="virtual_size")
-    
+    @JsonProperty(value = "virtual_size")
+
     private Integer virtualSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="properties")
-    
+    @JsonProperty(value = "properties")
+
     private Object properties;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__root_origin")
-    
+    @JsonProperty(value = "__root_origin")
+
     private String rootOrigin;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="checksum")
-    
+    @JsonProperty(value = "checksum")
+
     private String checksum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Long size;
 
     public GlanceCreateImageMetadataResponse withVisibility(String visibility) {
@@ -650,13 +555,9 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 其他租户是否可见。取值为private。
-     * @return visibility
-     */
+    /** 其他租户是否可见。取值为private。
+     * 
+     * @return visibility */
     public String getVisibility() {
         return visibility;
     }
@@ -665,20 +566,14 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.visibility = visibility;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像名称，如果未指定name的取值，则默认为空，但是使用该镜像创建虚拟机会失败。名称的长度为1～128位。
-     * @return name
-     */
+    /** 镜像名称，如果未指定name的取值，则默认为空，但是使用该镜像创建虚拟机会失败。名称的长度为1～128位。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -687,20 +582,14 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withProtected(Boolean _protected) {
         this._protected = _protected;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像是否被保护，保护后的镜像不可删除。取值为false
-     * @return _protected
-     */
+    /** 镜像是否被保护，保护后的镜像不可删除。取值为false
+     * 
+     * @return _protected */
     public Boolean getProtected() {
         return _protected;
     }
@@ -709,20 +598,14 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this._protected = _protected;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withContainerFormat(String containerFormat) {
         this.containerFormat = containerFormat;
         return this;
     }
 
-    
-
-
-    /**
-     * 容器格式。取值为bare。
-     * @return containerFormat
-     */
+    /** 容器格式。取值为bare。
+     * 
+     * @return containerFormat */
     public String getContainerFormat() {
         return containerFormat;
     }
@@ -731,20 +614,14 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.containerFormat = containerFormat;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withDiskFormat(DiskFormatEnum diskFormat) {
         this.diskFormat = diskFormat;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像文件格式。目前支持vhd、zvhd、raw、qcow2。默认值是vhd。
-     * @return diskFormat
-     */
+    /** 镜像文件格式。目前支持vhd、zvhd、raw、qcow2。默认值是vhd。
+     * 
+     * @return diskFormat */
     public DiskFormatEnum getDiskFormat() {
         return diskFormat;
     }
@@ -753,16 +630,13 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.diskFormat = diskFormat;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withTags(List<String> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public GlanceCreateImageMetadataResponse addTagsItem(String tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -770,17 +644,16 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     }
 
     public GlanceCreateImageMetadataResponse withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 镜像标签列表。长度为1～255位。
-     * @return tags
-     */
+    /** 镜像标签列表。长度为1～255位。
+     * 
+     * @return tags */
     public List<String> getTags() {
         return tags;
     }
@@ -789,20 +662,14 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.tags = tags;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withMinRam(Integer minRam) {
         this.minRam = minRam;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像运行最小内存，单位为MB。取值参考ECS规格限制，一般设置为0。云服务器的规格限制，请参见规格清单。
-     * @return minRam
-     */
+    /** 镜像运行最小内存，单位为MB。取值参考ECS规格限制，一般设置为0。云服务器的规格限制，请参见规格清单。
+     * 
+     * @return minRam */
     public Integer getMinRam() {
         return minRam;
     }
@@ -811,22 +678,14 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.minRam = minRam;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withMinDisk(Integer minDisk) {
         this.minDisk = minDisk;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像运行需要的最小磁盘容量，单位为GB 。取值为40～1024GB。必须大于镜像系统盘容量，否则创建云主机云服务器可能失败。
-     * minimum: 40
-     * maximum: 1024
-     * @return minDisk
-     */
+    /** 镜像运行需要的最小磁盘容量，单位为GB 。取值为40～1024GB。必须大于镜像系统盘容量，否则创建云主机云服务器可能失败。 minimum: 40 maximum: 1024
+     * 
+     * @return minDisk */
     public Integer getMinDisk() {
         return minDisk;
     }
@@ -835,20 +694,14 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.minDisk = minDisk;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像状态。取值如下：queued：表示镜像元数据已经创建成功，等待上传镜像文件。saving：表示镜像正在上传文件到后端存储。deleted：表示镜像已经删除。killed：表示镜像上传错误。active：表示镜像可以正常使用。
-     * @return status
-     */
+    /** 镜像状态。取值如下：queued：表示镜像元数据已经创建成功，等待上传镜像文件。saving：表示镜像正在上传文件到后端存储。deleted：表示镜像已经删除。killed：表示镜像上传错误。active：表示镜像可以正常使用。
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -857,20 +710,14 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间。格式为UTC时间。
-     * @return createdAt
-     */
+    /** 创建时间。格式为UTC时间。
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -879,20 +726,14 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.createdAt = createdAt;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间。格式为UTC时间。
-     * @return updatedAt
-     */
+    /** 更新时间。格式为UTC时间。
+     * 
+     * @return updatedAt */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -901,20 +742,14 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.updatedAt = updatedAt;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withSelf(String self) {
         this.self = self;
         return this;
     }
 
-    
-
-
-    /**
-     * 本镜像链接。
-     * @return self
-     */
+    /** 本镜像链接。
+     * 
+     * @return self */
     public String getSelf() {
         return self;
     }
@@ -923,20 +758,14 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.self = self;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像ID，用户调用创建镜像接口后，需保存该镜像的ID，用来调用上传镜像接口完成镜像上传。
-     * @return id
-     */
+    /** 镜像ID，用户调用创建镜像接口后，需保存该镜像的ID，用来调用上传镜像接口完成镜像上传。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -945,20 +774,14 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withFile(String file) {
         this.file = file;
         return this;
     }
 
-    
-
-
-    /**
-     * 上传下载镜像文件的地址链接。
-     * @return file
-     */
+    /** 上传下载镜像文件的地址链接。
+     * 
+     * @return file */
     public String getFile() {
         return file;
     }
@@ -967,20 +790,14 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.file = file;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withSchema(String schema) {
         this.schema = schema;
         return this;
     }
 
-    
-
-
-    /**
-     * 视图链接。
-     * @return schema
-     */
+    /** 视图链接。
+     * 
+     * @return schema */
     public String getSchema() {
         return schema;
     }
@@ -989,22 +806,16 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.schema = schema;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withImageSourceType(String imageSourceType) {
         this.imageSourceType = imageSourceType;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像后端存储类型，目前支持uds。
-     * @return imageSourceType
-     */
+    /** 镜像后端存储类型，目前支持uds。
+     * 
+     * @return imageSourceType */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__image_source_type")
+    @JsonProperty(value = "__image_source_type")
     public String getImageSourceType() {
         return imageSourceType;
     }
@@ -1013,22 +824,16 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.imageSourceType = imageSourceType;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withImageSize(String imageSize) {
         this.imageSize = imageSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像大小。单位为字节。
-     * @return imageSize
-     */
+    /** 镜像大小。单位为字节。
+     * 
+     * @return imageSize */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__image_size")
+    @JsonProperty(value = "__image_size")
     public String getImageSize() {
         return imageSize;
     }
@@ -1037,22 +842,16 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.imageSize = imageSize;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withIsregistered(String isregistered) {
         this.isregistered = isregistered;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像是否注册。只有已注册的镜像才能在Portal界面上查询到。取值为true。
-     * @return isregistered
-     */
+    /** 镜像是否注册。只有已注册的镜像才能在Portal界面上查询到。取值为true。
+     * 
+     * @return isregistered */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__isregistered")
+    @JsonProperty(value = "__isregistered")
     public String getIsregistered() {
         return isregistered;
     }
@@ -1061,22 +860,16 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.isregistered = isregistered;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withOsVersion(String osVersion) {
         this.osVersion = osVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像的操作系统具体版本。
-     * @return osVersion
-     */
+    /** 镜像的操作系统具体版本。
+     * 
+     * @return osVersion */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__os_version")
+    @JsonProperty(value = "__os_version")
     public String getOsVersion() {
         return osVersion;
     }
@@ -1085,22 +878,16 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.osVersion = osVersion;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withOsType(OsTypeEnum osType) {
         this.osType = osType;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像的操作系统类型，取值由__os_version确定。支持Windows、Linux和other。
-     * @return osType
-     */
+    /** 镜像的操作系统类型，取值由__os_version确定。支持Windows、Linux和other。
+     * 
+     * @return osType */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__os_type")
+    @JsonProperty(value = "__os_type")
     public OsTypeEnum getOsType() {
         return osType;
     }
@@ -1109,22 +896,16 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.osType = osType;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withPlatform(String platform) {
         this.platform = platform;
         return this;
     }
 
-    
-
-
-    /**
-     * 表示镜像支持的操作系统平台。取值由__os_version确定
-     * @return platform
-     */
+    /** 表示镜像支持的操作系统平台。取值由__os_version确定
+     * 
+     * @return platform */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__platform")
+    @JsonProperty(value = "__platform")
     public String getPlatform() {
         return platform;
     }
@@ -1133,22 +914,16 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.platform = platform;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withOsBit(OsBitEnum osBit) {
         this.osBit = osBit;
         return this;
     }
 
-    
-
-
-    /**
-     * 表示操作系统位数。取值由__os_version确定，取值为32或64。
-     * @return osBit
-     */
+    /** 表示操作系统位数。取值由__os_version确定，取值为32或64。
+     * 
+     * @return osBit */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__os_bit")
+    @JsonProperty(value = "__os_bit")
     public OsBitEnum getOsBit() {
         return osBit;
     }
@@ -1157,22 +932,16 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.osBit = osBit;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withImagetype(String imagetype) {
         this.imagetype = imagetype;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像类型。取值为private，表示私有镜像。
-     * @return imagetype
-     */
+    /** 镜像类型。取值为private，表示私有镜像。
+     * 
+     * @return imagetype */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__imagetype")
+    @JsonProperty(value = "__imagetype")
     public String getImagetype() {
         return imagetype;
     }
@@ -1181,20 +950,14 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.imagetype = imagetype;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withVirtualEnvType(VirtualEnvTypeEnum virtualEnvType) {
         this.virtualEnvType = virtualEnvType;
         return this;
     }
 
-    
-
-
-    /**
-     * 平台类型。镜像使用环境类型：FusionCompute、Ironic、DataImage。如果是云主机云服务器镜像，则取值为FusionCompute。如果是数据卷镜像则取值是DataImage。如果是物理机裸金属服务器镜像，则取值是Ironic。
-     * @return virtualEnvType
-     */
+    /** 平台类型。镜像使用环境类型：FusionCompute、Ironic、DataImage。如果是云主机云服务器镜像，则取值为FusionCompute。如果是数据卷镜像则取值是DataImage。如果是物理机裸金属服务器镜像，则取值是Ironic。
+     * 
+     * @return virtualEnvType */
     public VirtualEnvTypeEnum getVirtualEnvType() {
         return virtualEnvType;
     }
@@ -1203,20 +966,14 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.virtualEnvType = virtualEnvType;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withOwner(String owner) {
         this.owner = owner;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像所属项目ID。
-     * @return owner
-     */
+    /** 镜像所属项目ID。
+     * 
+     * @return owner */
     public String getOwner() {
         return owner;
     }
@@ -1225,20 +982,14 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.owner = owner;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withVirtualSize(Integer virtualSize) {
         this.virtualSize = virtualSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像虚拟大小。单位为字节。
-     * @return virtualSize
-     */
+    /** 镜像虚拟大小。单位为字节。
+     * 
+     * @return virtualSize */
     public Integer getVirtualSize() {
         return virtualSize;
     }
@@ -1247,20 +998,14 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.virtualSize = virtualSize;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withProperties(Object properties) {
         this.properties = properties;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像属性的集合，不表示具体的镜像属性
-     * @return properties
-     */
+    /** 镜像属性的集合，不表示具体的镜像属性
+     * 
+     * @return properties */
     public Object getProperties() {
         return properties;
     }
@@ -1269,22 +1014,16 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.properties = properties;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withRootOrigin(String rootOrigin) {
         this.rootOrigin = rootOrigin;
         return this;
     }
 
-    
-
-
-    /**
-     * 表示当前镜像来源是从外部导入。取值：file
-     * @return rootOrigin
-     */
+    /** 表示当前镜像来源是从外部导入。取值：file
+     * 
+     * @return rootOrigin */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__root_origin")
+    @JsonProperty(value = "__root_origin")
     public String getRootOrigin() {
         return rootOrigin;
     }
@@ -1293,20 +1032,14 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.rootOrigin = rootOrigin;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withChecksum(String checksum) {
         this.checksum = checksum;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像文件md5值。
-     * @return checksum
-     */
+    /** 镜像文件md5值。
+     * 
+     * @return checksum */
     public String getChecksum() {
         return checksum;
     }
@@ -1315,20 +1048,14 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         this.checksum = checksum;
     }
 
-    
-
     public GlanceCreateImageMetadataResponse withSize(Long size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 目前暂时不使用。
-     * @return size
-     */
+    /** 目前暂时不使用。
+     * 
+     * @return size */
     public Long getSize() {
         return size;
     }
@@ -1336,8 +1063,6 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     public void setSize(Long size) {
         this.size = size;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -1348,41 +1073,72 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
             return false;
         }
         GlanceCreateImageMetadataResponse glanceCreateImageMetadataResponse = (GlanceCreateImageMetadataResponse) o;
-        return Objects.equals(this.visibility, glanceCreateImageMetadataResponse.visibility) &&
-            Objects.equals(this.name, glanceCreateImageMetadataResponse.name) &&
-            Objects.equals(this._protected, glanceCreateImageMetadataResponse._protected) &&
-            Objects.equals(this.containerFormat, glanceCreateImageMetadataResponse.containerFormat) &&
-            Objects.equals(this.diskFormat, glanceCreateImageMetadataResponse.diskFormat) &&
-            Objects.equals(this.tags, glanceCreateImageMetadataResponse.tags) &&
-            Objects.equals(this.minRam, glanceCreateImageMetadataResponse.minRam) &&
-            Objects.equals(this.minDisk, glanceCreateImageMetadataResponse.minDisk) &&
-            Objects.equals(this.status, glanceCreateImageMetadataResponse.status) &&
-            Objects.equals(this.createdAt, glanceCreateImageMetadataResponse.createdAt) &&
-            Objects.equals(this.updatedAt, glanceCreateImageMetadataResponse.updatedAt) &&
-            Objects.equals(this.self, glanceCreateImageMetadataResponse.self) &&
-            Objects.equals(this.id, glanceCreateImageMetadataResponse.id) &&
-            Objects.equals(this.file, glanceCreateImageMetadataResponse.file) &&
-            Objects.equals(this.schema, glanceCreateImageMetadataResponse.schema) &&
-            Objects.equals(this.imageSourceType, glanceCreateImageMetadataResponse.imageSourceType) &&
-            Objects.equals(this.imageSize, glanceCreateImageMetadataResponse.imageSize) &&
-            Objects.equals(this.isregistered, glanceCreateImageMetadataResponse.isregistered) &&
-            Objects.equals(this.osVersion, glanceCreateImageMetadataResponse.osVersion) &&
-            Objects.equals(this.osType, glanceCreateImageMetadataResponse.osType) &&
-            Objects.equals(this.platform, glanceCreateImageMetadataResponse.platform) &&
-            Objects.equals(this.osBit, glanceCreateImageMetadataResponse.osBit) &&
-            Objects.equals(this.imagetype, glanceCreateImageMetadataResponse.imagetype) &&
-            Objects.equals(this.virtualEnvType, glanceCreateImageMetadataResponse.virtualEnvType) &&
-            Objects.equals(this.owner, glanceCreateImageMetadataResponse.owner) &&
-            Objects.equals(this.virtualSize, glanceCreateImageMetadataResponse.virtualSize) &&
-            Objects.equals(this.properties, glanceCreateImageMetadataResponse.properties) &&
-            Objects.equals(this.rootOrigin, glanceCreateImageMetadataResponse.rootOrigin) &&
-            Objects.equals(this.checksum, glanceCreateImageMetadataResponse.checksum) &&
-            Objects.equals(this.size, glanceCreateImageMetadataResponse.size);
+        return Objects.equals(this.visibility, glanceCreateImageMetadataResponse.visibility)
+            && Objects.equals(this.name, glanceCreateImageMetadataResponse.name)
+            && Objects.equals(this._protected, glanceCreateImageMetadataResponse._protected)
+            && Objects.equals(this.containerFormat, glanceCreateImageMetadataResponse.containerFormat)
+            && Objects.equals(this.diskFormat, glanceCreateImageMetadataResponse.diskFormat)
+            && Objects.equals(this.tags, glanceCreateImageMetadataResponse.tags)
+            && Objects.equals(this.minRam, glanceCreateImageMetadataResponse.minRam)
+            && Objects.equals(this.minDisk, glanceCreateImageMetadataResponse.minDisk)
+            && Objects.equals(this.status, glanceCreateImageMetadataResponse.status)
+            && Objects.equals(this.createdAt, glanceCreateImageMetadataResponse.createdAt)
+            && Objects.equals(this.updatedAt, glanceCreateImageMetadataResponse.updatedAt)
+            && Objects.equals(this.self, glanceCreateImageMetadataResponse.self)
+            && Objects.equals(this.id, glanceCreateImageMetadataResponse.id)
+            && Objects.equals(this.file, glanceCreateImageMetadataResponse.file)
+            && Objects.equals(this.schema, glanceCreateImageMetadataResponse.schema)
+            && Objects.equals(this.imageSourceType, glanceCreateImageMetadataResponse.imageSourceType)
+            && Objects.equals(this.imageSize, glanceCreateImageMetadataResponse.imageSize)
+            && Objects.equals(this.isregistered, glanceCreateImageMetadataResponse.isregistered)
+            && Objects.equals(this.osVersion, glanceCreateImageMetadataResponse.osVersion)
+            && Objects.equals(this.osType, glanceCreateImageMetadataResponse.osType)
+            && Objects.equals(this.platform, glanceCreateImageMetadataResponse.platform)
+            && Objects.equals(this.osBit, glanceCreateImageMetadataResponse.osBit)
+            && Objects.equals(this.imagetype, glanceCreateImageMetadataResponse.imagetype)
+            && Objects.equals(this.virtualEnvType, glanceCreateImageMetadataResponse.virtualEnvType)
+            && Objects.equals(this.owner, glanceCreateImageMetadataResponse.owner)
+            && Objects.equals(this.virtualSize, glanceCreateImageMetadataResponse.virtualSize)
+            && Objects.equals(this.properties, glanceCreateImageMetadataResponse.properties)
+            && Objects.equals(this.rootOrigin, glanceCreateImageMetadataResponse.rootOrigin)
+            && Objects.equals(this.checksum, glanceCreateImageMetadataResponse.checksum)
+            && Objects.equals(this.size, glanceCreateImageMetadataResponse.size);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(visibility, name, _protected, containerFormat, diskFormat, tags, minRam, minDisk, status, createdAt, updatedAt, self, id, file, schema, imageSourceType, imageSize, isregistered, osVersion, osType, platform, osBit, imagetype, virtualEnvType, owner, virtualSize, properties, rootOrigin, checksum, size);
+        return Objects.hash(visibility,
+            name,
+            _protected,
+            containerFormat,
+            diskFormat,
+            tags,
+            minRam,
+            minDisk,
+            status,
+            createdAt,
+            updatedAt,
+            self,
+            id,
+            file,
+            schema,
+            imageSourceType,
+            imageSize,
+            isregistered,
+            osVersion,
+            osType,
+            platform,
+            osBit,
+            imagetype,
+            virtualEnvType,
+            owner,
+            virtualSize,
+            properties,
+            rootOrigin,
+            checksum,
+            size);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1420,16 +1176,13 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

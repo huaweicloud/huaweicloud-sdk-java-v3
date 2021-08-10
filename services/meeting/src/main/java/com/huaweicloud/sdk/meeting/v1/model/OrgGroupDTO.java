@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 媒体接入(包括SBC和MCU)分组信息
- */
-public class OrgGroupDTO  {
-
-
+/** 媒体接入(包括SBC和MCU)分组信息 */
+public class OrgGroupDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="groupId")
-    
+    @JsonProperty(value = "groupId")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="groupName")
-    
+    @JsonProperty(value = "groupName")
+
     private String groupName;
 
     public OrgGroupDTO withGroupId(String groupId) {
@@ -34,13 +23,9 @@ public class OrgGroupDTO  {
         return this;
     }
 
-    
-
-
-    /**
-     * 分组Id
-     * @return groupId
-     */
+    /** 分组Id
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -49,20 +34,14 @@ public class OrgGroupDTO  {
         this.groupId = groupId;
     }
 
-    
-
     public OrgGroupDTO withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
     }
 
-    
-
-
-    /**
-     * 分组名称
-     * @return groupName
-     */
+    /** 分组名称
+     * 
+     * @return groupName */
     public String getGroupName() {
         return groupName;
     }
@@ -70,8 +49,6 @@ public class OrgGroupDTO  {
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class OrgGroupDTO  {
             return false;
         }
         OrgGroupDTO orgGroupDTO = (OrgGroupDTO) o;
-        return Objects.equals(this.groupId, orgGroupDTO.groupId) &&
-            Objects.equals(this.groupName, orgGroupDTO.groupName);
+        return Objects.equals(this.groupId, orgGroupDTO.groupId)
+            && Objects.equals(this.groupName, orgGroupDTO.groupName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(groupId, groupName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class OrgGroupDTO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

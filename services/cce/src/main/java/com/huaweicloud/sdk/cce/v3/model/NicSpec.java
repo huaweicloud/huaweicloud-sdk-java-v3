@@ -1,40 +1,29 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 主网卡的描述信息。  
- */
-public class NicSpec  {
-
-
+/** 主网卡的描述信息。 */
+public class NicSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnetId")
-    
+    @JsonProperty(value = "subnetId")
+
     private String subnetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fixedIps")
-    
+    @JsonProperty(value = "fixedIps")
+
     private List<String> fixedIps = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ipBlock")
-    
+    @JsonProperty(value = "ipBlock")
+
     private String ipBlock;
 
     public NicSpec withSubnetId(String subnetId) {
@@ -42,13 +31,9 @@ public class NicSpec  {
         return this;
     }
 
-    
-
-
-    /**
-     * 网卡所在子网的ID。  
-     * @return subnetId
-     */
+    /** 网卡所在子网的ID。
+     * 
+     * @return subnetId */
     public String getSubnetId() {
         return subnetId;
     }
@@ -57,16 +42,13 @@ public class NicSpec  {
         this.subnetId = subnetId;
     }
 
-    
-
     public NicSpec withFixedIps(List<String> fixedIps) {
         this.fixedIps = fixedIps;
         return this;
     }
 
-    
     public NicSpec addFixedIpsItem(String fixedIpsItem) {
-        if(this.fixedIps == null) {
+        if (this.fixedIps == null) {
             this.fixedIps = new ArrayList<>();
         }
         this.fixedIps.add(fixedIpsItem);
@@ -74,17 +56,16 @@ public class NicSpec  {
     }
 
     public NicSpec withFixedIps(Consumer<List<String>> fixedIpsSetter) {
-        if(this.fixedIps == null) {
+        if (this.fixedIps == null) {
             this.fixedIps = new ArrayList<>();
         }
         fixedIpsSetter.accept(this.fixedIps);
         return this;
     }
 
-    /**
-     * 主网卡的IP将通过fixedIps指定，数量不得大于创建的节点数。fixedIps或ipBlock同时只能指定一个。
-     * @return fixedIps
-     */
+    /** 主网卡的IP将通过fixedIps指定，数量不得大于创建的节点数。fixedIps或ipBlock同时只能指定一个。
+     * 
+     * @return fixedIps */
     public List<String> getFixedIps() {
         return fixedIps;
     }
@@ -93,20 +74,14 @@ public class NicSpec  {
         this.fixedIps = fixedIps;
     }
 
-    
-
     public NicSpec withIpBlock(String ipBlock) {
         this.ipBlock = ipBlock;
         return this;
     }
 
-    
-
-
-    /**
-     * IP段的CIDR格式，创建的节点IP将属于该IP段内。fixedIps或ipBlock同时只能指定一个。
-     * @return ipBlock
-     */
+    /** IP段的CIDR格式，创建的节点IP将属于该IP段内。fixedIps或ipBlock同时只能指定一个。
+     * 
+     * @return ipBlock */
     public String getIpBlock() {
         return ipBlock;
     }
@@ -114,8 +89,6 @@ public class NicSpec  {
     public void setIpBlock(String ipBlock) {
         this.ipBlock = ipBlock;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -126,14 +99,15 @@ public class NicSpec  {
             return false;
         }
         NicSpec nicSpec = (NicSpec) o;
-        return Objects.equals(this.subnetId, nicSpec.subnetId) &&
-            Objects.equals(this.fixedIps, nicSpec.fixedIps) &&
-            Objects.equals(this.ipBlock, nicSpec.ipBlock);
+        return Objects.equals(this.subnetId, nicSpec.subnetId) && Objects.equals(this.fixedIps, nicSpec.fixedIps)
+            && Objects.equals(this.ipBlock, nicSpec.ipBlock);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(subnetId, fixedIps, ipBlock);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -144,16 +118,13 @@ public class NicSpec  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

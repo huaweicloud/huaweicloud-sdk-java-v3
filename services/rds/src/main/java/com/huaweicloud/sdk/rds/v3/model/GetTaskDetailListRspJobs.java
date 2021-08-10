@@ -1,59 +1,40 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.GetTaskDetailListRspJobsInstance;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 任务信息。
- */
-public class GetTaskDetailListRspJobs  {
-
-
+/** 任务信息。 */
+public class GetTaskDetailListRspJobs {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 任务执行状态。  取值： - 值为“Running”，表示任务正在执行。 - 值为“Completed”，表示任务执行成功。 - 值为“Failed”，表示任务执行失败。
-     */
+
+    /** 任务执行状态。 取值： - 值为“Running”，表示任务正在执行。 - 值为“Completed”，表示任务执行成功。 - 值为“Failed”，表示任务执行失败。 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum RUNNING for value: "Running"
-         */
+        /** Enum RUNNING for value: "Running" */
         public static final StatusEnum RUNNING = new StatusEnum("Running");
-        
-        /**
-         * Enum COMPLETED for value: "Completed"
-         */
+
+        /** Enum COMPLETED for value: "Completed" */
         public static final StatusEnum COMPLETED = new StatusEnum("Completed");
-        
-        /**
-         * Enum FAILED for value: "Failed"
-         */
+
+        /** Enum FAILED for value: "Failed" */
         public static final StatusEnum FAILED = new StatusEnum("Failed");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -83,7 +64,7 @@ public class GetTaskDetailListRspJobs  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -94,7 +75,7 @@ public class GetTaskDetailListRspJobs  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -118,52 +99,44 @@ public class GetTaskDetailListRspJobs  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
+    @JsonProperty(value = "created")
+
     private String created;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ended")
-    
+    @JsonProperty(value = "ended")
+
     private String ended;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="process")
-    
+    @JsonProperty(value = "process")
+
     private String process;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="taskDetail")
-    
+    @JsonProperty(value = "taskDetail")
+
     private String taskDetail;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance")
-    
+    @JsonProperty(value = "instance")
+
     private GetTaskDetailListRspJobsInstance instance;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="entities")
-    
+    @JsonProperty(value = "entities")
+
     private Object entities;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fail_reason")
-    
+    @JsonProperty(value = "fail_reason")
+
     private String failReason;
 
     public GetTaskDetailListRspJobs withId(String id) {
@@ -171,13 +144,9 @@ public class GetTaskDetailListRspJobs  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID。
-     * @return id
-     */
+    /** 任务ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -186,20 +155,14 @@ public class GetTaskDetailListRspJobs  {
         this.id = id;
     }
 
-    
-
     public GetTaskDetailListRspJobs withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务名称。
-     * @return name
-     */
+    /** 任务名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -208,20 +171,14 @@ public class GetTaskDetailListRspJobs  {
         this.name = name;
     }
 
-    
-
     public GetTaskDetailListRspJobs withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务执行状态。  取值： - 值为“Running”，表示任务正在执行。 - 值为“Completed”，表示任务执行成功。 - 值为“Failed”，表示任务执行失败。
-     * @return status
-     */
+    /** 任务执行状态。 取值： - 值为“Running”，表示任务正在执行。 - 值为“Completed”，表示任务执行成功。 - 值为“Failed”，表示任务执行失败。
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -230,20 +187,14 @@ public class GetTaskDetailListRspJobs  {
         this.status = status;
     }
 
-    
-
     public GetTaskDetailListRspJobs withCreated(String created) {
         this.created = created;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * @return created
-     */
+    /** 创建时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * 
+     * @return created */
     public String getCreated() {
         return created;
     }
@@ -252,20 +203,14 @@ public class GetTaskDetailListRspJobs  {
         this.created = created;
     }
 
-    
-
     public GetTaskDetailListRspJobs withEnded(String ended) {
         this.ended = ended;
         return this;
     }
 
-    
-
-
-    /**
-     * 结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * @return ended
-     */
+    /** 结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * 
+     * @return ended */
     public String getEnded() {
         return ended;
     }
@@ -274,20 +219,14 @@ public class GetTaskDetailListRspJobs  {
         this.ended = ended;
     }
 
-    
-
     public GetTaskDetailListRspJobs withProcess(String process) {
         this.process = process;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务执行进度。执行中状态才返回执行进度，例如60%，否则返回“”。
-     * @return process
-     */
+    /** 任务执行进度。执行中状态才返回执行进度，例如60%，否则返回“”。
+     * 
+     * @return process */
     public String getProcess() {
         return process;
     }
@@ -296,20 +235,14 @@ public class GetTaskDetailListRspJobs  {
         this.process = process;
     }
 
-    
-
     public GetTaskDetailListRspJobs withTaskDetail(String taskDetail) {
         this.taskDetail = taskDetail;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务执行的具体的参数信息，为空则不返回该字段。
-     * @return taskDetail
-     */
+    /** 任务执行的具体的参数信息，为空则不返回该字段。
+     * 
+     * @return taskDetail */
     public String getTaskDetail() {
         return taskDetail;
     }
@@ -318,27 +251,23 @@ public class GetTaskDetailListRspJobs  {
         this.taskDetail = taskDetail;
     }
 
-    
-
     public GetTaskDetailListRspJobs withInstance(GetTaskDetailListRspJobsInstance instance) {
         this.instance = instance;
         return this;
     }
 
     public GetTaskDetailListRspJobs withInstance(Consumer<GetTaskDetailListRspJobsInstance> instanceSetter) {
-        if(this.instance == null ){
+        if (this.instance == null) {
             this.instance = new GetTaskDetailListRspJobsInstance();
             instanceSetter.accept(this.instance);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get instance
-     * @return instance
-     */
+    /** Get instance
+     * 
+     * @return instance */
     public GetTaskDetailListRspJobsInstance getInstance() {
         return instance;
     }
@@ -347,20 +276,14 @@ public class GetTaskDetailListRspJobs  {
         this.instance = instance;
     }
 
-    
-
     public GetTaskDetailListRspJobs withEntities(Object entities) {
         this.entities = entities;
         return this;
     }
 
-    
-
-
-    /**
-     * 根据不同的任务，显示不同的内容。
-     * @return entities
-     */
+    /** 根据不同的任务，显示不同的内容。
+     * 
+     * @return entities */
     public Object getEntities() {
         return entities;
     }
@@ -369,20 +292,14 @@ public class GetTaskDetailListRspJobs  {
         this.entities = entities;
     }
 
-    
-
     public GetTaskDetailListRspJobs withFailReason(String failReason) {
         this.failReason = failReason;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务执行失败时的错误信息。
-     * @return failReason
-     */
+    /** 任务执行失败时的错误信息。
+     * 
+     * @return failReason */
     public String getFailReason() {
         return failReason;
     }
@@ -390,8 +307,6 @@ public class GetTaskDetailListRspJobs  {
     public void setFailReason(String failReason) {
         this.failReason = failReason;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -402,21 +317,23 @@ public class GetTaskDetailListRspJobs  {
             return false;
         }
         GetTaskDetailListRspJobs getTaskDetailListRspJobs = (GetTaskDetailListRspJobs) o;
-        return Objects.equals(this.id, getTaskDetailListRspJobs.id) &&
-            Objects.equals(this.name, getTaskDetailListRspJobs.name) &&
-            Objects.equals(this.status, getTaskDetailListRspJobs.status) &&
-            Objects.equals(this.created, getTaskDetailListRspJobs.created) &&
-            Objects.equals(this.ended, getTaskDetailListRspJobs.ended) &&
-            Objects.equals(this.process, getTaskDetailListRspJobs.process) &&
-            Objects.equals(this.taskDetail, getTaskDetailListRspJobs.taskDetail) &&
-            Objects.equals(this.instance, getTaskDetailListRspJobs.instance) &&
-            Objects.equals(this.entities, getTaskDetailListRspJobs.entities) &&
-            Objects.equals(this.failReason, getTaskDetailListRspJobs.failReason);
+        return Objects.equals(this.id, getTaskDetailListRspJobs.id)
+            && Objects.equals(this.name, getTaskDetailListRspJobs.name)
+            && Objects.equals(this.status, getTaskDetailListRspJobs.status)
+            && Objects.equals(this.created, getTaskDetailListRspJobs.created)
+            && Objects.equals(this.ended, getTaskDetailListRspJobs.ended)
+            && Objects.equals(this.process, getTaskDetailListRspJobs.process)
+            && Objects.equals(this.taskDetail, getTaskDetailListRspJobs.taskDetail)
+            && Objects.equals(this.instance, getTaskDetailListRspJobs.instance)
+            && Objects.equals(this.entities, getTaskDetailListRspJobs.entities)
+            && Objects.equals(this.failReason, getTaskDetailListRspJobs.failReason);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, status, created, ended, process, taskDetail, instance, entities, failReason);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -434,16 +351,13 @@ public class GetTaskDetailListRspJobs  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

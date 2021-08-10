@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.PauseScalingGroupOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class PauseScalingGroupRequest  {
-
-
+/** Request Object */
+public class PauseScalingGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_group_id")
-    
+    @JsonProperty(value = "scaling_group_id")
+
     private String scalingGroupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private PauseScalingGroupOption body;
 
     public PauseScalingGroupRequest withScalingGroupId(String scalingGroupId) {
@@ -35,13 +24,9 @@ public class PauseScalingGroupRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩组ID
-     * @return scalingGroupId
-     */
+    /** 伸缩组ID
+     * 
+     * @return scalingGroupId */
     public String getScalingGroupId() {
         return scalingGroupId;
     }
@@ -50,27 +35,23 @@ public class PauseScalingGroupRequest  {
         this.scalingGroupId = scalingGroupId;
     }
 
-    
-
     public PauseScalingGroupRequest withBody(PauseScalingGroupOption body) {
         this.body = body;
         return this;
     }
 
     public PauseScalingGroupRequest withBody(Consumer<PauseScalingGroupOption> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new PauseScalingGroupOption();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public PauseScalingGroupOption getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class PauseScalingGroupRequest  {
     public void setBody(PauseScalingGroupOption body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class PauseScalingGroupRequest  {
             return false;
         }
         PauseScalingGroupRequest pauseScalingGroupRequest = (PauseScalingGroupRequest) o;
-        return Objects.equals(this.scalingGroupId, pauseScalingGroupRequest.scalingGroupId) &&
-            Objects.equals(this.body, pauseScalingGroupRequest.body);
+        return Objects.equals(this.scalingGroupId, pauseScalingGroupRequest.scalingGroupId)
+            && Objects.equals(this.body, pauseScalingGroupRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(scalingGroupId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class PauseScalingGroupRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

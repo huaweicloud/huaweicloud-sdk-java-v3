@@ -1,53 +1,39 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.ServerInterfaceFixedIp;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * InterfaceAttachment
- */
-public class InterfaceAttachment  {
-
-
+/** InterfaceAttachment */
+public class InterfaceAttachment {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fixed_ips")
-    
+    @JsonProperty(value = "fixed_ips")
+
     private List<ServerInterfaceFixedIp> fixedIps = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mac_addr")
-    
+    @JsonProperty(value = "mac_addr")
+
     private String macAddr;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="net_id")
-    
+    @JsonProperty(value = "net_id")
+
     private String netId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port_id")
-    
+    @JsonProperty(value = "port_id")
+
     private String portId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port_state")
-    
+    @JsonProperty(value = "port_state")
+
     private String portState;
 
     public InterfaceAttachment withFixedIps(List<ServerInterfaceFixedIp> fixedIps) {
@@ -55,9 +41,8 @@ public class InterfaceAttachment  {
         return this;
     }
 
-    
     public InterfaceAttachment addFixedIpsItem(ServerInterfaceFixedIp fixedIpsItem) {
-        if(this.fixedIps == null) {
+        if (this.fixedIps == null) {
             this.fixedIps = new ArrayList<>();
         }
         this.fixedIps.add(fixedIpsItem);
@@ -65,17 +50,16 @@ public class InterfaceAttachment  {
     }
 
     public InterfaceAttachment withFixedIps(Consumer<List<ServerInterfaceFixedIp>> fixedIpsSetter) {
-        if(this.fixedIps == null) {
+        if (this.fixedIps == null) {
             this.fixedIps = new ArrayList<>();
         }
         fixedIpsSetter.accept(this.fixedIps);
         return this;
     }
 
-    /**
-     * 网卡私网IP信息列表。
-     * @return fixedIps
-     */
+    /** 网卡私网IP信息列表。
+     * 
+     * @return fixedIps */
     public List<ServerInterfaceFixedIp> getFixedIps() {
         return fixedIps;
     }
@@ -84,20 +68,14 @@ public class InterfaceAttachment  {
         this.fixedIps = fixedIps;
     }
 
-    
-
     public InterfaceAttachment withMacAddr(String macAddr) {
         this.macAddr = macAddr;
         return this;
     }
 
-    
-
-
-    /**
-     * 网卡Mac地址信息。
-     * @return macAddr
-     */
+    /** 网卡Mac地址信息。
+     * 
+     * @return macAddr */
     public String getMacAddr() {
         return macAddr;
     }
@@ -106,20 +84,14 @@ public class InterfaceAttachment  {
         this.macAddr = macAddr;
     }
 
-    
-
     public InterfaceAttachment withNetId(String netId) {
         this.netId = netId;
         return this;
     }
 
-    
-
-
-    /**
-     * 网卡端口所属网络ID。
-     * @return netId
-     */
+    /** 网卡端口所属网络ID。
+     * 
+     * @return netId */
     public String getNetId() {
         return netId;
     }
@@ -128,20 +100,14 @@ public class InterfaceAttachment  {
         this.netId = netId;
     }
 
-    
-
     public InterfaceAttachment withPortId(String portId) {
         this.portId = portId;
         return this;
     }
 
-    
-
-
-    /**
-     * 网卡端口ID。
-     * @return portId
-     */
+    /** 网卡端口ID。
+     * 
+     * @return portId */
     public String getPortId() {
         return portId;
     }
@@ -150,20 +116,14 @@ public class InterfaceAttachment  {
         this.portId = portId;
     }
 
-    
-
     public InterfaceAttachment withPortState(String portState) {
         this.portState = portState;
         return this;
     }
 
-    
-
-
-    /**
-     * 网卡端口状态。
-     * @return portState
-     */
+    /** 网卡端口状态。
+     * 
+     * @return portState */
     public String getPortState() {
         return portState;
     }
@@ -171,8 +131,6 @@ public class InterfaceAttachment  {
     public void setPortState(String portState) {
         this.portState = portState;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -183,16 +141,18 @@ public class InterfaceAttachment  {
             return false;
         }
         InterfaceAttachment interfaceAttachment = (InterfaceAttachment) o;
-        return Objects.equals(this.fixedIps, interfaceAttachment.fixedIps) &&
-            Objects.equals(this.macAddr, interfaceAttachment.macAddr) &&
-            Objects.equals(this.netId, interfaceAttachment.netId) &&
-            Objects.equals(this.portId, interfaceAttachment.portId) &&
-            Objects.equals(this.portState, interfaceAttachment.portState);
+        return Objects.equals(this.fixedIps, interfaceAttachment.fixedIps)
+            && Objects.equals(this.macAddr, interfaceAttachment.macAddr)
+            && Objects.equals(this.netId, interfaceAttachment.netId)
+            && Objects.equals(this.portId, interfaceAttachment.portId)
+            && Objects.equals(this.portState, interfaceAttachment.portState);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(fixedIps, macAddr, netId, portId, portState);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -205,16 +165,13 @@ public class InterfaceAttachment  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

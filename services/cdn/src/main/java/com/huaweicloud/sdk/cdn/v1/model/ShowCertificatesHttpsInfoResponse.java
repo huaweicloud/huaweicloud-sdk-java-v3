@@ -1,51 +1,35 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cdn.v1.model.HttpsDetail;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowCertificatesHttpsInfoResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="https")
-    
+    @JsonProperty(value = "https")
+
     private List<HttpsDetail> https = null;
-    
+
     public ShowCertificatesHttpsInfoResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询结果总数
-     * @return total
-     */
+    /** 查询结果总数
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -54,16 +38,13 @@ public class ShowCertificatesHttpsInfoResponse extends SdkResponse {
         this.total = total;
     }
 
-    
-
     public ShowCertificatesHttpsInfoResponse withHttps(List<HttpsDetail> https) {
         this.https = https;
         return this;
     }
 
-    
     public ShowCertificatesHttpsInfoResponse addHttpsItem(HttpsDetail httpsItem) {
-        if(this.https == null) {
+        if (this.https == null) {
             this.https = new ArrayList<>();
         }
         this.https.add(httpsItem);
@@ -71,17 +52,16 @@ public class ShowCertificatesHttpsInfoResponse extends SdkResponse {
     }
 
     public ShowCertificatesHttpsInfoResponse withHttps(Consumer<List<HttpsDetail>> httpsSetter) {
-        if(this.https == null) {
+        if (this.https == null) {
             this.https = new ArrayList<>();
         }
         httpsSetter.accept(this.https);
         return this;
     }
 
-    /**
-     * https对象。
-     * @return https
-     */
+    /** https对象。
+     * 
+     * @return https */
     public List<HttpsDetail> getHttps() {
         return https;
     }
@@ -89,8 +69,6 @@ public class ShowCertificatesHttpsInfoResponse extends SdkResponse {
     public void setHttps(List<HttpsDetail> https) {
         this.https = https;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ShowCertificatesHttpsInfoResponse extends SdkResponse {
             return false;
         }
         ShowCertificatesHttpsInfoResponse showCertificatesHttpsInfoResponse = (ShowCertificatesHttpsInfoResponse) o;
-        return Objects.equals(this.total, showCertificatesHttpsInfoResponse.total) &&
-            Objects.equals(this.https, showCertificatesHttpsInfoResponse.https);
+        return Objects.equals(this.total, showCertificatesHttpsInfoResponse.total)
+            && Objects.equals(this.https, showCertificatesHttpsInfoResponse.https);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(total, https);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ShowCertificatesHttpsInfoResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

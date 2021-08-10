@@ -1,63 +1,45 @@
 package com.huaweicloud.sdk.clouddeploy.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.clouddeploy.v2.model.AppComponentDao;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class StartDeployTaskResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
+    @JsonProperty(value = "task_id")
+
     private String taskId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_name")
-    
+    @JsonProperty(value = "job_name")
+
     private String jobName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_component_list")
-    
+    @JsonProperty(value = "app_component_list")
+
     private List<AppComponentDao> appComponentList = null;
-    
+
     public StartDeployTaskResponse withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 执行记录id
-     * @return id
-     */
+    /** 执行记录id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -66,20 +48,14 @@ public class StartDeployTaskResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public StartDeployTaskResponse withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
     }
 
-    
-
-
-    /**
-     * 部署任务id
-     * @return taskId
-     */
+    /** 部署任务id
+     * 
+     * @return taskId */
     public String getTaskId() {
         return taskId;
     }
@@ -88,20 +64,14 @@ public class StartDeployTaskResponse extends SdkResponse {
         this.taskId = taskId;
     }
 
-    
-
     public StartDeployTaskResponse withJobName(String jobName) {
         this.jobName = jobName;
         return this;
     }
 
-    
-
-
-    /**
-     * 执行任务名称
-     * @return jobName
-     */
+    /** 执行任务名称
+     * 
+     * @return jobName */
     public String getJobName() {
         return jobName;
     }
@@ -110,16 +80,13 @@ public class StartDeployTaskResponse extends SdkResponse {
         this.jobName = jobName;
     }
 
-    
-
     public StartDeployTaskResponse withAppComponentList(List<AppComponentDao> appComponentList) {
         this.appComponentList = appComponentList;
         return this;
     }
 
-    
     public StartDeployTaskResponse addAppComponentListItem(AppComponentDao appComponentListItem) {
-        if(this.appComponentList == null) {
+        if (this.appComponentList == null) {
             this.appComponentList = new ArrayList<>();
         }
         this.appComponentList.add(appComponentListItem);
@@ -127,17 +94,16 @@ public class StartDeployTaskResponse extends SdkResponse {
     }
 
     public StartDeployTaskResponse withAppComponentList(Consumer<List<AppComponentDao>> appComponentListSetter) {
-        if(this.appComponentList == null) {
+        if (this.appComponentList == null) {
             this.appComponentList = new ArrayList<>();
         }
         appComponentListSetter.accept(this.appComponentList);
         return this;
     }
 
-    /**
-     * 部署任务和应用组件对应关系
-     * @return appComponentList
-     */
+    /** 部署任务和应用组件对应关系
+     * 
+     * @return appComponentList */
     public List<AppComponentDao> getAppComponentList() {
         return appComponentList;
     }
@@ -145,8 +111,6 @@ public class StartDeployTaskResponse extends SdkResponse {
     public void setAppComponentList(List<AppComponentDao> appComponentList) {
         this.appComponentList = appComponentList;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -157,15 +121,17 @@ public class StartDeployTaskResponse extends SdkResponse {
             return false;
         }
         StartDeployTaskResponse startDeployTaskResponse = (StartDeployTaskResponse) o;
-        return Objects.equals(this.id, startDeployTaskResponse.id) &&
-            Objects.equals(this.taskId, startDeployTaskResponse.taskId) &&
-            Objects.equals(this.jobName, startDeployTaskResponse.jobName) &&
-            Objects.equals(this.appComponentList, startDeployTaskResponse.appComponentList);
+        return Objects.equals(this.id, startDeployTaskResponse.id)
+            && Objects.equals(this.taskId, startDeployTaskResponse.taskId)
+            && Objects.equals(this.jobName, startDeployTaskResponse.jobName)
+            && Objects.equals(this.appComponentList, startDeployTaskResponse.appComponentList);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, taskId, jobName, appComponentList);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -177,16 +143,13 @@ public class StartDeployTaskResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

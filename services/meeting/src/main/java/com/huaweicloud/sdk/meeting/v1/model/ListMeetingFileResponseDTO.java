@@ -1,99 +1,76 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.MeetingFileBase;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * IdeaHub、终端“查看会议纪要列表”响应
- */
-public class ListMeetingFileResponseDTO  {
-
-
+/** IdeaHub、终端“查看会议纪要列表”响应 */
+public class ListMeetingFileResponseDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fileCode")
-    
+    @JsonProperty(value = "fileCode")
+
     private String fileCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic")
-    
+    @JsonProperty(value = "topic")
+
     private String topic;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fileId")
-    
+    @JsonProperty(value = "fileId")
+
     private String fileId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fileName")
-    
+    @JsonProperty(value = "fileName")
+
     private String fileName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fileSize")
-    
+    @JsonProperty(value = "fileSize")
+
     private Long fileSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="thumbnailFileId")
-    
+    @JsonProperty(value = "thumbnailFileId")
+
     private String thumbnailFileId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="thumbnailFileName")
-    
+    @JsonProperty(value = "thumbnailFileName")
+
     private String thumbnailFileName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="thumbnailFileSize")
-    
+    @JsonProperty(value = "thumbnailFileSize")
+
     private Long thumbnailFileSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pdfFileId")
-    
+    @JsonProperty(value = "pdfFileId")
+
     private String pdfFileId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pdfFileName")
-    
+    @JsonProperty(value = "pdfFileName")
+
     private String pdfFileName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pdfFileSize")
-    
+    @JsonProperty(value = "pdfFileSize")
+
     private Long pdfFileSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="userId")
-    
+    @JsonProperty(value = "userId")
+
     private String userId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creationTimestamp")
-    
+    @JsonProperty(value = "creationTimestamp")
+
     private Long creationTimestamp;
 
     public ListMeetingFileResponseDTO withFileCode(String fileCode) {
@@ -101,13 +78,9 @@ public class ListMeetingFileResponseDTO  {
         return this;
     }
 
-    
-
-
-    /**
-     * 会议纪要文件码
-     * @return fileCode
-     */
+    /** 会议纪要文件码
+     * 
+     * @return fileCode */
     public String getFileCode() {
         return fileCode;
     }
@@ -116,20 +89,14 @@ public class ListMeetingFileResponseDTO  {
         this.fileCode = fileCode;
     }
 
-    
-
     public ListMeetingFileResponseDTO withTopic(String topic) {
         this.topic = topic;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件主题
-     * @return topic
-     */
+    /** 文件主题
+     * 
+     * @return topic */
     public String getTopic() {
         return topic;
     }
@@ -138,20 +105,14 @@ public class ListMeetingFileResponseDTO  {
         this.topic = topic;
     }
 
-    
-
     public ListMeetingFileResponseDTO withFileId(String fileId) {
         this.fileId = fileId;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件Id
-     * @return fileId
-     */
+    /** 文件Id
+     * 
+     * @return fileId */
     public String getFileId() {
         return fileId;
     }
@@ -160,20 +121,14 @@ public class ListMeetingFileResponseDTO  {
         this.fileId = fileId;
     }
 
-    
-
     public ListMeetingFileResponseDTO withFileName(String fileName) {
         this.fileName = fileName;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件名
-     * @return fileName
-     */
+    /** 文件名
+     * 
+     * @return fileName */
     public String getFileName() {
         return fileName;
     }
@@ -182,20 +137,14 @@ public class ListMeetingFileResponseDTO  {
         this.fileName = fileName;
     }
 
-    
-
     public ListMeetingFileResponseDTO withFileSize(Long fileSize) {
         this.fileSize = fileSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件大小，单位字节
-     * @return fileSize
-     */
+    /** 文件大小，单位字节
+     * 
+     * @return fileSize */
     public Long getFileSize() {
         return fileSize;
     }
@@ -204,20 +153,14 @@ public class ListMeetingFileResponseDTO  {
         this.fileSize = fileSize;
     }
 
-    
-
     public ListMeetingFileResponseDTO withThumbnailFileId(String thumbnailFileId) {
         this.thumbnailFileId = thumbnailFileId;
         return this;
     }
 
-    
-
-
-    /**
-     * 缩略图文件Id
-     * @return thumbnailFileId
-     */
+    /** 缩略图文件Id
+     * 
+     * @return thumbnailFileId */
     public String getThumbnailFileId() {
         return thumbnailFileId;
     }
@@ -226,20 +169,14 @@ public class ListMeetingFileResponseDTO  {
         this.thumbnailFileId = thumbnailFileId;
     }
 
-    
-
     public ListMeetingFileResponseDTO withThumbnailFileName(String thumbnailFileName) {
         this.thumbnailFileName = thumbnailFileName;
         return this;
     }
 
-    
-
-
-    /**
-     * 缩略图文件名
-     * @return thumbnailFileName
-     */
+    /** 缩略图文件名
+     * 
+     * @return thumbnailFileName */
     public String getThumbnailFileName() {
         return thumbnailFileName;
     }
@@ -248,20 +185,14 @@ public class ListMeetingFileResponseDTO  {
         this.thumbnailFileName = thumbnailFileName;
     }
 
-    
-
     public ListMeetingFileResponseDTO withThumbnailFileSize(Long thumbnailFileSize) {
         this.thumbnailFileSize = thumbnailFileSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 缩略图文件大小，单位字节
-     * @return thumbnailFileSize
-     */
+    /** 缩略图文件大小，单位字节
+     * 
+     * @return thumbnailFileSize */
     public Long getThumbnailFileSize() {
         return thumbnailFileSize;
     }
@@ -270,20 +201,14 @@ public class ListMeetingFileResponseDTO  {
         this.thumbnailFileSize = thumbnailFileSize;
     }
 
-    
-
     public ListMeetingFileResponseDTO withPdfFileId(String pdfFileId) {
         this.pdfFileId = pdfFileId;
         return this;
     }
 
-    
-
-
-    /**
-     * pdf文件Id
-     * @return pdfFileId
-     */
+    /** pdf文件Id
+     * 
+     * @return pdfFileId */
     public String getPdfFileId() {
         return pdfFileId;
     }
@@ -292,20 +217,14 @@ public class ListMeetingFileResponseDTO  {
         this.pdfFileId = pdfFileId;
     }
 
-    
-
     public ListMeetingFileResponseDTO withPdfFileName(String pdfFileName) {
         this.pdfFileName = pdfFileName;
         return this;
     }
 
-    
-
-
-    /**
-     * pdf文件名
-     * @return pdfFileName
-     */
+    /** pdf文件名
+     * 
+     * @return pdfFileName */
     public String getPdfFileName() {
         return pdfFileName;
     }
@@ -314,20 +233,14 @@ public class ListMeetingFileResponseDTO  {
         this.pdfFileName = pdfFileName;
     }
 
-    
-
     public ListMeetingFileResponseDTO withPdfFileSize(Long pdfFileSize) {
         this.pdfFileSize = pdfFileSize;
         return this;
     }
 
-    
-
-
-    /**
-     * pdf文件大小，单位字节
-     * @return pdfFileSize
-     */
+    /** pdf文件大小，单位字节
+     * 
+     * @return pdfFileSize */
     public Long getPdfFileSize() {
         return pdfFileSize;
     }
@@ -336,20 +249,14 @@ public class ListMeetingFileResponseDTO  {
         this.pdfFileSize = pdfFileSize;
     }
 
-    
-
     public ListMeetingFileResponseDTO withUserId(String userId) {
         this.userId = userId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户ID
-     * @return userId
-     */
+    /** 用户ID
+     * 
+     * @return userId */
     public String getUserId() {
         return userId;
     }
@@ -358,20 +265,14 @@ public class ListMeetingFileResponseDTO  {
         this.userId = userId;
     }
 
-    
-
     public ListMeetingFileResponseDTO withCreationTimestamp(Long creationTimestamp) {
         this.creationTimestamp = creationTimestamp;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件创建时间戳
-     * @return creationTimestamp
-     */
+    /** 文件创建时间戳
+     * 
+     * @return creationTimestamp */
     public Long getCreationTimestamp() {
         return creationTimestamp;
     }
@@ -379,8 +280,6 @@ public class ListMeetingFileResponseDTO  {
     public void setCreationTimestamp(Long creationTimestamp) {
         this.creationTimestamp = creationTimestamp;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -391,24 +290,38 @@ public class ListMeetingFileResponseDTO  {
             return false;
         }
         ListMeetingFileResponseDTO listMeetingFileResponseDTO = (ListMeetingFileResponseDTO) o;
-        return Objects.equals(this.fileCode, listMeetingFileResponseDTO.fileCode) &&
-            Objects.equals(this.topic, listMeetingFileResponseDTO.topic) &&
-            Objects.equals(this.fileId, listMeetingFileResponseDTO.fileId) &&
-            Objects.equals(this.fileName, listMeetingFileResponseDTO.fileName) &&
-            Objects.equals(this.fileSize, listMeetingFileResponseDTO.fileSize) &&
-            Objects.equals(this.thumbnailFileId, listMeetingFileResponseDTO.thumbnailFileId) &&
-            Objects.equals(this.thumbnailFileName, listMeetingFileResponseDTO.thumbnailFileName) &&
-            Objects.equals(this.thumbnailFileSize, listMeetingFileResponseDTO.thumbnailFileSize) &&
-            Objects.equals(this.pdfFileId, listMeetingFileResponseDTO.pdfFileId) &&
-            Objects.equals(this.pdfFileName, listMeetingFileResponseDTO.pdfFileName) &&
-            Objects.equals(this.pdfFileSize, listMeetingFileResponseDTO.pdfFileSize) &&
-            Objects.equals(this.userId, listMeetingFileResponseDTO.userId) &&
-            Objects.equals(this.creationTimestamp, listMeetingFileResponseDTO.creationTimestamp);
+        return Objects.equals(this.fileCode, listMeetingFileResponseDTO.fileCode)
+            && Objects.equals(this.topic, listMeetingFileResponseDTO.topic)
+            && Objects.equals(this.fileId, listMeetingFileResponseDTO.fileId)
+            && Objects.equals(this.fileName, listMeetingFileResponseDTO.fileName)
+            && Objects.equals(this.fileSize, listMeetingFileResponseDTO.fileSize)
+            && Objects.equals(this.thumbnailFileId, listMeetingFileResponseDTO.thumbnailFileId)
+            && Objects.equals(this.thumbnailFileName, listMeetingFileResponseDTO.thumbnailFileName)
+            && Objects.equals(this.thumbnailFileSize, listMeetingFileResponseDTO.thumbnailFileSize)
+            && Objects.equals(this.pdfFileId, listMeetingFileResponseDTO.pdfFileId)
+            && Objects.equals(this.pdfFileName, listMeetingFileResponseDTO.pdfFileName)
+            && Objects.equals(this.pdfFileSize, listMeetingFileResponseDTO.pdfFileSize)
+            && Objects.equals(this.userId, listMeetingFileResponseDTO.userId)
+            && Objects.equals(this.creationTimestamp, listMeetingFileResponseDTO.creationTimestamp);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(fileCode, topic, fileId, fileName, fileSize, thumbnailFileId, thumbnailFileName, thumbnailFileSize, pdfFileId, pdfFileName, pdfFileSize, userId, creationTimestamp);
+        return Objects.hash(fileCode,
+            topic,
+            fileId,
+            fileName,
+            fileSize,
+            thumbnailFileId,
+            thumbnailFileName,
+            thumbnailFileSize,
+            pdfFileId,
+            pdfFileName,
+            pdfFileSize,
+            userId,
+            creationTimestamp);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -429,16 +342,13 @@ public class ListMeetingFileResponseDTO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

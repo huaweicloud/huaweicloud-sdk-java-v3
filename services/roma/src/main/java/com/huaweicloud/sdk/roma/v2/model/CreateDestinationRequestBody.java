@@ -1,80 +1,61 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CreateDestinationRequestBody
- */
-public class CreateDestinationRequestBody  {
-
-
+/** CreateDestinationRequestBody */
+public class CreateDestinationRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination_type")
-    
+    @JsonProperty(value = "destination_type")
+
     private Integer destinationType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination_name")
-    
+    @JsonProperty(value = "destination_name")
+
     private String destinationName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic")
-    
+    @JsonProperty(value = "topic")
+
     private String topic;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server")
-    
+    @JsonProperty(value = "server")
+
     private String server;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="token")
-    
+    @JsonProperty(value = "token")
+
     private String token;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag")
-    
+    @JsonProperty(value = "tag")
+
     private String tag;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mqs_sasl_ssl")
-    
+    @JsonProperty(value = "mqs_sasl_ssl")
+
     private Boolean mqsSaslSsl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_name")
-    
+    @JsonProperty(value = "user_name")
+
     private String userName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="password")
-    
+    @JsonProperty(value = "password")
+
     private String password;
 
     public CreateDestinationRequestBody withDestinationType(Integer destinationType) {
@@ -82,15 +63,9 @@ public class CreateDestinationRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 操作类型，枚举值:0-目标端为本ROMA实例内MQS，； 7-目标端为设备
-     * minimum: 0
-     * maximum: 10
-     * @return destinationType
-     */
+    /** 操作类型，枚举值:0-目标端为本ROMA实例内MQS，； 7-目标端为设备 minimum: 0 maximum: 10
+     * 
+     * @return destinationType */
     public Integer getDestinationType() {
         return destinationType;
     }
@@ -99,20 +74,14 @@ public class CreateDestinationRequestBody  {
         this.destinationType = destinationType;
     }
 
-    
-
     public CreateDestinationRequestBody withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用ID，目标端为0时需明确对方的APP_ID
-     * @return appId
-     */
+    /** 应用ID，目标端为0时需明确对方的APP_ID
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -121,20 +90,14 @@ public class CreateDestinationRequestBody  {
         this.appId = appId;
     }
 
-    
-
     public CreateDestinationRequestBody withDestinationName(String destinationName) {
         this.destinationName = destinationName;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标数据源名称
-     * @return destinationName
-     */
+    /** 目标数据源名称
+     * 
+     * @return destinationName */
     public String getDestinationName() {
         return destinationName;
     }
@@ -143,20 +106,14 @@ public class CreateDestinationRequestBody  {
         this.destinationName = destinationName;
     }
 
-    
-
     public CreateDestinationRequestBody withTopic(String topic) {
         this.topic = topic;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标数据源主题，从MQS服务中获取已有topic
-     * @return topic
-     */
+    /** 目标数据源主题，从MQS服务中获取已有topic
+     * 
+     * @return topic */
     public String getTopic() {
         return topic;
     }
@@ -165,20 +122,14 @@ public class CreateDestinationRequestBody  {
         this.topic = topic;
     }
 
-    
-
     public CreateDestinationRequestBody withServer(String server) {
         this.server = server;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标端数据源服务，连接地址
-     * @return server
-     */
+    /** 目标端数据源服务，连接地址
+     * 
+     * @return server */
     public String getServer() {
         return server;
     }
@@ -187,20 +138,14 @@ public class CreateDestinationRequestBody  {
         this.server = server;
     }
 
-    
-
     public CreateDestinationRequestBody withToken(String token) {
         this.token = token;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标端数据源token
-     * @return token
-     */
+    /** 目标端数据源token
+     * 
+     * @return token */
     public String getToken() {
         return token;
     }
@@ -209,20 +154,14 @@ public class CreateDestinationRequestBody  {
         this.token = token;
     }
 
-    
-
     public CreateDestinationRequestBody withTag(String tag) {
         this.tag = tag;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标数据源标签
-     * @return tag
-     */
+    /** 目标数据源标签
+     * 
+     * @return tag */
     public String getTag() {
         return tag;
     }
@@ -231,20 +170,14 @@ public class CreateDestinationRequestBody  {
         this.tag = tag;
     }
 
-    
-
     public CreateDestinationRequestBody withMqsSaslSsl(Boolean mqsSaslSsl) {
         this.mqsSaslSsl = mqsSaslSsl;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标端数据源MQS的SASL字段是否需要支持SSL加密
-     * @return mqsSaslSsl
-     */
+    /** 目标端数据源MQS的SASL字段是否需要支持SSL加密
+     * 
+     * @return mqsSaslSsl */
     public Boolean getMqsSaslSsl() {
         return mqsSaslSsl;
     }
@@ -253,20 +186,14 @@ public class CreateDestinationRequestBody  {
         this.mqsSaslSsl = mqsSaslSsl;
     }
 
-    
-
     public CreateDestinationRequestBody withUserName(String userName) {
         this.userName = userName;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标数据源用户名
-     * @return userName
-     */
+    /** 目标数据源用户名
+     * 
+     * @return userName */
     public String getUserName() {
         return userName;
     }
@@ -275,20 +202,14 @@ public class CreateDestinationRequestBody  {
         this.userName = userName;
     }
 
-    
-
     public CreateDestinationRequestBody withPassword(String password) {
         this.password = password;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标数据源密码
-     * @return password
-     */
+    /** 目标数据源密码
+     * 
+     * @return password */
     public String getPassword() {
         return password;
     }
@@ -296,8 +217,6 @@ public class CreateDestinationRequestBody  {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -308,21 +227,24 @@ public class CreateDestinationRequestBody  {
             return false;
         }
         CreateDestinationRequestBody createDestinationRequestBody = (CreateDestinationRequestBody) o;
-        return Objects.equals(this.destinationType, createDestinationRequestBody.destinationType) &&
-            Objects.equals(this.appId, createDestinationRequestBody.appId) &&
-            Objects.equals(this.destinationName, createDestinationRequestBody.destinationName) &&
-            Objects.equals(this.topic, createDestinationRequestBody.topic) &&
-            Objects.equals(this.server, createDestinationRequestBody.server) &&
-            Objects.equals(this.token, createDestinationRequestBody.token) &&
-            Objects.equals(this.tag, createDestinationRequestBody.tag) &&
-            Objects.equals(this.mqsSaslSsl, createDestinationRequestBody.mqsSaslSsl) &&
-            Objects.equals(this.userName, createDestinationRequestBody.userName) &&
-            Objects.equals(this.password, createDestinationRequestBody.password);
+        return Objects.equals(this.destinationType, createDestinationRequestBody.destinationType)
+            && Objects.equals(this.appId, createDestinationRequestBody.appId)
+            && Objects.equals(this.destinationName, createDestinationRequestBody.destinationName)
+            && Objects.equals(this.topic, createDestinationRequestBody.topic)
+            && Objects.equals(this.server, createDestinationRequestBody.server)
+            && Objects.equals(this.token, createDestinationRequestBody.token)
+            && Objects.equals(this.tag, createDestinationRequestBody.tag)
+            && Objects.equals(this.mqsSaslSsl, createDestinationRequestBody.mqsSaslSsl)
+            && Objects.equals(this.userName, createDestinationRequestBody.userName)
+            && Objects.equals(this.password, createDestinationRequestBody.password);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(destinationType, appId, destinationName, topic, server, token, tag, mqsSaslSsl, userName, password);
+        return Objects
+            .hash(destinationType, appId, destinationName, topic, server, token, tag, mqsSaslSsl, userName, password);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -340,16 +262,13 @@ public class CreateDestinationRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

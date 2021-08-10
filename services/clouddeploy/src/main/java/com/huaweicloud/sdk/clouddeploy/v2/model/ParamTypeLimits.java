@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.clouddeploy.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 枚举类型参数实体类
- */
-public class ParamTypeLimits  {
-
-
+/** 枚举类型参数实体类 */
+public class ParamTypeLimits {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public ParamTypeLimits withName(String name) {
@@ -28,13 +18,9 @@ public class ParamTypeLimits  {
         return this;
     }
 
-    
-
-
-    /**
-     * 枚举值可选参数
-     * @return name
-     */
+    /** 枚举值可选参数
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -42,8 +28,6 @@ public class ParamTypeLimits  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class ParamTypeLimits  {
         ParamTypeLimits paramTypeLimits = (ParamTypeLimits) o;
         return Objects.equals(this.name, paramTypeLimits.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class ParamTypeLimits  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

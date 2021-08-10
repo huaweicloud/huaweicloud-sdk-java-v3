@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListLabelsRequest  {
-
-
+/** Request Object */
+public class ListLabelsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="label_id")
-    
+    @JsonProperty(value = "label_id")
+
     private Integer labelId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site")
-    
+    @JsonProperty(value = "X-Site")
+
     private Integer xSite;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Time-Zone")
-    
+    @JsonProperty(value = "X-Time-Zone")
+
     private String xTimeZone;
 
     public ListLabelsRequest withOffset(Integer offset) {
@@ -64,15 +48,9 @@ public class ListLabelsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 查询偏移量，默认0
-     * minimum: 0
-     * maximum: 2147483647
-     * @return offset
-     */
+    /** 查询偏移量，默认0 minimum: 0 maximum: 2147483647
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -81,22 +59,14 @@ public class ListLabelsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListLabelsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询数量，默认10，最大100
-     * minimum: 0
-     * maximum: 100
-     * @return limit
-     */
+    /** 查询数量，默认10，最大100 minimum: 0 maximum: 100
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -105,20 +75,14 @@ public class ListLabelsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListLabelsRequest withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 标签名称，最大64，支持模糊查询
-     * @return name
-     */
+    /** 标签名称，最大64，支持模糊查询
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -127,22 +91,14 @@ public class ListLabelsRequest  {
         this.name = name;
     }
 
-    
-
     public ListLabelsRequest withLabelId(Integer labelId) {
         this.labelId = labelId;
         return this;
     }
 
-    
-
-
-    /**
-     * 标签标识
-     * minimum: 0
-     * maximum: 2147483647
-     * @return labelId
-     */
+    /** 标签标识 minimum: 0 maximum: 2147483647
+     * 
+     * @return labelId */
     public Integer getLabelId() {
         return labelId;
     }
@@ -151,24 +107,16 @@ public class ListLabelsRequest  {
         this.labelId = labelId;
     }
 
-    
-
     public ListLabelsRequest withXSite(Integer xSite) {
         this.xSite = xSite;
         return this;
     }
 
-    
-
-
-    /**
-     * 对接站点信息。  0（中国站） 1（国际站），不填的话默认为0。
-     * minimum: 0
-     * maximum: 1
-     * @return xSite
-     */
+    /** 对接站点信息。 0（中国站） 1（国际站），不填的话默认为0。 minimum: 0 maximum: 1
+     * 
+     * @return xSite */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site")
+    @JsonProperty(value = "X-Site")
     public Integer getXSite() {
         return xSite;
     }
@@ -177,22 +125,16 @@ public class ListLabelsRequest  {
         this.xSite = xSite;
     }
 
-    
-
     public ListLabelsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。  会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
-     * @return xLanguage
-     */
+    /** 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。 会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -201,22 +143,16 @@ public class ListLabelsRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListLabelsRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。  涉及时间的数据会根据环境时区处理。
-     * @return xTimeZone
-     */
+    /** 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。 涉及时间的数据会根据环境时区处理。
+     * 
+     * @return xTimeZone */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Time-Zone")
+    @JsonProperty(value = "X-Time-Zone")
     public String getXTimeZone() {
         return xTimeZone;
     }
@@ -224,8 +160,6 @@ public class ListLabelsRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -236,18 +170,19 @@ public class ListLabelsRequest  {
             return false;
         }
         ListLabelsRequest listLabelsRequest = (ListLabelsRequest) o;
-        return Objects.equals(this.offset, listLabelsRequest.offset) &&
-            Objects.equals(this.limit, listLabelsRequest.limit) &&
-            Objects.equals(this.name, listLabelsRequest.name) &&
-            Objects.equals(this.labelId, listLabelsRequest.labelId) &&
-            Objects.equals(this.xSite, listLabelsRequest.xSite) &&
-            Objects.equals(this.xLanguage, listLabelsRequest.xLanguage) &&
-            Objects.equals(this.xTimeZone, listLabelsRequest.xTimeZone);
+        return Objects.equals(this.offset, listLabelsRequest.offset)
+            && Objects.equals(this.limit, listLabelsRequest.limit) && Objects.equals(this.name, listLabelsRequest.name)
+            && Objects.equals(this.labelId, listLabelsRequest.labelId)
+            && Objects.equals(this.xSite, listLabelsRequest.xSite)
+            && Objects.equals(this.xLanguage, listLabelsRequest.xLanguage)
+            && Objects.equals(this.xTimeZone, listLabelsRequest.xTimeZone);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(offset, limit, name, labelId, xSite, xLanguage, xTimeZone);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -262,16 +197,13 @@ public class ListLabelsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

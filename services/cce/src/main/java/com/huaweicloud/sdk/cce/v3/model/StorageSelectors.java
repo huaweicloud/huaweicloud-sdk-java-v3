@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.StorageSelectorsMatchLabels;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * StorageSelectors
- */
-public class StorageSelectors  {
-
-
+/** StorageSelectors */
+public class StorageSelectors {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="storageType")
-    
+    @JsonProperty(value = "storageType")
+
     private String storageType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="matchLabels")
-    
+    @JsonProperty(value = "matchLabels")
+
     private StorageSelectorsMatchLabels matchLabels;
 
     public StorageSelectors withName(String name) {
@@ -41,13 +29,9 @@ public class StorageSelectors  {
         return this;
     }
 
-    
-
-
-    /**
-     * selector的名字，作为storageGroup中selectorNames的索引，因此各个selector间的名字不能重复。
-     * @return name
-     */
+    /** selector的名字，作为storageGroup中selectorNames的索引，因此各个selector间的名字不能重复。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -56,20 +40,14 @@ public class StorageSelectors  {
         this.name = name;
     }
 
-    
-
     public StorageSelectors withStorageType(String storageType) {
         this.storageType = storageType;
         return this;
     }
 
-    
-
-
-    /**
-     * 存储类型，当前仅支持evs（云硬盘）或local（本地盘）；local存储类型不支持磁盘选择，所有本地盘将被组成一个VG，因此也仅允许只有一个local类型的storageSelector。
-     * @return storageType
-     */
+    /** 存储类型，当前仅支持evs（云硬盘）或local（本地盘）；local存储类型不支持磁盘选择，所有本地盘将被组成一个VG，因此也仅允许只有一个local类型的storageSelector。
+     * 
+     * @return storageType */
     public String getStorageType() {
         return storageType;
     }
@@ -78,27 +56,23 @@ public class StorageSelectors  {
         this.storageType = storageType;
     }
 
-    
-
     public StorageSelectors withMatchLabels(StorageSelectorsMatchLabels matchLabels) {
         this.matchLabels = matchLabels;
         return this;
     }
 
     public StorageSelectors withMatchLabels(Consumer<StorageSelectorsMatchLabels> matchLabelsSetter) {
-        if(this.matchLabels == null ){
+        if (this.matchLabels == null) {
             this.matchLabels = new StorageSelectorsMatchLabels();
             matchLabelsSetter.accept(this.matchLabels);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get matchLabels
-     * @return matchLabels
-     */
+    /** Get matchLabels
+     * 
+     * @return matchLabels */
     public StorageSelectorsMatchLabels getMatchLabels() {
         return matchLabels;
     }
@@ -106,8 +80,6 @@ public class StorageSelectors  {
     public void setMatchLabels(StorageSelectorsMatchLabels matchLabels) {
         this.matchLabels = matchLabels;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class StorageSelectors  {
             return false;
         }
         StorageSelectors storageSelectors = (StorageSelectors) o;
-        return Objects.equals(this.name, storageSelectors.name) &&
-            Objects.equals(this.storageType, storageSelectors.storageType) &&
-            Objects.equals(this.matchLabels, storageSelectors.matchLabels);
+        return Objects.equals(this.name, storageSelectors.name)
+            && Objects.equals(this.storageType, storageSelectors.storageType)
+            && Objects.equals(this.matchLabels, storageSelectors.matchLabels);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, storageType, matchLabels);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class StorageSelectors  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

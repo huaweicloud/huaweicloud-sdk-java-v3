@@ -35,62 +35,74 @@ import com.huaweicloud.sdk.core.internal.model.KeystoneListProjectsResponse;
 import com.huaweicloud.sdk.core.internal.model.KeystoneListRegionsRequest;
 import com.huaweicloud.sdk.core.internal.model.KeystoneListRegionsResponse;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public final class InnerIamMeta {
-    public static final HttpRequestDef<KeystoneListProjectsRequest, KeystoneListProjectsResponse> KEYSTONE_LIST_PROJECTS
-        = genForKeystoneListProjects();
 
-    public static final HttpRequestDef<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse>
-        KEYSTONE_CREATE_PROJECT = genForKeystoneCreateProject();
+    public static final HttpRequestDef<KeystoneListProjectsRequest, KeystoneListProjectsResponse> KEYSTONE_LIST_PROJECTS =
+        genForKeystoneListProjects();
 
-    public static final HttpRequestDef<KeystoneListRegionsRequest, KeystoneListRegionsResponse> KEYSTONE_LIST_REGIONS
-        = genForKeystoneListRegions();
+    public static final HttpRequestDef<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse> KEYSTONE_CREATE_PROJECT =
+        genForKeystoneCreateProject();
 
-    public static final HttpRequestDef<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse>
-        KEYSTONE_LIST_AUTH_DOMAINS = genForKeystoneListAuthDomains();
+    public static final HttpRequestDef<KeystoneListRegionsRequest, KeystoneListRegionsResponse> KEYSTONE_LIST_REGIONS =
+        genForKeystoneListRegions();
 
-    /**
-     * The utility class should hide the public constructor
-     */
+    public static final HttpRequestDef<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse> KEYSTONE_LIST_AUTH_DOMAINS =
+        genForKeystoneListAuthDomains();
+
+    /** The utility class should hide the public constructor */
     private InnerIamMeta() {
 
     }
 
-    private static HttpRequestDef<KeystoneListProjectsRequest, KeystoneListProjectsResponse>
-        genForKeystoneListProjects() {
+    private static HttpRequestDef<KeystoneListProjectsRequest, KeystoneListProjectsResponse> genForKeystoneListProjects() {
         // basic
-        HttpRequestDef.Builder<KeystoneListProjectsRequest, KeystoneListProjectsResponse> builder
-            = HttpRequestDef.builder(HttpMethod.GET, KeystoneListProjectsRequest.class,
-            KeystoneListProjectsResponse.class).withUri("/v3/projects").withContentType("application/json");
+        HttpRequestDef.Builder<KeystoneListProjectsRequest, KeystoneListProjectsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, KeystoneListProjectsRequest.class, KeystoneListProjectsResponse.class)
+            .withUri("/v3/projects")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("domain_id", LocationType.Query, FieldExistence.NULL_IGNORE, String.class,
+        builder.withRequestField("domain_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
             f -> f.withMarshaller(KeystoneListProjectsRequest::getDomainId, KeystoneListProjectsRequest::setDomainId));
-        builder.withRequestField("name", LocationType.Query, FieldExistence.NULL_IGNORE, String.class,
+        builder.withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
             f -> f.withMarshaller(KeystoneListProjectsRequest::getName, KeystoneListProjectsRequest::setName));
-        builder.withRequestField("parent_id", LocationType.Query, FieldExistence.NULL_IGNORE, String.class,
+        builder.withRequestField("parent_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            String.class,
             f -> f.withMarshaller(KeystoneListProjectsRequest::getParentId, KeystoneListProjectsRequest::setParentId));
-        builder.withRequestField("enabled", LocationType.Query, FieldExistence.NULL_IGNORE, Boolean.class,
+        builder.withRequestField("enabled",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
             f -> f.withMarshaller(KeystoneListProjectsRequest::getEnabled, KeystoneListProjectsRequest::setEnabled));
-        builder.withRequestField("is_domain", LocationType.Query, FieldExistence.NULL_IGNORE, Boolean.class,
+        builder.withRequestField("is_domain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            Boolean.class,
             f -> f.withMarshaller(KeystoneListProjectsRequest::getIsDomain, KeystoneListProjectsRequest::setIsDomain));
 
         return builder.build();
     }
 
-    private static HttpRequestDef<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse>
-        genForKeystoneCreateProject() {
+    private static HttpRequestDef<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse> genForKeystoneCreateProject() {
         // basic
-        HttpRequestDef.Builder<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse> builder
-            = HttpRequestDef.builder(HttpMethod.POST, KeystoneCreateProjectRequest.class,
-            KeystoneCreateProjectResponse.class)
+        HttpRequestDef.Builder<KeystoneCreateProjectRequest, KeystoneCreateProjectResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, KeystoneCreateProjectRequest.class, KeystoneCreateProjectResponse.class)
             .withUri("/v3/projects")
             .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body", LocationType.Body, FieldExistence.NON_NULL_NON_EMPTY,
+        builder.withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
             KeystoneCreateProjectRequestBody.class,
             f -> f.withMarshaller(KeystoneCreateProjectRequest::getBody, KeystoneCreateProjectRequest::setBody));
 
@@ -99,15 +111,15 @@ public final class InnerIamMeta {
 
     private static HttpRequestDef<KeystoneListRegionsRequest, KeystoneListRegionsResponse> genForKeystoneListRegions() {
         // basic
-        HttpRequestDef.Builder<KeystoneListRegionsRequest, KeystoneListRegionsResponse> builder
-            = HttpRequestDef.builder(HttpMethod.GET, KeystoneListRegionsRequest.class,
-            KeystoneListRegionsResponse.class).withUri("/v3/regions").withContentType("application/json");
+        HttpRequestDef.Builder<KeystoneListRegionsRequest, KeystoneListRegionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, KeystoneListRegionsRequest.class, KeystoneListRegionsResponse.class)
+                .withUri("/v3/regions")
+                .withContentType("application/json");
 
         return builder.build();
     }
 
-    private static HttpRequestDef<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse>
-        genForKeystoneListAuthDomains() {
+    private static HttpRequestDef<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse> genForKeystoneListAuthDomains() {
         // basic
         HttpRequestDef.Builder<KeystoneListAuthDomainsRequest, KeystoneListAuthDomainsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, KeystoneListAuthDomainsRequest.class, KeystoneListAuthDomainsResponse.class)

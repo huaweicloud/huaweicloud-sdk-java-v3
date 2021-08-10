@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.ccm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ccm.v1.model.ImportCertificateAuthorityCertificateRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ImportCertificateAuthorityCertificateRequest  {
-
-
+/** Request Object */
+public class ImportCertificateAuthorityCertificateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ca_id")
-    
+    @JsonProperty(value = "ca_id")
+
     private String caId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ImportCertificateAuthorityCertificateRequestBody body;
 
     public ImportCertificateAuthorityCertificateRequest withCaId(String caId) {
@@ -35,13 +24,9 @@ public class ImportCertificateAuthorityCertificateRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * ca_id
-     * @return caId
-     */
+    /** ca_id
+     * 
+     * @return caId */
     public String getCaId() {
         return caId;
     }
@@ -50,27 +35,25 @@ public class ImportCertificateAuthorityCertificateRequest  {
         this.caId = caId;
     }
 
-    
-
-    public ImportCertificateAuthorityCertificateRequest withBody(ImportCertificateAuthorityCertificateRequestBody body) {
+    public ImportCertificateAuthorityCertificateRequest withBody(
+        ImportCertificateAuthorityCertificateRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public ImportCertificateAuthorityCertificateRequest withBody(Consumer<ImportCertificateAuthorityCertificateRequestBody> bodySetter) {
-        if(this.body == null ){
+    public ImportCertificateAuthorityCertificateRequest withBody(
+        Consumer<ImportCertificateAuthorityCertificateRequestBody> bodySetter) {
+        if (this.body == null) {
             this.body = new ImportCertificateAuthorityCertificateRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ImportCertificateAuthorityCertificateRequestBody getBody() {
         return body;
     }
@@ -78,8 +61,6 @@ public class ImportCertificateAuthorityCertificateRequest  {
     public void setBody(ImportCertificateAuthorityCertificateRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -89,14 +70,17 @@ public class ImportCertificateAuthorityCertificateRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ImportCertificateAuthorityCertificateRequest importCertificateAuthorityCertificateRequest = (ImportCertificateAuthorityCertificateRequest) o;
-        return Objects.equals(this.caId, importCertificateAuthorityCertificateRequest.caId) &&
-            Objects.equals(this.body, importCertificateAuthorityCertificateRequest.body);
+        ImportCertificateAuthorityCertificateRequest importCertificateAuthorityCertificateRequest =
+            (ImportCertificateAuthorityCertificateRequest) o;
+        return Objects.equals(this.caId, importCertificateAuthorityCertificateRequest.caId)
+            && Objects.equals(this.body, importCertificateAuthorityCertificateRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(caId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +90,13 @@ public class ImportCertificateAuthorityCertificateRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

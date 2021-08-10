@@ -1,122 +1,98 @@
 package com.huaweicloud.sdk.projectman.v4.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ListIssueRequestV4
- */
-public class ListIssueRequestV4  {
-
-
+/** ListIssueRequestV4 */
+public class ListIssueRequestV4 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="assigned_ids")
-    
+    @JsonProperty(value = "assigned_ids")
+
     private List<Integer> assignedIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator_ids")
-    
+    @JsonProperty(value = "creator_ids")
+
     private List<Integer> creatorIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="developer_ids")
-    
+    @JsonProperty(value = "developer_ids")
+
     private List<Integer> developerIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_ids")
-    
+    @JsonProperty(value = "domain_ids")
+
     private List<Integer> domainIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="done_ratios")
-    
+    @JsonProperty(value = "done_ratios")
+
     private List<Integer> doneRatios = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="iteration_ids")
-    
+    @JsonProperty(value = "iteration_ids")
+
     private List<Integer> iterationIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="module_ids")
-    
+    @JsonProperty(value = "module_ids")
+
     private List<Integer> moduleIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="priority_ids")
-    
+    @JsonProperty(value = "priority_ids")
+
     private List<Integer> priorityIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="query_type")
-    
+    @JsonProperty(value = "query_type")
+
     private String queryType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="severity_ids")
-    
+    @JsonProperty(value = "severity_ids")
+
     private List<Integer> severityIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status_ids")
-    
+    @JsonProperty(value = "status_ids")
+
     private List<Integer> statusIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="story_point_ids")
-    
+    @JsonProperty(value = "story_point_ids")
+
     private List<Integer> storyPointIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tracker_ids")
-    
+    @JsonProperty(value = "tracker_ids")
+
     private List<Integer> trackerIds = null;
-    
+
     public ListIssueRequestV4 withAssignedIds(List<Integer> assignedIds) {
         this.assignedIds = assignedIds;
         return this;
     }
 
-    
     public ListIssueRequestV4 addAssignedIdsItem(Integer assignedIdsItem) {
-        if(this.assignedIds == null) {
+        if (this.assignedIds == null) {
             this.assignedIds = new ArrayList<>();
         }
         this.assignedIds.add(assignedIdsItem);
@@ -124,17 +100,16 @@ public class ListIssueRequestV4  {
     }
 
     public ListIssueRequestV4 withAssignedIds(Consumer<List<Integer>> assignedIdsSetter) {
-        if(this.assignedIds == null) {
+        if (this.assignedIds == null) {
             this.assignedIds = new ArrayList<>();
         }
         assignedIdsSetter.accept(this.assignedIds);
         return this;
     }
 
-    /**
-     * 处理人id
-     * @return assignedIds
-     */
+    /** 处理人id
+     * 
+     * @return assignedIds */
     public List<Integer> getAssignedIds() {
         return assignedIds;
     }
@@ -143,16 +118,13 @@ public class ListIssueRequestV4  {
         this.assignedIds = assignedIds;
     }
 
-    
-
     public ListIssueRequestV4 withCreatorIds(List<Integer> creatorIds) {
         this.creatorIds = creatorIds;
         return this;
     }
 
-    
     public ListIssueRequestV4 addCreatorIdsItem(Integer creatorIdsItem) {
-        if(this.creatorIds == null) {
+        if (this.creatorIds == null) {
             this.creatorIds = new ArrayList<>();
         }
         this.creatorIds.add(creatorIdsItem);
@@ -160,17 +132,16 @@ public class ListIssueRequestV4  {
     }
 
     public ListIssueRequestV4 withCreatorIds(Consumer<List<Integer>> creatorIdsSetter) {
-        if(this.creatorIds == null) {
+        if (this.creatorIds == null) {
             this.creatorIds = new ArrayList<>();
         }
         creatorIdsSetter.accept(this.creatorIds);
         return this;
     }
 
-    /**
-     * 创建者id
-     * @return creatorIds
-     */
+    /** 创建者id
+     * 
+     * @return creatorIds */
     public List<Integer> getCreatorIds() {
         return creatorIds;
     }
@@ -179,16 +150,13 @@ public class ListIssueRequestV4  {
         this.creatorIds = creatorIds;
     }
 
-    
-
     public ListIssueRequestV4 withDeveloperIds(List<Integer> developerIds) {
         this.developerIds = developerIds;
         return this;
     }
 
-    
     public ListIssueRequestV4 addDeveloperIdsItem(Integer developerIdsItem) {
-        if(this.developerIds == null) {
+        if (this.developerIds == null) {
             this.developerIds = new ArrayList<>();
         }
         this.developerIds.add(developerIdsItem);
@@ -196,17 +164,16 @@ public class ListIssueRequestV4  {
     }
 
     public ListIssueRequestV4 withDeveloperIds(Consumer<List<Integer>> developerIdsSetter) {
-        if(this.developerIds == null) {
+        if (this.developerIds == null) {
             this.developerIds = new ArrayList<>();
         }
         developerIdsSetter.accept(this.developerIds);
         return this;
     }
 
-    /**
-     * 开发人id,对应用户信息的数字id
-     * @return developerIds
-     */
+    /** 开发人id,对应用户信息的数字id
+     * 
+     * @return developerIds */
     public List<Integer> getDeveloperIds() {
         return developerIds;
     }
@@ -215,16 +182,13 @@ public class ListIssueRequestV4  {
         this.developerIds = developerIds;
     }
 
-    
-
     public ListIssueRequestV4 withDomainIds(List<Integer> domainIds) {
         this.domainIds = domainIds;
         return this;
     }
 
-    
     public ListIssueRequestV4 addDomainIdsItem(Integer domainIdsItem) {
-        if(this.domainIds == null) {
+        if (this.domainIds == null) {
             this.domainIds = new ArrayList<>();
         }
         this.domainIds.add(domainIdsItem);
@@ -232,17 +196,16 @@ public class ListIssueRequestV4  {
     }
 
     public ListIssueRequestV4 withDomainIds(Consumer<List<Integer>> domainIdsSetter) {
-        if(this.domainIds == null) {
+        if (this.domainIds == null) {
             this.domainIds = new ArrayList<>();
         }
         domainIdsSetter.accept(this.domainIds);
         return this;
     }
 
-    /**
-     * id, 领域, 14 '性能', 15 '功能', 16 '可靠性', 17 '网络安全', 18 '可维护性', 19 '其他DFX', 20 '可用性',
-     * @return domainIds
-     */
+    /** id, 领域, 14 '性能', 15 '功能', 16 '可靠性', 17 '网络安全', 18 '可维护性', 19 '其他DFX', 20 '可用性',
+     * 
+     * @return domainIds */
     public List<Integer> getDomainIds() {
         return domainIds;
     }
@@ -251,16 +214,13 @@ public class ListIssueRequestV4  {
         this.domainIds = domainIds;
     }
 
-    
-
     public ListIssueRequestV4 withDoneRatios(List<Integer> doneRatios) {
         this.doneRatios = doneRatios;
         return this;
     }
 
-    
     public ListIssueRequestV4 addDoneRatiosItem(Integer doneRatiosItem) {
-        if(this.doneRatios == null) {
+        if (this.doneRatios == null) {
             this.doneRatios = new ArrayList<>();
         }
         this.doneRatios.add(doneRatiosItem);
@@ -268,17 +228,16 @@ public class ListIssueRequestV4  {
     }
 
     public ListIssueRequestV4 withDoneRatios(Consumer<List<Integer>> doneRatiosSetter) {
-        if(this.doneRatios == null) {
+        if (this.doneRatios == null) {
             this.doneRatios = new ArrayList<>();
         }
         doneRatiosSetter.accept(this.doneRatios);
         return this;
     }
 
-    /**
-     * 完成度
-     * @return doneRatios
-     */
+    /** 完成度
+     * 
+     * @return doneRatios */
     public List<Integer> getDoneRatios() {
         return doneRatios;
     }
@@ -287,16 +246,13 @@ public class ListIssueRequestV4  {
         this.doneRatios = doneRatios;
     }
 
-    
-
     public ListIssueRequestV4 withIterationIds(List<Integer> iterationIds) {
         this.iterationIds = iterationIds;
         return this;
     }
 
-    
     public ListIssueRequestV4 addIterationIdsItem(Integer iterationIdsItem) {
-        if(this.iterationIds == null) {
+        if (this.iterationIds == null) {
             this.iterationIds = new ArrayList<>();
         }
         this.iterationIds.add(iterationIdsItem);
@@ -304,17 +260,16 @@ public class ListIssueRequestV4  {
     }
 
     public ListIssueRequestV4 withIterationIds(Consumer<List<Integer>> iterationIdsSetter) {
-        if(this.iterationIds == null) {
+        if (this.iterationIds == null) {
             this.iterationIds = new ArrayList<>();
         }
         iterationIdsSetter.accept(this.iterationIds);
         return this;
     }
 
-    /**
-     * 迭代id
-     * @return iterationIds
-     */
+    /** 迭代id
+     * 
+     * @return iterationIds */
     public List<Integer> getIterationIds() {
         return iterationIds;
     }
@@ -323,22 +278,14 @@ public class ListIssueRequestV4  {
         this.iterationIds = iterationIds;
     }
 
-    
-
     public ListIssueRequestV4 withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示数量
-     * minimum: 1
-     * maximum: 100
-     * @return limit
-     */
+    /** 每页显示数量 minimum: 1 maximum: 100
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -347,21 +294,14 @@ public class ListIssueRequestV4  {
         this.limit = limit;
     }
 
-    
-
     public ListIssueRequestV4 withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页索引，偏移量，offset是limit的整数倍数，limit=10,offset=0,10,20...
-     * minimum: 0
-     * @return offset
-     */
+    /** 分页索引，偏移量，offset是limit的整数倍数，limit=10,offset=0,10,20... minimum: 0
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -370,16 +310,13 @@ public class ListIssueRequestV4  {
         this.offset = offset;
     }
 
-    
-
     public ListIssueRequestV4 withModuleIds(List<Integer> moduleIds) {
         this.moduleIds = moduleIds;
         return this;
     }
 
-    
     public ListIssueRequestV4 addModuleIdsItem(Integer moduleIdsItem) {
-        if(this.moduleIds == null) {
+        if (this.moduleIds == null) {
             this.moduleIds = new ArrayList<>();
         }
         this.moduleIds.add(moduleIdsItem);
@@ -387,17 +324,16 @@ public class ListIssueRequestV4  {
     }
 
     public ListIssueRequestV4 withModuleIds(Consumer<List<Integer>> moduleIdsSetter) {
-        if(this.moduleIds == null) {
+        if (this.moduleIds == null) {
             this.moduleIds = new ArrayList<>();
         }
         moduleIdsSetter.accept(this.moduleIds);
         return this;
     }
 
-    /**
-     * 模块id
-     * @return moduleIds
-     */
+    /** 模块id
+     * 
+     * @return moduleIds */
     public List<Integer> getModuleIds() {
         return moduleIds;
     }
@@ -406,16 +342,13 @@ public class ListIssueRequestV4  {
         this.moduleIds = moduleIds;
     }
 
-    
-
     public ListIssueRequestV4 withPriorityIds(List<Integer> priorityIds) {
         this.priorityIds = priorityIds;
         return this;
     }
 
-    
     public ListIssueRequestV4 addPriorityIdsItem(Integer priorityIdsItem) {
-        if(this.priorityIds == null) {
+        if (this.priorityIds == null) {
             this.priorityIds = new ArrayList<>();
         }
         this.priorityIds.add(priorityIdsItem);
@@ -423,17 +356,16 @@ public class ListIssueRequestV4  {
     }
 
     public ListIssueRequestV4 withPriorityIds(Consumer<List<Integer>> priorityIdsSetter) {
-        if(this.priorityIds == null) {
+        if (this.priorityIds == null) {
             this.priorityIds = new ArrayList<>();
         }
         priorityIdsSetter.accept(this.priorityIds);
         return this;
     }
 
-    /**
-     * 优先级
-     * @return priorityIds
-     */
+    /** 优先级
+     * 
+     * @return priorityIds */
     public List<Integer> getPriorityIds() {
         return priorityIds;
     }
@@ -442,20 +374,14 @@ public class ListIssueRequestV4  {
         this.priorityIds = priorityIds;
     }
 
-    
-
     public ListIssueRequestV4 withQueryType(String queryType) {
         this.queryType = queryType;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询类型 backlog feature epic
-     * @return queryType
-     */
+    /** 查询类型 backlog feature epic
+     * 
+     * @return queryType */
     public String getQueryType() {
         return queryType;
     }
@@ -464,16 +390,13 @@ public class ListIssueRequestV4  {
         this.queryType = queryType;
     }
 
-    
-
     public ListIssueRequestV4 withSeverityIds(List<Integer> severityIds) {
         this.severityIds = severityIds;
         return this;
     }
 
-    
     public ListIssueRequestV4 addSeverityIdsItem(Integer severityIdsItem) {
-        if(this.severityIds == null) {
+        if (this.severityIds == null) {
             this.severityIds = new ArrayList<>();
         }
         this.severityIds.add(severityIdsItem);
@@ -481,17 +404,16 @@ public class ListIssueRequestV4  {
     }
 
     public ListIssueRequestV4 withSeverityIds(Consumer<List<Integer>> severityIdsSetter) {
-        if(this.severityIds == null) {
+        if (this.severityIds == null) {
             this.severityIds = new ArrayList<>();
         }
         severityIdsSetter.accept(this.severityIds);
         return this;
     }
 
-    /**
-     * 查询类型
-     * @return severityIds
-     */
+    /** 查询类型
+     * 
+     * @return severityIds */
     public List<Integer> getSeverityIds() {
         return severityIds;
     }
@@ -500,16 +422,13 @@ public class ListIssueRequestV4  {
         this.severityIds = severityIds;
     }
 
-    
-
     public ListIssueRequestV4 withStatusIds(List<Integer> statusIds) {
         this.statusIds = statusIds;
         return this;
     }
 
-    
     public ListIssueRequestV4 addStatusIdsItem(Integer statusIdsItem) {
-        if(this.statusIds == null) {
+        if (this.statusIds == null) {
             this.statusIds = new ArrayList<>();
         }
         this.statusIds.add(statusIdsItem);
@@ -517,17 +436,16 @@ public class ListIssueRequestV4  {
     }
 
     public ListIssueRequestV4 withStatusIds(Consumer<List<Integer>> statusIdsSetter) {
-        if(this.statusIds == null) {
+        if (this.statusIds == null) {
             this.statusIds = new ArrayList<>();
         }
         statusIdsSetter.accept(this.statusIds);
         return this;
     }
 
-    /**
-     * 状态   id, 开始   1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已解决 6,
-     * @return statusIds
-     */
+    /** 状态 id, 开始 1, 进行中 2, 已解决 3, 测试中 4, 已关闭 5, 已解决 6,
+     * 
+     * @return statusIds */
     public List<Integer> getStatusIds() {
         return statusIds;
     }
@@ -536,16 +454,13 @@ public class ListIssueRequestV4  {
         this.statusIds = statusIds;
     }
 
-    
-
     public ListIssueRequestV4 withStoryPointIds(List<Integer> storyPointIds) {
         this.storyPointIds = storyPointIds;
         return this;
     }
 
-    
     public ListIssueRequestV4 addStoryPointIdsItem(Integer storyPointIdsItem) {
-        if(this.storyPointIds == null) {
+        if (this.storyPointIds == null) {
             this.storyPointIds = new ArrayList<>();
         }
         this.storyPointIds.add(storyPointIdsItem);
@@ -553,17 +468,16 @@ public class ListIssueRequestV4  {
     }
 
     public ListIssueRequestV4 withStoryPointIds(Consumer<List<Integer>> storyPointIdsSetter) {
-        if(this.storyPointIds == null) {
+        if (this.storyPointIds == null) {
             this.storyPointIds = new ArrayList<>();
         }
         storyPointIdsSetter.accept(this.storyPointIds);
         return this;
     }
 
-    /**
-     * 故事点id
-     * @return storyPointIds
-     */
+    /** 故事点id
+     * 
+     * @return storyPointIds */
     public List<Integer> getStoryPointIds() {
         return storyPointIds;
     }
@@ -572,16 +486,13 @@ public class ListIssueRequestV4  {
         this.storyPointIds = storyPointIds;
     }
 
-    
-
     public ListIssueRequestV4 withTrackerIds(List<Integer> trackerIds) {
         this.trackerIds = trackerIds;
         return this;
     }
 
-    
     public ListIssueRequestV4 addTrackerIdsItem(Integer trackerIdsItem) {
-        if(this.trackerIds == null) {
+        if (this.trackerIds == null) {
             this.trackerIds = new ArrayList<>();
         }
         this.trackerIds.add(trackerIdsItem);
@@ -589,17 +500,16 @@ public class ListIssueRequestV4  {
     }
 
     public ListIssueRequestV4 withTrackerIds(Consumer<List<Integer>> trackerIdsSetter) {
-        if(this.trackerIds == null) {
+        if (this.trackerIds == null) {
             this.trackerIds = new ArrayList<>();
         }
         trackerIdsSetter.accept(this.trackerIds);
         return this;
     }
 
-    /**
-     * 工作项类型,2任务/task,3缺陷/bug,5epic,6feature,7story
-     * @return trackerIds
-     */
+    /** 工作项类型,2任务/task,3缺陷/bug,5epic,6feature,7story
+     * 
+     * @return trackerIds */
     public List<Integer> getTrackerIds() {
         return trackerIds;
     }
@@ -607,8 +517,6 @@ public class ListIssueRequestV4  {
     public void setTrackerIds(List<Integer> trackerIds) {
         this.trackerIds = trackerIds;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -619,26 +527,42 @@ public class ListIssueRequestV4  {
             return false;
         }
         ListIssueRequestV4 listIssueRequestV4 = (ListIssueRequestV4) o;
-        return Objects.equals(this.assignedIds, listIssueRequestV4.assignedIds) &&
-            Objects.equals(this.creatorIds, listIssueRequestV4.creatorIds) &&
-            Objects.equals(this.developerIds, listIssueRequestV4.developerIds) &&
-            Objects.equals(this.domainIds, listIssueRequestV4.domainIds) &&
-            Objects.equals(this.doneRatios, listIssueRequestV4.doneRatios) &&
-            Objects.equals(this.iterationIds, listIssueRequestV4.iterationIds) &&
-            Objects.equals(this.limit, listIssueRequestV4.limit) &&
-            Objects.equals(this.offset, listIssueRequestV4.offset) &&
-            Objects.equals(this.moduleIds, listIssueRequestV4.moduleIds) &&
-            Objects.equals(this.priorityIds, listIssueRequestV4.priorityIds) &&
-            Objects.equals(this.queryType, listIssueRequestV4.queryType) &&
-            Objects.equals(this.severityIds, listIssueRequestV4.severityIds) &&
-            Objects.equals(this.statusIds, listIssueRequestV4.statusIds) &&
-            Objects.equals(this.storyPointIds, listIssueRequestV4.storyPointIds) &&
-            Objects.equals(this.trackerIds, listIssueRequestV4.trackerIds);
+        return Objects.equals(this.assignedIds, listIssueRequestV4.assignedIds)
+            && Objects.equals(this.creatorIds, listIssueRequestV4.creatorIds)
+            && Objects.equals(this.developerIds, listIssueRequestV4.developerIds)
+            && Objects.equals(this.domainIds, listIssueRequestV4.domainIds)
+            && Objects.equals(this.doneRatios, listIssueRequestV4.doneRatios)
+            && Objects.equals(this.iterationIds, listIssueRequestV4.iterationIds)
+            && Objects.equals(this.limit, listIssueRequestV4.limit)
+            && Objects.equals(this.offset, listIssueRequestV4.offset)
+            && Objects.equals(this.moduleIds, listIssueRequestV4.moduleIds)
+            && Objects.equals(this.priorityIds, listIssueRequestV4.priorityIds)
+            && Objects.equals(this.queryType, listIssueRequestV4.queryType)
+            && Objects.equals(this.severityIds, listIssueRequestV4.severityIds)
+            && Objects.equals(this.statusIds, listIssueRequestV4.statusIds)
+            && Objects.equals(this.storyPointIds, listIssueRequestV4.storyPointIds)
+            && Objects.equals(this.trackerIds, listIssueRequestV4.trackerIds);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(assignedIds, creatorIds, developerIds, domainIds, doneRatios, iterationIds, limit, offset, moduleIds, priorityIds, queryType, severityIds, statusIds, storyPointIds, trackerIds);
+        return Objects.hash(assignedIds,
+            creatorIds,
+            developerIds,
+            domainIds,
+            doneRatios,
+            iterationIds,
+            limit,
+            offset,
+            moduleIds,
+            priorityIds,
+            queryType,
+            severityIds,
+            statusIds,
+            storyPointIds,
+            trackerIds);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -661,16 +585,13 @@ public class ListIssueRequestV4  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CheckSlideVerifyCodeResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="token")
-    
+    @JsonProperty(value = "token")
+
     private String token;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expire")
-    
+    @JsonProperty(value = "expire")
+
     private Integer expire;
 
     public CheckSlideVerifyCodeResponse withToken(String token) {
@@ -36,13 +24,9 @@ public class CheckSlideVerifyCodeResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 访问token字符串
-     * @return token
-     */
+    /** 访问token字符串
+     * 
+     * @return token */
     public String getToken() {
         return token;
     }
@@ -51,20 +35,14 @@ public class CheckSlideVerifyCodeResponse extends SdkResponse {
         this.token = token;
     }
 
-    
-
     public CheckSlideVerifyCodeResponse withExpire(Integer expire) {
         this.expire = expire;
         return this;
     }
 
-    
-
-
-    /**
-     * 过期时间，单位：秒
-     * @return expire
-     */
+    /** 过期时间，单位：秒
+     * 
+     * @return expire */
     public Integer getExpire() {
         return expire;
     }
@@ -72,8 +50,6 @@ public class CheckSlideVerifyCodeResponse extends SdkResponse {
     public void setExpire(Integer expire) {
         this.expire = expire;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +60,15 @@ public class CheckSlideVerifyCodeResponse extends SdkResponse {
             return false;
         }
         CheckSlideVerifyCodeResponse checkSlideVerifyCodeResponse = (CheckSlideVerifyCodeResponse) o;
-        return Objects.equals(this.token, checkSlideVerifyCodeResponse.token) &&
-            Objects.equals(this.expire, checkSlideVerifyCodeResponse.expire);
+        return Objects.equals(this.token, checkSlideVerifyCodeResponse.token)
+            && Objects.equals(this.expire, checkSlideVerifyCodeResponse.expire);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(token, expire);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +78,13 @@ public class CheckSlideVerifyCodeResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

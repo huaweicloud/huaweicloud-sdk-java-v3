@@ -1,49 +1,35 @@
 package com.huaweicloud.sdk.cloudtest.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cloudtest.v1.model.Environment;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListEnvironmentsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="environments")
-    
+    @JsonProperty(value = "environments")
+
     private List<Environment> environments = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Long offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Long limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
-    
+    @JsonProperty(value = "total_count")
+
     private Long totalCount;
 
     public ListEnvironmentsResponse withEnvironments(List<Environment> environments) {
@@ -51,9 +37,8 @@ public class ListEnvironmentsResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListEnvironmentsResponse addEnvironmentsItem(Environment environmentsItem) {
-        if(this.environments == null) {
+        if (this.environments == null) {
             this.environments = new ArrayList<>();
         }
         this.environments.add(environmentsItem);
@@ -61,17 +46,16 @@ public class ListEnvironmentsResponse extends SdkResponse {
     }
 
     public ListEnvironmentsResponse withEnvironments(Consumer<List<Environment>> environmentsSetter) {
-        if(this.environments == null) {
+        if (this.environments == null) {
             this.environments = new ArrayList<>();
         }
         environmentsSetter.accept(this.environments);
         return this;
     }
 
-    /**
-     * 环境分组列表
-     * @return environments
-     */
+    /** 环境分组列表
+     * 
+     * @return environments */
     public List<Environment> getEnvironments() {
         return environments;
     }
@@ -80,22 +64,14 @@ public class ListEnvironmentsResponse extends SdkResponse {
         this.environments = environments;
     }
 
-    
-
     public ListEnvironmentsResponse withOffset(Long offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询，offset大于等于0
-     * minimum: 0
-     * maximum: 999
-     * @return offset
-     */
+    /** 偏移量，表示从此偏移量开始查询，offset大于等于0 minimum: 0 maximum: 999
+     * 
+     * @return offset */
     public Long getOffset() {
         return offset;
     }
@@ -104,22 +80,14 @@ public class ListEnvironmentsResponse extends SdkResponse {
         this.offset = offset;
     }
 
-    
-
     public ListEnvironmentsResponse withLimit(Long limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示的条目数量,最大支持200条
-     * minimum: 1
-     * maximum: 200
-     * @return limit
-     */
+    /** 每页显示的条目数量,最大支持200条 minimum: 1 maximum: 200
+     * 
+     * @return limit */
     public Long getLimit() {
         return limit;
     }
@@ -128,22 +96,14 @@ public class ListEnvironmentsResponse extends SdkResponse {
         this.limit = limit;
     }
 
-    
-
     public ListEnvironmentsResponse withTotalCount(Long totalCount) {
         this.totalCount = totalCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境分组总条数
-     * minimum: 0
-     * maximum: 100
-     * @return totalCount
-     */
+    /** 环境分组总条数 minimum: 0 maximum: 100
+     * 
+     * @return totalCount */
     public Long getTotalCount() {
         return totalCount;
     }
@@ -151,8 +111,6 @@ public class ListEnvironmentsResponse extends SdkResponse {
     public void setTotalCount(Long totalCount) {
         this.totalCount = totalCount;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -163,15 +121,17 @@ public class ListEnvironmentsResponse extends SdkResponse {
             return false;
         }
         ListEnvironmentsResponse listEnvironmentsResponse = (ListEnvironmentsResponse) o;
-        return Objects.equals(this.environments, listEnvironmentsResponse.environments) &&
-            Objects.equals(this.offset, listEnvironmentsResponse.offset) &&
-            Objects.equals(this.limit, listEnvironmentsResponse.limit) &&
-            Objects.equals(this.totalCount, listEnvironmentsResponse.totalCount);
+        return Objects.equals(this.environments, listEnvironmentsResponse.environments)
+            && Objects.equals(this.offset, listEnvironmentsResponse.offset)
+            && Objects.equals(this.limit, listEnvironmentsResponse.limit)
+            && Objects.equals(this.totalCount, listEnvironmentsResponse.totalCount);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(environments, offset, limit, totalCount);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -183,16 +143,13 @@ public class ListEnvironmentsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

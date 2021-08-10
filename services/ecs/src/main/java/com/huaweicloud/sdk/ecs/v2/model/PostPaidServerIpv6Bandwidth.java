@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * IPV6共享带宽。
- */
-public class PostPaidServerIpv6Bandwidth  {
-
-
+/** IPV6共享带宽。 */
+public class PostPaidServerIpv6Bandwidth {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
     public PostPaidServerIpv6Bandwidth withId(String id) {
@@ -28,13 +18,9 @@ public class PostPaidServerIpv6Bandwidth  {
         return this;
     }
 
-    
-
-
-    /**
-     * 绑定的共享带宽ID。
-     * @return id
-     */
+    /** 绑定的共享带宽ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -42,8 +28,6 @@ public class PostPaidServerIpv6Bandwidth  {
     public void setId(String id) {
         this.id = id;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class PostPaidServerIpv6Bandwidth  {
         PostPaidServerIpv6Bandwidth postPaidServerIpv6Bandwidth = (PostPaidServerIpv6Bandwidth) o;
         return Objects.equals(this.id, postPaidServerIpv6Bandwidth.id);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class PostPaidServerIpv6Bandwidth  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

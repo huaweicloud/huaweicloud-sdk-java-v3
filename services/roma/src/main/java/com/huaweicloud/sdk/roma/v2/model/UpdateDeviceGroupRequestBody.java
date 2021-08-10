@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * UpdateDeviceGroupRequestBody
- */
-public class UpdateDeviceGroupRequestBody  {
-
-
+/** UpdateDeviceGroupRequestBody */
+public class UpdateDeviceGroupRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public UpdateDeviceGroupRequestBody withName(String name) {
@@ -34,13 +23,9 @@ public class UpdateDeviceGroupRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 分组名称，支持中文，英文大小写，数字，下划线和中划线,长度2-64
-     * @return name
-     */
+    /** 分组名称，支持中文，英文大小写，数字，下划线和中划线,长度2-64
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -49,20 +34,14 @@ public class UpdateDeviceGroupRequestBody  {
         this.name = name;
     }
 
-    
-
     public UpdateDeviceGroupRequestBody withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 分组描述，长度0-200
-     * @return description
-     */
+    /** 分组描述，长度0-200
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -70,8 +49,6 @@ public class UpdateDeviceGroupRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class UpdateDeviceGroupRequestBody  {
             return false;
         }
         UpdateDeviceGroupRequestBody updateDeviceGroupRequestBody = (UpdateDeviceGroupRequestBody) o;
-        return Objects.equals(this.name, updateDeviceGroupRequestBody.name) &&
-            Objects.equals(this.description, updateDeviceGroupRequestBody.description);
+        return Objects.equals(this.name, updateDeviceGroupRequestBody.name)
+            && Objects.equals(this.description, updateDeviceGroupRequestBody.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class UpdateDeviceGroupRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

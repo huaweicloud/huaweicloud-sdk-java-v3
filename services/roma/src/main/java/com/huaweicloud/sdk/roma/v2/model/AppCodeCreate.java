@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * AppCodeCreate
- */
-public class AppCodeCreate  {
-
-
+/** AppCodeCreate */
+public class AppCodeCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_code")
-    
+    @JsonProperty(value = "app_code")
+
     private String appCode;
 
     public AppCodeCreate withAppCode(String appCode) {
@@ -28,13 +18,9 @@ public class AppCodeCreate  {
         return this;
     }
 
-    
-
-
-    /**
-     * App Code值  支持英文，+_!@#$%+/=，且只能以英文和+、/开头。
-     * @return appCode
-     */
+    /** App Code值 支持英文，+_!@#$%+/=，且只能以英文和+、/开头。
+     * 
+     * @return appCode */
     public String getAppCode() {
         return appCode;
     }
@@ -42,8 +28,6 @@ public class AppCodeCreate  {
     public void setAppCode(String appCode) {
         this.appCode = appCode;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class AppCodeCreate  {
         AppCodeCreate appCodeCreate = (AppCodeCreate) o;
         return Objects.equals(this.appCode, appCodeCreate.appCode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(appCode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class AppCodeCreate  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

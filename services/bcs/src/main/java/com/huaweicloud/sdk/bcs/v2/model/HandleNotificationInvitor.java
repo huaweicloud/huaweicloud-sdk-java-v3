@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * HandleNotificationInvitor
- */
-public class HandleNotificationInvitor  {
-
-
+/** HandleNotificationInvitor */
+public class HandleNotificationInvitor {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invitor_bcs_id")
-    
+    @JsonProperty(value = "invitor_bcs_id")
+
     private String invitorBcsId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invitor_bcs_name")
-    
+    @JsonProperty(value = "invitor_bcs_name")
+
     private String invitorBcsName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invitor_project_id")
-    
+    @JsonProperty(value = "invitor_project_id")
+
     private String invitorProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invitor_user_id")
-    
+    @JsonProperty(value = "invitor_user_id")
+
     private String invitorUserId;
 
     public HandleNotificationInvitor withInvitorBcsId(String invitorBcsId) {
@@ -46,13 +33,9 @@ public class HandleNotificationInvitor  {
         return this;
     }
 
-    
-
-
-    /**
-     * 邀请方实例id
-     * @return invitorBcsId
-     */
+    /** 邀请方实例id
+     * 
+     * @return invitorBcsId */
     public String getInvitorBcsId() {
         return invitorBcsId;
     }
@@ -61,20 +44,14 @@ public class HandleNotificationInvitor  {
         this.invitorBcsId = invitorBcsId;
     }
 
-    
-
     public HandleNotificationInvitor withInvitorBcsName(String invitorBcsName) {
         this.invitorBcsName = invitorBcsName;
         return this;
     }
 
-    
-
-
-    /**
-     * 邀请方实例名称，同意联盟邀请时比填
-     * @return invitorBcsName
-     */
+    /** 邀请方实例名称，同意联盟邀请时比填
+     * 
+     * @return invitorBcsName */
     public String getInvitorBcsName() {
         return invitorBcsName;
     }
@@ -83,20 +60,14 @@ public class HandleNotificationInvitor  {
         this.invitorBcsName = invitorBcsName;
     }
 
-    
-
     public HandleNotificationInvitor withInvitorProjectId(String invitorProjectId) {
         this.invitorProjectId = invitorProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 邀请方project id
-     * @return invitorProjectId
-     */
+    /** 邀请方project id
+     * 
+     * @return invitorProjectId */
     public String getInvitorProjectId() {
         return invitorProjectId;
     }
@@ -105,20 +76,14 @@ public class HandleNotificationInvitor  {
         this.invitorProjectId = invitorProjectId;
     }
 
-    
-
     public HandleNotificationInvitor withInvitorUserId(String invitorUserId) {
         this.invitorUserId = invitorUserId;
         return this;
     }
 
-    
-
-
-    /**
-     * 邀请方租户,hcs模式下是邀请方租户id
-     * @return invitorUserId
-     */
+    /** 邀请方租户,hcs模式下是邀请方租户id
+     * 
+     * @return invitorUserId */
     public String getInvitorUserId() {
         return invitorUserId;
     }
@@ -126,8 +91,6 @@ public class HandleNotificationInvitor  {
     public void setInvitorUserId(String invitorUserId) {
         this.invitorUserId = invitorUserId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class HandleNotificationInvitor  {
             return false;
         }
         HandleNotificationInvitor handleNotificationInvitor = (HandleNotificationInvitor) o;
-        return Objects.equals(this.invitorBcsId, handleNotificationInvitor.invitorBcsId) &&
-            Objects.equals(this.invitorBcsName, handleNotificationInvitor.invitorBcsName) &&
-            Objects.equals(this.invitorProjectId, handleNotificationInvitor.invitorProjectId) &&
-            Objects.equals(this.invitorUserId, handleNotificationInvitor.invitorUserId);
+        return Objects.equals(this.invitorBcsId, handleNotificationInvitor.invitorBcsId)
+            && Objects.equals(this.invitorBcsName, handleNotificationInvitor.invitorBcsName)
+            && Objects.equals(this.invitorProjectId, handleNotificationInvitor.invitorProjectId)
+            && Objects.equals(this.invitorUserId, handleNotificationInvitor.invitorUserId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(invitorBcsId, invitorBcsName, invitorProjectId, invitorUserId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class HandleNotificationInvitor  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,57 +1,42 @@
 package com.huaweicloud.sdk.smn.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListApplicationEndpointsRequest  {
-
-
+/** Request Object */
+public class ListApplicationEndpointsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="application_urn")
-    
+    @JsonProperty(value = "application_urn")
+
     private String applicationUrn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enabled")
-    
+    @JsonProperty(value = "enabled")
+
     private String enabled;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="token")
+    @JsonProperty(value = "token")
     @com.huaweicloud.sdk.core.json.JsonSensitive
-    
+
     private String token;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_data")
-    
+    @JsonProperty(value = "user_data")
+
     private String userData;
 
     public ListApplicationEndpointsRequest withApplicationUrn(String applicationUrn) {
@@ -59,13 +44,9 @@ public class ListApplicationEndpointsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * Application的唯一资源标识，可通过[查询Application](https://support.huaweicloud.com/api-smn/smn_api_57004.html)获取该标识。
-     * @return applicationUrn
-     */
+    /** Application的唯一资源标识，可通过[查询Application](https://support.huaweicloud.com/api-smn/smn_api_57004.html)获取该标识。
+     * 
+     * @return applicationUrn */
     public String getApplicationUrn() {
         return applicationUrn;
     }
@@ -74,20 +55,14 @@ public class ListApplicationEndpointsRequest  {
         this.applicationUrn = applicationUrn;
     }
 
-    
-
     public ListApplicationEndpointsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量。  偏移量为一个大于0小于资源总个数的整数，表示查询该偏移量后面的所有的资源，默认值为0。
-     * @return offset
-     */
+    /** 偏移量。 偏移量为一个大于0小于资源总个数的整数，表示查询该偏移量后面的所有的资源，默认值为0。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -96,20 +71,14 @@ public class ListApplicationEndpointsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListApplicationEndpointsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询的数量限制。  取值范围：1~100，取值一般为10，20，50。功能说明：每页返回的资源个数。默认值为100。
-     * @return limit
-     */
+    /** 查询的数量限制。 取值范围：1~100，取值一般为10，20，50。功能说明：每页返回的资源个数。默认值为100。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -118,20 +87,14 @@ public class ListApplicationEndpointsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListApplicationEndpointsRequest withEnabled(String enabled) {
         this.enabled = enabled;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备是否可用，值为true或false字符串。
-     * @return enabled
-     */
+    /** 设备是否可用，值为true或false字符串。
+     * 
+     * @return enabled */
     public String getEnabled() {
         return enabled;
     }
@@ -140,20 +103,14 @@ public class ListApplicationEndpointsRequest  {
         this.enabled = enabled;
     }
 
-    
-
     public ListApplicationEndpointsRequest withToken(String token) {
         this.token = token;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备token，最大长度512个字节。
-     * @return token
-     */
+    /** 设备token，最大长度512个字节。
+     * 
+     * @return token */
     public String getToken() {
         return token;
     }
@@ -162,20 +119,14 @@ public class ListApplicationEndpointsRequest  {
         this.token = token;
     }
 
-    
-
     public ListApplicationEndpointsRequest withUserData(String userData) {
         this.userData = userData;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户数据，最大长度2048个字节。
-     * @return userData
-     */
+    /** 用户数据，最大长度2048个字节。
+     * 
+     * @return userData */
     public String getUserData() {
         return userData;
     }
@@ -183,8 +134,6 @@ public class ListApplicationEndpointsRequest  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -195,17 +144,19 @@ public class ListApplicationEndpointsRequest  {
             return false;
         }
         ListApplicationEndpointsRequest listApplicationEndpointsRequest = (ListApplicationEndpointsRequest) o;
-        return Objects.equals(this.applicationUrn, listApplicationEndpointsRequest.applicationUrn) &&
-            Objects.equals(this.offset, listApplicationEndpointsRequest.offset) &&
-            Objects.equals(this.limit, listApplicationEndpointsRequest.limit) &&
-            Objects.equals(this.enabled, listApplicationEndpointsRequest.enabled) &&
-            Objects.equals(this.token, listApplicationEndpointsRequest.token) &&
-            Objects.equals(this.userData, listApplicationEndpointsRequest.userData);
+        return Objects.equals(this.applicationUrn, listApplicationEndpointsRequest.applicationUrn)
+            && Objects.equals(this.offset, listApplicationEndpointsRequest.offset)
+            && Objects.equals(this.limit, listApplicationEndpointsRequest.limit)
+            && Objects.equals(this.enabled, listApplicationEndpointsRequest.enabled)
+            && Objects.equals(this.token, listApplicationEndpointsRequest.token)
+            && Objects.equals(this.userData, listApplicationEndpointsRequest.userData);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(applicationUrn, offset, limit, enabled, token, userData);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -219,16 +170,13 @@ public class ListApplicationEndpointsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

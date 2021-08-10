@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ApiPolicyMockBase
- */
-public class ApiPolicyMockBase  {
-
-
+/** ApiPolicyMockBase */
+public class ApiPolicyMockBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="result_content")
-    
+    @JsonProperty(value = "result_content")
+
     private String resultContent;
 
     public ApiPolicyMockBase withResultContent(String resultContent) {
@@ -28,13 +18,9 @@ public class ApiPolicyMockBase  {
         return this;
     }
 
-    
-
-
-    /**
-     * 返回结果
-     * @return resultContent
-     */
+    /** 返回结果
+     * 
+     * @return resultContent */
     public String getResultContent() {
         return resultContent;
     }
@@ -42,8 +28,6 @@ public class ApiPolicyMockBase  {
     public void setResultContent(String resultContent) {
         this.resultContent = resultContent;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class ApiPolicyMockBase  {
         ApiPolicyMockBase apiPolicyMockBase = (ApiPolicyMockBase) o;
         return Objects.equals(this.resultContent, apiPolicyMockBase.resultContent);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resultContent);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class ApiPolicyMockBase  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

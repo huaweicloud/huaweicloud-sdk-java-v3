@@ -1,55 +1,36 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.AssetJobReason;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CheckAssetJobStatusResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
-    /**
-     * 作业类型
-     */
+
+    /** 作业类型 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum IMPORTASSET for value: "importAsset"
-         */
+        /** Enum IMPORTASSET for value: "importAsset" */
         public static final TypeEnum IMPORTASSET = new TypeEnum("importAsset");
-        
-        /**
-         * Enum EXPORTASSET for value: "exportAsset"
-         */
+
+        /** Enum EXPORTASSET for value: "exportAsset" */
         public static final TypeEnum EXPORTASSET = new TypeEnum("exportAsset");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -78,7 +59,7 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -89,7 +70,7 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -113,37 +94,26 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
-    /**
-     * 作业状态 - Running : 作业正在执行 - Success : 作业执行成功，对于导出作业，用户可以通过archive_id来下载资产包 - Failed : 作业执行失败，通过reason字段查看具体错误原因 - Finished : 作业完成，针对导出作业，如果在有效期内下载了资产包，则作业状态从Success转换到Finished，此时不再返回archive_id字段
-     */
+
+    /** 作业状态 - Running : 作业正在执行 - Success : 作业执行成功，对于导出作业，用户可以通过archive_id来下载资产包 - Failed : 作业执行失败，通过reason字段查看具体错误原因 -
+     * Finished : 作业完成，针对导出作业，如果在有效期内下载了资产包，则作业状态从Success转换到Finished，此时不再返回archive_id字段 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum RUNNING for value: "Running"
-         */
+        /** Enum RUNNING for value: "Running" */
         public static final StatusEnum RUNNING = new StatusEnum("Running");
-        
-        /**
-         * Enum SUCCESS for value: "Success"
-         */
+
+        /** Enum SUCCESS for value: "Success" */
         public static final StatusEnum SUCCESS = new StatusEnum("Success");
-        
-        /**
-         * Enum FAILED for value: "Failed"
-         */
+
+        /** Enum FAILED for value: "Failed" */
         public static final StatusEnum FAILED = new StatusEnum("Failed");
-        
-        /**
-         * Enum FINISHED for value: "finished"
-         */
+
+        /** Enum FINISHED for value: "finished" */
         public static final StatusEnum FINISHED = new StatusEnum("finished");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -174,7 +144,7 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -185,7 +155,7 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -209,40 +179,34 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="reasons")
-    
+    @JsonProperty(value = "reasons")
+
     private List<AssetJobReason> reasons = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="progress_percent")
-    
+    @JsonProperty(value = "progress_percent")
+
     private Float progressPercent;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="archive_id")
-    
+    @JsonProperty(value = "archive_id")
+
     private String archiveId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="begin_time")
-    
+    @JsonProperty(value = "begin_time")
+
     private BigDecimal beginTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private BigDecimal endTime;
 
     public CheckAssetJobStatusResponse withId(String id) {
@@ -250,13 +214,9 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 作业ID
-     * @return id
-     */
+    /** 作业ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -265,20 +225,14 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public CheckAssetJobStatusResponse withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业类型
-     * @return type
-     */
+    /** 作业类型
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -287,20 +241,15 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         this.type = type;
     }
 
-    
-
     public CheckAssetJobStatusResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业状态 - Running : 作业正在执行 - Success : 作业执行成功，对于导出作业，用户可以通过archive_id来下载资产包 - Failed : 作业执行失败，通过reason字段查看具体错误原因 - Finished : 作业完成，针对导出作业，如果在有效期内下载了资产包，则作业状态从Success转换到Finished，此时不再返回archive_id字段
-     * @return status
-     */
+    /** 作业状态 - Running : 作业正在执行 - Success : 作业执行成功，对于导出作业，用户可以通过archive_id来下载资产包 - Failed : 作业执行失败，通过reason字段查看具体错误原因 -
+     * Finished : 作业完成，针对导出作业，如果在有效期内下载了资产包，则作业状态从Success转换到Finished，此时不再返回archive_id字段
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -309,16 +258,13 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public CheckAssetJobStatusResponse withReasons(List<AssetJobReason> reasons) {
         this.reasons = reasons;
         return this;
     }
 
-    
     public CheckAssetJobStatusResponse addReasonsItem(AssetJobReason reasonsItem) {
-        if(this.reasons == null) {
+        if (this.reasons == null) {
             this.reasons = new ArrayList<>();
         }
         this.reasons.add(reasonsItem);
@@ -326,17 +272,16 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
     }
 
     public CheckAssetJobStatusResponse withReasons(Consumer<List<AssetJobReason>> reasonsSetter) {
-        if(this.reasons == null) {
+        if (this.reasons == null) {
             this.reasons = new ArrayList<>();
         }
         reasonsSetter.accept(this.reasons);
         return this;
     }
 
-    /**
-     * 导致作业失败的错误原因
-     * @return reasons
-     */
+    /** 导致作业失败的错误原因
+     * 
+     * @return reasons */
     public List<AssetJobReason> getReasons() {
         return reasons;
     }
@@ -345,22 +290,14 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         this.reasons = reasons;
     }
 
-    
-
     public CheckAssetJobStatusResponse withProgressPercent(Float progressPercent) {
         this.progressPercent = progressPercent;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业进度百分比
-     * minimum: 0
-     * maximum: 1
-     * @return progressPercent
-     */
+    /** 作业进度百分比 minimum: 0 maximum: 1
+     * 
+     * @return progressPercent */
     public Float getProgressPercent() {
         return progressPercent;
     }
@@ -369,20 +306,14 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         this.progressPercent = progressPercent;
     }
 
-    
-
     public CheckAssetJobStatusResponse withArchiveId(String archiveId) {
         this.archiveId = archiveId;
         return this;
     }
 
-    
-
-
-    /**
-     * 导出作业成功时，供下载的资产包ID
-     * @return archiveId
-     */
+    /** 导出作业成功时，供下载的资产包ID
+     * 
+     * @return archiveId */
     public String getArchiveId() {
         return archiveId;
     }
@@ -391,22 +322,14 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         this.archiveId = archiveId;
     }
 
-    
-
     public CheckAssetJobStatusResponse withBeginTime(BigDecimal beginTime) {
         this.beginTime = beginTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业开始时间
-     * minimum: 1
-     * maximum: 128
-     * @return beginTime
-     */
+    /** 作业开始时间 minimum: 1 maximum: 128
+     * 
+     * @return beginTime */
     public BigDecimal getBeginTime() {
         return beginTime;
     }
@@ -415,22 +338,14 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         this.beginTime = beginTime;
     }
 
-    
-
     public CheckAssetJobStatusResponse withEndTime(BigDecimal endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业结束时间
-     * minimum: 1
-     * maximum: 128
-     * @return endTime
-     */
+    /** 作业结束时间 minimum: 1 maximum: 128
+     * 
+     * @return endTime */
     public BigDecimal getEndTime() {
         return endTime;
     }
@@ -438,8 +353,6 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
     public void setEndTime(BigDecimal endTime) {
         this.endTime = endTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -450,19 +363,21 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
             return false;
         }
         CheckAssetJobStatusResponse checkAssetJobStatusResponse = (CheckAssetJobStatusResponse) o;
-        return Objects.equals(this.id, checkAssetJobStatusResponse.id) &&
-            Objects.equals(this.type, checkAssetJobStatusResponse.type) &&
-            Objects.equals(this.status, checkAssetJobStatusResponse.status) &&
-            Objects.equals(this.reasons, checkAssetJobStatusResponse.reasons) &&
-            Objects.equals(this.progressPercent, checkAssetJobStatusResponse.progressPercent) &&
-            Objects.equals(this.archiveId, checkAssetJobStatusResponse.archiveId) &&
-            Objects.equals(this.beginTime, checkAssetJobStatusResponse.beginTime) &&
-            Objects.equals(this.endTime, checkAssetJobStatusResponse.endTime);
+        return Objects.equals(this.id, checkAssetJobStatusResponse.id)
+            && Objects.equals(this.type, checkAssetJobStatusResponse.type)
+            && Objects.equals(this.status, checkAssetJobStatusResponse.status)
+            && Objects.equals(this.reasons, checkAssetJobStatusResponse.reasons)
+            && Objects.equals(this.progressPercent, checkAssetJobStatusResponse.progressPercent)
+            && Objects.equals(this.archiveId, checkAssetJobStatusResponse.archiveId)
+            && Objects.equals(this.beginTime, checkAssetJobStatusResponse.beginTime)
+            && Objects.equals(this.endTime, checkAssetJobStatusResponse.endTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, type, status, reasons, progressPercent, archiveId, beginTime, endTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -478,16 +393,13 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

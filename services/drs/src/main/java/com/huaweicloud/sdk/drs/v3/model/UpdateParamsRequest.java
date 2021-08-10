@@ -1,48 +1,32 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.ModifyTargetParamsReq;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateParamsRequest  {
-
-
+/** Request Object */
+public class UpdateParamsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
+
     private String jobId;
-    /**
-     * 请求语言类型
-     */
+
+    /** 请求语言类型 */
     public static final class XLanguageEnum {
 
-        
-        /**
-         * Enum EN_US for value: "en-us"
-         */
+        /** Enum EN_US for value: "en-us" */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
-        
-        /**
-         * Enum ZH_CN for value: "zh-cn"
-         */
+
+        /** Enum ZH_CN for value: "zh-cn" */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
-        
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
 
@@ -71,7 +55,7 @@ public class UpdateParamsRequest  {
 
         @JsonCreator
         public static XLanguageEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -82,7 +66,7 @@ public class UpdateParamsRequest  {
         }
 
         public static XLanguageEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -106,16 +90,14 @@ public class UpdateParamsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private XLanguageEnum xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ModifyTargetParamsReq body;
 
     public UpdateParamsRequest withJobId(String jobId) {
@@ -123,13 +105,9 @@ public class UpdateParamsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID
-     * @return jobId
-     */
+    /** 任务ID
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -138,22 +116,16 @@ public class UpdateParamsRequest  {
         this.jobId = jobId;
     }
 
-    
-
     public UpdateParamsRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求语言类型
-     * @return xLanguage
-     */
+    /** 请求语言类型
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
         return xLanguage;
     }
@@ -162,27 +134,23 @@ public class UpdateParamsRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public UpdateParamsRequest withBody(ModifyTargetParamsReq body) {
         this.body = body;
         return this;
     }
 
     public UpdateParamsRequest withBody(Consumer<ModifyTargetParamsReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ModifyTargetParamsReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ModifyTargetParamsReq getBody() {
         return body;
     }
@@ -190,8 +158,6 @@ public class UpdateParamsRequest  {
     public void setBody(ModifyTargetParamsReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -202,14 +168,16 @@ public class UpdateParamsRequest  {
             return false;
         }
         UpdateParamsRequest updateParamsRequest = (UpdateParamsRequest) o;
-        return Objects.equals(this.jobId, updateParamsRequest.jobId) &&
-            Objects.equals(this.xLanguage, updateParamsRequest.xLanguage) &&
-            Objects.equals(this.body, updateParamsRequest.body);
+        return Objects.equals(this.jobId, updateParamsRequest.jobId)
+            && Objects.equals(this.xLanguage, updateParamsRequest.xLanguage)
+            && Objects.equals(this.body, updateParamsRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobId, xLanguage, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -220,16 +188,13 @@ public class UpdateParamsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

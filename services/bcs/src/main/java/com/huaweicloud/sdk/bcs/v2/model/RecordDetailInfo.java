@@ -1,104 +1,81 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bcs.v2.model.OprecordCluster;
-import com.huaweicloud.sdk.bcs.v2.model.ProcessInfo;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 操作记录详细信息
- */
-public class RecordDetailInfo  {
-
-
+/** 操作记录详细信息 */
+public class RecordDetailInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operation_id")
-    
+    @JsonProperty(value = "operation_id")
+
     private String operationId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type")
-    
+    @JsonProperty(value = "resource_type")
+
     private String resourceType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operation_type")
-    
+    @JsonProperty(value = "operation_type")
+
     private String operationType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="blockchain_id")
-    
+    @JsonProperty(value = "blockchain_id")
+
     private String blockchainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="blockchain_name")
-    
+    @JsonProperty(value = "blockchain_name")
+
     private String blockchainName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_info")
-    
+    @JsonProperty(value = "cluster_info")
+
     private OprecordCluster clusterInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operation_process")
-    
+    @JsonProperty(value = "operation_process")
+
     private Map<String, ProcessInfo> operationProcess = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="record_time")
-    
+    @JsonProperty(value = "record_time")
+
     private Long recordTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operation_status")
-    
+    @JsonProperty(value = "operation_status")
+
     private String operationStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message")
-    
+    @JsonProperty(value = "message")
+
     private List<String> message = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="desc")
-    
+    @JsonProperty(value = "desc")
+
     private String desc;
 
     public RecordDetailInfo withOperationId(String operationId) {
@@ -106,13 +83,9 @@ public class RecordDetailInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 操作记录ID
-     * @return operationId
-     */
+    /** 操作记录ID
+     * 
+     * @return operationId */
     public String getOperationId() {
         return operationId;
     }
@@ -121,20 +94,14 @@ public class RecordDetailInfo  {
         this.operationId = operationId;
     }
 
-    
-
     public RecordDetailInfo withResourceType(String resourceType) {
         this.resourceType = resourceType;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源类型
-     * @return resourceType
-     */
+    /** 资源类型
+     * 
+     * @return resourceType */
     public String getResourceType() {
         return resourceType;
     }
@@ -143,20 +110,14 @@ public class RecordDetailInfo  {
         this.resourceType = resourceType;
     }
 
-    
-
     public RecordDetailInfo withOperationType(String operationType) {
         this.operationType = operationType;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作类型
-     * @return operationType
-     */
+    /** 操作类型
+     * 
+     * @return operationType */
     public String getOperationType() {
         return operationType;
     }
@@ -165,20 +126,14 @@ public class RecordDetailInfo  {
         this.operationType = operationType;
     }
 
-    
-
     public RecordDetailInfo withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
     }
 
-    
-
-
-    /**
-     * 租户ID
-     * @return domainId
-     */
+    /** 租户ID
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -187,20 +142,14 @@ public class RecordDetailInfo  {
         this.domainId = domainId;
     }
 
-    
-
     public RecordDetailInfo withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目ID
-     * @return projectId
-     */
+    /** 项目ID
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -209,20 +158,14 @@ public class RecordDetailInfo  {
         this.projectId = projectId;
     }
 
-    
-
     public RecordDetailInfo withBlockchainId(String blockchainId) {
         this.blockchainId = blockchainId;
         return this;
     }
 
-    
-
-
-    /**
-     * 区块链ID
-     * @return blockchainId
-     */
+    /** 区块链ID
+     * 
+     * @return blockchainId */
     public String getBlockchainId() {
         return blockchainId;
     }
@@ -231,20 +174,14 @@ public class RecordDetailInfo  {
         this.blockchainId = blockchainId;
     }
 
-    
-
     public RecordDetailInfo withBlockchainName(String blockchainName) {
         this.blockchainName = blockchainName;
         return this;
     }
 
-    
-
-
-    /**
-     * 区块链名称
-     * @return blockchainName
-     */
+    /** 区块链名称
+     * 
+     * @return blockchainName */
     public String getBlockchainName() {
         return blockchainName;
     }
@@ -253,27 +190,23 @@ public class RecordDetailInfo  {
         this.blockchainName = blockchainName;
     }
 
-    
-
     public RecordDetailInfo withClusterInfo(OprecordCluster clusterInfo) {
         this.clusterInfo = clusterInfo;
         return this;
     }
 
     public RecordDetailInfo withClusterInfo(Consumer<OprecordCluster> clusterInfoSetter) {
-        if(this.clusterInfo == null ){
+        if (this.clusterInfo == null) {
             this.clusterInfo = new OprecordCluster();
             clusterInfoSetter.accept(this.clusterInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get clusterInfo
-     * @return clusterInfo
-     */
+    /** Get clusterInfo
+     * 
+     * @return clusterInfo */
     public OprecordCluster getClusterInfo() {
         return clusterInfo;
     }
@@ -282,17 +215,13 @@ public class RecordDetailInfo  {
         this.clusterInfo = clusterInfo;
     }
 
-    
-
     public RecordDetailInfo withOperationProcess(Map<String, ProcessInfo> operationProcess) {
         this.operationProcess = operationProcess;
         return this;
     }
 
-    
-
     public RecordDetailInfo putOperationProcessItem(String key, ProcessInfo operationProcessItem) {
-        if(this.operationProcess == null) {
+        if (this.operationProcess == null) {
             this.operationProcess = new HashMap<>();
         }
         this.operationProcess.put(key, operationProcessItem);
@@ -300,16 +229,16 @@ public class RecordDetailInfo  {
     }
 
     public RecordDetailInfo withOperationProcess(Consumer<Map<String, ProcessInfo>> operationProcessSetter) {
-        if(this.operationProcess == null) {
+        if (this.operationProcess == null) {
             this.operationProcess = new HashMap<>();
         }
         operationProcessSetter.accept(this.operationProcess);
         return this;
     }
-    /**
-     * 操作流程，key为流程名，value为流程信息
-     * @return operationProcess
-     */
+
+    /** 操作流程，key为流程名，value为流程信息
+     * 
+     * @return operationProcess */
     public Map<String, ProcessInfo> getOperationProcess() {
         return operationProcess;
     }
@@ -318,20 +247,14 @@ public class RecordDetailInfo  {
         this.operationProcess = operationProcess;
     }
 
-    
-
     public RecordDetailInfo withRecordTime(Long recordTime) {
         this.recordTime = recordTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 记录更新时间
-     * @return recordTime
-     */
+    /** 记录更新时间
+     * 
+     * @return recordTime */
     public Long getRecordTime() {
         return recordTime;
     }
@@ -340,20 +263,14 @@ public class RecordDetailInfo  {
         this.recordTime = recordTime;
     }
 
-    
-
     public RecordDetailInfo withOperationStatus(String operationStatus) {
         this.operationStatus = operationStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作状态
-     * @return operationStatus
-     */
+    /** 操作状态
+     * 
+     * @return operationStatus */
     public String getOperationStatus() {
         return operationStatus;
     }
@@ -362,16 +279,13 @@ public class RecordDetailInfo  {
         this.operationStatus = operationStatus;
     }
 
-    
-
     public RecordDetailInfo withMessage(List<String> message) {
         this.message = message;
         return this;
     }
 
-    
     public RecordDetailInfo addMessageItem(String messageItem) {
-        if(this.message == null) {
+        if (this.message == null) {
             this.message = new ArrayList<>();
         }
         this.message.add(messageItem);
@@ -379,17 +293,16 @@ public class RecordDetailInfo  {
     }
 
     public RecordDetailInfo withMessage(Consumer<List<String>> messageSetter) {
-        if(this.message == null) {
+        if (this.message == null) {
             this.message = new ArrayList<>();
         }
         messageSetter.accept(this.message);
         return this;
     }
 
-    /**
-     * 操作过程信息记录
-     * @return message
-     */
+    /** 操作过程信息记录
+     * 
+     * @return message */
     public List<String> getMessage() {
         return message;
     }
@@ -398,20 +311,14 @@ public class RecordDetailInfo  {
         this.message = message;
     }
 
-    
-
     public RecordDetailInfo withDesc(String desc) {
         this.desc = desc;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作描述
-     * @return desc
-     */
+    /** 操作描述
+     * 
+     * @return desc */
     public String getDesc() {
         return desc;
     }
@@ -419,8 +326,6 @@ public class RecordDetailInfo  {
     public void setDesc(String desc) {
         this.desc = desc;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -431,24 +336,38 @@ public class RecordDetailInfo  {
             return false;
         }
         RecordDetailInfo recordDetailInfo = (RecordDetailInfo) o;
-        return Objects.equals(this.operationId, recordDetailInfo.operationId) &&
-            Objects.equals(this.resourceType, recordDetailInfo.resourceType) &&
-            Objects.equals(this.operationType, recordDetailInfo.operationType) &&
-            Objects.equals(this.domainId, recordDetailInfo.domainId) &&
-            Objects.equals(this.projectId, recordDetailInfo.projectId) &&
-            Objects.equals(this.blockchainId, recordDetailInfo.blockchainId) &&
-            Objects.equals(this.blockchainName, recordDetailInfo.blockchainName) &&
-            Objects.equals(this.clusterInfo, recordDetailInfo.clusterInfo) &&
-            Objects.equals(this.operationProcess, recordDetailInfo.operationProcess) &&
-            Objects.equals(this.recordTime, recordDetailInfo.recordTime) &&
-            Objects.equals(this.operationStatus, recordDetailInfo.operationStatus) &&
-            Objects.equals(this.message, recordDetailInfo.message) &&
-            Objects.equals(this.desc, recordDetailInfo.desc);
+        return Objects.equals(this.operationId, recordDetailInfo.operationId)
+            && Objects.equals(this.resourceType, recordDetailInfo.resourceType)
+            && Objects.equals(this.operationType, recordDetailInfo.operationType)
+            && Objects.equals(this.domainId, recordDetailInfo.domainId)
+            && Objects.equals(this.projectId, recordDetailInfo.projectId)
+            && Objects.equals(this.blockchainId, recordDetailInfo.blockchainId)
+            && Objects.equals(this.blockchainName, recordDetailInfo.blockchainName)
+            && Objects.equals(this.clusterInfo, recordDetailInfo.clusterInfo)
+            && Objects.equals(this.operationProcess, recordDetailInfo.operationProcess)
+            && Objects.equals(this.recordTime, recordDetailInfo.recordTime)
+            && Objects.equals(this.operationStatus, recordDetailInfo.operationStatus)
+            && Objects.equals(this.message, recordDetailInfo.message)
+            && Objects.equals(this.desc, recordDetailInfo.desc);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(operationId, resourceType, operationType, domainId, projectId, blockchainId, blockchainName, clusterInfo, operationProcess, recordTime, operationStatus, message, desc);
+        return Objects.hash(operationId,
+            resourceType,
+            operationType,
+            domainId,
+            projectId,
+            blockchainId,
+            blockchainName,
+            clusterInfo,
+            operationProcess,
+            recordTime,
+            operationStatus,
+            message,
+            desc);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -469,16 +388,13 @@ public class RecordDetailInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

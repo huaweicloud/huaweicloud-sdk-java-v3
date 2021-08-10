@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.bssintl.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ModSubCustomerBudgetReq
- */
-public class ModSubCustomerBudgetReq  {
-
-
+/** ModSubCustomerBudgetReq */
+public class ModSubCustomerBudgetReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_id")
-    
+    @JsonProperty(value = "customer_id")
+
     private String customerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="budget_amount")
-    
+    @JsonProperty(value = "budget_amount")
+
     private Double budgetAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cancel_partner_frozen")
-    
+    @JsonProperty(value = "cancel_partner_frozen")
+
     private String cancelPartnerFrozen;
 
     public ModSubCustomerBudgetReq withCustomerId(String customerId) {
@@ -40,13 +28,9 @@ public class ModSubCustomerBudgetReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：客户ID。| |参数约束及描述：客户ID。|
-     * @return customerId
-     */
+    /** |参数名称：客户ID。| |参数约束及描述：客户ID。|
+     * 
+     * @return customerId */
     public String getCustomerId() {
         return customerId;
     }
@@ -55,22 +39,14 @@ public class ModSubCustomerBudgetReq  {
         this.customerId = customerId;
     }
 
-    
-
     public ModSubCustomerBudgetReq withBudgetAmount(Double budgetAmount) {
         this.budgetAmount = budgetAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：调整的目标金额，可精确至小数点后面2位。| |参数的约束及描述：调整的目标金额，可精确至小数点后面2位。|
-     * minimum: 0
-     * maximum: 2147483647
-     * @return budgetAmount
-     */
+    /** |参数名称：调整的目标金额，可精确至小数点后面2位。| |参数的约束及描述：调整的目标金额，可精确至小数点后面2位。| minimum: 0 maximum: 2147483647
+     * 
+     * @return budgetAmount */
     public Double getBudgetAmount() {
         return budgetAmount;
     }
@@ -79,20 +55,14 @@ public class ModSubCustomerBudgetReq  {
         this.budgetAmount = budgetAmount;
     }
 
-    
-
     public ModSubCustomerBudgetReq withCancelPartnerFrozen(String cancelPartnerFrozen) {
         this.cancelPartnerFrozen = cancelPartnerFrozen;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：是否在设置客户预算的同时解除账号冻结：0：否；1：是。默认为否。| |参数约束及描述：是否在设置客户预算的同时解除账号冻结：0：否；1：是。默认为否。|
-     * @return cancelPartnerFrozen
-     */
+    /** |参数名称：是否在设置客户预算的同时解除账号冻结：0：否；1：是。默认为否。| |参数约束及描述：是否在设置客户预算的同时解除账号冻结：0：否；1：是。默认为否。|
+     * 
+     * @return cancelPartnerFrozen */
     public String getCancelPartnerFrozen() {
         return cancelPartnerFrozen;
     }
@@ -100,8 +70,6 @@ public class ModSubCustomerBudgetReq  {
     public void setCancelPartnerFrozen(String cancelPartnerFrozen) {
         this.cancelPartnerFrozen = cancelPartnerFrozen;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +80,16 @@ public class ModSubCustomerBudgetReq  {
             return false;
         }
         ModSubCustomerBudgetReq modSubCustomerBudgetReq = (ModSubCustomerBudgetReq) o;
-        return Objects.equals(this.customerId, modSubCustomerBudgetReq.customerId) &&
-            Objects.equals(this.budgetAmount, modSubCustomerBudgetReq.budgetAmount) &&
-            Objects.equals(this.cancelPartnerFrozen, modSubCustomerBudgetReq.cancelPartnerFrozen);
+        return Objects.equals(this.customerId, modSubCustomerBudgetReq.customerId)
+            && Objects.equals(this.budgetAmount, modSubCustomerBudgetReq.budgetAmount)
+            && Objects.equals(this.cancelPartnerFrozen, modSubCustomerBudgetReq.cancelPartnerFrozen);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(customerId, budgetAmount, cancelPartnerFrozen);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +100,13 @@ public class ModSubCustomerBudgetReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

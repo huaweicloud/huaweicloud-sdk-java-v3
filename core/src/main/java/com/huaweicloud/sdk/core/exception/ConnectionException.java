@@ -21,13 +21,10 @@
 
 package com.huaweicloud.sdk.core.exception;
 
-/**
- * Base Exception for Connection Exception, includes the following situations:
- * 1. HostUnreachableException -- network exception: unreachable / rejected
- * 2. SslHandShakeException
+/** Base Exception for Connection Exception, includes the following situations: 1. HostUnreachableException -- network
+ * exception: unreachable / rejected 2. SslHandShakeException
  *
- * @author HuaweiCloud_SDK
- */
+ * @author HuaweiCloud_SDK */
 public class ConnectionException extends SdkException {
 
     public ConnectionException(String message) {

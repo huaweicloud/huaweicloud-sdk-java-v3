@@ -1,58 +1,42 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateProductTopicResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
-    
+    @JsonProperty(value = "product_id")
+
     private Integer productId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic_id")
-    
+    @JsonProperty(value = "topic_id")
+
     private String topicId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="permission")
-    
+    @JsonProperty(value = "permission")
+
     private Integer permission;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic_name")
-    
+    @JsonProperty(value = "topic_name")
+
     private String topicName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public CreateProductTopicResponse withProductId(Integer productId) {
@@ -60,15 +44,9 @@ public class CreateProductTopicResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 归属产品ID
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return productId
-     */
+    /** 归属产品ID minimum: 1 maximum: 999999999999999999
+     * 
+     * @return productId */
     public Integer getProductId() {
         return productId;
     }
@@ -77,20 +55,14 @@ public class CreateProductTopicResponse extends SdkResponse {
         this.productId = productId;
     }
 
-    
-
     public CreateProductTopicResponse withTopicId(String topicId) {
         this.topicId = topicId;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品主题ID
-     * @return topicId
-     */
+    /** 产品主题ID
+     * 
+     * @return topicId */
     public String getTopicId() {
         return topicId;
     }
@@ -99,22 +71,14 @@ public class CreateProductTopicResponse extends SdkResponse {
         this.topicId = topicId;
     }
 
-    
-
     public CreateProductTopicResponse withPermission(Integer permission) {
         this.permission = permission;
         return this;
     }
 
-    
-
-
-    /**
-     * 主题权限 0-发布 1-订阅
-     * minimum: 0
-     * maximum: 10
-     * @return permission
-     */
+    /** 主题权限 0-发布 1-订阅 minimum: 0 maximum: 10
+     * 
+     * @return permission */
     public Integer getPermission() {
         return permission;
     }
@@ -123,20 +87,14 @@ public class CreateProductTopicResponse extends SdkResponse {
         this.permission = permission;
     }
 
-    
-
     public CreateProductTopicResponse withTopicName(String topicName) {
         this.topicName = topicName;
         return this;
     }
 
-    
-
-
-    /**
-     * 主题名称
-     * @return topicName
-     */
+    /** 主题名称
+     * 
+     * @return topicName */
     public String getTopicName() {
         return topicName;
     }
@@ -145,20 +103,14 @@ public class CreateProductTopicResponse extends SdkResponse {
         this.topicName = topicName;
     }
 
-    
-
     public CreateProductTopicResponse withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 版本号
-     * @return version
-     */
+    /** 版本号
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -167,20 +119,14 @@ public class CreateProductTopicResponse extends SdkResponse {
         this.version = version;
     }
 
-    
-
     public CreateProductTopicResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述
-     * @return description
-     */
+    /** 描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -188,8 +134,6 @@ public class CreateProductTopicResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -200,17 +144,19 @@ public class CreateProductTopicResponse extends SdkResponse {
             return false;
         }
         CreateProductTopicResponse createProductTopicResponse = (CreateProductTopicResponse) o;
-        return Objects.equals(this.productId, createProductTopicResponse.productId) &&
-            Objects.equals(this.topicId, createProductTopicResponse.topicId) &&
-            Objects.equals(this.permission, createProductTopicResponse.permission) &&
-            Objects.equals(this.topicName, createProductTopicResponse.topicName) &&
-            Objects.equals(this.version, createProductTopicResponse.version) &&
-            Objects.equals(this.description, createProductTopicResponse.description);
+        return Objects.equals(this.productId, createProductTopicResponse.productId)
+            && Objects.equals(this.topicId, createProductTopicResponse.topicId)
+            && Objects.equals(this.permission, createProductTopicResponse.permission)
+            && Objects.equals(this.topicName, createProductTopicResponse.topicName)
+            && Objects.equals(this.version, createProductTopicResponse.version)
+            && Objects.equals(this.description, createProductTopicResponse.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(productId, topicId, permission, topicName, version, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -224,16 +170,13 @@ public class CreateProductTopicResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,65 +1,46 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 独享模式回源服务器配置
- */
-public class CloudWafServer  {
-
-
+/** 独享模式回源服务器配置 */
+public class CloudWafServer {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="front_protocol")
-    
+    @JsonProperty(value = "front_protocol")
+
     private String frontProtocol;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="back_protocol")
-    
+    @JsonProperty(value = "back_protocol")
+
     private String backProtocol;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="address")
-    
+    @JsonProperty(value = "address")
+
     private String address;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
+
     private Integer port;
-    /**
-     * 源站地址为ipv4或ipv6
-     */
+
+    /** 源站地址为ipv4或ipv6 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum IPV4 for value: "ipv4"
-         */
+        /** Enum IPV4 for value: "ipv4" */
         public static final TypeEnum IPV4 = new TypeEnum("ipv4");
-        
-        /**
-         * Enum IPV6 for value: "ipv6"
-         */
+
+        /** Enum IPV6 for value: "ipv6" */
         public static final TypeEnum IPV6 = new TypeEnum("ipv6");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -88,7 +69,7 @@ public class CloudWafServer  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -99,7 +80,7 @@ public class CloudWafServer  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -123,10 +104,9 @@ public class CloudWafServer  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
     public CloudWafServer withFrontProtocol(String frontProtocol) {
@@ -134,13 +114,9 @@ public class CloudWafServer  {
         return this;
     }
 
-    
-
-
-    /**
-     * 对外协议
-     * @return frontProtocol
-     */
+    /** 对外协议
+     * 
+     * @return frontProtocol */
     public String getFrontProtocol() {
         return frontProtocol;
     }
@@ -149,20 +125,14 @@ public class CloudWafServer  {
         this.frontProtocol = frontProtocol;
     }
 
-    
-
     public CloudWafServer withBackProtocol(String backProtocol) {
         this.backProtocol = backProtocol;
         return this;
     }
 
-    
-
-
-    /**
-     * 源站协议
-     * @return backProtocol
-     */
+    /** 源站协议
+     * 
+     * @return backProtocol */
     public String getBackProtocol() {
         return backProtocol;
     }
@@ -171,20 +141,14 @@ public class CloudWafServer  {
         this.backProtocol = backProtocol;
     }
 
-    
-
     public CloudWafServer withAddress(String address) {
         this.address = address;
         return this;
     }
 
-    
-
-
-    /**
-     * 源站地址
-     * @return address
-     */
+    /** 源站地址
+     * 
+     * @return address */
     public String getAddress() {
         return address;
     }
@@ -193,20 +157,14 @@ public class CloudWafServer  {
         this.address = address;
     }
 
-    
-
     public CloudWafServer withPort(Integer port) {
         this.port = port;
         return this;
     }
 
-    
-
-
-    /**
-     * 源站端口
-     * @return port
-     */
+    /** 源站端口
+     * 
+     * @return port */
     public Integer getPort() {
         return port;
     }
@@ -215,20 +173,14 @@ public class CloudWafServer  {
         this.port = port;
     }
 
-    
-
     public CloudWafServer withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 源站地址为ipv4或ipv6
-     * @return type
-     */
+    /** 源站地址为ipv4或ipv6
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -236,8 +188,6 @@ public class CloudWafServer  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -248,16 +198,17 @@ public class CloudWafServer  {
             return false;
         }
         CloudWafServer cloudWafServer = (CloudWafServer) o;
-        return Objects.equals(this.frontProtocol, cloudWafServer.frontProtocol) &&
-            Objects.equals(this.backProtocol, cloudWafServer.backProtocol) &&
-            Objects.equals(this.address, cloudWafServer.address) &&
-            Objects.equals(this.port, cloudWafServer.port) &&
-            Objects.equals(this.type, cloudWafServer.type);
+        return Objects.equals(this.frontProtocol, cloudWafServer.frontProtocol)
+            && Objects.equals(this.backProtocol, cloudWafServer.backProtocol)
+            && Objects.equals(this.address, cloudWafServer.address) && Objects.equals(this.port, cloudWafServer.port)
+            && Objects.equals(this.type, cloudWafServer.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(frontProtocol, backProtocol, address, port, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -270,16 +221,13 @@ public class CloudWafServer  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

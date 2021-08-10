@@ -1,71 +1,51 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * DuplicateApiInfo
- */
-public class DuplicateApiInfo  {
-
-
+/** DuplicateApiInfo */
+public class DuplicateApiInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_id")
-    
+    @JsonProperty(value = "api_id")
+
     private String apiId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_name")
-    
+    @JsonProperty(value = "api_name")
+
     private String apiName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_name")
-    
+    @JsonProperty(value = "group_name")
+
     private String groupName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
+
     private String remark;
-    /**
-     * api类型： - self-owned：自有API - authorized：授权API
-     */
+
+    /** api类型： - self-owned：自有API - authorized：授权API */
     public static final class ApiTypeEnum {
 
-        
-        /**
-         * Enum SELF_OWNED for value: "self-owned"
-         */
+        /** Enum SELF_OWNED for value: "self-owned" */
         public static final ApiTypeEnum SELF_OWNED = new ApiTypeEnum("self-owned");
-        
-        /**
-         * Enum AUTHORIZED for value: "authorized"
-         */
+
+        /** Enum AUTHORIZED for value: "authorized" */
         public static final ApiTypeEnum AUTHORIZED = new ApiTypeEnum("authorized");
-        
 
         private static final Map<String, ApiTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -94,7 +74,7 @@ public class DuplicateApiInfo  {
 
         @JsonCreator
         public static ApiTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ApiTypeEnum result = STATIC_FIELDS.get(value);
@@ -105,7 +85,7 @@ public class DuplicateApiInfo  {
         }
 
         public static ApiTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ApiTypeEnum result = STATIC_FIELDS.get(value);
@@ -129,10 +109,9 @@ public class DuplicateApiInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_type")
-    
+    @JsonProperty(value = "api_type")
+
     private ApiTypeEnum apiType;
 
     public DuplicateApiInfo withApiId(String apiId) {
@@ -140,13 +119,9 @@ public class DuplicateApiInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * API ID
-     * @return apiId
-     */
+    /** API ID
+     * 
+     * @return apiId */
     public String getApiId() {
         return apiId;
     }
@@ -155,20 +130,14 @@ public class DuplicateApiInfo  {
         this.apiId = apiId;
     }
 
-    
-
     public DuplicateApiInfo withApiName(String apiName) {
         this.apiName = apiName;
         return this;
     }
 
-    
-
-
-    /**
-     * API名称
-     * @return apiName
-     */
+    /** API名称
+     * 
+     * @return apiName */
     public String getApiName() {
         return apiName;
     }
@@ -177,20 +146,14 @@ public class DuplicateApiInfo  {
         this.apiName = apiName;
     }
 
-    
-
     public DuplicateApiInfo withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
     }
 
-    
-
-
-    /**
-     * 分组名称
-     * @return groupName
-     */
+    /** 分组名称
+     * 
+     * @return groupName */
     public String getGroupName() {
         return groupName;
     }
@@ -199,20 +162,14 @@ public class DuplicateApiInfo  {
         this.groupName = groupName;
     }
 
-    
-
     public DuplicateApiInfo withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 分组ID
-     * @return groupId
-     */
+    /** 分组ID
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -221,20 +178,14 @@ public class DuplicateApiInfo  {
         this.groupId = groupId;
     }
 
-    
-
     public DuplicateApiInfo withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
-    
-
-
-    /**
-     * API描述
-     * @return remark
-     */
+    /** API描述
+     * 
+     * @return remark */
     public String getRemark() {
         return remark;
     }
@@ -243,20 +194,14 @@ public class DuplicateApiInfo  {
         this.remark = remark;
     }
 
-    
-
     public DuplicateApiInfo withApiType(ApiTypeEnum apiType) {
         this.apiType = apiType;
         return this;
     }
 
-    
-
-
-    /**
-     * api类型： - self-owned：自有API - authorized：授权API
-     * @return apiType
-     */
+    /** api类型： - self-owned：自有API - authorized：授权API
+     * 
+     * @return apiType */
     public ApiTypeEnum getApiType() {
         return apiType;
     }
@@ -264,8 +209,6 @@ public class DuplicateApiInfo  {
     public void setApiType(ApiTypeEnum apiType) {
         this.apiType = apiType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -276,17 +219,19 @@ public class DuplicateApiInfo  {
             return false;
         }
         DuplicateApiInfo duplicateApiInfo = (DuplicateApiInfo) o;
-        return Objects.equals(this.apiId, duplicateApiInfo.apiId) &&
-            Objects.equals(this.apiName, duplicateApiInfo.apiName) &&
-            Objects.equals(this.groupName, duplicateApiInfo.groupName) &&
-            Objects.equals(this.groupId, duplicateApiInfo.groupId) &&
-            Objects.equals(this.remark, duplicateApiInfo.remark) &&
-            Objects.equals(this.apiType, duplicateApiInfo.apiType);
+        return Objects.equals(this.apiId, duplicateApiInfo.apiId)
+            && Objects.equals(this.apiName, duplicateApiInfo.apiName)
+            && Objects.equals(this.groupName, duplicateApiInfo.groupName)
+            && Objects.equals(this.groupId, duplicateApiInfo.groupId)
+            && Objects.equals(this.remark, duplicateApiInfo.remark)
+            && Objects.equals(this.apiType, duplicateApiInfo.apiType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(apiId, apiName, groupName, groupId, remark, apiType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -300,16 +245,13 @@ public class DuplicateApiInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

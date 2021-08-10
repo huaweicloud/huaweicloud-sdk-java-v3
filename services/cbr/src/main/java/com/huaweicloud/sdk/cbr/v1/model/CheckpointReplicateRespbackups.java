@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CheckpointReplicateRespbackups
- */
-public class CheckpointReplicateRespbackups  {
-
-
+/** CheckpointReplicateRespbackups */
+public class CheckpointReplicateRespbackups {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_id")
-    
+    @JsonProperty(value = "backup_id")
+
     private String backupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replication_record_id")
-    
+    @JsonProperty(value = "replication_record_id")
+
     private String replicationRecordId;
 
     public CheckpointReplicateRespbackups withBackupId(String backupId) {
@@ -34,13 +23,9 @@ public class CheckpointReplicateRespbackups  {
         return this;
     }
 
-    
-
-
-    /**
-     * 待复制的备份ID
-     * @return backupId
-     */
+    /** 待复制的备份ID
+     * 
+     * @return backupId */
     public String getBackupId() {
         return backupId;
     }
@@ -49,20 +34,14 @@ public class CheckpointReplicateRespbackups  {
         this.backupId = backupId;
     }
 
-    
-
     public CheckpointReplicateRespbackups withReplicationRecordId(String replicationRecordId) {
         this.replicationRecordId = replicationRecordId;
         return this;
     }
 
-    
-
-
-    /**
-     * 复制记录ID
-     * @return replicationRecordId
-     */
+    /** 复制记录ID
+     * 
+     * @return replicationRecordId */
     public String getReplicationRecordId() {
         return replicationRecordId;
     }
@@ -70,8 +49,6 @@ public class CheckpointReplicateRespbackups  {
     public void setReplicationRecordId(String replicationRecordId) {
         this.replicationRecordId = replicationRecordId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class CheckpointReplicateRespbackups  {
             return false;
         }
         CheckpointReplicateRespbackups checkpointReplicateRespbackups = (CheckpointReplicateRespbackups) o;
-        return Objects.equals(this.backupId, checkpointReplicateRespbackups.backupId) &&
-            Objects.equals(this.replicationRecordId, checkpointReplicateRespbackups.replicationRecordId);
+        return Objects.equals(this.backupId, checkpointReplicateRespbackups.backupId)
+            && Objects.equals(this.replicationRecordId, checkpointReplicateRespbackups.replicationRecordId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(backupId, replicationRecordId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class CheckpointReplicateRespbackups  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

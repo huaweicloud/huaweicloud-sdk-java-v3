@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ddm.v1.model.RestarInstanceInfo;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * This is a auto restart Body Object
- */
-public class RestartInstanceReq  {
-
-
+/** This is a auto restart Body Object */
+public class RestartInstanceReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="restart")
-    
+    @JsonProperty(value = "restart")
+
     private RestarInstanceInfo restart;
 
     public RestartInstanceReq withRestart(RestarInstanceInfo restart) {
@@ -30,19 +20,17 @@ public class RestartInstanceReq  {
     }
 
     public RestartInstanceReq withRestart(Consumer<RestarInstanceInfo> restartSetter) {
-        if(this.restart == null ){
+        if (this.restart == null) {
             this.restart = new RestarInstanceInfo();
             restartSetter.accept(this.restart);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get restart
-     * @return restart
-     */
+    /** Get restart
+     * 
+     * @return restart */
     public RestarInstanceInfo getRestart() {
         return restart;
     }
@@ -50,8 +38,6 @@ public class RestartInstanceReq  {
     public void setRestart(RestarInstanceInfo restart) {
         this.restart = restart;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class RestartInstanceReq  {
         RestartInstanceReq restartInstanceReq = (RestartInstanceReq) o;
         return Objects.equals(this.restart, restartInstanceReq.restart);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(restart);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class RestartInstanceReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

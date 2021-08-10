@@ -1,45 +1,31 @@
 package com.huaweicloud.sdk.eip.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.ResourceTagOption;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 批量操作资源标签的请求体
- */
-public class BatchCreatePublicipTagsRequestBody  {
-
-
+/** 批量操作资源标签的请求体 */
+public class BatchCreatePublicipTagsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<ResourceTagOption> tags = null;
-        /**
-     * 操作标识  create：创建  action为create时，tag的value必选
-     */
+
+    /** 操作标识 create：创建 action为create时，tag的value必选 */
     public static final class ActionEnum {
 
-        
-        /**
-         * Enum CREATE for value: "create"
-         */
+        /** Enum CREATE for value: "create" */
         public static final ActionEnum CREATE = new ActionEnum("create");
-        
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -67,7 +53,7 @@ public class BatchCreatePublicipTagsRequestBody  {
 
         @JsonCreator
         public static ActionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -78,7 +64,7 @@ public class BatchCreatePublicipTagsRequestBody  {
         }
 
         public static ActionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -102,10 +88,9 @@ public class BatchCreatePublicipTagsRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private ActionEnum action;
 
     public BatchCreatePublicipTagsRequestBody withTags(List<ResourceTagOption> tags) {
@@ -113,9 +98,8 @@ public class BatchCreatePublicipTagsRequestBody  {
         return this;
     }
 
-    
     public BatchCreatePublicipTagsRequestBody addTagsItem(ResourceTagOption tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -123,17 +107,16 @@ public class BatchCreatePublicipTagsRequestBody  {
     }
 
     public BatchCreatePublicipTagsRequestBody withTags(Consumer<List<ResourceTagOption>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 标签列表
-     * @return tags
-     */
+    /** 标签列表
+     * 
+     * @return tags */
     public List<ResourceTagOption> getTags() {
         return tags;
     }
@@ -142,20 +125,14 @@ public class BatchCreatePublicipTagsRequestBody  {
         this.tags = tags;
     }
 
-    
-
     public BatchCreatePublicipTagsRequestBody withAction(ActionEnum action) {
         this.action = action;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作标识  create：创建  action为create时，tag的value必选
-     * @return action
-     */
+    /** 操作标识 create：创建 action为create时，tag的value必选
+     * 
+     * @return action */
     public ActionEnum getAction() {
         return action;
     }
@@ -163,8 +140,6 @@ public class BatchCreatePublicipTagsRequestBody  {
     public void setAction(ActionEnum action) {
         this.action = action;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -175,13 +150,15 @@ public class BatchCreatePublicipTagsRequestBody  {
             return false;
         }
         BatchCreatePublicipTagsRequestBody batchCreatePublicipTagsRequestBody = (BatchCreatePublicipTagsRequestBody) o;
-        return Objects.equals(this.tags, batchCreatePublicipTagsRequestBody.tags) &&
-            Objects.equals(this.action, batchCreatePublicipTagsRequestBody.action);
+        return Objects.equals(this.tags, batchCreatePublicipTagsRequestBody.tags)
+            && Objects.equals(this.action, batchCreatePublicipTagsRequestBody.action);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(tags, action);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -191,16 +168,13 @@ public class BatchCreatePublicipTagsRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,51 +1,35 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dcs.v2.model.MigrationTaskList;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListMigrationTaskResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
+
     private Integer count;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="migration_tasks")
-    
+    @JsonProperty(value = "migration_tasks")
+
     private List<MigrationTaskList> migrationTasks = null;
-    
+
     public ListMigrationTaskResponse withCount(Integer count) {
         this.count = count;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移任务数量。
-     * @return count
-     */
+    /** 迁移任务数量。
+     * 
+     * @return count */
     public Integer getCount() {
         return count;
     }
@@ -54,16 +38,13 @@ public class ListMigrationTaskResponse extends SdkResponse {
         this.count = count;
     }
 
-    
-
     public ListMigrationTaskResponse withMigrationTasks(List<MigrationTaskList> migrationTasks) {
         this.migrationTasks = migrationTasks;
         return this;
     }
 
-    
     public ListMigrationTaskResponse addMigrationTasksItem(MigrationTaskList migrationTasksItem) {
-        if(this.migrationTasks == null) {
+        if (this.migrationTasks == null) {
             this.migrationTasks = new ArrayList<>();
         }
         this.migrationTasks.add(migrationTasksItem);
@@ -71,17 +52,16 @@ public class ListMigrationTaskResponse extends SdkResponse {
     }
 
     public ListMigrationTaskResponse withMigrationTasks(Consumer<List<MigrationTaskList>> migrationTasksSetter) {
-        if(this.migrationTasks == null) {
+        if (this.migrationTasks == null) {
             this.migrationTasks = new ArrayList<>();
         }
         migrationTasksSetter.accept(this.migrationTasks);
         return this;
     }
 
-    /**
-     * 迁移任务列表。
-     * @return migrationTasks
-     */
+    /** 迁移任务列表。
+     * 
+     * @return migrationTasks */
     public List<MigrationTaskList> getMigrationTasks() {
         return migrationTasks;
     }
@@ -89,8 +69,6 @@ public class ListMigrationTaskResponse extends SdkResponse {
     public void setMigrationTasks(List<MigrationTaskList> migrationTasks) {
         this.migrationTasks = migrationTasks;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ListMigrationTaskResponse extends SdkResponse {
             return false;
         }
         ListMigrationTaskResponse listMigrationTaskResponse = (ListMigrationTaskResponse) o;
-        return Objects.equals(this.count, listMigrationTaskResponse.count) &&
-            Objects.equals(this.migrationTasks, listMigrationTaskResponse.migrationTasks);
+        return Objects.equals(this.count, listMigrationTaskResponse.count)
+            && Objects.equals(this.migrationTasks, listMigrationTaskResponse.migrationTasks);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(count, migrationTasks);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ListMigrationTaskResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

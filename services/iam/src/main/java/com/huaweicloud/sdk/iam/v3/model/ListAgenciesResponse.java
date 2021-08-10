@@ -1,41 +1,29 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.AgencyResult;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListAgenciesResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="agencies")
-    
+    @JsonProperty(value = "agencies")
+
     private List<AgencyResult> agencies = null;
-    
+
     public ListAgenciesResponse withAgencies(List<AgencyResult> agencies) {
         this.agencies = agencies;
         return this;
     }
 
-    
     public ListAgenciesResponse addAgenciesItem(AgencyResult agenciesItem) {
-        if(this.agencies == null) {
+        if (this.agencies == null) {
             this.agencies = new ArrayList<>();
         }
         this.agencies.add(agenciesItem);
@@ -43,17 +31,16 @@ public class ListAgenciesResponse extends SdkResponse {
     }
 
     public ListAgenciesResponse withAgencies(Consumer<List<AgencyResult>> agenciesSetter) {
-        if(this.agencies == null) {
+        if (this.agencies == null) {
             this.agencies = new ArrayList<>();
         }
         agenciesSetter.accept(this.agencies);
         return this;
     }
 
-    /**
-     * 委托信息列表。
-     * @return agencies
-     */
+    /** 委托信息列表。
+     * 
+     * @return agencies */
     public List<AgencyResult> getAgencies() {
         return agencies;
     }
@@ -61,8 +48,6 @@ public class ListAgenciesResponse extends SdkResponse {
     public void setAgencies(List<AgencyResult> agencies) {
         this.agencies = agencies;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -75,10 +60,12 @@ public class ListAgenciesResponse extends SdkResponse {
         ListAgenciesResponse listAgenciesResponse = (ListAgenciesResponse) o;
         return Objects.equals(this.agencies, listAgenciesResponse.agencies);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(agencies);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -87,16 +74,13 @@ public class ListAgenciesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,52 +1,37 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.AudioInfo;
-import com.huaweicloud.sdk.mpc.v1.model.VideoInfo;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * OriginPara
- */
-public class OriginPara  {
-
-
+/** OriginPara */
+public class OriginPara {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="duration")
-    
+    @JsonProperty(value = "duration")
+
     private Integer duration;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="duration_ms")
-    
+    @JsonProperty(value = "duration_ms")
+
     private Long durationMs;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_format")
-    
+    @JsonProperty(value = "file_format")
+
     private String fileFormat;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="video")
-    
+    @JsonProperty(value = "video")
+
     private VideoInfo video;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audio")
-    
+    @JsonProperty(value = "audio")
+
     private AudioInfo audio;
 
     public OriginPara withDuration(Integer duration) {
@@ -54,15 +39,9 @@ public class OriginPara  {
         return this;
     }
 
-    
-
-
-    /**
-     * 片源时长，单位：秒
-     * minimum: 0
-     * maximum: 2147483647
-     * @return duration
-     */
+    /** 片源时长，单位：秒 minimum: 0 maximum: 2147483647
+     * 
+     * @return duration */
     public Integer getDuration() {
         return duration;
     }
@@ -71,22 +50,14 @@ public class OriginPara  {
         this.duration = duration;
     }
 
-    
-
     public OriginPara withDurationMs(Long durationMs) {
         this.durationMs = durationMs;
         return this;
     }
 
-    
-
-
-    /**
-     * 片源时长，单位：毫秒
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return durationMs
-     */
+    /** 片源时长，单位：毫秒 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return durationMs */
     public Long getDurationMs() {
         return durationMs;
     }
@@ -95,20 +66,14 @@ public class OriginPara  {
         this.durationMs = durationMs;
     }
 
-    
-
     public OriginPara withFileFormat(String fileFormat) {
         this.fileFormat = fileFormat;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件格式 
-     * @return fileFormat
-     */
+    /** 文件格式
+     * 
+     * @return fileFormat */
     public String getFileFormat() {
         return fileFormat;
     }
@@ -117,27 +82,23 @@ public class OriginPara  {
         this.fileFormat = fileFormat;
     }
 
-    
-
     public OriginPara withVideo(VideoInfo video) {
         this.video = video;
         return this;
     }
 
     public OriginPara withVideo(Consumer<VideoInfo> videoSetter) {
-        if(this.video == null ){
+        if (this.video == null) {
             this.video = new VideoInfo();
             videoSetter.accept(this.video);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get video
-     * @return video
-     */
+    /** Get video
+     * 
+     * @return video */
     public VideoInfo getVideo() {
         return video;
     }
@@ -146,27 +107,23 @@ public class OriginPara  {
         this.video = video;
     }
 
-    
-
     public OriginPara withAudio(AudioInfo audio) {
         this.audio = audio;
         return this;
     }
 
     public OriginPara withAudio(Consumer<AudioInfo> audioSetter) {
-        if(this.audio == null ){
+        if (this.audio == null) {
             this.audio = new AudioInfo();
             audioSetter.accept(this.audio);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get audio
-     * @return audio
-     */
+    /** Get audio
+     * 
+     * @return audio */
     public AudioInfo getAudio() {
         return audio;
     }
@@ -174,8 +131,6 @@ public class OriginPara  {
     public void setAudio(AudioInfo audio) {
         this.audio = audio;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -186,16 +141,17 @@ public class OriginPara  {
             return false;
         }
         OriginPara originPara = (OriginPara) o;
-        return Objects.equals(this.duration, originPara.duration) &&
-            Objects.equals(this.durationMs, originPara.durationMs) &&
-            Objects.equals(this.fileFormat, originPara.fileFormat) &&
-            Objects.equals(this.video, originPara.video) &&
-            Objects.equals(this.audio, originPara.audio);
+        return Objects.equals(this.duration, originPara.duration)
+            && Objects.equals(this.durationMs, originPara.durationMs)
+            && Objects.equals(this.fileFormat, originPara.fileFormat) && Objects.equals(this.video, originPara.video)
+            && Objects.equals(this.audio, originPara.audio);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(duration, durationMs, fileFormat, video, audio);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -208,16 +164,13 @@ public class OriginPara  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

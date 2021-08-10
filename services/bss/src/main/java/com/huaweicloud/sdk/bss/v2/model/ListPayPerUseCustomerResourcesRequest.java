@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bss.v2.model.QueryResourcesReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ListPayPerUseCustomerResourcesRequest  {
-
-
+/** Request Object */
+public class ListPayPerUseCustomerResourcesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private QueryResourcesReq body;
 
     public ListPayPerUseCustomerResourcesRequest withBody(QueryResourcesReq body) {
@@ -30,19 +20,17 @@ public class ListPayPerUseCustomerResourcesRequest  {
     }
 
     public ListPayPerUseCustomerResourcesRequest withBody(Consumer<QueryResourcesReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new QueryResourcesReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public QueryResourcesReq getBody() {
         return body;
     }
@@ -50,8 +38,6 @@ public class ListPayPerUseCustomerResourcesRequest  {
     public void setBody(QueryResourcesReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -61,13 +47,16 @@ public class ListPayPerUseCustomerResourcesRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListPayPerUseCustomerResourcesRequest listPayPerUseCustomerResourcesRequest = (ListPayPerUseCustomerResourcesRequest) o;
+        ListPayPerUseCustomerResourcesRequest listPayPerUseCustomerResourcesRequest =
+            (ListPayPerUseCustomerResourcesRequest) o;
         return Objects.equals(this.body, listPayPerUseCustomerResourcesRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +65,13 @@ public class ListPayPerUseCustomerResourcesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

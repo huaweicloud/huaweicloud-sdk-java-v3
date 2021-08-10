@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.bssintl.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListConversionsRequest  {
-
-
+/** Request Object */
+public class ListConversionsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="measure_type")
-    
+    @JsonProperty(value = "measure_type")
+
     private Integer measureType;
 
     public ListConversionsRequest withXLanguage(String xLanguage) {
@@ -34,15 +23,11 @@ public class ListConversionsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * |忽略大小写，默认 zh_CN：中文 en_US：英文|
-     * @return xLanguage
-     */
+    /** |忽略大小写，默认 zh_CN：中文 en_US：英文|
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -51,20 +36,14 @@ public class ListConversionsRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListConversionsRequest withMeasureType(Integer measureType) {
         this.measureType = measureType;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：度量类型| |参数的约束及描述：|
-     * @return measureType
-     */
+    /** |参数名称：度量类型| |参数的约束及描述：|
+     * 
+     * @return measureType */
     public Integer getMeasureType() {
         return measureType;
     }
@@ -72,8 +51,6 @@ public class ListConversionsRequest  {
     public void setMeasureType(Integer measureType) {
         this.measureType = measureType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +61,15 @@ public class ListConversionsRequest  {
             return false;
         }
         ListConversionsRequest listConversionsRequest = (ListConversionsRequest) o;
-        return Objects.equals(this.xLanguage, listConversionsRequest.xLanguage) &&
-            Objects.equals(this.measureType, listConversionsRequest.measureType);
+        return Objects.equals(this.xLanguage, listConversionsRequest.xLanguage)
+            && Objects.equals(this.measureType, listConversionsRequest.measureType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, measureType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +79,13 @@ public class ListConversionsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

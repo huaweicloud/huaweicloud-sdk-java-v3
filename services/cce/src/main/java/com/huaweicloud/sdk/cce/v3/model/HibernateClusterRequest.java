@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class HibernateClusterRequest  {
-
-
+/** Request Object */
+public class HibernateClusterRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
+
     private String clusterId;
 
     public HibernateClusterRequest withClusterId(String clusterId) {
@@ -28,13 +18,10 @@ public class HibernateClusterRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 集群 ID，获取方式请参见[[如何获取接口URI中参数](https://support.huaweicloud.com/api-cce/cce_02_0271.html)](tag:hws)[[如何获取接口URI中参数](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0271.html)](tag:hws_hk)
-     * @return clusterId
-     */
+    /** 集群
+     * ID，获取方式请参见[[如何获取接口URI中参数](https://support.huaweicloud.com/api-cce/cce_02_0271.html)](tag:hws)[[如何获取接口URI中参数](https://support.huaweicloud.com/intl/zh-cn/api-cce/cce_02_0271.html)](tag:hws_hk)
+     * 
+     * @return clusterId */
     public String getClusterId() {
         return clusterId;
     }
@@ -42,8 +29,6 @@ public class HibernateClusterRequest  {
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +41,12 @@ public class HibernateClusterRequest  {
         HibernateClusterRequest hibernateClusterRequest = (HibernateClusterRequest) o;
         return Objects.equals(this.clusterId, hibernateClusterRequest.clusterId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clusterId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +55,13 @@ public class HibernateClusterRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

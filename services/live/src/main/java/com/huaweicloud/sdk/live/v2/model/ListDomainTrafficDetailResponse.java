@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.live.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.live.v2.model.TrafficData;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListDomainTrafficDetailResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_list")
-    
+    @JsonProperty(value = "data_list")
+
     private List<TrafficData> dataList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-request-id")
-    
+    @JsonProperty(value = "X-request-id")
+
     private String xRequestId;
 
     public ListDomainTrafficDetailResponse withDataList(List<TrafficData> dataList) {
@@ -39,9 +27,8 @@ public class ListDomainTrafficDetailResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListDomainTrafficDetailResponse addDataListItem(TrafficData dataListItem) {
-        if(this.dataList == null) {
+        if (this.dataList == null) {
             this.dataList = new ArrayList<>();
         }
         this.dataList.add(dataListItem);
@@ -49,17 +36,16 @@ public class ListDomainTrafficDetailResponse extends SdkResponse {
     }
 
     public ListDomainTrafficDetailResponse withDataList(Consumer<List<TrafficData>> dataListSetter) {
-        if(this.dataList == null) {
+        if (this.dataList == null) {
             this.dataList = new ArrayList<>();
         }
         dataListSetter.accept(this.dataList);
         return this;
     }
 
-    /**
-     * 采样数据列表。
-     * @return dataList
-     */
+    /** 采样数据列表。
+     * 
+     * @return dataList */
     public List<TrafficData> getDataList() {
         return dataList;
     }
@@ -68,22 +54,16 @@ public class ListDomainTrafficDetailResponse extends SdkResponse {
         this.dataList = dataList;
     }
 
-    
-
     public ListDomainTrafficDetailResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
     }
 
-    
-
-
-    /**
-     * Get xRequestId
-     * @return xRequestId
-     */
+    /** Get xRequestId
+     * 
+     * @return xRequestId */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-request-id")
+    @JsonProperty(value = "X-request-id")
     public String getXRequestId() {
         return xRequestId;
     }
@@ -91,8 +71,6 @@ public class ListDomainTrafficDetailResponse extends SdkResponse {
     public void setXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -103,13 +81,15 @@ public class ListDomainTrafficDetailResponse extends SdkResponse {
             return false;
         }
         ListDomainTrafficDetailResponse listDomainTrafficDetailResponse = (ListDomainTrafficDetailResponse) o;
-        return Objects.equals(this.dataList, listDomainTrafficDetailResponse.dataList) &&
-            Objects.equals(this.xRequestId, listDomainTrafficDetailResponse.xRequestId);
+        return Objects.equals(this.dataList, listDomainTrafficDetailResponse.dataList)
+            && Objects.equals(this.xRequestId, listDomainTrafficDetailResponse.xRequestId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(dataList, xRequestId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -119,16 +99,13 @@ public class ListDomainTrafficDetailResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

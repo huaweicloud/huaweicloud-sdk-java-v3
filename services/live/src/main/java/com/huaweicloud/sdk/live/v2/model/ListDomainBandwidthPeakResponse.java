@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.live.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.live.v2.model.PeakBandwidthData;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListDomainBandwidthPeakResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bandwidth_list")
-    
+    @JsonProperty(value = "bandwidth_list")
+
     private List<PeakBandwidthData> bandwidthList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-request-id")
-    
+    @JsonProperty(value = "X-request-id")
+
     private String xRequestId;
 
     public ListDomainBandwidthPeakResponse withBandwidthList(List<PeakBandwidthData> bandwidthList) {
@@ -39,9 +27,8 @@ public class ListDomainBandwidthPeakResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListDomainBandwidthPeakResponse addBandwidthListItem(PeakBandwidthData bandwidthListItem) {
-        if(this.bandwidthList == null) {
+        if (this.bandwidthList == null) {
             this.bandwidthList = new ArrayList<>();
         }
         this.bandwidthList.add(bandwidthListItem);
@@ -49,17 +36,16 @@ public class ListDomainBandwidthPeakResponse extends SdkResponse {
     }
 
     public ListDomainBandwidthPeakResponse withBandwidthList(Consumer<List<PeakBandwidthData>> bandwidthListSetter) {
-        if(this.bandwidthList == null) {
+        if (this.bandwidthList == null) {
             this.bandwidthList = new ArrayList<>();
         }
         bandwidthListSetter.accept(this.bandwidthList);
         return this;
     }
 
-    /**
-     * 域名对应的带宽峰值列表。
-     * @return bandwidthList
-     */
+    /** 域名对应的带宽峰值列表。
+     * 
+     * @return bandwidthList */
     public List<PeakBandwidthData> getBandwidthList() {
         return bandwidthList;
     }
@@ -68,22 +54,16 @@ public class ListDomainBandwidthPeakResponse extends SdkResponse {
         this.bandwidthList = bandwidthList;
     }
 
-    
-
     public ListDomainBandwidthPeakResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
     }
 
-    
-
-
-    /**
-     * Get xRequestId
-     * @return xRequestId
-     */
+    /** Get xRequestId
+     * 
+     * @return xRequestId */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-request-id")
+    @JsonProperty(value = "X-request-id")
     public String getXRequestId() {
         return xRequestId;
     }
@@ -91,8 +71,6 @@ public class ListDomainBandwidthPeakResponse extends SdkResponse {
     public void setXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -103,13 +81,15 @@ public class ListDomainBandwidthPeakResponse extends SdkResponse {
             return false;
         }
         ListDomainBandwidthPeakResponse listDomainBandwidthPeakResponse = (ListDomainBandwidthPeakResponse) o;
-        return Objects.equals(this.bandwidthList, listDomainBandwidthPeakResponse.bandwidthList) &&
-            Objects.equals(this.xRequestId, listDomainBandwidthPeakResponse.xRequestId);
+        return Objects.equals(this.bandwidthList, listDomainBandwidthPeakResponse.bandwidthList)
+            && Objects.equals(this.xRequestId, listDomainBandwidthPeakResponse.xRequestId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(bandwidthList, xRequestId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -119,16 +99,13 @@ public class ListDomainBandwidthPeakResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

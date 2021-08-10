@@ -1,100 +1,79 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.AgencyPolicy;
-import com.huaweicloud.sdk.iam.v3.model.LinksSelf;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class AgencyPolicyRoleResult  {
-
-
+public class AgencyPolicyRoleResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="catalog")
-    
+    @JsonProperty(value = "catalog")
+
     private String catalog;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="display_name")
-    
+    @JsonProperty(value = "display_name")
+
     private String displayName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private LinksSelf links;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy")
-    
+    @JsonProperty(value = "policy")
+
     private AgencyPolicy policy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description_cn")
-    
+    @JsonProperty(value = "description_cn")
+
     private String descriptionCn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_time")
-    
+    @JsonProperty(value = "updated_time")
+
     private String updatedTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_time")
-    
+    @JsonProperty(value = "created_time")
+
     private String createdTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="references")
-    
+    @JsonProperty(value = "references")
+
     private String references;
 
     public AgencyPolicyRoleResult withCatalog(String catalog) {
@@ -102,13 +81,9 @@ public class AgencyPolicyRoleResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义策略所在目录。
-     * @return catalog
-     */
+    /** 自定义策略所在目录。
+     * 
+     * @return catalog */
     public String getCatalog() {
         return catalog;
     }
@@ -117,20 +92,14 @@ public class AgencyPolicyRoleResult  {
         this.catalog = catalog;
     }
 
-    
-
     public AgencyPolicyRoleResult withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义策略展示名。
-     * @return displayName
-     */
+    /** 自定义策略展示名。
+     * 
+     * @return displayName */
     public String getDisplayName() {
         return displayName;
     }
@@ -139,20 +108,14 @@ public class AgencyPolicyRoleResult  {
         this.displayName = displayName;
     }
 
-    
-
     public AgencyPolicyRoleResult withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义策略的描述信息。
-     * @return description
-     */
+    /** 自定义策略的描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -161,27 +124,23 @@ public class AgencyPolicyRoleResult  {
         this.description = description;
     }
 
-    
-
     public AgencyPolicyRoleResult withLinks(LinksSelf links) {
         this.links = links;
         return this;
     }
 
     public AgencyPolicyRoleResult withLinks(Consumer<LinksSelf> linksSetter) {
-        if(this.links == null ){
+        if (this.links == null) {
             this.links = new LinksSelf();
             linksSetter.accept(this.links);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get links
-     * @return links
-     */
+    /** Get links
+     * 
+     * @return links */
     public LinksSelf getLinks() {
         return links;
     }
@@ -190,27 +149,23 @@ public class AgencyPolicyRoleResult  {
         this.links = links;
     }
 
-    
-
     public AgencyPolicyRoleResult withPolicy(AgencyPolicy policy) {
         this.policy = policy;
         return this;
     }
 
     public AgencyPolicyRoleResult withPolicy(Consumer<AgencyPolicy> policySetter) {
-        if(this.policy == null ){
+        if (this.policy == null) {
             this.policy = new AgencyPolicy();
             policySetter.accept(this.policy);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get policy
-     * @return policy
-     */
+    /** Get policy
+     * 
+     * @return policy */
     public AgencyPolicy getPolicy() {
         return policy;
     }
@@ -219,20 +174,14 @@ public class AgencyPolicyRoleResult  {
         this.policy = policy;
     }
 
-    
-
     public AgencyPolicyRoleResult withDescriptionCn(String descriptionCn) {
         this.descriptionCn = descriptionCn;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义策略的中文描述信息。
-     * @return descriptionCn
-     */
+    /** 自定义策略的中文描述信息。
+     * 
+     * @return descriptionCn */
     public String getDescriptionCn() {
         return descriptionCn;
     }
@@ -241,20 +190,14 @@ public class AgencyPolicyRoleResult  {
         this.descriptionCn = descriptionCn;
     }
 
-    
-
     public AgencyPolicyRoleResult withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义策略所属账号ID。
-     * @return domainId
-     */
+    /** 自定义策略所属账号ID。
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -263,20 +206,15 @@ public class AgencyPolicyRoleResult  {
         this.domainId = domainId;
     }
 
-    
-
     public AgencyPolicyRoleResult withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义策略的显示模式。   > - AX表示在domain层显示。   > - XA表示在project层显示。   > - 自定义策略的显示模式只能为AX或者XA，不能在domain层和project层都显示（AA），或者在domain层和project层都不显示（XX）。
-     * @return type
-     */
+    /** 自定义策略的显示模式。 > - AX表示在domain层显示。 > - XA表示在project层显示。 > -
+     * 自定义策略的显示模式只能为AX或者XA，不能在domain层和project层都显示（AA），或者在domain层和project层都不显示（XX）。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -285,20 +223,14 @@ public class AgencyPolicyRoleResult  {
         this.type = type;
     }
 
-    
-
     public AgencyPolicyRoleResult withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义策略ID。
-     * @return id
-     */
+    /** 自定义策略ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -307,20 +239,14 @@ public class AgencyPolicyRoleResult  {
         this.id = id;
     }
 
-    
-
     public AgencyPolicyRoleResult withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义策略名。
-     * @return name
-     */
+    /** 自定义策略名。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -329,20 +255,14 @@ public class AgencyPolicyRoleResult  {
         this.name = name;
     }
 
-    
-
     public AgencyPolicyRoleResult withUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义策略更新时间。
-     * @return updatedTime
-     */
+    /** 自定义策略更新时间。
+     * 
+     * @return updatedTime */
     public String getUpdatedTime() {
         return updatedTime;
     }
@@ -351,20 +271,14 @@ public class AgencyPolicyRoleResult  {
         this.updatedTime = updatedTime;
     }
 
-    
-
     public AgencyPolicyRoleResult withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义策略创建时间。
-     * @return createdTime
-     */
+    /** 自定义策略创建时间。
+     * 
+     * @return createdTime */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -373,20 +287,14 @@ public class AgencyPolicyRoleResult  {
         this.createdTime = createdTime;
     }
 
-    
-
     public AgencyPolicyRoleResult withReferences(String references) {
         this.references = references;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义策略的引用次数。
-     * @return references
-     */
+    /** 自定义策略的引用次数。
+     * 
+     * @return references */
     public String getReferences() {
         return references;
     }
@@ -394,8 +302,6 @@ public class AgencyPolicyRoleResult  {
     public void setReferences(String references) {
         this.references = references;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -406,24 +312,38 @@ public class AgencyPolicyRoleResult  {
             return false;
         }
         AgencyPolicyRoleResult agencyPolicyRoleResult = (AgencyPolicyRoleResult) o;
-        return Objects.equals(this.catalog, agencyPolicyRoleResult.catalog) &&
-            Objects.equals(this.displayName, agencyPolicyRoleResult.displayName) &&
-            Objects.equals(this.description, agencyPolicyRoleResult.description) &&
-            Objects.equals(this.links, agencyPolicyRoleResult.links) &&
-            Objects.equals(this.policy, agencyPolicyRoleResult.policy) &&
-            Objects.equals(this.descriptionCn, agencyPolicyRoleResult.descriptionCn) &&
-            Objects.equals(this.domainId, agencyPolicyRoleResult.domainId) &&
-            Objects.equals(this.type, agencyPolicyRoleResult.type) &&
-            Objects.equals(this.id, agencyPolicyRoleResult.id) &&
-            Objects.equals(this.name, agencyPolicyRoleResult.name) &&
-            Objects.equals(this.updatedTime, agencyPolicyRoleResult.updatedTime) &&
-            Objects.equals(this.createdTime, agencyPolicyRoleResult.createdTime) &&
-            Objects.equals(this.references, agencyPolicyRoleResult.references);
+        return Objects.equals(this.catalog, agencyPolicyRoleResult.catalog)
+            && Objects.equals(this.displayName, agencyPolicyRoleResult.displayName)
+            && Objects.equals(this.description, agencyPolicyRoleResult.description)
+            && Objects.equals(this.links, agencyPolicyRoleResult.links)
+            && Objects.equals(this.policy, agencyPolicyRoleResult.policy)
+            && Objects.equals(this.descriptionCn, agencyPolicyRoleResult.descriptionCn)
+            && Objects.equals(this.domainId, agencyPolicyRoleResult.domainId)
+            && Objects.equals(this.type, agencyPolicyRoleResult.type)
+            && Objects.equals(this.id, agencyPolicyRoleResult.id)
+            && Objects.equals(this.name, agencyPolicyRoleResult.name)
+            && Objects.equals(this.updatedTime, agencyPolicyRoleResult.updatedTime)
+            && Objects.equals(this.createdTime, agencyPolicyRoleResult.createdTime)
+            && Objects.equals(this.references, agencyPolicyRoleResult.references);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(catalog, displayName, description, links, policy, descriptionCn, domainId, type, id, name, updatedTime, createdTime, references);
+        return Objects.hash(catalog,
+            displayName,
+            description,
+            links,
+            policy,
+            descriptionCn,
+            domainId,
+            type,
+            id,
+            name,
+            updatedTime,
+            createdTime,
+            references);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -444,16 +364,13 @@ public class AgencyPolicyRoleResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

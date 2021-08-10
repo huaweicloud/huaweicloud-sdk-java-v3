@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.lts.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.lts.v2.model.TimeRange;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 此参数在请求实体中，采用json字符串格式
- */
-public class QueryLTSStructLogParamsNew  {
-
-
+/** 此参数在请求实体中，采用json字符串格式 */
+public class QueryLTSStructLogParamsNew {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="query")
-    
+    @JsonProperty(value = "query")
+
     private String query;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="format")
-    
+    @JsonProperty(value = "format")
+
     private String format;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time_range")
-    
+    @JsonProperty(value = "time_range")
+
     private TimeRange timeRange;
 
     public QueryLTSStructLogParamsNew withQuery(String query) {
@@ -41,13 +29,9 @@ public class QueryLTSStructLogParamsNew  {
         return this;
     }
 
-    
-
-
-    /**
-     * sql语句字符串。
-     * @return query
-     */
+    /** sql语句字符串。
+     * 
+     * @return query */
     public String getQuery() {
         return query;
     }
@@ -56,20 +40,14 @@ public class QueryLTSStructLogParamsNew  {
         this.query = query;
     }
 
-    
-
     public QueryLTSStructLogParamsNew withFormat(String format) {
         this.format = format;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询结果格式。当前仅支持：\"k-v\"。
-     * @return format
-     */
+    /** 查询结果格式。当前仅支持：\"k-v\"。
+     * 
+     * @return format */
     public String getFormat() {
         return format;
     }
@@ -78,27 +56,23 @@ public class QueryLTSStructLogParamsNew  {
         this.format = format;
     }
 
-    
-
     public QueryLTSStructLogParamsNew withTimeRange(TimeRange timeRange) {
         this.timeRange = timeRange;
         return this;
     }
 
     public QueryLTSStructLogParamsNew withTimeRange(Consumer<TimeRange> timeRangeSetter) {
-        if(this.timeRange == null ){
+        if (this.timeRange == null) {
             this.timeRange = new TimeRange();
             timeRangeSetter.accept(this.timeRange);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get timeRange
-     * @return timeRange
-     */
+    /** Get timeRange
+     * 
+     * @return timeRange */
     public TimeRange getTimeRange() {
         return timeRange;
     }
@@ -106,8 +80,6 @@ public class QueryLTSStructLogParamsNew  {
     public void setTimeRange(TimeRange timeRange) {
         this.timeRange = timeRange;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class QueryLTSStructLogParamsNew  {
             return false;
         }
         QueryLTSStructLogParamsNew queryLTSStructLogParamsNew = (QueryLTSStructLogParamsNew) o;
-        return Objects.equals(this.query, queryLTSStructLogParamsNew.query) &&
-            Objects.equals(this.format, queryLTSStructLogParamsNew.format) &&
-            Objects.equals(this.timeRange, queryLTSStructLogParamsNew.timeRange);
+        return Objects.equals(this.query, queryLTSStructLogParamsNew.query)
+            && Objects.equals(this.format, queryLTSStructLogParamsNew.format)
+            && Objects.equals(this.timeRange, queryLTSStructLogParamsNew.timeRange);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(query, format, timeRange);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class QueryLTSStructLogParamsNew  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

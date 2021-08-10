@@ -6,14 +6,12 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.tms.v1.model.*;
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class TmsMeta {
 
-    public static final HttpRequestDef<CreatePredefineTagsRequest, CreatePredefineTagsResponse> createPredefineTags = genForcreatePredefineTags();
+    public static final HttpRequestDef<CreatePredefineTagsRequest, CreatePredefineTagsResponse> createPredefineTags =
+        genForcreatePredefineTags();
 
     private static HttpRequestDef<CreatePredefineTagsRequest, CreatePredefineTagsResponse> genForcreatePredefineTags() {
         // basic
@@ -24,23 +22,21 @@ public class TmsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<ReqCreatePredefineTag>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ReqCreatePredefineTag.class,
+            TypeCasts.uncheckedConversion(ReqCreatePredefineTag.class),
             f -> f.withMarshaller(CreatePredefineTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeletePredefineTagsRequest, DeletePredefineTagsResponse> deletePredefineTags = genFordeletePredefineTags();
+    public static final HttpRequestDef<DeletePredefineTagsRequest, DeletePredefineTagsResponse> deletePredefineTags =
+        genFordeletePredefineTags();
 
     private static HttpRequestDef<DeletePredefineTagsRequest, DeletePredefineTagsResponse> genFordeletePredefineTags() {
         // basic
@@ -51,23 +47,21 @@ public class TmsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<ReqDeletePredefineTag>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ReqDeletePredefineTag.class,
+            TypeCasts.uncheckedConversion(ReqDeletePredefineTag.class),
             f -> f.withMarshaller(DeletePredefineTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions = genForlistApiVersions();
+    public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions =
+        genForlistApiVersions();
 
     private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForlistApiVersions() {
         // basic
@@ -80,13 +74,12 @@ public class TmsMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPredefineTagsRequest, ListPredefineTagsResponse> listPredefineTags = genForlistPredefineTags();
+    public static final HttpRequestDef<ListPredefineTagsRequest, ListPredefineTagsResponse> listPredefineTags =
+        genForlistPredefineTags();
 
     private static HttpRequestDef<ListPredefineTagsRequest, ListPredefineTagsResponse> genForlistPredefineTags() {
         // basic
@@ -97,63 +90,56 @@ public class TmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("key",
+        builder.<String>withRequestField("key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPredefineTagsRequest::getKey, (req, v) -> {
                 req.setKey(v);
-            })
-        );
-        builder.withRequestField("value",
+            }));
+        builder.<String>withRequestField("value",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPredefineTagsRequest::getValue, (req, v) -> {
                 req.setValue(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPredefineTagsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPredefineTagsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("order_field",
+            }));
+        builder.<String>withRequestField("order_field",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPredefineTagsRequest::getOrderField, (req, v) -> {
                 req.setOrderField(v);
-            })
-        );
-        builder.withRequestField("order_method",
+            }));
+        builder.<ListPredefineTagsRequest.OrderMethodEnum>withRequestField("order_method",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListPredefineTagsRequest.OrderMethodEnum.class,
+            TypeCasts.uncheckedConversion(ListPredefineTagsRequest.OrderMethodEnum.class),
             f -> f.withMarshaller(ListPredefineTagsRequest::getOrderMethod, (req, v) -> {
                 req.setOrderMethod(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersion = genForshowApiVersion();
+    public static final HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersion =
+        genForshowApiVersion();
 
     private static HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> genForshowApiVersion() {
         // basic
@@ -164,23 +150,21 @@ public class TmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("api_version",
+        builder.<String>withRequestField("api_version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowApiVersionRequest::getApiVersion, (req, v) -> {
                 req.setApiVersion(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdatePredefineTagsRequest, UpdatePredefineTagsResponse> updatePredefineTags = genForupdatePredefineTags();
+    public static final HttpRequestDef<UpdatePredefineTagsRequest, UpdatePredefineTagsResponse> updatePredefineTags =
+        genForupdatePredefineTags();
 
     private static HttpRequestDef<UpdatePredefineTagsRequest, UpdatePredefineTagsResponse> genForupdatePredefineTags() {
         // basic
@@ -191,18 +175,15 @@ public class TmsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<ModifyPrefineTag>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ModifyPrefineTag.class,
+            TypeCasts.uncheckedConversion(ModifyPrefineTag.class),
             f -> f.withMarshaller(UpdatePredefineTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

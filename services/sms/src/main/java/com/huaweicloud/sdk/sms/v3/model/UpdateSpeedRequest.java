@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.SpeedLimit;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateSpeedRequest  {
-
-
+/** Request Object */
+public class UpdateSpeedRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
+    @JsonProperty(value = "task_id")
+
     private String taskId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private SpeedLimit body;
 
     public UpdateSpeedRequest withTaskId(String taskId) {
@@ -35,13 +24,9 @@ public class UpdateSpeedRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 主机迁移任务的id
-     * @return taskId
-     */
+    /** 主机迁移任务的id
+     * 
+     * @return taskId */
     public String getTaskId() {
         return taskId;
     }
@@ -50,27 +35,23 @@ public class UpdateSpeedRequest  {
         this.taskId = taskId;
     }
 
-    
-
     public UpdateSpeedRequest withBody(SpeedLimit body) {
         this.body = body;
         return this;
     }
 
     public UpdateSpeedRequest withBody(Consumer<SpeedLimit> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new SpeedLimit();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public SpeedLimit getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdateSpeedRequest  {
     public void setBody(SpeedLimit body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdateSpeedRequest  {
             return false;
         }
         UpdateSpeedRequest updateSpeedRequest = (UpdateSpeedRequest) o;
-        return Objects.equals(this.taskId, updateSpeedRequest.taskId) &&
-            Objects.equals(this.body, updateSpeedRequest.body);
+        return Objects.equals(this.taskId, updateSpeedRequest.taskId)
+            && Objects.equals(this.body, updateSpeedRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(taskId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdateSpeedRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

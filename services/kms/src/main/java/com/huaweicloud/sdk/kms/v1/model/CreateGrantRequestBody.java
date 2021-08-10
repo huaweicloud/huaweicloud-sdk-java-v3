@@ -1,73 +1,54 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * CreateGrantRequestBody
- */
-public class CreateGrantRequestBody  {
-
-
+/** CreateGrantRequestBody */
+public class CreateGrantRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_id")
-    
+    @JsonProperty(value = "key_id")
+
     private String keyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="grantee_principal")
-    
+    @JsonProperty(value = "grantee_principal")
+
     private String granteePrincipal;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operations")
-    
+    @JsonProperty(value = "operations")
+
     private List<String> operations = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="retiring_principal")
-    
+    @JsonProperty(value = "retiring_principal")
+
     private String retiringPrincipal;
-    /**
-     * 授权类型。有效值：“user”，“domain”。默认值为“user”。
-     */
+
+    /** 授权类型。有效值：“user”，“domain”。默认值为“user”。 */
     public static final class GranteePrincipalTypeEnum {
 
-        
-        /**
-         * Enum USER for value: "user"
-         */
+        /** Enum USER for value: "user" */
         public static final GranteePrincipalTypeEnum USER = new GranteePrincipalTypeEnum("user");
-        
-        /**
-         * Enum DOMAIN for value: "domain"
-         */
+
+        /** Enum DOMAIN for value: "domain" */
         public static final GranteePrincipalTypeEnum DOMAIN = new GranteePrincipalTypeEnum("domain");
-        
 
         private static final Map<String, GranteePrincipalTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -96,7 +77,7 @@ public class CreateGrantRequestBody  {
 
         @JsonCreator
         public static GranteePrincipalTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             GranteePrincipalTypeEnum result = STATIC_FIELDS.get(value);
@@ -107,7 +88,7 @@ public class CreateGrantRequestBody  {
         }
 
         public static GranteePrincipalTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             GranteePrincipalTypeEnum result = STATIC_FIELDS.get(value);
@@ -131,16 +112,14 @@ public class CreateGrantRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="grantee_principal_type")
-    
+    @JsonProperty(value = "grantee_principal_type")
+
     private GranteePrincipalTypeEnum granteePrincipalType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sequence")
-    
+    @JsonProperty(value = "sequence")
+
     private String sequence;
 
     public CreateGrantRequestBody withKeyId(String keyId) {
@@ -148,13 +127,10 @@ public class CreateGrantRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥ID，36字节，满足正则匹配“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”。 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
-     * @return keyId
-     */
+    /** 密钥ID，36字节，满足正则匹配“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”。
+     * 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
+     * 
+     * @return keyId */
     public String getKeyId() {
         return keyId;
     }
@@ -163,20 +139,14 @@ public class CreateGrantRequestBody  {
         this.keyId = keyId;
     }
 
-    
-
     public CreateGrantRequestBody withGranteePrincipal(String granteePrincipal) {
         this.granteePrincipal = granteePrincipal;
         return this;
     }
 
-    
-
-
-    /**
-     * 被授权用户ID，1~64字节，满足正则匹配“^[a-zA-Z0-9]{1，64}$”。 例如：0d0466b00d0466b00d0466b00d0466b0
-     * @return granteePrincipal
-     */
+    /** 被授权用户ID，1~64字节，满足正则匹配“^[a-zA-Z0-9]{1，64}$”。 例如：0d0466b00d0466b00d0466b00d0466b0
+     * 
+     * @return granteePrincipal */
     public String getGranteePrincipal() {
         return granteePrincipal;
     }
@@ -185,16 +155,13 @@ public class CreateGrantRequestBody  {
         this.granteePrincipal = granteePrincipal;
     }
 
-    
-
     public CreateGrantRequestBody withOperations(List<String> operations) {
         this.operations = operations;
         return this;
     }
 
-    
     public CreateGrantRequestBody addOperationsItem(String operationsItem) {
-        if(this.operations == null) {
+        if (this.operations == null) {
             this.operations = new ArrayList<>();
         }
         this.operations.add(operationsItem);
@@ -202,17 +169,18 @@ public class CreateGrantRequestBody  {
     }
 
     public CreateGrantRequestBody withOperations(Consumer<List<String>> operationsSetter) {
-        if(this.operations == null) {
+        if (this.operations == null) {
             this.operations = new ArrayList<>();
         }
         operationsSetter.accept(this.operations);
         return this;
     }
 
-    /**
-     * 授权允许的操作列表。 有效的值：“create-datakey”，“create-datakey-without-plaintext”，“encrypt-datakey”，“decrypt-datakey”，“describe-key”，“create-grant”，“retire-grant”，“encrypt-data”，“decrypt-data”。 有效值不能仅为“create-grant”。
-     * @return operations
-     */
+    /** 授权允许的操作列表。
+     * 有效的值：“create-datakey”，“create-datakey-without-plaintext”，“encrypt-datakey”，“decrypt-datakey”，“describe-key”，“create-grant”，“retire-grant”，“encrypt-data”，“decrypt-data”。
+     * 有效值不能仅为“create-grant”。
+     * 
+     * @return operations */
     public List<String> getOperations() {
         return operations;
     }
@@ -221,20 +189,14 @@ public class CreateGrantRequestBody  {
         this.operations = operations;
     }
 
-    
-
     public CreateGrantRequestBody withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 授权名称，取值1到255字符，满足正则匹配“^[a-zA-Z0-9:/_-]{1,255}$”。
-     * @return name
-     */
+    /** 授权名称，取值1到255字符，满足正则匹配“^[a-zA-Z0-9:/_-]{1,255}$”。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -243,20 +205,14 @@ public class CreateGrantRequestBody  {
         this.name = name;
     }
 
-    
-
     public CreateGrantRequestBody withRetiringPrincipal(String retiringPrincipal) {
         this.retiringPrincipal = retiringPrincipal;
         return this;
     }
 
-    
-
-
-    /**
-     * 可退役授权的用户ID，1~64字节，满足正则匹配“^[a-zA-Z0-9]{1，64}$”。 例如：0d0466b00d0466b00d0466b00d0466b0
-     * @return retiringPrincipal
-     */
+    /** 可退役授权的用户ID，1~64字节，满足正则匹配“^[a-zA-Z0-9]{1，64}$”。 例如：0d0466b00d0466b00d0466b00d0466b0
+     * 
+     * @return retiringPrincipal */
     public String getRetiringPrincipal() {
         return retiringPrincipal;
     }
@@ -265,20 +221,14 @@ public class CreateGrantRequestBody  {
         this.retiringPrincipal = retiringPrincipal;
     }
 
-    
-
     public CreateGrantRequestBody withGranteePrincipalType(GranteePrincipalTypeEnum granteePrincipalType) {
         this.granteePrincipalType = granteePrincipalType;
         return this;
     }
 
-    
-
-
-    /**
-     * 授权类型。有效值：“user”，“domain”。默认值为“user”。
-     * @return granteePrincipalType
-     */
+    /** 授权类型。有效值：“user”，“domain”。默认值为“user”。
+     * 
+     * @return granteePrincipalType */
     public GranteePrincipalTypeEnum getGranteePrincipalType() {
         return granteePrincipalType;
     }
@@ -287,20 +237,14 @@ public class CreateGrantRequestBody  {
         this.granteePrincipalType = granteePrincipalType;
     }
 
-    
-
     public CreateGrantRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
-     * @return sequence
-     */
+    /** 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
+     * 
+     * @return sequence */
     public String getSequence() {
         return sequence;
     }
@@ -308,8 +252,6 @@ public class CreateGrantRequestBody  {
     public void setSequence(String sequence) {
         this.sequence = sequence;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -320,18 +262,21 @@ public class CreateGrantRequestBody  {
             return false;
         }
         CreateGrantRequestBody createGrantRequestBody = (CreateGrantRequestBody) o;
-        return Objects.equals(this.keyId, createGrantRequestBody.keyId) &&
-            Objects.equals(this.granteePrincipal, createGrantRequestBody.granteePrincipal) &&
-            Objects.equals(this.operations, createGrantRequestBody.operations) &&
-            Objects.equals(this.name, createGrantRequestBody.name) &&
-            Objects.equals(this.retiringPrincipal, createGrantRequestBody.retiringPrincipal) &&
-            Objects.equals(this.granteePrincipalType, createGrantRequestBody.granteePrincipalType) &&
-            Objects.equals(this.sequence, createGrantRequestBody.sequence);
+        return Objects.equals(this.keyId, createGrantRequestBody.keyId)
+            && Objects.equals(this.granteePrincipal, createGrantRequestBody.granteePrincipal)
+            && Objects.equals(this.operations, createGrantRequestBody.operations)
+            && Objects.equals(this.name, createGrantRequestBody.name)
+            && Objects.equals(this.retiringPrincipal, createGrantRequestBody.retiringPrincipal)
+            && Objects.equals(this.granteePrincipalType, createGrantRequestBody.granteePrincipalType)
+            && Objects.equals(this.sequence, createGrantRequestBody.sequence);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(keyId, granteePrincipal, operations, name, retiringPrincipal, granteePrincipalType, sequence);
+        return Objects
+            .hash(keyId, granteePrincipal, operations, name, retiringPrincipal, granteePrincipalType, sequence);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -346,16 +291,13 @@ public class CreateGrantRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

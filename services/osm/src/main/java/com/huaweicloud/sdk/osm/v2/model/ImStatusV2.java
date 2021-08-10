@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ImStatusV2
- */
-public class ImStatusV2  {
-
-
+/** ImStatusV2 */
+public class ImStatusV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="incident_id")
-    
+    @JsonProperty(value = "incident_id")
+
     private String incidentId;
 
     public ImStatusV2 withStatus(Integer status) {
@@ -34,15 +23,9 @@ public class ImStatusV2  {
         return this;
     }
 
-    
-
-
-    /**
-     * 状态
-     * minimum: 0
-     * maximum: 1
-     * @return status
-     */
+    /** 状态 minimum: 0 maximum: 1
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -51,20 +34,14 @@ public class ImStatusV2  {
         this.status = status;
     }
 
-    
-
     public ImStatusV2 withIncidentId(String incidentId) {
         this.incidentId = incidentId;
         return this;
     }
 
-    
-
-
-    /**
-     * 工单id
-     * @return incidentId
-     */
+    /** 工单id
+     * 
+     * @return incidentId */
     public String getIncidentId() {
         return incidentId;
     }
@@ -72,8 +49,6 @@ public class ImStatusV2  {
     public void setIncidentId(String incidentId) {
         this.incidentId = incidentId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +59,14 @@ public class ImStatusV2  {
             return false;
         }
         ImStatusV2 imStatusV2 = (ImStatusV2) o;
-        return Objects.equals(this.status, imStatusV2.status) &&
-            Objects.equals(this.incidentId, imStatusV2.incidentId);
+        return Objects.equals(this.status, imStatusV2.status) && Objects.equals(this.incidentId, imStatusV2.incidentId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(status, incidentId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +76,13 @@ public class ImStatusV2  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

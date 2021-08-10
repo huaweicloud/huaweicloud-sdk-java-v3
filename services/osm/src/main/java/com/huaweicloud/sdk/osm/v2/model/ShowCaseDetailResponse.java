@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.osm.v2.model.IncidentDetailInfoV2;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowCaseDetailResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="incident_detail_info")
-    
+    @JsonProperty(value = "incident_detail_info")
+
     private IncidentDetailInfoV2 incidentDetailInfo;
 
     public ShowCaseDetailResponse withIncidentDetailInfo(IncidentDetailInfoV2 incidentDetailInfo) {
@@ -32,19 +21,17 @@ public class ShowCaseDetailResponse extends SdkResponse {
     }
 
     public ShowCaseDetailResponse withIncidentDetailInfo(Consumer<IncidentDetailInfoV2> incidentDetailInfoSetter) {
-        if(this.incidentDetailInfo == null ){
+        if (this.incidentDetailInfo == null) {
             this.incidentDetailInfo = new IncidentDetailInfoV2();
             incidentDetailInfoSetter.accept(this.incidentDetailInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get incidentDetailInfo
-     * @return incidentDetailInfo
-     */
+    /** Get incidentDetailInfo
+     * 
+     * @return incidentDetailInfo */
     public IncidentDetailInfoV2 getIncidentDetailInfo() {
         return incidentDetailInfo;
     }
@@ -52,8 +39,6 @@ public class ShowCaseDetailResponse extends SdkResponse {
     public void setIncidentDetailInfo(IncidentDetailInfoV2 incidentDetailInfo) {
         this.incidentDetailInfo = incidentDetailInfo;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class ShowCaseDetailResponse extends SdkResponse {
         ShowCaseDetailResponse showCaseDetailResponse = (ShowCaseDetailResponse) o;
         return Objects.equals(this.incidentDetailInfo, showCaseDetailResponse.incidentDetailInfo);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(incidentDetailInfo);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class ShowCaseDetailResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

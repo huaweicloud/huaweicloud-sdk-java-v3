@@ -1,16 +1,18 @@
 package com.huaweicloud.sdk.sms.v3.region;
 
+import com.huaweicloud.sdk.core.region.Region;
+import com.huaweicloud.sdk.core.utils.StringUtils;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-import com.huaweicloud.sdk.core.region.Region;
-import com.huaweicloud.sdk.core.utils.StringUtils;
-
 public class SmsRegion {
-    public static final Region AP_SOUTHEAST_1 = new Region("ap-southeast-1", "https://sms.ap-southeast-1.myhuaweicloud.com");
-    
+
+    public static final Region AP_SOUTHEAST_1 =
+        new Region("ap-southeast-1", "https://sms.ap-southeast-1.myhuaweicloud.com");
+
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, Region> createStaticFields() {

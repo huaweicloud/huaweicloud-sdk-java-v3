@@ -1,92 +1,65 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListSlowLogsRequest  {
-
-
+/** Request Object */
+public class ListSlowLogsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_date")
-    
+    @JsonProperty(value = "start_date")
+
     private String startDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_date")
-    
+    @JsonProperty(value = "end_date")
+
     private String endDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
-    /**
-     * 语句类型，取空值，表示查询所有语句类型。
-     */
+
+    /** 语句类型，取空值，表示查询所有语句类型。 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum INSERT for value: "INSERT"
-         */
+        /** Enum INSERT for value: "INSERT" */
         public static final TypeEnum INSERT = new TypeEnum("INSERT");
-        
-        /**
-         * Enum UPDATE for value: "UPDATE"
-         */
+
+        /** Enum UPDATE for value: "UPDATE" */
         public static final TypeEnum UPDATE = new TypeEnum("UPDATE");
-        
-        /**
-         * Enum SELECT for value: "SELECT"
-         */
+
+        /** Enum SELECT for value: "SELECT" */
         public static final TypeEnum SELECT = new TypeEnum("SELECT");
-        
-        /**
-         * Enum DELETE for value: "DELETE"
-         */
+
+        /** Enum DELETE for value: "DELETE" */
         public static final TypeEnum DELETE = new TypeEnum("DELETE");
-        
-        /**
-         * Enum CREATE for value: "CREATE"
-         */
+
+        /** Enum CREATE for value: "CREATE" */
         public static final TypeEnum CREATE = new TypeEnum("CREATE");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -118,7 +91,7 @@ public class ListSlowLogsRequest  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -129,7 +102,7 @@ public class ListSlowLogsRequest  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -153,10 +126,9 @@ public class ListSlowLogsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
     public ListSlowLogsRequest withXLanguage(String xLanguage) {
@@ -164,15 +136,11 @@ public class ListSlowLogsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -181,20 +149,14 @@ public class ListSlowLogsRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListSlowLogsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -203,20 +165,14 @@ public class ListSlowLogsRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListSlowLogsRequest withStartDate(String startDate) {
         this.startDate = startDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 开始日期，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * @return startDate
-     */
+    /** 开始日期，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * 
+     * @return startDate */
     public String getStartDate() {
         return startDate;
     }
@@ -225,20 +181,14 @@ public class ListSlowLogsRequest  {
         this.startDate = startDate;
     }
 
-    
-
     public ListSlowLogsRequest withEndDate(String endDate) {
         this.endDate = endDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。只能查询当前时间前一个月内的慢日志。
-     * @return endDate
-     */
+    /** 结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。只能查询当前时间前一个月内的慢日志。
+     * 
+     * @return endDate */
     public String getEndDate() {
         return endDate;
     }
@@ -247,20 +197,14 @@ public class ListSlowLogsRequest  {
         this.endDate = endDate;
     }
 
-    
-
     public ListSlowLogsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 页数偏移量，如1、2、3、4等，不填时默认为1。
-     * @return offset
-     */
+    /** 页数偏移量，如1、2、3、4等，不填时默认为1。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -269,20 +213,14 @@ public class ListSlowLogsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListSlowLogsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页多少条记录，取值范围是1~100，不填时默认为10。
-     * @return limit
-     */
+    /** 每页多少条记录，取值范围是1~100，不填时默认为10。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -291,20 +229,14 @@ public class ListSlowLogsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListSlowLogsRequest withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 语句类型，取空值，表示查询所有语句类型。
-     * @return type
-     */
+    /** 语句类型，取空值，表示查询所有语句类型。
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -312,8 +244,6 @@ public class ListSlowLogsRequest  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -324,18 +254,20 @@ public class ListSlowLogsRequest  {
             return false;
         }
         ListSlowLogsRequest listSlowLogsRequest = (ListSlowLogsRequest) o;
-        return Objects.equals(this.xLanguage, listSlowLogsRequest.xLanguage) &&
-            Objects.equals(this.instanceId, listSlowLogsRequest.instanceId) &&
-            Objects.equals(this.startDate, listSlowLogsRequest.startDate) &&
-            Objects.equals(this.endDate, listSlowLogsRequest.endDate) &&
-            Objects.equals(this.offset, listSlowLogsRequest.offset) &&
-            Objects.equals(this.limit, listSlowLogsRequest.limit) &&
-            Objects.equals(this.type, listSlowLogsRequest.type);
+        return Objects.equals(this.xLanguage, listSlowLogsRequest.xLanguage)
+            && Objects.equals(this.instanceId, listSlowLogsRequest.instanceId)
+            && Objects.equals(this.startDate, listSlowLogsRequest.startDate)
+            && Objects.equals(this.endDate, listSlowLogsRequest.endDate)
+            && Objects.equals(this.offset, listSlowLogsRequest.offset)
+            && Objects.equals(this.limit, listSlowLogsRequest.limit)
+            && Objects.equals(this.type, listSlowLogsRequest.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, startDate, endDate, offset, limit, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -350,16 +282,13 @@ public class ListSlowLogsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

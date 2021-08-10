@@ -1,55 +1,36 @@
 package com.huaweicloud.sdk.das.v3.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListSpaceAnalysisRequest  {
-
-
+/** Request Object */
+public class ListSpaceAnalysisRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
-    /**
-     * 对象类型
-     */
+
+    /** 对象类型 */
     public static final class ObjectTypeEnum {
 
-        
-        /**
-         * Enum DATABASE for value: "database"
-         */
+        /** Enum DATABASE for value: "database" */
         public static final ObjectTypeEnum DATABASE = new ObjectTypeEnum("database");
-        
-        /**
-         * Enum TABLE for value: "table"
-         */
+
+        /** Enum TABLE for value: "table" */
         public static final ObjectTypeEnum TABLE = new ObjectTypeEnum("table");
-        
 
         private static final Map<String, ObjectTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -78,7 +59,7 @@ public class ListSpaceAnalysisRequest  {
 
         @JsonCreator
         public static ObjectTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ObjectTypeEnum result = STATIC_FIELDS.get(value);
@@ -89,7 +70,7 @@ public class ListSpaceAnalysisRequest  {
         }
 
         public static ObjectTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ObjectTypeEnum result = STATIC_FIELDS.get(value);
@@ -113,51 +94,39 @@ public class ListSpaceAnalysisRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="object_type")
-    
+    @JsonProperty(value = "object_type")
+
     private ObjectTypeEnum objectType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="database_id")
-    
+    @JsonProperty(value = "database_id")
+
     private String databaseId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private String offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private String limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="show_instance_info")
-    
+    @JsonProperty(value = "show_instance_info")
+
     private String showInstanceInfo;
-    /**
-     * 引擎类型
-     */
+
+    /** 引擎类型 */
     public static final class DatastoreTypeEnum {
 
-        
-        /**
-         * Enum MYSQL for value: "MySQL"
-         */
+        /** Enum MYSQL for value: "MySQL" */
         public static final DatastoreTypeEnum MYSQL = new DatastoreTypeEnum("MySQL");
-        
-        /**
-         * Enum GAUSSDB_FOR_MYSQL_ for value: "GaussDB(for MySQL)"
-         */
+
+        /** Enum GAUSSDB_FOR_MYSQL_ for value: "GaussDB(for MySQL)" */
         public static final DatastoreTypeEnum GAUSSDB_FOR_MYSQL_ = new DatastoreTypeEnum("GaussDB(for MySQL)");
-        
 
         private static final Map<String, DatastoreTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -186,7 +155,7 @@ public class ListSpaceAnalysisRequest  {
 
         @JsonCreator
         public static DatastoreTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DatastoreTypeEnum result = STATIC_FIELDS.get(value);
@@ -197,7 +166,7 @@ public class ListSpaceAnalysisRequest  {
         }
 
         public static DatastoreTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DatastoreTypeEnum result = STATIC_FIELDS.get(value);
@@ -221,10 +190,9 @@ public class ListSpaceAnalysisRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore_type")
-    
+    @JsonProperty(value = "datastore_type")
+
     private DatastoreTypeEnum datastoreType;
 
     public ListSpaceAnalysisRequest withInstanceId(String instanceId) {
@@ -232,13 +200,9 @@ public class ListSpaceAnalysisRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -247,22 +211,16 @@ public class ListSpaceAnalysisRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListSpaceAnalysisRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -271,20 +229,14 @@ public class ListSpaceAnalysisRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListSpaceAnalysisRequest withObjectType(ObjectTypeEnum objectType) {
         this.objectType = objectType;
         return this;
     }
 
-    
-
-
-    /**
-     * 对象类型
-     * @return objectType
-     */
+    /** 对象类型
+     * 
+     * @return objectType */
     public ObjectTypeEnum getObjectType() {
         return objectType;
     }
@@ -293,20 +245,14 @@ public class ListSpaceAnalysisRequest  {
         this.objectType = objectType;
     }
 
-    
-
     public ListSpaceAnalysisRequest withDatabaseId(String databaseId) {
         this.databaseId = databaseId;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库ID
-     * @return databaseId
-     */
+    /** 数据库ID
+     * 
+     * @return databaseId */
     public String getDatabaseId() {
         return databaseId;
     }
@@ -315,20 +261,14 @@ public class ListSpaceAnalysisRequest  {
         this.databaseId = databaseId;
     }
 
-    
-
     public ListSpaceAnalysisRequest withOffset(String offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。offset必须是limit的整数倍。
-     * @return offset
-     */
+    /** 偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。offset必须是limit的整数倍。
+     * 
+     * @return offset */
     public String getOffset() {
         return offset;
     }
@@ -337,20 +277,14 @@ public class ListSpaceAnalysisRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListSpaceAnalysisRequest withLimit(String limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
-     * @return limit
-     */
+    /** 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
+     * 
+     * @return limit */
     public String getLimit() {
         return limit;
     }
@@ -359,20 +293,14 @@ public class ListSpaceAnalysisRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListSpaceAnalysisRequest withShowInstanceInfo(String showInstanceInfo) {
         this.showInstanceInfo = showInstanceInfo;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否返回实例级别数据，取值：true或者false
-     * @return showInstanceInfo
-     */
+    /** 是否返回实例级别数据，取值：true或者false
+     * 
+     * @return showInstanceInfo */
     public String getShowInstanceInfo() {
         return showInstanceInfo;
     }
@@ -381,20 +309,14 @@ public class ListSpaceAnalysisRequest  {
         this.showInstanceInfo = showInstanceInfo;
     }
 
-    
-
     public ListSpaceAnalysisRequest withDatastoreType(DatastoreTypeEnum datastoreType) {
         this.datastoreType = datastoreType;
         return this;
     }
 
-    
-
-
-    /**
-     * 引擎类型
-     * @return datastoreType
-     */
+    /** 引擎类型
+     * 
+     * @return datastoreType */
     public DatastoreTypeEnum getDatastoreType() {
         return datastoreType;
     }
@@ -402,8 +324,6 @@ public class ListSpaceAnalysisRequest  {
     public void setDatastoreType(DatastoreTypeEnum datastoreType) {
         this.datastoreType = datastoreType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -414,19 +334,22 @@ public class ListSpaceAnalysisRequest  {
             return false;
         }
         ListSpaceAnalysisRequest listSpaceAnalysisRequest = (ListSpaceAnalysisRequest) o;
-        return Objects.equals(this.instanceId, listSpaceAnalysisRequest.instanceId) &&
-            Objects.equals(this.xLanguage, listSpaceAnalysisRequest.xLanguage) &&
-            Objects.equals(this.objectType, listSpaceAnalysisRequest.objectType) &&
-            Objects.equals(this.databaseId, listSpaceAnalysisRequest.databaseId) &&
-            Objects.equals(this.offset, listSpaceAnalysisRequest.offset) &&
-            Objects.equals(this.limit, listSpaceAnalysisRequest.limit) &&
-            Objects.equals(this.showInstanceInfo, listSpaceAnalysisRequest.showInstanceInfo) &&
-            Objects.equals(this.datastoreType, listSpaceAnalysisRequest.datastoreType);
+        return Objects.equals(this.instanceId, listSpaceAnalysisRequest.instanceId)
+            && Objects.equals(this.xLanguage, listSpaceAnalysisRequest.xLanguage)
+            && Objects.equals(this.objectType, listSpaceAnalysisRequest.objectType)
+            && Objects.equals(this.databaseId, listSpaceAnalysisRequest.databaseId)
+            && Objects.equals(this.offset, listSpaceAnalysisRequest.offset)
+            && Objects.equals(this.limit, listSpaceAnalysisRequest.limit)
+            && Objects.equals(this.showInstanceInfo, listSpaceAnalysisRequest.showInstanceInfo)
+            && Objects.equals(this.datastoreType, listSpaceAnalysisRequest.datastoreType);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, xLanguage, objectType, databaseId, offset, limit, showInstanceInfo, datastoreType);
+        return Objects
+            .hash(instanceId, xLanguage, objectType, databaseId, offset, limit, showInstanceInfo, datastoreType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -442,16 +365,13 @@ public class ListSpaceAnalysisRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

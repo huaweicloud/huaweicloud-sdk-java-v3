@@ -1,85 +1,48 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.ApiCommon;
-import com.huaweicloud.sdk.roma.v2.model.ApiFunc;
-import com.huaweicloud.sdk.roma.v2.model.ApiMock;
-import com.huaweicloud.sdk.roma.v2.model.ApiPolicyFunctionResp;
-import com.huaweicloud.sdk.roma.v2.model.ApiPolicyHttpResp;
-import com.huaweicloud.sdk.roma.v2.model.ApiPolicyMockResp;
-import com.huaweicloud.sdk.roma.v2.model.AuthOpt;
-import com.huaweicloud.sdk.roma.v2.model.BackendApi;
-import com.huaweicloud.sdk.roma.v2.model.BackendParam;
-import com.huaweicloud.sdk.roma.v2.model.ReqParam;
+
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ApiInfo
- */
-public class ApiInfo  {
-
-
+/** ApiInfo */
+public class ApiInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private Integer type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
-    /**
-     * API的请求协议 - HTTP - HTTPS - BOTH：同时支持HTTP和HTTPS
-     */
+
+    /** API的请求协议 - HTTP - HTTPS - BOTH：同时支持HTTP和HTTPS */
     public static final class ReqProtocolEnum {
 
-        
-        /**
-         * Enum HTTP for value: "HTTP"
-         */
+        /** Enum HTTP for value: "HTTP" */
         public static final ReqProtocolEnum HTTP = new ReqProtocolEnum("HTTP");
-        
-        /**
-         * Enum HTTPS for value: "HTTPS"
-         */
+
+        /** Enum HTTPS for value: "HTTPS" */
         public static final ReqProtocolEnum HTTPS = new ReqProtocolEnum("HTTPS");
-        
-        /**
-         * Enum BOTH for value: "BOTH"
-         */
+
+        /** Enum BOTH for value: "BOTH" */
         public static final ReqProtocolEnum BOTH = new ReqProtocolEnum("BOTH");
-        
 
         private static final Map<String, ReqProtocolEnum> STATIC_FIELDS = createStaticFields();
 
@@ -109,7 +72,7 @@ public class ApiInfo  {
 
         @JsonCreator
         public static ReqProtocolEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ReqProtocolEnum result = STATIC_FIELDS.get(value);
@@ -120,7 +83,7 @@ public class ApiInfo  {
         }
 
         public static ReqProtocolEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ReqProtocolEnum result = STATIC_FIELDS.get(value);
@@ -144,57 +107,37 @@ public class ApiInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_protocol")
-    
+    @JsonProperty(value = "req_protocol")
+
     private ReqProtocolEnum reqProtocol;
-    /**
-     * API的请求方式
-     */
+
+    /** API的请求方式 */
     public static final class ReqMethodEnum {
 
-        
-        /**
-         * Enum GET for value: "GET"
-         */
+        /** Enum GET for value: "GET" */
         public static final ReqMethodEnum GET = new ReqMethodEnum("GET");
-        
-        /**
-         * Enum POST for value: "POST"
-         */
+
+        /** Enum POST for value: "POST" */
         public static final ReqMethodEnum POST = new ReqMethodEnum("POST");
-        
-        /**
-         * Enum PUT for value: "PUT"
-         */
+
+        /** Enum PUT for value: "PUT" */
         public static final ReqMethodEnum PUT = new ReqMethodEnum("PUT");
-        
-        /**
-         * Enum DELETE for value: "DELETE"
-         */
+
+        /** Enum DELETE for value: "DELETE" */
         public static final ReqMethodEnum DELETE = new ReqMethodEnum("DELETE");
-        
-        /**
-         * Enum HEAD for value: "HEAD"
-         */
+
+        /** Enum HEAD for value: "HEAD" */
         public static final ReqMethodEnum HEAD = new ReqMethodEnum("HEAD");
-        
-        /**
-         * Enum PATCH for value: "PATCH"
-         */
+
+        /** Enum PATCH for value: "PATCH" */
         public static final ReqMethodEnum PATCH = new ReqMethodEnum("PATCH");
-        
-        /**
-         * Enum OPTIONS for value: "OPTIONS"
-         */
+
+        /** Enum OPTIONS for value: "OPTIONS" */
         public static final ReqMethodEnum OPTIONS = new ReqMethodEnum("OPTIONS");
-        
-        /**
-         * Enum ANY for value: "ANY"
-         */
+
+        /** Enum ANY for value: "ANY" */
         public static final ReqMethodEnum ANY = new ReqMethodEnum("ANY");
-        
 
         private static final Map<String, ReqMethodEnum> STATIC_FIELDS = createStaticFields();
 
@@ -229,7 +172,7 @@ public class ApiInfo  {
 
         @JsonCreator
         public static ReqMethodEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ReqMethodEnum result = STATIC_FIELDS.get(value);
@@ -240,7 +183,7 @@ public class ApiInfo  {
         }
 
         public static ReqMethodEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ReqMethodEnum result = STATIC_FIELDS.get(value);
@@ -264,43 +207,30 @@ public class ApiInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_method")
-    
+    @JsonProperty(value = "req_method")
+
     private ReqMethodEnum reqMethod;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_uri")
-    
+    @JsonProperty(value = "req_uri")
+
     private String reqUri;
-    /**
-     * API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
-     */
+
+    /** API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证 */
     public static final class AuthTypeEnum {
 
-        
-        /**
-         * Enum NONE for value: "NONE"
-         */
+        /** Enum NONE for value: "NONE" */
         public static final AuthTypeEnum NONE = new AuthTypeEnum("NONE");
-        
-        /**
-         * Enum APP for value: "APP"
-         */
+
+        /** Enum APP for value: "APP" */
         public static final AuthTypeEnum APP = new AuthTypeEnum("APP");
-        
-        /**
-         * Enum IAM for value: "IAM"
-         */
+
+        /** Enum IAM for value: "IAM" */
         public static final AuthTypeEnum IAM = new AuthTypeEnum("IAM");
-        
-        /**
-         * Enum AUTHORIZER for value: "AUTHORIZER"
-         */
+
+        /** Enum AUTHORIZER for value: "AUTHORIZER" */
         public static final AuthTypeEnum AUTHORIZER = new AuthTypeEnum("AUTHORIZER");
-        
 
         private static final Map<String, AuthTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -331,7 +261,7 @@ public class ApiInfo  {
 
         @JsonCreator
         public static AuthTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AuthTypeEnum result = STATIC_FIELDS.get(value);
@@ -342,7 +272,7 @@ public class ApiInfo  {
         }
 
         public static AuthTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AuthTypeEnum result = STATIC_FIELDS.get(value);
@@ -366,39 +296,29 @@ public class ApiInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth_type")
-    
+    @JsonProperty(value = "auth_type")
+
     private AuthTypeEnum authType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth_opt")
-    
+    @JsonProperty(value = "auth_opt")
+
     private AuthOpt authOpt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cors")
-    
+    @JsonProperty(value = "cors")
+
     private Boolean cors;
-    /**
-     * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
-     */
+
+    /** API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL */
     public static final class MatchModeEnum {
 
-        
-        /**
-         * Enum SWA for value: "SWA"
-         */
+        /** Enum SWA for value: "SWA" */
         public static final MatchModeEnum SWA = new MatchModeEnum("SWA");
-        
-        /**
-         * Enum NORMAL for value: "NORMAL"
-         */
+
+        /** Enum NORMAL for value: "NORMAL" */
         public static final MatchModeEnum NORMAL = new MatchModeEnum("NORMAL");
-        
 
         private static final Map<String, MatchModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -427,7 +347,7 @@ public class ApiInfo  {
 
         @JsonCreator
         public static MatchModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MatchModeEnum result = STATIC_FIELDS.get(value);
@@ -438,7 +358,7 @@ public class ApiInfo  {
         }
 
         public static MatchModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MatchModeEnum result = STATIC_FIELDS.get(value);
@@ -462,32 +382,22 @@ public class ApiInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="match_mode")
-    
+    @JsonProperty(value = "match_mode")
+
     private MatchModeEnum matchMode;
-    /**
-     * 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端
-     */
+
+    /** 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端 */
     public static final class BackendTypeEnum {
 
-        
-        /**
-         * Enum HTTP for value: "HTTP"
-         */
+        /** Enum HTTP for value: "HTTP" */
         public static final BackendTypeEnum HTTP = new BackendTypeEnum("HTTP");
-        
-        /**
-         * Enum FUNCTION for value: "FUNCTION"
-         */
+
+        /** Enum FUNCTION for value: "FUNCTION" */
         public static final BackendTypeEnum FUNCTION = new BackendTypeEnum("FUNCTION");
-        
-        /**
-         * Enum MOCK for value: "MOCK"
-         */
+
+        /** Enum MOCK for value: "MOCK" */
         public static final BackendTypeEnum MOCK = new BackendTypeEnum("MOCK");
-        
 
         private static final Map<String, BackendTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -517,7 +427,7 @@ public class ApiInfo  {
 
         @JsonCreator
         public static BackendTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             BackendTypeEnum result = STATIC_FIELDS.get(value);
@@ -528,7 +438,7 @@ public class ApiInfo  {
         }
 
         public static BackendTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             BackendTypeEnum result = STATIC_FIELDS.get(value);
@@ -552,210 +462,174 @@ public class ApiInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backend_type")
-    
+    @JsonProperty(value = "backend_type")
+
     private BackendTypeEnum backendType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
+
     private String remark;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body_remark")
-    
+    @JsonProperty(value = "body_remark")
+
     private String bodyRemark;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="result_normal_sample")
-    
+    @JsonProperty(value = "result_normal_sample")
+
     private String resultNormalSample;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="result_failure_sample")
-    
+    @JsonProperty(value = "result_failure_sample")
+
     private String resultFailureSample;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="authorizer_id")
-    
+    @JsonProperty(value = "authorizer_id")
+
     private String authorizerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<String> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="response_id")
-    
+    @JsonProperty(value = "response_id")
+
     private String responseId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roma_app_id")
-    
+    @JsonProperty(value = "roma_app_id")
+
     private String romaAppId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_name")
-    
+    @JsonProperty(value = "domain_name")
+
     private String domainName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag")
-    
+    @JsonProperty(value = "tag")
+
     private String tag;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arrange_necessary")
-    
+    @JsonProperty(value = "arrange_necessary")
+
     private Integer arrangeNecessary;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="register_time")
-    
+    @JsonProperty(value = "register_time")
+
     private OffsetDateTime registerTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private OffsetDateTime updateTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_name")
-    
+    @JsonProperty(value = "group_name")
+
     private String groupName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_version")
-    
+    @JsonProperty(value = "group_version")
+
     private String groupVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="run_env_name")
-    
+    @JsonProperty(value = "run_env_name")
+
     private String runEnvName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="run_env_id")
-    
+    @JsonProperty(value = "run_env_id")
+
     private String runEnvId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publish_id")
-    
+    @JsonProperty(value = "publish_id")
+
     private String publishId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roma_app_name")
-    
+    @JsonProperty(value = "roma_app_name")
+
     private String romaAppName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ld_api_id")
-    
+    @JsonProperty(value = "ld_api_id")
+
     private String ldApiId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="func_info")
-    
+    @JsonProperty(value = "func_info")
+
     private ApiFunc funcInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mock_info")
-    
+    @JsonProperty(value = "mock_info")
+
     private ApiMock mockInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_params")
-    
+    @JsonProperty(value = "req_params")
+
     private List<ReqParam> reqParams = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backend_params")
-    
+    @JsonProperty(value = "backend_params")
+
     private List<BackendParam> backendParams = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_functions")
-    
+    @JsonProperty(value = "policy_functions")
+
     private List<ApiPolicyFunctionResp> policyFunctions = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_mocks")
-    
+    @JsonProperty(value = "policy_mocks")
+
     private List<ApiPolicyMockResp> policyMocks = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backend_api")
-    
+    @JsonProperty(value = "backend_api")
+
     private BackendApi backendApi;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_https")
-    
+    @JsonProperty(value = "policy_https")
+
     private List<ApiPolicyHttpResp> policyHttps = null;
-    
+
     public ApiInfo withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * API名称。  支持汉字、英文、数字、中划线、下划线、点、斜杠、中英文格式下的小括号和冒号、中文格式下的顿号，且只能以英文、汉字和数字开头。 > 中文字符必须为UTF-8或者unicode编码。
-     * @return name
-     */
+    /** API名称。 支持汉字、英文、数字、中划线、下划线、点、斜杠、中英文格式下的小括号和冒号、中文格式下的顿号，且只能以英文、汉字和数字开头。 > 中文字符必须为UTF-8或者unicode编码。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -764,20 +638,14 @@ public class ApiInfo  {
         this.name = name;
     }
 
-    
-
     public ApiInfo withType(Integer type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * API类型 - 1：公有API - 2：私有API
-     * @return type
-     */
+    /** API类型 - 1：公有API - 2：私有API
+     * 
+     * @return type */
     public Integer getType() {
         return type;
     }
@@ -786,20 +654,14 @@ public class ApiInfo  {
         this.type = type;
     }
 
-    
-
     public ApiInfo withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * API的版本
-     * @return version
-     */
+    /** API的版本
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -808,20 +670,14 @@ public class ApiInfo  {
         this.version = version;
     }
 
-    
-
     public ApiInfo withReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
         return this;
     }
 
-    
-
-
-    /**
-     * API的请求协议 - HTTP - HTTPS - BOTH：同时支持HTTP和HTTPS
-     * @return reqProtocol
-     */
+    /** API的请求协议 - HTTP - HTTPS - BOTH：同时支持HTTP和HTTPS
+     * 
+     * @return reqProtocol */
     public ReqProtocolEnum getReqProtocol() {
         return reqProtocol;
     }
@@ -830,20 +686,14 @@ public class ApiInfo  {
         this.reqProtocol = reqProtocol;
     }
 
-    
-
     public ApiInfo withReqMethod(ReqMethodEnum reqMethod) {
         this.reqMethod = reqMethod;
         return this;
     }
 
-    
-
-
-    /**
-     * API的请求方式
-     * @return reqMethod
-     */
+    /** API的请求方式
+     * 
+     * @return reqMethod */
     public ReqMethodEnum getReqMethod() {
         return reqMethod;
     }
@@ -852,20 +702,14 @@ public class ApiInfo  {
         this.reqMethod = reqMethod;
     }
 
-    
-
     public ApiInfo withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。 > 需要服从URI规范。
-     * @return reqUri
-     */
+    /** 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。 > 需要服从URI规范。
+     * 
+     * @return reqUri */
     public String getReqUri() {
         return reqUri;
     }
@@ -874,20 +718,14 @@ public class ApiInfo  {
         this.reqUri = reqUri;
     }
 
-    
-
     public ApiInfo withAuthType(AuthTypeEnum authType) {
         this.authType = authType;
         return this;
     }
 
-    
-
-
-    /**
-     * API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
-     * @return authType
-     */
+    /** API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
+     * 
+     * @return authType */
     public AuthTypeEnum getAuthType() {
         return authType;
     }
@@ -896,27 +734,23 @@ public class ApiInfo  {
         this.authType = authType;
     }
 
-    
-
     public ApiInfo withAuthOpt(AuthOpt authOpt) {
         this.authOpt = authOpt;
         return this;
     }
 
     public ApiInfo withAuthOpt(Consumer<AuthOpt> authOptSetter) {
-        if(this.authOpt == null ){
+        if (this.authOpt == null) {
             this.authOpt = new AuthOpt();
             authOptSetter.accept(this.authOpt);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get authOpt
-     * @return authOpt
-     */
+    /** Get authOpt
+     * 
+     * @return authOpt */
     public AuthOpt getAuthOpt() {
         return authOpt;
     }
@@ -925,20 +759,14 @@ public class ApiInfo  {
         this.authOpt = authOpt;
     }
 
-    
-
     public ApiInfo withCors(Boolean cors) {
         this.cors = cors;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否支持跨域 - TRUE：支持 - FALSE：不支持
-     * @return cors
-     */
+    /** 是否支持跨域 - TRUE：支持 - FALSE：不支持
+     * 
+     * @return cors */
     public Boolean getCors() {
         return cors;
     }
@@ -947,20 +775,14 @@ public class ApiInfo  {
         this.cors = cors;
     }
 
-    
-
     public ApiInfo withMatchMode(MatchModeEnum matchMode) {
         this.matchMode = matchMode;
         return this;
     }
 
-    
-
-
-    /**
-     * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
-     * @return matchMode
-     */
+    /** API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
+     * 
+     * @return matchMode */
     public MatchModeEnum getMatchMode() {
         return matchMode;
     }
@@ -969,20 +791,14 @@ public class ApiInfo  {
         this.matchMode = matchMode;
     }
 
-    
-
     public ApiInfo withBackendType(BackendTypeEnum backendType) {
         this.backendType = backendType;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端
-     * @return backendType
-     */
+    /** 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端
+     * 
+     * @return backendType */
     public BackendTypeEnum getBackendType() {
         return backendType;
     }
@@ -991,20 +807,14 @@ public class ApiInfo  {
         this.backendType = backendType;
     }
 
-    
-
     public ApiInfo withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
-    
-
-
-    /**
-     * API描述。  不允许带有<、>字符 > 中文字符必须为UTF-8或者unicode编码。
-     * @return remark
-     */
+    /** API描述。 不允许带有<、>字符 > 中文字符必须为UTF-8或者unicode编码。
+     * 
+     * @return remark */
     public String getRemark() {
         return remark;
     }
@@ -1013,20 +823,14 @@ public class ApiInfo  {
         this.remark = remark;
     }
 
-    
-
     public ApiInfo withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * API所属的分组编号
-     * @return groupId
-     */
+    /** API所属的分组编号
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -1035,20 +839,14 @@ public class ApiInfo  {
         this.groupId = groupId;
     }
 
-    
-
     public ApiInfo withBodyRemark(String bodyRemark) {
         this.bodyRemark = bodyRemark;
         return this;
     }
 
-    
-
-
-    /**
-     * API请求体描述，可以是请求体示例、媒体类型、参数等信息。 > 中文字符必须为UTF-8或者unicode编码。
-     * @return bodyRemark
-     */
+    /** API请求体描述，可以是请求体示例、媒体类型、参数等信息。 > 中文字符必须为UTF-8或者unicode编码。
+     * 
+     * @return bodyRemark */
     public String getBodyRemark() {
         return bodyRemark;
     }
@@ -1057,20 +855,14 @@ public class ApiInfo  {
         this.bodyRemark = bodyRemark;
     }
 
-    
-
     public ApiInfo withResultNormalSample(String resultNormalSample) {
         this.resultNormalSample = resultNormalSample;
         return this;
     }
 
-    
-
-
-    /**
-     * 正常响应示例，描述API的正常返回信息。 > 中文字符必须为UTF-8或者unicode编码。
-     * @return resultNormalSample
-     */
+    /** 正常响应示例，描述API的正常返回信息。 > 中文字符必须为UTF-8或者unicode编码。
+     * 
+     * @return resultNormalSample */
     public String getResultNormalSample() {
         return resultNormalSample;
     }
@@ -1079,20 +871,14 @@ public class ApiInfo  {
         this.resultNormalSample = resultNormalSample;
     }
 
-    
-
     public ApiInfo withResultFailureSample(String resultFailureSample) {
         this.resultFailureSample = resultFailureSample;
         return this;
     }
 
-    
-
-
-    /**
-     * 失败返回示例，描述API的异常返回信息。 > 中文字符必须为UTF-8或者unicode编码。
-     * @return resultFailureSample
-     */
+    /** 失败返回示例，描述API的异常返回信息。 > 中文字符必须为UTF-8或者unicode编码。
+     * 
+     * @return resultFailureSample */
     public String getResultFailureSample() {
         return resultFailureSample;
     }
@@ -1101,20 +887,14 @@ public class ApiInfo  {
         this.resultFailureSample = resultFailureSample;
     }
 
-    
-
     public ApiInfo withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 前端自定义认证对象的ID
-     * @return authorizerId
-     */
+    /** 前端自定义认证对象的ID
+     * 
+     * @return authorizerId */
     public String getAuthorizerId() {
         return authorizerId;
     }
@@ -1123,16 +903,13 @@ public class ApiInfo  {
         this.authorizerId = authorizerId;
     }
 
-    
-
     public ApiInfo withTags(List<String> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public ApiInfo addTagsItem(String tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -1140,17 +917,16 @@ public class ApiInfo  {
     }
 
     public ApiInfo withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 标签。  支持英文，数字，下划线，且只能以英文开头。支持输入多个标签，不同标签以英文逗号分割。 
-     * @return tags
-     */
+    /** 标签。 支持英文，数字，下划线，且只能以英文开头。支持输入多个标签，不同标签以英文逗号分割。
+     * 
+     * @return tags */
     public List<String> getTags() {
         return tags;
     }
@@ -1159,20 +935,14 @@ public class ApiInfo  {
         this.tags = tags;
     }
 
-    
-
     public ApiInfo withResponseId(String responseId) {
         this.responseId = responseId;
         return this;
     }
 
-    
-
-
-    /**
-     * 分组自定义响应ID  暂不支持
-     * @return responseId
-     */
+    /** 分组自定义响应ID 暂不支持
+     * 
+     * @return responseId */
     public String getResponseId() {
         return responseId;
     }
@@ -1181,20 +951,14 @@ public class ApiInfo  {
         this.responseId = responseId;
     }
 
-    
-
     public ApiInfo withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
         return this;
     }
 
-    
-
-
-    /**
-     * API归属的集成应用编号  API分组为全局分组时或API绑定自定义域名时必填。
-     * @return romaAppId
-     */
+    /** API归属的集成应用编号 API分组为全局分组时或API绑定自定义域名时必填。
+     * 
+     * @return romaAppId */
     public String getRomaAppId() {
         return romaAppId;
     }
@@ -1203,20 +967,14 @@ public class ApiInfo  {
         this.romaAppId = romaAppId;
     }
 
-    
-
     public ApiInfo withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
     }
 
-    
-
-
-    /**
-     * API绑定的自定义域名，使用自定义域名时roma_app_id字段必填。
-     * @return domainName
-     */
+    /** API绑定的自定义域名，使用自定义域名时roma_app_id字段必填。
+     * 
+     * @return domainName */
     public String getDomainName() {
         return domainName;
     }
@@ -1225,20 +983,14 @@ public class ApiInfo  {
         this.domainName = domainName;
     }
 
-    
-
     public ApiInfo withTag(String tag) {
         this.tag = tag;
         return this;
     }
 
-    
-
-
-    /**
-     * 标签  待废弃，优先使用tags字段
-     * @return tag
-     */
+    /** 标签 待废弃，优先使用tags字段
+     * 
+     * @return tag */
     public String getTag() {
         return tag;
     }
@@ -1247,20 +999,14 @@ public class ApiInfo  {
         this.tag = tag;
     }
 
-    
-
     public ApiInfo withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * API编号
-     * @return id
-     */
+    /** API编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -1269,20 +1015,14 @@ public class ApiInfo  {
         this.id = id;
     }
 
-    
-
     public ApiInfo withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * API状态   - 1： 有效
-     * @return status
-     */
+    /** API状态 - 1： 有效
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -1291,20 +1031,14 @@ public class ApiInfo  {
         this.status = status;
     }
 
-    
-
     public ApiInfo withArrangeNecessary(Integer arrangeNecessary) {
         this.arrangeNecessary = arrangeNecessary;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否需要编排
-     * @return arrangeNecessary
-     */
+    /** 是否需要编排
+     * 
+     * @return arrangeNecessary */
     public Integer getArrangeNecessary() {
         return arrangeNecessary;
     }
@@ -1313,20 +1047,14 @@ public class ApiInfo  {
         this.arrangeNecessary = arrangeNecessary;
     }
 
-    
-
     public ApiInfo withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
         return this;
     }
 
-    
-
-
-    /**
-     * API注册时间
-     * @return registerTime
-     */
+    /** API注册时间
+     * 
+     * @return registerTime */
     public OffsetDateTime getRegisterTime() {
         return registerTime;
     }
@@ -1335,20 +1063,14 @@ public class ApiInfo  {
         this.registerTime = registerTime;
     }
 
-    
-
     public ApiInfo withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * API修改时间
-     * @return updateTime
-     */
+    /** API修改时间
+     * 
+     * @return updateTime */
     public OffsetDateTime getUpdateTime() {
         return updateTime;
     }
@@ -1357,20 +1079,14 @@ public class ApiInfo  {
         this.updateTime = updateTime;
     }
 
-    
-
     public ApiInfo withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
     }
 
-    
-
-
-    /**
-     * API所属分组的名称
-     * @return groupName
-     */
+    /** API所属分组的名称
+     * 
+     * @return groupName */
     public String getGroupName() {
         return groupName;
     }
@@ -1379,20 +1095,14 @@ public class ApiInfo  {
         this.groupName = groupName;
     }
 
-    
-
     public ApiInfo withGroupVersion(String groupVersion) {
         this.groupVersion = groupVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * API所属分组的版本
-     * @return groupVersion
-     */
+    /** API所属分组的版本
+     * 
+     * @return groupVersion */
     public String getGroupVersion() {
         return groupVersion;
     }
@@ -1401,20 +1111,14 @@ public class ApiInfo  {
         this.groupVersion = groupVersion;
     }
 
-    
-
     public ApiInfo withRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
         return this;
     }
 
-    
-
-
-    /**
-     * 发布的环境名称  存在多个发布记录时，环境名称之间用|隔开
-     * @return runEnvName
-     */
+    /** 发布的环境名称 存在多个发布记录时，环境名称之间用|隔开
+     * 
+     * @return runEnvName */
     public String getRunEnvName() {
         return runEnvName;
     }
@@ -1423,20 +1127,14 @@ public class ApiInfo  {
         this.runEnvName = runEnvName;
     }
 
-    
-
     public ApiInfo withRunEnvId(String runEnvId) {
         this.runEnvId = runEnvId;
         return this;
     }
 
-    
-
-
-    /**
-     * 发布的环境编号  存在多个发布记录时，环境编号之间用|隔开
-     * @return runEnvId
-     */
+    /** 发布的环境编号 存在多个发布记录时，环境编号之间用|隔开
+     * 
+     * @return runEnvId */
     public String getRunEnvId() {
         return runEnvId;
     }
@@ -1445,20 +1143,14 @@ public class ApiInfo  {
         this.runEnvId = runEnvId;
     }
 
-    
-
     public ApiInfo withPublishId(String publishId) {
         this.publishId = publishId;
         return this;
     }
 
-    
-
-
-    /**
-     * 发布记录编号  存在多个发布记录时，发布记录编号之间用|隔开
-     * @return publishId
-     */
+    /** 发布记录编号 存在多个发布记录时，发布记录编号之间用|隔开
+     * 
+     * @return publishId */
     public String getPublishId() {
         return publishId;
     }
@@ -1467,20 +1159,14 @@ public class ApiInfo  {
         this.publishId = publishId;
     }
 
-    
-
     public ApiInfo withRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
         return this;
     }
 
-    
-
-
-    /**
-     * API归属的集成应用名称
-     * @return romaAppName
-     */
+    /** API归属的集成应用名称
+     * 
+     * @return romaAppName */
     public String getRomaAppName() {
         return romaAppName;
     }
@@ -1489,20 +1175,14 @@ public class ApiInfo  {
         this.romaAppName = romaAppName;
     }
 
-    
-
     public ApiInfo withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
         return this;
     }
 
-    
-
-
-    /**
-     * 当API的后端为自定义后端时，对应的自定义后端API编号
-     * @return ldApiId
-     */
+    /** 当API的后端为自定义后端时，对应的自定义后端API编号
+     * 
+     * @return ldApiId */
     public String getLdApiId() {
         return ldApiId;
     }
@@ -1511,27 +1191,23 @@ public class ApiInfo  {
         this.ldApiId = ldApiId;
     }
 
-    
-
     public ApiInfo withFuncInfo(ApiFunc funcInfo) {
         this.funcInfo = funcInfo;
         return this;
     }
 
     public ApiInfo withFuncInfo(Consumer<ApiFunc> funcInfoSetter) {
-        if(this.funcInfo == null ){
+        if (this.funcInfo == null) {
             this.funcInfo = new ApiFunc();
             funcInfoSetter.accept(this.funcInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get funcInfo
-     * @return funcInfo
-     */
+    /** Get funcInfo
+     * 
+     * @return funcInfo */
     public ApiFunc getFuncInfo() {
         return funcInfo;
     }
@@ -1540,27 +1216,23 @@ public class ApiInfo  {
         this.funcInfo = funcInfo;
     }
 
-    
-
     public ApiInfo withMockInfo(ApiMock mockInfo) {
         this.mockInfo = mockInfo;
         return this;
     }
 
     public ApiInfo withMockInfo(Consumer<ApiMock> mockInfoSetter) {
-        if(this.mockInfo == null ){
+        if (this.mockInfo == null) {
             this.mockInfo = new ApiMock();
             mockInfoSetter.accept(this.mockInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get mockInfo
-     * @return mockInfo
-     */
+    /** Get mockInfo
+     * 
+     * @return mockInfo */
     public ApiMock getMockInfo() {
         return mockInfo;
     }
@@ -1569,16 +1241,13 @@ public class ApiInfo  {
         this.mockInfo = mockInfo;
     }
 
-    
-
     public ApiInfo withReqParams(List<ReqParam> reqParams) {
         this.reqParams = reqParams;
         return this;
     }
 
-    
     public ApiInfo addReqParamsItem(ReqParam reqParamsItem) {
-        if(this.reqParams == null) {
+        if (this.reqParams == null) {
             this.reqParams = new ArrayList<>();
         }
         this.reqParams.add(reqParamsItem);
@@ -1586,17 +1255,16 @@ public class ApiInfo  {
     }
 
     public ApiInfo withReqParams(Consumer<List<ReqParam>> reqParamsSetter) {
-        if(this.reqParams == null) {
+        if (this.reqParams == null) {
             this.reqParams = new ArrayList<>();
         }
         reqParamsSetter.accept(this.reqParams);
         return this;
     }
 
-    /**
-     * API的请求参数列表
-     * @return reqParams
-     */
+    /** API的请求参数列表
+     * 
+     * @return reqParams */
     public List<ReqParam> getReqParams() {
         return reqParams;
     }
@@ -1605,16 +1273,13 @@ public class ApiInfo  {
         this.reqParams = reqParams;
     }
 
-    
-
     public ApiInfo withBackendParams(List<BackendParam> backendParams) {
         this.backendParams = backendParams;
         return this;
     }
 
-    
     public ApiInfo addBackendParamsItem(BackendParam backendParamsItem) {
-        if(this.backendParams == null) {
+        if (this.backendParams == null) {
             this.backendParams = new ArrayList<>();
         }
         this.backendParams.add(backendParamsItem);
@@ -1622,17 +1287,16 @@ public class ApiInfo  {
     }
 
     public ApiInfo withBackendParams(Consumer<List<BackendParam>> backendParamsSetter) {
-        if(this.backendParams == null) {
+        if (this.backendParams == null) {
             this.backendParams = new ArrayList<>();
         }
         backendParamsSetter.accept(this.backendParams);
         return this;
     }
 
-    /**
-     * API的后端参数列表
-     * @return backendParams
-     */
+    /** API的后端参数列表
+     * 
+     * @return backendParams */
     public List<BackendParam> getBackendParams() {
         return backendParams;
     }
@@ -1641,16 +1305,13 @@ public class ApiInfo  {
         this.backendParams = backendParams;
     }
 
-    
-
     public ApiInfo withPolicyFunctions(List<ApiPolicyFunctionResp> policyFunctions) {
         this.policyFunctions = policyFunctions;
         return this;
     }
 
-    
     public ApiInfo addPolicyFunctionsItem(ApiPolicyFunctionResp policyFunctionsItem) {
-        if(this.policyFunctions == null) {
+        if (this.policyFunctions == null) {
             this.policyFunctions = new ArrayList<>();
         }
         this.policyFunctions.add(policyFunctionsItem);
@@ -1658,17 +1319,16 @@ public class ApiInfo  {
     }
 
     public ApiInfo withPolicyFunctions(Consumer<List<ApiPolicyFunctionResp>> policyFunctionsSetter) {
-        if(this.policyFunctions == null) {
+        if (this.policyFunctions == null) {
             this.policyFunctions = new ArrayList<>();
         }
         policyFunctionsSetter.accept(this.policyFunctions);
         return this;
     }
 
-    /**
-     * 函数工作流策略后端列表
-     * @return policyFunctions
-     */
+    /** 函数工作流策略后端列表
+     * 
+     * @return policyFunctions */
     public List<ApiPolicyFunctionResp> getPolicyFunctions() {
         return policyFunctions;
     }
@@ -1677,16 +1337,13 @@ public class ApiInfo  {
         this.policyFunctions = policyFunctions;
     }
 
-    
-
     public ApiInfo withPolicyMocks(List<ApiPolicyMockResp> policyMocks) {
         this.policyMocks = policyMocks;
         return this;
     }
 
-    
     public ApiInfo addPolicyMocksItem(ApiPolicyMockResp policyMocksItem) {
-        if(this.policyMocks == null) {
+        if (this.policyMocks == null) {
             this.policyMocks = new ArrayList<>();
         }
         this.policyMocks.add(policyMocksItem);
@@ -1694,17 +1351,16 @@ public class ApiInfo  {
     }
 
     public ApiInfo withPolicyMocks(Consumer<List<ApiPolicyMockResp>> policyMocksSetter) {
-        if(this.policyMocks == null) {
+        if (this.policyMocks == null) {
             this.policyMocks = new ArrayList<>();
         }
         policyMocksSetter.accept(this.policyMocks);
         return this;
     }
 
-    /**
-     * mock策略后端列表
-     * @return policyMocks
-     */
+    /** mock策略后端列表
+     * 
+     * @return policyMocks */
     public List<ApiPolicyMockResp> getPolicyMocks() {
         return policyMocks;
     }
@@ -1713,27 +1369,23 @@ public class ApiInfo  {
         this.policyMocks = policyMocks;
     }
 
-    
-
     public ApiInfo withBackendApi(BackendApi backendApi) {
         this.backendApi = backendApi;
         return this;
     }
 
     public ApiInfo withBackendApi(Consumer<BackendApi> backendApiSetter) {
-        if(this.backendApi == null ){
+        if (this.backendApi == null) {
             this.backendApi = new BackendApi();
             backendApiSetter.accept(this.backendApi);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get backendApi
-     * @return backendApi
-     */
+    /** Get backendApi
+     * 
+     * @return backendApi */
     public BackendApi getBackendApi() {
         return backendApi;
     }
@@ -1742,16 +1394,13 @@ public class ApiInfo  {
         this.backendApi = backendApi;
     }
 
-    
-
     public ApiInfo withPolicyHttps(List<ApiPolicyHttpResp> policyHttps) {
         this.policyHttps = policyHttps;
         return this;
     }
 
-    
     public ApiInfo addPolicyHttpsItem(ApiPolicyHttpResp policyHttpsItem) {
-        if(this.policyHttps == null) {
+        if (this.policyHttps == null) {
             this.policyHttps = new ArrayList<>();
         }
         this.policyHttps.add(policyHttpsItem);
@@ -1759,17 +1408,16 @@ public class ApiInfo  {
     }
 
     public ApiInfo withPolicyHttps(Consumer<List<ApiPolicyHttpResp>> policyHttpsSetter) {
-        if(this.policyHttps == null) {
+        if (this.policyHttps == null) {
             this.policyHttps = new ArrayList<>();
         }
         policyHttpsSetter.accept(this.policyHttps);
         return this;
     }
 
-    /**
-     * web策略后端列表
-     * @return policyHttps
-     */
+    /** web策略后端列表
+     * 
+     * @return policyHttps */
     public List<ApiPolicyHttpResp> getPolicyHttps() {
         return policyHttps;
     }
@@ -1777,8 +1425,6 @@ public class ApiInfo  {
     public void setPolicyHttps(List<ApiPolicyHttpResp> policyHttps) {
         this.policyHttps = policyHttps;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -1789,53 +1435,81 @@ public class ApiInfo  {
             return false;
         }
         ApiInfo apiInfo = (ApiInfo) o;
-        return Objects.equals(this.name, apiInfo.name) &&
-            Objects.equals(this.type, apiInfo.type) &&
-            Objects.equals(this.version, apiInfo.version) &&
-            Objects.equals(this.reqProtocol, apiInfo.reqProtocol) &&
-            Objects.equals(this.reqMethod, apiInfo.reqMethod) &&
-            Objects.equals(this.reqUri, apiInfo.reqUri) &&
-            Objects.equals(this.authType, apiInfo.authType) &&
-            Objects.equals(this.authOpt, apiInfo.authOpt) &&
-            Objects.equals(this.cors, apiInfo.cors) &&
-            Objects.equals(this.matchMode, apiInfo.matchMode) &&
-            Objects.equals(this.backendType, apiInfo.backendType) &&
-            Objects.equals(this.remark, apiInfo.remark) &&
-            Objects.equals(this.groupId, apiInfo.groupId) &&
-            Objects.equals(this.bodyRemark, apiInfo.bodyRemark) &&
-            Objects.equals(this.resultNormalSample, apiInfo.resultNormalSample) &&
-            Objects.equals(this.resultFailureSample, apiInfo.resultFailureSample) &&
-            Objects.equals(this.authorizerId, apiInfo.authorizerId) &&
-            Objects.equals(this.tags, apiInfo.tags) &&
-            Objects.equals(this.responseId, apiInfo.responseId) &&
-            Objects.equals(this.romaAppId, apiInfo.romaAppId) &&
-            Objects.equals(this.domainName, apiInfo.domainName) &&
-            Objects.equals(this.tag, apiInfo.tag) &&
-            Objects.equals(this.id, apiInfo.id) &&
-            Objects.equals(this.status, apiInfo.status) &&
-            Objects.equals(this.arrangeNecessary, apiInfo.arrangeNecessary) &&
-            Objects.equals(this.registerTime, apiInfo.registerTime) &&
-            Objects.equals(this.updateTime, apiInfo.updateTime) &&
-            Objects.equals(this.groupName, apiInfo.groupName) &&
-            Objects.equals(this.groupVersion, apiInfo.groupVersion) &&
-            Objects.equals(this.runEnvName, apiInfo.runEnvName) &&
-            Objects.equals(this.runEnvId, apiInfo.runEnvId) &&
-            Objects.equals(this.publishId, apiInfo.publishId) &&
-            Objects.equals(this.romaAppName, apiInfo.romaAppName) &&
-            Objects.equals(this.ldApiId, apiInfo.ldApiId) &&
-            Objects.equals(this.funcInfo, apiInfo.funcInfo) &&
-            Objects.equals(this.mockInfo, apiInfo.mockInfo) &&
-            Objects.equals(this.reqParams, apiInfo.reqParams) &&
-            Objects.equals(this.backendParams, apiInfo.backendParams) &&
-            Objects.equals(this.policyFunctions, apiInfo.policyFunctions) &&
-            Objects.equals(this.policyMocks, apiInfo.policyMocks) &&
-            Objects.equals(this.backendApi, apiInfo.backendApi) &&
-            Objects.equals(this.policyHttps, apiInfo.policyHttps);
+        return Objects.equals(this.name, apiInfo.name) && Objects.equals(this.type, apiInfo.type)
+            && Objects.equals(this.version, apiInfo.version) && Objects.equals(this.reqProtocol, apiInfo.reqProtocol)
+            && Objects.equals(this.reqMethod, apiInfo.reqMethod) && Objects.equals(this.reqUri, apiInfo.reqUri)
+            && Objects.equals(this.authType, apiInfo.authType) && Objects.equals(this.authOpt, apiInfo.authOpt)
+            && Objects.equals(this.cors, apiInfo.cors) && Objects.equals(this.matchMode, apiInfo.matchMode)
+            && Objects.equals(this.backendType, apiInfo.backendType) && Objects.equals(this.remark, apiInfo.remark)
+            && Objects.equals(this.groupId, apiInfo.groupId) && Objects.equals(this.bodyRemark, apiInfo.bodyRemark)
+            && Objects.equals(this.resultNormalSample, apiInfo.resultNormalSample)
+            && Objects.equals(this.resultFailureSample, apiInfo.resultFailureSample)
+            && Objects.equals(this.authorizerId, apiInfo.authorizerId) && Objects.equals(this.tags, apiInfo.tags)
+            && Objects.equals(this.responseId, apiInfo.responseId) && Objects.equals(this.romaAppId, apiInfo.romaAppId)
+            && Objects.equals(this.domainName, apiInfo.domainName) && Objects.equals(this.tag, apiInfo.tag)
+            && Objects.equals(this.id, apiInfo.id) && Objects.equals(this.status, apiInfo.status)
+            && Objects.equals(this.arrangeNecessary, apiInfo.arrangeNecessary)
+            && Objects.equals(this.registerTime, apiInfo.registerTime)
+            && Objects.equals(this.updateTime, apiInfo.updateTime) && Objects.equals(this.groupName, apiInfo.groupName)
+            && Objects.equals(this.groupVersion, apiInfo.groupVersion)
+            && Objects.equals(this.runEnvName, apiInfo.runEnvName) && Objects.equals(this.runEnvId, apiInfo.runEnvId)
+            && Objects.equals(this.publishId, apiInfo.publishId)
+            && Objects.equals(this.romaAppName, apiInfo.romaAppName) && Objects.equals(this.ldApiId, apiInfo.ldApiId)
+            && Objects.equals(this.funcInfo, apiInfo.funcInfo) && Objects.equals(this.mockInfo, apiInfo.mockInfo)
+            && Objects.equals(this.reqParams, apiInfo.reqParams)
+            && Objects.equals(this.backendParams, apiInfo.backendParams)
+            && Objects.equals(this.policyFunctions, apiInfo.policyFunctions)
+            && Objects.equals(this.policyMocks, apiInfo.policyMocks)
+            && Objects.equals(this.backendApi, apiInfo.backendApi)
+            && Objects.equals(this.policyHttps, apiInfo.policyHttps);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, version, reqProtocol, reqMethod, reqUri, authType, authOpt, cors, matchMode, backendType, remark, groupId, bodyRemark, resultNormalSample, resultFailureSample, authorizerId, tags, responseId, romaAppId, domainName, tag, id, status, arrangeNecessary, registerTime, updateTime, groupName, groupVersion, runEnvName, runEnvId, publishId, romaAppName, ldApiId, funcInfo, mockInfo, reqParams, backendParams, policyFunctions, policyMocks, backendApi, policyHttps);
+        return Objects.hash(name,
+            type,
+            version,
+            reqProtocol,
+            reqMethod,
+            reqUri,
+            authType,
+            authOpt,
+            cors,
+            matchMode,
+            backendType,
+            remark,
+            groupId,
+            bodyRemark,
+            resultNormalSample,
+            resultFailureSample,
+            authorizerId,
+            tags,
+            responseId,
+            romaAppId,
+            domainName,
+            tag,
+            id,
+            status,
+            arrangeNecessary,
+            registerTime,
+            updateTime,
+            groupName,
+            groupVersion,
+            runEnvName,
+            runEnvId,
+            publishId,
+            romaAppName,
+            ldApiId,
+            funcInfo,
+            mockInfo,
+            reqParams,
+            backendParams,
+            policyFunctions,
+            policyMocks,
+            backendApi,
+            policyHttps);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1885,16 +1559,13 @@ public class ApiInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

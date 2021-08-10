@@ -1,264 +1,211 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iec.v1.model.FlavorInstance;
-import com.huaweicloud.sdk.iec.v1.model.GeoLocation;
-import com.huaweicloud.sdk.iec.v1.model.InstanceAddress;
-import com.huaweicloud.sdk.iec.v1.model.InstanceSecurityGroup;
-import com.huaweicloud.sdk.iec.v1.model.SysTags;
-import com.huaweicloud.sdk.iec.v1.model.VolumesAttached;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 边缘实例对象。
- */
-public class Instance  {
-
-
+/** 边缘实例对象。 */
+public class Instance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
+
     private String updated;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hostId")
-    
+    @JsonProperty(value = "hostId")
+
     private String hostId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="addresses")
-    
+    @JsonProperty(value = "addresses")
+
     private Map<String, List<InstanceAddress>> addresses = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
+    @JsonProperty(value = "created")
+
     private String created;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<String> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="locked")
-    
+    @JsonProperty(value = "locked")
+
     private Boolean locked;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
+
     private String tenantId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sys_tags")
-    
+    @JsonProperty(value = "sys_tags")
+
     private List<SysTags> sysTags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flavor")
-    
+    @JsonProperty(value = "flavor")
+
     private FlavorInstance flavor;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata")
-    
+    @JsonProperty(value = "metadata")
+
     private Map<String, String> metadata = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_groups")
-    
+    @JsonProperty(value = "security_groups")
+
     private List<InstanceSecurityGroup> securityGroups = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="progress")
-    
+    @JsonProperty(value = "progress")
+
     private Integer progress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-STS:power_state")
-    
+    @JsonProperty(value = "OS-EXT-STS:power_state")
+
     private Integer osEXTSTSPowerState;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-STS:vm_state")
-    
+    @JsonProperty(value = "OS-EXT-STS:vm_state")
+
     private String osEXTSTSVmState;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-STS:task_state")
-    
+    @JsonProperty(value = "OS-EXT-STS:task_state")
+
     private String osEXTSTSTaskState;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-DCF:diskConfig")
-    
+    @JsonProperty(value = "OS-DCF:diskConfig")
+
     private String osDCFDiskConfig;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-AZ:availability_zone")
-    
+    @JsonProperty(value = "OS-EXT-AZ:availability_zone")
+
     private String osEXTAZAvailabilityZone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-SRV-USG:launched_at")
-    
+    @JsonProperty(value = "OS-SRV-USG:launched_at")
+
     private String osSRVUSGLaunchedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-SRV-USG:terminated_at")
-    
+    @JsonProperty(value = "OS-SRV-USG:terminated_at")
+
     private String osSRVUSGTerminatedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-SRV-ATTR:root_device_name")
-    
+    @JsonProperty(value = "OS-EXT-SRV-ATTR:root_device_name")
+
     private String osEXTSRVATTRRootDeviceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-SRV-ATTR:ramdisk_id")
-    
+    @JsonProperty(value = "OS-EXT-SRV-ATTR:ramdisk_id")
+
     private String osEXTSRVATTRRamdiskId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-SRV-ATTR:kernel_id")
-    
+    @JsonProperty(value = "OS-EXT-SRV-ATTR:kernel_id")
+
     private String osEXTSRVATTRKernelId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-SRV-ATTR:launch_index")
-    
+    @JsonProperty(value = "OS-EXT-SRV-ATTR:launch_index")
+
     private Integer osEXTSRVATTRLaunchIndex;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-SRV-ATTR:reservation_id")
-    
+    @JsonProperty(value = "OS-EXT-SRV-ATTR:reservation_id")
+
     private String osEXTSRVATTRReservationId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-SRV-ATTR:hostname")
-    
+    @JsonProperty(value = "OS-EXT-SRV-ATTR:hostname")
+
     private String osEXTSRVATTRHostname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-SRV-ATTR:user_data")
-    
+    @JsonProperty(value = "OS-EXT-SRV-ATTR:user_data")
+
     private String osEXTSRVATTRUserData;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-SRV-ATTR:host")
-    
+    @JsonProperty(value = "OS-EXT-SRV-ATTR:host")
+
     private String osEXTSRVATTRHost;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-SRV-ATTR:hypervisor_hostname")
-    
+    @JsonProperty(value = "OS-EXT-SRV-ATTR:hypervisor_hostname")
+
     private String osEXTSRVATTRHypervisorHostname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os-extended-volumes:volumes_attached")
-    
+    @JsonProperty(value = "os-extended-volumes:volumes_attached")
+
     private List<VolumesAttached> osExtendedVolumesVolumesAttached = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="geolocation")
-    
+    @JsonProperty(value = "geolocation")
+
     private GeoLocation geolocation;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edgecloud_id")
-    
+    @JsonProperty(value = "edgecloud_id")
+
     private String edgecloudId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edgecloud_name")
-    
+    @JsonProperty(value = "edgecloud_name")
+
     private String edgecloudName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_name")
-    
+    @JsonProperty(value = "key_name")
+
     private String keyName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-SRV-ATTR:instance_name")
-    
+    @JsonProperty(value = "OS-EXT-SRV-ATTR:instance_name")
+
     private String osEXTSRVATTRInstanceName;
 
     public Instance withId(String id) {
@@ -266,13 +213,9 @@ public class Instance  {
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例ID。
-     * @return id
-     */
+    /** 边缘实例ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -281,20 +224,14 @@ public class Instance  {
         this.id = id;
     }
 
-    
-
     public Instance withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例名称。
-     * @return name
-     */
+    /** 边缘实例名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -303,20 +240,15 @@ public class Instance  {
         this.name = name;
     }
 
-    
-
     public Instance withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例状态。 取值范围： ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、MIGRATING、PAUSED、REBOOT、REBUILD、RESIZE、REVERT_RESIZE、SHUTOFF、SHELVED、SHELVED_OFFLOADED、SOFT_DELETED、SUSPENDED、VERIFY_RESIZE
-     * @return status
-     */
+    /** 边缘实例状态。 取值范围：
+     * ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、MIGRATING、PAUSED、REBOOT、REBUILD、RESIZE、REVERT_RESIZE、SHUTOFF、SHELVED、SHELVED_OFFLOADED、SOFT_DELETED、SUSPENDED、VERIFY_RESIZE
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -325,20 +257,14 @@ public class Instance  {
         this.status = status;
     }
 
-    
-
     public Instance withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例修改时间。 UTC时间，格式：yyyy-mm-ddTss:ss:ssZ，例如：2021-04-25T03:21:39Z
-     * @return updated
-     */
+    /** 边缘实例修改时间。 UTC时间，格式：yyyy-mm-ddTss:ss:ssZ，例如：2021-04-25T03:21:39Z
+     * 
+     * @return updated */
     public String getUpdated() {
         return updated;
     }
@@ -347,20 +273,14 @@ public class Instance  {
         this.updated = updated;
     }
 
-    
-
     public Instance withHostId(String hostId) {
         this.hostId = hostId;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例所在主机的主机ID。
-     * @return hostId
-     */
+    /** 边缘实例所在主机的主机ID。
+     * 
+     * @return hostId */
     public String getHostId() {
         return hostId;
     }
@@ -369,17 +289,13 @@ public class Instance  {
         this.hostId = hostId;
     }
 
-    
-
     public Instance withAddresses(Map<String, List<InstanceAddress>> addresses) {
         this.addresses = addresses;
         return this;
     }
 
-    
-
     public Instance putAddressesItem(String key, List<InstanceAddress> addressesItem) {
-        if(this.addresses == null) {
+        if (this.addresses == null) {
             this.addresses = new HashMap<>();
         }
         this.addresses.put(key, addressesItem);
@@ -387,16 +303,16 @@ public class Instance  {
     }
 
     public Instance withAddresses(Consumer<Map<String, List<InstanceAddress>>> addressesSetter) {
-        if(this.addresses == null) {
+        if (this.addresses == null) {
             this.addresses = new HashMap<>();
         }
         addressesSetter.accept(this.addresses);
         return this;
     }
-    /**
-     * 边缘实例对应的网络地址信息，详情请参见表addresses字段数据结构说明。
-     * @return addresses
-     */
+
+    /** 边缘实例对应的网络地址信息，详情请参见表addresses字段数据结构说明。
+     * 
+     * @return addresses */
     public Map<String, List<InstanceAddress>> getAddresses() {
         return addresses;
     }
@@ -405,20 +321,14 @@ public class Instance  {
         this.addresses = addresses;
     }
 
-    
-
     public Instance withCreated(String created) {
         this.created = created;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例创建时间。 时间格式：yyyy-mm-ddTss:ss:ssZ，例如：2021-04-25T02:46:23Z
-     * @return created
-     */
+    /** 边缘实例创建时间。 时间格式：yyyy-mm-ddTss:ss:ssZ，例如：2021-04-25T02:46:23Z
+     * 
+     * @return created */
     public String getCreated() {
         return created;
     }
@@ -427,16 +337,13 @@ public class Instance  {
         this.created = created;
     }
 
-    
-
     public Instance withTags(List<String> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public Instance addTagsItem(String tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -444,17 +351,16 @@ public class Instance  {
     }
 
     public Instance withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 边缘实例标签。 主要用来存储边缘业务ID。
-     * @return tags
-     */
+    /** 边缘实例标签。 主要用来存储边缘业务ID。
+     * 
+     * @return tags */
     public List<String> getTags() {
         return tags;
     }
@@ -463,20 +369,14 @@ public class Instance  {
         this.tags = tags;
     }
 
-    
-
     public Instance withLocked(Boolean locked) {
         this.locked = locked;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例是否为锁定状态。  - true：锁定 - false：未锁定
-     * @return locked
-     */
+    /** 边缘实例是否为锁定状态。 - true：锁定 - false：未锁定
+     * 
+     * @return locked */
     public Boolean getLocked() {
         return locked;
     }
@@ -485,20 +385,14 @@ public class Instance  {
         this.locked = locked;
     }
 
-    
-
     public Instance withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例的描述信息。
-     * @return description
-     */
+    /** 边缘实例的描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -507,20 +401,14 @@ public class Instance  {
         this.description = description;
     }
 
-    
-
     public Instance withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例所属租户ID，即项目ID，和project_id表示相同的概念，格式为UUID。
-     * @return tenantId
-     */
+    /** 边缘实例所属租户ID，即项目ID，和project_id表示相同的概念，格式为UUID。
+     * 
+     * @return tenantId */
     public String getTenantId() {
         return tenantId;
     }
@@ -529,16 +417,13 @@ public class Instance  {
         this.tenantId = tenantId;
     }
 
-    
-
     public Instance withSysTags(List<SysTags> sysTags) {
         this.sysTags = sysTags;
         return this;
     }
 
-    
     public Instance addSysTagsItem(SysTags sysTagsItem) {
-        if(this.sysTags == null) {
+        if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
         this.sysTags.add(sysTagsItem);
@@ -546,17 +431,16 @@ public class Instance  {
     }
 
     public Instance withSysTags(Consumer<List<SysTags>> sysTagsSetter) {
-        if(this.sysTags == null) {
+        if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
         sysTagsSetter.accept(this.sysTags);
         return this;
     }
 
-    /**
-     * 边缘实例系统标签。
-     * @return sysTags
-     */
+    /** 边缘实例系统标签。
+     * 
+     * @return sysTags */
     public List<SysTags> getSysTags() {
         return sysTags;
     }
@@ -565,27 +449,23 @@ public class Instance  {
         this.sysTags = sysTags;
     }
 
-    
-
     public Instance withFlavor(FlavorInstance flavor) {
         this.flavor = flavor;
         return this;
     }
 
     public Instance withFlavor(Consumer<FlavorInstance> flavorSetter) {
-        if(this.flavor == null ){
+        if (this.flavor == null) {
             this.flavor = new FlavorInstance();
             flavorSetter.accept(this.flavor);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get flavor
-     * @return flavor
-     */
+    /** Get flavor
+     * 
+     * @return flavor */
     public FlavorInstance getFlavor() {
         return flavor;
     }
@@ -594,17 +474,13 @@ public class Instance  {
         this.flavor = flavor;
     }
 
-    
-
     public Instance withMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    
-
     public Instance putMetadataItem(String key, String metadataItem) {
-        if(this.metadata == null) {
+        if (this.metadata == null) {
             this.metadata = new HashMap<>();
         }
         this.metadata.put(key, metadataItem);
@@ -612,16 +488,16 @@ public class Instance  {
     }
 
     public Instance withMetadata(Consumer<Map<String, String>> metadataSetter) {
-        if(this.metadata == null) {
+        if (this.metadata == null) {
             this.metadata = new HashMap<>();
         }
         metadataSetter.accept(this.metadata);
         return this;
     }
-    /**
-     * 边缘实例元数据。
-     * @return metadata
-     */
+
+    /** 边缘实例元数据。
+     * 
+     * @return metadata */
     public Map<String, String> getMetadata() {
         return metadata;
     }
@@ -630,16 +506,13 @@ public class Instance  {
         this.metadata = metadata;
     }
 
-    
-
     public Instance withSecurityGroups(List<InstanceSecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
     }
 
-    
     public Instance addSecurityGroupsItem(InstanceSecurityGroup securityGroupsItem) {
-        if(this.securityGroups == null) {
+        if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         this.securityGroups.add(securityGroupsItem);
@@ -647,17 +520,16 @@ public class Instance  {
     }
 
     public Instance withSecurityGroups(Consumer<List<InstanceSecurityGroup>> securityGroupsSetter) {
-        if(this.securityGroups == null) {
+        if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);
         return this;
     }
 
-    /**
-     * 边缘实例所属安全组列表。
-     * @return securityGroups
-     */
+    /** 边缘实例所属安全组列表。
+     * 
+     * @return securityGroups */
     public List<InstanceSecurityGroup> getSecurityGroups() {
         return securityGroups;
     }
@@ -666,20 +538,14 @@ public class Instance  {
         this.securityGroups = securityGroups;
     }
 
-    
-
     public Instance withProgress(Integer progress) {
         this.progress = progress;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例进度。
-     * @return progress
-     */
+    /** 边缘实例进度。
+     * 
+     * @return progress */
     public Integer getProgress() {
         return progress;
     }
@@ -688,20 +554,14 @@ public class Instance  {
         this.progress = progress;
     }
 
-    
-
     public Instance withOsEXTSTSPowerState(Integer osEXTSTSPowerState) {
         this.osEXTSTSPowerState = osEXTSTSPowerState;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展属性，边缘实例电源状态。
-     * @return osEXTSTSPowerState
-     */
+    /** 扩展属性，边缘实例电源状态。
+     * 
+     * @return osEXTSTSPowerState */
     public Integer getOsEXTSTSPowerState() {
         return osEXTSTSPowerState;
     }
@@ -710,20 +570,14 @@ public class Instance  {
         this.osEXTSTSPowerState = osEXTSTSPowerState;
     }
 
-    
-
     public Instance withOsEXTSTSVmState(String osEXTSTSVmState) {
         this.osEXTSTSVmState = osEXTSTSVmState;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展属性，边缘实例当前状态。
-     * @return osEXTSTSVmState
-     */
+    /** 扩展属性，边缘实例当前状态。
+     * 
+     * @return osEXTSTSVmState */
     public String getOsEXTSTSVmState() {
         return osEXTSTSVmState;
     }
@@ -732,20 +586,14 @@ public class Instance  {
         this.osEXTSTSVmState = osEXTSTSVmState;
     }
 
-    
-
     public Instance withOsEXTSTSTaskState(String osEXTSTSTaskState) {
         this.osEXTSTSTaskState = osEXTSTSTaskState;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例任务状态。
-     * @return osEXTSTSTaskState
-     */
+    /** 边缘实例任务状态。
+     * 
+     * @return osEXTSTSTaskState */
     public String getOsEXTSTSTaskState() {
         return osEXTSTSTaskState;
     }
@@ -754,20 +602,14 @@ public class Instance  {
         this.osEXTSTSTaskState = osEXTSTSTaskState;
     }
 
-    
-
     public Instance withOsDCFDiskConfig(String osDCFDiskConfig) {
         this.osDCFDiskConfig = osDCFDiskConfig;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展属性， diskConfig的类型。  - MANUAL，镜像空间不会扩展。 - AUTO，系统盘镜像空间会自动扩展为与flavor大小一致。
-     * @return osDCFDiskConfig
-     */
+    /** 扩展属性， diskConfig的类型。 - MANUAL，镜像空间不会扩展。 - AUTO，系统盘镜像空间会自动扩展为与flavor大小一致。
+     * 
+     * @return osDCFDiskConfig */
     public String getOsDCFDiskConfig() {
         return osDCFDiskConfig;
     }
@@ -776,20 +618,14 @@ public class Instance  {
         this.osDCFDiskConfig = osDCFDiskConfig;
     }
 
-    
-
     public Instance withOsEXTAZAvailabilityZone(String osEXTAZAvailabilityZone) {
         this.osEXTAZAvailabilityZone = osEXTAZAvailabilityZone;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展属性，边缘实例所在可用区名称。
-     * @return osEXTAZAvailabilityZone
-     */
+    /** 扩展属性，边缘实例所在可用区名称。
+     * 
+     * @return osEXTAZAvailabilityZone */
     public String getOsEXTAZAvailabilityZone() {
         return osEXTAZAvailabilityZone;
     }
@@ -798,20 +634,14 @@ public class Instance  {
         this.osEXTAZAvailabilityZone = osEXTAZAvailabilityZone;
     }
 
-    
-
     public Instance withOsSRVUSGLaunchedAt(String osSRVUSGLaunchedAt) {
         this.osSRVUSGLaunchedAt = osSRVUSGLaunchedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例启动时间。 时间格式例如：2019-05-22T03:23:59.000000
-     * @return osSRVUSGLaunchedAt
-     */
+    /** 边缘实例启动时间。 时间格式例如：2019-05-22T03:23:59.000000
+     * 
+     * @return osSRVUSGLaunchedAt */
     public String getOsSRVUSGLaunchedAt() {
         return osSRVUSGLaunchedAt;
     }
@@ -820,20 +650,14 @@ public class Instance  {
         this.osSRVUSGLaunchedAt = osSRVUSGLaunchedAt;
     }
 
-    
-
     public Instance withOsSRVUSGTerminatedAt(String osSRVUSGTerminatedAt) {
         this.osSRVUSGTerminatedAt = osSRVUSGTerminatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例删除时间。 时间格式例如：2019-05-22T03:23:59.000000
-     * @return osSRVUSGTerminatedAt
-     */
+    /** 边缘实例删除时间。 时间格式例如：2019-05-22T03:23:59.000000
+     * 
+     * @return osSRVUSGTerminatedAt */
     public String getOsSRVUSGTerminatedAt() {
         return osSRVUSGTerminatedAt;
     }
@@ -842,20 +666,14 @@ public class Instance  {
         this.osSRVUSGTerminatedAt = osSRVUSGTerminatedAt;
     }
 
-    
-
     public Instance withOsEXTSRVATTRRootDeviceName(String osEXTSRVATTRRootDeviceName) {
         this.osEXTSRVATTRRootDeviceName = osEXTSRVATTRRootDeviceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例系统盘的设备名称。
-     * @return osEXTSRVATTRRootDeviceName
-     */
+    /** 边缘实例系统盘的设备名称。
+     * 
+     * @return osEXTSRVATTRRootDeviceName */
     public String getOsEXTSRVATTRRootDeviceName() {
         return osEXTSRVATTRRootDeviceName;
     }
@@ -864,20 +682,14 @@ public class Instance  {
         this.osEXTSRVATTRRootDeviceName = osEXTSRVATTRRootDeviceName;
     }
 
-    
-
     public Instance withOsEXTSRVATTRRamdiskId(String osEXTSRVATTRRamdiskId) {
         this.osEXTSRVATTRRamdiskId = osEXTSRVATTRRamdiskId;
         return this;
     }
 
-    
-
-
-    /**
-     * 若使用AMI格式镜像，则表示ramdisk image的UUID；否则，留空。
-     * @return osEXTSRVATTRRamdiskId
-     */
+    /** 若使用AMI格式镜像，则表示ramdisk image的UUID；否则，留空。
+     * 
+     * @return osEXTSRVATTRRamdiskId */
     public String getOsEXTSRVATTRRamdiskId() {
         return osEXTSRVATTRRamdiskId;
     }
@@ -886,20 +698,14 @@ public class Instance  {
         this.osEXTSRVATTRRamdiskId = osEXTSRVATTRRamdiskId;
     }
 
-    
-
     public Instance withOsEXTSRVATTRKernelId(String osEXTSRVATTRKernelId) {
         this.osEXTSRVATTRKernelId = osEXTSRVATTRKernelId;
         return this;
     }
 
-    
-
-
-    /**
-     * 若使用AMI格式的镜像，则表示kernel image的UUID；否则，留空。
-     * @return osEXTSRVATTRKernelId
-     */
+    /** 若使用AMI格式的镜像，则表示kernel image的UUID；否则，留空。
+     * 
+     * @return osEXTSRVATTRKernelId */
     public String getOsEXTSRVATTRKernelId() {
         return osEXTSRVATTRKernelId;
     }
@@ -908,20 +714,14 @@ public class Instance  {
         this.osEXTSRVATTRKernelId = osEXTSRVATTRKernelId;
     }
 
-    
-
     public Instance withOsEXTSRVATTRLaunchIndex(Integer osEXTSRVATTRLaunchIndex) {
         this.osEXTSRVATTRLaunchIndex = osEXTSRVATTRLaunchIndex;
         return this;
     }
 
-    
-
-
-    /**
-     * 批量创建场景，边缘实例的启动顺序。
-     * @return osEXTSRVATTRLaunchIndex
-     */
+    /** 批量创建场景，边缘实例的启动顺序。
+     * 
+     * @return osEXTSRVATTRLaunchIndex */
     public Integer getOsEXTSRVATTRLaunchIndex() {
         return osEXTSRVATTRLaunchIndex;
     }
@@ -930,20 +730,14 @@ public class Instance  {
         this.osEXTSRVATTRLaunchIndex = osEXTSRVATTRLaunchIndex;
     }
 
-    
-
     public Instance withOsEXTSRVATTRReservationId(String osEXTSRVATTRReservationId) {
         this.osEXTSRVATTRReservationId = osEXTSRVATTRReservationId;
         return this;
     }
 
-    
-
-
-    /**
-     * 批量创建场景，边缘实例的预留ID。
-     * @return osEXTSRVATTRReservationId
-     */
+    /** 批量创建场景，边缘实例的预留ID。
+     * 
+     * @return osEXTSRVATTRReservationId */
     public String getOsEXTSRVATTRReservationId() {
         return osEXTSRVATTRReservationId;
     }
@@ -952,20 +746,14 @@ public class Instance  {
         this.osEXTSRVATTRReservationId = osEXTSRVATTRReservationId;
     }
 
-    
-
     public Instance withOsEXTSRVATTRHostname(String osEXTSRVATTRHostname) {
         this.osEXTSRVATTRHostname = osEXTSRVATTRHostname;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例的主机名。
-     * @return osEXTSRVATTRHostname
-     */
+    /** 边缘实例的主机名。
+     * 
+     * @return osEXTSRVATTRHostname */
     public String getOsEXTSRVATTRHostname() {
         return osEXTSRVATTRHostname;
     }
@@ -974,20 +762,14 @@ public class Instance  {
         this.osEXTSRVATTRHostname = osEXTSRVATTRHostname;
     }
 
-    
-
     public Instance withOsEXTSRVATTRUserData(String osEXTSRVATTRUserData) {
         this.osEXTSRVATTRUserData = osEXTSRVATTRUserData;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建边缘实例时指定的user_data。
-     * @return osEXTSRVATTRUserData
-     */
+    /** 创建边缘实例时指定的user_data。
+     * 
+     * @return osEXTSRVATTRUserData */
     public String getOsEXTSRVATTRUserData() {
         return osEXTSRVATTRUserData;
     }
@@ -996,20 +778,14 @@ public class Instance  {
         this.osEXTSRVATTRUserData = osEXTSRVATTRUserData;
     }
 
-    
-
     public Instance withOsEXTSRVATTRHost(String osEXTSRVATTRHost) {
         this.osEXTSRVATTRHost = osEXTSRVATTRHost;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例所在主机的主机名称。
-     * @return osEXTSRVATTRHost
-     */
+    /** 边缘实例所在主机的主机名称。
+     * 
+     * @return osEXTSRVATTRHost */
     public String getOsEXTSRVATTRHost() {
         return osEXTSRVATTRHost;
     }
@@ -1018,20 +794,14 @@ public class Instance  {
         this.osEXTSRVATTRHost = osEXTSRVATTRHost;
     }
 
-    
-
     public Instance withOsEXTSRVATTRHypervisorHostname(String osEXTSRVATTRHypervisorHostname) {
         this.osEXTSRVATTRHypervisorHostname = osEXTSRVATTRHypervisorHostname;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展属性，边缘实例所在虚拟化主机名。
-     * @return osEXTSRVATTRHypervisorHostname
-     */
+    /** 扩展属性，边缘实例所在虚拟化主机名。
+     * 
+     * @return osEXTSRVATTRHypervisorHostname */
     public String getOsEXTSRVATTRHypervisorHostname() {
         return osEXTSRVATTRHypervisorHostname;
     }
@@ -1040,34 +810,31 @@ public class Instance  {
         this.osEXTSRVATTRHypervisorHostname = osEXTSRVATTRHypervisorHostname;
     }
 
-    
-
     public Instance withOsExtendedVolumesVolumesAttached(List<VolumesAttached> osExtendedVolumesVolumesAttached) {
         this.osExtendedVolumesVolumesAttached = osExtendedVolumesVolumesAttached;
         return this;
     }
 
-    
     public Instance addOsExtendedVolumesVolumesAttachedItem(VolumesAttached osExtendedVolumesVolumesAttachedItem) {
-        if(this.osExtendedVolumesVolumesAttached == null) {
+        if (this.osExtendedVolumesVolumesAttached == null) {
             this.osExtendedVolumesVolumesAttached = new ArrayList<>();
         }
         this.osExtendedVolumesVolumesAttached.add(osExtendedVolumesVolumesAttachedItem);
         return this;
     }
 
-    public Instance withOsExtendedVolumesVolumesAttached(Consumer<List<VolumesAttached>> osExtendedVolumesVolumesAttachedSetter) {
-        if(this.osExtendedVolumesVolumesAttached == null) {
+    public Instance withOsExtendedVolumesVolumesAttached(
+        Consumer<List<VolumesAttached>> osExtendedVolumesVolumesAttachedSetter) {
+        if (this.osExtendedVolumesVolumesAttached == null) {
             this.osExtendedVolumesVolumesAttached = new ArrayList<>();
         }
         osExtendedVolumesVolumesAttachedSetter.accept(this.osExtendedVolumesVolumesAttached);
         return this;
     }
 
-    /**
-     * 挂载到边缘实例上的磁盘。
-     * @return osExtendedVolumesVolumesAttached
-     */
+    /** 挂载到边缘实例上的磁盘。
+     * 
+     * @return osExtendedVolumesVolumesAttached */
     public List<VolumesAttached> getOsExtendedVolumesVolumesAttached() {
         return osExtendedVolumesVolumesAttached;
     }
@@ -1076,27 +843,23 @@ public class Instance  {
         this.osExtendedVolumesVolumesAttached = osExtendedVolumesVolumesAttached;
     }
 
-    
-
     public Instance withGeolocation(GeoLocation geolocation) {
         this.geolocation = geolocation;
         return this;
     }
 
     public Instance withGeolocation(Consumer<GeoLocation> geolocationSetter) {
-        if(this.geolocation == null ){
+        if (this.geolocation == null) {
             this.geolocation = new GeoLocation();
             geolocationSetter.accept(this.geolocation);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get geolocation
-     * @return geolocation
-     */
+    /** Get geolocation
+     * 
+     * @return geolocation */
     public GeoLocation getGeolocation() {
         return geolocation;
     }
@@ -1105,20 +868,14 @@ public class Instance  {
         this.geolocation = geolocation;
     }
 
-    
-
     public Instance withEdgecloudId(String edgecloudId) {
         this.edgecloudId = edgecloudId;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例所属边缘业务的ID。
-     * @return edgecloudId
-     */
+    /** 边缘实例所属边缘业务的ID。
+     * 
+     * @return edgecloudId */
     public String getEdgecloudId() {
         return edgecloudId;
     }
@@ -1127,20 +884,14 @@ public class Instance  {
         this.edgecloudId = edgecloudId;
     }
 
-    
-
     public Instance withEdgecloudName(String edgecloudName) {
         this.edgecloudName = edgecloudName;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例所属边缘业务的名称
-     * @return edgecloudName
-     */
+    /** 边缘实例所属边缘业务的名称
+     * 
+     * @return edgecloudName */
     public String getEdgecloudName() {
         return edgecloudName;
     }
@@ -1149,20 +900,14 @@ public class Instance  {
         this.edgecloudName = edgecloudName;
     }
 
-    
-
     public Instance withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
     }
 
-    
-
-
-    /**
-     * 帐号ID。
-     * @return domainId
-     */
+    /** 帐号ID。
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -1171,20 +916,14 @@ public class Instance  {
         this.domainId = domainId;
     }
 
-    
-
     public Instance withKeyName(String keyName) {
         this.keyName = keyName;
         return this;
     }
 
-    
-
-
-    /**
-     * 使用的密钥对名称。
-     * @return keyName
-     */
+    /** 使用的密钥对名称。
+     * 
+     * @return keyName */
     public String getKeyName() {
         return keyName;
     }
@@ -1193,20 +932,14 @@ public class Instance  {
         this.keyName = keyName;
     }
 
-    
-
     public Instance withOsEXTSRVATTRInstanceName(String osEXTSRVATTRInstanceName) {
         this.osEXTSRVATTRInstanceName = osEXTSRVATTRInstanceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展属性，边缘实例别名。
-     * @return osEXTSRVATTRInstanceName
-     */
+    /** 扩展属性，边缘实例别名。
+     * 
+     * @return osEXTSRVATTRInstanceName */
     public String getOsEXTSRVATTRInstanceName() {
         return osEXTSRVATTRInstanceName;
     }
@@ -1214,8 +947,6 @@ public class Instance  {
     public void setOsEXTSRVATTRInstanceName(String osEXTSRVATTRInstanceName) {
         this.osEXTSRVATTRInstanceName = osEXTSRVATTRInstanceName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -1226,50 +957,82 @@ public class Instance  {
             return false;
         }
         Instance instance = (Instance) o;
-        return Objects.equals(this.id, instance.id) &&
-            Objects.equals(this.name, instance.name) &&
-            Objects.equals(this.status, instance.status) &&
-            Objects.equals(this.updated, instance.updated) &&
-            Objects.equals(this.hostId, instance.hostId) &&
-            Objects.equals(this.addresses, instance.addresses) &&
-            Objects.equals(this.created, instance.created) &&
-            Objects.equals(this.tags, instance.tags) &&
-            Objects.equals(this.locked, instance.locked) &&
-            Objects.equals(this.description, instance.description) &&
-            Objects.equals(this.tenantId, instance.tenantId) &&
-            Objects.equals(this.sysTags, instance.sysTags) &&
-            Objects.equals(this.flavor, instance.flavor) &&
-            Objects.equals(this.metadata, instance.metadata) &&
-            Objects.equals(this.securityGroups, instance.securityGroups) &&
-            Objects.equals(this.progress, instance.progress) &&
-            Objects.equals(this.osEXTSTSPowerState, instance.osEXTSTSPowerState) &&
-            Objects.equals(this.osEXTSTSVmState, instance.osEXTSTSVmState) &&
-            Objects.equals(this.osEXTSTSTaskState, instance.osEXTSTSTaskState) &&
-            Objects.equals(this.osDCFDiskConfig, instance.osDCFDiskConfig) &&
-            Objects.equals(this.osEXTAZAvailabilityZone, instance.osEXTAZAvailabilityZone) &&
-            Objects.equals(this.osSRVUSGLaunchedAt, instance.osSRVUSGLaunchedAt) &&
-            Objects.equals(this.osSRVUSGTerminatedAt, instance.osSRVUSGTerminatedAt) &&
-            Objects.equals(this.osEXTSRVATTRRootDeviceName, instance.osEXTSRVATTRRootDeviceName) &&
-            Objects.equals(this.osEXTSRVATTRRamdiskId, instance.osEXTSRVATTRRamdiskId) &&
-            Objects.equals(this.osEXTSRVATTRKernelId, instance.osEXTSRVATTRKernelId) &&
-            Objects.equals(this.osEXTSRVATTRLaunchIndex, instance.osEXTSRVATTRLaunchIndex) &&
-            Objects.equals(this.osEXTSRVATTRReservationId, instance.osEXTSRVATTRReservationId) &&
-            Objects.equals(this.osEXTSRVATTRHostname, instance.osEXTSRVATTRHostname) &&
-            Objects.equals(this.osEXTSRVATTRUserData, instance.osEXTSRVATTRUserData) &&
-            Objects.equals(this.osEXTSRVATTRHost, instance.osEXTSRVATTRHost) &&
-            Objects.equals(this.osEXTSRVATTRHypervisorHostname, instance.osEXTSRVATTRHypervisorHostname) &&
-            Objects.equals(this.osExtendedVolumesVolumesAttached, instance.osExtendedVolumesVolumesAttached) &&
-            Objects.equals(this.geolocation, instance.geolocation) &&
-            Objects.equals(this.edgecloudId, instance.edgecloudId) &&
-            Objects.equals(this.edgecloudName, instance.edgecloudName) &&
-            Objects.equals(this.domainId, instance.domainId) &&
-            Objects.equals(this.keyName, instance.keyName) &&
-            Objects.equals(this.osEXTSRVATTRInstanceName, instance.osEXTSRVATTRInstanceName);
+        return Objects.equals(this.id, instance.id) && Objects.equals(this.name, instance.name)
+            && Objects.equals(this.status, instance.status) && Objects.equals(this.updated, instance.updated)
+            && Objects.equals(this.hostId, instance.hostId) && Objects.equals(this.addresses, instance.addresses)
+            && Objects.equals(this.created, instance.created) && Objects.equals(this.tags, instance.tags)
+            && Objects.equals(this.locked, instance.locked) && Objects.equals(this.description, instance.description)
+            && Objects.equals(this.tenantId, instance.tenantId) && Objects.equals(this.sysTags, instance.sysTags)
+            && Objects.equals(this.flavor, instance.flavor) && Objects.equals(this.metadata, instance.metadata)
+            && Objects.equals(this.securityGroups, instance.securityGroups)
+            && Objects.equals(this.progress, instance.progress)
+            && Objects.equals(this.osEXTSTSPowerState, instance.osEXTSTSPowerState)
+            && Objects.equals(this.osEXTSTSVmState, instance.osEXTSTSVmState)
+            && Objects.equals(this.osEXTSTSTaskState, instance.osEXTSTSTaskState)
+            && Objects.equals(this.osDCFDiskConfig, instance.osDCFDiskConfig)
+            && Objects.equals(this.osEXTAZAvailabilityZone, instance.osEXTAZAvailabilityZone)
+            && Objects.equals(this.osSRVUSGLaunchedAt, instance.osSRVUSGLaunchedAt)
+            && Objects.equals(this.osSRVUSGTerminatedAt, instance.osSRVUSGTerminatedAt)
+            && Objects.equals(this.osEXTSRVATTRRootDeviceName, instance.osEXTSRVATTRRootDeviceName)
+            && Objects.equals(this.osEXTSRVATTRRamdiskId, instance.osEXTSRVATTRRamdiskId)
+            && Objects.equals(this.osEXTSRVATTRKernelId, instance.osEXTSRVATTRKernelId)
+            && Objects.equals(this.osEXTSRVATTRLaunchIndex, instance.osEXTSRVATTRLaunchIndex)
+            && Objects.equals(this.osEXTSRVATTRReservationId, instance.osEXTSRVATTRReservationId)
+            && Objects.equals(this.osEXTSRVATTRHostname, instance.osEXTSRVATTRHostname)
+            && Objects.equals(this.osEXTSRVATTRUserData, instance.osEXTSRVATTRUserData)
+            && Objects.equals(this.osEXTSRVATTRHost, instance.osEXTSRVATTRHost)
+            && Objects.equals(this.osEXTSRVATTRHypervisorHostname, instance.osEXTSRVATTRHypervisorHostname)
+            && Objects.equals(this.osExtendedVolumesVolumesAttached, instance.osExtendedVolumesVolumesAttached)
+            && Objects.equals(this.geolocation, instance.geolocation)
+            && Objects.equals(this.edgecloudId, instance.edgecloudId)
+            && Objects.equals(this.edgecloudName, instance.edgecloudName)
+            && Objects.equals(this.domainId, instance.domainId) && Objects.equals(this.keyName, instance.keyName)
+            && Objects.equals(this.osEXTSRVATTRInstanceName, instance.osEXTSRVATTRInstanceName);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, status, updated, hostId, addresses, created, tags, locked, description, tenantId, sysTags, flavor, metadata, securityGroups, progress, osEXTSTSPowerState, osEXTSTSVmState, osEXTSTSTaskState, osDCFDiskConfig, osEXTAZAvailabilityZone, osSRVUSGLaunchedAt, osSRVUSGTerminatedAt, osEXTSRVATTRRootDeviceName, osEXTSRVATTRRamdiskId, osEXTSRVATTRKernelId, osEXTSRVATTRLaunchIndex, osEXTSRVATTRReservationId, osEXTSRVATTRHostname, osEXTSRVATTRUserData, osEXTSRVATTRHost, osEXTSRVATTRHypervisorHostname, osExtendedVolumesVolumesAttached, geolocation, edgecloudId, edgecloudName, domainId, keyName, osEXTSRVATTRInstanceName);
+        return Objects.hash(id,
+            name,
+            status,
+            updated,
+            hostId,
+            addresses,
+            created,
+            tags,
+            locked,
+            description,
+            tenantId,
+            sysTags,
+            flavor,
+            metadata,
+            securityGroups,
+            progress,
+            osEXTSTSPowerState,
+            osEXTSTSVmState,
+            osEXTSTSTaskState,
+            osDCFDiskConfig,
+            osEXTAZAvailabilityZone,
+            osSRVUSGLaunchedAt,
+            osSRVUSGTerminatedAt,
+            osEXTSRVATTRRootDeviceName,
+            osEXTSRVATTRRamdiskId,
+            osEXTSRVATTRKernelId,
+            osEXTSRVATTRLaunchIndex,
+            osEXTSRVATTRReservationId,
+            osEXTSRVATTRHostname,
+            osEXTSRVATTRUserData,
+            osEXTSRVATTRHost,
+            osEXTSRVATTRHypervisorHostname,
+            osExtendedVolumesVolumesAttached,
+            geolocation,
+            edgecloudId,
+            edgecloudName,
+            domainId,
+            keyName,
+            osEXTSRVATTRInstanceName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1305,8 +1068,12 @@ public class Instance  {
         sb.append("    osEXTSRVATTRHostname: ").append(toIndentedString(osEXTSRVATTRHostname)).append("\n");
         sb.append("    osEXTSRVATTRUserData: ").append(toIndentedString(osEXTSRVATTRUserData)).append("\n");
         sb.append("    osEXTSRVATTRHost: ").append(toIndentedString(osEXTSRVATTRHost)).append("\n");
-        sb.append("    osEXTSRVATTRHypervisorHostname: ").append(toIndentedString(osEXTSRVATTRHypervisorHostname)).append("\n");
-        sb.append("    osExtendedVolumesVolumesAttached: ").append(toIndentedString(osExtendedVolumesVolumesAttached)).append("\n");
+        sb.append("    osEXTSRVATTRHypervisorHostname: ")
+            .append(toIndentedString(osEXTSRVATTRHypervisorHostname))
+            .append("\n");
+        sb.append("    osExtendedVolumesVolumesAttached: ")
+            .append(toIndentedString(osExtendedVolumesVolumesAttached))
+            .append("\n");
         sb.append("    geolocation: ").append(toIndentedString(geolocation)).append("\n");
         sb.append("    edgecloudId: ").append(toIndentedString(edgecloudId)).append("\n");
         sb.append("    edgecloudName: ").append(toIndentedString(edgecloudName)).append("\n");
@@ -1316,16 +1083,13 @@ public class Instance  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,101 +1,67 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.functiongraph.v2.model.FuncCode;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 函数属性结构体。
- */
-public class CreateFunctionRequestBody  {
-
-
+/** 函数属性结构体。 */
+public class CreateFunctionRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="func_name")
-    
+    @JsonProperty(value = "func_name")
+
     private String funcName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="package")
-    
+    @JsonProperty(value = "package")
+
     private String _package;
-    /**
-     * FunctionGraph函数的执行环境 支持Node.js6.10、Python2.7、Python3.6、Java8、Go1.8、Node.js 8.10、C#.NET Core 2.0、C#.NET Core 2.1、PHP7.3。 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Go1.8: Go语言1.8版本。 Java8: Java语言8版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。
-     */
+
+    /** FunctionGraph函数的执行环境 支持Node.js6.10、Python2.7、Python3.6、Java8、Go1.8、Node.js 8.10、C#.NET Core 2.0、C#.NET Core
+     * 2.1、PHP7.3。 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Go1.8: Go语言1.8版本。 Java8: Java语言8版本。 Node.js6.10:
+     * Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET
+     * Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。 */
     public static final class RuntimeEnum {
 
-        
-        /**
-         * Enum PYTHON2_7 for value: "Python2.7"
-         */
+        /** Enum PYTHON2_7 for value: "Python2.7" */
         public static final RuntimeEnum PYTHON2_7 = new RuntimeEnum("Python2.7");
-        
-        /**
-         * Enum PYTHON3_6 for value: "Python3.6"
-         */
+
+        /** Enum PYTHON3_6 for value: "Python3.6" */
         public static final RuntimeEnum PYTHON3_6 = new RuntimeEnum("Python3.6");
-        
-        /**
-         * Enum GO1_8 for value: "Go1.8"
-         */
+
+        /** Enum GO1_8 for value: "Go1.8" */
         public static final RuntimeEnum GO1_8 = new RuntimeEnum("Go1.8");
-        
-        /**
-         * Enum JAVA8 for value: "Java8"
-         */
+
+        /** Enum JAVA8 for value: "Java8" */
         public static final RuntimeEnum JAVA8 = new RuntimeEnum("Java8");
-        
-        /**
-         * Enum NODE_JS6_10 for value: "Node.js6.10"
-         */
+
+        /** Enum NODE_JS6_10 for value: "Node.js6.10" */
         public static final RuntimeEnum NODE_JS6_10 = new RuntimeEnum("Node.js6.10");
-        
-        /**
-         * Enum NODE_JS8_10 for value: "Node.js8.10"
-         */
+
+        /** Enum NODE_JS8_10 for value: "Node.js8.10" */
         public static final RuntimeEnum NODE_JS8_10 = new RuntimeEnum("Node.js8.10");
-        
-        /**
-         * Enum C_NET_CORE_2_0_ for value: "C#(.NET Core 2.0)"
-         */
+
+        /** Enum C_NET_CORE_2_0_ for value: "C#(.NET Core 2.0)" */
         public static final RuntimeEnum C_NET_CORE_2_0_ = new RuntimeEnum("C#(.NET Core 2.0)");
-        
-        /**
-         * Enum C_NET_CORE_2_1_ for value: "C#(.NET Core 2.1)"
-         */
+
+        /** Enum C_NET_CORE_2_1_ for value: "C#(.NET Core 2.1)" */
         public static final RuntimeEnum C_NET_CORE_2_1_ = new RuntimeEnum("C#(.NET Core 2.1)");
-        
-        /**
-         * Enum C_NET_CORE_3_1_ for value: "C#(.NET Core 3.1)"
-         */
+
+        /** Enum C_NET_CORE_3_1_ for value: "C#(.NET Core 3.1)" */
         public static final RuntimeEnum C_NET_CORE_3_1_ = new RuntimeEnum("C#(.NET Core 3.1)");
-        
-        /**
-         * Enum CUSTOM for value: "Custom"
-         */
+
+        /** Enum CUSTOM for value: "Custom" */
         public static final RuntimeEnum CUSTOM = new RuntimeEnum("Custom");
-        
-        /**
-         * Enum PHP7_3 for value: "PHP7.3"
-         */
+
+        /** Enum PHP7_3 for value: "PHP7.3" */
         public static final RuntimeEnum PHP7_3 = new RuntimeEnum("PHP7.3");
-        
 
         private static final Map<String, RuntimeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -133,7 +99,7 @@ public class CreateFunctionRequestBody  {
 
         @JsonCreator
         public static RuntimeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             RuntimeEnum result = STATIC_FIELDS.get(value);
@@ -144,7 +110,7 @@ public class CreateFunctionRequestBody  {
         }
 
         public static RuntimeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             RuntimeEnum result = STATIC_FIELDS.get(value);
@@ -168,55 +134,40 @@ public class CreateFunctionRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="runtime")
-    
+    @JsonProperty(value = "runtime")
+
     private RuntimeEnum runtime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timeout")
-    
+    @JsonProperty(value = "timeout")
+
     private Integer timeout;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="handler")
-    
+    @JsonProperty(value = "handler")
+
     private String handler;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="memory_size")
-    
+    @JsonProperty(value = "memory_size")
+
     private Integer memorySize;
-    /**
-     * 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
-     */
+
+    /** 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。 */
     public static final class CodeTypeEnum {
 
-        
-        /**
-         * Enum INLINE for value: "inline"
-         */
+        /** Enum INLINE for value: "inline" */
         public static final CodeTypeEnum INLINE = new CodeTypeEnum("inline");
-        
-        /**
-         * Enum ZIP for value: "zip"
-         */
+
+        /** Enum ZIP for value: "zip" */
         public static final CodeTypeEnum ZIP = new CodeTypeEnum("zip");
-        
-        /**
-         * Enum OBS for value: "obs"
-         */
+
+        /** Enum OBS for value: "obs" */
         public static final CodeTypeEnum OBS = new CodeTypeEnum("obs");
-        
-        /**
-         * Enum JAR for value: "jar"
-         */
+
+        /** Enum JAR for value: "jar" */
         public static final CodeTypeEnum JAR = new CodeTypeEnum("jar");
-        
 
         private static final Map<String, CodeTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -247,7 +198,7 @@ public class CreateFunctionRequestBody  {
 
         @JsonCreator
         public static CodeTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CodeTypeEnum result = STATIC_FIELDS.get(value);
@@ -258,7 +209,7 @@ public class CreateFunctionRequestBody  {
         }
 
         public static CodeTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CodeTypeEnum result = STATIC_FIELDS.get(value);
@@ -282,70 +233,59 @@ public class CreateFunctionRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code_type")
-    
+    @JsonProperty(value = "code_type")
+
     private CodeTypeEnum codeType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code_url")
-    
+    @JsonProperty(value = "code_url")
+
     private String codeUrl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code_filename")
-    
+    @JsonProperty(value = "code_filename")
+
     private String codeFilename;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_data")
-    
+    @JsonProperty(value = "user_data")
+
     private String userData;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="xrole")
-    
+    @JsonProperty(value = "xrole")
+
     private String xrole;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_xrole")
-    
+    @JsonProperty(value = "app_xrole")
+
     private String appXrole;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="func_code")
-    
+    @JsonProperty(value = "func_code")
+
     private FuncCode funcCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="initializer_handler")
-    
+    @JsonProperty(value = "initializer_handler")
+
     private String initializerHandler;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="initializer_timeout")
-    
+    @JsonProperty(value = "initializer_timeout")
+
     private Integer initializerTimeout;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public CreateFunctionRequestBody withFuncName(String funcName) {
@@ -353,13 +293,9 @@ public class CreateFunctionRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 函数名称。
-     * @return funcName
-     */
+    /** 函数名称。
+     * 
+     * @return funcName */
     public String getFuncName() {
         return funcName;
     }
@@ -368,20 +304,14 @@ public class CreateFunctionRequestBody  {
         this.funcName = funcName;
     }
 
-    
-
     public CreateFunctionRequestBody withPackage(String _package) {
         this._package = _package;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数所属的分组Package，用于用户针对函数的自定义分组。
-     * @return _package
-     */
+    /** 函数所属的分组Package，用于用户针对函数的自定义分组。
+     * 
+     * @return _package */
     public String getPackage() {
         return _package;
     }
@@ -390,20 +320,17 @@ public class CreateFunctionRequestBody  {
         this._package = _package;
     }
 
-    
-
     public CreateFunctionRequestBody withRuntime(RuntimeEnum runtime) {
         this.runtime = runtime;
         return this;
     }
 
-    
-
-
-    /**
-     * FunctionGraph函数的执行环境 支持Node.js6.10、Python2.7、Python3.6、Java8、Go1.8、Node.js 8.10、C#.NET Core 2.0、C#.NET Core 2.1、PHP7.3。 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Go1.8: Go语言1.8版本。 Java8: Java语言8版本。 Node.js6.10: Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。
-     * @return runtime
-     */
+    /** FunctionGraph函数的执行环境 支持Node.js6.10、Python2.7、Python3.6、Java8、Go1.8、Node.js 8.10、C#.NET Core 2.0、C#.NET Core
+     * 2.1、PHP7.3。 Python2.7: Python语言2.7版本。 Python3.6: Pyton语言3.6版本。 Go1.8: Go语言1.8版本。 Java8: Java语言8版本。 Node.js6.10:
+     * Nodejs语言6.10版本。 Node.js8.10: Nodejs语言8.10版本。 C#(.NET Core 2.0): C#语言2.0版本。 C#(.NET Core 2.1): C#语言2.1版本。 C#(.NET
+     * Core 3.1): C#语言3.1版本。 Custom: 自定义运行时。 PHP7.3: Php语言7.3版本。
+     * 
+     * @return runtime */
     public RuntimeEnum getRuntime() {
         return runtime;
     }
@@ -412,20 +339,14 @@ public class CreateFunctionRequestBody  {
         this.runtime = runtime;
     }
 
-    
-
     public CreateFunctionRequestBody withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数执行超时时间，超时函数将被强行停止，范围3～900秒
-     * @return timeout
-     */
+    /** 函数执行超时时间，超时函数将被强行停止，范围3～900秒
+     * 
+     * @return timeout */
     public Integer getTimeout() {
         return timeout;
     }
@@ -434,20 +355,14 @@ public class CreateFunctionRequestBody  {
         this.timeout = timeout;
     }
 
-    
-
     public CreateFunctionRequestBody withHandler(String handler) {
         this.handler = handler;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数执行入口 规则：xx.xx，必须包含“. ” 举例：对于node.js函数：myfunction.handler，则表示函数的文件名为myfunction.js，执行的入口函数名为handler。
-     * @return handler
-     */
+    /** 函数执行入口 规则：xx.xx，必须包含“. ” 举例：对于node.js函数：myfunction.handler，则表示函数的文件名为myfunction.js，执行的入口函数名为handler。
+     * 
+     * @return handler */
     public String getHandler() {
         return handler;
     }
@@ -456,20 +371,14 @@ public class CreateFunctionRequestBody  {
         this.handler = handler;
     }
 
-    
-
     public CreateFunctionRequestBody withMemorySize(Integer memorySize) {
         this.memorySize = memorySize;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数消耗的内存。 单位M。 取值范围为：128、256、512、768、1024、1280、1536、1792、2048、2560、3072、3584、4096。 最小值为128，最大值为4096。
-     * @return memorySize
-     */
+    /** 函数消耗的内存。 单位M。 取值范围为：128、256、512、768、1024、1280、1536、1792、2048、2560、3072、3584、4096。 最小值为128，最大值为4096。
+     * 
+     * @return memorySize */
     public Integer getMemorySize() {
         return memorySize;
     }
@@ -478,20 +387,14 @@ public class CreateFunctionRequestBody  {
         this.memorySize = memorySize;
     }
 
-    
-
     public CreateFunctionRequestBody withCodeType(CodeTypeEnum codeType) {
         this.codeType = codeType;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
-     * @return codeType
-     */
+    /** 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
+     * 
+     * @return codeType */
     public CodeTypeEnum getCodeType() {
         return codeType;
     }
@@ -500,20 +403,14 @@ public class CreateFunctionRequestBody  {
         this.codeType = codeType;
     }
 
-    
-
     public CreateFunctionRequestBody withCodeUrl(String codeUrl) {
         this.codeUrl = codeUrl;
         return this;
     }
 
-    
-
-
-    /**
-     * 当CodeType为obs时，该值为函数代码包在OBS上的地址，CodeType为其他值时，该字段为空。
-     * @return codeUrl
-     */
+    /** 当CodeType为obs时，该值为函数代码包在OBS上的地址，CodeType为其他值时，该字段为空。
+     * 
+     * @return codeUrl */
     public String getCodeUrl() {
         return codeUrl;
     }
@@ -522,20 +419,14 @@ public class CreateFunctionRequestBody  {
         this.codeUrl = codeUrl;
     }
 
-    
-
     public CreateFunctionRequestBody withCodeFilename(String codeFilename) {
         this.codeFilename = codeFilename;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数的文件名，当CodeType为jar/zip时必须提供该字段，inline和obs不需要提供。
-     * @return codeFilename
-     */
+    /** 函数的文件名，当CodeType为jar/zip时必须提供该字段，inline和obs不需要提供。
+     * 
+     * @return codeFilename */
     public String getCodeFilename() {
         return codeFilename;
     }
@@ -544,20 +435,14 @@ public class CreateFunctionRequestBody  {
         this.codeFilename = codeFilename;
     }
 
-    
-
     public CreateFunctionRequestBody withUserData(String userData) {
         this.userData = userData;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户自定义的name/value信息。 在函数中使用的参数。 举例：如函数要访问某个主机，可以设置自定义参数：Host={host_ip}，最多定义20个，总长度不超过4KB。
-     * @return userData
-     */
+    /** 用户自定义的name/value信息。 在函数中使用的参数。 举例：如函数要访问某个主机，可以设置自定义参数：Host={host_ip}，最多定义20个，总长度不超过4KB。
+     * 
+     * @return userData */
     public String getUserData() {
         return userData;
     }
@@ -566,20 +451,14 @@ public class CreateFunctionRequestBody  {
         this.userData = userData;
     }
 
-    
-
     public CreateFunctionRequestBody withXrole(String xrole) {
         this.xrole = xrole;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数使用的权限委托名称，需要IAM支持，并在IAM界面创建委托，当函数需要访问其他服务时，必须提供该字段。
-     * @return xrole
-     */
+    /** 函数使用的权限委托名称，需要IAM支持，并在IAM界面创建委托，当函数需要访问其他服务时，必须提供该字段。
+     * 
+     * @return xrole */
     public String getXrole() {
         return xrole;
     }
@@ -588,20 +467,14 @@ public class CreateFunctionRequestBody  {
         this.xrole = xrole;
     }
 
-    
-
     public CreateFunctionRequestBody withAppXrole(String appXrole) {
         this.appXrole = appXrole;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数app使用的权限委托名称，需要IAM支持，并在IAM界面创建委托，当函数需要访问其他服务时，必须提供该字段。
-     * @return appXrole
-     */
+    /** 函数app使用的权限委托名称，需要IAM支持，并在IAM界面创建委托，当函数需要访问其他服务时，必须提供该字段。
+     * 
+     * @return appXrole */
     public String getAppXrole() {
         return appXrole;
     }
@@ -610,20 +483,14 @@ public class CreateFunctionRequestBody  {
         this.appXrole = appXrole;
     }
 
-    
-
     public CreateFunctionRequestBody withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数描述。
-     * @return description
-     */
+    /** 函数描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -632,27 +499,23 @@ public class CreateFunctionRequestBody  {
         this.description = description;
     }
 
-    
-
     public CreateFunctionRequestBody withFuncCode(FuncCode funcCode) {
         this.funcCode = funcCode;
         return this;
     }
 
     public CreateFunctionRequestBody withFuncCode(Consumer<FuncCode> funcCodeSetter) {
-        if(this.funcCode == null ){
+        if (this.funcCode == null) {
             this.funcCode = new FuncCode();
             funcCodeSetter.accept(this.funcCode);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get funcCode
-     * @return funcCode
-     */
+    /** Get funcCode
+     * 
+     * @return funcCode */
     public FuncCode getFuncCode() {
         return funcCode;
     }
@@ -661,20 +524,14 @@ public class CreateFunctionRequestBody  {
         this.funcCode = funcCode;
     }
 
-    
-
     public CreateFunctionRequestBody withInitializerHandler(String initializerHandler) {
         this.initializerHandler = initializerHandler;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数初始化入口，规则：xx.xx，必须包含“. ”。 举例：对于node.js函数：myfunction.initializer，则表示函数的文件名为myfunction.js，初始化的入口函数名为initializer。
-     * @return initializerHandler
-     */
+    /** 函数初始化入口，规则：xx.xx，必须包含“. ”。 举例：对于node.js函数：myfunction.initializer，则表示函数的文件名为myfunction.js，初始化的入口函数名为initializer。
+     * 
+     * @return initializerHandler */
     public String getInitializerHandler() {
         return initializerHandler;
     }
@@ -683,20 +540,14 @@ public class CreateFunctionRequestBody  {
         this.initializerHandler = initializerHandler;
     }
 
-    
-
     public CreateFunctionRequestBody withInitializerTimeout(Integer initializerTimeout) {
         this.initializerTimeout = initializerTimeout;
         return this;
     }
 
-    
-
-
-    /**
-     * 初始化超时时间，超时函数将被强行停止，范围1～300秒。
-     * @return initializerTimeout
-     */
+    /** 初始化超时时间，超时函数将被强行停止，范围1～300秒。
+     * 
+     * @return initializerTimeout */
     public Integer getInitializerTimeout() {
         return initializerTimeout;
     }
@@ -705,20 +556,14 @@ public class CreateFunctionRequestBody  {
         this.initializerTimeout = initializerTimeout;
     }
 
-    
-
     public CreateFunctionRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID，在企业用户创建函数时必填。
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID，在企业用户创建函数时必填。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -726,8 +571,6 @@ public class CreateFunctionRequestBody  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -738,28 +581,46 @@ public class CreateFunctionRequestBody  {
             return false;
         }
         CreateFunctionRequestBody createFunctionRequestBody = (CreateFunctionRequestBody) o;
-        return Objects.equals(this.funcName, createFunctionRequestBody.funcName) &&
-            Objects.equals(this._package, createFunctionRequestBody._package) &&
-            Objects.equals(this.runtime, createFunctionRequestBody.runtime) &&
-            Objects.equals(this.timeout, createFunctionRequestBody.timeout) &&
-            Objects.equals(this.handler, createFunctionRequestBody.handler) &&
-            Objects.equals(this.memorySize, createFunctionRequestBody.memorySize) &&
-            Objects.equals(this.codeType, createFunctionRequestBody.codeType) &&
-            Objects.equals(this.codeUrl, createFunctionRequestBody.codeUrl) &&
-            Objects.equals(this.codeFilename, createFunctionRequestBody.codeFilename) &&
-            Objects.equals(this.userData, createFunctionRequestBody.userData) &&
-            Objects.equals(this.xrole, createFunctionRequestBody.xrole) &&
-            Objects.equals(this.appXrole, createFunctionRequestBody.appXrole) &&
-            Objects.equals(this.description, createFunctionRequestBody.description) &&
-            Objects.equals(this.funcCode, createFunctionRequestBody.funcCode) &&
-            Objects.equals(this.initializerHandler, createFunctionRequestBody.initializerHandler) &&
-            Objects.equals(this.initializerTimeout, createFunctionRequestBody.initializerTimeout) &&
-            Objects.equals(this.enterpriseProjectId, createFunctionRequestBody.enterpriseProjectId);
+        return Objects.equals(this.funcName, createFunctionRequestBody.funcName)
+            && Objects.equals(this._package, createFunctionRequestBody._package)
+            && Objects.equals(this.runtime, createFunctionRequestBody.runtime)
+            && Objects.equals(this.timeout, createFunctionRequestBody.timeout)
+            && Objects.equals(this.handler, createFunctionRequestBody.handler)
+            && Objects.equals(this.memorySize, createFunctionRequestBody.memorySize)
+            && Objects.equals(this.codeType, createFunctionRequestBody.codeType)
+            && Objects.equals(this.codeUrl, createFunctionRequestBody.codeUrl)
+            && Objects.equals(this.codeFilename, createFunctionRequestBody.codeFilename)
+            && Objects.equals(this.userData, createFunctionRequestBody.userData)
+            && Objects.equals(this.xrole, createFunctionRequestBody.xrole)
+            && Objects.equals(this.appXrole, createFunctionRequestBody.appXrole)
+            && Objects.equals(this.description, createFunctionRequestBody.description)
+            && Objects.equals(this.funcCode, createFunctionRequestBody.funcCode)
+            && Objects.equals(this.initializerHandler, createFunctionRequestBody.initializerHandler)
+            && Objects.equals(this.initializerTimeout, createFunctionRequestBody.initializerTimeout)
+            && Objects.equals(this.enterpriseProjectId, createFunctionRequestBody.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(funcName, _package, runtime, timeout, handler, memorySize, codeType, codeUrl, codeFilename, userData, xrole, appXrole, description, funcCode, initializerHandler, initializerTimeout, enterpriseProjectId);
+        return Objects.hash(funcName,
+            _package,
+            runtime,
+            timeout,
+            handler,
+            memorySize,
+            codeType,
+            codeUrl,
+            codeFilename,
+            userData,
+            xrole,
+            appXrole,
+            description,
+            funcCode,
+            initializerHandler,
+            initializerTimeout,
+            enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -784,16 +645,13 @@ public class CreateFunctionRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

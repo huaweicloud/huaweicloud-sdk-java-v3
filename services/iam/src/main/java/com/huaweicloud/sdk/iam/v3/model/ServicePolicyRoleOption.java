@@ -1,51 +1,39 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.ServicePolicy;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class ServicePolicyRoleOption  {
-
-
+public class ServicePolicyRoleOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="display_name")
-    
+    @JsonProperty(value = "display_name")
+
     private String displayName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description_cn")
-    
+    @JsonProperty(value = "description_cn")
+
     private String descriptionCn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy")
-    
+    @JsonProperty(value = "policy")
+
     private ServicePolicy policy;
 
     public ServicePolicyRoleOption withDisplayName(String displayName) {
@@ -53,13 +41,9 @@ public class ServicePolicyRoleOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义策略展示名。
-     * @return displayName
-     */
+    /** 自定义策略展示名。
+     * 
+     * @return displayName */
     public String getDisplayName() {
         return displayName;
     }
@@ -68,20 +52,15 @@ public class ServicePolicyRoleOption  {
         this.displayName = displayName;
     }
 
-    
-
     public ServicePolicyRoleOption withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义策略的显示模式。   > - AX表示在domain层显示。   > - XA表示在project层显示。   > - 自定义策略的显示模式只能为AX或者XA，不能在domain层和project层都显示（AA），或者在domain层和project层都不显示（XX）。
-     * @return type
-     */
+    /** 自定义策略的显示模式。 > - AX表示在domain层显示。 > - XA表示在project层显示。 > -
+     * 自定义策略的显示模式只能为AX或者XA，不能在domain层和project层都显示（AA），或者在domain层和project层都不显示（XX）。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -90,20 +69,14 @@ public class ServicePolicyRoleOption  {
         this.type = type;
     }
 
-    
-
     public ServicePolicyRoleOption withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义策略的描述信息。
-     * @return description
-     */
+    /** 自定义策略的描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -112,20 +85,14 @@ public class ServicePolicyRoleOption  {
         this.description = description;
     }
 
-    
-
     public ServicePolicyRoleOption withDescriptionCn(String descriptionCn) {
         this.descriptionCn = descriptionCn;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义策略的中文描述信息。
-     * @return descriptionCn
-     */
+    /** 自定义策略的中文描述信息。
+     * 
+     * @return descriptionCn */
     public String getDescriptionCn() {
         return descriptionCn;
     }
@@ -134,27 +101,23 @@ public class ServicePolicyRoleOption  {
         this.descriptionCn = descriptionCn;
     }
 
-    
-
     public ServicePolicyRoleOption withPolicy(ServicePolicy policy) {
         this.policy = policy;
         return this;
     }
 
     public ServicePolicyRoleOption withPolicy(Consumer<ServicePolicy> policySetter) {
-        if(this.policy == null ){
+        if (this.policy == null) {
             this.policy = new ServicePolicy();
             policySetter.accept(this.policy);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get policy
-     * @return policy
-     */
+    /** Get policy
+     * 
+     * @return policy */
     public ServicePolicy getPolicy() {
         return policy;
     }
@@ -162,8 +125,6 @@ public class ServicePolicyRoleOption  {
     public void setPolicy(ServicePolicy policy) {
         this.policy = policy;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -174,16 +135,18 @@ public class ServicePolicyRoleOption  {
             return false;
         }
         ServicePolicyRoleOption servicePolicyRoleOption = (ServicePolicyRoleOption) o;
-        return Objects.equals(this.displayName, servicePolicyRoleOption.displayName) &&
-            Objects.equals(this.type, servicePolicyRoleOption.type) &&
-            Objects.equals(this.description, servicePolicyRoleOption.description) &&
-            Objects.equals(this.descriptionCn, servicePolicyRoleOption.descriptionCn) &&
-            Objects.equals(this.policy, servicePolicyRoleOption.policy);
+        return Objects.equals(this.displayName, servicePolicyRoleOption.displayName)
+            && Objects.equals(this.type, servicePolicyRoleOption.type)
+            && Objects.equals(this.description, servicePolicyRoleOption.description)
+            && Objects.equals(this.descriptionCn, servicePolicyRoleOption.descriptionCn)
+            && Objects.equals(this.policy, servicePolicyRoleOption.policy);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(displayName, type, description, descriptionCn, policy);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -196,16 +159,13 @@ public class ServicePolicyRoleOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

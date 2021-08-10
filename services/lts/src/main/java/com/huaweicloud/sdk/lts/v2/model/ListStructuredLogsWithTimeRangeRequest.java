@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.lts.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.lts.v2.model.QueryLTSStructLogParamsNew;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ListStructuredLogsWithTimeRangeRequest  {
-
-
+/** Request Object */
+public class ListStructuredLogsWithTimeRangeRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="log_stream_id")
-    
+    @JsonProperty(value = "log_stream_id")
+
     private String logStreamId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private QueryLTSStructLogParamsNew body;
 
     public ListStructuredLogsWithTimeRangeRequest withLogStreamId(String logStreamId) {
@@ -35,13 +24,9 @@ public class ListStructuredLogsWithTimeRangeRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 日志流id，获取方式请参见：获取账号ID、项目ID、日志组ID、日志流ID（https://support.huaweicloud.com/api-lts/lts_api_0006.html）。
-     * @return logStreamId
-     */
+    /** 日志流id，获取方式请参见：获取账号ID、项目ID、日志组ID、日志流ID（https://support.huaweicloud.com/api-lts/lts_api_0006.html）。
+     * 
+     * @return logStreamId */
     public String getLogStreamId() {
         return logStreamId;
     }
@@ -50,27 +35,23 @@ public class ListStructuredLogsWithTimeRangeRequest  {
         this.logStreamId = logStreamId;
     }
 
-    
-
     public ListStructuredLogsWithTimeRangeRequest withBody(QueryLTSStructLogParamsNew body) {
         this.body = body;
         return this;
     }
 
     public ListStructuredLogsWithTimeRangeRequest withBody(Consumer<QueryLTSStructLogParamsNew> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new QueryLTSStructLogParamsNew();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public QueryLTSStructLogParamsNew getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class ListStructuredLogsWithTimeRangeRequest  {
     public void setBody(QueryLTSStructLogParamsNew body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -89,14 +68,17 @@ public class ListStructuredLogsWithTimeRangeRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListStructuredLogsWithTimeRangeRequest listStructuredLogsWithTimeRangeRequest = (ListStructuredLogsWithTimeRangeRequest) o;
-        return Objects.equals(this.logStreamId, listStructuredLogsWithTimeRangeRequest.logStreamId) &&
-            Objects.equals(this.body, listStructuredLogsWithTimeRangeRequest.body);
+        ListStructuredLogsWithTimeRangeRequest listStructuredLogsWithTimeRangeRequest =
+            (ListStructuredLogsWithTimeRangeRequest) o;
+        return Objects.equals(this.logStreamId, listStructuredLogsWithTimeRangeRequest.logStreamId)
+            && Objects.equals(this.body, listStructuredLogsWithTimeRangeRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(logStreamId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +88,13 @@ public class ListStructuredLogsWithTimeRangeRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteLoadbalancerTagsRequest  {
-
-
+/** Request Object */
+public class DeleteLoadbalancerTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="loadbalancer_id")
-    
+    @JsonProperty(value = "loadbalancer_id")
+
     private String loadbalancerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
     public DeleteLoadbalancerTagsRequest withLoadbalancerId(String loadbalancerId) {
@@ -34,13 +23,9 @@ public class DeleteLoadbalancerTagsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器ID。
-     * @return loadbalancerId
-     */
+    /** 负载均衡器ID。
+     * 
+     * @return loadbalancerId */
     public String getLoadbalancerId() {
         return loadbalancerId;
     }
@@ -49,20 +34,14 @@ public class DeleteLoadbalancerTagsRequest  {
         this.loadbalancerId = loadbalancerId;
     }
 
-    
-
     public DeleteLoadbalancerTagsRequest withKey(String key) {
         this.key = key;
         return this;
     }
 
-    
-
-
-    /**
-     * 待删除标签的key值
-     * @return key
-     */
+    /** 待删除标签的key值
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -70,8 +49,6 @@ public class DeleteLoadbalancerTagsRequest  {
     public void setKey(String key) {
         this.key = key;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class DeleteLoadbalancerTagsRequest  {
             return false;
         }
         DeleteLoadbalancerTagsRequest deleteLoadbalancerTagsRequest = (DeleteLoadbalancerTagsRequest) o;
-        return Objects.equals(this.loadbalancerId, deleteLoadbalancerTagsRequest.loadbalancerId) &&
-            Objects.equals(this.key, deleteLoadbalancerTagsRequest.key);
+        return Objects.equals(this.loadbalancerId, deleteLoadbalancerTagsRequest.loadbalancerId)
+            && Objects.equals(this.key, deleteLoadbalancerTagsRequest.key);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(loadbalancerId, key);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class DeleteLoadbalancerTagsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

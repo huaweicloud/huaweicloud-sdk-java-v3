@@ -1,48 +1,34 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * BlackWhiteListBody
- */
-public class BlackWhiteListBody  {
-
-
+/** BlackWhiteListBody */
+public class BlackWhiteListBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private Integer type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_list")
-    
+    @JsonProperty(value = "ip_list")
+
     private List<String> ipList = null;
-    
+
     public BlackWhiteListBody withType(Integer type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * IP类型（0：关闭IP黑白名单功能，1：黑名单，2：白名单）
-     * @return type
-     */
+    /** IP类型（0：关闭IP黑白名单功能，1：黑名单，2：白名单）
+     * 
+     * @return type */
     public Integer getType() {
         return type;
     }
@@ -51,16 +37,13 @@ public class BlackWhiteListBody  {
         this.type = type;
     }
 
-    
-
     public BlackWhiteListBody withIpList(List<String> ipList) {
         this.ipList = ipList;
         return this;
     }
 
-    
     public BlackWhiteListBody addIpListItem(String ipListItem) {
-        if(this.ipList == null) {
+        if (this.ipList == null) {
             this.ipList = new ArrayList<>();
         }
         this.ipList.add(ipListItem);
@@ -68,17 +51,16 @@ public class BlackWhiteListBody  {
     }
 
     public BlackWhiteListBody withIpList(Consumer<List<String>> ipListSetter) {
-        if(this.ipList == null) {
+        if (this.ipList == null) {
             this.ipList = new ArrayList<>();
         }
         ipListSetter.accept(this.ipList);
         return this;
     }
 
-    /**
-     * IP黑白名单列表（支持掩码且有掩码的情况下IP必须是该IP段的第一个IP）
-     * @return ipList
-     */
+    /** IP黑白名单列表（支持掩码且有掩码的情况下IP必须是该IP段的第一个IP）
+     * 
+     * @return ipList */
     public List<String> getIpList() {
         return ipList;
     }
@@ -86,8 +68,6 @@ public class BlackWhiteListBody  {
     public void setIpList(List<String> ipList) {
         this.ipList = ipList;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -98,13 +78,15 @@ public class BlackWhiteListBody  {
             return false;
         }
         BlackWhiteListBody blackWhiteListBody = (BlackWhiteListBody) o;
-        return Objects.equals(this.type, blackWhiteListBody.type) &&
-            Objects.equals(this.ipList, blackWhiteListBody.ipList);
+        return Objects.equals(this.type, blackWhiteListBody.type)
+            && Objects.equals(this.ipList, blackWhiteListBody.ipList);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, ipList);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,16 +96,13 @@ public class BlackWhiteListBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,74 +1,56 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 使用大小
- */
-public class PhysicalVolume  {
-
-
+/** 使用大小 */
+public class PhysicalVolume {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_use")
-    
+    @JsonProperty(value = "device_use")
+
     private String deviceUse;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_system")
-    
+    @JsonProperty(value = "file_system")
+
     private String fileSystem;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="index")
-    
+    @JsonProperty(value = "index")
+
     private Integer index;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mount_point")
-    
+    @JsonProperty(value = "mount_point")
+
     private String mountPoint;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Long size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="used_size")
-    
+    @JsonProperty(value = "used_size")
+
     private Long usedSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="uuid")
-    
+    @JsonProperty(value = "uuid")
+
     private String uuid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size_per_cluster")
-    
+    @JsonProperty(value = "size_per_cluster")
+
     private Integer sizePerCluster;
 
     public PhysicalVolume withDeviceUse(String deviceUse) {
@@ -76,13 +58,9 @@ public class PhysicalVolume  {
         return this;
     }
 
-    
-
-
-    /**
-     * 分区类型，普通分区，启动分区，系统分区
-     * @return deviceUse
-     */
+    /** 分区类型，普通分区，启动分区，系统分区
+     * 
+     * @return deviceUse */
     public String getDeviceUse() {
         return deviceUse;
     }
@@ -91,20 +69,14 @@ public class PhysicalVolume  {
         this.deviceUse = deviceUse;
     }
 
-    
-
     public PhysicalVolume withFileSystem(String fileSystem) {
         this.fileSystem = fileSystem;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件系统类型
-     * @return fileSystem
-     */
+    /** 文件系统类型
+     * 
+     * @return fileSystem */
     public String getFileSystem() {
         return fileSystem;
     }
@@ -113,22 +85,14 @@ public class PhysicalVolume  {
         this.fileSystem = fileSystem;
     }
 
-    
-
     public PhysicalVolume withIndex(Integer index) {
         this.index = index;
         return this;
     }
 
-    
-
-
-    /**
-     * 顺序
-     * minimum: 0
-     * maximum: 2147483647
-     * @return index
-     */
+    /** 顺序 minimum: 0 maximum: 2147483647
+     * 
+     * @return index */
     public Integer getIndex() {
         return index;
     }
@@ -137,20 +101,14 @@ public class PhysicalVolume  {
         this.index = index;
     }
 
-    
-
     public PhysicalVolume withMountPoint(String mountPoint) {
         this.mountPoint = mountPoint;
         return this;
     }
 
-    
-
-
-    /**
-     * 挂载点
-     * @return mountPoint
-     */
+    /** 挂载点
+     * 
+     * @return mountPoint */
     public String getMountPoint() {
         return mountPoint;
     }
@@ -159,20 +117,14 @@ public class PhysicalVolume  {
         this.mountPoint = mountPoint;
     }
 
-    
-
     public PhysicalVolume withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 名称，windows表示盘符，Linux表示设备号
-     * @return name
-     */
+    /** 名称，windows表示盘符，Linux表示设备号
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -181,22 +133,14 @@ public class PhysicalVolume  {
         this.name = name;
     }
 
-    
-
     public PhysicalVolume withSize(Long size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 大小
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return size
-     */
+    /** 大小 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return size */
     public Long getSize() {
         return size;
     }
@@ -205,22 +149,14 @@ public class PhysicalVolume  {
         this.size = size;
     }
 
-    
-
     public PhysicalVolume withUsedSize(Long usedSize) {
         this.usedSize = usedSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 使用大小
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return usedSize
-     */
+    /** 使用大小 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return usedSize */
     public Long getUsedSize() {
         return usedSize;
     }
@@ -229,20 +165,14 @@ public class PhysicalVolume  {
         this.usedSize = usedSize;
     }
 
-    
-
     public PhysicalVolume withUuid(String uuid) {
         this.uuid = uuid;
         return this;
     }
 
-    
-
-
-    /**
-     * GUID，可从源端查询
-     * @return uuid
-     */
+    /** GUID，可从源端查询
+     * 
+     * @return uuid */
     public String getUuid() {
         return uuid;
     }
@@ -251,22 +181,14 @@ public class PhysicalVolume  {
         this.uuid = uuid;
     }
 
-    
-
     public PhysicalVolume withSizePerCluster(Integer sizePerCluster) {
         this.sizePerCluster = sizePerCluster;
         return this;
     }
 
-    
-
-
-    /**
-     * 每个cluster大小
-     * minimum: 0
-     * maximum: 2147483647
-     * @return sizePerCluster
-     */
+    /** 每个cluster大小 minimum: 0 maximum: 2147483647
+     * 
+     * @return sizePerCluster */
     public Integer getSizePerCluster() {
         return sizePerCluster;
     }
@@ -274,8 +196,6 @@ public class PhysicalVolume  {
     public void setSizePerCluster(Integer sizePerCluster) {
         this.sizePerCluster = sizePerCluster;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -286,20 +206,20 @@ public class PhysicalVolume  {
             return false;
         }
         PhysicalVolume physicalVolume = (PhysicalVolume) o;
-        return Objects.equals(this.deviceUse, physicalVolume.deviceUse) &&
-            Objects.equals(this.fileSystem, physicalVolume.fileSystem) &&
-            Objects.equals(this.index, physicalVolume.index) &&
-            Objects.equals(this.mountPoint, physicalVolume.mountPoint) &&
-            Objects.equals(this.name, physicalVolume.name) &&
-            Objects.equals(this.size, physicalVolume.size) &&
-            Objects.equals(this.usedSize, physicalVolume.usedSize) &&
-            Objects.equals(this.uuid, physicalVolume.uuid) &&
-            Objects.equals(this.sizePerCluster, physicalVolume.sizePerCluster);
+        return Objects.equals(this.deviceUse, physicalVolume.deviceUse)
+            && Objects.equals(this.fileSystem, physicalVolume.fileSystem)
+            && Objects.equals(this.index, physicalVolume.index)
+            && Objects.equals(this.mountPoint, physicalVolume.mountPoint)
+            && Objects.equals(this.name, physicalVolume.name) && Objects.equals(this.size, physicalVolume.size)
+            && Objects.equals(this.usedSize, physicalVolume.usedSize) && Objects.equals(this.uuid, physicalVolume.uuid)
+            && Objects.equals(this.sizePerCluster, physicalVolume.sizePerCluster);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(deviceUse, fileSystem, index, mountPoint, name, size, usedSize, uuid, sizePerCluster);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -316,16 +236,13 @@ public class PhysicalVolume  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

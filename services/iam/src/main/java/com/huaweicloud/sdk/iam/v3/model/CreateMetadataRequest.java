@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.CreateMetadataRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateMetadataRequest  {
-
-
+/** Request Object */
+public class CreateMetadataRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="idp_id")
-    
+    @JsonProperty(value = "idp_id")
+
     private String idpId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol_id")
-    
+    @JsonProperty(value = "protocol_id")
+
     private String protocolId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private CreateMetadataRequestBody body;
 
     public CreateMetadataRequest withIdpId(String idpId) {
@@ -41,13 +29,9 @@ public class CreateMetadataRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 身份提供商ID。
-     * @return idpId
-     */
+    /** 身份提供商ID。
+     * 
+     * @return idpId */
     public String getIdpId() {
         return idpId;
     }
@@ -56,20 +40,14 @@ public class CreateMetadataRequest  {
         this.idpId = idpId;
     }
 
-    
-
     public CreateMetadataRequest withProtocolId(String protocolId) {
         this.protocolId = protocolId;
         return this;
     }
 
-    
-
-
-    /**
-     * 协议ID。
-     * @return protocolId
-     */
+    /** 协议ID。
+     * 
+     * @return protocolId */
     public String getProtocolId() {
         return protocolId;
     }
@@ -78,27 +56,23 @@ public class CreateMetadataRequest  {
         this.protocolId = protocolId;
     }
 
-    
-
     public CreateMetadataRequest withBody(CreateMetadataRequestBody body) {
         this.body = body;
         return this;
     }
 
     public CreateMetadataRequest withBody(Consumer<CreateMetadataRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CreateMetadataRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public CreateMetadataRequestBody getBody() {
         return body;
     }
@@ -106,8 +80,6 @@ public class CreateMetadataRequest  {
     public void setBody(CreateMetadataRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class CreateMetadataRequest  {
             return false;
         }
         CreateMetadataRequest createMetadataRequest = (CreateMetadataRequest) o;
-        return Objects.equals(this.idpId, createMetadataRequest.idpId) &&
-            Objects.equals(this.protocolId, createMetadataRequest.protocolId) &&
-            Objects.equals(this.body, createMetadataRequest.body);
+        return Objects.equals(this.idpId, createMetadataRequest.idpId)
+            && Objects.equals(this.protocolId, createMetadataRequest.protocolId)
+            && Objects.equals(this.body, createMetadataRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(idpId, protocolId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class CreateMetadataRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

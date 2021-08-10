@@ -1,16 +1,17 @@
 package com.huaweicloud.sdk.tms.v1.region;
 
+import com.huaweicloud.sdk.core.region.Region;
+import com.huaweicloud.sdk.core.utils.StringUtils;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-import com.huaweicloud.sdk.core.region.Region;
-import com.huaweicloud.sdk.core.utils.StringUtils;
-
 public class TmsRegion {
+
     public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://tms.myhuaweicloud.com");
-    
+
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, Region> createStaticFields() {

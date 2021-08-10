@@ -21,13 +21,11 @@
 
 package com.huaweicloud.sdk.core;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public interface ClientCustomization {
-    /**
-     * Customized config of client
-     * @param customizationConfigure CustomizationConfigure
-     */
+
+    /** Customized config of client
+     * 
+     * @param customizationConfigure CustomizationConfigure */
     void customize(CustomizationConfigure customizationConfigure);
 }

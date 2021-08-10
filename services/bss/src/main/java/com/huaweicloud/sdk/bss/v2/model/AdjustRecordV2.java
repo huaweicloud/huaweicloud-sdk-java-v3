@@ -1,74 +1,56 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * AdjustRecordV2
- */
-public class AdjustRecordV2  {
-
-
+/** AdjustRecordV2 */
+public class AdjustRecordV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_id")
-    
+    @JsonProperty(value = "customer_id")
+
     private String customerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_name")
-    
+    @JsonProperty(value = "customer_name")
+
     private String customerName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operation_type")
-    
+    @JsonProperty(value = "operation_type")
+
     private String operationType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amount")
-    
+    @JsonProperty(value = "amount")
+
     private Double amount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="currency")
-    
+    @JsonProperty(value = "currency")
+
     private String currency;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apply_scene")
-    
+    @JsonProperty(value = "apply_scene")
+
     private String applyScene;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operation_time")
-    
+    @JsonProperty(value = "operation_time")
+
     private String operationTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="measure_id")
-    
+    @JsonProperty(value = "measure_id")
+
     private Integer measureId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trans_id")
-    
+    @JsonProperty(value = "trans_id")
+
     private String transId;
 
     public AdjustRecordV2 withCustomerId(String customerId) {
@@ -76,13 +58,9 @@ public class AdjustRecordV2  {
         return this;
     }
 
-    
-
-
-    /**
-     * 客户账号ID。
-     * @return customerId
-     */
+    /** 客户账号ID。
+     * 
+     * @return customerId */
     public String getCustomerId() {
         return customerId;
     }
@@ -91,20 +69,14 @@ public class AdjustRecordV2  {
         this.customerId = customerId;
     }
 
-    
-
     public AdjustRecordV2 withCustomerName(String customerName) {
         this.customerName = customerName;
         return this;
     }
 
-    
-
-
-    /**
-     * 客户名称。
-     * @return customerName
-     */
+    /** 客户名称。
+     * 
+     * @return customerName */
     public String getCustomerName() {
         return customerName;
     }
@@ -113,20 +85,14 @@ public class AdjustRecordV2  {
         this.customerName = customerName;
     }
 
-    
-
     public AdjustRecordV2 withOperationType(String operationType) {
         this.operationType = operationType;
         return this;
     }
 
-    
-
-
-    /**
-     * 调账类型。 SOURCE_OPERATION_BEADJUST：拨款SOURCE_OPERATION_BERETRIEVE：回收SOURCE_OPERATION_BEUNBIND：解绑回收
-     * @return operationType
-     */
+    /** 调账类型。 SOURCE_OPERATION_BEADJUST：拨款SOURCE_OPERATION_BERETRIEVE：回收SOURCE_OPERATION_BEUNBIND：解绑回收
+     * 
+     * @return operationType */
     public String getOperationType() {
         return operationType;
     }
@@ -135,20 +101,14 @@ public class AdjustRecordV2  {
         this.operationType = operationType;
     }
 
-    
-
     public AdjustRecordV2 withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
 
-    
-
-
-    /**
-     * 调账的总金额。
-     * @return amount
-     */
+    /** 调账的总金额。
+     * 
+     * @return amount */
     public Double getAmount() {
         return amount;
     }
@@ -157,20 +117,14 @@ public class AdjustRecordV2  {
         this.amount = amount;
     }
 
-    
-
     public AdjustRecordV2 withCurrency(String currency) {
         this.currency = currency;
         return this;
     }
 
-    
-
-
-    /**
-     * 币种。 CNY：人民币
-     * @return currency
-     */
+    /** 币种。 CNY：人民币
+     * 
+     * @return currency */
     public String getCurrency() {
         return currency;
     }
@@ -179,20 +133,14 @@ public class AdjustRecordV2  {
         this.currency = currency;
     }
 
-    
-
     public AdjustRecordV2 withApplyScene(String applyScene) {
         this.applyScene = applyScene;
         return this;
     }
 
-    
-
-
-    /**
-     * 使用场景。
-     * @return applyScene
-     */
+    /** 使用场景。
+     * 
+     * @return applyScene */
     public String getApplyScene() {
         return applyScene;
     }
@@ -201,20 +149,14 @@ public class AdjustRecordV2  {
         this.applyScene = applyScene;
     }
 
-    
-
     public AdjustRecordV2 withOperationTime(String operationTime) {
         this.operationTime = operationTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 调账操作的时间。 UTC时间，格式为：2016-03-28T14:45:38Z
-     * @return operationTime
-     */
+    /** 调账操作的时间。 UTC时间，格式为：2016-03-28T14:45:38Z
+     * 
+     * @return operationTime */
     public String getOperationTime() {
         return operationTime;
     }
@@ -223,20 +165,14 @@ public class AdjustRecordV2  {
         this.operationTime = operationTime;
     }
 
-    
-
     public AdjustRecordV2 withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
     }
 
-    
-
-
-    /**
-     * 调账单位。 1：元
-     * @return measureId
-     */
+    /** 调账单位。 1：元
+     * 
+     * @return measureId */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -245,20 +181,14 @@ public class AdjustRecordV2  {
         this.measureId = measureId;
     }
 
-    
-
     public AdjustRecordV2 withTransId(String transId) {
         this.transId = transId;
         return this;
     }
 
-    
-
-
-    /**
-     * 事务ID。
-     * @return transId
-     */
+    /** 事务ID。
+     * 
+     * @return transId */
     public String getTransId() {
         return transId;
     }
@@ -266,8 +196,6 @@ public class AdjustRecordV2  {
     public void setTransId(String transId) {
         this.transId = transId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -278,20 +206,30 @@ public class AdjustRecordV2  {
             return false;
         }
         AdjustRecordV2 adjustRecordV2 = (AdjustRecordV2) o;
-        return Objects.equals(this.customerId, adjustRecordV2.customerId) &&
-            Objects.equals(this.customerName, adjustRecordV2.customerName) &&
-            Objects.equals(this.operationType, adjustRecordV2.operationType) &&
-            Objects.equals(this.amount, adjustRecordV2.amount) &&
-            Objects.equals(this.currency, adjustRecordV2.currency) &&
-            Objects.equals(this.applyScene, adjustRecordV2.applyScene) &&
-            Objects.equals(this.operationTime, adjustRecordV2.operationTime) &&
-            Objects.equals(this.measureId, adjustRecordV2.measureId) &&
-            Objects.equals(this.transId, adjustRecordV2.transId);
+        return Objects.equals(this.customerId, adjustRecordV2.customerId)
+            && Objects.equals(this.customerName, adjustRecordV2.customerName)
+            && Objects.equals(this.operationType, adjustRecordV2.operationType)
+            && Objects.equals(this.amount, adjustRecordV2.amount)
+            && Objects.equals(this.currency, adjustRecordV2.currency)
+            && Objects.equals(this.applyScene, adjustRecordV2.applyScene)
+            && Objects.equals(this.operationTime, adjustRecordV2.operationTime)
+            && Objects.equals(this.measureId, adjustRecordV2.measureId)
+            && Objects.equals(this.transId, adjustRecordV2.transId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(customerId, customerName, operationType, amount, currency, applyScene, operationTime, measureId, transId);
+        return Objects.hash(customerId,
+            customerName,
+            operationType,
+            amount,
+            currency,
+            applyScene,
+            operationTime,
+            measureId,
+            transId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -308,16 +246,13 @@ public class AdjustRecordV2  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

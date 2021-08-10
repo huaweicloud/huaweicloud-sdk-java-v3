@@ -1,49 +1,34 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class AsyncInvokeReservedFunctionRequest  {
-
-
+/** Request Object */
+public class AsyncInvokeReservedFunctionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="function_urn")
-    
+    @JsonProperty(value = "function_urn")
+
     private String functionUrn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private Map<String, Object> body = null;
-    
+
     public AsyncInvokeReservedFunctionRequest withFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数的URN（Uniform Resource Name），唯一标识函数。
-     * @return functionUrn
-     */
+    /** 函数的URN（Uniform Resource Name），唯一标识函数。
+     * 
+     * @return functionUrn */
     public String getFunctionUrn() {
         return functionUrn;
     }
@@ -52,17 +37,13 @@ public class AsyncInvokeReservedFunctionRequest  {
         this.functionUrn = functionUrn;
     }
 
-    
-
     public AsyncInvokeReservedFunctionRequest withBody(Map<String, Object> body) {
         this.body = body;
         return this;
     }
 
-    
-
     public AsyncInvokeReservedFunctionRequest putBodyItem(String key, Object bodyItem) {
-        if(this.body == null) {
+        if (this.body == null) {
             this.body = new HashMap<>();
         }
         this.body.put(key, bodyItem);
@@ -70,16 +51,16 @@ public class AsyncInvokeReservedFunctionRequest  {
     }
 
     public AsyncInvokeReservedFunctionRequest withBody(Consumer<Map<String, Object>> bodySetter) {
-        if(this.body == null) {
+        if (this.body == null) {
             this.body = new HashMap<>();
         }
         bodySetter.accept(this.body);
         return this;
     }
-    /**
-     * 执行函数请求体，为json格式。
-     * @return body
-     */
+
+    /** 执行函数请求体，为json格式。
+     * 
+     * @return body */
     public Map<String, Object> getBody() {
         return body;
     }
@@ -87,8 +68,6 @@ public class AsyncInvokeReservedFunctionRequest  {
     public void setBody(Map<String, Object> body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -99,13 +78,15 @@ public class AsyncInvokeReservedFunctionRequest  {
             return false;
         }
         AsyncInvokeReservedFunctionRequest asyncInvokeReservedFunctionRequest = (AsyncInvokeReservedFunctionRequest) o;
-        return Objects.equals(this.functionUrn, asyncInvokeReservedFunctionRequest.functionUrn) &&
-            Objects.equals(this.body, asyncInvokeReservedFunctionRequest.body);
+        return Objects.equals(this.functionUrn, asyncInvokeReservedFunctionRequest.functionUrn)
+            && Objects.equals(this.body, asyncInvokeReservedFunctionRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(functionUrn, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -115,16 +96,13 @@ public class AsyncInvokeReservedFunctionRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

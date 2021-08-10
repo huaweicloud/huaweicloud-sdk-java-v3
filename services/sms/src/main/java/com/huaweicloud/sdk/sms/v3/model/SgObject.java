@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 安全组object
- */
-public class SgObject  {
-
-
+/** 安全组object */
+public class SgObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public SgObject withId(String id) {
@@ -34,13 +23,9 @@ public class SgObject  {
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组ID
-     * @return id
-     */
+    /** 安全组ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -49,20 +34,14 @@ public class SgObject  {
         this.id = id;
     }
 
-    
-
     public SgObject withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组名称
-     * @return name
-     */
+    /** 安全组名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -70,8 +49,6 @@ public class SgObject  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,14 @@ public class SgObject  {
             return false;
         }
         SgObject sgObject = (SgObject) o;
-        return Objects.equals(this.id, sgObject.id) &&
-            Objects.equals(this.name, sgObject.name);
+        return Objects.equals(this.id, sgObject.id) && Objects.equals(this.name, sgObject.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +76,13 @@ public class SgObject  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

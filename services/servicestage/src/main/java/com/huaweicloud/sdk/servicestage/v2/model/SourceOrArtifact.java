@@ -1,44 +1,26 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.SourceRepoType;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 当组件来源的kind是artifact时spec的内容结构。
- */
-public class SourceOrArtifact  {
+/** 当组件来源的kind是artifact时spec的内容结构。 */
+public class SourceOrArtifact {
 
-    /**
-     * 存储方式，支持软件仓库swr和对象存储obs。
-     */
+    /** 存储方式，支持软件仓库swr和对象存储obs。 */
     public static final class StorageEnum {
 
-        
-        /**
-         * Enum SWR for value: "swr"
-         */
+        /** Enum SWR for value: "swr" */
         public static final StorageEnum SWR = new StorageEnum("swr");
-        
-        /**
-         * Enum OBS for value: "obs"
-         */
+
+        /** Enum OBS for value: "obs" */
         public static final StorageEnum OBS = new StorageEnum("obs");
-        
 
         private static final Map<String, StorageEnum> STATIC_FIELDS = createStaticFields();
 
@@ -67,7 +49,7 @@ public class SourceOrArtifact  {
 
         @JsonCreator
         public static StorageEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StorageEnum result = STATIC_FIELDS.get(value);
@@ -78,7 +60,7 @@ public class SourceOrArtifact  {
         }
 
         public static StorageEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StorageEnum result = STATIC_FIELDS.get(value);
@@ -102,22 +84,16 @@ public class SourceOrArtifact  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="storage")
-    
+    @JsonProperty(value = "storage")
+
     private StorageEnum storage;
-    /**
-     * 类别，支持package。
-     */
+
+    /** 类别，支持package。 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum PACKAGE for value: "package"
-         */
+        /** Enum PACKAGE for value: "package" */
         public static final TypeEnum PACKAGE = new TypeEnum("package");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -145,7 +121,7 @@ public class SourceOrArtifact  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -156,7 +132,7 @@ public class SourceOrArtifact  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -180,46 +156,39 @@ public class SourceOrArtifact  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private String url;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth")
-    
+    @JsonProperty(value = "auth")
+
     private String auth;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repo_type")
-    
+    @JsonProperty(value = "repo_type")
+
     private SourceRepoType repoType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repo_url")
-    
+    @JsonProperty(value = "repo_url")
+
     private String repoUrl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repo_ref")
-    
+    @JsonProperty(value = "repo_ref")
+
     private String repoRef;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repo_auth")
-    
+    @JsonProperty(value = "repo_auth")
+
     private String repoAuth;
 
     public SourceOrArtifact withStorage(StorageEnum storage) {
@@ -227,13 +196,9 @@ public class SourceOrArtifact  {
         return this;
     }
 
-    
-
-
-    /**
-     * 存储方式，支持软件仓库swr和对象存储obs。
-     * @return storage
-     */
+    /** 存储方式，支持软件仓库swr和对象存储obs。
+     * 
+     * @return storage */
     public StorageEnum getStorage() {
         return storage;
     }
@@ -242,20 +207,14 @@ public class SourceOrArtifact  {
         this.storage = storage;
     }
 
-    
-
     public SourceOrArtifact withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 类别，支持package。
-     * @return type
-     */
+    /** 类别，支持package。
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -264,20 +223,14 @@ public class SourceOrArtifact  {
         this.type = type;
     }
 
-    
-
     public SourceOrArtifact withUrl(String url) {
         this.url = url;
         return this;
     }
 
-    
-
-
-    /**
-     * 软件包源码地址，如https://{IP}:20202/xxx/xxx.jar。
-     * @return url
-     */
+    /** 软件包源码地址，如https://{IP}:20202/xxx/xxx.jar。
+     * 
+     * @return url */
     public String getUrl() {
         return url;
     }
@@ -286,20 +239,14 @@ public class SourceOrArtifact  {
         this.url = url;
     }
 
-    
-
     public SourceOrArtifact withAuth(String auth) {
         this.auth = auth;
         return this;
     }
 
-    
-
-
-    /**
-     * 认证方式，支持iam，none，默认是iam。
-     * @return auth
-     */
+    /** 认证方式，支持iam，none，默认是iam。
+     * 
+     * @return auth */
     public String getAuth() {
         return auth;
     }
@@ -308,20 +255,14 @@ public class SourceOrArtifact  {
         this.auth = auth;
     }
 
-    
-
     public SourceOrArtifact withRepoType(SourceRepoType repoType) {
         this.repoType = repoType;
         return this;
     }
 
-    
-
-
-    /**
-     * Get repoType
-     * @return repoType
-     */
+    /** Get repoType
+     * 
+     * @return repoType */
     public SourceRepoType getRepoType() {
         return repoType;
     }
@@ -330,20 +271,14 @@ public class SourceOrArtifact  {
         this.repoType = repoType;
     }
 
-    
-
     public SourceOrArtifact withRepoUrl(String repoUrl) {
         this.repoUrl = repoUrl;
         return this;
     }
 
-    
-
-
-    /**
-     * 代码仓url，如：https://github.com/example/demo.git
-     * @return repoUrl
-     */
+    /** 代码仓url，如：https://github.com/example/demo.git
+     * 
+     * @return repoUrl */
     public String getRepoUrl() {
         return repoUrl;
     }
@@ -352,20 +287,14 @@ public class SourceOrArtifact  {
         this.repoUrl = repoUrl;
     }
 
-    
-
     public SourceOrArtifact withRepoRef(String repoRef) {
         this.repoRef = repoRef;
         return this;
     }
 
-    
-
-
-    /**
-     * 代码分支或者Tag，默认是master。
-     * @return repoRef
-     */
+    /** 代码分支或者Tag，默认是master。
+     * 
+     * @return repoRef */
     public String getRepoRef() {
         return repoRef;
     }
@@ -374,20 +303,14 @@ public class SourceOrArtifact  {
         this.repoRef = repoRef;
     }
 
-    
-
     public SourceOrArtifact withRepoAuth(String repoAuth) {
         this.repoAuth = repoAuth;
         return this;
     }
 
-    
-
-
-    /**
-     * 授权名称，在授权列表获取。
-     * @return repoAuth
-     */
+    /** 授权名称，在授权列表获取。
+     * 
+     * @return repoAuth */
     public String getRepoAuth() {
         return repoAuth;
     }
@@ -395,8 +318,6 @@ public class SourceOrArtifact  {
     public void setRepoAuth(String repoAuth) {
         this.repoAuth = repoAuth;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -407,19 +328,20 @@ public class SourceOrArtifact  {
             return false;
         }
         SourceOrArtifact sourceOrArtifact = (SourceOrArtifact) o;
-        return Objects.equals(this.storage, sourceOrArtifact.storage) &&
-            Objects.equals(this.type, sourceOrArtifact.type) &&
-            Objects.equals(this.url, sourceOrArtifact.url) &&
-            Objects.equals(this.auth, sourceOrArtifact.auth) &&
-            Objects.equals(this.repoType, sourceOrArtifact.repoType) &&
-            Objects.equals(this.repoUrl, sourceOrArtifact.repoUrl) &&
-            Objects.equals(this.repoRef, sourceOrArtifact.repoRef) &&
-            Objects.equals(this.repoAuth, sourceOrArtifact.repoAuth);
+        return Objects.equals(this.storage, sourceOrArtifact.storage)
+            && Objects.equals(this.type, sourceOrArtifact.type) && Objects.equals(this.url, sourceOrArtifact.url)
+            && Objects.equals(this.auth, sourceOrArtifact.auth)
+            && Objects.equals(this.repoType, sourceOrArtifact.repoType)
+            && Objects.equals(this.repoUrl, sourceOrArtifact.repoUrl)
+            && Objects.equals(this.repoRef, sourceOrArtifact.repoRef)
+            && Objects.equals(this.repoAuth, sourceOrArtifact.repoAuth);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(storage, type, url, auth, repoType, repoUrl, repoRef, repoAuth);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -435,16 +357,13 @@ public class SourceOrArtifact  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

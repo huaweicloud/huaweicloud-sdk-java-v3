@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.ResetPwdReqDTOV1;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ResetPwdRequest  {
-
-
+/** Request Object */
+public class ResetPwdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Request-ID")
-    
+    @JsonProperty(value = "X-Request-ID")
+
     private String xRequestID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Accept-Language")
-    
+    @JsonProperty(value = "Accept-Language")
+
     private String acceptLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ResetPwdReqDTOV1 body;
 
     public ResetPwdRequest withXRequestID(String xRequestID) {
@@ -41,15 +29,11 @@ public class ResetPwdRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
-     * @return xRequestID
-     */
+    /** 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * 
+     * @return xRequestID */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Request-ID")
+    @JsonProperty(value = "X-Request-ID")
     public String getXRequestID() {
         return xRequestID;
     }
@@ -58,20 +42,14 @@ public class ResetPwdRequest  {
         this.xRequestID = xRequestID;
     }
 
-    
-
     public ResetPwdRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言参数，默认为中文zh_CN, 英文为en_US
-     * @return acceptLanguage
-     */
+    /** 语言参数，默认为中文zh_CN, 英文为en_US
+     * 
+     * @return acceptLanguage */
     public String getAcceptLanguage() {
         return acceptLanguage;
     }
@@ -80,27 +58,23 @@ public class ResetPwdRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
-    
-
     public ResetPwdRequest withBody(ResetPwdReqDTOV1 body) {
         this.body = body;
         return this;
     }
 
     public ResetPwdRequest withBody(Consumer<ResetPwdReqDTOV1> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ResetPwdReqDTOV1();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ResetPwdReqDTOV1 getBody() {
         return body;
     }
@@ -108,8 +82,6 @@ public class ResetPwdRequest  {
     public void setBody(ResetPwdReqDTOV1 body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -120,14 +92,16 @@ public class ResetPwdRequest  {
             return false;
         }
         ResetPwdRequest resetPwdRequest = (ResetPwdRequest) o;
-        return Objects.equals(this.xRequestID, resetPwdRequest.xRequestID) &&
-            Objects.equals(this.acceptLanguage, resetPwdRequest.acceptLanguage) &&
-            Objects.equals(this.body, resetPwdRequest.body);
+        return Objects.equals(this.xRequestID, resetPwdRequest.xRequestID)
+            && Objects.equals(this.acceptLanguage, resetPwdRequest.acceptLanguage)
+            && Objects.equals(this.body, resetPwdRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xRequestID, acceptLanguage, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -138,16 +112,13 @@ public class ResetPwdRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

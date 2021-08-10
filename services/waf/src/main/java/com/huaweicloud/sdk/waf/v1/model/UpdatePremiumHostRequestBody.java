@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 修改独享模式域名的请求
- */
-public class UpdatePremiumHostRequestBody  {
-
-
+/** 修改独享模式域名的请求 */
+public class UpdatePremiumHostRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="proxy")
-    
+    @JsonProperty(value = "proxy")
+
     private Boolean proxy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificateid")
-    
+    @JsonProperty(value = "certificateid")
+
     private String certificateid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificatename")
-    
+    @JsonProperty(value = "certificatename")
+
     private String certificatename;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tls")
-    
+    @JsonProperty(value = "tls")
+
     private String tls;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cipher")
-    
+    @JsonProperty(value = "cipher")
+
     private String cipher;
 
     public UpdatePremiumHostRequestBody withProxy(Boolean proxy) {
@@ -52,13 +38,9 @@ public class UpdatePremiumHostRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 是否使用代理
-     * @return proxy
-     */
+    /** 是否使用代理
+     * 
+     * @return proxy */
     public Boolean getProxy() {
         return proxy;
     }
@@ -67,20 +49,14 @@ public class UpdatePremiumHostRequestBody  {
         this.proxy = proxy;
     }
 
-    
-
     public UpdatePremiumHostRequestBody withCertificateid(String certificateid) {
         this.certificateid = certificateid;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书ID
-     * @return certificateid
-     */
+    /** 证书ID
+     * 
+     * @return certificateid */
     public String getCertificateid() {
         return certificateid;
     }
@@ -89,20 +65,14 @@ public class UpdatePremiumHostRequestBody  {
         this.certificateid = certificateid;
     }
 
-    
-
     public UpdatePremiumHostRequestBody withCertificatename(String certificatename) {
         this.certificatename = certificatename;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书名称
-     * @return certificatename
-     */
+    /** 证书名称
+     * 
+     * @return certificatename */
     public String getCertificatename() {
         return certificatename;
     }
@@ -111,20 +81,14 @@ public class UpdatePremiumHostRequestBody  {
         this.certificatename = certificatename;
     }
 
-    
-
     public UpdatePremiumHostRequestBody withTls(String tls) {
         this.tls = tls;
         return this;
     }
 
-    
-
-
-    /**
-     * 支持最低的TLS版本
-     * @return tls
-     */
+    /** 支持最低的TLS版本
+     * 
+     * @return tls */
     public String getTls() {
         return tls;
     }
@@ -133,20 +97,14 @@ public class UpdatePremiumHostRequestBody  {
         this.tls = tls;
     }
 
-    
-
     public UpdatePremiumHostRequestBody withCipher(String cipher) {
         this.cipher = cipher;
         return this;
     }
 
-    
-
-
-    /**
-     * 加密套件代码
-     * @return cipher
-     */
+    /** 加密套件代码
+     * 
+     * @return cipher */
     public String getCipher() {
         return cipher;
     }
@@ -154,8 +112,6 @@ public class UpdatePremiumHostRequestBody  {
     public void setCipher(String cipher) {
         this.cipher = cipher;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,18 @@ public class UpdatePremiumHostRequestBody  {
             return false;
         }
         UpdatePremiumHostRequestBody updatePremiumHostRequestBody = (UpdatePremiumHostRequestBody) o;
-        return Objects.equals(this.proxy, updatePremiumHostRequestBody.proxy) &&
-            Objects.equals(this.certificateid, updatePremiumHostRequestBody.certificateid) &&
-            Objects.equals(this.certificatename, updatePremiumHostRequestBody.certificatename) &&
-            Objects.equals(this.tls, updatePremiumHostRequestBody.tls) &&
-            Objects.equals(this.cipher, updatePremiumHostRequestBody.cipher);
+        return Objects.equals(this.proxy, updatePremiumHostRequestBody.proxy)
+            && Objects.equals(this.certificateid, updatePremiumHostRequestBody.certificateid)
+            && Objects.equals(this.certificatename, updatePremiumHostRequestBody.certificatename)
+            && Objects.equals(this.tls, updatePremiumHostRequestBody.tls)
+            && Objects.equals(this.cipher, updatePremiumHostRequestBody.cipher);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(proxy, certificateid, certificatename, tls, cipher);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class UpdatePremiumHostRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

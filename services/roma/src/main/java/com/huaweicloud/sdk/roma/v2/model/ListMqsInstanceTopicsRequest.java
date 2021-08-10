@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListMqsInstanceTopicsRequest  {
-
-
+/** Request Object */
+public class ListMqsInstanceTopicsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_name")
-    
+    @JsonProperty(value = "app_name")
+
     private String appName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private String limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private String offset;
 
     public ListMqsInstanceTopicsRequest withInstanceId(String instanceId) {
@@ -52,13 +38,9 @@ public class ListMqsInstanceTopicsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -67,20 +49,14 @@ public class ListMqsInstanceTopicsRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListMqsInstanceTopicsRequest withAppName(String appName) {
         this.appName = appName;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名称。
-     * @return appName
-     */
+    /** 应用名称。
+     * 
+     * @return appName */
     public String getAppName() {
         return appName;
     }
@@ -89,20 +65,14 @@ public class ListMqsInstanceTopicsRequest  {
         this.appName = appName;
     }
 
-    
-
     public ListMqsInstanceTopicsRequest withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * Topic名称。
-     * @return name
-     */
+    /** Topic名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -111,20 +81,14 @@ public class ListMqsInstanceTopicsRequest  {
         this.name = name;
     }
 
-    
-
     public ListMqsInstanceTopicsRequest withLimit(String limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页查询大小。默认查询所有的topic。
-     * @return limit
-     */
+    /** 分页查询大小。默认查询所有的topic。
+     * 
+     * @return limit */
     public String getLimit() {
         return limit;
     }
@@ -133,20 +97,14 @@ public class ListMqsInstanceTopicsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListMqsInstanceTopicsRequest withOffset(String offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页查询的偏移量。默认值是0。
-     * @return offset
-     */
+    /** 分页查询的偏移量。默认值是0。
+     * 
+     * @return offset */
     public String getOffset() {
         return offset;
     }
@@ -154,8 +112,6 @@ public class ListMqsInstanceTopicsRequest  {
     public void setOffset(String offset) {
         this.offset = offset;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,18 @@ public class ListMqsInstanceTopicsRequest  {
             return false;
         }
         ListMqsInstanceTopicsRequest listMqsInstanceTopicsRequest = (ListMqsInstanceTopicsRequest) o;
-        return Objects.equals(this.instanceId, listMqsInstanceTopicsRequest.instanceId) &&
-            Objects.equals(this.appName, listMqsInstanceTopicsRequest.appName) &&
-            Objects.equals(this.name, listMqsInstanceTopicsRequest.name) &&
-            Objects.equals(this.limit, listMqsInstanceTopicsRequest.limit) &&
-            Objects.equals(this.offset, listMqsInstanceTopicsRequest.offset);
+        return Objects.equals(this.instanceId, listMqsInstanceTopicsRequest.instanceId)
+            && Objects.equals(this.appName, listMqsInstanceTopicsRequest.appName)
+            && Objects.equals(this.name, listMqsInstanceTopicsRequest.name)
+            && Objects.equals(this.limit, listMqsInstanceTopicsRequest.limit)
+            && Objects.equals(this.offset, listMqsInstanceTopicsRequest.offset);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, appName, name, limit, offset);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class ListMqsInstanceTopicsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

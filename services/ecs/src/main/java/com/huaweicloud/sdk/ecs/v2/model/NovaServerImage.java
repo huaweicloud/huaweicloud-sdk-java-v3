@@ -1,49 +1,36 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.NovaLink;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  *  
  */
-public class NovaServerImage  {
-
-
+public class NovaServerImage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private List<NovaLink> links = null;
-    
+
     public NovaServerImage withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像ID。
-     * @return id
-     */
+    /** 镜像ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -52,16 +39,13 @@ public class NovaServerImage  {
         this.id = id;
     }
 
-    
-
     public NovaServerImage withLinks(List<NovaLink> links) {
         this.links = links;
         return this;
     }
 
-    
     public NovaServerImage addLinksItem(NovaLink linksItem) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         this.links.add(linksItem);
@@ -69,17 +53,16 @@ public class NovaServerImage  {
     }
 
     public NovaServerImage withLinks(Consumer<List<NovaLink>> linksSetter) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);
         return this;
     }
 
-    /**
-     * 云服务器类型相关标记快捷链接信息。
-     * @return links
-     */
+    /** 云服务器类型相关标记快捷链接信息。
+     * 
+     * @return links */
     public List<NovaLink> getLinks() {
         return links;
     }
@@ -87,8 +70,6 @@ public class NovaServerImage  {
     public void setLinks(List<NovaLink> links) {
         this.links = links;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -99,13 +80,14 @@ public class NovaServerImage  {
             return false;
         }
         NovaServerImage novaServerImage = (NovaServerImage) o;
-        return Objects.equals(this.id, novaServerImage.id) &&
-            Objects.equals(this.links, novaServerImage.links);
+        return Objects.equals(this.id, novaServerImage.id) && Objects.equals(this.links, novaServerImage.links);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, links);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -115,16 +97,13 @@ public class NovaServerImage  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

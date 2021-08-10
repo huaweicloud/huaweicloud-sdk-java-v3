@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListSecurityGroupRulesRequest  {
-
-
+/** Request Object */
+public class ListSecurityGroupRulesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_id")
-    
+    @JsonProperty(value = "security_group_id")
+
     private String securityGroupId;
 
     public ListSecurityGroupRulesRequest withMarker(String marker) {
@@ -40,13 +28,9 @@ public class ListSecurityGroupRulesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：分页查询起始的资源ID，为空时查询第一页
-     * @return marker
-     */
+    /** 功能说明：分页查询起始的资源ID，为空时查询第一页
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -55,20 +39,14 @@ public class ListSecurityGroupRulesRequest  {
         this.marker = marker;
     }
 
-    
-
     public ListSecurityGroupRulesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页返回的个数
-     * @return limit
-     */
+    /** 每页返回的个数
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -77,20 +55,14 @@ public class ListSecurityGroupRulesRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListSecurityGroupRulesRequest withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组ID
-     * @return securityGroupId
-     */
+    /** 安全组ID
+     * 
+     * @return securityGroupId */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -98,8 +70,6 @@ public class ListSecurityGroupRulesRequest  {
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class ListSecurityGroupRulesRequest  {
             return false;
         }
         ListSecurityGroupRulesRequest listSecurityGroupRulesRequest = (ListSecurityGroupRulesRequest) o;
-        return Objects.equals(this.marker, listSecurityGroupRulesRequest.marker) &&
-            Objects.equals(this.limit, listSecurityGroupRulesRequest.limit) &&
-            Objects.equals(this.securityGroupId, listSecurityGroupRulesRequest.securityGroupId);
+        return Objects.equals(this.marker, listSecurityGroupRulesRequest.marker)
+            && Objects.equals(this.limit, listSecurityGroupRulesRequest.limit)
+            && Objects.equals(this.securityGroupId, listSecurityGroupRulesRequest.securityGroupId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(marker, limit, securityGroupId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class ListSecurityGroupRulesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

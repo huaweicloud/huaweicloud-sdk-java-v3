@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * UpdateL7PolicyOption
- */
-public class UpdateL7PolicyOption  {
-
-
+/** UpdateL7PolicyOption */
+public class UpdateL7PolicyOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
-    
+    @JsonProperty(value = "admin_state_up")
+
     private Boolean adminStateUp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="redirect_listener_id")
-    
+    @JsonProperty(value = "redirect_listener_id")
+
     private String redirectListenerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="redirect_pool_id")
-    
+    @JsonProperty(value = "redirect_pool_id")
+
     private String redirectPoolId;
 
     public UpdateL7PolicyOption withAdminStateUp(Boolean adminStateUp) {
@@ -52,13 +38,9 @@ public class UpdateL7PolicyOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 转发策略的管理状态；该字段为预留字段，暂未启用。默认为true。
-     * @return adminStateUp
-     */
+    /** 转发策略的管理状态；该字段为预留字段，暂未启用。默认为true。
+     * 
+     * @return adminStateUp */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -67,20 +49,14 @@ public class UpdateL7PolicyOption  {
         this.adminStateUp = adminStateUp;
     }
 
-    
-
     public UpdateL7PolicyOption withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 转发策略描述信息。
-     * @return description
-     */
+    /** 转发策略描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -89,20 +65,14 @@ public class UpdateL7PolicyOption  {
         this.description = description;
     }
 
-    
-
     public UpdateL7PolicyOption withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 转发策略名称。
-     * @return name
-     */
+    /** 转发策略名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -111,20 +81,14 @@ public class UpdateL7PolicyOption  {
         this.name = name;
     }
 
-    
-
     public UpdateL7PolicyOption withRedirectListenerId(String redirectListenerId) {
         this.redirectListenerId = redirectListenerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 转发到的listener的ID，当action为REDIRECT_TO_LISTENER时生效。使用说明：只支持protocol为TERMINATED_HTTPS的listener。不能指定为其他loadbalancer下的listener。当action为REDIRECT_TO_POOL时，不可指定。
-     * @return redirectListenerId
-     */
+    /** 转发到的listener的ID，当action为REDIRECT_TO_LISTENER时生效。使用说明：只支持protocol为TERMINATED_HTTPS的listener。不能指定为其他loadbalancer下的listener。当action为REDIRECT_TO_POOL时，不可指定。
+     * 
+     * @return redirectListenerId */
     public String getRedirectListenerId() {
         return redirectListenerId;
     }
@@ -133,20 +97,14 @@ public class UpdateL7PolicyOption  {
         this.redirectListenerId = redirectListenerId;
     }
 
-    
-
     public UpdateL7PolicyOption withRedirectPoolId(String redirectPoolId) {
         this.redirectPoolId = redirectPoolId;
         return this;
     }
 
-    
-
-
-    /**
-     * 转发到pool的ID。当action为REDIRECT_TO_POOL时生效。使用说明：指定的pool不能是listener的default_pool。不能是其他listener的l7policy使用的pool。当action为REDIRECT_TO_LISTENER时，不可指定。
-     * @return redirectPoolId
-     */
+    /** 转发到pool的ID。当action为REDIRECT_TO_POOL时生效。使用说明：指定的pool不能是listener的default_pool。不能是其他listener的l7policy使用的pool。当action为REDIRECT_TO_LISTENER时，不可指定。
+     * 
+     * @return redirectPoolId */
     public String getRedirectPoolId() {
         return redirectPoolId;
     }
@@ -154,8 +112,6 @@ public class UpdateL7PolicyOption  {
     public void setRedirectPoolId(String redirectPoolId) {
         this.redirectPoolId = redirectPoolId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,18 @@ public class UpdateL7PolicyOption  {
             return false;
         }
         UpdateL7PolicyOption updateL7PolicyOption = (UpdateL7PolicyOption) o;
-        return Objects.equals(this.adminStateUp, updateL7PolicyOption.adminStateUp) &&
-            Objects.equals(this.description, updateL7PolicyOption.description) &&
-            Objects.equals(this.name, updateL7PolicyOption.name) &&
-            Objects.equals(this.redirectListenerId, updateL7PolicyOption.redirectListenerId) &&
-            Objects.equals(this.redirectPoolId, updateL7PolicyOption.redirectPoolId);
+        return Objects.equals(this.adminStateUp, updateL7PolicyOption.adminStateUp)
+            && Objects.equals(this.description, updateL7PolicyOption.description)
+            && Objects.equals(this.name, updateL7PolicyOption.name)
+            && Objects.equals(this.redirectListenerId, updateL7PolicyOption.redirectListenerId)
+            && Objects.equals(this.redirectPoolId, updateL7PolicyOption.redirectPoolId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(adminStateUp, description, name, redirectListenerId, redirectPoolId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class UpdateL7PolicyOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

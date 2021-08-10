@@ -1,125 +1,98 @@
 package com.huaweicloud.sdk.classroom.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.math.BigDecimal;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowClassroomDetailResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="announcement")
-    
+    @JsonProperty(value = "announcement")
+
     private String announcement;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="announcement_time")
-    
+    @JsonProperty(value = "announcement_time")
+
     private String announcementTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private String createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private String updateTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="teacher")
-    
+    @JsonProperty(value = "teacher")
+
     private String teacher;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="credit")
-    
+    @JsonProperty(value = "credit")
+
     private BigDecimal credit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="role")
-    
+    @JsonProperty(value = "role")
+
     private String role;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="school")
-    
+    @JsonProperty(value = "school")
+
     private String school;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content_count")
-    
+    @JsonProperty(value = "content_count")
+
     private Integer contentCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="courseware_count")
-    
+    @JsonProperty(value = "courseware_count")
+
     private Integer coursewareCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_count")
-    
+    @JsonProperty(value = "job_count")
+
     private Integer jobCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="member_count")
-    
+    @JsonProperty(value = "member_count")
+
     private Integer memberCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
     public ShowClassroomDetailResponse withName(String name) {
@@ -127,13 +100,9 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂名称
-     * @return name
-     */
+    /** 课堂名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -142,20 +111,14 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowClassroomDetailResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂描述
-     * @return description
-     */
+    /** 课堂描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -164,20 +127,14 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public ShowClassroomDetailResponse withAnnouncement(String announcement) {
         this.announcement = announcement;
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂公告
-     * @return announcement
-     */
+    /** 课堂公告
+     * 
+     * @return announcement */
     public String getAnnouncement() {
         return announcement;
     }
@@ -186,20 +143,14 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.announcement = announcement;
     }
 
-    
-
     public ShowClassroomDetailResponse withAnnouncementTime(String announcementTime) {
         this.announcementTime = announcementTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂公告创建时间，日期格式：yyyy-MM-dd
-     * @return announcementTime
-     */
+    /** 课堂公告创建时间，日期格式：yyyy-MM-dd
+     * 
+     * @return announcementTime */
     public String getAnnouncementTime() {
         return announcementTime;
     }
@@ -208,20 +159,14 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.announcementTime = announcementTime;
     }
 
-    
-
     public ShowClassroomDetailResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂创建时间，日期格式：yyyy-MM-dd HH:mm:ss
-     * @return createTime
-     */
+    /** 课堂创建时间，日期格式：yyyy-MM-dd HH:mm:ss
+     * 
+     * @return createTime */
     public String getCreateTime() {
         return createTime;
     }
@@ -230,20 +175,14 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public ShowClassroomDetailResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂最新更新时间，日期格式：yyyy-MM-dd HH:mm:ss
-     * @return updateTime
-     */
+    /** 课堂最新更新时间，日期格式：yyyy-MM-dd HH:mm:ss
+     * 
+     * @return updateTime */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -252,20 +191,14 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     public ShowClassroomDetailResponse withTeacher(String teacher) {
         this.teacher = teacher;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前课堂的授课人
-     * @return teacher
-     */
+    /** 当前课堂的授课人
+     * 
+     * @return teacher */
     public String getTeacher() {
         return teacher;
     }
@@ -274,20 +207,14 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.teacher = teacher;
     }
 
-    
-
     public ShowClassroomDetailResponse withCredit(BigDecimal credit) {
         this.credit = credit;
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂学分
-     * @return credit
-     */
+    /** 课堂学分
+     * 
+     * @return credit */
     public BigDecimal getCredit() {
         return credit;
     }
@@ -296,20 +223,14 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.credit = credit;
     }
 
-    
-
     public ShowClassroomDetailResponse withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂开始时间，日期格式：yyyy-MM-dd HH:mm:ss
-     * @return startTime
-     */
+    /** 课堂开始时间，日期格式：yyyy-MM-dd HH:mm:ss
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -318,20 +239,14 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.startTime = startTime;
     }
 
-    
-
     public ShowClassroomDetailResponse withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂结束时间，日期格式：yyyy-MM-dd HH:mm:ss
-     * @return endTime
-     */
+    /** 课堂结束时间，日期格式：yyyy-MM-dd HH:mm:ss
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -340,20 +255,14 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.endTime = endTime;
     }
 
-    
-
     public ShowClassroomDetailResponse withRole(String role) {
         this.role = role;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前用户在课堂下角色，取值范围：teacher：老师，student：学生
-     * @return role
-     */
+    /** 当前用户在课堂下角色，取值范围：teacher：老师，student：学生
+     * 
+     * @return role */
     public String getRole() {
         return role;
     }
@@ -362,20 +271,14 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.role = role;
     }
 
-    
-
     public ShowClassroomDetailResponse withSchool(String school) {
         this.school = school;
         return this;
     }
 
-    
-
-
-    /**
-     * 授课学校
-     * @return school
-     */
+    /** 授课学校
+     * 
+     * @return school */
     public String getSchool() {
         return school;
     }
@@ -384,20 +287,14 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.school = school;
     }
 
-    
-
     public ShowClassroomDetailResponse withContentCount(Integer contentCount) {
         this.contentCount = contentCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂下目录数量
-     * @return contentCount
-     */
+    /** 课堂下目录数量
+     * 
+     * @return contentCount */
     public Integer getContentCount() {
         return contentCount;
     }
@@ -406,20 +303,14 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.contentCount = contentCount;
     }
 
-    
-
     public ShowClassroomDetailResponse withCoursewareCount(Integer coursewareCount) {
         this.coursewareCount = coursewareCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂下课件数量
-     * @return coursewareCount
-     */
+    /** 课堂下课件数量
+     * 
+     * @return coursewareCount */
     public Integer getCoursewareCount() {
         return coursewareCount;
     }
@@ -428,20 +319,14 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.coursewareCount = coursewareCount;
     }
 
-    
-
     public ShowClassroomDetailResponse withJobCount(Integer jobCount) {
         this.jobCount = jobCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂下作业数量
-     * @return jobCount
-     */
+    /** 课堂下作业数量
+     * 
+     * @return jobCount */
     public Integer getJobCount() {
         return jobCount;
     }
@@ -450,20 +335,14 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.jobCount = jobCount;
     }
 
-    
-
     public ShowClassroomDetailResponse withMemberCount(Integer memberCount) {
         this.memberCount = memberCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂下成员数量
-     * @return memberCount
-     */
+    /** 课堂下成员数量
+     * 
+     * @return memberCount */
     public Integer getMemberCount() {
         return memberCount;
     }
@@ -472,20 +351,14 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         this.memberCount = memberCount;
     }
 
-    
-
     public ShowClassroomDetailResponse withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂当前的状态，normal：课堂处于正常状态，archive：课堂已归档
-     * @return status
-     */
+    /** 课堂当前的状态，normal：课堂处于正常状态，archive：课堂已归档
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -493,8 +366,6 @@ public class ShowClassroomDetailResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -505,28 +376,46 @@ public class ShowClassroomDetailResponse extends SdkResponse {
             return false;
         }
         ShowClassroomDetailResponse showClassroomDetailResponse = (ShowClassroomDetailResponse) o;
-        return Objects.equals(this.name, showClassroomDetailResponse.name) &&
-            Objects.equals(this.description, showClassroomDetailResponse.description) &&
-            Objects.equals(this.announcement, showClassroomDetailResponse.announcement) &&
-            Objects.equals(this.announcementTime, showClassroomDetailResponse.announcementTime) &&
-            Objects.equals(this.createTime, showClassroomDetailResponse.createTime) &&
-            Objects.equals(this.updateTime, showClassroomDetailResponse.updateTime) &&
-            Objects.equals(this.teacher, showClassroomDetailResponse.teacher) &&
-            Objects.equals(this.credit, showClassroomDetailResponse.credit) &&
-            Objects.equals(this.startTime, showClassroomDetailResponse.startTime) &&
-            Objects.equals(this.endTime, showClassroomDetailResponse.endTime) &&
-            Objects.equals(this.role, showClassroomDetailResponse.role) &&
-            Objects.equals(this.school, showClassroomDetailResponse.school) &&
-            Objects.equals(this.contentCount, showClassroomDetailResponse.contentCount) &&
-            Objects.equals(this.coursewareCount, showClassroomDetailResponse.coursewareCount) &&
-            Objects.equals(this.jobCount, showClassroomDetailResponse.jobCount) &&
-            Objects.equals(this.memberCount, showClassroomDetailResponse.memberCount) &&
-            Objects.equals(this.status, showClassroomDetailResponse.status);
+        return Objects.equals(this.name, showClassroomDetailResponse.name)
+            && Objects.equals(this.description, showClassroomDetailResponse.description)
+            && Objects.equals(this.announcement, showClassroomDetailResponse.announcement)
+            && Objects.equals(this.announcementTime, showClassroomDetailResponse.announcementTime)
+            && Objects.equals(this.createTime, showClassroomDetailResponse.createTime)
+            && Objects.equals(this.updateTime, showClassroomDetailResponse.updateTime)
+            && Objects.equals(this.teacher, showClassroomDetailResponse.teacher)
+            && Objects.equals(this.credit, showClassroomDetailResponse.credit)
+            && Objects.equals(this.startTime, showClassroomDetailResponse.startTime)
+            && Objects.equals(this.endTime, showClassroomDetailResponse.endTime)
+            && Objects.equals(this.role, showClassroomDetailResponse.role)
+            && Objects.equals(this.school, showClassroomDetailResponse.school)
+            && Objects.equals(this.contentCount, showClassroomDetailResponse.contentCount)
+            && Objects.equals(this.coursewareCount, showClassroomDetailResponse.coursewareCount)
+            && Objects.equals(this.jobCount, showClassroomDetailResponse.jobCount)
+            && Objects.equals(this.memberCount, showClassroomDetailResponse.memberCount)
+            && Objects.equals(this.status, showClassroomDetailResponse.status);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, announcement, announcementTime, createTime, updateTime, teacher, credit, startTime, endTime, role, school, contentCount, coursewareCount, jobCount, memberCount, status);
+        return Objects.hash(name,
+            description,
+            announcement,
+            announcementTime,
+            createTime,
+            updateTime,
+            teacher,
+            credit,
+            startTime,
+            endTime,
+            role,
+            school,
+            contentCount,
+            coursewareCount,
+            jobCount,
+            memberCount,
+            status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -551,16 +440,13 @@ public class ShowClassroomDetailResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

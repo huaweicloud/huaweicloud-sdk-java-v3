@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteValueListRequest  {
-
-
+/** Request Object */
+public class DeleteValueListRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="valuelistid")
-    
+    @JsonProperty(value = "valuelistid")
+
     private String valuelistid;
 
     public DeleteValueListRequest withValuelistid(String valuelistid) {
@@ -28,13 +18,9 @@ public class DeleteValueListRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 引用表id
-     * @return valuelistid
-     */
+    /** 引用表id
+     * 
+     * @return valuelistid */
     public String getValuelistid() {
         return valuelistid;
     }
@@ -42,8 +28,6 @@ public class DeleteValueListRequest  {
     public void setValuelistid(String valuelistid) {
         this.valuelistid = valuelistid;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class DeleteValueListRequest  {
         DeleteValueListRequest deleteValueListRequest = (DeleteValueListRequest) o;
         return Objects.equals(this.valuelistid, deleteValueListRequest.valuelistid);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(valuelistid);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class DeleteValueListRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

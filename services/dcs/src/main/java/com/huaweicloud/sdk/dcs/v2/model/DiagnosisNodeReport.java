@@ -1,74 +1,54 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dcs.v2.model.DiagnosisDimension;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 节点诊断报告
- */
-public class DiagnosisNodeReport  {
-
-
+/** 节点诊断报告 */
+public class DiagnosisNodeReport {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_ip")
-    
+    @JsonProperty(value = "node_ip")
+
     private String nodeIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="az_code")
-    
+    @JsonProperty(value = "az_code")
+
     private String azCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_name")
-    
+    @JsonProperty(value = "group_name")
+
     private String groupName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="abnormal_sum")
-    
+    @JsonProperty(value = "abnormal_sum")
+
     private Integer abnormalSum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="failed_sum")
-    
+    @JsonProperty(value = "failed_sum")
+
     private Integer failedSum;
-    /**
-     * 节点角色
-     */
+
+    /** 节点角色 */
     public static final class RoleEnum {
 
-        
-        /**
-         * Enum MASTER for value: "master"
-         */
+        /** Enum MASTER for value: "master" */
         public static final RoleEnum MASTER = new RoleEnum("master");
-        
-        /**
-         * Enum SLAVE for value: "slave"
-         */
+
+        /** Enum SLAVE for value: "slave" */
         public static final RoleEnum SLAVE = new RoleEnum("slave");
-        
 
         private static final Map<String, RoleEnum> STATIC_FIELDS = createStaticFields();
 
@@ -97,7 +77,7 @@ public class DiagnosisNodeReport  {
 
         @JsonCreator
         public static RoleEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             RoleEnum result = STATIC_FIELDS.get(value);
@@ -108,7 +88,7 @@ public class DiagnosisNodeReport  {
         }
 
         public static RoleEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             RoleEnum result = STATIC_FIELDS.get(value);
@@ -132,22 +112,19 @@ public class DiagnosisNodeReport  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="role")
-    
+    @JsonProperty(value = "role")
+
     private RoleEnum role;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="diagnosis_dimension_list")
-    
+    @JsonProperty(value = "diagnosis_dimension_list")
+
     private List<DiagnosisDimension> diagnosisDimensionList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="command_time_taken_list")
-    
+    @JsonProperty(value = "command_time_taken_list")
+
     private Object commandTimeTakenList;
 
     public DiagnosisNodeReport withNodeIp(String nodeIp) {
@@ -155,13 +132,9 @@ public class DiagnosisNodeReport  {
         return this;
     }
 
-    
-
-
-    /**
-     * 节点IP。例如：192.168.0.234:6379
-     * @return nodeIp
-     */
+    /** 节点IP。例如：192.168.0.234:6379
+     * 
+     * @return nodeIp */
     public String getNodeIp() {
         return nodeIp;
     }
@@ -170,20 +143,14 @@ public class DiagnosisNodeReport  {
         this.nodeIp = nodeIp;
     }
 
-    
-
     public DiagnosisNodeReport withAzCode(String azCode) {
         this.azCode = azCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点所在可用区Code
-     * @return azCode
-     */
+    /** 节点所在可用区Code
+     * 
+     * @return azCode */
     public String getAzCode() {
         return azCode;
     }
@@ -192,20 +159,14 @@ public class DiagnosisNodeReport  {
         this.azCode = azCode;
     }
 
-    
-
     public DiagnosisNodeReport withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点所在分片的名称
-     * @return groupName
-     */
+    /** 节点所在分片的名称
+     * 
+     * @return groupName */
     public String getGroupName() {
         return groupName;
     }
@@ -214,20 +175,14 @@ public class DiagnosisNodeReport  {
         this.groupName = groupName;
     }
 
-    
-
     public DiagnosisNodeReport withAbnormalSum(Integer abnormalSum) {
         this.abnormalSum = abnormalSum;
         return this;
     }
 
-    
-
-
-    /**
-     * 诊断结果为异常的诊断项总数
-     * @return abnormalSum
-     */
+    /** 诊断结果为异常的诊断项总数
+     * 
+     * @return abnormalSum */
     public Integer getAbnormalSum() {
         return abnormalSum;
     }
@@ -236,20 +191,14 @@ public class DiagnosisNodeReport  {
         this.abnormalSum = abnormalSum;
     }
 
-    
-
     public DiagnosisNodeReport withFailedSum(Integer failedSum) {
         this.failedSum = failedSum;
         return this;
     }
 
-    
-
-
-    /**
-     * 诊断失败的诊断项总数
-     * @return failedSum
-     */
+    /** 诊断失败的诊断项总数
+     * 
+     * @return failedSum */
     public Integer getFailedSum() {
         return failedSum;
     }
@@ -258,20 +207,14 @@ public class DiagnosisNodeReport  {
         this.failedSum = failedSum;
     }
 
-    
-
     public DiagnosisNodeReport withRole(RoleEnum role) {
         this.role = role;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点角色
-     * @return role
-     */
+    /** 节点角色
+     * 
+     * @return role */
     public RoleEnum getRole() {
         return role;
     }
@@ -280,34 +223,31 @@ public class DiagnosisNodeReport  {
         this.role = role;
     }
 
-    
-
     public DiagnosisNodeReport withDiagnosisDimensionList(List<DiagnosisDimension> diagnosisDimensionList) {
         this.diagnosisDimensionList = diagnosisDimensionList;
         return this;
     }
 
-    
     public DiagnosisNodeReport addDiagnosisDimensionListItem(DiagnosisDimension diagnosisDimensionListItem) {
-        if(this.diagnosisDimensionList == null) {
+        if (this.diagnosisDimensionList == null) {
             this.diagnosisDimensionList = new ArrayList<>();
         }
         this.diagnosisDimensionList.add(diagnosisDimensionListItem);
         return this;
     }
 
-    public DiagnosisNodeReport withDiagnosisDimensionList(Consumer<List<DiagnosisDimension>> diagnosisDimensionListSetter) {
-        if(this.diagnosisDimensionList == null) {
+    public DiagnosisNodeReport withDiagnosisDimensionList(
+        Consumer<List<DiagnosisDimension>> diagnosisDimensionListSetter) {
+        if (this.diagnosisDimensionList == null) {
             this.diagnosisDimensionList = new ArrayList<>();
         }
         diagnosisDimensionListSetter.accept(this.diagnosisDimensionList);
         return this;
     }
 
-    /**
-     * 诊断维度列表
-     * @return diagnosisDimensionList
-     */
+    /** 诊断维度列表
+     * 
+     * @return diagnosisDimensionList */
     public List<DiagnosisDimension> getDiagnosisDimensionList() {
         return diagnosisDimensionList;
     }
@@ -316,20 +256,14 @@ public class DiagnosisNodeReport  {
         this.diagnosisDimensionList = diagnosisDimensionList;
     }
 
-    
-
     public DiagnosisNodeReport withCommandTimeTakenList(Object commandTimeTakenList) {
         this.commandTimeTakenList = commandTimeTakenList;
         return this;
     }
 
-    
-
-
-    /**
-     * 命令耗时统计列表
-     * @return commandTimeTakenList
-     */
+    /** 命令耗时统计列表
+     * 
+     * @return commandTimeTakenList */
     public Object getCommandTimeTakenList() {
         return commandTimeTakenList;
     }
@@ -337,8 +271,6 @@ public class DiagnosisNodeReport  {
     public void setCommandTimeTakenList(Object commandTimeTakenList) {
         this.commandTimeTakenList = commandTimeTakenList;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -349,19 +281,28 @@ public class DiagnosisNodeReport  {
             return false;
         }
         DiagnosisNodeReport diagnosisNodeReport = (DiagnosisNodeReport) o;
-        return Objects.equals(this.nodeIp, diagnosisNodeReport.nodeIp) &&
-            Objects.equals(this.azCode, diagnosisNodeReport.azCode) &&
-            Objects.equals(this.groupName, diagnosisNodeReport.groupName) &&
-            Objects.equals(this.abnormalSum, diagnosisNodeReport.abnormalSum) &&
-            Objects.equals(this.failedSum, diagnosisNodeReport.failedSum) &&
-            Objects.equals(this.role, diagnosisNodeReport.role) &&
-            Objects.equals(this.diagnosisDimensionList, diagnosisNodeReport.diagnosisDimensionList) &&
-            Objects.equals(this.commandTimeTakenList, diagnosisNodeReport.commandTimeTakenList);
+        return Objects.equals(this.nodeIp, diagnosisNodeReport.nodeIp)
+            && Objects.equals(this.azCode, diagnosisNodeReport.azCode)
+            && Objects.equals(this.groupName, diagnosisNodeReport.groupName)
+            && Objects.equals(this.abnormalSum, diagnosisNodeReport.abnormalSum)
+            && Objects.equals(this.failedSum, diagnosisNodeReport.failedSum)
+            && Objects.equals(this.role, diagnosisNodeReport.role)
+            && Objects.equals(this.diagnosisDimensionList, diagnosisNodeReport.diagnosisDimensionList)
+            && Objects.equals(this.commandTimeTakenList, diagnosisNodeReport.commandTimeTakenList);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(nodeIp, azCode, groupName, abnormalSum, failedSum, role, diagnosisDimensionList, commandTimeTakenList);
+        return Objects.hash(nodeIp,
+            azCode,
+            groupName,
+            abnormalSum,
+            failedSum,
+            role,
+            diagnosisDimensionList,
+            commandTimeTakenList);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -377,16 +318,13 @@ public class DiagnosisNodeReport  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

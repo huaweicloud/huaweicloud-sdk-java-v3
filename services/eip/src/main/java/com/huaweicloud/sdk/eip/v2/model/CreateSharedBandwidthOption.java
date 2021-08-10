@@ -1,59 +1,42 @@
 package com.huaweicloud.sdk.eip.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 创建带宽的请求体
- */
-public class CreateSharedBandwidthOption  {
-
-
+/** 创建带宽的请求体 */
+public class CreateSharedBandwidthOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
-    /**
-     * 功能说明：按带宽计费还是按增强型95计费。  取值范围：bandwidth，95peak_plus(按增强型95计费)不返回或者为空时表示是bandwidth。  约束：只有共享带宽支持95peak_plus（按增强型95计费），按增强型95计费时需要指定保底百分比，默认是20%。
-     */
+
+    /** 功能说明：按带宽计费还是按增强型95计费。 取值范围：bandwidth，95peak_plus(按增强型95计费)不返回或者为空时表示是bandwidth。
+     * 约束：只有共享带宽支持95peak_plus（按增强型95计费），按增强型95计费时需要指定保底百分比，默认是20%。 */
     public static final class ChargeModeEnum {
 
-        
-        /**
-         * Enum BANDWIDTH for value: "bandwidth"
-         */
+        /** Enum BANDWIDTH for value: "bandwidth" */
         public static final ChargeModeEnum BANDWIDTH = new ChargeModeEnum("bandwidth");
-        
-        /**
-         * Enum _95PEAK_PLUS for value: "95peak_plus"
-         */
+
+        /** Enum _95PEAK_PLUS for value: "95peak_plus" */
         public static final ChargeModeEnum _95PEAK_PLUS = new ChargeModeEnum("95peak_plus");
-        
 
         private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -82,7 +65,7 @@ public class CreateSharedBandwidthOption  {
 
         @JsonCreator
         public static ChargeModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ChargeModeEnum result = STATIC_FIELDS.get(value);
@@ -93,7 +76,7 @@ public class CreateSharedBandwidthOption  {
         }
 
         public static ChargeModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ChargeModeEnum result = STATIC_FIELDS.get(value);
@@ -117,10 +100,9 @@ public class CreateSharedBandwidthOption  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_mode")
-    
+    @JsonProperty(value = "charge_mode")
+
     private ChargeModeEnum chargeMode;
 
     public CreateSharedBandwidthOption withEnterpriseProjectId(String enterpriseProjectId) {
@@ -128,13 +110,9 @@ public class CreateSharedBandwidthOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID。最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。  创建共享带宽时，给共享带宽绑定企业项目ID。
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID。最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。 创建共享带宽时，给共享带宽绑定企业项目ID。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -143,20 +121,14 @@ public class CreateSharedBandwidthOption  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public CreateSharedBandwidthOption withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 取值范围：1-64，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）  功能说明：带宽名称
-     * @return name
-     */
+    /** 取值范围：1-64，支持数字、字母、中文、_(下划线)、-（中划线）、.（点） 功能说明：带宽名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -165,20 +137,16 @@ public class CreateSharedBandwidthOption  {
         this.name = name;
     }
 
-    
-
     public CreateSharedBandwidthOption withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：带宽大小。共享带宽的大小有最小值限制，默认为5M，可能因局点不同而不同。  取值范围：默认5Mbit/s~2000Mbit/s（具体范围以各区域配置为准，请参见控制台对应页面显示）。  如果传入的参数为小数（如 10.2）或者字符类型（如“10”），会自动强制转换为整数。  调整带宽时的最小单位会根据带宽范围不同存在差异。  小于等于300Mbit/s：默认最小单位为1Mbit/s。  300Mbit/s~1000Mbit/s：默认最小单位为50Mbit/s。  大于1000Mbit/s：默认最小单位为500Mbit/s。
-     * @return size
-     */
+    /** 功能说明：带宽大小。共享带宽的大小有最小值限制，默认为5M，可能因局点不同而不同。 取值范围：默认5Mbit/s~2000Mbit/s（具体范围以各区域配置为准，请参见控制台对应页面显示）。 如果传入的参数为小数（如
+     * 10.2）或者字符类型（如“10”），会自动强制转换为整数。 调整带宽时的最小单位会根据带宽范围不同存在差异。 小于等于300Mbit/s：默认最小单位为1Mbit/s。
+     * 300Mbit/s~1000Mbit/s：默认最小单位为50Mbit/s。 大于1000Mbit/s：默认最小单位为500Mbit/s。
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -187,20 +155,15 @@ public class CreateSharedBandwidthOption  {
         this.size = size;
     }
 
-    
-
     public CreateSharedBandwidthOption withChargeMode(ChargeModeEnum chargeMode) {
         this.chargeMode = chargeMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：按带宽计费还是按增强型95计费。  取值范围：bandwidth，95peak_plus(按增强型95计费)不返回或者为空时表示是bandwidth。  约束：只有共享带宽支持95peak_plus（按增强型95计费），按增强型95计费时需要指定保底百分比，默认是20%。
-     * @return chargeMode
-     */
+    /** 功能说明：按带宽计费还是按增强型95计费。 取值范围：bandwidth，95peak_plus(按增强型95计费)不返回或者为空时表示是bandwidth。
+     * 约束：只有共享带宽支持95peak_plus（按增强型95计费），按增强型95计费时需要指定保底百分比，默认是20%。
+     * 
+     * @return chargeMode */
     public ChargeModeEnum getChargeMode() {
         return chargeMode;
     }
@@ -208,8 +171,6 @@ public class CreateSharedBandwidthOption  {
     public void setChargeMode(ChargeModeEnum chargeMode) {
         this.chargeMode = chargeMode;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -220,15 +181,17 @@ public class CreateSharedBandwidthOption  {
             return false;
         }
         CreateSharedBandwidthOption createSharedBandwidthOption = (CreateSharedBandwidthOption) o;
-        return Objects.equals(this.enterpriseProjectId, createSharedBandwidthOption.enterpriseProjectId) &&
-            Objects.equals(this.name, createSharedBandwidthOption.name) &&
-            Objects.equals(this.size, createSharedBandwidthOption.size) &&
-            Objects.equals(this.chargeMode, createSharedBandwidthOption.chargeMode);
+        return Objects.equals(this.enterpriseProjectId, createSharedBandwidthOption.enterpriseProjectId)
+            && Objects.equals(this.name, createSharedBandwidthOption.name)
+            && Objects.equals(this.size, createSharedBandwidthOption.size)
+            && Objects.equals(this.chargeMode, createSharedBandwidthOption.chargeMode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(enterpriseProjectId, name, size, chargeMode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -240,16 +203,13 @@ public class CreateSharedBandwidthOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

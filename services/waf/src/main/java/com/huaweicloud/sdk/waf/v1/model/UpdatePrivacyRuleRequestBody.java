@@ -1,63 +1,42 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * UpdatePrivacyRuleRequestBody
- */
-public class UpdatePrivacyRuleRequestBody  {
-
-
+/** UpdatePrivacyRuleRequestBody */
+public class UpdatePrivacyRuleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private String url;
-    /**
-     * 屏蔽字段
-     */
+
+    /** 屏蔽字段 */
     public static final class CategoryEnum {
 
-        
-        /**
-         * Enum PARAMS for value: "params"
-         */
+        /** Enum PARAMS for value: "params" */
         public static final CategoryEnum PARAMS = new CategoryEnum("params");
-        
-        /**
-         * Enum COOKIE for value: "cookie"
-         */
+
+        /** Enum COOKIE for value: "cookie" */
         public static final CategoryEnum COOKIE = new CategoryEnum("cookie");
-        
-        /**
-         * Enum HEADER for value: "header"
-         */
+
+        /** Enum HEADER for value: "header" */
         public static final CategoryEnum HEADER = new CategoryEnum("header");
-        
-        /**
-         * Enum FORM for value: "form"
-         */
+
+        /** Enum FORM for value: "form" */
         public static final CategoryEnum FORM = new CategoryEnum("form");
-        
 
         private static final Map<String, CategoryEnum> STATIC_FIELDS = createStaticFields();
 
@@ -88,7 +67,7 @@ public class UpdatePrivacyRuleRequestBody  {
 
         @JsonCreator
         public static CategoryEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CategoryEnum result = STATIC_FIELDS.get(value);
@@ -99,7 +78,7 @@ public class UpdatePrivacyRuleRequestBody  {
         }
 
         public static CategoryEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CategoryEnum result = STATIC_FIELDS.get(value);
@@ -123,16 +102,14 @@ public class UpdatePrivacyRuleRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="category")
-    
+    @JsonProperty(value = "category")
+
     private CategoryEnum category;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="index")
-    
+    @JsonProperty(value = "index")
+
     private String index;
 
     public UpdatePrivacyRuleRequestBody withId(String id) {
@@ -140,13 +117,9 @@ public class UpdatePrivacyRuleRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 规则id
-     * @return id
-     */
+    /** 规则id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -155,20 +128,14 @@ public class UpdatePrivacyRuleRequestBody  {
         this.id = id;
     }
 
-    
-
     public UpdatePrivacyRuleRequestBody withUrl(String url) {
         this.url = url;
         return this;
     }
 
-    
-
-
-    /**
-     * 隐私屏蔽规则应用的url
-     * @return url
-     */
+    /** 隐私屏蔽规则应用的url
+     * 
+     * @return url */
     public String getUrl() {
         return url;
     }
@@ -177,20 +144,14 @@ public class UpdatePrivacyRuleRequestBody  {
         this.url = url;
     }
 
-    
-
     public UpdatePrivacyRuleRequestBody withCategory(CategoryEnum category) {
         this.category = category;
         return this;
     }
 
-    
-
-
-    /**
-     * 屏蔽字段
-     * @return category
-     */
+    /** 屏蔽字段
+     * 
+     * @return category */
     public CategoryEnum getCategory() {
         return category;
     }
@@ -199,20 +160,14 @@ public class UpdatePrivacyRuleRequestBody  {
         this.category = category;
     }
 
-    
-
     public UpdatePrivacyRuleRequestBody withIndex(String index) {
         this.index = index;
         return this;
     }
 
-    
-
-
-    /**
-     * 屏蔽字段名
-     * @return index
-     */
+    /** 屏蔽字段名
+     * 
+     * @return index */
     public String getIndex() {
         return index;
     }
@@ -220,8 +175,6 @@ public class UpdatePrivacyRuleRequestBody  {
     public void setIndex(String index) {
         this.index = index;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -232,15 +185,17 @@ public class UpdatePrivacyRuleRequestBody  {
             return false;
         }
         UpdatePrivacyRuleRequestBody updatePrivacyRuleRequestBody = (UpdatePrivacyRuleRequestBody) o;
-        return Objects.equals(this.id, updatePrivacyRuleRequestBody.id) &&
-            Objects.equals(this.url, updatePrivacyRuleRequestBody.url) &&
-            Objects.equals(this.category, updatePrivacyRuleRequestBody.category) &&
-            Objects.equals(this.index, updatePrivacyRuleRequestBody.index);
+        return Objects.equals(this.id, updatePrivacyRuleRequestBody.id)
+            && Objects.equals(this.url, updatePrivacyRuleRequestBody.url)
+            && Objects.equals(this.category, updatePrivacyRuleRequestBody.category)
+            && Objects.equals(this.index, updatePrivacyRuleRequestBody.index);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, url, category, index);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -252,16 +207,13 @@ public class UpdatePrivacyRuleRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 运行时参数。
- */
-public class RuntimeTypeView  {
-
-
+/** 运行时参数。 */
+public class RuntimeTypeView {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type_name")
-    
+    @JsonProperty(value = "type_name")
+
     private String typeName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="display_name")
-    
+    @JsonProperty(value = "display_name")
+
     private String displayName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="container_default_port")
-    
+    @JsonProperty(value = "container_default_port")
+
     private Integer containerDefaultPort;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type_desc")
-    
+    @JsonProperty(value = "type_desc")
+
     private String typeDesc;
 
     public RuntimeTypeView withTypeName(String typeName) {
@@ -46,13 +33,9 @@ public class RuntimeTypeView  {
         return this;
     }
 
-    
-
-
-    /**
-     * 类型名称。
-     * @return typeName
-     */
+    /** 类型名称。
+     * 
+     * @return typeName */
     public String getTypeName() {
         return typeName;
     }
@@ -61,20 +44,14 @@ public class RuntimeTypeView  {
         this.typeName = typeName;
     }
 
-    
-
     public RuntimeTypeView withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
     }
 
-    
-
-
-    /**
-     * 显示名称。
-     * @return displayName
-     */
+    /** 显示名称。
+     * 
+     * @return displayName */
     public String getDisplayName() {
         return displayName;
     }
@@ -83,20 +60,14 @@ public class RuntimeTypeView  {
         this.displayName = displayName;
     }
 
-    
-
     public RuntimeTypeView withContainerDefaultPort(Integer containerDefaultPort) {
         this.containerDefaultPort = containerDefaultPort;
         return this;
     }
 
-    
-
-
-    /**
-     * 容器默认端口。
-     * @return containerDefaultPort
-     */
+    /** 容器默认端口。
+     * 
+     * @return containerDefaultPort */
     public Integer getContainerDefaultPort() {
         return containerDefaultPort;
     }
@@ -105,20 +76,14 @@ public class RuntimeTypeView  {
         this.containerDefaultPort = containerDefaultPort;
     }
 
-    
-
     public RuntimeTypeView withTypeDesc(String typeDesc) {
         this.typeDesc = typeDesc;
         return this;
     }
 
-    
-
-
-    /**
-     * 类型描述。
-     * @return typeDesc
-     */
+    /** 类型描述。
+     * 
+     * @return typeDesc */
     public String getTypeDesc() {
         return typeDesc;
     }
@@ -126,8 +91,6 @@ public class RuntimeTypeView  {
     public void setTypeDesc(String typeDesc) {
         this.typeDesc = typeDesc;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class RuntimeTypeView  {
             return false;
         }
         RuntimeTypeView runtimeTypeView = (RuntimeTypeView) o;
-        return Objects.equals(this.typeName, runtimeTypeView.typeName) &&
-            Objects.equals(this.displayName, runtimeTypeView.displayName) &&
-            Objects.equals(this.containerDefaultPort, runtimeTypeView.containerDefaultPort) &&
-            Objects.equals(this.typeDesc, runtimeTypeView.typeDesc);
+        return Objects.equals(this.typeName, runtimeTypeView.typeName)
+            && Objects.equals(this.displayName, runtimeTypeView.displayName)
+            && Objects.equals(this.containerDefaultPort, runtimeTypeView.containerDefaultPort)
+            && Objects.equals(this.typeDesc, runtimeTypeView.typeDesc);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(typeName, displayName, containerDefaultPort, typeDesc);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class RuntimeTypeView  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,88 +1,65 @@
 package com.huaweicloud.sdk.clouddeploy.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.clouddeploy.v2.model.AppComponentDao;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowDeployTaskDetailResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
+    @JsonProperty(value = "task_id")
+
     private String taskId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_name")
-    
+    @JsonProperty(value = "project_name")
+
     private String projectName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deploy_system")
-    
+    @JsonProperty(value = "deploy_system")
+
     private String deploySystem;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private String createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private String updateTime;
-    /**
-     * 部署任务状态，Draft表示草稿状态，Available表示可用状态
-     */
+
+    /** 部署任务状态，Draft表示草稿状态，Available表示可用状态 */
     public static final class StateEnum {
 
-        
-        /**
-         * Enum AVAILABLE for value: "Available"
-         */
+        /** Enum AVAILABLE for value: "Available" */
         public static final StateEnum AVAILABLE = new StateEnum("Available");
-        
-        /**
-         * Enum DRAFT for value: "Draft"
-         */
+
+        /** Enum DRAFT for value: "Draft" */
         public static final StateEnum DRAFT = new StateEnum("Draft");
-        
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
@@ -111,7 +88,7 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
 
         @JsonCreator
         public static StateEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StateEnum result = STATIC_FIELDS.get(value);
@@ -122,7 +99,7 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         }
 
         public static StateEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StateEnum result = STATIC_FIELDS.get(value);
@@ -146,124 +123,104 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
+
     private StateEnum state;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="execution_time")
-    
+    @JsonProperty(value = "execution_time")
+
     private String executionTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_defaut_permission")
-    
+    @JsonProperty(value = "is_defaut_permission")
+
     private Boolean isDefautPermission;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_id")
-    
+    @JsonProperty(value = "template_id")
+
     private String templateId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="owner")
-    
+    @JsonProperty(value = "owner")
+
     private String owner;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nick_name")
-    
+    @JsonProperty(value = "nick_name")
+
     private String nickName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="owner_id")
-    
+    @JsonProperty(value = "owner_id")
+
     private String ownerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
+
     private String tenantId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_name")
-    
+    @JsonProperty(value = "tenant_name")
+
     private String tenantName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="slave_cluster_id")
-    
+    @JsonProperty(value = "slave_cluster_id")
+
     private String slaveClusterId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_care")
-    
+    @JsonProperty(value = "is_care")
+
     private Boolean isCare;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="can_modify")
-    
+    @JsonProperty(value = "can_modify")
+
     private Boolean canModify;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="can_delete")
-    
+    @JsonProperty(value = "can_delete")
+
     private Boolean canDelete;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="can_view")
-    
+    @JsonProperty(value = "can_view")
+
     private Boolean canView;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="can_execute")
-    
+    @JsonProperty(value = "can_execute")
+
     private Boolean canExecute;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="can_copy")
-    
+    @JsonProperty(value = "can_copy")
+
     private Boolean canCopy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="can_manage")
-    
+    @JsonProperty(value = "can_manage")
+
     private Boolean canManage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_component_list")
-    
+    @JsonProperty(value = "app_component_list")
+
     private List<AppComponentDao> appComponentList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="role_id")
-    
+    @JsonProperty(value = "role_id")
+
     private Integer roleId;
 
     public ShowDeployTaskDetailResponse withTaskId(String taskId) {
@@ -271,13 +228,9 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 部署任务id
-     * @return taskId
-     */
+    /** 部署任务id
+     * 
+     * @return taskId */
     public String getTaskId() {
         return taskId;
     }
@@ -286,20 +239,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.taskId = taskId;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 部署任务名称
-     * @return name
-     */
+    /** 部署任务名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -308,20 +255,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * devcloud项目id
-     * @return projectId
-     */
+    /** devcloud项目id
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -330,20 +271,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withProjectName(String projectName) {
         this.projectName = projectName;
         return this;
     }
 
-    
-
-
-    /**
-     * devcloud项目名称
-     * @return projectName
-     */
+    /** devcloud项目名称
+     * 
+     * @return projectName */
     public String getProjectName() {
         return projectName;
     }
@@ -352,20 +287,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.projectName = projectName;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withDeploySystem(String deploySystem) {
         this.deploySystem = deploySystem;
         return this;
     }
 
-    
-
-
-    /**
-     * 部署类型模式，包括deployTemplate，ansible，shell
-     * @return deploySystem
-     */
+    /** 部署类型模式，包括deployTemplate，ansible，shell
+     * 
+     * @return deploySystem */
     public String getDeploySystem() {
         return deploySystem;
     }
@@ -374,20 +303,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.deploySystem = deploySystem;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return createTime
-     */
+    /** 创建时间
+     * 
+     * @return createTime */
     public String getCreateTime() {
         return createTime;
     }
@@ -396,20 +319,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 修改时间
-     * @return updateTime
-     */
+    /** 修改时间
+     * 
+     * @return updateTime */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -418,20 +335,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withState(StateEnum state) {
         this.state = state;
         return this;
     }
 
-    
-
-
-    /**
-     * 部署任务状态，Draft表示草稿状态，Available表示可用状态
-     * @return state
-     */
+    /** 部署任务状态，Draft表示草稿状态，Available表示可用状态
+     * 
+     * @return state */
     public StateEnum getState() {
         return state;
     }
@@ -440,20 +351,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.state = state;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withExecutionTime(String executionTime) {
         this.executionTime = executionTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 最后一次执行时间
-     * @return executionTime
-     */
+    /** 最后一次执行时间
+     * 
+     * @return executionTime */
     public String getExecutionTime() {
         return executionTime;
     }
@@ -462,20 +367,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.executionTime = executionTime;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述
-     * @return description
-     */
+    /** 描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -484,20 +383,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withIsDefautPermission(Boolean isDefautPermission) {
         this.isDefautPermission = isDefautPermission;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否使用默认权限矩阵
-     * @return isDefautPermission
-     */
+    /** 是否使用默认权限矩阵
+     * 
+     * @return isDefautPermission */
     public Boolean getIsDefautPermission() {
         return isDefautPermission;
     }
@@ -506,20 +399,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.isDefautPermission = isDefautPermission;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withTemplateId(String templateId) {
         this.templateId = templateId;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板id
-     * @return templateId
-     */
+    /** 模板id
+     * 
+     * @return templateId */
     public String getTemplateId() {
         return templateId;
     }
@@ -528,20 +415,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.templateId = templateId;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withOwner(String owner) {
         this.owner = owner;
         return this;
     }
 
-    
-
-
-    /**
-     * 部署任务创建者用户名
-     * @return owner
-     */
+    /** 部署任务创建者用户名
+     * 
+     * @return owner */
     public String getOwner() {
         return owner;
     }
@@ -550,20 +431,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.owner = owner;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withNickName(String nickName) {
         this.nickName = nickName;
         return this;
     }
 
-    
-
-
-    /**
-     * 部署任务创建者昵称
-     * @return nickName
-     */
+    /** 部署任务创建者昵称
+     * 
+     * @return nickName */
     public String getNickName() {
         return nickName;
     }
@@ -572,20 +447,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.nickName = nickName;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withOwnerId(String ownerId) {
         this.ownerId = ownerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 部署任务创建者用户ID
-     * @return ownerId
-     */
+    /** 部署任务创建者用户ID
+     * 
+     * @return ownerId */
     public String getOwnerId() {
         return ownerId;
     }
@@ -594,20 +463,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.ownerId = ownerId;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
 
-    
-
-
-    /**
-     * 部署任务创建者租户ID
-     * @return tenantId
-     */
+    /** 部署任务创建者租户ID
+     * 
+     * @return tenantId */
     public String getTenantId() {
         return tenantId;
     }
@@ -616,20 +479,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.tenantId = tenantId;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withTenantName(String tenantName) {
         this.tenantName = tenantName;
         return this;
     }
 
-    
-
-
-    /**
-     * 部署任务创建者租户名
-     * @return tenantName
-     */
+    /** 部署任务创建者租户名
+     * 
+     * @return tenantName */
     public String getTenantName() {
         return tenantName;
     }
@@ -638,20 +495,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.tenantName = tenantName;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withSlaveClusterId(String slaveClusterId) {
         this.slaveClusterId = slaveClusterId;
         return this;
     }
 
-    
-
-
-    /**
-     * slave集群id，默认为null时使用devcloud八爪鱼slave集群，用户自定义slave时为slave集群id
-     * @return slaveClusterId
-     */
+    /** slave集群id，默认为null时使用devcloud八爪鱼slave集群，用户自定义slave时为slave集群id
+     * 
+     * @return slaveClusterId */
     public String getSlaveClusterId() {
         return slaveClusterId;
     }
@@ -660,20 +511,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.slaveClusterId = slaveClusterId;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withIsCare(Boolean isCare) {
         this.isCare = isCare;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前用户是否已收藏
-     * @return isCare
-     */
+    /** 当前用户是否已收藏
+     * 
+     * @return isCare */
     public Boolean getIsCare() {
         return isCare;
     }
@@ -682,20 +527,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.isCare = isCare;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withCanModify(Boolean canModify) {
         this.canModify = canModify;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否有编辑权限
-     * @return canModify
-     */
+    /** 是否有编辑权限
+     * 
+     * @return canModify */
     public Boolean getCanModify() {
         return canModify;
     }
@@ -704,20 +543,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.canModify = canModify;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withCanDelete(Boolean canDelete) {
         this.canDelete = canDelete;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否有删除的权限
-     * @return canDelete
-     */
+    /** 是否有删除的权限
+     * 
+     * @return canDelete */
     public Boolean getCanDelete() {
         return canDelete;
     }
@@ -726,20 +559,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.canDelete = canDelete;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withCanView(Boolean canView) {
         this.canView = canView;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否有查看权限
-     * @return canView
-     */
+    /** 是否有查看权限
+     * 
+     * @return canView */
     public Boolean getCanView() {
         return canView;
     }
@@ -748,20 +575,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.canView = canView;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withCanExecute(Boolean canExecute) {
         this.canExecute = canExecute;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否有执行权限
-     * @return canExecute
-     */
+    /** 是否有执行权限
+     * 
+     * @return canExecute */
     public Boolean getCanExecute() {
         return canExecute;
     }
@@ -770,20 +591,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.canExecute = canExecute;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withCanCopy(Boolean canCopy) {
         this.canCopy = canCopy;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否有复制权限
-     * @return canCopy
-     */
+    /** 是否有复制权限
+     * 
+     * @return canCopy */
     public Boolean getCanCopy() {
         return canCopy;
     }
@@ -792,20 +607,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.canCopy = canCopy;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withCanManage(Boolean canManage) {
         this.canManage = canManage;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否有管理权限，包含增删改查执行以及权限修改
-     * @return canManage
-     */
+    /** 是否有管理权限，包含增删改查执行以及权限修改
+     * 
+     * @return canManage */
     public Boolean getCanManage() {
         return canManage;
     }
@@ -814,16 +623,13 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.canManage = canManage;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withAppComponentList(List<AppComponentDao> appComponentList) {
         this.appComponentList = appComponentList;
         return this;
     }
 
-    
     public ShowDeployTaskDetailResponse addAppComponentListItem(AppComponentDao appComponentListItem) {
-        if(this.appComponentList == null) {
+        if (this.appComponentList == null) {
             this.appComponentList = new ArrayList<>();
         }
         this.appComponentList.add(appComponentListItem);
@@ -831,17 +637,16 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
     }
 
     public ShowDeployTaskDetailResponse withAppComponentList(Consumer<List<AppComponentDao>> appComponentListSetter) {
-        if(this.appComponentList == null) {
+        if (this.appComponentList == null) {
             this.appComponentList = new ArrayList<>();
         }
         appComponentListSetter.accept(this.appComponentList);
         return this;
     }
 
-    /**
-     * 部署任务和应用组件对应关系
-     * @return appComponentList
-     */
+    /** 部署任务和应用组件对应关系
+     * 
+     * @return appComponentList */
     public List<AppComponentDao> getAppComponentList() {
         return appComponentList;
     }
@@ -850,20 +655,14 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         this.appComponentList = appComponentList;
     }
 
-    
-
     public ShowDeployTaskDetailResponse withRoleId(Integer roleId) {
         this.roleId = roleId;
         return this;
     }
 
-    
-
-
-    /**
-     * 角色ID,0：部署任务创建者，-1：项目创建者，3：项目经理，4：开发人员，5：测试经理，6：测试人员，7：参与者，8：浏览者
-     * @return roleId
-     */
+    /** 角色ID,0：部署任务创建者，-1：项目创建者，3：项目经理，4：开发人员，5：测试经理，6：测试人员，7：参与者，8：浏览者
+     * 
+     * @return roleId */
     public Integer getRoleId() {
         return roleId;
     }
@@ -871,8 +670,6 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
     public void setRoleId(Integer roleId) {
         this.roleId = roleId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -883,38 +680,66 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
             return false;
         }
         ShowDeployTaskDetailResponse showDeployTaskDetailResponse = (ShowDeployTaskDetailResponse) o;
-        return Objects.equals(this.taskId, showDeployTaskDetailResponse.taskId) &&
-            Objects.equals(this.name, showDeployTaskDetailResponse.name) &&
-            Objects.equals(this.projectId, showDeployTaskDetailResponse.projectId) &&
-            Objects.equals(this.projectName, showDeployTaskDetailResponse.projectName) &&
-            Objects.equals(this.deploySystem, showDeployTaskDetailResponse.deploySystem) &&
-            Objects.equals(this.createTime, showDeployTaskDetailResponse.createTime) &&
-            Objects.equals(this.updateTime, showDeployTaskDetailResponse.updateTime) &&
-            Objects.equals(this.state, showDeployTaskDetailResponse.state) &&
-            Objects.equals(this.executionTime, showDeployTaskDetailResponse.executionTime) &&
-            Objects.equals(this.description, showDeployTaskDetailResponse.description) &&
-            Objects.equals(this.isDefautPermission, showDeployTaskDetailResponse.isDefautPermission) &&
-            Objects.equals(this.templateId, showDeployTaskDetailResponse.templateId) &&
-            Objects.equals(this.owner, showDeployTaskDetailResponse.owner) &&
-            Objects.equals(this.nickName, showDeployTaskDetailResponse.nickName) &&
-            Objects.equals(this.ownerId, showDeployTaskDetailResponse.ownerId) &&
-            Objects.equals(this.tenantId, showDeployTaskDetailResponse.tenantId) &&
-            Objects.equals(this.tenantName, showDeployTaskDetailResponse.tenantName) &&
-            Objects.equals(this.slaveClusterId, showDeployTaskDetailResponse.slaveClusterId) &&
-            Objects.equals(this.isCare, showDeployTaskDetailResponse.isCare) &&
-            Objects.equals(this.canModify, showDeployTaskDetailResponse.canModify) &&
-            Objects.equals(this.canDelete, showDeployTaskDetailResponse.canDelete) &&
-            Objects.equals(this.canView, showDeployTaskDetailResponse.canView) &&
-            Objects.equals(this.canExecute, showDeployTaskDetailResponse.canExecute) &&
-            Objects.equals(this.canCopy, showDeployTaskDetailResponse.canCopy) &&
-            Objects.equals(this.canManage, showDeployTaskDetailResponse.canManage) &&
-            Objects.equals(this.appComponentList, showDeployTaskDetailResponse.appComponentList) &&
-            Objects.equals(this.roleId, showDeployTaskDetailResponse.roleId);
+        return Objects.equals(this.taskId, showDeployTaskDetailResponse.taskId)
+            && Objects.equals(this.name, showDeployTaskDetailResponse.name)
+            && Objects.equals(this.projectId, showDeployTaskDetailResponse.projectId)
+            && Objects.equals(this.projectName, showDeployTaskDetailResponse.projectName)
+            && Objects.equals(this.deploySystem, showDeployTaskDetailResponse.deploySystem)
+            && Objects.equals(this.createTime, showDeployTaskDetailResponse.createTime)
+            && Objects.equals(this.updateTime, showDeployTaskDetailResponse.updateTime)
+            && Objects.equals(this.state, showDeployTaskDetailResponse.state)
+            && Objects.equals(this.executionTime, showDeployTaskDetailResponse.executionTime)
+            && Objects.equals(this.description, showDeployTaskDetailResponse.description)
+            && Objects.equals(this.isDefautPermission, showDeployTaskDetailResponse.isDefautPermission)
+            && Objects.equals(this.templateId, showDeployTaskDetailResponse.templateId)
+            && Objects.equals(this.owner, showDeployTaskDetailResponse.owner)
+            && Objects.equals(this.nickName, showDeployTaskDetailResponse.nickName)
+            && Objects.equals(this.ownerId, showDeployTaskDetailResponse.ownerId)
+            && Objects.equals(this.tenantId, showDeployTaskDetailResponse.tenantId)
+            && Objects.equals(this.tenantName, showDeployTaskDetailResponse.tenantName)
+            && Objects.equals(this.slaveClusterId, showDeployTaskDetailResponse.slaveClusterId)
+            && Objects.equals(this.isCare, showDeployTaskDetailResponse.isCare)
+            && Objects.equals(this.canModify, showDeployTaskDetailResponse.canModify)
+            && Objects.equals(this.canDelete, showDeployTaskDetailResponse.canDelete)
+            && Objects.equals(this.canView, showDeployTaskDetailResponse.canView)
+            && Objects.equals(this.canExecute, showDeployTaskDetailResponse.canExecute)
+            && Objects.equals(this.canCopy, showDeployTaskDetailResponse.canCopy)
+            && Objects.equals(this.canManage, showDeployTaskDetailResponse.canManage)
+            && Objects.equals(this.appComponentList, showDeployTaskDetailResponse.appComponentList)
+            && Objects.equals(this.roleId, showDeployTaskDetailResponse.roleId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, name, projectId, projectName, deploySystem, createTime, updateTime, state, executionTime, description, isDefautPermission, templateId, owner, nickName, ownerId, tenantId, tenantName, slaveClusterId, isCare, canModify, canDelete, canView, canExecute, canCopy, canManage, appComponentList, roleId);
+        return Objects.hash(taskId,
+            name,
+            projectId,
+            projectName,
+            deploySystem,
+            createTime,
+            updateTime,
+            state,
+            executionTime,
+            description,
+            isDefautPermission,
+            templateId,
+            owner,
+            nickName,
+            ownerId,
+            tenantId,
+            tenantName,
+            slaveClusterId,
+            isCare,
+            canModify,
+            canDelete,
+            canView,
+            canExecute,
+            canCopy,
+            canManage,
+            appComponentList,
+            roleId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -949,16 +774,13 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

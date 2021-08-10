@@ -1,44 +1,29 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.LdApiScriptBase;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * LdApiScriptCreate
- */
-public class LdApiScriptCreate  {
+/** LdApiScriptCreate */
+public class LdApiScriptCreate {
 
-    /**
-     * API类型 - data：数据API - function：函数API 
-     */
+    /** API类型 - data：数据API - function：函数API */
     public static final class ApiTypeEnum {
 
-        
-        /**
-         * Enum DATA for value: "data"
-         */
+        /** Enum DATA for value: "data" */
         public static final ApiTypeEnum DATA = new ApiTypeEnum("data");
-        
-        /**
-         * Enum FUNCTION for value: "function"
-         */
+
+        /** Enum FUNCTION for value: "function" */
         public static final ApiTypeEnum FUNCTION = new ApiTypeEnum("function");
-        
 
         private static final Map<String, ApiTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -67,7 +52,7 @@ public class LdApiScriptCreate  {
 
         @JsonCreator
         public static ApiTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ApiTypeEnum result = STATIC_FIELDS.get(value);
@@ -78,7 +63,7 @@ public class LdApiScriptCreate  {
         }
 
         public static ApiTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ApiTypeEnum result = STATIC_FIELDS.get(value);
@@ -102,30 +87,24 @@ public class LdApiScriptCreate  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_type")
-    
+    @JsonProperty(value = "api_type")
+
     private ApiTypeEnum apiType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scripts")
-    
+    @JsonProperty(value = "scripts")
+
     private List<LdApiScriptBase> scripts = null;
-    
+
     public LdApiScriptCreate withApiType(ApiTypeEnum apiType) {
         this.apiType = apiType;
         return this;
     }
 
-    
-
-
-    /**
-     * API类型 - data：数据API - function：函数API 
-     * @return apiType
-     */
+    /** API类型 - data：数据API - function：函数API
+     * 
+     * @return apiType */
     public ApiTypeEnum getApiType() {
         return apiType;
     }
@@ -134,16 +113,13 @@ public class LdApiScriptCreate  {
         this.apiType = apiType;
     }
 
-    
-
     public LdApiScriptCreate withScripts(List<LdApiScriptBase> scripts) {
         this.scripts = scripts;
         return this;
     }
 
-    
     public LdApiScriptCreate addScriptsItem(LdApiScriptBase scriptsItem) {
-        if(this.scripts == null) {
+        if (this.scripts == null) {
             this.scripts = new ArrayList<>();
         }
         this.scripts.add(scriptsItem);
@@ -151,17 +127,16 @@ public class LdApiScriptCreate  {
     }
 
     public LdApiScriptCreate withScripts(Consumer<List<LdApiScriptBase>> scriptsSetter) {
-        if(this.scripts == null) {
+        if (this.scripts == null) {
             this.scripts = new ArrayList<>();
         }
         scriptsSetter.accept(this.scripts);
         return this;
     }
 
-    /**
-     * API脚本信息列表
-     * @return scripts
-     */
+    /** API脚本信息列表
+     * 
+     * @return scripts */
     public List<LdApiScriptBase> getScripts() {
         return scripts;
     }
@@ -169,8 +144,6 @@ public class LdApiScriptCreate  {
     public void setScripts(List<LdApiScriptBase> scripts) {
         this.scripts = scripts;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -181,13 +154,15 @@ public class LdApiScriptCreate  {
             return false;
         }
         LdApiScriptCreate ldApiScriptCreate = (LdApiScriptCreate) o;
-        return Objects.equals(this.apiType, ldApiScriptCreate.apiType) &&
-            Objects.equals(this.scripts, ldApiScriptCreate.scripts);
+        return Objects.equals(this.apiType, ldApiScriptCreate.apiType)
+            && Objects.equals(this.scripts, ldApiScriptCreate.scripts);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(apiType, scripts);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -197,16 +172,13 @@ public class LdApiScriptCreate  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

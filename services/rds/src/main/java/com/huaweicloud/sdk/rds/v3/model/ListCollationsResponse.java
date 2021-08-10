@@ -1,40 +1,29 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListCollationsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charSets")
-    
+    @JsonProperty(value = "charSets")
+
     private List<String> charSets = null;
-    
+
     public ListCollationsResponse withCharSets(List<String> charSets) {
         this.charSets = charSets;
         return this;
     }
 
-    
     public ListCollationsResponse addCharSetsItem(String charSetsItem) {
-        if(this.charSets == null) {
+        if (this.charSets == null) {
             this.charSets = new ArrayList<>();
         }
         this.charSets.add(charSetsItem);
@@ -42,17 +31,16 @@ public class ListCollationsResponse extends SdkResponse {
     }
 
     public ListCollationsResponse withCharSets(Consumer<List<String>> charSetsSetter) {
-        if(this.charSets == null) {
+        if (this.charSets == null) {
             this.charSets = new ArrayList<>();
         }
         charSetsSetter.accept(this.charSets);
         return this;
     }
 
-    /**
-     * 字符集信息列表
-     * @return charSets
-     */
+    /** 字符集信息列表
+     * 
+     * @return charSets */
     public List<String> getCharSets() {
         return charSets;
     }
@@ -60,8 +48,6 @@ public class ListCollationsResponse extends SdkResponse {
     public void setCharSets(List<String> charSets) {
         this.charSets = charSets;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -74,10 +60,12 @@ public class ListCollationsResponse extends SdkResponse {
         ListCollationsResponse listCollationsResponse = (ListCollationsResponse) o;
         return Objects.equals(this.charSets, listCollationsResponse.charSets);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(charSets);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -86,16 +74,13 @@ public class ListCollationsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

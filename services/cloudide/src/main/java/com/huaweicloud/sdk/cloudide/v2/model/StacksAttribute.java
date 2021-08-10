@@ -1,56 +1,43 @@
 package com.huaweicloud.sdk.cloudide.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * StacksAttribute
- */
-public class StacksAttribute  {
-
-
+/** StacksAttribute */
+public class StacksAttribute {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="specs")
-    
+    @JsonProperty(value = "specs")
+
     private List<String> specs = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="suggest")
-    
+    @JsonProperty(value = "suggest")
+
     private String suggest;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="suggest_title")
-    
+    @JsonProperty(value = "suggest_title")
+
     private String suggestTitle;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volumes")
-    
+    @JsonProperty(value = "volumes")
+
     private List<String> volumes = null;
-    
+
     public StacksAttribute withSpecs(List<String> specs) {
         this.specs = specs;
         return this;
     }
 
-    
     public StacksAttribute addSpecsItem(String specsItem) {
-        if(this.specs == null) {
+        if (this.specs == null) {
             this.specs = new ArrayList<>();
         }
         this.specs.add(specsItem);
@@ -58,17 +45,16 @@ public class StacksAttribute  {
     }
 
     public StacksAttribute withSpecs(Consumer<List<String>> specsSetter) {
-        if(this.specs == null) {
+        if (this.specs == null) {
             this.specs = new ArrayList<>();
         }
         specsSetter.accept(this.specs);
         return this;
     }
 
-    /**
-     * 规格列表
-     * @return specs
-     */
+    /** 规格列表
+     * 
+     * @return specs */
     public List<String> getSpecs() {
         return specs;
     }
@@ -77,20 +63,14 @@ public class StacksAttribute  {
         this.specs = specs;
     }
 
-    
-
     public StacksAttribute withSuggest(String suggest) {
         this.suggest = suggest;
         return this;
     }
 
-    
-
-
-    /**
-     * 提示id
-     * @return suggest
-     */
+    /** 提示id
+     * 
+     * @return suggest */
     public String getSuggest() {
         return suggest;
     }
@@ -99,20 +79,14 @@ public class StacksAttribute  {
         this.suggest = suggest;
     }
 
-    
-
     public StacksAttribute withSuggestTitle(String suggestTitle) {
         this.suggestTitle = suggestTitle;
         return this;
     }
 
-    
-
-
-    /**
-     * 提示信息
-     * @return suggestTitle
-     */
+    /** 提示信息
+     * 
+     * @return suggestTitle */
     public String getSuggestTitle() {
         return suggestTitle;
     }
@@ -121,16 +95,13 @@ public class StacksAttribute  {
         this.suggestTitle = suggestTitle;
     }
 
-    
-
     public StacksAttribute withVolumes(List<String> volumes) {
         this.volumes = volumes;
         return this;
     }
 
-    
     public StacksAttribute addVolumesItem(String volumesItem) {
-        if(this.volumes == null) {
+        if (this.volumes == null) {
             this.volumes = new ArrayList<>();
         }
         this.volumes.add(volumesItem);
@@ -138,17 +109,16 @@ public class StacksAttribute  {
     }
 
     public StacksAttribute withVolumes(Consumer<List<String>> volumesSetter) {
-        if(this.volumes == null) {
+        if (this.volumes == null) {
             this.volumes = new ArrayList<>();
         }
         volumesSetter.accept(this.volumes);
         return this;
     }
 
-    /**
-     * 卷容量列表
-     * @return volumes
-     */
+    /** 卷容量列表
+     * 
+     * @return volumes */
     public List<String> getVolumes() {
         return volumes;
     }
@@ -156,8 +126,6 @@ public class StacksAttribute  {
     public void setVolumes(List<String> volumes) {
         this.volumes = volumes;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -168,15 +136,17 @@ public class StacksAttribute  {
             return false;
         }
         StacksAttribute stacksAttribute = (StacksAttribute) o;
-        return Objects.equals(this.specs, stacksAttribute.specs) &&
-            Objects.equals(this.suggest, stacksAttribute.suggest) &&
-            Objects.equals(this.suggestTitle, stacksAttribute.suggestTitle) &&
-            Objects.equals(this.volumes, stacksAttribute.volumes);
+        return Objects.equals(this.specs, stacksAttribute.specs)
+            && Objects.equals(this.suggest, stacksAttribute.suggest)
+            && Objects.equals(this.suggestTitle, stacksAttribute.suggestTitle)
+            && Objects.equals(this.volumes, stacksAttribute.volumes);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(specs, suggest, suggestTitle, volumes);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +158,13 @@ public class StacksAttribute  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

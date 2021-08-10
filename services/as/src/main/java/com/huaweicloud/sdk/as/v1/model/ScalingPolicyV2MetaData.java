@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 附件信息
- */
-public class ScalingPolicyV2MetaData  {
-
-
+/** 附件信息 */
+public class ScalingPolicyV2MetaData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata_bandwidth_share_type")
-    
+    @JsonProperty(value = "metadata_bandwidth_share_type")
+
     private String metadataBandwidthShareType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata_eip_id")
-    
+    @JsonProperty(value = "metadata_eip_id")
+
     private String metadataEipId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata_eip_address")
-    
+    @JsonProperty(value = "metadata_eip_address")
+
     private String metadataEipAddress;
 
     public ScalingPolicyV2MetaData withMetadataBandwidthShareType(String metadataBandwidthShareType) {
@@ -40,13 +28,9 @@ public class ScalingPolicyV2MetaData  {
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩带宽策略中带宽对应的共享类型
-     * @return metadataBandwidthShareType
-     */
+    /** 伸缩带宽策略中带宽对应的共享类型
+     * 
+     * @return metadataBandwidthShareType */
     public String getMetadataBandwidthShareType() {
         return metadataBandwidthShareType;
     }
@@ -55,20 +39,14 @@ public class ScalingPolicyV2MetaData  {
         this.metadataBandwidthShareType = metadataBandwidthShareType;
     }
 
-    
-
     public ScalingPolicyV2MetaData withMetadataEipId(String metadataEipId) {
         this.metadataEipId = metadataEipId;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩带宽策略中带宽对应的EIP的ID
-     * @return metadataEipId
-     */
+    /** 伸缩带宽策略中带宽对应的EIP的ID
+     * 
+     * @return metadataEipId */
     public String getMetadataEipId() {
         return metadataEipId;
     }
@@ -77,20 +55,14 @@ public class ScalingPolicyV2MetaData  {
         this.metadataEipId = metadataEipId;
     }
 
-    
-
     public ScalingPolicyV2MetaData withMetadataEipAddress(String metadataEipAddress) {
         this.metadataEipAddress = metadataEipAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩带宽策略中带宽对应的EIP地址
-     * @return metadataEipAddress
-     */
+    /** 伸缩带宽策略中带宽对应的EIP地址
+     * 
+     * @return metadataEipAddress */
     public String getMetadataEipAddress() {
         return metadataEipAddress;
     }
@@ -98,8 +70,6 @@ public class ScalingPolicyV2MetaData  {
     public void setMetadataEipAddress(String metadataEipAddress) {
         this.metadataEipAddress = metadataEipAddress;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class ScalingPolicyV2MetaData  {
             return false;
         }
         ScalingPolicyV2MetaData scalingPolicyV2MetaData = (ScalingPolicyV2MetaData) o;
-        return Objects.equals(this.metadataBandwidthShareType, scalingPolicyV2MetaData.metadataBandwidthShareType) &&
-            Objects.equals(this.metadataEipId, scalingPolicyV2MetaData.metadataEipId) &&
-            Objects.equals(this.metadataEipAddress, scalingPolicyV2MetaData.metadataEipAddress);
+        return Objects.equals(this.metadataBandwidthShareType, scalingPolicyV2MetaData.metadataBandwidthShareType)
+            && Objects.equals(this.metadataEipId, scalingPolicyV2MetaData.metadataEipId)
+            && Objects.equals(this.metadataEipAddress, scalingPolicyV2MetaData.metadataEipAddress);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(metadataBandwidthShareType, metadataEipId, metadataEipAddress);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class ScalingPolicyV2MetaData  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

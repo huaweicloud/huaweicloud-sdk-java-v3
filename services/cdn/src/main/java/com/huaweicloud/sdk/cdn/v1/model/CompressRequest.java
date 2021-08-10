@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CompressRequest
- */
-public class CompressRequest  {
-
-
+/** CompressRequest */
+public class CompressRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="compress_switch")
-    
+    @JsonProperty(value = "compress_switch")
+
     private Integer compressSwitch;
 
     public CompressRequest withCompressSwitch(Integer compressSwitch) {
@@ -28,13 +18,9 @@ public class CompressRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * GZIP压缩开关。0关闭。1打开
-     * @return compressSwitch
-     */
+    /** GZIP压缩开关。0关闭。1打开
+     * 
+     * @return compressSwitch */
     public Integer getCompressSwitch() {
         return compressSwitch;
     }
@@ -42,8 +28,6 @@ public class CompressRequest  {
     public void setCompressSwitch(Integer compressSwitch) {
         this.compressSwitch = compressSwitch;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class CompressRequest  {
         CompressRequest compressRequest = (CompressRequest) o;
         return Objects.equals(this.compressSwitch, compressRequest.compressSwitch);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(compressSwitch);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class CompressRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

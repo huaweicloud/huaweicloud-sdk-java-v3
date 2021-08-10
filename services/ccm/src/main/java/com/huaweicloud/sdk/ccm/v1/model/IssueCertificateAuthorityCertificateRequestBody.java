@@ -1,45 +1,32 @@
 package com.huaweicloud.sdk.ccm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ccm.v1.model.Validity;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * IssueCertificateAuthorityCertificateRequestBody
- */
-public class IssueCertificateAuthorityCertificateRequestBody  {
-
-
+/** IssueCertificateAuthorityCertificateRequestBody */
+public class IssueCertificateAuthorityCertificateRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="issuer_id")
-    
+    @JsonProperty(value = "issuer_id")
+
     private String issuerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path_length")
-    
+    @JsonProperty(value = "path_length")
+
     private Integer pathLength;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="signature_algorithm")
-    
+    @JsonProperty(value = "signature_algorithm")
+
     private String signatureAlgorithm;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="validity")
-    
+    @JsonProperty(value = "validity")
+
     private Validity validity;
 
     public IssueCertificateAuthorityCertificateRequestBody withIssuerId(String issuerId) {
@@ -47,13 +34,9 @@ public class IssueCertificateAuthorityCertificateRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 签发CA ID
-     * @return issuerId
-     */
+    /** 签发CA ID
+     * 
+     * @return issuerId */
     public String getIssuerId() {
         return issuerId;
     }
@@ -62,22 +45,14 @@ public class IssueCertificateAuthorityCertificateRequestBody  {
         this.issuerId = issuerId;
     }
 
-    
-
     public IssueCertificateAuthorityCertificateRequestBody withPathLength(Integer pathLength) {
         this.pathLength = pathLength;
         return this;
     }
 
-    
-
-
-    /**
-     * 路径长度
-     * minimum: 0
-     * maximum: 4
-     * @return pathLength
-     */
+    /** 路径长度 minimum: 0 maximum: 4
+     * 
+     * @return pathLength */
     public Integer getPathLength() {
         return pathLength;
     }
@@ -86,20 +61,14 @@ public class IssueCertificateAuthorityCertificateRequestBody  {
         this.pathLength = pathLength;
     }
 
-    
-
     public IssueCertificateAuthorityCertificateRequestBody withSignatureAlgorithm(String signatureAlgorithm) {
         this.signatureAlgorithm = signatureAlgorithm;
         return this;
     }
 
-    
-
-
-    /**
-     * 签名算法
-     * @return signatureAlgorithm
-     */
+    /** 签名算法
+     * 
+     * @return signatureAlgorithm */
     public String getSignatureAlgorithm() {
         return signatureAlgorithm;
     }
@@ -108,27 +77,23 @@ public class IssueCertificateAuthorityCertificateRequestBody  {
         this.signatureAlgorithm = signatureAlgorithm;
     }
 
-    
-
     public IssueCertificateAuthorityCertificateRequestBody withValidity(Validity validity) {
         this.validity = validity;
         return this;
     }
 
     public IssueCertificateAuthorityCertificateRequestBody withValidity(Consumer<Validity> validitySetter) {
-        if(this.validity == null ){
+        if (this.validity == null) {
             this.validity = new Validity();
             validitySetter.accept(this.validity);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get validity
-     * @return validity
-     */
+    /** Get validity
+     * 
+     * @return validity */
     public Validity getValidity() {
         return validity;
     }
@@ -136,8 +101,6 @@ public class IssueCertificateAuthorityCertificateRequestBody  {
     public void setValidity(Validity validity) {
         this.validity = validity;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -147,16 +110,20 @@ public class IssueCertificateAuthorityCertificateRequestBody  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        IssueCertificateAuthorityCertificateRequestBody issueCertificateAuthorityCertificateRequestBody = (IssueCertificateAuthorityCertificateRequestBody) o;
-        return Objects.equals(this.issuerId, issueCertificateAuthorityCertificateRequestBody.issuerId) &&
-            Objects.equals(this.pathLength, issueCertificateAuthorityCertificateRequestBody.pathLength) &&
-            Objects.equals(this.signatureAlgorithm, issueCertificateAuthorityCertificateRequestBody.signatureAlgorithm) &&
-            Objects.equals(this.validity, issueCertificateAuthorityCertificateRequestBody.validity);
+        IssueCertificateAuthorityCertificateRequestBody issueCertificateAuthorityCertificateRequestBody =
+            (IssueCertificateAuthorityCertificateRequestBody) o;
+        return Objects.equals(this.issuerId, issueCertificateAuthorityCertificateRequestBody.issuerId)
+            && Objects.equals(this.pathLength, issueCertificateAuthorityCertificateRequestBody.pathLength)
+            && Objects.equals(this.signatureAlgorithm,
+                issueCertificateAuthorityCertificateRequestBody.signatureAlgorithm)
+            && Objects.equals(this.validity, issueCertificateAuthorityCertificateRequestBody.validity);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(issuerId, pathLength, signatureAlgorithm, validity);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -168,16 +135,13 @@ public class IssueCertificateAuthorityCertificateRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

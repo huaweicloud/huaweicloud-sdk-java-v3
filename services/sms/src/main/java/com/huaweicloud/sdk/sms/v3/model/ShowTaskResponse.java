@@ -1,57 +1,35 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.CloneServer;
-import com.huaweicloud.sdk.sms.v3.model.SourceServer;
-import com.huaweicloud.sdk.sms.v3.model.SubTask;
-import com.huaweicloud.sdk.sms.v3.model.TaskTargetServer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowTaskResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 任务类型，创建时必选，更新时可选
-     */
+
+    /** 任务类型，创建时必选，更新时可选 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum MIGRATE_FILE_ for value: "MIGRATE_FILE：文件级"
-         */
+        /** Enum MIGRATE_FILE_ for value: "MIGRATE_FILE：文件级" */
         public static final TypeEnum MIGRATE_FILE_ = new TypeEnum("MIGRATE_FILE：文件级");
-        
-        /**
-         * Enum MIGRATE_BLOCK_ for value: "MIGRATE_BLOCK：块级"
-         */
+
+        /** Enum MIGRATE_BLOCK_ for value: "MIGRATE_BLOCK：块级" */
         public static final TypeEnum MIGRATE_BLOCK_ = new TypeEnum("MIGRATE_BLOCK：块级");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -80,7 +58,7 @@ public class ShowTaskResponse extends SdkResponse {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -91,7 +69,7 @@ public class ShowTaskResponse extends SdkResponse {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -115,27 +93,19 @@ public class ShowTaskResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
-    /**
-     * 操作系统类型，分为WINDOWS和LINUX，创建时必选，更新时可选
-     */
+
+    /** 操作系统类型，分为WINDOWS和LINUX，创建时必选，更新时可选 */
     public static final class OsTypeEnum {
 
-        
-        /**
-         * Enum WINDOWS for value: "WINDOWS"
-         */
+        /** Enum WINDOWS for value: "WINDOWS" */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("WINDOWS");
-        
-        /**
-         * Enum LINUX for value: "LINUX"
-         */
+
+        /** Enum LINUX for value: "LINUX" */
         public static final OsTypeEnum LINUX = new OsTypeEnum("LINUX");
-        
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -164,7 +134,7 @@ public class ShowTaskResponse extends SdkResponse {
 
         @JsonCreator
         public static OsTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsTypeEnum result = STATIC_FIELDS.get(value);
@@ -175,7 +145,7 @@ public class ShowTaskResponse extends SdkResponse {
         }
 
         public static OsTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsTypeEnum result = STATIC_FIELDS.get(value);
@@ -199,186 +169,154 @@ public class ShowTaskResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os_type")
-    
+    @JsonProperty(value = "os_type")
+
     private OsTypeEnum osType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="priority")
-    
+    @JsonProperty(value = "priority")
+
     private Integer priority;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_id")
-    
+    @JsonProperty(value = "region_id")
+
     private String regionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_target_server")
-    
+    @JsonProperty(value = "start_target_server")
+
     private Boolean startTargetServer;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="migration_ip")
-    
+    @JsonProperty(value = "migration_ip")
+
     private String migrationIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_name")
-    
+    @JsonProperty(value = "region_name")
+
     private String regionName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_name")
-    
+    @JsonProperty(value = "project_name")
+
     private String projectName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vm_template_id")
-    
+    @JsonProperty(value = "vm_template_id")
+
     private String vmTemplateId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_server")
-    
+    @JsonProperty(value = "source_server")
+
     private SourceServer sourceServer;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target_server")
-    
+    @JsonProperty(value = "target_server")
+
     private TaskTargetServer targetServer;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
+
     private String state;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="estimate_complete_time")
-    
+    @JsonProperty(value = "estimate_complete_time")
+
     private Long estimateCompleteTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="connected")
-    
+    @JsonProperty(value = "connected")
+
     private Boolean connected;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_date")
-    
+    @JsonProperty(value = "create_date")
+
     private Long createDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_date")
-    
+    @JsonProperty(value = "start_date")
+
     private Long startDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="finish_date")
-    
+    @JsonProperty(value = "finish_date")
+
     private Long finishDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="migrate_speed")
-    
+    @JsonProperty(value = "migrate_speed")
+
     private Double migrateSpeed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="compress_rate")
-    
+    @JsonProperty(value = "compress_rate")
+
     private Double compressRate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_json")
-    
+    @JsonProperty(value = "error_json")
+
     private String errorJson;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_time")
-    
+    @JsonProperty(value = "total_time")
+
     private Long totalTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="float_ip")
-    
+    @JsonProperty(value = "float_ip")
+
     private String floatIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remain_seconds")
-    
+    @JsonProperty(value = "remain_seconds")
+
     private Long remainSeconds;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target_snapshot_id")
-    
+    @JsonProperty(value = "target_snapshot_id")
+
     private String targetSnapshotId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="clone_server")
-    
+    @JsonProperty(value = "clone_server")
+
     private CloneServer cloneServer;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sub_tasks")
-    
+    @JsonProperty(value = "sub_tasks")
+
     private List<SubTask> subTasks = null;
-    
+
     public ShowTaskResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务名称（用户自定义）
-     * @return name
-     */
+    /** 任务名称（用户自定义）
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -387,20 +325,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowTaskResponse withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务类型，创建时必选，更新时可选
-     * @return type
-     */
+    /** 任务类型，创建时必选，更新时可选
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -409,20 +341,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.type = type;
     }
 
-    
-
     public ShowTaskResponse withOsType(OsTypeEnum osType) {
         this.osType = osType;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作系统类型，分为WINDOWS和LINUX，创建时必选，更新时可选
-     * @return osType
-     */
+    /** 操作系统类型，分为WINDOWS和LINUX，创建时必选，更新时可选
+     * 
+     * @return osType */
     public OsTypeEnum getOsType() {
         return osType;
     }
@@ -431,20 +357,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.osType = osType;
     }
 
-    
-
     public ShowTaskResponse withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移任务id
-     * @return id
-     */
+    /** 迁移任务id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -453,22 +373,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowTaskResponse withPriority(Integer priority) {
         this.priority = priority;
         return this;
     }
 
-    
-
-
-    /**
-     * 进程优先级  0：低  1：标准（默认）  2：高
-     * minimum: 0
-     * maximum: 2
-     * @return priority
-     */
+    /** 进程优先级 0：低 1：标准（默认） 2：高 minimum: 0 maximum: 2
+     * 
+     * @return priority */
     public Integer getPriority() {
         return priority;
     }
@@ -477,20 +389,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.priority = priority;
     }
 
-    
-
     public ShowTaskResponse withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
     }
 
-    
-
-
-    /**
-     * 目的端服务器的区域ID
-     * @return regionId
-     */
+    /** 目的端服务器的区域ID
+     * 
+     * @return regionId */
     public String getRegionId() {
         return regionId;
     }
@@ -499,20 +405,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.regionId = regionId;
     }
 
-    
-
     public ShowTaskResponse withStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移完成后是否启动目的端服务器  true：启动  false：停止
-     * @return startTargetServer
-     */
+    /** 迁移完成后是否启动目的端服务器 true：启动 false：停止
+     * 
+     * @return startTargetServer */
     public Boolean getStartTargetServer() {
         return startTargetServer;
     }
@@ -521,20 +421,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.startTargetServer = startTargetServer;
     }
 
-    
-
     public ShowTaskResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目id
-     * @return enterpriseProjectId
-     */
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -543,20 +437,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public ShowTaskResponse withMigrationIp(String migrationIp) {
         this.migrationIp = migrationIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 目的端服务器的IP地址。  公网迁移时请填写弹性IP地址  专线迁移时请填写私有IP地址
-     * @return migrationIp
-     */
+    /** 目的端服务器的IP地址。 公网迁移时请填写弹性IP地址 专线迁移时请填写私有IP地址
+     * 
+     * @return migrationIp */
     public String getMigrationIp() {
         return migrationIp;
     }
@@ -565,20 +453,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.migrationIp = migrationIp;
     }
 
-    
-
     public ShowTaskResponse withRegionName(String regionName) {
         this.regionName = regionName;
         return this;
     }
 
-    
-
-
-    /**
-     * 目的端服务器的区域名称
-     * @return regionName
-     */
+    /** 目的端服务器的区域名称
+     * 
+     * @return regionName */
     public String getRegionName() {
         return regionName;
     }
@@ -587,20 +469,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.regionName = regionName;
     }
 
-    
-
     public ShowTaskResponse withProjectName(String projectName) {
         this.projectName = projectName;
         return this;
     }
 
-    
-
-
-    /**
-     * 目的端服务器所在项目名称
-     * @return projectName
-     */
+    /** 目的端服务器所在项目名称
+     * 
+     * @return projectName */
     public String getProjectName() {
         return projectName;
     }
@@ -609,20 +485,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.projectName = projectName;
     }
 
-    
-
     public ShowTaskResponse withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 目的端服务器所在项目ID
-     * @return projectId
-     */
+    /** 目的端服务器所在项目ID
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -631,20 +501,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
-    
-
     public ShowTaskResponse withVmTemplateId(String vmTemplateId) {
         this.vmTemplateId = vmTemplateId;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板ID
-     * @return vmTemplateId
-     */
+    /** 模板ID
+     * 
+     * @return vmTemplateId */
     public String getVmTemplateId() {
         return vmTemplateId;
     }
@@ -653,27 +517,23 @@ public class ShowTaskResponse extends SdkResponse {
         this.vmTemplateId = vmTemplateId;
     }
 
-    
-
     public ShowTaskResponse withSourceServer(SourceServer sourceServer) {
         this.sourceServer = sourceServer;
         return this;
     }
 
     public ShowTaskResponse withSourceServer(Consumer<SourceServer> sourceServerSetter) {
-        if(this.sourceServer == null ){
+        if (this.sourceServer == null) {
             this.sourceServer = new SourceServer();
             sourceServerSetter.accept(this.sourceServer);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get sourceServer
-     * @return sourceServer
-     */
+    /** Get sourceServer
+     * 
+     * @return sourceServer */
     public SourceServer getSourceServer() {
         return sourceServer;
     }
@@ -682,27 +542,23 @@ public class ShowTaskResponse extends SdkResponse {
         this.sourceServer = sourceServer;
     }
 
-    
-
     public ShowTaskResponse withTargetServer(TaskTargetServer targetServer) {
         this.targetServer = targetServer;
         return this;
     }
 
     public ShowTaskResponse withTargetServer(Consumer<TaskTargetServer> targetServerSetter) {
-        if(this.targetServer == null ){
+        if (this.targetServer == null) {
             this.targetServer = new TaskTargetServer();
             targetServerSetter.accept(this.targetServer);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get targetServer
-     * @return targetServer
-     */
+    /** Get targetServer
+     * 
+     * @return targetServer */
     public TaskTargetServer getTargetServer() {
         return targetServer;
     }
@@ -711,20 +567,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.targetServer = targetServer;
     }
 
-    
-
     public ShowTaskResponse withState(String state) {
         this.state = state;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务状态
-     * @return state
-     */
+    /** 任务状态
+     * 
+     * @return state */
     public String getState() {
         return state;
     }
@@ -733,22 +583,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.state = state;
     }
 
-    
-
     public ShowTaskResponse withEstimateCompleteTime(Long estimateCompleteTime) {
         this.estimateCompleteTime = estimateCompleteTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 预估完成时间
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return estimateCompleteTime
-     */
+    /** 预估完成时间 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return estimateCompleteTime */
     public Long getEstimateCompleteTime() {
         return estimateCompleteTime;
     }
@@ -757,20 +599,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.estimateCompleteTime = estimateCompleteTime;
     }
 
-    
-
     public ShowTaskResponse withConnected(Boolean connected) {
         this.connected = connected;
         return this;
     }
 
-    
-
-
-    /**
-     * 连接状态
-     * @return connected
-     */
+    /** 连接状态
+     * 
+     * @return connected */
     public Boolean getConnected() {
         return connected;
     }
@@ -779,22 +615,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.connected = connected;
     }
 
-    
-
     public ShowTaskResponse withCreateDate(Long createDate) {
         this.createDate = createDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务创建时间
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return createDate
-     */
+    /** 任务创建时间 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return createDate */
     public Long getCreateDate() {
         return createDate;
     }
@@ -803,22 +631,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.createDate = createDate;
     }
 
-    
-
     public ShowTaskResponse withStartDate(Long startDate) {
         this.startDate = startDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务开始时间
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return startDate
-     */
+    /** 任务开始时间 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return startDate */
     public Long getStartDate() {
         return startDate;
     }
@@ -827,22 +647,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.startDate = startDate;
     }
 
-    
-
     public ShowTaskResponse withFinishDate(Long finishDate) {
         this.finishDate = finishDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务结束时间
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return finishDate
-     */
+    /** 任务结束时间 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return finishDate */
     public Long getFinishDate() {
         return finishDate;
     }
@@ -851,22 +663,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.finishDate = finishDate;
     }
 
-    
-
     public ShowTaskResponse withMigrateSpeed(Double migrateSpeed) {
         this.migrateSpeed = migrateSpeed;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移速率，单位：MB/S
-     * minimum: 0
-     * maximum: 1E+4
-     * @return migrateSpeed
-     */
+    /** 迁移速率，单位：MB/S minimum: 0 maximum: 1E+4
+     * 
+     * @return migrateSpeed */
     public Double getMigrateSpeed() {
         return migrateSpeed;
     }
@@ -875,22 +679,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.migrateSpeed = migrateSpeed;
     }
 
-    
-
     public ShowTaskResponse withCompressRate(Double compressRate) {
         this.compressRate = compressRate;
         return this;
     }
 
-    
-
-
-    /**
-     * 压缩率
-     * minimum: 0
-     * maximum: 1E+4
-     * @return compressRate
-     */
+    /** 压缩率 minimum: 0 maximum: 1E+4
+     * 
+     * @return compressRate */
     public Double getCompressRate() {
         return compressRate;
     }
@@ -899,20 +695,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.compressRate = compressRate;
     }
 
-    
-
     public ShowTaskResponse withErrorJson(String errorJson) {
         this.errorJson = errorJson;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误信息
-     * @return errorJson
-     */
+    /** 错误信息
+     * 
+     * @return errorJson */
     public String getErrorJson() {
         return errorJson;
     }
@@ -921,22 +711,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.errorJson = errorJson;
     }
 
-    
-
     public ShowTaskResponse withTotalTime(Long totalTime) {
         this.totalTime = totalTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务总耗时
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return totalTime
-     */
+    /** 任务总耗时 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return totalTime */
     public Long getTotalTime() {
         return totalTime;
     }
@@ -945,20 +727,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.totalTime = totalTime;
     }
 
-    
-
     public ShowTaskResponse withFloatIp(String floatIp) {
         this.floatIp = floatIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 暂时保留float,兼容现网老版本的SMS-Agent
-     * @return floatIp
-     */
+    /** 暂时保留float,兼容现网老版本的SMS-Agent
+     * 
+     * @return floatIp */
     public String getFloatIp() {
         return floatIp;
     }
@@ -967,22 +743,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.floatIp = floatIp;
     }
 
-    
-
     public ShowTaskResponse withRemainSeconds(Long remainSeconds) {
         this.remainSeconds = remainSeconds;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移剩余时间（秒）
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return remainSeconds
-     */
+    /** 迁移剩余时间（秒） minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return remainSeconds */
     public Long getRemainSeconds() {
         return remainSeconds;
     }
@@ -991,20 +759,14 @@ public class ShowTaskResponse extends SdkResponse {
         this.remainSeconds = remainSeconds;
     }
 
-    
-
     public ShowTaskResponse withTargetSnapshotId(String targetSnapshotId) {
         this.targetSnapshotId = targetSnapshotId;
         return this;
     }
 
-    
-
-
-    /**
-     * 目的端的快照id
-     * @return targetSnapshotId
-     */
+    /** 目的端的快照id
+     * 
+     * @return targetSnapshotId */
     public String getTargetSnapshotId() {
         return targetSnapshotId;
     }
@@ -1013,27 +775,23 @@ public class ShowTaskResponse extends SdkResponse {
         this.targetSnapshotId = targetSnapshotId;
     }
 
-    
-
     public ShowTaskResponse withCloneServer(CloneServer cloneServer) {
         this.cloneServer = cloneServer;
         return this;
     }
 
     public ShowTaskResponse withCloneServer(Consumer<CloneServer> cloneServerSetter) {
-        if(this.cloneServer == null ){
+        if (this.cloneServer == null) {
             this.cloneServer = new CloneServer();
             cloneServerSetter.accept(this.cloneServer);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get cloneServer
-     * @return cloneServer
-     */
+    /** Get cloneServer
+     * 
+     * @return cloneServer */
     public CloneServer getCloneServer() {
         return cloneServer;
     }
@@ -1042,16 +800,13 @@ public class ShowTaskResponse extends SdkResponse {
         this.cloneServer = cloneServer;
     }
 
-    
-
     public ShowTaskResponse withSubTasks(List<SubTask> subTasks) {
         this.subTasks = subTasks;
         return this;
     }
 
-    
     public ShowTaskResponse addSubTasksItem(SubTask subTasksItem) {
-        if(this.subTasks == null) {
+        if (this.subTasks == null) {
             this.subTasks = new ArrayList<>();
         }
         this.subTasks.add(subTasksItem);
@@ -1059,17 +814,16 @@ public class ShowTaskResponse extends SdkResponse {
     }
 
     public ShowTaskResponse withSubTasks(Consumer<List<SubTask>> subTasksSetter) {
-        if(this.subTasks == null) {
+        if (this.subTasks == null) {
             this.subTasks = new ArrayList<>();
         }
         subTasksSetter.accept(this.subTasks);
         return this;
     }
 
-    /**
-     * 任务包含的子任务列表
-     * @return subTasks
-     */
+    /** 任务包含的子任务列表
+     * 
+     * @return subTasks */
     public List<SubTask> getSubTasks() {
         return subTasks;
     }
@@ -1077,8 +831,6 @@ public class ShowTaskResponse extends SdkResponse {
     public void setSubTasks(List<SubTask> subTasks) {
         this.subTasks = subTasks;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -1089,41 +841,70 @@ public class ShowTaskResponse extends SdkResponse {
             return false;
         }
         ShowTaskResponse showTaskResponse = (ShowTaskResponse) o;
-        return Objects.equals(this.name, showTaskResponse.name) &&
-            Objects.equals(this.type, showTaskResponse.type) &&
-            Objects.equals(this.osType, showTaskResponse.osType) &&
-            Objects.equals(this.id, showTaskResponse.id) &&
-            Objects.equals(this.priority, showTaskResponse.priority) &&
-            Objects.equals(this.regionId, showTaskResponse.regionId) &&
-            Objects.equals(this.startTargetServer, showTaskResponse.startTargetServer) &&
-            Objects.equals(this.enterpriseProjectId, showTaskResponse.enterpriseProjectId) &&
-            Objects.equals(this.migrationIp, showTaskResponse.migrationIp) &&
-            Objects.equals(this.regionName, showTaskResponse.regionName) &&
-            Objects.equals(this.projectName, showTaskResponse.projectName) &&
-            Objects.equals(this.projectId, showTaskResponse.projectId) &&
-            Objects.equals(this.vmTemplateId, showTaskResponse.vmTemplateId) &&
-            Objects.equals(this.sourceServer, showTaskResponse.sourceServer) &&
-            Objects.equals(this.targetServer, showTaskResponse.targetServer) &&
-            Objects.equals(this.state, showTaskResponse.state) &&
-            Objects.equals(this.estimateCompleteTime, showTaskResponse.estimateCompleteTime) &&
-            Objects.equals(this.connected, showTaskResponse.connected) &&
-            Objects.equals(this.createDate, showTaskResponse.createDate) &&
-            Objects.equals(this.startDate, showTaskResponse.startDate) &&
-            Objects.equals(this.finishDate, showTaskResponse.finishDate) &&
-            Objects.equals(this.migrateSpeed, showTaskResponse.migrateSpeed) &&
-            Objects.equals(this.compressRate, showTaskResponse.compressRate) &&
-            Objects.equals(this.errorJson, showTaskResponse.errorJson) &&
-            Objects.equals(this.totalTime, showTaskResponse.totalTime) &&
-            Objects.equals(this.floatIp, showTaskResponse.floatIp) &&
-            Objects.equals(this.remainSeconds, showTaskResponse.remainSeconds) &&
-            Objects.equals(this.targetSnapshotId, showTaskResponse.targetSnapshotId) &&
-            Objects.equals(this.cloneServer, showTaskResponse.cloneServer) &&
-            Objects.equals(this.subTasks, showTaskResponse.subTasks);
+        return Objects.equals(this.name, showTaskResponse.name) && Objects.equals(this.type, showTaskResponse.type)
+            && Objects.equals(this.osType, showTaskResponse.osType) && Objects.equals(this.id, showTaskResponse.id)
+            && Objects.equals(this.priority, showTaskResponse.priority)
+            && Objects.equals(this.regionId, showTaskResponse.regionId)
+            && Objects.equals(this.startTargetServer, showTaskResponse.startTargetServer)
+            && Objects.equals(this.enterpriseProjectId, showTaskResponse.enterpriseProjectId)
+            && Objects.equals(this.migrationIp, showTaskResponse.migrationIp)
+            && Objects.equals(this.regionName, showTaskResponse.regionName)
+            && Objects.equals(this.projectName, showTaskResponse.projectName)
+            && Objects.equals(this.projectId, showTaskResponse.projectId)
+            && Objects.equals(this.vmTemplateId, showTaskResponse.vmTemplateId)
+            && Objects.equals(this.sourceServer, showTaskResponse.sourceServer)
+            && Objects.equals(this.targetServer, showTaskResponse.targetServer)
+            && Objects.equals(this.state, showTaskResponse.state)
+            && Objects.equals(this.estimateCompleteTime, showTaskResponse.estimateCompleteTime)
+            && Objects.equals(this.connected, showTaskResponse.connected)
+            && Objects.equals(this.createDate, showTaskResponse.createDate)
+            && Objects.equals(this.startDate, showTaskResponse.startDate)
+            && Objects.equals(this.finishDate, showTaskResponse.finishDate)
+            && Objects.equals(this.migrateSpeed, showTaskResponse.migrateSpeed)
+            && Objects.equals(this.compressRate, showTaskResponse.compressRate)
+            && Objects.equals(this.errorJson, showTaskResponse.errorJson)
+            && Objects.equals(this.totalTime, showTaskResponse.totalTime)
+            && Objects.equals(this.floatIp, showTaskResponse.floatIp)
+            && Objects.equals(this.remainSeconds, showTaskResponse.remainSeconds)
+            && Objects.equals(this.targetSnapshotId, showTaskResponse.targetSnapshotId)
+            && Objects.equals(this.cloneServer, showTaskResponse.cloneServer)
+            && Objects.equals(this.subTasks, showTaskResponse.subTasks);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, osType, id, priority, regionId, startTargetServer, enterpriseProjectId, migrationIp, regionName, projectName, projectId, vmTemplateId, sourceServer, targetServer, state, estimateCompleteTime, connected, createDate, startDate, finishDate, migrateSpeed, compressRate, errorJson, totalTime, floatIp, remainSeconds, targetSnapshotId, cloneServer, subTasks);
+        return Objects.hash(name,
+            type,
+            osType,
+            id,
+            priority,
+            regionId,
+            startTargetServer,
+            enterpriseProjectId,
+            migrationIp,
+            regionName,
+            projectName,
+            projectId,
+            vmTemplateId,
+            sourceServer,
+            targetServer,
+            state,
+            estimateCompleteTime,
+            connected,
+            createDate,
+            startDate,
+            finishDate,
+            migrateSpeed,
+            compressRate,
+            errorJson,
+            totalTime,
+            floatIp,
+            remainSeconds,
+            targetSnapshotId,
+            cloneServer,
+            subTasks);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1161,16 +942,13 @@ public class ShowTaskResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

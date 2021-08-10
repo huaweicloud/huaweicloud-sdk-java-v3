@@ -1,75 +1,49 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.BtrfsFileSystem;
-import com.huaweicloud.sdk.sms.v3.model.Disk;
-import com.huaweicloud.sdk.sms.v3.model.NetWork;
-import com.huaweicloud.sdk.sms.v3.model.VolumeGroups;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 源端服务器
- */
-public class Server  {
-
-
+/** 源端服务器 */
+public class Server {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip")
-    
+    @JsonProperty(value = "ip")
+
     private String ip;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hostname")
-    
+    @JsonProperty(value = "hostname")
+
     private String hostname;
-    /**
-     * 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
-     */
+
+    /** 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选 */
     public static final class OsTypeEnum {
 
-        
-        /**
-         * Enum WINDOWS for value: "WINDOWS"
-         */
+        /** Enum WINDOWS for value: "WINDOWS" */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("WINDOWS");
-        
-        /**
-         * Enum LINUX for value: "LINUX"
-         */
+
+        /** Enum LINUX for value: "LINUX" */
         public static final OsTypeEnum LINUX = new OsTypeEnum("LINUX");
-        
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -98,7 +72,7 @@ public class Server  {
 
         @JsonCreator
         public static OsTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsTypeEnum result = STATIC_FIELDS.get(value);
@@ -109,7 +83,7 @@ public class Server  {
         }
 
         public static OsTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsTypeEnum result = STATIC_FIELDS.get(value);
@@ -133,33 +107,24 @@ public class Server  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os_type")
-    
+    @JsonProperty(value = "os_type")
+
     private OsTypeEnum osType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os_version")
-    
+    @JsonProperty(value = "os_version")
+
     private String osVersion;
-    /**
-     * 源端服务器启动类型，如BIOS或者UEFI
-     */
+
+    /** 源端服务器启动类型，如BIOS或者UEFI */
     public static final class FirmwareEnum {
 
-        
-        /**
-         * Enum BIOS for value: "BIOS"
-         */
+        /** Enum BIOS for value: "BIOS" */
         public static final FirmwareEnum BIOS = new FirmwareEnum("BIOS");
-        
-        /**
-         * Enum UEFI for value: "UEFI"
-         */
+
+        /** Enum UEFI for value: "UEFI" */
         public static final FirmwareEnum UEFI = new FirmwareEnum("UEFI");
-        
 
         private static final Map<String, FirmwareEnum> STATIC_FIELDS = createStaticFields();
 
@@ -188,7 +153,7 @@ public class Server  {
 
         @JsonCreator
         public static FirmwareEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             FirmwareEnum result = STATIC_FIELDS.get(value);
@@ -199,7 +164,7 @@ public class Server  {
         }
 
         public static FirmwareEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             FirmwareEnum result = STATIC_FIELDS.get(value);
@@ -223,99 +188,79 @@ public class Server  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="firmware")
-    
+    @JsonProperty(value = "firmware")
+
     private FirmwareEnum firmware;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cpu_quantity")
-    
+    @JsonProperty(value = "cpu_quantity")
+
     private Integer cpuQuantity;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="memory")
-    
+    @JsonProperty(value = "memory")
+
     private Long memory;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disks")
-    
+    @JsonProperty(value = "disks")
+
     private List<Disk> disks = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="btrfs_list")
-    
+    @JsonProperty(value = "btrfs_list")
+
     private List<BtrfsFileSystem> btrfsList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="networks")
-    
+    @JsonProperty(value = "networks")
+
     private List<NetWork> networks = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="has_rsync")
-    
+    @JsonProperty(value = "has_rsync")
+
     private Boolean hasRsync;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="paravirtualization")
-    
+    @JsonProperty(value = "paravirtualization")
+
     private Boolean paravirtualization;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="raw_devices")
-    
+    @JsonProperty(value = "raw_devices")
+
     private String rawDevices;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="driver_files")
-    
+    @JsonProperty(value = "driver_files")
+
     private Boolean driverFiles;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="system_services")
-    
+    @JsonProperty(value = "system_services")
+
     private Boolean systemServices;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="account_rights")
-    
+    @JsonProperty(value = "account_rights")
+
     private Boolean accountRights;
-    /**
-     * Linux必选，系统引导类型，BOOT_LOADER(GRUB/LILO)
-     */
+
+    /** Linux必选，系统引导类型，BOOT_LOADER(GRUB/LILO) */
     public static final class BootLoaderEnum {
 
-        
-        /**
-         * Enum GRUB for value: "GRUB"
-         */
+        /** Enum GRUB for value: "GRUB" */
         public static final BootLoaderEnum GRUB = new BootLoaderEnum("GRUB");
-        
-        /**
-         * Enum LILO for value: "LILO"
-         */
+
+        /** Enum LILO for value: "LILO" */
         public static final BootLoaderEnum LILO = new BootLoaderEnum("LILO");
-        
 
         private static final Map<String, BootLoaderEnum> STATIC_FIELDS = createStaticFields();
 
@@ -344,7 +289,7 @@ public class Server  {
 
         @JsonCreator
         public static BootLoaderEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             BootLoaderEnum result = STATIC_FIELDS.get(value);
@@ -355,7 +300,7 @@ public class Server  {
         }
 
         public static BootLoaderEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             BootLoaderEnum result = STATIC_FIELDS.get(value);
@@ -379,36 +324,29 @@ public class Server  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="boot_loader")
-    
+    @JsonProperty(value = "boot_loader")
+
     private BootLoaderEnum bootLoader;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="system_dir")
-    
+    @JsonProperty(value = "system_dir")
+
     private String systemDir;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_groups")
-    
+    @JsonProperty(value = "volume_groups")
+
     private List<VolumeGroups> volumeGroups = null;
-    
+
     public Server withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端在SMS数据库中的ID
-     * @return id
-     */
+    /** 源端在SMS数据库中的ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -417,20 +355,14 @@ public class Server  {
         this.id = id;
     }
 
-    
-
     public Server withIp(String ip) {
         this.ip = ip;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端服务器ip，注册源端时必选，更新非必选
-     * @return ip
-     */
+    /** 源端服务器ip，注册源端时必选，更新非必选
+     * 
+     * @return ip */
     public String getIp() {
         return ip;
     }
@@ -439,20 +371,14 @@ public class Server  {
         this.ip = ip;
     }
 
-    
-
     public Server withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 用来区分不同源端服务器的名称
-     * @return name
-     */
+    /** 用来区分不同源端服务器的名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -461,20 +387,14 @@ public class Server  {
         this.name = name;
     }
 
-    
-
     public Server withHostname(String hostname) {
         this.hostname = hostname;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端主机名，注册源端必选，更新非必选
-     * @return hostname
-     */
+    /** 源端主机名，注册源端必选，更新非必选
+     * 
+     * @return hostname */
     public String getHostname() {
         return hostname;
     }
@@ -483,20 +403,14 @@ public class Server  {
         this.hostname = hostname;
     }
 
-    
-
     public Server withOsType(OsTypeEnum osType) {
         this.osType = osType;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
-     * @return osType
-     */
+    /** 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
+     * 
+     * @return osType */
     public OsTypeEnum getOsType() {
         return osType;
     }
@@ -505,20 +419,14 @@ public class Server  {
         this.osType = osType;
     }
 
-    
-
     public Server withOsVersion(String osVersion) {
         this.osVersion = osVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作系统版本，注册必选，更新非必选
-     * @return osVersion
-     */
+    /** 操作系统版本，注册必选，更新非必选
+     * 
+     * @return osVersion */
     public String getOsVersion() {
         return osVersion;
     }
@@ -527,20 +435,14 @@ public class Server  {
         this.osVersion = osVersion;
     }
 
-    
-
     public Server withFirmware(FirmwareEnum firmware) {
         this.firmware = firmware;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端服务器启动类型，如BIOS或者UEFI
-     * @return firmware
-     */
+    /** 源端服务器启动类型，如BIOS或者UEFI
+     * 
+     * @return firmware */
     public FirmwareEnum getFirmware() {
         return firmware;
     }
@@ -549,22 +451,14 @@ public class Server  {
         this.firmware = firmware;
     }
 
-    
-
     public Server withCpuQuantity(Integer cpuQuantity) {
         this.cpuQuantity = cpuQuantity;
         return this;
     }
 
-    
-
-
-    /**
-     * CPU个数，单位vCPU
-     * minimum: 0
-     * maximum: 65535
-     * @return cpuQuantity
-     */
+    /** CPU个数，单位vCPU minimum: 0 maximum: 65535
+     * 
+     * @return cpuQuantity */
     public Integer getCpuQuantity() {
         return cpuQuantity;
     }
@@ -573,22 +467,14 @@ public class Server  {
         this.cpuQuantity = cpuQuantity;
     }
 
-    
-
     public Server withMemory(Long memory) {
         this.memory = memory;
         return this;
     }
 
-    
-
-
-    /**
-     * 内存大小，单位MB
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return memory
-     */
+    /** 内存大小，单位MB minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return memory */
     public Long getMemory() {
         return memory;
     }
@@ -597,16 +483,13 @@ public class Server  {
         this.memory = memory;
     }
 
-    
-
     public Server withDisks(List<Disk> disks) {
         this.disks = disks;
         return this;
     }
 
-    
     public Server addDisksItem(Disk disksItem) {
-        if(this.disks == null) {
+        if (this.disks == null) {
             this.disks = new ArrayList<>();
         }
         this.disks.add(disksItem);
@@ -614,17 +497,16 @@ public class Server  {
     }
 
     public Server withDisks(Consumer<List<Disk>> disksSetter) {
-        if(this.disks == null) {
+        if (this.disks == null) {
             this.disks = new ArrayList<>();
         }
         disksSetter.accept(this.disks);
         return this;
     }
 
-    /**
-     * 源端服务器的磁盘信息
-     * @return disks
-     */
+    /** 源端服务器的磁盘信息
+     * 
+     * @return disks */
     public List<Disk> getDisks() {
         return disks;
     }
@@ -633,16 +515,13 @@ public class Server  {
         this.disks = disks;
     }
 
-    
-
     public Server withBtrfsList(List<BtrfsFileSystem> btrfsList) {
         this.btrfsList = btrfsList;
         return this;
     }
 
-    
     public Server addBtrfsListItem(BtrfsFileSystem btrfsListItem) {
-        if(this.btrfsList == null) {
+        if (this.btrfsList == null) {
             this.btrfsList = new ArrayList<>();
         }
         this.btrfsList.add(btrfsListItem);
@@ -650,17 +529,16 @@ public class Server  {
     }
 
     public Server withBtrfsList(Consumer<List<BtrfsFileSystem>> btrfsListSetter) {
-        if(this.btrfsList == null) {
+        if (this.btrfsList == null) {
             this.btrfsList = new ArrayList<>();
         }
         btrfsListSetter.accept(this.btrfsList);
         return this;
     }
 
-    /**
-     * Linux 必选，源端的Btrfs信息。如果源端不存在Btrfs，则为[]
-     * @return btrfsList
-     */
+    /** Linux 必选，源端的Btrfs信息。如果源端不存在Btrfs，则为[]
+     * 
+     * @return btrfsList */
     public List<BtrfsFileSystem> getBtrfsList() {
         return btrfsList;
     }
@@ -669,16 +547,13 @@ public class Server  {
         this.btrfsList = btrfsList;
     }
 
-    
-
     public Server withNetworks(List<NetWork> networks) {
         this.networks = networks;
         return this;
     }
 
-    
     public Server addNetworksItem(NetWork networksItem) {
-        if(this.networks == null) {
+        if (this.networks == null) {
             this.networks = new ArrayList<>();
         }
         this.networks.add(networksItem);
@@ -686,17 +561,16 @@ public class Server  {
     }
 
     public Server withNetworks(Consumer<List<NetWork>> networksSetter) {
-        if(this.networks == null) {
+        if (this.networks == null) {
             this.networks = new ArrayList<>();
         }
         networksSetter.accept(this.networks);
         return this;
     }
 
-    /**
-     * 源端服务器的网卡信息
-     * @return networks
-     */
+    /** 源端服务器的网卡信息
+     * 
+     * @return networks */
     public List<NetWork> getNetworks() {
         return networks;
     }
@@ -705,20 +579,14 @@ public class Server  {
         this.networks = networks;
     }
 
-    
-
     public Server withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
     }
 
-    
-
-
-    /**
-     * 租户的domainId
-     * @return domainId
-     */
+    /** 租户的domainId
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -727,20 +595,14 @@ public class Server  {
         this.domainId = domainId;
     }
 
-    
-
     public Server withHasRsync(Boolean hasRsync) {
         this.hasRsync = hasRsync;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否安装rsync组件，Linux系统此参数为必选
-     * @return hasRsync
-     */
+    /** 是否安装rsync组件，Linux系统此参数为必选
+     * 
+     * @return hasRsync */
     public Boolean getHasRsync() {
         return hasRsync;
     }
@@ -749,20 +611,14 @@ public class Server  {
         this.hasRsync = hasRsync;
     }
 
-    
-
     public Server withParavirtualization(Boolean paravirtualization) {
         this.paravirtualization = paravirtualization;
         return this;
     }
 
-    
-
-
-    /**
-     * Linux场景必选，源端是否是半虚拟化
-     * @return paravirtualization
-     */
+    /** Linux场景必选，源端是否是半虚拟化
+     * 
+     * @return paravirtualization */
     public Boolean getParavirtualization() {
         return paravirtualization;
     }
@@ -771,20 +627,14 @@ public class Server  {
         this.paravirtualization = paravirtualization;
     }
 
-    
-
     public Server withRawDevices(String rawDevices) {
         this.rawDevices = rawDevices;
         return this;
     }
 
-    
-
-
-    /**
-     * Linux必选，裸设备列表
-     * @return rawDevices
-     */
+    /** Linux必选，裸设备列表
+     * 
+     * @return rawDevices */
     public String getRawDevices() {
         return rawDevices;
     }
@@ -793,20 +643,14 @@ public class Server  {
         this.rawDevices = rawDevices;
     }
 
-    
-
     public Server withDriverFiles(Boolean driverFiles) {
         this.driverFiles = driverFiles;
         return this;
     }
 
-    
-
-
-    /**
-     * Windows 必选，是否缺少驱动文件
-     * @return driverFiles
-     */
+    /** Windows 必选，是否缺少驱动文件
+     * 
+     * @return driverFiles */
     public Boolean getDriverFiles() {
         return driverFiles;
     }
@@ -815,20 +659,14 @@ public class Server  {
         this.driverFiles = driverFiles;
     }
 
-    
-
     public Server withSystemServices(Boolean systemServices) {
         this.systemServices = systemServices;
         return this;
     }
 
-    
-
-
-    /**
-     * Windows必选，是否存在不正常服务
-     * @return systemServices
-     */
+    /** Windows必选，是否存在不正常服务
+     * 
+     * @return systemServices */
     public Boolean getSystemServices() {
         return systemServices;
     }
@@ -837,20 +675,14 @@ public class Server  {
         this.systemServices = systemServices;
     }
 
-    
-
     public Server withAccountRights(Boolean accountRights) {
         this.accountRights = accountRights;
         return this;
     }
 
-    
-
-
-    /**
-     * Windows必选，权限是否满足要求
-     * @return accountRights
-     */
+    /** Windows必选，权限是否满足要求
+     * 
+     * @return accountRights */
     public Boolean getAccountRights() {
         return accountRights;
     }
@@ -859,20 +691,14 @@ public class Server  {
         this.accountRights = accountRights;
     }
 
-    
-
     public Server withBootLoader(BootLoaderEnum bootLoader) {
         this.bootLoader = bootLoader;
         return this;
     }
 
-    
-
-
-    /**
-     * Linux必选，系统引导类型，BOOT_LOADER(GRUB/LILO)
-     * @return bootLoader
-     */
+    /** Linux必选，系统引导类型，BOOT_LOADER(GRUB/LILO)
+     * 
+     * @return bootLoader */
     public BootLoaderEnum getBootLoader() {
         return bootLoader;
     }
@@ -881,20 +707,14 @@ public class Server  {
         this.bootLoader = bootLoader;
     }
 
-    
-
     public Server withSystemDir(String systemDir) {
         this.systemDir = systemDir;
         return this;
     }
 
-    
-
-
-    /**
-     * Windows必选，系统目录
-     * @return systemDir
-     */
+    /** Windows必选，系统目录
+     * 
+     * @return systemDir */
     public String getSystemDir() {
         return systemDir;
     }
@@ -903,16 +723,13 @@ public class Server  {
         this.systemDir = systemDir;
     }
 
-    
-
     public Server withVolumeGroups(List<VolumeGroups> volumeGroups) {
         this.volumeGroups = volumeGroups;
         return this;
     }
 
-    
     public Server addVolumeGroupsItem(VolumeGroups volumeGroupsItem) {
-        if(this.volumeGroups == null) {
+        if (this.volumeGroups == null) {
             this.volumeGroups = new ArrayList<>();
         }
         this.volumeGroups.add(volumeGroupsItem);
@@ -920,17 +737,16 @@ public class Server  {
     }
 
     public Server withVolumeGroups(Consumer<List<VolumeGroups>> volumeGroupsSetter) {
-        if(this.volumeGroups == null) {
+        if (this.volumeGroups == null) {
             this.volumeGroups = new ArrayList<>();
         }
         volumeGroupsSetter.accept(this.volumeGroups);
         return this;
     }
 
-    /**
-     * Linux必选，如果没有卷组，输入[]
-     * @return volumeGroups
-     */
+    /** Linux必选，如果没有卷组，输入[]
+     * 
+     * @return volumeGroups */
     public List<VolumeGroups> getVolumeGroups() {
         return volumeGroups;
     }
@@ -938,8 +754,6 @@ public class Server  {
     public void setVolumeGroups(List<VolumeGroups> volumeGroups) {
         this.volumeGroups = volumeGroups;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -950,33 +764,48 @@ public class Server  {
             return false;
         }
         Server server = (Server) o;
-        return Objects.equals(this.id, server.id) &&
-            Objects.equals(this.ip, server.ip) &&
-            Objects.equals(this.name, server.name) &&
-            Objects.equals(this.hostname, server.hostname) &&
-            Objects.equals(this.osType, server.osType) &&
-            Objects.equals(this.osVersion, server.osVersion) &&
-            Objects.equals(this.firmware, server.firmware) &&
-            Objects.equals(this.cpuQuantity, server.cpuQuantity) &&
-            Objects.equals(this.memory, server.memory) &&
-            Objects.equals(this.disks, server.disks) &&
-            Objects.equals(this.btrfsList, server.btrfsList) &&
-            Objects.equals(this.networks, server.networks) &&
-            Objects.equals(this.domainId, server.domainId) &&
-            Objects.equals(this.hasRsync, server.hasRsync) &&
-            Objects.equals(this.paravirtualization, server.paravirtualization) &&
-            Objects.equals(this.rawDevices, server.rawDevices) &&
-            Objects.equals(this.driverFiles, server.driverFiles) &&
-            Objects.equals(this.systemServices, server.systemServices) &&
-            Objects.equals(this.accountRights, server.accountRights) &&
-            Objects.equals(this.bootLoader, server.bootLoader) &&
-            Objects.equals(this.systemDir, server.systemDir) &&
-            Objects.equals(this.volumeGroups, server.volumeGroups);
+        return Objects.equals(this.id, server.id) && Objects.equals(this.ip, server.ip)
+            && Objects.equals(this.name, server.name) && Objects.equals(this.hostname, server.hostname)
+            && Objects.equals(this.osType, server.osType) && Objects.equals(this.osVersion, server.osVersion)
+            && Objects.equals(this.firmware, server.firmware) && Objects.equals(this.cpuQuantity, server.cpuQuantity)
+            && Objects.equals(this.memory, server.memory) && Objects.equals(this.disks, server.disks)
+            && Objects.equals(this.btrfsList, server.btrfsList) && Objects.equals(this.networks, server.networks)
+            && Objects.equals(this.domainId, server.domainId) && Objects.equals(this.hasRsync, server.hasRsync)
+            && Objects.equals(this.paravirtualization, server.paravirtualization)
+            && Objects.equals(this.rawDevices, server.rawDevices)
+            && Objects.equals(this.driverFiles, server.driverFiles)
+            && Objects.equals(this.systemServices, server.systemServices)
+            && Objects.equals(this.accountRights, server.accountRights)
+            && Objects.equals(this.bootLoader, server.bootLoader) && Objects.equals(this.systemDir, server.systemDir)
+            && Objects.equals(this.volumeGroups, server.volumeGroups);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, ip, name, hostname, osType, osVersion, firmware, cpuQuantity, memory, disks, btrfsList, networks, domainId, hasRsync, paravirtualization, rawDevices, driverFiles, systemServices, accountRights, bootLoader, systemDir, volumeGroups);
+        return Objects.hash(id,
+            ip,
+            name,
+            hostname,
+            osType,
+            osVersion,
+            firmware,
+            cpuQuantity,
+            memory,
+            disks,
+            btrfsList,
+            networks,
+            domainId,
+            hasRsync,
+            paravirtualization,
+            rawDevices,
+            driverFiles,
+            systemServices,
+            accountRights,
+            bootLoader,
+            systemDir,
+            volumeGroups);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1006,16 +835,13 @@ public class Server  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

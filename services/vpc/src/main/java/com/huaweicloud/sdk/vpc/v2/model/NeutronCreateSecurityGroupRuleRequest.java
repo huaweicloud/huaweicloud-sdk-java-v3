@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateSecurityGroupRuleRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class NeutronCreateSecurityGroupRuleRequest  {
-
-
+/** Request Object */
+public class NeutronCreateSecurityGroupRuleRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private NeutronCreateSecurityGroupRuleRequestBody body;
 
     public NeutronCreateSecurityGroupRuleRequest withBody(NeutronCreateSecurityGroupRuleRequestBody body) {
@@ -29,20 +19,19 @@ public class NeutronCreateSecurityGroupRuleRequest  {
         return this;
     }
 
-    public NeutronCreateSecurityGroupRuleRequest withBody(Consumer<NeutronCreateSecurityGroupRuleRequestBody> bodySetter) {
-        if(this.body == null ){
+    public NeutronCreateSecurityGroupRuleRequest withBody(
+        Consumer<NeutronCreateSecurityGroupRuleRequestBody> bodySetter) {
+        if (this.body == null) {
             this.body = new NeutronCreateSecurityGroupRuleRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public NeutronCreateSecurityGroupRuleRequestBody getBody() {
         return body;
     }
@@ -50,8 +39,6 @@ public class NeutronCreateSecurityGroupRuleRequest  {
     public void setBody(NeutronCreateSecurityGroupRuleRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -61,13 +48,16 @@ public class NeutronCreateSecurityGroupRuleRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        NeutronCreateSecurityGroupRuleRequest neutronCreateSecurityGroupRuleRequest = (NeutronCreateSecurityGroupRuleRequest) o;
+        NeutronCreateSecurityGroupRuleRequest neutronCreateSecurityGroupRuleRequest =
+            (NeutronCreateSecurityGroupRuleRequest) o;
         return Objects.equals(this.body, neutronCreateSecurityGroupRuleRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +66,13 @@ public class NeutronCreateSecurityGroupRuleRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

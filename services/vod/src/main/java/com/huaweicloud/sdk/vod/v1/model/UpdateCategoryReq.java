@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * UpdateCategoryReq
- */
-public class UpdateCategoryReq  {
-
-
+/** UpdateCategoryReq */
+public class UpdateCategoryReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Integer id;
 
     public UpdateCategoryReq withName(String name) {
@@ -34,13 +23,9 @@ public class UpdateCategoryReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 媒资分类名称。
-     * @return name
-     */
+    /** 媒资分类名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -49,21 +34,14 @@ public class UpdateCategoryReq  {
         this.name = name;
     }
 
-    
-
     public UpdateCategoryReq withId(Integer id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 媒资分类ID。
-     * minimum: 0
-     * @return id
-     */
+    /** 媒资分类ID。 minimum: 0
+     * 
+     * @return id */
     public Integer getId() {
         return id;
     }
@@ -71,8 +49,6 @@ public class UpdateCategoryReq  {
     public void setId(Integer id) {
         this.id = id;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -83,13 +59,14 @@ public class UpdateCategoryReq  {
             return false;
         }
         UpdateCategoryReq updateCategoryReq = (UpdateCategoryReq) o;
-        return Objects.equals(this.name, updateCategoryReq.name) &&
-            Objects.equals(this.id, updateCategoryReq.id);
+        return Objects.equals(this.name, updateCategoryReq.name) && Objects.equals(this.id, updateCategoryReq.id);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, id);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -99,16 +76,13 @@ public class UpdateCategoryReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

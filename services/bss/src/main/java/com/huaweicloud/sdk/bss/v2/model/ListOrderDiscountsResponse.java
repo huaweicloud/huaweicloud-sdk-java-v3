@@ -1,41 +1,29 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bss.v2.model.DiscountInfoV3;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListOrderDiscountsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="discounts")
-    
+    @JsonProperty(value = "discounts")
+
     private List<DiscountInfoV3> discounts = null;
-    
+
     public ListOrderDiscountsResponse withDiscounts(List<DiscountInfoV3> discounts) {
         this.discounts = discounts;
         return this;
     }
 
-    
     public ListOrderDiscountsResponse addDiscountsItem(DiscountInfoV3 discountsItem) {
-        if(this.discounts == null) {
+        if (this.discounts == null) {
             this.discounts = new ArrayList<>();
         }
         this.discounts.add(discountsItem);
@@ -43,17 +31,16 @@ public class ListOrderDiscountsResponse extends SdkResponse {
     }
 
     public ListOrderDiscountsResponse withDiscounts(Consumer<List<DiscountInfoV3>> discountsSetter) {
-        if(this.discounts == null) {
+        if (this.discounts == null) {
             this.discounts = new ArrayList<>();
         }
         discountsSetter.accept(this.discounts);
         return this;
     }
 
-    /**
-     * 可用的折扣列表。 具体请参见表2。
-     * @return discounts
-     */
+    /** 可用的折扣列表。 具体请参见表2。
+     * 
+     * @return discounts */
     public List<DiscountInfoV3> getDiscounts() {
         return discounts;
     }
@@ -61,8 +48,6 @@ public class ListOrderDiscountsResponse extends SdkResponse {
     public void setDiscounts(List<DiscountInfoV3> discounts) {
         this.discounts = discounts;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -75,10 +60,12 @@ public class ListOrderDiscountsResponse extends SdkResponse {
         ListOrderDiscountsResponse listOrderDiscountsResponse = (ListOrderDiscountsResponse) o;
         return Objects.equals(this.discounts, listOrderDiscountsResponse.discounts);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(discounts);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -87,16 +74,13 @@ public class ListOrderDiscountsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

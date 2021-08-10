@@ -1,57 +1,43 @@
 package com.huaweicloud.sdk.rabbitmq.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rabbitmq.v2.model.ListProductsRespDetail;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ListProductsRespValues
- */
-public class ListProductsRespValues  {
-
-
+/** ListProductsRespValues */
+public class ListProductsRespValues {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="detail")
-    
+    @JsonProperty(value = "detail")
+
     private List<ListProductsRespDetail> detail = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unavailable_zones")
-    
+    @JsonProperty(value = "unavailable_zones")
+
     private List<String> unavailableZones = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="available_zones")
-    
+    @JsonProperty(value = "available_zones")
+
     private List<String> availableZones = null;
-    
+
     public ListProductsRespValues withDetail(List<ListProductsRespDetail> detail) {
         this.detail = detail;
         return this;
     }
 
-    
     public ListProductsRespValues addDetailItem(ListProductsRespDetail detailItem) {
-        if(this.detail == null) {
+        if (this.detail == null) {
             this.detail = new ArrayList<>();
         }
         this.detail.add(detailItem);
@@ -59,17 +45,16 @@ public class ListProductsRespValues  {
     }
 
     public ListProductsRespValues withDetail(Consumer<List<ListProductsRespDetail>> detailSetter) {
-        if(this.detail == null) {
+        if (this.detail == null) {
             this.detail = new ArrayList<>();
         }
         detailSetter.accept(this.detail);
         return this;
     }
 
-    /**
-     * 规格详情。
-     * @return detail
-     */
+    /** 规格详情。
+     * 
+     * @return detail */
     public List<ListProductsRespDetail> getDetail() {
         return detail;
     }
@@ -78,20 +63,14 @@ public class ListProductsRespValues  {
         this.detail = detail;
     }
 
-    
-
     public ListProductsRespValues withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例类型。
-     * @return name
-     */
+    /** 实例类型。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -100,16 +79,13 @@ public class ListProductsRespValues  {
         this.name = name;
     }
 
-    
-
     public ListProductsRespValues withUnavailableZones(List<String> unavailableZones) {
         this.unavailableZones = unavailableZones;
         return this;
     }
 
-    
     public ListProductsRespValues addUnavailableZonesItem(String unavailableZonesItem) {
-        if(this.unavailableZones == null) {
+        if (this.unavailableZones == null) {
             this.unavailableZones = new ArrayList<>();
         }
         this.unavailableZones.add(unavailableZonesItem);
@@ -117,17 +93,16 @@ public class ListProductsRespValues  {
     }
 
     public ListProductsRespValues withUnavailableZones(Consumer<List<String>> unavailableZonesSetter) {
-        if(this.unavailableZones == null) {
+        if (this.unavailableZones == null) {
             this.unavailableZones = new ArrayList<>();
         }
         unavailableZonesSetter.accept(this.unavailableZones);
         return this;
     }
 
-    /**
-     * 资源售罄的可用区列表。
-     * @return unavailableZones
-     */
+    /** 资源售罄的可用区列表。
+     * 
+     * @return unavailableZones */
     public List<String> getUnavailableZones() {
         return unavailableZones;
     }
@@ -136,16 +111,13 @@ public class ListProductsRespValues  {
         this.unavailableZones = unavailableZones;
     }
 
-    
-
     public ListProductsRespValues withAvailableZones(List<String> availableZones) {
         this.availableZones = availableZones;
         return this;
     }
 
-    
     public ListProductsRespValues addAvailableZonesItem(String availableZonesItem) {
-        if(this.availableZones == null) {
+        if (this.availableZones == null) {
             this.availableZones = new ArrayList<>();
         }
         this.availableZones.add(availableZonesItem);
@@ -153,17 +125,16 @@ public class ListProductsRespValues  {
     }
 
     public ListProductsRespValues withAvailableZones(Consumer<List<String>> availableZonesSetter) {
-        if(this.availableZones == null) {
+        if (this.availableZones == null) {
             this.availableZones = new ArrayList<>();
         }
         availableZonesSetter.accept(this.availableZones);
         return this;
     }
 
-    /**
-     * 有可用资源的可用区列表。
-     * @return availableZones
-     */
+    /** 有可用资源的可用区列表。
+     * 
+     * @return availableZones */
     public List<String> getAvailableZones() {
         return availableZones;
     }
@@ -171,8 +142,6 @@ public class ListProductsRespValues  {
     public void setAvailableZones(List<String> availableZones) {
         this.availableZones = availableZones;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -183,15 +152,17 @@ public class ListProductsRespValues  {
             return false;
         }
         ListProductsRespValues listProductsRespValues = (ListProductsRespValues) o;
-        return Objects.equals(this.detail, listProductsRespValues.detail) &&
-            Objects.equals(this.name, listProductsRespValues.name) &&
-            Objects.equals(this.unavailableZones, listProductsRespValues.unavailableZones) &&
-            Objects.equals(this.availableZones, listProductsRespValues.availableZones);
+        return Objects.equals(this.detail, listProductsRespValues.detail)
+            && Objects.equals(this.name, listProductsRespValues.name)
+            && Objects.equals(this.unavailableZones, listProductsRespValues.unavailableZones)
+            && Objects.equals(this.availableZones, listProductsRespValues.availableZones);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(detail, name, unavailableZones, availableZones);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -203,16 +174,13 @@ public class ListProductsRespValues  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

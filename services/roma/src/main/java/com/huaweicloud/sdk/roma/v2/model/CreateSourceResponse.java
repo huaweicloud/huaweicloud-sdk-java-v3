@@ -1,70 +1,52 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateSourceResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_id")
-    
+    @JsonProperty(value = "source_id")
+
     private Integer sourceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
-    
+    @JsonProperty(value = "product_id")
+
     private Integer productId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_id")
-    
+    @JsonProperty(value = "device_id")
+
     private Integer deviceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic")
-    
+    @JsonProperty(value = "topic")
+
     private String topic;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_name")
-    
+    @JsonProperty(value = "device_name")
+
     private String deviceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_name")
-    
+    @JsonProperty(value = "product_name")
+
     private String productName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_base64")
-    
+    @JsonProperty(value = "is_base64")
+
     private Integer isBase64;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="contain_device_info")
-    
+    @JsonProperty(value = "contain_device_info")
+
     private Integer containDeviceInfo;
 
     public CreateSourceResponse withSourceId(Integer sourceId) {
@@ -72,15 +54,9 @@ public class CreateSourceResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 源数据源ID
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return sourceId
-     */
+    /** 源数据源ID minimum: 1 maximum: 999999999999999999
+     * 
+     * @return sourceId */
     public Integer getSourceId() {
         return sourceId;
     }
@@ -89,22 +65,14 @@ public class CreateSourceResponse extends SdkResponse {
         this.sourceId = sourceId;
     }
 
-    
-
     public CreateSourceResponse withProductId(Integer productId) {
         this.productId = productId;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品ID
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return productId
-     */
+    /** 产品ID minimum: 1 maximum: 999999999999999999
+     * 
+     * @return productId */
     public Integer getProductId() {
         return productId;
     }
@@ -113,22 +81,14 @@ public class CreateSourceResponse extends SdkResponse {
         this.productId = productId;
     }
 
-    
-
     public CreateSourceResponse withDeviceId(Integer deviceId) {
         this.deviceId = deviceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备ID，不填为全部设备
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return deviceId
-     */
+    /** 设备ID，不填为全部设备 minimum: 1 maximum: 999999999999999999
+     * 
+     * @return deviceId */
     public Integer getDeviceId() {
         return deviceId;
     }
@@ -137,20 +97,14 @@ public class CreateSourceResponse extends SdkResponse {
         this.deviceId = deviceId;
     }
 
-    
-
     public CreateSourceResponse withTopic(String topic) {
         this.topic = topic;
         return this;
     }
 
-    
-
-
-    /**
-     * 主题，当设备ID为空时为产品级主题，设备ID不为空时为设备级主题
-     * @return topic
-     */
+    /** 主题，当设备ID为空时为产品级主题，设备ID不为空时为设备级主题
+     * 
+     * @return topic */
     public String getTopic() {
         return topic;
     }
@@ -159,20 +113,14 @@ public class CreateSourceResponse extends SdkResponse {
         this.topic = topic;
     }
 
-    
-
     public CreateSourceResponse withDeviceName(String deviceName) {
         this.deviceName = deviceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备名称
-     * @return deviceName
-     */
+    /** 设备名称
+     * 
+     * @return deviceName */
     public String getDeviceName() {
         return deviceName;
     }
@@ -181,20 +129,14 @@ public class CreateSourceResponse extends SdkResponse {
         this.deviceName = deviceName;
     }
 
-    
-
     public CreateSourceResponse withProductName(String productName) {
         this.productName = productName;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品名称
-     * @return productName
-     */
+    /** 产品名称
+     * 
+     * @return productName */
     public String getProductName() {
         return productName;
     }
@@ -203,22 +145,14 @@ public class CreateSourceResponse extends SdkResponse {
         this.productName = productName;
     }
 
-    
-
     public CreateSourceResponse withIsBase64(Integer isBase64) {
         this.isBase64 = isBase64;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否payload使用base64，0-是 1-否
-     * minimum: 0
-     * maximum: 10
-     * @return isBase64
-     */
+    /** 是否payload使用base64，0-是 1-否 minimum: 0 maximum: 10
+     * 
+     * @return isBase64 */
     public Integer getIsBase64() {
         return isBase64;
     }
@@ -227,22 +161,14 @@ public class CreateSourceResponse extends SdkResponse {
         this.isBase64 = isBase64;
     }
 
-    
-
     public CreateSourceResponse withContainDeviceInfo(Integer containDeviceInfo) {
         this.containDeviceInfo = containDeviceInfo;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否包含设备信息，0-是，1-否
-     * minimum: 0
-     * maximum: 10
-     * @return containDeviceInfo
-     */
+    /** 是否包含设备信息，0-是，1-否 minimum: 0 maximum: 10
+     * 
+     * @return containDeviceInfo */
     public Integer getContainDeviceInfo() {
         return containDeviceInfo;
     }
@@ -250,8 +176,6 @@ public class CreateSourceResponse extends SdkResponse {
     public void setContainDeviceInfo(Integer containDeviceInfo) {
         this.containDeviceInfo = containDeviceInfo;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -262,19 +186,21 @@ public class CreateSourceResponse extends SdkResponse {
             return false;
         }
         CreateSourceResponse createSourceResponse = (CreateSourceResponse) o;
-        return Objects.equals(this.sourceId, createSourceResponse.sourceId) &&
-            Objects.equals(this.productId, createSourceResponse.productId) &&
-            Objects.equals(this.deviceId, createSourceResponse.deviceId) &&
-            Objects.equals(this.topic, createSourceResponse.topic) &&
-            Objects.equals(this.deviceName, createSourceResponse.deviceName) &&
-            Objects.equals(this.productName, createSourceResponse.productName) &&
-            Objects.equals(this.isBase64, createSourceResponse.isBase64) &&
-            Objects.equals(this.containDeviceInfo, createSourceResponse.containDeviceInfo);
+        return Objects.equals(this.sourceId, createSourceResponse.sourceId)
+            && Objects.equals(this.productId, createSourceResponse.productId)
+            && Objects.equals(this.deviceId, createSourceResponse.deviceId)
+            && Objects.equals(this.topic, createSourceResponse.topic)
+            && Objects.equals(this.deviceName, createSourceResponse.deviceName)
+            && Objects.equals(this.productName, createSourceResponse.productName)
+            && Objects.equals(this.isBase64, createSourceResponse.isBase64)
+            && Objects.equals(this.containDeviceInfo, createSourceResponse.containDeviceInfo);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sourceId, productId, deviceId, topic, deviceName, productName, isBase64, containDeviceInfo);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -290,16 +216,13 @@ public class CreateSourceResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

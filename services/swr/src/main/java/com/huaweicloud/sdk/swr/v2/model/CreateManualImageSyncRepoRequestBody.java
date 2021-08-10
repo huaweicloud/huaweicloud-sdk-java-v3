@@ -1,46 +1,34 @@
 package com.huaweicloud.sdk.swr.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 手动同步镜像需要的参数
- */
-public class CreateManualImageSyncRepoRequestBody  {
-
-
+/** 手动同步镜像需要的参数 */
+public class CreateManualImageSyncRepoRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="imageTag")
-    
+    @JsonProperty(value = "imageTag")
+
     private List<String> imageTag = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="override")
-    
+    @JsonProperty(value = "override")
+
     private Boolean override;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remoteNamespace")
-    
+    @JsonProperty(value = "remoteNamespace")
+
     private String remoteNamespace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remoteRegionId")
-    
+    @JsonProperty(value = "remoteRegionId")
+
     private String remoteRegionId;
 
     public CreateManualImageSyncRepoRequestBody withImageTag(List<String> imageTag) {
@@ -48,9 +36,8 @@ public class CreateManualImageSyncRepoRequestBody  {
         return this;
     }
 
-    
     public CreateManualImageSyncRepoRequestBody addImageTagItem(String imageTagItem) {
-        if(this.imageTag == null) {
+        if (this.imageTag == null) {
             this.imageTag = new ArrayList<>();
         }
         this.imageTag.add(imageTagItem);
@@ -58,17 +45,16 @@ public class CreateManualImageSyncRepoRequestBody  {
     }
 
     public CreateManualImageSyncRepoRequestBody withImageTag(Consumer<List<String>> imageTagSetter) {
-        if(this.imageTag == null) {
+        if (this.imageTag == null) {
             this.imageTag = new ArrayList<>();
         }
         imageTagSetter.accept(this.imageTag);
         return this;
     }
 
-    /**
-     * 版本列表
-     * @return imageTag
-     */
+    /** 版本列表
+     * 
+     * @return imageTag */
     public List<String> getImageTag() {
         return imageTag;
     }
@@ -77,20 +63,14 @@ public class CreateManualImageSyncRepoRequestBody  {
         this.imageTag = imageTag;
     }
 
-    
-
     public CreateManualImageSyncRepoRequestBody withOverride(Boolean override) {
         this.override = override;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否覆盖，默认为false
-     * @return override
-     */
+    /** 是否覆盖，默认为false
+     * 
+     * @return override */
     public Boolean getOverride() {
         return override;
     }
@@ -99,20 +79,14 @@ public class CreateManualImageSyncRepoRequestBody  {
         this.override = override;
     }
 
-    
-
     public CreateManualImageSyncRepoRequestBody withRemoteNamespace(String remoteNamespace) {
         this.remoteNamespace = remoteNamespace;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标组织
-     * @return remoteNamespace
-     */
+    /** 目标组织
+     * 
+     * @return remoteNamespace */
     public String getRemoteNamespace() {
         return remoteNamespace;
     }
@@ -121,20 +95,14 @@ public class CreateManualImageSyncRepoRequestBody  {
         this.remoteNamespace = remoteNamespace;
     }
 
-    
-
     public CreateManualImageSyncRepoRequestBody withRemoteRegionId(String remoteRegionId) {
         this.remoteRegionId = remoteRegionId;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标region ID。
-     * @return remoteRegionId
-     */
+    /** 目标region ID。
+     * 
+     * @return remoteRegionId */
     public String getRemoteRegionId() {
         return remoteRegionId;
     }
@@ -142,8 +110,6 @@ public class CreateManualImageSyncRepoRequestBody  {
     public void setRemoteRegionId(String remoteRegionId) {
         this.remoteRegionId = remoteRegionId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -153,16 +119,19 @@ public class CreateManualImageSyncRepoRequestBody  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CreateManualImageSyncRepoRequestBody createManualImageSyncRepoRequestBody = (CreateManualImageSyncRepoRequestBody) o;
-        return Objects.equals(this.imageTag, createManualImageSyncRepoRequestBody.imageTag) &&
-            Objects.equals(this.override, createManualImageSyncRepoRequestBody.override) &&
-            Objects.equals(this.remoteNamespace, createManualImageSyncRepoRequestBody.remoteNamespace) &&
-            Objects.equals(this.remoteRegionId, createManualImageSyncRepoRequestBody.remoteRegionId);
+        CreateManualImageSyncRepoRequestBody createManualImageSyncRepoRequestBody =
+            (CreateManualImageSyncRepoRequestBody) o;
+        return Objects.equals(this.imageTag, createManualImageSyncRepoRequestBody.imageTag)
+            && Objects.equals(this.override, createManualImageSyncRepoRequestBody.override)
+            && Objects.equals(this.remoteNamespace, createManualImageSyncRepoRequestBody.remoteNamespace)
+            && Objects.equals(this.remoteRegionId, createManualImageSyncRepoRequestBody.remoteRegionId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(imageTag, override, remoteNamespace, remoteRegionId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -174,16 +143,13 @@ public class CreateManualImageSyncRepoRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

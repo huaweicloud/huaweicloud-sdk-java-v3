@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.PutCopyStateReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateCopyStateRequest  {
-
-
+/** Request Object */
+public class UpdateCopyStateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_id")
-    
+    @JsonProperty(value = "source_id")
+
     private String sourceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private PutCopyStateReq body;
 
     public UpdateCopyStateRequest withSourceId(String sourceId) {
@@ -35,13 +24,9 @@ public class UpdateCopyStateRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 源端服务器在主机迁移服务中的id
-     * @return sourceId
-     */
+    /** 源端服务器在主机迁移服务中的id
+     * 
+     * @return sourceId */
     public String getSourceId() {
         return sourceId;
     }
@@ -50,27 +35,23 @@ public class UpdateCopyStateRequest  {
         this.sourceId = sourceId;
     }
 
-    
-
     public UpdateCopyStateRequest withBody(PutCopyStateReq body) {
         this.body = body;
         return this;
     }
 
     public UpdateCopyStateRequest withBody(Consumer<PutCopyStateReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new PutCopyStateReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public PutCopyStateReq getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdateCopyStateRequest  {
     public void setBody(PutCopyStateReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdateCopyStateRequest  {
             return false;
         }
         UpdateCopyStateRequest updateCopyStateRequest = (UpdateCopyStateRequest) o;
-        return Objects.equals(this.sourceId, updateCopyStateRequest.sourceId) &&
-            Objects.equals(this.body, updateCopyStateRequest.body);
+        return Objects.equals(this.sourceId, updateCopyStateRequest.sourceId)
+            && Objects.equals(this.body, updateCopyStateRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sourceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdateCopyStateRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

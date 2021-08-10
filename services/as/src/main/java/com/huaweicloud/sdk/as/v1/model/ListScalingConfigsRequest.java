@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListScalingConfigsRequest  {
-
-
+/** Request Object */
+public class ListScalingConfigsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_configuration_name")
-    
+    @JsonProperty(value = "scaling_configuration_name")
+
     private String scalingConfigurationName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_id")
-    
+    @JsonProperty(value = "image_id")
+
     private String imageId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_number")
-    
+    @JsonProperty(value = "start_number")
+
     private Integer startNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
     public ListScalingConfigsRequest withScalingConfigurationName(String scalingConfigurationName) {
@@ -46,13 +33,9 @@ public class ListScalingConfigsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩配置名称。
-     * @return scalingConfigurationName
-     */
+    /** 伸缩配置名称。
+     * 
+     * @return scalingConfigurationName */
     public String getScalingConfigurationName() {
         return scalingConfigurationName;
     }
@@ -61,20 +44,14 @@ public class ListScalingConfigsRequest  {
         this.scalingConfigurationName = scalingConfigurationName;
     }
 
-    
-
     public ListScalingConfigsRequest withImageId(String imageId) {
         this.imageId = imageId;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像ID，同imageRef。
-     * @return imageId
-     */
+    /** 镜像ID，同imageRef。
+     * 
+     * @return imageId */
     public String getImageId() {
         return imageId;
     }
@@ -83,20 +60,14 @@ public class ListScalingConfigsRequest  {
         this.imageId = imageId;
     }
 
-    
-
     public ListScalingConfigsRequest withStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询的起始行号，默认为0。
-     * @return startNumber
-     */
+    /** 查询的起始行号，默认为0。
+     * 
+     * @return startNumber */
     public Integer getStartNumber() {
         return startNumber;
     }
@@ -105,20 +76,14 @@ public class ListScalingConfigsRequest  {
         this.startNumber = startNumber;
     }
 
-    
-
     public ListScalingConfigsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询的记录条数，默认为20。
-     * @return limit
-     */
+    /** 查询的记录条数，默认为20。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -126,8 +91,6 @@ public class ListScalingConfigsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class ListScalingConfigsRequest  {
             return false;
         }
         ListScalingConfigsRequest listScalingConfigsRequest = (ListScalingConfigsRequest) o;
-        return Objects.equals(this.scalingConfigurationName, listScalingConfigsRequest.scalingConfigurationName) &&
-            Objects.equals(this.imageId, listScalingConfigsRequest.imageId) &&
-            Objects.equals(this.startNumber, listScalingConfigsRequest.startNumber) &&
-            Objects.equals(this.limit, listScalingConfigsRequest.limit);
+        return Objects.equals(this.scalingConfigurationName, listScalingConfigsRequest.scalingConfigurationName)
+            && Objects.equals(this.imageId, listScalingConfigsRequest.imageId)
+            && Objects.equals(this.startNumber, listScalingConfigsRequest.startNumber)
+            && Objects.equals(this.limit, listScalingConfigsRequest.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(scalingConfigurationName, imageId, startNumber, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class ListScalingConfigsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

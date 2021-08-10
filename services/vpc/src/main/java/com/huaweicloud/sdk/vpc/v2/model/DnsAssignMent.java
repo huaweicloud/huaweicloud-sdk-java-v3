@@ -1,38 +1,28 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class DnsAssignMent  {
-
-
+public class DnsAssignMent {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hostname")
-    
+    @JsonProperty(value = "hostname")
+
     private String hostname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_address")
-    
+    @JsonProperty(value = "ip_address")
+
     private String ipAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fqdn")
-    
+    @JsonProperty(value = "fqdn")
+
     private String fqdn;
 
     public DnsAssignMent withHostname(String hostname) {
@@ -40,13 +30,9 @@ public class DnsAssignMent  {
         return this;
     }
 
-    
-
-
-    /**
-     * 端口hostname
-     * @return hostname
-     */
+    /** 端口hostname
+     * 
+     * @return hostname */
     public String getHostname() {
         return hostname;
     }
@@ -55,20 +41,14 @@ public class DnsAssignMent  {
         this.hostname = hostname;
     }
 
-    
-
     public DnsAssignMent withIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 端口IP地址
-     * @return ipAddress
-     */
+    /** 端口IP地址
+     * 
+     * @return ipAddress */
     public String getIpAddress() {
         return ipAddress;
     }
@@ -77,20 +57,14 @@ public class DnsAssignMent  {
         this.ipAddress = ipAddress;
     }
 
-    
-
     public DnsAssignMent withFqdn(String fqdn) {
         this.fqdn = fqdn;
         return this;
     }
 
-    
-
-
-    /**
-     * 端口内网fqdn
-     * @return fqdn
-     */
+    /** 端口内网fqdn
+     * 
+     * @return fqdn */
     public String getFqdn() {
         return fqdn;
     }
@@ -98,8 +72,6 @@ public class DnsAssignMent  {
     public void setFqdn(String fqdn) {
         this.fqdn = fqdn;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +82,15 @@ public class DnsAssignMent  {
             return false;
         }
         DnsAssignMent dnsAssignMent = (DnsAssignMent) o;
-        return Objects.equals(this.hostname, dnsAssignMent.hostname) &&
-            Objects.equals(this.ipAddress, dnsAssignMent.ipAddress) &&
-            Objects.equals(this.fqdn, dnsAssignMent.fqdn);
+        return Objects.equals(this.hostname, dnsAssignMent.hostname)
+            && Objects.equals(this.ipAddress, dnsAssignMent.ipAddress) && Objects.equals(this.fqdn, dnsAssignMent.fqdn);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(hostname, ipAddress, fqdn);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +101,13 @@ public class DnsAssignMent  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.eip.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.PostAndPutFloatingIpResp;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class NeutronCreateFloatingIpResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="floatingip")
-    
+    @JsonProperty(value = "floatingip")
+
     private PostAndPutFloatingIpResp floatingip;
 
     public NeutronCreateFloatingIpResponse withFloatingip(PostAndPutFloatingIpResp floatingip) {
@@ -32,19 +21,17 @@ public class NeutronCreateFloatingIpResponse extends SdkResponse {
     }
 
     public NeutronCreateFloatingIpResponse withFloatingip(Consumer<PostAndPutFloatingIpResp> floatingipSetter) {
-        if(this.floatingip == null ){
+        if (this.floatingip == null) {
             this.floatingip = new PostAndPutFloatingIpResp();
             floatingipSetter.accept(this.floatingip);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get floatingip
-     * @return floatingip
-     */
+    /** Get floatingip
+     * 
+     * @return floatingip */
     public PostAndPutFloatingIpResp getFloatingip() {
         return floatingip;
     }
@@ -52,8 +39,6 @@ public class NeutronCreateFloatingIpResponse extends SdkResponse {
     public void setFloatingip(PostAndPutFloatingIpResp floatingip) {
         this.floatingip = floatingip;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class NeutronCreateFloatingIpResponse extends SdkResponse {
         NeutronCreateFloatingIpResponse neutronCreateFloatingIpResponse = (NeutronCreateFloatingIpResponse) o;
         return Objects.equals(this.floatingip, neutronCreateFloatingIpResponse.floatingip);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(floatingip);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class NeutronCreateFloatingIpResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

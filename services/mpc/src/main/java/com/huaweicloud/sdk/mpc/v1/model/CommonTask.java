@@ -1,75 +1,57 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.ObsObjInfo;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * CommonTask
- */
-public class CommonTask  {
-
-
+/** CommonTask */
+public class CommonTask {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
+    @JsonProperty(value = "task_id")
+
     private String taskId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private String createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="input")
-    
+    @JsonProperty(value = "input")
+
     private ObsObjInfo input;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output")
-    
+    @JsonProperty(value = "output")
+
     private ObsObjInfo output;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_data")
-    
+    @JsonProperty(value = "user_data")
+
     private String userData;
 
     public CommonTask withTaskId(String taskId) {
@@ -77,13 +59,9 @@ public class CommonTask  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID 
-     * @return taskId
-     */
+    /** 任务ID
+     * 
+     * @return taskId */
     public String getTaskId() {
         return taskId;
     }
@@ -92,20 +70,14 @@ public class CommonTask  {
         this.taskId = taskId;
     }
 
-    
-
     public CommonTask withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务状态。  取值如下： - INIT：初始状态。 - WAITING：等待启动。 - PROCESSING：处理中。 - SUCCEED：处理成功。 - FAILED：处理失败。 - CANCELED：已取消。 
-     * @return status
-     */
+    /** 任务状态。 取值如下： - INIT：初始状态。 - WAITING：等待启动。 - PROCESSING：处理中。 - SUCCEED：处理成功。 - FAILED：处理失败。 - CANCELED：已取消。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -114,20 +86,14 @@ public class CommonTask  {
         this.status = status;
     }
 
-    
-
     public CommonTask withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务创建时间 
-     * @return createTime
-     */
+    /** 任务创建时间
+     * 
+     * @return createTime */
     public String getCreateTime() {
         return createTime;
     }
@@ -136,20 +102,14 @@ public class CommonTask  {
         this.createTime = createTime;
     }
 
-    
-
     public CommonTask withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务启动时间 
-     * @return startTime
-     */
+    /** 任务启动时间
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -158,20 +118,14 @@ public class CommonTask  {
         this.startTime = startTime;
     }
 
-    
-
     public CommonTask withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务结束时间 
-     * @return endTime
-     */
+    /** 任务结束时间
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -180,20 +134,14 @@ public class CommonTask  {
         this.endTime = endTime;
     }
 
-    
-
     public CommonTask withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误描述 
-     * @return description
-     */
+    /** 错误描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -202,27 +150,23 @@ public class CommonTask  {
         this.description = description;
     }
 
-    
-
     public CommonTask withInput(ObsObjInfo input) {
         this.input = input;
         return this;
     }
 
     public CommonTask withInput(Consumer<ObsObjInfo> inputSetter) {
-        if(this.input == null ){
+        if (this.input == null) {
             this.input = new ObsObjInfo();
             inputSetter.accept(this.input);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get input
-     * @return input
-     */
+    /** Get input
+     * 
+     * @return input */
     public ObsObjInfo getInput() {
         return input;
     }
@@ -231,27 +175,23 @@ public class CommonTask  {
         this.input = input;
     }
 
-    
-
     public CommonTask withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
     }
 
     public CommonTask withOutput(Consumer<ObsObjInfo> outputSetter) {
-        if(this.output == null ){
+        if (this.output == null) {
             this.output = new ObsObjInfo();
             outputSetter.accept(this.output);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get output
-     * @return output
-     */
+    /** Get output
+     * 
+     * @return output */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -260,20 +200,14 @@ public class CommonTask  {
         this.output = output;
     }
 
-    
-
     public CommonTask withUserData(String userData) {
         this.userData = userData;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户数据。 
-     * @return userData
-     */
+    /** 用户数据。
+     * 
+     * @return userData */
     public String getUserData() {
         return userData;
     }
@@ -281,8 +215,6 @@ public class CommonTask  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -293,20 +225,18 @@ public class CommonTask  {
             return false;
         }
         CommonTask commonTask = (CommonTask) o;
-        return Objects.equals(this.taskId, commonTask.taskId) &&
-            Objects.equals(this.status, commonTask.status) &&
-            Objects.equals(this.createTime, commonTask.createTime) &&
-            Objects.equals(this.startTime, commonTask.startTime) &&
-            Objects.equals(this.endTime, commonTask.endTime) &&
-            Objects.equals(this.description, commonTask.description) &&
-            Objects.equals(this.input, commonTask.input) &&
-            Objects.equals(this.output, commonTask.output) &&
-            Objects.equals(this.userData, commonTask.userData);
+        return Objects.equals(this.taskId, commonTask.taskId) && Objects.equals(this.status, commonTask.status)
+            && Objects.equals(this.createTime, commonTask.createTime)
+            && Objects.equals(this.startTime, commonTask.startTime) && Objects.equals(this.endTime, commonTask.endTime)
+            && Objects.equals(this.description, commonTask.description) && Objects.equals(this.input, commonTask.input)
+            && Objects.equals(this.output, commonTask.output) && Objects.equals(this.userData, commonTask.userData);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(taskId, status, createTime, startTime, endTime, description, input, output, userData);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -323,16 +253,13 @@ public class CommonTask  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

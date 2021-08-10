@@ -1,61 +1,41 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListVaultRequest  {
-
-
+/** Request Object */
+public class ListVaultRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
-    /**
-     * 云类型
-     */
+
+    /** 云类型 */
     public static final class CloudTypeEnum {
 
-        
-        /**
-         * Enum PUBLIC for value: "public"
-         */
+        /** Enum PUBLIC for value: "public" */
         public static final CloudTypeEnum PUBLIC = new CloudTypeEnum("public");
-        
-        /**
-         * Enum HYBRID for value: "hybrid"
-         */
+
+        /** Enum HYBRID for value: "hybrid" */
         public static final CloudTypeEnum HYBRID = new CloudTypeEnum("hybrid");
-        
 
         private static final Map<String, CloudTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -84,7 +64,7 @@ public class ListVaultRequest  {
 
         @JsonCreator
         public static CloudTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CloudTypeEnum result = STATIC_FIELDS.get(value);
@@ -95,7 +75,7 @@ public class ListVaultRequest  {
         }
 
         public static CloudTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CloudTypeEnum result = STATIC_FIELDS.get(value);
@@ -119,27 +99,19 @@ public class ListVaultRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cloud_type")
-    
+    @JsonProperty(value = "cloud_type")
+
     private CloudTypeEnum cloudType;
-    /**
-     * 保护类型
-     */
+
+    /** 保护类型 */
     public static final class ProtectTypeEnum {
 
-        
-        /**
-         * Enum BACKUP for value: "backup"
-         */
+        /** Enum BACKUP for value: "backup" */
         public static final ProtectTypeEnum BACKUP = new ProtectTypeEnum("backup");
-        
-        /**
-         * Enum REPLICATION for value: "replication"
-         */
+
+        /** Enum REPLICATION for value: "replication" */
         public static final ProtectTypeEnum REPLICATION = new ProtectTypeEnum("replication");
-        
 
         private static final Map<String, ProtectTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -168,7 +140,7 @@ public class ListVaultRequest  {
 
         @JsonCreator
         public static ProtectTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtectTypeEnum result = STATIC_FIELDS.get(value);
@@ -179,7 +151,7 @@ public class ListVaultRequest  {
         }
 
         public static ProtectTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtectTypeEnum result = STATIC_FIELDS.get(value);
@@ -203,46 +175,39 @@ public class ListVaultRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protect_type")
-    
+    @JsonProperty(value = "protect_type")
+
     private ProtectTypeEnum protectType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="object_type")
-    
+    @JsonProperty(value = "object_type")
+
     private String objectType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_id")
-    
+    @JsonProperty(value = "policy_id")
+
     private String policyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_ids")
-    
+    @JsonProperty(value = "resource_ids")
+
     private String resourceIds;
 
     public ListVaultRequest withLimit(Integer limit) {
@@ -250,15 +215,9 @@ public class ListVaultRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示条目数，正整数
-     * minimum: 1
-     * maximum: 1000
-     * @return limit
-     */
+    /** 每页显示条目数，正整数 minimum: 1 maximum: 1000
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -267,20 +226,14 @@ public class ListVaultRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListVaultRequest withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 存储库名称
-     * @return name
-     */
+    /** 存储库名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -289,20 +242,14 @@ public class ListVaultRequest  {
         this.name = name;
     }
 
-    
-
     public ListVaultRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移值,正整数
-     * @return offset
-     */
+    /** 偏移值,正整数
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -311,20 +258,14 @@ public class ListVaultRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListVaultRequest withCloudType(CloudTypeEnum cloudType) {
         this.cloudType = cloudType;
         return this;
     }
 
-    
-
-
-    /**
-     * 云类型
-     * @return cloudType
-     */
+    /** 云类型
+     * 
+     * @return cloudType */
     public CloudTypeEnum getCloudType() {
         return cloudType;
     }
@@ -333,20 +274,14 @@ public class ListVaultRequest  {
         this.cloudType = cloudType;
     }
 
-    
-
     public ListVaultRequest withProtectType(ProtectTypeEnum protectType) {
         this.protectType = protectType;
         return this;
     }
 
-    
-
-
-    /**
-     * 保护类型
-     * @return protectType
-     */
+    /** 保护类型
+     * 
+     * @return protectType */
     public ProtectTypeEnum getProtectType() {
         return protectType;
     }
@@ -355,20 +290,14 @@ public class ListVaultRequest  {
         this.protectType = protectType;
     }
 
-    
-
     public ListVaultRequest withObjectType(String objectType) {
         this.objectType = objectType;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源类型
-     * @return objectType
-     */
+    /** 资源类型
+     * 
+     * @return objectType */
     public String getObjectType() {
         return objectType;
     }
@@ -377,20 +306,14 @@ public class ListVaultRequest  {
         this.objectType = objectType;
     }
 
-    
-
     public ListVaultRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目id或all_granted_eps，all_granted_eps表示查询用户有权限的所有企业项目id
-     * @return enterpriseProjectId
-     */
+    /** 企业项目id或all_granted_eps，all_granted_eps表示查询用户有权限的所有企业项目id
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -399,20 +322,14 @@ public class ListVaultRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public ListVaultRequest withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 存储库ID
-     * @return id
-     */
+    /** 存储库ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -421,20 +338,14 @@ public class ListVaultRequest  {
         this.id = id;
     }
 
-    
-
     public ListVaultRequest withPolicyId(String policyId) {
         this.policyId = policyId;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略ID
-     * @return policyId
-     */
+    /** 策略ID
+     * 
+     * @return policyId */
     public String getPolicyId() {
         return policyId;
     }
@@ -443,20 +354,14 @@ public class ListVaultRequest  {
         this.policyId = policyId;
     }
 
-    
-
     public ListVaultRequest withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态
-     * @return status
-     */
+    /** 状态
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -465,20 +370,14 @@ public class ListVaultRequest  {
         this.status = status;
     }
 
-    
-
     public ListVaultRequest withResourceIds(String resourceIds) {
         this.resourceIds = resourceIds;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源id
-     * @return resourceIds
-     */
+    /** 资源id
+     * 
+     * @return resourceIds */
     public String getResourceIds() {
         return resourceIds;
     }
@@ -486,8 +385,6 @@ public class ListVaultRequest  {
     public void setResourceIds(String resourceIds) {
         this.resourceIds = resourceIds;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -498,22 +395,32 @@ public class ListVaultRequest  {
             return false;
         }
         ListVaultRequest listVaultRequest = (ListVaultRequest) o;
-        return Objects.equals(this.limit, listVaultRequest.limit) &&
-            Objects.equals(this.name, listVaultRequest.name) &&
-            Objects.equals(this.offset, listVaultRequest.offset) &&
-            Objects.equals(this.cloudType, listVaultRequest.cloudType) &&
-            Objects.equals(this.protectType, listVaultRequest.protectType) &&
-            Objects.equals(this.objectType, listVaultRequest.objectType) &&
-            Objects.equals(this.enterpriseProjectId, listVaultRequest.enterpriseProjectId) &&
-            Objects.equals(this.id, listVaultRequest.id) &&
-            Objects.equals(this.policyId, listVaultRequest.policyId) &&
-            Objects.equals(this.status, listVaultRequest.status) &&
-            Objects.equals(this.resourceIds, listVaultRequest.resourceIds);
+        return Objects.equals(this.limit, listVaultRequest.limit) && Objects.equals(this.name, listVaultRequest.name)
+            && Objects.equals(this.offset, listVaultRequest.offset)
+            && Objects.equals(this.cloudType, listVaultRequest.cloudType)
+            && Objects.equals(this.protectType, listVaultRequest.protectType)
+            && Objects.equals(this.objectType, listVaultRequest.objectType)
+            && Objects.equals(this.enterpriseProjectId, listVaultRequest.enterpriseProjectId)
+            && Objects.equals(this.id, listVaultRequest.id) && Objects.equals(this.policyId, listVaultRequest.policyId)
+            && Objects.equals(this.status, listVaultRequest.status)
+            && Objects.equals(this.resourceIds, listVaultRequest.resourceIds);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(limit, name, offset, cloudType, protectType, objectType, enterpriseProjectId, id, policyId, status, resourceIds);
+        return Objects.hash(limit,
+            name,
+            offset,
+            cloudType,
+            protectType,
+            objectType,
+            enterpriseProjectId,
+            id,
+            policyId,
+            status,
+            resourceIds);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -532,16 +439,13 @@ public class ListVaultRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

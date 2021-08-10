@@ -32,25 +32,20 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public final class ExceptionUtils {
+
     private static final String CONNECT_TIMEOUT_MSG = "connect timed out";
 
-    /**
-     * The utility class should hide the public constructor
-     */
+    /** The utility class should hide the public constructor */
     private ExceptionUtils() {
 
     }
 
-    /**
-     * resolve the exception message from http response
+    /** resolve the exception message from http response
      *
      * @param httpResponse HttpResponse
-     * @return the SdkErrorMessage
-     */
+     * @return the SdkErrorMessage */
     public static SdkErrorMessage extractErrorMessage(HttpResponse httpResponse) {
         String strBody = httpResponse.getBodyAsString();
         SdkErrorMessage sdkErrorMessage = new SdkErrorMessage(httpResponse.getStatusCode());
@@ -69,8 +64,8 @@ public final class ExceptionUtils {
                 sdkErrorMessage.setErrorMsg(strBody);
             }
 
-            if (Objects.isNull(sdkErrorMessage.getRequestId()) && Objects.nonNull(
-                httpResponse.getHeader(Constants.X_REQUEST_ID))) {
+            if (Objects.isNull(sdkErrorMessage.getRequestId())
+                && Objects.nonNull(httpResponse.getHeader(Constants.X_REQUEST_ID))) {
                 sdkErrorMessage.setRequestId(httpResponse.getHeader(Constants.X_REQUEST_ID));
             }
         } catch (SdkException e) {
@@ -81,11 +76,10 @@ public final class ExceptionUtils {
     }
 
     private static void processErrorMessageFromMap(SdkErrorMessage sdkErrorMessage, Map errResult) {
-        sdkErrorMessage.withErrorCode(errResult.containsKey(Constants.ERROR_CODE)
-            ? errResult.get(Constants.ERROR_CODE).toString()
-            : errResult.containsKey(Constants.CODE) ? errResult.get(Constants.CODE).toString() : null)
-            .withErrorMsg(errResult.containsKey(Constants.ERROR_MSG)
-                ? errResult.get(Constants.ERROR_MSG).toString()
+        sdkErrorMessage
+            .withErrorCode(errResult.containsKey(Constants.ERROR_CODE) ? errResult.get(Constants.ERROR_CODE).toString()
+                : errResult.containsKey(Constants.CODE) ? errResult.get(Constants.CODE).toString() : null)
+            .withErrorMsg(errResult.containsKey(Constants.ERROR_MSG) ? errResult.get(Constants.ERROR_MSG).toString()
                 : errResult.containsKey(Constants.MESSAGE) ? errResult.get(Constants.MESSAGE).toString() : null)
             .withRequestId(
                 errResult.containsKey(Constants.REQUEST_ID) ? errResult.get(Constants.REQUEST_ID).toString() : null);

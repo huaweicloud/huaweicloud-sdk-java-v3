@@ -1,57 +1,40 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyRespPolicies;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowTopicAccessPolicyResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic_type")
-    
+    @JsonProperty(value = "topic_type")
+
     private Integer topicType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policies")
-    
+    @JsonProperty(value = "policies")
+
     private List<ShowTopicAccessPolicyRespPolicies> policies = null;
-    
+
     public ShowTopicAccessPolicyResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * topic名称。
-     * @return name
-     */
+    /** topic名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -60,20 +43,14 @@ public class ShowTopicAccessPolicyResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowTopicAccessPolicyResponse withTopicType(Integer topicType) {
         this.topicType = topicType;
         return this;
     }
 
-    
-
-
-    /**
-     * topic类型。
-     * @return topicType
-     */
+    /** topic类型。
+     * 
+     * @return topicType */
     public Integer getTopicType() {
         return topicType;
     }
@@ -82,34 +59,31 @@ public class ShowTopicAccessPolicyResponse extends SdkResponse {
         this.topicType = topicType;
     }
 
-    
-
     public ShowTopicAccessPolicyResponse withPolicies(List<ShowTopicAccessPolicyRespPolicies> policies) {
         this.policies = policies;
         return this;
     }
 
-    
     public ShowTopicAccessPolicyResponse addPoliciesItem(ShowTopicAccessPolicyRespPolicies policiesItem) {
-        if(this.policies == null) {
+        if (this.policies == null) {
             this.policies = new ArrayList<>();
         }
         this.policies.add(policiesItem);
         return this;
     }
 
-    public ShowTopicAccessPolicyResponse withPolicies(Consumer<List<ShowTopicAccessPolicyRespPolicies>> policiesSetter) {
-        if(this.policies == null) {
+    public ShowTopicAccessPolicyResponse withPolicies(
+        Consumer<List<ShowTopicAccessPolicyRespPolicies>> policiesSetter) {
+        if (this.policies == null) {
             this.policies = new ArrayList<>();
         }
         policiesSetter.accept(this.policies);
         return this;
     }
 
-    /**
-     * 权限列表。
-     * @return policies
-     */
+    /** 权限列表。
+     * 
+     * @return policies */
     public List<ShowTopicAccessPolicyRespPolicies> getPolicies() {
         return policies;
     }
@@ -117,8 +91,6 @@ public class ShowTopicAccessPolicyResponse extends SdkResponse {
     public void setPolicies(List<ShowTopicAccessPolicyRespPolicies> policies) {
         this.policies = policies;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -129,14 +101,16 @@ public class ShowTopicAccessPolicyResponse extends SdkResponse {
             return false;
         }
         ShowTopicAccessPolicyResponse showTopicAccessPolicyResponse = (ShowTopicAccessPolicyResponse) o;
-        return Objects.equals(this.name, showTopicAccessPolicyResponse.name) &&
-            Objects.equals(this.topicType, showTopicAccessPolicyResponse.topicType) &&
-            Objects.equals(this.policies, showTopicAccessPolicyResponse.policies);
+        return Objects.equals(this.name, showTopicAccessPolicyResponse.name)
+            && Objects.equals(this.topicType, showTopicAccessPolicyResponse.topicType)
+            && Objects.equals(this.policies, showTopicAccessPolicyResponse.policies);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, topicType, policies);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -147,16 +121,13 @@ public class ShowTopicAccessPolicyResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

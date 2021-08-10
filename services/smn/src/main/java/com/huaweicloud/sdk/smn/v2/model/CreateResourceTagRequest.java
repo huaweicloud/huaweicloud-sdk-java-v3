@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.smn.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.smn.v2.model.CreateResourceTagRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateResourceTagRequest  {
-
-
+/** Request Object */
+public class CreateResourceTagRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type")
-    
+    @JsonProperty(value = "resource_type")
+
     private String resourceType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
+    @JsonProperty(value = "resource_id")
+
     private String resourceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private CreateResourceTagRequestBody body;
 
     public CreateResourceTagRequest withResourceType(String resourceType) {
@@ -41,13 +29,9 @@ public class CreateResourceTagRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 资源类型，目前有:  smn_topic，主题  smn_sms，短信  smn_application，移动推送
-     * @return resourceType
-     */
+    /** 资源类型，目前有: smn_topic，主题 smn_sms，短信 smn_application，移动推送
+     * 
+     * @return resourceType */
     public String getResourceType() {
         return resourceType;
     }
@@ -56,20 +40,15 @@ public class CreateResourceTagRequest  {
         this.resourceType = resourceType;
     }
 
-    
-
     public CreateResourceTagRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源ID。  获取resource_id的方法：  当resource_type为“smn_topic”时， 手动添加请求消息头“X-SMN-RESOURCEID-TYPE=name”，资源ID即为topic名称。 不添加请求消息头，通过“查询资源实例”，获取资源ID。 当resource_type为“smn_sms”时，resource_id为签名ID。您可在控制台获取。
-     * @return resourceId
-     */
+    /** 资源ID。 获取resource_id的方法： 当resource_type为“smn_topic”时， 手动添加请求消息头“X-SMN-RESOURCEID-TYPE=name”，资源ID即为topic名称。
+     * 不添加请求消息头，通过“查询资源实例”，获取资源ID。 当resource_type为“smn_sms”时，resource_id为签名ID。您可在控制台获取。
+     * 
+     * @return resourceId */
     public String getResourceId() {
         return resourceId;
     }
@@ -78,27 +57,23 @@ public class CreateResourceTagRequest  {
         this.resourceId = resourceId;
     }
 
-    
-
     public CreateResourceTagRequest withBody(CreateResourceTagRequestBody body) {
         this.body = body;
         return this;
     }
 
     public CreateResourceTagRequest withBody(Consumer<CreateResourceTagRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CreateResourceTagRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public CreateResourceTagRequestBody getBody() {
         return body;
     }
@@ -106,8 +81,6 @@ public class CreateResourceTagRequest  {
     public void setBody(CreateResourceTagRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +91,16 @@ public class CreateResourceTagRequest  {
             return false;
         }
         CreateResourceTagRequest createResourceTagRequest = (CreateResourceTagRequest) o;
-        return Objects.equals(this.resourceType, createResourceTagRequest.resourceType) &&
-            Objects.equals(this.resourceId, createResourceTagRequest.resourceId) &&
-            Objects.equals(this.body, createResourceTagRequest.body);
+        return Objects.equals(this.resourceType, createResourceTagRequest.resourceType)
+            && Objects.equals(this.resourceId, createResourceTagRequest.resourceId)
+            && Objects.equals(this.body, createResourceTagRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resourceType, resourceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +111,13 @@ public class CreateResourceTagRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

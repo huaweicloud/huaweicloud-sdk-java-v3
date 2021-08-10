@@ -1,182 +1,142 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.waf.v1.model.BlockPage;
-import com.huaweicloud.sdk.waf.v1.model.PremiumWafHost;
-import com.huaweicloud.sdk.waf.v1.model.PremiumWafServer;
-import com.huaweicloud.sdk.waf.v1.model.TrafficMark;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class UpdatePremiumHostResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policyid")
-    
+    @JsonProperty(value = "policyid")
+
     private String policyid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hostname")
-    
+    @JsonProperty(value = "hostname")
+
     private String hostname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domainid")
-    
+    @JsonProperty(value = "domainid")
+
     private String domainid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_code")
-    
+    @JsonProperty(value = "access_code")
+
     private String accessCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
+
     private String protocol;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server")
-    
+    @JsonProperty(value = "server")
+
     private List<PremiumWafServer> server = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificateid")
-    
+    @JsonProperty(value = "certificateid")
+
     private String certificateid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificatename")
-    
+    @JsonProperty(value = "certificatename")
+
     private String certificatename;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tls")
-    
+    @JsonProperty(value = "tls")
+
     private String tls;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cipher")
-    
+    @JsonProperty(value = "cipher")
+
     private String cipher;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="proxy")
-    
+    @JsonProperty(value = "proxy")
+
     private Boolean proxy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="locked")
-    
+    @JsonProperty(value = "locked")
+
     private Integer locked;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protect_status")
-    
+    @JsonProperty(value = "protect_status")
+
     private Integer protectStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_status")
-    
+    @JsonProperty(value = "access_status")
+
     private Integer accessStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timestamp")
-    
+    @JsonProperty(value = "timestamp")
+
     private Long timestamp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="block_page")
-    
+    @JsonProperty(value = "block_page")
+
     private BlockPage blockPage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extend")
-    
+    @JsonProperty(value = "extend")
+
     private Map<String, String> extend = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="traffic_mark")
-    
+    @JsonProperty(value = "traffic_mark")
+
     private TrafficMark trafficMark;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flag")
-    
+    @JsonProperty(value = "flag")
+
     private Map<String, String> flag = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mode")
-    
+    @JsonProperty(value = "mode")
+
     private String mode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pool_ids")
-    
+    @JsonProperty(value = "pool_ids")
+
     private List<String> poolIds = null;
-    
+
     public UpdatePremiumHostResponse withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名id
-     * @return id
-     */
+    /** 域名id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -185,20 +145,14 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public UpdatePremiumHostResponse withPolicyid(String policyid) {
         this.policyid = policyid;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略id
-     * @return policyid
-     */
+    /** 策略id
+     * 
+     * @return policyid */
     public String getPolicyid() {
         return policyid;
     }
@@ -207,20 +161,14 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.policyid = policyid;
     }
 
-    
-
     public UpdatePremiumHostResponse withHostname(String hostname) {
         this.hostname = hostname;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建的云模式防护域名
-     * @return hostname
-     */
+    /** 创建的云模式防护域名
+     * 
+     * @return hostname */
     public String getHostname() {
         return hostname;
     }
@@ -229,20 +177,14 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.hostname = hostname;
     }
 
-    
-
     public UpdatePremiumHostResponse withDomainid(String domainid) {
         this.domainid = domainid;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户Domain ID
-     * @return domainid
-     */
+    /** 用户Domain ID
+     * 
+     * @return domainid */
     public String getDomainid() {
         return domainid;
     }
@@ -251,20 +193,14 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.domainid = domainid;
     }
 
-    
-
     public UpdatePremiumHostResponse withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户的project_id
-     * @return projectId
-     */
+    /** 用户的project_id
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -273,20 +209,14 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
-    
-
     public UpdatePremiumHostResponse withAccessCode(String accessCode) {
         this.accessCode = accessCode;
         return this;
     }
 
-    
-
-
-    /**
-     * cname前缀
-     * @return accessCode
-     */
+    /** cname前缀
+     * 
+     * @return accessCode */
     public String getAccessCode() {
         return accessCode;
     }
@@ -295,20 +225,14 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.accessCode = accessCode;
     }
 
-    
-
     public UpdatePremiumHostResponse withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
     }
 
-    
-
-
-    /**
-     * http协议类型
-     * @return protocol
-     */
+    /** http协议类型
+     * 
+     * @return protocol */
     public String getProtocol() {
         return protocol;
     }
@@ -317,16 +241,13 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.protocol = protocol;
     }
 
-    
-
     public UpdatePremiumHostResponse withServer(List<PremiumWafServer> server) {
         this.server = server;
         return this;
     }
 
-    
     public UpdatePremiumHostResponse addServerItem(PremiumWafServer serverItem) {
-        if(this.server == null) {
+        if (this.server == null) {
             this.server = new ArrayList<>();
         }
         this.server.add(serverItem);
@@ -334,17 +255,16 @@ public class UpdatePremiumHostResponse extends SdkResponse {
     }
 
     public UpdatePremiumHostResponse withServer(Consumer<List<PremiumWafServer>> serverSetter) {
-        if(this.server == null) {
+        if (this.server == null) {
             this.server = new ArrayList<>();
         }
         serverSetter.accept(this.server);
         return this;
     }
 
-    /**
-     * 源站信息
-     * @return server
-     */
+    /** 源站信息
+     * 
+     * @return server */
     public List<PremiumWafServer> getServer() {
         return server;
     }
@@ -353,20 +273,14 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.server = server;
     }
 
-    
-
     public UpdatePremiumHostResponse withCertificateid(String certificateid) {
         this.certificateid = certificateid;
         return this;
     }
 
-    
-
-
-    /**
-     * 返回的证书id
-     * @return certificateid
-     */
+    /** 返回的证书id
+     * 
+     * @return certificateid */
     public String getCertificateid() {
         return certificateid;
     }
@@ -375,20 +289,14 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.certificateid = certificateid;
     }
 
-    
-
     public UpdatePremiumHostResponse withCertificatename(String certificatename) {
         this.certificatename = certificatename;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书名称
-     * @return certificatename
-     */
+    /** 证书名称
+     * 
+     * @return certificatename */
     public String getCertificatename() {
         return certificatename;
     }
@@ -397,20 +305,14 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.certificatename = certificatename;
     }
 
-    
-
     public UpdatePremiumHostResponse withTls(String tls) {
         this.tls = tls;
         return this;
     }
 
-    
-
-
-    /**
-     * 支持最低的TLS版本
-     * @return tls
-     */
+    /** 支持最低的TLS版本
+     * 
+     * @return tls */
     public String getTls() {
         return tls;
     }
@@ -419,20 +321,14 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.tls = tls;
     }
 
-    
-
     public UpdatePremiumHostResponse withCipher(String cipher) {
         this.cipher = cipher;
         return this;
     }
 
-    
-
-
-    /**
-     * 加密套件代码
-     * @return cipher
-     */
+    /** 加密套件代码
+     * 
+     * @return cipher */
     public String getCipher() {
         return cipher;
     }
@@ -441,20 +337,14 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.cipher = cipher;
     }
 
-    
-
     public UpdatePremiumHostResponse withProxy(Boolean proxy) {
         this.proxy = proxy;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启了代理
-     * @return proxy
-     */
+    /** 是否开启了代理
+     * 
+     * @return proxy */
     public Boolean getProxy() {
         return proxy;
     }
@@ -463,20 +353,14 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.proxy = proxy;
     }
 
-    
-
     public UpdatePremiumHostResponse withLocked(Integer locked) {
         this.locked = locked;
         return this;
     }
 
-    
-
-
-    /**
-     * 锁定状态
-     * @return locked
-     */
+    /** 锁定状态
+     * 
+     * @return locked */
     public Integer getLocked() {
         return locked;
     }
@@ -485,20 +369,14 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.locked = locked;
     }
 
-    
-
     public UpdatePremiumHostResponse withProtectStatus(Integer protectStatus) {
         this.protectStatus = protectStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 防护状态
-     * @return protectStatus
-     */
+    /** 防护状态
+     * 
+     * @return protectStatus */
     public Integer getProtectStatus() {
         return protectStatus;
     }
@@ -507,20 +385,14 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.protectStatus = protectStatus;
     }
 
-    
-
     public UpdatePremiumHostResponse withAccessStatus(Integer accessStatus) {
         this.accessStatus = accessStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 接入状态
-     * @return accessStatus
-     */
+    /** 接入状态
+     * 
+     * @return accessStatus */
     public Integer getAccessStatus() {
         return accessStatus;
     }
@@ -529,20 +401,14 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.accessStatus = accessStatus;
     }
 
-    
-
     public UpdatePremiumHostResponse withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建防护域名的时间
-     * @return timestamp
-     */
+    /** 创建防护域名的时间
+     * 
+     * @return timestamp */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -551,27 +417,23 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.timestamp = timestamp;
     }
 
-    
-
     public UpdatePremiumHostResponse withBlockPage(BlockPage blockPage) {
         this.blockPage = blockPage;
         return this;
     }
 
     public UpdatePremiumHostResponse withBlockPage(Consumer<BlockPage> blockPageSetter) {
-        if(this.blockPage == null ){
+        if (this.blockPage == null) {
             this.blockPage = new BlockPage();
             blockPageSetter.accept(this.blockPage);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get blockPage
-     * @return blockPage
-     */
+    /** Get blockPage
+     * 
+     * @return blockPage */
     public BlockPage getBlockPage() {
         return blockPage;
     }
@@ -580,17 +442,13 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.blockPage = blockPage;
     }
 
-    
-
     public UpdatePremiumHostResponse withExtend(Map<String, String> extend) {
         this.extend = extend;
         return this;
     }
 
-    
-
     public UpdatePremiumHostResponse putExtendItem(String key, String extendItem) {
-        if(this.extend == null) {
+        if (this.extend == null) {
             this.extend = new HashMap<>();
         }
         this.extend.put(key, extendItem);
@@ -598,16 +456,16 @@ public class UpdatePremiumHostResponse extends SdkResponse {
     }
 
     public UpdatePremiumHostResponse withExtend(Consumer<Map<String, String>> extendSetter) {
-        if(this.extend == null) {
+        if (this.extend == null) {
             this.extend = new HashMap<>();
         }
         extendSetter.accept(this.extend);
         return this;
     }
-    /**
-     * 可扩展属性
-     * @return extend
-     */
+
+    /** 可扩展属性
+     * 
+     * @return extend */
     public Map<String, String> getExtend() {
         return extend;
     }
@@ -616,27 +474,23 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.extend = extend;
     }
 
-    
-
     public UpdatePremiumHostResponse withTrafficMark(TrafficMark trafficMark) {
         this.trafficMark = trafficMark;
         return this;
     }
 
     public UpdatePremiumHostResponse withTrafficMark(Consumer<TrafficMark> trafficMarkSetter) {
-        if(this.trafficMark == null ){
+        if (this.trafficMark == null) {
             this.trafficMark = new TrafficMark();
             trafficMarkSetter.accept(this.trafficMark);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get trafficMark
-     * @return trafficMark
-     */
+    /** Get trafficMark
+     * 
+     * @return trafficMark */
     public TrafficMark getTrafficMark() {
         return trafficMark;
     }
@@ -645,17 +499,13 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.trafficMark = trafficMark;
     }
 
-    
-
     public UpdatePremiumHostResponse withFlag(Map<String, String> flag) {
         this.flag = flag;
         return this;
     }
 
-    
-
     public UpdatePremiumHostResponse putFlagItem(String key, String flagItem) {
-        if(this.flag == null) {
+        if (this.flag == null) {
             this.flag = new HashMap<>();
         }
         this.flag.put(key, flagItem);
@@ -663,16 +513,16 @@ public class UpdatePremiumHostResponse extends SdkResponse {
     }
 
     public UpdatePremiumHostResponse withFlag(Consumer<Map<String, String>> flagSetter) {
-        if(this.flag == null) {
+        if (this.flag == null) {
             this.flag = new HashMap<>();
         }
         flagSetter.accept(this.flag);
         return this;
     }
-    /**
-     * 域名特殊标记
-     * @return flag
-     */
+
+    /** 域名特殊标记
+     * 
+     * @return flag */
     public Map<String, String> getFlag() {
         return flag;
     }
@@ -681,20 +531,14 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.flag = flag;
     }
 
-    
-
     public UpdatePremiumHostResponse withMode(String mode) {
         this.mode = mode;
         return this;
     }
 
-    
-
-
-    /**
-     * 独享模式特殊域名模式（仅特殊模式需要，如elb）
-     * @return mode
-     */
+    /** 独享模式特殊域名模式（仅特殊模式需要，如elb）
+     * 
+     * @return mode */
     public String getMode() {
         return mode;
     }
@@ -703,16 +547,13 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         this.mode = mode;
     }
 
-    
-
     public UpdatePremiumHostResponse withPoolIds(List<String> poolIds) {
         this.poolIds = poolIds;
         return this;
     }
 
-    
     public UpdatePremiumHostResponse addPoolIdsItem(String poolIdsItem) {
-        if(this.poolIds == null) {
+        if (this.poolIds == null) {
             this.poolIds = new ArrayList<>();
         }
         this.poolIds.add(poolIdsItem);
@@ -720,17 +561,16 @@ public class UpdatePremiumHostResponse extends SdkResponse {
     }
 
     public UpdatePremiumHostResponse withPoolIds(Consumer<List<String>> poolIdsSetter) {
-        if(this.poolIds == null) {
+        if (this.poolIds == null) {
             this.poolIds = new ArrayList<>();
         }
         poolIdsSetter.accept(this.poolIds);
         return this;
     }
 
-    /**
-     * 域名关联的组ID（仅特殊模式需要，如elb）
-     * @return poolIds
-     */
+    /** 域名关联的组ID（仅特殊模式需要，如elb）
+     * 
+     * @return poolIds */
     public List<String> getPoolIds() {
         return poolIds;
     }
@@ -738,8 +578,6 @@ public class UpdatePremiumHostResponse extends SdkResponse {
     public void setPoolIds(List<String> poolIds) {
         this.poolIds = poolIds;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -750,34 +588,58 @@ public class UpdatePremiumHostResponse extends SdkResponse {
             return false;
         }
         UpdatePremiumHostResponse updatePremiumHostResponse = (UpdatePremiumHostResponse) o;
-        return Objects.equals(this.id, updatePremiumHostResponse.id) &&
-            Objects.equals(this.policyid, updatePremiumHostResponse.policyid) &&
-            Objects.equals(this.hostname, updatePremiumHostResponse.hostname) &&
-            Objects.equals(this.domainid, updatePremiumHostResponse.domainid) &&
-            Objects.equals(this.projectId, updatePremiumHostResponse.projectId) &&
-            Objects.equals(this.accessCode, updatePremiumHostResponse.accessCode) &&
-            Objects.equals(this.protocol, updatePremiumHostResponse.protocol) &&
-            Objects.equals(this.server, updatePremiumHostResponse.server) &&
-            Objects.equals(this.certificateid, updatePremiumHostResponse.certificateid) &&
-            Objects.equals(this.certificatename, updatePremiumHostResponse.certificatename) &&
-            Objects.equals(this.tls, updatePremiumHostResponse.tls) &&
-            Objects.equals(this.cipher, updatePremiumHostResponse.cipher) &&
-            Objects.equals(this.proxy, updatePremiumHostResponse.proxy) &&
-            Objects.equals(this.locked, updatePremiumHostResponse.locked) &&
-            Objects.equals(this.protectStatus, updatePremiumHostResponse.protectStatus) &&
-            Objects.equals(this.accessStatus, updatePremiumHostResponse.accessStatus) &&
-            Objects.equals(this.timestamp, updatePremiumHostResponse.timestamp) &&
-            Objects.equals(this.blockPage, updatePremiumHostResponse.blockPage) &&
-            Objects.equals(this.extend, updatePremiumHostResponse.extend) &&
-            Objects.equals(this.trafficMark, updatePremiumHostResponse.trafficMark) &&
-            Objects.equals(this.flag, updatePremiumHostResponse.flag) &&
-            Objects.equals(this.mode, updatePremiumHostResponse.mode) &&
-            Objects.equals(this.poolIds, updatePremiumHostResponse.poolIds);
+        return Objects.equals(this.id, updatePremiumHostResponse.id)
+            && Objects.equals(this.policyid, updatePremiumHostResponse.policyid)
+            && Objects.equals(this.hostname, updatePremiumHostResponse.hostname)
+            && Objects.equals(this.domainid, updatePremiumHostResponse.domainid)
+            && Objects.equals(this.projectId, updatePremiumHostResponse.projectId)
+            && Objects.equals(this.accessCode, updatePremiumHostResponse.accessCode)
+            && Objects.equals(this.protocol, updatePremiumHostResponse.protocol)
+            && Objects.equals(this.server, updatePremiumHostResponse.server)
+            && Objects.equals(this.certificateid, updatePremiumHostResponse.certificateid)
+            && Objects.equals(this.certificatename, updatePremiumHostResponse.certificatename)
+            && Objects.equals(this.tls, updatePremiumHostResponse.tls)
+            && Objects.equals(this.cipher, updatePremiumHostResponse.cipher)
+            && Objects.equals(this.proxy, updatePremiumHostResponse.proxy)
+            && Objects.equals(this.locked, updatePremiumHostResponse.locked)
+            && Objects.equals(this.protectStatus, updatePremiumHostResponse.protectStatus)
+            && Objects.equals(this.accessStatus, updatePremiumHostResponse.accessStatus)
+            && Objects.equals(this.timestamp, updatePremiumHostResponse.timestamp)
+            && Objects.equals(this.blockPage, updatePremiumHostResponse.blockPage)
+            && Objects.equals(this.extend, updatePremiumHostResponse.extend)
+            && Objects.equals(this.trafficMark, updatePremiumHostResponse.trafficMark)
+            && Objects.equals(this.flag, updatePremiumHostResponse.flag)
+            && Objects.equals(this.mode, updatePremiumHostResponse.mode)
+            && Objects.equals(this.poolIds, updatePremiumHostResponse.poolIds);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, policyid, hostname, domainid, projectId, accessCode, protocol, server, certificateid, certificatename, tls, cipher, proxy, locked, protectStatus, accessStatus, timestamp, blockPage, extend, trafficMark, flag, mode, poolIds);
+        return Objects.hash(id,
+            policyid,
+            hostname,
+            domainid,
+            projectId,
+            accessCode,
+            protocol,
+            server,
+            certificateid,
+            certificatename,
+            tls,
+            cipher,
+            proxy,
+            locked,
+            protectStatus,
+            accessStatus,
+            timestamp,
+            blockPage,
+            extend,
+            trafficMark,
+            flag,
+            mode,
+            poolIds);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -808,16 +670,13 @@ public class UpdatePremiumHostResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

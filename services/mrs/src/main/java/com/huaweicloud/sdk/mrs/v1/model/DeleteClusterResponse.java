@@ -1,28 +1,17 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class DeleteClusterResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private String body;
 
     public DeleteClusterResponse withBody(String body) {
@@ -30,13 +19,9 @@ public class DeleteClusterResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public String getBody() {
         return body;
     }
@@ -44,8 +29,6 @@ public class DeleteClusterResponse extends SdkResponse {
     public void setBody(String body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -58,10 +41,12 @@ public class DeleteClusterResponse extends SdkResponse {
         DeleteClusterResponse deleteClusterResponse = (DeleteClusterResponse) o;
         return Objects.equals(this.body, deleteClusterResponse.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -70,16 +55,13 @@ public class DeleteClusterResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

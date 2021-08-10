@@ -1,106 +1,82 @@
 package com.huaweicloud.sdk.projectman.v4.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateCustomfieldsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="options")
-    
+    @JsonProperty(value = "options")
+
     private String options;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Integer id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="identifier")
-    
+    @JsonProperty(value = "identifier")
+
     private String identifier;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private Integer projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tracker_id")
-    
+    @JsonProperty(value = "tracker_id")
+
     private Integer trackerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="custom_field")
-    
+    @JsonProperty(value = "custom_field")
+
     private String customField;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sort")
-    
+    @JsonProperty(value = "sort")
+
     private Integer sort;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="memo")
-    
+    @JsonProperty(value = "memo")
+
     private String memo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
+    @JsonProperty(value = "created")
+
     private String created;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="modified")
-    
+    @JsonProperty(value = "modified")
+
     private String modified;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_delete")
-    
+    @JsonProperty(value = "is_delete")
+
     private Boolean isDelete;
 
     public CreateCustomfieldsResponse withOptions(String options) {
@@ -108,13 +84,9 @@ public class CreateCustomfieldsResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 字段选项
-     * @return options
-     */
+    /** 字段选项
+     * 
+     * @return options */
     public String getOptions() {
         return options;
     }
@@ -123,20 +95,14 @@ public class CreateCustomfieldsResponse extends SdkResponse {
         this.options = options;
     }
 
-    
-
     public CreateCustomfieldsResponse withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * 系统字段
-     * @return region
-     */
+    /** 系统字段
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -145,20 +111,14 @@ public class CreateCustomfieldsResponse extends SdkResponse {
         this.region = region;
     }
 
-    
-
     public CreateCustomfieldsResponse withId(Integer id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 字段ID
-     * @return id
-     */
+    /** 字段ID
+     * 
+     * @return id */
     public Integer getId() {
         return id;
     }
@@ -167,20 +127,14 @@ public class CreateCustomfieldsResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public CreateCustomfieldsResponse withIdentifier(String identifier) {
         this.identifier = identifier;
         return this;
     }
 
-    
-
-
-    /**
-     * 字段ID
-     * @return identifier
-     */
+    /** 字段ID
+     * 
+     * @return identifier */
     public String getIdentifier() {
         return identifier;
     }
@@ -189,20 +143,14 @@ public class CreateCustomfieldsResponse extends SdkResponse {
         this.identifier = identifier;
     }
 
-    
-
     public CreateCustomfieldsResponse withProjectId(Integer projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目ID
-     * @return projectId
-     */
+    /** 项目ID
+     * 
+     * @return projectId */
     public Integer getProjectId() {
         return projectId;
     }
@@ -211,20 +159,14 @@ public class CreateCustomfieldsResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
-    
-
     public CreateCustomfieldsResponse withTrackerId(Integer trackerId) {
         this.trackerId = trackerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 工作项类型id
-     * @return trackerId
-     */
+    /** 工作项类型id
+     * 
+     * @return trackerId */
     public Integer getTrackerId() {
         return trackerId;
     }
@@ -233,20 +175,14 @@ public class CreateCustomfieldsResponse extends SdkResponse {
         this.trackerId = trackerId;
     }
 
-    
-
     public CreateCustomfieldsResponse withCustomField(String customField) {
         this.customField = customField;
         return this;
     }
 
-    
-
-
-    /**
-     * 系统字段名
-     * @return customField
-     */
+    /** 系统字段名
+     * 
+     * @return customField */
     public String getCustomField() {
         return customField;
     }
@@ -255,20 +191,14 @@ public class CreateCustomfieldsResponse extends SdkResponse {
         this.customField = customField;
     }
 
-    
-
     public CreateCustomfieldsResponse withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 字段类型
-     * @return type
-     */
+    /** 字段类型
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -277,20 +207,14 @@ public class CreateCustomfieldsResponse extends SdkResponse {
         this.type = type;
     }
 
-    
-
     public CreateCustomfieldsResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 字段名称
-     * @return name
-     */
+    /** 字段名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -299,20 +223,14 @@ public class CreateCustomfieldsResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public CreateCustomfieldsResponse withSort(Integer sort) {
         this.sort = sort;
         return this;
     }
 
-    
-
-
-    /**
-     * 系统字段
-     * @return sort
-     */
+    /** 系统字段
+     * 
+     * @return sort */
     public Integer getSort() {
         return sort;
     }
@@ -321,20 +239,14 @@ public class CreateCustomfieldsResponse extends SdkResponse {
         this.sort = sort;
     }
 
-    
-
     public CreateCustomfieldsResponse withMemo(String memo) {
         this.memo = memo;
         return this;
     }
 
-    
-
-
-    /**
-     * 字段描述
-     * @return memo
-     */
+    /** 字段描述
+     * 
+     * @return memo */
     public String getMemo() {
         return memo;
     }
@@ -343,20 +255,14 @@ public class CreateCustomfieldsResponse extends SdkResponse {
         this.memo = memo;
     }
 
-    
-
     public CreateCustomfieldsResponse withCreated(String created) {
         this.created = created;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return created
-     */
+    /** 创建时间
+     * 
+     * @return created */
     public String getCreated() {
         return created;
     }
@@ -365,20 +271,14 @@ public class CreateCustomfieldsResponse extends SdkResponse {
         this.created = created;
     }
 
-    
-
     public CreateCustomfieldsResponse withModified(String modified) {
         this.modified = modified;
         return this;
     }
 
-    
-
-
-    /**
-     * 修改时间
-     * @return modified
-     */
+    /** 修改时间
+     * 
+     * @return modified */
     public String getModified() {
         return modified;
     }
@@ -387,20 +287,14 @@ public class CreateCustomfieldsResponse extends SdkResponse {
         this.modified = modified;
     }
 
-    
-
     public CreateCustomfieldsResponse withIsDelete(Boolean isDelete) {
         this.isDelete = isDelete;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否被删除
-     * @return isDelete
-     */
+    /** 是否被删除
+     * 
+     * @return isDelete */
     public Boolean getIsDelete() {
         return isDelete;
     }
@@ -408,8 +302,6 @@ public class CreateCustomfieldsResponse extends SdkResponse {
     public void setIsDelete(Boolean isDelete) {
         this.isDelete = isDelete;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -420,25 +312,40 @@ public class CreateCustomfieldsResponse extends SdkResponse {
             return false;
         }
         CreateCustomfieldsResponse createCustomfieldsResponse = (CreateCustomfieldsResponse) o;
-        return Objects.equals(this.options, createCustomfieldsResponse.options) &&
-            Objects.equals(this.region, createCustomfieldsResponse.region) &&
-            Objects.equals(this.id, createCustomfieldsResponse.id) &&
-            Objects.equals(this.identifier, createCustomfieldsResponse.identifier) &&
-            Objects.equals(this.projectId, createCustomfieldsResponse.projectId) &&
-            Objects.equals(this.trackerId, createCustomfieldsResponse.trackerId) &&
-            Objects.equals(this.customField, createCustomfieldsResponse.customField) &&
-            Objects.equals(this.type, createCustomfieldsResponse.type) &&
-            Objects.equals(this.name, createCustomfieldsResponse.name) &&
-            Objects.equals(this.sort, createCustomfieldsResponse.sort) &&
-            Objects.equals(this.memo, createCustomfieldsResponse.memo) &&
-            Objects.equals(this.created, createCustomfieldsResponse.created) &&
-            Objects.equals(this.modified, createCustomfieldsResponse.modified) &&
-            Objects.equals(this.isDelete, createCustomfieldsResponse.isDelete);
+        return Objects.equals(this.options, createCustomfieldsResponse.options)
+            && Objects.equals(this.region, createCustomfieldsResponse.region)
+            && Objects.equals(this.id, createCustomfieldsResponse.id)
+            && Objects.equals(this.identifier, createCustomfieldsResponse.identifier)
+            && Objects.equals(this.projectId, createCustomfieldsResponse.projectId)
+            && Objects.equals(this.trackerId, createCustomfieldsResponse.trackerId)
+            && Objects.equals(this.customField, createCustomfieldsResponse.customField)
+            && Objects.equals(this.type, createCustomfieldsResponse.type)
+            && Objects.equals(this.name, createCustomfieldsResponse.name)
+            && Objects.equals(this.sort, createCustomfieldsResponse.sort)
+            && Objects.equals(this.memo, createCustomfieldsResponse.memo)
+            && Objects.equals(this.created, createCustomfieldsResponse.created)
+            && Objects.equals(this.modified, createCustomfieldsResponse.modified)
+            && Objects.equals(this.isDelete, createCustomfieldsResponse.isDelete);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(options, region, id, identifier, projectId, trackerId, customField, type, name, sort, memo, created, modified, isDelete);
+        return Objects.hash(options,
+            region,
+            id,
+            identifier,
+            projectId,
+            trackerId,
+            customField,
+            type,
+            name,
+            sort,
+            memo,
+            created,
+            modified,
+            isDelete);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -460,16 +367,13 @@ public class CreateCustomfieldsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,86 +1,64 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.ChargeMode;
-import com.huaweicloud.sdk.servicestage.v2.model.Resource;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * EnvironmentCreate
- */
-public class EnvironmentCreate  {
-
-
+/** EnvironmentCreate */
+public class EnvironmentCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alias")
-    
+    @JsonProperty(value = "alias")
+
     private String alias;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_mode")
-    
+    @JsonProperty(value = "charge_mode")
+
     private ChargeMode chargeMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="base_resources")
-    
+    @JsonProperty(value = "base_resources")
+
     private List<Resource> baseResources = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="optional_resources")
-    
+    @JsonProperty(value = "optional_resources")
+
     private List<Resource> optionalResources = null;
-    
+
     public EnvironmentCreate withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境名称。
-     * @return name
-     */
+    /** 环境名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -89,20 +67,14 @@ public class EnvironmentCreate  {
         this.name = name;
     }
 
-    
-
     public EnvironmentCreate withAlias(String alias) {
         this.alias = alias;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境别名。
-     * @return alias
-     */
+    /** 环境别名。
+     * 
+     * @return alias */
     public String getAlias() {
         return alias;
     }
@@ -111,20 +83,14 @@ public class EnvironmentCreate  {
         this.alias = alias;
     }
 
-    
-
     public EnvironmentCreate withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境描述。
-     * @return description
-     */
+    /** 环境描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -133,20 +99,14 @@ public class EnvironmentCreate  {
         this.description = description;
     }
 
-    
-
     public EnvironmentCreate withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID。
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -155,20 +115,14 @@ public class EnvironmentCreate  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public EnvironmentCreate withChargeMode(ChargeMode chargeMode) {
         this.chargeMode = chargeMode;
         return this;
     }
 
-    
-
-
-    /**
-     * Get chargeMode
-     * @return chargeMode
-     */
+    /** Get chargeMode
+     * 
+     * @return chargeMode */
     public ChargeMode getChargeMode() {
         return chargeMode;
     }
@@ -177,20 +131,14 @@ public class EnvironmentCreate  {
         this.chargeMode = chargeMode;
     }
 
-    
-
     public EnvironmentCreate withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟私有云ID。
-     * @return vpcId
-     */
+    /** 虚拟私有云ID。
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -199,16 +147,13 @@ public class EnvironmentCreate  {
         this.vpcId = vpcId;
     }
 
-    
-
     public EnvironmentCreate withBaseResources(List<Resource> baseResources) {
         this.baseResources = baseResources;
         return this;
     }
 
-    
     public EnvironmentCreate addBaseResourcesItem(Resource baseResourcesItem) {
-        if(this.baseResources == null) {
+        if (this.baseResources == null) {
             this.baseResources = new ArrayList<>();
         }
         this.baseResources.add(baseResourcesItem);
@@ -216,17 +161,16 @@ public class EnvironmentCreate  {
     }
 
     public EnvironmentCreate withBaseResources(Consumer<List<Resource>> baseResourcesSetter) {
-        if(this.baseResources == null) {
+        if (this.baseResources == null) {
             this.baseResources = new ArrayList<>();
         }
         baseResourcesSetter.accept(this.baseResources);
         return this;
     }
 
-    /**
-     * 基础资源。
-     * @return baseResources
-     */
+    /** 基础资源。
+     * 
+     * @return baseResources */
     public List<Resource> getBaseResources() {
         return baseResources;
     }
@@ -235,16 +179,13 @@ public class EnvironmentCreate  {
         this.baseResources = baseResources;
     }
 
-    
-
     public EnvironmentCreate withOptionalResources(List<Resource> optionalResources) {
         this.optionalResources = optionalResources;
         return this;
     }
 
-    
     public EnvironmentCreate addOptionalResourcesItem(Resource optionalResourcesItem) {
-        if(this.optionalResources == null) {
+        if (this.optionalResources == null) {
             this.optionalResources = new ArrayList<>();
         }
         this.optionalResources.add(optionalResourcesItem);
@@ -252,17 +193,16 @@ public class EnvironmentCreate  {
     }
 
     public EnvironmentCreate withOptionalResources(Consumer<List<Resource>> optionalResourcesSetter) {
-        if(this.optionalResources == null) {
+        if (this.optionalResources == null) {
             this.optionalResources = new ArrayList<>();
         }
         optionalResourcesSetter.accept(this.optionalResources);
         return this;
     }
 
-    /**
-     * 可选资源。
-     * @return optionalResources
-     */
+    /** 可选资源。
+     * 
+     * @return optionalResources */
     public List<Resource> getOptionalResources() {
         return optionalResources;
     }
@@ -270,8 +210,6 @@ public class EnvironmentCreate  {
     public void setOptionalResources(List<Resource> optionalResources) {
         this.optionalResources = optionalResources;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -282,19 +220,21 @@ public class EnvironmentCreate  {
             return false;
         }
         EnvironmentCreate environmentCreate = (EnvironmentCreate) o;
-        return Objects.equals(this.name, environmentCreate.name) &&
-            Objects.equals(this.alias, environmentCreate.alias) &&
-            Objects.equals(this.description, environmentCreate.description) &&
-            Objects.equals(this.enterpriseProjectId, environmentCreate.enterpriseProjectId) &&
-            Objects.equals(this.chargeMode, environmentCreate.chargeMode) &&
-            Objects.equals(this.vpcId, environmentCreate.vpcId) &&
-            Objects.equals(this.baseResources, environmentCreate.baseResources) &&
-            Objects.equals(this.optionalResources, environmentCreate.optionalResources);
+        return Objects.equals(this.name, environmentCreate.name) && Objects.equals(this.alias, environmentCreate.alias)
+            && Objects.equals(this.description, environmentCreate.description)
+            && Objects.equals(this.enterpriseProjectId, environmentCreate.enterpriseProjectId)
+            && Objects.equals(this.chargeMode, environmentCreate.chargeMode)
+            && Objects.equals(this.vpcId, environmentCreate.vpcId)
+            && Objects.equals(this.baseResources, environmentCreate.baseResources)
+            && Objects.equals(this.optionalResources, environmentCreate.optionalResources);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, alias, description, enterpriseProjectId, chargeMode, vpcId, baseResources, optionalResources);
+        return Objects
+            .hash(name, alias, description, enterpriseProjectId, chargeMode, vpcId, baseResources, optionalResources);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -310,16 +250,13 @@ public class EnvironmentCreate  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

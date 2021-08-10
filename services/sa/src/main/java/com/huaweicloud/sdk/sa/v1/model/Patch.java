@@ -1,69 +1,52 @@
 package com.huaweicloud.sdk.sa.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.time.OffsetDateTime;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Patch
- */
-public class Patch  {
-
-
+/** Patch */
+public class Patch {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="patch_id")
-    
+    @JsonProperty(value = "patch_id")
+
     private String patchId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="patch_name")
-    
+    @JsonProperty(value = "patch_name")
+
     private String patchName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="major_level")
-    
+    @JsonProperty(value = "major_level")
+
     private String majorLevel;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repair_cmd")
-    
+    @JsonProperty(value = "repair_cmd")
+
     private String repairCmd;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repair_necessity")
-    
+    @JsonProperty(value = "repair_necessity")
+
     private String repairNecessity;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="release_time")
-    
+    @JsonProperty(value = "release_time")
+
     private OffsetDateTime releaseTime;
 
     public Patch withPatchId(String patchId) {
@@ -71,13 +54,9 @@ public class Patch  {
         return this;
     }
 
-    
-
-
-    /**
-     * 补丁编号。
-     * @return patchId
-     */
+    /** 补丁编号。
+     * 
+     * @return patchId */
     public String getPatchId() {
         return patchId;
     }
@@ -86,20 +65,14 @@ public class Patch  {
         this.patchId = patchId;
     }
 
-    
-
     public Patch withPatchName(String patchName) {
         this.patchName = patchName;
         return this;
     }
 
-    
-
-
-    /**
-     * 补丁名称。
-     * @return patchName
-     */
+    /** 补丁名称。
+     * 
+     * @return patchName */
     public String getPatchName() {
         return patchName;
     }
@@ -108,20 +81,14 @@ public class Patch  {
         this.patchName = patchName;
     }
 
-    
-
     public Patch withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 补丁类型（0：linux，1：windows，2：web-cms）。
-     * @return type
-     */
+    /** 补丁类型（0：linux，1：windows，2：web-cms）。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -130,20 +97,14 @@ public class Patch  {
         this.type = type;
     }
 
-    
-
     public Patch withMajorLevel(String majorLevel) {
         this.majorLevel = majorLevel;
         return this;
     }
 
-    
-
-
-    /**
-     * 重要等级。
-     * @return majorLevel
-     */
+    /** 重要等级。
+     * 
+     * @return majorLevel */
     public String getMajorLevel() {
         return majorLevel;
     }
@@ -152,20 +113,14 @@ public class Patch  {
         this.majorLevel = majorLevel;
     }
 
-    
-
     public Patch withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 补丁状态。
-     * @return status
-     */
+    /** 补丁状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -174,20 +129,14 @@ public class Patch  {
         this.status = status;
     }
 
-    
-
     public Patch withRepairCmd(String repairCmd) {
         this.repairCmd = repairCmd;
         return this;
     }
 
-    
-
-
-    /**
-     * 修复命令。
-     * @return repairCmd
-     */
+    /** 修复命令。
+     * 
+     * @return repairCmd */
     public String getRepairCmd() {
         return repairCmd;
     }
@@ -196,20 +145,14 @@ public class Patch  {
         this.repairCmd = repairCmd;
     }
 
-    
-
     public Patch withRepairNecessity(String repairNecessity) {
         this.repairNecessity = repairNecessity;
         return this;
     }
 
-    
-
-
-    /**
-     * 修复必要程度（1：需立刻修复，2：可延后修复，3：暂可以不修复）。
-     * @return repairNecessity
-     */
+    /** 修复必要程度（1：需立刻修复，2：可延后修复，3：暂可以不修复）。
+     * 
+     * @return repairNecessity */
     public String getRepairNecessity() {
         return repairNecessity;
     }
@@ -218,20 +161,14 @@ public class Patch  {
         this.repairNecessity = repairNecessity;
     }
 
-    
-
     public Patch withReleaseTime(OffsetDateTime releaseTime) {
         this.releaseTime = releaseTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 发布时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息       为事件发生时区，无法解析时区的时间，默认时区填东八区。
-     * @return releaseTime
-     */
+    /** 发布时间，格式ISO8601：YYYY-MM-DDTHH:mm:ss.ms+timezone。时区信息 为事件发生时区，无法解析时区的时间，默认时区填东八区。
+     * 
+     * @return releaseTime */
     public OffsetDateTime getReleaseTime() {
         return releaseTime;
     }
@@ -239,8 +176,6 @@ public class Patch  {
     public void setReleaseTime(OffsetDateTime releaseTime) {
         this.releaseTime = releaseTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -251,19 +186,18 @@ public class Patch  {
             return false;
         }
         Patch patch = (Patch) o;
-        return Objects.equals(this.patchId, patch.patchId) &&
-            Objects.equals(this.patchName, patch.patchName) &&
-            Objects.equals(this.type, patch.type) &&
-            Objects.equals(this.majorLevel, patch.majorLevel) &&
-            Objects.equals(this.status, patch.status) &&
-            Objects.equals(this.repairCmd, patch.repairCmd) &&
-            Objects.equals(this.repairNecessity, patch.repairNecessity) &&
-            Objects.equals(this.releaseTime, patch.releaseTime);
+        return Objects.equals(this.patchId, patch.patchId) && Objects.equals(this.patchName, patch.patchName)
+            && Objects.equals(this.type, patch.type) && Objects.equals(this.majorLevel, patch.majorLevel)
+            && Objects.equals(this.status, patch.status) && Objects.equals(this.repairCmd, patch.repairCmd)
+            && Objects.equals(this.repairNecessity, patch.repairNecessity)
+            && Objects.equals(this.releaseTime, patch.releaseTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(patchId, patchName, type, majorLevel, status, repairCmd, repairNecessity, releaseTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -279,16 +213,13 @@ public class Patch  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

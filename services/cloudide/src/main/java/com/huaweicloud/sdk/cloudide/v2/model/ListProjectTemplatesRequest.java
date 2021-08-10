@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.cloudide.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListProjectTemplatesRequest  {
-
-
+/** Request Object */
+public class ListProjectTemplatesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arch")
-    
+    @JsonProperty(value = "arch")
+
     private String arch;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stack_id")
-    
+    @JsonProperty(value = "stack_id")
+
     private String stackId;
 
     public ListProjectTemplatesRequest withArch(String arch) {
@@ -34,13 +23,9 @@ public class ListProjectTemplatesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * cpu架构 x86|arm
-     * @return arch
-     */
+    /** cpu架构 x86|arm
+     * 
+     * @return arch */
     public String getArch() {
         return arch;
     }
@@ -49,20 +34,14 @@ public class ListProjectTemplatesRequest  {
         this.arch = arch;
     }
 
-    
-
     public ListProjectTemplatesRequest withStackId(String stackId) {
         this.stackId = stackId;
         return this;
     }
 
-    
-
-
-    /**
-     * 技术栈ID，通过技术栈管理ListStacksByTag接口获取。
-     * @return stackId
-     */
+    /** 技术栈ID，通过技术栈管理ListStacksByTag接口获取。
+     * 
+     * @return stackId */
     public String getStackId() {
         return stackId;
     }
@@ -70,8 +49,6 @@ public class ListProjectTemplatesRequest  {
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class ListProjectTemplatesRequest  {
             return false;
         }
         ListProjectTemplatesRequest listProjectTemplatesRequest = (ListProjectTemplatesRequest) o;
-        return Objects.equals(this.arch, listProjectTemplatesRequest.arch) &&
-            Objects.equals(this.stackId, listProjectTemplatesRequest.stackId);
+        return Objects.equals(this.arch, listProjectTemplatesRequest.arch)
+            && Objects.equals(this.stackId, listProjectTemplatesRequest.stackId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(arch, stackId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class ListProjectTemplatesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

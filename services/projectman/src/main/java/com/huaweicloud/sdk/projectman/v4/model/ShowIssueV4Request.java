@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.projectman.v4.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowIssueV4Request  {
-
-
+/** Request Object */
+public class ShowIssueV4Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="issue_id")
-    
+    @JsonProperty(value = "issue_id")
+
     private Integer issueId;
 
     public ShowIssueV4Request withProjectId(String projectId) {
@@ -34,13 +23,9 @@ public class ShowIssueV4Request  {
         return this;
     }
 
-    
-
-
-    /**
-     * 项目id
-     * @return projectId
-     */
+    /** 项目id
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -49,20 +34,14 @@ public class ShowIssueV4Request  {
         this.projectId = projectId;
     }
 
-    
-
     public ShowIssueV4Request withIssueId(Integer issueId) {
         this.issueId = issueId;
         return this;
     }
 
-    
-
-
-    /**
-     * 工作项id
-     * @return issueId
-     */
+    /** 工作项id
+     * 
+     * @return issueId */
     public Integer getIssueId() {
         return issueId;
     }
@@ -70,8 +49,6 @@ public class ShowIssueV4Request  {
     public void setIssueId(Integer issueId) {
         this.issueId = issueId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class ShowIssueV4Request  {
             return false;
         }
         ShowIssueV4Request showIssueV4Request = (ShowIssueV4Request) o;
-        return Objects.equals(this.projectId, showIssueV4Request.projectId) &&
-            Objects.equals(this.issueId, showIssueV4Request.issueId);
+        return Objects.equals(this.projectId, showIssueV4Request.projectId)
+            && Objects.equals(this.issueId, showIssueV4Request.issueId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(projectId, issueId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class ShowIssueV4Request  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

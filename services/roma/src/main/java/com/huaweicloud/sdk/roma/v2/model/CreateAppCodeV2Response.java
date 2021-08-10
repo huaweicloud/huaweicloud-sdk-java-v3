@@ -1,48 +1,33 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.AppCodeCreate;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.time.OffsetDateTime;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateAppCodeV2Response extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_code")
-    
+    @JsonProperty(value = "app_code")
+
     private String appCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private OffsetDateTime createTime;
 
     public CreateAppCodeV2Response withAppCode(String appCode) {
@@ -50,13 +35,9 @@ public class CreateAppCodeV2Response extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * App Code值  支持英文，+_!@#$%+/=，且只能以英文和+、/开头。
-     * @return appCode
-     */
+    /** App Code值 支持英文，+_!@#$%+/=，且只能以英文和+、/开头。
+     * 
+     * @return appCode */
     public String getAppCode() {
         return appCode;
     }
@@ -65,20 +46,14 @@ public class CreateAppCodeV2Response extends SdkResponse {
         this.appCode = appCode;
     }
 
-    
-
     public CreateAppCodeV2Response withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 编号
-     * @return id
-     */
+    /** 编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -87,20 +62,14 @@ public class CreateAppCodeV2Response extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public CreateAppCodeV2Response withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用编号
-     * @return appId
-     */
+    /** 应用编号
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -109,20 +78,14 @@ public class CreateAppCodeV2Response extends SdkResponse {
         this.appId = appId;
     }
 
-    
-
     public CreateAppCodeV2Response withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return createTime
-     */
+    /** 创建时间
+     * 
+     * @return createTime */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -130,8 +93,6 @@ public class CreateAppCodeV2Response extends SdkResponse {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -142,15 +103,17 @@ public class CreateAppCodeV2Response extends SdkResponse {
             return false;
         }
         CreateAppCodeV2Response createAppCodeV2Response = (CreateAppCodeV2Response) o;
-        return Objects.equals(this.appCode, createAppCodeV2Response.appCode) &&
-            Objects.equals(this.id, createAppCodeV2Response.id) &&
-            Objects.equals(this.appId, createAppCodeV2Response.appId) &&
-            Objects.equals(this.createTime, createAppCodeV2Response.createTime);
+        return Objects.equals(this.appCode, createAppCodeV2Response.appCode)
+            && Objects.equals(this.id, createAppCodeV2Response.id)
+            && Objects.equals(this.appId, createAppCodeV2Response.appId)
+            && Objects.equals(this.createTime, createAppCodeV2Response.createTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(appCode, id, appId, createTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -162,16 +125,13 @@ public class CreateAppCodeV2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

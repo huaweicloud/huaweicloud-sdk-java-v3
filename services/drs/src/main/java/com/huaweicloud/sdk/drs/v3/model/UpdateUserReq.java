@@ -1,60 +1,44 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.UserAccountVO;
-import com.huaweicloud.sdk.drs.v3.model.UserRoleVO;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 更新迁移用户请求体
- */
-public class UpdateUserReq  {
-
-
+/** 更新迁移用户请求体 */
+public class UpdateUserReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
+
     private String jobId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="password")
-    
+    @JsonProperty(value = "password")
+
     private String password;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="list")
-    
+    @JsonProperty(value = "list")
+
     private List<UserAccountVO> list = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_roles")
-    
+    @JsonProperty(value = "user_roles")
+
     private List<UserRoleVO> userRoles = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_set_password")
-    
+    @JsonProperty(value = "is_set_password")
+
     private Boolean isSetPassword;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_migrate_user")
-    
+    @JsonProperty(value = "is_migrate_user")
+
     private Boolean isMigrateUser;
 
     public UpdateUserReq withJobId(String jobId) {
@@ -62,13 +46,9 @@ public class UpdateUserReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID
-     * @return jobId
-     */
+    /** 任务ID
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -77,20 +57,14 @@ public class UpdateUserReq  {
         this.jobId = jobId;
     }
 
-    
-
     public UpdateUserReq withPassword(String password) {
         this.password = password;
         return this;
     }
 
-    
-
-
-    /**
-     * 全局密码。
-     * @return password
-     */
+    /** 全局密码。
+     * 
+     * @return password */
     public String getPassword() {
         return password;
     }
@@ -99,16 +73,13 @@ public class UpdateUserReq  {
         this.password = password;
     }
 
-    
-
     public UpdateUserReq withList(List<UserAccountVO> list) {
         this.list = list;
         return this;
     }
 
-    
     public UpdateUserReq addListItem(UserAccountVO listItem) {
-        if(this.list == null) {
+        if (this.list == null) {
             this.list = new ArrayList<>();
         }
         this.list.add(listItem);
@@ -116,17 +87,16 @@ public class UpdateUserReq  {
     }
 
     public UpdateUserReq withList(Consumer<List<UserAccountVO>> listSetter) {
-        if(this.list == null) {
+        if (this.list == null) {
             this.list = new ArrayList<>();
         }
         listSetter.accept(this.list);
         return this;
     }
 
-    /**
-     * 用户迁移信息，迁移用户时必填
-     * @return list
-     */
+    /** 用户迁移信息，迁移用户时必填
+     * 
+     * @return list */
     public List<UserAccountVO> getList() {
         return list;
     }
@@ -135,16 +105,13 @@ public class UpdateUserReq  {
         this.list = list;
     }
 
-    
-
     public UpdateUserReq withUserRoles(List<UserRoleVO> userRoles) {
         this.userRoles = userRoles;
         return this;
     }
 
-    
     public UpdateUserReq addUserRolesItem(UserRoleVO userRolesItem) {
-        if(this.userRoles == null) {
+        if (this.userRoles == null) {
             this.userRoles = new ArrayList<>();
         }
         this.userRoles.add(userRolesItem);
@@ -152,17 +119,16 @@ public class UpdateUserReq  {
     }
 
     public UpdateUserReq withUserRoles(Consumer<List<UserRoleVO>> userRolesSetter) {
-        if(this.userRoles == null) {
+        if (this.userRoles == null) {
             this.userRoles = new ArrayList<>();
         }
         userRolesSetter.accept(this.userRoles);
         return this;
     }
 
-    /**
-     * 角色迁移信息，迁移用户时必填
-     * @return userRoles
-     */
+    /** 角色迁移信息，迁移用户时必填
+     * 
+     * @return userRoles */
     public List<UserRoleVO> getUserRoles() {
         return userRoles;
     }
@@ -171,20 +137,14 @@ public class UpdateUserReq  {
         this.userRoles = userRoles;
     }
 
-    
-
     public UpdateUserReq withIsSetPassword(Boolean isSetPassword) {
         this.isSetPassword = isSetPassword;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否设置密码
-     * @return isSetPassword
-     */
+    /** 是否设置密码
+     * 
+     * @return isSetPassword */
     public Boolean getIsSetPassword() {
         return isSetPassword;
     }
@@ -193,20 +153,14 @@ public class UpdateUserReq  {
         this.isSetPassword = isSetPassword;
     }
 
-    
-
     public UpdateUserReq withIsMigrateUser(Boolean isMigrateUser) {
         this.isMigrateUser = isMigrateUser;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否迁移用户
-     * @return isMigrateUser
-     */
+    /** 是否迁移用户
+     * 
+     * @return isMigrateUser */
     public Boolean getIsMigrateUser() {
         return isMigrateUser;
     }
@@ -214,8 +168,6 @@ public class UpdateUserReq  {
     public void setIsMigrateUser(Boolean isMigrateUser) {
         this.isMigrateUser = isMigrateUser;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -226,17 +178,17 @@ public class UpdateUserReq  {
             return false;
         }
         UpdateUserReq updateUserReq = (UpdateUserReq) o;
-        return Objects.equals(this.jobId, updateUserReq.jobId) &&
-            Objects.equals(this.password, updateUserReq.password) &&
-            Objects.equals(this.list, updateUserReq.list) &&
-            Objects.equals(this.userRoles, updateUserReq.userRoles) &&
-            Objects.equals(this.isSetPassword, updateUserReq.isSetPassword) &&
-            Objects.equals(this.isMigrateUser, updateUserReq.isMigrateUser);
+        return Objects.equals(this.jobId, updateUserReq.jobId) && Objects.equals(this.password, updateUserReq.password)
+            && Objects.equals(this.list, updateUserReq.list) && Objects.equals(this.userRoles, updateUserReq.userRoles)
+            && Objects.equals(this.isSetPassword, updateUserReq.isSetPassword)
+            && Objects.equals(this.isMigrateUser, updateUserReq.isMigrateUser);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobId, password, list, userRoles, isSetPassword, isMigrateUser);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -250,16 +202,13 @@ public class UpdateUserReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

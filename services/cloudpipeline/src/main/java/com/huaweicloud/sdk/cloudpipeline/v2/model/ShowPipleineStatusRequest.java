@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowPipleineStatusRequest  {
-
-
+/** Request Object */
+public class ShowPipleineStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pipeline_id")
-    
+    @JsonProperty(value = "pipeline_id")
+
     private String pipelineId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="build_id")
-    
+    @JsonProperty(value = "build_id")
+
     private String buildId;
 
     public ShowPipleineStatusRequest withXLanguage(String xLanguage) {
@@ -40,15 +28,11 @@ public class ShowPipleineStatusRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * @return xLanguage
-     */
+    /** 语言类型 中文:zh-cn 英文:en-us，默认en-us
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -57,20 +41,14 @@ public class ShowPipleineStatusRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ShowPipleineStatusRequest withPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
         return this;
     }
 
-    
-
-
-    /**
-     * 要获取状态的流水线ID
-     * @return pipelineId
-     */
+    /** 要获取状态的流水线ID
+     * 
+     * @return pipelineId */
     public String getPipelineId() {
         return pipelineId;
     }
@@ -79,20 +57,14 @@ public class ShowPipleineStatusRequest  {
         this.pipelineId = pipelineId;
     }
 
-    
-
     public ShowPipleineStatusRequest withBuildId(String buildId) {
         this.buildId = buildId;
         return this;
     }
 
-    
-
-
-    /**
-     * 要获取状态的执行ID
-     * @return buildId
-     */
+    /** 要获取状态的执行ID
+     * 
+     * @return buildId */
     public String getBuildId() {
         return buildId;
     }
@@ -100,8 +72,6 @@ public class ShowPipleineStatusRequest  {
     public void setBuildId(String buildId) {
         this.buildId = buildId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +82,16 @@ public class ShowPipleineStatusRequest  {
             return false;
         }
         ShowPipleineStatusRequest showPipleineStatusRequest = (ShowPipleineStatusRequest) o;
-        return Objects.equals(this.xLanguage, showPipleineStatusRequest.xLanguage) &&
-            Objects.equals(this.pipelineId, showPipleineStatusRequest.pipelineId) &&
-            Objects.equals(this.buildId, showPipleineStatusRequest.buildId);
+        return Objects.equals(this.xLanguage, showPipleineStatusRequest.xLanguage)
+            && Objects.equals(this.pipelineId, showPipleineStatusRequest.pipelineId)
+            && Objects.equals(this.buildId, showPipleineStatusRequest.buildId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, pipelineId, buildId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +102,13 @@ public class ShowPipleineStatusRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

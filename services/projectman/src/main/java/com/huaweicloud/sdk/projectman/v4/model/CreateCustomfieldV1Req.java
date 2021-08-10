@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.projectman.v4.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CreateCustomfieldV1Req
- */
-public class CreateCustomfieldV1Req  {
-
-
+/** CreateCustomfieldV1Req */
+public class CreateCustomfieldV1Req {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="options")
-    
+    @JsonProperty(value = "options")
+
     private String options;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="memo")
-    
+    @JsonProperty(value = "memo")
+
     private String memo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scrum_type")
-    
+    @JsonProperty(value = "scrum_type")
+
     private String scrumType;
 
     public CreateCustomfieldV1Req withName(String name) {
@@ -52,13 +38,9 @@ public class CreateCustomfieldV1Req  {
         return this;
     }
 
-    
-
-
-    /**
-     * 字段名称
-     * @return name
-     */
+    /** 字段名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -67,20 +49,14 @@ public class CreateCustomfieldV1Req  {
         this.name = name;
     }
 
-    
-
     public CreateCustomfieldV1Req withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义字段类型 可选类型  textArea|select|radio|text|checkbox|date|time_date|number
-     * @return type
-     */
+    /** 自定义字段类型 可选类型 textArea|select|radio|text|checkbox|date|time_date|number
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -89,20 +65,14 @@ public class CreateCustomfieldV1Req  {
         this.type = type;
     }
 
-    
-
     public CreateCustomfieldV1Req withOptions(String options) {
         this.options = options;
         return this;
     }
 
-    
-
-
-    /**
-     * 字段选项
-     * @return options
-     */
+    /** 字段选项
+     * 
+     * @return options */
     public String getOptions() {
         return options;
     }
@@ -111,20 +81,14 @@ public class CreateCustomfieldV1Req  {
         this.options = options;
     }
 
-    
-
     public CreateCustomfieldV1Req withMemo(String memo) {
         this.memo = memo;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述
-     * @return memo
-     */
+    /** 描述
+     * 
+     * @return memo */
     public String getMemo() {
         return memo;
     }
@@ -133,20 +97,14 @@ public class CreateCustomfieldV1Req  {
         this.memo = memo;
     }
 
-    
-
     public CreateCustomfieldV1Req withScrumType(String scrumType) {
         this.scrumType = scrumType;
         return this;
     }
 
-    
-
-
-    /**
-     * 工作项类型
-     * @return scrumType
-     */
+    /** 工作项类型
+     * 
+     * @return scrumType */
     public String getScrumType() {
         return scrumType;
     }
@@ -154,8 +112,6 @@ public class CreateCustomfieldV1Req  {
     public void setScrumType(String scrumType) {
         this.scrumType = scrumType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,18 @@ public class CreateCustomfieldV1Req  {
             return false;
         }
         CreateCustomfieldV1Req createCustomfieldV1Req = (CreateCustomfieldV1Req) o;
-        return Objects.equals(this.name, createCustomfieldV1Req.name) &&
-            Objects.equals(this.type, createCustomfieldV1Req.type) &&
-            Objects.equals(this.options, createCustomfieldV1Req.options) &&
-            Objects.equals(this.memo, createCustomfieldV1Req.memo) &&
-            Objects.equals(this.scrumType, createCustomfieldV1Req.scrumType);
+        return Objects.equals(this.name, createCustomfieldV1Req.name)
+            && Objects.equals(this.type, createCustomfieldV1Req.type)
+            && Objects.equals(this.options, createCustomfieldV1Req.options)
+            && Objects.equals(this.memo, createCustomfieldV1Req.memo)
+            && Objects.equals(this.scrumType, createCustomfieldV1Req.scrumType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, type, options, memo, scrumType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class CreateCustomfieldV1Req  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

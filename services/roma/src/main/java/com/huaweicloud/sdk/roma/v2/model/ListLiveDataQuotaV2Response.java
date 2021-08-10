@@ -1,52 +1,37 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListLiveDataQuotaV2Response extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datasource")
-    
+    @JsonProperty(value = "datasource")
+
     private String datasource;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api")
-    
+    @JsonProperty(value = "api")
+
     private String api;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scripts")
-    
+    @JsonProperty(value = "scripts")
+
     private String scripts;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datasource_used")
-    
+    @JsonProperty(value = "datasource_used")
+
     private String datasourceUsed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_used")
-    
+    @JsonProperty(value = "api_used")
+
     private String apiUsed;
 
     public ListLiveDataQuotaV2Response withDatasource(String datasource) {
@@ -54,13 +39,9 @@ public class ListLiveDataQuotaV2Response extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 数据源配额
-     * @return datasource
-     */
+    /** 数据源配额
+     * 
+     * @return datasource */
     public String getDatasource() {
         return datasource;
     }
@@ -69,20 +50,14 @@ public class ListLiveDataQuotaV2Response extends SdkResponse {
         this.datasource = datasource;
     }
 
-    
-
     public ListLiveDataQuotaV2Response withApi(String api) {
         this.api = api;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端api配额
-     * @return api
-     */
+    /** 后端api配额
+     * 
+     * @return api */
     public String getApi() {
         return api;
     }
@@ -91,20 +66,14 @@ public class ListLiveDataQuotaV2Response extends SdkResponse {
         this.api = api;
     }
 
-    
-
     public ListLiveDataQuotaV2Response withScripts(String scripts) {
         this.scripts = scripts;
         return this;
     }
 
-    
-
-
-    /**
-     * 脚本配额
-     * @return scripts
-     */
+    /** 脚本配额
+     * 
+     * @return scripts */
     public String getScripts() {
         return scripts;
     }
@@ -113,20 +82,14 @@ public class ListLiveDataQuotaV2Response extends SdkResponse {
         this.scripts = scripts;
     }
 
-    
-
     public ListLiveDataQuotaV2Response withDatasourceUsed(String datasourceUsed) {
         this.datasourceUsed = datasourceUsed;
         return this;
     }
 
-    
-
-
-    /**
-     * 已使用的数据源数量
-     * @return datasourceUsed
-     */
+    /** 已使用的数据源数量
+     * 
+     * @return datasourceUsed */
     public String getDatasourceUsed() {
         return datasourceUsed;
     }
@@ -135,20 +98,14 @@ public class ListLiveDataQuotaV2Response extends SdkResponse {
         this.datasourceUsed = datasourceUsed;
     }
 
-    
-
     public ListLiveDataQuotaV2Response withApiUsed(String apiUsed) {
         this.apiUsed = apiUsed;
         return this;
     }
 
-    
-
-
-    /**
-     * 已使用的后端api数量
-     * @return apiUsed
-     */
+    /** 已使用的后端api数量
+     * 
+     * @return apiUsed */
     public String getApiUsed() {
         return apiUsed;
     }
@@ -156,8 +113,6 @@ public class ListLiveDataQuotaV2Response extends SdkResponse {
     public void setApiUsed(String apiUsed) {
         this.apiUsed = apiUsed;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -168,16 +123,18 @@ public class ListLiveDataQuotaV2Response extends SdkResponse {
             return false;
         }
         ListLiveDataQuotaV2Response listLiveDataQuotaV2Response = (ListLiveDataQuotaV2Response) o;
-        return Objects.equals(this.datasource, listLiveDataQuotaV2Response.datasource) &&
-            Objects.equals(this.api, listLiveDataQuotaV2Response.api) &&
-            Objects.equals(this.scripts, listLiveDataQuotaV2Response.scripts) &&
-            Objects.equals(this.datasourceUsed, listLiveDataQuotaV2Response.datasourceUsed) &&
-            Objects.equals(this.apiUsed, listLiveDataQuotaV2Response.apiUsed);
+        return Objects.equals(this.datasource, listLiveDataQuotaV2Response.datasource)
+            && Objects.equals(this.api, listLiveDataQuotaV2Response.api)
+            && Objects.equals(this.scripts, listLiveDataQuotaV2Response.scripts)
+            && Objects.equals(this.datasourceUsed, listLiveDataQuotaV2Response.datasourceUsed)
+            && Objects.equals(this.apiUsed, listLiveDataQuotaV2Response.apiUsed);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(datasource, api, scripts, datasourceUsed, apiUsed);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -190,16 +147,13 @@ public class ListLiveDataQuotaV2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

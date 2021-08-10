@@ -1,81 +1,50 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListTasksRequest  {
+/** Request Object */
+public class ListTasksRequest {
 
-    /**
-     * 迁移任务状态
-     */
+    /** 迁移任务状态 */
     public static final class StateEnum {
 
-        
-        /**
-         * Enum READY_ for value: "READY：准备就绪"
-         */
+        /** Enum READY_ for value: "READY：准备就绪" */
         public static final StateEnum READY_ = new StateEnum("READY：准备就绪");
-        
-        /**
-         * Enum RUNNING_ for value: "RUNNING：迁移中"
-         */
+
+        /** Enum RUNNING_ for value: "RUNNING：迁移中" */
         public static final StateEnum RUNNING_ = new StateEnum("RUNNING：迁移中");
-        
-        /**
-         * Enum SYNCING_ for value: "SYNCING：同步中"
-         */
+
+        /** Enum SYNCING_ for value: "SYNCING：同步中" */
         public static final StateEnum SYNCING_ = new StateEnum("SYNCING：同步中");
-        
-        /**
-         * Enum MIGRATE_SUCCESS_ for value: "MIGRATE_SUCCESS：迁移成功"
-         */
+
+        /** Enum MIGRATE_SUCCESS_ for value: "MIGRATE_SUCCESS：迁移成功" */
         public static final StateEnum MIGRATE_SUCCESS_ = new StateEnum("MIGRATE_SUCCESS：迁移成功");
-        
-        /**
-         * Enum MIGRATE_FAIL_ for value: "MIGRATE_FAIL：迁移失败"
-         */
+
+        /** Enum MIGRATE_FAIL_ for value: "MIGRATE_FAIL：迁移失败" */
         public static final StateEnum MIGRATE_FAIL_ = new StateEnum("MIGRATE_FAIL：迁移失败");
-        
-        /**
-         * Enum ABORTING_ for value: "ABORTING：任务中止中"
-         */
+
+        /** Enum ABORTING_ for value: "ABORTING：任务中止中" */
         public static final StateEnum ABORTING_ = new StateEnum("ABORTING：任务中止中");
-        
-        /**
-         * Enum ABORT_ for value: "ABORT：任务中止"
-         */
+
+        /** Enum ABORT_ for value: "ABORT：任务中止" */
         public static final StateEnum ABORT_ = new StateEnum("ABORT：任务中止");
-        
-        /**
-         * Enum DELETING_ for value: "DELETING：删除中"
-         */
+
+        /** Enum DELETING_ for value: "DELETING：删除中" */
         public static final StateEnum DELETING_ = new StateEnum("DELETING：删除中");
-        
-        /**
-         * Enum SYNC_F_ROLLBACKING_ for value: "SYNC_F_ROLLBACKING：同步失败回滚中"
-         */
+
+        /** Enum SYNC_F_ROLLBACKING_ for value: "SYNC_F_ROLLBACKING：同步失败回滚中" */
         public static final StateEnum SYNC_F_ROLLBACKING_ = new StateEnum("SYNC_F_ROLLBACKING：同步失败回滚中");
-        
-        /**
-         * Enum SYNC_F_ROLLBACK_SUCCESS_ for value: "SYNC_F_ROLLBACK_SUCCESS：同步失败回滚成功"
-         */
+
+        /** Enum SYNC_F_ROLLBACK_SUCCESS_ for value: "SYNC_F_ROLLBACK_SUCCESS：同步失败回滚成功" */
         public static final StateEnum SYNC_F_ROLLBACK_SUCCESS_ = new StateEnum("SYNC_F_ROLLBACK_SUCCESS：同步失败回滚成功");
-        
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
@@ -112,7 +81,7 @@ public class ListTasksRequest  {
 
         @JsonCreator
         public static StateEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StateEnum result = STATIC_FIELDS.get(value);
@@ -123,7 +92,7 @@ public class ListTasksRequest  {
         }
 
         public static StateEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StateEnum result = STATIC_FIELDS.get(value);
@@ -147,46 +116,39 @@ public class ListTasksRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
+
     private StateEnum state;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_server_id")
-    
+    @JsonProperty(value = "source_server_id")
+
     private String sourceServerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public ListTasksRequest withState(StateEnum state) {
@@ -194,13 +156,9 @@ public class ListTasksRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移任务状态
-     * @return state
-     */
+    /** 迁移任务状态
+     * 
+     * @return state */
     public StateEnum getState() {
         return state;
     }
@@ -209,20 +167,14 @@ public class ListTasksRequest  {
         this.state = state;
     }
 
-    
-
     public ListTasksRequest withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务的名称
-     * @return name
-     */
+    /** 任务的名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -231,20 +183,14 @@ public class ListTasksRequest  {
         this.name = name;
     }
 
-    
-
     public ListTasksRequest withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务的ID
-     * @return id
-     */
+    /** 任务的ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -253,20 +199,14 @@ public class ListTasksRequest  {
         this.id = id;
     }
 
-    
-
     public ListTasksRequest withSourceServerId(String sourceServerId) {
         this.sourceServerId = sourceServerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端服务器的ID
-     * @return sourceServerId
-     */
+    /** 源端服务器的ID
+     * 
+     * @return sourceServerId */
     public String getSourceServerId() {
         return sourceServerId;
     }
@@ -275,22 +215,14 @@ public class ListTasksRequest  {
         this.sourceServerId = sourceServerId;
     }
 
-    
-
     public ListTasksRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每一页记录的任务数量
-     * minimum: 0
-     * maximum: 200
-     * @return limit
-     */
+    /** 每一页记录的任务数量 minimum: 0 maximum: 200
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -299,22 +231,14 @@ public class ListTasksRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListTasksRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量
-     * minimum: 0
-     * maximum: 65535
-     * @return offset
-     */
+    /** 偏移量 minimum: 0 maximum: 65535
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -323,20 +247,14 @@ public class ListTasksRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListTasksRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 需要查询的企业项目id
-     * @return enterpriseProjectId
-     */
+    /** 需要查询的企业项目id
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -344,8 +262,6 @@ public class ListTasksRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -356,18 +272,19 @@ public class ListTasksRequest  {
             return false;
         }
         ListTasksRequest listTasksRequest = (ListTasksRequest) o;
-        return Objects.equals(this.state, listTasksRequest.state) &&
-            Objects.equals(this.name, listTasksRequest.name) &&
-            Objects.equals(this.id, listTasksRequest.id) &&
-            Objects.equals(this.sourceServerId, listTasksRequest.sourceServerId) &&
-            Objects.equals(this.limit, listTasksRequest.limit) &&
-            Objects.equals(this.offset, listTasksRequest.offset) &&
-            Objects.equals(this.enterpriseProjectId, listTasksRequest.enterpriseProjectId);
+        return Objects.equals(this.state, listTasksRequest.state) && Objects.equals(this.name, listTasksRequest.name)
+            && Objects.equals(this.id, listTasksRequest.id)
+            && Objects.equals(this.sourceServerId, listTasksRequest.sourceServerId)
+            && Objects.equals(this.limit, listTasksRequest.limit)
+            && Objects.equals(this.offset, listTasksRequest.offset)
+            && Objects.equals(this.enterpriseProjectId, listTasksRequest.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(state, name, id, sourceServerId, limit, offset, enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -382,16 +299,13 @@ public class ListTasksRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

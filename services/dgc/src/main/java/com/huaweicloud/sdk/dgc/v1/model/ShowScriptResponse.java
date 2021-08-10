@@ -1,69 +1,44 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
-
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
-
-
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowScriptResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 脚本类型
-     */
+
+    /** 脚本类型 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum FLINKSQL for value: "FlinkSQL"
-         */
+        /** Enum FLINKSQL for value: "FlinkSQL" */
         public static final TypeEnum FLINKSQL = new TypeEnum("FlinkSQL");
-        
-        /**
-         * Enum DLISQL for value: "DLISQL"
-         */
+
+        /** Enum DLISQL for value: "DLISQL" */
         public static final TypeEnum DLISQL = new TypeEnum("DLISQL");
-        
-        /**
-         * Enum SPARKSQL for value: "SparkSQL"
-         */
+
+        /** Enum SPARKSQL for value: "SparkSQL" */
         public static final TypeEnum SPARKSQL = new TypeEnum("SparkSQL");
-        
-        /**
-         * Enum HIVESQL for value: "HiveSQL"
-         */
+
+        /** Enum HIVESQL for value: "HiveSQL" */
         public static final TypeEnum HIVESQL = new TypeEnum("HiveSQL");
-        
-        /**
-         * Enum DWSSQL for value: "DWSSQL"
-         */
+
+        /** Enum DWSSQL for value: "DWSSQL" */
         public static final TypeEnum DWSSQL = new TypeEnum("DWSSQL");
-        
-        /**
-         * Enum SHELL for value: "Shell"
-         */
+
+        /** Enum SHELL for value: "Shell" */
         public static final TypeEnum SHELL = new TypeEnum("Shell");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -96,7 +71,7 @@ public class ShowScriptResponse extends SdkResponse {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -107,7 +82,7 @@ public class ShowScriptResponse extends SdkResponse {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -131,46 +106,39 @@ public class ShowScriptResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="directory")
-    
+    @JsonProperty(value = "directory")
+
     private String directory;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content")
-    
+    @JsonProperty(value = "content")
+
     private String content;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="connectionName")
-    
+    @JsonProperty(value = "connectionName")
+
     private String connectionName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="database")
-    
+    @JsonProperty(value = "database")
+
     private String database;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="queueName")
-    
+    @JsonProperty(value = "queueName")
+
     private String queueName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="configuration")
-    
+    @JsonProperty(value = "configuration")
+
     private String _configuration;
 
     public ShowScriptResponse withName(String name) {
@@ -178,13 +146,9 @@ public class ShowScriptResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * Get name
-     * @return name
-     */
+    /** Get name
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -193,20 +157,14 @@ public class ShowScriptResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowScriptResponse withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 脚本类型
-     * @return type
-     */
+    /** 脚本类型
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -215,20 +173,14 @@ public class ShowScriptResponse extends SdkResponse {
         this.type = type;
     }
 
-    
-
     public ShowScriptResponse withDirectory(String directory) {
         this.directory = directory;
         return this;
     }
 
-    
-
-
-    /**
-     * 脚本关联的目录
-     * @return directory
-     */
+    /** 脚本关联的目录
+     * 
+     * @return directory */
     public String getDirectory() {
         return directory;
     }
@@ -237,20 +189,14 @@ public class ShowScriptResponse extends SdkResponse {
         this.directory = directory;
     }
 
-    
-
     public ShowScriptResponse withContent(String content) {
         this.content = content;
         return this;
     }
 
-    
-
-
-    /**
-     * 脚本内容
-     * @return content
-     */
+    /** 脚本内容
+     * 
+     * @return content */
     public String getContent() {
         return content;
     }
@@ -259,20 +205,14 @@ public class ShowScriptResponse extends SdkResponse {
         this.content = content;
     }
 
-    
-
     public ShowScriptResponse withConnectionName(String connectionName) {
         this.connectionName = connectionName;
         return this;
     }
 
-    
-
-
-    /**
-     * 脚本关联的连接名称
-     * @return connectionName
-     */
+    /** 脚本关联的连接名称
+     * 
+     * @return connectionName */
     public String getConnectionName() {
         return connectionName;
     }
@@ -281,20 +221,14 @@ public class ShowScriptResponse extends SdkResponse {
         this.connectionName = connectionName;
     }
 
-    
-
     public ShowScriptResponse withDatabase(String database) {
         this.database = database;
         return this;
     }
 
-    
-
-
-    /**
-     * 脚本执行所在的数据库
-     * @return database
-     */
+    /** 脚本执行所在的数据库
+     * 
+     * @return database */
     public String getDatabase() {
         return database;
     }
@@ -303,20 +237,14 @@ public class ShowScriptResponse extends SdkResponse {
         this.database = database;
     }
 
-    
-
     public ShowScriptResponse withQueueName(String queueName) {
         this.queueName = queueName;
         return this;
     }
 
-    
-
-
-    /**
-     * 脚本关联的DLI队列名称
-     * @return queueName
-     */
+    /** 脚本关联的DLI队列名称
+     * 
+     * @return queueName */
     public String getQueueName() {
         return queueName;
     }
@@ -325,20 +253,14 @@ public class ShowScriptResponse extends SdkResponse {
         this.queueName = queueName;
     }
 
-    
-
     public ShowScriptResponse withConfiguration(String _configuration) {
         this._configuration = _configuration;
         return this;
     }
 
-    
-
-
-    /**
-     * 脚本的配置项参数
-     * @return _configuration
-     */
+    /** 脚本的配置项参数
+     * 
+     * @return _configuration */
     public String getConfiguration() {
         return _configuration;
     }
@@ -346,8 +268,6 @@ public class ShowScriptResponse extends SdkResponse {
     public void setConfiguration(String _configuration) {
         this._configuration = _configuration;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -358,19 +278,20 @@ public class ShowScriptResponse extends SdkResponse {
             return false;
         }
         ShowScriptResponse showScriptResponse = (ShowScriptResponse) o;
-        return Objects.equals(this.name, showScriptResponse.name) &&
-            Objects.equals(this.type, showScriptResponse.type) &&
-            Objects.equals(this.directory, showScriptResponse.directory) &&
-            Objects.equals(this.content, showScriptResponse.content) &&
-            Objects.equals(this.connectionName, showScriptResponse.connectionName) &&
-            Objects.equals(this.database, showScriptResponse.database) &&
-            Objects.equals(this.queueName, showScriptResponse.queueName) &&
-            Objects.equals(this._configuration, showScriptResponse._configuration);
+        return Objects.equals(this.name, showScriptResponse.name) && Objects.equals(this.type, showScriptResponse.type)
+            && Objects.equals(this.directory, showScriptResponse.directory)
+            && Objects.equals(this.content, showScriptResponse.content)
+            && Objects.equals(this.connectionName, showScriptResponse.connectionName)
+            && Objects.equals(this.database, showScriptResponse.database)
+            && Objects.equals(this.queueName, showScriptResponse.queueName)
+            && Objects.equals(this._configuration, showScriptResponse._configuration);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, type, directory, content, connectionName, database, queueName, _configuration);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -386,16 +307,13 @@ public class ShowScriptResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

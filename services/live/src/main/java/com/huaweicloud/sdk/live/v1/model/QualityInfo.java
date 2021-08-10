@@ -1,59 +1,36 @@
 package com.huaweicloud.sdk.live.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * QualityInfo
- */
-public class QualityInfo  {
-
-
+/** QualityInfo */
+public class QualityInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="templateName")
-    
+    @JsonProperty(value = "templateName")
+
     private String templateName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quality")
-    
+    @JsonProperty(value = "quality")
+
     private String quality;
-    /**
-     * 是否使用窄带高清转码，模板组里不同模板的PVC选项必须相同。 - on：启用。 - off：不启用。 默认为off 
-     */
+
+    /** 是否使用窄带高清转码，模板组里不同模板的PVC选项必须相同。 - on：启用。 - off：不启用。 默认为off */
     public static final class PvcEnum {
 
-        
-        /**
-         * Enum ON for value: "on"
-         */
+        /** Enum ON for value: "on" */
         public static final PvcEnum ON = new PvcEnum("on");
-        
-        /**
-         * Enum OFF for value: "off"
-         */
+
+        /** Enum OFF for value: "off" */
         public static final PvcEnum OFF = new PvcEnum("off");
-        
 
         private static final Map<String, PvcEnum> STATIC_FIELDS = createStaticFields();
 
@@ -82,7 +59,7 @@ public class QualityInfo  {
 
         @JsonCreator
         public static PvcEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             PvcEnum result = STATIC_FIELDS.get(value);
@@ -93,7 +70,7 @@ public class QualityInfo  {
         }
 
         public static PvcEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             PvcEnum result = STATIC_FIELDS.get(value);
@@ -117,27 +94,19 @@ public class QualityInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="PVC")
-    
+    @JsonProperty(value = "PVC")
+
     private PvcEnum pvc;
-    /**
-     * 是否启用高清低码，较PVC相比画质增强。 - on：启用。 - off：不启用。 默认为off。 
-     */
+
+    /** 是否启用高清低码，较PVC相比画质增强。 - on：启用。 - off：不启用。 默认为off。 */
     public static final class HdlbEnum {
 
-        
-        /**
-         * Enum ON for value: "on"
-         */
+        /** Enum ON for value: "on" */
         public static final HdlbEnum ON = new HdlbEnum("on");
-        
-        /**
-         * Enum OFF for value: "off"
-         */
+
+        /** Enum OFF for value: "off" */
         public static final HdlbEnum OFF = new HdlbEnum("off");
-        
 
         private static final Map<String, HdlbEnum> STATIC_FIELDS = createStaticFields();
 
@@ -166,7 +135,7 @@ public class QualityInfo  {
 
         @JsonCreator
         public static HdlbEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             HdlbEnum result = STATIC_FIELDS.get(value);
@@ -177,7 +146,7 @@ public class QualityInfo  {
         }
 
         public static HdlbEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             HdlbEnum result = STATIC_FIELDS.get(value);
@@ -201,27 +170,19 @@ public class QualityInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hdlb")
-    
+    @JsonProperty(value = "hdlb")
+
     private HdlbEnum hdlb;
-    /**
-     * 视频编码格式，模板组里不同模板的编码格式必须相同。 - H264：使用H.264。 - H265：使用H.265。 默认为H264。 
-     */
+
+    /** 视频编码格式，模板组里不同模板的编码格式必须相同。 - H264：使用H.264。 - H265：使用H.265。 默认为H264。 */
     public static final class CodecEnum {
 
-        
-        /**
-         * Enum H264 for value: "H264"
-         */
+        /** Enum H264 for value: "H264" */
         public static final CodecEnum H264 = new CodecEnum("H264");
-        
-        /**
-         * Enum H265 for value: "H265"
-         */
+
+        /** Enum H265 for value: "H265" */
         public static final CodecEnum H265 = new CodecEnum("H265");
-        
 
         private static final Map<String, CodecEnum> STATIC_FIELDS = createStaticFields();
 
@@ -250,7 +211,7 @@ public class QualityInfo  {
 
         @JsonCreator
         public static CodecEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CodecEnum result = STATIC_FIELDS.get(value);
@@ -261,7 +222,7 @@ public class QualityInfo  {
         }
 
         public static CodecEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CodecEnum result = STATIC_FIELDS.get(value);
@@ -285,56 +246,42 @@ public class QualityInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="codec")
-    
+    @JsonProperty(value = "codec")
+
     private CodecEnum codec;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="width")
-    
+    @JsonProperty(value = "width")
+
     private Integer width;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="height")
-    
+    @JsonProperty(value = "height")
+
     private Integer height;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bitrate")
-    
+    @JsonProperty(value = "bitrate")
+
     private Integer bitrate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="video_frame_rate")
-    
+    @JsonProperty(value = "video_frame_rate")
+
     private Integer videoFrameRate;
-    /**
-     * 转码输出支持的协议类型。当前只支持RTMP和HLS，且模板组里不同模板的输出协议类型必须相同。 - RTMP - HLS - DASH  默认为RTMP。 
-     */
+
+    /** 转码输出支持的协议类型。当前只支持RTMP和HLS，且模板组里不同模板的输出协议类型必须相同。 - RTMP - HLS - DASH 默认为RTMP。 */
     public static final class ProtocolEnum {
 
-        
-        /**
-         * Enum RTMP for value: "RTMP"
-         */
+        /** Enum RTMP for value: "RTMP" */
         public static final ProtocolEnum RTMP = new ProtocolEnum("RTMP");
-        
-        /**
-         * Enum HLS for value: "HLS"
-         */
+
+        /** Enum HLS for value: "HLS" */
         public static final ProtocolEnum HLS = new ProtocolEnum("HLS");
-        
-        /**
-         * Enum DASH for value: "DASH"
-         */
+
+        /** Enum DASH for value: "DASH" */
         public static final ProtocolEnum DASH = new ProtocolEnum("DASH");
-        
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
 
@@ -364,7 +311,7 @@ public class QualityInfo  {
 
         @JsonCreator
         public static ProtocolEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtocolEnum result = STATIC_FIELDS.get(value);
@@ -375,7 +322,7 @@ public class QualityInfo  {
         }
 
         public static ProtocolEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtocolEnum result = STATIC_FIELDS.get(value);
@@ -399,22 +346,19 @@ public class QualityInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
+
     private ProtocolEnum protocol;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="iFrameInterval")
-    
+    @JsonProperty(value = "iFrameInterval")
+
     private Integer iFrameInterval;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gop")
-    
+    @JsonProperty(value = "gop")
+
     private Integer gop;
 
     public QualityInfo withTemplateName(String templateName) {
@@ -422,13 +366,9 @@ public class QualityInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 模板名称。
-     * @return templateName
-     */
+    /** 模板名称。
+     * 
+     * @return templateName */
     public String getTemplateName() {
         return templateName;
     }
@@ -437,20 +377,15 @@ public class QualityInfo  {
         this.templateName = templateName;
     }
 
-    
-
     public QualityInfo withQuality(String quality) {
         this.quality = quality;
         return this;
     }
 
-    
-
-
-    /**
-     * 包含如下取值： - FHD： 超高清，系统缺省名称 - HD： 高清，系统缺省名称 - SD： 标清，系统缺省名称 - LD： 流畅，系统缺省名称 - XXX： 租户自定义名称。用户自定义名称不能与系统缺省名称冲突；多个自定义名称不能重复 
-     * @return quality
-     */
+    /** 包含如下取值： - FHD： 超高清，系统缺省名称 - HD： 高清，系统缺省名称 - SD： 标清，系统缺省名称 - LD： 流畅，系统缺省名称 - XXX：
+     * 租户自定义名称。用户自定义名称不能与系统缺省名称冲突；多个自定义名称不能重复
+     * 
+     * @return quality */
     public String getQuality() {
         return quality;
     }
@@ -459,20 +394,14 @@ public class QualityInfo  {
         this.quality = quality;
     }
 
-    
-
     public QualityInfo withPvc(PvcEnum pvc) {
         this.pvc = pvc;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否使用窄带高清转码，模板组里不同模板的PVC选项必须相同。 - on：启用。 - off：不启用。 默认为off 
-     * @return pvc
-     */
+    /** 是否使用窄带高清转码，模板组里不同模板的PVC选项必须相同。 - on：启用。 - off：不启用。 默认为off
+     * 
+     * @return pvc */
     public PvcEnum getPvc() {
         return pvc;
     }
@@ -481,20 +410,14 @@ public class QualityInfo  {
         this.pvc = pvc;
     }
 
-    
-
     public QualityInfo withHdlb(HdlbEnum hdlb) {
         this.hdlb = hdlb;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否启用高清低码，较PVC相比画质增强。 - on：启用。 - off：不启用。 默认为off。 
-     * @return hdlb
-     */
+    /** 是否启用高清低码，较PVC相比画质增强。 - on：启用。 - off：不启用。 默认为off。
+     * 
+     * @return hdlb */
     public HdlbEnum getHdlb() {
         return hdlb;
     }
@@ -503,20 +426,14 @@ public class QualityInfo  {
         this.hdlb = hdlb;
     }
 
-    
-
     public QualityInfo withCodec(CodecEnum codec) {
         this.codec = codec;
         return this;
     }
 
-    
-
-
-    /**
-     * 视频编码格式，模板组里不同模板的编码格式必须相同。 - H264：使用H.264。 - H265：使用H.265。 默认为H264。 
-     * @return codec
-     */
+    /** 视频编码格式，模板组里不同模板的编码格式必须相同。 - H264：使用H.264。 - H265：使用H.265。 默认为H264。
+     * 
+     * @return codec */
     public CodecEnum getCodec() {
         return codec;
     }
@@ -525,22 +442,14 @@ public class QualityInfo  {
         this.codec = codec;
     }
 
-    
-
     public QualityInfo withWidth(Integer width) {
         this.width = width;
         return this;
     }
 
-    
-
-
-    /**
-     * 视频宽度（单位：像素） - H264   取值范围：32-3840，必须为2的倍数 。 - H265   取值范围：320-3840 ，必须为4的倍数。 
-     * minimum: 32
-     * maximum: 3840
-     * @return width
-     */
+    /** 视频宽度（单位：像素） - H264 取值范围：32-3840，必须为2的倍数 。 - H265 取值范围：320-3840 ，必须为4的倍数。 minimum: 32 maximum: 3840
+     * 
+     * @return width */
     public Integer getWidth() {
         return width;
     }
@@ -549,22 +458,14 @@ public class QualityInfo  {
         this.width = width;
     }
 
-    
-
     public QualityInfo withHeight(Integer height) {
         this.height = height;
         return this;
     }
 
-    
-
-
-    /**
-     * 视频高度（单位：像素） - H264   取值范围：32-2160，必须为2的倍数。 - H265   取值范围：240-2160，必须为4的倍数。 
-     * minimum: 32
-     * maximum: 3840
-     * @return height
-     */
+    /** 视频高度（单位：像素） - H264 取值范围：32-2160，必须为2的倍数。 - H265 取值范围：240-2160，必须为4的倍数。 minimum: 32 maximum: 3840
+     * 
+     * @return height */
     public Integer getHeight() {
         return height;
     }
@@ -573,22 +474,14 @@ public class QualityInfo  {
         this.height = height;
     }
 
-    
-
     public QualityInfo withBitrate(Integer bitrate) {
         this.bitrate = bitrate;
         return this;
     }
 
-    
-
-
-    /**
-     * 转码视频的码率（单位：Kbps）。 取值范围：40-30000。 
-     * minimum: 40
-     * maximum: 30000
-     * @return bitrate
-     */
+    /** 转码视频的码率（单位：Kbps）。 取值范围：40-30000。 minimum: 40 maximum: 30000
+     * 
+     * @return bitrate */
     public Integer getBitrate() {
         return bitrate;
     }
@@ -597,22 +490,14 @@ public class QualityInfo  {
         this.bitrate = bitrate;
     }
 
-    
-
     public QualityInfo withVideoFrameRate(Integer videoFrameRate) {
         this.videoFrameRate = videoFrameRate;
         return this;
     }
 
-    
-
-
-    /**
-     * 转码视频帧率（单位：fps）。 取值范围：0-30，0表示保持帧率不变。 
-     * minimum: 0
-     * maximum: 30
-     * @return videoFrameRate
-     */
+    /** 转码视频帧率（单位：fps）。 取值范围：0-30，0表示保持帧率不变。 minimum: 0 maximum: 30
+     * 
+     * @return videoFrameRate */
     public Integer getVideoFrameRate() {
         return videoFrameRate;
     }
@@ -621,20 +506,14 @@ public class QualityInfo  {
         this.videoFrameRate = videoFrameRate;
     }
 
-    
-
     public QualityInfo withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
         return this;
     }
 
-    
-
-
-    /**
-     * 转码输出支持的协议类型。当前只支持RTMP和HLS，且模板组里不同模板的输出协议类型必须相同。 - RTMP - HLS - DASH  默认为RTMP。 
-     * @return protocol
-     */
+    /** 转码输出支持的协议类型。当前只支持RTMP和HLS，且模板组里不同模板的输出协议类型必须相同。 - RTMP - HLS - DASH 默认为RTMP。
+     * 
+     * @return protocol */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -643,22 +522,14 @@ public class QualityInfo  {
         this.protocol = protocol;
     }
 
-    
-
     public QualityInfo withIFrameInterval(Integer iFrameInterval) {
         this.iFrameInterval = iFrameInterval;
         return this;
     }
 
-    
-
-
-    /**
-     * I帧间隔（单位：帧）。  取值范围：0-500。  默认为25。 
-     * minimum: 0
-     * maximum: 500
-     * @return iFrameInterval
-     */
+    /** I帧间隔（单位：帧）。 取值范围：0-500。 默认为25。 minimum: 0 maximum: 500
+     * 
+     * @return iFrameInterval */
     public Integer getIFrameInterval() {
         return iFrameInterval;
     }
@@ -667,22 +538,14 @@ public class QualityInfo  {
         this.iFrameInterval = iFrameInterval;
     }
 
-    
-
     public QualityInfo withGop(Integer gop) {
         this.gop = gop;
         return this;
     }
 
-    
-
-
-    /**
-     * 按时间设置I帧间隔，与“iFrameInterval”选择一个设置即可。  取值范围：[0,10]  默认值：4 
-     * minimum: 0
-     * maximum: 10
-     * @return gop
-     */
+    /** 按时间设置I帧间隔，与“iFrameInterval”选择一个设置即可。 取值范围：[0,10] 默认值：4 minimum: 0 maximum: 10
+     * 
+     * @return gop */
     public Integer getGop() {
         return gop;
     }
@@ -690,8 +553,6 @@ public class QualityInfo  {
     public void setGop(Integer gop) {
         this.gop = gop;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -702,23 +563,33 @@ public class QualityInfo  {
             return false;
         }
         QualityInfo qualityInfo = (QualityInfo) o;
-        return Objects.equals(this.templateName, qualityInfo.templateName) &&
-            Objects.equals(this.quality, qualityInfo.quality) &&
-            Objects.equals(this.pvc, qualityInfo.pvc) &&
-            Objects.equals(this.hdlb, qualityInfo.hdlb) &&
-            Objects.equals(this.codec, qualityInfo.codec) &&
-            Objects.equals(this.width, qualityInfo.width) &&
-            Objects.equals(this.height, qualityInfo.height) &&
-            Objects.equals(this.bitrate, qualityInfo.bitrate) &&
-            Objects.equals(this.videoFrameRate, qualityInfo.videoFrameRate) &&
-            Objects.equals(this.protocol, qualityInfo.protocol) &&
-            Objects.equals(this.iFrameInterval, qualityInfo.iFrameInterval) &&
-            Objects.equals(this.gop, qualityInfo.gop);
+        return Objects.equals(this.templateName, qualityInfo.templateName)
+            && Objects.equals(this.quality, qualityInfo.quality) && Objects.equals(this.pvc, qualityInfo.pvc)
+            && Objects.equals(this.hdlb, qualityInfo.hdlb) && Objects.equals(this.codec, qualityInfo.codec)
+            && Objects.equals(this.width, qualityInfo.width) && Objects.equals(this.height, qualityInfo.height)
+            && Objects.equals(this.bitrate, qualityInfo.bitrate)
+            && Objects.equals(this.videoFrameRate, qualityInfo.videoFrameRate)
+            && Objects.equals(this.protocol, qualityInfo.protocol)
+            && Objects.equals(this.iFrameInterval, qualityInfo.iFrameInterval)
+            && Objects.equals(this.gop, qualityInfo.gop);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(templateName, quality, pvc, hdlb, codec, width, height, bitrate, videoFrameRate, protocol, iFrameInterval, gop);
+        return Objects.hash(templateName,
+            quality,
+            pvc,
+            hdlb,
+            codec,
+            width,
+            height,
+            bitrate,
+            videoFrameRate,
+            protocol,
+            iFrameInterval,
+            gop);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -738,16 +609,13 @@ public class QualityInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

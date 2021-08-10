@@ -1,93 +1,71 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.ApiOutline;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * UnbindApiForAcl
- */
-public class UnbindApiForAcl  {
-
-
+/** UnbindApiForAcl */
+public class UnbindApiForAcl {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth_type")
-    
+    @JsonProperty(value = "auth_type")
+
     private String authType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="run_env_name")
-    
+    @JsonProperty(value = "run_env_name")
+
     private String runEnvName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_name")
-    
+    @JsonProperty(value = "group_name")
+
     private String groupName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publish_id")
-    
+    @JsonProperty(value = "publish_id")
+
     private String publishId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
+
     private String remark;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="run_env_id")
-    
+    @JsonProperty(value = "run_env_id")
+
     private String runEnvId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_uri")
-    
+    @JsonProperty(value = "req_uri")
+
     private String reqUri;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private Integer type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="acl_name")
-    
+    @JsonProperty(value = "acl_name")
+
     private String aclName;
 
     public UnbindApiForAcl withAuthType(String authType) {
@@ -95,13 +73,9 @@ public class UnbindApiForAcl  {
         return this;
     }
 
-    
-
-
-    /**
-     * API的认证方式
-     * @return authType
-     */
+    /** API的认证方式
+     * 
+     * @return authType */
     public String getAuthType() {
         return authType;
     }
@@ -110,20 +84,14 @@ public class UnbindApiForAcl  {
         this.authType = authType;
     }
 
-    
-
     public UnbindApiForAcl withRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
         return this;
     }
 
-    
-
-
-    /**
-     * 发布的环境名
-     * @return runEnvName
-     */
+    /** 发布的环境名
+     * 
+     * @return runEnvName */
     public String getRunEnvName() {
         return runEnvName;
     }
@@ -132,20 +100,14 @@ public class UnbindApiForAcl  {
         this.runEnvName = runEnvName;
     }
 
-    
-
     public UnbindApiForAcl withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
     }
 
-    
-
-
-    /**
-     * API所属分组的名称
-     * @return groupName
-     */
+    /** API所属分组的名称
+     * 
+     * @return groupName */
     public String getGroupName() {
         return groupName;
     }
@@ -154,20 +116,14 @@ public class UnbindApiForAcl  {
         this.groupName = groupName;
     }
 
-    
-
     public UnbindApiForAcl withPublishId(String publishId) {
         this.publishId = publishId;
         return this;
     }
 
-    
-
-
-    /**
-     * 发布记录的编号
-     * @return publishId
-     */
+    /** 发布记录的编号
+     * 
+     * @return publishId */
     public String getPublishId() {
         return publishId;
     }
@@ -176,20 +132,14 @@ public class UnbindApiForAcl  {
         this.publishId = publishId;
     }
 
-    
-
     public UnbindApiForAcl withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * API所属分组的编号
-     * @return groupId
-     */
+    /** API所属分组的编号
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -198,20 +148,14 @@ public class UnbindApiForAcl  {
         this.groupId = groupId;
     }
 
-    
-
     public UnbindApiForAcl withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * API名称
-     * @return name
-     */
+    /** API名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -220,20 +164,14 @@ public class UnbindApiForAcl  {
         this.name = name;
     }
 
-    
-
     public UnbindApiForAcl withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
-    
-
-
-    /**
-     * API描述
-     * @return remark
-     */
+    /** API描述
+     * 
+     * @return remark */
     public String getRemark() {
         return remark;
     }
@@ -242,20 +180,14 @@ public class UnbindApiForAcl  {
         this.remark = remark;
     }
 
-    
-
     public UnbindApiForAcl withRunEnvId(String runEnvId) {
         this.runEnvId = runEnvId;
         return this;
     }
 
-    
-
-
-    /**
-     * 发布的环境id
-     * @return runEnvId
-     */
+    /** 发布的环境id
+     * 
+     * @return runEnvId */
     public String getRunEnvId() {
         return runEnvId;
     }
@@ -264,20 +196,14 @@ public class UnbindApiForAcl  {
         this.runEnvId = runEnvId;
     }
 
-    
-
     public UnbindApiForAcl withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * API编号
-     * @return id
-     */
+    /** API编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -286,20 +212,14 @@ public class UnbindApiForAcl  {
         this.id = id;
     }
 
-    
-
     public UnbindApiForAcl withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
     }
 
-    
-
-
-    /**
-     * API的请求地址
-     * @return reqUri
-     */
+    /** API的请求地址
+     * 
+     * @return reqUri */
     public String getReqUri() {
         return reqUri;
     }
@@ -308,20 +228,14 @@ public class UnbindApiForAcl  {
         this.reqUri = reqUri;
     }
 
-    
-
     public UnbindApiForAcl withType(Integer type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * API类型
-     * @return type
-     */
+    /** API类型
+     * 
+     * @return type */
     public Integer getType() {
         return type;
     }
@@ -330,20 +244,14 @@ public class UnbindApiForAcl  {
         this.type = type;
     }
 
-    
-
     public UnbindApiForAcl withAclName(String aclName) {
         this.aclName = aclName;
         return this;
     }
 
-    
-
-
-    /**
-     * 绑定的其他同类型的ACL策略名称
-     * @return aclName
-     */
+    /** 绑定的其他同类型的ACL策略名称
+     * 
+     * @return aclName */
     public String getAclName() {
         return aclName;
     }
@@ -351,8 +259,6 @@ public class UnbindApiForAcl  {
     public void setAclName(String aclName) {
         this.aclName = aclName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -363,23 +269,33 @@ public class UnbindApiForAcl  {
             return false;
         }
         UnbindApiForAcl unbindApiForAcl = (UnbindApiForAcl) o;
-        return Objects.equals(this.authType, unbindApiForAcl.authType) &&
-            Objects.equals(this.runEnvName, unbindApiForAcl.runEnvName) &&
-            Objects.equals(this.groupName, unbindApiForAcl.groupName) &&
-            Objects.equals(this.publishId, unbindApiForAcl.publishId) &&
-            Objects.equals(this.groupId, unbindApiForAcl.groupId) &&
-            Objects.equals(this.name, unbindApiForAcl.name) &&
-            Objects.equals(this.remark, unbindApiForAcl.remark) &&
-            Objects.equals(this.runEnvId, unbindApiForAcl.runEnvId) &&
-            Objects.equals(this.id, unbindApiForAcl.id) &&
-            Objects.equals(this.reqUri, unbindApiForAcl.reqUri) &&
-            Objects.equals(this.type, unbindApiForAcl.type) &&
-            Objects.equals(this.aclName, unbindApiForAcl.aclName);
+        return Objects.equals(this.authType, unbindApiForAcl.authType)
+            && Objects.equals(this.runEnvName, unbindApiForAcl.runEnvName)
+            && Objects.equals(this.groupName, unbindApiForAcl.groupName)
+            && Objects.equals(this.publishId, unbindApiForAcl.publishId)
+            && Objects.equals(this.groupId, unbindApiForAcl.groupId) && Objects.equals(this.name, unbindApiForAcl.name)
+            && Objects.equals(this.remark, unbindApiForAcl.remark)
+            && Objects.equals(this.runEnvId, unbindApiForAcl.runEnvId) && Objects.equals(this.id, unbindApiForAcl.id)
+            && Objects.equals(this.reqUri, unbindApiForAcl.reqUri) && Objects.equals(this.type, unbindApiForAcl.type)
+            && Objects.equals(this.aclName, unbindApiForAcl.aclName);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(authType, runEnvName, groupName, publishId, groupId, name, remark, runEnvId, id, reqUri, type, aclName);
+        return Objects.hash(authType,
+            runEnvName,
+            groupName,
+            publishId,
+            groupId,
+            name,
+            remark,
+            runEnvId,
+            id,
+            reqUri,
+            type,
+            aclName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -399,16 +315,13 @@ public class UnbindApiForAcl  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

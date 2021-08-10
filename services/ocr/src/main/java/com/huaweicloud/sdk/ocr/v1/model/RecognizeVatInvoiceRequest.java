@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.ocr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ocr.v1.model.VatInvoiceRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class RecognizeVatInvoiceRequest  {
-
-
+/** Request Object */
+public class RecognizeVatInvoiceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private VatInvoiceRequestBody body;
 
     public RecognizeVatInvoiceRequest withBody(VatInvoiceRequestBody body) {
@@ -30,19 +20,17 @@ public class RecognizeVatInvoiceRequest  {
     }
 
     public RecognizeVatInvoiceRequest withBody(Consumer<VatInvoiceRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new VatInvoiceRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public VatInvoiceRequestBody getBody() {
         return body;
     }
@@ -50,8 +38,6 @@ public class RecognizeVatInvoiceRequest  {
     public void setBody(VatInvoiceRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class RecognizeVatInvoiceRequest  {
         RecognizeVatInvoiceRequest recognizeVatInvoiceRequest = (RecognizeVatInvoiceRequest) o;
         return Objects.equals(this.body, recognizeVatInvoiceRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class RecognizeVatInvoiceRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 构建任务的环境变量。
- */
-public class BuildInfoParameters  {
-
-
+/** 构建任务的环境变量。 */
+public class BuildInfoParameters {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="build_cmd")
-    
+    @JsonProperty(value = "build_cmd")
+
     private String buildCmd;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dockerfile_path")
-    
+    @JsonProperty(value = "dockerfile_path")
+
     private String dockerfilePath;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="artifact_namespace")
-    
+    @JsonProperty(value = "artifact_namespace")
+
     private String artifactNamespace;
 
     public BuildInfoParameters withBuildCmd(String buildCmd) {
@@ -40,13 +28,9 @@ public class BuildInfoParameters  {
         return this;
     }
 
-    
-
-
-    /**
-     * 编译命令。默认：  1、根目录存在build.sh：./build.sh  2、根据运行系统，示例如下：  Java和Tomcat：mvn clean package  Nodejs: npm build 
-     * @return buildCmd
-     */
+    /** 编译命令。默认： 1、根目录存在build.sh：./build.sh 2、根据运行系统，示例如下： Java和Tomcat：mvn clean package Nodejs: npm build
+     * 
+     * @return buildCmd */
     public String getBuildCmd() {
         return buildCmd;
     }
@@ -55,20 +39,14 @@ public class BuildInfoParameters  {
         this.buildCmd = buildCmd;
     }
 
-    
-
     public BuildInfoParameters withDockerfilePath(String dockerfilePath) {
         this.dockerfilePath = dockerfilePath;
         return this;
     }
 
-    
-
-
-    /**
-     * dockerfile地址。默认是根目录./。
-     * @return dockerfilePath
-     */
+    /** dockerfile地址。默认是根目录./。
+     * 
+     * @return dockerfilePath */
     public String getDockerfilePath() {
         return dockerfilePath;
     }
@@ -77,20 +55,14 @@ public class BuildInfoParameters  {
         this.dockerfilePath = dockerfilePath;
     }
 
-    
-
     public BuildInfoParameters withArtifactNamespace(String artifactNamespace) {
         this.artifactNamespace = artifactNamespace;
         return this;
     }
 
-    
-
-
-    /**
-     * 构建归档组织，默认cas_{project_id}。
-     * @return artifactNamespace
-     */
+    /** 构建归档组织，默认cas_{project_id}。
+     * 
+     * @return artifactNamespace */
     public String getArtifactNamespace() {
         return artifactNamespace;
     }
@@ -98,8 +70,6 @@ public class BuildInfoParameters  {
     public void setArtifactNamespace(String artifactNamespace) {
         this.artifactNamespace = artifactNamespace;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class BuildInfoParameters  {
             return false;
         }
         BuildInfoParameters buildInfoParameters = (BuildInfoParameters) o;
-        return Objects.equals(this.buildCmd, buildInfoParameters.buildCmd) &&
-            Objects.equals(this.dockerfilePath, buildInfoParameters.dockerfilePath) &&
-            Objects.equals(this.artifactNamespace, buildInfoParameters.artifactNamespace);
+        return Objects.equals(this.buildCmd, buildInfoParameters.buildCmd)
+            && Objects.equals(this.dockerfilePath, buildInfoParameters.dockerfilePath)
+            && Objects.equals(this.artifactNamespace, buildInfoParameters.artifactNamespace);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(buildCmd, dockerfilePath, artifactNamespace);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class BuildInfoParameters  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

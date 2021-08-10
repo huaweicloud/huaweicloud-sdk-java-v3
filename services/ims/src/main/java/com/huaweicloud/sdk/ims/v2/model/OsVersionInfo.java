@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 操作系统详情
- */
-public class OsVersionInfo  {
-
-
+/** 操作系统详情 */
+public class OsVersionInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="platform")
-    
+    @JsonProperty(value = "platform")
+
     private String platform;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os_version_key")
-    
+    @JsonProperty(value = "os_version_key")
+
     private String osVersionKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os_version")
-    
+    @JsonProperty(value = "os_version")
+
     private String osVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os_bit")
-    
+    @JsonProperty(value = "os_bit")
+
     private Integer osBit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os_type")
-    
+    @JsonProperty(value = "os_type")
+
     private String osType;
 
     public OsVersionInfo withPlatform(String platform) {
@@ -52,13 +38,9 @@ public class OsVersionInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 操作系统的平台值
-     * @return platform
-     */
+    /** 操作系统的平台值
+     * 
+     * @return platform */
     public String getPlatform() {
         return platform;
     }
@@ -67,20 +49,14 @@ public class OsVersionInfo  {
         this.platform = platform;
     }
 
-    
-
     public OsVersionInfo withOsVersionKey(String osVersionKey) {
         this.osVersionKey = osVersionKey;
         return this;
     }
 
-    
-
-
-    /**
-     * os_version的key值，和os_version值相同
-     * @return osVersionKey
-     */
+    /** os_version的key值，和os_version值相同
+     * 
+     * @return osVersionKey */
     public String getOsVersionKey() {
         return osVersionKey;
     }
@@ -89,20 +65,14 @@ public class OsVersionInfo  {
         this.osVersionKey = osVersionKey;
     }
 
-    
-
     public OsVersionInfo withOsVersion(String osVersion) {
         this.osVersion = osVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作系统的版本
-     * @return osVersion
-     */
+    /** 操作系统的版本
+     * 
+     * @return osVersion */
     public String getOsVersion() {
         return osVersion;
     }
@@ -111,20 +81,14 @@ public class OsVersionInfo  {
         this.osVersion = osVersion;
     }
 
-    
-
     public OsVersionInfo withOsBit(Integer osBit) {
         this.osBit = osBit;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作系统的位数
-     * @return osBit
-     */
+    /** 操作系统的位数
+     * 
+     * @return osBit */
     public Integer getOsBit() {
         return osBit;
     }
@@ -133,20 +97,14 @@ public class OsVersionInfo  {
         this.osBit = osBit;
     }
 
-    
-
     public OsVersionInfo withOsType(String osType) {
         this.osType = osType;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作系统的类型，Linux或Windows
-     * @return osType
-     */
+    /** 操作系统的类型，Linux或Windows
+     * 
+     * @return osType */
     public String getOsType() {
         return osType;
     }
@@ -154,8 +112,6 @@ public class OsVersionInfo  {
     public void setOsType(String osType) {
         this.osType = osType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,17 @@ public class OsVersionInfo  {
             return false;
         }
         OsVersionInfo osVersionInfo = (OsVersionInfo) o;
-        return Objects.equals(this.platform, osVersionInfo.platform) &&
-            Objects.equals(this.osVersionKey, osVersionInfo.osVersionKey) &&
-            Objects.equals(this.osVersion, osVersionInfo.osVersion) &&
-            Objects.equals(this.osBit, osVersionInfo.osBit) &&
-            Objects.equals(this.osType, osVersionInfo.osType);
+        return Objects.equals(this.platform, osVersionInfo.platform)
+            && Objects.equals(this.osVersionKey, osVersionInfo.osVersionKey)
+            && Objects.equals(this.osVersion, osVersionInfo.osVersion)
+            && Objects.equals(this.osBit, osVersionInfo.osBit) && Objects.equals(this.osType, osVersionInfo.osType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(platform, osVersionKey, osVersion, osBit, osType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +145,13 @@ public class OsVersionInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

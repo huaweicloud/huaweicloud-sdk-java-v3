@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 约束 - 号码和邮箱必须填一个，若企业未开启短信功能，则邮箱必填
- */
-public class ActiveDTO  {
-
-
+/** 约束 - 号码和邮箱必须填一个，若企业未开启短信功能，则邮箱必填 */
+public class ActiveDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="smsNumber")
-    
+    @JsonProperty(value = "smsNumber")
+
     private String smsNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="country")
-    
+    @JsonProperty(value = "country")
+
     private String country;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="emailAddr")
-    
+    @JsonProperty(value = "emailAddr")
+
     private String emailAddr;
 
     public ActiveDTO withSmsNumber(String smsNumber) {
@@ -40,13 +28,9 @@ public class ActiveDTO  {
         return this;
     }
 
-    
-
-
-    /**
-     * 手机号，如果为手机号，必须加上国家码。 例如中国大陆手机+86xxxxxxxxxxx，当填写手机号时 “country”参数必填。 maxLength：32 minLength：0
-     * @return smsNumber
-     */
+    /** 手机号，如果为手机号，必须加上国家码。 例如中国大陆手机+86xxxxxxxxxxx，当填写手机号时 “country”参数必填。 maxLength：32 minLength：0
+     * 
+     * @return smsNumber */
     public String getSmsNumber() {
         return smsNumber;
     }
@@ -55,20 +39,15 @@ public class ActiveDTO  {
         this.smsNumber = smsNumber;
     }
 
-    
-
     public ActiveDTO withCountry(String country) {
         this.country = country;
         return this;
     }
 
-    
-
-
-    /**
-     * 若smsNumber为手机号,则需带上手机号所属的国家。 例如国家为中国大陆则country参数取值为chinaPR 国家和国家码的对应关系请参考：https://support.huaweicloud.com/api-meeting/meeting_21_0109.html 
-     * @return country
-     */
+    /** 若smsNumber为手机号,则需带上手机号所属的国家。 例如国家为中国大陆则country参数取值为chinaPR
+     * 国家和国家码的对应关系请参考：https://support.huaweicloud.com/api-meeting/meeting_21_0109.html
+     * 
+     * @return country */
     public String getCountry() {
         return country;
     }
@@ -77,20 +56,14 @@ public class ActiveDTO  {
         this.country = country;
     }
 
-    
-
     public ActiveDTO withEmailAddr(String emailAddr) {
         this.emailAddr = emailAddr;
         return this;
     }
 
-    
-
-
-    /**
-     * 邮件地址。 maxLength：255 minLength：0
-     * @return emailAddr
-     */
+    /** 邮件地址。 maxLength：255 minLength：0
+     * 
+     * @return emailAddr */
     public String getEmailAddr() {
         return emailAddr;
     }
@@ -98,8 +71,6 @@ public class ActiveDTO  {
     public void setEmailAddr(String emailAddr) {
         this.emailAddr = emailAddr;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +81,15 @@ public class ActiveDTO  {
             return false;
         }
         ActiveDTO activeDTO = (ActiveDTO) o;
-        return Objects.equals(this.smsNumber, activeDTO.smsNumber) &&
-            Objects.equals(this.country, activeDTO.country) &&
-            Objects.equals(this.emailAddr, activeDTO.emailAddr);
+        return Objects.equals(this.smsNumber, activeDTO.smsNumber) && Objects.equals(this.country, activeDTO.country)
+            && Objects.equals(this.emailAddr, activeDTO.emailAddr);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(smsNumber, country, emailAddr);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class ActiveDTO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

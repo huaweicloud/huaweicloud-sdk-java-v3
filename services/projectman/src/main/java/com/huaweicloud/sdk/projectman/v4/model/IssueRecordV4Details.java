@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.projectman.v4.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * IssueRecordV4Details
- */
-public class IssueRecordV4Details  {
-
-
+/** IssueRecordV4Details */
+public class IssueRecordV4Details {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="property")
-    
+    @JsonProperty(value = "property")
+
     private String property;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="old_value")
-    
+    @JsonProperty(value = "old_value")
+
     private String oldValue;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="new_value")
-    
+    @JsonProperty(value = "new_value")
+
     private String newValue;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operation")
-    
+    @JsonProperty(value = "operation")
+
     private String operation;
 
     public IssueRecordV4Details withProperty(String property) {
@@ -46,13 +33,9 @@ public class IssueRecordV4Details  {
         return this;
     }
 
-    
-
-
-    /**
-     * 操作属性
-     * @return property
-     */
+    /** 操作属性
+     * 
+     * @return property */
     public String getProperty() {
         return property;
     }
@@ -61,20 +44,14 @@ public class IssueRecordV4Details  {
         this.property = property;
     }
 
-    
-
     public IssueRecordV4Details withOldValue(String oldValue) {
         this.oldValue = oldValue;
         return this;
     }
 
-    
-
-
-    /**
-     * 上次的记录
-     * @return oldValue
-     */
+    /** 上次的记录
+     * 
+     * @return oldValue */
     public String getOldValue() {
         return oldValue;
     }
@@ -83,20 +60,14 @@ public class IssueRecordV4Details  {
         this.oldValue = oldValue;
     }
 
-    
-
     public IssueRecordV4Details withNewValue(String newValue) {
         this.newValue = newValue;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前值
-     * @return newValue
-     */
+    /** 当前值
+     * 
+     * @return newValue */
     public String getNewValue() {
         return newValue;
     }
@@ -105,20 +76,14 @@ public class IssueRecordV4Details  {
         this.newValue = newValue;
     }
 
-    
-
     public IssueRecordV4Details withOperation(String operation) {
         this.operation = operation;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作
-     * @return operation
-     */
+    /** 操作
+     * 
+     * @return operation */
     public String getOperation() {
         return operation;
     }
@@ -126,8 +91,6 @@ public class IssueRecordV4Details  {
     public void setOperation(String operation) {
         this.operation = operation;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class IssueRecordV4Details  {
             return false;
         }
         IssueRecordV4Details issueRecordV4Details = (IssueRecordV4Details) o;
-        return Objects.equals(this.property, issueRecordV4Details.property) &&
-            Objects.equals(this.oldValue, issueRecordV4Details.oldValue) &&
-            Objects.equals(this.newValue, issueRecordV4Details.newValue) &&
-            Objects.equals(this.operation, issueRecordV4Details.operation);
+        return Objects.equals(this.property, issueRecordV4Details.property)
+            && Objects.equals(this.oldValue, issueRecordV4Details.oldValue)
+            && Objects.equals(this.newValue, issueRecordV4Details.newValue)
+            && Objects.equals(this.operation, issueRecordV4Details.operation);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(property, oldValue, newValue, operation);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class IssueRecordV4Details  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

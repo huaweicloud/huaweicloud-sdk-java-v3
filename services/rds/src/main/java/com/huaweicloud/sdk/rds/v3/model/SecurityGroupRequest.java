@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * SecurityGroupRequest
- */
-public class SecurityGroupRequest  {
-
-
+/** SecurityGroupRequest */
+public class SecurityGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_id")
-    
+    @JsonProperty(value = "security_group_id")
+
     private String securityGroupId;
 
     public SecurityGroupRequest withSecurityGroupId(String securityGroupId) {
@@ -28,13 +18,9 @@ public class SecurityGroupRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * - 安全组ID。
-     * @return securityGroupId
-     */
+    /** - 安全组ID。
+     * 
+     * @return securityGroupId */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -42,8 +28,6 @@ public class SecurityGroupRequest  {
     public void setSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class SecurityGroupRequest  {
         SecurityGroupRequest securityGroupRequest = (SecurityGroupRequest) o;
         return Objects.equals(this.securityGroupId, securityGroupRequest.securityGroupId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(securityGroupId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class SecurityGroupRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

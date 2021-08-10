@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * IncidentDetailExtInfoV2
- */
-public class IncidentDetailExtInfoV2  {
-
-
+/** IncidentDetailExtInfoV2 */
+public class IncidentDetailExtInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="area_code")
-    
+    @JsonProperty(value = "area_code")
+
     private String areaCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remind_mobile")
-    
+    @JsonProperty(value = "remind_mobile")
+
     private String remindMobile;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remind_mail")
-    
+    @JsonProperty(value = "remind_mail")
+
     private String remindMail;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="contact_type")
-    
+    @JsonProperty(value = "contact_type")
+
     private String contactType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remind_time")
-    
+    @JsonProperty(value = "remind_time")
+
     private String remindTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cc_email")
-    
+    @JsonProperty(value = "cc_email")
+
     private String ccEmail;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="commodity_id")
-    
+    @JsonProperty(value = "commodity_id")
+
     private String commodityId;
 
     public IncidentDetailExtInfoV2 withAreaCode(String areaCode) {
@@ -64,13 +48,9 @@ public class IncidentDetailExtInfoV2  {
         return this;
     }
 
-    
-
-
-    /**
-     * 国家码
-     * @return areaCode
-     */
+    /** 国家码
+     * 
+     * @return areaCode */
     public String getAreaCode() {
         return areaCode;
     }
@@ -79,20 +59,14 @@ public class IncidentDetailExtInfoV2  {
         this.areaCode = areaCode;
     }
 
-    
-
     public IncidentDetailExtInfoV2 withRemindMobile(String remindMobile) {
         this.remindMobile = remindMobile;
         return this;
     }
 
-    
-
-
-    /**
-     * 提醒手机
-     * @return remindMobile
-     */
+    /** 提醒手机
+     * 
+     * @return remindMobile */
     public String getRemindMobile() {
         return remindMobile;
     }
@@ -101,20 +75,14 @@ public class IncidentDetailExtInfoV2  {
         this.remindMobile = remindMobile;
     }
 
-    
-
     public IncidentDetailExtInfoV2 withRemindMail(String remindMail) {
         this.remindMail = remindMail;
         return this;
     }
 
-    
-
-
-    /**
-     * 提醒邮箱
-     * @return remindMail
-     */
+    /** 提醒邮箱
+     * 
+     * @return remindMail */
     public String getRemindMail() {
         return remindMail;
     }
@@ -123,20 +91,14 @@ public class IncidentDetailExtInfoV2  {
         this.remindMail = remindMail;
     }
 
-    
-
     public IncidentDetailExtInfoV2 withContactType(String contactType) {
         this.contactType = contactType;
         return this;
     }
 
-    
-
-
-    /**
-     * 联系方式类型
-     * @return contactType
-     */
+    /** 联系方式类型
+     * 
+     * @return contactType */
     public String getContactType() {
         return contactType;
     }
@@ -145,20 +107,14 @@ public class IncidentDetailExtInfoV2  {
         this.contactType = contactType;
     }
 
-    
-
     public IncidentDetailExtInfoV2 withRemindTime(String remindTime) {
         this.remindTime = remindTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 提醒时间
-     * @return remindTime
-     */
+    /** 提醒时间
+     * 
+     * @return remindTime */
     public String getRemindTime() {
         return remindTime;
     }
@@ -167,20 +123,14 @@ public class IncidentDetailExtInfoV2  {
         this.remindTime = remindTime;
     }
 
-    
-
     public IncidentDetailExtInfoV2 withCcEmail(String ccEmail) {
         this.ccEmail = ccEmail;
         return this;
     }
 
-    
-
-
-    /**
-     * 抄送邮箱
-     * @return ccEmail
-     */
+    /** 抄送邮箱
+     * 
+     * @return ccEmail */
     public String getCcEmail() {
         return ccEmail;
     }
@@ -189,20 +139,14 @@ public class IncidentDetailExtInfoV2  {
         this.ccEmail = ccEmail;
     }
 
-    
-
     public IncidentDetailExtInfoV2 withCommodityId(String commodityId) {
         this.commodityId = commodityId;
         return this;
     }
 
-    
-
-
-    /**
-     * ISV商品id
-     * @return commodityId
-     */
+    /** ISV商品id
+     * 
+     * @return commodityId */
     public String getCommodityId() {
         return commodityId;
     }
@@ -210,8 +154,6 @@ public class IncidentDetailExtInfoV2  {
     public void setCommodityId(String commodityId) {
         this.commodityId = commodityId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -222,18 +164,20 @@ public class IncidentDetailExtInfoV2  {
             return false;
         }
         IncidentDetailExtInfoV2 incidentDetailExtInfoV2 = (IncidentDetailExtInfoV2) o;
-        return Objects.equals(this.areaCode, incidentDetailExtInfoV2.areaCode) &&
-            Objects.equals(this.remindMobile, incidentDetailExtInfoV2.remindMobile) &&
-            Objects.equals(this.remindMail, incidentDetailExtInfoV2.remindMail) &&
-            Objects.equals(this.contactType, incidentDetailExtInfoV2.contactType) &&
-            Objects.equals(this.remindTime, incidentDetailExtInfoV2.remindTime) &&
-            Objects.equals(this.ccEmail, incidentDetailExtInfoV2.ccEmail) &&
-            Objects.equals(this.commodityId, incidentDetailExtInfoV2.commodityId);
+        return Objects.equals(this.areaCode, incidentDetailExtInfoV2.areaCode)
+            && Objects.equals(this.remindMobile, incidentDetailExtInfoV2.remindMobile)
+            && Objects.equals(this.remindMail, incidentDetailExtInfoV2.remindMail)
+            && Objects.equals(this.contactType, incidentDetailExtInfoV2.contactType)
+            && Objects.equals(this.remindTime, incidentDetailExtInfoV2.remindTime)
+            && Objects.equals(this.ccEmail, incidentDetailExtInfoV2.ccEmail)
+            && Objects.equals(this.commodityId, incidentDetailExtInfoV2.commodityId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(areaCode, remindMobile, remindMail, contactType, remindTime, ccEmail, commodityId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,16 +192,13 @@ public class IncidentDetailExtInfoV2  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

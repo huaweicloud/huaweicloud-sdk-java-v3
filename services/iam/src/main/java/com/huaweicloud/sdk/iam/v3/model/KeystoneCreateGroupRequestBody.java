@@ -1,27 +1,19 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.KeystoneCreateGroupOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class KeystoneCreateGroupRequestBody  {
-
-
+public class KeystoneCreateGroupRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group")
-    
+    @JsonProperty(value = "group")
+
     private KeystoneCreateGroupOption group;
 
     public KeystoneCreateGroupRequestBody withGroup(KeystoneCreateGroupOption group) {
@@ -30,19 +22,17 @@ public class KeystoneCreateGroupRequestBody  {
     }
 
     public KeystoneCreateGroupRequestBody withGroup(Consumer<KeystoneCreateGroupOption> groupSetter) {
-        if(this.group == null ){
+        if (this.group == null) {
             this.group = new KeystoneCreateGroupOption();
             groupSetter.accept(this.group);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get group
-     * @return group
-     */
+    /** Get group
+     * 
+     * @return group */
     public KeystoneCreateGroupOption getGroup() {
         return group;
     }
@@ -50,8 +40,6 @@ public class KeystoneCreateGroupRequestBody  {
     public void setGroup(KeystoneCreateGroupOption group) {
         this.group = group;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +52,12 @@ public class KeystoneCreateGroupRequestBody  {
         KeystoneCreateGroupRequestBody keystoneCreateGroupRequestBody = (KeystoneCreateGroupRequestBody) o;
         return Objects.equals(this.group, keystoneCreateGroupRequestBody.group);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(group);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +66,13 @@ public class KeystoneCreateGroupRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

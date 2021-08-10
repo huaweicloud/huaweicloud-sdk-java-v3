@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.smn.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.smn.v2.model.PublishMessageRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class PublishMessageRequest  {
-
-
+/** Request Object */
+public class PublishMessageRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic_urn")
-    
+    @JsonProperty(value = "topic_urn")
+
     private String topicUrn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private PublishMessageRequestBody body;
 
     public PublishMessageRequest withTopicUrn(String topicUrn) {
@@ -35,13 +24,9 @@ public class PublishMessageRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * Topic的唯一的资源标识，可通过[查询主题列表](https://support.huaweicloud.com/api-smn/smn_api_51004.html)获取该标识。
-     * @return topicUrn
-     */
+    /** Topic的唯一的资源标识，可通过[查询主题列表](https://support.huaweicloud.com/api-smn/smn_api_51004.html)获取该标识。
+     * 
+     * @return topicUrn */
     public String getTopicUrn() {
         return topicUrn;
     }
@@ -50,27 +35,23 @@ public class PublishMessageRequest  {
         this.topicUrn = topicUrn;
     }
 
-    
-
     public PublishMessageRequest withBody(PublishMessageRequestBody body) {
         this.body = body;
         return this;
     }
 
     public PublishMessageRequest withBody(Consumer<PublishMessageRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new PublishMessageRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public PublishMessageRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class PublishMessageRequest  {
     public void setBody(PublishMessageRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class PublishMessageRequest  {
             return false;
         }
         PublishMessageRequest publishMessageRequest = (PublishMessageRequest) o;
-        return Objects.equals(this.topicUrn, publishMessageRequest.topicUrn) &&
-            Objects.equals(this.body, publishMessageRequest.body);
+        return Objects.equals(this.topicUrn, publishMessageRequest.topicUrn)
+            && Objects.equals(this.body, publishMessageRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(topicUrn, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class PublishMessageRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

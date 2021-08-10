@@ -1,49 +1,32 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.SourceServerByTask;
-import com.huaweicloud.sdk.sms.v3.model.TargetServerByTask;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 创建任务的参数
- */
-public class PostTask  {
-
-
+/** 创建任务的参数 */
+public class PostTask {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 任务类型
-     */
+
+    /** 任务类型 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum MIGRATE_FILE for value: "MIGRATE_FILE"
-         */
+        /** Enum MIGRATE_FILE for value: "MIGRATE_FILE" */
         public static final TypeEnum MIGRATE_FILE = new TypeEnum("MIGRATE_FILE");
-        
-        /**
-         * Enum MIGRATE_BLOCK for value: "MIGRATE_BLOCK"
-         */
+
+        /** Enum MIGRATE_BLOCK for value: "MIGRATE_BLOCK" */
         public static final TypeEnum MIGRATE_BLOCK = new TypeEnum("MIGRATE_BLOCK");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -72,7 +55,7 @@ public class PostTask  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -83,7 +66,7 @@ public class PostTask  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -107,82 +90,69 @@ public class PostTask  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_target_server")
-    
+    @JsonProperty(value = "start_target_server")
+
     private Boolean startTargetServer;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os_type")
-    
+    @JsonProperty(value = "os_type")
+
     private String osType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_server")
-    
+    @JsonProperty(value = "source_server")
+
     private SourceServerByTask sourceServer;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target_server")
-    
+    @JsonProperty(value = "target_server")
+
     private TargetServerByTask targetServer;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="migration_ip")
-    
+    @JsonProperty(value = "migration_ip")
+
     private String migrationIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_name")
-    
+    @JsonProperty(value = "region_name")
+
     private String regionName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_id")
-    
+    @JsonProperty(value = "region_id")
+
     private String regionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_name")
-    
+    @JsonProperty(value = "project_name")
+
     private String projectName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vm_template_id")
-    
+    @JsonProperty(value = "vm_template_id")
+
     private String vmTemplateId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="use_public_ip")
-    
+    @JsonProperty(value = "use_public_ip")
+
     private Boolean usePublicIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="syncing")
-    
+    @JsonProperty(value = "syncing")
+
     private Boolean syncing;
 
     public PostTask withName(String name) {
@@ -190,13 +160,9 @@ public class PostTask  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务名称
-     * @return name
-     */
+    /** 任务名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -205,20 +171,14 @@ public class PostTask  {
         this.name = name;
     }
 
-    
-
     public PostTask withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务类型
-     * @return type
-     */
+    /** 任务类型
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -227,20 +187,14 @@ public class PostTask  {
         this.type = type;
     }
 
-    
-
     public PostTask withStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移后是否启动目的端虚拟机
-     * @return startTargetServer
-     */
+    /** 迁移后是否启动目的端虚拟机
+     * 
+     * @return startTargetServer */
     public Boolean getStartTargetServer() {
         return startTargetServer;
     }
@@ -249,20 +203,14 @@ public class PostTask  {
         this.startTargetServer = startTargetServer;
     }
 
-    
-
     public PostTask withOsType(String osType) {
         this.osType = osType;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作系统类型
-     * @return osType
-     */
+    /** 操作系统类型
+     * 
+     * @return osType */
     public String getOsType() {
         return osType;
     }
@@ -271,27 +219,23 @@ public class PostTask  {
         this.osType = osType;
     }
 
-    
-
     public PostTask withSourceServer(SourceServerByTask sourceServer) {
         this.sourceServer = sourceServer;
         return this;
     }
 
     public PostTask withSourceServer(Consumer<SourceServerByTask> sourceServerSetter) {
-        if(this.sourceServer == null ){
+        if (this.sourceServer == null) {
             this.sourceServer = new SourceServerByTask();
             sourceServerSetter.accept(this.sourceServer);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get sourceServer
-     * @return sourceServer
-     */
+    /** Get sourceServer
+     * 
+     * @return sourceServer */
     public SourceServerByTask getSourceServer() {
         return sourceServer;
     }
@@ -300,27 +244,23 @@ public class PostTask  {
         this.sourceServer = sourceServer;
     }
 
-    
-
     public PostTask withTargetServer(TargetServerByTask targetServer) {
         this.targetServer = targetServer;
         return this;
     }
 
     public PostTask withTargetServer(Consumer<TargetServerByTask> targetServerSetter) {
-        if(this.targetServer == null ){
+        if (this.targetServer == null) {
             this.targetServer = new TargetServerByTask();
             targetServerSetter.accept(this.targetServer);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get targetServer
-     * @return targetServer
-     */
+    /** Get targetServer
+     * 
+     * @return targetServer */
     public TargetServerByTask getTargetServer() {
         return targetServer;
     }
@@ -329,20 +269,14 @@ public class PostTask  {
         this.targetServer = targetServer;
     }
 
-    
-
     public PostTask withMigrationIp(String migrationIp) {
         this.migrationIp = migrationIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移ip，如果是自动创建虚拟机，不需要此参数
-     * @return migrationIp
-     */
+    /** 迁移ip，如果是自动创建虚拟机，不需要此参数
+     * 
+     * @return migrationIp */
     public String getMigrationIp() {
         return migrationIp;
     }
@@ -351,20 +285,14 @@ public class PostTask  {
         this.migrationIp = migrationIp;
     }
 
-    
-
     public PostTask withRegionName(String regionName) {
         this.regionName = regionName;
         return this;
     }
 
-    
-
-
-    /**
-     * region的名称
-     * @return regionName
-     */
+    /** region的名称
+     * 
+     * @return regionName */
     public String getRegionName() {
         return regionName;
     }
@@ -373,20 +301,14 @@ public class PostTask  {
         this.regionName = regionName;
     }
 
-    
-
     public PostTask withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
     }
 
-    
-
-
-    /**
-     * region id
-     * @return regionId
-     */
+    /** region id
+     * 
+     * @return regionId */
     public String getRegionId() {
         return regionId;
     }
@@ -395,20 +317,14 @@ public class PostTask  {
         this.regionId = regionId;
     }
 
-    
-
     public PostTask withProjectName(String projectName) {
         this.projectName = projectName;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目名称
-     * @return projectName
-     */
+    /** 项目名称
+     * 
+     * @return projectName */
     public String getProjectName() {
         return projectName;
     }
@@ -417,20 +333,14 @@ public class PostTask  {
         this.projectName = projectName;
     }
 
-    
-
     public PostTask withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目id
-     * @return projectId
-     */
+    /** 项目id
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -439,20 +349,14 @@ public class PostTask  {
         this.projectId = projectId;
     }
 
-    
-
     public PostTask withVmTemplateId(String vmTemplateId) {
         this.vmTemplateId = vmTemplateId;
         return this;
     }
 
-    
-
-
-    /**
-     * 自动创建虚拟机使用模板
-     * @return vmTemplateId
-     */
+    /** 自动创建虚拟机使用模板
+     * 
+     * @return vmTemplateId */
     public String getVmTemplateId() {
         return vmTemplateId;
     }
@@ -461,20 +365,14 @@ public class PostTask  {
         this.vmTemplateId = vmTemplateId;
     }
 
-    
-
     public PostTask withUsePublicIp(Boolean usePublicIp) {
         this.usePublicIp = usePublicIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否使用公网ip
-     * @return usePublicIp
-     */
+    /** 是否使用公网ip
+     * 
+     * @return usePublicIp */
     public Boolean getUsePublicIp() {
         return usePublicIp;
     }
@@ -483,20 +381,14 @@ public class PostTask  {
         this.usePublicIp = usePublicIp;
     }
 
-    
-
     public PostTask withSyncing(Boolean syncing) {
         this.syncing = syncing;
         return this;
     }
 
-    
-
-
-    /**
-     * 复制或者同步后是否会继续持续同步，不添加则默认是false
-     * @return syncing
-     */
+    /** 复制或者同步后是否会继续持续同步，不添加则默认是false
+     * 
+     * @return syncing */
     public Boolean getSyncing() {
         return syncing;
     }
@@ -504,8 +396,6 @@ public class PostTask  {
     public void setSyncing(Boolean syncing) {
         this.syncing = syncing;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -516,25 +406,36 @@ public class PostTask  {
             return false;
         }
         PostTask postTask = (PostTask) o;
-        return Objects.equals(this.name, postTask.name) &&
-            Objects.equals(this.type, postTask.type) &&
-            Objects.equals(this.startTargetServer, postTask.startTargetServer) &&
-            Objects.equals(this.osType, postTask.osType) &&
-            Objects.equals(this.sourceServer, postTask.sourceServer) &&
-            Objects.equals(this.targetServer, postTask.targetServer) &&
-            Objects.equals(this.migrationIp, postTask.migrationIp) &&
-            Objects.equals(this.regionName, postTask.regionName) &&
-            Objects.equals(this.regionId, postTask.regionId) &&
-            Objects.equals(this.projectName, postTask.projectName) &&
-            Objects.equals(this.projectId, postTask.projectId) &&
-            Objects.equals(this.vmTemplateId, postTask.vmTemplateId) &&
-            Objects.equals(this.usePublicIp, postTask.usePublicIp) &&
-            Objects.equals(this.syncing, postTask.syncing);
+        return Objects.equals(this.name, postTask.name) && Objects.equals(this.type, postTask.type)
+            && Objects.equals(this.startTargetServer, postTask.startTargetServer)
+            && Objects.equals(this.osType, postTask.osType) && Objects.equals(this.sourceServer, postTask.sourceServer)
+            && Objects.equals(this.targetServer, postTask.targetServer)
+            && Objects.equals(this.migrationIp, postTask.migrationIp)
+            && Objects.equals(this.regionName, postTask.regionName) && Objects.equals(this.regionId, postTask.regionId)
+            && Objects.equals(this.projectName, postTask.projectName)
+            && Objects.equals(this.projectId, postTask.projectId)
+            && Objects.equals(this.vmTemplateId, postTask.vmTemplateId)
+            && Objects.equals(this.usePublicIp, postTask.usePublicIp) && Objects.equals(this.syncing, postTask.syncing);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, startTargetServer, osType, sourceServer, targetServer, migrationIp, regionName, regionId, projectName, projectId, vmTemplateId, usePublicIp, syncing);
+        return Objects.hash(name,
+            type,
+            startTargetServer,
+            osType,
+            sourceServer,
+            targetServer,
+            migrationIp,
+            regionName,
+            regionId,
+            projectName,
+            projectId,
+            vmTemplateId,
+            usePublicIp,
+            syncing);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -556,16 +457,13 @@ public class PostTask  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cdn.v1.model.ResourceBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * OriginRequest
- */
-public class OriginRequest  {
-
-
+/** OriginRequest */
+public class OriginRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="origin")
-    
+    @JsonProperty(value = "origin")
+
     private ResourceBody origin;
 
     public OriginRequest withOrigin(ResourceBody origin) {
@@ -30,19 +20,17 @@ public class OriginRequest  {
     }
 
     public OriginRequest withOrigin(Consumer<ResourceBody> originSetter) {
-        if(this.origin == null ){
+        if (this.origin == null) {
             this.origin = new ResourceBody();
             originSetter.accept(this.origin);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get origin
-     * @return origin
-     */
+    /** Get origin
+     * 
+     * @return origin */
     public ResourceBody getOrigin() {
         return origin;
     }
@@ -50,8 +38,6 @@ public class OriginRequest  {
     public void setOrigin(ResourceBody origin) {
         this.origin = origin;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class OriginRequest  {
         OriginRequest originRequest = (OriginRequest) o;
         return Objects.equals(this.origin, originRequest.origin);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(origin);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class OriginRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

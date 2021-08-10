@@ -1,49 +1,31 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * TasksObject
- */
-public class TasksObject  {
-
-
+/** TasksObject */
+public class TasksObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
-    /**
-     * 任务的类型， 其值可以为refresh或preheating。
-     */
+
+    /** 任务的类型， 其值可以为refresh或preheating。 */
     public static final class TaskTypeEnum {
 
-        
-        /**
-         * Enum REFRESH for value: "refresh"
-         */
+        /** Enum REFRESH for value: "refresh" */
         public static final TaskTypeEnum REFRESH = new TaskTypeEnum("refresh");
-        
-        /**
-         * Enum PREHEATING for value: "preheating"
-         */
+
+        /** Enum PREHEATING for value: "preheating" */
         public static final TaskTypeEnum PREHEATING = new TaskTypeEnum("preheating");
-        
 
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -72,7 +54,7 @@ public class TasksObject  {
 
         @JsonCreator
         public static TaskTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TaskTypeEnum result = STATIC_FIELDS.get(value);
@@ -83,7 +65,7 @@ public class TasksObject  {
         }
 
         public static TaskTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TaskTypeEnum result = STATIC_FIELDS.get(value);
@@ -107,63 +89,49 @@ public class TasksObject  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_type")
-    
+    @JsonProperty(value = "task_type")
+
     private TaskTypeEnum taskType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="processing")
-    
+    @JsonProperty(value = "processing")
+
     private Integer processing;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="succeed")
-    
+    @JsonProperty(value = "succeed")
+
     private Integer succeed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="failed")
-    
+    @JsonProperty(value = "failed")
+
     private Integer failed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private Long createTime;
-    /**
-     * 默认是文件file。file：文件,directory：目录。
-     */
+
+    /** 默认是文件file。file：文件,directory：目录。 */
     public static final class FileTypeEnum {
 
-        
-        /**
-         * Enum FILE for value: "file"
-         */
+        /** Enum FILE for value: "file" */
         public static final FileTypeEnum FILE = new FileTypeEnum("file");
-        
-        /**
-         * Enum DIRECTORY for value: "directory"
-         */
+
+        /** Enum DIRECTORY for value: "directory" */
         public static final FileTypeEnum DIRECTORY = new FileTypeEnum("directory");
-        
 
         private static final Map<String, FileTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -192,7 +160,7 @@ public class TasksObject  {
 
         @JsonCreator
         public static FileTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             FileTypeEnum result = STATIC_FIELDS.get(value);
@@ -203,7 +171,7 @@ public class TasksObject  {
         }
 
         public static FileTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             FileTypeEnum result = STATIC_FIELDS.get(value);
@@ -227,10 +195,9 @@ public class TasksObject  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_type")
-    
+    @JsonProperty(value = "file_type")
+
     private FileTypeEnum fileType;
 
     public TasksObject withId(String id) {
@@ -238,13 +205,9 @@ public class TasksObject  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务id。
-     * @return id
-     */
+    /** 任务id。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -253,20 +216,14 @@ public class TasksObject  {
         this.id = id;
     }
 
-    
-
     public TasksObject withTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务的类型， 其值可以为refresh或preheating。
-     * @return taskType
-     */
+    /** 任务的类型， 其值可以为refresh或preheating。
+     * 
+     * @return taskType */
     public TaskTypeEnum getTaskType() {
         return taskType;
     }
@@ -275,20 +232,14 @@ public class TasksObject  {
         this.taskType = taskType;
     }
 
-    
-
     public TasksObject withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 刷新结果。task_done表示刷新成功  ，task_inprocess表示刷新中。
-     * @return status
-     */
+    /** 刷新结果。task_done表示刷新成功 ，task_inprocess表示刷新中。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -297,20 +248,14 @@ public class TasksObject  {
         this.status = status;
     }
 
-    
-
     public TasksObject withProcessing(Integer processing) {
         this.processing = processing;
         return this;
     }
 
-    
-
-
-    /**
-     * 处理中的url个数。
-     * @return processing
-     */
+    /** 处理中的url个数。
+     * 
+     * @return processing */
     public Integer getProcessing() {
         return processing;
     }
@@ -319,20 +264,14 @@ public class TasksObject  {
         this.processing = processing;
     }
 
-    
-
     public TasksObject withSucceed(Integer succeed) {
         this.succeed = succeed;
         return this;
     }
 
-    
-
-
-    /**
-     * 成功处理的url个数。
-     * @return succeed
-     */
+    /** 成功处理的url个数。
+     * 
+     * @return succeed */
     public Integer getSucceed() {
         return succeed;
     }
@@ -341,20 +280,14 @@ public class TasksObject  {
         this.succeed = succeed;
     }
 
-    
-
     public TasksObject withFailed(Integer failed) {
         this.failed = failed;
         return this;
     }
 
-    
-
-
-    /**
-     * 处理失败的url个数。
-     * @return failed
-     */
+    /** 处理失败的url个数。
+     * 
+     * @return failed */
     public Integer getFailed() {
         return failed;
     }
@@ -363,20 +296,14 @@ public class TasksObject  {
         this.failed = failed;
     }
 
-    
-
     public TasksObject withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * url总数。
-     * @return total
-     */
+    /** url总数。
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -385,20 +312,14 @@ public class TasksObject  {
         this.total = total;
     }
 
-    
-
     public TasksObject withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务的创建时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
-     * @return createTime
-     */
+    /** 任务的创建时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+     * 
+     * @return createTime */
     public Long getCreateTime() {
         return createTime;
     }
@@ -407,20 +328,14 @@ public class TasksObject  {
         this.createTime = createTime;
     }
 
-    
-
     public TasksObject withFileType(FileTypeEnum fileType) {
         this.fileType = fileType;
         return this;
     }
 
-    
-
-
-    /**
-     * 默认是文件file。file：文件,directory：目录。
-     * @return fileType
-     */
+    /** 默认是文件file。file：文件,directory：目录。
+     * 
+     * @return fileType */
     public FileTypeEnum getFileType() {
         return fileType;
     }
@@ -428,8 +343,6 @@ public class TasksObject  {
     public void setFileType(FileTypeEnum fileType) {
         this.fileType = fileType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -440,20 +353,19 @@ public class TasksObject  {
             return false;
         }
         TasksObject tasksObject = (TasksObject) o;
-        return Objects.equals(this.id, tasksObject.id) &&
-            Objects.equals(this.taskType, tasksObject.taskType) &&
-            Objects.equals(this.status, tasksObject.status) &&
-            Objects.equals(this.processing, tasksObject.processing) &&
-            Objects.equals(this.succeed, tasksObject.succeed) &&
-            Objects.equals(this.failed, tasksObject.failed) &&
-            Objects.equals(this.total, tasksObject.total) &&
-            Objects.equals(this.createTime, tasksObject.createTime) &&
-            Objects.equals(this.fileType, tasksObject.fileType);
+        return Objects.equals(this.id, tasksObject.id) && Objects.equals(this.taskType, tasksObject.taskType)
+            && Objects.equals(this.status, tasksObject.status)
+            && Objects.equals(this.processing, tasksObject.processing)
+            && Objects.equals(this.succeed, tasksObject.succeed) && Objects.equals(this.failed, tasksObject.failed)
+            && Objects.equals(this.total, tasksObject.total) && Objects.equals(this.createTime, tasksObject.createTime)
+            && Objects.equals(this.fileType, tasksObject.fileType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, taskType, status, processing, succeed, failed, total, createTime, fileType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -470,16 +382,13 @@ public class TasksObject  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

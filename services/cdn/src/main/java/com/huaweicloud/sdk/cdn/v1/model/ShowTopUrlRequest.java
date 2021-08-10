@@ -1,67 +1,46 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowTopUrlRequest  {
-
-
+/** Request Object */
+public class ShowTopUrlRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private Long startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private Long endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_name")
-    
+    @JsonProperty(value = "domain_name")
+
     private String domainName;
-    /**
-     * mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为mainland_china。
-     */
+
+    /** mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为mainland_china。 */
     public static final class ServiceAreaEnum {
 
-        
-        /**
-         * Enum MAINLAND_CHINA for value: "mainland_china"
-         */
+        /** Enum MAINLAND_CHINA for value: "mainland_china" */
         public static final ServiceAreaEnum MAINLAND_CHINA = new ServiceAreaEnum("mainland_china");
-        
-        /**
-         * Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china"
-         */
+
+        /** Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china" */
         public static final ServiceAreaEnum OUTSIDE_MAINLAND_CHINA = new ServiceAreaEnum("outside_mainland_china");
-        
 
         private static final Map<String, ServiceAreaEnum> STATIC_FIELDS = createStaticFields();
 
@@ -90,7 +69,7 @@ public class ShowTopUrlRequest  {
 
         @JsonCreator
         public static ServiceAreaEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ServiceAreaEnum result = STATIC_FIELDS.get(value);
@@ -101,7 +80,7 @@ public class ShowTopUrlRequest  {
         }
 
         public static ServiceAreaEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ServiceAreaEnum result = STATIC_FIELDS.get(value);
@@ -125,27 +104,19 @@ public class ShowTopUrlRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_area")
-    
+    @JsonProperty(value = "service_area")
+
     private ServiceAreaEnum serviceArea;
-    /**
-     * 参数类型支持：flux(流量),req_num(请求总数)。
-     */
+
+    /** 参数类型支持：flux(流量),req_num(请求总数)。 */
     public static final class StatTypeEnum {
 
-        
-        /**
-         * Enum FLUX for value: "flux"
-         */
+        /** Enum FLUX for value: "flux" */
         public static final StatTypeEnum FLUX = new StatTypeEnum("flux");
-        
-        /**
-         * Enum REQ_NUM for value: "req_num"
-         */
+
+        /** Enum REQ_NUM for value: "req_num" */
         public static final StatTypeEnum REQ_NUM = new StatTypeEnum("req_num");
-        
 
         private static final Map<String, StatTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -174,7 +145,7 @@ public class ShowTopUrlRequest  {
 
         @JsonCreator
         public static StatTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatTypeEnum result = STATIC_FIELDS.get(value);
@@ -185,7 +156,7 @@ public class ShowTopUrlRequest  {
         }
 
         public static StatTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatTypeEnum result = STATIC_FIELDS.get(value);
@@ -209,10 +180,9 @@ public class ShowTopUrlRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stat_type")
-    
+    @JsonProperty(value = "stat_type")
+
     private StatTypeEnum statType;
 
     public ShowTopUrlRequest withEnterpriseProjectId(String enterpriseProjectId) {
@@ -220,13 +190,9 @@ public class ShowTopUrlRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 当用户开启企业项目功能时，该参数生效，表示资源所属企业项目，不传表示默认项目。
-     * @return enterpriseProjectId
-     */
+    /** 当用户开启企业项目功能时，该参数生效，表示资源所属企业项目，不传表示默认项目。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -235,20 +201,14 @@ public class ShowTopUrlRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public ShowTopUrlRequest withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询起始时间戳（单位：毫秒）。该时间戳的取值在转化为日期格式后须满足以下格式：XXXX-XX-XX 00:00:00
-     * @return startTime
-     */
+    /** 查询起始时间戳（单位：毫秒）。该时间戳的取值在转化为日期格式后须满足以下格式：XXXX-XX-XX 00:00:00
+     * 
+     * @return startTime */
     public Long getStartTime() {
         return startTime;
     }
@@ -257,20 +217,14 @@ public class ShowTopUrlRequest  {
         this.startTime = startTime;
     }
 
-    
-
     public ShowTopUrlRequest withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询结束时间戳（单位：毫秒）。该时间戳的取值在转化为日期格式后须满足以下格式：XXXX-XX-XX 00:00:00
-     * @return endTime
-     */
+    /** 查询结束时间戳（单位：毫秒）。该时间戳的取值在转化为日期格式后须满足以下格式：XXXX-XX-XX 00:00:00
+     * 
+     * @return endTime */
     public Long getEndTime() {
         return endTime;
     }
@@ -279,20 +233,14 @@ public class ShowTopUrlRequest  {
         this.endTime = endTime;
     }
 
-    
-
     public ShowTopUrlRequest withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名列表，多个域名以逗号（半角）分隔，如：www.test1.com,www.test2.com ，ALL表示查询名下全部域名。
-     * @return domainName
-     */
+    /** 域名列表，多个域名以逗号（半角）分隔，如：www.test1.com,www.test2.com ，ALL表示查询名下全部域名。
+     * 
+     * @return domainName */
     public String getDomainName() {
         return domainName;
     }
@@ -301,20 +249,14 @@ public class ShowTopUrlRequest  {
         this.domainName = domainName;
     }
 
-    
-
     public ShowTopUrlRequest withServiceArea(ServiceAreaEnum serviceArea) {
         this.serviceArea = serviceArea;
         return this;
     }
 
-    
-
-
-    /**
-     * mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为mainland_china。
-     * @return serviceArea
-     */
+    /** mainland_china(中国大陆)，outside_mainland_china(中国大陆境外)，默认为mainland_china。
+     * 
+     * @return serviceArea */
     public ServiceAreaEnum getServiceArea() {
         return serviceArea;
     }
@@ -323,20 +265,14 @@ public class ShowTopUrlRequest  {
         this.serviceArea = serviceArea;
     }
 
-    
-
     public ShowTopUrlRequest withStatType(StatTypeEnum statType) {
         this.statType = statType;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数类型支持：flux(流量),req_num(请求总数)。
-     * @return statType
-     */
+    /** 参数类型支持：flux(流量),req_num(请求总数)。
+     * 
+     * @return statType */
     public StatTypeEnum getStatType() {
         return statType;
     }
@@ -344,8 +280,6 @@ public class ShowTopUrlRequest  {
     public void setStatType(StatTypeEnum statType) {
         this.statType = statType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -356,17 +290,19 @@ public class ShowTopUrlRequest  {
             return false;
         }
         ShowTopUrlRequest showTopUrlRequest = (ShowTopUrlRequest) o;
-        return Objects.equals(this.enterpriseProjectId, showTopUrlRequest.enterpriseProjectId) &&
-            Objects.equals(this.startTime, showTopUrlRequest.startTime) &&
-            Objects.equals(this.endTime, showTopUrlRequest.endTime) &&
-            Objects.equals(this.domainName, showTopUrlRequest.domainName) &&
-            Objects.equals(this.serviceArea, showTopUrlRequest.serviceArea) &&
-            Objects.equals(this.statType, showTopUrlRequest.statType);
+        return Objects.equals(this.enterpriseProjectId, showTopUrlRequest.enterpriseProjectId)
+            && Objects.equals(this.startTime, showTopUrlRequest.startTime)
+            && Objects.equals(this.endTime, showTopUrlRequest.endTime)
+            && Objects.equals(this.domainName, showTopUrlRequest.domainName)
+            && Objects.equals(this.serviceArea, showTopUrlRequest.serviceArea)
+            && Objects.equals(this.statType, showTopUrlRequest.statType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(enterpriseProjectId, startTime, endTime, domainName, serviceArea, statType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -380,16 +316,13 @@ public class ShowTopUrlRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

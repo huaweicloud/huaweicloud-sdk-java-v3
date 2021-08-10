@@ -1,19 +1,17 @@
 package com.huaweicloud.sdk.antiddos.v1;
 
+import com.huaweicloud.sdk.antiddos.v1.model.*;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.antiddos.v1.model.*;
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class AntiDDoSMeta {
 
-    public static final HttpRequestDef<CreateDefaultConfigRequest, CreateDefaultConfigResponse> createDefaultConfig = genForcreateDefaultConfig();
+    public static final HttpRequestDef<CreateDefaultConfigRequest, CreateDefaultConfigResponse> createDefaultConfig =
+        genForcreateDefaultConfig();
 
     private static HttpRequestDef<CreateDefaultConfigRequest, CreateDefaultConfigResponse> genForcreateDefaultConfig() {
         // basic
@@ -24,42 +22,39 @@ public class AntiDDoSMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<DdosConfig>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DdosConfig.class,
+            TypeCasts.uncheckedConversion(DdosConfig.class),
             f -> f.withMarshaller(CreateDefaultConfigRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteDefaultConfigRequest, DeleteDefaultConfigResponse> deleteDefaultConfig = genFordeleteDefaultConfig();
+    public static final HttpRequestDef<DeleteDefaultConfigRequest, DeleteDefaultConfigResponse> deleteDefaultConfig =
+        genFordeleteDefaultConfig();
 
     private static HttpRequestDef<DeleteDefaultConfigRequest, DeleteDefaultConfigResponse> genFordeleteDefaultConfig() {
         // basic
-        HttpRequestDef.Builder<DeleteDefaultConfigRequest, DeleteDefaultConfigResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDefaultConfigRequest.class, DeleteDefaultConfigResponse.class)
-                .withName("DeleteDefaultConfig")
-                .withUri("/v1/{project_id}/antiddos/default-config")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<DeleteDefaultConfigRequest, DeleteDefaultConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteDefaultConfigRequest.class, DeleteDefaultConfigResponse.class)
+            .withName("DeleteDefaultConfig")
+            .withUri("/v1/{project_id}/antiddos/default-config")
+            .withContentType("application/json");
 
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAlertConfigRequest, ShowAlertConfigResponse> showAlertConfig = genForshowAlertConfig();
+    public static final HttpRequestDef<ShowAlertConfigRequest, ShowAlertConfigResponse> showAlertConfig =
+        genForshowAlertConfig();
 
     private static HttpRequestDef<ShowAlertConfigRequest, ShowAlertConfigResponse> genForshowAlertConfig() {
         // basic
@@ -72,13 +67,12 @@ public class AntiDDoSMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowDefaultConfigRequest, ShowDefaultConfigResponse> showDefaultConfig = genForshowDefaultConfig();
+    public static final HttpRequestDef<ShowDefaultConfigRequest, ShowDefaultConfigResponse> showDefaultConfig =
+        genForshowDefaultConfig();
 
     private static HttpRequestDef<ShowDefaultConfigRequest, ShowDefaultConfigResponse> genForshowDefaultConfig() {
         // basic
@@ -91,13 +85,12 @@ public class AntiDDoSMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAlertConfigRequest, UpdateAlertConfigResponse> updateAlertConfig = genForupdateAlertConfig();
+    public static final HttpRequestDef<UpdateAlertConfigRequest, UpdateAlertConfigResponse> updateAlertConfig =
+        genForupdateAlertConfig();
 
     private static HttpRequestDef<UpdateAlertConfigRequest, UpdateAlertConfigResponse> genForupdateAlertConfig() {
         // basic
@@ -108,23 +101,21 @@ public class AntiDDoSMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<UpdateAlertConfigRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateAlertConfigRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateAlertConfigRequestBody.class),
             f -> f.withMarshaller(UpdateAlertConfigRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDDosStatusRequest, ListDDosStatusResponse> listDDosStatus = genForlistDDosStatus();
+    public static final HttpRequestDef<ListDDosStatusRequest, ListDDosStatusResponse> listDDosStatus =
+        genForlistDDosStatus();
 
     private static HttpRequestDef<ListDDosStatusRequest, ListDDosStatusResponse> genForlistDDosStatus() {
         // basic
@@ -135,42 +126,36 @@ public class AntiDDoSMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("status",
+        builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDDosStatusRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDDosStatusRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDDosStatusRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("ip",
+            }));
+        builder.<String>withRequestField("ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDDosStatusRequest::getIp, (req, v) -> {
                 req.setIp(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -186,55 +171,49 @@ public class AntiDDoSMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("floating_ip_id",
+        builder.<String>withRequestField("floating_ip_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDailyLogRequest::getFloatingIpId, (req, v) -> {
                 req.setFloatingIpId(v);
-            })
-        );
-        builder.withRequestField("sort_dir",
+            }));
+        builder.<String>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDailyLogRequest::getSortDir, (req, v) -> {
                 req.setSortDir(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDailyLogRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDailyLogRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("ip",
+            }));
+        builder.<String>withRequestField("ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDailyLogRequest::getIp, (req, v) -> {
                 req.setIp(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDailyReportRequest, ListDailyReportResponse> listDailyReport = genForlistDailyReport();
+    public static final HttpRequestDef<ListDailyReportRequest, ListDailyReportResponse> listDailyReport =
+        genForlistDailyReport();
 
     private static HttpRequestDef<ListDailyReportRequest, ListDailyReportResponse> genForlistDailyReport() {
         // basic
@@ -245,31 +224,28 @@ public class AntiDDoSMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("floating_ip_id",
+        builder.<String>withRequestField("floating_ip_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDailyReportRequest::getFloatingIpId, (req, v) -> {
                 req.setFloatingIpId(v);
-            })
-        );
-        builder.withRequestField("ip",
+            }));
+        builder.<String>withRequestField("ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDailyReportRequest::getIp, (req, v) -> {
                 req.setIp(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListNewConfigsRequest, ListNewConfigsResponse> listNewConfigs = genForlistNewConfigs();
+    public static final HttpRequestDef<ListNewConfigsRequest, ListNewConfigsResponse> listNewConfigs =
+        genForlistNewConfigs();
 
     private static HttpRequestDef<ListNewConfigsRequest, ListNewConfigsResponse> genForlistNewConfigs() {
         // basic
@@ -282,13 +258,12 @@ public class AntiDDoSMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListWeeklyReportsRequest, ListWeeklyReportsResponse> listWeeklyReports = genForlistWeeklyReports();
+    public static final HttpRequestDef<ListWeeklyReportsRequest, ListWeeklyReportsResponse> listWeeklyReports =
+        genForlistWeeklyReports();
 
     private static HttpRequestDef<ListWeeklyReportsRequest, ListWeeklyReportsResponse> genForlistWeeklyReports() {
         // basic
@@ -299,18 +274,15 @@ public class AntiDDoSMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("period_start_date",
+        builder.<String>withRequestField("period_start_date",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListWeeklyReportsRequest::getPeriodStartDate, (req, v) -> {
                 req.setPeriodStartDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -326,31 +298,28 @@ public class AntiDDoSMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("floating_ip_id",
+        builder.<String>withRequestField("floating_ip_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDDosRequest::getFloatingIpId, (req, v) -> {
                 req.setFloatingIpId(v);
-            })
-        );
-        builder.withRequestField("ip",
+            }));
+        builder.<String>withRequestField("ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDDosRequest::getIp, (req, v) -> {
                 req.setIp(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowDDosStatusRequest, ShowDDosStatusResponse> showDDosStatus = genForshowDDosStatus();
+    public static final HttpRequestDef<ShowDDosStatusRequest, ShowDDosStatusResponse> showDDosStatus =
+        genForshowDDosStatus();
 
     private static HttpRequestDef<ShowDDosStatusRequest, ShowDDosStatusResponse> genForshowDDosStatus() {
         // basic
@@ -361,31 +330,28 @@ public class AntiDDoSMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("floating_ip_id",
+        builder.<String>withRequestField("floating_ip_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDDosStatusRequest::getFloatingIpId, (req, v) -> {
                 req.setFloatingIpId(v);
-            })
-        );
-        builder.withRequestField("ip",
+            }));
+        builder.<String>withRequestField("ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDDosStatusRequest::getIp, (req, v) -> {
                 req.setIp(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowNewTaskStatusRequest, ShowNewTaskStatusResponse> showNewTaskStatus = genForshowNewTaskStatus();
+    public static final HttpRequestDef<ShowNewTaskStatusRequest, ShowNewTaskStatusResponse> showNewTaskStatus =
+        genForshowNewTaskStatus();
 
     private static HttpRequestDef<ShowNewTaskStatusRequest, ShowNewTaskStatusResponse> genForshowNewTaskStatus() {
         // basic
@@ -396,18 +362,15 @@ public class AntiDDoSMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowNewTaskStatusRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -423,34 +386,29 @@ public class AntiDDoSMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("floating_ip_id",
+        builder.<String>withRequestField("floating_ip_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateDDosRequest::getFloatingIpId, (req, v) -> {
                 req.setFloatingIpId(v);
-            })
-        );
-        builder.withRequestField("ip",
+            }));
+        builder.<String>withRequestField("ip",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateDDosRequest::getIp, (req, v) -> {
                 req.setIp(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateAntiDDosServiceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateAntiDDosServiceRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateAntiDDosServiceRequestBody.class),
             f -> f.withMarshaller(UpdateDDosRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowPermanentAccessKeyRequest  {
-
-
+/** Request Object */
+public class ShowPermanentAccessKeyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_key")
-    
+    @JsonProperty(value = "access_key")
+
     private String accessKey;
 
     public ShowPermanentAccessKeyRequest withAccessKey(String accessKey) {
@@ -28,13 +18,9 @@ public class ShowPermanentAccessKeyRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 待查询的指定AK。
-     * @return accessKey
-     */
+    /** 待查询的指定AK。
+     * 
+     * @return accessKey */
     public String getAccessKey() {
         return accessKey;
     }
@@ -42,8 +28,6 @@ public class ShowPermanentAccessKeyRequest  {
     public void setAccessKey(String accessKey) {
         this.accessKey = accessKey;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class ShowPermanentAccessKeyRequest  {
         ShowPermanentAccessKeyRequest showPermanentAccessKeyRequest = (ShowPermanentAccessKeyRequest) o;
         return Objects.equals(this.accessKey, showPermanentAccessKeyRequest.accessKey);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(accessKey);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class ShowPermanentAccessKeyRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cloudpipeline.v2.model.StartPipelineParameters;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class StartNewPipelineRequest  {
-
-
+/** Request Object */
+public class StartNewPipelineRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pipeline_id")
-    
+    @JsonProperty(value = "pipeline_id")
+
     private String pipelineId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private StartPipelineParameters body;
 
     public StartNewPipelineRequest withXLanguage(String xLanguage) {
@@ -41,15 +29,11 @@ public class StartNewPipelineRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * @return xLanguage
-     */
+    /** 语言类型 中文:zh-cn 英文:en-us，默认en-us
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -58,20 +42,14 @@ public class StartNewPipelineRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public StartNewPipelineRequest withPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线ID
-     * @return pipelineId
-     */
+    /** 流水线ID
+     * 
+     * @return pipelineId */
     public String getPipelineId() {
         return pipelineId;
     }
@@ -80,27 +58,23 @@ public class StartNewPipelineRequest  {
         this.pipelineId = pipelineId;
     }
 
-    
-
     public StartNewPipelineRequest withBody(StartPipelineParameters body) {
         this.body = body;
         return this;
     }
 
     public StartNewPipelineRequest withBody(Consumer<StartPipelineParameters> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new StartPipelineParameters();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public StartPipelineParameters getBody() {
         return body;
     }
@@ -108,8 +82,6 @@ public class StartNewPipelineRequest  {
     public void setBody(StartPipelineParameters body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -120,14 +92,16 @@ public class StartNewPipelineRequest  {
             return false;
         }
         StartNewPipelineRequest startNewPipelineRequest = (StartNewPipelineRequest) o;
-        return Objects.equals(this.xLanguage, startNewPipelineRequest.xLanguage) &&
-            Objects.equals(this.pipelineId, startNewPipelineRequest.pipelineId) &&
-            Objects.equals(this.body, startNewPipelineRequest.body);
+        return Objects.equals(this.xLanguage, startNewPipelineRequest.xLanguage)
+            && Objects.equals(this.pipelineId, startNewPipelineRequest.pipelineId)
+            && Objects.equals(this.body, startNewPipelineRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, pipelineId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -138,16 +112,13 @@ public class StartNewPipelineRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

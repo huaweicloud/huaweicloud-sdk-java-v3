@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.cts.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cts.v3.model.BaseUser;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 用户信息。
- */
-public class UserInfo  {
-
-
+/** 用户信息。 */
+public class UserInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
+
     private BaseUser domain;
 
     public UserInfo withId(String id) {
@@ -41,13 +29,9 @@ public class UserInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 账号ID，参见《云审计服务API参考》“获取账号ID和项目ID”章节。
-     * @return id
-     */
+    /** 账号ID，参见《云审计服务API参考》“获取账号ID和项目ID”章节。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -56,20 +40,14 @@ public class UserInfo  {
         this.id = id;
     }
 
-    
-
     public UserInfo withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 账号名称。
-     * @return name
-     */
+    /** 账号名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -78,27 +56,23 @@ public class UserInfo  {
         this.name = name;
     }
 
-    
-
     public UserInfo withDomain(BaseUser domain) {
         this.domain = domain;
         return this;
     }
 
     public UserInfo withDomain(Consumer<BaseUser> domainSetter) {
-        if(this.domain == null ){
+        if (this.domain == null) {
             this.domain = new BaseUser();
             domainSetter.accept(this.domain);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get domain
-     * @return domain
-     */
+    /** Get domain
+     * 
+     * @return domain */
     public BaseUser getDomain() {
         return domain;
     }
@@ -106,8 +80,6 @@ public class UserInfo  {
     public void setDomain(BaseUser domain) {
         this.domain = domain;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,15 @@ public class UserInfo  {
             return false;
         }
         UserInfo userInfo = (UserInfo) o;
-        return Objects.equals(this.id, userInfo.id) &&
-            Objects.equals(this.name, userInfo.name) &&
-            Objects.equals(this.domain, userInfo.domain);
+        return Objects.equals(this.id, userInfo.id) && Objects.equals(this.name, userInfo.name)
+            && Objects.equals(this.domain, userInfo.domain);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, domain);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +109,13 @@ public class UserInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,51 +1,32 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowRedirectUrlRequest  {
+/** Request Object */
+public class ShowRedirectUrlRequest {
 
-    /**
-     * 仓库类型。 取值范围：github、gitlab、gitee、bitbucket。
-     */
+    /** 仓库类型。 取值范围：github、gitlab、gitee、bitbucket。 */
     public static final class RepoTypeEnum {
 
-        
-        /**
-         * Enum GITHUB for value: "github"
-         */
+        /** Enum GITHUB for value: "github" */
         public static final RepoTypeEnum GITHUB = new RepoTypeEnum("github");
-        
-        /**
-         * Enum GITLAB for value: "gitlab"
-         */
+
+        /** Enum GITLAB for value: "gitlab" */
         public static final RepoTypeEnum GITLAB = new RepoTypeEnum("gitlab");
-        
-        /**
-         * Enum GITEE for value: "gitee"
-         */
+
+        /** Enum GITEE for value: "gitee" */
         public static final RepoTypeEnum GITEE = new RepoTypeEnum("gitee");
-        
-        /**
-         * Enum BITBUCKET for value: "bitbucket"
-         */
+
+        /** Enum BITBUCKET for value: "bitbucket" */
         public static final RepoTypeEnum BITBUCKET = new RepoTypeEnum("bitbucket");
-        
 
         private static final Map<String, RepoTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,7 +57,7 @@ public class ShowRedirectUrlRequest  {
 
         @JsonCreator
         public static RepoTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             RepoTypeEnum result = STATIC_FIELDS.get(value);
@@ -87,7 +68,7 @@ public class ShowRedirectUrlRequest  {
         }
 
         public static RepoTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             RepoTypeEnum result = STATIC_FIELDS.get(value);
@@ -111,16 +92,14 @@ public class ShowRedirectUrlRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repo_type")
-    
+    @JsonProperty(value = "repo_type")
+
     private RepoTypeEnum repoType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag")
-    
+    @JsonProperty(value = "tag")
+
     private String tag;
 
     public ShowRedirectUrlRequest withRepoType(RepoTypeEnum repoType) {
@@ -128,13 +107,9 @@ public class ShowRedirectUrlRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库类型。 取值范围：github、gitlab、gitee、bitbucket。
-     * @return repoType
-     */
+    /** 仓库类型。 取值范围：github、gitlab、gitee、bitbucket。
+     * 
+     * @return repoType */
     public RepoTypeEnum getRepoType() {
         return repoType;
     }
@@ -143,20 +118,14 @@ public class ShowRedirectUrlRequest  {
         this.repoType = repoType;
     }
 
-    
-
     public ShowRedirectUrlRequest withTag(String tag) {
         this.tag = tag;
         return this;
     }
 
-    
-
-
-    /**
-     * 站点标签。 比如国际站的，?tag=intl。 默认为空。
-     * @return tag
-     */
+    /** 站点标签。 比如国际站的，?tag=intl。 默认为空。
+     * 
+     * @return tag */
     public String getTag() {
         return tag;
     }
@@ -164,8 +133,6 @@ public class ShowRedirectUrlRequest  {
     public void setTag(String tag) {
         this.tag = tag;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -176,13 +143,15 @@ public class ShowRedirectUrlRequest  {
             return false;
         }
         ShowRedirectUrlRequest showRedirectUrlRequest = (ShowRedirectUrlRequest) o;
-        return Objects.equals(this.repoType, showRedirectUrlRequest.repoType) &&
-            Objects.equals(this.tag, showRedirectUrlRequest.tag);
+        return Objects.equals(this.repoType, showRedirectUrlRequest.repoType)
+            && Objects.equals(this.tag, showRedirectUrlRequest.tag);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(repoType, tag);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -192,16 +161,13 @@ public class ShowRedirectUrlRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

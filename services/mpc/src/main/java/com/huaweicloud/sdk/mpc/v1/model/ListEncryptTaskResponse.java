@@ -1,43 +1,30 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.EachEncryptRsp;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListEncryptTaskResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_array")
-    
+    @JsonProperty(value = "task_array")
+
     private List<EachEncryptRsp> taskArray = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_truncated")
-    
+    @JsonProperty(value = "is_truncated")
+
     private Integer isTruncated;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
     public ListEncryptTaskResponse withTaskArray(List<EachEncryptRsp> taskArray) {
@@ -45,9 +32,8 @@ public class ListEncryptTaskResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListEncryptTaskResponse addTaskArrayItem(EachEncryptRsp taskArrayItem) {
-        if(this.taskArray == null) {
+        if (this.taskArray == null) {
             this.taskArray = new ArrayList<>();
         }
         this.taskArray.add(taskArrayItem);
@@ -55,17 +41,16 @@ public class ListEncryptTaskResponse extends SdkResponse {
     }
 
     public ListEncryptTaskResponse withTaskArray(Consumer<List<EachEncryptRsp>> taskArraySetter) {
-        if(this.taskArray == null) {
+        if (this.taskArray == null) {
             this.taskArray = new ArrayList<>();
         }
         taskArraySetter.accept(this.taskArray);
         return this;
     }
 
-    /**
-     * 任务列表
-     * @return taskArray
-     */
+    /** 任务列表
+     * 
+     * @return taskArray */
     public List<EachEncryptRsp> getTaskArray() {
         return taskArray;
     }
@@ -74,22 +59,14 @@ public class ListEncryptTaskResponse extends SdkResponse {
         this.taskArray = taskArray;
     }
 
-    
-
     public ListEncryptTaskResponse withIsTruncated(Integer isTruncated) {
         this.isTruncated = isTruncated;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否截断
-     * minimum: 0
-     * maximum: 2147483647
-     * @return isTruncated
-     */
+    /** 是否截断 minimum: 0 maximum: 2147483647
+     * 
+     * @return isTruncated */
     public Integer getIsTruncated() {
         return isTruncated;
     }
@@ -98,22 +75,14 @@ public class ListEncryptTaskResponse extends SdkResponse {
         this.isTruncated = isTruncated;
     }
 
-    
-
     public ListEncryptTaskResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询结果数量
-     * minimum: 0
-     * maximum: 2147483647
-     * @return total
-     */
+    /** 查询结果数量 minimum: 0 maximum: 2147483647
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -121,8 +90,6 @@ public class ListEncryptTaskResponse extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -133,14 +100,16 @@ public class ListEncryptTaskResponse extends SdkResponse {
             return false;
         }
         ListEncryptTaskResponse listEncryptTaskResponse = (ListEncryptTaskResponse) o;
-        return Objects.equals(this.taskArray, listEncryptTaskResponse.taskArray) &&
-            Objects.equals(this.isTruncated, listEncryptTaskResponse.isTruncated) &&
-            Objects.equals(this.total, listEncryptTaskResponse.total);
+        return Objects.equals(this.taskArray, listEncryptTaskResponse.taskArray)
+            && Objects.equals(this.isTruncated, listEncryptTaskResponse.isTruncated)
+            && Objects.equals(this.total, listEncryptTaskResponse.total);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(taskArray, isTruncated, total);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -151,16 +120,13 @@ public class ListEncryptTaskResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

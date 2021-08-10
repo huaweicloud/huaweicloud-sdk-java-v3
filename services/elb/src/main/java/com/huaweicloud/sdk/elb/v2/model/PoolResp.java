@@ -1,118 +1,87 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.ResourceList;
-import com.huaweicloud.sdk.elb.v2.model.SessionPersistence;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 后端云服务器组响应体
- */
-public class PoolResp  {
-
-
+/** 后端云服务器组响应体 */
+public class PoolResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
+
     private String tenantId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
-    
+    @JsonProperty(value = "admin_state_up")
+
     private Boolean adminStateUp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="loadbalancers")
-    
+    @JsonProperty(value = "loadbalancers")
+
     private List<ResourceList> loadbalancers = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="listeners")
-    
+    @JsonProperty(value = "listeners")
+
     private List<ResourceList> listeners = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="members")
-    
+    @JsonProperty(value = "members")
+
     private List<ResourceList> members = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="healthmonitor_id")
-    
+    @JsonProperty(value = "healthmonitor_id")
+
     private String healthmonitorId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="session_persistence")
-    
+    @JsonProperty(value = "session_persistence")
+
     private SessionPersistence sessionPersistence;
-    /**
-     * 后端云服务器组的后端协议。
-     */
+
+    /** 后端云服务器组的后端协议。 */
     public static final class ProtocolEnum {
 
-        
-        /**
-         * Enum UDP for value: "UDP"
-         */
+        /** Enum UDP for value: "UDP" */
         public static final ProtocolEnum UDP = new ProtocolEnum("UDP");
-        
-        /**
-         * Enum TCP for value: "TCP"
-         */
+
+        /** Enum TCP for value: "TCP" */
         public static final ProtocolEnum TCP = new ProtocolEnum("TCP");
-        
-        /**
-         * Enum HTTP for value: "HTTP"
-         */
+
+        /** Enum HTTP for value: "HTTP" */
         public static final ProtocolEnum HTTP = new ProtocolEnum("HTTP");
-        
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
 
@@ -142,7 +111,7 @@ public class PoolResp  {
 
         @JsonCreator
         public static ProtocolEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtocolEnum result = STATIC_FIELDS.get(value);
@@ -153,7 +122,7 @@ public class PoolResp  {
         }
 
         public static ProtocolEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtocolEnum result = STATIC_FIELDS.get(value);
@@ -177,32 +146,22 @@ public class PoolResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
+
     private ProtocolEnum protocol;
-    /**
-     * 后端云服务器组的负载均衡算法，取值：ROUND_ROBIN：加权轮询算法；LEAST_CONNECTIONS：加权最少连接算法；SOURCE_IP：源IP算法。当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。
-     */
+
+    /** 后端云服务器组的负载均衡算法，取值：ROUND_ROBIN：加权轮询算法；LEAST_CONNECTIONS：加权最少连接算法；SOURCE_IP：源IP算法。当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 */
     public static final class LbAlgorithmEnum {
 
-        
-        /**
-         * Enum ROUND_ROBIN for value: "ROUND_ROBIN"
-         */
+        /** Enum ROUND_ROBIN for value: "ROUND_ROBIN" */
         public static final LbAlgorithmEnum ROUND_ROBIN = new LbAlgorithmEnum("ROUND_ROBIN");
-        
-        /**
-         * Enum LEAST_CONNECTIONS for value: "LEAST_CONNECTIONS"
-         */
+
+        /** Enum LEAST_CONNECTIONS for value: "LEAST_CONNECTIONS" */
         public static final LbAlgorithmEnum LEAST_CONNECTIONS = new LbAlgorithmEnum("LEAST_CONNECTIONS");
-        
-        /**
-         * Enum SOURCE_IP for value: "SOURCE_IP"
-         */
+
+        /** Enum SOURCE_IP for value: "SOURCE_IP" */
         public static final LbAlgorithmEnum SOURCE_IP = new LbAlgorithmEnum("SOURCE_IP");
-        
 
         private static final Map<String, LbAlgorithmEnum> STATIC_FIELDS = createStaticFields();
 
@@ -232,7 +191,7 @@ public class PoolResp  {
 
         @JsonCreator
         public static LbAlgorithmEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             LbAlgorithmEnum result = STATIC_FIELDS.get(value);
@@ -243,7 +202,7 @@ public class PoolResp  {
         }
 
         public static LbAlgorithmEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             LbAlgorithmEnum result = STATIC_FIELDS.get(value);
@@ -267,10 +226,9 @@ public class PoolResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lb_algorithm")
-    
+    @JsonProperty(value = "lb_algorithm")
+
     private LbAlgorithmEnum lbAlgorithm;
 
     public PoolResp withId(String id) {
@@ -278,13 +236,9 @@ public class PoolResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 后端云服务器组的ID
-     * @return id
-     */
+    /** 后端云服务器组的ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -293,20 +247,14 @@ public class PoolResp  {
         this.id = id;
     }
 
-    
-
     public PoolResp withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端云服务器组所在的项目ID。
-     * @return projectId
-     */
+    /** 后端云服务器组所在的项目ID。
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -315,20 +263,14 @@ public class PoolResp  {
         this.projectId = projectId;
     }
 
-    
-
     public PoolResp withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端云服务器组所在的项目ID。
-     * @return tenantId
-     */
+    /** 后端云服务器组所在的项目ID。
+     * 
+     * @return tenantId */
     public String getTenantId() {
         return tenantId;
     }
@@ -337,20 +279,14 @@ public class PoolResp  {
         this.tenantId = tenantId;
     }
 
-    
-
     public PoolResp withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端云服务器组的名称。
-     * @return name
-     */
+    /** 后端云服务器组的名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -359,20 +295,14 @@ public class PoolResp  {
         this.name = name;
     }
 
-    
-
     public PoolResp withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端云服务器组的描述信息
-     * @return description
-     */
+    /** 后端云服务器组的描述信息
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -381,20 +311,14 @@ public class PoolResp  {
         this.description = description;
     }
 
-    
-
     public PoolResp withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端云服务器组的管理状态。只支持设定为true，该字段的值无实际意义。
-     * @return adminStateUp
-     */
+    /** 后端云服务器组的管理状态。只支持设定为true，该字段的值无实际意义。
+     * 
+     * @return adminStateUp */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -403,16 +327,13 @@ public class PoolResp  {
         this.adminStateUp = adminStateUp;
     }
 
-    
-
     public PoolResp withLoadbalancers(List<ResourceList> loadbalancers) {
         this.loadbalancers = loadbalancers;
         return this;
     }
 
-    
     public PoolResp addLoadbalancersItem(ResourceList loadbalancersItem) {
-        if(this.loadbalancers == null) {
+        if (this.loadbalancers == null) {
             this.loadbalancers = new ArrayList<>();
         }
         this.loadbalancers.add(loadbalancersItem);
@@ -420,17 +341,16 @@ public class PoolResp  {
     }
 
     public PoolResp withLoadbalancers(Consumer<List<ResourceList>> loadbalancersSetter) {
-        if(this.loadbalancers == null) {
+        if (this.loadbalancers == null) {
             this.loadbalancers = new ArrayList<>();
         }
         loadbalancersSetter.accept(this.loadbalancers);
         return this;
     }
 
-    /**
-     * 后端云服务器组绑定的负载均衡器ID的列表。
-     * @return loadbalancers
-     */
+    /** 后端云服务器组绑定的负载均衡器ID的列表。
+     * 
+     * @return loadbalancers */
     public List<ResourceList> getLoadbalancers() {
         return loadbalancers;
     }
@@ -439,16 +359,13 @@ public class PoolResp  {
         this.loadbalancers = loadbalancers;
     }
 
-    
-
     public PoolResp withListeners(List<ResourceList> listeners) {
         this.listeners = listeners;
         return this;
     }
 
-    
     public PoolResp addListenersItem(ResourceList listenersItem) {
-        if(this.listeners == null) {
+        if (this.listeners == null) {
             this.listeners = new ArrayList<>();
         }
         this.listeners.add(listenersItem);
@@ -456,17 +373,16 @@ public class PoolResp  {
     }
 
     public PoolResp withListeners(Consumer<List<ResourceList>> listenersSetter) {
-        if(this.listeners == null) {
+        if (this.listeners == null) {
             this.listeners = new ArrayList<>();
         }
         listenersSetter.accept(this.listeners);
         return this;
     }
 
-    /**
-     * 后端云服务器组关联的监听器ID的列表。
-     * @return listeners
-     */
+    /** 后端云服务器组关联的监听器ID的列表。
+     * 
+     * @return listeners */
     public List<ResourceList> getListeners() {
         return listeners;
     }
@@ -475,16 +391,13 @@ public class PoolResp  {
         this.listeners = listeners;
     }
 
-    
-
     public PoolResp withMembers(List<ResourceList> members) {
         this.members = members;
         return this;
     }
 
-    
     public PoolResp addMembersItem(ResourceList membersItem) {
-        if(this.members == null) {
+        if (this.members == null) {
             this.members = new ArrayList<>();
         }
         this.members.add(membersItem);
@@ -492,17 +405,16 @@ public class PoolResp  {
     }
 
     public PoolResp withMembers(Consumer<List<ResourceList>> membersSetter) {
-        if(this.members == null) {
+        if (this.members == null) {
             this.members = new ArrayList<>();
         }
         membersSetter.accept(this.members);
         return this;
     }
 
-    /**
-     * 后端云服务器组关联的后端云服务器ID的列表。
-     * @return members
-     */
+    /** 后端云服务器组关联的后端云服务器ID的列表。
+     * 
+     * @return members */
     public List<ResourceList> getMembers() {
         return members;
     }
@@ -511,20 +423,14 @@ public class PoolResp  {
         this.members = members;
     }
 
-    
-
     public PoolResp withHealthmonitorId(String healthmonitorId) {
         this.healthmonitorId = healthmonitorId;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端云服务器组关联的健康检查的ID。
-     * @return healthmonitorId
-     */
+    /** 后端云服务器组关联的健康检查的ID。
+     * 
+     * @return healthmonitorId */
     public String getHealthmonitorId() {
         return healthmonitorId;
     }
@@ -533,27 +439,23 @@ public class PoolResp  {
         this.healthmonitorId = healthmonitorId;
     }
 
-    
-
     public PoolResp withSessionPersistence(SessionPersistence sessionPersistence) {
         this.sessionPersistence = sessionPersistence;
         return this;
     }
 
     public PoolResp withSessionPersistence(Consumer<SessionPersistence> sessionPersistenceSetter) {
-        if(this.sessionPersistence == null ){
+        if (this.sessionPersistence == null) {
             this.sessionPersistence = new SessionPersistence();
             sessionPersistenceSetter.accept(this.sessionPersistence);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get sessionPersistence
-     * @return sessionPersistence
-     */
+    /** Get sessionPersistence
+     * 
+     * @return sessionPersistence */
     public SessionPersistence getSessionPersistence() {
         return sessionPersistence;
     }
@@ -562,20 +464,14 @@ public class PoolResp  {
         this.sessionPersistence = sessionPersistence;
     }
 
-    
-
     public PoolResp withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端云服务器组的后端协议。
-     * @return protocol
-     */
+    /** 后端云服务器组的后端协议。
+     * 
+     * @return protocol */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -584,20 +480,14 @@ public class PoolResp  {
         this.protocol = protocol;
     }
 
-    
-
     public PoolResp withLbAlgorithm(LbAlgorithmEnum lbAlgorithm) {
         this.lbAlgorithm = lbAlgorithm;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端云服务器组的负载均衡算法，取值：ROUND_ROBIN：加权轮询算法；LEAST_CONNECTIONS：加权最少连接算法；SOURCE_IP：源IP算法。当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。
-     * @return lbAlgorithm
-     */
+    /** 后端云服务器组的负载均衡算法，取值：ROUND_ROBIN：加权轮询算法；LEAST_CONNECTIONS：加权最少连接算法；SOURCE_IP：源IP算法。当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。
+     * 
+     * @return lbAlgorithm */
     public LbAlgorithmEnum getLbAlgorithm() {
         return lbAlgorithm;
     }
@@ -605,8 +495,6 @@ public class PoolResp  {
     public void setLbAlgorithm(LbAlgorithmEnum lbAlgorithm) {
         this.lbAlgorithm = lbAlgorithm;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -617,24 +505,35 @@ public class PoolResp  {
             return false;
         }
         PoolResp poolResp = (PoolResp) o;
-        return Objects.equals(this.id, poolResp.id) &&
-            Objects.equals(this.projectId, poolResp.projectId) &&
-            Objects.equals(this.tenantId, poolResp.tenantId) &&
-            Objects.equals(this.name, poolResp.name) &&
-            Objects.equals(this.description, poolResp.description) &&
-            Objects.equals(this.adminStateUp, poolResp.adminStateUp) &&
-            Objects.equals(this.loadbalancers, poolResp.loadbalancers) &&
-            Objects.equals(this.listeners, poolResp.listeners) &&
-            Objects.equals(this.members, poolResp.members) &&
-            Objects.equals(this.healthmonitorId, poolResp.healthmonitorId) &&
-            Objects.equals(this.sessionPersistence, poolResp.sessionPersistence) &&
-            Objects.equals(this.protocol, poolResp.protocol) &&
-            Objects.equals(this.lbAlgorithm, poolResp.lbAlgorithm);
+        return Objects.equals(this.id, poolResp.id) && Objects.equals(this.projectId, poolResp.projectId)
+            && Objects.equals(this.tenantId, poolResp.tenantId) && Objects.equals(this.name, poolResp.name)
+            && Objects.equals(this.description, poolResp.description)
+            && Objects.equals(this.adminStateUp, poolResp.adminStateUp)
+            && Objects.equals(this.loadbalancers, poolResp.loadbalancers)
+            && Objects.equals(this.listeners, poolResp.listeners) && Objects.equals(this.members, poolResp.members)
+            && Objects.equals(this.healthmonitorId, poolResp.healthmonitorId)
+            && Objects.equals(this.sessionPersistence, poolResp.sessionPersistence)
+            && Objects.equals(this.protocol, poolResp.protocol)
+            && Objects.equals(this.lbAlgorithm, poolResp.lbAlgorithm);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, projectId, tenantId, name, description, adminStateUp, loadbalancers, listeners, members, healthmonitorId, sessionPersistence, protocol, lbAlgorithm);
+        return Objects.hash(id,
+            projectId,
+            tenantId,
+            name,
+            description,
+            adminStateUp,
+            loadbalancers,
+            listeners,
+            members,
+            healthmonitorId,
+            sessionPersistence,
+            protocol,
+            lbAlgorithm);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -655,16 +554,13 @@ public class PoolResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

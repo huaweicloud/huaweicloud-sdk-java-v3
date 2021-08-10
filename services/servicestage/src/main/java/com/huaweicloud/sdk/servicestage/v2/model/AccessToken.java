@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * AccessToken
- */
-public class AccessToken  {
-
-
+/** AccessToken */
+public class AccessToken {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="token")
-    
+    @JsonProperty(value = "token")
+
     private String token;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host")
-    
+    @JsonProperty(value = "host")
+
     private String host;
 
     public AccessToken withName(String name) {
@@ -40,13 +28,9 @@ public class AccessToken  {
         return this;
     }
 
-    
-
-
-    /**
-     * 授权名称。
-     * @return name
-     */
+    /** 授权名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -55,20 +39,14 @@ public class AccessToken  {
         this.name = name;
     }
 
-    
-
     public AccessToken withToken(String token) {
         this.token = token;
         return this;
     }
 
-    
-
-
-    /**
-     * git仓库设置中创建的私有token。
-     * @return token
-     */
+    /** git仓库设置中创建的私有token。
+     * 
+     * @return token */
     public String getToken() {
         return token;
     }
@@ -77,20 +55,14 @@ public class AccessToken  {
         this.token = token;
     }
 
-    
-
     public AccessToken withHost(String host) {
         this.host = host;
         return this;
     }
 
-    
-
-
-    /**
-     * git仓库的主机地址，如https://192.168.1.1:8080/gitlab，默认为官方主机。
-     * @return host
-     */
+    /** git仓库的主机地址，如https://192.168.1.1:8080/gitlab，默认为官方主机。
+     * 
+     * @return host */
     public String getHost() {
         return host;
     }
@@ -98,8 +70,6 @@ public class AccessToken  {
     public void setHost(String host) {
         this.host = host;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,15 @@ public class AccessToken  {
             return false;
         }
         AccessToken accessToken = (AccessToken) o;
-        return Objects.equals(this.name, accessToken.name) &&
-            Objects.equals(this.token, accessToken.token) &&
-            Objects.equals(this.host, accessToken.host);
+        return Objects.equals(this.name, accessToken.name) && Objects.equals(this.token, accessToken.token)
+            && Objects.equals(this.host, accessToken.host);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, token, host);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +99,13 @@ public class AccessToken  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

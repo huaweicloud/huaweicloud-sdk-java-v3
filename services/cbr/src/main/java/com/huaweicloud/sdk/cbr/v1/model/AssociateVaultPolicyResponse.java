@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.VaultPolicyResp;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class AssociateVaultPolicyResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="associate_policy")
-    
+    @JsonProperty(value = "associate_policy")
+
     private VaultPolicyResp associatePolicy;
 
     public AssociateVaultPolicyResponse withAssociatePolicy(VaultPolicyResp associatePolicy) {
@@ -32,19 +21,17 @@ public class AssociateVaultPolicyResponse extends SdkResponse {
     }
 
     public AssociateVaultPolicyResponse withAssociatePolicy(Consumer<VaultPolicyResp> associatePolicySetter) {
-        if(this.associatePolicy == null ){
+        if (this.associatePolicy == null) {
             this.associatePolicy = new VaultPolicyResp();
             associatePolicySetter.accept(this.associatePolicy);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get associatePolicy
-     * @return associatePolicy
-     */
+    /** Get associatePolicy
+     * 
+     * @return associatePolicy */
     public VaultPolicyResp getAssociatePolicy() {
         return associatePolicy;
     }
@@ -52,8 +39,6 @@ public class AssociateVaultPolicyResponse extends SdkResponse {
     public void setAssociatePolicy(VaultPolicyResp associatePolicy) {
         this.associatePolicy = associatePolicy;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class AssociateVaultPolicyResponse extends SdkResponse {
         AssociateVaultPolicyResponse associateVaultPolicyResponse = (AssociateVaultPolicyResponse) o;
         return Objects.equals(this.associatePolicy, associateVaultPolicyResponse.associatePolicy);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(associatePolicy);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class AssociateVaultPolicyResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

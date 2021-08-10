@@ -1,71 +1,51 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 转发规则对象
- */
-public class L7ruleResp  {
-
-
+/** 转发规则对象 */
+public class L7ruleResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provisioning_status")
-    
+    @JsonProperty(value = "provisioning_status")
+
     private String provisioningStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
+
     private String tenantId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
-    
+    @JsonProperty(value = "admin_state_up")
+
     private Boolean adminStateUp;
-    /**
-     * 转发规则的匹配内容
-     */
+
+    /** 转发规则的匹配内容 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum HOST_NAME for value: "HOST_NAME"
-         */
+        /** Enum HOST_NAME for value: "HOST_NAME" */
         public static final TypeEnum HOST_NAME = new TypeEnum("HOST_NAME");
-        
-        /**
-         * Enum PATH for value: "PATH"
-         */
+
+        /** Enum PATH for value: "PATH" */
         public static final TypeEnum PATH = new TypeEnum("PATH");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -94,7 +74,7 @@ public class L7ruleResp  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -105,7 +85,7 @@ public class L7ruleResp  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -129,34 +109,29 @@ public class L7ruleResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="compare_type")
-    
+    @JsonProperty(value = "compare_type")
+
     private String compareType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invert")
-    
+    @JsonProperty(value = "invert")
+
     private Boolean invert;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private String value;
 
     public L7ruleResp withId(String id) {
@@ -164,13 +139,9 @@ public class L7ruleResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 转发规则ID
-     * @return id
-     */
+    /** 转发规则ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -179,20 +150,14 @@ public class L7ruleResp  {
         this.id = id;
     }
 
-    
-
     public L7ruleResp withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 转发规则的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
-     * @return provisioningStatus
-     */
+    /** 转发规则的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
+     * 
+     * @return provisioningStatus */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -201,20 +166,14 @@ public class L7ruleResp  {
         this.provisioningStatus = provisioningStatus;
     }
 
-    
-
     public L7ruleResp withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
 
-    
-
-
-    /**
-     * 转发规则所在的项目ID。
-     * @return tenantId
-     */
+    /** 转发规则所在的项目ID。
+     * 
+     * @return tenantId */
     public String getTenantId() {
         return tenantId;
     }
@@ -223,20 +182,14 @@ public class L7ruleResp  {
         this.tenantId = tenantId;
     }
 
-    
-
     public L7ruleResp withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 转发规则所在的项目ID。
-     * @return projectId
-     */
+    /** 转发规则所在的项目ID。
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -245,20 +198,14 @@ public class L7ruleResp  {
         this.projectId = projectId;
     }
 
-    
-
     public L7ruleResp withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
     }
 
-    
-
-
-    /**
-     * 转发规则的管理状态；该字段为预留字段，暂未启用。默认为true。
-     * @return adminStateUp
-     */
+    /** 转发规则的管理状态；该字段为预留字段，暂未启用。默认为true。
+     * 
+     * @return adminStateUp */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -267,20 +214,14 @@ public class L7ruleResp  {
         this.adminStateUp = adminStateUp;
     }
 
-    
-
     public L7ruleResp withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 转发规则的匹配内容
-     * @return type
-     */
+    /** 转发规则的匹配内容
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -289,20 +230,14 @@ public class L7ruleResp  {
         this.type = type;
     }
 
-    
-
     public L7ruleResp withCompareType(String compareType) {
         this.compareType = compareType;
         return this;
     }
 
-    
-
-
-    /**
-     * 转发规则的匹配方式。type为HOST_NAME时可以为EQUAL_TO。type为PATH时可以为REGEX， STARTS_WITH，EQUAL_TO。
-     * @return compareType
-     */
+    /** 转发规则的匹配方式。type为HOST_NAME时可以为EQUAL_TO。type为PATH时可以为REGEX， STARTS_WITH，EQUAL_TO。
+     * 
+     * @return compareType */
     public String getCompareType() {
         return compareType;
     }
@@ -311,20 +246,14 @@ public class L7ruleResp  {
         this.compareType = compareType;
     }
 
-    
-
     public L7ruleResp withInvert(Boolean invert) {
         this.invert = invert;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否反向匹配。使用说明：固定为false。该字段能更新但不会生效。
-     * @return invert
-     */
+    /** 是否反向匹配。使用说明：固定为false。该字段能更新但不会生效。
+     * 
+     * @return invert */
     public Boolean getInvert() {
         return invert;
     }
@@ -333,20 +262,14 @@ public class L7ruleResp  {
         this.invert = invert;
     }
 
-    
-
     public L7ruleResp withKey(String key) {
         this.key = key;
         return this;
     }
 
-    
-
-
-    /**
-     * 匹配内容的键值。目前匹配内容为HOST_NAME和PATH时，该字段不生效。该字段能更新但不会生效。
-     * @return key
-     */
+    /** 匹配内容的键值。目前匹配内容为HOST_NAME和PATH时，该字段不生效。该字段能更新但不会生效。
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -355,20 +278,15 @@ public class L7ruleResp  {
         this.key = key;
     }
 
-    
-
     public L7ruleResp withValue(String value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 匹配内容的值。其值不能包含空格。使用说明：当type为HOST_NAME时，取值范围：String(100)，字符串只能包含英文字母、数字、“-”或“.”，且必须以字母或数字开头。当type为PATH时，取值范围：String(128)。当转发规则的compare_type为STARTS_WITH，EQUAL_TO时，字符串只能包含英文字母、数字、^-%#&$.*+?,=!:| /()[]{}，且必须以\"/\"开头。
-     * @return value
-     */
+    /** 匹配内容的值。其值不能包含空格。使用说明：当type为HOST_NAME时，取值范围：String(100)，字符串只能包含英文字母、数字、“-”或“.”，且必须以字母或数字开头。当type为PATH时，取值范围：String(128)。当转发规则的compare_type为STARTS_WITH，EQUAL_TO时，字符串只能包含英文字母、数字、^-%#&$.*+?,=!:|
+     * /()[]{}，且必须以\"/\"开头。
+     * 
+     * @return value */
     public String getValue() {
         return value;
     }
@@ -376,8 +294,6 @@ public class L7ruleResp  {
     public void setValue(String value) {
         this.value = value;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -388,21 +304,22 @@ public class L7ruleResp  {
             return false;
         }
         L7ruleResp l7ruleResp = (L7ruleResp) o;
-        return Objects.equals(this.id, l7ruleResp.id) &&
-            Objects.equals(this.provisioningStatus, l7ruleResp.provisioningStatus) &&
-            Objects.equals(this.tenantId, l7ruleResp.tenantId) &&
-            Objects.equals(this.projectId, l7ruleResp.projectId) &&
-            Objects.equals(this.adminStateUp, l7ruleResp.adminStateUp) &&
-            Objects.equals(this.type, l7ruleResp.type) &&
-            Objects.equals(this.compareType, l7ruleResp.compareType) &&
-            Objects.equals(this.invert, l7ruleResp.invert) &&
-            Objects.equals(this.key, l7ruleResp.key) &&
-            Objects.equals(this.value, l7ruleResp.value);
+        return Objects.equals(this.id, l7ruleResp.id)
+            && Objects.equals(this.provisioningStatus, l7ruleResp.provisioningStatus)
+            && Objects.equals(this.tenantId, l7ruleResp.tenantId)
+            && Objects.equals(this.projectId, l7ruleResp.projectId)
+            && Objects.equals(this.adminStateUp, l7ruleResp.adminStateUp) && Objects.equals(this.type, l7ruleResp.type)
+            && Objects.equals(this.compareType, l7ruleResp.compareType)
+            && Objects.equals(this.invert, l7ruleResp.invert) && Objects.equals(this.key, l7ruleResp.key)
+            && Objects.equals(this.value, l7ruleResp.value);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, provisioningStatus, tenantId, projectId, adminStateUp, type, compareType, invert, key, value);
+        return Objects
+            .hash(id, provisioningStatus, tenantId, projectId, adminStateUp, type, compareType, invert, key, value);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -420,16 +337,13 @@ public class L7ruleResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

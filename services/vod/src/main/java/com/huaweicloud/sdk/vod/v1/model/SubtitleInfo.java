@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * SubtitleInfo
- */
-public class SubtitleInfo  {
-
-
+/** SubtitleInfo */
+public class SubtitleInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private String url;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Integer id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="language")
-    
+    @JsonProperty(value = "language")
+
     private String language;
 
     public SubtitleInfo withUrl(String url) {
@@ -46,13 +33,9 @@ public class SubtitleInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 字幕文件的下载地址 
-     * @return url
-     */
+    /** 字幕文件的下载地址
+     * 
+     * @return url */
     public String getUrl() {
         return url;
     }
@@ -61,20 +44,14 @@ public class SubtitleInfo  {
         this.url = url;
     }
 
-    
-
     public SubtitleInfo withId(Integer id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 字幕文件id 
-     * @return id
-     */
+    /** 字幕文件id
+     * 
+     * @return id */
     public Integer getId() {
         return id;
     }
@@ -83,20 +60,14 @@ public class SubtitleInfo  {
         this.id = id;
     }
 
-    
-
     public SubtitleInfo withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 字幕文件类型 
-     * @return type
-     */
+    /** 字幕文件类型
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -105,20 +76,14 @@ public class SubtitleInfo  {
         this.type = type;
     }
 
-    
-
     public SubtitleInfo withLanguage(String language) {
         this.language = language;
         return this;
     }
 
-    
-
-
-    /**
-     * 字幕文件语言种类 
-     * @return language
-     */
+    /** 字幕文件语言种类
+     * 
+     * @return language */
     public String getLanguage() {
         return language;
     }
@@ -126,8 +91,6 @@ public class SubtitleInfo  {
     public void setLanguage(String language) {
         this.language = language;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,15 @@ public class SubtitleInfo  {
             return false;
         }
         SubtitleInfo subtitleInfo = (SubtitleInfo) o;
-        return Objects.equals(this.url, subtitleInfo.url) &&
-            Objects.equals(this.id, subtitleInfo.id) &&
-            Objects.equals(this.type, subtitleInfo.type) &&
-            Objects.equals(this.language, subtitleInfo.language);
+        return Objects.equals(this.url, subtitleInfo.url) && Objects.equals(this.id, subtitleInfo.id)
+            && Objects.equals(this.type, subtitleInfo.type) && Objects.equals(this.language, subtitleInfo.language);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(url, id, type, language);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +121,13 @@ public class SubtitleInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

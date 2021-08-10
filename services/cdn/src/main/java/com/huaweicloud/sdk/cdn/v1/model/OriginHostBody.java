@@ -1,41 +1,26 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * OriginHostBody
- */
-public class OriginHostBody  {
+/** OriginHostBody */
+public class OriginHostBody {
 
-    /**
-     * accelerate：选择加速域名作为回源地址；  customize：使用自动定义的域名作为回源地址；
-     */
+    /** accelerate：选择加速域名作为回源地址； customize：使用自动定义的域名作为回源地址； */
     public static final class OriginHostTypeEnum {
 
-        
-        /**
-         * Enum ACCELERATE for value: "accelerate"
-         */
+        /** Enum ACCELERATE for value: "accelerate" */
         public static final OriginHostTypeEnum ACCELERATE = new OriginHostTypeEnum("accelerate");
-        
-        /**
-         * Enum CUSTOMIZE for value: "customize"
-         */
+
+        /** Enum CUSTOMIZE for value: "customize" */
         public static final OriginHostTypeEnum CUSTOMIZE = new OriginHostTypeEnum("customize");
-        
 
         private static final Map<String, OriginHostTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +49,7 @@ public class OriginHostBody  {
 
         @JsonCreator
         public static OriginHostTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OriginHostTypeEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +60,7 @@ public class OriginHostBody  {
         }
 
         public static OriginHostTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OriginHostTypeEnum result = STATIC_FIELDS.get(value);
@@ -99,16 +84,14 @@ public class OriginHostBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="origin_host_type")
-    
+    @JsonProperty(value = "origin_host_type")
+
     private OriginHostTypeEnum originHostType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customize_domain")
-    
+    @JsonProperty(value = "customize_domain")
+
     private String customizeDomain;
 
     public OriginHostBody withOriginHostType(OriginHostTypeEnum originHostType) {
@@ -116,13 +99,9 @@ public class OriginHostBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * accelerate：选择加速域名作为回源地址；  customize：使用自动定义的域名作为回源地址；
-     * @return originHostType
-     */
+    /** accelerate：选择加速域名作为回源地址； customize：使用自动定义的域名作为回源地址；
+     * 
+     * @return originHostType */
     public OriginHostTypeEnum getOriginHostType() {
         return originHostType;
     }
@@ -131,20 +110,14 @@ public class OriginHostBody  {
         this.originHostType = originHostType;
     }
 
-    
-
     public OriginHostBody withCustomizeDomain(String customizeDomain) {
         this.customizeDomain = customizeDomain;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义回源域名，origin_host_type为 customize时传入该参数。
-     * @return customizeDomain
-     */
+    /** 自定义回源域名，origin_host_type为 customize时传入该参数。
+     * 
+     * @return customizeDomain */
     public String getCustomizeDomain() {
         return customizeDomain;
     }
@@ -152,8 +125,6 @@ public class OriginHostBody  {
     public void setCustomizeDomain(String customizeDomain) {
         this.customizeDomain = customizeDomain;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -164,13 +135,15 @@ public class OriginHostBody  {
             return false;
         }
         OriginHostBody originHostBody = (OriginHostBody) o;
-        return Objects.equals(this.originHostType, originHostBody.originHostType) &&
-            Objects.equals(this.customizeDomain, originHostBody.customizeDomain);
+        return Objects.equals(this.originHostType, originHostBody.originHostType)
+            && Objects.equals(this.customizeDomain, originHostBody.customizeDomain);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(originHostType, customizeDomain);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -180,16 +153,13 @@ public class OriginHostBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

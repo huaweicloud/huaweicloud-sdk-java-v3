@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class CheckCanAuthUsersOfAppRequest  {
-
-
+/** Request Object */
+public class CheckCanAuthUsersOfAppRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="filter")
-    
+    @JsonProperty(value = "filter")
+
     private String filter;
 
     public CheckCanAuthUsersOfAppRequest withAppId(String appId) {
@@ -40,13 +28,9 @@ public class CheckCanAuthUsersOfAppRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 应用ID
-     * @return appId
-     */
+    /** 应用ID
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -55,20 +39,14 @@ public class CheckCanAuthUsersOfAppRequest  {
         this.appId = appId;
     }
 
-    
-
     public CheckCanAuthUsersOfAppRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -77,20 +55,14 @@ public class CheckCanAuthUsersOfAppRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public CheckCanAuthUsersOfAppRequest withFilter(String filter) {
         this.filter = filter;
         return this;
     }
 
-    
-
-
-    /**
-     * 过滤条件 - 过滤条件，未提供时返回包括应用成员在内的所有候选用户列表 - 取值members时，过滤掉当前应用成员，适合增量添加应用成员时使用
-     * @return filter
-     */
+    /** 过滤条件 - 过滤条件，未提供时返回包括应用成员在内的所有候选用户列表 - 取值members时，过滤掉当前应用成员，适合增量添加应用成员时使用
+     * 
+     * @return filter */
     public String getFilter() {
         return filter;
     }
@@ -98,8 +70,6 @@ public class CheckCanAuthUsersOfAppRequest  {
     public void setFilter(String filter) {
         this.filter = filter;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class CheckCanAuthUsersOfAppRequest  {
             return false;
         }
         CheckCanAuthUsersOfAppRequest checkCanAuthUsersOfAppRequest = (CheckCanAuthUsersOfAppRequest) o;
-        return Objects.equals(this.appId, checkCanAuthUsersOfAppRequest.appId) &&
-            Objects.equals(this.instanceId, checkCanAuthUsersOfAppRequest.instanceId) &&
-            Objects.equals(this.filter, checkCanAuthUsersOfAppRequest.filter);
+        return Objects.equals(this.appId, checkCanAuthUsersOfAppRequest.appId)
+            && Objects.equals(this.instanceId, checkCanAuthUsersOfAppRequest.instanceId)
+            && Objects.equals(this.filter, checkCanAuthUsersOfAppRequest.filter);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(appId, instanceId, filter);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class CheckCanAuthUsersOfAppRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

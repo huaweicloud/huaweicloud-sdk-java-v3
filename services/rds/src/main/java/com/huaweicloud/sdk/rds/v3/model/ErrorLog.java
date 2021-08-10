@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 错误日志信息。
- */
-public class ErrorLog  {
-
-
+/** 错误日志信息。 */
+public class ErrorLog {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time")
-    
+    @JsonProperty(value = "time")
+
     private String time;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="level")
-    
+    @JsonProperty(value = "level")
+
     private String level;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content")
-    
+    @JsonProperty(value = "content")
+
     private String content;
 
     public ErrorLog withTime(String time) {
@@ -40,13 +28,9 @@ public class ErrorLog  {
         return this;
     }
 
-    
-
-
-    /**
-     * 日期时间UTC时间。
-     * @return time
-     */
+    /** 日期时间UTC时间。
+     * 
+     * @return time */
     public String getTime() {
         return time;
     }
@@ -55,20 +39,14 @@ public class ErrorLog  {
         this.time = time;
     }
 
-    
-
     public ErrorLog withLevel(String level) {
         this.level = level;
         return this;
     }
 
-    
-
-
-    /**
-     * 日志级别。
-     * @return level
-     */
+    /** 日志级别。
+     * 
+     * @return level */
     public String getLevel() {
         return level;
     }
@@ -77,20 +55,14 @@ public class ErrorLog  {
         this.level = level;
     }
 
-    
-
     public ErrorLog withContent(String content) {
         this.content = content;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误日志内容。
-     * @return content
-     */
+    /** 错误日志内容。
+     * 
+     * @return content */
     public String getContent() {
         return content;
     }
@@ -98,8 +70,6 @@ public class ErrorLog  {
     public void setContent(String content) {
         this.content = content;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,15 @@ public class ErrorLog  {
             return false;
         }
         ErrorLog errorLog = (ErrorLog) o;
-        return Objects.equals(this.time, errorLog.time) &&
-            Objects.equals(this.level, errorLog.level) &&
-            Objects.equals(this.content, errorLog.content);
+        return Objects.equals(this.time, errorLog.time) && Objects.equals(this.level, errorLog.level)
+            && Objects.equals(this.content, errorLog.content);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(time, level, content);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +99,13 @@ public class ErrorLog  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

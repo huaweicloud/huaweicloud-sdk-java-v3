@@ -1,105 +1,60 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bms.v1.model.Addresses;
-import com.huaweicloud.sdk.bms.v1.model.Fault;
-import com.huaweicloud.sdk.bms.v1.model.FlavorInfo;
-import com.huaweicloud.sdk.bms.v1.model.Image;
-import com.huaweicloud.sdk.bms.v1.model.Links;
-import com.huaweicloud.sdk.bms.v1.model.MetadataInfos;
-import com.huaweicloud.sdk.bms.v1.model.OsExtendedVolumes;
-import com.huaweicloud.sdk.bms.v1.model.SecurityGroups;
-import com.huaweicloud.sdk.bms.v1.model.ServerOsSchedulerHints;
-import com.huaweicloud.sdk.bms.v1.model.SystemTags;
+
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.function.Consumer;
-import java.util.Objects;
 
-/**
- * server字段数据结构说明
- */
-public class ChangeBaremetalNameResponsesServers  {
-
-
+/** server字段数据结构说明 */
+public class ChangeBaremetalNameResponsesServers {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private UUID id;
-    /**
-     * 裸金属服务器当前状态。ACTIVE：运行中/正在关机/删除中BUILD：创建中ERROR：故障HARD_REBOOT：强制重启中REBOOT：重启中 SHUTOFF：关机/正在开机/删除中/重建中/重装操作系统中/重装操作系统失败/冻结
-     */
+
+    /** 裸金属服务器当前状态。ACTIVE：运行中/正在关机/删除中BUILD：创建中ERROR：故障HARD_REBOOT：强制重启中REBOOT：重启中
+     * SHUTOFF：关机/正在开机/删除中/重建中/重装操作系统中/重装操作系统失败/冻结 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum ACTIVE for value: "ACTIVE"
-         */
+        /** Enum ACTIVE for value: "ACTIVE" */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
-        
-        /**
-         * Enum BUILD for value: "BUILD"
-         */
+
+        /** Enum BUILD for value: "BUILD" */
         public static final StatusEnum BUILD = new StatusEnum("BUILD");
-        
-        /**
-         * Enum DELETED for value: "DELETED"
-         */
+
+        /** Enum DELETED for value: "DELETED" */
         public static final StatusEnum DELETED = new StatusEnum("DELETED");
-        
-        /**
-         * Enum ERROR for value: "ERROR"
-         */
+
+        /** Enum ERROR for value: "ERROR" */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
-        
-        /**
-         * Enum HARD_REBOOT for value: "HARD_REBOOT"
-         */
+
+        /** Enum HARD_REBOOT for value: "HARD_REBOOT" */
         public static final StatusEnum HARD_REBOOT = new StatusEnum("HARD_REBOOT");
-        
-        /**
-         * Enum REBOOT for value: "REBOOT"
-         */
+
+        /** Enum REBOOT for value: "REBOOT" */
         public static final StatusEnum REBOOT = new StatusEnum("REBOOT");
-        
-        /**
-         * Enum REBUILD for value: "REBUILD"
-         */
+
+        /** Enum REBUILD for value: "REBUILD" */
         public static final StatusEnum REBUILD = new StatusEnum("REBUILD");
-        
-        /**
-         * Enum SHUTOFF for value: "SHUTOFF"
-         */
+
+        /** Enum SHUTOFF for value: "SHUTOFF" */
         public static final StatusEnum SHUTOFF = new StatusEnum("SHUTOFF");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -134,7 +89,7 @@ public class ChangeBaremetalNameResponsesServers  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -145,7 +100,7 @@ public class ChangeBaremetalNameResponsesServers  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -169,99 +124,79 @@ public class ChangeBaremetalNameResponsesServers  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
+    @JsonProperty(value = "created")
+
     private OffsetDateTime created;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
+
     private OffsetDateTime updated;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flavor")
-    
+    @JsonProperty(value = "flavor")
+
     private FlavorInfo flavor;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image")
-    
+    @JsonProperty(value = "image")
+
     private Image image;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
+
     private UUID tenantId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_name")
-    
+    @JsonProperty(value = "key_name")
+
     private String keyName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_id")
-    
+    @JsonProperty(value = "user_id")
+
     private UUID userId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata")
-    
+    @JsonProperty(value = "metadata")
+
     private MetadataInfos metadata;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hostId")
-    
+    @JsonProperty(value = "hostId")
+
     private UUID hostId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="addresses")
-    
+    @JsonProperty(value = "addresses")
+
     private Addresses addresses;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_groups")
-    
+    @JsonProperty(value = "security_groups")
+
     private List<SecurityGroups> securityGroups = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private List<Links> links = null;
-        /**
-     * 扩展属性，磁盘配置方式，取值为如下两种：MANUAL：API使用镜像中的分区方案和文件系统创建裸金属服务器。如果目标flavor磁盘较大，则API不会对剩余磁盘空间进行分区。AUTO：API使用与目标flavor磁盘大小相同的单个分区创建裸金属服务器，API会自动调整文件系统以适应整个分区。
-     */
+
+    /** 扩展属性，磁盘配置方式，取值为如下两种：MANUAL：API使用镜像中的分区方案和文件系统创建裸金属服务器。如果目标flavor磁盘较大，则API不会对剩余磁盘空间进行分区。AUTO：API使用与目标flavor磁盘大小相同的单个分区创建裸金属服务器，API会自动调整文件系统以适应整个分区。 */
     public static final class OsDCFDiskConfigEnum {
 
-        
-        /**
-         * Enum MANUAL for value: "MANUAL"
-         */
+        /** Enum MANUAL for value: "MANUAL" */
         public static final OsDCFDiskConfigEnum MANUAL = new OsDCFDiskConfigEnum("MANUAL");
-        
-        /**
-         * Enum AUTO for value: "AUTO"
-         */
+
+        /** Enum AUTO for value: "AUTO" */
         public static final OsDCFDiskConfigEnum AUTO = new OsDCFDiskConfigEnum("AUTO");
-        
 
         private static final Map<String, OsDCFDiskConfigEnum> STATIC_FIELDS = createStaticFields();
 
@@ -290,7 +225,7 @@ public class ChangeBaremetalNameResponsesServers  {
 
         @JsonCreator
         public static OsDCFDiskConfigEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsDCFDiskConfigEnum result = STATIC_FIELDS.get(value);
@@ -301,7 +236,7 @@ public class ChangeBaremetalNameResponsesServers  {
         }
 
         public static OsDCFDiskConfigEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsDCFDiskConfigEnum result = STATIC_FIELDS.get(value);
@@ -325,87 +260,63 @@ public class ChangeBaremetalNameResponsesServers  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-DCF:diskConfig")
-    
+    @JsonProperty(value = "OS-DCF:diskConfig")
+
     private OsDCFDiskConfigEnum osDCFDiskConfig;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-AZ:availability_zone")
-    
+    @JsonProperty(value = "OS-EXT-AZ:availability_zone")
+
     private String osEXTAZAvailabilityZone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-SRV-ATTR:host")
-    
+    @JsonProperty(value = "OS-EXT-SRV-ATTR:host")
+
     private String osEXTSRVATTRHost;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-SRV-ATTR:hypervisor_hostname")
-    
+    @JsonProperty(value = "OS-EXT-SRV-ATTR:hypervisor_hostname")
+
     private String osEXTSRVATTRHypervisorHostname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-SRV-ATTR:instance_name")
-    
+    @JsonProperty(value = "OS-EXT-SRV-ATTR:instance_name")
+
     private String osEXTSRVATTRInstanceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-STS:power_state")
-    
+    @JsonProperty(value = "OS-EXT-STS:power_state")
+
     private Integer osEXTSTSPowerState;
-    /**
-     * 扩展属性，裸金属服务器任务状态。例如：rebooting表示重启中reboot_started表示普通重启reboot_started_hard表示强制重启powering-off表示关机中powering-on表示开机中rebuilding表示重建中scheduling表示调度中deleting表示删除中
-     */
+
+    /** 扩展属性，裸金属服务器任务状态。例如：rebooting表示重启中reboot_started表示普通重启reboot_started_hard表示强制重启powering-off表示关机中powering-on表示开机中rebuilding表示重建中scheduling表示调度中deleting表示删除中 */
     public static final class OsEXTSTSTaskStateEnum {
 
-        
-        /**
-         * Enum REBOOTING for value: "rebooting"
-         */
+        /** Enum REBOOTING for value: "rebooting" */
         public static final OsEXTSTSTaskStateEnum REBOOTING = new OsEXTSTSTaskStateEnum("rebooting");
-        
-        /**
-         * Enum REBOOT_STARTED for value: "reboot_started"
-         */
+
+        /** Enum REBOOT_STARTED for value: "reboot_started" */
         public static final OsEXTSTSTaskStateEnum REBOOT_STARTED = new OsEXTSTSTaskStateEnum("reboot_started");
-        
-        /**
-         * Enum REBOOT_STARTED_HARD for value: "reboot_started_hard"
-         */
-        public static final OsEXTSTSTaskStateEnum REBOOT_STARTED_HARD = new OsEXTSTSTaskStateEnum("reboot_started_hard");
-        
-        /**
-         * Enum POWERING_OFF for value: "powering-off"
-         */
+
+        /** Enum REBOOT_STARTED_HARD for value: "reboot_started_hard" */
+        public static final OsEXTSTSTaskStateEnum REBOOT_STARTED_HARD =
+            new OsEXTSTSTaskStateEnum("reboot_started_hard");
+
+        /** Enum POWERING_OFF for value: "powering-off" */
         public static final OsEXTSTSTaskStateEnum POWERING_OFF = new OsEXTSTSTaskStateEnum("powering-off");
-        
-        /**
-         * Enum POWERING_ON for value: "powering-on"
-         */
+
+        /** Enum POWERING_ON for value: "powering-on" */
         public static final OsEXTSTSTaskStateEnum POWERING_ON = new OsEXTSTSTaskStateEnum("powering-on");
-        
-        /**
-         * Enum REBUILDING for value: "rebuilding"
-         */
+
+        /** Enum REBUILDING for value: "rebuilding" */
         public static final OsEXTSTSTaskStateEnum REBUILDING = new OsEXTSTSTaskStateEnum("rebuilding");
-        
-        /**
-         * Enum SCHEDULING for value: "scheduling"
-         */
+
+        /** Enum SCHEDULING for value: "scheduling" */
         public static final OsEXTSTSTaskStateEnum SCHEDULING = new OsEXTSTSTaskStateEnum("scheduling");
-        
-        /**
-         * Enum DELETING for value: "deleting"
-         */
+
+        /** Enum DELETING for value: "deleting" */
         public static final OsEXTSTSTaskStateEnum DELETING = new OsEXTSTSTaskStateEnum("deleting");
-        
 
         private static final Map<String, OsEXTSTSTaskStateEnum> STATIC_FIELDS = createStaticFields();
 
@@ -440,7 +351,7 @@ public class ChangeBaremetalNameResponsesServers  {
 
         @JsonCreator
         public static OsEXTSTSTaskStateEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsEXTSTSTaskStateEnum result = STATIC_FIELDS.get(value);
@@ -451,7 +362,7 @@ public class ChangeBaremetalNameResponsesServers  {
         }
 
         public static OsEXTSTSTaskStateEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsEXTSTSTaskStateEnum result = STATIC_FIELDS.get(value);
@@ -475,37 +386,25 @@ public class ChangeBaremetalNameResponsesServers  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-STS:task_state")
-    
+    @JsonProperty(value = "OS-EXT-STS:task_state")
+
     private OsEXTSTSTaskStateEnum osEXTSTSTaskState;
-    /**
-     * 扩展属性，裸金属服务器状态。例如：RUNNING表示运行中SHUTOFF表示关机SUSPENDED表示暂停REBOOT表示重启
-     */
+
+    /** 扩展属性，裸金属服务器状态。例如：RUNNING表示运行中SHUTOFF表示关机SUSPENDED表示暂停REBOOT表示重启 */
     public static final class OsEXTSTSVmStateEnum {
 
-        
-        /**
-         * Enum RUNNING for value: "RUNNING"
-         */
+        /** Enum RUNNING for value: "RUNNING" */
         public static final OsEXTSTSVmStateEnum RUNNING = new OsEXTSTSVmStateEnum("RUNNING");
-        
-        /**
-         * Enum SHUTOFF for value: "SHUTOFF"
-         */
+
+        /** Enum SHUTOFF for value: "SHUTOFF" */
         public static final OsEXTSTSVmStateEnum SHUTOFF = new OsEXTSTSVmStateEnum("SHUTOFF");
-        
-        /**
-         * Enum SUSPENDED for value: "SUSPENDED"
-         */
+
+        /** Enum SUSPENDED for value: "SUSPENDED" */
         public static final OsEXTSTSVmStateEnum SUSPENDED = new OsEXTSTSVmStateEnum("SUSPENDED");
-        
-        /**
-         * Enum REBOOT for value: "REBOOT"
-         */
+
+        /** Enum REBOOT for value: "REBOOT" */
         public static final OsEXTSTSVmStateEnum REBOOT = new OsEXTSTSVmStateEnum("REBOOT");
-        
 
         private static final Map<String, OsEXTSTSVmStateEnum> STATIC_FIELDS = createStaticFields();
 
@@ -536,7 +435,7 @@ public class ChangeBaremetalNameResponsesServers  {
 
         @JsonCreator
         public static OsEXTSTSVmStateEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsEXTSTSVmStateEnum result = STATIC_FIELDS.get(value);
@@ -547,7 +446,7 @@ public class ChangeBaremetalNameResponsesServers  {
         }
 
         public static OsEXTSTSVmStateEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsEXTSTSVmStateEnum result = STATIC_FIELDS.get(value);
@@ -571,91 +470,70 @@ public class ChangeBaremetalNameResponsesServers  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-STS:vm_state")
-    
+    @JsonProperty(value = "OS-EXT-STS:vm_state")
+
     private OsEXTSTSVmStateEnum osEXTSTSVmState;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-SRV-USG:launched_at")
-    
+    @JsonProperty(value = "OS-SRV-USG:launched_at")
+
     private OffsetDateTime osSRVUSGLaunchedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-SRV-USG:terminated_at")
-    
+    @JsonProperty(value = "OS-SRV-USG:terminated_at")
+
     private OffsetDateTime osSRVUSGTerminatedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os-extended-volumes:volumes_attached")
-    
+    @JsonProperty(value = "os-extended-volumes:volumes_attached")
+
     private List<OsExtendedVolumes> osExtendedVolumesVolumesAttached = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="accessIPv4")
-    
+    @JsonProperty(value = "accessIPv4")
+
     private String accessIPv4;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="accessIPv6")
-    
+    @JsonProperty(value = "accessIPv6")
+
     private String accessIPv6;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fault")
-    
+    @JsonProperty(value = "fault")
+
     private Fault fault;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="config_drive")
-    
+    @JsonProperty(value = "config_drive")
+
     private String configDrive;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="progress")
-    
+    @JsonProperty(value = "progress")
+
     private Integer progress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
-    /**
-     * 裸金属服务器宿主机状态。UP：服务正常UNKNOWN：状态未知DOWN：服务异常MAINTENANCE：维护状态空字符串：裸金属服务器无主机信息
-     */
+
+    /** 裸金属服务器宿主机状态。UP：服务正常UNKNOWN：状态未知DOWN：服务异常MAINTENANCE：维护状态空字符串：裸金属服务器无主机信息 */
     public static final class HostStatusEnum {
 
-        
-        /**
-         * Enum UP for value: "UP"
-         */
+        /** Enum UP for value: "UP" */
         public static final HostStatusEnum UP = new HostStatusEnum("UP");
-        
-        /**
-         * Enum UNKNOWN for value: "UNKNOWN"
-         */
+
+        /** Enum UNKNOWN for value: "UNKNOWN" */
         public static final HostStatusEnum UNKNOWN = new HostStatusEnum("UNKNOWN");
-        
-        /**
-         * Enum DOWN for value: "DOWN"
-         */
+
+        /** Enum DOWN for value: "DOWN" */
         public static final HostStatusEnum DOWN = new HostStatusEnum("DOWN");
-        
-        /**
-         * Enum MAINTENANCE for value: "MAINTENANCE"
-         */
+
+        /** Enum MAINTENANCE for value: "MAINTENANCE" */
         public static final HostStatusEnum MAINTENANCE = new HostStatusEnum("MAINTENANCE");
-        
 
         private static final Map<String, HostStatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -686,7 +564,7 @@ public class ChangeBaremetalNameResponsesServers  {
 
         @JsonCreator
         public static HostStatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             HostStatusEnum result = STATIC_FIELDS.get(value);
@@ -697,7 +575,7 @@ public class ChangeBaremetalNameResponsesServers  {
         }
 
         public static HostStatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             HostStatusEnum result = STATIC_FIELDS.get(value);
@@ -721,82 +599,69 @@ public class ChangeBaremetalNameResponsesServers  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host_status")
-    
+    @JsonProperty(value = "host_status")
+
     private HostStatusEnum hostStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-SRV-ATTR:hostname")
-    
+    @JsonProperty(value = "OS-EXT-SRV-ATTR:hostname")
+
     private String osEXTSRVATTRHostname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-SRV-ATTR:reservation_id")
-    
+    @JsonProperty(value = "OS-EXT-SRV-ATTR:reservation_id")
+
     private UUID osEXTSRVATTRReservationId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-SRV-ATTR:launch_index")
-    
+    @JsonProperty(value = "OS-EXT-SRV-ATTR:launch_index")
+
     private Integer osEXTSRVATTRLaunchIndex;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-SRV-ATTR:kernel_id")
-    
+    @JsonProperty(value = "OS-EXT-SRV-ATTR:kernel_id")
+
     private UUID osEXTSRVATTRKernelId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-SRV-ATTR:ramdisk_id")
-    
+    @JsonProperty(value = "OS-EXT-SRV-ATTR:ramdisk_id")
+
     private UUID osEXTSRVATTRRamdiskId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-SRV-ATTR:root_device_name")
-    
+    @JsonProperty(value = "OS-EXT-SRV-ATTR:root_device_name")
+
     private String osEXTSRVATTRRootDeviceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-SRV-ATTR:user_data")
-    
+    @JsonProperty(value = "OS-EXT-SRV-ATTR:user_data")
+
     private String osEXTSRVATTRUserData;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="locked")
-    
+    @JsonProperty(value = "locked")
+
     private Boolean locked;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<String> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sys_tags")
-    
+    @JsonProperty(value = "sys_tags")
+
     private List<SystemTags> sysTags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os:scheduler_hints")
-    
+    @JsonProperty(value = "os:scheduler_hints")
+
     private ServerOsSchedulerHints osSchedulerHints;
 
     public ChangeBaremetalNameResponsesServers withName(String name) {
@@ -804,13 +669,9 @@ public class ChangeBaremetalNameResponsesServers  {
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器名称
-     * @return name
-     */
+    /** 裸金属服务器名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -819,20 +680,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.name = name;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withId(UUID id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器唯一标识ID
-     * @return id
-     */
+    /** 裸金属服务器唯一标识ID
+     * 
+     * @return id */
     public UUID getId() {
         return id;
     }
@@ -841,20 +696,15 @@ public class ChangeBaremetalNameResponsesServers  {
         this.id = id;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器当前状态。ACTIVE：运行中/正在关机/删除中BUILD：创建中ERROR：故障HARD_REBOOT：强制重启中REBOOT：重启中 SHUTOFF：关机/正在开机/删除中/重建中/重装操作系统中/重装操作系统失败/冻结
-     * @return status
-     */
+    /** 裸金属服务器当前状态。ACTIVE：运行中/正在关机/删除中BUILD：创建中ERROR：故障HARD_REBOOT：强制重启中REBOOT：重启中
+     * SHUTOFF：关机/正在开机/删除中/重建中/重装操作系统中/重装操作系统失败/冻结
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -863,20 +713,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.status = status;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withCreated(OffsetDateTime created) {
         this.created = created;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器创建时间。时间戳格式为ISO 8601：YYYY-MM-DDTHH:MM:SSZ，例如：2019-05-22T03:30:52Z
-     * @return created
-     */
+    /** 裸金属服务器创建时间。时间戳格式为ISO 8601：YYYY-MM-DDTHH:MM:SSZ，例如：2019-05-22T03:30:52Z
+     * 
+     * @return created */
     public OffsetDateTime getCreated() {
         return created;
     }
@@ -885,20 +729,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.created = created;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withUpdated(OffsetDateTime updated) {
         this.updated = updated;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器上一次更新时间。时间戳格式为ISO 8601：YYYY-MM-DDTHH:MM:SSZ，例如：2019-05-22T04:30:52Z
-     * @return updated
-     */
+    /** 裸金属服务器上一次更新时间。时间戳格式为ISO 8601：YYYY-MM-DDTHH:MM:SSZ，例如：2019-05-22T04:30:52Z
+     * 
+     * @return updated */
     public OffsetDateTime getUpdated() {
         return updated;
     }
@@ -907,27 +745,23 @@ public class ChangeBaremetalNameResponsesServers  {
         this.updated = updated;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withFlavor(FlavorInfo flavor) {
         this.flavor = flavor;
         return this;
     }
 
     public ChangeBaremetalNameResponsesServers withFlavor(Consumer<FlavorInfo> flavorSetter) {
-        if(this.flavor == null ){
+        if (this.flavor == null) {
             this.flavor = new FlavorInfo();
             flavorSetter.accept(this.flavor);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get flavor
-     * @return flavor
-     */
+    /** Get flavor
+     * 
+     * @return flavor */
     public FlavorInfo getFlavor() {
         return flavor;
     }
@@ -936,27 +770,23 @@ public class ChangeBaremetalNameResponsesServers  {
         this.flavor = flavor;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withImage(Image image) {
         this.image = image;
         return this;
     }
 
     public ChangeBaremetalNameResponsesServers withImage(Consumer<Image> imageSetter) {
-        if(this.image == null ){
+        if (this.image == null) {
             this.image = new Image();
             imageSetter.accept(this.image);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get image
-     * @return image
-     */
+    /** Get image
+     * 
+     * @return image */
     public Image getImage() {
         return image;
     }
@@ -965,20 +795,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.image = image;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withTenantId(UUID tenantId) {
         this.tenantId = tenantId;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器所属租户ID，格式为UUID。该参数和project_id表示相同的概念。
-     * @return tenantId
-     */
+    /** 裸金属服务器所属租户ID，格式为UUID。该参数和project_id表示相同的概念。
+     * 
+     * @return tenantId */
     public UUID getTenantId() {
         return tenantId;
     }
@@ -987,20 +811,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.tenantId = tenantId;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withKeyName(String keyName) {
         this.keyName = keyName;
         return this;
     }
 
-    
-
-
-    /**
-     * SSH密钥名称
-     * @return keyName
-     */
+    /** SSH密钥名称
+     * 
+     * @return keyName */
     public String getKeyName() {
         return keyName;
     }
@@ -1009,20 +827,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.keyName = keyName;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withUserId(UUID userId) {
         this.userId = userId;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器所属用户ID。
-     * @return userId
-     */
+    /** 裸金属服务器所属用户ID。
+     * 
+     * @return userId */
     public UUID getUserId() {
         return userId;
     }
@@ -1031,27 +843,23 @@ public class ChangeBaremetalNameResponsesServers  {
         this.userId = userId;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withMetadata(MetadataInfos metadata) {
         this.metadata = metadata;
         return this;
     }
 
     public ChangeBaremetalNameResponsesServers withMetadata(Consumer<MetadataInfos> metadataSetter) {
-        if(this.metadata == null ){
+        if (this.metadata == null) {
             this.metadata = new MetadataInfos();
             metadataSetter.accept(this.metadata);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get metadata
-     * @return metadata
-     */
+    /** Get metadata
+     * 
+     * @return metadata */
     public MetadataInfos getMetadata() {
         return metadata;
     }
@@ -1060,20 +868,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.metadata = metadata;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withHostId(UUID hostId) {
         this.hostId = hostId;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器的主机ID
-     * @return hostId
-     */
+    /** 裸金属服务器的主机ID
+     * 
+     * @return hostId */
     public UUID getHostId() {
         return hostId;
     }
@@ -1082,27 +884,23 @@ public class ChangeBaremetalNameResponsesServers  {
         this.hostId = hostId;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withAddresses(Addresses addresses) {
         this.addresses = addresses;
         return this;
     }
 
     public ChangeBaremetalNameResponsesServers withAddresses(Consumer<Addresses> addressesSetter) {
-        if(this.addresses == null ){
+        if (this.addresses == null) {
             this.addresses = new Addresses();
             addressesSetter.accept(this.addresses);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get addresses
-     * @return addresses
-     */
+    /** Get addresses
+     * 
+     * @return addresses */
     public Addresses getAddresses() {
         return addresses;
     }
@@ -1111,16 +909,13 @@ public class ChangeBaremetalNameResponsesServers  {
         this.addresses = addresses;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withSecurityGroups(List<SecurityGroups> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
     }
 
-    
     public ChangeBaremetalNameResponsesServers addSecurityGroupsItem(SecurityGroups securityGroupsItem) {
-        if(this.securityGroups == null) {
+        if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         this.securityGroups.add(securityGroupsItem);
@@ -1128,17 +923,16 @@ public class ChangeBaremetalNameResponsesServers  {
     }
 
     public ChangeBaremetalNameResponsesServers withSecurityGroups(Consumer<List<SecurityGroups>> securityGroupsSetter) {
-        if(this.securityGroups == null) {
+        if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);
         return this;
     }
 
-    /**
-     * 裸金属服务器所属安全组列表。
-     * @return securityGroups
-     */
+    /** 裸金属服务器所属安全组列表。
+     * 
+     * @return securityGroups */
     public List<SecurityGroups> getSecurityGroups() {
         return securityGroups;
     }
@@ -1147,16 +941,13 @@ public class ChangeBaremetalNameResponsesServers  {
         this.securityGroups = securityGroups;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withLinks(List<Links> links) {
         this.links = links;
         return this;
     }
 
-    
     public ChangeBaremetalNameResponsesServers addLinksItem(Links linksItem) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         this.links.add(linksItem);
@@ -1164,17 +955,16 @@ public class ChangeBaremetalNameResponsesServers  {
     }
 
     public ChangeBaremetalNameResponsesServers withLinks(Consumer<List<Links>> linksSetter) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);
         return this;
     }
 
-    /**
-     * 裸金属服务器相关信息快捷链接
-     * @return links
-     */
+    /** 裸金属服务器相关信息快捷链接
+     * 
+     * @return links */
     public List<Links> getLinks() {
         return links;
     }
@@ -1183,20 +973,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.links = links;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withOsDCFDiskConfig(OsDCFDiskConfigEnum osDCFDiskConfig) {
         this.osDCFDiskConfig = osDCFDiskConfig;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展属性，磁盘配置方式，取值为如下两种：MANUAL：API使用镜像中的分区方案和文件系统创建裸金属服务器。如果目标flavor磁盘较大，则API不会对剩余磁盘空间进行分区。AUTO：API使用与目标flavor磁盘大小相同的单个分区创建裸金属服务器，API会自动调整文件系统以适应整个分区。
-     * @return osDCFDiskConfig
-     */
+    /** 扩展属性，磁盘配置方式，取值为如下两种：MANUAL：API使用镜像中的分区方案和文件系统创建裸金属服务器。如果目标flavor磁盘较大，则API不会对剩余磁盘空间进行分区。AUTO：API使用与目标flavor磁盘大小相同的单个分区创建裸金属服务器，API会自动调整文件系统以适应整个分区。
+     * 
+     * @return osDCFDiskConfig */
     public OsDCFDiskConfigEnum getOsDCFDiskConfig() {
         return osDCFDiskConfig;
     }
@@ -1205,20 +989,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osDCFDiskConfig = osDCFDiskConfig;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withOsEXTAZAvailabilityZone(String osEXTAZAvailabilityZone) {
         this.osEXTAZAvailabilityZone = osEXTAZAvailabilityZone;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展属性，可用分区编码。
-     * @return osEXTAZAvailabilityZone
-     */
+    /** 扩展属性，可用分区编码。
+     * 
+     * @return osEXTAZAvailabilityZone */
     public String getOsEXTAZAvailabilityZone() {
         return osEXTAZAvailabilityZone;
     }
@@ -1227,20 +1005,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osEXTAZAvailabilityZone = osEXTAZAvailabilityZone;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withOsEXTSRVATTRHost(String osEXTSRVATTRHost) {
         this.osEXTSRVATTRHost = osEXTSRVATTRHost;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展属性，裸金属服务器宿主名称
-     * @return osEXTSRVATTRHost
-     */
+    /** 扩展属性，裸金属服务器宿主名称
+     * 
+     * @return osEXTSRVATTRHost */
     public String getOsEXTSRVATTRHost() {
         return osEXTSRVATTRHost;
     }
@@ -1249,20 +1021,15 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osEXTSRVATTRHost = osEXTSRVATTRHost;
     }
 
-    
-
-    public ChangeBaremetalNameResponsesServers withOsEXTSRVATTRHypervisorHostname(String osEXTSRVATTRHypervisorHostname) {
+    public ChangeBaremetalNameResponsesServers withOsEXTSRVATTRHypervisorHostname(
+        String osEXTSRVATTRHypervisorHostname) {
         this.osEXTSRVATTRHypervisorHostname = osEXTSRVATTRHypervisorHostname;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展属性，hypervisor主机名称，由Nova virt驱动提供
-     * @return osEXTSRVATTRHypervisorHostname
-     */
+    /** 扩展属性，hypervisor主机名称，由Nova virt驱动提供
+     * 
+     * @return osEXTSRVATTRHypervisorHostname */
     public String getOsEXTSRVATTRHypervisorHostname() {
         return osEXTSRVATTRHypervisorHostname;
     }
@@ -1271,20 +1038,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osEXTSRVATTRHypervisorHostname = osEXTSRVATTRHypervisorHostname;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withOsEXTSRVATTRInstanceName(String osEXTSRVATTRInstanceName) {
         this.osEXTSRVATTRInstanceName = osEXTSRVATTRInstanceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展属性，裸金属服务器实例ID
-     * @return osEXTSRVATTRInstanceName
-     */
+    /** 扩展属性，裸金属服务器实例ID
+     * 
+     * @return osEXTSRVATTRInstanceName */
     public String getOsEXTSRVATTRInstanceName() {
         return osEXTSRVATTRInstanceName;
     }
@@ -1293,20 +1054,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osEXTSRVATTRInstanceName = osEXTSRVATTRInstanceName;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withOsEXTSTSPowerState(Integer osEXTSTSPowerState) {
         this.osEXTSTSPowerState = osEXTSTSPowerState;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展属性，裸金属服务器电源状态。例如：0表示“NO STATE”1表示“RUNNING”4表示“SHUTDOWN”
-     * @return osEXTSTSPowerState
-     */
+    /** 扩展属性，裸金属服务器电源状态。例如：0表示“NO STATE”1表示“RUNNING”4表示“SHUTDOWN”
+     * 
+     * @return osEXTSTSPowerState */
     public Integer getOsEXTSTSPowerState() {
         return osEXTSTSPowerState;
     }
@@ -1315,20 +1070,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osEXTSTSPowerState = osEXTSTSPowerState;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withOsEXTSTSTaskState(OsEXTSTSTaskStateEnum osEXTSTSTaskState) {
         this.osEXTSTSTaskState = osEXTSTSTaskState;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展属性，裸金属服务器任务状态。例如：rebooting表示重启中reboot_started表示普通重启reboot_started_hard表示强制重启powering-off表示关机中powering-on表示开机中rebuilding表示重建中scheduling表示调度中deleting表示删除中
-     * @return osEXTSTSTaskState
-     */
+    /** 扩展属性，裸金属服务器任务状态。例如：rebooting表示重启中reboot_started表示普通重启reboot_started_hard表示强制重启powering-off表示关机中powering-on表示开机中rebuilding表示重建中scheduling表示调度中deleting表示删除中
+     * 
+     * @return osEXTSTSTaskState */
     public OsEXTSTSTaskStateEnum getOsEXTSTSTaskState() {
         return osEXTSTSTaskState;
     }
@@ -1337,20 +1086,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osEXTSTSTaskState = osEXTSTSTaskState;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withOsEXTSTSVmState(OsEXTSTSVmStateEnum osEXTSTSVmState) {
         this.osEXTSTSVmState = osEXTSTSVmState;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展属性，裸金属服务器状态。例如：RUNNING表示运行中SHUTOFF表示关机SUSPENDED表示暂停REBOOT表示重启
-     * @return osEXTSTSVmState
-     */
+    /** 扩展属性，裸金属服务器状态。例如：RUNNING表示运行中SHUTOFF表示关机SUSPENDED表示暂停REBOOT表示重启
+     * 
+     * @return osEXTSTSVmState */
     public OsEXTSTSVmStateEnum getOsEXTSTSVmState() {
         return osEXTSTSVmState;
     }
@@ -1359,20 +1102,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osEXTSTSVmState = osEXTSTSVmState;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withOsSRVUSGLaunchedAt(OffsetDateTime osSRVUSGLaunchedAt) {
         this.osSRVUSGLaunchedAt = osSRVUSGLaunchedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展属性，裸金属服务器启动时间。时间戳格式为ISO 8601，例如：2019-05-25T03:40:25.000000
-     * @return osSRVUSGLaunchedAt
-     */
+    /** 扩展属性，裸金属服务器启动时间。时间戳格式为ISO 8601，例如：2019-05-25T03:40:25.000000
+     * 
+     * @return osSRVUSGLaunchedAt */
     public OffsetDateTime getOsSRVUSGLaunchedAt() {
         return osSRVUSGLaunchedAt;
     }
@@ -1381,20 +1118,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osSRVUSGLaunchedAt = osSRVUSGLaunchedAt;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withOsSRVUSGTerminatedAt(OffsetDateTime osSRVUSGTerminatedAt) {
         this.osSRVUSGTerminatedAt = osSRVUSGTerminatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展属性，裸金属服务器关闭时间。时间戳格式为ISO 8601，例如：2019-06-25T03:40:25.000000
-     * @return osSRVUSGTerminatedAt
-     */
+    /** 扩展属性，裸金属服务器关闭时间。时间戳格式为ISO 8601，例如：2019-06-25T03:40:25.000000
+     * 
+     * @return osSRVUSGTerminatedAt */
     public OffsetDateTime getOsSRVUSGTerminatedAt() {
         return osSRVUSGTerminatedAt;
     }
@@ -1403,34 +1134,33 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osSRVUSGTerminatedAt = osSRVUSGTerminatedAt;
     }
 
-    
-
-    public ChangeBaremetalNameResponsesServers withOsExtendedVolumesVolumesAttached(List<OsExtendedVolumes> osExtendedVolumesVolumesAttached) {
+    public ChangeBaremetalNameResponsesServers withOsExtendedVolumesVolumesAttached(
+        List<OsExtendedVolumes> osExtendedVolumesVolumesAttached) {
         this.osExtendedVolumesVolumesAttached = osExtendedVolumesVolumesAttached;
         return this;
     }
 
-    
-    public ChangeBaremetalNameResponsesServers addOsExtendedVolumesVolumesAttachedItem(OsExtendedVolumes osExtendedVolumesVolumesAttachedItem) {
-        if(this.osExtendedVolumesVolumesAttached == null) {
+    public ChangeBaremetalNameResponsesServers addOsExtendedVolumesVolumesAttachedItem(
+        OsExtendedVolumes osExtendedVolumesVolumesAttachedItem) {
+        if (this.osExtendedVolumesVolumesAttached == null) {
             this.osExtendedVolumesVolumesAttached = new ArrayList<>();
         }
         this.osExtendedVolumesVolumesAttached.add(osExtendedVolumesVolumesAttachedItem);
         return this;
     }
 
-    public ChangeBaremetalNameResponsesServers withOsExtendedVolumesVolumesAttached(Consumer<List<OsExtendedVolumes>> osExtendedVolumesVolumesAttachedSetter) {
-        if(this.osExtendedVolumesVolumesAttached == null) {
+    public ChangeBaremetalNameResponsesServers withOsExtendedVolumesVolumesAttached(
+        Consumer<List<OsExtendedVolumes>> osExtendedVolumesVolumesAttachedSetter) {
+        if (this.osExtendedVolumesVolumesAttached == null) {
             this.osExtendedVolumesVolumesAttached = new ArrayList<>();
         }
         osExtendedVolumesVolumesAttachedSetter.accept(this.osExtendedVolumesVolumesAttached);
         return this;
     }
 
-    /**
-     * 裸金属服务器挂载的云硬盘信息。详情请参见表 os-extended-volumes:volumes_attached字段数据结构说明。
-     * @return osExtendedVolumesVolumesAttached
-     */
+    /** 裸金属服务器挂载的云硬盘信息。详情请参见表 os-extended-volumes:volumes_attached字段数据结构说明。
+     * 
+     * @return osExtendedVolumesVolumesAttached */
     public List<OsExtendedVolumes> getOsExtendedVolumesVolumesAttached() {
         return osExtendedVolumesVolumesAttached;
     }
@@ -1439,20 +1169,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osExtendedVolumesVolumesAttached = osExtendedVolumesVolumesAttached;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withAccessIPv4(String accessIPv4) {
         this.accessIPv4 = accessIPv4;
         return this;
     }
 
-    
-
-
-    /**
-     * 预留属性
-     * @return accessIPv4
-     */
+    /** 预留属性
+     * 
+     * @return accessIPv4 */
     public String getAccessIPv4() {
         return accessIPv4;
     }
@@ -1461,20 +1185,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.accessIPv4 = accessIPv4;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withAccessIPv6(String accessIPv6) {
         this.accessIPv6 = accessIPv6;
         return this;
     }
 
-    
-
-
-    /**
-     * 预留属性
-     * @return accessIPv6
-     */
+    /** 预留属性
+     * 
+     * @return accessIPv6 */
     public String getAccessIPv6() {
         return accessIPv6;
     }
@@ -1483,27 +1201,23 @@ public class ChangeBaremetalNameResponsesServers  {
         this.accessIPv6 = accessIPv6;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withFault(Fault fault) {
         this.fault = fault;
         return this;
     }
 
     public ChangeBaremetalNameResponsesServers withFault(Consumer<Fault> faultSetter) {
-        if(this.fault == null ){
+        if (this.fault == null) {
             this.fault = new Fault();
             faultSetter.accept(this.fault);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get fault
-     * @return fault
-     */
+    /** Get fault
+     * 
+     * @return fault */
     public Fault getFault() {
         return fault;
     }
@@ -1512,20 +1226,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.fault = fault;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withConfigDrive(String configDrive) {
         this.configDrive = configDrive;
         return this;
     }
 
-    
-
-
-    /**
-     * config drive信息
-     * @return configDrive
-     */
+    /** config drive信息
+     * 
+     * @return configDrive */
     public String getConfigDrive() {
         return configDrive;
     }
@@ -1534,20 +1242,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.configDrive = configDrive;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withProgress(Integer progress) {
         this.progress = progress;
         return this;
     }
 
-    
-
-
-    /**
-     * 预留属性
-     * @return progress
-     */
+    /** 预留属性
+     * 
+     * @return progress */
     public Integer getProgress() {
         return progress;
     }
@@ -1556,20 +1258,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.progress = progress;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器的描述信息。
-     * @return description
-     */
+    /** 裸金属服务器的描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -1578,20 +1274,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.description = description;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withHostStatus(HostStatusEnum hostStatus) {
         this.hostStatus = hostStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器宿主机状态。UP：服务正常UNKNOWN：状态未知DOWN：服务异常MAINTENANCE：维护状态空字符串：裸金属服务器无主机信息
-     * @return hostStatus
-     */
+    /** 裸金属服务器宿主机状态。UP：服务正常UNKNOWN：状态未知DOWN：服务异常MAINTENANCE：维护状态空字符串：裸金属服务器无主机信息
+     * 
+     * @return hostStatus */
     public HostStatusEnum getHostStatus() {
         return hostStatus;
     }
@@ -1600,20 +1290,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.hostStatus = hostStatus;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withOsEXTSRVATTRHostname(String osEXTSRVATTRHostname) {
         this.osEXTSRVATTRHostname = osEXTSRVATTRHostname;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器的主机名
-     * @return osEXTSRVATTRHostname
-     */
+    /** 裸金属服务器的主机名
+     * 
+     * @return osEXTSRVATTRHostname */
     public String getOsEXTSRVATTRHostname() {
         return osEXTSRVATTRHostname;
     }
@@ -1622,20 +1306,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osEXTSRVATTRHostname = osEXTSRVATTRHostname;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withOsEXTSRVATTRReservationId(UUID osEXTSRVATTRReservationId) {
         this.osEXTSRVATTRReservationId = osEXTSRVATTRReservationId;
         return this;
     }
 
-    
-
-
-    /**
-     * 批量创建场景，裸金属服务器的预留ID。当批量创建裸金属服务器时，这些服务器将拥有相同的reservation_id。您可以使用6.3.3-查询裸金属服务器详情列表API并指定reservation_id来过滤查询同一批创建的所有裸金属服务器。
-     * @return osEXTSRVATTRReservationId
-     */
+    /** 批量创建场景，裸金属服务器的预留ID。当批量创建裸金属服务器时，这些服务器将拥有相同的reservation_id。您可以使用6.3.3-查询裸金属服务器详情列表API并指定reservation_id来过滤查询同一批创建的所有裸金属服务器。
+     * 
+     * @return osEXTSRVATTRReservationId */
     public UUID getOsEXTSRVATTRReservationId() {
         return osEXTSRVATTRReservationId;
     }
@@ -1644,20 +1322,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osEXTSRVATTRReservationId = osEXTSRVATTRReservationId;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withOsEXTSRVATTRLaunchIndex(Integer osEXTSRVATTRLaunchIndex) {
         this.osEXTSRVATTRLaunchIndex = osEXTSRVATTRLaunchIndex;
         return this;
     }
 
-    
-
-
-    /**
-     * 批量创建场景，裸金属服务器的启动顺序
-     * @return osEXTSRVATTRLaunchIndex
-     */
+    /** 批量创建场景，裸金属服务器的启动顺序
+     * 
+     * @return osEXTSRVATTRLaunchIndex */
     public Integer getOsEXTSRVATTRLaunchIndex() {
         return osEXTSRVATTRLaunchIndex;
     }
@@ -1666,20 +1338,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osEXTSRVATTRLaunchIndex = osEXTSRVATTRLaunchIndex;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withOsEXTSRVATTRKernelId(UUID osEXTSRVATTRKernelId) {
         this.osEXTSRVATTRKernelId = osEXTSRVATTRKernelId;
         return this;
     }
 
-    
-
-
-    /**
-     * 若使用AMI格式的镜像，则表示kernel image的UUID；否则，留空
-     * @return osEXTSRVATTRKernelId
-     */
+    /** 若使用AMI格式的镜像，则表示kernel image的UUID；否则，留空
+     * 
+     * @return osEXTSRVATTRKernelId */
     public UUID getOsEXTSRVATTRKernelId() {
         return osEXTSRVATTRKernelId;
     }
@@ -1688,20 +1354,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osEXTSRVATTRKernelId = osEXTSRVATTRKernelId;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withOsEXTSRVATTRRamdiskId(UUID osEXTSRVATTRRamdiskId) {
         this.osEXTSRVATTRRamdiskId = osEXTSRVATTRRamdiskId;
         return this;
     }
 
-    
-
-
-    /**
-     * 若使用AMI格式镜像，则表示ramdisk image的UUID；否则，留空。
-     * @return osEXTSRVATTRRamdiskId
-     */
+    /** 若使用AMI格式镜像，则表示ramdisk image的UUID；否则，留空。
+     * 
+     * @return osEXTSRVATTRRamdiskId */
     public UUID getOsEXTSRVATTRRamdiskId() {
         return osEXTSRVATTRRamdiskId;
     }
@@ -1710,20 +1370,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osEXTSRVATTRRamdiskId = osEXTSRVATTRRamdiskId;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withOsEXTSRVATTRRootDeviceName(String osEXTSRVATTRRootDeviceName) {
         this.osEXTSRVATTRRootDeviceName = osEXTSRVATTRRootDeviceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器系统盘的设备名称，例如“/dev/sdb”。
-     * @return osEXTSRVATTRRootDeviceName
-     */
+    /** 裸金属服务器系统盘的设备名称，例如“/dev/sdb”。
+     * 
+     * @return osEXTSRVATTRRootDeviceName */
     public String getOsEXTSRVATTRRootDeviceName() {
         return osEXTSRVATTRRootDeviceName;
     }
@@ -1732,20 +1386,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osEXTSRVATTRRootDeviceName = osEXTSRVATTRRootDeviceName;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withOsEXTSRVATTRUserData(String osEXTSRVATTRUserData) {
         this.osEXTSRVATTRUserData = osEXTSRVATTRUserData;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建裸金属服务器时指定的user_data。取值为base64编码后的结果或空字符串。
-     * @return osEXTSRVATTRUserData
-     */
+    /** 创建裸金属服务器时指定的user_data。取值为base64编码后的结果或空字符串。
+     * 
+     * @return osEXTSRVATTRUserData */
     public String getOsEXTSRVATTRUserData() {
         return osEXTSRVATTRUserData;
     }
@@ -1754,20 +1402,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.osEXTSRVATTRUserData = osEXTSRVATTRUserData;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withLocked(Boolean locked) {
         this.locked = locked;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器实例是否为锁定状态。true：锁定false：未锁定
-     * @return locked
-     */
+    /** 裸金属服务器实例是否为锁定状态。true：锁定false：未锁定
+     * 
+     * @return locked */
     public Boolean getLocked() {
         return locked;
     }
@@ -1776,16 +1418,13 @@ public class ChangeBaremetalNameResponsesServers  {
         this.locked = locked;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withTags(List<String> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public ChangeBaremetalNameResponsesServers addTagsItem(String tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -1793,17 +1432,16 @@ public class ChangeBaremetalNameResponsesServers  {
     }
 
     public ChangeBaremetalNameResponsesServers withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 裸金属服务器标签
-     * @return tags
-     */
+    /** 裸金属服务器标签
+     * 
+     * @return tags */
     public List<String> getTags() {
         return tags;
     }
@@ -1812,16 +1450,13 @@ public class ChangeBaremetalNameResponsesServers  {
         this.tags = tags;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withSysTags(List<SystemTags> sysTags) {
         this.sysTags = sysTags;
         return this;
     }
 
-    
     public ChangeBaremetalNameResponsesServers addSysTagsItem(SystemTags sysTagsItem) {
-        if(this.sysTags == null) {
+        if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
         this.sysTags.add(sysTagsItem);
@@ -1829,17 +1464,16 @@ public class ChangeBaremetalNameResponsesServers  {
     }
 
     public ChangeBaremetalNameResponsesServers withSysTags(Consumer<List<SystemTags>> sysTagsSetter) {
-        if(this.sysTags == null) {
+        if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
         sysTagsSetter.accept(this.sysTags);
         return this;
     }
 
-    /**
-     * 裸金属服务器的系统标签
-     * @return sysTags
-     */
+    /** 裸金属服务器的系统标签
+     * 
+     * @return sysTags */
     public List<SystemTags> getSysTags() {
         return sysTags;
     }
@@ -1848,20 +1482,14 @@ public class ChangeBaremetalNameResponsesServers  {
         this.sysTags = sysTags;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * enterprise_project_id。
-     * @return enterpriseProjectId
-     */
+    /** enterprise_project_id。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -1870,27 +1498,24 @@ public class ChangeBaremetalNameResponsesServers  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public ChangeBaremetalNameResponsesServers withOsSchedulerHints(ServerOsSchedulerHints osSchedulerHints) {
         this.osSchedulerHints = osSchedulerHints;
         return this;
     }
 
-    public ChangeBaremetalNameResponsesServers withOsSchedulerHints(Consumer<ServerOsSchedulerHints> osSchedulerHintsSetter) {
-        if(this.osSchedulerHints == null ){
+    public ChangeBaremetalNameResponsesServers withOsSchedulerHints(
+        Consumer<ServerOsSchedulerHints> osSchedulerHintsSetter) {
+        if (this.osSchedulerHints == null) {
             this.osSchedulerHints = new ServerOsSchedulerHints();
             osSchedulerHintsSetter.accept(this.osSchedulerHints);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get osSchedulerHints
-     * @return osSchedulerHints
-     */
+    /** Get osSchedulerHints
+     * 
+     * @return osSchedulerHints */
     public ServerOsSchedulerHints getOsSchedulerHints() {
         return osSchedulerHints;
     }
@@ -1898,8 +1523,6 @@ public class ChangeBaremetalNameResponsesServers  {
     public void setOsSchedulerHints(ServerOsSchedulerHints osSchedulerHints) {
         this.osSchedulerHints = osSchedulerHints;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -1909,57 +1532,109 @@ public class ChangeBaremetalNameResponsesServers  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ChangeBaremetalNameResponsesServers changeBaremetalNameResponsesServers = (ChangeBaremetalNameResponsesServers) o;
-        return Objects.equals(this.name, changeBaremetalNameResponsesServers.name) &&
-            Objects.equals(this.id, changeBaremetalNameResponsesServers.id) &&
-            Objects.equals(this.status, changeBaremetalNameResponsesServers.status) &&
-            Objects.equals(this.created, changeBaremetalNameResponsesServers.created) &&
-            Objects.equals(this.updated, changeBaremetalNameResponsesServers.updated) &&
-            Objects.equals(this.flavor, changeBaremetalNameResponsesServers.flavor) &&
-            Objects.equals(this.image, changeBaremetalNameResponsesServers.image) &&
-            Objects.equals(this.tenantId, changeBaremetalNameResponsesServers.tenantId) &&
-            Objects.equals(this.keyName, changeBaremetalNameResponsesServers.keyName) &&
-            Objects.equals(this.userId, changeBaremetalNameResponsesServers.userId) &&
-            Objects.equals(this.metadata, changeBaremetalNameResponsesServers.metadata) &&
-            Objects.equals(this.hostId, changeBaremetalNameResponsesServers.hostId) &&
-            Objects.equals(this.addresses, changeBaremetalNameResponsesServers.addresses) &&
-            Objects.equals(this.securityGroups, changeBaremetalNameResponsesServers.securityGroups) &&
-            Objects.equals(this.links, changeBaremetalNameResponsesServers.links) &&
-            Objects.equals(this.osDCFDiskConfig, changeBaremetalNameResponsesServers.osDCFDiskConfig) &&
-            Objects.equals(this.osEXTAZAvailabilityZone, changeBaremetalNameResponsesServers.osEXTAZAvailabilityZone) &&
-            Objects.equals(this.osEXTSRVATTRHost, changeBaremetalNameResponsesServers.osEXTSRVATTRHost) &&
-            Objects.equals(this.osEXTSRVATTRHypervisorHostname, changeBaremetalNameResponsesServers.osEXTSRVATTRHypervisorHostname) &&
-            Objects.equals(this.osEXTSRVATTRInstanceName, changeBaremetalNameResponsesServers.osEXTSRVATTRInstanceName) &&
-            Objects.equals(this.osEXTSTSPowerState, changeBaremetalNameResponsesServers.osEXTSTSPowerState) &&
-            Objects.equals(this.osEXTSTSTaskState, changeBaremetalNameResponsesServers.osEXTSTSTaskState) &&
-            Objects.equals(this.osEXTSTSVmState, changeBaremetalNameResponsesServers.osEXTSTSVmState) &&
-            Objects.equals(this.osSRVUSGLaunchedAt, changeBaremetalNameResponsesServers.osSRVUSGLaunchedAt) &&
-            Objects.equals(this.osSRVUSGTerminatedAt, changeBaremetalNameResponsesServers.osSRVUSGTerminatedAt) &&
-            Objects.equals(this.osExtendedVolumesVolumesAttached, changeBaremetalNameResponsesServers.osExtendedVolumesVolumesAttached) &&
-            Objects.equals(this.accessIPv4, changeBaremetalNameResponsesServers.accessIPv4) &&
-            Objects.equals(this.accessIPv6, changeBaremetalNameResponsesServers.accessIPv6) &&
-            Objects.equals(this.fault, changeBaremetalNameResponsesServers.fault) &&
-            Objects.equals(this.configDrive, changeBaremetalNameResponsesServers.configDrive) &&
-            Objects.equals(this.progress, changeBaremetalNameResponsesServers.progress) &&
-            Objects.equals(this.description, changeBaremetalNameResponsesServers.description) &&
-            Objects.equals(this.hostStatus, changeBaremetalNameResponsesServers.hostStatus) &&
-            Objects.equals(this.osEXTSRVATTRHostname, changeBaremetalNameResponsesServers.osEXTSRVATTRHostname) &&
-            Objects.equals(this.osEXTSRVATTRReservationId, changeBaremetalNameResponsesServers.osEXTSRVATTRReservationId) &&
-            Objects.equals(this.osEXTSRVATTRLaunchIndex, changeBaremetalNameResponsesServers.osEXTSRVATTRLaunchIndex) &&
-            Objects.equals(this.osEXTSRVATTRKernelId, changeBaremetalNameResponsesServers.osEXTSRVATTRKernelId) &&
-            Objects.equals(this.osEXTSRVATTRRamdiskId, changeBaremetalNameResponsesServers.osEXTSRVATTRRamdiskId) &&
-            Objects.equals(this.osEXTSRVATTRRootDeviceName, changeBaremetalNameResponsesServers.osEXTSRVATTRRootDeviceName) &&
-            Objects.equals(this.osEXTSRVATTRUserData, changeBaremetalNameResponsesServers.osEXTSRVATTRUserData) &&
-            Objects.equals(this.locked, changeBaremetalNameResponsesServers.locked) &&
-            Objects.equals(this.tags, changeBaremetalNameResponsesServers.tags) &&
-            Objects.equals(this.sysTags, changeBaremetalNameResponsesServers.sysTags) &&
-            Objects.equals(this.enterpriseProjectId, changeBaremetalNameResponsesServers.enterpriseProjectId) &&
-            Objects.equals(this.osSchedulerHints, changeBaremetalNameResponsesServers.osSchedulerHints);
+        ChangeBaremetalNameResponsesServers changeBaremetalNameResponsesServers =
+            (ChangeBaremetalNameResponsesServers) o;
+        return Objects.equals(this.name, changeBaremetalNameResponsesServers.name)
+            && Objects.equals(this.id, changeBaremetalNameResponsesServers.id)
+            && Objects.equals(this.status, changeBaremetalNameResponsesServers.status)
+            && Objects.equals(this.created, changeBaremetalNameResponsesServers.created)
+            && Objects.equals(this.updated, changeBaremetalNameResponsesServers.updated)
+            && Objects.equals(this.flavor, changeBaremetalNameResponsesServers.flavor)
+            && Objects.equals(this.image, changeBaremetalNameResponsesServers.image)
+            && Objects.equals(this.tenantId, changeBaremetalNameResponsesServers.tenantId)
+            && Objects.equals(this.keyName, changeBaremetalNameResponsesServers.keyName)
+            && Objects.equals(this.userId, changeBaremetalNameResponsesServers.userId)
+            && Objects.equals(this.metadata, changeBaremetalNameResponsesServers.metadata)
+            && Objects.equals(this.hostId, changeBaremetalNameResponsesServers.hostId)
+            && Objects.equals(this.addresses, changeBaremetalNameResponsesServers.addresses)
+            && Objects.equals(this.securityGroups, changeBaremetalNameResponsesServers.securityGroups)
+            && Objects.equals(this.links, changeBaremetalNameResponsesServers.links)
+            && Objects.equals(this.osDCFDiskConfig, changeBaremetalNameResponsesServers.osDCFDiskConfig)
+            && Objects.equals(this.osEXTAZAvailabilityZone, changeBaremetalNameResponsesServers.osEXTAZAvailabilityZone)
+            && Objects.equals(this.osEXTSRVATTRHost, changeBaremetalNameResponsesServers.osEXTSRVATTRHost)
+            && Objects.equals(this.osEXTSRVATTRHypervisorHostname,
+                changeBaremetalNameResponsesServers.osEXTSRVATTRHypervisorHostname)
+            && Objects.equals(this.osEXTSRVATTRInstanceName,
+                changeBaremetalNameResponsesServers.osEXTSRVATTRInstanceName)
+            && Objects.equals(this.osEXTSTSPowerState, changeBaremetalNameResponsesServers.osEXTSTSPowerState)
+            && Objects.equals(this.osEXTSTSTaskState, changeBaremetalNameResponsesServers.osEXTSTSTaskState)
+            && Objects.equals(this.osEXTSTSVmState, changeBaremetalNameResponsesServers.osEXTSTSVmState)
+            && Objects.equals(this.osSRVUSGLaunchedAt, changeBaremetalNameResponsesServers.osSRVUSGLaunchedAt)
+            && Objects.equals(this.osSRVUSGTerminatedAt, changeBaremetalNameResponsesServers.osSRVUSGTerminatedAt)
+            && Objects.equals(this.osExtendedVolumesVolumesAttached,
+                changeBaremetalNameResponsesServers.osExtendedVolumesVolumesAttached)
+            && Objects.equals(this.accessIPv4, changeBaremetalNameResponsesServers.accessIPv4)
+            && Objects.equals(this.accessIPv6, changeBaremetalNameResponsesServers.accessIPv6)
+            && Objects.equals(this.fault, changeBaremetalNameResponsesServers.fault)
+            && Objects.equals(this.configDrive, changeBaremetalNameResponsesServers.configDrive)
+            && Objects.equals(this.progress, changeBaremetalNameResponsesServers.progress)
+            && Objects.equals(this.description, changeBaremetalNameResponsesServers.description)
+            && Objects.equals(this.hostStatus, changeBaremetalNameResponsesServers.hostStatus)
+            && Objects.equals(this.osEXTSRVATTRHostname, changeBaremetalNameResponsesServers.osEXTSRVATTRHostname)
+            && Objects.equals(this.osEXTSRVATTRReservationId,
+                changeBaremetalNameResponsesServers.osEXTSRVATTRReservationId)
+            && Objects.equals(this.osEXTSRVATTRLaunchIndex, changeBaremetalNameResponsesServers.osEXTSRVATTRLaunchIndex)
+            && Objects.equals(this.osEXTSRVATTRKernelId, changeBaremetalNameResponsesServers.osEXTSRVATTRKernelId)
+            && Objects.equals(this.osEXTSRVATTRRamdiskId, changeBaremetalNameResponsesServers.osEXTSRVATTRRamdiskId)
+            && Objects.equals(this.osEXTSRVATTRRootDeviceName,
+                changeBaremetalNameResponsesServers.osEXTSRVATTRRootDeviceName)
+            && Objects.equals(this.osEXTSRVATTRUserData, changeBaremetalNameResponsesServers.osEXTSRVATTRUserData)
+            && Objects.equals(this.locked, changeBaremetalNameResponsesServers.locked)
+            && Objects.equals(this.tags, changeBaremetalNameResponsesServers.tags)
+            && Objects.equals(this.sysTags, changeBaremetalNameResponsesServers.sysTags)
+            && Objects.equals(this.enterpriseProjectId, changeBaremetalNameResponsesServers.enterpriseProjectId)
+            && Objects.equals(this.osSchedulerHints, changeBaremetalNameResponsesServers.osSchedulerHints);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, id, status, created, updated, flavor, image, tenantId, keyName, userId, metadata, hostId, addresses, securityGroups, links, osDCFDiskConfig, osEXTAZAvailabilityZone, osEXTSRVATTRHost, osEXTSRVATTRHypervisorHostname, osEXTSRVATTRInstanceName, osEXTSTSPowerState, osEXTSTSTaskState, osEXTSTSVmState, osSRVUSGLaunchedAt, osSRVUSGTerminatedAt, osExtendedVolumesVolumesAttached, accessIPv4, accessIPv6, fault, configDrive, progress, description, hostStatus, osEXTSRVATTRHostname, osEXTSRVATTRReservationId, osEXTSRVATTRLaunchIndex, osEXTSRVATTRKernelId, osEXTSRVATTRRamdiskId, osEXTSRVATTRRootDeviceName, osEXTSRVATTRUserData, locked, tags, sysTags, enterpriseProjectId, osSchedulerHints);
+        return Objects.hash(name,
+            id,
+            status,
+            created,
+            updated,
+            flavor,
+            image,
+            tenantId,
+            keyName,
+            userId,
+            metadata,
+            hostId,
+            addresses,
+            securityGroups,
+            links,
+            osDCFDiskConfig,
+            osEXTAZAvailabilityZone,
+            osEXTSRVATTRHost,
+            osEXTSRVATTRHypervisorHostname,
+            osEXTSRVATTRInstanceName,
+            osEXTSTSPowerState,
+            osEXTSTSTaskState,
+            osEXTSTSVmState,
+            osSRVUSGLaunchedAt,
+            osSRVUSGTerminatedAt,
+            osExtendedVolumesVolumesAttached,
+            accessIPv4,
+            accessIPv6,
+            fault,
+            configDrive,
+            progress,
+            description,
+            hostStatus,
+            osEXTSRVATTRHostname,
+            osEXTSRVATTRReservationId,
+            osEXTSRVATTRLaunchIndex,
+            osEXTSRVATTRKernelId,
+            osEXTSRVATTRRamdiskId,
+            osEXTSRVATTRRootDeviceName,
+            osEXTSRVATTRUserData,
+            locked,
+            tags,
+            sysTags,
+            enterpriseProjectId,
+            osSchedulerHints);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1982,14 +1657,18 @@ public class ChangeBaremetalNameResponsesServers  {
         sb.append("    osDCFDiskConfig: ").append(toIndentedString(osDCFDiskConfig)).append("\n");
         sb.append("    osEXTAZAvailabilityZone: ").append(toIndentedString(osEXTAZAvailabilityZone)).append("\n");
         sb.append("    osEXTSRVATTRHost: ").append(toIndentedString(osEXTSRVATTRHost)).append("\n");
-        sb.append("    osEXTSRVATTRHypervisorHostname: ").append(toIndentedString(osEXTSRVATTRHypervisorHostname)).append("\n");
+        sb.append("    osEXTSRVATTRHypervisorHostname: ")
+            .append(toIndentedString(osEXTSRVATTRHypervisorHostname))
+            .append("\n");
         sb.append("    osEXTSRVATTRInstanceName: ").append(toIndentedString(osEXTSRVATTRInstanceName)).append("\n");
         sb.append("    osEXTSTSPowerState: ").append(toIndentedString(osEXTSTSPowerState)).append("\n");
         sb.append("    osEXTSTSTaskState: ").append(toIndentedString(osEXTSTSTaskState)).append("\n");
         sb.append("    osEXTSTSVmState: ").append(toIndentedString(osEXTSTSVmState)).append("\n");
         sb.append("    osSRVUSGLaunchedAt: ").append(toIndentedString(osSRVUSGLaunchedAt)).append("\n");
         sb.append("    osSRVUSGTerminatedAt: ").append(toIndentedString(osSRVUSGTerminatedAt)).append("\n");
-        sb.append("    osExtendedVolumesVolumesAttached: ").append(toIndentedString(osExtendedVolumesVolumesAttached)).append("\n");
+        sb.append("    osExtendedVolumesVolumesAttached: ")
+            .append(toIndentedString(osExtendedVolumesVolumesAttached))
+            .append("\n");
         sb.append("    accessIPv4: ").append(toIndentedString(accessIPv4)).append("\n");
         sb.append("    accessIPv6: ").append(toIndentedString(accessIPv6)).append("\n");
         sb.append("    fault: ").append(toIndentedString(fault)).append("\n");
@@ -2012,16 +1691,13 @@ public class ChangeBaremetalNameResponsesServers  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

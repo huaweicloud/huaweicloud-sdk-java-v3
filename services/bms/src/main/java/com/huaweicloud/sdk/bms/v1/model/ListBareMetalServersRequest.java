@@ -1,74 +1,56 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListBareMetalServersRequest  {
-
-
+/** Request Object */
+public class ListBareMetalServersRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flavor")
-    
+    @JsonProperty(value = "flavor")
+
     private String flavor;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private String tags;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="reservation_id")
-    
+    @JsonProperty(value = "reservation_id")
+
     private String reservationId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="detail")
-    
+    @JsonProperty(value = "detail")
+
     private String detail;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public ListBareMetalServersRequest withFlavor(String flavor) {
@@ -76,13 +58,9 @@ public class ListBareMetalServersRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器规格ID
-     * @return flavor
-     */
+    /** 裸金属服务器规格ID
+     * 
+     * @return flavor */
     public String getFlavor() {
         return flavor;
     }
@@ -91,20 +69,14 @@ public class ListBareMetalServersRequest  {
         this.flavor = flavor;
     }
 
-    
-
     public ListBareMetalServersRequest withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器名称
-     * @return name
-     */
+    /** 裸金属服务器名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -113,20 +85,14 @@ public class ListBareMetalServersRequest  {
         this.name = name;
     }
 
-    
-
     public ListBareMetalServersRequest withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器状态,只有管理员可以使用DELETED状态过滤查询已经删除的裸金属服务器。取值范围：ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、REBOOT、REBUILD、SHUTOFF
-     * @return status
-     */
+    /** 裸金属服务器状态,只有管理员可以使用DELETED状态过滤查询已经删除的裸金属服务器。取值范围：ACTIVE、BUILD、DELETED、ERROR、HARD_REBOOT、REBOOT、REBUILD、SHUTOFF
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -135,20 +101,14 @@ public class ListBareMetalServersRequest  {
         this.status = status;
     }
 
-    
-
     public ListBareMetalServersRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页返回裸金属服务器的条数，默认值是25，最大值为1000。limit为每页返回裸金属服务器详情的条数
-     * @return limit
-     */
+    /** 每页返回裸金属服务器的条数，默认值是25，最大值为1000。limit为每页返回裸金属服务器详情的条数
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -157,20 +117,15 @@ public class ListBareMetalServersRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListBareMetalServersRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 此接口为分页查询接口:不传offset参数，返回结果是符合条件的裸金属服务器总条数,servers列表为空。传offset参数，offset为查询页码，起始页码为1，每页查询的条数为limit值。此接口为分页查询接口，offset为查询页码（起始页码为1），返回值包括总条数和裸金属详情列表传入offset：按limit值分页（limit默认为1000），返回第offset页裸金属服务器详情列表和总条数，总条数最大值为limit，不足按实际情况返回。不传入offset传入limit ：返回裸金属服务器详情列表和总条数，总条数最大值为limit，不足按实际情况返回。。不传入limit：按25条分页，返回第1页裸金属服务器详情列表，总条数最大值为25，不足按实际情况返回。
-     * @return offset
-     */
+    /** 此接口为分页查询接口:不传offset参数，返回结果是符合条件的裸金属服务器总条数,servers列表为空。传offset参数，offset为查询页码，起始页码为1，每页查询的条数为limit值。此接口为分页查询接口，offset为查询页码（起始页码为1），返回值包括总条数和裸金属详情列表传入offset：按limit值分页（limit默认为1000），返回第offset页裸金属服务器详情列表和总条数，总条数最大值为limit，不足按实际情况返回。不传入offset传入limit
+     * ：返回裸金属服务器详情列表和总条数，总条数最大值为limit，不足按实际情况返回。。不传入limit：按25条分页，返回第1页裸金属服务器详情列表，总条数最大值为25，不足按实际情况返回。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -179,20 +134,14 @@ public class ListBareMetalServersRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListBareMetalServersRequest withTags(String tags) {
         this.tags = tags;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器标签：__type_baremetal
-     * @return tags
-     */
+    /** 裸金属服务器标签：__type_baremetal
+     * 
+     * @return tags */
     public String getTags() {
         return tags;
     }
@@ -201,20 +150,14 @@ public class ListBareMetalServersRequest  {
         this.tags = tags;
     }
 
-    
-
     public ListBareMetalServersRequest withReservationId(String reservationId) {
         this.reservationId = reservationId;
         return this;
     }
 
-    
-
-
-    /**
-     * 批量创建裸金属服务器时，指定返回的ID，用于查询本次批量创建的裸金属服务器
-     * @return reservationId
-     */
+    /** 批量创建裸金属服务器时，指定返回的ID，用于查询本次批量创建的裸金属服务器
+     * 
+     * @return reservationId */
     public String getReservationId() {
         return reservationId;
     }
@@ -223,20 +166,14 @@ public class ListBareMetalServersRequest  {
         this.reservationId = reservationId;
     }
 
-    
-
     public ListBareMetalServersRequest withDetail(String detail) {
         this.detail = detail;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询裸金属服务器结果的详细级别，级别越高，查询到的裸金属服务器信息越多，默认为4。可使用的级别为 1，2，3，4，5
-     * @return detail
-     */
+    /** 查询裸金属服务器结果的详细级别，级别越高，查询到的裸金属服务器信息越多，默认为4。可使用的级别为 1，2，3，4，5
+     * 
+     * @return detail */
     public String getDetail() {
         return detail;
     }
@@ -245,20 +182,14 @@ public class ListBareMetalServersRequest  {
         this.detail = detail;
     }
 
-    
-
     public ListBareMetalServersRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询绑定某个企业项目的裸金属服务器
-     * @return enterpriseProjectId
-     */
+    /** 查询绑定某个企业项目的裸金属服务器
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -266,8 +197,6 @@ public class ListBareMetalServersRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -278,20 +207,22 @@ public class ListBareMetalServersRequest  {
             return false;
         }
         ListBareMetalServersRequest listBareMetalServersRequest = (ListBareMetalServersRequest) o;
-        return Objects.equals(this.flavor, listBareMetalServersRequest.flavor) &&
-            Objects.equals(this.name, listBareMetalServersRequest.name) &&
-            Objects.equals(this.status, listBareMetalServersRequest.status) &&
-            Objects.equals(this.limit, listBareMetalServersRequest.limit) &&
-            Objects.equals(this.offset, listBareMetalServersRequest.offset) &&
-            Objects.equals(this.tags, listBareMetalServersRequest.tags) &&
-            Objects.equals(this.reservationId, listBareMetalServersRequest.reservationId) &&
-            Objects.equals(this.detail, listBareMetalServersRequest.detail) &&
-            Objects.equals(this.enterpriseProjectId, listBareMetalServersRequest.enterpriseProjectId);
+        return Objects.equals(this.flavor, listBareMetalServersRequest.flavor)
+            && Objects.equals(this.name, listBareMetalServersRequest.name)
+            && Objects.equals(this.status, listBareMetalServersRequest.status)
+            && Objects.equals(this.limit, listBareMetalServersRequest.limit)
+            && Objects.equals(this.offset, listBareMetalServersRequest.offset)
+            && Objects.equals(this.tags, listBareMetalServersRequest.tags)
+            && Objects.equals(this.reservationId, listBareMetalServersRequest.reservationId)
+            && Objects.equals(this.detail, listBareMetalServersRequest.detail)
+            && Objects.equals(this.enterpriseProjectId, listBareMetalServersRequest.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(flavor, name, status, limit, offset, tags, reservationId, detail, enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -308,16 +239,13 @@ public class ListBareMetalServersRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

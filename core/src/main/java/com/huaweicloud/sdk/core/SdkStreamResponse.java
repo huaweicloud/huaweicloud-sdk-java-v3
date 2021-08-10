@@ -28,9 +28,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.function.Consumer;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public class SdkStreamResponse extends SdkResponse {
 
     @JsonIgnore

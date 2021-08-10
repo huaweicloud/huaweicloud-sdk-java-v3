@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.kps.v3.model;
 
-
-
-
-
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListRunningTaskRequest  {
-
+/** Request Object */
+public class ListRunningTaskRequest {
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -23,10 +15,12 @@ public class ListRunningTaskRequest  {
         }
         return true;
     }
+
     @Override
     public int hashCode() {
         return Objects.hash();
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -34,6 +28,5 @@ public class ListRunningTaskRequest  {
         sb.append("}");
         return sb.toString();
     }
-    
-}
 
+}

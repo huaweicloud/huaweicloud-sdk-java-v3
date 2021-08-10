@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.ScheduleKeyDeletionRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class DeleteKeyRequest  {
-
-
+/** Request Object */
+public class DeleteKeyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version_id")
-    
+    @JsonProperty(value = "version_id")
+
     private String versionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ScheduleKeyDeletionRequestBody body;
 
     public DeleteKeyRequest withVersionId(String versionId) {
@@ -35,13 +24,9 @@ public class DeleteKeyRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * API版本号
-     * @return versionId
-     */
+    /** API版本号
+     * 
+     * @return versionId */
     public String getVersionId() {
         return versionId;
     }
@@ -50,27 +35,23 @@ public class DeleteKeyRequest  {
         this.versionId = versionId;
     }
 
-    
-
     public DeleteKeyRequest withBody(ScheduleKeyDeletionRequestBody body) {
         this.body = body;
         return this;
     }
 
     public DeleteKeyRequest withBody(Consumer<ScheduleKeyDeletionRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ScheduleKeyDeletionRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ScheduleKeyDeletionRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class DeleteKeyRequest  {
     public void setBody(ScheduleKeyDeletionRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class DeleteKeyRequest  {
             return false;
         }
         DeleteKeyRequest deleteKeyRequest = (DeleteKeyRequest) o;
-        return Objects.equals(this.versionId, deleteKeyRequest.versionId) &&
-            Objects.equals(this.body, deleteKeyRequest.body);
+        return Objects.equals(this.versionId, deleteKeyRequest.versionId)
+            && Objects.equals(this.body, deleteKeyRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(versionId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class DeleteKeyRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

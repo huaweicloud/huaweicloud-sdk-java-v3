@@ -1,110 +1,84 @@
 package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cloudpipeline.v2.model.Constraint;
-import com.huaweicloud.sdk.cloudpipeline.v2.model.ParamTypeLimits;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 流水线参数
- */
-public class TemplateParam  {
-
-
+/** 流水线参数 */
+public class TemplateParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="required")
-    
+    @JsonProperty(value = "required")
+
     private String required;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="visible")
-    
+    @JsonProperty(value = "visible")
+
     private String visible;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private String value;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="paramtype")
-    
+    @JsonProperty(value = "paramtype")
+
     private String paramtype;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="display_type")
-    
+    @JsonProperty(value = "display_type")
+
     private String displayType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="display_name")
-    
+    @JsonProperty(value = "display_name")
+
     private String displayName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_static")
-    
+    @JsonProperty(value = "is_static")
+
     private Boolean isStatic;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_default")
-    
+    @JsonProperty(value = "is_default")
+
     private Boolean isDefault;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limits")
-    
+    @JsonProperty(value = "limits")
+
     private List<ParamTypeLimits> limits = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="constraints")
-    
+    @JsonProperty(value = "constraints")
+
     private List<Constraint> constraints = null;
-    
+
     public TemplateParam withRequired(String required) {
         this.required = required;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否必须
-     * @return required
-     */
+    /** 是否必须
+     * 
+     * @return required */
     public String getRequired() {
         return required;
     }
@@ -113,20 +87,14 @@ public class TemplateParam  {
         this.required = required;
     }
 
-    
-
     public TemplateParam withVisible(String visible) {
         this.visible = visible;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否可见
-     * @return visible
-     */
+    /** 是否可见
+     * 
+     * @return visible */
     public String getVisible() {
         return visible;
     }
@@ -135,20 +103,14 @@ public class TemplateParam  {
         this.visible = visible;
     }
 
-    
-
     public TemplateParam withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线参数名字
-     * @return name
-     */
+    /** 流水线参数名字
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -157,20 +119,14 @@ public class TemplateParam  {
         this.name = name;
     }
 
-    
-
     public TemplateParam withValue(String value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线参数值
-     * @return value
-     */
+    /** 流水线参数值
+     * 
+     * @return value */
     public String getValue() {
         return value;
     }
@@ -179,20 +135,14 @@ public class TemplateParam  {
         this.value = value;
     }
 
-    
-
     public TemplateParam withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线参数描述
-     * @return description
-     */
+    /** 流水线参数描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -201,20 +151,14 @@ public class TemplateParam  {
         this.description = description;
     }
 
-    
-
     public TemplateParam withParamtype(String paramtype) {
         this.paramtype = paramtype;
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线参数类型
-     * @return paramtype
-     */
+    /** 流水线参数类型
+     * 
+     * @return paramtype */
     public String getParamtype() {
         return paramtype;
     }
@@ -223,20 +167,14 @@ public class TemplateParam  {
         this.paramtype = paramtype;
     }
 
-    
-
     public TemplateParam withDisplayType(String displayType) {
         this.displayType = displayType;
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线参数展示类型
-     * @return displayType
-     */
+    /** 流水线参数展示类型
+     * 
+     * @return displayType */
     public String getDisplayType() {
         return displayType;
     }
@@ -245,20 +183,14 @@ public class TemplateParam  {
         this.displayType = displayType;
     }
 
-    
-
     public TemplateParam withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线参数展示名字
-     * @return displayName
-     */
+    /** 流水线参数展示名字
+     * 
+     * @return displayName */
     public String getDisplayName() {
         return displayName;
     }
@@ -267,20 +199,14 @@ public class TemplateParam  {
         this.displayName = displayName;
     }
 
-    
-
     public TemplateParam withIsStatic(Boolean isStatic) {
         this.isStatic = isStatic;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否静态参数
-     * @return isStatic
-     */
+    /** 是否静态参数
+     * 
+     * @return isStatic */
     public Boolean getIsStatic() {
         return isStatic;
     }
@@ -289,20 +215,14 @@ public class TemplateParam  {
         this.isStatic = isStatic;
     }
 
-    
-
     public TemplateParam withIsDefault(Boolean isDefault) {
         this.isDefault = isDefault;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否默认参数
-     * @return isDefault
-     */
+    /** 是否默认参数
+     * 
+     * @return isDefault */
     public Boolean getIsDefault() {
         return isDefault;
     }
@@ -311,16 +231,13 @@ public class TemplateParam  {
         this.isDefault = isDefault;
     }
 
-    
-
     public TemplateParam withLimits(List<ParamTypeLimits> limits) {
         this.limits = limits;
         return this;
     }
 
-    
     public TemplateParam addLimitsItem(ParamTypeLimits limitsItem) {
-        if(this.limits == null) {
+        if (this.limits == null) {
             this.limits = new ArrayList<>();
         }
         this.limits.add(limitsItem);
@@ -328,17 +245,16 @@ public class TemplateParam  {
     }
 
     public TemplateParam withLimits(Consumer<List<ParamTypeLimits>> limitsSetter) {
-        if(this.limits == null) {
+        if (this.limits == null) {
             this.limits = new ArrayList<>();
         }
         limitsSetter.accept(this.limits);
         return this;
     }
 
-    /**
-     * array类型数据
-     * @return limits
-     */
+    /** array类型数据
+     * 
+     * @return limits */
     public List<ParamTypeLimits> getLimits() {
         return limits;
     }
@@ -347,16 +263,13 @@ public class TemplateParam  {
         this.limits = limits;
     }
 
-    
-
     public TemplateParam withConstraints(List<Constraint> constraints) {
         this.constraints = constraints;
         return this;
     }
 
-    
     public TemplateParam addConstraintsItem(Constraint constraintsItem) {
-        if(this.constraints == null) {
+        if (this.constraints == null) {
             this.constraints = new ArrayList<>();
         }
         this.constraints.add(constraintsItem);
@@ -364,17 +277,16 @@ public class TemplateParam  {
     }
 
     public TemplateParam withConstraints(Consumer<List<Constraint>> constraintsSetter) {
-        if(this.constraints == null) {
+        if (this.constraints == null) {
             this.constraints = new ArrayList<>();
         }
         constraintsSetter.accept(this.constraints);
         return this;
     }
 
-    /**
-     * array类型数据
-     * @return constraints
-     */
+    /** array类型数据
+     * 
+     * @return constraints */
     public List<Constraint> getConstraints() {
         return constraints;
     }
@@ -382,8 +294,6 @@ public class TemplateParam  {
     public void setConstraints(List<Constraint> constraints) {
         this.constraints = constraints;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -394,23 +304,35 @@ public class TemplateParam  {
             return false;
         }
         TemplateParam templateParam = (TemplateParam) o;
-        return Objects.equals(this.required, templateParam.required) &&
-            Objects.equals(this.visible, templateParam.visible) &&
-            Objects.equals(this.name, templateParam.name) &&
-            Objects.equals(this.value, templateParam.value) &&
-            Objects.equals(this.description, templateParam.description) &&
-            Objects.equals(this.paramtype, templateParam.paramtype) &&
-            Objects.equals(this.displayType, templateParam.displayType) &&
-            Objects.equals(this.displayName, templateParam.displayName) &&
-            Objects.equals(this.isStatic, templateParam.isStatic) &&
-            Objects.equals(this.isDefault, templateParam.isDefault) &&
-            Objects.equals(this.limits, templateParam.limits) &&
-            Objects.equals(this.constraints, templateParam.constraints);
+        return Objects.equals(this.required, templateParam.required)
+            && Objects.equals(this.visible, templateParam.visible) && Objects.equals(this.name, templateParam.name)
+            && Objects.equals(this.value, templateParam.value)
+            && Objects.equals(this.description, templateParam.description)
+            && Objects.equals(this.paramtype, templateParam.paramtype)
+            && Objects.equals(this.displayType, templateParam.displayType)
+            && Objects.equals(this.displayName, templateParam.displayName)
+            && Objects.equals(this.isStatic, templateParam.isStatic)
+            && Objects.equals(this.isDefault, templateParam.isDefault)
+            && Objects.equals(this.limits, templateParam.limits)
+            && Objects.equals(this.constraints, templateParam.constraints);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(required, visible, name, value, description, paramtype, displayType, displayName, isStatic, isDefault, limits, constraints);
+        return Objects.hash(required,
+            visible,
+            name,
+            value,
+            description,
+            paramtype,
+            displayType,
+            displayName,
+            isStatic,
+            isDefault,
+            limits,
+            constraints);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -430,16 +352,13 @@ public class TemplateParam  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

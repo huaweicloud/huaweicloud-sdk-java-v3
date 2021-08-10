@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.bssintl.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bssintl.v2.model.CustomerInformation;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListSubCustomersResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_infos")
-    
+    @JsonProperty(value = "customer_infos")
+
     private List<CustomerInformation> customerInfos = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
+
     private Integer count;
 
     public ListSubCustomersResponse withCustomerInfos(List<CustomerInformation> customerInfos) {
@@ -39,9 +27,8 @@ public class ListSubCustomersResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListSubCustomersResponse addCustomerInfosItem(CustomerInformation customerInfosItem) {
-        if(this.customerInfos == null) {
+        if (this.customerInfos == null) {
             this.customerInfos = new ArrayList<>();
         }
         this.customerInfos.add(customerInfosItem);
@@ -49,17 +36,16 @@ public class ListSubCustomersResponse extends SdkResponse {
     }
 
     public ListSubCustomersResponse withCustomerInfos(Consumer<List<CustomerInformation>> customerInfosSetter) {
-        if(this.customerInfos == null) {
+        if (this.customerInfos == null) {
             this.customerInfos = new ArrayList<>();
         }
         customerInfosSetter.accept(this.customerInfos);
         return this;
     }
 
-    /**
-     * |参数名称：客户信息列表。具体请参见表 CustomerInfo| |参数约束以及描述：客户信息列表。具体请参见表 CustomerInfo|
-     * @return customerInfos
-     */
+    /** |参数名称：客户信息列表。具体请参见表 CustomerInfo| |参数约束以及描述：客户信息列表。具体请参见表 CustomerInfo|
+     * 
+     * @return customerInfos */
     public List<CustomerInformation> getCustomerInfos() {
         return customerInfos;
     }
@@ -68,20 +54,14 @@ public class ListSubCustomersResponse extends SdkResponse {
         this.customerInfos = customerInfos;
     }
 
-    
-
     public ListSubCustomersResponse withCount(Integer count) {
         this.count = count;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：总记录数。| |参数的约束及描述：总记录数。|
-     * @return count
-     */
+    /** |参数名称：总记录数。| |参数的约束及描述：总记录数。|
+     * 
+     * @return count */
     public Integer getCount() {
         return count;
     }
@@ -89,8 +69,6 @@ public class ListSubCustomersResponse extends SdkResponse {
     public void setCount(Integer count) {
         this.count = count;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ListSubCustomersResponse extends SdkResponse {
             return false;
         }
         ListSubCustomersResponse listSubCustomersResponse = (ListSubCustomersResponse) o;
-        return Objects.equals(this.customerInfos, listSubCustomersResponse.customerInfos) &&
-            Objects.equals(this.count, listSubCustomersResponse.count);
+        return Objects.equals(this.customerInfos, listSubCustomersResponse.customerInfos)
+            && Objects.equals(this.count, listSubCustomersResponse.count);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(customerInfos, count);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ListSubCustomersResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

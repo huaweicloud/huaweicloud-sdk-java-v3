@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.bssintl.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListServiceResourcesRequest  {
-
-
+/** Request Object */
+public class ListServiceResourcesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_type_code")
-    
+    @JsonProperty(value = "service_type_code")
+
     private String serviceTypeCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
     public ListServiceResourcesRequest withXLanguage(String xLanguage) {
@@ -46,15 +33,11 @@ public class ListServiceResourcesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * |忽略大小写，默认 zh_cn：中文 en_us：英文|
-     * @return xLanguage
-     */
+    /** |忽略大小写，默认 zh_cn：中文 en_us：英文|
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -63,20 +46,14 @@ public class ListServiceResourcesRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListServiceResourcesRequest withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：云服务类型编码| |参数的约束及描述：|
-     * @return serviceTypeCode
-     */
+    /** |参数名称：云服务类型编码| |参数的约束及描述：|
+     * 
+     * @return serviceTypeCode */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -85,22 +62,14 @@ public class ListServiceResourcesRequest  {
         this.serviceTypeCode = serviceTypeCode;
     }
 
-    
-
     public ListServiceResourcesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：每次查询的数量| |参数的约束及描述：|
-     * minimum: 1
-     * maximum: 100
-     * @return limit
-     */
+    /** |参数名称：每次查询的数量| |参数的约束及描述：| minimum: 1 maximum: 100
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -109,22 +78,14 @@ public class ListServiceResourcesRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListServiceResourcesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：偏移量| |参数的约束及描述：|
-     * minimum: 0
-     * maximum: 2147483647
-     * @return offset
-     */
+    /** |参数名称：偏移量| |参数的约束及描述：| minimum: 0 maximum: 2147483647
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -132,8 +93,6 @@ public class ListServiceResourcesRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -144,15 +103,17 @@ public class ListServiceResourcesRequest  {
             return false;
         }
         ListServiceResourcesRequest listServiceResourcesRequest = (ListServiceResourcesRequest) o;
-        return Objects.equals(this.xLanguage, listServiceResourcesRequest.xLanguage) &&
-            Objects.equals(this.serviceTypeCode, listServiceResourcesRequest.serviceTypeCode) &&
-            Objects.equals(this.limit, listServiceResourcesRequest.limit) &&
-            Objects.equals(this.offset, listServiceResourcesRequest.offset);
+        return Objects.equals(this.xLanguage, listServiceResourcesRequest.xLanguage)
+            && Objects.equals(this.serviceTypeCode, listServiceResourcesRequest.serviceTypeCode)
+            && Objects.equals(this.limit, listServiceResourcesRequest.limit)
+            && Objects.equals(this.offset, listServiceResourcesRequest.offset);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, serviceTypeCode, limit, offset);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -164,16 +125,13 @@ public class ListServiceResourcesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

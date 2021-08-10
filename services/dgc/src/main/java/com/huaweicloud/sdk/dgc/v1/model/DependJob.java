@@ -1,58 +1,39 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * DependJob
- */
-public class DependJob  {
-
-
+/** DependJob */
+public class DependJob {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobs")
-    
+    @JsonProperty(value = "jobs")
+
     private String jobs;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dependPeriod")
-    
+    @JsonProperty(value = "dependPeriod")
+
     private String dependPeriod;
-    /**
-     * Gets or Sets dependFailPolicy
-     */
+
+    /** Gets or Sets dependFailPolicy */
     public static final class DependFailPolicyEnum {
 
-        
-        /**
-         * Enum FAIL for value: "FAIL"
-         */
+        /** Enum FAIL for value: "FAIL" */
         public static final DependFailPolicyEnum FAIL = new DependFailPolicyEnum("FAIL");
-        
-        /**
-         * Enum IGNORE for value: "IGNORE"
-         */
+
+        /** Enum IGNORE for value: "IGNORE" */
         public static final DependFailPolicyEnum IGNORE = new DependFailPolicyEnum("IGNORE");
-        
-        /**
-         * Enum SUSPEND for value: "SUSPEND"
-         */
+
+        /** Enum SUSPEND for value: "SUSPEND" */
         public static final DependFailPolicyEnum SUSPEND = new DependFailPolicyEnum("SUSPEND");
-        
 
         private static final Map<String, DependFailPolicyEnum> STATIC_FIELDS = createStaticFields();
 
@@ -82,7 +63,7 @@ public class DependJob  {
 
         @JsonCreator
         public static DependFailPolicyEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DependFailPolicyEnum result = STATIC_FIELDS.get(value);
@@ -93,7 +74,7 @@ public class DependJob  {
         }
 
         public static DependFailPolicyEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DependFailPolicyEnum result = STATIC_FIELDS.get(value);
@@ -117,10 +98,9 @@ public class DependJob  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dependFailPolicy")
-    
+    @JsonProperty(value = "dependFailPolicy")
+
     private DependFailPolicyEnum dependFailPolicy;
 
     public DependJob withJobs(String jobs) {
@@ -128,13 +108,9 @@ public class DependJob  {
         return this;
     }
 
-    
-
-
-    /**
-     * Get jobs
-     * @return jobs
-     */
+    /** Get jobs
+     * 
+     * @return jobs */
     public String getJobs() {
         return jobs;
     }
@@ -143,20 +119,14 @@ public class DependJob  {
         this.jobs = jobs;
     }
 
-    
-
     public DependJob withDependPeriod(String dependPeriod) {
         this.dependPeriod = dependPeriod;
         return this;
     }
 
-    
-
-
-    /**
-     * Get dependPeriod
-     * @return dependPeriod
-     */
+    /** Get dependPeriod
+     * 
+     * @return dependPeriod */
     public String getDependPeriod() {
         return dependPeriod;
     }
@@ -165,20 +135,14 @@ public class DependJob  {
         this.dependPeriod = dependPeriod;
     }
 
-    
-
     public DependJob withDependFailPolicy(DependFailPolicyEnum dependFailPolicy) {
         this.dependFailPolicy = dependFailPolicy;
         return this;
     }
 
-    
-
-
-    /**
-     * Get dependFailPolicy
-     * @return dependFailPolicy
-     */
+    /** Get dependFailPolicy
+     * 
+     * @return dependFailPolicy */
     public DependFailPolicyEnum getDependFailPolicy() {
         return dependFailPolicy;
     }
@@ -186,8 +150,6 @@ public class DependJob  {
     public void setDependFailPolicy(DependFailPolicyEnum dependFailPolicy) {
         this.dependFailPolicy = dependFailPolicy;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -198,14 +160,15 @@ public class DependJob  {
             return false;
         }
         DependJob dependJob = (DependJob) o;
-        return Objects.equals(this.jobs, dependJob.jobs) &&
-            Objects.equals(this.dependPeriod, dependJob.dependPeriod) &&
-            Objects.equals(this.dependFailPolicy, dependJob.dependFailPolicy);
+        return Objects.equals(this.jobs, dependJob.jobs) && Objects.equals(this.dependPeriod, dependJob.dependPeriod)
+            && Objects.equals(this.dependFailPolicy, dependJob.dependFailPolicy);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobs, dependPeriod, dependFailPolicy);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -216,16 +179,13 @@ public class DependJob  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

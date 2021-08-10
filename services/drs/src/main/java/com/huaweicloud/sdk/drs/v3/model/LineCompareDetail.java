@@ -1,96 +1,71 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 
  */
-public class LineCompareDetail  {
-
-
+public class LineCompareDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_table_name")
-    
+    @JsonProperty(value = "source_table_name")
+
     private String sourceTableName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target_table_name")
-    
+    @JsonProperty(value = "target_table_name")
+
     private String targetTableName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_row_num")
-    
+    @JsonProperty(value = "source_row_num")
+
     private Integer sourceRowNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target_row_num")
-    
+    @JsonProperty(value = "target_row_num")
+
     private Integer targetRowNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="diff_row_num")
-    
+    @JsonProperty(value = "diff_row_num")
+
     private Integer diffRowNum;
-    /**
-     * 对比结果。
-     */
+
+    /** 对比结果。 */
     public static final class LineCompareResultEnum {
 
-        
-        /**
-         * Enum CONSISTENT_ for value: "CONSISTENT-一致"
-         */
+        /** Enum CONSISTENT_ for value: "CONSISTENT-一致" */
         public static final LineCompareResultEnum CONSISTENT_ = new LineCompareResultEnum("CONSISTENT-一致");
-        
-        /**
-         * Enum INCONSISTENT_ for value: "INCONSISTENT-不一致"
-         */
+
+        /** Enum INCONSISTENT_ for value: "INCONSISTENT-不一致" */
         public static final LineCompareResultEnum INCONSISTENT_ = new LineCompareResultEnum("INCONSISTENT-不一致");
-        
-        /**
-         * Enum COMPARING_ for value: "COMPARING-正在对比"
-         */
+
+        /** Enum COMPARING_ for value: "COMPARING-正在对比" */
         public static final LineCompareResultEnum COMPARING_ = new LineCompareResultEnum("COMPARING-正在对比");
-        
-        /**
-         * Enum WAITING_FOR_COMPARISON_ for value: "WAITING_FOR_COMPARISON-等待对比"
-         */
-        public static final LineCompareResultEnum WAITING_FOR_COMPARISON_ = new LineCompareResultEnum("WAITING_FOR_COMPARISON-等待对比");
-        
-        /**
-         * Enum FAILED_TO_COMPARE_ for value: "FAILED_TO_COMPARE-对比失败"
-         */
-        public static final LineCompareResultEnum FAILED_TO_COMPARE_ = new LineCompareResultEnum("FAILED_TO_COMPARE-对比失败");
-        
-        /**
-         * Enum TARGET_DB_NOT_EXIT_ for value: "TARGET_DB_NOT_EXIT-目标库不存在"
-         */
-        public static final LineCompareResultEnum TARGET_DB_NOT_EXIT_ = new LineCompareResultEnum("TARGET_DB_NOT_EXIT-目标库不存在");
-        
-        /**
-         * Enum CAN_NOT_COMPARE_ for value: "CAN_NOT_COMPARE-无法对比"
-         */
+
+        /** Enum WAITING_FOR_COMPARISON_ for value: "WAITING_FOR_COMPARISON-等待对比" */
+        public static final LineCompareResultEnum WAITING_FOR_COMPARISON_ =
+            new LineCompareResultEnum("WAITING_FOR_COMPARISON-等待对比");
+
+        /** Enum FAILED_TO_COMPARE_ for value: "FAILED_TO_COMPARE-对比失败" */
+        public static final LineCompareResultEnum FAILED_TO_COMPARE_ =
+            new LineCompareResultEnum("FAILED_TO_COMPARE-对比失败");
+
+        /** Enum TARGET_DB_NOT_EXIT_ for value: "TARGET_DB_NOT_EXIT-目标库不存在" */
+        public static final LineCompareResultEnum TARGET_DB_NOT_EXIT_ =
+            new LineCompareResultEnum("TARGET_DB_NOT_EXIT-目标库不存在");
+
+        /** Enum CAN_NOT_COMPARE_ for value: "CAN_NOT_COMPARE-无法对比" */
         public static final LineCompareResultEnum CAN_NOT_COMPARE_ = new LineCompareResultEnum("CAN_NOT_COMPARE-无法对比");
-        
 
         private static final Map<String, LineCompareResultEnum> STATIC_FIELDS = createStaticFields();
 
@@ -124,7 +99,7 @@ public class LineCompareDetail  {
 
         @JsonCreator
         public static LineCompareResultEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             LineCompareResultEnum result = STATIC_FIELDS.get(value);
@@ -135,7 +110,7 @@ public class LineCompareDetail  {
         }
 
         public static LineCompareResultEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             LineCompareResultEnum result = STATIC_FIELDS.get(value);
@@ -159,16 +134,14 @@ public class LineCompareDetail  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="line_compare_result")
-    
+    @JsonProperty(value = "line_compare_result")
+
     private LineCompareResultEnum lineCompareResult;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message")
-    
+    @JsonProperty(value = "message")
+
     private String message;
 
     public LineCompareDetail withSourceTableName(String sourceTableName) {
@@ -176,13 +149,9 @@ public class LineCompareDetail  {
         return this;
     }
 
-    
-
-
-    /**
-     * 源库的表名称。
-     * @return sourceTableName
-     */
+    /** 源库的表名称。
+     * 
+     * @return sourceTableName */
     public String getSourceTableName() {
         return sourceTableName;
     }
@@ -191,20 +160,14 @@ public class LineCompareDetail  {
         this.sourceTableName = sourceTableName;
     }
 
-    
-
     public LineCompareDetail withTargetTableName(String targetTableName) {
         this.targetTableName = targetTableName;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标库的表名称。
-     * @return targetTableName
-     */
+    /** 目标库的表名称。
+     * 
+     * @return targetTableName */
     public String getTargetTableName() {
         return targetTableName;
     }
@@ -213,20 +176,14 @@ public class LineCompareDetail  {
         this.targetTableName = targetTableName;
     }
 
-    
-
     public LineCompareDetail withSourceRowNum(Integer sourceRowNum) {
         this.sourceRowNum = sourceRowNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 源库的表行数。
-     * @return sourceRowNum
-     */
+    /** 源库的表行数。
+     * 
+     * @return sourceRowNum */
     public Integer getSourceRowNum() {
         return sourceRowNum;
     }
@@ -235,20 +192,14 @@ public class LineCompareDetail  {
         this.sourceRowNum = sourceRowNum;
     }
 
-    
-
     public LineCompareDetail withTargetRowNum(Integer targetRowNum) {
         this.targetRowNum = targetRowNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标库的表行数。
-     * @return targetRowNum
-     */
+    /** 目标库的表行数。
+     * 
+     * @return targetRowNum */
     public Integer getTargetRowNum() {
         return targetRowNum;
     }
@@ -257,20 +208,14 @@ public class LineCompareDetail  {
         this.targetRowNum = targetRowNum;
     }
 
-    
-
     public LineCompareDetail withDiffRowNum(Integer diffRowNum) {
         this.diffRowNum = diffRowNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 源库的表和目标库的表的差异值。
-     * @return diffRowNum
-     */
+    /** 源库的表和目标库的表的差异值。
+     * 
+     * @return diffRowNum */
     public Integer getDiffRowNum() {
         return diffRowNum;
     }
@@ -279,20 +224,14 @@ public class LineCompareDetail  {
         this.diffRowNum = diffRowNum;
     }
 
-    
-
     public LineCompareDetail withLineCompareResult(LineCompareResultEnum lineCompareResult) {
         this.lineCompareResult = lineCompareResult;
         return this;
     }
 
-    
-
-
-    /**
-     * 对比结果。
-     * @return lineCompareResult
-     */
+    /** 对比结果。
+     * 
+     * @return lineCompareResult */
     public LineCompareResultEnum getLineCompareResult() {
         return lineCompareResult;
     }
@@ -301,20 +240,14 @@ public class LineCompareDetail  {
         this.lineCompareResult = lineCompareResult;
     }
 
-    
-
     public LineCompareDetail withMessage(String message) {
         this.message = message;
         return this;
     }
 
-    
-
-
-    /**
-     * 附加信息。
-     * @return message
-     */
+    /** 附加信息。
+     * 
+     * @return message */
     public String getMessage() {
         return message;
     }
@@ -322,8 +255,6 @@ public class LineCompareDetail  {
     public void setMessage(String message) {
         this.message = message;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -334,18 +265,21 @@ public class LineCompareDetail  {
             return false;
         }
         LineCompareDetail lineCompareDetail = (LineCompareDetail) o;
-        return Objects.equals(this.sourceTableName, lineCompareDetail.sourceTableName) &&
-            Objects.equals(this.targetTableName, lineCompareDetail.targetTableName) &&
-            Objects.equals(this.sourceRowNum, lineCompareDetail.sourceRowNum) &&
-            Objects.equals(this.targetRowNum, lineCompareDetail.targetRowNum) &&
-            Objects.equals(this.diffRowNum, lineCompareDetail.diffRowNum) &&
-            Objects.equals(this.lineCompareResult, lineCompareDetail.lineCompareResult) &&
-            Objects.equals(this.message, lineCompareDetail.message);
+        return Objects.equals(this.sourceTableName, lineCompareDetail.sourceTableName)
+            && Objects.equals(this.targetTableName, lineCompareDetail.targetTableName)
+            && Objects.equals(this.sourceRowNum, lineCompareDetail.sourceRowNum)
+            && Objects.equals(this.targetRowNum, lineCompareDetail.targetRowNum)
+            && Objects.equals(this.diffRowNum, lineCompareDetail.diffRowNum)
+            && Objects.equals(this.lineCompareResult, lineCompareDetail.lineCompareResult)
+            && Objects.equals(this.message, lineCompareDetail.message);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(sourceTableName, targetTableName, sourceRowNum, targetRowNum, diffRowNum, lineCompareResult, message);
+        return Objects
+            .hash(sourceTableName, targetTableName, sourceRowNum, targetRowNum, diffRowNum, lineCompareResult, message);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -360,16 +294,13 @@ public class LineCompareDetail  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.SourceKind;
-import com.huaweicloud.sdk.servicestage.v2.model.SourceOrArtifact;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 组件来源。
- */
-public class SourceObject  {
-
-
+/** 组件来源。 */
+public class SourceObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="kind")
-    
+    @JsonProperty(value = "kind")
+
     private SourceKind kind;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec")
-    
+    @JsonProperty(value = "spec")
+
     private SourceOrArtifact spec;
 
     public SourceObject withKind(SourceKind kind) {
@@ -36,13 +24,9 @@ public class SourceObject  {
         return this;
     }
 
-    
-
-
-    /**
-     * Get kind
-     * @return kind
-     */
+    /** Get kind
+     * 
+     * @return kind */
     public SourceKind getKind() {
         return kind;
     }
@@ -51,27 +35,23 @@ public class SourceObject  {
         this.kind = kind;
     }
 
-    
-
     public SourceObject withSpec(SourceOrArtifact spec) {
         this.spec = spec;
         return this;
     }
 
     public SourceObject withSpec(Consumer<SourceOrArtifact> specSetter) {
-        if(this.spec == null ){
+        if (this.spec == null) {
             this.spec = new SourceOrArtifact();
             specSetter.accept(this.spec);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get spec
-     * @return spec
-     */
+    /** Get spec
+     * 
+     * @return spec */
     public SourceOrArtifact getSpec() {
         return spec;
     }
@@ -79,8 +59,6 @@ public class SourceObject  {
     public void setSpec(SourceOrArtifact spec) {
         this.spec = spec;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -91,13 +69,14 @@ public class SourceObject  {
             return false;
         }
         SourceObject sourceObject = (SourceObject) o;
-        return Objects.equals(this.kind, sourceObject.kind) &&
-            Objects.equals(this.spec, sourceObject.spec);
+        return Objects.equals(this.kind, sourceObject.kind) && Objects.equals(this.spec, sourceObject.spec);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(kind, spec);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -107,16 +86,13 @@ public class SourceObject  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

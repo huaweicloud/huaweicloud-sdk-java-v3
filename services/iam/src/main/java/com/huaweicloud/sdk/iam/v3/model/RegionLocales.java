@@ -1,50 +1,38 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class RegionLocales  {
-
-
+public class RegionLocales {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="zh-cn")
-    
+    @JsonProperty(value = "zh-cn")
+
     private String zhCn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="en-us")
-    
+    @JsonProperty(value = "en-us")
+
     private String enUs;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pt-br")
-    
+    @JsonProperty(value = "pt-br")
+
     private String ptBr;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="es-us")
-    
+    @JsonProperty(value = "es-us")
+
     private String esUs;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="es-es")
-    
+    @JsonProperty(value = "es-es")
+
     private String esEs;
 
     public RegionLocales withZhCn(String zhCn) {
@@ -52,13 +40,9 @@ public class RegionLocales  {
         return this;
     }
 
-    
-
-
-    /**
-     * 区域的中文名称。
-     * @return zhCn
-     */
+    /** 区域的中文名称。
+     * 
+     * @return zhCn */
     public String getZhCn() {
         return zhCn;
     }
@@ -67,20 +51,14 @@ public class RegionLocales  {
         this.zhCn = zhCn;
     }
 
-    
-
     public RegionLocales withEnUs(String enUs) {
         this.enUs = enUs;
         return this;
     }
 
-    
-
-
-    /**
-     * 区域的英文名称。
-     * @return enUs
-     */
+    /** 区域的英文名称。
+     * 
+     * @return enUs */
     public String getEnUs() {
         return enUs;
     }
@@ -89,20 +67,14 @@ public class RegionLocales  {
         this.enUs = enUs;
     }
 
-    
-
     public RegionLocales withPtBr(String ptBr) {
         this.ptBr = ptBr;
         return this;
     }
 
-    
-
-
-    /**
-     * 区域的葡萄牙语名称。
-     * @return ptBr
-     */
+    /** 区域的葡萄牙语名称。
+     * 
+     * @return ptBr */
     public String getPtBr() {
         return ptBr;
     }
@@ -111,20 +83,14 @@ public class RegionLocales  {
         this.ptBr = ptBr;
     }
 
-    
-
     public RegionLocales withEsUs(String esUs) {
         this.esUs = esUs;
         return this;
     }
 
-    
-
-
-    /**
-     * 区域的美国西班牙语名称。
-     * @return esUs
-     */
+    /** 区域的美国西班牙语名称。
+     * 
+     * @return esUs */
     public String getEsUs() {
         return esUs;
     }
@@ -133,20 +99,14 @@ public class RegionLocales  {
         this.esUs = esUs;
     }
 
-    
-
     public RegionLocales withEsEs(String esEs) {
         this.esEs = esEs;
         return this;
     }
 
-    
-
-
-    /**
-     * 区域的西班牙语名称。
-     * @return esEs
-     */
+    /** 区域的西班牙语名称。
+     * 
+     * @return esEs */
     public String getEsEs() {
         return esEs;
     }
@@ -154,8 +114,6 @@ public class RegionLocales  {
     public void setEsEs(String esEs) {
         this.esEs = esEs;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +124,16 @@ public class RegionLocales  {
             return false;
         }
         RegionLocales regionLocales = (RegionLocales) o;
-        return Objects.equals(this.zhCn, regionLocales.zhCn) &&
-            Objects.equals(this.enUs, regionLocales.enUs) &&
-            Objects.equals(this.ptBr, regionLocales.ptBr) &&
-            Objects.equals(this.esUs, regionLocales.esUs) &&
-            Objects.equals(this.esEs, regionLocales.esEs);
+        return Objects.equals(this.zhCn, regionLocales.zhCn) && Objects.equals(this.enUs, regionLocales.enUs)
+            && Objects.equals(this.ptBr, regionLocales.ptBr) && Objects.equals(this.esUs, regionLocales.esUs)
+            && Objects.equals(this.esEs, regionLocales.esEs);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(zhCn, enUs, ptBr, esUs, esEs);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class RegionLocales  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

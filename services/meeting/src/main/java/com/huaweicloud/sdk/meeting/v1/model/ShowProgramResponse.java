@@ -1,82 +1,60 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.ProgramItemResponseBase;
-import com.huaweicloud.sdk.meeting.v1.model.ProgramResponseBase;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowProgramResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lastUpdatedBy")
-    
+    @JsonProperty(value = "lastUpdatedBy")
+
     private String lastUpdatedBy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updateTime")
-    
+    @JsonProperty(value = "updateTime")
+
     private Long updateTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="programName")
-    
+    @JsonProperty(value = "programName")
+
     private String programName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="materialSizeStr")
-    
+    @JsonProperty(value = "materialSizeStr")
+
     private String materialSizeStr;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="playTime")
-    
+    @JsonProperty(value = "playTime")
+
     private Integer playTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="programItemList")
-    
+    @JsonProperty(value = "programItemList")
+
     private List<ProgramItemResponseBase> programItemList = null;
-    
+
     public ShowProgramResponse withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 节目ID
-     * @return id
-     */
+    /** 节目ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -85,20 +63,14 @@ public class ShowProgramResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowProgramResponse withLastUpdatedBy(String lastUpdatedBy) {
         this.lastUpdatedBy = lastUpdatedBy;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新者
-     * @return lastUpdatedBy
-     */
+    /** 更新者
+     * 
+     * @return lastUpdatedBy */
     public String getLastUpdatedBy() {
         return lastUpdatedBy;
     }
@@ -107,20 +79,14 @@ public class ShowProgramResponse extends SdkResponse {
         this.lastUpdatedBy = lastUpdatedBy;
     }
 
-    
-
     public ShowProgramResponse withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间
-     * @return updateTime
-     */
+    /** 更新时间
+     * 
+     * @return updateTime */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -129,20 +95,14 @@ public class ShowProgramResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     public ShowProgramResponse withProgramName(String programName) {
         this.programName = programName;
         return this;
     }
 
-    
-
-
-    /**
-     * 节目名称
-     * @return programName
-     */
+    /** 节目名称
+     * 
+     * @return programName */
     public String getProgramName() {
         return programName;
     }
@@ -151,20 +111,14 @@ public class ShowProgramResponse extends SdkResponse {
         this.programName = programName;
     }
 
-    
-
     public ShowProgramResponse withMaterialSizeStr(String materialSizeStr) {
         this.materialSizeStr = materialSizeStr;
         return this;
     }
 
-    
-
-
-    /**
-     * 节目的总素材大小（含单位）
-     * @return materialSizeStr
-     */
+    /** 节目的总素材大小（含单位）
+     * 
+     * @return materialSizeStr */
     public String getMaterialSizeStr() {
         return materialSizeStr;
     }
@@ -173,20 +127,14 @@ public class ShowProgramResponse extends SdkResponse {
         this.materialSizeStr = materialSizeStr;
     }
 
-    
-
     public ShowProgramResponse withPlayTime(Integer playTime) {
         this.playTime = playTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 节目的总播放时长，单位秒
-     * @return playTime
-     */
+    /** 节目的总播放时长，单位秒
+     * 
+     * @return playTime */
     public Integer getPlayTime() {
         return playTime;
     }
@@ -195,16 +143,13 @@ public class ShowProgramResponse extends SdkResponse {
         this.playTime = playTime;
     }
 
-    
-
     public ShowProgramResponse withProgramItemList(List<ProgramItemResponseBase> programItemList) {
         this.programItemList = programItemList;
         return this;
     }
 
-    
     public ShowProgramResponse addProgramItemListItem(ProgramItemResponseBase programItemListItem) {
-        if(this.programItemList == null) {
+        if (this.programItemList == null) {
             this.programItemList = new ArrayList<>();
         }
         this.programItemList.add(programItemListItem);
@@ -212,17 +157,16 @@ public class ShowProgramResponse extends SdkResponse {
     }
 
     public ShowProgramResponse withProgramItemList(Consumer<List<ProgramItemResponseBase>> programItemListSetter) {
-        if(this.programItemList == null) {
+        if (this.programItemList == null) {
             this.programItemList = new ArrayList<>();
         }
         programItemListSetter.accept(this.programItemList);
         return this;
     }
 
-    /**
-     * 节目素材列表
-     * @return programItemList
-     */
+    /** 节目素材列表
+     * 
+     * @return programItemList */
     public List<ProgramItemResponseBase> getProgramItemList() {
         return programItemList;
     }
@@ -230,8 +174,6 @@ public class ShowProgramResponse extends SdkResponse {
     public void setProgramItemList(List<ProgramItemResponseBase> programItemList) {
         this.programItemList = programItemList;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -242,18 +184,20 @@ public class ShowProgramResponse extends SdkResponse {
             return false;
         }
         ShowProgramResponse showProgramResponse = (ShowProgramResponse) o;
-        return Objects.equals(this.id, showProgramResponse.id) &&
-            Objects.equals(this.lastUpdatedBy, showProgramResponse.lastUpdatedBy) &&
-            Objects.equals(this.updateTime, showProgramResponse.updateTime) &&
-            Objects.equals(this.programName, showProgramResponse.programName) &&
-            Objects.equals(this.materialSizeStr, showProgramResponse.materialSizeStr) &&
-            Objects.equals(this.playTime, showProgramResponse.playTime) &&
-            Objects.equals(this.programItemList, showProgramResponse.programItemList);
+        return Objects.equals(this.id, showProgramResponse.id)
+            && Objects.equals(this.lastUpdatedBy, showProgramResponse.lastUpdatedBy)
+            && Objects.equals(this.updateTime, showProgramResponse.updateTime)
+            && Objects.equals(this.programName, showProgramResponse.programName)
+            && Objects.equals(this.materialSizeStr, showProgramResponse.materialSizeStr)
+            && Objects.equals(this.playTime, showProgramResponse.playTime)
+            && Objects.equals(this.programItemList, showProgramResponse.programItemList);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, lastUpdatedBy, updateTime, programName, materialSizeStr, playTime, programItemList);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -268,16 +212,13 @@ public class ShowProgramResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

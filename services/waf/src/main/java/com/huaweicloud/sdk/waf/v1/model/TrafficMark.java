@@ -1,40 +1,29 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 流量标识（用于攻击惩罚）
- */
-public class TrafficMark  {
-
-
+/** 流量标识（用于攻击惩罚） */
+public class TrafficMark {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sip")
-    
+    @JsonProperty(value = "sip")
+
     private List<String> sip = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cookie")
-    
+    @JsonProperty(value = "cookie")
+
     private String cookie;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="params")
-    
+    @JsonProperty(value = "params")
+
     private String params;
 
     public TrafficMark withSip(List<String> sip) {
@@ -42,9 +31,8 @@ public class TrafficMark  {
         return this;
     }
 
-    
     public TrafficMark addSipItem(String sipItem) {
-        if(this.sip == null) {
+        if (this.sip == null) {
             this.sip = new ArrayList<>();
         }
         this.sip.add(sipItem);
@@ -52,17 +40,16 @@ public class TrafficMark  {
     }
 
     public TrafficMark withSip(Consumer<List<String>> sipSetter) {
-        if(this.sip == null) {
+        if (this.sip == null) {
             this.sip = new ArrayList<>();
         }
         sipSetter.accept(this.sip);
         return this;
     }
 
-    /**
-     * 惩罚ip
-     * @return sip
-     */
+    /** 惩罚ip
+     * 
+     * @return sip */
     public List<String> getSip() {
         return sip;
     }
@@ -71,20 +58,14 @@ public class TrafficMark  {
         this.sip = sip;
     }
 
-    
-
     public TrafficMark withCookie(String cookie) {
         this.cookie = cookie;
         return this;
     }
 
-    
-
-
-    /**
-     * cookie
-     * @return cookie
-     */
+    /** cookie
+     * 
+     * @return cookie */
     public String getCookie() {
         return cookie;
     }
@@ -93,20 +74,14 @@ public class TrafficMark  {
         this.cookie = cookie;
     }
 
-    
-
     public TrafficMark withParams(String params) {
         this.params = params;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数
-     * @return params
-     */
+    /** 参数
+     * 
+     * @return params */
     public String getParams() {
         return params;
     }
@@ -114,8 +89,6 @@ public class TrafficMark  {
     public void setParams(String params) {
         this.params = params;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -126,14 +99,15 @@ public class TrafficMark  {
             return false;
         }
         TrafficMark trafficMark = (TrafficMark) o;
-        return Objects.equals(this.sip, trafficMark.sip) &&
-            Objects.equals(this.cookie, trafficMark.cookie) &&
-            Objects.equals(this.params, trafficMark.params);
+        return Objects.equals(this.sip, trafficMark.sip) && Objects.equals(this.cookie, trafficMark.cookie)
+            && Objects.equals(this.params, trafficMark.params);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sip, cookie, params);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -144,16 +118,13 @@ public class TrafficMark  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

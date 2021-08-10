@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.ResizePostPaidServerRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ResizePostPaidServerRequest  {
-
-
+/** Request Object */
+public class ResizePostPaidServerRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server_id")
-    
+    @JsonProperty(value = "server_id")
+
     private String serverId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ResizePostPaidServerRequestBody body;
 
     public ResizePostPaidServerRequest withServerId(String serverId) {
@@ -35,13 +24,9 @@ public class ResizePostPaidServerRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务器ID。
-     * @return serverId
-     */
+    /** 云服务器ID。
+     * 
+     * @return serverId */
     public String getServerId() {
         return serverId;
     }
@@ -50,27 +35,23 @@ public class ResizePostPaidServerRequest  {
         this.serverId = serverId;
     }
 
-    
-
     public ResizePostPaidServerRequest withBody(ResizePostPaidServerRequestBody body) {
         this.body = body;
         return this;
     }
 
     public ResizePostPaidServerRequest withBody(Consumer<ResizePostPaidServerRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ResizePostPaidServerRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ResizePostPaidServerRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class ResizePostPaidServerRequest  {
     public void setBody(ResizePostPaidServerRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class ResizePostPaidServerRequest  {
             return false;
         }
         ResizePostPaidServerRequest resizePostPaidServerRequest = (ResizePostPaidServerRequest) o;
-        return Objects.equals(this.serverId, resizePostPaidServerRequest.serverId) &&
-            Objects.equals(this.body, resizePostPaidServerRequest.body);
+        return Objects.equals(this.serverId, resizePostPaidServerRequest.serverId)
+            && Objects.equals(this.body, resizePostPaidServerRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(serverId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class ResizePostPaidServerRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

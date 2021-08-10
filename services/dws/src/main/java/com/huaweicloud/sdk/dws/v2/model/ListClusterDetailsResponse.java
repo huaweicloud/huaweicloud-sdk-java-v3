@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.dws.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dws.v2.model.ClusterDetail;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ListClusterDetailsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster")
-    
+    @JsonProperty(value = "cluster")
+
     private ClusterDetail cluster;
 
     public ListClusterDetailsResponse withCluster(ClusterDetail cluster) {
@@ -32,19 +21,17 @@ public class ListClusterDetailsResponse extends SdkResponse {
     }
 
     public ListClusterDetailsResponse withCluster(Consumer<ClusterDetail> clusterSetter) {
-        if(this.cluster == null ){
+        if (this.cluster == null) {
             this.cluster = new ClusterDetail();
             clusterSetter.accept(this.cluster);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get cluster
-     * @return cluster
-     */
+    /** Get cluster
+     * 
+     * @return cluster */
     public ClusterDetail getCluster() {
         return cluster;
     }
@@ -52,8 +39,6 @@ public class ListClusterDetailsResponse extends SdkResponse {
     public void setCluster(ClusterDetail cluster) {
         this.cluster = cluster;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class ListClusterDetailsResponse extends SdkResponse {
         ListClusterDetailsResponse listClusterDetailsResponse = (ListClusterDetailsResponse) o;
         return Objects.equals(this.cluster, listClusterDetailsResponse.cluster);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(cluster);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class ListClusterDetailsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

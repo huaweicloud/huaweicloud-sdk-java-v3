@@ -1,48 +1,36 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class VaultMigrateResourceReq  {
-
-
+public class VaultMigrateResourceReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination_vault_id")
-    
+    @JsonProperty(value = "destination_vault_id")
+
     private String destinationVaultId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_ids")
-    
+    @JsonProperty(value = "resource_ids")
+
     private List<String> resourceIds = null;
-    
+
     public VaultMigrateResourceReq withDestinationVaultId(String destinationVaultId) {
         this.destinationVaultId = destinationVaultId;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标存储库
-     * @return destinationVaultId
-     */
+    /** 目标存储库
+     * 
+     * @return destinationVaultId */
     public String getDestinationVaultId() {
         return destinationVaultId;
     }
@@ -51,16 +39,13 @@ public class VaultMigrateResourceReq  {
         this.destinationVaultId = destinationVaultId;
     }
 
-    
-
     public VaultMigrateResourceReq withResourceIds(List<String> resourceIds) {
         this.resourceIds = resourceIds;
         return this;
     }
 
-    
     public VaultMigrateResourceReq addResourceIdsItem(String resourceIdsItem) {
-        if(this.resourceIds == null) {
+        if (this.resourceIds == null) {
             this.resourceIds = new ArrayList<>();
         }
         this.resourceIds.add(resourceIdsItem);
@@ -68,17 +53,16 @@ public class VaultMigrateResourceReq  {
     }
 
     public VaultMigrateResourceReq withResourceIds(Consumer<List<String>> resourceIdsSetter) {
-        if(this.resourceIds == null) {
+        if (this.resourceIds == null) {
             this.resourceIds = new ArrayList<>();
         }
         resourceIdsSetter.accept(this.resourceIds);
         return this;
     }
 
-    /**
-     * 待迁移的资源ID
-     * @return resourceIds
-     */
+    /** 待迁移的资源ID
+     * 
+     * @return resourceIds */
     public List<String> getResourceIds() {
         return resourceIds;
     }
@@ -86,8 +70,6 @@ public class VaultMigrateResourceReq  {
     public void setResourceIds(List<String> resourceIds) {
         this.resourceIds = resourceIds;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -98,13 +80,15 @@ public class VaultMigrateResourceReq  {
             return false;
         }
         VaultMigrateResourceReq vaultMigrateResourceReq = (VaultMigrateResourceReq) o;
-        return Objects.equals(this.destinationVaultId, vaultMigrateResourceReq.destinationVaultId) &&
-            Objects.equals(this.resourceIds, vaultMigrateResourceReq.resourceIds);
+        return Objects.equals(this.destinationVaultId, vaultMigrateResourceReq.destinationVaultId)
+            && Objects.equals(this.resourceIds, vaultMigrateResourceReq.resourceIds);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(destinationVaultId, resourceIds);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,16 +98,13 @@ public class VaultMigrateResourceReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

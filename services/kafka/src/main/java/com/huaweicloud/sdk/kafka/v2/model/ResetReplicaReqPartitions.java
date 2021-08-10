@@ -1,48 +1,34 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ResetReplicaReqPartitions
- */
-public class ResetReplicaReqPartitions  {
-
-
+/** ResetReplicaReqPartitions */
+public class ResetReplicaReqPartitions {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="partition")
-    
+    @JsonProperty(value = "partition")
+
     private Integer partition;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replicas")
-    
+    @JsonProperty(value = "replicas")
+
     private List<Integer> replicas = null;
-    
+
     public ResetReplicaReqPartitions withPartition(Integer partition) {
         this.partition = partition;
         return this;
     }
 
-    
-
-
-    /**
-     * 分区ID。
-     * @return partition
-     */
+    /** 分区ID。
+     * 
+     * @return partition */
     public Integer getPartition() {
         return partition;
     }
@@ -51,16 +37,13 @@ public class ResetReplicaReqPartitions  {
         this.partition = partition;
     }
 
-    
-
     public ResetReplicaReqPartitions withReplicas(List<Integer> replicas) {
         this.replicas = replicas;
         return this;
     }
 
-    
     public ResetReplicaReqPartitions addReplicasItem(Integer replicasItem) {
-        if(this.replicas == null) {
+        if (this.replicas == null) {
             this.replicas = new ArrayList<>();
         }
         this.replicas.add(replicasItem);
@@ -68,17 +51,16 @@ public class ResetReplicaReqPartitions  {
     }
 
     public ResetReplicaReqPartitions withReplicas(Consumer<List<Integer>> replicasSetter) {
-        if(this.replicas == null) {
+        if (this.replicas == null) {
             this.replicas = new ArrayList<>();
         }
         replicasSetter.accept(this.replicas);
         return this;
     }
 
-    /**
-     * 副本期望所在的broker ID。其中Array首位为leader副本，所有分区需要有同样数量的副本，副本数不能大于总broker的数量。
-     * @return replicas
-     */
+    /** 副本期望所在的broker ID。其中Array首位为leader副本，所有分区需要有同样数量的副本，副本数不能大于总broker的数量。
+     * 
+     * @return replicas */
     public List<Integer> getReplicas() {
         return replicas;
     }
@@ -86,8 +68,6 @@ public class ResetReplicaReqPartitions  {
     public void setReplicas(List<Integer> replicas) {
         this.replicas = replicas;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -98,13 +78,15 @@ public class ResetReplicaReqPartitions  {
             return false;
         }
         ResetReplicaReqPartitions resetReplicaReqPartitions = (ResetReplicaReqPartitions) o;
-        return Objects.equals(this.partition, resetReplicaReqPartitions.partition) &&
-            Objects.equals(this.replicas, resetReplicaReqPartitions.replicas);
+        return Objects.equals(this.partition, resetReplicaReqPartitions.partition)
+            && Objects.equals(this.replicas, resetReplicaReqPartitions.replicas);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(partition, replicas);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,16 +96,13 @@ public class ResetReplicaReqPartitions  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.ProjectCreate;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateProjectRequest  {
-
-
+/** Request Object */
+public class CreateProjectRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Repo-Auth")
-    
+    @JsonProperty(value = "X-Repo-Auth")
+
     private String xRepoAuth;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
+
     private String namespace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ProjectCreate body;
 
     public CreateProjectRequest withXRepoAuth(String xRepoAuth) {
@@ -41,15 +29,11 @@ public class CreateProjectRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 授权名称。
-     * @return xRepoAuth
-     */
+    /** 授权名称。
+     * 
+     * @return xRepoAuth */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Repo-Auth")
+    @JsonProperty(value = "X-Repo-Auth")
     public String getXRepoAuth() {
         return xRepoAuth;
     }
@@ -58,20 +42,14 @@ public class CreateProjectRequest  {
         this.xRepoAuth = xRepoAuth;
     }
 
-    
-
     public CreateProjectRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
     }
 
-    
-
-
-    /**
-     * 组织ID。
-     * @return namespace
-     */
+    /** 组织ID。
+     * 
+     * @return namespace */
     public String getNamespace() {
         return namespace;
     }
@@ -80,27 +58,23 @@ public class CreateProjectRequest  {
         this.namespace = namespace;
     }
 
-    
-
     public CreateProjectRequest withBody(ProjectCreate body) {
         this.body = body;
         return this;
     }
 
     public CreateProjectRequest withBody(Consumer<ProjectCreate> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ProjectCreate();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ProjectCreate getBody() {
         return body;
     }
@@ -108,8 +82,6 @@ public class CreateProjectRequest  {
     public void setBody(ProjectCreate body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -120,14 +92,16 @@ public class CreateProjectRequest  {
             return false;
         }
         CreateProjectRequest createProjectRequest = (CreateProjectRequest) o;
-        return Objects.equals(this.xRepoAuth, createProjectRequest.xRepoAuth) &&
-            Objects.equals(this.namespace, createProjectRequest.namespace) &&
-            Objects.equals(this.body, createProjectRequest.body);
+        return Objects.equals(this.xRepoAuth, createProjectRequest.xRepoAuth)
+            && Objects.equals(this.namespace, createProjectRequest.namespace)
+            && Objects.equals(this.body, createProjectRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xRepoAuth, namespace, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -138,16 +112,13 @@ public class CreateProjectRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowAuthorizationDetailRequest  {
-
-
+/** Request Object */
+public class ShowAuthorizationDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="authorization_id")
-    
+    @JsonProperty(value = "authorization_id")
+
     private Long authorizationId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site")
-    
+    @JsonProperty(value = "X-Site")
+
     private Integer xSite;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Time-Zone")
-    
+    @JsonProperty(value = "X-Time-Zone")
+
     private String xTimeZone;
 
     public ShowAuthorizationDetailRequest withAuthorizationId(Long authorizationId) {
@@ -52,15 +38,9 @@ public class ShowAuthorizationDetailRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 授权id
-     * minimum: -9223372036854775808
-     * maximum: 9223372036854775807
-     * @return authorizationId
-     */
+    /** 授权id minimum: -9223372036854775808 maximum: 9223372036854775807
+     * 
+     * @return authorizationId */
     public Long getAuthorizationId() {
         return authorizationId;
     }
@@ -69,20 +49,14 @@ public class ShowAuthorizationDetailRequest  {
         this.authorizationId = authorizationId;
     }
 
-    
-
     public ShowAuthorizationDetailRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 组id
-     * @return groupId
-     */
+    /** 组id
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -91,24 +65,16 @@ public class ShowAuthorizationDetailRequest  {
         this.groupId = groupId;
     }
 
-    
-
     public ShowAuthorizationDetailRequest withXSite(Integer xSite) {
         this.xSite = xSite;
         return this;
     }
 
-    
-
-
-    /**
-     * 对接站点信息。  0（中国站） 1（国际站），不填的话默认为0。
-     * minimum: 0
-     * maximum: 1
-     * @return xSite
-     */
+    /** 对接站点信息。 0（中国站） 1（国际站），不填的话默认为0。 minimum: 0 maximum: 1
+     * 
+     * @return xSite */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site")
+    @JsonProperty(value = "X-Site")
     public Integer getXSite() {
         return xSite;
     }
@@ -117,22 +83,16 @@ public class ShowAuthorizationDetailRequest  {
         this.xSite = xSite;
     }
 
-    
-
     public ShowAuthorizationDetailRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。  会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
-     * @return xLanguage
-     */
+    /** 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。 会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -141,22 +101,16 @@ public class ShowAuthorizationDetailRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ShowAuthorizationDetailRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。  涉及时间的数据会根据环境时区处理。
-     * @return xTimeZone
-     */
+    /** 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。 涉及时间的数据会根据环境时区处理。
+     * 
+     * @return xTimeZone */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Time-Zone")
+    @JsonProperty(value = "X-Time-Zone")
     public String getXTimeZone() {
         return xTimeZone;
     }
@@ -164,8 +118,6 @@ public class ShowAuthorizationDetailRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -176,16 +128,18 @@ public class ShowAuthorizationDetailRequest  {
             return false;
         }
         ShowAuthorizationDetailRequest showAuthorizationDetailRequest = (ShowAuthorizationDetailRequest) o;
-        return Objects.equals(this.authorizationId, showAuthorizationDetailRequest.authorizationId) &&
-            Objects.equals(this.groupId, showAuthorizationDetailRequest.groupId) &&
-            Objects.equals(this.xSite, showAuthorizationDetailRequest.xSite) &&
-            Objects.equals(this.xLanguage, showAuthorizationDetailRequest.xLanguage) &&
-            Objects.equals(this.xTimeZone, showAuthorizationDetailRequest.xTimeZone);
+        return Objects.equals(this.authorizationId, showAuthorizationDetailRequest.authorizationId)
+            && Objects.equals(this.groupId, showAuthorizationDetailRequest.groupId)
+            && Objects.equals(this.xSite, showAuthorizationDetailRequest.xSite)
+            && Objects.equals(this.xLanguage, showAuthorizationDetailRequest.xLanguage)
+            && Objects.equals(this.xTimeZone, showAuthorizationDetailRequest.xTimeZone);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(authorizationId, groupId, xSite, xLanguage, xTimeZone);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -198,16 +152,13 @@ public class ShowAuthorizationDetailRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.waf.v1.model.CustomPage;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 告警页面
- */
-public class BlockPage  {
-
-
+/** 告警页面 */
+public class BlockPage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template")
-    
+    @JsonProperty(value = "template")
+
     private String template;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="custom_page")
-    
+    @JsonProperty(value = "custom_page")
+
     private CustomPage customPage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="redirect_url")
-    
+    @JsonProperty(value = "redirect_url")
+
     private String redirectUrl;
 
     public BlockPage withTemplate(String template) {
@@ -41,13 +29,9 @@ public class BlockPage  {
         return this;
     }
 
-    
-
-
-    /**
-     * 模板名称
-     * @return template
-     */
+    /** 模板名称
+     * 
+     * @return template */
     public String getTemplate() {
         return template;
     }
@@ -56,27 +40,23 @@ public class BlockPage  {
         this.template = template;
     }
 
-    
-
     public BlockPage withCustomPage(CustomPage customPage) {
         this.customPage = customPage;
         return this;
     }
 
     public BlockPage withCustomPage(Consumer<CustomPage> customPageSetter) {
-        if(this.customPage == null ){
+        if (this.customPage == null) {
             this.customPage = new CustomPage();
             customPageSetter.accept(this.customPage);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get customPage
-     * @return customPage
-     */
+    /** Get customPage
+     * 
+     * @return customPage */
     public CustomPage getCustomPage() {
         return customPage;
     }
@@ -85,20 +65,14 @@ public class BlockPage  {
         this.customPage = customPage;
     }
 
-    
-
     public BlockPage withRedirectUrl(String redirectUrl) {
         this.redirectUrl = redirectUrl;
         return this;
     }
 
-    
-
-
-    /**
-     * 重定向URL
-     * @return redirectUrl
-     */
+    /** 重定向URL
+     * 
+     * @return redirectUrl */
     public String getRedirectUrl() {
         return redirectUrl;
     }
@@ -106,8 +80,6 @@ public class BlockPage  {
     public void setRedirectUrl(String redirectUrl) {
         this.redirectUrl = redirectUrl;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class BlockPage  {
             return false;
         }
         BlockPage blockPage = (BlockPage) o;
-        return Objects.equals(this.template, blockPage.template) &&
-            Objects.equals(this.customPage, blockPage.customPage) &&
-            Objects.equals(this.redirectUrl, blockPage.redirectUrl);
+        return Objects.equals(this.template, blockPage.template)
+            && Objects.equals(this.customPage, blockPage.customPage)
+            && Objects.equals(this.redirectUrl, blockPage.redirectUrl);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(template, customPage, redirectUrl);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class BlockPage  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

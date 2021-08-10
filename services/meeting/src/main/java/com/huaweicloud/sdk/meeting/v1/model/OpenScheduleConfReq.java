@@ -1,102 +1,79 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.OpenAttendeeEntity;
-import com.huaweicloud.sdk.meeting.v1.model.OpenNotifySetting;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 网路研讨会议预定请求。
- */
-public class OpenScheduleConfReq  {
-
-
+/** 网路研讨会议预定请求。 */
+public class OpenScheduleConfReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subject")
-    
+    @JsonProperty(value = "subject")
+
     private String subject;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="startTime")
-    
+    @JsonProperty(value = "startTime")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="duration")
-    
+    @JsonProperty(value = "duration")
+
     private Integer duration;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timeZoneId")
-    
+    @JsonProperty(value = "timeZoneId")
+
     private Integer timeZoneId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="attendees")
-    
+    @JsonProperty(value = "attendees")
+
     private List<OpenAttendeeEntity> attendees = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="notifySetting")
-    
+    @JsonProperty(value = "notifySetting")
+
     private OpenNotifySetting notifySetting;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrID")
-    
+    @JsonProperty(value = "vmrID")
+
     private String vmrID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="guestPasswd")
-    
+    @JsonProperty(value = "guestPasswd")
+
     private String guestPasswd;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audiencePasswd")
-    
+    @JsonProperty(value = "audiencePasswd")
+
     private String audiencePasswd;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="callRestriction")
-    
+    @JsonProperty(value = "callRestriction")
+
     private Boolean callRestriction;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scope")
-    
+    @JsonProperty(value = "scope")
+
     private Integer scope;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audienceScope")
-    
+    @JsonProperty(value = "audienceScope")
+
     private Integer audienceScope;
 
     public OpenScheduleConfReq withSubject(String subject) {
@@ -104,13 +81,9 @@ public class OpenScheduleConfReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 主题
-     * @return subject
-     */
+    /** 主题
+     * 
+     * @return subject */
     public String getSubject() {
         return subject;
     }
@@ -119,20 +92,14 @@ public class OpenScheduleConfReq  {
         this.subject = subject;
     }
 
-    
-
     public OpenScheduleConfReq withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述
-     * @return description
-     */
+    /** 描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -141,20 +108,14 @@ public class OpenScheduleConfReq  {
         this.description = description;
     }
 
-    
-
     public OpenScheduleConfReq withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议开始时间（UTC时间）， 格式：yyyy-MM-dd HH:mm。
-     * @return startTime
-     */
+    /** 会议开始时间（UTC时间）， 格式：yyyy-MM-dd HH:mm。
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -163,20 +124,14 @@ public class OpenScheduleConfReq  {
         this.startTime = startTime;
     }
 
-    
-
     public OpenScheduleConfReq withDuration(Integer duration) {
         this.duration = duration;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议持续时长，单位分钟，取值范围[15,1440]。
-     * @return duration
-     */
+    /** 会议持续时长，单位分钟，取值范围[15,1440]。
+     * 
+     * @return duration */
     public Integer getDuration() {
         return duration;
     }
@@ -185,20 +140,14 @@ public class OpenScheduleConfReq  {
         this.duration = duration;
     }
 
-    
-
     public OpenScheduleConfReq withTimeZoneId(Integer timeZoneId) {
         this.timeZoneId = timeZoneId;
         return this;
     }
 
-    
-
-
-    /**
-     * 开始时间的时区信息。时区信息，参考时区映射关系。
-     * @return timeZoneId
-     */
+    /** 开始时间的时区信息。时区信息，参考时区映射关系。
+     * 
+     * @return timeZoneId */
     public Integer getTimeZoneId() {
         return timeZoneId;
     }
@@ -207,16 +156,13 @@ public class OpenScheduleConfReq  {
         this.timeZoneId = timeZoneId;
     }
 
-    
-
     public OpenScheduleConfReq withAttendees(List<OpenAttendeeEntity> attendees) {
         this.attendees = attendees;
         return this;
     }
 
-    
     public OpenScheduleConfReq addAttendeesItem(OpenAttendeeEntity attendeesItem) {
-        if(this.attendees == null) {
+        if (this.attendees == null) {
             this.attendees = new ArrayList<>();
         }
         this.attendees.add(attendeesItem);
@@ -224,17 +170,16 @@ public class OpenScheduleConfReq  {
     }
 
     public OpenScheduleConfReq withAttendees(Consumer<List<OpenAttendeeEntity>> attendeesSetter) {
-        if(this.attendees == null) {
+        if (this.attendees == null) {
             this.attendees = new ArrayList<>();
         }
         attendeesSetter.accept(this.attendees);
         return this;
     }
 
-    /**
-     * 与会者列表。该列表可以用于发送会议通知、会议提醒、会议开始时候进行自动邀请。
-     * @return attendees
-     */
+    /** 与会者列表。该列表可以用于发送会议通知、会议提醒、会议开始时候进行自动邀请。
+     * 
+     * @return attendees */
     public List<OpenAttendeeEntity> getAttendees() {
         return attendees;
     }
@@ -243,27 +188,23 @@ public class OpenScheduleConfReq  {
         this.attendees = attendees;
     }
 
-    
-
     public OpenScheduleConfReq withNotifySetting(OpenNotifySetting notifySetting) {
         this.notifySetting = notifySetting;
         return this;
     }
 
     public OpenScheduleConfReq withNotifySetting(Consumer<OpenNotifySetting> notifySettingSetter) {
-        if(this.notifySetting == null ){
+        if (this.notifySetting == null) {
             this.notifySetting = new OpenNotifySetting();
             notifySettingSetter.accept(this.notifySetting);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get notifySetting
-     * @return notifySetting
-     */
+    /** Get notifySetting
+     * 
+     * @return notifySetting */
     public OpenNotifySetting getNotifySetting() {
         return notifySetting;
     }
@@ -272,20 +213,14 @@ public class OpenScheduleConfReq  {
         this.notifySetting = notifySetting;
     }
 
-    
-
     public OpenScheduleConfReq withVmrID(String vmrID) {
         this.vmrID = vmrID;
         return this;
     }
 
-    
-
-
-    /**
-     * VMR ID, 用于识别用户开会时绑定的云会议室。最大长度不超过128个字符。
-     * @return vmrID
-     */
+    /** VMR ID, 用于识别用户开会时绑定的云会议室。最大长度不超过128个字符。
+     * 
+     * @return vmrID */
     public String getVmrID() {
         return vmrID;
     }
@@ -294,20 +229,14 @@ public class OpenScheduleConfReq  {
         this.vmrID = vmrID;
     }
 
-    
-
     public OpenScheduleConfReq withGuestPasswd(String guestPasswd) {
         this.guestPasswd = guestPasswd;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义嘉宾入会密码, 4-16位数字，不能与观众密码相同；不指定则系统自动创建。
-     * @return guestPasswd
-     */
+    /** 自定义嘉宾入会密码, 4-16位数字，不能与观众密码相同；不指定则系统自动创建。
+     * 
+     * @return guestPasswd */
     public String getGuestPasswd() {
         return guestPasswd;
     }
@@ -316,20 +245,14 @@ public class OpenScheduleConfReq  {
         this.guestPasswd = guestPasswd;
     }
 
-    
-
     public OpenScheduleConfReq withAudiencePasswd(String audiencePasswd) {
         this.audiencePasswd = audiencePasswd;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义观众入会密码, 4-16位数字，不能与嘉宾密码相同；不指定则系统自动创建。
-     * @return audiencePasswd
-     */
+    /** 自定义观众入会密码, 4-16位数字，不能与嘉宾密码相同；不指定则系统自动创建。
+     * 
+     * @return audiencePasswd */
     public String getAudiencePasswd() {
         return audiencePasswd;
     }
@@ -338,20 +261,14 @@ public class OpenScheduleConfReq  {
         this.audiencePasswd = audiencePasswd;
     }
 
-    
-
     public OpenScheduleConfReq withCallRestriction(Boolean callRestriction) {
         this.callRestriction = callRestriction;
         return this;
     }
 
-    
-
-
-    /**
-     * 入会范围开关
-     * @return callRestriction
-     */
+    /** 入会范围开关
+     * 
+     * @return callRestriction */
     public Boolean getCallRestriction() {
         return callRestriction;
     }
@@ -360,20 +277,14 @@ public class OpenScheduleConfReq  {
         this.callRestriction = callRestriction;
     }
 
-    
-
     public OpenScheduleConfReq withScope(Integer scope) {
         this.scope = scope;
         return this;
     }
 
-    
-
-
-    /**
-     * 主持人、嘉宾入会范围  0: 所有用户 1: 非匿名用户（手机pstn入会视为匿名入会） 2: 企业内用户 3: 被邀请用户; 默认值 0。
-     * @return scope
-     */
+    /** 主持人、嘉宾入会范围 0: 所有用户 1: 非匿名用户（手机pstn入会视为匿名入会） 2: 企业内用户 3: 被邀请用户; 默认值 0。
+     * 
+     * @return scope */
     public Integer getScope() {
         return scope;
     }
@@ -382,20 +293,14 @@ public class OpenScheduleConfReq  {
         this.scope = scope;
     }
 
-    
-
     public OpenScheduleConfReq withAudienceScope(Integer audienceScope) {
         this.audienceScope = audienceScope;
         return this;
     }
 
-    
-
-
-    /**
-     * 观众入会范围 0: 所有用户 2: 企业内用户和被邀请用户; 默认值 0。
-     * @return audienceScope
-     */
+    /** 观众入会范围 0: 所有用户 2: 企业内用户和被邀请用户; 默认值 0。
+     * 
+     * @return audienceScope */
     public Integer getAudienceScope() {
         return audienceScope;
     }
@@ -403,8 +308,6 @@ public class OpenScheduleConfReq  {
     public void setAudienceScope(Integer audienceScope) {
         this.audienceScope = audienceScope;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -415,24 +318,38 @@ public class OpenScheduleConfReq  {
             return false;
         }
         OpenScheduleConfReq openScheduleConfReq = (OpenScheduleConfReq) o;
-        return Objects.equals(this.subject, openScheduleConfReq.subject) &&
-            Objects.equals(this.description, openScheduleConfReq.description) &&
-            Objects.equals(this.startTime, openScheduleConfReq.startTime) &&
-            Objects.equals(this.duration, openScheduleConfReq.duration) &&
-            Objects.equals(this.timeZoneId, openScheduleConfReq.timeZoneId) &&
-            Objects.equals(this.attendees, openScheduleConfReq.attendees) &&
-            Objects.equals(this.notifySetting, openScheduleConfReq.notifySetting) &&
-            Objects.equals(this.vmrID, openScheduleConfReq.vmrID) &&
-            Objects.equals(this.guestPasswd, openScheduleConfReq.guestPasswd) &&
-            Objects.equals(this.audiencePasswd, openScheduleConfReq.audiencePasswd) &&
-            Objects.equals(this.callRestriction, openScheduleConfReq.callRestriction) &&
-            Objects.equals(this.scope, openScheduleConfReq.scope) &&
-            Objects.equals(this.audienceScope, openScheduleConfReq.audienceScope);
+        return Objects.equals(this.subject, openScheduleConfReq.subject)
+            && Objects.equals(this.description, openScheduleConfReq.description)
+            && Objects.equals(this.startTime, openScheduleConfReq.startTime)
+            && Objects.equals(this.duration, openScheduleConfReq.duration)
+            && Objects.equals(this.timeZoneId, openScheduleConfReq.timeZoneId)
+            && Objects.equals(this.attendees, openScheduleConfReq.attendees)
+            && Objects.equals(this.notifySetting, openScheduleConfReq.notifySetting)
+            && Objects.equals(this.vmrID, openScheduleConfReq.vmrID)
+            && Objects.equals(this.guestPasswd, openScheduleConfReq.guestPasswd)
+            && Objects.equals(this.audiencePasswd, openScheduleConfReq.audiencePasswd)
+            && Objects.equals(this.callRestriction, openScheduleConfReq.callRestriction)
+            && Objects.equals(this.scope, openScheduleConfReq.scope)
+            && Objects.equals(this.audienceScope, openScheduleConfReq.audienceScope);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(subject, description, startTime, duration, timeZoneId, attendees, notifySetting, vmrID, guestPasswd, audiencePasswd, callRestriction, scope, audienceScope);
+        return Objects.hash(subject,
+            description,
+            startTime,
+            duration,
+            timeZoneId,
+            attendees,
+            notifySetting,
+            vmrID,
+            guestPasswd,
+            audiencePasswd,
+            callRestriction,
+            scope,
+            audienceScope);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -453,16 +370,13 @@ public class OpenScheduleConfReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

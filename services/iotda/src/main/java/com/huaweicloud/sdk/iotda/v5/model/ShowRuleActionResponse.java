@@ -1,53 +1,38 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotda.v5.model.ChannelDetail;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowRuleActionResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action_id")
-    
+    @JsonProperty(value = "action_id")
+
     private String actionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rule_id")
-    
+    @JsonProperty(value = "rule_id")
+
     private String ruleId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="channel")
-    
+    @JsonProperty(value = "channel")
+
     private String channel;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="channel_detail")
-    
+    @JsonProperty(value = "channel_detail")
+
     private ChannelDetail channelDetail;
 
     public ShowRuleActionResponse withActionId(String actionId) {
@@ -55,13 +40,9 @@ public class ShowRuleActionResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 规则动作ID，用于唯一标识一条规则动作，在创建规则动作时由物联网平台分配获得，创建时无需携带，由平台统一分配唯一的action_id。
-     * @return actionId
-     */
+    /** 规则动作ID，用于唯一标识一条规则动作，在创建规则动作时由物联网平台分配获得，创建时无需携带，由平台统一分配唯一的action_id。
+     * 
+     * @return actionId */
     public String getActionId() {
         return actionId;
     }
@@ -70,20 +51,14 @@ public class ShowRuleActionResponse extends SdkResponse {
         this.actionId = actionId;
     }
 
-    
-
     public ShowRuleActionResponse withRuleId(String ruleId) {
         this.ruleId = ruleId;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则动作对应的的规则触发条件ID。
-     * @return ruleId
-     */
+    /** 规则动作对应的的规则触发条件ID。
+     * 
+     * @return ruleId */
     public String getRuleId() {
         return ruleId;
     }
@@ -92,20 +67,14 @@ public class ShowRuleActionResponse extends SdkResponse {
         this.ruleId = ruleId;
     }
 
-    
-
     public ShowRuleActionResponse withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源空间ID。
-     * @return appId
-     */
+    /** 资源空间ID。
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -114,20 +83,15 @@ public class ShowRuleActionResponse extends SdkResponse {
         this.appId = appId;
     }
 
-    
-
     public ShowRuleActionResponse withChannel(String channel) {
         this.channel = channel;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则动作的类型，取值范围： - HTTP_FORWARDING：HTTP服务消息类型。 - DIS_FORWARDING：转发DIS服务消息类型。 - OBS_FORWARDING：转发OBS服务消息类型。 - AMQP_FORWARDING：转发AMQP服务消息类型。 - DMS_KAFKA_FORWARDING：转发kafka消息类型。 
-     * @return channel
-     */
+    /** 规则动作的类型，取值范围： - HTTP_FORWARDING：HTTP服务消息类型。 - DIS_FORWARDING：转发DIS服务消息类型。 - OBS_FORWARDING：转发OBS服务消息类型。 -
+     * AMQP_FORWARDING：转发AMQP服务消息类型。 - DMS_KAFKA_FORWARDING：转发kafka消息类型。
+     * 
+     * @return channel */
     public String getChannel() {
         return channel;
     }
@@ -136,27 +100,23 @@ public class ShowRuleActionResponse extends SdkResponse {
         this.channel = channel;
     }
 
-    
-
     public ShowRuleActionResponse withChannelDetail(ChannelDetail channelDetail) {
         this.channelDetail = channelDetail;
         return this;
     }
 
     public ShowRuleActionResponse withChannelDetail(Consumer<ChannelDetail> channelDetailSetter) {
-        if(this.channelDetail == null ){
+        if (this.channelDetail == null) {
             this.channelDetail = new ChannelDetail();
             channelDetailSetter.accept(this.channelDetail);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get channelDetail
-     * @return channelDetail
-     */
+    /** Get channelDetail
+     * 
+     * @return channelDetail */
     public ChannelDetail getChannelDetail() {
         return channelDetail;
     }
@@ -164,8 +124,6 @@ public class ShowRuleActionResponse extends SdkResponse {
     public void setChannelDetail(ChannelDetail channelDetail) {
         this.channelDetail = channelDetail;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -176,16 +134,18 @@ public class ShowRuleActionResponse extends SdkResponse {
             return false;
         }
         ShowRuleActionResponse showRuleActionResponse = (ShowRuleActionResponse) o;
-        return Objects.equals(this.actionId, showRuleActionResponse.actionId) &&
-            Objects.equals(this.ruleId, showRuleActionResponse.ruleId) &&
-            Objects.equals(this.appId, showRuleActionResponse.appId) &&
-            Objects.equals(this.channel, showRuleActionResponse.channel) &&
-            Objects.equals(this.channelDetail, showRuleActionResponse.channelDetail);
+        return Objects.equals(this.actionId, showRuleActionResponse.actionId)
+            && Objects.equals(this.ruleId, showRuleActionResponse.ruleId)
+            && Objects.equals(this.appId, showRuleActionResponse.appId)
+            && Objects.equals(this.channel, showRuleActionResponse.channel)
+            && Objects.equals(this.channelDetail, showRuleActionResponse.channelDetail);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(actionId, ruleId, appId, channel, channelDetail);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -198,16 +158,13 @@ public class ShowRuleActionResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

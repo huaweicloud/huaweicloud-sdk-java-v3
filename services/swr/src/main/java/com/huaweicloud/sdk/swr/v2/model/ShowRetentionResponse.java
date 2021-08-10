@@ -1,49 +1,35 @@
 package com.huaweicloud.sdk.swr.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.swr.v2.model.Rule;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowRetentionResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="algorithm")
-    
+    @JsonProperty(value = "algorithm")
+
     private String algorithm;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Integer id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rules")
-    
+    @JsonProperty(value = "rules")
+
     private List<Rule> rules = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scope")
-    
+    @JsonProperty(value = "scope")
+
     private String scope;
 
     public ShowRetentionResponse withAlgorithm(String algorithm) {
@@ -51,13 +37,9 @@ public class ShowRetentionResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 回收规则匹配策略，or
-     * @return algorithm
-     */
+    /** 回收规则匹配策略，or
+     * 
+     * @return algorithm */
     public String getAlgorithm() {
         return algorithm;
     }
@@ -66,20 +48,14 @@ public class ShowRetentionResponse extends SdkResponse {
         this.algorithm = algorithm;
     }
 
-    
-
     public ShowRetentionResponse withId(Integer id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * ID
-     * @return id
-     */
+    /** ID
+     * 
+     * @return id */
     public Integer getId() {
         return id;
     }
@@ -88,16 +64,13 @@ public class ShowRetentionResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowRetentionResponse withRules(List<Rule> rules) {
         this.rules = rules;
         return this;
     }
 
-    
     public ShowRetentionResponse addRulesItem(Rule rulesItem) {
-        if(this.rules == null) {
+        if (this.rules == null) {
             this.rules = new ArrayList<>();
         }
         this.rules.add(rulesItem);
@@ -105,17 +78,16 @@ public class ShowRetentionResponse extends SdkResponse {
     }
 
     public ShowRetentionResponse withRules(Consumer<List<Rule>> rulesSetter) {
-        if(this.rules == null) {
+        if (this.rules == null) {
             this.rules = new ArrayList<>();
         }
         rulesSetter.accept(this.rules);
         return this;
     }
 
-    /**
-     * 镜像老化规则
-     * @return rules
-     */
+    /** 镜像老化规则
+     * 
+     * @return rules */
     public List<Rule> getRules() {
         return rules;
     }
@@ -124,20 +96,14 @@ public class ShowRetentionResponse extends SdkResponse {
         this.rules = rules;
     }
 
-    
-
     public ShowRetentionResponse withScope(String scope) {
         this.scope = scope;
         return this;
     }
 
-    
-
-
-    /**
-     * 保留字段
-     * @return scope
-     */
+    /** 保留字段
+     * 
+     * @return scope */
     public String getScope() {
         return scope;
     }
@@ -145,8 +111,6 @@ public class ShowRetentionResponse extends SdkResponse {
     public void setScope(String scope) {
         this.scope = scope;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -157,15 +121,17 @@ public class ShowRetentionResponse extends SdkResponse {
             return false;
         }
         ShowRetentionResponse showRetentionResponse = (ShowRetentionResponse) o;
-        return Objects.equals(this.algorithm, showRetentionResponse.algorithm) &&
-            Objects.equals(this.id, showRetentionResponse.id) &&
-            Objects.equals(this.rules, showRetentionResponse.rules) &&
-            Objects.equals(this.scope, showRetentionResponse.scope);
+        return Objects.equals(this.algorithm, showRetentionResponse.algorithm)
+            && Objects.equals(this.id, showRetentionResponse.id)
+            && Objects.equals(this.rules, showRetentionResponse.rules)
+            && Objects.equals(this.scope, showRetentionResponse.scope);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(algorithm, id, rules, scope);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -177,16 +143,13 @@ public class ShowRetentionResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

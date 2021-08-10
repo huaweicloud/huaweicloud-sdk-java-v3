@@ -1,47 +1,30 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.AccessToken;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreatePersonalAuthRequest  {
+/** Request Object */
+public class CreatePersonalAuthRequest {
 
-    /**
-     * 仓库类型。 支持私人令牌授权的仓库类型有：github、gitlab、gitee。
-     */
+    /** 仓库类型。 支持私人令牌授权的仓库类型有：github、gitlab、gitee。 */
     public static final class RepoTypeEnum {
 
-        
-        /**
-         * Enum GITHUB for value: "github"
-         */
+        /** Enum GITHUB for value: "github" */
         public static final RepoTypeEnum GITHUB = new RepoTypeEnum("github");
-        
-        /**
-         * Enum GITLAB for value: "gitlab"
-         */
+
+        /** Enum GITLAB for value: "gitlab" */
         public static final RepoTypeEnum GITLAB = new RepoTypeEnum("gitlab");
-        
-        /**
-         * Enum GITEE for value: "gitee"
-         */
+
+        /** Enum GITEE for value: "gitee" */
         public static final RepoTypeEnum GITEE = new RepoTypeEnum("gitee");
-        
 
         private static final Map<String, RepoTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -71,7 +54,7 @@ public class CreatePersonalAuthRequest  {
 
         @JsonCreator
         public static RepoTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             RepoTypeEnum result = STATIC_FIELDS.get(value);
@@ -82,7 +65,7 @@ public class CreatePersonalAuthRequest  {
         }
 
         public static RepoTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             RepoTypeEnum result = STATIC_FIELDS.get(value);
@@ -106,16 +89,14 @@ public class CreatePersonalAuthRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repo_type")
-    
+    @JsonProperty(value = "repo_type")
+
     private RepoTypeEnum repoType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private AccessToken body;
 
     public CreatePersonalAuthRequest withRepoType(RepoTypeEnum repoType) {
@@ -123,13 +104,9 @@ public class CreatePersonalAuthRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库类型。 支持私人令牌授权的仓库类型有：github、gitlab、gitee。
-     * @return repoType
-     */
+    /** 仓库类型。 支持私人令牌授权的仓库类型有：github、gitlab、gitee。
+     * 
+     * @return repoType */
     public RepoTypeEnum getRepoType() {
         return repoType;
     }
@@ -138,27 +115,23 @@ public class CreatePersonalAuthRequest  {
         this.repoType = repoType;
     }
 
-    
-
     public CreatePersonalAuthRequest withBody(AccessToken body) {
         this.body = body;
         return this;
     }
 
     public CreatePersonalAuthRequest withBody(Consumer<AccessToken> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new AccessToken();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public AccessToken getBody() {
         return body;
     }
@@ -166,8 +139,6 @@ public class CreatePersonalAuthRequest  {
     public void setBody(AccessToken body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -178,13 +149,15 @@ public class CreatePersonalAuthRequest  {
             return false;
         }
         CreatePersonalAuthRequest createPersonalAuthRequest = (CreatePersonalAuthRequest) o;
-        return Objects.equals(this.repoType, createPersonalAuthRequest.repoType) &&
-            Objects.equals(this.body, createPersonalAuthRequest.body);
+        return Objects.equals(this.repoType, createPersonalAuthRequest.repoType)
+            && Objects.equals(this.body, createPersonalAuthRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(repoType, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -194,16 +167,13 @@ public class CreatePersonalAuthRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

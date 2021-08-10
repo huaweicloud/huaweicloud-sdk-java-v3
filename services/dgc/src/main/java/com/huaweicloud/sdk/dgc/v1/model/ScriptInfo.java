@@ -1,67 +1,43 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * ScriptInfo
- */
-public class ScriptInfo  {
-
-
+/** ScriptInfo */
+public class ScriptInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 脚本类型
-     */
+
+    /** 脚本类型 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum FLINKSQL for value: "FlinkSQL"
-         */
+        /** Enum FLINKSQL for value: "FlinkSQL" */
         public static final TypeEnum FLINKSQL = new TypeEnum("FlinkSQL");
-        
-        /**
-         * Enum DLISQL for value: "DLISQL"
-         */
+
+        /** Enum DLISQL for value: "DLISQL" */
         public static final TypeEnum DLISQL = new TypeEnum("DLISQL");
-        
-        /**
-         * Enum SPARKSQL for value: "SparkSQL"
-         */
+
+        /** Enum SPARKSQL for value: "SparkSQL" */
         public static final TypeEnum SPARKSQL = new TypeEnum("SparkSQL");
-        
-        /**
-         * Enum HIVESQL for value: "HiveSQL"
-         */
+
+        /** Enum HIVESQL for value: "HiveSQL" */
         public static final TypeEnum HIVESQL = new TypeEnum("HiveSQL");
-        
-        /**
-         * Enum DWSSQL for value: "DWSSQL"
-         */
+
+        /** Enum DWSSQL for value: "DWSSQL" */
         public static final TypeEnum DWSSQL = new TypeEnum("DWSSQL");
-        
-        /**
-         * Enum SHELL for value: "Shell"
-         */
+
+        /** Enum SHELL for value: "Shell" */
         public static final TypeEnum SHELL = new TypeEnum("Shell");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -94,7 +70,7 @@ public class ScriptInfo  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -105,7 +81,7 @@ public class ScriptInfo  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -129,46 +105,39 @@ public class ScriptInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="directory")
-    
+    @JsonProperty(value = "directory")
+
     private String directory;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content")
-    
+    @JsonProperty(value = "content")
+
     private String content;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="connectionName")
-    
+    @JsonProperty(value = "connectionName")
+
     private String connectionName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="database")
-    
+    @JsonProperty(value = "database")
+
     private String database;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="queueName")
-    
+    @JsonProperty(value = "queueName")
+
     private String queueName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="configuration")
-    
+    @JsonProperty(value = "configuration")
+
     private String _configuration;
 
     public ScriptInfo withName(String name) {
@@ -176,13 +145,9 @@ public class ScriptInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * Get name
-     * @return name
-     */
+    /** Get name
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -191,20 +156,14 @@ public class ScriptInfo  {
         this.name = name;
     }
 
-    
-
     public ScriptInfo withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 脚本类型
-     * @return type
-     */
+    /** 脚本类型
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -213,20 +172,14 @@ public class ScriptInfo  {
         this.type = type;
     }
 
-    
-
     public ScriptInfo withDirectory(String directory) {
         this.directory = directory;
         return this;
     }
 
-    
-
-
-    /**
-     * 脚本关联的目录
-     * @return directory
-     */
+    /** 脚本关联的目录
+     * 
+     * @return directory */
     public String getDirectory() {
         return directory;
     }
@@ -235,20 +188,14 @@ public class ScriptInfo  {
         this.directory = directory;
     }
 
-    
-
     public ScriptInfo withContent(String content) {
         this.content = content;
         return this;
     }
 
-    
-
-
-    /**
-     * 脚本内容
-     * @return content
-     */
+    /** 脚本内容
+     * 
+     * @return content */
     public String getContent() {
         return content;
     }
@@ -257,20 +204,14 @@ public class ScriptInfo  {
         this.content = content;
     }
 
-    
-
     public ScriptInfo withConnectionName(String connectionName) {
         this.connectionName = connectionName;
         return this;
     }
 
-    
-
-
-    /**
-     * 脚本关联的连接名称
-     * @return connectionName
-     */
+    /** 脚本关联的连接名称
+     * 
+     * @return connectionName */
     public String getConnectionName() {
         return connectionName;
     }
@@ -279,20 +220,14 @@ public class ScriptInfo  {
         this.connectionName = connectionName;
     }
 
-    
-
     public ScriptInfo withDatabase(String database) {
         this.database = database;
         return this;
     }
 
-    
-
-
-    /**
-     * 脚本执行所在的数据库
-     * @return database
-     */
+    /** 脚本执行所在的数据库
+     * 
+     * @return database */
     public String getDatabase() {
         return database;
     }
@@ -301,20 +236,14 @@ public class ScriptInfo  {
         this.database = database;
     }
 
-    
-
     public ScriptInfo withQueueName(String queueName) {
         this.queueName = queueName;
         return this;
     }
 
-    
-
-
-    /**
-     * 脚本关联的DLI队列名称
-     * @return queueName
-     */
+    /** 脚本关联的DLI队列名称
+     * 
+     * @return queueName */
     public String getQueueName() {
         return queueName;
     }
@@ -323,20 +252,14 @@ public class ScriptInfo  {
         this.queueName = queueName;
     }
 
-    
-
     public ScriptInfo withConfiguration(String _configuration) {
         this._configuration = _configuration;
         return this;
     }
 
-    
-
-
-    /**
-     * 脚本的配置项参数
-     * @return _configuration
-     */
+    /** 脚本的配置项参数
+     * 
+     * @return _configuration */
     public String getConfiguration() {
         return _configuration;
     }
@@ -344,8 +267,6 @@ public class ScriptInfo  {
     public void setConfiguration(String _configuration) {
         this._configuration = _configuration;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -356,19 +277,19 @@ public class ScriptInfo  {
             return false;
         }
         ScriptInfo scriptInfo = (ScriptInfo) o;
-        return Objects.equals(this.name, scriptInfo.name) &&
-            Objects.equals(this.type, scriptInfo.type) &&
-            Objects.equals(this.directory, scriptInfo.directory) &&
-            Objects.equals(this.content, scriptInfo.content) &&
-            Objects.equals(this.connectionName, scriptInfo.connectionName) &&
-            Objects.equals(this.database, scriptInfo.database) &&
-            Objects.equals(this.queueName, scriptInfo.queueName) &&
-            Objects.equals(this._configuration, scriptInfo._configuration);
+        return Objects.equals(this.name, scriptInfo.name) && Objects.equals(this.type, scriptInfo.type)
+            && Objects.equals(this.directory, scriptInfo.directory) && Objects.equals(this.content, scriptInfo.content)
+            && Objects.equals(this.connectionName, scriptInfo.connectionName)
+            && Objects.equals(this.database, scriptInfo.database)
+            && Objects.equals(this.queueName, scriptInfo.queueName)
+            && Objects.equals(this._configuration, scriptInfo._configuration);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, type, directory, content, connectionName, database, queueName, _configuration);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -384,16 +305,13 @@ public class ScriptInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

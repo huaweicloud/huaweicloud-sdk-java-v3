@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * TopUrlSummary
- */
-public class TopUrlSummary  {
-
-
+/** TopUrlSummary */
+public class TopUrlSummary {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private String url;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private Long value;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private Long startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private Long endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stat_type")
-    
+    @JsonProperty(value = "stat_type")
+
     private String statType;
 
     public TopUrlSummary withUrl(String url) {
@@ -52,13 +38,9 @@ public class TopUrlSummary  {
         return this;
     }
 
-    
-
-
-    /**
-     * URL名称。
-     * @return url
-     */
+    /** URL名称。
+     * 
+     * @return url */
     public String getUrl() {
         return url;
     }
@@ -67,20 +49,14 @@ public class TopUrlSummary  {
         this.url = url;
     }
 
-    
-
     public TopUrlSummary withValue(Long value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 对应查询类型的值。（流量单位：Byte）
-     * @return value
-     */
+    /** 对应查询类型的值。（流量单位：Byte）
+     * 
+     * @return value */
     public Long getValue() {
         return value;
     }
@@ -89,20 +65,14 @@ public class TopUrlSummary  {
         this.value = value;
     }
 
-    
-
     public TopUrlSummary withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询起始时间戳。
-     * @return startTime
-     */
+    /** 查询起始时间戳。
+     * 
+     * @return startTime */
     public Long getStartTime() {
         return startTime;
     }
@@ -111,20 +81,14 @@ public class TopUrlSummary  {
         this.startTime = startTime;
     }
 
-    
-
     public TopUrlSummary withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询结束时间戳
-     * @return endTime
-     */
+    /** 查询结束时间戳
+     * 
+     * @return endTime */
     public Long getEndTime() {
         return endTime;
     }
@@ -133,20 +97,14 @@ public class TopUrlSummary  {
         this.endTime = endTime;
     }
 
-    
-
     public TopUrlSummary withStatType(String statType) {
         this.statType = statType;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数类型支持：flux(流量)，bw(带宽),req_num(请求总数)。
-     * @return statType
-     */
+    /** 参数类型支持：flux(流量)，bw(带宽),req_num(请求总数)。
+     * 
+     * @return statType */
     public String getStatType() {
         return statType;
     }
@@ -154,8 +112,6 @@ public class TopUrlSummary  {
     public void setStatType(String statType) {
         this.statType = statType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,17 @@ public class TopUrlSummary  {
             return false;
         }
         TopUrlSummary topUrlSummary = (TopUrlSummary) o;
-        return Objects.equals(this.url, topUrlSummary.url) &&
-            Objects.equals(this.value, topUrlSummary.value) &&
-            Objects.equals(this.startTime, topUrlSummary.startTime) &&
-            Objects.equals(this.endTime, topUrlSummary.endTime) &&
-            Objects.equals(this.statType, topUrlSummary.statType);
+        return Objects.equals(this.url, topUrlSummary.url) && Objects.equals(this.value, topUrlSummary.value)
+            && Objects.equals(this.startTime, topUrlSummary.startTime)
+            && Objects.equals(this.endTime, topUrlSummary.endTime)
+            && Objects.equals(this.statType, topUrlSummary.statType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(url, value, startTime, endTime, statType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +145,13 @@ public class TopUrlSummary  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

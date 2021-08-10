@@ -1,92 +1,71 @@
 package com.huaweicloud.sdk.dms.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ListQueuesRespQueues
- */
-public class ListQueuesRespQueues  {
-
-
+/** ListQueuesRespQueues */
+public class ListQueuesRespQueues {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
+    @JsonProperty(value = "created")
+
     private Long created;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="queue_mode")
-    
+    @JsonProperty(value = "queue_mode")
+
     private String queueMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="reservation")
-    
+    @JsonProperty(value = "reservation")
+
     private Integer reservation;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_msg_size_byte")
-    
+    @JsonProperty(value = "max_msg_size_byte")
+
     private Integer maxMsgSizeByte;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="produced_messages")
-    
+    @JsonProperty(value = "produced_messages")
+
     private Integer producedMessages;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="redrive_policy")
-    
+    @JsonProperty(value = "redrive_policy")
+
     private String redrivePolicy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_consume_count")
-    
+    @JsonProperty(value = "max_consume_count")
+
     private Integer maxConsumeCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_count")
-    
+    @JsonProperty(value = "group_count")
+
     private Integer groupCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="eff_date")
-    
+    @JsonProperty(value = "eff_date")
+
     private Long effDate;
 
     public ListQueuesRespQueues withId(String id) {
@@ -94,13 +73,9 @@ public class ListQueuesRespQueues  {
         return this;
     }
 
-    
-
-
-    /**
-     * 队列ID。
-     * @return id
-     */
+    /** 队列ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -109,20 +84,14 @@ public class ListQueuesRespQueues  {
         this.id = id;
     }
 
-    
-
     public ListQueuesRespQueues withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 队列的名称。
-     * @return name
-     */
+    /** 队列的名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -131,20 +100,14 @@ public class ListQueuesRespQueues  {
         this.name = name;
     }
 
-    
-
     public ListQueuesRespQueues withCreated(Long created) {
         this.created = created;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建队列的时间。
-     * @return created
-     */
+    /** 创建队列的时间。
+     * 
+     * @return created */
     public Long getCreated() {
         return created;
     }
@@ -153,20 +116,14 @@ public class ListQueuesRespQueues  {
         this.created = created;
     }
 
-    
-
     public ListQueuesRespQueues withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 队列的描述信息。
-     * @return description
-     */
+    /** 队列的描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -175,20 +132,14 @@ public class ListQueuesRespQueues  {
         this.description = description;
     }
 
-    
-
     public ListQueuesRespQueues withQueueMode(String queueMode) {
         this.queueMode = queueMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 队列类型。
-     * @return queueMode
-     */
+    /** 队列类型。
+     * 
+     * @return queueMode */
     public String getQueueMode() {
         return queueMode;
     }
@@ -197,20 +148,14 @@ public class ListQueuesRespQueues  {
         this.queueMode = queueMode;
     }
 
-    
-
     public ListQueuesRespQueues withReservation(Integer reservation) {
         this.reservation = reservation;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息在队列中允许保留的时长（单位分钟）。
-     * @return reservation
-     */
+    /** 消息在队列中允许保留的时长（单位分钟）。
+     * 
+     * @return reservation */
     public Integer getReservation() {
         return reservation;
     }
@@ -219,20 +164,14 @@ public class ListQueuesRespQueues  {
         this.reservation = reservation;
     }
 
-    
-
     public ListQueuesRespQueues withMaxMsgSizeByte(Integer maxMsgSizeByte) {
         this.maxMsgSizeByte = maxMsgSizeByte;
         return this;
     }
 
-    
-
-
-    /**
-     * 队列中允许的最大消息大小（单位Byte）。
-     * @return maxMsgSizeByte
-     */
+    /** 队列中允许的最大消息大小（单位Byte）。
+     * 
+     * @return maxMsgSizeByte */
     public Integer getMaxMsgSizeByte() {
         return maxMsgSizeByte;
     }
@@ -241,20 +180,14 @@ public class ListQueuesRespQueues  {
         this.maxMsgSizeByte = maxMsgSizeByte;
     }
 
-    
-
     public ListQueuesRespQueues withProducedMessages(Integer producedMessages) {
         this.producedMessages = producedMessages;
         return this;
     }
 
-    
-
-
-    /**
-     * 队列的消息总数。
-     * @return producedMessages
-     */
+    /** 队列的消息总数。
+     * 
+     * @return producedMessages */
     public Integer getProducedMessages() {
         return producedMessages;
     }
@@ -263,20 +196,14 @@ public class ListQueuesRespQueues  {
         this.producedMessages = producedMessages;
     }
 
-    
-
     public ListQueuesRespQueues withRedrivePolicy(String redrivePolicy) {
         this.redrivePolicy = redrivePolicy;
         return this;
     }
 
-    
-
-
-    /**
-     * 该队列是否开启死信消息。仅当include_deadletter为true时，才有该响应参数。 - enable：表示开启。 - disable：表示不开启。
-     * @return redrivePolicy
-     */
+    /** 该队列是否开启死信消息。仅当include_deadletter为true时，才有该响应参数。 - enable：表示开启。 - disable：表示不开启。
+     * 
+     * @return redrivePolicy */
     public String getRedrivePolicy() {
         return redrivePolicy;
     }
@@ -285,20 +212,14 @@ public class ListQueuesRespQueues  {
         this.redrivePolicy = redrivePolicy;
     }
 
-    
-
     public ListQueuesRespQueues withMaxConsumeCount(Integer maxConsumeCount) {
         this.maxConsumeCount = maxConsumeCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 最大确认消费失败的次数，当达到最大确认失败次数后，DMS会将该条消息转存到死信队列中。  仅当include_deadletter为true时，才有该响应参数。
-     * @return maxConsumeCount
-     */
+    /** 最大确认消费失败的次数，当达到最大确认失败次数后，DMS会将该条消息转存到死信队列中。 仅当include_deadletter为true时，才有该响应参数。
+     * 
+     * @return maxConsumeCount */
     public Integer getMaxConsumeCount() {
         return maxConsumeCount;
     }
@@ -307,20 +228,14 @@ public class ListQueuesRespQueues  {
         this.maxConsumeCount = maxConsumeCount;
     }
 
-    
-
     public ListQueuesRespQueues withGroupCount(Integer groupCount) {
         this.groupCount = groupCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 该队列下的消费组数量。
-     * @return groupCount
-     */
+    /** 该队列下的消费组数量。
+     * 
+     * @return groupCount */
     public Integer getGroupCount() {
         return groupCount;
     }
@@ -329,20 +244,14 @@ public class ListQueuesRespQueues  {
         this.groupCount = groupCount;
     }
 
-    
-
     public ListQueuesRespQueues withEffDate(Long effDate) {
         this.effDate = effDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建队列的时间。
-     * @return effDate
-     */
+    /** 创建队列的时间。
+     * 
+     * @return effDate */
     public Long getEffDate() {
         return effDate;
     }
@@ -350,8 +259,6 @@ public class ListQueuesRespQueues  {
     public void setEffDate(Long effDate) {
         this.effDate = effDate;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -362,23 +269,35 @@ public class ListQueuesRespQueues  {
             return false;
         }
         ListQueuesRespQueues listQueuesRespQueues = (ListQueuesRespQueues) o;
-        return Objects.equals(this.id, listQueuesRespQueues.id) &&
-            Objects.equals(this.name, listQueuesRespQueues.name) &&
-            Objects.equals(this.created, listQueuesRespQueues.created) &&
-            Objects.equals(this.description, listQueuesRespQueues.description) &&
-            Objects.equals(this.queueMode, listQueuesRespQueues.queueMode) &&
-            Objects.equals(this.reservation, listQueuesRespQueues.reservation) &&
-            Objects.equals(this.maxMsgSizeByte, listQueuesRespQueues.maxMsgSizeByte) &&
-            Objects.equals(this.producedMessages, listQueuesRespQueues.producedMessages) &&
-            Objects.equals(this.redrivePolicy, listQueuesRespQueues.redrivePolicy) &&
-            Objects.equals(this.maxConsumeCount, listQueuesRespQueues.maxConsumeCount) &&
-            Objects.equals(this.groupCount, listQueuesRespQueues.groupCount) &&
-            Objects.equals(this.effDate, listQueuesRespQueues.effDate);
+        return Objects.equals(this.id, listQueuesRespQueues.id) && Objects.equals(this.name, listQueuesRespQueues.name)
+            && Objects.equals(this.created, listQueuesRespQueues.created)
+            && Objects.equals(this.description, listQueuesRespQueues.description)
+            && Objects.equals(this.queueMode, listQueuesRespQueues.queueMode)
+            && Objects.equals(this.reservation, listQueuesRespQueues.reservation)
+            && Objects.equals(this.maxMsgSizeByte, listQueuesRespQueues.maxMsgSizeByte)
+            && Objects.equals(this.producedMessages, listQueuesRespQueues.producedMessages)
+            && Objects.equals(this.redrivePolicy, listQueuesRespQueues.redrivePolicy)
+            && Objects.equals(this.maxConsumeCount, listQueuesRespQueues.maxConsumeCount)
+            && Objects.equals(this.groupCount, listQueuesRespQueues.groupCount)
+            && Objects.equals(this.effDate, listQueuesRespQueues.effDate);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, created, description, queueMode, reservation, maxMsgSizeByte, producedMessages, redrivePolicy, maxConsumeCount, groupCount, effDate);
+        return Objects.hash(id,
+            name,
+            created,
+            description,
+            queueMode,
+            reservation,
+            maxMsgSizeByte,
+            producedMessages,
+            redrivePolicy,
+            maxConsumeCount,
+            groupCount,
+            effDate);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -398,16 +317,13 @@ public class ListQueuesRespQueues  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

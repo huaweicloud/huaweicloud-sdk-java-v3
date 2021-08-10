@@ -1,34 +1,24 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 重启、清空实例数据的请求体
- */
-public class ChangeInstanceStatusBody  {
-
-
+/** 重启、清空实例数据的请求体 */
+public class ChangeInstanceStatusBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instances")
-    
+    @JsonProperty(value = "instances")
+
     private List<String> instances = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private String action;
 
     public ChangeInstanceStatusBody withInstances(List<String> instances) {
@@ -36,9 +26,8 @@ public class ChangeInstanceStatusBody  {
         return this;
     }
 
-    
     public ChangeInstanceStatusBody addInstancesItem(String instancesItem) {
-        if(this.instances == null) {
+        if (this.instances == null) {
             this.instances = new ArrayList<>();
         }
         this.instances.add(instancesItem);
@@ -46,17 +35,16 @@ public class ChangeInstanceStatusBody  {
     }
 
     public ChangeInstanceStatusBody withInstances(Consumer<List<String>> instancesSetter) {
-        if(this.instances == null) {
+        if (this.instances == null) {
             this.instances = new ArrayList<>();
         }
         instancesSetter.accept(this.instances);
         return this;
     }
 
-    /**
-     * 实例的ID列表。
-     * @return instances
-     */
+    /** 实例的ID列表。
+     * 
+     * @return instances */
     public List<String> getInstances() {
         return instances;
     }
@@ -65,20 +53,14 @@ public class ChangeInstanceStatusBody  {
         this.instances = instances;
     }
 
-    
-
     public ChangeInstanceStatusBody withAction(String action) {
         this.action = action;
         return this;
     }
 
-    
-
-
-    /**
-     * 对实例的操作：  restart: 强制重启  soft_restart: 软重启，只重启进程  flush: 清空数据 > 当前版本，只有Redis 4.0和Redis 5.0实例支持清空数据功能，即flush操作。 
-     * @return action
-     */
+    /** 对实例的操作： restart: 强制重启 soft_restart: 软重启，只重启进程 flush: 清空数据 > 当前版本，只有Redis 4.0和Redis 5.0实例支持清空数据功能，即flush操作。
+     * 
+     * @return action */
     public String getAction() {
         return action;
     }
@@ -86,8 +68,6 @@ public class ChangeInstanceStatusBody  {
     public void setAction(String action) {
         this.action = action;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -98,13 +78,15 @@ public class ChangeInstanceStatusBody  {
             return false;
         }
         ChangeInstanceStatusBody changeInstanceStatusBody = (ChangeInstanceStatusBody) o;
-        return Objects.equals(this.instances, changeInstanceStatusBody.instances) &&
-            Objects.equals(this.action, changeInstanceStatusBody.action);
+        return Objects.equals(this.instances, changeInstanceStatusBody.instances)
+            && Objects.equals(this.action, changeInstanceStatusBody.action);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instances, action);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,16 +96,13 @@ public class ChangeInstanceStatusBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

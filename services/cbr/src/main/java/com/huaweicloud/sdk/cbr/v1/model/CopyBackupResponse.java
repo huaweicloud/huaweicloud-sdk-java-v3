@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.BackupReplicateRespBody;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class CopyBackupResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replication")
-    
+    @JsonProperty(value = "replication")
+
     private BackupReplicateRespBody replication;
 
     public CopyBackupResponse withReplication(BackupReplicateRespBody replication) {
@@ -32,19 +21,17 @@ public class CopyBackupResponse extends SdkResponse {
     }
 
     public CopyBackupResponse withReplication(Consumer<BackupReplicateRespBody> replicationSetter) {
-        if(this.replication == null ){
+        if (this.replication == null) {
             this.replication = new BackupReplicateRespBody();
             replicationSetter.accept(this.replication);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get replication
-     * @return replication
-     */
+    /** Get replication
+     * 
+     * @return replication */
     public BackupReplicateRespBody getReplication() {
         return replication;
     }
@@ -52,8 +39,6 @@ public class CopyBackupResponse extends SdkResponse {
     public void setReplication(BackupReplicateRespBody replication) {
         this.replication = replication;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class CopyBackupResponse extends SdkResponse {
         CopyBackupResponse copyBackupResponse = (CopyBackupResponse) o;
         return Objects.equals(this.replication, copyBackupResponse.replication);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(replication);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class CopyBackupResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,111 +1,75 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.OpErrorInfo;
-import com.huaweicloud.sdk.cbr.v1.model.OpExtraInfo;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * OperationLog
- */
-public class OperationLog  {
-
-
+/** OperationLog */
+public class OperationLog {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="checkpoint_id")
-    
+    @JsonProperty(value = "checkpoint_id")
+
     private String checkpointId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ended_at")
-    
+    @JsonProperty(value = "ended_at")
+
     private String endedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_info")
-    
+    @JsonProperty(value = "error_info")
+
     private OpErrorInfo errorInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extra_info")
-    
+    @JsonProperty(value = "extra_info")
+
     private OpExtraInfo extraInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
-    /**
-     * 任务类型
-     */
+
+    /** 任务类型 */
     public static final class OperationTypeEnum {
 
-        
-        /**
-         * Enum BACKUP for value: "backup"
-         */
+        /** Enum BACKUP for value: "backup" */
         public static final OperationTypeEnum BACKUP = new OperationTypeEnum("backup");
-        
-        /**
-         * Enum COPY for value: "copy"
-         */
+
+        /** Enum COPY for value: "copy" */
         public static final OperationTypeEnum COPY = new OperationTypeEnum("copy");
-        
-        /**
-         * Enum REPLICATION for value: "replication"
-         */
+
+        /** Enum REPLICATION for value: "replication" */
         public static final OperationTypeEnum REPLICATION = new OperationTypeEnum("replication");
-        
-        /**
-         * Enum RESTORE for value: "restore"
-         */
+
+        /** Enum RESTORE for value: "restore" */
         public static final OperationTypeEnum RESTORE = new OperationTypeEnum("restore");
-        
-        /**
-         * Enum DELETE for value: "delete"
-         */
+
+        /** Enum DELETE for value: "delete" */
         public static final OperationTypeEnum DELETE = new OperationTypeEnum("delete");
-        
-        /**
-         * Enum SYNC for value: "sync"
-         */
+
+        /** Enum SYNC for value: "sync" */
         public static final OperationTypeEnum SYNC = new OperationTypeEnum("sync");
-        
-        /**
-         * Enum VAULT_DELETE for value: "vault_delete"
-         */
+
+        /** Enum VAULT_DELETE for value: "vault_delete" */
         public static final OperationTypeEnum VAULT_DELETE = new OperationTypeEnum("vault_delete");
-        
-        /**
-         * Enum REMOVE_RESOURCE for value: "remove_resource"
-         */
+
+        /** Enum REMOVE_RESOURCE for value: "remove_resource" */
         public static final OperationTypeEnum REMOVE_RESOURCE = new OperationTypeEnum("remove_resource");
-        
 
         private static final Map<String, OperationTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -140,7 +104,7 @@ public class OperationLog  {
 
         @JsonCreator
         public static OperationTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OperationTypeEnum result = STATIC_FIELDS.get(value);
@@ -151,7 +115,7 @@ public class OperationLog  {
         }
 
         public static OperationTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OperationTypeEnum result = STATIC_FIELDS.get(value);
@@ -175,71 +139,51 @@ public class OperationLog  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operation_type")
-    
+    @JsonProperty(value = "operation_type")
+
     private OperationTypeEnum operationType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_id")
-    
+    @JsonProperty(value = "policy_id")
+
     private String policyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provider_id")
-    
+    @JsonProperty(value = "provider_id")
+
     private String providerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="started_at")
-    
+    @JsonProperty(value = "started_at")
+
     private String startedAt;
-    /**
-     * 任务状态
-     */
+
+    /** 任务状态 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum SUCCESS for value: "success"
-         */
+        /** Enum SUCCESS for value: "success" */
         public static final StatusEnum SUCCESS = new StatusEnum("success");
-        
-        /**
-         * Enum SKIPPED for value: "skipped"
-         */
+
+        /** Enum SKIPPED for value: "skipped" */
         public static final StatusEnum SKIPPED = new StatusEnum("skipped");
-        
-        /**
-         * Enum FAILED for value: "failed"
-         */
+
+        /** Enum FAILED for value: "failed" */
         public static final StatusEnum FAILED = new StatusEnum("failed");
-        
-        /**
-         * Enum RUNNING for value: "running"
-         */
+
+        /** Enum RUNNING for value: "running" */
         public static final StatusEnum RUNNING = new StatusEnum("running");
-        
-        /**
-         * Enum TIMEOUT for value: "timeout"
-         */
+
+        /** Enum TIMEOUT for value: "timeout" */
         public static final StatusEnum TIMEOUT = new StatusEnum("timeout");
-        
-        /**
-         * Enum WAITING for value: "waiting"
-         */
+
+        /** Enum WAITING for value: "waiting" */
         public static final StatusEnum WAITING = new StatusEnum("waiting");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -272,7 +216,7 @@ public class OperationLog  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -283,7 +227,7 @@ public class OperationLog  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -307,28 +251,24 @@ public class OperationLog  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private String updatedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vault_id")
-    
+    @JsonProperty(value = "vault_id")
+
     private String vaultId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vault_name")
-    
+    @JsonProperty(value = "vault_name")
+
     private String vaultName;
 
     public OperationLog withCheckpointId(String checkpointId) {
@@ -336,13 +276,9 @@ public class OperationLog  {
         return this;
     }
 
-    
-
-
-    /**
-     * 备份记录id
-     * @return checkpointId
-     */
+    /** 备份记录id
+     * 
+     * @return checkpointId */
     public String getCheckpointId() {
         return checkpointId;
     }
@@ -351,20 +287,14 @@ public class OperationLog  {
         this.checkpointId = checkpointId;
     }
 
-    
-
     public OperationLog withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间,例如: \"2020-02-23T01:00:32Z\"
-     * @return createdAt
-     */
+    /** 创建时间,例如: \"2020-02-23T01:00:32Z\"
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -373,20 +303,14 @@ public class OperationLog  {
         this.createdAt = createdAt;
     }
 
-    
-
     public OperationLog withEndedAt(String endedAt) {
         this.endedAt = endedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务结束时间,例如: \"2020-02-23T01:00:32Z\"
-     * @return endedAt
-     */
+    /** 任务结束时间,例如: \"2020-02-23T01:00:32Z\"
+     * 
+     * @return endedAt */
     public String getEndedAt() {
         return endedAt;
     }
@@ -395,27 +319,23 @@ public class OperationLog  {
         this.endedAt = endedAt;
     }
 
-    
-
     public OperationLog withErrorInfo(OpErrorInfo errorInfo) {
         this.errorInfo = errorInfo;
         return this;
     }
 
     public OperationLog withErrorInfo(Consumer<OpErrorInfo> errorInfoSetter) {
-        if(this.errorInfo == null ){
+        if (this.errorInfo == null) {
             this.errorInfo = new OpErrorInfo();
             errorInfoSetter.accept(this.errorInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get errorInfo
-     * @return errorInfo
-     */
+    /** Get errorInfo
+     * 
+     * @return errorInfo */
     public OpErrorInfo getErrorInfo() {
         return errorInfo;
     }
@@ -424,27 +344,23 @@ public class OperationLog  {
         this.errorInfo = errorInfo;
     }
 
-    
-
     public OperationLog withExtraInfo(OpExtraInfo extraInfo) {
         this.extraInfo = extraInfo;
         return this;
     }
 
     public OperationLog withExtraInfo(Consumer<OpExtraInfo> extraInfoSetter) {
-        if(this.extraInfo == null ){
+        if (this.extraInfo == null) {
             this.extraInfo = new OpExtraInfo();
             extraInfoSetter.accept(this.extraInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get extraInfo
-     * @return extraInfo
-     */
+    /** Get extraInfo
+     * 
+     * @return extraInfo */
     public OpExtraInfo getExtraInfo() {
         return extraInfo;
     }
@@ -453,20 +369,14 @@ public class OperationLog  {
         this.extraInfo = extraInfo;
     }
 
-    
-
     public OperationLog withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务id
-     * @return id
-     */
+    /** 任务id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -475,20 +385,14 @@ public class OperationLog  {
         this.id = id;
     }
 
-    
-
     public OperationLog withOperationType(OperationTypeEnum operationType) {
         this.operationType = operationType;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务类型
-     * @return operationType
-     */
+    /** 任务类型
+     * 
+     * @return operationType */
     public OperationTypeEnum getOperationType() {
         return operationType;
     }
@@ -497,20 +401,14 @@ public class OperationLog  {
         this.operationType = operationType;
     }
 
-    
-
     public OperationLog withPolicyId(String policyId) {
         this.policyId = policyId;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略ID
-     * @return policyId
-     */
+    /** 策略ID
+     * 
+     * @return policyId */
     public String getPolicyId() {
         return policyId;
     }
@@ -519,20 +417,14 @@ public class OperationLog  {
         this.policyId = policyId;
     }
 
-    
-
     public OperationLog withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目ID
-     * @return projectId
-     */
+    /** 项目ID
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -541,20 +433,14 @@ public class OperationLog  {
         this.projectId = projectId;
     }
 
-    
-
     public OperationLog withProviderId(String providerId) {
         this.providerId = providerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份提供商ID。用于区分备份对象。
-     * @return providerId
-     */
+    /** 备份提供商ID。用于区分备份对象。
+     * 
+     * @return providerId */
     public String getProviderId() {
         return providerId;
     }
@@ -563,20 +449,14 @@ public class OperationLog  {
         this.providerId = providerId;
     }
 
-    
-
     public OperationLog withStartedAt(String startedAt) {
         this.startedAt = startedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务开始时间,例如: \"2020-02-23T01:00:32Z\"
-     * @return startedAt
-     */
+    /** 任务开始时间,例如: \"2020-02-23T01:00:32Z\"
+     * 
+     * @return startedAt */
     public String getStartedAt() {
         return startedAt;
     }
@@ -585,20 +465,14 @@ public class OperationLog  {
         this.startedAt = startedAt;
     }
 
-    
-
     public OperationLog withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务状态
-     * @return status
-     */
+    /** 任务状态
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -607,20 +481,14 @@ public class OperationLog  {
         this.status = status;
     }
 
-    
-
     public OperationLog withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 修改时间,例如: \"2020-02-23T01:00:32Z\"
-     * @return updatedAt
-     */
+    /** 修改时间,例如: \"2020-02-23T01:00:32Z\"
+     * 
+     * @return updatedAt */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -629,20 +497,14 @@ public class OperationLog  {
         this.updatedAt = updatedAt;
     }
 
-    
-
     public OperationLog withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务操作资源所属存储库ID
-     * @return vaultId
-     */
+    /** 任务操作资源所属存储库ID
+     * 
+     * @return vaultId */
     public String getVaultId() {
         return vaultId;
     }
@@ -651,20 +513,14 @@ public class OperationLog  {
         this.vaultId = vaultId;
     }
 
-    
-
     public OperationLog withVaultName(String vaultName) {
         this.vaultName = vaultName;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务操作资源所属存储库名称
-     * @return vaultName
-     */
+    /** 任务操作资源所属存储库名称
+     * 
+     * @return vaultName */
     public String getVaultName() {
         return vaultName;
     }
@@ -672,8 +528,6 @@ public class OperationLog  {
     public void setVaultName(String vaultName) {
         this.vaultName = vaultName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -684,26 +538,41 @@ public class OperationLog  {
             return false;
         }
         OperationLog operationLog = (OperationLog) o;
-        return Objects.equals(this.checkpointId, operationLog.checkpointId) &&
-            Objects.equals(this.createdAt, operationLog.createdAt) &&
-            Objects.equals(this.endedAt, operationLog.endedAt) &&
-            Objects.equals(this.errorInfo, operationLog.errorInfo) &&
-            Objects.equals(this.extraInfo, operationLog.extraInfo) &&
-            Objects.equals(this.id, operationLog.id) &&
-            Objects.equals(this.operationType, operationLog.operationType) &&
-            Objects.equals(this.policyId, operationLog.policyId) &&
-            Objects.equals(this.projectId, operationLog.projectId) &&
-            Objects.equals(this.providerId, operationLog.providerId) &&
-            Objects.equals(this.startedAt, operationLog.startedAt) &&
-            Objects.equals(this.status, operationLog.status) &&
-            Objects.equals(this.updatedAt, operationLog.updatedAt) &&
-            Objects.equals(this.vaultId, operationLog.vaultId) &&
-            Objects.equals(this.vaultName, operationLog.vaultName);
+        return Objects.equals(this.checkpointId, operationLog.checkpointId)
+            && Objects.equals(this.createdAt, operationLog.createdAt)
+            && Objects.equals(this.endedAt, operationLog.endedAt)
+            && Objects.equals(this.errorInfo, operationLog.errorInfo)
+            && Objects.equals(this.extraInfo, operationLog.extraInfo) && Objects.equals(this.id, operationLog.id)
+            && Objects.equals(this.operationType, operationLog.operationType)
+            && Objects.equals(this.policyId, operationLog.policyId)
+            && Objects.equals(this.projectId, operationLog.projectId)
+            && Objects.equals(this.providerId, operationLog.providerId)
+            && Objects.equals(this.startedAt, operationLog.startedAt)
+            && Objects.equals(this.status, operationLog.status)
+            && Objects.equals(this.updatedAt, operationLog.updatedAt)
+            && Objects.equals(this.vaultId, operationLog.vaultId)
+            && Objects.equals(this.vaultName, operationLog.vaultName);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(checkpointId, createdAt, endedAt, errorInfo, extraInfo, id, operationType, policyId, projectId, providerId, startedAt, status, updatedAt, vaultId, vaultName);
+        return Objects.hash(checkpointId,
+            createdAt,
+            endedAt,
+            errorInfo,
+            extraInfo,
+            id,
+            operationType,
+            policyId,
+            projectId,
+            providerId,
+            startedAt,
+            status,
+            updatedAt,
+            vaultId,
+            vaultName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -726,16 +595,13 @@ public class OperationLog  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

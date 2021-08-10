@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowMetadataRequest  {
-
-
+/** Request Object */
+public class ShowMetadataRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="idp_id")
-    
+    @JsonProperty(value = "idp_id")
+
     private String idpId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol_id")
-    
+    @JsonProperty(value = "protocol_id")
+
     private String protocolId;
 
     public ShowMetadataRequest withIdpId(String idpId) {
@@ -34,13 +23,9 @@ public class ShowMetadataRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 身份提供商ID。
-     * @return idpId
-     */
+    /** 身份提供商ID。
+     * 
+     * @return idpId */
     public String getIdpId() {
         return idpId;
     }
@@ -49,20 +34,14 @@ public class ShowMetadataRequest  {
         this.idpId = idpId;
     }
 
-    
-
     public ShowMetadataRequest withProtocolId(String protocolId) {
         this.protocolId = protocolId;
         return this;
     }
 
-    
-
-
-    /**
-     * 协议ID。
-     * @return protocolId
-     */
+    /** 协议ID。
+     * 
+     * @return protocolId */
     public String getProtocolId() {
         return protocolId;
     }
@@ -70,8 +49,6 @@ public class ShowMetadataRequest  {
     public void setProtocolId(String protocolId) {
         this.protocolId = protocolId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class ShowMetadataRequest  {
             return false;
         }
         ShowMetadataRequest showMetadataRequest = (ShowMetadataRequest) o;
-        return Objects.equals(this.idpId, showMetadataRequest.idpId) &&
-            Objects.equals(this.protocolId, showMetadataRequest.protocolId);
+        return Objects.equals(this.idpId, showMetadataRequest.idpId)
+            && Objects.equals(this.protocolId, showMetadataRequest.protocolId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(idpId, protocolId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class ShowMetadataRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

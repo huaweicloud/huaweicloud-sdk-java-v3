@@ -1,81 +1,50 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dcs.v2.model.ConclusionItem;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 诊断项
- */
-public class DiagnosisItem  {
+/** 诊断项 */
+public class DiagnosisItem {
 
-    /**
-     * 诊断项名称
-     */
+    /** 诊断项名称 */
     public static final class NameEnum {
 
-        
-        /**
-         * Enum CONNECTION_NUM for value: "connection_num"
-         */
+        /** Enum CONNECTION_NUM for value: "connection_num" */
         public static final NameEnum CONNECTION_NUM = new NameEnum("connection_num");
-        
-        /**
-         * Enum RX_CONTROLLED for value: "rx_controlled"
-         */
+
+        /** Enum RX_CONTROLLED for value: "rx_controlled" */
         public static final NameEnum RX_CONTROLLED = new NameEnum("rx_controlled");
-        
-        /**
-         * Enum PERSISTENCE for value: "persistence"
-         */
+
+        /** Enum PERSISTENCE for value: "persistence" */
         public static final NameEnum PERSISTENCE = new NameEnum("persistence");
-        
-        /**
-         * Enum CENTRALIZED_EXPIRATION for value: "centralized_expiration"
-         */
+
+        /** Enum CENTRALIZED_EXPIRATION for value: "centralized_expiration" */
         public static final NameEnum CENTRALIZED_EXPIRATION = new NameEnum("centralized_expiration");
-        
-        /**
-         * Enum INNER_MEMORY_FRAGMENTATION for value: "inner_memory_fragmentation"
-         */
+
+        /** Enum INNER_MEMORY_FRAGMENTATION for value: "inner_memory_fragmentation" */
         public static final NameEnum INNER_MEMORY_FRAGMENTATION = new NameEnum("inner_memory_fragmentation");
-        
-        /**
-         * Enum TIME_CONSUMING_COMMANDS for value: "time_consuming_commands"
-         */
+
+        /** Enum TIME_CONSUMING_COMMANDS for value: "time_consuming_commands" */
         public static final NameEnum TIME_CONSUMING_COMMANDS = new NameEnum("time_consuming_commands");
-        
-        /**
-         * Enum HIT_RATIO for value: "hit_ratio"
-         */
+
+        /** Enum HIT_RATIO for value: "hit_ratio" */
         public static final NameEnum HIT_RATIO = new NameEnum("hit_ratio");
-        
-        /**
-         * Enum MEMORY_USAGE for value: "memory_usage"
-         */
+
+        /** Enum MEMORY_USAGE for value: "memory_usage" */
         public static final NameEnum MEMORY_USAGE = new NameEnum("memory_usage");
-        
-        /**
-         * Enum CPU_USAGE for value: "cpu_usage"
-         */
+
+        /** Enum CPU_USAGE for value: "cpu_usage" */
         public static final NameEnum CPU_USAGE = new NameEnum("cpu_usage");
-        
 
         private static final Map<String, NameEnum> STATIC_FIELDS = createStaticFields();
 
@@ -111,7 +80,7 @@ public class DiagnosisItem  {
 
         @JsonCreator
         public static NameEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             NameEnum result = STATIC_FIELDS.get(value);
@@ -122,7 +91,7 @@ public class DiagnosisItem  {
         }
 
         public static NameEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             NameEnum result = STATIC_FIELDS.get(value);
@@ -146,50 +115,37 @@ public class DiagnosisItem  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private NameEnum name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cause_ids")
-    
+    @JsonProperty(value = "cause_ids")
+
     private List<ConclusionItem> causeIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="impact_ids")
-    
+    @JsonProperty(value = "impact_ids")
+
     private List<ConclusionItem> impactIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="advice_ids")
-    
+    @JsonProperty(value = "advice_ids")
+
     private List<ConclusionItem> adviceIds = null;
-        /**
-     * 诊断结果
-     */
+
+    /** 诊断结果 */
     public static final class ResultEnum {
 
-        
-        /**
-         * Enum FAILED for value: "failed"
-         */
+        /** Enum FAILED for value: "failed" */
         public static final ResultEnum FAILED = new ResultEnum("failed");
-        
-        /**
-         * Enum ABNORMAL for value: "abnormal"
-         */
+
+        /** Enum ABNORMAL for value: "abnormal" */
         public static final ResultEnum ABNORMAL = new ResultEnum("abnormal");
-        
-        /**
-         * Enum NORMAL for value: "normal"
-         */
+
+        /** Enum NORMAL for value: "normal" */
         public static final ResultEnum NORMAL = new ResultEnum("normal");
-        
 
         private static final Map<String, ResultEnum> STATIC_FIELDS = createStaticFields();
 
@@ -219,7 +175,7 @@ public class DiagnosisItem  {
 
         @JsonCreator
         public static ResultEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ResultEnum result = STATIC_FIELDS.get(value);
@@ -230,7 +186,7 @@ public class DiagnosisItem  {
         }
 
         public static ResultEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ResultEnum result = STATIC_FIELDS.get(value);
@@ -254,10 +210,9 @@ public class DiagnosisItem  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="result")
-    
+    @JsonProperty(value = "result")
+
     private ResultEnum result;
 
     public DiagnosisItem withName(NameEnum name) {
@@ -265,13 +220,9 @@ public class DiagnosisItem  {
         return this;
     }
 
-    
-
-
-    /**
-     * 诊断项名称
-     * @return name
-     */
+    /** 诊断项名称
+     * 
+     * @return name */
     public NameEnum getName() {
         return name;
     }
@@ -280,16 +231,13 @@ public class DiagnosisItem  {
         this.name = name;
     }
 
-    
-
     public DiagnosisItem withCauseIds(List<ConclusionItem> causeIds) {
         this.causeIds = causeIds;
         return this;
     }
 
-    
     public DiagnosisItem addCauseIdsItem(ConclusionItem causeIdsItem) {
-        if(this.causeIds == null) {
+        if (this.causeIds == null) {
             this.causeIds = new ArrayList<>();
         }
         this.causeIds.add(causeIdsItem);
@@ -297,17 +245,16 @@ public class DiagnosisItem  {
     }
 
     public DiagnosisItem withCauseIds(Consumer<List<ConclusionItem>> causeIdsSetter) {
-        if(this.causeIds == null) {
+        if (this.causeIds == null) {
             this.causeIds = new ArrayList<>();
         }
         causeIdsSetter.accept(this.causeIds);
         return this;
     }
 
-    /**
-     * 原因ID列表
-     * @return causeIds
-     */
+    /** 原因ID列表
+     * 
+     * @return causeIds */
     public List<ConclusionItem> getCauseIds() {
         return causeIds;
     }
@@ -316,16 +263,13 @@ public class DiagnosisItem  {
         this.causeIds = causeIds;
     }
 
-    
-
     public DiagnosisItem withImpactIds(List<ConclusionItem> impactIds) {
         this.impactIds = impactIds;
         return this;
     }
 
-    
     public DiagnosisItem addImpactIdsItem(ConclusionItem impactIdsItem) {
-        if(this.impactIds == null) {
+        if (this.impactIds == null) {
             this.impactIds = new ArrayList<>();
         }
         this.impactIds.add(impactIdsItem);
@@ -333,17 +277,16 @@ public class DiagnosisItem  {
     }
 
     public DiagnosisItem withImpactIds(Consumer<List<ConclusionItem>> impactIdsSetter) {
-        if(this.impactIds == null) {
+        if (this.impactIds == null) {
             this.impactIds = new ArrayList<>();
         }
         impactIdsSetter.accept(this.impactIds);
         return this;
     }
 
-    /**
-     * 影响ID列表
-     * @return impactIds
-     */
+    /** 影响ID列表
+     * 
+     * @return impactIds */
     public List<ConclusionItem> getImpactIds() {
         return impactIds;
     }
@@ -352,16 +295,13 @@ public class DiagnosisItem  {
         this.impactIds = impactIds;
     }
 
-    
-
     public DiagnosisItem withAdviceIds(List<ConclusionItem> adviceIds) {
         this.adviceIds = adviceIds;
         return this;
     }
 
-    
     public DiagnosisItem addAdviceIdsItem(ConclusionItem adviceIdsItem) {
-        if(this.adviceIds == null) {
+        if (this.adviceIds == null) {
             this.adviceIds = new ArrayList<>();
         }
         this.adviceIds.add(adviceIdsItem);
@@ -369,17 +309,16 @@ public class DiagnosisItem  {
     }
 
     public DiagnosisItem withAdviceIds(Consumer<List<ConclusionItem>> adviceIdsSetter) {
-        if(this.adviceIds == null) {
+        if (this.adviceIds == null) {
             this.adviceIds = new ArrayList<>();
         }
         adviceIdsSetter.accept(this.adviceIds);
         return this;
     }
 
-    /**
-     * 建议ID列表
-     * @return adviceIds
-     */
+    /** 建议ID列表
+     * 
+     * @return adviceIds */
     public List<ConclusionItem> getAdviceIds() {
         return adviceIds;
     }
@@ -388,20 +327,14 @@ public class DiagnosisItem  {
         this.adviceIds = adviceIds;
     }
 
-    
-
     public DiagnosisItem withResult(ResultEnum result) {
         this.result = result;
         return this;
     }
 
-    
-
-
-    /**
-     * 诊断结果
-     * @return result
-     */
+    /** 诊断结果
+     * 
+     * @return result */
     public ResultEnum getResult() {
         return result;
     }
@@ -409,8 +342,6 @@ public class DiagnosisItem  {
     public void setResult(ResultEnum result) {
         this.result = result;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -421,16 +352,17 @@ public class DiagnosisItem  {
             return false;
         }
         DiagnosisItem diagnosisItem = (DiagnosisItem) o;
-        return Objects.equals(this.name, diagnosisItem.name) &&
-            Objects.equals(this.causeIds, diagnosisItem.causeIds) &&
-            Objects.equals(this.impactIds, diagnosisItem.impactIds) &&
-            Objects.equals(this.adviceIds, diagnosisItem.adviceIds) &&
-            Objects.equals(this.result, diagnosisItem.result);
+        return Objects.equals(this.name, diagnosisItem.name) && Objects.equals(this.causeIds, diagnosisItem.causeIds)
+            && Objects.equals(this.impactIds, diagnosisItem.impactIds)
+            && Objects.equals(this.adviceIds, diagnosisItem.adviceIds)
+            && Objects.equals(this.result, diagnosisItem.result);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, causeIds, impactIds, adviceIds, result);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -443,16 +375,13 @@ public class DiagnosisItem  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

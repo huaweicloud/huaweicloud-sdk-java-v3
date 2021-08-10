@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteVpcTagRequest  {
-
-
+/** Request Object */
+public class DeleteVpcTagRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
     public DeleteVpcTagRequest withVpcId(String vpcId) {
@@ -34,13 +23,9 @@ public class DeleteVpcTagRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：虚拟私有云唯一标识 取值范围：合法UUID 约束：ID对应的VPC必须存在
-     * @return vpcId
-     */
+    /** 功能说明：虚拟私有云唯一标识 取值范围：合法UUID 约束：ID对应的VPC必须存在
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -49,20 +34,14 @@ public class DeleteVpcTagRequest  {
         this.vpcId = vpcId;
     }
 
-    
-
     public DeleteVpcTagRequest withKey(String key) {
         this.key = key;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：标签键
-     * @return key
-     */
+    /** 功能说明：标签键
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -70,8 +49,6 @@ public class DeleteVpcTagRequest  {
     public void setKey(String key) {
         this.key = key;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class DeleteVpcTagRequest  {
             return false;
         }
         DeleteVpcTagRequest deleteVpcTagRequest = (DeleteVpcTagRequest) o;
-        return Objects.equals(this.vpcId, deleteVpcTagRequest.vpcId) &&
-            Objects.equals(this.key, deleteVpcTagRequest.key);
+        return Objects.equals(this.vpcId, deleteVpcTagRequest.vpcId)
+            && Objects.equals(this.key, deleteVpcTagRequest.key);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(vpcId, key);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class DeleteVpcTagRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

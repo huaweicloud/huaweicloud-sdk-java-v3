@@ -1,59 +1,43 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 
  */
-public class UpdateAgencyOption  {
-
-
+public class UpdateAgencyOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trust_domain_id")
-    
+    @JsonProperty(value = "trust_domain_id")
+
     private String trustDomainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trust_domain_name")
-    
+    @JsonProperty(value = "trust_domain_name")
+
     private String trustDomainName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
-    /**
-     * 委托的期限。取值为“FOREVER\"表示委托的期限为永久，取值为\"ONEDAY\"表示委托的期限为一天。四个参数至少填写一个。
-     */
+
+    /** 委托的期限。取值为“FOREVER\"表示委托的期限为永久，取值为\"ONEDAY\"表示委托的期限为一天。四个参数至少填写一个。 */
     public static final class DurationEnum {
 
-        
-        /**
-         * Enum FOREVER for value: "FOREVER"
-         */
+        /** Enum FOREVER for value: "FOREVER" */
         public static final DurationEnum FOREVER = new DurationEnum("FOREVER");
-        
-        /**
-         * Enum ONEDAY for value: "ONEDAY"
-         */
+
+        /** Enum ONEDAY for value: "ONEDAY" */
         public static final DurationEnum ONEDAY = new DurationEnum("ONEDAY");
-        
 
         private static final Map<String, DurationEnum> STATIC_FIELDS = createStaticFields();
 
@@ -82,7 +66,7 @@ public class UpdateAgencyOption  {
 
         @JsonCreator
         public static DurationEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DurationEnum result = STATIC_FIELDS.get(value);
@@ -93,7 +77,7 @@ public class UpdateAgencyOption  {
         }
 
         public static DurationEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DurationEnum result = STATIC_FIELDS.get(value);
@@ -117,10 +101,9 @@ public class UpdateAgencyOption  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="duration")
-    
+    @JsonProperty(value = "duration")
+
     private DurationEnum duration;
 
     public UpdateAgencyOption withTrustDomainId(String trustDomainId) {
@@ -128,13 +111,9 @@ public class UpdateAgencyOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 被委托方账号ID。如果trust_domain_id和trust_domain_name都填写，则优先校验trust_domain_name。四个参数至少填写一个。
-     * @return trustDomainId
-     */
+    /** 被委托方账号ID。如果trust_domain_id和trust_domain_name都填写，则优先校验trust_domain_name。四个参数至少填写一个。
+     * 
+     * @return trustDomainId */
     public String getTrustDomainId() {
         return trustDomainId;
     }
@@ -143,20 +122,14 @@ public class UpdateAgencyOption  {
         this.trustDomainId = trustDomainId;
     }
 
-    
-
     public UpdateAgencyOption withTrustDomainName(String trustDomainName) {
         this.trustDomainName = trustDomainName;
         return this;
     }
 
-    
-
-
-    /**
-     * 被委托方账号名。如果trust_domain_id和trust_domain_name都填写，则优先校验trust_domain_name。四个参数至少填写一个。
-     * @return trustDomainName
-     */
+    /** 被委托方账号名。如果trust_domain_id和trust_domain_name都填写，则优先校验trust_domain_name。四个参数至少填写一个。
+     * 
+     * @return trustDomainName */
     public String getTrustDomainName() {
         return trustDomainName;
     }
@@ -165,20 +138,14 @@ public class UpdateAgencyOption  {
         this.trustDomainName = trustDomainName;
     }
 
-    
-
     public UpdateAgencyOption withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 委托描述信息，长度不大于255位。四个参数至少填写一个。
-     * @return description
-     */
+    /** 委托描述信息，长度不大于255位。四个参数至少填写一个。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -187,20 +154,14 @@ public class UpdateAgencyOption  {
         this.description = description;
     }
 
-    
-
     public UpdateAgencyOption withDuration(DurationEnum duration) {
         this.duration = duration;
         return this;
     }
 
-    
-
-
-    /**
-     * 委托的期限。取值为“FOREVER\"表示委托的期限为永久，取值为\"ONEDAY\"表示委托的期限为一天。四个参数至少填写一个。
-     * @return duration
-     */
+    /** 委托的期限。取值为“FOREVER\"表示委托的期限为永久，取值为\"ONEDAY\"表示委托的期限为一天。四个参数至少填写一个。
+     * 
+     * @return duration */
     public DurationEnum getDuration() {
         return duration;
     }
@@ -208,8 +169,6 @@ public class UpdateAgencyOption  {
     public void setDuration(DurationEnum duration) {
         this.duration = duration;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -220,15 +179,17 @@ public class UpdateAgencyOption  {
             return false;
         }
         UpdateAgencyOption updateAgencyOption = (UpdateAgencyOption) o;
-        return Objects.equals(this.trustDomainId, updateAgencyOption.trustDomainId) &&
-            Objects.equals(this.trustDomainName, updateAgencyOption.trustDomainName) &&
-            Objects.equals(this.description, updateAgencyOption.description) &&
-            Objects.equals(this.duration, updateAgencyOption.duration);
+        return Objects.equals(this.trustDomainId, updateAgencyOption.trustDomainId)
+            && Objects.equals(this.trustDomainName, updateAgencyOption.trustDomainName)
+            && Objects.equals(this.description, updateAgencyOption.description)
+            && Objects.equals(this.duration, updateAgencyOption.duration);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(trustDomainId, trustDomainName, description, duration);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -240,16 +201,13 @@ public class UpdateAgencyOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

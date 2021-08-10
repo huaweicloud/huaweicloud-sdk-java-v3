@@ -1,26 +1,18 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class LinksSelf  {
-
-
+public class LinksSelf {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="self")
-    
+    @JsonProperty(value = "self")
+
     private String self;
 
     public LinksSelf withSelf(String self) {
@@ -28,13 +20,9 @@ public class LinksSelf  {
         return this;
     }
 
-    
-
-
-    /**
-     * 资源链接地址。
-     * @return self
-     */
+    /** 资源链接地址。
+     * 
+     * @return self */
     public String getSelf() {
         return self;
     }
@@ -42,8 +30,6 @@ public class LinksSelf  {
     public void setSelf(String self) {
         this.self = self;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +42,12 @@ public class LinksSelf  {
         LinksSelf linksSelf = (LinksSelf) o;
         return Objects.equals(this.self, linksSelf.self);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(self);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +56,13 @@ public class LinksSelf  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

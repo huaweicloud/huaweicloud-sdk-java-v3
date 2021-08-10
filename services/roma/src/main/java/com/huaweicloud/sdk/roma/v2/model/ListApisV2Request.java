@@ -1,98 +1,76 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListApisV2Request  {
-
-
+/** Request Object */
+public class ListApisV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Long offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_protocol")
-    
+    @JsonProperty(value = "req_protocol")
+
     private String reqProtocol;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_method")
-    
+    @JsonProperty(value = "req_method")
+
     private String reqMethod;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_uri")
-    
+    @JsonProperty(value = "req_uri")
+
     private String reqUri;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth_type")
-    
+    @JsonProperty(value = "auth_type")
+
     private String authType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_id")
-    
+    @JsonProperty(value = "env_id")
+
     private String envId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private Integer type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="precise_search")
-    
+    @JsonProperty(value = "precise_search")
+
     private String preciseSearch;
 
     public ListApisV2Request withInstanceId(String instanceId) {
@@ -100,13 +78,9 @@ public class ListApisV2Request  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -115,20 +89,14 @@ public class ListApisV2Request  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListApisV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
-     * @return offset
-     */
+    /** 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * 
+     * @return offset */
     public Long getOffset() {
         return offset;
     }
@@ -137,22 +105,14 @@ public class ListApisV2Request  {
         this.offset = offset;
     }
 
-    
-
     public ListApisV2Request withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示的条目数量
-     * minimum: 1
-     * maximum: 500
-     * @return limit
-     */
+    /** 每页显示的条目数量 minimum: 1 maximum: 500
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -161,20 +121,14 @@ public class ListApisV2Request  {
         this.limit = limit;
     }
 
-    
-
     public ListApisV2Request withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * API编号
-     * @return id
-     */
+    /** API编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -183,20 +137,14 @@ public class ListApisV2Request  {
         this.id = id;
     }
 
-    
-
     public ListApisV2Request withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * API名称
-     * @return name
-     */
+    /** API名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -205,20 +153,14 @@ public class ListApisV2Request  {
         this.name = name;
     }
 
-    
-
     public ListApisV2Request withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * API分组编号
-     * @return groupId
-     */
+    /** API分组编号
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -227,20 +169,14 @@ public class ListApisV2Request  {
         this.groupId = groupId;
     }
 
-    
-
     public ListApisV2Request withReqProtocol(String reqProtocol) {
         this.reqProtocol = reqProtocol;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求协议
-     * @return reqProtocol
-     */
+    /** 请求协议
+     * 
+     * @return reqProtocol */
     public String getReqProtocol() {
         return reqProtocol;
     }
@@ -249,20 +185,14 @@ public class ListApisV2Request  {
         this.reqProtocol = reqProtocol;
     }
 
-    
-
     public ListApisV2Request withReqMethod(String reqMethod) {
         this.reqMethod = reqMethod;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求方法
-     * @return reqMethod
-     */
+    /** 请求方法
+     * 
+     * @return reqMethod */
     public String getReqMethod() {
         return reqMethod;
     }
@@ -271,20 +201,14 @@ public class ListApisV2Request  {
         this.reqMethod = reqMethod;
     }
 
-    
-
     public ListApisV2Request withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求路径
-     * @return reqUri
-     */
+    /** 请求路径
+     * 
+     * @return reqUri */
     public String getReqUri() {
         return reqUri;
     }
@@ -293,20 +217,14 @@ public class ListApisV2Request  {
         this.reqUri = reqUri;
     }
 
-    
-
     public ListApisV2Request withAuthType(String authType) {
         this.authType = authType;
         return this;
     }
 
-    
-
-
-    /**
-     * 授权类型
-     * @return authType
-     */
+    /** 授权类型
+     * 
+     * @return authType */
     public String getAuthType() {
         return authType;
     }
@@ -315,20 +233,14 @@ public class ListApisV2Request  {
         this.authType = authType;
     }
 
-    
-
     public ListApisV2Request withEnvId(String envId) {
         this.envId = envId;
         return this;
     }
 
-    
-
-
-    /**
-     * 发布的环境编号
-     * @return envId
-     */
+    /** 发布的环境编号
+     * 
+     * @return envId */
     public String getEnvId() {
         return envId;
     }
@@ -337,20 +249,14 @@ public class ListApisV2Request  {
         this.envId = envId;
     }
 
-    
-
     public ListApisV2Request withType(Integer type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * API类型
-     * @return type
-     */
+    /** API类型
+     * 
+     * @return type */
     public Integer getType() {
         return type;
     }
@@ -359,20 +265,14 @@ public class ListApisV2Request  {
         this.type = type;
     }
 
-    
-
     public ListApisV2Request withPreciseSearch(String preciseSearch) {
         this.preciseSearch = preciseSearch;
         return this;
     }
 
-    
-
-
-    /**
-     * 指定需要精确匹配查找的参数名称，目前仅支持name、req_uri
-     * @return preciseSearch
-     */
+    /** 指定需要精确匹配查找的参数名称，目前仅支持name、req_uri
+     * 
+     * @return preciseSearch */
     public String getPreciseSearch() {
         return preciseSearch;
     }
@@ -380,8 +280,6 @@ public class ListApisV2Request  {
     public void setPreciseSearch(String preciseSearch) {
         this.preciseSearch = preciseSearch;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -392,24 +290,36 @@ public class ListApisV2Request  {
             return false;
         }
         ListApisV2Request listApisV2Request = (ListApisV2Request) o;
-        return Objects.equals(this.instanceId, listApisV2Request.instanceId) &&
-            Objects.equals(this.offset, listApisV2Request.offset) &&
-            Objects.equals(this.limit, listApisV2Request.limit) &&
-            Objects.equals(this.id, listApisV2Request.id) &&
-            Objects.equals(this.name, listApisV2Request.name) &&
-            Objects.equals(this.groupId, listApisV2Request.groupId) &&
-            Objects.equals(this.reqProtocol, listApisV2Request.reqProtocol) &&
-            Objects.equals(this.reqMethod, listApisV2Request.reqMethod) &&
-            Objects.equals(this.reqUri, listApisV2Request.reqUri) &&
-            Objects.equals(this.authType, listApisV2Request.authType) &&
-            Objects.equals(this.envId, listApisV2Request.envId) &&
-            Objects.equals(this.type, listApisV2Request.type) &&
-            Objects.equals(this.preciseSearch, listApisV2Request.preciseSearch);
+        return Objects.equals(this.instanceId, listApisV2Request.instanceId)
+            && Objects.equals(this.offset, listApisV2Request.offset)
+            && Objects.equals(this.limit, listApisV2Request.limit) && Objects.equals(this.id, listApisV2Request.id)
+            && Objects.equals(this.name, listApisV2Request.name)
+            && Objects.equals(this.groupId, listApisV2Request.groupId)
+            && Objects.equals(this.reqProtocol, listApisV2Request.reqProtocol)
+            && Objects.equals(this.reqMethod, listApisV2Request.reqMethod)
+            && Objects.equals(this.reqUri, listApisV2Request.reqUri)
+            && Objects.equals(this.authType, listApisV2Request.authType)
+            && Objects.equals(this.envId, listApisV2Request.envId) && Objects.equals(this.type, listApisV2Request.type)
+            && Objects.equals(this.preciseSearch, listApisV2Request.preciseSearch);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, offset, limit, id, name, groupId, reqProtocol, reqMethod, reqUri, authType, envId, type, preciseSearch);
+        return Objects.hash(instanceId,
+            offset,
+            limit,
+            id,
+            name,
+            groupId,
+            reqProtocol,
+            reqMethod,
+            reqUri,
+            authType,
+            envId,
+            type,
+            preciseSearch);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -430,16 +340,13 @@ public class ListApisV2Request  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

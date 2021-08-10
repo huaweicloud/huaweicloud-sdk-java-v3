@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListRestoreDatabasesRequest  {
-
-
+/** Request Object */
+public class ListRestoreDatabasesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="restore_time")
-    
+    @JsonProperty(value = "restore_time")
+
     private String restoreTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
     public ListRestoreDatabasesRequest withXLanguage(String xLanguage) {
@@ -52,15 +38,11 @@ public class ListRestoreDatabasesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言。
-     * @return xLanguage
-     */
+    /** 语言。
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -69,20 +51,14 @@ public class ListRestoreDatabasesRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListRestoreDatabasesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
-     * @return instanceId
-     */
+    /** 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -91,20 +67,14 @@ public class ListRestoreDatabasesRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListRestoreDatabasesRequest withRestoreTime(String restoreTime) {
         this.restoreTime = restoreTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 恢复时间点。UNIX时间戳格式，单位是毫秒，时区是UTC。
-     * @return restoreTime
-     */
+    /** 恢复时间点。UNIX时间戳格式，单位是毫秒，时区是UTC。
+     * 
+     * @return restoreTime */
     public String getRestoreTime() {
         return restoreTime;
     }
@@ -113,20 +83,14 @@ public class ListRestoreDatabasesRequest  {
         this.restoreTime = restoreTime;
     }
 
-    
-
     public ListRestoreDatabasesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 索引位置偏移量。取值大于或等于0。不传该参数时，查询偏移量默认为0。
-     * @return offset
-     */
+    /** 索引位置偏移量。取值大于或等于0。不传该参数时，查询偏移量默认为0。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -135,20 +99,14 @@ public class ListRestoreDatabasesRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListRestoreDatabasesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询个数上限值。取值范围：1~100。不传该参数时，默认查询前100条信息。
-     * @return limit
-     */
+    /** 查询个数上限值。取值范围：1~100。不传该参数时，默认查询前100条信息。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -156,8 +114,6 @@ public class ListRestoreDatabasesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -168,16 +124,18 @@ public class ListRestoreDatabasesRequest  {
             return false;
         }
         ListRestoreDatabasesRequest listRestoreDatabasesRequest = (ListRestoreDatabasesRequest) o;
-        return Objects.equals(this.xLanguage, listRestoreDatabasesRequest.xLanguage) &&
-            Objects.equals(this.instanceId, listRestoreDatabasesRequest.instanceId) &&
-            Objects.equals(this.restoreTime, listRestoreDatabasesRequest.restoreTime) &&
-            Objects.equals(this.offset, listRestoreDatabasesRequest.offset) &&
-            Objects.equals(this.limit, listRestoreDatabasesRequest.limit);
+        return Objects.equals(this.xLanguage, listRestoreDatabasesRequest.xLanguage)
+            && Objects.equals(this.instanceId, listRestoreDatabasesRequest.instanceId)
+            && Objects.equals(this.restoreTime, listRestoreDatabasesRequest.restoreTime)
+            && Objects.equals(this.offset, listRestoreDatabasesRequest.offset)
+            && Objects.equals(this.limit, listRestoreDatabasesRequest.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, restoreTime, offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -190,16 +148,13 @@ public class ListRestoreDatabasesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

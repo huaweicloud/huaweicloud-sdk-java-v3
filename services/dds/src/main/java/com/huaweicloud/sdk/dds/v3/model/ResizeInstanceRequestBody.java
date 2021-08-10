@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dds.v3.model.ResizeInstanceOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ResizeInstanceRequestBody
- */
-public class ResizeInstanceRequestBody  {
-
-
+/** ResizeInstanceRequestBody */
+public class ResizeInstanceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resize")
-    
+    @JsonProperty(value = "resize")
+
     private ResizeInstanceOption resize;
 
     public ResizeInstanceRequestBody withResize(ResizeInstanceOption resize) {
@@ -30,19 +20,17 @@ public class ResizeInstanceRequestBody  {
     }
 
     public ResizeInstanceRequestBody withResize(Consumer<ResizeInstanceOption> resizeSetter) {
-        if(this.resize == null ){
+        if (this.resize == null) {
             this.resize = new ResizeInstanceOption();
             resizeSetter.accept(this.resize);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get resize
-     * @return resize
-     */
+    /** Get resize
+     * 
+     * @return resize */
     public ResizeInstanceOption getResize() {
         return resize;
     }
@@ -50,8 +38,6 @@ public class ResizeInstanceRequestBody  {
     public void setResize(ResizeInstanceOption resize) {
         this.resize = resize;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class ResizeInstanceRequestBody  {
         ResizeInstanceRequestBody resizeInstanceRequestBody = (ResizeInstanceRequestBody) o;
         return Objects.equals(this.resize, resizeInstanceRequestBody.resize);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resize);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class ResizeInstanceRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

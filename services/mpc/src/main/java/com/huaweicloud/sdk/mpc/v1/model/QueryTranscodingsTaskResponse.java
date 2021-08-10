@@ -1,77 +1,49 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.ObsObjInfo;
-import com.huaweicloud.sdk.mpc.v1.model.PicInfo;
-import com.huaweicloud.sdk.mpc.v1.model.TranscodeDetail;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * QueryTranscodingsTaskResponse
- */
-public class QueryTranscodingsTaskResponse  {
-
-
+/** QueryTranscodingsTaskResponse */
+public class QueryTranscodingsTaskResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
+    @JsonProperty(value = "task_id")
+
     private String taskId;
-    /**
-     * 任务执行状态。 
-     */
+
+    /** 任务执行状态。 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum NO_TASK for value: "NO_TASK"
-         */
+        /** Enum NO_TASK for value: "NO_TASK" */
         public static final StatusEnum NO_TASK = new StatusEnum("NO_TASK");
-        
-        /**
-         * Enum WAITING for value: "WAITING"
-         */
+
+        /** Enum WAITING for value: "WAITING" */
         public static final StatusEnum WAITING = new StatusEnum("WAITING");
-        
-        /**
-         * Enum TRANSCODING for value: "TRANSCODING"
-         */
+
+        /** Enum TRANSCODING for value: "TRANSCODING" */
         public static final StatusEnum TRANSCODING = new StatusEnum("TRANSCODING");
-        
-        /**
-         * Enum SUCCEEDED for value: "SUCCEEDED"
-         */
+
+        /** Enum SUCCEEDED for value: "SUCCEEDED" */
         public static final StatusEnum SUCCEEDED = new StatusEnum("SUCCEEDED");
-        
-        /**
-         * Enum FAILED for value: "FAILED"
-         */
+
+        /** Enum FAILED for value: "FAILED" */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
-        
-        /**
-         * Enum CANCELED for value: "CANCELED"
-         */
+
+        /** Enum CANCELED for value: "CANCELED" */
         public static final StatusEnum CANCELED = new StatusEnum("CANCELED");
-        
-        /**
-         * Enum NEED_TO_BE_AUDIT for value: "NEED_TO_BE_AUDIT"
-         */
+
+        /** Enum NEED_TO_BE_AUDIT for value: "NEED_TO_BE_AUDIT" */
         public static final StatusEnum NEED_TO_BE_AUDIT = new StatusEnum("NEED_TO_BE_AUDIT");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -105,7 +77,7 @@ public class QueryTranscodingsTaskResponse  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -116,7 +88,7 @@ public class QueryTranscodingsTaskResponse  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -140,108 +112,89 @@ public class QueryTranscodingsTaskResponse  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private String createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trans_template_id")
-    
+    @JsonProperty(value = "trans_template_id")
+
     private List<Integer> transTemplateId = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="input")
-    
+    @JsonProperty(value = "input")
+
     private ObsObjInfo input;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output")
-    
+    @JsonProperty(value = "output")
+
     private ObsObjInfo output;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output_file_name")
-    
+    @JsonProperty(value = "output_file_name")
+
     private List<String> outputFileName = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_data")
-    
+    @JsonProperty(value = "user_data")
+
     private String userData;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
+
     private String errorCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tips")
-    
+    @JsonProperty(value = "tips")
+
     private String tips;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="transcode_detail")
-    
+    @JsonProperty(value = "transcode_detail")
+
     private TranscodeDetail transcodeDetail;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="thumbnail_output")
-    
+    @JsonProperty(value = "thumbnail_output")
+
     private ObsObjInfo thumbnailOutput;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="thumbnail_outputname")
-    
+    @JsonProperty(value = "thumbnail_outputname")
+
     private String thumbnailOutputname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pic_info")
-    
+    @JsonProperty(value = "pic_info")
+
     private List<PicInfo> picInfo = null;
-    
+
     public QueryTranscodingsTaskResponse withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID。
-     * @return taskId
-     */
+    /** 任务ID。
+     * 
+     * @return taskId */
     public String getTaskId() {
         return taskId;
     }
@@ -250,20 +203,14 @@ public class QueryTranscodingsTaskResponse  {
         this.taskId = taskId;
     }
 
-    
-
     public QueryTranscodingsTaskResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务执行状态。 
-     * @return status
-     */
+    /** 任务执行状态。
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -272,20 +219,14 @@ public class QueryTranscodingsTaskResponse  {
         this.status = status;
     }
 
-    
-
     public QueryTranscodingsTaskResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 转码任务启动时间 
-     * @return createTime
-     */
+    /** 转码任务启动时间
+     * 
+     * @return createTime */
     public String getCreateTime() {
         return createTime;
     }
@@ -294,20 +235,14 @@ public class QueryTranscodingsTaskResponse  {
         this.createTime = createTime;
     }
 
-    
-
     public QueryTranscodingsTaskResponse withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 转码任务结束时间 
-     * @return endTime
-     */
+    /** 转码任务结束时间
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -316,16 +251,13 @@ public class QueryTranscodingsTaskResponse  {
         this.endTime = endTime;
     }
 
-    
-
     public QueryTranscodingsTaskResponse withTransTemplateId(List<Integer> transTemplateId) {
         this.transTemplateId = transTemplateId;
         return this;
     }
 
-    
     public QueryTranscodingsTaskResponse addTransTemplateIdItem(Integer transTemplateIdItem) {
-        if(this.transTemplateId == null) {
+        if (this.transTemplateId == null) {
             this.transTemplateId = new ArrayList<>();
         }
         this.transTemplateId.add(transTemplateIdItem);
@@ -333,17 +265,16 @@ public class QueryTranscodingsTaskResponse  {
     }
 
     public QueryTranscodingsTaskResponse withTransTemplateId(Consumer<List<Integer>> transTemplateIdSetter) {
-        if(this.transTemplateId == null) {
+        if (this.transTemplateId == null) {
             this.transTemplateId = new ArrayList<>();
         }
         transTemplateIdSetter.accept(this.transTemplateId);
         return this;
     }
 
-    /**
-     * 转码任务对应的转码模板ID 
-     * @return transTemplateId
-     */
+    /** 转码任务对应的转码模板ID
+     * 
+     * @return transTemplateId */
     public List<Integer> getTransTemplateId() {
         return transTemplateId;
     }
@@ -352,27 +283,23 @@ public class QueryTranscodingsTaskResponse  {
         this.transTemplateId = transTemplateId;
     }
 
-    
-
     public QueryTranscodingsTaskResponse withInput(ObsObjInfo input) {
         this.input = input;
         return this;
     }
 
     public QueryTranscodingsTaskResponse withInput(Consumer<ObsObjInfo> inputSetter) {
-        if(this.input == null ){
+        if (this.input == null) {
             this.input = new ObsObjInfo();
             inputSetter.accept(this.input);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get input
-     * @return input
-     */
+    /** Get input
+     * 
+     * @return input */
     public ObsObjInfo getInput() {
         return input;
     }
@@ -381,27 +308,23 @@ public class QueryTranscodingsTaskResponse  {
         this.input = input;
     }
 
-    
-
     public QueryTranscodingsTaskResponse withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
     }
 
     public QueryTranscodingsTaskResponse withOutput(Consumer<ObsObjInfo> outputSetter) {
-        if(this.output == null ){
+        if (this.output == null) {
             this.output = new ObsObjInfo();
             outputSetter.accept(this.output);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get output
-     * @return output
-     */
+    /** Get output
+     * 
+     * @return output */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -410,16 +333,13 @@ public class QueryTranscodingsTaskResponse  {
         this.output = output;
     }
 
-    
-
     public QueryTranscodingsTaskResponse withOutputFileName(List<String> outputFileName) {
         this.outputFileName = outputFileName;
         return this;
     }
 
-    
     public QueryTranscodingsTaskResponse addOutputFileNameItem(String outputFileNameItem) {
-        if(this.outputFileName == null) {
+        if (this.outputFileName == null) {
             this.outputFileName = new ArrayList<>();
         }
         this.outputFileName.add(outputFileNameItem);
@@ -427,17 +347,16 @@ public class QueryTranscodingsTaskResponse  {
     }
 
     public QueryTranscodingsTaskResponse withOutputFileName(Consumer<List<String>> outputFileNameSetter) {
-        if(this.outputFileName == null) {
+        if (this.outputFileName == null) {
             this.outputFileName = new ArrayList<>();
         }
         outputFileNameSetter.accept(this.outputFileName);
         return this;
     }
 
-    /**
-     * 转码生成的文件名，数组类型，可能包含多个，包含截图文件名。 
-     * @return outputFileName
-     */
+    /** 转码生成的文件名，数组类型，可能包含多个，包含截图文件名。
+     * 
+     * @return outputFileName */
     public List<String> getOutputFileName() {
         return outputFileName;
     }
@@ -446,20 +365,14 @@ public class QueryTranscodingsTaskResponse  {
         this.outputFileName = outputFileName;
     }
 
-    
-
     public QueryTranscodingsTaskResponse withUserData(String userData) {
         this.userData = userData;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户自定义数据。 
-     * @return userData
-     */
+    /** 用户自定义数据。
+     * 
+     * @return userData */
     public String getUserData() {
         return userData;
     }
@@ -468,20 +381,14 @@ public class QueryTranscodingsTaskResponse  {
         this.userData = userData;
     }
 
-    
-
     public QueryTranscodingsTaskResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 转码任务的返回码。 
-     * @return errorCode
-     */
+    /** 转码任务的返回码。
+     * 
+     * @return errorCode */
     public String getErrorCode() {
         return errorCode;
     }
@@ -490,20 +397,14 @@ public class QueryTranscodingsTaskResponse  {
         this.errorCode = errorCode;
     }
 
-    
-
     public QueryTranscodingsTaskResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 转码任务描述，当转码出现异常时，此字段为异常的原因。 
-     * @return description
-     */
+    /** 转码任务描述，当转码出现异常时，此字段为异常的原因。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -512,20 +413,14 @@ public class QueryTranscodingsTaskResponse  {
         this.description = description;
     }
 
-    
-
     public QueryTranscodingsTaskResponse withTips(String tips) {
         this.tips = tips;
         return this;
     }
 
-    
-
-
-    /**
-     * 转码成功，但音频采样率过低时的提示。 
-     * @return tips
-     */
+    /** 转码成功，但音频采样率过低时的提示。
+     * 
+     * @return tips */
     public String getTips() {
         return tips;
     }
@@ -534,27 +429,23 @@ public class QueryTranscodingsTaskResponse  {
         this.tips = tips;
     }
 
-    
-
     public QueryTranscodingsTaskResponse withTranscodeDetail(TranscodeDetail transcodeDetail) {
         this.transcodeDetail = transcodeDetail;
         return this;
     }
 
     public QueryTranscodingsTaskResponse withTranscodeDetail(Consumer<TranscodeDetail> transcodeDetailSetter) {
-        if(this.transcodeDetail == null ){
+        if (this.transcodeDetail == null) {
             this.transcodeDetail = new TranscodeDetail();
             transcodeDetailSetter.accept(this.transcodeDetail);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get transcodeDetail
-     * @return transcodeDetail
-     */
+    /** Get transcodeDetail
+     * 
+     * @return transcodeDetail */
     public TranscodeDetail getTranscodeDetail() {
         return transcodeDetail;
     }
@@ -563,27 +454,23 @@ public class QueryTranscodingsTaskResponse  {
         this.transcodeDetail = transcodeDetail;
     }
 
-    
-
     public QueryTranscodingsTaskResponse withThumbnailOutput(ObsObjInfo thumbnailOutput) {
         this.thumbnailOutput = thumbnailOutput;
         return this;
     }
 
     public QueryTranscodingsTaskResponse withThumbnailOutput(Consumer<ObsObjInfo> thumbnailOutputSetter) {
-        if(this.thumbnailOutput == null ){
+        if (this.thumbnailOutput == null) {
             this.thumbnailOutput = new ObsObjInfo();
             thumbnailOutputSetter.accept(this.thumbnailOutput);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get thumbnailOutput
-     * @return thumbnailOutput
-     */
+    /** Get thumbnailOutput
+     * 
+     * @return thumbnailOutput */
     public ObsObjInfo getThumbnailOutput() {
         return thumbnailOutput;
     }
@@ -592,20 +479,14 @@ public class QueryTranscodingsTaskResponse  {
         this.thumbnailOutput = thumbnailOutput;
     }
 
-    
-
     public QueryTranscodingsTaskResponse withThumbnailOutputname(String thumbnailOutputname) {
         this.thumbnailOutputname = thumbnailOutputname;
         return this;
     }
 
-    
-
-
-    /**
-     * 截图压缩包名。 
-     * @return thumbnailOutputname
-     */
+    /** 截图压缩包名。
+     * 
+     * @return thumbnailOutputname */
     public String getThumbnailOutputname() {
         return thumbnailOutputname;
     }
@@ -614,16 +495,13 @@ public class QueryTranscodingsTaskResponse  {
         this.thumbnailOutputname = thumbnailOutputname;
     }
 
-    
-
     public QueryTranscodingsTaskResponse withPicInfo(List<PicInfo> picInfo) {
         this.picInfo = picInfo;
         return this;
     }
 
-    
     public QueryTranscodingsTaskResponse addPicInfoItem(PicInfo picInfoItem) {
-        if(this.picInfo == null) {
+        if (this.picInfo == null) {
             this.picInfo = new ArrayList<>();
         }
         this.picInfo.add(picInfoItem);
@@ -631,17 +509,16 @@ public class QueryTranscodingsTaskResponse  {
     }
 
     public QueryTranscodingsTaskResponse withPicInfo(Consumer<List<PicInfo>> picInfoSetter) {
-        if(this.picInfo == null) {
+        if (this.picInfo == null) {
             this.picInfo = new ArrayList<>();
         }
         picInfoSetter.accept(this.picInfo);
         return this;
     }
 
-    /**
-     * 截图文件信息。 
-     * @return picInfo
-     */
+    /** 截图文件信息。
+     * 
+     * @return picInfo */
     public List<PicInfo> getPicInfo() {
         return picInfo;
     }
@@ -649,8 +526,6 @@ public class QueryTranscodingsTaskResponse  {
     public void setPicInfo(List<PicInfo> picInfo) {
         this.picInfo = picInfo;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -661,27 +536,44 @@ public class QueryTranscodingsTaskResponse  {
             return false;
         }
         QueryTranscodingsTaskResponse queryTranscodingsTaskResponse = (QueryTranscodingsTaskResponse) o;
-        return Objects.equals(this.taskId, queryTranscodingsTaskResponse.taskId) &&
-            Objects.equals(this.status, queryTranscodingsTaskResponse.status) &&
-            Objects.equals(this.createTime, queryTranscodingsTaskResponse.createTime) &&
-            Objects.equals(this.endTime, queryTranscodingsTaskResponse.endTime) &&
-            Objects.equals(this.transTemplateId, queryTranscodingsTaskResponse.transTemplateId) &&
-            Objects.equals(this.input, queryTranscodingsTaskResponse.input) &&
-            Objects.equals(this.output, queryTranscodingsTaskResponse.output) &&
-            Objects.equals(this.outputFileName, queryTranscodingsTaskResponse.outputFileName) &&
-            Objects.equals(this.userData, queryTranscodingsTaskResponse.userData) &&
-            Objects.equals(this.errorCode, queryTranscodingsTaskResponse.errorCode) &&
-            Objects.equals(this.description, queryTranscodingsTaskResponse.description) &&
-            Objects.equals(this.tips, queryTranscodingsTaskResponse.tips) &&
-            Objects.equals(this.transcodeDetail, queryTranscodingsTaskResponse.transcodeDetail) &&
-            Objects.equals(this.thumbnailOutput, queryTranscodingsTaskResponse.thumbnailOutput) &&
-            Objects.equals(this.thumbnailOutputname, queryTranscodingsTaskResponse.thumbnailOutputname) &&
-            Objects.equals(this.picInfo, queryTranscodingsTaskResponse.picInfo);
+        return Objects.equals(this.taskId, queryTranscodingsTaskResponse.taskId)
+            && Objects.equals(this.status, queryTranscodingsTaskResponse.status)
+            && Objects.equals(this.createTime, queryTranscodingsTaskResponse.createTime)
+            && Objects.equals(this.endTime, queryTranscodingsTaskResponse.endTime)
+            && Objects.equals(this.transTemplateId, queryTranscodingsTaskResponse.transTemplateId)
+            && Objects.equals(this.input, queryTranscodingsTaskResponse.input)
+            && Objects.equals(this.output, queryTranscodingsTaskResponse.output)
+            && Objects.equals(this.outputFileName, queryTranscodingsTaskResponse.outputFileName)
+            && Objects.equals(this.userData, queryTranscodingsTaskResponse.userData)
+            && Objects.equals(this.errorCode, queryTranscodingsTaskResponse.errorCode)
+            && Objects.equals(this.description, queryTranscodingsTaskResponse.description)
+            && Objects.equals(this.tips, queryTranscodingsTaskResponse.tips)
+            && Objects.equals(this.transcodeDetail, queryTranscodingsTaskResponse.transcodeDetail)
+            && Objects.equals(this.thumbnailOutput, queryTranscodingsTaskResponse.thumbnailOutput)
+            && Objects.equals(this.thumbnailOutputname, queryTranscodingsTaskResponse.thumbnailOutputname)
+            && Objects.equals(this.picInfo, queryTranscodingsTaskResponse.picInfo);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, status, createTime, endTime, transTemplateId, input, output, outputFileName, userData, errorCode, description, tips, transcodeDetail, thumbnailOutput, thumbnailOutputname, picInfo);
+        return Objects.hash(taskId,
+            status,
+            createTime,
+            endTime,
+            transTemplateId,
+            input,
+            output,
+            outputFileName,
+            userData,
+            errorCode,
+            description,
+            tips,
+            transcodeDetail,
+            thumbnailOutput,
+            thumbnailOutputname,
+            picInfo);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -705,16 +597,13 @@ public class QueryTranscodingsTaskResponse  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

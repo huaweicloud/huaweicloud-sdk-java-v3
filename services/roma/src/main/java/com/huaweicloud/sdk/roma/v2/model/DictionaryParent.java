@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 父字典编码,为空时代表自身就是最顶级字典
- */
-public class DictionaryParent  {
-
+/** 父字典编码,为空时代表自身就是最顶级字典 */
+public class DictionaryParent {
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -23,10 +15,12 @@ public class DictionaryParent  {
         }
         return true;
     }
+
     @Override
     public int hashCode() {
         return Objects.hash();
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -34,6 +28,5 @@ public class DictionaryParent  {
         sb.append("}");
         return sb.toString();
     }
-    
-}
 
+}

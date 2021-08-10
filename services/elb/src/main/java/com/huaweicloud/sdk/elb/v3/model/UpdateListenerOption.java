@@ -1,119 +1,87 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v3.model.ListenerInsertHeaders;
-import com.huaweicloud.sdk.elb.v3.model.UpdateListenerIpGroupOption;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 更新监听器请求体
- */
-public class UpdateListenerOption  {
-
-
+/** 更新监听器请求体 */
+public class UpdateListenerOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
-    
+    @JsonProperty(value = "admin_state_up")
+
     private Boolean adminStateUp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="client_ca_tls_container_ref")
-    
+    @JsonProperty(value = "client_ca_tls_container_ref")
+
     private String clientCaTlsContainerRef;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="default_pool_id")
-    
+    @JsonProperty(value = "default_pool_id")
+
     private String defaultPoolId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="default_tls_container_ref")
-    
+    @JsonProperty(value = "default_tls_container_ref")
+
     private String defaultTlsContainerRef;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="http2_enable")
-    
+    @JsonProperty(value = "http2_enable")
+
     private Boolean http2Enable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="insert_headers")
-    
+    @JsonProperty(value = "insert_headers")
+
     private ListenerInsertHeaders insertHeaders;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sni_container_refs")
-    
+    @JsonProperty(value = "sni_container_refs")
+
     private List<String> sniContainerRefs = null;
-        /**
-     * 监听器使用的安全策略，仅对TERMINATED_HTTPS协议类型的监听器有效，且默认值为tls-1-0。 取值包括：tls-1-0-inherit,tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict, tls-1-2-fst 六种安全策略
-     */
+
+    /** 监听器使用的安全策略，仅对TERMINATED_HTTPS协议类型的监听器有效，且默认值为tls-1-0。 取值包括：tls-1-0-inherit,tls-1-0, tls-1-1, tls-1-2,
+     * tls-1-2-strict, tls-1-2-fst 六种安全策略 */
     public static final class TlsCiphersPolicyEnum {
 
-        
-        /**
-         * Enum TLS_1_0_INHERIT for value: "tls-1-0-inherit"
-         */
+        /** Enum TLS_1_0_INHERIT for value: "tls-1-0-inherit" */
         public static final TlsCiphersPolicyEnum TLS_1_0_INHERIT = new TlsCiphersPolicyEnum("tls-1-0-inherit");
-        
-        /**
-         * Enum TLS_1_0 for value: "tls-1-0"
-         */
+
+        /** Enum TLS_1_0 for value: "tls-1-0" */
         public static final TlsCiphersPolicyEnum TLS_1_0 = new TlsCiphersPolicyEnum("tls-1-0");
-        
-        /**
-         * Enum _TLS_1_1 for value: " tls-1-1"
-         */
+
+        /** Enum _TLS_1_1 for value: " tls-1-1" */
         public static final TlsCiphersPolicyEnum _TLS_1_1 = new TlsCiphersPolicyEnum(" tls-1-1");
-        
-        /**
-         * Enum _TLS_1_2 for value: " tls-1-2"
-         */
+
+        /** Enum _TLS_1_2 for value: " tls-1-2" */
         public static final TlsCiphersPolicyEnum _TLS_1_2 = new TlsCiphersPolicyEnum(" tls-1-2");
-        
-        /**
-         * Enum _TLS_1_2_STRICT for value: " tls-1-2-strict"
-         */
+
+        /** Enum _TLS_1_2_STRICT for value: " tls-1-2-strict" */
         public static final TlsCiphersPolicyEnum _TLS_1_2_STRICT = new TlsCiphersPolicyEnum(" tls-1-2-strict");
-        
-        /**
-         * Enum TLS_1_2_FS for value: "tls-1-2-fs"
-         */
+
+        /** Enum TLS_1_2_FS for value: "tls-1-2-fs" */
         public static final TlsCiphersPolicyEnum TLS_1_2_FS = new TlsCiphersPolicyEnum("tls-1-2-fs");
-        
 
         private static final Map<String, TlsCiphersPolicyEnum> STATIC_FIELDS = createStaticFields();
 
@@ -146,7 +114,7 @@ public class UpdateListenerOption  {
 
         @JsonCreator
         public static TlsCiphersPolicyEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TlsCiphersPolicyEnum result = STATIC_FIELDS.get(value);
@@ -157,7 +125,7 @@ public class UpdateListenerOption  {
         }
 
         public static TlsCiphersPolicyEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TlsCiphersPolicyEnum result = STATIC_FIELDS.get(value);
@@ -181,46 +149,39 @@ public class UpdateListenerOption  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tls_ciphers_policy")
-    
+    @JsonProperty(value = "tls_ciphers_policy")
+
     private TlsCiphersPolicyEnum tlsCiphersPolicy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable_member_retry")
-    
+    @JsonProperty(value = "enable_member_retry")
+
     private Boolean enableMemberRetry;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="member_timeout")
-    
+    @JsonProperty(value = "member_timeout")
+
     private Integer memberTimeout;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="client_timeout")
-    
+    @JsonProperty(value = "client_timeout")
+
     private Integer clientTimeout;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="keepalive_timeout")
-    
+    @JsonProperty(value = "keepalive_timeout")
+
     private Integer keepaliveTimeout;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ipgroup")
-    
+    @JsonProperty(value = "ipgroup")
+
     private UpdateListenerIpGroupOption ipgroup;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="transparent_client_ip_enable")
-    
+    @JsonProperty(value = "transparent_client_ip_enable")
+
     private Boolean transparentClientIpEnable;
 
     public UpdateListenerOption withAdminStateUp(Boolean adminStateUp) {
@@ -228,13 +189,9 @@ public class UpdateListenerOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器的管理状态。只支持设定为true，该字段的值无实际意义。
-     * @return adminStateUp
-     */
+    /** 监听器的管理状态。只支持设定为true，该字段的值无实际意义。
+     * 
+     * @return adminStateUp */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -243,20 +200,14 @@ public class UpdateListenerOption  {
         this.adminStateUp = adminStateUp;
     }
 
-    
-
     public UpdateListenerOption withClientCaTlsContainerRef(String clientCaTlsContainerRef) {
         this.clientCaTlsContainerRef = clientCaTlsContainerRef;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器使用的CA证书ID。
-     * @return clientCaTlsContainerRef
-     */
+    /** 监听器使用的CA证书ID。
+     * 
+     * @return clientCaTlsContainerRef */
     public String getClientCaTlsContainerRef() {
         return clientCaTlsContainerRef;
     }
@@ -265,20 +216,14 @@ public class UpdateListenerOption  {
         this.clientCaTlsContainerRef = clientCaTlsContainerRef;
     }
 
-    
-
     public UpdateListenerOption withDefaultPoolId(String defaultPoolId) {
         this.defaultPoolId = defaultPoolId;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器的默认后端云服务器组ID。当请求没有匹配的转发策略时，转发到默认后端云服务器上处理。
-     * @return defaultPoolId
-     */
+    /** 监听器的默认后端云服务器组ID。当请求没有匹配的转发策略时，转发到默认后端云服务器上处理。
+     * 
+     * @return defaultPoolId */
     public String getDefaultPoolId() {
         return defaultPoolId;
     }
@@ -287,20 +232,14 @@ public class UpdateListenerOption  {
         this.defaultPoolId = defaultPoolId;
     }
 
-    
-
     public UpdateListenerOption withDefaultTlsContainerRef(String defaultTlsContainerRef) {
         this.defaultTlsContainerRef = defaultTlsContainerRef;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器使用的服务器证书ID。
-     * @return defaultTlsContainerRef
-     */
+    /** 监听器使用的服务器证书ID。
+     * 
+     * @return defaultTlsContainerRef */
     public String getDefaultTlsContainerRef() {
         return defaultTlsContainerRef;
     }
@@ -309,20 +248,14 @@ public class UpdateListenerOption  {
         this.defaultTlsContainerRef = defaultTlsContainerRef;
     }
 
-    
-
     public UpdateListenerOption withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器的描述信息
-     * @return description
-     */
+    /** 监听器的描述信息
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -331,20 +264,14 @@ public class UpdateListenerOption  {
         this.description = description;
     }
 
-    
-
     public UpdateListenerOption withHttp2Enable(Boolean http2Enable) {
         this.http2Enable = http2Enable;
         return this;
     }
 
-    
-
-
-    /**
-     * HTTP2功能的开启状态。该字段只有当监听器的协议是TERMINATED_HTTPS时生效。
-     * @return http2Enable
-     */
+    /** HTTP2功能的开启状态。该字段只有当监听器的协议是TERMINATED_HTTPS时生效。
+     * 
+     * @return http2Enable */
     public Boolean getHttp2Enable() {
         return http2Enable;
     }
@@ -353,27 +280,23 @@ public class UpdateListenerOption  {
         this.http2Enable = http2Enable;
     }
 
-    
-
     public UpdateListenerOption withInsertHeaders(ListenerInsertHeaders insertHeaders) {
         this.insertHeaders = insertHeaders;
         return this;
     }
 
     public UpdateListenerOption withInsertHeaders(Consumer<ListenerInsertHeaders> insertHeadersSetter) {
-        if(this.insertHeaders == null ){
+        if (this.insertHeaders == null) {
             this.insertHeaders = new ListenerInsertHeaders();
             insertHeadersSetter.accept(this.insertHeaders);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get insertHeaders
-     * @return insertHeaders
-     */
+    /** Get insertHeaders
+     * 
+     * @return insertHeaders */
     public ListenerInsertHeaders getInsertHeaders() {
         return insertHeaders;
     }
@@ -382,20 +305,14 @@ public class UpdateListenerOption  {
         this.insertHeaders = insertHeaders;
     }
 
-    
-
     public UpdateListenerOption withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器名称
-     * @return name
-     */
+    /** 监听器名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -404,16 +321,13 @@ public class UpdateListenerOption  {
         this.name = name;
     }
 
-    
-
     public UpdateListenerOption withSniContainerRefs(List<String> sniContainerRefs) {
         this.sniContainerRefs = sniContainerRefs;
         return this;
     }
 
-    
     public UpdateListenerOption addSniContainerRefsItem(String sniContainerRefsItem) {
-        if(this.sniContainerRefs == null) {
+        if (this.sniContainerRefs == null) {
             this.sniContainerRefs = new ArrayList<>();
         }
         this.sniContainerRefs.add(sniContainerRefsItem);
@@ -421,17 +335,16 @@ public class UpdateListenerOption  {
     }
 
     public UpdateListenerOption withSniContainerRefs(Consumer<List<String>> sniContainerRefsSetter) {
-        if(this.sniContainerRefs == null) {
+        if (this.sniContainerRefs == null) {
             this.sniContainerRefs = new ArrayList<>();
         }
         sniContainerRefsSetter.accept(this.sniContainerRefs);
         return this;
     }
 
-    /**
-     * 监听器使用的SNI证书（带域名的服务器证书）ID的列表。 各SNI证书的域名不允许重复。 各SNI证书域名总数不超过30。
-     * @return sniContainerRefs
-     */
+    /** 监听器使用的SNI证书（带域名的服务器证书）ID的列表。 各SNI证书的域名不允许重复。 各SNI证书域名总数不超过30。
+     * 
+     * @return sniContainerRefs */
     public List<String> getSniContainerRefs() {
         return sniContainerRefs;
     }
@@ -440,20 +353,15 @@ public class UpdateListenerOption  {
         this.sniContainerRefs = sniContainerRefs;
     }
 
-    
-
     public UpdateListenerOption withTlsCiphersPolicy(TlsCiphersPolicyEnum tlsCiphersPolicy) {
         this.tlsCiphersPolicy = tlsCiphersPolicy;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器使用的安全策略，仅对TERMINATED_HTTPS协议类型的监听器有效，且默认值为tls-1-0。 取值包括：tls-1-0-inherit,tls-1-0, tls-1-1, tls-1-2, tls-1-2-strict, tls-1-2-fst 六种安全策略
-     * @return tlsCiphersPolicy
-     */
+    /** 监听器使用的安全策略，仅对TERMINATED_HTTPS协议类型的监听器有效，且默认值为tls-1-0。 取值包括：tls-1-0-inherit,tls-1-0, tls-1-1, tls-1-2,
+     * tls-1-2-strict, tls-1-2-fst 六种安全策略
+     * 
+     * @return tlsCiphersPolicy */
     public TlsCiphersPolicyEnum getTlsCiphersPolicy() {
         return tlsCiphersPolicy;
     }
@@ -462,20 +370,14 @@ public class UpdateListenerOption  {
         this.tlsCiphersPolicy = tlsCiphersPolicy;
     }
 
-    
-
     public UpdateListenerOption withEnableMemberRetry(Boolean enableMemberRetry) {
         this.enableMemberRetry = enableMemberRetry;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否关闭后端服务器的重试。 当前仅七层的性能共享型实例支持指定该字段。
-     * @return enableMemberRetry
-     */
+    /** 是否关闭后端服务器的重试。 当前仅七层的性能共享型实例支持指定该字段。
+     * 
+     * @return enableMemberRetry */
     public Boolean getEnableMemberRetry() {
         return enableMemberRetry;
     }
@@ -484,22 +386,14 @@ public class UpdateListenerOption  {
         this.enableMemberRetry = enableMemberRetry;
     }
 
-    
-
     public UpdateListenerOption withMemberTimeout(Integer memberTimeout) {
         this.memberTimeout = memberTimeout;
         return this;
     }
 
-    
-
-
-    /**
-     * 等待后端服务器请求超时时间，仅限协议为HTTP， TERMINATED_HTTPS的监听器配置。取值范围为1-300s，默认为60s TCP，UDP协议的监听器不支持此字段
-     * minimum: 1
-     * maximum: 300
-     * @return memberTimeout
-     */
+    /** 等待后端服务器请求超时时间，仅限协议为HTTP， TERMINATED_HTTPS的监听器配置。取值范围为1-300s，默认为60s TCP，UDP协议的监听器不支持此字段 minimum: 1 maximum: 300
+     * 
+     * @return memberTimeout */
     public Integer getMemberTimeout() {
         return memberTimeout;
     }
@@ -508,22 +402,14 @@ public class UpdateListenerOption  {
         this.memberTimeout = memberTimeout;
     }
 
-    
-
     public UpdateListenerOption withClientTimeout(Integer clientTimeout) {
         this.clientTimeout = clientTimeout;
         return this;
     }
 
-    
-
-
-    /**
-     * 等待客户端请求超时时间，仅限协议为HTTP， TERMINATED_HTTPS的监听器配置。取值范围为1-60s, 默认值为60s TCP，UDP协议的监听器不支持此字段
-     * minimum: 1
-     * maximum: 60
-     * @return clientTimeout
-     */
+    /** 等待客户端请求超时时间，仅限协议为HTTP， TERMINATED_HTTPS的监听器配置。取值范围为1-60s, 默认值为60s TCP，UDP协议的监听器不支持此字段 minimum: 1 maximum: 60
+     * 
+     * @return clientTimeout */
     public Integer getClientTimeout() {
         return clientTimeout;
     }
@@ -532,20 +418,14 @@ public class UpdateListenerOption  {
         this.clientTimeout = clientTimeout;
     }
 
-    
-
     public UpdateListenerOption withKeepaliveTimeout(Integer keepaliveTimeout) {
         this.keepaliveTimeout = keepaliveTimeout;
         return this;
     }
 
-    
-
-
-    /**
-     * TCP监听器配置空闲超时时间，取值范围为（10-900s）默认值为300s，HTTP/TERMINATED_HTTPS监听器为客户端连接空闲超时时间，取值范围为（1-300s）默认值为15s。 UDP监听器不支持此字段
-     * @return keepaliveTimeout
-     */
+    /** TCP监听器配置空闲超时时间，取值范围为（10-900s）默认值为300s，HTTP/TERMINATED_HTTPS监听器为客户端连接空闲超时时间，取值范围为（1-300s）默认值为15s。 UDP监听器不支持此字段
+     * 
+     * @return keepaliveTimeout */
     public Integer getKeepaliveTimeout() {
         return keepaliveTimeout;
     }
@@ -554,27 +434,23 @@ public class UpdateListenerOption  {
         this.keepaliveTimeout = keepaliveTimeout;
     }
 
-    
-
     public UpdateListenerOption withIpgroup(UpdateListenerIpGroupOption ipgroup) {
         this.ipgroup = ipgroup;
         return this;
     }
 
     public UpdateListenerOption withIpgroup(Consumer<UpdateListenerIpGroupOption> ipgroupSetter) {
-        if(this.ipgroup == null ){
+        if (this.ipgroup == null) {
             this.ipgroup = new UpdateListenerIpGroupOption();
             ipgroupSetter.accept(this.ipgroup);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get ipgroup
-     * @return ipgroup
-     */
+    /** Get ipgroup
+     * 
+     * @return ipgroup */
     public UpdateListenerIpGroupOption getIpgroup() {
         return ipgroup;
     }
@@ -583,20 +459,14 @@ public class UpdateListenerOption  {
         this.ipgroup = ipgroup;
     }
 
-    
-
     public UpdateListenerOption withTransparentClientIpEnable(Boolean transparentClientIpEnable) {
         this.transparentClientIpEnable = transparentClientIpEnable;
         return this;
     }
 
-    
-
-
-    /**
-     * 获取客户端真实IP 共享型实例的TCP/UDP监听器支持修改，共享型实例的HTTP/TERMINATED_HTTPS监听器和独享型实例的所有类型监听器都不支持修改
-     * @return transparentClientIpEnable
-     */
+    /** 获取客户端真实IP 共享型实例的TCP/UDP监听器支持修改，共享型实例的HTTP/TERMINATED_HTTPS监听器和独享型实例的所有类型监听器都不支持修改
+     * 
+     * @return transparentClientIpEnable */
     public Boolean getTransparentClientIpEnable() {
         return transparentClientIpEnable;
     }
@@ -604,8 +474,6 @@ public class UpdateListenerOption  {
     public void setTransparentClientIpEnable(Boolean transparentClientIpEnable) {
         this.transparentClientIpEnable = transparentClientIpEnable;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -616,27 +484,44 @@ public class UpdateListenerOption  {
             return false;
         }
         UpdateListenerOption updateListenerOption = (UpdateListenerOption) o;
-        return Objects.equals(this.adminStateUp, updateListenerOption.adminStateUp) &&
-            Objects.equals(this.clientCaTlsContainerRef, updateListenerOption.clientCaTlsContainerRef) &&
-            Objects.equals(this.defaultPoolId, updateListenerOption.defaultPoolId) &&
-            Objects.equals(this.defaultTlsContainerRef, updateListenerOption.defaultTlsContainerRef) &&
-            Objects.equals(this.description, updateListenerOption.description) &&
-            Objects.equals(this.http2Enable, updateListenerOption.http2Enable) &&
-            Objects.equals(this.insertHeaders, updateListenerOption.insertHeaders) &&
-            Objects.equals(this.name, updateListenerOption.name) &&
-            Objects.equals(this.sniContainerRefs, updateListenerOption.sniContainerRefs) &&
-            Objects.equals(this.tlsCiphersPolicy, updateListenerOption.tlsCiphersPolicy) &&
-            Objects.equals(this.enableMemberRetry, updateListenerOption.enableMemberRetry) &&
-            Objects.equals(this.memberTimeout, updateListenerOption.memberTimeout) &&
-            Objects.equals(this.clientTimeout, updateListenerOption.clientTimeout) &&
-            Objects.equals(this.keepaliveTimeout, updateListenerOption.keepaliveTimeout) &&
-            Objects.equals(this.ipgroup, updateListenerOption.ipgroup) &&
-            Objects.equals(this.transparentClientIpEnable, updateListenerOption.transparentClientIpEnable);
+        return Objects.equals(this.adminStateUp, updateListenerOption.adminStateUp)
+            && Objects.equals(this.clientCaTlsContainerRef, updateListenerOption.clientCaTlsContainerRef)
+            && Objects.equals(this.defaultPoolId, updateListenerOption.defaultPoolId)
+            && Objects.equals(this.defaultTlsContainerRef, updateListenerOption.defaultTlsContainerRef)
+            && Objects.equals(this.description, updateListenerOption.description)
+            && Objects.equals(this.http2Enable, updateListenerOption.http2Enable)
+            && Objects.equals(this.insertHeaders, updateListenerOption.insertHeaders)
+            && Objects.equals(this.name, updateListenerOption.name)
+            && Objects.equals(this.sniContainerRefs, updateListenerOption.sniContainerRefs)
+            && Objects.equals(this.tlsCiphersPolicy, updateListenerOption.tlsCiphersPolicy)
+            && Objects.equals(this.enableMemberRetry, updateListenerOption.enableMemberRetry)
+            && Objects.equals(this.memberTimeout, updateListenerOption.memberTimeout)
+            && Objects.equals(this.clientTimeout, updateListenerOption.clientTimeout)
+            && Objects.equals(this.keepaliveTimeout, updateListenerOption.keepaliveTimeout)
+            && Objects.equals(this.ipgroup, updateListenerOption.ipgroup)
+            && Objects.equals(this.transparentClientIpEnable, updateListenerOption.transparentClientIpEnable);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(adminStateUp, clientCaTlsContainerRef, defaultPoolId, defaultTlsContainerRef, description, http2Enable, insertHeaders, name, sniContainerRefs, tlsCiphersPolicy, enableMemberRetry, memberTimeout, clientTimeout, keepaliveTimeout, ipgroup, transparentClientIpEnable);
+        return Objects.hash(adminStateUp,
+            clientCaTlsContainerRef,
+            defaultPoolId,
+            defaultTlsContainerRef,
+            description,
+            http2Enable,
+            insertHeaders,
+            name,
+            sniContainerRefs,
+            tlsCiphersPolicy,
+            enableMemberRetry,
+            memberTimeout,
+            clientTimeout,
+            keepaliveTimeout,
+            ipgroup,
+            transparentClientIpEnable);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -660,16 +545,13 @@ public class UpdateListenerOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

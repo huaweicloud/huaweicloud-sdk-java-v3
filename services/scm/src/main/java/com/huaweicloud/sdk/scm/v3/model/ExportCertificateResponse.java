@@ -1,40 +1,27 @@
 package com.huaweicloud.sdk.scm.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ExportCertificateResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificate")
-    
+    @JsonProperty(value = "certificate")
+
     private String certificate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificate_chain")
-    
+    @JsonProperty(value = "certificate_chain")
+
     private String certificateChain;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="private_key")
-    
+    @JsonProperty(value = "private_key")
+
     private String privateKey;
 
     public ExportCertificateResponse withCertificate(String certificate) {
@@ -42,13 +29,9 @@ public class ExportCertificateResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 证书内容。
-     * @return certificate
-     */
+    /** 证书内容。
+     * 
+     * @return certificate */
     public String getCertificate() {
         return certificate;
     }
@@ -57,20 +40,14 @@ public class ExportCertificateResponse extends SdkResponse {
         this.certificate = certificate;
     }
 
-    
-
     public ExportCertificateResponse withCertificateChain(String certificateChain) {
         this.certificateChain = certificateChain;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书链。
-     * @return certificateChain
-     */
+    /** 证书链。
+     * 
+     * @return certificateChain */
     public String getCertificateChain() {
         return certificateChain;
     }
@@ -79,20 +56,14 @@ public class ExportCertificateResponse extends SdkResponse {
         this.certificateChain = certificateChain;
     }
 
-    
-
     public ExportCertificateResponse withPrivateKey(String privateKey) {
         this.privateKey = privateKey;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书私钥。
-     * @return privateKey
-     */
+    /** 证书私钥。
+     * 
+     * @return privateKey */
     public String getPrivateKey() {
         return privateKey;
     }
@@ -100,8 +71,6 @@ public class ExportCertificateResponse extends SdkResponse {
     public void setPrivateKey(String privateKey) {
         this.privateKey = privateKey;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +81,16 @@ public class ExportCertificateResponse extends SdkResponse {
             return false;
         }
         ExportCertificateResponse exportCertificateResponse = (ExportCertificateResponse) o;
-        return Objects.equals(this.certificate, exportCertificateResponse.certificate) &&
-            Objects.equals(this.certificateChain, exportCertificateResponse.certificateChain) &&
-            Objects.equals(this.privateKey, exportCertificateResponse.privateKey);
+        return Objects.equals(this.certificate, exportCertificateResponse.certificate)
+            && Objects.equals(this.certificateChain, exportCertificateResponse.certificateChain)
+            && Objects.equals(this.privateKey, exportCertificateResponse.privateKey);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(certificate, certificateChain, privateKey);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +101,13 @@ public class ExportCertificateResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

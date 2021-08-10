@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 查询结果元数据统计个数。
- */
-public class TotalMetaData  {
-
-
+/** 查询结果元数据统计个数。 */
+public class TotalMetaData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
     public TotalMetaData withTotal(Integer total) {
@@ -28,13 +18,9 @@ public class TotalMetaData  {
         return this;
     }
 
-    
-
-
-    /**
-     * 总条数。
-     * @return total
-     */
+    /** 总条数。
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -42,8 +28,6 @@ public class TotalMetaData  {
     public void setTotal(Integer total) {
         this.total = total;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class TotalMetaData  {
         TotalMetaData totalMetaData = (TotalMetaData) o;
         return Objects.equals(this.total, totalMetaData.total);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(total);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class TotalMetaData  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

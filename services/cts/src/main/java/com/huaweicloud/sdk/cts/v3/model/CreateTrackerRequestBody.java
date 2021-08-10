@@ -1,43 +1,29 @@
 package com.huaweicloud.sdk.cts.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cts.v3.model.DataBucket;
-import com.huaweicloud.sdk.cts.v3.model.TrackerObsInfo;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * CreateTrackerRequestBody
- */
-public class CreateTrackerRequestBody  {
+/** CreateTrackerRequestBody */
+public class CreateTrackerRequestBody {
 
-    /**
-     * 标识追踪器类型。 目前支持系统追踪器类型有管理类追踪器(system)和数据类追踪器(data)。 数据类追踪器和管理类追踪器共同参数有：is_lts_enabled, obs_info; 管理类追踪器参数：is_support_trace_files_encryption, kms_id, is_support_validate, is_support_validate; 数据类追踪器参数：tracker_name, data_bucket。
-     */
+    /** 标识追踪器类型。 目前支持系统追踪器类型有管理类追踪器(system)和数据类追踪器(data)。 数据类追踪器和管理类追踪器共同参数有：is_lts_enabled, obs_info;
+     * 管理类追踪器参数：is_support_trace_files_encryption, kms_id, is_support_validate, is_support_validate;
+     * 数据类追踪器参数：tracker_name, data_bucket。 */
     public static final class TrackerTypeEnum {
 
-        
-        /**
-         * Enum SYSTEM for value: "system"
-         */
+        /** Enum SYSTEM for value: "system" */
         public static final TrackerTypeEnum SYSTEM = new TrackerTypeEnum("system");
-        
-        /**
-         * Enum DATA for value: "data"
-         */
+
+        /** Enum DATA for value: "data" */
         public static final TrackerTypeEnum DATA = new TrackerTypeEnum("data");
-        
 
         private static final Map<String, TrackerTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -66,7 +52,7 @@ public class CreateTrackerRequestBody  {
 
         @JsonCreator
         public static TrackerTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TrackerTypeEnum result = STATIC_FIELDS.get(value);
@@ -77,7 +63,7 @@ public class CreateTrackerRequestBody  {
         }
 
         public static TrackerTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TrackerTypeEnum result = STATIC_FIELDS.get(value);
@@ -101,52 +87,44 @@ public class CreateTrackerRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tracker_type")
-    
+    @JsonProperty(value = "tracker_type")
+
     private TrackerTypeEnum trackerType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tracker_name")
-    
+    @JsonProperty(value = "tracker_name")
+
     private String trackerName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_lts_enabled")
-    
+    @JsonProperty(value = "is_lts_enabled")
+
     private Boolean isLtsEnabled;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="obs_info")
-    
+    @JsonProperty(value = "obs_info")
+
     private TrackerObsInfo obsInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_support_trace_files_encryption")
-    
+    @JsonProperty(value = "is_support_trace_files_encryption")
+
     private Boolean isSupportTraceFilesEncryption;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="kms_id")
-    
+    @JsonProperty(value = "kms_id")
+
     private String kmsId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_support_validate")
-    
+    @JsonProperty(value = "is_support_validate")
+
     private Boolean isSupportValidate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_bucket")
-    
+    @JsonProperty(value = "data_bucket")
+
     private DataBucket dataBucket;
 
     public CreateTrackerRequestBody withTrackerType(TrackerTypeEnum trackerType) {
@@ -154,13 +132,11 @@ public class CreateTrackerRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 标识追踪器类型。 目前支持系统追踪器类型有管理类追踪器(system)和数据类追踪器(data)。 数据类追踪器和管理类追踪器共同参数有：is_lts_enabled, obs_info; 管理类追踪器参数：is_support_trace_files_encryption, kms_id, is_support_validate, is_support_validate; 数据类追踪器参数：tracker_name, data_bucket。
-     * @return trackerType
-     */
+    /** 标识追踪器类型。 目前支持系统追踪器类型有管理类追踪器(system)和数据类追踪器(data)。 数据类追踪器和管理类追踪器共同参数有：is_lts_enabled, obs_info;
+     * 管理类追踪器参数：is_support_trace_files_encryption, kms_id, is_support_validate, is_support_validate;
+     * 数据类追踪器参数：tracker_name, data_bucket。
+     * 
+     * @return trackerType */
     public TrackerTypeEnum getTrackerType() {
         return trackerType;
     }
@@ -169,20 +145,14 @@ public class CreateTrackerRequestBody  {
         this.trackerType = trackerType;
     }
 
-    
-
     public CreateTrackerRequestBody withTrackerName(String trackerName) {
         this.trackerName = trackerName;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识追踪器名称。 当\"tracker_type\"参数值为\"system\"时该参数为默认值\"system\"。 当\"tracker_type\"参数值为\"data\"时该参数需要指定追踪器名称\"。
-     * @return trackerName
-     */
+    /** 标识追踪器名称。 当\"tracker_type\"参数值为\"system\"时该参数为默认值\"system\"。 当\"tracker_type\"参数值为\"data\"时该参数需要指定追踪器名称\"。
+     * 
+     * @return trackerName */
     public String getTrackerName() {
         return trackerName;
     }
@@ -191,20 +161,14 @@ public class CreateTrackerRequestBody  {
         this.trackerName = trackerName;
     }
 
-    
-
     public CreateTrackerRequestBody withIsLtsEnabled(Boolean isLtsEnabled) {
         this.isLtsEnabled = isLtsEnabled;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否打开事件分析。
-     * @return isLtsEnabled
-     */
+    /** 是否打开事件分析。
+     * 
+     * @return isLtsEnabled */
     public Boolean getIsLtsEnabled() {
         return isLtsEnabled;
     }
@@ -213,27 +177,23 @@ public class CreateTrackerRequestBody  {
         this.isLtsEnabled = isLtsEnabled;
     }
 
-    
-
     public CreateTrackerRequestBody withObsInfo(TrackerObsInfo obsInfo) {
         this.obsInfo = obsInfo;
         return this;
     }
 
     public CreateTrackerRequestBody withObsInfo(Consumer<TrackerObsInfo> obsInfoSetter) {
-        if(this.obsInfo == null ){
+        if (this.obsInfo == null) {
             this.obsInfo = new TrackerObsInfo();
             obsInfoSetter.accept(this.obsInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get obsInfo
-     * @return obsInfo
-     */
+    /** Get obsInfo
+     * 
+     * @return obsInfo */
     public TrackerObsInfo getObsInfo() {
         return obsInfo;
     }
@@ -242,20 +202,14 @@ public class CreateTrackerRequestBody  {
         this.obsInfo = obsInfo;
     }
 
-    
-
     public CreateTrackerRequestBody withIsSupportTraceFilesEncryption(Boolean isSupportTraceFilesEncryption) {
         this.isSupportTraceFilesEncryption = isSupportTraceFilesEncryption;
         return this;
     }
 
-    
-
-
-    /**
-     * 事件文件转储加密功能开关。 当\"tracker_type\"参数值为\"system\"时该参数值有效。 该参数必须与kms_id参数同时使用。
-     * @return isSupportTraceFilesEncryption
-     */
+    /** 事件文件转储加密功能开关。 当\"tracker_type\"参数值为\"system\"时该参数值有效。 该参数必须与kms_id参数同时使用。
+     * 
+     * @return isSupportTraceFilesEncryption */
     public Boolean getIsSupportTraceFilesEncryption() {
         return isSupportTraceFilesEncryption;
     }
@@ -264,20 +218,15 @@ public class CreateTrackerRequestBody  {
         this.isSupportTraceFilesEncryption = isSupportTraceFilesEncryption;
     }
 
-    
-
     public CreateTrackerRequestBody withKmsId(String kmsId) {
         this.kmsId = kmsId;
         return this;
     }
 
-    
-
-
-    /**
-     * 事件文件转储加密所采用的秘钥id（从KMS获取）。 当\"tracker_type\"参数值为\"system\"时该参数值有效。 当\"is_support_trace_files_encryption\"参数值为“是”时，此参数为必选项。
-     * @return kmsId
-     */
+    /** 事件文件转储加密所采用的秘钥id（从KMS获取）。 当\"tracker_type\"参数值为\"system\"时该参数值有效。
+     * 当\"is_support_trace_files_encryption\"参数值为“是”时，此参数为必选项。
+     * 
+     * @return kmsId */
     public String getKmsId() {
         return kmsId;
     }
@@ -286,20 +235,14 @@ public class CreateTrackerRequestBody  {
         this.kmsId = kmsId;
     }
 
-    
-
     public CreateTrackerRequestBody withIsSupportValidate(Boolean isSupportValidate) {
         this.isSupportValidate = isSupportValidate;
         return this;
     }
 
-    
-
-
-    /**
-     * 事件文件转储时是否打开事件文件校验。 当\"tracker_type\"参数值为\"system\"时该参数值有效。
-     * @return isSupportValidate
-     */
+    /** 事件文件转储时是否打开事件文件校验。 当\"tracker_type\"参数值为\"system\"时该参数值有效。
+     * 
+     * @return isSupportValidate */
     public Boolean getIsSupportValidate() {
         return isSupportValidate;
     }
@@ -308,27 +251,23 @@ public class CreateTrackerRequestBody  {
         this.isSupportValidate = isSupportValidate;
     }
 
-    
-
     public CreateTrackerRequestBody withDataBucket(DataBucket dataBucket) {
         this.dataBucket = dataBucket;
         return this;
     }
 
     public CreateTrackerRequestBody withDataBucket(Consumer<DataBucket> dataBucketSetter) {
-        if(this.dataBucket == null ){
+        if (this.dataBucket == null) {
             this.dataBucket = new DataBucket();
             dataBucketSetter.accept(this.dataBucket);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get dataBucket
-     * @return dataBucket
-     */
+    /** Get dataBucket
+     * 
+     * @return dataBucket */
     public DataBucket getDataBucket() {
         return dataBucket;
     }
@@ -336,8 +275,6 @@ public class CreateTrackerRequestBody  {
     public void setDataBucket(DataBucket dataBucket) {
         this.dataBucket = dataBucket;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -348,19 +285,29 @@ public class CreateTrackerRequestBody  {
             return false;
         }
         CreateTrackerRequestBody createTrackerRequestBody = (CreateTrackerRequestBody) o;
-        return Objects.equals(this.trackerType, createTrackerRequestBody.trackerType) &&
-            Objects.equals(this.trackerName, createTrackerRequestBody.trackerName) &&
-            Objects.equals(this.isLtsEnabled, createTrackerRequestBody.isLtsEnabled) &&
-            Objects.equals(this.obsInfo, createTrackerRequestBody.obsInfo) &&
-            Objects.equals(this.isSupportTraceFilesEncryption, createTrackerRequestBody.isSupportTraceFilesEncryption) &&
-            Objects.equals(this.kmsId, createTrackerRequestBody.kmsId) &&
-            Objects.equals(this.isSupportValidate, createTrackerRequestBody.isSupportValidate) &&
-            Objects.equals(this.dataBucket, createTrackerRequestBody.dataBucket);
+        return Objects.equals(this.trackerType, createTrackerRequestBody.trackerType)
+            && Objects.equals(this.trackerName, createTrackerRequestBody.trackerName)
+            && Objects.equals(this.isLtsEnabled, createTrackerRequestBody.isLtsEnabled)
+            && Objects.equals(this.obsInfo, createTrackerRequestBody.obsInfo)
+            && Objects.equals(this.isSupportTraceFilesEncryption,
+                createTrackerRequestBody.isSupportTraceFilesEncryption)
+            && Objects.equals(this.kmsId, createTrackerRequestBody.kmsId)
+            && Objects.equals(this.isSupportValidate, createTrackerRequestBody.isSupportValidate)
+            && Objects.equals(this.dataBucket, createTrackerRequestBody.dataBucket);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(trackerType, trackerName, isLtsEnabled, obsInfo, isSupportTraceFilesEncryption, kmsId, isSupportValidate, dataBucket);
+        return Objects.hash(trackerType,
+            trackerName,
+            isLtsEnabled,
+            obsInfo,
+            isSupportTraceFilesEncryption,
+            kmsId,
+            isSupportValidate,
+            dataBucket);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -369,23 +316,22 @@ public class CreateTrackerRequestBody  {
         sb.append("    trackerName: ").append(toIndentedString(trackerName)).append("\n");
         sb.append("    isLtsEnabled: ").append(toIndentedString(isLtsEnabled)).append("\n");
         sb.append("    obsInfo: ").append(toIndentedString(obsInfo)).append("\n");
-        sb.append("    isSupportTraceFilesEncryption: ").append(toIndentedString(isSupportTraceFilesEncryption)).append("\n");
+        sb.append("    isSupportTraceFilesEncryption: ")
+            .append(toIndentedString(isSupportTraceFilesEncryption))
+            .append("\n");
         sb.append("    kmsId: ").append(toIndentedString(kmsId)).append("\n");
         sb.append("    isSupportValidate: ").append(toIndentedString(isSupportValidate)).append("\n");
         sb.append("    dataBucket: ").append(toIndentedString(dataBucket)).append("\n");
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

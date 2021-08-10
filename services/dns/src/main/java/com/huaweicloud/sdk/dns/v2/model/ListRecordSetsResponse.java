@@ -1,45 +1,30 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dns.v2.model.ListRecordSets;
-import com.huaweicloud.sdk.dns.v2.model.Metedata;
-import com.huaweicloud.sdk.dns.v2.model.PageLink;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListRecordSetsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private PageLink links;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="recordsets")
-    
+    @JsonProperty(value = "recordsets")
+
     private List<ListRecordSets> recordsets = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata")
-    
+    @JsonProperty(value = "metadata")
+
     private Metedata metadata;
 
     public ListRecordSetsResponse withLinks(PageLink links) {
@@ -48,19 +33,17 @@ public class ListRecordSetsResponse extends SdkResponse {
     }
 
     public ListRecordSetsResponse withLinks(Consumer<PageLink> linksSetter) {
-        if(this.links == null ){
+        if (this.links == null) {
             this.links = new PageLink();
             linksSetter.accept(this.links);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get links
-     * @return links
-     */
+    /** Get links
+     * 
+     * @return links */
     public PageLink getLinks() {
         return links;
     }
@@ -69,16 +52,13 @@ public class ListRecordSetsResponse extends SdkResponse {
         this.links = links;
     }
 
-    
-
     public ListRecordSetsResponse withRecordsets(List<ListRecordSets> recordsets) {
         this.recordsets = recordsets;
         return this;
     }
 
-    
     public ListRecordSetsResponse addRecordsetsItem(ListRecordSets recordsetsItem) {
-        if(this.recordsets == null) {
+        if (this.recordsets == null) {
             this.recordsets = new ArrayList<>();
         }
         this.recordsets.add(recordsetsItem);
@@ -86,17 +66,16 @@ public class ListRecordSetsResponse extends SdkResponse {
     }
 
     public ListRecordSetsResponse withRecordsets(Consumer<List<ListRecordSets>> recordsetsSetter) {
-        if(this.recordsets == null) {
+        if (this.recordsets == null) {
             this.recordsets = new ArrayList<>();
         }
         recordsetsSetter.accept(this.recordsets);
         return this;
     }
 
-    /**
-     * Get recordsets
-     * @return recordsets
-     */
+    /** Get recordsets
+     * 
+     * @return recordsets */
     public List<ListRecordSets> getRecordsets() {
         return recordsets;
     }
@@ -105,27 +84,23 @@ public class ListRecordSetsResponse extends SdkResponse {
         this.recordsets = recordsets;
     }
 
-    
-
     public ListRecordSetsResponse withMetadata(Metedata metadata) {
         this.metadata = metadata;
         return this;
     }
 
     public ListRecordSetsResponse withMetadata(Consumer<Metedata> metadataSetter) {
-        if(this.metadata == null ){
+        if (this.metadata == null) {
             this.metadata = new Metedata();
             metadataSetter.accept(this.metadata);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get metadata
-     * @return metadata
-     */
+    /** Get metadata
+     * 
+     * @return metadata */
     public Metedata getMetadata() {
         return metadata;
     }
@@ -133,8 +108,6 @@ public class ListRecordSetsResponse extends SdkResponse {
     public void setMetadata(Metedata metadata) {
         this.metadata = metadata;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -145,14 +118,16 @@ public class ListRecordSetsResponse extends SdkResponse {
             return false;
         }
         ListRecordSetsResponse listRecordSetsResponse = (ListRecordSetsResponse) o;
-        return Objects.equals(this.links, listRecordSetsResponse.links) &&
-            Objects.equals(this.recordsets, listRecordSetsResponse.recordsets) &&
-            Objects.equals(this.metadata, listRecordSetsResponse.metadata);
+        return Objects.equals(this.links, listRecordSetsResponse.links)
+            && Objects.equals(this.recordsets, listRecordSetsResponse.recordsets)
+            && Objects.equals(this.metadata, listRecordSetsResponse.metadata);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(links, recordsets, metadata);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -163,16 +138,13 @@ public class ListRecordSetsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,63 +1,42 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.AppBaseInfo;
+
 import java.time.OffsetDateTime;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * AppInfo
- */
-public class AppInfo  {
-
-
+/** AppInfo */
+public class AppInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
+
     private String remark;
-    /**
-     * APP的创建者 - USER：用户自行创建 - MARKET：云市场分配  暂不支持MARKET
-     */
+
+    /** APP的创建者 - USER：用户自行创建 - MARKET：云市场分配 暂不支持MARKET */
     public static final class CreatorEnum {
 
-        
-        /**
-         * Enum USER for value: "USER"
-         */
+        /** Enum USER for value: "USER" */
         public static final CreatorEnum USER = new CreatorEnum("USER");
-        
-        /**
-         * Enum MARKET for value: "MARKET"
-         */
+
+        /** Enum MARKET for value: "MARKET" */
         public static final CreatorEnum MARKET = new CreatorEnum("MARKET");
-        
 
         private static final Map<String, CreatorEnum> STATIC_FIELDS = createStaticFields();
 
@@ -86,7 +65,7 @@ public class AppInfo  {
 
         @JsonCreator
         public static CreatorEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CreatorEnum result = STATIC_FIELDS.get(value);
@@ -97,7 +76,7 @@ public class AppInfo  {
         }
 
         public static CreatorEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CreatorEnum result = STATIC_FIELDS.get(value);
@@ -121,57 +100,44 @@ public class AppInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator")
-    
+    @JsonProperty(value = "creator")
+
     private CreatorEnum creator;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private OffsetDateTime updateTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_key")
-    
+    @JsonProperty(value = "app_key")
+
     private String appKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_secret")
-    
+    @JsonProperty(value = "app_secret")
+
     private String appSecret;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="register_time")
-    
+    @JsonProperty(value = "register_time")
+
     private OffsetDateTime registerTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
-    /**
-     * APP的类型： - apig：存量apig应用，不推荐使用 - roma：roma集成应用
-     */
+
+    /** APP的类型： - apig：存量apig应用，不推荐使用 - roma：roma集成应用 */
     public static final class AppTypeEnum {
 
-        
-        /**
-         * Enum APIG for value: "apig"
-         */
+        /** Enum APIG for value: "apig" */
         public static final AppTypeEnum APIG = new AppTypeEnum("apig");
-        
-        /**
-         * Enum ROMA for value: "roma"
-         */
+
+        /** Enum ROMA for value: "roma" */
         public static final AppTypeEnum ROMA = new AppTypeEnum("roma");
-        
 
         private static final Map<String, AppTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -200,7 +166,7 @@ public class AppInfo  {
 
         @JsonCreator
         public static AppTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AppTypeEnum result = STATIC_FIELDS.get(value);
@@ -211,7 +177,7 @@ public class AppInfo  {
         }
 
         public static AppTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AppTypeEnum result = STATIC_FIELDS.get(value);
@@ -235,16 +201,14 @@ public class AppInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_type")
-    
+    @JsonProperty(value = "app_type")
+
     private AppTypeEnum appType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roma_app_type")
-    
+    @JsonProperty(value = "roma_app_type")
+
     private Object romaAppType;
 
     public AppInfo withId(String id) {
@@ -252,13 +216,9 @@ public class AppInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 编号
-     * @return id
-     */
+    /** 编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -267,20 +227,14 @@ public class AppInfo  {
         this.id = id;
     }
 
-    
-
     public AppInfo withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 名称
-     * @return name
-     */
+    /** 名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -289,20 +243,14 @@ public class AppInfo  {
         this.name = name;
     }
 
-    
-
     public AppInfo withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述
-     * @return remark
-     */
+    /** 描述
+     * 
+     * @return remark */
     public String getRemark() {
         return remark;
     }
@@ -311,20 +259,14 @@ public class AppInfo  {
         this.remark = remark;
     }
 
-    
-
     public AppInfo withCreator(CreatorEnum creator) {
         this.creator = creator;
         return this;
     }
 
-    
-
-
-    /**
-     * APP的创建者 - USER：用户自行创建 - MARKET：云市场分配  暂不支持MARKET
-     * @return creator
-     */
+    /** APP的创建者 - USER：用户自行创建 - MARKET：云市场分配 暂不支持MARKET
+     * 
+     * @return creator */
     public CreatorEnum getCreator() {
         return creator;
     }
@@ -333,20 +275,14 @@ public class AppInfo  {
         this.creator = creator;
     }
 
-    
-
     public AppInfo withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间
-     * @return updateTime
-     */
+    /** 更新时间
+     * 
+     * @return updateTime */
     public OffsetDateTime getUpdateTime() {
         return updateTime;
     }
@@ -355,20 +291,14 @@ public class AppInfo  {
         this.updateTime = updateTime;
     }
 
-    
-
     public AppInfo withAppKey(String appKey) {
         this.appKey = appKey;
         return this;
     }
 
-    
-
-
-    /**
-     * APP的key
-     * @return appKey
-     */
+    /** APP的key
+     * 
+     * @return appKey */
     public String getAppKey() {
         return appKey;
     }
@@ -377,20 +307,14 @@ public class AppInfo  {
         this.appKey = appKey;
     }
 
-    
-
     public AppInfo withAppSecret(String appSecret) {
         this.appSecret = appSecret;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥
-     * @return appSecret
-     */
+    /** 密钥
+     * 
+     * @return appSecret */
     public String getAppSecret() {
         return appSecret;
     }
@@ -399,20 +323,14 @@ public class AppInfo  {
         this.appSecret = appSecret;
     }
 
-    
-
     public AppInfo withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 注册时间
-     * @return registerTime
-     */
+    /** 注册时间
+     * 
+     * @return registerTime */
     public OffsetDateTime getRegisterTime() {
         return registerTime;
     }
@@ -421,20 +339,14 @@ public class AppInfo  {
         this.registerTime = registerTime;
     }
 
-    
-
     public AppInfo withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态   - 1： 有效
-     * @return status
-     */
+    /** 状态 - 1： 有效
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -443,20 +355,14 @@ public class AppInfo  {
         this.status = status;
     }
 
-    
-
     public AppInfo withAppType(AppTypeEnum appType) {
         this.appType = appType;
         return this;
     }
 
-    
-
-
-    /**
-     * APP的类型： - apig：存量apig应用，不推荐使用 - roma：roma集成应用
-     * @return appType
-     */
+    /** APP的类型： - apig：存量apig应用，不推荐使用 - roma：roma集成应用
+     * 
+     * @return appType */
     public AppTypeEnum getAppType() {
         return appType;
     }
@@ -465,20 +371,14 @@ public class AppInfo  {
         this.appType = appType;
     }
 
-    
-
     public AppInfo withRomaAppType(Object romaAppType) {
         this.romaAppType = romaAppType;
         return this;
     }
 
-    
-
-
-    /**
-     * ROMA_APP的类型： - subscription：订阅应用 - integration：集成应用
-     * @return romaAppType
-     */
+    /** ROMA_APP的类型： - subscription：订阅应用 - integration：集成应用
+     * 
+     * @return romaAppType */
     public Object getRomaAppType() {
         return romaAppType;
     }
@@ -486,8 +386,6 @@ public class AppInfo  {
     public void setRomaAppType(Object romaAppType) {
         this.romaAppType = romaAppType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -498,22 +396,20 @@ public class AppInfo  {
             return false;
         }
         AppInfo appInfo = (AppInfo) o;
-        return Objects.equals(this.id, appInfo.id) &&
-            Objects.equals(this.name, appInfo.name) &&
-            Objects.equals(this.remark, appInfo.remark) &&
-            Objects.equals(this.creator, appInfo.creator) &&
-            Objects.equals(this.updateTime, appInfo.updateTime) &&
-            Objects.equals(this.appKey, appInfo.appKey) &&
-            Objects.equals(this.appSecret, appInfo.appSecret) &&
-            Objects.equals(this.registerTime, appInfo.registerTime) &&
-            Objects.equals(this.status, appInfo.status) &&
-            Objects.equals(this.appType, appInfo.appType) &&
-            Objects.equals(this.romaAppType, appInfo.romaAppType);
+        return Objects.equals(this.id, appInfo.id) && Objects.equals(this.name, appInfo.name)
+            && Objects.equals(this.remark, appInfo.remark) && Objects.equals(this.creator, appInfo.creator)
+            && Objects.equals(this.updateTime, appInfo.updateTime) && Objects.equals(this.appKey, appInfo.appKey)
+            && Objects.equals(this.appSecret, appInfo.appSecret)
+            && Objects.equals(this.registerTime, appInfo.registerTime) && Objects.equals(this.status, appInfo.status)
+            && Objects.equals(this.appType, appInfo.appType) && Objects.equals(this.romaAppType, appInfo.romaAppType);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, remark, creator, updateTime, appKey, appSecret, registerTime, status, appType, romaAppType);
+        return Objects
+            .hash(id, name, remark, creator, updateTime, appKey, appSecret, registerTime, status, appType, romaAppType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -532,16 +428,13 @@ public class AppInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

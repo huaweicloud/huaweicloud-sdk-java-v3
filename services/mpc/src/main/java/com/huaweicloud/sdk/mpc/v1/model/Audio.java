@@ -1,47 +1,32 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.OutputPolicy;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Audio
- */
-public class Audio  {
+/** Audio */
+public class Audio {
 
-    /**
-     * 输出策略。  取值如下： - discard - transcode  >- 当视频参数中的“output_policy”为\"discard\"，且音频参数中的“output_policy”为“transcode”时，表示只输出音频。 >- 当视频参数中的“output_policy”为\"transcode\"，且音频参数中的“output_policy”为“discard”时，表示只输出视频。 >- 同时为\"discard\"时不合法。 >- 同时为“transcode”时，表示输出音视频。 
-     */
+    /** 输出策略。 取值如下： - discard - transcode >-
+     * 当视频参数中的“output_policy”为\"discard\"，且音频参数中的“output_policy”为“transcode”时，表示只输出音频。 >-
+     * 当视频参数中的“output_policy”为\"transcode\"，且音频参数中的“output_policy”为“discard”时，表示只输出视频。 >- 同时为\"discard\"时不合法。 >-
+     * 同时为“transcode”时，表示输出音视频。 */
     public static final class OutputPolicyEnum {
 
-        
-        /**
-         * Enum TRANSCODE for value: "transcode"
-         */
+        /** Enum TRANSCODE for value: "transcode" */
         public static final OutputPolicyEnum TRANSCODE = new OutputPolicyEnum("transcode");
-        
-        /**
-         * Enum DISCARD for value: "discard"
-         */
+
+        /** Enum DISCARD for value: "discard" */
         public static final OutputPolicyEnum DISCARD = new OutputPolicyEnum("discard");
-        
-        /**
-         * Enum COPY for value: "copy"
-         */
+
+        /** Enum COPY for value: "copy" */
         public static final OutputPolicyEnum COPY = new OutputPolicyEnum("copy");
-        
 
         private static final Map<String, OutputPolicyEnum> STATIC_FIELDS = createStaticFields();
 
@@ -71,7 +56,7 @@ public class Audio  {
 
         @JsonCreator
         public static OutputPolicyEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OutputPolicyEnum result = STATIC_FIELDS.get(value);
@@ -82,7 +67,7 @@ public class Audio  {
         }
 
         public static OutputPolicyEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OutputPolicyEnum result = STATIC_FIELDS.get(value);
@@ -106,34 +91,29 @@ public class Audio  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output_policy")
-    
+    @JsonProperty(value = "output_policy")
+
     private OutputPolicyEnum outputPolicy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="codec")
-    
+    @JsonProperty(value = "codec")
+
     private Integer codec;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sample_rate")
-    
+    @JsonProperty(value = "sample_rate")
+
     private Integer sampleRate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bitrate")
-    
+    @JsonProperty(value = "bitrate")
+
     private Integer bitrate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="channels")
-    
+    @JsonProperty(value = "channels")
+
     private Integer channels;
 
     public Audio withOutputPolicy(OutputPolicyEnum outputPolicy) {
@@ -141,13 +121,12 @@ public class Audio  {
         return this;
     }
 
-    
-
-
-    /**
-     * 输出策略。  取值如下： - discard - transcode  >- 当视频参数中的“output_policy”为\"discard\"，且音频参数中的“output_policy”为“transcode”时，表示只输出音频。 >- 当视频参数中的“output_policy”为\"transcode\"，且音频参数中的“output_policy”为“discard”时，表示只输出视频。 >- 同时为\"discard\"时不合法。 >- 同时为“transcode”时，表示输出音视频。 
-     * @return outputPolicy
-     */
+    /** 输出策略。 取值如下： - discard - transcode >-
+     * 当视频参数中的“output_policy”为\"discard\"，且音频参数中的“output_policy”为“transcode”时，表示只输出音频。 >-
+     * 当视频参数中的“output_policy”为\"transcode\"，且音频参数中的“output_policy”为“discard”时，表示只输出视频。 >- 同时为\"discard\"时不合法。 >-
+     * 同时为“transcode”时，表示输出音视频。
+     * 
+     * @return outputPolicy */
     public OutputPolicyEnum getOutputPolicy() {
         return outputPolicy;
     }
@@ -156,22 +135,14 @@ public class Audio  {
         this.outputPolicy = outputPolicy;
     }
 
-    
-
     public Audio withCodec(Integer codec) {
         this.codec = codec;
         return this;
     }
 
-    
-
-
-    /**
-     * 音频编码格式。  取值如下：  - 1：AAC格式。 - 2：HEAAC1格式 。 - 3：HEAAC2格式。 - 4：MP3格式 。 
-     * minimum: 1
-     * maximum: 4
-     * @return codec
-     */
+    /** 音频编码格式。 取值如下： - 1：AAC格式。 - 2：HEAAC1格式 。 - 3：HEAAC2格式。 - 4：MP3格式 。 minimum: 1 maximum: 4
+     * 
+     * @return codec */
     public Integer getCodec() {
         return codec;
     }
@@ -180,22 +151,16 @@ public class Audio  {
         this.codec = codec;
     }
 
-    
-
     public Audio withSampleRate(Integer sampleRate) {
         this.sampleRate = sampleRate;
         return this;
     }
 
-    
-
-
-    /**
-     * 音频采样率。  取值如下：  - 1：AUDIO_SAMPLE_AUTO - 2：AUDIO_SAMPLE_22050（22050Hz） - 3：AUDIO_SAMPLE_32000（32000Hz） - 4：AUDIO_SAMPLE_44100（44100Hz） - 5：AUDIO_SAMPLE_48000（48000Hz） - 6：AUDIO_SAMPLE_96000（96000Hz） 
-     * minimum: 1
-     * maximum: 6
-     * @return sampleRate
-     */
+    /** 音频采样率。 取值如下： - 1：AUDIO_SAMPLE_AUTO - 2：AUDIO_SAMPLE_22050（22050Hz） - 3：AUDIO_SAMPLE_32000（32000Hz） -
+     * 4：AUDIO_SAMPLE_44100（44100Hz） - 5：AUDIO_SAMPLE_48000（48000Hz） - 6：AUDIO_SAMPLE_96000（96000Hz） minimum: 1 maximum:
+     * 6
+     * 
+     * @return sampleRate */
     public Integer getSampleRate() {
         return sampleRate;
     }
@@ -204,22 +169,14 @@ public class Audio  {
         this.sampleRate = sampleRate;
     }
 
-    
-
     public Audio withBitrate(Integer bitrate) {
         this.bitrate = bitrate;
         return this;
     }
 
-    
-
-
-    /**
-     * 音频码率。  取值范围：0或[8,1000]。  单位：kbit/s。 
-     * minimum: 0
-     * maximum: 2147483647
-     * @return bitrate
-     */
+    /** 音频码率。 取值范围：0或[8,1000]。 单位：kbit/s。 minimum: 0 maximum: 2147483647
+     * 
+     * @return bitrate */
     public Integer getBitrate() {
         return bitrate;
     }
@@ -228,22 +185,14 @@ public class Audio  {
         this.bitrate = bitrate;
     }
 
-    
-
     public Audio withChannels(Integer channels) {
         this.channels = channels;
         return this;
     }
 
-    
-
-
-    /**
-     * 声道数。  取值如下： - 1：AUDIO_CHANNELS_1 - 2：AUDIO_CHANNELS_2 - 6：AUDIO_CHANNELS_5_1 
-     * minimum: 1
-     * maximum: 6
-     * @return channels
-     */
+    /** 声道数。 取值如下： - 1：AUDIO_CHANNELS_1 - 2：AUDIO_CHANNELS_2 - 6：AUDIO_CHANNELS_5_1 minimum: 1 maximum: 6
+     * 
+     * @return channels */
     public Integer getChannels() {
         return channels;
     }
@@ -251,8 +200,6 @@ public class Audio  {
     public void setChannels(Integer channels) {
         this.channels = channels;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -263,16 +210,16 @@ public class Audio  {
             return false;
         }
         Audio audio = (Audio) o;
-        return Objects.equals(this.outputPolicy, audio.outputPolicy) &&
-            Objects.equals(this.codec, audio.codec) &&
-            Objects.equals(this.sampleRate, audio.sampleRate) &&
-            Objects.equals(this.bitrate, audio.bitrate) &&
-            Objects.equals(this.channels, audio.channels);
+        return Objects.equals(this.outputPolicy, audio.outputPolicy) && Objects.equals(this.codec, audio.codec)
+            && Objects.equals(this.sampleRate, audio.sampleRate) && Objects.equals(this.bitrate, audio.bitrate)
+            && Objects.equals(this.channels, audio.channels);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(outputPolicy, codec, sampleRate, bitrate, channels);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -285,16 +232,13 @@ public class Audio  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

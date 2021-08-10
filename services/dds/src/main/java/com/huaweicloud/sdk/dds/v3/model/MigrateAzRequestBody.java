@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * MigrateAzRequestBody
- */
-public class MigrateAzRequestBody  {
-
-
+/** MigrateAzRequestBody */
+public class MigrateAzRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target_azs")
-    
+    @JsonProperty(value = "target_azs")
+
     private String targetAzs;
 
     public MigrateAzRequestBody withTargetAzs(String targetAzs) {
@@ -28,13 +18,9 @@ public class MigrateAzRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移到的目标单az或者多az。
-     * @return targetAzs
-     */
+    /** 迁移到的目标单az或者多az。
+     * 
+     * @return targetAzs */
     public String getTargetAzs() {
         return targetAzs;
     }
@@ -42,8 +28,6 @@ public class MigrateAzRequestBody  {
     public void setTargetAzs(String targetAzs) {
         this.targetAzs = targetAzs;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class MigrateAzRequestBody  {
         MigrateAzRequestBody migrateAzRequestBody = (MigrateAzRequestBody) o;
         return Objects.equals(this.targetAzs, migrateAzRequestBody.targetAzs);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(targetAzs);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class MigrateAzRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

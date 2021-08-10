@@ -1,86 +1,66 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * QueryAvailableRdsList。
- */
-public class QueryAvailableRdsList  {
-
-
+/** QueryAvailableRdsList。 */
+public class QueryAvailableRdsList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="projectId")
-    
+    @JsonProperty(value = "projectId")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engineName")
-    
+    @JsonProperty(value = "engineName")
+
     private String engineName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engineSoftwareVersion")
-    
+    @JsonProperty(value = "engineSoftwareVersion")
+
     private String engineSoftwareVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="privateIp")
-    
+    @JsonProperty(value = "privateIp")
+
     private String privateIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mode")
-    
+    @JsonProperty(value = "mode")
+
     private String mode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
+
     private Integer port;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="azCode")
-    
+    @JsonProperty(value = "azCode")
+
     private String azCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timeZone")
-    
+    @JsonProperty(value = "timeZone")
+
     private String timeZone;
 
     public QueryAvailableRdsList withId(String id) {
@@ -88,13 +68,9 @@ public class QueryAvailableRdsList  {
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库实例 ID。
-     * @return id
-     */
+    /** 数据库实例 ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -103,20 +79,14 @@ public class QueryAvailableRdsList  {
         this.id = id;
     }
 
-    
-
     public QueryAvailableRdsList withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库实例所在租户在某一region下的project ID。
-     * @return projectId
-     */
+    /** 数据库实例所在租户在某一region下的project ID。
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -125,20 +95,14 @@ public class QueryAvailableRdsList  {
         this.projectId = projectId;
     }
 
-    
-
     public QueryAvailableRdsList withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库实例状态。
-     * @return status
-     */
+    /** 数据库实例状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -147,20 +111,14 @@ public class QueryAvailableRdsList  {
         this.status = status;
     }
 
-    
-
     public QueryAvailableRdsList withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库实例名称。
-     * @return name
-     */
+    /** 数据库实例名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -169,20 +127,14 @@ public class QueryAvailableRdsList  {
         this.name = name;
     }
 
-    
-
     public QueryAvailableRdsList withEngineName(String engineName) {
         this.engineName = engineName;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库实例引擎名称。
-     * @return engineName
-     */
+    /** 数据库实例引擎名称。
+     * 
+     * @return engineName */
     public String getEngineName() {
         return engineName;
     }
@@ -191,20 +143,14 @@ public class QueryAvailableRdsList  {
         this.engineName = engineName;
     }
 
-    
-
     public QueryAvailableRdsList withEngineSoftwareVersion(String engineSoftwareVersion) {
         this.engineSoftwareVersion = engineSoftwareVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库实例引擎版本。
-     * @return engineSoftwareVersion
-     */
+    /** 数据库实例引擎版本。
+     * 
+     * @return engineSoftwareVersion */
     public String getEngineSoftwareVersion() {
         return engineSoftwareVersion;
     }
@@ -213,20 +159,14 @@ public class QueryAvailableRdsList  {
         this.engineSoftwareVersion = engineSoftwareVersion;
     }
 
-    
-
     public QueryAvailableRdsList withPrivateIp(String privateIp) {
         this.privateIp = privateIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库实例内网连接地址。
-     * @return privateIp
-     */
+    /** 数据库实例内网连接地址。
+     * 
+     * @return privateIp */
     public String getPrivateIp() {
         return privateIp;
     }
@@ -235,20 +175,14 @@ public class QueryAvailableRdsList  {
         this.privateIp = privateIp;
     }
 
-    
-
     public QueryAvailableRdsList withMode(String mode) {
         this.mode = mode;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库实例类型（主备或单机）。
-     * @return mode
-     */
+    /** 数据库实例类型（主备或单机）。
+     * 
+     * @return mode */
     public String getMode() {
         return mode;
     }
@@ -257,20 +191,14 @@ public class QueryAvailableRdsList  {
         this.mode = mode;
     }
 
-    
-
     public QueryAvailableRdsList withPort(Integer port) {
         this.port = port;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库实例端口。
-     * @return port
-     */
+    /** 数据库实例端口。
+     * 
+     * @return port */
     public Integer getPort() {
         return port;
     }
@@ -279,20 +207,14 @@ public class QueryAvailableRdsList  {
         this.port = port;
     }
 
-    
-
     public QueryAvailableRdsList withAzCode(String azCode) {
         this.azCode = azCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 可用区。
-     * @return azCode
-     */
+    /** 可用区。
+     * 
+     * @return azCode */
     public String getAzCode() {
         return azCode;
     }
@@ -301,20 +223,14 @@ public class QueryAvailableRdsList  {
         this.azCode = azCode;
     }
 
-    
-
     public QueryAvailableRdsList withTimeZone(String timeZone) {
         this.timeZone = timeZone;
         return this;
     }
 
-    
-
-
-    /**
-     * 时区。
-     * @return timeZone
-     */
+    /** 时区。
+     * 
+     * @return timeZone */
     public String getTimeZone() {
         return timeZone;
     }
@@ -322,8 +238,6 @@ public class QueryAvailableRdsList  {
     public void setTimeZone(String timeZone) {
         this.timeZone = timeZone;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -334,22 +248,34 @@ public class QueryAvailableRdsList  {
             return false;
         }
         QueryAvailableRdsList queryAvailableRdsList = (QueryAvailableRdsList) o;
-        return Objects.equals(this.id, queryAvailableRdsList.id) &&
-            Objects.equals(this.projectId, queryAvailableRdsList.projectId) &&
-            Objects.equals(this.status, queryAvailableRdsList.status) &&
-            Objects.equals(this.name, queryAvailableRdsList.name) &&
-            Objects.equals(this.engineName, queryAvailableRdsList.engineName) &&
-            Objects.equals(this.engineSoftwareVersion, queryAvailableRdsList.engineSoftwareVersion) &&
-            Objects.equals(this.privateIp, queryAvailableRdsList.privateIp) &&
-            Objects.equals(this.mode, queryAvailableRdsList.mode) &&
-            Objects.equals(this.port, queryAvailableRdsList.port) &&
-            Objects.equals(this.azCode, queryAvailableRdsList.azCode) &&
-            Objects.equals(this.timeZone, queryAvailableRdsList.timeZone);
+        return Objects.equals(this.id, queryAvailableRdsList.id)
+            && Objects.equals(this.projectId, queryAvailableRdsList.projectId)
+            && Objects.equals(this.status, queryAvailableRdsList.status)
+            && Objects.equals(this.name, queryAvailableRdsList.name)
+            && Objects.equals(this.engineName, queryAvailableRdsList.engineName)
+            && Objects.equals(this.engineSoftwareVersion, queryAvailableRdsList.engineSoftwareVersion)
+            && Objects.equals(this.privateIp, queryAvailableRdsList.privateIp)
+            && Objects.equals(this.mode, queryAvailableRdsList.mode)
+            && Objects.equals(this.port, queryAvailableRdsList.port)
+            && Objects.equals(this.azCode, queryAvailableRdsList.azCode)
+            && Objects.equals(this.timeZone, queryAvailableRdsList.timeZone);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, projectId, status, name, engineName, engineSoftwareVersion, privateIp, mode, port, azCode, timeZone);
+        return Objects.hash(id,
+            projectId,
+            status,
+            name,
+            engineName,
+            engineSoftwareVersion,
+            privateIp,
+            mode,
+            port,
+            azCode,
+            timeZone);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -368,16 +294,13 @@ public class QueryAvailableRdsList  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

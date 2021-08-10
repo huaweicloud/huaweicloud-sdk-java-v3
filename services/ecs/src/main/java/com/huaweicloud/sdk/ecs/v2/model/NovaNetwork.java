@@ -1,44 +1,33 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  *  
  */
-public class NovaNetwork  {
-
-
+public class NovaNetwork {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="addr")
-    
+    @JsonProperty(value = "addr")
+
     private String addr;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private Integer version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-IPS-MAC:mac_addr")
-    
+    @JsonProperty(value = "OS-EXT-IPS-MAC:mac_addr")
+
     private String osEXTIPSMACMacAddr;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-IPS:type")
-    
+    @JsonProperty(value = "OS-EXT-IPS:type")
+
     private String osEXTIPSType;
 
     public NovaNetwork withAddr(String addr) {
@@ -46,13 +35,9 @@ public class NovaNetwork  {
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址。
-     * @return addr
-     */
+    /** IP地址。
+     * 
+     * @return addr */
     public String getAddr() {
         return addr;
     }
@@ -61,20 +46,14 @@ public class NovaNetwork  {
         this.addr = addr;
     }
 
-    
-
     public NovaNetwork withVersion(Integer version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址类型，值为4或6。  4：IP地址类型是IPv4 6：IP地址类型是IPv6
-     * @return version
-     */
+    /** IP地址类型，值为4或6。 4：IP地址类型是IPv4 6：IP地址类型是IPv6
+     * 
+     * @return version */
     public Integer getVersion() {
         return version;
     }
@@ -83,20 +62,14 @@ public class NovaNetwork  {
         this.version = version;
     }
 
-    
-
     public NovaNetwork withOsEXTIPSMACMacAddr(String osEXTIPSMACMacAddr) {
         this.osEXTIPSMACMacAddr = osEXTIPSMACMacAddr;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展属性，MAC地址。
-     * @return osEXTIPSMACMacAddr
-     */
+    /** 扩展属性，MAC地址。
+     * 
+     * @return osEXTIPSMACMacAddr */
     public String getOsEXTIPSMACMacAddr() {
         return osEXTIPSMACMacAddr;
     }
@@ -105,20 +78,14 @@ public class NovaNetwork  {
         this.osEXTIPSMACMacAddr = osEXTIPSMACMacAddr;
     }
 
-    
-
     public NovaNetwork withOsEXTIPSType(String osEXTIPSType) {
         this.osEXTIPSType = osEXTIPSType;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展属性，分配IP地址方式。
-     * @return osEXTIPSType
-     */
+    /** 扩展属性，分配IP地址方式。
+     * 
+     * @return osEXTIPSType */
     public String getOsEXTIPSType() {
         return osEXTIPSType;
     }
@@ -126,8 +93,6 @@ public class NovaNetwork  {
     public void setOsEXTIPSType(String osEXTIPSType) {
         this.osEXTIPSType = osEXTIPSType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +103,16 @@ public class NovaNetwork  {
             return false;
         }
         NovaNetwork novaNetwork = (NovaNetwork) o;
-        return Objects.equals(this.addr, novaNetwork.addr) &&
-            Objects.equals(this.version, novaNetwork.version) &&
-            Objects.equals(this.osEXTIPSMACMacAddr, novaNetwork.osEXTIPSMACMacAddr) &&
-            Objects.equals(this.osEXTIPSType, novaNetwork.osEXTIPSType);
+        return Objects.equals(this.addr, novaNetwork.addr) && Objects.equals(this.version, novaNetwork.version)
+            && Objects.equals(this.osEXTIPSMACMacAddr, novaNetwork.osEXTIPSMACMacAddr)
+            && Objects.equals(this.osEXTIPSType, novaNetwork.osEXTIPSType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(addr, version, osEXTIPSMACMacAddr, osEXTIPSType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +124,13 @@ public class NovaNetwork  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

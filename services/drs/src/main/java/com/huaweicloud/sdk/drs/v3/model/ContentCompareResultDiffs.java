@@ -1,47 +1,36 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.ContentCompareDiff;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class ContentCompareResultDiffs  {
-
-
+public class ContentCompareResultDiffs {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_db_name")
-    
+    @JsonProperty(value = "source_db_name")
+
     private String sourceDbName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_table_name")
-    
+    @JsonProperty(value = "source_table_name")
+
     private String sourceTableName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ContentCompareDiff")
-    
+    @JsonProperty(value = "ContentCompareDiff")
+
     private List<ContentCompareDiff> contentCompareDiff = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content_compare_diff_count")
-    
+    @JsonProperty(value = "content_compare_diff_count")
+
     private Integer contentCompareDiffCount;
 
     public ContentCompareResultDiffs withSourceDbName(String sourceDbName) {
@@ -49,13 +38,9 @@ public class ContentCompareResultDiffs  {
         return this;
     }
 
-    
-
-
-    /**
-     * 源库名称。
-     * @return sourceDbName
-     */
+    /** 源库名称。
+     * 
+     * @return sourceDbName */
     public String getSourceDbName() {
         return sourceDbName;
     }
@@ -64,20 +49,14 @@ public class ContentCompareResultDiffs  {
         this.sourceDbName = sourceDbName;
     }
 
-    
-
     public ContentCompareResultDiffs withSourceTableName(String sourceTableName) {
         this.sourceTableName = sourceTableName;
         return this;
     }
 
-    
-
-
-    /**
-     * 源库的表名称。
-     * @return sourceTableName
-     */
+    /** 源库的表名称。
+     * 
+     * @return sourceTableName */
     public String getSourceTableName() {
         return sourceTableName;
     }
@@ -86,34 +65,31 @@ public class ContentCompareResultDiffs  {
         this.sourceTableName = sourceTableName;
     }
 
-    
-
     public ContentCompareResultDiffs withContentCompareDiff(List<ContentCompareDiff> contentCompareDiff) {
         this.contentCompareDiff = contentCompareDiff;
         return this;
     }
 
-    
     public ContentCompareResultDiffs addContentCompareDiffItem(ContentCompareDiff contentCompareDiffItem) {
-        if(this.contentCompareDiff == null) {
+        if (this.contentCompareDiff == null) {
             this.contentCompareDiff = new ArrayList<>();
         }
         this.contentCompareDiff.add(contentCompareDiffItem);
         return this;
     }
 
-    public ContentCompareResultDiffs withContentCompareDiff(Consumer<List<ContentCompareDiff>> contentCompareDiffSetter) {
-        if(this.contentCompareDiff == null) {
+    public ContentCompareResultDiffs withContentCompareDiff(
+        Consumer<List<ContentCompareDiff>> contentCompareDiffSetter) {
+        if (this.contentCompareDiff == null) {
             this.contentCompareDiff = new ArrayList<>();
         }
         contentCompareDiffSetter.accept(this.contentCompareDiff);
         return this;
     }
 
-    /**
-     * 内容对比结果差异。
-     * @return contentCompareDiff
-     */
+    /** 内容对比结果差异。
+     * 
+     * @return contentCompareDiff */
     public List<ContentCompareDiff> getContentCompareDiff() {
         return contentCompareDiff;
     }
@@ -122,20 +98,14 @@ public class ContentCompareResultDiffs  {
         this.contentCompareDiff = contentCompareDiff;
     }
 
-    
-
     public ContentCompareResultDiffs withContentCompareDiffCount(Integer contentCompareDiffCount) {
         this.contentCompareDiffCount = contentCompareDiffCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 内容对比结果差异总数。
-     * @return contentCompareDiffCount
-     */
+    /** 内容对比结果差异总数。
+     * 
+     * @return contentCompareDiffCount */
     public Integer getContentCompareDiffCount() {
         return contentCompareDiffCount;
     }
@@ -143,8 +113,6 @@ public class ContentCompareResultDiffs  {
     public void setContentCompareDiffCount(Integer contentCompareDiffCount) {
         this.contentCompareDiffCount = contentCompareDiffCount;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -155,15 +123,17 @@ public class ContentCompareResultDiffs  {
             return false;
         }
         ContentCompareResultDiffs contentCompareResultDiffs = (ContentCompareResultDiffs) o;
-        return Objects.equals(this.sourceDbName, contentCompareResultDiffs.sourceDbName) &&
-            Objects.equals(this.sourceTableName, contentCompareResultDiffs.sourceTableName) &&
-            Objects.equals(this.contentCompareDiff, contentCompareResultDiffs.contentCompareDiff) &&
-            Objects.equals(this.contentCompareDiffCount, contentCompareResultDiffs.contentCompareDiffCount);
+        return Objects.equals(this.sourceDbName, contentCompareResultDiffs.sourceDbName)
+            && Objects.equals(this.sourceTableName, contentCompareResultDiffs.sourceTableName)
+            && Objects.equals(this.contentCompareDiff, contentCompareResultDiffs.contentCompareDiff)
+            && Objects.equals(this.contentCompareDiffCount, contentCompareResultDiffs.contentCompareDiffCount);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sourceDbName, sourceTableName, contentCompareDiff, contentCompareDiffCount);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -175,16 +145,13 @@ public class ContentCompareResultDiffs  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

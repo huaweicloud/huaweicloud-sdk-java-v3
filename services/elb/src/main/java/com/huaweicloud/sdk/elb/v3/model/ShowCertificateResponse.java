@@ -1,35 +1,23 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v3.model.CertificateInfo;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowCertificateResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="request_id")
-    
+    @JsonProperty(value = "request_id")
+
     private String requestId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificate")
-    
+    @JsonProperty(value = "certificate")
+
     private CertificateInfo certificate;
 
     public ShowCertificateResponse withRequestId(String requestId) {
@@ -37,13 +25,9 @@ public class ShowCertificateResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 请求ID。  注：自动生成 。
-     * @return requestId
-     */
+    /** 请求ID。 注：自动生成 。
+     * 
+     * @return requestId */
     public String getRequestId() {
         return requestId;
     }
@@ -52,27 +36,23 @@ public class ShowCertificateResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    
-
     public ShowCertificateResponse withCertificate(CertificateInfo certificate) {
         this.certificate = certificate;
         return this;
     }
 
     public ShowCertificateResponse withCertificate(Consumer<CertificateInfo> certificateSetter) {
-        if(this.certificate == null ){
+        if (this.certificate == null) {
             this.certificate = new CertificateInfo();
             certificateSetter.accept(this.certificate);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get certificate
-     * @return certificate
-     */
+    /** Get certificate
+     * 
+     * @return certificate */
     public CertificateInfo getCertificate() {
         return certificate;
     }
@@ -80,8 +60,6 @@ public class ShowCertificateResponse extends SdkResponse {
     public void setCertificate(CertificateInfo certificate) {
         this.certificate = certificate;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -92,13 +70,15 @@ public class ShowCertificateResponse extends SdkResponse {
             return false;
         }
         ShowCertificateResponse showCertificateResponse = (ShowCertificateResponse) o;
-        return Objects.equals(this.requestId, showCertificateResponse.requestId) &&
-            Objects.equals(this.certificate, showCertificateResponse.certificate);
+        return Objects.equals(this.requestId, showCertificateResponse.requestId)
+            && Objects.equals(this.certificate, showCertificateResponse.certificate);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(requestId, certificate);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -108,16 +88,13 @@ public class ShowCertificateResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

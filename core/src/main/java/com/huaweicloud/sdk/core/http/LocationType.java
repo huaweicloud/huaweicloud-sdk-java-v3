@@ -21,13 +21,9 @@
 
 package com.huaweicloud.sdk.core.http;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public enum LocationType {
-    /**
-     * Actual location of current parameter in request.
-     */
+    /** Actual location of current parameter in request. */
     Header,
     Path,
     Query,

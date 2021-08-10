@@ -1,53 +1,36 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * JobParam
- */
-public class JobParam  {
-
-
+/** JobParam */
+public class JobParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private String value;
-    /**
-     * Gets or Sets paramType
-     */
+
+    /** Gets or Sets paramType */
     public static final class ParamTypeEnum {
 
-        
-        /**
-         * Enum VARIABLE for value: "variable"
-         */
+        /** Enum VARIABLE for value: "variable" */
         public static final ParamTypeEnum VARIABLE = new ParamTypeEnum("variable");
-        
-        /**
-         * Enum CONSTANTS for value: "constants"
-         */
+
+        /** Enum CONSTANTS for value: "constants" */
         public static final ParamTypeEnum CONSTANTS = new ParamTypeEnum("constants");
-        
 
         private static final Map<String, ParamTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,7 +59,7 @@ public class JobParam  {
 
         @JsonCreator
         public static ParamTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ParamTypeEnum result = STATIC_FIELDS.get(value);
@@ -87,7 +70,7 @@ public class JobParam  {
         }
 
         public static ParamTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ParamTypeEnum result = STATIC_FIELDS.get(value);
@@ -111,10 +94,9 @@ public class JobParam  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="paramType")
-    
+    @JsonProperty(value = "paramType")
+
     private ParamTypeEnum paramType;
 
     public JobParam withName(String name) {
@@ -122,13 +104,9 @@ public class JobParam  {
         return this;
     }
 
-    
-
-
-    /**
-     * Get name
-     * @return name
-     */
+    /** Get name
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -137,20 +115,14 @@ public class JobParam  {
         this.name = name;
     }
 
-    
-
     public JobParam withValue(String value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * Get value
-     * @return value
-     */
+    /** Get value
+     * 
+     * @return value */
     public String getValue() {
         return value;
     }
@@ -159,20 +131,14 @@ public class JobParam  {
         this.value = value;
     }
 
-    
-
     public JobParam withParamType(ParamTypeEnum paramType) {
         this.paramType = paramType;
         return this;
     }
 
-    
-
-
-    /**
-     * Get paramType
-     * @return paramType
-     */
+    /** Get paramType
+     * 
+     * @return paramType */
     public ParamTypeEnum getParamType() {
         return paramType;
     }
@@ -180,8 +146,6 @@ public class JobParam  {
     public void setParamType(ParamTypeEnum paramType) {
         this.paramType = paramType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -192,14 +156,15 @@ public class JobParam  {
             return false;
         }
         JobParam jobParam = (JobParam) o;
-        return Objects.equals(this.name, jobParam.name) &&
-            Objects.equals(this.value, jobParam.value) &&
-            Objects.equals(this.paramType, jobParam.paramType);
+        return Objects.equals(this.name, jobParam.name) && Objects.equals(this.value, jobParam.value)
+            && Objects.equals(this.paramType, jobParam.paramType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, value, paramType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -210,16 +175,13 @@ public class JobParam  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

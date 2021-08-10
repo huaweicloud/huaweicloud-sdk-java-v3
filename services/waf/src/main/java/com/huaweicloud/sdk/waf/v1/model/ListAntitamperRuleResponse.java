@@ -1,51 +1,35 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.waf.v1.model.AntiTamperRuleResponseBody;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListAntitamperRuleResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="items")
-    
+    @JsonProperty(value = "items")
+
     private List<AntiTamperRuleResponseBody> items = null;
-    
+
     public ListAntitamperRuleResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * 总条数
-     * @return total
-     */
+    /** 总条数
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -54,16 +38,13 @@ public class ListAntitamperRuleResponse extends SdkResponse {
         this.total = total;
     }
 
-    
-
     public ListAntitamperRuleResponse withItems(List<AntiTamperRuleResponseBody> items) {
         this.items = items;
         return this;
     }
 
-    
     public ListAntitamperRuleResponse addItemsItem(AntiTamperRuleResponseBody itemsItem) {
-        if(this.items == null) {
+        if (this.items == null) {
             this.items = new ArrayList<>();
         }
         this.items.add(itemsItem);
@@ -71,17 +52,16 @@ public class ListAntitamperRuleResponse extends SdkResponse {
     }
 
     public ListAntitamperRuleResponse withItems(Consumer<List<AntiTamperRuleResponseBody>> itemsSetter) {
-        if(this.items == null) {
+        if (this.items == null) {
             this.items = new ArrayList<>();
         }
         itemsSetter.accept(this.items);
         return this;
     }
 
-    /**
-     * 规则
-     * @return items
-     */
+    /** 规则
+     * 
+     * @return items */
     public List<AntiTamperRuleResponseBody> getItems() {
         return items;
     }
@@ -89,8 +69,6 @@ public class ListAntitamperRuleResponse extends SdkResponse {
     public void setItems(List<AntiTamperRuleResponseBody> items) {
         this.items = items;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ListAntitamperRuleResponse extends SdkResponse {
             return false;
         }
         ListAntitamperRuleResponse listAntitamperRuleResponse = (ListAntitamperRuleResponse) o;
-        return Objects.equals(this.total, listAntitamperRuleResponse.total) &&
-            Objects.equals(this.items, listAntitamperRuleResponse.items);
+        return Objects.equals(this.total, listAntitamperRuleResponse.total)
+            && Objects.equals(this.items, listAntitamperRuleResponse.items);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(total, items);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ListAntitamperRuleResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

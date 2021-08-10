@@ -1,43 +1,26 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * LdApiCheckInfo
- */
-public class LdApiCheckInfo  {
+/** LdApiCheckInfo */
+public class LdApiCheckInfo {
 
-    /**
-     * 校验类型：   - path：路径类型   - name：名称类型
-     */
+    /** 校验类型： - path：路径类型 - name：名称类型 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum PATH for value: "path"
-         */
+        /** Enum PATH for value: "path" */
         public static final TypeEnum PATH = new TypeEnum("path");
-        
-        /**
-         * Enum NAME for value: "name"
-         */
+
+        /** Enum NAME for value: "name" */
         public static final TypeEnum NAME = new TypeEnum("name");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -66,7 +49,7 @@ public class LdApiCheckInfo  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -77,7 +60,7 @@ public class LdApiCheckInfo  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -101,43 +84,30 @@ public class LdApiCheckInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ld_api_name")
-    
+    @JsonProperty(value = "ld_api_name")
+
     private String ldApiName;
-    /**
-     * 自定义后端API请求方式。  type = path时必填
-     */
+
+    /** 自定义后端API请求方式。 type = path时必填 */
     public static final class LdApiMethodEnum {
 
-        
-        /**
-         * Enum GET for value: "GET"
-         */
+        /** Enum GET for value: "GET" */
         public static final LdApiMethodEnum GET = new LdApiMethodEnum("GET");
-        
-        /**
-         * Enum POST for value: "POST"
-         */
+
+        /** Enum POST for value: "POST" */
         public static final LdApiMethodEnum POST = new LdApiMethodEnum("POST");
-        
-        /**
-         * Enum PUT for value: "PUT"
-         */
+
+        /** Enum PUT for value: "PUT" */
         public static final LdApiMethodEnum PUT = new LdApiMethodEnum("PUT");
-        
-        /**
-         * Enum DELETE for value: "DELETE"
-         */
+
+        /** Enum DELETE for value: "DELETE" */
         public static final LdApiMethodEnum DELETE = new LdApiMethodEnum("DELETE");
-        
 
         private static final Map<String, LdApiMethodEnum> STATIC_FIELDS = createStaticFields();
 
@@ -168,7 +138,7 @@ public class LdApiCheckInfo  {
 
         @JsonCreator
         public static LdApiMethodEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             LdApiMethodEnum result = STATIC_FIELDS.get(value);
@@ -179,7 +149,7 @@ public class LdApiCheckInfo  {
         }
 
         public static LdApiMethodEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             LdApiMethodEnum result = STATIC_FIELDS.get(value);
@@ -203,22 +173,19 @@ public class LdApiCheckInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ld_api_method")
-    
+    @JsonProperty(value = "ld_api_method")
+
     private LdApiMethodEnum ldApiMethod;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ld_api_path")
-    
+    @JsonProperty(value = "ld_api_path")
+
     private String ldApiPath;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roma_app_id")
-    
+    @JsonProperty(value = "roma_app_id")
+
     private String romaAppId;
 
     public LdApiCheckInfo withType(TypeEnum type) {
@@ -226,13 +193,9 @@ public class LdApiCheckInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 校验类型：   - path：路径类型   - name：名称类型
-     * @return type
-     */
+    /** 校验类型： - path：路径类型 - name：名称类型
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -241,20 +204,14 @@ public class LdApiCheckInfo  {
         this.type = type;
     }
 
-    
-
     public LdApiCheckInfo withLdApiName(String ldApiName) {
         this.ldApiName = ldApiName;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义后端API名称。  type = name时必填
-     * @return ldApiName
-     */
+    /** 自定义后端API名称。 type = name时必填
+     * 
+     * @return ldApiName */
     public String getLdApiName() {
         return ldApiName;
     }
@@ -263,20 +220,14 @@ public class LdApiCheckInfo  {
         this.ldApiName = ldApiName;
     }
 
-    
-
     public LdApiCheckInfo withLdApiMethod(LdApiMethodEnum ldApiMethod) {
         this.ldApiMethod = ldApiMethod;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义后端API请求方式。  type = path时必填
-     * @return ldApiMethod
-     */
+    /** 自定义后端API请求方式。 type = path时必填
+     * 
+     * @return ldApiMethod */
     public LdApiMethodEnum getLdApiMethod() {
         return ldApiMethod;
     }
@@ -285,20 +236,14 @@ public class LdApiCheckInfo  {
         this.ldApiMethod = ldApiMethod;
     }
 
-    
-
     public LdApiCheckInfo withLdApiPath(String ldApiPath) {
         this.ldApiPath = ldApiPath;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义后端API的访问地址。  type = path时必填
-     * @return ldApiPath
-     */
+    /** 自定义后端API的访问地址。 type = path时必填
+     * 
+     * @return ldApiPath */
     public String getLdApiPath() {
         return ldApiPath;
     }
@@ -307,20 +252,14 @@ public class LdApiCheckInfo  {
         this.ldApiPath = ldApiPath;
     }
 
-    
-
     public LdApiCheckInfo withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
         return this;
     }
 
-    
-
-
-    /**
-     * 集成应用ID。  校验应用下后端API定义是否重复时必填
-     * @return romaAppId
-     */
+    /** 集成应用ID。 校验应用下后端API定义是否重复时必填
+     * 
+     * @return romaAppId */
     public String getRomaAppId() {
         return romaAppId;
     }
@@ -328,8 +267,6 @@ public class LdApiCheckInfo  {
     public void setRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -340,16 +277,18 @@ public class LdApiCheckInfo  {
             return false;
         }
         LdApiCheckInfo ldApiCheckInfo = (LdApiCheckInfo) o;
-        return Objects.equals(this.type, ldApiCheckInfo.type) &&
-            Objects.equals(this.ldApiName, ldApiCheckInfo.ldApiName) &&
-            Objects.equals(this.ldApiMethod, ldApiCheckInfo.ldApiMethod) &&
-            Objects.equals(this.ldApiPath, ldApiCheckInfo.ldApiPath) &&
-            Objects.equals(this.romaAppId, ldApiCheckInfo.romaAppId);
+        return Objects.equals(this.type, ldApiCheckInfo.type)
+            && Objects.equals(this.ldApiName, ldApiCheckInfo.ldApiName)
+            && Objects.equals(this.ldApiMethod, ldApiCheckInfo.ldApiMethod)
+            && Objects.equals(this.ldApiPath, ldApiCheckInfo.ldApiPath)
+            && Objects.equals(this.romaAppId, ldApiCheckInfo.romaAppId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, ldApiName, ldApiMethod, ldApiPath, romaAppId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -362,16 +301,13 @@ public class LdApiCheckInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

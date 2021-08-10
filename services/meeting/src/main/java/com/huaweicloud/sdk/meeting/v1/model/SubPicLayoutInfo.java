@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * SubPicLayoutInfo
- */
-public class SubPicLayoutInfo  {
-
-
+/** SubPicLayoutInfo */
+public class SubPicLayoutInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Integer id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="left")
-    
+    @JsonProperty(value = "left")
+
     private Integer left;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="top")
-    
+    @JsonProperty(value = "top")
+
     private Integer top;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="xSize")
-    
+    @JsonProperty(value = "xSize")
+
     private Integer xSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ySize")
-    
+    @JsonProperty(value = "ySize")
+
     private Integer ySize;
 
     public SubPicLayoutInfo withId(Integer id) {
@@ -52,14 +38,9 @@ public class SubPicLayoutInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 画面索引号
-     * minimum: 1
-     * @return id
-     */
+    /** 画面索引号 minimum: 1
+     * 
+     * @return id */
     public Integer getId() {
         return id;
     }
@@ -68,21 +49,14 @@ public class SubPicLayoutInfo  {
         this.id = id;
     }
 
-    
-
     public SubPicLayoutInfo withLeft(Integer left) {
         this.left = left;
         return this;
     }
 
-    
-
-
-    /**
-     * 画面从左到右的坐标点
-     * minimum: 1
-     * @return left
-     */
+    /** 画面从左到右的坐标点 minimum: 1
+     * 
+     * @return left */
     public Integer getLeft() {
         return left;
     }
@@ -91,21 +65,14 @@ public class SubPicLayoutInfo  {
         this.left = left;
     }
 
-    
-
     public SubPicLayoutInfo withTop(Integer top) {
         this.top = top;
         return this;
     }
 
-    
-
-
-    /**
-     * 画面从上到下的坐标点
-     * minimum: 1
-     * @return top
-     */
+    /** 画面从上到下的坐标点 minimum: 1
+     * 
+     * @return top */
     public Integer getTop() {
         return top;
     }
@@ -114,21 +81,14 @@ public class SubPicLayoutInfo  {
         this.top = top;
     }
 
-    
-
     public SubPicLayoutInfo withXSize(Integer xSize) {
         this.xSize = xSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 小画面的宽度
-     * minimum: 1
-     * @return xSize
-     */
+    /** 小画面的宽度 minimum: 1
+     * 
+     * @return xSize */
     public Integer getXSize() {
         return xSize;
     }
@@ -137,21 +97,14 @@ public class SubPicLayoutInfo  {
         this.xSize = xSize;
     }
 
-    
-
     public SubPicLayoutInfo withYSize(Integer ySize) {
         this.ySize = ySize;
         return this;
     }
 
-    
-
-
-    /**
-     * 小画面的高度
-     * minimum: 1
-     * @return ySize
-     */
+    /** 小画面的高度 minimum: 1
+     * 
+     * @return ySize */
     public Integer getYSize() {
         return ySize;
     }
@@ -159,8 +112,6 @@ public class SubPicLayoutInfo  {
     public void setYSize(Integer ySize) {
         this.ySize = ySize;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -171,16 +122,16 @@ public class SubPicLayoutInfo  {
             return false;
         }
         SubPicLayoutInfo subPicLayoutInfo = (SubPicLayoutInfo) o;
-        return Objects.equals(this.id, subPicLayoutInfo.id) &&
-            Objects.equals(this.left, subPicLayoutInfo.left) &&
-            Objects.equals(this.top, subPicLayoutInfo.top) &&
-            Objects.equals(this.xSize, subPicLayoutInfo.xSize) &&
-            Objects.equals(this.ySize, subPicLayoutInfo.ySize);
+        return Objects.equals(this.id, subPicLayoutInfo.id) && Objects.equals(this.left, subPicLayoutInfo.left)
+            && Objects.equals(this.top, subPicLayoutInfo.top) && Objects.equals(this.xSize, subPicLayoutInfo.xSize)
+            && Objects.equals(this.ySize, subPicLayoutInfo.ySize);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, left, top, xSize, ySize);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -193,16 +144,13 @@ public class SubPicLayoutInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

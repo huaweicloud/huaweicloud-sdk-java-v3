@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.projectman.v4.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CreateIterationRequestV4
- */
-public class CreateIterationRequestV4  {
-
-
+/** CreateIterationRequestV4 */
+public class CreateIterationRequestV4 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="begin_time")
-    
+    @JsonProperty(value = "begin_time")
+
     private String beginTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public CreateIterationRequestV4 withBeginTime(String beginTime) {
@@ -46,13 +33,9 @@ public class CreateIterationRequestV4  {
         return this;
     }
 
-    
-
-
-    /**
-     * 开始时间，年-月-日
-     * @return beginTime
-     */
+    /** 开始时间，年-月-日
+     * 
+     * @return beginTime */
     public String getBeginTime() {
         return beginTime;
     }
@@ -61,20 +44,14 @@ public class CreateIterationRequestV4  {
         this.beginTime = beginTime;
     }
 
-    
-
     public CreateIterationRequestV4 withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述
-     * @return description
-     */
+    /** 描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -83,20 +60,14 @@ public class CreateIterationRequestV4  {
         this.description = description;
     }
 
-    
-
     public CreateIterationRequestV4 withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 结束时间，年-月-日
-     * @return endTime
-     */
+    /** 结束时间，年-月-日
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -105,20 +76,14 @@ public class CreateIterationRequestV4  {
         this.endTime = endTime;
     }
 
-    
-
     public CreateIterationRequestV4 withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 标题
-     * @return name
-     */
+    /** 标题
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -126,8 +91,6 @@ public class CreateIterationRequestV4  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class CreateIterationRequestV4  {
             return false;
         }
         CreateIterationRequestV4 createIterationRequestV4 = (CreateIterationRequestV4) o;
-        return Objects.equals(this.beginTime, createIterationRequestV4.beginTime) &&
-            Objects.equals(this.description, createIterationRequestV4.description) &&
-            Objects.equals(this.endTime, createIterationRequestV4.endTime) &&
-            Objects.equals(this.name, createIterationRequestV4.name);
+        return Objects.equals(this.beginTime, createIterationRequestV4.beginTime)
+            && Objects.equals(this.description, createIterationRequestV4.description)
+            && Objects.equals(this.endTime, createIterationRequestV4.endTime)
+            && Objects.equals(this.name, createIterationRequestV4.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(beginTime, description, endTime, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class CreateIterationRequestV4  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

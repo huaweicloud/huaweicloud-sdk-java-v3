@@ -1,104 +1,80 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.osm.v2.model.LabelInfo;
+
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * IncidentInfoV2
- */
-public class IncidentInfoV2  {
-
-
+/** IncidentInfoV2 */
+public class IncidentInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="xcustomer_id")
-    
+    @JsonProperty(value = "xcustomer_id")
+
     private String xcustomerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="xcustomer_name")
-    
+    @JsonProperty(value = "xcustomer_name")
+
     private String xcustomerName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="incident_id")
-    
+    @JsonProperty(value = "incident_id")
+
     private String incidentId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="business_type_name")
-    
+    @JsonProperty(value = "business_type_name")
+
     private String businessTypeName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="incident_type_name")
-    
+    @JsonProperty(value = "incident_type_name")
+
     private String incidentTypeName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_id")
-    
+    @JsonProperty(value = "customer_id")
+
     private String customerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dc_name")
-    
+    @JsonProperty(value = "dc_name")
+
     private String dcName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="simple_description")
-    
+    @JsonProperty(value = "simple_description")
+
     private String simpleDescription;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private OffsetDateTime createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="label_list")
-    
+    @JsonProperty(value = "label_list")
+
     private List<LabelInfo> labelList = null;
-    
+
     public IncidentInfoV2 withXcustomerId(String xcustomerId) {
         this.xcustomerId = xcustomerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 子用户id
-     * @return xcustomerId
-     */
+    /** 子用户id
+     * 
+     * @return xcustomerId */
     public String getXcustomerId() {
         return xcustomerId;
     }
@@ -107,20 +83,14 @@ public class IncidentInfoV2  {
         this.xcustomerId = xcustomerId;
     }
 
-    
-
     public IncidentInfoV2 withXcustomerName(String xcustomerName) {
         this.xcustomerName = xcustomerName;
         return this;
     }
 
-    
-
-
-    /**
-     * 子用户名称
-     * @return xcustomerName
-     */
+    /** 子用户名称
+     * 
+     * @return xcustomerName */
     public String getXcustomerName() {
         return xcustomerName;
     }
@@ -129,22 +99,14 @@ public class IncidentInfoV2  {
         this.xcustomerName = xcustomerName;
     }
 
-    
-
     public IncidentInfoV2 withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态 0：待受理 1：处理中 2：待确认结果 3：已完成 4：已撤销 12：无效 17： 待反馈
-     * minimum: 0
-     * maximum: 20
-     * @return status
-     */
+    /** 状态 0：待受理 1：处理中 2：待确认结果 3：已完成 4：已撤销 12：无效 17： 待反馈 minimum: 0 maximum: 20
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -153,20 +115,14 @@ public class IncidentInfoV2  {
         this.status = status;
     }
 
-    
-
     public IncidentInfoV2 withIncidentId(String incidentId) {
         this.incidentId = incidentId;
         return this;
     }
 
-    
-
-
-    /**
-     * 工单id
-     * @return incidentId
-     */
+    /** 工单id
+     * 
+     * @return incidentId */
     public String getIncidentId() {
         return incidentId;
     }
@@ -175,20 +131,14 @@ public class IncidentInfoV2  {
         this.incidentId = incidentId;
     }
 
-    
-
     public IncidentInfoV2 withBusinessTypeName(String businessTypeName) {
         this.businessTypeName = businessTypeName;
         return this;
     }
 
-    
-
-
-    /**
-     * 问题类型名称
-     * @return businessTypeName
-     */
+    /** 问题类型名称
+     * 
+     * @return businessTypeName */
     public String getBusinessTypeName() {
         return businessTypeName;
     }
@@ -197,20 +147,14 @@ public class IncidentInfoV2  {
         this.businessTypeName = businessTypeName;
     }
 
-    
-
     public IncidentInfoV2 withIncidentTypeName(String incidentTypeName) {
         this.incidentTypeName = incidentTypeName;
         return this;
     }
 
-    
-
-
-    /**
-     * 工单类型名称
-     * @return incidentTypeName
-     */
+    /** 工单类型名称
+     * 
+     * @return incidentTypeName */
     public String getIncidentTypeName() {
         return incidentTypeName;
     }
@@ -219,20 +163,14 @@ public class IncidentInfoV2  {
         this.incidentTypeName = incidentTypeName;
     }
 
-    
-
     public IncidentInfoV2 withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 客户id
-     * @return customerId
-     */
+    /** 客户id
+     * 
+     * @return customerId */
     public String getCustomerId() {
         return customerId;
     }
@@ -241,20 +179,14 @@ public class IncidentInfoV2  {
         this.customerId = customerId;
     }
 
-    
-
     public IncidentInfoV2 withDcName(String dcName) {
         this.dcName = dcName;
         return this;
     }
 
-    
-
-
-    /**
-     * 区域名称
-     * @return dcName
-     */
+    /** 区域名称
+     * 
+     * @return dcName */
     public String getDcName() {
         return dcName;
     }
@@ -263,20 +195,14 @@ public class IncidentInfoV2  {
         this.dcName = dcName;
     }
 
-    
-
     public IncidentInfoV2 withSimpleDescription(String simpleDescription) {
         this.simpleDescription = simpleDescription;
         return this;
     }
 
-    
-
-
-    /**
-     * 简要描述
-     * @return simpleDescription
-     */
+    /** 简要描述
+     * 
+     * @return simpleDescription */
     public String getSimpleDescription() {
         return simpleDescription;
     }
@@ -285,20 +211,14 @@ public class IncidentInfoV2  {
         this.simpleDescription = simpleDescription;
     }
 
-    
-
     public IncidentInfoV2 withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return createTime
-     */
+    /** 创建时间
+     * 
+     * @return createTime */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -307,16 +227,13 @@ public class IncidentInfoV2  {
         this.createTime = createTime;
     }
 
-    
-
     public IncidentInfoV2 withLabelList(List<LabelInfo> labelList) {
         this.labelList = labelList;
         return this;
     }
 
-    
     public IncidentInfoV2 addLabelListItem(LabelInfo labelListItem) {
-        if(this.labelList == null) {
+        if (this.labelList == null) {
             this.labelList = new ArrayList<>();
         }
         this.labelList.add(labelListItem);
@@ -324,17 +241,16 @@ public class IncidentInfoV2  {
     }
 
     public IncidentInfoV2 withLabelList(Consumer<List<LabelInfo>> labelListSetter) {
-        if(this.labelList == null) {
+        if (this.labelList == null) {
             this.labelList = new ArrayList<>();
         }
         labelListSetter.accept(this.labelList);
         return this;
     }
 
-    /**
-     * 标签列表
-     * @return labelList
-     */
+    /** 标签列表
+     * 
+     * @return labelList */
     public List<LabelInfo> getLabelList() {
         return labelList;
     }
@@ -342,8 +258,6 @@ public class IncidentInfoV2  {
     public void setLabelList(List<LabelInfo> labelList) {
         this.labelList = labelList;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -354,22 +268,34 @@ public class IncidentInfoV2  {
             return false;
         }
         IncidentInfoV2 incidentInfoV2 = (IncidentInfoV2) o;
-        return Objects.equals(this.xcustomerId, incidentInfoV2.xcustomerId) &&
-            Objects.equals(this.xcustomerName, incidentInfoV2.xcustomerName) &&
-            Objects.equals(this.status, incidentInfoV2.status) &&
-            Objects.equals(this.incidentId, incidentInfoV2.incidentId) &&
-            Objects.equals(this.businessTypeName, incidentInfoV2.businessTypeName) &&
-            Objects.equals(this.incidentTypeName, incidentInfoV2.incidentTypeName) &&
-            Objects.equals(this.customerId, incidentInfoV2.customerId) &&
-            Objects.equals(this.dcName, incidentInfoV2.dcName) &&
-            Objects.equals(this.simpleDescription, incidentInfoV2.simpleDescription) &&
-            Objects.equals(this.createTime, incidentInfoV2.createTime) &&
-            Objects.equals(this.labelList, incidentInfoV2.labelList);
+        return Objects.equals(this.xcustomerId, incidentInfoV2.xcustomerId)
+            && Objects.equals(this.xcustomerName, incidentInfoV2.xcustomerName)
+            && Objects.equals(this.status, incidentInfoV2.status)
+            && Objects.equals(this.incidentId, incidentInfoV2.incidentId)
+            && Objects.equals(this.businessTypeName, incidentInfoV2.businessTypeName)
+            && Objects.equals(this.incidentTypeName, incidentInfoV2.incidentTypeName)
+            && Objects.equals(this.customerId, incidentInfoV2.customerId)
+            && Objects.equals(this.dcName, incidentInfoV2.dcName)
+            && Objects.equals(this.simpleDescription, incidentInfoV2.simpleDescription)
+            && Objects.equals(this.createTime, incidentInfoV2.createTime)
+            && Objects.equals(this.labelList, incidentInfoV2.labelList);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(xcustomerId, xcustomerName, status, incidentId, businessTypeName, incidentTypeName, customerId, dcName, simpleDescription, createTime, labelList);
+        return Objects.hash(xcustomerId,
+            xcustomerName,
+            status,
+            incidentId,
+            businessTypeName,
+            incidentTypeName,
+            customerId,
+            dcName,
+            simpleDescription,
+            createTime,
+            labelList);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -388,16 +314,13 @@ public class IncidentInfoV2  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

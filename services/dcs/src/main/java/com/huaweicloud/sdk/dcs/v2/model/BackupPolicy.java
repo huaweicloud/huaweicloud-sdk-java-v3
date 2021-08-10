@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dcs.v2.model.BackupPlan;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * BackupPolicy
- */
-public class BackupPolicy  {
-
-
+/** BackupPolicy */
+public class BackupPolicy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_type")
-    
+    @JsonProperty(value = "backup_type")
+
     private String backupType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="save_days")
-    
+    @JsonProperty(value = "save_days")
+
     private Integer saveDays;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="periodical_backup_plan")
-    
+    @JsonProperty(value = "periodical_backup_plan")
+
     private BackupPlan periodicalBackupPlan;
 
     public BackupPolicy withBackupType(String backupType) {
@@ -41,13 +29,9 @@ public class BackupPolicy  {
         return this;
     }
 
-    
-
-
-    /**
-     * 备份类型。 - auto：自动备份 - manual：手动备份 
-     * @return backupType
-     */
+    /** 备份类型。 - auto：自动备份 - manual：手动备份
+     * 
+     * @return backupType */
     public String getBackupType() {
         return backupType;
     }
@@ -56,20 +40,14 @@ public class BackupPolicy  {
         this.backupType = backupType;
     }
 
-    
-
     public BackupPolicy withSaveDays(Integer saveDays) {
         this.saveDays = saveDays;
         return this;
     }
 
-    
-
-
-    /**
-     * 当backup_type设置为auto时，该参数为必填。 保留天数，单位：天，取值范围：1-7。 
-     * @return saveDays
-     */
+    /** 当backup_type设置为auto时，该参数为必填。 保留天数，单位：天，取值范围：1-7。
+     * 
+     * @return saveDays */
     public Integer getSaveDays() {
         return saveDays;
     }
@@ -78,27 +56,23 @@ public class BackupPolicy  {
         this.saveDays = saveDays;
     }
 
-    
-
     public BackupPolicy withPeriodicalBackupPlan(BackupPlan periodicalBackupPlan) {
         this.periodicalBackupPlan = periodicalBackupPlan;
         return this;
     }
 
     public BackupPolicy withPeriodicalBackupPlan(Consumer<BackupPlan> periodicalBackupPlanSetter) {
-        if(this.periodicalBackupPlan == null ){
+        if (this.periodicalBackupPlan == null) {
             this.periodicalBackupPlan = new BackupPlan();
             periodicalBackupPlanSetter.accept(this.periodicalBackupPlan);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get periodicalBackupPlan
-     * @return periodicalBackupPlan
-     */
+    /** Get periodicalBackupPlan
+     * 
+     * @return periodicalBackupPlan */
     public BackupPlan getPeriodicalBackupPlan() {
         return periodicalBackupPlan;
     }
@@ -106,8 +80,6 @@ public class BackupPolicy  {
     public void setPeriodicalBackupPlan(BackupPlan periodicalBackupPlan) {
         this.periodicalBackupPlan = periodicalBackupPlan;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class BackupPolicy  {
             return false;
         }
         BackupPolicy backupPolicy = (BackupPolicy) o;
-        return Objects.equals(this.backupType, backupPolicy.backupType) &&
-            Objects.equals(this.saveDays, backupPolicy.saveDays) &&
-            Objects.equals(this.periodicalBackupPlan, backupPolicy.periodicalBackupPlan);
+        return Objects.equals(this.backupType, backupPolicy.backupType)
+            && Objects.equals(this.saveDays, backupPolicy.saveDays)
+            && Objects.equals(this.periodicalBackupPlan, backupPolicy.periodicalBackupPlan);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(backupType, saveDays, periodicalBackupPlan);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class BackupPolicy  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

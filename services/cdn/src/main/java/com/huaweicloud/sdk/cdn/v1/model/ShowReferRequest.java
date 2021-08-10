@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowReferRequest  {
-
-
+/** Request Object */
+public class ShowReferRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
     public ShowReferRequest withEnterpriseProjectId(String enterpriseProjectId) {
@@ -34,13 +23,9 @@ public class ShowReferRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 当用户开启企业项目功能时，该参数生效，表示查资源所属项目，不传表示查询默认项目。
-     * @return enterpriseProjectId
-     */
+    /** 当用户开启企业项目功能时，该参数生效，表示查资源所属项目，不传表示查询默认项目。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -49,20 +34,14 @@ public class ShowReferRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public ShowReferRequest withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
     }
 
-    
-
-
-    /**
-     * 加速域名ID。获取方法请参见查询加速域名。
-     * @return domainId
-     */
+    /** 加速域名ID。获取方法请参见查询加速域名。
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -70,8 +49,6 @@ public class ShowReferRequest  {
     public void setDomainId(String domainId) {
         this.domainId = domainId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class ShowReferRequest  {
             return false;
         }
         ShowReferRequest showReferRequest = (ShowReferRequest) o;
-        return Objects.equals(this.enterpriseProjectId, showReferRequest.enterpriseProjectId) &&
-            Objects.equals(this.domainId, showReferRequest.domainId);
+        return Objects.equals(this.enterpriseProjectId, showReferRequest.enterpriseProjectId)
+            && Objects.equals(this.domainId, showReferRequest.domainId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(enterpriseProjectId, domainId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class ShowReferRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

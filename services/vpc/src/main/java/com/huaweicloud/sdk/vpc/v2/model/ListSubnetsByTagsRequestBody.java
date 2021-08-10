@@ -1,45 +1,29 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vpc.v2.model.ListTag;
-import com.huaweicloud.sdk.vpc.v2.model.Match;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * This is a auto create Body Object
- */
-public class ListSubnetsByTagsRequestBody  {
+/** This is a auto create Body Object */
+public class ListSubnetsByTagsRequestBody {
 
-    /**
-     * 功能说明：操作标识 取值范围：filter(过滤)，count(查询总条数)
-     */
+    /** 功能说明：操作标识 取值范围：filter(过滤)，count(查询总条数) */
     public static final class ActionEnum {
 
-        
-        /**
-         * Enum FILTER for value: "filter"
-         */
+        /** Enum FILTER for value: "filter" */
         public static final ActionEnum FILTER = new ActionEnum("filter");
-        
-        /**
-         * Enum COUNT for value: "count"
-         */
+
+        /** Enum COUNT for value: "count" */
         public static final ActionEnum COUNT = new ActionEnum("count");
-        
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -68,7 +52,7 @@ public class ListSubnetsByTagsRequestBody  {
 
         @JsonCreator
         public static ActionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -79,7 +63,7 @@ public class ListSubnetsByTagsRequestBody  {
         }
 
         public static ActionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -103,48 +87,39 @@ public class ListSubnetsByTagsRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private ActionEnum action;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private String limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private String offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="matches")
-    
+    @JsonProperty(value = "matches")
+
     private List<Match> matches = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<ListTag> tags = null;
-    
+
     public ListSubnetsByTagsRequestBody withAction(ActionEnum action) {
         this.action = action;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：操作标识 取值范围：filter(过滤)，count(查询总条数)
-     * @return action
-     */
+    /** 功能说明：操作标识 取值范围：filter(过滤)，count(查询总条数)
+     * 
+     * @return action */
     public ActionEnum getAction() {
         return action;
     }
@@ -153,20 +128,14 @@ public class ListSubnetsByTagsRequestBody  {
         this.action = action;
     }
 
-    
-
     public ListSubnetsByTagsRequestBody withLimit(String limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：查询记录数 取值范围：1-1000 约束：action为count时此参数不生效；action为filter时默认为1000
-     * @return limit
-     */
+    /** 功能说明：查询记录数 取值范围：1-1000 约束：action为count时此参数不生效；action为filter时默认为1000
+     * 
+     * @return limit */
     public String getLimit() {
         return limit;
     }
@@ -175,20 +144,15 @@ public class ListSubnetsByTagsRequestBody  {
         this.limit = limit;
     }
 
-    
-
     public ListSubnetsByTagsRequestBody withOffset(String offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：索引位置， 从offset指定的下一条数据开始查询。 查询第一页数据时，不需要传入此参数，查询后续页码数据时，将查询前一页数据时响应体中的值带入此参数 约束：action为count时无此参数；action为filter时默认为0；必须为数字，不能为负数
-     * @return offset
-     */
+    /** 功能说明：索引位置， 从offset指定的下一条数据开始查询。 查询第一页数据时，不需要传入此参数，查询后续页码数据时，将查询前一页数据时响应体中的值带入此参数
+     * 约束：action为count时无此参数；action为filter时默认为0；必须为数字，不能为负数
+     * 
+     * @return offset */
     public String getOffset() {
         return offset;
     }
@@ -197,16 +161,13 @@ public class ListSubnetsByTagsRequestBody  {
         this.offset = offset;
     }
 
-    
-
     public ListSubnetsByTagsRequestBody withMatches(List<Match> matches) {
         this.matches = matches;
         return this;
     }
 
-    
     public ListSubnetsByTagsRequestBody addMatchesItem(Match matchesItem) {
-        if(this.matches == null) {
+        if (this.matches == null) {
             this.matches = new ArrayList<>();
         }
         this.matches.add(matchesItem);
@@ -214,17 +175,16 @@ public class ListSubnetsByTagsRequestBody  {
     }
 
     public ListSubnetsByTagsRequestBody withMatches(Consumer<List<Match>> matchesSetter) {
-        if(this.matches == null) {
+        if (this.matches == null) {
             this.matches = new ArrayList<>();
         }
         matchesSetter.accept(this.matches);
         return this;
     }
 
-    /**
-     * 功能说明：搜索字段，key为要匹配的字段，value为匹配的值 约束：当前仅支持resource_name
-     * @return matches
-     */
+    /** 功能说明：搜索字段，key为要匹配的字段，value为匹配的值 约束：当前仅支持resource_name
+     * 
+     * @return matches */
     public List<Match> getMatches() {
         return matches;
     }
@@ -233,16 +193,13 @@ public class ListSubnetsByTagsRequestBody  {
         this.matches = matches;
     }
 
-    
-
     public ListSubnetsByTagsRequestBody withTags(List<ListTag> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public ListSubnetsByTagsRequestBody addTagsItem(ListTag tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -250,17 +207,16 @@ public class ListSubnetsByTagsRequestBody  {
     }
 
     public ListSubnetsByTagsRequestBody withTags(Consumer<List<ListTag>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 包含标签，最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复
-     * @return tags
-     */
+    /** 包含标签，最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复
+     * 
+     * @return tags */
     public List<ListTag> getTags() {
         return tags;
     }
@@ -268,8 +224,6 @@ public class ListSubnetsByTagsRequestBody  {
     public void setTags(List<ListTag> tags) {
         this.tags = tags;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -280,16 +234,18 @@ public class ListSubnetsByTagsRequestBody  {
             return false;
         }
         ListSubnetsByTagsRequestBody listSubnetsByTagsRequestBody = (ListSubnetsByTagsRequestBody) o;
-        return Objects.equals(this.action, listSubnetsByTagsRequestBody.action) &&
-            Objects.equals(this.limit, listSubnetsByTagsRequestBody.limit) &&
-            Objects.equals(this.offset, listSubnetsByTagsRequestBody.offset) &&
-            Objects.equals(this.matches, listSubnetsByTagsRequestBody.matches) &&
-            Objects.equals(this.tags, listSubnetsByTagsRequestBody.tags);
+        return Objects.equals(this.action, listSubnetsByTagsRequestBody.action)
+            && Objects.equals(this.limit, listSubnetsByTagsRequestBody.limit)
+            && Objects.equals(this.offset, listSubnetsByTagsRequestBody.offset)
+            && Objects.equals(this.matches, listSubnetsByTagsRequestBody.matches)
+            && Objects.equals(this.tags, listSubnetsByTagsRequestBody.tags);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(action, limit, offset, matches, tags);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -302,16 +258,13 @@ public class ListSubnetsByTagsRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

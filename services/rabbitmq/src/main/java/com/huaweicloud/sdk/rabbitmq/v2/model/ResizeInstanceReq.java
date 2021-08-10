@@ -1,46 +1,32 @@
 package com.huaweicloud.sdk.rabbitmq.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * ResizeInstanceReq
- */
-public class ResizeInstanceReq  {
+/** ResizeInstanceReq */
+public class ResizeInstanceReq {
 
-    /**
-     * 规格变更后的规格ID。 请参考[查询可扩容规格列表](https://support.huaweicloud.com/api-rabbitmq/ResizeInstance.html)接口返回的数据。
-     */
+    /** 规格变更后的规格ID。 请参考[查询可扩容规格列表](https://support.huaweicloud.com/api-rabbitmq/ResizeInstance.html)接口返回的数据。 */
     public static final class NewSpecCodeEnum {
 
-        
-        /**
-         * Enum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_3 for value: "dms.instance.rabbitmq.cluster.c3.4u8g.3"
-         */
-        public static final NewSpecCodeEnum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_3 = new NewSpecCodeEnum("dms.instance.rabbitmq.cluster.c3.4u8g.3");
-        
-        /**
-         * Enum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_5 for value: "dms.instance.rabbitmq.cluster.c3.4u8g.5"
-         */
-        public static final NewSpecCodeEnum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_5 = new NewSpecCodeEnum("dms.instance.rabbitmq.cluster.c3.4u8g.5");
-        
-        /**
-         * Enum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_7 for value: "dms.instance.rabbitmq.cluster.c3.4u8g.7"
-         */
-        public static final NewSpecCodeEnum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_7 = new NewSpecCodeEnum("dms.instance.rabbitmq.cluster.c3.4u8g.7");
-        
+        /** Enum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_3 for value: "dms.instance.rabbitmq.cluster.c3.4u8g.3" */
+        public static final NewSpecCodeEnum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_3 =
+            new NewSpecCodeEnum("dms.instance.rabbitmq.cluster.c3.4u8g.3");
+
+        /** Enum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_5 for value: "dms.instance.rabbitmq.cluster.c3.4u8g.5" */
+        public static final NewSpecCodeEnum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_5 =
+            new NewSpecCodeEnum("dms.instance.rabbitmq.cluster.c3.4u8g.5");
+
+        /** Enum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_7 for value: "dms.instance.rabbitmq.cluster.c3.4u8g.7" */
+        public static final NewSpecCodeEnum DMS_INSTANCE_RABBITMQ_CLUSTER_C3_4U8G_7 =
+            new NewSpecCodeEnum("dms.instance.rabbitmq.cluster.c3.4u8g.7");
 
         private static final Map<String, NewSpecCodeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,7 +56,7 @@ public class ResizeInstanceReq  {
 
         @JsonCreator
         public static NewSpecCodeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             NewSpecCodeEnum result = STATIC_FIELDS.get(value);
@@ -81,7 +67,7 @@ public class ResizeInstanceReq  {
         }
 
         public static NewSpecCodeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             NewSpecCodeEnum result = STATIC_FIELDS.get(value);
@@ -105,16 +91,14 @@ public class ResizeInstanceReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="new_spec_code")
-    
+    @JsonProperty(value = "new_spec_code")
+
     private NewSpecCodeEnum newSpecCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="new_storage_space")
-    
+    @JsonProperty(value = "new_storage_space")
+
     private Integer newStorageSpace;
 
     public ResizeInstanceReq withNewSpecCode(NewSpecCodeEnum newSpecCode) {
@@ -122,13 +106,9 @@ public class ResizeInstanceReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 规格变更后的规格ID。 请参考[查询可扩容规格列表](https://support.huaweicloud.com/api-rabbitmq/ResizeInstance.html)接口返回的数据。
-     * @return newSpecCode
-     */
+    /** 规格变更后的规格ID。 请参考[查询可扩容规格列表](https://support.huaweicloud.com/api-rabbitmq/ResizeInstance.html)接口返回的数据。
+     * 
+     * @return newSpecCode */
     public NewSpecCodeEnum getNewSpecCode() {
         return newSpecCode;
     }
@@ -137,20 +117,14 @@ public class ResizeInstanceReq  {
         this.newSpecCode = newSpecCode;
     }
 
-    
-
     public ResizeInstanceReq withNewStorageSpace(Integer newStorageSpace) {
         this.newStorageSpace = newStorageSpace;
         return this;
     }
 
-    
-
-
-    /**
-     * 规格变更后的消息存储空间，单位：GB。 请参考[查询可扩容规格列表](https://support.huaweicloud.com/api-rabbitmq/ResizeInstance.html)接口返回的数据。
-     * @return newStorageSpace
-     */
+    /** 规格变更后的消息存储空间，单位：GB。 请参考[查询可扩容规格列表](https://support.huaweicloud.com/api-rabbitmq/ResizeInstance.html)接口返回的数据。
+     * 
+     * @return newStorageSpace */
     public Integer getNewStorageSpace() {
         return newStorageSpace;
     }
@@ -158,8 +132,6 @@ public class ResizeInstanceReq  {
     public void setNewStorageSpace(Integer newStorageSpace) {
         this.newStorageSpace = newStorageSpace;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -170,13 +142,15 @@ public class ResizeInstanceReq  {
             return false;
         }
         ResizeInstanceReq resizeInstanceReq = (ResizeInstanceReq) o;
-        return Objects.equals(this.newSpecCode, resizeInstanceReq.newSpecCode) &&
-            Objects.equals(this.newStorageSpace, resizeInstanceReq.newStorageSpace);
+        return Objects.equals(this.newSpecCode, resizeInstanceReq.newSpecCode)
+            && Objects.equals(this.newStorageSpace, resizeInstanceReq.newStorageSpace);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(newSpecCode, newStorageSpace);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -186,16 +160,13 @@ public class ResizeInstanceReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,62 +1,44 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cdn.v1.model.CompressResponse;
-import com.huaweicloud.sdk.cdn.v1.model.Rules;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * CacheConfig
- */
-public class CacheConfig  {
-
-
+/** CacheConfig */
+public class CacheConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ignore_url_parameter")
-    
+    @JsonProperty(value = "ignore_url_parameter")
+
     private Boolean ignoreUrlParameter;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="follow_origin")
-    
+    @JsonProperty(value = "follow_origin")
+
     private Boolean followOrigin;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="compress")
-    
+    @JsonProperty(value = "compress")
+
     private CompressResponse compress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rules")
-    
+    @JsonProperty(value = "rules")
+
     private List<Rules> rules = null;
-    
+
     public CacheConfig withIgnoreUrlParameter(Boolean ignoreUrlParameter) {
         this.ignoreUrlParameter = ignoreUrlParameter;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否忽略url中的参数。
-     * @return ignoreUrlParameter
-     */
+    /** 是否忽略url中的参数。
+     * 
+     * @return ignoreUrlParameter */
     public Boolean getIgnoreUrlParameter() {
         return ignoreUrlParameter;
     }
@@ -65,20 +47,14 @@ public class CacheConfig  {
         this.ignoreUrlParameter = ignoreUrlParameter;
     }
 
-    
-
     public CacheConfig withFollowOrigin(Boolean followOrigin) {
         this.followOrigin = followOrigin;
         return this;
     }
 
-    
-
-
-    /**
-     * 缓存规则是否遵循源站
-     * @return followOrigin
-     */
+    /** 缓存规则是否遵循源站
+     * 
+     * @return followOrigin */
     public Boolean getFollowOrigin() {
         return followOrigin;
     }
@@ -87,27 +63,23 @@ public class CacheConfig  {
         this.followOrigin = followOrigin;
     }
 
-    
-
     public CacheConfig withCompress(CompressResponse compress) {
         this.compress = compress;
         return this;
     }
 
     public CacheConfig withCompress(Consumer<CompressResponse> compressSetter) {
-        if(this.compress == null ){
+        if (this.compress == null) {
             this.compress = new CompressResponse();
             compressSetter.accept(this.compress);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get compress
-     * @return compress
-     */
+    /** Get compress
+     * 
+     * @return compress */
     public CompressResponse getCompress() {
         return compress;
     }
@@ -116,16 +88,13 @@ public class CacheConfig  {
         this.compress = compress;
     }
 
-    
-
     public CacheConfig withRules(List<Rules> rules) {
         this.rules = rules;
         return this;
     }
 
-    
     public CacheConfig addRulesItem(Rules rulesItem) {
-        if(this.rules == null) {
+        if (this.rules == null) {
             this.rules = new ArrayList<>();
         }
         this.rules.add(rulesItem);
@@ -133,17 +102,16 @@ public class CacheConfig  {
     }
 
     public CacheConfig withRules(Consumer<List<Rules>> rulesSetter) {
-        if(this.rules == null) {
+        if (this.rules == null) {
             this.rules = new ArrayList<>();
         }
         rulesSetter.accept(this.rules);
         return this;
     }
 
-    /**
-     * 缓存规则，将覆盖之前的规则配置。规则为空重置为默认规则。
-     * @return rules
-     */
+    /** 缓存规则，将覆盖之前的规则配置。规则为空重置为默认规则。
+     * 
+     * @return rules */
     public List<Rules> getRules() {
         return rules;
     }
@@ -151,8 +119,6 @@ public class CacheConfig  {
     public void setRules(List<Rules> rules) {
         this.rules = rules;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -163,15 +129,16 @@ public class CacheConfig  {
             return false;
         }
         CacheConfig cacheConfig = (CacheConfig) o;
-        return Objects.equals(this.ignoreUrlParameter, cacheConfig.ignoreUrlParameter) &&
-            Objects.equals(this.followOrigin, cacheConfig.followOrigin) &&
-            Objects.equals(this.compress, cacheConfig.compress) &&
-            Objects.equals(this.rules, cacheConfig.rules);
+        return Objects.equals(this.ignoreUrlParameter, cacheConfig.ignoreUrlParameter)
+            && Objects.equals(this.followOrigin, cacheConfig.followOrigin)
+            && Objects.equals(this.compress, cacheConfig.compress) && Objects.equals(this.rules, cacheConfig.rules);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(ignoreUrlParameter, followOrigin, compress, rules);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -183,16 +150,13 @@ public class CacheConfig  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

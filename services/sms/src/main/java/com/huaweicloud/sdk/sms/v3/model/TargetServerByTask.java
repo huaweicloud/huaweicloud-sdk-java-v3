@@ -1,65 +1,48 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.BtrfsFileSystem;
-import com.huaweicloud.sdk.sms.v3.model.TargetDisks;
-import com.huaweicloud.sdk.sms.v3.model.VolumeGroups;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 目的端虚拟机信息
- */
-public class TargetServerByTask  {
-
-
+/** 目的端虚拟机信息 */
+public class TargetServerByTask {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="btrfs_list")
-    
+    @JsonProperty(value = "btrfs_list")
+
     private List<BtrfsFileSystem> btrfsList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disks")
-    
+    @JsonProperty(value = "disks")
+
     private List<TargetDisks> disks = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vm_id")
-    
+    @JsonProperty(value = "vm_id")
+
     private String vmId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_groups")
-    
+    @JsonProperty(value = "volume_groups")
+
     private List<VolumeGroups> volumeGroups = null;
-    
+
     public TargetServerByTask withBtrfsList(List<BtrfsFileSystem> btrfsList) {
         this.btrfsList = btrfsList;
         return this;
     }
 
-    
     public TargetServerByTask addBtrfsListItem(BtrfsFileSystem btrfsListItem) {
-        if(this.btrfsList == null) {
+        if (this.btrfsList == null) {
             this.btrfsList = new ArrayList<>();
         }
         this.btrfsList.add(btrfsListItem);
@@ -67,17 +50,16 @@ public class TargetServerByTask  {
     }
 
     public TargetServerByTask withBtrfsList(Consumer<List<BtrfsFileSystem>> btrfsListSetter) {
-        if(this.btrfsList == null) {
+        if (this.btrfsList == null) {
             this.btrfsList = new ArrayList<>();
         }
         btrfsListSetter.accept(this.btrfsList);
         return this;
     }
 
-    /**
-     * btrfs信息，数据从源端获取
-     * @return btrfsList
-     */
+    /** btrfs信息，数据从源端获取
+     * 
+     * @return btrfsList */
     public List<BtrfsFileSystem> getBtrfsList() {
         return btrfsList;
     }
@@ -86,16 +68,13 @@ public class TargetServerByTask  {
         this.btrfsList = btrfsList;
     }
 
-    
-
     public TargetServerByTask withDisks(List<TargetDisks> disks) {
         this.disks = disks;
         return this;
     }
 
-    
     public TargetServerByTask addDisksItem(TargetDisks disksItem) {
-        if(this.disks == null) {
+        if (this.disks == null) {
             this.disks = new ArrayList<>();
         }
         this.disks.add(disksItem);
@@ -103,17 +82,16 @@ public class TargetServerByTask  {
     }
 
     public TargetServerByTask withDisks(Consumer<List<TargetDisks>> disksSetter) {
-        if(this.disks == null) {
+        if (this.disks == null) {
             this.disks = new ArrayList<>();
         }
         disksSetter.accept(this.disks);
         return this;
     }
 
-    /**
-     * 磁盘信息
-     * @return disks
-     */
+    /** 磁盘信息
+     * 
+     * @return disks */
     public List<TargetDisks> getDisks() {
         return disks;
     }
@@ -122,20 +100,14 @@ public class TargetServerByTask  {
         this.disks = disks;
     }
 
-    
-
     public TargetServerByTask withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 名称
-     * @return name
-     */
+    /** 名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -144,20 +116,14 @@ public class TargetServerByTask  {
         this.name = name;
     }
 
-    
-
     public TargetServerByTask withVmId(String vmId) {
         this.vmId = vmId;
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟机id
-     * @return vmId
-     */
+    /** 虚拟机id
+     * 
+     * @return vmId */
     public String getVmId() {
         return vmId;
     }
@@ -166,16 +132,13 @@ public class TargetServerByTask  {
         this.vmId = vmId;
     }
 
-    
-
     public TargetServerByTask withVolumeGroups(List<VolumeGroups> volumeGroups) {
         this.volumeGroups = volumeGroups;
         return this;
     }
 
-    
     public TargetServerByTask addVolumeGroupsItem(VolumeGroups volumeGroupsItem) {
-        if(this.volumeGroups == null) {
+        if (this.volumeGroups == null) {
             this.volumeGroups = new ArrayList<>();
         }
         this.volumeGroups.add(volumeGroupsItem);
@@ -183,17 +146,16 @@ public class TargetServerByTask  {
     }
 
     public TargetServerByTask withVolumeGroups(Consumer<List<VolumeGroups>> volumeGroupsSetter) {
-        if(this.volumeGroups == null) {
+        if (this.volumeGroups == null) {
             this.volumeGroups = new ArrayList<>();
         }
         volumeGroupsSetter.accept(this.volumeGroups);
         return this;
     }
 
-    /**
-     * 卷组，数据从源端获取
-     * @return volumeGroups
-     */
+    /** 卷组，数据从源端获取
+     * 
+     * @return volumeGroups */
     public List<VolumeGroups> getVolumeGroups() {
         return volumeGroups;
     }
@@ -201,8 +163,6 @@ public class TargetServerByTask  {
     public void setVolumeGroups(List<VolumeGroups> volumeGroups) {
         this.volumeGroups = volumeGroups;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -213,16 +173,17 @@ public class TargetServerByTask  {
             return false;
         }
         TargetServerByTask targetServerByTask = (TargetServerByTask) o;
-        return Objects.equals(this.btrfsList, targetServerByTask.btrfsList) &&
-            Objects.equals(this.disks, targetServerByTask.disks) &&
-            Objects.equals(this.name, targetServerByTask.name) &&
-            Objects.equals(this.vmId, targetServerByTask.vmId) &&
-            Objects.equals(this.volumeGroups, targetServerByTask.volumeGroups);
+        return Objects.equals(this.btrfsList, targetServerByTask.btrfsList)
+            && Objects.equals(this.disks, targetServerByTask.disks)
+            && Objects.equals(this.name, targetServerByTask.name) && Objects.equals(this.vmId, targetServerByTask.vmId)
+            && Objects.equals(this.volumeGroups, targetServerByTask.volumeGroups);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(btrfsList, disks, name, vmId, volumeGroups);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -235,16 +196,13 @@ public class TargetServerByTask  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

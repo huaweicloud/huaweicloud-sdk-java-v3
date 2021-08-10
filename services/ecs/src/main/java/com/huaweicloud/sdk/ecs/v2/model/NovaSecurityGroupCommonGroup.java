@@ -1,32 +1,23 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class NovaSecurityGroupCommonGroup  {
-
-
+public class NovaSecurityGroupCommonGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
+
     private String tenantId;
 
     public NovaSecurityGroupCommonGroup withName(String name) {
@@ -34,13 +25,9 @@ public class NovaSecurityGroupCommonGroup  {
         return this;
     }
 
-    
-
-
-    /**
-     * 对端安全组的名称
-     * @return name
-     */
+    /** 对端安全组的名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -49,20 +36,14 @@ public class NovaSecurityGroupCommonGroup  {
         this.name = name;
     }
 
-    
-
     public NovaSecurityGroupCommonGroup withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
 
-    
-
-
-    /**
-     * 对端安全组所属租户的租户ID
-     * @return tenantId
-     */
+    /** 对端安全组所属租户的租户ID
+     * 
+     * @return tenantId */
     public String getTenantId() {
         return tenantId;
     }
@@ -70,8 +51,6 @@ public class NovaSecurityGroupCommonGroup  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +61,15 @@ public class NovaSecurityGroupCommonGroup  {
             return false;
         }
         NovaSecurityGroupCommonGroup novaSecurityGroupCommonGroup = (NovaSecurityGroupCommonGroup) o;
-        return Objects.equals(this.name, novaSecurityGroupCommonGroup.name) &&
-            Objects.equals(this.tenantId, novaSecurityGroupCommonGroup.tenantId);
+        return Objects.equals(this.name, novaSecurityGroupCommonGroup.name)
+            && Objects.equals(this.tenantId, novaSecurityGroupCommonGroup.tenantId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, tenantId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +79,13 @@ public class NovaSecurityGroupCommonGroup  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

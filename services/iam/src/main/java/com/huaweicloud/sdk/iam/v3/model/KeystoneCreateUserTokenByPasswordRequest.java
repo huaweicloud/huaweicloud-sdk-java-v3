@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.KeystoneCreateUserTokenByPasswordRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class KeystoneCreateUserTokenByPasswordRequest  {
-
-
+/** Request Object */
+public class KeystoneCreateUserTokenByPasswordRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nocatalog")
-    
+    @JsonProperty(value = "nocatalog")
+
     private String nocatalog;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private KeystoneCreateUserTokenByPasswordRequestBody body;
 
     public KeystoneCreateUserTokenByPasswordRequest withNocatalog(String nocatalog) {
@@ -35,13 +24,9 @@ public class KeystoneCreateUserTokenByPasswordRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 如果设置该参数，返回的响应体中将不显示catalog信息。任何非空字符串都将解释为true，并使该字段生效。
-     * @return nocatalog
-     */
+    /** 如果设置该参数，返回的响应体中将不显示catalog信息。任何非空字符串都将解释为true，并使该字段生效。
+     * 
+     * @return nocatalog */
     public String getNocatalog() {
         return nocatalog;
     }
@@ -50,27 +35,24 @@ public class KeystoneCreateUserTokenByPasswordRequest  {
         this.nocatalog = nocatalog;
     }
 
-    
-
     public KeystoneCreateUserTokenByPasswordRequest withBody(KeystoneCreateUserTokenByPasswordRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public KeystoneCreateUserTokenByPasswordRequest withBody(Consumer<KeystoneCreateUserTokenByPasswordRequestBody> bodySetter) {
-        if(this.body == null ){
+    public KeystoneCreateUserTokenByPasswordRequest withBody(
+        Consumer<KeystoneCreateUserTokenByPasswordRequestBody> bodySetter) {
+        if (this.body == null) {
             this.body = new KeystoneCreateUserTokenByPasswordRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public KeystoneCreateUserTokenByPasswordRequestBody getBody() {
         return body;
     }
@@ -78,8 +60,6 @@ public class KeystoneCreateUserTokenByPasswordRequest  {
     public void setBody(KeystoneCreateUserTokenByPasswordRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -89,14 +69,17 @@ public class KeystoneCreateUserTokenByPasswordRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        KeystoneCreateUserTokenByPasswordRequest keystoneCreateUserTokenByPasswordRequest = (KeystoneCreateUserTokenByPasswordRequest) o;
-        return Objects.equals(this.nocatalog, keystoneCreateUserTokenByPasswordRequest.nocatalog) &&
-            Objects.equals(this.body, keystoneCreateUserTokenByPasswordRequest.body);
+        KeystoneCreateUserTokenByPasswordRequest keystoneCreateUserTokenByPasswordRequest =
+            (KeystoneCreateUserTokenByPasswordRequest) o;
+        return Objects.equals(this.nocatalog, keystoneCreateUserTokenByPasswordRequest.nocatalog)
+            && Objects.equals(this.body, keystoneCreateUserTokenByPasswordRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nocatalog, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +89,13 @@ public class KeystoneCreateUserTokenByPasswordRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

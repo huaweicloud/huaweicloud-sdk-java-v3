@@ -1,42 +1,30 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 
  */
-public class UpdateFirewallResp  {
-
-
+public class UpdateFirewallResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
-    /**
-     * 网络ACL状态。
-     */
+
+    /** 网络ACL状态。 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum INACTIVE for value: "INACTIVE"
-         */
+        /** Enum INACTIVE for value: "INACTIVE" */
         public static final StatusEnum INACTIVE = new StatusEnum("INACTIVE");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +52,7 @@ public class UpdateFirewallResp  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +63,7 @@ public class UpdateFirewallResp  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -99,10 +87,9 @@ public class UpdateFirewallResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
     public UpdateFirewallResp withId(String id) {
@@ -110,13 +97,9 @@ public class UpdateFirewallResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 网络ACL ID
-     * @return id
-     */
+    /** 网络ACL ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -125,20 +108,14 @@ public class UpdateFirewallResp  {
         this.id = id;
     }
 
-    
-
     public UpdateFirewallResp withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 网络ACL状态。
-     * @return status
-     */
+    /** 网络ACL状态。
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -146,8 +123,6 @@ public class UpdateFirewallResp  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -158,13 +133,14 @@ public class UpdateFirewallResp  {
             return false;
         }
         UpdateFirewallResp updateFirewallResp = (UpdateFirewallResp) o;
-        return Objects.equals(this.id, updateFirewallResp.id) &&
-            Objects.equals(this.status, updateFirewallResp.status);
+        return Objects.equals(this.id, updateFirewallResp.id) && Objects.equals(this.status, updateFirewallResp.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -174,16 +150,13 @@ public class UpdateFirewallResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

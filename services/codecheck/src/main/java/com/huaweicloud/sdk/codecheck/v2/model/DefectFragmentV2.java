@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.codecheck.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * start_offset和end_offset均为-1，表示该行不是缺陷片段或者整行都是，需要结合DefectInfoV2中的line_number属性一起判断哪一行是具体的缺陷片段。
- */
-public class DefectFragmentV2  {
-
-
+/** start_offset和end_offset均为-1，表示该行不是缺陷片段或者整行都是，需要结合DefectInfoV2中的line_number属性一起判断哪一行是具体的缺陷片段。 */
+public class DefectFragmentV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="line_num")
-    
+    @JsonProperty(value = "line_num")
+
     private String lineNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="line_content")
-    
+    @JsonProperty(value = "line_content")
+
     private String lineContent;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_offset")
-    
+    @JsonProperty(value = "start_offset")
+
     private Integer startOffset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_offset")
-    
+    @JsonProperty(value = "end_offset")
+
     private Integer endOffset;
 
     public DefectFragmentV2 withLineNum(String lineNum) {
@@ -46,13 +33,9 @@ public class DefectFragmentV2  {
         return this;
     }
 
-    
-
-
-    /**
-     * 行号
-     * @return lineNum
-     */
+    /** 行号
+     * 
+     * @return lineNum */
     public String getLineNum() {
         return lineNum;
     }
@@ -61,20 +44,14 @@ public class DefectFragmentV2  {
         this.lineNum = lineNum;
     }
 
-    
-
     public DefectFragmentV2 withLineContent(String lineContent) {
         this.lineContent = lineContent;
         return this;
     }
 
-    
-
-
-    /**
-     * 该行代码内容
-     * @return lineContent
-     */
+    /** 该行代码内容
+     * 
+     * @return lineContent */
     public String getLineContent() {
         return lineContent;
     }
@@ -83,20 +60,14 @@ public class DefectFragmentV2  {
         this.lineContent = lineContent;
     }
 
-    
-
     public DefectFragmentV2 withStartOffset(Integer startOffset) {
         this.startOffset = startOffset;
         return this;
     }
 
-    
-
-
-    /**
-     * 缺陷开始列号
-     * @return startOffset
-     */
+    /** 缺陷开始列号
+     * 
+     * @return startOffset */
     public Integer getStartOffset() {
         return startOffset;
     }
@@ -105,20 +76,14 @@ public class DefectFragmentV2  {
         this.startOffset = startOffset;
     }
 
-    
-
     public DefectFragmentV2 withEndOffset(Integer endOffset) {
         this.endOffset = endOffset;
         return this;
     }
 
-    
-
-
-    /**
-     * 缺陷结束列号
-     * @return endOffset
-     */
+    /** 缺陷结束列号
+     * 
+     * @return endOffset */
     public Integer getEndOffset() {
         return endOffset;
     }
@@ -126,8 +91,6 @@ public class DefectFragmentV2  {
     public void setEndOffset(Integer endOffset) {
         this.endOffset = endOffset;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class DefectFragmentV2  {
             return false;
         }
         DefectFragmentV2 defectFragmentV2 = (DefectFragmentV2) o;
-        return Objects.equals(this.lineNum, defectFragmentV2.lineNum) &&
-            Objects.equals(this.lineContent, defectFragmentV2.lineContent) &&
-            Objects.equals(this.startOffset, defectFragmentV2.startOffset) &&
-            Objects.equals(this.endOffset, defectFragmentV2.endOffset);
+        return Objects.equals(this.lineNum, defectFragmentV2.lineNum)
+            && Objects.equals(this.lineContent, defectFragmentV2.lineContent)
+            && Objects.equals(this.startOffset, defectFragmentV2.startOffset)
+            && Objects.equals(this.endOffset, defectFragmentV2.endOffset);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(lineNum, lineContent, startOffset, endOffset);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class DefectFragmentV2  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

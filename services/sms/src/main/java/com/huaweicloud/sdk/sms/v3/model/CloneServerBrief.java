@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 克隆服务器基本信息
- */
-public class CloneServerBrief  {
-
-
+/** 克隆服务器基本信息 */
+public class CloneServerBrief {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vm_id")
-    
+    @JsonProperty(value = "vm_id")
+
     private String vmId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public CloneServerBrief withVmId(String vmId) {
@@ -34,13 +23,9 @@ public class CloneServerBrief  {
         return this;
     }
 
-    
-
-
-    /**
-     * 克隆服务器ID
-     * @return vmId
-     */
+    /** 克隆服务器ID
+     * 
+     * @return vmId */
     public String getVmId() {
         return vmId;
     }
@@ -49,20 +34,14 @@ public class CloneServerBrief  {
         this.vmId = vmId;
     }
 
-    
-
     public CloneServerBrief withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 克隆虚拟机的名称
-     * @return name
-     */
+    /** 克隆虚拟机的名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -70,8 +49,6 @@ public class CloneServerBrief  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,14 @@ public class CloneServerBrief  {
             return false;
         }
         CloneServerBrief cloneServerBrief = (CloneServerBrief) o;
-        return Objects.equals(this.vmId, cloneServerBrief.vmId) &&
-            Objects.equals(this.name, cloneServerBrief.name);
+        return Objects.equals(this.vmId, cloneServerBrief.vmId) && Objects.equals(this.name, cloneServerBrief.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(vmId, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +76,13 @@ public class CloneServerBrief  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

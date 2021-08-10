@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListSubnetsRequest  {
-
-
+/** Request Object */
+public class ListSubnetsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="site_id")
-    
+    @JsonProperty(value = "site_id")
+
     private String siteId;
 
     public ListSubnetsRequest withVpcId(String vpcId) {
@@ -46,13 +33,9 @@ public class ListSubnetsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟私有云ID。
-     * @return vpcId
-     */
+    /** 虚拟私有云ID。
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -61,22 +44,14 @@ public class ListSubnetsRequest  {
         this.vpcId = vpcId;
     }
 
-    
-
     public ListSubnetsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询返回边缘子网列表数量。取值范围：0~1000。
-     * minimum: 0
-     * maximum: 1000
-     * @return limit
-     */
+    /** 查询返回边缘子网列表数量。取值范围：0~1000。 minimum: 0 maximum: 1000
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -85,20 +60,14 @@ public class ListSubnetsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListSubnetsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询的偏移量。
-     * @return offset
-     */
+    /** 查询的偏移量。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -107,20 +76,14 @@ public class ListSubnetsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListSubnetsRequest withSiteId(String siteId) {
         this.siteId = siteId;
         return this;
     }
 
-    
-
-
-    /**
-     * 站点ID。
-     * @return siteId
-     */
+    /** 站点ID。
+     * 
+     * @return siteId */
     public String getSiteId() {
         return siteId;
     }
@@ -128,8 +91,6 @@ public class ListSubnetsRequest  {
     public void setSiteId(String siteId) {
         this.siteId = siteId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -140,15 +101,17 @@ public class ListSubnetsRequest  {
             return false;
         }
         ListSubnetsRequest listSubnetsRequest = (ListSubnetsRequest) o;
-        return Objects.equals(this.vpcId, listSubnetsRequest.vpcId) &&
-            Objects.equals(this.limit, listSubnetsRequest.limit) &&
-            Objects.equals(this.offset, listSubnetsRequest.offset) &&
-            Objects.equals(this.siteId, listSubnetsRequest.siteId);
+        return Objects.equals(this.vpcId, listSubnetsRequest.vpcId)
+            && Objects.equals(this.limit, listSubnetsRequest.limit)
+            && Objects.equals(this.offset, listSubnetsRequest.offset)
+            && Objects.equals(this.siteId, listSubnetsRequest.siteId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(vpcId, limit, offset, siteId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -160,16 +123,13 @@ public class ListSubnetsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

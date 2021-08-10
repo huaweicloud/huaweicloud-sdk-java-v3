@@ -1,42 +1,27 @@
 package com.huaweicloud.sdk.devstar.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.devstar.v1.model.TemplateQueryV2;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ListTemplatesV2Request  {
+/** Request Object */
+public class ListTemplatesV2Request {
 
-    /**
-     * 语言类型，缺省值为“zh-cn”。  枚举值： - zh-cn：中文 - en-us：英文 
-     */
+    /** 语言类型，缺省值为“zh-cn”。 枚举值： - zh-cn：中文 - en-us：英文 */
     public static final class XLanguageEnum {
 
-        
-        /**
-         * Enum ZH_CN for value: "zh-cn"
-         */
+        /** Enum ZH_CN for value: "zh-cn" */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
-        
-        /**
-         * Enum EN_US for value: "en-us"
-         */
+
+        /** Enum EN_US for value: "en-us" */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
-        
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
 
@@ -65,7 +50,7 @@ public class ListTemplatesV2Request  {
 
         @JsonCreator
         public static XLanguageEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -76,7 +61,7 @@ public class ListTemplatesV2Request  {
         }
 
         public static XLanguageEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -100,22 +85,19 @@ public class ListTemplatesV2Request  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private XLanguageEnum xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action_id")
-    
+    @JsonProperty(value = "action_id")
+
     private String actionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private TemplateQueryV2 body;
 
     public ListTemplatesV2Request withXLanguage(XLanguageEnum xLanguage) {
@@ -123,15 +105,11 @@ public class ListTemplatesV2Request  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言类型，缺省值为“zh-cn”。  枚举值： - zh-cn：中文 - en-us：英文 
-     * @return xLanguage
-     */
+    /** 语言类型，缺省值为“zh-cn”。 枚举值： - zh-cn：中文 - en-us：英文
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
         return xLanguage;
     }
@@ -140,20 +118,14 @@ public class ListTemplatesV2Request  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListTemplatesV2Request withActionId(String actionId) {
         this.actionId = actionId;
         return this;
     }
 
-    
-
-
-    /**
-     * 请填写固定值“query”。
-     * @return actionId
-     */
+    /** 请填写固定值“query”。
+     * 
+     * @return actionId */
     public String getActionId() {
         return actionId;
     }
@@ -162,27 +134,23 @@ public class ListTemplatesV2Request  {
         this.actionId = actionId;
     }
 
-    
-
     public ListTemplatesV2Request withBody(TemplateQueryV2 body) {
         this.body = body;
         return this;
     }
 
     public ListTemplatesV2Request withBody(Consumer<TemplateQueryV2> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new TemplateQueryV2();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public TemplateQueryV2 getBody() {
         return body;
     }
@@ -190,8 +158,6 @@ public class ListTemplatesV2Request  {
     public void setBody(TemplateQueryV2 body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -202,14 +168,16 @@ public class ListTemplatesV2Request  {
             return false;
         }
         ListTemplatesV2Request listTemplatesV2Request = (ListTemplatesV2Request) o;
-        return Objects.equals(this.xLanguage, listTemplatesV2Request.xLanguage) &&
-            Objects.equals(this.actionId, listTemplatesV2Request.actionId) &&
-            Objects.equals(this.body, listTemplatesV2Request.body);
+        return Objects.equals(this.xLanguage, listTemplatesV2Request.xLanguage)
+            && Objects.equals(this.actionId, listTemplatesV2Request.actionId)
+            && Objects.equals(this.body, listTemplatesV2Request.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, actionId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -220,16 +188,13 @@ public class ListTemplatesV2Request  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,34 +1,20 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
-/**
- * 协议。
- */
+/** 协议。 */
 public class ExternalAccessProtocol {
-    
-    /**
-     * Enum HTTP for value: "HTTP"
-     */
+
+    /** Enum HTTP for value: "HTTP" */
     public static final ExternalAccessProtocol HTTP = new ExternalAccessProtocol("HTTP");
-    
-    /**
-     * Enum HTTPS for value: "HTTPS"
-     */
+
+    /** Enum HTTPS for value: "HTTPS" */
     public static final ExternalAccessProtocol HTTPS = new ExternalAccessProtocol("HTTPS");
-    
 
     private static final Map<String, ExternalAccessProtocol> STATIC_FIELDS = createStaticFields();
 
@@ -57,7 +43,7 @@ public class ExternalAccessProtocol {
 
     @JsonCreator
     public static ExternalAccessProtocol fromValue(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         ExternalAccessProtocol result = STATIC_FIELDS.get(value);
@@ -68,7 +54,7 @@ public class ExternalAccessProtocol {
     }
 
     public static ExternalAccessProtocol valueOf(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         ExternalAccessProtocol result = STATIC_FIELDS.get(value);
@@ -91,4 +77,3 @@ public class ExternalAccessProtocol {
         return this.value.hashCode();
     }
 }
-

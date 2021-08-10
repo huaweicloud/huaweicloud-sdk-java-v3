@@ -1,53 +1,39 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iec.v1.model.FirewallRule;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 网络ACL策略。
- */
-public class FirewallPolicy  {
-
-
+/** 网络ACL策略。 */
+public class FirewallPolicy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="firewall_rules")
-    
+    @JsonProperty(value = "firewall_rules")
+
     private List<FirewallRule> firewallRules = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="insert_after")
-    
+    @JsonProperty(value = "insert_after")
+
     private String insertAfter;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="insert_before")
-    
+    @JsonProperty(value = "insert_before")
+
     private String insertBefore;
 
     public FirewallPolicy withId(String id) {
@@ -55,13 +41,9 @@ public class FirewallPolicy  {
         return this;
     }
 
-    
-
-
-    /**
-     * 网络ACL策略ID。
-     * @return id
-     */
+    /** 网络ACL策略ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -70,20 +52,14 @@ public class FirewallPolicy  {
         this.id = id;
     }
 
-    
-
     public FirewallPolicy withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 网络ACL策略名称。
-     * @return name
-     */
+    /** 网络ACL策略名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -92,16 +68,13 @@ public class FirewallPolicy  {
         this.name = name;
     }
 
-    
-
     public FirewallPolicy withFirewallRules(List<FirewallRule> firewallRules) {
         this.firewallRules = firewallRules;
         return this;
     }
 
-    
     public FirewallPolicy addFirewallRulesItem(FirewallRule firewallRulesItem) {
-        if(this.firewallRules == null) {
+        if (this.firewallRules == null) {
             this.firewallRules = new ArrayList<>();
         }
         this.firewallRules.add(firewallRulesItem);
@@ -109,17 +82,16 @@ public class FirewallPolicy  {
     }
 
     public FirewallPolicy withFirewallRules(Consumer<List<FirewallRule>> firewallRulesSetter) {
-        if(this.firewallRules == null) {
+        if (this.firewallRules == null) {
             this.firewallRules = new ArrayList<>();
         }
         firewallRulesSetter.accept(this.firewallRules);
         return this;
     }
 
-    /**
-     * 网络ACL规则列表对象。
-     * @return firewallRules
-     */
+    /** 网络ACL规则列表对象。
+     * 
+     * @return firewallRules */
     public List<FirewallRule> getFirewallRules() {
         return firewallRules;
     }
@@ -128,20 +100,14 @@ public class FirewallPolicy  {
         this.firewallRules = firewallRules;
     }
 
-    
-
     public FirewallPolicy withInsertAfter(String insertAfter) {
         this.insertAfter = insertAfter;
         return this;
     }
 
-    
-
-
-    /**
-     * ACL规则ID，表示在此ACL规则之后添加ACL规则
-     * @return insertAfter
-     */
+    /** ACL规则ID，表示在此ACL规则之后添加ACL规则
+     * 
+     * @return insertAfter */
     public String getInsertAfter() {
         return insertAfter;
     }
@@ -150,20 +116,14 @@ public class FirewallPolicy  {
         this.insertAfter = insertAfter;
     }
 
-    
-
     public FirewallPolicy withInsertBefore(String insertBefore) {
         this.insertBefore = insertBefore;
         return this;
     }
 
-    
-
-
-    /**
-     * ACL规则ID，表示在此ACL规则之前添加ACL规则
-     * @return insertBefore
-     */
+    /** ACL规则ID，表示在此ACL规则之前添加ACL规则
+     * 
+     * @return insertBefore */
     public String getInsertBefore() {
         return insertBefore;
     }
@@ -171,8 +131,6 @@ public class FirewallPolicy  {
     public void setInsertBefore(String insertBefore) {
         this.insertBefore = insertBefore;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -183,16 +141,17 @@ public class FirewallPolicy  {
             return false;
         }
         FirewallPolicy firewallPolicy = (FirewallPolicy) o;
-        return Objects.equals(this.id, firewallPolicy.id) &&
-            Objects.equals(this.name, firewallPolicy.name) &&
-            Objects.equals(this.firewallRules, firewallPolicy.firewallRules) &&
-            Objects.equals(this.insertAfter, firewallPolicy.insertAfter) &&
-            Objects.equals(this.insertBefore, firewallPolicy.insertBefore);
+        return Objects.equals(this.id, firewallPolicy.id) && Objects.equals(this.name, firewallPolicy.name)
+            && Objects.equals(this.firewallRules, firewallPolicy.firewallRules)
+            && Objects.equals(this.insertAfter, firewallPolicy.insertAfter)
+            && Objects.equals(this.insertBefore, firewallPolicy.insertBefore);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, firewallRules, insertAfter, insertBefore);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -205,16 +164,13 @@ public class FirewallPolicy  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

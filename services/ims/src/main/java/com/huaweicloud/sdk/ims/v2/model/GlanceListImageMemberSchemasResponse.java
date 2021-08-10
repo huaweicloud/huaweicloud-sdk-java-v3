@@ -1,43 +1,30 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ims.v2.model.Links;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class GlanceListImageMemberSchemasResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private List<Links> links = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="properties")
-    
+    @JsonProperty(value = "properties")
+
     private Object properties;
 
     public GlanceListImageMemberSchemasResponse withLinks(List<Links> links) {
@@ -45,9 +32,8 @@ public class GlanceListImageMemberSchemasResponse extends SdkResponse {
         return this;
     }
 
-    
     public GlanceListImageMemberSchemasResponse addLinksItem(Links linksItem) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         this.links.add(linksItem);
@@ -55,17 +41,16 @@ public class GlanceListImageMemberSchemasResponse extends SdkResponse {
     }
 
     public GlanceListImageMemberSchemasResponse withLinks(Consumer<List<Links>> linksSetter) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);
         return this;
     }
 
-    /**
-     * 视图链接。
-     * @return links
-     */
+    /** 视图链接。
+     * 
+     * @return links */
     public List<Links> getLinks() {
         return links;
     }
@@ -74,20 +59,14 @@ public class GlanceListImageMemberSchemasResponse extends SdkResponse {
         this.links = links;
     }
 
-    
-
     public GlanceListImageMemberSchemasResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 视图名称。
-     * @return name
-     */
+    /** 视图名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -96,20 +75,14 @@ public class GlanceListImageMemberSchemasResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public GlanceListImageMemberSchemasResponse withProperties(Object properties) {
         this.properties = properties;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像属性说明，主要是对基础属性的说明，包含每个属性的取值类型，用途。
-     * @return properties
-     */
+    /** 镜像属性说明，主要是对基础属性的说明，包含每个属性的取值类型，用途。
+     * 
+     * @return properties */
     public Object getProperties() {
         return properties;
     }
@@ -117,8 +90,6 @@ public class GlanceListImageMemberSchemasResponse extends SdkResponse {
     public void setProperties(Object properties) {
         this.properties = properties;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -128,15 +99,18 @@ public class GlanceListImageMemberSchemasResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        GlanceListImageMemberSchemasResponse glanceListImageMemberSchemasResponse = (GlanceListImageMemberSchemasResponse) o;
-        return Objects.equals(this.links, glanceListImageMemberSchemasResponse.links) &&
-            Objects.equals(this.name, glanceListImageMemberSchemasResponse.name) &&
-            Objects.equals(this.properties, glanceListImageMemberSchemasResponse.properties);
+        GlanceListImageMemberSchemasResponse glanceListImageMemberSchemasResponse =
+            (GlanceListImageMemberSchemasResponse) o;
+        return Objects.equals(this.links, glanceListImageMemberSchemasResponse.links)
+            && Objects.equals(this.name, glanceListImageMemberSchemasResponse.name)
+            && Objects.equals(this.properties, glanceListImageMemberSchemasResponse.properties);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(links, name, properties);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -147,16 +121,13 @@ public class GlanceListImageMemberSchemasResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

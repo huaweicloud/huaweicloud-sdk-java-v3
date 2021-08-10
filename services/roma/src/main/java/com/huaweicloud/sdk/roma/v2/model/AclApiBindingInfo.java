@@ -1,51 +1,37 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.time.OffsetDateTime;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * AclApiBindingInfo
- */
-public class AclApiBindingInfo  {
-
-
+/** AclApiBindingInfo */
+public class AclApiBindingInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_id")
-    
+    @JsonProperty(value = "api_id")
+
     private String apiId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_id")
-    
+    @JsonProperty(value = "env_id")
+
     private String envId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="acl_id")
-    
+    @JsonProperty(value = "acl_id")
+
     private String aclId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private OffsetDateTime createTime;
 
     public AclApiBindingInfo withId(String id) {
@@ -53,13 +39,9 @@ public class AclApiBindingInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 绑定关系编号
-     * @return id
-     */
+    /** 绑定关系编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -68,20 +50,14 @@ public class AclApiBindingInfo  {
         this.id = id;
     }
 
-    
-
     public AclApiBindingInfo withApiId(String apiId) {
         this.apiId = apiId;
         return this;
     }
 
-    
-
-
-    /**
-     * API编号
-     * @return apiId
-     */
+    /** API编号
+     * 
+     * @return apiId */
     public String getApiId() {
         return apiId;
     }
@@ -90,20 +66,14 @@ public class AclApiBindingInfo  {
         this.apiId = apiId;
     }
 
-    
-
     public AclApiBindingInfo withEnvId(String envId) {
         this.envId = envId;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境编号
-     * @return envId
-     */
+    /** 环境编号
+     * 
+     * @return envId */
     public String getEnvId() {
         return envId;
     }
@@ -112,20 +82,14 @@ public class AclApiBindingInfo  {
         this.envId = envId;
     }
 
-    
-
     public AclApiBindingInfo withAclId(String aclId) {
         this.aclId = aclId;
         return this;
     }
 
-    
-
-
-    /**
-     * ACL策略编号
-     * @return aclId
-     */
+    /** ACL策略编号
+     * 
+     * @return aclId */
     public String getAclId() {
         return aclId;
     }
@@ -134,20 +98,14 @@ public class AclApiBindingInfo  {
         this.aclId = aclId;
     }
 
-    
-
     public AclApiBindingInfo withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 绑定时间
-     * @return createTime
-     */
+    /** 绑定时间
+     * 
+     * @return createTime */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -155,8 +113,6 @@ public class AclApiBindingInfo  {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -167,16 +123,17 @@ public class AclApiBindingInfo  {
             return false;
         }
         AclApiBindingInfo aclApiBindingInfo = (AclApiBindingInfo) o;
-        return Objects.equals(this.id, aclApiBindingInfo.id) &&
-            Objects.equals(this.apiId, aclApiBindingInfo.apiId) &&
-            Objects.equals(this.envId, aclApiBindingInfo.envId) &&
-            Objects.equals(this.aclId, aclApiBindingInfo.aclId) &&
-            Objects.equals(this.createTime, aclApiBindingInfo.createTime);
+        return Objects.equals(this.id, aclApiBindingInfo.id) && Objects.equals(this.apiId, aclApiBindingInfo.apiId)
+            && Objects.equals(this.envId, aclApiBindingInfo.envId)
+            && Objects.equals(this.aclId, aclApiBindingInfo.aclId)
+            && Objects.equals(this.createTime, aclApiBindingInfo.createTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, apiId, envId, aclId, createTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -189,16 +146,13 @@ public class AclApiBindingInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

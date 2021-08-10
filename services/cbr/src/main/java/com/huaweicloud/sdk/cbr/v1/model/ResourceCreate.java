@@ -1,45 +1,32 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.ResourceExtraInfo;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ResourceCreate
- */
-public class ResourceCreate  {
-
-
+/** ResourceCreate */
+public class ResourceCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extra_info")
-    
+    @JsonProperty(value = "extra_info")
+
     private ResourceExtraInfo extraInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public ResourceCreate withExtraInfo(ResourceExtraInfo extraInfo) {
@@ -48,19 +35,17 @@ public class ResourceCreate  {
     }
 
     public ResourceCreate withExtraInfo(Consumer<ResourceExtraInfo> extraInfoSetter) {
-        if(this.extraInfo == null ){
+        if (this.extraInfo == null) {
             this.extraInfo = new ResourceExtraInfo();
             extraInfoSetter.accept(this.extraInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get extraInfo
-     * @return extraInfo
-     */
+    /** Get extraInfo
+     * 
+     * @return extraInfo */
     public ResourceExtraInfo getExtraInfo() {
         return extraInfo;
     }
@@ -69,20 +54,14 @@ public class ResourceCreate  {
         this.extraInfo = extraInfo;
     }
 
-    
-
     public ResourceCreate withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 待备份资源id
-     * @return id
-     */
+    /** 待备份资源id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -91,20 +70,15 @@ public class ResourceCreate  {
         this.id = id;
     }
 
-    
-
     public ResourceCreate withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 待备份资源的类型, 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 裸金属服务器: OS::Ironic::BareMetalServer, 线下本地服务器: OS::Native::Server, 弹性文件系统: OS::Sfs::Turbo
-     * @return type
-     */
+    /** 待备份资源的类型, 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 裸金属服务器: OS::Ironic::BareMetalServer, 线下本地服务器:
+     * OS::Native::Server, 弹性文件系统: OS::Sfs::Turbo
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -113,20 +87,14 @@ public class ResourceCreate  {
         this.type = type;
     }
 
-    
-
     public ResourceCreate withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 名称
-     * @return name
-     */
+    /** 名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -134,8 +102,6 @@ public class ResourceCreate  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -146,15 +112,15 @@ public class ResourceCreate  {
             return false;
         }
         ResourceCreate resourceCreate = (ResourceCreate) o;
-        return Objects.equals(this.extraInfo, resourceCreate.extraInfo) &&
-            Objects.equals(this.id, resourceCreate.id) &&
-            Objects.equals(this.type, resourceCreate.type) &&
-            Objects.equals(this.name, resourceCreate.name);
+        return Objects.equals(this.extraInfo, resourceCreate.extraInfo) && Objects.equals(this.id, resourceCreate.id)
+            && Objects.equals(this.type, resourceCreate.type) && Objects.equals(this.name, resourceCreate.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(extraInfo, id, type, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -166,16 +132,13 @@ public class ResourceCreate  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

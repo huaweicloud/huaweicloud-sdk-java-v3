@@ -1,72 +1,56 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 规格信息。
- */
-public class Flavor  {
-
-
+/** 规格信息。 */
+public class Flavor {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vcpus")
-    
+    @JsonProperty(value = "vcpus")
+
     private String vcpus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ram")
-    
+    @JsonProperty(value = "ram")
+
     private Integer ram;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec_code")
-    
+    @JsonProperty(value = "spec_code")
+
     private String specCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_mode")
-    
+    @JsonProperty(value = "instance_mode")
+
     private String instanceMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="az_status")
-    
+    @JsonProperty(value = "az_status")
+
     private Map<String, String> azStatus = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version_name")
-    
+    @JsonProperty(value = "version_name")
+
     private List<String> versionName = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_type")
-    
+    @JsonProperty(value = "group_type")
+
     private String groupType;
 
     public Flavor withId(String id) {
@@ -74,13 +58,9 @@ public class Flavor  {
         return this;
     }
 
-    
-
-
-    /**
-     * 规格id
-     * @return id
-     */
+    /** 规格id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -89,20 +69,14 @@ public class Flavor  {
         this.id = id;
     }
 
-    
-
     public Flavor withVcpus(String vcpus) {
         this.vcpus = vcpus;
         return this;
     }
 
-    
-
-
-    /**
-     * CPU个数。
-     * @return vcpus
-     */
+    /** CPU个数。
+     * 
+     * @return vcpus */
     public String getVcpus() {
         return vcpus;
     }
@@ -111,20 +85,14 @@ public class Flavor  {
         this.vcpus = vcpus;
     }
 
-    
-
     public Flavor withRam(Integer ram) {
         this.ram = ram;
         return this;
     }
 
-    
-
-
-    /**
-     * 内存大小，单位为GB。
-     * @return ram
-     */
+    /** 内存大小，单位为GB。
+     * 
+     * @return ram */
     public Integer getRam() {
         return ram;
     }
@@ -133,20 +101,15 @@ public class Flavor  {
         this.ram = ram;
     }
 
-    
-
     public Flavor withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源规格编码。例如：rds.mysql.m1.xlarge.rr。  其中形如“xxx.xxx.mcs.i3.xxx.xxx.xxx”是超高性能型（尊享版），需要申请一定权限才可使用，更多规格说明请参考数据库实例规格。 - “rds”代表RDS产品。 - “mysql”代表数据库引擎。 - “m1.xlarge”代表性能规格，为高内存类型。
-     * @return specCode
-     */
+    /** 资源规格编码。例如：rds.mysql.m1.xlarge.rr。 其中形如“xxx.xxx.mcs.i3.xxx.xxx.xxx”是超高性能型（尊享版），需要申请一定权限才可使用，更多规格说明请参考数据库实例规格。 -
+     * “rds”代表RDS产品。 - “mysql”代表数据库引擎。 - “m1.xlarge”代表性能规格，为高内存类型。
+     * 
+     * @return specCode */
     public String getSpecCode() {
         return specCode;
     }
@@ -155,20 +118,14 @@ public class Flavor  {
         this.specCode = specCode;
     }
 
-    
-
     public Flavor withInstanceMode(String instanceMode) {
         this.instanceMode = instanceMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例模型，包括如下类型： - ha，主备实例。 - replica，只读实例。 - single，单实例。
-     * @return instanceMode
-     */
+    /** 实例模型，包括如下类型： - ha，主备实例。 - replica，只读实例。 - single，单实例。
+     * 
+     * @return instanceMode */
     public String getInstanceMode() {
         return instanceMode;
     }
@@ -177,17 +134,13 @@ public class Flavor  {
         this.instanceMode = instanceMode;
     }
 
-    
-
     public Flavor withAzStatus(Map<String, String> azStatus) {
         this.azStatus = azStatus;
         return this;
     }
 
-    
-
     public Flavor putAzStatusItem(String key, String azStatusItem) {
-        if(this.azStatus == null) {
+        if (this.azStatus == null) {
             this.azStatus = new HashMap<>();
         }
         this.azStatus.put(key, azStatusItem);
@@ -195,16 +148,16 @@ public class Flavor  {
     }
 
     public Flavor withAzStatus(Consumer<Map<String, String>> azStatusSetter) {
-        if(this.azStatus == null) {
+        if (this.azStatus == null) {
             this.azStatus = new HashMap<>();
         }
         azStatusSetter.accept(this.azStatus);
         return this;
     }
-    /**
-     * 其中key是可用区编号，value是规格所在az的状态，包含以下状态： - normal，在售。 - unsupported，暂不支持该规格。 - sellout，售罄。
-     * @return azStatus
-     */
+
+    /** 其中key是可用区编号，value是规格所在az的状态，包含以下状态： - normal，在售。 - unsupported，暂不支持该规格。 - sellout，售罄。
+     * 
+     * @return azStatus */
     public Map<String, String> getAzStatus() {
         return azStatus;
     }
@@ -213,16 +166,13 @@ public class Flavor  {
         this.azStatus = azStatus;
     }
 
-    
-
     public Flavor withVersionName(List<String> versionName) {
         this.versionName = versionName;
         return this;
     }
 
-    
     public Flavor addVersionNameItem(String versionNameItem) {
-        if(this.versionName == null) {
+        if (this.versionName == null) {
             this.versionName = new ArrayList<>();
         }
         this.versionName.add(versionNameItem);
@@ -230,17 +180,16 @@ public class Flavor  {
     }
 
     public Flavor withVersionName(Consumer<List<String>> versionNameSetter) {
-        if(this.versionName == null) {
+        if (this.versionName == null) {
             this.versionName = new ArrayList<>();
         }
         versionNameSetter.accept(this.versionName);
         return this;
     }
 
-    /**
-     * 数组形式版本号
-     * @return versionName
-     */
+    /** 数组形式版本号
+     * 
+     * @return versionName */
     public List<String> getVersionName() {
         return versionName;
     }
@@ -249,20 +198,15 @@ public class Flavor  {
         this.versionName = versionName;
     }
 
-    
-
     public Flavor withGroupType(String groupType) {
         this.groupType = groupType;
         return this;
     }
 
-    
-
-
-    /**
-     * 性能规格，包含以下状态： - normal：通用增强型。 - normal2：通用增强Ⅱ型。 - armFlavors：鲲鹏通用增强型。 - dedicicatenormal ：x86独享型。 - armlocalssd：鲲鹏通用型。 - normallocalssd：x86通用型。 - general：通用型。 - dedicated：独享型，仅云盘SSD支持。 - rapid：独享型，仅极速型SSD支持。
-     * @return groupType
-     */
+    /** 性能规格，包含以下状态： - normal：通用增强型。 - normal2：通用增强Ⅱ型。 - armFlavors：鲲鹏通用增强型。 - dedicicatenormal ：x86独享型。 -
+     * armlocalssd：鲲鹏通用型。 - normallocalssd：x86通用型。 - general：通用型。 - dedicated：独享型，仅云盘SSD支持。 - rapid：独享型，仅极速型SSD支持。
+     * 
+     * @return groupType */
     public String getGroupType() {
         return groupType;
     }
@@ -270,8 +214,6 @@ public class Flavor  {
     public void setGroupType(String groupType) {
         this.groupType = groupType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -282,19 +224,17 @@ public class Flavor  {
             return false;
         }
         Flavor flavor = (Flavor) o;
-        return Objects.equals(this.id, flavor.id) &&
-            Objects.equals(this.vcpus, flavor.vcpus) &&
-            Objects.equals(this.ram, flavor.ram) &&
-            Objects.equals(this.specCode, flavor.specCode) &&
-            Objects.equals(this.instanceMode, flavor.instanceMode) &&
-            Objects.equals(this.azStatus, flavor.azStatus) &&
-            Objects.equals(this.versionName, flavor.versionName) &&
-            Objects.equals(this.groupType, flavor.groupType);
+        return Objects.equals(this.id, flavor.id) && Objects.equals(this.vcpus, flavor.vcpus)
+            && Objects.equals(this.ram, flavor.ram) && Objects.equals(this.specCode, flavor.specCode)
+            && Objects.equals(this.instanceMode, flavor.instanceMode) && Objects.equals(this.azStatus, flavor.azStatus)
+            && Objects.equals(this.versionName, flavor.versionName) && Objects.equals(this.groupType, flavor.groupType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, vcpus, ram, specCode, instanceMode, azStatus, versionName, groupType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -310,16 +250,13 @@ public class Flavor  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

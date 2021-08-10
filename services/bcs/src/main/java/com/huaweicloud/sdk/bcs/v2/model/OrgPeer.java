@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * OrgPeer
- */
-public class OrgPeer  {
-
-
+/** OrgPeer */
+public class OrgPeer {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_count")
-    
+    @JsonProperty(value = "node_count")
+
     private Integer nodeCount;
 
     public OrgPeer withName(String name) {
@@ -34,13 +23,9 @@ public class OrgPeer  {
         return this;
     }
 
-    
-
-
-    /**
-     * 组织名称
-     * @return name
-     */
+    /** 组织名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -49,20 +34,14 @@ public class OrgPeer  {
         this.name = name;
     }
 
-    
-
     public OrgPeer withNodeCount(Integer nodeCount) {
         this.nodeCount = nodeCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 组织节点数
-     * @return nodeCount
-     */
+    /** 组织节点数
+     * 
+     * @return nodeCount */
     public Integer getNodeCount() {
         return nodeCount;
     }
@@ -70,8 +49,6 @@ public class OrgPeer  {
     public void setNodeCount(Integer nodeCount) {
         this.nodeCount = nodeCount;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,14 @@ public class OrgPeer  {
             return false;
         }
         OrgPeer orgPeer = (OrgPeer) o;
-        return Objects.equals(this.name, orgPeer.name) &&
-            Objects.equals(this.nodeCount, orgPeer.nodeCount);
+        return Objects.equals(this.name, orgPeer.name) && Objects.equals(this.nodeCount, orgPeer.nodeCount);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, nodeCount);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +76,13 @@ public class OrgPeer  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

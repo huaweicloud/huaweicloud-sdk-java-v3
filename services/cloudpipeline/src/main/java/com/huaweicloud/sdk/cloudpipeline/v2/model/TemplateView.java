@@ -1,158 +1,126 @@
 package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cloudpipeline.v2.model.TemplateParam;
-import com.huaweicloud.sdk.cloudpipeline.v2.model.TemplateState;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 流水线创建状态响应体
- */
-public class TemplateView  {
-
-
+/** 流水线创建状态响应体 */
+public class TemplateView {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_id")
-    
+    @JsonProperty(value = "template_id")
+
     private String templateId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_name")
-    
+    @JsonProperty(value = "template_name")
+
     private String templateName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_type")
-    
+    @JsonProperty(value = "template_type")
+
     private String templateType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_url")
-    
+    @JsonProperty(value = "template_url")
+
     private String templateUrl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_id")
-    
+    @JsonProperty(value = "user_id")
+
     private String userId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_name")
-    
+    @JsonProperty(value = "user_name")
+
     private String userName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_name")
-    
+    @JsonProperty(value = "domain_name")
+
     private String domainName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_build_in")
-    
+    @JsonProperty(value = "is_build_in")
+
     private Boolean isBuildIn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_name")
-    
+    @JsonProperty(value = "project_name")
+
     private String projectName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private String createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_modify_time")
-    
+    @JsonProperty(value = "last_modify_time")
+
     private String lastModifyTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_watch")
-    
+    @JsonProperty(value = "is_watch")
+
     private Boolean isWatch;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parameter")
-    
+    @JsonProperty(value = "parameter")
+
     private List<TemplateParam> parameter = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flow")
-    
+    @JsonProperty(value = "flow")
+
     private Map<String, Map<String, String>> flow = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="states")
-    
+    @JsonProperty(value = "states")
+
     private Map<String, TemplateState> states = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="can_update")
-    
+    @JsonProperty(value = "can_update")
+
     private Boolean canUpdate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="can_delete")
-    
+    @JsonProperty(value = "can_delete")
+
     private Boolean canDelete;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="need_hub")
-    
+    @JsonProperty(value = "need_hub")
+
     private Boolean needHub;
 
     public TemplateView withTemplateId(String templateId) {
@@ -160,13 +128,9 @@ public class TemplateView  {
         return this;
     }
 
-    
-
-
-    /**
-     * 模板ID
-     * @return templateId
-     */
+    /** 模板ID
+     * 
+     * @return templateId */
     public String getTemplateId() {
         return templateId;
     }
@@ -175,20 +139,14 @@ public class TemplateView  {
         this.templateId = templateId;
     }
 
-    
-
     public TemplateView withTemplateName(String templateName) {
         this.templateName = templateName;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板名字
-     * @return templateName
-     */
+    /** 模板名字
+     * 
+     * @return templateName */
     public String getTemplateName() {
         return templateName;
     }
@@ -197,20 +155,14 @@ public class TemplateView  {
         this.templateName = templateName;
     }
 
-    
-
     public TemplateView withTemplateType(String templateType) {
         this.templateType = templateType;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板类型
-     * @return templateType
-     */
+    /** 模板类型
+     * 
+     * @return templateType */
     public String getTemplateType() {
         return templateType;
     }
@@ -219,20 +171,14 @@ public class TemplateView  {
         this.templateType = templateType;
     }
 
-    
-
     public TemplateView withTemplateUrl(String templateUrl) {
         this.templateUrl = templateUrl;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板编辑URL
-     * @return templateUrl
-     */
+    /** 模板编辑URL
+     * 
+     * @return templateUrl */
     public String getTemplateUrl() {
         return templateUrl;
     }
@@ -241,20 +187,14 @@ public class TemplateView  {
         this.templateUrl = templateUrl;
     }
 
-    
-
     public TemplateView withUserId(String userId) {
         this.userId = userId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户ID
-     * @return userId
-     */
+    /** 用户ID
+     * 
+     * @return userId */
     public String getUserId() {
         return userId;
     }
@@ -263,20 +203,14 @@ public class TemplateView  {
         this.userId = userId;
     }
 
-    
-
     public TemplateView withUserName(String userName) {
         this.userName = userName;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户名字
-     * @return userName
-     */
+    /** 用户名字
+     * 
+     * @return userName */
     public String getUserName() {
         return userName;
     }
@@ -285,20 +219,14 @@ public class TemplateView  {
         this.userName = userName;
     }
 
-    
-
     public TemplateView withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
     }
 
-    
-
-
-    /**
-     * 租户ID
-     * @return domainId
-     */
+    /** 租户ID
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -307,20 +235,14 @@ public class TemplateView  {
         this.domainId = domainId;
     }
 
-    
-
     public TemplateView withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
     }
 
-    
-
-
-    /**
-     * 租户名字
-     * @return domainName
-     */
+    /** 租户名字
+     * 
+     * @return domainName */
     public String getDomainName() {
         return domainName;
     }
@@ -329,20 +251,14 @@ public class TemplateView  {
         this.domainName = domainName;
     }
 
-    
-
     public TemplateView withIsBuildIn(Boolean isBuildIn) {
         this.isBuildIn = isBuildIn;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否内置模板
-     * @return isBuildIn
-     */
+    /** 是否内置模板
+     * 
+     * @return isBuildIn */
     public Boolean getIsBuildIn() {
         return isBuildIn;
     }
@@ -351,20 +267,14 @@ public class TemplateView  {
         this.isBuildIn = isBuildIn;
     }
 
-    
-
     public TemplateView withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * 系统模板region为Cloud Pipeline。自定义模板region为实际region
-     * @return region
-     */
+    /** 系统模板region为Cloud Pipeline。自定义模板region为实际region
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -373,20 +283,14 @@ public class TemplateView  {
         this.region = region;
     }
 
-    
-
     public TemplateView withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目ID
-     * @return projectId
-     */
+    /** 项目ID
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -395,20 +299,14 @@ public class TemplateView  {
         this.projectId = projectId;
     }
 
-    
-
     public TemplateView withProjectName(String projectName) {
         this.projectName = projectName;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目名字
-     * @return projectName
-     */
+    /** 项目名字
+     * 
+     * @return projectName */
     public String getProjectName() {
         return projectName;
     }
@@ -417,20 +315,14 @@ public class TemplateView  {
         this.projectName = projectName;
     }
 
-    
-
     public TemplateView withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return createTime
-     */
+    /** 创建时间
+     * 
+     * @return createTime */
     public String getCreateTime() {
         return createTime;
     }
@@ -439,20 +331,14 @@ public class TemplateView  {
         this.createTime = createTime;
     }
 
-    
-
     public TemplateView withLastModifyTime(String lastModifyTime) {
         this.lastModifyTime = lastModifyTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 修改时间
-     * @return lastModifyTime
-     */
+    /** 修改时间
+     * 
+     * @return lastModifyTime */
     public String getLastModifyTime() {
         return lastModifyTime;
     }
@@ -461,20 +347,14 @@ public class TemplateView  {
         this.lastModifyTime = lastModifyTime;
     }
 
-    
-
     public TemplateView withIsWatch(Boolean isWatch) {
         this.isWatch = isWatch;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否关注
-     * @return isWatch
-     */
+    /** 是否关注
+     * 
+     * @return isWatch */
     public Boolean getIsWatch() {
         return isWatch;
     }
@@ -483,20 +363,14 @@ public class TemplateView  {
         this.isWatch = isWatch;
     }
 
-    
-
     public TemplateView withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板描述
-     * @return description
-     */
+    /** 模板描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -505,16 +379,13 @@ public class TemplateView  {
         this.description = description;
     }
 
-    
-
     public TemplateView withParameter(List<TemplateParam> parameter) {
         this.parameter = parameter;
         return this;
     }
 
-    
     public TemplateView addParameterItem(TemplateParam parameterItem) {
-        if(this.parameter == null) {
+        if (this.parameter == null) {
             this.parameter = new ArrayList<>();
         }
         this.parameter.add(parameterItem);
@@ -522,17 +393,16 @@ public class TemplateView  {
     }
 
     public TemplateView withParameter(Consumer<List<TemplateParam>> parameterSetter) {
-        if(this.parameter == null) {
+        if (this.parameter == null) {
             this.parameter = new ArrayList<>();
         }
         parameterSetter.accept(this.parameter);
         return this;
     }
 
-    /**
-     * 模板参数
-     * @return parameter
-     */
+    /** 模板参数
+     * 
+     * @return parameter */
     public List<TemplateParam> getParameter() {
         return parameter;
     }
@@ -541,17 +411,13 @@ public class TemplateView  {
         this.parameter = parameter;
     }
 
-    
-
     public TemplateView withFlow(Map<String, Map<String, String>> flow) {
         this.flow = flow;
         return this;
     }
 
-    
-
     public TemplateView putFlowItem(String key, Map<String, String> flowItem) {
-        if(this.flow == null) {
+        if (this.flow == null) {
             this.flow = new HashMap<>();
         }
         this.flow.put(key, flowItem);
@@ -559,16 +425,16 @@ public class TemplateView  {
     }
 
     public TemplateView withFlow(Consumer<Map<String, Map<String, String>>> flowSetter) {
-        if(this.flow == null) {
+        if (this.flow == null) {
             this.flow = new HashMap<>();
         }
         flowSetter.accept(this.flow);
         return this;
     }
-    /**
-     * 编排flow详情，描述流水线内各阶段任务的串并行关系。map类型数据，key为阶段名字，默认第一阶段initial，最后阶段为final，其余名字以'state_数字'标识。value为该阶段内任务(以'Task_数字'标识)以及后续阶段的标识。本字段为描述流水线基础编排数据之一，建议可通过流水线真实界面基于模板创建接口中获取
-     * @return flow
-     */
+
+    /** 编排flow详情，描述流水线内各阶段任务的串并行关系。map类型数据，key为阶段名字，默认第一阶段initial，最后阶段为final，其余名字以'state_数字'标识。value为该阶段内任务(以'Task_数字'标识)以及后续阶段的标识。本字段为描述流水线基础编排数据之一，建议可通过流水线真实界面基于模板创建接口中获取
+     * 
+     * @return flow */
     public Map<String, Map<String, String>> getFlow() {
         return flow;
     }
@@ -577,17 +443,13 @@ public class TemplateView  {
         this.flow = flow;
     }
 
-    
-
     public TemplateView withStates(Map<String, TemplateState> states) {
         this.states = states;
         return this;
     }
 
-    
-
     public TemplateView putStatesItem(String key, TemplateState statesItem) {
-        if(this.states == null) {
+        if (this.states == null) {
             this.states = new HashMap<>();
         }
         this.states.put(key, statesItem);
@@ -595,16 +457,16 @@ public class TemplateView  {
     }
 
     public TemplateView withStates(Consumer<Map<String, TemplateState>> statesSetter) {
-        if(this.states == null) {
+        if (this.states == null) {
             this.states = new HashMap<>();
         }
         statesSetter.accept(this.states);
         return this;
     }
-    /**
-     * 编排State详情，map类型数据。本字段为描述流水线基础编排数据之一，建议可通过流水线真实界面基于模板创建接口中获取
-     * @return states
-     */
+
+    /** 编排State详情，map类型数据。本字段为描述流水线基础编排数据之一，建议可通过流水线真实界面基于模板创建接口中获取
+     * 
+     * @return states */
     public Map<String, TemplateState> getStates() {
         return states;
     }
@@ -613,20 +475,14 @@ public class TemplateView  {
         this.states = states;
     }
 
-    
-
     public TemplateView withCanUpdate(Boolean canUpdate) {
         this.canUpdate = canUpdate;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否可以修改
-     * @return canUpdate
-     */
+    /** 是否可以修改
+     * 
+     * @return canUpdate */
     public Boolean getCanUpdate() {
         return canUpdate;
     }
@@ -635,20 +491,14 @@ public class TemplateView  {
         this.canUpdate = canUpdate;
     }
 
-    
-
     public TemplateView withCanDelete(Boolean canDelete) {
         this.canDelete = canDelete;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否可以删除
-     * @return canDelete
-     */
+    /** 是否可以删除
+     * 
+     * @return canDelete */
     public Boolean getCanDelete() {
         return canDelete;
     }
@@ -657,20 +507,14 @@ public class TemplateView  {
         this.canDelete = canDelete;
     }
 
-    
-
     public TemplateView withNeedHub(Boolean needHub) {
         this.needHub = needHub;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否需要代码仓库
-     * @return needHub
-     */
+    /** 是否需要代码仓库
+     * 
+     * @return needHub */
     public Boolean getNeedHub() {
         return needHub;
     }
@@ -678,8 +522,6 @@ public class TemplateView  {
     public void setNeedHub(Boolean needHub) {
         this.needHub = needHub;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -690,33 +532,54 @@ public class TemplateView  {
             return false;
         }
         TemplateView templateView = (TemplateView) o;
-        return Objects.equals(this.templateId, templateView.templateId) &&
-            Objects.equals(this.templateName, templateView.templateName) &&
-            Objects.equals(this.templateType, templateView.templateType) &&
-            Objects.equals(this.templateUrl, templateView.templateUrl) &&
-            Objects.equals(this.userId, templateView.userId) &&
-            Objects.equals(this.userName, templateView.userName) &&
-            Objects.equals(this.domainId, templateView.domainId) &&
-            Objects.equals(this.domainName, templateView.domainName) &&
-            Objects.equals(this.isBuildIn, templateView.isBuildIn) &&
-            Objects.equals(this.region, templateView.region) &&
-            Objects.equals(this.projectId, templateView.projectId) &&
-            Objects.equals(this.projectName, templateView.projectName) &&
-            Objects.equals(this.createTime, templateView.createTime) &&
-            Objects.equals(this.lastModifyTime, templateView.lastModifyTime) &&
-            Objects.equals(this.isWatch, templateView.isWatch) &&
-            Objects.equals(this.description, templateView.description) &&
-            Objects.equals(this.parameter, templateView.parameter) &&
-            Objects.equals(this.flow, templateView.flow) &&
-            Objects.equals(this.states, templateView.states) &&
-            Objects.equals(this.canUpdate, templateView.canUpdate) &&
-            Objects.equals(this.canDelete, templateView.canDelete) &&
-            Objects.equals(this.needHub, templateView.needHub);
+        return Objects.equals(this.templateId, templateView.templateId)
+            && Objects.equals(this.templateName, templateView.templateName)
+            && Objects.equals(this.templateType, templateView.templateType)
+            && Objects.equals(this.templateUrl, templateView.templateUrl)
+            && Objects.equals(this.userId, templateView.userId) && Objects.equals(this.userName, templateView.userName)
+            && Objects.equals(this.domainId, templateView.domainId)
+            && Objects.equals(this.domainName, templateView.domainName)
+            && Objects.equals(this.isBuildIn, templateView.isBuildIn)
+            && Objects.equals(this.region, templateView.region)
+            && Objects.equals(this.projectId, templateView.projectId)
+            && Objects.equals(this.projectName, templateView.projectName)
+            && Objects.equals(this.createTime, templateView.createTime)
+            && Objects.equals(this.lastModifyTime, templateView.lastModifyTime)
+            && Objects.equals(this.isWatch, templateView.isWatch)
+            && Objects.equals(this.description, templateView.description)
+            && Objects.equals(this.parameter, templateView.parameter) && Objects.equals(this.flow, templateView.flow)
+            && Objects.equals(this.states, templateView.states)
+            && Objects.equals(this.canUpdate, templateView.canUpdate)
+            && Objects.equals(this.canDelete, templateView.canDelete)
+            && Objects.equals(this.needHub, templateView.needHub);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(templateId, templateName, templateType, templateUrl, userId, userName, domainId, domainName, isBuildIn, region, projectId, projectName, createTime, lastModifyTime, isWatch, description, parameter, flow, states, canUpdate, canDelete, needHub);
+        return Objects.hash(templateId,
+            templateName,
+            templateType,
+            templateUrl,
+            userId,
+            userName,
+            domainId,
+            domainName,
+            isBuildIn,
+            region,
+            projectId,
+            projectName,
+            createTime,
+            lastModifyTime,
+            isWatch,
+            description,
+            parameter,
+            flow,
+            states,
+            canUpdate,
+            canDelete,
+            needHub);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -746,16 +609,13 @@ public class TemplateView  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

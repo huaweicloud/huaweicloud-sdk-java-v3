@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.classroom.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowClassroomDetailRequest  {
-
-
+/** Request Object */
+public class ShowClassroomDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="classroom_id")
-    
+    @JsonProperty(value = "classroom_id")
+
     private String classroomId;
 
     public ShowClassroomDetailRequest withClassroomId(String classroomId) {
@@ -28,13 +18,9 @@ public class ShowClassroomDetailRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂ID
-     * @return classroomId
-     */
+    /** 课堂ID
+     * 
+     * @return classroomId */
     public String getClassroomId() {
         return classroomId;
     }
@@ -42,8 +28,6 @@ public class ShowClassroomDetailRequest  {
     public void setClassroomId(String classroomId) {
         this.classroomId = classroomId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class ShowClassroomDetailRequest  {
         ShowClassroomDetailRequest showClassroomDetailRequest = (ShowClassroomDetailRequest) o;
         return Objects.equals(this.classroomId, showClassroomDetailRequest.classroomId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(classroomId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class ShowClassroomDetailRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

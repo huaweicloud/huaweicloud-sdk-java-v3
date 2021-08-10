@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.lts.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 创建日志流参数。
- */
-public class CreateLogStreamParams  {
-
-
+/** 创建日志流参数。 */
+public class CreateLogStreamParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="log_stream_name")
-    
+    @JsonProperty(value = "log_stream_name")
+
     private String logStreamName;
 
     public CreateLogStreamParams withLogStreamName(String logStreamName) {
@@ -28,13 +18,9 @@ public class CreateLogStreamParams  {
         return this;
     }
 
-    
-
-
-    /**
-     * 需要创建的日志流名称。
-     * @return logStreamName
-     */
+    /** 需要创建的日志流名称。
+     * 
+     * @return logStreamName */
     public String getLogStreamName() {
         return logStreamName;
     }
@@ -42,8 +28,6 @@ public class CreateLogStreamParams  {
     public void setLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class CreateLogStreamParams  {
         CreateLogStreamParams createLogStreamParams = (CreateLogStreamParams) o;
         return Objects.equals(this.logStreamName, createLogStreamParams.logStreamName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(logStreamName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class CreateLogStreamParams  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

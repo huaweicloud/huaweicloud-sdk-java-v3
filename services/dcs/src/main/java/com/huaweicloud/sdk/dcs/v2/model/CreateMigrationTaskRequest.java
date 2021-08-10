@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dcs.v2.model.CreateMigrationTaskBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateMigrationTaskRequest  {
-
-
+/** Request Object */
+public class CreateMigrationTaskRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private CreateMigrationTaskBody body;
 
     public CreateMigrationTaskRequest withBody(CreateMigrationTaskBody body) {
@@ -30,19 +20,17 @@ public class CreateMigrationTaskRequest  {
     }
 
     public CreateMigrationTaskRequest withBody(Consumer<CreateMigrationTaskBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CreateMigrationTaskBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public CreateMigrationTaskBody getBody() {
         return body;
     }
@@ -50,8 +38,6 @@ public class CreateMigrationTaskRequest  {
     public void setBody(CreateMigrationTaskBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class CreateMigrationTaskRequest  {
         CreateMigrationTaskRequest createMigrationTaskRequest = (CreateMigrationTaskRequest) o;
         return Objects.equals(this.body, createMigrationTaskRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class CreateMigrationTaskRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

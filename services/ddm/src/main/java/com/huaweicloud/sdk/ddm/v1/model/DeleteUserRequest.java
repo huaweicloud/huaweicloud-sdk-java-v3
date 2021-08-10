@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteUserRequest  {
-
-
+/** Request Object */
+public class DeleteUserRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="username")
-    
+    @JsonProperty(value = "username")
+
     private String username;
 
     public DeleteUserRequest withInstanceId(String instanceId) {
@@ -34,13 +23,9 @@ public class DeleteUserRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * DDM实例ID。
-     * @return instanceId
-     */
+    /** DDM实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -49,20 +34,14 @@ public class DeleteUserRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public DeleteUserRequest withUsername(String username) {
         this.username = username;
         return this;
     }
 
-    
-
-
-    /**
-     * 要删除的DDM帐号名称。
-     * @return username
-     */
+    /** 要删除的DDM帐号名称。
+     * 
+     * @return username */
     public String getUsername() {
         return username;
     }
@@ -70,8 +49,6 @@ public class DeleteUserRequest  {
     public void setUsername(String username) {
         this.username = username;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class DeleteUserRequest  {
             return false;
         }
         DeleteUserRequest deleteUserRequest = (DeleteUserRequest) o;
-        return Objects.equals(this.instanceId, deleteUserRequest.instanceId) &&
-            Objects.equals(this.username, deleteUserRequest.username);
+        return Objects.equals(this.instanceId, deleteUserRequest.instanceId)
+            && Objects.equals(this.username, deleteUserRequest.username);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, username);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class DeleteUserRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

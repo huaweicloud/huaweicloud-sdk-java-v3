@@ -1,66 +1,50 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateCustomLineResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="line_id")
-    
+    @JsonProperty(value = "line_id")
+
     private String lineId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_segments")
-    
+    @JsonProperty(value = "ip_segments")
+
     private List<String> ipSegments = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private String updatedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public CreateCustomLineResponse withLineId(String lineId) {
@@ -68,13 +52,9 @@ public class CreateCustomLineResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 解析线路ID。
-     * @return lineId
-     */
+    /** 解析线路ID。
+     * 
+     * @return lineId */
     public String getLineId() {
         return lineId;
     }
@@ -83,20 +63,14 @@ public class CreateCustomLineResponse extends SdkResponse {
         this.lineId = lineId;
     }
 
-    
-
     public CreateCustomLineResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 解析线路名称。
-     * @return name
-     */
+    /** 解析线路名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -105,16 +79,13 @@ public class CreateCustomLineResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public CreateCustomLineResponse withIpSegments(List<String> ipSegments) {
         this.ipSegments = ipSegments;
         return this;
     }
 
-    
     public CreateCustomLineResponse addIpSegmentsItem(String ipSegmentsItem) {
-        if(this.ipSegments == null) {
+        if (this.ipSegments == null) {
             this.ipSegments = new ArrayList<>();
         }
         this.ipSegments.add(ipSegmentsItem);
@@ -122,17 +93,16 @@ public class CreateCustomLineResponse extends SdkResponse {
     }
 
     public CreateCustomLineResponse withIpSegments(Consumer<List<String>> ipSegmentsSetter) {
-        if(this.ipSegments == null) {
+        if (this.ipSegments == null) {
             this.ipSegments = new ArrayList<>();
         }
         ipSegmentsSetter.accept(this.ipSegments);
         return this;
     }
 
-    /**
-     * IP地址段。
-     * @return ipSegments
-     */
+    /** IP地址段。
+     * 
+     * @return ipSegments */
     public List<String> getIpSegments() {
         return ipSegments;
     }
@@ -141,20 +111,14 @@ public class CreateCustomLineResponse extends SdkResponse {
         this.ipSegments = ipSegments;
     }
 
-    
-
     public CreateCustomLineResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间。
-     * @return createdAt
-     */
+    /** 创建时间。
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -163,20 +127,14 @@ public class CreateCustomLineResponse extends SdkResponse {
         this.createdAt = createdAt;
     }
 
-    
-
     public CreateCustomLineResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间。
-     * @return updatedAt
-     */
+    /** 更新时间。
+     * 
+     * @return updatedAt */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -185,20 +143,14 @@ public class CreateCustomLineResponse extends SdkResponse {
         this.updatedAt = updatedAt;
     }
 
-    
-
     public CreateCustomLineResponse withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源状态。
-     * @return status
-     */
+    /** 资源状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -207,20 +159,14 @@ public class CreateCustomLineResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public CreateCustomLineResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义线路的描述信息。
-     * @return description
-     */
+    /** 自定义线路的描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -228,8 +174,6 @@ public class CreateCustomLineResponse extends SdkResponse {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -240,18 +184,20 @@ public class CreateCustomLineResponse extends SdkResponse {
             return false;
         }
         CreateCustomLineResponse createCustomLineResponse = (CreateCustomLineResponse) o;
-        return Objects.equals(this.lineId, createCustomLineResponse.lineId) &&
-            Objects.equals(this.name, createCustomLineResponse.name) &&
-            Objects.equals(this.ipSegments, createCustomLineResponse.ipSegments) &&
-            Objects.equals(this.createdAt, createCustomLineResponse.createdAt) &&
-            Objects.equals(this.updatedAt, createCustomLineResponse.updatedAt) &&
-            Objects.equals(this.status, createCustomLineResponse.status) &&
-            Objects.equals(this.description, createCustomLineResponse.description);
+        return Objects.equals(this.lineId, createCustomLineResponse.lineId)
+            && Objects.equals(this.name, createCustomLineResponse.name)
+            && Objects.equals(this.ipSegments, createCustomLineResponse.ipSegments)
+            && Objects.equals(this.createdAt, createCustomLineResponse.createdAt)
+            && Objects.equals(this.updatedAt, createCustomLineResponse.updatedAt)
+            && Objects.equals(this.status, createCustomLineResponse.status)
+            && Objects.equals(this.description, createCustomLineResponse.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(lineId, name, ipSegments, createdAt, updatedAt, status, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -266,16 +212,13 @@ public class CreateCustomLineResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,46 +1,36 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class NeutronCreateFirewallPolicyOption  {
-
-
+public class NeutronCreateFirewallPolicyOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audited")
-    
+    @JsonProperty(value = "audited")
+
     private Boolean audited;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="firewall_rules")
-    
+    @JsonProperty(value = "firewall_rules")
+
     private List<String> firewallRules = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public NeutronCreateFirewallPolicyOption withAudited(Boolean audited) {
@@ -48,13 +38,9 @@ public class NeutronCreateFirewallPolicyOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 审计标记。
-     * @return audited
-     */
+    /** 审计标记。
+     * 
+     * @return audited */
     public Boolean getAudited() {
         return audited;
     }
@@ -63,20 +49,14 @@ public class NeutronCreateFirewallPolicyOption  {
         this.audited = audited;
     }
 
-    
-
     public NeutronCreateFirewallPolicyOption withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：网络ACL防火墙策略描述 取值范围：最长255个字符
-     * @return description
-     */
+    /** 功能说明：网络ACL防火墙策略描述 取值范围：最长255个字符
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -85,16 +65,13 @@ public class NeutronCreateFirewallPolicyOption  {
         this.description = description;
     }
 
-    
-
     public NeutronCreateFirewallPolicyOption withFirewallRules(List<String> firewallRules) {
         this.firewallRules = firewallRules;
         return this;
     }
 
-    
     public NeutronCreateFirewallPolicyOption addFirewallRulesItem(String firewallRulesItem) {
-        if(this.firewallRules == null) {
+        if (this.firewallRules == null) {
             this.firewallRules = new ArrayList<>();
         }
         this.firewallRules.add(firewallRulesItem);
@@ -102,17 +79,16 @@ public class NeutronCreateFirewallPolicyOption  {
     }
 
     public NeutronCreateFirewallPolicyOption withFirewallRules(Consumer<List<String>> firewallRulesSetter) {
-        if(this.firewallRules == null) {
+        if (this.firewallRules == null) {
             this.firewallRules = new ArrayList<>();
         }
         firewallRulesSetter.accept(this.firewallRules);
         return this;
     }
 
-    /**
-     * 策略引用的网络ACL防火墙规则链。
-     * @return firewallRules
-     */
+    /** 策略引用的网络ACL防火墙规则链。
+     * 
+     * @return firewallRules */
     public List<String> getFirewallRules() {
         return firewallRules;
     }
@@ -121,20 +97,14 @@ public class NeutronCreateFirewallPolicyOption  {
         this.firewallRules = firewallRules;
     }
 
-    
-
     public NeutronCreateFirewallPolicyOption withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：网络ACL防火墙策略名称 取值范围：最长255个字符
-     * @return name
-     */
+    /** 功能说明：网络ACL防火墙策略名称 取值范围：最长255个字符
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -142,8 +112,6 @@ public class NeutronCreateFirewallPolicyOption  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -154,15 +122,17 @@ public class NeutronCreateFirewallPolicyOption  {
             return false;
         }
         NeutronCreateFirewallPolicyOption neutronCreateFirewallPolicyOption = (NeutronCreateFirewallPolicyOption) o;
-        return Objects.equals(this.audited, neutronCreateFirewallPolicyOption.audited) &&
-            Objects.equals(this.description, neutronCreateFirewallPolicyOption.description) &&
-            Objects.equals(this.firewallRules, neutronCreateFirewallPolicyOption.firewallRules) &&
-            Objects.equals(this.name, neutronCreateFirewallPolicyOption.name);
+        return Objects.equals(this.audited, neutronCreateFirewallPolicyOption.audited)
+            && Objects.equals(this.description, neutronCreateFirewallPolicyOption.description)
+            && Objects.equals(this.firewallRules, neutronCreateFirewallPolicyOption.firewallRules)
+            && Objects.equals(this.name, neutronCreateFirewallPolicyOption.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(audited, description, firewallRules, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -174,16 +144,13 @@ public class NeutronCreateFirewallPolicyOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 子Job的响应信息。
- */
-public class SubJobEntities  {
-
-
+/** 子Job的响应信息。 */
+public class SubJobEntities {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_type")
-    
+    @JsonProperty(value = "volume_type")
+
     private String volumeType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_id")
-    
+    @JsonProperty(value = "volume_id")
+
     private String volumeId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public SubJobEntities withVolumeType(String volumeType) {
@@ -46,13 +33,9 @@ public class SubJobEntities  {
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘的类型。
-     * @return volumeType
-     */
+    /** 云硬盘的类型。
+     * 
+     * @return volumeType */
     public String getVolumeType() {
         return volumeType;
     }
@@ -61,20 +44,14 @@ public class SubJobEntities  {
         this.volumeType = volumeType;
     }
 
-    
-
     public SubJobEntities withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘的容量，单位为GB。
-     * @return size
-     */
+    /** 云硬盘的容量，单位为GB。
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -83,20 +60,14 @@ public class SubJobEntities  {
         this.size = size;
     }
 
-    
-
     public SubJobEntities withVolumeId(String volumeId) {
         this.volumeId = volumeId;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘的ID。
-     * @return volumeId
-     */
+    /** 云硬盘的ID。
+     * 
+     * @return volumeId */
     public String getVolumeId() {
         return volumeId;
     }
@@ -105,20 +76,14 @@ public class SubJobEntities  {
         this.volumeId = volumeId;
     }
 
-    
-
     public SubJobEntities withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘的名称。
-     * @return name
-     */
+    /** 云硬盘的名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -126,8 +91,6 @@ public class SubJobEntities  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,16 @@ public class SubJobEntities  {
             return false;
         }
         SubJobEntities subJobEntities = (SubJobEntities) o;
-        return Objects.equals(this.volumeType, subJobEntities.volumeType) &&
-            Objects.equals(this.size, subJobEntities.size) &&
-            Objects.equals(this.volumeId, subJobEntities.volumeId) &&
-            Objects.equals(this.name, subJobEntities.name);
+        return Objects.equals(this.volumeType, subJobEntities.volumeType)
+            && Objects.equals(this.size, subJobEntities.size) && Objects.equals(this.volumeId, subJobEntities.volumeId)
+            && Objects.equals(this.name, subJobEntities.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(volumeType, size, volumeId, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +122,13 @@ public class SubJobEntities  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

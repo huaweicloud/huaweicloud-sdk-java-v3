@@ -1,45 +1,32 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.PrePaidServerIpv6Bandwidth;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 待创建云服务器的网卡信息。
- */
-public class PrePaidServerNic  {
-
-
+/** 待创建云服务器的网卡信息。 */
+public class PrePaidServerNic {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
+
     private String subnetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_address")
-    
+    @JsonProperty(value = "ip_address")
+
     private String ipAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ipv6_enable")
-    
+    @JsonProperty(value = "ipv6_enable")
+
     private Boolean ipv6Enable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ipv6_bandwidth")
-    
+    @JsonProperty(value = "ipv6_bandwidth")
+
     private PrePaidServerIpv6Bandwidth ipv6Bandwidth;
 
     public PrePaidServerNic withSubnetId(String subnetId) {
@@ -47,13 +34,11 @@ public class PrePaidServerNic  {
         return this;
     }
 
-    
-
-
-    /**
-     * 待创建云服务器所在的子网信息，需要指定vpcid对应VPC下的子网ID，UUID格式。  可以通过VPC服务 [查询子网](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=VPC&api=ListSubnets) 接口查询，该接口支持通过创建云服务器填写的vpcid进行过滤查询。
-     * @return subnetId
-     */
+    /** 待创建云服务器所在的子网信息，需要指定vpcid对应VPC下的子网ID，UUID格式。 可以通过VPC服务
+     * [查询子网](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=VPC&api=ListSubnets)
+     * 接口查询，该接口支持通过创建云服务器填写的vpcid进行过滤查询。
+     * 
+     * @return subnetId */
     public String getSubnetId() {
         return subnetId;
     }
@@ -62,20 +47,15 @@ public class PrePaidServerNic  {
         this.subnetId = subnetId;
     }
 
-    
-
     public PrePaidServerNic withIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 待创建云服务器网卡的IP地址，IPv4格式。  约束：  - 不填或空字符串，默认在子网（subnet）中自动分配一个未使用的IP作网卡的IP地址。 - 若指定IP地址，该IP地址必须在子网（subnet）对应的网段内，且未被使用。
-     * @return ipAddress
-     */
+    /** 待创建云服务器网卡的IP地址，IPv4格式。 约束： - 不填或空字符串，默认在子网（subnet）中自动分配一个未使用的IP作网卡的IP地址。 -
+     * 若指定IP地址，该IP地址必须在子网（subnet）对应的网段内，且未被使用。
+     * 
+     * @return ipAddress */
     public String getIpAddress() {
         return ipAddress;
     }
@@ -84,20 +64,14 @@ public class PrePaidServerNic  {
         this.ipAddress = ipAddress;
     }
 
-    
-
     public PrePaidServerNic withIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否支持ipv6。  取值为true时，标识此网卡支持ipv6。
-     * @return ipv6Enable
-     */
+    /** 是否支持ipv6。 取值为true时，标识此网卡支持ipv6。
+     * 
+     * @return ipv6Enable */
     public Boolean getIpv6Enable() {
         return ipv6Enable;
     }
@@ -106,27 +80,23 @@ public class PrePaidServerNic  {
         this.ipv6Enable = ipv6Enable;
     }
 
-    
-
     public PrePaidServerNic withIpv6Bandwidth(PrePaidServerIpv6Bandwidth ipv6Bandwidth) {
         this.ipv6Bandwidth = ipv6Bandwidth;
         return this;
     }
 
     public PrePaidServerNic withIpv6Bandwidth(Consumer<PrePaidServerIpv6Bandwidth> ipv6BandwidthSetter) {
-        if(this.ipv6Bandwidth == null ){
+        if (this.ipv6Bandwidth == null) {
             this.ipv6Bandwidth = new PrePaidServerIpv6Bandwidth();
             ipv6BandwidthSetter.accept(this.ipv6Bandwidth);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get ipv6Bandwidth
-     * @return ipv6Bandwidth
-     */
+    /** Get ipv6Bandwidth
+     * 
+     * @return ipv6Bandwidth */
     public PrePaidServerIpv6Bandwidth getIpv6Bandwidth() {
         return ipv6Bandwidth;
     }
@@ -134,8 +104,6 @@ public class PrePaidServerNic  {
     public void setIpv6Bandwidth(PrePaidServerIpv6Bandwidth ipv6Bandwidth) {
         this.ipv6Bandwidth = ipv6Bandwidth;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -146,15 +114,17 @@ public class PrePaidServerNic  {
             return false;
         }
         PrePaidServerNic prePaidServerNic = (PrePaidServerNic) o;
-        return Objects.equals(this.subnetId, prePaidServerNic.subnetId) &&
-            Objects.equals(this.ipAddress, prePaidServerNic.ipAddress) &&
-            Objects.equals(this.ipv6Enable, prePaidServerNic.ipv6Enable) &&
-            Objects.equals(this.ipv6Bandwidth, prePaidServerNic.ipv6Bandwidth);
+        return Objects.equals(this.subnetId, prePaidServerNic.subnetId)
+            && Objects.equals(this.ipAddress, prePaidServerNic.ipAddress)
+            && Objects.equals(this.ipv6Enable, prePaidServerNic.ipv6Enable)
+            && Objects.equals(this.ipv6Bandwidth, prePaidServerNic.ipv6Bandwidth);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(subnetId, ipAddress, ipv6Enable, ipv6Bandwidth);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -166,16 +136,13 @@ public class PrePaidServerNic  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 字典排序，值越小顺序越靠前
- */
-public class DictionaryOrder  {
-
+/** 字典排序，值越小顺序越靠前 */
+public class DictionaryOrder {
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -23,10 +15,12 @@ public class DictionaryOrder  {
         }
         return true;
     }
+
     @Override
     public int hashCode() {
         return Objects.hash();
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -34,6 +28,5 @@ public class DictionaryOrder  {
         sb.append("}");
         return sb.toString();
     }
-    
-}
 
+}

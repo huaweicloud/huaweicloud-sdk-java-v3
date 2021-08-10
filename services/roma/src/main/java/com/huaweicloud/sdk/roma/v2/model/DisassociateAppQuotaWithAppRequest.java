@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DisassociateAppQuotaWithAppRequest  {
-
-
+/** Request Object */
+public class DisassociateAppQuotaWithAppRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_quota_id")
-    
+    @JsonProperty(value = "app_quota_id")
+
     private String appQuotaId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
     public DisassociateAppQuotaWithAppRequest withInstanceId(String instanceId) {
@@ -40,13 +28,9 @@ public class DisassociateAppQuotaWithAppRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -55,20 +39,14 @@ public class DisassociateAppQuotaWithAppRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public DisassociateAppQuotaWithAppRequest withAppQuotaId(String appQuotaId) {
         this.appQuotaId = appQuotaId;
         return this;
     }
 
-    
-
-
-    /**
-     * 客户端配额编号
-     * @return appQuotaId
-     */
+    /** 客户端配额编号
+     * 
+     * @return appQuotaId */
     public String getAppQuotaId() {
         return appQuotaId;
     }
@@ -77,20 +55,14 @@ public class DisassociateAppQuotaWithAppRequest  {
         this.appQuotaId = appQuotaId;
     }
 
-    
-
     public DisassociateAppQuotaWithAppRequest withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用编号
-     * @return appId
-     */
+    /** 应用编号
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -98,8 +70,6 @@ public class DisassociateAppQuotaWithAppRequest  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class DisassociateAppQuotaWithAppRequest  {
             return false;
         }
         DisassociateAppQuotaWithAppRequest disassociateAppQuotaWithAppRequest = (DisassociateAppQuotaWithAppRequest) o;
-        return Objects.equals(this.instanceId, disassociateAppQuotaWithAppRequest.instanceId) &&
-            Objects.equals(this.appQuotaId, disassociateAppQuotaWithAppRequest.appQuotaId) &&
-            Objects.equals(this.appId, disassociateAppQuotaWithAppRequest.appId);
+        return Objects.equals(this.instanceId, disassociateAppQuotaWithAppRequest.instanceId)
+            && Objects.equals(this.appQuotaId, disassociateAppQuotaWithAppRequest.appQuotaId)
+            && Objects.equals(this.appId, disassociateAppQuotaWithAppRequest.appId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, appQuotaId, appId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class DisassociateAppQuotaWithAppRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

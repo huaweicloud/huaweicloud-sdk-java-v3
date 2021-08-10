@@ -1,39 +1,23 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
-/**
- * 模板名称。
- */
+/** 模板名称。 */
 public class Template {
-    
-    /**
-     * Enum MAGENTO for value: "magento"
-     */
+
+    /** Enum MAGENTO for value: "magento" */
     public static final Template MAGENTO = new Template("magento");
-    
-    /**
-     * Enum MBAAS for value: "mbaas"
-     */
+
+    /** Enum MBAAS for value: "mbaas" */
     public static final Template MBAAS = new Template("mbaas");
-    
-    /**
-     * Enum WORDPRESS for value: "wordpress"
-     */
+
+    /** Enum WORDPRESS for value: "wordpress" */
     public static final Template WORDPRESS = new Template("wordpress");
-    
 
     private static final Map<String, Template> STATIC_FIELDS = createStaticFields();
 
@@ -63,7 +47,7 @@ public class Template {
 
     @JsonCreator
     public static Template fromValue(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         Template result = STATIC_FIELDS.get(value);
@@ -74,7 +58,7 @@ public class Template {
     }
 
     public static Template valueOf(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         Template result = STATIC_FIELDS.get(value);
@@ -97,4 +81,3 @@ public class Template {
         return this.value.hashCode();
     }
 }
-

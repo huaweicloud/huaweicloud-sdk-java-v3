@@ -1,34 +1,24 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.ScopedTokenIdentity;
-import com.huaweicloud.sdk.iam.v3.model.TokenSocpeOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class ScopedTokenAuth  {
-
-
+public class ScopedTokenAuth {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="identity")
-    
+    @JsonProperty(value = "identity")
+
     private ScopedTokenIdentity identity;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scope")
-    
+    @JsonProperty(value = "scope")
+
     private TokenSocpeOption scope;
 
     public ScopedTokenAuth withIdentity(ScopedTokenIdentity identity) {
@@ -37,19 +27,17 @@ public class ScopedTokenAuth  {
     }
 
     public ScopedTokenAuth withIdentity(Consumer<ScopedTokenIdentity> identitySetter) {
-        if(this.identity == null ){
+        if (this.identity == null) {
             this.identity = new ScopedTokenIdentity();
             identitySetter.accept(this.identity);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get identity
-     * @return identity
-     */
+    /** Get identity
+     * 
+     * @return identity */
     public ScopedTokenIdentity getIdentity() {
         return identity;
     }
@@ -58,27 +46,23 @@ public class ScopedTokenAuth  {
         this.identity = identity;
     }
 
-    
-
     public ScopedTokenAuth withScope(TokenSocpeOption scope) {
         this.scope = scope;
         return this;
     }
 
     public ScopedTokenAuth withScope(Consumer<TokenSocpeOption> scopeSetter) {
-        if(this.scope == null ){
+        if (this.scope == null) {
             this.scope = new TokenSocpeOption();
             scopeSetter.accept(this.scope);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get scope
-     * @return scope
-     */
+    /** Get scope
+     * 
+     * @return scope */
     public TokenSocpeOption getScope() {
         return scope;
     }
@@ -86,8 +70,6 @@ public class ScopedTokenAuth  {
     public void setScope(TokenSocpeOption scope) {
         this.scope = scope;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -98,13 +80,15 @@ public class ScopedTokenAuth  {
             return false;
         }
         ScopedTokenAuth scopedTokenAuth = (ScopedTokenAuth) o;
-        return Objects.equals(this.identity, scopedTokenAuth.identity) &&
-            Objects.equals(this.scope, scopedTokenAuth.scope);
+        return Objects.equals(this.identity, scopedTokenAuth.identity)
+            && Objects.equals(this.scope, scopedTokenAuth.scope);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(identity, scope);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,16 +98,13 @@ public class ScopedTokenAuth  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

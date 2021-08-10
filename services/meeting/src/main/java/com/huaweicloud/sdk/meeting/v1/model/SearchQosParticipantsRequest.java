@@ -1,47 +1,31 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class SearchQosParticipantsRequest  {
-
-
+/** Request Object */
+public class SearchQosParticipantsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confUUID")
-    
+    @JsonProperty(value = "confUUID")
+
     private String confUUID;
-    /**
-     * 会议类别。 * online：在线会议，在召开的会议。 * history：历史会议，已召开的会议。
-     */
+
+    /** 会议类别。 * online：在线会议，在召开的会议。 * history：历史会议，已召开的会议。 */
     public static final class ConfTypeEnum {
 
-        
-        /**
-         * Enum ONLINE for value: "online"
-         */
+        /** Enum ONLINE for value: "online" */
         public static final ConfTypeEnum ONLINE = new ConfTypeEnum("online");
-        
-        /**
-         * Enum HISTORY for value: "history"
-         */
+
+        /** Enum HISTORY for value: "history" */
         public static final ConfTypeEnum HISTORY = new ConfTypeEnum("history");
-        
 
         private static final Map<String, ConfTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,7 +54,7 @@ public class SearchQosParticipantsRequest  {
 
         @JsonCreator
         public static ConfTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ConfTypeEnum result = STATIC_FIELDS.get(value);
@@ -81,7 +65,7 @@ public class SearchQosParticipantsRequest  {
         }
 
         public static ConfTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ConfTypeEnum result = STATIC_FIELDS.get(value);
@@ -105,28 +89,24 @@ public class SearchQosParticipantsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confType")
-    
+    @JsonProperty(value = "confType")
+
     private ConfTypeEnum confType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="searchKey")
-    
+    @JsonProperty(value = "searchKey")
+
     private String searchKey;
 
     public SearchQosParticipantsRequest withConfUUID(String confUUID) {
@@ -134,13 +114,9 @@ public class SearchQosParticipantsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 会议UUID。最大不超过64个字节。
-     * @return confUUID
-     */
+    /** 会议UUID。最大不超过64个字节。
+     * 
+     * @return confUUID */
     public String getConfUUID() {
         return confUUID;
     }
@@ -149,20 +125,14 @@ public class SearchQosParticipantsRequest  {
         this.confUUID = confUUID;
     }
 
-    
-
     public SearchQosParticipantsRequest withConfType(ConfTypeEnum confType) {
         this.confType = confType;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议类别。 * online：在线会议，在召开的会议。 * history：历史会议，已召开的会议。
-     * @return confType
-     */
+    /** 会议类别。 * online：在线会议，在召开的会议。 * history：历史会议，已召开的会议。
+     * 
+     * @return confType */
     public ConfTypeEnum getConfType() {
         return confType;
     }
@@ -171,20 +141,14 @@ public class SearchQosParticipantsRequest  {
         this.confType = confType;
     }
 
-    
-
     public SearchQosParticipantsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询偏移量。 * 取值：大于等于0，默认值为0。 * 小于最小值0时，系统设置为0。 * 大于等于最大条目数量，则返回最后一页的数据。
-     * @return offset
-     */
+    /** 查询偏移量。 * 取值：大于等于0，默认值为0。 * 小于最小值0时，系统设置为0。 * 大于等于最大条目数量，则返回最后一页的数据。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -193,20 +157,14 @@ public class SearchQosParticipantsRequest  {
         this.offset = offset;
     }
 
-    
-
     public SearchQosParticipantsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询的条目数量。 * 取值：1-500，默认值为20。 * 小于最小值1时，系统设置为1。 * 大于最大值500时，系统设置为500。
-     * @return limit
-     */
+    /** 查询的条目数量。 * 取值：1-500，默认值为20。 * 小于最小值1时，系统设置为1。 * 大于最大值500时，系统设置为500。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -215,20 +173,14 @@ public class SearchQosParticipantsRequest  {
         this.limit = limit;
     }
 
-    
-
     public SearchQosParticipantsRequest withSearchKey(String searchKey) {
         this.searchKey = searchKey;
         return this;
     }
 
-    
-
-
-    /**
-     * 根据与会人名称作为关键词，模糊查询与会者列表
-     * @return searchKey
-     */
+    /** 根据与会人名称作为关键词，模糊查询与会者列表
+     * 
+     * @return searchKey */
     public String getSearchKey() {
         return searchKey;
     }
@@ -236,8 +188,6 @@ public class SearchQosParticipantsRequest  {
     public void setSearchKey(String searchKey) {
         this.searchKey = searchKey;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -248,16 +198,18 @@ public class SearchQosParticipantsRequest  {
             return false;
         }
         SearchQosParticipantsRequest searchQosParticipantsRequest = (SearchQosParticipantsRequest) o;
-        return Objects.equals(this.confUUID, searchQosParticipantsRequest.confUUID) &&
-            Objects.equals(this.confType, searchQosParticipantsRequest.confType) &&
-            Objects.equals(this.offset, searchQosParticipantsRequest.offset) &&
-            Objects.equals(this.limit, searchQosParticipantsRequest.limit) &&
-            Objects.equals(this.searchKey, searchQosParticipantsRequest.searchKey);
+        return Objects.equals(this.confUUID, searchQosParticipantsRequest.confUUID)
+            && Objects.equals(this.confType, searchQosParticipantsRequest.confType)
+            && Objects.equals(this.offset, searchQosParticipantsRequest.offset)
+            && Objects.equals(this.limit, searchQosParticipantsRequest.limit)
+            && Objects.equals(this.searchKey, searchQosParticipantsRequest.searchKey);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(confUUID, confType, offset, limit, searchKey);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -270,16 +222,13 @@ public class SearchQosParticipantsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

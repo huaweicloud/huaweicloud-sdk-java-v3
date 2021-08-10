@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 添加镜像成员请求参数
- */
-public class GlanceAddImageMemberRequestBody  {
-
-
+/** 添加镜像成员请求参数 */
+public class GlanceAddImageMemberRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="member")
-    
+    @JsonProperty(value = "member")
+
     private String member;
 
     public GlanceAddImageMemberRequestBody withMember(String member) {
@@ -28,13 +18,9 @@ public class GlanceAddImageMemberRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像成员。取值为目标用户的项目ID。
-     * @return member
-     */
+    /** 镜像成员。取值为目标用户的项目ID。
+     * 
+     * @return member */
     public String getMember() {
         return member;
     }
@@ -42,8 +28,6 @@ public class GlanceAddImageMemberRequestBody  {
     public void setMember(String member) {
         this.member = member;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class GlanceAddImageMemberRequestBody  {
         GlanceAddImageMemberRequestBody glanceAddImageMemberRequestBody = (GlanceAddImageMemberRequestBody) o;
         return Objects.equals(this.member, glanceAddImageMemberRequestBody.member);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(member);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class GlanceAddImageMemberRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

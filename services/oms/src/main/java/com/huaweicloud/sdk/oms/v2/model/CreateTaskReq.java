@@ -1,58 +1,35 @@
 package com.huaweicloud.sdk.oms.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.oms.v2.model.BandwidthPolicyDto;
-import com.huaweicloud.sdk.oms.v2.model.DstNodeReq;
-import com.huaweicloud.sdk.oms.v2.model.SmnConfig;
-import com.huaweicloud.sdk.oms.v2.model.SourceCdnReq;
-import com.huaweicloud.sdk.oms.v2.model.SrcNodeReq;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * This is a auto create Body Object
- */
-public class CreateTaskReq  {
+/** This is a auto create Body Object */
+public class CreateTaskReq {
 
-    /**
-     * 任务类型，默认为object。  list：对象列表迁移 url_list：URL列表迁移 object：文件/文件夹迁移，默认 prefix：对象前缀迁移
-     */
+    /** 任务类型，默认为object。 list：对象列表迁移 url_list：URL列表迁移 object：文件/文件夹迁移，默认 prefix：对象前缀迁移 */
     public static final class TaskTypeEnum {
 
-        
-        /**
-         * Enum LIST for value: "list"
-         */
+        /** Enum LIST for value: "list" */
         public static final TaskTypeEnum LIST = new TaskTypeEnum("list");
-        
-        /**
-         * Enum URL_LIST for value: "url_list"
-         */
+
+        /** Enum URL_LIST for value: "url_list" */
         public static final TaskTypeEnum URL_LIST = new TaskTypeEnum("url_list");
-        
-        /**
-         * Enum OBJECT for value: "object"
-         */
+
+        /** Enum OBJECT for value: "object" */
         public static final TaskTypeEnum OBJECT = new TaskTypeEnum("object");
-        
-        /**
-         * Enum PREFIX for value: "prefix"
-         */
+
+        /** Enum PREFIX for value: "prefix" */
         public static final TaskTypeEnum PREFIX = new TaskTypeEnum("prefix");
-        
 
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -83,7 +60,7 @@ public class CreateTaskReq  {
 
         @JsonCreator
         public static TaskTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TaskTypeEnum result = STATIC_FIELDS.get(value);
@@ -94,7 +71,7 @@ public class CreateTaskReq  {
         }
 
         public static TaskTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TaskTypeEnum result = STATIC_FIELDS.get(value);
@@ -118,70 +95,59 @@ public class CreateTaskReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_type")
-    
+    @JsonProperty(value = "task_type")
+
     private TaskTypeEnum taskType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="src_node")
-    
+    @JsonProperty(value = "src_node")
+
     private SrcNodeReq srcNode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dst_node")
-    
+    @JsonProperty(value = "dst_node")
+
     private DstNodeReq dstNode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable_kms")
-    
+    @JsonProperty(value = "enable_kms")
+
     private Boolean enableKms;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="migrate_since")
-    
+    @JsonProperty(value = "migrate_since")
+
     private Long migrateSince;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bandwidth_policy")
-    
+    @JsonProperty(value = "bandwidth_policy")
+
     private List<BandwidthPolicyDto> bandwidthPolicy = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_cdn")
-    
+    @JsonProperty(value = "source_cdn")
+
     private SourceCdnReq sourceCdn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="smn_config")
-    
+    @JsonProperty(value = "smn_config")
+
     private SmnConfig smnConfig;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable_restore")
-    
+    @JsonProperty(value = "enable_restore")
+
     private Boolean enableRestore;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable_failed_object_recording")
-    
+    @JsonProperty(value = "enable_failed_object_recording")
+
     private Boolean enableFailedObjectRecording;
 
     public CreateTaskReq withTaskType(TaskTypeEnum taskType) {
@@ -189,13 +155,9 @@ public class CreateTaskReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务类型，默认为object。  list：对象列表迁移 url_list：URL列表迁移 object：文件/文件夹迁移，默认 prefix：对象前缀迁移
-     * @return taskType
-     */
+    /** 任务类型，默认为object。 list：对象列表迁移 url_list：URL列表迁移 object：文件/文件夹迁移，默认 prefix：对象前缀迁移
+     * 
+     * @return taskType */
     public TaskTypeEnum getTaskType() {
         return taskType;
     }
@@ -204,27 +166,23 @@ public class CreateTaskReq  {
         this.taskType = taskType;
     }
 
-    
-
     public CreateTaskReq withSrcNode(SrcNodeReq srcNode) {
         this.srcNode = srcNode;
         return this;
     }
 
     public CreateTaskReq withSrcNode(Consumer<SrcNodeReq> srcNodeSetter) {
-        if(this.srcNode == null ){
+        if (this.srcNode == null) {
             this.srcNode = new SrcNodeReq();
             srcNodeSetter.accept(this.srcNode);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get srcNode
-     * @return srcNode
-     */
+    /** Get srcNode
+     * 
+     * @return srcNode */
     public SrcNodeReq getSrcNode() {
         return srcNode;
     }
@@ -233,27 +191,23 @@ public class CreateTaskReq  {
         this.srcNode = srcNode;
     }
 
-    
-
     public CreateTaskReq withDstNode(DstNodeReq dstNode) {
         this.dstNode = dstNode;
         return this;
     }
 
     public CreateTaskReq withDstNode(Consumer<DstNodeReq> dstNodeSetter) {
-        if(this.dstNode == null ){
+        if (this.dstNode == null) {
             this.dstNode = new DstNodeReq();
             dstNodeSetter.accept(this.dstNode);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get dstNode
-     * @return dstNode
-     */
+    /** Get dstNode
+     * 
+     * @return dstNode */
     public DstNodeReq getDstNode() {
         return dstNode;
     }
@@ -262,20 +216,14 @@ public class CreateTaskReq  {
         this.dstNode = dstNode;
     }
 
-    
-
     public CreateTaskReq withEnableKms(Boolean enableKms) {
         this.enableKms = enableKms;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启KMS加密，默认不开启。
-     * @return enableKms
-     */
+    /** 是否开启KMS加密，默认不开启。
+     * 
+     * @return enableKms */
     public Boolean getEnableKms() {
         return enableKms;
     }
@@ -284,20 +232,14 @@ public class CreateTaskReq  {
         this.enableKms = enableKms;
     }
 
-    
-
     public CreateTaskReq withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务描述，不能超过255个字符，且不能包含^<>&\"'等特殊字符。
-     * @return description
-     */
+    /** 任务描述，不能超过255个字符，且不能包含^<>&\"'等特殊字符。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -306,22 +248,14 @@ public class CreateTaskReq  {
         this.description = description;
     }
 
-    
-
     public CreateTaskReq withMigrateSince(Long migrateSince) {
         this.migrateSince = migrateSince;
         return this;
     }
 
-    
-
-
-    /**
-     * 以时间戳方式表示的迁移指定时间（单位：秒），表示仅迁移在指定时间之后修改的源端待迁移对象。默认不设置迁移指定时间。
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return migrateSince
-     */
+    /** 以时间戳方式表示的迁移指定时间（单位：秒），表示仅迁移在指定时间之后修改的源端待迁移对象。默认不设置迁移指定时间。 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return migrateSince */
     public Long getMigrateSince() {
         return migrateSince;
     }
@@ -330,16 +264,13 @@ public class CreateTaskReq  {
         this.migrateSince = migrateSince;
     }
 
-    
-
     public CreateTaskReq withBandwidthPolicy(List<BandwidthPolicyDto> bandwidthPolicy) {
         this.bandwidthPolicy = bandwidthPolicy;
         return this;
     }
 
-    
     public CreateTaskReq addBandwidthPolicyItem(BandwidthPolicyDto bandwidthPolicyItem) {
-        if(this.bandwidthPolicy == null) {
+        if (this.bandwidthPolicy == null) {
             this.bandwidthPolicy = new ArrayList<>();
         }
         this.bandwidthPolicy.add(bandwidthPolicyItem);
@@ -347,17 +278,16 @@ public class CreateTaskReq  {
     }
 
     public CreateTaskReq withBandwidthPolicy(Consumer<List<BandwidthPolicyDto>> bandwidthPolicySetter) {
-        if(this.bandwidthPolicy == null) {
+        if (this.bandwidthPolicy == null) {
             this.bandwidthPolicy = new ArrayList<>();
         }
         bandwidthPolicySetter.accept(this.bandwidthPolicy);
         return this;
     }
 
-    /**
-     * 配置流量控制策略。数组中一个元素对应一个时段的最大带宽，最多允许5个时段，且时段不能重叠。
-     * @return bandwidthPolicy
-     */
+    /** 配置流量控制策略。数组中一个元素对应一个时段的最大带宽，最多允许5个时段，且时段不能重叠。
+     * 
+     * @return bandwidthPolicy */
     public List<BandwidthPolicyDto> getBandwidthPolicy() {
         return bandwidthPolicy;
     }
@@ -366,27 +296,23 @@ public class CreateTaskReq  {
         this.bandwidthPolicy = bandwidthPolicy;
     }
 
-    
-
     public CreateTaskReq withSourceCdn(SourceCdnReq sourceCdn) {
         this.sourceCdn = sourceCdn;
         return this;
     }
 
     public CreateTaskReq withSourceCdn(Consumer<SourceCdnReq> sourceCdnSetter) {
-        if(this.sourceCdn == null ){
+        if (this.sourceCdn == null) {
             this.sourceCdn = new SourceCdnReq();
             sourceCdnSetter.accept(this.sourceCdn);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get sourceCdn
-     * @return sourceCdn
-     */
+    /** Get sourceCdn
+     * 
+     * @return sourceCdn */
     public SourceCdnReq getSourceCdn() {
         return sourceCdn;
     }
@@ -395,27 +321,23 @@ public class CreateTaskReq  {
         this.sourceCdn = sourceCdn;
     }
 
-    
-
     public CreateTaskReq withSmnConfig(SmnConfig smnConfig) {
         this.smnConfig = smnConfig;
         return this;
     }
 
     public CreateTaskReq withSmnConfig(Consumer<SmnConfig> smnConfigSetter) {
-        if(this.smnConfig == null ){
+        if (this.smnConfig == null) {
             this.smnConfig = new SmnConfig();
             smnConfigSetter.accept(this.smnConfig);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get smnConfig
-     * @return smnConfig
-     */
+    /** Get smnConfig
+     * 
+     * @return smnConfig */
     public SmnConfig getSmnConfig() {
         return smnConfig;
     }
@@ -424,20 +346,14 @@ public class CreateTaskReq  {
         this.smnConfig = smnConfig;
     }
 
-    
-
     public CreateTaskReq withEnableRestore(Boolean enableRestore) {
         this.enableRestore = enableRestore;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否自动解冻归档数据，默认否。  开启后，如果遇到归档类型数据，会自动解冻再进行迁移。
-     * @return enableRestore
-     */
+    /** 是否自动解冻归档数据，默认否。 开启后，如果遇到归档类型数据，会自动解冻再进行迁移。
+     * 
+     * @return enableRestore */
     public Boolean getEnableRestore() {
         return enableRestore;
     }
@@ -446,20 +362,14 @@ public class CreateTaskReq  {
         this.enableRestore = enableRestore;
     }
 
-    
-
     public CreateTaskReq withEnableFailedObjectRecording(Boolean enableFailedObjectRecording) {
         this.enableFailedObjectRecording = enableFailedObjectRecording;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否记录失败对象，默认开启。  开启后，如果有迁移失败对象，会在目的端存储失败对象信息。
-     * @return enableFailedObjectRecording
-     */
+    /** 是否记录失败对象，默认开启。 开启后，如果有迁移失败对象，会在目的端存储失败对象信息。
+     * 
+     * @return enableFailedObjectRecording */
     public Boolean getEnableFailedObjectRecording() {
         return enableFailedObjectRecording;
     }
@@ -467,8 +377,6 @@ public class CreateTaskReq  {
     public void setEnableFailedObjectRecording(Boolean enableFailedObjectRecording) {
         this.enableFailedObjectRecording = enableFailedObjectRecording;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -479,22 +387,34 @@ public class CreateTaskReq  {
             return false;
         }
         CreateTaskReq createTaskReq = (CreateTaskReq) o;
-        return Objects.equals(this.taskType, createTaskReq.taskType) &&
-            Objects.equals(this.srcNode, createTaskReq.srcNode) &&
-            Objects.equals(this.dstNode, createTaskReq.dstNode) &&
-            Objects.equals(this.enableKms, createTaskReq.enableKms) &&
-            Objects.equals(this.description, createTaskReq.description) &&
-            Objects.equals(this.migrateSince, createTaskReq.migrateSince) &&
-            Objects.equals(this.bandwidthPolicy, createTaskReq.bandwidthPolicy) &&
-            Objects.equals(this.sourceCdn, createTaskReq.sourceCdn) &&
-            Objects.equals(this.smnConfig, createTaskReq.smnConfig) &&
-            Objects.equals(this.enableRestore, createTaskReq.enableRestore) &&
-            Objects.equals(this.enableFailedObjectRecording, createTaskReq.enableFailedObjectRecording);
+        return Objects.equals(this.taskType, createTaskReq.taskType)
+            && Objects.equals(this.srcNode, createTaskReq.srcNode)
+            && Objects.equals(this.dstNode, createTaskReq.dstNode)
+            && Objects.equals(this.enableKms, createTaskReq.enableKms)
+            && Objects.equals(this.description, createTaskReq.description)
+            && Objects.equals(this.migrateSince, createTaskReq.migrateSince)
+            && Objects.equals(this.bandwidthPolicy, createTaskReq.bandwidthPolicy)
+            && Objects.equals(this.sourceCdn, createTaskReq.sourceCdn)
+            && Objects.equals(this.smnConfig, createTaskReq.smnConfig)
+            && Objects.equals(this.enableRestore, createTaskReq.enableRestore)
+            && Objects.equals(this.enableFailedObjectRecording, createTaskReq.enableFailedObjectRecording);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(taskType, srcNode, dstNode, enableKms, description, migrateSince, bandwidthPolicy, sourceCdn, smnConfig, enableRestore, enableFailedObjectRecording);
+        return Objects.hash(taskType,
+            srcNode,
+            dstNode,
+            enableKms,
+            description,
+            migrateSince,
+            bandwidthPolicy,
+            sourceCdn,
+            smnConfig,
+            enableRestore,
+            enableFailedObjectRecording);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -509,20 +429,19 @@ public class CreateTaskReq  {
         sb.append("    sourceCdn: ").append(toIndentedString(sourceCdn)).append("\n");
         sb.append("    smnConfig: ").append(toIndentedString(smnConfig)).append("\n");
         sb.append("    enableRestore: ").append(toIndentedString(enableRestore)).append("\n");
-        sb.append("    enableFailedObjectRecording: ").append(toIndentedString(enableFailedObjectRecording)).append("\n");
+        sb.append("    enableFailedObjectRecording: ")
+            .append(toIndentedString(enableFailedObjectRecording))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

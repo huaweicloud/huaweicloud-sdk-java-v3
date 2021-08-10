@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteMemberRequest  {
-
-
+/** Request Object */
+public class DeleteMemberRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="member_id")
-    
+    @JsonProperty(value = "member_id")
+
     private String memberId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pool_id")
-    
+    @JsonProperty(value = "pool_id")
+
     private String poolId;
 
     public DeleteMemberRequest withMemberId(String memberId) {
@@ -34,13 +23,9 @@ public class DeleteMemberRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 后端服务器ID。
-     * @return memberId
-     */
+    /** 后端服务器ID。
+     * 
+     * @return memberId */
     public String getMemberId() {
         return memberId;
     }
@@ -49,20 +34,14 @@ public class DeleteMemberRequest  {
         this.memberId = memberId;
     }
 
-    
-
     public DeleteMemberRequest withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端服务器组ID。
-     * @return poolId
-     */
+    /** 后端服务器组ID。
+     * 
+     * @return poolId */
     public String getPoolId() {
         return poolId;
     }
@@ -70,8 +49,6 @@ public class DeleteMemberRequest  {
     public void setPoolId(String poolId) {
         this.poolId = poolId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class DeleteMemberRequest  {
             return false;
         }
         DeleteMemberRequest deleteMemberRequest = (DeleteMemberRequest) o;
-        return Objects.equals(this.memberId, deleteMemberRequest.memberId) &&
-            Objects.equals(this.poolId, deleteMemberRequest.poolId);
+        return Objects.equals(this.memberId, deleteMemberRequest.memberId)
+            && Objects.equals(this.poolId, deleteMemberRequest.poolId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(memberId, poolId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class DeleteMemberRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

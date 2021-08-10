@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.codecheck.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * StatisticSeverityV2
- */
-public class StatisticSeverityV2  {
-
-
+/** StatisticSeverityV2 */
+public class StatisticSeverityV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="critical")
-    
+    @JsonProperty(value = "critical")
+
     private Integer critical;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="major")
-    
+    @JsonProperty(value = "major")
+
     private Integer major;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="minor")
-    
+    @JsonProperty(value = "minor")
+
     private Integer minor;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="suggestion")
-    
+    @JsonProperty(value = "suggestion")
+
     private Integer suggestion;
 
     public StatisticSeverityV2 withCritical(Integer critical) {
@@ -46,13 +33,9 @@ public class StatisticSeverityV2  {
         return this;
     }
 
-    
-
-
-    /**
-     * 致命问题数
-     * @return critical
-     */
+    /** 致命问题数
+     * 
+     * @return critical */
     public Integer getCritical() {
         return critical;
     }
@@ -61,20 +44,14 @@ public class StatisticSeverityV2  {
         this.critical = critical;
     }
 
-    
-
     public StatisticSeverityV2 withMajor(Integer major) {
         this.major = major;
         return this;
     }
 
-    
-
-
-    /**
-     * 严重问题数
-     * @return major
-     */
+    /** 严重问题数
+     * 
+     * @return major */
     public Integer getMajor() {
         return major;
     }
@@ -83,20 +60,14 @@ public class StatisticSeverityV2  {
         this.major = major;
     }
 
-    
-
     public StatisticSeverityV2 withMinor(Integer minor) {
         this.minor = minor;
         return this;
     }
 
-    
-
-
-    /**
-     * 一般问题数
-     * @return minor
-     */
+    /** 一般问题数
+     * 
+     * @return minor */
     public Integer getMinor() {
         return minor;
     }
@@ -105,20 +76,14 @@ public class StatisticSeverityV2  {
         this.minor = minor;
     }
 
-    
-
     public StatisticSeverityV2 withSuggestion(Integer suggestion) {
         this.suggestion = suggestion;
         return this;
     }
 
-    
-
-
-    /**
-     * 提示问题数
-     * @return suggestion
-     */
+    /** 提示问题数
+     * 
+     * @return suggestion */
     public Integer getSuggestion() {
         return suggestion;
     }
@@ -126,8 +91,6 @@ public class StatisticSeverityV2  {
     public void setSuggestion(Integer suggestion) {
         this.suggestion = suggestion;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class StatisticSeverityV2  {
             return false;
         }
         StatisticSeverityV2 statisticSeverityV2 = (StatisticSeverityV2) o;
-        return Objects.equals(this.critical, statisticSeverityV2.critical) &&
-            Objects.equals(this.major, statisticSeverityV2.major) &&
-            Objects.equals(this.minor, statisticSeverityV2.minor) &&
-            Objects.equals(this.suggestion, statisticSeverityV2.suggestion);
+        return Objects.equals(this.critical, statisticSeverityV2.critical)
+            && Objects.equals(this.major, statisticSeverityV2.major)
+            && Objects.equals(this.minor, statisticSeverityV2.minor)
+            && Objects.equals(this.suggestion, statisticSeverityV2.suggestion);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(critical, major, minor, suggestion);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class StatisticSeverityV2  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

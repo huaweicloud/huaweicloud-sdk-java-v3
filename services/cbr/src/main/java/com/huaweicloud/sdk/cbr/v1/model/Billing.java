@@ -1,59 +1,31 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Billing
- */
-public class Billing  {
-
-
+/** Billing */
+public class Billing {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="allocated")
-    
+    @JsonProperty(value = "allocated")
+
     private Integer allocated;
-    /**
-     * 创建模式
-     */
+
+    /** 创建模式 */
     public static final class ChargingModeEnum {
 
-        
-        /**
-         * Enum PRE_PAID for value: "pre_paid"
-         */
+        /** Enum PRE_PAID for value: "pre_paid" */
         public static final ChargingModeEnum PRE_PAID = new ChargingModeEnum("pre_paid");
-        
-        /**
-         * Enum POST_PAID for value: "post_paid"
-         */
+
+        /** Enum POST_PAID for value: "post_paid" */
         public static final ChargingModeEnum POST_PAID = new ChargingModeEnum("post_paid");
-        
 
         private static final Map<String, ChargingModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -82,7 +54,7 @@ public class Billing  {
 
         @JsonCreator
         public static ChargingModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ChargingModeEnum result = STATIC_FIELDS.get(value);
@@ -93,7 +65,7 @@ public class Billing  {
         }
 
         public static ChargingModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ChargingModeEnum result = STATIC_FIELDS.get(value);
@@ -117,27 +89,19 @@ public class Billing  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charging_mode")
-    
+    @JsonProperty(value = "charging_mode")
+
     private ChargingModeEnum chargingMode;
-    /**
-     * 云平台
-     */
+
+    /** 云平台 */
     public static final class CloudTypeEnum {
 
-        
-        /**
-         * Enum PUBLIC for value: "public"
-         */
+        /** Enum PUBLIC for value: "public" */
         public static final CloudTypeEnum PUBLIC = new CloudTypeEnum("public");
-        
-        /**
-         * Enum HYBRID for value: "hybrid"
-         */
+
+        /** Enum HYBRID for value: "hybrid" */
         public static final CloudTypeEnum HYBRID = new CloudTypeEnum("hybrid");
-        
 
         private static final Map<String, CloudTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -166,7 +130,7 @@ public class Billing  {
 
         @JsonCreator
         public static CloudTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CloudTypeEnum result = STATIC_FIELDS.get(value);
@@ -177,7 +141,7 @@ public class Billing  {
         }
 
         public static CloudTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CloudTypeEnum result = STATIC_FIELDS.get(value);
@@ -201,27 +165,19 @@ public class Billing  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cloud_type")
-    
+    @JsonProperty(value = "cloud_type")
+
     private CloudTypeEnum cloudType;
-    /**
-     * 崩溃一致性（crash_consistent）或应用一致性（app_consistent）
-     */
+
+    /** 崩溃一致性（crash_consistent）或应用一致性（app_consistent） */
     public static final class ConsistentLevelEnum {
 
-        
-        /**
-         * Enum APP_CONSISTENT for value: "app_consistent"
-         */
+        /** Enum APP_CONSISTENT for value: "app_consistent" */
         public static final ConsistentLevelEnum APP_CONSISTENT = new ConsistentLevelEnum("app_consistent");
-        
-        /**
-         * Enum CRASH_CONSISTENT for value: "crash_consistent"
-         */
+
+        /** Enum CRASH_CONSISTENT for value: "crash_consistent" */
         public static final ConsistentLevelEnum CRASH_CONSISTENT = new ConsistentLevelEnum("crash_consistent");
-        
 
         private static final Map<String, ConsistentLevelEnum> STATIC_FIELDS = createStaticFields();
 
@@ -250,7 +206,7 @@ public class Billing  {
 
         @JsonCreator
         public static ConsistentLevelEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ConsistentLevelEnum result = STATIC_FIELDS.get(value);
@@ -261,7 +217,7 @@ public class Billing  {
         }
 
         public static ConsistentLevelEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ConsistentLevelEnum result = STATIC_FIELDS.get(value);
@@ -285,27 +241,19 @@ public class Billing  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="consistent_level")
-    
+    @JsonProperty(value = "consistent_level")
+
     private ConsistentLevelEnum consistentLevel;
-    /**
-     * 对象类型
-     */
+
+    /** 对象类型 */
     public static final class ObjectTypeEnum {
 
-        
-        /**
-         * Enum SERVER for value: "server"
-         */
+        /** Enum SERVER for value: "server" */
         public static final ObjectTypeEnum SERVER = new ObjectTypeEnum("server");
-        
-        /**
-         * Enum DISK for value: "disk"
-         */
+
+        /** Enum DISK for value: "disk" */
         public static final ObjectTypeEnum DISK = new ObjectTypeEnum("disk");
-        
 
         private static final Map<String, ObjectTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -334,7 +282,7 @@ public class Billing  {
 
         @JsonCreator
         public static ObjectTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ObjectTypeEnum result = STATIC_FIELDS.get(value);
@@ -345,7 +293,7 @@ public class Billing  {
         }
 
         public static ObjectTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ObjectTypeEnum result = STATIC_FIELDS.get(value);
@@ -369,44 +317,32 @@ public class Billing  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="object_type")
-    
+    @JsonProperty(value = "object_type")
+
     private ObjectTypeEnum objectType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_id")
-    
+    @JsonProperty(value = "order_id")
+
     private String orderId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
-    
+    @JsonProperty(value = "product_id")
+
     private String productId;
-    /**
-     * 保护类型
-     */
+
+    /** 保护类型 */
     public static final class ProtectTypeEnum {
 
-        
-        /**
-         * Enum BACKUP for value: "backup"
-         */
+        /** Enum BACKUP for value: "backup" */
         public static final ProtectTypeEnum BACKUP = new ProtectTypeEnum("backup");
-        
-        /**
-         * Enum REPLICATION for value: "replication"
-         */
+
+        /** Enum REPLICATION for value: "replication" */
         public static final ProtectTypeEnum REPLICATION = new ProtectTypeEnum("replication");
-        
-        /**
-         * Enum HYBRID for value: "hybrid"
-         */
+
+        /** Enum HYBRID for value: "hybrid" */
         public static final ProtectTypeEnum HYBRID = new ProtectTypeEnum("hybrid");
-        
 
         private static final Map<String, ProtectTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -436,7 +372,7 @@ public class Billing  {
 
         @JsonCreator
         public static ProtectTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtectTypeEnum result = STATIC_FIELDS.get(value);
@@ -447,7 +383,7 @@ public class Billing  {
         }
 
         public static ProtectTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtectTypeEnum result = STATIC_FIELDS.get(value);
@@ -471,33 +407,25 @@ public class Billing  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protect_type")
-    
+    @JsonProperty(value = "protect_type")
+
     private ProtectTypeEnum protectType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
-    /**
-     * 规格编码: 云服务备份存储库:vault.backup.server.normal;云硬盘备份存储库:vault.backup.volume.normal;文件备份存储库:vault.backup.turbo.normal;数据库备份存储库:vault.backup.database.normal;混合云备份存储库:vault.hybrid.server.normal;复制备份存储库:vault.replication.server.normal
-     */
+
+    /** 规格编码:
+     * 云服务备份存储库:vault.backup.server.normal;云硬盘备份存储库:vault.backup.volume.normal;文件备份存储库:vault.backup.turbo.normal;数据库备份存储库:vault.backup.database.normal;混合云备份存储库:vault.hybrid.server.normal;复制备份存储库:vault.replication.server.normal */
     public static final class SpecCodeEnum {
 
-        
-        /**
-         * Enum VAULT_BACKUP_SERVER_NORMAL for value: "vault.backup.server.normal"
-         */
+        /** Enum VAULT_BACKUP_SERVER_NORMAL for value: "vault.backup.server.normal" */
         public static final SpecCodeEnum VAULT_BACKUP_SERVER_NORMAL = new SpecCodeEnum("vault.backup.server.normal");
-        
-        /**
-         * Enum VAULT_BACKUP_VOLUME_NORMAL for value: "vault.backup.volume.normal"
-         */
+
+        /** Enum VAULT_BACKUP_VOLUME_NORMAL for value: "vault.backup.volume.normal" */
         public static final SpecCodeEnum VAULT_BACKUP_VOLUME_NORMAL = new SpecCodeEnum("vault.backup.volume.normal");
-        
 
         private static final Map<String, SpecCodeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -526,7 +454,7 @@ public class Billing  {
 
         @JsonCreator
         public static SpecCodeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SpecCodeEnum result = STATIC_FIELDS.get(value);
@@ -537,7 +465,7 @@ public class Billing  {
         }
 
         public static SpecCodeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SpecCodeEnum result = STATIC_FIELDS.get(value);
@@ -561,42 +489,28 @@ public class Billing  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec_code")
-    
+    @JsonProperty(value = "spec_code")
+
     private SpecCodeEnum specCode;
-    /**
-     * 保管库状态
-     */
+
+    /** 保管库状态 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum AVAILABLE for value: "available"
-         */
+        /** Enum AVAILABLE for value: "available" */
         public static final StatusEnum AVAILABLE = new StatusEnum("available");
-        
-        /**
-         * Enum LOCK for value: "lock"
-         */
+
+        /** Enum LOCK for value: "lock" */
         public static final StatusEnum LOCK = new StatusEnum("lock");
-        
-        /**
-         * Enum FROZEN for value: "frozen"
-         */
+
+        /** Enum FROZEN for value: "frozen" */
         public static final StatusEnum FROZEN = new StatusEnum("frozen");
-        
-        /**
-         * Enum DELETING for value: "deleting"
-         */
+
+        /** Enum DELETING for value: "deleting" */
         public static final StatusEnum DELETING = new StatusEnum("deleting");
-        
-        /**
-         * Enum ERROR for value: "error"
-         */
+
+        /** Enum ERROR for value: "error" */
         public static final StatusEnum ERROR = new StatusEnum("error");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -628,7 +542,7 @@ public class Billing  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -639,7 +553,7 @@ public class Billing  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -663,28 +577,24 @@ public class Billing  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="storage_unit")
-    
+    @JsonProperty(value = "storage_unit")
+
     private String storageUnit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="used")
-    
+    @JsonProperty(value = "used")
+
     private Integer used;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="frozen_scene")
-    
+    @JsonProperty(value = "frozen_scene")
+
     private String frozenScene;
 
     public Billing withAllocated(Integer allocated) {
@@ -692,13 +602,9 @@ public class Billing  {
         return this;
     }
 
-    
-
-
-    /**
-     * 已分配容量，单位MB
-     * @return allocated
-     */
+    /** 已分配容量，单位MB
+     * 
+     * @return allocated */
     public Integer getAllocated() {
         return allocated;
     }
@@ -707,20 +613,14 @@ public class Billing  {
         this.allocated = allocated;
     }
 
-    
-
     public Billing withChargingMode(ChargingModeEnum chargingMode) {
         this.chargingMode = chargingMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建模式
-     * @return chargingMode
-     */
+    /** 创建模式
+     * 
+     * @return chargingMode */
     public ChargingModeEnum getChargingMode() {
         return chargingMode;
     }
@@ -729,20 +629,14 @@ public class Billing  {
         this.chargingMode = chargingMode;
     }
 
-    
-
     public Billing withCloudType(CloudTypeEnum cloudType) {
         this.cloudType = cloudType;
         return this;
     }
 
-    
-
-
-    /**
-     * 云平台
-     * @return cloudType
-     */
+    /** 云平台
+     * 
+     * @return cloudType */
     public CloudTypeEnum getCloudType() {
         return cloudType;
     }
@@ -751,20 +645,14 @@ public class Billing  {
         this.cloudType = cloudType;
     }
 
-    
-
     public Billing withConsistentLevel(ConsistentLevelEnum consistentLevel) {
         this.consistentLevel = consistentLevel;
         return this;
     }
 
-    
-
-
-    /**
-     * 崩溃一致性（crash_consistent）或应用一致性（app_consistent）
-     * @return consistentLevel
-     */
+    /** 崩溃一致性（crash_consistent）或应用一致性（app_consistent）
+     * 
+     * @return consistentLevel */
     public ConsistentLevelEnum getConsistentLevel() {
         return consistentLevel;
     }
@@ -773,20 +661,14 @@ public class Billing  {
         this.consistentLevel = consistentLevel;
     }
 
-    
-
     public Billing withObjectType(ObjectTypeEnum objectType) {
         this.objectType = objectType;
         return this;
     }
 
-    
-
-
-    /**
-     * 对象类型
-     * @return objectType
-     */
+    /** 对象类型
+     * 
+     * @return objectType */
     public ObjectTypeEnum getObjectType() {
         return objectType;
     }
@@ -795,20 +677,14 @@ public class Billing  {
         this.objectType = objectType;
     }
 
-    
-
     public Billing withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
     }
 
-    
-
-
-    /**
-     * 订单ID
-     * @return orderId
-     */
+    /** 订单ID
+     * 
+     * @return orderId */
     public String getOrderId() {
         return orderId;
     }
@@ -817,20 +693,14 @@ public class Billing  {
         this.orderId = orderId;
     }
 
-    
-
     public Billing withProductId(String productId) {
         this.productId = productId;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品ID
-     * @return productId
-     */
+    /** 产品ID
+     * 
+     * @return productId */
     public String getProductId() {
         return productId;
     }
@@ -839,20 +709,14 @@ public class Billing  {
         this.productId = productId;
     }
 
-    
-
     public Billing withProtectType(ProtectTypeEnum protectType) {
         this.protectType = protectType;
         return this;
     }
 
-    
-
-
-    /**
-     * 保护类型
-     * @return protectType
-     */
+    /** 保护类型
+     * 
+     * @return protectType */
     public ProtectTypeEnum getProtectType() {
         return protectType;
     }
@@ -861,22 +725,14 @@ public class Billing  {
         this.protectType = protectType;
     }
 
-    
-
     public Billing withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 容量，单位GB
-     * minimum: 1
-     * maximum: 10485760
-     * @return size
-     */
+    /** 容量，单位GB minimum: 1 maximum: 10485760
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -885,20 +741,15 @@ public class Billing  {
         this.size = size;
     }
 
-    
-
     public Billing withSpecCode(SpecCodeEnum specCode) {
         this.specCode = specCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 规格编码: 云服务备份存储库:vault.backup.server.normal;云硬盘备份存储库:vault.backup.volume.normal;文件备份存储库:vault.backup.turbo.normal;数据库备份存储库:vault.backup.database.normal;混合云备份存储库:vault.hybrid.server.normal;复制备份存储库:vault.replication.server.normal
-     * @return specCode
-     */
+    /** 规格编码:
+     * 云服务备份存储库:vault.backup.server.normal;云硬盘备份存储库:vault.backup.volume.normal;文件备份存储库:vault.backup.turbo.normal;数据库备份存储库:vault.backup.database.normal;混合云备份存储库:vault.hybrid.server.normal;复制备份存储库:vault.replication.server.normal
+     * 
+     * @return specCode */
     public SpecCodeEnum getSpecCode() {
         return specCode;
     }
@@ -907,20 +758,14 @@ public class Billing  {
         this.specCode = specCode;
     }
 
-    
-
     public Billing withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 保管库状态
-     * @return status
-     */
+    /** 保管库状态
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -929,20 +774,14 @@ public class Billing  {
         this.status = status;
     }
 
-    
-
     public Billing withStorageUnit(String storageUnit) {
         this.storageUnit = storageUnit;
         return this;
     }
 
-    
-
-
-    /**
-     * 存储库桶名
-     * @return storageUnit
-     */
+    /** 存储库桶名
+     * 
+     * @return storageUnit */
     public String getStorageUnit() {
         return storageUnit;
     }
@@ -951,20 +790,14 @@ public class Billing  {
         this.storageUnit = storageUnit;
     }
 
-    
-
     public Billing withUsed(Integer used) {
         this.used = used;
         return this;
     }
 
-    
-
-
-    /**
-     * 已使用容量，单位MB
-     * @return used
-     */
+    /** 已使用容量，单位MB
+     * 
+     * @return used */
     public Integer getUsed() {
         return used;
     }
@@ -973,20 +806,14 @@ public class Billing  {
         this.used = used;
     }
 
-    
-
     public Billing withFrozenScene(String frozenScene) {
         this.frozenScene = frozenScene;
         return this;
     }
 
-    
-
-
-    /**
-     * 冻结场景
-     * @return frozenScene
-     */
+    /** 冻结场景
+     * 
+     * @return frozenScene */
     public String getFrozenScene() {
         return frozenScene;
     }
@@ -994,8 +821,6 @@ public class Billing  {
     public void setFrozenScene(String frozenScene) {
         this.frozenScene = frozenScene;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -1006,25 +831,36 @@ public class Billing  {
             return false;
         }
         Billing billing = (Billing) o;
-        return Objects.equals(this.allocated, billing.allocated) &&
-            Objects.equals(this.chargingMode, billing.chargingMode) &&
-            Objects.equals(this.cloudType, billing.cloudType) &&
-            Objects.equals(this.consistentLevel, billing.consistentLevel) &&
-            Objects.equals(this.objectType, billing.objectType) &&
-            Objects.equals(this.orderId, billing.orderId) &&
-            Objects.equals(this.productId, billing.productId) &&
-            Objects.equals(this.protectType, billing.protectType) &&
-            Objects.equals(this.size, billing.size) &&
-            Objects.equals(this.specCode, billing.specCode) &&
-            Objects.equals(this.status, billing.status) &&
-            Objects.equals(this.storageUnit, billing.storageUnit) &&
-            Objects.equals(this.used, billing.used) &&
-            Objects.equals(this.frozenScene, billing.frozenScene);
+        return Objects.equals(this.allocated, billing.allocated)
+            && Objects.equals(this.chargingMode, billing.chargingMode)
+            && Objects.equals(this.cloudType, billing.cloudType)
+            && Objects.equals(this.consistentLevel, billing.consistentLevel)
+            && Objects.equals(this.objectType, billing.objectType) && Objects.equals(this.orderId, billing.orderId)
+            && Objects.equals(this.productId, billing.productId)
+            && Objects.equals(this.protectType, billing.protectType) && Objects.equals(this.size, billing.size)
+            && Objects.equals(this.specCode, billing.specCode) && Objects.equals(this.status, billing.status)
+            && Objects.equals(this.storageUnit, billing.storageUnit) && Objects.equals(this.used, billing.used)
+            && Objects.equals(this.frozenScene, billing.frozenScene);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(allocated, chargingMode, cloudType, consistentLevel, objectType, orderId, productId, protectType, size, specCode, status, storageUnit, used, frozenScene);
+        return Objects.hash(allocated,
+            chargingMode,
+            cloudType,
+            consistentLevel,
+            objectType,
+            orderId,
+            productId,
+            protectType,
+            size,
+            specCode,
+            status,
+            storageUnit,
+            used,
+            frozenScene);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1046,16 +882,13 @@ public class Billing  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

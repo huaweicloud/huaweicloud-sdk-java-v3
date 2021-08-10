@@ -63,13 +63,13 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public class HcClient implements CustomizationConfigure {
+
     private static final Logger logger = LoggerFactory.getLogger(HcClient.class);
 
     public static class AccessLog {
+
         private static final Logger logger = LoggerFactory.getLogger("HuaweiCloud-SDK-Access");
 
         public static Logger get() {
@@ -136,13 +136,13 @@ public class HcClient implements CustomizationConfigure {
         return client;
     }
 
-    public <ReqT, ResT> ResT syncInvokeHttp(ReqT request, HttpRequestDef<ReqT, ResT> reqDef)
-        throws ServiceResponseException {
+    public <ReqT, ResT> ResT syncInvokeHttp(ReqT request,
+        HttpRequestDef<ReqT, ResT> reqDef) throws ServiceResponseException {
         return syncInvokeHttp(request, reqDef, new SdkExchange());
     }
 
-    public <ReqT, ResT> ResT syncInvokeHttp(ReqT request, HttpRequestDef<ReqT, ResT> reqDef, SdkExchange exchange)
-        throws ServiceResponseException {
+    public <ReqT, ResT> ResT syncInvokeHttp(ReqT request, HttpRequestDef<ReqT, ResT> reqDef,
+        SdkExchange exchange) throws ServiceResponseException {
 
         if (Objects.isNull(exchange)) {
             throw new IllegalArgumentException("SdkExchange is null");
@@ -313,8 +313,8 @@ public class HcClient implements CustomizationConfigure {
     private Map<String, List<String>> buildMapQueryParams(String key, String entryKey, Object entryValue) {
         Map<String, List<String>> res = new HashMap<>();
         if (entryValue instanceof Map) {
-            ((Map<?, ?>) entryValue).forEach(
-                (k, v) -> res.putAll(buildMapQueryParams(key + "[" + entryKey + "]", k.toString(), v)));
+            ((Map<?, ?>) entryValue)
+                .forEach((k, v) -> res.putAll(buildMapQueryParams(key + "[" + entryKey + "]", k.toString(), v)));
         } else if (entryValue instanceof Collection) {
             res.put(key + "[" + entryKey + "]", buildCollectionQueryParams(entryValue));
         } else {
@@ -328,7 +328,9 @@ public class HcClient implements CustomizationConfigure {
             ServiceResponseException currException = ServiceResponseException.mapException(httpResponse.getStatusCode(),
                 ExceptionUtils.extractErrorMessage(httpResponse));
             logger.error("ServiceResponseException occurred. Host: {} Uri: {} ServiceResponseException: {}",
-                httpRequest.getUrl().getHost(), httpRequest.getUrl(), currException.toString());
+                httpRequest.getUrl().getHost(),
+                httpRequest.getUrl(),
+                currException.toString());
             throw currException;
         }
     }
@@ -339,8 +341,8 @@ public class HcClient implements CustomizationConfigure {
         try {
             String stringResult = httpResponse.getBodyAsString();
             ResT resT;
-            if (Objects.nonNull(httpResponse.getContentType()) && httpResponse.getContentType()
-                .equals(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)) {
+            if (Objects.nonNull(httpResponse.getContentType())
+                && httpResponse.getContentType().startsWith(Constants.MEDIATYPE.APPLICATION_OCTET_STREAM)) {
                 resT = reqDef.getResponseType().newInstance();
                 if (resT instanceof SdkStreamResponse) {
                     ((SdkStreamResponse) resT).setBody(httpResponse.getBody());
@@ -415,7 +417,8 @@ public class HcClient implements CustomizationConfigure {
             } else {
                 field.writeValueSafe(wrapperResponse, infos.get(0), String.class);
                 if (infos.size() > 1) {
-                    logger.error("field {} passed list {}, but configured as single value", field.getName(),
+                    logger.error("field {} passed list {}, but configured as single value",
+                        field.getName(),
                         String.join(",", infos));
                 }
             }
@@ -429,21 +432,23 @@ public class HcClient implements CustomizationConfigure {
         func.accept(JsonUtils.getDefaultMapper());
     }
 
-    /**
-     * print access log
+    /** print access log
      *
      * @param httpRequest original http request
      * @param httpResponse original http response
-     * @param exchange sdk exchange
-     */
+     * @param exchange sdk exchange */
     public void printAccessLog(HttpRequest httpRequest, HttpResponse httpResponse, SdkExchange exchange) {
-        String requestId = Objects.isNull(httpResponse.getHeader(Constants.X_REQUEST_ID))
-            ? "null"
+        String requestId = Objects.isNull(httpResponse.getHeader(Constants.X_REQUEST_ID)) ? "null"
             : httpResponse.getHeader(Constants.X_REQUEST_ID);
         AccessLog.get()
-            .info("\"{} {}\" {} {} {} {}", httpRequest.getMethod(), httpRequest.getUrl(), httpResponse.getStatusCode(),
-                httpResponse.getContentLength(), requestId,
-                Objects.nonNull(exchange) && Objects.nonNull(exchange.getApiTimer()) ? exchange.getApiTimer()
-                    .getDurationMs() : "");
+            .info("\"{} {}\" {} {} {} {}",
+                httpRequest.getMethod(),
+                httpRequest.getUrl(),
+                httpResponse.getStatusCode(),
+                httpResponse.getContentLength(),
+                requestId,
+                Objects.nonNull(exchange) && Objects.nonNull(exchange.getApiTimer())
+                    ? exchange.getApiTimer().getDurationMs()
+                    : "");
     }
 }

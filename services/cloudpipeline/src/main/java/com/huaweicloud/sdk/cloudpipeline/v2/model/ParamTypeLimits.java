@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CodeCheck任务语言参数
- */
-public class ParamTypeLimits  {
-
-
+/** CodeCheck任务语言参数 */
+public class ParamTypeLimits {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disable")
-    
+    @JsonProperty(value = "disable")
+
     private String disable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="displayname")
-    
+    @JsonProperty(value = "displayname")
+
     private String displayname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="language")
-    
+    @JsonProperty(value = "language")
+
     private String language;
 
     public ParamTypeLimits withDisable(String disable) {
@@ -52,13 +38,9 @@ public class ParamTypeLimits  {
         return this;
     }
 
-    
-
-
-    /**
-     * 是否废弃
-     * @return disable
-     */
+    /** 是否废弃
+     * 
+     * @return disable */
     public String getDisable() {
         return disable;
     }
@@ -67,20 +49,14 @@ public class ParamTypeLimits  {
         this.disable = disable;
     }
 
-    
-
     public ParamTypeLimits withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言名字
-     * @return name
-     */
+    /** 语言名字
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -89,20 +65,14 @@ public class ParamTypeLimits  {
         this.name = name;
     }
 
-    
-
     public ParamTypeLimits withDisplayname(String displayname) {
         this.displayname = displayname;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言展示名字
-     * @return displayname
-     */
+    /** 语言展示名字
+     * 
+     * @return displayname */
     public String getDisplayname() {
         return displayname;
     }
@@ -111,20 +81,14 @@ public class ParamTypeLimits  {
         this.displayname = displayname;
     }
 
-    
-
     public ParamTypeLimits withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则集ID
-     * @return id
-     */
+    /** 规则集ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -133,20 +97,14 @@ public class ParamTypeLimits  {
         this.id = id;
     }
 
-    
-
     public ParamTypeLimits withLanguage(String language) {
         this.language = language;
         return this;
     }
 
-    
-
-
-    /**
-     * 扫描语言
-     * @return language
-     */
+    /** 扫描语言
+     * 
+     * @return language */
     public String getLanguage() {
         return language;
     }
@@ -154,8 +112,6 @@ public class ParamTypeLimits  {
     public void setLanguage(String language) {
         this.language = language;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,16 @@ public class ParamTypeLimits  {
             return false;
         }
         ParamTypeLimits paramTypeLimits = (ParamTypeLimits) o;
-        return Objects.equals(this.disable, paramTypeLimits.disable) &&
-            Objects.equals(this.name, paramTypeLimits.name) &&
-            Objects.equals(this.displayname, paramTypeLimits.displayname) &&
-            Objects.equals(this.id, paramTypeLimits.id) &&
-            Objects.equals(this.language, paramTypeLimits.language);
+        return Objects.equals(this.disable, paramTypeLimits.disable) && Objects.equals(this.name, paramTypeLimits.name)
+            && Objects.equals(this.displayname, paramTypeLimits.displayname)
+            && Objects.equals(this.id, paramTypeLimits.id) && Objects.equals(this.language, paramTypeLimits.language);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(disable, name, displayname, id, language);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +144,13 @@ public class ParamTypeLimits  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

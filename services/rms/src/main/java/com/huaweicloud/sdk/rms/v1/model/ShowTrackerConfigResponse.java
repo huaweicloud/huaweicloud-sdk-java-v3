@@ -1,42 +1,28 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rms.v1.model.ChannelConfigBody;
-import com.huaweicloud.sdk.rms.v1.model.SelectorConfigBody;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowTrackerConfigResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="channel")
-    
+    @JsonProperty(value = "channel")
+
     private ChannelConfigBody channel;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="selector")
-    
+    @JsonProperty(value = "selector")
+
     private SelectorConfigBody selector;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="agency_name")
-    
+    @JsonProperty(value = "agency_name")
+
     private String agencyName;
 
     public ShowTrackerConfigResponse withChannel(ChannelConfigBody channel) {
@@ -45,19 +31,17 @@ public class ShowTrackerConfigResponse extends SdkResponse {
     }
 
     public ShowTrackerConfigResponse withChannel(Consumer<ChannelConfigBody> channelSetter) {
-        if(this.channel == null ){
+        if (this.channel == null) {
             this.channel = new ChannelConfigBody();
             channelSetter.accept(this.channel);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get channel
-     * @return channel
-     */
+    /** Get channel
+     * 
+     * @return channel */
     public ChannelConfigBody getChannel() {
         return channel;
     }
@@ -66,27 +50,23 @@ public class ShowTrackerConfigResponse extends SdkResponse {
         this.channel = channel;
     }
 
-    
-
     public ShowTrackerConfigResponse withSelector(SelectorConfigBody selector) {
         this.selector = selector;
         return this;
     }
 
     public ShowTrackerConfigResponse withSelector(Consumer<SelectorConfigBody> selectorSetter) {
-        if(this.selector == null ){
+        if (this.selector == null) {
             this.selector = new SelectorConfigBody();
             selectorSetter.accept(this.selector);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get selector
-     * @return selector
-     */
+    /** Get selector
+     * 
+     * @return selector */
     public SelectorConfigBody getSelector() {
         return selector;
     }
@@ -95,20 +75,14 @@ public class ShowTrackerConfigResponse extends SdkResponse {
         this.selector = selector;
     }
 
-    
-
     public ShowTrackerConfigResponse withAgencyName(String agencyName) {
         this.agencyName = agencyName;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM委托名称
-     * @return agencyName
-     */
+    /** IAM委托名称
+     * 
+     * @return agencyName */
     public String getAgencyName() {
         return agencyName;
     }
@@ -116,8 +90,6 @@ public class ShowTrackerConfigResponse extends SdkResponse {
     public void setAgencyName(String agencyName) {
         this.agencyName = agencyName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -128,14 +100,16 @@ public class ShowTrackerConfigResponse extends SdkResponse {
             return false;
         }
         ShowTrackerConfigResponse showTrackerConfigResponse = (ShowTrackerConfigResponse) o;
-        return Objects.equals(this.channel, showTrackerConfigResponse.channel) &&
-            Objects.equals(this.selector, showTrackerConfigResponse.selector) &&
-            Objects.equals(this.agencyName, showTrackerConfigResponse.agencyName);
+        return Objects.equals(this.channel, showTrackerConfigResponse.channel)
+            && Objects.equals(this.selector, showTrackerConfigResponse.selector)
+            && Objects.equals(this.agencyName, showTrackerConfigResponse.agencyName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(channel, selector, agencyName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -146,16 +120,13 @@ public class ShowTrackerConfigResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

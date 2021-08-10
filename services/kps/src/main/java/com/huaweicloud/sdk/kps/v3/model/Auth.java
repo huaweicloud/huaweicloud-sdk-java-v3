@@ -1,41 +1,26 @@
 package com.huaweicloud.sdk.kps.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 可选字段，鉴权认证类型。替换时需要该参数，重置时不需要该参数。
- */
-public class Auth  {
+/** 可选字段，鉴权认证类型。替换时需要该参数，重置时不需要该参数。 */
+public class Auth {
 
-    /**
-     * 取值为枚举类型。
-     */
+    /** 取值为枚举类型。 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum PASSWORD for value: "password"
-         */
+        /** Enum PASSWORD for value: "password" */
         public static final TypeEnum PASSWORD = new TypeEnum("password");
-        
-        /**
-         * Enum KEYPAIR for value: "keypair"
-         */
+
+        /** Enum KEYPAIR for value: "keypair" */
         public static final TypeEnum KEYPAIR = new TypeEnum("keypair");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +49,7 @@ public class Auth  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +60,7 @@ public class Auth  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -99,16 +84,14 @@ public class Auth  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
     public Auth withType(TypeEnum type) {
@@ -116,13 +99,9 @@ public class Auth  {
         return this;
     }
 
-    
-
-
-    /**
-     * 取值为枚举类型。
-     * @return type
-     */
+    /** 取值为枚举类型。
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -131,20 +110,14 @@ public class Auth  {
         this.type = type;
     }
 
-    
-
     public Auth withKey(String key) {
         this.key = key;
         return this;
     }
 
-    
-
-
-    /**
-     * - type为枚举值password时，key表示密码； - type为枚举值keypair时，key表示私钥；
-     * @return key
-     */
+    /** - type为枚举值password时，key表示密码； - type为枚举值keypair时，key表示私钥；
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -152,8 +125,6 @@ public class Auth  {
     public void setKey(String key) {
         this.key = key;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -164,13 +135,14 @@ public class Auth  {
             return false;
         }
         Auth auth = (Auth) o;
-        return Objects.equals(this.type, auth.type) &&
-            Objects.equals(this.key, auth.key);
+        return Objects.equals(this.type, auth.type) && Objects.equals(this.key, auth.key);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, key);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -180,16 +152,13 @@ public class Auth  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

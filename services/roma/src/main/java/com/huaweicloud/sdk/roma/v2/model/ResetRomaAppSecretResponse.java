@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ResetRomaAppSecretResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="secret")
-    
+    @JsonProperty(value = "secret")
+
     private String secret;
 
     public ResetRomaAppSecretResponse withId(String id) {
@@ -36,13 +24,9 @@ public class ResetRomaAppSecretResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 应用ID
-     * @return id
-     */
+    /** 应用ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -51,20 +35,14 @@ public class ResetRomaAppSecretResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ResetRomaAppSecretResponse withSecret(String secret) {
         this.secret = secret;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用认证访问SECRET,未提供（字段不存在或值为null）时随机生成 - 字符集：英文字母、数字、！、@、#、$、%、+、=、点、中划线、斜线/ - 复杂度：满足大小写字母、数字、特殊字符的复杂度组合，考虑兼容性暂时可不做
-     * @return secret
-     */
+    /** 应用认证访问SECRET,未提供（字段不存在或值为null）时随机生成 - 字符集：英文字母、数字、！、@、#、$、%、+、=、点、中划线、斜线/ - 复杂度：满足大小写字母、数字、特殊字符的复杂度组合，考虑兼容性暂时可不做
+     * 
+     * @return secret */
     public String getSecret() {
         return secret;
     }
@@ -72,8 +50,6 @@ public class ResetRomaAppSecretResponse extends SdkResponse {
     public void setSecret(String secret) {
         this.secret = secret;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +60,15 @@ public class ResetRomaAppSecretResponse extends SdkResponse {
             return false;
         }
         ResetRomaAppSecretResponse resetRomaAppSecretResponse = (ResetRomaAppSecretResponse) o;
-        return Objects.equals(this.id, resetRomaAppSecretResponse.id) &&
-            Objects.equals(this.secret, resetRomaAppSecretResponse.secret);
+        return Objects.equals(this.id, resetRomaAppSecretResponse.id)
+            && Objects.equals(this.secret, resetRomaAppSecretResponse.secret);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, secret);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +78,13 @@ public class ResetRomaAppSecretResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

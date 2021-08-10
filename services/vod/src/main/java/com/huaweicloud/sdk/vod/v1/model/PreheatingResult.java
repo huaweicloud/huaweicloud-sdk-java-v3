@@ -1,52 +1,34 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * PreheatingResult
- */
-public class PreheatingResult  {
-
-
+/** PreheatingResult */
+public class PreheatingResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private String url;
-    /**
-     * 预热任务状态。  取值如下： - processing：处理中 - succeed：预热完成 - failed：预热失败
-     */
+
+    /** 预热任务状态。 取值如下： - processing：处理中 - succeed：预热完成 - failed：预热失败 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum PROCESSING for value: "PROCESSING"
-         */
+        /** Enum PROCESSING for value: "PROCESSING" */
         public static final StatusEnum PROCESSING = new StatusEnum("PROCESSING");
-        
-        /**
-         * Enum SUCCEED for value: "SUCCEED"
-         */
+
+        /** Enum SUCCEED for value: "SUCCEED" */
         public static final StatusEnum SUCCEED = new StatusEnum("SUCCEED");
-        
-        /**
-         * Enum FAILED for value: "FAILED"
-         */
+
+        /** Enum FAILED for value: "FAILED" */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,7 +58,7 @@ public class PreheatingResult  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -87,7 +69,7 @@ public class PreheatingResult  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -111,10 +93,9 @@ public class PreheatingResult  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
     public PreheatingResult withUrl(String url) {
@@ -122,13 +103,9 @@ public class PreheatingResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 媒资URL。
-     * @return url
-     */
+    /** 媒资URL。
+     * 
+     * @return url */
     public String getUrl() {
         return url;
     }
@@ -137,20 +114,14 @@ public class PreheatingResult  {
         this.url = url;
     }
 
-    
-
     public PreheatingResult withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 预热任务状态。  取值如下： - processing：处理中 - succeed：预热完成 - failed：预热失败
-     * @return status
-     */
+    /** 预热任务状态。 取值如下： - processing：处理中 - succeed：预热完成 - failed：预热失败
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -158,8 +129,6 @@ public class PreheatingResult  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -170,13 +139,14 @@ public class PreheatingResult  {
             return false;
         }
         PreheatingResult preheatingResult = (PreheatingResult) o;
-        return Objects.equals(this.url, preheatingResult.url) &&
-            Objects.equals(this.status, preheatingResult.status);
+        return Objects.equals(this.url, preheatingResult.url) && Objects.equals(this.status, preheatingResult.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(url, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -186,16 +156,13 @@ public class PreheatingResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

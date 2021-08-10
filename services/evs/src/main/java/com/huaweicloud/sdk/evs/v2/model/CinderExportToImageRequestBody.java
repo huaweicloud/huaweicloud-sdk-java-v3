@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.evs.v2.model.CinderExportToImageOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * This is a auto create Body Object
- */
-public class CinderExportToImageRequestBody  {
-
-
+/** This is a auto create Body Object */
+public class CinderExportToImageRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os-volume_upload_image")
-    
+    @JsonProperty(value = "os-volume_upload_image")
+
     private CinderExportToImageOption osVolumeUploadImage;
 
     public CinderExportToImageRequestBody withOsVolumeUploadImage(CinderExportToImageOption osVolumeUploadImage) {
@@ -29,20 +19,19 @@ public class CinderExportToImageRequestBody  {
         return this;
     }
 
-    public CinderExportToImageRequestBody withOsVolumeUploadImage(Consumer<CinderExportToImageOption> osVolumeUploadImageSetter) {
-        if(this.osVolumeUploadImage == null ){
+    public CinderExportToImageRequestBody withOsVolumeUploadImage(
+        Consumer<CinderExportToImageOption> osVolumeUploadImageSetter) {
+        if (this.osVolumeUploadImage == null) {
             this.osVolumeUploadImage = new CinderExportToImageOption();
             osVolumeUploadImageSetter.accept(this.osVolumeUploadImage);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get osVolumeUploadImage
-     * @return osVolumeUploadImage
-     */
+    /** Get osVolumeUploadImage
+     * 
+     * @return osVolumeUploadImage */
     public CinderExportToImageOption getOsVolumeUploadImage() {
         return osVolumeUploadImage;
     }
@@ -50,8 +39,6 @@ public class CinderExportToImageRequestBody  {
     public void setOsVolumeUploadImage(CinderExportToImageOption osVolumeUploadImage) {
         this.osVolumeUploadImage = osVolumeUploadImage;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +51,12 @@ public class CinderExportToImageRequestBody  {
         CinderExportToImageRequestBody cinderExportToImageRequestBody = (CinderExportToImageRequestBody) o;
         return Objects.equals(this.osVolumeUploadImage, cinderExportToImageRequestBody.osVolumeUploadImage);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(osVolumeUploadImage);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +65,13 @@ public class CinderExportToImageRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

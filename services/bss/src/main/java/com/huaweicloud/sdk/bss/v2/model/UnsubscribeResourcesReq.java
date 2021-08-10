@@ -1,46 +1,34 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * UnsubscribeResourcesReq
- */
-public class UnsubscribeResourcesReq  {
-
-
+/** UnsubscribeResourcesReq */
+public class UnsubscribeResourcesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_ids")
-    
+    @JsonProperty(value = "resource_ids")
+
     private List<String> resourceIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unsubscribe_type")
-    
+    @JsonProperty(value = "unsubscribe_type")
+
     private Integer unsubscribeType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unsubscribe_reason_type")
-    
+    @JsonProperty(value = "unsubscribe_reason_type")
+
     private Integer unsubscribeReasonType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unsubscribe_reason")
-    
+    @JsonProperty(value = "unsubscribe_reason")
+
     private String unsubscribeReason;
 
     public UnsubscribeResourcesReq withResourceIds(List<String> resourceIds) {
@@ -48,9 +36,8 @@ public class UnsubscribeResourcesReq  {
         return this;
     }
 
-    
     public UnsubscribeResourcesReq addResourceIdsItem(String resourceIdsItem) {
-        if(this.resourceIds == null) {
+        if (this.resourceIds == null) {
             this.resourceIds = new ArrayList<>();
         }
         this.resourceIds.add(resourceIdsItem);
@@ -58,17 +45,16 @@ public class UnsubscribeResourcesReq  {
     }
 
     public UnsubscribeResourcesReq withResourceIds(Consumer<List<String>> resourceIdsSetter) {
-        if(this.resourceIds == null) {
+        if (this.resourceIds == null) {
             this.resourceIds = new ArrayList<>();
         }
         resourceIdsSetter.accept(this.resourceIds);
         return this;
     }
 
-    /**
-     * 资源ID列表。 最大支持1次性输入10个资源ID，只能输入主资源ID。 哪些资源是主资源请根据“查询客户包年/包月资源列表”接口响应参数中的“is_main_resource”来标识。
-     * @return resourceIds
-     */
+    /** 资源ID列表。 最大支持1次性输入10个资源ID，只能输入主资源ID。 哪些资源是主资源请根据“查询客户包年/包月资源列表”接口响应参数中的“is_main_resource”来标识。
+     * 
+     * @return resourceIds */
     public List<String> getResourceIds() {
         return resourceIds;
     }
@@ -77,22 +63,14 @@ public class UnsubscribeResourcesReq  {
         this.resourceIds = resourceIds;
     }
 
-    
-
     public UnsubscribeResourcesReq withUnsubscribeType(Integer unsubscribeType) {
         this.unsubscribeType = unsubscribeType;
         return this;
     }
 
-    
-
-
-    /**
-     * 退订类型，取值如下： 1：退订资源及其已续费周期。2：只退订资源已续费周期，不退订资源。
-     * minimum: 1
-     * maximum: 2
-     * @return unsubscribeType
-     */
+    /** 退订类型，取值如下： 1：退订资源及其已续费周期。2：只退订资源已续费周期，不退订资源。 minimum: 1 maximum: 2
+     * 
+     * @return unsubscribeType */
     public Integer getUnsubscribeType() {
         return unsubscribeType;
     }
@@ -101,22 +79,14 @@ public class UnsubscribeResourcesReq  {
         this.unsubscribeType = unsubscribeType;
     }
 
-    
-
     public UnsubscribeResourcesReq withUnsubscribeReasonType(Integer unsubscribeReasonType) {
         this.unsubscribeReasonType = unsubscribeReasonType;
         return this;
     }
 
-    
-
-
-    /**
-     * 退订理由分类，取值如下： 1：产品不好用2：产品功能无法满足需求3：不会操作/操作过于复杂4：对服务不满意5：其他
-     * minimum: 1
-     * maximum: 5
-     * @return unsubscribeReasonType
-     */
+    /** 退订理由分类，取值如下： 1：产品不好用2：产品功能无法满足需求3：不会操作/操作过于复杂4：对服务不满意5：其他 minimum: 1 maximum: 5
+     * 
+     * @return unsubscribeReasonType */
     public Integer getUnsubscribeReasonType() {
         return unsubscribeReasonType;
     }
@@ -125,20 +95,14 @@ public class UnsubscribeResourcesReq  {
         this.unsubscribeReasonType = unsubscribeReasonType;
     }
 
-    
-
     public UnsubscribeResourcesReq withUnsubscribeReason(String unsubscribeReason) {
         this.unsubscribeReason = unsubscribeReason;
         return this;
     }
 
-    
-
-
-    /**
-     * 退订原因，一般由客户输入。
-     * @return unsubscribeReason
-     */
+    /** 退订原因，一般由客户输入。
+     * 
+     * @return unsubscribeReason */
     public String getUnsubscribeReason() {
         return unsubscribeReason;
     }
@@ -146,8 +110,6 @@ public class UnsubscribeResourcesReq  {
     public void setUnsubscribeReason(String unsubscribeReason) {
         this.unsubscribeReason = unsubscribeReason;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -158,15 +120,17 @@ public class UnsubscribeResourcesReq  {
             return false;
         }
         UnsubscribeResourcesReq unsubscribeResourcesReq = (UnsubscribeResourcesReq) o;
-        return Objects.equals(this.resourceIds, unsubscribeResourcesReq.resourceIds) &&
-            Objects.equals(this.unsubscribeType, unsubscribeResourcesReq.unsubscribeType) &&
-            Objects.equals(this.unsubscribeReasonType, unsubscribeResourcesReq.unsubscribeReasonType) &&
-            Objects.equals(this.unsubscribeReason, unsubscribeResourcesReq.unsubscribeReason);
+        return Objects.equals(this.resourceIds, unsubscribeResourcesReq.resourceIds)
+            && Objects.equals(this.unsubscribeType, unsubscribeResourcesReq.unsubscribeType)
+            && Objects.equals(this.unsubscribeReasonType, unsubscribeResourcesReq.unsubscribeReasonType)
+            && Objects.equals(this.unsubscribeReason, unsubscribeResourcesReq.unsubscribeReason);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resourceIds, unsubscribeType, unsubscribeReasonType, unsubscribeReason);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -178,16 +142,13 @@ public class UnsubscribeResourcesReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

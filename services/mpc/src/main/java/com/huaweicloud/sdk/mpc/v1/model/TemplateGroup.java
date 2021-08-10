@@ -1,68 +1,49 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.Audio;
-import com.huaweicloud.sdk.mpc.v1.model.Common;
-import com.huaweicloud.sdk.mpc.v1.model.VideoAndTemplate;
-import com.huaweicloud.sdk.mpc.v1.model.VideoCommon;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * TemplateGroup
- */
-public class TemplateGroup  {
-
-
+/** TemplateGroup */
+public class TemplateGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_ids")
-    
+    @JsonProperty(value = "template_ids")
+
     private List<Integer> templateIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="videos")
-    
+    @JsonProperty(value = "videos")
+
     private List<VideoAndTemplate> videos = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audio")
-    
+    @JsonProperty(value = "audio")
+
     private Audio audio;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="video_common")
-    
+    @JsonProperty(value = "video_common")
+
     private VideoCommon videoCommon;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="common")
-    
+    @JsonProperty(value = "common")
+
     private Common common;
 
     public TemplateGroup withGroupId(String groupId) {
@@ -70,13 +51,9 @@ public class TemplateGroup  {
         return this;
     }
 
-    
-
-
-    /**
-     * 模板组id 
-     * @return groupId
-     */
+    /** 模板组id
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -85,20 +62,14 @@ public class TemplateGroup  {
         this.groupId = groupId;
     }
 
-    
-
     public TemplateGroup withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板组名称 
-     * @return name
-     */
+    /** 模板组名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -107,16 +78,13 @@ public class TemplateGroup  {
         this.name = name;
     }
 
-    
-
     public TemplateGroup withTemplateIds(List<Integer> templateIds) {
         this.templateIds = templateIds;
         return this;
     }
 
-    
     public TemplateGroup addTemplateIdsItem(Integer templateIdsItem) {
-        if(this.templateIds == null) {
+        if (this.templateIds == null) {
             this.templateIds = new ArrayList<>();
         }
         this.templateIds.add(templateIdsItem);
@@ -124,17 +92,16 @@ public class TemplateGroup  {
     }
 
     public TemplateGroup withTemplateIds(Consumer<List<Integer>> templateIdsSetter) {
-        if(this.templateIds == null) {
+        if (this.templateIds == null) {
             this.templateIds = new ArrayList<>();
         }
         templateIdsSetter.accept(this.templateIds);
         return this;
     }
 
-    /**
-     * 模板组模板ID 
-     * @return templateIds
-     */
+    /** 模板组模板ID
+     * 
+     * @return templateIds */
     public List<Integer> getTemplateIds() {
         return templateIds;
     }
@@ -143,16 +110,13 @@ public class TemplateGroup  {
         this.templateIds = templateIds;
     }
 
-    
-
     public TemplateGroup withVideos(List<VideoAndTemplate> videos) {
         this.videos = videos;
         return this;
     }
 
-    
     public TemplateGroup addVideosItem(VideoAndTemplate videosItem) {
-        if(this.videos == null) {
+        if (this.videos == null) {
             this.videos = new ArrayList<>();
         }
         this.videos.add(videosItem);
@@ -160,17 +124,16 @@ public class TemplateGroup  {
     }
 
     public TemplateGroup withVideos(Consumer<List<VideoAndTemplate>> videosSetter) {
-        if(this.videos == null) {
+        if (this.videos == null) {
             this.videos = new ArrayList<>();
         }
         videosSetter.accept(this.videos);
         return this;
     }
 
-    /**
-     * 视频信息列表 
-     * @return videos
-     */
+    /** 视频信息列表
+     * 
+     * @return videos */
     public List<VideoAndTemplate> getVideos() {
         return videos;
     }
@@ -179,27 +142,23 @@ public class TemplateGroup  {
         this.videos = videos;
     }
 
-    
-
     public TemplateGroup withAudio(Audio audio) {
         this.audio = audio;
         return this;
     }
 
     public TemplateGroup withAudio(Consumer<Audio> audioSetter) {
-        if(this.audio == null ){
+        if (this.audio == null) {
             this.audio = new Audio();
             audioSetter.accept(this.audio);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get audio
-     * @return audio
-     */
+    /** Get audio
+     * 
+     * @return audio */
     public Audio getAudio() {
         return audio;
     }
@@ -208,27 +167,23 @@ public class TemplateGroup  {
         this.audio = audio;
     }
 
-    
-
     public TemplateGroup withVideoCommon(VideoCommon videoCommon) {
         this.videoCommon = videoCommon;
         return this;
     }
 
     public TemplateGroup withVideoCommon(Consumer<VideoCommon> videoCommonSetter) {
-        if(this.videoCommon == null ){
+        if (this.videoCommon == null) {
             this.videoCommon = new VideoCommon();
             videoCommonSetter.accept(this.videoCommon);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get videoCommon
-     * @return videoCommon
-     */
+    /** Get videoCommon
+     * 
+     * @return videoCommon */
     public VideoCommon getVideoCommon() {
         return videoCommon;
     }
@@ -237,27 +192,23 @@ public class TemplateGroup  {
         this.videoCommon = videoCommon;
     }
 
-    
-
     public TemplateGroup withCommon(Common common) {
         this.common = common;
         return this;
     }
 
     public TemplateGroup withCommon(Consumer<Common> commonSetter) {
-        if(this.common == null ){
+        if (this.common == null) {
             this.common = new Common();
             commonSetter.accept(this.common);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get common
-     * @return common
-     */
+    /** Get common
+     * 
+     * @return common */
     public Common getCommon() {
         return common;
     }
@@ -265,8 +216,6 @@ public class TemplateGroup  {
     public void setCommon(Common common) {
         this.common = common;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -277,18 +226,18 @@ public class TemplateGroup  {
             return false;
         }
         TemplateGroup templateGroup = (TemplateGroup) o;
-        return Objects.equals(this.groupId, templateGroup.groupId) &&
-            Objects.equals(this.name, templateGroup.name) &&
-            Objects.equals(this.templateIds, templateGroup.templateIds) &&
-            Objects.equals(this.videos, templateGroup.videos) &&
-            Objects.equals(this.audio, templateGroup.audio) &&
-            Objects.equals(this.videoCommon, templateGroup.videoCommon) &&
-            Objects.equals(this.common, templateGroup.common);
+        return Objects.equals(this.groupId, templateGroup.groupId) && Objects.equals(this.name, templateGroup.name)
+            && Objects.equals(this.templateIds, templateGroup.templateIds)
+            && Objects.equals(this.videos, templateGroup.videos) && Objects.equals(this.audio, templateGroup.audio)
+            && Objects.equals(this.videoCommon, templateGroup.videoCommon)
+            && Objects.equals(this.common, templateGroup.common);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(groupId, name, templateIds, videos, audio, videoCommon, common);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -303,16 +252,13 @@ public class TemplateGroup  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

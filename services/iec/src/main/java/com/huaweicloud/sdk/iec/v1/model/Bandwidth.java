@@ -1,46 +1,26 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iec.v1.model.Operator;
-import com.huaweicloud.sdk.iec.v1.model.PublicipInfo;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 带宽对象
- */
-public class Bandwidth  {
+/** 带宽对象 */
+public class Bandwidth {
 
-    /**
-     * 带宽类型。 取值范围： share：共享类型
-     */
+    /** 带宽类型。 取值范围： share：共享类型 */
     public static final class BandwidthTypeEnum {
 
-        
-        /**
-         * Enum SHARE for value: "share"
-         */
+        /** Enum SHARE for value: "share" */
         public static final BandwidthTypeEnum SHARE = new BandwidthTypeEnum("share");
-        
 
         private static final Map<String, BandwidthTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -68,7 +48,7 @@ public class Bandwidth  {
 
         @JsonCreator
         public static BandwidthTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             BandwidthTypeEnum result = STATIC_FIELDS.get(value);
@@ -79,7 +59,7 @@ public class Bandwidth  {
         }
 
         public static BandwidthTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             BandwidthTypeEnum result = STATIC_FIELDS.get(value);
@@ -103,22 +83,16 @@ public class Bandwidth  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bandwidth_type")
-    
+    @JsonProperty(value = "bandwidth_type")
+
     private BandwidthTypeEnum bandwidthType;
-    /**
-     * 计费模式，当前只支持峰值95计费。  取值范围：  - 95peak_plus：峰值95计费
-     */
+
+    /** 计费模式，当前只支持峰值95计费。 取值范围： - 95peak_plus：峰值95计费 */
     public static final class ChargeModeEnum {
 
-        
-        /**
-         * Enum _95PEAK_PLUS for value: "95peak_plus"
-         */
+        /** Enum _95PEAK_PLUS for value: "95peak_plus" */
         public static final ChargeModeEnum _95PEAK_PLUS = new ChargeModeEnum("95peak_plus");
-        
 
         private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -146,7 +120,7 @@ public class Bandwidth  {
 
         @JsonCreator
         public static ChargeModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ChargeModeEnum result = STATIC_FIELDS.get(value);
@@ -157,7 +131,7 @@ public class Bandwidth  {
         }
 
         public static ChargeModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ChargeModeEnum result = STATIC_FIELDS.get(value);
@@ -181,52 +155,41 @@ public class Bandwidth  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_mode")
-    
+    @JsonProperty(value = "charge_mode")
+
     private ChargeModeEnum chargeMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private String createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operator")
-    
+    @JsonProperty(value = "operator")
+
     private Operator operator;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publicip_info")
-    
+    @JsonProperty(value = "publicip_info")
+
     private List<PublicipInfo> publicipInfo = null;
-        /**
-     * 共享带宽类型，标识是否是共享带宽。  取值范围：  - WHOLE：共享带宽
-     */
+
+    /** 共享带宽类型，标识是否是共享带宽。 取值范围： - WHOLE：共享带宽 */
     public static final class ShareTypeEnum {
 
-        
-        /**
-         * Enum WHOLE for value: "WHOLE"
-         */
+        /** Enum WHOLE for value: "WHOLE" */
         public static final ShareTypeEnum WHOLE = new ShareTypeEnum("WHOLE");
-        
 
         private static final Map<String, ShareTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -254,7 +217,7 @@ public class Bandwidth  {
 
         @JsonCreator
         public static ShareTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ShareTypeEnum result = STATIC_FIELDS.get(value);
@@ -265,7 +228,7 @@ public class Bandwidth  {
         }
 
         public static ShareTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ShareTypeEnum result = STATIC_FIELDS.get(value);
@@ -289,45 +252,34 @@ public class Bandwidth  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="share_type")
-    
+    @JsonProperty(value = "share_type")
+
     private ShareTypeEnum shareType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="site_id")
-    
+    @JsonProperty(value = "site_id")
+
     private String siteId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="site_info")
-    
+    @JsonProperty(value = "site_info")
+
     private String siteInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
-    /**
-     * 带宽的状态。  取值范围：  - FREEZED：冻结  - NORMAL：正常
-     */
+
+    /** 带宽的状态。 取值范围： - FREEZED：冻结 - NORMAL：正常 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum FREEZED for value: "FREEZED"
-         */
+        /** Enum FREEZED for value: "FREEZED" */
         public static final StatusEnum FREEZED = new StatusEnum("FREEZED");
-        
-        /**
-         * Enum NORMAL for value: "NORMAL"
-         */
+
+        /** Enum NORMAL for value: "NORMAL" */
         public static final StatusEnum NORMAL = new StatusEnum("NORMAL");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -356,7 +308,7 @@ public class Bandwidth  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -367,7 +319,7 @@ public class Bandwidth  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -391,22 +343,19 @@ public class Bandwidth  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private String updateTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pool_id")
-    
+    @JsonProperty(value = "pool_id")
+
     private String poolId;
 
     public Bandwidth withBandwidthType(BandwidthTypeEnum bandwidthType) {
@@ -414,13 +363,9 @@ public class Bandwidth  {
         return this;
     }
 
-    
-
-
-    /**
-     * 带宽类型。 取值范围： share：共享类型
-     * @return bandwidthType
-     */
+    /** 带宽类型。 取值范围： share：共享类型
+     * 
+     * @return bandwidthType */
     public BandwidthTypeEnum getBandwidthType() {
         return bandwidthType;
     }
@@ -429,20 +374,14 @@ public class Bandwidth  {
         this.bandwidthType = bandwidthType;
     }
 
-    
-
     public Bandwidth withChargeMode(ChargeModeEnum chargeMode) {
         this.chargeMode = chargeMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 计费模式，当前只支持峰值95计费。  取值范围：  - 95peak_plus：峰值95计费
-     * @return chargeMode
-     */
+    /** 计费模式，当前只支持峰值95计费。 取值范围： - 95peak_plus：峰值95计费
+     * 
+     * @return chargeMode */
     public ChargeModeEnum getChargeMode() {
         return chargeMode;
     }
@@ -451,20 +390,14 @@ public class Bandwidth  {
         this.chargeMode = chargeMode;
     }
 
-    
-
     public Bandwidth withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间。
-     * @return createTime
-     */
+    /** 创建时间。
+     * 
+     * @return createTime */
     public String getCreateTime() {
         return createTime;
     }
@@ -473,20 +406,14 @@ public class Bandwidth  {
         this.createTime = createTime;
     }
 
-    
-
     public Bandwidth withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 带宽ID。
-     * @return id
-     */
+    /** 带宽ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -495,20 +422,14 @@ public class Bandwidth  {
         this.id = id;
     }
 
-    
-
     public Bandwidth withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 带宽名称。
-     * @return name
-     */
+    /** 带宽名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -517,27 +438,23 @@ public class Bandwidth  {
         this.name = name;
     }
 
-    
-
     public Bandwidth withOperator(Operator operator) {
         this.operator = operator;
         return this;
     }
 
     public Bandwidth withOperator(Consumer<Operator> operatorSetter) {
-        if(this.operator == null ){
+        if (this.operator == null) {
             this.operator = new Operator();
             operatorSetter.accept(this.operator);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get operator
-     * @return operator
-     */
+    /** Get operator
+     * 
+     * @return operator */
     public Operator getOperator() {
         return operator;
     }
@@ -546,16 +463,13 @@ public class Bandwidth  {
         this.operator = operator;
     }
 
-    
-
     public Bandwidth withPublicipInfo(List<PublicipInfo> publicipInfo) {
         this.publicipInfo = publicipInfo;
         return this;
     }
 
-    
     public Bandwidth addPublicipInfoItem(PublicipInfo publicipInfoItem) {
-        if(this.publicipInfo == null) {
+        if (this.publicipInfo == null) {
             this.publicipInfo = new ArrayList<>();
         }
         this.publicipInfo.add(publicipInfoItem);
@@ -563,17 +477,16 @@ public class Bandwidth  {
     }
 
     public Bandwidth withPublicipInfo(Consumer<List<PublicipInfo>> publicipInfoSetter) {
-        if(this.publicipInfo == null) {
+        if (this.publicipInfo == null) {
             this.publicipInfo = new ArrayList<>();
         }
         publicipInfoSetter.accept(this.publicipInfo);
         return this;
     }
 
-    /**
-     * 弹性公网IP信息。
-     * @return publicipInfo
-     */
+    /** 弹性公网IP信息。
+     * 
+     * @return publicipInfo */
     public List<PublicipInfo> getPublicipInfo() {
         return publicipInfo;
     }
@@ -582,20 +495,14 @@ public class Bandwidth  {
         this.publicipInfo = publicipInfo;
     }
 
-    
-
     public Bandwidth withShareType(ShareTypeEnum shareType) {
         this.shareType = shareType;
         return this;
     }
 
-    
-
-
-    /**
-     * 共享带宽类型，标识是否是共享带宽。  取值范围：  - WHOLE：共享带宽
-     * @return shareType
-     */
+    /** 共享带宽类型，标识是否是共享带宽。 取值范围： - WHOLE：共享带宽
+     * 
+     * @return shareType */
     public ShareTypeEnum getShareType() {
         return shareType;
     }
@@ -604,20 +511,14 @@ public class Bandwidth  {
         this.shareType = shareType;
     }
 
-    
-
     public Bandwidth withSiteId(String siteId) {
         this.siteId = siteId;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘站点ID。
-     * @return siteId
-     */
+    /** 边缘站点ID。
+     * 
+     * @return siteId */
     public String getSiteId() {
         return siteId;
     }
@@ -626,20 +527,14 @@ public class Bandwidth  {
         this.siteId = siteId;
     }
 
-    
-
     public Bandwidth withSiteInfo(String siteInfo) {
         this.siteInfo = siteInfo;
         return this;
     }
 
-    
-
-
-    /**
-     * 站点信息。
-     * @return siteInfo
-     */
+    /** 站点信息。
+     * 
+     * @return siteInfo */
     public String getSiteInfo() {
         return siteInfo;
     }
@@ -648,22 +543,14 @@ public class Bandwidth  {
         this.siteInfo = siteInfo;
     }
 
-    
-
     public Bandwidth withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 带宽大小。
-     * minimum: 300
-     * maximum: 2000
-     * @return size
-     */
+    /** 带宽大小。 minimum: 300 maximum: 2000
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -672,20 +559,14 @@ public class Bandwidth  {
         this.size = size;
     }
 
-    
-
     public Bandwidth withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 带宽的状态。  取值范围：  - FREEZED：冻结  - NORMAL：正常
-     * @return status
-     */
+    /** 带宽的状态。 取值范围： - FREEZED：冻结 - NORMAL：正常
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -694,20 +575,14 @@ public class Bandwidth  {
         this.status = status;
     }
 
-    
-
     public Bandwidth withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间。
-     * @return updateTime
-     */
+    /** 更新时间。
+     * 
+     * @return updateTime */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -716,20 +591,14 @@ public class Bandwidth  {
         this.updateTime = updateTime;
     }
 
-    
-
     public Bandwidth withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
     }
 
-    
-
-
-    /**
-     * 线路ID。
-     * @return poolId
-     */
+    /** 线路ID。
+     * 
+     * @return poolId */
     public String getPoolId() {
         return poolId;
     }
@@ -737,8 +606,6 @@ public class Bandwidth  {
     public void setPoolId(String poolId) {
         this.poolId = poolId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -749,25 +616,35 @@ public class Bandwidth  {
             return false;
         }
         Bandwidth bandwidth = (Bandwidth) o;
-        return Objects.equals(this.bandwidthType, bandwidth.bandwidthType) &&
-            Objects.equals(this.chargeMode, bandwidth.chargeMode) &&
-            Objects.equals(this.createTime, bandwidth.createTime) &&
-            Objects.equals(this.id, bandwidth.id) &&
-            Objects.equals(this.name, bandwidth.name) &&
-            Objects.equals(this.operator, bandwidth.operator) &&
-            Objects.equals(this.publicipInfo, bandwidth.publicipInfo) &&
-            Objects.equals(this.shareType, bandwidth.shareType) &&
-            Objects.equals(this.siteId, bandwidth.siteId) &&
-            Objects.equals(this.siteInfo, bandwidth.siteInfo) &&
-            Objects.equals(this.size, bandwidth.size) &&
-            Objects.equals(this.status, bandwidth.status) &&
-            Objects.equals(this.updateTime, bandwidth.updateTime) &&
-            Objects.equals(this.poolId, bandwidth.poolId);
+        return Objects.equals(this.bandwidthType, bandwidth.bandwidthType)
+            && Objects.equals(this.chargeMode, bandwidth.chargeMode)
+            && Objects.equals(this.createTime, bandwidth.createTime) && Objects.equals(this.id, bandwidth.id)
+            && Objects.equals(this.name, bandwidth.name) && Objects.equals(this.operator, bandwidth.operator)
+            && Objects.equals(this.publicipInfo, bandwidth.publicipInfo)
+            && Objects.equals(this.shareType, bandwidth.shareType) && Objects.equals(this.siteId, bandwidth.siteId)
+            && Objects.equals(this.siteInfo, bandwidth.siteInfo) && Objects.equals(this.size, bandwidth.size)
+            && Objects.equals(this.status, bandwidth.status) && Objects.equals(this.updateTime, bandwidth.updateTime)
+            && Objects.equals(this.poolId, bandwidth.poolId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(bandwidthType, chargeMode, createTime, id, name, operator, publicipInfo, shareType, siteId, siteInfo, size, status, updateTime, poolId);
+        return Objects.hash(bandwidthType,
+            chargeMode,
+            createTime,
+            id,
+            name,
+            operator,
+            publicipInfo,
+            shareType,
+            siteId,
+            siteInfo,
+            size,
+            status,
+            updateTime,
+            poolId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -789,16 +666,13 @@ public class Bandwidth  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

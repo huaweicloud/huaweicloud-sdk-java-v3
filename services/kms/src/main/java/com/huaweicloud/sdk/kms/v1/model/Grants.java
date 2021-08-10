@@ -1,61 +1,44 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Grants
- */
-public class Grants  {
-
-
+/** Grants */
+public class Grants {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_id")
-    
+    @JsonProperty(value = "key_id")
+
     private String keyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="grant_id")
-    
+    @JsonProperty(value = "grant_id")
+
     private String grantId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="grantee_principal")
-    
+    @JsonProperty(value = "grantee_principal")
+
     private String granteePrincipal;
-    /**
-     * 授权类型。 有效值：“user”，“domain”。
-     */
+
+    /** 授权类型。 有效值：“user”，“domain”。 */
     public static final class GranteePrincipalTypeEnum {
 
-        
-        /**
-         * Enum USER for value: "user"
-         */
+        /** Enum USER for value: "user" */
         public static final GranteePrincipalTypeEnum USER = new GranteePrincipalTypeEnum("user");
-        
-        /**
-         * Enum DOMAIN for value: "domain"
-         */
+
+        /** Enum DOMAIN for value: "domain" */
         public static final GranteePrincipalTypeEnum DOMAIN = new GranteePrincipalTypeEnum("domain");
-        
 
         private static final Map<String, GranteePrincipalTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -84,7 +67,7 @@ public class Grants  {
 
         @JsonCreator
         public static GranteePrincipalTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             GranteePrincipalTypeEnum result = STATIC_FIELDS.get(value);
@@ -95,7 +78,7 @@ public class Grants  {
         }
 
         public static GranteePrincipalTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             GranteePrincipalTypeEnum result = STATIC_FIELDS.get(value);
@@ -119,40 +102,34 @@ public class Grants  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="grantee_principal_type")
-    
+    @JsonProperty(value = "grantee_principal_type")
+
     private GranteePrincipalTypeEnum granteePrincipalType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operations")
-    
+    @JsonProperty(value = "operations")
+
     private List<String> operations = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="issuing_principal")
-    
+    @JsonProperty(value = "issuing_principal")
+
     private String issuingPrincipal;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creation_date")
-    
+    @JsonProperty(value = "creation_date")
+
     private String creationDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="retiring_principal")
-    
+    @JsonProperty(value = "retiring_principal")
+
     private String retiringPrincipal;
 
     public Grants withKeyId(String keyId) {
@@ -160,13 +137,9 @@ public class Grants  {
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥ID。
-     * @return keyId
-     */
+    /** 密钥ID。
+     * 
+     * @return keyId */
     public String getKeyId() {
         return keyId;
     }
@@ -175,20 +148,14 @@ public class Grants  {
         this.keyId = keyId;
     }
 
-    
-
     public Grants withGrantId(String grantId) {
         this.grantId = grantId;
         return this;
     }
 
-    
-
-
-    /**
-     * 授权ID，64字节。
-     * @return grantId
-     */
+    /** 授权ID，64字节。
+     * 
+     * @return grantId */
     public String getGrantId() {
         return grantId;
     }
@@ -197,20 +164,14 @@ public class Grants  {
         this.grantId = grantId;
     }
 
-    
-
     public Grants withGranteePrincipal(String granteePrincipal) {
         this.granteePrincipal = granteePrincipal;
         return this;
     }
 
-    
-
-
-    /**
-     * 被授权用户ID，1~64字节，满足正则匹配“^[a-zA-Z0-9]{1，64}$”。 例如：0d0466b00d0466b00d0466b00d0466b0
-     * @return granteePrincipal
-     */
+    /** 被授权用户ID，1~64字节，满足正则匹配“^[a-zA-Z0-9]{1，64}$”。 例如：0d0466b00d0466b00d0466b00d0466b0
+     * 
+     * @return granteePrincipal */
     public String getGranteePrincipal() {
         return granteePrincipal;
     }
@@ -219,20 +180,14 @@ public class Grants  {
         this.granteePrincipal = granteePrincipal;
     }
 
-    
-
     public Grants withGranteePrincipalType(GranteePrincipalTypeEnum granteePrincipalType) {
         this.granteePrincipalType = granteePrincipalType;
         return this;
     }
 
-    
-
-
-    /**
-     * 授权类型。 有效值：“user”，“domain”。
-     * @return granteePrincipalType
-     */
+    /** 授权类型。 有效值：“user”，“domain”。
+     * 
+     * @return granteePrincipalType */
     public GranteePrincipalTypeEnum getGranteePrincipalType() {
         return granteePrincipalType;
     }
@@ -241,16 +196,13 @@ public class Grants  {
         this.granteePrincipalType = granteePrincipalType;
     }
 
-    
-
     public Grants withOperations(List<String> operations) {
         this.operations = operations;
         return this;
     }
 
-    
     public Grants addOperationsItem(String operationsItem) {
-        if(this.operations == null) {
+        if (this.operations == null) {
             this.operations = new ArrayList<>();
         }
         this.operations.add(operationsItem);
@@ -258,17 +210,18 @@ public class Grants  {
     }
 
     public Grants withOperations(Consumer<List<String>> operationsSetter) {
-        if(this.operations == null) {
+        if (this.operations == null) {
             this.operations = new ArrayList<>();
         }
         operationsSetter.accept(this.operations);
         return this;
     }
 
-    /**
-     * 授权允许的操作列表。 有效的值：“create-datakey”，“create-datakey-without-plaintext”，“encrypt-datakey”，“decrypt-datakey”，“describe-key”，“create-grant”，“retire-grant”，“encrypt-data”，“decrypt-data”。 有效值不能仅为“create-grant”。
-     * @return operations
-     */
+    /** 授权允许的操作列表。
+     * 有效的值：“create-datakey”，“create-datakey-without-plaintext”，“encrypt-datakey”，“decrypt-datakey”，“describe-key”，“create-grant”，“retire-grant”，“encrypt-data”，“decrypt-data”。
+     * 有效值不能仅为“create-grant”。
+     * 
+     * @return operations */
     public List<String> getOperations() {
         return operations;
     }
@@ -277,20 +230,14 @@ public class Grants  {
         this.operations = operations;
     }
 
-    
-
     public Grants withIssuingPrincipal(String issuingPrincipal) {
         this.issuingPrincipal = issuingPrincipal;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建授权用户ID，1~64字节，满足正则匹配“^[a-zA-Z0-9]{1，64}$”。 例如：0d0466b00d0466b00d0466b00d0466b0
-     * @return issuingPrincipal
-     */
+    /** 创建授权用户ID，1~64字节，满足正则匹配“^[a-zA-Z0-9]{1，64}$”。 例如：0d0466b00d0466b00d0466b00d0466b0
+     * 
+     * @return issuingPrincipal */
     public String getIssuingPrincipal() {
         return issuingPrincipal;
     }
@@ -299,20 +246,14 @@ public class Grants  {
         this.issuingPrincipal = issuingPrincipal;
     }
 
-    
-
     public Grants withCreationDate(String creationDate) {
         this.creationDate = creationDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间，时间戳，即从1970年1月1日至该时间的总秒数。 例如：1497341531000
-     * @return creationDate
-     */
+    /** 创建时间，时间戳，即从1970年1月1日至该时间的总秒数。 例如：1497341531000
+     * 
+     * @return creationDate */
     public String getCreationDate() {
         return creationDate;
     }
@@ -321,20 +262,14 @@ public class Grants  {
         this.creationDate = creationDate;
     }
 
-    
-
     public Grants withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 授权名字，取值1到255字符，满足正则匹配“^[a-zA-Z0-9:/_-]{1,255}$”。
-     * @return name
-     */
+    /** 授权名字，取值1到255字符，满足正则匹配“^[a-zA-Z0-9:/_-]{1,255}$”。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -343,20 +278,14 @@ public class Grants  {
         this.name = name;
     }
 
-    
-
     public Grants withRetiringPrincipal(String retiringPrincipal) {
         this.retiringPrincipal = retiringPrincipal;
         return this;
     }
 
-    
-
-
-    /**
-     * 可退役授权的用户ID，1~64字节，满足正则匹配“^[a-zA-Z0-9]{1，64}$”。 例如：0d0466b00d0466b00d0466b00d0466b0
-     * @return retiringPrincipal
-     */
+    /** 可退役授权的用户ID，1~64字节，满足正则匹配“^[a-zA-Z0-9]{1，64}$”。 例如：0d0466b00d0466b00d0466b00d0466b0
+     * 
+     * @return retiringPrincipal */
     public String getRetiringPrincipal() {
         return retiringPrincipal;
     }
@@ -364,8 +293,6 @@ public class Grants  {
     public void setRetiringPrincipal(String retiringPrincipal) {
         this.retiringPrincipal = retiringPrincipal;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -376,20 +303,28 @@ public class Grants  {
             return false;
         }
         Grants grants = (Grants) o;
-        return Objects.equals(this.keyId, grants.keyId) &&
-            Objects.equals(this.grantId, grants.grantId) &&
-            Objects.equals(this.granteePrincipal, grants.granteePrincipal) &&
-            Objects.equals(this.granteePrincipalType, grants.granteePrincipalType) &&
-            Objects.equals(this.operations, grants.operations) &&
-            Objects.equals(this.issuingPrincipal, grants.issuingPrincipal) &&
-            Objects.equals(this.creationDate, grants.creationDate) &&
-            Objects.equals(this.name, grants.name) &&
-            Objects.equals(this.retiringPrincipal, grants.retiringPrincipal);
+        return Objects.equals(this.keyId, grants.keyId) && Objects.equals(this.grantId, grants.grantId)
+            && Objects.equals(this.granteePrincipal, grants.granteePrincipal)
+            && Objects.equals(this.granteePrincipalType, grants.granteePrincipalType)
+            && Objects.equals(this.operations, grants.operations)
+            && Objects.equals(this.issuingPrincipal, grants.issuingPrincipal)
+            && Objects.equals(this.creationDate, grants.creationDate) && Objects.equals(this.name, grants.name)
+            && Objects.equals(this.retiringPrincipal, grants.retiringPrincipal);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(keyId, grantId, granteePrincipal, granteePrincipalType, operations, issuingPrincipal, creationDate, name, retiringPrincipal);
+        return Objects.hash(keyId,
+            grantId,
+            granteePrincipal,
+            granteePrincipalType,
+            operations,
+            issuingPrincipal,
+            creationDate,
+            name,
+            retiringPrincipal);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -406,16 +341,13 @@ public class Grants  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

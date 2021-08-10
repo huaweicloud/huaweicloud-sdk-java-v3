@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteBlockchainRequest  {
-
-
+/** Request Object */
+public class DeleteBlockchainRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="blockchain_id")
-    
+    @JsonProperty(value = "blockchain_id")
+
     private String blockchainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_delete_storage")
-    
+    @JsonProperty(value = "is_delete_storage")
+
     private Boolean isDeleteStorage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_delete_obs")
-    
+    @JsonProperty(value = "is_delete_obs")
+
     private Boolean isDeleteObs;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_delete_resource")
-    
+    @JsonProperty(value = "is_delete_resource")
+
     private Boolean isDeleteResource;
 
     public DeleteBlockchainRequest withBlockchainId(String blockchainId) {
@@ -46,13 +33,9 @@ public class DeleteBlockchainRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * bcs 服务id
-     * @return blockchainId
-     */
+    /** bcs 服务id
+     * 
+     * @return blockchainId */
     public String getBlockchainId() {
         return blockchainId;
     }
@@ -61,20 +44,14 @@ public class DeleteBlockchainRequest  {
         this.blockchainId = blockchainId;
     }
 
-    
-
     public DeleteBlockchainRequest withIsDeleteStorage(Boolean isDeleteStorage) {
         this.isDeleteStorage = isDeleteStorage;
         return this;
     }
 
-    
-
-
-    /**
-     * [是否删除存储，IEF模式下不用填写](tag:online)[是否删除存储](tag:hcs)
-     * @return isDeleteStorage
-     */
+    /** [是否删除存储，IEF模式下不用填写](tag:online)[是否删除存储](tag:hcs)
+     * 
+     * @return isDeleteStorage */
     public Boolean getIsDeleteStorage() {
         return isDeleteStorage;
     }
@@ -83,20 +60,14 @@ public class DeleteBlockchainRequest  {
         this.isDeleteStorage = isDeleteStorage;
     }
 
-    
-
     public DeleteBlockchainRequest withIsDeleteObs(Boolean isDeleteObs) {
         this.isDeleteObs = isDeleteObs;
         return this;
     }
 
-    
-
-
-    /**
-     * [是否删除obs，IEF模式下不用填写](tag:online)[是否删除obs](tag:hcs)
-     * @return isDeleteObs
-     */
+    /** [是否删除obs，IEF模式下不用填写](tag:online)[是否删除obs](tag:hcs)
+     * 
+     * @return isDeleteObs */
     public Boolean getIsDeleteObs() {
         return isDeleteObs;
     }
@@ -105,20 +76,14 @@ public class DeleteBlockchainRequest  {
         this.isDeleteObs = isDeleteObs;
     }
 
-    
-
     public DeleteBlockchainRequest withIsDeleteResource(Boolean isDeleteResource) {
         this.isDeleteResource = isDeleteResource;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否删除底层CCE资源
-     * @return isDeleteResource
-     */
+    /** 是否删除底层CCE资源
+     * 
+     * @return isDeleteResource */
     public Boolean getIsDeleteResource() {
         return isDeleteResource;
     }
@@ -126,8 +91,6 @@ public class DeleteBlockchainRequest  {
     public void setIsDeleteResource(Boolean isDeleteResource) {
         this.isDeleteResource = isDeleteResource;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class DeleteBlockchainRequest  {
             return false;
         }
         DeleteBlockchainRequest deleteBlockchainRequest = (DeleteBlockchainRequest) o;
-        return Objects.equals(this.blockchainId, deleteBlockchainRequest.blockchainId) &&
-            Objects.equals(this.isDeleteStorage, deleteBlockchainRequest.isDeleteStorage) &&
-            Objects.equals(this.isDeleteObs, deleteBlockchainRequest.isDeleteObs) &&
-            Objects.equals(this.isDeleteResource, deleteBlockchainRequest.isDeleteResource);
+        return Objects.equals(this.blockchainId, deleteBlockchainRequest.blockchainId)
+            && Objects.equals(this.isDeleteStorage, deleteBlockchainRequest.isDeleteStorage)
+            && Objects.equals(this.isDeleteObs, deleteBlockchainRequest.isDeleteObs)
+            && Objects.equals(this.isDeleteResource, deleteBlockchainRequest.isDeleteResource);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(blockchainId, isDeleteStorage, isDeleteObs, isDeleteResource);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class DeleteBlockchainRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

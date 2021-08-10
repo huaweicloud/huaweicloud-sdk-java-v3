@@ -1,79 +1,57 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.PrecheckResult;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 获取预检查结果返回体
- */
-public class QueryPreCheckResp  {
-
-
+/** 获取预检查结果返回体 */
+public class QueryPreCheckResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="precheck_id")
-    
+    @JsonProperty(value = "precheck_id")
+
     private String precheckId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="result")
-    
+    @JsonProperty(value = "result")
+
     private Boolean result;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="process")
-    
+    @JsonProperty(value = "process")
+
     private String process;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_passed_rate")
-    
+    @JsonProperty(value = "total_passed_rate")
+
     private String totalPassedRate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rds_instance_id")
-    
+    @JsonProperty(value = "rds_instance_id")
+
     private String rdsInstanceId;
-    /**
-     * 迁移方向
-     */
+
+    /** 迁移方向 */
     public static final class JobDirectionEnum {
 
-        
-        /**
-         * Enum UP_ for value: "up-入云 灾备场景时对应本云为备"
-         */
+        /** Enum UP_ for value: "up-入云 灾备场景时对应本云为备" */
         public static final JobDirectionEnum UP_ = new JobDirectionEnum("up-入云 灾备场景时对应本云为备");
-        
-        /**
-         * Enum DOWN_ for value: "down-出云 灾备场景时对应本云为主"
-         */
+
+        /** Enum DOWN_ for value: "down-出云 灾备场景时对应本云为主" */
         public static final JobDirectionEnum DOWN_ = new JobDirectionEnum("down-出云 灾备场景时对应本云为主");
-        
-        /**
-         * Enum NON_DBS_ for value: "non-dbs-自建"
-         */
+
+        /** Enum NON_DBS_ for value: "non-dbs-自建" */
         public static final JobDirectionEnum NON_DBS_ = new JobDirectionEnum("non-dbs-自建");
-        
 
         private static final Map<String, JobDirectionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -103,7 +81,7 @@ public class QueryPreCheckResp  {
 
         @JsonCreator
         public static JobDirectionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             JobDirectionEnum result = STATIC_FIELDS.get(value);
@@ -114,7 +92,7 @@ public class QueryPreCheckResp  {
         }
 
         public static JobDirectionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             JobDirectionEnum result = STATIC_FIELDS.get(value);
@@ -138,28 +116,24 @@ public class QueryPreCheckResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_direction")
-    
+    @JsonProperty(value = "job_direction")
+
     private JobDirectionEnum jobDirection;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="precheck_result")
-    
+    @JsonProperty(value = "precheck_result")
+
     private List<PrecheckResult> precheckResult = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_msg")
-    
+    @JsonProperty(value = "error_msg")
+
     private String errorMsg;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
+
     private String errorCode;
 
     public QueryPreCheckResp withPrecheckId(String precheckId) {
@@ -167,13 +141,9 @@ public class QueryPreCheckResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 预检查id。
-     * @return precheckId
-     */
+    /** 预检查id。
+     * 
+     * @return precheckId */
     public String getPrecheckId() {
         return precheckId;
     }
@@ -182,20 +152,14 @@ public class QueryPreCheckResp  {
         this.precheckId = precheckId;
     }
 
-    
-
     public QueryPreCheckResp withResult(Boolean result) {
         this.result = result;
         return this;
     }
 
-    
-
-
-    /**
-     * 返回的预检查结果是否通过。true表示预检查通过，通过后才可进行启动任务。
-     * @return result
-     */
+    /** 返回的预检查结果是否通过。true表示预检查通过，通过后才可进行启动任务。
+     * 
+     * @return result */
     public Boolean getResult() {
         return result;
     }
@@ -204,20 +168,14 @@ public class QueryPreCheckResp  {
         this.result = result;
     }
 
-    
-
     public QueryPreCheckResp withProcess(String process) {
         this.process = process;
         return this;
     }
 
-    
-
-
-    /**
-     * 预检查进度百分比。
-     * @return process
-     */
+    /** 预检查进度百分比。
+     * 
+     * @return process */
     public String getProcess() {
         return process;
     }
@@ -226,20 +184,14 @@ public class QueryPreCheckResp  {
         this.process = process;
     }
 
-    
-
     public QueryPreCheckResp withTotalPassedRate(String totalPassedRate) {
         this.totalPassedRate = totalPassedRate;
         return this;
     }
 
-    
-
-
-    /**
-     * 预检查通过百分比。
-     * @return totalPassedRate
-     */
+    /** 预检查通过百分比。
+     * 
+     * @return totalPassedRate */
     public String getTotalPassedRate() {
         return totalPassedRate;
     }
@@ -248,20 +200,14 @@ public class QueryPreCheckResp  {
         this.totalPassedRate = totalPassedRate;
     }
 
-    
-
     public QueryPreCheckResp withRdsInstanceId(String rdsInstanceId) {
         this.rdsInstanceId = rdsInstanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * RDS实例id。
-     * @return rdsInstanceId
-     */
+    /** RDS实例id。
+     * 
+     * @return rdsInstanceId */
     public String getRdsInstanceId() {
         return rdsInstanceId;
     }
@@ -270,20 +216,14 @@ public class QueryPreCheckResp  {
         this.rdsInstanceId = rdsInstanceId;
     }
 
-    
-
     public QueryPreCheckResp withJobDirection(JobDirectionEnum jobDirection) {
         this.jobDirection = jobDirection;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移方向
-     * @return jobDirection
-     */
+    /** 迁移方向
+     * 
+     * @return jobDirection */
     public JobDirectionEnum getJobDirection() {
         return jobDirection;
     }
@@ -292,16 +232,13 @@ public class QueryPreCheckResp  {
         this.jobDirection = jobDirection;
     }
 
-    
-
     public QueryPreCheckResp withPrecheckResult(List<PrecheckResult> precheckResult) {
         this.precheckResult = precheckResult;
         return this;
     }
 
-    
     public QueryPreCheckResp addPrecheckResultItem(PrecheckResult precheckResultItem) {
-        if(this.precheckResult == null) {
+        if (this.precheckResult == null) {
             this.precheckResult = new ArrayList<>();
         }
         this.precheckResult.add(precheckResultItem);
@@ -309,17 +246,16 @@ public class QueryPreCheckResp  {
     }
 
     public QueryPreCheckResp withPrecheckResult(Consumer<List<PrecheckResult>> precheckResultSetter) {
-        if(this.precheckResult == null) {
+        if (this.precheckResult == null) {
             this.precheckResult = new ArrayList<>();
         }
         precheckResultSetter.accept(this.precheckResult);
         return this;
     }
 
-    /**
-     * 预检查各项结果。
-     * @return precheckResult
-     */
+    /** 预检查各项结果。
+     * 
+     * @return precheckResult */
     public List<PrecheckResult> getPrecheckResult() {
         return precheckResult;
     }
@@ -328,20 +264,14 @@ public class QueryPreCheckResp  {
         this.precheckResult = precheckResult;
     }
 
-    
-
     public QueryPreCheckResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误信息
-     * @return errorMsg
-     */
+    /** 错误信息
+     * 
+     * @return errorMsg */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -350,20 +280,14 @@ public class QueryPreCheckResp  {
         this.errorMsg = errorMsg;
     }
 
-    
-
     public QueryPreCheckResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务错误码。
-     * @return errorCode
-     */
+    /** 任务错误码。
+     * 
+     * @return errorCode */
     public String getErrorCode() {
         return errorCode;
     }
@@ -371,8 +295,6 @@ public class QueryPreCheckResp  {
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -383,20 +305,30 @@ public class QueryPreCheckResp  {
             return false;
         }
         QueryPreCheckResp queryPreCheckResp = (QueryPreCheckResp) o;
-        return Objects.equals(this.precheckId, queryPreCheckResp.precheckId) &&
-            Objects.equals(this.result, queryPreCheckResp.result) &&
-            Objects.equals(this.process, queryPreCheckResp.process) &&
-            Objects.equals(this.totalPassedRate, queryPreCheckResp.totalPassedRate) &&
-            Objects.equals(this.rdsInstanceId, queryPreCheckResp.rdsInstanceId) &&
-            Objects.equals(this.jobDirection, queryPreCheckResp.jobDirection) &&
-            Objects.equals(this.precheckResult, queryPreCheckResp.precheckResult) &&
-            Objects.equals(this.errorMsg, queryPreCheckResp.errorMsg) &&
-            Objects.equals(this.errorCode, queryPreCheckResp.errorCode);
+        return Objects.equals(this.precheckId, queryPreCheckResp.precheckId)
+            && Objects.equals(this.result, queryPreCheckResp.result)
+            && Objects.equals(this.process, queryPreCheckResp.process)
+            && Objects.equals(this.totalPassedRate, queryPreCheckResp.totalPassedRate)
+            && Objects.equals(this.rdsInstanceId, queryPreCheckResp.rdsInstanceId)
+            && Objects.equals(this.jobDirection, queryPreCheckResp.jobDirection)
+            && Objects.equals(this.precheckResult, queryPreCheckResp.precheckResult)
+            && Objects.equals(this.errorMsg, queryPreCheckResp.errorMsg)
+            && Objects.equals(this.errorCode, queryPreCheckResp.errorCode);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(precheckId, result, process, totalPassedRate, rdsInstanceId, jobDirection, precheckResult, errorMsg, errorCode);
+        return Objects.hash(precheckId,
+            result,
+            process,
+            totalPassedRate,
+            rdsInstanceId,
+            jobDirection,
+            precheckResult,
+            errorMsg,
+            errorCode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -413,16 +345,13 @@ public class QueryPreCheckResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dns.v2.model.UpdateRecordSetsReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateRecordSetsRequest  {
-
-
+/** Request Object */
+public class UpdateRecordSetsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="zone_id")
-    
+    @JsonProperty(value = "zone_id")
+
     private String zoneId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="recordset_id")
-    
+    @JsonProperty(value = "recordset_id")
+
     private String recordsetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateRecordSetsReq body;
 
     public UpdateRecordSetsRequest withZoneId(String zoneId) {
@@ -41,13 +29,9 @@ public class UpdateRecordSetsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * Get zoneId
-     * @return zoneId
-     */
+    /** Get zoneId
+     * 
+     * @return zoneId */
     public String getZoneId() {
         return zoneId;
     }
@@ -56,20 +40,14 @@ public class UpdateRecordSetsRequest  {
         this.zoneId = zoneId;
     }
 
-    
-
     public UpdateRecordSetsRequest withRecordsetId(String recordsetId) {
         this.recordsetId = recordsetId;
         return this;
     }
 
-    
-
-
-    /**
-     * Get recordsetId
-     * @return recordsetId
-     */
+    /** Get recordsetId
+     * 
+     * @return recordsetId */
     public String getRecordsetId() {
         return recordsetId;
     }
@@ -78,27 +56,23 @@ public class UpdateRecordSetsRequest  {
         this.recordsetId = recordsetId;
     }
 
-    
-
     public UpdateRecordSetsRequest withBody(UpdateRecordSetsReq body) {
         this.body = body;
         return this;
     }
 
     public UpdateRecordSetsRequest withBody(Consumer<UpdateRecordSetsReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateRecordSetsReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateRecordSetsReq getBody() {
         return body;
     }
@@ -106,8 +80,6 @@ public class UpdateRecordSetsRequest  {
     public void setBody(UpdateRecordSetsReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class UpdateRecordSetsRequest  {
             return false;
         }
         UpdateRecordSetsRequest updateRecordSetsRequest = (UpdateRecordSetsRequest) o;
-        return Objects.equals(this.zoneId, updateRecordSetsRequest.zoneId) &&
-            Objects.equals(this.recordsetId, updateRecordSetsRequest.recordsetId) &&
-            Objects.equals(this.body, updateRecordSetsRequest.body);
+        return Objects.equals(this.zoneId, updateRecordSetsRequest.zoneId)
+            && Objects.equals(this.recordsetId, updateRecordSetsRequest.recordsetId)
+            && Objects.equals(this.body, updateRecordSetsRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(zoneId, recordsetId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class UpdateRecordSetsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

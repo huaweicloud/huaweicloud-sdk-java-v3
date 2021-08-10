@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ConfigurationParameterList
- */
-public class ConfigurationParameterList  {
-
-
+/** ConfigurationParameterList */
+public class ConfigurationParameterList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private String value;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="need_restart")
-    
+    @JsonProperty(value = "need_restart")
+
     private String needRestart;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="read_only")
-    
+    @JsonProperty(value = "read_only")
+
     private String readOnly;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value_range")
-    
+    @JsonProperty(value = "value_range")
+
     private String valueRange;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_type")
-    
+    @JsonProperty(value = "data_type")
+
     private String dataType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public ConfigurationParameterList withName(String name) {
@@ -64,13 +48,9 @@ public class ConfigurationParameterList  {
         return this;
     }
 
-    
-
-
-    /**
-     * 参数名称。
-     * @return name
-     */
+    /** 参数名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -79,20 +59,14 @@ public class ConfigurationParameterList  {
         this.name = name;
     }
 
-    
-
     public ConfigurationParameterList withValue(String value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数值。
-     * @return value
-     */
+    /** 参数值。
+     * 
+     * @return value */
     public String getValue() {
         return value;
     }
@@ -101,20 +75,14 @@ public class ConfigurationParameterList  {
         this.value = value;
     }
 
-    
-
     public ConfigurationParameterList withNeedRestart(String needRestart) {
         this.needRestart = needRestart;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否需要重启实例。
-     * @return needRestart
-     */
+    /** 是否需要重启实例。
+     * 
+     * @return needRestart */
     public String getNeedRestart() {
         return needRestart;
     }
@@ -123,20 +91,14 @@ public class ConfigurationParameterList  {
         this.needRestart = needRestart;
     }
 
-    
-
     public ConfigurationParameterList withReadOnly(String readOnly) {
         this.readOnly = readOnly;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数是否只读。
-     * @return readOnly
-     */
+    /** 参数是否只读。
+     * 
+     * @return readOnly */
     public String getReadOnly() {
         return readOnly;
     }
@@ -145,20 +107,14 @@ public class ConfigurationParameterList  {
         this.readOnly = readOnly;
     }
 
-    
-
     public ConfigurationParameterList withValueRange(String valueRange) {
         this.valueRange = valueRange;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数取值范围。
-     * @return valueRange
-     */
+    /** 参数取值范围。
+     * 
+     * @return valueRange */
     public String getValueRange() {
         return valueRange;
     }
@@ -167,20 +123,14 @@ public class ConfigurationParameterList  {
         this.valueRange = valueRange;
     }
 
-    
-
     public ConfigurationParameterList withDataType(String dataType) {
         this.dataType = dataType;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数类型。
-     * @return dataType
-     */
+    /** 参数类型。
+     * 
+     * @return dataType */
     public String getDataType() {
         return dataType;
     }
@@ -189,20 +139,14 @@ public class ConfigurationParameterList  {
         this.dataType = dataType;
     }
 
-    
-
     public ConfigurationParameterList withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数描述。
-     * @return description
-     */
+    /** 参数描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -210,8 +154,6 @@ public class ConfigurationParameterList  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -222,18 +164,20 @@ public class ConfigurationParameterList  {
             return false;
         }
         ConfigurationParameterList configurationParameterList = (ConfigurationParameterList) o;
-        return Objects.equals(this.name, configurationParameterList.name) &&
-            Objects.equals(this.value, configurationParameterList.value) &&
-            Objects.equals(this.needRestart, configurationParameterList.needRestart) &&
-            Objects.equals(this.readOnly, configurationParameterList.readOnly) &&
-            Objects.equals(this.valueRange, configurationParameterList.valueRange) &&
-            Objects.equals(this.dataType, configurationParameterList.dataType) &&
-            Objects.equals(this.description, configurationParameterList.description);
+        return Objects.equals(this.name, configurationParameterList.name)
+            && Objects.equals(this.value, configurationParameterList.value)
+            && Objects.equals(this.needRestart, configurationParameterList.needRestart)
+            && Objects.equals(this.readOnly, configurationParameterList.readOnly)
+            && Objects.equals(this.valueRange, configurationParameterList.valueRange)
+            && Objects.equals(this.dataType, configurationParameterList.dataType)
+            && Objects.equals(this.description, configurationParameterList.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, value, needRestart, readOnly, valueRange, dataType, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,16 +192,13 @@ public class ConfigurationParameterList  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

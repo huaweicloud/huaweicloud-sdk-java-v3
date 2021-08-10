@@ -1,55 +1,39 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.PolicyTriggerPropertiesResp;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * PolicyTriggerResp
- */
-public class PolicyTriggerResp  {
-
-
+/** PolicyTriggerResp */
+public class PolicyTriggerResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="properties")
-    
+    @JsonProperty(value = "properties")
+
     private PolicyTriggerPropertiesResp properties;
-    /**
-     * 调度器类型,目前只支持 time: 定时调度。
-     */
+
+    /** 调度器类型,目前只支持 time: 定时调度。 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum TIME for value: "time"
-         */
+        /** Enum TIME for value: "time" */
         public static final TypeEnum TIME = new TypeEnum("time");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -77,7 +61,7 @@ public class PolicyTriggerResp  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -88,7 +72,7 @@ public class PolicyTriggerResp  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -112,10 +96,9 @@ public class PolicyTriggerResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
     public PolicyTriggerResp withId(String id) {
@@ -123,13 +106,9 @@ public class PolicyTriggerResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 调度器id
-     * @return id
-     */
+    /** 调度器id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -138,20 +117,14 @@ public class PolicyTriggerResp  {
         this.id = id;
     }
 
-    
-
     public PolicyTriggerResp withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 调度器名称
-     * @return name
-     */
+    /** 调度器名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -160,27 +133,23 @@ public class PolicyTriggerResp  {
         this.name = name;
     }
 
-    
-
     public PolicyTriggerResp withProperties(PolicyTriggerPropertiesResp properties) {
         this.properties = properties;
         return this;
     }
 
     public PolicyTriggerResp withProperties(Consumer<PolicyTriggerPropertiesResp> propertiesSetter) {
-        if(this.properties == null ){
+        if (this.properties == null) {
             this.properties = new PolicyTriggerPropertiesResp();
             propertiesSetter.accept(this.properties);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get properties
-     * @return properties
-     */
+    /** Get properties
+     * 
+     * @return properties */
     public PolicyTriggerPropertiesResp getProperties() {
         return properties;
     }
@@ -189,20 +158,14 @@ public class PolicyTriggerResp  {
         this.properties = properties;
     }
 
-    
-
     public PolicyTriggerResp withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 调度器类型,目前只支持 time: 定时调度。
-     * @return type
-     */
+    /** 调度器类型,目前只支持 time: 定时调度。
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -210,8 +173,6 @@ public class PolicyTriggerResp  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -222,15 +183,16 @@ public class PolicyTriggerResp  {
             return false;
         }
         PolicyTriggerResp policyTriggerResp = (PolicyTriggerResp) o;
-        return Objects.equals(this.id, policyTriggerResp.id) &&
-            Objects.equals(this.name, policyTriggerResp.name) &&
-            Objects.equals(this.properties, policyTriggerResp.properties) &&
-            Objects.equals(this.type, policyTriggerResp.type);
+        return Objects.equals(this.id, policyTriggerResp.id) && Objects.equals(this.name, policyTriggerResp.name)
+            && Objects.equals(this.properties, policyTriggerResp.properties)
+            && Objects.equals(this.type, policyTriggerResp.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, properties, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -242,16 +204,13 @@ public class PolicyTriggerResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

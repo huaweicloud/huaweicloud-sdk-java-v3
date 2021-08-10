@@ -1,48 +1,34 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * AclApiBindingCreate
- */
-public class AclApiBindingCreate  {
-
-
+/** AclApiBindingCreate */
+public class AclApiBindingCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="acl_id")
-    
+    @JsonProperty(value = "acl_id")
+
     private String aclId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publish_ids")
-    
+    @JsonProperty(value = "publish_ids")
+
     private List<String> publishIds = null;
-    
+
     public AclApiBindingCreate withAclId(String aclId) {
         this.aclId = aclId;
         return this;
     }
 
-    
-
-
-    /**
-     * ACL策略编号
-     * @return aclId
-     */
+    /** ACL策略编号
+     * 
+     * @return aclId */
     public String getAclId() {
         return aclId;
     }
@@ -51,16 +37,13 @@ public class AclApiBindingCreate  {
         this.aclId = aclId;
     }
 
-    
-
     public AclApiBindingCreate withPublishIds(List<String> publishIds) {
         this.publishIds = publishIds;
         return this;
     }
 
-    
     public AclApiBindingCreate addPublishIdsItem(String publishIdsItem) {
-        if(this.publishIds == null) {
+        if (this.publishIds == null) {
             this.publishIds = new ArrayList<>();
         }
         this.publishIds.add(publishIdsItem);
@@ -68,17 +51,16 @@ public class AclApiBindingCreate  {
     }
 
     public AclApiBindingCreate withPublishIds(Consumer<List<String>> publishIdsSetter) {
-        if(this.publishIds == null) {
+        if (this.publishIds == null) {
             this.publishIds = new ArrayList<>();
         }
         publishIdsSetter.accept(this.publishIds);
         return this;
     }
 
-    /**
-     * API发布记录编号
-     * @return publishIds
-     */
+    /** API发布记录编号
+     * 
+     * @return publishIds */
     public List<String> getPublishIds() {
         return publishIds;
     }
@@ -86,8 +68,6 @@ public class AclApiBindingCreate  {
     public void setPublishIds(List<String> publishIds) {
         this.publishIds = publishIds;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -98,13 +78,15 @@ public class AclApiBindingCreate  {
             return false;
         }
         AclApiBindingCreate aclApiBindingCreate = (AclApiBindingCreate) o;
-        return Objects.equals(this.aclId, aclApiBindingCreate.aclId) &&
-            Objects.equals(this.publishIds, aclApiBindingCreate.publishIds);
+        return Objects.equals(this.aclId, aclApiBindingCreate.aclId)
+            && Objects.equals(this.publishIds, aclApiBindingCreate.publishIds);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(aclId, publishIds);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,16 +96,13 @@ public class AclApiBindingCreate  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

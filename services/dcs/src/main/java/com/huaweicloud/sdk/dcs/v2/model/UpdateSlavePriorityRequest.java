@@ -1,45 +1,32 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dcs.v2.model.PriorityBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateSlavePriorityRequest  {
-
-
+/** Request Object */
+public class UpdateSlavePriorityRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
+
     private String nodeId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private PriorityBody body;
 
     public UpdateSlavePriorityRequest withInstanceId(String instanceId) {
@@ -47,13 +34,9 @@ public class UpdateSlavePriorityRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -62,20 +45,14 @@ public class UpdateSlavePriorityRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public UpdateSlavePriorityRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 分片ID。
-     * @return groupId
-     */
+    /** 分片ID。
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -84,20 +61,14 @@ public class UpdateSlavePriorityRequest  {
         this.groupId = groupId;
     }
 
-    
-
     public UpdateSlavePriorityRequest withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点ID。
-     * @return nodeId
-     */
+    /** 节点ID。
+     * 
+     * @return nodeId */
     public String getNodeId() {
         return nodeId;
     }
@@ -106,27 +77,23 @@ public class UpdateSlavePriorityRequest  {
         this.nodeId = nodeId;
     }
 
-    
-
     public UpdateSlavePriorityRequest withBody(PriorityBody body) {
         this.body = body;
         return this;
     }
 
     public UpdateSlavePriorityRequest withBody(Consumer<PriorityBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new PriorityBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public PriorityBody getBody() {
         return body;
     }
@@ -134,8 +101,6 @@ public class UpdateSlavePriorityRequest  {
     public void setBody(PriorityBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -146,15 +111,17 @@ public class UpdateSlavePriorityRequest  {
             return false;
         }
         UpdateSlavePriorityRequest updateSlavePriorityRequest = (UpdateSlavePriorityRequest) o;
-        return Objects.equals(this.instanceId, updateSlavePriorityRequest.instanceId) &&
-            Objects.equals(this.groupId, updateSlavePriorityRequest.groupId) &&
-            Objects.equals(this.nodeId, updateSlavePriorityRequest.nodeId) &&
-            Objects.equals(this.body, updateSlavePriorityRequest.body);
+        return Objects.equals(this.instanceId, updateSlavePriorityRequest.instanceId)
+            && Objects.equals(this.groupId, updateSlavePriorityRequest.groupId)
+            && Objects.equals(this.nodeId, updateSlavePriorityRequest.nodeId)
+            && Objects.equals(this.body, updateSlavePriorityRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, groupId, nodeId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -166,16 +133,13 @@ public class UpdateSlavePriorityRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

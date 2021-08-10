@@ -1,76 +1,54 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 创建健康检查请求
- */
-public class CreateHealthmonitorReq  {
-
-
+/** 创建健康检查请求 */
+public class CreateHealthmonitorReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
+
     private String tenantId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
-    
+    @JsonProperty(value = "admin_state_up")
+
     private Boolean adminStateUp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="monitor_port")
-    
+    @JsonProperty(value = "monitor_port")
+
     private Integer monitorPort;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timeout")
-    
+    @JsonProperty(value = "timeout")
+
     private Integer timeout;
-    /**
-     * 健康检查类型
-     */
+
+    /** 健康检查类型 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum TCP for value: "TCP"
-         */
+        /** Enum TCP for value: "TCP" */
         public static final TypeEnum TCP = new TypeEnum("TCP");
-        
-        /**
-         * Enum UDP_CONNECT for value: "UDP_CONNECT"
-         */
+
+        /** Enum UDP_CONNECT for value: "UDP_CONNECT" */
         public static final TypeEnum UDP_CONNECT = new TypeEnum("UDP_CONNECT");
-        
-        /**
-         * Enum HTTP for value: "HTTP"
-         */
+
+        /** Enum HTTP for value: "HTTP" */
         public static final TypeEnum HTTP = new TypeEnum("HTTP");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -100,7 +78,7 @@ public class CreateHealthmonitorReq  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -111,7 +89,7 @@ public class CreateHealthmonitorReq  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -135,52 +113,44 @@ public class CreateHealthmonitorReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expected_codes")
-    
+    @JsonProperty(value = "expected_codes")
+
     private String expectedCodes;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_name")
-    
+    @JsonProperty(value = "domain_name")
+
     private String domainName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url_path")
-    
+    @JsonProperty(value = "url_path")
+
     private String urlPath;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="http_method")
-    
+    @JsonProperty(value = "http_method")
+
     private String httpMethod;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="delay")
-    
+    @JsonProperty(value = "delay")
+
     private Integer delay;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_retries")
-    
+    @JsonProperty(value = "max_retries")
+
     private Integer maxRetries;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pool_id")
-    
+    @JsonProperty(value = "pool_id")
+
     private String poolId;
 
     public CreateHealthmonitorReq withTenantId(String tenantId) {
@@ -188,13 +158,9 @@ public class CreateHealthmonitorReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查所在的项目ID。
-     * @return tenantId
-     */
+    /** 健康检查所在的项目ID。
+     * 
+     * @return tenantId */
     public String getTenantId() {
         return tenantId;
     }
@@ -203,20 +169,14 @@ public class CreateHealthmonitorReq  {
         this.tenantId = tenantId;
     }
 
-    
-
     public CreateHealthmonitorReq withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查名称。
-     * @return name
-     */
+    /** 健康检查名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -225,20 +185,14 @@ public class CreateHealthmonitorReq  {
         this.name = name;
     }
 
-    
-
     public CreateHealthmonitorReq withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查的管理状态；该字段虽然支持创建、更新，但实际取值决定于后端云服务器对应的弹性云服务器是否存在。该字段虽然支持创建、更新，但实际取值决定于member对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
-     * @return adminStateUp
-     */
+    /** 健康检查的管理状态；该字段虽然支持创建、更新，但实际取值决定于后端云服务器对应的弹性云服务器是否存在。该字段虽然支持创建、更新，但实际取值决定于member对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
+     * 
+     * @return adminStateUp */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -247,22 +201,14 @@ public class CreateHealthmonitorReq  {
         this.adminStateUp = adminStateUp;
     }
 
-    
-
     public CreateHealthmonitorReq withMonitorPort(Integer monitorPort) {
         this.monitorPort = monitorPort;
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查端口号。默认为空，表示使用后端云服务器组的端口。
-     * minimum: 1
-     * maximum: 65535
-     * @return monitorPort
-     */
+    /** 健康检查端口号。默认为空，表示使用后端云服务器组的端口。 minimum: 1 maximum: 65535
+     * 
+     * @return monitorPort */
     public Integer getMonitorPort() {
         return monitorPort;
     }
@@ -271,22 +217,14 @@ public class CreateHealthmonitorReq  {
         this.monitorPort = monitorPort;
     }
 
-    
-
     public CreateHealthmonitorReq withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查的超时时间。建议该值小于delay的值。
-     * minimum: 1
-     * maximum: 50
-     * @return timeout
-     */
+    /** 健康检查的超时时间。建议该值小于delay的值。 minimum: 1 maximum: 50
+     * 
+     * @return timeout */
     public Integer getTimeout() {
         return timeout;
     }
@@ -295,20 +233,14 @@ public class CreateHealthmonitorReq  {
         this.timeout = timeout;
     }
 
-    
-
     public CreateHealthmonitorReq withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查类型
-     * @return type
-     */
+    /** 健康检查类型
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -317,20 +249,14 @@ public class CreateHealthmonitorReq  {
         this.type = type;
     }
 
-    
-
     public CreateHealthmonitorReq withExpectedCodes(String expectedCodes) {
         this.expectedCodes = expectedCodes;
         return this;
     }
 
-    
-
-
-    /**
-     * 期望HTTP响应状态码，指定下列值：单值，例如200；列表，例如200，202；区间，例如200-204。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
-     * @return expectedCodes
-     */
+    /** 期望HTTP响应状态码，指定下列值：单值，例如200；列表，例如200，202；区间，例如200-204。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
+     * 
+     * @return expectedCodes */
     public String getExpectedCodes() {
         return expectedCodes;
     }
@@ -339,20 +265,14 @@ public class CreateHealthmonitorReq  {
         this.expectedCodes = expectedCodes;
     }
 
-    
-
     public CreateHealthmonitorReq withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：健康检查测试member健康状态时，发送的http请求的域名。仅当type为HTTP时生效。使用说明：默认为空，表示使用负载均衡器的vip作为http请求的目的地址。以数字或字母开头，只能包含数字、字母、’-’、’.’。
-     * @return domainName
-     */
+    /** 功能说明：健康检查测试member健康状态时，发送的http请求的域名。仅当type为HTTP时生效。使用说明：默认为空，表示使用负载均衡器的vip作为http请求的目的地址。以数字或字母开头，只能包含数字、字母、’-’、’.’。
+     * 
+     * @return domainName */
     public String getDomainName() {
         return domainName;
     }
@@ -361,20 +281,14 @@ public class CreateHealthmonitorReq  {
         this.domainName = domainName;
     }
 
-    
-
     public CreateHealthmonitorReq withUrlPath(String urlPath) {
         this.urlPath = urlPath;
         return this;
     }
 
-    
-
-
-    /**
-     * HTTP方法，可以为GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
-     * @return urlPath
-     */
+    /** HTTP方法，可以为GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
+     * 
+     * @return urlPath */
     public String getUrlPath() {
         return urlPath;
     }
@@ -383,20 +297,14 @@ public class CreateHealthmonitorReq  {
         this.urlPath = urlPath;
     }
 
-    
-
     public CreateHealthmonitorReq withHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
         return this;
     }
 
-    
-
-
-    /**
-     * HTTP方法，可以为GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
-     * @return httpMethod
-     */
+    /** HTTP方法，可以为GET、HEAD、POST、PUT、DELETE、TRACE、OPTIONS、CONNECT、PATCH。仅当type为HTTP时生效。该字段为预留字段，暂未启用。
+     * 
+     * @return httpMethod */
     public String getHttpMethod() {
         return httpMethod;
     }
@@ -405,22 +313,14 @@ public class CreateHealthmonitorReq  {
         this.httpMethod = httpMethod;
     }
 
-    
-
     public CreateHealthmonitorReq withDelay(Integer delay) {
         this.delay = delay;
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查间隔
-     * minimum: 1
-     * maximum: 50
-     * @return delay
-     */
+    /** 健康检查间隔 minimum: 1 maximum: 50
+     * 
+     * @return delay */
     public Integer getDelay() {
         return delay;
     }
@@ -429,22 +329,14 @@ public class CreateHealthmonitorReq  {
         this.delay = delay;
     }
 
-    
-
     public CreateHealthmonitorReq withMaxRetries(Integer maxRetries) {
         this.maxRetries = maxRetries;
         return this;
     }
 
-    
-
-
-    /**
-     * 最大重试次数
-     * minimum: 1
-     * maximum: 10
-     * @return maxRetries
-     */
+    /** 最大重试次数 minimum: 1 maximum: 10
+     * 
+     * @return maxRetries */
     public Integer getMaxRetries() {
         return maxRetries;
     }
@@ -453,20 +345,14 @@ public class CreateHealthmonitorReq  {
         this.maxRetries = maxRetries;
     }
 
-    
-
     public CreateHealthmonitorReq withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查关联的后端云服务器组ID
-     * @return poolId
-     */
+    /** 健康检查关联的后端云服务器组ID
+     * 
+     * @return poolId */
     public String getPoolId() {
         return poolId;
     }
@@ -474,8 +360,6 @@ public class CreateHealthmonitorReq  {
     public void setPoolId(String poolId) {
         this.poolId = poolId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -486,24 +370,38 @@ public class CreateHealthmonitorReq  {
             return false;
         }
         CreateHealthmonitorReq createHealthmonitorReq = (CreateHealthmonitorReq) o;
-        return Objects.equals(this.tenantId, createHealthmonitorReq.tenantId) &&
-            Objects.equals(this.name, createHealthmonitorReq.name) &&
-            Objects.equals(this.adminStateUp, createHealthmonitorReq.adminStateUp) &&
-            Objects.equals(this.monitorPort, createHealthmonitorReq.monitorPort) &&
-            Objects.equals(this.timeout, createHealthmonitorReq.timeout) &&
-            Objects.equals(this.type, createHealthmonitorReq.type) &&
-            Objects.equals(this.expectedCodes, createHealthmonitorReq.expectedCodes) &&
-            Objects.equals(this.domainName, createHealthmonitorReq.domainName) &&
-            Objects.equals(this.urlPath, createHealthmonitorReq.urlPath) &&
-            Objects.equals(this.httpMethod, createHealthmonitorReq.httpMethod) &&
-            Objects.equals(this.delay, createHealthmonitorReq.delay) &&
-            Objects.equals(this.maxRetries, createHealthmonitorReq.maxRetries) &&
-            Objects.equals(this.poolId, createHealthmonitorReq.poolId);
+        return Objects.equals(this.tenantId, createHealthmonitorReq.tenantId)
+            && Objects.equals(this.name, createHealthmonitorReq.name)
+            && Objects.equals(this.adminStateUp, createHealthmonitorReq.adminStateUp)
+            && Objects.equals(this.monitorPort, createHealthmonitorReq.monitorPort)
+            && Objects.equals(this.timeout, createHealthmonitorReq.timeout)
+            && Objects.equals(this.type, createHealthmonitorReq.type)
+            && Objects.equals(this.expectedCodes, createHealthmonitorReq.expectedCodes)
+            && Objects.equals(this.domainName, createHealthmonitorReq.domainName)
+            && Objects.equals(this.urlPath, createHealthmonitorReq.urlPath)
+            && Objects.equals(this.httpMethod, createHealthmonitorReq.httpMethod)
+            && Objects.equals(this.delay, createHealthmonitorReq.delay)
+            && Objects.equals(this.maxRetries, createHealthmonitorReq.maxRetries)
+            && Objects.equals(this.poolId, createHealthmonitorReq.poolId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(tenantId, name, adminStateUp, monitorPort, timeout, type, expectedCodes, domainName, urlPath, httpMethod, delay, maxRetries, poolId);
+        return Objects.hash(tenantId,
+            name,
+            adminStateUp,
+            monitorPort,
+            timeout,
+            type,
+            expectedCodes,
+            domainName,
+            urlPath,
+            httpMethod,
+            delay,
+            maxRetries,
+            poolId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -524,16 +422,13 @@ public class CreateHealthmonitorReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.rabbitmq.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rabbitmq.v2.model.BatchRestartOrDeleteInstanceReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class BatchRestartOrDeleteInstancesRequest  {
-
-
+/** Request Object */
+public class BatchRestartOrDeleteInstancesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private BatchRestartOrDeleteInstanceReq body;
 
     public BatchRestartOrDeleteInstancesRequest withBody(BatchRestartOrDeleteInstanceReq body) {
@@ -30,19 +20,17 @@ public class BatchRestartOrDeleteInstancesRequest  {
     }
 
     public BatchRestartOrDeleteInstancesRequest withBody(Consumer<BatchRestartOrDeleteInstanceReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new BatchRestartOrDeleteInstanceReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public BatchRestartOrDeleteInstanceReq getBody() {
         return body;
     }
@@ -50,8 +38,6 @@ public class BatchRestartOrDeleteInstancesRequest  {
     public void setBody(BatchRestartOrDeleteInstanceReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -61,13 +47,16 @@ public class BatchRestartOrDeleteInstancesRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        BatchRestartOrDeleteInstancesRequest batchRestartOrDeleteInstancesRequest = (BatchRestartOrDeleteInstancesRequest) o;
+        BatchRestartOrDeleteInstancesRequest batchRestartOrDeleteInstancesRequest =
+            (BatchRestartOrDeleteInstancesRequest) o;
         return Objects.equals(this.body, batchRestartOrDeleteInstancesRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +65,13 @@ public class BatchRestartOrDeleteInstancesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

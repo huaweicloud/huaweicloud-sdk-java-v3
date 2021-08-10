@@ -1,33 +1,21 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.ResourceType;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Resource
- */
-public class Resource  {
-
-
+/** Resource */
+public class Resource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private ResourceType type;
 
     public Resource withId(String id) {
@@ -35,13 +23,9 @@ public class Resource  {
         return this;
     }
 
-    
-
-
-    /**
-     * 资源ID
-     * @return id
-     */
+    /** 资源ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -50,20 +34,14 @@ public class Resource  {
         this.id = id;
     }
 
-    
-
     public Resource withType(ResourceType type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * Get type
-     * @return type
-     */
+    /** Get type
+     * 
+     * @return type */
     public ResourceType getType() {
         return type;
     }
@@ -71,8 +49,6 @@ public class Resource  {
     public void setType(ResourceType type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -83,13 +59,14 @@ public class Resource  {
             return false;
         }
         Resource resource = (Resource) o;
-        return Objects.equals(this.id, resource.id) &&
-            Objects.equals(this.type, resource.type);
+        return Objects.equals(this.id, resource.id) && Objects.equals(this.type, resource.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -99,16 +76,13 @@ public class Resource  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

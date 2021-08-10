@@ -1,45 +1,29 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ims.v2.model.TagKeyValue;
-import com.huaweicloud.sdk.ims.v2.model.Tags;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 请求参数
- */
-public class ListImageByTagsRequestBody  {
+/** 请求参数 */
+public class ListImageByTagsRequestBody {
 
-    /**
-     * 操作标识（区分大小写），支持filter、count。filter就是分页查询；count是只需按照条件将总条数返回即可。
-     */
+    /** 操作标识（区分大小写），支持filter、count。filter就是分页查询；count是只需按照条件将总条数返回即可。 */
     public static final class ActionEnum {
 
-        
-        /**
-         * Enum FILTER for value: "filter"
-         */
+        /** Enum FILTER for value: "filter" */
         public static final ActionEnum FILTER = new ActionEnum("filter");
-        
-        /**
-         * Enum COUNT for value: "count"
-         */
+
+        /** Enum COUNT for value: "count" */
         public static final ActionEnum COUNT = new ActionEnum("count");
-        
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -68,7 +52,7 @@ public class ListImageByTagsRequestBody  {
 
         @JsonCreator
         public static ActionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -79,7 +63,7 @@ public class ListImageByTagsRequestBody  {
         }
 
         public static ActionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -103,58 +87,49 @@ public class ListImageByTagsRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private ActionEnum action;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<Tags> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags_any")
-    
+    @JsonProperty(value = "tags_any")
+
     private List<Tags> tagsAny = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="not_tags")
-    
+    @JsonProperty(value = "not_tags")
+
     private List<Tags> notTags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="not_tags_any")
-    
+    @JsonProperty(value = "not_tags_any")
+
     private List<Tags> notTagsAny = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private String limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private String offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="matches")
-    
+    @JsonProperty(value = "matches")
+
     private List<TagKeyValue> matches = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="without_any_tag")
-    
+    @JsonProperty(value = "without_any_tag")
+
     private Boolean withoutAnyTag;
 
     public ListImageByTagsRequestBody withAction(ActionEnum action) {
@@ -162,13 +137,9 @@ public class ListImageByTagsRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 操作标识（区分大小写），支持filter、count。filter就是分页查询；count是只需按照条件将总条数返回即可。
-     * @return action
-     */
+    /** 操作标识（区分大小写），支持filter、count。filter就是分页查询；count是只需按照条件将总条数返回即可。
+     * 
+     * @return action */
     public ActionEnum getAction() {
         return action;
     }
@@ -177,16 +148,13 @@ public class ListImageByTagsRequestBody  {
         this.action = action;
     }
 
-    
-
     public ListImageByTagsRequestBody withTags(List<Tags> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public ListImageByTagsRequestBody addTagsItem(Tags tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -194,17 +162,16 @@ public class ListImageByTagsRequestBody  {
     }
 
     public ListImageByTagsRequestBody withTags(Consumer<List<Tags>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 包含标签，最多包含10个key，每个key对应的values最多包含10个值，且key和values都不能重复。不能为空列表。
-     * @return tags
-     */
+    /** 包含标签，最多包含10个key，每个key对应的values最多包含10个值，且key和values都不能重复。不能为空列表。
+     * 
+     * @return tags */
     public List<Tags> getTags() {
         return tags;
     }
@@ -213,16 +180,13 @@ public class ListImageByTagsRequestBody  {
         this.tags = tags;
     }
 
-    
-
     public ListImageByTagsRequestBody withTagsAny(List<Tags> tagsAny) {
         this.tagsAny = tagsAny;
         return this;
     }
 
-    
     public ListImageByTagsRequestBody addTagsAnyItem(Tags tagsAnyItem) {
-        if(this.tagsAny == null) {
+        if (this.tagsAny == null) {
             this.tagsAny = new ArrayList<>();
         }
         this.tagsAny.add(tagsAnyItem);
@@ -230,17 +194,16 @@ public class ListImageByTagsRequestBody  {
     }
 
     public ListImageByTagsRequestBody withTagsAny(Consumer<List<Tags>> tagsAnySetter) {
-        if(this.tagsAny == null) {
+        if (this.tagsAny == null) {
             this.tagsAny = new ArrayList<>();
         }
         tagsAnySetter.accept(this.tagsAny);
         return this;
     }
 
-    /**
-     * 包含任意标签，最多包含10个key，每个key对应的values最多包含10个值，且key和values都不能重复。不允许为空列表，但可以不传递参数。
-     * @return tagsAny
-     */
+    /** 包含任意标签，最多包含10个key，每个key对应的values最多包含10个值，且key和values都不能重复。不允许为空列表，但可以不传递参数。
+     * 
+     * @return tagsAny */
     public List<Tags> getTagsAny() {
         return tagsAny;
     }
@@ -249,16 +212,13 @@ public class ListImageByTagsRequestBody  {
         this.tagsAny = tagsAny;
     }
 
-    
-
     public ListImageByTagsRequestBody withNotTags(List<Tags> notTags) {
         this.notTags = notTags;
         return this;
     }
 
-    
     public ListImageByTagsRequestBody addNotTagsItem(Tags notTagsItem) {
-        if(this.notTags == null) {
+        if (this.notTags == null) {
             this.notTags = new ArrayList<>();
         }
         this.notTags.add(notTagsItem);
@@ -266,17 +226,16 @@ public class ListImageByTagsRequestBody  {
     }
 
     public ListImageByTagsRequestBody withNotTags(Consumer<List<Tags>> notTagsSetter) {
-        if(this.notTags == null) {
+        if (this.notTags == null) {
             this.notTags = new ArrayList<>();
         }
         notTagsSetter.accept(this.notTags);
         return this;
     }
 
-    /**
-     * 不包含标签，最多包含10个key，每个key对应的values最多包含10个值，且key和values都不能重复。不能为空列表。
-     * @return notTags
-     */
+    /** 不包含标签，最多包含10个key，每个key对应的values最多包含10个值，且key和values都不能重复。不能为空列表。
+     * 
+     * @return notTags */
     public List<Tags> getNotTags() {
         return notTags;
     }
@@ -285,16 +244,13 @@ public class ListImageByTagsRequestBody  {
         this.notTags = notTags;
     }
 
-    
-
     public ListImageByTagsRequestBody withNotTagsAny(List<Tags> notTagsAny) {
         this.notTagsAny = notTagsAny;
         return this;
     }
 
-    
     public ListImageByTagsRequestBody addNotTagsAnyItem(Tags notTagsAnyItem) {
-        if(this.notTagsAny == null) {
+        if (this.notTagsAny == null) {
             this.notTagsAny = new ArrayList<>();
         }
         this.notTagsAny.add(notTagsAnyItem);
@@ -302,17 +258,16 @@ public class ListImageByTagsRequestBody  {
     }
 
     public ListImageByTagsRequestBody withNotTagsAny(Consumer<List<Tags>> notTagsAnySetter) {
-        if(this.notTagsAny == null) {
+        if (this.notTagsAny == null) {
             this.notTagsAny = new ArrayList<>();
         }
         notTagsAnySetter.accept(this.notTagsAny);
         return this;
     }
 
-    /**
-     * 不包含任意标签，最多包含10个key，每个key对应的values最多包含10个值，且key和values都不能重复。不能为空列表。
-     * @return notTagsAny
-     */
+    /** 不包含任意标签，最多包含10个key，每个key对应的values最多包含10个值，且key和values都不能重复。不能为空列表。
+     * 
+     * @return notTagsAny */
     public List<Tags> getNotTagsAny() {
         return notTagsAny;
     }
@@ -321,20 +276,14 @@ public class ListImageByTagsRequestBody  {
         this.notTagsAny = notTagsAny;
     }
 
-    
-
     public ListImageByTagsRequestBody withLimit(String limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 最大查询记录数(action为count，时此参数无效）如果action为filter默认为10，limit最多为1000，不能为负数，最小值为1。
-     * @return limit
-     */
+    /** 最大查询记录数(action为count，时此参数无效）如果action为filter默认为10，limit最多为1000，不能为负数，最小值为1。
+     * 
+     * @return limit */
     public String getLimit() {
         return limit;
     }
@@ -343,20 +292,14 @@ public class ListImageByTagsRequestBody  {
         this.limit = limit;
     }
 
-    
-
     public ListImageByTagsRequestBody withOffset(String offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 索引位置， 从offset指定的下一条数据开始查询。 查询第一页数据时，不需要传入此参数（action为count时，此参数无效），如果action为filter默认为0，不能为负数。
-     * @return offset
-     */
+    /** 索引位置， 从offset指定的下一条数据开始查询。 查询第一页数据时，不需要传入此参数（action为count时，此参数无效），如果action为filter默认为0，不能为负数。
+     * 
+     * @return offset */
     public String getOffset() {
         return offset;
     }
@@ -365,16 +308,13 @@ public class ListImageByTagsRequestBody  {
         this.offset = offset;
     }
 
-    
-
     public ListImageByTagsRequestBody withMatches(List<TagKeyValue> matches) {
         this.matches = matches;
         return this;
     }
 
-    
     public ListImageByTagsRequestBody addMatchesItem(TagKeyValue matchesItem) {
-        if(this.matches == null) {
+        if (this.matches == null) {
             this.matches = new ArrayList<>();
         }
         this.matches.add(matchesItem);
@@ -382,17 +322,16 @@ public class ListImageByTagsRequestBody  {
     }
 
     public ListImageByTagsRequestBody withMatches(Consumer<List<TagKeyValue>> matchesSetter) {
-        if(this.matches == null) {
+        if (this.matches == null) {
             this.matches = new ArrayList<>();
         }
         matchesSetter.accept(this.matches);
         return this;
     }
 
-    /**
-     * 搜索字段，key为要匹配的字段，如resource_name、resource_id等。value为匹配的值。多个matches的key不允许重复。不允许为空列表，但可以不传递参数。
-     * @return matches
-     */
+    /** 搜索字段，key为要匹配的字段，如resource_name、resource_id等。value为匹配的值。多个matches的key不允许重复。不允许为空列表，但可以不传递参数。
+     * 
+     * @return matches */
     public List<TagKeyValue> getMatches() {
         return matches;
     }
@@ -401,20 +340,14 @@ public class ListImageByTagsRequestBody  {
         this.matches = matches;
     }
 
-    
-
     public ListImageByTagsRequestBody withWithoutAnyTag(Boolean withoutAnyTag) {
         this.withoutAnyTag = withoutAnyTag;
         return this;
     }
 
-    
-
-
-    /**
-     * 不包含任意一个标签，该字段为true时查询所有不带标签的资源，此时忽略tag、not_tags、tags_any、not_tags_any字段。
-     * @return withoutAnyTag
-     */
+    /** 不包含任意一个标签，该字段为true时查询所有不带标签的资源，此时忽略tag、not_tags、tags_any、not_tags_any字段。
+     * 
+     * @return withoutAnyTag */
     public Boolean getWithoutAnyTag() {
         return withoutAnyTag;
     }
@@ -422,8 +355,6 @@ public class ListImageByTagsRequestBody  {
     public void setWithoutAnyTag(Boolean withoutAnyTag) {
         this.withoutAnyTag = withoutAnyTag;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -434,20 +365,22 @@ public class ListImageByTagsRequestBody  {
             return false;
         }
         ListImageByTagsRequestBody listImageByTagsRequestBody = (ListImageByTagsRequestBody) o;
-        return Objects.equals(this.action, listImageByTagsRequestBody.action) &&
-            Objects.equals(this.tags, listImageByTagsRequestBody.tags) &&
-            Objects.equals(this.tagsAny, listImageByTagsRequestBody.tagsAny) &&
-            Objects.equals(this.notTags, listImageByTagsRequestBody.notTags) &&
-            Objects.equals(this.notTagsAny, listImageByTagsRequestBody.notTagsAny) &&
-            Objects.equals(this.limit, listImageByTagsRequestBody.limit) &&
-            Objects.equals(this.offset, listImageByTagsRequestBody.offset) &&
-            Objects.equals(this.matches, listImageByTagsRequestBody.matches) &&
-            Objects.equals(this.withoutAnyTag, listImageByTagsRequestBody.withoutAnyTag);
+        return Objects.equals(this.action, listImageByTagsRequestBody.action)
+            && Objects.equals(this.tags, listImageByTagsRequestBody.tags)
+            && Objects.equals(this.tagsAny, listImageByTagsRequestBody.tagsAny)
+            && Objects.equals(this.notTags, listImageByTagsRequestBody.notTags)
+            && Objects.equals(this.notTagsAny, listImageByTagsRequestBody.notTagsAny)
+            && Objects.equals(this.limit, listImageByTagsRequestBody.limit)
+            && Objects.equals(this.offset, listImageByTagsRequestBody.offset)
+            && Objects.equals(this.matches, listImageByTagsRequestBody.matches)
+            && Objects.equals(this.withoutAnyTag, listImageByTagsRequestBody.withoutAnyTag);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(action, tags, tagsAny, notTags, notTagsAny, limit, offset, matches, withoutAnyTag);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -464,16 +397,13 @@ public class ListImageByTagsRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

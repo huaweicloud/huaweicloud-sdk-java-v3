@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.kps.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListKeypairTaskRequest  {
-
-
+/** Request Object */
+public class ListKeypairTaskRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
+    @JsonProperty(value = "task_id")
+
     private String taskId;
 
     public ListKeypairTaskRequest withTaskId(String taskId) {
@@ -28,13 +18,9 @@ public class ListKeypairTaskRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID
-     * @return taskId
-     */
+    /** 任务ID
+     * 
+     * @return taskId */
     public String getTaskId() {
         return taskId;
     }
@@ -42,8 +28,6 @@ public class ListKeypairTaskRequest  {
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class ListKeypairTaskRequest  {
         ListKeypairTaskRequest listKeypairTaskRequest = (ListKeypairTaskRequest) o;
         return Objects.equals(this.taskId, listKeypairTaskRequest.taskId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(taskId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class ListKeypairTaskRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,47 +1,33 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 
  */
-public class ModifyJobResp  {
-
-
+public class ModifyJobResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
-    /**
-     * 状态
-     */
+
+    /** 状态 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum SUCCESS_ for value: "success 成功"
-         */
+        /** Enum SUCCESS_ for value: "success 成功" */
         public static final StatusEnum SUCCESS_ = new StatusEnum("success 成功");
-        
-        /**
-         * Enum FAILED_ for value: "failed 失败"
-         */
+
+        /** Enum FAILED_ for value: "failed 失败" */
         public static final StatusEnum FAILED_ = new StatusEnum("failed 失败");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,7 +56,7 @@ public class ModifyJobResp  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -81,7 +67,7 @@ public class ModifyJobResp  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -105,22 +91,19 @@ public class ModifyJobResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
+
     private String errorCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_msg")
-    
+    @JsonProperty(value = "error_msg")
+
     private String errorMsg;
 
     public ModifyJobResp withId(String id) {
@@ -128,13 +111,9 @@ public class ModifyJobResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID
-     * @return id
-     */
+    /** 任务ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -143,20 +122,14 @@ public class ModifyJobResp  {
         this.id = id;
     }
 
-    
-
     public ModifyJobResp withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态
-     * @return status
-     */
+    /** 状态
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -165,20 +138,14 @@ public class ModifyJobResp  {
         this.status = status;
     }
 
-    
-
     public ModifyJobResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误码
-     * @return errorCode
-     */
+    /** 错误码
+     * 
+     * @return errorCode */
     public String getErrorCode() {
         return errorCode;
     }
@@ -187,20 +154,14 @@ public class ModifyJobResp  {
         this.errorCode = errorCode;
     }
 
-    
-
     public ModifyJobResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误信息
-     * @return errorMsg
-     */
+    /** 错误信息
+     * 
+     * @return errorMsg */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -208,8 +169,6 @@ public class ModifyJobResp  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -220,15 +179,16 @@ public class ModifyJobResp  {
             return false;
         }
         ModifyJobResp modifyJobResp = (ModifyJobResp) o;
-        return Objects.equals(this.id, modifyJobResp.id) &&
-            Objects.equals(this.status, modifyJobResp.status) &&
-            Objects.equals(this.errorCode, modifyJobResp.errorCode) &&
-            Objects.equals(this.errorMsg, modifyJobResp.errorMsg);
+        return Objects.equals(this.id, modifyJobResp.id) && Objects.equals(this.status, modifyJobResp.status)
+            && Objects.equals(this.errorCode, modifyJobResp.errorCode)
+            && Objects.equals(this.errorMsg, modifyJobResp.errorMsg);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, status, errorCode, errorMsg);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -240,16 +200,13 @@ public class ModifyJobResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,86 +1,66 @@
 package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * PipelineBasicInfo
- */
-public class PipelineBasicInfo  {
-
-
+/** PipelineBasicInfo */
+public class PipelineBasicInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_name")
-    
+    @JsonProperty(value = "project_name")
+
     private String projectName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pipeline_id")
-    
+    @JsonProperty(value = "pipeline_id")
+
     private String pipelineId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pipeline_name")
-    
+    @JsonProperty(value = "pipeline_name")
+
     private String pipelineName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator_id")
-    
+    @JsonProperty(value = "creator_id")
+
     private String creatorId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator_name")
-    
+    @JsonProperty(value = "creator_name")
+
     private String creatorName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="executor_id")
-    
+    @JsonProperty(value = "executor_id")
+
     private String executorId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="executor_name")
-    
+    @JsonProperty(value = "executor_name")
+
     private String executorName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private String createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="watched")
-    
+    @JsonProperty(value = "watched")
+
     private String watched;
 
     public PipelineBasicInfo withProjectId(String projectId) {
@@ -88,13 +68,9 @@ public class PipelineBasicInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * devCloud项目id
-     * @return projectId
-     */
+    /** devCloud项目id
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -103,20 +79,14 @@ public class PipelineBasicInfo  {
         this.projectId = projectId;
     }
 
-    
-
     public PipelineBasicInfo withProjectName(String projectName) {
         this.projectName = projectName;
         return this;
     }
 
-    
-
-
-    /**
-     * devCloud项目名字
-     * @return projectName
-     */
+    /** devCloud项目名字
+     * 
+     * @return projectName */
     public String getProjectName() {
         return projectName;
     }
@@ -125,20 +95,14 @@ public class PipelineBasicInfo  {
         this.projectName = projectName;
     }
 
-    
-
     public PipelineBasicInfo withPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线id
-     * @return pipelineId
-     */
+    /** 流水线id
+     * 
+     * @return pipelineId */
     public String getPipelineId() {
         return pipelineId;
     }
@@ -147,20 +111,14 @@ public class PipelineBasicInfo  {
         this.pipelineId = pipelineId;
     }
 
-    
-
     public PipelineBasicInfo withPipelineName(String pipelineName) {
         this.pipelineName = pipelineName;
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线名字
-     * @return pipelineName
-     */
+    /** 流水线名字
+     * 
+     * @return pipelineName */
     public String getPipelineName() {
         return pipelineName;
     }
@@ -169,20 +127,14 @@ public class PipelineBasicInfo  {
         this.pipelineName = pipelineName;
     }
 
-    
-
     public PipelineBasicInfo withCreatorId(String creatorId) {
         this.creatorId = creatorId;
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线创建人id
-     * @return creatorId
-     */
+    /** 流水线创建人id
+     * 
+     * @return creatorId */
     public String getCreatorId() {
         return creatorId;
     }
@@ -191,20 +143,14 @@ public class PipelineBasicInfo  {
         this.creatorId = creatorId;
     }
 
-    
-
     public PipelineBasicInfo withCreatorName(String creatorName) {
         this.creatorName = creatorName;
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线创建人名字
-     * @return creatorName
-     */
+    /** 流水线创建人名字
+     * 
+     * @return creatorName */
     public String getCreatorName() {
         return creatorName;
     }
@@ -213,20 +159,14 @@ public class PipelineBasicInfo  {
         this.creatorName = creatorName;
     }
 
-    
-
     public PipelineBasicInfo withExecutorId(String executorId) {
         this.executorId = executorId;
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线创建人id
-     * @return executorId
-     */
+    /** 流水线创建人id
+     * 
+     * @return executorId */
     public String getExecutorId() {
         return executorId;
     }
@@ -235,20 +175,14 @@ public class PipelineBasicInfo  {
         this.executorId = executorId;
     }
 
-    
-
     public PipelineBasicInfo withExecutorName(String executorName) {
         this.executorName = executorName;
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线执行人名字
-     * @return executorName
-     */
+    /** 流水线执行人名字
+     * 
+     * @return executorName */
     public String getExecutorName() {
         return executorName;
     }
@@ -257,20 +191,14 @@ public class PipelineBasicInfo  {
         this.executorName = executorName;
     }
 
-    
-
     public PipelineBasicInfo withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 启动时间
-     * @return startTime
-     */
+    /** 启动时间
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -279,20 +207,14 @@ public class PipelineBasicInfo  {
         this.startTime = startTime;
     }
 
-    
-
     public PipelineBasicInfo withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return createTime
-     */
+    /** 创建时间
+     * 
+     * @return createTime */
     public String getCreateTime() {
         return createTime;
     }
@@ -301,20 +223,14 @@ public class PipelineBasicInfo  {
         this.createTime = createTime;
     }
 
-    
-
     public PipelineBasicInfo withWatched(String watched) {
         this.watched = watched;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户是否关注流水线：true（关注），false（未关注）
-     * @return watched
-     */
+    /** 用户是否关注流水线：true（关注），false（未关注）
+     * 
+     * @return watched */
     public String getWatched() {
         return watched;
     }
@@ -322,8 +238,6 @@ public class PipelineBasicInfo  {
     public void setWatched(String watched) {
         this.watched = watched;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -334,22 +248,34 @@ public class PipelineBasicInfo  {
             return false;
         }
         PipelineBasicInfo pipelineBasicInfo = (PipelineBasicInfo) o;
-        return Objects.equals(this.projectId, pipelineBasicInfo.projectId) &&
-            Objects.equals(this.projectName, pipelineBasicInfo.projectName) &&
-            Objects.equals(this.pipelineId, pipelineBasicInfo.pipelineId) &&
-            Objects.equals(this.pipelineName, pipelineBasicInfo.pipelineName) &&
-            Objects.equals(this.creatorId, pipelineBasicInfo.creatorId) &&
-            Objects.equals(this.creatorName, pipelineBasicInfo.creatorName) &&
-            Objects.equals(this.executorId, pipelineBasicInfo.executorId) &&
-            Objects.equals(this.executorName, pipelineBasicInfo.executorName) &&
-            Objects.equals(this.startTime, pipelineBasicInfo.startTime) &&
-            Objects.equals(this.createTime, pipelineBasicInfo.createTime) &&
-            Objects.equals(this.watched, pipelineBasicInfo.watched);
+        return Objects.equals(this.projectId, pipelineBasicInfo.projectId)
+            && Objects.equals(this.projectName, pipelineBasicInfo.projectName)
+            && Objects.equals(this.pipelineId, pipelineBasicInfo.pipelineId)
+            && Objects.equals(this.pipelineName, pipelineBasicInfo.pipelineName)
+            && Objects.equals(this.creatorId, pipelineBasicInfo.creatorId)
+            && Objects.equals(this.creatorName, pipelineBasicInfo.creatorName)
+            && Objects.equals(this.executorId, pipelineBasicInfo.executorId)
+            && Objects.equals(this.executorName, pipelineBasicInfo.executorName)
+            && Objects.equals(this.startTime, pipelineBasicInfo.startTime)
+            && Objects.equals(this.createTime, pipelineBasicInfo.createTime)
+            && Objects.equals(this.watched, pipelineBasicInfo.watched);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, projectName, pipelineId, pipelineName, creatorId, creatorName, executorId, executorName, startTime, createTime, watched);
+        return Objects.hash(projectId,
+            projectName,
+            pipelineId,
+            pipelineName,
+            creatorId,
+            creatorName,
+            executorId,
+            executorName,
+            startTime,
+            createTime,
+            watched);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -368,16 +294,13 @@ public class PipelineBasicInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

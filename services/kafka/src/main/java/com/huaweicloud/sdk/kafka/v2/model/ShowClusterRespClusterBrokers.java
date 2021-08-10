@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 节点。
- */
-public class ShowClusterRespClusterBrokers  {
-
-
+/** 节点。 */
+public class ShowClusterRespClusterBrokers {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host")
-    
+    @JsonProperty(value = "host")
+
     private String host;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
+
     private Integer port;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="broker_id")
-    
+    @JsonProperty(value = "broker_id")
+
     private String brokerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_controller")
-    
+    @JsonProperty(value = "is_controller")
+
     private Boolean isController;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="register_time")
-    
+    @JsonProperty(value = "register_time")
+
     private Long registerTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_health")
-    
+    @JsonProperty(value = "is_health")
+
     private Boolean isHealth;
 
     public ShowClusterRespClusterBrokers withHost(String host) {
@@ -64,13 +48,9 @@ public class ShowClusterRespClusterBrokers  {
         return this;
     }
 
-    
-
-
-    /**
-     * 节点IP。
-     * @return host
-     */
+    /** 节点IP。
+     * 
+     * @return host */
     public String getHost() {
         return host;
     }
@@ -79,20 +59,14 @@ public class ShowClusterRespClusterBrokers  {
         this.host = host;
     }
 
-    
-
     public ShowClusterRespClusterBrokers withPort(Integer port) {
         this.port = port;
         return this;
     }
 
-    
-
-
-    /**
-     * 端口号。
-     * @return port
-     */
+    /** 端口号。
+     * 
+     * @return port */
     public Integer getPort() {
         return port;
     }
@@ -101,20 +75,14 @@ public class ShowClusterRespClusterBrokers  {
         this.port = port;
     }
 
-    
-
     public ShowClusterRespClusterBrokers withBrokerId(String brokerId) {
         this.brokerId = brokerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点id。
-     * @return brokerId
-     */
+    /** 节点id。
+     * 
+     * @return brokerId */
     public String getBrokerId() {
         return brokerId;
     }
@@ -123,20 +91,14 @@ public class ShowClusterRespClusterBrokers  {
         this.brokerId = brokerId;
     }
 
-    
-
     public ShowClusterRespClusterBrokers withIsController(Boolean isController) {
         this.isController = isController;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否为contoller节点。
-     * @return isController
-     */
+    /** 是否为contoller节点。
+     * 
+     * @return isController */
     public Boolean getIsController() {
         return isController;
     }
@@ -145,20 +107,14 @@ public class ShowClusterRespClusterBrokers  {
         this.isController = isController;
     }
 
-    
-
     public ShowClusterRespClusterBrokers withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务端版本。
-     * @return version
-     */
+    /** 服务端版本。
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -167,20 +123,14 @@ public class ShowClusterRespClusterBrokers  {
         this.version = version;
     }
 
-    
-
     public ShowClusterRespClusterBrokers withRegisterTime(Long registerTime) {
         this.registerTime = registerTime;
         return this;
     }
 
-    
-
-
-    /**
-     * broker注册时间，为unix时间戳格式。
-     * @return registerTime
-     */
+    /** broker注册时间，为unix时间戳格式。
+     * 
+     * @return registerTime */
     public Long getRegisterTime() {
         return registerTime;
     }
@@ -189,20 +139,14 @@ public class ShowClusterRespClusterBrokers  {
         this.registerTime = registerTime;
     }
 
-    
-
     public ShowClusterRespClusterBrokers withIsHealth(Boolean isHealth) {
         this.isHealth = isHealth;
         return this;
     }
 
-    
-
-
-    /**
-     * Kafka实例节点的连通性是否正常。
-     * @return isHealth
-     */
+    /** Kafka实例节点的连通性是否正常。
+     * 
+     * @return isHealth */
     public Boolean getIsHealth() {
         return isHealth;
     }
@@ -210,8 +154,6 @@ public class ShowClusterRespClusterBrokers  {
     public void setIsHealth(Boolean isHealth) {
         this.isHealth = isHealth;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -222,18 +164,20 @@ public class ShowClusterRespClusterBrokers  {
             return false;
         }
         ShowClusterRespClusterBrokers showClusterRespClusterBrokers = (ShowClusterRespClusterBrokers) o;
-        return Objects.equals(this.host, showClusterRespClusterBrokers.host) &&
-            Objects.equals(this.port, showClusterRespClusterBrokers.port) &&
-            Objects.equals(this.brokerId, showClusterRespClusterBrokers.brokerId) &&
-            Objects.equals(this.isController, showClusterRespClusterBrokers.isController) &&
-            Objects.equals(this.version, showClusterRespClusterBrokers.version) &&
-            Objects.equals(this.registerTime, showClusterRespClusterBrokers.registerTime) &&
-            Objects.equals(this.isHealth, showClusterRespClusterBrokers.isHealth);
+        return Objects.equals(this.host, showClusterRespClusterBrokers.host)
+            && Objects.equals(this.port, showClusterRespClusterBrokers.port)
+            && Objects.equals(this.brokerId, showClusterRespClusterBrokers.brokerId)
+            && Objects.equals(this.isController, showClusterRespClusterBrokers.isController)
+            && Objects.equals(this.version, showClusterRespClusterBrokers.version)
+            && Objects.equals(this.registerTime, showClusterRespClusterBrokers.registerTime)
+            && Objects.equals(this.isHealth, showClusterRespClusterBrokers.isHealth);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(host, port, brokerId, isController, version, registerTime, isHealth);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,16 +192,13 @@ public class ShowClusterRespClusterBrokers  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

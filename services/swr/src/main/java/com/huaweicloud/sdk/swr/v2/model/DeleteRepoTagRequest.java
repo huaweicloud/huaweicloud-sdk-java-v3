@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.swr.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteRepoTagRequest  {
-
-
+/** Request Object */
+public class DeleteRepoTagRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
+
     private String namespace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repository")
-    
+    @JsonProperty(value = "repository")
+
     private String repository;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag")
-    
+    @JsonProperty(value = "tag")
+
     private String tag;
 
     public DeleteRepoTagRequest withNamespace(String namespace) {
@@ -40,13 +28,9 @@ public class DeleteRepoTagRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
-     * @return namespace
-     */
+    /** 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
+     * 
+     * @return namespace */
     public String getNamespace() {
         return namespace;
     }
@@ -55,20 +39,14 @@ public class DeleteRepoTagRequest  {
         this.namespace = namespace;
     }
 
-    
-
     public DeleteRepoTagRequest withRepository(String repository) {
         this.repository = repository;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像仓库名称
-     * @return repository
-     */
+    /** 镜像仓库名称
+     * 
+     * @return repository */
     public String getRepository() {
         return repository;
     }
@@ -77,20 +55,14 @@ public class DeleteRepoTagRequest  {
         this.repository = repository;
     }
 
-    
-
     public DeleteRepoTagRequest withTag(String tag) {
         this.tag = tag;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像版本名称
-     * @return tag
-     */
+    /** 镜像版本名称
+     * 
+     * @return tag */
     public String getTag() {
         return tag;
     }
@@ -98,8 +70,6 @@ public class DeleteRepoTagRequest  {
     public void setTag(String tag) {
         this.tag = tag;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class DeleteRepoTagRequest  {
             return false;
         }
         DeleteRepoTagRequest deleteRepoTagRequest = (DeleteRepoTagRequest) o;
-        return Objects.equals(this.namespace, deleteRepoTagRequest.namespace) &&
-            Objects.equals(this.repository, deleteRepoTagRequest.repository) &&
-            Objects.equals(this.tag, deleteRepoTagRequest.tag);
+        return Objects.equals(this.namespace, deleteRepoTagRequest.namespace)
+            && Objects.equals(this.repository, deleteRepoTagRequest.repository)
+            && Objects.equals(this.tag, deleteRepoTagRequest.tag);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(namespace, repository, tag);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class DeleteRepoTagRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

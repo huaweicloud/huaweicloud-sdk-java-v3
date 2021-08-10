@@ -1,51 +1,37 @@
 package com.huaweicloud.sdk.sa.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.time.OffsetDateTime;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Container
- */
-public class Container  {
-
-
+/** Container */
+public class Container {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_id")
-    
+    @JsonProperty(value = "image_id")
+
     private String imageId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_name")
-    
+    @JsonProperty(value = "image_name")
+
     private String imageName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
+
     private String nodeId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_name")
-    
+    @JsonProperty(value = "node_name")
+
     private String nodeName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="launched_time")
-    
+    @JsonProperty(value = "launched_time")
+
     private OffsetDateTime launchedTime;
 
     public Container withImageId(String imageId) {
@@ -53,13 +39,9 @@ public class Container  {
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像ID。
-     * @return imageId
-     */
+    /** 镜像ID。
+     * 
+     * @return imageId */
     public String getImageId() {
         return imageId;
     }
@@ -68,20 +50,14 @@ public class Container  {
         this.imageId = imageId;
     }
 
-    
-
     public Container withImageName(String imageName) {
         this.imageName = imageName;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像名称。
-     * @return imageName
-     */
+    /** 镜像名称。
+     * 
+     * @return imageName */
     public String getImageName() {
         return imageName;
     }
@@ -90,20 +66,14 @@ public class Container  {
         this.imageName = imageName;
     }
 
-    
-
     public Container withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
     }
 
-    
-
-
-    /**
-     * 容器所在节点ID。
-     * @return nodeId
-     */
+    /** 容器所在节点ID。
+     * 
+     * @return nodeId */
     public String getNodeId() {
         return nodeId;
     }
@@ -112,20 +82,14 @@ public class Container  {
         this.nodeId = nodeId;
     }
 
-    
-
     public Container withNodeName(String nodeName) {
         this.nodeName = nodeName;
         return this;
     }
 
-    
-
-
-    /**
-     * 容器所在节点名称。
-     * @return nodeName
-     */
+    /** 容器所在节点名称。
+     * 
+     * @return nodeName */
     public String getNodeName() {
         return nodeName;
     }
@@ -134,20 +98,14 @@ public class Container  {
         this.nodeName = nodeName;
     }
 
-    
-
     public Container withLaunchedTime(OffsetDateTime launchedTime) {
         this.launchedTime = launchedTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 容器启动时间。
-     * @return launchedTime
-     */
+    /** 容器启动时间。
+     * 
+     * @return launchedTime */
     public OffsetDateTime getLaunchedTime() {
         return launchedTime;
     }
@@ -155,8 +113,6 @@ public class Container  {
     public void setLaunchedTime(OffsetDateTime launchedTime) {
         this.launchedTime = launchedTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -167,16 +123,16 @@ public class Container  {
             return false;
         }
         Container container = (Container) o;
-        return Objects.equals(this.imageId, container.imageId) &&
-            Objects.equals(this.imageName, container.imageName) &&
-            Objects.equals(this.nodeId, container.nodeId) &&
-            Objects.equals(this.nodeName, container.nodeName) &&
-            Objects.equals(this.launchedTime, container.launchedTime);
+        return Objects.equals(this.imageId, container.imageId) && Objects.equals(this.imageName, container.imageName)
+            && Objects.equals(this.nodeId, container.nodeId) && Objects.equals(this.nodeName, container.nodeName)
+            && Objects.equals(this.launchedTime, container.launchedTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(imageId, imageName, nodeId, nodeName, launchedTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -189,16 +145,13 @@ public class Container  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

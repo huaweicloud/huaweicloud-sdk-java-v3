@@ -1,42 +1,27 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.ConfigurationForCreation;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateConfigurationRequest  {
+/** Request Object */
+public class CreateConfigurationRequest {
 
-    /**
-     * 语言
-     */
+    /** 语言 */
     public static final class XLanguageEnum {
 
-        
-        /**
-         * Enum ZH_CN for value: "zh-cn"
-         */
+        /** Enum ZH_CN for value: "zh-cn" */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
-        
-        /**
-         * Enum EN_US for value: "en-us"
-         */
+
+        /** Enum EN_US for value: "en-us" */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
-        
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
 
@@ -65,7 +50,7 @@ public class CreateConfigurationRequest  {
 
         @JsonCreator
         public static XLanguageEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -76,7 +61,7 @@ public class CreateConfigurationRequest  {
         }
 
         public static XLanguageEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -100,16 +85,14 @@ public class CreateConfigurationRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private XLanguageEnum xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ConfigurationForCreation body;
 
     public CreateConfigurationRequest withXLanguage(XLanguageEnum xLanguage) {
@@ -117,15 +100,11 @@ public class CreateConfigurationRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
         return xLanguage;
     }
@@ -134,27 +113,23 @@ public class CreateConfigurationRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public CreateConfigurationRequest withBody(ConfigurationForCreation body) {
         this.body = body;
         return this;
     }
 
     public CreateConfigurationRequest withBody(Consumer<ConfigurationForCreation> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ConfigurationForCreation();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ConfigurationForCreation getBody() {
         return body;
     }
@@ -162,8 +137,6 @@ public class CreateConfigurationRequest  {
     public void setBody(ConfigurationForCreation body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -174,13 +147,15 @@ public class CreateConfigurationRequest  {
             return false;
         }
         CreateConfigurationRequest createConfigurationRequest = (CreateConfigurationRequest) o;
-        return Objects.equals(this.xLanguage, createConfigurationRequest.xLanguage) &&
-            Objects.equals(this.body, createConfigurationRequest.body);
+        return Objects.equals(this.xLanguage, createConfigurationRequest.xLanguage)
+            && Objects.equals(this.body, createConfigurationRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -190,16 +165,13 @@ public class CreateConfigurationRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteScalingNotificationRequest  {
-
-
+/** Request Object */
+public class DeleteScalingNotificationRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_group_id")
-    
+    @JsonProperty(value = "scaling_group_id")
+
     private String scalingGroupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic_urn")
-    
+    @JsonProperty(value = "topic_urn")
+
     private String topicUrn;
 
     public DeleteScalingNotificationRequest withScalingGroupId(String scalingGroupId) {
@@ -34,13 +23,9 @@ public class DeleteScalingNotificationRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩组标识。
-     * @return scalingGroupId
-     */
+    /** 伸缩组标识。
+     * 
+     * @return scalingGroupId */
     public String getScalingGroupId() {
         return scalingGroupId;
     }
@@ -49,20 +34,14 @@ public class DeleteScalingNotificationRequest  {
         this.scalingGroupId = scalingGroupId;
     }
 
-    
-
     public DeleteScalingNotificationRequest withTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
         return this;
     }
 
-    
-
-
-    /**
-     * SMN服务中Topic的唯一的资源标识。
-     * @return topicUrn
-     */
+    /** SMN服务中Topic的唯一的资源标识。
+     * 
+     * @return topicUrn */
     public String getTopicUrn() {
         return topicUrn;
     }
@@ -70,8 +49,6 @@ public class DeleteScalingNotificationRequest  {
     public void setTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class DeleteScalingNotificationRequest  {
             return false;
         }
         DeleteScalingNotificationRequest deleteScalingNotificationRequest = (DeleteScalingNotificationRequest) o;
-        return Objects.equals(this.scalingGroupId, deleteScalingNotificationRequest.scalingGroupId) &&
-            Objects.equals(this.topicUrn, deleteScalingNotificationRequest.topicUrn);
+        return Objects.equals(this.scalingGroupId, deleteScalingNotificationRequest.scalingGroupId)
+            && Objects.equals(this.topicUrn, deleteScalingNotificationRequest.topicUrn);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(scalingGroupId, topicUrn);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class DeleteScalingNotificationRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * RestoreTableInfo
- */
-public class RestoreTableInfo  {
-
-
+/** RestoreTableInfo */
+public class RestoreTableInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="oldName")
-    
+    @JsonProperty(value = "oldName")
+
     private String oldName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="newName")
-    
+    @JsonProperty(value = "newName")
+
     private String newName;
 
     public RestoreTableInfo withOldName(String oldName) {
@@ -34,13 +23,9 @@ public class RestoreTableInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 旧表名
-     * @return oldName
-     */
+    /** 旧表名
+     * 
+     * @return oldName */
     public String getOldName() {
         return oldName;
     }
@@ -49,20 +34,14 @@ public class RestoreTableInfo  {
         this.oldName = oldName;
     }
 
-    
-
     public RestoreTableInfo withNewName(String newName) {
         this.newName = newName;
         return this;
     }
 
-    
-
-
-    /**
-     * 新表名
-     * @return newName
-     */
+    /** 新表名
+     * 
+     * @return newName */
     public String getNewName() {
         return newName;
     }
@@ -70,8 +49,6 @@ public class RestoreTableInfo  {
     public void setNewName(String newName) {
         this.newName = newName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class RestoreTableInfo  {
             return false;
         }
         RestoreTableInfo restoreTableInfo = (RestoreTableInfo) o;
-        return Objects.equals(this.oldName, restoreTableInfo.oldName) &&
-            Objects.equals(this.newName, restoreTableInfo.newName);
+        return Objects.equals(this.oldName, restoreTableInfo.oldName)
+            && Objects.equals(this.newName, restoreTableInfo.newName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(oldName, newName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class RestoreTableInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

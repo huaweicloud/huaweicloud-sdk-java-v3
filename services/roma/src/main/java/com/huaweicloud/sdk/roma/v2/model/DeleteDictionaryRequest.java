@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteDictionaryRequest  {
-
-
+/** Request Object */
+public class DeleteDictionaryRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dict_id")
-    
+    @JsonProperty(value = "dict_id")
+
     private String dictId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
     public DeleteDictionaryRequest withDictId(String dictId) {
@@ -34,13 +23,9 @@ public class DeleteDictionaryRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 字典ID
-     * @return dictId
-     */
+    /** 字典ID
+     * 
+     * @return dictId */
     public String getDictId() {
         return dictId;
     }
@@ -49,20 +34,14 @@ public class DeleteDictionaryRequest  {
         this.dictId = dictId;
     }
 
-    
-
     public DeleteDictionaryRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -70,8 +49,6 @@ public class DeleteDictionaryRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class DeleteDictionaryRequest  {
             return false;
         }
         DeleteDictionaryRequest deleteDictionaryRequest = (DeleteDictionaryRequest) o;
-        return Objects.equals(this.dictId, deleteDictionaryRequest.dictId) &&
-            Objects.equals(this.instanceId, deleteDictionaryRequest.instanceId);
+        return Objects.equals(this.dictId, deleteDictionaryRequest.dictId)
+            && Objects.equals(this.instanceId, deleteDictionaryRequest.instanceId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(dictId, instanceId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class DeleteDictionaryRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

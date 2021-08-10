@@ -1,92 +1,71 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CreateProductRequestBody
- */
-public class CreateProductRequestBody  {
-
-
+/** CreateProductRequestBody */
+public class CreateProductRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="manufacturer_id")
-    
+    @JsonProperty(value = "manufacturer_id")
+
     private String manufacturerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="manufacturer_name")
-    
+    @JsonProperty(value = "manufacturer_name")
+
     private String manufacturerName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="model")
-    
+    @JsonProperty(value = "model")
+
     private String model;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_type")
-    
+    @JsonProperty(value = "product_type")
+
     private Integer productType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol_type")
-    
+    @JsonProperty(value = "protocol_type")
+
     private Integer protocolType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_type")
-    
+    @JsonProperty(value = "device_type")
+
     private String deviceType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_id")
-    
+    @JsonProperty(value = "template_id")
+
     private Integer templateId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_format")
-    
+    @JsonProperty(value = "data_format")
+
     private Integer dataFormat;
 
     public CreateProductRequestBody withAppId(String appId) {
@@ -94,13 +73,9 @@ public class CreateProductRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 应用ID
-     * @return appId
-     */
+    /** 应用ID
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -109,20 +84,14 @@ public class CreateProductRequestBody  {
         this.appId = appId;
     }
 
-    
-
     public CreateProductRequestBody withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品名称，创建产品时租户内唯一，长度最大64，仅支持中文，英文字母，数字，下划线和中划线
-     * @return name
-     */
+    /** 产品名称，创建产品时租户内唯一，长度最大64，仅支持中文，英文字母，数字，下划线和中划线
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -131,20 +100,14 @@ public class CreateProductRequestBody  {
         this.name = name;
     }
 
-    
-
     public CreateProductRequestBody withManufacturerId(String manufacturerId) {
         this.manufacturerId = manufacturerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品供应商ID
-     * @return manufacturerId
-     */
+    /** 产品供应商ID
+     * 
+     * @return manufacturerId */
     public String getManufacturerId() {
         return manufacturerId;
     }
@@ -153,20 +116,14 @@ public class CreateProductRequestBody  {
         this.manufacturerId = manufacturerId;
     }
 
-    
-
     public CreateProductRequestBody withManufacturerName(String manufacturerName) {
         this.manufacturerName = manufacturerName;
         return this;
     }
 
-    
-
-
-    /**
-     * 厂商名称
-     * @return manufacturerName
-     */
+    /** 厂商名称
+     * 
+     * @return manufacturerName */
     public String getManufacturerName() {
         return manufacturerName;
     }
@@ -175,20 +132,14 @@ public class CreateProductRequestBody  {
         this.manufacturerName = manufacturerName;
     }
 
-    
-
     public CreateProductRequestBody withModel(String model) {
         this.model = model;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品型号
-     * @return model
-     */
+    /** 产品型号
+     * 
+     * @return model */
     public String getModel() {
         return model;
     }
@@ -197,22 +148,14 @@ public class CreateProductRequestBody  {
         this.model = model;
     }
 
-    
-
     public CreateProductRequestBody withProductType(Integer productType) {
         this.productType = productType;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品类型，0-普通产品(不支持子设备) 1-网关产品
-     * minimum: 0
-     * maximum: 10
-     * @return productType
-     */
+    /** 产品类型，0-普通产品(不支持子设备) 1-网关产品 minimum: 0 maximum: 10
+     * 
+     * @return productType */
     public Integer getProductType() {
         return productType;
     }
@@ -221,20 +164,14 @@ public class CreateProductRequestBody  {
         this.productType = productType;
     }
 
-    
-
     public CreateProductRequestBody withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品描述，长度0-200
-     * @return description
-     */
+    /** 产品描述，长度0-200
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -243,22 +180,14 @@ public class CreateProductRequestBody  {
         this.description = description;
     }
 
-    
-
     public CreateProductRequestBody withProtocolType(Integer protocolType) {
         this.protocolType = protocolType;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品的协议类型 0-mqtt 2-modbus 4-opcua
-     * minimum: 0
-     * maximum: 10
-     * @return protocolType
-     */
+    /** 产品的协议类型 0-mqtt 2-modbus 4-opcua minimum: 0 maximum: 10
+     * 
+     * @return protocolType */
     public Integer getProtocolType() {
         return protocolType;
     }
@@ -267,20 +196,14 @@ public class CreateProductRequestBody  {
         this.protocolType = protocolType;
     }
 
-    
-
     public CreateProductRequestBody withDeviceType(String deviceType) {
         this.deviceType = deviceType;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品的设备类型（默认Default）
-     * @return deviceType
-     */
+    /** 产品的设备类型（默认Default）
+     * 
+     * @return deviceType */
     public String getDeviceType() {
         return deviceType;
     }
@@ -289,22 +212,14 @@ public class CreateProductRequestBody  {
         this.deviceType = deviceType;
     }
 
-    
-
     public CreateProductRequestBody withTemplateId(Integer templateId) {
         this.templateId = templateId;
         return this;
     }
 
-    
-
-
-    /**
-     * 关联产品模板ID（使用产品模板创建产品时使用，否则为空），自动向下取整
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return templateId
-     */
+    /** 关联产品模板ID（使用产品模板创建产品时使用，否则为空），自动向下取整 minimum: 1 maximum: 999999999999999999
+     * 
+     * @return templateId */
     public Integer getTemplateId() {
         return templateId;
     }
@@ -313,20 +228,14 @@ public class CreateProductRequestBody  {
         this.templateId = templateId;
     }
 
-    
-
     public CreateProductRequestBody withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 模型版本
-     * @return version
-     */
+    /** 模型版本
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -335,22 +244,14 @@ public class CreateProductRequestBody  {
         this.version = version;
     }
 
-    
-
     public CreateProductRequestBody withDataFormat(Integer dataFormat) {
         this.dataFormat = dataFormat;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品的数据格式 0-JSON 1-USER_DEFINED
-     * minimum: 0
-     * maximum: 10
-     * @return dataFormat
-     */
+    /** 产品的数据格式 0-JSON 1-USER_DEFINED minimum: 0 maximum: 10
+     * 
+     * @return dataFormat */
     public Integer getDataFormat() {
         return dataFormat;
     }
@@ -358,8 +259,6 @@ public class CreateProductRequestBody  {
     public void setDataFormat(Integer dataFormat) {
         this.dataFormat = dataFormat;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -370,23 +269,36 @@ public class CreateProductRequestBody  {
             return false;
         }
         CreateProductRequestBody createProductRequestBody = (CreateProductRequestBody) o;
-        return Objects.equals(this.appId, createProductRequestBody.appId) &&
-            Objects.equals(this.name, createProductRequestBody.name) &&
-            Objects.equals(this.manufacturerId, createProductRequestBody.manufacturerId) &&
-            Objects.equals(this.manufacturerName, createProductRequestBody.manufacturerName) &&
-            Objects.equals(this.model, createProductRequestBody.model) &&
-            Objects.equals(this.productType, createProductRequestBody.productType) &&
-            Objects.equals(this.description, createProductRequestBody.description) &&
-            Objects.equals(this.protocolType, createProductRequestBody.protocolType) &&
-            Objects.equals(this.deviceType, createProductRequestBody.deviceType) &&
-            Objects.equals(this.templateId, createProductRequestBody.templateId) &&
-            Objects.equals(this.version, createProductRequestBody.version) &&
-            Objects.equals(this.dataFormat, createProductRequestBody.dataFormat);
+        return Objects.equals(this.appId, createProductRequestBody.appId)
+            && Objects.equals(this.name, createProductRequestBody.name)
+            && Objects.equals(this.manufacturerId, createProductRequestBody.manufacturerId)
+            && Objects.equals(this.manufacturerName, createProductRequestBody.manufacturerName)
+            && Objects.equals(this.model, createProductRequestBody.model)
+            && Objects.equals(this.productType, createProductRequestBody.productType)
+            && Objects.equals(this.description, createProductRequestBody.description)
+            && Objects.equals(this.protocolType, createProductRequestBody.protocolType)
+            && Objects.equals(this.deviceType, createProductRequestBody.deviceType)
+            && Objects.equals(this.templateId, createProductRequestBody.templateId)
+            && Objects.equals(this.version, createProductRequestBody.version)
+            && Objects.equals(this.dataFormat, createProductRequestBody.dataFormat);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(appId, name, manufacturerId, manufacturerName, model, productType, description, protocolType, deviceType, templateId, version, dataFormat);
+        return Objects.hash(appId,
+            name,
+            manufacturerId,
+            manufacturerName,
+            model,
+            productType,
+            description,
+            protocolType,
+            deviceType,
+            templateId,
+            version,
+            dataFormat);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -406,16 +318,13 @@ public class CreateProductRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

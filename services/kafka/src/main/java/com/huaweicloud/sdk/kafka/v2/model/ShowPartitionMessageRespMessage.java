@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 消息体。
- */
-public class ShowPartitionMessageRespMessage  {
-
-
+/** 消息体。 */
+public class ShowPartitionMessageRespMessage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private String value;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic")
-    
+    @JsonProperty(value = "topic")
+
     private String topic;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="partition")
-    
+    @JsonProperty(value = "partition")
+
     private Integer partition;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message_offset")
-    
+    @JsonProperty(value = "message_offset")
+
     private Long messageOffset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timestamp")
-    
+    @JsonProperty(value = "timestamp")
+
     private Long timestamp;
 
     public ShowPartitionMessageRespMessage withKey(String key) {
@@ -64,13 +48,9 @@ public class ShowPartitionMessageRespMessage  {
         return this;
     }
 
-    
-
-
-    /**
-     * 消息的key。
-     * @return key
-     */
+    /** 消息的key。
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -79,20 +59,14 @@ public class ShowPartitionMessageRespMessage  {
         this.key = key;
     }
 
-    
-
     public ShowPartitionMessageRespMessage withValue(String value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息内容。
-     * @return value
-     */
+    /** 消息内容。
+     * 
+     * @return value */
     public String getValue() {
         return value;
     }
@@ -101,20 +75,14 @@ public class ShowPartitionMessageRespMessage  {
         this.value = value;
     }
 
-    
-
     public ShowPartitionMessageRespMessage withTopic(String topic) {
         this.topic = topic;
         return this;
     }
 
-    
-
-
-    /**
-     * Topic名称。
-     * @return topic
-     */
+    /** Topic名称。
+     * 
+     * @return topic */
     public String getTopic() {
         return topic;
     }
@@ -123,20 +91,14 @@ public class ShowPartitionMessageRespMessage  {
         this.topic = topic;
     }
 
-    
-
     public ShowPartitionMessageRespMessage withPartition(Integer partition) {
         this.partition = partition;
         return this;
     }
 
-    
-
-
-    /**
-     * 分区编号。
-     * @return partition
-     */
+    /** 分区编号。
+     * 
+     * @return partition */
     public Integer getPartition() {
         return partition;
     }
@@ -145,20 +107,14 @@ public class ShowPartitionMessageRespMessage  {
         this.partition = partition;
     }
 
-    
-
     public ShowPartitionMessageRespMessage withMessageOffset(Long messageOffset) {
         this.messageOffset = messageOffset;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息位置。
-     * @return messageOffset
-     */
+    /** 消息位置。
+     * 
+     * @return messageOffset */
     public Long getMessageOffset() {
         return messageOffset;
     }
@@ -167,20 +123,14 @@ public class ShowPartitionMessageRespMessage  {
         this.messageOffset = messageOffset;
     }
 
-    
-
     public ShowPartitionMessageRespMessage withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息大小，单位字节。
-     * @return size
-     */
+    /** 消息大小，单位字节。
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -189,20 +139,14 @@ public class ShowPartitionMessageRespMessage  {
         this.size = size;
     }
 
-    
-
     public ShowPartitionMessageRespMessage withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息时间戳。
-     * @return timestamp
-     */
+    /** 生产消息的时间。 格式为Unix时间戳。单位为毫秒。
+     * 
+     * @return timestamp */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -210,8 +154,6 @@ public class ShowPartitionMessageRespMessage  {
     public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -222,18 +164,20 @@ public class ShowPartitionMessageRespMessage  {
             return false;
         }
         ShowPartitionMessageRespMessage showPartitionMessageRespMessage = (ShowPartitionMessageRespMessage) o;
-        return Objects.equals(this.key, showPartitionMessageRespMessage.key) &&
-            Objects.equals(this.value, showPartitionMessageRespMessage.value) &&
-            Objects.equals(this.topic, showPartitionMessageRespMessage.topic) &&
-            Objects.equals(this.partition, showPartitionMessageRespMessage.partition) &&
-            Objects.equals(this.messageOffset, showPartitionMessageRespMessage.messageOffset) &&
-            Objects.equals(this.size, showPartitionMessageRespMessage.size) &&
-            Objects.equals(this.timestamp, showPartitionMessageRespMessage.timestamp);
+        return Objects.equals(this.key, showPartitionMessageRespMessage.key)
+            && Objects.equals(this.value, showPartitionMessageRespMessage.value)
+            && Objects.equals(this.topic, showPartitionMessageRespMessage.topic)
+            && Objects.equals(this.partition, showPartitionMessageRespMessage.partition)
+            && Objects.equals(this.messageOffset, showPartitionMessageRespMessage.messageOffset)
+            && Objects.equals(this.size, showPartitionMessageRespMessage.size)
+            && Objects.equals(this.timestamp, showPartitionMessageRespMessage.timestamp);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(key, value, topic, partition, messageOffset, size, timestamp);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,16 +192,13 @@ public class ShowPartitionMessageRespMessage  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

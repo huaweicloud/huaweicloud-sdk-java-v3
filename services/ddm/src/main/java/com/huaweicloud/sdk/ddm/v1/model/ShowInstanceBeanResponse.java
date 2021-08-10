@@ -1,140 +1,111 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * DDM实例的信息。
- */
-public class ShowInstanceBeanResponse  {
-
-
+/** DDM实例的信息。 */
+public class ShowInstanceBeanResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
+    @JsonProperty(value = "created")
+
     private String created;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
+
     private String updated;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="available_zone")
-    
+    @JsonProperty(value = "available_zone")
+
     private String availableZone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
+
     private String subnetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_id")
-    
+    @JsonProperty(value = "security_group_id")
+
     private String securityGroupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_count")
-    
+    @JsonProperty(value = "node_count")
+
     private Integer nodeCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_ip")
-    
+    @JsonProperty(value = "access_ip")
+
     private String accessIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_port")
-    
+    @JsonProperty(value = "access_port")
+
     private String accessPort;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="core_count")
-    
+    @JsonProperty(value = "core_count")
+
     private String coreCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ram_capacity")
-    
+    @JsonProperty(value = "ram_capacity")
+
     private String ramCapacity;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_msg")
-    
+    @JsonProperty(value = "error_msg")
+
     private String errorMsg;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_status")
-    
+    @JsonProperty(value = "node_status")
+
     private String nodeStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engine_version")
-    
+    @JsonProperty(value = "engine_version")
+
     private String engineVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_id")
-    
+    @JsonProperty(value = "order_id")
+
     private String orderId;
 
     public ShowInstanceBeanResponse withId(String id) {
@@ -142,13 +113,9 @@ public class ShowInstanceBeanResponse  {
         return this;
     }
 
-    
-
-
-    /**
-     * DDM实例ID。
-     * @return id
-     */
+    /** DDM实例ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -157,20 +124,14 @@ public class ShowInstanceBeanResponse  {
         this.id = id;
     }
 
-    
-
     public ShowInstanceBeanResponse withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * DDM实例状态。
-     * @return status
-     */
+    /** DDM实例状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -179,20 +140,14 @@ public class ShowInstanceBeanResponse  {
         this.status = status;
     }
 
-    
-
     public ShowInstanceBeanResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建的实例名称。
-     * @return name
-     */
+    /** 创建的实例名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -201,20 +156,14 @@ public class ShowInstanceBeanResponse  {
         this.name = name;
     }
 
-    
-
     public ShowInstanceBeanResponse withCreated(String created) {
         this.created = created;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间，格式为yyyy-mm-dd Thh:mm:ssZ。  其中，T指定某个时间的开始；Z指示 UTC 时间。
-     * @return created
-     */
+    /** 创建时间，格式为yyyy-mm-dd Thh:mm:ssZ。 其中，T指定某个时间的开始；Z指示 UTC 时间。
+     * 
+     * @return created */
     public String getCreated() {
         return created;
     }
@@ -223,20 +172,14 @@ public class ShowInstanceBeanResponse  {
         this.created = created;
     }
 
-    
-
     public ShowInstanceBeanResponse withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间，格式与“created”完全相同。
-     * @return updated
-     */
+    /** 更新时间，格式与“created”完全相同。
+     * 
+     * @return updated */
     public String getUpdated() {
         return updated;
     }
@@ -245,20 +188,14 @@ public class ShowInstanceBeanResponse  {
         this.updated = updated;
     }
 
-    
-
     public ShowInstanceBeanResponse withAvailableZone(String availableZone) {
         this.availableZone = availableZone;
         return this;
     }
 
-    
-
-
-    /**
-     * 可用区名称
-     * @return availableZone
-     */
+    /** 可用区名称
+     * 
+     * @return availableZone */
     public String getAvailableZone() {
         return availableZone;
     }
@@ -267,20 +204,14 @@ public class ShowInstanceBeanResponse  {
         this.availableZone = availableZone;
     }
 
-    
-
     public ShowInstanceBeanResponse withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟私有云的ID。
-     * @return vpcId
-     */
+    /** 虚拟私有云的ID。
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -289,20 +220,14 @@ public class ShowInstanceBeanResponse  {
         this.vpcId = vpcId;
     }
 
-    
-
     public ShowInstanceBeanResponse withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网ID。
-     * @return subnetId
-     */
+    /** 子网ID。
+     * 
+     * @return subnetId */
     public String getSubnetId() {
         return subnetId;
     }
@@ -311,20 +236,14 @@ public class ShowInstanceBeanResponse  {
         this.subnetId = subnetId;
     }
 
-    
-
     public ShowInstanceBeanResponse withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组ID。
-     * @return securityGroupId
-     */
+    /** 安全组ID。
+     * 
+     * @return securityGroupId */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -333,20 +252,14 @@ public class ShowInstanceBeanResponse  {
         this.securityGroupId = securityGroupId;
     }
 
-    
-
     public ShowInstanceBeanResponse withNodeCount(Integer nodeCount) {
         this.nodeCount = nodeCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点数量。
-     * @return nodeCount
-     */
+    /** 节点数量。
+     * 
+     * @return nodeCount */
     public Integer getNodeCount() {
         return nodeCount;
     }
@@ -355,20 +268,14 @@ public class ShowInstanceBeanResponse  {
         this.nodeCount = nodeCount;
     }
 
-    
-
     public ShowInstanceBeanResponse withAccessIp(String accessIp) {
         this.accessIp = accessIp;
         return this;
     }
 
-    
-
-
-    /**
-     * DDM实例访问地址。
-     * @return accessIp
-     */
+    /** DDM实例访问地址。
+     * 
+     * @return accessIp */
     public String getAccessIp() {
         return accessIp;
     }
@@ -377,20 +284,14 @@ public class ShowInstanceBeanResponse  {
         this.accessIp = accessIp;
     }
 
-    
-
     public ShowInstanceBeanResponse withAccessPort(String accessPort) {
         this.accessPort = accessPort;
         return this;
     }
 
-    
-
-
-    /**
-     * DDM实例访问端口。
-     * @return accessPort
-     */
+    /** DDM实例访问端口。
+     * 
+     * @return accessPort */
     public String getAccessPort() {
         return accessPort;
     }
@@ -399,20 +300,14 @@ public class ShowInstanceBeanResponse  {
         this.accessPort = accessPort;
     }
 
-    
-
     public ShowInstanceBeanResponse withCoreCount(String coreCount) {
         this.coreCount = coreCount;
         return this;
     }
 
-    
-
-
-    /**
-     * cpu个数。
-     * @return coreCount
-     */
+    /** cpu个数。
+     * 
+     * @return coreCount */
     public String getCoreCount() {
         return coreCount;
     }
@@ -421,20 +316,14 @@ public class ShowInstanceBeanResponse  {
         this.coreCount = coreCount;
     }
 
-    
-
     public ShowInstanceBeanResponse withRamCapacity(String ramCapacity) {
         this.ramCapacity = ramCapacity;
         return this;
     }
 
-    
-
-
-    /**
-     * 内存大小，单位为G。
-     * @return ramCapacity
-     */
+    /** 内存大小，单位为G。
+     * 
+     * @return ramCapacity */
     public String getRamCapacity() {
         return ramCapacity;
     }
@@ -443,20 +332,14 @@ public class ShowInstanceBeanResponse  {
         this.ramCapacity = ramCapacity;
     }
 
-    
-
     public ShowInstanceBeanResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
 
-    
-
-
-    /**
-     * 响应信息，若无异常信息则不返回该参数 
-     * @return errorMsg
-     */
+    /** 响应信息，若无异常信息则不返回该参数
+     * 
+     * @return errorMsg */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -465,20 +348,14 @@ public class ShowInstanceBeanResponse  {
         this.errorMsg = errorMsg;
     }
 
-    
-
     public ShowInstanceBeanResponse withNodeStatus(String nodeStatus) {
         this.nodeStatus = nodeStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点状态。
-     * @return nodeStatus
-     */
+    /** 节点状态。
+     * 
+     * @return nodeStatus */
     public String getNodeStatus() {
         return nodeStatus;
     }
@@ -487,20 +364,14 @@ public class ShowInstanceBeanResponse  {
         this.nodeStatus = nodeStatus;
     }
 
-    
-
     public ShowInstanceBeanResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID。
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -509,20 +380,14 @@ public class ShowInstanceBeanResponse  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public ShowInstanceBeanResponse withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 租户在某一region下的project ID。
-     * @return projectId
-     */
+    /** 租户在某一region下的project ID。
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -531,20 +396,14 @@ public class ShowInstanceBeanResponse  {
         this.projectId = projectId;
     }
 
-    
-
     public ShowInstanceBeanResponse withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * 引擎版本号（Core实例版本号）。
-     * @return engineVersion
-     */
+    /** 引擎版本号（Core实例版本号）。
+     * 
+     * @return engineVersion */
     public String getEngineVersion() {
         return engineVersion;
     }
@@ -553,20 +412,14 @@ public class ShowInstanceBeanResponse  {
         this.engineVersion = engineVersion;
     }
 
-    
-
     public ShowInstanceBeanResponse withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
     }
 
-    
-
-
-    /**
-     * 包周期的实例，有订单id。
-     * @return orderId
-     */
+    /** 包周期的实例，有订单id。
+     * 
+     * @return orderId */
     public String getOrderId() {
         return orderId;
     }
@@ -574,8 +427,6 @@ public class ShowInstanceBeanResponse  {
     public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -586,31 +437,52 @@ public class ShowInstanceBeanResponse  {
             return false;
         }
         ShowInstanceBeanResponse showInstanceBeanResponse = (ShowInstanceBeanResponse) o;
-        return Objects.equals(this.id, showInstanceBeanResponse.id) &&
-            Objects.equals(this.status, showInstanceBeanResponse.status) &&
-            Objects.equals(this.name, showInstanceBeanResponse.name) &&
-            Objects.equals(this.created, showInstanceBeanResponse.created) &&
-            Objects.equals(this.updated, showInstanceBeanResponse.updated) &&
-            Objects.equals(this.availableZone, showInstanceBeanResponse.availableZone) &&
-            Objects.equals(this.vpcId, showInstanceBeanResponse.vpcId) &&
-            Objects.equals(this.subnetId, showInstanceBeanResponse.subnetId) &&
-            Objects.equals(this.securityGroupId, showInstanceBeanResponse.securityGroupId) &&
-            Objects.equals(this.nodeCount, showInstanceBeanResponse.nodeCount) &&
-            Objects.equals(this.accessIp, showInstanceBeanResponse.accessIp) &&
-            Objects.equals(this.accessPort, showInstanceBeanResponse.accessPort) &&
-            Objects.equals(this.coreCount, showInstanceBeanResponse.coreCount) &&
-            Objects.equals(this.ramCapacity, showInstanceBeanResponse.ramCapacity) &&
-            Objects.equals(this.errorMsg, showInstanceBeanResponse.errorMsg) &&
-            Objects.equals(this.nodeStatus, showInstanceBeanResponse.nodeStatus) &&
-            Objects.equals(this.enterpriseProjectId, showInstanceBeanResponse.enterpriseProjectId) &&
-            Objects.equals(this.projectId, showInstanceBeanResponse.projectId) &&
-            Objects.equals(this.engineVersion, showInstanceBeanResponse.engineVersion) &&
-            Objects.equals(this.orderId, showInstanceBeanResponse.orderId);
+        return Objects.equals(this.id, showInstanceBeanResponse.id)
+            && Objects.equals(this.status, showInstanceBeanResponse.status)
+            && Objects.equals(this.name, showInstanceBeanResponse.name)
+            && Objects.equals(this.created, showInstanceBeanResponse.created)
+            && Objects.equals(this.updated, showInstanceBeanResponse.updated)
+            && Objects.equals(this.availableZone, showInstanceBeanResponse.availableZone)
+            && Objects.equals(this.vpcId, showInstanceBeanResponse.vpcId)
+            && Objects.equals(this.subnetId, showInstanceBeanResponse.subnetId)
+            && Objects.equals(this.securityGroupId, showInstanceBeanResponse.securityGroupId)
+            && Objects.equals(this.nodeCount, showInstanceBeanResponse.nodeCount)
+            && Objects.equals(this.accessIp, showInstanceBeanResponse.accessIp)
+            && Objects.equals(this.accessPort, showInstanceBeanResponse.accessPort)
+            && Objects.equals(this.coreCount, showInstanceBeanResponse.coreCount)
+            && Objects.equals(this.ramCapacity, showInstanceBeanResponse.ramCapacity)
+            && Objects.equals(this.errorMsg, showInstanceBeanResponse.errorMsg)
+            && Objects.equals(this.nodeStatus, showInstanceBeanResponse.nodeStatus)
+            && Objects.equals(this.enterpriseProjectId, showInstanceBeanResponse.enterpriseProjectId)
+            && Objects.equals(this.projectId, showInstanceBeanResponse.projectId)
+            && Objects.equals(this.engineVersion, showInstanceBeanResponse.engineVersion)
+            && Objects.equals(this.orderId, showInstanceBeanResponse.orderId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, status, name, created, updated, availableZone, vpcId, subnetId, securityGroupId, nodeCount, accessIp, accessPort, coreCount, ramCapacity, errorMsg, nodeStatus, enterpriseProjectId, projectId, engineVersion, orderId);
+        return Objects.hash(id,
+            status,
+            name,
+            created,
+            updated,
+            availableZone,
+            vpcId,
+            subnetId,
+            securityGroupId,
+            nodeCount,
+            accessIp,
+            accessPort,
+            coreCount,
+            ramCapacity,
+            errorMsg,
+            nodeStatus,
+            enterpriseProjectId,
+            projectId,
+            engineVersion,
+            orderId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -638,16 +510,13 @@ public class ShowInstanceBeanResponse  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

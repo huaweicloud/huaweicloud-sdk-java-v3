@@ -1,44 +1,29 @@
 package com.huaweicloud.sdk.swr.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.swr.v2.model.TagSelector;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Rule
- */
-public class Rule  {
+/** Rule */
+public class Rule {
 
-    /**
-     * 回收类型，date_rule、tag_rule
-     */
+    /** 回收类型，date_rule、tag_rule */
     public static final class TemplateEnum {
 
-        
-        /**
-         * Enum DATE_RULE for value: "date_rule"
-         */
+        /** Enum DATE_RULE for value: "date_rule" */
         public static final TemplateEnum DATE_RULE = new TemplateEnum("date_rule");
-        
-        /**
-         * Enum TAG_RULE for value: "tag_rule"
-         */
+
+        /** Enum TAG_RULE for value: "tag_rule" */
         public static final TemplateEnum TAG_RULE = new TemplateEnum("tag_rule");
-        
 
         private static final Map<String, TemplateEnum> STATIC_FIELDS = createStaticFields();
 
@@ -67,7 +52,7 @@ public class Rule  {
 
         @JsonCreator
         public static TemplateEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TemplateEnum result = STATIC_FIELDS.get(value);
@@ -78,7 +63,7 @@ public class Rule  {
         }
 
         public static TemplateEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TemplateEnum result = STATIC_FIELDS.get(value);
@@ -102,36 +87,29 @@ public class Rule  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template")
-    
+    @JsonProperty(value = "template")
+
     private TemplateEnum template;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="params")
-    
+    @JsonProperty(value = "params")
+
     private Object params;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag_selectors")
-    
+    @JsonProperty(value = "tag_selectors")
+
     private List<TagSelector> tagSelectors = null;
-    
+
     public Rule withTemplate(TemplateEnum template) {
         this.template = template;
         return this;
     }
 
-    
-
-
-    /**
-     * 回收类型，date_rule、tag_rule
-     * @return template
-     */
+    /** 回收类型，date_rule、tag_rule
+     * 
+     * @return template */
     public TemplateEnum getTemplate() {
         return template;
     }
@@ -140,20 +118,14 @@ public class Rule  {
         this.template = template;
     }
 
-    
-
     public Rule withParams(Object params) {
         this.params = params;
         return this;
     }
 
-    
-
-
-    /**
-     * template是date_rule时，设置params为{\"days\": \"xxx\"} template是tag_rule时，设置params为{\"num\": \"xxx\"} 
-     * @return params
-     */
+    /** template是date_rule时，设置params为{\"days\": \"xxx\"} template是tag_rule时，设置params为{\"num\": \"xxx\"}
+     * 
+     * @return params */
     public Object getParams() {
         return params;
     }
@@ -162,16 +134,13 @@ public class Rule  {
         this.params = params;
     }
 
-    
-
     public Rule withTagSelectors(List<TagSelector> tagSelectors) {
         this.tagSelectors = tagSelectors;
         return this;
     }
 
-    
     public Rule addTagSelectorsItem(TagSelector tagSelectorsItem) {
-        if(this.tagSelectors == null) {
+        if (this.tagSelectors == null) {
             this.tagSelectors = new ArrayList<>();
         }
         this.tagSelectors.add(tagSelectorsItem);
@@ -179,17 +148,16 @@ public class Rule  {
     }
 
     public Rule withTagSelectors(Consumer<List<TagSelector>> tagSelectorsSetter) {
-        if(this.tagSelectors == null) {
+        if (this.tagSelectors == null) {
             this.tagSelectors = new ArrayList<>();
         }
         tagSelectorsSetter.accept(this.tagSelectors);
         return this;
     }
 
-    /**
-     * 例外镜像
-     * @return tagSelectors
-     */
+    /** 例外镜像
+     * 
+     * @return tagSelectors */
     public List<TagSelector> getTagSelectors() {
         return tagSelectors;
     }
@@ -197,8 +165,6 @@ public class Rule  {
     public void setTagSelectors(List<TagSelector> tagSelectors) {
         this.tagSelectors = tagSelectors;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -209,14 +175,15 @@ public class Rule  {
             return false;
         }
         Rule rule = (Rule) o;
-        return Objects.equals(this.template, rule.template) &&
-            Objects.equals(this.params, rule.params) &&
-            Objects.equals(this.tagSelectors, rule.tagSelectors);
+        return Objects.equals(this.template, rule.template) && Objects.equals(this.params, rule.params)
+            && Objects.equals(this.tagSelectors, rule.tagSelectors);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(template, params, tagSelectors);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -227,16 +194,13 @@ public class Rule  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

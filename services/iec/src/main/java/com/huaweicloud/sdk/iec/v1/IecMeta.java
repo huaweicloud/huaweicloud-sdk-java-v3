@@ -6,9 +6,8 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.iec.v1.model.*;
+
 import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class IecMeta {
@@ -24,31 +23,28 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AddNicsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<AddNicsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            AddNicsRequestBody.class,
+            TypeCasts.uncheckedConversion(AddNicsRequestBody.class),
             f -> f.withMarshaller(AddNicsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchRebootInstanceRequest, BatchRebootInstanceResponse> batchRebootInstance = genForbatchRebootInstance();
+    public static final HttpRequestDef<BatchRebootInstanceRequest, BatchRebootInstanceResponse> batchRebootInstance =
+        genForbatchRebootInstance();
 
     private static HttpRequestDef<BatchRebootInstanceRequest, BatchRebootInstanceResponse> genForbatchRebootInstance() {
         // basic
@@ -59,23 +55,21 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<BatchRebootInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchRebootInstanceRequestBody.class,
+            TypeCasts.uncheckedConversion(BatchRebootInstanceRequestBody.class),
             f -> f.withMarshaller(BatchRebootInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchStartInstanceRequest, BatchStartInstanceResponse> batchStartInstance = genForbatchStartInstance();
+    public static final HttpRequestDef<BatchStartInstanceRequest, BatchStartInstanceResponse> batchStartInstance =
+        genForbatchStartInstance();
 
     private static HttpRequestDef<BatchStartInstanceRequest, BatchStartInstanceResponse> genForbatchStartInstance() {
         // basic
@@ -86,23 +80,21 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<BatchStartInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchStartInstanceRequestBody.class,
+            TypeCasts.uncheckedConversion(BatchStartInstanceRequestBody.class),
             f -> f.withMarshaller(BatchStartInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchStopInstanceRequest, BatchStopInstanceResponse> batchStopInstance = genForbatchStopInstance();
+    public static final HttpRequestDef<BatchStopInstanceRequest, BatchStopInstanceResponse> batchStopInstance =
+        genForbatchStopInstance();
 
     private static HttpRequestDef<BatchStopInstanceRequest, BatchStopInstanceResponse> genForbatchStopInstance() {
         // basic
@@ -113,18 +105,15 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<BatchStopInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchStopInstanceRequestBody.class,
+            TypeCasts.uncheckedConversion(BatchStopInstanceRequestBody.class),
             f -> f.withMarshaller(BatchStopInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -140,31 +129,28 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ChangeOsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ChangeOsOption>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ChangeOsOption.class,
+            TypeCasts.uncheckedConversion(ChangeOsOption.class),
             f -> f.withMarshaller(ChangeOsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateDeploymentRequest, CreateDeploymentResponse> createDeployment = genForcreateDeployment();
+    public static final HttpRequestDef<CreateDeploymentRequest, CreateDeploymentResponse> createDeployment =
+        genForcreateDeployment();
 
     private static HttpRequestDef<CreateDeploymentRequest, CreateDeploymentResponse> genForcreateDeployment() {
         // basic
@@ -175,23 +161,21 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateDeploymentRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateDeploymentRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateDeploymentRequestBody.class),
             f -> f.withMarshaller(CreateDeploymentRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateKeypairRequest, CreateKeypairResponse> createKeypair = genForcreateKeypair();
+    public static final HttpRequestDef<CreateKeypairRequest, CreateKeypairResponse> createKeypair =
+        genForcreateKeypair();
 
     private static HttpRequestDef<CreateKeypairRequest, CreateKeypairResponse> genForcreateKeypair() {
         // basic
@@ -202,18 +186,15 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateKeypairRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateKeypairRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateKeypairRequestBody.class),
             f -> f.withMarshaller(CreateKeypairRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -229,23 +210,21 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreatePortRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreatePortRequestBody.class,
+            TypeCasts.uncheckedConversion(CreatePortRequestBody.class),
             f -> f.withMarshaller(CreatePortRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateSecurityGroupRequest, CreateSecurityGroupResponse> createSecurityGroup = genForcreateSecurityGroup();
+    public static final HttpRequestDef<CreateSecurityGroupRequest, CreateSecurityGroupResponse> createSecurityGroup =
+        genForcreateSecurityGroup();
 
     private static HttpRequestDef<CreateSecurityGroupRequest, CreateSecurityGroupResponse> genForcreateSecurityGroup() {
         // basic
@@ -256,45 +235,40 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateSecurityGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateSecurityGroupRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateSecurityGroupRequestBody.class),
             f -> f.withMarshaller(CreateSecurityGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse> createSecurityGroupRule = genForcreateSecurityGroupRule();
+    public static final HttpRequestDef<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse> createSecurityGroupRule =
+        genForcreateSecurityGroupRule();
 
     private static HttpRequestDef<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse> genForcreateSecurityGroupRule() {
         // basic
-        HttpRequestDef.Builder<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateSecurityGroupRuleRequest.class, CreateSecurityGroupRuleResponse.class)
-                .withName("CreateSecurityGroupRule")
-                .withUri("/v1/security-group-rules")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateSecurityGroupRuleRequest.class, CreateSecurityGroupRuleResponse.class)
+            .withName("CreateSecurityGroupRule")
+            .withUri("/v1/security-group-rules")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateSecurityGroupRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateSecurityGroupRuleRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateSecurityGroupRuleRequestBody.class),
             f -> f.withMarshaller(CreateSecurityGroupRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -310,23 +284,21 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateVpcRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateVpcRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateVpcRequestBody.class),
             f -> f.withMarshaller(CreateVpcRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteDeploymentRequest, DeleteDeploymentResponse> deleteDeployment = genFordeleteDeployment();
+    public static final HttpRequestDef<DeleteDeploymentRequest, DeleteDeploymentResponse> deleteDeployment =
+        genFordeleteDeployment();
 
     private static HttpRequestDef<DeleteDeploymentRequest, DeleteDeploymentResponse> genFordeleteDeployment() {
         // basic
@@ -337,23 +309,21 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("deployment_id",
+        builder.<String>withRequestField("deployment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDeploymentRequest::getDeploymentId, (req, v) -> {
                 req.setDeploymentId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteEdgeCloudRequest, DeleteEdgeCloudResponse> deleteEdgeCloud = genFordeleteEdgeCloud();
+    public static final HttpRequestDef<DeleteEdgeCloudRequest, DeleteEdgeCloudResponse> deleteEdgeCloud =
+        genFordeleteEdgeCloud();
 
     private static HttpRequestDef<DeleteEdgeCloudRequest, DeleteEdgeCloudResponse> genFordeleteEdgeCloud() {
         // basic
@@ -364,23 +334,21 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("edgecloud_id",
+        builder.<String>withRequestField("edgecloud_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteEdgeCloudRequest::getEdgecloudId, (req, v) -> {
                 req.setEdgecloudId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteInstancesRequest, DeleteInstancesResponse> deleteInstances = genFordeleteInstances();
+    public static final HttpRequestDef<DeleteInstancesRequest, DeleteInstancesResponse> deleteInstances =
+        genFordeleteInstances();
 
     private static HttpRequestDef<DeleteInstancesRequest, DeleteInstancesResponse> genFordeleteInstances() {
         // basic
@@ -391,23 +359,21 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<DeleteInstancesRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DeleteInstancesRequestBody.class,
+            TypeCasts.uncheckedConversion(DeleteInstancesRequestBody.class),
             f -> f.withMarshaller(DeleteInstancesRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteKeypairRequest, DeleteKeypairResponse> deleteKeypair = genFordeleteKeypair();
+    public static final HttpRequestDef<DeleteKeypairRequest, DeleteKeypairResponse> deleteKeypair =
+        genFordeleteKeypair();
 
     private static HttpRequestDef<DeleteKeypairRequest, DeleteKeypairResponse> genFordeleteKeypair() {
         // basic
@@ -418,18 +384,15 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("keypair_name",
+        builder.<String>withRequestField("keypair_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteKeypairRequest::getKeypairName, (req, v) -> {
                 req.setKeypairName(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -445,26 +408,22 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteNicsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<DeleteNicsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DeleteNicsRequestBody.class,
+            TypeCasts.uncheckedConversion(DeleteNicsRequestBody.class),
             f -> f.withMarshaller(DeleteNicsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -480,72 +439,65 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("port_id",
+        builder.<String>withRequestField("port_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeletePortRequest::getPortId, (req, v) -> {
                 req.setPortId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> deleteSecurityGroup = genFordeleteSecurityGroup();
+    public static final HttpRequestDef<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> deleteSecurityGroup =
+        genFordeleteSecurityGroup();
 
     private static HttpRequestDef<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> genFordeleteSecurityGroup() {
         // basic
-        HttpRequestDef.Builder<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSecurityGroupRequest.class, DeleteSecurityGroupResponse.class)
-                .withName("DeleteSecurityGroup")
-                .withUri("/v1/security-groups/{security_group_id}")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteSecurityGroupRequest.class, DeleteSecurityGroupResponse.class)
+            .withName("DeleteSecurityGroup")
+            .withUri("/v1/security-groups/{security_group_id}")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("security_group_id",
+        builder.<String>withRequestField("security_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSecurityGroupRequest::getSecurityGroupId, (req, v) -> {
                 req.setSecurityGroupId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse> deleteSecurityGroupRule = genFordeleteSecurityGroupRule();
+    public static final HttpRequestDef<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse> deleteSecurityGroupRule =
+        genFordeleteSecurityGroupRule();
 
     private static HttpRequestDef<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse> genFordeleteSecurityGroupRule() {
         // basic
-        HttpRequestDef.Builder<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSecurityGroupRuleRequest.class, DeleteSecurityGroupRuleResponse.class)
-                .withName("DeleteSecurityGroupRule")
-                .withUri("/v1/security-group-rules/{security_group_rule_id}")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteSecurityGroupRuleRequest.class, DeleteSecurityGroupRuleResponse.class)
+            .withName("DeleteSecurityGroupRule")
+            .withUri("/v1/security-group-rules/{security_group_rule_id}")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("security_group_rule_id",
+        builder.<String>withRequestField("security_group_rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSecurityGroupRuleRequest::getSecurityGroupRuleId, (req, v) -> {
                 req.setSecurityGroupRuleId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -561,18 +513,15 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("subnet_id",
+        builder.<String>withRequestField("subnet_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSubnetRequest::getSubnetId, (req, v) -> {
                 req.setSubnetId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -588,23 +537,21 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("vpc_id",
+        builder.<String>withRequestField("vpc_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteVpcRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ExecuteDeploymentRequest, ExecuteDeploymentResponse> executeDeployment = genForexecuteDeployment();
+    public static final HttpRequestDef<ExecuteDeploymentRequest, ExecuteDeploymentResponse> executeDeployment =
+        genForexecuteDeployment();
 
     private static HttpRequestDef<ExecuteDeploymentRequest, ExecuteDeploymentResponse> genForexecuteDeployment() {
         // basic
@@ -615,23 +562,21 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("deployment_id",
+        builder.<String>withRequestField("deployment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExecuteDeploymentRequest::getDeploymentId, (req, v) -> {
                 req.setDeploymentId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ExpandEdgecloudRequest, ExpandEdgecloudResponse> expandEdgecloud = genForexpandEdgecloud();
+    public static final HttpRequestDef<ExpandEdgecloudRequest, ExpandEdgecloudResponse> expandEdgecloud =
+        genForexpandEdgecloud();
 
     private static HttpRequestDef<ExpandEdgecloudRequest, ExpandEdgecloudResponse> genForexpandEdgecloud() {
         // basic
@@ -642,23 +587,21 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("deployment_id",
+        builder.<String>withRequestField("deployment_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExpandEdgecloudRequest::getDeploymentId, (req, v) -> {
                 req.setDeploymentId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListBandwidthsRequest, ListBandwidthsResponse> listBandwidths = genForlistBandwidths();
+    public static final HttpRequestDef<ListBandwidthsRequest, ListBandwidthsResponse> listBandwidths =
+        genForlistBandwidths();
 
     private static HttpRequestDef<ListBandwidthsRequest, ListBandwidthsResponse> genForlistBandwidths() {
         // basic
@@ -669,39 +612,35 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListBandwidthsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListBandwidthsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("site_id",
+            }));
+        builder.<String>withRequestField("site_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBandwidthsRequest::getSiteId, (req, v) -> {
                 req.setSiteId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDeploymentsRequest, ListDeploymentsResponse> listDeployments = genForlistDeployments();
+    public static final HttpRequestDef<ListDeploymentsRequest, ListDeploymentsResponse> listDeployments =
+        genForlistDeployments();
 
     private static HttpRequestDef<ListDeploymentsRequest, ListDeploymentsResponse> genForlistDeployments() {
         // basic
@@ -712,55 +651,49 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDeploymentsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDeploymentsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("status",
+            }));
+        builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDeploymentsRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDeploymentsRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("edgecloud_id",
+            }));
+        builder.<String>withRequestField("edgecloud_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDeploymentsRequest::getEdgecloudId, (req, v) -> {
                 req.setEdgecloudId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListEdgeCloudRequest, ListEdgeCloudResponse> listEdgeCloud = genForlistEdgeCloud();
+    public static final HttpRequestDef<ListEdgeCloudRequest, ListEdgeCloudResponse> listEdgeCloud =
+        genForlistEdgeCloud();
 
     private static HttpRequestDef<ListEdgeCloudRequest, ListEdgeCloudResponse> genForlistEdgeCloud() {
         // basic
@@ -771,42 +704,36 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListEdgeCloudRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListEdgeCloudRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEdgeCloudRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEdgeCloudRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -822,82 +749,71 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListFlavorsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListFlavorsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlavorsRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("area",
+            }));
+        builder.<String>withRequestField("area",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlavorsRequest::getArea, (req, v) -> {
                 req.setArea(v);
-            })
-        );
-        builder.withRequestField("province",
+            }));
+        builder.<String>withRequestField("province",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlavorsRequest::getProvince, (req, v) -> {
                 req.setProvince(v);
-            })
-        );
-        builder.withRequestField("city",
+            }));
+        builder.<String>withRequestField("city",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlavorsRequest::getCity, (req, v) -> {
                 req.setCity(v);
-            })
-        );
-        builder.withRequestField("operator",
+            }));
+        builder.<String>withRequestField("operator",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlavorsRequest::getOperator, (req, v) -> {
                 req.setOperator(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlavorsRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("site_ids",
+            }));
+        builder.<String>withRequestField("site_ids",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlavorsRequest::getSiteIds, (req, v) -> {
                 req.setSiteIds(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -913,167 +829,147 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("__imagetype",
+        builder.<String>withRequestField("__imagetype",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImagesRequest::getImagetype, (req, v) -> {
                 req.setImagetype(v);
-            })
-        );
-        builder.withRequestField("protected",
+            }));
+        builder.<ListImagesRequest.ProtectedEnum>withRequestField("protected",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListImagesRequest.ProtectedEnum.class,
+            TypeCasts.uncheckedConversion(ListImagesRequest.ProtectedEnum.class),
             f -> f.withMarshaller(ListImagesRequest::getProtected, (req, v) -> {
                 req.setProtected(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImagesRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("visibility",
+            }));
+        builder.<String>withRequestField("visibility",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImagesRequest::getVisibility, (req, v) -> {
                 req.setVisibility(v);
-            })
-        );
-        builder.withRequestField("status",
+            }));
+        builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImagesRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImagesRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("__os_type",
+            }));
+        builder.<String>withRequestField("__os_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImagesRequest::getOsType, (req, v) -> {
                 req.setOsType(v);
-            })
-        );
-        builder.withRequestField("virtual_env_type",
+            }));
+        builder.<ListImagesRequest.VirtualEnvTypeEnum>withRequestField("virtual_env_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListImagesRequest.VirtualEnvTypeEnum.class,
+            TypeCasts.uncheckedConversion(ListImagesRequest.VirtualEnvTypeEnum.class),
             f -> f.withMarshaller(ListImagesRequest::getVirtualEnvType, (req, v) -> {
                 req.setVirtualEnvType(v);
-            })
-        );
-        builder.withRequestField("__isregistered",
+            }));
+        builder.<ListImagesRequest.IsregisteredEnum>withRequestField("__isregistered",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListImagesRequest.IsregisteredEnum.class,
+            TypeCasts.uncheckedConversion(ListImagesRequest.IsregisteredEnum.class),
             f -> f.withMarshaller(ListImagesRequest::getIsregistered, (req, v) -> {
                 req.setIsregistered(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListImagesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListImagesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("sort_key",
+            }));
+        builder.<ListImagesRequest.SortKeyEnum>withRequestField("sort_key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListImagesRequest.SortKeyEnum.class,
+            TypeCasts.uncheckedConversion(ListImagesRequest.SortKeyEnum.class),
             f -> f.withMarshaller(ListImagesRequest::getSortKey, (req, v) -> {
                 req.setSortKey(v);
-            })
-        );
-        builder.withRequestField("sort_dir",
+            }));
+        builder.<ListImagesRequest.SortDirEnum>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListImagesRequest.SortDirEnum.class,
+            TypeCasts.uncheckedConversion(ListImagesRequest.SortDirEnum.class),
             f -> f.withMarshaller(ListImagesRequest::getSortDir, (req, v) -> {
                 req.setSortDir(v);
-            })
-        );
-        builder.withRequestField("__support_kvm",
+            }));
+        builder.<String>withRequestField("__support_kvm",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImagesRequest::getSupportKvm, (req, v) -> {
                 req.setSupportKvm(v);
-            })
-        );
-        builder.withRequestField("__support_kvm_gpu_type",
+            }));
+        builder.<String>withRequestField("__support_kvm_gpu_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImagesRequest::getSupportKvmGpuType, (req, v) -> {
                 req.setSupportKvmGpuType(v);
-            })
-        );
-        builder.withRequestField("__support_kvm_ascend_310",
+            }));
+        builder.<String>withRequestField("__support_kvm_ascend_310",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImagesRequest::getSupportKvmAscend310, (req, v) -> {
                 req.setSupportKvmAscend310(v);
-            })
-        );
-        builder.withRequestField("__support_kvm_hi1822_hiovs",
+            }));
+        builder.<String>withRequestField("__support_kvm_hi1822_hiovs",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImagesRequest::getSupportKvmHi1822Hiovs, (req, v) -> {
                 req.setSupportKvmHi1822Hiovs(v);
-            })
-        );
-        builder.withRequestField("__support_arm",
+            }));
+        builder.<String>withRequestField("__support_arm",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImagesRequest::getSupportArm, (req, v) -> {
                 req.setSupportArm(v);
-            })
-        );
-        builder.withRequestField("__support_gpu_t4",
+            }));
+        builder.<String>withRequestField("__support_gpu_t4",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListImagesRequest::getSupportGpuT4, (req, v) -> {
                 req.setSupportGpuT4(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListInstancesRequest, ListInstancesResponse> listInstances = genForlistInstances();
+    public static final HttpRequestDef<ListInstancesRequest, ListInstancesResponse> listInstances =
+        genForlistInstances();
 
     private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForlistInstances() {
         // basic
@@ -1084,82 +980,71 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListInstancesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListInstancesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("status",
+            }));
+        builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("area",
+            }));
+        builder.<String>withRequestField("area",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesRequest::getArea, (req, v) -> {
                 req.setArea(v);
-            })
-        );
-        builder.withRequestField("province",
+            }));
+        builder.<String>withRequestField("province",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesRequest::getProvince, (req, v) -> {
                 req.setProvince(v);
-            })
-        );
-        builder.withRequestField("city",
+            }));
+        builder.<String>withRequestField("city",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesRequest::getCity, (req, v) -> {
                 req.setCity(v);
-            })
-        );
-        builder.withRequestField("edgecloud_id",
+            }));
+        builder.<String>withRequestField("edgecloud_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesRequest::getEdgecloudId, (req, v) -> {
                 req.setEdgecloudId(v);
-            })
-        );
-        builder.withRequestField("site_id",
+            }));
+        builder.<String>withRequestField("site_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesRequest::getSiteId, (req, v) -> {
                 req.setSiteId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1175,43 +1060,37 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListKeypairsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListKeypairsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListKeypairsRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.<List<SimpleKeypair>>withResponseField(
-            "body",
+
+        builder.<List<SimpleKeypair>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListKeypairsResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(ListKeypairsResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            }).withInnerContainerType(SimpleKeypair.class)
-        );
-
+            }).withInnerContainerType(SimpleKeypair.class));
 
         return builder.build();
     }
@@ -1227,106 +1106,92 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPortsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPortsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("network_id",
+            }));
+        builder.<String>withRequestField("network_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPortsRequest::getNetworkId, (req, v) -> {
                 req.setNetworkId(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPortsRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPortsRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("admin_state_up",
+            }));
+        builder.<Boolean>withRequestField("admin_state_up",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListPortsRequest::getAdminStateUp, (req, v) -> {
                 req.setAdminStateUp(v);
-            })
-        );
-        builder.withRequestField("fixed_ips",
+            }));
+        builder.<List<String>>withRequestField("fixed_ips",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPortsRequest::getFixedIps, (req, v) -> {
                 req.setFixedIps(v);
-            })
-        );
-        builder.withRequestField("mac_address",
+            }));
+        builder.<String>withRequestField("mac_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPortsRequest::getMacAddress, (req, v) -> {
                 req.setMacAddress(v);
-            })
-        );
-        builder.withRequestField("device_id",
+            }));
+        builder.<String>withRequestField("device_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPortsRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("device_owner",
+            }));
+        builder.<String>withRequestField("device_owner",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPortsRequest::getDeviceOwner, (req, v) -> {
                 req.setDeviceOwner(v);
-            })
-        );
-        builder.withRequestField("status",
+            }));
+        builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPortsRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
-            })
-        );
-        builder.withRequestField("security_groups",
+            }));
+        builder.<String>withRequestField("security_groups",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPortsRequest::getSecurityGroups, (req, v) -> {
                 req.setSecurityGroups(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1344,56 +1209,51 @@ public class IecMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse> listSecurityGroupRules = genForlistSecurityGroupRules();
+    public static final HttpRequestDef<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse> listSecurityGroupRules =
+        genForlistSecurityGroupRules();
 
     private static HttpRequestDef<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse> genForlistSecurityGroupRules() {
         // basic
-        HttpRequestDef.Builder<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListSecurityGroupRulesRequest.class, ListSecurityGroupRulesResponse.class)
-                .withName("ListSecurityGroupRules")
-                .withUri("/v1/security-group-rules")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSecurityGroupRulesRequest.class, ListSecurityGroupRulesResponse.class)
+            .withName("ListSecurityGroupRules")
+            .withUri("/v1/security-group-rules")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSecurityGroupRulesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSecurityGroupRulesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("security_group_id",
+            }));
+        builder.<String>withRequestField("security_group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSecurityGroupRulesRequest::getSecurityGroupId, (req, v) -> {
                 req.setSecurityGroupId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSecurityGroupsRequest, ListSecurityGroupsResponse> listSecurityGroups = genForlistSecurityGroups();
+    public static final HttpRequestDef<ListSecurityGroupsRequest, ListSecurityGroupsResponse> listSecurityGroups =
+        genForlistSecurityGroups();
 
     private static HttpRequestDef<ListSecurityGroupsRequest, ListSecurityGroupsResponse> genForlistSecurityGroups() {
         // basic
@@ -1404,26 +1264,22 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSecurityGroupsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSecurityGroupsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1439,74 +1295,64 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSitesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSitesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSitesRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("area",
+            }));
+        builder.<String>withRequestField("area",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSitesRequest::getArea, (req, v) -> {
                 req.setArea(v);
-            })
-        );
-        builder.withRequestField("province",
+            }));
+        builder.<String>withRequestField("province",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSitesRequest::getProvince, (req, v) -> {
                 req.setProvince(v);
-            })
-        );
-        builder.withRequestField("city",
+            }));
+        builder.<String>withRequestField("city",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSitesRequest::getCity, (req, v) -> {
                 req.setCity(v);
-            })
-        );
-        builder.withRequestField("flavor",
+            }));
+        builder.<String>withRequestField("flavor",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSitesRequest::getFlavor, (req, v) -> {
                 req.setFlavor(v);
-            })
-        );
-        builder.withRequestField("volume_type",
+            }));
+        builder.<ListSitesRequest.VolumeTypeEnum>withRequestField("volume_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListSitesRequest.VolumeTypeEnum.class,
+            TypeCasts.uncheckedConversion(ListSitesRequest.VolumeTypeEnum.class),
             f -> f.withMarshaller(ListSitesRequest::getVolumeType, (req, v) -> {
                 req.setVolumeType(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1522,42 +1368,36 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("vpc_id",
+        builder.<String>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSubnetsRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSubnetsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSubnetsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("site_id",
+            }));
+        builder.<String>withRequestField("site_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSubnetsRequest::getSiteId, (req, v) -> {
                 req.setSiteId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1573,47 +1413,42 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListVpcsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListVpcsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVpcsRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVpcsRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowBandwidthRequest, ShowBandwidthResponse> showBandwidth = genForshowBandwidth();
+    public static final HttpRequestDef<ShowBandwidthRequest, ShowBandwidthResponse> showBandwidth =
+        genForshowBandwidth();
 
     private static HttpRequestDef<ShowBandwidthRequest, ShowBandwidthResponse> genForshowBandwidth() {
         // basic
@@ -1624,23 +1459,21 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("bandwidth_id",
+        builder.<String>withRequestField("bandwidth_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBandwidthRequest::getBandwidthId, (req, v) -> {
                 req.setBandwidthId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowEdgeCloudRequest, ShowEdgeCloudResponse> showEdgeCloud = genForshowEdgeCloud();
+    public static final HttpRequestDef<ShowEdgeCloudRequest, ShowEdgeCloudResponse> showEdgeCloud =
+        genForshowEdgeCloud();
 
     private static HttpRequestDef<ShowEdgeCloudRequest, ShowEdgeCloudResponse> genForshowEdgeCloud() {
         // basic
@@ -1651,18 +1484,15 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("edgecloud_id",
+        builder.<String>withRequestField("edgecloud_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEdgeCloudRequest::getEdgecloudId, (req, v) -> {
                 req.setEdgecloudId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1678,18 +1508,15 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("image_id",
+        builder.<String>withRequestField("image_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowImageRequest::getImageId, (req, v) -> {
                 req.setImageId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1705,18 +1532,15 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1732,18 +1556,15 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("keypair_name",
+        builder.<String>withRequestField("keypair_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowKeypairRequest::getKeypairName, (req, v) -> {
                 req.setKeypairName(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1759,23 +1580,21 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("port_id",
+        builder.<String>withRequestField("port_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPortRequest::getPortId, (req, v) -> {
                 req.setPortId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSecurityGroupRequest, ShowSecurityGroupResponse> showSecurityGroup = genForshowSecurityGroup();
+    public static final HttpRequestDef<ShowSecurityGroupRequest, ShowSecurityGroupResponse> showSecurityGroup =
+        genForshowSecurityGroup();
 
     private static HttpRequestDef<ShowSecurityGroupRequest, ShowSecurityGroupResponse> genForshowSecurityGroup() {
         // basic
@@ -1786,45 +1605,40 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("security_group_id",
+        builder.<String>withRequestField("security_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSecurityGroupRequest::getSecurityGroupId, (req, v) -> {
                 req.setSecurityGroupId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse> showSecurityGroupRule = genForshowSecurityGroupRule();
+    public static final HttpRequestDef<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse> showSecurityGroupRule =
+        genForshowSecurityGroupRule();
 
     private static HttpRequestDef<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse> genForshowSecurityGroupRule() {
         // basic
-        HttpRequestDef.Builder<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowSecurityGroupRuleRequest.class, ShowSecurityGroupRuleResponse.class)
-                .withName("ShowSecurityGroupRule")
-                .withUri("/v1/security-group-rules/{security_group_rule_id}")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowSecurityGroupRuleRequest.class, ShowSecurityGroupRuleResponse.class)
+            .withName("ShowSecurityGroupRule")
+            .withUri("/v1/security-group-rules/{security_group_rule_id}")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("security_group_rule_id",
+        builder.<String>withRequestField("security_group_rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSecurityGroupRuleRequest::getSecurityGroupRuleId, (req, v) -> {
                 req.setSecurityGroupRuleId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1840,18 +1654,15 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("subnet_id",
+        builder.<String>withRequestField("subnet_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSubnetRequest::getSubnetId, (req, v) -> {
                 req.setSubnetId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1867,18 +1678,15 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("volume_id",
+        builder.<String>withRequestField("volume_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowVolumeRequest::getVolumeId, (req, v) -> {
                 req.setVolumeId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1894,23 +1702,21 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("vpc_id",
+        builder.<String>withRequestField("vpc_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowVpcRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> updateInstance = genForupdateInstance();
+    public static final HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> updateInstance =
+        genForupdateInstance();
 
     private static HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> genForupdateInstance() {
         // basic
@@ -1921,26 +1727,22 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("server_id",
+        builder.<String>withRequestField("server_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateInstanceRequest::getServerId, (req, v) -> {
                 req.setServerId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateInstanceRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateInstanceRequestBody.class),
             f -> f.withMarshaller(UpdateInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1956,26 +1758,22 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("port_id",
+        builder.<String>withRequestField("port_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdatePortRequest::getPortId, (req, v) -> {
                 req.setPortId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdatePortRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdatePortRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdatePortRequestBody.class),
             f -> f.withMarshaller(UpdatePortRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1991,26 +1789,22 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("subnet_id",
+        builder.<String>withRequestField("subnet_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateSubnetRequest::getSubnetId, (req, v) -> {
                 req.setSubnetId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateSubnetRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateSubnetRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateSubnetRequestBody.class),
             f -> f.withMarshaller(UpdateSubnetRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2026,31 +1820,28 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("vpc_id",
+        builder.<String>withRequestField("vpc_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateVpcRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateVpcRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateVpcRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateVpcRequestBody.class),
             f -> f.withMarshaller(UpdateVpcRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateFirewallRequest, CreateFirewallResponse> createFirewall = genForcreateFirewall();
+    public static final HttpRequestDef<CreateFirewallRequest, CreateFirewallResponse> createFirewall =
+        genForcreateFirewall();
 
     private static HttpRequestDef<CreateFirewallRequest, CreateFirewallResponse> genForcreateFirewall() {
         // basic
@@ -2061,23 +1852,21 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateFirewallRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateFirewallRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateFirewallRequestBody.class),
             f -> f.withMarshaller(CreateFirewallRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteFirewallRequest, DeleteFirewallResponse> deleteFirewall = genFordeleteFirewall();
+    public static final HttpRequestDef<DeleteFirewallRequest, DeleteFirewallResponse> deleteFirewall =
+        genFordeleteFirewall();
 
     private static HttpRequestDef<DeleteFirewallRequest, DeleteFirewallResponse> genFordeleteFirewall() {
         // basic
@@ -2088,23 +1877,21 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("firewall_id",
+        builder.<String>withRequestField("firewall_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteFirewallRequest::getFirewallId, (req, v) -> {
                 req.setFirewallId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListFirewallsRequest, ListFirewallsResponse> listFirewalls = genForlistFirewalls();
+    public static final HttpRequestDef<ListFirewallsRequest, ListFirewallsResponse> listFirewalls =
+        genForlistFirewalls();
 
     private static HttpRequestDef<ListFirewallsRequest, ListFirewallsResponse> genForlistFirewalls() {
         // basic
@@ -2115,42 +1902,36 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListFirewallsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListFirewallsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFirewallsRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFirewallsRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2166,23 +1947,21 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("firewall_id",
+        builder.<String>withRequestField("firewall_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowFirewallRequest::getFirewallId, (req, v) -> {
                 req.setFirewallId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateFirewallRequest, UpdateFirewallResponse> updateFirewall = genForupdateFirewall();
+    public static final HttpRequestDef<UpdateFirewallRequest, UpdateFirewallResponse> updateFirewall =
+        genForupdateFirewall();
 
     private static HttpRequestDef<UpdateFirewallRequest, UpdateFirewallResponse> genForupdateFirewall() {
         // basic
@@ -2193,31 +1972,28 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("firewall_id",
+        builder.<String>withRequestField("firewall_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateFirewallRequest::getFirewallId, (req, v) -> {
                 req.setFirewallId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateFirewallRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateFirewallRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateFirewallRequestBody.class),
             f -> f.withMarshaller(UpdateFirewallRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateFirewallRuleRequest, UpdateFirewallRuleResponse> updateFirewallRule = genForupdateFirewallRule();
+    public static final HttpRequestDef<UpdateFirewallRuleRequest, UpdateFirewallRuleResponse> updateFirewallRule =
+        genForupdateFirewallRule();
 
     private static HttpRequestDef<UpdateFirewallRuleRequest, UpdateFirewallRuleResponse> genForupdateFirewallRule() {
         // basic
@@ -2228,31 +2004,28 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("firewall_id",
+        builder.<String>withRequestField("firewall_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateFirewallRuleRequest::getFirewallId, (req, v) -> {
                 req.setFirewallId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateFirewallRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateFirewallRuleRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateFirewallRuleRequestBody.class),
             f -> f.withMarshaller(UpdateFirewallRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreatePublicIpRequest, CreatePublicIpResponse> createPublicIp = genForcreatePublicIp();
+    public static final HttpRequestDef<CreatePublicIpRequest, CreatePublicIpResponse> createPublicIp =
+        genForcreatePublicIp();
 
     private static HttpRequestDef<CreatePublicIpRequest, CreatePublicIpResponse> genForcreatePublicIp() {
         // basic
@@ -2263,23 +2036,21 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreatePublicIpRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreatePublicIpRequestBody.class,
+            TypeCasts.uncheckedConversion(CreatePublicIpRequestBody.class),
             f -> f.withMarshaller(CreatePublicIpRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeletePublicIpRequest, DeletePublicIpResponse> deletePublicIp = genFordeletePublicIp();
+    public static final HttpRequestDef<DeletePublicIpRequest, DeletePublicIpResponse> deletePublicIp =
+        genFordeletePublicIp();
 
     private static HttpRequestDef<DeletePublicIpRequest, DeletePublicIpResponse> genFordeletePublicIp() {
         // basic
@@ -2290,23 +2061,21 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("publicip_id",
+        builder.<String>withRequestField("publicip_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeletePublicIpRequest::getPublicipId, (req, v) -> {
                 req.setPublicipId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPublicIpsRequest, ListPublicIpsResponse> listPublicIps = genForlistPublicIps();
+    public static final HttpRequestDef<ListPublicIpsRequest, ListPublicIpsResponse> listPublicIps =
+        genForlistPublicIps();
 
     private static HttpRequestDef<ListPublicIpsRequest, ListPublicIpsResponse> genForlistPublicIps() {
         // basic
@@ -2317,42 +2086,36 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPublicIpsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPublicIpsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("site_id",
+            }));
+        builder.<String>withRequestField("site_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPublicIpsRequest::getSiteId, (req, v) -> {
                 req.setSiteId(v);
-            })
-        );
-        builder.withRequestField("port_id",
+            }));
+        builder.<String>withRequestField("port_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPublicIpsRequest::getPortId, (req, v) -> {
                 req.setPortId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2368,23 +2131,21 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("publicip_id",
+        builder.<String>withRequestField("publicip_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPublicIpRequest::getPublicipId, (req, v) -> {
                 req.setPublicipId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdatePublicIpRequest, UpdatePublicIpResponse> updatePublicIp = genForupdatePublicIp();
+    public static final HttpRequestDef<UpdatePublicIpRequest, UpdatePublicIpResponse> updatePublicIp =
+        genForupdatePublicIp();
 
     private static HttpRequestDef<UpdatePublicIpRequest, UpdatePublicIpResponse> genForupdatePublicIp() {
         // basic
@@ -2395,26 +2156,22 @@ public class IecMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("publicip_id",
+        builder.<String>withRequestField("publicip_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdatePublicIpRequest::getPublicipId, (req, v) -> {
                 req.setPublicipId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdatePublicIpRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdatePublicIpRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdatePublicIpRequestBody.class),
             f -> f.withMarshaller(UpdatePublicIpRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

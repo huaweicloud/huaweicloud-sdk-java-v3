@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.ccm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ccm.v1.model.IssueCertificateAuthorityCertificateRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class IssueCertificateAuthorityCertificateRequest  {
-
-
+/** Request Object */
+public class IssueCertificateAuthorityCertificateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ca_id")
-    
+    @JsonProperty(value = "ca_id")
+
     private String caId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private IssueCertificateAuthorityCertificateRequestBody body;
 
     public IssueCertificateAuthorityCertificateRequest withCaId(String caId) {
@@ -35,13 +24,9 @@ public class IssueCertificateAuthorityCertificateRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * ca_id
-     * @return caId
-     */
+    /** ca_id
+     * 
+     * @return caId */
     public String getCaId() {
         return caId;
     }
@@ -50,27 +35,24 @@ public class IssueCertificateAuthorityCertificateRequest  {
         this.caId = caId;
     }
 
-    
-
     public IssueCertificateAuthorityCertificateRequest withBody(IssueCertificateAuthorityCertificateRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public IssueCertificateAuthorityCertificateRequest withBody(Consumer<IssueCertificateAuthorityCertificateRequestBody> bodySetter) {
-        if(this.body == null ){
+    public IssueCertificateAuthorityCertificateRequest withBody(
+        Consumer<IssueCertificateAuthorityCertificateRequestBody> bodySetter) {
+        if (this.body == null) {
             this.body = new IssueCertificateAuthorityCertificateRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public IssueCertificateAuthorityCertificateRequestBody getBody() {
         return body;
     }
@@ -78,8 +60,6 @@ public class IssueCertificateAuthorityCertificateRequest  {
     public void setBody(IssueCertificateAuthorityCertificateRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -89,14 +69,17 @@ public class IssueCertificateAuthorityCertificateRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        IssueCertificateAuthorityCertificateRequest issueCertificateAuthorityCertificateRequest = (IssueCertificateAuthorityCertificateRequest) o;
-        return Objects.equals(this.caId, issueCertificateAuthorityCertificateRequest.caId) &&
-            Objects.equals(this.body, issueCertificateAuthorityCertificateRequest.body);
+        IssueCertificateAuthorityCertificateRequest issueCertificateAuthorityCertificateRequest =
+            (IssueCertificateAuthorityCertificateRequest) o;
+        return Objects.equals(this.caId, issueCertificateAuthorityCertificateRequest.caId)
+            && Objects.equals(this.body, issueCertificateAuthorityCertificateRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(caId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +89,13 @@ public class IssueCertificateAuthorityCertificateRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,41 +1,26 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Match
- */
-public class Match  {
+/** Match */
+public class Match {
 
-    /**
-     * 键。取值范围如下： resource_name：资源名称。 service_type：服务类型。
-     */
+    /** 键。取值范围如下： resource_name：资源名称。 service_type：服务类型。 */
     public static final class KeyEnum {
 
-        
-        /**
-         * Enum RESOURCE_NAME for value: "resource_name"
-         */
+        /** Enum RESOURCE_NAME for value: "resource_name" */
         public static final KeyEnum RESOURCE_NAME = new KeyEnum("resource_name");
-        
-        /**
-         * Enum SERVICE_TYPE for value: "service_type"
-         */
+
+        /** Enum SERVICE_TYPE for value: "service_type" */
         public static final KeyEnum SERVICE_TYPE = new KeyEnum("service_type");
-        
 
         private static final Map<String, KeyEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +49,7 @@ public class Match  {
 
         @JsonCreator
         public static KeyEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             KeyEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +60,7 @@ public class Match  {
         }
 
         public static KeyEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             KeyEnum result = STATIC_FIELDS.get(value);
@@ -99,16 +84,14 @@ public class Match  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private KeyEnum key;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private String value;
 
     public Match withKey(KeyEnum key) {
@@ -116,13 +99,9 @@ public class Match  {
         return this;
     }
 
-    
-
-
-    /**
-     * 键。取值范围如下： resource_name：资源名称。 service_type：服务类型。
-     * @return key
-     */
+    /** 键。取值范围如下： resource_name：资源名称。 service_type：服务类型。
+     * 
+     * @return key */
     public KeyEnum getKey() {
         return key;
     }
@@ -131,20 +110,14 @@ public class Match  {
         this.key = key;
     }
 
-    
-
     public Match withValue(String value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 值。最大长度255个字符。 key为“resource_name”时，value为模糊匹配。
-     * @return value
-     */
+    /** 值。最大长度255个字符。 key为“resource_name”时，value为模糊匹配。
+     * 
+     * @return value */
     public String getValue() {
         return value;
     }
@@ -152,8 +125,6 @@ public class Match  {
     public void setValue(String value) {
         this.value = value;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -164,13 +135,14 @@ public class Match  {
             return false;
         }
         Match match = (Match) o;
-        return Objects.equals(this.key, match.key) &&
-            Objects.equals(this.value, match.value);
+        return Objects.equals(this.key, match.key) && Objects.equals(this.value, match.value);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(key, value);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -180,16 +152,13 @@ public class Match  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

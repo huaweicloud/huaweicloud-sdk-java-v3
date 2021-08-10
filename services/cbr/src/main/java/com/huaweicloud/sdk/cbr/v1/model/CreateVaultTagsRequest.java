@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.VaultTagsCreateReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateVaultTagsRequest  {
-
-
+/** Request Object */
+public class CreateVaultTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vault_id")
-    
+    @JsonProperty(value = "vault_id")
+
     private String vaultId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private VaultTagsCreateReq body;
 
     public CreateVaultTagsRequest withVaultId(String vaultId) {
@@ -35,13 +24,9 @@ public class CreateVaultTagsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 资源id
-     * @return vaultId
-     */
+    /** 资源id
+     * 
+     * @return vaultId */
     public String getVaultId() {
         return vaultId;
     }
@@ -50,27 +35,23 @@ public class CreateVaultTagsRequest  {
         this.vaultId = vaultId;
     }
 
-    
-
     public CreateVaultTagsRequest withBody(VaultTagsCreateReq body) {
         this.body = body;
         return this;
     }
 
     public CreateVaultTagsRequest withBody(Consumer<VaultTagsCreateReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new VaultTagsCreateReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public VaultTagsCreateReq getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class CreateVaultTagsRequest  {
     public void setBody(VaultTagsCreateReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class CreateVaultTagsRequest  {
             return false;
         }
         CreateVaultTagsRequest createVaultTagsRequest = (CreateVaultTagsRequest) o;
-        return Objects.equals(this.vaultId, createVaultTagsRequest.vaultId) &&
-            Objects.equals(this.body, createVaultTagsRequest.body);
+        return Objects.equals(this.vaultId, createVaultTagsRequest.vaultId)
+            && Objects.equals(this.body, createVaultTagsRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(vaultId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class CreateVaultTagsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

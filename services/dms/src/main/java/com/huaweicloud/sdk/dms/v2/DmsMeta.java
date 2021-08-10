@@ -6,203 +6,197 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.dms.v2.model.*;
+
 import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class DmsMeta {
 
-    public static final HttpRequestDef<BatchCreateOrDeleteQueueTagRequest, BatchCreateOrDeleteQueueTagResponse> batchCreateOrDeleteQueueTag = genForbatchCreateOrDeleteQueueTag();
+    public static final HttpRequestDef<BatchCreateOrDeleteQueueTagRequest, BatchCreateOrDeleteQueueTagResponse> batchCreateOrDeleteQueueTag =
+        genForbatchCreateOrDeleteQueueTag();
 
     private static HttpRequestDef<BatchCreateOrDeleteQueueTagRequest, BatchCreateOrDeleteQueueTagResponse> genForbatchCreateOrDeleteQueueTag() {
         // basic
         HttpRequestDef.Builder<BatchCreateOrDeleteQueueTagRequest, BatchCreateOrDeleteQueueTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchCreateOrDeleteQueueTagRequest.class, BatchCreateOrDeleteQueueTagResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateOrDeleteQueueTagRequest.class,
+                    BatchCreateOrDeleteQueueTagResponse.class)
                 .withName("BatchCreateOrDeleteQueueTag")
                 .withUri("/v2/{project_id}/queue/{queue_id}/tags/action")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("queue_id",
+        builder.<String>withRequestField("queue_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchCreateOrDeleteQueueTagRequest::getQueueId, (req, v) -> {
                 req.setQueueId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<BatchCreateOrDeleteTagReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchCreateOrDeleteTagReq.class,
+            TypeCasts.uncheckedConversion(BatchCreateOrDeleteTagReq.class),
             f -> f.withMarshaller(BatchCreateOrDeleteQueueTagRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ConfirmConsumptionMessagesRequest, ConfirmConsumptionMessagesResponse> confirmConsumptionMessages = genForconfirmConsumptionMessages();
+    public static final HttpRequestDef<ConfirmConsumptionMessagesRequest, ConfirmConsumptionMessagesResponse> confirmConsumptionMessages =
+        genForconfirmConsumptionMessages();
 
     private static HttpRequestDef<ConfirmConsumptionMessagesRequest, ConfirmConsumptionMessagesResponse> genForconfirmConsumptionMessages() {
         // basic
         HttpRequestDef.Builder<ConfirmConsumptionMessagesRequest, ConfirmConsumptionMessagesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ConfirmConsumptionMessagesRequest.class, ConfirmConsumptionMessagesResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ConfirmConsumptionMessagesRequest.class,
+                    ConfirmConsumptionMessagesResponse.class)
                 .withName("ConfirmConsumptionMessages")
                 .withUri("/v2/{project_id}/queues/{queue_id}/groups/{consumer_group_id}/ack")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("queue_id",
+        builder.<String>withRequestField("queue_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ConfirmConsumptionMessagesRequest::getQueueId, (req, v) -> {
                 req.setQueueId(v);
-            })
-        );
-        builder.withRequestField("consumer_group_id",
+            }));
+        builder.<String>withRequestField("consumer_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ConfirmConsumptionMessagesRequest::getConsumerGroupId, (req, v) -> {
                 req.setConsumerGroupId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ConfirmConsumptionMessagesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ConfirmConsumptionMessagesReq.class,
+            TypeCasts.uncheckedConversion(ConfirmConsumptionMessagesReq.class),
             f -> f.withMarshaller(ConfirmConsumptionMessagesRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ConfirmDeadLettersMessagesRequest, ConfirmDeadLettersMessagesResponse> confirmDeadLettersMessages = genForconfirmDeadLettersMessages();
+    public static final HttpRequestDef<ConfirmDeadLettersMessagesRequest, ConfirmDeadLettersMessagesResponse> confirmDeadLettersMessages =
+        genForconfirmDeadLettersMessages();
 
     private static HttpRequestDef<ConfirmDeadLettersMessagesRequest, ConfirmDeadLettersMessagesResponse> genForconfirmDeadLettersMessages() {
         // basic
         HttpRequestDef.Builder<ConfirmDeadLettersMessagesRequest, ConfirmDeadLettersMessagesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ConfirmDeadLettersMessagesRequest.class, ConfirmDeadLettersMessagesResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ConfirmDeadLettersMessagesRequest.class,
+                    ConfirmDeadLettersMessagesResponse.class)
                 .withName("ConfirmDeadLettersMessages")
                 .withUri("/v2/{project_id}/queues/{queue_id}/groups/{consumer_group_id}/deadletters/ack")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("queue_id",
+        builder.<String>withRequestField("queue_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ConfirmDeadLettersMessagesRequest::getQueueId, (req, v) -> {
                 req.setQueueId(v);
-            })
-        );
-        builder.withRequestField("consumer_group_id",
+            }));
+        builder.<String>withRequestField("consumer_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ConfirmDeadLettersMessagesRequest::getConsumerGroupId, (req, v) -> {
                 req.setConsumerGroupId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ConfirmDeadLettersMessagesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ConfirmDeadLettersMessagesReq.class,
+            TypeCasts.uncheckedConversion(ConfirmDeadLettersMessagesReq.class),
             f -> f.withMarshaller(ConfirmDeadLettersMessagesRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ConsumeDeadlettersMessageRequest, ConsumeDeadlettersMessageResponse> consumeDeadlettersMessage = genForconsumeDeadlettersMessage();
+    public static final HttpRequestDef<ConsumeDeadlettersMessageRequest, ConsumeDeadlettersMessageResponse> consumeDeadlettersMessage =
+        genForconsumeDeadlettersMessage();
 
     private static HttpRequestDef<ConsumeDeadlettersMessageRequest, ConsumeDeadlettersMessageResponse> genForconsumeDeadlettersMessage() {
         // basic
         HttpRequestDef.Builder<ConsumeDeadlettersMessageRequest, ConsumeDeadlettersMessageResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ConsumeDeadlettersMessageRequest.class, ConsumeDeadlettersMessageResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ConsumeDeadlettersMessageRequest.class,
+                    ConsumeDeadlettersMessageResponse.class)
                 .withName("ConsumeDeadlettersMessage")
                 .withUri("/v2/{project_id}/queues/{queue_id}/groups/{consumer_group_id}/deadletters")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("queue_id",
+        builder.<String>withRequestField("queue_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ConsumeDeadlettersMessageRequest::getQueueId, (req, v) -> {
                 req.setQueueId(v);
-            })
-        );
-        builder.withRequestField("consumer_group_id",
+            }));
+        builder.<String>withRequestField("consumer_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ConsumeDeadlettersMessageRequest::getConsumerGroupId, (req, v) -> {
                 req.setConsumerGroupId(v);
-            })
-        );
-        builder.withRequestField("max_msgs",
+            }));
+        builder.<Integer>withRequestField("max_msgs",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ConsumeDeadlettersMessageRequest::getMaxMsgs, (req, v) -> {
                 req.setMaxMsgs(v);
-            })
-        );
-        builder.withRequestField("time_wait",
+            }));
+        builder.<Integer>withRequestField("time_wait",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ConsumeDeadlettersMessageRequest::getTimeWait, (req, v) -> {
                 req.setTimeWait(v);
-            })
-        );
-        builder.withRequestField("ack_wait",
+            }));
+        builder.<Integer>withRequestField("ack_wait",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ConsumeDeadlettersMessageRequest::getAckWait, (req, v) -> {
                 req.setAckWait(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.<List<ConsumeDeadlettersMessage>>withResponseField(
-            "body",
+
+        builder.<List<ConsumeDeadlettersMessage>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ConsumeDeadlettersMessageResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(ConsumeDeadlettersMessageResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            }).withInnerContainerType(ConsumeDeadlettersMessage.class)
-        );
-
+            }).withInnerContainerType(ConsumeDeadlettersMessage.class));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ConsumeMessagesRequest, ConsumeMessagesResponse> consumeMessages = genForconsumeMessages();
+    public static final HttpRequestDef<ConsumeMessagesRequest, ConsumeMessagesResponse> consumeMessages =
+        genForconsumeMessages();
 
     private static HttpRequestDef<ConsumeMessagesRequest, ConsumeMessagesResponse> genForconsumeMessages() {
         // basic
@@ -213,80 +207,71 @@ public class DmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("queue_id",
+        builder.<String>withRequestField("queue_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ConsumeMessagesRequest::getQueueId, (req, v) -> {
                 req.setQueueId(v);
-            })
-        );
-        builder.withRequestField("consumer_group_id",
+            }));
+        builder.<String>withRequestField("consumer_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ConsumeMessagesRequest::getConsumerGroupId, (req, v) -> {
                 req.setConsumerGroupId(v);
-            })
-        );
-        builder.withRequestField("max_msgs",
+            }));
+        builder.<Integer>withRequestField("max_msgs",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ConsumeMessagesRequest::getMaxMsgs, (req, v) -> {
                 req.setMaxMsgs(v);
-            })
-        );
-        builder.withRequestField("time_wait",
+            }));
+        builder.<Integer>withRequestField("time_wait",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ConsumeMessagesRequest::getTimeWait, (req, v) -> {
                 req.setTimeWait(v);
-            })
-        );
-        builder.withRequestField("ack_wait",
+            }));
+        builder.<Integer>withRequestField("ack_wait",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ConsumeMessagesRequest::getAckWait, (req, v) -> {
                 req.setAckWait(v);
-            })
-        );
-        builder.withRequestField("tag",
+            }));
+        builder.<String>withRequestField("tag",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ConsumeMessagesRequest::getTag, (req, v) -> {
                 req.setTag(v);
-            })
-        );
-        builder.withRequestField("tag_type",
+            }));
+        builder.<String>withRequestField("tag_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ConsumeMessagesRequest::getTagType, (req, v) -> {
                 req.setTagType(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.<List<ConsumeMessage>>withResponseField(
-            "body",
+
+        builder.<List<ConsumeMessage>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ConsumeMessagesResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(ConsumeMessagesResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            }).withInnerContainerType(ConsumeMessage.class)
-        );
-
+            }).withInnerContainerType(ConsumeMessage.class));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateConsumerGroupRequest, CreateConsumerGroupResponse> createConsumerGroup = genForcreateConsumerGroup();
+    public static final HttpRequestDef<CreateConsumerGroupRequest, CreateConsumerGroupResponse> createConsumerGroup =
+        genForcreateConsumerGroup();
 
     private static HttpRequestDef<CreateConsumerGroupRequest, CreateConsumerGroupResponse> genForcreateConsumerGroup() {
         // basic
@@ -297,26 +282,22 @@ public class DmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("queue_id",
+        builder.<String>withRequestField("queue_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateConsumerGroupRequest::getQueueId, (req, v) -> {
                 req.setQueueId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateConsumerGroupReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateConsumerGroupReq.class,
+            TypeCasts.uncheckedConversion(CreateConsumerGroupReq.class),
             f -> f.withMarshaller(CreateConsumerGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -332,18 +313,15 @@ public class DmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateQueueReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateQueueReq.class,
+            TypeCasts.uncheckedConversion(CreateQueueReq.class),
             f -> f.withMarshaller(CreateQueueRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -359,58 +337,56 @@ public class DmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("queue_id",
+        builder.<String>withRequestField("queue_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteQueueRequest::getQueueId, (req, v) -> {
                 req.setQueueId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteSpecifiedConsumerGroupRequest, DeleteSpecifiedConsumerGroupResponse> deleteSpecifiedConsumerGroup = genFordeleteSpecifiedConsumerGroup();
+    public static final HttpRequestDef<DeleteSpecifiedConsumerGroupRequest, DeleteSpecifiedConsumerGroupResponse> deleteSpecifiedConsumerGroup =
+        genFordeleteSpecifiedConsumerGroup();
 
     private static HttpRequestDef<DeleteSpecifiedConsumerGroupRequest, DeleteSpecifiedConsumerGroupResponse> genFordeleteSpecifiedConsumerGroup() {
         // basic
         HttpRequestDef.Builder<DeleteSpecifiedConsumerGroupRequest, DeleteSpecifiedConsumerGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSpecifiedConsumerGroupRequest.class, DeleteSpecifiedConsumerGroupResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteSpecifiedConsumerGroupRequest.class,
+                    DeleteSpecifiedConsumerGroupResponse.class)
                 .withName("DeleteSpecifiedConsumerGroup")
                 .withUri("/v2/{project_id}/queues/{queue_id}/groups/{group_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("queue_id",
+        builder.<String>withRequestField("queue_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSpecifiedConsumerGroupRequest::getQueueId, (req, v) -> {
                 req.setQueueId(v);
-            })
-        );
-        builder.withRequestField("group_id",
+            }));
+        builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSpecifiedConsumerGroupRequest::getGroupId, (req, v) -> {
                 req.setGroupId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListConsumerGroupsRequest, ListConsumerGroupsResponse> listConsumerGroups = genForlistConsumerGroups();
+    public static final HttpRequestDef<ListConsumerGroupsRequest, ListConsumerGroupsResponse> listConsumerGroups =
+        genForlistConsumerGroups();
 
     private static HttpRequestDef<ListConsumerGroupsRequest, ListConsumerGroupsResponse> genForlistConsumerGroups() {
         // basic
@@ -421,50 +397,43 @@ public class DmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("queue_id",
+        builder.<String>withRequestField("queue_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListConsumerGroupsRequest::getQueueId, (req, v) -> {
                 req.setQueueId(v);
-            })
-        );
-        builder.withRequestField("include_deadletter",
+            }));
+        builder.<Boolean>withRequestField("include_deadletter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListConsumerGroupsRequest::getIncludeDeadletter, (req, v) -> {
                 req.setIncludeDeadletter(v);
-            })
-        );
-        builder.withRequestField("include_messages_num",
+            }));
+        builder.<Boolean>withRequestField("include_messages_num",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListConsumerGroupsRequest::getIncludeMessagesNum, (req, v) -> {
                 req.setIncludeMessagesNum(v);
-            })
-        );
-        builder.withRequestField("page_size",
+            }));
+        builder.<Integer>withRequestField("page_size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListConsumerGroupsRequest::getPageSize, (req, v) -> {
                 req.setPageSize(v);
-            })
-        );
-        builder.withRequestField("current_page",
+            }));
+        builder.<Integer>withRequestField("current_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListConsumerGroupsRequest::getCurrentPage, (req, v) -> {
                 req.setCurrentPage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -480,18 +449,15 @@ public class DmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("include_deadletter",
+        builder.<Boolean>withRequestField("include_deadletter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListQueuesRequest::getIncludeDeadletter, (req, v) -> {
                 req.setIncludeDeadletter(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -507,26 +473,22 @@ public class DmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("queue_id",
+        builder.<String>withRequestField("queue_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SendMessagesRequest::getQueueId, (req, v) -> {
                 req.setQueueId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<SendMessagesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            SendMessagesReq.class,
+            TypeCasts.uncheckedConversion(SendMessagesReq.class),
             f -> f.withMarshaller(SendMessagesRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -542,50 +504,46 @@ public class DmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("queue_id",
+        builder.<String>withRequestField("queue_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowQueueRequest::getQueueId, (req, v) -> {
                 req.setQueueId(v);
-            })
-        );
-        builder.withRequestField("include_deadletter",
+            }));
+        builder.<Boolean>withRequestField("include_deadletter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ShowQueueRequest::getIncludeDeadletter, (req, v) -> {
                 req.setIncludeDeadletter(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowQueueProjectTagsRequest, ShowQueueProjectTagsResponse> showQueueProjectTags = genForshowQueueProjectTags();
+    public static final HttpRequestDef<ShowQueueProjectTagsRequest, ShowQueueProjectTagsResponse> showQueueProjectTags =
+        genForshowQueueProjectTags();
 
     private static HttpRequestDef<ShowQueueProjectTagsRequest, ShowQueueProjectTagsResponse> genForshowQueueProjectTags() {
         // basic
-        HttpRequestDef.Builder<ShowQueueProjectTagsRequest, ShowQueueProjectTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowQueueProjectTagsRequest.class, ShowQueueProjectTagsResponse.class)
-                .withName("ShowQueueProjectTags")
-                .withUri("/v2/{project_id}/queue/tags")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowQueueProjectTagsRequest, ShowQueueProjectTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowQueueProjectTagsRequest.class, ShowQueueProjectTagsResponse.class)
+            .withName("ShowQueueProjectTags")
+            .withUri("/v2/{project_id}/queue/tags")
+            .withContentType("application/json");
 
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowQueueTagsRequest, ShowQueueTagsResponse> showQueueTags = genForshowQueueTags();
+    public static final HttpRequestDef<ShowQueueTagsRequest, ShowQueueTagsResponse> showQueueTags =
+        genForshowQueueTags();
 
     private static HttpRequestDef<ShowQueueTagsRequest, ShowQueueTagsResponse> genForshowQueueTags() {
         // basic
@@ -596,18 +554,15 @@ public class DmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("queue_id",
+        builder.<String>withRequestField("queue_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowQueueTagsRequest::getQueueId, (req, v) -> {
                 req.setQueueId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -625,8 +580,6 @@ public class DmsMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }

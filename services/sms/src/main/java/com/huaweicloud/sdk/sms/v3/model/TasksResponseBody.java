@@ -1,63 +1,39 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.CloneServerBrief;
-import com.huaweicloud.sdk.sms.v3.model.SourceServerAssociatedWithTask;
-import com.huaweicloud.sdk.sms.v3.model.SubTaskAssociatedWithTask;
-import com.huaweicloud.sdk.sms.v3.model.TargetServerAssociatedWithTask;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 批量查询任务时返回体重返回的任务信息。
- */
-public class TasksResponseBody  {
-
-
+/** 批量查询任务时返回体重返回的任务信息。 */
+public class TasksResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 任务类型，创建迁移任务时必选，更新迁移任务时可选
-     */
+
+    /** 任务类型，创建迁移任务时必选，更新迁移任务时可选 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum MIGRATE_FILE_ for value: "MIGRATE_FILE：文件级迁移"
-         */
+        /** Enum MIGRATE_FILE_ for value: "MIGRATE_FILE：文件级迁移" */
         public static final TypeEnum MIGRATE_FILE_ = new TypeEnum("MIGRATE_FILE：文件级迁移");
-        
-        /**
-         * Enum MIGRATE_BLOCK_ for value: "MIGRATE_BLOCK：块级迁移"
-         */
+
+        /** Enum MIGRATE_BLOCK_ for value: "MIGRATE_BLOCK：块级迁移" */
         public static final TypeEnum MIGRATE_BLOCK_ = new TypeEnum("MIGRATE_BLOCK：块级迁移");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -86,7 +62,7 @@ public class TasksResponseBody  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -97,7 +73,7 @@ public class TasksResponseBody  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -121,27 +97,19 @@ public class TasksResponseBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
-    /**
-     * 操作系统类型，分为WINDOWS和LINUX，创建时必选，更新时可选
-     */
+
+    /** 操作系统类型，分为WINDOWS和LINUX，创建时必选，更新时可选 */
     public static final class OsTypeEnum {
 
-        
-        /**
-         * Enum WINDOWS for value: "WINDOWS"
-         */
+        /** Enum WINDOWS for value: "WINDOWS" */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("WINDOWS");
-        
-        /**
-         * Enum LINUX for value: "LINUX"
-         */
+
+        /** Enum LINUX for value: "LINUX" */
         public static final OsTypeEnum LINUX = new OsTypeEnum("LINUX");
-        
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -170,7 +138,7 @@ public class TasksResponseBody  {
 
         @JsonCreator
         public static OsTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsTypeEnum result = STATIC_FIELDS.get(value);
@@ -181,7 +149,7 @@ public class TasksResponseBody  {
         }
 
         public static OsTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsTypeEnum result = STATIC_FIELDS.get(value);
@@ -205,157 +173,127 @@ public class TasksResponseBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os_type")
-    
+    @JsonProperty(value = "os_type")
+
     private OsTypeEnum osType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
+
     private String state;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="estimate_complete_time")
-    
+    @JsonProperty(value = "estimate_complete_time")
+
     private Long estimateCompleteTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_date")
-    
+    @JsonProperty(value = "create_date")
+
     private Long createDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="priority")
-    
+    @JsonProperty(value = "priority")
+
     private Integer priority;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="speed_limit")
-    
+    @JsonProperty(value = "speed_limit")
+
     private Integer speedLimit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="migrate_speed")
-    
+    @JsonProperty(value = "migrate_speed")
+
     private Double migrateSpeed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="compress_rate")
-    
+    @JsonProperty(value = "compress_rate")
+
     private Double compressRate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_target_server")
-    
+    @JsonProperty(value = "start_target_server")
+
     private Boolean startTargetServer;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_json")
-    
+    @JsonProperty(value = "error_json")
+
     private String errorJson;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_time")
-    
+    @JsonProperty(value = "total_time")
+
     private Long totalTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="migration_ip")
-    
+    @JsonProperty(value = "migration_ip")
+
     private String migrationIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sub_tasks")
-    
+    @JsonProperty(value = "sub_tasks")
+
     private List<SubTaskAssociatedWithTask> subTasks = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_server")
-    
+    @JsonProperty(value = "source_server")
+
     private SourceServerAssociatedWithTask sourceServer;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target_server")
-    
+    @JsonProperty(value = "target_server")
+
     private TargetServerAssociatedWithTask targetServer;
-    /**
-     * 日志收集状态
-     */
+
+    /** 日志收集状态 */
     public static final class LogCollectStatusEnum {
 
-        
-        /**
-         * Enum INIT_ for value: "INIT:等待搜集状态"
-         */
+        /** Enum INIT_ for value: "INIT:等待搜集状态" */
         public static final LogCollectStatusEnum INIT_ = new LogCollectStatusEnum("INIT:等待搜集状态");
-        
-        /**
-         * Enum TELL_AGENT_TO_COLLECT_AGENT_ for value: "TELL_AGENT_TO_COLLECT:通知agent搜集日志"
-         */
-        public static final LogCollectStatusEnum TELL_AGENT_TO_COLLECT_AGENT_ = new LogCollectStatusEnum("TELL_AGENT_TO_COLLECT:通知agent搜集日志");
-        
-        /**
-         * Enum WAIT_AGENT_COLLECT_ACK_AGENT_ for value: "WAIT_AGENT_COLLECT_ACK:等待Agent确认搜集确认"
-         */
-        public static final LogCollectStatusEnum WAIT_AGENT_COLLECT_ACK_AGENT_ = new LogCollectStatusEnum("WAIT_AGENT_COLLECT_ACK:等待Agent确认搜集确认");
-        
-        /**
-         * Enum AGENT_COLLECT_FAIL_AGENT_ for value: "AGENT_COLLECT_FAIL:Agent搜集失败"
-         */
-        public static final LogCollectStatusEnum AGENT_COLLECT_FAIL_AGENT_ = new LogCollectStatusEnum("AGENT_COLLECT_FAIL:Agent搜集失败");
-        
-        /**
-         * Enum AGENT_COLLECT_SUCCESS_AGENT_ for value: "AGENT_COLLECT_SUCCESS：Agent搜集成功"
-         */
-        public static final LogCollectStatusEnum AGENT_COLLECT_SUCCESS_AGENT_ = new LogCollectStatusEnum("AGENT_COLLECT_SUCCESS：Agent搜集成功");
-        
-        /**
-         * Enum WAIT_SERVER_COLLECT_SERVER_ for value: "WAIT_SERVER_COLLECT：等待Server端日志搜集"
-         */
-        public static final LogCollectStatusEnum WAIT_SERVER_COLLECT_SERVER_ = new LogCollectStatusEnum("WAIT_SERVER_COLLECT：等待Server端日志搜集");
-        
-        /**
-         * Enum SERVER_COLLECT_FAIL_SERVER_ for value: "SERVER_COLLECT_FAIL：Server搜集失败"
-         */
-        public static final LogCollectStatusEnum SERVER_COLLECT_FAIL_SERVER_ = new LogCollectStatusEnum("SERVER_COLLECT_FAIL：Server搜集失败");
-        
-        /**
-         * Enum SERVER_COLLECT_SUCCESS_SERVER_ for value: "SERVER_COLLECT_SUCCESS：Server搜集成功"
-         */
-        public static final LogCollectStatusEnum SERVER_COLLECT_SUCCESS_SERVER_ = new LogCollectStatusEnum("SERVER_COLLECT_SUCCESS：Server搜集成功");
-        
-        /**
-         * Enum TELL_AGENT_RESET_ACL_AGENT_ for value: "TELL_AGENT_RESET_ACL：通知Agent取消日志授权"
-         */
-        public static final LogCollectStatusEnum TELL_AGENT_RESET_ACL_AGENT_ = new LogCollectStatusEnum("TELL_AGENT_RESET_ACL：通知Agent取消日志授权");
-        
-        /**
-         * Enum WAIT_AGENT_RESET_ACL_ACK_AGENT_ for value: "WAIT_AGENT_RESET_ACL_ACK：等待Agent确认"
-         */
-        public static final LogCollectStatusEnum WAIT_AGENT_RESET_ACL_ACK_AGENT_ = new LogCollectStatusEnum("WAIT_AGENT_RESET_ACL_ACK：等待Agent确认");
-        
+
+        /** Enum TELL_AGENT_TO_COLLECT_AGENT_ for value: "TELL_AGENT_TO_COLLECT:通知agent搜集日志" */
+        public static final LogCollectStatusEnum TELL_AGENT_TO_COLLECT_AGENT_ =
+            new LogCollectStatusEnum("TELL_AGENT_TO_COLLECT:通知agent搜集日志");
+
+        /** Enum WAIT_AGENT_COLLECT_ACK_AGENT_ for value: "WAIT_AGENT_COLLECT_ACK:等待Agent确认搜集确认" */
+        public static final LogCollectStatusEnum WAIT_AGENT_COLLECT_ACK_AGENT_ =
+            new LogCollectStatusEnum("WAIT_AGENT_COLLECT_ACK:等待Agent确认搜集确认");
+
+        /** Enum AGENT_COLLECT_FAIL_AGENT_ for value: "AGENT_COLLECT_FAIL:Agent搜集失败" */
+        public static final LogCollectStatusEnum AGENT_COLLECT_FAIL_AGENT_ =
+            new LogCollectStatusEnum("AGENT_COLLECT_FAIL:Agent搜集失败");
+
+        /** Enum AGENT_COLLECT_SUCCESS_AGENT_ for value: "AGENT_COLLECT_SUCCESS：Agent搜集成功" */
+        public static final LogCollectStatusEnum AGENT_COLLECT_SUCCESS_AGENT_ =
+            new LogCollectStatusEnum("AGENT_COLLECT_SUCCESS：Agent搜集成功");
+
+        /** Enum WAIT_SERVER_COLLECT_SERVER_ for value: "WAIT_SERVER_COLLECT：等待Server端日志搜集" */
+        public static final LogCollectStatusEnum WAIT_SERVER_COLLECT_SERVER_ =
+            new LogCollectStatusEnum("WAIT_SERVER_COLLECT：等待Server端日志搜集");
+
+        /** Enum SERVER_COLLECT_FAIL_SERVER_ for value: "SERVER_COLLECT_FAIL：Server搜集失败" */
+        public static final LogCollectStatusEnum SERVER_COLLECT_FAIL_SERVER_ =
+            new LogCollectStatusEnum("SERVER_COLLECT_FAIL：Server搜集失败");
+
+        /** Enum SERVER_COLLECT_SUCCESS_SERVER_ for value: "SERVER_COLLECT_SUCCESS：Server搜集成功" */
+        public static final LogCollectStatusEnum SERVER_COLLECT_SUCCESS_SERVER_ =
+            new LogCollectStatusEnum("SERVER_COLLECT_SUCCESS：Server搜集成功");
+
+        /** Enum TELL_AGENT_RESET_ACL_AGENT_ for value: "TELL_AGENT_RESET_ACL：通知Agent取消日志授权" */
+        public static final LogCollectStatusEnum TELL_AGENT_RESET_ACL_AGENT_ =
+            new LogCollectStatusEnum("TELL_AGENT_RESET_ACL：通知Agent取消日志授权");
+
+        /** Enum WAIT_AGENT_RESET_ACL_ACK_AGENT_ for value: "WAIT_AGENT_RESET_ACL_ACK：等待Agent确认" */
+        public static final LogCollectStatusEnum WAIT_AGENT_RESET_ACL_ACK_AGENT_ =
+            new LogCollectStatusEnum("WAIT_AGENT_RESET_ACL_ACK：等待Agent确认");
 
         private static final Map<String, LogCollectStatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -392,7 +330,7 @@ public class TasksResponseBody  {
 
         @JsonCreator
         public static LogCollectStatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             LogCollectStatusEnum result = STATIC_FIELDS.get(value);
@@ -403,7 +341,7 @@ public class TasksResponseBody  {
         }
 
         public static LogCollectStatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             LogCollectStatusEnum result = STATIC_FIELDS.get(value);
@@ -427,22 +365,19 @@ public class TasksResponseBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="log_collect_status")
-    
+    @JsonProperty(value = "log_collect_status")
+
     private LogCollectStatusEnum logCollectStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="clone_server")
-    
+    @JsonProperty(value = "clone_server")
+
     private CloneServerBrief cloneServer;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="syncing")
-    
+    @JsonProperty(value = "syncing")
+
     private Boolean syncing;
 
     public TasksResponseBody withId(String id) {
@@ -450,13 +385,9 @@ public class TasksResponseBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移任务id
-     * @return id
-     */
+    /** 迁移任务id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -465,20 +396,14 @@ public class TasksResponseBody  {
         this.id = id;
     }
 
-    
-
     public TasksResponseBody withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务名称（用户自定义）
-     * @return name
-     */
+    /** 任务名称（用户自定义）
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -487,20 +412,14 @@ public class TasksResponseBody  {
         this.name = name;
     }
 
-    
-
     public TasksResponseBody withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务类型，创建迁移任务时必选，更新迁移任务时可选
-     * @return type
-     */
+    /** 任务类型，创建迁移任务时必选，更新迁移任务时可选
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -509,20 +428,14 @@ public class TasksResponseBody  {
         this.type = type;
     }
 
-    
-
     public TasksResponseBody withOsType(OsTypeEnum osType) {
         this.osType = osType;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作系统类型，分为WINDOWS和LINUX，创建时必选，更新时可选
-     * @return osType
-     */
+    /** 操作系统类型，分为WINDOWS和LINUX，创建时必选，更新时可选
+     * 
+     * @return osType */
     public OsTypeEnum getOsType() {
         return osType;
     }
@@ -531,20 +444,14 @@ public class TasksResponseBody  {
         this.osType = osType;
     }
 
-    
-
     public TasksResponseBody withState(String state) {
         this.state = state;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务状态
-     * @return state
-     */
+    /** 任务状态
+     * 
+     * @return state */
     public String getState() {
         return state;
     }
@@ -553,22 +460,14 @@ public class TasksResponseBody  {
         this.state = state;
     }
 
-    
-
     public TasksResponseBody withEstimateCompleteTime(Long estimateCompleteTime) {
         this.estimateCompleteTime = estimateCompleteTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 预估完成时间
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return estimateCompleteTime
-     */
+    /** 预估完成时间 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return estimateCompleteTime */
     public Long getEstimateCompleteTime() {
         return estimateCompleteTime;
     }
@@ -577,22 +476,14 @@ public class TasksResponseBody  {
         this.estimateCompleteTime = estimateCompleteTime;
     }
 
-    
-
     public TasksResponseBody withCreateDate(Long createDate) {
         this.createDate = createDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务创建时间
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return createDate
-     */
+    /** 任务创建时间 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return createDate */
     public Long getCreateDate() {
         return createDate;
     }
@@ -601,22 +492,14 @@ public class TasksResponseBody  {
         this.createDate = createDate;
     }
 
-    
-
     public TasksResponseBody withPriority(Integer priority) {
         this.priority = priority;
         return this;
     }
 
-    
-
-
-    /**
-     * 进程优先级 0：低 1：标准 2：高
-     * minimum: 0
-     * maximum: 2
-     * @return priority
-     */
+    /** 进程优先级 0：低 1：标准 2：高 minimum: 0 maximum: 2
+     * 
+     * @return priority */
     public Integer getPriority() {
         return priority;
     }
@@ -625,20 +508,14 @@ public class TasksResponseBody  {
         this.priority = priority;
     }
 
-    
-
     public TasksResponseBody withSpeedLimit(Integer speedLimit) {
         this.speedLimit = speedLimit;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移限速
-     * @return speedLimit
-     */
+    /** 迁移限速
+     * 
+     * @return speedLimit */
     public Integer getSpeedLimit() {
         return speedLimit;
     }
@@ -647,22 +524,14 @@ public class TasksResponseBody  {
         this.speedLimit = speedLimit;
     }
 
-    
-
     public TasksResponseBody withMigrateSpeed(Double migrateSpeed) {
         this.migrateSpeed = migrateSpeed;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移速率，单位：MB/S
-     * minimum: 0
-     * maximum: 1E+4
-     * @return migrateSpeed
-     */
+    /** 迁移速率，单位：MB/S minimum: 0 maximum: 1E+4
+     * 
+     * @return migrateSpeed */
     public Double getMigrateSpeed() {
         return migrateSpeed;
     }
@@ -671,22 +540,14 @@ public class TasksResponseBody  {
         this.migrateSpeed = migrateSpeed;
     }
 
-    
-
     public TasksResponseBody withCompressRate(Double compressRate) {
         this.compressRate = compressRate;
         return this;
     }
 
-    
-
-
-    /**
-     * 压缩率
-     * minimum: 0
-     * maximum: 1E+4
-     * @return compressRate
-     */
+    /** 压缩率 minimum: 0 maximum: 1E+4
+     * 
+     * @return compressRate */
     public Double getCompressRate() {
         return compressRate;
     }
@@ -695,20 +556,14 @@ public class TasksResponseBody  {
         this.compressRate = compressRate;
     }
 
-    
-
     public TasksResponseBody withStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移完成后是否启动目的端服务器 true：启动 false：停止
-     * @return startTargetServer
-     */
+    /** 迁移完成后是否启动目的端服务器 true：启动 false：停止
+     * 
+     * @return startTargetServer */
     public Boolean getStartTargetServer() {
         return startTargetServer;
     }
@@ -717,20 +572,14 @@ public class TasksResponseBody  {
         this.startTargetServer = startTargetServer;
     }
 
-    
-
     public TasksResponseBody withErrorJson(String errorJson) {
         this.errorJson = errorJson;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误信息
-     * @return errorJson
-     */
+    /** 错误信息
+     * 
+     * @return errorJson */
     public String getErrorJson() {
         return errorJson;
     }
@@ -739,22 +588,14 @@ public class TasksResponseBody  {
         this.errorJson = errorJson;
     }
 
-    
-
     public TasksResponseBody withTotalTime(Long totalTime) {
         this.totalTime = totalTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务总耗时
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return totalTime
-     */
+    /** 任务总耗时 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return totalTime */
     public Long getTotalTime() {
         return totalTime;
     }
@@ -763,20 +604,14 @@ public class TasksResponseBody  {
         this.totalTime = totalTime;
     }
 
-    
-
     public TasksResponseBody withMigrationIp(String migrationIp) {
         this.migrationIp = migrationIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 目的端服务器的IP地址。 公网迁移时请填写弹性IP地址 专线迁移时请填写私有IP地址
-     * @return migrationIp
-     */
+    /** 目的端服务器的IP地址。 公网迁移时请填写弹性IP地址 专线迁移时请填写私有IP地址
+     * 
+     * @return migrationIp */
     public String getMigrationIp() {
         return migrationIp;
     }
@@ -785,16 +620,13 @@ public class TasksResponseBody  {
         this.migrationIp = migrationIp;
     }
 
-    
-
     public TasksResponseBody withSubTasks(List<SubTaskAssociatedWithTask> subTasks) {
         this.subTasks = subTasks;
         return this;
     }
 
-    
     public TasksResponseBody addSubTasksItem(SubTaskAssociatedWithTask subTasksItem) {
-        if(this.subTasks == null) {
+        if (this.subTasks == null) {
             this.subTasks = new ArrayList<>();
         }
         this.subTasks.add(subTasksItem);
@@ -802,17 +634,16 @@ public class TasksResponseBody  {
     }
 
     public TasksResponseBody withSubTasks(Consumer<List<SubTaskAssociatedWithTask>> subTasksSetter) {
-        if(this.subTasks == null) {
+        if (this.subTasks == null) {
             this.subTasks = new ArrayList<>();
         }
         subTasksSetter.accept(this.subTasks);
         return this;
     }
 
-    /**
-     * 任务关联的子任务信息
-     * @return subTasks
-     */
+    /** 任务关联的子任务信息
+     * 
+     * @return subTasks */
     public List<SubTaskAssociatedWithTask> getSubTasks() {
         return subTasks;
     }
@@ -821,27 +652,23 @@ public class TasksResponseBody  {
         this.subTasks = subTasks;
     }
 
-    
-
     public TasksResponseBody withSourceServer(SourceServerAssociatedWithTask sourceServer) {
         this.sourceServer = sourceServer;
         return this;
     }
 
     public TasksResponseBody withSourceServer(Consumer<SourceServerAssociatedWithTask> sourceServerSetter) {
-        if(this.sourceServer == null ){
+        if (this.sourceServer == null) {
             this.sourceServer = new SourceServerAssociatedWithTask();
             sourceServerSetter.accept(this.sourceServer);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get sourceServer
-     * @return sourceServer
-     */
+    /** Get sourceServer
+     * 
+     * @return sourceServer */
     public SourceServerAssociatedWithTask getSourceServer() {
         return sourceServer;
     }
@@ -850,20 +677,14 @@ public class TasksResponseBody  {
         this.sourceServer = sourceServer;
     }
 
-    
-
     public TasksResponseBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移项目id
-     * @return enterpriseProjectId
-     */
+    /** 迁移项目id
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -872,27 +693,23 @@ public class TasksResponseBody  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public TasksResponseBody withTargetServer(TargetServerAssociatedWithTask targetServer) {
         this.targetServer = targetServer;
         return this;
     }
 
     public TasksResponseBody withTargetServer(Consumer<TargetServerAssociatedWithTask> targetServerSetter) {
-        if(this.targetServer == null ){
+        if (this.targetServer == null) {
             this.targetServer = new TargetServerAssociatedWithTask();
             targetServerSetter.accept(this.targetServer);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get targetServer
-     * @return targetServer
-     */
+    /** Get targetServer
+     * 
+     * @return targetServer */
     public TargetServerAssociatedWithTask getTargetServer() {
         return targetServer;
     }
@@ -901,20 +718,14 @@ public class TasksResponseBody  {
         this.targetServer = targetServer;
     }
 
-    
-
     public TasksResponseBody withLogCollectStatus(LogCollectStatusEnum logCollectStatus) {
         this.logCollectStatus = logCollectStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 日志收集状态
-     * @return logCollectStatus
-     */
+    /** 日志收集状态
+     * 
+     * @return logCollectStatus */
     public LogCollectStatusEnum getLogCollectStatus() {
         return logCollectStatus;
     }
@@ -923,27 +734,23 @@ public class TasksResponseBody  {
         this.logCollectStatus = logCollectStatus;
     }
 
-    
-
     public TasksResponseBody withCloneServer(CloneServerBrief cloneServer) {
         this.cloneServer = cloneServer;
         return this;
     }
 
     public TasksResponseBody withCloneServer(Consumer<CloneServerBrief> cloneServerSetter) {
-        if(this.cloneServer == null ){
+        if (this.cloneServer == null) {
             this.cloneServer = new CloneServerBrief();
             cloneServerSetter.accept(this.cloneServer);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get cloneServer
-     * @return cloneServer
-     */
+    /** Get cloneServer
+     * 
+     * @return cloneServer */
     public CloneServerBrief getCloneServer() {
         return cloneServer;
     }
@@ -952,20 +759,14 @@ public class TasksResponseBody  {
         this.cloneServer = cloneServer;
     }
 
-    
-
     public TasksResponseBody withSyncing(Boolean syncing) {
         this.syncing = syncing;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否同步
-     * @return syncing
-     */
+    /** 是否同步
+     * 
+     * @return syncing */
     public Boolean getSyncing() {
         return syncing;
     }
@@ -973,8 +774,6 @@ public class TasksResponseBody  {
     public void setSyncing(Boolean syncing) {
         this.syncing = syncing;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -985,33 +784,55 @@ public class TasksResponseBody  {
             return false;
         }
         TasksResponseBody tasksResponseBody = (TasksResponseBody) o;
-        return Objects.equals(this.id, tasksResponseBody.id) &&
-            Objects.equals(this.name, tasksResponseBody.name) &&
-            Objects.equals(this.type, tasksResponseBody.type) &&
-            Objects.equals(this.osType, tasksResponseBody.osType) &&
-            Objects.equals(this.state, tasksResponseBody.state) &&
-            Objects.equals(this.estimateCompleteTime, tasksResponseBody.estimateCompleteTime) &&
-            Objects.equals(this.createDate, tasksResponseBody.createDate) &&
-            Objects.equals(this.priority, tasksResponseBody.priority) &&
-            Objects.equals(this.speedLimit, tasksResponseBody.speedLimit) &&
-            Objects.equals(this.migrateSpeed, tasksResponseBody.migrateSpeed) &&
-            Objects.equals(this.compressRate, tasksResponseBody.compressRate) &&
-            Objects.equals(this.startTargetServer, tasksResponseBody.startTargetServer) &&
-            Objects.equals(this.errorJson, tasksResponseBody.errorJson) &&
-            Objects.equals(this.totalTime, tasksResponseBody.totalTime) &&
-            Objects.equals(this.migrationIp, tasksResponseBody.migrationIp) &&
-            Objects.equals(this.subTasks, tasksResponseBody.subTasks) &&
-            Objects.equals(this.sourceServer, tasksResponseBody.sourceServer) &&
-            Objects.equals(this.enterpriseProjectId, tasksResponseBody.enterpriseProjectId) &&
-            Objects.equals(this.targetServer, tasksResponseBody.targetServer) &&
-            Objects.equals(this.logCollectStatus, tasksResponseBody.logCollectStatus) &&
-            Objects.equals(this.cloneServer, tasksResponseBody.cloneServer) &&
-            Objects.equals(this.syncing, tasksResponseBody.syncing);
+        return Objects.equals(this.id, tasksResponseBody.id) && Objects.equals(this.name, tasksResponseBody.name)
+            && Objects.equals(this.type, tasksResponseBody.type)
+            && Objects.equals(this.osType, tasksResponseBody.osType)
+            && Objects.equals(this.state, tasksResponseBody.state)
+            && Objects.equals(this.estimateCompleteTime, tasksResponseBody.estimateCompleteTime)
+            && Objects.equals(this.createDate, tasksResponseBody.createDate)
+            && Objects.equals(this.priority, tasksResponseBody.priority)
+            && Objects.equals(this.speedLimit, tasksResponseBody.speedLimit)
+            && Objects.equals(this.migrateSpeed, tasksResponseBody.migrateSpeed)
+            && Objects.equals(this.compressRate, tasksResponseBody.compressRate)
+            && Objects.equals(this.startTargetServer, tasksResponseBody.startTargetServer)
+            && Objects.equals(this.errorJson, tasksResponseBody.errorJson)
+            && Objects.equals(this.totalTime, tasksResponseBody.totalTime)
+            && Objects.equals(this.migrationIp, tasksResponseBody.migrationIp)
+            && Objects.equals(this.subTasks, tasksResponseBody.subTasks)
+            && Objects.equals(this.sourceServer, tasksResponseBody.sourceServer)
+            && Objects.equals(this.enterpriseProjectId, tasksResponseBody.enterpriseProjectId)
+            && Objects.equals(this.targetServer, tasksResponseBody.targetServer)
+            && Objects.equals(this.logCollectStatus, tasksResponseBody.logCollectStatus)
+            && Objects.equals(this.cloneServer, tasksResponseBody.cloneServer)
+            && Objects.equals(this.syncing, tasksResponseBody.syncing);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, osType, state, estimateCompleteTime, createDate, priority, speedLimit, migrateSpeed, compressRate, startTargetServer, errorJson, totalTime, migrationIp, subTasks, sourceServer, enterpriseProjectId, targetServer, logCollectStatus, cloneServer, syncing);
+        return Objects.hash(id,
+            name,
+            type,
+            osType,
+            state,
+            estimateCompleteTime,
+            createDate,
+            priority,
+            speedLimit,
+            migrateSpeed,
+            compressRate,
+            startTargetServer,
+            errorJson,
+            totalTime,
+            migrationIp,
+            subTasks,
+            sourceServer,
+            enterpriseProjectId,
+            targetServer,
+            logCollectStatus,
+            cloneServer,
+            syncing);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1041,16 +862,13 @@ public class TasksResponseBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

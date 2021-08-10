@@ -1,49 +1,31 @@
 package com.huaweicloud.sdk.oms.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 源端CDN配置返回值。
- */
-public class SourceCdnResp  {
-
-
+/** 源端CDN配置返回值。 */
+public class SourceCdnResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
+
     private String domain;
-    /**
-     * 协议类型，支持http和https协议。
-     */
+
+    /** 协议类型，支持http和https协议。 */
     public static final class ProtocolEnum {
 
-        
-        /**
-         * Enum HTTP for value: "http"
-         */
+        /** Enum HTTP for value: "http" */
         public static final ProtocolEnum HTTP = new ProtocolEnum("http");
-        
-        /**
-         * Enum HTTPS for value: "https"
-         */
+
+        /** Enum HTTPS for value: "https" */
         public static final ProtocolEnum HTTPS = new ProtocolEnum("https");
-        
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
 
@@ -72,7 +54,7 @@ public class SourceCdnResp  {
 
         @JsonCreator
         public static ProtocolEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtocolEnum result = STATIC_FIELDS.get(value);
@@ -83,7 +65,7 @@ public class SourceCdnResp  {
         }
 
         public static ProtocolEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtocolEnum result = STATIC_FIELDS.get(value);
@@ -107,52 +89,37 @@ public class SourceCdnResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
+
     private ProtocolEnum protocol;
-    /**
-     * 鉴权类型: NONE, QINIU_PRIVATE_AUTHENTICATION, ALIYUN_OSS_A, ALIYUN_OSS_B, ALIYUN_OSS_C, KSYUN_PRIVATE_AUTHENTICATION, AZURE_SAS_TOKEN
-     */
+
+    /** 鉴权类型: NONE, QINIU_PRIVATE_AUTHENTICATION, ALIYUN_OSS_A, ALIYUN_OSS_B, ALIYUN_OSS_C,
+     * KSYUN_PRIVATE_AUTHENTICATION, AZURE_SAS_TOKEN */
     public static final class AuthenticationTypeEnum {
 
-        
-        /**
-         * Enum NONE for value: "NONE"
-         */
+        /** Enum NONE for value: "NONE" */
         public static final AuthenticationTypeEnum NONE = new AuthenticationTypeEnum("NONE");
-        
-        /**
-         * Enum QINIU_PRIVATE_AUTHENTICATION for value: "QINIU_PRIVATE_AUTHENTICATION"
-         */
-        public static final AuthenticationTypeEnum QINIU_PRIVATE_AUTHENTICATION = new AuthenticationTypeEnum("QINIU_PRIVATE_AUTHENTICATION");
-        
-        /**
-         * Enum ALIYUN_OSS_A for value: "ALIYUN_OSS_A"
-         */
+
+        /** Enum QINIU_PRIVATE_AUTHENTICATION for value: "QINIU_PRIVATE_AUTHENTICATION" */
+        public static final AuthenticationTypeEnum QINIU_PRIVATE_AUTHENTICATION =
+            new AuthenticationTypeEnum("QINIU_PRIVATE_AUTHENTICATION");
+
+        /** Enum ALIYUN_OSS_A for value: "ALIYUN_OSS_A" */
         public static final AuthenticationTypeEnum ALIYUN_OSS_A = new AuthenticationTypeEnum("ALIYUN_OSS_A");
-        
-        /**
-         * Enum ALIYUN_OSS_B for value: "ALIYUN_OSS_B"
-         */
+
+        /** Enum ALIYUN_OSS_B for value: "ALIYUN_OSS_B" */
         public static final AuthenticationTypeEnum ALIYUN_OSS_B = new AuthenticationTypeEnum("ALIYUN_OSS_B");
-        
-        /**
-         * Enum ALIYUN_OSS_C for value: "ALIYUN_OSS_C"
-         */
+
+        /** Enum ALIYUN_OSS_C for value: "ALIYUN_OSS_C" */
         public static final AuthenticationTypeEnum ALIYUN_OSS_C = new AuthenticationTypeEnum("ALIYUN_OSS_C");
-        
-        /**
-         * Enum KSYUN_PRIVATE_AUTHENTICATION for value: "KSYUN_PRIVATE_AUTHENTICATION"
-         */
-        public static final AuthenticationTypeEnum KSYUN_PRIVATE_AUTHENTICATION = new AuthenticationTypeEnum("KSYUN_PRIVATE_AUTHENTICATION");
-        
-        /**
-         * Enum AZURE_SAS_TOKEN for value: "AZURE_SAS_TOKEN"
-         */
+
+        /** Enum KSYUN_PRIVATE_AUTHENTICATION for value: "KSYUN_PRIVATE_AUTHENTICATION" */
+        public static final AuthenticationTypeEnum KSYUN_PRIVATE_AUTHENTICATION =
+            new AuthenticationTypeEnum("KSYUN_PRIVATE_AUTHENTICATION");
+
+        /** Enum AZURE_SAS_TOKEN for value: "AZURE_SAS_TOKEN" */
         public static final AuthenticationTypeEnum AZURE_SAS_TOKEN = new AuthenticationTypeEnum("AZURE_SAS_TOKEN");
-        
 
         private static final Map<String, AuthenticationTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -186,7 +153,7 @@ public class SourceCdnResp  {
 
         @JsonCreator
         public static AuthenticationTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AuthenticationTypeEnum result = STATIC_FIELDS.get(value);
@@ -197,7 +164,7 @@ public class SourceCdnResp  {
         }
 
         public static AuthenticationTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AuthenticationTypeEnum result = STATIC_FIELDS.get(value);
@@ -221,10 +188,9 @@ public class SourceCdnResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="authentication_type")
-    
+    @JsonProperty(value = "authentication_type")
+
     private AuthenticationTypeEnum authenticationType;
 
     public SourceCdnResp withDomain(String domain) {
@@ -232,13 +198,9 @@ public class SourceCdnResp  {
         return this;
     }
 
-    
-
-
-    /**
-     *   从指定域名获取对象。
-     * @return domain
-     */
+    /** 从指定域名获取对象。
+     * 
+     * @return domain */
     public String getDomain() {
         return domain;
     }
@@ -247,20 +209,14 @@ public class SourceCdnResp  {
         this.domain = domain;
     }
 
-    
-
     public SourceCdnResp withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
         return this;
     }
 
-    
-
-
-    /**
-     * 协议类型，支持http和https协议。
-     * @return protocol
-     */
+    /** 协议类型，支持http和https协议。
+     * 
+     * @return protocol */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -269,20 +225,15 @@ public class SourceCdnResp  {
         this.protocol = protocol;
     }
 
-    
-
     public SourceCdnResp withAuthenticationType(AuthenticationTypeEnum authenticationType) {
         this.authenticationType = authenticationType;
         return this;
     }
 
-    
-
-
-    /**
-     * 鉴权类型: NONE, QINIU_PRIVATE_AUTHENTICATION, ALIYUN_OSS_A, ALIYUN_OSS_B, ALIYUN_OSS_C, KSYUN_PRIVATE_AUTHENTICATION, AZURE_SAS_TOKEN
-     * @return authenticationType
-     */
+    /** 鉴权类型: NONE, QINIU_PRIVATE_AUTHENTICATION, ALIYUN_OSS_A, ALIYUN_OSS_B, ALIYUN_OSS_C,
+     * KSYUN_PRIVATE_AUTHENTICATION, AZURE_SAS_TOKEN
+     * 
+     * @return authenticationType */
     public AuthenticationTypeEnum getAuthenticationType() {
         return authenticationType;
     }
@@ -290,8 +241,6 @@ public class SourceCdnResp  {
     public void setAuthenticationType(AuthenticationTypeEnum authenticationType) {
         this.authenticationType = authenticationType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -302,14 +251,16 @@ public class SourceCdnResp  {
             return false;
         }
         SourceCdnResp sourceCdnResp = (SourceCdnResp) o;
-        return Objects.equals(this.domain, sourceCdnResp.domain) &&
-            Objects.equals(this.protocol, sourceCdnResp.protocol) &&
-            Objects.equals(this.authenticationType, sourceCdnResp.authenticationType);
+        return Objects.equals(this.domain, sourceCdnResp.domain)
+            && Objects.equals(this.protocol, sourceCdnResp.protocol)
+            && Objects.equals(this.authenticationType, sourceCdnResp.authenticationType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domain, protocol, authenticationType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -320,16 +271,13 @@ public class SourceCdnResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

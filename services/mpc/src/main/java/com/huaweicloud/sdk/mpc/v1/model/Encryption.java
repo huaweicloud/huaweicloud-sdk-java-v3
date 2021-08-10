@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.HlsEncrypt;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Encryption
- */
-public class Encryption  {
-
-
+/** Encryption */
+public class Encryption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hls_encrypt")
-    
+    @JsonProperty(value = "hls_encrypt")
+
     private HlsEncrypt hlsEncrypt;
 
     public Encryption withHlsEncrypt(HlsEncrypt hlsEncrypt) {
@@ -30,19 +20,17 @@ public class Encryption  {
     }
 
     public Encryption withHlsEncrypt(Consumer<HlsEncrypt> hlsEncryptSetter) {
-        if(this.hlsEncrypt == null ){
+        if (this.hlsEncrypt == null) {
             this.hlsEncrypt = new HlsEncrypt();
             hlsEncryptSetter.accept(this.hlsEncrypt);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get hlsEncrypt
-     * @return hlsEncrypt
-     */
+    /** Get hlsEncrypt
+     * 
+     * @return hlsEncrypt */
     public HlsEncrypt getHlsEncrypt() {
         return hlsEncrypt;
     }
@@ -50,8 +38,6 @@ public class Encryption  {
     public void setHlsEncrypt(HlsEncrypt hlsEncrypt) {
         this.hlsEncrypt = hlsEncrypt;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class Encryption  {
         Encryption encryption = (Encryption) o;
         return Objects.equals(this.hlsEncrypt, encryption.hlsEncrypt);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(hlsEncrypt);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class Encryption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

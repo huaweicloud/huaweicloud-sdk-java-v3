@@ -1,19 +1,19 @@
 package com.huaweicloud.sdk.codecheck.v2;
 
+import com.huaweicloud.sdk.codecheck.v2.model.*;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.codecheck.v2.model.*;
+
 import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class CodeCheckMeta {
 
-    public static final HttpRequestDef<CollectPluginRecordRequest, CollectPluginRecordResponse> collectPluginRecord = genForcollectPluginRecord();
+    public static final HttpRequestDef<CollectPluginRecordRequest, CollectPluginRecordResponse> collectPluginRecord =
+        genForcollectPluginRecord();
 
     private static HttpRequestDef<CollectPluginRecordRequest, CollectPluginRecordResponse> genForcollectPluginRecord() {
         // basic
@@ -24,18 +24,15 @@ public class CodeCheckMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<PluginRecordModel>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            PluginRecordModel.class,
+            TypeCasts.uncheckedConversion(PluginRecordModel.class),
             f -> f.withMarshaller(CollectPluginRecordRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -51,89 +48,86 @@ public class CodeCheckMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("project_id",
+        builder.<String>withRequestField("project_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateTaskRequest::getProjectId, (req, v) -> {
                 req.setProjectId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateTaskRequestV2>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateTaskRequestV2.class,
+            TypeCasts.uncheckedConversion(CreateTaskRequestV2.class),
             f -> f.withMarshaller(CreateTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DownloadLibCodeAnalysisReportRequest, DownloadLibCodeAnalysisReportResponse> downloadLibCodeAnalysisReport = genFordownloadLibCodeAnalysisReport();
+    public static final HttpRequestDef<DownloadLibCodeAnalysisReportRequest, DownloadLibCodeAnalysisReportResponse> downloadLibCodeAnalysisReport =
+        genFordownloadLibCodeAnalysisReport();
 
     private static HttpRequestDef<DownloadLibCodeAnalysisReportRequest, DownloadLibCodeAnalysisReportResponse> genFordownloadLibCodeAnalysisReport() {
         // basic
         HttpRequestDef.Builder<DownloadLibCodeAnalysisReportRequest, DownloadLibCodeAnalysisReportResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, DownloadLibCodeAnalysisReportRequest.class, DownloadLibCodeAnalysisReportResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DownloadLibCodeAnalysisReportRequest.class,
+                    DownloadLibCodeAnalysisReportResponse.class)
                 .withName("DownloadLibCodeAnalysisReport")
                 .withUri("/v2/java/lib-code-analysis-report")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<JavaLibBean>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            JavaLibBean.class,
+            TypeCasts.uncheckedConversion(JavaLibBean.class),
             f -> f.withMarshaller(DownloadLibCodeAnalysisReportRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListJavaLibUpdateSuggestionRequest, ListJavaLibUpdateSuggestionResponse> listJavaLibUpdateSuggestion = genForlistJavaLibUpdateSuggestion();
+    public static final HttpRequestDef<ListJavaLibUpdateSuggestionRequest, ListJavaLibUpdateSuggestionResponse> listJavaLibUpdateSuggestion =
+        genForlistJavaLibUpdateSuggestion();
 
     private static HttpRequestDef<ListJavaLibUpdateSuggestionRequest, ListJavaLibUpdateSuggestionResponse> genForlistJavaLibUpdateSuggestion() {
         // basic
         HttpRequestDef.Builder<ListJavaLibUpdateSuggestionRequest, ListJavaLibUpdateSuggestionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ListJavaLibUpdateSuggestionRequest.class, ListJavaLibUpdateSuggestionResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListJavaLibUpdateSuggestionRequest.class,
+                    ListJavaLibUpdateSuggestionResponse.class)
                 .withName("ListJavaLibUpdateSuggestion")
                 .withUri("/v2/java/lib-update-suggestion")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<ListJavaLibUpdateSuggestionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ListJavaLibUpdateSuggestionRequestBody.class,
+            TypeCasts.uncheckedConversion(ListJavaLibUpdateSuggestionRequestBody.class),
             f -> f.withMarshaller(ListJavaLibUpdateSuggestionRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.<List<JavaReplaceLibInfo>>withResponseField(
-            "body",
+
+        builder.<List<JavaReplaceLibInfo>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListJavaLibUpdateSuggestionResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(ListJavaLibUpdateSuggestionResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            }).withInnerContainerType(JavaReplaceLibInfo.class)
-        );
-
+            }).withInnerContainerType(JavaReplaceLibInfo.class));
 
         return builder.build();
     }
@@ -149,31 +143,28 @@ public class CodeCheckMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RunTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<RunRequestV2>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            RunRequestV2.class,
+            TypeCasts.uncheckedConversion(RunRequestV2.class),
             f -> f.withMarshaller(RunTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowProgressDetailRequest, ShowProgressDetailResponse> showProgressDetail = genForshowProgressDetail();
+    public static final HttpRequestDef<ShowProgressDetailRequest, ShowProgressDetailResponse> showProgressDetail =
+        genForshowProgressDetail();
 
     private static HttpRequestDef<ShowProgressDetailRequest, ShowProgressDetailResponse> genForshowProgressDetail() {
         // basic
@@ -184,23 +175,21 @@ public class CodeCheckMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowProgressDetailRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTaskDefectsRequest, ShowTaskDefectsResponse> showTaskDefects = genForshowTaskDefects();
+    public static final HttpRequestDef<ShowTaskDefectsRequest, ShowTaskDefectsResponse> showTaskDefects =
+        genForshowTaskDefects();
 
     private static HttpRequestDef<ShowTaskDefectsRequest, ShowTaskDefectsResponse> genForshowTaskDefects() {
         // basic
@@ -211,66 +200,61 @@ public class CodeCheckMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTaskDefectsRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowTaskDefectsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowTaskDefectsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTaskDefectsStatisticRequest, ShowTaskDefectsStatisticResponse> showTaskDefectsStatistic = genForshowTaskDefectsStatistic();
+    public static final HttpRequestDef<ShowTaskDefectsStatisticRequest, ShowTaskDefectsStatisticResponse> showTaskDefectsStatistic =
+        genForshowTaskDefectsStatistic();
 
     private static HttpRequestDef<ShowTaskDefectsStatisticRequest, ShowTaskDefectsStatisticResponse> genForshowTaskDefectsStatistic() {
         // basic
         HttpRequestDef.Builder<ShowTaskDefectsStatisticRequest, ShowTaskDefectsStatisticResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowTaskDefectsStatisticRequest.class, ShowTaskDefectsStatisticResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowTaskDefectsStatisticRequest.class, ShowTaskDefectsStatisticResponse.class)
                 .withName("ShowTaskDefectsStatistic")
                 .withUri("/v2/tasks/{task_id}/defects-statistic")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTaskDefectsStatisticRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTaskDetailRequest, ShowTaskDetailResponse> showTaskDetail = genForshowTaskDetail();
+    public static final HttpRequestDef<ShowTaskDetailRequest, ShowTaskDetailResponse> showTaskDetail =
+        genForshowTaskDetail();
 
     private static HttpRequestDef<ShowTaskDetailRequest, ShowTaskDetailResponse> genForshowTaskDetail() {
         // basic
@@ -281,61 +265,54 @@ public class CodeCheckMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTaskDetailRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTaskListByProjectIdRequest, ShowTaskListByProjectIdResponse> showTaskListByProjectId = genForshowTaskListByProjectId();
+    public static final HttpRequestDef<ShowTaskListByProjectIdRequest, ShowTaskListByProjectIdResponse> showTaskListByProjectId =
+        genForshowTaskListByProjectId();
 
     private static HttpRequestDef<ShowTaskListByProjectIdRequest, ShowTaskListByProjectIdResponse> genForshowTaskListByProjectId() {
         // basic
-        HttpRequestDef.Builder<ShowTaskListByProjectIdRequest, ShowTaskListByProjectIdResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowTaskListByProjectIdRequest.class, ShowTaskListByProjectIdResponse.class)
-                .withName("ShowTaskListByProjectId")
-                .withUri("/v2/{project_id}/tasks")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowTaskListByProjectIdRequest, ShowTaskListByProjectIdResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowTaskListByProjectIdRequest.class, ShowTaskListByProjectIdResponse.class)
+            .withName("ShowTaskListByProjectId")
+            .withUri("/v2/{project_id}/tasks")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("project_id",
+        builder.<String>withRequestField("project_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTaskListByProjectIdRequest::getProjectId, (req, v) -> {
                 req.setProjectId(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowTaskListByProjectIdRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowTaskListByProjectIdRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -351,23 +328,21 @@ public class CodeCheckMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopTaskByIdRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateDefectStatusRequest, UpdateDefectStatusResponse> updateDefectStatus = genForupdateDefectStatus();
+    public static final HttpRequestDef<UpdateDefectStatusRequest, UpdateDefectStatusResponse> updateDefectStatus =
+        genForupdateDefectStatus();
 
     private static HttpRequestDef<UpdateDefectStatusRequest, UpdateDefectStatusResponse> genForupdateDefectStatus() {
         // basic
@@ -378,26 +353,22 @@ public class CodeCheckMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateDefectStatusRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateDefectRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateDefectRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateDefectRequestBody.class),
             f -> f.withMarshaller(UpdateDefectStatusRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

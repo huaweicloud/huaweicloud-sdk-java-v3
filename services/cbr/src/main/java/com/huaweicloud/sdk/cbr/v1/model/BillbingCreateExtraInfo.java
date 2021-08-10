@@ -1,32 +1,23 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class BillbingCreateExtraInfo  {
-
-
+public class BillbingCreateExtraInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="combined_order_id")
-    
+    @JsonProperty(value = "combined_order_id")
+
     private String combinedOrderId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="combined_order_ecs_num")
-    
+    @JsonProperty(value = "combined_order_ecs_num")
+
     private Integer combinedOrderEcsNum;
 
     public BillbingCreateExtraInfo withCombinedOrderId(String combinedOrderId) {
@@ -34,13 +25,9 @@ public class BillbingCreateExtraInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 组合创建ID，组合创建时必传。
-     * @return combinedOrderId
-     */
+    /** 组合创建ID，组合创建时必传。
+     * 
+     * @return combinedOrderId */
     public String getCombinedOrderId() {
         return combinedOrderId;
     }
@@ -49,20 +36,14 @@ public class BillbingCreateExtraInfo  {
         this.combinedOrderId = combinedOrderId;
     }
 
-    
-
     public BillbingCreateExtraInfo withCombinedOrderEcsNum(Integer combinedOrderEcsNum) {
         this.combinedOrderEcsNum = combinedOrderEcsNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 组合创建数量，组合创建时必填。
-     * @return combinedOrderEcsNum
-     */
+    /** 组合创建数量，组合创建时必填。
+     * 
+     * @return combinedOrderEcsNum */
     public Integer getCombinedOrderEcsNum() {
         return combinedOrderEcsNum;
     }
@@ -70,8 +51,6 @@ public class BillbingCreateExtraInfo  {
     public void setCombinedOrderEcsNum(Integer combinedOrderEcsNum) {
         this.combinedOrderEcsNum = combinedOrderEcsNum;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +61,15 @@ public class BillbingCreateExtraInfo  {
             return false;
         }
         BillbingCreateExtraInfo billbingCreateExtraInfo = (BillbingCreateExtraInfo) o;
-        return Objects.equals(this.combinedOrderId, billbingCreateExtraInfo.combinedOrderId) &&
-            Objects.equals(this.combinedOrderEcsNum, billbingCreateExtraInfo.combinedOrderEcsNum);
+        return Objects.equals(this.combinedOrderId, billbingCreateExtraInfo.combinedOrderId)
+            && Objects.equals(this.combinedOrderEcsNum, billbingCreateExtraInfo.combinedOrderEcsNum);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(combinedOrderId, combinedOrderEcsNum);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +79,13 @@ public class BillbingCreateExtraInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

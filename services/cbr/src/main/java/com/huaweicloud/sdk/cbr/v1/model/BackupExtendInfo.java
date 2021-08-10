@@ -1,79 +1,57 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.ImageData;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * BackupExtendInfo
- */
-public class BackupExtendInfo  {
-
-
+/** BackupExtendInfo */
+public class BackupExtendInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auto_trigger")
-    
+    @JsonProperty(value = "auto_trigger")
+
     private Boolean autoTrigger;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bootable")
-    
+    @JsonProperty(value = "bootable")
+
     private Boolean bootable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="incremental")
-    
+    @JsonProperty(value = "incremental")
+
     private Boolean incremental;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="snapshot_id")
-    
+    @JsonProperty(value = "snapshot_id")
+
     private String snapshotId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="support_lld")
-    
+    @JsonProperty(value = "support_lld")
+
     private Boolean supportLld;
-    /**
-     * 备份支持恢复的方式，当前取值包含na,snapshot和backup。如果该字段取值为snapshot，代表备份此时已经支持创建整机镜像；如果该字段取值为backup，备份支持通过云服务器上硬盘的备份进行恢复；如果该字段取值为na，备份不支持恢复。
-     */
+
+    /** 备份支持恢复的方式，当前取值包含na,snapshot和backup。如果该字段取值为snapshot，代表备份此时已经支持创建整机镜像；如果该字段取值为backup，备份支持通过云服务器上硬盘的备份进行恢复；如果该字段取值为na，备份不支持恢复。 */
     public static final class SupportedRestoreModeEnum {
 
-        
-        /**
-         * Enum NA for value: "na"
-         */
+        /** Enum NA for value: "na" */
         public static final SupportedRestoreModeEnum NA = new SupportedRestoreModeEnum("na");
-        
-        /**
-         * Enum _BACKUP for value: " backup"
-         */
+
+        /** Enum _BACKUP for value: " backup" */
         public static final SupportedRestoreModeEnum _BACKUP = new SupportedRestoreModeEnum(" backup");
-        
-        /**
-         * Enum _SNAPSHOT for value: " snapshot"
-         */
+
+        /** Enum _SNAPSHOT for value: " snapshot" */
         public static final SupportedRestoreModeEnum _SNAPSHOT = new SupportedRestoreModeEnum(" snapshot");
-        
 
         private static final Map<String, SupportedRestoreModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -103,7 +81,7 @@ public class BackupExtendInfo  {
 
         @JsonCreator
         public static SupportedRestoreModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SupportedRestoreModeEnum result = STATIC_FIELDS.get(value);
@@ -114,7 +92,7 @@ public class BackupExtendInfo  {
         }
 
         public static SupportedRestoreModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SupportedRestoreModeEnum result = STATIC_FIELDS.get(value);
@@ -138,34 +116,29 @@ public class BackupExtendInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="supported_restore_mode")
-    
+    @JsonProperty(value = "supported_restore_mode")
+
     private SupportedRestoreModeEnum supportedRestoreMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os_images_data")
-    
+    @JsonProperty(value = "os_images_data")
+
     private List<ImageData> osImagesData = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="contain_system_disk")
-    
+    @JsonProperty(value = "contain_system_disk")
+
     private Boolean containSystemDisk;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="encrypted")
-    
+    @JsonProperty(value = "encrypted")
+
     private Boolean encrypted;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="system_disk")
-    
+    @JsonProperty(value = "system_disk")
+
     private Boolean systemDisk;
 
     public BackupExtendInfo withAutoTrigger(Boolean autoTrigger) {
@@ -173,13 +146,9 @@ public class BackupExtendInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 是否是自动生成的备份副本
-     * @return autoTrigger
-     */
+    /** 是否是自动生成的备份副本
+     * 
+     * @return autoTrigger */
     public Boolean getAutoTrigger() {
         return autoTrigger;
     }
@@ -188,20 +157,14 @@ public class BackupExtendInfo  {
         this.autoTrigger = autoTrigger;
     }
 
-    
-
     public BackupExtendInfo withBootable(Boolean bootable) {
         this.bootable = bootable;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否系统盘备份
-     * @return bootable
-     */
+    /** 是否系统盘备份
+     * 
+     * @return bootable */
     public Boolean getBootable() {
         return bootable;
     }
@@ -210,20 +173,14 @@ public class BackupExtendInfo  {
         this.bootable = bootable;
     }
 
-    
-
     public BackupExtendInfo withIncremental(Boolean incremental) {
         this.incremental = incremental;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否是增备
-     * @return incremental
-     */
+    /** 是否是增备
+     * 
+     * @return incremental */
     public Boolean getIncremental() {
         return incremental;
     }
@@ -232,20 +189,14 @@ public class BackupExtendInfo  {
         this.incremental = incremental;
     }
 
-    
-
     public BackupExtendInfo withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
         return this;
     }
 
-    
-
-
-    /**
-     * 卷备份副本的快照id
-     * @return snapshotId
-     */
+    /** 卷备份副本的快照id
+     * 
+     * @return snapshotId */
     public String getSnapshotId() {
         return snapshotId;
     }
@@ -254,20 +205,14 @@ public class BackupExtendInfo  {
         this.snapshotId = snapshotId;
     }
 
-    
-
     public BackupExtendInfo withSupportLld(Boolean supportLld) {
         this.supportLld = supportLld;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否支持lazyloading快速恢复
-     * @return supportLld
-     */
+    /** 是否支持lazyloading快速恢复
+     * 
+     * @return supportLld */
     public Boolean getSupportLld() {
         return supportLld;
     }
@@ -276,20 +221,14 @@ public class BackupExtendInfo  {
         this.supportLld = supportLld;
     }
 
-    
-
     public BackupExtendInfo withSupportedRestoreMode(SupportedRestoreModeEnum supportedRestoreMode) {
         this.supportedRestoreMode = supportedRestoreMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份支持恢复的方式，当前取值包含na,snapshot和backup。如果该字段取值为snapshot，代表备份此时已经支持创建整机镜像；如果该字段取值为backup，备份支持通过云服务器上硬盘的备份进行恢复；如果该字段取值为na，备份不支持恢复。
-     * @return supportedRestoreMode
-     */
+    /** 备份支持恢复的方式，当前取值包含na,snapshot和backup。如果该字段取值为snapshot，代表备份此时已经支持创建整机镜像；如果该字段取值为backup，备份支持通过云服务器上硬盘的备份进行恢复；如果该字段取值为na，备份不支持恢复。
+     * 
+     * @return supportedRestoreMode */
     public SupportedRestoreModeEnum getSupportedRestoreMode() {
         return supportedRestoreMode;
     }
@@ -298,16 +237,13 @@ public class BackupExtendInfo  {
         this.supportedRestoreMode = supportedRestoreMode;
     }
 
-    
-
     public BackupExtendInfo withOsImagesData(List<ImageData> osImagesData) {
         this.osImagesData = osImagesData;
         return this;
     }
 
-    
     public BackupExtendInfo addOsImagesDataItem(ImageData osImagesDataItem) {
-        if(this.osImagesData == null) {
+        if (this.osImagesData == null) {
             this.osImagesData = new ArrayList<>();
         }
         this.osImagesData.add(osImagesDataItem);
@@ -315,17 +251,16 @@ public class BackupExtendInfo  {
     }
 
     public BackupExtendInfo withOsImagesData(Consumer<List<ImageData>> osImagesDataSetter) {
-        if(this.osImagesData == null) {
+        if (this.osImagesData == null) {
             this.osImagesData = new ArrayList<>();
         }
         osImagesDataSetter.accept(this.osImagesData);
         return this;
     }
 
-    /**
-     * 备份注册镜像ID列表
-     * @return osImagesData
-     */
+    /** 备份注册镜像ID列表
+     * 
+     * @return osImagesData */
     public List<ImageData> getOsImagesData() {
         return osImagesData;
     }
@@ -334,20 +269,14 @@ public class BackupExtendInfo  {
         this.osImagesData = osImagesData;
     }
 
-    
-
     public BackupExtendInfo withContainSystemDisk(Boolean containSystemDisk) {
         this.containSystemDisk = containSystemDisk;
         return this;
     }
 
-    
-
-
-    /**
-     * 整机备份是否包含系统盘
-     * @return containSystemDisk
-     */
+    /** 整机备份是否包含系统盘
+     * 
+     * @return containSystemDisk */
     public Boolean getContainSystemDisk() {
         return containSystemDisk;
     }
@@ -356,20 +285,14 @@ public class BackupExtendInfo  {
         this.containSystemDisk = containSystemDisk;
     }
 
-    
-
     public BackupExtendInfo withEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否加密
-     * @return encrypted
-     */
+    /** 是否加密
+     * 
+     * @return encrypted */
     public Boolean getEncrypted() {
         return encrypted;
     }
@@ -378,20 +301,14 @@ public class BackupExtendInfo  {
         this.encrypted = encrypted;
     }
 
-    
-
     public BackupExtendInfo withSystemDisk(Boolean systemDisk) {
         this.systemDisk = systemDisk;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否是系统盘
-     * @return systemDisk
-     */
+    /** 是否是系统盘
+     * 
+     * @return systemDisk */
     public Boolean getSystemDisk() {
         return systemDisk;
     }
@@ -399,8 +316,6 @@ public class BackupExtendInfo  {
     public void setSystemDisk(Boolean systemDisk) {
         this.systemDisk = systemDisk;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -411,21 +326,32 @@ public class BackupExtendInfo  {
             return false;
         }
         BackupExtendInfo backupExtendInfo = (BackupExtendInfo) o;
-        return Objects.equals(this.autoTrigger, backupExtendInfo.autoTrigger) &&
-            Objects.equals(this.bootable, backupExtendInfo.bootable) &&
-            Objects.equals(this.incremental, backupExtendInfo.incremental) &&
-            Objects.equals(this.snapshotId, backupExtendInfo.snapshotId) &&
-            Objects.equals(this.supportLld, backupExtendInfo.supportLld) &&
-            Objects.equals(this.supportedRestoreMode, backupExtendInfo.supportedRestoreMode) &&
-            Objects.equals(this.osImagesData, backupExtendInfo.osImagesData) &&
-            Objects.equals(this.containSystemDisk, backupExtendInfo.containSystemDisk) &&
-            Objects.equals(this.encrypted, backupExtendInfo.encrypted) &&
-            Objects.equals(this.systemDisk, backupExtendInfo.systemDisk);
+        return Objects.equals(this.autoTrigger, backupExtendInfo.autoTrigger)
+            && Objects.equals(this.bootable, backupExtendInfo.bootable)
+            && Objects.equals(this.incremental, backupExtendInfo.incremental)
+            && Objects.equals(this.snapshotId, backupExtendInfo.snapshotId)
+            && Objects.equals(this.supportLld, backupExtendInfo.supportLld)
+            && Objects.equals(this.supportedRestoreMode, backupExtendInfo.supportedRestoreMode)
+            && Objects.equals(this.osImagesData, backupExtendInfo.osImagesData)
+            && Objects.equals(this.containSystemDisk, backupExtendInfo.containSystemDisk)
+            && Objects.equals(this.encrypted, backupExtendInfo.encrypted)
+            && Objects.equals(this.systemDisk, backupExtendInfo.systemDisk);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(autoTrigger, bootable, incremental, snapshotId, supportLld, supportedRestoreMode, osImagesData, containSystemDisk, encrypted, systemDisk);
+        return Objects.hash(autoTrigger,
+            bootable,
+            incremental,
+            snapshotId,
+            supportLld,
+            supportedRestoreMode,
+            osImagesData,
+            containSystemDisk,
+            encrypted,
+            systemDisk);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -443,16 +369,13 @@ public class BackupExtendInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

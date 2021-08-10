@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.ugo.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * SQL翻译接口返回的SQL语句中的不支持特性
- */
-public class UnSupportedItem  {
-
-
+/** SQL翻译接口返回的SQL语句中的不支持特性 */
+public class UnSupportedItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="item_name")
-    
+    @JsonProperty(value = "item_name")
+
     private String itemName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="suggestion")
-    
+    @JsonProperty(value = "suggestion")
+
     private String suggestion;
 
     public UnSupportedItem withItemName(String itemName) {
@@ -34,13 +23,9 @@ public class UnSupportedItem  {
         return this;
     }
 
-    
-
-
-    /**
-     * 输入SQL转换到目标端不支持的特性
-     * @return itemName
-     */
+    /** 输入SQL转换到目标端不支持的特性
+     * 
+     * @return itemName */
     public String getItemName() {
         return itemName;
     }
@@ -49,20 +34,14 @@ public class UnSupportedItem  {
         this.itemName = itemName;
     }
 
-    
-
     public UnSupportedItem withSuggestion(String suggestion) {
         this.suggestion = suggestion;
         return this;
     }
 
-    
-
-
-    /**
-     * 不支持特性的改造建议
-     * @return suggestion
-     */
+    /** 不支持特性的改造建议
+     * 
+     * @return suggestion */
     public String getSuggestion() {
         return suggestion;
     }
@@ -70,8 +49,6 @@ public class UnSupportedItem  {
     public void setSuggestion(String suggestion) {
         this.suggestion = suggestion;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class UnSupportedItem  {
             return false;
         }
         UnSupportedItem unSupportedItem = (UnSupportedItem) o;
-        return Objects.equals(this.itemName, unSupportedItem.itemName) &&
-            Objects.equals(this.suggestion, unSupportedItem.suggestion);
+        return Objects.equals(this.itemName, unSupportedItem.itemName)
+            && Objects.equals(this.suggestion, unSupportedItem.suggestion);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(itemName, suggestion);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class UnSupportedItem  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

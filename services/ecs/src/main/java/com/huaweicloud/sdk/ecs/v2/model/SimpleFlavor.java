@@ -1,49 +1,34 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.Link;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 云服务器规格。
- */
-public class SimpleFlavor  {
-
-
+/** 云服务器规格。 */
+public class SimpleFlavor {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private List<Link> links = null;
-    
+
     public SimpleFlavor withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务器规格的ID。
-     * @return id
-     */
+    /** 云服务器规格的ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -52,16 +37,13 @@ public class SimpleFlavor  {
         this.id = id;
     }
 
-    
-
     public SimpleFlavor withLinks(List<Link> links) {
         this.links = links;
         return this;
     }
 
-    
     public SimpleFlavor addLinksItem(Link linksItem) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         this.links.add(linksItem);
@@ -69,17 +51,16 @@ public class SimpleFlavor  {
     }
 
     public SimpleFlavor withLinks(Consumer<List<Link>> linksSetter) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);
         return this;
     }
 
-    /**
-     * 规格相关快捷链接地址。
-     * @return links
-     */
+    /** 规格相关快捷链接地址。
+     * 
+     * @return links */
     public List<Link> getLinks() {
         return links;
     }
@@ -87,8 +68,6 @@ public class SimpleFlavor  {
     public void setLinks(List<Link> links) {
         this.links = links;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -99,13 +78,14 @@ public class SimpleFlavor  {
             return false;
         }
         SimpleFlavor simpleFlavor = (SimpleFlavor) o;
-        return Objects.equals(this.id, simpleFlavor.id) &&
-            Objects.equals(this.links, simpleFlavor.links);
+        return Objects.equals(this.id, simpleFlavor.id) && Objects.equals(this.links, simpleFlavor.links);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, links);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -115,16 +95,13 @@ public class SimpleFlavor  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

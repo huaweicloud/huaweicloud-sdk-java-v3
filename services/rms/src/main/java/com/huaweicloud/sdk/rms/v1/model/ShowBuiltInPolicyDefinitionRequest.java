@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowBuiltInPolicyDefinitionRequest  {
-
-
+/** Request Object */
+public class ShowBuiltInPolicyDefinitionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_definition_id")
-    
+    @JsonProperty(value = "policy_definition_id")
+
     private String policyDefinitionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
     public ShowBuiltInPolicyDefinitionRequest withPolicyDefinitionId(String policyDefinitionId) {
@@ -34,13 +23,9 @@ public class ShowBuiltInPolicyDefinitionRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 策略ID
-     * @return policyDefinitionId
-     */
+    /** 策略ID
+     * 
+     * @return policyDefinitionId */
     public String getPolicyDefinitionId() {
         return policyDefinitionId;
     }
@@ -49,22 +34,16 @@ public class ShowBuiltInPolicyDefinitionRequest  {
         this.policyDefinitionId = policyDefinitionId;
     }
 
-    
-
     public ShowBuiltInPolicyDefinitionRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 选择接口返回的信息的语言，默认为\"zh-cn\"中文
-     * @return xLanguage
-     */
+    /** 选择接口返回的信息的语言，默认为\"zh-cn\"中文
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -72,8 +51,6 @@ public class ShowBuiltInPolicyDefinitionRequest  {
     public void setXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +61,15 @@ public class ShowBuiltInPolicyDefinitionRequest  {
             return false;
         }
         ShowBuiltInPolicyDefinitionRequest showBuiltInPolicyDefinitionRequest = (ShowBuiltInPolicyDefinitionRequest) o;
-        return Objects.equals(this.policyDefinitionId, showBuiltInPolicyDefinitionRequest.policyDefinitionId) &&
-            Objects.equals(this.xLanguage, showBuiltInPolicyDefinitionRequest.xLanguage);
+        return Objects.equals(this.policyDefinitionId, showBuiltInPolicyDefinitionRequest.policyDefinitionId)
+            && Objects.equals(this.xLanguage, showBuiltInPolicyDefinitionRequest.xLanguage);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(policyDefinitionId, xLanguage);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +79,13 @@ public class ShowBuiltInPolicyDefinitionRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

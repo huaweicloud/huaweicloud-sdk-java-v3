@@ -6,44 +6,54 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 import java.util.function.Consumer;
 
 public class CreateTokenResponse extends SdkResponse {
+
     @JsonInclude(Include.NON_NULL)
     @JsonProperty("accessToken")
     private String accessToken;
+
     @JsonInclude(Include.NON_NULL)
     @JsonProperty("tokenIp")
     private String tokenIp;
+
     @JsonInclude(Include.NON_NULL)
     @JsonProperty("validPeriod")
     private Long validPeriod;
+
     @JsonInclude(Include.NON_NULL)
     @JsonProperty("expireTime")
     private Long expireTime;
+
     @JsonInclude(Include.NON_NULL)
     @JsonProperty("user")
     private UserInfo user = null;
+
     @JsonInclude(Include.NON_NULL)
     @JsonProperty("clientType")
     private Integer clientType;
+
     @JsonInclude(Include.NON_NULL)
     @JsonProperty("forceLoginInd")
     private Integer forceLoginInd;
+
     @JsonInclude(Include.NON_NULL)
     @JsonProperty("firstLogin")
     private Boolean firstLogin = false;
+
     @JsonInclude(Include.NON_NULL)
     @JsonProperty("pwdExpired")
     private Boolean pwdExpired = false;
+
     @JsonInclude(Include.NON_NULL)
     @JsonProperty("daysPwdAvailable")
     private Integer daysPwdAvailable;
-
 
     public CreateTokenResponse withAccessToken(String accessToken) {
         this.accessToken = accessToken;
@@ -188,9 +198,10 @@ public class CreateTokenResponse extends SdkResponse {
         if (this == o) {
             return true;
         } else if (o != null && this.getClass() == o.getClass()) {
-            CreateTokenResponse createTokenResponse = (CreateTokenResponse)o;
-            return Objects.equals(this.accessToken, createTokenResponse.accessToken) && Objects.equals(this.tokenIp,
-                createTokenResponse.tokenIp) && Objects.equals(this.validPeriod, createTokenResponse.validPeriod)
+            CreateTokenResponse createTokenResponse = (CreateTokenResponse) o;
+            return Objects.equals(this.accessToken, createTokenResponse.accessToken)
+                && Objects.equals(this.tokenIp, createTokenResponse.tokenIp)
+                && Objects.equals(this.validPeriod, createTokenResponse.validPeriod)
                 && Objects.equals(this.expireTime, createTokenResponse.expireTime)
                 && Objects.equals(this.user, createTokenResponse.user)
                 && Objects.equals(this.clientType, createTokenResponse.clientType)
@@ -204,8 +215,9 @@ public class CreateTokenResponse extends SdkResponse {
     }
 
     public int hashCode() {
-        return Objects.hash(new Object[]{this.accessToken, this.tokenIp, this.validPeriod, this.expireTime, this.user,
-            this.clientType, this.forceLoginInd, this.firstLogin, this.pwdExpired, this.daysPwdAvailable});
+        return Objects.hash(
+            new Object[] {this.accessToken, this.tokenIp, this.validPeriod, this.expireTime, this.user, this.clientType,
+                          this.forceLoginInd, this.firstLogin, this.pwdExpired, this.daysPwdAvailable});
     }
 
     public String toString() {

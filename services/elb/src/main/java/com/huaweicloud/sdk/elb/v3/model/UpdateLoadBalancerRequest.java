@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v3.model.UpdateLoadBalancerRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateLoadBalancerRequest  {
-
-
+/** Request Object */
+public class UpdateLoadBalancerRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="loadbalancer_id")
-    
+    @JsonProperty(value = "loadbalancer_id")
+
     private String loadbalancerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateLoadBalancerRequestBody body;
 
     public UpdateLoadBalancerRequest withLoadbalancerId(String loadbalancerId) {
@@ -35,13 +24,9 @@ public class UpdateLoadBalancerRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器ID。
-     * @return loadbalancerId
-     */
+    /** 负载均衡器ID。
+     * 
+     * @return loadbalancerId */
     public String getLoadbalancerId() {
         return loadbalancerId;
     }
@@ -50,27 +35,23 @@ public class UpdateLoadBalancerRequest  {
         this.loadbalancerId = loadbalancerId;
     }
 
-    
-
     public UpdateLoadBalancerRequest withBody(UpdateLoadBalancerRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdateLoadBalancerRequest withBody(Consumer<UpdateLoadBalancerRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateLoadBalancerRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateLoadBalancerRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdateLoadBalancerRequest  {
     public void setBody(UpdateLoadBalancerRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdateLoadBalancerRequest  {
             return false;
         }
         UpdateLoadBalancerRequest updateLoadBalancerRequest = (UpdateLoadBalancerRequest) o;
-        return Objects.equals(this.loadbalancerId, updateLoadBalancerRequest.loadbalancerId) &&
-            Objects.equals(this.body, updateLoadBalancerRequest.body);
+        return Objects.equals(this.loadbalancerId, updateLoadBalancerRequest.loadbalancerId)
+            && Objects.equals(this.body, updateLoadBalancerRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(loadbalancerId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdateLoadBalancerRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

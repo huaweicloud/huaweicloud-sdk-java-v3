@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * DataIpRequest
- */
-public class DataIpRequest  {
-
-
+/** DataIpRequest */
+public class DataIpRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="new_ip")
-    
+    @JsonProperty(value = "new_ip")
+
     private String newIp;
 
     public DataIpRequest withNewIp(String newIp) {
@@ -28,13 +18,9 @@ public class DataIpRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 内网ip
-     * @return newIp
-     */
+    /** 内网ip
+     * 
+     * @return newIp */
     public String getNewIp() {
         return newIp;
     }
@@ -42,8 +28,6 @@ public class DataIpRequest  {
     public void setNewIp(String newIp) {
         this.newIp = newIp;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class DataIpRequest  {
         DataIpRequest dataIpRequest = (DataIpRequest) o;
         return Objects.equals(this.newIp, dataIpRequest.newIp);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(newIp);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class DataIpRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

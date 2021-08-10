@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowDetailsOfDomainNameCertificateV2Request  {
-
-
+/** Request Object */
+public class ShowDetailsOfDomainNameCertificateV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificate_id")
-    
+    @JsonProperty(value = "certificate_id")
+
     private String certificateId;
 
     public ShowDetailsOfDomainNameCertificateV2Request withInstanceId(String instanceId) {
@@ -46,13 +33,9 @@ public class ShowDetailsOfDomainNameCertificateV2Request  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例编号
-     * @return instanceId
-     */
+    /** 实例编号
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -61,20 +44,14 @@ public class ShowDetailsOfDomainNameCertificateV2Request  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ShowDetailsOfDomainNameCertificateV2Request withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名的编号
-     * @return domainId
-     */
+    /** 域名的编号
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -83,20 +60,14 @@ public class ShowDetailsOfDomainNameCertificateV2Request  {
         this.domainId = domainId;
     }
 
-    
-
     public ShowDetailsOfDomainNameCertificateV2Request withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 分组的编号
-     * @return groupId
-     */
+    /** 分组的编号
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -105,20 +76,14 @@ public class ShowDetailsOfDomainNameCertificateV2Request  {
         this.groupId = groupId;
     }
 
-    
-
     public ShowDetailsOfDomainNameCertificateV2Request withCertificateId(String certificateId) {
         this.certificateId = certificateId;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书的编号
-     * @return certificateId
-     */
+    /** 证书的编号
+     * 
+     * @return certificateId */
     public String getCertificateId() {
         return certificateId;
     }
@@ -126,8 +91,6 @@ public class ShowDetailsOfDomainNameCertificateV2Request  {
     public void setCertificateId(String certificateId) {
         this.certificateId = certificateId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -137,16 +100,19 @@ public class ShowDetailsOfDomainNameCertificateV2Request  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ShowDetailsOfDomainNameCertificateV2Request showDetailsOfDomainNameCertificateV2Request = (ShowDetailsOfDomainNameCertificateV2Request) o;
-        return Objects.equals(this.instanceId, showDetailsOfDomainNameCertificateV2Request.instanceId) &&
-            Objects.equals(this.domainId, showDetailsOfDomainNameCertificateV2Request.domainId) &&
-            Objects.equals(this.groupId, showDetailsOfDomainNameCertificateV2Request.groupId) &&
-            Objects.equals(this.certificateId, showDetailsOfDomainNameCertificateV2Request.certificateId);
+        ShowDetailsOfDomainNameCertificateV2Request showDetailsOfDomainNameCertificateV2Request =
+            (ShowDetailsOfDomainNameCertificateV2Request) o;
+        return Objects.equals(this.instanceId, showDetailsOfDomainNameCertificateV2Request.instanceId)
+            && Objects.equals(this.domainId, showDetailsOfDomainNameCertificateV2Request.domainId)
+            && Objects.equals(this.groupId, showDetailsOfDomainNameCertificateV2Request.groupId)
+            && Objects.equals(this.certificateId, showDetailsOfDomainNameCertificateV2Request.certificateId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, domainId, groupId, certificateId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +124,13 @@ public class ShowDetailsOfDomainNameCertificateV2Request  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

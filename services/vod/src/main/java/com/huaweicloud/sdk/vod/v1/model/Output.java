@@ -1,59 +1,36 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vod.v1.model.MetaData;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 转码输出数组。 - HLS或DASH格式：此数组的成员个数为n+1，n为转码输出路数。 - MP4格式：此数组的成员个数为n，n为转码输出路数。
- */
-public class Output  {
+/** 转码输出数组。 - HLS或DASH格式：此数组的成员个数为n+1，n为转码输出路数。 - MP4格式：此数组的成员个数为n，n为转码输出路数。 */
+public class Output {
 
-    /**
-     * 协议类型。  取值如下： - hls - dash - mp4
-     */
+    /** 协议类型。 取值如下： - hls - dash - mp4 */
     public static final class PlayTypeEnum {
 
-        
-        /**
-         * Enum HLS for value: "HLS"
-         */
+        /** Enum HLS for value: "HLS" */
         public static final PlayTypeEnum HLS = new PlayTypeEnum("HLS");
-        
-        /**
-         * Enum DASH for value: "DASH"
-         */
+
+        /** Enum DASH for value: "DASH" */
         public static final PlayTypeEnum DASH = new PlayTypeEnum("DASH");
-        
-        /**
-         * Enum MP4 for value: "MP4"
-         */
+
+        /** Enum MP4 for value: "MP4" */
         public static final PlayTypeEnum MP4 = new PlayTypeEnum("MP4");
-        
-        /**
-         * Enum MP3 for value: "MP3"
-         */
+
+        /** Enum MP3 for value: "MP3" */
         public static final PlayTypeEnum MP3 = new PlayTypeEnum("MP3");
-        
-        /**
-         * Enum AAC for value: "AAC"
-         */
+
+        /** Enum AAC for value: "AAC" */
         public static final PlayTypeEnum AAC = new PlayTypeEnum("AAC");
-        
 
         private static final Map<String, PlayTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -85,7 +62,7 @@ public class Output  {
 
         @JsonCreator
         public static PlayTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             PlayTypeEnum result = STATIC_FIELDS.get(value);
@@ -96,7 +73,7 @@ public class Output  {
         }
 
         public static PlayTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             PlayTypeEnum result = STATIC_FIELDS.get(value);
@@ -120,49 +97,35 @@ public class Output  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="play_type")
-    
+    @JsonProperty(value = "play_type")
+
     private PlayTypeEnum playType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private String url;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="encrypted")
-    
+    @JsonProperty(value = "encrypted")
+
     private Integer encrypted;
-    /**
-     * 清晰度。  取值如下： - FLUENT：流畅 - SD：标清 - HD：高清 - FULL_HD：超清
-     */
+
+    /** 清晰度。 取值如下： - FLUENT：流畅 - SD：标清 - HD：高清 - FULL_HD：超清 */
     public static final class QualityEnum {
 
-        
-        /**
-         * Enum FLUENT for value: "FLUENT"
-         */
+        /** Enum FLUENT for value: "FLUENT" */
         public static final QualityEnum FLUENT = new QualityEnum("FLUENT");
-        
-        /**
-         * Enum SD for value: "SD"
-         */
+
+        /** Enum SD for value: "SD" */
         public static final QualityEnum SD = new QualityEnum("SD");
-        
-        /**
-         * Enum HD for value: "HD"
-         */
+
+        /** Enum HD for value: "HD" */
         public static final QualityEnum HD = new QualityEnum("HD");
-        
-        /**
-         * Enum FULL_HD for value: "FULL_HD"
-         */
+
+        /** Enum FULL_HD for value: "FULL_HD" */
         public static final QualityEnum FULL_HD = new QualityEnum("FULL_HD");
-        
 
         private static final Map<String, QualityEnum> STATIC_FIELDS = createStaticFields();
 
@@ -193,7 +156,7 @@ public class Output  {
 
         @JsonCreator
         public static QualityEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             QualityEnum result = STATIC_FIELDS.get(value);
@@ -204,7 +167,7 @@ public class Output  {
         }
 
         public static QualityEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             QualityEnum result = STATIC_FIELDS.get(value);
@@ -228,16 +191,14 @@ public class Output  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quality")
-    
+    @JsonProperty(value = "quality")
+
     private QualityEnum quality;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="meta_data")
-    
+    @JsonProperty(value = "meta_data")
+
     private MetaData metaData;
 
     public Output withPlayType(PlayTypeEnum playType) {
@@ -245,13 +206,9 @@ public class Output  {
         return this;
     }
 
-    
-
-
-    /**
-     * 协议类型。  取值如下： - hls - dash - mp4
-     * @return playType
-     */
+    /** 协议类型。 取值如下： - hls - dash - mp4
+     * 
+     * @return playType */
     public PlayTypeEnum getPlayType() {
         return playType;
     }
@@ -260,20 +217,14 @@ public class Output  {
         this.playType = playType;
     }
 
-    
-
     public Output withUrl(String url) {
         this.url = url;
         return this;
     }
 
-    
-
-
-    /**
-     * 播放URL。
-     * @return url
-     */
+    /** 播放URL。
+     * 
+     * @return url */
     public String getUrl() {
         return url;
     }
@@ -282,20 +233,14 @@ public class Output  {
         this.url = url;
     }
 
-    
-
     public Output withEncrypted(Integer encrypted) {
         this.encrypted = encrypted;
         return this;
     }
 
-    
-
-
-    /**
-     * 标记流是否已被加密。  取值如下： - 0：表示未加密。 - 1：表示已被加密。
-     * @return encrypted
-     */
+    /** 标记流是否已被加密。 取值如下： - 0：表示未加密。 - 1：表示已被加密。
+     * 
+     * @return encrypted */
     public Integer getEncrypted() {
         return encrypted;
     }
@@ -304,20 +249,14 @@ public class Output  {
         this.encrypted = encrypted;
     }
 
-    
-
     public Output withQuality(QualityEnum quality) {
         this.quality = quality;
         return this;
     }
 
-    
-
-
-    /**
-     * 清晰度。  取值如下： - FLUENT：流畅 - SD：标清 - HD：高清 - FULL_HD：超清
-     * @return quality
-     */
+    /** 清晰度。 取值如下： - FLUENT：流畅 - SD：标清 - HD：高清 - FULL_HD：超清
+     * 
+     * @return quality */
     public QualityEnum getQuality() {
         return quality;
     }
@@ -326,27 +265,23 @@ public class Output  {
         this.quality = quality;
     }
 
-    
-
     public Output withMetaData(MetaData metaData) {
         this.metaData = metaData;
         return this;
     }
 
     public Output withMetaData(Consumer<MetaData> metaDataSetter) {
-        if(this.metaData == null ){
+        if (this.metaData == null) {
             this.metaData = new MetaData();
             metaDataSetter.accept(this.metaData);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get metaData
-     * @return metaData
-     */
+    /** Get metaData
+     * 
+     * @return metaData */
     public MetaData getMetaData() {
         return metaData;
     }
@@ -354,8 +289,6 @@ public class Output  {
     public void setMetaData(MetaData metaData) {
         this.metaData = metaData;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -366,16 +299,16 @@ public class Output  {
             return false;
         }
         Output output = (Output) o;
-        return Objects.equals(this.playType, output.playType) &&
-            Objects.equals(this.url, output.url) &&
-            Objects.equals(this.encrypted, output.encrypted) &&
-            Objects.equals(this.quality, output.quality) &&
-            Objects.equals(this.metaData, output.metaData);
+        return Objects.equals(this.playType, output.playType) && Objects.equals(this.url, output.url)
+            && Objects.equals(this.encrypted, output.encrypted) && Objects.equals(this.quality, output.quality)
+            && Objects.equals(this.metaData, output.metaData);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(playType, url, encrypted, quality, metaData);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -388,16 +321,13 @@ public class Output  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

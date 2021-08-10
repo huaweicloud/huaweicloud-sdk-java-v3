@@ -1,53 +1,39 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bss.v2.model.NewCustomerV2;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * CreateSubCustomerReqV2
- */
-public class CreateSubCustomerReqV2  {
-
-
+/** CreateSubCustomerReqV2 */
+public class CreateSubCustomerReqV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="party_id")
-    
+    @JsonProperty(value = "party_id")
+
     private String partyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="display_name")
-    
+    @JsonProperty(value = "display_name")
+
     private String displayName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sub_customer_association_type")
-    
+    @JsonProperty(value = "sub_customer_association_type")
+
     private Integer subCustomerAssociationType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="permission_ids")
-    
+    @JsonProperty(value = "permission_ids")
+
     private List<String> permissionIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="new_sub_customer")
-    
+    @JsonProperty(value = "new_sub_customer")
+
     private NewCustomerV2 newSubCustomer;
 
     public CreateSubCustomerReqV2 withPartyId(String partyId) {
@@ -55,13 +41,9 @@ public class CreateSubCustomerReqV2  {
         return this;
     }
 
-    
-
-
-    /**
-     * 企业子账号挂载的组织单元。 组织单元的Party ID，通过查询企业组织结构接口的响应获得。
-     * @return partyId
-     */
+    /** 企业子账号挂载的组织单元。 组织单元的Party ID，通过查询企业组织结构接口的响应获得。
+     * 
+     * @return partyId */
     public String getPartyId() {
         return partyId;
     }
@@ -70,20 +52,14 @@ public class CreateSubCustomerReqV2  {
         this.partyId = partyId;
     }
 
-    
-
     public CreateSubCustomerReqV2 withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业子账号的显示名称，不限制特殊字符。
-     * @return displayName
-     */
+    /** 企业子账号的显示名称，不限制特殊字符。
+     * 
+     * @return displayName */
     public String getDisplayName() {
         return displayName;
     }
@@ -92,22 +68,14 @@ public class CreateSubCustomerReqV2  {
         this.displayName = displayName;
     }
 
-    
-
     public CreateSubCustomerReqV2 withSubCustomerAssociationType(Integer subCustomerAssociationType) {
         this.subCustomerAssociationType = subCustomerAssociationType;
         return this;
     }
 
-    
-
-
-    /**
-     * 子账号关联类型：1：同一法人。 关联类型目前只能是同一法人。
-     * minimum: -1
-     * maximum: 1
-     * @return subCustomerAssociationType
-     */
+    /** 子账号关联类型：1：同一法人。 关联类型目前只能是同一法人。 minimum: -1 maximum: 1
+     * 
+     * @return subCustomerAssociationType */
     public Integer getSubCustomerAssociationType() {
         return subCustomerAssociationType;
     }
@@ -116,16 +84,13 @@ public class CreateSubCustomerReqV2  {
         this.subCustomerAssociationType = subCustomerAssociationType;
     }
 
-    
-
     public CreateSubCustomerReqV2 withPermissionIds(List<String> permissionIds) {
         this.permissionIds = permissionIds;
         return this;
     }
 
-    
     public CreateSubCustomerReqV2 addPermissionIdsItem(String permissionIdsItem) {
-        if(this.permissionIds == null) {
+        if (this.permissionIds == null) {
             this.permissionIds = new ArrayList<>();
         }
         this.permissionIds.add(permissionIdsItem);
@@ -133,17 +98,16 @@ public class CreateSubCustomerReqV2  {
     }
 
     public CreateSubCustomerReqV2 withPermissionIds(Consumer<List<String>> permissionIdsSetter) {
-        if(this.permissionIds == null) {
+        if (this.permissionIds == null) {
             this.permissionIds = new ArrayList<>();
         }
         permissionIdsSetter.accept(this.permissionIds);
         return this;
     }
 
-    /**
-     * 申请的权限列表。 支持的权限项参见表2。
-     * @return permissionIds
-     */
+    /** 申请的权限列表。 支持的权限项参见表2。
+     * 
+     * @return permissionIds */
     public List<String> getPermissionIds() {
         return permissionIds;
     }
@@ -152,27 +116,23 @@ public class CreateSubCustomerReqV2  {
         this.permissionIds = permissionIds;
     }
 
-    
-
     public CreateSubCustomerReqV2 withNewSubCustomer(NewCustomerV2 newSubCustomer) {
         this.newSubCustomer = newSubCustomer;
         return this;
     }
 
     public CreateSubCustomerReqV2 withNewSubCustomer(Consumer<NewCustomerV2> newSubCustomerSetter) {
-        if(this.newSubCustomer == null ){
+        if (this.newSubCustomer == null) {
             this.newSubCustomer = new NewCustomerV2();
             newSubCustomerSetter.accept(this.newSubCustomer);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get newSubCustomer
-     * @return newSubCustomer
-     */
+    /** Get newSubCustomer
+     * 
+     * @return newSubCustomer */
     public NewCustomerV2 getNewSubCustomer() {
         return newSubCustomer;
     }
@@ -180,8 +140,6 @@ public class CreateSubCustomerReqV2  {
     public void setNewSubCustomer(NewCustomerV2 newSubCustomer) {
         this.newSubCustomer = newSubCustomer;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -192,16 +150,18 @@ public class CreateSubCustomerReqV2  {
             return false;
         }
         CreateSubCustomerReqV2 createSubCustomerReqV2 = (CreateSubCustomerReqV2) o;
-        return Objects.equals(this.partyId, createSubCustomerReqV2.partyId) &&
-            Objects.equals(this.displayName, createSubCustomerReqV2.displayName) &&
-            Objects.equals(this.subCustomerAssociationType, createSubCustomerReqV2.subCustomerAssociationType) &&
-            Objects.equals(this.permissionIds, createSubCustomerReqV2.permissionIds) &&
-            Objects.equals(this.newSubCustomer, createSubCustomerReqV2.newSubCustomer);
+        return Objects.equals(this.partyId, createSubCustomerReqV2.partyId)
+            && Objects.equals(this.displayName, createSubCustomerReqV2.displayName)
+            && Objects.equals(this.subCustomerAssociationType, createSubCustomerReqV2.subCustomerAssociationType)
+            && Objects.equals(this.permissionIds, createSubCustomerReqV2.permissionIds)
+            && Objects.equals(this.newSubCustomer, createSubCustomerReqV2.newSubCustomer);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(partyId, displayName, subCustomerAssociationType, permissionIds, newSubCustomer);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -214,16 +174,13 @@ public class CreateSubCustomerReqV2  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

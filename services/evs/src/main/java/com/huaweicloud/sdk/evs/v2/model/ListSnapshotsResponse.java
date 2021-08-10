@@ -1,58 +1,40 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.evs.v2.model.Link;
-import com.huaweicloud.sdk.evs.v2.model.SnapshotList;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListSnapshotsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
+
     private Integer count;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="snapshots")
-    
+    @JsonProperty(value = "snapshots")
+
     private List<SnapshotList> snapshots = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="snapshots_links")
-    
+    @JsonProperty(value = "snapshots_links")
+
     private List<Link> snapshotsLinks = null;
-    
+
     public ListSnapshotsResponse withCount(Integer count) {
         this.count = count;
         return this;
     }
 
-    
-
-
-    /**
-     * 快照的总数量，不受limi参数的影响。
-     * @return count
-     */
+    /** 快照的总数量，不受limi参数的影响。
+     * 
+     * @return count */
     public Integer getCount() {
         return count;
     }
@@ -61,16 +43,13 @@ public class ListSnapshotsResponse extends SdkResponse {
         this.count = count;
     }
 
-    
-
     public ListSnapshotsResponse withSnapshots(List<SnapshotList> snapshots) {
         this.snapshots = snapshots;
         return this;
     }
 
-    
     public ListSnapshotsResponse addSnapshotsItem(SnapshotList snapshotsItem) {
-        if(this.snapshots == null) {
+        if (this.snapshots == null) {
             this.snapshots = new ArrayList<>();
         }
         this.snapshots.add(snapshotsItem);
@@ -78,17 +57,16 @@ public class ListSnapshotsResponse extends SdkResponse {
     }
 
     public ListSnapshotsResponse withSnapshots(Consumer<List<SnapshotList>> snapshotsSetter) {
-        if(this.snapshots == null) {
+        if (this.snapshots == null) {
             this.snapshots = new ArrayList<>();
         }
         snapshotsSetter.accept(this.snapshots);
         return this;
     }
 
-    /**
-     * 快照信息。
-     * @return snapshots
-     */
+    /** 快照信息。
+     * 
+     * @return snapshots */
     public List<SnapshotList> getSnapshots() {
         return snapshots;
     }
@@ -97,16 +75,13 @@ public class ListSnapshotsResponse extends SdkResponse {
         this.snapshots = snapshots;
     }
 
-    
-
     public ListSnapshotsResponse withSnapshotsLinks(List<Link> snapshotsLinks) {
         this.snapshotsLinks = snapshotsLinks;
         return this;
     }
 
-    
     public ListSnapshotsResponse addSnapshotsLinksItem(Link snapshotsLinksItem) {
-        if(this.snapshotsLinks == null) {
+        if (this.snapshotsLinks == null) {
             this.snapshotsLinks = new ArrayList<>();
         }
         this.snapshotsLinks.add(snapshotsLinksItem);
@@ -114,17 +89,16 @@ public class ListSnapshotsResponse extends SdkResponse {
     }
 
     public ListSnapshotsResponse withSnapshotsLinks(Consumer<List<Link>> snapshotsLinksSetter) {
-        if(this.snapshotsLinks == null) {
+        if (this.snapshotsLinks == null) {
             this.snapshotsLinks = new ArrayList<>();
         }
         snapshotsLinksSetter.accept(this.snapshotsLinks);
         return this;
     }
 
-    /**
-     * 云硬盘快照列表查询位置标记。当查询时指定limit时会返回该字段，返回该字段表示本次查询只查出了部分云硬盘快照信息。
-     * @return snapshotsLinks
-     */
+    /** 云硬盘快照列表查询位置标记。当查询时指定limit时会返回该字段，返回该字段表示本次查询只查出了部分云硬盘快照信息。
+     * 
+     * @return snapshotsLinks */
     public List<Link> getSnapshotsLinks() {
         return snapshotsLinks;
     }
@@ -132,8 +106,6 @@ public class ListSnapshotsResponse extends SdkResponse {
     public void setSnapshotsLinks(List<Link> snapshotsLinks) {
         this.snapshotsLinks = snapshotsLinks;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -144,14 +116,16 @@ public class ListSnapshotsResponse extends SdkResponse {
             return false;
         }
         ListSnapshotsResponse listSnapshotsResponse = (ListSnapshotsResponse) o;
-        return Objects.equals(this.count, listSnapshotsResponse.count) &&
-            Objects.equals(this.snapshots, listSnapshotsResponse.snapshots) &&
-            Objects.equals(this.snapshotsLinks, listSnapshotsResponse.snapshotsLinks);
+        return Objects.equals(this.count, listSnapshotsResponse.count)
+            && Objects.equals(this.snapshots, listSnapshotsResponse.snapshots)
+            && Objects.equals(this.snapshotsLinks, listSnapshotsResponse.snapshotsLinks);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(count, snapshots, snapshotsLinks);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -162,16 +136,13 @@ public class ListSnapshotsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,38 +1,25 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.Links;
-import com.huaweicloud.sdk.iam.v3.model.Service;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class KeystoneListServicesResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="services")
-    
+    @JsonProperty(value = "services")
+
     private List<Service> services = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private Links links;
 
     public KeystoneListServicesResponse withServices(List<Service> services) {
@@ -40,9 +27,8 @@ public class KeystoneListServicesResponse extends SdkResponse {
         return this;
     }
 
-    
     public KeystoneListServicesResponse addServicesItem(Service servicesItem) {
-        if(this.services == null) {
+        if (this.services == null) {
             this.services = new ArrayList<>();
         }
         this.services.add(servicesItem);
@@ -50,17 +36,16 @@ public class KeystoneListServicesResponse extends SdkResponse {
     }
 
     public KeystoneListServicesResponse withServices(Consumer<List<Service>> servicesSetter) {
-        if(this.services == null) {
+        if (this.services == null) {
             this.services = new ArrayList<>();
         }
         servicesSetter.accept(this.services);
         return this;
     }
 
-    /**
-     * 服务信息列表。
-     * @return services
-     */
+    /** 服务信息列表。
+     * 
+     * @return services */
     public List<Service> getServices() {
         return services;
     }
@@ -69,27 +54,23 @@ public class KeystoneListServicesResponse extends SdkResponse {
         this.services = services;
     }
 
-    
-
     public KeystoneListServicesResponse withLinks(Links links) {
         this.links = links;
         return this;
     }
 
     public KeystoneListServicesResponse withLinks(Consumer<Links> linksSetter) {
-        if(this.links == null ){
+        if (this.links == null) {
             this.links = new Links();
             linksSetter.accept(this.links);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get links
-     * @return links
-     */
+    /** Get links
+     * 
+     * @return links */
     public Links getLinks() {
         return links;
     }
@@ -97,8 +78,6 @@ public class KeystoneListServicesResponse extends SdkResponse {
     public void setLinks(Links links) {
         this.links = links;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,13 +88,15 @@ public class KeystoneListServicesResponse extends SdkResponse {
             return false;
         }
         KeystoneListServicesResponse keystoneListServicesResponse = (KeystoneListServicesResponse) o;
-        return Objects.equals(this.services, keystoneListServicesResponse.services) &&
-            Objects.equals(this.links, keystoneListServicesResponse.links);
+        return Objects.equals(this.services, keystoneListServicesResponse.services)
+            && Objects.equals(this.links, keystoneListServicesResponse.links);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(services, links);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -125,16 +106,13 @@ public class KeystoneListServicesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

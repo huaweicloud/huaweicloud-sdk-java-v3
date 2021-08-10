@@ -1,76 +1,52 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
-
-
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateResponsePropertyResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="property_id")
-    
+    @JsonProperty(value = "property_id")
+
     private Integer propertyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="property_name")
-    
+    @JsonProperty(value = "property_name")
+
     private String propertyName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
-    /**
-     * 属性数据类型，枚举值大小写敏感；number格式为数字，范围±1.0 x 10^-28 to ±7.9228 x 10^28；sting为字符串；integer为整数；datetime为时间，格式为yyyyMMddTHHmmss；json为自定义json格式
-     */
+
+    /** 属性数据类型，枚举值大小写敏感；number格式为数字，范围±1.0 x 10^-28 to ±7.9228 x
+     * 10^28；sting为字符串；integer为整数；datetime为时间，格式为yyyyMMddTHHmmss；json为自定义json格式 */
     public static final class DataTypeEnum {
 
-        
-        /**
-         * Enum INTEGER for value: "integer"
-         */
+        /** Enum INTEGER for value: "integer" */
         public static final DataTypeEnum INTEGER = new DataTypeEnum("integer");
-        
-        /**
-         * Enum NUMBER for value: "number"
-         */
+
+        /** Enum NUMBER for value: "number" */
         public static final DataTypeEnum NUMBER = new DataTypeEnum("number");
-        
-        /**
-         * Enum STRING for value: "string"
-         */
+
+        /** Enum STRING for value: "string" */
         public static final DataTypeEnum STRING = new DataTypeEnum("string");
-        
-        /**
-         * Enum DATETIME for value: "datetime"
-         */
+
+        /** Enum DATETIME for value: "datetime" */
         public static final DataTypeEnum DATETIME = new DataTypeEnum("datetime");
-        
-        /**
-         * Enum JSON for value: "json"
-         */
+
+        /** Enum JSON for value: "json" */
         public static final DataTypeEnum JSON = new DataTypeEnum("json");
-        
 
         private static final Map<String, DataTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -102,7 +78,7 @@ public class CreateResponsePropertyResponse extends SdkResponse {
 
         @JsonCreator
         public static DataTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DataTypeEnum result = STATIC_FIELDS.get(value);
@@ -113,7 +89,7 @@ public class CreateResponsePropertyResponse extends SdkResponse {
         }
 
         public static DataTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DataTypeEnum result = STATIC_FIELDS.get(value);
@@ -137,52 +113,44 @@ public class CreateResponsePropertyResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_type")
-    
+    @JsonProperty(value = "data_type")
+
     private DataTypeEnum dataType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="required")
-    
+    @JsonProperty(value = "required")
+
     private Integer required;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="min")
-    
+    @JsonProperty(value = "min")
+
     private String min;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max")
-    
+    @JsonProperty(value = "max")
+
     private String max;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="step")
-    
+    @JsonProperty(value = "step")
+
     private String step;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_length")
-    
+    @JsonProperty(value = "max_length")
+
     private Integer maxLength;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unit")
-    
+    @JsonProperty(value = "unit")
+
     private String unit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enum_list")
-    
+    @JsonProperty(value = "enum_list")
+
     private String enumList;
 
     public CreateResponsePropertyResponse withPropertyId(Integer propertyId) {
@@ -190,15 +158,9 @@ public class CreateResponsePropertyResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 属性ID
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return propertyId
-     */
+    /** 属性ID minimum: 1 maximum: 999999999999999999
+     * 
+     * @return propertyId */
     public Integer getPropertyId() {
         return propertyId;
     }
@@ -207,20 +169,14 @@ public class CreateResponsePropertyResponse extends SdkResponse {
         this.propertyId = propertyId;
     }
 
-    
-
     public CreateResponsePropertyResponse withPropertyName(String propertyName) {
         this.propertyName = propertyName;
         return this;
     }
 
-    
-
-
-    /**
-     * 属性名称，首位必须为字母，支持大小写字母，数字，中划线及下划线，长度2-50
-     * @return propertyName
-     */
+    /** 属性名称，首位必须为字母，支持大小写字母，数字，中划线及下划线，长度2-50
+     * 
+     * @return propertyName */
     public String getPropertyName() {
         return propertyName;
     }
@@ -229,20 +185,14 @@ public class CreateResponsePropertyResponse extends SdkResponse {
         this.propertyName = propertyName;
     }
 
-    
-
     public CreateResponsePropertyResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 属性描述，长度0-200
-     * @return description
-     */
+    /** 属性描述，长度0-200
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -251,20 +201,15 @@ public class CreateResponsePropertyResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public CreateResponsePropertyResponse withDataType(DataTypeEnum dataType) {
         this.dataType = dataType;
         return this;
     }
 
-    
-
-
-    /**
-     * 属性数据类型，枚举值大小写敏感；number格式为数字，范围±1.0 x 10^-28 to ±7.9228 x 10^28；sting为字符串；integer为整数；datetime为时间，格式为yyyyMMddTHHmmss；json为自定义json格式
-     * @return dataType
-     */
+    /** 属性数据类型，枚举值大小写敏感；number格式为数字，范围±1.0 x 10^-28 to ±7.9228 x
+     * 10^28；sting为字符串；integer为整数；datetime为时间，格式为yyyyMMddTHHmmss；json为自定义json格式
+     * 
+     * @return dataType */
     public DataTypeEnum getDataType() {
         return dataType;
     }
@@ -273,22 +218,14 @@ public class CreateResponsePropertyResponse extends SdkResponse {
         this.dataType = dataType;
     }
 
-    
-
     public CreateResponsePropertyResponse withRequired(Integer required) {
         this.required = required;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否必填 0-非必填 1-必填
-     * minimum: 0
-     * maximum: 10
-     * @return required
-     */
+    /** 是否必填 0-非必填 1-必填 minimum: 0 maximum: 10
+     * 
+     * @return required */
     public Integer getRequired() {
         return required;
     }
@@ -297,20 +234,14 @@ public class CreateResponsePropertyResponse extends SdkResponse {
         this.required = required;
     }
 
-    
-
     public CreateResponsePropertyResponse withMin(String min) {
         this.min = min;
         return this;
     }
 
-    
-
-
-    /**
-     * 最小值，当data_type为integer或number时有效
-     * @return min
-     */
+    /** 最小值，当data_type为integer或number时有效
+     * 
+     * @return min */
     public String getMin() {
         return min;
     }
@@ -319,20 +250,14 @@ public class CreateResponsePropertyResponse extends SdkResponse {
         this.min = min;
     }
 
-    
-
     public CreateResponsePropertyResponse withMax(String max) {
         this.max = max;
         return this;
     }
 
-    
-
-
-    /**
-     * 最大值，当data_type为integer或number时有效
-     * @return max
-     */
+    /** 最大值，当data_type为integer或number时有效
+     * 
+     * @return max */
     public String getMax() {
         return max;
     }
@@ -341,20 +266,14 @@ public class CreateResponsePropertyResponse extends SdkResponse {
         this.max = max;
     }
 
-    
-
     public CreateResponsePropertyResponse withStep(String step) {
         this.step = step;
         return this;
     }
 
-    
-
-
-    /**
-     * 步长，当data_type为integer或number时有效
-     * @return step
-     */
+    /** 步长，当data_type为integer或number时有效
+     * 
+     * @return step */
     public String getStep() {
         return step;
     }
@@ -363,22 +282,14 @@ public class CreateResponsePropertyResponse extends SdkResponse {
         this.step = step;
     }
 
-    
-
     public CreateResponsePropertyResponse withMaxLength(Integer maxLength) {
         this.maxLength = maxLength;
         return this;
     }
 
-    
-
-
-    /**
-     * 字符串最大长度，当data_type为string, datetime, json时有效
-     * minimum: 1
-     * maximum: 99999999
-     * @return maxLength
-     */
+    /** 字符串最大长度，当data_type为string, datetime, json时有效 minimum: 1 maximum: 99999999
+     * 
+     * @return maxLength */
     public Integer getMaxLength() {
         return maxLength;
     }
@@ -387,20 +298,14 @@ public class CreateResponsePropertyResponse extends SdkResponse {
         this.maxLength = maxLength;
     }
 
-    
-
     public CreateResponsePropertyResponse withUnit(String unit) {
         this.unit = unit;
         return this;
     }
 
-    
-
-
-    /**
-     * 属性单位
-     * @return unit
-     */
+    /** 属性单位
+     * 
+     * @return unit */
     public String getUnit() {
         return unit;
     }
@@ -409,20 +314,14 @@ public class CreateResponsePropertyResponse extends SdkResponse {
         this.unit = unit;
     }
 
-    
-
     public CreateResponsePropertyResponse withEnumList(String enumList) {
         this.enumList = enumList;
         return this;
     }
 
-    
-
-
-    /**
-     * string的枚举值数组，使用逗号分隔
-     * @return enumList
-     */
+    /** string的枚举值数组，使用逗号分隔
+     * 
+     * @return enumList */
     public String getEnumList() {
         return enumList;
     }
@@ -430,8 +329,6 @@ public class CreateResponsePropertyResponse extends SdkResponse {
     public void setEnumList(String enumList) {
         this.enumList = enumList;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -442,22 +339,25 @@ public class CreateResponsePropertyResponse extends SdkResponse {
             return false;
         }
         CreateResponsePropertyResponse createResponsePropertyResponse = (CreateResponsePropertyResponse) o;
-        return Objects.equals(this.propertyId, createResponsePropertyResponse.propertyId) &&
-            Objects.equals(this.propertyName, createResponsePropertyResponse.propertyName) &&
-            Objects.equals(this.description, createResponsePropertyResponse.description) &&
-            Objects.equals(this.dataType, createResponsePropertyResponse.dataType) &&
-            Objects.equals(this.required, createResponsePropertyResponse.required) &&
-            Objects.equals(this.min, createResponsePropertyResponse.min) &&
-            Objects.equals(this.max, createResponsePropertyResponse.max) &&
-            Objects.equals(this.step, createResponsePropertyResponse.step) &&
-            Objects.equals(this.maxLength, createResponsePropertyResponse.maxLength) &&
-            Objects.equals(this.unit, createResponsePropertyResponse.unit) &&
-            Objects.equals(this.enumList, createResponsePropertyResponse.enumList);
+        return Objects.equals(this.propertyId, createResponsePropertyResponse.propertyId)
+            && Objects.equals(this.propertyName, createResponsePropertyResponse.propertyName)
+            && Objects.equals(this.description, createResponsePropertyResponse.description)
+            && Objects.equals(this.dataType, createResponsePropertyResponse.dataType)
+            && Objects.equals(this.required, createResponsePropertyResponse.required)
+            && Objects.equals(this.min, createResponsePropertyResponse.min)
+            && Objects.equals(this.max, createResponsePropertyResponse.max)
+            && Objects.equals(this.step, createResponsePropertyResponse.step)
+            && Objects.equals(this.maxLength, createResponsePropertyResponse.maxLength)
+            && Objects.equals(this.unit, createResponsePropertyResponse.unit)
+            && Objects.equals(this.enumList, createResponsePropertyResponse.enumList);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(propertyId, propertyName, description, dataType, required, min, max, step, maxLength, unit, enumList);
+        return Objects
+            .hash(propertyId, propertyName, description, dataType, required, min, max, step, maxLength, unit, enumList);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -476,16 +376,13 @@ public class CreateResponsePropertyResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,58 +1,40 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.BasePage;
-import com.huaweicloud.sdk.roma.v2.model.EnvInfo;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListEnvironmentsV2Response extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Long total;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="envs")
-    
+    @JsonProperty(value = "envs")
+
     private List<EnvInfo> envs = null;
-    
+
     public ListEnvironmentsV2Response withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 本次返回的列表长度
-     * @return size
-     */
+    /** 本次返回的列表长度
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -61,20 +43,14 @@ public class ListEnvironmentsV2Response extends SdkResponse {
         this.size = size;
     }
 
-    
-
     public ListEnvironmentsV2Response withTotal(Long total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * 满足条件的记录数
-     * @return total
-     */
+    /** 满足条件的记录数
+     * 
+     * @return total */
     public Long getTotal() {
         return total;
     }
@@ -83,16 +59,13 @@ public class ListEnvironmentsV2Response extends SdkResponse {
         this.total = total;
     }
 
-    
-
     public ListEnvironmentsV2Response withEnvs(List<EnvInfo> envs) {
         this.envs = envs;
         return this;
     }
 
-    
     public ListEnvironmentsV2Response addEnvsItem(EnvInfo envsItem) {
-        if(this.envs == null) {
+        if (this.envs == null) {
             this.envs = new ArrayList<>();
         }
         this.envs.add(envsItem);
@@ -100,17 +73,16 @@ public class ListEnvironmentsV2Response extends SdkResponse {
     }
 
     public ListEnvironmentsV2Response withEnvs(Consumer<List<EnvInfo>> envsSetter) {
-        if(this.envs == null) {
+        if (this.envs == null) {
             this.envs = new ArrayList<>();
         }
         envsSetter.accept(this.envs);
         return this;
     }
 
-    /**
-     * 本次返回的环境列表
-     * @return envs
-     */
+    /** 本次返回的环境列表
+     * 
+     * @return envs */
     public List<EnvInfo> getEnvs() {
         return envs;
     }
@@ -118,8 +90,6 @@ public class ListEnvironmentsV2Response extends SdkResponse {
     public void setEnvs(List<EnvInfo> envs) {
         this.envs = envs;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,14 +100,16 @@ public class ListEnvironmentsV2Response extends SdkResponse {
             return false;
         }
         ListEnvironmentsV2Response listEnvironmentsV2Response = (ListEnvironmentsV2Response) o;
-        return Objects.equals(this.size, listEnvironmentsV2Response.size) &&
-            Objects.equals(this.total, listEnvironmentsV2Response.total) &&
-            Objects.equals(this.envs, listEnvironmentsV2Response.envs);
+        return Objects.equals(this.size, listEnvironmentsV2Response.size)
+            && Objects.equals(this.total, listEnvironmentsV2Response.total)
+            && Objects.equals(this.envs, listEnvironmentsV2Response.envs);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(size, total, envs);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -148,16 +120,13 @@ public class ListEnvironmentsV2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

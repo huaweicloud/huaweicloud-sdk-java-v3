@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListTagsRequest  {
-
-
+/** Request Object */
+public class ListTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Repo-Auth")
-    
+    @JsonProperty(value = "X-Repo-Auth")
+
     private String xRepoAuth;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
+
     private String namespace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project")
-    
+    @JsonProperty(value = "project")
+
     private String project;
 
     public ListTagsRequest withXRepoAuth(String xRepoAuth) {
@@ -40,15 +28,11 @@ public class ListTagsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 授权名称。
-     * @return xRepoAuth
-     */
+    /** 授权名称。
+     * 
+     * @return xRepoAuth */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Repo-Auth")
+    @JsonProperty(value = "X-Repo-Auth")
     public String getXRepoAuth() {
         return xRepoAuth;
     }
@@ -57,20 +41,14 @@ public class ListTagsRequest  {
         this.xRepoAuth = xRepoAuth;
     }
 
-    
-
     public ListTagsRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
     }
 
-    
-
-
-    /**
-     * 组织ID。
-     * @return namespace
-     */
+    /** 组织ID。
+     * 
+     * @return namespace */
     public String getNamespace() {
         return namespace;
     }
@@ -79,20 +57,14 @@ public class ListTagsRequest  {
         this.namespace = namespace;
     }
 
-    
-
     public ListTagsRequest withProject(String project) {
         this.project = project;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
-     * @return project
-     */
+    /** 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
+     * 
+     * @return project */
     public String getProject() {
         return project;
     }
@@ -100,8 +72,6 @@ public class ListTagsRequest  {
     public void setProject(String project) {
         this.project = project;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +82,16 @@ public class ListTagsRequest  {
             return false;
         }
         ListTagsRequest listTagsRequest = (ListTagsRequest) o;
-        return Objects.equals(this.xRepoAuth, listTagsRequest.xRepoAuth) &&
-            Objects.equals(this.namespace, listTagsRequest.namespace) &&
-            Objects.equals(this.project, listTagsRequest.project);
+        return Objects.equals(this.xRepoAuth, listTagsRequest.xRepoAuth)
+            && Objects.equals(this.namespace, listTagsRequest.namespace)
+            && Objects.equals(this.project, listTagsRequest.project);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xRepoAuth, namespace, project);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +102,13 @@ public class ListTagsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * DeleteRelationsReq
- */
-public class DeleteRelationsReq  {
-
-
+/** DeleteRelationsReq */
+public class DeleteRelationsReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="related_id")
-    
+    @JsonProperty(value = "related_id")
+
     private String relatedId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
     public DeleteRelationsReq withRelatedId(String relatedId) {
@@ -34,13 +23,9 @@ public class DeleteRelationsReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 要解除关联的工单id
-     * @return relatedId
-     */
+    /** 要解除关联的工单id
+     * 
+     * @return relatedId */
     public String getRelatedId() {
         return relatedId;
     }
@@ -49,20 +34,14 @@ public class DeleteRelationsReq  {
         this.relatedId = relatedId;
     }
 
-    
-
     public DeleteRelationsReq withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 组id
-     * @return groupId
-     */
+    /** 组id
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -70,8 +49,6 @@ public class DeleteRelationsReq  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class DeleteRelationsReq  {
             return false;
         }
         DeleteRelationsReq deleteRelationsReq = (DeleteRelationsReq) o;
-        return Objects.equals(this.relatedId, deleteRelationsReq.relatedId) &&
-            Objects.equals(this.groupId, deleteRelationsReq.groupId);
+        return Objects.equals(this.relatedId, deleteRelationsReq.relatedId)
+            && Objects.equals(this.groupId, deleteRelationsReq.groupId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(relatedId, groupId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class DeleteRelationsReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

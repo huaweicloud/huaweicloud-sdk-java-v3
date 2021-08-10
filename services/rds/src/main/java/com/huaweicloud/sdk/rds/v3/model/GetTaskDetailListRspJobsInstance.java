@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 执行任务的实例信息。
- */
-public class GetTaskDetailListRspJobsInstance  {
-
-
+/** 执行任务的实例信息。 */
+public class GetTaskDetailListRspJobsInstance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public GetTaskDetailListRspJobsInstance withId(String id) {
@@ -34,13 +23,9 @@ public class GetTaskDetailListRspJobsInstance  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return id
-     */
+    /** 实例ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -49,20 +34,14 @@ public class GetTaskDetailListRspJobsInstance  {
         this.id = id;
     }
 
-    
-
     public GetTaskDetailListRspJobsInstance withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例名称。
-     * @return name
-     */
+    /** 实例名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -70,8 +49,6 @@ public class GetTaskDetailListRspJobsInstance  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class GetTaskDetailListRspJobsInstance  {
             return false;
         }
         GetTaskDetailListRspJobsInstance getTaskDetailListRspJobsInstance = (GetTaskDetailListRspJobsInstance) o;
-        return Objects.equals(this.id, getTaskDetailListRspJobsInstance.id) &&
-            Objects.equals(this.name, getTaskDetailListRspJobsInstance.name);
+        return Objects.equals(this.id, getTaskDetailListRspJobsInstance.id)
+            && Objects.equals(this.name, getTaskDetailListRspJobsInstance.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class GetTaskDetailListRspJobsInstance  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

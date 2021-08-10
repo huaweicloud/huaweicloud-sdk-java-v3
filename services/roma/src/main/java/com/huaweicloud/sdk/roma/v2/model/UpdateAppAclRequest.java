@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.AppAclCreate;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateAppAclRequest  {
-
-
+/** Request Object */
+public class UpdateAppAclRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private AppAclCreate body;
 
     public UpdateAppAclRequest withInstanceId(String instanceId) {
@@ -41,13 +29,9 @@ public class UpdateAppAclRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -56,20 +40,14 @@ public class UpdateAppAclRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public UpdateAppAclRequest withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用编号
-     * @return appId
-     */
+    /** 应用编号
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -78,27 +56,23 @@ public class UpdateAppAclRequest  {
         this.appId = appId;
     }
 
-    
-
     public UpdateAppAclRequest withBody(AppAclCreate body) {
         this.body = body;
         return this;
     }
 
     public UpdateAppAclRequest withBody(Consumer<AppAclCreate> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new AppAclCreate();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public AppAclCreate getBody() {
         return body;
     }
@@ -106,8 +80,6 @@ public class UpdateAppAclRequest  {
     public void setBody(AppAclCreate body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class UpdateAppAclRequest  {
             return false;
         }
         UpdateAppAclRequest updateAppAclRequest = (UpdateAppAclRequest) o;
-        return Objects.equals(this.instanceId, updateAppAclRequest.instanceId) &&
-            Objects.equals(this.appId, updateAppAclRequest.appId) &&
-            Objects.equals(this.body, updateAppAclRequest.body);
+        return Objects.equals(this.instanceId, updateAppAclRequest.instanceId)
+            && Objects.equals(this.appId, updateAppAclRequest.appId)
+            && Objects.equals(this.body, updateAppAclRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, appId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class UpdateAppAclRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

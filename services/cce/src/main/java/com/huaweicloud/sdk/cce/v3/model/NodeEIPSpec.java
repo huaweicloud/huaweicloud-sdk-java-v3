@@ -1,33 +1,24 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.NodeBandwidth;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class NodeEIPSpec  {
-
-
+public class NodeEIPSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="iptype")
-    
+    @JsonProperty(value = "iptype")
+
     private String iptype;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bandwidth")
-    
+    @JsonProperty(value = "bandwidth")
+
     private NodeBandwidth bandwidth;
 
     public NodeEIPSpec withIptype(String iptype) {
@@ -35,13 +26,10 @@ public class NodeEIPSpec  {
         return this;
     }
 
-    
-
-
-    /**
-     * 弹性IP类型，取值请参见“[[创建云服务器](https://support.huaweicloud.com/api-ecs/zh-cn_topic_0167957246.html)](tag:hws)[[创建云服务器](https://support.huaweicloud.com/intl/zh-cn/api-ecs/zh-cn_topic_0167957246.html)](tag:hws_hk) > eip字段数据结构说明”表中“iptype”参数的描述。
-     * @return iptype
-     */
+    /** 弹性IP类型，取值请参见“[[创建云服务器](https://support.huaweicloud.com/api-ecs/zh-cn_topic_0167957246.html)](tag:hws)[[创建云服务器](https://support.huaweicloud.com/intl/zh-cn/api-ecs/zh-cn_topic_0167957246.html)](tag:hws_hk)
+     * > eip字段数据结构说明”表中“iptype”参数的描述。
+     * 
+     * @return iptype */
     public String getIptype() {
         return iptype;
     }
@@ -50,27 +38,23 @@ public class NodeEIPSpec  {
         this.iptype = iptype;
     }
 
-    
-
     public NodeEIPSpec withBandwidth(NodeBandwidth bandwidth) {
         this.bandwidth = bandwidth;
         return this;
     }
 
     public NodeEIPSpec withBandwidth(Consumer<NodeBandwidth> bandwidthSetter) {
-        if(this.bandwidth == null ){
+        if (this.bandwidth == null) {
             this.bandwidth = new NodeBandwidth();
             bandwidthSetter.accept(this.bandwidth);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get bandwidth
-     * @return bandwidth
-     */
+    /** Get bandwidth
+     * 
+     * @return bandwidth */
     public NodeBandwidth getBandwidth() {
         return bandwidth;
     }
@@ -78,8 +62,6 @@ public class NodeEIPSpec  {
     public void setBandwidth(NodeBandwidth bandwidth) {
         this.bandwidth = bandwidth;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +72,14 @@ public class NodeEIPSpec  {
             return false;
         }
         NodeEIPSpec nodeEIPSpec = (NodeEIPSpec) o;
-        return Objects.equals(this.iptype, nodeEIPSpec.iptype) &&
-            Objects.equals(this.bandwidth, nodeEIPSpec.bandwidth);
+        return Objects.equals(this.iptype, nodeEIPSpec.iptype) && Objects.equals(this.bandwidth, nodeEIPSpec.bandwidth);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(iptype, bandwidth);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +89,13 @@ public class NodeEIPSpec  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

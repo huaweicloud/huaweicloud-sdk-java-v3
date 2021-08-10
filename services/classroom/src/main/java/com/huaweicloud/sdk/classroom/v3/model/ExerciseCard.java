@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.classroom.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ExerciseCard
- */
-public class ExerciseCard  {
-
-
+/** ExerciseCard */
+public class ExerciseCard {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="exercise_id")
-    
+    @JsonProperty(value = "exercise_id")
+
     private String exerciseId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_sub_type")
-    
+    @JsonProperty(value = "resource_sub_type")
+
     private Integer resourceSubType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target_score")
-    
+    @JsonProperty(value = "target_score")
+
     private Integer targetScore;
 
     public ExerciseCard withName(String name) {
@@ -52,13 +38,9 @@ public class ExerciseCard  {
         return this;
     }
 
-    
-
-
-    /**
-     * 习题名称
-     * @return name
-     */
+    /** 习题名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -67,20 +49,14 @@ public class ExerciseCard  {
         this.name = name;
     }
 
-    
-
     public ExerciseCard withExerciseId(String exerciseId) {
         this.exerciseId = exerciseId;
         return this;
     }
 
-    
-
-
-    /**
-     * 习题ID
-     * @return exerciseId
-     */
+    /** 习题ID
+     * 
+     * @return exerciseId */
     public String getExerciseId() {
         return exerciseId;
     }
@@ -89,20 +65,14 @@ public class ExerciseCard  {
         this.exerciseId = exerciseId;
     }
 
-    
-
     public ExerciseCard withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 习题描述
-     * @return description
-     */
+    /** 习题描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -111,20 +81,15 @@ public class ExerciseCard  {
         this.description = description;
     }
 
-    
-
     public ExerciseCard withResourceSubType(Integer resourceSubType) {
         this.resourceSubType = resourceSubType;
         return this;
     }
 
-    
-
-
-    /**
-     * 习题子类型 1：函数c 2：函数c++ 3：函数Java 4：函数Python 5：单人项目java 6：单人项目Hadoop 7：通用 8：企业级软件项目 10：web习题 11：AI习题 12：单选题 13：多选题 14：填空题 15：单人项目C 16：单人项目C++
-     * @return resourceSubType
-     */
+    /** 习题子类型 1：函数c 2：函数c++ 3：函数Java 4：函数Python 5：单人项目java 6：单人项目Hadoop 7：通用 8：企业级软件项目 10：web习题 11：AI习题 12：单选题 13：多选题
+     * 14：填空题 15：单人项目C 16：单人项目C++
+     * 
+     * @return resourceSubType */
     public Integer getResourceSubType() {
         return resourceSubType;
     }
@@ -133,20 +98,14 @@ public class ExerciseCard  {
         this.resourceSubType = resourceSubType;
     }
 
-    
-
     public ExerciseCard withTargetScore(Integer targetScore) {
         this.targetScore = targetScore;
         return this;
     }
 
-    
-
-
-    /**
-     * 习题分值
-     * @return targetScore
-     */
+    /** 习题分值
+     * 
+     * @return targetScore */
     public Integer getTargetScore() {
         return targetScore;
     }
@@ -154,8 +113,6 @@ public class ExerciseCard  {
     public void setTargetScore(Integer targetScore) {
         this.targetScore = targetScore;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +123,17 @@ public class ExerciseCard  {
             return false;
         }
         ExerciseCard exerciseCard = (ExerciseCard) o;
-        return Objects.equals(this.name, exerciseCard.name) &&
-            Objects.equals(this.exerciseId, exerciseCard.exerciseId) &&
-            Objects.equals(this.description, exerciseCard.description) &&
-            Objects.equals(this.resourceSubType, exerciseCard.resourceSubType) &&
-            Objects.equals(this.targetScore, exerciseCard.targetScore);
+        return Objects.equals(this.name, exerciseCard.name) && Objects.equals(this.exerciseId, exerciseCard.exerciseId)
+            && Objects.equals(this.description, exerciseCard.description)
+            && Objects.equals(this.resourceSubType, exerciseCard.resourceSubType)
+            && Objects.equals(this.targetScore, exerciseCard.targetScore);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, exerciseId, description, resourceSubType, targetScore);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class ExerciseCard  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

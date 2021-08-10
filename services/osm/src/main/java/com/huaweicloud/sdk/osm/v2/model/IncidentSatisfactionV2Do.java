@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * IncidentSatisfactionV2Do
- */
-public class IncidentSatisfactionV2Do  {
-
-
+/** IncidentSatisfactionV2Do */
+public class IncidentSatisfactionV2Do {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private Integer value;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="satisfaction_id")
-    
+    @JsonProperty(value = "satisfaction_id")
+
     private Integer satisfactionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="satisfaction_value")
-    
+    @JsonProperty(value = "satisfaction_value")
+
     private Integer satisfactionValue;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="satisfaction_name")
-    
+    @JsonProperty(value = "satisfaction_name")
+
     private String satisfactionName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="per_value")
-    
+    @JsonProperty(value = "per_value")
+
     private Integer perValue;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sat_category_id")
-    
+    @JsonProperty(value = "sat_category_id")
+
     private String satCategoryId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sat_category_name")
-    
+    @JsonProperty(value = "sat_category_name")
+
     private String satCategoryName;
 
     public IncidentSatisfactionV2Do withValue(Integer value) {
@@ -64,15 +48,9 @@ public class IncidentSatisfactionV2Do  {
         return this;
     }
 
-    
-
-
-    /**
-     * 满意度总分数
-     * minimum: 0
-     * maximum: 65535
-     * @return value
-     */
+    /** 满意度总分数 minimum: 0 maximum: 65535
+     * 
+     * @return value */
     public Integer getValue() {
         return value;
     }
@@ -81,22 +59,14 @@ public class IncidentSatisfactionV2Do  {
         this.value = value;
     }
 
-    
-
     public IncidentSatisfactionV2Do withSatisfactionId(Integer satisfactionId) {
         this.satisfactionId = satisfactionId;
         return this;
     }
 
-    
-
-
-    /**
-     * 满意度分类id
-     * minimum: 0
-     * maximum: 9999
-     * @return satisfactionId
-     */
+    /** 满意度分类id minimum: 0 maximum: 9999
+     * 
+     * @return satisfactionId */
     public Integer getSatisfactionId() {
         return satisfactionId;
     }
@@ -105,22 +75,14 @@ public class IncidentSatisfactionV2Do  {
         this.satisfactionId = satisfactionId;
     }
 
-    
-
     public IncidentSatisfactionV2Do withSatisfactionValue(Integer satisfactionValue) {
         this.satisfactionValue = satisfactionValue;
         return this;
     }
 
-    
-
-
-    /**
-     * 满意度的值
-     * minimum: 0
-     * maximum: 65535
-     * @return satisfactionValue
-     */
+    /** 满意度的值 minimum: 0 maximum: 65535
+     * 
+     * @return satisfactionValue */
     public Integer getSatisfactionValue() {
         return satisfactionValue;
     }
@@ -129,20 +91,14 @@ public class IncidentSatisfactionV2Do  {
         this.satisfactionValue = satisfactionValue;
     }
 
-    
-
     public IncidentSatisfactionV2Do withSatisfactionName(String satisfactionName) {
         this.satisfactionName = satisfactionName;
         return this;
     }
 
-    
-
-
-    /**
-     * 满意度分类名称
-     * @return satisfactionName
-     */
+    /** 满意度分类名称
+     * 
+     * @return satisfactionName */
     public String getSatisfactionName() {
         return satisfactionName;
     }
@@ -151,22 +107,14 @@ public class IncidentSatisfactionV2Do  {
         this.satisfactionName = satisfactionName;
     }
 
-    
-
     public IncidentSatisfactionV2Do withPerValue(Integer perValue) {
         this.perValue = perValue;
         return this;
     }
 
-    
-
-
-    /**
-     * 每格的分数
-     * minimum: 0
-     * maximum: 65535
-     * @return perValue
-     */
+    /** 每格的分数 minimum: 0 maximum: 65535
+     * 
+     * @return perValue */
     public Integer getPerValue() {
         return perValue;
     }
@@ -175,20 +123,14 @@ public class IncidentSatisfactionV2Do  {
         this.perValue = perValue;
     }
 
-    
-
     public IncidentSatisfactionV2Do withSatCategoryId(String satCategoryId) {
         this.satCategoryId = satCategoryId;
         return this;
     }
 
-    
-
-
-    /**
-     * 满意度维度id
-     * @return satCategoryId
-     */
+    /** 满意度维度id
+     * 
+     * @return satCategoryId */
     public String getSatCategoryId() {
         return satCategoryId;
     }
@@ -197,20 +139,14 @@ public class IncidentSatisfactionV2Do  {
         this.satCategoryId = satCategoryId;
     }
 
-    
-
     public IncidentSatisfactionV2Do withSatCategoryName(String satCategoryName) {
         this.satCategoryName = satCategoryName;
         return this;
     }
 
-    
-
-
-    /**
-     * 满意度维度名称
-     * @return satCategoryName
-     */
+    /** 满意度维度名称
+     * 
+     * @return satCategoryName */
     public String getSatCategoryName() {
         return satCategoryName;
     }
@@ -218,8 +154,6 @@ public class IncidentSatisfactionV2Do  {
     public void setSatCategoryName(String satCategoryName) {
         this.satCategoryName = satCategoryName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -230,18 +164,21 @@ public class IncidentSatisfactionV2Do  {
             return false;
         }
         IncidentSatisfactionV2Do incidentSatisfactionV2Do = (IncidentSatisfactionV2Do) o;
-        return Objects.equals(this.value, incidentSatisfactionV2Do.value) &&
-            Objects.equals(this.satisfactionId, incidentSatisfactionV2Do.satisfactionId) &&
-            Objects.equals(this.satisfactionValue, incidentSatisfactionV2Do.satisfactionValue) &&
-            Objects.equals(this.satisfactionName, incidentSatisfactionV2Do.satisfactionName) &&
-            Objects.equals(this.perValue, incidentSatisfactionV2Do.perValue) &&
-            Objects.equals(this.satCategoryId, incidentSatisfactionV2Do.satCategoryId) &&
-            Objects.equals(this.satCategoryName, incidentSatisfactionV2Do.satCategoryName);
+        return Objects.equals(this.value, incidentSatisfactionV2Do.value)
+            && Objects.equals(this.satisfactionId, incidentSatisfactionV2Do.satisfactionId)
+            && Objects.equals(this.satisfactionValue, incidentSatisfactionV2Do.satisfactionValue)
+            && Objects.equals(this.satisfactionName, incidentSatisfactionV2Do.satisfactionName)
+            && Objects.equals(this.perValue, incidentSatisfactionV2Do.perValue)
+            && Objects.equals(this.satCategoryId, incidentSatisfactionV2Do.satCategoryId)
+            && Objects.equals(this.satCategoryName, incidentSatisfactionV2Do.satCategoryName);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(value, satisfactionId, satisfactionValue, satisfactionName, perValue, satCategoryId, satCategoryName);
+        return Objects
+            .hash(value, satisfactionId, satisfactionValue, satisfactionName, perValue, satCategoryId, satCategoryName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -256,16 +193,13 @@ public class IncidentSatisfactionV2Do  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

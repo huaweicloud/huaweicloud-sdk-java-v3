@@ -1,46 +1,32 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class AssociateDomainV2Response extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url_domain")
-    
+    @JsonProperty(value = "url_domain")
+
     private String urlDomain;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="min_ssl_version")
-    
+    @JsonProperty(value = "min_ssl_version")
+
     private String minSslVersion;
 
     public AssociateDomainV2Response withUrlDomain(String urlDomain) {
@@ -48,13 +34,9 @@ public class AssociateDomainV2Response extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义域名
-     * @return urlDomain
-     */
+    /** 自定义域名
+     * 
+     * @return urlDomain */
     public String getUrlDomain() {
         return urlDomain;
     }
@@ -63,20 +45,14 @@ public class AssociateDomainV2Response extends SdkResponse {
         this.urlDomain = urlDomain;
     }
 
-    
-
     public AssociateDomainV2Response withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义域名的编号
-     * @return id
-     */
+    /** 自定义域名的编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -85,20 +61,14 @@ public class AssociateDomainV2Response extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public AssociateDomainV2Response withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * CNAME解析状态 - 1: 未解析 - 2: 解析中 - 3: 解析成功 - 4: 解析失败
-     * @return status
-     */
+    /** CNAME解析状态 - 1: 未解析 - 2: 解析中 - 3: 解析成功 - 4: 解析失败
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -107,20 +77,14 @@ public class AssociateDomainV2Response extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public AssociateDomainV2Response withMinSslVersion(String minSslVersion) {
         this.minSslVersion = minSslVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * 支持的最小SSL版本
-     * @return minSslVersion
-     */
+    /** 支持的最小SSL版本
+     * 
+     * @return minSslVersion */
     public String getMinSslVersion() {
         return minSslVersion;
     }
@@ -128,8 +92,6 @@ public class AssociateDomainV2Response extends SdkResponse {
     public void setMinSslVersion(String minSslVersion) {
         this.minSslVersion = minSslVersion;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -140,15 +102,17 @@ public class AssociateDomainV2Response extends SdkResponse {
             return false;
         }
         AssociateDomainV2Response associateDomainV2Response = (AssociateDomainV2Response) o;
-        return Objects.equals(this.urlDomain, associateDomainV2Response.urlDomain) &&
-            Objects.equals(this.id, associateDomainV2Response.id) &&
-            Objects.equals(this.status, associateDomainV2Response.status) &&
-            Objects.equals(this.minSslVersion, associateDomainV2Response.minSslVersion);
+        return Objects.equals(this.urlDomain, associateDomainV2Response.urlDomain)
+            && Objects.equals(this.id, associateDomainV2Response.id)
+            && Objects.equals(this.status, associateDomainV2Response.status)
+            && Objects.equals(this.minSslVersion, associateDomainV2Response.minSslVersion);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(urlDomain, id, status, minSslVersion);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -160,16 +124,13 @@ public class AssociateDomainV2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

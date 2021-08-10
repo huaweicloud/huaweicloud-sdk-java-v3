@@ -1,59 +1,40 @@
 package com.huaweicloud.sdk.cts.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cts.v3.model.UserInfo;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Traces
- */
-public class Traces  {
-
-
+/** Traces */
+public class Traces {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
+    @JsonProperty(value = "resource_id")
+
     private String resourceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trace_name")
-    
+    @JsonProperty(value = "trace_name")
+
     private String traceName;
-    /**
-     * 标识事件等级，目前有三种：正常（normal），警告（warning），事故（incident）。
-     */
+
+    /** 标识事件等级，目前有三种：正常（normal），警告（warning），事故（incident）。 */
     public static final class TraceRatingEnum {
 
-        
-        /**
-         * Enum NORMAL for value: "normal"
-         */
+        /** Enum NORMAL for value: "normal" */
         public static final TraceRatingEnum NORMAL = new TraceRatingEnum("normal");
-        
-        /**
-         * Enum WARNING for value: "warning"
-         */
+
+        /** Enum WARNING for value: "warning" */
         public static final TraceRatingEnum WARNING = new TraceRatingEnum("warning");
-        
-        /**
-         * Enum INCIDENT for value: "incident"
-         */
+
+        /** Enum INCIDENT for value: "incident" */
         public static final TraceRatingEnum INCIDENT = new TraceRatingEnum("incident");
-        
 
         private static final Map<String, TraceRatingEnum> STATIC_FIELDS = createStaticFields();
 
@@ -83,7 +64,7 @@ public class Traces  {
 
         @JsonCreator
         public static TraceRatingEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TraceRatingEnum result = STATIC_FIELDS.get(value);
@@ -94,7 +75,7 @@ public class Traces  {
         }
 
         public static TraceRatingEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TraceRatingEnum result = STATIC_FIELDS.get(value);
@@ -118,118 +99,99 @@ public class Traces  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trace_rating")
-    
+    @JsonProperty(value = "trace_rating")
+
     private TraceRatingEnum traceRating;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trace_type")
-    
+    @JsonProperty(value = "trace_type")
+
     private String traceType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="request")
-    
+    @JsonProperty(value = "request")
+
     private String request;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="response")
-    
+    @JsonProperty(value = "response")
+
     private String response;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code")
-    
+    @JsonProperty(value = "code")
+
     private String code;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_version")
-    
+    @JsonProperty(value = "api_version")
+
     private String apiVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message")
-    
+    @JsonProperty(value = "message")
+
     private String message;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="record_time")
-    
+    @JsonProperty(value = "record_time")
+
     private Long recordTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trace_id")
-    
+    @JsonProperty(value = "trace_id")
+
     private String traceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time")
-    
+    @JsonProperty(value = "time")
+
     private Long time;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user")
-    
+    @JsonProperty(value = "user")
+
     private UserInfo user;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_type")
-    
+    @JsonProperty(value = "service_type")
+
     private String serviceType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type")
-    
+    @JsonProperty(value = "resource_type")
+
     private String resourceType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_ip")
-    
+    @JsonProperty(value = "source_ip")
+
     private String sourceIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_name")
-    
+    @JsonProperty(value = "resource_name")
+
     private String resourceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="request_id")
-    
+    @JsonProperty(value = "request_id")
+
     private String requestId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="location_info")
-    
+    @JsonProperty(value = "location_info")
+
     private String locationInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endpoint")
-    
+    @JsonProperty(value = "endpoint")
+
     private String endpoint;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_url")
-    
+    @JsonProperty(value = "resource_url")
+
     private String resourceUrl;
 
     public Traces withResourceId(String resourceId) {
@@ -237,13 +199,9 @@ public class Traces  {
         return this;
     }
 
-    
-
-
-    /**
-     * 标识事件对应的云服务资源ID。
-     * @return resourceId
-     */
+    /** 标识事件对应的云服务资源ID。
+     * 
+     * @return resourceId */
     public String getResourceId() {
         return resourceId;
     }
@@ -252,20 +210,14 @@ public class Traces  {
         this.resourceId = resourceId;
     }
 
-    
-
     public Traces withTraceName(String traceName) {
         this.traceName = traceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识查询事件列表对应的事件名称。由0-9,a-z,A-Z,'-','.','_',组成，长度为1～64个字符，且以首字符必须为字母。
-     * @return traceName
-     */
+    /** 标识查询事件列表对应的事件名称。由0-9,a-z,A-Z,'-','.','_',组成，长度为1～64个字符，且以首字符必须为字母。
+     * 
+     * @return traceName */
     public String getTraceName() {
         return traceName;
     }
@@ -274,20 +226,14 @@ public class Traces  {
         this.traceName = traceName;
     }
 
-    
-
     public Traces withTraceRating(TraceRatingEnum traceRating) {
         this.traceRating = traceRating;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识事件等级，目前有三种：正常（normal），警告（warning），事故（incident）。
-     * @return traceRating
-     */
+    /** 标识事件等级，目前有三种：正常（normal），警告（warning），事故（incident）。
+     * 
+     * @return traceRating */
     public TraceRatingEnum getTraceRating() {
         return traceRating;
     }
@@ -296,20 +242,14 @@ public class Traces  {
         this.traceRating = traceRating;
     }
 
-    
-
     public Traces withTraceType(String traceType) {
         this.traceType = traceType;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识事件发生源头类型，管理类事件主要包括API调用（ApiCall），Console页面调用（ConsoleAction）和系统间调用（SystemAction）。 数据类事件主要包括ObsSDK，ObsAPI。
-     * @return traceType
-     */
+    /** 标识事件发生源头类型，管理类事件主要包括API调用（ApiCall），Console页面调用（ConsoleAction）和系统间调用（SystemAction）。 数据类事件主要包括ObsSDK，ObsAPI。
+     * 
+     * @return traceType */
     public String getTraceType() {
         return traceType;
     }
@@ -318,20 +258,14 @@ public class Traces  {
         this.traceType = traceType;
     }
 
-    
-
     public Traces withRequest(String request) {
         this.request = request;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识事件对应接口请求内容，即资源操作请求体。
-     * @return request
-     */
+    /** 标识事件对应接口请求内容，即资源操作请求体。
+     * 
+     * @return request */
     public String getRequest() {
         return request;
     }
@@ -340,20 +274,14 @@ public class Traces  {
         this.request = request;
     }
 
-    
-
     public Traces withResponse(String response) {
         this.response = response;
         return this;
     }
 
-    
-
-
-    /**
-     * 记录用户请求的响应，标识事件对应接口响应内容，即资源操作结果返回体。
-     * @return response
-     */
+    /** 记录用户请求的响应，标识事件对应接口响应内容，即资源操作结果返回体。
+     * 
+     * @return response */
     public String getResponse() {
         return response;
     }
@@ -362,20 +290,14 @@ public class Traces  {
         this.response = response;
     }
 
-    
-
     public Traces withCode(String code) {
         this.code = code;
         return this;
     }
 
-    
-
-
-    /**
-     * 记录用户请求的响应，标识事件对应接口返回的HTTP状态码。
-     * @return code
-     */
+    /** 记录用户请求的响应，标识事件对应接口返回的HTTP状态码。
+     * 
+     * @return code */
     public String getCode() {
         return code;
     }
@@ -384,20 +306,14 @@ public class Traces  {
         this.code = code;
     }
 
-    
-
     public Traces withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识事件对应的云服务接口版本。
-     * @return apiVersion
-     */
+    /** 标识事件对应的云服务接口版本。
+     * 
+     * @return apiVersion */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -406,20 +322,14 @@ public class Traces  {
         this.apiVersion = apiVersion;
     }
 
-    
-
     public Traces withMessage(String message) {
         this.message = message;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识其他云服务为此条事件添加的备注信息。
-     * @return message
-     */
+    /** 标识其他云服务为此条事件添加的备注信息。
+     * 
+     * @return message */
     public String getMessage() {
         return message;
     }
@@ -428,22 +338,14 @@ public class Traces  {
         this.message = message;
     }
 
-    
-
     public Traces withRecordTime(Long recordTime) {
         this.recordTime = recordTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识云审计服务记录本次事件的时间戳。
-     * minimum: 946656000000
-     * maximum: 4102416000000
-     * @return recordTime
-     */
+    /** 标识云审计服务记录本次事件的时间戳。 minimum: 946656000000 maximum: 4102416000000
+     * 
+     * @return recordTime */
     public Long getRecordTime() {
         return recordTime;
     }
@@ -452,20 +354,14 @@ public class Traces  {
         this.recordTime = recordTime;
     }
 
-    
-
     public Traces withTraceId(String traceId) {
         this.traceId = traceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识事件的ID，由系统生成的UUID。
-     * @return traceId
-     */
+    /** 标识事件的ID，由系统生成的UUID。
+     * 
+     * @return traceId */
     public String getTraceId() {
         return traceId;
     }
@@ -474,22 +370,14 @@ public class Traces  {
         this.traceId = traceId;
     }
 
-    
-
     public Traces withTime(Long time) {
         this.time = time;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识事件产生的时间戳。
-     * minimum: 946656000000
-     * maximum: 4102416000000
-     * @return time
-     */
+    /** 标识事件产生的时间戳。 minimum: 946656000000 maximum: 4102416000000
+     * 
+     * @return time */
     public Long getTime() {
         return time;
     }
@@ -498,27 +386,23 @@ public class Traces  {
         this.time = time;
     }
 
-    
-
     public Traces withUser(UserInfo user) {
         this.user = user;
         return this;
     }
 
     public Traces withUser(Consumer<UserInfo> userSetter) {
-        if(this.user == null ){
+        if (this.user == null) {
             this.user = new UserInfo();
             userSetter.accept(this.user);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get user
-     * @return user
-     */
+    /** Get user
+     * 
+     * @return user */
     public UserInfo getUser() {
         return user;
     }
@@ -527,20 +411,14 @@ public class Traces  {
         this.user = user;
     }
 
-    
-
     public Traces withServiceType(String serviceType) {
         this.serviceType = serviceType;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识查询事件列表对应的云服务类型。必须为已对接CTS的云服务的英文缩写，且服务类型一般为大写字母。
-     * @return serviceType
-     */
+    /** 标识查询事件列表对应的云服务类型。必须为已对接CTS的云服务的英文缩写，且服务类型一般为大写字母。
+     * 
+     * @return serviceType */
     public String getServiceType() {
         return serviceType;
     }
@@ -549,20 +427,14 @@ public class Traces  {
         this.serviceType = serviceType;
     }
 
-    
-
     public Traces withResourceType(String resourceType) {
         this.resourceType = resourceType;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询事件列表对应的资源类型。
-     * @return resourceType
-     */
+    /** 查询事件列表对应的资源类型。
+     * 
+     * @return resourceType */
     public String getResourceType() {
         return resourceType;
     }
@@ -571,20 +443,14 @@ public class Traces  {
         this.resourceType = resourceType;
     }
 
-    
-
     public Traces withSourceIp(String sourceIp) {
         this.sourceIp = sourceIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识触发事件的租户IP。
-     * @return sourceIp
-     */
+    /** 标识触发事件的租户IP。
+     * 
+     * @return sourceIp */
     public String getSourceIp() {
         return sourceIp;
     }
@@ -593,20 +459,14 @@ public class Traces  {
         this.sourceIp = sourceIp;
     }
 
-    
-
     public Traces withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识事件对应的资源名称。
-     * @return resourceName
-     */
+    /** 标识事件对应的资源名称。
+     * 
+     * @return resourceName */
     public String getResourceName() {
         return resourceName;
     }
@@ -615,20 +475,14 @@ public class Traces  {
         this.resourceName = resourceName;
     }
 
-    
-
     public Traces withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
     }
 
-    
-
-
-    /**
-     * 记录本次请求的request id
-     * @return requestId
-     */
+    /** 记录本次请求的request id
+     * 
+     * @return requestId */
     public String getRequestId() {
         return requestId;
     }
@@ -637,20 +491,14 @@ public class Traces  {
         this.requestId = requestId;
     }
 
-    
-
     public Traces withLocationInfo(String locationInfo) {
         this.locationInfo = locationInfo;
         return this;
     }
 
-    
-
-
-    /**
-     * 记录本次请求出错后，问题定位所需要的辅助信息。
-     * @return locationInfo
-     */
+    /** 记录本次请求出错后，问题定位所需要的辅助信息。
+     * 
+     * @return locationInfo */
     public String getLocationInfo() {
         return locationInfo;
     }
@@ -659,20 +507,14 @@ public class Traces  {
         this.locationInfo = locationInfo;
     }
 
-    
-
     public Traces withEndpoint(String endpoint) {
         this.endpoint = endpoint;
         return this;
     }
 
-    
-
-
-    /**
-     * 云资源的详情页面
-     * @return endpoint
-     */
+    /** 云资源的详情页面
+     * 
+     * @return endpoint */
     public String getEndpoint() {
         return endpoint;
     }
@@ -681,20 +523,14 @@ public class Traces  {
         this.endpoint = endpoint;
     }
 
-    
-
     public Traces withResourceUrl(String resourceUrl) {
         this.resourceUrl = resourceUrl;
         return this;
     }
 
-    
-
-
-    /**
-     * 云资源的详情页面的访问链接（不含endpoint）
-     * @return resourceUrl
-     */
+    /** 云资源的详情页面的访问链接（不含endpoint）
+     * 
+     * @return resourceUrl */
     public String getResourceUrl() {
         return resourceUrl;
     }
@@ -702,8 +538,6 @@ public class Traces  {
     public void setResourceUrl(String resourceUrl) {
         this.resourceUrl = resourceUrl;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -714,32 +548,45 @@ public class Traces  {
             return false;
         }
         Traces traces = (Traces) o;
-        return Objects.equals(this.resourceId, traces.resourceId) &&
-            Objects.equals(this.traceName, traces.traceName) &&
-            Objects.equals(this.traceRating, traces.traceRating) &&
-            Objects.equals(this.traceType, traces.traceType) &&
-            Objects.equals(this.request, traces.request) &&
-            Objects.equals(this.response, traces.response) &&
-            Objects.equals(this.code, traces.code) &&
-            Objects.equals(this.apiVersion, traces.apiVersion) &&
-            Objects.equals(this.message, traces.message) &&
-            Objects.equals(this.recordTime, traces.recordTime) &&
-            Objects.equals(this.traceId, traces.traceId) &&
-            Objects.equals(this.time, traces.time) &&
-            Objects.equals(this.user, traces.user) &&
-            Objects.equals(this.serviceType, traces.serviceType) &&
-            Objects.equals(this.resourceType, traces.resourceType) &&
-            Objects.equals(this.sourceIp, traces.sourceIp) &&
-            Objects.equals(this.resourceName, traces.resourceName) &&
-            Objects.equals(this.requestId, traces.requestId) &&
-            Objects.equals(this.locationInfo, traces.locationInfo) &&
-            Objects.equals(this.endpoint, traces.endpoint) &&
-            Objects.equals(this.resourceUrl, traces.resourceUrl);
+        return Objects.equals(this.resourceId, traces.resourceId) && Objects.equals(this.traceName, traces.traceName)
+            && Objects.equals(this.traceRating, traces.traceRating) && Objects.equals(this.traceType, traces.traceType)
+            && Objects.equals(this.request, traces.request) && Objects.equals(this.response, traces.response)
+            && Objects.equals(this.code, traces.code) && Objects.equals(this.apiVersion, traces.apiVersion)
+            && Objects.equals(this.message, traces.message) && Objects.equals(this.recordTime, traces.recordTime)
+            && Objects.equals(this.traceId, traces.traceId) && Objects.equals(this.time, traces.time)
+            && Objects.equals(this.user, traces.user) && Objects.equals(this.serviceType, traces.serviceType)
+            && Objects.equals(this.resourceType, traces.resourceType) && Objects.equals(this.sourceIp, traces.sourceIp)
+            && Objects.equals(this.resourceName, traces.resourceName)
+            && Objects.equals(this.requestId, traces.requestId)
+            && Objects.equals(this.locationInfo, traces.locationInfo) && Objects.equals(this.endpoint, traces.endpoint)
+            && Objects.equals(this.resourceUrl, traces.resourceUrl);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(resourceId, traceName, traceRating, traceType, request, response, code, apiVersion, message, recordTime, traceId, time, user, serviceType, resourceType, sourceIp, resourceName, requestId, locationInfo, endpoint, resourceUrl);
+        return Objects.hash(resourceId,
+            traceName,
+            traceRating,
+            traceType,
+            request,
+            response,
+            code,
+            apiVersion,
+            message,
+            recordTime,
+            traceId,
+            time,
+            user,
+            serviceType,
+            resourceType,
+            sourceIp,
+            resourceName,
+            requestId,
+            locationInfo,
+            endpoint,
+            resourceUrl);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -768,16 +615,13 @@ public class Traces  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

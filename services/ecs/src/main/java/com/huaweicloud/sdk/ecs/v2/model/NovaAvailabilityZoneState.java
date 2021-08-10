@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 可用域的状态
- */
-public class NovaAvailabilityZoneState  {
-
-
+/** 可用域的状态 */
+public class NovaAvailabilityZoneState {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="available")
-    
+    @JsonProperty(value = "available")
+
     private Boolean available;
 
     public NovaAvailabilityZoneState withAvailable(Boolean available) {
@@ -28,13 +18,9 @@ public class NovaAvailabilityZoneState  {
         return this;
     }
 
-    
-
-
-    /**
-     * 可用域状态。
-     * @return available
-     */
+    /** 可用域状态。
+     * 
+     * @return available */
     public Boolean getAvailable() {
         return available;
     }
@@ -42,8 +28,6 @@ public class NovaAvailabilityZoneState  {
     public void setAvailable(Boolean available) {
         this.available = available;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class NovaAvailabilityZoneState  {
         NovaAvailabilityZoneState novaAvailabilityZoneState = (NovaAvailabilityZoneState) o;
         return Objects.equals(this.available, novaAvailabilityZoneState.available);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(available);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class NovaAvailabilityZoneState  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

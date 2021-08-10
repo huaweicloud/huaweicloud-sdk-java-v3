@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * IncidentStatusCount
- */
-public class IncidentStatusCount  {
-
-
+/** IncidentStatusCount */
+public class IncidentStatusCount {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
+
     private Integer count;
 
     public IncidentStatusCount withStatus(Integer status) {
@@ -34,15 +23,9 @@ public class IncidentStatusCount  {
         return this;
     }
 
-    
-
-
-    /**
-     * 状态 0：待受理 1：处理中 2：待确认结果 3：已完成 4：已撤销 12：无效 17： 待反馈
-     * minimum: 0
-     * maximum: 20
-     * @return status
-     */
+    /** 状态 0：待受理 1：处理中 2：待确认结果 3：已完成 4：已撤销 12：无效 17： 待反馈 minimum: 0 maximum: 20
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -51,22 +34,14 @@ public class IncidentStatusCount  {
         this.status = status;
     }
 
-    
-
     public IncidentStatusCount withCount(Integer count) {
         this.count = count;
         return this;
     }
 
-    
-
-
-    /**
-     * 数量
-     * minimum: 0
-     * maximum: 65535
-     * @return count
-     */
+    /** 数量 minimum: 0 maximum: 65535
+     * 
+     * @return count */
     public Integer getCount() {
         return count;
     }
@@ -74,8 +49,6 @@ public class IncidentStatusCount  {
     public void setCount(Integer count) {
         this.count = count;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -86,13 +59,15 @@ public class IncidentStatusCount  {
             return false;
         }
         IncidentStatusCount incidentStatusCount = (IncidentStatusCount) o;
-        return Objects.equals(this.status, incidentStatusCount.status) &&
-            Objects.equals(this.count, incidentStatusCount.count);
+        return Objects.equals(this.status, incidentStatusCount.status)
+            && Objects.equals(this.count, incidentStatusCount.count);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(status, count);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -102,16 +77,13 @@ public class IncidentStatusCount  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

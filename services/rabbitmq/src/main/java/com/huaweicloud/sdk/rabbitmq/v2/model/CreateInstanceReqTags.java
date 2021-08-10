@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.rabbitmq.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CreateInstanceReqTags
- */
-public class CreateInstanceReqTags  {
-
-
+/** CreateInstanceReqTags */
+public class CreateInstanceReqTags {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private String value;
 
     public CreateInstanceReqTags withKey(String key) {
@@ -34,13 +23,9 @@ public class CreateInstanceReqTags  {
         return this;
     }
 
-    
-
-
-    /**
-     * 键。最大长度36个unicode字符。  key不能为空，不能为空字符串。  不能包含下列字符：非打印字符ASCII(0-31)，“=”,“*”,“<”,“>”,“\\”,“,”,“|”,“/”。
-     * @return key
-     */
+    /** 键。最大长度36个unicode字符。 key不能为空，不能为空字符串。 不能包含下列字符：非打印字符ASCII(0-31)，“=”,“*”,“<”,“>”,“\\”,“,”,“|”,“/”。
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -49,20 +34,14 @@ public class CreateInstanceReqTags  {
         this.key = key;
     }
 
-    
-
     public CreateInstanceReqTags withValue(String value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 值。每个值最大长度43个unicode字符。  value不能为空，可以空字符串。  不能包含下列字符：非打印字符ASCII(0-31), “=”,“*”,“<”,“>”,“\\”,“,”,“|”,“/”。
-     * @return value
-     */
+    /** 值。每个值最大长度43个unicode字符。 value不能为空，可以空字符串。 不能包含下列字符：非打印字符ASCII(0-31), “=”,“*”,“<”,“>”,“\\”,“,”,“|”,“/”。
+     * 
+     * @return value */
     public String getValue() {
         return value;
     }
@@ -70,8 +49,6 @@ public class CreateInstanceReqTags  {
     public void setValue(String value) {
         this.value = value;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class CreateInstanceReqTags  {
             return false;
         }
         CreateInstanceReqTags createInstanceReqTags = (CreateInstanceReqTags) o;
-        return Objects.equals(this.key, createInstanceReqTags.key) &&
-            Objects.equals(this.value, createInstanceReqTags.value);
+        return Objects.equals(this.key, createInstanceReqTags.key)
+            && Objects.equals(this.value, createInstanceReqTags.value);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(key, value);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class CreateInstanceReqTags  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

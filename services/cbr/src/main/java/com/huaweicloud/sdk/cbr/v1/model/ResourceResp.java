@@ -1,75 +1,51 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.ResourceExtraInfo;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ResourceResp
- */
-public class ResourceResp  {
-
-
+/** ResourceResp */
+public class ResourceResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extra_info")
-    
+    @JsonProperty(value = "extra_info")
+
     private ResourceExtraInfo extraInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 保护状态
-     */
+
+    /** 保护状态 */
     public static final class ProtectStatusEnum {
 
-        
-        /**
-         * Enum AVAILABLE for value: "available"
-         */
+        /** Enum AVAILABLE for value: "available" */
         public static final ProtectStatusEnum AVAILABLE = new ProtectStatusEnum("available");
-        
-        /**
-         * Enum ERROR for value: "error"
-         */
+
+        /** Enum ERROR for value: "error" */
         public static final ProtectStatusEnum ERROR = new ProtectStatusEnum("error");
-        
-        /**
-         * Enum PROTECTING for value: "protecting"
-         */
+
+        /** Enum PROTECTING for value: "protecting" */
         public static final ProtectStatusEnum PROTECTING = new ProtectStatusEnum("protecting");
-        
-        /**
-         * Enum RESTORING for value: "restoring"
-         */
+
+        /** Enum RESTORING for value: "restoring" */
         public static final ProtectStatusEnum RESTORING = new ProtectStatusEnum("restoring");
-        
-        /**
-         * Enum REMOVING for value: "removing"
-         */
+
+        /** Enum REMOVING for value: "removing" */
         public static final ProtectStatusEnum REMOVING = new ProtectStatusEnum("removing");
-        
 
         private static final Map<String, ProtectStatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -101,7 +77,7 @@ public class ResourceResp  {
 
         @JsonCreator
         public static ProtectStatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtectStatusEnum result = STATIC_FIELDS.get(value);
@@ -112,7 +88,7 @@ public class ResourceResp  {
         }
 
         public static ProtectStatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtectStatusEnum result = STATIC_FIELDS.get(value);
@@ -136,34 +112,29 @@ public class ResourceResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protect_status")
-    
+    @JsonProperty(value = "protect_status")
+
     private ProtectStatusEnum protectStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_size")
-    
+    @JsonProperty(value = "backup_size")
+
     private Integer backupSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_count")
-    
+    @JsonProperty(value = "backup_count")
+
     private Integer backupCount;
 
     public ResourceResp withExtraInfo(ResourceExtraInfo extraInfo) {
@@ -172,19 +143,17 @@ public class ResourceResp  {
     }
 
     public ResourceResp withExtraInfo(Consumer<ResourceExtraInfo> extraInfoSetter) {
-        if(this.extraInfo == null ){
+        if (this.extraInfo == null) {
             this.extraInfo = new ResourceExtraInfo();
             extraInfoSetter.accept(this.extraInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get extraInfo
-     * @return extraInfo
-     */
+    /** Get extraInfo
+     * 
+     * @return extraInfo */
     public ResourceExtraInfo getExtraInfo() {
         return extraInfo;
     }
@@ -193,20 +162,14 @@ public class ResourceResp  {
         this.extraInfo = extraInfo;
     }
 
-    
-
     public ResourceResp withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 待备份资源id
-     * @return id
-     */
+    /** 待备份资源id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -215,20 +178,14 @@ public class ResourceResp  {
         this.id = id;
     }
 
-    
-
     public ResourceResp withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 待备份资源名称
-     * @return name
-     */
+    /** 待备份资源名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -237,20 +194,14 @@ public class ResourceResp  {
         this.name = name;
     }
 
-    
-
     public ResourceResp withProtectStatus(ProtectStatusEnum protectStatus) {
         this.protectStatus = protectStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 保护状态
-     * @return protectStatus
-     */
+    /** 保护状态
+     * 
+     * @return protectStatus */
     public ProtectStatusEnum getProtectStatus() {
         return protectStatus;
     }
@@ -259,20 +210,14 @@ public class ResourceResp  {
         this.protectStatus = protectStatus;
     }
 
-    
-
     public ResourceResp withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源已分配容量,单位为GB
-     * @return size
-     */
+    /** 资源已分配容量,单位为GB
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -281,20 +226,15 @@ public class ResourceResp  {
         this.size = size;
     }
 
-    
-
     public ResourceResp withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 待备份资源的类型, 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 裸金属服务器: OS::Ironic::BareMetalServer, 线下本地服务器: OS::Native::Server, 弹性文件系统: OS::Sfs::Turbo
-     * @return type
-     */
+    /** 待备份资源的类型, 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 裸金属服务器: OS::Ironic::BareMetalServer, 线下本地服务器:
+     * OS::Native::Server, 弹性文件系统: OS::Sfs::Turbo
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -303,20 +243,14 @@ public class ResourceResp  {
         this.type = type;
     }
 
-    
-
     public ResourceResp withBackupSize(Integer backupSize) {
         this.backupSize = backupSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 副本大小
-     * @return backupSize
-     */
+    /** 副本大小
+     * 
+     * @return backupSize */
     public Integer getBackupSize() {
         return backupSize;
     }
@@ -325,20 +259,14 @@ public class ResourceResp  {
         this.backupSize = backupSize;
     }
 
-    
-
     public ResourceResp withBackupCount(Integer backupCount) {
         this.backupCount = backupCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 副本数量
-     * @return backupCount
-     */
+    /** 副本数量
+     * 
+     * @return backupCount */
     public Integer getBackupCount() {
         return backupCount;
     }
@@ -346,8 +274,6 @@ public class ResourceResp  {
     public void setBackupCount(Integer backupCount) {
         this.backupCount = backupCount;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -358,19 +284,19 @@ public class ResourceResp  {
             return false;
         }
         ResourceResp resourceResp = (ResourceResp) o;
-        return Objects.equals(this.extraInfo, resourceResp.extraInfo) &&
-            Objects.equals(this.id, resourceResp.id) &&
-            Objects.equals(this.name, resourceResp.name) &&
-            Objects.equals(this.protectStatus, resourceResp.protectStatus) &&
-            Objects.equals(this.size, resourceResp.size) &&
-            Objects.equals(this.type, resourceResp.type) &&
-            Objects.equals(this.backupSize, resourceResp.backupSize) &&
-            Objects.equals(this.backupCount, resourceResp.backupCount);
+        return Objects.equals(this.extraInfo, resourceResp.extraInfo) && Objects.equals(this.id, resourceResp.id)
+            && Objects.equals(this.name, resourceResp.name)
+            && Objects.equals(this.protectStatus, resourceResp.protectStatus)
+            && Objects.equals(this.size, resourceResp.size) && Objects.equals(this.type, resourceResp.type)
+            && Objects.equals(this.backupSize, resourceResp.backupSize)
+            && Objects.equals(this.backupCount, resourceResp.backupCount);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(extraInfo, id, name, protectStatus, size, type, backupSize, backupCount);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -386,16 +312,13 @@ public class ResourceResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,52 +1,37 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class UpdateInstanceParamResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodeList")
-    
+    @JsonProperty(value = "nodeList")
+
     private String nodeList;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="needRestart")
-    
+    @JsonProperty(value = "needRestart")
+
     private Boolean needRestart;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobId")
-    
+    @JsonProperty(value = "jobId")
+
     private String jobId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="configId")
-    
+    @JsonProperty(value = "configId")
+
     private String configId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="configName")
-    
+    @JsonProperty(value = "configName")
+
     private String configName;
 
     public UpdateInstanceParamResponse withNodeList(String nodeList) {
@@ -54,13 +39,9 @@ public class UpdateInstanceParamResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 节点列表。
-     * @return nodeList
-     */
+    /** 节点列表。
+     * 
+     * @return nodeList */
     public String getNodeList() {
         return nodeList;
     }
@@ -69,20 +50,14 @@ public class UpdateInstanceParamResponse extends SdkResponse {
         this.nodeList = nodeList;
     }
 
-    
-
     public UpdateInstanceParamResponse withNeedRestart(Boolean needRestart) {
         this.needRestart = needRestart;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否需要重启实例。
-     * @return needRestart
-     */
+    /** 是否需要重启实例。
+     * 
+     * @return needRestart */
     public Boolean getNeedRestart() {
         return needRestart;
     }
@@ -91,20 +66,14 @@ public class UpdateInstanceParamResponse extends SdkResponse {
         this.needRestart = needRestart;
     }
 
-    
-
     public UpdateInstanceParamResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务id。
-     * @return jobId
-     */
+    /** 任务id。
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -113,20 +82,14 @@ public class UpdateInstanceParamResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
-    
-
     public UpdateInstanceParamResponse withConfigId(String configId) {
         this.configId = configId;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数组id。
-     * @return configId
-     */
+    /** 参数组id。
+     * 
+     * @return configId */
     public String getConfigId() {
         return configId;
     }
@@ -135,20 +98,14 @@ public class UpdateInstanceParamResponse extends SdkResponse {
         this.configId = configId;
     }
 
-    
-
     public UpdateInstanceParamResponse withConfigName(String configName) {
         this.configName = configName;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数组名称。
-     * @return configName
-     */
+    /** 参数组名称。
+     * 
+     * @return configName */
     public String getConfigName() {
         return configName;
     }
@@ -156,8 +113,6 @@ public class UpdateInstanceParamResponse extends SdkResponse {
     public void setConfigName(String configName) {
         this.configName = configName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -168,16 +123,18 @@ public class UpdateInstanceParamResponse extends SdkResponse {
             return false;
         }
         UpdateInstanceParamResponse updateInstanceParamResponse = (UpdateInstanceParamResponse) o;
-        return Objects.equals(this.nodeList, updateInstanceParamResponse.nodeList) &&
-            Objects.equals(this.needRestart, updateInstanceParamResponse.needRestart) &&
-            Objects.equals(this.jobId, updateInstanceParamResponse.jobId) &&
-            Objects.equals(this.configId, updateInstanceParamResponse.configId) &&
-            Objects.equals(this.configName, updateInstanceParamResponse.configName);
+        return Objects.equals(this.nodeList, updateInstanceParamResponse.nodeList)
+            && Objects.equals(this.needRestart, updateInstanceParamResponse.needRestart)
+            && Objects.equals(this.jobId, updateInstanceParamResponse.jobId)
+            && Objects.equals(this.configId, updateInstanceParamResponse.configId)
+            && Objects.equals(this.configName, updateInstanceParamResponse.configName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nodeList, needRestart, jobId, configId, configName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -190,16 +147,13 @@ public class UpdateInstanceParamResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

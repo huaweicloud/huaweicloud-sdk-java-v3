@@ -1,55 +1,36 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 创建安全组规则参数
- */
-public class CreateSecurityGroupRuleOption  {
-
-
+/** 创建安全组规则参数 */
+public class CreateSecurityGroupRuleOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_id")
-    
+    @JsonProperty(value = "security_group_id")
+
     private String securityGroupId;
-    /**
-     * 出入控制方向。  取值范围：  - egress：出方向  - ingress：入方向
-     */
+
+    /** 出入控制方向。 取值范围： - egress：出方向 - ingress：入方向 */
     public static final class DirectionEnum {
 
-        
-        /**
-         * Enum INGRESS for value: "ingress"
-         */
+        /** Enum INGRESS for value: "ingress" */
         public static final DirectionEnum INGRESS = new DirectionEnum("ingress");
-        
-        /**
-         * Enum EGRESS for value: "egress"
-         */
+
+        /** Enum EGRESS for value: "egress" */
         public static final DirectionEnum EGRESS = new DirectionEnum("egress");
-        
 
         private static final Map<String, DirectionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -78,7 +59,7 @@ public class CreateSecurityGroupRuleOption  {
 
         @JsonCreator
         public static DirectionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DirectionEnum result = STATIC_FIELDS.get(value);
@@ -89,7 +70,7 @@ public class CreateSecurityGroupRuleOption  {
         }
 
         public static DirectionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DirectionEnum result = STATIC_FIELDS.get(value);
@@ -113,22 +94,16 @@ public class CreateSecurityGroupRuleOption  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="direction")
-    
+    @JsonProperty(value = "direction")
+
     private DirectionEnum direction;
-    /**
-     * IP协议类型。  取值范围：IPv4[,IPv6](tag:hide)
-     */
+
+    /** IP协议类型。 取值范围：IPv4[,IPv6](tag:hide) */
     public static final class EthertypeEnum {
 
-        
-        /**
-         * Enum IPV4 for value: "IPv4"
-         */
+        /** Enum IPV4 for value: "IPv4" */
         public static final EthertypeEnum IPV4 = new EthertypeEnum("IPv4");
-        
 
         private static final Map<String, EthertypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -156,7 +131,7 @@ public class CreateSecurityGroupRuleOption  {
 
         @JsonCreator
         public static EthertypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             EthertypeEnum result = STATIC_FIELDS.get(value);
@@ -167,7 +142,7 @@ public class CreateSecurityGroupRuleOption  {
         }
 
         public static EthertypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             EthertypeEnum result = STATIC_FIELDS.get(value);
@@ -191,40 +166,34 @@ public class CreateSecurityGroupRuleOption  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ethertype")
-    
+    @JsonProperty(value = "ethertype")
+
     private EthertypeEnum ethertype;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
+
     private String protocol;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port_range_min")
-    
+    @JsonProperty(value = "port_range_min")
+
     private Integer portRangeMin;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port_range_max")
-    
+    @JsonProperty(value = "port_range_max")
+
     private Integer portRangeMax;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remote_group_id")
-    
+    @JsonProperty(value = "remote_group_id")
+
     private String remoteGroupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remote_ip_prefix")
-    
+    @JsonProperty(value = "remote_ip_prefix")
+
     private String remoteIpPrefix;
 
     public CreateSecurityGroupRuleOption withDescription(String description) {
@@ -232,13 +201,9 @@ public class CreateSecurityGroupRuleOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组规则描述信息。
-     * @return description
-     */
+    /** 安全组规则描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -247,20 +212,14 @@ public class CreateSecurityGroupRuleOption  {
         this.description = description;
     }
 
-    
-
     public CreateSecurityGroupRuleOption withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组ID。
-     * @return securityGroupId
-     */
+    /** 安全组ID。
+     * 
+     * @return securityGroupId */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -269,20 +228,14 @@ public class CreateSecurityGroupRuleOption  {
         this.securityGroupId = securityGroupId;
     }
 
-    
-
     public CreateSecurityGroupRuleOption withDirection(DirectionEnum direction) {
         this.direction = direction;
         return this;
     }
 
-    
-
-
-    /**
-     * 出入控制方向。  取值范围：  - egress：出方向  - ingress：入方向
-     * @return direction
-     */
+    /** 出入控制方向。 取值范围： - egress：出方向 - ingress：入方向
+     * 
+     * @return direction */
     public DirectionEnum getDirection() {
         return direction;
     }
@@ -291,20 +244,14 @@ public class CreateSecurityGroupRuleOption  {
         this.direction = direction;
     }
 
-    
-
     public CreateSecurityGroupRuleOption withEthertype(EthertypeEnum ethertype) {
         this.ethertype = ethertype;
         return this;
     }
 
-    
-
-
-    /**
-     * IP协议类型。  取值范围：IPv4[,IPv6](tag:hide)
-     * @return ethertype
-     */
+    /** IP协议类型。 取值范围：IPv4[,IPv6](tag:hide)
+     * 
+     * @return ethertype */
     public EthertypeEnum getEthertype() {
         return ethertype;
     }
@@ -313,20 +260,14 @@ public class CreateSecurityGroupRuleOption  {
         this.ethertype = ethertype;
     }
 
-    
-
     public CreateSecurityGroupRuleOption withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
     }
 
-    
-
-
-    /**
-     * 协议类型。  取值范围：icmp、tcp、udp等  约束：为空表示支持所有协议
-     * @return protocol
-     */
+    /** 协议类型。 取值范围：icmp、tcp、udp等 约束：为空表示支持所有协议
+     * 
+     * @return protocol */
     public String getProtocol() {
         return protocol;
     }
@@ -335,20 +276,14 @@ public class CreateSecurityGroupRuleOption  {
         this.protocol = protocol;
     }
 
-    
-
     public CreateSecurityGroupRuleOption withPortRangeMin(Integer portRangeMin) {
         this.portRangeMin = portRangeMin;
         return this;
     }
 
-    
-
-
-    /**
-     * 起始端口值。  取值范围：1~65535  约束：取值不能大于port_range_max的值，为空表示所有端口。 
-     * @return portRangeMin
-     */
+    /** 起始端口值。 取值范围：1~65535 约束：取值不能大于port_range_max的值，为空表示所有端口。
+     * 
+     * @return portRangeMin */
     public Integer getPortRangeMin() {
         return portRangeMin;
     }
@@ -357,20 +292,14 @@ public class CreateSecurityGroupRuleOption  {
         this.portRangeMin = portRangeMin;
     }
 
-    
-
     public CreateSecurityGroupRuleOption withPortRangeMax(Integer portRangeMax) {
         this.portRangeMax = portRangeMax;
         return this;
     }
 
-    
-
-
-    /**
-     * 结束端口值。  取值范围：1~65535  约束：取值不能小于port_range_min的值，为空表示所有端口。 
-     * @return portRangeMax
-     */
+    /** 结束端口值。 取值范围：1~65535 约束：取值不能小于port_range_min的值，为空表示所有端口。
+     * 
+     * @return portRangeMax */
     public Integer getPortRangeMax() {
         return portRangeMax;
     }
@@ -379,20 +308,14 @@ public class CreateSecurityGroupRuleOption  {
         this.portRangeMax = portRangeMax;
     }
 
-    
-
     public CreateSecurityGroupRuleOption withRemoteGroupId(String remoteGroupId) {
         this.remoteGroupId = remoteGroupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 对端安全组id。  约束：和remote_ip_prefix互斥 
-     * @return remoteGroupId
-     */
+    /** 对端安全组id。 约束：和remote_ip_prefix互斥
+     * 
+     * @return remoteGroupId */
     public String getRemoteGroupId() {
         return remoteGroupId;
     }
@@ -401,20 +324,14 @@ public class CreateSecurityGroupRuleOption  {
         this.remoteGroupId = remoteGroupId;
     }
 
-    
-
     public CreateSecurityGroupRuleOption withRemoteIpPrefix(String remoteIpPrefix) {
         this.remoteIpPrefix = remoteIpPrefix;
         return this;
     }
 
-    
-
-
-    /**
-     * 远端IP地址，当direction是egress时为虚拟机访问端的地址，当direction是ingress时为访问虚拟机的地址。  取值范围：IP地址，或者cidr格式  约束：和remote_group_id互斥
-     * @return remoteIpPrefix
-     */
+    /** 远端IP地址，当direction是egress时为虚拟机访问端的地址，当direction是ingress时为访问虚拟机的地址。 取值范围：IP地址，或者cidr格式 约束：和remote_group_id互斥
+     * 
+     * @return remoteIpPrefix */
     public String getRemoteIpPrefix() {
         return remoteIpPrefix;
     }
@@ -422,8 +339,6 @@ public class CreateSecurityGroupRuleOption  {
     public void setRemoteIpPrefix(String remoteIpPrefix) {
         this.remoteIpPrefix = remoteIpPrefix;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -434,20 +349,30 @@ public class CreateSecurityGroupRuleOption  {
             return false;
         }
         CreateSecurityGroupRuleOption createSecurityGroupRuleOption = (CreateSecurityGroupRuleOption) o;
-        return Objects.equals(this.description, createSecurityGroupRuleOption.description) &&
-            Objects.equals(this.securityGroupId, createSecurityGroupRuleOption.securityGroupId) &&
-            Objects.equals(this.direction, createSecurityGroupRuleOption.direction) &&
-            Objects.equals(this.ethertype, createSecurityGroupRuleOption.ethertype) &&
-            Objects.equals(this.protocol, createSecurityGroupRuleOption.protocol) &&
-            Objects.equals(this.portRangeMin, createSecurityGroupRuleOption.portRangeMin) &&
-            Objects.equals(this.portRangeMax, createSecurityGroupRuleOption.portRangeMax) &&
-            Objects.equals(this.remoteGroupId, createSecurityGroupRuleOption.remoteGroupId) &&
-            Objects.equals(this.remoteIpPrefix, createSecurityGroupRuleOption.remoteIpPrefix);
+        return Objects.equals(this.description, createSecurityGroupRuleOption.description)
+            && Objects.equals(this.securityGroupId, createSecurityGroupRuleOption.securityGroupId)
+            && Objects.equals(this.direction, createSecurityGroupRuleOption.direction)
+            && Objects.equals(this.ethertype, createSecurityGroupRuleOption.ethertype)
+            && Objects.equals(this.protocol, createSecurityGroupRuleOption.protocol)
+            && Objects.equals(this.portRangeMin, createSecurityGroupRuleOption.portRangeMin)
+            && Objects.equals(this.portRangeMax, createSecurityGroupRuleOption.portRangeMax)
+            && Objects.equals(this.remoteGroupId, createSecurityGroupRuleOption.remoteGroupId)
+            && Objects.equals(this.remoteIpPrefix, createSecurityGroupRuleOption.remoteIpPrefix);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(description, securityGroupId, direction, ethertype, protocol, portRangeMin, portRangeMax, remoteGroupId, remoteIpPrefix);
+        return Objects.hash(description,
+            securityGroupId,
+            direction,
+            ethertype,
+            protocol,
+            portRangeMin,
+            portRangeMax,
+            remoteGroupId,
+            remoteIpPrefix);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -464,16 +389,13 @@ public class CreateSecurityGroupRuleOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.ResourceTag;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * This is a auto create Body Object
- */
-public class CreateListenerTagsRequestBody  {
-
-
+/** This is a auto create Body Object */
+public class CreateListenerTagsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag")
-    
+    @JsonProperty(value = "tag")
+
     private ResourceTag tag;
 
     public CreateListenerTagsRequestBody withTag(ResourceTag tag) {
@@ -30,19 +20,17 @@ public class CreateListenerTagsRequestBody  {
     }
 
     public CreateListenerTagsRequestBody withTag(Consumer<ResourceTag> tagSetter) {
-        if(this.tag == null ){
+        if (this.tag == null) {
             this.tag = new ResourceTag();
             tagSetter.accept(this.tag);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get tag
-     * @return tag
-     */
+    /** Get tag
+     * 
+     * @return tag */
     public ResourceTag getTag() {
         return tag;
     }
@@ -50,8 +38,6 @@ public class CreateListenerTagsRequestBody  {
     public void setTag(ResourceTag tag) {
         this.tag = tag;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class CreateListenerTagsRequestBody  {
         CreateListenerTagsRequestBody createListenerTagsRequestBody = (CreateListenerTagsRequestBody) o;
         return Objects.equals(this.tag, createListenerTagsRequestBody.tag);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(tag);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class CreateListenerTagsRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

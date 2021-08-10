@@ -1,45 +1,31 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.ResourceType;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 部署资源。
- */
-public class ReferResourceCreate  {
-
-
+/** 部署资源。 */
+public class ReferResourceCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private ResourceType type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="refer_alias")
-    
+    @JsonProperty(value = "refer_alias")
+
     private String referAlias;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parameters")
-    
+    @JsonProperty(value = "parameters")
+
     private Object parameters;
 
     public ReferResourceCreate withId(String id) {
@@ -47,13 +33,9 @@ public class ReferResourceCreate  {
         return this;
     }
 
-    
-
-
-    /**
-     * 资源ID。
-     * @return id
-     */
+    /** 资源ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -62,20 +44,14 @@ public class ReferResourceCreate  {
         this.id = id;
     }
 
-    
-
     public ReferResourceCreate withType(ResourceType type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * Get type
-     * @return type
-     */
+    /** Get type
+     * 
+     * @return type */
     public ResourceType getType() {
         return type;
     }
@@ -84,20 +60,15 @@ public class ReferResourceCreate  {
         this.type = type;
     }
 
-    
-
     public ReferResourceCreate withReferAlias(String referAlias) {
         this.referAlias = referAlias;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用别名，dcs时才提供，支持“distributed_session”、“distributed_cache”、“distributed_session, distributed_cache”，  默认值是“distributed_session, distributed_cache”。 
-     * @return referAlias
-     */
+    /** 应用别名，dcs时才提供，支持“distributed_session”、“distributed_cache”、“distributed_session, distributed_cache”，
+     * 默认值是“distributed_session, distributed_cache”。
+     * 
+     * @return referAlias */
     public String getReferAlias() {
         return referAlias;
     }
@@ -106,20 +77,14 @@ public class ReferResourceCreate  {
         this.referAlias = referAlias;
     }
 
-    
-
     public ReferResourceCreate withParameters(Object parameters) {
         this.parameters = parameters;
         return this;
     }
 
-    
-
-
-    /**
-     * 引用资源参数。
-     * @return parameters
-     */
+    /** 引用资源参数。
+     * 
+     * @return parameters */
     public Object getParameters() {
         return parameters;
     }
@@ -127,8 +92,6 @@ public class ReferResourceCreate  {
     public void setParameters(Object parameters) {
         this.parameters = parameters;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -139,15 +102,16 @@ public class ReferResourceCreate  {
             return false;
         }
         ReferResourceCreate referResourceCreate = (ReferResourceCreate) o;
-        return Objects.equals(this.id, referResourceCreate.id) &&
-            Objects.equals(this.type, referResourceCreate.type) &&
-            Objects.equals(this.referAlias, referResourceCreate.referAlias) &&
-            Objects.equals(this.parameters, referResourceCreate.parameters);
+        return Objects.equals(this.id, referResourceCreate.id) && Objects.equals(this.type, referResourceCreate.type)
+            && Objects.equals(this.referAlias, referResourceCreate.referAlias)
+            && Objects.equals(this.parameters, referResourceCreate.parameters);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, type, referAlias, parameters);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -159,16 +123,13 @@ public class ReferResourceCreate  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

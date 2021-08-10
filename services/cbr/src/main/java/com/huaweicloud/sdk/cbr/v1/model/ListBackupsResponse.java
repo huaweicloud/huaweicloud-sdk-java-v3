@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.BackupResp;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListBackupsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backups")
-    
+    @JsonProperty(value = "backups")
+
     private List<BackupResp> backups = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
+
     private Integer count;
 
     public ListBackupsResponse withBackups(List<BackupResp> backups) {
@@ -39,9 +27,8 @@ public class ListBackupsResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListBackupsResponse addBackupsItem(BackupResp backupsItem) {
-        if(this.backups == null) {
+        if (this.backups == null) {
             this.backups = new ArrayList<>();
         }
         this.backups.add(backupsItem);
@@ -49,17 +36,16 @@ public class ListBackupsResponse extends SdkResponse {
     }
 
     public ListBackupsResponse withBackups(Consumer<List<BackupResp>> backupsSetter) {
-        if(this.backups == null) {
+        if (this.backups == null) {
             this.backups = new ArrayList<>();
         }
         backupsSetter.accept(this.backups);
         return this;
     }
 
-    /**
-     * 备份列表
-     * @return backups
-     */
+    /** 备份列表
+     * 
+     * @return backups */
     public List<BackupResp> getBackups() {
         return backups;
     }
@@ -68,20 +54,14 @@ public class ListBackupsResponse extends SdkResponse {
         this.backups = backups;
     }
 
-    
-
     public ListBackupsResponse withCount(Integer count) {
         this.count = count;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份个数
-     * @return count
-     */
+    /** 备份个数
+     * 
+     * @return count */
     public Integer getCount() {
         return count;
     }
@@ -89,8 +69,6 @@ public class ListBackupsResponse extends SdkResponse {
     public void setCount(Integer count) {
         this.count = count;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ListBackupsResponse extends SdkResponse {
             return false;
         }
         ListBackupsResponse listBackupsResponse = (ListBackupsResponse) o;
-        return Objects.equals(this.backups, listBackupsResponse.backups) &&
-            Objects.equals(this.count, listBackupsResponse.count);
+        return Objects.equals(this.backups, listBackupsResponse.backups)
+            && Objects.equals(this.count, listBackupsResponse.count);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(backups, count);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ListBackupsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

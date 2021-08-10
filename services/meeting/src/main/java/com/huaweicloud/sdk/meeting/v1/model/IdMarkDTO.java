@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * IdMarkDTO
- */
-public class IdMarkDTO  {
-
-
+/** IdMarkDTO */
+public class IdMarkDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mark")
-    
+    @JsonProperty(value = "mark")
+
     private String mark;
 
     public IdMarkDTO withId(String id) {
@@ -34,13 +23,9 @@ public class IdMarkDTO  {
         return this;
     }
 
-    
-
-
-    /**
-     * 部门编码。
-     * @return id
-     */
+    /** 唯一标识。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -49,20 +34,14 @@ public class IdMarkDTO  {
         this.id = id;
     }
 
-    
-
     public IdMarkDTO withMark(String mark) {
         this.mark = mark;
         return this;
     }
 
-    
-
-
-    /**
-     * id对应的回显描述，一般为名称等。
-     * @return mark
-     */
+    /** id对应的回显描述，一般为名称等。
+     * 
+     * @return mark */
     public String getMark() {
         return mark;
     }
@@ -70,8 +49,6 @@ public class IdMarkDTO  {
     public void setMark(String mark) {
         this.mark = mark;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,14 @@ public class IdMarkDTO  {
             return false;
         }
         IdMarkDTO idMarkDTO = (IdMarkDTO) o;
-        return Objects.equals(this.id, idMarkDTO.id) &&
-            Objects.equals(this.mark, idMarkDTO.mark);
+        return Objects.equals(this.id, idMarkDTO.id) && Objects.equals(this.mark, idMarkDTO.mark);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, mark);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +76,13 @@ public class IdMarkDTO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

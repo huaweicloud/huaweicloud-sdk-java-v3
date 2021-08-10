@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.NovaKeypair;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class NovaCreateKeypairResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="keypair")
-    
+    @JsonProperty(value = "keypair")
+
     private NovaKeypair keypair;
 
     public NovaCreateKeypairResponse withKeypair(NovaKeypair keypair) {
@@ -32,19 +21,17 @@ public class NovaCreateKeypairResponse extends SdkResponse {
     }
 
     public NovaCreateKeypairResponse withKeypair(Consumer<NovaKeypair> keypairSetter) {
-        if(this.keypair == null ){
+        if (this.keypair == null) {
             this.keypair = new NovaKeypair();
             keypairSetter.accept(this.keypair);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get keypair
-     * @return keypair
-     */
+    /** Get keypair
+     * 
+     * @return keypair */
     public NovaKeypair getKeypair() {
         return keypair;
     }
@@ -52,8 +39,6 @@ public class NovaCreateKeypairResponse extends SdkResponse {
     public void setKeypair(NovaKeypair keypair) {
         this.keypair = keypair;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class NovaCreateKeypairResponse extends SdkResponse {
         NovaCreateKeypairResponse novaCreateKeypairResponse = (NovaCreateKeypairResponse) o;
         return Objects.equals(this.keypair, novaCreateKeypairResponse.keypair);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(keypair);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class NovaCreateKeypairResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

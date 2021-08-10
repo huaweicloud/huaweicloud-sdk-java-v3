@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowTakeOverAssetDetailsRequest  {
-
-
+/** Request Object */
+public class ShowTakeOverAssetDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Authorization")
-    
+    @JsonProperty(value = "Authorization")
+
     private String authorization;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Sdk-Date")
-    
+    @JsonProperty(value = "X-Sdk-Date")
+
     private String xSdkDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_bucket")
-    
+    @JsonProperty(value = "source_bucket")
+
     private String sourceBucket;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_object")
-    
+    @JsonProperty(value = "source_object")
+
     private String sourceObject;
 
     public ShowTakeOverAssetDetailsRequest withAuthorization(String authorization) {
@@ -46,13 +33,9 @@ public class ShowTakeOverAssetDetailsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
+    /** 使用AK/SK方式认证时必选，携带的鉴权信息。
+     * 
+     * @return authorization */
     public String getAuthorization() {
         return authorization;
     }
@@ -61,22 +44,16 @@ public class ShowTakeOverAssetDetailsRequest  {
         this.authorization = authorization;
     }
 
-    
-
     public ShowTakeOverAssetDetailsRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 使用AK/SK方式认证时必选，请求的发生时间。 
-     * @return xSdkDate
-     */
+    /** 使用AK/SK方式认证时必选，请求的发生时间。
+     * 
+     * @return xSdkDate */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Sdk-Date")
+    @JsonProperty(value = "X-Sdk-Date")
     public String getXSdkDate() {
         return xSdkDate;
     }
@@ -85,20 +62,14 @@ public class ShowTakeOverAssetDetailsRequest  {
         this.xSdkDate = xSdkDate;
     }
 
-    
-
     public ShowTakeOverAssetDetailsRequest withSourceBucket(String sourceBucket) {
         this.sourceBucket = sourceBucket;
         return this;
     }
 
-    
-
-
-    /**
-     * 媒资原始输入存放的桶<br/> 
-     * @return sourceBucket
-     */
+    /** 媒资原始输入存放的桶。
+     * 
+     * @return sourceBucket */
     public String getSourceBucket() {
         return sourceBucket;
     }
@@ -107,20 +78,14 @@ public class ShowTakeOverAssetDetailsRequest  {
         this.sourceBucket = sourceBucket;
     }
 
-    
-
     public ShowTakeOverAssetDetailsRequest withSourceObject(String sourceObject) {
         this.sourceObject = sourceObject;
         return this;
     }
 
-    
-
-
-    /**
-     * 媒资原始输入的objectKey。<br/> 
-     * @return sourceObject
-     */
+    /** 媒资原始输入的objectKey。
+     * 
+     * @return sourceObject */
     public String getSourceObject() {
         return sourceObject;
     }
@@ -128,8 +93,6 @@ public class ShowTakeOverAssetDetailsRequest  {
     public void setSourceObject(String sourceObject) {
         this.sourceObject = sourceObject;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -140,15 +103,17 @@ public class ShowTakeOverAssetDetailsRequest  {
             return false;
         }
         ShowTakeOverAssetDetailsRequest showTakeOverAssetDetailsRequest = (ShowTakeOverAssetDetailsRequest) o;
-        return Objects.equals(this.authorization, showTakeOverAssetDetailsRequest.authorization) &&
-            Objects.equals(this.xSdkDate, showTakeOverAssetDetailsRequest.xSdkDate) &&
-            Objects.equals(this.sourceBucket, showTakeOverAssetDetailsRequest.sourceBucket) &&
-            Objects.equals(this.sourceObject, showTakeOverAssetDetailsRequest.sourceObject);
+        return Objects.equals(this.authorization, showTakeOverAssetDetailsRequest.authorization)
+            && Objects.equals(this.xSdkDate, showTakeOverAssetDetailsRequest.xSdkDate)
+            && Objects.equals(this.sourceBucket, showTakeOverAssetDetailsRequest.sourceBucket)
+            && Objects.equals(this.sourceObject, showTakeOverAssetDetailsRequest.sourceObject);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(authorization, xSdkDate, sourceBucket, sourceObject);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -160,16 +125,13 @@ public class ShowTakeOverAssetDetailsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

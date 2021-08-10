@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.live.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.time.LocalDate;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * PlanRecordTime
- */
-public class PlanRecordTime  {
-
-
+/** PlanRecordTime */
+public class PlanRecordTime {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private LocalDate startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private LocalDate endTime;
 
     public PlanRecordTime withStartTime(LocalDate startTime) {
@@ -35,13 +24,9 @@ public class PlanRecordTime  {
         return this;
     }
 
-    
-
-
-    /**
-     * 录制开始时间，格式：yyyy-mm-ddThh:mm:ssZ，UTC时间。
-     * @return startTime
-     */
+    /** 录制开始时间，格式：yyyy-mm-ddThh:mm:ssZ，UTC时间。
+     * 
+     * @return startTime */
     public LocalDate getStartTime() {
         return startTime;
     }
@@ -50,20 +35,14 @@ public class PlanRecordTime  {
         this.startTime = startTime;
     }
 
-    
-
     public PlanRecordTime withEndTime(LocalDate endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 录制结束时间，格式：yyyy-mm-ddThh:mm:ssZ，UTC时间。如果填写，填写的时间必须晚于当前时间。如果不填写，则在计划录制触发后不停止。
-     * @return endTime
-     */
+    /** 录制结束时间，格式：yyyy-mm-ddThh:mm:ssZ，UTC时间。如果填写，填写的时间必须晚于当前时间。如果不填写，则在计划录制触发后不停止。
+     * 
+     * @return endTime */
     public LocalDate getEndTime() {
         return endTime;
     }
@@ -71,8 +50,6 @@ public class PlanRecordTime  {
     public void setEndTime(LocalDate endTime) {
         this.endTime = endTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -83,13 +60,15 @@ public class PlanRecordTime  {
             return false;
         }
         PlanRecordTime planRecordTime = (PlanRecordTime) o;
-        return Objects.equals(this.startTime, planRecordTime.startTime) &&
-            Objects.equals(this.endTime, planRecordTime.endTime);
+        return Objects.equals(this.startTime, planRecordTime.startTime)
+            && Objects.equals(this.endTime, planRecordTime.endTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(startTime, endTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -99,16 +78,13 @@ public class PlanRecordTime  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

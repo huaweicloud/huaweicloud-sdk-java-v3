@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cdn.v1.model.RefreshTaskRequest;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateRefreshTasksRequest  {
-
-
+/** Request Object */
+public class CreateRefreshTasksRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private RefreshTaskRequest body;
 
     public CreateRefreshTasksRequest withEnterpriseProjectId(String enterpriseProjectId) {
@@ -35,13 +24,9 @@ public class CreateRefreshTasksRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 当用户开启企业项目功能时，该参数生效，表示资源所属企业项目，不传表示默认项目。
-     * @return enterpriseProjectId
-     */
+    /** 当用户开启企业项目功能时，该参数生效，表示资源所属企业项目，不传表示默认项目。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -50,27 +35,23 @@ public class CreateRefreshTasksRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public CreateRefreshTasksRequest withBody(RefreshTaskRequest body) {
         this.body = body;
         return this;
     }
 
     public CreateRefreshTasksRequest withBody(Consumer<RefreshTaskRequest> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new RefreshTaskRequest();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public RefreshTaskRequest getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class CreateRefreshTasksRequest  {
     public void setBody(RefreshTaskRequest body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class CreateRefreshTasksRequest  {
             return false;
         }
         CreateRefreshTasksRequest createRefreshTasksRequest = (CreateRefreshTasksRequest) o;
-        return Objects.equals(this.enterpriseProjectId, createRefreshTasksRequest.enterpriseProjectId) &&
-            Objects.equals(this.body, createRefreshTasksRequest.body);
+        return Objects.equals(this.enterpriseProjectId, createRefreshTasksRequest.enterpriseProjectId)
+            && Objects.equals(this.body, createRefreshTasksRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(enterpriseProjectId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class CreateRefreshTasksRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

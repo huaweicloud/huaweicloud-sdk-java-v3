@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 数据库信息。
- */
-public class DatabaseForCreation  {
-
-
+/** 数据库信息。 */
+public class DatabaseForCreation {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="character_set")
-    
+    @JsonProperty(value = "character_set")
+
     private String characterSet;
 
     public DatabaseForCreation withName(String name) {
@@ -34,13 +23,9 @@ public class DatabaseForCreation  {
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库名称。 数据库名称长度可在1～64个字符之间，由字母、数字、中划线、下划线或$组成，$累计总长度小于等于10个字符，（MySQL 8.0不可包含$）。
-     * @return name
-     */
+    /** 数据库名称。 数据库名称长度可在1～64个字符之间，由字母、数字、中划线、下划线或$组成，$累计总长度小于等于10个字符，（MySQL 8.0不可包含$）。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -49,20 +34,14 @@ public class DatabaseForCreation  {
         this.name = name;
     }
 
-    
-
     public DatabaseForCreation withCharacterSet(String characterSet) {
         this.characterSet = characterSet;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库使用的字符集，例如utf8、gbk、ascii等MySQL支持的字符集。
-     * @return characterSet
-     */
+    /** 数据库使用的字符集，例如utf8、gbk、ascii等MySQL支持的字符集。
+     * 
+     * @return characterSet */
     public String getCharacterSet() {
         return characterSet;
     }
@@ -70,8 +49,6 @@ public class DatabaseForCreation  {
     public void setCharacterSet(String characterSet) {
         this.characterSet = characterSet;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class DatabaseForCreation  {
             return false;
         }
         DatabaseForCreation databaseForCreation = (DatabaseForCreation) o;
-        return Objects.equals(this.name, databaseForCreation.name) &&
-            Objects.equals(this.characterSet, databaseForCreation.characterSet);
+        return Objects.equals(this.name, databaseForCreation.name)
+            && Objects.equals(this.characterSet, databaseForCreation.characterSet);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, characterSet);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class DatabaseForCreation  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

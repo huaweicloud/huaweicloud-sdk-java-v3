@@ -21,9 +21,7 @@
 
 package com.huaweicloud.sdk.core.exchange;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public class ApiTimer {
 
     private long durationMs;

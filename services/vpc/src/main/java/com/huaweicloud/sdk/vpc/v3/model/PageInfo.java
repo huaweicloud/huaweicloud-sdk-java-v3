@@ -1,38 +1,28 @@
 package com.huaweicloud.sdk.vpc.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class PageInfo  {
-
-
+public class PageInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="previous_marker")
-    
+    @JsonProperty(value = "previous_marker")
+
     private String previousMarker;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="current_count")
-    
+    @JsonProperty(value = "current_count")
+
     private Integer currentCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="next_marker")
-    
+    @JsonProperty(value = "next_marker")
+
     private String nextMarker;
 
     public PageInfo withPreviousMarker(String previousMarker) {
@@ -40,13 +30,9 @@ public class PageInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 当前页第一条记录
-     * @return previousMarker
-     */
+    /** 当前页第一条记录
+     * 
+     * @return previousMarker */
     public String getPreviousMarker() {
         return previousMarker;
     }
@@ -55,20 +41,14 @@ public class PageInfo  {
         this.previousMarker = previousMarker;
     }
 
-    
-
     public PageInfo withCurrentCount(Integer currentCount) {
         this.currentCount = currentCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前页总数
-     * @return currentCount
-     */
+    /** 当前页总数
+     * 
+     * @return currentCount */
     public Integer getCurrentCount() {
         return currentCount;
     }
@@ -77,20 +57,14 @@ public class PageInfo  {
         this.currentCount = currentCount;
     }
 
-    
-
     public PageInfo withNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前页最后一条记录，最后一页时无next_marker字段
-     * @return nextMarker
-     */
+    /** 当前页最后一条记录，最后一页时无next_marker字段
+     * 
+     * @return nextMarker */
     public String getNextMarker() {
         return nextMarker;
     }
@@ -98,8 +72,6 @@ public class PageInfo  {
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +82,16 @@ public class PageInfo  {
             return false;
         }
         PageInfo pageInfo = (PageInfo) o;
-        return Objects.equals(this.previousMarker, pageInfo.previousMarker) &&
-            Objects.equals(this.currentCount, pageInfo.currentCount) &&
-            Objects.equals(this.nextMarker, pageInfo.nextMarker);
+        return Objects.equals(this.previousMarker, pageInfo.previousMarker)
+            && Objects.equals(this.currentCount, pageInfo.currentCount)
+            && Objects.equals(this.nextMarker, pageInfo.nextMarker);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(previousMarker, currentCount, nextMarker);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +102,13 @@ public class PageInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * VodSampleData
- */
-public class VodSampleData  {
-
-
+/** VodSampleData */
+public class VodSampleData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="storage")
-    
+    @JsonProperty(value = "storage")
+
     private Float storage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="transcode")
-    
+    @JsonProperty(value = "transcode")
+
     private Long transcode;
 
     public VodSampleData withStorage(Float storage) {
@@ -34,13 +23,9 @@ public class VodSampleData  {
         return this;
     }
 
-    
-
-
-    /**
-     * 存储空间。  单位：GB。
-     * @return storage
-     */
+    /** 存储空间。 单位：GB。
+     * 
+     * @return storage */
     public Float getStorage() {
         return storage;
     }
@@ -49,20 +34,14 @@ public class VodSampleData  {
         this.storage = storage;
     }
 
-    
-
     public VodSampleData withTranscode(Long transcode) {
         this.transcode = transcode;
         return this;
     }
 
-    
-
-
-    /**
-     * 转码时长。  单位：秒。
-     * @return transcode
-     */
+    /** 转码时长。 单位：秒。
+     * 
+     * @return transcode */
     public Long getTranscode() {
         return transcode;
     }
@@ -70,8 +49,6 @@ public class VodSampleData  {
     public void setTranscode(Long transcode) {
         this.transcode = transcode;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class VodSampleData  {
             return false;
         }
         VodSampleData vodSampleData = (VodSampleData) o;
-        return Objects.equals(this.storage, vodSampleData.storage) &&
-            Objects.equals(this.transcode, vodSampleData.transcode);
+        return Objects.equals(this.storage, vodSampleData.storage)
+            && Objects.equals(this.transcode, vodSampleData.transcode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(storage, transcode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class VodSampleData  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

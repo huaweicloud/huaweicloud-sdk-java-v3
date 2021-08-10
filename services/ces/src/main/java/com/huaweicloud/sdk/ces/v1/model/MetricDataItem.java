@@ -1,57 +1,42 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ces.v1.model.MetricInfo;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 添加一条或多条自定义指标监控数据，请求参数。
- */
-public class MetricDataItem  {
-
-
+/** 添加一条或多条自定义指标监控数据，请求参数。 */
+public class MetricDataItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metric")
-    
+    @JsonProperty(value = "metric")
+
     private MetricInfo metric;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ttl")
-    
+    @JsonProperty(value = "ttl")
+
     private Integer ttl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="collect_time")
-    
+    @JsonProperty(value = "collect_time")
+
     private Long collectTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private Double value;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unit")
-    
+    @JsonProperty(value = "unit")
+
     private String unit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
     public MetricDataItem withMetric(MetricInfo metric) {
@@ -60,19 +45,17 @@ public class MetricDataItem  {
     }
 
     public MetricDataItem withMetric(Consumer<MetricInfo> metricSetter) {
-        if(this.metric == null ){
+        if (this.metric == null) {
             this.metric = new MetricInfo();
             metricSetter.accept(this.metric);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get metric
-     * @return metric
-     */
+    /** Get metric
+     * 
+     * @return metric */
     public MetricInfo getMetric() {
         return metric;
     }
@@ -81,22 +64,14 @@ public class MetricDataItem  {
         this.metric = metric;
     }
 
-    
-
     public MetricDataItem withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据的有效期，超出该有效期则自动删除该数据，单位秒，最大值604800。
-     * minimum: 1
-     * maximum: 604800
-     * @return ttl
-     */
+    /** 数据的有效期，超出该有效期则自动删除该数据，单位秒，最大值604800。 minimum: 1 maximum: 604800
+     * 
+     * @return ttl */
     public Integer getTtl() {
         return ttl;
     }
@@ -105,20 +80,14 @@ public class MetricDataItem  {
         this.ttl = ttl;
     }
 
-    
-
     public MetricDataItem withCollectTime(Long collectTime) {
         this.collectTime = collectTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据收集时间  UNIX时间戳，单位毫秒。  说明： 因为客户端到服务器端有延时，因此插入数据的时间戳应该在[当前时间-3天+20秒，当前时间+10分钟-20秒]区间内，保证到达服务器时不会因为传输时延造成数据不能插入数据库。
-     * @return collectTime
-     */
+    /** 数据收集时间 UNIX时间戳，单位毫秒。 说明： 因为客户端到服务器端有延时，因此插入数据的时间戳应该在[当前时间-3天+20秒，当前时间+10分钟-20秒]区间内，保证到达服务器时不会因为传输时延造成数据不能插入数据库。
+     * 
+     * @return collectTime */
     public Long getCollectTime() {
         return collectTime;
     }
@@ -127,20 +96,14 @@ public class MetricDataItem  {
         this.collectTime = collectTime;
     }
 
-    
-
     public MetricDataItem withValue(Double value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 指标数据的值。
-     * @return value
-     */
+    /** 指标数据的值。
+     * 
+     * @return value */
     public Double getValue() {
         return value;
     }
@@ -149,20 +112,14 @@ public class MetricDataItem  {
         this.value = value;
     }
 
-    
-
     public MetricDataItem withUnit(String unit) {
         this.unit = unit;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据的单位。
-     * @return unit
-     */
+    /** 数据的单位。
+     * 
+     * @return unit */
     public String getUnit() {
         return unit;
     }
@@ -171,20 +128,14 @@ public class MetricDataItem  {
         this.unit = unit;
     }
 
-    
-
     public MetricDataItem withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据的类型，只能是\"int\"或\"float\"
-     * @return type
-     */
+    /** 数据的类型，只能是\"int\"或\"float\"
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -192,8 +143,6 @@ public class MetricDataItem  {
     public void setType(String type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -204,17 +153,17 @@ public class MetricDataItem  {
             return false;
         }
         MetricDataItem metricDataItem = (MetricDataItem) o;
-        return Objects.equals(this.metric, metricDataItem.metric) &&
-            Objects.equals(this.ttl, metricDataItem.ttl) &&
-            Objects.equals(this.collectTime, metricDataItem.collectTime) &&
-            Objects.equals(this.value, metricDataItem.value) &&
-            Objects.equals(this.unit, metricDataItem.unit) &&
-            Objects.equals(this.type, metricDataItem.type);
+        return Objects.equals(this.metric, metricDataItem.metric) && Objects.equals(this.ttl, metricDataItem.ttl)
+            && Objects.equals(this.collectTime, metricDataItem.collectTime)
+            && Objects.equals(this.value, metricDataItem.value) && Objects.equals(this.unit, metricDataItem.unit)
+            && Objects.equals(this.type, metricDataItem.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(metric, ttl, collectTime, value, unit, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -228,16 +177,13 @@ public class MetricDataItem  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

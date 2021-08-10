@@ -1,58 +1,39 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DownloadBlockchainCertRequest  {
-
-
+/** Request Object */
+public class DownloadBlockchainCertRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="blockchain_id")
-    
+    @JsonProperty(value = "blockchain_id")
+
     private String blockchainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="org_name")
-    
+    @JsonProperty(value = "org_name")
+
     private String orgName;
-    /**
-     * 下载证书类别
-     */
+
+    /** 下载证书类别 */
     public static final class CertTypeEnum {
 
-        
-        /**
-         * Enum ADMIN for value: "admin"
-         */
+        /** Enum ADMIN for value: "admin" */
         public static final CertTypeEnum ADMIN = new CertTypeEnum("admin");
-        
-        /**
-         * Enum USER for value: "user"
-         */
+
+        /** Enum USER for value: "user" */
         public static final CertTypeEnum USER = new CertTypeEnum("user");
-        
-        /**
-         * Enum CA for value: "ca"
-         */
+
+        /** Enum CA for value: "ca" */
         public static final CertTypeEnum CA = new CertTypeEnum("ca");
-        
 
         private static final Map<String, CertTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -82,7 +63,7 @@ public class DownloadBlockchainCertRequest  {
 
         @JsonCreator
         public static CertTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CertTypeEnum result = STATIC_FIELDS.get(value);
@@ -93,7 +74,7 @@ public class DownloadBlockchainCertRequest  {
         }
 
         public static CertTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CertTypeEnum result = STATIC_FIELDS.get(value);
@@ -117,10 +98,9 @@ public class DownloadBlockchainCertRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cert_type")
-    
+    @JsonProperty(value = "cert_type")
+
     private CertTypeEnum certType;
 
     public DownloadBlockchainCertRequest withBlockchainId(String blockchainId) {
@@ -128,13 +108,9 @@ public class DownloadBlockchainCertRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * blockchainID
-     * @return blockchainId
-     */
+    /** blockchainID
+     * 
+     * @return blockchainId */
     public String getBlockchainId() {
         return blockchainId;
     }
@@ -143,20 +119,14 @@ public class DownloadBlockchainCertRequest  {
         this.blockchainId = blockchainId;
     }
 
-    
-
     public DownloadBlockchainCertRequest withOrgName(String orgName) {
         this.orgName = orgName;
         return this;
     }
 
-    
-
-
-    /**
-     * order或者peer组织名称
-     * @return orgName
-     */
+    /** order或者peer组织名称
+     * 
+     * @return orgName */
     public String getOrgName() {
         return orgName;
     }
@@ -165,20 +135,14 @@ public class DownloadBlockchainCertRequest  {
         this.orgName = orgName;
     }
 
-    
-
     public DownloadBlockchainCertRequest withCertType(CertTypeEnum certType) {
         this.certType = certType;
         return this;
     }
 
-    
-
-
-    /**
-     * 下载证书类别
-     * @return certType
-     */
+    /** 下载证书类别
+     * 
+     * @return certType */
     public CertTypeEnum getCertType() {
         return certType;
     }
@@ -186,8 +150,6 @@ public class DownloadBlockchainCertRequest  {
     public void setCertType(CertTypeEnum certType) {
         this.certType = certType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -198,14 +160,16 @@ public class DownloadBlockchainCertRequest  {
             return false;
         }
         DownloadBlockchainCertRequest downloadBlockchainCertRequest = (DownloadBlockchainCertRequest) o;
-        return Objects.equals(this.blockchainId, downloadBlockchainCertRequest.blockchainId) &&
-            Objects.equals(this.orgName, downloadBlockchainCertRequest.orgName) &&
-            Objects.equals(this.certType, downloadBlockchainCertRequest.certType);
+        return Objects.equals(this.blockchainId, downloadBlockchainCertRequest.blockchainId)
+            && Objects.equals(this.orgName, downloadBlockchainCertRequest.orgName)
+            && Objects.equals(this.certType, downloadBlockchainCertRequest.certType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(blockchainId, orgName, certType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -216,16 +180,13 @@ public class DownloadBlockchainCertRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

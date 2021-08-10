@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iec.v1.model.UpdatePortRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdatePortRequest  {
-
-
+/** Request Object */
+public class UpdatePortRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port_id")
-    
+    @JsonProperty(value = "port_id")
+
     private String portId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdatePortRequestBody body;
 
     public UpdatePortRequest withPortId(String portId) {
@@ -35,13 +24,9 @@ public class UpdatePortRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 端口ID
-     * @return portId
-     */
+    /** 端口ID
+     * 
+     * @return portId */
     public String getPortId() {
         return portId;
     }
@@ -50,27 +35,23 @@ public class UpdatePortRequest  {
         this.portId = portId;
     }
 
-    
-
     public UpdatePortRequest withBody(UpdatePortRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdatePortRequest withBody(Consumer<UpdatePortRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdatePortRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdatePortRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdatePortRequest  {
     public void setBody(UpdatePortRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdatePortRequest  {
             return false;
         }
         UpdatePortRequest updatePortRequest = (UpdatePortRequest) o;
-        return Objects.equals(this.portId, updatePortRequest.portId) &&
-            Objects.equals(this.body, updatePortRequest.body);
+        return Objects.equals(this.portId, updatePortRequest.portId)
+            && Objects.equals(this.body, updatePortRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(portId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdatePortRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,55 +1,36 @@
 package com.huaweicloud.sdk.clouddeploy.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListHostGroupsRequest  {
-
-
+/** Request Object */
+public class ListHostGroupsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_name")
-    
+    @JsonProperty(value = "region_name")
+
     private String regionName;
-    /**
-     * 操作系统：windows|linux
-     */
+
+    /** 操作系统：windows|linux */
     public static final class OsEnum {
 
-        
-        /**
-         * Enum WINDOWS for value: "windows"
-         */
+        /** Enum WINDOWS for value: "windows" */
         public static final OsEnum WINDOWS = new OsEnum("windows");
-        
-        /**
-         * Enum LINUX for value: "linux"
-         */
+
+        /** Enum LINUX for value: "linux" */
         public static final OsEnum LINUX = new OsEnum("linux");
-        
 
         private static final Map<String, OsEnum> STATIC_FIELDS = createStaticFields();
 
@@ -78,7 +59,7 @@ public class ListHostGroupsRequest  {
 
         @JsonCreator
         public static OsEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsEnum result = STATIC_FIELDS.get(value);
@@ -89,7 +70,7 @@ public class ListHostGroupsRequest  {
         }
 
         public static OsEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsEnum result = STATIC_FIELDS.get(value);
@@ -113,51 +94,39 @@ public class ListHostGroupsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os")
-    
+    @JsonProperty(value = "os")
+
     private OsEnum os;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sort_key")
-    
+    @JsonProperty(value = "sort_key")
+
     private String sortKey;
-    /**
-     * 排序方式：DESC|ASC，默认为DESC
-     */
+
+    /** 排序方式：DESC|ASC，默认为DESC */
     public static final class SortDirEnum {
 
-        
-        /**
-         * Enum DESC for value: "DESC"
-         */
+        /** Enum DESC for value: "DESC" */
         public static final SortDirEnum DESC = new SortDirEnum("DESC");
-        
-        /**
-         * Enum ASC for value: "ASC"
-         */
+
+        /** Enum ASC for value: "ASC" */
         public static final SortDirEnum ASC = new SortDirEnum("ASC");
-        
 
         private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
 
@@ -186,7 +155,7 @@ public class ListHostGroupsRequest  {
 
         @JsonCreator
         public static SortDirEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SortDirEnum result = STATIC_FIELDS.get(value);
@@ -197,7 +166,7 @@ public class ListHostGroupsRequest  {
         }
 
         public static SortDirEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SortDirEnum result = STATIC_FIELDS.get(value);
@@ -221,10 +190,9 @@ public class ListHostGroupsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sort_dir")
-    
+    @JsonProperty(value = "sort_dir")
+
     private SortDirEnum sortDir;
 
     public ListHostGroupsRequest withProjectId(String projectId) {
@@ -232,13 +200,9 @@ public class ListHostGroupsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * devcloud创建的项目id
-     * @return projectId
-     */
+    /** devcloud创建的项目id
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -247,20 +211,14 @@ public class ListHostGroupsRequest  {
         this.projectId = projectId;
     }
 
-    
-
     public ListHostGroupsRequest withRegionName(String regionName) {
         this.regionName = regionName;
         return this;
     }
 
-    
-
-
-    /**
-     * 局点信息
-     * @return regionName
-     */
+    /** 局点信息
+     * 
+     * @return regionName */
     public String getRegionName() {
         return regionName;
     }
@@ -269,20 +227,14 @@ public class ListHostGroupsRequest  {
         this.regionName = regionName;
     }
 
-    
-
     public ListHostGroupsRequest withOs(OsEnum os) {
         this.os = os;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作系统：windows|linux
-     * @return os
-     */
+    /** 操作系统：windows|linux
+     * 
+     * @return os */
     public OsEnum getOs() {
         return os;
     }
@@ -291,21 +243,14 @@ public class ListHostGroupsRequest  {
         this.os = os;
     }
 
-    
-
     public ListHostGroupsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量,表示从此偏移量开始查询,offset大于等于0
-     * minimum: 0
-     * @return offset
-     */
+    /** 偏移量,表示从此偏移量开始查询,offset大于等于0 minimum: 0
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -314,22 +259,14 @@ public class ListHostGroupsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListHostGroupsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示的条目数量，默认为1000
-     * minimum: 1
-     * maximum: 1000
-     * @return limit
-     */
+    /** 每页显示的条目数量，默认为1000 minimum: 1 maximum: 1000
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -338,20 +275,14 @@ public class ListHostGroupsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListHostGroupsRequest withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 主机组名
-     * @return name
-     */
+    /** 主机组名
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -360,20 +291,14 @@ public class ListHostGroupsRequest  {
         this.name = name;
     }
 
-    
-
     public ListHostGroupsRequest withSortKey(String sortKey) {
         this.sortKey = sortKey;
         return this;
     }
 
-    
-
-
-    /**
-     * 排序字段：nickName|NAME|OWNER_NAME|CREATE_TIME|name|owner_name|create_time，不传使用默认排序
-     * @return sortKey
-     */
+    /** 排序字段：nickName|NAME|OWNER_NAME|CREATE_TIME|name|owner_name|create_time，不传使用默认排序
+     * 
+     * @return sortKey */
     public String getSortKey() {
         return sortKey;
     }
@@ -382,20 +307,14 @@ public class ListHostGroupsRequest  {
         this.sortKey = sortKey;
     }
 
-    
-
     public ListHostGroupsRequest withSortDir(SortDirEnum sortDir) {
         this.sortDir = sortDir;
         return this;
     }
 
-    
-
-
-    /**
-     * 排序方式：DESC|ASC，默认为DESC
-     * @return sortDir
-     */
+    /** 排序方式：DESC|ASC，默认为DESC
+     * 
+     * @return sortDir */
     public SortDirEnum getSortDir() {
         return sortDir;
     }
@@ -403,8 +322,6 @@ public class ListHostGroupsRequest  {
     public void setSortDir(SortDirEnum sortDir) {
         this.sortDir = sortDir;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -415,19 +332,21 @@ public class ListHostGroupsRequest  {
             return false;
         }
         ListHostGroupsRequest listHostGroupsRequest = (ListHostGroupsRequest) o;
-        return Objects.equals(this.projectId, listHostGroupsRequest.projectId) &&
-            Objects.equals(this.regionName, listHostGroupsRequest.regionName) &&
-            Objects.equals(this.os, listHostGroupsRequest.os) &&
-            Objects.equals(this.offset, listHostGroupsRequest.offset) &&
-            Objects.equals(this.limit, listHostGroupsRequest.limit) &&
-            Objects.equals(this.name, listHostGroupsRequest.name) &&
-            Objects.equals(this.sortKey, listHostGroupsRequest.sortKey) &&
-            Objects.equals(this.sortDir, listHostGroupsRequest.sortDir);
+        return Objects.equals(this.projectId, listHostGroupsRequest.projectId)
+            && Objects.equals(this.regionName, listHostGroupsRequest.regionName)
+            && Objects.equals(this.os, listHostGroupsRequest.os)
+            && Objects.equals(this.offset, listHostGroupsRequest.offset)
+            && Objects.equals(this.limit, listHostGroupsRequest.limit)
+            && Objects.equals(this.name, listHostGroupsRequest.name)
+            && Objects.equals(this.sortKey, listHostGroupsRequest.sortKey)
+            && Objects.equals(this.sortDir, listHostGroupsRequest.sortDir);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(projectId, regionName, os, offset, limit, name, sortKey, sortDir);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -443,16 +362,13 @@ public class ListHostGroupsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

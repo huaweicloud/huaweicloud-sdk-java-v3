@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.DatabaseForCreation;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListDatabasesResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="databases")
-    
+    @JsonProperty(value = "databases")
+
     private List<DatabaseForCreation> databases = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
-    
+    @JsonProperty(value = "total_count")
+
     private Integer totalCount;
 
     public ListDatabasesResponse withDatabases(List<DatabaseForCreation> databases) {
@@ -39,9 +27,8 @@ public class ListDatabasesResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListDatabasesResponse addDatabasesItem(DatabaseForCreation databasesItem) {
-        if(this.databases == null) {
+        if (this.databases == null) {
             this.databases = new ArrayList<>();
         }
         this.databases.add(databasesItem);
@@ -49,17 +36,16 @@ public class ListDatabasesResponse extends SdkResponse {
     }
 
     public ListDatabasesResponse withDatabases(Consumer<List<DatabaseForCreation>> databasesSetter) {
-        if(this.databases == null) {
+        if (this.databases == null) {
             this.databases = new ArrayList<>();
         }
         databasesSetter.accept(this.databases);
         return this;
     }
 
-    /**
-     * 数据库信息。
-     * @return databases
-     */
+    /** 数据库信息。
+     * 
+     * @return databases */
     public List<DatabaseForCreation> getDatabases() {
         return databases;
     }
@@ -68,20 +54,14 @@ public class ListDatabasesResponse extends SdkResponse {
         this.databases = databases;
     }
 
-    
-
     public ListDatabasesResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 总数。
-     * @return totalCount
-     */
+    /** 总数。
+     * 
+     * @return totalCount */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -89,8 +69,6 @@ public class ListDatabasesResponse extends SdkResponse {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ListDatabasesResponse extends SdkResponse {
             return false;
         }
         ListDatabasesResponse listDatabasesResponse = (ListDatabasesResponse) o;
-        return Objects.equals(this.databases, listDatabasesResponse.databases) &&
-            Objects.equals(this.totalCount, listDatabasesResponse.totalCount);
+        return Objects.equals(this.databases, listDatabasesResponse.databases)
+            && Objects.equals(this.totalCount, listDatabasesResponse.totalCount);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(databases, totalCount);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ListDatabasesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

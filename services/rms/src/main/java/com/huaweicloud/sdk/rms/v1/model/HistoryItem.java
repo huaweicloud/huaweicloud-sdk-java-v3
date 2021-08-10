@@ -1,66 +1,49 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rms.v1.model.ResourceEntity;
-import com.huaweicloud.sdk.rms.v1.model.ResourceRelation;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 资源历史
- */
-public class HistoryItem  {
-
-
+/** 资源历史 */
+public class HistoryItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
+    @JsonProperty(value = "resource_id")
+
     private String resourceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type")
-    
+    @JsonProperty(value = "resource_type")
+
     private String resourceType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="capture_time")
-    
+    @JsonProperty(value = "capture_time")
+
     private String captureTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="relations")
-    
+    @JsonProperty(value = "relations")
+
     private List<ResourceRelation> relations = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource")
-    
+    @JsonProperty(value = "resource")
+
     private ResourceEntity resource;
 
     public HistoryItem withDomainId(String domainId) {
@@ -68,13 +51,9 @@ public class HistoryItem  {
         return this;
     }
 
-    
-
-
-    /**
-     * 租户id
-     * @return domainId
-     */
+    /** 租户id
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -83,20 +62,14 @@ public class HistoryItem  {
         this.domainId = domainId;
     }
 
-    
-
     public HistoryItem withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源id
-     * @return resourceId
-     */
+    /** 资源id
+     * 
+     * @return resourceId */
     public String getResourceId() {
         return resourceId;
     }
@@ -105,20 +78,14 @@ public class HistoryItem  {
         this.resourceId = resourceId;
     }
 
-    
-
     public HistoryItem withResourceType(String resourceType) {
         this.resourceType = resourceType;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源类型
-     * @return resourceType
-     */
+    /** 资源类型
+     * 
+     * @return resourceType */
     public String getResourceType() {
         return resourceType;
     }
@@ -127,20 +94,14 @@ public class HistoryItem  {
         this.resourceType = resourceType;
     }
 
-    
-
     public HistoryItem withCaptureTime(String captureTime) {
         this.captureTime = captureTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 该资源在RMS系统捕获时间
-     * @return captureTime
-     */
+    /** 该资源在RMS系统捕获时间
+     * 
+     * @return captureTime */
     public String getCaptureTime() {
         return captureTime;
     }
@@ -149,20 +110,14 @@ public class HistoryItem  {
         this.captureTime = captureTime;
     }
 
-    
-
     public HistoryItem withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源状态
-     * @return status
-     */
+    /** 资源状态
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -171,16 +126,13 @@ public class HistoryItem  {
         this.status = status;
     }
 
-    
-
     public HistoryItem withRelations(List<ResourceRelation> relations) {
         this.relations = relations;
         return this;
     }
 
-    
     public HistoryItem addRelationsItem(ResourceRelation relationsItem) {
-        if(this.relations == null) {
+        if (this.relations == null) {
             this.relations = new ArrayList<>();
         }
         this.relations.add(relationsItem);
@@ -188,17 +140,16 @@ public class HistoryItem  {
     }
 
     public HistoryItem withRelations(Consumer<List<ResourceRelation>> relationsSetter) {
-        if(this.relations == null) {
+        if (this.relations == null) {
             this.relations = new ArrayList<>();
         }
         relationsSetter.accept(this.relations);
         return this;
     }
 
-    /**
-     * 资源关系列表
-     * @return relations
-     */
+    /** 资源关系列表
+     * 
+     * @return relations */
     public List<ResourceRelation> getRelations() {
         return relations;
     }
@@ -207,27 +158,23 @@ public class HistoryItem  {
         this.relations = relations;
     }
 
-    
-
     public HistoryItem withResource(ResourceEntity resource) {
         this.resource = resource;
         return this;
     }
 
     public HistoryItem withResource(Consumer<ResourceEntity> resourceSetter) {
-        if(this.resource == null ){
+        if (this.resource == null) {
             this.resource = new ResourceEntity();
             resourceSetter.accept(this.resource);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get resource
-     * @return resource
-     */
+    /** Get resource
+     * 
+     * @return resource */
     public ResourceEntity getResource() {
         return resource;
     }
@@ -235,8 +182,6 @@ public class HistoryItem  {
     public void setResource(ResourceEntity resource) {
         this.resource = resource;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -247,18 +192,19 @@ public class HistoryItem  {
             return false;
         }
         HistoryItem historyItem = (HistoryItem) o;
-        return Objects.equals(this.domainId, historyItem.domainId) &&
-            Objects.equals(this.resourceId, historyItem.resourceId) &&
-            Objects.equals(this.resourceType, historyItem.resourceType) &&
-            Objects.equals(this.captureTime, historyItem.captureTime) &&
-            Objects.equals(this.status, historyItem.status) &&
-            Objects.equals(this.relations, historyItem.relations) &&
-            Objects.equals(this.resource, historyItem.resource);
+        return Objects.equals(this.domainId, historyItem.domainId)
+            && Objects.equals(this.resourceId, historyItem.resourceId)
+            && Objects.equals(this.resourceType, historyItem.resourceType)
+            && Objects.equals(this.captureTime, historyItem.captureTime)
+            && Objects.equals(this.status, historyItem.status) && Objects.equals(this.relations, historyItem.relations)
+            && Objects.equals(this.resource, historyItem.resource);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domainId, resourceId, resourceType, captureTime, status, relations, resource);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -273,16 +219,13 @@ public class HistoryItem  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,46 +1,33 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotda.v5.model.AuthInfoWithoutSecret;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 修改设备信息对象。
- */
-public class UpdateDevice  {
-
-
+/** 修改设备信息对象。 */
+public class UpdateDevice {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_name")
-    
+    @JsonProperty(value = "device_name")
+
     private String deviceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extension_info")
-    
+    @JsonProperty(value = "extension_info")
+
     private Object extensionInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth_info")
+    @JsonProperty(value = "auth_info")
     @com.huaweicloud.sdk.core.json.JsonSensitive
-    
+
     private AuthInfoWithoutSecret authInfo;
 
     public UpdateDevice withDeviceName(String deviceName) {
@@ -48,13 +35,9 @@ public class UpdateDevice  {
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：设备名称。 **取值范围**：长度不超过256，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合
-     * @return deviceName
-     */
+    /** **参数说明**：设备名称。 **取值范围**：长度不超过256，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合
+     * 
+     * @return deviceName */
     public String getDeviceName() {
         return deviceName;
     }
@@ -63,20 +46,14 @@ public class UpdateDevice  {
         this.deviceName = deviceName;
     }
 
-    
-
     public UpdateDevice withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：设备的描述信息。 **取值范围**：长度不超过2048，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合
-     * @return description
-     */
+    /** **参数说明**：设备的描述信息。 **取值范围**：长度不超过2048，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -85,20 +62,14 @@ public class UpdateDevice  {
         this.description = description;
     }
 
-    
-
     public UpdateDevice withExtensionInfo(Object extensionInfo) {
         this.extensionInfo = extensionInfo;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：设备扩展信息。用户可以自定义任何想要的扩展信息，修改子设备信息时不会下发给网关。
-     * @return extensionInfo
-     */
+    /** **参数说明**：设备扩展信息。用户可以自定义任何想要的扩展信息，修改子设备信息时不会下发给网关。
+     * 
+     * @return extensionInfo */
     public Object getExtensionInfo() {
         return extensionInfo;
     }
@@ -107,27 +78,23 @@ public class UpdateDevice  {
         this.extensionInfo = extensionInfo;
     }
 
-    
-
     public UpdateDevice withAuthInfo(AuthInfoWithoutSecret authInfo) {
         this.authInfo = authInfo;
         return this;
     }
 
     public UpdateDevice withAuthInfo(Consumer<AuthInfoWithoutSecret> authInfoSetter) {
-        if(this.authInfo == null ){
+        if (this.authInfo == null) {
             this.authInfo = new AuthInfoWithoutSecret();
             authInfoSetter.accept(this.authInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get authInfo
-     * @return authInfo
-     */
+    /** Get authInfo
+     * 
+     * @return authInfo */
     public AuthInfoWithoutSecret getAuthInfo() {
         return authInfo;
     }
@@ -135,8 +102,6 @@ public class UpdateDevice  {
     public void setAuthInfo(AuthInfoWithoutSecret authInfo) {
         this.authInfo = authInfo;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -147,15 +112,17 @@ public class UpdateDevice  {
             return false;
         }
         UpdateDevice updateDevice = (UpdateDevice) o;
-        return Objects.equals(this.deviceName, updateDevice.deviceName) &&
-            Objects.equals(this.description, updateDevice.description) &&
-            Objects.equals(this.extensionInfo, updateDevice.extensionInfo) &&
-            Objects.equals(this.authInfo, updateDevice.authInfo);
+        return Objects.equals(this.deviceName, updateDevice.deviceName)
+            && Objects.equals(this.description, updateDevice.description)
+            && Objects.equals(this.extensionInfo, updateDevice.extensionInfo)
+            && Objects.equals(this.authInfo, updateDevice.authInfo);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(deviceName, description, extensionInfo, authInfo);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -167,16 +134,13 @@ public class UpdateDevice  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

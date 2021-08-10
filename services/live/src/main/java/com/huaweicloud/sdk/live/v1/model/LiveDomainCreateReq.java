@@ -1,49 +1,31 @@
 package com.huaweicloud.sdk.live.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * LiveDomainCreateReq
- */
-public class LiveDomainCreateReq  {
-
-
+/** LiveDomainCreateReq */
+public class LiveDomainCreateReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
+
     private String domain;
-    /**
-     * 域名类型 - pull表示播放域名 - push表示推流域名 
-     */
+
+    /** 域名类型 - pull表示播放域名 - push表示推流域名 */
     public static final class DomainTypeEnum {
 
-        
-        /**
-         * Enum PULL for value: "pull"
-         */
+        /** Enum PULL for value: "pull" */
         public static final DomainTypeEnum PULL = new DomainTypeEnum("pull");
-        
-        /**
-         * Enum PUSH for value: "push"
-         */
+
+        /** Enum PUSH for value: "push" */
         public static final DomainTypeEnum PUSH = new DomainTypeEnum("push");
-        
 
         private static final Map<String, DomainTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -72,7 +54,7 @@ public class LiveDomainCreateReq  {
 
         @JsonCreator
         public static DomainTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DomainTypeEnum result = STATIC_FIELDS.get(value);
@@ -83,7 +65,7 @@ public class LiveDomainCreateReq  {
         }
 
         public static DomainTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DomainTypeEnum result = STATIC_FIELDS.get(value);
@@ -107,38 +89,27 @@ public class LiveDomainCreateReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_type")
-    
+    @JsonProperty(value = "domain_type")
+
     private DomainTypeEnum domainType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
-    /**
-     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 
-     */
+
+    /** 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 */
     public static final class ServiceAreaEnum {
 
-        
-        /**
-         * Enum MAINLAND_CHINA for value: "mainland_china"
-         */
+        /** Enum MAINLAND_CHINA for value: "mainland_china" */
         public static final ServiceAreaEnum MAINLAND_CHINA = new ServiceAreaEnum("mainland_china");
-        
-        /**
-         * Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china"
-         */
+
+        /** Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china" */
         public static final ServiceAreaEnum OUTSIDE_MAINLAND_CHINA = new ServiceAreaEnum("outside_mainland_china");
-        
-        /**
-         * Enum GLOBAL for value: "global"
-         */
+
+        /** Enum GLOBAL for value: "global" */
         public static final ServiceAreaEnum GLOBAL = new ServiceAreaEnum("global");
-        
 
         private static final Map<String, ServiceAreaEnum> STATIC_FIELDS = createStaticFields();
 
@@ -168,7 +139,7 @@ public class LiveDomainCreateReq  {
 
         @JsonCreator
         public static ServiceAreaEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ServiceAreaEnum result = STATIC_FIELDS.get(value);
@@ -179,7 +150,7 @@ public class LiveDomainCreateReq  {
         }
 
         public static ServiceAreaEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ServiceAreaEnum result = STATIC_FIELDS.get(value);
@@ -203,10 +174,9 @@ public class LiveDomainCreateReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_area")
-    
+    @JsonProperty(value = "service_area")
+
     private ServiceAreaEnum serviceArea;
 
     public LiveDomainCreateReq withDomain(String domain) {
@@ -214,13 +184,9 @@ public class LiveDomainCreateReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 直播域名
-     * @return domain
-     */
+    /** 直播域名
+     * 
+     * @return domain */
     public String getDomain() {
         return domain;
     }
@@ -229,20 +195,14 @@ public class LiveDomainCreateReq  {
         this.domain = domain;
     }
 
-    
-
     public LiveDomainCreateReq withDomainType(DomainTypeEnum domainType) {
         this.domainType = domainType;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名类型 - pull表示播放域名 - push表示推流域名 
-     * @return domainType
-     */
+    /** 域名类型 - pull表示播放域名 - push表示推流域名
+     * 
+     * @return domainType */
     public DomainTypeEnum getDomainType() {
         return domainType;
     }
@@ -251,20 +211,14 @@ public class LiveDomainCreateReq  {
         this.domainType = domainType;
     }
 
-    
-
     public LiveDomainCreateReq withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * 直播所属的直播中心
-     * @return region
-     */
+    /** 直播所属的直播中心
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -273,20 +227,14 @@ public class LiveDomainCreateReq  {
         this.region = region;
     }
 
-    
-
     public LiveDomainCreateReq withServiceArea(ServiceAreaEnum serviceArea) {
         this.serviceArea = serviceArea;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 
-     * @return serviceArea
-     */
+    /** 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域
+     * 
+     * @return serviceArea */
     public ServiceAreaEnum getServiceArea() {
         return serviceArea;
     }
@@ -294,8 +242,6 @@ public class LiveDomainCreateReq  {
     public void setServiceArea(ServiceAreaEnum serviceArea) {
         this.serviceArea = serviceArea;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -306,15 +252,17 @@ public class LiveDomainCreateReq  {
             return false;
         }
         LiveDomainCreateReq liveDomainCreateReq = (LiveDomainCreateReq) o;
-        return Objects.equals(this.domain, liveDomainCreateReq.domain) &&
-            Objects.equals(this.domainType, liveDomainCreateReq.domainType) &&
-            Objects.equals(this.region, liveDomainCreateReq.region) &&
-            Objects.equals(this.serviceArea, liveDomainCreateReq.serviceArea);
+        return Objects.equals(this.domain, liveDomainCreateReq.domain)
+            && Objects.equals(this.domainType, liveDomainCreateReq.domainType)
+            && Objects.equals(this.region, liveDomainCreateReq.region)
+            && Objects.equals(this.serviceArea, liveDomainCreateReq.serviceArea);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domain, domainType, region, serviceArea);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -326,16 +274,13 @@ public class LiveDomainCreateReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

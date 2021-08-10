@@ -27,14 +27,12 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 
 import java.io.IOException;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public class StrictIntegerDeserializer extends JsonDeserializer<Integer> {
 
     @Override
-    public Integer deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
-        throws IOException {
+    public Integer deserialize(JsonParser jsonParser,
+        DeserializationContext deserializationContext) throws IOException {
         return Integer.valueOf(jsonParser.getIntValue());
     }
 }

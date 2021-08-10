@@ -1,73 +1,54 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.waf.v1.model.PremiumWafServer;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 创建独享模式域名的请求
- */
-public class CreatePremiumHostRequestBody  {
-
-
+/** 创建独享模式域名的请求 */
+public class CreatePremiumHostRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificateid")
-    
+    @JsonProperty(value = "certificateid")
+
     private String certificateid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificatename")
-    
+    @JsonProperty(value = "certificatename")
+
     private String certificatename;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hostname")
-    
+    @JsonProperty(value = "hostname")
+
     private String hostname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="proxy")
-    
+    @JsonProperty(value = "proxy")
+
     private Boolean proxy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policyid")
-    
+    @JsonProperty(value = "policyid")
+
     private String policyid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server")
-    
+    @JsonProperty(value = "server")
+
     private List<PremiumWafServer> server = null;
-    
+
     public CreatePremiumHostRequestBody withCertificateid(String certificateid) {
         this.certificateid = certificateid;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书id
-     * @return certificateid
-     */
+    /** 证书id
+     * 
+     * @return certificateid */
     public String getCertificateid() {
         return certificateid;
     }
@@ -76,20 +57,14 @@ public class CreatePremiumHostRequestBody  {
         this.certificateid = certificateid;
     }
 
-    
-
     public CreatePremiumHostRequestBody withCertificatename(String certificatename) {
         this.certificatename = certificatename;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书名称
-     * @return certificatename
-     */
+    /** 证书名称
+     * 
+     * @return certificatename */
     public String getCertificatename() {
         return certificatename;
     }
@@ -98,20 +73,14 @@ public class CreatePremiumHostRequestBody  {
         this.certificatename = certificatename;
     }
 
-    
-
     public CreatePremiumHostRequestBody withHostname(String hostname) {
         this.hostname = hostname;
         return this;
     }
 
-    
-
-
-    /**
-     * 防护域名或IP（可带端口）
-     * @return hostname
-     */
+    /** 防护域名或IP（可带端口）
+     * 
+     * @return hostname */
     public String getHostname() {
         return hostname;
     }
@@ -120,20 +89,14 @@ public class CreatePremiumHostRequestBody  {
         this.hostname = hostname;
     }
 
-    
-
     public CreatePremiumHostRequestBody withProxy(Boolean proxy) {
         this.proxy = proxy;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否使用代理
-     * @return proxy
-     */
+    /** 是否使用代理
+     * 
+     * @return proxy */
     public Boolean getProxy() {
         return proxy;
     }
@@ -142,20 +105,14 @@ public class CreatePremiumHostRequestBody  {
         this.proxy = proxy;
     }
 
-    
-
     public CreatePremiumHostRequestBody withPolicyid(String policyid) {
         this.policyid = policyid;
         return this;
     }
 
-    
-
-
-    /**
-     * 防护域名初始绑定的策略ID
-     * @return policyid
-     */
+    /** 防护域名初始绑定的策略ID
+     * 
+     * @return policyid */
     public String getPolicyid() {
         return policyid;
     }
@@ -164,16 +121,13 @@ public class CreatePremiumHostRequestBody  {
         this.policyid = policyid;
     }
 
-    
-
     public CreatePremiumHostRequestBody withServer(List<PremiumWafServer> server) {
         this.server = server;
         return this;
     }
 
-    
     public CreatePremiumHostRequestBody addServerItem(PremiumWafServer serverItem) {
-        if(this.server == null) {
+        if (this.server == null) {
             this.server = new ArrayList<>();
         }
         this.server.add(serverItem);
@@ -181,17 +135,16 @@ public class CreatePremiumHostRequestBody  {
     }
 
     public CreatePremiumHostRequestBody withServer(Consumer<List<PremiumWafServer>> serverSetter) {
-        if(this.server == null) {
+        if (this.server == null) {
             this.server = new ArrayList<>();
         }
         serverSetter.accept(this.server);
         return this;
     }
 
-    /**
-     * 独享模式回源服务器配置
-     * @return server
-     */
+    /** 独享模式回源服务器配置
+     * 
+     * @return server */
     public List<PremiumWafServer> getServer() {
         return server;
     }
@@ -199,8 +152,6 @@ public class CreatePremiumHostRequestBody  {
     public void setServer(List<PremiumWafServer> server) {
         this.server = server;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -211,17 +162,19 @@ public class CreatePremiumHostRequestBody  {
             return false;
         }
         CreatePremiumHostRequestBody createPremiumHostRequestBody = (CreatePremiumHostRequestBody) o;
-        return Objects.equals(this.certificateid, createPremiumHostRequestBody.certificateid) &&
-            Objects.equals(this.certificatename, createPremiumHostRequestBody.certificatename) &&
-            Objects.equals(this.hostname, createPremiumHostRequestBody.hostname) &&
-            Objects.equals(this.proxy, createPremiumHostRequestBody.proxy) &&
-            Objects.equals(this.policyid, createPremiumHostRequestBody.policyid) &&
-            Objects.equals(this.server, createPremiumHostRequestBody.server);
+        return Objects.equals(this.certificateid, createPremiumHostRequestBody.certificateid)
+            && Objects.equals(this.certificatename, createPremiumHostRequestBody.certificatename)
+            && Objects.equals(this.hostname, createPremiumHostRequestBody.hostname)
+            && Objects.equals(this.proxy, createPremiumHostRequestBody.proxy)
+            && Objects.equals(this.policyid, createPremiumHostRequestBody.policyid)
+            && Objects.equals(this.server, createPremiumHostRequestBody.server);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(certificateid, certificatename, hostname, proxy, policyid, server);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -235,16 +188,13 @@ public class CreatePremiumHostRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

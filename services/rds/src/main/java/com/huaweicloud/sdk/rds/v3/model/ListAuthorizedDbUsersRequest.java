@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListAuthorizedDbUsersRequest  {
-
-
+/** Request Object */
+public class ListAuthorizedDbUsersRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db-name")
-    
+    @JsonProperty(value = "db-name")
+
     private String dbName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page")
-    
+    @JsonProperty(value = "page")
+
     private Integer page;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
     public ListAuthorizedDbUsersRequest withXLanguage(String xLanguage) {
@@ -52,15 +38,11 @@ public class ListAuthorizedDbUsersRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -69,20 +51,14 @@ public class ListAuthorizedDbUsersRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListAuthorizedDbUsersRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -91,20 +67,14 @@ public class ListAuthorizedDbUsersRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListAuthorizedDbUsersRequest withDbName(String dbName) {
         this.dbName = dbName;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库名。
-     * @return dbName
-     */
+    /** 数据库名。
+     * 
+     * @return dbName */
     public String getDbName() {
         return dbName;
     }
@@ -113,20 +83,14 @@ public class ListAuthorizedDbUsersRequest  {
         this.dbName = dbName;
     }
 
-    
-
     public ListAuthorizedDbUsersRequest withPage(Integer page) {
         this.page = page;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页页码，从1开始。
-     * @return page
-     */
+    /** 分页页码，从1开始。
+     * 
+     * @return page */
     public Integer getPage() {
         return page;
     }
@@ -135,20 +99,14 @@ public class ListAuthorizedDbUsersRequest  {
         this.page = page;
     }
 
-    
-
     public ListAuthorizedDbUsersRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页数据条数。取值范围[1, 100]。
-     * @return limit
-     */
+    /** 每页数据条数。取值范围[1, 100]。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -156,8 +114,6 @@ public class ListAuthorizedDbUsersRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -168,16 +124,18 @@ public class ListAuthorizedDbUsersRequest  {
             return false;
         }
         ListAuthorizedDbUsersRequest listAuthorizedDbUsersRequest = (ListAuthorizedDbUsersRequest) o;
-        return Objects.equals(this.xLanguage, listAuthorizedDbUsersRequest.xLanguage) &&
-            Objects.equals(this.instanceId, listAuthorizedDbUsersRequest.instanceId) &&
-            Objects.equals(this.dbName, listAuthorizedDbUsersRequest.dbName) &&
-            Objects.equals(this.page, listAuthorizedDbUsersRequest.page) &&
-            Objects.equals(this.limit, listAuthorizedDbUsersRequest.limit);
+        return Objects.equals(this.xLanguage, listAuthorizedDbUsersRequest.xLanguage)
+            && Objects.equals(this.instanceId, listAuthorizedDbUsersRequest.instanceId)
+            && Objects.equals(this.dbName, listAuthorizedDbUsersRequest.dbName)
+            && Objects.equals(this.page, listAuthorizedDbUsersRequest.page)
+            && Objects.equals(this.limit, listAuthorizedDbUsersRequest.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, dbName, page, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -190,16 +148,13 @@ public class ListAuthorizedDbUsersRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

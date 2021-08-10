@@ -1,71 +1,55 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ims.v2.model.AdditionalProperties;
-import com.huaweicloud.sdk.ims.v2.model.Links;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class GlanceShowImageSchemasResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="additionalProperties")
-    
+    @JsonProperty(value = "additionalProperties")
+
     private AdditionalProperties additionalProperties;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="properties")
-    
+    @JsonProperty(value = "properties")
+
     private Object properties;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private List<Links> links = null;
-    
+
     public GlanceShowImageSchemasResponse withAdditionalProperties(AdditionalProperties additionalProperties) {
         this.additionalProperties = additionalProperties;
         return this;
     }
 
-    public GlanceShowImageSchemasResponse withAdditionalProperties(Consumer<AdditionalProperties> additionalPropertiesSetter) {
-        if(this.additionalProperties == null ){
+    public GlanceShowImageSchemasResponse withAdditionalProperties(
+        Consumer<AdditionalProperties> additionalPropertiesSetter) {
+        if (this.additionalProperties == null) {
             this.additionalProperties = new AdditionalProperties();
             additionalPropertiesSetter.accept(this.additionalProperties);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get additionalProperties
-     * @return additionalProperties
-     */
+    /** Get additionalProperties
+     * 
+     * @return additionalProperties */
     public AdditionalProperties getAdditionalProperties() {
         return additionalProperties;
     }
@@ -74,20 +58,14 @@ public class GlanceShowImageSchemasResponse extends SdkResponse {
         this.additionalProperties = additionalProperties;
     }
 
-    
-
     public GlanceShowImageSchemasResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 视图名称。
-     * @return name
-     */
+    /** 视图名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -96,20 +74,14 @@ public class GlanceShowImageSchemasResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public GlanceShowImageSchemasResponse withProperties(Object properties) {
         this.properties = properties;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像属性说明，主要是对基础属性的说明，包含每个属性的取值类型、用途等。
-     * @return properties
-     */
+    /** 镜像属性说明，主要是对基础属性的说明，包含每个属性的取值类型、用途等。
+     * 
+     * @return properties */
     public Object getProperties() {
         return properties;
     }
@@ -118,16 +90,13 @@ public class GlanceShowImageSchemasResponse extends SdkResponse {
         this.properties = properties;
     }
 
-    
-
     public GlanceShowImageSchemasResponse withLinks(List<Links> links) {
         this.links = links;
         return this;
     }
 
-    
     public GlanceShowImageSchemasResponse addLinksItem(Links linksItem) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         this.links.add(linksItem);
@@ -135,17 +104,16 @@ public class GlanceShowImageSchemasResponse extends SdkResponse {
     }
 
     public GlanceShowImageSchemasResponse withLinks(Consumer<List<Links>> linksSetter) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);
         return this;
     }
 
-    /**
-     * 视图链接。
-     * @return links
-     */
+    /** 视图链接。
+     * 
+     * @return links */
     public List<Links> getLinks() {
         return links;
     }
@@ -153,8 +121,6 @@ public class GlanceShowImageSchemasResponse extends SdkResponse {
     public void setLinks(List<Links> links) {
         this.links = links;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -165,15 +131,17 @@ public class GlanceShowImageSchemasResponse extends SdkResponse {
             return false;
         }
         GlanceShowImageSchemasResponse glanceShowImageSchemasResponse = (GlanceShowImageSchemasResponse) o;
-        return Objects.equals(this.additionalProperties, glanceShowImageSchemasResponse.additionalProperties) &&
-            Objects.equals(this.name, glanceShowImageSchemasResponse.name) &&
-            Objects.equals(this.properties, glanceShowImageSchemasResponse.properties) &&
-            Objects.equals(this.links, glanceShowImageSchemasResponse.links);
+        return Objects.equals(this.additionalProperties, glanceShowImageSchemasResponse.additionalProperties)
+            && Objects.equals(this.name, glanceShowImageSchemasResponse.name)
+            && Objects.equals(this.properties, glanceShowImageSchemasResponse.properties)
+            && Objects.equals(this.links, glanceShowImageSchemasResponse.links);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(additionalProperties, name, properties, links);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -185,16 +153,13 @@ public class GlanceShowImageSchemasResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

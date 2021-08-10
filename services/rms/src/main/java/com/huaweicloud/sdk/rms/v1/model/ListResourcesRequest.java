@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListResourcesRequest  {
-
-
+/** Request Object */
+public class ListResourcesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provider")
-    
+    @JsonProperty(value = "provider")
+
     private String provider;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_id")
-    
+    @JsonProperty(value = "region_id")
+
     private String regionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ep_id")
-    
+    @JsonProperty(value = "ep_id")
+
     private String epId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
     public ListResourcesRequest withProvider(String provider) {
@@ -58,13 +43,9 @@ public class ListResourcesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务英文简写
-     * @return provider
-     */
+    /** 云服务英文简写
+     * 
+     * @return provider */
     public String getProvider() {
         return provider;
     }
@@ -73,20 +54,14 @@ public class ListResourcesRequest  {
         this.provider = provider;
     }
 
-    
-
     public ListResourcesRequest withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务资源类型名称
-     * @return type
-     */
+    /** 云服务资源类型名称
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -95,20 +70,14 @@ public class ListResourcesRequest  {
         this.type = type;
     }
 
-    
-
     public ListResourcesRequest withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
     }
 
-    
-
-
-    /**
-     * 区域ID
-     * @return regionId
-     */
+    /** 区域ID
+     * 
+     * @return regionId */
     public String getRegionId() {
         return regionId;
     }
@@ -117,20 +86,14 @@ public class ListResourcesRequest  {
         this.regionId = regionId;
     }
 
-    
-
     public ListResourcesRequest withEpId(String epId) {
         this.epId = epId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID
-     * @return epId
-     */
+    /** 企业项目ID
+     * 
+     * @return epId */
     public String getEpId() {
         return epId;
     }
@@ -139,22 +102,14 @@ public class ListResourcesRequest  {
         this.epId = epId;
     }
 
-    
-
     public ListResourcesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 最大的返回数量
-     * minimum: 1
-     * maximum: 200
-     * @return limit
-     */
+    /** 最大的返回数量 minimum: 1 maximum: 200
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -163,20 +118,14 @@ public class ListResourcesRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListResourcesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页参数，通过上一个请求中返回的marker信息作为输入，获取当前页
-     * @return marker
-     */
+    /** 分页参数，通过上一个请求中返回的marker信息作为输入，获取当前页
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -184,8 +133,6 @@ public class ListResourcesRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -196,17 +143,19 @@ public class ListResourcesRequest  {
             return false;
         }
         ListResourcesRequest listResourcesRequest = (ListResourcesRequest) o;
-        return Objects.equals(this.provider, listResourcesRequest.provider) &&
-            Objects.equals(this.type, listResourcesRequest.type) &&
-            Objects.equals(this.regionId, listResourcesRequest.regionId) &&
-            Objects.equals(this.epId, listResourcesRequest.epId) &&
-            Objects.equals(this.limit, listResourcesRequest.limit) &&
-            Objects.equals(this.marker, listResourcesRequest.marker);
+        return Objects.equals(this.provider, listResourcesRequest.provider)
+            && Objects.equals(this.type, listResourcesRequest.type)
+            && Objects.equals(this.regionId, listResourcesRequest.regionId)
+            && Objects.equals(this.epId, listResourcesRequest.epId)
+            && Objects.equals(this.limit, listResourcesRequest.limit)
+            && Objects.equals(this.marker, listResourcesRequest.marker);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(provider, type, regionId, epId, limit, marker);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -220,16 +169,13 @@ public class ListResourcesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

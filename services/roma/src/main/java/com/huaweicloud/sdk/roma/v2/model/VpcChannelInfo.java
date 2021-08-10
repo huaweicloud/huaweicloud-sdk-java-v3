@@ -1,67 +1,47 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.VpcChannelBase;
+
 import java.time.OffsetDateTime;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * VpcChannelInfo
- */
-public class VpcChannelInfo  {
-
-
+/** VpcChannelInfo */
+public class VpcChannelInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private Integer type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
+
     private Integer port;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="balance_strategy")
-    
+    @JsonProperty(value = "balance_strategy")
+
     private Integer balanceStrategy;
-    /**
-     * VPC通道的成员类型。 - ip - ecs  VPC通道类型为2时必选。
-     */
+
+    /** VPC通道的成员类型。 - ip - ecs VPC通道类型为2时必选。 */
     public static final class MemberTypeEnum {
 
-        
-        /**
-         * Enum IP for value: "ip"
-         */
+        /** Enum IP for value: "ip" */
         public static final MemberTypeEnum IP = new MemberTypeEnum("ip");
-        
-        /**
-         * Enum ECS for value: "ecs"
-         */
+
+        /** Enum ECS for value: "ecs" */
         public static final MemberTypeEnum ECS = new MemberTypeEnum("ecs");
-        
 
         private static final Map<String, MemberTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -90,7 +70,7 @@ public class VpcChannelInfo  {
 
         @JsonCreator
         public static MemberTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MemberTypeEnum result = STATIC_FIELDS.get(value);
@@ -101,7 +81,7 @@ public class VpcChannelInfo  {
         }
 
         public static MemberTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MemberTypeEnum result = STATIC_FIELDS.get(value);
@@ -125,34 +105,29 @@ public class VpcChannelInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="member_type")
-    
+    @JsonProperty(value = "member_type")
+
     private MemberTypeEnum memberType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private OffsetDateTime createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="elb_id")
-    
+    @JsonProperty(value = "elb_id")
+
     private String elbId;
 
     public VpcChannelInfo withName(String name) {
@@ -160,13 +135,9 @@ public class VpcChannelInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * VPC通道的名称。  长度为3 ~ 64位的字符串，字符串由中文、英文字母、数字、中划线、下划线组成，且只能以英文或中文开头。 > 中文字符必须为UTF-8或者unicode编码。
-     * @return name
-     */
+    /** VPC通道的名称。 长度为3 ~ 64位的字符串，字符串由中文、英文字母、数字、中划线、下划线组成，且只能以英文或中文开头。 > 中文字符必须为UTF-8或者unicode编码。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -175,20 +146,14 @@ public class VpcChannelInfo  {
         this.name = name;
     }
 
-    
-
     public VpcChannelInfo withType(Integer type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * VPC通道的类型。 - 1：私网ELB通道（待废弃） - 2：ROMA Connect APIC内置支持负载均衡功能的快速通道类型
-     * @return type
-     */
+    /** VPC通道的类型。 - 1：私网ELB通道（待废弃） - 2：ROMA Connect APIC内置支持负载均衡功能的快速通道类型
+     * 
+     * @return type */
     public Integer getType() {
         return type;
     }
@@ -197,20 +162,14 @@ public class VpcChannelInfo  {
         this.type = type;
     }
 
-    
-
     public VpcChannelInfo withPort(Integer port) {
         this.port = port;
         return this;
     }
 
-    
-
-
-    /**
-     * VPC通道中主机的端口号。  取值范围1 ~ 65535，仅VPC通道类型为2时有效。  VPC通道类型为2时必选。
-     * @return port
-     */
+    /** VPC通道中主机的端口号。 取值范围1 ~ 65535，仅VPC通道类型为2时有效。 VPC通道类型为2时必选。
+     * 
+     * @return port */
     public Integer getPort() {
         return port;
     }
@@ -219,20 +178,14 @@ public class VpcChannelInfo  {
         this.port = port;
     }
 
-    
-
     public VpcChannelInfo withBalanceStrategy(Integer balanceStrategy) {
         this.balanceStrategy = balanceStrategy;
         return this;
     }
 
-    
-
-
-    /**
-     * 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri）  VPC通道类型为2时必选。
-     * @return balanceStrategy
-     */
+    /** 分发算法。 - 1：加权轮询（wrr） - 2：加权最少连接（wleastconn） - 3：源地址哈希（source） - 4：URI哈希（uri） VPC通道类型为2时必选。
+     * 
+     * @return balanceStrategy */
     public Integer getBalanceStrategy() {
         return balanceStrategy;
     }
@@ -241,20 +194,14 @@ public class VpcChannelInfo  {
         this.balanceStrategy = balanceStrategy;
     }
 
-    
-
     public VpcChannelInfo withMemberType(MemberTypeEnum memberType) {
         this.memberType = memberType;
         return this;
     }
 
-    
-
-
-    /**
-     * VPC通道的成员类型。 - ip - ecs  VPC通道类型为2时必选。
-     * @return memberType
-     */
+    /** VPC通道的成员类型。 - ip - ecs VPC通道类型为2时必选。
+     * 
+     * @return memberType */
     public MemberTypeEnum getMemberType() {
         return memberType;
     }
@@ -263,20 +210,14 @@ public class VpcChannelInfo  {
         this.memberType = memberType;
     }
 
-    
-
     public VpcChannelInfo withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * VPC通道的创建时间
-     * @return createTime
-     */
+    /** VPC通道的创建时间
+     * 
+     * @return createTime */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -285,20 +226,14 @@ public class VpcChannelInfo  {
         this.createTime = createTime;
     }
 
-    
-
     public VpcChannelInfo withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * VPC通道的编号
-     * @return id
-     */
+    /** VPC通道的编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -307,20 +242,14 @@ public class VpcChannelInfo  {
         this.id = id;
     }
 
-    
-
     public VpcChannelInfo withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * VPC通道的状态。 - 1：正常 - 2：异常
-     * @return status
-     */
+    /** VPC通道的状态。 - 1：正常 - 2：异常
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -329,20 +258,14 @@ public class VpcChannelInfo  {
         this.status = status;
     }
 
-    
-
     public VpcChannelInfo withElbId(String elbId) {
         this.elbId = elbId;
         return this;
     }
 
-    
-
-
-    /**
-     * 私网ELB通道的编号。  仅当VPC通道类型为1时生效
-     * @return elbId
-     */
+    /** 私网ELB通道的编号。 仅当VPC通道类型为1时生效
+     * 
+     * @return elbId */
     public String getElbId() {
         return elbId;
     }
@@ -350,8 +273,6 @@ public class VpcChannelInfo  {
     public void setElbId(String elbId) {
         this.elbId = elbId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -362,20 +283,19 @@ public class VpcChannelInfo  {
             return false;
         }
         VpcChannelInfo vpcChannelInfo = (VpcChannelInfo) o;
-        return Objects.equals(this.name, vpcChannelInfo.name) &&
-            Objects.equals(this.type, vpcChannelInfo.type) &&
-            Objects.equals(this.port, vpcChannelInfo.port) &&
-            Objects.equals(this.balanceStrategy, vpcChannelInfo.balanceStrategy) &&
-            Objects.equals(this.memberType, vpcChannelInfo.memberType) &&
-            Objects.equals(this.createTime, vpcChannelInfo.createTime) &&
-            Objects.equals(this.id, vpcChannelInfo.id) &&
-            Objects.equals(this.status, vpcChannelInfo.status) &&
-            Objects.equals(this.elbId, vpcChannelInfo.elbId);
+        return Objects.equals(this.name, vpcChannelInfo.name) && Objects.equals(this.type, vpcChannelInfo.type)
+            && Objects.equals(this.port, vpcChannelInfo.port)
+            && Objects.equals(this.balanceStrategy, vpcChannelInfo.balanceStrategy)
+            && Objects.equals(this.memberType, vpcChannelInfo.memberType)
+            && Objects.equals(this.createTime, vpcChannelInfo.createTime) && Objects.equals(this.id, vpcChannelInfo.id)
+            && Objects.equals(this.status, vpcChannelInfo.status) && Objects.equals(this.elbId, vpcChannelInfo.elbId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, type, port, balanceStrategy, memberType, createTime, id, status, elbId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -392,16 +312,13 @@ public class VpcChannelInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

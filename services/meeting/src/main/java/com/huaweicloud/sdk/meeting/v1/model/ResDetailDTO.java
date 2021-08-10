@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ResDetailDTO
- */
-public class ResDetailDTO  {
-
-
+/** ResDetailDTO */
+public class ResDetailDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sumCount")
-    
+    @JsonProperty(value = "sumCount")
+
     private Integer sumCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trialCount")
-    
+    @JsonProperty(value = "trialCount")
+
     private Integer trialCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expiredCount")
-    
+    @JsonProperty(value = "expiredCount")
+
     private Integer expiredCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expiringCount")
-    
+    @JsonProperty(value = "expiringCount")
+
     private Integer expiringCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="usedCount")
-    
+    @JsonProperty(value = "usedCount")
+
     private Integer usedCount;
 
     public ResDetailDTO withSumCount(Integer sumCount) {
@@ -52,13 +38,9 @@ public class ResDetailDTO  {
         return this;
     }
 
-    
-
-
-    /**
-     * 总数
-     * @return sumCount
-     */
+    /** 总数
+     * 
+     * @return sumCount */
     public Integer getSumCount() {
         return sumCount;
     }
@@ -67,20 +49,14 @@ public class ResDetailDTO  {
         this.sumCount = sumCount;
     }
 
-    
-
     public ResDetailDTO withTrialCount(Integer trialCount) {
         this.trialCount = trialCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 赠送数量
-     * @return trialCount
-     */
+    /** 赠送数量
+     * 
+     * @return trialCount */
     public Integer getTrialCount() {
         return trialCount;
     }
@@ -89,20 +65,14 @@ public class ResDetailDTO  {
         this.trialCount = trialCount;
     }
 
-    
-
     public ResDetailDTO withExpiredCount(Integer expiredCount) {
         this.expiredCount = expiredCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 到期数量
-     * @return expiredCount
-     */
+    /** 到期数量
+     * 
+     * @return expiredCount */
     public Integer getExpiredCount() {
         return expiredCount;
     }
@@ -111,20 +81,14 @@ public class ResDetailDTO  {
         this.expiredCount = expiredCount;
     }
 
-    
-
     public ResDetailDTO withExpiringCount(Integer expiringCount) {
         this.expiringCount = expiringCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 即将到期数量，到期时间在30天内
-     * @return expiringCount
-     */
+    /** 即将到期数量，到期时间在30天内
+     * 
+     * @return expiringCount */
     public Integer getExpiringCount() {
         return expiringCount;
     }
@@ -133,20 +97,14 @@ public class ResDetailDTO  {
         this.expiringCount = expiringCount;
     }
 
-    
-
     public ResDetailDTO withUsedCount(Integer usedCount) {
         this.usedCount = usedCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 已使用数（录播存储空间、会议并发、推流并发方数暂无法查询）。
-     * @return usedCount
-     */
+    /** 已使用数（录播存储空间、会议并发、推流并发方数暂无法查询）。
+     * 
+     * @return usedCount */
     public Integer getUsedCount() {
         return usedCount;
     }
@@ -154,8 +112,6 @@ public class ResDetailDTO  {
     public void setUsedCount(Integer usedCount) {
         this.usedCount = usedCount;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,18 @@ public class ResDetailDTO  {
             return false;
         }
         ResDetailDTO resDetailDTO = (ResDetailDTO) o;
-        return Objects.equals(this.sumCount, resDetailDTO.sumCount) &&
-            Objects.equals(this.trialCount, resDetailDTO.trialCount) &&
-            Objects.equals(this.expiredCount, resDetailDTO.expiredCount) &&
-            Objects.equals(this.expiringCount, resDetailDTO.expiringCount) &&
-            Objects.equals(this.usedCount, resDetailDTO.usedCount);
+        return Objects.equals(this.sumCount, resDetailDTO.sumCount)
+            && Objects.equals(this.trialCount, resDetailDTO.trialCount)
+            && Objects.equals(this.expiredCount, resDetailDTO.expiredCount)
+            && Objects.equals(this.expiringCount, resDetailDTO.expiringCount)
+            && Objects.equals(this.usedCount, resDetailDTO.usedCount);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sumCount, trialCount, expiredCount, expiringCount, usedCount);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class ResDetailDTO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

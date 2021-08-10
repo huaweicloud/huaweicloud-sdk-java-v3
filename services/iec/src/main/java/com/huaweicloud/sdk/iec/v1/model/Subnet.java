@@ -1,96 +1,72 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 子网对象。
- */
-public class Subnet  {
-
-
+/** 子网对象。 */
+public class Subnet {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cidr")
-    
+    @JsonProperty(value = "cidr")
+
     private String cidr;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dnsList")
-    
+    @JsonProperty(value = "dnsList")
+
     private List<String> dnsList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gateway_ip")
-    
+    @JsonProperty(value = "gateway_ip")
+
     private String gatewayIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dhcp_enable")
-    
+    @JsonProperty(value = "dhcp_enable")
+
     private Boolean dhcpEnable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="primary_dns")
-    
+    @JsonProperty(value = "primary_dns")
+
     private String primaryDns;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="secondary_dns")
-    
+    @JsonProperty(value = "secondary_dns")
+
     private String secondaryDns;
-    /**
-     * 子网的状态  取值范围： - ACTIVE：表示子网已挂载到ROUTER上 - UNKNOWN：表示子网还未挂载到ROUTER上 - ERROR：表示子网状态故障
-     */
+
+    /** 子网的状态 取值范围： - ACTIVE：表示子网已挂载到ROUTER上 - UNKNOWN：表示子网还未挂载到ROUTER上 - ERROR：表示子网状态故障 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum ACTIVE for value: "ACTIVE"
-         */
+        /** Enum ACTIVE for value: "ACTIVE" */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
-        
-        /**
-         * Enum UNKNOWN for value: "UNKNOWN"
-         */
+
+        /** Enum UNKNOWN for value: "UNKNOWN" */
         public static final StatusEnum UNKNOWN = new StatusEnum("UNKNOWN");
-        
-        /**
-         * Enum ERROR for value: "ERROR"
-         */
+
+        /** Enum ERROR for value: "ERROR" */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -120,7 +96,7 @@ public class Subnet  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -131,7 +107,7 @@ public class Subnet  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -155,40 +131,34 @@ public class Subnet  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="site_id")
-    
+    @JsonProperty(value = "site_id")
+
     private String siteId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="site_info")
-    
+    @JsonProperty(value = "site_info")
+
     private String siteInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="neutron_network_id")
-    
+    @JsonProperty(value = "neutron_network_id")
+
     private String neutronNetworkId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="neutron_subnet_id")
-    
+    @JsonProperty(value = "neutron_subnet_id")
+
     private String neutronSubnetId;
 
     public Subnet withId(String id) {
@@ -196,13 +166,9 @@ public class Subnet  {
         return this;
     }
 
-    
-
-
-    /**
-     * 子网的ID。
-     * @return id
-     */
+    /** 子网的ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -211,20 +177,14 @@ public class Subnet  {
         this.id = id;
     }
 
-    
-
     public Subnet withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网名称  取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
-     * @return name
-     */
+    /** 子网名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -233,20 +193,14 @@ public class Subnet  {
         this.name = name;
     }
 
-    
-
     public Subnet withCidr(String cidr) {
         this.cidr = cidr;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网的网段  取值范围：必须在vpc对应cidr范围内  约束：必须是cidr格式。掩码长度不能大于28
-     * @return cidr
-     */
+    /** 子网的网段 取值范围：必须在vpc对应cidr范围内 约束：必须是cidr格式。掩码长度不能大于28
+     * 
+     * @return cidr */
     public String getCidr() {
         return cidr;
     }
@@ -255,16 +209,13 @@ public class Subnet  {
         this.cidr = cidr;
     }
 
-    
-
     public Subnet withDnsList(List<String> dnsList) {
         this.dnsList = dnsList;
         return this;
     }
 
-    
     public Subnet addDnsListItem(String dnsListItem) {
-        if(this.dnsList == null) {
+        if (this.dnsList == null) {
             this.dnsList = new ArrayList<>();
         }
         this.dnsList.add(dnsListItem);
@@ -272,17 +223,16 @@ public class Subnet  {
     }
 
     public Subnet withDnsList(Consumer<List<String>> dnsListSetter) {
-        if(this.dnsList == null) {
+        if (this.dnsList == null) {
             this.dnsList = new ArrayList<>();
         }
         dnsListSetter.accept(this.dnsList);
         return this;
     }
 
-    /**
-     * 子网dns服务器地址列表
-     * @return dnsList
-     */
+    /** 子网dns服务器地址列表
+     * 
+     * @return dnsList */
     public List<String> getDnsList() {
         return dnsList;
     }
@@ -291,20 +241,14 @@ public class Subnet  {
         this.dnsList = dnsList;
     }
 
-    
-
     public Subnet withGatewayIp(String gatewayIp) {
         this.gatewayIp = gatewayIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网的网关  取值范围：子网网段中的IP地址  约束：必须是ip格式
-     * @return gatewayIp
-     */
+    /** 子网的网关 取值范围：子网网段中的IP地址 约束：必须是ip格式
+     * 
+     * @return gatewayIp */
     public String getGatewayIp() {
         return gatewayIp;
     }
@@ -313,20 +257,14 @@ public class Subnet  {
         this.gatewayIp = gatewayIp;
     }
 
-    
-
     public Subnet withDhcpEnable(Boolean dhcpEnable) {
         this.dhcpEnable = dhcpEnable;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网是否开启dhcp功能
-     * @return dhcpEnable
-     */
+    /** 子网是否开启dhcp功能
+     * 
+     * @return dhcpEnable */
     public Boolean getDhcpEnable() {
         return dhcpEnable;
     }
@@ -335,20 +273,14 @@ public class Subnet  {
         this.dhcpEnable = dhcpEnable;
     }
 
-    
-
     public Subnet withPrimaryDns(String primaryDns) {
         this.primaryDns = primaryDns;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网dns服务器地址1
-     * @return primaryDns
-     */
+    /** 子网dns服务器地址1
+     * 
+     * @return primaryDns */
     public String getPrimaryDns() {
         return primaryDns;
     }
@@ -357,20 +289,14 @@ public class Subnet  {
         this.primaryDns = primaryDns;
     }
 
-    
-
     public Subnet withSecondaryDns(String secondaryDns) {
         this.secondaryDns = secondaryDns;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网dns服务器地址2
-     * @return secondaryDns
-     */
+    /** 子网dns服务器地址2
+     * 
+     * @return secondaryDns */
     public String getSecondaryDns() {
         return secondaryDns;
     }
@@ -379,20 +305,14 @@ public class Subnet  {
         this.secondaryDns = secondaryDns;
     }
 
-    
-
     public Subnet withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网的状态  取值范围： - ACTIVE：表示子网已挂载到ROUTER上 - UNKNOWN：表示子网还未挂载到ROUTER上 - ERROR：表示子网状态故障
-     * @return status
-     */
+    /** 子网的状态 取值范围： - ACTIVE：表示子网已挂载到ROUTER上 - UNKNOWN：表示子网还未挂载到ROUTER上 - ERROR：表示子网状态故障
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -401,20 +321,14 @@ public class Subnet  {
         this.status = status;
     }
 
-    
-
     public Subnet withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟私有云ID。
-     * @return vpcId
-     */
+    /** 虚拟私有云ID。
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -423,20 +337,14 @@ public class Subnet  {
         this.vpcId = vpcId;
     }
 
-    
-
     public Subnet withSiteId(String siteId) {
         this.siteId = siteId;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网所属的站点ID。
-     * @return siteId
-     */
+    /** 子网所属的站点ID。
+     * 
+     * @return siteId */
     public String getSiteId() {
         return siteId;
     }
@@ -445,20 +353,14 @@ public class Subnet  {
         this.siteId = siteId;
     }
 
-    
-
     public Subnet withSiteInfo(String siteInfo) {
         this.siteInfo = siteInfo;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网所属的站点信息。
-     * @return siteInfo
-     */
+    /** 子网所属的站点信息。
+     * 
+     * @return siteInfo */
     public String getSiteInfo() {
         return siteInfo;
     }
@@ -467,20 +369,14 @@ public class Subnet  {
         this.siteInfo = siteInfo;
     }
 
-    
-
     public Subnet withNeutronNetworkId(String neutronNetworkId) {
         this.neutronNetworkId = neutronNetworkId;
         return this;
     }
 
-    
-
-
-    /**
-     * 对应网络（OpenStack Neutron接口） id。
-     * @return neutronNetworkId
-     */
+    /** 对应网络（OpenStack Neutron接口） id。
+     * 
+     * @return neutronNetworkId */
     public String getNeutronNetworkId() {
         return neutronNetworkId;
     }
@@ -489,20 +385,14 @@ public class Subnet  {
         this.neutronNetworkId = neutronNetworkId;
     }
 
-    
-
     public Subnet withNeutronSubnetId(String neutronSubnetId) {
         this.neutronSubnetId = neutronSubnetId;
         return this;
     }
 
-    
-
-
-    /**
-     * 对应子网（OpenStack Neutron接口） id。
-     * @return neutronSubnetId
-     */
+    /** 对应子网（OpenStack Neutron接口） id。
+     * 
+     * @return neutronSubnetId */
     public String getNeutronSubnetId() {
         return neutronSubnetId;
     }
@@ -510,8 +400,6 @@ public class Subnet  {
     public void setNeutronSubnetId(String neutronSubnetId) {
         this.neutronSubnetId = neutronSubnetId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -522,25 +410,35 @@ public class Subnet  {
             return false;
         }
         Subnet subnet = (Subnet) o;
-        return Objects.equals(this.id, subnet.id) &&
-            Objects.equals(this.name, subnet.name) &&
-            Objects.equals(this.cidr, subnet.cidr) &&
-            Objects.equals(this.dnsList, subnet.dnsList) &&
-            Objects.equals(this.gatewayIp, subnet.gatewayIp) &&
-            Objects.equals(this.dhcpEnable, subnet.dhcpEnable) &&
-            Objects.equals(this.primaryDns, subnet.primaryDns) &&
-            Objects.equals(this.secondaryDns, subnet.secondaryDns) &&
-            Objects.equals(this.status, subnet.status) &&
-            Objects.equals(this.vpcId, subnet.vpcId) &&
-            Objects.equals(this.siteId, subnet.siteId) &&
-            Objects.equals(this.siteInfo, subnet.siteInfo) &&
-            Objects.equals(this.neutronNetworkId, subnet.neutronNetworkId) &&
-            Objects.equals(this.neutronSubnetId, subnet.neutronSubnetId);
+        return Objects.equals(this.id, subnet.id) && Objects.equals(this.name, subnet.name)
+            && Objects.equals(this.cidr, subnet.cidr) && Objects.equals(this.dnsList, subnet.dnsList)
+            && Objects.equals(this.gatewayIp, subnet.gatewayIp) && Objects.equals(this.dhcpEnable, subnet.dhcpEnable)
+            && Objects.equals(this.primaryDns, subnet.primaryDns)
+            && Objects.equals(this.secondaryDns, subnet.secondaryDns) && Objects.equals(this.status, subnet.status)
+            && Objects.equals(this.vpcId, subnet.vpcId) && Objects.equals(this.siteId, subnet.siteId)
+            && Objects.equals(this.siteInfo, subnet.siteInfo)
+            && Objects.equals(this.neutronNetworkId, subnet.neutronNetworkId)
+            && Objects.equals(this.neutronSubnetId, subnet.neutronSubnetId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, cidr, dnsList, gatewayIp, dhcpEnable, primaryDns, secondaryDns, status, vpcId, siteId, siteInfo, neutronNetworkId, neutronSubnetId);
+        return Objects.hash(id,
+            name,
+            cidr,
+            dnsList,
+            gatewayIp,
+            dhcpEnable,
+            primaryDns,
+            secondaryDns,
+            status,
+            vpcId,
+            siteId,
+            siteInfo,
+            neutronNetworkId,
+            neutronSubnetId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -562,16 +460,13 @@ public class Subnet  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

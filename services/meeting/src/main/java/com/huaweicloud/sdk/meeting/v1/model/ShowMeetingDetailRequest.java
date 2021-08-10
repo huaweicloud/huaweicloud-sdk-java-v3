@@ -1,74 +1,56 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowMeetingDetailRequest  {
-
-
+/** Request Object */
+public class ShowMeetingDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="conferenceID")
-    
+    @JsonProperty(value = "conferenceID")
+
     private String conferenceID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="searchKey")
-    
+    @JsonProperty(value = "searchKey")
+
     private String searchKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="userUUID")
-    
+    @JsonProperty(value = "userUUID")
+
     private String userUUID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Type")
-    
+    @JsonProperty(value = "X-Type")
+
     private String xType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Query-Type")
-    
+    @JsonProperty(value = "X-Query-Type")
+
     private String xQueryType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Authorization-Type")
-    
+    @JsonProperty(value = "X-Authorization-Type")
+
     private String xAuthorizationType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site-Id")
-    
+    @JsonProperty(value = "X-Site-Id")
+
     private String xSiteId;
 
     public ShowMeetingDetailRequest withConferenceID(String conferenceID) {
@@ -76,13 +58,9 @@ public class ShowMeetingDetailRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 会议ID。
-     * @return conferenceID
-     */
+    /** 会议ID。
+     * 
+     * @return conferenceID */
     public String getConferenceID() {
         return conferenceID;
     }
@@ -91,20 +69,14 @@ public class ShowMeetingDetailRequest  {
         this.conferenceID = conferenceID;
     }
 
-    
-
     public ShowMeetingDetailRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 指定返回的与会者列表的记录索引。该值必须大于等于0。
-     * @return offset
-     */
+    /** 指定返回的与会者列表的记录索引。该值必须大于等于0。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -113,20 +85,14 @@ public class ShowMeetingDetailRequest  {
         this.offset = offset;
     }
 
-    
-
     public ShowMeetingDetailRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 指定返回的与会者记录数。默认值20。
-     * @return limit
-     */
+    /** 指定返回的与会者记录数。默认值20。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -135,20 +101,14 @@ public class ShowMeetingDetailRequest  {
         this.limit = limit;
     }
 
-    
-
     public ShowMeetingDetailRequest withSearchKey(String searchKey) {
         this.searchKey = searchKey;
         return this;
     }
 
-    
-
-
-    /**
-     * 用来作关键词查询的字符串。长度限制为1-128个字符。
-     * @return searchKey
-     */
+    /** 用来作关键词查询的字符串。长度限制为1-128个字符。
+     * 
+     * @return searchKey */
     public String getSearchKey() {
         return searchKey;
     }
@@ -157,20 +117,14 @@ public class ShowMeetingDetailRequest  {
         this.searchKey = searchKey;
     }
 
-    
-
     public ShowMeetingDetailRequest withUserUUID(String userUUID) {
         this.userUUID = userUUID;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户的UUID。第三方鉴权时需要携带。
-     * @return userUUID
-     */
+    /** 用户的UUID。第三方鉴权时需要携带。
+     * 
+     * @return userUUID */
     public String getUserUUID() {
         return userUUID;
     }
@@ -179,22 +133,16 @@ public class ShowMeetingDetailRequest  {
         this.userUUID = userUUID;
     }
 
-    
-
     public ShowMeetingDetailRequest withXType(String xType) {
         this.xType = xType;
         return this;
     }
 
-    
-
-
-    /**
-     * 默认值为0。 - 0: 不区分终端和与会人。 - 1: 分页查询区分终端和与会人，结果合并返回。 - 2: 单独查询终端和与会人，结果单独返回。
-     * @return xType
-     */
+    /** 默认值为0。 - 0: 不区分终端和与会人。 - 1: 分页查询区分终端和与会人，结果合并返回。 - 2: 单独查询终端和与会人，结果单独返回。
+     * 
+     * @return xType */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Type")
+    @JsonProperty(value = "X-Type")
     public String getXType() {
         return xType;
     }
@@ -203,22 +151,16 @@ public class ShowMeetingDetailRequest  {
         this.xType = xType;
     }
 
-    
-
     public ShowMeetingDetailRequest withXQueryType(String xQueryType) {
         this.xQueryType = xQueryType;
         return this;
     }
 
-    
-
-
-    /**
-     * 当X-Type为2时，有效。默认为0。 - 0: 查询与会人。 - 1: 查询终端。
-     * @return xQueryType
-     */
+    /** 当X-Type为2时，有效。默认为0。 - 0: 查询与会人。 - 1: 查询终端。
+     * 
+     * @return xQueryType */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Query-Type")
+    @JsonProperty(value = "X-Query-Type")
     public String getXQueryType() {
         return xQueryType;
     }
@@ -227,22 +169,16 @@ public class ShowMeetingDetailRequest  {
         this.xQueryType = xQueryType;
     }
 
-    
-
     public ShowMeetingDetailRequest withXAuthorizationType(String xAuthorizationType) {
         this.xAuthorizationType = xAuthorizationType;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识是否为第三方portal过来的请求。
-     * @return xAuthorizationType
-     */
+    /** 标识是否为第三方portal过来的请求。
+     * 
+     * @return xAuthorizationType */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Authorization-Type")
+    @JsonProperty(value = "X-Authorization-Type")
     public String getXAuthorizationType() {
         return xAuthorizationType;
     }
@@ -251,22 +187,16 @@ public class ShowMeetingDetailRequest  {
         this.xAuthorizationType = xAuthorizationType;
     }
 
-    
-
     public ShowMeetingDetailRequest withXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用于区分到哪个HCSO站点鉴权。
-     * @return xSiteId
-     */
+    /** 用于区分到哪个HCSO站点鉴权。
+     * 
+     * @return xSiteId */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site-Id")
+    @JsonProperty(value = "X-Site-Id")
     public String getXSiteId() {
         return xSiteId;
     }
@@ -274,8 +204,6 @@ public class ShowMeetingDetailRequest  {
     public void setXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -286,20 +214,23 @@ public class ShowMeetingDetailRequest  {
             return false;
         }
         ShowMeetingDetailRequest showMeetingDetailRequest = (ShowMeetingDetailRequest) o;
-        return Objects.equals(this.conferenceID, showMeetingDetailRequest.conferenceID) &&
-            Objects.equals(this.offset, showMeetingDetailRequest.offset) &&
-            Objects.equals(this.limit, showMeetingDetailRequest.limit) &&
-            Objects.equals(this.searchKey, showMeetingDetailRequest.searchKey) &&
-            Objects.equals(this.userUUID, showMeetingDetailRequest.userUUID) &&
-            Objects.equals(this.xType, showMeetingDetailRequest.xType) &&
-            Objects.equals(this.xQueryType, showMeetingDetailRequest.xQueryType) &&
-            Objects.equals(this.xAuthorizationType, showMeetingDetailRequest.xAuthorizationType) &&
-            Objects.equals(this.xSiteId, showMeetingDetailRequest.xSiteId);
+        return Objects.equals(this.conferenceID, showMeetingDetailRequest.conferenceID)
+            && Objects.equals(this.offset, showMeetingDetailRequest.offset)
+            && Objects.equals(this.limit, showMeetingDetailRequest.limit)
+            && Objects.equals(this.searchKey, showMeetingDetailRequest.searchKey)
+            && Objects.equals(this.userUUID, showMeetingDetailRequest.userUUID)
+            && Objects.equals(this.xType, showMeetingDetailRequest.xType)
+            && Objects.equals(this.xQueryType, showMeetingDetailRequest.xQueryType)
+            && Objects.equals(this.xAuthorizationType, showMeetingDetailRequest.xAuthorizationType)
+            && Objects.equals(this.xSiteId, showMeetingDetailRequest.xSiteId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(conferenceID, offset, limit, searchKey, userUUID, xType, xQueryType, xAuthorizationType, xSiteId);
+        return Objects
+            .hash(conferenceID, offset, limit, searchKey, userUUID, xType, xQueryType, xAuthorizationType, xSiteId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -316,16 +247,13 @@ public class ShowMeetingDetailRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

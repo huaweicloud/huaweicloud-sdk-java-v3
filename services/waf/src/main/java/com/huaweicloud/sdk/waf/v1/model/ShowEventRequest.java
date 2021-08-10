@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowEventRequest  {
-
-
+/** Request Object */
+public class ShowEventRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="eventid")
-    
+    @JsonProperty(value = "eventid")
+
     private String eventid;
 
     public ShowEventRequest withEventid(String eventid) {
@@ -28,13 +18,9 @@ public class ShowEventRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 事件ID
-     * @return eventid
-     */
+    /** 事件ID
+     * 
+     * @return eventid */
     public String getEventid() {
         return eventid;
     }
@@ -42,8 +28,6 @@ public class ShowEventRequest  {
     public void setEventid(String eventid) {
         this.eventid = eventid;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class ShowEventRequest  {
         ShowEventRequest showEventRequest = (ShowEventRequest) o;
         return Objects.equals(this.eventid, showEventRequest.eventid);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(eventid);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class ShowEventRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

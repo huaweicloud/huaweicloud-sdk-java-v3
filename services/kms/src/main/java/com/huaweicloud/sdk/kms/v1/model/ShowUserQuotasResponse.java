@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.Quotas;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowUserQuotasResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quotas")
-    
+    @JsonProperty(value = "quotas")
+
     private Quotas quotas;
 
     public ShowUserQuotasResponse withQuotas(Quotas quotas) {
@@ -32,19 +21,17 @@ public class ShowUserQuotasResponse extends SdkResponse {
     }
 
     public ShowUserQuotasResponse withQuotas(Consumer<Quotas> quotasSetter) {
-        if(this.quotas == null ){
+        if (this.quotas == null) {
             this.quotas = new Quotas();
             quotasSetter.accept(this.quotas);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get quotas
-     * @return quotas
-     */
+    /** Get quotas
+     * 
+     * @return quotas */
     public Quotas getQuotas() {
         return quotas;
     }
@@ -52,8 +39,6 @@ public class ShowUserQuotasResponse extends SdkResponse {
     public void setQuotas(Quotas quotas) {
         this.quotas = quotas;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class ShowUserQuotasResponse extends SdkResponse {
         ShowUserQuotasResponse showUserQuotasResponse = (ShowUserQuotasResponse) o;
         return Objects.equals(this.quotas, showUserQuotasResponse.quotas);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(quotas);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class ShowUserQuotasResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,77 +1,59 @@
 package com.huaweicloud.sdk.bssintl.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bssintl.v2.model.BankCardInfoV2;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ApplyIndividualRealnameAuthsReq
- */
-public class ApplyIndividualRealnameAuthsReq  {
-
-
+/** ApplyIndividualRealnameAuthsReq */
+public class ApplyIndividualRealnameAuthsReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_id")
-    
+    @JsonProperty(value = "customer_id")
+
     private String customerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="identify_type")
-    
+    @JsonProperty(value = "identify_type")
+
     private Integer identifyType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="verified_type")
-    
+    @JsonProperty(value = "verified_type")
+
     private Integer verifiedType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="verified_file_url")
-    
+    @JsonProperty(value = "verified_file_url")
+
     private List<String> verifiedFileUrl = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="verified_number")
-    
+    @JsonProperty(value = "verified_number")
+
     private String verifiedNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="change_type")
-    
+    @JsonProperty(value = "change_type")
+
     private Integer changeType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="xaccount_type")
-    
+    @JsonProperty(value = "xaccount_type")
+
     private String xaccountType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bank_card_info")
-    
+    @JsonProperty(value = "bank_card_info")
+
     private BankCardInfoV2 bankCardInfo;
 
     public ApplyIndividualRealnameAuthsReq withCustomerId(String customerId) {
@@ -79,13 +61,9 @@ public class ApplyIndividualRealnameAuthsReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：客户ID。| |参数约束及描述：客户ID。|
-     * @return customerId
-     */
+    /** |参数名称：客户ID。| |参数约束及描述：客户ID。|
+     * 
+     * @return customerId */
     public String getCustomerId() {
         return customerId;
     }
@@ -94,22 +72,15 @@ public class ApplyIndividualRealnameAuthsReq  {
         this.customerId = customerId;
     }
 
-    
-
     public ApplyIndividualRealnameAuthsReq withIdentifyType(Integer identifyType) {
         this.identifyType = identifyType;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：认证方案：0：个人证件认证4：个人银行卡认证。这种方式下，仅仅需要上传一张个人扫脸的图片附件即可。| |参数的约束及描述：认证方案：0：个人证件认证4：个人银行卡认证。这种方式下，仅仅需要上传一张个人扫脸的图片附件即可。|
-     * minimum: 0
-     * maximum: 32
-     * @return identifyType
-     */
+    /** |参数名称：认证方案：0：个人证件认证4：个人银行卡认证。这种方式下，仅仅需要上传一张个人扫脸的图片附件即可。|
+     * |参数的约束及描述：认证方案：0：个人证件认证4：个人银行卡认证。这种方式下，仅仅需要上传一张个人扫脸的图片附件即可。| minimum: 0 maximum: 32
+     * 
+     * @return identifyType */
     public Integer getIdentifyType() {
         return identifyType;
     }
@@ -118,22 +89,16 @@ public class ApplyIndividualRealnameAuthsReq  {
         this.identifyType = identifyType;
     }
 
-    
-
     public ApplyIndividualRealnameAuthsReq withVerifiedType(Integer verifiedType) {
         this.verifiedType = verifiedType;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：证件类型：0：身份证，上传的附件为3张，第1张是身份证人像面，第2张是身份证国徽面，第3张是个人手持身份证人像面；3：护照，上传的附件为3张，第1张是护照个人资料页，第2张是，护照入境盖章页，第3张是手持护照个人资料页；3：护照，上传的附件为2张，第1张是护照个人资料页，第2张是手持护照个人资料页；5：港澳通行证，上传的附件为3张，第1张是港澳居民来往内地通行证正面（人像面），第2张是港澳居民来往内地通行证反面，第3张是手持港澳居民来往内地通行证人像面；6：台湾通行证，上传的附件为3张，第1张是台湾居民来往大陆通行证正面（人像面），第2张是台湾居民来往大陆通行证反面，第3张是手持台湾居民来往大陆通行证人像面；7：海外驾照，上传的附件为2张，第1张是中国以外驾照正面照片（人像面），第2张是手持中国以外驾照人像面照片；9：港澳居民居住证，上传的附件为3张，第1张是港澳居民居住证人像面，第2张是，港澳居民居住证国徽面，第3张是手持港澳居民居住证人像面照片；10：台湾居民居住证，上传的附件为3张，第1张是台湾居民居住证人像面，第2张是台湾居民居住证国徽面，第3张是手持台湾居民居住证人像面照片。当identifyType=0的时候，该字段需要填写，否则忽略该字段的取值。| |参数的约束及描述：证件类型：0：身份证，上传的附件为3张，第1张是身份证人像面，第2张是身份证国徽面，第3张是个人手持身份证人像面；3：护照，上传的附件为3张，第1张是护照个人资料页，第2张是，护照入境盖章页，第3张是手持护照个人资料页；3：护照，上传的附件为2张，第1张是护照个人资料页，第2张是手持护照个人资料页；5：港澳通行证，上传的附件为3张，第1张是港澳居民来往内地通行证正面（人像面），第2张是港澳居民来往内地通行证反面，第3张是手持港澳居民来往内地通行证人像面；6：台湾通行证，上传的附件为3张，第1张是台湾居民来往大陆通行证正面（人像面），第2张是台湾居民来往大陆通行证反面，第3张是手持台湾居民来往大陆通行证人像面；7：海外驾照，上传的附件为2张，第1张是中国以外驾照正面照片（人像面），第2张是手持中国以外驾照人像面照片；9：港澳居民居住证，上传的附件为3张，第1张是港澳居民居住证人像面，第2张是，港澳居民居住证国徽面，第3张是手持港澳居民居住证人像面照片；10：台湾居民居住证，上传的附件为3张，第1张是台湾居民居住证人像面，第2张是台湾居民居住证国徽面，第3张是手持台湾居民居住证人像面照片。当identifyType=0的时候，该字段需要填写，否则忽略该字段的取值。|
-     * minimum: 0
-     * maximum: 32
-     * @return verifiedType
-     */
+    /** |参数名称：证件类型：0：身份证，上传的附件为3张，第1张是身份证人像面，第2张是身份证国徽面，第3张是个人手持身份证人像面；3：护照，上传的附件为3张，第1张是护照个人资料页，第2张是，护照入境盖章页，第3张是手持护照个人资料页；3：护照，上传的附件为2张，第1张是护照个人资料页，第2张是手持护照个人资料页；5：港澳通行证，上传的附件为3张，第1张是港澳居民来往内地通行证正面（人像面），第2张是港澳居民来往内地通行证反面，第3张是手持港澳居民来往内地通行证人像面；6：台湾通行证，上传的附件为3张，第1张是台湾居民来往大陆通行证正面（人像面），第2张是台湾居民来往大陆通行证反面，第3张是手持台湾居民来往大陆通行证人像面；7：海外驾照，上传的附件为2张，第1张是中国以外驾照正面照片（人像面），第2张是手持中国以外驾照人像面照片；9：港澳居民居住证，上传的附件为3张，第1张是港澳居民居住证人像面，第2张是，港澳居民居住证国徽面，第3张是手持港澳居民居住证人像面照片；10：台湾居民居住证，上传的附件为3张，第1张是台湾居民居住证人像面，第2张是台湾居民居住证国徽面，第3张是手持台湾居民居住证人像面照片。当identifyType=0的时候，该字段需要填写，否则忽略该字段的取值。|
+     * |参数的约束及描述：证件类型：0：身份证，上传的附件为3张，第1张是身份证人像面，第2张是身份证国徽面，第3张是个人手持身份证人像面；3：护照，上传的附件为3张，第1张是护照个人资料页，第2张是，护照入境盖章页，第3张是手持护照个人资料页；3：护照，上传的附件为2张，第1张是护照个人资料页，第2张是手持护照个人资料页；5：港澳通行证，上传的附件为3张，第1张是港澳居民来往内地通行证正面（人像面），第2张是港澳居民来往内地通行证反面，第3张是手持港澳居民来往内地通行证人像面；6：台湾通行证，上传的附件为3张，第1张是台湾居民来往大陆通行证正面（人像面），第2张是台湾居民来往大陆通行证反面，第3张是手持台湾居民来往大陆通行证人像面；7：海外驾照，上传的附件为2张，第1张是中国以外驾照正面照片（人像面），第2张是手持中国以外驾照人像面照片；9：港澳居民居住证，上传的附件为3张，第1张是港澳居民居住证人像面，第2张是，港澳居民居住证国徽面，第3张是手持港澳居民居住证人像面照片；10：台湾居民居住证，上传的附件为3张，第1张是台湾居民居住证人像面，第2张是台湾居民居住证国徽面，第3张是手持台湾居民居住证人像面照片。当identifyType=0的时候，该字段需要填写，否则忽略该字段的取值。|
+     * minimum: 0 maximum: 32
+     * 
+     * @return verifiedType */
     public Integer getVerifiedType() {
         return verifiedType;
     }
@@ -142,16 +107,13 @@ public class ApplyIndividualRealnameAuthsReq  {
         this.verifiedType = verifiedType;
     }
 
-    
-
     public ApplyIndividualRealnameAuthsReq withVerifiedFileUrl(List<String> verifiedFileUrl) {
         this.verifiedFileUrl = verifiedFileUrl;
         return this;
     }
 
-    
     public ApplyIndividualRealnameAuthsReq addVerifiedFileUrlItem(String verifiedFileUrlItem) {
-        if(this.verifiedFileUrl == null) {
+        if (this.verifiedFileUrl == null) {
             this.verifiedFileUrl = new ArrayList<>();
         }
         this.verifiedFileUrl.add(verifiedFileUrlItem);
@@ -159,17 +121,17 @@ public class ApplyIndividualRealnameAuthsReq  {
     }
 
     public ApplyIndividualRealnameAuthsReq withVerifiedFileUrl(Consumer<List<String>> verifiedFileUrlSetter) {
-        if(this.verifiedFileUrl == null) {
+        if (this.verifiedFileUrl == null) {
             this.verifiedFileUrl = new ArrayList<>();
         }
         verifiedFileUrlSetter.accept(this.verifiedFileUrl);
         return this;
     }
 
-    /**
-     * |参数名称：个人证件认证时证件附件的文件URL，该URL地址必须按照顺序填写。以身份证举例，譬如身份证人像面文件名称是abc023，国徽面是def004，个人手持身份证人像面是gh007，那么这个地方需要按照abc023def004gh007的顺序填写URL（文件名称区分大小写）。以护照举例，譬如护照个人资料页文件名称是abc023，手持护照个人资料页是def004，那么这个地方需要按照abc023def004的顺序填写URL（文件名称区分大小写）。证件附件目前仅仅支持jpg、jpeg、bmp、png、gif、pdf格式，单个文件最大不超过10M。这个URL是相对URL，不需要包含桶名和download目录，只要包含download目录下的子目录和对应文件名称即可。举例如下：如果上传的证件附件在桶中的位置是：https://bucketname.obs.Endpoint.myhuaweicloud.com/download/abc023.jpg，该字段填写abc023.jpg；如果上传的证件附件在桶中的位置是：https://bucketname.obs.Endpoint.myhuaweicloud.com/download/test/abc023.jpg，该字段填写test/abc023.jpg。| |参数约束以及描述：个人证件认证时证件附件的文件URL，该URL地址必须按照顺序填写。以身份证举例，譬如身份证人像面文件名称是abc023，国徽面是def004，个人手持身份证人像面是gh007，那么这个地方需要按照abc023def004gh007的顺序填写URL（文件名称区分大小写）。以护照举例，譬如护照个人资料页文件名称是abc023，手持护照个人资料页是def004，那么这个地方需要按照abc023def004的顺序填写URL（文件名称区分大小写）。证件附件目前仅仅支持jpg、jpeg、bmp、png、gif、pdf格式，单个文件最大不超过10M。这个URL是相对URL，不需要包含桶名和download目录，只要包含download目录下的子目录和对应文件名称即可。举例如下：如果上传的证件附件在桶中的位置是：https://bucketname.obs.Endpoint.myhuaweicloud.com/download/abc023.jpg，该字段填写abc023.jpg；如果上传的证件附件在桶中的位置是：https://bucketname.obs.Endpoint.myhuaweicloud.com/download/test/abc023.jpg，该字段填写test/abc023.jpg。|
-     * @return verifiedFileUrl
-     */
+    /** |参数名称：个人证件认证时证件附件的文件URL，该URL地址必须按照顺序填写。以身份证举例，譬如身份证人像面文件名称是abc023，国徽面是def004，个人手持身份证人像面是gh007，那么这个地方需要按照abc023def004gh007的顺序填写URL（文件名称区分大小写）。以护照举例，譬如护照个人资料页文件名称是abc023，手持护照个人资料页是def004，那么这个地方需要按照abc023def004的顺序填写URL（文件名称区分大小写）。证件附件目前仅仅支持jpg、jpeg、bmp、png、gif、pdf格式，单个文件最大不超过10M。这个URL是相对URL，不需要包含桶名和download目录，只要包含download目录下的子目录和对应文件名称即可。举例如下：如果上传的证件附件在桶中的位置是：https://bucketname.obs.Endpoint.myhuaweicloud.com/download/abc023.jpg，该字段填写abc023.jpg；如果上传的证件附件在桶中的位置是：https://bucketname.obs.Endpoint.myhuaweicloud.com/download/test/abc023.jpg，该字段填写test/abc023.jpg。|
+     * |参数约束以及描述：个人证件认证时证件附件的文件URL，该URL地址必须按照顺序填写。以身份证举例，譬如身份证人像面文件名称是abc023，国徽面是def004，个人手持身份证人像面是gh007，那么这个地方需要按照abc023def004gh007的顺序填写URL（文件名称区分大小写）。以护照举例，譬如护照个人资料页文件名称是abc023，手持护照个人资料页是def004，那么这个地方需要按照abc023def004的顺序填写URL（文件名称区分大小写）。证件附件目前仅仅支持jpg、jpeg、bmp、png、gif、pdf格式，单个文件最大不超过10M。这个URL是相对URL，不需要包含桶名和download目录，只要包含download目录下的子目录和对应文件名称即可。举例如下：如果上传的证件附件在桶中的位置是：https://bucketname.obs.Endpoint.myhuaweicloud.com/download/abc023.jpg，该字段填写abc023.jpg；如果上传的证件附件在桶中的位置是：https://bucketname.obs.Endpoint.myhuaweicloud.com/download/test/abc023.jpg，该字段填写test/abc023.jpg。|
+     * 
+     * @return verifiedFileUrl */
     public List<String> getVerifiedFileUrl() {
         return verifiedFileUrl;
     }
@@ -178,20 +140,14 @@ public class ApplyIndividualRealnameAuthsReq  {
         this.verifiedFileUrl = verifiedFileUrl;
     }
 
-    
-
     public ApplyIndividualRealnameAuthsReq withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：姓名。| |参数约束及描述：姓名。|
-     * @return name
-     */
+    /** |参数名称：姓名。| |参数约束及描述：姓名。|
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -200,20 +156,14 @@ public class ApplyIndividualRealnameAuthsReq  {
         this.name = name;
     }
 
-    
-
     public ApplyIndividualRealnameAuthsReq withVerifiedNumber(String verifiedNumber) {
         this.verifiedNumber = verifiedNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：证件号码。| |参数约束及描述：证件号码。|
-     * @return verifiedNumber
-     */
+    /** |参数名称：证件号码。| |参数约束及描述：证件号码。|
+     * 
+     * @return verifiedNumber */
     public String getVerifiedNumber() {
         return verifiedNumber;
     }
@@ -222,22 +172,14 @@ public class ApplyIndividualRealnameAuthsReq  {
         this.verifiedNumber = verifiedNumber;
     }
 
-    
-
     public ApplyIndividualRealnameAuthsReq withChangeType(Integer changeType) {
         this.changeType = changeType;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：变更类型：-1：首次实名认证| |参数的约束及描述：变更类型：-1：首次实名认证|
-     * minimum: -1
-     * maximum: -1
-     * @return changeType
-     */
+    /** |参数名称：变更类型：-1：首次实名认证| |参数的约束及描述：变更类型：-1：首次实名认证| minimum: -1 maximum: -1
+     * 
+     * @return changeType */
     public Integer getChangeType() {
         return changeType;
     }
@@ -246,20 +188,15 @@ public class ApplyIndividualRealnameAuthsReq  {
         this.changeType = changeType;
     }
 
-    
-
     public ApplyIndividualRealnameAuthsReq withXaccountType(String xaccountType) {
         this.xaccountType = xaccountType;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：华为分给合作伙伴的平台标识。该标识的具体值由华为分配。获取方法请参见如何获取xaccountType的取值如何获取xaccountType的取值。| |参数约束及描述：华为分给合作伙伴的平台标识。该标识的具体值由华为分配。获取方法请参见如何获取xaccountType的取值如何获取xaccountType的取值。|
-     * @return xaccountType
-     */
+    /** |参数名称：华为分给合作伙伴的平台标识。该标识的具体值由华为分配。获取方法请参见如何获取xaccountType的取值如何获取xaccountType的取值。|
+     * |参数约束及描述：华为分给合作伙伴的平台标识。该标识的具体值由华为分配。获取方法请参见如何获取xaccountType的取值如何获取xaccountType的取值。|
+     * 
+     * @return xaccountType */
     public String getXaccountType() {
         return xaccountType;
     }
@@ -268,27 +205,23 @@ public class ApplyIndividualRealnameAuthsReq  {
         this.xaccountType = xaccountType;
     }
 
-    
-
     public ApplyIndividualRealnameAuthsReq withBankCardInfo(BankCardInfoV2 bankCardInfo) {
         this.bankCardInfo = bankCardInfo;
         return this;
     }
 
     public ApplyIndividualRealnameAuthsReq withBankCardInfo(Consumer<BankCardInfoV2> bankCardInfoSetter) {
-        if(this.bankCardInfo == null ){
+        if (this.bankCardInfo == null) {
             this.bankCardInfo = new BankCardInfoV2();
             bankCardInfoSetter.accept(this.bankCardInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get bankCardInfo
-     * @return bankCardInfo
-     */
+    /** Get bankCardInfo
+     * 
+     * @return bankCardInfo */
     public BankCardInfoV2 getBankCardInfo() {
         return bankCardInfo;
     }
@@ -296,8 +229,6 @@ public class ApplyIndividualRealnameAuthsReq  {
     public void setBankCardInfo(BankCardInfoV2 bankCardInfo) {
         this.bankCardInfo = bankCardInfo;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -308,20 +239,30 @@ public class ApplyIndividualRealnameAuthsReq  {
             return false;
         }
         ApplyIndividualRealnameAuthsReq applyIndividualRealnameAuthsReq = (ApplyIndividualRealnameAuthsReq) o;
-        return Objects.equals(this.customerId, applyIndividualRealnameAuthsReq.customerId) &&
-            Objects.equals(this.identifyType, applyIndividualRealnameAuthsReq.identifyType) &&
-            Objects.equals(this.verifiedType, applyIndividualRealnameAuthsReq.verifiedType) &&
-            Objects.equals(this.verifiedFileUrl, applyIndividualRealnameAuthsReq.verifiedFileUrl) &&
-            Objects.equals(this.name, applyIndividualRealnameAuthsReq.name) &&
-            Objects.equals(this.verifiedNumber, applyIndividualRealnameAuthsReq.verifiedNumber) &&
-            Objects.equals(this.changeType, applyIndividualRealnameAuthsReq.changeType) &&
-            Objects.equals(this.xaccountType, applyIndividualRealnameAuthsReq.xaccountType) &&
-            Objects.equals(this.bankCardInfo, applyIndividualRealnameAuthsReq.bankCardInfo);
+        return Objects.equals(this.customerId, applyIndividualRealnameAuthsReq.customerId)
+            && Objects.equals(this.identifyType, applyIndividualRealnameAuthsReq.identifyType)
+            && Objects.equals(this.verifiedType, applyIndividualRealnameAuthsReq.verifiedType)
+            && Objects.equals(this.verifiedFileUrl, applyIndividualRealnameAuthsReq.verifiedFileUrl)
+            && Objects.equals(this.name, applyIndividualRealnameAuthsReq.name)
+            && Objects.equals(this.verifiedNumber, applyIndividualRealnameAuthsReq.verifiedNumber)
+            && Objects.equals(this.changeType, applyIndividualRealnameAuthsReq.changeType)
+            && Objects.equals(this.xaccountType, applyIndividualRealnameAuthsReq.xaccountType)
+            && Objects.equals(this.bankCardInfo, applyIndividualRealnameAuthsReq.bankCardInfo);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(customerId, identifyType, verifiedType, verifiedFileUrl, name, verifiedNumber, changeType, xaccountType, bankCardInfo);
+        return Objects.hash(customerId,
+            identifyType,
+            verifiedType,
+            verifiedFileUrl,
+            name,
+            verifiedNumber,
+            changeType,
+            xaccountType,
+            bankCardInfo);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -338,16 +279,13 @@ public class ApplyIndividualRealnameAuthsReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

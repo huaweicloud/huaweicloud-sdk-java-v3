@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class CancelMeetingRequest  {
-
-
+/** Request Object */
+public class CancelMeetingRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="conferenceID")
-    
+    @JsonProperty(value = "conferenceID")
+
     private String conferenceID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="userUUID")
-    
+    @JsonProperty(value = "userUUID")
+
     private String userUUID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private Integer type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Authorization-Type")
-    
+    @JsonProperty(value = "X-Authorization-Type")
+
     private String xAuthorizationType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site-Id")
-    
+    @JsonProperty(value = "X-Site-Id")
+
     private String xSiteId;
 
     public CancelMeetingRequest withConferenceID(String conferenceID) {
@@ -52,13 +38,9 @@ public class CancelMeetingRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 会议ID。
-     * @return conferenceID
-     */
+    /** 会议ID。
+     * 
+     * @return conferenceID */
     public String getConferenceID() {
         return conferenceID;
     }
@@ -67,20 +49,14 @@ public class CancelMeetingRequest  {
         this.conferenceID = conferenceID;
     }
 
-    
-
     public CancelMeetingRequest withUserUUID(String userUUID) {
         this.userUUID = userUUID;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户的UUID（已在USG注册过的）
-     * @return userUUID
-     */
+    /** 用户的UUID（已在USG注册过的）
+     * 
+     * @return userUUID */
     public String getUserUUID() {
         return userUUID;
     }
@@ -89,20 +65,14 @@ public class CancelMeetingRequest  {
         this.userUUID = userUUID;
     }
 
-    
-
     public CancelMeetingRequest withType(Integer type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 取消会议操作类型，1表示需要结束在线会议。
-     * @return type
-     */
+    /** 取消会议操作类型，1表示需要结束在线会议。
+     * 
+     * @return type */
     public Integer getType() {
         return type;
     }
@@ -111,22 +81,16 @@ public class CancelMeetingRequest  {
         this.type = type;
     }
 
-    
-
     public CancelMeetingRequest withXAuthorizationType(String xAuthorizationType) {
         this.xAuthorizationType = xAuthorizationType;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识是否为第三方portal过来的请求。
-     * @return xAuthorizationType
-     */
+    /** 标识是否为第三方portal过来的请求。
+     * 
+     * @return xAuthorizationType */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Authorization-Type")
+    @JsonProperty(value = "X-Authorization-Type")
     public String getXAuthorizationType() {
         return xAuthorizationType;
     }
@@ -135,22 +99,16 @@ public class CancelMeetingRequest  {
         this.xAuthorizationType = xAuthorizationType;
     }
 
-    
-
     public CancelMeetingRequest withXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用于区分到哪个HCSO站点鉴权。
-     * @return xSiteId
-     */
+    /** 用于区分到哪个HCSO站点鉴权。
+     * 
+     * @return xSiteId */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site-Id")
+    @JsonProperty(value = "X-Site-Id")
     public String getXSiteId() {
         return xSiteId;
     }
@@ -158,8 +116,6 @@ public class CancelMeetingRequest  {
     public void setXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -170,16 +126,18 @@ public class CancelMeetingRequest  {
             return false;
         }
         CancelMeetingRequest cancelMeetingRequest = (CancelMeetingRequest) o;
-        return Objects.equals(this.conferenceID, cancelMeetingRequest.conferenceID) &&
-            Objects.equals(this.userUUID, cancelMeetingRequest.userUUID) &&
-            Objects.equals(this.type, cancelMeetingRequest.type) &&
-            Objects.equals(this.xAuthorizationType, cancelMeetingRequest.xAuthorizationType) &&
-            Objects.equals(this.xSiteId, cancelMeetingRequest.xSiteId);
+        return Objects.equals(this.conferenceID, cancelMeetingRequest.conferenceID)
+            && Objects.equals(this.userUUID, cancelMeetingRequest.userUUID)
+            && Objects.equals(this.type, cancelMeetingRequest.type)
+            && Objects.equals(this.xAuthorizationType, cancelMeetingRequest.xAuthorizationType)
+            && Objects.equals(this.xSiteId, cancelMeetingRequest.xSiteId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(conferenceID, userUUID, type, xAuthorizationType, xSiteId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -192,16 +150,13 @@ public class CancelMeetingRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

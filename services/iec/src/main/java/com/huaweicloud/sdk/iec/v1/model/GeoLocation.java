@@ -1,74 +1,58 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class GeoLocation  {
-
-
+public class GeoLocation {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="area")
-    
+    @JsonProperty(value = "area")
+
     private String area;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="city")
-    
+    @JsonProperty(value = "city")
+
     private String city;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="country")
-    
+    @JsonProperty(value = "country")
+
     private String country;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="i18n_area")
-    
+    @JsonProperty(value = "i18n_area")
+
     private String i18nArea;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="i18n_city")
-    
+    @JsonProperty(value = "i18n_city")
+
     private String i18nCity;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="i18n_country")
-    
+    @JsonProperty(value = "i18n_country")
+
     private String i18nCountry;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="i18n_province")
-    
+    @JsonProperty(value = "i18n_province")
+
     private String i18nProvince;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="province")
-    
+    @JsonProperty(value = "province")
+
     private String province;
 
     public GeoLocation withId(String id) {
@@ -76,13 +60,9 @@ public class GeoLocation  {
         return this;
     }
 
-    
-
-
-    /**
-     * 地理位置信息ID。
-     * @return id
-     */
+    /** 地理位置信息ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -91,20 +71,14 @@ public class GeoLocation  {
         this.id = id;
     }
 
-    
-
     public GeoLocation withArea(String area) {
         this.area = area;
         return this;
     }
 
-    
-
-
-    /**
-     * 所在大区。
-     * @return area
-     */
+    /** 所在大区。
+     * 
+     * @return area */
     public String getArea() {
         return area;
     }
@@ -113,20 +87,14 @@ public class GeoLocation  {
         this.area = area;
     }
 
-    
-
     public GeoLocation withCity(String city) {
         this.city = city;
         return this;
     }
 
-    
-
-
-    /**
-     * 所在城市。
-     * @return city
-     */
+    /** 所在城市。
+     * 
+     * @return city */
     public String getCity() {
         return city;
     }
@@ -135,20 +103,14 @@ public class GeoLocation  {
         this.city = city;
     }
 
-    
-
     public GeoLocation withCountry(String country) {
         this.country = country;
         return this;
     }
 
-    
-
-
-    /**
-     * 所在的国家。
-     * @return country
-     */
+    /** 所在的国家。
+     * 
+     * @return country */
     public String getCountry() {
         return country;
     }
@@ -157,20 +119,14 @@ public class GeoLocation  {
         this.country = country;
     }
 
-    
-
     public GeoLocation withI18nArea(String i18nArea) {
         this.i18nArea = i18nArea;
         return this;
     }
 
-    
-
-
-    /**
-     * 区域的国际化名称。
-     * @return i18nArea
-     */
+    /** 区域的国际化名称。
+     * 
+     * @return i18nArea */
     public String getI18nArea() {
         return i18nArea;
     }
@@ -179,20 +135,14 @@ public class GeoLocation  {
         this.i18nArea = i18nArea;
     }
 
-    
-
     public GeoLocation withI18nCity(String i18nCity) {
         this.i18nCity = i18nCity;
         return this;
     }
 
-    
-
-
-    /**
-     * 城市的国际化名称。
-     * @return i18nCity
-     */
+    /** 城市的国际化名称。
+     * 
+     * @return i18nCity */
     public String getI18nCity() {
         return i18nCity;
     }
@@ -201,20 +151,14 @@ public class GeoLocation  {
         this.i18nCity = i18nCity;
     }
 
-    
-
     public GeoLocation withI18nCountry(String i18nCountry) {
         this.i18nCountry = i18nCountry;
         return this;
     }
 
-    
-
-
-    /**
-     * 国家的国际化名称。
-     * @return i18nCountry
-     */
+    /** 国家的国际化名称。
+     * 
+     * @return i18nCountry */
     public String getI18nCountry() {
         return i18nCountry;
     }
@@ -223,20 +167,14 @@ public class GeoLocation  {
         this.i18nCountry = i18nCountry;
     }
 
-    
-
     public GeoLocation withI18nProvince(String i18nProvince) {
         this.i18nProvince = i18nProvince;
         return this;
     }
 
-    
-
-
-    /**
-     * 省份的国际化名称。
-     * @return i18nProvince
-     */
+    /** 省份的国际化名称。
+     * 
+     * @return i18nProvince */
     public String getI18nProvince() {
         return i18nProvince;
     }
@@ -245,20 +183,14 @@ public class GeoLocation  {
         this.i18nProvince = i18nProvince;
     }
 
-    
-
     public GeoLocation withProvince(String province) {
         this.province = province;
         return this;
     }
 
-    
-
-
-    /**
-     * 所在省份。
-     * @return province
-     */
+    /** 所在省份。
+     * 
+     * @return province */
     public String getProvince() {
         return province;
     }
@@ -266,8 +198,6 @@ public class GeoLocation  {
     public void setProvince(String province) {
         this.province = province;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -278,20 +208,20 @@ public class GeoLocation  {
             return false;
         }
         GeoLocation geoLocation = (GeoLocation) o;
-        return Objects.equals(this.id, geoLocation.id) &&
-            Objects.equals(this.area, geoLocation.area) &&
-            Objects.equals(this.city, geoLocation.city) &&
-            Objects.equals(this.country, geoLocation.country) &&
-            Objects.equals(this.i18nArea, geoLocation.i18nArea) &&
-            Objects.equals(this.i18nCity, geoLocation.i18nCity) &&
-            Objects.equals(this.i18nCountry, geoLocation.i18nCountry) &&
-            Objects.equals(this.i18nProvince, geoLocation.i18nProvince) &&
-            Objects.equals(this.province, geoLocation.province);
+        return Objects.equals(this.id, geoLocation.id) && Objects.equals(this.area, geoLocation.area)
+            && Objects.equals(this.city, geoLocation.city) && Objects.equals(this.country, geoLocation.country)
+            && Objects.equals(this.i18nArea, geoLocation.i18nArea)
+            && Objects.equals(this.i18nCity, geoLocation.i18nCity)
+            && Objects.equals(this.i18nCountry, geoLocation.i18nCountry)
+            && Objects.equals(this.i18nProvince, geoLocation.i18nProvince)
+            && Objects.equals(this.province, geoLocation.province);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, area, city, country, i18nArea, i18nCity, i18nCountry, i18nProvince, province);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -308,16 +238,13 @@ public class GeoLocation  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

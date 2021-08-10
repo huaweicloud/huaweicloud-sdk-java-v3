@@ -1,67 +1,46 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.http.FormDataFilePart;
 import com.huaweicloud.sdk.core.http.FormDataPart;
 import com.huaweicloud.sdk.core.http.SdkFormDataBody;
-import java.io.File;
+
 import java.io.InputStream;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * ImportApiDefinitionsV2RequestBody
- */
+/** ImportApiDefinitionsV2RequestBody */
 public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_create_group")
-    
+    @JsonProperty(value = "is_create_group")
+
     private Boolean isCreateGroup;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
-    /**
-     * 扩展信息导入模式 - merge：当扩展信息定义冲突时，merge保留原有扩展信息 - override：当扩展信息定义冲突时，override会覆盖原有扩展信息
-     */
+
+    /** 扩展信息导入模式 - merge：当扩展信息定义冲突时，merge保留原有扩展信息 - override：当扩展信息定义冲突时，override会覆盖原有扩展信息 */
     public static final class ExtendModeEnum {
 
-        
-        /**
-         * Enum MERGE for value: "merge"
-         */
+        /** Enum MERGE for value: "merge" */
         public static final ExtendModeEnum MERGE = new ExtendModeEnum("merge");
-        
-        /**
-         * Enum OVERRIDE for value: "override"
-         */
+
+        /** Enum OVERRIDE for value: "override" */
         public static final ExtendModeEnum OVERRIDE = new ExtendModeEnum("override");
-        
 
         private static final Map<String, ExtendModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -90,7 +69,7 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
 
         @JsonCreator
         public static ExtendModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ExtendModeEnum result = STATIC_FIELDS.get(value);
@@ -101,7 +80,7 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         }
 
         public static ExtendModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ExtendModeEnum result = STATIC_FIELDS.get(value);
@@ -125,39 +104,29 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extend_mode")
-    
+    @JsonProperty(value = "extend_mode")
+
     private ExtendModeEnum extendMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="simple_mode")
-    
+    @JsonProperty(value = "simple_mode")
+
     private Boolean simpleMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mock_mode")
-    
+    @JsonProperty(value = "mock_mode")
+
     private Boolean mockMode;
-    /**
-     * 导入模式 - merge：当API信息定义冲突时，merge保留原有API信息 - override：当API信息定义冲突时，override会覆盖原有API信息
-     */
+
+    /** 导入模式 - merge：当API信息定义冲突时，merge保留原有API信息 - override：当API信息定义冲突时，override会覆盖原有API信息 */
     public static final class ApiModeEnum {
 
-        
-        /**
-         * Enum MERGE for value: "merge"
-         */
+        /** Enum MERGE for value: "merge" */
         public static final ApiModeEnum MERGE = new ApiModeEnum("merge");
-        
-        /**
-         * Enum OVERRIDE for value: "override"
-         */
+
+        /** Enum OVERRIDE for value: "override" */
         public static final ApiModeEnum OVERRIDE = new ApiModeEnum("override");
-        
 
         private static final Map<String, ApiModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -186,7 +155,7 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
 
         @JsonCreator
         public static ApiModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ApiModeEnum result = STATIC_FIELDS.get(value);
@@ -197,7 +166,7 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         }
 
         public static ApiModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ApiModeEnum result = STATIC_FIELDS.get(value);
@@ -221,14 +190,13 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_mode")
-    
+    @JsonProperty(value = "api_mode")
+
     private ApiModeEnum apiMode;
 
     @com.fasterxml.jackson.annotation.JsonIgnore
-    
+
     private FormDataFilePart fileName;
 
     public ImportApiDefinitionsV2RequestBody withIsCreateGroup(Boolean isCreateGroup) {
@@ -236,13 +204,9 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         return this;
     }
 
-    
-
-
-    /**
-     * 是否创建新分组
-     * @return isCreateGroup
-     */
+    /** 是否创建新分组
+     * 
+     * @return isCreateGroup */
     public Boolean getIsCreateGroup() {
         return isCreateGroup;
     }
@@ -251,20 +215,14 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         this.isCreateGroup = isCreateGroup;
     }
 
-    
-
     public ImportApiDefinitionsV2RequestBody withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * API分组编号。  当is_create_group=false时为必填
-     * @return groupId
-     */
+    /** API分组编号。 当is_create_group=false时为必填
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -273,20 +231,14 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         this.groupId = groupId;
     }
 
-    
-
     public ImportApiDefinitionsV2RequestBody withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用编号。  当is_create_group=false且使用集成应用分组时必填
-     * @return appId
-     */
+    /** 应用编号。 当is_create_group=false且使用集成应用分组时必填
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -295,20 +247,14 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         this.appId = appId;
     }
 
-    
-
     public ImportApiDefinitionsV2RequestBody withExtendMode(ExtendModeEnum extendMode) {
         this.extendMode = extendMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展信息导入模式 - merge：当扩展信息定义冲突时，merge保留原有扩展信息 - override：当扩展信息定义冲突时，override会覆盖原有扩展信息
-     * @return extendMode
-     */
+    /** 扩展信息导入模式 - merge：当扩展信息定义冲突时，merge保留原有扩展信息 - override：当扩展信息定义冲突时，override会覆盖原有扩展信息
+     * 
+     * @return extendMode */
     public ExtendModeEnum getExtendMode() {
         return extendMode;
     }
@@ -317,20 +263,14 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         this.extendMode = extendMode;
     }
 
-    
-
     public ImportApiDefinitionsV2RequestBody withSimpleMode(Boolean simpleMode) {
         this.simpleMode = simpleMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启简易导入模式
-     * @return simpleMode
-     */
+    /** 是否开启简易导入模式
+     * 
+     * @return simpleMode */
     public Boolean getSimpleMode() {
         return simpleMode;
     }
@@ -339,20 +279,14 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         this.simpleMode = simpleMode;
     }
 
-    
-
     public ImportApiDefinitionsV2RequestBody withMockMode(Boolean mockMode) {
         this.mockMode = mockMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启Mock后端
-     * @return mockMode
-     */
+    /** 是否开启Mock后端
+     * 
+     * @return mockMode */
     public Boolean getMockMode() {
         return mockMode;
     }
@@ -361,20 +295,14 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         this.mockMode = mockMode;
     }
 
-    
-
     public ImportApiDefinitionsV2RequestBody withApiMode(ApiModeEnum apiMode) {
         this.apiMode = apiMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 导入模式 - merge：当API信息定义冲突时，merge保留原有API信息 - override：当API信息定义冲突时，override会覆盖原有API信息
-     * @return apiMode
-     */
+    /** 导入模式 - merge：当API信息定义冲突时，merge保留原有API信息 - override：当API信息定义冲突时，override会覆盖原有API信息
+     * 
+     * @return apiMode */
     public ApiModeEnum getApiMode() {
         return apiMode;
     }
@@ -383,20 +311,14 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         this.apiMode = apiMode;
     }
 
-    
-
     public ImportApiDefinitionsV2RequestBody withFileName(FormDataFilePart fileName) {
         this.fileName = fileName;
         return this;
     }
 
-    
-
-
-    /**
-     * 导入Api的请求体，json或yaml格式的文件
-     * @return fileName
-     */
+    /** 导入Api的请求体，json或yaml格式的文件
+     * 
+     * @return fileName */
     public FormDataFilePart getFileName() {
         return fileName;
     }
@@ -405,9 +327,8 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         this.fileName = fileName;
     }
 
-    
-    
-    public ImportApiDefinitionsV2RequestBody withFileName(InputStream inputStream, String fileName, String contentType) {
+    public ImportApiDefinitionsV2RequestBody withFileName(InputStream inputStream, String fileName,
+        String contentType) {
         this.fileName = new FormDataFilePart(inputStream, fileName).withContentType(contentType);
         return this;
     }
@@ -422,11 +343,11 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         this.fileName = new FormDataFilePart(inputStream, fileName).withHeaders(headers);
         return this;
     }
-    
 
     @Override
     public Map<String, FormDataPart> buildFormData() {
         return new LinkedHashMap<String, FormDataPart>() {
+
             {
                 put("is_create_group", new FormDataPart<>(isCreateGroup));
                 put("group_id", new FormDataPart<>(groupId));
@@ -449,19 +370,21 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
             return false;
         }
         ImportApiDefinitionsV2RequestBody importApiDefinitionsV2RequestBody = (ImportApiDefinitionsV2RequestBody) o;
-        return Objects.equals(this.isCreateGroup, importApiDefinitionsV2RequestBody.isCreateGroup) &&
-            Objects.equals(this.groupId, importApiDefinitionsV2RequestBody.groupId) &&
-            Objects.equals(this.appId, importApiDefinitionsV2RequestBody.appId) &&
-            Objects.equals(this.extendMode, importApiDefinitionsV2RequestBody.extendMode) &&
-            Objects.equals(this.simpleMode, importApiDefinitionsV2RequestBody.simpleMode) &&
-            Objects.equals(this.mockMode, importApiDefinitionsV2RequestBody.mockMode) &&
-            Objects.equals(this.apiMode, importApiDefinitionsV2RequestBody.apiMode) &&
-            Objects.equals(this.fileName, importApiDefinitionsV2RequestBody.fileName);
+        return Objects.equals(this.isCreateGroup, importApiDefinitionsV2RequestBody.isCreateGroup)
+            && Objects.equals(this.groupId, importApiDefinitionsV2RequestBody.groupId)
+            && Objects.equals(this.appId, importApiDefinitionsV2RequestBody.appId)
+            && Objects.equals(this.extendMode, importApiDefinitionsV2RequestBody.extendMode)
+            && Objects.equals(this.simpleMode, importApiDefinitionsV2RequestBody.simpleMode)
+            && Objects.equals(this.mockMode, importApiDefinitionsV2RequestBody.mockMode)
+            && Objects.equals(this.apiMode, importApiDefinitionsV2RequestBody.apiMode)
+            && Objects.equals(this.fileName, importApiDefinitionsV2RequestBody.fileName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(isCreateGroup, groupId, appId, extendMode, simpleMode, mockMode, apiMode, fileName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -477,16 +400,13 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

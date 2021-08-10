@@ -1,68 +1,51 @@
 package com.huaweicloud.sdk.smn.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Statement
- */
-public class Statement  {
-
-
+/** Statement */
+public class Statement {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Sid")
-    
+    @JsonProperty(value = "Sid")
+
     private String sid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Effect")
-    
+    @JsonProperty(value = "Effect")
+
     private String effect;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Principal")
-    
+    @JsonProperty(value = "Principal")
+
     private String principal;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="NotPrincipal")
-    
+    @JsonProperty(value = "NotPrincipal")
+
     private String notPrincipal;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Action")
-    
+    @JsonProperty(value = "Action")
+
     private String action;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="NotAction")
-    
+    @JsonProperty(value = "NotAction")
+
     private String notAction;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Resource")
-    
+    @JsonProperty(value = "Resource")
+
     private String resource;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="NotResource")
-    
+    @JsonProperty(value = "NotResource")
+
     private String notResource;
 
     public Statement withSid(String sid) {
@@ -70,13 +53,9 @@ public class Statement  {
         return this;
     }
 
-    
-
-
-    /**
-     * Statement语句的ID。 Statement语句ID必须是唯一的，例如statement01、statement02。
-     * @return sid
-     */
+    /** Statement语句的ID。 Statement语句ID必须是唯一的，例如statement01、statement02。
+     * 
+     * @return sid */
     public String getSid() {
         return sid;
     }
@@ -85,20 +64,14 @@ public class Statement  {
         this.sid = sid;
     }
 
-    
-
     public Statement withEffect(String effect) {
         this.effect = effect;
         return this;
     }
 
-    
-
-
-    /**
-     * Statement语句的效果。“Allow”或者“Deny”。
-     * @return effect
-     */
+    /** Statement语句的效果。“Allow”或者“Deny”。
+     * 
+     * @return effect */
     public String getEffect() {
         return effect;
     }
@@ -107,20 +80,16 @@ public class Statement  {
         this.effect = effect;
     }
 
-    
-
     public Statement withPrincipal(String principal) {
         this.principal = principal;
         return this;
     }
 
-    
-
-
-    /**
-     * Statement语句作用的对象。 目前支持“CSP”和“Service”两类对象。  “CSP”对象指的是其他用户，可以作用于多个用户。  “Service”对象指的是云服务，可以作用于多个云服务。  Principal元素和NotPrincipal元素两者任选其一。选定后， “CSP”对象填写内容的格式为urn:csp:iam::domainId:root，其中domainId为其他用户的“账号ID”。  “Service”对象填写内容的格式为小写的云服务名称缩写。
-     * @return principal
-     */
+    /** Statement语句作用的对象。 目前支持“CSP”和“Service”两类对象。 “CSP”对象指的是其他用户，可以作用于多个用户。 “Service”对象指的是云服务，可以作用于多个云服务。
+     * Principal元素和NotPrincipal元素两者任选其一。选定后， “CSP”对象填写内容的格式为urn:csp:iam::domainId:root，其中domainId为其他用户的“账号ID”。
+     * “Service”对象填写内容的格式为小写的云服务名称缩写。
+     * 
+     * @return principal */
     public String getPrincipal() {
         return principal;
     }
@@ -129,20 +98,16 @@ public class Statement  {
         this.principal = principal;
     }
 
-    
-
     public Statement withNotPrincipal(String notPrincipal) {
         this.notPrincipal = notPrincipal;
         return this;
     }
 
-    
-
-
-    /**
-     * NotPrincipal：Statement语句排除作用的对象。  目前支持“CSP”和“Service”两类对象。  “CSP”对象指的是其他用户，可以作用于多个用户。  “Service”对象指的是云服务，可以作用于多个云服务。  Principal元素和NotPrincipal元素两者任选其一。选定后， “CSP”对象填写内容的格式为urn:csp:iam::domainId:root，其中domainId为其他用户的“账号ID”。  “Service”对象填写内容的格式为小写的云服务名称缩写。
-     * @return notPrincipal
-     */
+    /** NotPrincipal：Statement语句排除作用的对象。 目前支持“CSP”和“Service”两类对象。 “CSP”对象指的是其他用户，可以作用于多个用户。
+     * “Service”对象指的是云服务，可以作用于多个云服务。 Principal元素和NotPrincipal元素两者任选其一。选定后，
+     * “CSP”对象填写内容的格式为urn:csp:iam::domainId:root，其中domainId为其他用户的“账号ID”。 “Service”对象填写内容的格式为小写的云服务名称缩写。
+     * 
+     * @return notPrincipal */
     public String getNotPrincipal() {
         return notPrincipal;
     }
@@ -151,20 +116,17 @@ public class Statement  {
         this.notPrincipal = notPrincipal;
     }
 
-    
-
     public Statement withAction(String action) {
         this.action = action;
         return this;
     }
 
-    
-
-
-    /**
-     * Statement语句作用的操作。  允许使用通配符来表示一类操作，例如：SMN:Update*、SMN:Delete*。如果只填写“*”，表示Statement语句作用的操作为该资源支持的所有操作。  Action元素和NotAction元素两者任选其一。  目前支持的操作有：  SMN:UpdateTopic SMN:DeleteTopic SMN:QueryTopicDetail SMN:ListTopicAttributes SMN:UpdateTopicAttribute SMN:DeleteTopicAttributes SMN:DeleteTopicAttributeByName SMN:ListSubscriptionsByTopic SMN:Subscribe SMN:Unsubscribe SMN:Publish
-     * @return action
-     */
+    /** Statement语句作用的操作。 允许使用通配符来表示一类操作，例如：SMN:Update*、SMN:Delete*。如果只填写“*”，表示Statement语句作用的操作为该资源支持的所有操作。
+     * Action元素和NotAction元素两者任选其一。 目前支持的操作有： SMN:UpdateTopic SMN:DeleteTopic SMN:QueryTopicDetail
+     * SMN:ListTopicAttributes SMN:UpdateTopicAttribute SMN:DeleteTopicAttributes SMN:DeleteTopicAttributeByName
+     * SMN:ListSubscriptionsByTopic SMN:Subscribe SMN:Unsubscribe SMN:Publish
+     * 
+     * @return action */
     public String getAction() {
         return action;
     }
@@ -173,20 +135,17 @@ public class Statement  {
         this.action = action;
     }
 
-    
-
     public Statement withNotAction(String notAction) {
         this.notAction = notAction;
         return this;
     }
 
-    
-
-
-    /**
-     * Statement语句排除作用的操作。  允许使用通配符来表示一类操作，例如：SMN:Update*、SMN:Delete*。如果只填写“*”，表示Statement语句作用的操作为该资源支持的所有操作。  Action元素和NotAction元素两者任选其一。  目前支持的操作有：  SMN:UpdateTopic  SMN:DeleteTopic  SMN:QueryTopicDetail  SMN:ListTopicAttributes  SMN:UpdateTopicAttribute  SMN:DeleteTopicAttributes  SMN:DeleteTopicAttributeByName  SMN:ListSubscriptionsByTopic  SMN:Subscribe  SMN:Unsubscribe  SMN:Publish
-     * @return notAction
-     */
+    /** Statement语句排除作用的操作。 允许使用通配符来表示一类操作，例如：SMN:Update*、SMN:Delete*。如果只填写“*”，表示Statement语句作用的操作为该资源支持的所有操作。
+     * Action元素和NotAction元素两者任选其一。 目前支持的操作有： SMN:UpdateTopic SMN:DeleteTopic SMN:QueryTopicDetail
+     * SMN:ListTopicAttributes SMN:UpdateTopicAttribute SMN:DeleteTopicAttributes SMN:DeleteTopicAttributeByName
+     * SMN:ListSubscriptionsByTopic SMN:Subscribe SMN:Unsubscribe SMN:Publish
+     * 
+     * @return notAction */
     public String getNotAction() {
         return notAction;
     }
@@ -195,20 +154,14 @@ public class Statement  {
         this.notAction = notAction;
     }
 
-    
-
     public Statement withResource(String resource) {
         this.resource = resource;
         return this;
     }
 
-    
-
-
-    /**
-     * Statement语句作用的主题。  Resource和NotResource两者任选其一。选定后，填写内容为主题URN。
-     * @return resource
-     */
+    /** Statement语句作用的主题。 Resource和NotResource两者任选其一。选定后，填写内容为主题URN。
+     * 
+     * @return resource */
     public String getResource() {
         return resource;
     }
@@ -217,20 +170,14 @@ public class Statement  {
         this.resource = resource;
     }
 
-    
-
     public Statement withNotResource(String notResource) {
         this.notResource = notResource;
         return this;
     }
 
-    
-
-
-    /**
-     * Statement语句排除作用的主题。  Resource和NotResource两者任选其一。选定后，填写内容为主题URN。
-     * @return notResource
-     */
+    /** Statement语句排除作用的主题。 Resource和NotResource两者任选其一。选定后，填写内容为主题URN。
+     * 
+     * @return notResource */
     public String getNotResource() {
         return notResource;
     }
@@ -238,8 +185,6 @@ public class Statement  {
     public void setNotResource(String notResource) {
         this.notResource = notResource;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -250,19 +195,19 @@ public class Statement  {
             return false;
         }
         Statement statement = (Statement) o;
-        return Objects.equals(this.sid, statement.sid) &&
-            Objects.equals(this.effect, statement.effect) &&
-            Objects.equals(this.principal, statement.principal) &&
-            Objects.equals(this.notPrincipal, statement.notPrincipal) &&
-            Objects.equals(this.action, statement.action) &&
-            Objects.equals(this.notAction, statement.notAction) &&
-            Objects.equals(this.resource, statement.resource) &&
-            Objects.equals(this.notResource, statement.notResource);
+        return Objects.equals(this.sid, statement.sid) && Objects.equals(this.effect, statement.effect)
+            && Objects.equals(this.principal, statement.principal)
+            && Objects.equals(this.notPrincipal, statement.notPrincipal)
+            && Objects.equals(this.action, statement.action) && Objects.equals(this.notAction, statement.notAction)
+            && Objects.equals(this.resource, statement.resource)
+            && Objects.equals(this.notResource, statement.notResource);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sid, effect, principal, notPrincipal, action, notAction, resource, notResource);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -278,16 +223,13 @@ public class Statement  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

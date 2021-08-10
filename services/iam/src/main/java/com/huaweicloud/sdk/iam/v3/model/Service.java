@@ -1,57 +1,44 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.Links;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class Service  {
-
-
+public class Service {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private Links links;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enabled")
-    
+    @JsonProperty(value = "enabled")
+
     private Boolean enabled;
 
     public Service withName(String name) {
@@ -59,13 +46,9 @@ public class Service  {
         return this;
     }
 
-    
-
-
-    /**
-     * 服务名。
-     * @return name
-     */
+    /** 服务名。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -74,20 +57,14 @@ public class Service  {
         this.name = name;
     }
 
-    
-
     public Service withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务描述信息。
-     * @return description
-     */
+    /** 服务描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -96,27 +73,23 @@ public class Service  {
         this.description = description;
     }
 
-    
-
     public Service withLinks(Links links) {
         this.links = links;
         return this;
     }
 
     public Service withLinks(Consumer<Links> linksSetter) {
-        if(this.links == null ){
+        if (this.links == null) {
             this.links = new Links();
             linksSetter.accept(this.links);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get links
-     * @return links
-     */
+    /** Get links
+     * 
+     * @return links */
     public Links getLinks() {
         return links;
     }
@@ -125,20 +98,14 @@ public class Service  {
         this.links = links;
     }
 
-    
-
     public Service withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务ID。
-     * @return id
-     */
+    /** 服务ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -147,20 +114,14 @@ public class Service  {
         this.id = id;
     }
 
-    
-
     public Service withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务类型。
-     * @return type
-     */
+    /** 服务类型。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -169,20 +130,14 @@ public class Service  {
         this.type = type;
     }
 
-    
-
     public Service withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务是否可用。
-     * @return enabled
-     */
+    /** 服务是否可用。
+     * 
+     * @return enabled */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -190,8 +145,6 @@ public class Service  {
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -202,17 +155,16 @@ public class Service  {
             return false;
         }
         Service service = (Service) o;
-        return Objects.equals(this.name, service.name) &&
-            Objects.equals(this.description, service.description) &&
-            Objects.equals(this.links, service.links) &&
-            Objects.equals(this.id, service.id) &&
-            Objects.equals(this.type, service.type) &&
-            Objects.equals(this.enabled, service.enabled);
+        return Objects.equals(this.name, service.name) && Objects.equals(this.description, service.description)
+            && Objects.equals(this.links, service.links) && Objects.equals(this.id, service.id)
+            && Objects.equals(this.type, service.type) && Objects.equals(this.enabled, service.enabled);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, description, links, id, type, enabled);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -226,16 +178,13 @@ public class Service  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

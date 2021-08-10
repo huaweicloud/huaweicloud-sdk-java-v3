@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowCertificatesHttpsInfoRequest  {
-
-
+/** Request Object */
+public class ShowCertificatesHttpsInfoRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_size")
-    
+    @JsonProperty(value = "page_size")
+
     private Integer pageSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_number")
-    
+    @JsonProperty(value = "page_number")
+
     private Integer pageNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_name")
-    
+    @JsonProperty(value = "domain_name")
+
     private String domainName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_domain_id")
-    
+    @JsonProperty(value = "user_domain_id")
+
     private String userDomainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public ShowCertificatesHttpsInfoRequest withPageSize(Integer pageSize) {
@@ -52,13 +38,9 @@ public class ShowCertificatesHttpsInfoRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 每页的数量，取值范围1-10000，不设值时默认值为30。
-     * @return pageSize
-     */
+    /** 每页的数量，取值范围1-10000，不设值时默认值为30。
+     * 
+     * @return pageSize */
     public Integer getPageSize() {
         return pageSize;
     }
@@ -67,20 +49,14 @@ public class ShowCertificatesHttpsInfoRequest  {
         this.pageSize = pageSize;
     }
 
-    
-
     public ShowCertificatesHttpsInfoRequest withPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询的页码。取值范围1-65535，不设值时默认值为1。
-     * @return pageNumber
-     */
+    /** 查询的页码。取值范围1-65535，不设值时默认值为1。
+     * 
+     * @return pageNumber */
     public Integer getPageNumber() {
         return pageNumber;
     }
@@ -89,20 +65,14 @@ public class ShowCertificatesHttpsInfoRequest  {
         this.pageNumber = pageNumber;
     }
 
-    
-
     public ShowCertificatesHttpsInfoRequest withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
     }
 
-    
-
-
-    /**
-     * 加速域名。
-     * @return domainName
-     */
+    /** 加速域名。
+     * 
+     * @return domainName */
     public String getDomainName() {
         return domainName;
     }
@@ -111,20 +81,14 @@ public class ShowCertificatesHttpsInfoRequest  {
         this.domainName = domainName;
     }
 
-    
-
     public ShowCertificatesHttpsInfoRequest withUserDomainId(String userDomainId) {
         this.userDomainId = userDomainId;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名所属用户的domain_id。
-     * @return userDomainId
-     */
+    /** 域名所属用户的domain_id。
+     * 
+     * @return userDomainId */
     public String getUserDomainId() {
         return userDomainId;
     }
@@ -133,20 +97,14 @@ public class ShowCertificatesHttpsInfoRequest  {
         this.userDomainId = userDomainId;
     }
 
-    
-
     public ShowCertificatesHttpsInfoRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID。该参数仅对开启了企业项目功能的用户生效，不传表示查询default项目。\"ALL\"表示查询所有该用户已授权项目的资源。
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID。该参数仅对开启了企业项目功能的用户生效，不传表示查询default项目。\"ALL\"表示查询所有该用户已授权项目的资源。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -154,8 +112,6 @@ public class ShowCertificatesHttpsInfoRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,18 @@ public class ShowCertificatesHttpsInfoRequest  {
             return false;
         }
         ShowCertificatesHttpsInfoRequest showCertificatesHttpsInfoRequest = (ShowCertificatesHttpsInfoRequest) o;
-        return Objects.equals(this.pageSize, showCertificatesHttpsInfoRequest.pageSize) &&
-            Objects.equals(this.pageNumber, showCertificatesHttpsInfoRequest.pageNumber) &&
-            Objects.equals(this.domainName, showCertificatesHttpsInfoRequest.domainName) &&
-            Objects.equals(this.userDomainId, showCertificatesHttpsInfoRequest.userDomainId) &&
-            Objects.equals(this.enterpriseProjectId, showCertificatesHttpsInfoRequest.enterpriseProjectId);
+        return Objects.equals(this.pageSize, showCertificatesHttpsInfoRequest.pageSize)
+            && Objects.equals(this.pageNumber, showCertificatesHttpsInfoRequest.pageNumber)
+            && Objects.equals(this.domainName, showCertificatesHttpsInfoRequest.domainName)
+            && Objects.equals(this.userDomainId, showCertificatesHttpsInfoRequest.userDomainId)
+            && Objects.equals(this.enterpriseProjectId, showCertificatesHttpsInfoRequest.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(pageSize, pageNumber, domainName, userDomainId, enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class ShowCertificatesHttpsInfoRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

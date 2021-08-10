@@ -1,47 +1,32 @@
 package com.huaweicloud.sdk.eip.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.CreatePrePaidPublicipExtendParamOption;
-import com.huaweicloud.sdk.eip.v2.model.CreatePrePaidPublicipOption;
-import com.huaweicloud.sdk.eip.v2.model.CreatePublicipBandwidthOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 创建包周期的弹性公网IP
- */
-public class CreatePrePaidPublicipRequestBody  {
-
-
+/** 创建包周期的弹性公网IP */
+public class CreatePrePaidPublicipRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publicip")
-    
+    @JsonProperty(value = "publicip")
+
     private CreatePrePaidPublicipOption publicip;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bandwidth")
-    
+    @JsonProperty(value = "bandwidth")
+
     private CreatePublicipBandwidthOption bandwidth;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extendParam")
-    
+    @JsonProperty(value = "extendParam")
+
     private CreatePrePaidPublicipExtendParamOption extendParam;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public CreatePrePaidPublicipRequestBody withPublicip(CreatePrePaidPublicipOption publicip) {
@@ -50,19 +35,17 @@ public class CreatePrePaidPublicipRequestBody  {
     }
 
     public CreatePrePaidPublicipRequestBody withPublicip(Consumer<CreatePrePaidPublicipOption> publicipSetter) {
-        if(this.publicip == null ){
+        if (this.publicip == null) {
             this.publicip = new CreatePrePaidPublicipOption();
             publicipSetter.accept(this.publicip);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get publicip
-     * @return publicip
-     */
+    /** Get publicip
+     * 
+     * @return publicip */
     public CreatePrePaidPublicipOption getPublicip() {
         return publicip;
     }
@@ -71,27 +54,23 @@ public class CreatePrePaidPublicipRequestBody  {
         this.publicip = publicip;
     }
 
-    
-
     public CreatePrePaidPublicipRequestBody withBandwidth(CreatePublicipBandwidthOption bandwidth) {
         this.bandwidth = bandwidth;
         return this;
     }
 
     public CreatePrePaidPublicipRequestBody withBandwidth(Consumer<CreatePublicipBandwidthOption> bandwidthSetter) {
-        if(this.bandwidth == null ){
+        if (this.bandwidth == null) {
             this.bandwidth = new CreatePublicipBandwidthOption();
             bandwidthSetter.accept(this.bandwidth);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get bandwidth
-     * @return bandwidth
-     */
+    /** Get bandwidth
+     * 
+     * @return bandwidth */
     public CreatePublicipBandwidthOption getBandwidth() {
         return bandwidth;
     }
@@ -100,27 +79,24 @@ public class CreatePrePaidPublicipRequestBody  {
         this.bandwidth = bandwidth;
     }
 
-    
-
     public CreatePrePaidPublicipRequestBody withExtendParam(CreatePrePaidPublicipExtendParamOption extendParam) {
         this.extendParam = extendParam;
         return this;
     }
 
-    public CreatePrePaidPublicipRequestBody withExtendParam(Consumer<CreatePrePaidPublicipExtendParamOption> extendParamSetter) {
-        if(this.extendParam == null ){
+    public CreatePrePaidPublicipRequestBody withExtendParam(
+        Consumer<CreatePrePaidPublicipExtendParamOption> extendParamSetter) {
+        if (this.extendParam == null) {
             this.extendParam = new CreatePrePaidPublicipExtendParamOption();
             extendParamSetter.accept(this.extendParam);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get extendParam
-     * @return extendParam
-     */
+    /** Get extendParam
+     * 
+     * @return extendParam */
     public CreatePrePaidPublicipExtendParamOption getExtendParam() {
         return extendParam;
     }
@@ -129,20 +105,14 @@ public class CreatePrePaidPublicipRequestBody  {
         this.extendParam = extendParam;
     }
 
-    
-
     public CreatePrePaidPublicipRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID。最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。  创建弹性公网IP时，给弹性公网IP绑定企业项目ID。  不指定该参数时，默认值是 0
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID。最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。 创建弹性公网IP时，给弹性公网IP绑定企业项目ID。 不指定该参数时，默认值是 0
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -150,8 +120,6 @@ public class CreatePrePaidPublicipRequestBody  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -162,15 +130,17 @@ public class CreatePrePaidPublicipRequestBody  {
             return false;
         }
         CreatePrePaidPublicipRequestBody createPrePaidPublicipRequestBody = (CreatePrePaidPublicipRequestBody) o;
-        return Objects.equals(this.publicip, createPrePaidPublicipRequestBody.publicip) &&
-            Objects.equals(this.bandwidth, createPrePaidPublicipRequestBody.bandwidth) &&
-            Objects.equals(this.extendParam, createPrePaidPublicipRequestBody.extendParam) &&
-            Objects.equals(this.enterpriseProjectId, createPrePaidPublicipRequestBody.enterpriseProjectId);
+        return Objects.equals(this.publicip, createPrePaidPublicipRequestBody.publicip)
+            && Objects.equals(this.bandwidth, createPrePaidPublicipRequestBody.bandwidth)
+            && Objects.equals(this.extendParam, createPrePaidPublicipRequestBody.extendParam)
+            && Objects.equals(this.enterpriseProjectId, createPrePaidPublicipRequestBody.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(publicip, bandwidth, extendParam, enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -182,16 +152,13 @@ public class CreatePrePaidPublicipRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ddm.v1.model.GetDatabaseResponseBean;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowDatabaseResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="database")
-    
+    @JsonProperty(value = "database")
+
     private GetDatabaseResponseBean database;
 
     public ShowDatabaseResponse withDatabase(GetDatabaseResponseBean database) {
@@ -32,19 +21,17 @@ public class ShowDatabaseResponse extends SdkResponse {
     }
 
     public ShowDatabaseResponse withDatabase(Consumer<GetDatabaseResponseBean> databaseSetter) {
-        if(this.database == null ){
+        if (this.database == null) {
             this.database = new GetDatabaseResponseBean();
             databaseSetter.accept(this.database);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get database
-     * @return database
-     */
+    /** Get database
+     * 
+     * @return database */
     public GetDatabaseResponseBean getDatabase() {
         return database;
     }
@@ -52,8 +39,6 @@ public class ShowDatabaseResponse extends SdkResponse {
     public void setDatabase(GetDatabaseResponseBean database) {
         this.database = database;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class ShowDatabaseResponse extends SdkResponse {
         ShowDatabaseResponse showDatabaseResponse = (ShowDatabaseResponse) o;
         return Objects.equals(this.database, showDatabaseResponse.database);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(database);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class ShowDatabaseResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

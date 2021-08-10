@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowWindowsBaremetalServerPwdRequest  {
-
-
+/** Request Object */
+public class ShowWindowsBaremetalServerPwdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server_id")
-    
+    @JsonProperty(value = "server_id")
+
     private String serverId;
 
     public ShowWindowsBaremetalServerPwdRequest withServerId(String serverId) {
@@ -28,13 +18,9 @@ public class ShowWindowsBaremetalServerPwdRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器ID
-     * @return serverId
-     */
+    /** 裸金属服务器ID
+     * 
+     * @return serverId */
     public String getServerId() {
         return serverId;
     }
@@ -42,8 +28,6 @@ public class ShowWindowsBaremetalServerPwdRequest  {
     public void setServerId(String serverId) {
         this.serverId = serverId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -53,13 +37,16 @@ public class ShowWindowsBaremetalServerPwdRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ShowWindowsBaremetalServerPwdRequest showWindowsBaremetalServerPwdRequest = (ShowWindowsBaremetalServerPwdRequest) o;
+        ShowWindowsBaremetalServerPwdRequest showWindowsBaremetalServerPwdRequest =
+            (ShowWindowsBaremetalServerPwdRequest) o;
         return Objects.equals(this.serverId, showWindowsBaremetalServerPwdRequest.serverId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(serverId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +55,13 @@ public class ShowWindowsBaremetalServerPwdRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

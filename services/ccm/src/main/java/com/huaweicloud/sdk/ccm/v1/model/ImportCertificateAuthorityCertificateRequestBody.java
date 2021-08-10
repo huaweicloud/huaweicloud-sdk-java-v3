@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.ccm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ImportCertificateAuthorityCertificateRequestBody
- */
-public class ImportCertificateAuthorityCertificateRequestBody  {
-
-
+/** ImportCertificateAuthorityCertificateRequestBody */
+public class ImportCertificateAuthorityCertificateRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificate")
-    
+    @JsonProperty(value = "certificate")
+
     private String certificate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificate_chain")
-    
+    @JsonProperty(value = "certificate_chain")
+
     private String certificateChain;
 
     public ImportCertificateAuthorityCertificateRequestBody withCertificate(String certificate) {
@@ -34,13 +23,9 @@ public class ImportCertificateAuthorityCertificateRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 证书内容
-     * @return certificate
-     */
+    /** 证书内容
+     * 
+     * @return certificate */
     public String getCertificate() {
         return certificate;
     }
@@ -49,20 +34,14 @@ public class ImportCertificateAuthorityCertificateRequestBody  {
         this.certificate = certificate;
     }
 
-    
-
     public ImportCertificateAuthorityCertificateRequestBody withCertificateChain(String certificateChain) {
         this.certificateChain = certificateChain;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书链内容
-     * @return certificateChain
-     */
+    /** 证书链内容
+     * 
+     * @return certificateChain */
     public String getCertificateChain() {
         return certificateChain;
     }
@@ -70,8 +49,6 @@ public class ImportCertificateAuthorityCertificateRequestBody  {
     public void setCertificateChain(String certificateChain) {
         this.certificateChain = certificateChain;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -81,14 +58,17 @@ public class ImportCertificateAuthorityCertificateRequestBody  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ImportCertificateAuthorityCertificateRequestBody importCertificateAuthorityCertificateRequestBody = (ImportCertificateAuthorityCertificateRequestBody) o;
-        return Objects.equals(this.certificate, importCertificateAuthorityCertificateRequestBody.certificate) &&
-            Objects.equals(this.certificateChain, importCertificateAuthorityCertificateRequestBody.certificateChain);
+        ImportCertificateAuthorityCertificateRequestBody importCertificateAuthorityCertificateRequestBody =
+            (ImportCertificateAuthorityCertificateRequestBody) o;
+        return Objects.equals(this.certificate, importCertificateAuthorityCertificateRequestBody.certificate)
+            && Objects.equals(this.certificateChain, importCertificateAuthorityCertificateRequestBody.certificateChain);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(certificate, certificateChain);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +78,13 @@ public class ImportCertificateAuthorityCertificateRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

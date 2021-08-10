@@ -24,10 +24,9 @@ package com.huaweicloud.sdk.core.http;
 import java.io.InputStream;
 import java.util.Map;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public class FormDataFilePart extends FormDataPart<InputStream> {
+
     private Map<String, String> headers;
 
     private String filename;

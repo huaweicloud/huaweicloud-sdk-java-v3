@@ -1,76 +1,57 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateDependencyResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="owner")
-    
+    @JsonProperty(value = "owner")
+
     private String owner;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="link")
-    
+    @JsonProperty(value = "link")
+
     private String link;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="runtime")
-    
+    @JsonProperty(value = "runtime")
+
     private String runtime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="etag")
-    
+    @JsonProperty(value = "etag")
+
     private String etag;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Long size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_name")
-    
+    @JsonProperty(value = "file_name")
+
     private String fileName;
 
     public CreateDependencyResponse withId(String id) {
@@ -78,13 +59,9 @@ public class CreateDependencyResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 依赖包ID。
-     * @return id
-     */
+    /** 依赖包ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -93,20 +70,14 @@ public class CreateDependencyResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public CreateDependencyResponse withOwner(String owner) {
         this.owner = owner;
         return this;
     }
 
-    
-
-
-    /**
-     * 依赖包拥有者。
-     * @return owner
-     */
+    /** 依赖包拥有者。
+     * 
+     * @return owner */
     public String getOwner() {
         return owner;
     }
@@ -115,20 +86,14 @@ public class CreateDependencyResponse extends SdkResponse {
         this.owner = owner;
     }
 
-    
-
     public CreateDependencyResponse withLink(String link) {
         this.link = link;
         return this;
     }
 
-    
-
-
-    /**
-     * 依赖包在obs的存储地址。
-     * @return link
-     */
+    /** 依赖包在obs的存储地址。
+     * 
+     * @return link */
     public String getLink() {
         return link;
     }
@@ -137,20 +102,14 @@ public class CreateDependencyResponse extends SdkResponse {
         this.link = link;
     }
 
-    
-
     public CreateDependencyResponse withRuntime(String runtime) {
         this.runtime = runtime;
         return this;
     }
 
-    
-
-
-    /**
-     * 运行时语言。
-     * @return runtime
-     */
+    /** 运行时语言。
+     * 
+     * @return runtime */
     public String getRuntime() {
         return runtime;
     }
@@ -159,20 +118,14 @@ public class CreateDependencyResponse extends SdkResponse {
         this.runtime = runtime;
     }
 
-    
-
     public CreateDependencyResponse withEtag(String etag) {
         this.etag = etag;
         return this;
     }
 
-    
-
-
-    /**
-     * 依赖包唯一标志。
-     * @return etag
-     */
+    /** 依赖包唯一标志。
+     * 
+     * @return etag */
     public String getEtag() {
         return etag;
     }
@@ -181,20 +134,14 @@ public class CreateDependencyResponse extends SdkResponse {
         this.etag = etag;
     }
 
-    
-
     public CreateDependencyResponse withSize(Long size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 依赖包大小。
-     * @return size
-     */
+    /** 依赖包大小。
+     * 
+     * @return size */
     public Long getSize() {
         return size;
     }
@@ -203,20 +150,14 @@ public class CreateDependencyResponse extends SdkResponse {
         this.size = size;
     }
 
-    
-
     public CreateDependencyResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 依赖包名。
-     * @return name
-     */
+    /** 依赖包名。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -225,20 +166,14 @@ public class CreateDependencyResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public CreateDependencyResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 依赖包描述。
-     * @return description
-     */
+    /** 依赖包描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -247,20 +182,14 @@ public class CreateDependencyResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public CreateDependencyResponse withFileName(String fileName) {
         this.fileName = fileName;
         return this;
     }
 
-    
-
-
-    /**
-     * 依赖包文件名。
-     * @return fileName
-     */
+    /** 依赖包文件名。
+     * 
+     * @return fileName */
     public String getFileName() {
         return fileName;
     }
@@ -268,8 +197,6 @@ public class CreateDependencyResponse extends SdkResponse {
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -280,20 +207,22 @@ public class CreateDependencyResponse extends SdkResponse {
             return false;
         }
         CreateDependencyResponse createDependencyResponse = (CreateDependencyResponse) o;
-        return Objects.equals(this.id, createDependencyResponse.id) &&
-            Objects.equals(this.owner, createDependencyResponse.owner) &&
-            Objects.equals(this.link, createDependencyResponse.link) &&
-            Objects.equals(this.runtime, createDependencyResponse.runtime) &&
-            Objects.equals(this.etag, createDependencyResponse.etag) &&
-            Objects.equals(this.size, createDependencyResponse.size) &&
-            Objects.equals(this.name, createDependencyResponse.name) &&
-            Objects.equals(this.description, createDependencyResponse.description) &&
-            Objects.equals(this.fileName, createDependencyResponse.fileName);
+        return Objects.equals(this.id, createDependencyResponse.id)
+            && Objects.equals(this.owner, createDependencyResponse.owner)
+            && Objects.equals(this.link, createDependencyResponse.link)
+            && Objects.equals(this.runtime, createDependencyResponse.runtime)
+            && Objects.equals(this.etag, createDependencyResponse.etag)
+            && Objects.equals(this.size, createDependencyResponse.size)
+            && Objects.equals(this.name, createDependencyResponse.name)
+            && Objects.equals(this.description, createDependencyResponse.description)
+            && Objects.equals(this.fileName, createDependencyResponse.fileName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, owner, link, runtime, etag, size, name, description, fileName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -310,16 +239,13 @@ public class CreateDependencyResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

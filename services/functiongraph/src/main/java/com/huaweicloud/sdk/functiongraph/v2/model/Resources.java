@@ -1,73 +1,48 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Resources
- */
-public class Resources  {
-
-
+/** Resources */
+public class Resources {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quota")
-    
+    @JsonProperty(value = "quota")
+
     private Integer quota;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="used")
-    
+    @JsonProperty(value = "used")
+
     private Integer used;
-    /**
-     * “资源类型”
-     */
+
+    /** “资源类型” */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum FGS_FUNC_SCALE_DOWN_TIMEOUT for value: "fgs_func_scale_down_timeout"
-         */
+        /** Enum FGS_FUNC_SCALE_DOWN_TIMEOUT for value: "fgs_func_scale_down_timeout" */
         public static final TypeEnum FGS_FUNC_SCALE_DOWN_TIMEOUT = new TypeEnum("fgs_func_scale_down_timeout");
-        
-        /**
-         * Enum FGS_FUNC_OCCURS for value: "fgs_func_occurs"
-         */
+
+        /** Enum FGS_FUNC_OCCURS for value: "fgs_func_occurs" */
         public static final TypeEnum FGS_FUNC_OCCURS = new TypeEnum("fgs_func_occurs");
-        
-        /**
-         * Enum FGS_FUNC_PAT_IDLE_TIME for value: "fgs_func_pat_idle_time"
-         */
+
+        /** Enum FGS_FUNC_PAT_IDLE_TIME for value: "fgs_func_pat_idle_time" */
         public static final TypeEnum FGS_FUNC_PAT_IDLE_TIME = new TypeEnum("fgs_func_pat_idle_time");
-        
-        /**
-         * Enum FGS_FUNC_NUM for value: "fgs_func_num"
-         */
+
+        /** Enum FGS_FUNC_NUM for value: "fgs_func_num" */
         public static final TypeEnum FGS_FUNC_NUM = new TypeEnum("fgs_func_num");
-        
-        /**
-         * Enum FGS_FUNC_CODE_SIZE for value: "fgs_func_code_size"
-         */
+
+        /** Enum FGS_FUNC_CODE_SIZE for value: "fgs_func_code_size" */
         public static final TypeEnum FGS_FUNC_CODE_SIZE = new TypeEnum("fgs_func_code_size");
-        
-        /**
-         * Enum FGS_WORKFLOW_NUM for value: "fgs_workflow_num"
-         */
+
+        /** Enum FGS_WORKFLOW_NUM for value: "fgs_workflow_num" */
         public static final TypeEnum FGS_WORKFLOW_NUM = new TypeEnum("fgs_workflow_num");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -100,7 +75,7 @@ public class Resources  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -111,7 +86,7 @@ public class Resources  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -135,16 +110,14 @@ public class Resources  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unit")
-    
+    @JsonProperty(value = "unit")
+
     private String unit;
 
     public Resources withQuota(Integer quota) {
@@ -152,13 +125,9 @@ public class Resources  {
         return this;
     }
 
-    
-
-
-    /**
-     * 函数配额限制。
-     * @return quota
-     */
+    /** 函数配额限制。
+     * 
+     * @return quota */
     public Integer getQuota() {
         return quota;
     }
@@ -167,20 +136,14 @@ public class Resources  {
         this.quota = quota;
     }
 
-    
-
     public Resources withUsed(Integer used) {
         this.used = used;
         return this;
     }
 
-    
-
-
-    /**
-     * 已使用的配额。
-     * @return used
-     */
+    /** 已使用的配额。
+     * 
+     * @return used */
     public Integer getUsed() {
         return used;
     }
@@ -189,20 +152,14 @@ public class Resources  {
         this.used = used;
     }
 
-    
-
     public Resources withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * “资源类型”
-     * @return type
-     */
+    /** “资源类型”
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -211,20 +168,14 @@ public class Resources  {
         this.type = type;
     }
 
-    
-
     public Resources withUnit(String unit) {
         this.unit = unit;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源的计数单位。fgs_func_code_size,单位为MB,其他场景无单位
-     * @return unit
-     */
+    /** 资源的计数单位。fgs_func_code_size,单位为MB,其他场景无单位
+     * 
+     * @return unit */
     public String getUnit() {
         return unit;
     }
@@ -232,8 +183,6 @@ public class Resources  {
     public void setUnit(String unit) {
         this.unit = unit;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -244,15 +193,15 @@ public class Resources  {
             return false;
         }
         Resources resources = (Resources) o;
-        return Objects.equals(this.quota, resources.quota) &&
-            Objects.equals(this.used, resources.used) &&
-            Objects.equals(this.type, resources.type) &&
-            Objects.equals(this.unit, resources.unit);
+        return Objects.equals(this.quota, resources.quota) && Objects.equals(this.used, resources.used)
+            && Objects.equals(this.type, resources.type) && Objects.equals(this.unit, resources.unit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(quota, used, type, unit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -264,16 +213,13 @@ public class Resources  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 增强型负载均衡器信息
- */
-public class LbaasListenersResult  {
-
-
+/** 增强型负载均衡器信息 */
+public class LbaasListenersResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="listener_id")
-    
+    @JsonProperty(value = "listener_id")
+
     private String listenerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pool_id")
-    
+    @JsonProperty(value = "pool_id")
+
     private String poolId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol_port")
-    
+    @JsonProperty(value = "protocol_port")
+
     private Integer protocolPort;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="weight")
-    
+    @JsonProperty(value = "weight")
+
     private Integer weight;
 
     public LbaasListenersResult withListenerId(String listenerId) {
@@ -46,13 +33,9 @@ public class LbaasListenersResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器ID
-     * @return listenerId
-     */
+    /** 监听器ID
+     * 
+     * @return listenerId */
     public String getListenerId() {
         return listenerId;
     }
@@ -61,20 +44,14 @@ public class LbaasListenersResult  {
         this.listenerId = listenerId;
     }
 
-    
-
     public LbaasListenersResult withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端云服务器组ID
-     * @return poolId
-     */
+    /** 后端云服务器组ID
+     * 
+     * @return poolId */
     public String getPoolId() {
         return poolId;
     }
@@ -83,22 +60,14 @@ public class LbaasListenersResult  {
         this.poolId = poolId;
     }
 
-    
-
     public LbaasListenersResult withProtocolPort(Integer protocolPort) {
         this.protocolPort = protocolPort;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端协议号，指后端云服务器监听的端口，取值范围[1,65535]
-     * minimum: 1
-     * maximum: 65535
-     * @return protocolPort
-     */
+    /** 后端协议号，指后端云服务器监听的端口，取值范围[1,65535] minimum: 1 maximum: 65535
+     * 
+     * @return protocolPort */
     public Integer getProtocolPort() {
         return protocolPort;
     }
@@ -107,20 +76,14 @@ public class LbaasListenersResult  {
         this.protocolPort = protocolPort;
     }
 
-    
-
     public LbaasListenersResult withWeight(Integer weight) {
         this.weight = weight;
         return this;
     }
 
-    
-
-
-    /**
-     * 权重，指后端云服务器经分发得到的请求数量比例，取值范围[0,1]，默认为1。
-     * @return weight
-     */
+    /** 权重，指后端云服务器经分发得到的请求数量比例，取值范围[0,1]，默认为1。
+     * 
+     * @return weight */
     public Integer getWeight() {
         return weight;
     }
@@ -128,8 +91,6 @@ public class LbaasListenersResult  {
     public void setWeight(Integer weight) {
         this.weight = weight;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -140,15 +101,17 @@ public class LbaasListenersResult  {
             return false;
         }
         LbaasListenersResult lbaasListenersResult = (LbaasListenersResult) o;
-        return Objects.equals(this.listenerId, lbaasListenersResult.listenerId) &&
-            Objects.equals(this.poolId, lbaasListenersResult.poolId) &&
-            Objects.equals(this.protocolPort, lbaasListenersResult.protocolPort) &&
-            Objects.equals(this.weight, lbaasListenersResult.weight);
+        return Objects.equals(this.listenerId, lbaasListenersResult.listenerId)
+            && Objects.equals(this.poolId, lbaasListenersResult.poolId)
+            && Objects.equals(this.protocolPort, lbaasListenersResult.protocolPort)
+            && Objects.equals(this.weight, lbaasListenersResult.weight);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(listenerId, poolId, protocolPort, weight);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -160,16 +123,13 @@ public class LbaasListenersResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

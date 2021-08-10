@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Resources
- */
-public class Resources  {
-
-
+/** Resources */
+public class Resources {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quota")
-    
+    @JsonProperty(value = "quota")
+
     private Integer quota;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="used")
-    
+    @JsonProperty(value = "used")
+
     private Integer used;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
     public Resources withQuota(Integer quota) {
@@ -40,13 +28,9 @@ public class Resources  {
         return this;
     }
 
-    
-
-
-    /**
-     * 项目资源配额。
-     * @return quota
-     */
+    /** 项目资源配额。
+     * 
+     * @return quota */
     public Integer getQuota() {
         return quota;
     }
@@ -55,20 +39,14 @@ public class Resources  {
         this.quota = quota;
     }
 
-    
-
     public Resources withUsed(Integer used) {
         this.used = used;
         return this;
     }
 
-    
-
-
-    /**
-     * 已使用的资源数量。
-     * @return used
-     */
+    /** 已使用的资源数量。
+     * 
+     * @return used */
     public Integer getUsed() {
         return used;
     }
@@ -77,20 +55,14 @@ public class Resources  {
         this.used = used;
     }
 
-    
-
     public Resources withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目资源类型，取值范围：instance。
-     * @return type
-     */
+    /** 项目资源类型，取值范围：instance。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -98,8 +70,6 @@ public class Resources  {
     public void setType(String type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,15 @@ public class Resources  {
             return false;
         }
         Resources resources = (Resources) o;
-        return Objects.equals(this.quota, resources.quota) &&
-            Objects.equals(this.used, resources.used) &&
-            Objects.equals(this.type, resources.type);
+        return Objects.equals(this.quota, resources.quota) && Objects.equals(this.used, resources.used)
+            && Objects.equals(this.type, resources.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(quota, used, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +99,13 @@ public class Resources  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

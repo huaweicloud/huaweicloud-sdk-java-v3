@@ -1,82 +1,63 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dns.v2.model.Tag;
-import com.huaweicloud.sdk.dns.v2.model.TagValues;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ListTagReq
- */
-public class ListTagReq  {
-
-
+/** ListTagReq */
+public class ListTagReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<TagValues> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags_any")
-    
+    @JsonProperty(value = "tags_any")
+
     private List<Object> tagsAny = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="not_tags")
-    
+    @JsonProperty(value = "not_tags")
+
     private List<Object> notTags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="not_tags_any")
-    
+    @JsonProperty(value = "not_tags_any")
+
     private List<Object> notTagsAny = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private String action;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="matches")
-    
+    @JsonProperty(value = "matches")
+
     private List<Tag> matches = null;
-    
+
     public ListTagReq withTags(List<TagValues> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public ListTagReq addTagsItem(TagValues tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -84,17 +65,16 @@ public class ListTagReq  {
     }
 
     public ListTagReq withTags(Consumer<List<TagValues>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 包含标签。 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
-     * @return tags
-     */
+    /** 包含标签。 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
+     * 
+     * @return tags */
     public List<TagValues> getTags() {
         return tags;
     }
@@ -103,16 +83,13 @@ public class ListTagReq  {
         this.tags = tags;
     }
 
-    
-
     public ListTagReq withTagsAny(List<Object> tagsAny) {
         this.tagsAny = tagsAny;
         return this;
     }
 
-    
     public ListTagReq addTagsAnyItem(Object tagsAnyItem) {
-        if(this.tagsAny == null) {
+        if (this.tagsAny == null) {
             this.tagsAny = new ArrayList<>();
         }
         this.tagsAny.add(tagsAnyItem);
@@ -120,17 +97,16 @@ public class ListTagReq  {
     }
 
     public ListTagReq withTagsAny(Consumer<List<Object>> tagsAnySetter) {
-        if(this.tagsAny == null) {
+        if (this.tagsAny == null) {
             this.tagsAny = new ArrayList<>();
         }
         tagsAnySetter.accept(this.tagsAny);
         return this;
     }
 
-    /**
-     * 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
-     * @return tagsAny
-     */
+    /** 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
+     * 
+     * @return tagsAny */
     public List<Object> getTagsAny() {
         return tagsAny;
     }
@@ -139,16 +115,13 @@ public class ListTagReq  {
         this.tagsAny = tagsAny;
     }
 
-    
-
     public ListTagReq withNotTags(List<Object> notTags) {
         this.notTags = notTags;
         return this;
     }
 
-    
     public ListTagReq addNotTagsItem(Object notTagsItem) {
-        if(this.notTags == null) {
+        if (this.notTags == null) {
             this.notTags = new ArrayList<>();
         }
         this.notTags.add(notTagsItem);
@@ -156,17 +129,16 @@ public class ListTagReq  {
     }
 
     public ListTagReq withNotTags(Consumer<List<Object>> notTagsSetter) {
-        if(this.notTags == null) {
+        if (this.notTags == null) {
             this.notTags = new ArrayList<>();
         }
         notTagsSetter.accept(this.notTags);
         return this;
     }
 
-    /**
-     * 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
-     * @return notTags
-     */
+    /** 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
+     * 
+     * @return notTags */
     public List<Object> getNotTags() {
         return notTags;
     }
@@ -175,16 +147,13 @@ public class ListTagReq  {
         this.notTags = notTags;
     }
 
-    
-
     public ListTagReq withNotTagsAny(List<Object> notTagsAny) {
         this.notTagsAny = notTagsAny;
         return this;
     }
 
-    
     public ListTagReq addNotTagsAnyItem(Object notTagsAnyItem) {
-        if(this.notTagsAny == null) {
+        if (this.notTagsAny == null) {
             this.notTagsAny = new ArrayList<>();
         }
         this.notTagsAny.add(notTagsAnyItem);
@@ -192,17 +161,16 @@ public class ListTagReq  {
     }
 
     public ListTagReq withNotTagsAny(Consumer<List<Object>> notTagsAnySetter) {
-        if(this.notTagsAny == null) {
+        if (this.notTagsAny == null) {
             this.notTagsAny = new ArrayList<>();
         }
         notTagsAnySetter.accept(this.notTagsAny);
         return this;
     }
 
-    /**
-     * 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
-     * @return notTagsAny
-     */
+    /** 最多包含10个key，每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。Key不能重复，同一个key中values不能重复。
+     * 
+     * @return notTagsAny */
     public List<Object> getNotTagsAny() {
         return notTagsAny;
     }
@@ -211,20 +179,14 @@ public class ListTagReq  {
         this.notTagsAny = notTagsAny;
     }
 
-    
-
     public ListTagReq withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页返回的资源个数。  取值范围：1~1000  参数取值说明：  如果action为filter时，默认为1000。 如果action为count时，无此参数。
-     * @return limit
-     */
+    /** 每页返回的资源个数。 取值范围：1~1000 参数取值说明： 如果action为filter时，默认为1000。 如果action为count时，无此参数。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -233,20 +195,15 @@ public class ListTagReq  {
         this.limit = limit;
     }
 
-    
-
     public ListTagReq withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。  取值范围：0~2147483647  默认值为0。  参数取值说明： 查询第一页数据时，不需要传入此参数。 查询后续页码数据时，将查询前一页数据时响应体中的值带入此参数。 如果action为filter时，默认为0，必须为数字，不能为负数。 如果action为count时，无此参数。
-     * @return offset
-     */
+    /** 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。 取值范围：0~2147483647 默认值为0。 参数取值说明： 查询第一页数据时，不需要传入此参数。 查询后续页码数据时，将查询前一页数据时响应体中的值带入此参数。
+     * 如果action为filter时，默认为0，必须为数字，不能为负数。 如果action为count时，无此参数。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -255,20 +212,14 @@ public class ListTagReq  {
         this.offset = offset;
     }
 
-    
-
     public ListTagReq withAction(String action) {
         this.action = action;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作标识（区分大小写）。  取值范围：  filter：分页过滤查询 count：查询总条数
-     * @return action
-     */
+    /** 操作标识（区分大小写）。 取值范围： filter：分页过滤查询 count：查询总条数
+     * 
+     * @return action */
     public String getAction() {
         return action;
     }
@@ -277,16 +228,13 @@ public class ListTagReq  {
         this.action = action;
     }
 
-    
-
     public ListTagReq withMatches(List<Tag> matches) {
         this.matches = matches;
         return this;
     }
 
-    
     public ListTagReq addMatchesItem(Tag matchesItem) {
-        if(this.matches == null) {
+        if (this.matches == null) {
             this.matches = new ArrayList<>();
         }
         this.matches.add(matchesItem);
@@ -294,17 +242,16 @@ public class ListTagReq  {
     }
 
     public ListTagReq withMatches(Consumer<List<Tag>> matchesSetter) {
-        if(this.matches == null) {
+        if (this.matches == null) {
             this.matches = new ArrayList<>();
         }
         matchesSetter.accept(this.matches);
         return this;
     }
 
-    /**
-     * key为要匹配的字段，value为匹配的值。  如果value为空字符串则精确匹配，否则模糊匹配。
-     * @return matches
-     */
+    /** key为要匹配的字段，value为匹配的值。 如果value为空字符串则精确匹配，否则模糊匹配。
+     * 
+     * @return matches */
     public List<Tag> getMatches() {
         return matches;
     }
@@ -312,8 +259,6 @@ public class ListTagReq  {
     public void setMatches(List<Tag> matches) {
         this.matches = matches;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -324,19 +269,18 @@ public class ListTagReq  {
             return false;
         }
         ListTagReq listTagReq = (ListTagReq) o;
-        return Objects.equals(this.tags, listTagReq.tags) &&
-            Objects.equals(this.tagsAny, listTagReq.tagsAny) &&
-            Objects.equals(this.notTags, listTagReq.notTags) &&
-            Objects.equals(this.notTagsAny, listTagReq.notTagsAny) &&
-            Objects.equals(this.limit, listTagReq.limit) &&
-            Objects.equals(this.offset, listTagReq.offset) &&
-            Objects.equals(this.action, listTagReq.action) &&
-            Objects.equals(this.matches, listTagReq.matches);
+        return Objects.equals(this.tags, listTagReq.tags) && Objects.equals(this.tagsAny, listTagReq.tagsAny)
+            && Objects.equals(this.notTags, listTagReq.notTags)
+            && Objects.equals(this.notTagsAny, listTagReq.notTagsAny) && Objects.equals(this.limit, listTagReq.limit)
+            && Objects.equals(this.offset, listTagReq.offset) && Objects.equals(this.action, listTagReq.action)
+            && Objects.equals(this.matches, listTagReq.matches);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(tags, tagsAny, notTags, notTagsAny, limit, offset, action, matches);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -352,16 +296,13 @@ public class ListTagReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

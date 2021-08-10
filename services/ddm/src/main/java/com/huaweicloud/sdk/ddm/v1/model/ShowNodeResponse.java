@@ -1,82 +1,62 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowNodeResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
+
     private String nodeId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="private_ip")
-    
+    @JsonProperty(value = "private_ip")
+
     private String privateIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="floating_ip")
-    
+    @JsonProperty(value = "floating_ip")
+
     private String floatingIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server_id")
-    
+    @JsonProperty(value = "server_id")
+
     private String serverId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_name")
-    
+    @JsonProperty(value = "subnet_name")
+
     private String subnetName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datavolume_id")
-    
+    @JsonProperty(value = "datavolume_id")
+
     private String datavolumeId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="res_subnet_ip")
-    
+    @JsonProperty(value = "res_subnet_ip")
+
     private String resSubnetIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="systemvolume_id")
-    
+    @JsonProperty(value = "systemvolume_id")
+
     private String systemvolumeId;
 
     public ShowNodeResponse withStatus(String status) {
@@ -84,13 +64,9 @@ public class ShowNodeResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 节点状态。
-     * @return status
-     */
+    /** 节点状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -99,20 +75,14 @@ public class ShowNodeResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public ShowNodeResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点名称。
-     * @return name
-     */
+    /** 节点名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -121,20 +91,14 @@ public class ShowNodeResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowNodeResponse withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点id。
-     * @return nodeId
-     */
+    /** 节点id。
+     * 
+     * @return nodeId */
     public String getNodeId() {
         return nodeId;
     }
@@ -143,20 +107,14 @@ public class ShowNodeResponse extends SdkResponse {
         this.nodeId = nodeId;
     }
 
-    
-
     public ShowNodeResponse withPrivateIp(String privateIp) {
         this.privateIp = privateIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点私有ip。
-     * @return privateIp
-     */
+    /** 节点私有ip。
+     * 
+     * @return privateIp */
     public String getPrivateIp() {
         return privateIp;
     }
@@ -165,20 +123,14 @@ public class ShowNodeResponse extends SdkResponse {
         this.privateIp = privateIp;
     }
 
-    
-
     public ShowNodeResponse withFloatingIp(String floatingIp) {
         this.floatingIp = floatingIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点浮动ip。
-     * @return floatingIp
-     */
+    /** 节点浮动ip。
+     * 
+     * @return floatingIp */
     public String getFloatingIp() {
         return floatingIp;
     }
@@ -187,20 +139,14 @@ public class ShowNodeResponse extends SdkResponse {
         this.floatingIp = floatingIp;
     }
 
-    
-
     public ShowNodeResponse withServerId(String serverId) {
         this.serverId = serverId;
         return this;
     }
 
-    
-
-
-    /**
-     * 虚机id。
-     * @return serverId
-     */
+    /** 虚机id。
+     * 
+     * @return serverId */
     public String getServerId() {
         return serverId;
     }
@@ -209,20 +155,14 @@ public class ShowNodeResponse extends SdkResponse {
         this.serverId = serverId;
     }
 
-    
-
     public ShowNodeResponse withSubnetName(String subnetName) {
         this.subnetName = subnetName;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网名称。
-     * @return subnetName
-     */
+    /** 子网名称。
+     * 
+     * @return subnetName */
     public String getSubnetName() {
         return subnetName;
     }
@@ -231,20 +171,14 @@ public class ShowNodeResponse extends SdkResponse {
         this.subnetName = subnetName;
     }
 
-    
-
     public ShowNodeResponse withDatavolumeId(String datavolumeId) {
         this.datavolumeId = datavolumeId;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据盘id。
-     * @return datavolumeId
-     */
+    /** 数据盘id。
+     * 
+     * @return datavolumeId */
     public String getDatavolumeId() {
         return datavolumeId;
     }
@@ -253,20 +187,14 @@ public class ShowNodeResponse extends SdkResponse {
         this.datavolumeId = datavolumeId;
     }
 
-    
-
     public ShowNodeResponse withResSubnetIp(String resSubnetIp) {
         this.resSubnetIp = resSubnetIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源子网ip。
-     * @return resSubnetIp
-     */
+    /** 资源子网ip。
+     * 
+     * @return resSubnetIp */
     public String getResSubnetIp() {
         return resSubnetIp;
     }
@@ -275,20 +203,14 @@ public class ShowNodeResponse extends SdkResponse {
         this.resSubnetIp = resSubnetIp;
     }
 
-    
-
     public ShowNodeResponse withSystemvolumeId(String systemvolumeId) {
         this.systemvolumeId = systemvolumeId;
         return this;
     }
 
-    
-
-
-    /**
-     * 系统盘id。
-     * @return systemvolumeId
-     */
+    /** 系统盘id。
+     * 
+     * @return systemvolumeId */
     public String getSystemvolumeId() {
         return systemvolumeId;
     }
@@ -296,8 +218,6 @@ public class ShowNodeResponse extends SdkResponse {
     public void setSystemvolumeId(String systemvolumeId) {
         this.systemvolumeId = systemvolumeId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -308,21 +228,31 @@ public class ShowNodeResponse extends SdkResponse {
             return false;
         }
         ShowNodeResponse showNodeResponse = (ShowNodeResponse) o;
-        return Objects.equals(this.status, showNodeResponse.status) &&
-            Objects.equals(this.name, showNodeResponse.name) &&
-            Objects.equals(this.nodeId, showNodeResponse.nodeId) &&
-            Objects.equals(this.privateIp, showNodeResponse.privateIp) &&
-            Objects.equals(this.floatingIp, showNodeResponse.floatingIp) &&
-            Objects.equals(this.serverId, showNodeResponse.serverId) &&
-            Objects.equals(this.subnetName, showNodeResponse.subnetName) &&
-            Objects.equals(this.datavolumeId, showNodeResponse.datavolumeId) &&
-            Objects.equals(this.resSubnetIp, showNodeResponse.resSubnetIp) &&
-            Objects.equals(this.systemvolumeId, showNodeResponse.systemvolumeId);
+        return Objects.equals(this.status, showNodeResponse.status) && Objects.equals(this.name, showNodeResponse.name)
+            && Objects.equals(this.nodeId, showNodeResponse.nodeId)
+            && Objects.equals(this.privateIp, showNodeResponse.privateIp)
+            && Objects.equals(this.floatingIp, showNodeResponse.floatingIp)
+            && Objects.equals(this.serverId, showNodeResponse.serverId)
+            && Objects.equals(this.subnetName, showNodeResponse.subnetName)
+            && Objects.equals(this.datavolumeId, showNodeResponse.datavolumeId)
+            && Objects.equals(this.resSubnetIp, showNodeResponse.resSubnetIp)
+            && Objects.equals(this.systemvolumeId, showNodeResponse.systemvolumeId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(status, name, nodeId, privateIp, floatingIp, serverId, subnetName, datavolumeId, resSubnetIp, systemvolumeId);
+        return Objects.hash(status,
+            name,
+            nodeId,
+            privateIp,
+            floatingIp,
+            serverId,
+            subnetName,
+            datavolumeId,
+            resSubnetIp,
+            systemvolumeId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -340,16 +270,13 @@ public class ShowNodeResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

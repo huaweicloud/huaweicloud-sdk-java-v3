@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.nat.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.nat.v2.model.CreateNatGatewayOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 创建公网NAT网关实例的请求体。
- */
-public class CreateNatGatewayRequestBody  {
-
-
+/** 创建公网NAT网关实例的请求体。 */
+public class CreateNatGatewayRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nat_gateway")
-    
+    @JsonProperty(value = "nat_gateway")
+
     private CreateNatGatewayOption natGateway;
 
     public CreateNatGatewayRequestBody withNatGateway(CreateNatGatewayOption natGateway) {
@@ -30,19 +20,17 @@ public class CreateNatGatewayRequestBody  {
     }
 
     public CreateNatGatewayRequestBody withNatGateway(Consumer<CreateNatGatewayOption> natGatewaySetter) {
-        if(this.natGateway == null ){
+        if (this.natGateway == null) {
             this.natGateway = new CreateNatGatewayOption();
             natGatewaySetter.accept(this.natGateway);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get natGateway
-     * @return natGateway
-     */
+    /** Get natGateway
+     * 
+     * @return natGateway */
     public CreateNatGatewayOption getNatGateway() {
         return natGateway;
     }
@@ -50,8 +38,6 @@ public class CreateNatGatewayRequestBody  {
     public void setNatGateway(CreateNatGatewayOption natGateway) {
         this.natGateway = natGateway;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class CreateNatGatewayRequestBody  {
         CreateNatGatewayRequestBody createNatGatewayRequestBody = (CreateNatGatewayRequestBody) o;
         return Objects.equals(this.natGateway, createNatGatewayRequestBody.natGateway);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(natGateway);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class CreateNatGatewayRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

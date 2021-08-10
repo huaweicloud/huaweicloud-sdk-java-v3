@@ -1,52 +1,37 @@
 package com.huaweicloud.sdk.devstar.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowTemplateFileResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content")
-    
+    @JsonProperty(value = "content")
+
     private String content;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="encoding")
-    
+    @JsonProperty(value = "encoding")
+
     private String encoding;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_name")
-    
+    @JsonProperty(value = "file_name")
+
     private String fileName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_path")
-    
+    @JsonProperty(value = "file_path")
+
     private String filePath;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_type")
-    
+    @JsonProperty(value = "file_type")
+
     private String fileType;
 
     public ShowTemplateFileResponse withContent(String content) {
@@ -54,13 +39,9 @@ public class ShowTemplateFileResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 文件内容（返回的文件内容为encoding指定的编码格式编码后的内容）。
-     * @return content
-     */
+    /** 文件内容（返回的文件内容为encoding指定的编码格式编码后的内容）。
+     * 
+     * @return content */
     public String getContent() {
         return content;
     }
@@ -69,20 +50,14 @@ public class ShowTemplateFileResponse extends SdkResponse {
         this.content = content;
     }
 
-    
-
     public ShowTemplateFileResponse withEncoding(String encoding) {
         this.encoding = encoding;
         return this;
     }
 
-    
-
-
-    /**
-     * 内容编码格式(固定base64)。
-     * @return encoding
-     */
+    /** 内容编码格式(固定base64)。
+     * 
+     * @return encoding */
     public String getEncoding() {
         return encoding;
     }
@@ -91,20 +66,14 @@ public class ShowTemplateFileResponse extends SdkResponse {
         this.encoding = encoding;
     }
 
-    
-
     public ShowTemplateFileResponse withFileName(String fileName) {
         this.fileName = fileName;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件名。
-     * @return fileName
-     */
+    /** 文件名。
+     * 
+     * @return fileName */
     public String getFileName() {
         return fileName;
     }
@@ -113,20 +82,14 @@ public class ShowTemplateFileResponse extends SdkResponse {
         this.fileName = fileName;
     }
 
-    
-
     public ShowTemplateFileResponse withFilePath(String filePath) {
         this.filePath = filePath;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件相对路径。
-     * @return filePath
-     */
+    /** 文件相对路径。
+     * 
+     * @return filePath */
     public String getFilePath() {
         return filePath;
     }
@@ -135,20 +98,14 @@ public class ShowTemplateFileResponse extends SdkResponse {
         this.filePath = filePath;
     }
 
-    
-
     public ShowTemplateFileResponse withFileType(String fileType) {
         this.fileType = fileType;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件类型。
-     * @return fileType
-     */
+    /** 文件类型。
+     * 
+     * @return fileType */
     public String getFileType() {
         return fileType;
     }
@@ -156,8 +113,6 @@ public class ShowTemplateFileResponse extends SdkResponse {
     public void setFileType(String fileType) {
         this.fileType = fileType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -168,16 +123,18 @@ public class ShowTemplateFileResponse extends SdkResponse {
             return false;
         }
         ShowTemplateFileResponse showTemplateFileResponse = (ShowTemplateFileResponse) o;
-        return Objects.equals(this.content, showTemplateFileResponse.content) &&
-            Objects.equals(this.encoding, showTemplateFileResponse.encoding) &&
-            Objects.equals(this.fileName, showTemplateFileResponse.fileName) &&
-            Objects.equals(this.filePath, showTemplateFileResponse.filePath) &&
-            Objects.equals(this.fileType, showTemplateFileResponse.fileType);
+        return Objects.equals(this.content, showTemplateFileResponse.content)
+            && Objects.equals(this.encoding, showTemplateFileResponse.encoding)
+            && Objects.equals(this.fileName, showTemplateFileResponse.fileName)
+            && Objects.equals(this.filePath, showTemplateFileResponse.filePath)
+            && Objects.equals(this.fileType, showTemplateFileResponse.fileType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(content, encoding, fileName, filePath, fileType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -190,16 +147,13 @@ public class ShowTemplateFileResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

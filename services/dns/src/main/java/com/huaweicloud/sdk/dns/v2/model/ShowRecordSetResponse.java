@@ -1,109 +1,85 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dns.v2.model.PageLink;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowRecordSetResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="zone_id")
-    
+    @JsonProperty(value = "zone_id")
+
     private String zoneId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="zone_name")
-    
+    @JsonProperty(value = "zone_name")
+
     private String zoneName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ttl")
-    
+    @JsonProperty(value = "ttl")
+
     private Integer ttl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="records")
-    
+    @JsonProperty(value = "records")
+
     private List<String> records = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_at")
-    
+    @JsonProperty(value = "create_at")
+
     private String createAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_at")
-    
+    @JsonProperty(value = "update_at")
+
     private String updateAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="default")
-    
+    @JsonProperty(value = "default")
+
     private Boolean _default;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private PageLink links;
 
     public ShowRecordSetResponse withId(String id) {
@@ -111,13 +87,9 @@ public class ShowRecordSetResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * Record Set的ID。
-     * @return id
-     */
+    /** Record Set的ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -126,20 +98,14 @@ public class ShowRecordSetResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowRecordSetResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * Record Set的名称。
-     * @return name
-     */
+    /** Record Set的名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -148,20 +114,14 @@ public class ShowRecordSetResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowRecordSetResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * Record Set的描述信息。
-     * @return description
-     */
+    /** Record Set的描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -170,20 +130,14 @@ public class ShowRecordSetResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public ShowRecordSetResponse withZoneId(String zoneId) {
         this.zoneId = zoneId;
         return this;
     }
 
-    
-
-
-    /**
-     * 托管该记录的zone_id。
-     * @return zoneId
-     */
+    /** 托管该记录的zone_id。
+     * 
+     * @return zoneId */
     public String getZoneId() {
         return zoneId;
     }
@@ -192,20 +146,14 @@ public class ShowRecordSetResponse extends SdkResponse {
         this.zoneId = zoneId;
     }
 
-    
-
     public ShowRecordSetResponse withZoneName(String zoneName) {
         this.zoneName = zoneName;
         return this;
     }
 
-    
-
-
-    /**
-     * 托管该记录的zone_name。
-     * @return zoneName
-     */
+    /** 托管该记录的zone_name。
+     * 
+     * @return zoneName */
     public String getZoneName() {
         return zoneName;
     }
@@ -214,20 +162,14 @@ public class ShowRecordSetResponse extends SdkResponse {
         this.zoneName = zoneName;
     }
 
-    
-
     public ShowRecordSetResponse withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 记录类型。
-     * @return type
-     */
+    /** 记录类型。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -236,20 +178,14 @@ public class ShowRecordSetResponse extends SdkResponse {
         this.type = type;
     }
 
-    
-
     public ShowRecordSetResponse withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
     }
 
-    
-
-
-    /**
-     * 解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。
-     * @return ttl
-     */
+    /** 解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。
+     * 
+     * @return ttl */
     public Integer getTtl() {
         return ttl;
     }
@@ -258,16 +194,13 @@ public class ShowRecordSetResponse extends SdkResponse {
         this.ttl = ttl;
     }
 
-    
-
     public ShowRecordSetResponse withRecords(List<String> records) {
         this.records = records;
         return this;
     }
 
-    
     public ShowRecordSetResponse addRecordsItem(String recordsItem) {
-        if(this.records == null) {
+        if (this.records == null) {
             this.records = new ArrayList<>();
         }
         this.records.add(recordsItem);
@@ -275,17 +208,16 @@ public class ShowRecordSetResponse extends SdkResponse {
     }
 
     public ShowRecordSetResponse withRecords(Consumer<List<String>> recordsSetter) {
-        if(this.records == null) {
+        if (this.records == null) {
             this.records = new ArrayList<>();
         }
         recordsSetter.accept(this.records);
         return this;
     }
 
-    /**
-     * 域名解析后的值。
-     * @return records
-     */
+    /** 域名解析后的值。
+     * 
+     * @return records */
     public List<String> getRecords() {
         return records;
     }
@@ -294,20 +226,14 @@ public class ShowRecordSetResponse extends SdkResponse {
         this.records = records;
     }
 
-    
-
     public ShowRecordSetResponse withCreateAt(String createAt) {
         this.createAt = createAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间。
-     * @return createAt
-     */
+    /** 创建时间。
+     * 
+     * @return createAt */
     public String getCreateAt() {
         return createAt;
     }
@@ -316,20 +242,14 @@ public class ShowRecordSetResponse extends SdkResponse {
         this.createAt = createAt;
     }
 
-    
-
     public ShowRecordSetResponse withUpdateAt(String updateAt) {
         this.updateAt = updateAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间。
-     * @return updateAt
-     */
+    /** 更新时间。
+     * 
+     * @return updateAt */
     public String getUpdateAt() {
         return updateAt;
     }
@@ -338,20 +258,14 @@ public class ShowRecordSetResponse extends SdkResponse {
         this.updateAt = updateAt;
     }
 
-    
-
     public ShowRecordSetResponse withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源状态。
-     * @return status
-     */
+    /** 资源状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -360,20 +274,14 @@ public class ShowRecordSetResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public ShowRecordSetResponse withDefault(Boolean _default) {
         this._default = _default;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识是否由系统默认生成，系统默认生成的Record Set不能删除。
-     * @return _default
-     */
+    /** 标识是否由系统默认生成，系统默认生成的Record Set不能删除。
+     * 
+     * @return _default */
     public Boolean getDefault() {
         return _default;
     }
@@ -382,20 +290,14 @@ public class ShowRecordSetResponse extends SdkResponse {
         this._default = _default;
     }
 
-    
-
     public ShowRecordSetResponse withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 该Record Set所属的项目ID。
-     * @return projectId
-     */
+    /** 该Record Set所属的项目ID。
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -404,27 +306,23 @@ public class ShowRecordSetResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
-    
-
     public ShowRecordSetResponse withLinks(PageLink links) {
         this.links = links;
         return this;
     }
 
     public ShowRecordSetResponse withLinks(Consumer<PageLink> linksSetter) {
-        if(this.links == null ){
+        if (this.links == null) {
             this.links = new PageLink();
             linksSetter.accept(this.links);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get links
-     * @return links
-     */
+    /** Get links
+     * 
+     * @return links */
     public PageLink getLinks() {
         return links;
     }
@@ -432,8 +330,6 @@ public class ShowRecordSetResponse extends SdkResponse {
     public void setLinks(PageLink links) {
         this.links = links;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -444,25 +340,40 @@ public class ShowRecordSetResponse extends SdkResponse {
             return false;
         }
         ShowRecordSetResponse showRecordSetResponse = (ShowRecordSetResponse) o;
-        return Objects.equals(this.id, showRecordSetResponse.id) &&
-            Objects.equals(this.name, showRecordSetResponse.name) &&
-            Objects.equals(this.description, showRecordSetResponse.description) &&
-            Objects.equals(this.zoneId, showRecordSetResponse.zoneId) &&
-            Objects.equals(this.zoneName, showRecordSetResponse.zoneName) &&
-            Objects.equals(this.type, showRecordSetResponse.type) &&
-            Objects.equals(this.ttl, showRecordSetResponse.ttl) &&
-            Objects.equals(this.records, showRecordSetResponse.records) &&
-            Objects.equals(this.createAt, showRecordSetResponse.createAt) &&
-            Objects.equals(this.updateAt, showRecordSetResponse.updateAt) &&
-            Objects.equals(this.status, showRecordSetResponse.status) &&
-            Objects.equals(this._default, showRecordSetResponse._default) &&
-            Objects.equals(this.projectId, showRecordSetResponse.projectId) &&
-            Objects.equals(this.links, showRecordSetResponse.links);
+        return Objects.equals(this.id, showRecordSetResponse.id)
+            && Objects.equals(this.name, showRecordSetResponse.name)
+            && Objects.equals(this.description, showRecordSetResponse.description)
+            && Objects.equals(this.zoneId, showRecordSetResponse.zoneId)
+            && Objects.equals(this.zoneName, showRecordSetResponse.zoneName)
+            && Objects.equals(this.type, showRecordSetResponse.type)
+            && Objects.equals(this.ttl, showRecordSetResponse.ttl)
+            && Objects.equals(this.records, showRecordSetResponse.records)
+            && Objects.equals(this.createAt, showRecordSetResponse.createAt)
+            && Objects.equals(this.updateAt, showRecordSetResponse.updateAt)
+            && Objects.equals(this.status, showRecordSetResponse.status)
+            && Objects.equals(this._default, showRecordSetResponse._default)
+            && Objects.equals(this.projectId, showRecordSetResponse.projectId)
+            && Objects.equals(this.links, showRecordSetResponse.links);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, zoneId, zoneName, type, ttl, records, createAt, updateAt, status, _default, projectId, links);
+        return Objects.hash(id,
+            name,
+            description,
+            zoneId,
+            zoneName,
+            type,
+            ttl,
+            records,
+            createAt,
+            updateAt,
+            status,
+            _default,
+            projectId,
+            links);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -484,16 +395,13 @@ public class ShowRecordSetResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

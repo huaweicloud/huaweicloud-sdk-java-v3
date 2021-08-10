@@ -1,51 +1,32 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 策略执行具体动作
- */
-public class ScalingPolicyActionV1  {
+/** 策略执行具体动作 */
+public class ScalingPolicyActionV1 {
 
-    /**
-     * 操作选项。ADD：添加实例。REMOVE/REDUCE：移除实例。SET：设置实例数为
-     */
+    /** 操作选项。ADD：添加实例。REMOVE/REDUCE：移除实例。SET：设置实例数为 */
     public static final class OperationEnum {
 
-        
-        /**
-         * Enum ADD for value: "ADD"
-         */
+        /** Enum ADD for value: "ADD" */
         public static final OperationEnum ADD = new OperationEnum("ADD");
-        
-        /**
-         * Enum REMOVE for value: "REMOVE"
-         */
+
+        /** Enum REMOVE for value: "REMOVE" */
         public static final OperationEnum REMOVE = new OperationEnum("REMOVE");
-        
-        /**
-         * Enum REDUCE for value: "REDUCE"
-         */
+
+        /** Enum REDUCE for value: "REDUCE" */
         public static final OperationEnum REDUCE = new OperationEnum("REDUCE");
-        
-        /**
-         * Enum SET for value: "SET"
-         */
+
+        /** Enum SET for value: "SET" */
         public static final OperationEnum SET = new OperationEnum("SET");
-        
 
         private static final Map<String, OperationEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,7 +57,7 @@ public class ScalingPolicyActionV1  {
 
         @JsonCreator
         public static OperationEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OperationEnum result = STATIC_FIELDS.get(value);
@@ -87,7 +68,7 @@ public class ScalingPolicyActionV1  {
         }
 
         public static OperationEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OperationEnum result = STATIC_FIELDS.get(value);
@@ -111,22 +92,19 @@ public class ScalingPolicyActionV1  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operation")
-    
+    @JsonProperty(value = "operation")
+
     private OperationEnum operation;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_number")
-    
+    @JsonProperty(value = "instance_number")
+
     private Integer instanceNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_percentage")
-    
+    @JsonProperty(value = "instance_percentage")
+
     private Integer instancePercentage;
 
     public ScalingPolicyActionV1 withOperation(OperationEnum operation) {
@@ -134,13 +112,9 @@ public class ScalingPolicyActionV1  {
         return this;
     }
 
-    
-
-
-    /**
-     * 操作选项。ADD：添加实例。REMOVE/REDUCE：移除实例。SET：设置实例数为
-     * @return operation
-     */
+    /** 操作选项。ADD：添加实例。REMOVE/REDUCE：移除实例。SET：设置实例数为
+     * 
+     * @return operation */
     public OperationEnum getOperation() {
         return operation;
     }
@@ -149,20 +123,14 @@ public class ScalingPolicyActionV1  {
         this.operation = operation;
     }
 
-    
-
     public ScalingPolicyActionV1 withInstanceNumber(Integer instanceNumber) {
         this.instanceNumber = instanceNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作实例个数，默认为1。配置参数时，instance_number和instance_percentage参数只能选其中一个进行配置。
-     * @return instanceNumber
-     */
+    /** 操作实例个数，默认为1。配置参数时，instance_number和instance_percentage参数只能选其中一个进行配置。
+     * 
+     * @return instanceNumber */
     public Integer getInstanceNumber() {
         return instanceNumber;
     }
@@ -171,22 +139,15 @@ public class ScalingPolicyActionV1  {
         this.instanceNumber = instanceNumber;
     }
 
-    
-
     public ScalingPolicyActionV1 withInstancePercentage(Integer instancePercentage) {
         this.instancePercentage = instancePercentage;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作实例百分比，将当前组容量增加、减少或设置为指定的百分比。当instance_number和instance_percentage参数均无配置时，则操作实例个数为1。配置参数时，instance_number和instance_percentage参数只能选其中一个进行配置。
-     * minimum: 0
-     * maximum: 100
-     * @return instancePercentage
-     */
+    /** 操作实例百分比，将当前组容量增加、减少或设置为指定的百分比。当instance_number和instance_percentage参数均无配置时，则操作实例个数为1。配置参数时，instance_number和instance_percentage参数只能选其中一个进行配置。
+     * minimum: 0 maximum: 100
+     * 
+     * @return instancePercentage */
     public Integer getInstancePercentage() {
         return instancePercentage;
     }
@@ -194,8 +155,6 @@ public class ScalingPolicyActionV1  {
     public void setInstancePercentage(Integer instancePercentage) {
         this.instancePercentage = instancePercentage;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -206,14 +165,16 @@ public class ScalingPolicyActionV1  {
             return false;
         }
         ScalingPolicyActionV1 scalingPolicyActionV1 = (ScalingPolicyActionV1) o;
-        return Objects.equals(this.operation, scalingPolicyActionV1.operation) &&
-            Objects.equals(this.instanceNumber, scalingPolicyActionV1.instanceNumber) &&
-            Objects.equals(this.instancePercentage, scalingPolicyActionV1.instancePercentage);
+        return Objects.equals(this.operation, scalingPolicyActionV1.operation)
+            && Objects.equals(this.instanceNumber, scalingPolicyActionV1.instanceNumber)
+            && Objects.equals(this.instancePercentage, scalingPolicyActionV1.instancePercentage);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(operation, instanceNumber, instancePercentage);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -224,16 +185,13 @@ public class ScalingPolicyActionV1  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

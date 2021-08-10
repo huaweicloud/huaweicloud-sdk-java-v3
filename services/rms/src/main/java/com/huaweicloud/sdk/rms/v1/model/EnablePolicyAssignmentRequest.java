@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class EnablePolicyAssignmentRequest  {
-
-
+/** Request Object */
+public class EnablePolicyAssignmentRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_assignment_id")
-    
+    @JsonProperty(value = "policy_assignment_id")
+
     private String policyAssignmentId;
 
     public EnablePolicyAssignmentRequest withPolicyAssignmentId(String policyAssignmentId) {
@@ -28,13 +18,9 @@ public class EnablePolicyAssignmentRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 规则ID
-     * @return policyAssignmentId
-     */
+    /** 规则ID
+     * 
+     * @return policyAssignmentId */
     public String getPolicyAssignmentId() {
         return policyAssignmentId;
     }
@@ -42,8 +28,6 @@ public class EnablePolicyAssignmentRequest  {
     public void setPolicyAssignmentId(String policyAssignmentId) {
         this.policyAssignmentId = policyAssignmentId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class EnablePolicyAssignmentRequest  {
         EnablePolicyAssignmentRequest enablePolicyAssignmentRequest = (EnablePolicyAssignmentRequest) o;
         return Objects.equals(this.policyAssignmentId, enablePolicyAssignmentRequest.policyAssignmentId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(policyAssignmentId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class EnablePolicyAssignmentRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

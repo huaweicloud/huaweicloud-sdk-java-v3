@@ -1,60 +1,44 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.L7policiesInStatusResp;
-import com.huaweicloud.sdk.elb.v2.model.PoolsInStatusResp;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 监听器对象列表，用于状态树中
- */
-public class ListenersInStatusResp  {
-
-
+/** 监听器对象列表，用于状态树中 */
+public class ListenersInStatusResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pools")
-    
+    @JsonProperty(value = "pools")
+
     private List<PoolsInStatusResp> pools = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="l7policies")
-    
+    @JsonProperty(value = "l7policies")
+
     private List<L7policiesInStatusResp> l7policies = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operating_status")
-    
+    @JsonProperty(value = "operating_status")
+
     private String operatingStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provisioning_status")
-    
+    @JsonProperty(value = "provisioning_status")
+
     private String provisioningStatus;
 
     public ListenersInStatusResp withId(String id) {
@@ -62,13 +46,9 @@ public class ListenersInStatusResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器ID
-     * @return id
-     */
+    /** 监听器ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -77,20 +57,14 @@ public class ListenersInStatusResp  {
         this.id = id;
     }
 
-    
-
     public ListenersInStatusResp withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器名称
-     * @return name
-     */
+    /** 监听器名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -99,16 +73,13 @@ public class ListenersInStatusResp  {
         this.name = name;
     }
 
-    
-
     public ListenersInStatusResp withPools(List<PoolsInStatusResp> pools) {
         this.pools = pools;
         return this;
     }
 
-    
     public ListenersInStatusResp addPoolsItem(PoolsInStatusResp poolsItem) {
-        if(this.pools == null) {
+        if (this.pools == null) {
             this.pools = new ArrayList<>();
         }
         this.pools.add(poolsItem);
@@ -116,17 +87,16 @@ public class ListenersInStatusResp  {
     }
 
     public ListenersInStatusResp withPools(Consumer<List<PoolsInStatusResp>> poolsSetter) {
-        if(this.pools == null) {
+        if (this.pools == null) {
             this.pools = new ArrayList<>();
         }
         poolsSetter.accept(this.pools);
         return this;
     }
 
-    /**
-     * 监听器关联的后端云服务器组列表
-     * @return pools
-     */
+    /** 监听器关联的后端云服务器组列表
+     * 
+     * @return pools */
     public List<PoolsInStatusResp> getPools() {
         return pools;
     }
@@ -135,16 +105,13 @@ public class ListenersInStatusResp  {
         this.pools = pools;
     }
 
-    
-
     public ListenersInStatusResp withL7policies(List<L7policiesInStatusResp> l7policies) {
         this.l7policies = l7policies;
         return this;
     }
 
-    
     public ListenersInStatusResp addL7policiesItem(L7policiesInStatusResp l7policiesItem) {
-        if(this.l7policies == null) {
+        if (this.l7policies == null) {
             this.l7policies = new ArrayList<>();
         }
         this.l7policies.add(l7policiesItem);
@@ -152,17 +119,16 @@ public class ListenersInStatusResp  {
     }
 
     public ListenersInStatusResp withL7policies(Consumer<List<L7policiesInStatusResp>> l7policiesSetter) {
-        if(this.l7policies == null) {
+        if (this.l7policies == null) {
             this.l7policies = new ArrayList<>();
         }
         l7policiesSetter.accept(this.l7policies);
         return this;
     }
 
-    /**
-     * 监听器关联的转发策略列表
-     * @return l7policies
-     */
+    /** 监听器关联的转发策略列表
+     * 
+     * @return l7policies */
     public List<L7policiesInStatusResp> getL7policies() {
         return l7policies;
     }
@@ -171,20 +137,14 @@ public class ListenersInStatusResp  {
         this.l7policies = l7policies;
     }
 
-    
-
     public ListenersInStatusResp withOperatingStatus(String operatingStatus) {
         this.operatingStatus = operatingStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器的操作状态；该字段为预留字段，暂未启用。默认为ONLINE。
-     * @return operatingStatus
-     */
+    /** 监听器的操作状态；该字段为预留字段，暂未启用。默认为ONLINE。
+     * 
+     * @return operatingStatus */
     public String getOperatingStatus() {
         return operatingStatus;
     }
@@ -193,20 +153,14 @@ public class ListenersInStatusResp  {
         this.operatingStatus = operatingStatus;
     }
 
-    
-
     public ListenersInStatusResp withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
-     * @return provisioningStatus
-     */
+    /** 监听器的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
+     * 
+     * @return provisioningStatus */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -214,8 +168,6 @@ public class ListenersInStatusResp  {
     public void setProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -226,17 +178,19 @@ public class ListenersInStatusResp  {
             return false;
         }
         ListenersInStatusResp listenersInStatusResp = (ListenersInStatusResp) o;
-        return Objects.equals(this.id, listenersInStatusResp.id) &&
-            Objects.equals(this.name, listenersInStatusResp.name) &&
-            Objects.equals(this.pools, listenersInStatusResp.pools) &&
-            Objects.equals(this.l7policies, listenersInStatusResp.l7policies) &&
-            Objects.equals(this.operatingStatus, listenersInStatusResp.operatingStatus) &&
-            Objects.equals(this.provisioningStatus, listenersInStatusResp.provisioningStatus);
+        return Objects.equals(this.id, listenersInStatusResp.id)
+            && Objects.equals(this.name, listenersInStatusResp.name)
+            && Objects.equals(this.pools, listenersInStatusResp.pools)
+            && Objects.equals(this.l7policies, listenersInStatusResp.l7policies)
+            && Objects.equals(this.operatingStatus, listenersInStatusResp.operatingStatus)
+            && Objects.equals(this.provisioningStatus, listenersInStatusResp.provisioningStatus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, pools, l7policies, operatingStatus, provisioningStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -250,16 +204,13 @@ public class ListenersInStatusResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

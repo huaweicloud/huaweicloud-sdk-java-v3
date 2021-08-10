@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListVpcsRequest  {
-
-
+/** Request Object */
+public class ListVpcsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public ListVpcsRequest withLimit(Integer limit) {
@@ -46,15 +33,9 @@ public class ListVpcsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 查询返回虚拟私有云列表数量。
-     * minimum: 0
-     * maximum: 1000
-     * @return limit
-     */
+    /** 查询返回虚拟私有云列表数量。 minimum: 0 maximum: 1000
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -63,20 +44,14 @@ public class ListVpcsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListVpcsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询的偏移量。
-     * @return offset
-     */
+    /** 查询的偏移量。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -85,20 +60,14 @@ public class ListVpcsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListVpcsRequest withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 通过ID查询
-     * @return id
-     */
+    /** 通过ID查询
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -107,20 +76,14 @@ public class ListVpcsRequest  {
         this.id = id;
     }
 
-    
-
     public ListVpcsRequest withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 通过name查询
-     * @return name
-     */
+    /** 通过name查询
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -128,8 +91,6 @@ public class ListVpcsRequest  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -140,15 +101,15 @@ public class ListVpcsRequest  {
             return false;
         }
         ListVpcsRequest listVpcsRequest = (ListVpcsRequest) o;
-        return Objects.equals(this.limit, listVpcsRequest.limit) &&
-            Objects.equals(this.offset, listVpcsRequest.offset) &&
-            Objects.equals(this.id, listVpcsRequest.id) &&
-            Objects.equals(this.name, listVpcsRequest.name);
+        return Objects.equals(this.limit, listVpcsRequest.limit) && Objects.equals(this.offset, listVpcsRequest.offset)
+            && Objects.equals(this.id, listVpcsRequest.id) && Objects.equals(this.name, listVpcsRequest.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(limit, offset, id, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -160,16 +121,13 @@ public class ListVpcsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

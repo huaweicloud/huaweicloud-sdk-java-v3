@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.huaweicloud.sdk.ecs.v2.model.ServerImage;
 
 public class EcsCustomModule extends SimpleModule {
+
     private static final long serialVersionUID = 1L;
 
     public EcsCustomModule() {

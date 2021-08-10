@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * AclBatchFailure
- */
-public class AclBatchFailure  {
-
-
+/** AclBatchFailure */
+public class AclBatchFailure {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="acl_id")
-    
+    @JsonProperty(value = "acl_id")
+
     private String aclId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="acl_name")
-    
+    @JsonProperty(value = "acl_name")
+
     private String aclName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
+
     private String errorCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_msg")
-    
+    @JsonProperty(value = "error_msg")
+
     private String errorMsg;
 
     public AclBatchFailure withAclId(String aclId) {
@@ -46,13 +33,9 @@ public class AclBatchFailure  {
         return this;
     }
 
-    
-
-
-    /**
-     * 删除失败的ACL策略ID
-     * @return aclId
-     */
+    /** 删除失败的ACL策略ID
+     * 
+     * @return aclId */
     public String getAclId() {
         return aclId;
     }
@@ -61,20 +44,14 @@ public class AclBatchFailure  {
         this.aclId = aclId;
     }
 
-    
-
     public AclBatchFailure withAclName(String aclName) {
         this.aclName = aclName;
         return this;
     }
 
-    
-
-
-    /**
-     * 删除失败的ACL策略名称
-     * @return aclName
-     */
+    /** 删除失败的ACL策略名称
+     * 
+     * @return aclName */
     public String getAclName() {
         return aclName;
     }
@@ -83,20 +60,14 @@ public class AclBatchFailure  {
         this.aclName = aclName;
     }
 
-    
-
     public AclBatchFailure withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 删除失败的错误码
-     * @return errorCode
-     */
+    /** 删除失败的错误码
+     * 
+     * @return errorCode */
     public String getErrorCode() {
         return errorCode;
     }
@@ -105,20 +76,14 @@ public class AclBatchFailure  {
         this.errorCode = errorCode;
     }
 
-    
-
     public AclBatchFailure withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
 
-    
-
-
-    /**
-     * 删除失败的错误信息
-     * @return errorMsg
-     */
+    /** 删除失败的错误信息
+     * 
+     * @return errorMsg */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -126,8 +91,6 @@ public class AclBatchFailure  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class AclBatchFailure  {
             return false;
         }
         AclBatchFailure aclBatchFailure = (AclBatchFailure) o;
-        return Objects.equals(this.aclId, aclBatchFailure.aclId) &&
-            Objects.equals(this.aclName, aclBatchFailure.aclName) &&
-            Objects.equals(this.errorCode, aclBatchFailure.errorCode) &&
-            Objects.equals(this.errorMsg, aclBatchFailure.errorMsg);
+        return Objects.equals(this.aclId, aclBatchFailure.aclId)
+            && Objects.equals(this.aclName, aclBatchFailure.aclName)
+            && Objects.equals(this.errorCode, aclBatchFailure.errorCode)
+            && Objects.equals(this.errorMsg, aclBatchFailure.errorMsg);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(aclId, aclName, errorCode, errorMsg);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class AclBatchFailure  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

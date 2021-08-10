@@ -1,88 +1,56 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.functiongraph.v2.model.UpdateTriggerRequestBody;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateTriggerRequest  {
-
-
+/** Request Object */
+public class UpdateTriggerRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="function_urn")
-    
+    @JsonProperty(value = "function_urn")
+
     private String functionUrn;
-    /**
-     * 触发器类型代码。
-     */
+
+    /** 触发器类型代码。 */
     public static final class TriggerTypeCodeEnum {
 
-        
-        /**
-         * Enum TIMER for value: "TIMER"
-         */
+        /** Enum TIMER for value: "TIMER" */
         public static final TriggerTypeCodeEnum TIMER = new TriggerTypeCodeEnum("TIMER");
-        
-        /**
-         * Enum APIG for value: "APIG"
-         */
+
+        /** Enum APIG for value: "APIG" */
         public static final TriggerTypeCodeEnum APIG = new TriggerTypeCodeEnum("APIG");
-        
-        /**
-         * Enum CTS for value: "CTS"
-         */
+
+        /** Enum CTS for value: "CTS" */
         public static final TriggerTypeCodeEnum CTS = new TriggerTypeCodeEnum("CTS");
-        
-        /**
-         * Enum DDS for value: "DDS"
-         */
+
+        /** Enum DDS for value: "DDS" */
         public static final TriggerTypeCodeEnum DDS = new TriggerTypeCodeEnum("DDS");
-        
-        /**
-         * Enum DMS for value: "DMS"
-         */
+
+        /** Enum DMS for value: "DMS" */
         public static final TriggerTypeCodeEnum DMS = new TriggerTypeCodeEnum("DMS");
-        
-        /**
-         * Enum DIS for value: "DIS"
-         */
+
+        /** Enum DIS for value: "DIS" */
         public static final TriggerTypeCodeEnum DIS = new TriggerTypeCodeEnum("DIS");
-        
-        /**
-         * Enum LTS for value: "LTS"
-         */
+
+        /** Enum LTS for value: "LTS" */
         public static final TriggerTypeCodeEnum LTS = new TriggerTypeCodeEnum("LTS");
-        
-        /**
-         * Enum OBS for value: "OBS"
-         */
+
+        /** Enum OBS for value: "OBS" */
         public static final TriggerTypeCodeEnum OBS = new TriggerTypeCodeEnum("OBS");
-        
-        /**
-         * Enum SMN for value: "SMN"
-         */
+
+        /** Enum SMN for value: "SMN" */
         public static final TriggerTypeCodeEnum SMN = new TriggerTypeCodeEnum("SMN");
-        
-        /**
-         * Enum KAFKA for value: "KAFKA"
-         */
+
+        /** Enum KAFKA for value: "KAFKA" */
         public static final TriggerTypeCodeEnum KAFKA = new TriggerTypeCodeEnum("KAFKA");
-        
 
         private static final Map<String, TriggerTypeCodeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -119,7 +87,7 @@ public class UpdateTriggerRequest  {
 
         @JsonCreator
         public static TriggerTypeCodeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TriggerTypeCodeEnum result = STATIC_FIELDS.get(value);
@@ -130,7 +98,7 @@ public class UpdateTriggerRequest  {
         }
 
         public static TriggerTypeCodeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TriggerTypeCodeEnum result = STATIC_FIELDS.get(value);
@@ -154,22 +122,19 @@ public class UpdateTriggerRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trigger_type_code")
-    
+    @JsonProperty(value = "trigger_type_code")
+
     private TriggerTypeCodeEnum triggerTypeCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trigger_id")
-    
+    @JsonProperty(value = "trigger_id")
+
     private String triggerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateTriggerRequestBody body;
 
     public UpdateTriggerRequest withFunctionUrn(String functionUrn) {
@@ -177,13 +142,9 @@ public class UpdateTriggerRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 函数的URN，详细解释见FunctionGraph函数模型的描述。
-     * @return functionUrn
-     */
+    /** 函数的URN，详细解释见FunctionGraph函数模型的描述。
+     * 
+     * @return functionUrn */
     public String getFunctionUrn() {
         return functionUrn;
     }
@@ -192,20 +153,14 @@ public class UpdateTriggerRequest  {
         this.functionUrn = functionUrn;
     }
 
-    
-
     public UpdateTriggerRequest withTriggerTypeCode(TriggerTypeCodeEnum triggerTypeCode) {
         this.triggerTypeCode = triggerTypeCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 触发器类型代码。
-     * @return triggerTypeCode
-     */
+    /** 触发器类型代码。
+     * 
+     * @return triggerTypeCode */
     public TriggerTypeCodeEnum getTriggerTypeCode() {
         return triggerTypeCode;
     }
@@ -214,20 +169,14 @@ public class UpdateTriggerRequest  {
         this.triggerTypeCode = triggerTypeCode;
     }
 
-    
-
     public UpdateTriggerRequest withTriggerId(String triggerId) {
         this.triggerId = triggerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 触发器编码。
-     * @return triggerId
-     */
+    /** 触发器编码。
+     * 
+     * @return triggerId */
     public String getTriggerId() {
         return triggerId;
     }
@@ -236,27 +185,23 @@ public class UpdateTriggerRequest  {
         this.triggerId = triggerId;
     }
 
-    
-
     public UpdateTriggerRequest withBody(UpdateTriggerRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdateTriggerRequest withBody(Consumer<UpdateTriggerRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateTriggerRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateTriggerRequestBody getBody() {
         return body;
     }
@@ -264,8 +209,6 @@ public class UpdateTriggerRequest  {
     public void setBody(UpdateTriggerRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -276,15 +219,17 @@ public class UpdateTriggerRequest  {
             return false;
         }
         UpdateTriggerRequest updateTriggerRequest = (UpdateTriggerRequest) o;
-        return Objects.equals(this.functionUrn, updateTriggerRequest.functionUrn) &&
-            Objects.equals(this.triggerTypeCode, updateTriggerRequest.triggerTypeCode) &&
-            Objects.equals(this.triggerId, updateTriggerRequest.triggerId) &&
-            Objects.equals(this.body, updateTriggerRequest.body);
+        return Objects.equals(this.functionUrn, updateTriggerRequest.functionUrn)
+            && Objects.equals(this.triggerTypeCode, updateTriggerRequest.triggerTypeCode)
+            && Objects.equals(this.triggerId, updateTriggerRequest.triggerId)
+            && Objects.equals(this.body, updateTriggerRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(functionUrn, triggerTypeCode, triggerId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -296,16 +241,13 @@ public class UpdateTriggerRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

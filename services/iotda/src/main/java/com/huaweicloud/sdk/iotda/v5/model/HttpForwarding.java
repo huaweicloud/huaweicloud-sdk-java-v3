@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * httpserver配置信息
- */
-public class HttpForwarding  {
-
-
+/** httpserver配置信息 */
+public class HttpForwarding {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private String url;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cert_id")
-    
+    @JsonProperty(value = "cert_id")
+
     private String certId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cn_name")
-    
+    @JsonProperty(value = "cn_name")
+
     private String cnName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sni_enable")
-    
+    @JsonProperty(value = "sni_enable")
+
     private Boolean sniEnable;
 
     public HttpForwarding withUrl(String url) {
@@ -46,13 +33,9 @@ public class HttpForwarding  {
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：用于接收满足规则条件数据的http服务器地址。
-     * @return url
-     */
+    /** **参数说明**：用于接收满足规则条件数据的http服务器地址。
+     * 
+     * @return url */
     public String getUrl() {
         return url;
     }
@@ -61,20 +44,14 @@ public class HttpForwarding  {
         this.url = url;
     }
 
-    
-
     public HttpForwarding withCertId(String certId) {
         this.certId = certId;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：证书id，请参见[获取证书ID](https://support.huaweicloud.com/usermanual-iothub/iot_01_0001.html#section3)
-     * @return certId
-     */
+    /** **参数说明**：证书id，请参见[获取证书ID](https://support.huaweicloud.com/usermanual-iothub/iot_01_0001.html#section3)
+     * 
+     * @return certId */
     public String getCertId() {
         return certId;
     }
@@ -83,20 +60,14 @@ public class HttpForwarding  {
         this.certId = certId;
     }
 
-    
-
     public HttpForwarding withCnName(String cnName) {
         this.cnName = cnName;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：当sni_enable为true时，此字段需要填写，内容为将要请求的服务端证书的域名,举例:www.example.com:8443;当sni_enbale为false时，此字段默认不填写。
-     * @return cnName
-     */
+    /** **参数说明**：当sni_enable为true时，此字段需要填写，内容为将要请求的服务端证书的域名,举例:www.example.com:8443;当sni_enbale为false时，此字段默认不填写。
+     * 
+     * @return cnName */
     public String getCnName() {
         return cnName;
     }
@@ -105,20 +76,14 @@ public class HttpForwarding  {
         this.cnName = cnName;
     }
 
-    
-
     public HttpForwarding withSniEnable(Boolean sniEnable) {
         this.sniEnable = sniEnable;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：需要https服务端和客户端都支持此功能，默认为false，设成true表明Https的客户端在发起请求时，需要携带cn_name；https服务端根据cn_name返回对应的证书；设为false可关闭此功能。
-     * @return sniEnable
-     */
+    /** **参数说明**：需要https服务端和客户端都支持此功能，默认为false，设成true表明Https的客户端在发起请求时，需要携带cn_name；https服务端根据cn_name返回对应的证书；设为false可关闭此功能。
+     * 
+     * @return sniEnable */
     public Boolean getSniEnable() {
         return sniEnable;
     }
@@ -126,8 +91,6 @@ public class HttpForwarding  {
     public void setSniEnable(Boolean sniEnable) {
         this.sniEnable = sniEnable;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,16 @@ public class HttpForwarding  {
             return false;
         }
         HttpForwarding httpForwarding = (HttpForwarding) o;
-        return Objects.equals(this.url, httpForwarding.url) &&
-            Objects.equals(this.certId, httpForwarding.certId) &&
-            Objects.equals(this.cnName, httpForwarding.cnName) &&
-            Objects.equals(this.sniEnable, httpForwarding.sniEnable);
+        return Objects.equals(this.url, httpForwarding.url) && Objects.equals(this.certId, httpForwarding.certId)
+            && Objects.equals(this.cnName, httpForwarding.cnName)
+            && Objects.equals(this.sniEnable, httpForwarding.sniEnable);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(url, certId, cnName, sniEnable);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +122,13 @@ public class HttpForwarding  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,38 +1,28 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class ServerRemoteConsole  {
-
-
+public class ServerRemoteConsole {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
+
     private String protocol;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private String url;
 
     public ServerRemoteConsole withProtocol(String protocol) {
@@ -40,13 +30,9 @@ public class ServerRemoteConsole  {
         return this;
     }
 
-    
-
-
-    /**
-     * 远程登录的协议。
-     * @return protocol
-     */
+    /** 远程登录的协议。
+     * 
+     * @return protocol */
     public String getProtocol() {
         return protocol;
     }
@@ -55,20 +41,14 @@ public class ServerRemoteConsole  {
         this.protocol = protocol;
     }
 
-    
-
     public ServerRemoteConsole withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 远程登录的类型。
-     * @return type
-     */
+    /** 远程登录的类型。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -77,20 +57,14 @@ public class ServerRemoteConsole  {
         this.type = type;
     }
 
-    
-
     public ServerRemoteConsole withUrl(String url) {
         this.url = url;
         return this;
     }
 
-    
-
-
-    /**
-     * 远程登录的url。
-     * @return url
-     */
+    /** 远程登录的url。
+     * 
+     * @return url */
     public String getUrl() {
         return url;
     }
@@ -98,8 +72,6 @@ public class ServerRemoteConsole  {
     public void setUrl(String url) {
         this.url = url;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +82,15 @@ public class ServerRemoteConsole  {
             return false;
         }
         ServerRemoteConsole serverRemoteConsole = (ServerRemoteConsole) o;
-        return Objects.equals(this.protocol, serverRemoteConsole.protocol) &&
-            Objects.equals(this.type, serverRemoteConsole.type) &&
-            Objects.equals(this.url, serverRemoteConsole.url);
+        return Objects.equals(this.protocol, serverRemoteConsole.protocol)
+            && Objects.equals(this.type, serverRemoteConsole.type) && Objects.equals(this.url, serverRemoteConsole.url);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(protocol, type, url);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +101,13 @@ public class ServerRemoteConsole  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,74 +1,56 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ListInstanceTopicsRespTopics
- */
-public class ListInstanceTopicsRespTopics  {
-
-
+/** ListInstanceTopicsRespTopics */
+public class ListInstanceTopicsRespTopics {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policiesOnly")
-    
+    @JsonProperty(value = "policiesOnly")
+
     private Boolean policiesOnly;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replication")
-    
+    @JsonProperty(value = "replication")
+
     private Integer replication;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="partition")
-    
+    @JsonProperty(value = "partition")
+
     private Integer partition;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="retention_time")
-    
+    @JsonProperty(value = "retention_time")
+
     private Integer retentionTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sync_replication")
-    
+    @JsonProperty(value = "sync_replication")
+
     private Boolean syncReplication;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sync_message_flush")
-    
+    @JsonProperty(value = "sync_message_flush")
+
     private Boolean syncMessageFlush;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="external_configs")
-    
+    @JsonProperty(value = "external_configs")
+
     private Object externalConfigs;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic_type")
-    
+    @JsonProperty(value = "topic_type")
+
     private Integer topicType;
 
     public ListInstanceTopicsRespTopics withPoliciesOnly(Boolean policiesOnly) {
@@ -76,13 +58,9 @@ public class ListInstanceTopicsRespTopics  {
         return this;
     }
 
-    
-
-
-    /**
-     * 是否为默认策略。
-     * @return policiesOnly
-     */
+    /** 是否为默认策略。
+     * 
+     * @return policiesOnly */
     public Boolean getPoliciesOnly() {
         return policiesOnly;
     }
@@ -91,20 +69,14 @@ public class ListInstanceTopicsRespTopics  {
         this.policiesOnly = policiesOnly;
     }
 
-    
-
     public ListInstanceTopicsRespTopics withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * topic名称。
-     * @return name
-     */
+    /** topic名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -113,20 +85,14 @@ public class ListInstanceTopicsRespTopics  {
         this.name = name;
     }
 
-    
-
     public ListInstanceTopicsRespTopics withReplication(Integer replication) {
         this.replication = replication;
         return this;
     }
 
-    
-
-
-    /**
-     * 副本数，配置数据的可靠性。
-     * @return replication
-     */
+    /** 副本数，配置数据的可靠性。
+     * 
+     * @return replication */
     public Integer getReplication() {
         return replication;
     }
@@ -135,20 +101,14 @@ public class ListInstanceTopicsRespTopics  {
         this.replication = replication;
     }
 
-    
-
     public ListInstanceTopicsRespTopics withPartition(Integer partition) {
         this.partition = partition;
         return this;
     }
 
-    
-
-
-    /**
-     * topic分区数，设置消费的并发数。
-     * @return partition
-     */
+    /** topic分区数，设置消费的并发数。
+     * 
+     * @return partition */
     public Integer getPartition() {
         return partition;
     }
@@ -157,20 +117,14 @@ public class ListInstanceTopicsRespTopics  {
         this.partition = partition;
     }
 
-    
-
     public ListInstanceTopicsRespTopics withRetentionTime(Integer retentionTime) {
         this.retentionTime = retentionTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息老化时间。
-     * @return retentionTime
-     */
+    /** 消息老化时间。
+     * 
+     * @return retentionTime */
     public Integer getRetentionTime() {
         return retentionTime;
     }
@@ -179,20 +133,14 @@ public class ListInstanceTopicsRespTopics  {
         this.retentionTime = retentionTime;
     }
 
-    
-
     public ListInstanceTopicsRespTopics withSyncReplication(Boolean syncReplication) {
         this.syncReplication = syncReplication;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启同步复制，开启后，客户端生产消息时相应的也要设置acks=-1，否则不生效，默认关闭。
-     * @return syncReplication
-     */
+    /** 是否开启同步复制，开启后，客户端生产消息时相应的也要设置acks=-1，否则不生效，默认关闭。
+     * 
+     * @return syncReplication */
     public Boolean getSyncReplication() {
         return syncReplication;
     }
@@ -201,20 +149,14 @@ public class ListInstanceTopicsRespTopics  {
         this.syncReplication = syncReplication;
     }
 
-    
-
     public ListInstanceTopicsRespTopics withSyncMessageFlush(Boolean syncMessageFlush) {
         this.syncMessageFlush = syncMessageFlush;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否使用同步落盘。默认值为false。同步落盘会导致性能降低。
-     * @return syncMessageFlush
-     */
+    /** 是否使用同步落盘。默认值为false。同步落盘会导致性能降低。
+     * 
+     * @return syncMessageFlush */
     public Boolean getSyncMessageFlush() {
         return syncMessageFlush;
     }
@@ -223,20 +165,14 @@ public class ListInstanceTopicsRespTopics  {
         this.syncMessageFlush = syncMessageFlush;
     }
 
-    
-
     public ListInstanceTopicsRespTopics withExternalConfigs(Object externalConfigs) {
         this.externalConfigs = externalConfigs;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展配置。
-     * @return externalConfigs
-     */
+    /** 扩展配置。
+     * 
+     * @return externalConfigs */
     public Object getExternalConfigs() {
         return externalConfigs;
     }
@@ -245,20 +181,14 @@ public class ListInstanceTopicsRespTopics  {
         this.externalConfigs = externalConfigs;
     }
 
-    
-
     public ListInstanceTopicsRespTopics withTopicType(Integer topicType) {
         this.topicType = topicType;
         return this;
     }
 
-    
-
-
-    /**
-     * topic类型。
-     * @return topicType
-     */
+    /** topic类型。
+     * 
+     * @return topicType */
     public Integer getTopicType() {
         return topicType;
     }
@@ -266,8 +196,6 @@ public class ListInstanceTopicsRespTopics  {
     public void setTopicType(Integer topicType) {
         this.topicType = topicType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -278,20 +206,30 @@ public class ListInstanceTopicsRespTopics  {
             return false;
         }
         ListInstanceTopicsRespTopics listInstanceTopicsRespTopics = (ListInstanceTopicsRespTopics) o;
-        return Objects.equals(this.policiesOnly, listInstanceTopicsRespTopics.policiesOnly) &&
-            Objects.equals(this.name, listInstanceTopicsRespTopics.name) &&
-            Objects.equals(this.replication, listInstanceTopicsRespTopics.replication) &&
-            Objects.equals(this.partition, listInstanceTopicsRespTopics.partition) &&
-            Objects.equals(this.retentionTime, listInstanceTopicsRespTopics.retentionTime) &&
-            Objects.equals(this.syncReplication, listInstanceTopicsRespTopics.syncReplication) &&
-            Objects.equals(this.syncMessageFlush, listInstanceTopicsRespTopics.syncMessageFlush) &&
-            Objects.equals(this.externalConfigs, listInstanceTopicsRespTopics.externalConfigs) &&
-            Objects.equals(this.topicType, listInstanceTopicsRespTopics.topicType);
+        return Objects.equals(this.policiesOnly, listInstanceTopicsRespTopics.policiesOnly)
+            && Objects.equals(this.name, listInstanceTopicsRespTopics.name)
+            && Objects.equals(this.replication, listInstanceTopicsRespTopics.replication)
+            && Objects.equals(this.partition, listInstanceTopicsRespTopics.partition)
+            && Objects.equals(this.retentionTime, listInstanceTopicsRespTopics.retentionTime)
+            && Objects.equals(this.syncReplication, listInstanceTopicsRespTopics.syncReplication)
+            && Objects.equals(this.syncMessageFlush, listInstanceTopicsRespTopics.syncMessageFlush)
+            && Objects.equals(this.externalConfigs, listInstanceTopicsRespTopics.externalConfigs)
+            && Objects.equals(this.topicType, listInstanceTopicsRespTopics.topicType);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(policiesOnly, name, replication, partition, retentionTime, syncReplication, syncMessageFlush, externalConfigs, topicType);
+        return Objects.hash(policiesOnly,
+            name,
+            replication,
+            partition,
+            retentionTime,
+            syncReplication,
+            syncMessageFlush,
+            externalConfigs,
+            topicType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -308,16 +246,13 @@ public class ListInstanceTopicsRespTopics  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

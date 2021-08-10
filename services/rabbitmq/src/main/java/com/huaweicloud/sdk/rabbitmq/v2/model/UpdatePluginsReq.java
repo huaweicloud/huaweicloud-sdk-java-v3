@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.rabbitmq.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * UpdatePluginsReq
- */
-public class UpdatePluginsReq  {
-
-
+/** UpdatePluginsReq */
+public class UpdatePluginsReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable")
-    
+    @JsonProperty(value = "enable")
+
     private Boolean enable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="plugins")
-    
+    @JsonProperty(value = "plugins")
+
     private String plugins;
 
     public UpdatePluginsReq withEnable(Boolean enable) {
@@ -34,13 +23,9 @@ public class UpdatePluginsReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启改插件。
-     * @return enable
-     */
+    /** 是否开启改插件。
+     * 
+     * @return enable */
     public Boolean getEnable() {
         return enable;
     }
@@ -49,20 +34,14 @@ public class UpdatePluginsReq  {
         this.enable = enable;
     }
 
-    
-
     public UpdatePluginsReq withPlugins(String plugins) {
         this.plugins = plugins;
         return this;
     }
 
-    
-
-
-    /**
-     * 插件列表，多个插件中间用“,”隔开。
-     * @return plugins
-     */
+    /** 插件列表，多个插件中间用“,”隔开。
+     * 
+     * @return plugins */
     public String getPlugins() {
         return plugins;
     }
@@ -70,8 +49,6 @@ public class UpdatePluginsReq  {
     public void setPlugins(String plugins) {
         this.plugins = plugins;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class UpdatePluginsReq  {
             return false;
         }
         UpdatePluginsReq updatePluginsReq = (UpdatePluginsReq) o;
-        return Objects.equals(this.enable, updatePluginsReq.enable) &&
-            Objects.equals(this.plugins, updatePluginsReq.plugins);
+        return Objects.equals(this.enable, updatePluginsReq.enable)
+            && Objects.equals(this.plugins, updatePluginsReq.plugins);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(enable, plugins);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class UpdatePluginsReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

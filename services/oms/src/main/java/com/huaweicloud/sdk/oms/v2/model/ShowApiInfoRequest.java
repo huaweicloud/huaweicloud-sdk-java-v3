@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.oms.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowApiInfoRequest  {
-
-
+/** Request Object */
+public class ShowApiInfoRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
     public ShowApiInfoRequest withVersion(String version) {
@@ -28,13 +18,9 @@ public class ShowApiInfoRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 版本信息。
-     * @return version
-     */
+    /** 版本信息。
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -42,8 +28,6 @@ public class ShowApiInfoRequest  {
     public void setVersion(String version) {
         this.version = version;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class ShowApiInfoRequest  {
         ShowApiInfoRequest showApiInfoRequest = (ShowApiInfoRequest) o;
         return Objects.equals(this.version, showApiInfoRequest.version);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(version);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class ShowApiInfoRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

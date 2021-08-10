@@ -1,58 +1,39 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 授权结果
- */
-public class AuthResultResp  {
-
-
+/** 授权结果 */
+public class AuthResultResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_name")
-    
+    @JsonProperty(value = "api_name")
+
     private String apiName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_name")
-    
+    @JsonProperty(value = "app_name")
+
     private String appName;
-    /**
-     * 授权结果 - SUCCESS：授权成功 - SKIPPED：跳过 - FILAED：授权失败
-     */
+
+    /** 授权结果 - SUCCESS：授权成功 - SKIPPED：跳过 - FILAED：授权失败 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum SUCCESS for value: "SUCCESS"
-         */
+        /** Enum SUCCESS for value: "SUCCESS" */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
-        
-        /**
-         * Enum SKIPPED for value: "SKIPPED"
-         */
+
+        /** Enum SKIPPED for value: "SKIPPED" */
         public static final StatusEnum SKIPPED = new StatusEnum("SKIPPED");
-        
-        /**
-         * Enum FAILED for value: "FAILED"
-         */
+
+        /** Enum FAILED for value: "FAILED" */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -82,7 +63,7 @@ public class AuthResultResp  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -93,7 +74,7 @@ public class AuthResultResp  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -117,22 +98,19 @@ public class AuthResultResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_msg")
-    
+    @JsonProperty(value = "error_msg")
+
     private String errorMsg;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
+
     private String errorCode;
 
     public AuthResultResp withApiName(String apiName) {
@@ -140,13 +118,9 @@ public class AuthResultResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * API名称
-     * @return apiName
-     */
+    /** API名称
+     * 
+     * @return apiName */
     public String getApiName() {
         return apiName;
     }
@@ -155,20 +129,14 @@ public class AuthResultResp  {
         this.apiName = apiName;
     }
 
-    
-
     public AuthResultResp withAppName(String appName) {
         this.appName = appName;
         return this;
     }
 
-    
-
-
-    /**
-     * APP名称
-     * @return appName
-     */
+    /** APP名称
+     * 
+     * @return appName */
     public String getAppName() {
         return appName;
     }
@@ -177,20 +145,14 @@ public class AuthResultResp  {
         this.appName = appName;
     }
 
-    
-
     public AuthResultResp withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 授权结果 - SUCCESS：授权成功 - SKIPPED：跳过 - FILAED：授权失败
-     * @return status
-     */
+    /** 授权结果 - SUCCESS：授权成功 - SKIPPED：跳过 - FILAED：授权失败
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -199,20 +161,14 @@ public class AuthResultResp  {
         this.status = status;
     }
 
-    
-
     public AuthResultResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
 
-    
-
-
-    /**
-     * 授权失败错误信息
-     * @return errorMsg
-     */
+    /** 授权失败错误信息
+     * 
+     * @return errorMsg */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -221,20 +177,14 @@ public class AuthResultResp  {
         this.errorMsg = errorMsg;
     }
 
-    
-
     public AuthResultResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 授权失败错误码
-     * @return errorCode
-     */
+    /** 授权失败错误码
+     * 
+     * @return errorCode */
     public String getErrorCode() {
         return errorCode;
     }
@@ -242,8 +192,6 @@ public class AuthResultResp  {
     public void setErrorCode(String errorCode) {
         this.errorCode = errorCode;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -254,16 +202,18 @@ public class AuthResultResp  {
             return false;
         }
         AuthResultResp authResultResp = (AuthResultResp) o;
-        return Objects.equals(this.apiName, authResultResp.apiName) &&
-            Objects.equals(this.appName, authResultResp.appName) &&
-            Objects.equals(this.status, authResultResp.status) &&
-            Objects.equals(this.errorMsg, authResultResp.errorMsg) &&
-            Objects.equals(this.errorCode, authResultResp.errorCode);
+        return Objects.equals(this.apiName, authResultResp.apiName)
+            && Objects.equals(this.appName, authResultResp.appName)
+            && Objects.equals(this.status, authResultResp.status)
+            && Objects.equals(this.errorMsg, authResultResp.errorMsg)
+            && Objects.equals(this.errorCode, authResultResp.errorCode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(apiName, appName, status, errorMsg, errorCode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -276,16 +226,13 @@ public class AuthResultResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

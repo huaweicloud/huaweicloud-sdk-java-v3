@@ -1,40 +1,27 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class EncryptDatakeyResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_id")
-    
+    @JsonProperty(value = "key_id")
+
     private String keyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cipher_text")
-    
+    @JsonProperty(value = "cipher_text")
+
     private String cipherText;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datakey_length")
-    
+    @JsonProperty(value = "datakey_length")
+
     private String datakeyLength;
 
     public EncryptDatakeyResponse withKeyId(String keyId) {
@@ -42,13 +29,9 @@ public class EncryptDatakeyResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥ID
-     * @return keyId
-     */
+    /** 密钥ID
+     * 
+     * @return keyId */
     public String getKeyId() {
         return keyId;
     }
@@ -57,20 +40,14 @@ public class EncryptDatakeyResponse extends SdkResponse {
         this.keyId = keyId;
     }
 
-    
-
     public EncryptDatakeyResponse withCipherText(String cipherText) {
         this.cipherText = cipherText;
         return this;
     }
 
-    
-
-
-    /**
-     * DEK密文16进制，两位表示1byte。
-     * @return cipherText
-     */
+    /** DEK密文16进制，两位表示1byte。
+     * 
+     * @return cipherText */
     public String getCipherText() {
         return cipherText;
     }
@@ -79,20 +56,14 @@ public class EncryptDatakeyResponse extends SdkResponse {
         this.cipherText = cipherText;
     }
 
-    
-
     public EncryptDatakeyResponse withDatakeyLength(String datakeyLength) {
         this.datakeyLength = datakeyLength;
         return this;
     }
 
-    
-
-
-    /**
-     * DEK字节长度。
-     * @return datakeyLength
-     */
+    /** DEK字节长度。
+     * 
+     * @return datakeyLength */
     public String getDatakeyLength() {
         return datakeyLength;
     }
@@ -100,8 +71,6 @@ public class EncryptDatakeyResponse extends SdkResponse {
     public void setDatakeyLength(String datakeyLength) {
         this.datakeyLength = datakeyLength;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +81,16 @@ public class EncryptDatakeyResponse extends SdkResponse {
             return false;
         }
         EncryptDatakeyResponse encryptDatakeyResponse = (EncryptDatakeyResponse) o;
-        return Objects.equals(this.keyId, encryptDatakeyResponse.keyId) &&
-            Objects.equals(this.cipherText, encryptDatakeyResponse.cipherText) &&
-            Objects.equals(this.datakeyLength, encryptDatakeyResponse.datakeyLength);
+        return Objects.equals(this.keyId, encryptDatakeyResponse.keyId)
+            && Objects.equals(this.cipherText, encryptDatakeyResponse.cipherText)
+            && Objects.equals(this.datakeyLength, encryptDatakeyResponse.datakeyLength);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(keyId, cipherText, datakeyLength);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +101,13 @@ public class EncryptDatakeyResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

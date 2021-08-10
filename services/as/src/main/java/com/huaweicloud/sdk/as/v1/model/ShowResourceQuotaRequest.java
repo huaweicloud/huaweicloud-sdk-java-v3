@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowResourceQuotaRequest  {
-
+/** Request Object */
+public class ShowResourceQuotaRequest {
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -23,10 +15,12 @@ public class ShowResourceQuotaRequest  {
         }
         return true;
     }
+
     @Override
     public int hashCode() {
         return Objects.hash();
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -34,6 +28,5 @@ public class ShowResourceQuotaRequest  {
         sb.append("}");
         return sb.toString();
     }
-    
-}
 
+}

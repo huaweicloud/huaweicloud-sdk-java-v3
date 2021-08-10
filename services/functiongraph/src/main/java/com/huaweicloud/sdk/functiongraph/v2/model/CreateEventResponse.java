@@ -1,47 +1,33 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.math.BigDecimal;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateEventResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content")
-    
+    @JsonProperty(value = "content")
+
     private String content;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_modified")
-    
+    @JsonProperty(value = "last_modified")
+
     private BigDecimal lastModified;
 
     public CreateEventResponse withId(String id) {
@@ -49,13 +35,9 @@ public class CreateEventResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 测试事件ID。
-     * @return id
-     */
+    /** 测试事件ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -64,20 +46,14 @@ public class CreateEventResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public CreateEventResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 测试事件名称。
-     * @return name
-     */
+    /** 测试事件名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -86,20 +62,14 @@ public class CreateEventResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public CreateEventResponse withContent(String content) {
         this.content = content;
         return this;
     }
 
-    
-
-
-    /**
-     * 测试事件content。
-     * @return content
-     */
+    /** 测试事件content。
+     * 
+     * @return content */
     public String getContent() {
         return content;
     }
@@ -108,20 +78,14 @@ public class CreateEventResponse extends SdkResponse {
         this.content = content;
     }
 
-    
-
     public CreateEventResponse withLastModified(BigDecimal lastModified) {
         this.lastModified = lastModified;
         return this;
     }
 
-    
-
-
-    /**
-     * 上次修改的时间。
-     * @return lastModified
-     */
+    /** 上次修改的时间。
+     * 
+     * @return lastModified */
     public BigDecimal getLastModified() {
         return lastModified;
     }
@@ -129,8 +93,6 @@ public class CreateEventResponse extends SdkResponse {
     public void setLastModified(BigDecimal lastModified) {
         this.lastModified = lastModified;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -141,15 +103,16 @@ public class CreateEventResponse extends SdkResponse {
             return false;
         }
         CreateEventResponse createEventResponse = (CreateEventResponse) o;
-        return Objects.equals(this.id, createEventResponse.id) &&
-            Objects.equals(this.name, createEventResponse.name) &&
-            Objects.equals(this.content, createEventResponse.content) &&
-            Objects.equals(this.lastModified, createEventResponse.lastModified);
+        return Objects.equals(this.id, createEventResponse.id) && Objects.equals(this.name, createEventResponse.name)
+            && Objects.equals(this.content, createEventResponse.content)
+            && Objects.equals(this.lastModified, createEventResponse.lastModified);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, content, lastModified);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -161,16 +124,13 @@ public class CreateEventResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

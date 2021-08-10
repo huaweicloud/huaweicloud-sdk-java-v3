@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CopyImageCrossRegionRequestBody
- */
-public class CopyImageCrossRegionRequestBody  {
-
-
+/** CopyImageCrossRegionRequestBody */
+public class CopyImageCrossRegionRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="agency_name")
-    
+    @JsonProperty(value = "agency_name")
+
     private String agencyName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_name")
-    
+    @JsonProperty(value = "project_name")
+
     private String projectName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
     public CopyImageCrossRegionRequestBody withAgencyName(String agencyName) {
@@ -52,13 +38,9 @@ public class CopyImageCrossRegionRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * IMS服务委托名称。
-     * @return agencyName
-     */
+    /** IMS服务委托名称。
+     * 
+     * @return agencyName */
     public String getAgencyName() {
         return agencyName;
     }
@@ -67,20 +49,14 @@ public class CopyImageCrossRegionRequestBody  {
         this.agencyName = agencyName;
     }
 
-    
-
     public CopyImageCrossRegionRequestBody withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像描述信息。支持字母、数字、中文等，不支持回车、<、 >，长度不能超过1024个字符。默认为空。
-     * @return description
-     */
+    /** 镜像描述信息。支持字母、数字、中文等，不支持回车、<、 >，长度不能超过1024个字符。默认为空。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -89,20 +65,14 @@ public class CopyImageCrossRegionRequestBody  {
         this.description = description;
     }
 
-    
-
     public CopyImageCrossRegionRequestBody withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像名称
-     * @return name
-     */
+    /** 镜像名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -111,20 +81,14 @@ public class CopyImageCrossRegionRequestBody  {
         this.name = name;
     }
 
-    
-
     public CopyImageCrossRegionRequestBody withProjectName(String projectName) {
         this.projectName = projectName;
         return this;
     }
 
-    
-
-
-    /**
-     * 目的区域的项目名称。
-     * @return projectName
-     */
+    /** 目的区域的项目名称。
+     * 
+     * @return projectName */
     public String getProjectName() {
         return projectName;
     }
@@ -133,20 +97,14 @@ public class CopyImageCrossRegionRequestBody  {
         this.projectName = projectName;
     }
 
-    
-
     public CopyImageCrossRegionRequestBody withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * 目的区域的Region ID。
-     * @return region
-     */
+    /** 目的区域的Region ID。
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -154,8 +112,6 @@ public class CopyImageCrossRegionRequestBody  {
     public void setRegion(String region) {
         this.region = region;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,18 @@ public class CopyImageCrossRegionRequestBody  {
             return false;
         }
         CopyImageCrossRegionRequestBody copyImageCrossRegionRequestBody = (CopyImageCrossRegionRequestBody) o;
-        return Objects.equals(this.agencyName, copyImageCrossRegionRequestBody.agencyName) &&
-            Objects.equals(this.description, copyImageCrossRegionRequestBody.description) &&
-            Objects.equals(this.name, copyImageCrossRegionRequestBody.name) &&
-            Objects.equals(this.projectName, copyImageCrossRegionRequestBody.projectName) &&
-            Objects.equals(this.region, copyImageCrossRegionRequestBody.region);
+        return Objects.equals(this.agencyName, copyImageCrossRegionRequestBody.agencyName)
+            && Objects.equals(this.description, copyImageCrossRegionRequestBody.description)
+            && Objects.equals(this.name, copyImageCrossRegionRequestBody.name)
+            && Objects.equals(this.projectName, copyImageCrossRegionRequestBody.projectName)
+            && Objects.equals(this.region, copyImageCrossRegionRequestBody.region);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(agencyName, description, name, projectName, region);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class CopyImageCrossRegionRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,45 +1,30 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.Failure;
-import com.huaweicloud.sdk.roma.v2.model.Success;
-import com.huaweicloud.sdk.roma.v2.model.Swagger;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ImportLiveDataApiDefinitionsV2Response extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="success")
-    
+    @JsonProperty(value = "success")
+
     private List<Success> success = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="failure")
-    
+    @JsonProperty(value = "failure")
+
     private List<Failure> failure = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="swagger")
-    
+    @JsonProperty(value = "swagger")
+
     private Swagger swagger;
 
     public ImportLiveDataApiDefinitionsV2Response withSuccess(List<Success> success) {
@@ -47,9 +32,8 @@ public class ImportLiveDataApiDefinitionsV2Response extends SdkResponse {
         return this;
     }
 
-    
     public ImportLiveDataApiDefinitionsV2Response addSuccessItem(Success successItem) {
-        if(this.success == null) {
+        if (this.success == null) {
             this.success = new ArrayList<>();
         }
         this.success.add(successItem);
@@ -57,17 +41,16 @@ public class ImportLiveDataApiDefinitionsV2Response extends SdkResponse {
     }
 
     public ImportLiveDataApiDefinitionsV2Response withSuccess(Consumer<List<Success>> successSetter) {
-        if(this.success == null) {
+        if (this.success == null) {
             this.success = new ArrayList<>();
         }
         successSetter.accept(this.success);
         return this;
     }
 
-    /**
-     * 导入成功信息
-     * @return success
-     */
+    /** 导入成功信息
+     * 
+     * @return success */
     public List<Success> getSuccess() {
         return success;
     }
@@ -76,16 +59,13 @@ public class ImportLiveDataApiDefinitionsV2Response extends SdkResponse {
         this.success = success;
     }
 
-    
-
     public ImportLiveDataApiDefinitionsV2Response withFailure(List<Failure> failure) {
         this.failure = failure;
         return this;
     }
 
-    
     public ImportLiveDataApiDefinitionsV2Response addFailureItem(Failure failureItem) {
-        if(this.failure == null) {
+        if (this.failure == null) {
             this.failure = new ArrayList<>();
         }
         this.failure.add(failureItem);
@@ -93,17 +73,16 @@ public class ImportLiveDataApiDefinitionsV2Response extends SdkResponse {
     }
 
     public ImportLiveDataApiDefinitionsV2Response withFailure(Consumer<List<Failure>> failureSetter) {
-        if(this.failure == null) {
+        if (this.failure == null) {
             this.failure = new ArrayList<>();
         }
         failureSetter.accept(this.failure);
         return this;
     }
 
-    /**
-     * 导入失败信息
-     * @return failure
-     */
+    /** 导入失败信息
+     * 
+     * @return failure */
     public List<Failure> getFailure() {
         return failure;
     }
@@ -112,27 +91,23 @@ public class ImportLiveDataApiDefinitionsV2Response extends SdkResponse {
         this.failure = failure;
     }
 
-    
-
     public ImportLiveDataApiDefinitionsV2Response withSwagger(Swagger swagger) {
         this.swagger = swagger;
         return this;
     }
 
     public ImportLiveDataApiDefinitionsV2Response withSwagger(Consumer<Swagger> swaggerSetter) {
-        if(this.swagger == null ){
+        if (this.swagger == null) {
             this.swagger = new Swagger();
             swaggerSetter.accept(this.swagger);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get swagger
-     * @return swagger
-     */
+    /** Get swagger
+     * 
+     * @return swagger */
     public Swagger getSwagger() {
         return swagger;
     }
@@ -140,8 +115,6 @@ public class ImportLiveDataApiDefinitionsV2Response extends SdkResponse {
     public void setSwagger(Swagger swagger) {
         this.swagger = swagger;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -151,15 +124,18 @@ public class ImportLiveDataApiDefinitionsV2Response extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ImportLiveDataApiDefinitionsV2Response importLiveDataApiDefinitionsV2Response = (ImportLiveDataApiDefinitionsV2Response) o;
-        return Objects.equals(this.success, importLiveDataApiDefinitionsV2Response.success) &&
-            Objects.equals(this.failure, importLiveDataApiDefinitionsV2Response.failure) &&
-            Objects.equals(this.swagger, importLiveDataApiDefinitionsV2Response.swagger);
+        ImportLiveDataApiDefinitionsV2Response importLiveDataApiDefinitionsV2Response =
+            (ImportLiveDataApiDefinitionsV2Response) o;
+        return Objects.equals(this.success, importLiveDataApiDefinitionsV2Response.success)
+            && Objects.equals(this.failure, importLiveDataApiDefinitionsV2Response.failure)
+            && Objects.equals(this.swagger, importLiveDataApiDefinitionsV2Response.swagger);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(success, failure, swagger);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -170,16 +146,13 @@ public class ImportLiveDataApiDefinitionsV2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

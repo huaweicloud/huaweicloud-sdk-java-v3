@@ -1,98 +1,76 @@
 package com.huaweicloud.sdk.codecheck.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 用户行为记录单
- */
-public class PluginRecordModel  {
-
-
+/** 用户行为记录单 */
+public class PluginRecordModel {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action_type")
-    
+    @JsonProperty(value = "action_type")
+
     private Integer actionType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extra_params")
-    
+    @JsonProperty(value = "extra_params")
+
     private String extraParams;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ide_name")
-    
+    @JsonProperty(value = "ide_name")
+
     private String ideName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ide_type")
-    
+    @JsonProperty(value = "ide_type")
+
     private String ideType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ide_version")
-    
+    @JsonProperty(value = "ide_version")
+
     private String ideVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="msg_id")
-    
+    @JsonProperty(value = "msg_id")
+
     private String msgId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="msg_type")
-    
+    @JsonProperty(value = "msg_type")
+
     private String msgType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="platform")
-    
+    @JsonProperty(value = "platform")
+
     private String platform;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="plugin_id")
-    
+    @JsonProperty(value = "plugin_id")
+
     private Integer pluginId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="plugin_name")
-    
+    @JsonProperty(value = "plugin_name")
+
     private String pluginName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="plugin_version")
-    
+    @JsonProperty(value = "plugin_version")
+
     private String pluginVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="send_time")
-    
+    @JsonProperty(value = "send_time")
+
     private Long sendTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="username")
-    
+    @JsonProperty(value = "username")
+
     private String username;
 
     public PluginRecordModel withActionType(Integer actionType) {
@@ -100,13 +78,9 @@ public class PluginRecordModel  {
         return this;
     }
 
-    
-
-
-    /**
-     * 动作类型
-     * @return actionType
-     */
+    /** 动作类型
+     * 
+     * @return actionType */
     public Integer getActionType() {
         return actionType;
     }
@@ -115,20 +89,14 @@ public class PluginRecordModel  {
         this.actionType = actionType;
     }
 
-    
-
     public PluginRecordModel withExtraParams(String extraParams) {
         this.extraParams = extraParams;
         return this;
     }
 
-    
-
-
-    /**
-     * 额外参数
-     * @return extraParams
-     */
+    /** 额外参数
+     * 
+     * @return extraParams */
     public String getExtraParams() {
         return extraParams;
     }
@@ -137,20 +105,14 @@ public class PluginRecordModel  {
         this.extraParams = extraParams;
     }
 
-    
-
     public PluginRecordModel withIdeName(String ideName) {
         this.ideName = ideName;
         return this;
     }
 
-    
-
-
-    /**
-     * ide名
-     * @return ideName
-     */
+    /** ide名
+     * 
+     * @return ideName */
     public String getIdeName() {
         return ideName;
     }
@@ -159,20 +121,14 @@ public class PluginRecordModel  {
         this.ideName = ideName;
     }
 
-    
-
     public PluginRecordModel withIdeType(String ideType) {
         this.ideType = ideType;
         return this;
     }
 
-    
-
-
-    /**
-     * ide类型
-     * @return ideType
-     */
+    /** ide类型
+     * 
+     * @return ideType */
     public String getIdeType() {
         return ideType;
     }
@@ -181,20 +137,14 @@ public class PluginRecordModel  {
         this.ideType = ideType;
     }
 
-    
-
     public PluginRecordModel withIdeVersion(String ideVersion) {
         this.ideVersion = ideVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * ide版本
-     * @return ideVersion
-     */
+    /** ide版本
+     * 
+     * @return ideVersion */
     public String getIdeVersion() {
         return ideVersion;
     }
@@ -203,20 +153,14 @@ public class PluginRecordModel  {
         this.ideVersion = ideVersion;
     }
 
-    
-
     public PluginRecordModel withMsgId(String msgId) {
         this.msgId = msgId;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息编号
-     * @return msgId
-     */
+    /** 消息编号
+     * 
+     * @return msgId */
     public String getMsgId() {
         return msgId;
     }
@@ -225,20 +169,14 @@ public class PluginRecordModel  {
         this.msgId = msgId;
     }
 
-    
-
     public PluginRecordModel withMsgType(String msgType) {
         this.msgType = msgType;
         return this;
     }
 
-    
-
-
-    /**
-     * 类型
-     * @return msgType
-     */
+    /** 类型
+     * 
+     * @return msgType */
     public String getMsgType() {
         return msgType;
     }
@@ -247,20 +185,14 @@ public class PluginRecordModel  {
         this.msgType = msgType;
     }
 
-    
-
     public PluginRecordModel withPlatform(String platform) {
         this.platform = platform;
         return this;
     }
 
-    
-
-
-    /**
-     * 平台类型
-     * @return platform
-     */
+    /** 平台类型
+     * 
+     * @return platform */
     public String getPlatform() {
         return platform;
     }
@@ -269,20 +201,14 @@ public class PluginRecordModel  {
         this.platform = platform;
     }
 
-    
-
     public PluginRecordModel withPluginId(Integer pluginId) {
         this.pluginId = pluginId;
         return this;
     }
 
-    
-
-
-    /**
-     * 插件编号
-     * @return pluginId
-     */
+    /** 插件编号
+     * 
+     * @return pluginId */
     public Integer getPluginId() {
         return pluginId;
     }
@@ -291,20 +217,14 @@ public class PluginRecordModel  {
         this.pluginId = pluginId;
     }
 
-    
-
     public PluginRecordModel withPluginName(String pluginName) {
         this.pluginName = pluginName;
         return this;
     }
 
-    
-
-
-    /**
-     * 插件名字
-     * @return pluginName
-     */
+    /** 插件名字
+     * 
+     * @return pluginName */
     public String getPluginName() {
         return pluginName;
     }
@@ -313,20 +233,14 @@ public class PluginRecordModel  {
         this.pluginName = pluginName;
     }
 
-    
-
     public PluginRecordModel withPluginVersion(String pluginVersion) {
         this.pluginVersion = pluginVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * 插件版本
-     * @return pluginVersion
-     */
+    /** 插件版本
+     * 
+     * @return pluginVersion */
     public String getPluginVersion() {
         return pluginVersion;
     }
@@ -335,20 +249,14 @@ public class PluginRecordModel  {
         this.pluginVersion = pluginVersion;
     }
 
-    
-
     public PluginRecordModel withSendTime(Long sendTime) {
         this.sendTime = sendTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求时间
-     * @return sendTime
-     */
+    /** 请求时间
+     * 
+     * @return sendTime */
     public Long getSendTime() {
         return sendTime;
     }
@@ -357,20 +265,14 @@ public class PluginRecordModel  {
         this.sendTime = sendTime;
     }
 
-    
-
     public PluginRecordModel withUsername(String username) {
         this.username = username;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户名
-     * @return username
-     */
+    /** 用户名
+     * 
+     * @return username */
     public String getUsername() {
         return username;
     }
@@ -378,8 +280,6 @@ public class PluginRecordModel  {
     public void setUsername(String username) {
         this.username = username;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -390,24 +290,38 @@ public class PluginRecordModel  {
             return false;
         }
         PluginRecordModel pluginRecordModel = (PluginRecordModel) o;
-        return Objects.equals(this.actionType, pluginRecordModel.actionType) &&
-            Objects.equals(this.extraParams, pluginRecordModel.extraParams) &&
-            Objects.equals(this.ideName, pluginRecordModel.ideName) &&
-            Objects.equals(this.ideType, pluginRecordModel.ideType) &&
-            Objects.equals(this.ideVersion, pluginRecordModel.ideVersion) &&
-            Objects.equals(this.msgId, pluginRecordModel.msgId) &&
-            Objects.equals(this.msgType, pluginRecordModel.msgType) &&
-            Objects.equals(this.platform, pluginRecordModel.platform) &&
-            Objects.equals(this.pluginId, pluginRecordModel.pluginId) &&
-            Objects.equals(this.pluginName, pluginRecordModel.pluginName) &&
-            Objects.equals(this.pluginVersion, pluginRecordModel.pluginVersion) &&
-            Objects.equals(this.sendTime, pluginRecordModel.sendTime) &&
-            Objects.equals(this.username, pluginRecordModel.username);
+        return Objects.equals(this.actionType, pluginRecordModel.actionType)
+            && Objects.equals(this.extraParams, pluginRecordModel.extraParams)
+            && Objects.equals(this.ideName, pluginRecordModel.ideName)
+            && Objects.equals(this.ideType, pluginRecordModel.ideType)
+            && Objects.equals(this.ideVersion, pluginRecordModel.ideVersion)
+            && Objects.equals(this.msgId, pluginRecordModel.msgId)
+            && Objects.equals(this.msgType, pluginRecordModel.msgType)
+            && Objects.equals(this.platform, pluginRecordModel.platform)
+            && Objects.equals(this.pluginId, pluginRecordModel.pluginId)
+            && Objects.equals(this.pluginName, pluginRecordModel.pluginName)
+            && Objects.equals(this.pluginVersion, pluginRecordModel.pluginVersion)
+            && Objects.equals(this.sendTime, pluginRecordModel.sendTime)
+            && Objects.equals(this.username, pluginRecordModel.username);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(actionType, extraParams, ideName, ideType, ideVersion, msgId, msgType, platform, pluginId, pluginName, pluginVersion, sendTime, username);
+        return Objects.hash(actionType,
+            extraParams,
+            ideName,
+            ideType,
+            ideVersion,
+            msgId,
+            msgType,
+            platform,
+            pluginId,
+            pluginName,
+            pluginVersion,
+            sendTime,
+            username);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -428,16 +342,13 @@ public class PluginRecordModel  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

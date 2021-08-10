@@ -1,61 +1,44 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ddm.v1.model.SupportAzsInfo;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * EngineGroupsInfo
- */
-public class EngineGroupsInfo  {
-
-
+/** EngineGroupsInfo */
+public class EngineGroupsInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="supportAzs")
-    
+    @JsonProperty(value = "supportAzs")
+
     private List<SupportAzsInfo> supportAzs = null;
-    
+
     public EngineGroupsInfo withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 引擎id。
-     * @return id
-     */
+    /** 引擎id。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -64,20 +47,14 @@ public class EngineGroupsInfo  {
         this.id = id;
     }
 
-    
-
     public EngineGroupsInfo withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 引擎名称。
-     * @return name
-     */
+    /** 引擎名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -86,20 +63,14 @@ public class EngineGroupsInfo  {
         this.name = name;
     }
 
-    
-
     public EngineGroupsInfo withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 引擎版本。
-     * @return version
-     */
+    /** 引擎版本。
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -108,16 +79,13 @@ public class EngineGroupsInfo  {
         this.version = version;
     }
 
-    
-
     public EngineGroupsInfo withSupportAzs(List<SupportAzsInfo> supportAzs) {
         this.supportAzs = supportAzs;
         return this;
     }
 
-    
     public EngineGroupsInfo addSupportAzsItem(SupportAzsInfo supportAzsItem) {
-        if(this.supportAzs == null) {
+        if (this.supportAzs == null) {
             this.supportAzs = new ArrayList<>();
         }
         this.supportAzs.add(supportAzsItem);
@@ -125,17 +93,16 @@ public class EngineGroupsInfo  {
     }
 
     public EngineGroupsInfo withSupportAzs(Consumer<List<SupportAzsInfo>> supportAzsSetter) {
-        if(this.supportAzs == null) {
+        if (this.supportAzs == null) {
             this.supportAzs = new ArrayList<>();
         }
         supportAzsSetter.accept(this.supportAzs);
         return this;
     }
 
-    /**
-     * 可用区列表。
-     * @return supportAzs
-     */
+    /** 可用区列表。
+     * 
+     * @return supportAzs */
     public List<SupportAzsInfo> getSupportAzs() {
         return supportAzs;
     }
@@ -143,8 +110,6 @@ public class EngineGroupsInfo  {
     public void setSupportAzs(List<SupportAzsInfo> supportAzs) {
         this.supportAzs = supportAzs;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -155,15 +120,16 @@ public class EngineGroupsInfo  {
             return false;
         }
         EngineGroupsInfo engineGroupsInfo = (EngineGroupsInfo) o;
-        return Objects.equals(this.id, engineGroupsInfo.id) &&
-            Objects.equals(this.name, engineGroupsInfo.name) &&
-            Objects.equals(this.version, engineGroupsInfo.version) &&
-            Objects.equals(this.supportAzs, engineGroupsInfo.supportAzs);
+        return Objects.equals(this.id, engineGroupsInfo.id) && Objects.equals(this.name, engineGroupsInfo.name)
+            && Objects.equals(this.version, engineGroupsInfo.version)
+            && Objects.equals(this.supportAzs, engineGroupsInfo.supportAzs);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, version, supportAzs);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -175,16 +141,13 @@ public class EngineGroupsInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

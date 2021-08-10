@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.LoadbalancerInStatusResp;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 负载均衡器状态树对象
- */
-public class StatusResp  {
-
-
+/** 负载均衡器状态树对象 */
+public class StatusResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="loadbalancer")
-    
+    @JsonProperty(value = "loadbalancer")
+
     private LoadbalancerInStatusResp loadbalancer;
 
     public StatusResp withLoadbalancer(LoadbalancerInStatusResp loadbalancer) {
@@ -30,19 +20,17 @@ public class StatusResp  {
     }
 
     public StatusResp withLoadbalancer(Consumer<LoadbalancerInStatusResp> loadbalancerSetter) {
-        if(this.loadbalancer == null ){
+        if (this.loadbalancer == null) {
             this.loadbalancer = new LoadbalancerInStatusResp();
             loadbalancerSetter.accept(this.loadbalancer);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get loadbalancer
-     * @return loadbalancer
-     */
+    /** Get loadbalancer
+     * 
+     * @return loadbalancer */
     public LoadbalancerInStatusResp getLoadbalancer() {
         return loadbalancer;
     }
@@ -50,8 +38,6 @@ public class StatusResp  {
     public void setLoadbalancer(LoadbalancerInStatusResp loadbalancer) {
         this.loadbalancer = loadbalancer;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class StatusResp  {
         StatusResp statusResp = (StatusResp) o;
         return Objects.equals(this.loadbalancer, statusResp.loadbalancer);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(loadbalancer);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class StatusResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

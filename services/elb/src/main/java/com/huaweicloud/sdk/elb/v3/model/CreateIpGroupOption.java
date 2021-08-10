@@ -1,53 +1,39 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v3.model.CreateIpGroupIpOption;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 创建IP地址组请求参数对象
- */
-public class CreateIpGroupOption  {
-
-
+/** 创建IP地址组请求参数对象 */
+public class CreateIpGroupOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_list")
-    
+    @JsonProperty(value = "ip_list")
+
     private List<CreateIpGroupIpOption> ipList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public CreateIpGroupOption withProjectId(String projectId) {
@@ -55,13 +41,9 @@ public class CreateIpGroupOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址组的租户id
-     * @return projectId
-     */
+    /** IP地址组的租户id
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -70,20 +52,14 @@ public class CreateIpGroupOption  {
         this.projectId = projectId;
     }
 
-    
-
     public CreateIpGroupOption withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址组的描述信息
-     * @return description
-     */
+    /** IP地址组的描述信息
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -92,20 +68,14 @@ public class CreateIpGroupOption  {
         this.description = description;
     }
 
-    
-
     public CreateIpGroupOption withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址组的名称
-     * @return name
-     */
+    /** IP地址组的名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -114,16 +84,13 @@ public class CreateIpGroupOption  {
         this.name = name;
     }
 
-    
-
     public CreateIpGroupOption withIpList(List<CreateIpGroupIpOption> ipList) {
         this.ipList = ipList;
         return this;
     }
 
-    
     public CreateIpGroupOption addIpListItem(CreateIpGroupIpOption ipListItem) {
-        if(this.ipList == null) {
+        if (this.ipList == null) {
             this.ipList = new ArrayList<>();
         }
         this.ipList.add(ipListItem);
@@ -131,17 +98,16 @@ public class CreateIpGroupOption  {
     }
 
     public CreateIpGroupOption withIpList(Consumer<List<CreateIpGroupIpOption>> ipListSetter) {
-        if(this.ipList == null) {
+        if (this.ipList == null) {
             this.ipList = new ArrayList<>();
         }
         ipListSetter.accept(this.ipList);
         return this;
     }
 
-    /**
-     * IP地址组中包含的ip或网段列表。[]表示任意ip。
-     * @return ipList
-     */
+    /** IP地址组中包含的ip或网段列表。[]表示任意ip。
+     * 
+     * @return ipList */
     public List<CreateIpGroupIpOption> getIpList() {
         return ipList;
     }
@@ -150,20 +116,14 @@ public class CreateIpGroupOption  {
         this.ipList = ipList;
     }
 
-    
-
     public CreateIpGroupOption withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目id
-     * @return enterpriseProjectId
-     */
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -171,8 +131,6 @@ public class CreateIpGroupOption  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -183,16 +141,18 @@ public class CreateIpGroupOption  {
             return false;
         }
         CreateIpGroupOption createIpGroupOption = (CreateIpGroupOption) o;
-        return Objects.equals(this.projectId, createIpGroupOption.projectId) &&
-            Objects.equals(this.description, createIpGroupOption.description) &&
-            Objects.equals(this.name, createIpGroupOption.name) &&
-            Objects.equals(this.ipList, createIpGroupOption.ipList) &&
-            Objects.equals(this.enterpriseProjectId, createIpGroupOption.enterpriseProjectId);
+        return Objects.equals(this.projectId, createIpGroupOption.projectId)
+            && Objects.equals(this.description, createIpGroupOption.description)
+            && Objects.equals(this.name, createIpGroupOption.name)
+            && Objects.equals(this.ipList, createIpGroupOption.ipList)
+            && Objects.equals(this.enterpriseProjectId, createIpGroupOption.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(projectId, description, name, ipList, enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -205,16 +165,13 @@ public class CreateIpGroupOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

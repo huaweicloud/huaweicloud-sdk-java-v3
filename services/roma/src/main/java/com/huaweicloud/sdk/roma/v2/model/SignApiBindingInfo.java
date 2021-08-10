@@ -1,132 +1,101 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.SignApiBindingBase;
+
 import java.time.OffsetDateTime;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * SignApiBindingInfo
- */
-public class SignApiBindingInfo  {
-
-
+/** SignApiBindingInfo */
+public class SignApiBindingInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publish_id")
-    
+    @JsonProperty(value = "publish_id")
+
     private String publishId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_id")
-    
+    @JsonProperty(value = "api_id")
+
     private String apiId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_name")
-    
+    @JsonProperty(value = "group_name")
+
     private String groupName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="binding_time")
-    
+    @JsonProperty(value = "binding_time")
+
     private OffsetDateTime bindingTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_id")
-    
+    @JsonProperty(value = "env_id")
+
     private String envId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_name")
-    
+    @JsonProperty(value = "env_name")
+
     private String envName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_type")
-    
+    @JsonProperty(value = "api_type")
+
     private Integer apiType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_name")
-    
+    @JsonProperty(value = "api_name")
+
     private String apiName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_remark")
-    
+    @JsonProperty(value = "api_remark")
+
     private String apiRemark;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sign_id")
-    
+    @JsonProperty(value = "sign_id")
+
     private String signId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sign_name")
-    
+    @JsonProperty(value = "sign_name")
+
     private String signName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sign_key")
-    
+    @JsonProperty(value = "sign_key")
+
     private String signKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sign_secret")
-    
+    @JsonProperty(value = "sign_secret")
+
     private String signSecret;
-    /**
-     * 签名密钥类型： - hmac - basic - public_key  basic类型需要实例升级到对应版本，若不存在可联系技术工程师升级。  public_key类型开启实例配置public_key才可使用，实例特性配置详情请参考“附录 > 实例支持的APIC特性”，如确认实例不存在public_key配置可联系技术工程师开启。
-     */
+
+    /** 签名密钥类型： - hmac - basic - public_key basic类型需要实例升级到对应版本，若不存在可联系技术工程师升级。
+     * public_key类型开启实例配置public_key才可使用，实例特性配置详情请参考“附录 > 实例支持的APIC特性”，如确认实例不存在public_key配置可联系技术工程师开启。 */
     public static final class SignTypeEnum {
 
-        
-        /**
-         * Enum HMAC for value: "hmac"
-         */
+        /** Enum HMAC for value: "hmac" */
         public static final SignTypeEnum HMAC = new SignTypeEnum("hmac");
-        
-        /**
-         * Enum BASIC for value: "basic"
-         */
+
+        /** Enum BASIC for value: "basic" */
         public static final SignTypeEnum BASIC = new SignTypeEnum("basic");
-        
-        /**
-         * Enum PUBLIC_KEY for value: "public_key"
-         */
+
+        /** Enum PUBLIC_KEY for value: "public_key" */
         public static final SignTypeEnum PUBLIC_KEY = new SignTypeEnum("public_key");
-        
 
         private static final Map<String, SignTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -156,7 +125,7 @@ public class SignApiBindingInfo  {
 
         @JsonCreator
         public static SignTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SignTypeEnum result = STATIC_FIELDS.get(value);
@@ -167,7 +136,7 @@ public class SignApiBindingInfo  {
         }
 
         public static SignTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SignTypeEnum result = STATIC_FIELDS.get(value);
@@ -191,10 +160,9 @@ public class SignApiBindingInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sign_type")
-    
+    @JsonProperty(value = "sign_type")
+
     private SignTypeEnum signType;
 
     public SignApiBindingInfo withPublishId(String publishId) {
@@ -202,13 +170,9 @@ public class SignApiBindingInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * API的发布编号
-     * @return publishId
-     */
+    /** API的发布编号
+     * 
+     * @return publishId */
     public String getPublishId() {
         return publishId;
     }
@@ -217,20 +181,14 @@ public class SignApiBindingInfo  {
         this.publishId = publishId;
     }
 
-    
-
     public SignApiBindingInfo withApiId(String apiId) {
         this.apiId = apiId;
         return this;
     }
 
-    
-
-
-    /**
-     * API编号
-     * @return apiId
-     */
+    /** API编号
+     * 
+     * @return apiId */
     public String getApiId() {
         return apiId;
     }
@@ -239,20 +197,14 @@ public class SignApiBindingInfo  {
         this.apiId = apiId;
     }
 
-    
-
     public SignApiBindingInfo withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
     }
 
-    
-
-
-    /**
-     * API所属分组的名称
-     * @return groupName
-     */
+    /** API所属分组的名称
+     * 
+     * @return groupName */
     public String getGroupName() {
         return groupName;
     }
@@ -261,20 +213,14 @@ public class SignApiBindingInfo  {
         this.groupName = groupName;
     }
 
-    
-
     public SignApiBindingInfo withBindingTime(OffsetDateTime bindingTime) {
         this.bindingTime = bindingTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 绑定时间
-     * @return bindingTime
-     */
+    /** 绑定时间
+     * 
+     * @return bindingTime */
     public OffsetDateTime getBindingTime() {
         return bindingTime;
     }
@@ -283,20 +229,14 @@ public class SignApiBindingInfo  {
         this.bindingTime = bindingTime;
     }
 
-    
-
     public SignApiBindingInfo withEnvId(String envId) {
         this.envId = envId;
         return this;
     }
 
-    
-
-
-    /**
-     * API所属环境的编号
-     * @return envId
-     */
+    /** API所属环境的编号
+     * 
+     * @return envId */
     public String getEnvId() {
         return envId;
     }
@@ -305,20 +245,14 @@ public class SignApiBindingInfo  {
         this.envId = envId;
     }
 
-    
-
     public SignApiBindingInfo withEnvName(String envName) {
         this.envName = envName;
         return this;
     }
 
-    
-
-
-    /**
-     * API所属环境的名称
-     * @return envName
-     */
+    /** API所属环境的名称
+     * 
+     * @return envName */
     public String getEnvName() {
         return envName;
     }
@@ -327,20 +261,14 @@ public class SignApiBindingInfo  {
         this.envName = envName;
     }
 
-    
-
     public SignApiBindingInfo withApiType(Integer apiType) {
         this.apiType = apiType;
         return this;
     }
 
-    
-
-
-    /**
-     * API类型
-     * @return apiType
-     */
+    /** API类型
+     * 
+     * @return apiType */
     public Integer getApiType() {
         return apiType;
     }
@@ -349,20 +277,14 @@ public class SignApiBindingInfo  {
         this.apiType = apiType;
     }
 
-    
-
     public SignApiBindingInfo withApiName(String apiName) {
         this.apiName = apiName;
         return this;
     }
 
-    
-
-
-    /**
-     * API名称
-     * @return apiName
-     */
+    /** API名称
+     * 
+     * @return apiName */
     public String getApiName() {
         return apiName;
     }
@@ -371,20 +293,14 @@ public class SignApiBindingInfo  {
         this.apiName = apiName;
     }
 
-    
-
     public SignApiBindingInfo withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 绑定关系的ID
-     * @return id
-     */
+    /** 绑定关系的ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -393,20 +309,14 @@ public class SignApiBindingInfo  {
         this.id = id;
     }
 
-    
-
     public SignApiBindingInfo withApiRemark(String apiRemark) {
         this.apiRemark = apiRemark;
         return this;
     }
 
-    
-
-
-    /**
-     * API描述
-     * @return apiRemark
-     */
+    /** API描述
+     * 
+     * @return apiRemark */
     public String getApiRemark() {
         return apiRemark;
     }
@@ -415,20 +325,14 @@ public class SignApiBindingInfo  {
         this.apiRemark = apiRemark;
     }
 
-    
-
     public SignApiBindingInfo withSignId(String signId) {
         this.signId = signId;
         return this;
     }
 
-    
-
-
-    /**
-     * 签名密钥的编号
-     * @return signId
-     */
+    /** 签名密钥的编号
+     * 
+     * @return signId */
     public String getSignId() {
         return signId;
     }
@@ -437,20 +341,14 @@ public class SignApiBindingInfo  {
         this.signId = signId;
     }
 
-    
-
     public SignApiBindingInfo withSignName(String signName) {
         this.signName = signName;
         return this;
     }
 
-    
-
-
-    /**
-     * 签名密钥的名称。支持汉字，英文，数字，下划线，且只能以英文和汉字开头，3 ~ 64字符。 > 中文字符必须为UTF-8或者unicode编码。
-     * @return signName
-     */
+    /** 签名密钥的名称。支持汉字，英文，数字，下划线，且只能以英文和汉字开头，3 ~ 64字符。 > 中文字符必须为UTF-8或者unicode编码。
+     * 
+     * @return signName */
     public String getSignName() {
         return signName;
     }
@@ -459,20 +357,16 @@ public class SignApiBindingInfo  {
         this.signName = signName;
     }
 
-    
-
     public SignApiBindingInfo withSignKey(String signKey) {
         this.signKey = signKey;
         return this;
     }
 
-    
-
-
-    /**
-     * 签名密钥的key。 - hmac类型的签名密钥key：支持英文，数字，下划线，中划线，且只能以英文字母或数字开头，8 ~ 32字符。未填写时后台自动生成。 - basic类型的签名密钥key：支持英文，数字，下划线，中划线，且只能以英文字母开头，4 ~ 32字符。未填写时后台自动生成。 - public_key类型的签名密钥key：支持英文，数字，下划线，中划线，+，/，=，可以英文字母，数字，+，/开头，8 ~ 512字符。未填写时后台自动生成。
-     * @return signKey
-     */
+    /** 签名密钥的key。 - hmac类型的签名密钥key：支持英文，数字，下划线，中划线，且只能以英文字母或数字开头，8 ~ 32字符。未填写时后台自动生成。 -
+     * basic类型的签名密钥key：支持英文，数字，下划线，中划线，且只能以英文字母开头，4 ~ 32字符。未填写时后台自动生成。 -
+     * public_key类型的签名密钥key：支持英文，数字，下划线，中划线，+，/，=，可以英文字母，数字，+，/开头，8 ~ 512字符。未填写时后台自动生成。
+     * 
+     * @return signKey */
     public String getSignKey() {
         return signKey;
     }
@@ -481,20 +375,16 @@ public class SignApiBindingInfo  {
         this.signKey = signKey;
     }
 
-    
-
     public SignApiBindingInfo withSignSecret(String signSecret) {
         this.signSecret = signSecret;
         return this;
     }
 
-    
-
-
-    /**
-     * 签名密钥的密钥。 - hmac类型的签名密钥key：支持英文，数字，下划线，中划线，!，@，#，$，%，且只能以英文字母或数字开头，16 ~ 64字符。未填写时后台自动生成。 - basic类型的签名密钥key：支持英文，数字，下划线，中划线，!，@，#，$，%，且只能以英文字母或数字开头，8 ~ 64字符。未填写时后台自动生成。 - public_key类型的签名密钥key：支持英文，数字，下划线，中划线，!，@，#，$，%，+，/，=，可以英文字母，数字，+，/开头，15 ~ 2048字符。未填写时后台自动生成。
-     * @return signSecret
-     */
+    /** 签名密钥的密钥。 - hmac类型的签名密钥key：支持英文，数字，下划线，中划线，!，@，#，$，%，且只能以英文字母或数字开头，16 ~ 64字符。未填写时后台自动生成。 -
+     * basic类型的签名密钥key：支持英文，数字，下划线，中划线，!，@，#，$，%，且只能以英文字母或数字开头，8 ~ 64字符。未填写时后台自动生成。 -
+     * public_key类型的签名密钥key：支持英文，数字，下划线，中划线，!，@，#，$，%，+，/，=，可以英文字母，数字，+，/开头，15 ~ 2048字符。未填写时后台自动生成。
+     * 
+     * @return signSecret */
     public String getSignSecret() {
         return signSecret;
     }
@@ -503,20 +393,15 @@ public class SignApiBindingInfo  {
         this.signSecret = signSecret;
     }
 
-    
-
     public SignApiBindingInfo withSignType(SignTypeEnum signType) {
         this.signType = signType;
         return this;
     }
 
-    
-
-
-    /**
-     * 签名密钥类型： - hmac - basic - public_key  basic类型需要实例升级到对应版本，若不存在可联系技术工程师升级。  public_key类型开启实例配置public_key才可使用，实例特性配置详情请参考“附录 > 实例支持的APIC特性”，如确认实例不存在public_key配置可联系技术工程师开启。
-     * @return signType
-     */
+    /** 签名密钥类型： - hmac - basic - public_key basic类型需要实例升级到对应版本，若不存在可联系技术工程师升级。
+     * public_key类型开启实例配置public_key才可使用，实例特性配置详情请参考“附录 > 实例支持的APIC特性”，如确认实例不存在public_key配置可联系技术工程师开启。
+     * 
+     * @return signType */
     public SignTypeEnum getSignType() {
         return signType;
     }
@@ -524,8 +409,6 @@ public class SignApiBindingInfo  {
     public void setSignType(SignTypeEnum signType) {
         this.signType = signType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -536,26 +419,42 @@ public class SignApiBindingInfo  {
             return false;
         }
         SignApiBindingInfo signApiBindingInfo = (SignApiBindingInfo) o;
-        return Objects.equals(this.publishId, signApiBindingInfo.publishId) &&
-            Objects.equals(this.apiId, signApiBindingInfo.apiId) &&
-            Objects.equals(this.groupName, signApiBindingInfo.groupName) &&
-            Objects.equals(this.bindingTime, signApiBindingInfo.bindingTime) &&
-            Objects.equals(this.envId, signApiBindingInfo.envId) &&
-            Objects.equals(this.envName, signApiBindingInfo.envName) &&
-            Objects.equals(this.apiType, signApiBindingInfo.apiType) &&
-            Objects.equals(this.apiName, signApiBindingInfo.apiName) &&
-            Objects.equals(this.id, signApiBindingInfo.id) &&
-            Objects.equals(this.apiRemark, signApiBindingInfo.apiRemark) &&
-            Objects.equals(this.signId, signApiBindingInfo.signId) &&
-            Objects.equals(this.signName, signApiBindingInfo.signName) &&
-            Objects.equals(this.signKey, signApiBindingInfo.signKey) &&
-            Objects.equals(this.signSecret, signApiBindingInfo.signSecret) &&
-            Objects.equals(this.signType, signApiBindingInfo.signType);
+        return Objects.equals(this.publishId, signApiBindingInfo.publishId)
+            && Objects.equals(this.apiId, signApiBindingInfo.apiId)
+            && Objects.equals(this.groupName, signApiBindingInfo.groupName)
+            && Objects.equals(this.bindingTime, signApiBindingInfo.bindingTime)
+            && Objects.equals(this.envId, signApiBindingInfo.envId)
+            && Objects.equals(this.envName, signApiBindingInfo.envName)
+            && Objects.equals(this.apiType, signApiBindingInfo.apiType)
+            && Objects.equals(this.apiName, signApiBindingInfo.apiName)
+            && Objects.equals(this.id, signApiBindingInfo.id)
+            && Objects.equals(this.apiRemark, signApiBindingInfo.apiRemark)
+            && Objects.equals(this.signId, signApiBindingInfo.signId)
+            && Objects.equals(this.signName, signApiBindingInfo.signName)
+            && Objects.equals(this.signKey, signApiBindingInfo.signKey)
+            && Objects.equals(this.signSecret, signApiBindingInfo.signSecret)
+            && Objects.equals(this.signType, signApiBindingInfo.signType);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(publishId, apiId, groupName, bindingTime, envId, envName, apiType, apiName, id, apiRemark, signId, signName, signKey, signSecret, signType);
+        return Objects.hash(publishId,
+            apiId,
+            groupName,
+            bindingTime,
+            envId,
+            envName,
+            apiType,
+            apiName,
+            id,
+            apiRemark,
+            signId,
+            signName,
+            signKey,
+            signSecret,
+            signType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -578,16 +477,13 @@ public class SignApiBindingInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

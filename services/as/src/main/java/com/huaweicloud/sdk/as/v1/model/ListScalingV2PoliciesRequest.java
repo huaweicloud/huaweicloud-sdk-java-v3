@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListScalingV2PoliciesRequest  {
-
-
+/** Request Object */
+public class ListScalingV2PoliciesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_resource_id")
-    
+    @JsonProperty(value = "scaling_resource_id")
+
     private String scalingResourceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_policy_name")
-    
+    @JsonProperty(value = "scaling_policy_name")
+
     private String scalingPolicyName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_policy_type")
-    
+    @JsonProperty(value = "scaling_policy_type")
+
     private String scalingPolicyType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_policy_id")
-    
+    @JsonProperty(value = "scaling_policy_id")
+
     private String scalingPolicyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_number")
-    
+    @JsonProperty(value = "start_number")
+
     private Integer startNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
     public ListScalingV2PoliciesRequest withScalingResourceId(String scalingResourceId) {
@@ -58,13 +43,9 @@ public class ListScalingV2PoliciesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩组ID。
-     * @return scalingResourceId
-     */
+    /** 伸缩组ID。
+     * 
+     * @return scalingResourceId */
     public String getScalingResourceId() {
         return scalingResourceId;
     }
@@ -73,20 +54,14 @@ public class ListScalingV2PoliciesRequest  {
         this.scalingResourceId = scalingResourceId;
     }
 
-    
-
     public ListScalingV2PoliciesRequest withScalingPolicyName(String scalingPolicyName) {
         this.scalingPolicyName = scalingPolicyName;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩策略名称。
-     * @return scalingPolicyName
-     */
+    /** 伸缩策略名称。
+     * 
+     * @return scalingPolicyName */
     public String getScalingPolicyName() {
         return scalingPolicyName;
     }
@@ -95,20 +70,14 @@ public class ListScalingV2PoliciesRequest  {
         this.scalingPolicyName = scalingPolicyName;
     }
 
-    
-
     public ListScalingV2PoliciesRequest withScalingPolicyType(String scalingPolicyType) {
         this.scalingPolicyType = scalingPolicyType;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略类型。
-     * @return scalingPolicyType
-     */
+    /** 策略类型。
+     * 
+     * @return scalingPolicyType */
     public String getScalingPolicyType() {
         return scalingPolicyType;
     }
@@ -117,20 +86,14 @@ public class ListScalingV2PoliciesRequest  {
         this.scalingPolicyType = scalingPolicyType;
     }
 
-    
-
     public ListScalingV2PoliciesRequest withScalingPolicyId(String scalingPolicyId) {
         this.scalingPolicyId = scalingPolicyId;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩策略ID。
-     * @return scalingPolicyId
-     */
+    /** 伸缩策略ID。
+     * 
+     * @return scalingPolicyId */
     public String getScalingPolicyId() {
         return scalingPolicyId;
     }
@@ -139,20 +102,14 @@ public class ListScalingV2PoliciesRequest  {
         this.scalingPolicyId = scalingPolicyId;
     }
 
-    
-
     public ListScalingV2PoliciesRequest withStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询的起始行号，默认为0。
-     * @return startNumber
-     */
+    /** 查询的起始行号，默认为0。
+     * 
+     * @return startNumber */
     public Integer getStartNumber() {
         return startNumber;
     }
@@ -161,22 +118,14 @@ public class ListScalingV2PoliciesRequest  {
         this.startNumber = startNumber;
     }
 
-    
-
     public ListScalingV2PoliciesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询记录数，默认20，最大100。
-     * minimum: 0
-     * maximum: 100
-     * @return limit
-     */
+    /** 查询记录数，默认20，最大100。 minimum: 0 maximum: 100
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -184,8 +133,6 @@ public class ListScalingV2PoliciesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -196,17 +143,20 @@ public class ListScalingV2PoliciesRequest  {
             return false;
         }
         ListScalingV2PoliciesRequest listScalingV2PoliciesRequest = (ListScalingV2PoliciesRequest) o;
-        return Objects.equals(this.scalingResourceId, listScalingV2PoliciesRequest.scalingResourceId) &&
-            Objects.equals(this.scalingPolicyName, listScalingV2PoliciesRequest.scalingPolicyName) &&
-            Objects.equals(this.scalingPolicyType, listScalingV2PoliciesRequest.scalingPolicyType) &&
-            Objects.equals(this.scalingPolicyId, listScalingV2PoliciesRequest.scalingPolicyId) &&
-            Objects.equals(this.startNumber, listScalingV2PoliciesRequest.startNumber) &&
-            Objects.equals(this.limit, listScalingV2PoliciesRequest.limit);
+        return Objects.equals(this.scalingResourceId, listScalingV2PoliciesRequest.scalingResourceId)
+            && Objects.equals(this.scalingPolicyName, listScalingV2PoliciesRequest.scalingPolicyName)
+            && Objects.equals(this.scalingPolicyType, listScalingV2PoliciesRequest.scalingPolicyType)
+            && Objects.equals(this.scalingPolicyId, listScalingV2PoliciesRequest.scalingPolicyId)
+            && Objects.equals(this.startNumber, listScalingV2PoliciesRequest.startNumber)
+            && Objects.equals(this.limit, listScalingV2PoliciesRequest.limit);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(scalingResourceId, scalingPolicyName, scalingPolicyType, scalingPolicyId, startNumber, limit);
+        return Objects
+            .hash(scalingResourceId, scalingPolicyName, scalingPolicyType, scalingPolicyId, startNumber, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -220,16 +170,13 @@ public class ListScalingV2PoliciesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

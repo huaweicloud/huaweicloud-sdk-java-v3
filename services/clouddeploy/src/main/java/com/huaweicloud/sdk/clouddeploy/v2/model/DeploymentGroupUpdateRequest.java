@@ -1,64 +1,46 @@
 package com.huaweicloud.sdk.clouddeploy.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 
  */
-public class DeploymentGroupUpdateRequest  {
-
-
+public class DeploymentGroupUpdateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="slave_cluster_id")
-    
+    @JsonProperty(value = "slave_cluster_id")
+
     private String slaveClusterId;
-    /**
-     * 自动连通性验证 0不执行 1每日 2每周
-     */
+
+    /** 自动连通性验证 0不执行 1每日 2每周 */
     public static final class AutoConnectionTestSwitchEnum {
 
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
+        /** Enum NUMBER_0 for value: 0 */
         public static final AutoConnectionTestSwitchEnum NUMBER_0 = new AutoConnectionTestSwitchEnum(0);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
+
+        /** Enum NUMBER_1 for value: 1 */
         public static final AutoConnectionTestSwitchEnum NUMBER_1 = new AutoConnectionTestSwitchEnum(1);
-        
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
+
+        /** Enum NUMBER_2 for value: 2 */
         public static final AutoConnectionTestSwitchEnum NUMBER_2 = new AutoConnectionTestSwitchEnum(2);
-        
 
         private static final Map<Integer, AutoConnectionTestSwitchEnum> STATIC_FIELDS = createStaticFields();
 
@@ -88,7 +70,7 @@ public class DeploymentGroupUpdateRequest  {
 
         @JsonCreator
         public static AutoConnectionTestSwitchEnum fromValue(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AutoConnectionTestSwitchEnum result = STATIC_FIELDS.get(value);
@@ -99,7 +81,7 @@ public class DeploymentGroupUpdateRequest  {
         }
 
         public static AutoConnectionTestSwitchEnum valueOf(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AutoConnectionTestSwitchEnum result = STATIC_FIELDS.get(value);
@@ -123,10 +105,9 @@ public class DeploymentGroupUpdateRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auto_connection_test_switch")
-    
+    @JsonProperty(value = "auto_connection_test_switch")
+
     private AutoConnectionTestSwitchEnum autoConnectionTestSwitch;
 
     public DeploymentGroupUpdateRequest withName(String name) {
@@ -134,13 +115,9 @@ public class DeploymentGroupUpdateRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 主机组名
-     * @return name
-     */
+    /** 主机组名
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -149,20 +126,14 @@ public class DeploymentGroupUpdateRequest  {
         this.name = name;
     }
 
-    
-
     public DeploymentGroupUpdateRequest withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述
-     * @return description
-     */
+    /** 描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -171,20 +142,14 @@ public class DeploymentGroupUpdateRequest  {
         this.description = description;
     }
 
-    
-
     public DeploymentGroupUpdateRequest withSlaveClusterId(String slaveClusterId) {
         this.slaveClusterId = slaveClusterId;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义slave资源池id
-     * @return slaveClusterId
-     */
+    /** 自定义slave资源池id
+     * 
+     * @return slaveClusterId */
     public String getSlaveClusterId() {
         return slaveClusterId;
     }
@@ -193,20 +158,15 @@ public class DeploymentGroupUpdateRequest  {
         this.slaveClusterId = slaveClusterId;
     }
 
-    
-
-    public DeploymentGroupUpdateRequest withAutoConnectionTestSwitch(AutoConnectionTestSwitchEnum autoConnectionTestSwitch) {
+    public DeploymentGroupUpdateRequest withAutoConnectionTestSwitch(
+        AutoConnectionTestSwitchEnum autoConnectionTestSwitch) {
         this.autoConnectionTestSwitch = autoConnectionTestSwitch;
         return this;
     }
 
-    
-
-
-    /**
-     * 自动连通性验证 0不执行 1每日 2每周
-     * @return autoConnectionTestSwitch
-     */
+    /** 自动连通性验证 0不执行 1每日 2每周
+     * 
+     * @return autoConnectionTestSwitch */
     public AutoConnectionTestSwitchEnum getAutoConnectionTestSwitch() {
         return autoConnectionTestSwitch;
     }
@@ -214,8 +174,6 @@ public class DeploymentGroupUpdateRequest  {
     public void setAutoConnectionTestSwitch(AutoConnectionTestSwitchEnum autoConnectionTestSwitch) {
         this.autoConnectionTestSwitch = autoConnectionTestSwitch;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -226,15 +184,17 @@ public class DeploymentGroupUpdateRequest  {
             return false;
         }
         DeploymentGroupUpdateRequest deploymentGroupUpdateRequest = (DeploymentGroupUpdateRequest) o;
-        return Objects.equals(this.name, deploymentGroupUpdateRequest.name) &&
-            Objects.equals(this.description, deploymentGroupUpdateRequest.description) &&
-            Objects.equals(this.slaveClusterId, deploymentGroupUpdateRequest.slaveClusterId) &&
-            Objects.equals(this.autoConnectionTestSwitch, deploymentGroupUpdateRequest.autoConnectionTestSwitch);
+        return Objects.equals(this.name, deploymentGroupUpdateRequest.name)
+            && Objects.equals(this.description, deploymentGroupUpdateRequest.description)
+            && Objects.equals(this.slaveClusterId, deploymentGroupUpdateRequest.slaveClusterId)
+            && Objects.equals(this.autoConnectionTestSwitch, deploymentGroupUpdateRequest.autoConnectionTestSwitch);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, description, slaveClusterId, autoConnectionTestSwitch);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -246,16 +206,13 @@ public class DeploymentGroupUpdateRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

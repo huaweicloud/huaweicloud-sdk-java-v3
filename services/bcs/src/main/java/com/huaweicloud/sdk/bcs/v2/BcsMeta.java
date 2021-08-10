@@ -1,54 +1,49 @@
 package com.huaweicloud.sdk.bcs.v2;
 
+import com.huaweicloud.sdk.bcs.v2.model.*;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.bcs.v2.model.*;
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class BcsMeta {
 
-    public static final HttpRequestDef<BatchAddPeersToChannelRequest, BatchAddPeersToChannelResponse> batchAddPeersToChannel = genForbatchAddPeersToChannel();
+    public static final HttpRequestDef<BatchAddPeersToChannelRequest, BatchAddPeersToChannelResponse> batchAddPeersToChannel =
+        genForbatchAddPeersToChannel();
 
     private static HttpRequestDef<BatchAddPeersToChannelRequest, BatchAddPeersToChannelResponse> genForbatchAddPeersToChannel() {
         // basic
-        HttpRequestDef.Builder<BatchAddPeersToChannelRequest, BatchAddPeersToChannelResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchAddPeersToChannelRequest.class, BatchAddPeersToChannelResponse.class)
-                .withName("BatchAddPeersToChannel")
-                .withUri("/v2/{project_id}/blockchains/{blockchain_id}/channels/peers")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<BatchAddPeersToChannelRequest, BatchAddPeersToChannelResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchAddPeersToChannelRequest.class, BatchAddPeersToChannelResponse.class)
+            .withName("BatchAddPeersToChannel")
+            .withUri("/v2/{project_id}/blockchains/{blockchain_id}/channels/peers")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("blockchain_id",
+        builder.<String>withRequestField("blockchain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchAddPeersToChannelRequest::getBlockchainId, (req, v) -> {
                 req.setBlockchainId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<BatchAddPeersToChannelRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchAddPeersToChannelRequestBody.class,
+            TypeCasts.uncheckedConversion(BatchAddPeersToChannelRequestBody.class),
             f -> f.withMarshaller(BatchAddPeersToChannelRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchCreateChannelsRequest, BatchCreateChannelsResponse> batchCreateChannels = genForbatchCreateChannels();
+    public static final HttpRequestDef<BatchCreateChannelsRequest, BatchCreateChannelsResponse> batchCreateChannels =
+        genForbatchCreateChannels();
 
     private static HttpRequestDef<BatchCreateChannelsRequest, BatchCreateChannelsResponse> genForbatchCreateChannels() {
         // basic
@@ -59,58 +54,56 @@ public class BcsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("blockchain_id",
+        builder.<String>withRequestField("blockchain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchCreateChannelsRequest::getBlockchainId, (req, v) -> {
                 req.setBlockchainId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<BatchCreateChannelsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchCreateChannelsRequestBody.class,
+            TypeCasts.uncheckedConversion(BatchCreateChannelsRequestBody.class),
             f -> f.withMarshaller(BatchCreateChannelsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchInviteMembersToChannelRequest, BatchInviteMembersToChannelResponse> batchInviteMembersToChannel = genForbatchInviteMembersToChannel();
+    public static final HttpRequestDef<BatchInviteMembersToChannelRequest, BatchInviteMembersToChannelResponse> batchInviteMembersToChannel =
+        genForbatchInviteMembersToChannel();
 
     private static HttpRequestDef<BatchInviteMembersToChannelRequest, BatchInviteMembersToChannelResponse> genForbatchInviteMembersToChannel() {
         // basic
         HttpRequestDef.Builder<BatchInviteMembersToChannelRequest, BatchInviteMembersToChannelResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchInviteMembersToChannelRequest.class, BatchInviteMembersToChannelResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchInviteMembersToChannelRequest.class,
+                    BatchInviteMembersToChannelResponse.class)
                 .withName("BatchInviteMembersToChannel")
                 .withUri("/v2/{project_id}/members/invitations")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<BatchInviteMembersToChannelRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchInviteMembersToChannelRequestBody.class,
+            TypeCasts.uncheckedConversion(BatchInviteMembersToChannelRequestBody.class),
             f -> f.withMarshaller(BatchInviteMembersToChannelRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateNewBlockchainRequest, CreateNewBlockchainResponse> createNewBlockchain = genForcreateNewBlockchain();
+    public static final HttpRequestDef<CreateNewBlockchainRequest, CreateNewBlockchainResponse> createNewBlockchain =
+        genForcreateNewBlockchain();
 
     private static HttpRequestDef<CreateNewBlockchainRequest, CreateNewBlockchainResponse> genForcreateNewBlockchain() {
         // basic
@@ -121,23 +114,21 @@ public class BcsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateRequestBody.class),
             f -> f.withMarshaller(CreateNewBlockchainRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteBlockchainRequest, DeleteBlockchainResponse> deleteBlockchain = genFordeleteBlockchain();
+    public static final HttpRequestDef<DeleteBlockchainRequest, DeleteBlockchainResponse> deleteBlockchain =
+        genFordeleteBlockchain();
 
     private static HttpRequestDef<DeleteBlockchainRequest, DeleteBlockchainResponse> genFordeleteBlockchain() {
         // basic
@@ -148,125 +139,116 @@ public class BcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("blockchain_id",
+        builder.<String>withRequestField("blockchain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteBlockchainRequest::getBlockchainId, (req, v) -> {
                 req.setBlockchainId(v);
-            })
-        );
-        builder.withRequestField("is_delete_storage",
+            }));
+        builder.<Boolean>withRequestField("is_delete_storage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(DeleteBlockchainRequest::getIsDeleteStorage, (req, v) -> {
                 req.setIsDeleteStorage(v);
-            })
-        );
-        builder.withRequestField("is_delete_obs",
+            }));
+        builder.<Boolean>withRequestField("is_delete_obs",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(DeleteBlockchainRequest::getIsDeleteObs, (req, v) -> {
                 req.setIsDeleteObs(v);
-            })
-        );
-        builder.withRequestField("is_delete_resource",
+            }));
+        builder.<Boolean>withRequestField("is_delete_resource",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(DeleteBlockchainRequest::getIsDeleteResource, (req, v) -> {
                 req.setIsDeleteResource(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DownloadBlockchainCertRequest, DownloadBlockchainCertResponse> downloadBlockchainCert = genFordownloadBlockchainCert();
+    public static final HttpRequestDef<DownloadBlockchainCertRequest, DownloadBlockchainCertResponse> downloadBlockchainCert =
+        genFordownloadBlockchainCert();
 
     private static HttpRequestDef<DownloadBlockchainCertRequest, DownloadBlockchainCertResponse> genFordownloadBlockchainCert() {
         // basic
-        HttpRequestDef.Builder<DownloadBlockchainCertRequest, DownloadBlockchainCertResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, DownloadBlockchainCertRequest.class, DownloadBlockchainCertResponse.class)
-                .withName("DownloadBlockchainCert")
-                .withUri("/v2/{project_id}/blockchains/{blockchain_id}/cert")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<DownloadBlockchainCertRequest, DownloadBlockchainCertResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, DownloadBlockchainCertRequest.class, DownloadBlockchainCertResponse.class)
+            .withName("DownloadBlockchainCert")
+            .withUri("/v2/{project_id}/blockchains/{blockchain_id}/cert")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("blockchain_id",
+        builder.<String>withRequestField("blockchain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DownloadBlockchainCertRequest::getBlockchainId, (req, v) -> {
                 req.setBlockchainId(v);
-            })
-        );
-        builder.withRequestField("org_name",
+            }));
+        builder.<String>withRequestField("org_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DownloadBlockchainCertRequest::getOrgName, (req, v) -> {
                 req.setOrgName(v);
-            })
-        );
-        builder.withRequestField("cert_type",
+            }));
+        builder.<DownloadBlockchainCertRequest.CertTypeEnum>withRequestField("cert_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DownloadBlockchainCertRequest.CertTypeEnum.class,
+            TypeCasts.uncheckedConversion(DownloadBlockchainCertRequest.CertTypeEnum.class),
             f -> f.withMarshaller(DownloadBlockchainCertRequest::getCertType, (req, v) -> {
                 req.setCertType(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DownloadBlockchainSdkConfigRequest, DownloadBlockchainSdkConfigResponse> downloadBlockchainSdkConfig = genFordownloadBlockchainSdkConfig();
+    public static final HttpRequestDef<DownloadBlockchainSdkConfigRequest, DownloadBlockchainSdkConfigResponse> downloadBlockchainSdkConfig =
+        genFordownloadBlockchainSdkConfig();
 
     private static HttpRequestDef<DownloadBlockchainSdkConfigRequest, DownloadBlockchainSdkConfigResponse> genFordownloadBlockchainSdkConfig() {
         // basic
         HttpRequestDef.Builder<DownloadBlockchainSdkConfigRequest, DownloadBlockchainSdkConfigResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, DownloadBlockchainSdkConfigRequest.class, DownloadBlockchainSdkConfigResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DownloadBlockchainSdkConfigRequest.class,
+                    DownloadBlockchainSdkConfigResponse.class)
                 .withName("DownloadBlockchainSdkConfig")
                 .withUri("/v2/{project_id}/blockchains/{blockchain_id}/sdk-cfg")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("blockchain_id",
+        builder.<String>withRequestField("blockchain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DownloadBlockchainSdkConfigRequest::getBlockchainId, (req, v) -> {
                 req.setBlockchainId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CfgRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CfgRequestBody.class,
+            TypeCasts.uncheckedConversion(CfgRequestBody.class),
             f -> f.withMarshaller(DownloadBlockchainSdkConfigRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<HandleNotificationRequest, HandleNotificationResponse> handleNotification = genForhandleNotification();
+    public static final HttpRequestDef<HandleNotificationRequest, HandleNotificationResponse> handleNotification =
+        genForhandleNotification();
 
     private static HttpRequestDef<HandleNotificationRequest, HandleNotificationResponse> genForhandleNotification() {
         // basic
@@ -277,23 +259,21 @@ public class BcsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<HandleNotificationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            HandleNotificationRequestBody.class,
+            TypeCasts.uncheckedConversion(HandleNotificationRequestBody.class),
             f -> f.withMarshaller(HandleNotificationRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListBcsMetricRequest, ListBcsMetricResponse> listBcsMetric = genForlistBcsMetric();
+    public static final HttpRequestDef<ListBcsMetricRequest, ListBcsMetricResponse> listBcsMetric =
+        genForlistBcsMetric();
 
     private static HttpRequestDef<ListBcsMetricRequest, ListBcsMetricResponse> genForlistBcsMetric() {
         // basic
@@ -304,58 +284,53 @@ public class BcsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("blockchain_id",
+        builder.<String>withRequestField("blockchain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBcsMetricRequest::getBlockchainId, (req, v) -> {
                 req.setBlockchainId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ListBcsMetricRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ListBcsMetricRequestBody.class,
+            TypeCasts.uncheckedConversion(ListBcsMetricRequestBody.class),
             f -> f.withMarshaller(ListBcsMetricRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListBlockchainChannelsRequest, ListBlockchainChannelsResponse> listBlockchainChannels = genForlistBlockchainChannels();
+    public static final HttpRequestDef<ListBlockchainChannelsRequest, ListBlockchainChannelsResponse> listBlockchainChannels =
+        genForlistBlockchainChannels();
 
     private static HttpRequestDef<ListBlockchainChannelsRequest, ListBlockchainChannelsResponse> genForlistBlockchainChannels() {
         // basic
-        HttpRequestDef.Builder<ListBlockchainChannelsRequest, ListBlockchainChannelsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListBlockchainChannelsRequest.class, ListBlockchainChannelsResponse.class)
-                .withName("ListBlockchainChannels")
-                .withUri("/v2/{project_id}/blockchains/{blockchain_id}/channels")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ListBlockchainChannelsRequest, ListBlockchainChannelsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListBlockchainChannelsRequest.class, ListBlockchainChannelsResponse.class)
+            .withName("ListBlockchainChannels")
+            .withUri("/v2/{project_id}/blockchains/{blockchain_id}/channels")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("blockchain_id",
+        builder.<String>withRequestField("blockchain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBlockchainChannelsRequest::getBlockchainId, (req, v) -> {
                 req.setBlockchainId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListBlockchainsRequest, ListBlockchainsResponse> listBlockchains = genForlistBlockchains();
+    public static final HttpRequestDef<ListBlockchainsRequest, ListBlockchainsResponse> listBlockchains =
+        genForlistBlockchains();
 
     private static HttpRequestDef<ListBlockchainsRequest, ListBlockchainsResponse> genForlistBlockchains() {
         // basic
@@ -368,13 +343,12 @@ public class BcsMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListEntityMetricRequest, ListEntityMetricResponse> listEntityMetric = genForlistEntityMetric();
+    public static final HttpRequestDef<ListEntityMetricRequest, ListEntityMetricResponse> listEntityMetric =
+        genForlistEntityMetric();
 
     private static HttpRequestDef<ListEntityMetricRequest, ListEntityMetricResponse> genForlistEntityMetric() {
         // basic
@@ -385,31 +359,28 @@ public class BcsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("blockchain_id",
+        builder.<String>withRequestField("blockchain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEntityMetricRequest::getBlockchainId, (req, v) -> {
                 req.setBlockchainId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ListEntityMetricRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ListEntityMetricRequestBody.class,
+            TypeCasts.uncheckedConversion(ListEntityMetricRequestBody.class),
             f -> f.withMarshaller(ListEntityMetricRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListInstanceMetricRequest, ListInstanceMetricResponse> listInstanceMetric = genForlistInstanceMetric();
+    public static final HttpRequestDef<ListInstanceMetricRequest, ListInstanceMetricResponse> listInstanceMetric =
+        genForlistInstanceMetric();
 
     private static HttpRequestDef<ListInstanceMetricRequest, ListInstanceMetricResponse> genForlistInstanceMetric() {
         // basic
@@ -420,26 +391,22 @@ public class BcsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("blockchain_id",
+        builder.<String>withRequestField("blockchain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstanceMetricRequest::getBlockchainId, (req, v) -> {
                 req.setBlockchainId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ListInstanceMetricRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ListInstanceMetricRequestBody.class,
+            TypeCasts.uncheckedConversion(ListInstanceMetricRequestBody.class),
             f -> f.withMarshaller(ListInstanceMetricRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -457,13 +424,12 @@ public class BcsMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListNotificationsRequest, ListNotificationsResponse> listNotifications = genForlistNotifications();
+    public static final HttpRequestDef<ListNotificationsRequest, ListNotificationsResponse> listNotifications =
+        genForlistNotifications();
 
     private static HttpRequestDef<ListNotificationsRequest, ListNotificationsResponse> genForlistNotifications() {
         // basic
@@ -476,8 +442,6 @@ public class BcsMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
@@ -493,50 +457,43 @@ public class BcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("blockchain_id",
+        builder.<String>withRequestField("blockchain_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListOpRecordRequest::getBlockchainId, (req, v) -> {
                 req.setBlockchainId(v);
-            })
-        );
-        builder.withRequestField("operation_status",
+            }));
+        builder.<ListOpRecordRequest.OperationStatusEnum>withRequestField("operation_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListOpRecordRequest.OperationStatusEnum.class,
+            TypeCasts.uncheckedConversion(ListOpRecordRequest.OperationStatusEnum.class),
             f -> f.withMarshaller(ListOpRecordRequest::getOperationStatus, (req, v) -> {
                 req.setOperationStatus(v);
-            })
-        );
-        builder.withRequestField("resource_type",
+            }));
+        builder.<ListOpRecordRequest.ResourceTypeEnum>withRequestField("resource_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListOpRecordRequest.ResourceTypeEnum.class,
+            TypeCasts.uncheckedConversion(ListOpRecordRequest.ResourceTypeEnum.class),
             f -> f.withMarshaller(ListOpRecordRequest::getResourceType, (req, v) -> {
                 req.setResourceType(v);
-            })
-        );
-        builder.withRequestField("operation_type",
+            }));
+        builder.<ListOpRecordRequest.OperationTypeEnum>withRequestField("operation_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListOpRecordRequest.OperationTypeEnum.class,
+            TypeCasts.uncheckedConversion(ListOpRecordRequest.OperationTypeEnum.class),
             f -> f.withMarshaller(ListOpRecordRequest::getOperationType, (req, v) -> {
                 req.setOperationType(v);
-            })
-        );
-        builder.withRequestField("operation_id",
+            }));
+        builder.<String>withRequestField("operation_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListOpRecordRequest::getOperationId, (req, v) -> {
                 req.setOperationId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -554,40 +511,37 @@ public class BcsMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowBlockchainDetailRequest, ShowBlockchainDetailResponse> showBlockchainDetail = genForshowBlockchainDetail();
+    public static final HttpRequestDef<ShowBlockchainDetailRequest, ShowBlockchainDetailResponse> showBlockchainDetail =
+        genForshowBlockchainDetail();
 
     private static HttpRequestDef<ShowBlockchainDetailRequest, ShowBlockchainDetailResponse> genForshowBlockchainDetail() {
         // basic
-        HttpRequestDef.Builder<ShowBlockchainDetailRequest, ShowBlockchainDetailResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowBlockchainDetailRequest.class, ShowBlockchainDetailResponse.class)
-                .withName("ShowBlockchainDetail")
-                .withUri("/v2/{project_id}/blockchains/{blockchain_id}")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowBlockchainDetailRequest, ShowBlockchainDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowBlockchainDetailRequest.class, ShowBlockchainDetailResponse.class)
+            .withName("ShowBlockchainDetail")
+            .withUri("/v2/{project_id}/blockchains/{blockchain_id}")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("blockchain_id",
+        builder.<String>withRequestField("blockchain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBlockchainDetailRequest::getBlockchainId, (req, v) -> {
                 req.setBlockchainId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowBlockchainNodesRequest, ShowBlockchainNodesResponse> showBlockchainNodes = genForshowBlockchainNodes();
+    public static final HttpRequestDef<ShowBlockchainNodesRequest, ShowBlockchainNodesResponse> showBlockchainNodes =
+        genForshowBlockchainNodes();
 
     private static HttpRequestDef<ShowBlockchainNodesRequest, ShowBlockchainNodesResponse> genForshowBlockchainNodes() {
         // basic
@@ -598,50 +552,46 @@ public class BcsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("blockchain_id",
+        builder.<String>withRequestField("blockchain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBlockchainNodesRequest::getBlockchainId, (req, v) -> {
                 req.setBlockchainId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowBlockchainStatusRequest, ShowBlockchainStatusResponse> showBlockchainStatus = genForshowBlockchainStatus();
+    public static final HttpRequestDef<ShowBlockchainStatusRequest, ShowBlockchainStatusResponse> showBlockchainStatus =
+        genForshowBlockchainStatus();
 
     private static HttpRequestDef<ShowBlockchainStatusRequest, ShowBlockchainStatusResponse> genForshowBlockchainStatus() {
         // basic
-        HttpRequestDef.Builder<ShowBlockchainStatusRequest, ShowBlockchainStatusResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowBlockchainStatusRequest.class, ShowBlockchainStatusResponse.class)
-                .withName("ShowBlockchainStatus")
-                .withUri("/v2/{project_id}/blockchains/{blockchain_id}/status")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowBlockchainStatusRequest, ShowBlockchainStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowBlockchainStatusRequest.class, ShowBlockchainStatusResponse.class)
+            .withName("ShowBlockchainStatus")
+            .withUri("/v2/{project_id}/blockchains/{blockchain_id}/status")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("blockchain_id",
+        builder.<String>withRequestField("blockchain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBlockchainStatusRequest::getBlockchainId, (req, v) -> {
                 req.setBlockchainId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> updateInstance = genForupdateInstance();
+    public static final HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> updateInstance =
+        genForupdateInstance();
 
     private static HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> genForupdateInstance() {
         // basic
@@ -652,26 +602,22 @@ public class BcsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("blockchain_id",
+        builder.<String>withRequestField("blockchain_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateInstanceRequest::getBlockchainId, (req, v) -> {
                 req.setBlockchainId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<OpIdRes>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            OpIdRes.class,
+            TypeCasts.uncheckedConversion(OpIdRes.class),
             f -> f.withMarshaller(UpdateInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

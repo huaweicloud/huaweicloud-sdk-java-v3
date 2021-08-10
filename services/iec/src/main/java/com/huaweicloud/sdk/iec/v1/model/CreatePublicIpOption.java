@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 创建公网IP请求参数
- */
-public class CreatePublicIpOption  {
-
-
+/** 创建公网IP请求参数 */
+public class CreatePublicIpOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="site_id")
-    
+    @JsonProperty(value = "site_id")
+
     private String siteId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_version")
-    
+    @JsonProperty(value = "ip_version")
+
     private String ipVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
     public CreatePublicIpOption withSiteId(String siteId) {
@@ -40,13 +28,9 @@ public class CreatePublicIpOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘站点的ID。
-     * @return siteId
-     */
+    /** 边缘站点的ID。
+     * 
+     * @return siteId */
     public String getSiteId() {
         return siteId;
     }
@@ -55,20 +39,14 @@ public class CreatePublicIpOption  {
         this.siteId = siteId;
     }
 
-    
-
     public CreatePublicIpOption withIpVersion(String ipVersion) {
         this.ipVersion = ipVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * 弹性公网IP的版本。目前IEC服务只支持4，即ipv4。
-     * @return ipVersion
-     */
+    /** 弹性公网IP的版本。目前IEC服务只支持4，即ipv4。
+     * 
+     * @return ipVersion */
     public String getIpVersion() {
         return ipVersion;
     }
@@ -77,20 +55,14 @@ public class CreatePublicIpOption  {
         this.ipVersion = ipVersion;
     }
 
-    
-
     public CreatePublicIpOption withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 线路ID。 不传时默认取当前站点第一条线路
-     * @return type
-     */
+    /** 线路ID。 不传时默认取当前站点第一条线路
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -98,8 +70,6 @@ public class CreatePublicIpOption  {
     public void setType(String type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class CreatePublicIpOption  {
             return false;
         }
         CreatePublicIpOption createPublicIpOption = (CreatePublicIpOption) o;
-        return Objects.equals(this.siteId, createPublicIpOption.siteId) &&
-            Objects.equals(this.ipVersion, createPublicIpOption.ipVersion) &&
-            Objects.equals(this.type, createPublicIpOption.type);
+        return Objects.equals(this.siteId, createPublicIpOption.siteId)
+            && Objects.equals(this.ipVersion, createPublicIpOption.ipVersion)
+            && Objects.equals(this.type, createPublicIpOption.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(siteId, ipVersion, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class CreatePublicIpOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

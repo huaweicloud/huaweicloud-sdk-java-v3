@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.AppQuotaCreate;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateAppQuotaRequest  {
-
-
+/** Request Object */
+public class CreateAppQuotaRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private AppQuotaCreate body;
 
     public CreateAppQuotaRequest withInstanceId(String instanceId) {
@@ -35,13 +24,9 @@ public class CreateAppQuotaRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -50,27 +35,23 @@ public class CreateAppQuotaRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public CreateAppQuotaRequest withBody(AppQuotaCreate body) {
         this.body = body;
         return this;
     }
 
     public CreateAppQuotaRequest withBody(Consumer<AppQuotaCreate> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new AppQuotaCreate();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public AppQuotaCreate getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class CreateAppQuotaRequest  {
     public void setBody(AppQuotaCreate body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class CreateAppQuotaRequest  {
             return false;
         }
         CreateAppQuotaRequest createAppQuotaRequest = (CreateAppQuotaRequest) o;
-        return Objects.equals(this.instanceId, createAppQuotaRequest.instanceId) &&
-            Objects.equals(this.body, createAppQuotaRequest.body);
+        return Objects.equals(this.instanceId, createAppQuotaRequest.instanceId)
+            && Objects.equals(this.body, createAppQuotaRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class CreateAppQuotaRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cdn.v1.model.UpdateDomainMultiCertificatesResponseBodyContent;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class UpdateDomainMultiCertificatesResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="https")
-    
+    @JsonProperty(value = "https")
+
     private UpdateDomainMultiCertificatesResponseBodyContent https;
 
     public UpdateDomainMultiCertificatesResponse withHttps(UpdateDomainMultiCertificatesResponseBodyContent https) {
@@ -31,20 +20,19 @@ public class UpdateDomainMultiCertificatesResponse extends SdkResponse {
         return this;
     }
 
-    public UpdateDomainMultiCertificatesResponse withHttps(Consumer<UpdateDomainMultiCertificatesResponseBodyContent> httpsSetter) {
-        if(this.https == null ){
+    public UpdateDomainMultiCertificatesResponse withHttps(
+        Consumer<UpdateDomainMultiCertificatesResponseBodyContent> httpsSetter) {
+        if (this.https == null) {
             this.https = new UpdateDomainMultiCertificatesResponseBodyContent();
             httpsSetter.accept(this.https);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get https
-     * @return https
-     */
+    /** Get https
+     * 
+     * @return https */
     public UpdateDomainMultiCertificatesResponseBodyContent getHttps() {
         return https;
     }
@@ -52,8 +40,6 @@ public class UpdateDomainMultiCertificatesResponse extends SdkResponse {
     public void setHttps(UpdateDomainMultiCertificatesResponseBodyContent https) {
         this.https = https;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -63,13 +49,16 @@ public class UpdateDomainMultiCertificatesResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        UpdateDomainMultiCertificatesResponse updateDomainMultiCertificatesResponse = (UpdateDomainMultiCertificatesResponse) o;
+        UpdateDomainMultiCertificatesResponse updateDomainMultiCertificatesResponse =
+            (UpdateDomainMultiCertificatesResponse) o;
         return Objects.equals(this.https, updateDomainMultiCertificatesResponse.https);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(https);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +67,13 @@ public class UpdateDomainMultiCertificatesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

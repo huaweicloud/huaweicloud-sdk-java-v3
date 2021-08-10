@@ -1,39 +1,26 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.evs.v2.model.Tag;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * This is a auto create Body Object
- */
-public class BatchCreateVolumeTagsRequestBody  {
+/** This is a auto create Body Object */
+public class BatchCreateVolumeTagsRequestBody {
 
-    /**
-     * 操作标识，当前支持的取值如下：  添加标签：create
-     */
+    /** 操作标识，当前支持的取值如下： 添加标签：create */
     public static final class ActionEnum {
 
-        
-        /**
-         * Enum CREATE for value: "create"
-         */
+        /** Enum CREATE for value: "create" */
         public static final ActionEnum CREATE = new ActionEnum("create");
-        
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -61,7 +48,7 @@ public class BatchCreateVolumeTagsRequestBody  {
 
         @JsonCreator
         public static ActionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -72,7 +59,7 @@ public class BatchCreateVolumeTagsRequestBody  {
         }
 
         public static ActionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -96,30 +83,24 @@ public class BatchCreateVolumeTagsRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private ActionEnum action;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<Tag> tags = null;
-    
+
     public BatchCreateVolumeTagsRequestBody withAction(ActionEnum action) {
         this.action = action;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作标识，当前支持的取值如下：  添加标签：create
-     * @return action
-     */
+    /** 操作标识，当前支持的取值如下： 添加标签：create
+     * 
+     * @return action */
     public ActionEnum getAction() {
         return action;
     }
@@ -128,16 +109,13 @@ public class BatchCreateVolumeTagsRequestBody  {
         this.action = action;
     }
 
-    
-
     public BatchCreateVolumeTagsRequestBody withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public BatchCreateVolumeTagsRequestBody addTagsItem(Tag tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -145,17 +123,16 @@ public class BatchCreateVolumeTagsRequestBody  {
     }
 
     public BatchCreateVolumeTagsRequestBody withTags(Consumer<List<Tag>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 标签列表。
-     * @return tags
-     */
+    /** 标签列表。
+     * 
+     * @return tags */
     public List<Tag> getTags() {
         return tags;
     }
@@ -163,8 +140,6 @@ public class BatchCreateVolumeTagsRequestBody  {
     public void setTags(List<Tag> tags) {
         this.tags = tags;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -175,13 +150,15 @@ public class BatchCreateVolumeTagsRequestBody  {
             return false;
         }
         BatchCreateVolumeTagsRequestBody batchCreateVolumeTagsRequestBody = (BatchCreateVolumeTagsRequestBody) o;
-        return Objects.equals(this.action, batchCreateVolumeTagsRequestBody.action) &&
-            Objects.equals(this.tags, batchCreateVolumeTagsRequestBody.tags);
+        return Objects.equals(this.action, batchCreateVolumeTagsRequestBody.action)
+            && Objects.equals(this.tags, batchCreateVolumeTagsRequestBody.tags);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(action, tags);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -191,16 +168,13 @@ public class BatchCreateVolumeTagsRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,41 +1,26 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 外网访问。
- */
-public class ExternalAccessesCreate  {
+/** 外网访问。 */
+public class ExternalAccessesCreate {
 
-    /**
-     * 协议，支持http、https。
-     */
+    /** 协议，支持http、https。 */
     public static final class ProtocolEnum {
 
-        
-        /**
-         * Enum HTTP for value: "http"
-         */
+        /** Enum HTTP for value: "http" */
         public static final ProtocolEnum HTTP = new ProtocolEnum("http");
-        
-        /**
-         * Enum HTTPS for value: "https"
-         */
+
+        /** Enum HTTPS for value: "https" */
         public static final ProtocolEnum HTTPS = new ProtocolEnum("https");
-        
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +49,7 @@ public class ExternalAccessesCreate  {
 
         @JsonCreator
         public static ProtocolEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtocolEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +60,7 @@ public class ExternalAccessesCreate  {
         }
 
         public static ProtocolEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtocolEnum result = STATIC_FIELDS.get(value);
@@ -99,22 +84,19 @@ public class ExternalAccessesCreate  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
+
     private ProtocolEnum protocol;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="address")
-    
+    @JsonProperty(value = "address")
+
     private String address;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="forward_port")
-    
+    @JsonProperty(value = "forward_port")
+
     private Integer forwardPort;
 
     public ExternalAccessesCreate withProtocol(ProtocolEnum protocol) {
@@ -122,13 +104,9 @@ public class ExternalAccessesCreate  {
         return this;
     }
 
-    
-
-
-    /**
-     * 协议，支持http、https。
-     * @return protocol
-     */
+    /** 协议，支持http、https。
+     * 
+     * @return protocol */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -137,20 +115,14 @@ public class ExternalAccessesCreate  {
         this.protocol = protocol;
     }
 
-    
-
     public ExternalAccessesCreate withAddress(String address) {
         this.address = address;
         return this;
     }
 
-    
-
-
-    /**
-     * 访问地址。
-     * @return address
-     */
+    /** 访问地址。
+     * 
+     * @return address */
     public String getAddress() {
         return address;
     }
@@ -159,20 +131,14 @@ public class ExternalAccessesCreate  {
         this.address = address;
     }
 
-    
-
     public ExternalAccessesCreate withForwardPort(Integer forwardPort) {
         this.forwardPort = forwardPort;
         return this;
     }
 
-    
-
-
-    /**
-     * 端口号。
-     * @return forwardPort
-     */
+    /** 端口号。
+     * 
+     * @return forwardPort */
     public Integer getForwardPort() {
         return forwardPort;
     }
@@ -180,8 +146,6 @@ public class ExternalAccessesCreate  {
     public void setForwardPort(Integer forwardPort) {
         this.forwardPort = forwardPort;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -192,14 +156,16 @@ public class ExternalAccessesCreate  {
             return false;
         }
         ExternalAccessesCreate externalAccessesCreate = (ExternalAccessesCreate) o;
-        return Objects.equals(this.protocol, externalAccessesCreate.protocol) &&
-            Objects.equals(this.address, externalAccessesCreate.address) &&
-            Objects.equals(this.forwardPort, externalAccessesCreate.forwardPort);
+        return Objects.equals(this.protocol, externalAccessesCreate.protocol)
+            && Objects.equals(this.address, externalAccessesCreate.address)
+            && Objects.equals(this.forwardPort, externalAccessesCreate.forwardPort);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(protocol, address, forwardPort);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -210,16 +176,13 @@ public class ExternalAccessesCreate  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

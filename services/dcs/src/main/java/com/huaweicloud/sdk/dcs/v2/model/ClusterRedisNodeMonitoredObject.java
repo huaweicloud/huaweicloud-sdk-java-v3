@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 监控对象结构
- */
-public class ClusterRedisNodeMonitoredObject  {
-
-
+/** 监控对象结构 */
+public class ClusterRedisNodeMonitoredObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dcs_instance_id")
-    
+    @JsonProperty(value = "dcs_instance_id")
+
     private String dcsInstanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dcs_cluster_redis_node")
-    
+    @JsonProperty(value = "dcs_cluster_redis_node")
+
     private String dcsClusterRedisNode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
     public ClusterRedisNodeMonitoredObject withDcsInstanceId(String dcsInstanceId) {
@@ -46,13 +33,9 @@ public class ClusterRedisNodeMonitoredObject  {
         return this;
     }
 
-    
-
-
-    /**
-     * 测量对象ID，即节点的ID。
-     * @return dcsInstanceId
-     */
+    /** 测量对象ID，即节点的ID。
+     * 
+     * @return dcsInstanceId */
     public String getDcsInstanceId() {
         return dcsInstanceId;
     }
@@ -61,20 +44,14 @@ public class ClusterRedisNodeMonitoredObject  {
         this.dcsInstanceId = dcsInstanceId;
     }
 
-    
-
     public ClusterRedisNodeMonitoredObject withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 测量对象名称，即节点IP。
-     * @return name
-     */
+    /** 测量对象名称，即节点IP。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -83,20 +60,14 @@ public class ClusterRedisNodeMonitoredObject  {
         this.name = name;
     }
 
-    
-
     public ClusterRedisNodeMonitoredObject withDcsClusterRedisNode(String dcsClusterRedisNode) {
         this.dcsClusterRedisNode = dcsClusterRedisNode;
         return this;
     }
 
-    
-
-
-    /**
-     * 维度dcs_cluster_redis_node的测量对象的ID。
-     * @return dcsClusterRedisNode
-     */
+    /** 维度dcs_cluster_redis_node的测量对象的ID。
+     * 
+     * @return dcsClusterRedisNode */
     public String getDcsClusterRedisNode() {
         return dcsClusterRedisNode;
     }
@@ -105,20 +76,14 @@ public class ClusterRedisNodeMonitoredObject  {
         this.dcsClusterRedisNode = dcsClusterRedisNode;
     }
 
-    
-
     public ClusterRedisNodeMonitoredObject withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 测量对象状态，即节点状态。
-     * @return status
-     */
+    /** 测量对象状态，即节点状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -126,8 +91,6 @@ public class ClusterRedisNodeMonitoredObject  {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class ClusterRedisNodeMonitoredObject  {
             return false;
         }
         ClusterRedisNodeMonitoredObject clusterRedisNodeMonitoredObject = (ClusterRedisNodeMonitoredObject) o;
-        return Objects.equals(this.dcsInstanceId, clusterRedisNodeMonitoredObject.dcsInstanceId) &&
-            Objects.equals(this.name, clusterRedisNodeMonitoredObject.name) &&
-            Objects.equals(this.dcsClusterRedisNode, clusterRedisNodeMonitoredObject.dcsClusterRedisNode) &&
-            Objects.equals(this.status, clusterRedisNodeMonitoredObject.status);
+        return Objects.equals(this.dcsInstanceId, clusterRedisNodeMonitoredObject.dcsInstanceId)
+            && Objects.equals(this.name, clusterRedisNodeMonitoredObject.name)
+            && Objects.equals(this.dcsClusterRedisNode, clusterRedisNodeMonitoredObject.dcsClusterRedisNode)
+            && Objects.equals(this.status, clusterRedisNodeMonitoredObject.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(dcsInstanceId, name, dcsClusterRedisNode, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class ClusterRedisNodeMonitoredObject  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

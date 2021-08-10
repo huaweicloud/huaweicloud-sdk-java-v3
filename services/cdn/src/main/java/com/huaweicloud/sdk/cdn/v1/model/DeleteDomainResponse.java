@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cdn.v1.model.Domains;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class DeleteDomainResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
+
     private Domains domain;
 
     public DeleteDomainResponse withDomain(Domains domain) {
@@ -32,19 +21,17 @@ public class DeleteDomainResponse extends SdkResponse {
     }
 
     public DeleteDomainResponse withDomain(Consumer<Domains> domainSetter) {
-        if(this.domain == null ){
+        if (this.domain == null) {
             this.domain = new Domains();
             domainSetter.accept(this.domain);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get domain
-     * @return domain
-     */
+    /** Get domain
+     * 
+     * @return domain */
     public Domains getDomain() {
         return domain;
     }
@@ -52,8 +39,6 @@ public class DeleteDomainResponse extends SdkResponse {
     public void setDomain(Domains domain) {
         this.domain = domain;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class DeleteDomainResponse extends SdkResponse {
         DeleteDomainResponse deleteDomainResponse = (DeleteDomainResponse) o;
         return Objects.equals(this.domain, deleteDomainResponse.domain);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domain);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class DeleteDomainResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

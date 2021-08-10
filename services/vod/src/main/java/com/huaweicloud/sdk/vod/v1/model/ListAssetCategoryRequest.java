@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListAssetCategoryRequest  {
-
-
+/** Request Object */
+public class ListAssetCategoryRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Authorization")
-    
+    @JsonProperty(value = "Authorization")
+
     private String authorization;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Sdk-Date")
-    
+    @JsonProperty(value = "X-Sdk-Date")
+
     private String xSdkDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Integer id;
 
     public ListAssetCategoryRequest withAuthorization(String authorization) {
@@ -40,13 +28,9 @@ public class ListAssetCategoryRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
+    /** 使用AK/SK方式认证时必选，携带的鉴权信息。
+     * 
+     * @return authorization */
     public String getAuthorization() {
         return authorization;
     }
@@ -55,22 +39,16 @@ public class ListAssetCategoryRequest  {
         this.authorization = authorization;
     }
 
-    
-
     public ListAssetCategoryRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 使用AK/SK方式认证时必选，请求的发生时间。 
-     * @return xSdkDate
-     */
+    /** 使用AK/SK方式认证时必选，请求的发生时间。
+     * 
+     * @return xSdkDate */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Sdk-Date")
+    @JsonProperty(value = "X-Sdk-Date")
     public String getXSdkDate() {
         return xSdkDate;
     }
@@ -79,21 +57,14 @@ public class ListAssetCategoryRequest  {
         this.xSdkDate = xSdkDate;
     }
 
-    
-
     public ListAssetCategoryRequest withId(Integer id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 视频分类ID。  若设置为0，则查询所有一级分类。
-     * minimum: 0
-     * @return id
-     */
+    /** 视频分类ID。 若设置为0，则查询所有一级分类。 minimum: 0
+     * 
+     * @return id */
     public Integer getId() {
         return id;
     }
@@ -101,8 +72,6 @@ public class ListAssetCategoryRequest  {
     public void setId(Integer id) {
         this.id = id;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -113,14 +82,16 @@ public class ListAssetCategoryRequest  {
             return false;
         }
         ListAssetCategoryRequest listAssetCategoryRequest = (ListAssetCategoryRequest) o;
-        return Objects.equals(this.authorization, listAssetCategoryRequest.authorization) &&
-            Objects.equals(this.xSdkDate, listAssetCategoryRequest.xSdkDate) &&
-            Objects.equals(this.id, listAssetCategoryRequest.id);
+        return Objects.equals(this.authorization, listAssetCategoryRequest.authorization)
+            && Objects.equals(this.xSdkDate, listAssetCategoryRequest.xSdkDate)
+            && Objects.equals(this.id, listAssetCategoryRequest.id);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(authorization, xSdkDate, id);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -131,16 +102,13 @@ public class ListAssetCategoryRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

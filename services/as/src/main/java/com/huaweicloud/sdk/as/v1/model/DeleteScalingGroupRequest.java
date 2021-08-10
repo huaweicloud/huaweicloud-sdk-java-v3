@@ -1,47 +1,31 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteScalingGroupRequest  {
-
-
+/** Request Object */
+public class DeleteScalingGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_group_id")
-    
+    @JsonProperty(value = "scaling_group_id")
+
     private String scalingGroupId;
-    /**
-     * 是否强制删除伸缩组。默认为no；可选值为yes或no。
-     */
+
+    /** 是否强制删除伸缩组。默认为no；可选值为yes或no。 */
     public static final class ForceDeleteEnum {
 
-        
-        /**
-         * Enum YES for value: "yes"
-         */
+        /** Enum YES for value: "yes" */
         public static final ForceDeleteEnum YES = new ForceDeleteEnum("yes");
-        
-        /**
-         * Enum NO for value: "no"
-         */
+
+        /** Enum NO for value: "no" */
         public static final ForceDeleteEnum NO = new ForceDeleteEnum("no");
-        
 
         private static final Map<String, ForceDeleteEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,7 +54,7 @@ public class DeleteScalingGroupRequest  {
 
         @JsonCreator
         public static ForceDeleteEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ForceDeleteEnum result = STATIC_FIELDS.get(value);
@@ -81,7 +65,7 @@ public class DeleteScalingGroupRequest  {
         }
 
         public static ForceDeleteEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ForceDeleteEnum result = STATIC_FIELDS.get(value);
@@ -105,10 +89,9 @@ public class DeleteScalingGroupRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="force_delete")
-    
+    @JsonProperty(value = "force_delete")
+
     private ForceDeleteEnum forceDelete;
 
     public DeleteScalingGroupRequest withScalingGroupId(String scalingGroupId) {
@@ -116,13 +99,9 @@ public class DeleteScalingGroupRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩组ID。
-     * @return scalingGroupId
-     */
+    /** 伸缩组ID。
+     * 
+     * @return scalingGroupId */
     public String getScalingGroupId() {
         return scalingGroupId;
     }
@@ -131,20 +110,14 @@ public class DeleteScalingGroupRequest  {
         this.scalingGroupId = scalingGroupId;
     }
 
-    
-
     public DeleteScalingGroupRequest withForceDelete(ForceDeleteEnum forceDelete) {
         this.forceDelete = forceDelete;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否强制删除伸缩组。默认为no；可选值为yes或no。
-     * @return forceDelete
-     */
+    /** 是否强制删除伸缩组。默认为no；可选值为yes或no。
+     * 
+     * @return forceDelete */
     public ForceDeleteEnum getForceDelete() {
         return forceDelete;
     }
@@ -152,8 +125,6 @@ public class DeleteScalingGroupRequest  {
     public void setForceDelete(ForceDeleteEnum forceDelete) {
         this.forceDelete = forceDelete;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -164,13 +135,15 @@ public class DeleteScalingGroupRequest  {
             return false;
         }
         DeleteScalingGroupRequest deleteScalingGroupRequest = (DeleteScalingGroupRequest) o;
-        return Objects.equals(this.scalingGroupId, deleteScalingGroupRequest.scalingGroupId) &&
-            Objects.equals(this.forceDelete, deleteScalingGroupRequest.forceDelete);
+        return Objects.equals(this.scalingGroupId, deleteScalingGroupRequest.scalingGroupId)
+            && Objects.equals(this.forceDelete, deleteScalingGroupRequest.forceDelete);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(scalingGroupId, forceDelete);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -180,16 +153,13 @@ public class DeleteScalingGroupRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

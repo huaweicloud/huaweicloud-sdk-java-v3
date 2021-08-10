@@ -1,135 +1,104 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.Billing;
-import com.huaweicloud.sdk.cbr.v1.model.TagsResp;
-import com.huaweicloud.sdk.cbr.v1.model.Vault;
-import com.huaweicloud.sdk.cbr.v1.model.VaultBindRules;
-import com.huaweicloud.sdk.cbr.v1.model.VaultResourceIntancesResp;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * VaultGet
- */
-public class VaultGet  {
-
-
+/** VaultGet */
+public class VaultGet {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="billing")
-    
+    @JsonProperty(value = "billing")
+
     private Billing billing;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provider_id")
-    
+    @JsonProperty(value = "provider_id")
+
     private String providerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resources")
-    
+    @JsonProperty(value = "resources")
+
     private List<VaultResourceIntancesResp> resources = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<TagsResp> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auto_bind")
-    
+    @JsonProperty(value = "auto_bind")
+
     private Boolean autoBind;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bind_rules")
-    
+    @JsonProperty(value = "bind_rules")
+
     private VaultBindRules bindRules;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auto_expand")
-    
+    @JsonProperty(value = "auto_expand")
+
     private Boolean autoExpand;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="smn_notify")
-    
+    @JsonProperty(value = "smn_notify")
+
     private Boolean smnNotify;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="threshold")
-    
+    @JsonProperty(value = "threshold")
+
     private Integer threshold;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_id")
-    
+    @JsonProperty(value = "user_id")
+
     private String userId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private String updatedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
     public VaultGet withBilling(Billing billing) {
@@ -138,19 +107,17 @@ public class VaultGet  {
     }
 
     public VaultGet withBilling(Consumer<Billing> billingSetter) {
-        if(this.billing == null ){
+        if (this.billing == null) {
             this.billing = new Billing();
             billingSetter.accept(this.billing);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get billing
-     * @return billing
-     */
+    /** Get billing
+     * 
+     * @return billing */
     public Billing getBilling() {
         return billing;
     }
@@ -159,20 +126,14 @@ public class VaultGet  {
         this.billing = billing;
     }
 
-    
-
     public VaultGet withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述
-     * @return description
-     */
+    /** 描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -181,20 +142,14 @@ public class VaultGet  {
         this.description = description;
     }
 
-    
-
     public VaultGet withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 保管库id
-     * @return id
-     */
+    /** 保管库id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -203,20 +158,14 @@ public class VaultGet  {
         this.id = id;
     }
 
-    
-
     public VaultGet withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 保管库名称
-     * @return name
-     */
+    /** 保管库名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -225,20 +174,14 @@ public class VaultGet  {
         this.name = name;
     }
 
-    
-
     public VaultGet withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目id
-     * @return projectId
-     */
+    /** 项目id
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -247,20 +190,12 @@ public class VaultGet  {
         this.projectId = projectId;
     }
 
-    
-
     public VaultGet withProviderId(String providerId) {
         this.providerId = providerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 
-     * @return providerId
-     */
+    /** @return providerId */
     public String getProviderId() {
         return providerId;
     }
@@ -269,16 +204,13 @@ public class VaultGet  {
         this.providerId = providerId;
     }
 
-    
-
     public VaultGet withResources(List<VaultResourceIntancesResp> resources) {
         this.resources = resources;
         return this;
     }
 
-    
     public VaultGet addResourcesItem(VaultResourceIntancesResp resourcesItem) {
-        if(this.resources == null) {
+        if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
         this.resources.add(resourcesItem);
@@ -286,17 +218,16 @@ public class VaultGet  {
     }
 
     public VaultGet withResources(Consumer<List<VaultResourceIntancesResp>> resourcesSetter) {
-        if(this.resources == null) {
+        if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);
         return this;
     }
 
-    /**
-     * 资源
-     * @return resources
-     */
+    /** 资源
+     * 
+     * @return resources */
     public List<VaultResourceIntancesResp> getResources() {
         return resources;
     }
@@ -305,16 +236,13 @@ public class VaultGet  {
         this.resources = resources;
     }
 
-    
-
     public VaultGet withTags(List<TagsResp> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public VaultGet addTagsItem(TagsResp tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -322,17 +250,16 @@ public class VaultGet  {
     }
 
     public VaultGet withTags(Consumer<List<TagsResp>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 标签
-     * @return tags
-     */
+    /** 标签
+     * 
+     * @return tags */
     public List<TagsResp> getTags() {
         return tags;
     }
@@ -341,20 +268,14 @@ public class VaultGet  {
         this.tags = tags;
     }
 
-    
-
     public VaultGet withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目id
-     * @return enterpriseProjectId
-     */
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -363,20 +284,14 @@ public class VaultGet  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public VaultGet withAutoBind(Boolean autoBind) {
         this.autoBind = autoBind;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否自动绑定，默认为false，不支持。
-     * @return autoBind
-     */
+    /** 是否自动绑定，默认为false，不支持。
+     * 
+     * @return autoBind */
     public Boolean getAutoBind() {
         return autoBind;
     }
@@ -385,27 +300,23 @@ public class VaultGet  {
         this.autoBind = autoBind;
     }
 
-    
-
     public VaultGet withBindRules(VaultBindRules bindRules) {
         this.bindRules = bindRules;
         return this;
     }
 
     public VaultGet withBindRules(Consumer<VaultBindRules> bindRulesSetter) {
-        if(this.bindRules == null ){
+        if (this.bindRules == null) {
             this.bindRules = new VaultBindRules();
             bindRulesSetter.accept(this.bindRules);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get bindRules
-     * @return bindRules
-     */
+    /** Get bindRules
+     * 
+     * @return bindRules */
     public VaultBindRules getBindRules() {
         return bindRules;
     }
@@ -414,20 +325,14 @@ public class VaultGet  {
         this.bindRules = bindRules;
     }
 
-    
-
     public VaultGet withAutoExpand(Boolean autoExpand) {
         this.autoExpand = autoExpand;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启存储库自动扩容能力（只支持按需存储库）。
-     * @return autoExpand
-     */
+    /** 是否开启存储库自动扩容能力（只支持按需存储库）。
+     * 
+     * @return autoExpand */
     public Boolean getAutoExpand() {
         return autoExpand;
     }
@@ -436,20 +341,14 @@ public class VaultGet  {
         this.autoExpand = autoExpand;
     }
 
-    
-
     public VaultGet withSmnNotify(Boolean smnNotify) {
         this.smnNotify = smnNotify;
         return this;
     }
 
-    
-
-
-    /**
-     * 存储库smn消息通知开关
-     * @return smnNotify
-     */
+    /** 存储库smn消息通知开关
+     * 
+     * @return smnNotify */
     public Boolean getSmnNotify() {
         return smnNotify;
     }
@@ -458,22 +357,14 @@ public class VaultGet  {
         this.smnNotify = smnNotify;
     }
 
-    
-
     public VaultGet withThreshold(Integer threshold) {
         this.threshold = threshold;
         return this;
     }
 
-    
-
-
-    /**
-     * 存储库容量阈值，已用容量占总容量达到此百分比即发送相关通知
-     * minimum: 1
-     * maximum: 100
-     * @return threshold
-     */
+    /** 存储库容量阈值，已用容量占总容量达到此百分比即发送相关通知 minimum: 1 maximum: 100
+     * 
+     * @return threshold */
     public Integer getThreshold() {
         return threshold;
     }
@@ -482,20 +373,14 @@ public class VaultGet  {
         this.threshold = threshold;
     }
 
-    
-
     public VaultGet withUserId(String userId) {
         this.userId = userId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户id
-     * @return userId
-     */
+    /** 用户id
+     * 
+     * @return userId */
     public String getUserId() {
         return userId;
     }
@@ -504,20 +389,14 @@ public class VaultGet  {
         this.userId = userId;
     }
 
-    
-
     public VaultGet withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间,例如:\"2020-02-05T10:38:34.209782\"
-     * @return createdAt
-     */
+    /** 创建时间,例如:\"2020-02-05T10:38:34.209782\"
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -526,20 +405,14 @@ public class VaultGet  {
         this.createdAt = createdAt;
     }
 
-    
-
     public VaultGet withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间,例如:\"2020-02-05T10:38:34.209782\"
-     * @return updatedAt
-     */
+    /** 更新时间,例如:\"2020-02-05T10:38:34.209782\"
+     * 
+     * @return updatedAt */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -548,20 +421,14 @@ public class VaultGet  {
         this.updatedAt = updatedAt;
     }
 
-    
-
     public VaultGet withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 版本
-     * @return version
-     */
+    /** 版本
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -569,8 +436,6 @@ public class VaultGet  {
     public void setVersion(String version) {
         this.version = version;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -581,29 +446,41 @@ public class VaultGet  {
             return false;
         }
         VaultGet vaultGet = (VaultGet) o;
-        return Objects.equals(this.billing, vaultGet.billing) &&
-            Objects.equals(this.description, vaultGet.description) &&
-            Objects.equals(this.id, vaultGet.id) &&
-            Objects.equals(this.name, vaultGet.name) &&
-            Objects.equals(this.projectId, vaultGet.projectId) &&
-            Objects.equals(this.providerId, vaultGet.providerId) &&
-            Objects.equals(this.resources, vaultGet.resources) &&
-            Objects.equals(this.tags, vaultGet.tags) &&
-            Objects.equals(this.enterpriseProjectId, vaultGet.enterpriseProjectId) &&
-            Objects.equals(this.autoBind, vaultGet.autoBind) &&
-            Objects.equals(this.bindRules, vaultGet.bindRules) &&
-            Objects.equals(this.autoExpand, vaultGet.autoExpand) &&
-            Objects.equals(this.smnNotify, vaultGet.smnNotify) &&
-            Objects.equals(this.threshold, vaultGet.threshold) &&
-            Objects.equals(this.userId, vaultGet.userId) &&
-            Objects.equals(this.createdAt, vaultGet.createdAt) &&
-            Objects.equals(this.updatedAt, vaultGet.updatedAt) &&
-            Objects.equals(this.version, vaultGet.version);
+        return Objects.equals(this.billing, vaultGet.billing) && Objects.equals(this.description, vaultGet.description)
+            && Objects.equals(this.id, vaultGet.id) && Objects.equals(this.name, vaultGet.name)
+            && Objects.equals(this.projectId, vaultGet.projectId)
+            && Objects.equals(this.providerId, vaultGet.providerId)
+            && Objects.equals(this.resources, vaultGet.resources) && Objects.equals(this.tags, vaultGet.tags)
+            && Objects.equals(this.enterpriseProjectId, vaultGet.enterpriseProjectId)
+            && Objects.equals(this.autoBind, vaultGet.autoBind) && Objects.equals(this.bindRules, vaultGet.bindRules)
+            && Objects.equals(this.autoExpand, vaultGet.autoExpand)
+            && Objects.equals(this.smnNotify, vaultGet.smnNotify) && Objects.equals(this.threshold, vaultGet.threshold)
+            && Objects.equals(this.userId, vaultGet.userId) && Objects.equals(this.createdAt, vaultGet.createdAt)
+            && Objects.equals(this.updatedAt, vaultGet.updatedAt) && Objects.equals(this.version, vaultGet.version);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(billing, description, id, name, projectId, providerId, resources, tags, enterpriseProjectId, autoBind, bindRules, autoExpand, smnNotify, threshold, userId, createdAt, updatedAt, version);
+        return Objects.hash(billing,
+            description,
+            id,
+            name,
+            projectId,
+            providerId,
+            resources,
+            tags,
+            enterpriseProjectId,
+            autoBind,
+            bindRules,
+            autoExpand,
+            smnNotify,
+            threshold,
+            userId,
+            createdAt,
+            updatedAt,
+            version);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -629,16 +506,13 @@ public class VaultGet  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

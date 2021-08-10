@@ -1,102 +1,80 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="common_name")
-    
+    @JsonProperty(value = "common_name")
+
     private String commonName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="san")
-    
+    @JsonProperty(value = "san")
+
     private List<String> san = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="organization")
-    
+    @JsonProperty(value = "organization")
+
     private List<String> organization = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="organizational_unit")
-    
+    @JsonProperty(value = "organizational_unit")
+
     private List<String> organizationalUnit = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="locality")
-    
+    @JsonProperty(value = "locality")
+
     private List<String> locality = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
+
     private List<String> state = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="country")
-    
+    @JsonProperty(value = "country")
+
     private List<String> country = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="not_before")
-    
+    @JsonProperty(value = "not_before")
+
     private String notBefore;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="not_after")
-    
+    @JsonProperty(value = "not_after")
+
     private String notAfter;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="serial_number")
-    
+    @JsonProperty(value = "serial_number")
+
     private String serialNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="issuer")
-    
+    @JsonProperty(value = "issuer")
+
     private List<String> issuer = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="signature_algorithm")
-    
+    @JsonProperty(value = "signature_algorithm")
+
     private String signatureAlgorithm;
 
     public ShowDetailsOfDomainNameCertificateV2Response withCommonName(String commonName) {
@@ -104,13 +82,9 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 证书域名
-     * @return commonName
-     */
+    /** 证书域名
+     * 
+     * @return commonName */
     public String getCommonName() {
         return commonName;
     }
@@ -119,16 +93,13 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.commonName = commonName;
     }
 
-    
-
     public ShowDetailsOfDomainNameCertificateV2Response withSan(List<String> san) {
         this.san = san;
         return this;
     }
 
-    
     public ShowDetailsOfDomainNameCertificateV2Response addSanItem(String sanItem) {
-        if(this.san == null) {
+        if (this.san == null) {
             this.san = new ArrayList<>();
         }
         this.san.add(sanItem);
@@ -136,17 +107,16 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
     }
 
     public ShowDetailsOfDomainNameCertificateV2Response withSan(Consumer<List<String>> sanSetter) {
-        if(this.san == null) {
+        if (this.san == null) {
             this.san = new ArrayList<>();
         }
         sanSetter.accept(this.san);
         return this;
     }
 
-    /**
-     * SAN域名
-     * @return san
-     */
+    /** SAN域名
+     * 
+     * @return san */
     public List<String> getSan() {
         return san;
     }
@@ -155,20 +125,14 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.san = san;
     }
 
-    
-
     public ShowDetailsOfDomainNameCertificateV2Response withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书版本
-     * @return version
-     */
+    /** 证书版本
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -177,16 +141,13 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.version = version;
     }
 
-    
-
     public ShowDetailsOfDomainNameCertificateV2Response withOrganization(List<String> organization) {
         this.organization = organization;
         return this;
     }
 
-    
     public ShowDetailsOfDomainNameCertificateV2Response addOrganizationItem(String organizationItem) {
-        if(this.organization == null) {
+        if (this.organization == null) {
             this.organization = new ArrayList<>();
         }
         this.organization.add(organizationItem);
@@ -194,17 +155,16 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
     }
 
     public ShowDetailsOfDomainNameCertificateV2Response withOrganization(Consumer<List<String>> organizationSetter) {
-        if(this.organization == null) {
+        if (this.organization == null) {
             this.organization = new ArrayList<>();
         }
         organizationSetter.accept(this.organization);
         return this;
     }
 
-    /**
-     * 公司、组织
-     * @return organization
-     */
+    /** 公司、组织
+     * 
+     * @return organization */
     public List<String> getOrganization() {
         return organization;
     }
@@ -213,34 +173,31 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.organization = organization;
     }
 
-    
-
     public ShowDetailsOfDomainNameCertificateV2Response withOrganizationalUnit(List<String> organizationalUnit) {
         this.organizationalUnit = organizationalUnit;
         return this;
     }
 
-    
     public ShowDetailsOfDomainNameCertificateV2Response addOrganizationalUnitItem(String organizationalUnitItem) {
-        if(this.organizationalUnit == null) {
+        if (this.organizationalUnit == null) {
             this.organizationalUnit = new ArrayList<>();
         }
         this.organizationalUnit.add(organizationalUnitItem);
         return this;
     }
 
-    public ShowDetailsOfDomainNameCertificateV2Response withOrganizationalUnit(Consumer<List<String>> organizationalUnitSetter) {
-        if(this.organizationalUnit == null) {
+    public ShowDetailsOfDomainNameCertificateV2Response withOrganizationalUnit(
+        Consumer<List<String>> organizationalUnitSetter) {
+        if (this.organizationalUnit == null) {
             this.organizationalUnit = new ArrayList<>();
         }
         organizationalUnitSetter.accept(this.organizationalUnit);
         return this;
     }
 
-    /**
-     * 部门
-     * @return organizationalUnit
-     */
+    /** 部门
+     * 
+     * @return organizationalUnit */
     public List<String> getOrganizationalUnit() {
         return organizationalUnit;
     }
@@ -249,16 +206,13 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.organizationalUnit = organizationalUnit;
     }
 
-    
-
     public ShowDetailsOfDomainNameCertificateV2Response withLocality(List<String> locality) {
         this.locality = locality;
         return this;
     }
 
-    
     public ShowDetailsOfDomainNameCertificateV2Response addLocalityItem(String localityItem) {
-        if(this.locality == null) {
+        if (this.locality == null) {
             this.locality = new ArrayList<>();
         }
         this.locality.add(localityItem);
@@ -266,17 +220,16 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
     }
 
     public ShowDetailsOfDomainNameCertificateV2Response withLocality(Consumer<List<String>> localitySetter) {
-        if(this.locality == null) {
+        if (this.locality == null) {
             this.locality = new ArrayList<>();
         }
         localitySetter.accept(this.locality);
         return this;
     }
 
-    /**
-     * 城市
-     * @return locality
-     */
+    /** 城市
+     * 
+     * @return locality */
     public List<String> getLocality() {
         return locality;
     }
@@ -285,16 +238,13 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.locality = locality;
     }
 
-    
-
     public ShowDetailsOfDomainNameCertificateV2Response withState(List<String> state) {
         this.state = state;
         return this;
     }
 
-    
     public ShowDetailsOfDomainNameCertificateV2Response addStateItem(String stateItem) {
-        if(this.state == null) {
+        if (this.state == null) {
             this.state = new ArrayList<>();
         }
         this.state.add(stateItem);
@@ -302,17 +252,16 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
     }
 
     public ShowDetailsOfDomainNameCertificateV2Response withState(Consumer<List<String>> stateSetter) {
-        if(this.state == null) {
+        if (this.state == null) {
             this.state = new ArrayList<>();
         }
         stateSetter.accept(this.state);
         return this;
     }
 
-    /**
-     * 省份
-     * @return state
-     */
+    /** 省份
+     * 
+     * @return state */
     public List<String> getState() {
         return state;
     }
@@ -321,16 +270,13 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.state = state;
     }
 
-    
-
     public ShowDetailsOfDomainNameCertificateV2Response withCountry(List<String> country) {
         this.country = country;
         return this;
     }
 
-    
     public ShowDetailsOfDomainNameCertificateV2Response addCountryItem(String countryItem) {
-        if(this.country == null) {
+        if (this.country == null) {
             this.country = new ArrayList<>();
         }
         this.country.add(countryItem);
@@ -338,17 +284,16 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
     }
 
     public ShowDetailsOfDomainNameCertificateV2Response withCountry(Consumer<List<String>> countrySetter) {
-        if(this.country == null) {
+        if (this.country == null) {
             this.country = new ArrayList<>();
         }
         countrySetter.accept(this.country);
         return this;
     }
 
-    /**
-     * 国家
-     * @return country
-     */
+    /** 国家
+     * 
+     * @return country */
     public List<String> getCountry() {
         return country;
     }
@@ -357,20 +302,14 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.country = country;
     }
 
-    
-
     public ShowDetailsOfDomainNameCertificateV2Response withNotBefore(String notBefore) {
         this.notBefore = notBefore;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书有效期起始时间
-     * @return notBefore
-     */
+    /** 证书有效期起始时间
+     * 
+     * @return notBefore */
     public String getNotBefore() {
         return notBefore;
     }
@@ -379,20 +318,14 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.notBefore = notBefore;
     }
 
-    
-
     public ShowDetailsOfDomainNameCertificateV2Response withNotAfter(String notAfter) {
         this.notAfter = notAfter;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书有效期截止时间
-     * @return notAfter
-     */
+    /** 证书有效期截止时间
+     * 
+     * @return notAfter */
     public String getNotAfter() {
         return notAfter;
     }
@@ -401,20 +334,14 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.notAfter = notAfter;
     }
 
-    
-
     public ShowDetailsOfDomainNameCertificateV2Response withSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * 序列号
-     * @return serialNumber
-     */
+    /** 序列号
+     * 
+     * @return serialNumber */
     public String getSerialNumber() {
         return serialNumber;
     }
@@ -423,16 +350,13 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.serialNumber = serialNumber;
     }
 
-    
-
     public ShowDetailsOfDomainNameCertificateV2Response withIssuer(List<String> issuer) {
         this.issuer = issuer;
         return this;
     }
 
-    
     public ShowDetailsOfDomainNameCertificateV2Response addIssuerItem(String issuerItem) {
-        if(this.issuer == null) {
+        if (this.issuer == null) {
             this.issuer = new ArrayList<>();
         }
         this.issuer.add(issuerItem);
@@ -440,17 +364,16 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
     }
 
     public ShowDetailsOfDomainNameCertificateV2Response withIssuer(Consumer<List<String>> issuerSetter) {
-        if(this.issuer == null) {
+        if (this.issuer == null) {
             this.issuer = new ArrayList<>();
         }
         issuerSetter.accept(this.issuer);
         return this;
     }
 
-    /**
-     * 颁发者
-     * @return issuer
-     */
+    /** 颁发者
+     * 
+     * @return issuer */
     public List<String> getIssuer() {
         return issuer;
     }
@@ -459,20 +382,14 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         this.issuer = issuer;
     }
 
-    
-
     public ShowDetailsOfDomainNameCertificateV2Response withSignatureAlgorithm(String signatureAlgorithm) {
         this.signatureAlgorithm = signatureAlgorithm;
         return this;
     }
 
-    
-
-
-    /**
-     * 签名算法
-     * @return signatureAlgorithm
-     */
+    /** 签名算法
+     * 
+     * @return signatureAlgorithm */
     public String getSignatureAlgorithm() {
         return signatureAlgorithm;
     }
@@ -480,8 +397,6 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
     public void setSignatureAlgorithm(String signatureAlgorithm) {
         this.signatureAlgorithm = signatureAlgorithm;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -491,25 +406,40 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ShowDetailsOfDomainNameCertificateV2Response showDetailsOfDomainNameCertificateV2Response = (ShowDetailsOfDomainNameCertificateV2Response) o;
-        return Objects.equals(this.commonName, showDetailsOfDomainNameCertificateV2Response.commonName) &&
-            Objects.equals(this.san, showDetailsOfDomainNameCertificateV2Response.san) &&
-            Objects.equals(this.version, showDetailsOfDomainNameCertificateV2Response.version) &&
-            Objects.equals(this.organization, showDetailsOfDomainNameCertificateV2Response.organization) &&
-            Objects.equals(this.organizationalUnit, showDetailsOfDomainNameCertificateV2Response.organizationalUnit) &&
-            Objects.equals(this.locality, showDetailsOfDomainNameCertificateV2Response.locality) &&
-            Objects.equals(this.state, showDetailsOfDomainNameCertificateV2Response.state) &&
-            Objects.equals(this.country, showDetailsOfDomainNameCertificateV2Response.country) &&
-            Objects.equals(this.notBefore, showDetailsOfDomainNameCertificateV2Response.notBefore) &&
-            Objects.equals(this.notAfter, showDetailsOfDomainNameCertificateV2Response.notAfter) &&
-            Objects.equals(this.serialNumber, showDetailsOfDomainNameCertificateV2Response.serialNumber) &&
-            Objects.equals(this.issuer, showDetailsOfDomainNameCertificateV2Response.issuer) &&
-            Objects.equals(this.signatureAlgorithm, showDetailsOfDomainNameCertificateV2Response.signatureAlgorithm);
+        ShowDetailsOfDomainNameCertificateV2Response showDetailsOfDomainNameCertificateV2Response =
+            (ShowDetailsOfDomainNameCertificateV2Response) o;
+        return Objects.equals(this.commonName, showDetailsOfDomainNameCertificateV2Response.commonName)
+            && Objects.equals(this.san, showDetailsOfDomainNameCertificateV2Response.san)
+            && Objects.equals(this.version, showDetailsOfDomainNameCertificateV2Response.version)
+            && Objects.equals(this.organization, showDetailsOfDomainNameCertificateV2Response.organization)
+            && Objects.equals(this.organizationalUnit, showDetailsOfDomainNameCertificateV2Response.organizationalUnit)
+            && Objects.equals(this.locality, showDetailsOfDomainNameCertificateV2Response.locality)
+            && Objects.equals(this.state, showDetailsOfDomainNameCertificateV2Response.state)
+            && Objects.equals(this.country, showDetailsOfDomainNameCertificateV2Response.country)
+            && Objects.equals(this.notBefore, showDetailsOfDomainNameCertificateV2Response.notBefore)
+            && Objects.equals(this.notAfter, showDetailsOfDomainNameCertificateV2Response.notAfter)
+            && Objects.equals(this.serialNumber, showDetailsOfDomainNameCertificateV2Response.serialNumber)
+            && Objects.equals(this.issuer, showDetailsOfDomainNameCertificateV2Response.issuer)
+            && Objects.equals(this.signatureAlgorithm, showDetailsOfDomainNameCertificateV2Response.signatureAlgorithm);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(commonName, san, version, organization, organizationalUnit, locality, state, country, notBefore, notAfter, serialNumber, issuer, signatureAlgorithm);
+        return Objects.hash(commonName,
+            san,
+            version,
+            organization,
+            organizationalUnit,
+            locality,
+            state,
+            country,
+            notBefore,
+            notAfter,
+            serialNumber,
+            issuer,
+            signatureAlgorithm);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -530,16 +460,13 @@ public class ShowDetailsOfDomainNameCertificateV2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

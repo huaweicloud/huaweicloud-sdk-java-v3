@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * This is a auto create Body Object
- */
-public class UpdateServerAutoTerminateTimeRequestBody  {
-
-
+/** This is a auto create Body Object */
+public class UpdateServerAutoTerminateTimeRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auto_terminate_time")
-    
+    @JsonProperty(value = "auto_terminate_time")
+
     private String autoTerminateTime;
 
     public UpdateServerAutoTerminateTimeRequestBody withAutoTerminateTime(String autoTerminateTime) {
@@ -28,13 +18,9 @@ public class UpdateServerAutoTerminateTimeRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 销毁时间
-     * @return autoTerminateTime
-     */
+    /** 销毁时间
+     * 
+     * @return autoTerminateTime */
     public String getAutoTerminateTime() {
         return autoTerminateTime;
     }
@@ -42,8 +28,6 @@ public class UpdateServerAutoTerminateTimeRequestBody  {
     public void setAutoTerminateTime(String autoTerminateTime) {
         this.autoTerminateTime = autoTerminateTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -53,13 +37,16 @@ public class UpdateServerAutoTerminateTimeRequestBody  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        UpdateServerAutoTerminateTimeRequestBody updateServerAutoTerminateTimeRequestBody = (UpdateServerAutoTerminateTimeRequestBody) o;
+        UpdateServerAutoTerminateTimeRequestBody updateServerAutoTerminateTimeRequestBody =
+            (UpdateServerAutoTerminateTimeRequestBody) o;
         return Objects.equals(this.autoTerminateTime, updateServerAutoTerminateTimeRequestBody.autoTerminateTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(autoTerminateTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +55,13 @@ public class UpdateServerAutoTerminateTimeRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

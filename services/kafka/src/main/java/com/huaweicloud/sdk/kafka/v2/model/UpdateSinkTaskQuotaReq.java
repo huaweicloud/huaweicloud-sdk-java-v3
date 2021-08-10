@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * UpdateSinkTaskQuotaReq
- */
-public class UpdateSinkTaskQuotaReq  {
-
-
+/** UpdateSinkTaskQuotaReq */
+public class UpdateSinkTaskQuotaReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sink_max_tasks")
-    
+    @JsonProperty(value = "sink_max_tasks")
+
     private Integer sinkMaxTasks;
 
     public UpdateSinkTaskQuotaReq withSinkMaxTasks(Integer sinkMaxTasks) {
@@ -28,13 +18,9 @@ public class UpdateSinkTaskQuotaReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 转储任务的总个数。 
-     * @return sinkMaxTasks
-     */
+    /** 转储任务的总个数。
+     * 
+     * @return sinkMaxTasks */
     public Integer getSinkMaxTasks() {
         return sinkMaxTasks;
     }
@@ -42,8 +28,6 @@ public class UpdateSinkTaskQuotaReq  {
     public void setSinkMaxTasks(Integer sinkMaxTasks) {
         this.sinkMaxTasks = sinkMaxTasks;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class UpdateSinkTaskQuotaReq  {
         UpdateSinkTaskQuotaReq updateSinkTaskQuotaReq = (UpdateSinkTaskQuotaReq) o;
         return Objects.equals(this.sinkMaxTasks, updateSinkTaskQuotaReq.sinkMaxTasks);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sinkMaxTasks);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class UpdateSinkTaskQuotaReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

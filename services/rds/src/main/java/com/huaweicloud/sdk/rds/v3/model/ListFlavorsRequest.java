@@ -1,52 +1,34 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListFlavorsRequest  {
-
-
+/** Request Object */
+public class ListFlavorsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
-    /**
-     * 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer
-     */
+
+    /** 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer */
     public static final class DatabaseNameEnum {
 
-        
-        /**
-         * Enum MYSQL for value: "MySQL"
-         */
+        /** Enum MYSQL for value: "MySQL" */
         public static final DatabaseNameEnum MYSQL = new DatabaseNameEnum("MySQL");
-        
-        /**
-         * Enum POSTGRESQL for value: "PostgreSQL"
-         */
+
+        /** Enum POSTGRESQL for value: "PostgreSQL" */
         public static final DatabaseNameEnum POSTGRESQL = new DatabaseNameEnum("PostgreSQL");
-        
-        /**
-         * Enum SQLSERVER for value: "SQLServer"
-         */
+
+        /** Enum SQLSERVER for value: "SQLServer" */
         public static final DatabaseNameEnum SQLSERVER = new DatabaseNameEnum("SQLServer");
-        
 
         private static final Map<String, DatabaseNameEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,7 +58,7 @@ public class ListFlavorsRequest  {
 
         @JsonCreator
         public static DatabaseNameEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DatabaseNameEnum result = STATIC_FIELDS.get(value);
@@ -87,7 +69,7 @@ public class ListFlavorsRequest  {
         }
 
         public static DatabaseNameEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DatabaseNameEnum result = STATIC_FIELDS.get(value);
@@ -111,22 +93,19 @@ public class ListFlavorsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="database_name")
-    
+    @JsonProperty(value = "database_name")
+
     private DatabaseNameEnum databaseName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version_name")
-    
+    @JsonProperty(value = "version_name")
+
     private String versionName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec_code")
-    
+    @JsonProperty(value = "spec_code")
+
     private String specCode;
 
     public ListFlavorsRequest withXLanguage(String xLanguage) {
@@ -134,15 +113,11 @@ public class ListFlavorsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -151,20 +126,14 @@ public class ListFlavorsRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListFlavorsRequest withDatabaseName(DatabaseNameEnum databaseName) {
         this.databaseName = databaseName;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer
-     * @return databaseName
-     */
+    /** 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer
+     * 
+     * @return databaseName */
     public DatabaseNameEnum getDatabaseName() {
         return databaseName;
     }
@@ -173,20 +142,14 @@ public class ListFlavorsRequest  {
         this.databaseName = databaseName;
     }
 
-    
-
     public ListFlavorsRequest withVersionName(String versionName) {
         this.versionName = versionName;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库版本号，获取方法请参见5.1查询数据库引擎的版本。（可输入小版本号）
-     * @return versionName
-     */
+    /** 数据库版本号，获取方法请参见5.1查询数据库引擎的版本。（可输入小版本号）
+     * 
+     * @return versionName */
     public String getVersionName() {
         return versionName;
     }
@@ -195,20 +158,14 @@ public class ListFlavorsRequest  {
         this.versionName = versionName;
     }
 
-    
-
     public ListFlavorsRequest withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 规格编码
-     * @return specCode
-     */
+    /** 规格编码
+     * 
+     * @return specCode */
     public String getSpecCode() {
         return specCode;
     }
@@ -216,8 +173,6 @@ public class ListFlavorsRequest  {
     public void setSpecCode(String specCode) {
         this.specCode = specCode;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -228,15 +183,17 @@ public class ListFlavorsRequest  {
             return false;
         }
         ListFlavorsRequest listFlavorsRequest = (ListFlavorsRequest) o;
-        return Objects.equals(this.xLanguage, listFlavorsRequest.xLanguage) &&
-            Objects.equals(this.databaseName, listFlavorsRequest.databaseName) &&
-            Objects.equals(this.versionName, listFlavorsRequest.versionName) &&
-            Objects.equals(this.specCode, listFlavorsRequest.specCode);
+        return Objects.equals(this.xLanguage, listFlavorsRequest.xLanguage)
+            && Objects.equals(this.databaseName, listFlavorsRequest.databaseName)
+            && Objects.equals(this.versionName, listFlavorsRequest.versionName)
+            && Objects.equals(this.specCode, listFlavorsRequest.specCode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, databaseName, versionName, specCode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,16 +205,13 @@ public class ListFlavorsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,61 +1,37 @@
 package com.huaweicloud.sdk.ugo.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * SQL翻译请求
- */
-public class SqlConvertReq  {
-
-
+/** SQL翻译请求 */
+public class SqlConvertReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_db")
-    
+    @JsonProperty(value = "source_db")
+
     private String sourceDb;
-    /**
-     * 源数据库版本
-     */
+
+    /** 源数据库版本 */
     public static final class SourceDbVersionEnum {
 
-        
-        /**
-         * Enum _11G for value: "11g"
-         */
+        /** Enum _11G for value: "11g" */
         public static final SourceDbVersionEnum _11G = new SourceDbVersionEnum("11g");
-        
-        /**
-         * Enum _12C for value: "12c"
-         */
+
+        /** Enum _12C for value: "12c" */
         public static final SourceDbVersionEnum _12C = new SourceDbVersionEnum("12c");
-        
-        /**
-         * Enum _18C for value: "18c"
-         */
+
+        /** Enum _18C for value: "18c" */
         public static final SourceDbVersionEnum _18C = new SourceDbVersionEnum("18c");
-        
-        /**
-         * Enum _19C for value: "19c"
-         */
+
+        /** Enum _19C for value: "19c" */
         public static final SourceDbVersionEnum _19C = new SourceDbVersionEnum("19c");
-        
 
         private static final Map<String, SourceDbVersionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -86,7 +62,7 @@ public class SqlConvertReq  {
 
         @JsonCreator
         public static SourceDbVersionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SourceDbVersionEnum result = STATIC_FIELDS.get(value);
@@ -97,7 +73,7 @@ public class SqlConvertReq  {
         }
 
         public static SourceDbVersionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SourceDbVersionEnum result = STATIC_FIELDS.get(value);
@@ -121,37 +97,25 @@ public class SqlConvertReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_db_version")
-    
+    @JsonProperty(value = "source_db_version")
+
     private SourceDbVersionEnum sourceDbVersion;
-    /**
-     * 目标数据库类型
-     */
+
+    /** 目标数据库类型 */
     public static final class TargetDbEnum {
 
-        
-        /**
-         * Enum RDS_FOR_MYSQL for value: "RDS for MySQL"
-         */
+        /** Enum RDS_FOR_MYSQL for value: "RDS for MySQL" */
         public static final TargetDbEnum RDS_FOR_MYSQL = new TargetDbEnum("RDS for MySQL");
-        
-        /**
-         * Enum GAUSSDB_FOR_OPENGAUSS_ for value: "GaussDB(for openGauss)"
-         */
+
+        /** Enum GAUSSDB_FOR_OPENGAUSS_ for value: "GaussDB(for openGauss)" */
         public static final TargetDbEnum GAUSSDB_FOR_OPENGAUSS_ = new TargetDbEnum("GaussDB(for openGauss)");
-        
-        /**
-         * Enum GAUSSDB_FOR_MYSQL_ for value: "GaussDB(for MySQL)"
-         */
+
+        /** Enum GAUSSDB_FOR_MYSQL_ for value: "GaussDB(for MySQL)" */
         public static final TargetDbEnum GAUSSDB_FOR_MYSQL_ = new TargetDbEnum("GaussDB(for MySQL)");
-        
-        /**
-         * Enum RDS_FOR_POSTGRESQL for value: "RDS for PostgreSQL"
-         */
+
+        /** Enum RDS_FOR_POSTGRESQL for value: "RDS for PostgreSQL" */
         public static final TargetDbEnum RDS_FOR_POSTGRESQL = new TargetDbEnum("RDS for PostgreSQL");
-        
 
         private static final Map<String, TargetDbEnum> STATIC_FIELDS = createStaticFields();
 
@@ -182,7 +146,7 @@ public class SqlConvertReq  {
 
         @JsonCreator
         public static TargetDbEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TargetDbEnum result = STATIC_FIELDS.get(value);
@@ -193,7 +157,7 @@ public class SqlConvertReq  {
         }
 
         public static TargetDbEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TargetDbEnum result = STATIC_FIELDS.get(value);
@@ -217,42 +181,28 @@ public class SqlConvertReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target_db")
-    
+    @JsonProperty(value = "target_db")
+
     private TargetDbEnum targetDb;
-    /**
-     * 目标数据库版本
-     */
+
+    /** 目标数据库版本 */
     public static final class TargetDbVersionEnum {
 
-        
-        /**
-         * Enum _5_7 for value: "5.7"
-         */
+        /** Enum _5_7 for value: "5.7" */
         public static final TargetDbVersionEnum _5_7 = new TargetDbVersionEnum("5.7");
-        
-        /**
-         * Enum _8_0 for value: "8.0"
-         */
+
+        /** Enum _8_0 for value: "8.0" */
         public static final TargetDbVersionEnum _8_0 = new TargetDbVersionEnum("8.0");
-        
-        /**
-         * Enum _11 for value: "11"
-         */
+
+        /** Enum _11 for value: "11" */
         public static final TargetDbVersionEnum _11 = new TargetDbVersionEnum("11");
-        
-        /**
-         * Enum _2020 for value: "2020"
-         */
+
+        /** Enum _2020 for value: "2020" */
         public static final TargetDbVersionEnum _2020 = new TargetDbVersionEnum("2020");
-        
-        /**
-         * Enum ENHANCED_EDITION for value: "Enhanced Edition"
-         */
+
+        /** Enum ENHANCED_EDITION for value: "Enhanced Edition" */
         public static final TargetDbVersionEnum ENHANCED_EDITION = new TargetDbVersionEnum("Enhanced Edition");
-        
 
         private static final Map<String, TargetDbVersionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -284,7 +234,7 @@ public class SqlConvertReq  {
 
         @JsonCreator
         public static TargetDbVersionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TargetDbVersionEnum result = STATIC_FIELDS.get(value);
@@ -295,7 +245,7 @@ public class SqlConvertReq  {
         }
 
         public static TargetDbVersionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TargetDbVersionEnum result = STATIC_FIELDS.get(value);
@@ -319,16 +269,14 @@ public class SqlConvertReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target_db_version")
-    
+    @JsonProperty(value = "target_db_version")
+
     private TargetDbVersionEnum targetDbVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="statement")
-    
+    @JsonProperty(value = "statement")
+
     private String statement;
 
     public SqlConvertReq withSourceDb(String sourceDb) {
@@ -336,13 +284,9 @@ public class SqlConvertReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 源数据库类型
-     * @return sourceDb
-     */
+    /** 源数据库类型
+     * 
+     * @return sourceDb */
     public String getSourceDb() {
         return sourceDb;
     }
@@ -351,20 +295,14 @@ public class SqlConvertReq  {
         this.sourceDb = sourceDb;
     }
 
-    
-
     public SqlConvertReq withSourceDbVersion(SourceDbVersionEnum sourceDbVersion) {
         this.sourceDbVersion = sourceDbVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * 源数据库版本
-     * @return sourceDbVersion
-     */
+    /** 源数据库版本
+     * 
+     * @return sourceDbVersion */
     public SourceDbVersionEnum getSourceDbVersion() {
         return sourceDbVersion;
     }
@@ -373,20 +311,14 @@ public class SqlConvertReq  {
         this.sourceDbVersion = sourceDbVersion;
     }
 
-    
-
     public SqlConvertReq withTargetDb(TargetDbEnum targetDb) {
         this.targetDb = targetDb;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标数据库类型
-     * @return targetDb
-     */
+    /** 目标数据库类型
+     * 
+     * @return targetDb */
     public TargetDbEnum getTargetDb() {
         return targetDb;
     }
@@ -395,20 +327,14 @@ public class SqlConvertReq  {
         this.targetDb = targetDb;
     }
 
-    
-
     public SqlConvertReq withTargetDbVersion(TargetDbVersionEnum targetDbVersion) {
         this.targetDbVersion = targetDbVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标数据库版本
-     * @return targetDbVersion
-     */
+    /** 目标数据库版本
+     * 
+     * @return targetDbVersion */
     public TargetDbVersionEnum getTargetDbVersion() {
         return targetDbVersion;
     }
@@ -417,20 +343,14 @@ public class SqlConvertReq  {
         this.targetDbVersion = targetDbVersion;
     }
 
-    
-
     public SqlConvertReq withStatement(String statement) {
         this.statement = statement;
         return this;
     }
 
-    
-
-
-    /**
-     * 需要转换的SQL语句
-     * @return statement
-     */
+    /** 需要转换的SQL语句
+     * 
+     * @return statement */
     public String getStatement() {
         return statement;
     }
@@ -438,8 +358,6 @@ public class SqlConvertReq  {
     public void setStatement(String statement) {
         this.statement = statement;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -450,16 +368,18 @@ public class SqlConvertReq  {
             return false;
         }
         SqlConvertReq sqlConvertReq = (SqlConvertReq) o;
-        return Objects.equals(this.sourceDb, sqlConvertReq.sourceDb) &&
-            Objects.equals(this.sourceDbVersion, sqlConvertReq.sourceDbVersion) &&
-            Objects.equals(this.targetDb, sqlConvertReq.targetDb) &&
-            Objects.equals(this.targetDbVersion, sqlConvertReq.targetDbVersion) &&
-            Objects.equals(this.statement, sqlConvertReq.statement);
+        return Objects.equals(this.sourceDb, sqlConvertReq.sourceDb)
+            && Objects.equals(this.sourceDbVersion, sqlConvertReq.sourceDbVersion)
+            && Objects.equals(this.targetDb, sqlConvertReq.targetDb)
+            && Objects.equals(this.targetDbVersion, sqlConvertReq.targetDbVersion)
+            && Objects.equals(this.statement, sqlConvertReq.statement);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sourceDb, sourceDbVersion, targetDb, targetDbVersion, statement);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -472,16 +392,13 @@ public class SqlConvertReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

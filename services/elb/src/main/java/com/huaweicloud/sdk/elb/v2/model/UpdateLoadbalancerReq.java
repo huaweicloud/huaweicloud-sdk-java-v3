@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 更新负载均衡器的请求体
- */
-public class UpdateLoadbalancerReq  {
-
-
+/** 更新负载均衡器的请求体 */
+public class UpdateLoadbalancerReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
-    
+    @JsonProperty(value = "admin_state_up")
+
     private Boolean adminStateUp;
 
     public UpdateLoadbalancerReq withName(String name) {
@@ -40,13 +28,9 @@ public class UpdateLoadbalancerReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器名称。
-     * @return name
-     */
+    /** 负载均衡器名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -55,20 +39,14 @@ public class UpdateLoadbalancerReq  {
         this.name = name;
     }
 
-    
-
     public UpdateLoadbalancerReq withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器的描述信息
-     * @return description
-     */
+    /** 负载均衡器的描述信息
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -77,20 +55,14 @@ public class UpdateLoadbalancerReq  {
         this.description = description;
     }
 
-    
-
     public UpdateLoadbalancerReq withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器的管理状态。只支持设定为true，该字段的值无实际意义。
-     * @return adminStateUp
-     */
+    /** 负载均衡器的管理状态。只支持设定为true，该字段的值无实际意义。
+     * 
+     * @return adminStateUp */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -98,8 +70,6 @@ public class UpdateLoadbalancerReq  {
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class UpdateLoadbalancerReq  {
             return false;
         }
         UpdateLoadbalancerReq updateLoadbalancerReq = (UpdateLoadbalancerReq) o;
-        return Objects.equals(this.name, updateLoadbalancerReq.name) &&
-            Objects.equals(this.description, updateLoadbalancerReq.description) &&
-            Objects.equals(this.adminStateUp, updateLoadbalancerReq.adminStateUp);
+        return Objects.equals(this.name, updateLoadbalancerReq.name)
+            && Objects.equals(this.description, updateLoadbalancerReq.description)
+            && Objects.equals(this.adminStateUp, updateLoadbalancerReq.adminStateUp);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, description, adminStateUp);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class UpdateLoadbalancerReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 请求参数
- */
-public class GlanceDeleteImageRequestBody  {
-
-
+/** 请求参数 */
+public class GlanceDeleteImageRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="delete_backup")
-    
+    @JsonProperty(value = "delete_backup")
+
     private Boolean deleteBackup;
 
     public GlanceDeleteImageRequestBody withDeleteBackup(Boolean deleteBackup) {
@@ -28,13 +18,9 @@ public class GlanceDeleteImageRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 取值为：true和false true：表示删除整机镜像时，同时删除其关联的云服务器备份。 false：表示只删除整机镜像，不删除其关联的云服务器备份。
-     * @return deleteBackup
-     */
+    /** 取值为：true和false true：表示删除整机镜像时，同时删除其关联的云服务器备份。 false：表示只删除整机镜像，不删除其关联的云服务器备份。
+     * 
+     * @return deleteBackup */
     public Boolean getDeleteBackup() {
         return deleteBackup;
     }
@@ -42,8 +28,6 @@ public class GlanceDeleteImageRequestBody  {
     public void setDeleteBackup(Boolean deleteBackup) {
         this.deleteBackup = deleteBackup;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class GlanceDeleteImageRequestBody  {
         GlanceDeleteImageRequestBody glanceDeleteImageRequestBody = (GlanceDeleteImageRequestBody) o;
         return Objects.equals(this.deleteBackup, glanceDeleteImageRequestBody.deleteBackup);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(deleteBackup);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class GlanceDeleteImageRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

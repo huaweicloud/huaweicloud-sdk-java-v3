@@ -1,56 +1,43 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.NicSpec;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 节点网卡的描述信息。 
- */
-public class NodeNicSpec  {
-
-
+/** 节点网卡的描述信息。 */
+public class NodeNicSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="primaryNic")
-    
+    @JsonProperty(value = "primaryNic")
+
     private NicSpec primaryNic;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extNics")
-    
+    @JsonProperty(value = "extNics")
+
     private List<NicSpec> extNics = null;
-    
+
     public NodeNicSpec withPrimaryNic(NicSpec primaryNic) {
         this.primaryNic = primaryNic;
         return this;
     }
 
     public NodeNicSpec withPrimaryNic(Consumer<NicSpec> primaryNicSetter) {
-        if(this.primaryNic == null ){
+        if (this.primaryNic == null) {
             this.primaryNic = new NicSpec();
             primaryNicSetter.accept(this.primaryNic);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get primaryNic
-     * @return primaryNic
-     */
+    /** Get primaryNic
+     * 
+     * @return primaryNic */
     public NicSpec getPrimaryNic() {
         return primaryNic;
     }
@@ -59,16 +46,13 @@ public class NodeNicSpec  {
         this.primaryNic = primaryNic;
     }
 
-    
-
     public NodeNicSpec withExtNics(List<NicSpec> extNics) {
         this.extNics = extNics;
         return this;
     }
 
-    
     public NodeNicSpec addExtNicsItem(NicSpec extNicsItem) {
-        if(this.extNics == null) {
+        if (this.extNics == null) {
             this.extNics = new ArrayList<>();
         }
         this.extNics.add(extNicsItem);
@@ -76,17 +60,16 @@ public class NodeNicSpec  {
     }
 
     public NodeNicSpec withExtNics(Consumer<List<NicSpec>> extNicsSetter) {
-        if(this.extNics == null) {
+        if (this.extNics == null) {
             this.extNics = new ArrayList<>();
         }
         extNicsSetter.accept(this.extNics);
         return this;
     }
 
-    /**
-     * 扩展网卡
-     * @return extNics
-     */
+    /** 扩展网卡
+     * 
+     * @return extNics */
     public List<NicSpec> getExtNics() {
         return extNics;
     }
@@ -94,8 +77,6 @@ public class NodeNicSpec  {
     public void setExtNics(List<NicSpec> extNics) {
         this.extNics = extNics;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -106,13 +87,15 @@ public class NodeNicSpec  {
             return false;
         }
         NodeNicSpec nodeNicSpec = (NodeNicSpec) o;
-        return Objects.equals(this.primaryNic, nodeNicSpec.primaryNic) &&
-            Objects.equals(this.extNics, nodeNicSpec.extNics);
+        return Objects.equals(this.primaryNic, nodeNicSpec.primaryNic)
+            && Objects.equals(this.extNics, nodeNicSpec.extNics);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(primaryNic, extNics);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -122,16 +105,13 @@ public class NodeNicSpec  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

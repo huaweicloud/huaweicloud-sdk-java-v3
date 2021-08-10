@@ -1,87 +1,61 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 策略参数定义
- */
-public class PolicyParameterDefinition  {
-
-
+/** 策略参数定义 */
+public class PolicyParameterDefinition {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="allowed_values")
-    
+    @JsonProperty(value = "allowed_values")
+
     private List<Object> allowedValues = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="default_value")
-    
+    @JsonProperty(value = "default_value")
+
     private String defaultValue;
-    /**
-     * 策略参数类型
-     */
+
+    /** 策略参数类型 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum ARRAY for value: "Array"
-         */
+        /** Enum ARRAY for value: "Array" */
         public static final TypeEnum ARRAY = new TypeEnum("Array");
-        
-        /**
-         * Enum BOOLEAN for value: "Boolean"
-         */
+
+        /** Enum BOOLEAN for value: "Boolean" */
         public static final TypeEnum BOOLEAN = new TypeEnum("Boolean");
-        
-        /**
-         * Enum INTEGER for value: "Integer"
-         */
+
+        /** Enum INTEGER for value: "Integer" */
         public static final TypeEnum INTEGER = new TypeEnum("Integer");
-        
-        /**
-         * Enum FLOAT for value: "Float"
-         */
+
+        /** Enum FLOAT for value: "Float" */
         public static final TypeEnum FLOAT = new TypeEnum("Float");
-        
-        /**
-         * Enum STRING for value: "String"
-         */
+
+        /** Enum STRING for value: "String" */
         public static final TypeEnum STRING = new TypeEnum("String");
-        
-        /**
-         * Enum DATETIME for value: "DateTime"
-         */
+
+        /** Enum DATETIME for value: "DateTime" */
         public static final TypeEnum DATETIME = new TypeEnum("DateTime");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -114,7 +88,7 @@ public class PolicyParameterDefinition  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -125,7 +99,7 @@ public class PolicyParameterDefinition  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -149,10 +123,9 @@ public class PolicyParameterDefinition  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
     public PolicyParameterDefinition withName(String name) {
@@ -160,13 +133,9 @@ public class PolicyParameterDefinition  {
         return this;
     }
 
-    
-
-
-    /**
-     * 策略参数名字
-     * @return name
-     */
+    /** 策略参数名字
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -175,20 +144,14 @@ public class PolicyParameterDefinition  {
         this.name = name;
     }
 
-    
-
     public PolicyParameterDefinition withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略参数描述
-     * @return description
-     */
+    /** 策略参数描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -197,16 +160,13 @@ public class PolicyParameterDefinition  {
         this.description = description;
     }
 
-    
-
     public PolicyParameterDefinition withAllowedValues(List<Object> allowedValues) {
         this.allowedValues = allowedValues;
         return this;
     }
 
-    
     public PolicyParameterDefinition addAllowedValuesItem(Object allowedValuesItem) {
-        if(this.allowedValues == null) {
+        if (this.allowedValues == null) {
             this.allowedValues = new ArrayList<>();
         }
         this.allowedValues.add(allowedValuesItem);
@@ -214,17 +174,16 @@ public class PolicyParameterDefinition  {
     }
 
     public PolicyParameterDefinition withAllowedValues(Consumer<List<Object>> allowedValuesSetter) {
-        if(this.allowedValues == null) {
+        if (this.allowedValues == null) {
             this.allowedValues = new ArrayList<>();
         }
         allowedValuesSetter.accept(this.allowedValues);
         return this;
     }
 
-    /**
-     * 策略参数允许值列表
-     * @return allowedValues
-     */
+    /** 策略参数允许值列表
+     * 
+     * @return allowedValues */
     public List<Object> getAllowedValues() {
         return allowedValues;
     }
@@ -233,20 +192,14 @@ public class PolicyParameterDefinition  {
         this.allowedValues = allowedValues;
     }
 
-    
-
     public PolicyParameterDefinition withDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略参数默认值
-     * @return defaultValue
-     */
+    /** 策略参数默认值
+     * 
+     * @return defaultValue */
     public String getDefaultValue() {
         return defaultValue;
     }
@@ -255,20 +208,14 @@ public class PolicyParameterDefinition  {
         this.defaultValue = defaultValue;
     }
 
-    
-
     public PolicyParameterDefinition withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略参数类型
-     * @return type
-     */
+    /** 策略参数类型
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -276,8 +223,6 @@ public class PolicyParameterDefinition  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -288,16 +233,18 @@ public class PolicyParameterDefinition  {
             return false;
         }
         PolicyParameterDefinition policyParameterDefinition = (PolicyParameterDefinition) o;
-        return Objects.equals(this.name, policyParameterDefinition.name) &&
-            Objects.equals(this.description, policyParameterDefinition.description) &&
-            Objects.equals(this.allowedValues, policyParameterDefinition.allowedValues) &&
-            Objects.equals(this.defaultValue, policyParameterDefinition.defaultValue) &&
-            Objects.equals(this.type, policyParameterDefinition.type);
+        return Objects.equals(this.name, policyParameterDefinition.name)
+            && Objects.equals(this.description, policyParameterDefinition.description)
+            && Objects.equals(this.allowedValues, policyParameterDefinition.allowedValues)
+            && Objects.equals(this.defaultValue, policyParameterDefinition.defaultValue)
+            && Objects.equals(this.type, policyParameterDefinition.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, description, allowedValues, defaultValue, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -310,16 +257,13 @@ public class PolicyParameterDefinition  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

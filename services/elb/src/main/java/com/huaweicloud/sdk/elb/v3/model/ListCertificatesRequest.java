@@ -1,90 +1,69 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ListCertificatesRequest  {
-
-
+/** Request Object */
+public class ListCertificatesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
-    
+    @JsonProperty(value = "admin_state_up")
+
     private Boolean adminStateUp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private List<String> description = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
+
     private List<String> domain = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private List<String> id = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private List<String> name = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_reverse")
-    
+    @JsonProperty(value = "page_reverse")
+
     private Boolean pageReverse;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private List<String> type = null;
-    
+
     public ListCertificatesRequest withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
     }
 
-    
-
-
-    /**
-     * SSL证书的管理状态；暂不支持。
-     * @return adminStateUp
-     */
+    /** SSL证书的管理状态；暂不支持。
+     * 
+     * @return adminStateUp */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -93,16 +72,13 @@ public class ListCertificatesRequest  {
         this.adminStateUp = adminStateUp;
     }
 
-    
-
     public ListCertificatesRequest withDescription(List<String> description) {
         this.description = description;
         return this;
     }
 
-    
     public ListCertificatesRequest addDescriptionItem(String descriptionItem) {
-        if(this.description == null) {
+        if (this.description == null) {
             this.description = new ArrayList<>();
         }
         this.description.add(descriptionItem);
@@ -110,17 +86,16 @@ public class ListCertificatesRequest  {
     }
 
     public ListCertificatesRequest withDescription(Consumer<List<String>> descriptionSetter) {
-        if(this.description == null) {
+        if (this.description == null) {
             this.description = new ArrayList<>();
         }
         descriptionSetter.accept(this.description);
         return this;
     }
 
-    /**
-     * SSL证书的描述。
-     * @return description
-     */
+    /** SSL证书的描述。
+     * 
+     * @return description */
     public List<String> getDescription() {
         return description;
     }
@@ -129,16 +104,13 @@ public class ListCertificatesRequest  {
         this.description = description;
     }
 
-    
-
     public ListCertificatesRequest withDomain(List<String> domain) {
         this.domain = domain;
         return this;
     }
 
-    
     public ListCertificatesRequest addDomainItem(String domainItem) {
-        if(this.domain == null) {
+        if (this.domain == null) {
             this.domain = new ArrayList<>();
         }
         this.domain.add(domainItem);
@@ -146,17 +118,16 @@ public class ListCertificatesRequest  {
     }
 
     public ListCertificatesRequest withDomain(Consumer<List<String>> domainSetter) {
-        if(this.domain == null) {
+        if (this.domain == null) {
             this.domain = new ArrayList<>();
         }
         domainSetter.accept(this.domain);
         return this;
     }
 
-    /**
-     * 服务器证书所签域名。该字段仅type为server时有效。
-     * @return domain
-     */
+    /** 服务器证书所签域名。该字段仅type为server时有效。
+     * 
+     * @return domain */
     public List<String> getDomain() {
         return domain;
     }
@@ -165,16 +136,13 @@ public class ListCertificatesRequest  {
         this.domain = domain;
     }
 
-    
-
     public ListCertificatesRequest withId(List<String> id) {
         this.id = id;
         return this;
     }
 
-    
     public ListCertificatesRequest addIdItem(String idItem) {
-        if(this.id == null) {
+        if (this.id == null) {
             this.id = new ArrayList<>();
         }
         this.id.add(idItem);
@@ -182,17 +150,16 @@ public class ListCertificatesRequest  {
     }
 
     public ListCertificatesRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null) {
+        if (this.id == null) {
             this.id = new ArrayList<>();
         }
         idSetter.accept(this.id);
         return this;
     }
 
-    /**
-     * 证书ID。
-     * @return id
-     */
+    /** 证书ID。
+     * 
+     * @return id */
     public List<String> getId() {
         return id;
     }
@@ -201,22 +168,14 @@ public class ListCertificatesRequest  {
         this.id = id;
     }
 
-    
-
     public ListCertificatesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页返回的个数。
-     * minimum: 0
-     * maximum: 2000
-     * @return limit
-     */
+    /** 每页返回的个数。 minimum: 0 maximum: 2000
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -225,20 +184,14 @@ public class ListCertificatesRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListCertificatesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
 
-    
-
-
-    /**
-     * 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
-     * @return marker
-     */
+    /** 上一页最后一条记录的ID。 使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -247,16 +200,13 @@ public class ListCertificatesRequest  {
         this.marker = marker;
     }
 
-    
-
     public ListCertificatesRequest withName(List<String> name) {
         this.name = name;
         return this;
     }
 
-    
     public ListCertificatesRequest addNameItem(String nameItem) {
-        if(this.name == null) {
+        if (this.name == null) {
             this.name = new ArrayList<>();
         }
         this.name.add(nameItem);
@@ -264,17 +214,16 @@ public class ListCertificatesRequest  {
     }
 
     public ListCertificatesRequest withName(Consumer<List<String>> nameSetter) {
-        if(this.name == null) {
+        if (this.name == null) {
             this.name = new ArrayList<>();
         }
         nameSetter.accept(this.name);
         return this;
     }
 
-    /**
-     * SSL证书的名称。
-     * @return name
-     */
+    /** SSL证书的名称。
+     * 
+     * @return name */
     public List<String> getName() {
         return name;
     }
@@ -283,20 +232,14 @@ public class ListCertificatesRequest  {
         this.name = name;
     }
 
-    
-
     public ListCertificatesRequest withPageReverse(Boolean pageReverse) {
         this.pageReverse = pageReverse;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。使用说明：必须与limit一起使用。
-     * @return pageReverse
-     */
+    /** 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。使用说明：必须与limit一起使用。
+     * 
+     * @return pageReverse */
     public Boolean getPageReverse() {
         return pageReverse;
     }
@@ -305,16 +248,13 @@ public class ListCertificatesRequest  {
         this.pageReverse = pageReverse;
     }
 
-    
-
     public ListCertificatesRequest withType(List<String> type) {
         this.type = type;
         return this;
     }
 
-    
     public ListCertificatesRequest addTypeItem(String typeItem) {
-        if(this.type == null) {
+        if (this.type == null) {
             this.type = new ArrayList<>();
         }
         this.type.add(typeItem);
@@ -322,17 +262,16 @@ public class ListCertificatesRequest  {
     }
 
     public ListCertificatesRequest withType(Consumer<List<String>> typeSetter) {
-        if(this.type == null) {
+        if (this.type == null) {
             this.type = new ArrayList<>();
         }
         typeSetter.accept(this.type);
         return this;
     }
 
-    /**
-     * SSL证书的类型。分为服务器证书(server)和CA证书(client)。
-     * @return type
-     */
+    /** SSL证书的类型。分为服务器证书(server)和CA证书(client)。
+     * 
+     * @return type */
     public List<String> getType() {
         return type;
     }
@@ -340,8 +279,6 @@ public class ListCertificatesRequest  {
     public void setType(List<String> type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -352,20 +289,22 @@ public class ListCertificatesRequest  {
             return false;
         }
         ListCertificatesRequest listCertificatesRequest = (ListCertificatesRequest) o;
-        return Objects.equals(this.adminStateUp, listCertificatesRequest.adminStateUp) &&
-            Objects.equals(this.description, listCertificatesRequest.description) &&
-            Objects.equals(this.domain, listCertificatesRequest.domain) &&
-            Objects.equals(this.id, listCertificatesRequest.id) &&
-            Objects.equals(this.limit, listCertificatesRequest.limit) &&
-            Objects.equals(this.marker, listCertificatesRequest.marker) &&
-            Objects.equals(this.name, listCertificatesRequest.name) &&
-            Objects.equals(this.pageReverse, listCertificatesRequest.pageReverse) &&
-            Objects.equals(this.type, listCertificatesRequest.type);
+        return Objects.equals(this.adminStateUp, listCertificatesRequest.adminStateUp)
+            && Objects.equals(this.description, listCertificatesRequest.description)
+            && Objects.equals(this.domain, listCertificatesRequest.domain)
+            && Objects.equals(this.id, listCertificatesRequest.id)
+            && Objects.equals(this.limit, listCertificatesRequest.limit)
+            && Objects.equals(this.marker, listCertificatesRequest.marker)
+            && Objects.equals(this.name, listCertificatesRequest.name)
+            && Objects.equals(this.pageReverse, listCertificatesRequest.pageReverse)
+            && Objects.equals(this.type, listCertificatesRequest.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(adminStateUp, description, domain, id, limit, marker, name, pageReverse, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -382,16 +321,13 @@ public class ListCertificatesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

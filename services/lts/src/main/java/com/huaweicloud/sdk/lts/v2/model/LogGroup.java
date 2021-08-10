@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.lts.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 返回的日志组信息
- */
-public class LogGroup  {
-
-
+/** 返回的日志组信息 */
+public class LogGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creation_time")
-    
+    @JsonProperty(value = "creation_time")
+
     private Long creationTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="log_group_name")
-    
+    @JsonProperty(value = "log_group_name")
+
     private String logGroupName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="log_group_id")
-    
+    @JsonProperty(value = "log_group_id")
+
     private String logGroupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ttl_in_days")
-    
+    @JsonProperty(value = "ttl_in_days")
+
     private Integer ttlInDays;
 
     public LogGroup withCreationTime(Long creationTime) {
@@ -46,15 +33,9 @@ public class LogGroup  {
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间 
-     * minimum: 946656000000000000
-     * maximum: 4102416000000000000
-     * @return creationTime
-     */
+    /** 创建时间 minimum: 946656000000000000 maximum: 4102416000000000000
+     * 
+     * @return creationTime */
     public Long getCreationTime() {
         return creationTime;
     }
@@ -63,20 +44,14 @@ public class LogGroup  {
         this.creationTime = creationTime;
     }
 
-    
-
     public LogGroup withLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
         return this;
     }
 
-    
-
-
-    /**
-     * 日志组名称 
-     * @return logGroupName
-     */
+    /** 日志组名称
+     * 
+     * @return logGroupName */
     public String getLogGroupName() {
         return logGroupName;
     }
@@ -85,20 +60,14 @@ public class LogGroup  {
         this.logGroupName = logGroupName;
     }
 
-    
-
     public LogGroup withLogGroupId(String logGroupId) {
         this.logGroupId = logGroupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 日志组ID 
-     * @return logGroupId
-     */
+    /** 日志组ID
+     * 
+     * @return logGroupId */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -107,22 +76,14 @@ public class LogGroup  {
         this.logGroupId = logGroupId;
     }
 
-    
-
     public LogGroup withTtlInDays(Integer ttlInDays) {
         this.ttlInDays = ttlInDays;
         return this;
     }
 
-    
-
-
-    /**
-     * 日志存储时间 天 
-     * minimum: 1
-     * maximum: 30
-     * @return ttlInDays
-     */
+    /** 日志存储时间 天 minimum: 1 maximum: 30
+     * 
+     * @return ttlInDays */
     public Integer getTtlInDays() {
         return ttlInDays;
     }
@@ -130,8 +91,6 @@ public class LogGroup  {
     public void setTtlInDays(Integer ttlInDays) {
         this.ttlInDays = ttlInDays;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -142,15 +101,17 @@ public class LogGroup  {
             return false;
         }
         LogGroup logGroup = (LogGroup) o;
-        return Objects.equals(this.creationTime, logGroup.creationTime) &&
-            Objects.equals(this.logGroupName, logGroup.logGroupName) &&
-            Objects.equals(this.logGroupId, logGroup.logGroupId) &&
-            Objects.equals(this.ttlInDays, logGroup.ttlInDays);
+        return Objects.equals(this.creationTime, logGroup.creationTime)
+            && Objects.equals(this.logGroupName, logGroup.logGroupName)
+            && Objects.equals(this.logGroupId, logGroup.logGroupId)
+            && Objects.equals(this.ttlInDays, logGroup.ttlInDays);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(creationTime, logGroupName, logGroupId, ttlInDays);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -162,16 +123,13 @@ public class LogGroup  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

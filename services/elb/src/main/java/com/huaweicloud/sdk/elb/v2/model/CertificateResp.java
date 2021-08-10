@@ -1,71 +1,51 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 证书接口增删改查响应体
- */
-public class CertificateResp  {
-
-
+/** 证书接口增删改查响应体 */
+public class CertificateResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
+
     private String tenantId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
-    
+    @JsonProperty(value = "admin_state_up")
+
     private Boolean adminStateUp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
-    /**
-     * SSL证书的类型。分为服务器证书(server)和CA证书(client)。
-     */
+
+    /** SSL证书的类型。分为服务器证书(server)和CA证书(client)。 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum SERVER for value: "server"
-         */
+        /** Enum SERVER for value: "server" */
         public static final TypeEnum SERVER = new TypeEnum("server");
-        
-        /**
-         * Enum CLIENT for value: "client"
-         */
+
+        /** Enum CLIENT for value: "client" */
         public static final TypeEnum CLIENT = new TypeEnum("client");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -94,7 +74,7 @@ public class CertificateResp  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -105,7 +85,7 @@ public class CertificateResp  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -129,46 +109,39 @@ public class CertificateResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
+
     private String domain;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="private_key")
-    
+    @JsonProperty(value = "private_key")
+
     private String privateKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificate")
-    
+    @JsonProperty(value = "certificate")
+
     private String certificate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expire_time")
-    
+    @JsonProperty(value = "expire_time")
+
     private String expireTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private String createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private String updateTime;
 
     public CertificateResp withId(String id) {
@@ -176,13 +149,9 @@ public class CertificateResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * SSL证书id
-     * @return id
-     */
+    /** SSL证书id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -191,20 +160,14 @@ public class CertificateResp  {
         this.id = id;
     }
 
-    
-
     public CertificateResp withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
 
-    
-
-
-    /**
-     * SSL证书所在的项目ID
-     * @return tenantId
-     */
+    /** SSL证书所在的项目ID
+     * 
+     * @return tenantId */
     public String getTenantId() {
         return tenantId;
     }
@@ -213,20 +176,14 @@ public class CertificateResp  {
         this.tenantId = tenantId;
     }
 
-    
-
     public CertificateResp withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
     }
 
-    
-
-
-    /**
-     * SSL证书的管理状态；暂不支持
-     * @return adminStateUp
-     */
+    /** SSL证书的管理状态；暂不支持
+     * 
+     * @return adminStateUp */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -235,20 +192,14 @@ public class CertificateResp  {
         this.adminStateUp = adminStateUp;
     }
 
-    
-
     public CertificateResp withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * SSL证书的名称。
-     * @return name
-     */
+    /** SSL证书的名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -257,20 +208,14 @@ public class CertificateResp  {
         this.name = name;
     }
 
-    
-
     public CertificateResp withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * SSL证书的描述。
-     * @return description
-     */
+    /** SSL证书的描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -279,20 +224,14 @@ public class CertificateResp  {
         this.description = description;
     }
 
-    
-
     public CertificateResp withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * SSL证书的类型。分为服务器证书(server)和CA证书(client)。
-     * @return type
-     */
+    /** SSL证书的类型。分为服务器证书(server)和CA证书(client)。
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -301,20 +240,14 @@ public class CertificateResp  {
         this.type = type;
     }
 
-    
-
     public CertificateResp withDomain(String domain) {
         this.domain = domain;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务器证书所签域名。该字段仅type为server时有效。
-     * @return domain
-     */
+    /** 服务器证书所签域名。该字段仅type为server时有效。
+     * 
+     * @return domain */
     public String getDomain() {
         return domain;
     }
@@ -323,20 +256,14 @@ public class CertificateResp  {
         this.domain = domain;
     }
 
-    
-
     public CertificateResp withPrivateKey(String privateKey) {
         this.privateKey = privateKey;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务器证书的私钥。仅type为server时有效。type为server时必选。
-     * @return privateKey
-     */
+    /** 服务器证书的私钥。仅type为server时有效。type为server时必选。
+     * 
+     * @return privateKey */
     public String getPrivateKey() {
         return privateKey;
     }
@@ -345,20 +272,14 @@ public class CertificateResp  {
         this.privateKey = privateKey;
     }
 
-    
-
     public CertificateResp withCertificate(String certificate) {
         this.certificate = certificate;
         return this;
     }
 
-    
-
-
-    /**
-     * 当type为server时，表示服务器证书的公钥；当type为client时，表示用于认证客户端证书的CA证书。
-     * @return certificate
-     */
+    /** 当type为server时，表示服务器证书的公钥；当type为client时，表示用于认证客户端证书的CA证书。
+     * 
+     * @return certificate */
     public String getCertificate() {
         return certificate;
     }
@@ -367,20 +288,14 @@ public class CertificateResp  {
         this.certificate = certificate;
     }
 
-    
-
     public CertificateResp withExpireTime(String expireTime) {
         this.expireTime = expireTime;
         return this;
     }
 
-    
-
-
-    /**
-     * SSL证书的过期时间。 UTC时间，格式为：yyyy-MM-dd HH:mm:ss ，如2020-05-28 08:30:09
-     * @return expireTime
-     */
+    /** SSL证书的过期时间。 UTC时间，格式为：yyyy-MM-dd HH:mm:ss ，如2020-05-28 08:30:09
+     * 
+     * @return expireTime */
     public String getExpireTime() {
         return expireTime;
     }
@@ -389,20 +304,14 @@ public class CertificateResp  {
         this.expireTime = expireTime;
     }
 
-    
-
     public CertificateResp withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * SSL证书的创建时间。 UTC时间，格式为：yyyy-MM-dd HH:mm:ss ，如2020-05-28 08:30:09
-     * @return createTime
-     */
+    /** SSL证书的创建时间。 UTC时间，格式为：yyyy-MM-dd HH:mm:ss ，如2020-05-28 08:30:09
+     * 
+     * @return createTime */
     public String getCreateTime() {
         return createTime;
     }
@@ -411,20 +320,14 @@ public class CertificateResp  {
         this.createTime = createTime;
     }
 
-    
-
     public CertificateResp withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * SSL证书的更新时间。 UTC时间，格式为：yyyy-MM-dd HH:mm:ss ，如2020-05-28 08:30:09
-     * @return updateTime
-     */
+    /** SSL证书的更新时间。 UTC时间，格式为：yyyy-MM-dd HH:mm:ss ，如2020-05-28 08:30:09
+     * 
+     * @return updateTime */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -432,8 +335,6 @@ public class CertificateResp  {
     public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -444,23 +345,34 @@ public class CertificateResp  {
             return false;
         }
         CertificateResp certificateResp = (CertificateResp) o;
-        return Objects.equals(this.id, certificateResp.id) &&
-            Objects.equals(this.tenantId, certificateResp.tenantId) &&
-            Objects.equals(this.adminStateUp, certificateResp.adminStateUp) &&
-            Objects.equals(this.name, certificateResp.name) &&
-            Objects.equals(this.description, certificateResp.description) &&
-            Objects.equals(this.type, certificateResp.type) &&
-            Objects.equals(this.domain, certificateResp.domain) &&
-            Objects.equals(this.privateKey, certificateResp.privateKey) &&
-            Objects.equals(this.certificate, certificateResp.certificate) &&
-            Objects.equals(this.expireTime, certificateResp.expireTime) &&
-            Objects.equals(this.createTime, certificateResp.createTime) &&
-            Objects.equals(this.updateTime, certificateResp.updateTime);
+        return Objects.equals(this.id, certificateResp.id) && Objects.equals(this.tenantId, certificateResp.tenantId)
+            && Objects.equals(this.adminStateUp, certificateResp.adminStateUp)
+            && Objects.equals(this.name, certificateResp.name)
+            && Objects.equals(this.description, certificateResp.description)
+            && Objects.equals(this.type, certificateResp.type) && Objects.equals(this.domain, certificateResp.domain)
+            && Objects.equals(this.privateKey, certificateResp.privateKey)
+            && Objects.equals(this.certificate, certificateResp.certificate)
+            && Objects.equals(this.expireTime, certificateResp.expireTime)
+            && Objects.equals(this.createTime, certificateResp.createTime)
+            && Objects.equals(this.updateTime, certificateResp.updateTime);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, tenantId, adminStateUp, name, description, type, domain, privateKey, certificate, expireTime, createTime, updateTime);
+        return Objects.hash(id,
+            tenantId,
+            adminStateUp,
+            name,
+            description,
+            type,
+            domain,
+            privateKey,
+            certificate,
+            expireTime,
+            createTime,
+            updateTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -480,16 +392,13 @@ public class CertificateResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

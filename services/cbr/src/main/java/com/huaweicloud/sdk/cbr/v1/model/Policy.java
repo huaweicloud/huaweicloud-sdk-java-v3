@@ -1,70 +1,49 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.PolicyAssociateVault;
-import com.huaweicloud.sdk.cbr.v1.model.PolicyTriggerResp;
-import com.huaweicloud.sdk.cbr.v1.model.PolicyoODCreate;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Policy
- */
-public class Policy  {
-
-
+/** Policy */
+public class Policy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enabled")
-    
+    @JsonProperty(value = "enabled")
+
     private Boolean enabled;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operation_definition")
-    
+    @JsonProperty(value = "operation_definition")
+
     private PolicyoODCreate operationDefinition;
-    /**
-     * 策略类型,例如 ‘backup’：自动备份
-     */
+
+    /** 策略类型,例如 ‘backup’：自动备份 */
     public static final class OperationTypeEnum {
 
-        
-        /**
-         * Enum BACKUP for value: "backup"
-         */
+        /** Enum BACKUP for value: "backup" */
         public static final OperationTypeEnum BACKUP = new OperationTypeEnum("backup");
-        
-        /**
-         * Enum REPLICATION for value: "replication"
-         */
+
+        /** Enum REPLICATION for value: "replication" */
         public static final OperationTypeEnum REPLICATION = new OperationTypeEnum("replication");
-        
 
         private static final Map<String, OperationTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -93,7 +72,7 @@ public class Policy  {
 
         @JsonCreator
         public static OperationTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OperationTypeEnum result = STATIC_FIELDS.get(value);
@@ -104,7 +83,7 @@ public class Policy  {
         }
 
         public static OperationTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OperationTypeEnum result = STATIC_FIELDS.get(value);
@@ -128,36 +107,29 @@ public class Policy  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operation_type")
-    
+    @JsonProperty(value = "operation_type")
+
     private OperationTypeEnum operationType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trigger")
-    
+    @JsonProperty(value = "trigger")
+
     private PolicyTriggerResp trigger;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="associated_vaults")
-    
+    @JsonProperty(value = "associated_vaults")
+
     private List<PolicyAssociateVault> associatedVaults = null;
-    
+
     public Policy withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略是否启用
-     * @return enabled
-     */
+    /** 策略是否启用
+     * 
+     * @return enabled */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -166,20 +138,14 @@ public class Policy  {
         this.enabled = enabled;
     }
 
-    
-
     public Policy withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略ID
-     * @return id
-     */
+    /** 策略ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -188,20 +154,14 @@ public class Policy  {
         this.id = id;
     }
 
-    
-
     public Policy withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略名称
-     * @return name
-     */
+    /** 策略名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -210,27 +170,23 @@ public class Policy  {
         this.name = name;
     }
 
-    
-
     public Policy withOperationDefinition(PolicyoODCreate operationDefinition) {
         this.operationDefinition = operationDefinition;
         return this;
     }
 
     public Policy withOperationDefinition(Consumer<PolicyoODCreate> operationDefinitionSetter) {
-        if(this.operationDefinition == null ){
+        if (this.operationDefinition == null) {
             this.operationDefinition = new PolicyoODCreate();
             operationDefinitionSetter.accept(this.operationDefinition);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get operationDefinition
-     * @return operationDefinition
-     */
+    /** Get operationDefinition
+     * 
+     * @return operationDefinition */
     public PolicyoODCreate getOperationDefinition() {
         return operationDefinition;
     }
@@ -239,20 +195,14 @@ public class Policy  {
         this.operationDefinition = operationDefinition;
     }
 
-    
-
     public Policy withOperationType(OperationTypeEnum operationType) {
         this.operationType = operationType;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略类型,例如 ‘backup’：自动备份
-     * @return operationType
-     */
+    /** 策略类型,例如 ‘backup’：自动备份
+     * 
+     * @return operationType */
     public OperationTypeEnum getOperationType() {
         return operationType;
     }
@@ -261,27 +211,23 @@ public class Policy  {
         this.operationType = operationType;
     }
 
-    
-
     public Policy withTrigger(PolicyTriggerResp trigger) {
         this.trigger = trigger;
         return this;
     }
 
     public Policy withTrigger(Consumer<PolicyTriggerResp> triggerSetter) {
-        if(this.trigger == null ){
+        if (this.trigger == null) {
             this.trigger = new PolicyTriggerResp();
             triggerSetter.accept(this.trigger);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get trigger
-     * @return trigger
-     */
+    /** Get trigger
+     * 
+     * @return trigger */
     public PolicyTriggerResp getTrigger() {
         return trigger;
     }
@@ -290,16 +236,13 @@ public class Policy  {
         this.trigger = trigger;
     }
 
-    
-
     public Policy withAssociatedVaults(List<PolicyAssociateVault> associatedVaults) {
         this.associatedVaults = associatedVaults;
         return this;
     }
 
-    
     public Policy addAssociatedVaultsItem(PolicyAssociateVault associatedVaultsItem) {
-        if(this.associatedVaults == null) {
+        if (this.associatedVaults == null) {
             this.associatedVaults = new ArrayList<>();
         }
         this.associatedVaults.add(associatedVaultsItem);
@@ -307,17 +250,16 @@ public class Policy  {
     }
 
     public Policy withAssociatedVaults(Consumer<List<PolicyAssociateVault>> associatedVaultsSetter) {
-        if(this.associatedVaults == null) {
+        if (this.associatedVaults == null) {
             this.associatedVaults = new ArrayList<>();
         }
         associatedVaultsSetter.accept(this.associatedVaults);
         return this;
     }
 
-    /**
-     * 关联的存储库
-     * @return associatedVaults
-     */
+    /** 关联的存储库
+     * 
+     * @return associatedVaults */
     public List<PolicyAssociateVault> getAssociatedVaults() {
         return associatedVaults;
     }
@@ -325,8 +267,6 @@ public class Policy  {
     public void setAssociatedVaults(List<PolicyAssociateVault> associatedVaults) {
         this.associatedVaults = associatedVaults;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -337,18 +277,18 @@ public class Policy  {
             return false;
         }
         Policy policy = (Policy) o;
-        return Objects.equals(this.enabled, policy.enabled) &&
-            Objects.equals(this.id, policy.id) &&
-            Objects.equals(this.name, policy.name) &&
-            Objects.equals(this.operationDefinition, policy.operationDefinition) &&
-            Objects.equals(this.operationType, policy.operationType) &&
-            Objects.equals(this.trigger, policy.trigger) &&
-            Objects.equals(this.associatedVaults, policy.associatedVaults);
+        return Objects.equals(this.enabled, policy.enabled) && Objects.equals(this.id, policy.id)
+            && Objects.equals(this.name, policy.name)
+            && Objects.equals(this.operationDefinition, policy.operationDefinition)
+            && Objects.equals(this.operationType, policy.operationType) && Objects.equals(this.trigger, policy.trigger)
+            && Objects.equals(this.associatedVaults, policy.associatedVaults);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(enabled, id, name, operationDefinition, operationType, trigger, associatedVaults);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -363,16 +303,13 @@ public class Policy  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

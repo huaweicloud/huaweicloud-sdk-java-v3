@@ -1,51 +1,37 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.MbTaskParameter;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * MbTasksReportReq
- */
-public class MbTasksReportReq  {
-
-
+/** MbTasksReportReq */
+public class MbTasksReportReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
+    @JsonProperty(value = "task_id")
+
     private String taskId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_name")
-    
+    @JsonProperty(value = "task_name")
+
     private String taskName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="retry")
-    
+    @JsonProperty(value = "retry")
+
     private Boolean retry;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parameter")
-    
+    @JsonProperty(value = "parameter")
+
     private MbTaskParameter parameter;
 
     public MbTasksReportReq withTaskId(String taskId) {
@@ -53,13 +39,9 @@ public class MbTasksReportReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID。 如果返回值为200 OK，为接受任务后产生的任务ID。 
-     * @return taskId
-     */
+    /** 任务ID。 如果返回值为200 OK，为接受任务后产生的任务ID。
+     * 
+     * @return taskId */
     public String getTaskId() {
         return taskId;
     }
@@ -68,20 +50,14 @@ public class MbTasksReportReq  {
         this.taskId = taskId;
     }
 
-    
-
     public MbTasksReportReq withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务执行状态。 取值为RUNNING/FINISHED/FAILED。 
-     * @return status
-     */
+    /** 任务执行状态。 取值为RUNNING/FINISHED/FAILED。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -90,20 +66,14 @@ public class MbTasksReportReq  {
         this.status = status;
     }
 
-    
-
     public MbTasksReportReq withTaskName(String taskName) {
         this.taskName = taskName;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务名称。 取值为RESET_TRACKS/MERGE_CHANNELS。 
-     * @return taskName
-     */
+    /** 任务名称。 取值为RESET_TRACKS/MERGE_CHANNELS。
+     * 
+     * @return taskName */
     public String getTaskName() {
         return taskName;
     }
@@ -112,20 +82,14 @@ public class MbTasksReportReq  {
         this.taskName = taskName;
     }
 
-    
-
     public MbTasksReportReq withRetry(Boolean retry) {
         this.retry = retry;
         return this;
     }
 
-    
-
-
-    /**
-     * 失败任务是否重试。 
-     * @return retry
-     */
+    /** 失败任务是否重试。
+     * 
+     * @return retry */
     public Boolean getRetry() {
         return retry;
     }
@@ -134,27 +98,23 @@ public class MbTasksReportReq  {
         this.retry = retry;
     }
 
-    
-
     public MbTasksReportReq withParameter(MbTaskParameter parameter) {
         this.parameter = parameter;
         return this;
     }
 
     public MbTasksReportReq withParameter(Consumer<MbTaskParameter> parameterSetter) {
-        if(this.parameter == null ){
+        if (this.parameter == null) {
             this.parameter = new MbTaskParameter();
             parameterSetter.accept(this.parameter);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get parameter
-     * @return parameter
-     */
+    /** Get parameter
+     * 
+     * @return parameter */
     public MbTaskParameter getParameter() {
         return parameter;
     }
@@ -162,8 +122,6 @@ public class MbTasksReportReq  {
     public void setParameter(MbTaskParameter parameter) {
         this.parameter = parameter;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -174,16 +132,18 @@ public class MbTasksReportReq  {
             return false;
         }
         MbTasksReportReq mbTasksReportReq = (MbTasksReportReq) o;
-        return Objects.equals(this.taskId, mbTasksReportReq.taskId) &&
-            Objects.equals(this.status, mbTasksReportReq.status) &&
-            Objects.equals(this.taskName, mbTasksReportReq.taskName) &&
-            Objects.equals(this.retry, mbTasksReportReq.retry) &&
-            Objects.equals(this.parameter, mbTasksReportReq.parameter);
+        return Objects.equals(this.taskId, mbTasksReportReq.taskId)
+            && Objects.equals(this.status, mbTasksReportReq.status)
+            && Objects.equals(this.taskName, mbTasksReportReq.taskName)
+            && Objects.equals(this.retry, mbTasksReportReq.retry)
+            && Objects.equals(this.parameter, mbTasksReportReq.parameter);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(taskId, status, taskName, retry, parameter);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -196,16 +156,13 @@ public class MbTasksReportReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

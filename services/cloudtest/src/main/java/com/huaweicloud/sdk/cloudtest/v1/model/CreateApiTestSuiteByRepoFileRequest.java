@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.cloudtest.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cloudtest.v1.model.CreateTestSuitByRepoFileInfo;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateApiTestSuiteByRepoFileRequest  {
-
-
+/** Request Object */
+public class CreateApiTestSuiteByRepoFileRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private CreateTestSuitByRepoFileInfo body;
 
     public CreateApiTestSuiteByRepoFileRequest withProjectId(String projectId) {
@@ -35,13 +24,9 @@ public class CreateApiTestSuiteByRepoFileRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * devcloud的项目ID
-     * @return projectId
-     */
+    /** devcloud的项目ID
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -50,27 +35,23 @@ public class CreateApiTestSuiteByRepoFileRequest  {
         this.projectId = projectId;
     }
 
-    
-
     public CreateApiTestSuiteByRepoFileRequest withBody(CreateTestSuitByRepoFileInfo body) {
         this.body = body;
         return this;
     }
 
     public CreateApiTestSuiteByRepoFileRequest withBody(Consumer<CreateTestSuitByRepoFileInfo> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CreateTestSuitByRepoFileInfo();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public CreateTestSuitByRepoFileInfo getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class CreateApiTestSuiteByRepoFileRequest  {
     public void setBody(CreateTestSuitByRepoFileInfo body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -89,14 +68,17 @@ public class CreateApiTestSuiteByRepoFileRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CreateApiTestSuiteByRepoFileRequest createApiTestSuiteByRepoFileRequest = (CreateApiTestSuiteByRepoFileRequest) o;
-        return Objects.equals(this.projectId, createApiTestSuiteByRepoFileRequest.projectId) &&
-            Objects.equals(this.body, createApiTestSuiteByRepoFileRequest.body);
+        CreateApiTestSuiteByRepoFileRequest createApiTestSuiteByRepoFileRequest =
+            (CreateApiTestSuiteByRepoFileRequest) o;
+        return Objects.equals(this.projectId, createApiTestSuiteByRepoFileRequest.projectId)
+            && Objects.equals(this.body, createApiTestSuiteByRepoFileRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(projectId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +88,13 @@ public class CreateApiTestSuiteByRepoFileRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

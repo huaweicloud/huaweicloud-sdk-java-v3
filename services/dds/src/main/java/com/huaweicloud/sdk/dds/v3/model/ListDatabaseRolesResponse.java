@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListDatabaseRolesResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roles")
-    
+    @JsonProperty(value = "roles")
+
     private String roles;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
-    
+    @JsonProperty(value = "total_count")
+
     private Integer totalCount;
 
     public ListDatabaseRolesResponse withRoles(String roles) {
@@ -36,13 +24,9 @@ public class ListDatabaseRolesResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库角色信息。
-     * @return roles
-     */
+    /** 数据库角色信息。
+     * 
+     * @return roles */
     public String getRoles() {
         return roles;
     }
@@ -51,20 +35,14 @@ public class ListDatabaseRolesResponse extends SdkResponse {
         this.roles = roles;
     }
 
-    
-
     public ListDatabaseRolesResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库角色总数。
-     * @return totalCount
-     */
+    /** 数据库角色总数。
+     * 
+     * @return totalCount */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -72,8 +50,6 @@ public class ListDatabaseRolesResponse extends SdkResponse {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +60,15 @@ public class ListDatabaseRolesResponse extends SdkResponse {
             return false;
         }
         ListDatabaseRolesResponse listDatabaseRolesResponse = (ListDatabaseRolesResponse) o;
-        return Objects.equals(this.roles, listDatabaseRolesResponse.roles) &&
-            Objects.equals(this.totalCount, listDatabaseRolesResponse.totalCount);
+        return Objects.equals(this.roles, listDatabaseRolesResponse.roles)
+            && Objects.equals(this.totalCount, listDatabaseRolesResponse.totalCount);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(roles, totalCount);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +78,13 @@ public class ListDatabaseRolesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.ClusterCert;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Clusters
- */
-public class Clusters  {
-
-
+/** Clusters */
+public class Clusters {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster")
-    
+    @JsonProperty(value = "cluster")
+
     private ClusterCert cluster;
 
     public Clusters withName(String name) {
@@ -35,13 +24,10 @@ public class Clusters  {
         return this;
     }
 
-    
-
-
-    /**
-     * 集群名字。 - 若不存在publicIp（虚拟机弹性IP），则集群列表的集群数量为1，该字段值为“internalCluster”。 - 若存在publicIp，则集群列表的集群数量大于1，所有扩展的cluster的name的值为“externalCluster”。 
-     * @return name
-     */
+    /** 集群名字。 - 若不存在publicIp（虚拟机弹性IP），则集群列表的集群数量为1，该字段值为“internalCluster”。 -
+     * 若存在publicIp，则集群列表的集群数量大于1，所有扩展的cluster的name的值为“externalCluster”。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -50,27 +36,23 @@ public class Clusters  {
         this.name = name;
     }
 
-    
-
     public Clusters withCluster(ClusterCert cluster) {
         this.cluster = cluster;
         return this;
     }
 
     public Clusters withCluster(Consumer<ClusterCert> clusterSetter) {
-        if(this.cluster == null ){
+        if (this.cluster == null) {
             this.cluster = new ClusterCert();
             clusterSetter.accept(this.cluster);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get cluster
-     * @return cluster
-     */
+    /** Get cluster
+     * 
+     * @return cluster */
     public ClusterCert getCluster() {
         return cluster;
     }
@@ -78,8 +60,6 @@ public class Clusters  {
     public void setCluster(ClusterCert cluster) {
         this.cluster = cluster;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +70,14 @@ public class Clusters  {
             return false;
         }
         Clusters clusters = (Clusters) o;
-        return Objects.equals(this.name, clusters.name) &&
-            Objects.equals(this.cluster, clusters.cluster);
+        return Objects.equals(this.name, clusters.name) && Objects.equals(this.cluster, clusters.cluster);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, cluster);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class Clusters  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

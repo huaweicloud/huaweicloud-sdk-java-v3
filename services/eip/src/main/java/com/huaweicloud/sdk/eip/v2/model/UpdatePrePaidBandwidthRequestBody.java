@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.eip.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.UpdatePrePaidBandwidthExtendParamOption;
-import com.huaweicloud.sdk.eip.v2.model.UpdatePrePaidBandwidthOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 更新带宽的请求体
- */
-public class UpdatePrePaidBandwidthRequestBody  {
-
-
+/** 更新带宽的请求体 */
+public class UpdatePrePaidBandwidthRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bandwidth")
-    
+    @JsonProperty(value = "bandwidth")
+
     private UpdatePrePaidBandwidthOption bandwidth;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extendParam")
-    
+    @JsonProperty(value = "extendParam")
+
     private UpdatePrePaidBandwidthExtendParamOption extendParam;
 
     public UpdatePrePaidBandwidthRequestBody withBandwidth(UpdatePrePaidBandwidthOption bandwidth) {
@@ -37,19 +25,17 @@ public class UpdatePrePaidBandwidthRequestBody  {
     }
 
     public UpdatePrePaidBandwidthRequestBody withBandwidth(Consumer<UpdatePrePaidBandwidthOption> bandwidthSetter) {
-        if(this.bandwidth == null ){
+        if (this.bandwidth == null) {
             this.bandwidth = new UpdatePrePaidBandwidthOption();
             bandwidthSetter.accept(this.bandwidth);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get bandwidth
-     * @return bandwidth
-     */
+    /** Get bandwidth
+     * 
+     * @return bandwidth */
     public UpdatePrePaidBandwidthOption getBandwidth() {
         return bandwidth;
     }
@@ -58,27 +44,24 @@ public class UpdatePrePaidBandwidthRequestBody  {
         this.bandwidth = bandwidth;
     }
 
-    
-
     public UpdatePrePaidBandwidthRequestBody withExtendParam(UpdatePrePaidBandwidthExtendParamOption extendParam) {
         this.extendParam = extendParam;
         return this;
     }
 
-    public UpdatePrePaidBandwidthRequestBody withExtendParam(Consumer<UpdatePrePaidBandwidthExtendParamOption> extendParamSetter) {
-        if(this.extendParam == null ){
+    public UpdatePrePaidBandwidthRequestBody withExtendParam(
+        Consumer<UpdatePrePaidBandwidthExtendParamOption> extendParamSetter) {
+        if (this.extendParam == null) {
             this.extendParam = new UpdatePrePaidBandwidthExtendParamOption();
             extendParamSetter.accept(this.extendParam);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get extendParam
-     * @return extendParam
-     */
+    /** Get extendParam
+     * 
+     * @return extendParam */
     public UpdatePrePaidBandwidthExtendParamOption getExtendParam() {
         return extendParam;
     }
@@ -86,8 +69,6 @@ public class UpdatePrePaidBandwidthRequestBody  {
     public void setExtendParam(UpdatePrePaidBandwidthExtendParamOption extendParam) {
         this.extendParam = extendParam;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -98,13 +79,15 @@ public class UpdatePrePaidBandwidthRequestBody  {
             return false;
         }
         UpdatePrePaidBandwidthRequestBody updatePrePaidBandwidthRequestBody = (UpdatePrePaidBandwidthRequestBody) o;
-        return Objects.equals(this.bandwidth, updatePrePaidBandwidthRequestBody.bandwidth) &&
-            Objects.equals(this.extendParam, updatePrePaidBandwidthRequestBody.extendParam);
+        return Objects.equals(this.bandwidth, updatePrePaidBandwidthRequestBody.bandwidth)
+            && Objects.equals(this.extendParam, updatePrePaidBandwidthRequestBody.extendParam);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(bandwidth, extendParam);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,16 +97,13 @@ public class UpdatePrePaidBandwidthRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

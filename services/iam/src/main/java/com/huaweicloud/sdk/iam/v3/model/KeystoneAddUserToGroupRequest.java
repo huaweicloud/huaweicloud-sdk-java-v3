@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class KeystoneAddUserToGroupRequest  {
-
-
+/** Request Object */
+public class KeystoneAddUserToGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_id")
-    
+    @JsonProperty(value = "user_id")
+
     private String userId;
 
     public KeystoneAddUserToGroupRequest withGroupId(String groupId) {
@@ -34,13 +23,9 @@ public class KeystoneAddUserToGroupRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 用户组ID，获取方式请参见：[获取用户组ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * @return groupId
-     */
+    /** 用户组ID，获取方式请参见：[获取用户组ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -49,20 +34,14 @@ public class KeystoneAddUserToGroupRequest  {
         this.groupId = groupId;
     }
 
-    
-
     public KeystoneAddUserToGroupRequest withUserId(String userId) {
         this.userId = userId;
         return this;
     }
 
-    
-
-
-    /**
-     * 待添加的IAM用户ID，获取方式请参见：[获取IAM用户ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * @return userId
-     */
+    /** 待添加的IAM用户ID，获取方式请参见：[获取IAM用户ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * 
+     * @return userId */
     public String getUserId() {
         return userId;
     }
@@ -70,8 +49,6 @@ public class KeystoneAddUserToGroupRequest  {
     public void setUserId(String userId) {
         this.userId = userId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class KeystoneAddUserToGroupRequest  {
             return false;
         }
         KeystoneAddUserToGroupRequest keystoneAddUserToGroupRequest = (KeystoneAddUserToGroupRequest) o;
-        return Objects.equals(this.groupId, keystoneAddUserToGroupRequest.groupId) &&
-            Objects.equals(this.userId, keystoneAddUserToGroupRequest.userId);
+        return Objects.equals(this.groupId, keystoneAddUserToGroupRequest.groupId)
+            && Objects.equals(this.userId, keystoneAddUserToGroupRequest.userId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(groupId, userId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class KeystoneAddUserToGroupRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

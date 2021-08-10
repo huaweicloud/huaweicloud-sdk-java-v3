@@ -1,45 +1,32 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.time.OffsetDateTime;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * EnvInfo
- */
-public class EnvInfo  {
-
-
+/** EnvInfo */
+public class EnvInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private OffsetDateTime createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
+
     private String remark;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
     public EnvInfo withCreateTime(OffsetDateTime createTime) {
@@ -47,13 +34,9 @@ public class EnvInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return createTime
-     */
+    /** 创建时间
+     * 
+     * @return createTime */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -62,20 +45,14 @@ public class EnvInfo  {
         this.createTime = createTime;
     }
 
-    
-
     public EnvInfo withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境名称
-     * @return name
-     */
+    /** 环境名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -84,20 +61,14 @@ public class EnvInfo  {
         this.name = name;
     }
 
-    
-
     public EnvInfo withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述信息
-     * @return remark
-     */
+    /** 描述信息
+     * 
+     * @return remark */
     public String getRemark() {
         return remark;
     }
@@ -106,20 +77,14 @@ public class EnvInfo  {
         this.remark = remark;
     }
 
-    
-
     public EnvInfo withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境编号
-     * @return id
-     */
+    /** 环境编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -127,8 +92,6 @@ public class EnvInfo  {
     public void setId(String id) {
         this.id = id;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -139,15 +102,15 @@ public class EnvInfo  {
             return false;
         }
         EnvInfo envInfo = (EnvInfo) o;
-        return Objects.equals(this.createTime, envInfo.createTime) &&
-            Objects.equals(this.name, envInfo.name) &&
-            Objects.equals(this.remark, envInfo.remark) &&
-            Objects.equals(this.id, envInfo.id);
+        return Objects.equals(this.createTime, envInfo.createTime) && Objects.equals(this.name, envInfo.name)
+            && Objects.equals(this.remark, envInfo.remark) && Objects.equals(this.id, envInfo.id);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(createTime, name, remark, id);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -159,16 +122,13 @@ public class EnvInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

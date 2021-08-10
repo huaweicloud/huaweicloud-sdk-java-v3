@@ -1,220 +1,175 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.Authentication;
-import com.huaweicloud.sdk.roma.v2.model.CreatedUser;
-import com.huaweicloud.sdk.roma.v2.model.LastUpdatedUser;
-import com.huaweicloud.sdk.roma.v2.model.ProductReferer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class UpdateDeviceResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="permissions")
-    
+    @JsonProperty(value = "permissions")
+
     private List<String> permissions = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Integer id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parent_device_id")
-    
+    @JsonProperty(value = "parent_device_id")
+
     private Integer parentDeviceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parent_device_name")
-    
+    @JsonProperty(value = "parent_device_name")
+
     private String parentDeviceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product")
-    
+    @JsonProperty(value = "product")
+
     private ProductReferer product;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_name")
-    
+    @JsonProperty(value = "device_name")
+
     private String deviceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="client_id")
-    
+    @JsonProperty(value = "client_id")
+
     private String clientId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
+
     private String nodeId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_name")
-    
+    @JsonProperty(value = "app_name")
+
     private String appName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="online_status")
-    
+    @JsonProperty(value = "online_status")
+
     private Integer onlineStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="authentication")
-    
+    @JsonProperty(value = "authentication")
+
     private Authentication authentication;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_user")
-    
+    @JsonProperty(value = "created_user")
+
     private CreatedUser createdUser;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_updated_user")
-    
+    @JsonProperty(value = "last_updated_user")
+
     private LastUpdatedUser lastUpdatedUser;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<String> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_datetime")
-    
+    @JsonProperty(value = "created_datetime")
+
     private Long createdDatetime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_updated_datetime")
-    
+    @JsonProperty(value = "last_updated_datetime")
+
     private Long lastUpdatedDatetime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="connect_address")
-    
+    @JsonProperty(value = "connect_address")
+
     private String connectAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ssl_connect_address")
-    
+    @JsonProperty(value = "ssl_connect_address")
+
     private String sslConnectAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ipv6_connect_address")
-    
+    @JsonProperty(value = "ipv6_connect_address")
+
     private String ipv6ConnectAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ipv6_ssl_connect_address")
-    
+    @JsonProperty(value = "ipv6_ssl_connect_address")
+
     private String ipv6SslConnectAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_login_datetime")
-    
+    @JsonProperty(value = "last_login_datetime")
+
     private Long lastLoginDatetime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_type")
-    
+    @JsonProperty(value = "node_type")
+
     private Integer nodeType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_type")
-    
+    @JsonProperty(value = "device_type")
+
     private Integer deviceType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="client_ip")
-    
+    @JsonProperty(value = "client_ip")
+
     private String clientIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="keep_alive")
-    
+    @JsonProperty(value = "keep_alive")
+
     private String keepAlive;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_active_time")
-    
+    @JsonProperty(value = "last_active_time")
+
     private Long lastActiveTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="plugin_id")
-    
+    @JsonProperty(value = "plugin_id")
+
     private Integer pluginId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
     public UpdateDeviceResponse withPermissions(List<String> permissions) {
@@ -222,9 +177,8 @@ public class UpdateDeviceResponse extends SdkResponse {
         return this;
     }
 
-    
     public UpdateDeviceResponse addPermissionsItem(String permissionsItem) {
-        if(this.permissions == null) {
+        if (this.permissions == null) {
             this.permissions = new ArrayList<>();
         }
         this.permissions.add(permissionsItem);
@@ -232,17 +186,16 @@ public class UpdateDeviceResponse extends SdkResponse {
     }
 
     public UpdateDeviceResponse withPermissions(Consumer<List<String>> permissionsSetter) {
-        if(this.permissions == null) {
+        if (this.permissions == null) {
             this.permissions = new ArrayList<>();
         }
         permissionsSetter.accept(this.permissions);
         return this;
     }
 
-    /**
-     * 权限
-     * @return permissions
-     */
+    /** 权限
+     * 
+     * @return permissions */
     public List<String> getPermissions() {
         return permissions;
     }
@@ -251,22 +204,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.permissions = permissions;
     }
 
-    
-
     public UpdateDeviceResponse withId(Integer id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备ID
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return id
-     */
+    /** 设备ID minimum: 1 maximum: 999999999999999999
+     * 
+     * @return id */
     public Integer getId() {
         return id;
     }
@@ -275,22 +220,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public UpdateDeviceResponse withParentDeviceId(Integer parentDeviceId) {
         this.parentDeviceId = parentDeviceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 父设备ID
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return parentDeviceId
-     */
+    /** 父设备ID minimum: 1 maximum: 999999999999999999
+     * 
+     * @return parentDeviceId */
     public Integer getParentDeviceId() {
         return parentDeviceId;
     }
@@ -299,20 +236,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.parentDeviceId = parentDeviceId;
     }
 
-    
-
     public UpdateDeviceResponse withParentDeviceName(String parentDeviceName) {
         this.parentDeviceName = parentDeviceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 父设备名称
-     * @return parentDeviceName
-     */
+    /** 父设备名称
+     * 
+     * @return parentDeviceName */
     public String getParentDeviceName() {
         return parentDeviceName;
     }
@@ -321,27 +252,23 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.parentDeviceName = parentDeviceName;
     }
 
-    
-
     public UpdateDeviceResponse withProduct(ProductReferer product) {
         this.product = product;
         return this;
     }
 
     public UpdateDeviceResponse withProduct(Consumer<ProductReferer> productSetter) {
-        if(this.product == null ){
+        if (this.product == null) {
             this.product = new ProductReferer();
             productSetter.accept(this.product);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get product
-     * @return product
-     */
+    /** Get product
+     * 
+     * @return product */
     public ProductReferer getProduct() {
         return product;
     }
@@ -350,20 +277,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.product = product;
     }
 
-    
-
     public UpdateDeviceResponse withDeviceName(String deviceName) {
         this.deviceName = deviceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备名称，支持中文、中文标点符号（）。；，：“”、？《》及英文大小写、数字及英文符号()_,#.?'-@%&!, 长度2-64
-     * @return deviceName
-     */
+    /** 设备名称，支持中文、中文标点符号（）。；，：“”、？《》及英文大小写、数字及英文符号()_,#.?'-@%&!, 长度2-64
+     * 
+     * @return deviceName */
     public String getDeviceName() {
         return deviceName;
     }
@@ -372,20 +293,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.deviceName = deviceName;
     }
 
-    
-
     public UpdateDeviceResponse withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例id
-     * @return instanceId
-     */
+    /** 实例id
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -394,20 +309,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.instanceId = instanceId;
     }
 
-    
-
     public UpdateDeviceResponse withClientId(String clientId) {
         this.clientId = clientId;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备客户端ID，平台生成的设备唯一标识
-     * @return clientId
-     */
+    /** 设备客户端ID，平台生成的设备唯一标识
+     * 
+     * @return clientId */
     public String getClientId() {
         return clientId;
     }
@@ -416,20 +325,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.clientId = clientId;
     }
 
-    
-
     public UpdateDeviceResponse withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备物理编号，通常使用MAC或者IMEI号，支持英文大小写，数字，下划线和中划线，长度2-64
-     * @return nodeId
-     */
+    /** 设备物理编号，通常使用MAC或者IMEI号，支持英文大小写，数字，下划线和中划线，长度2-64
+     * 
+     * @return nodeId */
     public String getNodeId() {
         return nodeId;
     }
@@ -438,20 +341,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.nodeId = nodeId;
     }
 
-    
-
     public UpdateDeviceResponse withAppName(String appName) {
         this.appName = appName;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名称
-     * @return appName
-     */
+    /** 应用名称
+     * 
+     * @return appName */
     public String getAppName() {
         return appName;
     }
@@ -460,22 +357,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.appName = appName;
     }
 
-    
-
     public UpdateDeviceResponse withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备状态 0-启用 1-禁用
-     * minimum: 0
-     * maximum: 10
-     * @return status
-     */
+    /** 设备状态 0-启用 1-禁用 minimum: 0 maximum: 10
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -484,22 +373,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public UpdateDeviceResponse withOnlineStatus(Integer onlineStatus) {
         this.onlineStatus = onlineStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否在线 0-未连接 1-在线 2-离线
-     * minimum: 0
-     * maximum: 10
-     * @return onlineStatus
-     */
+    /** 是否在线 0-未连接 1-在线 2-离线 minimum: 0 maximum: 10
+     * 
+     * @return onlineStatus */
     public Integer getOnlineStatus() {
         return onlineStatus;
     }
@@ -508,20 +389,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.onlineStatus = onlineStatus;
     }
 
-    
-
     public UpdateDeviceResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 备注
-     * @return description
-     */
+    /** 备注
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -530,27 +405,23 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public UpdateDeviceResponse withAuthentication(Authentication authentication) {
         this.authentication = authentication;
         return this;
     }
 
     public UpdateDeviceResponse withAuthentication(Consumer<Authentication> authenticationSetter) {
-        if(this.authentication == null ){
+        if (this.authentication == null) {
             this.authentication = new Authentication();
             authenticationSetter.accept(this.authentication);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get authentication
-     * @return authentication
-     */
+    /** Get authentication
+     * 
+     * @return authentication */
     public Authentication getAuthentication() {
         return authentication;
     }
@@ -559,27 +430,23 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.authentication = authentication;
     }
 
-    
-
     public UpdateDeviceResponse withCreatedUser(CreatedUser createdUser) {
         this.createdUser = createdUser;
         return this;
     }
 
     public UpdateDeviceResponse withCreatedUser(Consumer<CreatedUser> createdUserSetter) {
-        if(this.createdUser == null ){
+        if (this.createdUser == null) {
             this.createdUser = new CreatedUser();
             createdUserSetter.accept(this.createdUser);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get createdUser
-     * @return createdUser
-     */
+    /** Get createdUser
+     * 
+     * @return createdUser */
     public CreatedUser getCreatedUser() {
         return createdUser;
     }
@@ -588,27 +455,23 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.createdUser = createdUser;
     }
 
-    
-
     public UpdateDeviceResponse withLastUpdatedUser(LastUpdatedUser lastUpdatedUser) {
         this.lastUpdatedUser = lastUpdatedUser;
         return this;
     }
 
     public UpdateDeviceResponse withLastUpdatedUser(Consumer<LastUpdatedUser> lastUpdatedUserSetter) {
-        if(this.lastUpdatedUser == null ){
+        if (this.lastUpdatedUser == null) {
             this.lastUpdatedUser = new LastUpdatedUser();
             lastUpdatedUserSetter.accept(this.lastUpdatedUser);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get lastUpdatedUser
-     * @return lastUpdatedUser
-     */
+    /** Get lastUpdatedUser
+     * 
+     * @return lastUpdatedUser */
     public LastUpdatedUser getLastUpdatedUser() {
         return lastUpdatedUser;
     }
@@ -617,16 +480,13 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.lastUpdatedUser = lastUpdatedUser;
     }
 
-    
-
     public UpdateDeviceResponse withTags(List<String> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public UpdateDeviceResponse addTagsItem(String tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -634,17 +494,16 @@ public class UpdateDeviceResponse extends SdkResponse {
     }
 
     public UpdateDeviceResponse withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 标签
-     * @return tags
-     */
+    /** 标签
+     * 
+     * @return tags */
     public List<String> getTags() {
         return tags;
     }
@@ -653,22 +512,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.tags = tags;
     }
 
-    
-
     public UpdateDeviceResponse withCreatedDatetime(Long createdDatetime) {
         this.createdDatetime = createdDatetime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间，timestamp(ms)，使用UTC时区
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return createdDatetime
-     */
+    /** 创建时间，timestamp(ms)，使用UTC时区 minimum: 1 maximum: 999999999999999999
+     * 
+     * @return createdDatetime */
     public Long getCreatedDatetime() {
         return createdDatetime;
     }
@@ -677,22 +528,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.createdDatetime = createdDatetime;
     }
 
-    
-
     public UpdateDeviceResponse withLastUpdatedDatetime(Long lastUpdatedDatetime) {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
         return this;
     }
 
-    
-
-
-    /**
-     * 最后修改时间，timestamp(ms)，使用UTC时区
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return lastUpdatedDatetime
-     */
+    /** 最后修改时间，timestamp(ms)，使用UTC时区 minimum: 1 maximum: 999999999999999999
+     * 
+     * @return lastUpdatedDatetime */
     public Long getLastUpdatedDatetime() {
         return lastUpdatedDatetime;
     }
@@ -701,20 +544,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
     }
 
-    
-
     public UpdateDeviceResponse withConnectAddress(String connectAddress) {
         this.connectAddress = connectAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备接入地址
-     * @return connectAddress
-     */
+    /** 设备接入地址
+     * 
+     * @return connectAddress */
     public String getConnectAddress() {
         return connectAddress;
     }
@@ -723,20 +560,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.connectAddress = connectAddress;
     }
 
-    
-
     public UpdateDeviceResponse withSslConnectAddress(String sslConnectAddress) {
         this.sslConnectAddress = sslConnectAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备接入SSL地址
-     * @return sslConnectAddress
-     */
+    /** 设备接入SSL地址
+     * 
+     * @return sslConnectAddress */
     public String getSslConnectAddress() {
         return sslConnectAddress;
     }
@@ -745,20 +576,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.sslConnectAddress = sslConnectAddress;
     }
 
-    
-
     public UpdateDeviceResponse withIpv6ConnectAddress(String ipv6ConnectAddress) {
         this.ipv6ConnectAddress = ipv6ConnectAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备接入IPV6地址
-     * @return ipv6ConnectAddress
-     */
+    /** 设备接入IPV6地址
+     * 
+     * @return ipv6ConnectAddress */
     public String getIpv6ConnectAddress() {
         return ipv6ConnectAddress;
     }
@@ -767,20 +592,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.ipv6ConnectAddress = ipv6ConnectAddress;
     }
 
-    
-
     public UpdateDeviceResponse withIpv6SslConnectAddress(String ipv6SslConnectAddress) {
         this.ipv6SslConnectAddress = ipv6SslConnectAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备接入IPV6 SSL地址
-     * @return ipv6SslConnectAddress
-     */
+    /** 设备接入IPV6 SSL地址
+     * 
+     * @return ipv6SslConnectAddress */
     public String getIpv6SslConnectAddress() {
         return ipv6SslConnectAddress;
     }
@@ -789,22 +608,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.ipv6SslConnectAddress = ipv6SslConnectAddress;
     }
 
-    
-
     public UpdateDeviceResponse withLastLoginDatetime(Long lastLoginDatetime) {
         this.lastLoginDatetime = lastLoginDatetime;
         return this;
     }
 
-    
-
-
-    /**
-     * 最后登录时间
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return lastLoginDatetime
-     */
+    /** 最后登录时间 minimum: 1 maximum: 999999999999999999
+     * 
+     * @return lastLoginDatetime */
     public Long getLastLoginDatetime() {
         return lastLoginDatetime;
     }
@@ -813,22 +624,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.lastLoginDatetime = lastLoginDatetime;
     }
 
-    
-
     public UpdateDeviceResponse withNodeType(Integer nodeType) {
         this.nodeType = nodeType;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点类型 0-直连 1-网关 2-子设备
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return nodeType
-     */
+    /** 节点类型 0-直连 1-网关 2-子设备 minimum: 1 maximum: 999999999999999999
+     * 
+     * @return nodeType */
     public Integer getNodeType() {
         return nodeType;
     }
@@ -837,22 +640,17 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.nodeType = nodeType;
     }
 
-    
-
     public UpdateDeviceResponse withDeviceType(Integer deviceType) {
         this.deviceType = deviceType;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备类型<br>0-普通设备（无子设备也无父设备）<br>1-网关设备(可挂载子设备)<br>2-子设备(归属于某个网关设备)
-     * minimum: 0
-     * maximum: 10
-     * @return deviceType
-     */
+    /** 设备类型<br>
+     * 0-普通设备（无子设备也无父设备）<br>
+     * 1-网关设备(可挂载子设备)<br>
+     * 2-子设备(归属于某个网关设备) minimum: 0 maximum: 10
+     * 
+     * @return deviceType */
     public Integer getDeviceType() {
         return deviceType;
     }
@@ -861,20 +659,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.deviceType = deviceType;
     }
 
-    
-
     public UpdateDeviceResponse withClientIp(String clientIp) {
         this.clientIp = clientIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 客户端ip
-     * @return clientIp
-     */
+    /** 客户端ip
+     * 
+     * @return clientIp */
     public String getClientIp() {
         return clientIp;
     }
@@ -883,20 +675,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.clientIp = clientIp;
     }
 
-    
-
     public UpdateDeviceResponse withKeepAlive(String keepAlive) {
         this.keepAlive = keepAlive;
         return this;
     }
 
-    
-
-
-    /**
-     * 心跳时间
-     * @return keepAlive
-     */
+    /** 心跳时间
+     * 
+     * @return keepAlive */
     public String getKeepAlive() {
         return keepAlive;
     }
@@ -905,22 +691,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.keepAlive = keepAlive;
     }
 
-    
-
     public UpdateDeviceResponse withLastActiveTime(Long lastActiveTime) {
         this.lastActiveTime = lastActiveTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 最后登录时间
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return lastActiveTime
-     */
+    /** 最后登录时间 minimum: 1 maximum: 999999999999999999
+     * 
+     * @return lastActiveTime */
     public Long getLastActiveTime() {
         return lastActiveTime;
     }
@@ -929,20 +707,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.lastActiveTime = lastActiveTime;
     }
 
-    
-
     public UpdateDeviceResponse withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备版本
-     * @return version
-     */
+    /** 设备版本
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -951,22 +723,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.version = version;
     }
 
-    
-
     public UpdateDeviceResponse withPluginId(Integer pluginId) {
         this.pluginId = pluginId;
         return this;
     }
 
-    
-
-
-    /**
-     * modbus和opcua设备特有,表示设备所属产品的类型 0-普通产品 1-modbus网关产品 2-opcua网关产品
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return pluginId
-     */
+    /** modbus和opcua设备特有,表示设备所属产品的类型 0-普通产品 1-modbus网关产品 2-opcua网关产品 minimum: 1 maximum: 999999999999999999
+     * 
+     * @return pluginId */
     public Integer getPluginId() {
         return pluginId;
     }
@@ -975,20 +739,14 @@ public class UpdateDeviceResponse extends SdkResponse {
         this.pluginId = pluginId;
     }
 
-    
-
     public UpdateDeviceResponse withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用ID
-     * @return appId
-     */
+    /** 应用ID
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -996,8 +754,6 @@ public class UpdateDeviceResponse extends SdkResponse {
     public void setAppId(String appId) {
         this.appId = appId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -1008,43 +764,76 @@ public class UpdateDeviceResponse extends SdkResponse {
             return false;
         }
         UpdateDeviceResponse updateDeviceResponse = (UpdateDeviceResponse) o;
-        return Objects.equals(this.permissions, updateDeviceResponse.permissions) &&
-            Objects.equals(this.id, updateDeviceResponse.id) &&
-            Objects.equals(this.parentDeviceId, updateDeviceResponse.parentDeviceId) &&
-            Objects.equals(this.parentDeviceName, updateDeviceResponse.parentDeviceName) &&
-            Objects.equals(this.product, updateDeviceResponse.product) &&
-            Objects.equals(this.deviceName, updateDeviceResponse.deviceName) &&
-            Objects.equals(this.instanceId, updateDeviceResponse.instanceId) &&
-            Objects.equals(this.clientId, updateDeviceResponse.clientId) &&
-            Objects.equals(this.nodeId, updateDeviceResponse.nodeId) &&
-            Objects.equals(this.appName, updateDeviceResponse.appName) &&
-            Objects.equals(this.status, updateDeviceResponse.status) &&
-            Objects.equals(this.onlineStatus, updateDeviceResponse.onlineStatus) &&
-            Objects.equals(this.description, updateDeviceResponse.description) &&
-            Objects.equals(this.authentication, updateDeviceResponse.authentication) &&
-            Objects.equals(this.createdUser, updateDeviceResponse.createdUser) &&
-            Objects.equals(this.lastUpdatedUser, updateDeviceResponse.lastUpdatedUser) &&
-            Objects.equals(this.tags, updateDeviceResponse.tags) &&
-            Objects.equals(this.createdDatetime, updateDeviceResponse.createdDatetime) &&
-            Objects.equals(this.lastUpdatedDatetime, updateDeviceResponse.lastUpdatedDatetime) &&
-            Objects.equals(this.connectAddress, updateDeviceResponse.connectAddress) &&
-            Objects.equals(this.sslConnectAddress, updateDeviceResponse.sslConnectAddress) &&
-            Objects.equals(this.ipv6ConnectAddress, updateDeviceResponse.ipv6ConnectAddress) &&
-            Objects.equals(this.ipv6SslConnectAddress, updateDeviceResponse.ipv6SslConnectAddress) &&
-            Objects.equals(this.lastLoginDatetime, updateDeviceResponse.lastLoginDatetime) &&
-            Objects.equals(this.nodeType, updateDeviceResponse.nodeType) &&
-            Objects.equals(this.deviceType, updateDeviceResponse.deviceType) &&
-            Objects.equals(this.clientIp, updateDeviceResponse.clientIp) &&
-            Objects.equals(this.keepAlive, updateDeviceResponse.keepAlive) &&
-            Objects.equals(this.lastActiveTime, updateDeviceResponse.lastActiveTime) &&
-            Objects.equals(this.version, updateDeviceResponse.version) &&
-            Objects.equals(this.pluginId, updateDeviceResponse.pluginId) &&
-            Objects.equals(this.appId, updateDeviceResponse.appId);
+        return Objects.equals(this.permissions, updateDeviceResponse.permissions)
+            && Objects.equals(this.id, updateDeviceResponse.id)
+            && Objects.equals(this.parentDeviceId, updateDeviceResponse.parentDeviceId)
+            && Objects.equals(this.parentDeviceName, updateDeviceResponse.parentDeviceName)
+            && Objects.equals(this.product, updateDeviceResponse.product)
+            && Objects.equals(this.deviceName, updateDeviceResponse.deviceName)
+            && Objects.equals(this.instanceId, updateDeviceResponse.instanceId)
+            && Objects.equals(this.clientId, updateDeviceResponse.clientId)
+            && Objects.equals(this.nodeId, updateDeviceResponse.nodeId)
+            && Objects.equals(this.appName, updateDeviceResponse.appName)
+            && Objects.equals(this.status, updateDeviceResponse.status)
+            && Objects.equals(this.onlineStatus, updateDeviceResponse.onlineStatus)
+            && Objects.equals(this.description, updateDeviceResponse.description)
+            && Objects.equals(this.authentication, updateDeviceResponse.authentication)
+            && Objects.equals(this.createdUser, updateDeviceResponse.createdUser)
+            && Objects.equals(this.lastUpdatedUser, updateDeviceResponse.lastUpdatedUser)
+            && Objects.equals(this.tags, updateDeviceResponse.tags)
+            && Objects.equals(this.createdDatetime, updateDeviceResponse.createdDatetime)
+            && Objects.equals(this.lastUpdatedDatetime, updateDeviceResponse.lastUpdatedDatetime)
+            && Objects.equals(this.connectAddress, updateDeviceResponse.connectAddress)
+            && Objects.equals(this.sslConnectAddress, updateDeviceResponse.sslConnectAddress)
+            && Objects.equals(this.ipv6ConnectAddress, updateDeviceResponse.ipv6ConnectAddress)
+            && Objects.equals(this.ipv6SslConnectAddress, updateDeviceResponse.ipv6SslConnectAddress)
+            && Objects.equals(this.lastLoginDatetime, updateDeviceResponse.lastLoginDatetime)
+            && Objects.equals(this.nodeType, updateDeviceResponse.nodeType)
+            && Objects.equals(this.deviceType, updateDeviceResponse.deviceType)
+            && Objects.equals(this.clientIp, updateDeviceResponse.clientIp)
+            && Objects.equals(this.keepAlive, updateDeviceResponse.keepAlive)
+            && Objects.equals(this.lastActiveTime, updateDeviceResponse.lastActiveTime)
+            && Objects.equals(this.version, updateDeviceResponse.version)
+            && Objects.equals(this.pluginId, updateDeviceResponse.pluginId)
+            && Objects.equals(this.appId, updateDeviceResponse.appId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(permissions, id, parentDeviceId, parentDeviceName, product, deviceName, instanceId, clientId, nodeId, appName, status, onlineStatus, description, authentication, createdUser, lastUpdatedUser, tags, createdDatetime, lastUpdatedDatetime, connectAddress, sslConnectAddress, ipv6ConnectAddress, ipv6SslConnectAddress, lastLoginDatetime, nodeType, deviceType, clientIp, keepAlive, lastActiveTime, version, pluginId, appId);
+        return Objects.hash(permissions,
+            id,
+            parentDeviceId,
+            parentDeviceName,
+            product,
+            deviceName,
+            instanceId,
+            clientId,
+            nodeId,
+            appName,
+            status,
+            onlineStatus,
+            description,
+            authentication,
+            createdUser,
+            lastUpdatedUser,
+            tags,
+            createdDatetime,
+            lastUpdatedDatetime,
+            connectAddress,
+            sslConnectAddress,
+            ipv6ConnectAddress,
+            ipv6SslConnectAddress,
+            lastLoginDatetime,
+            nodeType,
+            deviceType,
+            clientIp,
+            keepAlive,
+            lastActiveTime,
+            version,
+            pluginId,
+            appId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1084,16 +873,13 @@ public class UpdateDeviceResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

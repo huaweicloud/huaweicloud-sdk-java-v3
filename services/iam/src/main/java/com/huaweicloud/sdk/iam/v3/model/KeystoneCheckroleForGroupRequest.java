@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class KeystoneCheckroleForGroupRequest  {
-
-
+/** Request Object */
+public class KeystoneCheckroleForGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="role_id")
-    
+    @JsonProperty(value = "role_id")
+
     private String roleId;
 
     public KeystoneCheckroleForGroupRequest withDomainId(String domainId) {
@@ -40,13 +28,9 @@ public class KeystoneCheckroleForGroupRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 用户组所属账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * @return domainId
-     */
+    /** 用户组所属账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -55,20 +39,14 @@ public class KeystoneCheckroleForGroupRequest  {
         this.domainId = domainId;
     }
 
-    
-
     public KeystoneCheckroleForGroupRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户组ID，获取方式请参见：[获取用户组ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * @return groupId
-     */
+    /** 用户组ID，获取方式请参见：[获取用户组ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -77,20 +55,14 @@ public class KeystoneCheckroleForGroupRequest  {
         this.groupId = groupId;
     }
 
-    
-
     public KeystoneCheckroleForGroupRequest withRoleId(String roleId) {
         this.roleId = roleId;
         return this;
     }
 
-    
-
-
-    /**
-     * 权限ID，获取方式请参见：[获取权限名、权限ID](https://support.huaweicloud.com/api-iam/iam_10_0001.html)。
-     * @return roleId
-     */
+    /** 权限ID，获取方式请参见：[获取权限名、权限ID](https://support.huaweicloud.com/api-iam/iam_10_0001.html)。
+     * 
+     * @return roleId */
     public String getRoleId() {
         return roleId;
     }
@@ -98,8 +70,6 @@ public class KeystoneCheckroleForGroupRequest  {
     public void setRoleId(String roleId) {
         this.roleId = roleId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class KeystoneCheckroleForGroupRequest  {
             return false;
         }
         KeystoneCheckroleForGroupRequest keystoneCheckroleForGroupRequest = (KeystoneCheckroleForGroupRequest) o;
-        return Objects.equals(this.domainId, keystoneCheckroleForGroupRequest.domainId) &&
-            Objects.equals(this.groupId, keystoneCheckroleForGroupRequest.groupId) &&
-            Objects.equals(this.roleId, keystoneCheckroleForGroupRequest.roleId);
+        return Objects.equals(this.domainId, keystoneCheckroleForGroupRequest.domainId)
+            && Objects.equals(this.groupId, keystoneCheckroleForGroupRequest.groupId)
+            && Objects.equals(this.roleId, keystoneCheckroleForGroupRequest.roleId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domainId, groupId, roleId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class KeystoneCheckroleForGroupRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

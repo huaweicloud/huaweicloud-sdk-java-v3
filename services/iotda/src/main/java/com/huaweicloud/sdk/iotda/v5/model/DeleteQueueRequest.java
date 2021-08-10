@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteQueueRequest  {
-
-
+/** Request Object */
+public class DeleteQueueRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Instance-Id")
-    
+    @JsonProperty(value = "Instance-Id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="queue_id")
-    
+    @JsonProperty(value = "queue_id")
+
     private String queueId;
 
     public DeleteQueueRequest withInstanceId(String instanceId) {
@@ -34,13 +23,9 @@ public class DeleteQueueRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
-     * @return instanceId
-     */
+    /** **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -49,20 +34,14 @@ public class DeleteQueueRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public DeleteQueueRequest withQueueId(String queueId) {
         this.queueId = queueId;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：队列ID，用于唯一标识一个队列。 **取值范围**：长度36位，只允许字母、数字、下划线（_）、连接符（-）的组合。
-     * @return queueId
-     */
+    /** **参数说明**：队列ID，用于唯一标识一个队列。 **取值范围**：长度36位，只允许字母、数字、下划线（_）、连接符（-）的组合。
+     * 
+     * @return queueId */
     public String getQueueId() {
         return queueId;
     }
@@ -70,8 +49,6 @@ public class DeleteQueueRequest  {
     public void setQueueId(String queueId) {
         this.queueId = queueId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class DeleteQueueRequest  {
             return false;
         }
         DeleteQueueRequest deleteQueueRequest = (DeleteQueueRequest) o;
-        return Objects.equals(this.instanceId, deleteQueueRequest.instanceId) &&
-            Objects.equals(this.queueId, deleteQueueRequest.queueId);
+        return Objects.equals(this.instanceId, deleteQueueRequest.instanceId)
+            && Objects.equals(this.queueId, deleteQueueRequest.queueId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, queueId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class DeleteQueueRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

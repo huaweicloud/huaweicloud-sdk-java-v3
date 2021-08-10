@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteHookRequest  {
-
-
+/** Request Object */
+public class DeleteHookRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Repo-Auth")
-    
+    @JsonProperty(value = "X-Repo-Auth")
+
     private String xRepoAuth;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
+
     private String namespace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project")
-    
+    @JsonProperty(value = "project")
+
     private String project;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hook_id")
-    
+    @JsonProperty(value = "hook_id")
+
     private String hookId;
 
     public DeleteHookRequest withXRepoAuth(String xRepoAuth) {
@@ -46,15 +33,11 @@ public class DeleteHookRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 授权名称。
-     * @return xRepoAuth
-     */
+    /** 授权名称。
+     * 
+     * @return xRepoAuth */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Repo-Auth")
+    @JsonProperty(value = "X-Repo-Auth")
     public String getXRepoAuth() {
         return xRepoAuth;
     }
@@ -63,20 +46,14 @@ public class DeleteHookRequest  {
         this.xRepoAuth = xRepoAuth;
     }
 
-    
-
     public DeleteHookRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
     }
 
-    
-
-
-    /**
-     * 组织ID。
-     * @return namespace
-     */
+    /** 组织ID。
+     * 
+     * @return namespace */
     public String getNamespace() {
         return namespace;
     }
@@ -85,20 +62,14 @@ public class DeleteHookRequest  {
         this.namespace = namespace;
     }
 
-    
-
     public DeleteHookRequest withProject(String project) {
         this.project = project;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
-     * @return project
-     */
+    /** 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
+     * 
+     * @return project */
     public String getProject() {
         return project;
     }
@@ -107,20 +78,14 @@ public class DeleteHookRequest  {
         this.project = project;
     }
 
-    
-
     public DeleteHookRequest withHookId(String hookId) {
         this.hookId = hookId;
         return this;
     }
 
-    
-
-
-    /**
-     * hook ID。
-     * @return hookId
-     */
+    /** hook ID。
+     * 
+     * @return hookId */
     public String getHookId() {
         return hookId;
     }
@@ -128,8 +93,6 @@ public class DeleteHookRequest  {
     public void setHookId(String hookId) {
         this.hookId = hookId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -140,15 +103,17 @@ public class DeleteHookRequest  {
             return false;
         }
         DeleteHookRequest deleteHookRequest = (DeleteHookRequest) o;
-        return Objects.equals(this.xRepoAuth, deleteHookRequest.xRepoAuth) &&
-            Objects.equals(this.namespace, deleteHookRequest.namespace) &&
-            Objects.equals(this.project, deleteHookRequest.project) &&
-            Objects.equals(this.hookId, deleteHookRequest.hookId);
+        return Objects.equals(this.xRepoAuth, deleteHookRequest.xRepoAuth)
+            && Objects.equals(this.namespace, deleteHookRequest.namespace)
+            && Objects.equals(this.project, deleteHookRequest.project)
+            && Objects.equals(this.hookId, deleteHookRequest.hookId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xRepoAuth, namespace, project, hookId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -160,16 +125,13 @@ public class DeleteHookRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

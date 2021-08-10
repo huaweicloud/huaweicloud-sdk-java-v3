@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 组织信息
- */
-public class OrganizationV2  {
-
-
+/** 组织信息 */
+public class OrganizationV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name_hash")
-    
+    @JsonProperty(value = "name_hash")
+
     private String nameHash;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_count")
-    
+    @JsonProperty(value = "node_count")
+
     private String nodeCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status_detail")
-    
+    @JsonProperty(value = "status_detail")
+
     private String statusDetail;
 
     public OrganizationV2 withName(String name) {
@@ -52,13 +38,9 @@ public class OrganizationV2  {
         return this;
     }
 
-    
-
-
-    /**
-     * 组织名称
-     * @return name
-     */
+    /** 组织名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -67,20 +49,14 @@ public class OrganizationV2  {
         this.name = name;
     }
 
-    
-
     public OrganizationV2 withNameHash(String nameHash) {
         this.nameHash = nameHash;
         return this;
     }
 
-    
-
-
-    /**
-     * 组织hash
-     * @return nameHash
-     */
+    /** 组织hash
+     * 
+     * @return nameHash */
     public String getNameHash() {
         return nameHash;
     }
@@ -89,20 +65,14 @@ public class OrganizationV2  {
         this.nameHash = nameHash;
     }
 
-    
-
     public OrganizationV2 withNodeCount(String nodeCount) {
         this.nodeCount = nodeCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 组织节点
-     * @return nodeCount
-     */
+    /** 组织节点
+     * 
+     * @return nodeCount */
     public String getNodeCount() {
         return nodeCount;
     }
@@ -111,20 +81,14 @@ public class OrganizationV2  {
         this.nodeCount = nodeCount;
     }
 
-    
-
     public OrganizationV2 withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态
-     * @return status
-     */
+    /** 状态
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -133,20 +97,14 @@ public class OrganizationV2  {
         this.status = status;
     }
 
-    
-
     public OrganizationV2 withStatusDetail(String statusDetail) {
         this.statusDetail = statusDetail;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态描述
-     * @return statusDetail
-     */
+    /** 状态描述
+     * 
+     * @return statusDetail */
     public String getStatusDetail() {
         return statusDetail;
     }
@@ -154,8 +112,6 @@ public class OrganizationV2  {
     public void setStatusDetail(String statusDetail) {
         this.statusDetail = statusDetail;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,17 @@ public class OrganizationV2  {
             return false;
         }
         OrganizationV2 organizationV2 = (OrganizationV2) o;
-        return Objects.equals(this.name, organizationV2.name) &&
-            Objects.equals(this.nameHash, organizationV2.nameHash) &&
-            Objects.equals(this.nodeCount, organizationV2.nodeCount) &&
-            Objects.equals(this.status, organizationV2.status) &&
-            Objects.equals(this.statusDetail, organizationV2.statusDetail);
+        return Objects.equals(this.name, organizationV2.name) && Objects.equals(this.nameHash, organizationV2.nameHash)
+            && Objects.equals(this.nodeCount, organizationV2.nodeCount)
+            && Objects.equals(this.status, organizationV2.status)
+            && Objects.equals(this.statusDetail, organizationV2.statusDetail);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, nameHash, nodeCount, status, statusDetail);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +145,13 @@ public class OrganizationV2  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

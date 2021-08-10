@@ -1,73 +1,56 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vpc.v2.model.SecurityGroupRule;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class SecurityGroup  {
-
-
+public class SecurityGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_rules")
-    
+    @JsonProperty(value = "security_group_rules")
+
     private List<SecurityGroupRule> securityGroupRules = null;
-    
+
     public SecurityGroup withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组名称
-     * @return name
-     */
+    /** 安全组名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -76,20 +59,14 @@ public class SecurityGroup  {
         this.name = name;
     }
 
-    
-
     public SecurityGroup withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组描述
-     * @return description
-     */
+    /** 安全组描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -98,20 +75,14 @@ public class SecurityGroup  {
         this.description = description;
     }
 
-    
-
     public SecurityGroup withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组唯一标识
-     * @return id
-     */
+    /** 安全组唯一标识
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -120,20 +91,14 @@ public class SecurityGroup  {
         this.id = id;
     }
 
-    
-
     public SecurityGroup withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组所在的vpc的资源标识
-     * @return vpcId
-     */
+    /** 安全组所在的vpc的资源标识
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -142,20 +107,14 @@ public class SecurityGroup  {
         this.vpcId = vpcId;
     }
 
-    
-
     public SecurityGroup withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：企业项目ID。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。
-     * @return enterpriseProjectId
-     */
+    /** 功能说明：企业项目ID。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -164,16 +123,13 @@ public class SecurityGroup  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public SecurityGroup withSecurityGroupRules(List<SecurityGroupRule> securityGroupRules) {
         this.securityGroupRules = securityGroupRules;
         return this;
     }
 
-    
     public SecurityGroup addSecurityGroupRulesItem(SecurityGroupRule securityGroupRulesItem) {
-        if(this.securityGroupRules == null) {
+        if (this.securityGroupRules == null) {
             this.securityGroupRules = new ArrayList<>();
         }
         this.securityGroupRules.add(securityGroupRulesItem);
@@ -181,17 +137,16 @@ public class SecurityGroup  {
     }
 
     public SecurityGroup withSecurityGroupRules(Consumer<List<SecurityGroupRule>> securityGroupRulesSetter) {
-        if(this.securityGroupRules == null) {
+        if (this.securityGroupRules == null) {
             this.securityGroupRules = new ArrayList<>();
         }
         securityGroupRulesSetter.accept(this.securityGroupRules);
         return this;
     }
 
-    /**
-     * 安全组规则
-     * @return securityGroupRules
-     */
+    /** 安全组规则
+     * 
+     * @return securityGroupRules */
     public List<SecurityGroupRule> getSecurityGroupRules() {
         return securityGroupRules;
     }
@@ -199,8 +154,6 @@ public class SecurityGroup  {
     public void setSecurityGroupRules(List<SecurityGroupRule> securityGroupRules) {
         this.securityGroupRules = securityGroupRules;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -211,17 +164,18 @@ public class SecurityGroup  {
             return false;
         }
         SecurityGroup securityGroup = (SecurityGroup) o;
-        return Objects.equals(this.name, securityGroup.name) &&
-            Objects.equals(this.description, securityGroup.description) &&
-            Objects.equals(this.id, securityGroup.id) &&
-            Objects.equals(this.vpcId, securityGroup.vpcId) &&
-            Objects.equals(this.enterpriseProjectId, securityGroup.enterpriseProjectId) &&
-            Objects.equals(this.securityGroupRules, securityGroup.securityGroupRules);
+        return Objects.equals(this.name, securityGroup.name)
+            && Objects.equals(this.description, securityGroup.description) && Objects.equals(this.id, securityGroup.id)
+            && Objects.equals(this.vpcId, securityGroup.vpcId)
+            && Objects.equals(this.enterpriseProjectId, securityGroup.enterpriseProjectId)
+            && Objects.equals(this.securityGroupRules, securityGroup.securityGroupRules);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, description, id, vpcId, enterpriseProjectId, securityGroupRules);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -235,16 +189,13 @@ public class SecurityGroup  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

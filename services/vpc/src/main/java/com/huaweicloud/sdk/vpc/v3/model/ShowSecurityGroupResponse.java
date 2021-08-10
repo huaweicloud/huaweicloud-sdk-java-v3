@@ -1,35 +1,23 @@
 package com.huaweicloud.sdk.vpc.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vpc.v3.model.SecurityGroupInfo;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowSecurityGroupResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="request_id")
-    
+    @JsonProperty(value = "request_id")
+
     private String requestId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group")
-    
+    @JsonProperty(value = "security_group")
+
     private SecurityGroupInfo securityGroup;
 
     public ShowSecurityGroupResponse withRequestId(String requestId) {
@@ -37,13 +25,9 @@ public class ShowSecurityGroupResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 请求ID
-     * @return requestId
-     */
+    /** 请求ID
+     * 
+     * @return requestId */
     public String getRequestId() {
         return requestId;
     }
@@ -52,27 +36,23 @@ public class ShowSecurityGroupResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    
-
     public ShowSecurityGroupResponse withSecurityGroup(SecurityGroupInfo securityGroup) {
         this.securityGroup = securityGroup;
         return this;
     }
 
     public ShowSecurityGroupResponse withSecurityGroup(Consumer<SecurityGroupInfo> securityGroupSetter) {
-        if(this.securityGroup == null ){
+        if (this.securityGroup == null) {
             this.securityGroup = new SecurityGroupInfo();
             securityGroupSetter.accept(this.securityGroup);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get securityGroup
-     * @return securityGroup
-     */
+    /** Get securityGroup
+     * 
+     * @return securityGroup */
     public SecurityGroupInfo getSecurityGroup() {
         return securityGroup;
     }
@@ -80,8 +60,6 @@ public class ShowSecurityGroupResponse extends SdkResponse {
     public void setSecurityGroup(SecurityGroupInfo securityGroup) {
         this.securityGroup = securityGroup;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -92,13 +70,15 @@ public class ShowSecurityGroupResponse extends SdkResponse {
             return false;
         }
         ShowSecurityGroupResponse showSecurityGroupResponse = (ShowSecurityGroupResponse) o;
-        return Objects.equals(this.requestId, showSecurityGroupResponse.requestId) &&
-            Objects.equals(this.securityGroup, showSecurityGroupResponse.securityGroup);
+        return Objects.equals(this.requestId, showSecurityGroupResponse.requestId)
+            && Objects.equals(this.securityGroup, showSecurityGroupResponse.securityGroup);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(requestId, securityGroup);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -108,16 +88,13 @@ public class ShowSecurityGroupResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

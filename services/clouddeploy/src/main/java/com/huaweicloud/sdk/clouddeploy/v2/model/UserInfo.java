@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.clouddeploy.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * UserInfo
- */
-public class UserInfo  {
-
-
+/** UserInfo */
+public class UserInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_id")
-    
+    @JsonProperty(value = "user_id")
+
     private String userId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_name")
-    
+    @JsonProperty(value = "user_name")
+
     private String userName;
 
     public UserInfo withUserId(String userId) {
@@ -34,13 +23,9 @@ public class UserInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 用户id
-     * @return userId
-     */
+    /** 用户id
+     * 
+     * @return userId */
     public String getUserId() {
         return userId;
     }
@@ -49,20 +34,14 @@ public class UserInfo  {
         this.userId = userId;
     }
 
-    
-
     public UserInfo withUserName(String userName) {
         this.userName = userName;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户名
-     * @return userName
-     */
+    /** 用户名
+     * 
+     * @return userName */
     public String getUserName() {
         return userName;
     }
@@ -70,8 +49,6 @@ public class UserInfo  {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,14 @@ public class UserInfo  {
             return false;
         }
         UserInfo userInfo = (UserInfo) o;
-        return Objects.equals(this.userId, userInfo.userId) &&
-            Objects.equals(this.userName, userInfo.userName);
+        return Objects.equals(this.userId, userInfo.userId) && Objects.equals(this.userName, userInfo.userName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(userId, userName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +76,13 @@ public class UserInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

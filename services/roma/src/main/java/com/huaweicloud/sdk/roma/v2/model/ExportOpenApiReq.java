@@ -1,67 +1,46 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ExportOpenApiReq
- */
-public class ExportOpenApiReq  {
-
-
+/** ExportOpenApiReq */
+public class ExportOpenApiReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_id")
-    
+    @JsonProperty(value = "env_id")
+
     private String envId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
-    /**
-     * 导出API的定义范围： - spec：基础定义，只包括api前端定义 - proxy：全量定义，包括api前后端定义 - all：扩展定义，包括api前后端定义以及流控、访问控制、自定义认证等扩展定义 - dev：开发定义，包括未发布的api的前后端定义
-     */
+
+    /** 导出API的定义范围： - spec：基础定义，只包括api前端定义 - proxy：全量定义，包括api前后端定义 - all：扩展定义，包括api前后端定义以及流控、访问控制、自定义认证等扩展定义 -
+     * dev：开发定义，包括未发布的api的前后端定义 */
     public static final class DefineEnum {
 
-        
-        /**
-         * Enum SPEC for value: "spec"
-         */
+        /** Enum SPEC for value: "spec" */
         public static final DefineEnum SPEC = new DefineEnum("spec");
-        
-        /**
-         * Enum PROXY for value: "proxy"
-         */
+
+        /** Enum PROXY for value: "proxy" */
         public static final DefineEnum PROXY = new DefineEnum("proxy");
-        
-        /**
-         * Enum ALL for value: "all"
-         */
+
+        /** Enum ALL for value: "all" */
         public static final DefineEnum ALL = new DefineEnum("all");
-        
-        /**
-         * Enum DEV for value: "dev"
-         */
+
+        /** Enum DEV for value: "dev" */
         public static final DefineEnum DEV = new DefineEnum("dev");
-        
 
         private static final Map<String, DefineEnum> STATIC_FIELDS = createStaticFields();
 
@@ -92,7 +71,7 @@ public class ExportOpenApiReq  {
 
         @JsonCreator
         public static DefineEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DefineEnum result = STATIC_FIELDS.get(value);
@@ -103,7 +82,7 @@ public class ExportOpenApiReq  {
         }
 
         public static DefineEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DefineEnum result = STATIC_FIELDS.get(value);
@@ -127,32 +106,22 @@ public class ExportOpenApiReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="define")
-    
+    @JsonProperty(value = "define")
+
     private DefineEnum define;
-    /**
-     * 导出的API定义的格式
-     */
+
+    /** 导出的API定义的格式 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum JSON for value: "json"
-         */
+        /** Enum JSON for value: "json" */
         public static final TypeEnum JSON = new TypeEnum("json");
-        
-        /**
-         * Enum YAML for value: "yaml"
-         */
+
+        /** Enum YAML for value: "yaml" */
         public static final TypeEnum YAML = new TypeEnum("yaml");
-        
-        /**
-         * Enum YML for value: "yml"
-         */
+
+        /** Enum YML for value: "yml" */
         public static final TypeEnum YML = new TypeEnum("yml");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -182,7 +151,7 @@ public class ExportOpenApiReq  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -193,7 +162,7 @@ public class ExportOpenApiReq  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -217,36 +186,29 @@ public class ExportOpenApiReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apis")
-    
+    @JsonProperty(value = "apis")
+
     private List<String> apis = null;
-    
+
     public ExportOpenApiReq withEnvId(String envId) {
         this.envId = envId;
         return this;
     }
 
-    
-
-
-    /**
-     * API分组发布的环境ID
-     * @return envId
-     */
+    /** API分组发布的环境ID
+     * 
+     * @return envId */
     public String getEnvId() {
         return envId;
     }
@@ -255,20 +217,14 @@ public class ExportOpenApiReq  {
         this.envId = envId;
     }
 
-    
-
     public ExportOpenApiReq withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * API分组ID
-     * @return groupId
-     */
+    /** API分组ID
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -277,20 +233,15 @@ public class ExportOpenApiReq  {
         this.groupId = groupId;
     }
 
-    
-
     public ExportOpenApiReq withDefine(DefineEnum define) {
         this.define = define;
         return this;
     }
 
-    
-
-
-    /**
-     * 导出API的定义范围： - spec：基础定义，只包括api前端定义 - proxy：全量定义，包括api前后端定义 - all：扩展定义，包括api前后端定义以及流控、访问控制、自定义认证等扩展定义 - dev：开发定义，包括未发布的api的前后端定义
-     * @return define
-     */
+    /** 导出API的定义范围： - spec：基础定义，只包括api前端定义 - proxy：全量定义，包括api前后端定义 - all：扩展定义，包括api前后端定义以及流控、访问控制、自定义认证等扩展定义 -
+     * dev：开发定义，包括未发布的api的前后端定义
+     * 
+     * @return define */
     public DefineEnum getDefine() {
         return define;
     }
@@ -299,20 +250,14 @@ public class ExportOpenApiReq  {
         this.define = define;
     }
 
-    
-
     public ExportOpenApiReq withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 导出的API定义的格式
-     * @return type
-     */
+    /** 导出的API定义的格式
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -321,20 +266,14 @@ public class ExportOpenApiReq  {
         this.type = type;
     }
 
-    
-
     public ExportOpenApiReq withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 导出的API定义版本，默认为当前时间
-     * @return version
-     */
+    /** 导出的API定义版本，默认为当前时间
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -343,16 +282,13 @@ public class ExportOpenApiReq  {
         this.version = version;
     }
 
-    
-
     public ExportOpenApiReq withApis(List<String> apis) {
         this.apis = apis;
         return this;
     }
 
-    
     public ExportOpenApiReq addApisItem(String apisItem) {
-        if(this.apis == null) {
+        if (this.apis == null) {
             this.apis = new ArrayList<>();
         }
         this.apis.add(apisItem);
@@ -360,17 +296,16 @@ public class ExportOpenApiReq  {
     }
 
     public ExportOpenApiReq withApis(Consumer<List<String>> apisSetter) {
-        if(this.apis == null) {
+        if (this.apis == null) {
             this.apis = new ArrayList<>();
         }
         apisSetter.accept(this.apis);
         return this;
     }
 
-    /**
-     * 导出的API ID列表
-     * @return apis
-     */
+    /** 导出的API ID列表
+     * 
+     * @return apis */
     public List<String> getApis() {
         return apis;
     }
@@ -378,8 +313,6 @@ public class ExportOpenApiReq  {
     public void setApis(List<String> apis) {
         this.apis = apis;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -390,17 +323,18 @@ public class ExportOpenApiReq  {
             return false;
         }
         ExportOpenApiReq exportOpenApiReq = (ExportOpenApiReq) o;
-        return Objects.equals(this.envId, exportOpenApiReq.envId) &&
-            Objects.equals(this.groupId, exportOpenApiReq.groupId) &&
-            Objects.equals(this.define, exportOpenApiReq.define) &&
-            Objects.equals(this.type, exportOpenApiReq.type) &&
-            Objects.equals(this.version, exportOpenApiReq.version) &&
-            Objects.equals(this.apis, exportOpenApiReq.apis);
+        return Objects.equals(this.envId, exportOpenApiReq.envId)
+            && Objects.equals(this.groupId, exportOpenApiReq.groupId)
+            && Objects.equals(this.define, exportOpenApiReq.define) && Objects.equals(this.type, exportOpenApiReq.type)
+            && Objects.equals(this.version, exportOpenApiReq.version)
+            && Objects.equals(this.apis, exportOpenApiReq.apis);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(envId, groupId, define, type, version, apis);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -414,16 +348,13 @@ public class ExportOpenApiReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

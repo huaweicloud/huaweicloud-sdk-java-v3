@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 分页查询对象Query
- */
-public class SlaveRegister  {
-
-
+/** 分页查询对象Query */
+public class SlaveRegister {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
+
     private String clusterId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="slave_name")
-    
+    @JsonProperty(value = "slave_name")
+
     private String slaveName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="work_dir")
-    
+    @JsonProperty(value = "work_dir")
+
     private String workDir;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="label")
-    
+    @JsonProperty(value = "label")
+
     private String label;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="retry")
-    
+    @JsonProperty(value = "retry")
+
     private Boolean retry;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="owner_type")
-    
+    @JsonProperty(value = "owner_type")
+
     private String ownerType;
 
     public SlaveRegister withClusterId(String clusterId) {
@@ -64,13 +48,9 @@ public class SlaveRegister  {
         return this;
     }
 
-    
-
-
-    /**
-     * cluster ID
-     * @return clusterId
-     */
+    /** cluster ID
+     * 
+     * @return clusterId */
     public String getClusterId() {
         return clusterId;
     }
@@ -79,20 +59,14 @@ public class SlaveRegister  {
         this.clusterId = clusterId;
     }
 
-    
-
     public SlaveRegister withSlaveName(String slaveName) {
         this.slaveName = slaveName;
         return this;
     }
 
-    
-
-
-    /**
-     * Slave名称
-     * @return slaveName
-     */
+    /** Slave名称
+     * 
+     * @return slaveName */
     public String getSlaveName() {
         return slaveName;
     }
@@ -101,20 +75,14 @@ public class SlaveRegister  {
         this.slaveName = slaveName;
     }
 
-    
-
     public SlaveRegister withWorkDir(String workDir) {
         this.workDir = workDir;
         return this;
     }
 
-    
-
-
-    /**
-     * Slave工作空间
-     * @return workDir
-     */
+    /** Slave工作空间
+     * 
+     * @return workDir */
     public String getWorkDir() {
         return workDir;
     }
@@ -123,20 +91,14 @@ public class SlaveRegister  {
         this.workDir = workDir;
     }
 
-    
-
     public SlaveRegister withLabel(String label) {
         this.label = label;
         return this;
     }
 
-    
-
-
-    /**
-     * Slave label
-     * @return label
-     */
+    /** Slave label
+     * 
+     * @return label */
     public String getLabel() {
         return label;
     }
@@ -145,20 +107,14 @@ public class SlaveRegister  {
         this.label = label;
     }
 
-    
-
     public SlaveRegister withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * agent版本
-     * @return version
-     */
+    /** agent版本
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -167,20 +123,14 @@ public class SlaveRegister  {
         this.version = version;
     }
 
-    
-
     public SlaveRegister withRetry(Boolean retry) {
         this.retry = retry;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否重试
-     * @return retry
-     */
+    /** 是否重试
+     * 
+     * @return retry */
     public Boolean getRetry() {
         return retry;
     }
@@ -189,20 +139,14 @@ public class SlaveRegister  {
         this.retry = retry;
     }
 
-    
-
     public SlaveRegister withOwnerType(String ownerType) {
         this.ownerType = ownerType;
         return this;
     }
 
-    
-
-
-    /**
-     * Slave ownerType
-     * @return ownerType
-     */
+    /** Slave ownerType
+     * 
+     * @return ownerType */
     public String getOwnerType() {
         return ownerType;
     }
@@ -210,8 +154,6 @@ public class SlaveRegister  {
     public void setOwnerType(String ownerType) {
         this.ownerType = ownerType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -222,18 +164,18 @@ public class SlaveRegister  {
             return false;
         }
         SlaveRegister slaveRegister = (SlaveRegister) o;
-        return Objects.equals(this.clusterId, slaveRegister.clusterId) &&
-            Objects.equals(this.slaveName, slaveRegister.slaveName) &&
-            Objects.equals(this.workDir, slaveRegister.workDir) &&
-            Objects.equals(this.label, slaveRegister.label) &&
-            Objects.equals(this.version, slaveRegister.version) &&
-            Objects.equals(this.retry, slaveRegister.retry) &&
-            Objects.equals(this.ownerType, slaveRegister.ownerType);
+        return Objects.equals(this.clusterId, slaveRegister.clusterId)
+            && Objects.equals(this.slaveName, slaveRegister.slaveName)
+            && Objects.equals(this.workDir, slaveRegister.workDir) && Objects.equals(this.label, slaveRegister.label)
+            && Objects.equals(this.version, slaveRegister.version) && Objects.equals(this.retry, slaveRegister.retry)
+            && Objects.equals(this.ownerType, slaveRegister.ownerType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clusterId, slaveName, workDir, label, version, retry, ownerType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,16 +190,13 @@ public class SlaveRegister  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

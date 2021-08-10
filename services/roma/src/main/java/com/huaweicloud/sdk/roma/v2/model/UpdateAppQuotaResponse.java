@@ -1,72 +1,49 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.time.OffsetDateTime;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class UpdateAppQuotaResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_quota_id")
-    
+    @JsonProperty(value = "app_quota_id")
+
     private String appQuotaId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="call_limits")
-    
+    @JsonProperty(value = "call_limits")
+
     private Integer callLimits;
-    /**
-     * 限定时间单位：SECOND:秒、MINUTE:分、HOURE:时、DAY:天
-     */
+
+    /** 限定时间单位：SECOND:秒、MINUTE:分、HOURE:时、DAY:天 */
     public static final class TimeUnitEnum {
 
-        
-        /**
-         * Enum SECOND for value: "SECOND"
-         */
+        /** Enum SECOND for value: "SECOND" */
         public static final TimeUnitEnum SECOND = new TimeUnitEnum("SECOND");
-        
-        /**
-         * Enum MINUTE for value: "MINUTE"
-         */
+
+        /** Enum MINUTE for value: "MINUTE" */
         public static final TimeUnitEnum MINUTE = new TimeUnitEnum("MINUTE");
-        
-        /**
-         * Enum HOUR for value: "HOUR"
-         */
+
+        /** Enum HOUR for value: "HOUR" */
         public static final TimeUnitEnum HOUR = new TimeUnitEnum("HOUR");
-        
-        /**
-         * Enum DAY for value: "DAY"
-         */
+
+        /** Enum DAY for value: "DAY" */
         public static final TimeUnitEnum DAY = new TimeUnitEnum("DAY");
-        
 
         private static final Map<String, TimeUnitEnum> STATIC_FIELDS = createStaticFields();
 
@@ -97,7 +74,7 @@ public class UpdateAppQuotaResponse extends SdkResponse {
 
         @JsonCreator
         public static TimeUnitEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TimeUnitEnum result = STATIC_FIELDS.get(value);
@@ -108,7 +85,7 @@ public class UpdateAppQuotaResponse extends SdkResponse {
         }
 
         public static TimeUnitEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TimeUnitEnum result = STATIC_FIELDS.get(value);
@@ -132,40 +109,34 @@ public class UpdateAppQuotaResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time_unit")
-    
+    @JsonProperty(value = "time_unit")
+
     private TimeUnitEnum timeUnit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time_interval")
-    
+    @JsonProperty(value = "time_interval")
+
     private Integer timeInterval;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
+
     private String remark;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="reset_time")
-    
+    @JsonProperty(value = "reset_time")
+
     private String resetTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private OffsetDateTime createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bound_app_num")
-    
+    @JsonProperty(value = "bound_app_num")
+
     private Integer boundAppNum;
 
     public UpdateAppQuotaResponse withAppQuotaId(String appQuotaId) {
@@ -173,13 +144,9 @@ public class UpdateAppQuotaResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 客户端配额编号
-     * @return appQuotaId
-     */
+    /** 客户端配额编号
+     * 
+     * @return appQuotaId */
     public String getAppQuotaId() {
         return appQuotaId;
     }
@@ -188,20 +155,14 @@ public class UpdateAppQuotaResponse extends SdkResponse {
         this.appQuotaId = appQuotaId;
     }
 
-    
-
     public UpdateAppQuotaResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 配额名称。支持汉字，英文，数字，下划线，且只能以英文和汉字开头，3-255字符
-     * @return name
-     */
+    /** 配额名称。支持汉字，英文，数字，下划线，且只能以英文和汉字开头，3-255字符
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -210,20 +171,14 @@ public class UpdateAppQuotaResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public UpdateAppQuotaResponse withCallLimits(Integer callLimits) {
         this.callLimits = callLimits;
         return this;
     }
 
-    
-
-
-    /**
-     * 客户端配额的访问次数限制
-     * @return callLimits
-     */
+    /** 客户端配额的访问次数限制
+     * 
+     * @return callLimits */
     public Integer getCallLimits() {
         return callLimits;
     }
@@ -232,20 +187,14 @@ public class UpdateAppQuotaResponse extends SdkResponse {
         this.callLimits = callLimits;
     }
 
-    
-
     public UpdateAppQuotaResponse withTimeUnit(TimeUnitEnum timeUnit) {
         this.timeUnit = timeUnit;
         return this;
     }
 
-    
-
-
-    /**
-     * 限定时间单位：SECOND:秒、MINUTE:分、HOURE:时、DAY:天
-     * @return timeUnit
-     */
+    /** 限定时间单位：SECOND:秒、MINUTE:分、HOURE:时、DAY:天
+     * 
+     * @return timeUnit */
     public TimeUnitEnum getTimeUnit() {
         return timeUnit;
     }
@@ -254,20 +203,14 @@ public class UpdateAppQuotaResponse extends SdkResponse {
         this.timeUnit = timeUnit;
     }
 
-    
-
     public UpdateAppQuotaResponse withTimeInterval(Integer timeInterval) {
         this.timeInterval = timeInterval;
         return this;
     }
 
-    
-
-
-    /**
-     * 配额的限定时间值
-     * @return timeInterval
-     */
+    /** 配额的限定时间值
+     * 
+     * @return timeInterval */
     public Integer getTimeInterval() {
         return timeInterval;
     }
@@ -276,20 +219,14 @@ public class UpdateAppQuotaResponse extends SdkResponse {
         this.timeInterval = timeInterval;
     }
 
-    
-
     public UpdateAppQuotaResponse withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数说明和描述
-     * @return remark
-     */
+    /** 参数说明和描述
+     * 
+     * @return remark */
     public String getRemark() {
         return remark;
     }
@@ -298,20 +235,14 @@ public class UpdateAppQuotaResponse extends SdkResponse {
         this.remark = remark;
     }
 
-    
-
     public UpdateAppQuotaResponse withResetTime(String resetTime) {
         this.resetTime = resetTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 首次配额重置时间点，不配置默认为首次调用时间计算
-     * @return resetTime
-     */
+    /** 首次配额重置时间点，不配置默认为首次调用时间计算
+     * 
+     * @return resetTime */
     public String getResetTime() {
         return resetTime;
     }
@@ -320,20 +251,14 @@ public class UpdateAppQuotaResponse extends SdkResponse {
         this.resetTime = resetTime;
     }
 
-    
-
     public UpdateAppQuotaResponse withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return createTime
-     */
+    /** 创建时间
+     * 
+     * @return createTime */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -342,20 +267,14 @@ public class UpdateAppQuotaResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public UpdateAppQuotaResponse withBoundAppNum(Integer boundAppNum) {
         this.boundAppNum = boundAppNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 配额策略已绑定应用数量
-     * @return boundAppNum
-     */
+    /** 配额策略已绑定应用数量
+     * 
+     * @return boundAppNum */
     public Integer getBoundAppNum() {
         return boundAppNum;
     }
@@ -363,8 +282,6 @@ public class UpdateAppQuotaResponse extends SdkResponse {
     public void setBoundAppNum(Integer boundAppNum) {
         this.boundAppNum = boundAppNum;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -375,20 +292,23 @@ public class UpdateAppQuotaResponse extends SdkResponse {
             return false;
         }
         UpdateAppQuotaResponse updateAppQuotaResponse = (UpdateAppQuotaResponse) o;
-        return Objects.equals(this.appQuotaId, updateAppQuotaResponse.appQuotaId) &&
-            Objects.equals(this.name, updateAppQuotaResponse.name) &&
-            Objects.equals(this.callLimits, updateAppQuotaResponse.callLimits) &&
-            Objects.equals(this.timeUnit, updateAppQuotaResponse.timeUnit) &&
-            Objects.equals(this.timeInterval, updateAppQuotaResponse.timeInterval) &&
-            Objects.equals(this.remark, updateAppQuotaResponse.remark) &&
-            Objects.equals(this.resetTime, updateAppQuotaResponse.resetTime) &&
-            Objects.equals(this.createTime, updateAppQuotaResponse.createTime) &&
-            Objects.equals(this.boundAppNum, updateAppQuotaResponse.boundAppNum);
+        return Objects.equals(this.appQuotaId, updateAppQuotaResponse.appQuotaId)
+            && Objects.equals(this.name, updateAppQuotaResponse.name)
+            && Objects.equals(this.callLimits, updateAppQuotaResponse.callLimits)
+            && Objects.equals(this.timeUnit, updateAppQuotaResponse.timeUnit)
+            && Objects.equals(this.timeInterval, updateAppQuotaResponse.timeInterval)
+            && Objects.equals(this.remark, updateAppQuotaResponse.remark)
+            && Objects.equals(this.resetTime, updateAppQuotaResponse.resetTime)
+            && Objects.equals(this.createTime, updateAppQuotaResponse.createTime)
+            && Objects.equals(this.boundAppNum, updateAppQuotaResponse.boundAppNum);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(appQuotaId, name, callLimits, timeUnit, timeInterval, remark, resetTime, createTime, boundAppNum);
+        return Objects
+            .hash(appQuotaId, name, callLimits, timeUnit, timeInterval, remark, resetTime, createTime, boundAppNum);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -405,16 +325,13 @@ public class UpdateAppQuotaResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

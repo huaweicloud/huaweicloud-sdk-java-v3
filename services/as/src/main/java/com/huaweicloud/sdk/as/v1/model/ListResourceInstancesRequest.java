@@ -1,37 +1,24 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.QueryTagsOption;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ListResourceInstancesRequest  {
+/** Request Object */
+public class ListResourceInstancesRequest {
 
-    /**
-     * 资源类型，枚举类：SCALING_GROUP_TAG。
-     */
+    /** 资源类型，枚举类：SCALING_GROUP_TAG。 */
     public static final class ResourceTypeEnum {
 
-        
-        /**
-         * Enum SCALING_GROUP_TAG for value: "scaling_group_tag"
-         */
+        /** Enum SCALING_GROUP_TAG for value: "scaling_group_tag" */
         public static final ResourceTypeEnum SCALING_GROUP_TAG = new ResourceTypeEnum("scaling_group_tag");
-        
 
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -59,7 +46,7 @@ public class ListResourceInstancesRequest  {
 
         @JsonCreator
         public static ResourceTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ResourceTypeEnum result = STATIC_FIELDS.get(value);
@@ -70,7 +57,7 @@ public class ListResourceInstancesRequest  {
         }
 
         public static ResourceTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ResourceTypeEnum result = STATIC_FIELDS.get(value);
@@ -94,16 +81,14 @@ public class ListResourceInstancesRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type")
-    
+    @JsonProperty(value = "resource_type")
+
     private ResourceTypeEnum resourceType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private QueryTagsOption body;
 
     public ListResourceInstancesRequest withResourceType(ResourceTypeEnum resourceType) {
@@ -111,13 +96,9 @@ public class ListResourceInstancesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 资源类型，枚举类：SCALING_GROUP_TAG。
-     * @return resourceType
-     */
+    /** 资源类型，枚举类：SCALING_GROUP_TAG。
+     * 
+     * @return resourceType */
     public ResourceTypeEnum getResourceType() {
         return resourceType;
     }
@@ -126,27 +107,23 @@ public class ListResourceInstancesRequest  {
         this.resourceType = resourceType;
     }
 
-    
-
     public ListResourceInstancesRequest withBody(QueryTagsOption body) {
         this.body = body;
         return this;
     }
 
     public ListResourceInstancesRequest withBody(Consumer<QueryTagsOption> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new QueryTagsOption();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public QueryTagsOption getBody() {
         return body;
     }
@@ -154,8 +131,6 @@ public class ListResourceInstancesRequest  {
     public void setBody(QueryTagsOption body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,13 +141,15 @@ public class ListResourceInstancesRequest  {
             return false;
         }
         ListResourceInstancesRequest listResourceInstancesRequest = (ListResourceInstancesRequest) o;
-        return Objects.equals(this.resourceType, listResourceInstancesRequest.resourceType) &&
-            Objects.equals(this.body, listResourceInstancesRequest.body);
+        return Objects.equals(this.resourceType, listResourceInstancesRequest.resourceType)
+            && Objects.equals(this.body, listResourceInstancesRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resourceType, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -182,16 +159,13 @@ public class ListResourceInstancesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

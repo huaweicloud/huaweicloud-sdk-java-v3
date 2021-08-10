@@ -1,106 +1,84 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ListInstanceTopicsRespTopics
- */
-public class ListInstanceTopicsRespTopics  {
-
-
+/** ListInstanceTopicsRespTopics */
+public class ListInstanceTopicsRespTopics {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policiesOnly")
-    
+    @JsonProperty(value = "policiesOnly")
+
     private Boolean policiesOnly;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replication")
-    
+    @JsonProperty(value = "replication")
+
     private Integer replication;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="partition")
-    
+    @JsonProperty(value = "partition")
+
     private Integer partition;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="retention_time")
-    
+    @JsonProperty(value = "retention_time")
+
     private Integer retentionTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sync_message_flush")
-    
+    @JsonProperty(value = "sync_message_flush")
+
     private Boolean syncMessageFlush;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sync_replication")
-    
+    @JsonProperty(value = "sync_replication")
+
     private Boolean syncReplication;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_name")
-    
+    @JsonProperty(value = "app_name")
+
     private String appName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="permissions")
-    
+    @JsonProperty(value = "permissions")
+
     private List<String> permissions = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="external_configs")
-    
+    @JsonProperty(value = "external_configs")
+
     private Object externalConfigs;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sensitive_word")
-    
+    @JsonProperty(value = "sensitive_word")
+
     private String sensitiveWord;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic_type")
-    
+    @JsonProperty(value = "topic_type")
+
     private Integer topicType;
 
     public ListInstanceTopicsRespTopics withPoliciesOnly(Boolean policiesOnly) {
@@ -108,13 +86,9 @@ public class ListInstanceTopicsRespTopics  {
         return this;
     }
 
-    
-
-
-    /**
-     * 是否只更新策略。
-     * @return policiesOnly
-     */
+    /** 是否只更新策略。
+     * 
+     * @return policiesOnly */
     public Boolean getPoliciesOnly() {
         return policiesOnly;
     }
@@ -123,20 +97,14 @@ public class ListInstanceTopicsRespTopics  {
         this.policiesOnly = policiesOnly;
     }
 
-    
-
     public ListInstanceTopicsRespTopics withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * topic名称。
-     * @return name
-     */
+    /** topic名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -145,20 +113,14 @@ public class ListInstanceTopicsRespTopics  {
         this.name = name;
     }
 
-    
-
     public ListInstanceTopicsRespTopics withReplication(Integer replication) {
         this.replication = replication;
         return this;
     }
 
-    
-
-
-    /**
-     * 副本数，配置数据的可靠性。
-     * @return replication
-     */
+    /** 副本数，配置数据的可靠性。
+     * 
+     * @return replication */
     public Integer getReplication() {
         return replication;
     }
@@ -167,20 +129,14 @@ public class ListInstanceTopicsRespTopics  {
         this.replication = replication;
     }
 
-    
-
     public ListInstanceTopicsRespTopics withPartition(Integer partition) {
         this.partition = partition;
         return this;
     }
 
-    
-
-
-    /**
-     * topic分区数，设置消费的并发数。
-     * @return partition
-     */
+    /** topic分区数，设置消费的并发数。
+     * 
+     * @return partition */
     public Integer getPartition() {
         return partition;
     }
@@ -189,20 +145,14 @@ public class ListInstanceTopicsRespTopics  {
         this.partition = partition;
     }
 
-    
-
     public ListInstanceTopicsRespTopics withRetentionTime(Integer retentionTime) {
         this.retentionTime = retentionTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息老化时间。
-     * @return retentionTime
-     */
+    /** 消息老化时间。
+     * 
+     * @return retentionTime */
     public Integer getRetentionTime() {
         return retentionTime;
     }
@@ -211,20 +161,14 @@ public class ListInstanceTopicsRespTopics  {
         this.retentionTime = retentionTime;
     }
 
-    
-
     public ListInstanceTopicsRespTopics withSyncMessageFlush(Boolean syncMessageFlush) {
         this.syncMessageFlush = syncMessageFlush;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否使用同步落盘。默认值为false。同步落盘会导致性能降低。
-     * @return syncMessageFlush
-     */
+    /** 是否使用同步落盘。默认值为false。同步落盘会导致性能降低。
+     * 
+     * @return syncMessageFlush */
     public Boolean getSyncMessageFlush() {
         return syncMessageFlush;
     }
@@ -233,20 +177,14 @@ public class ListInstanceTopicsRespTopics  {
         this.syncMessageFlush = syncMessageFlush;
     }
 
-    
-
     public ListInstanceTopicsRespTopics withSyncReplication(Boolean syncReplication) {
         this.syncReplication = syncReplication;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启同步复制，开启后，客户端生产消息时相应的也要设置acks=-1，否则不生效,默认关闭。
-     * @return syncReplication
-     */
+    /** 是否开启同步复制，开启后，客户端生产消息时相应的也要设置acks=-1，否则不生效,默认关闭。
+     * 
+     * @return syncReplication */
     public Boolean getSyncReplication() {
         return syncReplication;
     }
@@ -255,20 +193,14 @@ public class ListInstanceTopicsRespTopics  {
         this.syncReplication = syncReplication;
     }
 
-    
-
     public ListInstanceTopicsRespTopics withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用ID。
-     * @return appId
-     */
+    /** 应用ID。
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -277,20 +209,14 @@ public class ListInstanceTopicsRespTopics  {
         this.appId = appId;
     }
 
-    
-
     public ListInstanceTopicsRespTopics withAppName(String appName) {
         this.appName = appName;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名称。
-     * @return appName
-     */
+    /** 应用名称。
+     * 
+     * @return appName */
     public String getAppName() {
         return appName;
     }
@@ -299,16 +225,13 @@ public class ListInstanceTopicsRespTopics  {
         this.appName = appName;
     }
 
-    
-
     public ListInstanceTopicsRespTopics withPermissions(List<String> permissions) {
         this.permissions = permissions;
         return this;
     }
 
-    
     public ListInstanceTopicsRespTopics addPermissionsItem(String permissionsItem) {
-        if(this.permissions == null) {
+        if (this.permissions == null) {
             this.permissions = new ArrayList<>();
         }
         this.permissions.add(permissionsItem);
@@ -316,17 +239,16 @@ public class ListInstanceTopicsRespTopics  {
     }
 
     public ListInstanceTopicsRespTopics withPermissions(Consumer<List<String>> permissionsSetter) {
-        if(this.permissions == null) {
+        if (this.permissions == null) {
             this.permissions = new ArrayList<>();
         }
         permissionsSetter.accept(this.permissions);
         return this;
     }
 
-    /**
-     * 允许操作的权限。
-     * @return permissions
-     */
+    /** 允许操作的权限。
+     * 
+     * @return permissions */
     public List<String> getPermissions() {
         return permissions;
     }
@@ -335,20 +257,14 @@ public class ListInstanceTopicsRespTopics  {
         this.permissions = permissions;
     }
 
-    
-
     public ListInstanceTopicsRespTopics withExternalConfigs(Object externalConfigs) {
         this.externalConfigs = externalConfigs;
         return this;
     }
 
-    
-
-
-    /**
-     * 其他配置。
-     * @return externalConfigs
-     */
+    /** 其他配置。
+     * 
+     * @return externalConfigs */
     public Object getExternalConfigs() {
         return externalConfigs;
     }
@@ -357,20 +273,14 @@ public class ListInstanceTopicsRespTopics  {
         this.externalConfigs = externalConfigs;
     }
 
-    
-
     public ListInstanceTopicsRespTopics withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述。
-     * @return description
-     */
+    /** 描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -379,20 +289,14 @@ public class ListInstanceTopicsRespTopics  {
         this.description = description;
     }
 
-    
-
     public ListInstanceTopicsRespTopics withSensitiveWord(String sensitiveWord) {
         this.sensitiveWord = sensitiveWord;
         return this;
     }
 
-    
-
-
-    /**
-     * 敏感字段。
-     * @return sensitiveWord
-     */
+    /** 敏感字段。
+     * 
+     * @return sensitiveWord */
     public String getSensitiveWord() {
         return sensitiveWord;
     }
@@ -401,20 +305,14 @@ public class ListInstanceTopicsRespTopics  {
         this.sensitiveWord = sensitiveWord;
     }
 
-    
-
     public ListInstanceTopicsRespTopics withTopicType(Integer topicType) {
         this.topicType = topicType;
         return this;
     }
 
-    
-
-
-    /**
-     * topic类型。
-     * @return topicType
-     */
+    /** topic类型。
+     * 
+     * @return topicType */
     public Integer getTopicType() {
         return topicType;
     }
@@ -422,8 +320,6 @@ public class ListInstanceTopicsRespTopics  {
     public void setTopicType(Integer topicType) {
         this.topicType = topicType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -434,25 +330,40 @@ public class ListInstanceTopicsRespTopics  {
             return false;
         }
         ListInstanceTopicsRespTopics listInstanceTopicsRespTopics = (ListInstanceTopicsRespTopics) o;
-        return Objects.equals(this.policiesOnly, listInstanceTopicsRespTopics.policiesOnly) &&
-            Objects.equals(this.name, listInstanceTopicsRespTopics.name) &&
-            Objects.equals(this.replication, listInstanceTopicsRespTopics.replication) &&
-            Objects.equals(this.partition, listInstanceTopicsRespTopics.partition) &&
-            Objects.equals(this.retentionTime, listInstanceTopicsRespTopics.retentionTime) &&
-            Objects.equals(this.syncMessageFlush, listInstanceTopicsRespTopics.syncMessageFlush) &&
-            Objects.equals(this.syncReplication, listInstanceTopicsRespTopics.syncReplication) &&
-            Objects.equals(this.appId, listInstanceTopicsRespTopics.appId) &&
-            Objects.equals(this.appName, listInstanceTopicsRespTopics.appName) &&
-            Objects.equals(this.permissions, listInstanceTopicsRespTopics.permissions) &&
-            Objects.equals(this.externalConfigs, listInstanceTopicsRespTopics.externalConfigs) &&
-            Objects.equals(this.description, listInstanceTopicsRespTopics.description) &&
-            Objects.equals(this.sensitiveWord, listInstanceTopicsRespTopics.sensitiveWord) &&
-            Objects.equals(this.topicType, listInstanceTopicsRespTopics.topicType);
+        return Objects.equals(this.policiesOnly, listInstanceTopicsRespTopics.policiesOnly)
+            && Objects.equals(this.name, listInstanceTopicsRespTopics.name)
+            && Objects.equals(this.replication, listInstanceTopicsRespTopics.replication)
+            && Objects.equals(this.partition, listInstanceTopicsRespTopics.partition)
+            && Objects.equals(this.retentionTime, listInstanceTopicsRespTopics.retentionTime)
+            && Objects.equals(this.syncMessageFlush, listInstanceTopicsRespTopics.syncMessageFlush)
+            && Objects.equals(this.syncReplication, listInstanceTopicsRespTopics.syncReplication)
+            && Objects.equals(this.appId, listInstanceTopicsRespTopics.appId)
+            && Objects.equals(this.appName, listInstanceTopicsRespTopics.appName)
+            && Objects.equals(this.permissions, listInstanceTopicsRespTopics.permissions)
+            && Objects.equals(this.externalConfigs, listInstanceTopicsRespTopics.externalConfigs)
+            && Objects.equals(this.description, listInstanceTopicsRespTopics.description)
+            && Objects.equals(this.sensitiveWord, listInstanceTopicsRespTopics.sensitiveWord)
+            && Objects.equals(this.topicType, listInstanceTopicsRespTopics.topicType);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(policiesOnly, name, replication, partition, retentionTime, syncMessageFlush, syncReplication, appId, appName, permissions, externalConfigs, description, sensitiveWord, topicType);
+        return Objects.hash(policiesOnly,
+            name,
+            replication,
+            partition,
+            retentionTime,
+            syncMessageFlush,
+            syncReplication,
+            appId,
+            appName,
+            permissions,
+            externalConfigs,
+            description,
+            sensitiveWord,
+            topicType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -474,16 +385,13 @@ public class ListInstanceTopicsRespTopics  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

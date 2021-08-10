@@ -1,62 +1,40 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 大key记录结构体
- */
-public class BigkeysBody  {
-
-
+/** 大key记录结构体 */
+public class BigkeysBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * key类型
-     */
+
+    /** key类型 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum STRING for value: "string"
-         */
+        /** Enum STRING for value: "string" */
         public static final TypeEnum STRING = new TypeEnum("string");
-        
-        /**
-         * Enum LIST for value: "list"
-         */
+
+        /** Enum LIST for value: "list" */
         public static final TypeEnum LIST = new TypeEnum("list");
-        
-        /**
-         * Enum SET for value: "set"
-         */
+
+        /** Enum SET for value: "set" */
         public static final TypeEnum SET = new TypeEnum("set");
-        
-        /**
-         * Enum ZSET for value: "zset"
-         */
+
+        /** Enum ZSET for value: "zset" */
         public static final TypeEnum ZSET = new TypeEnum("zset");
-        
-        /**
-         * Enum HASH for value: "hash"
-         */
+
+        /** Enum HASH for value: "hash" */
         public static final TypeEnum HASH = new TypeEnum("hash");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -88,7 +66,7 @@ public class BigkeysBody  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -99,7 +77,7 @@ public class BigkeysBody  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -123,34 +101,29 @@ public class BigkeysBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="shard")
-    
+    @JsonProperty(value = "shard")
+
     private String shard;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db")
-    
+    @JsonProperty(value = "db")
+
     private Integer db;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unit")
-    
+    @JsonProperty(value = "unit")
+
     private String unit;
 
     public BigkeysBody withName(String name) {
@@ -158,13 +131,9 @@ public class BigkeysBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * key名称
-     * @return name
-     */
+    /** key名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -173,20 +142,14 @@ public class BigkeysBody  {
         this.name = name;
     }
 
-    
-
     public BigkeysBody withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * key类型
-     * @return type
-     */
+    /** key类型
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -195,20 +158,14 @@ public class BigkeysBody  {
         this.type = type;
     }
 
-    
-
     public BigkeysBody withShard(String shard) {
         this.shard = shard;
         return this;
     }
 
-    
-
-
-    /**
-     * 大key所在的分片，仅在实例类型为集群时支持,格式为ip:port
-     * @return shard
-     */
+    /** 大key所在的分片，仅在实例类型为集群时支持,格式为ip:port
+     * 
+     * @return shard */
     public String getShard() {
         return shard;
     }
@@ -217,20 +174,14 @@ public class BigkeysBody  {
         this.shard = shard;
     }
 
-    
-
     public BigkeysBody withDb(Integer db) {
         this.db = db;
         return this;
     }
 
-    
-
-
-    /**
-     * 大key所在的db
-     * @return db
-     */
+    /** 大key所在的db
+     * 
+     * @return db */
     public Integer getDb() {
         return db;
     }
@@ -239,20 +190,14 @@ public class BigkeysBody  {
         this.db = db;
     }
 
-    
-
     public BigkeysBody withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * key的value大小。
-     * @return size
-     */
+    /** key的value大小。
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -261,20 +206,14 @@ public class BigkeysBody  {
         this.size = size;
     }
 
-    
-
     public BigkeysBody withUnit(String unit) {
         this.unit = unit;
         return this;
     }
 
-    
-
-
-    /**
-     * key大小的单位。type为string时，单位是：byte；type为list/set/zset/hash时，单位是：count
-     * @return unit
-     */
+    /** key大小的单位。type为string时，单位是：byte；type为list/set/zset/hash时，单位是：count
+     * 
+     * @return unit */
     public String getUnit() {
         return unit;
     }
@@ -282,8 +221,6 @@ public class BigkeysBody  {
     public void setUnit(String unit) {
         this.unit = unit;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -294,17 +231,16 @@ public class BigkeysBody  {
             return false;
         }
         BigkeysBody bigkeysBody = (BigkeysBody) o;
-        return Objects.equals(this.name, bigkeysBody.name) &&
-            Objects.equals(this.type, bigkeysBody.type) &&
-            Objects.equals(this.shard, bigkeysBody.shard) &&
-            Objects.equals(this.db, bigkeysBody.db) &&
-            Objects.equals(this.size, bigkeysBody.size) &&
-            Objects.equals(this.unit, bigkeysBody.unit);
+        return Objects.equals(this.name, bigkeysBody.name) && Objects.equals(this.type, bigkeysBody.type)
+            && Objects.equals(this.shard, bigkeysBody.shard) && Objects.equals(this.db, bigkeysBody.db)
+            && Objects.equals(this.size, bigkeysBody.size) && Objects.equals(this.unit, bigkeysBody.unit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, type, shard, db, size, unit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -318,16 +254,13 @@ public class BigkeysBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

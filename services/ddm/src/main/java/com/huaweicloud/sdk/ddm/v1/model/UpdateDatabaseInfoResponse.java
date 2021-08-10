@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class UpdateDatabaseInfoResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instanceId")
-    
+    @JsonProperty(value = "instanceId")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobId")
-    
+    @JsonProperty(value = "jobId")
+
     private String jobId;
 
     public UpdateDatabaseInfoResponse withInstanceId(String instanceId) {
@@ -36,13 +24,9 @@ public class UpdateDatabaseInfoResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * DDM实例id。
-     * @return instanceId
-     */
+    /** DDM实例id。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -51,20 +35,14 @@ public class UpdateDatabaseInfoResponse extends SdkResponse {
         this.instanceId = instanceId;
     }
 
-    
-
     public UpdateDatabaseInfoResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID。
-     * @return jobId
-     */
+    /** 任务ID。
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -72,8 +50,6 @@ public class UpdateDatabaseInfoResponse extends SdkResponse {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +60,15 @@ public class UpdateDatabaseInfoResponse extends SdkResponse {
             return false;
         }
         UpdateDatabaseInfoResponse updateDatabaseInfoResponse = (UpdateDatabaseInfoResponse) o;
-        return Objects.equals(this.instanceId, updateDatabaseInfoResponse.instanceId) &&
-            Objects.equals(this.jobId, updateDatabaseInfoResponse.jobId);
+        return Objects.equals(this.instanceId, updateDatabaseInfoResponse.instanceId)
+            && Objects.equals(this.jobId, updateDatabaseInfoResponse.jobId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, jobId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +78,13 @@ public class UpdateDatabaseInfoResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

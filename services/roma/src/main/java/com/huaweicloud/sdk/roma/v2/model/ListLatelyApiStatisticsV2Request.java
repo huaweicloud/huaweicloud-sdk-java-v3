@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListLatelyApiStatisticsV2Request  {
-
-
+/** Request Object */
+public class ListLatelyApiStatisticsV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_id")
-    
+    @JsonProperty(value = "api_id")
+
     private String apiId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="duration")
-    
+    @JsonProperty(value = "duration")
+
     private String duration;
 
     public ListLatelyApiStatisticsV2Request withInstanceId(String instanceId) {
@@ -40,13 +28,9 @@ public class ListLatelyApiStatisticsV2Request  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -55,20 +39,14 @@ public class ListLatelyApiStatisticsV2Request  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListLatelyApiStatisticsV2Request withApiId(String apiId) {
         this.apiId = apiId;
         return this;
     }
 
-    
-
-
-    /**
-     * API的编号
-     * @return apiId
-     */
+    /** API的编号
+     * 
+     * @return apiId */
     public String getApiId() {
         return apiId;
     }
@@ -77,20 +55,14 @@ public class ListLatelyApiStatisticsV2Request  {
         this.apiId = apiId;
     }
 
-    
-
     public ListLatelyApiStatisticsV2Request withDuration(String duration) {
         this.duration = duration;
         return this;
     }
 
-    
-
-
-    /**
-     * 最近统计时长，单位必须为h和m，比如1h和1m，分别代表最近1小时和最近1分钟
-     * @return duration
-     */
+    /** 最近统计时长，单位必须为h和m，比如1h和1m，分别代表最近1小时和最近1分钟
+     * 
+     * @return duration */
     public String getDuration() {
         return duration;
     }
@@ -98,8 +70,6 @@ public class ListLatelyApiStatisticsV2Request  {
     public void setDuration(String duration) {
         this.duration = duration;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class ListLatelyApiStatisticsV2Request  {
             return false;
         }
         ListLatelyApiStatisticsV2Request listLatelyApiStatisticsV2Request = (ListLatelyApiStatisticsV2Request) o;
-        return Objects.equals(this.instanceId, listLatelyApiStatisticsV2Request.instanceId) &&
-            Objects.equals(this.apiId, listLatelyApiStatisticsV2Request.apiId) &&
-            Objects.equals(this.duration, listLatelyApiStatisticsV2Request.duration);
+        return Objects.equals(this.instanceId, listLatelyApiStatisticsV2Request.instanceId)
+            && Objects.equals(this.apiId, listLatelyApiStatisticsV2Request.apiId)
+            && Objects.equals(this.duration, listLatelyApiStatisticsV2Request.duration);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, apiId, duration);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class ListLatelyApiStatisticsV2Request  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

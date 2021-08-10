@@ -1,68 +1,51 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.VersionLinks;
-import com.huaweicloud.sdk.iam.v3.model.VersionMediatypes;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class Version  {
-
-
+public class Version {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
+
     private String updated;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private List<VersionLinks> links = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="media-types")
-    
+    @JsonProperty(value = "media-types")
+
     private List<VersionMediatypes> mediaTypes = null;
-    
+
     public Version withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 版本状态。
-     * @return status
-     */
+    /** 版本状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -71,20 +54,14 @@ public class Version  {
         this.status = status;
     }
 
-    
-
     public Version withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
 
-    
-
-
-    /**
-     * 最后更新时间。
-     * @return updated
-     */
+    /** 最后更新时间。
+     * 
+     * @return updated */
     public String getUpdated() {
         return updated;
     }
@@ -93,16 +70,13 @@ public class Version  {
         this.updated = updated;
     }
 
-    
-
     public Version withLinks(List<VersionLinks> links) {
         this.links = links;
         return this;
     }
 
-    
     public Version addLinksItem(VersionLinks linksItem) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         this.links.add(linksItem);
@@ -110,17 +84,16 @@ public class Version  {
     }
 
     public Version withLinks(Consumer<List<VersionLinks>> linksSetter) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);
         return this;
     }
 
-    /**
-     * 版本的资源链接信息。
-     * @return links
-     */
+    /** 版本的资源链接信息。
+     * 
+     * @return links */
     public List<VersionLinks> getLinks() {
         return links;
     }
@@ -129,20 +102,14 @@ public class Version  {
         this.links = links;
     }
 
-    
-
     public Version withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 版本号，如v3.6。
-     * @return id
-     */
+    /** 版本号，如v3.6。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -151,16 +118,13 @@ public class Version  {
         this.id = id;
     }
 
-    
-
     public Version withMediaTypes(List<VersionMediatypes> mediaTypes) {
         this.mediaTypes = mediaTypes;
         return this;
     }
 
-    
     public Version addMediaTypesItem(VersionMediatypes mediaTypesItem) {
-        if(this.mediaTypes == null) {
+        if (this.mediaTypes == null) {
             this.mediaTypes = new ArrayList<>();
         }
         this.mediaTypes.add(mediaTypesItem);
@@ -168,17 +132,16 @@ public class Version  {
     }
 
     public Version withMediaTypes(Consumer<List<VersionMediatypes>> mediaTypesSetter) {
-        if(this.mediaTypes == null) {
+        if (this.mediaTypes == null) {
             this.mediaTypes = new ArrayList<>();
         }
         mediaTypesSetter.accept(this.mediaTypes);
         return this;
     }
 
-    /**
-     * 支持的消息格式。
-     * @return mediaTypes
-     */
+    /** 支持的消息格式。
+     * 
+     * @return mediaTypes */
     public List<VersionMediatypes> getMediaTypes() {
         return mediaTypes;
     }
@@ -186,8 +149,6 @@ public class Version  {
     public void setMediaTypes(List<VersionMediatypes> mediaTypes) {
         this.mediaTypes = mediaTypes;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -198,16 +159,16 @@ public class Version  {
             return false;
         }
         Version version = (Version) o;
-        return Objects.equals(this.status, version.status) &&
-            Objects.equals(this.updated, version.updated) &&
-            Objects.equals(this.links, version.links) &&
-            Objects.equals(this.id, version.id) &&
-            Objects.equals(this.mediaTypes, version.mediaTypes);
+        return Objects.equals(this.status, version.status) && Objects.equals(this.updated, version.updated)
+            && Objects.equals(this.links, version.links) && Objects.equals(this.id, version.id)
+            && Objects.equals(this.mediaTypes, version.mediaTypes);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(status, updated, links, id, mediaTypes);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -220,16 +181,13 @@ public class Version  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

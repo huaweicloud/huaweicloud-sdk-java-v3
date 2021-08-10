@@ -1,53 +1,39 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.NodePoolMetadata;
-import com.huaweicloud.sdk.cce.v3.model.NodePoolSpec;
-import com.huaweicloud.sdk.cce.v3.model.NodePoolStatus;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class NodePool  {
-
-
+public class NodePool {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="kind")
-    
+    @JsonProperty(value = "kind")
+
     private String kind;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apiVersion")
-    
+    @JsonProperty(value = "apiVersion")
+
     private String apiVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata")
-    
+    @JsonProperty(value = "metadata")
+
     private NodePoolMetadata metadata;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec")
-    
+    @JsonProperty(value = "spec")
+
     private NodePoolSpec spec;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private NodePoolStatus status;
 
     public NodePool withKind(String kind) {
@@ -55,13 +41,9 @@ public class NodePool  {
         return this;
     }
 
-    
-
-
-    /**
-     * API类型，固定值“NodePool”。
-     * @return kind
-     */
+    /** API类型，固定值“NodePool”。
+     * 
+     * @return kind */
     public String getKind() {
         return kind;
     }
@@ -70,20 +52,14 @@ public class NodePool  {
         this.kind = kind;
     }
 
-    
-
     public NodePool withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * API版本，固定值“v3”。
-     * @return apiVersion
-     */
+    /** API版本，固定值“v3”。
+     * 
+     * @return apiVersion */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -92,27 +68,23 @@ public class NodePool  {
         this.apiVersion = apiVersion;
     }
 
-    
-
     public NodePool withMetadata(NodePoolMetadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
     public NodePool withMetadata(Consumer<NodePoolMetadata> metadataSetter) {
-        if(this.metadata == null ){
+        if (this.metadata == null) {
             this.metadata = new NodePoolMetadata();
             metadataSetter.accept(this.metadata);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get metadata
-     * @return metadata
-     */
+    /** Get metadata
+     * 
+     * @return metadata */
     public NodePoolMetadata getMetadata() {
         return metadata;
     }
@@ -121,27 +93,23 @@ public class NodePool  {
         this.metadata = metadata;
     }
 
-    
-
     public NodePool withSpec(NodePoolSpec spec) {
         this.spec = spec;
         return this;
     }
 
     public NodePool withSpec(Consumer<NodePoolSpec> specSetter) {
-        if(this.spec == null ){
+        if (this.spec == null) {
             this.spec = new NodePoolSpec();
             specSetter.accept(this.spec);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get spec
-     * @return spec
-     */
+    /** Get spec
+     * 
+     * @return spec */
     public NodePoolSpec getSpec() {
         return spec;
     }
@@ -150,27 +118,23 @@ public class NodePool  {
         this.spec = spec;
     }
 
-    
-
     public NodePool withStatus(NodePoolStatus status) {
         this.status = status;
         return this;
     }
 
     public NodePool withStatus(Consumer<NodePoolStatus> statusSetter) {
-        if(this.status == null ){
+        if (this.status == null) {
             this.status = new NodePoolStatus();
             statusSetter.accept(this.status);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get status
-     * @return status
-     */
+    /** Get status
+     * 
+     * @return status */
     public NodePoolStatus getStatus() {
         return status;
     }
@@ -178,8 +142,6 @@ public class NodePool  {
     public void setStatus(NodePoolStatus status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -190,16 +152,16 @@ public class NodePool  {
             return false;
         }
         NodePool nodePool = (NodePool) o;
-        return Objects.equals(this.kind, nodePool.kind) &&
-            Objects.equals(this.apiVersion, nodePool.apiVersion) &&
-            Objects.equals(this.metadata, nodePool.metadata) &&
-            Objects.equals(this.spec, nodePool.spec) &&
-            Objects.equals(this.status, nodePool.status);
+        return Objects.equals(this.kind, nodePool.kind) && Objects.equals(this.apiVersion, nodePool.apiVersion)
+            && Objects.equals(this.metadata, nodePool.metadata) && Objects.equals(this.spec, nodePool.spec)
+            && Objects.equals(this.status, nodePool.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(kind, apiVersion, metadata, spec, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -212,16 +174,13 @@ public class NodePool  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,100 +1,76 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.LdApiTestHistoryInfoV2;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class DebugLiveDataApiV2Response extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="test_status_code")
-    
+    @JsonProperty(value = "test_status_code")
+
     private String testStatusCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="test_request")
-    
+    @JsonProperty(value = "test_request")
+
     private String testRequest;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="test_used_time")
-    
+    @JsonProperty(value = "test_used_time")
+
     private Integer testUsedTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="test_operator")
-    
+    @JsonProperty(value = "test_operator")
+
     private String testOperator;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="test_response")
-    
+    @JsonProperty(value = "test_response")
+
     private String testResponse;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="test_method")
-    
+    @JsonProperty(value = "test_method")
+
     private String testMethod;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="test_id")
-    
+    @JsonProperty(value = "test_id")
+
     private Integer testId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="test_date")
-    
+    @JsonProperty(value = "test_date")
+
     private OffsetDateTime testDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ld_api_id")
-    
+    @JsonProperty(value = "ld_api_id")
+
     private String ldApiId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="debug_log")
-    
+    @JsonProperty(value = "debug_log")
+
     private List<String> debugLog = null;
-    
+
     public DebugLiveDataApiV2Response withTestStatusCode(String testStatusCode) {
         this.testStatusCode = testStatusCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 测试返回的状态码
-     * @return testStatusCode
-     */
+    /** 测试返回的状态码
+     * 
+     * @return testStatusCode */
     public String getTestStatusCode() {
         return testStatusCode;
     }
@@ -103,20 +79,14 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         this.testStatusCode = testStatusCode;
     }
 
-    
-
     public DebugLiveDataApiV2Response withTestRequest(String testRequest) {
         this.testRequest = testRequest;
         return this;
     }
 
-    
-
-
-    /**
-     * 测试的请求内容
-     * @return testRequest
-     */
+    /** 测试的请求内容
+     * 
+     * @return testRequest */
     public String getTestRequest() {
         return testRequest;
     }
@@ -125,20 +95,14 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         this.testRequest = testRequest;
     }
 
-    
-
     public DebugLiveDataApiV2Response withTestUsedTime(Integer testUsedTime) {
         this.testUsedTime = testUsedTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 测试耗时
-     * @return testUsedTime
-     */
+    /** 测试耗时
+     * 
+     * @return testUsedTime */
     public Integer getTestUsedTime() {
         return testUsedTime;
     }
@@ -147,20 +111,14 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         this.testUsedTime = testUsedTime;
     }
 
-    
-
     public DebugLiveDataApiV2Response withTestOperator(String testOperator) {
         this.testOperator = testOperator;
         return this;
     }
 
-    
-
-
-    /**
-     * 测试者的项目编号
-     * @return testOperator
-     */
+    /** 测试者的项目编号
+     * 
+     * @return testOperator */
     public String getTestOperator() {
         return testOperator;
     }
@@ -169,20 +127,14 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         this.testOperator = testOperator;
     }
 
-    
-
     public DebugLiveDataApiV2Response withTestResponse(String testResponse) {
         this.testResponse = testResponse;
         return this;
     }
 
-    
-
-
-    /**
-     * 测试的响应内容
-     * @return testResponse
-     */
+    /** 测试的响应内容
+     * 
+     * @return testResponse */
     public String getTestResponse() {
         return testResponse;
     }
@@ -191,20 +143,14 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         this.testResponse = testResponse;
     }
 
-    
-
     public DebugLiveDataApiV2Response withTestMethod(String testMethod) {
         this.testMethod = testMethod;
         return this;
     }
 
-    
-
-
-    /**
-     * 测试的请求方法
-     * @return testMethod
-     */
+    /** 测试的请求方法
+     * 
+     * @return testMethod */
     public String getTestMethod() {
         return testMethod;
     }
@@ -213,20 +159,14 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         this.testMethod = testMethod;
     }
 
-    
-
     public DebugLiveDataApiV2Response withTestId(Integer testId) {
         this.testId = testId;
         return this;
     }
 
-    
-
-
-    /**
-     * 测试编号
-     * @return testId
-     */
+    /** 测试编号
+     * 
+     * @return testId */
     public Integer getTestId() {
         return testId;
     }
@@ -235,20 +175,14 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         this.testId = testId;
     }
 
-    
-
     public DebugLiveDataApiV2Response withTestDate(OffsetDateTime testDate) {
         this.testDate = testDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 测试时间
-     * @return testDate
-     */
+    /** 测试时间
+     * 
+     * @return testDate */
     public OffsetDateTime getTestDate() {
         return testDate;
     }
@@ -257,20 +191,14 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         this.testDate = testDate;
     }
 
-    
-
     public DebugLiveDataApiV2Response withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API编号
-     * @return ldApiId
-     */
+    /** 后端API编号
+     * 
+     * @return ldApiId */
     public String getLdApiId() {
         return ldApiId;
     }
@@ -279,16 +207,13 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         this.ldApiId = ldApiId;
     }
 
-    
-
     public DebugLiveDataApiV2Response withDebugLog(List<String> debugLog) {
         this.debugLog = debugLog;
         return this;
     }
 
-    
     public DebugLiveDataApiV2Response addDebugLogItem(String debugLogItem) {
-        if(this.debugLog == null) {
+        if (this.debugLog == null) {
             this.debugLog = new ArrayList<>();
         }
         this.debugLog.add(debugLogItem);
@@ -296,17 +221,16 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
     }
 
     public DebugLiveDataApiV2Response withDebugLog(Consumer<List<String>> debugLogSetter) {
-        if(this.debugLog == null) {
+        if (this.debugLog == null) {
             this.debugLog = new ArrayList<>();
         }
         debugLogSetter.accept(this.debugLog);
         return this;
     }
 
-    /**
-     * 本次测试日志列表
-     * @return debugLog
-     */
+    /** 本次测试日志列表
+     * 
+     * @return debugLog */
     public List<String> getDebugLog() {
         return debugLog;
     }
@@ -314,8 +238,6 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
     public void setDebugLog(List<String> debugLog) {
         this.debugLog = debugLog;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -326,21 +248,32 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
             return false;
         }
         DebugLiveDataApiV2Response debugLiveDataApiV2Response = (DebugLiveDataApiV2Response) o;
-        return Objects.equals(this.testStatusCode, debugLiveDataApiV2Response.testStatusCode) &&
-            Objects.equals(this.testRequest, debugLiveDataApiV2Response.testRequest) &&
-            Objects.equals(this.testUsedTime, debugLiveDataApiV2Response.testUsedTime) &&
-            Objects.equals(this.testOperator, debugLiveDataApiV2Response.testOperator) &&
-            Objects.equals(this.testResponse, debugLiveDataApiV2Response.testResponse) &&
-            Objects.equals(this.testMethod, debugLiveDataApiV2Response.testMethod) &&
-            Objects.equals(this.testId, debugLiveDataApiV2Response.testId) &&
-            Objects.equals(this.testDate, debugLiveDataApiV2Response.testDate) &&
-            Objects.equals(this.ldApiId, debugLiveDataApiV2Response.ldApiId) &&
-            Objects.equals(this.debugLog, debugLiveDataApiV2Response.debugLog);
+        return Objects.equals(this.testStatusCode, debugLiveDataApiV2Response.testStatusCode)
+            && Objects.equals(this.testRequest, debugLiveDataApiV2Response.testRequest)
+            && Objects.equals(this.testUsedTime, debugLiveDataApiV2Response.testUsedTime)
+            && Objects.equals(this.testOperator, debugLiveDataApiV2Response.testOperator)
+            && Objects.equals(this.testResponse, debugLiveDataApiV2Response.testResponse)
+            && Objects.equals(this.testMethod, debugLiveDataApiV2Response.testMethod)
+            && Objects.equals(this.testId, debugLiveDataApiV2Response.testId)
+            && Objects.equals(this.testDate, debugLiveDataApiV2Response.testDate)
+            && Objects.equals(this.ldApiId, debugLiveDataApiV2Response.ldApiId)
+            && Objects.equals(this.debugLog, debugLiveDataApiV2Response.debugLog);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(testStatusCode, testRequest, testUsedTime, testOperator, testResponse, testMethod, testId, testDate, ldApiId, debugLog);
+        return Objects.hash(testStatusCode,
+            testRequest,
+            testUsedTime,
+            testOperator,
+            testResponse,
+            testMethod,
+            testId,
+            testDate,
+            ldApiId,
+            debugLog);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -358,16 +291,13 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

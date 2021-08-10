@@ -1,78 +1,57 @@
 package com.huaweicloud.sdk.live.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ListBandwidthDetailRequest  {
-
-
+/** Request Object */
+public class ListBandwidthDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="play_domains")
-    
+    @JsonProperty(value = "play_domains")
+
     private List<String> playDomains = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app")
-    
+    @JsonProperty(value = "app")
+
     private String app;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stream")
-    
+    @JsonProperty(value = "stream")
+
     private String stream;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private List<String> region = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isp")
-    
+    @JsonProperty(value = "isp")
+
     private List<String> isp = null;
-        /**
-     * 查询数据的时间粒度。支持300（默认值）, 3600和86400秒。不传值时，使用默认值300秒。 
-     */
+
+    /** 查询数据的时间粒度。支持300（默认值）, 3600和86400秒。不传值时，使用默认值300秒。 */
     public static final class IntervalEnum {
 
-        
-        /**
-         * Enum NUMBER_300 for value: 300
-         */
+        /** Enum NUMBER_300 for value: 300 */
         public static final IntervalEnum NUMBER_300 = new IntervalEnum(300);
-        
-        /**
-         * Enum NUMBER_3600 for value: 3600
-         */
+
+        /** Enum NUMBER_3600 for value: 3600 */
         public static final IntervalEnum NUMBER_3600 = new IntervalEnum(3600);
-        
-        /**
-         * Enum NUMBER_86400 for value: 86400
-         */
+
+        /** Enum NUMBER_86400 for value: 86400 */
         public static final IntervalEnum NUMBER_86400 = new IntervalEnum(86400);
-        
 
         private static final Map<Integer, IntervalEnum> STATIC_FIELDS = createStaticFields();
 
@@ -102,7 +81,7 @@ public class ListBandwidthDetailRequest  {
 
         @JsonCreator
         public static IntervalEnum fromValue(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             IntervalEnum result = STATIC_FIELDS.get(value);
@@ -113,7 +92,7 @@ public class ListBandwidthDetailRequest  {
         }
 
         public static IntervalEnum valueOf(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             IntervalEnum result = STATIC_FIELDS.get(value);
@@ -137,22 +116,19 @@ public class ListBandwidthDetailRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="interval")
-    
+    @JsonProperty(value = "interval")
+
     private IntervalEnum interval;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
     public ListBandwidthDetailRequest withPlayDomains(List<String> playDomains) {
@@ -160,9 +136,8 @@ public class ListBandwidthDetailRequest  {
         return this;
     }
 
-    
     public ListBandwidthDetailRequest addPlayDomainsItem(String playDomainsItem) {
-        if(this.playDomains == null) {
+        if (this.playDomains == null) {
             this.playDomains = new ArrayList<>();
         }
         this.playDomains.add(playDomainsItem);
@@ -170,17 +145,16 @@ public class ListBandwidthDetailRequest  {
     }
 
     public ListBandwidthDetailRequest withPlayDomains(Consumer<List<String>> playDomainsSetter) {
-        if(this.playDomains == null) {
+        if (this.playDomains == null) {
             this.playDomains = new ArrayList<>();
         }
         playDomainsSetter.accept(this.playDomains);
         return this;
     }
 
-    /**
-     * 播放域名列表，最多支持查询10个域名，多个域名以逗号分隔。 
-     * @return playDomains
-     */
+    /** 播放域名列表，最多支持查询10个域名，多个域名以逗号分隔。
+     * 
+     * @return playDomains */
     public List<String> getPlayDomains() {
         return playDomains;
     }
@@ -189,20 +163,14 @@ public class ListBandwidthDetailRequest  {
         this.playDomains = playDomains;
     }
 
-    
-
     public ListBandwidthDetailRequest withApp(String app) {
         this.app = app;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名称。
-     * @return app
-     */
+    /** 应用名称。
+     * 
+     * @return app */
     public String getApp() {
         return app;
     }
@@ -211,20 +179,14 @@ public class ListBandwidthDetailRequest  {
         this.app = app;
     }
 
-    
-
     public ListBandwidthDetailRequest withStream(String stream) {
         this.stream = stream;
         return this;
     }
 
-    
-
-
-    /**
-     * 流名。
-     * @return stream
-     */
+    /** 流名。
+     * 
+     * @return stream */
     public String getStream() {
         return stream;
     }
@@ -233,16 +195,13 @@ public class ListBandwidthDetailRequest  {
         this.stream = stream;
     }
 
-    
-
     public ListBandwidthDetailRequest withRegion(List<String> region) {
         this.region = region;
         return this;
     }
 
-    
     public ListBandwidthDetailRequest addRegionItem(String regionItem) {
-        if(this.region == null) {
+        if (this.region == null) {
             this.region = new ArrayList<>();
         }
         this.region.add(regionItem);
@@ -250,17 +209,16 @@ public class ListBandwidthDetailRequest  {
     }
 
     public ListBandwidthDetailRequest withRegion(Consumer<List<String>> regionSetter) {
-        if(this.region == null) {
+        if (this.region == null) {
             this.region = new ArrayList<>();
         }
         regionSetter.accept(this.region);
         return this;
     }
 
-    /**
-     * 区域列表。具体取值请参考[省份名称缩写](live_03_0043.xml)，不填写查询所有区域。 
-     * @return region
-     */
+    /** 区域列表。具体取值请参考[省份名称缩写](live_03_0043.xml)，不填写查询所有区域。
+     * 
+     * @return region */
     public List<String> getRegion() {
         return region;
     }
@@ -269,16 +227,13 @@ public class ListBandwidthDetailRequest  {
         this.region = region;
     }
 
-    
-
     public ListBandwidthDetailRequest withIsp(List<String> isp) {
         this.isp = isp;
         return this;
     }
 
-    
     public ListBandwidthDetailRequest addIspItem(String ispItem) {
-        if(this.isp == null) {
+        if (this.isp == null) {
             this.isp = new ArrayList<>();
         }
         this.isp.add(ispItem);
@@ -286,17 +241,16 @@ public class ListBandwidthDetailRequest  {
     }
 
     public ListBandwidthDetailRequest withIsp(Consumer<List<String>> ispSetter) {
-        if(this.isp == null) {
+        if (this.isp == null) {
             this.isp = new ArrayList<>();
         }
         ispSetter.accept(this.isp);
         return this;
     }
 
-    /**
-     * 运营商列表，取值如下： - \"CMCC ：移动\" - \"CTCC ： 电信\" - \"CUCC ：联通\" - \"OTHER: 其他\"  不填写查询所有运营商。 
-     * @return isp
-     */
+    /** 运营商列表，取值如下： - \"CMCC ：移动\" - \"CTCC ： 电信\" - \"CUCC ：联通\" - \"OTHER: 其他\" 不填写查询所有运营商。
+     * 
+     * @return isp */
     public List<String> getIsp() {
         return isp;
     }
@@ -305,22 +259,14 @@ public class ListBandwidthDetailRequest  {
         this.isp = isp;
     }
 
-    
-
     public ListBandwidthDetailRequest withInterval(IntervalEnum interval) {
         this.interval = interval;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询数据的时间粒度。支持300（默认值）, 3600和86400秒。不传值时，使用默认值300秒。 
-     * minimum: 300
-     * maximum: 86400
-     * @return interval
-     */
+    /** 查询数据的时间粒度。支持300（默认值）, 3600和86400秒。不传值时，使用默认值300秒。 minimum: 300 maximum: 86400
+     * 
+     * @return interval */
     public IntervalEnum getInterval() {
         return interval;
     }
@@ -329,20 +275,14 @@ public class ListBandwidthDetailRequest  {
         this.interval = interval;
     }
 
-    
-
     public ListBandwidthDetailRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度31天，最大查询周期90天。  若参数为空，默认查询7天数据。 
-     * @return startTime
-     */
+    /** 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度31天，最大查询周期90天。 若参数为空，默认查询7天数据。
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -351,20 +291,14 @@ public class ListBandwidthDetailRequest  {
         this.startTime = startTime;
     }
 
-    
-
     public ListBandwidthDetailRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。  若参数为空，默认为当前时间。结束时间需大于起始时间。 
-     * @return endTime
-     */
+    /** 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。 若参数为空，默认为当前时间。结束时间需大于起始时间。
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -372,8 +306,6 @@ public class ListBandwidthDetailRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -384,19 +316,21 @@ public class ListBandwidthDetailRequest  {
             return false;
         }
         ListBandwidthDetailRequest listBandwidthDetailRequest = (ListBandwidthDetailRequest) o;
-        return Objects.equals(this.playDomains, listBandwidthDetailRequest.playDomains) &&
-            Objects.equals(this.app, listBandwidthDetailRequest.app) &&
-            Objects.equals(this.stream, listBandwidthDetailRequest.stream) &&
-            Objects.equals(this.region, listBandwidthDetailRequest.region) &&
-            Objects.equals(this.isp, listBandwidthDetailRequest.isp) &&
-            Objects.equals(this.interval, listBandwidthDetailRequest.interval) &&
-            Objects.equals(this.startTime, listBandwidthDetailRequest.startTime) &&
-            Objects.equals(this.endTime, listBandwidthDetailRequest.endTime);
+        return Objects.equals(this.playDomains, listBandwidthDetailRequest.playDomains)
+            && Objects.equals(this.app, listBandwidthDetailRequest.app)
+            && Objects.equals(this.stream, listBandwidthDetailRequest.stream)
+            && Objects.equals(this.region, listBandwidthDetailRequest.region)
+            && Objects.equals(this.isp, listBandwidthDetailRequest.isp)
+            && Objects.equals(this.interval, listBandwidthDetailRequest.interval)
+            && Objects.equals(this.startTime, listBandwidthDetailRequest.startTime)
+            && Objects.equals(this.endTime, listBandwidthDetailRequest.endTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(playDomains, app, stream, region, isp, interval, startTime, endTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -412,16 +346,13 @@ public class ListBandwidthDetailRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

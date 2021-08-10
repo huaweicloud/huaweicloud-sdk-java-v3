@@ -1,66 +1,45 @@
 package com.huaweicloud.sdk.ugo.v1.model;
 
-
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
-
-
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowApiVersionResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private String links;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
-    /**
-     * 版本的状态
-     */
+
+    /** 版本的状态 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum CURRENT for value: "CURRENT"
-         */
+        /** Enum CURRENT for value: "CURRENT" */
         public static final StatusEnum CURRENT = new StatusEnum("CURRENT");
-        
-        /**
-         * Enum SUPPORTED for value: "SUPPORTED"
-         */
+
+        /** Enum SUPPORTED for value: "SUPPORTED" */
         public static final StatusEnum SUPPORTED = new StatusEnum("SUPPORTED");
-        
-        /**
-         * Enum DEPRECATED for value: "DEPRECATED"
-         */
+
+        /** Enum DEPRECATED for value: "DEPRECATED" */
         public static final StatusEnum DEPRECATED = new StatusEnum("DEPRECATED");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -90,7 +69,7 @@ public class ShowApiVersionResponse extends SdkResponse {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -101,7 +80,7 @@ public class ShowApiVersionResponse extends SdkResponse {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -125,16 +104,14 @@ public class ShowApiVersionResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
+
     private String updated;
 
     public ShowApiVersionResponse withId(String id) {
@@ -142,13 +119,9 @@ public class ShowApiVersionResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 版本ID
-     * @return id
-     */
+    /** 版本ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -157,20 +130,14 @@ public class ShowApiVersionResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowApiVersionResponse withLinks(String links) {
         this.links = links;
         return this;
     }
 
-    
-
-
-    /**
-     * 版本详情
-     * @return links
-     */
+    /** 版本详情
+     * 
+     * @return links */
     public String getLinks() {
         return links;
     }
@@ -179,20 +146,14 @@ public class ShowApiVersionResponse extends SdkResponse {
         this.links = links;
     }
 
-    
-
     public ShowApiVersionResponse withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 该版本API的微版本信息
-     * @return version
-     */
+    /** 该版本API的微版本信息
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -201,20 +162,14 @@ public class ShowApiVersionResponse extends SdkResponse {
         this.version = version;
     }
 
-    
-
     public ShowApiVersionResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 版本的状态
-     * @return status
-     */
+    /** 版本的状态
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -223,20 +178,14 @@ public class ShowApiVersionResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public ShowApiVersionResponse withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
 
-    
-
-
-    /**
-     * 版本更新时间
-     * @return updated
-     */
+    /** 版本更新时间
+     * 
+     * @return updated */
     public String getUpdated() {
         return updated;
     }
@@ -244,8 +193,6 @@ public class ShowApiVersionResponse extends SdkResponse {
     public void setUpdated(String updated) {
         this.updated = updated;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -256,16 +203,18 @@ public class ShowApiVersionResponse extends SdkResponse {
             return false;
         }
         ShowApiVersionResponse showApiVersionResponse = (ShowApiVersionResponse) o;
-        return Objects.equals(this.id, showApiVersionResponse.id) &&
-            Objects.equals(this.links, showApiVersionResponse.links) &&
-            Objects.equals(this.version, showApiVersionResponse.version) &&
-            Objects.equals(this.status, showApiVersionResponse.status) &&
-            Objects.equals(this.updated, showApiVersionResponse.updated);
+        return Objects.equals(this.id, showApiVersionResponse.id)
+            && Objects.equals(this.links, showApiVersionResponse.links)
+            && Objects.equals(this.version, showApiVersionResponse.version)
+            && Objects.equals(this.status, showApiVersionResponse.status)
+            && Objects.equals(this.updated, showApiVersionResponse.updated);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, links, version, status, updated);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -278,16 +227,13 @@ public class ShowApiVersionResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

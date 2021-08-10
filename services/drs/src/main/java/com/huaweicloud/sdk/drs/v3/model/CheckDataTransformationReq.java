@@ -1,49 +1,34 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.ConfigTransformationVo;
-import com.huaweicloud.sdk.drs.v3.model.DatabaseObjectVO;
-import com.huaweicloud.sdk.drs.v3.model.TransformationInfo;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 校验数据加工规则请求体
- */
-public class CheckDataTransformationReq  {
-
-
+/** 校验数据加工规则请求体 */
+public class CheckDataTransformationReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
+
     private String jobId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="object_info")
-    
+    @JsonProperty(value = "object_info")
+
     private List<DatabaseObjectVO> objectInfo = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="transformation_info")
-    
+    @JsonProperty(value = "transformation_info")
+
     private TransformationInfo transformationInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="config_transformation")
-    
+    @JsonProperty(value = "config_transformation")
+
     private ConfigTransformationVo configTransformation;
 
     public CheckDataTransformationReq withJobId(String jobId) {
@@ -51,13 +36,9 @@ public class CheckDataTransformationReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务id
-     * @return jobId
-     */
+    /** 任务id
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -66,16 +47,13 @@ public class CheckDataTransformationReq  {
         this.jobId = jobId;
     }
 
-    
-
     public CheckDataTransformationReq withObjectInfo(List<DatabaseObjectVO> objectInfo) {
         this.objectInfo = objectInfo;
         return this;
     }
 
-    
     public CheckDataTransformationReq addObjectInfoItem(DatabaseObjectVO objectInfoItem) {
-        if(this.objectInfo == null) {
+        if (this.objectInfo == null) {
             this.objectInfo = new ArrayList<>();
         }
         this.objectInfo.add(objectInfoItem);
@@ -83,17 +61,16 @@ public class CheckDataTransformationReq  {
     }
 
     public CheckDataTransformationReq withObjectInfo(Consumer<List<DatabaseObjectVO>> objectInfoSetter) {
-        if(this.objectInfo == null) {
+        if (this.objectInfo == null) {
             this.objectInfo = new ArrayList<>();
         }
         objectInfoSetter.accept(this.objectInfo);
         return this;
     }
 
-    /**
-     * 对象信息
-     * @return objectInfo
-     */
+    /** 对象信息
+     * 
+     * @return objectInfo */
     public List<DatabaseObjectVO> getObjectInfo() {
         return objectInfo;
     }
@@ -102,27 +79,23 @@ public class CheckDataTransformationReq  {
         this.objectInfo = objectInfo;
     }
 
-    
-
     public CheckDataTransformationReq withTransformationInfo(TransformationInfo transformationInfo) {
         this.transformationInfo = transformationInfo;
         return this;
     }
 
     public CheckDataTransformationReq withTransformationInfo(Consumer<TransformationInfo> transformationInfoSetter) {
-        if(this.transformationInfo == null ){
+        if (this.transformationInfo == null) {
             this.transformationInfo = new TransformationInfo();
             transformationInfoSetter.accept(this.transformationInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get transformationInfo
-     * @return transformationInfo
-     */
+    /** Get transformationInfo
+     * 
+     * @return transformationInfo */
     public TransformationInfo getTransformationInfo() {
         return transformationInfo;
     }
@@ -131,27 +104,24 @@ public class CheckDataTransformationReq  {
         this.transformationInfo = transformationInfo;
     }
 
-    
-
     public CheckDataTransformationReq withConfigTransformation(ConfigTransformationVo configTransformation) {
         this.configTransformation = configTransformation;
         return this;
     }
 
-    public CheckDataTransformationReq withConfigTransformation(Consumer<ConfigTransformationVo> configTransformationSetter) {
-        if(this.configTransformation == null ){
+    public CheckDataTransformationReq withConfigTransformation(
+        Consumer<ConfigTransformationVo> configTransformationSetter) {
+        if (this.configTransformation == null) {
             this.configTransformation = new ConfigTransformationVo();
             configTransformationSetter.accept(this.configTransformation);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get configTransformation
-     * @return configTransformation
-     */
+    /** Get configTransformation
+     * 
+     * @return configTransformation */
     public ConfigTransformationVo getConfigTransformation() {
         return configTransformation;
     }
@@ -159,8 +129,6 @@ public class CheckDataTransformationReq  {
     public void setConfigTransformation(ConfigTransformationVo configTransformation) {
         this.configTransformation = configTransformation;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -171,15 +139,17 @@ public class CheckDataTransformationReq  {
             return false;
         }
         CheckDataTransformationReq checkDataTransformationReq = (CheckDataTransformationReq) o;
-        return Objects.equals(this.jobId, checkDataTransformationReq.jobId) &&
-            Objects.equals(this.objectInfo, checkDataTransformationReq.objectInfo) &&
-            Objects.equals(this.transformationInfo, checkDataTransformationReq.transformationInfo) &&
-            Objects.equals(this.configTransformation, checkDataTransformationReq.configTransformation);
+        return Objects.equals(this.jobId, checkDataTransformationReq.jobId)
+            && Objects.equals(this.objectInfo, checkDataTransformationReq.objectInfo)
+            && Objects.equals(this.transformationInfo, checkDataTransformationReq.transformationInfo)
+            && Objects.equals(this.configTransformation, checkDataTransformationReq.configTransformation);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobId, objectInfo, transformationInfo, configTransformation);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -191,16 +161,13 @@ public class CheckDataTransformationReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

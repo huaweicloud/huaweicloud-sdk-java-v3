@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * QueryConnectionsResponse
- */
-public class QueryConnectionsResponse  {
-
-
+/** QueryConnectionsResponse */
+public class QueryConnectionsResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="client_ip")
-    
+    @JsonProperty(value = "client_ip")
+
     private String clientIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
+
     private Integer count;
 
     public QueryConnectionsResponse withClientIp(String clientIp) {
@@ -34,13 +23,9 @@ public class QueryConnectionsResponse  {
         return this;
     }
 
-    
-
-
-    /**
-     * 连接到该实例或节点的客户端IP地址。
-     * @return clientIp
-     */
+    /** 连接到该实例或节点的客户端IP地址。
+     * 
+     * @return clientIp */
     public String getClientIp() {
         return clientIp;
     }
@@ -49,20 +34,14 @@ public class QueryConnectionsResponse  {
         this.clientIp = clientIp;
     }
 
-    
-
     public QueryConnectionsResponse withCount(Integer count) {
         this.count = count;
         return this;
     }
 
-    
-
-
-    /**
-     * 该IP对应的连接数。
-     * @return count
-     */
+    /** 该IP对应的连接数。
+     * 
+     * @return count */
     public Integer getCount() {
         return count;
     }
@@ -70,8 +49,6 @@ public class QueryConnectionsResponse  {
     public void setCount(Integer count) {
         this.count = count;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class QueryConnectionsResponse  {
             return false;
         }
         QueryConnectionsResponse queryConnectionsResponse = (QueryConnectionsResponse) o;
-        return Objects.equals(this.clientIp, queryConnectionsResponse.clientIp) &&
-            Objects.equals(this.count, queryConnectionsResponse.count);
+        return Objects.equals(this.clientIp, queryConnectionsResponse.clientIp)
+            && Objects.equals(this.count, queryConnectionsResponse.count);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clientIp, count);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class QueryConnectionsResponse  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

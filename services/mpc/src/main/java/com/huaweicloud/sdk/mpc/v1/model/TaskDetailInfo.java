@@ -1,75 +1,47 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.ErrorResponse;
-import com.huaweicloud.sdk.mpc.v1.model.MediaDetail;
-import com.huaweicloud.sdk.mpc.v1.model.ObsObjInfo;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * TaskDetailInfo
- */
-public class TaskDetailInfo  {
-
-
+/** TaskDetailInfo */
+public class TaskDetailInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
+    @JsonProperty(value = "task_id")
+
     private String taskId;
-    /**
-     * 任务执行状态，取值如下。 
-     */
+
+    /** 任务执行状态，取值如下。 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum NO_TASK for value: "NO_TASK"
-         */
+        /** Enum NO_TASK for value: "NO_TASK" */
         public static final StatusEnum NO_TASK = new StatusEnum("NO_TASK");
-        
-        /**
-         * Enum WAITING for value: "WAITING"
-         */
+
+        /** Enum WAITING for value: "WAITING" */
         public static final StatusEnum WAITING = new StatusEnum("WAITING");
-        
-        /**
-         * Enum TRANSCODING for value: "TRANSCODING"
-         */
+
+        /** Enum TRANSCODING for value: "TRANSCODING" */
         public static final StatusEnum TRANSCODING = new StatusEnum("TRANSCODING");
-        
-        /**
-         * Enum SUCCEEDED for value: "SUCCEEDED"
-         */
+
+        /** Enum SUCCEEDED for value: "SUCCEEDED" */
         public static final StatusEnum SUCCEEDED = new StatusEnum("SUCCEEDED");
-        
-        /**
-         * Enum FAILED for value: "FAILED"
-         */
+
+        /** Enum FAILED for value: "FAILED" */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
-        
-        /**
-         * Enum CANCELED for value: "CANCELED"
-         */
+
+        /** Enum CANCELED for value: "CANCELED" */
         public static final StatusEnum CANCELED = new StatusEnum("CANCELED");
-        
-        /**
-         * Enum NEED_TO_BE_AUDIT for value: "NEED_TO_BE_AUDIT"
-         */
+
+        /** Enum NEED_TO_BE_AUDIT for value: "NEED_TO_BE_AUDIT" */
         public static final StatusEnum NEED_TO_BE_AUDIT = new StatusEnum("NEED_TO_BE_AUDIT");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -103,7 +75,7 @@ public class TaskDetailInfo  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -114,7 +86,7 @@ public class TaskDetailInfo  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -138,70 +110,59 @@ public class TaskDetailInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private String createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="input")
-    
+    @JsonProperty(value = "input")
+
     private ObsObjInfo input;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output")
-    
+    @JsonProperty(value = "output")
+
     private ObsObjInfo output;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_data")
-    
+    @JsonProperty(value = "user_data")
+
     private String userData;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
+
     private String errorCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="media_detail")
-    
+    @JsonProperty(value = "media_detail")
+
     private MediaDetail mediaDetail;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="xcode_error")
-    
+    @JsonProperty(value = "xcode_error")
+
     private ErrorResponse xcodeError;
 
     public TaskDetailInfo withTaskId(String taskId) {
@@ -209,13 +170,9 @@ public class TaskDetailInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID。
-     * @return taskId
-     */
+    /** 任务ID。
+     * 
+     * @return taskId */
     public String getTaskId() {
         return taskId;
     }
@@ -224,20 +181,14 @@ public class TaskDetailInfo  {
         this.taskId = taskId;
     }
 
-    
-
     public TaskDetailInfo withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务执行状态，取值如下。 
-     * @return status
-     */
+    /** 任务执行状态，取值如下。
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -246,20 +197,14 @@ public class TaskDetailInfo  {
         this.status = status;
     }
 
-    
-
     public TaskDetailInfo withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 转码任务启动时间 
-     * @return createTime
-     */
+    /** 转码任务启动时间
+     * 
+     * @return createTime */
     public String getCreateTime() {
         return createTime;
     }
@@ -268,20 +213,14 @@ public class TaskDetailInfo  {
         this.createTime = createTime;
     }
 
-    
-
     public TaskDetailInfo withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 下发xcode任务成功时间 
-     * @return startTime
-     */
+    /** 下发xcode任务成功时间
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -290,20 +229,14 @@ public class TaskDetailInfo  {
         this.startTime = startTime;
     }
 
-    
-
     public TaskDetailInfo withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 转码任务结束时间 
-     * @return endTime
-     */
+    /** 转码任务结束时间
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -312,27 +245,23 @@ public class TaskDetailInfo  {
         this.endTime = endTime;
     }
 
-    
-
     public TaskDetailInfo withInput(ObsObjInfo input) {
         this.input = input;
         return this;
     }
 
     public TaskDetailInfo withInput(Consumer<ObsObjInfo> inputSetter) {
-        if(this.input == null ){
+        if (this.input == null) {
             this.input = new ObsObjInfo();
             inputSetter.accept(this.input);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get input
-     * @return input
-     */
+    /** Get input
+     * 
+     * @return input */
     public ObsObjInfo getInput() {
         return input;
     }
@@ -341,27 +270,23 @@ public class TaskDetailInfo  {
         this.input = input;
     }
 
-    
-
     public TaskDetailInfo withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
     }
 
     public TaskDetailInfo withOutput(Consumer<ObsObjInfo> outputSetter) {
-        if(this.output == null ){
+        if (this.output == null) {
             this.output = new ObsObjInfo();
             outputSetter.accept(this.output);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get output
-     * @return output
-     */
+    /** Get output
+     * 
+     * @return output */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -370,20 +295,14 @@ public class TaskDetailInfo  {
         this.output = output;
     }
 
-    
-
     public TaskDetailInfo withUserData(String userData) {
         this.userData = userData;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户数据。 
-     * @return userData
-     */
+    /** 用户数据。
+     * 
+     * @return userData */
     public String getUserData() {
         return userData;
     }
@@ -392,20 +311,14 @@ public class TaskDetailInfo  {
         this.userData = userData;
     }
 
-    
-
     public TaskDetailInfo withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 转码任务错误码。 
-     * @return errorCode
-     */
+    /** 转码任务错误码。
+     * 
+     * @return errorCode */
     public String getErrorCode() {
         return errorCode;
     }
@@ -414,20 +327,14 @@ public class TaskDetailInfo  {
         this.errorCode = errorCode;
     }
 
-    
-
     public TaskDetailInfo withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 转码任务描述，当转码出现异常时，此字段为异常的原因。 
-     * @return description
-     */
+    /** 转码任务描述，当转码出现异常时，此字段为异常的原因。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -436,27 +343,23 @@ public class TaskDetailInfo  {
         this.description = description;
     }
 
-    
-
     public TaskDetailInfo withMediaDetail(MediaDetail mediaDetail) {
         this.mediaDetail = mediaDetail;
         return this;
     }
 
     public TaskDetailInfo withMediaDetail(Consumer<MediaDetail> mediaDetailSetter) {
-        if(this.mediaDetail == null ){
+        if (this.mediaDetail == null) {
             this.mediaDetail = new MediaDetail();
             mediaDetailSetter.accept(this.mediaDetail);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get mediaDetail
-     * @return mediaDetail
-     */
+    /** Get mediaDetail
+     * 
+     * @return mediaDetail */
     public MediaDetail getMediaDetail() {
         return mediaDetail;
     }
@@ -465,27 +368,23 @@ public class TaskDetailInfo  {
         this.mediaDetail = mediaDetail;
     }
 
-    
-
     public TaskDetailInfo withXcodeError(ErrorResponse xcodeError) {
         this.xcodeError = xcodeError;
         return this;
     }
 
     public TaskDetailInfo withXcodeError(Consumer<ErrorResponse> xcodeErrorSetter) {
-        if(this.xcodeError == null ){
+        if (this.xcodeError == null) {
             this.xcodeError = new ErrorResponse();
             xcodeErrorSetter.accept(this.xcodeError);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get xcodeError
-     * @return xcodeError
-     */
+    /** Get xcodeError
+     * 
+     * @return xcodeError */
     public ErrorResponse getXcodeError() {
         return xcodeError;
     }
@@ -493,8 +392,6 @@ public class TaskDetailInfo  {
     public void setXcodeError(ErrorResponse xcodeError) {
         this.xcodeError = xcodeError;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -505,23 +402,34 @@ public class TaskDetailInfo  {
             return false;
         }
         TaskDetailInfo taskDetailInfo = (TaskDetailInfo) o;
-        return Objects.equals(this.taskId, taskDetailInfo.taskId) &&
-            Objects.equals(this.status, taskDetailInfo.status) &&
-            Objects.equals(this.createTime, taskDetailInfo.createTime) &&
-            Objects.equals(this.startTime, taskDetailInfo.startTime) &&
-            Objects.equals(this.endTime, taskDetailInfo.endTime) &&
-            Objects.equals(this.input, taskDetailInfo.input) &&
-            Objects.equals(this.output, taskDetailInfo.output) &&
-            Objects.equals(this.userData, taskDetailInfo.userData) &&
-            Objects.equals(this.errorCode, taskDetailInfo.errorCode) &&
-            Objects.equals(this.description, taskDetailInfo.description) &&
-            Objects.equals(this.mediaDetail, taskDetailInfo.mediaDetail) &&
-            Objects.equals(this.xcodeError, taskDetailInfo.xcodeError);
+        return Objects.equals(this.taskId, taskDetailInfo.taskId) && Objects.equals(this.status, taskDetailInfo.status)
+            && Objects.equals(this.createTime, taskDetailInfo.createTime)
+            && Objects.equals(this.startTime, taskDetailInfo.startTime)
+            && Objects.equals(this.endTime, taskDetailInfo.endTime) && Objects.equals(this.input, taskDetailInfo.input)
+            && Objects.equals(this.output, taskDetailInfo.output)
+            && Objects.equals(this.userData, taskDetailInfo.userData)
+            && Objects.equals(this.errorCode, taskDetailInfo.errorCode)
+            && Objects.equals(this.description, taskDetailInfo.description)
+            && Objects.equals(this.mediaDetail, taskDetailInfo.mediaDetail)
+            && Objects.equals(this.xcodeError, taskDetailInfo.xcodeError);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(taskId, status, createTime, startTime, endTime, input, output, userData, errorCode, description, mediaDetail, xcodeError);
+        return Objects.hash(taskId,
+            status,
+            createTime,
+            startTime,
+            endTime,
+            input,
+            output,
+            userData,
+            errorCode,
+            description,
+            mediaDetail,
+            xcodeError);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -541,16 +449,13 @@ public class TaskDetailInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

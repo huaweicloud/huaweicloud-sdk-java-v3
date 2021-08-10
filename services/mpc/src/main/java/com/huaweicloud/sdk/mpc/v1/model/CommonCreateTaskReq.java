@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.ObsObjInfo;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * CommonCreateTaskReq
- */
-public class CommonCreateTaskReq  {
-
-
+/** CommonCreateTaskReq */
+public class CommonCreateTaskReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="input")
-    
+    @JsonProperty(value = "input")
+
     private ObsObjInfo input;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output")
-    
+    @JsonProperty(value = "output")
+
     private ObsObjInfo output;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_data")
-    
+    @JsonProperty(value = "user_data")
+
     private String userData;
 
     public CommonCreateTaskReq withInput(ObsObjInfo input) {
@@ -42,19 +30,17 @@ public class CommonCreateTaskReq  {
     }
 
     public CommonCreateTaskReq withInput(Consumer<ObsObjInfo> inputSetter) {
-        if(this.input == null ){
+        if (this.input == null) {
             this.input = new ObsObjInfo();
             inputSetter.accept(this.input);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get input
-     * @return input
-     */
+    /** Get input
+     * 
+     * @return input */
     public ObsObjInfo getInput() {
         return input;
     }
@@ -63,27 +49,23 @@ public class CommonCreateTaskReq  {
         this.input = input;
     }
 
-    
-
     public CommonCreateTaskReq withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
     }
 
     public CommonCreateTaskReq withOutput(Consumer<ObsObjInfo> outputSetter) {
-        if(this.output == null ){
+        if (this.output == null) {
             this.output = new ObsObjInfo();
             outputSetter.accept(this.output);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get output
-     * @return output
-     */
+    /** Get output
+     * 
+     * @return output */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -92,20 +74,14 @@ public class CommonCreateTaskReq  {
         this.output = output;
     }
 
-    
-
     public CommonCreateTaskReq withUserData(String userData) {
         this.userData = userData;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户自定义数据。 
-     * @return userData
-     */
+    /** 用户自定义数据。
+     * 
+     * @return userData */
     public String getUserData() {
         return userData;
     }
@@ -113,8 +89,6 @@ public class CommonCreateTaskReq  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -125,14 +99,16 @@ public class CommonCreateTaskReq  {
             return false;
         }
         CommonCreateTaskReq commonCreateTaskReq = (CommonCreateTaskReq) o;
-        return Objects.equals(this.input, commonCreateTaskReq.input) &&
-            Objects.equals(this.output, commonCreateTaskReq.output) &&
-            Objects.equals(this.userData, commonCreateTaskReq.userData);
+        return Objects.equals(this.input, commonCreateTaskReq.input)
+            && Objects.equals(this.output, commonCreateTaskReq.output)
+            && Objects.equals(this.userData, commonCreateTaskReq.userData);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(input, output, userData);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -143,16 +119,13 @@ public class CommonCreateTaskReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

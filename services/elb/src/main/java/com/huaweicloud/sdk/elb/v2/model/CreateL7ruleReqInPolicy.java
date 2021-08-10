@@ -1,47 +1,31 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 创建转发规则的请求体
- */
-public class CreateL7ruleReqInPolicy  {
-
-
+/** 创建转发规则的请求体 */
+public class CreateL7ruleReqInPolicy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
-    
+    @JsonProperty(value = "admin_state_up")
+
     private Boolean adminStateUp;
-    /**
-     * 转发规则的匹配内容
-     */
+
+    /** 转发规则的匹配内容 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum HOST_NAME for value: "HOST_NAME"
-         */
+        /** Enum HOST_NAME for value: "HOST_NAME" */
         public static final TypeEnum HOST_NAME = new TypeEnum("HOST_NAME");
-        
-        /**
-         * Enum PATH for value: "PATH"
-         */
+
+        /** Enum PATH for value: "PATH" */
         public static final TypeEnum PATH = new TypeEnum("PATH");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,7 +54,7 @@ public class CreateL7ruleReqInPolicy  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -81,7 +65,7 @@ public class CreateL7ruleReqInPolicy  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -105,34 +89,29 @@ public class CreateL7ruleReqInPolicy  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="compare_type")
-    
+    @JsonProperty(value = "compare_type")
+
     private String compareType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private String value;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invert")
-    
+    @JsonProperty(value = "invert")
+
     private Boolean invert;
 
     public CreateL7ruleReqInPolicy withAdminStateUp(Boolean adminStateUp) {
@@ -140,13 +119,9 @@ public class CreateL7ruleReqInPolicy  {
         return this;
     }
 
-    
-
-
-    /**
-     * 转发规则的管理状态；该字段为预留字段，暂未启用。默认为true。
-     * @return adminStateUp
-     */
+    /** 转发规则的管理状态；该字段为预留字段，暂未启用。默认为true。
+     * 
+     * @return adminStateUp */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -155,20 +130,14 @@ public class CreateL7ruleReqInPolicy  {
         this.adminStateUp = adminStateUp;
     }
 
-    
-
     public CreateL7ruleReqInPolicy withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 转发规则的匹配内容
-     * @return type
-     */
+    /** 转发规则的匹配内容
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -177,20 +146,14 @@ public class CreateL7ruleReqInPolicy  {
         this.type = type;
     }
 
-    
-
     public CreateL7ruleReqInPolicy withCompareType(String compareType) {
         this.compareType = compareType;
         return this;
     }
 
-    
-
-
-    /**
-     * 转发规则的匹配方式。type为HOST_NAME时可以为EQUAL_TO。type为PATH时可以为REGEX， STARTS_WITH，EQUAL_TO。
-     * @return compareType
-     */
+    /** 转发规则的匹配方式。type为HOST_NAME时可以为EQUAL_TO。type为PATH时可以为REGEX， STARTS_WITH，EQUAL_TO。
+     * 
+     * @return compareType */
     public String getCompareType() {
         return compareType;
     }
@@ -199,20 +162,14 @@ public class CreateL7ruleReqInPolicy  {
         this.compareType = compareType;
     }
 
-    
-
     public CreateL7ruleReqInPolicy withKey(String key) {
         this.key = key;
         return this;
     }
 
-    
-
-
-    /**
-     * 匹配内容的键值。目前匹配内容为HOST_NAME和PATH时，该字段不生效。该字段能更新但不会生效。
-     * @return key
-     */
+    /** 匹配内容的键值。目前匹配内容为HOST_NAME和PATH时，该字段不生效。该字段能更新但不会生效。
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -221,20 +178,15 @@ public class CreateL7ruleReqInPolicy  {
         this.key = key;
     }
 
-    
-
     public CreateL7ruleReqInPolicy withValue(String value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 匹配内容的值。其值不能包含空格。使用说明：当type为HOST_NAME时，取值范围：String(100)，字符串只能包含英文字母、数字、“-”或“.”，且必须以字母或数字开头。当type为PATH时，取值范围：String(128)。当转发规则的compare_type为STARTS_WITH，EQUAL_TO时，字符串只能包含英文字母、数字、_~';@^-%#&$.*+?,=!:| /()[]{}，且必须以\"/\"开头。
-     * @return value
-     */
+    /** 匹配内容的值。其值不能包含空格。使用说明：当type为HOST_NAME时，取值范围：String(100)，字符串只能包含英文字母、数字、“-”或“.”，且必须以字母或数字开头。当type为PATH时，取值范围：String(128)。当转发规则的compare_type为STARTS_WITH，EQUAL_TO时，字符串只能包含英文字母、数字、_~';@^-%#&$.*+?,=!:|
+     * /()[]{}，且必须以\"/\"开头。
+     * 
+     * @return value */
     public String getValue() {
         return value;
     }
@@ -243,20 +195,14 @@ public class CreateL7ruleReqInPolicy  {
         this.value = value;
     }
 
-    
-
     public CreateL7ruleReqInPolicy withInvert(Boolean invert) {
         this.invert = invert;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否反向匹配；取值范围：true/false。默认值：false；该字段为预留字段，暂未启用。
-     * @return invert
-     */
+    /** 是否反向匹配；取值范围：true/false。默认值：false；该字段为预留字段，暂未启用。
+     * 
+     * @return invert */
     public Boolean getInvert() {
         return invert;
     }
@@ -264,8 +210,6 @@ public class CreateL7ruleReqInPolicy  {
     public void setInvert(Boolean invert) {
         this.invert = invert;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -276,17 +220,19 @@ public class CreateL7ruleReqInPolicy  {
             return false;
         }
         CreateL7ruleReqInPolicy createL7ruleReqInPolicy = (CreateL7ruleReqInPolicy) o;
-        return Objects.equals(this.adminStateUp, createL7ruleReqInPolicy.adminStateUp) &&
-            Objects.equals(this.type, createL7ruleReqInPolicy.type) &&
-            Objects.equals(this.compareType, createL7ruleReqInPolicy.compareType) &&
-            Objects.equals(this.key, createL7ruleReqInPolicy.key) &&
-            Objects.equals(this.value, createL7ruleReqInPolicy.value) &&
-            Objects.equals(this.invert, createL7ruleReqInPolicy.invert);
+        return Objects.equals(this.adminStateUp, createL7ruleReqInPolicy.adminStateUp)
+            && Objects.equals(this.type, createL7ruleReqInPolicy.type)
+            && Objects.equals(this.compareType, createL7ruleReqInPolicy.compareType)
+            && Objects.equals(this.key, createL7ruleReqInPolicy.key)
+            && Objects.equals(this.value, createL7ruleReqInPolicy.value)
+            && Objects.equals(this.invert, createL7ruleReqInPolicy.invert);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(adminStateUp, type, compareType, key, value, invert);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -300,16 +246,13 @@ public class CreateL7ruleReqInPolicy  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,63 +1,44 @@
 package com.huaweicloud.sdk.eip.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.MatchReq;
-import com.huaweicloud.sdk.eip.v2.model.TagReq;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 通过标签过滤弹性公网IP的请求体
- */
-public class ListPublicipsByTagsRequestBody  {
-
-
+/** 通过标签过滤弹性公网IP的请求体 */
+public class ListPublicipsByTagsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<TagReq> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
-    /**
-     * 操作标识：  filter分页查询  count查询总数
-     */
+
+    /** 操作标识： filter分页查询 count查询总数 */
     public static final class ActionEnum {
 
-        
-        /**
-         * Enum FILTER for value: "filter"
-         */
+        /** Enum FILTER for value: "filter" */
         public static final ActionEnum FILTER = new ActionEnum("filter");
-        
-        /**
-         * Enum COUNT for value: "count"
-         */
+
+        /** Enum COUNT for value: "count" */
         public static final ActionEnum COUNT = new ActionEnum("count");
-        
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -86,7 +67,7 @@ public class ListPublicipsByTagsRequestBody  {
 
         @JsonCreator
         public static ActionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -97,7 +78,7 @@ public class ListPublicipsByTagsRequestBody  {
         }
 
         public static ActionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -121,26 +102,23 @@ public class ListPublicipsByTagsRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private ActionEnum action;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="matches")
-    
+    @JsonProperty(value = "matches")
+
     private List<MatchReq> matches = null;
-    
+
     public ListPublicipsByTagsRequestBody withTags(List<TagReq> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public ListPublicipsByTagsRequestBody addTagsItem(TagReq tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -148,17 +126,16 @@ public class ListPublicipsByTagsRequestBody  {
     }
 
     public ListPublicipsByTagsRequestBody withTags(Consumer<List<TagReq>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 包含标签，最多包含10个key。  每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。  Key不能重复，同一个key中values不能重复。
-     * @return tags
-     */
+    /** 包含标签，最多包含10个key。 每个key下面的value最多10个，结构体不能缺失，key不能为空或者空字符串。 Key不能重复，同一个key中values不能重复。
+     * 
+     * @return tags */
     public List<TagReq> getTags() {
         return tags;
     }
@@ -167,22 +144,14 @@ public class ListPublicipsByTagsRequestBody  {
         this.tags = tags;
     }
 
-    
-
     public ListPublicipsByTagsRequestBody withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询记录数（action为count时无此参数）
-     * minimum: 1
-     * maximum: 1000
-     * @return limit
-     */
+    /** 查询记录数（action为count时无此参数） minimum: 1 maximum: 1000
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -191,21 +160,14 @@ public class ListPublicipsByTagsRequestBody  {
         this.limit = limit;
     }
 
-    
-
     public ListPublicipsByTagsRequestBody withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 索引位置， 从offset指定的下一条数据开始查询。 查询第一页数据时，不需要传入此参数，查询后续页码数据时，将查询前一页数据时响应体中的值带入此参数（action为count时无此参数）
-     * minimum: 0
-     * @return offset
-     */
+    /** 索引位置， 从offset指定的下一条数据开始查询。 查询第一页数据时，不需要传入此参数，查询后续页码数据时，将查询前一页数据时响应体中的值带入此参数（action为count时无此参数） minimum: 0
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -214,20 +176,14 @@ public class ListPublicipsByTagsRequestBody  {
         this.offset = offset;
     }
 
-    
-
     public ListPublicipsByTagsRequestBody withAction(ActionEnum action) {
         this.action = action;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作标识：  filter分页查询  count查询总数
-     * @return action
-     */
+    /** 操作标识： filter分页查询 count查询总数
+     * 
+     * @return action */
     public ActionEnum getAction() {
         return action;
     }
@@ -236,16 +192,13 @@ public class ListPublicipsByTagsRequestBody  {
         this.action = action;
     }
 
-    
-
     public ListPublicipsByTagsRequestBody withMatches(List<MatchReq> matches) {
         this.matches = matches;
         return this;
     }
 
-    
     public ListPublicipsByTagsRequestBody addMatchesItem(MatchReq matchesItem) {
-        if(this.matches == null) {
+        if (this.matches == null) {
             this.matches = new ArrayList<>();
         }
         this.matches.add(matchesItem);
@@ -253,17 +206,16 @@ public class ListPublicipsByTagsRequestBody  {
     }
 
     public ListPublicipsByTagsRequestBody withMatches(Consumer<List<MatchReq>> matchesSetter) {
-        if(this.matches == null) {
+        if (this.matches == null) {
             this.matches = new ArrayList<>();
         }
         matchesSetter.accept(this.matches);
         return this;
     }
 
-    /**
-     * 搜索字段，key为要匹配的字段，当前仅支持resource_name。value为匹配的值。此字段为固定字典值。
-     * @return matches
-     */
+    /** 搜索字段，key为要匹配的字段，当前仅支持resource_name。value为匹配的值。此字段为固定字典值。
+     * 
+     * @return matches */
     public List<MatchReq> getMatches() {
         return matches;
     }
@@ -271,8 +223,6 @@ public class ListPublicipsByTagsRequestBody  {
     public void setMatches(List<MatchReq> matches) {
         this.matches = matches;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -283,16 +233,18 @@ public class ListPublicipsByTagsRequestBody  {
             return false;
         }
         ListPublicipsByTagsRequestBody listPublicipsByTagsRequestBody = (ListPublicipsByTagsRequestBody) o;
-        return Objects.equals(this.tags, listPublicipsByTagsRequestBody.tags) &&
-            Objects.equals(this.limit, listPublicipsByTagsRequestBody.limit) &&
-            Objects.equals(this.offset, listPublicipsByTagsRequestBody.offset) &&
-            Objects.equals(this.action, listPublicipsByTagsRequestBody.action) &&
-            Objects.equals(this.matches, listPublicipsByTagsRequestBody.matches);
+        return Objects.equals(this.tags, listPublicipsByTagsRequestBody.tags)
+            && Objects.equals(this.limit, listPublicipsByTagsRequestBody.limit)
+            && Objects.equals(this.offset, listPublicipsByTagsRequestBody.offset)
+            && Objects.equals(this.action, listPublicipsByTagsRequestBody.action)
+            && Objects.equals(this.matches, listPublicipsByTagsRequestBody.matches);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(tags, limit, offset, action, matches);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -305,16 +257,13 @@ public class ListPublicipsByTagsRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

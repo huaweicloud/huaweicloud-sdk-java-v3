@@ -1,49 +1,31 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * ReqParamBase
- */
-public class ReqParamBase  {
-
-
+/** ReqParamBase */
+public class ReqParamBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 参数类型
-     */
+
+    /** 参数类型 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum STRING for value: "STRING"
-         */
+        /** Enum STRING for value: "STRING" */
         public static final TypeEnum STRING = new TypeEnum("STRING");
-        
-        /**
-         * Enum NUMBER for value: "NUMBER"
-         */
+
+        /** Enum NUMBER for value: "NUMBER" */
         public static final TypeEnum NUMBER = new TypeEnum("NUMBER");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -72,7 +54,7 @@ public class ReqParamBase  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -83,7 +65,7 @@ public class ReqParamBase  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -107,32 +89,22 @@ public class ReqParamBase  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
-    /**
-     * 参数位置
-     */
+
+    /** 参数位置 */
     public static final class LocationEnum {
 
-        
-        /**
-         * Enum PATH for value: "PATH"
-         */
+        /** Enum PATH for value: "PATH" */
         public static final LocationEnum PATH = new LocationEnum("PATH");
-        
-        /**
-         * Enum QUERY for value: "QUERY"
-         */
+
+        /** Enum QUERY for value: "QUERY" */
         public static final LocationEnum QUERY = new LocationEnum("QUERY");
-        
-        /**
-         * Enum HEADER for value: "HEADER"
-         */
+
+        /** Enum HEADER for value: "HEADER" */
         public static final LocationEnum HEADER = new LocationEnum("HEADER");
-        
 
         private static final Map<String, LocationEnum> STATIC_FIELDS = createStaticFields();
 
@@ -162,7 +134,7 @@ public class ReqParamBase  {
 
         @JsonCreator
         public static LocationEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             LocationEnum result = STATIC_FIELDS.get(value);
@@ -173,7 +145,7 @@ public class ReqParamBase  {
         }
 
         public static LocationEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             LocationEnum result = STATIC_FIELDS.get(value);
@@ -197,88 +169,74 @@ public class ReqParamBase  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="location")
-    
+    @JsonProperty(value = "location")
+
     private LocationEnum location;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="default_value")
-    
+    @JsonProperty(value = "default_value")
+
     private String defaultValue;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sample_value")
-    
+    @JsonProperty(value = "sample_value")
+
     private String sampleValue;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="required")
-    
+    @JsonProperty(value = "required")
+
     private Integer required;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="valid_enable")
-    
+    @JsonProperty(value = "valid_enable")
+
     private Integer validEnable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
+
     private String remark;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enumerations")
-    
+    @JsonProperty(value = "enumerations")
+
     private String enumerations;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="min_num")
-    
+    @JsonProperty(value = "min_num")
+
     private Integer minNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_num")
-    
+    @JsonProperty(value = "max_num")
+
     private Integer maxNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="min_size")
-    
+    @JsonProperty(value = "min_size")
+
     private Integer minSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_size")
-    
+    @JsonProperty(value = "max_size")
+
     private Integer maxSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="regular")
-    
+    @JsonProperty(value = "regular")
+
     private String regular;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="json_schema")
-    
+    @JsonProperty(value = "json_schema")
+
     private String jsonSchema;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pass_through")
-    
+    @JsonProperty(value = "pass_through")
+
     private Integer passThrough;
 
     public ReqParamBase withName(String name) {
@@ -286,13 +244,9 @@ public class ReqParamBase  {
         return this;
     }
 
-    
-
-
-    /**
-     * 参数名称。 由英文字母、数字、中划线、下划线、英文句号组成，且只能以英文开头。 
-     * @return name
-     */
+    /** 参数名称。 由英文字母、数字、中划线、下划线、英文句号组成，且只能以英文开头。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -301,20 +255,14 @@ public class ReqParamBase  {
         this.name = name;
     }
 
-    
-
     public ReqParamBase withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数类型
-     * @return type
-     */
+    /** 参数类型
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -323,20 +271,14 @@ public class ReqParamBase  {
         this.type = type;
     }
 
-    
-
     public ReqParamBase withLocation(LocationEnum location) {
         this.location = location;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数位置
-     * @return location
-     */
+    /** 参数位置
+     * 
+     * @return location */
     public LocationEnum getLocation() {
         return location;
     }
@@ -345,20 +287,14 @@ public class ReqParamBase  {
         this.location = location;
     }
 
-    
-
     public ReqParamBase withDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数默认值
-     * @return defaultValue
-     */
+    /** 参数默认值
+     * 
+     * @return defaultValue */
     public String getDefaultValue() {
         return defaultValue;
     }
@@ -367,20 +303,14 @@ public class ReqParamBase  {
         this.defaultValue = defaultValue;
     }
 
-    
-
     public ReqParamBase withSampleValue(String sampleValue) {
         this.sampleValue = sampleValue;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数示例值
-     * @return sampleValue
-     */
+    /** 参数示例值
+     * 
+     * @return sampleValue */
     public String getSampleValue() {
         return sampleValue;
     }
@@ -389,20 +319,14 @@ public class ReqParamBase  {
         this.sampleValue = sampleValue;
     }
 
-    
-
     public ReqParamBase withRequired(Integer required) {
         this.required = required;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否必须 - 1：是 - 2：否  location为PATH时，required默认为1，其他场景required默认为2
-     * @return required
-     */
+    /** 是否必须 - 1：是 - 2：否 location为PATH时，required默认为1，其他场景required默认为2
+     * 
+     * @return required */
     public Integer getRequired() {
         return required;
     }
@@ -411,20 +335,14 @@ public class ReqParamBase  {
         this.required = required;
     }
 
-    
-
     public ReqParamBase withValidEnable(Integer validEnable) {
         this.validEnable = validEnable;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启校验 - 1：开启校验 - 2：不开启校验
-     * @return validEnable
-     */
+    /** 是否开启校验 - 1：开启校验 - 2：不开启校验
+     * 
+     * @return validEnable */
     public Integer getValidEnable() {
         return validEnable;
     }
@@ -433,20 +351,14 @@ public class ReqParamBase  {
         this.validEnable = validEnable;
     }
 
-    
-
     public ReqParamBase withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述信息。 > 中文字符必须为UTF-8或者unicode编码。
-     * @return remark
-     */
+    /** 描述信息。 > 中文字符必须为UTF-8或者unicode编码。
+     * 
+     * @return remark */
     public String getRemark() {
         return remark;
     }
@@ -455,20 +367,14 @@ public class ReqParamBase  {
         this.remark = remark;
     }
 
-    
-
     public ReqParamBase withEnumerations(String enumerations) {
         this.enumerations = enumerations;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数枚举值
-     * @return enumerations
-     */
+    /** 参数枚举值
+     * 
+     * @return enumerations */
     public String getEnumerations() {
         return enumerations;
     }
@@ -477,20 +383,14 @@ public class ReqParamBase  {
         this.enumerations = enumerations;
     }
 
-    
-
     public ReqParamBase withMinNum(Integer minNum) {
         this.minNum = minNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数最小值  参数类型为NUMBER时有效
-     * @return minNum
-     */
+    /** 参数最小值 参数类型为NUMBER时有效
+     * 
+     * @return minNum */
     public Integer getMinNum() {
         return minNum;
     }
@@ -499,20 +399,14 @@ public class ReqParamBase  {
         this.minNum = minNum;
     }
 
-    
-
     public ReqParamBase withMaxNum(Integer maxNum) {
         this.maxNum = maxNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数最大值  参数类型为NUMBER时有效
-     * @return maxNum
-     */
+    /** 参数最大值 参数类型为NUMBER时有效
+     * 
+     * @return maxNum */
     public Integer getMaxNum() {
         return maxNum;
     }
@@ -521,20 +415,14 @@ public class ReqParamBase  {
         this.maxNum = maxNum;
     }
 
-    
-
     public ReqParamBase withMinSize(Integer minSize) {
         this.minSize = minSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数最小长度  参数类型为STRING时有效
-     * @return minSize
-     */
+    /** 参数最小长度 参数类型为STRING时有效
+     * 
+     * @return minSize */
     public Integer getMinSize() {
         return minSize;
     }
@@ -543,20 +431,14 @@ public class ReqParamBase  {
         this.minSize = minSize;
     }
 
-    
-
     public ReqParamBase withMaxSize(Integer maxSize) {
         this.maxSize = maxSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数最大长度  参数类型为STRING时有效
-     * @return maxSize
-     */
+    /** 参数最大长度 参数类型为STRING时有效
+     * 
+     * @return maxSize */
     public Integer getMaxSize() {
         return maxSize;
     }
@@ -565,20 +447,14 @@ public class ReqParamBase  {
         this.maxSize = maxSize;
     }
 
-    
-
     public ReqParamBase withRegular(String regular) {
         this.regular = regular;
         return this;
     }
 
-    
-
-
-    /**
-     * 正则校验规则  暂不支持
-     * @return regular
-     */
+    /** 正则校验规则 暂不支持
+     * 
+     * @return regular */
     public String getRegular() {
         return regular;
     }
@@ -587,20 +463,14 @@ public class ReqParamBase  {
         this.regular = regular;
     }
 
-    
-
     public ReqParamBase withJsonSchema(String jsonSchema) {
         this.jsonSchema = jsonSchema;
         return this;
     }
 
-    
-
-
-    /**
-     * JSON校验规则  暂不支持
-     * @return jsonSchema
-     */
+    /** JSON校验规则 暂不支持
+     * 
+     * @return jsonSchema */
     public String getJsonSchema() {
         return jsonSchema;
     }
@@ -609,20 +479,14 @@ public class ReqParamBase  {
         this.jsonSchema = jsonSchema;
     }
 
-    
-
     public ReqParamBase withPassThrough(Integer passThrough) {
         this.passThrough = passThrough;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否透传 - 1：是 - 2：否
-     * @return passThrough
-     */
+    /** 是否透传 - 1：是 - 2：否
+     * 
+     * @return passThrough */
     public Integer getPassThrough() {
         return passThrough;
     }
@@ -630,8 +494,6 @@ public class ReqParamBase  {
     public void setPassThrough(Integer passThrough) {
         this.passThrough = passThrough;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -642,27 +504,41 @@ public class ReqParamBase  {
             return false;
         }
         ReqParamBase reqParamBase = (ReqParamBase) o;
-        return Objects.equals(this.name, reqParamBase.name) &&
-            Objects.equals(this.type, reqParamBase.type) &&
-            Objects.equals(this.location, reqParamBase.location) &&
-            Objects.equals(this.defaultValue, reqParamBase.defaultValue) &&
-            Objects.equals(this.sampleValue, reqParamBase.sampleValue) &&
-            Objects.equals(this.required, reqParamBase.required) &&
-            Objects.equals(this.validEnable, reqParamBase.validEnable) &&
-            Objects.equals(this.remark, reqParamBase.remark) &&
-            Objects.equals(this.enumerations, reqParamBase.enumerations) &&
-            Objects.equals(this.minNum, reqParamBase.minNum) &&
-            Objects.equals(this.maxNum, reqParamBase.maxNum) &&
-            Objects.equals(this.minSize, reqParamBase.minSize) &&
-            Objects.equals(this.maxSize, reqParamBase.maxSize) &&
-            Objects.equals(this.regular, reqParamBase.regular) &&
-            Objects.equals(this.jsonSchema, reqParamBase.jsonSchema) &&
-            Objects.equals(this.passThrough, reqParamBase.passThrough);
+        return Objects.equals(this.name, reqParamBase.name) && Objects.equals(this.type, reqParamBase.type)
+            && Objects.equals(this.location, reqParamBase.location)
+            && Objects.equals(this.defaultValue, reqParamBase.defaultValue)
+            && Objects.equals(this.sampleValue, reqParamBase.sampleValue)
+            && Objects.equals(this.required, reqParamBase.required)
+            && Objects.equals(this.validEnable, reqParamBase.validEnable)
+            && Objects.equals(this.remark, reqParamBase.remark)
+            && Objects.equals(this.enumerations, reqParamBase.enumerations)
+            && Objects.equals(this.minNum, reqParamBase.minNum) && Objects.equals(this.maxNum, reqParamBase.maxNum)
+            && Objects.equals(this.minSize, reqParamBase.minSize) && Objects.equals(this.maxSize, reqParamBase.maxSize)
+            && Objects.equals(this.regular, reqParamBase.regular)
+            && Objects.equals(this.jsonSchema, reqParamBase.jsonSchema)
+            && Objects.equals(this.passThrough, reqParamBase.passThrough);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, location, defaultValue, sampleValue, required, validEnable, remark, enumerations, minNum, maxNum, minSize, maxSize, regular, jsonSchema, passThrough);
+        return Objects.hash(name,
+            type,
+            location,
+            defaultValue,
+            sampleValue,
+            required,
+            validEnable,
+            remark,
+            enumerations,
+            minNum,
+            maxNum,
+            minSize,
+            maxSize,
+            regular,
+            jsonSchema,
+            passThrough);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -686,16 +562,13 @@ public class ReqParamBase  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

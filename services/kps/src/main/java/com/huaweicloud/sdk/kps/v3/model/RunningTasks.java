@@ -1,52 +1,34 @@
 package com.huaweicloud.sdk.kps.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 正在处理的任务详细信息。
- */
-public class RunningTasks  {
-
-
+/** 正在处理的任务详细信息。 */
+public class RunningTasks {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
+    @JsonProperty(value = "task_id")
+
     private String taskId;
-    /**
-     * 操作类型。 - FAILED_RESET 重置 - FAILED_REPLACE 替换 - FAILED_UNBIND 解绑
-     */
+
+    /** 操作类型。 - FAILED_RESET 重置 - FAILED_REPLACE 替换 - FAILED_UNBIND 解绑 */
     public static final class OperateTypeEnum {
 
-        
-        /**
-         * Enum FAILED_RESET for value: "FAILED_RESET"
-         */
+        /** Enum FAILED_RESET for value: "FAILED_RESET" */
         public static final OperateTypeEnum FAILED_RESET = new OperateTypeEnum("FAILED_RESET");
-        
-        /**
-         * Enum FAILED_REPLACE for value: "FAILED_REPLACE"
-         */
+
+        /** Enum FAILED_REPLACE for value: "FAILED_REPLACE" */
         public static final OperateTypeEnum FAILED_REPLACE = new OperateTypeEnum("FAILED_REPLACE");
-        
-        /**
-         * Enum FAILED_UNBIND for value: "FAILED_UNBIND"
-         */
+
+        /** Enum FAILED_UNBIND for value: "FAILED_UNBIND" */
         public static final OperateTypeEnum FAILED_UNBIND = new OperateTypeEnum("FAILED_UNBIND");
-        
 
         private static final Map<String, OperateTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,7 +58,7 @@ public class RunningTasks  {
 
         @JsonCreator
         public static OperateTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OperateTypeEnum result = STATIC_FIELDS.get(value);
@@ -87,7 +69,7 @@ public class RunningTasks  {
         }
 
         public static OperateTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OperateTypeEnum result = STATIC_FIELDS.get(value);
@@ -111,34 +93,29 @@ public class RunningTasks  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operate_type")
-    
+    @JsonProperty(value = "operate_type")
+
     private OperateTypeEnum operateType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_time")
-    
+    @JsonProperty(value = "task_time")
+
     private Long taskTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server_name")
-    
+    @JsonProperty(value = "server_name")
+
     private String serverName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server_id")
-    
+    @JsonProperty(value = "server_id")
+
     private String serverId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="keypair_name")
-    
+    @JsonProperty(value = "keypair_name")
+
     private String keypairName;
 
     public RunningTasks withTaskId(String taskId) {
@@ -146,13 +123,9 @@ public class RunningTasks  {
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟机ID
-     * @return taskId
-     */
+    /** 虚拟机ID
+     * 
+     * @return taskId */
     public String getTaskId() {
         return taskId;
     }
@@ -161,20 +134,14 @@ public class RunningTasks  {
         this.taskId = taskId;
     }
 
-    
-
     public RunningTasks withOperateType(OperateTypeEnum operateType) {
         this.operateType = operateType;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作类型。 - FAILED_RESET 重置 - FAILED_REPLACE 替换 - FAILED_UNBIND 解绑
-     * @return operateType
-     */
+    /** 操作类型。 - FAILED_RESET 重置 - FAILED_REPLACE 替换 - FAILED_UNBIND 解绑
+     * 
+     * @return operateType */
     public OperateTypeEnum getOperateType() {
         return operateType;
     }
@@ -183,22 +150,14 @@ public class RunningTasks  {
         this.operateType = operateType;
     }
 
-    
-
     public RunningTasks withTaskTime(Long taskTime) {
         this.taskTime = taskTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务时间
-     * minimum: 0
-     * maximum: 10000000000000
-     * @return taskTime
-     */
+    /** 任务时间 minimum: 0 maximum: 10000000000000
+     * 
+     * @return taskTime */
     public Long getTaskTime() {
         return taskTime;
     }
@@ -207,20 +166,14 @@ public class RunningTasks  {
         this.taskTime = taskTime;
     }
 
-    
-
     public RunningTasks withServerName(String serverName) {
         this.serverName = serverName;
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟机名称
-     * @return serverName
-     */
+    /** 虚拟机名称
+     * 
+     * @return serverName */
     public String getServerName() {
         return serverName;
     }
@@ -229,20 +182,14 @@ public class RunningTasks  {
         this.serverName = serverName;
     }
 
-    
-
     public RunningTasks withServerId(String serverId) {
         this.serverId = serverId;
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟机ID
-     * @return serverId
-     */
+    /** 虚拟机ID
+     * 
+     * @return serverId */
     public String getServerId() {
         return serverId;
     }
@@ -251,20 +198,14 @@ public class RunningTasks  {
         this.serverId = serverId;
     }
 
-    
-
     public RunningTasks withKeypairName(String keypairName) {
         this.keypairName = keypairName;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥对名称
-     * @return keypairName
-     */
+    /** 密钥对名称
+     * 
+     * @return keypairName */
     public String getKeypairName() {
         return keypairName;
     }
@@ -272,8 +213,6 @@ public class RunningTasks  {
     public void setKeypairName(String keypairName) {
         this.keypairName = keypairName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -284,17 +223,19 @@ public class RunningTasks  {
             return false;
         }
         RunningTasks runningTasks = (RunningTasks) o;
-        return Objects.equals(this.taskId, runningTasks.taskId) &&
-            Objects.equals(this.operateType, runningTasks.operateType) &&
-            Objects.equals(this.taskTime, runningTasks.taskTime) &&
-            Objects.equals(this.serverName, runningTasks.serverName) &&
-            Objects.equals(this.serverId, runningTasks.serverId) &&
-            Objects.equals(this.keypairName, runningTasks.keypairName);
+        return Objects.equals(this.taskId, runningTasks.taskId)
+            && Objects.equals(this.operateType, runningTasks.operateType)
+            && Objects.equals(this.taskTime, runningTasks.taskTime)
+            && Objects.equals(this.serverName, runningTasks.serverName)
+            && Objects.equals(this.serverId, runningTasks.serverId)
+            && Objects.equals(this.keypairName, runningTasks.keypairName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(taskId, operateType, taskTime, serverName, serverId, keypairName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -308,16 +249,13 @@ public class RunningTasks  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

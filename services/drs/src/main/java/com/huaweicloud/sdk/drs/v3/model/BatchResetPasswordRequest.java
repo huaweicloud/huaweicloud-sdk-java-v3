@@ -1,42 +1,27 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.BatchModifyPwdReq;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class BatchResetPasswordRequest  {
+/** Request Object */
+public class BatchResetPasswordRequest {
 
-    /**
-     * 请求语言类型
-     */
+    /** 请求语言类型 */
     public static final class XLanguageEnum {
 
-        
-        /**
-         * Enum EN_US for value: "en-us"
-         */
+        /** Enum EN_US for value: "en-us" */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
-        
-        /**
-         * Enum ZH_CN for value: "zh-cn"
-         */
+
+        /** Enum ZH_CN for value: "zh-cn" */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
-        
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
 
@@ -65,7 +50,7 @@ public class BatchResetPasswordRequest  {
 
         @JsonCreator
         public static XLanguageEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -76,7 +61,7 @@ public class BatchResetPasswordRequest  {
         }
 
         public static XLanguageEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -100,16 +85,14 @@ public class BatchResetPasswordRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private XLanguageEnum xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private BatchModifyPwdReq body;
 
     public BatchResetPasswordRequest withXLanguage(XLanguageEnum xLanguage) {
@@ -117,15 +100,11 @@ public class BatchResetPasswordRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 请求语言类型
-     * @return xLanguage
-     */
+    /** 请求语言类型
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
         return xLanguage;
     }
@@ -134,27 +113,23 @@ public class BatchResetPasswordRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public BatchResetPasswordRequest withBody(BatchModifyPwdReq body) {
         this.body = body;
         return this;
     }
 
     public BatchResetPasswordRequest withBody(Consumer<BatchModifyPwdReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new BatchModifyPwdReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public BatchModifyPwdReq getBody() {
         return body;
     }
@@ -162,8 +137,6 @@ public class BatchResetPasswordRequest  {
     public void setBody(BatchModifyPwdReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -174,13 +147,15 @@ public class BatchResetPasswordRequest  {
             return false;
         }
         BatchResetPasswordRequest batchResetPasswordRequest = (BatchResetPasswordRequest) o;
-        return Objects.equals(this.xLanguage, batchResetPasswordRequest.xLanguage) &&
-            Objects.equals(this.body, batchResetPasswordRequest.body);
+        return Objects.equals(this.xLanguage, batchResetPasswordRequest.xLanguage)
+            && Objects.equals(this.body, batchResetPasswordRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -190,16 +165,13 @@ public class BatchResetPasswordRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

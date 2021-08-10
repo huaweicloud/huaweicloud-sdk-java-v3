@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.ApiAclCreate;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateAclStrategyV2Request  {
-
-
+/** Request Object */
+public class CreateAclStrategyV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ApiAclCreate body;
 
     public CreateAclStrategyV2Request withInstanceId(String instanceId) {
@@ -35,13 +24,9 @@ public class CreateAclStrategyV2Request  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -50,27 +35,23 @@ public class CreateAclStrategyV2Request  {
         this.instanceId = instanceId;
     }
 
-    
-
     public CreateAclStrategyV2Request withBody(ApiAclCreate body) {
         this.body = body;
         return this;
     }
 
     public CreateAclStrategyV2Request withBody(Consumer<ApiAclCreate> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ApiAclCreate();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ApiAclCreate getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class CreateAclStrategyV2Request  {
     public void setBody(ApiAclCreate body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class CreateAclStrategyV2Request  {
             return false;
         }
         CreateAclStrategyV2Request createAclStrategyV2Request = (CreateAclStrategyV2Request) o;
-        return Objects.equals(this.instanceId, createAclStrategyV2Request.instanceId) &&
-            Objects.equals(this.body, createAclStrategyV2Request.body);
+        return Objects.equals(this.instanceId, createAclStrategyV2Request.instanceId)
+            && Objects.equals(this.body, createAclStrategyV2Request.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class CreateAclStrategyV2Request  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

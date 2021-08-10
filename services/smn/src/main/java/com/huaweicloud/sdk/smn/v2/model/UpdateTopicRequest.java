@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.smn.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.smn.v2.model.UpdateTopicRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateTopicRequest  {
-
-
+/** Request Object */
+public class UpdateTopicRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic_urn")
-    
+    @JsonProperty(value = "topic_urn")
+
     private String topicUrn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateTopicRequestBody body;
 
     public UpdateTopicRequest withTopicUrn(String topicUrn) {
@@ -35,13 +24,9 @@ public class UpdateTopicRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * Topic的唯一的资源标识。可以通过[查看主题列表](https://support.huaweicloud.com/api-smn/smn_api_51004.html)获取该标识。
-     * @return topicUrn
-     */
+    /** Topic的唯一的资源标识。可以通过[查看主题列表](https://support.huaweicloud.com/api-smn/smn_api_51004.html)获取该标识。
+     * 
+     * @return topicUrn */
     public String getTopicUrn() {
         return topicUrn;
     }
@@ -50,27 +35,23 @@ public class UpdateTopicRequest  {
         this.topicUrn = topicUrn;
     }
 
-    
-
     public UpdateTopicRequest withBody(UpdateTopicRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdateTopicRequest withBody(Consumer<UpdateTopicRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateTopicRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateTopicRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdateTopicRequest  {
     public void setBody(UpdateTopicRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdateTopicRequest  {
             return false;
         }
         UpdateTopicRequest updateTopicRequest = (UpdateTopicRequest) o;
-        return Objects.equals(this.topicUrn, updateTopicRequest.topicUrn) &&
-            Objects.equals(this.body, updateTopicRequest.body);
+        return Objects.equals(this.topicUrn, updateTopicRequest.topicUrn)
+            && Objects.equals(this.body, updateTopicRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(topicUrn, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdateTopicRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

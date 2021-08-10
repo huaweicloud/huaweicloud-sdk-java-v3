@@ -1,59 +1,37 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 单个大key分析历史记录
- */
-public class RecordsResponse  {
-
-
+/** 单个大key分析历史记录 */
+public class RecordsResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
-    /**
-     * 分析任务状态
-     */
+
+    /** 分析任务状态 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum WAITING for value: "waiting"
-         */
+        /** Enum WAITING for value: "waiting" */
         public static final StatusEnum WAITING = new StatusEnum("waiting");
-        
-        /**
-         * Enum RUNNING for value: "running"
-         */
+
+        /** Enum RUNNING for value: "running" */
         public static final StatusEnum RUNNING = new StatusEnum("running");
-        
-        /**
-         * Enum SUCCESS for value: "success"
-         */
+
+        /** Enum SUCCESS for value: "success" */
         public static final StatusEnum SUCCESS = new StatusEnum("success");
-        
-        /**
-         * Enum FAILED for value: "failed"
-         */
+
+        /** Enum FAILED for value: "failed" */
         public static final StatusEnum FAILED = new StatusEnum("failed");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -84,7 +62,7 @@ public class RecordsResponse  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -95,7 +73,7 @@ public class RecordsResponse  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -119,27 +97,19 @@ public class RecordsResponse  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
-    /**
-     * 分析方式
-     */
+
+    /** 分析方式 */
     public static final class ScanTypeEnum {
 
-        
-        /**
-         * Enum MANUAL for value: "manual"
-         */
+        /** Enum MANUAL for value: "manual" */
         public static final ScanTypeEnum MANUAL = new ScanTypeEnum("manual");
-        
-        /**
-         * Enum AUTO for value: "auto"
-         */
+
+        /** Enum AUTO for value: "auto" */
         public static final ScanTypeEnum AUTO = new ScanTypeEnum("auto");
-        
 
         private static final Map<String, ScanTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -168,7 +138,7 @@ public class RecordsResponse  {
 
         @JsonCreator
         public static ScanTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ScanTypeEnum result = STATIC_FIELDS.get(value);
@@ -179,7 +149,7 @@ public class RecordsResponse  {
         }
 
         public static ScanTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ScanTypeEnum result = STATIC_FIELDS.get(value);
@@ -203,28 +173,24 @@ public class RecordsResponse  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scan_type")
-    
+    @JsonProperty(value = "scan_type")
+
     private ScanTypeEnum scanType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="started_at")
-    
+    @JsonProperty(value = "started_at")
+
     private String startedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="finished_at")
-    
+    @JsonProperty(value = "finished_at")
+
     private String finishedAt;
 
     public RecordsResponse withId(String id) {
@@ -232,13 +198,9 @@ public class RecordsResponse  {
         return this;
     }
 
-    
-
-
-    /**
-     * 大key分析记录ID
-     * @return id
-     */
+    /** 大key分析记录ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -247,20 +209,14 @@ public class RecordsResponse  {
         this.id = id;
     }
 
-    
-
     public RecordsResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 分析任务状态
-     * @return status
-     */
+    /** 分析任务状态
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -269,20 +225,14 @@ public class RecordsResponse  {
         this.status = status;
     }
 
-    
-
     public RecordsResponse withScanType(ScanTypeEnum scanType) {
         this.scanType = scanType;
         return this;
     }
 
-    
-
-
-    /**
-     * 分析方式
-     * @return scanType
-     */
+    /** 分析方式
+     * 
+     * @return scanType */
     public ScanTypeEnum getScanType() {
         return scanType;
     }
@@ -291,20 +241,14 @@ public class RecordsResponse  {
         this.scanType = scanType;
     }
 
-    
-
     public RecordsResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 分析任务创建时间,格式为：\"2020-06-15T02:21:18.669Z\"
-     * @return createdAt
-     */
+    /** 分析任务创建时间,格式为：\"2020-06-15T02:21:18.669Z\"
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -313,20 +257,14 @@ public class RecordsResponse  {
         this.createdAt = createdAt;
     }
 
-    
-
     public RecordsResponse withStartedAt(String startedAt) {
         this.startedAt = startedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 分析任务开始时间,格式为：\"2020-06-15T02:21:18.669Z\"
-     * @return startedAt
-     */
+    /** 分析任务开始时间,格式为：\"2020-06-15T02:21:18.669Z\"
+     * 
+     * @return startedAt */
     public String getStartedAt() {
         return startedAt;
     }
@@ -335,20 +273,14 @@ public class RecordsResponse  {
         this.startedAt = startedAt;
     }
 
-    
-
     public RecordsResponse withFinishedAt(String finishedAt) {
         this.finishedAt = finishedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 分析任务结束时间,格式为：\"2020-06-15T02:21:18.669Z\"
-     * @return finishedAt
-     */
+    /** 分析任务结束时间,格式为：\"2020-06-15T02:21:18.669Z\"
+     * 
+     * @return finishedAt */
     public String getFinishedAt() {
         return finishedAt;
     }
@@ -356,8 +288,6 @@ public class RecordsResponse  {
     public void setFinishedAt(String finishedAt) {
         this.finishedAt = finishedAt;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -368,17 +298,18 @@ public class RecordsResponse  {
             return false;
         }
         RecordsResponse recordsResponse = (RecordsResponse) o;
-        return Objects.equals(this.id, recordsResponse.id) &&
-            Objects.equals(this.status, recordsResponse.status) &&
-            Objects.equals(this.scanType, recordsResponse.scanType) &&
-            Objects.equals(this.createdAt, recordsResponse.createdAt) &&
-            Objects.equals(this.startedAt, recordsResponse.startedAt) &&
-            Objects.equals(this.finishedAt, recordsResponse.finishedAt);
+        return Objects.equals(this.id, recordsResponse.id) && Objects.equals(this.status, recordsResponse.status)
+            && Objects.equals(this.scanType, recordsResponse.scanType)
+            && Objects.equals(this.createdAt, recordsResponse.createdAt)
+            && Objects.equals(this.startedAt, recordsResponse.startedAt)
+            && Objects.equals(this.finishedAt, recordsResponse.finishedAt);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, status, scanType, createdAt, startedAt, finishedAt);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -392,16 +323,13 @@ public class RecordsResponse  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

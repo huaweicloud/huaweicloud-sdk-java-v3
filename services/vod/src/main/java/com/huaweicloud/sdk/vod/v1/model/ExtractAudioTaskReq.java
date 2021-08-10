@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vod.v1.model.Parameter;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ExtractAudioTaskReq
- */
-public class ExtractAudioTaskReq  {
-
-
+/** ExtractAudioTaskReq */
+public class ExtractAudioTaskReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="asset_id")
-    
+    @JsonProperty(value = "asset_id")
+
     private String assetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parameter")
-    
+    @JsonProperty(value = "parameter")
+
     private Parameter parameter;
 
     public ExtractAudioTaskReq withAssetId(String assetId) {
@@ -35,13 +24,9 @@ public class ExtractAudioTaskReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 媒资ID。
-     * @return assetId
-     */
+    /** 媒资ID。
+     * 
+     * @return assetId */
     public String getAssetId() {
         return assetId;
     }
@@ -50,27 +35,23 @@ public class ExtractAudioTaskReq  {
         this.assetId = assetId;
     }
 
-    
-
     public ExtractAudioTaskReq withParameter(Parameter parameter) {
         this.parameter = parameter;
         return this;
     }
 
     public ExtractAudioTaskReq withParameter(Consumer<Parameter> parameterSetter) {
-        if(this.parameter == null ){
+        if (this.parameter == null) {
             this.parameter = new Parameter();
             parameterSetter.accept(this.parameter);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get parameter
-     * @return parameter
-     */
+    /** Get parameter
+     * 
+     * @return parameter */
     public Parameter getParameter() {
         return parameter;
     }
@@ -78,8 +59,6 @@ public class ExtractAudioTaskReq  {
     public void setParameter(Parameter parameter) {
         this.parameter = parameter;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class ExtractAudioTaskReq  {
             return false;
         }
         ExtractAudioTaskReq extractAudioTaskReq = (ExtractAudioTaskReq) o;
-        return Objects.equals(this.assetId, extractAudioTaskReq.assetId) &&
-            Objects.equals(this.parameter, extractAudioTaskReq.parameter);
+        return Objects.equals(this.assetId, extractAudioTaskReq.assetId)
+            && Objects.equals(this.parameter, extractAudioTaskReq.parameter);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(assetId, parameter);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class ExtractAudioTaskReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

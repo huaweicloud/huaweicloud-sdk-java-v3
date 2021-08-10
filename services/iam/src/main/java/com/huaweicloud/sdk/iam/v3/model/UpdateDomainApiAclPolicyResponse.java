@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.AclPolicyResult;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class UpdateDomainApiAclPolicyResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_acl_policy")
-    
+    @JsonProperty(value = "api_acl_policy")
+
     private AclPolicyResult apiAclPolicy;
 
     public UpdateDomainApiAclPolicyResponse withApiAclPolicy(AclPolicyResult apiAclPolicy) {
@@ -32,19 +21,17 @@ public class UpdateDomainApiAclPolicyResponse extends SdkResponse {
     }
 
     public UpdateDomainApiAclPolicyResponse withApiAclPolicy(Consumer<AclPolicyResult> apiAclPolicySetter) {
-        if(this.apiAclPolicy == null ){
+        if (this.apiAclPolicy == null) {
             this.apiAclPolicy = new AclPolicyResult();
             apiAclPolicySetter.accept(this.apiAclPolicy);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get apiAclPolicy
-     * @return apiAclPolicy
-     */
+    /** Get apiAclPolicy
+     * 
+     * @return apiAclPolicy */
     public AclPolicyResult getApiAclPolicy() {
         return apiAclPolicy;
     }
@@ -52,8 +39,6 @@ public class UpdateDomainApiAclPolicyResponse extends SdkResponse {
     public void setApiAclPolicy(AclPolicyResult apiAclPolicy) {
         this.apiAclPolicy = apiAclPolicy;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class UpdateDomainApiAclPolicyResponse extends SdkResponse {
         UpdateDomainApiAclPolicyResponse updateDomainApiAclPolicyResponse = (UpdateDomainApiAclPolicyResponse) o;
         return Objects.equals(this.apiAclPolicy, updateDomainApiAclPolicyResponse.apiAclPolicy);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(apiAclPolicy);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class UpdateDomainApiAclPolicyResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

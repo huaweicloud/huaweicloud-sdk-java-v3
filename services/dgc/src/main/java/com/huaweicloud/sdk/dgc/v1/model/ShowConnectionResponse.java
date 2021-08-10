@@ -1,69 +1,44 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
-
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
-
-
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowConnectionResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * Gets or Sets connectionType
-     */
+
+    /** Gets or Sets connectionType */
     public static final class ConnectionTypeEnum {
 
-        
-        /**
-         * Enum DWS for value: "DWS"
-         */
+        /** Enum DWS for value: "DWS" */
         public static final ConnectionTypeEnum DWS = new ConnectionTypeEnum("DWS");
-        
-        /**
-         * Enum DLI for value: "DLI"
-         */
+
+        /** Enum DLI for value: "DLI" */
         public static final ConnectionTypeEnum DLI = new ConnectionTypeEnum("DLI");
-        
-        /**
-         * Enum SPARKSQL for value: "SparkSQL"
-         */
+
+        /** Enum SPARKSQL for value: "SparkSQL" */
         public static final ConnectionTypeEnum SPARKSQL = new ConnectionTypeEnum("SparkSQL");
-        
-        /**
-         * Enum HIVE for value: "Hive"
-         */
+
+        /** Enum HIVE for value: "Hive" */
         public static final ConnectionTypeEnum HIVE = new ConnectionTypeEnum("Hive");
-        
-        /**
-         * Enum RDS for value: "RDS"
-         */
+
+        /** Enum RDS for value: "RDS" */
         public static final ConnectionTypeEnum RDS = new ConnectionTypeEnum("RDS");
-        
-        /**
-         * Enum CLOUDTABLE for value: "CloudTable"
-         */
+
+        /** Enum CLOUDTABLE for value: "CloudTable" */
         public static final ConnectionTypeEnum CLOUDTABLE = new ConnectionTypeEnum("CloudTable");
-        
 
         private static final Map<String, ConnectionTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -96,7 +71,7 @@ public class ShowConnectionResponse extends SdkResponse {
 
         @JsonCreator
         public static ConnectionTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ConnectionTypeEnum result = STATIC_FIELDS.get(value);
@@ -107,7 +82,7 @@ public class ShowConnectionResponse extends SdkResponse {
         }
 
         public static ConnectionTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ConnectionTypeEnum result = STATIC_FIELDS.get(value);
@@ -131,16 +106,14 @@ public class ShowConnectionResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="connectionType")
-    
+    @JsonProperty(value = "connectionType")
+
     private ConnectionTypeEnum connectionType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="config")
-    
+    @JsonProperty(value = "config")
+
     private Object config;
 
     public ShowConnectionResponse withName(String name) {
@@ -148,13 +121,9 @@ public class ShowConnectionResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * Get name
-     * @return name
-     */
+    /** Get name
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -163,20 +132,14 @@ public class ShowConnectionResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowConnectionResponse withConnectionType(ConnectionTypeEnum connectionType) {
         this.connectionType = connectionType;
         return this;
     }
 
-    
-
-
-    /**
-     * Get connectionType
-     * @return connectionType
-     */
+    /** Get connectionType
+     * 
+     * @return connectionType */
     public ConnectionTypeEnum getConnectionType() {
         return connectionType;
     }
@@ -185,20 +148,14 @@ public class ShowConnectionResponse extends SdkResponse {
         this.connectionType = connectionType;
     }
 
-    
-
     public ShowConnectionResponse withConfig(Object config) {
         this.config = config;
         return this;
     }
 
-    
-
-
-    /**
-     * Get config
-     * @return config
-     */
+    /** Get config
+     * 
+     * @return config */
     public Object getConfig() {
         return config;
     }
@@ -206,8 +163,6 @@ public class ShowConnectionResponse extends SdkResponse {
     public void setConfig(Object config) {
         this.config = config;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -218,14 +173,16 @@ public class ShowConnectionResponse extends SdkResponse {
             return false;
         }
         ShowConnectionResponse showConnectionResponse = (ShowConnectionResponse) o;
-        return Objects.equals(this.name, showConnectionResponse.name) &&
-            Objects.equals(this.connectionType, showConnectionResponse.connectionType) &&
-            Objects.equals(this.config, showConnectionResponse.config);
+        return Objects.equals(this.name, showConnectionResponse.name)
+            && Objects.equals(this.connectionType, showConnectionResponse.connectionType)
+            && Objects.equals(this.config, showConnectionResponse.config);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, connectionType, config);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -236,16 +193,13 @@ public class ShowConnectionResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

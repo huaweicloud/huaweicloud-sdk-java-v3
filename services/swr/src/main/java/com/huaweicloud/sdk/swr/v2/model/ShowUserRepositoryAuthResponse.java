@@ -1,63 +1,45 @@
 package com.huaweicloud.sdk.swr.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.swr.v2.model.UserAuth;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowUserRepositoryAuthResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Integer id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="self_auth")
-    
+    @JsonProperty(value = "self_auth")
+
     private UserAuth selfAuth;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="others_auths")
-    
+    @JsonProperty(value = "others_auths")
+
     private List<UserAuth> othersAuths = null;
-    
+
     public ShowUserRepositoryAuthResponse withId(Integer id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * id
-     * @return id
-     */
+    /** id
+     * 
+     * @return id */
     public Integer getId() {
         return id;
     }
@@ -66,20 +48,14 @@ public class ShowUserRepositoryAuthResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowUserRepositoryAuthResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
-     * @return name
-     */
+    /** 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -88,27 +64,23 @@ public class ShowUserRepositoryAuthResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowUserRepositoryAuthResponse withSelfAuth(UserAuth selfAuth) {
         this.selfAuth = selfAuth;
         return this;
     }
 
     public ShowUserRepositoryAuthResponse withSelfAuth(Consumer<UserAuth> selfAuthSetter) {
-        if(this.selfAuth == null ){
+        if (this.selfAuth == null) {
             this.selfAuth = new UserAuth();
             selfAuthSetter.accept(this.selfAuth);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get selfAuth
-     * @return selfAuth
-     */
+    /** Get selfAuth
+     * 
+     * @return selfAuth */
     public UserAuth getSelfAuth() {
         return selfAuth;
     }
@@ -117,16 +89,13 @@ public class ShowUserRepositoryAuthResponse extends SdkResponse {
         this.selfAuth = selfAuth;
     }
 
-    
-
     public ShowUserRepositoryAuthResponse withOthersAuths(List<UserAuth> othersAuths) {
         this.othersAuths = othersAuths;
         return this;
     }
 
-    
     public ShowUserRepositoryAuthResponse addOthersAuthsItem(UserAuth othersAuthsItem) {
-        if(this.othersAuths == null) {
+        if (this.othersAuths == null) {
             this.othersAuths = new ArrayList<>();
         }
         this.othersAuths.add(othersAuthsItem);
@@ -134,17 +103,16 @@ public class ShowUserRepositoryAuthResponse extends SdkResponse {
     }
 
     public ShowUserRepositoryAuthResponse withOthersAuths(Consumer<List<UserAuth>> othersAuthsSetter) {
-        if(this.othersAuths == null) {
+        if (this.othersAuths == null) {
             this.othersAuths = new ArrayList<>();
         }
         othersAuthsSetter.accept(this.othersAuths);
         return this;
     }
 
-    /**
-     * 其他用户的权限
-     * @return othersAuths
-     */
+    /** 其他用户的权限
+     * 
+     * @return othersAuths */
     public List<UserAuth> getOthersAuths() {
         return othersAuths;
     }
@@ -152,8 +120,6 @@ public class ShowUserRepositoryAuthResponse extends SdkResponse {
     public void setOthersAuths(List<UserAuth> othersAuths) {
         this.othersAuths = othersAuths;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -164,15 +130,17 @@ public class ShowUserRepositoryAuthResponse extends SdkResponse {
             return false;
         }
         ShowUserRepositoryAuthResponse showUserRepositoryAuthResponse = (ShowUserRepositoryAuthResponse) o;
-        return Objects.equals(this.id, showUserRepositoryAuthResponse.id) &&
-            Objects.equals(this.name, showUserRepositoryAuthResponse.name) &&
-            Objects.equals(this.selfAuth, showUserRepositoryAuthResponse.selfAuth) &&
-            Objects.equals(this.othersAuths, showUserRepositoryAuthResponse.othersAuths);
+        return Objects.equals(this.id, showUserRepositoryAuthResponse.id)
+            && Objects.equals(this.name, showUserRepositoryAuthResponse.name)
+            && Objects.equals(this.selfAuth, showUserRepositoryAuthResponse.selfAuth)
+            && Objects.equals(this.othersAuths, showUserRepositoryAuthResponse.othersAuths);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, selfAuth, othersAuths);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -184,16 +152,13 @@ public class ShowUserRepositoryAuthResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

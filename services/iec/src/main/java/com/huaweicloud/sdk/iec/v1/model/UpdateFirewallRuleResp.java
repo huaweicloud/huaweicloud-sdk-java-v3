@@ -1,43 +1,31 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iec.v1.model.FirewallPolicy;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class UpdateFirewallRuleResp  {
-
-
+public class UpdateFirewallRuleResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
-    /**
-     * 网络ACL状态。
-     */
+
+    /** 网络ACL状态。 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum INACTIVE for value: "INACTIVE"
-         */
+        /** Enum INACTIVE for value: "INACTIVE" */
         public static final StatusEnum INACTIVE = new StatusEnum("INACTIVE");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -65,7 +53,7 @@ public class UpdateFirewallRuleResp  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -76,7 +64,7 @@ public class UpdateFirewallRuleResp  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -100,22 +88,19 @@ public class UpdateFirewallRuleResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="egress_firewall_policy")
-    
+    @JsonProperty(value = "egress_firewall_policy")
+
     private FirewallPolicy egressFirewallPolicy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ingress_firewall_policy")
-    
+    @JsonProperty(value = "ingress_firewall_policy")
+
     private FirewallPolicy ingressFirewallPolicy;
 
     public UpdateFirewallRuleResp withId(String id) {
@@ -123,13 +108,9 @@ public class UpdateFirewallRuleResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 网络ACL ID
-     * @return id
-     */
+    /** 网络ACL ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -138,20 +119,14 @@ public class UpdateFirewallRuleResp  {
         this.id = id;
     }
 
-    
-
     public UpdateFirewallRuleResp withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 网络ACL状态。
-     * @return status
-     */
+    /** 网络ACL状态。
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -160,27 +135,23 @@ public class UpdateFirewallRuleResp  {
         this.status = status;
     }
 
-    
-
     public UpdateFirewallRuleResp withEgressFirewallPolicy(FirewallPolicy egressFirewallPolicy) {
         this.egressFirewallPolicy = egressFirewallPolicy;
         return this;
     }
 
     public UpdateFirewallRuleResp withEgressFirewallPolicy(Consumer<FirewallPolicy> egressFirewallPolicySetter) {
-        if(this.egressFirewallPolicy == null ){
+        if (this.egressFirewallPolicy == null) {
             this.egressFirewallPolicy = new FirewallPolicy();
             egressFirewallPolicySetter.accept(this.egressFirewallPolicy);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get egressFirewallPolicy
-     * @return egressFirewallPolicy
-     */
+    /** Get egressFirewallPolicy
+     * 
+     * @return egressFirewallPolicy */
     public FirewallPolicy getEgressFirewallPolicy() {
         return egressFirewallPolicy;
     }
@@ -189,27 +160,23 @@ public class UpdateFirewallRuleResp  {
         this.egressFirewallPolicy = egressFirewallPolicy;
     }
 
-    
-
     public UpdateFirewallRuleResp withIngressFirewallPolicy(FirewallPolicy ingressFirewallPolicy) {
         this.ingressFirewallPolicy = ingressFirewallPolicy;
         return this;
     }
 
     public UpdateFirewallRuleResp withIngressFirewallPolicy(Consumer<FirewallPolicy> ingressFirewallPolicySetter) {
-        if(this.ingressFirewallPolicy == null ){
+        if (this.ingressFirewallPolicy == null) {
             this.ingressFirewallPolicy = new FirewallPolicy();
             ingressFirewallPolicySetter.accept(this.ingressFirewallPolicy);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get ingressFirewallPolicy
-     * @return ingressFirewallPolicy
-     */
+    /** Get ingressFirewallPolicy
+     * 
+     * @return ingressFirewallPolicy */
     public FirewallPolicy getIngressFirewallPolicy() {
         return ingressFirewallPolicy;
     }
@@ -217,8 +184,6 @@ public class UpdateFirewallRuleResp  {
     public void setIngressFirewallPolicy(FirewallPolicy ingressFirewallPolicy) {
         this.ingressFirewallPolicy = ingressFirewallPolicy;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -229,15 +194,17 @@ public class UpdateFirewallRuleResp  {
             return false;
         }
         UpdateFirewallRuleResp updateFirewallRuleResp = (UpdateFirewallRuleResp) o;
-        return Objects.equals(this.id, updateFirewallRuleResp.id) &&
-            Objects.equals(this.status, updateFirewallRuleResp.status) &&
-            Objects.equals(this.egressFirewallPolicy, updateFirewallRuleResp.egressFirewallPolicy) &&
-            Objects.equals(this.ingressFirewallPolicy, updateFirewallRuleResp.ingressFirewallPolicy);
+        return Objects.equals(this.id, updateFirewallRuleResp.id)
+            && Objects.equals(this.status, updateFirewallRuleResp.status)
+            && Objects.equals(this.egressFirewallPolicy, updateFirewallRuleResp.egressFirewallPolicy)
+            && Objects.equals(this.ingressFirewallPolicy, updateFirewallRuleResp.ingressFirewallPolicy);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, status, egressFirewallPolicy, ingressFirewallPolicy);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -249,16 +216,13 @@ public class UpdateFirewallRuleResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

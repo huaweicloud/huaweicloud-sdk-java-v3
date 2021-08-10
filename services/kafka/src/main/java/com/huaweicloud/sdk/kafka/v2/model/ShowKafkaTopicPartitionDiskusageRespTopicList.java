@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ShowKafkaTopicPartitionDiskusageRespTopicList
- */
-public class ShowKafkaTopicPartitionDiskusageRespTopicList  {
-
-
+/** ShowKafkaTopicPartitionDiskusageRespTopicList */
+public class ShowKafkaTopicPartitionDiskusageRespTopicList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private String size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic_name")
-    
+    @JsonProperty(value = "topic_name")
+
     private String topicName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic_partition")
-    
+    @JsonProperty(value = "topic_partition")
+
     private String topicPartition;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="percentage")
-    
+    @JsonProperty(value = "percentage")
+
     private Double percentage;
 
     public ShowKafkaTopicPartitionDiskusageRespTopicList withSize(String size) {
@@ -46,13 +33,9 @@ public class ShowKafkaTopicPartitionDiskusageRespTopicList  {
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘使用量。
-     * @return size
-     */
+    /** 磁盘使用量。
+     * 
+     * @return size */
     public String getSize() {
         return size;
     }
@@ -61,20 +44,14 @@ public class ShowKafkaTopicPartitionDiskusageRespTopicList  {
         this.size = size;
     }
 
-    
-
     public ShowKafkaTopicPartitionDiskusageRespTopicList withTopicName(String topicName) {
         this.topicName = topicName;
         return this;
     }
 
-    
-
-
-    /**
-     * topic名称。
-     * @return topicName
-     */
+    /** topic名称。
+     * 
+     * @return topicName */
     public String getTopicName() {
         return topicName;
     }
@@ -83,20 +60,14 @@ public class ShowKafkaTopicPartitionDiskusageRespTopicList  {
         this.topicName = topicName;
     }
 
-    
-
     public ShowKafkaTopicPartitionDiskusageRespTopicList withTopicPartition(String topicPartition) {
         this.topicPartition = topicPartition;
         return this;
     }
 
-    
-
-
-    /**
-     * 分区。
-     * @return topicPartition
-     */
+    /** 分区。
+     * 
+     * @return topicPartition */
     public String getTopicPartition() {
         return topicPartition;
     }
@@ -105,20 +76,14 @@ public class ShowKafkaTopicPartitionDiskusageRespTopicList  {
         this.topicPartition = topicPartition;
     }
 
-    
-
     public ShowKafkaTopicPartitionDiskusageRespTopicList withPercentage(Double percentage) {
         this.percentage = percentage;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘使用量的占比。
-     * @return percentage
-     */
+    /** 磁盘使用量的占比。
+     * 
+     * @return percentage */
     public Double getPercentage() {
         return percentage;
     }
@@ -126,8 +91,6 @@ public class ShowKafkaTopicPartitionDiskusageRespTopicList  {
     public void setPercentage(Double percentage) {
         this.percentage = percentage;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -137,16 +100,19 @@ public class ShowKafkaTopicPartitionDiskusageRespTopicList  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ShowKafkaTopicPartitionDiskusageRespTopicList showKafkaTopicPartitionDiskusageRespTopicList = (ShowKafkaTopicPartitionDiskusageRespTopicList) o;
-        return Objects.equals(this.size, showKafkaTopicPartitionDiskusageRespTopicList.size) &&
-            Objects.equals(this.topicName, showKafkaTopicPartitionDiskusageRespTopicList.topicName) &&
-            Objects.equals(this.topicPartition, showKafkaTopicPartitionDiskusageRespTopicList.topicPartition) &&
-            Objects.equals(this.percentage, showKafkaTopicPartitionDiskusageRespTopicList.percentage);
+        ShowKafkaTopicPartitionDiskusageRespTopicList showKafkaTopicPartitionDiskusageRespTopicList =
+            (ShowKafkaTopicPartitionDiskusageRespTopicList) o;
+        return Objects.equals(this.size, showKafkaTopicPartitionDiskusageRespTopicList.size)
+            && Objects.equals(this.topicName, showKafkaTopicPartitionDiskusageRespTopicList.topicName)
+            && Objects.equals(this.topicPartition, showKafkaTopicPartitionDiskusageRespTopicList.topicPartition)
+            && Objects.equals(this.percentage, showKafkaTopicPartitionDiskusageRespTopicList.percentage);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(size, topicName, topicPartition, percentage);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +124,13 @@ public class ShowKafkaTopicPartitionDiskusageRespTopicList  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

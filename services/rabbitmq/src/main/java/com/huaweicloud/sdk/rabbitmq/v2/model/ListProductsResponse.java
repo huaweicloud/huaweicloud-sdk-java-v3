@@ -1,47 +1,34 @@
 package com.huaweicloud.sdk.rabbitmq.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rabbitmq.v2.model.ListProductsRespHourly;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListProductsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Hourly")
-    
+    @JsonProperty(value = "Hourly")
+
     private List<ListProductsRespHourly> hourly = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Monthly")
-    
+    @JsonProperty(value = "Monthly")
+
     private List<ListProductsRespHourly> monthly = null;
-    
+
     public ListProductsResponse withHourly(List<ListProductsRespHourly> hourly) {
         this.hourly = hourly;
         return this;
     }
 
-    
     public ListProductsResponse addHourlyItem(ListProductsRespHourly hourlyItem) {
-        if(this.hourly == null) {
+        if (this.hourly == null) {
             this.hourly = new ArrayList<>();
         }
         this.hourly.add(hourlyItem);
@@ -49,17 +36,16 @@ public class ListProductsResponse extends SdkResponse {
     }
 
     public ListProductsResponse withHourly(Consumer<List<ListProductsRespHourly>> hourlySetter) {
-        if(this.hourly == null) {
+        if (this.hourly == null) {
             this.hourly = new ArrayList<>();
         }
         hourlySetter.accept(this.hourly);
         return this;
     }
 
-    /**
-     * 表示按需付费的产品列表。
-     * @return hourly
-     */
+    /** 表示按需付费的产品列表。
+     * 
+     * @return hourly */
     public List<ListProductsRespHourly> getHourly() {
         return hourly;
     }
@@ -68,16 +54,13 @@ public class ListProductsResponse extends SdkResponse {
         this.hourly = hourly;
     }
 
-    
-
     public ListProductsResponse withMonthly(List<ListProductsRespHourly> monthly) {
         this.monthly = monthly;
         return this;
     }
 
-    
     public ListProductsResponse addMonthlyItem(ListProductsRespHourly monthlyItem) {
-        if(this.monthly == null) {
+        if (this.monthly == null) {
             this.monthly = new ArrayList<>();
         }
         this.monthly.add(monthlyItem);
@@ -85,17 +68,16 @@ public class ListProductsResponse extends SdkResponse {
     }
 
     public ListProductsResponse withMonthly(Consumer<List<ListProductsRespHourly>> monthlySetter) {
-        if(this.monthly == null) {
+        if (this.monthly == null) {
             this.monthly = new ArrayList<>();
         }
         monthlySetter.accept(this.monthly);
         return this;
     }
 
-    /**
-     * 表示包年包月的产品列表。当前暂不支持通过API创建包年包月的rabbitmq实例。
-     * @return monthly
-     */
+    /** 表示包年包月的产品列表。当前暂不支持通过API创建包年包月的rabbitmq实例。
+     * 
+     * @return monthly */
     public List<ListProductsRespHourly> getMonthly() {
         return monthly;
     }
@@ -103,8 +85,6 @@ public class ListProductsResponse extends SdkResponse {
     public void setMonthly(List<ListProductsRespHourly> monthly) {
         this.monthly = monthly;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -115,13 +95,15 @@ public class ListProductsResponse extends SdkResponse {
             return false;
         }
         ListProductsResponse listProductsResponse = (ListProductsResponse) o;
-        return Objects.equals(this.hourly, listProductsResponse.hourly) &&
-            Objects.equals(this.monthly, listProductsResponse.monthly);
+        return Objects.equals(this.hourly, listProductsResponse.hourly)
+            && Objects.equals(this.monthly, listProductsResponse.monthly);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(hourly, monthly);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -131,16 +113,13 @@ public class ListProductsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

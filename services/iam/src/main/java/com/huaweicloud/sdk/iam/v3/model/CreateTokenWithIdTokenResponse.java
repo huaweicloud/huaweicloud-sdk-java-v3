@@ -1,35 +1,23 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.ScopedTokenInfo;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class CreateTokenWithIdTokenResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="token")
-    
+    @JsonProperty(value = "token")
+
     private ScopedTokenInfo token;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Subject-Token")
-    
+    @JsonProperty(value = "X-Subject-Token")
+
     private String xSubjectToken;
 
     public CreateTokenWithIdTokenResponse withToken(ScopedTokenInfo token) {
@@ -38,19 +26,17 @@ public class CreateTokenWithIdTokenResponse extends SdkResponse {
     }
 
     public CreateTokenWithIdTokenResponse withToken(Consumer<ScopedTokenInfo> tokenSetter) {
-        if(this.token == null ){
+        if (this.token == null) {
             this.token = new ScopedTokenInfo();
             tokenSetter.accept(this.token);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get token
-     * @return token
-     */
+    /** Get token
+     * 
+     * @return token */
     public ScopedTokenInfo getToken() {
         return token;
     }
@@ -59,22 +45,16 @@ public class CreateTokenWithIdTokenResponse extends SdkResponse {
         this.token = token;
     }
 
-    
-
     public CreateTokenWithIdTokenResponse withXSubjectToken(String xSubjectToken) {
         this.xSubjectToken = xSubjectToken;
         return this;
     }
 
-    
-
-
-    /**
-     * Get xSubjectToken
-     * @return xSubjectToken
-     */
+    /** Get xSubjectToken
+     * 
+     * @return xSubjectToken */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Subject-Token")
+    @JsonProperty(value = "X-Subject-Token")
     public String getXSubjectToken() {
         return xSubjectToken;
     }
@@ -82,8 +62,6 @@ public class CreateTokenWithIdTokenResponse extends SdkResponse {
     public void setXSubjectToken(String xSubjectToken) {
         this.xSubjectToken = xSubjectToken;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -94,13 +72,15 @@ public class CreateTokenWithIdTokenResponse extends SdkResponse {
             return false;
         }
         CreateTokenWithIdTokenResponse createTokenWithIdTokenResponse = (CreateTokenWithIdTokenResponse) o;
-        return Objects.equals(this.token, createTokenWithIdTokenResponse.token) &&
-            Objects.equals(this.xSubjectToken, createTokenWithIdTokenResponse.xSubjectToken);
+        return Objects.equals(this.token, createTokenWithIdTokenResponse.token)
+            && Objects.equals(this.xSubjectToken, createTokenWithIdTokenResponse.xSubjectToken);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(token, xSubjectToken);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -110,16 +90,13 @@ public class CreateTokenWithIdTokenResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

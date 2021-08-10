@@ -1,42 +1,26 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.UrlDomainBase;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * UrlDomainCreate
- */
-public class UrlDomainCreate  {
+/** UrlDomainCreate */
+public class UrlDomainCreate {
 
-    /**
-     * 最小ssl协议版本号。支持TLSv1.1或TLSv1.2
-     */
+    /** 最小ssl协议版本号。支持TLSv1.1或TLSv1.2 */
     public static final class MinSslVersionEnum {
 
-        
-        /**
-         * Enum TLSV1_1 for value: "TLSv1.1"
-         */
+        /** Enum TLSV1_1 for value: "TLSv1.1" */
         public static final MinSslVersionEnum TLSV1_1 = new MinSslVersionEnum("TLSv1.1");
-        
-        /**
-         * Enum TLSV1_2 for value: "TLSv1.2"
-         */
+
+        /** Enum TLSV1_2 for value: "TLSv1.2" */
         public static final MinSslVersionEnum TLSV1_2 = new MinSslVersionEnum("TLSv1.2");
-        
 
         private static final Map<String, MinSslVersionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -65,7 +49,7 @@ public class UrlDomainCreate  {
 
         @JsonCreator
         public static MinSslVersionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MinSslVersionEnum result = STATIC_FIELDS.get(value);
@@ -76,7 +60,7 @@ public class UrlDomainCreate  {
         }
 
         public static MinSslVersionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MinSslVersionEnum result = STATIC_FIELDS.get(value);
@@ -100,16 +84,14 @@ public class UrlDomainCreate  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="min_ssl_version")
-    
+    @JsonProperty(value = "min_ssl_version")
+
     private MinSslVersionEnum minSslVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url_domain")
-    
+    @JsonProperty(value = "url_domain")
+
     private String urlDomain;
 
     public UrlDomainCreate withMinSslVersion(MinSslVersionEnum minSslVersion) {
@@ -117,13 +99,9 @@ public class UrlDomainCreate  {
         return this;
     }
 
-    
-
-
-    /**
-     * 最小ssl协议版本号。支持TLSv1.1或TLSv1.2
-     * @return minSslVersion
-     */
+    /** 最小ssl协议版本号。支持TLSv1.1或TLSv1.2
+     * 
+     * @return minSslVersion */
     public MinSslVersionEnum getMinSslVersion() {
         return minSslVersion;
     }
@@ -132,20 +110,14 @@ public class UrlDomainCreate  {
         this.minSslVersion = minSslVersion;
     }
 
-    
-
     public UrlDomainCreate withUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义域名。长度为0-255位的字符串，需要符合域名规范。
-     * @return urlDomain
-     */
+    /** 自定义域名。长度为0-255位的字符串，需要符合域名规范。
+     * 
+     * @return urlDomain */
     public String getUrlDomain() {
         return urlDomain;
     }
@@ -153,8 +125,6 @@ public class UrlDomainCreate  {
     public void setUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -165,13 +135,15 @@ public class UrlDomainCreate  {
             return false;
         }
         UrlDomainCreate urlDomainCreate = (UrlDomainCreate) o;
-        return Objects.equals(this.minSslVersion, urlDomainCreate.minSslVersion) &&
-            Objects.equals(this.urlDomain, urlDomainCreate.urlDomain);
+        return Objects.equals(this.minSslVersion, urlDomainCreate.minSslVersion)
+            && Objects.equals(this.urlDomain, urlDomainCreate.urlDomain);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(minSslVersion, urlDomain);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -181,16 +153,13 @@ public class UrlDomainCreate  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

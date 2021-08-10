@@ -1,49 +1,34 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.RecordDownloadUrlDO;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 单会议录制文件下载链接信息（包含多个录制文件）
- */
-public class RecordDownloadInfoBO  {
-
-
+/** 单会议录制文件下载链接信息（包含多个录制文件） */
+public class RecordDownloadInfoBO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confUuid")
-    
+    @JsonProperty(value = "confUuid")
+
     private String confUuid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="urls")
-    
+    @JsonProperty(value = "urls")
+
     private List<RecordDownloadUrlDO> urls = null;
-    
+
     public RecordDownloadInfoBO withConfUuid(String confUuid) {
         this.confUuid = confUuid;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议UUID
-     * @return confUuid
-     */
+    /** 会议UUID
+     * 
+     * @return confUuid */
     public String getConfUuid() {
         return confUuid;
     }
@@ -52,16 +37,13 @@ public class RecordDownloadInfoBO  {
         this.confUuid = confUuid;
     }
 
-    
-
     public RecordDownloadInfoBO withUrls(List<RecordDownloadUrlDO> urls) {
         this.urls = urls;
         return this;
     }
 
-    
     public RecordDownloadInfoBO addUrlsItem(RecordDownloadUrlDO urlsItem) {
-        if(this.urls == null) {
+        if (this.urls == null) {
             this.urls = new ArrayList<>();
         }
         this.urls.add(urlsItem);
@@ -69,17 +51,16 @@ public class RecordDownloadInfoBO  {
     }
 
     public RecordDownloadInfoBO withUrls(Consumer<List<RecordDownloadUrlDO>> urlsSetter) {
-        if(this.urls == null) {
+        if (this.urls == null) {
             this.urls = new ArrayList<>();
         }
         urlsSetter.accept(this.urls);
         return this;
     }
 
-    /**
-     * 录制文件下载URL
-     * @return urls
-     */
+    /** 录制文件下载URL
+     * 
+     * @return urls */
     public List<RecordDownloadUrlDO> getUrls() {
         return urls;
     }
@@ -87,8 +68,6 @@ public class RecordDownloadInfoBO  {
     public void setUrls(List<RecordDownloadUrlDO> urls) {
         this.urls = urls;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -99,13 +78,15 @@ public class RecordDownloadInfoBO  {
             return false;
         }
         RecordDownloadInfoBO recordDownloadInfoBO = (RecordDownloadInfoBO) o;
-        return Objects.equals(this.confUuid, recordDownloadInfoBO.confUuid) &&
-            Objects.equals(this.urls, recordDownloadInfoBO.urls);
+        return Objects.equals(this.confUuid, recordDownloadInfoBO.confUuid)
+            && Objects.equals(this.urls, recordDownloadInfoBO.urls);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(confUuid, urls);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -115,16 +96,13 @@ public class RecordDownloadInfoBO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

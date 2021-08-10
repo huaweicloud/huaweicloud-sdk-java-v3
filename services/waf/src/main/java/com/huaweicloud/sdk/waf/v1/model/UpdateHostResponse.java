@@ -1,103 +1,80 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.waf.v1.model.CloudWafServer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class UpdateHostResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hostname")
-    
+    @JsonProperty(value = "hostname")
+
     private String hostname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policyid")
-    
+    @JsonProperty(value = "policyid")
+
     private String policyid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_code")
-    
+    @JsonProperty(value = "access_code")
+
     private String accessCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protect_status")
-    
+    @JsonProperty(value = "protect_status")
+
     private Integer protectStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_status")
-    
+    @JsonProperty(value = "access_status")
+
     private Integer accessStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
+
     private String protocol;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificateid")
-    
+    @JsonProperty(value = "certificateid")
+
     private String certificateid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificatename")
-    
+    @JsonProperty(value = "certificatename")
+
     private String certificatename;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server")
-    
+    @JsonProperty(value = "server")
+
     private List<CloudWafServer> server = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="proxy")
-    
+    @JsonProperty(value = "proxy")
+
     private Boolean proxy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timestamp")
-    
+    @JsonProperty(value = "timestamp")
+
     private Long timestamp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="exclusive_ip")
-    
+    @JsonProperty(value = "exclusive_ip")
+
     private Boolean exclusiveIp;
 
     public UpdateHostResponse withId(String id) {
@@ -105,13 +82,9 @@ public class UpdateHostResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 域名id
-     * @return id
-     */
+    /** 域名id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -120,20 +93,14 @@ public class UpdateHostResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public UpdateHostResponse withHostname(String hostname) {
         this.hostname = hostname;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建的云模式防护域名
-     * @return hostname
-     */
+    /** 创建的云模式防护域名
+     * 
+     * @return hostname */
     public String getHostname() {
         return hostname;
     }
@@ -142,20 +109,14 @@ public class UpdateHostResponse extends SdkResponse {
         this.hostname = hostname;
     }
 
-    
-
     public UpdateHostResponse withPolicyid(String policyid) {
         this.policyid = policyid;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略id
-     * @return policyid
-     */
+    /** 策略id
+     * 
+     * @return policyid */
     public String getPolicyid() {
         return policyid;
     }
@@ -164,20 +125,14 @@ public class UpdateHostResponse extends SdkResponse {
         this.policyid = policyid;
     }
 
-    
-
     public UpdateHostResponse withAccessCode(String accessCode) {
         this.accessCode = accessCode;
         return this;
     }
 
-    
-
-
-    /**
-     * cname前缀
-     * @return accessCode
-     */
+    /** cname前缀
+     * 
+     * @return accessCode */
     public String getAccessCode() {
         return accessCode;
     }
@@ -186,20 +141,14 @@ public class UpdateHostResponse extends SdkResponse {
         this.accessCode = accessCode;
     }
 
-    
-
     public UpdateHostResponse withProtectStatus(Integer protectStatus) {
         this.protectStatus = protectStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 防护状态
-     * @return protectStatus
-     */
+    /** 防护状态
+     * 
+     * @return protectStatus */
     public Integer getProtectStatus() {
         return protectStatus;
     }
@@ -208,20 +157,14 @@ public class UpdateHostResponse extends SdkResponse {
         this.protectStatus = protectStatus;
     }
 
-    
-
     public UpdateHostResponse withAccessStatus(Integer accessStatus) {
         this.accessStatus = accessStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 接入状态
-     * @return accessStatus
-     */
+    /** 接入状态
+     * 
+     * @return accessStatus */
     public Integer getAccessStatus() {
         return accessStatus;
     }
@@ -230,20 +173,14 @@ public class UpdateHostResponse extends SdkResponse {
         this.accessStatus = accessStatus;
     }
 
-    
-
     public UpdateHostResponse withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
     }
 
-    
-
-
-    /**
-     * 返回的客户端协议类型
-     * @return protocol
-     */
+    /** 返回的客户端协议类型
+     * 
+     * @return protocol */
     public String getProtocol() {
         return protocol;
     }
@@ -252,20 +189,14 @@ public class UpdateHostResponse extends SdkResponse {
         this.protocol = protocol;
     }
 
-    
-
     public UpdateHostResponse withCertificateid(String certificateid) {
         this.certificateid = certificateid;
         return this;
     }
 
-    
-
-
-    /**
-     * 返回的证书id
-     * @return certificateid
-     */
+    /** 返回的证书id
+     * 
+     * @return certificateid */
     public String getCertificateid() {
         return certificateid;
     }
@@ -274,20 +205,14 @@ public class UpdateHostResponse extends SdkResponse {
         this.certificateid = certificateid;
     }
 
-    
-
     public UpdateHostResponse withCertificatename(String certificatename) {
         this.certificatename = certificatename;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书名称
-     * @return certificatename
-     */
+    /** 证书名称
+     * 
+     * @return certificatename */
     public String getCertificatename() {
         return certificatename;
     }
@@ -296,16 +221,13 @@ public class UpdateHostResponse extends SdkResponse {
         this.certificatename = certificatename;
     }
 
-    
-
     public UpdateHostResponse withServer(List<CloudWafServer> server) {
         this.server = server;
         return this;
     }
 
-    
     public UpdateHostResponse addServerItem(CloudWafServer serverItem) {
-        if(this.server == null) {
+        if (this.server == null) {
             this.server = new ArrayList<>();
         }
         this.server.add(serverItem);
@@ -313,17 +235,16 @@ public class UpdateHostResponse extends SdkResponse {
     }
 
     public UpdateHostResponse withServer(Consumer<List<CloudWafServer>> serverSetter) {
-        if(this.server == null) {
+        if (this.server == null) {
             this.server = new ArrayList<>();
         }
         serverSetter.accept(this.server);
         return this;
     }
 
-    /**
-     * 源站信息
-     * @return server
-     */
+    /** 源站信息
+     * 
+     * @return server */
     public List<CloudWafServer> getServer() {
         return server;
     }
@@ -332,20 +253,14 @@ public class UpdateHostResponse extends SdkResponse {
         this.server = server;
     }
 
-    
-
     public UpdateHostResponse withProxy(Boolean proxy) {
         this.proxy = proxy;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启了代理
-     * @return proxy
-     */
+    /** 是否开启了代理
+     * 
+     * @return proxy */
     public Boolean getProxy() {
         return proxy;
     }
@@ -354,20 +269,14 @@ public class UpdateHostResponse extends SdkResponse {
         this.proxy = proxy;
     }
 
-    
-
     public UpdateHostResponse withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建防护域名的时间
-     * @return timestamp
-     */
+    /** 创建防护域名的时间
+     * 
+     * @return timestamp */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -376,20 +285,14 @@ public class UpdateHostResponse extends SdkResponse {
         this.timestamp = timestamp;
     }
 
-    
-
     public UpdateHostResponse withExclusiveIp(Boolean exclusiveIp) {
         this.exclusiveIp = exclusiveIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否使用独享ip
-     * @return exclusiveIp
-     */
+    /** 是否使用独享ip
+     * 
+     * @return exclusiveIp */
     public Boolean getExclusiveIp() {
         return exclusiveIp;
     }
@@ -397,8 +300,6 @@ public class UpdateHostResponse extends SdkResponse {
     public void setExclusiveIp(Boolean exclusiveIp) {
         this.exclusiveIp = exclusiveIp;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -409,24 +310,38 @@ public class UpdateHostResponse extends SdkResponse {
             return false;
         }
         UpdateHostResponse updateHostResponse = (UpdateHostResponse) o;
-        return Objects.equals(this.id, updateHostResponse.id) &&
-            Objects.equals(this.hostname, updateHostResponse.hostname) &&
-            Objects.equals(this.policyid, updateHostResponse.policyid) &&
-            Objects.equals(this.accessCode, updateHostResponse.accessCode) &&
-            Objects.equals(this.protectStatus, updateHostResponse.protectStatus) &&
-            Objects.equals(this.accessStatus, updateHostResponse.accessStatus) &&
-            Objects.equals(this.protocol, updateHostResponse.protocol) &&
-            Objects.equals(this.certificateid, updateHostResponse.certificateid) &&
-            Objects.equals(this.certificatename, updateHostResponse.certificatename) &&
-            Objects.equals(this.server, updateHostResponse.server) &&
-            Objects.equals(this.proxy, updateHostResponse.proxy) &&
-            Objects.equals(this.timestamp, updateHostResponse.timestamp) &&
-            Objects.equals(this.exclusiveIp, updateHostResponse.exclusiveIp);
+        return Objects.equals(this.id, updateHostResponse.id)
+            && Objects.equals(this.hostname, updateHostResponse.hostname)
+            && Objects.equals(this.policyid, updateHostResponse.policyid)
+            && Objects.equals(this.accessCode, updateHostResponse.accessCode)
+            && Objects.equals(this.protectStatus, updateHostResponse.protectStatus)
+            && Objects.equals(this.accessStatus, updateHostResponse.accessStatus)
+            && Objects.equals(this.protocol, updateHostResponse.protocol)
+            && Objects.equals(this.certificateid, updateHostResponse.certificateid)
+            && Objects.equals(this.certificatename, updateHostResponse.certificatename)
+            && Objects.equals(this.server, updateHostResponse.server)
+            && Objects.equals(this.proxy, updateHostResponse.proxy)
+            && Objects.equals(this.timestamp, updateHostResponse.timestamp)
+            && Objects.equals(this.exclusiveIp, updateHostResponse.exclusiveIp);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, hostname, policyid, accessCode, protectStatus, accessStatus, protocol, certificateid, certificatename, server, proxy, timestamp, exclusiveIp);
+        return Objects.hash(id,
+            hostname,
+            policyid,
+            accessCode,
+            protectStatus,
+            accessStatus,
+            protocol,
+            certificateid,
+            certificatename,
+            server,
+            proxy,
+            timestamp,
+            exclusiveIp);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -447,16 +362,13 @@ public class UpdateHostResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

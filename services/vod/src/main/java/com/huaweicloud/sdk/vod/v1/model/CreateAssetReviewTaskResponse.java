@@ -1,35 +1,23 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vod.v1.model.Review;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class CreateAssetReviewTaskResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="asset_id")
-    
+    @JsonProperty(value = "asset_id")
+
     private String assetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="review")
-    
+    @JsonProperty(value = "review")
+
     private Review review;
 
     public CreateAssetReviewTaskResponse withAssetId(String assetId) {
@@ -37,13 +25,9 @@ public class CreateAssetReviewTaskResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 媒资ID
-     * @return assetId
-     */
+    /** 媒资ID
+     * 
+     * @return assetId */
     public String getAssetId() {
         return assetId;
     }
@@ -52,27 +36,23 @@ public class CreateAssetReviewTaskResponse extends SdkResponse {
         this.assetId = assetId;
     }
 
-    
-
     public CreateAssetReviewTaskResponse withReview(Review review) {
         this.review = review;
         return this;
     }
 
     public CreateAssetReviewTaskResponse withReview(Consumer<Review> reviewSetter) {
-        if(this.review == null ){
+        if (this.review == null) {
             this.review = new Review();
             reviewSetter.accept(this.review);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get review
-     * @return review
-     */
+    /** Get review
+     * 
+     * @return review */
     public Review getReview() {
         return review;
     }
@@ -80,8 +60,6 @@ public class CreateAssetReviewTaskResponse extends SdkResponse {
     public void setReview(Review review) {
         this.review = review;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -92,13 +70,15 @@ public class CreateAssetReviewTaskResponse extends SdkResponse {
             return false;
         }
         CreateAssetReviewTaskResponse createAssetReviewTaskResponse = (CreateAssetReviewTaskResponse) o;
-        return Objects.equals(this.assetId, createAssetReviewTaskResponse.assetId) &&
-            Objects.equals(this.review, createAssetReviewTaskResponse.review);
+        return Objects.equals(this.assetId, createAssetReviewTaskResponse.assetId)
+            && Objects.equals(this.review, createAssetReviewTaskResponse.review);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(assetId, review);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -108,16 +88,13 @@ public class CreateAssetReviewTaskResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

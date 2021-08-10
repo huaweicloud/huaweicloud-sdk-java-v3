@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteInstanceRequest  {
-
-
+/** Request Object */
+public class DeleteInstanceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="application_id")
-    
+    @JsonProperty(value = "application_id")
+
     private String applicationId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="component_id")
-    
+    @JsonProperty(value = "component_id")
+
     private String componentId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="force")
-    
+    @JsonProperty(value = "force")
+
     private Boolean force;
 
     public DeleteInstanceRequest withApplicationId(String applicationId) {
@@ -46,13 +33,9 @@ public class DeleteInstanceRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 应用ID。
-     * @return applicationId
-     */
+    /** 应用ID。
+     * 
+     * @return applicationId */
     public String getApplicationId() {
         return applicationId;
     }
@@ -61,20 +44,14 @@ public class DeleteInstanceRequest  {
         this.applicationId = applicationId;
     }
 
-    
-
     public DeleteInstanceRequest withComponentId(String componentId) {
         this.componentId = componentId;
         return this;
     }
 
-    
-
-
-    /**
-     * 组件ID。
-     * @return componentId
-     */
+    /** 组件ID。
+     * 
+     * @return componentId */
     public String getComponentId() {
         return componentId;
     }
@@ -83,20 +60,14 @@ public class DeleteInstanceRequest  {
         this.componentId = componentId;
     }
 
-    
-
     public DeleteInstanceRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 组件实例ID。
-     * @return instanceId
-     */
+    /** 组件实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -105,20 +76,14 @@ public class DeleteInstanceRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public DeleteInstanceRequest withForce(Boolean force) {
         this.force = force;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否强制删除。
-     * @return force
-     */
+    /** 是否强制删除。
+     * 
+     * @return force */
     public Boolean getForce() {
         return force;
     }
@@ -126,8 +91,6 @@ public class DeleteInstanceRequest  {
     public void setForce(Boolean force) {
         this.force = force;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class DeleteInstanceRequest  {
             return false;
         }
         DeleteInstanceRequest deleteInstanceRequest = (DeleteInstanceRequest) o;
-        return Objects.equals(this.applicationId, deleteInstanceRequest.applicationId) &&
-            Objects.equals(this.componentId, deleteInstanceRequest.componentId) &&
-            Objects.equals(this.instanceId, deleteInstanceRequest.instanceId) &&
-            Objects.equals(this.force, deleteInstanceRequest.force);
+        return Objects.equals(this.applicationId, deleteInstanceRequest.applicationId)
+            && Objects.equals(this.componentId, deleteInstanceRequest.componentId)
+            && Objects.equals(this.instanceId, deleteInstanceRequest.instanceId)
+            && Objects.equals(this.force, deleteInstanceRequest.force);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(applicationId, componentId, instanceId, force);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class DeleteInstanceRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

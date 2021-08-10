@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * flavor数据结构说明
- */
-public class FlavorInfos  {
-
-
+/** flavor数据结构说明 */
+public class FlavorInfos {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disk")
-    
+    @JsonProperty(value = "disk")
+
     private String disk;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vcpus")
-    
+    @JsonProperty(value = "vcpus")
+
     private String vcpus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ram")
-    
+    @JsonProperty(value = "ram")
+
     private String ram;
 
     public FlavorInfos withId(String id) {
@@ -52,13 +38,9 @@ public class FlavorInfos  {
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器规格ID
-     * @return id
-     */
+    /** 裸金属服务器规格ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -67,20 +49,14 @@ public class FlavorInfos  {
         this.id = id;
     }
 
-    
-
     public FlavorInfos withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器规格名称
-     * @return name
-     */
+    /** 裸金属服务器规格名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -89,20 +65,14 @@ public class FlavorInfos  {
         this.name = name;
     }
 
-    
-
     public FlavorInfos withDisk(String disk) {
         this.disk = disk;
         return this;
     }
 
-    
-
-
-    /**
-     * 该裸金属服务器规格对应要求系统盘大小，0为不限制。
-     * @return disk
-     */
+    /** 该裸金属服务器规格对应要求系统盘大小，0为不限制。
+     * 
+     * @return disk */
     public String getDisk() {
         return disk;
     }
@@ -111,20 +81,14 @@ public class FlavorInfos  {
         this.disk = disk;
     }
 
-    
-
     public FlavorInfos withVcpus(String vcpus) {
         this.vcpus = vcpus;
         return this;
     }
 
-    
-
-
-    /**
-     * 该裸金属服务器规格对应的CPU核数
-     * @return vcpus
-     */
+    /** 该裸金属服务器规格对应的CPU核数
+     * 
+     * @return vcpus */
     public String getVcpus() {
         return vcpus;
     }
@@ -133,20 +97,14 @@ public class FlavorInfos  {
         this.vcpus = vcpus;
     }
 
-    
-
     public FlavorInfos withRam(String ram) {
         this.ram = ram;
         return this;
     }
 
-    
-
-
-    /**
-     * 该裸金属服务器规格对应的内存大小，单位为MB
-     * @return ram
-     */
+    /** 该裸金属服务器规格对应的内存大小，单位为MB
+     * 
+     * @return ram */
     public String getRam() {
         return ram;
     }
@@ -154,8 +112,6 @@ public class FlavorInfos  {
     public void setRam(String ram) {
         this.ram = ram;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,16 @@ public class FlavorInfos  {
             return false;
         }
         FlavorInfos flavorInfos = (FlavorInfos) o;
-        return Objects.equals(this.id, flavorInfos.id) &&
-            Objects.equals(this.name, flavorInfos.name) &&
-            Objects.equals(this.disk, flavorInfos.disk) &&
-            Objects.equals(this.vcpus, flavorInfos.vcpus) &&
-            Objects.equals(this.ram, flavorInfos.ram);
+        return Objects.equals(this.id, flavorInfos.id) && Objects.equals(this.name, flavorInfos.name)
+            && Objects.equals(this.disk, flavorInfos.disk) && Objects.equals(this.vcpus, flavorInfos.vcpus)
+            && Objects.equals(this.ram, flavorInfos.ram);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, disk, vcpus, ram);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +144,13 @@ public class FlavorInfos  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,52 +1,37 @@
 package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowInstanceStatusResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
+    @JsonProperty(value = "task_id")
+
     private String taskId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_status")
-    
+    @JsonProperty(value = "task_status")
+
     private String taskStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pipeline_id")
-    
+    @JsonProperty(value = "pipeline_id")
+
     private String pipelineId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pipeline_name")
-    
+    @JsonProperty(value = "pipeline_name")
+
     private String pipelineName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pipeline_url")
-    
+    @JsonProperty(value = "pipeline_url")
+
     private String pipelineUrl;
 
     public ShowInstanceStatusResponse withTaskId(String taskId) {
@@ -54,13 +39,9 @@ public class ShowInstanceStatusResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return taskId
-     */
+    /** 实例ID
+     * 
+     * @return taskId */
     public String getTaskId() {
         return taskId;
     }
@@ -69,20 +50,14 @@ public class ShowInstanceStatusResponse extends SdkResponse {
         this.taskId = taskId;
     }
 
-    
-
     public ShowInstanceStatusResponse withTaskStatus(String taskStatus) {
         this.taskStatus = taskStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例创建状态
-     * @return taskStatus
-     */
+    /** 实例创建状态
+     * 
+     * @return taskStatus */
     public String getTaskStatus() {
         return taskStatus;
     }
@@ -91,20 +66,14 @@ public class ShowInstanceStatusResponse extends SdkResponse {
         this.taskStatus = taskStatus;
     }
 
-    
-
     public ShowInstanceStatusResponse withPipelineId(String pipelineId) {
         this.pipelineId = pipelineId;
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线ID
-     * @return pipelineId
-     */
+    /** 流水线ID
+     * 
+     * @return pipelineId */
     public String getPipelineId() {
         return pipelineId;
     }
@@ -113,20 +82,14 @@ public class ShowInstanceStatusResponse extends SdkResponse {
         this.pipelineId = pipelineId;
     }
 
-    
-
     public ShowInstanceStatusResponse withPipelineName(String pipelineName) {
         this.pipelineName = pipelineName;
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线名字
-     * @return pipelineName
-     */
+    /** 流水线名字
+     * 
+     * @return pipelineName */
     public String getPipelineName() {
         return pipelineName;
     }
@@ -135,20 +98,14 @@ public class ShowInstanceStatusResponse extends SdkResponse {
         this.pipelineName = pipelineName;
     }
 
-    
-
     public ShowInstanceStatusResponse withPipelineUrl(String pipelineUrl) {
         this.pipelineUrl = pipelineUrl;
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线详情页面url
-     * @return pipelineUrl
-     */
+    /** 流水线详情页面url
+     * 
+     * @return pipelineUrl */
     public String getPipelineUrl() {
         return pipelineUrl;
     }
@@ -156,8 +113,6 @@ public class ShowInstanceStatusResponse extends SdkResponse {
     public void setPipelineUrl(String pipelineUrl) {
         this.pipelineUrl = pipelineUrl;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -168,16 +123,18 @@ public class ShowInstanceStatusResponse extends SdkResponse {
             return false;
         }
         ShowInstanceStatusResponse showInstanceStatusResponse = (ShowInstanceStatusResponse) o;
-        return Objects.equals(this.taskId, showInstanceStatusResponse.taskId) &&
-            Objects.equals(this.taskStatus, showInstanceStatusResponse.taskStatus) &&
-            Objects.equals(this.pipelineId, showInstanceStatusResponse.pipelineId) &&
-            Objects.equals(this.pipelineName, showInstanceStatusResponse.pipelineName) &&
-            Objects.equals(this.pipelineUrl, showInstanceStatusResponse.pipelineUrl);
+        return Objects.equals(this.taskId, showInstanceStatusResponse.taskId)
+            && Objects.equals(this.taskStatus, showInstanceStatusResponse.taskStatus)
+            && Objects.equals(this.pipelineId, showInstanceStatusResponse.pipelineId)
+            && Objects.equals(this.pipelineName, showInstanceStatusResponse.pipelineName)
+            && Objects.equals(this.pipelineUrl, showInstanceStatusResponse.pipelineUrl);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(taskId, taskStatus, pipelineId, pipelineName, pipelineUrl);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -190,16 +147,13 @@ public class ShowInstanceStatusResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

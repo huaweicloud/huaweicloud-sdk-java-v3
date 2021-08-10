@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 磁盘模板
- */
-public class TemplateDisk  {
-
-
+/** 磁盘模板 */
+public class TemplateDisk {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="index")
-    
+    @JsonProperty(value = "index")
+
     private Integer index;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disktype")
-    
+    @JsonProperty(value = "disktype")
+
     private String disktype;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Long size;
 
     public TemplateDisk withIndex(Integer index) {
@@ -46,15 +33,9 @@ public class TemplateDisk  {
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘序号，从0开始
-     * minimum: 0
-     * maximum: 2147483647
-     * @return index
-     */
+    /** 磁盘序号，从0开始 minimum: 0 maximum: 2147483647
+     * 
+     * @return index */
     public Integer getIndex() {
         return index;
     }
@@ -63,20 +44,14 @@ public class TemplateDisk  {
         this.index = index;
     }
 
-    
-
     public TemplateDisk withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘名称
-     * @return name
-     */
+    /** 磁盘名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -85,20 +60,14 @@ public class TemplateDisk  {
         this.name = name;
     }
 
-    
-
     public TemplateDisk withDisktype(String disktype) {
         this.disktype = disktype;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘类型，同volumetype字段
-     * @return disktype
-     */
+    /** 磁盘类型，同volumetype字段
+     * 
+     * @return disktype */
     public String getDisktype() {
         return disktype;
     }
@@ -107,22 +76,14 @@ public class TemplateDisk  {
         this.disktype = disktype;
     }
 
-    
-
     public TemplateDisk withSize(Long size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘大小，单位：GB
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return size
-     */
+    /** 磁盘大小，单位：GB minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return size */
     public Long getSize() {
         return size;
     }
@@ -130,8 +91,6 @@ public class TemplateDisk  {
     public void setSize(Long size) {
         this.size = size;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -142,15 +101,15 @@ public class TemplateDisk  {
             return false;
         }
         TemplateDisk templateDisk = (TemplateDisk) o;
-        return Objects.equals(this.index, templateDisk.index) &&
-            Objects.equals(this.name, templateDisk.name) &&
-            Objects.equals(this.disktype, templateDisk.disktype) &&
-            Objects.equals(this.size, templateDisk.size);
+        return Objects.equals(this.index, templateDisk.index) && Objects.equals(this.name, templateDisk.name)
+            && Objects.equals(this.disktype, templateDisk.disktype) && Objects.equals(this.size, templateDisk.size);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(index, name, disktype, size);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -162,16 +121,13 @@ public class TemplateDisk  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

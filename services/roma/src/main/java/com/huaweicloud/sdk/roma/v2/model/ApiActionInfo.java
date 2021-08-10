@@ -1,41 +1,26 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * ApiActionInfo
- */
-public class ApiActionInfo  {
+/** ApiActionInfo */
+public class ApiActionInfo {
 
-    /**
-     * 需要进行的操作。 - online：发布 - offline：下线
-     */
+    /** 需要进行的操作。 - online：发布 - offline：下线 */
     public static final class ActionEnum {
 
-        
-        /**
-         * Enum ONLINE for value: "online"
-         */
+        /** Enum ONLINE for value: "online" */
         public static final ActionEnum ONLINE = new ActionEnum("online");
-        
-        /**
-         * Enum OFFLINE for value: "offline"
-         */
+
+        /** Enum OFFLINE for value: "offline" */
         public static final ActionEnum OFFLINE = new ActionEnum("offline");
-        
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +49,7 @@ public class ApiActionInfo  {
 
         @JsonCreator
         public static ActionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +60,7 @@ public class ApiActionInfo  {
         }
 
         public static ActionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -99,28 +84,24 @@ public class ApiActionInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private ActionEnum action;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_id")
-    
+    @JsonProperty(value = "api_id")
+
     private String apiId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_id")
-    
+    @JsonProperty(value = "env_id")
+
     private String envId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
+
     private String remark;
 
     public ApiActionInfo withAction(ActionEnum action) {
@@ -128,13 +109,9 @@ public class ApiActionInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 需要进行的操作。 - online：发布 - offline：下线
-     * @return action
-     */
+    /** 需要进行的操作。 - online：发布 - offline：下线
+     * 
+     * @return action */
     public ActionEnum getAction() {
         return action;
     }
@@ -143,20 +120,14 @@ public class ApiActionInfo  {
         this.action = action;
     }
 
-    
-
     public ApiActionInfo withApiId(String apiId) {
         this.apiId = apiId;
         return this;
     }
 
-    
-
-
-    /**
-     * API的编号，即：需要进行发布或下线的API的编号
-     * @return apiId
-     */
+    /** API的编号，即：需要进行发布或下线的API的编号
+     * 
+     * @return apiId */
     public String getApiId() {
         return apiId;
     }
@@ -165,20 +136,14 @@ public class ApiActionInfo  {
         this.apiId = apiId;
     }
 
-    
-
     public ApiActionInfo withEnvId(String envId) {
         this.envId = envId;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境的编号，即：API需要发布到哪个环境
-     * @return envId
-     */
+    /** 环境的编号，即：API需要发布到哪个环境
+     * 
+     * @return envId */
     public String getEnvId() {
         return envId;
     }
@@ -187,20 +152,14 @@ public class ApiActionInfo  {
         this.envId = envId;
     }
 
-    
-
     public ApiActionInfo withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
-    
-
-
-    /**
-     * 对发布动作的简述。字符长度不超过255 > 中文字符必须为UTF-8或者unicode编码。
-     * @return remark
-     */
+    /** 对发布动作的简述。字符长度不超过255 > 中文字符必须为UTF-8或者unicode编码。
+     * 
+     * @return remark */
     public String getRemark() {
         return remark;
     }
@@ -208,8 +167,6 @@ public class ApiActionInfo  {
     public void setRemark(String remark) {
         this.remark = remark;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -220,15 +177,15 @@ public class ApiActionInfo  {
             return false;
         }
         ApiActionInfo apiActionInfo = (ApiActionInfo) o;
-        return Objects.equals(this.action, apiActionInfo.action) &&
-            Objects.equals(this.apiId, apiActionInfo.apiId) &&
-            Objects.equals(this.envId, apiActionInfo.envId) &&
-            Objects.equals(this.remark, apiActionInfo.remark);
+        return Objects.equals(this.action, apiActionInfo.action) && Objects.equals(this.apiId, apiActionInfo.apiId)
+            && Objects.equals(this.envId, apiActionInfo.envId) && Objects.equals(this.remark, apiActionInfo.remark);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(action, apiId, envId, remark);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -240,16 +197,13 @@ public class ApiActionInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 批量操作失败的返回结果
- */
-public class BatchFailure  {
-
-
+/** 批量操作失败的返回结果 */
+public class BatchFailure {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_id")
-    
+    @JsonProperty(value = "api_id")
+
     private String apiId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_name")
-    
+    @JsonProperty(value = "api_name")
+
     private String apiName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
+
     private String errorCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_msg")
-    
+    @JsonProperty(value = "error_msg")
+
     private String errorMsg;
 
     public BatchFailure withApiId(String apiId) {
@@ -46,13 +33,9 @@ public class BatchFailure  {
         return this;
     }
 
-    
-
-
-    /**
-     * 操作失败的API ID
-     * @return apiId
-     */
+    /** 操作失败的API ID
+     * 
+     * @return apiId */
     public String getApiId() {
         return apiId;
     }
@@ -61,20 +44,14 @@ public class BatchFailure  {
         this.apiId = apiId;
     }
 
-    
-
     public BatchFailure withApiName(String apiName) {
         this.apiName = apiName;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作失败的APi名称
-     * @return apiName
-     */
+    /** 操作失败的APi名称
+     * 
+     * @return apiName */
     public String getApiName() {
         return apiName;
     }
@@ -83,20 +60,14 @@ public class BatchFailure  {
         this.apiName = apiName;
     }
 
-    
-
     public BatchFailure withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作失败的错误码
-     * @return errorCode
-     */
+    /** 操作失败的错误码
+     * 
+     * @return errorCode */
     public String getErrorCode() {
         return errorCode;
     }
@@ -105,20 +76,14 @@ public class BatchFailure  {
         this.errorCode = errorCode;
     }
 
-    
-
     public BatchFailure withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作失败的错误信息
-     * @return errorMsg
-     */
+    /** 操作失败的错误信息
+     * 
+     * @return errorMsg */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -126,8 +91,6 @@ public class BatchFailure  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,16 @@ public class BatchFailure  {
             return false;
         }
         BatchFailure batchFailure = (BatchFailure) o;
-        return Objects.equals(this.apiId, batchFailure.apiId) &&
-            Objects.equals(this.apiName, batchFailure.apiName) &&
-            Objects.equals(this.errorCode, batchFailure.errorCode) &&
-            Objects.equals(this.errorMsg, batchFailure.errorMsg);
+        return Objects.equals(this.apiId, batchFailure.apiId) && Objects.equals(this.apiName, batchFailure.apiName)
+            && Objects.equals(this.errorCode, batchFailure.errorCode)
+            && Objects.equals(this.errorMsg, batchFailure.errorMsg);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(apiId, apiName, errorCode, errorMsg);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +122,13 @@ public class BatchFailure  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

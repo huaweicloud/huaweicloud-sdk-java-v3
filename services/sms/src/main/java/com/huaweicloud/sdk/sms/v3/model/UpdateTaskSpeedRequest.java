@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.UpdateTaskSpeedReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateTaskSpeedRequest  {
-
-
+/** Request Object */
+public class UpdateTaskSpeedRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
+    @JsonProperty(value = "task_id")
+
     private String taskId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateTaskSpeedReq body;
 
     public UpdateTaskSpeedRequest withTaskId(String taskId) {
@@ -35,13 +24,9 @@ public class UpdateTaskSpeedRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 主机迁移任务的id
-     * @return taskId
-     */
+    /** 主机迁移任务的id
+     * 
+     * @return taskId */
     public String getTaskId() {
         return taskId;
     }
@@ -50,27 +35,23 @@ public class UpdateTaskSpeedRequest  {
         this.taskId = taskId;
     }
 
-    
-
     public UpdateTaskSpeedRequest withBody(UpdateTaskSpeedReq body) {
         this.body = body;
         return this;
     }
 
     public UpdateTaskSpeedRequest withBody(Consumer<UpdateTaskSpeedReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateTaskSpeedReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateTaskSpeedReq getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdateTaskSpeedRequest  {
     public void setBody(UpdateTaskSpeedReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdateTaskSpeedRequest  {
             return false;
         }
         UpdateTaskSpeedRequest updateTaskSpeedRequest = (UpdateTaskSpeedRequest) o;
-        return Objects.equals(this.taskId, updateTaskSpeedRequest.taskId) &&
-            Objects.equals(this.body, updateTaskSpeedRequest.body);
+        return Objects.equals(this.taskId, updateTaskSpeedRequest.taskId)
+            && Objects.equals(this.body, updateTaskSpeedRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(taskId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdateTaskSpeedRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.dms.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dms.v2.model.SendMessagesReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class SendMessagesRequest  {
-
-
+/** Request Object */
+public class SendMessagesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="queue_id")
-    
+    @JsonProperty(value = "queue_id")
+
     private String queueId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private SendMessagesReq body;
 
     public SendMessagesRequest withQueueId(String queueId) {
@@ -35,13 +24,9 @@ public class SendMessagesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 指定的队列ID。
-     * @return queueId
-     */
+    /** 指定的队列ID。
+     * 
+     * @return queueId */
     public String getQueueId() {
         return queueId;
     }
@@ -50,27 +35,23 @@ public class SendMessagesRequest  {
         this.queueId = queueId;
     }
 
-    
-
     public SendMessagesRequest withBody(SendMessagesReq body) {
         this.body = body;
         return this;
     }
 
     public SendMessagesRequest withBody(Consumer<SendMessagesReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new SendMessagesReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public SendMessagesReq getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class SendMessagesRequest  {
     public void setBody(SendMessagesReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class SendMessagesRequest  {
             return false;
         }
         SendMessagesRequest sendMessagesRequest = (SendMessagesRequest) o;
-        return Objects.equals(this.queueId, sendMessagesRequest.queueId) &&
-            Objects.equals(this.body, sendMessagesRequest.body);
+        return Objects.equals(this.queueId, sendMessagesRequest.queueId)
+            && Objects.equals(this.body, sendMessagesRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(queueId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class SendMessagesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

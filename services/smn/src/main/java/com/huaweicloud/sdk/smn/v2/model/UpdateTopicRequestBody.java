@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.smn.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * UpdateTopicRequestBody
- */
-public class UpdateTopicRequestBody  {
-
-
+/** UpdateTopicRequestBody */
+public class UpdateTopicRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="display_name")
-    
+    @JsonProperty(value = "display_name")
+
     private String displayName;
 
     public UpdateTopicRequestBody withDisplayName(String displayName) {
@@ -28,13 +18,9 @@ public class UpdateTopicRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * Topic的显示名，推送邮件消息时，作为邮件发件人显示。显示名的长度为192byte或64个中文。
-     * @return displayName
-     */
+    /** Topic的显示名，推送邮件消息时，作为邮件发件人显示。显示名的长度为192byte或64个中文。
+     * 
+     * @return displayName */
     public String getDisplayName() {
         return displayName;
     }
@@ -42,8 +28,6 @@ public class UpdateTopicRequestBody  {
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class UpdateTopicRequestBody  {
         UpdateTopicRequestBody updateTopicRequestBody = (UpdateTopicRequestBody) o;
         return Objects.equals(this.displayName, updateTopicRequestBody.displayName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(displayName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class UpdateTopicRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

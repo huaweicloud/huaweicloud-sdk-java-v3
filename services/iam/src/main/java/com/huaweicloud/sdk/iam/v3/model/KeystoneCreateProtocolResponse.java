@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.ProtocolResult;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class KeystoneCreateProtocolResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
+
     private ProtocolResult protocol;
 
     public KeystoneCreateProtocolResponse withProtocol(ProtocolResult protocol) {
@@ -32,19 +21,17 @@ public class KeystoneCreateProtocolResponse extends SdkResponse {
     }
 
     public KeystoneCreateProtocolResponse withProtocol(Consumer<ProtocolResult> protocolSetter) {
-        if(this.protocol == null ){
+        if (this.protocol == null) {
             this.protocol = new ProtocolResult();
             protocolSetter.accept(this.protocol);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get protocol
-     * @return protocol
-     */
+    /** Get protocol
+     * 
+     * @return protocol */
     public ProtocolResult getProtocol() {
         return protocol;
     }
@@ -52,8 +39,6 @@ public class KeystoneCreateProtocolResponse extends SdkResponse {
     public void setProtocol(ProtocolResult protocol) {
         this.protocol = protocol;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class KeystoneCreateProtocolResponse extends SdkResponse {
         KeystoneCreateProtocolResponse keystoneCreateProtocolResponse = (KeystoneCreateProtocolResponse) o;
         return Objects.equals(this.protocol, keystoneCreateProtocolResponse.protocol);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(protocol);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class KeystoneCreateProtocolResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

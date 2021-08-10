@@ -1,95 +1,71 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 批量查询迁移项目返回的迁移项目信息
- */
-public class MigprojectsResponseBody  {
-
-
+/** 批量查询迁移项目返回的迁移项目信息 */
+public class MigprojectsResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="use_public_ip")
-    
+    @JsonProperty(value = "use_public_ip")
+
     private Boolean usePublicIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isdefault")
-    
+    @JsonProperty(value = "isdefault")
+
     private Boolean isdefault;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_target_server")
-    
+    @JsonProperty(value = "start_target_server")
+
     private Boolean startTargetServer;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="speed_limit")
-    
+    @JsonProperty(value = "speed_limit")
+
     private Integer speedLimit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="exist_server")
-    
+    @JsonProperty(value = "exist_server")
+
     private Boolean existServer;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
-    /**
-     * 迁移项目默认迁移类型
-     */
+
+    /** 迁移项目默认迁移类型 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum MIGRATE_BLOCK_ for value: "MIGRATE_BLOCK：块迁移"
-         */
+        /** Enum MIGRATE_BLOCK_ for value: "MIGRATE_BLOCK：块迁移" */
         public static final TypeEnum MIGRATE_BLOCK_ = new TypeEnum("MIGRATE_BLOCK：块迁移");
-        
-        /**
-         * Enum MIGRATE_FILE_ for value: "MIGRATE_FILE：文件级迁移"
-         */
+
+        /** Enum MIGRATE_FILE_ for value: "MIGRATE_FILE：文件级迁移" */
         public static final TypeEnum MIGRATE_FILE_ = new TypeEnum("MIGRATE_FILE：文件级迁移");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -118,7 +94,7 @@ public class MigprojectsResponseBody  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -129,7 +105,7 @@ public class MigprojectsResponseBody  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -153,22 +129,19 @@ public class MigprojectsResponseBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project")
-    
+    @JsonProperty(value = "enterprise_project")
+
     private String enterpriseProject;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="syncing")
-    
+    @JsonProperty(value = "syncing")
+
     private Boolean syncing;
 
     public MigprojectsResponseBody withId(String id) {
@@ -176,13 +149,9 @@ public class MigprojectsResponseBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移项目ID
-     * @return id
-     */
+    /** 迁移项目ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -191,20 +160,14 @@ public class MigprojectsResponseBody  {
         this.id = id;
     }
 
-    
-
     public MigprojectsResponseBody withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移项目名称
-     * @return name
-     */
+    /** 迁移项目名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -213,20 +176,14 @@ public class MigprojectsResponseBody  {
         this.name = name;
     }
 
-    
-
     public MigprojectsResponseBody withUsePublicIp(Boolean usePublicIp) {
         this.usePublicIp = usePublicIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否使用公网IP迁移
-     * @return usePublicIp
-     */
+    /** 是否使用公网IP迁移
+     * 
+     * @return usePublicIp */
     public Boolean getUsePublicIp() {
         return usePublicIp;
     }
@@ -235,20 +192,14 @@ public class MigprojectsResponseBody  {
         this.usePublicIp = usePublicIp;
     }
 
-    
-
     public MigprojectsResponseBody withIsdefault(Boolean isdefault) {
         this.isdefault = isdefault;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否为默认模板
-     * @return isdefault
-     */
+    /** 是否为默认模板
+     * 
+     * @return isdefault */
     public Boolean getIsdefault() {
         return isdefault;
     }
@@ -257,20 +208,14 @@ public class MigprojectsResponseBody  {
         this.isdefault = isdefault;
     }
 
-    
-
     public MigprojectsResponseBody withStartTargetServer(Boolean startTargetServer) {
         this.startTargetServer = startTargetServer;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移后是否启动目的端虚拟机
-     * @return startTargetServer
-     */
+    /** 迁移后是否启动目的端虚拟机
+     * 
+     * @return startTargetServer */
     public Boolean getStartTargetServer() {
         return startTargetServer;
     }
@@ -279,20 +224,14 @@ public class MigprojectsResponseBody  {
         this.startTargetServer = startTargetServer;
     }
 
-    
-
     public MigprojectsResponseBody withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * 区域名称
-     * @return region
-     */
+    /** 区域名称
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -301,22 +240,14 @@ public class MigprojectsResponseBody  {
         this.region = region;
     }
 
-    
-
     public MigprojectsResponseBody withSpeedLimit(Integer speedLimit) {
         this.speedLimit = speedLimit;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板中配置的限速信息，单位：Mbps
-     * minimum: 0
-     * maximum: 10000
-     * @return speedLimit
-     */
+    /** 模板中配置的限速信息，单位：Mbps minimum: 0 maximum: 10000
+     * 
+     * @return speedLimit */
     public Integer getSpeedLimit() {
         return speedLimit;
     }
@@ -325,20 +256,14 @@ public class MigprojectsResponseBody  {
         this.speedLimit = speedLimit;
     }
 
-    
-
     public MigprojectsResponseBody withExistServer(Boolean existServer) {
         this.existServer = existServer;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移项目下是否存在服务器
-     * @return existServer
-     */
+    /** 迁移项目下是否存在服务器
+     * 
+     * @return existServer */
     public Boolean getExistServer() {
         return existServer;
     }
@@ -347,20 +272,14 @@ public class MigprojectsResponseBody  {
         this.existServer = existServer;
     }
 
-    
-
     public MigprojectsResponseBody withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移项目描述
-     * @return description
-     */
+    /** 迁移项目描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -369,20 +288,14 @@ public class MigprojectsResponseBody  {
         this.description = description;
     }
 
-    
-
     public MigprojectsResponseBody withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移项目默认迁移类型
-     * @return type
-     */
+    /** 迁移项目默认迁移类型
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -391,20 +304,14 @@ public class MigprojectsResponseBody  {
         this.type = type;
     }
 
-    
-
     public MigprojectsResponseBody withEnterpriseProject(String enterpriseProject) {
         this.enterpriseProject = enterpriseProject;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移项目所属的企业项目名称
-     * @return enterpriseProject
-     */
+    /** 迁移项目所属的企业项目名称
+     * 
+     * @return enterpriseProject */
     public String getEnterpriseProject() {
         return enterpriseProject;
     }
@@ -413,20 +320,14 @@ public class MigprojectsResponseBody  {
         this.enterpriseProject = enterpriseProject;
     }
 
-    
-
     public MigprojectsResponseBody withSyncing(Boolean syncing) {
         this.syncing = syncing;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否持续同步
-     * @return syncing
-     */
+    /** 是否持续同步
+     * 
+     * @return syncing */
     public Boolean getSyncing() {
         return syncing;
     }
@@ -434,8 +335,6 @@ public class MigprojectsResponseBody  {
     public void setSyncing(Boolean syncing) {
         this.syncing = syncing;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -446,23 +345,36 @@ public class MigprojectsResponseBody  {
             return false;
         }
         MigprojectsResponseBody migprojectsResponseBody = (MigprojectsResponseBody) o;
-        return Objects.equals(this.id, migprojectsResponseBody.id) &&
-            Objects.equals(this.name, migprojectsResponseBody.name) &&
-            Objects.equals(this.usePublicIp, migprojectsResponseBody.usePublicIp) &&
-            Objects.equals(this.isdefault, migprojectsResponseBody.isdefault) &&
-            Objects.equals(this.startTargetServer, migprojectsResponseBody.startTargetServer) &&
-            Objects.equals(this.region, migprojectsResponseBody.region) &&
-            Objects.equals(this.speedLimit, migprojectsResponseBody.speedLimit) &&
-            Objects.equals(this.existServer, migprojectsResponseBody.existServer) &&
-            Objects.equals(this.description, migprojectsResponseBody.description) &&
-            Objects.equals(this.type, migprojectsResponseBody.type) &&
-            Objects.equals(this.enterpriseProject, migprojectsResponseBody.enterpriseProject) &&
-            Objects.equals(this.syncing, migprojectsResponseBody.syncing);
+        return Objects.equals(this.id, migprojectsResponseBody.id)
+            && Objects.equals(this.name, migprojectsResponseBody.name)
+            && Objects.equals(this.usePublicIp, migprojectsResponseBody.usePublicIp)
+            && Objects.equals(this.isdefault, migprojectsResponseBody.isdefault)
+            && Objects.equals(this.startTargetServer, migprojectsResponseBody.startTargetServer)
+            && Objects.equals(this.region, migprojectsResponseBody.region)
+            && Objects.equals(this.speedLimit, migprojectsResponseBody.speedLimit)
+            && Objects.equals(this.existServer, migprojectsResponseBody.existServer)
+            && Objects.equals(this.description, migprojectsResponseBody.description)
+            && Objects.equals(this.type, migprojectsResponseBody.type)
+            && Objects.equals(this.enterpriseProject, migprojectsResponseBody.enterpriseProject)
+            && Objects.equals(this.syncing, migprojectsResponseBody.syncing);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, usePublicIp, isdefault, startTargetServer, region, speedLimit, existServer, description, type, enterpriseProject, syncing);
+        return Objects.hash(id,
+            name,
+            usePublicIp,
+            isdefault,
+            startTargetServer,
+            region,
+            speedLimit,
+            existServer,
+            description,
+            type,
+            enterpriseProject,
+            syncing);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -482,16 +394,13 @@ public class MigprojectsResponseBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

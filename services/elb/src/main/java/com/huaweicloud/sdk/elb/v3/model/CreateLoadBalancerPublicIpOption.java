@@ -1,51 +1,37 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v3.model.CreateLoadBalancerBandwidthOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 创建ELB时，新建公网IP请求参数
- */
-public class CreateLoadBalancerPublicIpOption  {
-
-
+/** 创建ELB时，新建公网IP请求参数 */
+public class CreateLoadBalancerPublicIpOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_version")
-    
+    @JsonProperty(value = "ip_version")
+
     private Integer ipVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="network_type")
-    
+    @JsonProperty(value = "network_type")
+
     private String networkType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="billing_info")
-    
+    @JsonProperty(value = "billing_info")
+
     private String billingInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bandwidth")
-    
+    @JsonProperty(value = "bandwidth")
+
     private CreateLoadBalancerBandwidthOption bandwidth;
 
     public CreateLoadBalancerPublicIpOption withIpVersion(Integer ipVersion) {
@@ -53,13 +39,9 @@ public class CreateLoadBalancerPublicIpOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * ip版数。 有效值：4表示IPv4，暂不支持新建IPv6
-     * @return ipVersion
-     */
+    /** ip版数。 有效值：4表示IPv4，暂不支持新建IPv6
+     * 
+     * @return ipVersion */
     public Integer getIpVersion() {
         return ipVersion;
     }
@@ -68,20 +50,14 @@ public class CreateLoadBalancerPublicIpOption  {
         this.ipVersion = ipVersion;
     }
 
-    
-
     public CreateLoadBalancerPublicIpOption withNetworkType(String networkType) {
         this.networkType = networkType;
         return this;
     }
 
-    
-
-
-    /**
-     * 弹性公网IP的网络类型，默认5_bgp，更多请参考弹性公网ip创建
-     * @return networkType
-     */
+    /** 弹性公网IP的网络类型，默认5_bgp，更多请参考弹性公网ip创建
+     * 
+     * @return networkType */
     public String getNetworkType() {
         return networkType;
     }
@@ -90,20 +66,14 @@ public class CreateLoadBalancerPublicIpOption  {
         this.networkType = networkType;
     }
 
-    
-
     public CreateLoadBalancerPublicIpOption withBillingInfo(String billingInfo) {
         this.billingInfo = billingInfo;
         return this;
     }
 
-    
-
-
-    /**
-     * 账单信息 如果billinginfo不为空,说明是包周期的带宽
-     * @return billingInfo
-     */
+    /** 账单信息 如果billinginfo不为空,说明是包周期的带宽
+     * 
+     * @return billingInfo */
     public String getBillingInfo() {
         return billingInfo;
     }
@@ -112,20 +82,14 @@ public class CreateLoadBalancerPublicIpOption  {
         this.billingInfo = billingInfo;
     }
 
-    
-
     public CreateLoadBalancerPublicIpOption withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 弹性公网IP的描述信息，不支持特殊字符
-     * @return description
-     */
+    /** 弹性公网IP的描述信息，不支持特殊字符
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -134,27 +98,23 @@ public class CreateLoadBalancerPublicIpOption  {
         this.description = description;
     }
 
-    
-
     public CreateLoadBalancerPublicIpOption withBandwidth(CreateLoadBalancerBandwidthOption bandwidth) {
         this.bandwidth = bandwidth;
         return this;
     }
 
     public CreateLoadBalancerPublicIpOption withBandwidth(Consumer<CreateLoadBalancerBandwidthOption> bandwidthSetter) {
-        if(this.bandwidth == null ){
+        if (this.bandwidth == null) {
             this.bandwidth = new CreateLoadBalancerBandwidthOption();
             bandwidthSetter.accept(this.bandwidth);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get bandwidth
-     * @return bandwidth
-     */
+    /** Get bandwidth
+     * 
+     * @return bandwidth */
     public CreateLoadBalancerBandwidthOption getBandwidth() {
         return bandwidth;
     }
@@ -162,8 +122,6 @@ public class CreateLoadBalancerPublicIpOption  {
     public void setBandwidth(CreateLoadBalancerBandwidthOption bandwidth) {
         this.bandwidth = bandwidth;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -174,16 +132,18 @@ public class CreateLoadBalancerPublicIpOption  {
             return false;
         }
         CreateLoadBalancerPublicIpOption createLoadBalancerPublicIpOption = (CreateLoadBalancerPublicIpOption) o;
-        return Objects.equals(this.ipVersion, createLoadBalancerPublicIpOption.ipVersion) &&
-            Objects.equals(this.networkType, createLoadBalancerPublicIpOption.networkType) &&
-            Objects.equals(this.billingInfo, createLoadBalancerPublicIpOption.billingInfo) &&
-            Objects.equals(this.description, createLoadBalancerPublicIpOption.description) &&
-            Objects.equals(this.bandwidth, createLoadBalancerPublicIpOption.bandwidth);
+        return Objects.equals(this.ipVersion, createLoadBalancerPublicIpOption.ipVersion)
+            && Objects.equals(this.networkType, createLoadBalancerPublicIpOption.networkType)
+            && Objects.equals(this.billingInfo, createLoadBalancerPublicIpOption.billingInfo)
+            && Objects.equals(this.description, createLoadBalancerPublicIpOption.description)
+            && Objects.equals(this.bandwidth, createLoadBalancerPublicIpOption.bandwidth);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(ipVersion, networkType, billingInfo, description, bandwidth);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -196,16 +156,13 @@ public class CreateLoadBalancerPublicIpOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

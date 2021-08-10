@@ -1,64 +1,49 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.NovaSecurityGroupCommonGroup;
-import com.huaweicloud.sdk.ecs.v2.model.NovaSecurityGroupCommonIpRange;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class NovaSecurityGroupCommonRule  {
-
-
+public class NovaSecurityGroupCommonRule {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="from_port")
-    
+    @JsonProperty(value = "from_port")
+
     private Integer fromPort;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group")
-    
+    @JsonProperty(value = "group")
+
     private NovaSecurityGroupCommonGroup group;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_protocol")
-    
+    @JsonProperty(value = "ip_protocol")
+
     private String ipProtocol;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_range")
-    
+    @JsonProperty(value = "ip_range")
+
     private NovaSecurityGroupCommonIpRange ipRange;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parent_group_id")
-    
+    @JsonProperty(value = "parent_group_id")
+
     private String parentGroupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="to_port")
-    
+    @JsonProperty(value = "to_port")
+
     private Integer toPort;
 
     public NovaSecurityGroupCommonRule withFromPort(Integer fromPort) {
@@ -66,13 +51,9 @@ public class NovaSecurityGroupCommonRule  {
         return this;
     }
 
-    
-
-
-    /**
-     * 起始端口，范围1-65535，且不大于to_port。 ip_protocol设置为icmp时，from_port表示type，范围是0-255。
-     * @return fromPort
-     */
+    /** 起始端口，范围1-65535，且不大于to_port。 ip_protocol设置为icmp时，from_port表示type，范围是0-255。
+     * 
+     * @return fromPort */
     public Integer getFromPort() {
         return fromPort;
     }
@@ -81,27 +62,23 @@ public class NovaSecurityGroupCommonRule  {
         this.fromPort = fromPort;
     }
 
-    
-
     public NovaSecurityGroupCommonRule withGroup(NovaSecurityGroupCommonGroup group) {
         this.group = group;
         return this;
     }
 
     public NovaSecurityGroupCommonRule withGroup(Consumer<NovaSecurityGroupCommonGroup> groupSetter) {
-        if(this.group == null ){
+        if (this.group == null) {
             this.group = new NovaSecurityGroupCommonGroup();
             groupSetter.accept(this.group);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get group
-     * @return group
-     */
+    /** Get group
+     * 
+     * @return group */
     public NovaSecurityGroupCommonGroup getGroup() {
         return group;
     }
@@ -110,20 +87,14 @@ public class NovaSecurityGroupCommonRule  {
         this.group = group;
     }
 
-    
-
     public NovaSecurityGroupCommonRule withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组规则ID，UUID格式。
-     * @return id
-     */
+    /** 安全组规则ID，UUID格式。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -132,20 +103,14 @@ public class NovaSecurityGroupCommonRule  {
         this.id = id;
     }
 
-    
-
     public NovaSecurityGroupCommonRule withIpProtocol(String ipProtocol) {
         this.ipProtocol = ipProtocol;
         return this;
     }
 
-    
-
-
-    /**
-     * 协议类型或直接指定IP协议号，取值可为icmp，tcp，udp或IP协议号。
-     * @return ipProtocol
-     */
+    /** 协议类型或直接指定IP协议号，取值可为icmp，tcp，udp或IP协议号。
+     * 
+     * @return ipProtocol */
     public String getIpProtocol() {
         return ipProtocol;
     }
@@ -154,27 +119,23 @@ public class NovaSecurityGroupCommonRule  {
         this.ipProtocol = ipProtocol;
     }
 
-    
-
     public NovaSecurityGroupCommonRule withIpRange(NovaSecurityGroupCommonIpRange ipRange) {
         this.ipRange = ipRange;
         return this;
     }
 
     public NovaSecurityGroupCommonRule withIpRange(Consumer<NovaSecurityGroupCommonIpRange> ipRangeSetter) {
-        if(this.ipRange == null ){
+        if (this.ipRange == null) {
             this.ipRange = new NovaSecurityGroupCommonIpRange();
             ipRangeSetter.accept(this.ipRange);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get ipRange
-     * @return ipRange
-     */
+    /** Get ipRange
+     * 
+     * @return ipRange */
     public NovaSecurityGroupCommonIpRange getIpRange() {
         return ipRange;
     }
@@ -183,20 +144,14 @@ public class NovaSecurityGroupCommonRule  {
         this.ipRange = ipRange;
     }
 
-    
-
     public NovaSecurityGroupCommonRule withParentGroupId(String parentGroupId) {
         this.parentGroupId = parentGroupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 相关联的安全组ID，UUID格式。
-     * @return parentGroupId
-     */
+    /** 相关联的安全组ID，UUID格式。
+     * 
+     * @return parentGroupId */
     public String getParentGroupId() {
         return parentGroupId;
     }
@@ -205,20 +160,14 @@ public class NovaSecurityGroupCommonRule  {
         this.parentGroupId = parentGroupId;
     }
 
-    
-
     public NovaSecurityGroupCommonRule withToPort(Integer toPort) {
         this.toPort = toPort;
         return this;
     }
 
-    
-
-
-    /**
-     * 终止端口，范围1-65535，且不小于from_port。 ip_protocol设置为icmp时，to_port表示code，范围是0-255，且如果from_port为-1，to_port为-1表示任意ICMP报文。
-     * @return toPort
-     */
+    /** 终止端口，范围1-65535，且不小于from_port。 ip_protocol设置为icmp时，to_port表示code，范围是0-255，且如果from_port为-1，to_port为-1表示任意ICMP报文。
+     * 
+     * @return toPort */
     public Integer getToPort() {
         return toPort;
     }
@@ -226,8 +175,6 @@ public class NovaSecurityGroupCommonRule  {
     public void setToPort(Integer toPort) {
         this.toPort = toPort;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -238,18 +185,20 @@ public class NovaSecurityGroupCommonRule  {
             return false;
         }
         NovaSecurityGroupCommonRule novaSecurityGroupCommonRule = (NovaSecurityGroupCommonRule) o;
-        return Objects.equals(this.fromPort, novaSecurityGroupCommonRule.fromPort) &&
-            Objects.equals(this.group, novaSecurityGroupCommonRule.group) &&
-            Objects.equals(this.id, novaSecurityGroupCommonRule.id) &&
-            Objects.equals(this.ipProtocol, novaSecurityGroupCommonRule.ipProtocol) &&
-            Objects.equals(this.ipRange, novaSecurityGroupCommonRule.ipRange) &&
-            Objects.equals(this.parentGroupId, novaSecurityGroupCommonRule.parentGroupId) &&
-            Objects.equals(this.toPort, novaSecurityGroupCommonRule.toPort);
+        return Objects.equals(this.fromPort, novaSecurityGroupCommonRule.fromPort)
+            && Objects.equals(this.group, novaSecurityGroupCommonRule.group)
+            && Objects.equals(this.id, novaSecurityGroupCommonRule.id)
+            && Objects.equals(this.ipProtocol, novaSecurityGroupCommonRule.ipProtocol)
+            && Objects.equals(this.ipRange, novaSecurityGroupCommonRule.ipRange)
+            && Objects.equals(this.parentGroupId, novaSecurityGroupCommonRule.parentGroupId)
+            && Objects.equals(this.toPort, novaSecurityGroupCommonRule.toPort);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(fromPort, group, id, ipProtocol, ipRange, parentGroupId, toPort);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -264,16 +213,13 @@ public class NovaSecurityGroupCommonRule  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,47 +1,30 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.time.OffsetDateTime;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 伸缩活动日志列表。
- */
-public class ScalingActivityLogList  {
+/** 伸缩活动日志列表。 */
+public class ScalingActivityLogList {
 
-    /**
-     * 伸缩活动状态：SUCCESS：成功。FAIL：失败。DOING：伸缩过程中。
-     */
+    /** 伸缩活动状态：SUCCESS：成功。FAIL：失败。DOING：伸缩过程中。 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum SUCCESS for value: "SUCCESS"
-         */
+        /** Enum SUCCESS for value: "SUCCESS" */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
-        
-        /**
-         * Enum FAIL for value: "FAIL"
-         */
+
+        /** Enum FAIL for value: "FAIL" */
         public static final StatusEnum FAIL = new StatusEnum("FAIL");
-        
-        /**
-         * Enum DING for value: "DING"
-         */
+
+        /** Enum DING for value: "DING" */
         public static final StatusEnum DING = new StatusEnum("DING");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -71,7 +54,7 @@ public class ScalingActivityLogList  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -82,7 +65,7 @@ public class ScalingActivityLogList  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -106,70 +89,59 @@ public class ScalingActivityLogList  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private OffsetDateTime startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private OffsetDateTime endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_removed_list")
-    
+    @JsonProperty(value = "instance_removed_list")
+
     private String instanceRemovedList;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_deleted_list")
-    
+    @JsonProperty(value = "instance_deleted_list")
+
     private String instanceDeletedList;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_added_list")
-    
+    @JsonProperty(value = "instance_added_list")
+
     private String instanceAddedList;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_value")
-    
+    @JsonProperty(value = "scaling_value")
+
     private String scalingValue;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_value")
-    
+    @JsonProperty(value = "instance_value")
+
     private Integer instanceValue;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="desire_value")
-    
+    @JsonProperty(value = "desire_value")
+
     private Integer desireValue;
 
     public ScalingActivityLogList withStatus(StatusEnum status) {
@@ -177,13 +149,9 @@ public class ScalingActivityLogList  {
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩活动状态：SUCCESS：成功。FAIL：失败。DOING：伸缩过程中。
-     * @return status
-     */
+    /** 伸缩活动状态：SUCCESS：成功。FAIL：失败。DOING：伸缩过程中。
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -192,20 +160,14 @@ public class ScalingActivityLogList  {
         this.status = status;
     }
 
-    
-
     public ScalingActivityLogList withStartTime(OffsetDateTime startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩活动触发时间，遵循UTC时间。
-     * @return startTime
-     */
+    /** 伸缩活动触发时间，遵循UTC时间。
+     * 
+     * @return startTime */
     public OffsetDateTime getStartTime() {
         return startTime;
     }
@@ -214,20 +176,14 @@ public class ScalingActivityLogList  {
         this.startTime = startTime;
     }
 
-    
-
     public ScalingActivityLogList withEndTime(OffsetDateTime endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩活动结束时间，遵循UTC时间。
-     * @return endTime
-     */
+    /** 伸缩活动结束时间，遵循UTC时间。
+     * 
+     * @return endTime */
     public OffsetDateTime getEndTime() {
         return endTime;
     }
@@ -236,20 +192,14 @@ public class ScalingActivityLogList  {
         this.endTime = endTime;
     }
 
-    
-
     public ScalingActivityLogList withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩活动日志ID。
-     * @return id
-     */
+    /** 伸缩活动日志ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -258,20 +208,14 @@ public class ScalingActivityLogList  {
         this.id = id;
     }
 
-    
-
     public ScalingActivityLogList withInstanceRemovedList(String instanceRemovedList) {
         this.instanceRemovedList = instanceRemovedList;
         return this;
     }
 
-    
-
-
-    /**
-     * 完成伸缩活动且只被移出弹性伸缩组的云服务器名称列表，云服务器名之间以逗号分隔。
-     * @return instanceRemovedList
-     */
+    /** 完成伸缩活动且只被移出弹性伸缩组的云服务器名称列表，云服务器名之间以逗号分隔。
+     * 
+     * @return instanceRemovedList */
     public String getInstanceRemovedList() {
         return instanceRemovedList;
     }
@@ -280,20 +224,14 @@ public class ScalingActivityLogList  {
         this.instanceRemovedList = instanceRemovedList;
     }
 
-    
-
     public ScalingActivityLogList withInstanceDeletedList(String instanceDeletedList) {
         this.instanceDeletedList = instanceDeletedList;
         return this;
     }
 
-    
-
-
-    /**
-     * 完成伸缩活动且被移出弹性伸缩组并删除的云服务器名称列表，云服务器名之间以逗号分隔。
-     * @return instanceDeletedList
-     */
+    /** 完成伸缩活动且被移出弹性伸缩组并删除的云服务器名称列表，云服务器名之间以逗号分隔。
+     * 
+     * @return instanceDeletedList */
     public String getInstanceDeletedList() {
         return instanceDeletedList;
     }
@@ -302,20 +240,14 @@ public class ScalingActivityLogList  {
         this.instanceDeletedList = instanceDeletedList;
     }
 
-    
-
     public ScalingActivityLogList withInstanceAddedList(String instanceAddedList) {
         this.instanceAddedList = instanceAddedList;
         return this;
     }
 
-    
-
-
-    /**
-     * 完成伸缩活动且被加入弹性伸缩组的云服务器名称列表，云服务器名之间以逗号分割。
-     * @return instanceAddedList
-     */
+    /** 完成伸缩活动且被加入弹性伸缩组的云服务器名称列表，云服务器名之间以逗号分割。
+     * 
+     * @return instanceAddedList */
     public String getInstanceAddedList() {
         return instanceAddedList;
     }
@@ -324,20 +256,14 @@ public class ScalingActivityLogList  {
         this.instanceAddedList = instanceAddedList;
     }
 
-    
-
     public ScalingActivityLogList withScalingValue(String scalingValue) {
         this.scalingValue = scalingValue;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩活动中变化（增加或减少）的云服务器数量。
-     * @return scalingValue
-     */
+    /** 伸缩活动中变化（增加或减少）的云服务器数量。
+     * 
+     * @return scalingValue */
     public String getScalingValue() {
         return scalingValue;
     }
@@ -346,20 +272,14 @@ public class ScalingActivityLogList  {
         this.scalingValue = scalingValue;
     }
 
-    
-
     public ScalingActivityLogList withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩活动的描述信息。
-     * @return description
-     */
+    /** 伸缩活动的描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -368,20 +288,14 @@ public class ScalingActivityLogList  {
         this.description = description;
     }
 
-    
-
     public ScalingActivityLogList withInstanceValue(Integer instanceValue) {
         this.instanceValue = instanceValue;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩组当前instance值。
-     * @return instanceValue
-     */
+    /** 伸缩组当前instance值。
+     * 
+     * @return instanceValue */
     public Integer getInstanceValue() {
         return instanceValue;
     }
@@ -390,20 +304,14 @@ public class ScalingActivityLogList  {
         this.instanceValue = instanceValue;
     }
 
-    
-
     public ScalingActivityLogList withDesireValue(Integer desireValue) {
         this.desireValue = desireValue;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩活动最终desire值。
-     * @return desireValue
-     */
+    /** 伸缩活动最终desire值。
+     * 
+     * @return desireValue */
     public Integer getDesireValue() {
         return desireValue;
     }
@@ -411,8 +319,6 @@ public class ScalingActivityLogList  {
     public void setDesireValue(Integer desireValue) {
         this.desireValue = desireValue;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -423,22 +329,34 @@ public class ScalingActivityLogList  {
             return false;
         }
         ScalingActivityLogList scalingActivityLogList = (ScalingActivityLogList) o;
-        return Objects.equals(this.status, scalingActivityLogList.status) &&
-            Objects.equals(this.startTime, scalingActivityLogList.startTime) &&
-            Objects.equals(this.endTime, scalingActivityLogList.endTime) &&
-            Objects.equals(this.id, scalingActivityLogList.id) &&
-            Objects.equals(this.instanceRemovedList, scalingActivityLogList.instanceRemovedList) &&
-            Objects.equals(this.instanceDeletedList, scalingActivityLogList.instanceDeletedList) &&
-            Objects.equals(this.instanceAddedList, scalingActivityLogList.instanceAddedList) &&
-            Objects.equals(this.scalingValue, scalingActivityLogList.scalingValue) &&
-            Objects.equals(this.description, scalingActivityLogList.description) &&
-            Objects.equals(this.instanceValue, scalingActivityLogList.instanceValue) &&
-            Objects.equals(this.desireValue, scalingActivityLogList.desireValue);
+        return Objects.equals(this.status, scalingActivityLogList.status)
+            && Objects.equals(this.startTime, scalingActivityLogList.startTime)
+            && Objects.equals(this.endTime, scalingActivityLogList.endTime)
+            && Objects.equals(this.id, scalingActivityLogList.id)
+            && Objects.equals(this.instanceRemovedList, scalingActivityLogList.instanceRemovedList)
+            && Objects.equals(this.instanceDeletedList, scalingActivityLogList.instanceDeletedList)
+            && Objects.equals(this.instanceAddedList, scalingActivityLogList.instanceAddedList)
+            && Objects.equals(this.scalingValue, scalingActivityLogList.scalingValue)
+            && Objects.equals(this.description, scalingActivityLogList.description)
+            && Objects.equals(this.instanceValue, scalingActivityLogList.instanceValue)
+            && Objects.equals(this.desireValue, scalingActivityLogList.desireValue);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(status, startTime, endTime, id, instanceRemovedList, instanceDeletedList, instanceAddedList, scalingValue, description, instanceValue, desireValue);
+        return Objects.hash(status,
+            startTime,
+            endTime,
+            id,
+            instanceRemovedList,
+            instanceDeletedList,
+            instanceAddedList,
+            scalingValue,
+            description,
+            instanceValue,
+            desireValue);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -457,16 +375,13 @@ public class ScalingActivityLogList  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

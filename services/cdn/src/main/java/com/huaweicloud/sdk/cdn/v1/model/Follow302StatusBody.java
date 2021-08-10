@@ -1,47 +1,31 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Follow302StatusBody
- */
-public class Follow302StatusBody  {
-
-
+/** Follow302StatusBody */
+public class Follow302StatusBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
-    /**
-     * follow302状态（\"off\"/\"on\"）
-     */
+
+    /** follow302状态（\"off\"/\"on\"） */
     public static final class FollowStatusEnum {
 
-        
-        /**
-         * Enum OFF for value: "off"
-         */
+        /** Enum OFF for value: "off" */
         public static final FollowStatusEnum OFF = new FollowStatusEnum("off");
-        
-        /**
-         * Enum ON for value: "on"
-         */
+
+        /** Enum ON for value: "on" */
         public static final FollowStatusEnum ON = new FollowStatusEnum("on");
-        
 
         private static final Map<String, FollowStatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,7 +54,7 @@ public class Follow302StatusBody  {
 
         @JsonCreator
         public static FollowStatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             FollowStatusEnum result = STATIC_FIELDS.get(value);
@@ -81,7 +65,7 @@ public class Follow302StatusBody  {
         }
 
         public static FollowStatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             FollowStatusEnum result = STATIC_FIELDS.get(value);
@@ -105,10 +89,9 @@ public class Follow302StatusBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="follow_status")
-    
+    @JsonProperty(value = "follow_status")
+
     private FollowStatusEnum followStatus;
 
     public Follow302StatusBody withDomainId(String domainId) {
@@ -116,13 +99,9 @@ public class Follow302StatusBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 加速域名id。获取方法请参见查询加速域名。
-     * @return domainId
-     */
+    /** 加速域名id。获取方法请参见查询加速域名。
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -131,20 +110,14 @@ public class Follow302StatusBody  {
         this.domainId = domainId;
     }
 
-    
-
     public Follow302StatusBody withFollowStatus(FollowStatusEnum followStatus) {
         this.followStatus = followStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * follow302状态（\"off\"/\"on\"）
-     * @return followStatus
-     */
+    /** follow302状态（\"off\"/\"on\"）
+     * 
+     * @return followStatus */
     public FollowStatusEnum getFollowStatus() {
         return followStatus;
     }
@@ -152,8 +125,6 @@ public class Follow302StatusBody  {
     public void setFollowStatus(FollowStatusEnum followStatus) {
         this.followStatus = followStatus;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -164,13 +135,15 @@ public class Follow302StatusBody  {
             return false;
         }
         Follow302StatusBody follow302StatusBody = (Follow302StatusBody) o;
-        return Objects.equals(this.domainId, follow302StatusBody.domainId) &&
-            Objects.equals(this.followStatus, follow302StatusBody.followStatus);
+        return Objects.equals(this.domainId, follow302StatusBody.domainId)
+            && Objects.equals(this.followStatus, follow302StatusBody.followStatus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domainId, followStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -180,16 +153,13 @@ public class Follow302StatusBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

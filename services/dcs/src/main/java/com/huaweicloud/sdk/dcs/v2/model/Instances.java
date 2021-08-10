@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Instances
- */
-public class Instances  {
-
-
+/** Instances */
+public class Instances {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_name")
-    
+    @JsonProperty(value = "instance_name")
+
     private String instanceName;
 
     public Instances withInstanceId(String instanceId) {
@@ -34,13 +23,9 @@ public class Instances  {
         return this;
     }
 
-    
-
-
-    /**
-     * 缓存实例ID。
-     * @return instanceId
-     */
+    /** 缓存实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -49,20 +34,14 @@ public class Instances  {
         this.instanceId = instanceId;
     }
 
-    
-
     public Instances withInstanceName(String instanceName) {
         this.instanceName = instanceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 缓存实例名称。
-     * @return instanceName
-     */
+    /** 缓存实例名称。
+     * 
+     * @return instanceName */
     public String getInstanceName() {
         return instanceName;
     }
@@ -70,8 +49,6 @@ public class Instances  {
     public void setInstanceName(String instanceName) {
         this.instanceName = instanceName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class Instances  {
             return false;
         }
         Instances instances = (Instances) o;
-        return Objects.equals(this.instanceId, instances.instanceId) &&
-            Objects.equals(this.instanceName, instances.instanceName);
+        return Objects.equals(this.instanceId, instances.instanceId)
+            && Objects.equals(this.instanceName, instances.instanceName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, instanceName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class Instances  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

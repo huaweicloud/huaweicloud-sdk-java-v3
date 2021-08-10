@@ -1,41 +1,29 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.NovaAvailabilityZoneState;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 可用域信息
- */
-public class NovaAvailabilityZone  {
-
-
+/** 可用域信息 */
+public class NovaAvailabilityZone {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hosts")
-    
+    @JsonProperty(value = "hosts")
+
     private List<String> hosts = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="zoneName")
-    
+    @JsonProperty(value = "zoneName")
+
     private String zoneName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="zoneState")
-    
+    @JsonProperty(value = "zoneState")
+
     private NovaAvailabilityZoneState zoneState;
 
     public NovaAvailabilityZone withHosts(List<String> hosts) {
@@ -43,9 +31,8 @@ public class NovaAvailabilityZone  {
         return this;
     }
 
-    
     public NovaAvailabilityZone addHostsItem(String hostsItem) {
-        if(this.hosts == null) {
+        if (this.hosts == null) {
             this.hosts = new ArrayList<>();
         }
         this.hosts.add(hostsItem);
@@ -53,17 +40,16 @@ public class NovaAvailabilityZone  {
     }
 
     public NovaAvailabilityZone withHosts(Consumer<List<String>> hostsSetter) {
-        if(this.hosts == null) {
+        if (this.hosts == null) {
             this.hosts = new ArrayList<>();
         }
         hostsSetter.accept(this.hosts);
         return this;
     }
 
-    /**
-     * 该字段的值为null。
-     * @return hosts
-     */
+    /** 该字段的值为null。
+     * 
+     * @return hosts */
     public List<String> getHosts() {
         return hosts;
     }
@@ -72,20 +58,14 @@ public class NovaAvailabilityZone  {
         this.hosts = hosts;
     }
 
-    
-
     public NovaAvailabilityZone withZoneName(String zoneName) {
         this.zoneName = zoneName;
         return this;
     }
 
-    
-
-
-    /**
-     * 可用域的名称。
-     * @return zoneName
-     */
+    /** 可用域的名称。
+     * 
+     * @return zoneName */
     public String getZoneName() {
         return zoneName;
     }
@@ -94,27 +74,23 @@ public class NovaAvailabilityZone  {
         this.zoneName = zoneName;
     }
 
-    
-
     public NovaAvailabilityZone withZoneState(NovaAvailabilityZoneState zoneState) {
         this.zoneState = zoneState;
         return this;
     }
 
     public NovaAvailabilityZone withZoneState(Consumer<NovaAvailabilityZoneState> zoneStateSetter) {
-        if(this.zoneState == null ){
+        if (this.zoneState == null) {
             this.zoneState = new NovaAvailabilityZoneState();
             zoneStateSetter.accept(this.zoneState);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get zoneState
-     * @return zoneState
-     */
+    /** Get zoneState
+     * 
+     * @return zoneState */
     public NovaAvailabilityZoneState getZoneState() {
         return zoneState;
     }
@@ -122,8 +98,6 @@ public class NovaAvailabilityZone  {
     public void setZoneState(NovaAvailabilityZoneState zoneState) {
         this.zoneState = zoneState;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -134,14 +108,16 @@ public class NovaAvailabilityZone  {
             return false;
         }
         NovaAvailabilityZone novaAvailabilityZone = (NovaAvailabilityZone) o;
-        return Objects.equals(this.hosts, novaAvailabilityZone.hosts) &&
-            Objects.equals(this.zoneName, novaAvailabilityZone.zoneName) &&
-            Objects.equals(this.zoneState, novaAvailabilityZone.zoneState);
+        return Objects.equals(this.hosts, novaAvailabilityZone.hosts)
+            && Objects.equals(this.zoneName, novaAvailabilityZone.zoneName)
+            && Objects.equals(this.zoneState, novaAvailabilityZone.zoneState);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(hosts, zoneName, zoneState);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -152,16 +128,13 @@ public class NovaAvailabilityZone  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

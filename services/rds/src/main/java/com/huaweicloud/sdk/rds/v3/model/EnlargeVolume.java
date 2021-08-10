@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.EnlargeVolumeObject;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * EnlargeVolume
- */
-public class EnlargeVolume  {
-
-
+/** EnlargeVolume */
+public class EnlargeVolume {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enlarge_volume")
-    
+    @JsonProperty(value = "enlarge_volume")
+
     private EnlargeVolumeObject enlargeVolume;
 
     public EnlargeVolume withEnlargeVolume(EnlargeVolumeObject enlargeVolume) {
@@ -30,19 +20,17 @@ public class EnlargeVolume  {
     }
 
     public EnlargeVolume withEnlargeVolume(Consumer<EnlargeVolumeObject> enlargeVolumeSetter) {
-        if(this.enlargeVolume == null ){
+        if (this.enlargeVolume == null) {
             this.enlargeVolume = new EnlargeVolumeObject();
             enlargeVolumeSetter.accept(this.enlargeVolume);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get enlargeVolume
-     * @return enlargeVolume
-     */
+    /** Get enlargeVolume
+     * 
+     * @return enlargeVolume */
     public EnlargeVolumeObject getEnlargeVolume() {
         return enlargeVolume;
     }
@@ -50,8 +38,6 @@ public class EnlargeVolume  {
     public void setEnlargeVolume(EnlargeVolumeObject enlargeVolume) {
         this.enlargeVolume = enlargeVolume;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class EnlargeVolume  {
         EnlargeVolume enlargeVolume = (EnlargeVolume) o;
         return Objects.equals(this.enlargeVolume, enlargeVolume.enlargeVolume);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(enlargeVolume);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class EnlargeVolume  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

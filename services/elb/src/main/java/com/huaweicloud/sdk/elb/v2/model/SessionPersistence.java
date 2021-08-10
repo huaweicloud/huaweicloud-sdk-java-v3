@@ -1,46 +1,29 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 后端云服务器组的会话持久性。 当开启会话保持后，在一定时间内，来自同一客户端的请求会发送到同一个后端云服务器上。 当会话保持关闭时，该字段取值为null。
- */
-public class SessionPersistence  {
+/** 后端云服务器组的会话持久性。 当开启会话保持后，在一定时间内，来自同一客户端的请求会发送到同一个后端云服务器上。 当会话保持关闭时，该字段取值为null。 */
+public class SessionPersistence {
 
-    /**
-     * 会话保持的类型。SOURCE_IP：根据请求的源IP，将同一IP的请求发送到同一个后端云服务器上。HTTP_COOKIE：客户端第一次发送请求时，负载均衡器自动生成cookie并将该cookie插入响应消息中，后续请求会发送到处理第一个请求的后端云服务器上。APP_COOKIE：客户端第一次发送请求时，后端服务器生成cookie并将该cookie插入响应消息中，后续请求会发送到处理第一个请求的后端云服务器上。当后端云服务器的protocol为TCP时，只按SOURCE_IP生效当后端云服务器的protocol为HTTP时，只按HTTP_COOKIE或APP_COOKIE生效
-     */
+    /** 会话保持的类型。SOURCE_IP：根据请求的源IP，将同一IP的请求发送到同一个后端云服务器上。HTTP_COOKIE：客户端第一次发送请求时，负载均衡器自动生成cookie并将该cookie插入响应消息中，后续请求会发送到处理第一个请求的后端云服务器上。APP_COOKIE：客户端第一次发送请求时，后端服务器生成cookie并将该cookie插入响应消息中，后续请求会发送到处理第一个请求的后端云服务器上。当后端云服务器的protocol为TCP时，只按SOURCE_IP生效当后端云服务器的protocol为HTTP时，只按HTTP_COOKIE或APP_COOKIE生效 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum SOURCE_IP for value: "SOURCE_IP"
-         */
+        /** Enum SOURCE_IP for value: "SOURCE_IP" */
         public static final TypeEnum SOURCE_IP = new TypeEnum("SOURCE_IP");
-        
-        /**
-         * Enum HTTP_COOKIE for value: "HTTP_COOKIE"
-         */
+
+        /** Enum HTTP_COOKIE for value: "HTTP_COOKIE" */
         public static final TypeEnum HTTP_COOKIE = new TypeEnum("HTTP_COOKIE");
-        
-        /**
-         * Enum APP_COOKIE for value: "APP_COOKIE"
-         */
+
+        /** Enum APP_COOKIE for value: "APP_COOKIE" */
         public static final TypeEnum APP_COOKIE = new TypeEnum("APP_COOKIE");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,7 +53,7 @@ public class SessionPersistence  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -81,7 +64,7 @@ public class SessionPersistence  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -105,22 +88,19 @@ public class SessionPersistence  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cookie_name")
-    
+    @JsonProperty(value = "cookie_name")
+
     private String cookieName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="persistence_timeout")
-    
+    @JsonProperty(value = "persistence_timeout")
+
     private Integer persistenceTimeout;
 
     public SessionPersistence withType(TypeEnum type) {
@@ -128,13 +108,9 @@ public class SessionPersistence  {
         return this;
     }
 
-    
-
-
-    /**
-     * 会话保持的类型。SOURCE_IP：根据请求的源IP，将同一IP的请求发送到同一个后端云服务器上。HTTP_COOKIE：客户端第一次发送请求时，负载均衡器自动生成cookie并将该cookie插入响应消息中，后续请求会发送到处理第一个请求的后端云服务器上。APP_COOKIE：客户端第一次发送请求时，后端服务器生成cookie并将该cookie插入响应消息中，后续请求会发送到处理第一个请求的后端云服务器上。当后端云服务器的protocol为TCP时，只按SOURCE_IP生效当后端云服务器的protocol为HTTP时，只按HTTP_COOKIE或APP_COOKIE生效
-     * @return type
-     */
+    /** 会话保持的类型。SOURCE_IP：根据请求的源IP，将同一IP的请求发送到同一个后端云服务器上。HTTP_COOKIE：客户端第一次发送请求时，负载均衡器自动生成cookie并将该cookie插入响应消息中，后续请求会发送到处理第一个请求的后端云服务器上。APP_COOKIE：客户端第一次发送请求时，后端服务器生成cookie并将该cookie插入响应消息中，后续请求会发送到处理第一个请求的后端云服务器上。当后端云服务器的protocol为TCP时，只按SOURCE_IP生效当后端云服务器的protocol为HTTP时，只按HTTP_COOKIE或APP_COOKIE生效
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -143,20 +119,14 @@ public class SessionPersistence  {
         this.type = type;
     }
 
-    
-
     public SessionPersistence withCookieName(String cookieName) {
         this.cookieName = cookieName;
         return this;
     }
 
-    
-
-
-    /**
-     * cookie的名称。只有当会话保持的类型是APP_COOKIE时可以指定。
-     * @return cookieName
-     */
+    /** cookie的名称。只有当会话保持的类型是APP_COOKIE时可以指定。
+     * 
+     * @return cookieName */
     public String getCookieName() {
         return cookieName;
     }
@@ -165,20 +135,14 @@ public class SessionPersistence  {
         this.cookieName = cookieName;
     }
 
-    
-
     public SessionPersistence withPersistenceTimeout(Integer persistenceTimeout) {
         this.persistenceTimeout = persistenceTimeout;
         return this;
     }
 
-    
-
-
-    /**
-     * 会话保持的超时时间。取值范围：[1,60]（分钟）：当后端云服务器的protocol为TCP、UDP时[1,1440]（分钟）：当后端云服务器的protocol为HTTP时。当type为APP_COOKIE时该字段不生效。
-     * @return persistenceTimeout
-     */
+    /** 会话保持的超时时间。取值范围：[1,60]（分钟）：当后端云服务器的protocol为TCP、UDP时[1,1440]（分钟）：当后端云服务器的protocol为HTTP时。当type为APP_COOKIE时该字段不生效。
+     * 
+     * @return persistenceTimeout */
     public Integer getPersistenceTimeout() {
         return persistenceTimeout;
     }
@@ -186,8 +150,6 @@ public class SessionPersistence  {
     public void setPersistenceTimeout(Integer persistenceTimeout) {
         this.persistenceTimeout = persistenceTimeout;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -198,14 +160,16 @@ public class SessionPersistence  {
             return false;
         }
         SessionPersistence sessionPersistence = (SessionPersistence) o;
-        return Objects.equals(this.type, sessionPersistence.type) &&
-            Objects.equals(this.cookieName, sessionPersistence.cookieName) &&
-            Objects.equals(this.persistenceTimeout, sessionPersistence.persistenceTimeout);
+        return Objects.equals(this.type, sessionPersistence.type)
+            && Objects.equals(this.cookieName, sessionPersistence.cookieName)
+            && Objects.equals(this.persistenceTimeout, sessionPersistence.persistenceTimeout);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, cookieName, persistenceTimeout);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -216,16 +180,13 @@ public class SessionPersistence  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

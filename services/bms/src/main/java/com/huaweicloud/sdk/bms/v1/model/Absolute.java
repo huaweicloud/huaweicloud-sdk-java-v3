@@ -1,134 +1,106 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * absolute数据结构说明
- */
-public class Absolute  {
-
-
+/** absolute数据结构说明 */
+public class Absolute {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxTotalInstances")
-    
+    @JsonProperty(value = "maxTotalInstances")
+
     private Integer maxTotalInstances;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxTotalCores")
-    
+    @JsonProperty(value = "maxTotalCores")
+
     private Integer maxTotalCores;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxTotalRAMSize")
-    
+    @JsonProperty(value = "maxTotalRAMSize")
+
     private Integer maxTotalRAMSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxTotalKeypairs")
-    
+    @JsonProperty(value = "maxTotalKeypairs")
+
     private Integer maxTotalKeypairs;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxServerMeta")
-    
+    @JsonProperty(value = "maxServerMeta")
+
     private Integer maxServerMeta;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxPersonality")
-    
+    @JsonProperty(value = "maxPersonality")
+
     private Integer maxPersonality;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxPersonalitySize")
-    
+    @JsonProperty(value = "maxPersonalitySize")
+
     private Integer maxPersonalitySize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxServerGroups")
-    
+    @JsonProperty(value = "maxServerGroups")
+
     private Integer maxServerGroups;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxServerGroupMembers")
-    
+    @JsonProperty(value = "maxServerGroupMembers")
+
     private Integer maxServerGroupMembers;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="totalServerGroupsUsed")
-    
+    @JsonProperty(value = "totalServerGroupsUsed")
+
     private Integer totalServerGroupsUsed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxSecurityGroups")
-    
+    @JsonProperty(value = "maxSecurityGroups")
+
     private Integer maxSecurityGroups;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxSecurityGroupRules")
-    
+    @JsonProperty(value = "maxSecurityGroupRules")
+
     private Integer maxSecurityGroupRules;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxTotalFloatingIps")
-    
+    @JsonProperty(value = "maxTotalFloatingIps")
+
     private Integer maxTotalFloatingIps;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxImageMeta")
-    
+    @JsonProperty(value = "maxImageMeta")
+
     private Integer maxImageMeta;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="totalInstancesUsed")
-    
+    @JsonProperty(value = "totalInstancesUsed")
+
     private Integer totalInstancesUsed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="totalCoresUsed")
-    
+    @JsonProperty(value = "totalCoresUsed")
+
     private Integer totalCoresUsed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="totalRAMUsed")
-    
+    @JsonProperty(value = "totalRAMUsed")
+
     private Integer totalRAMUsed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="totalSecurityGroupsUsed")
-    
+    @JsonProperty(value = "totalSecurityGroupsUsed")
+
     private Integer totalSecurityGroupsUsed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="totalFloatingIpsUsed")
-    
+    @JsonProperty(value = "totalFloatingIpsUsed")
+
     private Integer totalFloatingIpsUsed;
 
     public Absolute withMaxTotalInstances(Integer maxTotalInstances) {
@@ -136,13 +108,9 @@ public class Absolute  {
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器最大申请数量
-     * @return maxTotalInstances
-     */
+    /** 裸金属服务器最大申请数量
+     * 
+     * @return maxTotalInstances */
     public Integer getMaxTotalInstances() {
         return maxTotalInstances;
     }
@@ -151,20 +119,14 @@ public class Absolute  {
         this.maxTotalInstances = maxTotalInstances;
     }
 
-    
-
     public Absolute withMaxTotalCores(Integer maxTotalCores) {
         this.maxTotalCores = maxTotalCores;
         return this;
     }
 
-    
-
-
-    /**
-     * CPU核数最大申请数量
-     * @return maxTotalCores
-     */
+    /** CPU核数最大申请数量
+     * 
+     * @return maxTotalCores */
     public Integer getMaxTotalCores() {
         return maxTotalCores;
     }
@@ -173,20 +135,14 @@ public class Absolute  {
         this.maxTotalCores = maxTotalCores;
     }
 
-    
-
     public Absolute withMaxTotalRAMSize(Integer maxTotalRAMSize) {
         this.maxTotalRAMSize = maxTotalRAMSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 内存最大申请容量（单位：MB）
-     * @return maxTotalRAMSize
-     */
+    /** 内存最大申请容量（单位：MB）
+     * 
+     * @return maxTotalRAMSize */
     public Integer getMaxTotalRAMSize() {
         return maxTotalRAMSize;
     }
@@ -195,20 +151,14 @@ public class Absolute  {
         this.maxTotalRAMSize = maxTotalRAMSize;
     }
 
-    
-
     public Absolute withMaxTotalKeypairs(Integer maxTotalKeypairs) {
         this.maxTotalKeypairs = maxTotalKeypairs;
         return this;
     }
 
-    
-
-
-    /**
-     * 可以申请的SSH密钥对最大数量
-     * @return maxTotalKeypairs
-     */
+    /** 可以申请的SSH密钥对最大数量
+     * 
+     * @return maxTotalKeypairs */
     public Integer getMaxTotalKeypairs() {
         return maxTotalKeypairs;
     }
@@ -217,20 +167,14 @@ public class Absolute  {
         this.maxTotalKeypairs = maxTotalKeypairs;
     }
 
-    
-
     public Absolute withMaxServerMeta(Integer maxServerMeta) {
         this.maxServerMeta = maxServerMeta;
         return this;
     }
 
-    
-
-
-    /**
-     * 可输入元数据的最大长度
-     * @return maxServerMeta
-     */
+    /** 可输入元数据的最大长度
+     * 
+     * @return maxServerMeta */
     public Integer getMaxServerMeta() {
         return maxServerMeta;
     }
@@ -239,20 +183,14 @@ public class Absolute  {
         this.maxServerMeta = maxServerMeta;
     }
 
-    
-
     public Absolute withMaxPersonality(Integer maxPersonality) {
         this.maxPersonality = maxPersonality;
         return this;
     }
 
-    
-
-
-    /**
-     * 可注入文件的最大个数
-     * @return maxPersonality
-     */
+    /** 可注入文件的最大个数
+     * 
+     * @return maxPersonality */
     public Integer getMaxPersonality() {
         return maxPersonality;
     }
@@ -261,20 +199,14 @@ public class Absolute  {
         this.maxPersonality = maxPersonality;
     }
 
-    
-
     public Absolute withMaxPersonalitySize(Integer maxPersonalitySize) {
         this.maxPersonalitySize = maxPersonalitySize;
         return this;
     }
 
-    
-
-
-    /**
-     * 注入文件内容的最大长度（单位：Byte）
-     * @return maxPersonalitySize
-     */
+    /** 注入文件内容的最大长度（单位：Byte）
+     * 
+     * @return maxPersonalitySize */
     public Integer getMaxPersonalitySize() {
         return maxPersonalitySize;
     }
@@ -283,20 +215,14 @@ public class Absolute  {
         this.maxPersonalitySize = maxPersonalitySize;
     }
 
-    
-
     public Absolute withMaxServerGroups(Integer maxServerGroups) {
         this.maxServerGroups = maxServerGroups;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务器组的最大个数
-     * @return maxServerGroups
-     */
+    /** 服务器组的最大个数
+     * 
+     * @return maxServerGroups */
     public Integer getMaxServerGroups() {
         return maxServerGroups;
     }
@@ -305,20 +231,14 @@ public class Absolute  {
         this.maxServerGroups = maxServerGroups;
     }
 
-    
-
     public Absolute withMaxServerGroupMembers(Integer maxServerGroupMembers) {
         this.maxServerGroupMembers = maxServerGroupMembers;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务器组中的最大裸金属服务器数。
-     * @return maxServerGroupMembers
-     */
+    /** 服务器组中的最大裸金属服务器数。
+     * 
+     * @return maxServerGroupMembers */
     public Integer getMaxServerGroupMembers() {
         return maxServerGroupMembers;
     }
@@ -327,20 +247,14 @@ public class Absolute  {
         this.maxServerGroupMembers = maxServerGroupMembers;
     }
 
-    
-
     public Absolute withTotalServerGroupsUsed(Integer totalServerGroupsUsed) {
         this.totalServerGroupsUsed = totalServerGroupsUsed;
         return this;
     }
 
-    
-
-
-    /**
-     * 已使用的服务器组个数
-     * @return totalServerGroupsUsed
-     */
+    /** 已使用的服务器组个数
+     * 
+     * @return totalServerGroupsUsed */
     public Integer getTotalServerGroupsUsed() {
         return totalServerGroupsUsed;
     }
@@ -349,20 +263,14 @@ public class Absolute  {
         this.totalServerGroupsUsed = totalServerGroupsUsed;
     }
 
-    
-
     public Absolute withMaxSecurityGroups(Integer maxSecurityGroups) {
         this.maxSecurityGroups = maxSecurityGroups;
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组最大使用个数。 说明：具体配额限制请以VPC配额限制为准。
-     * @return maxSecurityGroups
-     */
+    /** 安全组最大使用个数。 说明：具体配额限制请以VPC配额限制为准。
+     * 
+     * @return maxSecurityGroups */
     public Integer getMaxSecurityGroups() {
         return maxSecurityGroups;
     }
@@ -371,20 +279,14 @@ public class Absolute  {
         this.maxSecurityGroups = maxSecurityGroups;
     }
 
-    
-
     public Absolute withMaxSecurityGroupRules(Integer maxSecurityGroupRules) {
         this.maxSecurityGroupRules = maxSecurityGroupRules;
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组中安全组规则最大的配置个数。 说明：具体配额限制请以VPC配额限制为准。
-     * @return maxSecurityGroupRules
-     */
+    /** 安全组中安全组规则最大的配置个数。 说明：具体配额限制请以VPC配额限制为准。
+     * 
+     * @return maxSecurityGroupRules */
     public Integer getMaxSecurityGroupRules() {
         return maxSecurityGroupRules;
     }
@@ -393,20 +295,14 @@ public class Absolute  {
         this.maxSecurityGroupRules = maxSecurityGroupRules;
     }
 
-    
-
     public Absolute withMaxTotalFloatingIps(Integer maxTotalFloatingIps) {
         this.maxTotalFloatingIps = maxTotalFloatingIps;
         return this;
     }
 
-    
-
-
-    /**
-     * 最大的浮动IP使用个数
-     * @return maxTotalFloatingIps
-     */
+    /** 最大的浮动IP使用个数
+     * 
+     * @return maxTotalFloatingIps */
     public Integer getMaxTotalFloatingIps() {
         return maxTotalFloatingIps;
     }
@@ -415,20 +311,14 @@ public class Absolute  {
         this.maxTotalFloatingIps = maxTotalFloatingIps;
     }
 
-    
-
     public Absolute withMaxImageMeta(Integer maxImageMeta) {
         this.maxImageMeta = maxImageMeta;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像元数据最大的长度
-     * @return maxImageMeta
-     */
+    /** 镜像元数据最大的长度
+     * 
+     * @return maxImageMeta */
     public Integer getMaxImageMeta() {
         return maxImageMeta;
     }
@@ -437,20 +327,14 @@ public class Absolute  {
         this.maxImageMeta = maxImageMeta;
     }
 
-    
-
     public Absolute withTotalInstancesUsed(Integer totalInstancesUsed) {
         this.totalInstancesUsed = totalInstancesUsed;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前裸金属服务器使用个数
-     * @return totalInstancesUsed
-     */
+    /** 当前裸金属服务器使用个数
+     * 
+     * @return totalInstancesUsed */
     public Integer getTotalInstancesUsed() {
         return totalInstancesUsed;
     }
@@ -459,20 +343,14 @@ public class Absolute  {
         this.totalInstancesUsed = totalInstancesUsed;
     }
 
-    
-
     public Absolute withTotalCoresUsed(Integer totalCoresUsed) {
         this.totalCoresUsed = totalCoresUsed;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前已使用CPU核数
-     * @return totalCoresUsed
-     */
+    /** 当前已使用CPU核数
+     * 
+     * @return totalCoresUsed */
     public Integer getTotalCoresUsed() {
         return totalCoresUsed;
     }
@@ -481,20 +359,14 @@ public class Absolute  {
         this.totalCoresUsed = totalCoresUsed;
     }
 
-    
-
     public Absolute withTotalRAMUsed(Integer totalRAMUsed) {
         this.totalRAMUsed = totalRAMUsed;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前内存使用容量（单位：MB）
-     * @return totalRAMUsed
-     */
+    /** 当前内存使用容量（单位：MB）
+     * 
+     * @return totalRAMUsed */
     public Integer getTotalRAMUsed() {
         return totalRAMUsed;
     }
@@ -503,20 +375,14 @@ public class Absolute  {
         this.totalRAMUsed = totalRAMUsed;
     }
 
-    
-
     public Absolute withTotalSecurityGroupsUsed(Integer totalSecurityGroupsUsed) {
         this.totalSecurityGroupsUsed = totalSecurityGroupsUsed;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前安全组使用个数
-     * @return totalSecurityGroupsUsed
-     */
+    /** 当前安全组使用个数
+     * 
+     * @return totalSecurityGroupsUsed */
     public Integer getTotalSecurityGroupsUsed() {
         return totalSecurityGroupsUsed;
     }
@@ -525,20 +391,14 @@ public class Absolute  {
         this.totalSecurityGroupsUsed = totalSecurityGroupsUsed;
     }
 
-    
-
     public Absolute withTotalFloatingIpsUsed(Integer totalFloatingIpsUsed) {
         this.totalFloatingIpsUsed = totalFloatingIpsUsed;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前浮动IP使用个数
-     * @return totalFloatingIpsUsed
-     */
+    /** 当前浮动IP使用个数
+     * 
+     * @return totalFloatingIpsUsed */
     public Integer getTotalFloatingIpsUsed() {
         return totalFloatingIpsUsed;
     }
@@ -546,8 +406,6 @@ public class Absolute  {
     public void setTotalFloatingIpsUsed(Integer totalFloatingIpsUsed) {
         this.totalFloatingIpsUsed = totalFloatingIpsUsed;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -558,30 +416,50 @@ public class Absolute  {
             return false;
         }
         Absolute absolute = (Absolute) o;
-        return Objects.equals(this.maxTotalInstances, absolute.maxTotalInstances) &&
-            Objects.equals(this.maxTotalCores, absolute.maxTotalCores) &&
-            Objects.equals(this.maxTotalRAMSize, absolute.maxTotalRAMSize) &&
-            Objects.equals(this.maxTotalKeypairs, absolute.maxTotalKeypairs) &&
-            Objects.equals(this.maxServerMeta, absolute.maxServerMeta) &&
-            Objects.equals(this.maxPersonality, absolute.maxPersonality) &&
-            Objects.equals(this.maxPersonalitySize, absolute.maxPersonalitySize) &&
-            Objects.equals(this.maxServerGroups, absolute.maxServerGroups) &&
-            Objects.equals(this.maxServerGroupMembers, absolute.maxServerGroupMembers) &&
-            Objects.equals(this.totalServerGroupsUsed, absolute.totalServerGroupsUsed) &&
-            Objects.equals(this.maxSecurityGroups, absolute.maxSecurityGroups) &&
-            Objects.equals(this.maxSecurityGroupRules, absolute.maxSecurityGroupRules) &&
-            Objects.equals(this.maxTotalFloatingIps, absolute.maxTotalFloatingIps) &&
-            Objects.equals(this.maxImageMeta, absolute.maxImageMeta) &&
-            Objects.equals(this.totalInstancesUsed, absolute.totalInstancesUsed) &&
-            Objects.equals(this.totalCoresUsed, absolute.totalCoresUsed) &&
-            Objects.equals(this.totalRAMUsed, absolute.totalRAMUsed) &&
-            Objects.equals(this.totalSecurityGroupsUsed, absolute.totalSecurityGroupsUsed) &&
-            Objects.equals(this.totalFloatingIpsUsed, absolute.totalFloatingIpsUsed);
+        return Objects.equals(this.maxTotalInstances, absolute.maxTotalInstances)
+            && Objects.equals(this.maxTotalCores, absolute.maxTotalCores)
+            && Objects.equals(this.maxTotalRAMSize, absolute.maxTotalRAMSize)
+            && Objects.equals(this.maxTotalKeypairs, absolute.maxTotalKeypairs)
+            && Objects.equals(this.maxServerMeta, absolute.maxServerMeta)
+            && Objects.equals(this.maxPersonality, absolute.maxPersonality)
+            && Objects.equals(this.maxPersonalitySize, absolute.maxPersonalitySize)
+            && Objects.equals(this.maxServerGroups, absolute.maxServerGroups)
+            && Objects.equals(this.maxServerGroupMembers, absolute.maxServerGroupMembers)
+            && Objects.equals(this.totalServerGroupsUsed, absolute.totalServerGroupsUsed)
+            && Objects.equals(this.maxSecurityGroups, absolute.maxSecurityGroups)
+            && Objects.equals(this.maxSecurityGroupRules, absolute.maxSecurityGroupRules)
+            && Objects.equals(this.maxTotalFloatingIps, absolute.maxTotalFloatingIps)
+            && Objects.equals(this.maxImageMeta, absolute.maxImageMeta)
+            && Objects.equals(this.totalInstancesUsed, absolute.totalInstancesUsed)
+            && Objects.equals(this.totalCoresUsed, absolute.totalCoresUsed)
+            && Objects.equals(this.totalRAMUsed, absolute.totalRAMUsed)
+            && Objects.equals(this.totalSecurityGroupsUsed, absolute.totalSecurityGroupsUsed)
+            && Objects.equals(this.totalFloatingIpsUsed, absolute.totalFloatingIpsUsed);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(maxTotalInstances, maxTotalCores, maxTotalRAMSize, maxTotalKeypairs, maxServerMeta, maxPersonality, maxPersonalitySize, maxServerGroups, maxServerGroupMembers, totalServerGroupsUsed, maxSecurityGroups, maxSecurityGroupRules, maxTotalFloatingIps, maxImageMeta, totalInstancesUsed, totalCoresUsed, totalRAMUsed, totalSecurityGroupsUsed, totalFloatingIpsUsed);
+        return Objects.hash(maxTotalInstances,
+            maxTotalCores,
+            maxTotalRAMSize,
+            maxTotalKeypairs,
+            maxServerMeta,
+            maxPersonality,
+            maxPersonalitySize,
+            maxServerGroups,
+            maxServerGroupMembers,
+            totalServerGroupsUsed,
+            maxSecurityGroups,
+            maxSecurityGroupRules,
+            maxTotalFloatingIps,
+            maxImageMeta,
+            totalInstancesUsed,
+            totalCoresUsed,
+            totalRAMUsed,
+            totalSecurityGroupsUsed,
+            totalFloatingIpsUsed);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -608,16 +486,13 @@ public class Absolute  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

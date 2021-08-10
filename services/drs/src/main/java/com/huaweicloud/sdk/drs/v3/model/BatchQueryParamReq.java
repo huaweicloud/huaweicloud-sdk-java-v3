@@ -1,34 +1,26 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class BatchQueryParamReq  {
-
-
+public class BatchQueryParamReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobs")
-    
+    @JsonProperty(value = "jobs")
+
     private List<String> jobs = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="refresh")
-    
+    @JsonProperty(value = "refresh")
+
     private String refresh;
 
     public BatchQueryParamReq withJobs(List<String> jobs) {
@@ -36,9 +28,8 @@ public class BatchQueryParamReq  {
         return this;
     }
 
-    
     public BatchQueryParamReq addJobsItem(String jobsItem) {
-        if(this.jobs == null) {
+        if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
         this.jobs.add(jobsItem);
@@ -46,17 +37,16 @@ public class BatchQueryParamReq  {
     }
 
     public BatchQueryParamReq withJobs(Consumer<List<String>> jobsSetter) {
-        if(this.jobs == null) {
+        if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
         jobsSetter.accept(this.jobs);
         return this;
     }
 
-    /**
-     * 查询任务ID集合。
-     * @return jobs
-     */
+    /** 查询任务ID集合。
+     * 
+     * @return jobs */
     public List<String> getJobs() {
         return jobs;
     }
@@ -65,20 +55,14 @@ public class BatchQueryParamReq  {
         this.jobs = jobs;
     }
 
-    
-
     public BatchQueryParamReq withRefresh(String refresh) {
         this.refresh = refresh;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否重新获取数据库参数，1代表是，0代表否（从缓存中获取），第一次调用时请设置为1。
-     * @return refresh
-     */
+    /** 是否重新获取数据库参数，1代表是，0代表否（从缓存中获取），第一次调用时请设置为1。
+     * 
+     * @return refresh */
     public String getRefresh() {
         return refresh;
     }
@@ -86,8 +70,6 @@ public class BatchQueryParamReq  {
     public void setRefresh(String refresh) {
         this.refresh = refresh;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -98,13 +80,15 @@ public class BatchQueryParamReq  {
             return false;
         }
         BatchQueryParamReq batchQueryParamReq = (BatchQueryParamReq) o;
-        return Objects.equals(this.jobs, batchQueryParamReq.jobs) &&
-            Objects.equals(this.refresh, batchQueryParamReq.refresh);
+        return Objects.equals(this.jobs, batchQueryParamReq.jobs)
+            && Objects.equals(this.refresh, batchQueryParamReq.refresh);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobs, refresh);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,16 +98,13 @@ public class BatchQueryParamReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

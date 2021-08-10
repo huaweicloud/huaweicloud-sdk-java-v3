@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 配额资源
- */
-public class PolicyInstanceResources  {
-
-
+/** 配额资源 */
+public class PolicyInstanceResources {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="used")
-    
+    @JsonProperty(value = "used")
+
     private Integer used;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quota")
-    
+    @JsonProperty(value = "quota")
+
     private Integer quota;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max")
-    
+    @JsonProperty(value = "max")
+
     private Integer max;
 
     public PolicyInstanceResources withType(String type) {
@@ -46,13 +33,9 @@ public class PolicyInstanceResources  {
         return this;
     }
 
-    
-
-
-    /**
-     * 查询配额的类型。
-     * @return type
-     */
+    /** 查询配额的类型。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -61,20 +44,14 @@ public class PolicyInstanceResources  {
         this.type = type;
     }
 
-    
-
     public PolicyInstanceResources withUsed(Integer used) {
         this.used = used;
         return this;
     }
 
-    
-
-
-    /**
-     * 已使用的配额数量。
-     * @return used
-     */
+    /** 已使用的配额数量。
+     * 
+     * @return used */
     public Integer getUsed() {
         return used;
     }
@@ -83,20 +60,14 @@ public class PolicyInstanceResources  {
         this.used = used;
     }
 
-    
-
     public PolicyInstanceResources withQuota(Integer quota) {
         this.quota = quota;
         return this;
     }
 
-    
-
-
-    /**
-     * 配额总数量。
-     * @return quota
-     */
+    /** 配额总数量。
+     * 
+     * @return quota */
     public Integer getQuota() {
         return quota;
     }
@@ -105,20 +76,14 @@ public class PolicyInstanceResources  {
         this.quota = quota;
     }
 
-    
-
     public PolicyInstanceResources withMax(Integer max) {
         this.max = max;
         return this;
     }
 
-    
-
-
-    /**
-     * 配额上限。
-     * @return max
-     */
+    /** 配额上限。
+     * 
+     * @return max */
     public Integer getMax() {
         return max;
     }
@@ -126,8 +91,6 @@ public class PolicyInstanceResources  {
     public void setMax(Integer max) {
         this.max = max;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class PolicyInstanceResources  {
             return false;
         }
         PolicyInstanceResources policyInstanceResources = (PolicyInstanceResources) o;
-        return Objects.equals(this.type, policyInstanceResources.type) &&
-            Objects.equals(this.used, policyInstanceResources.used) &&
-            Objects.equals(this.quota, policyInstanceResources.quota) &&
-            Objects.equals(this.max, policyInstanceResources.max);
+        return Objects.equals(this.type, policyInstanceResources.type)
+            && Objects.equals(this.used, policyInstanceResources.used)
+            && Objects.equals(this.quota, policyInstanceResources.quota)
+            && Objects.equals(this.max, policyInstanceResources.max);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, used, quota, max);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class PolicyInstanceResources  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

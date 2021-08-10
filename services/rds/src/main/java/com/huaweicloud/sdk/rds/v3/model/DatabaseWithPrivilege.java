@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 数据库及其权限。
- */
-public class DatabaseWithPrivilege  {
-
-
+/** 数据库及其权限。 */
+public class DatabaseWithPrivilege {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="readonly")
-    
+    @JsonProperty(value = "readonly")
+
     private Boolean readonly;
 
     public DatabaseWithPrivilege withName(String name) {
@@ -34,13 +23,9 @@ public class DatabaseWithPrivilege  {
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库名称。
-     * @return name
-     */
+    /** 数据库名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -49,20 +34,14 @@ public class DatabaseWithPrivilege  {
         this.name = name;
     }
 
-    
-
     public DatabaseWithPrivilege withReadonly(Boolean readonly) {
         this.readonly = readonly;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否为只读权限。
-     * @return readonly
-     */
+    /** 是否为只读权限。
+     * 
+     * @return readonly */
     public Boolean getReadonly() {
         return readonly;
     }
@@ -70,8 +49,6 @@ public class DatabaseWithPrivilege  {
     public void setReadonly(Boolean readonly) {
         this.readonly = readonly;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class DatabaseWithPrivilege  {
             return false;
         }
         DatabaseWithPrivilege databaseWithPrivilege = (DatabaseWithPrivilege) o;
-        return Objects.equals(this.name, databaseWithPrivilege.name) &&
-            Objects.equals(this.readonly, databaseWithPrivilege.readonly);
+        return Objects.equals(this.name, databaseWithPrivilege.name)
+            && Objects.equals(this.readonly, databaseWithPrivilege.readonly);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, readonly);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class DatabaseWithPrivilege  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

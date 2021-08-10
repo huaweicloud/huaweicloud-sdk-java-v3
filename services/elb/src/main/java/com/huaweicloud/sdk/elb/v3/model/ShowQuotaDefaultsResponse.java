@@ -1,35 +1,23 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v3.model.Quota;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowQuotaDefaultsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="request_id")
-    
+    @JsonProperty(value = "request_id")
+
     private String requestId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quota")
-    
+    @JsonProperty(value = "quota")
+
     private Quota quota;
 
     public ShowQuotaDefaultsResponse withRequestId(String requestId) {
@@ -37,13 +25,9 @@ public class ShowQuotaDefaultsResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 请求ID。  注：自动生成 。
-     * @return requestId
-     */
+    /** 请求ID。 注：自动生成 。
+     * 
+     * @return requestId */
     public String getRequestId() {
         return requestId;
     }
@@ -52,27 +36,23 @@ public class ShowQuotaDefaultsResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    
-
     public ShowQuotaDefaultsResponse withQuota(Quota quota) {
         this.quota = quota;
         return this;
     }
 
     public ShowQuotaDefaultsResponse withQuota(Consumer<Quota> quotaSetter) {
-        if(this.quota == null ){
+        if (this.quota == null) {
             this.quota = new Quota();
             quotaSetter.accept(this.quota);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get quota
-     * @return quota
-     */
+    /** Get quota
+     * 
+     * @return quota */
     public Quota getQuota() {
         return quota;
     }
@@ -80,8 +60,6 @@ public class ShowQuotaDefaultsResponse extends SdkResponse {
     public void setQuota(Quota quota) {
         this.quota = quota;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -92,13 +70,15 @@ public class ShowQuotaDefaultsResponse extends SdkResponse {
             return false;
         }
         ShowQuotaDefaultsResponse showQuotaDefaultsResponse = (ShowQuotaDefaultsResponse) o;
-        return Objects.equals(this.requestId, showQuotaDefaultsResponse.requestId) &&
-            Objects.equals(this.quota, showQuotaDefaultsResponse.quota);
+        return Objects.equals(this.requestId, showQuotaDefaultsResponse.requestId)
+            && Objects.equals(this.quota, showQuotaDefaultsResponse.quota);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(requestId, quota);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -108,16 +88,13 @@ public class ShowQuotaDefaultsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

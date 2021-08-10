@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.apig.v2.model.AppReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateAppV2Request  {
-
-
+/** Request Object */
+public class UpdateAppV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private AppReq body;
 
     public UpdateAppV2Request withInstanceId(String instanceId) {
@@ -41,13 +29,9 @@ public class UpdateAppV2Request  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例编号
-     * @return instanceId
-     */
+    /** 实例编号
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -56,20 +40,14 @@ public class UpdateAppV2Request  {
         this.instanceId = instanceId;
     }
 
-    
-
     public UpdateAppV2Request withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * APP的编号
-     * @return appId
-     */
+    /** APP的编号
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -78,27 +56,23 @@ public class UpdateAppV2Request  {
         this.appId = appId;
     }
 
-    
-
     public UpdateAppV2Request withBody(AppReq body) {
         this.body = body;
         return this;
     }
 
     public UpdateAppV2Request withBody(Consumer<AppReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new AppReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public AppReq getBody() {
         return body;
     }
@@ -106,8 +80,6 @@ public class UpdateAppV2Request  {
     public void setBody(AppReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class UpdateAppV2Request  {
             return false;
         }
         UpdateAppV2Request updateAppV2Request = (UpdateAppV2Request) o;
-        return Objects.equals(this.instanceId, updateAppV2Request.instanceId) &&
-            Objects.equals(this.appId, updateAppV2Request.appId) &&
-            Objects.equals(this.body, updateAppV2Request.body);
+        return Objects.equals(this.instanceId, updateAppV2Request.instanceId)
+            && Objects.equals(this.appId, updateAppV2Request.appId)
+            && Objects.equals(this.body, updateAppV2Request.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, appId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class UpdateAppV2Request  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

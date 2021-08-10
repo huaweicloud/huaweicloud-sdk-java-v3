@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 审计日志信息。
- */
-public class Auditlog  {
-
-
+/** 审计日志信息。 */
+public class Auditlog {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Long size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="begin_time")
-    
+    @JsonProperty(value = "begin_time")
+
     private String beginTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
     public Auditlog withId(String id) {
@@ -52,13 +38,9 @@ public class Auditlog  {
         return this;
     }
 
-    
-
-
-    /**
-     * 审计日志ID。
-     * @return id
-     */
+    /** 审计日志ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -67,20 +49,14 @@ public class Auditlog  {
         this.id = id;
     }
 
-    
-
     public Auditlog withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 审计日志文件名。
-     * @return name
-     */
+    /** 审计日志文件名。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -89,20 +65,14 @@ public class Auditlog  {
         this.name = name;
     }
 
-    
-
     public Auditlog withSize(Long size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 审计日志大小，单位：KB。
-     * @return size
-     */
+    /** 审计日志大小，单位：KB。
+     * 
+     * @return size */
     public Long getSize() {
         return size;
     }
@@ -111,20 +81,14 @@ public class Auditlog  {
         this.size = size;
     }
 
-    
-
     public Auditlog withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 审计日志开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始，Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * @return beginTime
-     */
+    /** 审计日志开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始，Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * 
+     * @return beginTime */
     public String getBeginTime() {
         return beginTime;
     }
@@ -133,20 +97,14 @@ public class Auditlog  {
         this.beginTime = beginTime;
     }
 
-    
-
     public Auditlog withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 审计日志结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始，Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * @return endTime
-     */
+    /** 审计日志结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始，Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -154,8 +112,6 @@ public class Auditlog  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,16 @@ public class Auditlog  {
             return false;
         }
         Auditlog auditlog = (Auditlog) o;
-        return Objects.equals(this.id, auditlog.id) &&
-            Objects.equals(this.name, auditlog.name) &&
-            Objects.equals(this.size, auditlog.size) &&
-            Objects.equals(this.beginTime, auditlog.beginTime) &&
-            Objects.equals(this.endTime, auditlog.endTime);
+        return Objects.equals(this.id, auditlog.id) && Objects.equals(this.name, auditlog.name)
+            && Objects.equals(this.size, auditlog.size) && Objects.equals(this.beginTime, auditlog.beginTime)
+            && Objects.equals(this.endTime, auditlog.endTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, size, beginTime, endTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +144,13 @@ public class Auditlog  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

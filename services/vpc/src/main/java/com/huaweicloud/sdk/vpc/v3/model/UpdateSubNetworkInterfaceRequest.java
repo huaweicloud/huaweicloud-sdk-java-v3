@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.vpc.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vpc.v3.model.UpdateSubNetworkInterfaceRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateSubNetworkInterfaceRequest  {
-
-
+/** Request Object */
+public class UpdateSubNetworkInterfaceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sub_network_interface_id")
-    
+    @JsonProperty(value = "sub_network_interface_id")
+
     private String subNetworkInterfaceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateSubNetworkInterfaceRequestBody body;
 
     public UpdateSubNetworkInterfaceRequest withSubNetworkInterfaceId(String subNetworkInterfaceId) {
@@ -35,13 +24,9 @@ public class UpdateSubNetworkInterfaceRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 辅助弹性网卡的唯一标识
-     * @return subNetworkInterfaceId
-     */
+    /** 辅助弹性网卡的唯一标识
+     * 
+     * @return subNetworkInterfaceId */
     public String getSubNetworkInterfaceId() {
         return subNetworkInterfaceId;
     }
@@ -50,27 +35,23 @@ public class UpdateSubNetworkInterfaceRequest  {
         this.subNetworkInterfaceId = subNetworkInterfaceId;
     }
 
-    
-
     public UpdateSubNetworkInterfaceRequest withBody(UpdateSubNetworkInterfaceRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdateSubNetworkInterfaceRequest withBody(Consumer<UpdateSubNetworkInterfaceRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateSubNetworkInterfaceRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateSubNetworkInterfaceRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdateSubNetworkInterfaceRequest  {
     public void setBody(UpdateSubNetworkInterfaceRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdateSubNetworkInterfaceRequest  {
             return false;
         }
         UpdateSubNetworkInterfaceRequest updateSubNetworkInterfaceRequest = (UpdateSubNetworkInterfaceRequest) o;
-        return Objects.equals(this.subNetworkInterfaceId, updateSubNetworkInterfaceRequest.subNetworkInterfaceId) &&
-            Objects.equals(this.body, updateSubNetworkInterfaceRequest.body);
+        return Objects.equals(this.subNetworkInterfaceId, updateSubNetworkInterfaceRequest.subNetworkInterfaceId)
+            && Objects.equals(this.body, updateSubNetworkInterfaceRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(subNetworkInterfaceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdateSubNetworkInterfaceRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

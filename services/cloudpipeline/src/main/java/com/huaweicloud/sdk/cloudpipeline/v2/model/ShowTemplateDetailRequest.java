@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowTemplateDetailRequest  {
-
-
+/** Request Object */
+public class ShowTemplateDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_id")
-    
+    @JsonProperty(value = "template_id")
+
     private String templateId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_type")
-    
+    @JsonProperty(value = "template_type")
+
     private String templateType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source")
-    
+    @JsonProperty(value = "source")
+
     private String source;
 
     public ShowTemplateDetailRequest withXLanguage(String xLanguage) {
@@ -46,15 +33,11 @@ public class ShowTemplateDetailRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * @return xLanguage
-     */
+    /** 语言类型 中文:zh-cn 英文:en-us，默认en-us
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -63,20 +46,14 @@ public class ShowTemplateDetailRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ShowTemplateDetailRequest withTemplateId(String templateId) {
         this.templateId = templateId;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板ID
-     * @return templateId
-     */
+    /** 模板ID
+     * 
+     * @return templateId */
     public String getTemplateId() {
         return templateId;
     }
@@ -85,20 +62,14 @@ public class ShowTemplateDetailRequest  {
         this.templateId = templateId;
     }
 
-    
-
     public ShowTemplateDetailRequest withTemplateType(String templateType) {
         this.templateType = templateType;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板类型
-     * @return templateType
-     */
+    /** 模板类型
+     * 
+     * @return templateType */
     public String getTemplateType() {
         return templateType;
     }
@@ -107,20 +78,14 @@ public class ShowTemplateDetailRequest  {
         this.templateType = templateType;
     }
 
-    
-
     public ShowTemplateDetailRequest withSource(String source) {
         this.source = source;
         return this;
     }
 
-    
-
-
-    /**
-     * 接口调用方
-     * @return source
-     */
+    /** 接口调用方
+     * 
+     * @return source */
     public String getSource() {
         return source;
     }
@@ -128,8 +93,6 @@ public class ShowTemplateDetailRequest  {
     public void setSource(String source) {
         this.source = source;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -140,15 +103,17 @@ public class ShowTemplateDetailRequest  {
             return false;
         }
         ShowTemplateDetailRequest showTemplateDetailRequest = (ShowTemplateDetailRequest) o;
-        return Objects.equals(this.xLanguage, showTemplateDetailRequest.xLanguage) &&
-            Objects.equals(this.templateId, showTemplateDetailRequest.templateId) &&
-            Objects.equals(this.templateType, showTemplateDetailRequest.templateType) &&
-            Objects.equals(this.source, showTemplateDetailRequest.source);
+        return Objects.equals(this.xLanguage, showTemplateDetailRequest.xLanguage)
+            && Objects.equals(this.templateId, showTemplateDetailRequest.templateId)
+            && Objects.equals(this.templateType, showTemplateDetailRequest.templateType)
+            && Objects.equals(this.source, showTemplateDetailRequest.source);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, templateId, templateType, source);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -160,16 +125,13 @@ public class ShowTemplateDetailRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

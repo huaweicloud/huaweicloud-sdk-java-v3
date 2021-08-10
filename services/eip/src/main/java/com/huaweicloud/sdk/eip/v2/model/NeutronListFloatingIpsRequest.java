@@ -1,80 +1,61 @@
 package com.huaweicloud.sdk.eip.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class NeutronListFloatingIpsRequest  {
-
-
+/** Request Object */
+public class NeutronListFloatingIpsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private String limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_reverse")
-    
+    @JsonProperty(value = "page_reverse")
+
     private Boolean pageReverse;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="floating_ip_address")
-    
+    @JsonProperty(value = "floating_ip_address")
+
     private String floatingIpAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="router_id")
-    
+    @JsonProperty(value = "router_id")
+
     private String routerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port_id")
-    
+    @JsonProperty(value = "port_id")
+
     private String portId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fixed_ip_address")
-    
+    @JsonProperty(value = "fixed_ip_address")
+
     private String fixedIpAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
+
     private String tenantId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="floating_network_id")
-    
+    @JsonProperty(value = "floating_network_id")
+
     private String floatingNetworkId;
 
     public NeutronListFloatingIpsRequest withLimit(String limit) {
@@ -82,13 +63,9 @@ public class NeutronListFloatingIpsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示的条目数量。
-     * @return limit
-     */
+    /** 每页显示的条目数量。
+     * 
+     * @return limit */
     public String getLimit() {
         return limit;
     }
@@ -97,20 +74,14 @@ public class NeutronListFloatingIpsRequest  {
         this.limit = limit;
     }
 
-    
-
     public NeutronListFloatingIpsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
 
-    
-
-
-    /**
-     * 取值为上一页数据的最后一条记录的id，当marker参数为无效id时，response将响应错误码400
-     * @return marker
-     */
+    /** 取值为上一页数据的最后一条记录的id，当marker参数为无效id时，response将响应错误码400
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -119,20 +90,14 @@ public class NeutronListFloatingIpsRequest  {
         this.marker = marker;
     }
 
-    
-
     public NeutronListFloatingIpsRequest withPageReverse(Boolean pageReverse) {
         this.pageReverse = pageReverse;
         return this;
     }
 
-    
-
-
-    /**
-     * False/True，是否设置分页的顺序。
-     * @return pageReverse
-     */
+    /** False/True，是否设置分页的顺序。
+     * 
+     * @return pageReverse */
     public Boolean getPageReverse() {
         return pageReverse;
     }
@@ -141,20 +106,14 @@ public class NeutronListFloatingIpsRequest  {
         this.pageReverse = pageReverse;
     }
 
-    
-
     public NeutronListFloatingIpsRequest withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 浮动IP的id。
-     * @return id
-     */
+    /** 浮动IP的id。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -163,20 +122,14 @@ public class NeutronListFloatingIpsRequest  {
         this.id = id;
     }
 
-    
-
     public NeutronListFloatingIpsRequest withFloatingIpAddress(String floatingIpAddress) {
         this.floatingIpAddress = floatingIpAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 浮动IP地址。
-     * @return floatingIpAddress
-     */
+    /** 浮动IP地址。
+     * 
+     * @return floatingIpAddress */
     public String getFloatingIpAddress() {
         return floatingIpAddress;
     }
@@ -185,20 +138,14 @@ public class NeutronListFloatingIpsRequest  {
         this.floatingIpAddress = floatingIpAddress;
     }
 
-    
-
     public NeutronListFloatingIpsRequest withRouterId(String routerId) {
         this.routerId = routerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 所属路由器id。
-     * @return routerId
-     */
+    /** 所属路由器id。
+     * 
+     * @return routerId */
     public String getRouterId() {
         return routerId;
     }
@@ -207,20 +154,14 @@ public class NeutronListFloatingIpsRequest  {
         this.routerId = routerId;
     }
 
-    
-
     public NeutronListFloatingIpsRequest withPortId(String portId) {
         this.portId = portId;
         return this;
     }
 
-    
-
-
-    /**
-     * 端口id。
-     * @return portId
-     */
+    /** 端口id。
+     * 
+     * @return portId */
     public String getPortId() {
         return portId;
     }
@@ -229,20 +170,14 @@ public class NeutronListFloatingIpsRequest  {
         this.portId = portId;
     }
 
-    
-
     public NeutronListFloatingIpsRequest withFixedIpAddress(String fixedIpAddress) {
         this.fixedIpAddress = fixedIpAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 关联端口的私有IP地址。
-     * @return fixedIpAddress
-     */
+    /** 关联端口的私有IP地址。
+     * 
+     * @return fixedIpAddress */
     public String getFixedIpAddress() {
         return fixedIpAddress;
     }
@@ -251,20 +186,14 @@ public class NeutronListFloatingIpsRequest  {
         this.fixedIpAddress = fixedIpAddress;
     }
 
-    
-
     public NeutronListFloatingIpsRequest withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目ID。
-     * @return tenantId
-     */
+    /** 项目ID。
+     * 
+     * @return tenantId */
     public String getTenantId() {
         return tenantId;
     }
@@ -273,20 +202,15 @@ public class NeutronListFloatingIpsRequest  {
         this.tenantId = tenantId;
     }
 
-    
-
     public NeutronListFloatingIpsRequest withFloatingNetworkId(String floatingNetworkId) {
         this.floatingNetworkId = floatingNetworkId;
         return this;
     }
 
-    
-
-
-    /**
-     * 外部网络的id。只能使用固定的外网，外部网络的信息请通过GET /v2.0/networks?router:external=True或GET /v2.0/networks?name={floating_network}或neutron net-external-list方式查询
-     * @return floatingNetworkId
-     */
+    /** 外部网络的id。只能使用固定的外网，外部网络的信息请通过GET /v2.0/networks?router:external=True或GET
+     * /v2.0/networks?name={floating_network}或neutron net-external-list方式查询
+     * 
+     * @return floatingNetworkId */
     public String getFloatingNetworkId() {
         return floatingNetworkId;
     }
@@ -294,8 +218,6 @@ public class NeutronListFloatingIpsRequest  {
     public void setFloatingNetworkId(String floatingNetworkId) {
         this.floatingNetworkId = floatingNetworkId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -306,21 +228,32 @@ public class NeutronListFloatingIpsRequest  {
             return false;
         }
         NeutronListFloatingIpsRequest neutronListFloatingIpsRequest = (NeutronListFloatingIpsRequest) o;
-        return Objects.equals(this.limit, neutronListFloatingIpsRequest.limit) &&
-            Objects.equals(this.marker, neutronListFloatingIpsRequest.marker) &&
-            Objects.equals(this.pageReverse, neutronListFloatingIpsRequest.pageReverse) &&
-            Objects.equals(this.id, neutronListFloatingIpsRequest.id) &&
-            Objects.equals(this.floatingIpAddress, neutronListFloatingIpsRequest.floatingIpAddress) &&
-            Objects.equals(this.routerId, neutronListFloatingIpsRequest.routerId) &&
-            Objects.equals(this.portId, neutronListFloatingIpsRequest.portId) &&
-            Objects.equals(this.fixedIpAddress, neutronListFloatingIpsRequest.fixedIpAddress) &&
-            Objects.equals(this.tenantId, neutronListFloatingIpsRequest.tenantId) &&
-            Objects.equals(this.floatingNetworkId, neutronListFloatingIpsRequest.floatingNetworkId);
+        return Objects.equals(this.limit, neutronListFloatingIpsRequest.limit)
+            && Objects.equals(this.marker, neutronListFloatingIpsRequest.marker)
+            && Objects.equals(this.pageReverse, neutronListFloatingIpsRequest.pageReverse)
+            && Objects.equals(this.id, neutronListFloatingIpsRequest.id)
+            && Objects.equals(this.floatingIpAddress, neutronListFloatingIpsRequest.floatingIpAddress)
+            && Objects.equals(this.routerId, neutronListFloatingIpsRequest.routerId)
+            && Objects.equals(this.portId, neutronListFloatingIpsRequest.portId)
+            && Objects.equals(this.fixedIpAddress, neutronListFloatingIpsRequest.fixedIpAddress)
+            && Objects.equals(this.tenantId, neutronListFloatingIpsRequest.tenantId)
+            && Objects.equals(this.floatingNetworkId, neutronListFloatingIpsRequest.floatingNetworkId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker, pageReverse, id, floatingIpAddress, routerId, portId, fixedIpAddress, tenantId, floatingNetworkId);
+        return Objects.hash(limit,
+            marker,
+            pageReverse,
+            id,
+            floatingIpAddress,
+            routerId,
+            portId,
+            fixedIpAddress,
+            tenantId,
+            floatingNetworkId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -338,16 +271,13 @@ public class NeutronListFloatingIpsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

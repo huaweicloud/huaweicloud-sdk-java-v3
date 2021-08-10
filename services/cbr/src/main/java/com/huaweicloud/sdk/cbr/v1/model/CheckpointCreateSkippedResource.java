@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 备份时跳过的资源
- */
-public class CheckpointCreateSkippedResource  {
-
-
+/** 备份时跳过的资源 */
+public class CheckpointCreateSkippedResource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code")
-    
+    @JsonProperty(value = "code")
+
     private String code;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="reason")
-    
+    @JsonProperty(value = "reason")
+
     private String reason;
 
     public CheckpointCreateSkippedResource withId(String id) {
@@ -52,13 +38,9 @@ public class CheckpointCreateSkippedResource  {
         return this;
     }
 
-    
-
-
-    /**
-     * 资源ID
-     * @return id
-     */
+    /** 资源ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -67,20 +49,14 @@ public class CheckpointCreateSkippedResource  {
         this.id = id;
     }
 
-    
-
     public CheckpointCreateSkippedResource withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源类型
-     * @return type
-     */
+    /** 资源类型
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -89,20 +65,14 @@ public class CheckpointCreateSkippedResource  {
         this.type = type;
     }
 
-    
-
     public CheckpointCreateSkippedResource withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源名称
-     * @return name
-     */
+    /** 资源名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -111,20 +81,14 @@ public class CheckpointCreateSkippedResource  {
         this.name = name;
     }
 
-    
-
     public CheckpointCreateSkippedResource withCode(String code) {
         this.code = code;
         return this;
     }
 
-    
-
-
-    /**
-     * 请参见[错误码](ErrorCode.xml)。
-     * @return code
-     */
+    /** 请参见[错误码](ErrorCode.xml)。
+     * 
+     * @return code */
     public String getCode() {
         return code;
     }
@@ -133,20 +97,14 @@ public class CheckpointCreateSkippedResource  {
         this.code = code;
     }
 
-    
-
     public CheckpointCreateSkippedResource withReason(String reason) {
         this.reason = reason;
         return this;
     }
 
-    
-
-
-    /**
-     * 跳过原因，例如：该资源正在备份中。
-     * @return reason
-     */
+    /** 跳过原因，例如：该资源正在备份中。
+     * 
+     * @return reason */
     public String getReason() {
         return reason;
     }
@@ -154,8 +112,6 @@ public class CheckpointCreateSkippedResource  {
     public void setReason(String reason) {
         this.reason = reason;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,18 @@ public class CheckpointCreateSkippedResource  {
             return false;
         }
         CheckpointCreateSkippedResource checkpointCreateSkippedResource = (CheckpointCreateSkippedResource) o;
-        return Objects.equals(this.id, checkpointCreateSkippedResource.id) &&
-            Objects.equals(this.type, checkpointCreateSkippedResource.type) &&
-            Objects.equals(this.name, checkpointCreateSkippedResource.name) &&
-            Objects.equals(this.code, checkpointCreateSkippedResource.code) &&
-            Objects.equals(this.reason, checkpointCreateSkippedResource.reason);
+        return Objects.equals(this.id, checkpointCreateSkippedResource.id)
+            && Objects.equals(this.type, checkpointCreateSkippedResource.type)
+            && Objects.equals(this.name, checkpointCreateSkippedResource.name)
+            && Objects.equals(this.code, checkpointCreateSkippedResource.code)
+            && Objects.equals(this.reason, checkpointCreateSkippedResource.reason);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, type, name, code, reason);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class CheckpointCreateSkippedResource  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * InstanceRestartRequsetBody
- */
-public class InstanceRestartRequsetBody  {
-
-
+/** InstanceRestartRequsetBody */
+public class InstanceRestartRequsetBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="restart")
-    
+    @JsonProperty(value = "restart")
+
     private Object restart;
 
     public InstanceRestartRequsetBody withRestart(Object restart) {
@@ -28,13 +18,9 @@ public class InstanceRestartRequsetBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 在线调试时必填。
-     * @return restart
-     */
+    /** 在线调试时必填。
+     * 
+     * @return restart */
     public Object getRestart() {
         return restart;
     }
@@ -42,8 +28,6 @@ public class InstanceRestartRequsetBody  {
     public void setRestart(Object restart) {
         this.restart = restart;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class InstanceRestartRequsetBody  {
         InstanceRestartRequsetBody instanceRestartRequsetBody = (InstanceRestartRequsetBody) o;
         return Objects.equals(this.restart, instanceRestartRequsetBody.restart);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(restart);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class InstanceRestartRequsetBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

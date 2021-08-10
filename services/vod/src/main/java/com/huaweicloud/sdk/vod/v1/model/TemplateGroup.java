@@ -1,78 +1,59 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vod.v1.model.Common;
-import com.huaweicloud.sdk.vod.v1.model.QualityInfo;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * TemplateGroup
- */
-public class TemplateGroup  {
-
-
+/** TemplateGroup */
+public class TemplateGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auto_encrypt")
-    
+    @JsonProperty(value = "auto_encrypt")
+
     private Integer autoEncrypt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quality_info_list")
-    
+    @JsonProperty(value = "quality_info_list")
+
     private List<QualityInfo> qualityInfoList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="watermark_template_ids")
-    
+    @JsonProperty(value = "watermark_template_ids")
+
     private List<String> watermarkTemplateIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="common")
-    
+    @JsonProperty(value = "common")
+
     private Common common;
 
     public TemplateGroup withGroupId(String groupId) {
@@ -80,13 +61,9 @@ public class TemplateGroup  {
         return this;
     }
 
-    
-
-
-    /**
-     * 模板组id<br/> 
-     * @return groupId
-     */
+    /** 模板组id<br/>
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -95,20 +72,14 @@ public class TemplateGroup  {
         this.groupId = groupId;
     }
 
-    
-
     public TemplateGroup withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板组名称<br/> 
-     * @return name
-     */
+    /** 模板组名称<br/>
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -117,20 +88,14 @@ public class TemplateGroup  {
         this.name = name;
     }
 
-    
-
     public TemplateGroup withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否默认<br/> 
-     * @return status
-     */
+    /** 是否默认<br/>
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -139,20 +104,14 @@ public class TemplateGroup  {
         this.status = status;
     }
 
-    
-
     public TemplateGroup withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板组类型<br/> 
-     * @return type
-     */
+    /** 模板组类型<br/>
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -161,20 +120,14 @@ public class TemplateGroup  {
         this.type = type;
     }
 
-    
-
     public TemplateGroup withAutoEncrypt(Integer autoEncrypt) {
         this.autoEncrypt = autoEncrypt;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否自动加密。  取值如下： - 0：表示不加密。 - 1：表示需要加密。  默认值：0。  加密与转码必须要一起进行，当需要加密时，转码参数不能为空，且转码输出必须要为HLS。
-     * @return autoEncrypt
-     */
+    /** 是否自动加密。 取值如下： - 0：表示不加密。 - 1：表示需要加密。 默认值：0。 加密与转码必须要一起进行，当需要加密时，转码参数不能为空，且转码输出格式必须要为HLS。
+     * 
+     * @return autoEncrypt */
     public Integer getAutoEncrypt() {
         return autoEncrypt;
     }
@@ -183,16 +136,13 @@ public class TemplateGroup  {
         this.autoEncrypt = autoEncrypt;
     }
 
-    
-
     public TemplateGroup withQualityInfoList(List<QualityInfo> qualityInfoList) {
         this.qualityInfoList = qualityInfoList;
         return this;
     }
 
-    
     public TemplateGroup addQualityInfoListItem(QualityInfo qualityInfoListItem) {
-        if(this.qualityInfoList == null) {
+        if (this.qualityInfoList == null) {
             this.qualityInfoList = new ArrayList<>();
         }
         this.qualityInfoList.add(qualityInfoListItem);
@@ -200,17 +150,16 @@ public class TemplateGroup  {
     }
 
     public TemplateGroup withQualityInfoList(Consumer<List<QualityInfo>> qualityInfoListSetter) {
-        if(this.qualityInfoList == null) {
+        if (this.qualityInfoList == null) {
             this.qualityInfoList = new ArrayList<>();
         }
         qualityInfoListSetter.accept(this.qualityInfoList);
         return this;
     }
 
-    /**
-     * 画质配置信息列表<br/> 
-     * @return qualityInfoList
-     */
+    /** 画质配置信息列表<br/>
+     * 
+     * @return qualityInfoList */
     public List<QualityInfo> getQualityInfoList() {
         return qualityInfoList;
     }
@@ -219,16 +168,13 @@ public class TemplateGroup  {
         this.qualityInfoList = qualityInfoList;
     }
 
-    
-
     public TemplateGroup withWatermarkTemplateIds(List<String> watermarkTemplateIds) {
         this.watermarkTemplateIds = watermarkTemplateIds;
         return this;
     }
 
-    
     public TemplateGroup addWatermarkTemplateIdsItem(String watermarkTemplateIdsItem) {
-        if(this.watermarkTemplateIds == null) {
+        if (this.watermarkTemplateIds == null) {
             this.watermarkTemplateIds = new ArrayList<>();
         }
         this.watermarkTemplateIds.add(watermarkTemplateIdsItem);
@@ -236,17 +182,16 @@ public class TemplateGroup  {
     }
 
     public TemplateGroup withWatermarkTemplateIds(Consumer<List<String>> watermarkTemplateIdsSetter) {
-        if(this.watermarkTemplateIds == null) {
+        if (this.watermarkTemplateIds == null) {
             this.watermarkTemplateIds = new ArrayList<>();
         }
         watermarkTemplateIdsSetter.accept(this.watermarkTemplateIds);
         return this;
     }
 
-    /**
-     * 绑定的水印模板组ID数组<br/> 
-     * @return watermarkTemplateIds
-     */
+    /** 绑定的水印模板组ID数组<br/>
+     * 
+     * @return watermarkTemplateIds */
     public List<String> getWatermarkTemplateIds() {
         return watermarkTemplateIds;
     }
@@ -255,20 +200,14 @@ public class TemplateGroup  {
         this.watermarkTemplateIds = watermarkTemplateIds;
     }
 
-    
-
     public TemplateGroup withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板介绍<br/> 
-     * @return description
-     */
+    /** 模板介绍<br/>
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -277,27 +216,23 @@ public class TemplateGroup  {
         this.description = description;
     }
 
-    
-
     public TemplateGroup withCommon(Common common) {
         this.common = common;
         return this;
     }
 
     public TemplateGroup withCommon(Consumer<Common> commonSetter) {
-        if(this.common == null ){
+        if (this.common == null) {
             this.common = new Common();
             commonSetter.accept(this.common);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get common
-     * @return common
-     */
+    /** Get common
+     * 
+     * @return common */
     public Common getCommon() {
         return common;
     }
@@ -305,8 +240,6 @@ public class TemplateGroup  {
     public void setCommon(Common common) {
         this.common = common;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -317,20 +250,21 @@ public class TemplateGroup  {
             return false;
         }
         TemplateGroup templateGroup = (TemplateGroup) o;
-        return Objects.equals(this.groupId, templateGroup.groupId) &&
-            Objects.equals(this.name, templateGroup.name) &&
-            Objects.equals(this.status, templateGroup.status) &&
-            Objects.equals(this.type, templateGroup.type) &&
-            Objects.equals(this.autoEncrypt, templateGroup.autoEncrypt) &&
-            Objects.equals(this.qualityInfoList, templateGroup.qualityInfoList) &&
-            Objects.equals(this.watermarkTemplateIds, templateGroup.watermarkTemplateIds) &&
-            Objects.equals(this.description, templateGroup.description) &&
-            Objects.equals(this.common, templateGroup.common);
+        return Objects.equals(this.groupId, templateGroup.groupId) && Objects.equals(this.name, templateGroup.name)
+            && Objects.equals(this.status, templateGroup.status) && Objects.equals(this.type, templateGroup.type)
+            && Objects.equals(this.autoEncrypt, templateGroup.autoEncrypt)
+            && Objects.equals(this.qualityInfoList, templateGroup.qualityInfoList)
+            && Objects.equals(this.watermarkTemplateIds, templateGroup.watermarkTemplateIds)
+            && Objects.equals(this.description, templateGroup.description)
+            && Objects.equals(this.common, templateGroup.common);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(groupId, name, status, type, autoEncrypt, qualityInfoList, watermarkTemplateIds, description, common);
+        return Objects
+            .hash(groupId, name, status, type, autoEncrypt, qualityInfoList, watermarkTemplateIds, description, common);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -347,16 +281,13 @@ public class TemplateGroup  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rms.v1.model.ResourceProviderResponse;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListProvidersResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_providers")
-    
+    @JsonProperty(value = "resource_providers")
+
     private List<ResourceProviderResponse> resourceProviders = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
-    
+    @JsonProperty(value = "total_count")
+
     private Integer totalCount;
 
     public ListProvidersResponse withResourceProviders(List<ResourceProviderResponse> resourceProviders) {
@@ -39,27 +27,26 @@ public class ListProvidersResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListProvidersResponse addResourceProvidersItem(ResourceProviderResponse resourceProvidersItem) {
-        if(this.resourceProviders == null) {
+        if (this.resourceProviders == null) {
             this.resourceProviders = new ArrayList<>();
         }
         this.resourceProviders.add(resourceProvidersItem);
         return this;
     }
 
-    public ListProvidersResponse withResourceProviders(Consumer<List<ResourceProviderResponse>> resourceProvidersSetter) {
-        if(this.resourceProviders == null) {
+    public ListProvidersResponse withResourceProviders(
+        Consumer<List<ResourceProviderResponse>> resourceProvidersSetter) {
+        if (this.resourceProviders == null) {
             this.resourceProviders = new ArrayList<>();
         }
         resourceProvidersSetter.accept(this.resourceProviders);
         return this;
     }
 
-    /**
-     * 云服务详情列表
-     * @return resourceProviders
-     */
+    /** 云服务详情列表
+     * 
+     * @return resourceProviders */
     public List<ResourceProviderResponse> getResourceProviders() {
         return resourceProviders;
     }
@@ -68,20 +55,14 @@ public class ListProvidersResponse extends SdkResponse {
         this.resourceProviders = resourceProviders;
     }
 
-    
-
     public ListProvidersResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前支持的云服务总数
-     * @return totalCount
-     */
+    /** 当前支持的云服务总数
+     * 
+     * @return totalCount */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -89,8 +70,6 @@ public class ListProvidersResponse extends SdkResponse {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +80,15 @@ public class ListProvidersResponse extends SdkResponse {
             return false;
         }
         ListProvidersResponse listProvidersResponse = (ListProvidersResponse) o;
-        return Objects.equals(this.resourceProviders, listProvidersResponse.resourceProviders) &&
-            Objects.equals(this.totalCount, listProvidersResponse.totalCount);
+        return Objects.equals(this.resourceProviders, listProvidersResponse.resourceProviders)
+            && Objects.equals(this.totalCount, listProvidersResponse.totalCount);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resourceProviders, totalCount);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +98,13 @@ public class ListProvidersResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

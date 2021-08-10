@@ -1,52 +1,39 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.TokenDomainResult;
-import com.huaweicloud.sdk.iam.v3.model.TokenUserOsfederation;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class ScopedTokenUser  {
-
-
+public class ScopedTokenUser {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
+
     private TokenDomainResult domain;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-FEDERATION")
-    
+    @JsonProperty(value = "OS-FEDERATION")
+
     private TokenUserOsfederation osFederation;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="password_expires_at")
-    
+    @JsonProperty(value = "password_expires_at")
+
     private String passwordExpiresAt;
 
     public ScopedTokenUser withDomain(TokenDomainResult domain) {
@@ -55,19 +42,17 @@ public class ScopedTokenUser  {
     }
 
     public ScopedTokenUser withDomain(Consumer<TokenDomainResult> domainSetter) {
-        if(this.domain == null ){
+        if (this.domain == null) {
             this.domain = new TokenDomainResult();
             domainSetter.accept(this.domain);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get domain
-     * @return domain
-     */
+    /** Get domain
+     * 
+     * @return domain */
     public TokenDomainResult getDomain() {
         return domain;
     }
@@ -76,27 +61,23 @@ public class ScopedTokenUser  {
         this.domain = domain;
     }
 
-    
-
     public ScopedTokenUser withOsFederation(TokenUserOsfederation osFederation) {
         this.osFederation = osFederation;
         return this;
     }
 
     public ScopedTokenUser withOsFederation(Consumer<TokenUserOsfederation> osFederationSetter) {
-        if(this.osFederation == null ){
+        if (this.osFederation == null) {
             this.osFederation = new TokenUserOsfederation();
             osFederationSetter.accept(this.osFederation);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get osFederation
-     * @return osFederation
-     */
+    /** Get osFederation
+     * 
+     * @return osFederation */
     public TokenUserOsfederation getOsFederation() {
         return osFederation;
     }
@@ -105,20 +86,14 @@ public class ScopedTokenUser  {
         this.osFederation = osFederation;
     }
 
-    
-
     public ScopedTokenUser withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户ID。
-     * @return id
-     */
+    /** 用户ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -127,20 +102,14 @@ public class ScopedTokenUser  {
         this.id = id;
     }
 
-    
-
     public ScopedTokenUser withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户名。
-     * @return name
-     */
+    /** 用户名。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -149,20 +118,14 @@ public class ScopedTokenUser  {
         this.name = name;
     }
 
-    
-
     public ScopedTokenUser withPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 密码过期时间（UTC时间），“”表示密码不过期。
-     * @return passwordExpiresAt
-     */
+    /** 密码过期时间（UTC时间），“”表示密码不过期。
+     * 
+     * @return passwordExpiresAt */
     public String getPasswordExpiresAt() {
         return passwordExpiresAt;
     }
@@ -170,8 +133,6 @@ public class ScopedTokenUser  {
     public void setPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -182,16 +143,17 @@ public class ScopedTokenUser  {
             return false;
         }
         ScopedTokenUser scopedTokenUser = (ScopedTokenUser) o;
-        return Objects.equals(this.domain, scopedTokenUser.domain) &&
-            Objects.equals(this.osFederation, scopedTokenUser.osFederation) &&
-            Objects.equals(this.id, scopedTokenUser.id) &&
-            Objects.equals(this.name, scopedTokenUser.name) &&
-            Objects.equals(this.passwordExpiresAt, scopedTokenUser.passwordExpiresAt);
+        return Objects.equals(this.domain, scopedTokenUser.domain)
+            && Objects.equals(this.osFederation, scopedTokenUser.osFederation)
+            && Objects.equals(this.id, scopedTokenUser.id) && Objects.equals(this.name, scopedTokenUser.name)
+            && Objects.equals(this.passwordExpiresAt, scopedTokenUser.passwordExpiresAt);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domain, osFederation, id, name, passwordExpiresAt);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -204,16 +166,13 @@ public class ScopedTokenUser  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

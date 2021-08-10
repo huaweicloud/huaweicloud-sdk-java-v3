@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.ccm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * SubjectAlternativeName
- */
-public class SubjectAlternativeName  {
-
-
+/** SubjectAlternativeName */
+public class SubjectAlternativeName {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private String value;
 
     public SubjectAlternativeName withType(String type) {
@@ -34,13 +23,9 @@ public class SubjectAlternativeName  {
         return this;
     }
 
-    
-
-
-    /**
-     * 类型
-     * @return type
-     */
+    /** 类型
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -49,20 +34,14 @@ public class SubjectAlternativeName  {
         this.type = type;
     }
 
-    
-
     public SubjectAlternativeName withValue(String value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 值
-     * @return value
-     */
+    /** 值
+     * 
+     * @return value */
     public String getValue() {
         return value;
     }
@@ -70,8 +49,6 @@ public class SubjectAlternativeName  {
     public void setValue(String value) {
         this.value = value;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class SubjectAlternativeName  {
             return false;
         }
         SubjectAlternativeName subjectAlternativeName = (SubjectAlternativeName) o;
-        return Objects.equals(this.type, subjectAlternativeName.type) &&
-            Objects.equals(this.value, subjectAlternativeName.value);
+        return Objects.equals(this.type, subjectAlternativeName.type)
+            && Objects.equals(this.value, subjectAlternativeName.value);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, value);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class SubjectAlternativeName  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

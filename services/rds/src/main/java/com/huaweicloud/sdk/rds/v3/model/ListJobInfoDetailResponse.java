@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.GetTaskDetailListRspJobs;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ListJobInfoDetailResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobs")
-    
+    @JsonProperty(value = "jobs")
+
     private GetTaskDetailListRspJobs jobs;
 
     public ListJobInfoDetailResponse withJobs(GetTaskDetailListRspJobs jobs) {
@@ -32,19 +21,17 @@ public class ListJobInfoDetailResponse extends SdkResponse {
     }
 
     public ListJobInfoDetailResponse withJobs(Consumer<GetTaskDetailListRspJobs> jobsSetter) {
-        if(this.jobs == null ){
+        if (this.jobs == null) {
             this.jobs = new GetTaskDetailListRspJobs();
             jobsSetter.accept(this.jobs);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get jobs
-     * @return jobs
-     */
+    /** Get jobs
+     * 
+     * @return jobs */
     public GetTaskDetailListRspJobs getJobs() {
         return jobs;
     }
@@ -52,8 +39,6 @@ public class ListJobInfoDetailResponse extends SdkResponse {
     public void setJobs(GetTaskDetailListRspJobs jobs) {
         this.jobs = jobs;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class ListJobInfoDetailResponse extends SdkResponse {
         ListJobInfoDetailResponse listJobInfoDetailResponse = (ListJobInfoDetailResponse) o;
         return Objects.equals(this.jobs, listJobInfoDetailResponse.jobs);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobs);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class ListJobInfoDetailResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListHostRequest  {
-
-
+/** Request Object */
+public class ListHostRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page")
-    
+    @JsonProperty(value = "page")
+
     private Integer page;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pagesize")
-    
+    @JsonProperty(value = "pagesize")
+
     private Integer pagesize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hostname")
-    
+    @JsonProperty(value = "hostname")
+
     private String hostname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policyname")
-    
+    @JsonProperty(value = "policyname")
+
     private String policyname;
 
     public ListHostRequest withPage(Integer page) {
@@ -46,13 +33,9 @@ public class ListHostRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 页码
-     * @return page
-     */
+    /** 页码
+     * 
+     * @return page */
     public Integer getPage() {
         return page;
     }
@@ -61,20 +44,14 @@ public class ListHostRequest  {
         this.page = page;
     }
 
-    
-
     public ListHostRequest withPagesize(Integer pagesize) {
         this.pagesize = pagesize;
         return this;
     }
 
-    
-
-
-    /**
-     * 单页条数
-     * @return pagesize
-     */
+    /** 单页条数
+     * 
+     * @return pagesize */
     public Integer getPagesize() {
         return pagesize;
     }
@@ -83,20 +60,14 @@ public class ListHostRequest  {
         this.pagesize = pagesize;
     }
 
-    
-
     public ListHostRequest withHostname(String hostname) {
         this.hostname = hostname;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名
-     * @return hostname
-     */
+    /** 域名
+     * 
+     * @return hostname */
     public String getHostname() {
         return hostname;
     }
@@ -105,20 +76,14 @@ public class ListHostRequest  {
         this.hostname = hostname;
     }
 
-    
-
     public ListHostRequest withPolicyname(String policyname) {
         this.policyname = policyname;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略名
-     * @return policyname
-     */
+    /** 策略名
+     * 
+     * @return policyname */
     public String getPolicyname() {
         return policyname;
     }
@@ -126,8 +91,6 @@ public class ListHostRequest  {
     public void setPolicyname(String policyname) {
         this.policyname = policyname;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class ListHostRequest  {
             return false;
         }
         ListHostRequest listHostRequest = (ListHostRequest) o;
-        return Objects.equals(this.page, listHostRequest.page) &&
-            Objects.equals(this.pagesize, listHostRequest.pagesize) &&
-            Objects.equals(this.hostname, listHostRequest.hostname) &&
-            Objects.equals(this.policyname, listHostRequest.policyname);
+        return Objects.equals(this.page, listHostRequest.page)
+            && Objects.equals(this.pagesize, listHostRequest.pagesize)
+            && Objects.equals(this.hostname, listHostRequest.hostname)
+            && Objects.equals(this.policyname, listHostRequest.policyname);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(page, pagesize, hostname, policyname);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class ListHostRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

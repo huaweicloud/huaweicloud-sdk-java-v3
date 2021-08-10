@@ -1,123 +1,97 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.math.BigDecimal;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 分页查询企业用户信息
- */
-public class UserDTO  {
-
-
+/** 分页查询企业用户信息 */
+public class UserDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="statusCode")
-    
+    @JsonProperty(value = "statusCode")
+
     private Integer statusCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="account")
-    
+    @JsonProperty(value = "account")
+
     private String account;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="englishName")
-    
+    @JsonProperty(value = "englishName")
+
     private String englishName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="email")
-    
+    @JsonProperty(value = "email")
+
     private String email;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="phone")
-    
+    @JsonProperty(value = "phone")
+
     private String phone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deptName")
-    
+    @JsonProperty(value = "deptName")
+
     private String deptName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="number")
-    
+    @JsonProperty(value = "number")
+
     private String number;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updateTime")
-    
+    @JsonProperty(value = "updateTime")
+
     private BigDecimal updateTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isHardTerminal")
-    
+    @JsonProperty(value = "isHardTerminal")
+
     private Boolean isHardTerminal;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrId")
-    
+    @JsonProperty(value = "vmrId")
+
     private String vmrId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="signature")
-    
+    @JsonProperty(value = "signature")
+
     private String signature;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="title")
-    
+    @JsonProperty(value = "title")
+
     private String title;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hidePhone")
-    
+    @JsonProperty(value = "hidePhone")
+
     private Boolean hidePhone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
     public UserDTO withId(String id) {
@@ -125,13 +99,9 @@ public class UserDTO  {
         return this;
     }
 
-    
-
-
-    /**
-     * 用户ID。
-     * @return id
-     */
+    /** 用户ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -140,20 +110,14 @@ public class UserDTO  {
         this.id = id;
     }
 
-    
-
     public UserDTO withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询用户详情时, 根据不同情况，响应不同。 * 0： 查询成功且用户信息有变化， 响应会把新的信息都返回回去 * 1 ：查询成功且用户信息没有变化，响应只会返回用户ID * 2 ：用户不存在 * 3 ：无权限查询这个用户 
-     * @return statusCode
-     */
+    /** 查询用户详情时, 根据不同情况，响应不同。 * 0： 查询成功且用户信息有变化， 响应会把新的信息都返回回去 * 1 ：查询成功且用户信息没有变化，响应只会返回用户ID * 2 ：用户不存在 * 3 ：无权限查询这个用户
+     * 
+     * @return statusCode */
     public Integer getStatusCode() {
         return statusCode;
     }
@@ -162,20 +126,14 @@ public class UserDTO  {
         this.statusCode = statusCode;
     }
 
-    
-
     public UserDTO withAccount(String account) {
         this.account = account;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户账号。
-     * @return account
-     */
+    /** 用户账号。
+     * 
+     * @return account */
     public String getAccount() {
         return account;
     }
@@ -184,20 +142,14 @@ public class UserDTO  {
         this.account = account;
     }
 
-    
-
     public UserDTO withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户名。
-     * @return name
-     */
+    /** 用户名。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -206,20 +158,14 @@ public class UserDTO  {
         this.name = name;
     }
 
-    
-
     public UserDTO withEnglishName(String englishName) {
         this.englishName = englishName;
         return this;
     }
 
-    
-
-
-    /**
-     * 英文名。
-     * @return englishName
-     */
+    /** 英文名。
+     * 
+     * @return englishName */
     public String getEnglishName() {
         return englishName;
     }
@@ -228,20 +174,14 @@ public class UserDTO  {
         this.englishName = englishName;
     }
 
-    
-
     public UserDTO withEmail(String email) {
         this.email = email;
         return this;
     }
 
-    
-
-
-    /**
-     * 邮箱。
-     * @return email
-     */
+    /** 邮箱。
+     * 
+     * @return email */
     public String getEmail() {
         return email;
     }
@@ -250,20 +190,14 @@ public class UserDTO  {
         this.email = email;
     }
 
-    
-
     public UserDTO withPhone(String phone) {
         this.phone = phone;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户手机。
-     * @return phone
-     */
+    /** 用户手机。
+     * 
+     * @return phone */
     public String getPhone() {
         return phone;
     }
@@ -272,20 +206,14 @@ public class UserDTO  {
         this.phone = phone;
     }
 
-    
-
     public UserDTO withDeptName(String deptName) {
         this.deptName = deptName;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户部门。
-     * @return deptName
-     */
+    /** 用户部门。
+     * 
+     * @return deptName */
     public String getDeptName() {
         return deptName;
     }
@@ -294,20 +222,14 @@ public class UserDTO  {
         this.deptName = deptName;
     }
 
-    
-
     public UserDTO withNumber(String number) {
         this.number = number;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户号码。
-     * @return number
-     */
+    /** 用户号码。
+     * 
+     * @return number */
     public String getNumber() {
         return number;
     }
@@ -316,20 +238,14 @@ public class UserDTO  {
         this.number = number;
     }
 
-    
-
     public UserDTO withUpdateTime(BigDecimal updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户信息最后更新时间。
-     * @return updateTime
-     */
+    /** 用户信息最后更新时间。
+     * 
+     * @return updateTime */
     public BigDecimal getUpdateTime() {
         return updateTime;
     }
@@ -338,20 +254,14 @@ public class UserDTO  {
         this.updateTime = updateTime;
     }
 
-    
-
     public UserDTO withIsHardTerminal(Boolean isHardTerminal) {
         this.isHardTerminal = isHardTerminal;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否为硬终端。
-     * @return isHardTerminal
-     */
+    /** 是否为硬终端。
+     * 
+     * @return isHardTerminal */
     public Boolean getIsHardTerminal() {
         return isHardTerminal;
     }
@@ -360,20 +270,14 @@ public class UserDTO  {
         this.isHardTerminal = isHardTerminal;
     }
 
-    
-
     public UserDTO withVmrId(String vmrId) {
         this.vmrId = vmrId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户虚拟会议室ID。
-     * @return vmrId
-     */
+    /** 用户虚拟会议室ID。
+     * 
+     * @return vmrId */
     public String getVmrId() {
         return vmrId;
     }
@@ -382,20 +286,14 @@ public class UserDTO  {
         this.vmrId = vmrId;
     }
 
-    
-
     public UserDTO withSignature(String signature) {
         this.signature = signature;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户签名。
-     * @return signature
-     */
+    /** 用户签名。
+     * 
+     * @return signature */
     public String getSignature() {
         return signature;
     }
@@ -404,20 +302,14 @@ public class UserDTO  {
         this.signature = signature;
     }
 
-    
-
     public UserDTO withTitle(String title) {
         this.title = title;
         return this;
     }
 
-    
-
-
-    /**
-     * 职位。
-     * @return title
-     */
+    /** 职位。
+     * 
+     * @return title */
     public String getTitle() {
         return title;
     }
@@ -426,20 +318,14 @@ public class UserDTO  {
         this.title = title;
     }
 
-    
-
     public UserDTO withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述信息。
-     * @return description
-     */
+    /** 描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -448,20 +334,14 @@ public class UserDTO  {
         this.description = description;
     }
 
-    
-
     public UserDTO withHidePhone(Boolean hidePhone) {
         this.hidePhone = hidePhone;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否隐藏手机号（如果为true，其他人查询该用户时，不会返回该用户的手机号。自己查自己是可见的）
-     * @return hidePhone
-     */
+    /** 是否隐藏手机号（如果为true，其他人查询该用户时，不会返回该用户的手机号。自己查自己是可见的）
+     * 
+     * @return hidePhone */
     public Boolean getHidePhone() {
         return hidePhone;
     }
@@ -470,20 +350,14 @@ public class UserDTO  {
         this.hidePhone = hidePhone;
     }
 
-    
-
     public UserDTO withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 类型： * NORMAL_USER=普通用户 * HARD_TERMINAL=硬终端用户 * WHITE_BOARD=第三方白板 * HW_VISION_MEMBER=智慧屏 
-     * @return type
-     */
+    /** 类型： * NORMAL_USER=普通用户 * HARD_TERMINAL=硬终端用户 * WHITE_BOARD=第三方白板 * HW_VISION_MEMBER=智慧屏
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -491,8 +365,6 @@ public class UserDTO  {
     public void setType(String type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -503,28 +375,38 @@ public class UserDTO  {
             return false;
         }
         UserDTO userDTO = (UserDTO) o;
-        return Objects.equals(this.id, userDTO.id) &&
-            Objects.equals(this.statusCode, userDTO.statusCode) &&
-            Objects.equals(this.account, userDTO.account) &&
-            Objects.equals(this.name, userDTO.name) &&
-            Objects.equals(this.englishName, userDTO.englishName) &&
-            Objects.equals(this.email, userDTO.email) &&
-            Objects.equals(this.phone, userDTO.phone) &&
-            Objects.equals(this.deptName, userDTO.deptName) &&
-            Objects.equals(this.number, userDTO.number) &&
-            Objects.equals(this.updateTime, userDTO.updateTime) &&
-            Objects.equals(this.isHardTerminal, userDTO.isHardTerminal) &&
-            Objects.equals(this.vmrId, userDTO.vmrId) &&
-            Objects.equals(this.signature, userDTO.signature) &&
-            Objects.equals(this.title, userDTO.title) &&
-            Objects.equals(this.description, userDTO.description) &&
-            Objects.equals(this.hidePhone, userDTO.hidePhone) &&
-            Objects.equals(this.type, userDTO.type);
+        return Objects.equals(this.id, userDTO.id) && Objects.equals(this.statusCode, userDTO.statusCode)
+            && Objects.equals(this.account, userDTO.account) && Objects.equals(this.name, userDTO.name)
+            && Objects.equals(this.englishName, userDTO.englishName) && Objects.equals(this.email, userDTO.email)
+            && Objects.equals(this.phone, userDTO.phone) && Objects.equals(this.deptName, userDTO.deptName)
+            && Objects.equals(this.number, userDTO.number) && Objects.equals(this.updateTime, userDTO.updateTime)
+            && Objects.equals(this.isHardTerminal, userDTO.isHardTerminal) && Objects.equals(this.vmrId, userDTO.vmrId)
+            && Objects.equals(this.signature, userDTO.signature) && Objects.equals(this.title, userDTO.title)
+            && Objects.equals(this.description, userDTO.description)
+            && Objects.equals(this.hidePhone, userDTO.hidePhone) && Objects.equals(this.type, userDTO.type);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, statusCode, account, name, englishName, email, phone, deptName, number, updateTime, isHardTerminal, vmrId, signature, title, description, hidePhone, type);
+        return Objects.hash(id,
+            statusCode,
+            account,
+            name,
+            englishName,
+            email,
+            phone,
+            deptName,
+            number,
+            updateTime,
+            isHardTerminal,
+            vmrId,
+            signature,
+            title,
+            description,
+            hidePhone,
+            type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -549,16 +431,13 @@ public class UserDTO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

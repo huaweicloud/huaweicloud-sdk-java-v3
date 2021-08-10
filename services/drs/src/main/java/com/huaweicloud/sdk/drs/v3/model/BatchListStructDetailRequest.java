@@ -1,79 +1,48 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.BatchQueryJobReqPage;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class BatchListStructDetailRequest  {
+/** Request Object */
+public class BatchListStructDetailRequest {
 
-    /**
-     * 数据库支持迁移对象类型
-     */
+    /** 数据库支持迁移对象类型 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum DATABASE for value: "database"
-         */
+        /** Enum DATABASE for value: "database" */
         public static final TypeEnum DATABASE = new TypeEnum("database");
-        
-        /**
-         * Enum SCHEMA for value: "schema"
-         */
+
+        /** Enum SCHEMA for value: "schema" */
         public static final TypeEnum SCHEMA = new TypeEnum("schema");
-        
-        /**
-         * Enum TABLE for value: "table"
-         */
+
+        /** Enum TABLE for value: "table" */
         public static final TypeEnum TABLE = new TypeEnum("table");
-        
-        /**
-         * Enum VIEW for value: "view"
-         */
+
+        /** Enum VIEW for value: "view" */
         public static final TypeEnum VIEW = new TypeEnum("view");
-        
-        /**
-         * Enum PROCEDURE for value: "procedure"
-         */
+
+        /** Enum PROCEDURE for value: "procedure" */
         public static final TypeEnum PROCEDURE = new TypeEnum("procedure");
-        
-        /**
-         * Enum TRIGGER for value: "trigger"
-         */
+
+        /** Enum TRIGGER for value: "trigger" */
         public static final TypeEnum TRIGGER = new TypeEnum("trigger");
-        
-        /**
-         * Enum INDEX for value: "index"
-         */
+
+        /** Enum INDEX for value: "index" */
         public static final TypeEnum INDEX = new TypeEnum("index");
-        
-        /**
-         * Enum TABLE_INDEXS for value: "table_indexs"
-         */
+
+        /** Enum TABLE_INDEXS for value: "table_indexs" */
         public static final TypeEnum TABLE_INDEXS = new TypeEnum("table_indexs");
-        
-        /**
-         * Enum TABLE_STRUCTURE for value: "table_structure"
-         */
+
+        /** Enum TABLE_STRUCTURE for value: "table_structure" */
         public static final TypeEnum TABLE_STRUCTURE = new TypeEnum("table_structure");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -109,7 +78,7 @@ public class BatchListStructDetailRequest  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -120,7 +89,7 @@ public class BatchListStructDetailRequest  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -144,27 +113,19 @@ public class BatchListStructDetailRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
-    /**
-     * 请求语言类型
-     */
+
+    /** 请求语言类型 */
     public static final class XLanguageEnum {
 
-        
-        /**
-         * Enum EN_US for value: "en-us"
-         */
+        /** Enum EN_US for value: "en-us" */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
-        
-        /**
-         * Enum ZH_CN for value: "zh-cn"
-         */
+
+        /** Enum ZH_CN for value: "zh-cn" */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
-        
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
 
@@ -193,7 +154,7 @@ public class BatchListStructDetailRequest  {
 
         @JsonCreator
         public static XLanguageEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -204,7 +165,7 @@ public class BatchListStructDetailRequest  {
         }
 
         public static XLanguageEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -228,16 +189,14 @@ public class BatchListStructDetailRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private XLanguageEnum xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private BatchQueryJobReqPage body;
 
     public BatchListStructDetailRequest withType(TypeEnum type) {
@@ -245,13 +204,9 @@ public class BatchListStructDetailRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库支持迁移对象类型
-     * @return type
-     */
+    /** 数据库支持迁移对象类型
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -260,22 +215,16 @@ public class BatchListStructDetailRequest  {
         this.type = type;
     }
 
-    
-
     public BatchListStructDetailRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求语言类型
-     * @return xLanguage
-     */
+    /** 请求语言类型
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
         return xLanguage;
     }
@@ -284,27 +233,23 @@ public class BatchListStructDetailRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public BatchListStructDetailRequest withBody(BatchQueryJobReqPage body) {
         this.body = body;
         return this;
     }
 
     public BatchListStructDetailRequest withBody(Consumer<BatchQueryJobReqPage> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new BatchQueryJobReqPage();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public BatchQueryJobReqPage getBody() {
         return body;
     }
@@ -312,8 +257,6 @@ public class BatchListStructDetailRequest  {
     public void setBody(BatchQueryJobReqPage body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -324,14 +267,16 @@ public class BatchListStructDetailRequest  {
             return false;
         }
         BatchListStructDetailRequest batchListStructDetailRequest = (BatchListStructDetailRequest) o;
-        return Objects.equals(this.type, batchListStructDetailRequest.type) &&
-            Objects.equals(this.xLanguage, batchListStructDetailRequest.xLanguage) &&
-            Objects.equals(this.body, batchListStructDetailRequest.body);
+        return Objects.equals(this.type, batchListStructDetailRequest.type)
+            && Objects.equals(this.xLanguage, batchListStructDetailRequest.xLanguage)
+            && Objects.equals(this.body, batchListStructDetailRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, xLanguage, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -342,16 +287,13 @@ public class BatchListStructDetailRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

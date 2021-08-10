@@ -6,41 +6,40 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.ocr.v1.model.*;
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class OcrMeta {
 
-    public static final HttpRequestDef<RecognizeAutoClassificationRequest, RecognizeAutoClassificationResponse> recognizeAutoClassification = genForrecognizeAutoClassification();
+    public static final HttpRequestDef<RecognizeAutoClassificationRequest, RecognizeAutoClassificationResponse> recognizeAutoClassification =
+        genForrecognizeAutoClassification();
 
     private static HttpRequestDef<RecognizeAutoClassificationRequest, RecognizeAutoClassificationResponse> genForrecognizeAutoClassification() {
         // basic
         HttpRequestDef.Builder<RecognizeAutoClassificationRequest, RecognizeAutoClassificationResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RecognizeAutoClassificationRequest.class, RecognizeAutoClassificationResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RecognizeAutoClassificationRequest.class,
+                    RecognizeAutoClassificationResponse.class)
                 .withName("RecognizeAutoClassification")
                 .withUri("/v2/{project_id}/ocr/auto-classification")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<AutoClassificationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            AutoClassificationRequestBody.class,
+            TypeCasts.uncheckedConversion(AutoClassificationRequestBody.class),
             f -> f.withMarshaller(RecognizeAutoClassificationRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RecognizeBankcardRequest, RecognizeBankcardResponse> recognizeBankcard = genForrecognizeBankcard();
+    public static final HttpRequestDef<RecognizeBankcardRequest, RecognizeBankcardResponse> recognizeBankcard =
+        genForrecognizeBankcard();
 
     private static HttpRequestDef<RecognizeBankcardRequest, RecognizeBankcardResponse> genForrecognizeBankcard() {
         // basic
@@ -51,212 +50,198 @@ public class OcrMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<BankcardRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BankcardRequestBody.class,
+            TypeCasts.uncheckedConversion(BankcardRequestBody.class),
             f -> f.withMarshaller(RecognizeBankcardRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RecognizeBusinessCardRequest, RecognizeBusinessCardResponse> recognizeBusinessCard = genForrecognizeBusinessCard();
+    public static final HttpRequestDef<RecognizeBusinessCardRequest, RecognizeBusinessCardResponse> recognizeBusinessCard =
+        genForrecognizeBusinessCard();
 
     private static HttpRequestDef<RecognizeBusinessCardRequest, RecognizeBusinessCardResponse> genForrecognizeBusinessCard() {
         // basic
-        HttpRequestDef.Builder<RecognizeBusinessCardRequest, RecognizeBusinessCardResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RecognizeBusinessCardRequest.class, RecognizeBusinessCardResponse.class)
-                .withName("RecognizeBusinessCard")
-                .withUri("/v2/{project_id}/ocr/business-card")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<RecognizeBusinessCardRequest, RecognizeBusinessCardResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RecognizeBusinessCardRequest.class, RecognizeBusinessCardResponse.class)
+            .withName("RecognizeBusinessCard")
+            .withUri("/v2/{project_id}/ocr/business-card")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<BusinessCardRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BusinessCardRequestBody.class,
+            TypeCasts.uncheckedConversion(BusinessCardRequestBody.class),
             f -> f.withMarshaller(RecognizeBusinessCardRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RecognizeBusinessLicenseRequest, RecognizeBusinessLicenseResponse> recognizeBusinessLicense = genForrecognizeBusinessLicense();
+    public static final HttpRequestDef<RecognizeBusinessLicenseRequest, RecognizeBusinessLicenseResponse> recognizeBusinessLicense =
+        genForrecognizeBusinessLicense();
 
     private static HttpRequestDef<RecognizeBusinessLicenseRequest, RecognizeBusinessLicenseResponse> genForrecognizeBusinessLicense() {
         // basic
         HttpRequestDef.Builder<RecognizeBusinessLicenseRequest, RecognizeBusinessLicenseResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RecognizeBusinessLicenseRequest.class, RecognizeBusinessLicenseResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST, RecognizeBusinessLicenseRequest.class, RecognizeBusinessLicenseResponse.class)
                 .withName("RecognizeBusinessLicense")
                 .withUri("/v2/{project_id}/ocr/business-license")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<BusinessLicenseRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BusinessLicenseRequestBody.class,
+            TypeCasts.uncheckedConversion(BusinessLicenseRequestBody.class),
             f -> f.withMarshaller(RecognizeBusinessLicenseRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RecognizeDriverLicenseRequest, RecognizeDriverLicenseResponse> recognizeDriverLicense = genForrecognizeDriverLicense();
+    public static final HttpRequestDef<RecognizeDriverLicenseRequest, RecognizeDriverLicenseResponse> recognizeDriverLicense =
+        genForrecognizeDriverLicense();
 
     private static HttpRequestDef<RecognizeDriverLicenseRequest, RecognizeDriverLicenseResponse> genForrecognizeDriverLicense() {
         // basic
-        HttpRequestDef.Builder<RecognizeDriverLicenseRequest, RecognizeDriverLicenseResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RecognizeDriverLicenseRequest.class, RecognizeDriverLicenseResponse.class)
-                .withName("RecognizeDriverLicense")
-                .withUri("/v2/{project_id}/ocr/driver-license")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<RecognizeDriverLicenseRequest, RecognizeDriverLicenseResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RecognizeDriverLicenseRequest.class, RecognizeDriverLicenseResponse.class)
+            .withName("RecognizeDriverLicense")
+            .withUri("/v2/{project_id}/ocr/driver-license")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<DriverLicenseRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DriverLicenseRequestBody.class,
+            TypeCasts.uncheckedConversion(DriverLicenseRequestBody.class),
             f -> f.withMarshaller(RecognizeDriverLicenseRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RecognizeFlightItineraryRequest, RecognizeFlightItineraryResponse> recognizeFlightItinerary = genForrecognizeFlightItinerary();
+    public static final HttpRequestDef<RecognizeFlightItineraryRequest, RecognizeFlightItineraryResponse> recognizeFlightItinerary =
+        genForrecognizeFlightItinerary();
 
     private static HttpRequestDef<RecognizeFlightItineraryRequest, RecognizeFlightItineraryResponse> genForrecognizeFlightItinerary() {
         // basic
         HttpRequestDef.Builder<RecognizeFlightItineraryRequest, RecognizeFlightItineraryResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RecognizeFlightItineraryRequest.class, RecognizeFlightItineraryResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST, RecognizeFlightItineraryRequest.class, RecognizeFlightItineraryResponse.class)
                 .withName("RecognizeFlightItinerary")
                 .withUri("/v2/{project_id}/ocr/flight-itinerary")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<FlightItineraryRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            FlightItineraryRequestBody.class,
+            TypeCasts.uncheckedConversion(FlightItineraryRequestBody.class),
             f -> f.withMarshaller(RecognizeFlightItineraryRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RecognizeGeneralTableRequest, RecognizeGeneralTableResponse> recognizeGeneralTable = genForrecognizeGeneralTable();
+    public static final HttpRequestDef<RecognizeGeneralTableRequest, RecognizeGeneralTableResponse> recognizeGeneralTable =
+        genForrecognizeGeneralTable();
 
     private static HttpRequestDef<RecognizeGeneralTableRequest, RecognizeGeneralTableResponse> genForrecognizeGeneralTable() {
         // basic
-        HttpRequestDef.Builder<RecognizeGeneralTableRequest, RecognizeGeneralTableResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RecognizeGeneralTableRequest.class, RecognizeGeneralTableResponse.class)
-                .withName("RecognizeGeneralTable")
-                .withUri("/v2/{project_id}/ocr/general-table")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<RecognizeGeneralTableRequest, RecognizeGeneralTableResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RecognizeGeneralTableRequest.class, RecognizeGeneralTableResponse.class)
+            .withName("RecognizeGeneralTable")
+            .withUri("/v2/{project_id}/ocr/general-table")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<GeneralTableRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            GeneralTableRequestBody.class,
+            TypeCasts.uncheckedConversion(GeneralTableRequestBody.class),
             f -> f.withMarshaller(RecognizeGeneralTableRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RecognizeGeneralTextRequest, RecognizeGeneralTextResponse> recognizeGeneralText = genForrecognizeGeneralText();
+    public static final HttpRequestDef<RecognizeGeneralTextRequest, RecognizeGeneralTextResponse> recognizeGeneralText =
+        genForrecognizeGeneralText();
 
     private static HttpRequestDef<RecognizeGeneralTextRequest, RecognizeGeneralTextResponse> genForrecognizeGeneralText() {
         // basic
-        HttpRequestDef.Builder<RecognizeGeneralTextRequest, RecognizeGeneralTextResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RecognizeGeneralTextRequest.class, RecognizeGeneralTextResponse.class)
-                .withName("RecognizeGeneralText")
-                .withUri("/v2/{project_id}/ocr/general-text")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<RecognizeGeneralTextRequest, RecognizeGeneralTextResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RecognizeGeneralTextRequest.class, RecognizeGeneralTextResponse.class)
+            .withName("RecognizeGeneralText")
+            .withUri("/v2/{project_id}/ocr/general-text")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<GeneralTextRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            GeneralTextRequestBody.class,
+            TypeCasts.uncheckedConversion(GeneralTextRequestBody.class),
             f -> f.withMarshaller(RecognizeGeneralTextRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RecognizeHandwritingRequest, RecognizeHandwritingResponse> recognizeHandwriting = genForrecognizeHandwriting();
+    public static final HttpRequestDef<RecognizeHandwritingRequest, RecognizeHandwritingResponse> recognizeHandwriting =
+        genForrecognizeHandwriting();
 
     private static HttpRequestDef<RecognizeHandwritingRequest, RecognizeHandwritingResponse> genForrecognizeHandwriting() {
         // basic
-        HttpRequestDef.Builder<RecognizeHandwritingRequest, RecognizeHandwritingResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RecognizeHandwritingRequest.class, RecognizeHandwritingResponse.class)
-                .withName("RecognizeHandwriting")
-                .withUri("/v2/{project_id}/ocr/handwriting")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<RecognizeHandwritingRequest, RecognizeHandwritingResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RecognizeHandwritingRequest.class, RecognizeHandwritingResponse.class)
+            .withName("RecognizeHandwriting")
+            .withUri("/v2/{project_id}/ocr/handwriting")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<HandwritingRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            HandwritingRequestBody.class,
+            TypeCasts.uncheckedConversion(HandwritingRequestBody.class),
             f -> f.withMarshaller(RecognizeHandwritingRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RecognizeIdCardRequest, RecognizeIdCardResponse> recognizeIdCard = genForrecognizeIdCard();
+    public static final HttpRequestDef<RecognizeIdCardRequest, RecognizeIdCardResponse> recognizeIdCard =
+        genForrecognizeIdCard();
 
     private static HttpRequestDef<RecognizeIdCardRequest, RecognizeIdCardResponse> genForrecognizeIdCard() {
         // basic
@@ -267,50 +252,46 @@ public class OcrMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<IdCardRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            IdCardRequestBody.class,
+            TypeCasts.uncheckedConversion(IdCardRequestBody.class),
             f -> f.withMarshaller(RecognizeIdCardRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RecognizeLicensePlateRequest, RecognizeLicensePlateResponse> recognizeLicensePlate = genForrecognizeLicensePlate();
+    public static final HttpRequestDef<RecognizeLicensePlateRequest, RecognizeLicensePlateResponse> recognizeLicensePlate =
+        genForrecognizeLicensePlate();
 
     private static HttpRequestDef<RecognizeLicensePlateRequest, RecognizeLicensePlateResponse> genForrecognizeLicensePlate() {
         // basic
-        HttpRequestDef.Builder<RecognizeLicensePlateRequest, RecognizeLicensePlateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RecognizeLicensePlateRequest.class, RecognizeLicensePlateResponse.class)
-                .withName("RecognizeLicensePlate")
-                .withUri("/v2/{project_id}/ocr/license-plate")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<RecognizeLicensePlateRequest, RecognizeLicensePlateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RecognizeLicensePlateRequest.class, RecognizeLicensePlateResponse.class)
+            .withName("RecognizeLicensePlate")
+            .withUri("/v2/{project_id}/ocr/license-plate")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<LicensePlateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            LicensePlateRequestBody.class,
+            TypeCasts.uncheckedConversion(LicensePlateRequestBody.class),
             f -> f.withMarshaller(RecognizeLicensePlateRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RecognizeMvsInvoiceRequest, RecognizeMvsInvoiceResponse> recognizeMvsInvoice = genForrecognizeMvsInvoice();
+    public static final HttpRequestDef<RecognizeMvsInvoiceRequest, RecognizeMvsInvoiceResponse> recognizeMvsInvoice =
+        genForrecognizeMvsInvoice();
 
     private static HttpRequestDef<RecognizeMvsInvoiceRequest, RecognizeMvsInvoiceResponse> genForrecognizeMvsInvoice() {
         // basic
@@ -321,23 +302,21 @@ public class OcrMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<MvsInvoiceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            MvsInvoiceRequestBody.class,
+            TypeCasts.uncheckedConversion(MvsInvoiceRequestBody.class),
             f -> f.withMarshaller(RecognizeMvsInvoiceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RecognizePassportRequest, RecognizePassportResponse> recognizePassport = genForrecognizePassport();
+    public static final HttpRequestDef<RecognizePassportRequest, RecognizePassportResponse> recognizePassport =
+        genForrecognizePassport();
 
     private static HttpRequestDef<RecognizePassportRequest, RecognizePassportResponse> genForrecognizePassport() {
         // basic
@@ -348,158 +327,149 @@ public class OcrMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<PassportRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            PassportRequestBody.class,
+            TypeCasts.uncheckedConversion(PassportRequestBody.class),
             f -> f.withMarshaller(RecognizePassportRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RecognizeQuotaInvoiceRequest, RecognizeQuotaInvoiceResponse> recognizeQuotaInvoice = genForrecognizeQuotaInvoice();
+    public static final HttpRequestDef<RecognizeQuotaInvoiceRequest, RecognizeQuotaInvoiceResponse> recognizeQuotaInvoice =
+        genForrecognizeQuotaInvoice();
 
     private static HttpRequestDef<RecognizeQuotaInvoiceRequest, RecognizeQuotaInvoiceResponse> genForrecognizeQuotaInvoice() {
         // basic
-        HttpRequestDef.Builder<RecognizeQuotaInvoiceRequest, RecognizeQuotaInvoiceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RecognizeQuotaInvoiceRequest.class, RecognizeQuotaInvoiceResponse.class)
-                .withName("RecognizeQuotaInvoice")
-                .withUri("/v2/{project_id}/ocr/quota-invoice")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<RecognizeQuotaInvoiceRequest, RecognizeQuotaInvoiceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RecognizeQuotaInvoiceRequest.class, RecognizeQuotaInvoiceResponse.class)
+            .withName("RecognizeQuotaInvoice")
+            .withUri("/v2/{project_id}/ocr/quota-invoice")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<QuotaInvoiceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            QuotaInvoiceRequestBody.class,
+            TypeCasts.uncheckedConversion(QuotaInvoiceRequestBody.class),
             f -> f.withMarshaller(RecognizeQuotaInvoiceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RecognizeTaxiInvoiceRequest, RecognizeTaxiInvoiceResponse> recognizeTaxiInvoice = genForrecognizeTaxiInvoice();
+    public static final HttpRequestDef<RecognizeTaxiInvoiceRequest, RecognizeTaxiInvoiceResponse> recognizeTaxiInvoice =
+        genForrecognizeTaxiInvoice();
 
     private static HttpRequestDef<RecognizeTaxiInvoiceRequest, RecognizeTaxiInvoiceResponse> genForrecognizeTaxiInvoice() {
         // basic
-        HttpRequestDef.Builder<RecognizeTaxiInvoiceRequest, RecognizeTaxiInvoiceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RecognizeTaxiInvoiceRequest.class, RecognizeTaxiInvoiceResponse.class)
-                .withName("RecognizeTaxiInvoice")
-                .withUri("/v2/{project_id}/ocr/taxi-invoice")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<RecognizeTaxiInvoiceRequest, RecognizeTaxiInvoiceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RecognizeTaxiInvoiceRequest.class, RecognizeTaxiInvoiceResponse.class)
+            .withName("RecognizeTaxiInvoice")
+            .withUri("/v2/{project_id}/ocr/taxi-invoice")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<TaxiInvoiceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TaxiInvoiceRequestBody.class,
+            TypeCasts.uncheckedConversion(TaxiInvoiceRequestBody.class),
             f -> f.withMarshaller(RecognizeTaxiInvoiceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RecognizeTollInvoiceRequest, RecognizeTollInvoiceResponse> recognizeTollInvoice = genForrecognizeTollInvoice();
+    public static final HttpRequestDef<RecognizeTollInvoiceRequest, RecognizeTollInvoiceResponse> recognizeTollInvoice =
+        genForrecognizeTollInvoice();
 
     private static HttpRequestDef<RecognizeTollInvoiceRequest, RecognizeTollInvoiceResponse> genForrecognizeTollInvoice() {
         // basic
-        HttpRequestDef.Builder<RecognizeTollInvoiceRequest, RecognizeTollInvoiceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RecognizeTollInvoiceRequest.class, RecognizeTollInvoiceResponse.class)
-                .withName("RecognizeTollInvoice")
-                .withUri("/v2/{project_id}/ocr/toll-invoice")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<RecognizeTollInvoiceRequest, RecognizeTollInvoiceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RecognizeTollInvoiceRequest.class, RecognizeTollInvoiceResponse.class)
+            .withName("RecognizeTollInvoice")
+            .withUri("/v2/{project_id}/ocr/toll-invoice")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<TollInvoiceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TollInvoiceRequestBody.class,
+            TypeCasts.uncheckedConversion(TollInvoiceRequestBody.class),
             f -> f.withMarshaller(RecognizeTollInvoiceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RecognizeTrainTicketRequest, RecognizeTrainTicketResponse> recognizeTrainTicket = genForrecognizeTrainTicket();
+    public static final HttpRequestDef<RecognizeTrainTicketRequest, RecognizeTrainTicketResponse> recognizeTrainTicket =
+        genForrecognizeTrainTicket();
 
     private static HttpRequestDef<RecognizeTrainTicketRequest, RecognizeTrainTicketResponse> genForrecognizeTrainTicket() {
         // basic
-        HttpRequestDef.Builder<RecognizeTrainTicketRequest, RecognizeTrainTicketResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RecognizeTrainTicketRequest.class, RecognizeTrainTicketResponse.class)
-                .withName("RecognizeTrainTicket")
-                .withUri("/v2/{project_id}/ocr/train-ticket")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<RecognizeTrainTicketRequest, RecognizeTrainTicketResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RecognizeTrainTicketRequest.class, RecognizeTrainTicketResponse.class)
+            .withName("RecognizeTrainTicket")
+            .withUri("/v2/{project_id}/ocr/train-ticket")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<TrainTicketRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TrainTicketRequestBody.class,
+            TypeCasts.uncheckedConversion(TrainTicketRequestBody.class),
             f -> f.withMarshaller(RecognizeTrainTicketRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RecognizeTransportationLicenseRequest, RecognizeTransportationLicenseResponse> recognizeTransportationLicense = genForrecognizeTransportationLicense();
+    public static final HttpRequestDef<RecognizeTransportationLicenseRequest, RecognizeTransportationLicenseResponse> recognizeTransportationLicense =
+        genForrecognizeTransportationLicense();
 
     private static HttpRequestDef<RecognizeTransportationLicenseRequest, RecognizeTransportationLicenseResponse> genForrecognizeTransportationLicense() {
         // basic
         HttpRequestDef.Builder<RecognizeTransportationLicenseRequest, RecognizeTransportationLicenseResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RecognizeTransportationLicenseRequest.class, RecognizeTransportationLicenseResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RecognizeTransportationLicenseRequest.class,
+                    RecognizeTransportationLicenseResponse.class)
                 .withName("RecognizeTransportationLicense")
                 .withUri("/v2/{project_id}/ocr/transportation-license")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<TransportationLicenseRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TransportationLicenseRequestBody.class,
+            TypeCasts.uncheckedConversion(TransportationLicenseRequestBody.class),
             f -> f.withMarshaller(RecognizeTransportationLicenseRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RecognizeVatInvoiceRequest, RecognizeVatInvoiceResponse> recognizeVatInvoice = genForrecognizeVatInvoice();
+    public static final HttpRequestDef<RecognizeVatInvoiceRequest, RecognizeVatInvoiceResponse> recognizeVatInvoice =
+        genForrecognizeVatInvoice();
 
     private static HttpRequestDef<RecognizeVatInvoiceRequest, RecognizeVatInvoiceResponse> genForrecognizeVatInvoice() {
         // basic
@@ -510,50 +480,46 @@ public class OcrMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<VatInvoiceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            VatInvoiceRequestBody.class,
+            TypeCasts.uncheckedConversion(VatInvoiceRequestBody.class),
             f -> f.withMarshaller(RecognizeVatInvoiceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RecognizeVehicleLicenseRequest, RecognizeVehicleLicenseResponse> recognizeVehicleLicense = genForrecognizeVehicleLicense();
+    public static final HttpRequestDef<RecognizeVehicleLicenseRequest, RecognizeVehicleLicenseResponse> recognizeVehicleLicense =
+        genForrecognizeVehicleLicense();
 
     private static HttpRequestDef<RecognizeVehicleLicenseRequest, RecognizeVehicleLicenseResponse> genForrecognizeVehicleLicense() {
         // basic
-        HttpRequestDef.Builder<RecognizeVehicleLicenseRequest, RecognizeVehicleLicenseResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, RecognizeVehicleLicenseRequest.class, RecognizeVehicleLicenseResponse.class)
-                .withName("RecognizeVehicleLicense")
-                .withUri("/v2/{project_id}/ocr/vehicle-license")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<RecognizeVehicleLicenseRequest, RecognizeVehicleLicenseResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RecognizeVehicleLicenseRequest.class, RecognizeVehicleLicenseResponse.class)
+            .withName("RecognizeVehicleLicense")
+            .withUri("/v2/{project_id}/ocr/vehicle-license")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<VehicleLicenseRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            VehicleLicenseRequestBody.class,
+            TypeCasts.uncheckedConversion(VehicleLicenseRequestBody.class),
             f -> f.withMarshaller(RecognizeVehicleLicenseRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RecognizeWebImageRequest, RecognizeWebImageResponse> recognizeWebImage = genForrecognizeWebImage();
+    public static final HttpRequestDef<RecognizeWebImageRequest, RecognizeWebImageResponse> recognizeWebImage =
+        genForrecognizeWebImage();
 
     private static HttpRequestDef<RecognizeWebImageRequest, RecognizeWebImageResponse> genForrecognizeWebImage() {
         // basic
@@ -564,18 +530,15 @@ public class OcrMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<WebImageRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            WebImageRequestBody.class,
+            TypeCasts.uncheckedConversion(WebImageRequestBody.class),
             f -> f.withMarshaller(RecognizeWebImageRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -591,18 +554,15 @@ public class OcrMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<VinRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            VinRequestBody.class,
+            TypeCasts.uncheckedConversion(VinRequestBody.class),
             f -> f.withMarshaller(RecognizeVinRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

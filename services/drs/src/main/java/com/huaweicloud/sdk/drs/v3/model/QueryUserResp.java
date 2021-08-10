@@ -1,60 +1,44 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.QueryRoleDetailResp;
-import com.huaweicloud.sdk.drs.v3.model.QueryUserDetailResp;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 迁移用户响应体
- */
-public class QueryUserResp  {
-
-
+/** 迁移用户响应体 */
+public class QueryUserResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
+
     private String jobId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_global_password")
-    
+    @JsonProperty(value = "is_global_password")
+
     private String isGlobalPassword;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message")
-    
+    @JsonProperty(value = "message")
+
     private String message;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_list")
-    
+    @JsonProperty(value = "user_list")
+
     private List<QueryUserDetailResp> userList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roles_list")
-    
+    @JsonProperty(value = "roles_list")
+
     private List<QueryRoleDetailResp> rolesList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_success")
-    
+    @JsonProperty(value = "is_success")
+
     private Boolean isSuccess;
 
     public QueryUserResp withJobId(String jobId) {
@@ -62,13 +46,9 @@ public class QueryUserResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务id
-     * @return jobId
-     */
+    /** 任务id
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -77,20 +57,14 @@ public class QueryUserResp  {
         this.jobId = jobId;
     }
 
-    
-
     public QueryUserResp withIsGlobalPassword(String isGlobalPassword) {
         this.isGlobalPassword = isGlobalPassword;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否使用全局密码
-     * @return isGlobalPassword
-     */
+    /** 是否使用全局密码
+     * 
+     * @return isGlobalPassword */
     public String getIsGlobalPassword() {
         return isGlobalPassword;
     }
@@ -99,20 +73,14 @@ public class QueryUserResp  {
         this.isGlobalPassword = isGlobalPassword;
     }
 
-    
-
     public QueryUserResp withMessage(String message) {
         this.message = message;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误码
-     * @return message
-     */
+    /** 错误码
+     * 
+     * @return message */
     public String getMessage() {
         return message;
     }
@@ -121,16 +89,13 @@ public class QueryUserResp  {
         this.message = message;
     }
 
-    
-
     public QueryUserResp withUserList(List<QueryUserDetailResp> userList) {
         this.userList = userList;
         return this;
     }
 
-    
     public QueryUserResp addUserListItem(QueryUserDetailResp userListItem) {
-        if(this.userList == null) {
+        if (this.userList == null) {
             this.userList = new ArrayList<>();
         }
         this.userList.add(userListItem);
@@ -138,17 +103,16 @@ public class QueryUserResp  {
     }
 
     public QueryUserResp withUserList(Consumer<List<QueryUserDetailResp>> userListSetter) {
-        if(this.userList == null) {
+        if (this.userList == null) {
             this.userList = new ArrayList<>();
         }
         userListSetter.accept(this.userList);
         return this;
     }
 
-    /**
-     * 用户列表数据
-     * @return userList
-     */
+    /** 用户列表数据
+     * 
+     * @return userList */
     public List<QueryUserDetailResp> getUserList() {
         return userList;
     }
@@ -157,16 +121,13 @@ public class QueryUserResp  {
         this.userList = userList;
     }
 
-    
-
     public QueryUserResp withRolesList(List<QueryRoleDetailResp> rolesList) {
         this.rolesList = rolesList;
         return this;
     }
 
-    
     public QueryUserResp addRolesListItem(QueryRoleDetailResp rolesListItem) {
-        if(this.rolesList == null) {
+        if (this.rolesList == null) {
             this.rolesList = new ArrayList<>();
         }
         this.rolesList.add(rolesListItem);
@@ -174,17 +135,16 @@ public class QueryUserResp  {
     }
 
     public QueryUserResp withRolesList(Consumer<List<QueryRoleDetailResp>> rolesListSetter) {
-        if(this.rolesList == null) {
+        if (this.rolesList == null) {
             this.rolesList = new ArrayList<>();
         }
         rolesListSetter.accept(this.rolesList);
         return this;
     }
 
-    /**
-     * 角色列表数据
-     * @return rolesList
-     */
+    /** 角色列表数据
+     * 
+     * @return rolesList */
     public List<QueryRoleDetailResp> getRolesList() {
         return rolesList;
     }
@@ -193,20 +153,14 @@ public class QueryUserResp  {
         this.rolesList = rolesList;
     }
 
-    
-
     public QueryUserResp withIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否成功
-     * @return isSuccess
-     */
+    /** 是否成功
+     * 
+     * @return isSuccess */
     public Boolean getIsSuccess() {
         return isSuccess;
     }
@@ -214,8 +168,6 @@ public class QueryUserResp  {
     public void setIsSuccess(Boolean isSuccess) {
         this.isSuccess = isSuccess;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -226,17 +178,19 @@ public class QueryUserResp  {
             return false;
         }
         QueryUserResp queryUserResp = (QueryUserResp) o;
-        return Objects.equals(this.jobId, queryUserResp.jobId) &&
-            Objects.equals(this.isGlobalPassword, queryUserResp.isGlobalPassword) &&
-            Objects.equals(this.message, queryUserResp.message) &&
-            Objects.equals(this.userList, queryUserResp.userList) &&
-            Objects.equals(this.rolesList, queryUserResp.rolesList) &&
-            Objects.equals(this.isSuccess, queryUserResp.isSuccess);
+        return Objects.equals(this.jobId, queryUserResp.jobId)
+            && Objects.equals(this.isGlobalPassword, queryUserResp.isGlobalPassword)
+            && Objects.equals(this.message, queryUserResp.message)
+            && Objects.equals(this.userList, queryUserResp.userList)
+            && Objects.equals(this.rolesList, queryUserResp.rolesList)
+            && Objects.equals(this.isSuccess, queryUserResp.isSuccess);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobId, isGlobalPassword, message, userList, rolesList, isSuccess);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -250,16 +204,13 @@ public class QueryUserResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

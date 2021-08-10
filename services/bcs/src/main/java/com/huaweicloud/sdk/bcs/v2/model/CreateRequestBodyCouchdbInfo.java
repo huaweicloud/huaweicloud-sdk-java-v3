@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * couchDB信息
- */
-public class CreateRequestBodyCouchdbInfo  {
-
-
+/** couchDB信息 */
+public class CreateRequestBodyCouchdbInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_name")
-    
+    @JsonProperty(value = "user_name")
+
     private String userName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="password")
-    
+    @JsonProperty(value = "password")
+
     private String password;
 
     public CreateRequestBodyCouchdbInfo withUserName(String userName) {
@@ -34,13 +23,9 @@ public class CreateRequestBodyCouchdbInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * couchDB用户名
-     * @return userName
-     */
+    /** couchDB用户名
+     * 
+     * @return userName */
     public String getUserName() {
         return userName;
     }
@@ -49,20 +34,14 @@ public class CreateRequestBodyCouchdbInfo  {
         this.userName = userName;
     }
 
-    
-
     public CreateRequestBodyCouchdbInfo withPassword(String password) {
         this.password = password;
         return this;
     }
 
-    
-
-
-    /**
-     * couchDB密码
-     * @return password
-     */
+    /** couchDB密码
+     * 
+     * @return password */
     public String getPassword() {
         return password;
     }
@@ -70,8 +49,6 @@ public class CreateRequestBodyCouchdbInfo  {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class CreateRequestBodyCouchdbInfo  {
             return false;
         }
         CreateRequestBodyCouchdbInfo createRequestBodyCouchdbInfo = (CreateRequestBodyCouchdbInfo) o;
-        return Objects.equals(this.userName, createRequestBodyCouchdbInfo.userName) &&
-            Objects.equals(this.password, createRequestBodyCouchdbInfo.password);
+        return Objects.equals(this.userName, createRequestBodyCouchdbInfo.userName)
+            && Objects.equals(this.password, createRequestBodyCouchdbInfo.password);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(userName, password);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class CreateRequestBodyCouchdbInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

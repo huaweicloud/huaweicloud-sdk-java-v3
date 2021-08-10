@@ -27,9 +27,7 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 
 import java.io.IOException;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public class StrictFloatDeserializer extends JsonDeserializer<Float> {
 
     @Override

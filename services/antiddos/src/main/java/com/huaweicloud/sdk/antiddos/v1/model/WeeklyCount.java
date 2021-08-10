@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.antiddos.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * WeeklyCount
- */
-public class WeeklyCount  {
-
-
+/** WeeklyCount */
+public class WeeklyCount {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ddos_intercept_times")
-    
+    @JsonProperty(value = "ddos_intercept_times")
+
     private Integer ddosInterceptTimes;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ddos_blackhole_times")
-    
+    @JsonProperty(value = "ddos_blackhole_times")
+
     private Integer ddosBlackholeTimes;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_attack_bps")
-    
+    @JsonProperty(value = "max_attack_bps")
+
     private Integer maxAttackBps;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_attack_conns")
-    
+    @JsonProperty(value = "max_attack_conns")
+
     private Integer maxAttackConns;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="period_start_date")
-    
+    @JsonProperty(value = "period_start_date")
+
     private Long periodStartDate;
 
     public WeeklyCount withDdosInterceptTimes(Integer ddosInterceptTimes) {
@@ -52,13 +38,9 @@ public class WeeklyCount  {
         return this;
     }
 
-    
-
-
-    /**
-     * DDoS拦截次数
-     * @return ddosInterceptTimes
-     */
+    /** DDoS拦截次数
+     * 
+     * @return ddosInterceptTimes */
     public Integer getDdosInterceptTimes() {
         return ddosInterceptTimes;
     }
@@ -67,20 +49,14 @@ public class WeeklyCount  {
         this.ddosInterceptTimes = ddosInterceptTimes;
     }
 
-    
-
     public WeeklyCount withDdosBlackholeTimes(Integer ddosBlackholeTimes) {
         this.ddosBlackholeTimes = ddosBlackholeTimes;
         return this;
     }
 
-    
-
-
-    /**
-     * DDoS黑洞次数
-     * @return ddosBlackholeTimes
-     */
+    /** DDoS黑洞次数
+     * 
+     * @return ddosBlackholeTimes */
     public Integer getDdosBlackholeTimes() {
         return ddosBlackholeTimes;
     }
@@ -89,20 +65,14 @@ public class WeeklyCount  {
         this.ddosBlackholeTimes = ddosBlackholeTimes;
     }
 
-    
-
     public WeeklyCount withMaxAttackBps(Integer maxAttackBps) {
         this.maxAttackBps = maxAttackBps;
         return this;
     }
 
-    
-
-
-    /**
-     * 最大攻击流量
-     * @return maxAttackBps
-     */
+    /** 最大攻击流量
+     * 
+     * @return maxAttackBps */
     public Integer getMaxAttackBps() {
         return maxAttackBps;
     }
@@ -111,20 +81,14 @@ public class WeeklyCount  {
         this.maxAttackBps = maxAttackBps;
     }
 
-    
-
     public WeeklyCount withMaxAttackConns(Integer maxAttackConns) {
         this.maxAttackConns = maxAttackConns;
         return this;
     }
 
-    
-
-
-    /**
-     * 最大攻击连接数
-     * @return maxAttackConns
-     */
+    /** 最大攻击连接数
+     * 
+     * @return maxAttackConns */
     public Integer getMaxAttackConns() {
         return maxAttackConns;
     }
@@ -133,20 +97,14 @@ public class WeeklyCount  {
         this.maxAttackConns = maxAttackConns;
     }
 
-    
-
     public WeeklyCount withPeriodStartDate(Long periodStartDate) {
         this.periodStartDate = periodStartDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 开始时间
-     * @return periodStartDate
-     */
+    /** 开始时间
+     * 
+     * @return periodStartDate */
     public Long getPeriodStartDate() {
         return periodStartDate;
     }
@@ -154,8 +112,6 @@ public class WeeklyCount  {
     public void setPeriodStartDate(Long periodStartDate) {
         this.periodStartDate = periodStartDate;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,18 @@ public class WeeklyCount  {
             return false;
         }
         WeeklyCount weeklyCount = (WeeklyCount) o;
-        return Objects.equals(this.ddosInterceptTimes, weeklyCount.ddosInterceptTimes) &&
-            Objects.equals(this.ddosBlackholeTimes, weeklyCount.ddosBlackholeTimes) &&
-            Objects.equals(this.maxAttackBps, weeklyCount.maxAttackBps) &&
-            Objects.equals(this.maxAttackConns, weeklyCount.maxAttackConns) &&
-            Objects.equals(this.periodStartDate, weeklyCount.periodStartDate);
+        return Objects.equals(this.ddosInterceptTimes, weeklyCount.ddosInterceptTimes)
+            && Objects.equals(this.ddosBlackholeTimes, weeklyCount.ddosBlackholeTimes)
+            && Objects.equals(this.maxAttackBps, weeklyCount.maxAttackBps)
+            && Objects.equals(this.maxAttackConns, weeklyCount.maxAttackConns)
+            && Objects.equals(this.periodStartDate, weeklyCount.periodStartDate);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(ddosInterceptTimes, ddosBlackholeTimes, maxAttackBps, maxAttackConns, periodStartDate);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class WeeklyCount  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

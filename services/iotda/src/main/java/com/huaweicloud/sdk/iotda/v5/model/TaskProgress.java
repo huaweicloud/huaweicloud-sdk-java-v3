@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 任务执行状态统计对象，用于统计任务的整体执行情况。
- */
-public class TaskProgress  {
-
-
+/** 任务执行状态统计对象，用于统计任务的整体执行情况。 */
+public class TaskProgress {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="processing")
-    
+    @JsonProperty(value = "processing")
+
     private Integer processing;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="success")
-    
+    @JsonProperty(value = "success")
+
     private Integer success;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fail")
-    
+    @JsonProperty(value = "fail")
+
     private Integer fail;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="waitting")
-    
+    @JsonProperty(value = "waitting")
+
     private Integer waitting;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fail_wait_retry")
-    
+    @JsonProperty(value = "fail_wait_retry")
+
     private Integer failWaitRetry;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stopped")
-    
+    @JsonProperty(value = "stopped")
+
     private Integer stopped;
 
     public TaskProgress withTotal(Integer total) {
@@ -64,13 +48,9 @@ public class TaskProgress  {
         return this;
     }
 
-    
-
-
-    /**
-     * 子任务总个数。
-     * @return total
-     */
+    /** 子任务总个数。
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -79,20 +59,14 @@ public class TaskProgress  {
         this.total = total;
     }
 
-    
-
     public TaskProgress withProcessing(Integer processing) {
         this.processing = processing;
         return this;
     }
 
-    
-
-
-    /**
-     * 正在执行的子任务个数。
-     * @return processing
-     */
+    /** 正在执行的子任务个数。
+     * 
+     * @return processing */
     public Integer getProcessing() {
         return processing;
     }
@@ -101,20 +75,14 @@ public class TaskProgress  {
         this.processing = processing;
     }
 
-    
-
     public TaskProgress withSuccess(Integer success) {
         this.success = success;
         return this;
     }
 
-    
-
-
-    /**
-     * 执行成功的子任务个数。
-     * @return success
-     */
+    /** 执行成功的子任务个数。
+     * 
+     * @return success */
     public Integer getSuccess() {
         return success;
     }
@@ -123,20 +91,14 @@ public class TaskProgress  {
         this.success = success;
     }
 
-    
-
     public TaskProgress withFail(Integer fail) {
         this.fail = fail;
         return this;
     }
 
-    
-
-
-    /**
-     * 执行失败的的子任务个数。
-     * @return fail
-     */
+    /** 执行失败的的子任务个数。
+     * 
+     * @return fail */
     public Integer getFail() {
         return fail;
     }
@@ -145,20 +107,14 @@ public class TaskProgress  {
         this.fail = fail;
     }
 
-    
-
     public TaskProgress withWaitting(Integer waitting) {
         this.waitting = waitting;
         return this;
     }
 
-    
-
-
-    /**
-     * 等待执行的子任务个数。
-     * @return waitting
-     */
+    /** 等待执行的子任务个数。
+     * 
+     * @return waitting */
     public Integer getWaitting() {
         return waitting;
     }
@@ -167,20 +123,14 @@ public class TaskProgress  {
         this.waitting = waitting;
     }
 
-    
-
     public TaskProgress withFailWaitRetry(Integer failWaitRetry) {
         this.failWaitRetry = failWaitRetry;
         return this;
     }
 
-    
-
-
-    /**
-     * 失败等待重试的子任务个数。
-     * @return failWaitRetry
-     */
+    /** 失败等待重试的子任务个数。
+     * 
+     * @return failWaitRetry */
     public Integer getFailWaitRetry() {
         return failWaitRetry;
     }
@@ -189,20 +139,14 @@ public class TaskProgress  {
         this.failWaitRetry = failWaitRetry;
     }
 
-    
-
     public TaskProgress withStopped(Integer stopped) {
         this.stopped = stopped;
         return this;
     }
 
-    
-
-
-    /**
-     * 停止的子任务个数。
-     * @return stopped
-     */
+    /** 停止的子任务个数。
+     * 
+     * @return stopped */
     public Integer getStopped() {
         return stopped;
     }
@@ -210,8 +154,6 @@ public class TaskProgress  {
     public void setStopped(Integer stopped) {
         this.stopped = stopped;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -222,18 +164,19 @@ public class TaskProgress  {
             return false;
         }
         TaskProgress taskProgress = (TaskProgress) o;
-        return Objects.equals(this.total, taskProgress.total) &&
-            Objects.equals(this.processing, taskProgress.processing) &&
-            Objects.equals(this.success, taskProgress.success) &&
-            Objects.equals(this.fail, taskProgress.fail) &&
-            Objects.equals(this.waitting, taskProgress.waitting) &&
-            Objects.equals(this.failWaitRetry, taskProgress.failWaitRetry) &&
-            Objects.equals(this.stopped, taskProgress.stopped);
+        return Objects.equals(this.total, taskProgress.total)
+            && Objects.equals(this.processing, taskProgress.processing)
+            && Objects.equals(this.success, taskProgress.success) && Objects.equals(this.fail, taskProgress.fail)
+            && Objects.equals(this.waitting, taskProgress.waitting)
+            && Objects.equals(this.failWaitRetry, taskProgress.failWaitRetry)
+            && Objects.equals(this.stopped, taskProgress.stopped);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(total, processing, success, fail, waitting, failWaitRetry, stopped);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,16 +191,13 @@ public class TaskProgress  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

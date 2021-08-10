@@ -29,10 +29,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public class KeystoneListRegionsResponse extends SdkResponse {
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "regions")
     private List<Region> regions = null;
@@ -58,13 +57,9 @@ public class KeystoneListRegionsResponse extends SdkResponse {
         return this;
     }
 
-
-
-    /**
-     * 区域信息列表。
+    /** 区域信息列表。
      *
-     * @return regions
-     */
+     * @return regions */
     public List<Region> getRegions() {
         return regions;
     }
@@ -74,4 +69,3 @@ public class KeystoneListRegionsResponse extends SdkResponse {
     }
 
 }
-

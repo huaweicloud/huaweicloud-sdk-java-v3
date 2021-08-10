@@ -1,69 +1,52 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.time.OffsetDateTime;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * ApiVersionResp
- */
-public class ApiVersionResp  {
-
-
+/** ApiVersionResp */
+public class ApiVersionResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version_id")
-    
+    @JsonProperty(value = "version_id")
+
     private String versionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version_no")
-    
+    @JsonProperty(value = "version_no")
+
     private String versionNo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_id")
-    
+    @JsonProperty(value = "api_id")
+
     private String apiId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_id")
-    
+    @JsonProperty(value = "env_id")
+
     private String envId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_name")
-    
+    @JsonProperty(value = "env_name")
+
     private String envName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
+
     private String remark;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publish_time")
-    
+    @JsonProperty(value = "publish_time")
+
     private OffsetDateTime publishTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
     public ApiVersionResp withVersionId(String versionId) {
@@ -71,13 +54,9 @@ public class ApiVersionResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * API历史版本的ID
-     * @return versionId
-     */
+    /** API历史版本的ID
+     * 
+     * @return versionId */
     public String getVersionId() {
         return versionId;
     }
@@ -86,20 +65,14 @@ public class ApiVersionResp  {
         this.versionId = versionId;
     }
 
-    
-
     public ApiVersionResp withVersionNo(String versionNo) {
         this.versionNo = versionNo;
         return this;
     }
 
-    
-
-
-    /**
-     * API的版本号
-     * @return versionNo
-     */
+    /** API的版本号
+     * 
+     * @return versionNo */
     public String getVersionNo() {
         return versionNo;
     }
@@ -108,20 +81,14 @@ public class ApiVersionResp  {
         this.versionNo = versionNo;
     }
 
-    
-
     public ApiVersionResp withApiId(String apiId) {
         this.apiId = apiId;
         return this;
     }
 
-    
-
-
-    /**
-     * API编号
-     * @return apiId
-     */
+    /** API编号
+     * 
+     * @return apiId */
     public String getApiId() {
         return apiId;
     }
@@ -130,20 +97,14 @@ public class ApiVersionResp  {
         this.apiId = apiId;
     }
 
-    
-
     public ApiVersionResp withEnvId(String envId) {
         this.envId = envId;
         return this;
     }
 
-    
-
-
-    /**
-     * 发布的环境编号
-     * @return envId
-     */
+    /** 发布的环境编号
+     * 
+     * @return envId */
     public String getEnvId() {
         return envId;
     }
@@ -152,20 +113,14 @@ public class ApiVersionResp  {
         this.envId = envId;
     }
 
-    
-
     public ApiVersionResp withEnvName(String envName) {
         this.envName = envName;
         return this;
     }
 
-    
-
-
-    /**
-     * 发布的环境名称
-     * @return envName
-     */
+    /** 发布的环境名称
+     * 
+     * @return envName */
     public String getEnvName() {
         return envName;
     }
@@ -174,20 +129,14 @@ public class ApiVersionResp  {
         this.envName = envName;
     }
 
-    
-
     public ApiVersionResp withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
-    
-
-
-    /**
-     * 发布描述
-     * @return remark
-     */
+    /** 发布描述
+     * 
+     * @return remark */
     public String getRemark() {
         return remark;
     }
@@ -196,20 +145,14 @@ public class ApiVersionResp  {
         this.remark = remark;
     }
 
-    
-
     public ApiVersionResp withPublishTime(OffsetDateTime publishTime) {
         this.publishTime = publishTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 发布时间
-     * @return publishTime
-     */
+    /** 发布时间
+     * 
+     * @return publishTime */
     public OffsetDateTime getPublishTime() {
         return publishTime;
     }
@@ -218,20 +161,14 @@ public class ApiVersionResp  {
         this.publishTime = publishTime;
     }
 
-    
-
     public ApiVersionResp withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 版本状态 - 1：当前生效中的版本 - 2：未生效的版本
-     * @return status
-     */
+    /** 版本状态 - 1：当前生效中的版本 - 2：未生效的版本
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -239,8 +176,6 @@ public class ApiVersionResp  {
     public void setStatus(Integer status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -251,19 +186,20 @@ public class ApiVersionResp  {
             return false;
         }
         ApiVersionResp apiVersionResp = (ApiVersionResp) o;
-        return Objects.equals(this.versionId, apiVersionResp.versionId) &&
-            Objects.equals(this.versionNo, apiVersionResp.versionNo) &&
-            Objects.equals(this.apiId, apiVersionResp.apiId) &&
-            Objects.equals(this.envId, apiVersionResp.envId) &&
-            Objects.equals(this.envName, apiVersionResp.envName) &&
-            Objects.equals(this.remark, apiVersionResp.remark) &&
-            Objects.equals(this.publishTime, apiVersionResp.publishTime) &&
-            Objects.equals(this.status, apiVersionResp.status);
+        return Objects.equals(this.versionId, apiVersionResp.versionId)
+            && Objects.equals(this.versionNo, apiVersionResp.versionNo)
+            && Objects.equals(this.apiId, apiVersionResp.apiId) && Objects.equals(this.envId, apiVersionResp.envId)
+            && Objects.equals(this.envName, apiVersionResp.envName)
+            && Objects.equals(this.remark, apiVersionResp.remark)
+            && Objects.equals(this.publishTime, apiVersionResp.publishTime)
+            && Objects.equals(this.status, apiVersionResp.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(versionId, versionNo, apiId, envId, envName, remark, publishTime, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -279,16 +215,13 @@ public class ApiVersionResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

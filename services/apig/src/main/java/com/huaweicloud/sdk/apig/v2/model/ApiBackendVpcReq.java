@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * VPC通道详情。vpc_channel_status &#x3D; 1，则这个object类型为必填信息
- */
-public class ApiBackendVpcReq  {
-
-
+/** VPC通道详情。vpc_channel_status &#x3D; 1，则这个object类型为必填信息 */
+public class ApiBackendVpcReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_channel_proxy_host")
-    
+    @JsonProperty(value = "vpc_channel_proxy_host")
+
     private String vpcChannelProxyHost;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_channel_id")
-    
+    @JsonProperty(value = "vpc_channel_id")
+
     private String vpcChannelId;
 
     public ApiBackendVpcReq withVpcChannelProxyHost(String vpcChannelProxyHost) {
@@ -34,13 +23,9 @@ public class ApiBackendVpcReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 代理主机
-     * @return vpcChannelProxyHost
-     */
+    /** 代理主机
+     * 
+     * @return vpcChannelProxyHost */
     public String getVpcChannelProxyHost() {
         return vpcChannelProxyHost;
     }
@@ -49,20 +34,14 @@ public class ApiBackendVpcReq  {
         this.vpcChannelProxyHost = vpcChannelProxyHost;
     }
 
-    
-
     public ApiBackendVpcReq withVpcChannelId(String vpcChannelId) {
         this.vpcChannelId = vpcChannelId;
         return this;
     }
 
-    
-
-
-    /**
-     * VPC通道编号
-     * @return vpcChannelId
-     */
+    /** VPC通道编号
+     * 
+     * @return vpcChannelId */
     public String getVpcChannelId() {
         return vpcChannelId;
     }
@@ -70,8 +49,6 @@ public class ApiBackendVpcReq  {
     public void setVpcChannelId(String vpcChannelId) {
         this.vpcChannelId = vpcChannelId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class ApiBackendVpcReq  {
             return false;
         }
         ApiBackendVpcReq apiBackendVpcReq = (ApiBackendVpcReq) o;
-        return Objects.equals(this.vpcChannelProxyHost, apiBackendVpcReq.vpcChannelProxyHost) &&
-            Objects.equals(this.vpcChannelId, apiBackendVpcReq.vpcChannelId);
+        return Objects.equals(this.vpcChannelProxyHost, apiBackendVpcReq.vpcChannelProxyHost)
+            && Objects.equals(this.vpcChannelId, apiBackendVpcReq.vpcChannelId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(vpcChannelProxyHost, vpcChannelId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class ApiBackendVpcReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

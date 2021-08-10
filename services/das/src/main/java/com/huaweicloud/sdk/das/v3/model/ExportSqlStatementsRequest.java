@@ -1,72 +1,53 @@
 package com.huaweicloud.sdk.das.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ExportSqlStatementsRequest  {
-
-
+/** Request Object */
+public class ExportSqlStatementsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_at")
-    
+    @JsonProperty(value = "start_at")
+
     private Long startAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_at")
-    
+    @JsonProperty(value = "end_at")
+
     private Long endAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore_type")
-    
+    @JsonProperty(value = "datastore_type")
+
     private String datastoreType;
-    /**
-     * 请求语言类型。
-     */
+
+    /** 请求语言类型。 */
     public static final class XLanguageEnum {
 
-        
-        /**
-         * Enum EN_US_ZH_CN for value: "en-us、zh-cn"
-         */
+        /** Enum EN_US_ZH_CN for value: "en-us、zh-cn" */
         public static final XLanguageEnum EN_US_ZH_CN = new XLanguageEnum("en-us、zh-cn");
-        
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
 
@@ -94,7 +75,7 @@ public class ExportSqlStatementsRequest  {
 
         @JsonCreator
         public static XLanguageEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -105,7 +86,7 @@ public class ExportSqlStatementsRequest  {
         }
 
         public static XLanguageEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -129,10 +110,9 @@ public class ExportSqlStatementsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private XLanguageEnum xLanguage;
 
     public ExportSqlStatementsRequest withInstanceId(String instanceId) {
@@ -140,13 +120,9 @@ public class ExportSqlStatementsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -155,20 +131,14 @@ public class ExportSqlStatementsRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ExportSqlStatementsRequest withStartAt(Long startAt) {
         this.startAt = startAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 开始时间（Unix timestamp），单位：毫秒。
-     * @return startAt
-     */
+    /** 开始时间（Unix timestamp），单位：毫秒。
+     * 
+     * @return startAt */
     public Long getStartAt() {
         return startAt;
     }
@@ -177,20 +147,14 @@ public class ExportSqlStatementsRequest  {
         this.startAt = startAt;
     }
 
-    
-
     public ExportSqlStatementsRequest withEndAt(Long endAt) {
         this.endAt = endAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 结束时间（Unix timestamp），单位：毫秒。
-     * @return endAt
-     */
+    /** 结束时间（Unix timestamp），单位：毫秒。
+     * 
+     * @return endAt */
     public Long getEndAt() {
         return endAt;
     }
@@ -199,20 +163,14 @@ public class ExportSqlStatementsRequest  {
         this.endAt = endAt;
     }
 
-    
-
     public ExportSqlStatementsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页记录数。最大为2000。
-     * @return limit
-     */
+    /** 每页记录数。最大为2000。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -221,20 +179,14 @@ public class ExportSqlStatementsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ExportSqlStatementsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
 
-    
-
-
-    /**
-     * 指定一个标识符。获取第一页时不用赋值，获取下一页时取上页查询结果的返回值。
-     * @return marker
-     */
+    /** 指定一个标识符。获取第一页时不用赋值，获取下一页时取上页查询结果的返回值。
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -243,20 +195,14 @@ public class ExportSqlStatementsRequest  {
         this.marker = marker;
     }
 
-    
-
     public ExportSqlStatementsRequest withDatastoreType(String datastoreType) {
         this.datastoreType = datastoreType;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库类型。支持MySQL和GaussDB(for MySQL)。
-     * @return datastoreType
-     */
+    /** 数据库类型。支持MySQL和GaussDB(for MySQL)。
+     * 
+     * @return datastoreType */
     public String getDatastoreType() {
         return datastoreType;
     }
@@ -265,22 +211,16 @@ public class ExportSqlStatementsRequest  {
         this.datastoreType = datastoreType;
     }
 
-    
-
     public ExportSqlStatementsRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求语言类型。
-     * @return xLanguage
-     */
+    /** 请求语言类型。
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
         return xLanguage;
     }
@@ -288,8 +228,6 @@ public class ExportSqlStatementsRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -300,18 +238,20 @@ public class ExportSqlStatementsRequest  {
             return false;
         }
         ExportSqlStatementsRequest exportSqlStatementsRequest = (ExportSqlStatementsRequest) o;
-        return Objects.equals(this.instanceId, exportSqlStatementsRequest.instanceId) &&
-            Objects.equals(this.startAt, exportSqlStatementsRequest.startAt) &&
-            Objects.equals(this.endAt, exportSqlStatementsRequest.endAt) &&
-            Objects.equals(this.limit, exportSqlStatementsRequest.limit) &&
-            Objects.equals(this.marker, exportSqlStatementsRequest.marker) &&
-            Objects.equals(this.datastoreType, exportSqlStatementsRequest.datastoreType) &&
-            Objects.equals(this.xLanguage, exportSqlStatementsRequest.xLanguage);
+        return Objects.equals(this.instanceId, exportSqlStatementsRequest.instanceId)
+            && Objects.equals(this.startAt, exportSqlStatementsRequest.startAt)
+            && Objects.equals(this.endAt, exportSqlStatementsRequest.endAt)
+            && Objects.equals(this.limit, exportSqlStatementsRequest.limit)
+            && Objects.equals(this.marker, exportSqlStatementsRequest.marker)
+            && Objects.equals(this.datastoreType, exportSqlStatementsRequest.datastoreType)
+            && Objects.equals(this.xLanguage, exportSqlStatementsRequest.xLanguage);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, startAt, endAt, limit, marker, datastoreType, xLanguage);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -326,16 +266,13 @@ public class ExportSqlStatementsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

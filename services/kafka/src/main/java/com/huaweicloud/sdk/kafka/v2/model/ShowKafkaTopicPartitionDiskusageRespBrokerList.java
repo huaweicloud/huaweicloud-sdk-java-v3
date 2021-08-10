@@ -1,79 +1,59 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicPartitionDiskusageRespTopicList;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ShowKafkaTopicPartitionDiskusageRespBrokerList
- */
-public class ShowKafkaTopicPartitionDiskusageRespBrokerList  {
-
-
+/** ShowKafkaTopicPartitionDiskusageRespBrokerList */
+public class ShowKafkaTopicPartitionDiskusageRespBrokerList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="broker_name")
-    
+    @JsonProperty(value = "broker_name")
+
     private String brokerName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_disk_size")
-    
+    @JsonProperty(value = "data_disk_size")
+
     private String dataDiskSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_disk_use")
-    
+    @JsonProperty(value = "data_disk_use")
+
     private String dataDiskUse;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_disk_free")
-    
+    @JsonProperty(value = "data_disk_free")
+
     private String dataDiskFree;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_disk_use_percentage")
-    
+    @JsonProperty(value = "data_disk_use_percentage")
+
     private String dataDiskUsePercentage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic_list")
-    
+    @JsonProperty(value = "topic_list")
+
     private List<ShowKafkaTopicPartitionDiskusageRespTopicList> topicList = null;
-    
+
     public ShowKafkaTopicPartitionDiskusageRespBrokerList withBrokerName(String brokerName) {
         this.brokerName = brokerName;
         return this;
     }
 
-    
-
-
-    /**
-     * Broker名称。
-     * @return brokerName
-     */
+    /** Broker名称。
+     * 
+     * @return brokerName */
     public String getBrokerName() {
         return brokerName;
     }
@@ -82,20 +62,14 @@ public class ShowKafkaTopicPartitionDiskusageRespBrokerList  {
         this.brokerName = brokerName;
     }
 
-    
-
     public ShowKafkaTopicPartitionDiskusageRespBrokerList withDataDiskSize(String dataDiskSize) {
         this.dataDiskSize = dataDiskSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘容量。
-     * @return dataDiskSize
-     */
+    /** 磁盘容量。
+     * 
+     * @return dataDiskSize */
     public String getDataDiskSize() {
         return dataDiskSize;
     }
@@ -104,20 +78,14 @@ public class ShowKafkaTopicPartitionDiskusageRespBrokerList  {
         this.dataDiskSize = dataDiskSize;
     }
 
-    
-
     public ShowKafkaTopicPartitionDiskusageRespBrokerList withDataDiskUse(String dataDiskUse) {
         this.dataDiskUse = dataDiskUse;
         return this;
     }
 
-    
-
-
-    /**
-     * 已使用的磁盘容量。
-     * @return dataDiskUse
-     */
+    /** 已使用的磁盘容量。
+     * 
+     * @return dataDiskUse */
     public String getDataDiskUse() {
         return dataDiskUse;
     }
@@ -126,20 +94,14 @@ public class ShowKafkaTopicPartitionDiskusageRespBrokerList  {
         this.dataDiskUse = dataDiskUse;
     }
 
-    
-
     public ShowKafkaTopicPartitionDiskusageRespBrokerList withDataDiskFree(String dataDiskFree) {
         this.dataDiskFree = dataDiskFree;
         return this;
     }
 
-    
-
-
-    /**
-     * 剩余可用的磁盘容量。
-     * @return dataDiskFree
-     */
+    /** 剩余可用的磁盘容量。
+     * 
+     * @return dataDiskFree */
     public String getDataDiskFree() {
         return dataDiskFree;
     }
@@ -148,20 +110,14 @@ public class ShowKafkaTopicPartitionDiskusageRespBrokerList  {
         this.dataDiskFree = dataDiskFree;
     }
 
-    
-
     public ShowKafkaTopicPartitionDiskusageRespBrokerList withDataDiskUsePercentage(String dataDiskUsePercentage) {
         this.dataDiskUsePercentage = dataDiskUsePercentage;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息标签。
-     * @return dataDiskUsePercentage
-     */
+    /** 消息标签。
+     * 
+     * @return dataDiskUsePercentage */
     public String getDataDiskUsePercentage() {
         return dataDiskUsePercentage;
     }
@@ -170,20 +126,14 @@ public class ShowKafkaTopicPartitionDiskusageRespBrokerList  {
         this.dataDiskUsePercentage = dataDiskUsePercentage;
     }
 
-    
-
     public ShowKafkaTopicPartitionDiskusageRespBrokerList withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息标签。
-     * @return status
-     */
+    /** 消息标签。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -192,34 +142,33 @@ public class ShowKafkaTopicPartitionDiskusageRespBrokerList  {
         this.status = status;
     }
 
-    
-
-    public ShowKafkaTopicPartitionDiskusageRespBrokerList withTopicList(List<ShowKafkaTopicPartitionDiskusageRespTopicList> topicList) {
+    public ShowKafkaTopicPartitionDiskusageRespBrokerList withTopicList(
+        List<ShowKafkaTopicPartitionDiskusageRespTopicList> topicList) {
         this.topicList = topicList;
         return this;
     }
 
-    
-    public ShowKafkaTopicPartitionDiskusageRespBrokerList addTopicListItem(ShowKafkaTopicPartitionDiskusageRespTopicList topicListItem) {
-        if(this.topicList == null) {
+    public ShowKafkaTopicPartitionDiskusageRespBrokerList addTopicListItem(
+        ShowKafkaTopicPartitionDiskusageRespTopicList topicListItem) {
+        if (this.topicList == null) {
             this.topicList = new ArrayList<>();
         }
         this.topicList.add(topicListItem);
         return this;
     }
 
-    public ShowKafkaTopicPartitionDiskusageRespBrokerList withTopicList(Consumer<List<ShowKafkaTopicPartitionDiskusageRespTopicList>> topicListSetter) {
-        if(this.topicList == null) {
+    public ShowKafkaTopicPartitionDiskusageRespBrokerList withTopicList(
+        Consumer<List<ShowKafkaTopicPartitionDiskusageRespTopicList>> topicListSetter) {
+        if (this.topicList == null) {
             this.topicList = new ArrayList<>();
         }
         topicListSetter.accept(this.topicList);
         return this;
     }
 
-    /**
-     * topic磁盘容量使用列表。
-     * @return topicList
-     */
+    /** topic磁盘容量使用列表。
+     * 
+     * @return topicList */
     public List<ShowKafkaTopicPartitionDiskusageRespTopicList> getTopicList() {
         return topicList;
     }
@@ -227,8 +176,6 @@ public class ShowKafkaTopicPartitionDiskusageRespBrokerList  {
     public void setTopicList(List<ShowKafkaTopicPartitionDiskusageRespTopicList> topicList) {
         this.topicList = topicList;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -238,19 +185,24 @@ public class ShowKafkaTopicPartitionDiskusageRespBrokerList  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ShowKafkaTopicPartitionDiskusageRespBrokerList showKafkaTopicPartitionDiskusageRespBrokerList = (ShowKafkaTopicPartitionDiskusageRespBrokerList) o;
-        return Objects.equals(this.brokerName, showKafkaTopicPartitionDiskusageRespBrokerList.brokerName) &&
-            Objects.equals(this.dataDiskSize, showKafkaTopicPartitionDiskusageRespBrokerList.dataDiskSize) &&
-            Objects.equals(this.dataDiskUse, showKafkaTopicPartitionDiskusageRespBrokerList.dataDiskUse) &&
-            Objects.equals(this.dataDiskFree, showKafkaTopicPartitionDiskusageRespBrokerList.dataDiskFree) &&
-            Objects.equals(this.dataDiskUsePercentage, showKafkaTopicPartitionDiskusageRespBrokerList.dataDiskUsePercentage) &&
-            Objects.equals(this.status, showKafkaTopicPartitionDiskusageRespBrokerList.status) &&
-            Objects.equals(this.topicList, showKafkaTopicPartitionDiskusageRespBrokerList.topicList);
+        ShowKafkaTopicPartitionDiskusageRespBrokerList showKafkaTopicPartitionDiskusageRespBrokerList =
+            (ShowKafkaTopicPartitionDiskusageRespBrokerList) o;
+        return Objects.equals(this.brokerName, showKafkaTopicPartitionDiskusageRespBrokerList.brokerName)
+            && Objects.equals(this.dataDiskSize, showKafkaTopicPartitionDiskusageRespBrokerList.dataDiskSize)
+            && Objects.equals(this.dataDiskUse, showKafkaTopicPartitionDiskusageRespBrokerList.dataDiskUse)
+            && Objects.equals(this.dataDiskFree, showKafkaTopicPartitionDiskusageRespBrokerList.dataDiskFree)
+            && Objects.equals(this.dataDiskUsePercentage,
+                showKafkaTopicPartitionDiskusageRespBrokerList.dataDiskUsePercentage)
+            && Objects.equals(this.status, showKafkaTopicPartitionDiskusageRespBrokerList.status)
+            && Objects.equals(this.topicList, showKafkaTopicPartitionDiskusageRespBrokerList.topicList);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(brokerName, dataDiskSize, dataDiskUse, dataDiskFree, dataDiskUsePercentage, status, topicList);
+        return Objects
+            .hash(brokerName, dataDiskSize, dataDiskUse, dataDiskFree, dataDiskUsePercentage, status, topicList);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -265,16 +217,13 @@ public class ShowKafkaTopicPartitionDiskusageRespBrokerList  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

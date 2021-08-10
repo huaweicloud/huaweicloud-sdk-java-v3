@@ -1,92 +1,73 @@
 package com.huaweicloud.sdk.ocr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class ItemList  {
-
-
+public class ItemList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="specification")
-    
+    @JsonProperty(value = "specification")
+
     private String specification;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unit")
-    
+    @JsonProperty(value = "unit")
+
     private String unit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quantity")
-    
+    @JsonProperty(value = "quantity")
+
     private String quantity;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unit_price")
-    
+    @JsonProperty(value = "unit_price")
+
     private String unitPrice;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="license_plate_number")
-    
+    @JsonProperty(value = "license_plate_number")
+
     private String licensePlateNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amount")
-    
+    @JsonProperty(value = "amount")
+
     private String amount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tax_rate")
-    
+    @JsonProperty(value = "tax_rate")
+
     private String taxRate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tax")
-    
+    @JsonProperty(value = "tax")
+
     private String tax;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_date")
-    
+    @JsonProperty(value = "end_date")
+
     private String endDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_date")
-    
+    @JsonProperty(value = "start_date")
+
     private String startDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vehicle_type")
-    
+    @JsonProperty(value = "vehicle_type")
+
     private String vehicleType;
 
     public ItemList withName(String name) {
@@ -94,13 +75,9 @@ public class ItemList  {
         return this;
     }
 
-    
-
-
-    /**
-     * 货物或应税劳务、服务名称。 
-     * @return name
-     */
+    /** 货物或应税劳务、服务名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -109,20 +86,14 @@ public class ItemList  {
         this.name = name;
     }
 
-    
-
     public ItemList withSpecification(String specification) {
         this.specification = specification;
         return this;
     }
 
-    
-
-
-    /**
-     * 规格型号。 
-     * @return specification
-     */
+    /** 规格型号。
+     * 
+     * @return specification */
     public String getSpecification() {
         return specification;
     }
@@ -131,20 +102,14 @@ public class ItemList  {
         this.specification = specification;
     }
 
-    
-
     public ItemList withUnit(String unit) {
         this.unit = unit;
         return this;
     }
 
-    
-
-
-    /**
-     * 单位。 
-     * @return unit
-     */
+    /** 单位。
+     * 
+     * @return unit */
     public String getUnit() {
         return unit;
     }
@@ -153,20 +118,14 @@ public class ItemList  {
         this.unit = unit;
     }
 
-    
-
     public ItemList withQuantity(String quantity) {
         this.quantity = quantity;
         return this;
     }
 
-    
-
-
-    /**
-     * 数量。 
-     * @return quantity
-     */
+    /** 数量。
+     * 
+     * @return quantity */
     public String getQuantity() {
         return quantity;
     }
@@ -175,20 +134,14 @@ public class ItemList  {
         this.quantity = quantity;
     }
 
-    
-
     public ItemList withUnitPrice(String unitPrice) {
         this.unitPrice = unitPrice;
         return this;
     }
 
-    
-
-
-    /**
-     * 单价。 
-     * @return unitPrice
-     */
+    /** 单价。
+     * 
+     * @return unitPrice */
     public String getUnitPrice() {
         return unitPrice;
     }
@@ -197,20 +150,14 @@ public class ItemList  {
         this.unitPrice = unitPrice;
     }
 
-    
-
     public ItemList withLicensePlateNumber(String licensePlateNumber) {
         this.licensePlateNumber = licensePlateNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * 车牌号码。 当“advanced_mode”设置为“true”时才返回。 
-     * @return licensePlateNumber
-     */
+    /** 车牌号码。 当“advanced_mode”设置为“true”时才返回。
+     * 
+     * @return licensePlateNumber */
     public String getLicensePlateNumber() {
         return licensePlateNumber;
     }
@@ -219,20 +166,14 @@ public class ItemList  {
         this.licensePlateNumber = licensePlateNumber;
     }
 
-    
-
     public ItemList withAmount(String amount) {
         this.amount = amount;
         return this;
     }
 
-    
-
-
-    /**
-     * 金额。 
-     * @return amount
-     */
+    /** 金额。
+     * 
+     * @return amount */
     public String getAmount() {
         return amount;
     }
@@ -241,20 +182,14 @@ public class ItemList  {
         this.amount = amount;
     }
 
-    
-
     public ItemList withTaxRate(String taxRate) {
         this.taxRate = taxRate;
         return this;
     }
 
-    
-
-
-    /**
-     * 税率。 
-     * @return taxRate
-     */
+    /** 税率。
+     * 
+     * @return taxRate */
     public String getTaxRate() {
         return taxRate;
     }
@@ -263,20 +198,14 @@ public class ItemList  {
         this.taxRate = taxRate;
     }
 
-    
-
     public ItemList withTax(String tax) {
         this.tax = tax;
         return this;
     }
 
-    
-
-
-    /**
-     * 税额。 
-     * @return tax
-     */
+    /** 税额。
+     * 
+     * @return tax */
     public String getTax() {
         return tax;
     }
@@ -285,20 +214,14 @@ public class ItemList  {
         this.tax = tax;
     }
 
-    
-
     public ItemList withEndDate(String endDate) {
         this.endDate = endDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 通行日期止。 当“advanced_mode”设置为“true”时才返回。 
-     * @return endDate
-     */
+    /** 通行日期止。 当“advanced_mode”设置为“true”时才返回。
+     * 
+     * @return endDate */
     public String getEndDate() {
         return endDate;
     }
@@ -307,20 +230,14 @@ public class ItemList  {
         this.endDate = endDate;
     }
 
-    
-
     public ItemList withStartDate(String startDate) {
         this.startDate = startDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 通行日期起。 当“advanced_mode”设置为“true”时才返回。 
-     * @return startDate
-     */
+    /** 通行日期起。 当“advanced_mode”设置为“true”时才返回。
+     * 
+     * @return startDate */
     public String getStartDate() {
         return startDate;
     }
@@ -329,20 +246,14 @@ public class ItemList  {
         this.startDate = startDate;
     }
 
-    
-
     public ItemList withVehicleType(String vehicleType) {
         this.vehicleType = vehicleType;
         return this;
     }
 
-    
-
-
-    /**
-     * 车辆类型。 当“advanced_mode”设置为“true”时才返回。 
-     * @return vehicleType
-     */
+    /** 车辆类型。 当“advanced_mode”设置为“true”时才返回。
+     * 
+     * @return vehicleType */
     public String getVehicleType() {
         return vehicleType;
     }
@@ -350,8 +261,6 @@ public class ItemList  {
     public void setVehicleType(String vehicleType) {
         this.vehicleType = vehicleType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -362,23 +271,32 @@ public class ItemList  {
             return false;
         }
         ItemList itemList = (ItemList) o;
-        return Objects.equals(this.name, itemList.name) &&
-            Objects.equals(this.specification, itemList.specification) &&
-            Objects.equals(this.unit, itemList.unit) &&
-            Objects.equals(this.quantity, itemList.quantity) &&
-            Objects.equals(this.unitPrice, itemList.unitPrice) &&
-            Objects.equals(this.licensePlateNumber, itemList.licensePlateNumber) &&
-            Objects.equals(this.amount, itemList.amount) &&
-            Objects.equals(this.taxRate, itemList.taxRate) &&
-            Objects.equals(this.tax, itemList.tax) &&
-            Objects.equals(this.endDate, itemList.endDate) &&
-            Objects.equals(this.startDate, itemList.startDate) &&
-            Objects.equals(this.vehicleType, itemList.vehicleType);
+        return Objects.equals(this.name, itemList.name) && Objects.equals(this.specification, itemList.specification)
+            && Objects.equals(this.unit, itemList.unit) && Objects.equals(this.quantity, itemList.quantity)
+            && Objects.equals(this.unitPrice, itemList.unitPrice)
+            && Objects.equals(this.licensePlateNumber, itemList.licensePlateNumber)
+            && Objects.equals(this.amount, itemList.amount) && Objects.equals(this.taxRate, itemList.taxRate)
+            && Objects.equals(this.tax, itemList.tax) && Objects.equals(this.endDate, itemList.endDate)
+            && Objects.equals(this.startDate, itemList.startDate)
+            && Objects.equals(this.vehicleType, itemList.vehicleType);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, specification, unit, quantity, unitPrice, licensePlateNumber, amount, taxRate, tax, endDate, startDate, vehicleType);
+        return Objects.hash(name,
+            specification,
+            unit,
+            quantity,
+            unitPrice,
+            licensePlateNumber,
+            amount,
+            taxRate,
+            tax,
+            endDate,
+            startDate,
+            vehicleType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -398,16 +316,13 @@ public class ItemList  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,112 +1,87 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class AddDeviceResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="model")
-    
+    @JsonProperty(value = "model")
+
     private String model;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sn")
-    
+    @JsonProperty(value = "sn")
+
     private String sn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="account")
-    
+    @JsonProperty(value = "account")
+
     private String account;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="number")
-    
+    @JsonProperty(value = "number")
+
     private String number;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="prjCodeMode")
-    
+    @JsonProperty(value = "prjCodeMode")
+
     private Integer prjCodeMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deptCode")
-    
+    @JsonProperty(value = "deptCode")
+
     private String deptCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deptName")
-    
+    @JsonProperty(value = "deptName")
+
     private String deptName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deptNamePath")
-    
+    @JsonProperty(value = "deptNamePath")
+
     private String deptNamePath;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="phone")
-    
+    @JsonProperty(value = "phone")
+
     private String phone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="country")
-    
+    @JsonProperty(value = "country")
+
     private String country;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="email")
-    
+    @JsonProperty(value = "email")
+
     private String email;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
     public AddDeviceResponse withName(String name) {
@@ -114,13 +89,9 @@ public class AddDeviceResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 终端名称。
-     * @return name
-     */
+    /** 终端名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -129,20 +100,14 @@ public class AddDeviceResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public AddDeviceResponse withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 终端类型，区分自研和第三方终端。
-     * @return type
-     */
+    /** 终端类型，区分自研和第三方终端。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -151,20 +116,14 @@ public class AddDeviceResponse extends SdkResponse {
         this.type = type;
     }
 
-    
-
     public AddDeviceResponse withModel(String model) {
         this.model = model;
         return this;
     }
 
-    
-
-
-    /**
-     * 终端型号，枚举类型。当前支持TE系列硬件终端，具体的终端类型可以通过获取所有终端类型接口查询。
-     * @return model
-     */
+    /** 终端型号，枚举类型。当前支持TE系列硬件终端，具体的终端类型可以通过获取所有终端类型接口查询。
+     * 
+     * @return model */
     public String getModel() {
         return model;
     }
@@ -173,20 +132,14 @@ public class AddDeviceResponse extends SdkResponse {
         this.model = model;
     }
 
-    
-
     public AddDeviceResponse withSn(String sn) {
         this.sn = sn;
         return this;
     }
 
-    
-
-
-    /**
-     * 终端SN号，仅可包含数字、字母和下划线。
-     * @return sn
-     */
+    /** 终端SN号，仅可包含数字、字母和下划线。
+     * 
+     * @return sn */
     public String getSn() {
         return sn;
     }
@@ -195,20 +148,14 @@ public class AddDeviceResponse extends SdkResponse {
         this.sn = sn;
     }
 
-    
-
     public AddDeviceResponse withAccount(String account) {
         this.account = account;
         return this;
     }
 
-    
-
-
-    /**
-     * 硬终端对应的内置账号。
-     * @return account
-     */
+    /** 硬终端对应的内置账号。
+     * 
+     * @return account */
     public String getAccount() {
         return account;
     }
@@ -217,20 +164,14 @@ public class AddDeviceResponse extends SdkResponse {
         this.account = account;
     }
 
-    
-
     public AddDeviceResponse withNumber(String number) {
         this.number = number;
         return this;
     }
 
-    
-
-
-    /**
-     * 终端绑定的号码
-     * @return number
-     */
+    /** 终端绑定的号码
+     * 
+     * @return number */
     public String getNumber() {
         return number;
     }
@@ -239,20 +180,14 @@ public class AddDeviceResponse extends SdkResponse {
         this.number = number;
     }
 
-    
-
     public AddDeviceResponse withPrjCodeMode(Integer prjCodeMode) {
         this.prjCodeMode = prjCodeMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 投影码生成模式 * 0、自动(该模式下根据消息上报的IP地址内部控制复杂度：私网地址配置成简单模式；公网地址配置成复杂模式) * 1、简单 * 2、复杂 
-     * @return prjCodeMode
-     */
+    /** 投影码生成模式 * 0、自动(该模式下根据消息上报的IP地址内部控制复杂度：私网地址配置成简单模式；公网地址配置成复杂模式) * 1、简单 * 2、复杂
+     * 
+     * @return prjCodeMode */
     public Integer getPrjCodeMode() {
         return prjCodeMode;
     }
@@ -261,20 +196,14 @@ public class AddDeviceResponse extends SdkResponse {
         this.prjCodeMode = prjCodeMode;
     }
 
-    
-
     public AddDeviceResponse withDeptCode(String deptCode) {
         this.deptCode = deptCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 部门编号
-     * @return deptCode
-     */
+    /** 部门编号
+     * 
+     * @return deptCode */
     public String getDeptCode() {
         return deptCode;
     }
@@ -283,20 +212,14 @@ public class AddDeviceResponse extends SdkResponse {
         this.deptCode = deptCode;
     }
 
-    
-
     public AddDeviceResponse withDeptName(String deptName) {
         this.deptName = deptName;
         return this;
     }
 
-    
-
-
-    /**
-     * 部门名称
-     * @return deptName
-     */
+    /** 部门名称
+     * 
+     * @return deptName */
     public String getDeptName() {
         return deptName;
     }
@@ -305,20 +228,14 @@ public class AddDeviceResponse extends SdkResponse {
         this.deptName = deptName;
     }
 
-    
-
     public AddDeviceResponse withDeptNamePath(String deptNamePath) {
         this.deptNamePath = deptNamePath;
         return this;
     }
 
-    
-
-
-    /**
-     * 部门名称路径
-     * @return deptNamePath
-     */
+    /** 部门名称路径
+     * 
+     * @return deptNamePath */
     public String getDeptNamePath() {
         return deptNamePath;
     }
@@ -327,20 +244,14 @@ public class AddDeviceResponse extends SdkResponse {
         this.deptNamePath = deptNamePath;
     }
 
-    
-
     public AddDeviceResponse withPhone(String phone) {
         this.phone = phone;
         return this;
     }
 
-    
-
-
-    /**
-     * 手机号
-     * @return phone
-     */
+    /** 手机号
+     * 
+     * @return phone */
     public String getPhone() {
         return phone;
     }
@@ -349,20 +260,14 @@ public class AddDeviceResponse extends SdkResponse {
         this.phone = phone;
     }
 
-    
-
     public AddDeviceResponse withCountry(String country) {
         this.country = country;
         return this;
     }
 
-    
-
-
-    /**
-     * 手机号所属的国家
-     * @return country
-     */
+    /** 手机号所属的国家
+     * 
+     * @return country */
     public String getCountry() {
         return country;
     }
@@ -371,20 +276,14 @@ public class AddDeviceResponse extends SdkResponse {
         this.country = country;
     }
 
-    
-
     public AddDeviceResponse withEmail(String email) {
         this.email = email;
         return this;
     }
 
-    
-
-
-    /**
-     * 邮箱
-     * @return email
-     */
+    /** 邮箱
+     * 
+     * @return email */
     public String getEmail() {
         return email;
     }
@@ -393,20 +292,14 @@ public class AddDeviceResponse extends SdkResponse {
         this.email = email;
     }
 
-    
-
     public AddDeviceResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 终端描述
-     * @return description
-     */
+    /** 终端描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -415,20 +308,14 @@ public class AddDeviceResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public AddDeviceResponse withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 终端状态 * 0、正常 * 1、停用\" 
-     * @return status
-     */
+    /** 终端状态 * 0、正常 * 1、停用\"
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -436,8 +323,6 @@ public class AddDeviceResponse extends SdkResponse {
     public void setStatus(Integer status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -448,26 +333,40 @@ public class AddDeviceResponse extends SdkResponse {
             return false;
         }
         AddDeviceResponse addDeviceResponse = (AddDeviceResponse) o;
-        return Objects.equals(this.name, addDeviceResponse.name) &&
-            Objects.equals(this.type, addDeviceResponse.type) &&
-            Objects.equals(this.model, addDeviceResponse.model) &&
-            Objects.equals(this.sn, addDeviceResponse.sn) &&
-            Objects.equals(this.account, addDeviceResponse.account) &&
-            Objects.equals(this.number, addDeviceResponse.number) &&
-            Objects.equals(this.prjCodeMode, addDeviceResponse.prjCodeMode) &&
-            Objects.equals(this.deptCode, addDeviceResponse.deptCode) &&
-            Objects.equals(this.deptName, addDeviceResponse.deptName) &&
-            Objects.equals(this.deptNamePath, addDeviceResponse.deptNamePath) &&
-            Objects.equals(this.phone, addDeviceResponse.phone) &&
-            Objects.equals(this.country, addDeviceResponse.country) &&
-            Objects.equals(this.email, addDeviceResponse.email) &&
-            Objects.equals(this.description, addDeviceResponse.description) &&
-            Objects.equals(this.status, addDeviceResponse.status);
+        return Objects.equals(this.name, addDeviceResponse.name) && Objects.equals(this.type, addDeviceResponse.type)
+            && Objects.equals(this.model, addDeviceResponse.model) && Objects.equals(this.sn, addDeviceResponse.sn)
+            && Objects.equals(this.account, addDeviceResponse.account)
+            && Objects.equals(this.number, addDeviceResponse.number)
+            && Objects.equals(this.prjCodeMode, addDeviceResponse.prjCodeMode)
+            && Objects.equals(this.deptCode, addDeviceResponse.deptCode)
+            && Objects.equals(this.deptName, addDeviceResponse.deptName)
+            && Objects.equals(this.deptNamePath, addDeviceResponse.deptNamePath)
+            && Objects.equals(this.phone, addDeviceResponse.phone)
+            && Objects.equals(this.country, addDeviceResponse.country)
+            && Objects.equals(this.email, addDeviceResponse.email)
+            && Objects.equals(this.description, addDeviceResponse.description)
+            && Objects.equals(this.status, addDeviceResponse.status);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, model, sn, account, number, prjCodeMode, deptCode, deptName, deptNamePath, phone, country, email, description, status);
+        return Objects.hash(name,
+            type,
+            model,
+            sn,
+            account,
+            number,
+            prjCodeMode,
+            deptCode,
+            deptName,
+            deptNamePath,
+            phone,
+            country,
+            email,
+            description,
+            status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -490,16 +389,13 @@ public class AddDeviceResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

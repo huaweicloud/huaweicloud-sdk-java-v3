@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListPremiumHostRequest  {
-
-
+/** Request Object */
+public class ListPremiumHostRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page")
-    
+    @JsonProperty(value = "page")
+
     private String page;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pagesize")
-    
+    @JsonProperty(value = "pagesize")
+
     private String pagesize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hostname")
-    
+    @JsonProperty(value = "hostname")
+
     private String hostname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policyname")
-    
+    @JsonProperty(value = "policyname")
+
     private String policyname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protect_status")
-    
+    @JsonProperty(value = "protect_status")
+
     private Integer protectStatus;
 
     public ListPremiumHostRequest withPage(String page) {
@@ -52,13 +38,9 @@ public class ListPremiumHostRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 页码
-     * @return page
-     */
+    /** 页码
+     * 
+     * @return page */
     public String getPage() {
         return page;
     }
@@ -67,20 +49,14 @@ public class ListPremiumHostRequest  {
         this.page = page;
     }
 
-    
-
     public ListPremiumHostRequest withPagesize(String pagesize) {
         this.pagesize = pagesize;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页条数
-     * @return pagesize
-     */
+    /** 每页条数
+     * 
+     * @return pagesize */
     public String getPagesize() {
         return pagesize;
     }
@@ -89,20 +65,14 @@ public class ListPremiumHostRequest  {
         this.pagesize = pagesize;
     }
 
-    
-
     public ListPremiumHostRequest withHostname(String hostname) {
         this.hostname = hostname;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名
-     * @return hostname
-     */
+    /** 域名
+     * 
+     * @return hostname */
     public String getHostname() {
         return hostname;
     }
@@ -111,20 +81,14 @@ public class ListPremiumHostRequest  {
         this.hostname = hostname;
     }
 
-    
-
     public ListPremiumHostRequest withPolicyname(String policyname) {
         this.policyname = policyname;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略名称
-     * @return policyname
-     */
+    /** 策略名称
+     * 
+     * @return policyname */
     public String getPolicyname() {
         return policyname;
     }
@@ -133,20 +97,14 @@ public class ListPremiumHostRequest  {
         this.policyname = policyname;
     }
 
-    
-
     public ListPremiumHostRequest withProtectStatus(Integer protectStatus) {
         this.protectStatus = protectStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名防护状态
-     * @return protectStatus
-     */
+    /** 域名防护状态
+     * 
+     * @return protectStatus */
     public Integer getProtectStatus() {
         return protectStatus;
     }
@@ -154,8 +112,6 @@ public class ListPremiumHostRequest  {
     public void setProtectStatus(Integer protectStatus) {
         this.protectStatus = protectStatus;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,18 @@ public class ListPremiumHostRequest  {
             return false;
         }
         ListPremiumHostRequest listPremiumHostRequest = (ListPremiumHostRequest) o;
-        return Objects.equals(this.page, listPremiumHostRequest.page) &&
-            Objects.equals(this.pagesize, listPremiumHostRequest.pagesize) &&
-            Objects.equals(this.hostname, listPremiumHostRequest.hostname) &&
-            Objects.equals(this.policyname, listPremiumHostRequest.policyname) &&
-            Objects.equals(this.protectStatus, listPremiumHostRequest.protectStatus);
+        return Objects.equals(this.page, listPremiumHostRequest.page)
+            && Objects.equals(this.pagesize, listPremiumHostRequest.pagesize)
+            && Objects.equals(this.hostname, listPremiumHostRequest.hostname)
+            && Objects.equals(this.policyname, listPremiumHostRequest.policyname)
+            && Objects.equals(this.protectStatus, listPremiumHostRequest.protectStatus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(page, pagesize, hostname, policyname, protectStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class ListPremiumHostRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

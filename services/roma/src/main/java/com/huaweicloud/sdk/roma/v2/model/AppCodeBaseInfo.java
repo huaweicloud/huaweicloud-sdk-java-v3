@@ -1,46 +1,32 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.AppCodeCreate;
+
 import java.time.OffsetDateTime;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * AppCodeBaseInfo
- */
-public class AppCodeBaseInfo  {
-
-
+/** AppCodeBaseInfo */
+public class AppCodeBaseInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_code")
-    
+    @JsonProperty(value = "app_code")
+
     private String appCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private OffsetDateTime createTime;
 
     public AppCodeBaseInfo withAppCode(String appCode) {
@@ -48,13 +34,9 @@ public class AppCodeBaseInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * App Code值  支持英文，+_!@#$%+/=，且只能以英文和+、/开头。
-     * @return appCode
-     */
+    /** App Code值 支持英文，+_!@#$%+/=，且只能以英文和+、/开头。
+     * 
+     * @return appCode */
     public String getAppCode() {
         return appCode;
     }
@@ -63,20 +45,14 @@ public class AppCodeBaseInfo  {
         this.appCode = appCode;
     }
 
-    
-
     public AppCodeBaseInfo withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 编号
-     * @return id
-     */
+    /** 编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -85,20 +61,14 @@ public class AppCodeBaseInfo  {
         this.id = id;
     }
 
-    
-
     public AppCodeBaseInfo withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用编号
-     * @return appId
-     */
+    /** 应用编号
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -107,20 +77,14 @@ public class AppCodeBaseInfo  {
         this.appId = appId;
     }
 
-    
-
     public AppCodeBaseInfo withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return createTime
-     */
+    /** 创建时间
+     * 
+     * @return createTime */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -128,8 +92,6 @@ public class AppCodeBaseInfo  {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -140,15 +102,16 @@ public class AppCodeBaseInfo  {
             return false;
         }
         AppCodeBaseInfo appCodeBaseInfo = (AppCodeBaseInfo) o;
-        return Objects.equals(this.appCode, appCodeBaseInfo.appCode) &&
-            Objects.equals(this.id, appCodeBaseInfo.id) &&
-            Objects.equals(this.appId, appCodeBaseInfo.appId) &&
-            Objects.equals(this.createTime, appCodeBaseInfo.createTime);
+        return Objects.equals(this.appCode, appCodeBaseInfo.appCode) && Objects.equals(this.id, appCodeBaseInfo.id)
+            && Objects.equals(this.appId, appCodeBaseInfo.appId)
+            && Objects.equals(this.createTime, appCodeBaseInfo.createTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(appCode, id, appId, createTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -160,16 +123,13 @@ public class AppCodeBaseInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

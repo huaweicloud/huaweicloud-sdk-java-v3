@@ -1,67 +1,72 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.IdentityprovidersLinks;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class IdentityprovidersResult  {
-
-
+public class IdentityprovidersResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "sso_type")
+
+    private String ssoType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enabled")
-    
+    @JsonProperty(value = "enabled")
+
     private Boolean enabled;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remote_ids")
-    
+    @JsonProperty(value = "remote_ids")
+
     private List<String> remoteIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private IdentityprovidersLinks links;
+
+    public IdentityprovidersResult withSsoType(String ssoType) {
+        this.ssoType = ssoType;
+        return this;
+    }
+
+    /** 身份提供商类型。当前支持virtual_user_sso和iam_user_sso两种。当返回为空字符串或者null时，默认为缺省类型virtual_user_sso类型。
+     * 
+     * @return ssoType */
+    public String getSsoType() {
+        return ssoType;
+    }
+
+    public void setSsoType(String ssoType) {
+        this.ssoType = ssoType;
+    }
 
     public IdentityprovidersResult withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 身份提供商ID。
-     * @return id
-     */
+    /** 身份提供商ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -70,20 +75,14 @@ public class IdentityprovidersResult  {
         this.id = id;
     }
 
-    
-
     public IdentityprovidersResult withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 身份提供商描述信息。
-     * @return description
-     */
+    /** 身份提供商描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -92,20 +91,14 @@ public class IdentityprovidersResult  {
         this.description = description;
     }
 
-    
-
     public IdentityprovidersResult withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
     }
 
-    
-
-
-    /**
-     * 身份提供商是否启用，true为启用，false为停用，默认为false。
-     * @return enabled
-     */
+    /** 身份提供商是否启用，true为启用，false为停用，默认为false。
+     * 
+     * @return enabled */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -114,16 +107,13 @@ public class IdentityprovidersResult  {
         this.enabled = enabled;
     }
 
-    
-
     public IdentityprovidersResult withRemoteIds(List<String> remoteIds) {
         this.remoteIds = remoteIds;
         return this;
     }
 
-    
     public IdentityprovidersResult addRemoteIdsItem(String remoteIdsItem) {
-        if(this.remoteIds == null) {
+        if (this.remoteIds == null) {
             this.remoteIds = new ArrayList<>();
         }
         this.remoteIds.add(remoteIdsItem);
@@ -131,17 +121,16 @@ public class IdentityprovidersResult  {
     }
 
     public IdentityprovidersResult withRemoteIds(Consumer<List<String>> remoteIdsSetter) {
-        if(this.remoteIds == null) {
+        if (this.remoteIds == null) {
             this.remoteIds = new ArrayList<>();
         }
         remoteIdsSetter.accept(this.remoteIds);
         return this;
     }
 
-    /**
-     * 身份提供商的联邦用户ID列表。
-     * @return remoteIds
-     */
+    /** 身份提供商的联邦用户ID列表。
+     * 
+     * @return remoteIds */
     public List<String> getRemoteIds() {
         return remoteIds;
     }
@@ -150,27 +139,23 @@ public class IdentityprovidersResult  {
         this.remoteIds = remoteIds;
     }
 
-    
-
     public IdentityprovidersResult withLinks(IdentityprovidersLinks links) {
         this.links = links;
         return this;
     }
 
     public IdentityprovidersResult withLinks(Consumer<IdentityprovidersLinks> linksSetter) {
-        if(this.links == null ){
+        if (this.links == null) {
             this.links = new IdentityprovidersLinks();
             linksSetter.accept(this.links);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get links
-     * @return links
-     */
+    /** Get links
+     * 
+     * @return links */
     public IdentityprovidersLinks getLinks() {
         return links;
     }
@@ -178,8 +163,6 @@ public class IdentityprovidersResult  {
     public void setLinks(IdentityprovidersLinks links) {
         this.links = links;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -190,20 +173,24 @@ public class IdentityprovidersResult  {
             return false;
         }
         IdentityprovidersResult identityprovidersResult = (IdentityprovidersResult) o;
-        return Objects.equals(this.id, identityprovidersResult.id) &&
-            Objects.equals(this.description, identityprovidersResult.description) &&
-            Objects.equals(this.enabled, identityprovidersResult.enabled) &&
-            Objects.equals(this.remoteIds, identityprovidersResult.remoteIds) &&
-            Objects.equals(this.links, identityprovidersResult.links);
+        return Objects.equals(this.ssoType, identityprovidersResult.ssoType)
+            && Objects.equals(this.id, identityprovidersResult.id)
+            && Objects.equals(this.description, identityprovidersResult.description)
+            && Objects.equals(this.enabled, identityprovidersResult.enabled)
+            && Objects.equals(this.remoteIds, identityprovidersResult.remoteIds)
+            && Objects.equals(this.links, identityprovidersResult.links);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, description, enabled, remoteIds, links);
+        return Objects.hash(ssoType, id, description, enabled, remoteIds, links);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class IdentityprovidersResult {\n");
+        sb.append("    ssoType: ").append(toIndentedString(ssoType)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
@@ -212,16 +199,13 @@ public class IdentityprovidersResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -6,14 +6,14 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.vpc.v2.model.*;
+
 import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class VpcMeta {
 
-    public static final HttpRequestDef<AcceptVpcPeeringRequest, AcceptVpcPeeringResponse> acceptVpcPeering = genForacceptVpcPeering();
+    public static final HttpRequestDef<AcceptVpcPeeringRequest, AcceptVpcPeeringResponse> acceptVpcPeering =
+        genForacceptVpcPeering();
 
     private static HttpRequestDef<AcceptVpcPeeringRequest, AcceptVpcPeeringResponse> genForacceptVpcPeering() {
         // basic
@@ -24,88 +24,111 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("peering_id",
+        builder.<String>withRequestField("peering_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AcceptVpcPeeringRequest::getPeeringId, (req, v) -> {
                 req.setPeeringId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchCreateSubnetTagsRequest, BatchCreateSubnetTagsResponse> batchCreateSubnetTags = genForbatchCreateSubnetTags();
+    public static final HttpRequestDef<AssociateRouteTableRequest, AssociateRouteTableResponse> associateRouteTable =
+        genForassociateRouteTable();
+
+    private static HttpRequestDef<AssociateRouteTableRequest, AssociateRouteTableResponse> genForassociateRouteTable() {
+        // basic
+        HttpRequestDef.Builder<AssociateRouteTableRequest, AssociateRouteTableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AssociateRouteTableRequest.class, AssociateRouteTableResponse.class)
+                .withName("AssociateRouteTable")
+                .withUri("/v1/{project_id}/routetables/{routetable_id}/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("routetable_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateRouteTableRequest::getRoutetableId, (req, v) -> {
+                req.setRoutetableId(v);
+            }));
+        builder.<RoutetableAssociateReqbody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RoutetableAssociateReqbody.class),
+            f -> f.withMarshaller(AssociateRouteTableRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateSubnetTagsRequest, BatchCreateSubnetTagsResponse> batchCreateSubnetTags =
+        genForbatchCreateSubnetTags();
 
     private static HttpRequestDef<BatchCreateSubnetTagsRequest, BatchCreateSubnetTagsResponse> genForbatchCreateSubnetTags() {
         // basic
-        HttpRequestDef.Builder<BatchCreateSubnetTagsRequest, BatchCreateSubnetTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchCreateSubnetTagsRequest.class, BatchCreateSubnetTagsResponse.class)
-                .withName("BatchCreateSubnetTags")
-                .withUri("/v2.0/{project_id}/subnets/{subnet_id}/tags/action")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<BatchCreateSubnetTagsRequest, BatchCreateSubnetTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchCreateSubnetTagsRequest.class, BatchCreateSubnetTagsResponse.class)
+            .withName("BatchCreateSubnetTags")
+            .withUri("/v2.0/{project_id}/subnets/{subnet_id}/tags/action")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("subnet_id",
+        builder.<String>withRequestField("subnet_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchCreateSubnetTagsRequest::getSubnetId, (req, v) -> {
                 req.setSubnetId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<BatchCreateSubnetTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchCreateSubnetTagsRequestBody.class,
+            TypeCasts.uncheckedConversion(BatchCreateSubnetTagsRequestBody.class),
             f -> f.withMarshaller(BatchCreateSubnetTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchDeleteSubnetTagsRequest, BatchDeleteSubnetTagsResponse> batchDeleteSubnetTags = genForbatchDeleteSubnetTags();
+    public static final HttpRequestDef<BatchDeleteSubnetTagsRequest, BatchDeleteSubnetTagsResponse> batchDeleteSubnetTags =
+        genForbatchDeleteSubnetTags();
 
     private static HttpRequestDef<BatchDeleteSubnetTagsRequest, BatchDeleteSubnetTagsResponse> genForbatchDeleteSubnetTags() {
         // basic
-        HttpRequestDef.Builder<BatchDeleteSubnetTagsRequest, BatchDeleteSubnetTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteSubnetTagsRequest.class, BatchDeleteSubnetTagsResponse.class)
-                .withName("BatchDeleteSubnetTags")
-                .withUri("/v2.0/{project_id}/subnets/{subnet_id}/tags/action")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<BatchDeleteSubnetTagsRequest, BatchDeleteSubnetTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDeleteSubnetTagsRequest.class, BatchDeleteSubnetTagsResponse.class)
+            .withName("BatchDeleteSubnetTags")
+            .withUri("/v2.0/{project_id}/subnets/{subnet_id}/tags/action")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("subnet_id",
+        builder.<String>withRequestField("subnet_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchDeleteSubnetTagsRequest::getSubnetId, (req, v) -> {
                 req.setSubnetId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<BatchDeleteSubnetTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchDeleteSubnetTagsRequestBody.class,
+            TypeCasts.uncheckedConversion(BatchDeleteSubnetTagsRequestBody.class),
             f -> f.withMarshaller(BatchDeleteSubnetTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -121,23 +144,46 @@ public class VpcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreatePortRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreatePortRequestBody.class,
+            TypeCasts.uncheckedConversion(CreatePortRequestBody.class),
             f -> f.withMarshaller(CreatePortRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateSecurityGroupRequest, CreateSecurityGroupResponse> createSecurityGroup = genForcreateSecurityGroup();
+    public static final HttpRequestDef<CreateRouteTableRequest, CreateRouteTableResponse> createRouteTable =
+        genForcreateRouteTable();
+
+    private static HttpRequestDef<CreateRouteTableRequest, CreateRouteTableResponse> genForcreateRouteTable() {
+        // basic
+        HttpRequestDef.Builder<CreateRouteTableRequest, CreateRouteTableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRouteTableRequest.class, CreateRouteTableResponse.class)
+                .withName("CreateRouteTable")
+                .withUri("/v1/{project_id}/routetables")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateRoutetableReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateRoutetableReqBody.class),
+            f -> f.withMarshaller(CreateRouteTableRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSecurityGroupRequest, CreateSecurityGroupResponse> createSecurityGroup =
+        genForcreateSecurityGroup();
 
     private static HttpRequestDef<CreateSecurityGroupRequest, CreateSecurityGroupResponse> genForcreateSecurityGroup() {
         // basic
@@ -148,45 +194,40 @@ public class VpcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateSecurityGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateSecurityGroupRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateSecurityGroupRequestBody.class),
             f -> f.withMarshaller(CreateSecurityGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse> createSecurityGroupRule = genForcreateSecurityGroupRule();
+    public static final HttpRequestDef<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse> createSecurityGroupRule =
+        genForcreateSecurityGroupRule();
 
     private static HttpRequestDef<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse> genForcreateSecurityGroupRule() {
         // basic
-        HttpRequestDef.Builder<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateSecurityGroupRuleRequest.class, CreateSecurityGroupRuleResponse.class)
-                .withName("CreateSecurityGroupRule")
-                .withUri("/v1/{project_id}/security-group-rules")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<CreateSecurityGroupRuleRequest, CreateSecurityGroupRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateSecurityGroupRuleRequest.class, CreateSecurityGroupRuleResponse.class)
+            .withName("CreateSecurityGroupRule")
+            .withUri("/v1/{project_id}/security-group-rules")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateSecurityGroupRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateSecurityGroupRuleRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateSecurityGroupRuleRequestBody.class),
             f -> f.withMarshaller(CreateSecurityGroupRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -202,23 +243,21 @@ public class VpcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateSubnetRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateSubnetRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateSubnetRequestBody.class),
             f -> f.withMarshaller(CreateSubnetRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateSubnetTagRequest, CreateSubnetTagResponse> createSubnetTag = genForcreateSubnetTag();
+    public static final HttpRequestDef<CreateSubnetTagRequest, CreateSubnetTagResponse> createSubnetTag =
+        genForcreateSubnetTag();
 
     private static HttpRequestDef<CreateSubnetTagRequest, CreateSubnetTagResponse> genForcreateSubnetTag() {
         // basic
@@ -229,31 +268,28 @@ public class VpcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("subnet_id",
+        builder.<String>withRequestField("subnet_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateSubnetTagRequest::getSubnetId, (req, v) -> {
                 req.setSubnetId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateSubnetTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateSubnetTagRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateSubnetTagRequestBody.class),
             f -> f.withMarshaller(CreateSubnetTagRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateVpcPeeringRequest, CreateVpcPeeringResponse> createVpcPeering = genForcreateVpcPeering();
+    public static final HttpRequestDef<CreateVpcPeeringRequest, CreateVpcPeeringResponse> createVpcPeering =
+        genForcreateVpcPeering();
 
     private static HttpRequestDef<CreateVpcPeeringRequest, CreateVpcPeeringResponse> genForcreateVpcPeering() {
         // basic
@@ -264,18 +300,15 @@ public class VpcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateVpcPeeringRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateVpcPeeringRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateVpcPeeringRequestBody.class),
             f -> f.withMarshaller(CreateVpcPeeringRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -291,72 +324,90 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("port_id",
+        builder.<String>withRequestField("port_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeletePortRequest::getPortId, (req, v) -> {
                 req.setPortId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> deleteSecurityGroup = genFordeleteSecurityGroup();
+    public static final HttpRequestDef<DeleteRouteTableRequest, DeleteRouteTableResponse> deleteRouteTable =
+        genFordeleteRouteTable();
+
+    private static HttpRequestDef<DeleteRouteTableRequest, DeleteRouteTableResponse> genFordeleteRouteTable() {
+        // basic
+        HttpRequestDef.Builder<DeleteRouteTableRequest, DeleteRouteTableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteRouteTableRequest.class, DeleteRouteTableResponse.class)
+                .withName("DeleteRouteTable")
+                .withUri("/v1/{project_id}/routetables/{routetable_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("routetable_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRouteTableRequest::getRoutetableId, (req, v) -> {
+                req.setRoutetableId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> deleteSecurityGroup =
+        genFordeleteSecurityGroup();
 
     private static HttpRequestDef<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> genFordeleteSecurityGroup() {
         // basic
-        HttpRequestDef.Builder<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSecurityGroupRequest.class, DeleteSecurityGroupResponse.class)
-                .withName("DeleteSecurityGroup")
-                .withUri("/v1/{project_id}/security-groups/{security_group_id}")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<DeleteSecurityGroupRequest, DeleteSecurityGroupResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteSecurityGroupRequest.class, DeleteSecurityGroupResponse.class)
+            .withName("DeleteSecurityGroup")
+            .withUri("/v1/{project_id}/security-groups/{security_group_id}")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("security_group_id",
+        builder.<String>withRequestField("security_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSecurityGroupRequest::getSecurityGroupId, (req, v) -> {
                 req.setSecurityGroupId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse> deleteSecurityGroupRule = genFordeleteSecurityGroupRule();
+    public static final HttpRequestDef<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse> deleteSecurityGroupRule =
+        genFordeleteSecurityGroupRule();
 
     private static HttpRequestDef<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse> genFordeleteSecurityGroupRule() {
         // basic
-        HttpRequestDef.Builder<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSecurityGroupRuleRequest.class, DeleteSecurityGroupRuleResponse.class)
-                .withName("DeleteSecurityGroupRule")
-                .withUri("/v1/{project_id}/security-group-rules/{security_group_rule_id}")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<DeleteSecurityGroupRuleRequest, DeleteSecurityGroupRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteSecurityGroupRuleRequest.class, DeleteSecurityGroupRuleResponse.class)
+            .withName("DeleteSecurityGroupRule")
+            .withUri("/v1/{project_id}/security-group-rules/{security_group_rule_id}")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("security_group_rule_id",
+        builder.<String>withRequestField("security_group_rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSecurityGroupRuleRequest::getSecurityGroupRuleId, (req, v) -> {
                 req.setSecurityGroupRuleId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -372,31 +423,28 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("vpc_id",
+        builder.<String>withRequestField("vpc_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSubnetRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
-            })
-        );
-        builder.withRequestField("subnet_id",
+            }));
+        builder.<String>withRequestField("subnet_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSubnetRequest::getSubnetId, (req, v) -> {
                 req.setSubnetId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteSubnetTagRequest, DeleteSubnetTagResponse> deleteSubnetTag = genFordeleteSubnetTag();
+    public static final HttpRequestDef<DeleteSubnetTagRequest, DeleteSubnetTagResponse> deleteSubnetTag =
+        genFordeleteSubnetTag();
 
     private static HttpRequestDef<DeleteSubnetTagRequest, DeleteSubnetTagResponse> genFordeleteSubnetTag() {
         // basic
@@ -407,31 +455,28 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("subnet_id",
+        builder.<String>withRequestField("subnet_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSubnetTagRequest::getSubnetId, (req, v) -> {
                 req.setSubnetId(v);
-            })
-        );
-        builder.withRequestField("key",
+            }));
+        builder.<String>withRequestField("key",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSubnetTagRequest::getKey, (req, v) -> {
                 req.setKey(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteVpcPeeringRequest, DeleteVpcPeeringResponse> deleteVpcPeering = genFordeleteVpcPeering();
+    public static final HttpRequestDef<DeleteVpcPeeringRequest, DeleteVpcPeeringResponse> deleteVpcPeering =
+        genFordeleteVpcPeering();
 
     private static HttpRequestDef<DeleteVpcPeeringRequest, DeleteVpcPeeringResponse> genFordeleteVpcPeering() {
         // basic
@@ -442,18 +487,47 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("peering_id",
+        builder.<String>withRequestField("peering_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteVpcPeeringRequest::getPeeringId, (req, v) -> {
                 req.setPeeringId(v);
-            })
-        );
+            }));
 
         // response
-        
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisassociateRouteTableRequest, DisassociateRouteTableResponse> disassociateRouteTable =
+        genFordisassociateRouteTable();
+
+    private static HttpRequestDef<DisassociateRouteTableRequest, DisassociateRouteTableResponse> genFordisassociateRouteTable() {
+        // basic
+        HttpRequestDef.Builder<DisassociateRouteTableRequest, DisassociateRouteTableResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DisassociateRouteTableRequest.class, DisassociateRouteTableResponse.class)
+            .withName("DisassociateRouteTable")
+            .withUri("/v1/{project_id}/routetables/{routetable_id}/action")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("routetable_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateRouteTableRequest::getRoutetableId, (req, v) -> {
+                req.setRoutetableId(v);
+            }));
+        builder.<RoutetableAssociateReqbody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RoutetableAssociateReqbody.class),
+            f -> f.withMarshaller(DisassociateRouteTableRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
 
         return builder.build();
     }
@@ -469,154 +543,190 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("name",
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPortsRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPortsRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPortsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("admin_state_up",
+            }));
+        builder.<Boolean>withRequestField("admin_state_up",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListPortsRequest::getAdminStateUp, (req, v) -> {
                 req.setAdminStateUp(v);
-            })
-        );
-        builder.withRequestField("network_id",
+            }));
+        builder.<String>withRequestField("network_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPortsRequest::getNetworkId, (req, v) -> {
                 req.setNetworkId(v);
-            })
-        );
-        builder.withRequestField("mac_address",
+            }));
+        builder.<String>withRequestField("mac_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPortsRequest::getMacAddress, (req, v) -> {
                 req.setMacAddress(v);
-            })
-        );
-        builder.withRequestField("device_id",
+            }));
+        builder.<String>withRequestField("device_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPortsRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("device_owner",
+            }));
+        builder.<ListPortsRequest.DeviceOwnerEnum>withRequestField("device_owner",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListPortsRequest.DeviceOwnerEnum.class,
+            TypeCasts.uncheckedConversion(ListPortsRequest.DeviceOwnerEnum.class),
             f -> f.withMarshaller(ListPortsRequest::getDeviceOwner, (req, v) -> {
                 req.setDeviceOwner(v);
-            })
-        );
-        builder.withRequestField("status",
+            }));
+        builder.<ListPortsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListPortsRequest.StatusEnum.class,
+            TypeCasts.uncheckedConversion(ListPortsRequest.StatusEnum.class),
             f -> f.withMarshaller(ListPortsRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPortsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("fixed_ips",
+            }));
+        builder.<String>withRequestField("fixed_ips",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPortsRequest::getFixedIps, (req, v) -> {
                 req.setFixedIps(v);
-            })
-        );
-        builder.withRequestField("enterprise_project_id",
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPortsRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse> listSecurityGroupRules = genForlistSecurityGroupRules();
+    public static final HttpRequestDef<ListRouteTablesRequest, ListRouteTablesResponse> listRouteTables =
+        genForlistRouteTables();
 
-    private static HttpRequestDef<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse> genForlistSecurityGroupRules() {
+    private static HttpRequestDef<ListRouteTablesRequest, ListRouteTablesResponse> genForlistRouteTables() {
         // basic
-        HttpRequestDef.Builder<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListSecurityGroupRulesRequest.class, ListSecurityGroupRulesResponse.class)
-                .withName("ListSecurityGroupRules")
-                .withUri("/v1/{project_id}/security-group-rules")
+        HttpRequestDef.Builder<ListRouteTablesRequest, ListRouteTablesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRouteTablesRequest.class, ListRouteTablesResponse.class)
+                .withName("ListRouteTables")
+                .withUri("/v1/{project_id}/routetables")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("marker",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getMarker, (req, v) -> {
-                req.setMarker(v);
-            })
-        );
-        builder.withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            Integer.class,
-            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getLimit, (req, v) -> {
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRouteTablesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("security_group_id",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getSecurityGroupId, (req, v) -> {
-                req.setSecurityGroupId(v);
-            })
-        );
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRouteTablesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRouteTablesRequest::getId, (req, v) -> {
+                req.setId(v);
+            }));
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRouteTablesRequest::getVpcId, (req, v) -> {
+                req.setVpcId(v);
+            }));
+        builder.<String>withRequestField("subnet_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRouteTablesRequest::getSubnetId, (req, v) -> {
+                req.setSubnetId(v);
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSecurityGroupsRequest, ListSecurityGroupsResponse> listSecurityGroups = genForlistSecurityGroups();
+    public static final HttpRequestDef<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse> listSecurityGroupRules =
+        genForlistSecurityGroupRules();
+
+    private static HttpRequestDef<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse> genForlistSecurityGroupRules() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityGroupRulesRequest, ListSecurityGroupRulesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSecurityGroupRulesRequest.class, ListSecurityGroupRulesResponse.class)
+            .withName("ListSecurityGroupRules")
+            .withUri("/v1/{project_id}/security-group-rules")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("security_group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getSecurityGroupId, (req, v) -> {
+                req.setSecurityGroupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecurityGroupsRequest, ListSecurityGroupsResponse> listSecurityGroups =
+        genForlistSecurityGroups();
 
     private static HttpRequestDef<ListSecurityGroupsRequest, ListSecurityGroupsResponse> genForlistSecurityGroups() {
         // basic
@@ -627,47 +737,42 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSecurityGroupsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSecurityGroupsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("vpc_id",
+            }));
+        builder.<String>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSecurityGroupsRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
-            })
-        );
-        builder.withRequestField("enterprise_project_id",
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSecurityGroupsRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSubnetTagsRequest, ListSubnetTagsResponse> listSubnetTags = genForlistSubnetTags();
+    public static final HttpRequestDef<ListSubnetTagsRequest, ListSubnetTagsResponse> listSubnetTags =
+        genForlistSubnetTags();
 
     private static HttpRequestDef<ListSubnetTagsRequest, ListSubnetTagsResponse> genForlistSubnetTags() {
         // basic
@@ -680,8 +785,6 @@ public class VpcMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
@@ -697,39 +800,35 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSubnetsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSubnetsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("vpc_id",
+            }));
+        builder.<String>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSubnetsRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSubnetsByTagsRequest, ListSubnetsByTagsResponse> listSubnetsByTags = genForlistSubnetsByTags();
+    public static final HttpRequestDef<ListSubnetsByTagsRequest, ListSubnetsByTagsResponse> listSubnetsByTags =
+        genForlistSubnetsByTags();
 
     private static HttpRequestDef<ListSubnetsByTagsRequest, ListSubnetsByTagsResponse> genForlistSubnetsByTags() {
         // basic
@@ -740,23 +839,21 @@ public class VpcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<ListSubnetsByTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ListSubnetsByTagsRequestBody.class,
+            TypeCasts.uncheckedConversion(ListSubnetsByTagsRequestBody.class),
             f -> f.withMarshaller(ListSubnetsByTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListVpcPeeringsRequest, ListVpcPeeringsResponse> listVpcPeerings = genForlistVpcPeerings();
+    public static final HttpRequestDef<ListVpcPeeringsRequest, ListVpcPeeringsResponse> listVpcPeerings =
+        genForlistVpcPeerings();
 
     private static HttpRequestDef<ListVpcPeeringsRequest, ListVpcPeeringsResponse> genForlistVpcPeerings() {
         // basic
@@ -767,71 +864,63 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListVpcPeeringsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVpcPeeringsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVpcPeeringsRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVpcPeeringsRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("status",
+            }));
+        builder.<ListVpcPeeringsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListVpcPeeringsRequest.StatusEnum.class,
+            TypeCasts.uncheckedConversion(ListVpcPeeringsRequest.StatusEnum.class),
             f -> f.withMarshaller(ListVpcPeeringsRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
-            })
-        );
-        builder.withRequestField("tenant_id",
+            }));
+        builder.<String>withRequestField("tenant_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVpcPeeringsRequest::getTenantId, (req, v) -> {
                 req.setTenantId(v);
-            })
-        );
-        builder.withRequestField("vpc_id",
+            }));
+        builder.<String>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVpcPeeringsRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RejectVpcPeeringRequest, RejectVpcPeeringResponse> rejectVpcPeering = genForrejectVpcPeering();
+    public static final HttpRequestDef<RejectVpcPeeringRequest, RejectVpcPeeringResponse> rejectVpcPeering =
+        genForrejectVpcPeering();
 
     private static HttpRequestDef<RejectVpcPeeringRequest, RejectVpcPeeringResponse> genForrejectVpcPeering() {
         // basic
@@ -842,18 +931,15 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("peering_id",
+        builder.<String>withRequestField("peering_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RejectVpcPeeringRequest::getPeeringId, (req, v) -> {
                 req.setPeeringId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -869,18 +955,15 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("port_id",
+        builder.<String>withRequestField("port_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPortRequest::getPortId, (req, v) -> {
                 req.setPortId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -896,23 +979,46 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("type",
+        builder.<ShowQuotaRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ShowQuotaRequest.TypeEnum.class,
+            TypeCasts.uncheckedConversion(ShowQuotaRequest.TypeEnum.class),
             f -> f.withMarshaller(ShowQuotaRequest::getType, (req, v) -> {
                 req.setType(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSecurityGroupRequest, ShowSecurityGroupResponse> showSecurityGroup = genForshowSecurityGroup();
+    public static final HttpRequestDef<ShowRouteTableRequest, ShowRouteTableResponse> showRouteTable =
+        genForshowRouteTable();
+
+    private static HttpRequestDef<ShowRouteTableRequest, ShowRouteTableResponse> genForshowRouteTable() {
+        // basic
+        HttpRequestDef.Builder<ShowRouteTableRequest, ShowRouteTableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRouteTableRequest.class, ShowRouteTableResponse.class)
+                .withName("ShowRouteTable")
+                .withUri("/v1/{project_id}/routetables/{routetable_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("routetable_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRouteTableRequest::getRoutetableId, (req, v) -> {
+                req.setRoutetableId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSecurityGroupRequest, ShowSecurityGroupResponse> showSecurityGroup =
+        genForshowSecurityGroup();
 
     private static HttpRequestDef<ShowSecurityGroupRequest, ShowSecurityGroupResponse> genForshowSecurityGroup() {
         // basic
@@ -923,45 +1029,40 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("security_group_id",
+        builder.<String>withRequestField("security_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSecurityGroupRequest::getSecurityGroupId, (req, v) -> {
                 req.setSecurityGroupId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse> showSecurityGroupRule = genForshowSecurityGroupRule();
+    public static final HttpRequestDef<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse> showSecurityGroupRule =
+        genForshowSecurityGroupRule();
 
     private static HttpRequestDef<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse> genForshowSecurityGroupRule() {
         // basic
-        HttpRequestDef.Builder<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowSecurityGroupRuleRequest.class, ShowSecurityGroupRuleResponse.class)
-                .withName("ShowSecurityGroupRule")
-                .withUri("/v1/{project_id}/security-group-rules/{security_group_rule_id}")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowSecurityGroupRuleRequest, ShowSecurityGroupRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowSecurityGroupRuleRequest.class, ShowSecurityGroupRuleResponse.class)
+            .withName("ShowSecurityGroupRule")
+            .withUri("/v1/{project_id}/security-group-rules/{security_group_rule_id}")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("security_group_rule_id",
+        builder.<String>withRequestField("security_group_rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSecurityGroupRuleRequest::getSecurityGroupRuleId, (req, v) -> {
                 req.setSecurityGroupRuleId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -977,23 +1078,21 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("subnet_id",
+        builder.<String>withRequestField("subnet_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSubnetRequest::getSubnetId, (req, v) -> {
                 req.setSubnetId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSubnetTagsRequest, ShowSubnetTagsResponse> showSubnetTags = genForshowSubnetTags();
+    public static final HttpRequestDef<ShowSubnetTagsRequest, ShowSubnetTagsResponse> showSubnetTags =
+        genForshowSubnetTags();
 
     private static HttpRequestDef<ShowSubnetTagsRequest, ShowSubnetTagsResponse> genForshowSubnetTags() {
         // basic
@@ -1004,23 +1103,21 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("subnet_id",
+        builder.<String>withRequestField("subnet_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSubnetTagsRequest::getSubnetId, (req, v) -> {
                 req.setSubnetId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowVpcPeeringRequest, ShowVpcPeeringResponse> showVpcPeering = genForshowVpcPeering();
+    public static final HttpRequestDef<ShowVpcPeeringRequest, ShowVpcPeeringResponse> showVpcPeering =
+        genForshowVpcPeering();
 
     private static HttpRequestDef<ShowVpcPeeringRequest, ShowVpcPeeringResponse> genForshowVpcPeering() {
         // basic
@@ -1031,18 +1128,15 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("peering_id",
+        builder.<String>withRequestField("peering_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowVpcPeeringRequest::getPeeringId, (req, v) -> {
                 req.setPeeringId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1058,26 +1152,54 @@ public class VpcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("port_id",
+        builder.<String>withRequestField("port_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdatePortRequest::getPortId, (req, v) -> {
                 req.setPortId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdatePortRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdatePortRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdatePortRequestBody.class),
             f -> f.withMarshaller(UpdatePortRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRouteTableRequest, UpdateRouteTableResponse> updateRouteTable =
+        genForupdateRouteTable();
+
+    private static HttpRequestDef<UpdateRouteTableRequest, UpdateRouteTableResponse> genForupdateRouteTable() {
+        // basic
+        HttpRequestDef.Builder<UpdateRouteTableRequest, UpdateRouteTableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateRouteTableRequest.class, UpdateRouteTableResponse.class)
+                .withName("UpdateRouteTable")
+                .withUri("/v1/{project_id}/routetables/{routetable_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("routetable_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateRouteTableRequest::getRoutetableId, (req, v) -> {
+                req.setRoutetableId(v);
+            }));
+        builder.<UpdateRoutetableReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateRoutetableReqBody.class),
+            f -> f.withMarshaller(UpdateRouteTableRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
 
         return builder.build();
     }
@@ -1093,39 +1215,35 @@ public class VpcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("vpc_id",
+        builder.<String>withRequestField("vpc_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateSubnetRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
-            })
-        );
-        builder.withRequestField("subnet_id",
+            }));
+        builder.<String>withRequestField("subnet_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateSubnetRequest::getSubnetId, (req, v) -> {
                 req.setSubnetId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateSubnetRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateSubnetRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateSubnetRequestBody.class),
             f -> f.withMarshaller(UpdateSubnetRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateVpcPeeringRequest, UpdateVpcPeeringResponse> updateVpcPeering = genForupdateVpcPeering();
+    public static final HttpRequestDef<UpdateVpcPeeringRequest, UpdateVpcPeeringResponse> updateVpcPeering =
+        genForupdateVpcPeering();
 
     private static HttpRequestDef<UpdateVpcPeeringRequest, UpdateVpcPeeringResponse> genForupdateVpcPeering() {
         // basic
@@ -1136,31 +1254,28 @@ public class VpcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("peering_id",
+        builder.<String>withRequestField("peering_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateVpcPeeringRequest::getPeeringId, (req, v) -> {
                 req.setPeeringId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateVpcPeeringRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateVpcPeeringRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateVpcPeeringRequestBody.class),
             f -> f.withMarshaller(UpdateVpcPeeringRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreatePrivateipRequest, CreatePrivateipResponse> createPrivateip = genForcreatePrivateip();
+    public static final HttpRequestDef<CreatePrivateipRequest, CreatePrivateipResponse> createPrivateip =
+        genForcreatePrivateip();
 
     private static HttpRequestDef<CreatePrivateipRequest, CreatePrivateipResponse> genForcreatePrivateip() {
         // basic
@@ -1171,23 +1286,21 @@ public class VpcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreatePrivateipRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreatePrivateipRequestBody.class,
+            TypeCasts.uncheckedConversion(CreatePrivateipRequestBody.class),
             f -> f.withMarshaller(CreatePrivateipRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeletePrivateipRequest, DeletePrivateipResponse> deletePrivateip = genFordeletePrivateip();
+    public static final HttpRequestDef<DeletePrivateipRequest, DeletePrivateipResponse> deletePrivateip =
+        genFordeletePrivateip();
 
     private static HttpRequestDef<DeletePrivateipRequest, DeletePrivateipResponse> genFordeletePrivateip() {
         // basic
@@ -1198,23 +1311,21 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("privateip_id",
+        builder.<String>withRequestField("privateip_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeletePrivateipRequest::getPrivateipId, (req, v) -> {
                 req.setPrivateipId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPrivateipsRequest, ListPrivateipsResponse> listPrivateips = genForlistPrivateips();
+    public static final HttpRequestDef<ListPrivateipsRequest, ListPrivateipsResponse> listPrivateips =
+        genForlistPrivateips();
 
     private static HttpRequestDef<ListPrivateipsRequest, ListPrivateipsResponse> genForlistPrivateips() {
         // basic
@@ -1225,66 +1336,63 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("subnet_id",
+        builder.<String>withRequestField("subnet_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPrivateipsRequest::getSubnetId, (req, v) -> {
                 req.setSubnetId(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPrivateipsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPrivateipsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowNetworkIpAvailabilitiesRequest, ShowNetworkIpAvailabilitiesResponse> showNetworkIpAvailabilities = genForshowNetworkIpAvailabilities();
+    public static final HttpRequestDef<ShowNetworkIpAvailabilitiesRequest, ShowNetworkIpAvailabilitiesResponse> showNetworkIpAvailabilities =
+        genForshowNetworkIpAvailabilities();
 
     private static HttpRequestDef<ShowNetworkIpAvailabilitiesRequest, ShowNetworkIpAvailabilitiesResponse> genForshowNetworkIpAvailabilities() {
         // basic
         HttpRequestDef.Builder<ShowNetworkIpAvailabilitiesRequest, ShowNetworkIpAvailabilitiesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowNetworkIpAvailabilitiesRequest.class, ShowNetworkIpAvailabilitiesResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowNetworkIpAvailabilitiesRequest.class,
+                    ShowNetworkIpAvailabilitiesResponse.class)
                 .withName("ShowNetworkIpAvailabilities")
                 .withUri("/v2.0/network-ip-availabilities/{network_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("network_id",
+        builder.<String>withRequestField("network_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowNetworkIpAvailabilitiesRequest::getNetworkId, (req, v) -> {
                 req.setNetworkId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPrivateipRequest, ShowPrivateipResponse> showPrivateip = genForshowPrivateip();
+    public static final HttpRequestDef<ShowPrivateipRequest, ShowPrivateipResponse> showPrivateip =
+        genForshowPrivateip();
 
     private static HttpRequestDef<ShowPrivateipRequest, ShowPrivateipResponse> genForshowPrivateip() {
         // basic
@@ -1295,1045 +1403,1017 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("privateip_id",
+        builder.<String>withRequestField("privateip_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPrivateipRequest::getPrivateipId, (req, v) -> {
                 req.setPrivateipId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronCreateSecurityGroupRequest, NeutronCreateSecurityGroupResponse> neutronCreateSecurityGroup = genForneutronCreateSecurityGroup();
+    public static final HttpRequestDef<NeutronCreateSecurityGroupRequest, NeutronCreateSecurityGroupResponse> neutronCreateSecurityGroup =
+        genForneutronCreateSecurityGroup();
 
     private static HttpRequestDef<NeutronCreateSecurityGroupRequest, NeutronCreateSecurityGroupResponse> genForneutronCreateSecurityGroup() {
         // basic
         HttpRequestDef.Builder<NeutronCreateSecurityGroupRequest, NeutronCreateSecurityGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, NeutronCreateSecurityGroupRequest.class, NeutronCreateSecurityGroupResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    NeutronCreateSecurityGroupRequest.class,
+                    NeutronCreateSecurityGroupResponse.class)
                 .withName("NeutronCreateSecurityGroup")
                 .withUri("/v2.0/security-groups")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<NeutronCreateSecurityGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            NeutronCreateSecurityGroupRequestBody.class,
+            TypeCasts.uncheckedConversion(NeutronCreateSecurityGroupRequestBody.class),
             f -> f.withMarshaller(NeutronCreateSecurityGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronCreateSecurityGroupRuleRequest, NeutronCreateSecurityGroupRuleResponse> neutronCreateSecurityGroupRule = genForneutronCreateSecurityGroupRule();
+    public static final HttpRequestDef<NeutronCreateSecurityGroupRuleRequest, NeutronCreateSecurityGroupRuleResponse> neutronCreateSecurityGroupRule =
+        genForneutronCreateSecurityGroupRule();
 
     private static HttpRequestDef<NeutronCreateSecurityGroupRuleRequest, NeutronCreateSecurityGroupRuleResponse> genForneutronCreateSecurityGroupRule() {
         // basic
         HttpRequestDef.Builder<NeutronCreateSecurityGroupRuleRequest, NeutronCreateSecurityGroupRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, NeutronCreateSecurityGroupRuleRequest.class, NeutronCreateSecurityGroupRuleResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    NeutronCreateSecurityGroupRuleRequest.class,
+                    NeutronCreateSecurityGroupRuleResponse.class)
                 .withName("NeutronCreateSecurityGroupRule")
                 .withUri("/v2.0/security-group-rules")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<NeutronCreateSecurityGroupRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            NeutronCreateSecurityGroupRuleRequestBody.class,
+            TypeCasts.uncheckedConversion(NeutronCreateSecurityGroupRuleRequestBody.class),
             f -> f.withMarshaller(NeutronCreateSecurityGroupRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronDeleteSecurityGroupRequest, NeutronDeleteSecurityGroupResponse> neutronDeleteSecurityGroup = genForneutronDeleteSecurityGroup();
+    public static final HttpRequestDef<NeutronDeleteSecurityGroupRequest, NeutronDeleteSecurityGroupResponse> neutronDeleteSecurityGroup =
+        genForneutronDeleteSecurityGroup();
 
     private static HttpRequestDef<NeutronDeleteSecurityGroupRequest, NeutronDeleteSecurityGroupResponse> genForneutronDeleteSecurityGroup() {
         // basic
         HttpRequestDef.Builder<NeutronDeleteSecurityGroupRequest, NeutronDeleteSecurityGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, NeutronDeleteSecurityGroupRequest.class, NeutronDeleteSecurityGroupResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    NeutronDeleteSecurityGroupRequest.class,
+                    NeutronDeleteSecurityGroupResponse.class)
                 .withName("NeutronDeleteSecurityGroup")
                 .withUri("/v2.0/security-groups/{security_group_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("security_group_id",
+        builder.<String>withRequestField("security_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronDeleteSecurityGroupRequest::getSecurityGroupId, (req, v) -> {
                 req.setSecurityGroupId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronDeleteSecurityGroupRuleRequest, NeutronDeleteSecurityGroupRuleResponse> neutronDeleteSecurityGroupRule = genForneutronDeleteSecurityGroupRule();
+    public static final HttpRequestDef<NeutronDeleteSecurityGroupRuleRequest, NeutronDeleteSecurityGroupRuleResponse> neutronDeleteSecurityGroupRule =
+        genForneutronDeleteSecurityGroupRule();
 
     private static HttpRequestDef<NeutronDeleteSecurityGroupRuleRequest, NeutronDeleteSecurityGroupRuleResponse> genForneutronDeleteSecurityGroupRule() {
         // basic
         HttpRequestDef.Builder<NeutronDeleteSecurityGroupRuleRequest, NeutronDeleteSecurityGroupRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, NeutronDeleteSecurityGroupRuleRequest.class, NeutronDeleteSecurityGroupRuleResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    NeutronDeleteSecurityGroupRuleRequest.class,
+                    NeutronDeleteSecurityGroupRuleResponse.class)
                 .withName("NeutronDeleteSecurityGroupRule")
                 .withUri("/v2.0/security-group-rules/{security_group_rule_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("security_group_rule_id",
+        builder.<String>withRequestField("security_group_rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronDeleteSecurityGroupRuleRequest::getSecurityGroupRuleId, (req, v) -> {
                 req.setSecurityGroupRuleId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronListSecurityGroupRulesRequest, NeutronListSecurityGroupRulesResponse> neutronListSecurityGroupRules = genForneutronListSecurityGroupRules();
+    public static final HttpRequestDef<NeutronListSecurityGroupRulesRequest, NeutronListSecurityGroupRulesResponse> neutronListSecurityGroupRules =
+        genForneutronListSecurityGroupRules();
 
     private static HttpRequestDef<NeutronListSecurityGroupRulesRequest, NeutronListSecurityGroupRulesResponse> genForneutronListSecurityGroupRules() {
         // basic
         HttpRequestDef.Builder<NeutronListSecurityGroupRulesRequest, NeutronListSecurityGroupRulesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, NeutronListSecurityGroupRulesRequest.class, NeutronListSecurityGroupRulesResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    NeutronListSecurityGroupRulesRequest.class,
+                    NeutronListSecurityGroupRulesResponse.class)
                 .withName("NeutronListSecurityGroupRules")
                 .withUri("/v2.0/security-group-rules")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("direction",
+            }));
+        builder.<String>withRequestField("direction",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getDirection, (req, v) -> {
                 req.setDirection(v);
-            })
-        );
-        builder.withRequestField("protocol",
+            }));
+        builder.<String>withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getProtocol, (req, v) -> {
                 req.setProtocol(v);
-            })
-        );
-        builder.withRequestField("ethertype",
+            }));
+        builder.<String>withRequestField("ethertype",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getEthertype, (req, v) -> {
                 req.setEthertype(v);
-            })
-        );
-        builder.withRequestField("description",
+            }));
+        builder.<String>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
-            })
-        );
-        builder.withRequestField("remote_ip_prefix",
+            }));
+        builder.<String>withRequestField("remote_ip_prefix",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getRemoteIpPrefix, (req, v) -> {
                 req.setRemoteIpPrefix(v);
-            })
-        );
-        builder.withRequestField("remote_group_id",
+            }));
+        builder.<String>withRequestField("remote_group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getRemoteGroupId, (req, v) -> {
                 req.setRemoteGroupId(v);
-            })
-        );
-        builder.withRequestField("security_group_id",
+            }));
+        builder.<String>withRequestField("security_group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getSecurityGroupId, (req, v) -> {
                 req.setSecurityGroupId(v);
-            })
-        );
-        builder.withRequestField("port_range_max",
+            }));
+        builder.<String>withRequestField("port_range_max",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getPortRangeMax, (req, v) -> {
                 req.setPortRangeMax(v);
-            })
-        );
-        builder.withRequestField("port_range_min",
+            }));
+        builder.<String>withRequestField("port_range_min",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getPortRangeMin, (req, v) -> {
                 req.setPortRangeMin(v);
-            })
-        );
-        builder.withRequestField("tenant_id",
+            }));
+        builder.<String>withRequestField("tenant_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListSecurityGroupRulesRequest::getTenantId, (req, v) -> {
                 req.setTenantId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronListSecurityGroupsRequest, NeutronListSecurityGroupsResponse> neutronListSecurityGroups = genForneutronListSecurityGroups();
+    public static final HttpRequestDef<NeutronListSecurityGroupsRequest, NeutronListSecurityGroupsResponse> neutronListSecurityGroups =
+        genForneutronListSecurityGroups();
 
     private static HttpRequestDef<NeutronListSecurityGroupsRequest, NeutronListSecurityGroupsResponse> genForneutronListSecurityGroups() {
         // basic
         HttpRequestDef.Builder<NeutronListSecurityGroupsRequest, NeutronListSecurityGroupsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, NeutronListSecurityGroupsRequest.class, NeutronListSecurityGroupsResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    NeutronListSecurityGroupsRequest.class,
+                    NeutronListSecurityGroupsResponse.class)
                 .withName("NeutronListSecurityGroups")
                 .withUri("/v2.0/security-groups")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(NeutronListSecurityGroupsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListSecurityGroupsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListSecurityGroupsRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListSecurityGroupsRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("description",
+            }));
+        builder.<String>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListSecurityGroupsRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
-            })
-        );
-        builder.withRequestField("tenant_id",
+            }));
+        builder.<String>withRequestField("tenant_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListSecurityGroupsRequest::getTenantId, (req, v) -> {
                 req.setTenantId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronShowSecurityGroupRequest, NeutronShowSecurityGroupResponse> neutronShowSecurityGroup = genForneutronShowSecurityGroup();
+    public static final HttpRequestDef<NeutronShowSecurityGroupRequest, NeutronShowSecurityGroupResponse> neutronShowSecurityGroup =
+        genForneutronShowSecurityGroup();
 
     private static HttpRequestDef<NeutronShowSecurityGroupRequest, NeutronShowSecurityGroupResponse> genForneutronShowSecurityGroup() {
         // basic
         HttpRequestDef.Builder<NeutronShowSecurityGroupRequest, NeutronShowSecurityGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, NeutronShowSecurityGroupRequest.class, NeutronShowSecurityGroupResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET, NeutronShowSecurityGroupRequest.class, NeutronShowSecurityGroupResponse.class)
                 .withName("NeutronShowSecurityGroup")
                 .withUri("/v2.0/security-groups/{security_group_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("security_group_id",
+        builder.<String>withRequestField("security_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronShowSecurityGroupRequest::getSecurityGroupId, (req, v) -> {
                 req.setSecurityGroupId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronShowSecurityGroupRuleRequest, NeutronShowSecurityGroupRuleResponse> neutronShowSecurityGroupRule = genForneutronShowSecurityGroupRule();
+    public static final HttpRequestDef<NeutronShowSecurityGroupRuleRequest, NeutronShowSecurityGroupRuleResponse> neutronShowSecurityGroupRule =
+        genForneutronShowSecurityGroupRule();
 
     private static HttpRequestDef<NeutronShowSecurityGroupRuleRequest, NeutronShowSecurityGroupRuleResponse> genForneutronShowSecurityGroupRule() {
         // basic
         HttpRequestDef.Builder<NeutronShowSecurityGroupRuleRequest, NeutronShowSecurityGroupRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, NeutronShowSecurityGroupRuleRequest.class, NeutronShowSecurityGroupRuleResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    NeutronShowSecurityGroupRuleRequest.class,
+                    NeutronShowSecurityGroupRuleResponse.class)
                 .withName("NeutronShowSecurityGroupRule")
                 .withUri("/v2.0/security-group-rules/{security_group_rule_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("security_group_rule_id",
+        builder.<String>withRequestField("security_group_rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronShowSecurityGroupRuleRequest::getSecurityGroupRuleId, (req, v) -> {
                 req.setSecurityGroupRuleId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronUpdateSecurityGroupRequest, NeutronUpdateSecurityGroupResponse> neutronUpdateSecurityGroup = genForneutronUpdateSecurityGroup();
+    public static final HttpRequestDef<NeutronUpdateSecurityGroupRequest, NeutronUpdateSecurityGroupResponse> neutronUpdateSecurityGroup =
+        genForneutronUpdateSecurityGroup();
 
     private static HttpRequestDef<NeutronUpdateSecurityGroupRequest, NeutronUpdateSecurityGroupResponse> genForneutronUpdateSecurityGroup() {
         // basic
         HttpRequestDef.Builder<NeutronUpdateSecurityGroupRequest, NeutronUpdateSecurityGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, NeutronUpdateSecurityGroupRequest.class, NeutronUpdateSecurityGroupResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    NeutronUpdateSecurityGroupRequest.class,
+                    NeutronUpdateSecurityGroupResponse.class)
                 .withName("NeutronUpdateSecurityGroup")
                 .withUri("/v2.0/security-groups/{security_group_id}")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("security_group_id",
+        builder.<String>withRequestField("security_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronUpdateSecurityGroupRequest::getSecurityGroupId, (req, v) -> {
                 req.setSecurityGroupId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<NeutronUpdateSecurityGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            NeutronUpdateSecurityGroupRequestBody.class,
+            TypeCasts.uncheckedConversion(NeutronUpdateSecurityGroupRequestBody.class),
             f -> f.withMarshaller(NeutronUpdateSecurityGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronAddFirewallRuleRequest, NeutronAddFirewallRuleResponse> neutronAddFirewallRule = genForneutronAddFirewallRule();
+    public static final HttpRequestDef<NeutronAddFirewallRuleRequest, NeutronAddFirewallRuleResponse> neutronAddFirewallRule =
+        genForneutronAddFirewallRule();
 
     private static HttpRequestDef<NeutronAddFirewallRuleRequest, NeutronAddFirewallRuleResponse> genForneutronAddFirewallRule() {
         // basic
-        HttpRequestDef.Builder<NeutronAddFirewallRuleRequest, NeutronAddFirewallRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, NeutronAddFirewallRuleRequest.class, NeutronAddFirewallRuleResponse.class)
-                .withName("NeutronAddFirewallRule")
-                .withUri("/v2.0/fwaas/firewall_policies/{firewall_policy_id}/insert_rule")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<NeutronAddFirewallRuleRequest, NeutronAddFirewallRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, NeutronAddFirewallRuleRequest.class, NeutronAddFirewallRuleResponse.class)
+            .withName("NeutronAddFirewallRule")
+            .withUri("/v2.0/fwaas/firewall_policies/{firewall_policy_id}/insert_rule")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("firewall_policy_id",
+        builder.<String>withRequestField("firewall_policy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronAddFirewallRuleRequest::getFirewallPolicyId, (req, v) -> {
                 req.setFirewallPolicyId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<NeutronInsertFirewallRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            NeutronInsertFirewallRuleRequestBody.class,
+            TypeCasts.uncheckedConversion(NeutronInsertFirewallRuleRequestBody.class),
             f -> f.withMarshaller(NeutronAddFirewallRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronCreateFirewallGroupRequest, NeutronCreateFirewallGroupResponse> neutronCreateFirewallGroup = genForneutronCreateFirewallGroup();
+    public static final HttpRequestDef<NeutronCreateFirewallGroupRequest, NeutronCreateFirewallGroupResponse> neutronCreateFirewallGroup =
+        genForneutronCreateFirewallGroup();
 
     private static HttpRequestDef<NeutronCreateFirewallGroupRequest, NeutronCreateFirewallGroupResponse> genForneutronCreateFirewallGroup() {
         // basic
         HttpRequestDef.Builder<NeutronCreateFirewallGroupRequest, NeutronCreateFirewallGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, NeutronCreateFirewallGroupRequest.class, NeutronCreateFirewallGroupResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    NeutronCreateFirewallGroupRequest.class,
+                    NeutronCreateFirewallGroupResponse.class)
                 .withName("NeutronCreateFirewallGroup")
                 .withUri("/v2.0/fwaas/firewall_groups")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<NeutronCreateFirewallGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            NeutronCreateFirewallGroupRequestBody.class,
+            TypeCasts.uncheckedConversion(NeutronCreateFirewallGroupRequestBody.class),
             f -> f.withMarshaller(NeutronCreateFirewallGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronCreateFirewallPolicyRequest, NeutronCreateFirewallPolicyResponse> neutronCreateFirewallPolicy = genForneutronCreateFirewallPolicy();
+    public static final HttpRequestDef<NeutronCreateFirewallPolicyRequest, NeutronCreateFirewallPolicyResponse> neutronCreateFirewallPolicy =
+        genForneutronCreateFirewallPolicy();
 
     private static HttpRequestDef<NeutronCreateFirewallPolicyRequest, NeutronCreateFirewallPolicyResponse> genForneutronCreateFirewallPolicy() {
         // basic
         HttpRequestDef.Builder<NeutronCreateFirewallPolicyRequest, NeutronCreateFirewallPolicyResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, NeutronCreateFirewallPolicyRequest.class, NeutronCreateFirewallPolicyResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    NeutronCreateFirewallPolicyRequest.class,
+                    NeutronCreateFirewallPolicyResponse.class)
                 .withName("NeutronCreateFirewallPolicy")
                 .withUri("/v2.0/fwaas/firewall_policies")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<NeutronCreateFirewallPolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            NeutronCreateFirewallPolicyRequestBody.class,
+            TypeCasts.uncheckedConversion(NeutronCreateFirewallPolicyRequestBody.class),
             f -> f.withMarshaller(NeutronCreateFirewallPolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronCreateFirewallRuleRequest, NeutronCreateFirewallRuleResponse> neutronCreateFirewallRule = genForneutronCreateFirewallRule();
+    public static final HttpRequestDef<NeutronCreateFirewallRuleRequest, NeutronCreateFirewallRuleResponse> neutronCreateFirewallRule =
+        genForneutronCreateFirewallRule();
 
     private static HttpRequestDef<NeutronCreateFirewallRuleRequest, NeutronCreateFirewallRuleResponse> genForneutronCreateFirewallRule() {
         // basic
         HttpRequestDef.Builder<NeutronCreateFirewallRuleRequest, NeutronCreateFirewallRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, NeutronCreateFirewallRuleRequest.class, NeutronCreateFirewallRuleResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    NeutronCreateFirewallRuleRequest.class,
+                    NeutronCreateFirewallRuleResponse.class)
                 .withName("NeutronCreateFirewallRule")
                 .withUri("/v2.0/fwaas/firewall_rules")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<NeutronCreateFirewallRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            NeutronCreateFirewallRuleRequestBody.class,
+            TypeCasts.uncheckedConversion(NeutronCreateFirewallRuleRequestBody.class),
             f -> f.withMarshaller(NeutronCreateFirewallRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronDeleteFirewallGroupRequest, NeutronDeleteFirewallGroupResponse> neutronDeleteFirewallGroup = genForneutronDeleteFirewallGroup();
+    public static final HttpRequestDef<NeutronDeleteFirewallGroupRequest, NeutronDeleteFirewallGroupResponse> neutronDeleteFirewallGroup =
+        genForneutronDeleteFirewallGroup();
 
     private static HttpRequestDef<NeutronDeleteFirewallGroupRequest, NeutronDeleteFirewallGroupResponse> genForneutronDeleteFirewallGroup() {
         // basic
         HttpRequestDef.Builder<NeutronDeleteFirewallGroupRequest, NeutronDeleteFirewallGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, NeutronDeleteFirewallGroupRequest.class, NeutronDeleteFirewallGroupResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    NeutronDeleteFirewallGroupRequest.class,
+                    NeutronDeleteFirewallGroupResponse.class)
                 .withName("NeutronDeleteFirewallGroup")
                 .withUri("/v2.0/fwaas/firewall_groups/{firewall_group_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("firewall_group_id",
+        builder.<String>withRequestField("firewall_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronDeleteFirewallGroupRequest::getFirewallGroupId, (req, v) -> {
                 req.setFirewallGroupId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronDeleteFirewallPolicyRequest, NeutronDeleteFirewallPolicyResponse> neutronDeleteFirewallPolicy = genForneutronDeleteFirewallPolicy();
+    public static final HttpRequestDef<NeutronDeleteFirewallPolicyRequest, NeutronDeleteFirewallPolicyResponse> neutronDeleteFirewallPolicy =
+        genForneutronDeleteFirewallPolicy();
 
     private static HttpRequestDef<NeutronDeleteFirewallPolicyRequest, NeutronDeleteFirewallPolicyResponse> genForneutronDeleteFirewallPolicy() {
         // basic
         HttpRequestDef.Builder<NeutronDeleteFirewallPolicyRequest, NeutronDeleteFirewallPolicyResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, NeutronDeleteFirewallPolicyRequest.class, NeutronDeleteFirewallPolicyResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    NeutronDeleteFirewallPolicyRequest.class,
+                    NeutronDeleteFirewallPolicyResponse.class)
                 .withName("NeutronDeleteFirewallPolicy")
                 .withUri("/v2.0/fwaas/firewall_policies/{firewall_policy_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("firewall_policy_id",
+        builder.<String>withRequestField("firewall_policy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronDeleteFirewallPolicyRequest::getFirewallPolicyId, (req, v) -> {
                 req.setFirewallPolicyId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronDeleteFirewallRuleRequest, NeutronDeleteFirewallRuleResponse> neutronDeleteFirewallRule = genForneutronDeleteFirewallRule();
+    public static final HttpRequestDef<NeutronDeleteFirewallRuleRequest, NeutronDeleteFirewallRuleResponse> neutronDeleteFirewallRule =
+        genForneutronDeleteFirewallRule();
 
     private static HttpRequestDef<NeutronDeleteFirewallRuleRequest, NeutronDeleteFirewallRuleResponse> genForneutronDeleteFirewallRule() {
         // basic
         HttpRequestDef.Builder<NeutronDeleteFirewallRuleRequest, NeutronDeleteFirewallRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, NeutronDeleteFirewallRuleRequest.class, NeutronDeleteFirewallRuleResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    NeutronDeleteFirewallRuleRequest.class,
+                    NeutronDeleteFirewallRuleResponse.class)
                 .withName("NeutronDeleteFirewallRule")
                 .withUri("/v2.0/fwaas/firewall_rules/{firewall_rule_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("firewall_rule_id",
+        builder.<String>withRequestField("firewall_rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronDeleteFirewallRuleRequest::getFirewallRuleId, (req, v) -> {
                 req.setFirewallRuleId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronListFirewallGroupsRequest, NeutronListFirewallGroupsResponse> neutronListFirewallGroups = genForneutronListFirewallGroups();
+    public static final HttpRequestDef<NeutronListFirewallGroupsRequest, NeutronListFirewallGroupsResponse> neutronListFirewallGroups =
+        genForneutronListFirewallGroups();
 
     private static HttpRequestDef<NeutronListFirewallGroupsRequest, NeutronListFirewallGroupsResponse> genForneutronListFirewallGroups() {
         // basic
         HttpRequestDef.Builder<NeutronListFirewallGroupsRequest, NeutronListFirewallGroupsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, NeutronListFirewallGroupsRequest.class, NeutronListFirewallGroupsResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    NeutronListFirewallGroupsRequest.class,
+                    NeutronListFirewallGroupsResponse.class)
                 .withName("NeutronListFirewallGroups")
                 .withUri("/v2.0/fwaas/firewall_groups")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("marker",
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListFirewallGroupsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(NeutronListFirewallGroupsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(NeutronListFirewallGroupsRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(NeutronListFirewallGroupsRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("description",
+            }));
+        builder.<List<String>>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(NeutronListFirewallGroupsRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
-            })
-        );
-        builder.withRequestField("ingress_firewall_policy_id",
+            }));
+        builder.<String>withRequestField("ingress_firewall_policy_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListFirewallGroupsRequest::getIngressFirewallPolicyId, (req, v) -> {
                 req.setIngressFirewallPolicyId(v);
-            })
-        );
-        builder.withRequestField("egress_firewall_policy_id",
+            }));
+        builder.<String>withRequestField("egress_firewall_policy_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListFirewallGroupsRequest::getEgressFirewallPolicyId, (req, v) -> {
                 req.setEgressFirewallPolicyId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronListFirewallPoliciesRequest, NeutronListFirewallPoliciesResponse> neutronListFirewallPolicies = genForneutronListFirewallPolicies();
+    public static final HttpRequestDef<NeutronListFirewallPoliciesRequest, NeutronListFirewallPoliciesResponse> neutronListFirewallPolicies =
+        genForneutronListFirewallPolicies();
 
     private static HttpRequestDef<NeutronListFirewallPoliciesRequest, NeutronListFirewallPoliciesResponse> genForneutronListFirewallPolicies() {
         // basic
         HttpRequestDef.Builder<NeutronListFirewallPoliciesRequest, NeutronListFirewallPoliciesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, NeutronListFirewallPoliciesRequest.class, NeutronListFirewallPoliciesResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    NeutronListFirewallPoliciesRequest.class,
+                    NeutronListFirewallPoliciesResponse.class)
                 .withName("NeutronListFirewallPolicies")
                 .withUri("/v2.0/fwaas/firewall_policies")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(NeutronListFirewallPoliciesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListFirewallPoliciesRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(NeutronListFirewallPoliciesRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(NeutronListFirewallPoliciesRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("description",
+            }));
+        builder.<List<String>>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(NeutronListFirewallPoliciesRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
-            })
-        );
-        builder.withRequestField("tenant_id",
+            }));
+        builder.<String>withRequestField("tenant_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListFirewallPoliciesRequest::getTenantId, (req, v) -> {
                 req.setTenantId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronListFirewallRulesRequest, NeutronListFirewallRulesResponse> neutronListFirewallRules = genForneutronListFirewallRules();
+    public static final HttpRequestDef<NeutronListFirewallRulesRequest, NeutronListFirewallRulesResponse> neutronListFirewallRules =
+        genForneutronListFirewallRules();
 
     private static HttpRequestDef<NeutronListFirewallRulesRequest, NeutronListFirewallRulesResponse> genForneutronListFirewallRules() {
         // basic
         HttpRequestDef.Builder<NeutronListFirewallRulesRequest, NeutronListFirewallRulesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, NeutronListFirewallRulesRequest.class, NeutronListFirewallRulesResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET, NeutronListFirewallRulesRequest.class, NeutronListFirewallRulesResponse.class)
                 .withName("NeutronListFirewallRules")
                 .withUri("/v2.0/fwaas/firewall_rules")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("marker",
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListFirewallRulesRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(NeutronListFirewallRulesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(NeutronListFirewallRulesRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(NeutronListFirewallRulesRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("description",
+            }));
+        builder.<List<String>>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(NeutronListFirewallRulesRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
-            })
-        );
-        builder.withRequestField("action",
+            }));
+        builder.<String>withRequestField("action",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListFirewallRulesRequest::getAction, (req, v) -> {
                 req.setAction(v);
-            })
-        );
-        builder.withRequestField("tenant_id",
+            }));
+        builder.<String>withRequestField("tenant_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronListFirewallRulesRequest::getTenantId, (req, v) -> {
                 req.setTenantId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronRemoveFirewallRuleRequest, NeutronRemoveFirewallRuleResponse> neutronRemoveFirewallRule = genForneutronRemoveFirewallRule();
+    public static final HttpRequestDef<NeutronRemoveFirewallRuleRequest, NeutronRemoveFirewallRuleResponse> neutronRemoveFirewallRule =
+        genForneutronRemoveFirewallRule();
 
     private static HttpRequestDef<NeutronRemoveFirewallRuleRequest, NeutronRemoveFirewallRuleResponse> genForneutronRemoveFirewallRule() {
         // basic
         HttpRequestDef.Builder<NeutronRemoveFirewallRuleRequest, NeutronRemoveFirewallRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, NeutronRemoveFirewallRuleRequest.class, NeutronRemoveFirewallRuleResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    NeutronRemoveFirewallRuleRequest.class,
+                    NeutronRemoveFirewallRuleResponse.class)
                 .withName("NeutronRemoveFirewallRule")
                 .withUri("/v2.0/fwaas/firewall_policies/{firewall_policy_id}/remove_rule")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("firewall_policy_id",
+        builder.<String>withRequestField("firewall_policy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronRemoveFirewallRuleRequest::getFirewallPolicyId, (req, v) -> {
                 req.setFirewallPolicyId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<NeutronRemoveFirewallRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            NeutronRemoveFirewallRuleRequestBody.class,
+            TypeCasts.uncheckedConversion(NeutronRemoveFirewallRuleRequestBody.class),
             f -> f.withMarshaller(NeutronRemoveFirewallRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronShowFirewallGroupRequest, NeutronShowFirewallGroupResponse> neutronShowFirewallGroup = genForneutronShowFirewallGroup();
+    public static final HttpRequestDef<NeutronShowFirewallGroupRequest, NeutronShowFirewallGroupResponse> neutronShowFirewallGroup =
+        genForneutronShowFirewallGroup();
 
     private static HttpRequestDef<NeutronShowFirewallGroupRequest, NeutronShowFirewallGroupResponse> genForneutronShowFirewallGroup() {
         // basic
         HttpRequestDef.Builder<NeutronShowFirewallGroupRequest, NeutronShowFirewallGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, NeutronShowFirewallGroupRequest.class, NeutronShowFirewallGroupResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET, NeutronShowFirewallGroupRequest.class, NeutronShowFirewallGroupResponse.class)
                 .withName("NeutronShowFirewallGroup")
                 .withUri("/v2.0/fwaas/firewall_groups/{firewall_group_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("firewall_group_id",
+        builder.<String>withRequestField("firewall_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronShowFirewallGroupRequest::getFirewallGroupId, (req, v) -> {
                 req.setFirewallGroupId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronShowFirewallPolicyRequest, NeutronShowFirewallPolicyResponse> neutronShowFirewallPolicy = genForneutronShowFirewallPolicy();
+    public static final HttpRequestDef<NeutronShowFirewallPolicyRequest, NeutronShowFirewallPolicyResponse> neutronShowFirewallPolicy =
+        genForneutronShowFirewallPolicy();
 
     private static HttpRequestDef<NeutronShowFirewallPolicyRequest, NeutronShowFirewallPolicyResponse> genForneutronShowFirewallPolicy() {
         // basic
         HttpRequestDef.Builder<NeutronShowFirewallPolicyRequest, NeutronShowFirewallPolicyResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, NeutronShowFirewallPolicyRequest.class, NeutronShowFirewallPolicyResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    NeutronShowFirewallPolicyRequest.class,
+                    NeutronShowFirewallPolicyResponse.class)
                 .withName("NeutronShowFirewallPolicy")
                 .withUri("/v2.0/fwaas/firewall_policies/{firewall_policy_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("firewall_policy_id",
+        builder.<String>withRequestField("firewall_policy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronShowFirewallPolicyRequest::getFirewallPolicyId, (req, v) -> {
                 req.setFirewallPolicyId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronShowFirewallRuleRequest, NeutronShowFirewallRuleResponse> neutronShowFirewallRule = genForneutronShowFirewallRule();
+    public static final HttpRequestDef<NeutronShowFirewallRuleRequest, NeutronShowFirewallRuleResponse> neutronShowFirewallRule =
+        genForneutronShowFirewallRule();
 
     private static HttpRequestDef<NeutronShowFirewallRuleRequest, NeutronShowFirewallRuleResponse> genForneutronShowFirewallRule() {
         // basic
-        HttpRequestDef.Builder<NeutronShowFirewallRuleRequest, NeutronShowFirewallRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, NeutronShowFirewallRuleRequest.class, NeutronShowFirewallRuleResponse.class)
-                .withName("NeutronShowFirewallRule")
-                .withUri("/v2.0/fwaas/firewall_rules/{firewall_rule_id}")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<NeutronShowFirewallRuleRequest, NeutronShowFirewallRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, NeutronShowFirewallRuleRequest.class, NeutronShowFirewallRuleResponse.class)
+            .withName("NeutronShowFirewallRule")
+            .withUri("/v2.0/fwaas/firewall_rules/{firewall_rule_id}")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("firewall_rule_id",
+        builder.<String>withRequestField("firewall_rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronShowFirewallRuleRequest::getFirewallRuleId, (req, v) -> {
                 req.setFirewallRuleId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronUpdateFirewallGroupRequest, NeutronUpdateFirewallGroupResponse> neutronUpdateFirewallGroup = genForneutronUpdateFirewallGroup();
+    public static final HttpRequestDef<NeutronUpdateFirewallGroupRequest, NeutronUpdateFirewallGroupResponse> neutronUpdateFirewallGroup =
+        genForneutronUpdateFirewallGroup();
 
     private static HttpRequestDef<NeutronUpdateFirewallGroupRequest, NeutronUpdateFirewallGroupResponse> genForneutronUpdateFirewallGroup() {
         // basic
         HttpRequestDef.Builder<NeutronUpdateFirewallGroupRequest, NeutronUpdateFirewallGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, NeutronUpdateFirewallGroupRequest.class, NeutronUpdateFirewallGroupResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    NeutronUpdateFirewallGroupRequest.class,
+                    NeutronUpdateFirewallGroupResponse.class)
                 .withName("NeutronUpdateFirewallGroup")
                 .withUri("/v2.0/fwaas/firewall_groups/{firewall_group_id}")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("firewall_group_id",
+        builder.<String>withRequestField("firewall_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronUpdateFirewallGroupRequest::getFirewallGroupId, (req, v) -> {
                 req.setFirewallGroupId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<NeutronUpdateFirewallGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            NeutronUpdateFirewallGroupRequestBody.class,
+            TypeCasts.uncheckedConversion(NeutronUpdateFirewallGroupRequestBody.class),
             f -> f.withMarshaller(NeutronUpdateFirewallGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronUpdateFirewallPolicyRequest, NeutronUpdateFirewallPolicyResponse> neutronUpdateFirewallPolicy = genForneutronUpdateFirewallPolicy();
+    public static final HttpRequestDef<NeutronUpdateFirewallPolicyRequest, NeutronUpdateFirewallPolicyResponse> neutronUpdateFirewallPolicy =
+        genForneutronUpdateFirewallPolicy();
 
     private static HttpRequestDef<NeutronUpdateFirewallPolicyRequest, NeutronUpdateFirewallPolicyResponse> genForneutronUpdateFirewallPolicy() {
         // basic
         HttpRequestDef.Builder<NeutronUpdateFirewallPolicyRequest, NeutronUpdateFirewallPolicyResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, NeutronUpdateFirewallPolicyRequest.class, NeutronUpdateFirewallPolicyResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    NeutronUpdateFirewallPolicyRequest.class,
+                    NeutronUpdateFirewallPolicyResponse.class)
                 .withName("NeutronUpdateFirewallPolicy")
                 .withUri("/v2.0/fwaas/firewall_policies/{firewall_policy_id}")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("firewall_policy_id",
+        builder.<String>withRequestField("firewall_policy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronUpdateFirewallPolicyRequest::getFirewallPolicyId, (req, v) -> {
                 req.setFirewallPolicyId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<NeutronUpdateFirewallPolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            NeutronUpdateFirewallPolicyRequestBody.class,
+            TypeCasts.uncheckedConversion(NeutronUpdateFirewallPolicyRequestBody.class),
             f -> f.withMarshaller(NeutronUpdateFirewallPolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<NeutronUpdateFirewallRuleRequest, NeutronUpdateFirewallRuleResponse> neutronUpdateFirewallRule = genForneutronUpdateFirewallRule();
+    public static final HttpRequestDef<NeutronUpdateFirewallRuleRequest, NeutronUpdateFirewallRuleResponse> neutronUpdateFirewallRule =
+        genForneutronUpdateFirewallRule();
 
     private static HttpRequestDef<NeutronUpdateFirewallRuleRequest, NeutronUpdateFirewallRuleResponse> genForneutronUpdateFirewallRule() {
         // basic
         HttpRequestDef.Builder<NeutronUpdateFirewallRuleRequest, NeutronUpdateFirewallRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, NeutronUpdateFirewallRuleRequest.class, NeutronUpdateFirewallRuleResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    NeutronUpdateFirewallRuleRequest.class,
+                    NeutronUpdateFirewallRuleResponse.class)
                 .withName("NeutronUpdateFirewallRule")
                 .withUri("/v2.0/fwaas/firewall_rules/{firewall_rule_id}")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("firewall_rule_id",
+        builder.<String>withRequestField("firewall_rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NeutronUpdateFirewallRuleRequest::getFirewallRuleId, (req, v) -> {
                 req.setFirewallRuleId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<NeutronUpdateFirewallRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            NeutronUpdateFirewallRuleRequestBody.class,
+            TypeCasts.uncheckedConversion(NeutronUpdateFirewallRuleRequestBody.class),
             f -> f.withMarshaller(NeutronUpdateFirewallRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchCreateVpcTagsRequest, BatchCreateVpcTagsResponse> batchCreateVpcTags = genForbatchCreateVpcTags();
+    public static final HttpRequestDef<BatchCreateVpcTagsRequest, BatchCreateVpcTagsResponse> batchCreateVpcTags =
+        genForbatchCreateVpcTags();
 
     private static HttpRequestDef<BatchCreateVpcTagsRequest, BatchCreateVpcTagsResponse> genForbatchCreateVpcTags() {
         // basic
@@ -2344,31 +2424,28 @@ public class VpcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("vpc_id",
+        builder.<String>withRequestField("vpc_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchCreateVpcTagsRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<BatchCreateVpcTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchCreateVpcTagsRequestBody.class,
+            TypeCasts.uncheckedConversion(BatchCreateVpcTagsRequestBody.class),
             f -> f.withMarshaller(BatchCreateVpcTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchDeleteVpcTagsRequest, BatchDeleteVpcTagsResponse> batchDeleteVpcTags = genForbatchDeleteVpcTags();
+    public static final HttpRequestDef<BatchDeleteVpcTagsRequest, BatchDeleteVpcTagsResponse> batchDeleteVpcTags =
+        genForbatchDeleteVpcTags();
 
     private static HttpRequestDef<BatchDeleteVpcTagsRequest, BatchDeleteVpcTagsResponse> genForbatchDeleteVpcTags() {
         // basic
@@ -2379,26 +2456,22 @@ public class VpcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("vpc_id",
+        builder.<String>withRequestField("vpc_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchDeleteVpcTagsRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<BatchDeleteVpcTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchDeleteVpcTagsRequestBody.class,
+            TypeCasts.uncheckedConversion(BatchDeleteVpcTagsRequestBody.class),
             f -> f.withMarshaller(BatchDeleteVpcTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2414,58 +2487,53 @@ public class VpcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateVpcRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateVpcRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateVpcRequestBody.class),
             f -> f.withMarshaller(CreateVpcRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateVpcResourceTagRequest, CreateVpcResourceTagResponse> createVpcResourceTag = genForcreateVpcResourceTag();
+    public static final HttpRequestDef<CreateVpcResourceTagRequest, CreateVpcResourceTagResponse> createVpcResourceTag =
+        genForcreateVpcResourceTag();
 
     private static HttpRequestDef<CreateVpcResourceTagRequest, CreateVpcResourceTagResponse> genForcreateVpcResourceTag() {
         // basic
-        HttpRequestDef.Builder<CreateVpcResourceTagRequest, CreateVpcResourceTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateVpcResourceTagRequest.class, CreateVpcResourceTagResponse.class)
-                .withName("CreateVpcResourceTag")
-                .withUri("/v2.0/{project_id}/vpcs/{vpc_id}/tags")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<CreateVpcResourceTagRequest, CreateVpcResourceTagResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateVpcResourceTagRequest.class, CreateVpcResourceTagResponse.class)
+            .withName("CreateVpcResourceTag")
+            .withUri("/v2.0/{project_id}/vpcs/{vpc_id}/tags")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("vpc_id",
+        builder.<String>withRequestField("vpc_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateVpcResourceTagRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateVpcResourceTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateVpcResourceTagRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateVpcResourceTagRequestBody.class),
             f -> f.withMarshaller(CreateVpcResourceTagRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateVpcRouteRequest, CreateVpcRouteResponse> createVpcRoute = genForcreateVpcRoute();
+    public static final HttpRequestDef<CreateVpcRouteRequest, CreateVpcRouteResponse> createVpcRoute =
+        genForcreateVpcRoute();
 
     private static HttpRequestDef<CreateVpcRouteRequest, CreateVpcRouteResponse> genForcreateVpcRoute() {
         // basic
@@ -2476,18 +2544,15 @@ public class VpcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateVpcRouteRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateVpcRouteRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateVpcRouteRequestBody.class),
             f -> f.withMarshaller(CreateVpcRouteRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2503,23 +2568,21 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("vpc_id",
+        builder.<String>withRequestField("vpc_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteVpcRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteVpcRouteRequest, DeleteVpcRouteResponse> deleteVpcRoute = genFordeleteVpcRoute();
+    public static final HttpRequestDef<DeleteVpcRouteRequest, DeleteVpcRouteResponse> deleteVpcRoute =
+        genFordeleteVpcRoute();
 
     private static HttpRequestDef<DeleteVpcRouteRequest, DeleteVpcRouteResponse> genFordeleteVpcRoute() {
         // basic
@@ -2530,18 +2593,15 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("route_id",
+        builder.<String>withRequestField("route_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteVpcRouteRequest::getRouteId, (req, v) -> {
                 req.setRouteId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2557,31 +2617,28 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("vpc_id",
+        builder.<String>withRequestField("vpc_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteVpcTagRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
-            })
-        );
-        builder.withRequestField("key",
+            }));
+        builder.<String>withRequestField("key",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteVpcTagRequest::getKey, (req, v) -> {
                 req.setKey(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListVpcRoutesRequest, ListVpcRoutesResponse> listVpcRoutes = genForlistVpcRoutes();
+    public static final HttpRequestDef<ListVpcRoutesRequest, ListVpcRoutesResponse> listVpcRoutes =
+        genForlistVpcRoutes();
 
     private static HttpRequestDef<ListVpcRoutesRequest, ListVpcRoutesResponse> genForlistVpcRoutes() {
         // basic
@@ -2592,66 +2649,57 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListVpcRoutesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVpcRoutesRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVpcRoutesRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("type",
+            }));
+        builder.<ListVpcRoutesRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListVpcRoutesRequest.TypeEnum.class,
+            TypeCasts.uncheckedConversion(ListVpcRoutesRequest.TypeEnum.class),
             f -> f.withMarshaller(ListVpcRoutesRequest::getType, (req, v) -> {
                 req.setType(v);
-            })
-        );
-        builder.withRequestField("vpc_id",
+            }));
+        builder.<String>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVpcRoutesRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
-            })
-        );
-        builder.withRequestField("destination",
+            }));
+        builder.<String>withRequestField("destination",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVpcRoutesRequest::getDestination, (req, v) -> {
                 req.setDestination(v);
-            })
-        );
-        builder.withRequestField("tenant_id",
+            }));
+        builder.<String>withRequestField("tenant_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVpcRoutesRequest::getTenantId, (req, v) -> {
                 req.setTenantId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2669,8 +2717,6 @@ public class VpcMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2686,47 +2732,42 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListVpcsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVpcsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVpcsRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("enterprise_project_id",
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVpcsRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListVpcsByTagsRequest, ListVpcsByTagsResponse> listVpcsByTags = genForlistVpcsByTags();
+    public static final HttpRequestDef<ListVpcsByTagsRequest, ListVpcsByTagsResponse> listVpcsByTags =
+        genForlistVpcsByTags();
 
     private static HttpRequestDef<ListVpcsByTagsRequest, ListVpcsByTagsResponse> genForlistVpcsByTags() {
         // basic
@@ -2737,18 +2778,15 @@ public class VpcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<ListVpcsByTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ListVpcsByTagsRequestBody.class,
+            TypeCasts.uncheckedConversion(ListVpcsByTagsRequestBody.class),
             f -> f.withMarshaller(ListVpcsByTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2764,18 +2802,15 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("vpc_id",
+        builder.<String>withRequestField("vpc_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowVpcRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2791,18 +2826,15 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("route_id",
+        builder.<String>withRequestField("route_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowVpcRouteRequest::getRouteId, (req, v) -> {
                 req.setRouteId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2818,18 +2850,15 @@ public class VpcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("vpc_id",
+        builder.<String>withRequestField("vpc_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowVpcTagsRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2845,26 +2874,22 @@ public class VpcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("vpc_id",
+        builder.<String>withRequestField("vpc_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateVpcRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateVpcRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateVpcRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateVpcRequestBody.class),
             f -> f.withMarshaller(UpdateVpcRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

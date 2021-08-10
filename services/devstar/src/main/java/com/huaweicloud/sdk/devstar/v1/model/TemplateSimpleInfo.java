@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.devstar.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * TemplateSimpleInfo
- */
-public class TemplateSimpleInfo  {
-
-
+/** TemplateSimpleInfo */
+public class TemplateSimpleInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="title")
-    
+    @JsonProperty(value = "title")
+
     private String title;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public TemplateSimpleInfo withId(String id) {
@@ -40,13 +28,9 @@ public class TemplateSimpleInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 模板id。
-     * @return id
-     */
+    /** 模板id。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -55,20 +39,14 @@ public class TemplateSimpleInfo  {
         this.id = id;
     }
 
-    
-
     public TemplateSimpleInfo withTitle(String title) {
         this.title = title;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板名。
-     * @return title
-     */
+    /** 模板名。
+     * 
+     * @return title */
     public String getTitle() {
         return title;
     }
@@ -77,20 +55,14 @@ public class TemplateSimpleInfo  {
         this.title = title;
     }
 
-    
-
     public TemplateSimpleInfo withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板描述。
-     * @return description
-     */
+    /** 模板描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -98,8 +70,6 @@ public class TemplateSimpleInfo  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,15 @@ public class TemplateSimpleInfo  {
             return false;
         }
         TemplateSimpleInfo templateSimpleInfo = (TemplateSimpleInfo) o;
-        return Objects.equals(this.id, templateSimpleInfo.id) &&
-            Objects.equals(this.title, templateSimpleInfo.title) &&
-            Objects.equals(this.description, templateSimpleInfo.description);
+        return Objects.equals(this.id, templateSimpleInfo.id) && Objects.equals(this.title, templateSimpleInfo.title)
+            && Objects.equals(this.description, templateSimpleInfo.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, title, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +99,13 @@ public class TemplateSimpleInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,80 +1,61 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 授权结构体。
- */
-public class AuthorizationVO  {
-
-
+/** 授权结构体。 */
+public class AuthorizationVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repo_type")
-    
+    @JsonProperty(value = "repo_type")
+
     private String repoType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repo_host")
-    
+    @JsonProperty(value = "repo_host")
+
     private String repoHost;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repo_home")
-    
+    @JsonProperty(value = "repo_home")
+
     private String repoHome;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repo_user")
-    
+    @JsonProperty(value = "repo_user")
+
     private String repoUser;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="avartar")
-    
+    @JsonProperty(value = "avartar")
+
     private String avartar;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="token_type")
-    
+    @JsonProperty(value = "token_type")
+
     private String tokenType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private Long createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private Long updateTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
     public AuthorizationVO withName(String name) {
@@ -82,13 +63,9 @@ public class AuthorizationVO  {
         return this;
     }
 
-    
-
-
-    /**
-     * 授权名称。
-     * @return name
-     */
+    /** 授权名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -97,20 +74,14 @@ public class AuthorizationVO  {
         this.name = name;
     }
 
-    
-
     public AuthorizationVO withRepoType(String repoType) {
         this.repoType = repoType;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库类型。 取值范围：github、gitlab、gitee、bitbucket、devcloud。 
-     * @return repoType
-     */
+    /** 仓库类型。 取值范围：github、gitlab、gitee、bitbucket、devcloud。
+     * 
+     * @return repoType */
     public String getRepoType() {
         return repoType;
     }
@@ -119,20 +90,14 @@ public class AuthorizationVO  {
         this.repoType = repoType;
     }
 
-    
-
     public AuthorizationVO withRepoHost(String repoHost) {
         this.repoHost = repoHost;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库地址。
-     * @return repoHost
-     */
+    /** 仓库地址。
+     * 
+     * @return repoHost */
     public String getRepoHost() {
         return repoHost;
     }
@@ -141,20 +106,14 @@ public class AuthorizationVO  {
         this.repoHost = repoHost;
     }
 
-    
-
     public AuthorizationVO withRepoHome(String repoHome) {
         this.repoHome = repoHome;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库主页。
-     * @return repoHome
-     */
+    /** 仓库主页。
+     * 
+     * @return repoHome */
     public String getRepoHome() {
         return repoHome;
     }
@@ -163,20 +122,14 @@ public class AuthorizationVO  {
         this.repoHome = repoHome;
     }
 
-    
-
     public AuthorizationVO withRepoUser(String repoUser) {
         this.repoUser = repoUser;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库用户名。
-     * @return repoUser
-     */
+    /** 仓库用户名。
+     * 
+     * @return repoUser */
     public String getRepoUser() {
         return repoUser;
     }
@@ -185,20 +138,14 @@ public class AuthorizationVO  {
         this.repoUser = repoUser;
     }
 
-    
-
     public AuthorizationVO withAvartar(String avartar) {
         this.avartar = avartar;
         return this;
     }
 
-    
-
-
-    /**
-     * 头像。
-     * @return avartar
-     */
+    /** 头像。
+     * 
+     * @return avartar */
     public String getAvartar() {
         return avartar;
     }
@@ -207,20 +154,14 @@ public class AuthorizationVO  {
         this.avartar = avartar;
     }
 
-    
-
     public AuthorizationVO withTokenType(String tokenType) {
         this.tokenType = tokenType;
         return this;
     }
 
-    
-
-
-    /**
-     * 授权方式。
-     * @return tokenType
-     */
+    /** 授权方式。
+     * 
+     * @return tokenType */
     public String getTokenType() {
         return tokenType;
     }
@@ -229,20 +170,14 @@ public class AuthorizationVO  {
         this.tokenType = tokenType;
     }
 
-    
-
     public AuthorizationVO withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间。
-     * @return createTime
-     */
+    /** 创建时间。
+     * 
+     * @return createTime */
     public Long getCreateTime() {
         return createTime;
     }
@@ -251,20 +186,14 @@ public class AuthorizationVO  {
         this.createTime = createTime;
     }
 
-    
-
     public AuthorizationVO withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 修改时间。
-     * @return updateTime
-     */
+    /** 修改时间。
+     * 
+     * @return updateTime */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -273,20 +202,14 @@ public class AuthorizationVO  {
         this.updateTime = updateTime;
     }
 
-    
-
     public AuthorizationVO withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态。
-     * @return status
-     */
+    /** 状态。
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -294,8 +217,6 @@ public class AuthorizationVO  {
     public void setStatus(Integer status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -306,21 +227,24 @@ public class AuthorizationVO  {
             return false;
         }
         AuthorizationVO authorizationVO = (AuthorizationVO) o;
-        return Objects.equals(this.name, authorizationVO.name) &&
-            Objects.equals(this.repoType, authorizationVO.repoType) &&
-            Objects.equals(this.repoHost, authorizationVO.repoHost) &&
-            Objects.equals(this.repoHome, authorizationVO.repoHome) &&
-            Objects.equals(this.repoUser, authorizationVO.repoUser) &&
-            Objects.equals(this.avartar, authorizationVO.avartar) &&
-            Objects.equals(this.tokenType, authorizationVO.tokenType) &&
-            Objects.equals(this.createTime, authorizationVO.createTime) &&
-            Objects.equals(this.updateTime, authorizationVO.updateTime) &&
-            Objects.equals(this.status, authorizationVO.status);
+        return Objects.equals(this.name, authorizationVO.name)
+            && Objects.equals(this.repoType, authorizationVO.repoType)
+            && Objects.equals(this.repoHost, authorizationVO.repoHost)
+            && Objects.equals(this.repoHome, authorizationVO.repoHome)
+            && Objects.equals(this.repoUser, authorizationVO.repoUser)
+            && Objects.equals(this.avartar, authorizationVO.avartar)
+            && Objects.equals(this.tokenType, authorizationVO.tokenType)
+            && Objects.equals(this.createTime, authorizationVO.createTime)
+            && Objects.equals(this.updateTime, authorizationVO.updateTime)
+            && Objects.equals(this.status, authorizationVO.status);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, repoType, repoHost, repoHome, repoUser, avartar, tokenType, createTime, updateTime, status);
+        return Objects
+            .hash(name, repoType, repoHost, repoHome, repoUser, avartar, tokenType, createTime, updateTime, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -338,16 +262,13 @@ public class AuthorizationVO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

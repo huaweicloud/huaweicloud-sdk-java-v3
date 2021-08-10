@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * SslOptionRequest
- */
-public class SslOptionRequest  {
-
-
+/** SslOptionRequest */
+public class SslOptionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ssl_option")
-    
+    @JsonProperty(value = "ssl_option")
+
     private Boolean sslOption;
 
     public SslOptionRequest withSslOption(Boolean sslOption) {
@@ -28,13 +18,9 @@ public class SslOptionRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * - true, 打开ssl开关。 - false, 关闭ssl开关。
-     * @return sslOption
-     */
+    /** - true, 打开ssl开关。 - false, 关闭ssl开关。
+     * 
+     * @return sslOption */
     public Boolean getSslOption() {
         return sslOption;
     }
@@ -42,8 +28,6 @@ public class SslOptionRequest  {
     public void setSslOption(Boolean sslOption) {
         this.sslOption = sslOption;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class SslOptionRequest  {
         SslOptionRequest sslOptionRequest = (SslOptionRequest) o;
         return Objects.equals(this.sslOption, sslOptionRequest.sslOption);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sslOption);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class SslOptionRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

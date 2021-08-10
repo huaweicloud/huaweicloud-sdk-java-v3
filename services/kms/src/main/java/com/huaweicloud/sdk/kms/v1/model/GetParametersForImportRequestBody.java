@@ -1,52 +1,34 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * GetParametersForImportRequestBody
- */
-public class GetParametersForImportRequestBody  {
-
-
+/** GetParametersForImportRequestBody */
+public class GetParametersForImportRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_id")
-    
+    @JsonProperty(value = "key_id")
+
     private String keyId;
-    /**
-     * 密钥材料加密算法，枚举如下：  - RSAES_PKCS1_V1_5  - RSAES_OAEP_SHA_1  - RSAES_OAEP_SHA_256
-     */
+
+    /** 密钥材料加密算法，枚举如下： - RSAES_PKCS1_V1_5 - RSAES_OAEP_SHA_1 - RSAES_OAEP_SHA_256 */
     public static final class WrappingAlgorithmEnum {
 
-        
-        /**
-         * Enum RSAES_PKCS1_V1_5 for value: "RSAES_PKCS1_V1_5"
-         */
+        /** Enum RSAES_PKCS1_V1_5 for value: "RSAES_PKCS1_V1_5" */
         public static final WrappingAlgorithmEnum RSAES_PKCS1_V1_5 = new WrappingAlgorithmEnum("RSAES_PKCS1_V1_5");
-        
-        /**
-         * Enum RSAES_OAEP_SHA_1 for value: "RSAES_OAEP_SHA_1"
-         */
+
+        /** Enum RSAES_OAEP_SHA_1 for value: "RSAES_OAEP_SHA_1" */
         public static final WrappingAlgorithmEnum RSAES_OAEP_SHA_1 = new WrappingAlgorithmEnum("RSAES_OAEP_SHA_1");
-        
-        /**
-         * Enum RSAES_OAEP_SHA_256 for value: "RSAES_OAEP_SHA_256"
-         */
+
+        /** Enum RSAES_OAEP_SHA_256 for value: "RSAES_OAEP_SHA_256" */
         public static final WrappingAlgorithmEnum RSAES_OAEP_SHA_256 = new WrappingAlgorithmEnum("RSAES_OAEP_SHA_256");
-        
 
         private static final Map<String, WrappingAlgorithmEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,7 +58,7 @@ public class GetParametersForImportRequestBody  {
 
         @JsonCreator
         public static WrappingAlgorithmEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             WrappingAlgorithmEnum result = STATIC_FIELDS.get(value);
@@ -87,7 +69,7 @@ public class GetParametersForImportRequestBody  {
         }
 
         public static WrappingAlgorithmEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             WrappingAlgorithmEnum result = STATIC_FIELDS.get(value);
@@ -111,16 +93,14 @@ public class GetParametersForImportRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="wrapping_algorithm")
-    
+    @JsonProperty(value = "wrapping_algorithm")
+
     private WrappingAlgorithmEnum wrappingAlgorithm;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sequence")
-    
+    @JsonProperty(value = "sequence")
+
     private String sequence;
 
     public GetParametersForImportRequestBody withKeyId(String keyId) {
@@ -128,13 +108,10 @@ public class GetParametersForImportRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥ID，36字节，满足正则匹配“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”。 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
-     * @return keyId
-     */
+    /** 密钥ID，36字节，满足正则匹配“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”。
+     * 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
+     * 
+     * @return keyId */
     public String getKeyId() {
         return keyId;
     }
@@ -143,20 +120,14 @@ public class GetParametersForImportRequestBody  {
         this.keyId = keyId;
     }
 
-    
-
     public GetParametersForImportRequestBody withWrappingAlgorithm(WrappingAlgorithmEnum wrappingAlgorithm) {
         this.wrappingAlgorithm = wrappingAlgorithm;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥材料加密算法，枚举如下：  - RSAES_PKCS1_V1_5  - RSAES_OAEP_SHA_1  - RSAES_OAEP_SHA_256
-     * @return wrappingAlgorithm
-     */
+    /** 密钥材料加密算法，枚举如下： - RSAES_PKCS1_V1_5 - RSAES_OAEP_SHA_1 - RSAES_OAEP_SHA_256
+     * 
+     * @return wrappingAlgorithm */
     public WrappingAlgorithmEnum getWrappingAlgorithm() {
         return wrappingAlgorithm;
     }
@@ -165,20 +136,14 @@ public class GetParametersForImportRequestBody  {
         this.wrappingAlgorithm = wrappingAlgorithm;
     }
 
-    
-
     public GetParametersForImportRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
-     * @return sequence
-     */
+    /** 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
+     * 
+     * @return sequence */
     public String getSequence() {
         return sequence;
     }
@@ -186,8 +151,6 @@ public class GetParametersForImportRequestBody  {
     public void setSequence(String sequence) {
         this.sequence = sequence;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -198,14 +161,16 @@ public class GetParametersForImportRequestBody  {
             return false;
         }
         GetParametersForImportRequestBody getParametersForImportRequestBody = (GetParametersForImportRequestBody) o;
-        return Objects.equals(this.keyId, getParametersForImportRequestBody.keyId) &&
-            Objects.equals(this.wrappingAlgorithm, getParametersForImportRequestBody.wrappingAlgorithm) &&
-            Objects.equals(this.sequence, getParametersForImportRequestBody.sequence);
+        return Objects.equals(this.keyId, getParametersForImportRequestBody.keyId)
+            && Objects.equals(this.wrappingAlgorithm, getParametersForImportRequestBody.wrappingAlgorithm)
+            && Objects.equals(this.sequence, getParametersForImportRequestBody.sequence);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(keyId, wrappingAlgorithm, sequence);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -216,16 +181,13 @@ public class GetParametersForImportRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

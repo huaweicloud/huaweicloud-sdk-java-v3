@@ -1,60 +1,44 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v3.model.LoadBalancerStatusHealthMonitor;
-import com.huaweicloud.sdk.elb.v3.model.LoadBalancerStatusMember;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * lb状态树的主机组状态信息
- */
-public class LoadBalancerStatusPool  {
-
-
+/** lb状态树的主机组状态信息 */
+public class LoadBalancerStatusPool {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provisioning_status")
-    
+    @JsonProperty(value = "provisioning_status")
+
     private String provisioningStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="healthmonitor")
-    
+    @JsonProperty(value = "healthmonitor")
+
     private LoadBalancerStatusHealthMonitor healthmonitor;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="members")
-    
+    @JsonProperty(value = "members")
+
     private List<LoadBalancerStatusMember> members = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operating_status")
-    
+    @JsonProperty(value = "operating_status")
+
     private String operatingStatus;
 
     public LoadBalancerStatusPool withProvisioningStatus(String provisioningStatus) {
@@ -62,13 +46,9 @@ public class LoadBalancerStatusPool  {
         return this;
     }
 
-    
-
-
-    /**
-     * provisioning的状态。 可以为：ACTIVE、PENDING_CREATE 或者ERROR。说明：该字段为预留字段，暂未启用，默认为ACTIVE。
-     * @return provisioningStatus
-     */
+    /** provisioning的状态。 可以为：ACTIVE、PENDING_CREATE 或者ERROR。说明：该字段为预留字段，暂未启用，默认为ACTIVE。
+     * 
+     * @return provisioningStatus */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -77,20 +57,14 @@ public class LoadBalancerStatusPool  {
         this.provisioningStatus = provisioningStatus;
     }
 
-    
-
     public LoadBalancerStatusPool withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端服务器组名。
-     * @return name
-     */
+    /** 后端服务器组名。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -99,27 +73,23 @@ public class LoadBalancerStatusPool  {
         this.name = name;
     }
 
-    
-
     public LoadBalancerStatusPool withHealthmonitor(LoadBalancerStatusHealthMonitor healthmonitor) {
         this.healthmonitor = healthmonitor;
         return this;
     }
 
     public LoadBalancerStatusPool withHealthmonitor(Consumer<LoadBalancerStatusHealthMonitor> healthmonitorSetter) {
-        if(this.healthmonitor == null ){
+        if (this.healthmonitor == null) {
             this.healthmonitor = new LoadBalancerStatusHealthMonitor();
             healthmonitorSetter.accept(this.healthmonitor);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get healthmonitor
-     * @return healthmonitor
-     */
+    /** Get healthmonitor
+     * 
+     * @return healthmonitor */
     public LoadBalancerStatusHealthMonitor getHealthmonitor() {
         return healthmonitor;
     }
@@ -128,16 +98,13 @@ public class LoadBalancerStatusPool  {
         this.healthmonitor = healthmonitor;
     }
 
-    
-
     public LoadBalancerStatusPool withMembers(List<LoadBalancerStatusMember> members) {
         this.members = members;
         return this;
     }
 
-    
     public LoadBalancerStatusPool addMembersItem(LoadBalancerStatusMember membersItem) {
-        if(this.members == null) {
+        if (this.members == null) {
             this.members = new ArrayList<>();
         }
         this.members.add(membersItem);
@@ -145,17 +112,16 @@ public class LoadBalancerStatusPool  {
     }
 
     public LoadBalancerStatusPool withMembers(Consumer<List<LoadBalancerStatusMember>> membersSetter) {
-        if(this.members == null) {
+        if (this.members == null) {
             this.members = new ArrayList<>();
         }
         membersSetter.accept(this.members);
         return this;
     }
 
-    /**
-     * 后端服务器。
-     * @return members
-     */
+    /** 后端服务器。
+     * 
+     * @return members */
     public List<LoadBalancerStatusMember> getMembers() {
         return members;
     }
@@ -164,20 +130,14 @@ public class LoadBalancerStatusPool  {
         this.members = members;
     }
 
-    
-
     public LoadBalancerStatusPool withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端服务器组ID。
-     * @return id
-     */
+    /** 后端服务器组ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -186,20 +146,14 @@ public class LoadBalancerStatusPool  {
         this.id = id;
     }
 
-    
-
     public LoadBalancerStatusPool withOperatingStatus(String operatingStatus) {
         this.operatingStatus = operatingStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作状态。 可以为：ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。说明：该字段为预留字段，暂未启用，默认为ONLINE。
-     * @return operatingStatus
-     */
+    /** 操作状态。 可以为：ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。说明：该字段为预留字段，暂未启用，默认为ONLINE。
+     * 
+     * @return operatingStatus */
     public String getOperatingStatus() {
         return operatingStatus;
     }
@@ -207,8 +161,6 @@ public class LoadBalancerStatusPool  {
     public void setOperatingStatus(String operatingStatus) {
         this.operatingStatus = operatingStatus;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -219,17 +171,19 @@ public class LoadBalancerStatusPool  {
             return false;
         }
         LoadBalancerStatusPool loadBalancerStatusPool = (LoadBalancerStatusPool) o;
-        return Objects.equals(this.provisioningStatus, loadBalancerStatusPool.provisioningStatus) &&
-            Objects.equals(this.name, loadBalancerStatusPool.name) &&
-            Objects.equals(this.healthmonitor, loadBalancerStatusPool.healthmonitor) &&
-            Objects.equals(this.members, loadBalancerStatusPool.members) &&
-            Objects.equals(this.id, loadBalancerStatusPool.id) &&
-            Objects.equals(this.operatingStatus, loadBalancerStatusPool.operatingStatus);
+        return Objects.equals(this.provisioningStatus, loadBalancerStatusPool.provisioningStatus)
+            && Objects.equals(this.name, loadBalancerStatusPool.name)
+            && Objects.equals(this.healthmonitor, loadBalancerStatusPool.healthmonitor)
+            && Objects.equals(this.members, loadBalancerStatusPool.members)
+            && Objects.equals(this.id, loadBalancerStatusPool.id)
+            && Objects.equals(this.operatingStatus, loadBalancerStatusPool.operatingStatus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(provisioningStatus, name, healthmonitor, members, id, operatingStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -243,16 +197,13 @@ public class LoadBalancerStatusPool  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

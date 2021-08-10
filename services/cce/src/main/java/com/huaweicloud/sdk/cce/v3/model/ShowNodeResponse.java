@@ -1,55 +1,38 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.NodeMetadata;
-import com.huaweicloud.sdk.cce.v3.model.NodeSpec;
-import com.huaweicloud.sdk.cce.v3.model.NodeStatus;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowNodeResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="kind")
-    
+    @JsonProperty(value = "kind")
+
     private String kind;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apiVersion")
-    
+    @JsonProperty(value = "apiVersion")
+
     private String apiVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata")
-    
+    @JsonProperty(value = "metadata")
+
     private NodeMetadata metadata;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec")
-    
+    @JsonProperty(value = "spec")
+
     private NodeSpec spec;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private NodeStatus status;
 
     public ShowNodeResponse withKind(String kind) {
@@ -57,13 +40,9 @@ public class ShowNodeResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * API类型，固定值“Node”，该值不可修改。  
-     * @return kind
-     */
+    /** API类型，固定值“Node”，该值不可修改。
+     * 
+     * @return kind */
     public String getKind() {
         return kind;
     }
@@ -72,20 +51,14 @@ public class ShowNodeResponse extends SdkResponse {
         this.kind = kind;
     }
 
-    
-
     public ShowNodeResponse withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * API版本，固定值“v3”，该值不可修改。  
-     * @return apiVersion
-     */
+    /** API版本，固定值“v3”，该值不可修改。
+     * 
+     * @return apiVersion */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -94,27 +67,23 @@ public class ShowNodeResponse extends SdkResponse {
         this.apiVersion = apiVersion;
     }
 
-    
-
     public ShowNodeResponse withMetadata(NodeMetadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
     public ShowNodeResponse withMetadata(Consumer<NodeMetadata> metadataSetter) {
-        if(this.metadata == null ){
+        if (this.metadata == null) {
             this.metadata = new NodeMetadata();
             metadataSetter.accept(this.metadata);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get metadata
-     * @return metadata
-     */
+    /** Get metadata
+     * 
+     * @return metadata */
     public NodeMetadata getMetadata() {
         return metadata;
     }
@@ -123,27 +92,23 @@ public class ShowNodeResponse extends SdkResponse {
         this.metadata = metadata;
     }
 
-    
-
     public ShowNodeResponse withSpec(NodeSpec spec) {
         this.spec = spec;
         return this;
     }
 
     public ShowNodeResponse withSpec(Consumer<NodeSpec> specSetter) {
-        if(this.spec == null ){
+        if (this.spec == null) {
             this.spec = new NodeSpec();
             specSetter.accept(this.spec);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get spec
-     * @return spec
-     */
+    /** Get spec
+     * 
+     * @return spec */
     public NodeSpec getSpec() {
         return spec;
     }
@@ -152,27 +117,23 @@ public class ShowNodeResponse extends SdkResponse {
         this.spec = spec;
     }
 
-    
-
     public ShowNodeResponse withStatus(NodeStatus status) {
         this.status = status;
         return this;
     }
 
     public ShowNodeResponse withStatus(Consumer<NodeStatus> statusSetter) {
-        if(this.status == null ){
+        if (this.status == null) {
             this.status = new NodeStatus();
             statusSetter.accept(this.status);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get status
-     * @return status
-     */
+    /** Get status
+     * 
+     * @return status */
     public NodeStatus getStatus() {
         return status;
     }
@@ -180,8 +141,6 @@ public class ShowNodeResponse extends SdkResponse {
     public void setStatus(NodeStatus status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -192,16 +151,17 @@ public class ShowNodeResponse extends SdkResponse {
             return false;
         }
         ShowNodeResponse showNodeResponse = (ShowNodeResponse) o;
-        return Objects.equals(this.kind, showNodeResponse.kind) &&
-            Objects.equals(this.apiVersion, showNodeResponse.apiVersion) &&
-            Objects.equals(this.metadata, showNodeResponse.metadata) &&
-            Objects.equals(this.spec, showNodeResponse.spec) &&
-            Objects.equals(this.status, showNodeResponse.status);
+        return Objects.equals(this.kind, showNodeResponse.kind)
+            && Objects.equals(this.apiVersion, showNodeResponse.apiVersion)
+            && Objects.equals(this.metadata, showNodeResponse.metadata)
+            && Objects.equals(this.spec, showNodeResponse.spec) && Objects.equals(this.status, showNodeResponse.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(kind, apiVersion, metadata, spec, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -214,16 +174,13 @@ public class ShowNodeResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

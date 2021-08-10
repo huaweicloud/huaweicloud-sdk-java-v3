@@ -1,42 +1,27 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.InstanceRestartRequsetBody;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class StartInstanceRestartActionRequest  {
+/** Request Object */
+public class StartInstanceRestartActionRequest {
 
-    /**
-     * 语言
-     */
+    /** 语言 */
     public static final class XLanguageEnum {
 
-        
-        /**
-         * Enum ZH_CN for value: "zh-cn"
-         */
+        /** Enum ZH_CN for value: "zh-cn" */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
-        
-        /**
-         * Enum EN_US for value: "en-us"
-         */
+
+        /** Enum EN_US for value: "en-us" */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
-        
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
 
@@ -65,7 +50,7 @@ public class StartInstanceRestartActionRequest  {
 
         @JsonCreator
         public static XLanguageEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -76,7 +61,7 @@ public class StartInstanceRestartActionRequest  {
         }
 
         public static XLanguageEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -100,22 +85,19 @@ public class StartInstanceRestartActionRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private XLanguageEnum xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private InstanceRestartRequsetBody body;
 
     public StartInstanceRestartActionRequest withXLanguage(XLanguageEnum xLanguage) {
@@ -123,15 +105,11 @@ public class StartInstanceRestartActionRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
         return xLanguage;
     }
@@ -140,20 +118,14 @@ public class StartInstanceRestartActionRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public StartInstanceRestartActionRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -162,27 +134,23 @@ public class StartInstanceRestartActionRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public StartInstanceRestartActionRequest withBody(InstanceRestartRequsetBody body) {
         this.body = body;
         return this;
     }
 
     public StartInstanceRestartActionRequest withBody(Consumer<InstanceRestartRequsetBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new InstanceRestartRequsetBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public InstanceRestartRequsetBody getBody() {
         return body;
     }
@@ -190,8 +158,6 @@ public class StartInstanceRestartActionRequest  {
     public void setBody(InstanceRestartRequsetBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -202,14 +168,16 @@ public class StartInstanceRestartActionRequest  {
             return false;
         }
         StartInstanceRestartActionRequest startInstanceRestartActionRequest = (StartInstanceRestartActionRequest) o;
-        return Objects.equals(this.xLanguage, startInstanceRestartActionRequest.xLanguage) &&
-            Objects.equals(this.instanceId, startInstanceRestartActionRequest.instanceId) &&
-            Objects.equals(this.body, startInstanceRestartActionRequest.body);
+        return Objects.equals(this.xLanguage, startInstanceRestartActionRequest.xLanguage)
+            && Objects.equals(this.instanceId, startInstanceRestartActionRequest.instanceId)
+            && Objects.equals(this.body, startInstanceRestartActionRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -220,16 +188,13 @@ public class StartInstanceRestartActionRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

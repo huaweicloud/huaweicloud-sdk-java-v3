@@ -1,43 +1,30 @@
 package com.huaweicloud.sdk.live.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.live.v2.model.HistoryStreamInfo;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListHistoryStreamsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="history_stream_list")
-    
+    @JsonProperty(value = "history_stream_list")
+
     private List<HistoryStreamInfo> historyStreamList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-request-id")
-    
+    @JsonProperty(value = "X-request-id")
+
     private String xRequestId;
 
     public ListHistoryStreamsResponse withHistoryStreamList(List<HistoryStreamInfo> historyStreamList) {
@@ -45,9 +32,8 @@ public class ListHistoryStreamsResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListHistoryStreamsResponse addHistoryStreamListItem(HistoryStreamInfo historyStreamListItem) {
-        if(this.historyStreamList == null) {
+        if (this.historyStreamList == null) {
             this.historyStreamList = new ArrayList<>();
         }
         this.historyStreamList.add(historyStreamListItem);
@@ -55,17 +41,16 @@ public class ListHistoryStreamsResponse extends SdkResponse {
     }
 
     public ListHistoryStreamsResponse withHistoryStreamList(Consumer<List<HistoryStreamInfo>> historyStreamListSetter) {
-        if(this.historyStreamList == null) {
+        if (this.historyStreamList == null) {
             this.historyStreamList = new ArrayList<>();
         }
         historyStreamListSetter.accept(this.historyStreamList);
         return this;
     }
 
-    /**
-     * 历史流信息列表。
-     * @return historyStreamList
-     */
+    /** 历史流信息列表。
+     * 
+     * @return historyStreamList */
     public List<HistoryStreamInfo> getHistoryStreamList() {
         return historyStreamList;
     }
@@ -74,22 +59,14 @@ public class ListHistoryStreamsResponse extends SdkResponse {
         this.historyStreamList = historyStreamList;
     }
 
-    
-
     public ListHistoryStreamsResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * 总记录数
-     * minimum: 0
-     * maximum: 2147483647
-     * @return total
-     */
+    /** 总记录数 minimum: 0 maximum: 2147483647
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -98,22 +75,16 @@ public class ListHistoryStreamsResponse extends SdkResponse {
         this.total = total;
     }
 
-    
-
     public ListHistoryStreamsResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
     }
 
-    
-
-
-    /**
-     * Get xRequestId
-     * @return xRequestId
-     */
+    /** Get xRequestId
+     * 
+     * @return xRequestId */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-request-id")
+    @JsonProperty(value = "X-request-id")
     public String getXRequestId() {
         return xRequestId;
     }
@@ -121,8 +92,6 @@ public class ListHistoryStreamsResponse extends SdkResponse {
     public void setXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -133,14 +102,16 @@ public class ListHistoryStreamsResponse extends SdkResponse {
             return false;
         }
         ListHistoryStreamsResponse listHistoryStreamsResponse = (ListHistoryStreamsResponse) o;
-        return Objects.equals(this.historyStreamList, listHistoryStreamsResponse.historyStreamList) &&
-            Objects.equals(this.total, listHistoryStreamsResponse.total) &&
-            Objects.equals(this.xRequestId, listHistoryStreamsResponse.xRequestId);
+        return Objects.equals(this.historyStreamList, listHistoryStreamsResponse.historyStreamList)
+            && Objects.equals(this.total, listHistoryStreamsResponse.total)
+            && Objects.equals(this.xRequestId, listHistoryStreamsResponse.xRequestId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(historyStreamList, total, xRequestId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -151,16 +122,13 @@ public class ListHistoryStreamsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

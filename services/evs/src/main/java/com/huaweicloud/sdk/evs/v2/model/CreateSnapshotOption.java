@@ -1,53 +1,39 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 快照信息。
- */
-public class CreateSnapshotOption  {
-
-
+/** 快照信息。 */
+public class CreateSnapshotOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_id")
-    
+    @JsonProperty(value = "volume_id")
+
     private String volumeId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="force")
-    
+    @JsonProperty(value = "force")
+
     private Boolean force;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata")
-    
+    @JsonProperty(value = "metadata")
+
     private Map<String, String> metadata = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public CreateSnapshotOption withVolumeId(String volumeId) {
@@ -55,13 +41,9 @@ public class CreateSnapshotOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 源云硬盘的ID。
-     * @return volumeId
-     */
+    /** 源云硬盘的ID。
+     * 
+     * @return volumeId */
     public String getVolumeId() {
         return volumeId;
     }
@@ -70,20 +52,14 @@ public class CreateSnapshotOption  {
         this.volumeId = volumeId;
     }
 
-    
-
     public CreateSnapshotOption withForce(Boolean force) {
         this.force = force;
         return this;
     }
 
-    
-
-
-    /**
-     * 强制创快照标示，默认为false。 当force标记为false时，云硬盘处于挂载状态时，不能强制创建快照。 当force标记为true时，即使云硬盘处于挂载状态时，仍可以创建快照。
-     * @return force
-     */
+    /** 强制创快照标示，默认为false。 当force标记为false时，云硬盘处于挂载状态时，不能强制创建快照。 当force标记为true时，即使云硬盘处于挂载状态时，仍可以创建快照。
+     * 
+     * @return force */
     public Boolean getForce() {
         return force;
     }
@@ -92,17 +68,13 @@ public class CreateSnapshotOption  {
         this.force = force;
     }
 
-    
-
     public CreateSnapshotOption withMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    
-
     public CreateSnapshotOption putMetadataItem(String key, String metadataItem) {
-        if(this.metadata == null) {
+        if (this.metadata == null) {
             this.metadata = new HashMap<>();
         }
         this.metadata.put(key, metadataItem);
@@ -110,16 +82,16 @@ public class CreateSnapshotOption  {
     }
 
     public CreateSnapshotOption withMetadata(Consumer<Map<String, String>> metadataSetter) {
-        if(this.metadata == null) {
+        if (this.metadata == null) {
             this.metadata = new HashMap<>();
         }
         metadataSetter.accept(this.metadata);
         return this;
     }
-    /**
-     * 云硬盘快照的元数据信息。
-     * @return metadata
-     */
+
+    /** 云硬盘快照的元数据信息。
+     * 
+     * @return metadata */
     public Map<String, String> getMetadata() {
         return metadata;
     }
@@ -128,20 +100,14 @@ public class CreateSnapshotOption  {
         this.metadata = metadata;
     }
 
-    
-
     public CreateSnapshotOption withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘快照描述，最大支持255个字节。
-     * @return description
-     */
+    /** 云硬盘快照描述，最大支持255个字节。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -150,20 +116,15 @@ public class CreateSnapshotOption  {
         this.description = description;
     }
 
-    
-
     public CreateSnapshotOption withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘快照名称。最大支持255个字节。  > > 说明： > 对云硬盘创建备份时，同时会创建以autobk_snapshot_为名称前缀的快照，云硬盘控制台对此类快照会有操作限制。因此建议不要创建以> > autobk_snapshot_为名称前缀的快照，避免影响快照的正常使用
-     * @return name
-     */
+    /** 云硬盘快照名称。最大支持255个字节。 > > 说明： > 对云硬盘创建备份时，同时会创建以autobk_snapshot_为名称前缀的快照，云硬盘控制台对此类快照会有操作限制。因此建议不要创建以> >
+     * autobk_snapshot_为名称前缀的快照，避免影响快照的正常使用
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -171,8 +132,6 @@ public class CreateSnapshotOption  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -183,16 +142,18 @@ public class CreateSnapshotOption  {
             return false;
         }
         CreateSnapshotOption createSnapshotOption = (CreateSnapshotOption) o;
-        return Objects.equals(this.volumeId, createSnapshotOption.volumeId) &&
-            Objects.equals(this.force, createSnapshotOption.force) &&
-            Objects.equals(this.metadata, createSnapshotOption.metadata) &&
-            Objects.equals(this.description, createSnapshotOption.description) &&
-            Objects.equals(this.name, createSnapshotOption.name);
+        return Objects.equals(this.volumeId, createSnapshotOption.volumeId)
+            && Objects.equals(this.force, createSnapshotOption.force)
+            && Objects.equals(this.metadata, createSnapshotOption.metadata)
+            && Objects.equals(this.description, createSnapshotOption.description)
+            && Objects.equals(this.name, createSnapshotOption.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(volumeId, force, metadata, description, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -205,16 +166,13 @@ public class CreateSnapshotOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

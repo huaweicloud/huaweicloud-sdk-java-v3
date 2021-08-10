@@ -1,41 +1,26 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListOffSiteInstancesRequest  {
+/** Request Object */
+public class ListOffSiteInstancesRequest {
 
-    /**
-     * 语言
-     */
+    /** 语言 */
     public static final class XLanguageEnum {
 
-        
-        /**
-         * Enum ZH_CN for value: "zh-cn"
-         */
+        /** Enum ZH_CN for value: "zh-cn" */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
-        
-        /**
-         * Enum EN_US for value: "en-us"
-         */
+
+        /** Enum EN_US for value: "en-us" */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
-        
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +49,7 @@ public class ListOffSiteInstancesRequest  {
 
         @JsonCreator
         public static XLanguageEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +60,7 @@ public class ListOffSiteInstancesRequest  {
         }
 
         public static XLanguageEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -99,22 +84,19 @@ public class ListOffSiteInstancesRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private XLanguageEnum xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Object offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Object limit;
 
     public ListOffSiteInstancesRequest withXLanguage(XLanguageEnum xLanguage) {
@@ -122,15 +104,11 @@ public class ListOffSiteInstancesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
         return xLanguage;
     }
@@ -139,20 +117,14 @@ public class ListOffSiteInstancesRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListOffSiteInstancesRequest withOffset(Object offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
-     * @return offset
-     */
+    /** 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
+     * 
+     * @return offset */
     public Object getOffset() {
         return offset;
     }
@@ -161,20 +133,14 @@ public class ListOffSiteInstancesRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListOffSiteInstancesRequest withLimit(Object limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
-     * @return limit
-     */
+    /** 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
+     * 
+     * @return limit */
     public Object getLimit() {
         return limit;
     }
@@ -182,8 +148,6 @@ public class ListOffSiteInstancesRequest  {
     public void setLimit(Object limit) {
         this.limit = limit;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,14 +158,16 @@ public class ListOffSiteInstancesRequest  {
             return false;
         }
         ListOffSiteInstancesRequest listOffSiteInstancesRequest = (ListOffSiteInstancesRequest) o;
-        return Objects.equals(this.xLanguage, listOffSiteInstancesRequest.xLanguage) &&
-            Objects.equals(this.offset, listOffSiteInstancesRequest.offset) &&
-            Objects.equals(this.limit, listOffSiteInstancesRequest.limit);
+        return Objects.equals(this.xLanguage, listOffSiteInstancesRequest.xLanguage)
+            && Objects.equals(this.offset, listOffSiteInstancesRequest.offset)
+            && Objects.equals(this.limit, listOffSiteInstancesRequest.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -212,16 +178,13 @@ public class ListOffSiteInstancesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

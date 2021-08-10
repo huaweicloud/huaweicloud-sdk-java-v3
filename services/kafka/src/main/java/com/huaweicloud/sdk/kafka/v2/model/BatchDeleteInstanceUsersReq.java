@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * BatchDeleteInstanceUsersReq
- */
-public class BatchDeleteInstanceUsersReq  {
+/** BatchDeleteInstanceUsersReq */
+public class BatchDeleteInstanceUsersReq {
 
-    /**
-     * 删除类型。当前只支持delete。
-     */
+    /** 删除类型。当前只支持delete。 */
     public static final class ActionEnum {
 
-        
-        /**
-         * Enum DELETE for value: "delete"
-         */
+        /** Enum DELETE for value: "delete" */
         public static final ActionEnum DELETE = new ActionEnum("delete");
-        
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -60,7 +48,7 @@ public class BatchDeleteInstanceUsersReq  {
 
         @JsonCreator
         public static ActionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -71,7 +59,7 @@ public class BatchDeleteInstanceUsersReq  {
         }
 
         public static ActionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -95,30 +83,24 @@ public class BatchDeleteInstanceUsersReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private ActionEnum action;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="users")
-    
+    @JsonProperty(value = "users")
+
     private List<String> users = null;
-    
+
     public BatchDeleteInstanceUsersReq withAction(ActionEnum action) {
         this.action = action;
         return this;
     }
 
-    
-
-
-    /**
-     * 删除类型。当前只支持delete。
-     * @return action
-     */
+    /** 删除类型。当前只支持delete。
+     * 
+     * @return action */
     public ActionEnum getAction() {
         return action;
     }
@@ -127,16 +109,13 @@ public class BatchDeleteInstanceUsersReq  {
         this.action = action;
     }
 
-    
-
     public BatchDeleteInstanceUsersReq withUsers(List<String> users) {
         this.users = users;
         return this;
     }
 
-    
     public BatchDeleteInstanceUsersReq addUsersItem(String usersItem) {
-        if(this.users == null) {
+        if (this.users == null) {
             this.users = new ArrayList<>();
         }
         this.users.add(usersItem);
@@ -144,17 +123,16 @@ public class BatchDeleteInstanceUsersReq  {
     }
 
     public BatchDeleteInstanceUsersReq withUsers(Consumer<List<String>> usersSetter) {
-        if(this.users == null) {
+        if (this.users == null) {
             this.users = new ArrayList<>();
         }
         usersSetter.accept(this.users);
         return this;
     }
 
-    /**
-     * 用户列表。
-     * @return users
-     */
+    /** 用户列表。
+     * 
+     * @return users */
     public List<String> getUsers() {
         return users;
     }
@@ -162,8 +140,6 @@ public class BatchDeleteInstanceUsersReq  {
     public void setUsers(List<String> users) {
         this.users = users;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -174,13 +150,15 @@ public class BatchDeleteInstanceUsersReq  {
             return false;
         }
         BatchDeleteInstanceUsersReq batchDeleteInstanceUsersReq = (BatchDeleteInstanceUsersReq) o;
-        return Objects.equals(this.action, batchDeleteInstanceUsersReq.action) &&
-            Objects.equals(this.users, batchDeleteInstanceUsersReq.users);
+        return Objects.equals(this.action, batchDeleteInstanceUsersReq.action)
+            && Objects.equals(this.users, batchDeleteInstanceUsersReq.users);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(action, users);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -190,16 +168,13 @@ public class BatchDeleteInstanceUsersReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

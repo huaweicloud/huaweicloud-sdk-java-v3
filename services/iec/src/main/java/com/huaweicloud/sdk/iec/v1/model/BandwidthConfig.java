@@ -1,36 +1,23 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 带宽配置
- */
-public class BandwidthConfig  {
+/** 带宽配置 */
+public class BandwidthConfig {
 
-    /**
-     * 带宽类型，现支持WHOLE类型，即共享带宽，其他类型不支持。
-     */
+    /** 带宽类型，现支持WHOLE类型，即共享带宽，其他类型不支持。 */
     public static final class SharetypeEnum {
 
-        
-        /**
-         * Enum WHOLE for value: "WHOLE"
-         */
+        /** Enum WHOLE for value: "WHOLE" */
         public static final SharetypeEnum WHOLE = new SharetypeEnum("WHOLE");
-        
 
         private static final Map<String, SharetypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -58,7 +45,7 @@ public class BandwidthConfig  {
 
         @JsonCreator
         public static SharetypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SharetypeEnum result = STATIC_FIELDS.get(value);
@@ -69,7 +56,7 @@ public class BandwidthConfig  {
         }
 
         public static SharetypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SharetypeEnum result = STATIC_FIELDS.get(value);
@@ -93,16 +80,14 @@ public class BandwidthConfig  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sharetype")
-    
+    @JsonProperty(value = "sharetype")
+
     private SharetypeEnum sharetype;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
     public BandwidthConfig withSharetype(SharetypeEnum sharetype) {
@@ -110,13 +95,9 @@ public class BandwidthConfig  {
         return this;
     }
 
-    
-
-
-    /**
-     * 带宽类型，现支持WHOLE类型，即共享带宽，其他类型不支持。
-     * @return sharetype
-     */
+    /** 带宽类型，现支持WHOLE类型，即共享带宽，其他类型不支持。
+     * 
+     * @return sharetype */
     public SharetypeEnum getSharetype() {
         return sharetype;
     }
@@ -125,20 +106,14 @@ public class BandwidthConfig  {
         this.sharetype = sharetype;
     }
 
-    
-
     public BandwidthConfig withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 带宽（Mbit/s）。 
-     * @return size
-     */
+    /** 带宽（Mbit/s）。
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -146,8 +121,6 @@ public class BandwidthConfig  {
     public void setSize(Integer size) {
         this.size = size;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -158,13 +131,15 @@ public class BandwidthConfig  {
             return false;
         }
         BandwidthConfig bandwidthConfig = (BandwidthConfig) o;
-        return Objects.equals(this.sharetype, bandwidthConfig.sharetype) &&
-            Objects.equals(this.size, bandwidthConfig.size);
+        return Objects.equals(this.sharetype, bandwidthConfig.sharetype)
+            && Objects.equals(this.size, bandwidthConfig.size);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sharetype, size);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -174,16 +149,13 @@ public class BandwidthConfig  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

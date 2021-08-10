@@ -1,40 +1,27 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ResetMessagesResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic")
-    
+    @JsonProperty(value = "topic")
+
     private String topic;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="partition")
-    
+    @JsonProperty(value = "partition")
+
     private Integer partition;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message_offset")
-    
+    @JsonProperty(value = "message_offset")
+
     private Long messageOffset;
 
     public ResetMessagesResponse withTopic(String topic) {
@@ -42,13 +29,9 @@ public class ResetMessagesResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * topic名称。
-     * @return topic
-     */
+    /** topic名称。
+     * 
+     * @return topic */
     public String getTopic() {
         return topic;
     }
@@ -57,20 +40,14 @@ public class ResetMessagesResponse extends SdkResponse {
         this.topic = topic;
     }
 
-    
-
     public ResetMessagesResponse withPartition(Integer partition) {
         this.partition = partition;
         return this;
     }
 
-    
-
-
-    /**
-     * 分区。
-     * @return partition
-     */
+    /** 分区。
+     * 
+     * @return partition */
     public Integer getPartition() {
         return partition;
     }
@@ -79,20 +56,14 @@ public class ResetMessagesResponse extends SdkResponse {
         this.partition = partition;
     }
 
-    
-
     public ResetMessagesResponse withMessageOffset(Long messageOffset) {
         this.messageOffset = messageOffset;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息偏移量。
-     * @return messageOffset
-     */
+    /** 消息偏移量。
+     * 
+     * @return messageOffset */
     public Long getMessageOffset() {
         return messageOffset;
     }
@@ -100,8 +71,6 @@ public class ResetMessagesResponse extends SdkResponse {
     public void setMessageOffset(Long messageOffset) {
         this.messageOffset = messageOffset;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +81,16 @@ public class ResetMessagesResponse extends SdkResponse {
             return false;
         }
         ResetMessagesResponse resetMessagesResponse = (ResetMessagesResponse) o;
-        return Objects.equals(this.topic, resetMessagesResponse.topic) &&
-            Objects.equals(this.partition, resetMessagesResponse.partition) &&
-            Objects.equals(this.messageOffset, resetMessagesResponse.messageOffset);
+        return Objects.equals(this.topic, resetMessagesResponse.topic)
+            && Objects.equals(this.partition, resetMessagesResponse.partition)
+            && Objects.equals(this.messageOffset, resetMessagesResponse.messageOffset);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(topic, partition, messageOffset);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +101,13 @@ public class ResetMessagesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

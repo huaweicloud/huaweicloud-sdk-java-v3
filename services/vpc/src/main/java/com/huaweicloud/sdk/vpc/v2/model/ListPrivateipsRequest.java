@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListPrivateipsRequest  {
-
-
+/** Request Object */
+public class ListPrivateipsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
+
     private String subnetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
     public ListPrivateipsRequest withSubnetId(String subnetId) {
@@ -40,13 +28,9 @@ public class ListPrivateipsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 私有IP所在子网的唯一标识
-     * @return subnetId
-     */
+    /** 私有IP所在子网的唯一标识
+     * 
+     * @return subnetId */
     public String getSubnetId() {
         return subnetId;
     }
@@ -55,20 +39,14 @@ public class ListPrivateipsRequest  {
         this.subnetId = subnetId;
     }
 
-    
-
     public ListPrivateipsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页返回的个数
-     * @return limit
-     */
+    /** 每页返回的个数
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -77,20 +55,14 @@ public class ListPrivateipsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListPrivateipsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页查询起始的资源id，为空时查询第一页
-     * @return marker
-     */
+    /** 分页查询起始的资源id，为空时查询第一页
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -98,8 +70,6 @@ public class ListPrivateipsRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class ListPrivateipsRequest  {
             return false;
         }
         ListPrivateipsRequest listPrivateipsRequest = (ListPrivateipsRequest) o;
-        return Objects.equals(this.subnetId, listPrivateipsRequest.subnetId) &&
-            Objects.equals(this.limit, listPrivateipsRequest.limit) &&
-            Objects.equals(this.marker, listPrivateipsRequest.marker);
+        return Objects.equals(this.subnetId, listPrivateipsRequest.subnetId)
+            && Objects.equals(this.limit, listPrivateipsRequest.limit)
+            && Objects.equals(this.marker, listPrivateipsRequest.marker);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(subnetId, limit, marker);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class ListPrivateipsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

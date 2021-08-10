@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ddm.v1.model.ResetUserPasswordReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ResetUserPasswordRequest  {
-
-
+/** Request Object */
+public class ResetUserPasswordRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="username")
-    
+    @JsonProperty(value = "username")
+
     private String username;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ResetUserPasswordReq body;
 
     public ResetUserPasswordRequest withInstanceId(String instanceId) {
@@ -41,13 +29,9 @@ public class ResetUserPasswordRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * DDM实例ID。
-     * @return instanceId
-     */
+    /** DDM实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -56,20 +40,14 @@ public class ResetUserPasswordRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ResetUserPasswordRequest withUsername(String username) {
         this.username = username;
         return this;
     }
 
-    
-
-
-    /**
-     * 需要修改的DDM帐号名称。
-     * @return username
-     */
+    /** 需要修改的DDM帐号名称。
+     * 
+     * @return username */
     public String getUsername() {
         return username;
     }
@@ -78,27 +56,23 @@ public class ResetUserPasswordRequest  {
         this.username = username;
     }
 
-    
-
     public ResetUserPasswordRequest withBody(ResetUserPasswordReq body) {
         this.body = body;
         return this;
     }
 
     public ResetUserPasswordRequest withBody(Consumer<ResetUserPasswordReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ResetUserPasswordReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ResetUserPasswordReq getBody() {
         return body;
     }
@@ -106,8 +80,6 @@ public class ResetUserPasswordRequest  {
     public void setBody(ResetUserPasswordReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class ResetUserPasswordRequest  {
             return false;
         }
         ResetUserPasswordRequest resetUserPasswordRequest = (ResetUserPasswordRequest) o;
-        return Objects.equals(this.instanceId, resetUserPasswordRequest.instanceId) &&
-            Objects.equals(this.username, resetUserPasswordRequest.username) &&
-            Objects.equals(this.body, resetUserPasswordRequest.body);
+        return Objects.equals(this.instanceId, resetUserPasswordRequest.instanceId)
+            && Objects.equals(this.username, resetUserPasswordRequest.username)
+            && Objects.equals(this.body, resetUserPasswordRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, username, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class ResetUserPasswordRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

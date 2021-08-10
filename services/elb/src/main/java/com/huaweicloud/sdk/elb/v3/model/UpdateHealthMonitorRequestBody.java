@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v3.model.UpdateHealthMonitorOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * This is a auto create Body Object
- */
-public class UpdateHealthMonitorRequestBody  {
-
-
+/** This is a auto create Body Object */
+public class UpdateHealthMonitorRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="healthmonitor")
-    
+    @JsonProperty(value = "healthmonitor")
+
     private UpdateHealthMonitorOption healthmonitor;
 
     public UpdateHealthMonitorRequestBody withHealthmonitor(UpdateHealthMonitorOption healthmonitor) {
@@ -30,19 +20,17 @@ public class UpdateHealthMonitorRequestBody  {
     }
 
     public UpdateHealthMonitorRequestBody withHealthmonitor(Consumer<UpdateHealthMonitorOption> healthmonitorSetter) {
-        if(this.healthmonitor == null ){
+        if (this.healthmonitor == null) {
             this.healthmonitor = new UpdateHealthMonitorOption();
             healthmonitorSetter.accept(this.healthmonitor);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get healthmonitor
-     * @return healthmonitor
-     */
+    /** Get healthmonitor
+     * 
+     * @return healthmonitor */
     public UpdateHealthMonitorOption getHealthmonitor() {
         return healthmonitor;
     }
@@ -50,8 +38,6 @@ public class UpdateHealthMonitorRequestBody  {
     public void setHealthmonitor(UpdateHealthMonitorOption healthmonitor) {
         this.healthmonitor = healthmonitor;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class UpdateHealthMonitorRequestBody  {
         UpdateHealthMonitorRequestBody updateHealthMonitorRequestBody = (UpdateHealthMonitorRequestBody) o;
         return Objects.equals(this.healthmonitor, updateHealthMonitorRequestBody.healthmonitor);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(healthmonitor);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class UpdateHealthMonitorRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

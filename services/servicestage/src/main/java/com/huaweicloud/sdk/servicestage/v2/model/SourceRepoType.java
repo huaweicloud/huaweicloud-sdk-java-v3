@@ -1,44 +1,26 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
-/**
- * 代码仓类型，支持GitHub、GitLab、Gitee、Bitbucket。
- */
+/** 代码仓类型，支持GitHub、GitLab、Gitee、Bitbucket。 */
 public class SourceRepoType {
-    
-    /**
-     * Enum GITHUB for value: "GitHub"
-     */
+
+    /** Enum GITHUB for value: "GitHub" */
     public static final SourceRepoType GITHUB = new SourceRepoType("GitHub");
-    
-    /**
-     * Enum GITLAB for value: "GitLab"
-     */
+
+    /** Enum GITLAB for value: "GitLab" */
     public static final SourceRepoType GITLAB = new SourceRepoType("GitLab");
-    
-    /**
-     * Enum GITEE for value: "Gitee"
-     */
+
+    /** Enum GITEE for value: "Gitee" */
     public static final SourceRepoType GITEE = new SourceRepoType("Gitee");
-    
-    /**
-     * Enum BITBUCKET for value: "Bitbucket"
-     */
+
+    /** Enum BITBUCKET for value: "Bitbucket" */
     public static final SourceRepoType BITBUCKET = new SourceRepoType("Bitbucket");
-    
 
     private static final Map<String, SourceRepoType> STATIC_FIELDS = createStaticFields();
 
@@ -69,7 +51,7 @@ public class SourceRepoType {
 
     @JsonCreator
     public static SourceRepoType fromValue(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         SourceRepoType result = STATIC_FIELDS.get(value);
@@ -80,7 +62,7 @@ public class SourceRepoType {
     }
 
     public static SourceRepoType valueOf(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         SourceRepoType result = STATIC_FIELDS.get(value);
@@ -103,4 +85,3 @@ public class SourceRepoType {
         return this.value.hashCode();
     }
 }
-

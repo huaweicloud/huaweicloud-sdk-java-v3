@@ -1,76 +1,54 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * LdApiDeploy
- */
-public class LdApiDeploy  {
-
-
+/** LdApiDeploy */
+public class LdApiDeploy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deploy_front_api")
-    
+    @JsonProperty(value = "deploy_front_api")
+
     private Boolean deployFrontApi;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth_type")
-    
+    @JsonProperty(value = "auth_type")
+
     private String authType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="authorizer_id")
-    
+    @JsonProperty(value = "authorizer_id")
+
     private String authorizerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_id")
-    
+    @JsonProperty(value = "env_id")
+
     private String envId;
-    /**
-     * 请求协议
-     */
+
+    /** 请求协议 */
     public static final class ProtocolEnum {
 
-        
-        /**
-         * Enum HTTPS for value: "HTTPS"
-         */
+        /** Enum HTTPS for value: "HTTPS" */
         public static final ProtocolEnum HTTPS = new ProtocolEnum("HTTPS");
-        
-        /**
-         * Enum HTTP for value: "HTTP"
-         */
+
+        /** Enum HTTP for value: "HTTP" */
         public static final ProtocolEnum HTTP = new ProtocolEnum("HTTP");
-        
-        /**
-         * Enum HTTPS_HTTP for value: "HTTPS&HTTP"
-         */
+
+        /** Enum HTTPS_HTTP for value: "HTTPS&HTTP" */
         public static final ProtocolEnum HTTPS_HTTP = new ProtocolEnum("HTTPS&HTTP");
-        
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
 
@@ -100,7 +78,7 @@ public class LdApiDeploy  {
 
         @JsonCreator
         public static ProtocolEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtocolEnum result = STATIC_FIELDS.get(value);
@@ -111,7 +89,7 @@ public class LdApiDeploy  {
         }
 
         public static ProtocolEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtocolEnum result = STATIC_FIELDS.get(value);
@@ -135,40 +113,34 @@ public class LdApiDeploy  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
+
     private ProtocolEnum protocol;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backend_timeout")
-    
+    @JsonProperty(value = "backend_timeout")
+
     private Integer backendTimeout;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path")
-    
+    @JsonProperty(value = "path")
+
     private String path;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="method")
-    
+    @JsonProperty(value = "method")
+
     private String method;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cors")
-    
+    @JsonProperty(value = "cors")
+
     private Boolean cors;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roma_app_id")
-    
+    @JsonProperty(value = "roma_app_id")
+
     private String romaAppId;
 
     public LdApiDeploy withDeployFrontApi(Boolean deployFrontApi) {
@@ -176,13 +148,9 @@ public class LdApiDeploy  {
         return this;
     }
 
-    
-
-
-    /**
-     * 是否自动发布API - true：部署完成后自动创建并发布前端API。此时auth_type，group_id，env_id，protocol必填。 - false：部署完成后不创建前端API 
-     * @return deployFrontApi
-     */
+    /** 是否自动发布API - true：部署完成后自动创建并发布前端API。此时auth_type，group_id，env_id，protocol必填。 - false：部署完成后不创建前端API
+     * 
+     * @return deployFrontApi */
     public Boolean getDeployFrontApi() {
         return deployFrontApi;
     }
@@ -191,20 +159,14 @@ public class LdApiDeploy  {
         this.deployFrontApi = deployFrontApi;
     }
 
-    
-
     public LdApiDeploy withAuthType(String authType) {
         this.authType = authType;
         return this;
     }
 
-    
-
-
-    /**
-     * 认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证 
-     * @return authType
-     */
+    /** 认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
+     * 
+     * @return authType */
     public String getAuthType() {
         return authType;
     }
@@ -213,20 +175,14 @@ public class LdApiDeploy  {
         this.authType = authType;
     }
 
-    
-
     public LdApiDeploy withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义认证编号。  认证方式auth_type = AUTHORIZER时必填
-     * @return authorizerId
-     */
+    /** 自定义认证编号。 认证方式auth_type = AUTHORIZER时必填
+     * 
+     * @return authorizerId */
     public String getAuthorizerId() {
         return authorizerId;
     }
@@ -235,20 +191,14 @@ public class LdApiDeploy  {
         this.authorizerId = authorizerId;
     }
 
-    
-
     public LdApiDeploy withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 部署的前端API分组编号
-     * @return groupId
-     */
+    /** 部署的前端API分组编号
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -257,20 +207,14 @@ public class LdApiDeploy  {
         this.groupId = groupId;
     }
 
-    
-
     public LdApiDeploy withEnvId(String envId) {
         this.envId = envId;
         return this;
     }
 
-    
-
-
-    /**
-     * 部署的环境编号
-     * @return envId
-     */
+    /** 部署的环境编号
+     * 
+     * @return envId */
     public String getEnvId() {
         return envId;
     }
@@ -279,20 +223,14 @@ public class LdApiDeploy  {
         this.envId = envId;
     }
 
-    
-
     public LdApiDeploy withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求协议
-     * @return protocol
-     */
+    /** 请求协议
+     * 
+     * @return protocol */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -301,20 +239,14 @@ public class LdApiDeploy  {
         this.protocol = protocol;
     }
 
-    
-
     public LdApiDeploy withBackendTimeout(Integer backendTimeout) {
         this.backendTimeout = backendTimeout;
         return this;
     }
 
-    
-
-
-    /**
-     * 超时时间
-     * @return backendTimeout
-     */
+    /** 超时时间
+     * 
+     * @return backendTimeout */
     public Integer getBackendTimeout() {
         return backendTimeout;
     }
@@ -323,20 +255,14 @@ public class LdApiDeploy  {
         this.backendTimeout = backendTimeout;
     }
 
-    
-
     public LdApiDeploy withPath(String path) {
         this.path = path;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求路径
-     * @return path
-     */
+    /** 请求路径
+     * 
+     * @return path */
     public String getPath() {
         return path;
     }
@@ -345,20 +271,14 @@ public class LdApiDeploy  {
         this.path = path;
     }
 
-    
-
     public LdApiDeploy withMethod(String method) {
         this.method = method;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求方式
-     * @return method
-     */
+    /** 请求方式
+     * 
+     * @return method */
     public String getMethod() {
         return method;
     }
@@ -367,20 +287,14 @@ public class LdApiDeploy  {
         this.method = method;
     }
 
-    
-
     public LdApiDeploy withCors(Boolean cors) {
         this.cors = cors;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否支持跨域 - true：支持 - false：不支持 
-     * @return cors
-     */
+    /** 是否支持跨域 - true：支持 - false：不支持
+     * 
+     * @return cors */
     public Boolean getCors() {
         return cors;
     }
@@ -389,20 +303,14 @@ public class LdApiDeploy  {
         this.cors = cors;
     }
 
-    
-
     public LdApiDeploy withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
         return this;
     }
 
-    
-
-
-    /**
-     * 部署到前端的api归属的应用编号，与后端归属的应用编号保持一致
-     * @return romaAppId
-     */
+    /** 部署到前端的api归属的应用编号，与后端归属的应用编号保持一致
+     * 
+     * @return romaAppId */
     public String getRomaAppId() {
         return romaAppId;
     }
@@ -410,8 +318,6 @@ public class LdApiDeploy  {
     public void setRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -422,22 +328,31 @@ public class LdApiDeploy  {
             return false;
         }
         LdApiDeploy ldApiDeploy = (LdApiDeploy) o;
-        return Objects.equals(this.deployFrontApi, ldApiDeploy.deployFrontApi) &&
-            Objects.equals(this.authType, ldApiDeploy.authType) &&
-            Objects.equals(this.authorizerId, ldApiDeploy.authorizerId) &&
-            Objects.equals(this.groupId, ldApiDeploy.groupId) &&
-            Objects.equals(this.envId, ldApiDeploy.envId) &&
-            Objects.equals(this.protocol, ldApiDeploy.protocol) &&
-            Objects.equals(this.backendTimeout, ldApiDeploy.backendTimeout) &&
-            Objects.equals(this.path, ldApiDeploy.path) &&
-            Objects.equals(this.method, ldApiDeploy.method) &&
-            Objects.equals(this.cors, ldApiDeploy.cors) &&
-            Objects.equals(this.romaAppId, ldApiDeploy.romaAppId);
+        return Objects.equals(this.deployFrontApi, ldApiDeploy.deployFrontApi)
+            && Objects.equals(this.authType, ldApiDeploy.authType)
+            && Objects.equals(this.authorizerId, ldApiDeploy.authorizerId)
+            && Objects.equals(this.groupId, ldApiDeploy.groupId) && Objects.equals(this.envId, ldApiDeploy.envId)
+            && Objects.equals(this.protocol, ldApiDeploy.protocol)
+            && Objects.equals(this.backendTimeout, ldApiDeploy.backendTimeout)
+            && Objects.equals(this.path, ldApiDeploy.path) && Objects.equals(this.method, ldApiDeploy.method)
+            && Objects.equals(this.cors, ldApiDeploy.cors) && Objects.equals(this.romaAppId, ldApiDeploy.romaAppId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(deployFrontApi, authType, authorizerId, groupId, envId, protocol, backendTimeout, path, method, cors, romaAppId);
+        return Objects.hash(deployFrontApi,
+            authType,
+            authorizerId,
+            groupId,
+            envId,
+            protocol,
+            backendTimeout,
+            path,
+            method,
+            cors,
+            romaAppId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -456,16 +371,13 @@ public class LdApiDeploy  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

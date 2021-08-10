@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.NovaCreateKeypairRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class NovaCreateKeypairRequest  {
-
-
+/** Request Object */
+public class NovaCreateKeypairRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OpenStack-API-Version")
-    
+    @JsonProperty(value = "OpenStack-API-Version")
+
     private String openStackAPIVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private NovaCreateKeypairRequestBody body;
 
     public NovaCreateKeypairRequest withOpenStackAPIVersion(String openStackAPIVersion) {
@@ -35,13 +24,9 @@ public class NovaCreateKeypairRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 微版本头
-     * @return openStackAPIVersion
-     */
+    /** 微版本头
+     * 
+     * @return openStackAPIVersion */
     public String getOpenStackAPIVersion() {
         return openStackAPIVersion;
     }
@@ -50,27 +35,23 @@ public class NovaCreateKeypairRequest  {
         this.openStackAPIVersion = openStackAPIVersion;
     }
 
-    
-
     public NovaCreateKeypairRequest withBody(NovaCreateKeypairRequestBody body) {
         this.body = body;
         return this;
     }
 
     public NovaCreateKeypairRequest withBody(Consumer<NovaCreateKeypairRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new NovaCreateKeypairRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public NovaCreateKeypairRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class NovaCreateKeypairRequest  {
     public void setBody(NovaCreateKeypairRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class NovaCreateKeypairRequest  {
             return false;
         }
         NovaCreateKeypairRequest novaCreateKeypairRequest = (NovaCreateKeypairRequest) o;
-        return Objects.equals(this.openStackAPIVersion, novaCreateKeypairRequest.openStackAPIVersion) &&
-            Objects.equals(this.body, novaCreateKeypairRequest.body);
+        return Objects.equals(this.openStackAPIVersion, novaCreateKeypairRequest.openStackAPIVersion)
+            && Objects.equals(this.body, novaCreateKeypairRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(openStackAPIVersion, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class NovaCreateKeypairRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

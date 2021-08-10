@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.ListenerResp;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class CreateListenerResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="listener")
-    
+    @JsonProperty(value = "listener")
+
     private ListenerResp listener;
 
     public CreateListenerResponse withListener(ListenerResp listener) {
@@ -32,19 +21,17 @@ public class CreateListenerResponse extends SdkResponse {
     }
 
     public CreateListenerResponse withListener(Consumer<ListenerResp> listenerSetter) {
-        if(this.listener == null ){
+        if (this.listener == null) {
             this.listener = new ListenerResp();
             listenerSetter.accept(this.listener);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get listener
-     * @return listener
-     */
+    /** Get listener
+     * 
+     * @return listener */
     public ListenerResp getListener() {
         return listener;
     }
@@ -52,8 +39,6 @@ public class CreateListenerResponse extends SdkResponse {
     public void setListener(ListenerResp listener) {
         this.listener = listener;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class CreateListenerResponse extends SdkResponse {
         CreateListenerResponse createListenerResponse = (CreateListenerResponse) o;
         return Objects.equals(this.listener, createListenerResponse.listener);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(listener);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class CreateListenerResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

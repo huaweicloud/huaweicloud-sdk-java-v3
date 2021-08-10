@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 启停直播消息体。
- */
-public class RestSetLiveReqBody  {
-
-
+/** 启停直播消息体。 */
+public class RestSetLiveReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isLive")
-    
+    @JsonProperty(value = "isLive")
+
     private Integer isLive;
 
     public RestSetLiveReqBody withIsLive(Integer isLive) {
@@ -28,13 +18,9 @@ public class RestSetLiveReqBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 默认值为0。 - 0: 停止会议直播。 - 1: 启动会议直播。
-     * @return isLive
-     */
+    /** 默认值为0。 - 0: 停止会议直播。 - 1: 启动会议直播。
+     * 
+     * @return isLive */
     public Integer getIsLive() {
         return isLive;
     }
@@ -42,8 +28,6 @@ public class RestSetLiveReqBody  {
     public void setIsLive(Integer isLive) {
         this.isLive = isLive;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class RestSetLiveReqBody  {
         RestSetLiveReqBody restSetLiveReqBody = (RestSetLiveReqBody) o;
         return Objects.equals(this.isLive, restSetLiveReqBody.isLive);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(isLive);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class RestSetLiveReqBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

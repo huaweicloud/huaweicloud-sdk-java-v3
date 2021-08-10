@@ -1,89 +1,56 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.Versions;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 插件状态信息
- */
-public class AddonInstanceStatus  {
+/** 插件状态信息 */
+public class AddonInstanceStatus {
 
-    /**
-     * 插件实例状态
-     */
+    /** 插件实例状态 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum RUNNING for value: "running"
-         */
+        /** Enum RUNNING for value: "running" */
         public static final StatusEnum RUNNING = new StatusEnum("running");
-        
-        /**
-         * Enum ABNORMAL for value: "abnormal"
-         */
+
+        /** Enum ABNORMAL for value: "abnormal" */
         public static final StatusEnum ABNORMAL = new StatusEnum("abnormal");
-        
-        /**
-         * Enum INSTALLING for value: "installing"
-         */
+
+        /** Enum INSTALLING for value: "installing" */
         public static final StatusEnum INSTALLING = new StatusEnum("installing");
-        
-        /**
-         * Enum INSTALLFAILED for value: "installFailed"
-         */
+
+        /** Enum INSTALLFAILED for value: "installFailed" */
         public static final StatusEnum INSTALLFAILED = new StatusEnum("installFailed");
-        
-        /**
-         * Enum UPGRADING for value: "upgrading"
-         */
+
+        /** Enum UPGRADING for value: "upgrading" */
         public static final StatusEnum UPGRADING = new StatusEnum("upgrading");
-        
-        /**
-         * Enum UPGRADEFAILED for value: "upgradeFailed"
-         */
+
+        /** Enum UPGRADEFAILED for value: "upgradeFailed" */
         public static final StatusEnum UPGRADEFAILED = new StatusEnum("upgradeFailed");
-        
-        /**
-         * Enum DELETING for value: "deleting"
-         */
+
+        /** Enum DELETING for value: "deleting" */
         public static final StatusEnum DELETING = new StatusEnum("deleting");
-        
-        /**
-         * Enum DELETESUCCESS for value: "deleteSuccess"
-         */
+
+        /** Enum DELETESUCCESS for value: "deleteSuccess" */
         public static final StatusEnum DELETESUCCESS = new StatusEnum("deleteSuccess");
-        
-        /**
-         * Enum DELETEFAILED for value: "deleteFailed"
-         */
+
+        /** Enum DELETEFAILED for value: "deleteFailed" */
         public static final StatusEnum DELETEFAILED = new StatusEnum("deleteFailed");
-        
-        /**
-         * Enum AVAILABLE for value: "available"
-         */
+
+        /** Enum AVAILABLE for value: "available" */
         public static final StatusEnum AVAILABLE = new StatusEnum("available");
-        
-        /**
-         * Enum ROLLBACKING for value: "rollbacking"
-         */
+
+        /** Enum ROLLBACKING for value: "rollbacking" */
         public static final StatusEnum ROLLBACKING = new StatusEnum("rollbacking");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -121,7 +88,7 @@ public class AddonInstanceStatus  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -132,7 +99,7 @@ public class AddonInstanceStatus  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -156,34 +123,29 @@ public class AddonInstanceStatus  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Reason")
-    
+    @JsonProperty(value = "Reason")
+
     private String reason;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message")
-    
+    @JsonProperty(value = "message")
+
     private String message;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="targetVersions")
-    
+    @JsonProperty(value = "targetVersions")
+
     private List<String> targetVersions = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="currentVersion")
-    
+    @JsonProperty(value = "currentVersion")
+
     private Versions currentVersion;
 
     public AddonInstanceStatus withStatus(StatusEnum status) {
@@ -191,13 +153,9 @@ public class AddonInstanceStatus  {
         return this;
     }
 
-    
-
-
-    /**
-     * 插件实例状态
-     * @return status
-     */
+    /** 插件实例状态
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -206,20 +164,14 @@ public class AddonInstanceStatus  {
         this.status = status;
     }
 
-    
-
     public AddonInstanceStatus withReason(String reason) {
         this.reason = reason;
         return this;
     }
 
-    
-
-
-    /**
-     * 插件安装失败原因
-     * @return reason
-     */
+    /** 插件安装失败原因
+     * 
+     * @return reason */
     public String getReason() {
         return reason;
     }
@@ -228,20 +180,14 @@ public class AddonInstanceStatus  {
         this.reason = reason;
     }
 
-    
-
     public AddonInstanceStatus withMessage(String message) {
         this.message = message;
         return this;
     }
 
-    
-
-
-    /**
-     * 安装错误详情
-     * @return message
-     */
+    /** 安装错误详情
+     * 
+     * @return message */
     public String getMessage() {
         return message;
     }
@@ -250,16 +196,13 @@ public class AddonInstanceStatus  {
         this.message = message;
     }
 
-    
-
     public AddonInstanceStatus withTargetVersions(List<String> targetVersions) {
         this.targetVersions = targetVersions;
         return this;
     }
 
-    
     public AddonInstanceStatus addTargetVersionsItem(String targetVersionsItem) {
-        if(this.targetVersions == null) {
+        if (this.targetVersions == null) {
             this.targetVersions = new ArrayList<>();
         }
         this.targetVersions.add(targetVersionsItem);
@@ -267,17 +210,16 @@ public class AddonInstanceStatus  {
     }
 
     public AddonInstanceStatus withTargetVersions(Consumer<List<String>> targetVersionsSetter) {
-        if(this.targetVersions == null) {
+        if (this.targetVersions == null) {
             this.targetVersions = new ArrayList<>();
         }
         targetVersionsSetter.accept(this.targetVersions);
         return this;
     }
 
-    /**
-     * 此插件版本，支持升级的集群版本
-     * @return targetVersions
-     */
+    /** 此插件版本，支持升级的集群版本
+     * 
+     * @return targetVersions */
     public List<String> getTargetVersions() {
         return targetVersions;
     }
@@ -286,27 +228,23 @@ public class AddonInstanceStatus  {
         this.targetVersions = targetVersions;
     }
 
-    
-
     public AddonInstanceStatus withCurrentVersion(Versions currentVersion) {
         this.currentVersion = currentVersion;
         return this;
     }
 
     public AddonInstanceStatus withCurrentVersion(Consumer<Versions> currentVersionSetter) {
-        if(this.currentVersion == null ){
+        if (this.currentVersion == null) {
             this.currentVersion = new Versions();
             currentVersionSetter.accept(this.currentVersion);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get currentVersion
-     * @return currentVersion
-     */
+    /** Get currentVersion
+     * 
+     * @return currentVersion */
     public Versions getCurrentVersion() {
         return currentVersion;
     }
@@ -314,8 +252,6 @@ public class AddonInstanceStatus  {
     public void setCurrentVersion(Versions currentVersion) {
         this.currentVersion = currentVersion;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -326,16 +262,18 @@ public class AddonInstanceStatus  {
             return false;
         }
         AddonInstanceStatus addonInstanceStatus = (AddonInstanceStatus) o;
-        return Objects.equals(this.status, addonInstanceStatus.status) &&
-            Objects.equals(this.reason, addonInstanceStatus.reason) &&
-            Objects.equals(this.message, addonInstanceStatus.message) &&
-            Objects.equals(this.targetVersions, addonInstanceStatus.targetVersions) &&
-            Objects.equals(this.currentVersion, addonInstanceStatus.currentVersion);
+        return Objects.equals(this.status, addonInstanceStatus.status)
+            && Objects.equals(this.reason, addonInstanceStatus.reason)
+            && Objects.equals(this.message, addonInstanceStatus.message)
+            && Objects.equals(this.targetVersions, addonInstanceStatus.targetVersions)
+            && Objects.equals(this.currentVersion, addonInstanceStatus.currentVersion);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(status, reason, message, targetVersions, currentVersion);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -348,16 +286,13 @@ public class AddonInstanceStatus  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

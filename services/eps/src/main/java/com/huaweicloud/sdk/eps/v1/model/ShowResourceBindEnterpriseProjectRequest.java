@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.eps.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eps.v1.model.ResqEpResouce;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ShowResourceBindEnterpriseProjectRequest  {
-
-
+/** Request Object */
+public class ShowResourceBindEnterpriseProjectRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ResqEpResouce body;
 
     public ShowResourceBindEnterpriseProjectRequest withEnterpriseProjectId(String enterpriseProjectId) {
@@ -35,13 +24,9 @@ public class ShowResourceBindEnterpriseProjectRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -50,27 +35,23 @@ public class ShowResourceBindEnterpriseProjectRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public ShowResourceBindEnterpriseProjectRequest withBody(ResqEpResouce body) {
         this.body = body;
         return this;
     }
 
     public ShowResourceBindEnterpriseProjectRequest withBody(Consumer<ResqEpResouce> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ResqEpResouce();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ResqEpResouce getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class ShowResourceBindEnterpriseProjectRequest  {
     public void setBody(ResqEpResouce body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -89,14 +68,17 @@ public class ShowResourceBindEnterpriseProjectRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ShowResourceBindEnterpriseProjectRequest showResourceBindEnterpriseProjectRequest = (ShowResourceBindEnterpriseProjectRequest) o;
-        return Objects.equals(this.enterpriseProjectId, showResourceBindEnterpriseProjectRequest.enterpriseProjectId) &&
-            Objects.equals(this.body, showResourceBindEnterpriseProjectRequest.body);
+        ShowResourceBindEnterpriseProjectRequest showResourceBindEnterpriseProjectRequest =
+            (ShowResourceBindEnterpriseProjectRequest) o;
+        return Objects.equals(this.enterpriseProjectId, showResourceBindEnterpriseProjectRequest.enterpriseProjectId)
+            && Objects.equals(this.body, showResourceBindEnterpriseProjectRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(enterpriseProjectId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +88,13 @@ public class ShowResourceBindEnterpriseProjectRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateRedislogDownloadLinkResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="link")
-    
+    @JsonProperty(value = "link")
+
     private String link;
 
     public CreateRedislogDownloadLinkResponse withId(String id) {
@@ -36,13 +24,9 @@ public class CreateRedislogDownloadLinkResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 日志id
-     * @return id
-     */
+    /** 日志id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -51,20 +35,14 @@ public class CreateRedislogDownloadLinkResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public CreateRedislogDownloadLinkResponse withLink(String link) {
         this.link = link;
         return this;
     }
 
-    
-
-
-    /**
-     * 日志下载链接，默认有效时间为24小时
-     * @return link
-     */
+    /** 日志下载链接，默认有效时间为24小时
+     * 
+     * @return link */
     public String getLink() {
         return link;
     }
@@ -72,8 +50,6 @@ public class CreateRedislogDownloadLinkResponse extends SdkResponse {
     public void setLink(String link) {
         this.link = link;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +60,15 @@ public class CreateRedislogDownloadLinkResponse extends SdkResponse {
             return false;
         }
         CreateRedislogDownloadLinkResponse createRedislogDownloadLinkResponse = (CreateRedislogDownloadLinkResponse) o;
-        return Objects.equals(this.id, createRedislogDownloadLinkResponse.id) &&
-            Objects.equals(this.link, createRedislogDownloadLinkResponse.link);
+        return Objects.equals(this.id, createRedislogDownloadLinkResponse.id)
+            && Objects.equals(this.link, createRedislogDownloadLinkResponse.link);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, link);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +78,13 @@ public class CreateRedislogDownloadLinkResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

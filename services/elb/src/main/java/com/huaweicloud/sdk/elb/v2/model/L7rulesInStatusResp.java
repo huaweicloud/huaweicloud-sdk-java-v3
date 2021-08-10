@@ -1,41 +1,26 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 转发规则对象，用于状态树中
- */
-public class L7rulesInStatusResp  {
+/** 转发规则对象，用于状态树中 */
+public class L7rulesInStatusResp {
 
-    /**
-     * 转发规则的匹配内容。PATH：匹配请求中的路径；HOST_NAME：匹配请求中的域名
-     */
+    /** 转发规则的匹配内容。PATH：匹配请求中的路径；HOST_NAME：匹配请求中的域名 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum PATH for value: "PATH"
-         */
+        /** Enum PATH for value: "PATH" */
         public static final TypeEnum PATH = new TypeEnum("PATH");
-        
-        /**
-         * Enum HOST_NAME for value: "HOST_NAME"
-         */
+
+        /** Enum HOST_NAME for value: "HOST_NAME" */
         public static final TypeEnum HOST_NAME = new TypeEnum("HOST_NAME");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +49,7 @@ public class L7rulesInStatusResp  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +60,7 @@ public class L7rulesInStatusResp  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -99,22 +84,19 @@ public class L7rulesInStatusResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provisioning_status")
-    
+    @JsonProperty(value = "provisioning_status")
+
     private String provisioningStatus;
 
     public L7rulesInStatusResp withType(TypeEnum type) {
@@ -122,13 +104,9 @@ public class L7rulesInStatusResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 转发规则的匹配内容。PATH：匹配请求中的路径；HOST_NAME：匹配请求中的域名
-     * @return type
-     */
+    /** 转发规则的匹配内容。PATH：匹配请求中的路径；HOST_NAME：匹配请求中的域名
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -137,20 +115,14 @@ public class L7rulesInStatusResp  {
         this.type = type;
     }
 
-    
-
     public L7rulesInStatusResp withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 转发规则ID
-     * @return id
-     */
+    /** 转发规则ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -159,20 +131,14 @@ public class L7rulesInStatusResp  {
         this.id = id;
     }
 
-    
-
     public L7rulesInStatusResp withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 转发规则的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
-     * @return provisioningStatus
-     */
+    /** 转发规则的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
+     * 
+     * @return provisioningStatus */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -180,8 +146,6 @@ public class L7rulesInStatusResp  {
     public void setProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -192,14 +156,15 @@ public class L7rulesInStatusResp  {
             return false;
         }
         L7rulesInStatusResp l7rulesInStatusResp = (L7rulesInStatusResp) o;
-        return Objects.equals(this.type, l7rulesInStatusResp.type) &&
-            Objects.equals(this.id, l7rulesInStatusResp.id) &&
-            Objects.equals(this.provisioningStatus, l7rulesInStatusResp.provisioningStatus);
+        return Objects.equals(this.type, l7rulesInStatusResp.type) && Objects.equals(this.id, l7rulesInStatusResp.id)
+            && Objects.equals(this.provisioningStatus, l7rulesInStatusResp.provisioningStatus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, id, provisioningStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -210,16 +175,13 @@ public class L7rulesInStatusResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

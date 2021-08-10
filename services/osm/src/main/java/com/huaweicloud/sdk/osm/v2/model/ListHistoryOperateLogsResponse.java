@@ -1,53 +1,35 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.osm.v2.model.OperateLog;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListHistoryOperateLogsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
-    
+    @JsonProperty(value = "total_count")
+
     private Integer totalCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ops_list")
-    
+    @JsonProperty(value = "ops_list")
+
     private List<OperateLog> opsList = null;
-    
+
     public ListHistoryOperateLogsResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 总记录数
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return totalCount
-     */
+    /** 总记录数 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return totalCount */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -56,16 +38,13 @@ public class ListHistoryOperateLogsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
-    
-
     public ListHistoryOperateLogsResponse withOpsList(List<OperateLog> opsList) {
         this.opsList = opsList;
         return this;
     }
 
-    
     public ListHistoryOperateLogsResponse addOpsListItem(OperateLog opsListItem) {
-        if(this.opsList == null) {
+        if (this.opsList == null) {
             this.opsList = new ArrayList<>();
         }
         this.opsList.add(opsListItem);
@@ -73,17 +52,16 @@ public class ListHistoryOperateLogsResponse extends SdkResponse {
     }
 
     public ListHistoryOperateLogsResponse withOpsList(Consumer<List<OperateLog>> opsListSetter) {
-        if(this.opsList == null) {
+        if (this.opsList == null) {
             this.opsList = new ArrayList<>();
         }
         opsListSetter.accept(this.opsList);
         return this;
     }
 
-    /**
-     * 操作列表
-     * @return opsList
-     */
+    /** 操作列表
+     * 
+     * @return opsList */
     public List<OperateLog> getOpsList() {
         return opsList;
     }
@@ -91,8 +69,6 @@ public class ListHistoryOperateLogsResponse extends SdkResponse {
     public void setOpsList(List<OperateLog> opsList) {
         this.opsList = opsList;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -103,13 +79,15 @@ public class ListHistoryOperateLogsResponse extends SdkResponse {
             return false;
         }
         ListHistoryOperateLogsResponse listHistoryOperateLogsResponse = (ListHistoryOperateLogsResponse) o;
-        return Objects.equals(this.totalCount, listHistoryOperateLogsResponse.totalCount) &&
-            Objects.equals(this.opsList, listHistoryOperateLogsResponse.opsList);
+        return Objects.equals(this.totalCount, listHistoryOperateLogsResponse.totalCount)
+            && Objects.equals(this.opsList, listHistoryOperateLogsResponse.opsList);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(totalCount, opsList);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -119,16 +97,13 @@ public class ListHistoryOperateLogsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

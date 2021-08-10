@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dns.v2.model.UpdateCustomsLineReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateCustomLineRequest  {
-
-
+/** Request Object */
+public class UpdateCustomLineRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="line_id")
-    
+    @JsonProperty(value = "line_id")
+
     private String lineId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateCustomsLineReq body;
 
     public UpdateCustomLineRequest withLineId(String lineId) {
@@ -35,13 +24,9 @@ public class UpdateCustomLineRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 解析线路ID。
-     * @return lineId
-     */
+    /** 解析线路ID。
+     * 
+     * @return lineId */
     public String getLineId() {
         return lineId;
     }
@@ -50,27 +35,23 @@ public class UpdateCustomLineRequest  {
         this.lineId = lineId;
     }
 
-    
-
     public UpdateCustomLineRequest withBody(UpdateCustomsLineReq body) {
         this.body = body;
         return this;
     }
 
     public UpdateCustomLineRequest withBody(Consumer<UpdateCustomsLineReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateCustomsLineReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateCustomsLineReq getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdateCustomLineRequest  {
     public void setBody(UpdateCustomsLineReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdateCustomLineRequest  {
             return false;
         }
         UpdateCustomLineRequest updateCustomLineRequest = (UpdateCustomLineRequest) o;
-        return Objects.equals(this.lineId, updateCustomLineRequest.lineId) &&
-            Objects.equals(this.body, updateCustomLineRequest.body);
+        return Objects.equals(this.lineId, updateCustomLineRequest.lineId)
+            && Objects.equals(this.body, updateCustomLineRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(lineId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdateCustomLineRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

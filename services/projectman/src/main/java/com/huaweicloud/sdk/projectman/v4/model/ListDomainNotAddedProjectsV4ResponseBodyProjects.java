@@ -1,69 +1,52 @@
 package com.huaweicloud.sdk.projectman.v4.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.projectman.v4.model.ListDomainNotAddedProjectsV4ResponseBodyCreator;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ListDomainNotAddedProjectsV4ResponseBodyProjects
- */
-public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
-
-
+/** ListDomainNotAddedProjectsV4ResponseBodyProjects */
+public class ListDomainNotAddedProjectsV4ResponseBodyProjects {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_num_id")
-    
+    @JsonProperty(value = "project_num_id")
+
     private Integer projectNumId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_name")
-    
+    @JsonProperty(value = "project_name")
+
     private String projectName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_time")
-    
+    @JsonProperty(value = "created_time")
+
     private Long createdTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_time")
-    
+    @JsonProperty(value = "updated_time")
+
     private Long updatedTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_type")
-    
+    @JsonProperty(value = "project_type")
+
     private String projectType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator")
-    
+    @JsonProperty(value = "creator")
+
     private ListDomainNotAddedProjectsV4ResponseBodyCreator creator;
 
     public ListDomainNotAddedProjectsV4ResponseBodyProjects withProjectNumId(Integer projectNumId) {
@@ -71,13 +54,9 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
         return this;
     }
 
-    
-
-
-    /**
-     * 项目数字id
-     * @return projectNumId
-     */
+    /** 项目数字id
+     * 
+     * @return projectNumId */
     public Integer getProjectNumId() {
         return projectNumId;
     }
@@ -86,20 +65,14 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
         this.projectNumId = projectNumId;
     }
 
-    
-
     public ListDomainNotAddedProjectsV4ResponseBodyProjects withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目id
-     * @return projectId
-     */
+    /** 项目id
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -108,20 +81,14 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
         this.projectId = projectId;
     }
 
-    
-
     public ListDomainNotAddedProjectsV4ResponseBodyProjects withProjectName(String projectName) {
         this.projectName = projectName;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目名
-     * @return projectName
-     */
+    /** 项目名
+     * 
+     * @return projectName */
     public String getProjectName() {
         return projectName;
     }
@@ -130,20 +97,14 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
         this.projectName = projectName;
     }
 
-    
-
     public ListDomainNotAddedProjectsV4ResponseBodyProjects withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目描述
-     * @return description
-     */
+    /** 项目描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -152,20 +113,14 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
         this.description = description;
     }
 
-    
-
     public ListDomainNotAddedProjectsV4ResponseBodyProjects withCreatedTime(Long createdTime) {
         this.createdTime = createdTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目创建时间
-     * @return createdTime
-     */
+    /** 项目创建时间
+     * 
+     * @return createdTime */
     public Long getCreatedTime() {
         return createdTime;
     }
@@ -174,20 +129,14 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
         this.createdTime = createdTime;
     }
 
-    
-
     public ListDomainNotAddedProjectsV4ResponseBodyProjects withUpdatedTime(Long updatedTime) {
         this.updatedTime = updatedTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目更新时间
-     * @return updatedTime
-     */
+    /** 项目更新时间
+     * 
+     * @return updatedTime */
     public Long getUpdatedTime() {
         return updatedTime;
     }
@@ -196,20 +145,14 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
         this.updatedTime = updatedTime;
     }
 
-    
-
     public ListDomainNotAddedProjectsV4ResponseBodyProjects withProjectType(String projectType) {
         this.projectType = projectType;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目类型
-     * @return projectType
-     */
+    /** 项目类型
+     * 
+     * @return projectType */
     public String getProjectType() {
         return projectType;
     }
@@ -218,27 +161,25 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
         this.projectType = projectType;
     }
 
-    
-
-    public ListDomainNotAddedProjectsV4ResponseBodyProjects withCreator(ListDomainNotAddedProjectsV4ResponseBodyCreator creator) {
+    public ListDomainNotAddedProjectsV4ResponseBodyProjects withCreator(
+        ListDomainNotAddedProjectsV4ResponseBodyCreator creator) {
         this.creator = creator;
         return this;
     }
 
-    public ListDomainNotAddedProjectsV4ResponseBodyProjects withCreator(Consumer<ListDomainNotAddedProjectsV4ResponseBodyCreator> creatorSetter) {
-        if(this.creator == null ){
+    public ListDomainNotAddedProjectsV4ResponseBodyProjects withCreator(
+        Consumer<ListDomainNotAddedProjectsV4ResponseBodyCreator> creatorSetter) {
+        if (this.creator == null) {
             this.creator = new ListDomainNotAddedProjectsV4ResponseBodyCreator();
             creatorSetter.accept(this.creator);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get creator
-     * @return creator
-     */
+    /** Get creator
+     * 
+     * @return creator */
     public ListDomainNotAddedProjectsV4ResponseBodyCreator getCreator() {
         return creator;
     }
@@ -246,8 +187,6 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
     public void setCreator(ListDomainNotAddedProjectsV4ResponseBodyCreator creator) {
         this.creator = creator;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -257,20 +196,24 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListDomainNotAddedProjectsV4ResponseBodyProjects listDomainNotAddedProjectsV4ResponseBodyProjects = (ListDomainNotAddedProjectsV4ResponseBodyProjects) o;
-        return Objects.equals(this.projectNumId, listDomainNotAddedProjectsV4ResponseBodyProjects.projectNumId) &&
-            Objects.equals(this.projectId, listDomainNotAddedProjectsV4ResponseBodyProjects.projectId) &&
-            Objects.equals(this.projectName, listDomainNotAddedProjectsV4ResponseBodyProjects.projectName) &&
-            Objects.equals(this.description, listDomainNotAddedProjectsV4ResponseBodyProjects.description) &&
-            Objects.equals(this.createdTime, listDomainNotAddedProjectsV4ResponseBodyProjects.createdTime) &&
-            Objects.equals(this.updatedTime, listDomainNotAddedProjectsV4ResponseBodyProjects.updatedTime) &&
-            Objects.equals(this.projectType, listDomainNotAddedProjectsV4ResponseBodyProjects.projectType) &&
-            Objects.equals(this.creator, listDomainNotAddedProjectsV4ResponseBodyProjects.creator);
+        ListDomainNotAddedProjectsV4ResponseBodyProjects listDomainNotAddedProjectsV4ResponseBodyProjects =
+            (ListDomainNotAddedProjectsV4ResponseBodyProjects) o;
+        return Objects.equals(this.projectNumId, listDomainNotAddedProjectsV4ResponseBodyProjects.projectNumId)
+            && Objects.equals(this.projectId, listDomainNotAddedProjectsV4ResponseBodyProjects.projectId)
+            && Objects.equals(this.projectName, listDomainNotAddedProjectsV4ResponseBodyProjects.projectName)
+            && Objects.equals(this.description, listDomainNotAddedProjectsV4ResponseBodyProjects.description)
+            && Objects.equals(this.createdTime, listDomainNotAddedProjectsV4ResponseBodyProjects.createdTime)
+            && Objects.equals(this.updatedTime, listDomainNotAddedProjectsV4ResponseBodyProjects.updatedTime)
+            && Objects.equals(this.projectType, listDomainNotAddedProjectsV4ResponseBodyProjects.projectType)
+            && Objects.equals(this.creator, listDomainNotAddedProjectsV4ResponseBodyProjects.creator);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(projectNumId, projectId, projectName, description, createdTime, updatedTime, projectType, creator);
+        return Objects
+            .hash(projectNumId, projectId, projectName, description, createdTime, updatedTime, projectType, creator);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -286,16 +229,13 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

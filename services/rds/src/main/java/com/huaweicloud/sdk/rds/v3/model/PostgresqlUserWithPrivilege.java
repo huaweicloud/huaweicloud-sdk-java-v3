@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 用户及其权限。
- */
-public class PostgresqlUserWithPrivilege  {
-
-
+/** 用户及其权限。 */
+public class PostgresqlUserWithPrivilege {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="readonly")
-    
+    @JsonProperty(value = "readonly")
+
     private Boolean readonly;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="schema_name")
-    
+    @JsonProperty(value = "schema_name")
+
     private String schemaName;
 
     public PostgresqlUserWithPrivilege withName(String name) {
@@ -40,13 +28,10 @@ public class PostgresqlUserWithPrivilege  {
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库帐号名称。  数据库帐号名称在1到63个字符之间，由字母、数字、或下划线组成，不能包含其他特殊字符，不能以“pg”和数字开头，不能和系统用户名称相同且帐号名称必须存在。  系统用户包括“rdsAdmin”,“ rdsMetric”, “rdsBackup”, “rdsRepl”,“ rdsProxy”, “rdsDdm”。
-     * @return name
-     */
+    /** 数据库帐号名称。 数据库帐号名称在1到63个字符之间，由字母、数字、或下划线组成，不能包含其他特殊字符，不能以“pg”和数字开头，不能和系统用户名称相同且帐号名称必须存在。 系统用户包括“rdsAdmin”,“
+     * rdsMetric”, “rdsBackup”, “rdsRepl”,“ rdsProxy”, “rdsDdm”。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -55,20 +40,14 @@ public class PostgresqlUserWithPrivilege  {
         this.name = name;
     }
 
-    
-
     public PostgresqlUserWithPrivilege withReadonly(Boolean readonly) {
         this.readonly = readonly;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库帐号权限。 - true：只读。 - false：可读可写。
-     * @return readonly
-     */
+    /** 数据库帐号权限。 - true：只读。 - false：可读可写。
+     * 
+     * @return readonly */
     public Boolean getReadonly() {
         return readonly;
     }
@@ -77,20 +56,15 @@ public class PostgresqlUserWithPrivilege  {
         this.readonly = readonly;
     }
 
-    
-
     public PostgresqlUserWithPrivilege withSchemaName(String schemaName) {
         this.schemaName = schemaName;
         return this;
     }
 
-    
-
-
-    /**
-     * schema名称。  schema名称在1到63个字符之间，由字母、数字、或下划线组成，不能包含其他特殊字符，不能以“pg”和数字开头，不能和RDS for PostgreSQL模板库重名，且schema名称必须存在。  RDS for PostgreSQL模板库包括postgres， template0 ，template1。
-     * @return schemaName
-     */
+    /** schema名称。 schema名称在1到63个字符之间，由字母、数字、或下划线组成，不能包含其他特殊字符，不能以“pg”和数字开头，不能和RDS for PostgreSQL模板库重名，且schema名称必须存在。 RDS
+     * for PostgreSQL模板库包括postgres， template0 ，template1。
+     * 
+     * @return schemaName */
     public String getSchemaName() {
         return schemaName;
     }
@@ -98,8 +72,6 @@ public class PostgresqlUserWithPrivilege  {
     public void setSchemaName(String schemaName) {
         this.schemaName = schemaName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +82,16 @@ public class PostgresqlUserWithPrivilege  {
             return false;
         }
         PostgresqlUserWithPrivilege postgresqlUserWithPrivilege = (PostgresqlUserWithPrivilege) o;
-        return Objects.equals(this.name, postgresqlUserWithPrivilege.name) &&
-            Objects.equals(this.readonly, postgresqlUserWithPrivilege.readonly) &&
-            Objects.equals(this.schemaName, postgresqlUserWithPrivilege.schemaName);
+        return Objects.equals(this.name, postgresqlUserWithPrivilege.name)
+            && Objects.equals(this.readonly, postgresqlUserWithPrivilege.readonly)
+            && Objects.equals(this.schemaName, postgresqlUserWithPrivilege.schemaName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, readonly, schemaName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +102,13 @@ public class PostgresqlUserWithPrivilege  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

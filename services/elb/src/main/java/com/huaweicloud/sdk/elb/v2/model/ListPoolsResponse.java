@@ -1,41 +1,29 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.PoolResp;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListPoolsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pools")
-    
+    @JsonProperty(value = "pools")
+
     private List<PoolResp> pools = null;
-    
+
     public ListPoolsResponse withPools(List<PoolResp> pools) {
         this.pools = pools;
         return this;
     }
 
-    
     public ListPoolsResponse addPoolsItem(PoolResp poolsItem) {
-        if(this.pools == null) {
+        if (this.pools == null) {
             this.pools = new ArrayList<>();
         }
         this.pools.add(poolsItem);
@@ -43,17 +31,16 @@ public class ListPoolsResponse extends SdkResponse {
     }
 
     public ListPoolsResponse withPools(Consumer<List<PoolResp>> poolsSetter) {
-        if(this.pools == null) {
+        if (this.pools == null) {
             this.pools = new ArrayList<>();
         }
         poolsSetter.accept(this.pools);
         return this;
     }
 
-    /**
-     * 后端云服务器对象组列表
-     * @return pools
-     */
+    /** 后端云服务器对象组列表
+     * 
+     * @return pools */
     public List<PoolResp> getPools() {
         return pools;
     }
@@ -61,8 +48,6 @@ public class ListPoolsResponse extends SdkResponse {
     public void setPools(List<PoolResp> pools) {
         this.pools = pools;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -75,10 +60,12 @@ public class ListPoolsResponse extends SdkResponse {
         ListPoolsResponse listPoolsResponse = (ListPoolsResponse) o;
         return Objects.equals(this.pools, listPoolsResponse.pools);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(pools);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -87,16 +74,13 @@ public class ListPoolsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

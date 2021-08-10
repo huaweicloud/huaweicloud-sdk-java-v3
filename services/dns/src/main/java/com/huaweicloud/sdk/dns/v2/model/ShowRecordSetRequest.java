@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowRecordSetRequest  {
-
-
+/** Request Object */
+public class ShowRecordSetRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="zone_id")
-    
+    @JsonProperty(value = "zone_id")
+
     private String zoneId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="recordset_id")
-    
+    @JsonProperty(value = "recordset_id")
+
     private String recordsetId;
 
     public ShowRecordSetRequest withZoneId(String zoneId) {
@@ -34,13 +23,9 @@ public class ShowRecordSetRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * Get zoneId
-     * @return zoneId
-     */
+    /** Get zoneId
+     * 
+     * @return zoneId */
     public String getZoneId() {
         return zoneId;
     }
@@ -49,20 +34,14 @@ public class ShowRecordSetRequest  {
         this.zoneId = zoneId;
     }
 
-    
-
     public ShowRecordSetRequest withRecordsetId(String recordsetId) {
         this.recordsetId = recordsetId;
         return this;
     }
 
-    
-
-
-    /**
-     * Get recordsetId
-     * @return recordsetId
-     */
+    /** Get recordsetId
+     * 
+     * @return recordsetId */
     public String getRecordsetId() {
         return recordsetId;
     }
@@ -70,8 +49,6 @@ public class ShowRecordSetRequest  {
     public void setRecordsetId(String recordsetId) {
         this.recordsetId = recordsetId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class ShowRecordSetRequest  {
             return false;
         }
         ShowRecordSetRequest showRecordSetRequest = (ShowRecordSetRequest) o;
-        return Objects.equals(this.zoneId, showRecordSetRequest.zoneId) &&
-            Objects.equals(this.recordsetId, showRecordSetRequest.recordsetId);
+        return Objects.equals(this.zoneId, showRecordSetRequest.zoneId)
+            && Objects.equals(this.recordsetId, showRecordSetRequest.recordsetId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(zoneId, recordsetId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class ShowRecordSetRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

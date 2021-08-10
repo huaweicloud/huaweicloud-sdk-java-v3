@@ -1,57 +1,42 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iec.v1.model.Operator;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * IP池对象。 支持IPv4和IPv6
- */
-public class IpPool  {
-
-
+/** IP池对象。 支持IPv4和IPv6 */
+public class IpPool {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="site_id")
-    
+    @JsonProperty(value = "site_id")
+
     private String siteId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pool_id")
-    
+    @JsonProperty(value = "pool_id")
+
     private String poolId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_version")
-    
+    @JsonProperty(value = "ip_version")
+
     private String ipVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operator")
-    
+    @JsonProperty(value = "operator")
+
     private Operator operator;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="display_name")
-    
+    @JsonProperty(value = "display_name")
+
     private String displayName;
 
     public IpPool withId(String id) {
@@ -59,13 +44,9 @@ public class IpPool  {
         return this;
     }
 
-    
-
-
-    /**
-     * 线路的ID。
-     * @return id
-     */
+    /** 线路的ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -74,20 +55,14 @@ public class IpPool  {
         this.id = id;
     }
 
-    
-
     public IpPool withSiteId(String siteId) {
         this.siteId = siteId;
         return this;
     }
 
-    
-
-
-    /**
-     * 线路所属站点ID。
-     * @return siteId
-     */
+    /** 线路所属站点ID。
+     * 
+     * @return siteId */
     public String getSiteId() {
         return siteId;
     }
@@ -96,20 +71,14 @@ public class IpPool  {
         this.siteId = siteId;
     }
 
-    
-
     public IpPool withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
     }
 
-    
-
-
-    /**
-     * 线路标识。
-     * @return poolId
-     */
+    /** 线路标识。
+     * 
+     * @return poolId */
     public String getPoolId() {
         return poolId;
     }
@@ -118,20 +87,14 @@ public class IpPool  {
         this.poolId = poolId;
     }
 
-    
-
     public IpPool withIpVersion(String ipVersion) {
         this.ipVersion = ipVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * IPv4[或IPv6](tag:hide)线路。  取值范围： - 4：IPv4线路 [- 6：IPv6线路](tag:hide)
-     * @return ipVersion
-     */
+    /** IPv4[或IPv6](tag:hide)线路。 取值范围： - 4：IPv4线路 [- 6：IPv6线路](tag:hide)
+     * 
+     * @return ipVersion */
     public String getIpVersion() {
         return ipVersion;
     }
@@ -140,27 +103,23 @@ public class IpPool  {
         this.ipVersion = ipVersion;
     }
 
-    
-
     public IpPool withOperator(Operator operator) {
         this.operator = operator;
         return this;
     }
 
     public IpPool withOperator(Consumer<Operator> operatorSetter) {
-        if(this.operator == null ){
+        if (this.operator == null) {
             this.operator = new Operator();
             operatorSetter.accept(this.operator);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get operator
-     * @return operator
-     */
+    /** Get operator
+     * 
+     * @return operator */
     public Operator getOperator() {
         return operator;
     }
@@ -169,20 +128,14 @@ public class IpPool  {
         this.operator = operator;
     }
 
-    
-
     public IpPool withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
     }
 
-    
-
-
-    /**
-     * 线路的显示名称。
-     * @return displayName
-     */
+    /** 线路的显示名称。
+     * 
+     * @return displayName */
     public String getDisplayName() {
         return displayName;
     }
@@ -190,8 +143,6 @@ public class IpPool  {
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -202,17 +153,16 @@ public class IpPool  {
             return false;
         }
         IpPool ipPool = (IpPool) o;
-        return Objects.equals(this.id, ipPool.id) &&
-            Objects.equals(this.siteId, ipPool.siteId) &&
-            Objects.equals(this.poolId, ipPool.poolId) &&
-            Objects.equals(this.ipVersion, ipPool.ipVersion) &&
-            Objects.equals(this.operator, ipPool.operator) &&
-            Objects.equals(this.displayName, ipPool.displayName);
+        return Objects.equals(this.id, ipPool.id) && Objects.equals(this.siteId, ipPool.siteId)
+            && Objects.equals(this.poolId, ipPool.poolId) && Objects.equals(this.ipVersion, ipPool.ipVersion)
+            && Objects.equals(this.operator, ipPool.operator) && Objects.equals(this.displayName, ipPool.displayName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, siteId, poolId, ipVersion, operator, displayName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -226,16 +176,13 @@ public class IpPool  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 实例配置项
- */
-public class QueryRedisConfig  {
-
-
+/** 实例配置项 */
+public class QueryRedisConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="param_value")
-    
+    @JsonProperty(value = "param_value")
+
     private String paramValue;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value_type")
-    
+    @JsonProperty(value = "value_type")
+
     private String valueType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value_range")
-    
+    @JsonProperty(value = "value_range")
+
     private String valueRange;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="default_value")
-    
+    @JsonProperty(value = "default_value")
+
     private String defaultValue;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="param_name")
-    
+    @JsonProperty(value = "param_name")
+
     private String paramName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="param_id")
-    
+    @JsonProperty(value = "param_id")
+
     private String paramId;
 
     public QueryRedisConfig withParamValue(String paramValue) {
@@ -64,13 +48,9 @@ public class QueryRedisConfig  {
         return this;
     }
 
-    
-
-
-    /**
-     * 配置参数值。
-     * @return paramValue
-     */
+    /** 配置参数值。
+     * 
+     * @return paramValue */
     public String getParamValue() {
         return paramValue;
     }
@@ -79,20 +59,14 @@ public class QueryRedisConfig  {
         this.paramValue = paramValue;
     }
 
-    
-
     public QueryRedisConfig withValueType(String valueType) {
         this.valueType = valueType;
         return this;
     }
 
-    
-
-
-    /**
-     * 配置参数的值类型。
-     * @return valueType
-     */
+    /** 配置参数的值类型。
+     * 
+     * @return valueType */
     public String getValueType() {
         return valueType;
     }
@@ -101,20 +75,14 @@ public class QueryRedisConfig  {
         this.valueType = valueType;
     }
 
-    
-
     public QueryRedisConfig withValueRange(String valueRange) {
         this.valueRange = valueRange;
         return this;
     }
 
-    
-
-
-    /**
-     * 配置参数的取值范围。
-     * @return valueRange
-     */
+    /** 配置参数的取值范围。
+     * 
+     * @return valueRange */
     public String getValueRange() {
         return valueRange;
     }
@@ -123,20 +91,14 @@ public class QueryRedisConfig  {
         this.valueRange = valueRange;
     }
 
-    
-
     public QueryRedisConfig withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 配置项的描述。
-     * @return description
-     */
+    /** 配置项的描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -145,20 +107,14 @@ public class QueryRedisConfig  {
         this.description = description;
     }
 
-    
-
     public QueryRedisConfig withDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
         return this;
     }
 
-    
-
-
-    /**
-     * 配置参数的默认值。
-     * @return defaultValue
-     */
+    /** 配置参数的默认值。
+     * 
+     * @return defaultValue */
     public String getDefaultValue() {
         return defaultValue;
     }
@@ -167,20 +123,14 @@ public class QueryRedisConfig  {
         this.defaultValue = defaultValue;
     }
 
-    
-
     public QueryRedisConfig withParamName(String paramName) {
         this.paramName = paramName;
         return this;
     }
 
-    
-
-
-    /**
-     * 配置参数名称。
-     * @return paramName
-     */
+    /** 配置参数名称。
+     * 
+     * @return paramName */
     public String getParamName() {
         return paramName;
     }
@@ -189,20 +139,14 @@ public class QueryRedisConfig  {
         this.paramName = paramName;
     }
 
-    
-
     public QueryRedisConfig withParamId(String paramId) {
         this.paramId = paramId;
         return this;
     }
 
-    
-
-
-    /**
-     * 配置参数ID。
-     * @return paramId
-     */
+    /** 配置参数ID。
+     * 
+     * @return paramId */
     public String getParamId() {
         return paramId;
     }
@@ -210,8 +154,6 @@ public class QueryRedisConfig  {
     public void setParamId(String paramId) {
         this.paramId = paramId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -222,18 +164,20 @@ public class QueryRedisConfig  {
             return false;
         }
         QueryRedisConfig queryRedisConfig = (QueryRedisConfig) o;
-        return Objects.equals(this.paramValue, queryRedisConfig.paramValue) &&
-            Objects.equals(this.valueType, queryRedisConfig.valueType) &&
-            Objects.equals(this.valueRange, queryRedisConfig.valueRange) &&
-            Objects.equals(this.description, queryRedisConfig.description) &&
-            Objects.equals(this.defaultValue, queryRedisConfig.defaultValue) &&
-            Objects.equals(this.paramName, queryRedisConfig.paramName) &&
-            Objects.equals(this.paramId, queryRedisConfig.paramId);
+        return Objects.equals(this.paramValue, queryRedisConfig.paramValue)
+            && Objects.equals(this.valueType, queryRedisConfig.valueType)
+            && Objects.equals(this.valueRange, queryRedisConfig.valueRange)
+            && Objects.equals(this.description, queryRedisConfig.description)
+            && Objects.equals(this.defaultValue, queryRedisConfig.defaultValue)
+            && Objects.equals(this.paramName, queryRedisConfig.paramName)
+            && Objects.equals(this.paramId, queryRedisConfig.paramId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(paramValue, valueType, valueRange, description, defaultValue, paramName, paramId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,16 +192,13 @@ public class QueryRedisConfig  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

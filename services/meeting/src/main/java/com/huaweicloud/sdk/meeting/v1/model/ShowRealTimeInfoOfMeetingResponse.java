@@ -1,45 +1,30 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.RealTimeAttendee;
-import com.huaweicloud.sdk.meeting.v1.model.RealTimeConfInfo;
-import com.huaweicloud.sdk.meeting.v1.model.RealTimeParticipant;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="attendees")
-    
+    @JsonProperty(value = "attendees")
+
     private List<RealTimeAttendee> attendees = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="participants")
-    
+    @JsonProperty(value = "participants")
+
     private List<RealTimeParticipant> participants = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confInfo")
-    
+    @JsonProperty(value = "confInfo")
+
     private RealTimeConfInfo confInfo;
 
     public ShowRealTimeInfoOfMeetingResponse withAttendees(List<RealTimeAttendee> attendees) {
@@ -47,9 +32,8 @@ public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
         return this;
     }
 
-    
     public ShowRealTimeInfoOfMeetingResponse addAttendeesItem(RealTimeAttendee attendeesItem) {
-        if(this.attendees == null) {
+        if (this.attendees == null) {
             this.attendees = new ArrayList<>();
         }
         this.attendees.add(attendeesItem);
@@ -57,17 +41,16 @@ public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
     }
 
     public ShowRealTimeInfoOfMeetingResponse withAttendees(Consumer<List<RealTimeAttendee>> attendeesSetter) {
-        if(this.attendees == null) {
+        if (this.attendees == null) {
             this.attendees = new ArrayList<>();
         }
         attendeesSetter.accept(this.attendees);
         return this;
     }
 
-    /**
-     * 所有参加会议的与会者列表，包括未入会的以及在线的与会者信息。
-     * @return attendees
-     */
+    /** 所有参加会议的与会者列表，包括未入会的以及在线的与会者信息。
+     * 
+     * @return attendees */
     public List<RealTimeAttendee> getAttendees() {
         return attendees;
     }
@@ -76,16 +59,13 @@ public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
         this.attendees = attendees;
     }
 
-    
-
     public ShowRealTimeInfoOfMeetingResponse withParticipants(List<RealTimeParticipant> participants) {
         this.participants = participants;
         return this;
     }
 
-    
     public ShowRealTimeInfoOfMeetingResponse addParticipantsItem(RealTimeParticipant participantsItem) {
-        if(this.participants == null) {
+        if (this.participants == null) {
             this.participants = new ArrayList<>();
         }
         this.participants.add(participantsItem);
@@ -93,17 +73,16 @@ public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
     }
 
     public ShowRealTimeInfoOfMeetingResponse withParticipants(Consumer<List<RealTimeParticipant>> participantsSetter) {
-        if(this.participants == null) {
+        if (this.participants == null) {
             this.participants = new ArrayList<>();
         }
         participantsSetter.accept(this.participants);
         return this;
     }
 
-    /**
-     * 在线会场列表，包括已进入会议、呼叫中、正在加入会议的与会者列表等。
-     * @return participants
-     */
+    /** 在线会场列表，包括已进入会议、呼叫中、正在加入会议的与会者列表等。
+     * 
+     * @return participants */
     public List<RealTimeParticipant> getParticipants() {
         return participants;
     }
@@ -112,27 +91,23 @@ public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
         this.participants = participants;
     }
 
-    
-
     public ShowRealTimeInfoOfMeetingResponse withConfInfo(RealTimeConfInfo confInfo) {
         this.confInfo = confInfo;
         return this;
     }
 
     public ShowRealTimeInfoOfMeetingResponse withConfInfo(Consumer<RealTimeConfInfo> confInfoSetter) {
-        if(this.confInfo == null ){
+        if (this.confInfo == null) {
             this.confInfo = new RealTimeConfInfo();
             confInfoSetter.accept(this.confInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get confInfo
-     * @return confInfo
-     */
+    /** Get confInfo
+     * 
+     * @return confInfo */
     public RealTimeConfInfo getConfInfo() {
         return confInfo;
     }
@@ -140,8 +115,6 @@ public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
     public void setConfInfo(RealTimeConfInfo confInfo) {
         this.confInfo = confInfo;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -152,14 +125,16 @@ public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
             return false;
         }
         ShowRealTimeInfoOfMeetingResponse showRealTimeInfoOfMeetingResponse = (ShowRealTimeInfoOfMeetingResponse) o;
-        return Objects.equals(this.attendees, showRealTimeInfoOfMeetingResponse.attendees) &&
-            Objects.equals(this.participants, showRealTimeInfoOfMeetingResponse.participants) &&
-            Objects.equals(this.confInfo, showRealTimeInfoOfMeetingResponse.confInfo);
+        return Objects.equals(this.attendees, showRealTimeInfoOfMeetingResponse.attendees)
+            && Objects.equals(this.participants, showRealTimeInfoOfMeetingResponse.participants)
+            && Objects.equals(this.confInfo, showRealTimeInfoOfMeetingResponse.confInfo);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(attendees, participants, confInfo);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -170,16 +145,13 @@ public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

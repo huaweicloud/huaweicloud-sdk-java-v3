@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowMemberDetailRequest  {
-
-
+/** Request Object */
+public class ShowMemberDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_id")
-    
+    @JsonProperty(value = "backup_id")
+
     private String backupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="member_id")
-    
+    @JsonProperty(value = "member_id")
+
     private String memberId;
 
     public ShowMemberDetailRequest withBackupId(String backupId) {
@@ -34,13 +23,9 @@ public class ShowMemberDetailRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 备份副本id
-     * @return backupId
-     */
+    /** 备份副本id
+     * 
+     * @return backupId */
     public String getBackupId() {
         return backupId;
     }
@@ -49,20 +34,14 @@ public class ShowMemberDetailRequest  {
         this.backupId = backupId;
     }
 
-    
-
     public ShowMemberDetailRequest withMemberId(String memberId) {
         this.memberId = memberId;
         return this;
     }
 
-    
-
-
-    /**
-     * 成员id
-     * @return memberId
-     */
+    /** 成员id
+     * 
+     * @return memberId */
     public String getMemberId() {
         return memberId;
     }
@@ -70,8 +49,6 @@ public class ShowMemberDetailRequest  {
     public void setMemberId(String memberId) {
         this.memberId = memberId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class ShowMemberDetailRequest  {
             return false;
         }
         ShowMemberDetailRequest showMemberDetailRequest = (ShowMemberDetailRequest) o;
-        return Objects.equals(this.backupId, showMemberDetailRequest.backupId) &&
-            Objects.equals(this.memberId, showMemberDetailRequest.memberId);
+        return Objects.equals(this.backupId, showMemberDetailRequest.backupId)
+            && Objects.equals(this.memberId, showMemberDetailRequest.memberId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(backupId, memberId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class ShowMemberDetailRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

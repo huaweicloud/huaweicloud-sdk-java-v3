@@ -1,83 +1,64 @@
 package com.huaweicloud.sdk.cloudide.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cloudide.v2.model.SourceStorage;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ProjectTemplates
- */
-public class ProjectTemplates  {
-
-
+/** ProjectTemplates */
+public class ProjectTemplates {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="display_name")
-    
+    @JsonProperty(value = "display_name")
+
     private String displayName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="logo")
-    
+    @JsonProperty(value = "logo")
+
     private String logo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path")
-    
+    @JsonProperty(value = "path")
+
     private String path;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_type")
-    
+    @JsonProperty(value = "project_type")
+
     private String projectType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source")
-    
+    @JsonProperty(value = "source")
+
     private SourceStorage source;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<String> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_id")
-    
+    @JsonProperty(value = "template_id")
+
     private Long templateId;
 
     public ProjectTemplates withDescription(String description) {
@@ -85,13 +66,9 @@ public class ProjectTemplates  {
         return this;
     }
 
-    
-
-
-    /**
-     * 描述
-     * @return description
-     */
+    /** 描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -100,20 +77,14 @@ public class ProjectTemplates  {
         this.description = description;
     }
 
-    
-
     public ProjectTemplates withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
     }
 
-    
-
-
-    /**
-     * 显示名
-     * @return displayName
-     */
+    /** 显示名
+     * 
+     * @return displayName */
     public String getDisplayName() {
         return displayName;
     }
@@ -122,20 +93,14 @@ public class ProjectTemplates  {
         this.displayName = displayName;
     }
 
-    
-
     public ProjectTemplates withLogo(String logo) {
         this.logo = logo;
         return this;
     }
 
-    
-
-
-    /**
-     * 图标
-     * @return logo
-     */
+    /** 图标
+     * 
+     * @return logo */
     public String getLogo() {
         return logo;
     }
@@ -144,20 +109,14 @@ public class ProjectTemplates  {
         this.logo = logo;
     }
 
-    
-
     public ProjectTemplates withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板名
-     * @return name
-     */
+    /** 模板名
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -166,20 +125,14 @@ public class ProjectTemplates  {
         this.name = name;
     }
 
-    
-
     public ProjectTemplates withPath(String path) {
         this.path = path;
         return this;
     }
 
-    
-
-
-    /**
-     * 路径
-     * @return path
-     */
+    /** 路径
+     * 
+     * @return path */
     public String getPath() {
         return path;
     }
@@ -188,20 +141,14 @@ public class ProjectTemplates  {
         this.path = path;
     }
 
-    
-
     public ProjectTemplates withProjectType(String projectType) {
         this.projectType = projectType;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目类型
-     * @return projectType
-     */
+    /** 项目类型
+     * 
+     * @return projectType */
     public String getProjectType() {
         return projectType;
     }
@@ -210,20 +157,14 @@ public class ProjectTemplates  {
         this.projectType = projectType;
     }
 
-    
-
     public ProjectTemplates withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * 区域
-     * @return region
-     */
+    /** 区域
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -232,27 +173,23 @@ public class ProjectTemplates  {
         this.region = region;
     }
 
-    
-
     public ProjectTemplates withSource(SourceStorage source) {
         this.source = source;
         return this;
     }
 
     public ProjectTemplates withSource(Consumer<SourceStorage> sourceSetter) {
-        if(this.source == null ){
+        if (this.source == null) {
             this.source = new SourceStorage();
             sourceSetter.accept(this.source);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get source
-     * @return source
-     */
+    /** Get source
+     * 
+     * @return source */
     public SourceStorage getSource() {
         return source;
     }
@@ -261,16 +198,13 @@ public class ProjectTemplates  {
         this.source = source;
     }
 
-    
-
     public ProjectTemplates withTags(List<String> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public ProjectTemplates addTagsItem(String tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -278,17 +212,16 @@ public class ProjectTemplates  {
     }
 
     public ProjectTemplates withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * tags
-     * @return tags
-     */
+    /** tags
+     * 
+     * @return tags */
     public List<String> getTags() {
         return tags;
     }
@@ -297,22 +230,14 @@ public class ProjectTemplates  {
         this.tags = tags;
     }
 
-    
-
     public ProjectTemplates withTemplateId(Long templateId) {
         this.templateId = templateId;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板id
-     * minimum: 1
-     * maximum: -9223372036854775616
-     * @return templateId
-     */
+    /** 模板id minimum: 1 maximum: -9223372036854775616
+     * 
+     * @return templateId */
     public Long getTemplateId() {
         return templateId;
     }
@@ -320,8 +245,6 @@ public class ProjectTemplates  {
     public void setTemplateId(Long templateId) {
         this.templateId = templateId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -332,21 +255,21 @@ public class ProjectTemplates  {
             return false;
         }
         ProjectTemplates projectTemplates = (ProjectTemplates) o;
-        return Objects.equals(this.description, projectTemplates.description) &&
-            Objects.equals(this.displayName, projectTemplates.displayName) &&
-            Objects.equals(this.logo, projectTemplates.logo) &&
-            Objects.equals(this.name, projectTemplates.name) &&
-            Objects.equals(this.path, projectTemplates.path) &&
-            Objects.equals(this.projectType, projectTemplates.projectType) &&
-            Objects.equals(this.region, projectTemplates.region) &&
-            Objects.equals(this.source, projectTemplates.source) &&
-            Objects.equals(this.tags, projectTemplates.tags) &&
-            Objects.equals(this.templateId, projectTemplates.templateId);
+        return Objects.equals(this.description, projectTemplates.description)
+            && Objects.equals(this.displayName, projectTemplates.displayName)
+            && Objects.equals(this.logo, projectTemplates.logo) && Objects.equals(this.name, projectTemplates.name)
+            && Objects.equals(this.path, projectTemplates.path)
+            && Objects.equals(this.projectType, projectTemplates.projectType)
+            && Objects.equals(this.region, projectTemplates.region)
+            && Objects.equals(this.source, projectTemplates.source) && Objects.equals(this.tags, projectTemplates.tags)
+            && Objects.equals(this.templateId, projectTemplates.templateId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(description, displayName, logo, name, path, projectType, region, source, tags, templateId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -364,16 +287,13 @@ public class ProjectTemplates  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

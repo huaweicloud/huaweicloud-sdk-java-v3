@@ -1,58 +1,39 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListScalingPoliciesRequest  {
-
-
+/** Request Object */
+public class ListScalingPoliciesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_group_id")
-    
+    @JsonProperty(value = "scaling_group_id")
+
     private String scalingGroupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_policy_name")
-    
+    @JsonProperty(value = "scaling_policy_name")
+
     private String scalingPolicyName;
-    /**
-     * 策略类型。
-     */
+
+    /** 策略类型。 */
     public static final class ScalingPolicyTypeEnum {
 
-        
-        /**
-         * Enum ALARM for value: "ALARM"
-         */
+        /** Enum ALARM for value: "ALARM" */
         public static final ScalingPolicyTypeEnum ALARM = new ScalingPolicyTypeEnum("ALARM");
-        
-        /**
-         * Enum SCHEDULED for value: "SCHEDULED"
-         */
+
+        /** Enum SCHEDULED for value: "SCHEDULED" */
         public static final ScalingPolicyTypeEnum SCHEDULED = new ScalingPolicyTypeEnum("SCHEDULED");
-        
-        /**
-         * Enum RECURRENCE for value: "RECURRENCE"
-         */
+
+        /** Enum RECURRENCE for value: "RECURRENCE" */
         public static final ScalingPolicyTypeEnum RECURRENCE = new ScalingPolicyTypeEnum("RECURRENCE");
-        
 
         private static final Map<String, ScalingPolicyTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -82,7 +63,7 @@ public class ListScalingPoliciesRequest  {
 
         @JsonCreator
         public static ScalingPolicyTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ScalingPolicyTypeEnum result = STATIC_FIELDS.get(value);
@@ -93,7 +74,7 @@ public class ListScalingPoliciesRequest  {
         }
 
         public static ScalingPolicyTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ScalingPolicyTypeEnum result = STATIC_FIELDS.get(value);
@@ -117,28 +98,24 @@ public class ListScalingPoliciesRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_policy_type")
-    
+    @JsonProperty(value = "scaling_policy_type")
+
     private ScalingPolicyTypeEnum scalingPolicyType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_policy_id")
-    
+    @JsonProperty(value = "scaling_policy_id")
+
     private String scalingPolicyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_number")
-    
+    @JsonProperty(value = "start_number")
+
     private Integer startNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
     public ListScalingPoliciesRequest withScalingGroupId(String scalingGroupId) {
@@ -146,13 +123,9 @@ public class ListScalingPoliciesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩组ID。
-     * @return scalingGroupId
-     */
+    /** 伸缩组ID。
+     * 
+     * @return scalingGroupId */
     public String getScalingGroupId() {
         return scalingGroupId;
     }
@@ -161,20 +134,14 @@ public class ListScalingPoliciesRequest  {
         this.scalingGroupId = scalingGroupId;
     }
 
-    
-
     public ListScalingPoliciesRequest withScalingPolicyName(String scalingPolicyName) {
         this.scalingPolicyName = scalingPolicyName;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩策略名称。
-     * @return scalingPolicyName
-     */
+    /** 伸缩策略名称。
+     * 
+     * @return scalingPolicyName */
     public String getScalingPolicyName() {
         return scalingPolicyName;
     }
@@ -183,20 +150,14 @@ public class ListScalingPoliciesRequest  {
         this.scalingPolicyName = scalingPolicyName;
     }
 
-    
-
     public ListScalingPoliciesRequest withScalingPolicyType(ScalingPolicyTypeEnum scalingPolicyType) {
         this.scalingPolicyType = scalingPolicyType;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略类型。
-     * @return scalingPolicyType
-     */
+    /** 策略类型。
+     * 
+     * @return scalingPolicyType */
     public ScalingPolicyTypeEnum getScalingPolicyType() {
         return scalingPolicyType;
     }
@@ -205,20 +166,14 @@ public class ListScalingPoliciesRequest  {
         this.scalingPolicyType = scalingPolicyType;
     }
 
-    
-
     public ListScalingPoliciesRequest withScalingPolicyId(String scalingPolicyId) {
         this.scalingPolicyId = scalingPolicyId;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩策略ID。
-     * @return scalingPolicyId
-     */
+    /** 伸缩策略ID。
+     * 
+     * @return scalingPolicyId */
     public String getScalingPolicyId() {
         return scalingPolicyId;
     }
@@ -227,20 +182,14 @@ public class ListScalingPoliciesRequest  {
         this.scalingPolicyId = scalingPolicyId;
     }
 
-    
-
     public ListScalingPoliciesRequest withStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询的起始行号，默认为0。
-     * @return startNumber
-     */
+    /** 查询的起始行号，默认为0。
+     * 
+     * @return startNumber */
     public Integer getStartNumber() {
         return startNumber;
     }
@@ -249,22 +198,14 @@ public class ListScalingPoliciesRequest  {
         this.startNumber = startNumber;
     }
 
-    
-
     public ListScalingPoliciesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询记录数，默认20，最大100。
-     * minimum: 0
-     * maximum: 100
-     * @return limit
-     */
+    /** 查询记录数，默认20，最大100。 minimum: 0 maximum: 100
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -272,8 +213,6 @@ public class ListScalingPoliciesRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -284,17 +223,19 @@ public class ListScalingPoliciesRequest  {
             return false;
         }
         ListScalingPoliciesRequest listScalingPoliciesRequest = (ListScalingPoliciesRequest) o;
-        return Objects.equals(this.scalingGroupId, listScalingPoliciesRequest.scalingGroupId) &&
-            Objects.equals(this.scalingPolicyName, listScalingPoliciesRequest.scalingPolicyName) &&
-            Objects.equals(this.scalingPolicyType, listScalingPoliciesRequest.scalingPolicyType) &&
-            Objects.equals(this.scalingPolicyId, listScalingPoliciesRequest.scalingPolicyId) &&
-            Objects.equals(this.startNumber, listScalingPoliciesRequest.startNumber) &&
-            Objects.equals(this.limit, listScalingPoliciesRequest.limit);
+        return Objects.equals(this.scalingGroupId, listScalingPoliciesRequest.scalingGroupId)
+            && Objects.equals(this.scalingPolicyName, listScalingPoliciesRequest.scalingPolicyName)
+            && Objects.equals(this.scalingPolicyType, listScalingPoliciesRequest.scalingPolicyType)
+            && Objects.equals(this.scalingPolicyId, listScalingPoliciesRequest.scalingPolicyId)
+            && Objects.equals(this.startNumber, listScalingPoliciesRequest.startNumber)
+            && Objects.equals(this.limit, listScalingPoliciesRequest.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(scalingGroupId, scalingPolicyName, scalingPolicyType, scalingPolicyId, startNumber, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -308,16 +249,13 @@ public class ListScalingPoliciesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

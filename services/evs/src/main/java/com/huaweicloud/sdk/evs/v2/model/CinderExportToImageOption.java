@@ -1,60 +1,35 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 将云硬盘导出为镜像的请求参数
- */
-public class CinderExportToImageOption  {
+/** 将云硬盘导出为镜像的请求参数 */
+public class CinderExportToImageOption {
 
-    /**
-     * 云硬盘导出镜像的容器类型。  目前支持ami、ari、aki、ovf、bare。默认是bare。
-     */
+    /** 云硬盘导出镜像的容器类型。 目前支持ami、ari、aki、ovf、bare。默认是bare。 */
     public static final class ContainerFormatEnum {
 
-        
-        /**
-         * Enum AMI for value: "ami"
-         */
+        /** Enum AMI for value: "ami" */
         public static final ContainerFormatEnum AMI = new ContainerFormatEnum("ami");
-        
-        /**
-         * Enum ARI for value: "ari"
-         */
+
+        /** Enum ARI for value: "ari" */
         public static final ContainerFormatEnum ARI = new ContainerFormatEnum("ari");
-        
-        /**
-         * Enum AKI for value: "aki"
-         */
+
+        /** Enum AKI for value: "aki" */
         public static final ContainerFormatEnum AKI = new ContainerFormatEnum("aki");
-        
-        /**
-         * Enum OVF for value: "ovf"
-         */
+
+        /** Enum OVF for value: "ovf" */
         public static final ContainerFormatEnum OVF = new ContainerFormatEnum("ovf");
-        
-        /**
-         * Enum BARE for value: "bare"
-         */
+
+        /** Enum BARE for value: "bare" */
         public static final ContainerFormatEnum BARE = new ContainerFormatEnum("bare");
-        
 
         private static final Map<String, ContainerFormatEnum> STATIC_FIELDS = createStaticFields();
 
@@ -86,7 +61,7 @@ public class CinderExportToImageOption  {
 
         @JsonCreator
         public static ContainerFormatEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ContainerFormatEnum result = STATIC_FIELDS.get(value);
@@ -97,7 +72,7 @@ public class CinderExportToImageOption  {
         }
 
         public static ContainerFormatEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ContainerFormatEnum result = STATIC_FIELDS.get(value);
@@ -121,42 +96,28 @@ public class CinderExportToImageOption  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="container_format")
-    
+    @JsonProperty(value = "container_format")
+
     private ContainerFormatEnum containerFormat;
-    /**
-     * 云硬盘导出镜像的格式。  目前支持vhd、zvhd、zvhd2、raw、qcow2。默认是vhd。
-     */
+
+    /** 云硬盘导出镜像的格式。 目前支持vhd、zvhd、zvhd2、raw、qcow2。默认是vhd。 */
     public static final class DiskFormatEnum {
 
-        
-        /**
-         * Enum VHD for value: "vhd"
-         */
+        /** Enum VHD for value: "vhd" */
         public static final DiskFormatEnum VHD = new DiskFormatEnum("vhd");
-        
-        /**
-         * Enum ZVHD for value: "zvhd"
-         */
+
+        /** Enum ZVHD for value: "zvhd" */
         public static final DiskFormatEnum ZVHD = new DiskFormatEnum("zvhd");
-        
-        /**
-         * Enum ZVHD2 for value: "zvhd2"
-         */
+
+        /** Enum ZVHD2 for value: "zvhd2" */
         public static final DiskFormatEnum ZVHD2 = new DiskFormatEnum("zvhd2");
-        
-        /**
-         * Enum RAW for value: "raw"
-         */
+
+        /** Enum RAW for value: "raw" */
         public static final DiskFormatEnum RAW = new DiskFormatEnum("raw");
-        
-        /**
-         * Enum QCOW2 for value: "qcow2"
-         */
+
+        /** Enum QCOW2 for value: "qcow2" */
         public static final DiskFormatEnum QCOW2 = new DiskFormatEnum("qcow2");
-        
 
         private static final Map<String, DiskFormatEnum> STATIC_FIELDS = createStaticFields();
 
@@ -188,7 +149,7 @@ public class CinderExportToImageOption  {
 
         @JsonCreator
         public static DiskFormatEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DiskFormatEnum result = STATIC_FIELDS.get(value);
@@ -199,7 +160,7 @@ public class CinderExportToImageOption  {
         }
 
         public static DiskFormatEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DiskFormatEnum result = STATIC_FIELDS.get(value);
@@ -223,39 +184,31 @@ public class CinderExportToImageOption  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disk_format")
-    
+    @JsonProperty(value = "disk_format")
+
     private DiskFormatEnum diskFormat;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="force")
-    
+    @JsonProperty(value = "force")
+
     private Boolean force;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_name")
-    
+    @JsonProperty(value = "image_name")
+
     private String imageName;
-    /**
-     * 云硬盘导出镜像的系统类型。目前只支持“windows”和“linux”，默认值是“linux”。  说明： 只有云硬盘的volume_image_metadata信息中无“__os_type”字段且云硬盘状态为“available”时，设置的__os_type才会生效。 如果不传递该参数，则使用默认的“linux”值作为镜像的系统类型。
-     */
+
+    /** 云硬盘导出镜像的系统类型。目前只支持“windows”和“linux”，默认值是“linux”。 说明：
+     * 只有云硬盘的volume_image_metadata信息中无“__os_type”字段且云硬盘状态为“available”时，设置的__os_type才会生效。
+     * 如果不传递该参数，则使用默认的“linux”值作为镜像的系统类型。 */
     public static final class OsTypeEnum {
 
-        
-        /**
-         * Enum WINDOWS for value: "windows"
-         */
+        /** Enum WINDOWS for value: "windows" */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("windows");
-        
-        /**
-         * Enum LINUX for value: "linux"
-         */
+
+        /** Enum LINUX for value: "linux" */
         public static final OsTypeEnum LINUX = new OsTypeEnum("linux");
-        
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -284,7 +237,7 @@ public class CinderExportToImageOption  {
 
         @JsonCreator
         public static OsTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsTypeEnum result = STATIC_FIELDS.get(value);
@@ -295,7 +248,7 @@ public class CinderExportToImageOption  {
         }
 
         public static OsTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsTypeEnum result = STATIC_FIELDS.get(value);
@@ -319,10 +272,9 @@ public class CinderExportToImageOption  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__os_type")
-    
+    @JsonProperty(value = "__os_type")
+
     private OsTypeEnum osType;
 
     public CinderExportToImageOption withContainerFormat(ContainerFormatEnum containerFormat) {
@@ -330,13 +282,9 @@ public class CinderExportToImageOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘导出镜像的容器类型。  目前支持ami、ari、aki、ovf、bare。默认是bare。
-     * @return containerFormat
-     */
+    /** 云硬盘导出镜像的容器类型。 目前支持ami、ari、aki、ovf、bare。默认是bare。
+     * 
+     * @return containerFormat */
     public ContainerFormatEnum getContainerFormat() {
         return containerFormat;
     }
@@ -345,20 +293,14 @@ public class CinderExportToImageOption  {
         this.containerFormat = containerFormat;
     }
 
-    
-
     public CinderExportToImageOption withDiskFormat(DiskFormatEnum diskFormat) {
         this.diskFormat = diskFormat;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘导出镜像的格式。  目前支持vhd、zvhd、zvhd2、raw、qcow2。默认是vhd。
-     * @return diskFormat
-     */
+    /** 云硬盘导出镜像的格式。 目前支持vhd、zvhd、zvhd2、raw、qcow2。默认是vhd。
+     * 
+     * @return diskFormat */
     public DiskFormatEnum getDiskFormat() {
         return diskFormat;
     }
@@ -367,20 +309,14 @@ public class CinderExportToImageOption  {
         this.diskFormat = diskFormat;
     }
 
-    
-
     public CinderExportToImageOption withForce(Boolean force) {
         this.force = force;
         return this;
     }
 
-    
-
-
-    /**
-     * 强制导出镜像的标示，默认值是false。  当force标记为false时，云硬盘处于正在使用状态时，不能强制导出镜像。 当force标记为true时，即使云硬盘处于正在使用状态时，仍可以导出镜像。
-     * @return force
-     */
+    /** 强制导出镜像的标示，默认值是false。 当force标记为false时，云硬盘处于正在使用状态时，不能强制导出镜像。 当force标记为true时，即使云硬盘处于正在使用状态时，仍可以导出镜像。
+     * 
+     * @return force */
     public Boolean getForce() {
         return force;
     }
@@ -389,20 +325,14 @@ public class CinderExportToImageOption  {
         this.force = force;
     }
 
-    
-
     public CinderExportToImageOption withImageName(String imageName) {
         this.imageName = imageName;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘导出镜像的名称。  名称的长度范围为1～128位。 名称只能包含以下字符：大写字母、小写字母、中文、数字、特殊字符包含“-”、“.”、“_”和空格。
-     * @return imageName
-     */
+    /** 云硬盘导出镜像的名称。 名称的长度范围为1～128位。 名称只能包含以下字符：大写字母、小写字母、中文、数字、特殊字符包含“-”、“.”、“_”和空格。
+     * 
+     * @return imageName */
     public String getImageName() {
         return imageName;
     }
@@ -411,22 +341,18 @@ public class CinderExportToImageOption  {
         this.imageName = imageName;
     }
 
-    
-
     public CinderExportToImageOption withOsType(OsTypeEnum osType) {
         this.osType = osType;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘导出镜像的系统类型。目前只支持“windows”和“linux”，默认值是“linux”。  说明： 只有云硬盘的volume_image_metadata信息中无“__os_type”字段且云硬盘状态为“available”时，设置的__os_type才会生效。 如果不传递该参数，则使用默认的“linux”值作为镜像的系统类型。
-     * @return osType
-     */
+    /** 云硬盘导出镜像的系统类型。目前只支持“windows”和“linux”，默认值是“linux”。 说明：
+     * 只有云硬盘的volume_image_metadata信息中无“__os_type”字段且云硬盘状态为“available”时，设置的__os_type才会生效。
+     * 如果不传递该参数，则使用默认的“linux”值作为镜像的系统类型。
+     * 
+     * @return osType */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__os_type")
+    @JsonProperty(value = "__os_type")
     public OsTypeEnum getOsType() {
         return osType;
     }
@@ -434,8 +360,6 @@ public class CinderExportToImageOption  {
     public void setOsType(OsTypeEnum osType) {
         this.osType = osType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -446,16 +370,18 @@ public class CinderExportToImageOption  {
             return false;
         }
         CinderExportToImageOption cinderExportToImageOption = (CinderExportToImageOption) o;
-        return Objects.equals(this.containerFormat, cinderExportToImageOption.containerFormat) &&
-            Objects.equals(this.diskFormat, cinderExportToImageOption.diskFormat) &&
-            Objects.equals(this.force, cinderExportToImageOption.force) &&
-            Objects.equals(this.imageName, cinderExportToImageOption.imageName) &&
-            Objects.equals(this.osType, cinderExportToImageOption.osType);
+        return Objects.equals(this.containerFormat, cinderExportToImageOption.containerFormat)
+            && Objects.equals(this.diskFormat, cinderExportToImageOption.diskFormat)
+            && Objects.equals(this.force, cinderExportToImageOption.force)
+            && Objects.equals(this.imageName, cinderExportToImageOption.imageName)
+            && Objects.equals(this.osType, cinderExportToImageOption.osType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(containerFormat, diskFormat, force, imageName, osType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -468,16 +394,13 @@ public class CinderExportToImageOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

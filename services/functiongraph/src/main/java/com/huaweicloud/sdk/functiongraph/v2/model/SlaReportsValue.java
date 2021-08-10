@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * SlaReportsValue
- */
-public class SlaReportsValue  {
-
-
+/** SlaReportsValue */
+public class SlaReportsValue {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timestamp")
-    
+    @JsonProperty(value = "timestamp")
+
     private Integer timestamp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private Integer value;
 
     public SlaReportsValue withTimestamp(Integer timestamp) {
@@ -34,13 +23,9 @@ public class SlaReportsValue  {
         return this;
     }
 
-    
-
-
-    /**
-     * 时间戳
-     * @return timestamp
-     */
+    /** 时间戳
+     * 
+     * @return timestamp */
     public Integer getTimestamp() {
         return timestamp;
     }
@@ -49,20 +34,14 @@ public class SlaReportsValue  {
         this.timestamp = timestamp;
     }
 
-    
-
     public SlaReportsValue withValue(Integer value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 值
-     * @return value
-     */
+    /** 值
+     * 
+     * @return value */
     public Integer getValue() {
         return value;
     }
@@ -70,8 +49,6 @@ public class SlaReportsValue  {
     public void setValue(Integer value) {
         this.value = value;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class SlaReportsValue  {
             return false;
         }
         SlaReportsValue slaReportsValue = (SlaReportsValue) o;
-        return Objects.equals(this.timestamp, slaReportsValue.timestamp) &&
-            Objects.equals(this.value, slaReportsValue.value);
+        return Objects.equals(this.timestamp, slaReportsValue.timestamp)
+            && Objects.equals(this.value, slaReportsValue.value);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(timestamp, value);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class SlaReportsValue  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

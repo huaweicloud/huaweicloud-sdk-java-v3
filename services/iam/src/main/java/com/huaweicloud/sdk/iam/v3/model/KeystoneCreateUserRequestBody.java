@@ -1,27 +1,19 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.KeystoneCreateUserOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class KeystoneCreateUserRequestBody  {
-
-
+public class KeystoneCreateUserRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user")
-    
+    @JsonProperty(value = "user")
+
     private KeystoneCreateUserOption user;
 
     public KeystoneCreateUserRequestBody withUser(KeystoneCreateUserOption user) {
@@ -30,19 +22,17 @@ public class KeystoneCreateUserRequestBody  {
     }
 
     public KeystoneCreateUserRequestBody withUser(Consumer<KeystoneCreateUserOption> userSetter) {
-        if(this.user == null ){
+        if (this.user == null) {
             this.user = new KeystoneCreateUserOption();
             userSetter.accept(this.user);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get user
-     * @return user
-     */
+    /** Get user
+     * 
+     * @return user */
     public KeystoneCreateUserOption getUser() {
         return user;
     }
@@ -50,8 +40,6 @@ public class KeystoneCreateUserRequestBody  {
     public void setUser(KeystoneCreateUserOption user) {
         this.user = user;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +52,12 @@ public class KeystoneCreateUserRequestBody  {
         KeystoneCreateUserRequestBody keystoneCreateUserRequestBody = (KeystoneCreateUserRequestBody) o;
         return Objects.equals(this.user, keystoneCreateUserRequestBody.user);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(user);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +66,13 @@ public class KeystoneCreateUserRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

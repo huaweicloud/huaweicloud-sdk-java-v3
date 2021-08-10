@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListPtrRecordsRequest  {
-
-
+/** Request Object */
+public class ListPtrRecordsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private String tags;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
     public ListPtrRecordsRequest withMarker(String marker) {
@@ -58,13 +43,9 @@ public class ListPtrRecordsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 分页查询起始的资源ID，为空时为查询第一页。  默认值为空。
-     * @return marker
-     */
+    /** 分页查询起始的资源ID，为空时为查询第一页。 默认值为空。
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -73,20 +54,14 @@ public class ListPtrRecordsRequest  {
         this.marker = marker;
     }
 
-    
-
     public ListPtrRecordsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页返回的资源个数。  取值范围：0~500  取值一般为10，20，50。默认值为500。
-     * @return limit
-     */
+    /** 每页返回的资源个数。 取值范围：0~500 取值一般为10，20，50。默认值为500。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -95,20 +70,14 @@ public class ListPtrRecordsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListPtrRecordsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。  取值范围：0~2147483647  默认值为0。  当前设置marker不为空时，以marker为分页起始标识。
-     * @return offset
-     */
+    /** 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。 取值范围：0~2147483647 默认值为0。 当前设置marker不为空时，以marker为分页起始标识。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -117,20 +86,14 @@ public class ListPtrRecordsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListPtrRecordsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 反向解析关联的企业项目ID，长度不超过36个字符。  默认值为0。
-     * @return enterpriseProjectId
-     */
+    /** 反向解析关联的企业项目ID，长度不超过36个字符。 默认值为0。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -139,20 +102,14 @@ public class ListPtrRecordsRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public ListPtrRecordsRequest withTags(String tags) {
         this.tags = tags;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源标签。  取值格式：key1,value1|key2,value2  多个标签之间用\"|\"分开，每个标签的键值用英文逗号\",\"相隔。
-     * @return tags
-     */
+    /** 资源标签。 取值格式：key1,value1|key2,value2 多个标签之间用\"|\"分开，每个标签的键值用英文逗号\",\"相隔。
+     * 
+     * @return tags */
     public String getTags() {
         return tags;
     }
@@ -161,20 +118,14 @@ public class ListPtrRecordsRequest  {
         this.tags = tags;
     }
 
-    
-
     public ListPtrRecordsRequest withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源状态。
-     * @return status
-     */
+    /** 资源状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -182,8 +133,6 @@ public class ListPtrRecordsRequest  {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,17 +143,19 @@ public class ListPtrRecordsRequest  {
             return false;
         }
         ListPtrRecordsRequest listPtrRecordsRequest = (ListPtrRecordsRequest) o;
-        return Objects.equals(this.marker, listPtrRecordsRequest.marker) &&
-            Objects.equals(this.limit, listPtrRecordsRequest.limit) &&
-            Objects.equals(this.offset, listPtrRecordsRequest.offset) &&
-            Objects.equals(this.enterpriseProjectId, listPtrRecordsRequest.enterpriseProjectId) &&
-            Objects.equals(this.tags, listPtrRecordsRequest.tags) &&
-            Objects.equals(this.status, listPtrRecordsRequest.status);
+        return Objects.equals(this.marker, listPtrRecordsRequest.marker)
+            && Objects.equals(this.limit, listPtrRecordsRequest.limit)
+            && Objects.equals(this.offset, listPtrRecordsRequest.offset)
+            && Objects.equals(this.enterpriseProjectId, listPtrRecordsRequest.enterpriseProjectId)
+            && Objects.equals(this.tags, listPtrRecordsRequest.tags)
+            && Objects.equals(this.status, listPtrRecordsRequest.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(marker, limit, offset, enterpriseProjectId, tags, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,16 +169,13 @@ public class ListPtrRecordsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

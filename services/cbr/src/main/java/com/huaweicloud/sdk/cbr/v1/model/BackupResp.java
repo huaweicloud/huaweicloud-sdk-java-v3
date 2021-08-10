@@ -1,87 +1,61 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.BackupExtendInfo;
-import com.huaweicloud.sdk.cbr.v1.model.ReplicationRecordGet;
+
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * BackupResp
- */
-public class BackupResp  {
-
-
+/** BackupResp */
+public class BackupResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="checkpoint_id")
-    
+    @JsonProperty(value = "checkpoint_id")
+
     private String checkpointId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private OffsetDateTime createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expired_at")
-    
+    @JsonProperty(value = "expired_at")
+
     private OffsetDateTime expiredAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extend_info")
-    
+    @JsonProperty(value = "extend_info")
+
     private BackupExtendInfo extendInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
-    /**
-     * 备份类型
-     */
+
+    /** 备份类型 */
     public static final class ImageTypeEnum {
 
-        
-        /**
-         * Enum BACKUP for value: "backup"
-         */
+        /** Enum BACKUP for value: "backup" */
         public static final ImageTypeEnum BACKUP = new ImageTypeEnum("backup");
-        
-        /**
-         * Enum REPLICATION for value: "replication"
-         */
+
+        /** Enum REPLICATION for value: "replication" */
         public static final ImageTypeEnum REPLICATION = new ImageTypeEnum("replication");
-        
 
         private static final Map<String, ImageTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -110,7 +84,7 @@ public class BackupResp  {
 
         @JsonCreator
         public static ImageTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ImageTypeEnum result = STATIC_FIELDS.get(value);
@@ -121,7 +95,7 @@ public class BackupResp  {
         }
 
         public static ImageTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ImageTypeEnum result = STATIC_FIELDS.get(value);
@@ -145,75 +119,59 @@ public class BackupResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_type")
-    
+    @JsonProperty(value = "image_type")
+
     private ImageTypeEnum imageType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parent_id")
-    
+    @JsonProperty(value = "parent_id")
+
     private String parentId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protected_at")
-    
+    @JsonProperty(value = "protected_at")
+
     private LocalDate protectedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_az")
-    
+    @JsonProperty(value = "resource_az")
+
     private String resourceAz;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
+    @JsonProperty(value = "resource_id")
+
     private String resourceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_name")
-    
+    @JsonProperty(value = "resource_name")
+
     private String resourceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_size")
-    
+    @JsonProperty(value = "resource_size")
+
     private Integer resourceSize;
-    /**
-     * 资源类型
-     */
+
+    /** 资源类型 */
     public static final class ResourceTypeEnum {
 
-        
-        /**
-         * Enum OS_NOVA_SERVER for value: "OS::Nova::Server"
-         */
+        /** Enum OS_NOVA_SERVER for value: "OS::Nova::Server" */
         public static final ResourceTypeEnum OS_NOVA_SERVER = new ResourceTypeEnum("OS::Nova::Server");
-        
-        /**
-         * Enum OS_CINDER_VOLUME for value: "OS::Cinder::Volume"
-         */
+
+        /** Enum OS_CINDER_VOLUME for value: "OS::Cinder::Volume" */
         public static final ResourceTypeEnum OS_CINDER_VOLUME = new ResourceTypeEnum("OS::Cinder::Volume");
-        
 
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -242,7 +200,7 @@ public class BackupResp  {
 
         @JsonCreator
         public static ResourceTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ResourceTypeEnum result = STATIC_FIELDS.get(value);
@@ -253,7 +211,7 @@ public class BackupResp  {
         }
 
         public static ResourceTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ResourceTypeEnum result = STATIC_FIELDS.get(value);
@@ -277,57 +235,37 @@ public class BackupResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type")
-    
+    @JsonProperty(value = "resource_type")
+
     private ResourceTypeEnum resourceType;
-    /**
-     * 备份状态
-     */
+
+    /** 备份状态 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum AVAILABLE for value: "available"
-         */
+        /** Enum AVAILABLE for value: "available" */
         public static final StatusEnum AVAILABLE = new StatusEnum("available");
-        
-        /**
-         * Enum PROTECTING for value: "protecting"
-         */
+
+        /** Enum PROTECTING for value: "protecting" */
         public static final StatusEnum PROTECTING = new StatusEnum("protecting");
-        
-        /**
-         * Enum DELETING for value: "deleting"
-         */
+
+        /** Enum DELETING for value: "deleting" */
         public static final StatusEnum DELETING = new StatusEnum("deleting");
-        
-        /**
-         * Enum RESTORING for value: "restoring"
-         */
+
+        /** Enum RESTORING for value: "restoring" */
         public static final StatusEnum RESTORING = new StatusEnum("restoring");
-        
-        /**
-         * Enum ERROR for value: "error"
-         */
+
+        /** Enum ERROR for value: "error" */
         public static final StatusEnum ERROR = new StatusEnum("error");
-        
-        /**
-         * Enum WAITING_PROTECT for value: "waiting_protect"
-         */
+
+        /** Enum WAITING_PROTECT for value: "waiting_protect" */
         public static final StatusEnum WAITING_PROTECT = new StatusEnum("waiting_protect");
-        
-        /**
-         * Enum WAITING_DELETE for value: "waiting_delete"
-         */
+
+        /** Enum WAITING_DELETE for value: "waiting_delete" */
         public static final StatusEnum WAITING_DELETE = new StatusEnum("waiting_delete");
-        
-        /**
-         * Enum WAITING_RESTORE for value: "waiting_restore"
-         */
+
+        /** Enum WAITING_RESTORE for value: "waiting_restore" */
         public static final StatusEnum WAITING_RESTORE = new StatusEnum("waiting_restore");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -362,7 +300,7 @@ public class BackupResp  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -373,7 +311,7 @@ public class BackupResp  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -397,34 +335,29 @@ public class BackupResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private OffsetDateTime updatedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vault_id")
-    
+    @JsonProperty(value = "vault_id")
+
     private String vaultId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replication_records")
-    
+    @JsonProperty(value = "replication_records")
+
     private List<ReplicationRecordGet> replicationRecords = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public BackupResp withCheckpointId(String checkpointId) {
@@ -432,13 +365,9 @@ public class BackupResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 还原点ID
-     * @return checkpointId
-     */
+    /** 还原点ID
+     * 
+     * @return checkpointId */
     public String getCheckpointId() {
         return checkpointId;
     }
@@ -447,20 +376,14 @@ public class BackupResp  {
         this.checkpointId = checkpointId;
     }
 
-    
-
     public BackupResp withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间，例如:\"2020-02-05T10:38:34.209782\"
-     * @return createdAt
-     */
+    /** 创建时间，例如:\"2020-02-05T10:38:34.209782\"
+     * 
+     * @return createdAt */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -469,20 +392,14 @@ public class BackupResp  {
         this.createdAt = createdAt;
     }
 
-    
-
     public BackupResp withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份描述
-     * @return description
-     */
+    /** 备份描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -491,20 +408,14 @@ public class BackupResp  {
         this.description = description;
     }
 
-    
-
     public BackupResp withExpiredAt(OffsetDateTime expiredAt) {
         this.expiredAt = expiredAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 过期时间，例如:\"2020-02-05T10:38:34.209782\"
-     * @return expiredAt
-     */
+    /** 过期时间，例如:\"2020-02-05T10:38:34.209782\"
+     * 
+     * @return expiredAt */
     public OffsetDateTime getExpiredAt() {
         return expiredAt;
     }
@@ -513,27 +424,23 @@ public class BackupResp  {
         this.expiredAt = expiredAt;
     }
 
-    
-
     public BackupResp withExtendInfo(BackupExtendInfo extendInfo) {
         this.extendInfo = extendInfo;
         return this;
     }
 
     public BackupResp withExtendInfo(Consumer<BackupExtendInfo> extendInfoSetter) {
-        if(this.extendInfo == null ){
+        if (this.extendInfo == null) {
             this.extendInfo = new BackupExtendInfo();
             extendInfoSetter.accept(this.extendInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get extendInfo
-     * @return extendInfo
-     */
+    /** Get extendInfo
+     * 
+     * @return extendInfo */
     public BackupExtendInfo getExtendInfo() {
         return extendInfo;
     }
@@ -542,20 +449,14 @@ public class BackupResp  {
         this.extendInfo = extendInfo;
     }
 
-    
-
     public BackupResp withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份ID
-     * @return id
-     */
+    /** 备份ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -564,20 +465,14 @@ public class BackupResp  {
         this.id = id;
     }
 
-    
-
     public BackupResp withImageType(ImageTypeEnum imageType) {
         this.imageType = imageType;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份类型
-     * @return imageType
-     */
+    /** 备份类型
+     * 
+     * @return imageType */
     public ImageTypeEnum getImageType() {
         return imageType;
     }
@@ -586,20 +481,14 @@ public class BackupResp  {
         this.imageType = imageType;
     }
 
-    
-
     public BackupResp withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份名称
-     * @return name
-     */
+    /** 备份名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -608,20 +497,14 @@ public class BackupResp  {
         this.name = name;
     }
 
-    
-
     public BackupResp withParentId(String parentId) {
         this.parentId = parentId;
         return this;
     }
 
-    
-
-
-    /**
-     * 父备份ID
-     * @return parentId
-     */
+    /** 父备份ID
+     * 
+     * @return parentId */
     public String getParentId() {
         return parentId;
     }
@@ -630,20 +513,14 @@ public class BackupResp  {
         this.parentId = parentId;
     }
 
-    
-
     public BackupResp withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目ID
-     * @return projectId
-     */
+    /** 项目ID
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -652,20 +529,14 @@ public class BackupResp  {
         this.projectId = projectId;
     }
 
-    
-
     public BackupResp withProtectedAt(LocalDate protectedAt) {
         this.protectedAt = protectedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份时间
-     * @return protectedAt
-     */
+    /** 备份时间
+     * 
+     * @return protectedAt */
     public LocalDate getProtectedAt() {
         return protectedAt;
     }
@@ -674,20 +545,14 @@ public class BackupResp  {
         this.protectedAt = protectedAt;
     }
 
-    
-
     public BackupResp withResourceAz(String resourceAz) {
         this.resourceAz = resourceAz;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源可用区
-     * @return resourceAz
-     */
+    /** 资源可用区
+     * 
+     * @return resourceAz */
     public String getResourceAz() {
         return resourceAz;
     }
@@ -696,20 +561,14 @@ public class BackupResp  {
         this.resourceAz = resourceAz;
     }
 
-    
-
     public BackupResp withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源ID
-     * @return resourceId
-     */
+    /** 资源ID
+     * 
+     * @return resourceId */
     public String getResourceId() {
         return resourceId;
     }
@@ -718,20 +577,14 @@ public class BackupResp  {
         this.resourceId = resourceId;
     }
 
-    
-
     public BackupResp withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源名称
-     * @return resourceName
-     */
+    /** 资源名称
+     * 
+     * @return resourceName */
     public String getResourceName() {
         return resourceName;
     }
@@ -740,20 +593,14 @@ public class BackupResp  {
         this.resourceName = resourceName;
     }
 
-    
-
     public BackupResp withResourceSize(Integer resourceSize) {
         this.resourceSize = resourceSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源大小，单位为GB
-     * @return resourceSize
-     */
+    /** 资源大小，单位为GB
+     * 
+     * @return resourceSize */
     public Integer getResourceSize() {
         return resourceSize;
     }
@@ -762,20 +609,14 @@ public class BackupResp  {
         this.resourceSize = resourceSize;
     }
 
-    
-
     public BackupResp withResourceType(ResourceTypeEnum resourceType) {
         this.resourceType = resourceType;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源类型
-     * @return resourceType
-     */
+    /** 资源类型
+     * 
+     * @return resourceType */
     public ResourceTypeEnum getResourceType() {
         return resourceType;
     }
@@ -784,20 +625,14 @@ public class BackupResp  {
         this.resourceType = resourceType;
     }
 
-    
-
     public BackupResp withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份状态
-     * @return status
-     */
+    /** 备份状态
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -806,20 +641,14 @@ public class BackupResp  {
         this.status = status;
     }
 
-    
-
     public BackupResp withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间，例如:\"2020-02-05T10:38:34.209782\"
-     * @return updatedAt
-     */
+    /** 更新时间，例如:\"2020-02-05T10:38:34.209782\"
+     * 
+     * @return updatedAt */
     public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
@@ -828,20 +657,14 @@ public class BackupResp  {
         this.updatedAt = updatedAt;
     }
 
-    
-
     public BackupResp withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
     }
 
-    
-
-
-    /**
-     * 存储库ID
-     * @return vaultId
-     */
+    /** 存储库ID
+     * 
+     * @return vaultId */
     public String getVaultId() {
         return vaultId;
     }
@@ -850,16 +673,13 @@ public class BackupResp  {
         this.vaultId = vaultId;
     }
 
-    
-
     public BackupResp withReplicationRecords(List<ReplicationRecordGet> replicationRecords) {
         this.replicationRecords = replicationRecords;
         return this;
     }
 
-    
     public BackupResp addReplicationRecordsItem(ReplicationRecordGet replicationRecordsItem) {
-        if(this.replicationRecords == null) {
+        if (this.replicationRecords == null) {
             this.replicationRecords = new ArrayList<>();
         }
         this.replicationRecords.add(replicationRecordsItem);
@@ -867,17 +687,16 @@ public class BackupResp  {
     }
 
     public BackupResp withReplicationRecords(Consumer<List<ReplicationRecordGet>> replicationRecordsSetter) {
-        if(this.replicationRecords == null) {
+        if (this.replicationRecords == null) {
             this.replicationRecords = new ArrayList<>();
         }
         replicationRecordsSetter.accept(this.replicationRecords);
         return this;
     }
 
-    /**
-     * 复制记录
-     * @return replicationRecords
-     */
+    /** 复制记录
+     * 
+     * @return replicationRecords */
     public List<ReplicationRecordGet> getReplicationRecords() {
         return replicationRecords;
     }
@@ -886,20 +705,14 @@ public class BackupResp  {
         this.replicationRecords = replicationRecords;
     }
 
-    
-
     public BackupResp withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目id,默认为‘0’。
-     * @return enterpriseProjectId
-     */
+    /** 企业项目id,默认为‘0’。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -907,8 +720,6 @@ public class BackupResp  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -919,32 +730,51 @@ public class BackupResp  {
             return false;
         }
         BackupResp backupResp = (BackupResp) o;
-        return Objects.equals(this.checkpointId, backupResp.checkpointId) &&
-            Objects.equals(this.createdAt, backupResp.createdAt) &&
-            Objects.equals(this.description, backupResp.description) &&
-            Objects.equals(this.expiredAt, backupResp.expiredAt) &&
-            Objects.equals(this.extendInfo, backupResp.extendInfo) &&
-            Objects.equals(this.id, backupResp.id) &&
-            Objects.equals(this.imageType, backupResp.imageType) &&
-            Objects.equals(this.name, backupResp.name) &&
-            Objects.equals(this.parentId, backupResp.parentId) &&
-            Objects.equals(this.projectId, backupResp.projectId) &&
-            Objects.equals(this.protectedAt, backupResp.protectedAt) &&
-            Objects.equals(this.resourceAz, backupResp.resourceAz) &&
-            Objects.equals(this.resourceId, backupResp.resourceId) &&
-            Objects.equals(this.resourceName, backupResp.resourceName) &&
-            Objects.equals(this.resourceSize, backupResp.resourceSize) &&
-            Objects.equals(this.resourceType, backupResp.resourceType) &&
-            Objects.equals(this.status, backupResp.status) &&
-            Objects.equals(this.updatedAt, backupResp.updatedAt) &&
-            Objects.equals(this.vaultId, backupResp.vaultId) &&
-            Objects.equals(this.replicationRecords, backupResp.replicationRecords) &&
-            Objects.equals(this.enterpriseProjectId, backupResp.enterpriseProjectId);
+        return Objects.equals(this.checkpointId, backupResp.checkpointId)
+            && Objects.equals(this.createdAt, backupResp.createdAt)
+            && Objects.equals(this.description, backupResp.description)
+            && Objects.equals(this.expiredAt, backupResp.expiredAt)
+            && Objects.equals(this.extendInfo, backupResp.extendInfo) && Objects.equals(this.id, backupResp.id)
+            && Objects.equals(this.imageType, backupResp.imageType) && Objects.equals(this.name, backupResp.name)
+            && Objects.equals(this.parentId, backupResp.parentId)
+            && Objects.equals(this.projectId, backupResp.projectId)
+            && Objects.equals(this.protectedAt, backupResp.protectedAt)
+            && Objects.equals(this.resourceAz, backupResp.resourceAz)
+            && Objects.equals(this.resourceId, backupResp.resourceId)
+            && Objects.equals(this.resourceName, backupResp.resourceName)
+            && Objects.equals(this.resourceSize, backupResp.resourceSize)
+            && Objects.equals(this.resourceType, backupResp.resourceType)
+            && Objects.equals(this.status, backupResp.status) && Objects.equals(this.updatedAt, backupResp.updatedAt)
+            && Objects.equals(this.vaultId, backupResp.vaultId)
+            && Objects.equals(this.replicationRecords, backupResp.replicationRecords)
+            && Objects.equals(this.enterpriseProjectId, backupResp.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(checkpointId, createdAt, description, expiredAt, extendInfo, id, imageType, name, parentId, projectId, protectedAt, resourceAz, resourceId, resourceName, resourceSize, resourceType, status, updatedAt, vaultId, replicationRecords, enterpriseProjectId);
+        return Objects.hash(checkpointId,
+            createdAt,
+            description,
+            expiredAt,
+            extendInfo,
+            id,
+            imageType,
+            name,
+            parentId,
+            projectId,
+            protectedAt,
+            resourceAz,
+            resourceId,
+            resourceName,
+            resourceSize,
+            resourceType,
+            status,
+            updatedAt,
+            vaultId,
+            replicationRecords,
+            enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -973,16 +803,13 @@ public class BackupResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

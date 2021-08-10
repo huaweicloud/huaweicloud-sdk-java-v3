@@ -1,34 +1,20 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
-/**
- * 字典类型 - system: 代表系统内置字典,用户可编辑但不可删除 - user: 代表用户创建字典
- */
+/** 字典类型 - system: 代表系统内置字典,用户可编辑但不可删除 - user: 代表用户创建字典 */
 public class DictionaryType {
-    
-    /**
-     * Enum SYSTEM for value: "system"
-     */
+
+    /** Enum SYSTEM for value: "system" */
     public static final DictionaryType SYSTEM = new DictionaryType("system");
-    
-    /**
-     * Enum USER for value: "user"
-     */
+
+    /** Enum USER for value: "user" */
     public static final DictionaryType USER = new DictionaryType("user");
-    
 
     private static final Map<String, DictionaryType> STATIC_FIELDS = createStaticFields();
 
@@ -57,7 +43,7 @@ public class DictionaryType {
 
     @JsonCreator
     public static DictionaryType fromValue(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         DictionaryType result = STATIC_FIELDS.get(value);
@@ -68,7 +54,7 @@ public class DictionaryType {
     }
 
     public static DictionaryType valueOf(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         DictionaryType result = STATIC_FIELDS.get(value);
@@ -91,4 +77,3 @@ public class DictionaryType {
         return this.value.hashCode();
     }
 }
-

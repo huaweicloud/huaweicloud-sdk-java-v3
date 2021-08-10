@@ -1,32 +1,23 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  *  
  */
-public class PageLink  {
-
-
+public class PageLink {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="href")
-    
+    @JsonProperty(value = "href")
+
     private String href;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rel")
-    
+    @JsonProperty(value = "rel")
+
     private String rel;
 
     public PageLink withHref(String href) {
@@ -34,13 +25,9 @@ public class PageLink  {
         return this;
     }
 
-    
-
-
-    /**
-     * 相应资源的链接。
-     * @return href
-     */
+    /** 相应资源的链接。
+     * 
+     * @return href */
     public String getHref() {
         return href;
     }
@@ -49,20 +36,14 @@ public class PageLink  {
         this.href = href;
     }
 
-    
-
     public PageLink withRel(String rel) {
         this.rel = rel;
         return this;
     }
 
-    
-
-
-    /**
-     * 对应快捷链接。
-     * @return rel
-     */
+    /** 对应快捷链接。
+     * 
+     * @return rel */
     public String getRel() {
         return rel;
     }
@@ -70,8 +51,6 @@ public class PageLink  {
     public void setRel(String rel) {
         this.rel = rel;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +61,14 @@ public class PageLink  {
             return false;
         }
         PageLink pageLink = (PageLink) o;
-        return Objects.equals(this.href, pageLink.href) &&
-            Objects.equals(this.rel, pageLink.rel);
+        return Objects.equals(this.href, pageLink.href) && Objects.equals(this.rel, pageLink.rel);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(href, rel);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +78,13 @@ public class PageLink  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

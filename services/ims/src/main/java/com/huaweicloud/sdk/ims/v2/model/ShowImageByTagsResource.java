@@ -1,48 +1,34 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ims.v2.model.QueryImageByTagsResourceDetail;
-import com.huaweicloud.sdk.ims.v2.model.TagKeyValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * resource字段数据结构说明
- */
-public class ShowImageByTagsResource  {
-
-
+/** resource字段数据结构说明 */
+public class ShowImageByTagsResource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
+    @JsonProperty(value = "resource_id")
+
     private String resourceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_detail")
-    
+    @JsonProperty(value = "resource_detail")
+
     private QueryImageByTagsResourceDetail resourceDetail;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<TagKeyValue> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_name")
-    
+    @JsonProperty(value = "resource_name")
+
     private String resourceName;
 
     public ShowImageByTagsResource withResourceId(String resourceId) {
@@ -50,13 +36,9 @@ public class ShowImageByTagsResource  {
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像ID
-     * @return resourceId
-     */
+    /** 镜像ID
+     * 
+     * @return resourceId */
     public String getResourceId() {
         return resourceId;
     }
@@ -65,27 +47,23 @@ public class ShowImageByTagsResource  {
         this.resourceId = resourceId;
     }
 
-    
-
     public ShowImageByTagsResource withResourceDetail(QueryImageByTagsResourceDetail resourceDetail) {
         this.resourceDetail = resourceDetail;
         return this;
     }
 
     public ShowImageByTagsResource withResourceDetail(Consumer<QueryImageByTagsResourceDetail> resourceDetailSetter) {
-        if(this.resourceDetail == null ){
+        if (this.resourceDetail == null) {
             this.resourceDetail = new QueryImageByTagsResourceDetail();
             resourceDetailSetter.accept(this.resourceDetail);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get resourceDetail
-     * @return resourceDetail
-     */
+    /** Get resourceDetail
+     * 
+     * @return resourceDetail */
     public QueryImageByTagsResourceDetail getResourceDetail() {
         return resourceDetail;
     }
@@ -94,16 +72,13 @@ public class ShowImageByTagsResource  {
         this.resourceDetail = resourceDetail;
     }
 
-    
-
     public ShowImageByTagsResource withTags(List<TagKeyValue> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public ShowImageByTagsResource addTagsItem(TagKeyValue tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -111,17 +86,16 @@ public class ShowImageByTagsResource  {
     }
 
     public ShowImageByTagsResource withTags(Consumer<List<TagKeyValue>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 镜像的标签列表
-     * @return tags
-     */
+    /** 镜像的标签列表
+     * 
+     * @return tags */
     public List<TagKeyValue> getTags() {
         return tags;
     }
@@ -130,20 +104,14 @@ public class ShowImageByTagsResource  {
         this.tags = tags;
     }
 
-    
-
     public ShowImageByTagsResource withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像名称
-     * @return resourceName
-     */
+    /** 镜像名称
+     * 
+     * @return resourceName */
     public String getResourceName() {
         return resourceName;
     }
@@ -151,8 +119,6 @@ public class ShowImageByTagsResource  {
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -163,15 +129,17 @@ public class ShowImageByTagsResource  {
             return false;
         }
         ShowImageByTagsResource showImageByTagsResource = (ShowImageByTagsResource) o;
-        return Objects.equals(this.resourceId, showImageByTagsResource.resourceId) &&
-            Objects.equals(this.resourceDetail, showImageByTagsResource.resourceDetail) &&
-            Objects.equals(this.tags, showImageByTagsResource.tags) &&
-            Objects.equals(this.resourceName, showImageByTagsResource.resourceName);
+        return Objects.equals(this.resourceId, showImageByTagsResource.resourceId)
+            && Objects.equals(this.resourceDetail, showImageByTagsResource.resourceDetail)
+            && Objects.equals(this.tags, showImageByTagsResource.tags)
+            && Objects.equals(this.resourceName, showImageByTagsResource.resourceName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resourceId, resourceDetail, tags, resourceName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -183,16 +151,13 @@ public class ShowImageByTagsResource  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

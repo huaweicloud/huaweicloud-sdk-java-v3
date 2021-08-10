@@ -1,26 +1,18 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class PwdPasswordUserDomain  {
-
-
+public class PwdPasswordUserDomain {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public PwdPasswordUserDomain withName(String name) {
@@ -28,13 +20,9 @@ public class PwdPasswordUserDomain  {
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户所属账号名。
-     * @return name
-     */
+    /** IAM用户所属账号名。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -42,8 +30,6 @@ public class PwdPasswordUserDomain  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +42,12 @@ public class PwdPasswordUserDomain  {
         PwdPasswordUserDomain pwdPasswordUserDomain = (PwdPasswordUserDomain) o;
         return Objects.equals(this.name, pwdPasswordUserDomain.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +56,13 @@ public class PwdPasswordUserDomain  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

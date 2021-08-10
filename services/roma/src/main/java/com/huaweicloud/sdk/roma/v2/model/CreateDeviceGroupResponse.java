@@ -1,92 +1,70 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.CreatedUser;
-import com.huaweicloud.sdk.roma.v2.model.LastUpdatedUser;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateDeviceGroupResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="permissions")
-    
+    @JsonProperty(value = "permissions")
+
     private List<String> permissions = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parent_id")
-    
+    @JsonProperty(value = "parent_id")
+
     private Integer parentId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Integer id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_user")
-    
+    @JsonProperty(value = "created_user")
+
     private CreatedUser createdUser;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_updated_user")
-    
+    @JsonProperty(value = "last_updated_user")
+
     private LastUpdatedUser lastUpdatedUser;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_datetime")
-    
+    @JsonProperty(value = "created_datetime")
+
     private String createdDatetime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_updated_datetime")
-    
+    @JsonProperty(value = "last_updated_datetime")
+
     private String lastUpdatedDatetime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_name")
-    
+    @JsonProperty(value = "app_name")
+
     private String appName;
 
     public CreateDeviceGroupResponse withPermissions(List<String> permissions) {
@@ -94,9 +72,8 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         return this;
     }
 
-    
     public CreateDeviceGroupResponse addPermissionsItem(String permissionsItem) {
-        if(this.permissions == null) {
+        if (this.permissions == null) {
             this.permissions = new ArrayList<>();
         }
         this.permissions.add(permissionsItem);
@@ -104,17 +81,16 @@ public class CreateDeviceGroupResponse extends SdkResponse {
     }
 
     public CreateDeviceGroupResponse withPermissions(Consumer<List<String>> permissionsSetter) {
-        if(this.permissions == null) {
+        if (this.permissions == null) {
             this.permissions = new ArrayList<>();
         }
         permissionsSetter.accept(this.permissions);
         return this;
     }
 
-    /**
-     * 权限
-     * @return permissions
-     */
+    /** 权限
+     * 
+     * @return permissions */
     public List<String> getPermissions() {
         return permissions;
     }
@@ -123,22 +99,14 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         this.permissions = permissions;
     }
 
-    
-
     public CreateDeviceGroupResponse withParentId(Integer parentId) {
         this.parentId = parentId;
         return this;
     }
 
-    
-
-
-    /**
-     * 父分组ID
-     * minimum: 1
-     * maximum: 99999999999999999
-     * @return parentId
-     */
+    /** 父分组ID minimum: 1 maximum: 99999999999999999
+     * 
+     * @return parentId */
     public Integer getParentId() {
         return parentId;
     }
@@ -147,22 +115,14 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         this.parentId = parentId;
     }
 
-    
-
     public CreateDeviceGroupResponse withId(Integer id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 分组ID
-     * minimum: 1
-     * maximum: 99999999999999999
-     * @return id
-     */
+    /** 分组ID minimum: 1 maximum: 99999999999999999
+     * 
+     * @return id */
     public Integer getId() {
         return id;
     }
@@ -171,20 +131,14 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public CreateDeviceGroupResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 分组名称，支持中文，英文大小写，数字，下划线和中划线,长度2-64
-     * @return name
-     */
+    /** 分组名称，支持中文，英文大小写，数字，下划线和中划线,长度2-64
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -193,20 +147,14 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public CreateDeviceGroupResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 分组描述，长度0-200
-     * @return description
-     */
+    /** 分组描述，长度0-200
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -215,20 +163,14 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public CreateDeviceGroupResponse withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 分组归属应用ID
-     * @return appId
-     */
+    /** 分组归属应用ID
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -237,27 +179,23 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         this.appId = appId;
     }
 
-    
-
     public CreateDeviceGroupResponse withCreatedUser(CreatedUser createdUser) {
         this.createdUser = createdUser;
         return this;
     }
 
     public CreateDeviceGroupResponse withCreatedUser(Consumer<CreatedUser> createdUserSetter) {
-        if(this.createdUser == null ){
+        if (this.createdUser == null) {
             this.createdUser = new CreatedUser();
             createdUserSetter.accept(this.createdUser);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get createdUser
-     * @return createdUser
-     */
+    /** Get createdUser
+     * 
+     * @return createdUser */
     public CreatedUser getCreatedUser() {
         return createdUser;
     }
@@ -266,27 +204,23 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         this.createdUser = createdUser;
     }
 
-    
-
     public CreateDeviceGroupResponse withLastUpdatedUser(LastUpdatedUser lastUpdatedUser) {
         this.lastUpdatedUser = lastUpdatedUser;
         return this;
     }
 
     public CreateDeviceGroupResponse withLastUpdatedUser(Consumer<LastUpdatedUser> lastUpdatedUserSetter) {
-        if(this.lastUpdatedUser == null ){
+        if (this.lastUpdatedUser == null) {
             this.lastUpdatedUser = new LastUpdatedUser();
             lastUpdatedUserSetter.accept(this.lastUpdatedUser);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get lastUpdatedUser
-     * @return lastUpdatedUser
-     */
+    /** Get lastUpdatedUser
+     * 
+     * @return lastUpdatedUser */
     public LastUpdatedUser getLastUpdatedUser() {
         return lastUpdatedUser;
     }
@@ -295,20 +229,14 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         this.lastUpdatedUser = lastUpdatedUser;
     }
 
-    
-
     public CreateDeviceGroupResponse withCreatedDatetime(String createdDatetime) {
         this.createdDatetime = createdDatetime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return createdDatetime
-     */
+    /** 创建时间
+     * 
+     * @return createdDatetime */
     public String getCreatedDatetime() {
         return createdDatetime;
     }
@@ -317,20 +245,14 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         this.createdDatetime = createdDatetime;
     }
 
-    
-
     public CreateDeviceGroupResponse withLastUpdatedDatetime(String lastUpdatedDatetime) {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
         return this;
     }
 
-    
-
-
-    /**
-     * 最后修改时间
-     * @return lastUpdatedDatetime
-     */
+    /** 最后修改时间
+     * 
+     * @return lastUpdatedDatetime */
     public String getLastUpdatedDatetime() {
         return lastUpdatedDatetime;
     }
@@ -339,20 +261,14 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
     }
 
-    
-
     public CreateDeviceGroupResponse withAppName(String appName) {
         this.appName = appName;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名称
-     * @return appName
-     */
+    /** 应用名称
+     * 
+     * @return appName */
     public String getAppName() {
         return appName;
     }
@@ -360,8 +276,6 @@ public class CreateDeviceGroupResponse extends SdkResponse {
     public void setAppName(String appName) {
         this.appName = appName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -372,22 +286,34 @@ public class CreateDeviceGroupResponse extends SdkResponse {
             return false;
         }
         CreateDeviceGroupResponse createDeviceGroupResponse = (CreateDeviceGroupResponse) o;
-        return Objects.equals(this.permissions, createDeviceGroupResponse.permissions) &&
-            Objects.equals(this.parentId, createDeviceGroupResponse.parentId) &&
-            Objects.equals(this.id, createDeviceGroupResponse.id) &&
-            Objects.equals(this.name, createDeviceGroupResponse.name) &&
-            Objects.equals(this.description, createDeviceGroupResponse.description) &&
-            Objects.equals(this.appId, createDeviceGroupResponse.appId) &&
-            Objects.equals(this.createdUser, createDeviceGroupResponse.createdUser) &&
-            Objects.equals(this.lastUpdatedUser, createDeviceGroupResponse.lastUpdatedUser) &&
-            Objects.equals(this.createdDatetime, createDeviceGroupResponse.createdDatetime) &&
-            Objects.equals(this.lastUpdatedDatetime, createDeviceGroupResponse.lastUpdatedDatetime) &&
-            Objects.equals(this.appName, createDeviceGroupResponse.appName);
+        return Objects.equals(this.permissions, createDeviceGroupResponse.permissions)
+            && Objects.equals(this.parentId, createDeviceGroupResponse.parentId)
+            && Objects.equals(this.id, createDeviceGroupResponse.id)
+            && Objects.equals(this.name, createDeviceGroupResponse.name)
+            && Objects.equals(this.description, createDeviceGroupResponse.description)
+            && Objects.equals(this.appId, createDeviceGroupResponse.appId)
+            && Objects.equals(this.createdUser, createDeviceGroupResponse.createdUser)
+            && Objects.equals(this.lastUpdatedUser, createDeviceGroupResponse.lastUpdatedUser)
+            && Objects.equals(this.createdDatetime, createDeviceGroupResponse.createdDatetime)
+            && Objects.equals(this.lastUpdatedDatetime, createDeviceGroupResponse.lastUpdatedDatetime)
+            && Objects.equals(this.appName, createDeviceGroupResponse.appName);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(permissions, parentId, id, name, description, appId, createdUser, lastUpdatedUser, createdDatetime, lastUpdatedDatetime, appName);
+        return Objects.hash(permissions,
+            parentId,
+            id,
+            name,
+            description,
+            appId,
+            createdUser,
+            lastUpdatedUser,
+            createdDatetime,
+            lastUpdatedDatetime,
+            appName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -406,16 +332,13 @@ public class CreateDeviceGroupResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

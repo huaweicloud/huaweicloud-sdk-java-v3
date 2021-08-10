@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListPostgresqlDatabaseSchemasRequest  {
-
-
+/** Request Object */
+public class ListPostgresqlDatabaseSchemasRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_name")
-    
+    @JsonProperty(value = "db_name")
+
     private String dbName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page")
-    
+    @JsonProperty(value = "page")
+
     private Integer page;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
     public ListPostgresqlDatabaseSchemasRequest withXLanguage(String xLanguage) {
@@ -52,15 +38,11 @@ public class ListPostgresqlDatabaseSchemasRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -69,20 +51,14 @@ public class ListPostgresqlDatabaseSchemasRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListPostgresqlDatabaseSchemasRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -91,20 +67,14 @@ public class ListPostgresqlDatabaseSchemasRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListPostgresqlDatabaseSchemasRequest withDbName(String dbName) {
         this.dbName = dbName;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库名称。
-     * @return dbName
-     */
+    /** 数据库名称。
+     * 
+     * @return dbName */
     public String getDbName() {
         return dbName;
     }
@@ -113,20 +83,14 @@ public class ListPostgresqlDatabaseSchemasRequest  {
         this.dbName = dbName;
     }
 
-    
-
     public ListPostgresqlDatabaseSchemasRequest withPage(Integer page) {
         this.page = page;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页页码，从1开始。
-     * @return page
-     */
+    /** 分页页码，从1开始。
+     * 
+     * @return page */
     public Integer getPage() {
         return page;
     }
@@ -135,20 +99,14 @@ public class ListPostgresqlDatabaseSchemasRequest  {
         this.page = page;
     }
 
-    
-
     public ListPostgresqlDatabaseSchemasRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页数据条数。取值范围[1, 100]。
-     * @return limit
-     */
+    /** 每页数据条数。取值范围[1, 100]。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -156,8 +114,6 @@ public class ListPostgresqlDatabaseSchemasRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -167,17 +123,20 @@ public class ListPostgresqlDatabaseSchemasRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListPostgresqlDatabaseSchemasRequest listPostgresqlDatabaseSchemasRequest = (ListPostgresqlDatabaseSchemasRequest) o;
-        return Objects.equals(this.xLanguage, listPostgresqlDatabaseSchemasRequest.xLanguage) &&
-            Objects.equals(this.instanceId, listPostgresqlDatabaseSchemasRequest.instanceId) &&
-            Objects.equals(this.dbName, listPostgresqlDatabaseSchemasRequest.dbName) &&
-            Objects.equals(this.page, listPostgresqlDatabaseSchemasRequest.page) &&
-            Objects.equals(this.limit, listPostgresqlDatabaseSchemasRequest.limit);
+        ListPostgresqlDatabaseSchemasRequest listPostgresqlDatabaseSchemasRequest =
+            (ListPostgresqlDatabaseSchemasRequest) o;
+        return Objects.equals(this.xLanguage, listPostgresqlDatabaseSchemasRequest.xLanguage)
+            && Objects.equals(this.instanceId, listPostgresqlDatabaseSchemasRequest.instanceId)
+            && Objects.equals(this.dbName, listPostgresqlDatabaseSchemasRequest.dbName)
+            && Objects.equals(this.page, listPostgresqlDatabaseSchemasRequest.page)
+            && Objects.equals(this.limit, listPostgresqlDatabaseSchemasRequest.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, dbName, page, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -190,16 +149,13 @@ public class ListPostgresqlDatabaseSchemasRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

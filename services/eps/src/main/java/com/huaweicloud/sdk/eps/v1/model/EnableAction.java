@@ -1,36 +1,23 @@
 package com.huaweicloud.sdk.eps.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 停用启用企业项目操作
- */
-public class EnableAction  {
+/** 停用启用企业项目操作 */
+public class EnableAction {
 
-    /**
-     * 启用操作
-     */
+    /** 启用操作 */
     public static final class ActionEnum {
 
-        
-        /**
-         * Enum ENABLE for value: "enable"
-         */
+        /** Enum ENABLE for value: "enable" */
         public static final ActionEnum ENABLE = new ActionEnum("enable");
-        
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -58,7 +45,7 @@ public class EnableAction  {
 
         @JsonCreator
         public static ActionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -69,7 +56,7 @@ public class EnableAction  {
         }
 
         public static ActionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -93,10 +80,9 @@ public class EnableAction  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private ActionEnum action;
 
     public EnableAction withAction(ActionEnum action) {
@@ -104,13 +90,9 @@ public class EnableAction  {
         return this;
     }
 
-    
-
-
-    /**
-     * 启用操作
-     * @return action
-     */
+    /** 启用操作
+     * 
+     * @return action */
     public ActionEnum getAction() {
         return action;
     }
@@ -118,8 +100,6 @@ public class EnableAction  {
     public void setAction(ActionEnum action) {
         this.action = action;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -132,10 +112,12 @@ public class EnableAction  {
         EnableAction enableAction = (EnableAction) o;
         return Objects.equals(this.action, enableAction.action);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(action);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -144,16 +126,13 @@ public class EnableAction  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

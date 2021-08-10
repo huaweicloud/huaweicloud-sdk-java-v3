@@ -1,49 +1,30 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.UUID;
 
-/**
- * root_volume字段数据结构说明
- */
-public class RootVolume  {
+/** root_volume字段数据结构说明 */
+public class RootVolume {
 
-    /**
-     * 裸金属服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。SATA：普通IO磁盘类型SAS：高IO磁盘类型SSD：超高IO磁盘类型
-     */
+    /** 裸金属服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。SATA：普通IO磁盘类型SAS：高IO磁盘类型SSD：超高IO磁盘类型 */
     public static final class VolumetypeEnum {
 
-        
-        /**
-         * Enum SATA for value: "SATA"
-         */
+        /** Enum SATA for value: "SATA" */
         public static final VolumetypeEnum SATA = new VolumetypeEnum("SATA");
-        
-        /**
-         * Enum SAS for value: "SAS"
-         */
+
+        /** Enum SAS for value: "SAS" */
         public static final VolumetypeEnum SAS = new VolumetypeEnum("SAS");
-        
-        /**
-         * Enum SSD for value: "SSD"
-         */
+
+        /** Enum SSD for value: "SSD" */
         public static final VolumetypeEnum SSD = new VolumetypeEnum("SSD");
-        
 
         private static final Map<String, VolumetypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -73,7 +54,7 @@ public class RootVolume  {
 
         @JsonCreator
         public static VolumetypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             VolumetypeEnum result = STATIC_FIELDS.get(value);
@@ -84,7 +65,7 @@ public class RootVolume  {
         }
 
         public static VolumetypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             VolumetypeEnum result = STATIC_FIELDS.get(value);
@@ -108,34 +89,27 @@ public class RootVolume  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volumetype")
-    
+    @JsonProperty(value = "volumetype")
+
     private VolumetypeEnum volumetype;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
+
     private UUID clusterId;
-    /**
-     * 裸金属服务器系统盘对应的磁盘存储类型。磁盘存储类型枚举值：DSS（专属分布式存储）。 说明：使用专属分布式存储时需要该字段。存储池类型可以从管理控制台或者参考《专属分布式存储API参考》的“获取专属分布式存储池详情列表”章节获取。
-     */
+
+    /** 裸金属服务器系统盘对应的磁盘存储类型。磁盘存储类型枚举值：DSS（专属分布式存储）。
+     * 说明：使用专属分布式存储时需要该字段。存储池类型可以从管理控制台或者参考《专属分布式存储API参考》的“获取专属分布式存储池详情列表”章节获取。 */
     public static final class ClusterTypeEnum {
 
-        
-        /**
-         * Enum DSS for value: "DSS"
-         */
+        /** Enum DSS for value: "DSS" */
         public static final ClusterTypeEnum DSS = new ClusterTypeEnum("DSS");
-        
 
         private static final Map<String, ClusterTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -163,7 +137,7 @@ public class RootVolume  {
 
         @JsonCreator
         public static ClusterTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ClusterTypeEnum result = STATIC_FIELDS.get(value);
@@ -174,7 +148,7 @@ public class RootVolume  {
         }
 
         public static ClusterTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ClusterTypeEnum result = STATIC_FIELDS.get(value);
@@ -198,10 +172,9 @@ public class RootVolume  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_type")
-    
+    @JsonProperty(value = "cluster_type")
+
     private ClusterTypeEnum clusterType;
 
     public RootVolume withVolumetype(VolumetypeEnum volumetype) {
@@ -209,13 +182,9 @@ public class RootVolume  {
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。SATA：普通IO磁盘类型SAS：高IO磁盘类型SSD：超高IO磁盘类型
-     * @return volumetype
-     */
+    /** 裸金属服务器系统盘对应的磁盘类型，需要与系统所提供的磁盘类型相匹配。SATA：普通IO磁盘类型SAS：高IO磁盘类型SSD：超高IO磁盘类型
+     * 
+     * @return volumetype */
     public VolumetypeEnum getVolumetype() {
         return volumetype;
     }
@@ -224,20 +193,14 @@ public class RootVolume  {
         this.volumetype = volumetype;
     }
 
-    
-
     public RootVolume withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 系统盘大小，容量单位为GB，输入大小范围为[40-1024]。约束：系统盘大小取值应不小于镜像中系统盘的最小值（min_disk属性）。
-     * @return size
-     */
+    /** 系统盘大小，容量单位为GB，输入大小范围为[40-1024]。约束：系统盘大小取值应不小于镜像中系统盘的最小值（min_disk属性）。
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -246,20 +209,14 @@ public class RootVolume  {
         this.size = size;
     }
 
-    
-
     public RootVolume withClusterId(UUID clusterId) {
         this.clusterId = clusterId;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器系统盘对应的存储池的ID。 说明：使用专属分布式存储时需要该字段。存储池ID可以从管理控制台或者参考《专属分布式存储API参考》的“获取专属分布式存储池详情列表”章节获取。
-     * @return clusterId
-     */
+    /** 裸金属服务器系统盘对应的存储池的ID。 说明：使用专属分布式存储时需要该字段。存储池ID可以从管理控制台或者参考《专属分布式存储API参考》的“获取专属分布式存储池详情列表”章节获取。
+     * 
+     * @return clusterId */
     public UUID getClusterId() {
         return clusterId;
     }
@@ -268,20 +225,15 @@ public class RootVolume  {
         this.clusterId = clusterId;
     }
 
-    
-
     public RootVolume withClusterType(ClusterTypeEnum clusterType) {
         this.clusterType = clusterType;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器系统盘对应的磁盘存储类型。磁盘存储类型枚举值：DSS（专属分布式存储）。 说明：使用专属分布式存储时需要该字段。存储池类型可以从管理控制台或者参考《专属分布式存储API参考》的“获取专属分布式存储池详情列表”章节获取。
-     * @return clusterType
-     */
+    /** 裸金属服务器系统盘对应的磁盘存储类型。磁盘存储类型枚举值：DSS（专属分布式存储）。
+     * 说明：使用专属分布式存储时需要该字段。存储池类型可以从管理控制台或者参考《专属分布式存储API参考》的“获取专属分布式存储池详情列表”章节获取。
+     * 
+     * @return clusterType */
     public ClusterTypeEnum getClusterType() {
         return clusterType;
     }
@@ -289,8 +241,6 @@ public class RootVolume  {
     public void setClusterType(ClusterTypeEnum clusterType) {
         this.clusterType = clusterType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -301,15 +251,16 @@ public class RootVolume  {
             return false;
         }
         RootVolume rootVolume = (RootVolume) o;
-        return Objects.equals(this.volumetype, rootVolume.volumetype) &&
-            Objects.equals(this.size, rootVolume.size) &&
-            Objects.equals(this.clusterId, rootVolume.clusterId) &&
-            Objects.equals(this.clusterType, rootVolume.clusterType);
+        return Objects.equals(this.volumetype, rootVolume.volumetype) && Objects.equals(this.size, rootVolume.size)
+            && Objects.equals(this.clusterId, rootVolume.clusterId)
+            && Objects.equals(this.clusterType, rootVolume.clusterType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(volumetype, size, clusterId, clusterType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -321,16 +272,13 @@ public class RootVolume  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

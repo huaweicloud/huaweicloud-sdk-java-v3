@@ -1,56 +1,37 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.time.OffsetDateTime;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * ApiBindAclInfo
- */
-public class ApiBindAclInfo  {
-
-
+/** ApiBindAclInfo */
+public class ApiBindAclInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="acl_id")
-    
+    @JsonProperty(value = "acl_id")
+
     private String aclId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="acl_name")
-    
+    @JsonProperty(value = "acl_name")
+
     private String aclName;
-    /**
-     * ACL策略作用的对象类型
-     */
+
+    /** ACL策略作用的对象类型 */
     public static final class EntityTypeEnum {
 
-        
-        /**
-         * Enum IP for value: "IP"
-         */
+        /** Enum IP for value: "IP" */
         public static final EntityTypeEnum IP = new EntityTypeEnum("IP");
-        
-        /**
-         * Enum DOMAIN for value: "DOMAIN"
-         */
+
+        /** Enum DOMAIN for value: "DOMAIN" */
         public static final EntityTypeEnum DOMAIN = new EntityTypeEnum("DOMAIN");
-        
 
         private static final Map<String, EntityTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -79,7 +60,7 @@ public class ApiBindAclInfo  {
 
         @JsonCreator
         public static EntityTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             EntityTypeEnum result = STATIC_FIELDS.get(value);
@@ -90,7 +71,7 @@ public class ApiBindAclInfo  {
         }
 
         public static EntityTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             EntityTypeEnum result = STATIC_FIELDS.get(value);
@@ -114,27 +95,19 @@ public class ApiBindAclInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="entity_type")
-    
+    @JsonProperty(value = "entity_type")
+
     private EntityTypeEnum entityType;
-    /**
-     * ACL策略类型 - PERMIT：白名单类型 - DENY：黑名单类型
-     */
+
+    /** ACL策略类型 - PERMIT：白名单类型 - DENY：黑名单类型 */
     public static final class AclTypeEnum {
 
-        
-        /**
-         * Enum PERMIT for value: "PERMIT"
-         */
+        /** Enum PERMIT for value: "PERMIT" */
         public static final AclTypeEnum PERMIT = new AclTypeEnum("PERMIT");
-        
-        /**
-         * Enum DENY for value: "DENY"
-         */
+
+        /** Enum DENY for value: "DENY" */
         public static final AclTypeEnum DENY = new AclTypeEnum("DENY");
-        
 
         private static final Map<String, AclTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -163,7 +136,7 @@ public class ApiBindAclInfo  {
 
         @JsonCreator
         public static AclTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AclTypeEnum result = STATIC_FIELDS.get(value);
@@ -174,7 +147,7 @@ public class ApiBindAclInfo  {
         }
 
         public static AclTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AclTypeEnum result = STATIC_FIELDS.get(value);
@@ -198,40 +171,34 @@ public class ApiBindAclInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="acl_type")
-    
+    @JsonProperty(value = "acl_type")
+
     private AclTypeEnum aclType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="acl_value")
-    
+    @JsonProperty(value = "acl_value")
+
     private String aclValue;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_id")
-    
+    @JsonProperty(value = "env_id")
+
     private String envId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_name")
-    
+    @JsonProperty(value = "env_name")
+
     private String envName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bind_id")
-    
+    @JsonProperty(value = "bind_id")
+
     private String bindId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bind_time")
-    
+    @JsonProperty(value = "bind_time")
+
     private OffsetDateTime bindTime;
 
     public ApiBindAclInfo withAclId(String aclId) {
@@ -239,13 +206,9 @@ public class ApiBindAclInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * ACL策略编号
-     * @return aclId
-     */
+    /** ACL策略编号
+     * 
+     * @return aclId */
     public String getAclId() {
         return aclId;
     }
@@ -254,20 +217,14 @@ public class ApiBindAclInfo  {
         this.aclId = aclId;
     }
 
-    
-
     public ApiBindAclInfo withAclName(String aclName) {
         this.aclName = aclName;
         return this;
     }
 
-    
-
-
-    /**
-     * ACL策略名称
-     * @return aclName
-     */
+    /** ACL策略名称
+     * 
+     * @return aclName */
     public String getAclName() {
         return aclName;
     }
@@ -276,20 +233,14 @@ public class ApiBindAclInfo  {
         this.aclName = aclName;
     }
 
-    
-
     public ApiBindAclInfo withEntityType(EntityTypeEnum entityType) {
         this.entityType = entityType;
         return this;
     }
 
-    
-
-
-    /**
-     * ACL策略作用的对象类型
-     * @return entityType
-     */
+    /** ACL策略作用的对象类型
+     * 
+     * @return entityType */
     public EntityTypeEnum getEntityType() {
         return entityType;
     }
@@ -298,20 +249,14 @@ public class ApiBindAclInfo  {
         this.entityType = entityType;
     }
 
-    
-
     public ApiBindAclInfo withAclType(AclTypeEnum aclType) {
         this.aclType = aclType;
         return this;
     }
 
-    
-
-
-    /**
-     * ACL策略类型 - PERMIT：白名单类型 - DENY：黑名单类型
-     * @return aclType
-     */
+    /** ACL策略类型 - PERMIT：白名单类型 - DENY：黑名单类型
+     * 
+     * @return aclType */
     public AclTypeEnum getAclType() {
         return aclType;
     }
@@ -320,20 +265,14 @@ public class ApiBindAclInfo  {
         this.aclType = aclType;
     }
 
-    
-
     public ApiBindAclInfo withAclValue(String aclValue) {
         this.aclValue = aclValue;
         return this;
     }
 
-    
-
-
-    /**
-     * ACL策略值
-     * @return aclValue
-     */
+    /** ACL策略值
+     * 
+     * @return aclValue */
     public String getAclValue() {
         return aclValue;
     }
@@ -342,20 +281,14 @@ public class ApiBindAclInfo  {
         this.aclValue = aclValue;
     }
 
-    
-
     public ApiBindAclInfo withEnvId(String envId) {
         this.envId = envId;
         return this;
     }
 
-    
-
-
-    /**
-     * 生效的环境编号
-     * @return envId
-     */
+    /** 生效的环境编号
+     * 
+     * @return envId */
     public String getEnvId() {
         return envId;
     }
@@ -364,20 +297,14 @@ public class ApiBindAclInfo  {
         this.envId = envId;
     }
 
-    
-
     public ApiBindAclInfo withEnvName(String envName) {
         this.envName = envName;
         return this;
     }
 
-    
-
-
-    /**
-     * 生效的环境名称
-     * @return envName
-     */
+    /** 生效的环境名称
+     * 
+     * @return envName */
     public String getEnvName() {
         return envName;
     }
@@ -386,20 +313,14 @@ public class ApiBindAclInfo  {
         this.envName = envName;
     }
 
-    
-
     public ApiBindAclInfo withBindId(String bindId) {
         this.bindId = bindId;
         return this;
     }
 
-    
-
-
-    /**
-     * 绑定关系编号
-     * @return bindId
-     */
+    /** 绑定关系编号
+     * 
+     * @return bindId */
     public String getBindId() {
         return bindId;
     }
@@ -408,20 +329,14 @@ public class ApiBindAclInfo  {
         this.bindId = bindId;
     }
 
-    
-
     public ApiBindAclInfo withBindTime(OffsetDateTime bindTime) {
         this.bindTime = bindTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 绑定时间
-     * @return bindTime
-     */
+    /** 绑定时间
+     * 
+     * @return bindTime */
     public OffsetDateTime getBindTime() {
         return bindTime;
     }
@@ -429,8 +344,6 @@ public class ApiBindAclInfo  {
     public void setBindTime(OffsetDateTime bindTime) {
         this.bindTime = bindTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -441,20 +354,20 @@ public class ApiBindAclInfo  {
             return false;
         }
         ApiBindAclInfo apiBindAclInfo = (ApiBindAclInfo) o;
-        return Objects.equals(this.aclId, apiBindAclInfo.aclId) &&
-            Objects.equals(this.aclName, apiBindAclInfo.aclName) &&
-            Objects.equals(this.entityType, apiBindAclInfo.entityType) &&
-            Objects.equals(this.aclType, apiBindAclInfo.aclType) &&
-            Objects.equals(this.aclValue, apiBindAclInfo.aclValue) &&
-            Objects.equals(this.envId, apiBindAclInfo.envId) &&
-            Objects.equals(this.envName, apiBindAclInfo.envName) &&
-            Objects.equals(this.bindId, apiBindAclInfo.bindId) &&
-            Objects.equals(this.bindTime, apiBindAclInfo.bindTime);
+        return Objects.equals(this.aclId, apiBindAclInfo.aclId) && Objects.equals(this.aclName, apiBindAclInfo.aclName)
+            && Objects.equals(this.entityType, apiBindAclInfo.entityType)
+            && Objects.equals(this.aclType, apiBindAclInfo.aclType)
+            && Objects.equals(this.aclValue, apiBindAclInfo.aclValue)
+            && Objects.equals(this.envId, apiBindAclInfo.envId) && Objects.equals(this.envName, apiBindAclInfo.envName)
+            && Objects.equals(this.bindId, apiBindAclInfo.bindId)
+            && Objects.equals(this.bindTime, apiBindAclInfo.bindTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(aclId, aclName, entityType, aclType, aclValue, envId, envName, bindId, bindTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -471,16 +384,13 @@ public class ApiBindAclInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteTagRequest  {
-
-
+/** Request Object */
+public class DeleteTagRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type")
-    
+    @JsonProperty(value = "resource_type")
+
     private String resourceType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
+    @JsonProperty(value = "resource_id")
+
     private String resourceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
     public DeleteTagRequest withResourceType(String resourceType) {
@@ -40,13 +28,9 @@ public class DeleteTagRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 资源的类型：DNS-public_zone，DNS-private_zone，DNS-public_recordset，DNS-private_recordset，DNS-ptr_record。  
-     * @return resourceType
-     */
+    /** 资源的类型：DNS-public_zone，DNS-private_zone，DNS-public_recordset，DNS-private_recordset，DNS-ptr_record。
+     * 
+     * @return resourceType */
     public String getResourceType() {
         return resourceType;
     }
@@ -55,20 +39,14 @@ public class DeleteTagRequest  {
         this.resourceType = resourceType;
     }
 
-    
-
     public DeleteTagRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源id。  
-     * @return resourceId
-     */
+    /** 资源id。
+     * 
+     * @return resourceId */
     public String getResourceId() {
         return resourceId;
     }
@@ -77,20 +55,14 @@ public class DeleteTagRequest  {
         this.resourceId = resourceId;
     }
 
-    
-
     public DeleteTagRequest withKey(String key) {
         this.key = key;
         return this;
     }
 
-    
-
-
-    /**
-     * 标签key。  标签key不能为空或者空字符串。
-     * @return key
-     */
+    /** 标签key。 标签key不能为空或者空字符串。
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -98,8 +70,6 @@ public class DeleteTagRequest  {
     public void setKey(String key) {
         this.key = key;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class DeleteTagRequest  {
             return false;
         }
         DeleteTagRequest deleteTagRequest = (DeleteTagRequest) o;
-        return Objects.equals(this.resourceType, deleteTagRequest.resourceType) &&
-            Objects.equals(this.resourceId, deleteTagRequest.resourceId) &&
-            Objects.equals(this.key, deleteTagRequest.key);
+        return Objects.equals(this.resourceType, deleteTagRequest.resourceType)
+            && Objects.equals(this.resourceId, deleteTagRequest.resourceId)
+            && Objects.equals(this.key, deleteTagRequest.key);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resourceType, resourceId, key);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class DeleteTagRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

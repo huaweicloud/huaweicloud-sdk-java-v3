@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * City
- */
-public class City  {
-
-
+/** City */
+public class City {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code")
-    
+    @JsonProperty(value = "code")
+
     private String code;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public City withCode(String code) {
@@ -34,13 +23,9 @@ public class City  {
         return this;
     }
 
-    
-
-
-    /**
-     * 城市的编码。
-     * @return code
-     */
+    /** 城市的编码。
+     * 
+     * @return code */
     public String getCode() {
         return code;
     }
@@ -49,20 +34,14 @@ public class City  {
         this.code = code;
     }
 
-    
-
     public City withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 城市的名称，根据请求参数X-Language的取值返回对应语言的名称，目前仅支持中文。
-     * @return name
-     */
+    /** 城市的名称，根据请求参数X-Language的取值返回对应语言的名称，目前仅支持中文。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -70,8 +49,6 @@ public class City  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,14 @@ public class City  {
             return false;
         }
         City city = (City) o;
-        return Objects.equals(this.code, city.code) &&
-            Objects.equals(this.name, city.name);
+        return Objects.equals(this.code, city.code) && Objects.equals(this.name, city.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(code, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +76,13 @@ public class City  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

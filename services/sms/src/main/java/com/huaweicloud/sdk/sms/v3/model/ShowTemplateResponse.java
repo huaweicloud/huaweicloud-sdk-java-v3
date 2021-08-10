@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.TemplateResponseBody;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowTemplateResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template")
-    
+    @JsonProperty(value = "template")
+
     private TemplateResponseBody template;
 
     public ShowTemplateResponse withTemplate(TemplateResponseBody template) {
@@ -32,19 +21,17 @@ public class ShowTemplateResponse extends SdkResponse {
     }
 
     public ShowTemplateResponse withTemplate(Consumer<TemplateResponseBody> templateSetter) {
-        if(this.template == null ){
+        if (this.template == null) {
             this.template = new TemplateResponseBody();
             templateSetter.accept(this.template);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get template
-     * @return template
-     */
+    /** Get template
+     * 
+     * @return template */
     public TemplateResponseBody getTemplate() {
         return template;
     }
@@ -52,8 +39,6 @@ public class ShowTemplateResponse extends SdkResponse {
     public void setTemplate(TemplateResponseBody template) {
         this.template = template;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class ShowTemplateResponse extends SdkResponse {
         ShowTemplateResponse showTemplateResponse = (ShowTemplateResponse) o;
         return Objects.equals(this.template, showTemplateResponse.template);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(template);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class ShowTemplateResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

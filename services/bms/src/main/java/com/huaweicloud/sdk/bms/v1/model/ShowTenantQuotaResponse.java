@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bms.v1.model.Absolute;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowTenantQuotaResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="absolute")
-    
+    @JsonProperty(value = "absolute")
+
     private Absolute absolute;
 
     public ShowTenantQuotaResponse withAbsolute(Absolute absolute) {
@@ -32,19 +21,17 @@ public class ShowTenantQuotaResponse extends SdkResponse {
     }
 
     public ShowTenantQuotaResponse withAbsolute(Consumer<Absolute> absoluteSetter) {
-        if(this.absolute == null ){
+        if (this.absolute == null) {
             this.absolute = new Absolute();
             absoluteSetter.accept(this.absolute);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get absolute
-     * @return absolute
-     */
+    /** Get absolute
+     * 
+     * @return absolute */
     public Absolute getAbsolute() {
         return absolute;
     }
@@ -52,8 +39,6 @@ public class ShowTenantQuotaResponse extends SdkResponse {
     public void setAbsolute(Absolute absolute) {
         this.absolute = absolute;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class ShowTenantQuotaResponse extends SdkResponse {
         ShowTenantQuotaResponse showTenantQuotaResponse = (ShowTenantQuotaResponse) o;
         return Objects.equals(this.absolute, showTenantQuotaResponse.absolute);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(absolute);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class ShowTenantQuotaResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

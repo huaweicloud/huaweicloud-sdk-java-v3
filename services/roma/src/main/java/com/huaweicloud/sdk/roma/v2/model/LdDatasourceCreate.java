@@ -1,97 +1,63 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * LdDatasourceCreate
- */
-public class LdDatasourceCreate  {
-
-
+/** LdDatasourceCreate */
+public class LdDatasourceCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 数据源类型： - oracle：oracle数据源类型 - mysql：mysql数据源类型 - mongodb：mongodb数据源类型 - redis：redis数据源类型 - postgresql：postgresql数据源类型 - hive：hive数据源类型 - mssql：sqlserver数据源类型 - sqlserver：sqlserver数据源类型 - gauss200：gauss200数据源类型 - dws：dws数据源类型 - gauss100：gauss100数据源类型 - zenith：zenith数据源类型
-     */
+
+    /** 数据源类型： - oracle：oracle数据源类型 - mysql：mysql数据源类型 - mongodb：mongodb数据源类型 - redis：redis数据源类型 -
+     * postgresql：postgresql数据源类型 - hive：hive数据源类型 - mssql：sqlserver数据源类型 - sqlserver：sqlserver数据源类型 -
+     * gauss200：gauss200数据源类型 - dws：dws数据源类型 - gauss100：gauss100数据源类型 - zenith：zenith数据源类型 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum ORACLE for value: "oracle"
-         */
+        /** Enum ORACLE for value: "oracle" */
         public static final TypeEnum ORACLE = new TypeEnum("oracle");
-        
-        /**
-         * Enum MYSQL for value: "mysql"
-         */
+
+        /** Enum MYSQL for value: "mysql" */
         public static final TypeEnum MYSQL = new TypeEnum("mysql");
-        
-        /**
-         * Enum MONGODB for value: "mongodb"
-         */
+
+        /** Enum MONGODB for value: "mongodb" */
         public static final TypeEnum MONGODB = new TypeEnum("mongodb");
-        
-        /**
-         * Enum REDIS for value: "redis"
-         */
+
+        /** Enum REDIS for value: "redis" */
         public static final TypeEnum REDIS = new TypeEnum("redis");
-        
-        /**
-         * Enum POSTGRESQL for value: "postgresql"
-         */
+
+        /** Enum POSTGRESQL for value: "postgresql" */
         public static final TypeEnum POSTGRESQL = new TypeEnum("postgresql");
-        
-        /**
-         * Enum HIVE for value: "hive"
-         */
+
+        /** Enum HIVE for value: "hive" */
         public static final TypeEnum HIVE = new TypeEnum("hive");
-        
-        /**
-         * Enum MSSQL for value: "mssql"
-         */
+
+        /** Enum MSSQL for value: "mssql" */
         public static final TypeEnum MSSQL = new TypeEnum("mssql");
-        
-        /**
-         * Enum SQLSERVER for value: "sqlserver"
-         */
+
+        /** Enum SQLSERVER for value: "sqlserver" */
         public static final TypeEnum SQLSERVER = new TypeEnum("sqlserver");
-        
-        /**
-         * Enum GAUSS200 for value: "gauss200"
-         */
+
+        /** Enum GAUSS200 for value: "gauss200" */
         public static final TypeEnum GAUSS200 = new TypeEnum("gauss200");
-        
-        /**
-         * Enum DWS for value: "dws"
-         */
+
+        /** Enum DWS for value: "dws" */
         public static final TypeEnum DWS = new TypeEnum("dws");
-        
-        /**
-         * Enum GAUSS100 for value: "gauss100"
-         */
+
+        /** Enum GAUSS100 for value: "gauss100" */
         public static final TypeEnum GAUSS100 = new TypeEnum("gauss100");
-        
-        /**
-         * Enum ZENITH for value: "zenith"
-         */
+
+        /** Enum ZENITH for value: "zenith" */
         public static final TypeEnum ZENITH = new TypeEnum("zenith");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -130,7 +96,7 @@ public class LdDatasourceCreate  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -141,7 +107,7 @@ public class LdDatasourceCreate  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -165,40 +131,34 @@ public class LdDatasourceCreate  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private String url;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user")
-    
+    @JsonProperty(value = "user")
+
     private String user;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="password")
-    
+    @JsonProperty(value = "password")
+
     private String password;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remotepath")
-    
+    @JsonProperty(value = "remotepath")
+
     private String remotepath;
 
     public LdDatasourceCreate withName(String name) {
@@ -206,13 +166,9 @@ public class LdDatasourceCreate  {
         return this;
     }
 
-    
-
-
-    /**
-     * 数据源名称
-     * @return name
-     */
+    /** 数据源名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -221,20 +177,16 @@ public class LdDatasourceCreate  {
         this.name = name;
     }
 
-    
-
     public LdDatasourceCreate withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据源类型： - oracle：oracle数据源类型 - mysql：mysql数据源类型 - mongodb：mongodb数据源类型 - redis：redis数据源类型 - postgresql：postgresql数据源类型 - hive：hive数据源类型 - mssql：sqlserver数据源类型 - sqlserver：sqlserver数据源类型 - gauss200：gauss200数据源类型 - dws：dws数据源类型 - gauss100：gauss100数据源类型 - zenith：zenith数据源类型
-     * @return type
-     */
+    /** 数据源类型： - oracle：oracle数据源类型 - mysql：mysql数据源类型 - mongodb：mongodb数据源类型 - redis：redis数据源类型 -
+     * postgresql：postgresql数据源类型 - hive：hive数据源类型 - mssql：sqlserver数据源类型 - sqlserver：sqlserver数据源类型 -
+     * gauss200：gauss200数据源类型 - dws：dws数据源类型 - gauss100：gauss100数据源类型 - zenith：zenith数据源类型
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -243,20 +195,14 @@ public class LdDatasourceCreate  {
         this.type = type;
     }
 
-    
-
     public LdDatasourceCreate withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据源描述
-     * @return description
-     */
+    /** 数据源描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -265,20 +211,14 @@ public class LdDatasourceCreate  {
         this.description = description;
     }
 
-    
-
     public LdDatasourceCreate withUrl(String url) {
         this.url = url;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据源连接字符串
-     * @return url
-     */
+    /** 数据源连接字符串
+     * 
+     * @return url */
     public String getUrl() {
         return url;
     }
@@ -287,20 +227,14 @@ public class LdDatasourceCreate  {
         this.url = url;
     }
 
-    
-
     public LdDatasourceCreate withUser(String user) {
         this.user = user;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户名
-     * @return user
-     */
+    /** 用户名
+     * 
+     * @return user */
     public String getUser() {
         return user;
     }
@@ -309,20 +243,14 @@ public class LdDatasourceCreate  {
         this.user = user;
     }
 
-    
-
     public LdDatasourceCreate withPassword(String password) {
         this.password = password;
         return this;
     }
 
-    
-
-
-    /**
-     * 密码。  敏感信息不作为响应返回
-     * @return password
-     */
+    /** 密码。 敏感信息不作为响应返回
+     * 
+     * @return password */
     public String getPassword() {
         return password;
     }
@@ -331,20 +259,14 @@ public class LdDatasourceCreate  {
         this.password = password;
     }
 
-    
-
     public LdDatasourceCreate withRemotepath(String remotepath) {
         this.remotepath = remotepath;
         return this;
     }
 
-    
-
-
-    /**
-     * ftp上传路径  预留字段，暂不支持。
-     * @return remotepath
-     */
+    /** ftp上传路径 预留字段，暂不支持。
+     * 
+     * @return remotepath */
     public String getRemotepath() {
         return remotepath;
     }
@@ -352,8 +274,6 @@ public class LdDatasourceCreate  {
     public void setRemotepath(String remotepath) {
         this.remotepath = remotepath;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -364,18 +284,18 @@ public class LdDatasourceCreate  {
             return false;
         }
         LdDatasourceCreate ldDatasourceCreate = (LdDatasourceCreate) o;
-        return Objects.equals(this.name, ldDatasourceCreate.name) &&
-            Objects.equals(this.type, ldDatasourceCreate.type) &&
-            Objects.equals(this.description, ldDatasourceCreate.description) &&
-            Objects.equals(this.url, ldDatasourceCreate.url) &&
-            Objects.equals(this.user, ldDatasourceCreate.user) &&
-            Objects.equals(this.password, ldDatasourceCreate.password) &&
-            Objects.equals(this.remotepath, ldDatasourceCreate.remotepath);
+        return Objects.equals(this.name, ldDatasourceCreate.name) && Objects.equals(this.type, ldDatasourceCreate.type)
+            && Objects.equals(this.description, ldDatasourceCreate.description)
+            && Objects.equals(this.url, ldDatasourceCreate.url) && Objects.equals(this.user, ldDatasourceCreate.user)
+            && Objects.equals(this.password, ldDatasourceCreate.password)
+            && Objects.equals(this.remotepath, ldDatasourceCreate.remotepath);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, type, description, url, user, password, remotepath);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -390,16 +310,13 @@ public class LdDatasourceCreate  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

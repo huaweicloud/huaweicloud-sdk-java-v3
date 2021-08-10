@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListFunctionVersionsRequest  {
-
-
+/** Request Object */
+public class ListFunctionVersionsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="function_urn")
-    
+    @JsonProperty(value = "function_urn")
+
     private String functionUrn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxitems")
-    
+    @JsonProperty(value = "maxitems")
+
     private String maxitems;
 
     public ListFunctionVersionsRequest withFunctionUrn(String functionUrn) {
@@ -40,13 +28,9 @@ public class ListFunctionVersionsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 函数的URN，详细解释见FunctionGraph函数模型的描述。
-     * @return functionUrn
-     */
+    /** 函数的URN，详细解释见FunctionGraph函数模型的描述。
+     * 
+     * @return functionUrn */
     public String getFunctionUrn() {
         return functionUrn;
     }
@@ -55,20 +39,14 @@ public class ListFunctionVersionsRequest  {
         this.functionUrn = functionUrn;
     }
 
-    
-
     public ListFunctionVersionsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
 
-    
-
-
-    /**
-     * 上一次查询到的最后的记录位置。
-     * @return marker
-     */
+    /** 上一次查询到的最后的记录位置。
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -77,20 +55,14 @@ public class ListFunctionVersionsRequest  {
         this.marker = marker;
     }
 
-    
-
     public ListFunctionVersionsRequest withMaxitems(String maxitems) {
         this.maxitems = maxitems;
         return this;
     }
 
-    
-
-
-    /**
-     * 每次查询获取的最大函数记录数量。
-     * @return maxitems
-     */
+    /** 每次查询获取的最大函数记录数量。
+     * 
+     * @return maxitems */
     public String getMaxitems() {
         return maxitems;
     }
@@ -98,8 +70,6 @@ public class ListFunctionVersionsRequest  {
     public void setMaxitems(String maxitems) {
         this.maxitems = maxitems;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class ListFunctionVersionsRequest  {
             return false;
         }
         ListFunctionVersionsRequest listFunctionVersionsRequest = (ListFunctionVersionsRequest) o;
-        return Objects.equals(this.functionUrn, listFunctionVersionsRequest.functionUrn) &&
-            Objects.equals(this.marker, listFunctionVersionsRequest.marker) &&
-            Objects.equals(this.maxitems, listFunctionVersionsRequest.maxitems);
+        return Objects.equals(this.functionUrn, listFunctionVersionsRequest.functionUrn)
+            && Objects.equals(this.marker, listFunctionVersionsRequest.marker)
+            && Objects.equals(this.maxitems, listFunctionVersionsRequest.maxitems);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(functionUrn, marker, maxitems);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class ListFunctionVersionsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

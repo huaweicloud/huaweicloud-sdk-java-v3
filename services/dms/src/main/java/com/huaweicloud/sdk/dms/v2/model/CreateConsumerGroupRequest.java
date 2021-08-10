@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.dms.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dms.v2.model.CreateConsumerGroupReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateConsumerGroupRequest  {
-
-
+/** Request Object */
+public class CreateConsumerGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="queue_id")
-    
+    @JsonProperty(value = "queue_id")
+
     private String queueId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private CreateConsumerGroupReq body;
 
     public CreateConsumerGroupRequest withQueueId(String queueId) {
@@ -35,13 +24,9 @@ public class CreateConsumerGroupRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 指定的队列ID
-     * @return queueId
-     */
+    /** 指定的队列ID
+     * 
+     * @return queueId */
     public String getQueueId() {
         return queueId;
     }
@@ -50,27 +35,23 @@ public class CreateConsumerGroupRequest  {
         this.queueId = queueId;
     }
 
-    
-
     public CreateConsumerGroupRequest withBody(CreateConsumerGroupReq body) {
         this.body = body;
         return this;
     }
 
     public CreateConsumerGroupRequest withBody(Consumer<CreateConsumerGroupReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CreateConsumerGroupReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public CreateConsumerGroupReq getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class CreateConsumerGroupRequest  {
     public void setBody(CreateConsumerGroupReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class CreateConsumerGroupRequest  {
             return false;
         }
         CreateConsumerGroupRequest createConsumerGroupRequest = (CreateConsumerGroupRequest) o;
-        return Objects.equals(this.queueId, createConsumerGroupRequest.queueId) &&
-            Objects.equals(this.body, createConsumerGroupRequest.body);
+        return Objects.equals(this.queueId, createConsumerGroupRequest.queueId)
+            && Objects.equals(this.body, createConsumerGroupRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(queueId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class CreateConsumerGroupRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

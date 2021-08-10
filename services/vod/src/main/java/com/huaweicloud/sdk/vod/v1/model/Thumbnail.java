@@ -1,43 +1,29 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 截图参数
- */
-public class Thumbnail  {
+/** 截图参数 */
+public class Thumbnail {
 
-    /**
-     * 截图类型。  取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。
-     */
+    /** 截图类型。 取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum TIME for value: "time"
-         */
+        /** Enum TIME for value: "time" */
         public static final TypeEnum TIME = new TypeEnum("time");
-        
-        /**
-         * Enum DOTS for value: "dots"
-         */
+
+        /** Enum DOTS for value: "dots" */
         public static final TypeEnum DOTS = new TypeEnum("dots");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -66,7 +52,7 @@ public class Thumbnail  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -77,7 +63,7 @@ public class Thumbnail  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -101,46 +87,39 @@ public class Thumbnail  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time")
-    
+    @JsonProperty(value = "time")
+
     private Integer time;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dots")
-    
+    @JsonProperty(value = "dots")
+
     private List<Integer> dots = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cover_position")
-    
+    @JsonProperty(value = "cover_position")
+
     private Integer coverPosition;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="format")
-    
+    @JsonProperty(value = "format")
+
     private Integer format;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="aspect_ratio")
-    
+    @JsonProperty(value = "aspect_ratio")
+
     private Integer aspectRatio;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_length")
-    
+    @JsonProperty(value = "max_length")
+
     private Integer maxLength;
 
     public Thumbnail withType(TypeEnum type) {
@@ -148,13 +127,9 @@ public class Thumbnail  {
         return this;
     }
 
-    
-
-
-    /**
-     * 截图类型。  取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。
-     * @return type
-     */
+    /** 截图类型。 取值如下： - time：每次进行截图的间隔时间。 - dots: 按照指定的时间点截图。
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -163,20 +138,14 @@ public class Thumbnail  {
         this.type = type;
     }
 
-    
-
     public Thumbnail withTime(Integer time) {
         this.time = time;
         return this;
     }
 
-    
-
-
-    /**
-     * **type**取值为time时必填。根据时间间隔采样时的时间间隔值。  取值范围：[1,12]之间的整数。  单位：秒。
-     * @return time
-     */
+    /** **type**取值为time时必填。根据时间间隔采样时的时间间隔值。 取值范围：[1,12]之间的整数。 单位：秒。
+     * 
+     * @return time */
     public Integer getTime() {
         return time;
     }
@@ -185,16 +154,13 @@ public class Thumbnail  {
         this.time = time;
     }
 
-    
-
     public Thumbnail withDots(List<Integer> dots) {
         this.dots = dots;
         return this;
     }
 
-    
     public Thumbnail addDotsItem(Integer dotsItem) {
-        if(this.dots == null) {
+        if (this.dots == null) {
             this.dots = new ArrayList<>();
         }
         this.dots.add(dotsItem);
@@ -202,17 +168,16 @@ public class Thumbnail  {
     }
 
     public Thumbnail withDots(Consumer<List<Integer>> dotsSetter) {
-        if(this.dots == null) {
+        if (this.dots == null) {
             this.dots = new ArrayList<>();
         }
         dotsSetter.accept(this.dots);
         return this;
     }
 
-    /**
-     * **type**取值为dots时必填。指定时间截图时的时间点数组。
-     * @return dots
-     */
+    /** **type**取值为dots时必填。指定时间截图时的时间点数组。
+     * 
+     * @return dots */
     public List<Integer> getDots() {
         return dots;
     }
@@ -221,20 +186,14 @@ public class Thumbnail  {
         this.dots = dots;
     }
 
-    
-
     public Thumbnail withCoverPosition(Integer coverPosition) {
         this.coverPosition = coverPosition;
         return this;
     }
 
-    
-
-
-    /**
-     * 该值表示指定第几张截图作为封面。  默认值：1。
-     * @return coverPosition
-     */
+    /** 该值表示指定第几张截图作为封面。 默认值：1。
+     * 
+     * @return coverPosition */
     public Integer getCoverPosition() {
         return coverPosition;
     }
@@ -243,20 +202,14 @@ public class Thumbnail  {
         this.coverPosition = coverPosition;
     }
 
-    
-
     public Thumbnail withFormat(Integer format) {
         this.format = format;
         return this;
     }
 
-    
-
-
-    /**
-     * 截图文件格式。  取值如下： - 1：jpg。  默认值：1 。
-     * @return format
-     */
+    /** 截图文件格式。 取值如下： - 1：jpg。 默认值：1 。
+     * 
+     * @return format */
     public Integer getFormat() {
         return format;
     }
@@ -265,20 +218,14 @@ public class Thumbnail  {
         this.format = format;
     }
 
-    
-
     public Thumbnail withAspectRatio(Integer aspectRatio) {
         this.aspectRatio = aspectRatio;
         return this;
     }
 
-    
-
-
-    /**
-     * 纵横比，图像缩放方式。  取值如下： - 0：自适应（保持原有宽高比）。 - 1：16:9。  默认值：0。
-     * @return aspectRatio
-     */
+    /** 纵横比，图像缩放方式。 取值如下： - 0：自适应（保持原有宽高比）。 - 1：16:9。 默认值：0。
+     * 
+     * @return aspectRatio */
     public Integer getAspectRatio() {
         return aspectRatio;
     }
@@ -287,20 +234,14 @@ public class Thumbnail  {
         this.aspectRatio = aspectRatio;
     }
 
-    
-
     public Thumbnail withMaxLength(Integer maxLength) {
         this.maxLength = maxLength;
         return this;
     }
 
-    
-
-
-    /**
-     * 截图最长边的尺寸。  单位：像素。  宽边尺寸按照该尺寸与原始视频像素等比缩放计算。
-     * @return maxLength
-     */
+    /** 截图最长边的尺寸。 单位：像素。 宽边尺寸按照该尺寸与原始视频像素等比缩放计算。
+     * 
+     * @return maxLength */
     public Integer getMaxLength() {
         return maxLength;
     }
@@ -308,8 +249,6 @@ public class Thumbnail  {
     public void setMaxLength(Integer maxLength) {
         this.maxLength = maxLength;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -320,18 +259,17 @@ public class Thumbnail  {
             return false;
         }
         Thumbnail thumbnail = (Thumbnail) o;
-        return Objects.equals(this.type, thumbnail.type) &&
-            Objects.equals(this.time, thumbnail.time) &&
-            Objects.equals(this.dots, thumbnail.dots) &&
-            Objects.equals(this.coverPosition, thumbnail.coverPosition) &&
-            Objects.equals(this.format, thumbnail.format) &&
-            Objects.equals(this.aspectRatio, thumbnail.aspectRatio) &&
-            Objects.equals(this.maxLength, thumbnail.maxLength);
+        return Objects.equals(this.type, thumbnail.type) && Objects.equals(this.time, thumbnail.time)
+            && Objects.equals(this.dots, thumbnail.dots) && Objects.equals(this.coverPosition, thumbnail.coverPosition)
+            && Objects.equals(this.format, thumbnail.format) && Objects.equals(this.aspectRatio, thumbnail.aspectRatio)
+            && Objects.equals(this.maxLength, thumbnail.maxLength);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, time, dots, coverPosition, format, aspectRatio, maxLength);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -346,16 +284,13 @@ public class Thumbnail  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,55 +1,36 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * OpExtendInfoBckup
- */
-public class OpExtendInfoBckup  {
-
-
+/** OpExtendInfoBckup */
+public class OpExtendInfoBckup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_consistency_error_code")
-    
+    @JsonProperty(value = "app_consistency_error_code")
+
     private String appConsistencyErrorCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_consistency_error_message")
-    
+    @JsonProperty(value = "app_consistency_error_message")
+
     private String appConsistencyErrorMessage;
-    /**
-     * 应用一致性备份状态；0:非应用一致性，1：应用一致性备份
-     */
+
+    /** 应用一致性备份状态；0:非应用一致性，1：应用一致性备份 */
     public static final class AppConsistencyStatusEnum {
 
-        
-        /**
-         * Enum _0 for value: "0"
-         */
+        /** Enum _0 for value: "0" */
         public static final AppConsistencyStatusEnum _0 = new AppConsistencyStatusEnum("0");
-        
-        /**
-         * Enum _1 for value: "1"
-         */
+
+        /** Enum _1 for value: "1" */
         public static final AppConsistencyStatusEnum _1 = new AppConsistencyStatusEnum("1");
-        
 
         private static final Map<String, AppConsistencyStatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -78,7 +59,7 @@ public class OpExtendInfoBckup  {
 
         @JsonCreator
         public static AppConsistencyStatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AppConsistencyStatusEnum result = STATIC_FIELDS.get(value);
@@ -89,7 +70,7 @@ public class OpExtendInfoBckup  {
         }
 
         public static AppConsistencyStatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AppConsistencyStatusEnum result = STATIC_FIELDS.get(value);
@@ -113,39 +94,29 @@ public class OpExtendInfoBckup  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_consistency_status")
-    
+    @JsonProperty(value = "app_consistency_status")
+
     private AppConsistencyStatusEnum appConsistencyStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_id")
-    
+    @JsonProperty(value = "backup_id")
+
     private String backupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_name")
-    
+    @JsonProperty(value = "backup_name")
+
     private String backupName;
-    /**
-     * 是否增备
-     */
+
+    /** 是否增备 */
     public static final class IncrementalEnum {
 
-        
-        /**
-         * Enum _TRUE_ for value: "\"true\""
-         */
+        /** Enum _TRUE_ for value: "\"true\"" */
         public static final IncrementalEnum _TRUE_ = new IncrementalEnum("\"true\"");
-        
-        /**
-         * Enum _FALSE_ for value: "\"false\""
-         */
+
+        /** Enum _FALSE_ for value: "\"false\"" */
         public static final IncrementalEnum _FALSE_ = new IncrementalEnum("\"false\"");
-        
 
         private static final Map<String, IncrementalEnum> STATIC_FIELDS = createStaticFields();
 
@@ -174,7 +145,7 @@ public class OpExtendInfoBckup  {
 
         @JsonCreator
         public static IncrementalEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             IncrementalEnum result = STATIC_FIELDS.get(value);
@@ -185,7 +156,7 @@ public class OpExtendInfoBckup  {
         }
 
         public static IncrementalEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             IncrementalEnum result = STATIC_FIELDS.get(value);
@@ -209,10 +180,9 @@ public class OpExtendInfoBckup  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="incremental")
-    
+    @JsonProperty(value = "incremental")
+
     private IncrementalEnum incremental;
 
     public OpExtendInfoBckup withAppConsistencyErrorCode(String appConsistencyErrorCode) {
@@ -220,13 +190,9 @@ public class OpExtendInfoBckup  {
         return this;
     }
 
-    
-
-
-    /**
-     * 应用一致性备份失败错误码。请参见[错误码](ErrorCode.xml)。
-     * @return appConsistencyErrorCode
-     */
+    /** 应用一致性备份失败错误码。请参见[错误码](ErrorCode.xml)。
+     * 
+     * @return appConsistencyErrorCode */
     public String getAppConsistencyErrorCode() {
         return appConsistencyErrorCode;
     }
@@ -235,20 +201,14 @@ public class OpExtendInfoBckup  {
         this.appConsistencyErrorCode = appConsistencyErrorCode;
     }
 
-    
-
     public OpExtendInfoBckup withAppConsistencyErrorMessage(String appConsistencyErrorMessage) {
         this.appConsistencyErrorMessage = appConsistencyErrorMessage;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用一致性备份错误信息
-     * @return appConsistencyErrorMessage
-     */
+    /** 应用一致性备份错误信息
+     * 
+     * @return appConsistencyErrorMessage */
     public String getAppConsistencyErrorMessage() {
         return appConsistencyErrorMessage;
     }
@@ -257,20 +217,14 @@ public class OpExtendInfoBckup  {
         this.appConsistencyErrorMessage = appConsistencyErrorMessage;
     }
 
-    
-
     public OpExtendInfoBckup withAppConsistencyStatus(AppConsistencyStatusEnum appConsistencyStatus) {
         this.appConsistencyStatus = appConsistencyStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用一致性备份状态；0:非应用一致性，1：应用一致性备份
-     * @return appConsistencyStatus
-     */
+    /** 应用一致性备份状态；0:非应用一致性，1：应用一致性备份
+     * 
+     * @return appConsistencyStatus */
     public AppConsistencyStatusEnum getAppConsistencyStatus() {
         return appConsistencyStatus;
     }
@@ -279,20 +233,14 @@ public class OpExtendInfoBckup  {
         this.appConsistencyStatus = appConsistencyStatus;
     }
 
-    
-
     public OpExtendInfoBckup withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份副本ID
-     * @return backupId
-     */
+    /** 备份副本ID
+     * 
+     * @return backupId */
     public String getBackupId() {
         return backupId;
     }
@@ -301,20 +249,14 @@ public class OpExtendInfoBckup  {
         this.backupId = backupId;
     }
 
-    
-
     public OpExtendInfoBckup withBackupName(String backupName) {
         this.backupName = backupName;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份名称
-     * @return backupName
-     */
+    /** 备份名称
+     * 
+     * @return backupName */
     public String getBackupName() {
         return backupName;
     }
@@ -323,20 +265,14 @@ public class OpExtendInfoBckup  {
         this.backupName = backupName;
     }
 
-    
-
     public OpExtendInfoBckup withIncremental(IncrementalEnum incremental) {
         this.incremental = incremental;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否增备
-     * @return incremental
-     */
+    /** 是否增备
+     * 
+     * @return incremental */
     public IncrementalEnum getIncremental() {
         return incremental;
     }
@@ -344,8 +280,6 @@ public class OpExtendInfoBckup  {
     public void setIncremental(IncrementalEnum incremental) {
         this.incremental = incremental;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -356,17 +290,24 @@ public class OpExtendInfoBckup  {
             return false;
         }
         OpExtendInfoBckup opExtendInfoBckup = (OpExtendInfoBckup) o;
-        return Objects.equals(this.appConsistencyErrorCode, opExtendInfoBckup.appConsistencyErrorCode) &&
-            Objects.equals(this.appConsistencyErrorMessage, opExtendInfoBckup.appConsistencyErrorMessage) &&
-            Objects.equals(this.appConsistencyStatus, opExtendInfoBckup.appConsistencyStatus) &&
-            Objects.equals(this.backupId, opExtendInfoBckup.backupId) &&
-            Objects.equals(this.backupName, opExtendInfoBckup.backupName) &&
-            Objects.equals(this.incremental, opExtendInfoBckup.incremental);
+        return Objects.equals(this.appConsistencyErrorCode, opExtendInfoBckup.appConsistencyErrorCode)
+            && Objects.equals(this.appConsistencyErrorMessage, opExtendInfoBckup.appConsistencyErrorMessage)
+            && Objects.equals(this.appConsistencyStatus, opExtendInfoBckup.appConsistencyStatus)
+            && Objects.equals(this.backupId, opExtendInfoBckup.backupId)
+            && Objects.equals(this.backupName, opExtendInfoBckup.backupName)
+            && Objects.equals(this.incremental, opExtendInfoBckup.incremental);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(appConsistencyErrorCode, appConsistencyErrorMessage, appConsistencyStatus, backupId, backupName, incremental);
+        return Objects.hash(appConsistencyErrorCode,
+            appConsistencyErrorMessage,
+            appConsistencyStatus,
+            backupId,
+            backupName,
+            incremental);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -380,16 +321,13 @@ public class OpExtendInfoBckup  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

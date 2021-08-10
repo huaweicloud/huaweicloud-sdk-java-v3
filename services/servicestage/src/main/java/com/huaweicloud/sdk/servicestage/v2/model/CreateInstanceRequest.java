@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.InstanceCreate;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateInstanceRequest  {
-
-
+/** Request Object */
+public class CreateInstanceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="application_id")
-    
+    @JsonProperty(value = "application_id")
+
     private String applicationId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="component_id")
-    
+    @JsonProperty(value = "component_id")
+
     private String componentId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private InstanceCreate body;
 
     public CreateInstanceRequest withApplicationId(String applicationId) {
@@ -41,13 +29,9 @@ public class CreateInstanceRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 应用ID。
-     * @return applicationId
-     */
+    /** 应用ID。
+     * 
+     * @return applicationId */
     public String getApplicationId() {
         return applicationId;
     }
@@ -56,20 +40,14 @@ public class CreateInstanceRequest  {
         this.applicationId = applicationId;
     }
 
-    
-
     public CreateInstanceRequest withComponentId(String componentId) {
         this.componentId = componentId;
         return this;
     }
 
-    
-
-
-    /**
-     * 组件ID。
-     * @return componentId
-     */
+    /** 组件ID。
+     * 
+     * @return componentId */
     public String getComponentId() {
         return componentId;
     }
@@ -78,27 +56,23 @@ public class CreateInstanceRequest  {
         this.componentId = componentId;
     }
 
-    
-
     public CreateInstanceRequest withBody(InstanceCreate body) {
         this.body = body;
         return this;
     }
 
     public CreateInstanceRequest withBody(Consumer<InstanceCreate> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new InstanceCreate();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public InstanceCreate getBody() {
         return body;
     }
@@ -106,8 +80,6 @@ public class CreateInstanceRequest  {
     public void setBody(InstanceCreate body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class CreateInstanceRequest  {
             return false;
         }
         CreateInstanceRequest createInstanceRequest = (CreateInstanceRequest) o;
-        return Objects.equals(this.applicationId, createInstanceRequest.applicationId) &&
-            Objects.equals(this.componentId, createInstanceRequest.componentId) &&
-            Objects.equals(this.body, createInstanceRequest.body);
+        return Objects.equals(this.applicationId, createInstanceRequest.applicationId)
+            && Objects.equals(this.componentId, createInstanceRequest.componentId)
+            && Objects.equals(this.body, createInstanceRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(applicationId, componentId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class CreateInstanceRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

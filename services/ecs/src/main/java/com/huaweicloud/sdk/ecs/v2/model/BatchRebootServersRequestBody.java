@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.BatchRebootSeversOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * This is a auto create Body Object
- */
-public class BatchRebootServersRequestBody  {
-
-
+/** This is a auto create Body Object */
+public class BatchRebootServersRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="reboot")
-    
+    @JsonProperty(value = "reboot")
+
     private BatchRebootSeversOption reboot;
 
     public BatchRebootServersRequestBody withReboot(BatchRebootSeversOption reboot) {
@@ -30,19 +20,17 @@ public class BatchRebootServersRequestBody  {
     }
 
     public BatchRebootServersRequestBody withReboot(Consumer<BatchRebootSeversOption> rebootSetter) {
-        if(this.reboot == null ){
+        if (this.reboot == null) {
             this.reboot = new BatchRebootSeversOption();
             rebootSetter.accept(this.reboot);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get reboot
-     * @return reboot
-     */
+    /** Get reboot
+     * 
+     * @return reboot */
     public BatchRebootSeversOption getReboot() {
         return reboot;
     }
@@ -50,8 +38,6 @@ public class BatchRebootServersRequestBody  {
     public void setReboot(BatchRebootSeversOption reboot) {
         this.reboot = reboot;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class BatchRebootServersRequestBody  {
         BatchRebootServersRequestBody batchRebootServersRequestBody = (BatchRebootServersRequestBody) o;
         return Objects.equals(this.reboot, batchRebootServersRequestBody.reboot);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(reboot);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class BatchRebootServersRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

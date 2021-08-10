@@ -1,40 +1,28 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.IdentityAssumerole;
-import com.huaweicloud.sdk.iam.v3.model.ServicePolicy;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class AgencyAuthIdentity  {
+public class AgencyAuthIdentity {
 
-    /**
-     * Gets or Sets methods
-     */
+    /** Gets or Sets methods */
     public static final class MethodsEnum {
 
-        
-        /**
-         * Enum ASSUME_ROLE for value: "assume_role"
-         */
+        /** Enum ASSUME_ROLE for value: "assume_role" */
         public static final MethodsEnum ASSUME_ROLE = new MethodsEnum("assume_role");
-        
 
         private static final Map<String, MethodsEnum> STATIC_FIELDS = createStaticFields();
 
@@ -62,7 +50,7 @@ public class AgencyAuthIdentity  {
 
         @JsonCreator
         public static MethodsEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MethodsEnum result = STATIC_FIELDS.get(value);
@@ -73,7 +61,7 @@ public class AgencyAuthIdentity  {
         }
 
         public static MethodsEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MethodsEnum result = STATIC_FIELDS.get(value);
@@ -97,22 +85,19 @@ public class AgencyAuthIdentity  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="methods")
-    
+    @JsonProperty(value = "methods")
+
     private List<MethodsEnum> methods = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="assume_role")
-    
+    @JsonProperty(value = "assume_role")
+
     private IdentityAssumerole assumeRole;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy")
-    
+    @JsonProperty(value = "policy")
+
     private ServicePolicy policy;
 
     public AgencyAuthIdentity withMethods(List<MethodsEnum> methods) {
@@ -120,9 +105,8 @@ public class AgencyAuthIdentity  {
         return this;
     }
 
-    
     public AgencyAuthIdentity addMethodsItem(MethodsEnum methodsItem) {
-        if(this.methods == null) {
+        if (this.methods == null) {
             this.methods = new ArrayList<>();
         }
         this.methods.add(methodsItem);
@@ -130,17 +114,16 @@ public class AgencyAuthIdentity  {
     }
 
     public AgencyAuthIdentity withMethods(Consumer<List<MethodsEnum>> methodsSetter) {
-        if(this.methods == null) {
+        if (this.methods == null) {
             this.methods = new ArrayList<>();
         }
         methodsSetter.accept(this.methods);
         return this;
     }
 
-    /**
-     * 认证方法，该字段内容为[\"assume_role\"]。
-     * @return methods
-     */
+    /** 认证方法，该字段内容为[\"assume_role\"]。
+     * 
+     * @return methods */
     public List<MethodsEnum> getMethods() {
         return methods;
     }
@@ -149,27 +132,23 @@ public class AgencyAuthIdentity  {
         this.methods = methods;
     }
 
-    
-
     public AgencyAuthIdentity withAssumeRole(IdentityAssumerole assumeRole) {
         this.assumeRole = assumeRole;
         return this;
     }
 
     public AgencyAuthIdentity withAssumeRole(Consumer<IdentityAssumerole> assumeRoleSetter) {
-        if(this.assumeRole == null ){
+        if (this.assumeRole == null) {
             this.assumeRole = new IdentityAssumerole();
             assumeRoleSetter.accept(this.assumeRole);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get assumeRole
-     * @return assumeRole
-     */
+    /** Get assumeRole
+     * 
+     * @return assumeRole */
     public IdentityAssumerole getAssumeRole() {
         return assumeRole;
     }
@@ -178,27 +157,23 @@ public class AgencyAuthIdentity  {
         this.assumeRole = assumeRole;
     }
 
-    
-
     public AgencyAuthIdentity withPolicy(ServicePolicy policy) {
         this.policy = policy;
         return this;
     }
 
     public AgencyAuthIdentity withPolicy(Consumer<ServicePolicy> policySetter) {
-        if(this.policy == null ){
+        if (this.policy == null) {
             this.policy = new ServicePolicy();
             policySetter.accept(this.policy);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get policy
-     * @return policy
-     */
+    /** Get policy
+     * 
+     * @return policy */
     public ServicePolicy getPolicy() {
         return policy;
     }
@@ -206,8 +181,6 @@ public class AgencyAuthIdentity  {
     public void setPolicy(ServicePolicy policy) {
         this.policy = policy;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -218,14 +191,16 @@ public class AgencyAuthIdentity  {
             return false;
         }
         AgencyAuthIdentity agencyAuthIdentity = (AgencyAuthIdentity) o;
-        return Objects.equals(this.methods, agencyAuthIdentity.methods) &&
-            Objects.equals(this.assumeRole, agencyAuthIdentity.assumeRole) &&
-            Objects.equals(this.policy, agencyAuthIdentity.policy);
+        return Objects.equals(this.methods, agencyAuthIdentity.methods)
+            && Objects.equals(this.assumeRole, agencyAuthIdentity.assumeRole)
+            && Objects.equals(this.policy, agencyAuthIdentity.policy);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(methods, assumeRole, policy);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -236,16 +211,13 @@ public class AgencyAuthIdentity  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

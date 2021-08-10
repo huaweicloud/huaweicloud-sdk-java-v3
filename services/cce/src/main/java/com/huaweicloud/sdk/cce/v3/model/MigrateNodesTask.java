@@ -1,46 +1,32 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.MigrateNodesSpec;
-import com.huaweicloud.sdk.cce.v3.model.TaskStatus;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * MigrateNodesTask
- */
-public class MigrateNodesTask  {
-
-
+/** MigrateNodesTask */
+public class MigrateNodesTask {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apiVersion")
-    
+    @JsonProperty(value = "apiVersion")
+
     private String apiVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="kind")
-    
+    @JsonProperty(value = "kind")
+
     private String kind;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec")
-    
+    @JsonProperty(value = "spec")
+
     private MigrateNodesSpec spec;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private TaskStatus status;
 
     public MigrateNodesTask withApiVersion(String apiVersion) {
@@ -48,13 +34,9 @@ public class MigrateNodesTask  {
         return this;
     }
 
-    
-
-
-    /**
-     * API版本，固定值“v3”。
-     * @return apiVersion
-     */
+    /** API版本，固定值“v3”。
+     * 
+     * @return apiVersion */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -63,20 +45,14 @@ public class MigrateNodesTask  {
         this.apiVersion = apiVersion;
     }
 
-    
-
     public MigrateNodesTask withKind(String kind) {
         this.kind = kind;
         return this;
     }
 
-    
-
-
-    /**
-     * API类型，固定值“MigrateNodesTask”。
-     * @return kind
-     */
+    /** API类型，固定值“MigrateNodesTask”。
+     * 
+     * @return kind */
     public String getKind() {
         return kind;
     }
@@ -85,27 +61,23 @@ public class MigrateNodesTask  {
         this.kind = kind;
     }
 
-    
-
     public MigrateNodesTask withSpec(MigrateNodesSpec spec) {
         this.spec = spec;
         return this;
     }
 
     public MigrateNodesTask withSpec(Consumer<MigrateNodesSpec> specSetter) {
-        if(this.spec == null ){
+        if (this.spec == null) {
             this.spec = new MigrateNodesSpec();
             specSetter.accept(this.spec);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get spec
-     * @return spec
-     */
+    /** Get spec
+     * 
+     * @return spec */
     public MigrateNodesSpec getSpec() {
         return spec;
     }
@@ -114,27 +86,23 @@ public class MigrateNodesTask  {
         this.spec = spec;
     }
 
-    
-
     public MigrateNodesTask withStatus(TaskStatus status) {
         this.status = status;
         return this;
     }
 
     public MigrateNodesTask withStatus(Consumer<TaskStatus> statusSetter) {
-        if(this.status == null ){
+        if (this.status == null) {
             this.status = new TaskStatus();
             statusSetter.accept(this.status);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get status
-     * @return status
-     */
+    /** Get status
+     * 
+     * @return status */
     public TaskStatus getStatus() {
         return status;
     }
@@ -142,8 +110,6 @@ public class MigrateNodesTask  {
     public void setStatus(TaskStatus status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -154,15 +120,16 @@ public class MigrateNodesTask  {
             return false;
         }
         MigrateNodesTask migrateNodesTask = (MigrateNodesTask) o;
-        return Objects.equals(this.apiVersion, migrateNodesTask.apiVersion) &&
-            Objects.equals(this.kind, migrateNodesTask.kind) &&
-            Objects.equals(this.spec, migrateNodesTask.spec) &&
-            Objects.equals(this.status, migrateNodesTask.status);
+        return Objects.equals(this.apiVersion, migrateNodesTask.apiVersion)
+            && Objects.equals(this.kind, migrateNodesTask.kind) && Objects.equals(this.spec, migrateNodesTask.spec)
+            && Objects.equals(this.status, migrateNodesTask.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(apiVersion, kind, spec, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -174,16 +141,13 @@ public class MigrateNodesTask  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

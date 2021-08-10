@@ -1,69 +1,52 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.IdMarkDTO;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 组织查询的vmr列表，不越权显示vmr的来宾密码，主席密码等
- */
-public class QueryOrgVmrResultDTO  {
-
-
+/** 组织查询的vmr列表，不越权显示vmr的来宾密码，主席密码等 */
+public class QueryOrgVmrResultDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrId")
-    
+    @JsonProperty(value = "vmrId")
+
     private String vmrId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrName")
-    
+    @JsonProperty(value = "vmrName")
+
     private String vmrName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrPkgName")
-    
+    @JsonProperty(value = "vmrPkgName")
+
     private String vmrPkgName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrPkgParties")
-    
+    @JsonProperty(value = "vmrPkgParties")
+
     private Integer vmrPkgParties;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="member")
-    
+    @JsonProperty(value = "member")
+
     private IdMarkDTO member;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device")
-    
+    @JsonProperty(value = "device")
+
     private IdMarkDTO device;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
     public QueryOrgVmrResultDTO withId(String id) {
@@ -71,13 +54,9 @@ public class QueryOrgVmrResultDTO  {
         return this;
     }
 
-    
-
-
-    /**
-     * 唯一标识
-     * @return id
-     */
+    /** 唯一标识
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -86,20 +65,14 @@ public class QueryOrgVmrResultDTO  {
         this.id = id;
     }
 
-    
-
     public QueryOrgVmrResultDTO withVmrId(String vmrId) {
         this.vmrId = vmrId;
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室ID。
-     * @return vmrId
-     */
+    /** 云会议室ID。
+     * 
+     * @return vmrId */
     public String getVmrId() {
         return vmrId;
     }
@@ -108,20 +81,14 @@ public class QueryOrgVmrResultDTO  {
         this.vmrId = vmrId;
     }
 
-    
-
     public QueryOrgVmrResultDTO withVmrName(String vmrName) {
         this.vmrName = vmrName;
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室名称。
-     * @return vmrName
-     */
+    /** 云会议室名称。
+     * 
+     * @return vmrName */
     public String getVmrName() {
         return vmrName;
     }
@@ -130,20 +97,14 @@ public class QueryOrgVmrResultDTO  {
         this.vmrName = vmrName;
     }
 
-    
-
     public QueryOrgVmrResultDTO withVmrPkgName(String vmrPkgName) {
         this.vmrPkgName = vmrPkgName;
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室套餐名称。
-     * @return vmrPkgName
-     */
+    /** 云会议室套餐名称。
+     * 
+     * @return vmrPkgName */
     public String getVmrPkgName() {
         return vmrPkgName;
     }
@@ -152,20 +113,14 @@ public class QueryOrgVmrResultDTO  {
         this.vmrPkgName = vmrPkgName;
     }
 
-    
-
     public QueryOrgVmrResultDTO withVmrPkgParties(Integer vmrPkgParties) {
         this.vmrPkgParties = vmrPkgParties;
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室套餐会议并发方数。
-     * @return vmrPkgParties
-     */
+    /** 云会议室套餐会议并发方数。
+     * 
+     * @return vmrPkgParties */
     public Integer getVmrPkgParties() {
         return vmrPkgParties;
     }
@@ -174,27 +129,23 @@ public class QueryOrgVmrResultDTO  {
         this.vmrPkgParties = vmrPkgParties;
     }
 
-    
-
     public QueryOrgVmrResultDTO withMember(IdMarkDTO member) {
         this.member = member;
         return this;
     }
 
     public QueryOrgVmrResultDTO withMember(Consumer<IdMarkDTO> memberSetter) {
-        if(this.member == null ){
+        if (this.member == null) {
             this.member = new IdMarkDTO();
             memberSetter.accept(this.member);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get member
-     * @return member
-     */
+    /** Get member
+     * 
+     * @return member */
     public IdMarkDTO getMember() {
         return member;
     }
@@ -203,27 +154,23 @@ public class QueryOrgVmrResultDTO  {
         this.member = member;
     }
 
-    
-
     public QueryOrgVmrResultDTO withDevice(IdMarkDTO device) {
         this.device = device;
         return this;
     }
 
     public QueryOrgVmrResultDTO withDevice(Consumer<IdMarkDTO> deviceSetter) {
-        if(this.device == null ){
+        if (this.device == null) {
             this.device = new IdMarkDTO();
             deviceSetter.accept(this.device);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get device
-     * @return device
-     */
+    /** Get device
+     * 
+     * @return device */
     public IdMarkDTO getDevice() {
         return device;
     }
@@ -232,20 +179,14 @@ public class QueryOrgVmrResultDTO  {
         this.device = device;
     }
 
-    
-
     public QueryOrgVmrResultDTO withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室状态。 * 0：正常 * 1：冻结 * 2：未分配 
-     * @return status
-     */
+    /** 云会议室状态。 * 0：正常 * 1：冻结 * 2：未分配
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -253,8 +194,6 @@ public class QueryOrgVmrResultDTO  {
     public void setStatus(Integer status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -265,19 +204,21 @@ public class QueryOrgVmrResultDTO  {
             return false;
         }
         QueryOrgVmrResultDTO queryOrgVmrResultDTO = (QueryOrgVmrResultDTO) o;
-        return Objects.equals(this.id, queryOrgVmrResultDTO.id) &&
-            Objects.equals(this.vmrId, queryOrgVmrResultDTO.vmrId) &&
-            Objects.equals(this.vmrName, queryOrgVmrResultDTO.vmrName) &&
-            Objects.equals(this.vmrPkgName, queryOrgVmrResultDTO.vmrPkgName) &&
-            Objects.equals(this.vmrPkgParties, queryOrgVmrResultDTO.vmrPkgParties) &&
-            Objects.equals(this.member, queryOrgVmrResultDTO.member) &&
-            Objects.equals(this.device, queryOrgVmrResultDTO.device) &&
-            Objects.equals(this.status, queryOrgVmrResultDTO.status);
+        return Objects.equals(this.id, queryOrgVmrResultDTO.id)
+            && Objects.equals(this.vmrId, queryOrgVmrResultDTO.vmrId)
+            && Objects.equals(this.vmrName, queryOrgVmrResultDTO.vmrName)
+            && Objects.equals(this.vmrPkgName, queryOrgVmrResultDTO.vmrPkgName)
+            && Objects.equals(this.vmrPkgParties, queryOrgVmrResultDTO.vmrPkgParties)
+            && Objects.equals(this.member, queryOrgVmrResultDTO.member)
+            && Objects.equals(this.device, queryOrgVmrResultDTO.device)
+            && Objects.equals(this.status, queryOrgVmrResultDTO.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, vmrId, vmrName, vmrPkgName, vmrPkgParties, member, device, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -293,16 +234,13 @@ public class QueryOrgVmrResultDTO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

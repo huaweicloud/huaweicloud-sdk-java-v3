@@ -1,71 +1,51 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * UrlDomainsResp
- */
-public class UrlDomainsResp  {
-
-
+/** UrlDomainsResp */
+public class UrlDomainsResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
+
     private String domain;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cname_status")
-    
+    @JsonProperty(value = "cname_status")
+
     private Integer cnameStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ssl_id")
-    
+    @JsonProperty(value = "ssl_id")
+
     private String sslId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ssl_name")
-    
+    @JsonProperty(value = "ssl_name")
+
     private String sslName;
-    /**
-     * 最小SSL协议版本号，支持TLSv1.1或TLSv1.2
-     */
+
+    /** 最小SSL协议版本号，支持TLSv1.1或TLSv1.2 */
     public static final class MinSslVersionEnum {
 
-        
-        /**
-         * Enum TLSV1_1 for value: "TLSv1.1"
-         */
+        /** Enum TLSV1_1 for value: "TLSv1.1" */
         public static final MinSslVersionEnum TLSV1_1 = new MinSslVersionEnum("TLSv1.1");
-        
-        /**
-         * Enum TLSV1_2 for value: "TLSv1.2"
-         */
+
+        /** Enum TLSV1_2 for value: "TLSv1.2" */
         public static final MinSslVersionEnum TLSV1_2 = new MinSslVersionEnum("TLSv1.2");
-        
 
         private static final Map<String, MinSslVersionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -94,7 +74,7 @@ public class UrlDomainsResp  {
 
         @JsonCreator
         public static MinSslVersionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MinSslVersionEnum result = STATIC_FIELDS.get(value);
@@ -105,7 +85,7 @@ public class UrlDomainsResp  {
         }
 
         public static MinSslVersionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MinSslVersionEnum result = STATIC_FIELDS.get(value);
@@ -129,10 +109,9 @@ public class UrlDomainsResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="min_ssl_version")
-    
+    @JsonProperty(value = "min_ssl_version")
+
     private MinSslVersionEnum minSslVersion;
 
     public UrlDomainsResp withId(String id) {
@@ -140,13 +119,9 @@ public class UrlDomainsResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 域名编号
-     * @return id
-     */
+    /** 域名编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -155,20 +130,14 @@ public class UrlDomainsResp  {
         this.id = id;
     }
 
-    
-
     public UrlDomainsResp withDomain(String domain) {
         this.domain = domain;
         return this;
     }
 
-    
-
-
-    /**
-     * 访问域名
-     * @return domain
-     */
+    /** 访问域名
+     * 
+     * @return domain */
     public String getDomain() {
         return domain;
     }
@@ -177,20 +146,14 @@ public class UrlDomainsResp  {
         this.domain = domain;
     }
 
-    
-
     public UrlDomainsResp withCnameStatus(Integer cnameStatus) {
         this.cnameStatus = cnameStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名cname状态： - 1：未解析 - 2：解析中 - 3：解析成功 - 4：解析失败
-     * @return cnameStatus
-     */
+    /** 域名cname状态： - 1：未解析 - 2：解析中 - 3：解析成功 - 4：解析失败
+     * 
+     * @return cnameStatus */
     public Integer getCnameStatus() {
         return cnameStatus;
     }
@@ -199,20 +162,14 @@ public class UrlDomainsResp  {
         this.cnameStatus = cnameStatus;
     }
 
-    
-
     public UrlDomainsResp withSslId(String sslId) {
         this.sslId = sslId;
         return this;
     }
 
-    
-
-
-    /**
-     * SSL证书编号
-     * @return sslId
-     */
+    /** SSL证书编号
+     * 
+     * @return sslId */
     public String getSslId() {
         return sslId;
     }
@@ -221,20 +178,14 @@ public class UrlDomainsResp  {
         this.sslId = sslId;
     }
 
-    
-
     public UrlDomainsResp withSslName(String sslName) {
         this.sslName = sslName;
         return this;
     }
 
-    
-
-
-    /**
-     * SSL证书名称
-     * @return sslName
-     */
+    /** SSL证书名称
+     * 
+     * @return sslName */
     public String getSslName() {
         return sslName;
     }
@@ -243,20 +194,14 @@ public class UrlDomainsResp  {
         this.sslName = sslName;
     }
 
-    
-
     public UrlDomainsResp withMinSslVersion(MinSslVersionEnum minSslVersion) {
         this.minSslVersion = minSslVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * 最小SSL协议版本号，支持TLSv1.1或TLSv1.2
-     * @return minSslVersion
-     */
+    /** 最小SSL协议版本号，支持TLSv1.1或TLSv1.2
+     * 
+     * @return minSslVersion */
     public MinSslVersionEnum getMinSslVersion() {
         return minSslVersion;
     }
@@ -264,8 +209,6 @@ public class UrlDomainsResp  {
     public void setMinSslVersion(MinSslVersionEnum minSslVersion) {
         this.minSslVersion = minSslVersion;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -276,17 +219,17 @@ public class UrlDomainsResp  {
             return false;
         }
         UrlDomainsResp urlDomainsResp = (UrlDomainsResp) o;
-        return Objects.equals(this.id, urlDomainsResp.id) &&
-            Objects.equals(this.domain, urlDomainsResp.domain) &&
-            Objects.equals(this.cnameStatus, urlDomainsResp.cnameStatus) &&
-            Objects.equals(this.sslId, urlDomainsResp.sslId) &&
-            Objects.equals(this.sslName, urlDomainsResp.sslName) &&
-            Objects.equals(this.minSslVersion, urlDomainsResp.minSslVersion);
+        return Objects.equals(this.id, urlDomainsResp.id) && Objects.equals(this.domain, urlDomainsResp.domain)
+            && Objects.equals(this.cnameStatus, urlDomainsResp.cnameStatus)
+            && Objects.equals(this.sslId, urlDomainsResp.sslId) && Objects.equals(this.sslName, urlDomainsResp.sslName)
+            && Objects.equals(this.minSslVersion, urlDomainsResp.minSslVersion);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, domain, cnameStatus, sslId, sslName, minSslVersion);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -300,16 +243,13 @@ public class UrlDomainsResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

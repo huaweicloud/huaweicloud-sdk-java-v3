@@ -1,44 +1,33 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  *  
  */
-public class NovaSimpleKeypair  {
-
-
+public class NovaSimpleKeypair {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fingerprint")
-    
+    @JsonProperty(value = "fingerprint")
+
     private String fingerprint;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="public_key")
-    
+    @JsonProperty(value = "public_key")
+
     private String publicKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
     public NovaSimpleKeypair withFingerprint(String fingerprint) {
@@ -46,13 +35,9 @@ public class NovaSimpleKeypair  {
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥对应指纹信息。
-     * @return fingerprint
-     */
+    /** 密钥对应指纹信息。
+     * 
+     * @return fingerprint */
     public String getFingerprint() {
         return fingerprint;
     }
@@ -61,20 +46,14 @@ public class NovaSimpleKeypair  {
         this.fingerprint = fingerprint;
     }
 
-    
-
     public NovaSimpleKeypair withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥名称。
-     * @return name
-     */
+    /** 密钥名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -83,20 +62,14 @@ public class NovaSimpleKeypair  {
         this.name = name;
     }
 
-    
-
     public NovaSimpleKeypair withPublicKey(String publicKey) {
         this.publicKey = publicKey;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥对应publicKey信息。
-     * @return publicKey
-     */
+    /** 密钥对应publicKey信息。
+     * 
+     * @return publicKey */
     public String getPublicKey() {
         return publicKey;
     }
@@ -105,20 +78,14 @@ public class NovaSimpleKeypair  {
         this.publicKey = publicKey;
     }
 
-    
-
     public NovaSimpleKeypair withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥类型，默认“ssh”  微版本2.2以上支持
-     * @return type
-     */
+    /** 密钥类型，默认“ssh” 微版本2.2以上支持
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -126,8 +93,6 @@ public class NovaSimpleKeypair  {
     public void setType(String type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +103,17 @@ public class NovaSimpleKeypair  {
             return false;
         }
         NovaSimpleKeypair novaSimpleKeypair = (NovaSimpleKeypair) o;
-        return Objects.equals(this.fingerprint, novaSimpleKeypair.fingerprint) &&
-            Objects.equals(this.name, novaSimpleKeypair.name) &&
-            Objects.equals(this.publicKey, novaSimpleKeypair.publicKey) &&
-            Objects.equals(this.type, novaSimpleKeypair.type);
+        return Objects.equals(this.fingerprint, novaSimpleKeypair.fingerprint)
+            && Objects.equals(this.name, novaSimpleKeypair.name)
+            && Objects.equals(this.publicKey, novaSimpleKeypair.publicKey)
+            && Objects.equals(this.type, novaSimpleKeypair.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(fingerprint, name, publicKey, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +125,13 @@ public class NovaSimpleKeypair  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowOffSiteBackupPolicyRequest  {
-
-
+/** Request Object */
+public class ShowOffSiteBackupPolicyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
     public ShowOffSiteBackupPolicyRequest withXLanguage(String xLanguage) {
@@ -34,15 +23,11 @@ public class ShowOffSiteBackupPolicyRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -51,20 +36,14 @@ public class ShowOffSiteBackupPolicyRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ShowOffSiteBackupPolicyRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -72,8 +51,6 @@ public class ShowOffSiteBackupPolicyRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +61,15 @@ public class ShowOffSiteBackupPolicyRequest  {
             return false;
         }
         ShowOffSiteBackupPolicyRequest showOffSiteBackupPolicyRequest = (ShowOffSiteBackupPolicyRequest) o;
-        return Objects.equals(this.xLanguage, showOffSiteBackupPolicyRequest.xLanguage) &&
-            Objects.equals(this.instanceId, showOffSiteBackupPolicyRequest.instanceId);
+        return Objects.equals(this.xLanguage, showOffSiteBackupPolicyRequest.xLanguage)
+            && Objects.equals(this.instanceId, showOffSiteBackupPolicyRequest.instanceId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +79,13 @@ public class ShowOffSiteBackupPolicyRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Hook
- */
-public class Hook  {
-
-
+/** Hook */
+public class Hook {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="callback_url")
-    
+    @JsonProperty(value = "callback_url")
+
     private String callbackUrl;
 
     public Hook withId(String id) {
@@ -40,13 +28,9 @@ public class Hook  {
         return this;
     }
 
-    
-
-
-    /**
-     * hook ID。
-     * @return id
-     */
+    /** hook ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -55,20 +39,14 @@ public class Hook  {
         this.id = id;
     }
 
-    
-
     public Hook withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * hook类型。
-     * @return type
-     */
+    /** hook类型。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -77,20 +55,14 @@ public class Hook  {
         this.type = type;
     }
 
-    
-
     public Hook withCallbackUrl(String callbackUrl) {
         this.callbackUrl = callbackUrl;
         return this;
     }
 
-    
-
-
-    /**
-     * 回滚URL。
-     * @return callbackUrl
-     */
+    /** 回滚URL。
+     * 
+     * @return callbackUrl */
     public String getCallbackUrl() {
         return callbackUrl;
     }
@@ -98,8 +70,6 @@ public class Hook  {
     public void setCallbackUrl(String callbackUrl) {
         this.callbackUrl = callbackUrl;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,15 @@ public class Hook  {
             return false;
         }
         Hook hook = (Hook) o;
-        return Objects.equals(this.id, hook.id) &&
-            Objects.equals(this.type, hook.type) &&
-            Objects.equals(this.callbackUrl, hook.callbackUrl);
+        return Objects.equals(this.id, hook.id) && Objects.equals(this.type, hook.type)
+            && Objects.equals(this.callbackUrl, hook.callbackUrl);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, type, callbackUrl);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +99,13 @@ public class Hook  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

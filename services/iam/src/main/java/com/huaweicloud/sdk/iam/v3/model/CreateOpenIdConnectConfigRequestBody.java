@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.CreateOpenIdConnectConfig;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 请求体
- */
-public class CreateOpenIdConnectConfigRequestBody  {
-
-
+/** 请求体 */
+public class CreateOpenIdConnectConfigRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="openid_connect_config")
-    
+    @JsonProperty(value = "openid_connect_config")
+
     private CreateOpenIdConnectConfig openidConnectConfig;
 
     public CreateOpenIdConnectConfigRequestBody withOpenidConnectConfig(CreateOpenIdConnectConfig openidConnectConfig) {
@@ -29,20 +19,19 @@ public class CreateOpenIdConnectConfigRequestBody  {
         return this;
     }
 
-    public CreateOpenIdConnectConfigRequestBody withOpenidConnectConfig(Consumer<CreateOpenIdConnectConfig> openidConnectConfigSetter) {
-        if(this.openidConnectConfig == null ){
+    public CreateOpenIdConnectConfigRequestBody withOpenidConnectConfig(
+        Consumer<CreateOpenIdConnectConfig> openidConnectConfigSetter) {
+        if (this.openidConnectConfig == null) {
             this.openidConnectConfig = new CreateOpenIdConnectConfig();
             openidConnectConfigSetter.accept(this.openidConnectConfig);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get openidConnectConfig
-     * @return openidConnectConfig
-     */
+    /** Get openidConnectConfig
+     * 
+     * @return openidConnectConfig */
     public CreateOpenIdConnectConfig getOpenidConnectConfig() {
         return openidConnectConfig;
     }
@@ -50,8 +39,6 @@ public class CreateOpenIdConnectConfigRequestBody  {
     public void setOpenidConnectConfig(CreateOpenIdConnectConfig openidConnectConfig) {
         this.openidConnectConfig = openidConnectConfig;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -61,13 +48,16 @@ public class CreateOpenIdConnectConfigRequestBody  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CreateOpenIdConnectConfigRequestBody createOpenIdConnectConfigRequestBody = (CreateOpenIdConnectConfigRequestBody) o;
+        CreateOpenIdConnectConfigRequestBody createOpenIdConnectConfigRequestBody =
+            (CreateOpenIdConnectConfigRequestBody) o;
         return Objects.equals(this.openidConnectConfig, createOpenIdConnectConfigRequestBody.openidConnectConfig);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(openidConnectConfig);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +66,13 @@ public class CreateOpenIdConnectConfigRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

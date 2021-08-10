@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.RestoreToExistingInstanceRequestBodySource;
-import com.huaweicloud.sdk.rds.v3.model.RestoreToExistingInstanceRequestBodyTarget;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * RestoreToExistingInstanceRequestBody
- */
-public class RestoreToExistingInstanceRequestBody  {
-
-
+/** RestoreToExistingInstanceRequestBody */
+public class RestoreToExistingInstanceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source")
-    
+    @JsonProperty(value = "source")
+
     private RestoreToExistingInstanceRequestBodySource source;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target")
-    
+    @JsonProperty(value = "target")
+
     private RestoreToExistingInstanceRequestBodyTarget target;
 
     public RestoreToExistingInstanceRequestBody withSource(RestoreToExistingInstanceRequestBodySource source) {
@@ -36,20 +24,19 @@ public class RestoreToExistingInstanceRequestBody  {
         return this;
     }
 
-    public RestoreToExistingInstanceRequestBody withSource(Consumer<RestoreToExistingInstanceRequestBodySource> sourceSetter) {
-        if(this.source == null ){
+    public RestoreToExistingInstanceRequestBody withSource(
+        Consumer<RestoreToExistingInstanceRequestBodySource> sourceSetter) {
+        if (this.source == null) {
             this.source = new RestoreToExistingInstanceRequestBodySource();
             sourceSetter.accept(this.source);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get source
-     * @return source
-     */
+    /** Get source
+     * 
+     * @return source */
     public RestoreToExistingInstanceRequestBodySource getSource() {
         return source;
     }
@@ -58,27 +45,24 @@ public class RestoreToExistingInstanceRequestBody  {
         this.source = source;
     }
 
-    
-
     public RestoreToExistingInstanceRequestBody withTarget(RestoreToExistingInstanceRequestBodyTarget target) {
         this.target = target;
         return this;
     }
 
-    public RestoreToExistingInstanceRequestBody withTarget(Consumer<RestoreToExistingInstanceRequestBodyTarget> targetSetter) {
-        if(this.target == null ){
+    public RestoreToExistingInstanceRequestBody withTarget(
+        Consumer<RestoreToExistingInstanceRequestBodyTarget> targetSetter) {
+        if (this.target == null) {
             this.target = new RestoreToExistingInstanceRequestBodyTarget();
             targetSetter.accept(this.target);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get target
-     * @return target
-     */
+    /** Get target
+     * 
+     * @return target */
     public RestoreToExistingInstanceRequestBodyTarget getTarget() {
         return target;
     }
@@ -86,8 +70,6 @@ public class RestoreToExistingInstanceRequestBody  {
     public void setTarget(RestoreToExistingInstanceRequestBodyTarget target) {
         this.target = target;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -97,14 +79,17 @@ public class RestoreToExistingInstanceRequestBody  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        RestoreToExistingInstanceRequestBody restoreToExistingInstanceRequestBody = (RestoreToExistingInstanceRequestBody) o;
-        return Objects.equals(this.source, restoreToExistingInstanceRequestBody.source) &&
-            Objects.equals(this.target, restoreToExistingInstanceRequestBody.target);
+        RestoreToExistingInstanceRequestBody restoreToExistingInstanceRequestBody =
+            (RestoreToExistingInstanceRequestBody) o;
+        return Objects.equals(this.source, restoreToExistingInstanceRequestBody.source)
+            && Objects.equals(this.target, restoreToExistingInstanceRequestBody.target);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(source, target);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,16 +99,13 @@ public class RestoreToExistingInstanceRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

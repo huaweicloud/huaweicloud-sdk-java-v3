@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.PolicyUpdateReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdatePolicyRequest  {
-
-
+/** Request Object */
+public class UpdatePolicyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_id")
-    
+    @JsonProperty(value = "policy_id")
+
     private String policyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private PolicyUpdateReq body;
 
     public UpdatePolicyRequest withPolicyId(String policyId) {
@@ -35,13 +24,9 @@ public class UpdatePolicyRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 策略ID
-     * @return policyId
-     */
+    /** 策略ID
+     * 
+     * @return policyId */
     public String getPolicyId() {
         return policyId;
     }
@@ -50,27 +35,23 @@ public class UpdatePolicyRequest  {
         this.policyId = policyId;
     }
 
-    
-
     public UpdatePolicyRequest withBody(PolicyUpdateReq body) {
         this.body = body;
         return this;
     }
 
     public UpdatePolicyRequest withBody(Consumer<PolicyUpdateReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new PolicyUpdateReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public PolicyUpdateReq getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdatePolicyRequest  {
     public void setBody(PolicyUpdateReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdatePolicyRequest  {
             return false;
         }
         UpdatePolicyRequest updatePolicyRequest = (UpdatePolicyRequest) o;
-        return Objects.equals(this.policyId, updatePolicyRequest.policyId) &&
-            Objects.equals(this.body, updatePolicyRequest.body);
+        return Objects.equals(this.policyId, updatePolicyRequest.policyId)
+            && Objects.equals(this.body, updatePolicyRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(policyId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdatePolicyRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

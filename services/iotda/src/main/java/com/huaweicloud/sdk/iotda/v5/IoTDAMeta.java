@@ -6,14 +6,12 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.iotda.v5.model.*;
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class IoTDAMeta {
 
-    public static final HttpRequestDef<CreateAccessCodeRequest, CreateAccessCodeResponse> createAccessCode = genForcreateAccessCode();
+    public static final HttpRequestDef<CreateAccessCodeRequest, CreateAccessCodeResponse> createAccessCode =
+        genForcreateAccessCode();
 
     private static HttpRequestDef<CreateAccessCodeRequest, CreateAccessCodeResponse> genForcreateAccessCode() {
         // basic
@@ -24,26 +22,22 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Instance-Id",
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateAccessCodeRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateAccessCodeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateAccessCodeRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateAccessCodeRequestBody.class),
             f -> f.withMarshaller(CreateAccessCodeRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -59,31 +53,28 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Instance-Id",
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AddQueueRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<QueueInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            QueueInfo.class,
+            TypeCasts.uncheckedConversion(QueueInfo.class),
             f -> f.withMarshaller(AddQueueRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchShowQueueRequest, BatchShowQueueResponse> batchShowQueue = genForbatchShowQueue();
+    public static final HttpRequestDef<BatchShowQueueRequest, BatchShowQueueResponse> batchShowQueue =
+        genForbatchShowQueue();
 
     private static HttpRequestDef<BatchShowQueueRequest, BatchShowQueueResponse> genForbatchShowQueue() {
         // basic
@@ -94,50 +85,43 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("queue_name",
+        builder.<String>withRequestField("queue_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchShowQueueRequest::getQueueName, (req, v) -> {
                 req.setQueueName(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(BatchShowQueueRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchShowQueueRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(BatchShowQueueRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchShowQueueRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -153,35 +137,30 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("queue_id",
+        builder.<String>withRequestField("queue_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteQueueRequest::getQueueId, (req, v) -> {
                 req.setQueueId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteQueueRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteQueueResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(DeleteQueueResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
@@ -197,31 +176,28 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("queue_id",
+        builder.<String>withRequestField("queue_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowQueueRequest::getQueueId, (req, v) -> {
                 req.setQueueId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowQueueRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddApplicationRequest, AddApplicationResponse> addApplication = genForaddApplication();
+    public static final HttpRequestDef<AddApplicationRequest, AddApplicationResponse> addApplication =
+        genForaddApplication();
 
     private static HttpRequestDef<AddApplicationRequest, AddApplicationResponse> genForaddApplication() {
         // basic
@@ -232,31 +208,28 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Instance-Id",
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AddApplicationRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<AddApplication>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            AddApplication.class,
+            TypeCasts.uncheckedConversion(AddApplication.class),
             f -> f.withMarshaller(AddApplicationRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteApplicationRequest, DeleteApplicationResponse> deleteApplication = genFordeleteApplication();
+    public static final HttpRequestDef<DeleteApplicationRequest, DeleteApplicationResponse> deleteApplication =
+        genFordeleteApplication();
 
     private static HttpRequestDef<DeleteApplicationRequest, DeleteApplicationResponse> genFordeleteApplication() {
         // basic
@@ -267,40 +240,36 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("app_id",
+        builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteApplicationRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteApplicationRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteApplicationResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(DeleteApplicationResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowApplicationRequest, ShowApplicationResponse> showApplication = genForshowApplication();
+    public static final HttpRequestDef<ShowApplicationRequest, ShowApplicationResponse> showApplication =
+        genForshowApplication();
 
     private static HttpRequestDef<ShowApplicationRequest, ShowApplicationResponse> genForshowApplication() {
         // basic
@@ -311,31 +280,28 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("app_id",
+        builder.<String>withRequestField("app_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowApplicationRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowApplicationRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowApplicationsRequest, ShowApplicationsResponse> showApplications = genForshowApplications();
+    public static final HttpRequestDef<ShowApplicationsRequest, ShowApplicationsResponse> showApplications =
+        genForshowApplications();
 
     private static HttpRequestDef<ShowApplicationsRequest, ShowApplicationsResponse> genForshowApplications() {
         // basic
@@ -346,31 +312,28 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("default_app",
+        builder.<Boolean>withRequestField("default_app",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ShowApplicationsRequest::getDefaultApp, (req, v) -> {
                 req.setDefaultApp(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowApplicationsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateAsyncCommandRequest, CreateAsyncCommandResponse> createAsyncCommand = genForcreateAsyncCommand();
+    public static final HttpRequestDef<CreateAsyncCommandRequest, CreateAsyncCommandResponse> createAsyncCommand =
+        genForcreateAsyncCommand();
 
     private static HttpRequestDef<CreateAsyncCommandRequest, CreateAsyncCommandResponse> genForcreateAsyncCommand() {
         // basic
@@ -381,82 +344,74 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("device_id",
+        builder.<String>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateAsyncCommandRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateAsyncCommandRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<AsyncDeviceCommandRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            AsyncDeviceCommandRequest.class,
+            TypeCasts.uncheckedConversion(AsyncDeviceCommandRequest.class),
             f -> f.withMarshaller(CreateAsyncCommandRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAsyncDeviceCommandRequest, ShowAsyncDeviceCommandResponse> showAsyncDeviceCommand = genForshowAsyncDeviceCommand();
+    public static final HttpRequestDef<ShowAsyncDeviceCommandRequest, ShowAsyncDeviceCommandResponse> showAsyncDeviceCommand =
+        genForshowAsyncDeviceCommand();
 
     private static HttpRequestDef<ShowAsyncDeviceCommandRequest, ShowAsyncDeviceCommandResponse> genForshowAsyncDeviceCommand() {
         // basic
-        HttpRequestDef.Builder<ShowAsyncDeviceCommandRequest, ShowAsyncDeviceCommandResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowAsyncDeviceCommandRequest.class, ShowAsyncDeviceCommandResponse.class)
-                .withName("ShowAsyncDeviceCommand")
-                .withUri("/v5/iot/{project_id}/devices/{device_id}/async-commands/{command_id}")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowAsyncDeviceCommandRequest, ShowAsyncDeviceCommandResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAsyncDeviceCommandRequest.class, ShowAsyncDeviceCommandResponse.class)
+            .withName("ShowAsyncDeviceCommand")
+            .withUri("/v5/iot/{project_id}/devices/{device_id}/async-commands/{command_id}")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("device_id",
+        builder.<String>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAsyncDeviceCommandRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("command_id",
+            }));
+        builder.<String>withRequestField("command_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAsyncDeviceCommandRequest::getCommandId, (req, v) -> {
                 req.setCommandId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAsyncDeviceCommandRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateBatchTaskRequest, CreateBatchTaskResponse> createBatchTask = genForcreateBatchTask();
+    public static final HttpRequestDef<CreateBatchTaskRequest, CreateBatchTaskResponse> createBatchTask =
+        genForcreateBatchTask();
 
     private static HttpRequestDef<CreateBatchTaskRequest, CreateBatchTaskResponse> genForcreateBatchTask() {
         // basic
@@ -467,31 +422,28 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Instance-Id",
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateBatchTaskRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateBatchTask>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateBatchTask.class,
+            TypeCasts.uncheckedConversion(CreateBatchTask.class),
             f -> f.withMarshaller(CreateBatchTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListBatchTasksRequest, ListBatchTasksResponse> listBatchTasks = genForlistBatchTasks();
+    public static final HttpRequestDef<ListBatchTasksRequest, ListBatchTasksResponse> listBatchTasks =
+        genForlistBatchTasks();
 
     private static HttpRequestDef<ListBatchTasksRequest, ListBatchTasksResponse> genForlistBatchTasks() {
         // basic
@@ -502,71 +454,63 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("app_id",
+        builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBatchTasksRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
-            })
-        );
-        builder.withRequestField("task_type",
+            }));
+        builder.<String>withRequestField("task_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBatchTasksRequest::getTaskType, (req, v) -> {
                 req.setTaskType(v);
-            })
-        );
-        builder.withRequestField("status",
+            }));
+        builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBatchTasksRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListBatchTasksRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBatchTasksRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListBatchTasksRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBatchTasksRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowBatchTaskRequest, ShowBatchTaskResponse> showBatchTask = genForshowBatchTask();
+    public static final HttpRequestDef<ShowBatchTaskRequest, ShowBatchTaskResponse> showBatchTask =
+        genForshowBatchTask();
 
     private static HttpRequestDef<ShowBatchTaskRequest, ShowBatchTaskResponse> genForshowBatchTask() {
         // basic
@@ -577,99 +521,89 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBatchTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowBatchTaskRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBatchTaskRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowBatchTaskRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBatchTaskRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteBatchTaskFileRequest, DeleteBatchTaskFileResponse> deleteBatchTaskFile = genFordeleteBatchTaskFile();
+    public static final HttpRequestDef<DeleteBatchTaskFileRequest, DeleteBatchTaskFileResponse> deleteBatchTaskFile =
+        genFordeleteBatchTaskFile();
 
     private static HttpRequestDef<DeleteBatchTaskFileRequest, DeleteBatchTaskFileResponse> genFordeleteBatchTaskFile() {
         // basic
-        HttpRequestDef.Builder<DeleteBatchTaskFileRequest, DeleteBatchTaskFileResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteBatchTaskFileRequest.class, DeleteBatchTaskFileResponse.class)
-                .withName("DeleteBatchTaskFile")
-                .withUri("/v5/iot/{project_id}/batchtask-files/{file_id}")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<DeleteBatchTaskFileRequest, DeleteBatchTaskFileResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteBatchTaskFileRequest.class, DeleteBatchTaskFileResponse.class)
+            .withName("DeleteBatchTaskFile")
+            .withUri("/v5/iot/{project_id}/batchtask-files/{file_id}")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("file_id",
+        builder.<String>withRequestField("file_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteBatchTaskFileRequest::getFileId, (req, v) -> {
                 req.setFileId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteBatchTaskFileRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteBatchTaskFileResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(DeleteBatchTaskFileResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListBatchTaskFilesRequest, ListBatchTaskFilesResponse> listBatchTaskFiles = genForlistBatchTaskFiles();
+    public static final HttpRequestDef<ListBatchTaskFilesRequest, ListBatchTaskFilesResponse> listBatchTaskFiles =
+        genForlistBatchTaskFiles();
 
     private static HttpRequestDef<ListBatchTaskFilesRequest, ListBatchTaskFilesResponse> genForlistBatchTaskFiles() {
         // basic
@@ -680,23 +614,21 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Instance-Id",
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBatchTaskFilesRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UploadBatchTaskFileRequest, UploadBatchTaskFileResponse> uploadBatchTaskFile = genForuploadBatchTaskFile();
+    public static final HttpRequestDef<UploadBatchTaskFileRequest, UploadBatchTaskFileResponse> uploadBatchTaskFile =
+        genForuploadBatchTaskFile();
 
     private static HttpRequestDef<UploadBatchTaskFileRequest, UploadBatchTaskFileResponse> genForuploadBatchTaskFile() {
         // basic
@@ -707,31 +639,28 @@ public class IoTDAMeta {
                 .withContentType("multipart/form-data");
 
         // requests
-        builder.withRequestField("Instance-Id",
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UploadBatchTaskFileRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UploadBatchTaskFileRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UploadBatchTaskFileRequestBody.class,
+            TypeCasts.uncheckedConversion(UploadBatchTaskFileRequestBody.class),
             f -> f.withMarshaller(UploadBatchTaskFileRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddCertificateRequest, AddCertificateResponse> addCertificate = genForaddCertificate();
+    public static final HttpRequestDef<AddCertificateRequest, AddCertificateResponse> addCertificate =
+        genForaddCertificate();
 
     private static HttpRequestDef<AddCertificateRequest, AddCertificateResponse> genForaddCertificate() {
         // basic
@@ -742,31 +671,28 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Instance-Id",
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AddCertificateRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateCertificateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateCertificateDTO.class,
+            TypeCasts.uncheckedConversion(CreateCertificateDTO.class),
             f -> f.withMarshaller(AddCertificateRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CheckCertificateRequest, CheckCertificateResponse> checkCertificate = genForcheckCertificate();
+    public static final HttpRequestDef<CheckCertificateRequest, CheckCertificateResponse> checkCertificate =
+        genForcheckCertificate();
 
     private static HttpRequestDef<CheckCertificateRequest, CheckCertificateResponse> genForcheckCertificate() {
         // basic
@@ -777,56 +703,50 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("certificate_id",
+        builder.<String>withRequestField("certificate_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CheckCertificateRequest::getCertificateId, (req, v) -> {
                 req.setCertificateId(v);
-            })
-        );
-        builder.withRequestField("action_id",
+            }));
+        builder.<String>withRequestField("action_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CheckCertificateRequest::getActionId, (req, v) -> {
                 req.setActionId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CheckCertificateRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<VerifyCertificateDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            VerifyCertificateDTO.class,
+            TypeCasts.uncheckedConversion(VerifyCertificateDTO.class),
             f -> f.withMarshaller(CheckCertificateRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CheckCertificateResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(CheckCertificateResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificate = genFordeleteCertificate();
+    public static final HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificate =
+        genFordeleteCertificate();
 
     private static HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> genFordeleteCertificate() {
         // basic
@@ -837,40 +757,36 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("certificate_id",
+        builder.<String>withRequestField("certificate_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteCertificateRequest::getCertificateId, (req, v) -> {
                 req.setCertificateId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteCertificateRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteCertificateResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(DeleteCertificateResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> listCertificates = genForlistCertificates();
+    public static final HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> listCertificates =
+        genForlistCertificates();
 
     private static HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> genForlistCertificates() {
         // basic
@@ -881,55 +797,49 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("app_id",
+        builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCertificatesRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListCertificatesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCertificatesRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListCertificatesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCertificatesRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateCommandRequest, CreateCommandResponse> createCommand = genForcreateCommand();
+    public static final HttpRequestDef<CreateCommandRequest, CreateCommandResponse> createCommand =
+        genForcreateCommand();
 
     private static HttpRequestDef<CreateCommandRequest, CreateCommandResponse> genForcreateCommand() {
         // basic
@@ -940,39 +850,35 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("device_id",
+        builder.<String>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateCommandRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateCommandRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<DeviceCommandRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DeviceCommandRequest.class,
+            TypeCasts.uncheckedConversion(DeviceCommandRequest.class),
             f -> f.withMarshaller(CreateCommandRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<AddDeviceGroupRequest, AddDeviceGroupResponse> addDeviceGroup = genForaddDeviceGroup();
+    public static final HttpRequestDef<AddDeviceGroupRequest, AddDeviceGroupResponse> addDeviceGroup =
+        genForaddDeviceGroup();
 
     private static HttpRequestDef<AddDeviceGroupRequest, AddDeviceGroupResponse> genForaddDeviceGroup() {
         // basic
@@ -983,91 +889,85 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Instance-Id",
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AddDeviceGroupRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<AddDeviceGroupDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            AddDeviceGroupDTO.class,
+            TypeCasts.uncheckedConversion(AddDeviceGroupDTO.class),
             f -> f.withMarshaller(AddDeviceGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateOrDeleteDeviceInGroupRequest, CreateOrDeleteDeviceInGroupResponse> createOrDeleteDeviceInGroup = genForcreateOrDeleteDeviceInGroup();
+    public static final HttpRequestDef<CreateOrDeleteDeviceInGroupRequest, CreateOrDeleteDeviceInGroupResponse> createOrDeleteDeviceInGroup =
+        genForcreateOrDeleteDeviceInGroup();
 
     private static HttpRequestDef<CreateOrDeleteDeviceInGroupRequest, CreateOrDeleteDeviceInGroupResponse> genForcreateOrDeleteDeviceInGroup() {
         // basic
         HttpRequestDef.Builder<CreateOrDeleteDeviceInGroupRequest, CreateOrDeleteDeviceInGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateOrDeleteDeviceInGroupRequest.class, CreateOrDeleteDeviceInGroupResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateOrDeleteDeviceInGroupRequest.class,
+                    CreateOrDeleteDeviceInGroupResponse.class)
                 .withName("CreateOrDeleteDeviceInGroup")
                 .withUri("/v5/iot/{project_id}/device-group/{group_id}/action")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("group_id",
+        builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateOrDeleteDeviceInGroupRequest::getGroupId, (req, v) -> {
                 req.setGroupId(v);
-            })
-        );
-        builder.withRequestField("action_id",
+            }));
+        builder.<String>withRequestField("action_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateOrDeleteDeviceInGroupRequest::getActionId, (req, v) -> {
                 req.setActionId(v);
-            })
-        );
-        builder.withRequestField("device_id",
+            }));
+        builder.<String>withRequestField("device_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateOrDeleteDeviceInGroupRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateOrDeleteDeviceInGroupRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreateOrDeleteDeviceInGroupResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(CreateOrDeleteDeviceInGroupResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteDeviceGroupRequest, DeleteDeviceGroupResponse> deleteDeviceGroup = genFordeleteDeviceGroup();
+    public static final HttpRequestDef<DeleteDeviceGroupRequest, DeleteDeviceGroupResponse> deleteDeviceGroup =
+        genFordeleteDeviceGroup();
 
     private static HttpRequestDef<DeleteDeviceGroupRequest, DeleteDeviceGroupResponse> genFordeleteDeviceGroup() {
         // basic
@@ -1078,40 +978,36 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("group_id",
+        builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDeviceGroupRequest::getGroupId, (req, v) -> {
                 req.setGroupId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDeviceGroupRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteDeviceGroupResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(DeleteDeviceGroupResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDeviceGroupsRequest, ListDeviceGroupsResponse> listDeviceGroups = genForlistDeviceGroups();
+    public static final HttpRequestDef<ListDeviceGroupsRequest, ListDeviceGroupsResponse> listDeviceGroups =
+        genForlistDeviceGroups();
 
     private static HttpRequestDef<ListDeviceGroupsRequest, ListDeviceGroupsResponse> genForlistDeviceGroups() {
         // basic
@@ -1122,63 +1018,56 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDeviceGroupsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDeviceGroupsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDeviceGroupsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("last_modified_time",
+            }));
+        builder.<String>withRequestField("last_modified_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDeviceGroupsRequest::getLastModifiedTime, (req, v) -> {
                 req.setLastModifiedTime(v);
-            })
-        );
-        builder.withRequestField("app_id",
+            }));
+        builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDeviceGroupsRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDeviceGroupsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowDeviceGroupRequest, ShowDeviceGroupResponse> showDeviceGroup = genForshowDeviceGroup();
+    public static final HttpRequestDef<ShowDeviceGroupRequest, ShowDeviceGroupResponse> showDeviceGroup =
+        genForshowDeviceGroup();
 
     private static HttpRequestDef<ShowDeviceGroupRequest, ShowDeviceGroupResponse> genForshowDeviceGroup() {
         // basic
@@ -1189,31 +1078,28 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("group_id",
+        builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDeviceGroupRequest::getGroupId, (req, v) -> {
                 req.setGroupId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDeviceGroupRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowDevicesInGroupRequest, ShowDevicesInGroupResponse> showDevicesInGroup = genForshowDevicesInGroup();
+    public static final HttpRequestDef<ShowDevicesInGroupRequest, ShowDevicesInGroupResponse> showDevicesInGroup =
+        genForshowDevicesInGroup();
 
     private static HttpRequestDef<ShowDevicesInGroupRequest, ShowDevicesInGroupResponse> genForshowDevicesInGroup() {
         // basic
@@ -1224,55 +1110,49 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("group_id",
+        builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDevicesInGroupRequest::getGroupId, (req, v) -> {
                 req.setGroupId(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowDevicesInGroupRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDevicesInGroupRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowDevicesInGroupRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDevicesInGroupRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateDeviceGroupRequest, UpdateDeviceGroupResponse> updateDeviceGroup = genForupdateDeviceGroup();
+    public static final HttpRequestDef<UpdateDeviceGroupRequest, UpdateDeviceGroupResponse> updateDeviceGroup =
+        genForupdateDeviceGroup();
 
     private static HttpRequestDef<UpdateDeviceGroupRequest, UpdateDeviceGroupResponse> genForupdateDeviceGroup() {
         // basic
@@ -1283,34 +1163,29 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("group_id",
+        builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateDeviceGroupRequest::getGroupId, (req, v) -> {
                 req.setGroupId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateDeviceGroupRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateDeviceGroupDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateDeviceGroupDTO.class,
+            TypeCasts.uncheckedConversion(UpdateDeviceGroupDTO.class),
             f -> f.withMarshaller(UpdateDeviceGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1326,26 +1201,22 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Instance-Id",
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AddDeviceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<AddDevice>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            AddDevice.class,
+            TypeCasts.uncheckedConversion(AddDevice.class),
             f -> f.withMarshaller(AddDeviceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1361,35 +1232,30 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("device_id",
+        builder.<String>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDeviceRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDeviceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteDeviceResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(DeleteDeviceResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
@@ -1405,35 +1271,30 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("device_id",
+        builder.<String>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(FreezeDeviceRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(FreezeDeviceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(FreezeDeviceResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(FreezeDeviceResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
@@ -1449,111 +1310,98 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("product_id",
+        builder.<String>withRequestField("product_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDevicesRequest::getProductId, (req, v) -> {
                 req.setProductId(v);
-            })
-        );
-        builder.withRequestField("gateway_id",
+            }));
+        builder.<String>withRequestField("gateway_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDevicesRequest::getGatewayId, (req, v) -> {
                 req.setGatewayId(v);
-            })
-        );
-        builder.withRequestField("is_cascade_query",
+            }));
+        builder.<Boolean>withRequestField("is_cascade_query",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListDevicesRequest::getIsCascadeQuery, (req, v) -> {
                 req.setIsCascadeQuery(v);
-            })
-        );
-        builder.withRequestField("node_id",
+            }));
+        builder.<String>withRequestField("node_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDevicesRequest::getNodeId, (req, v) -> {
                 req.setNodeId(v);
-            })
-        );
-        builder.withRequestField("device_name",
+            }));
+        builder.<String>withRequestField("device_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDevicesRequest::getDeviceName, (req, v) -> {
                 req.setDeviceName(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDevicesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDevicesRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDevicesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("start_time",
+            }));
+        builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDevicesRequest::getStartTime, (req, v) -> {
                 req.setStartTime(v);
-            })
-        );
-        builder.withRequestField("end_time",
+            }));
+        builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDevicesRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
-            })
-        );
-        builder.withRequestField("app_id",
+            }));
+        builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDevicesRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDevicesRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResetDeviceSecretRequest, ResetDeviceSecretResponse> resetDeviceSecret = genForresetDeviceSecret();
+    public static final HttpRequestDef<ResetDeviceSecretRequest, ResetDeviceSecretResponse> resetDeviceSecret =
+        genForresetDeviceSecret();
 
     private static HttpRequestDef<ResetDeviceSecretRequest, ResetDeviceSecretResponse> genForresetDeviceSecret() {
         // basic
@@ -1564,42 +1412,36 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("device_id",
+        builder.<String>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResetDeviceSecretRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("action_id",
+            }));
+        builder.<String>withRequestField("action_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResetDeviceSecretRequest::getActionId, (req, v) -> {
                 req.setActionId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResetDeviceSecretRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ResetDeviceSecret>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ResetDeviceSecret.class,
+            TypeCasts.uncheckedConversion(ResetDeviceSecret.class),
             f -> f.withMarshaller(ResetDeviceSecretRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1615,31 +1457,28 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("device_id",
+        builder.<String>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDeviceRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDeviceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UnfreezeDeviceRequest, UnfreezeDeviceResponse> unfreezeDevice = genForunfreezeDevice();
+    public static final HttpRequestDef<UnfreezeDeviceRequest, UnfreezeDeviceResponse> unfreezeDevice =
+        genForunfreezeDevice();
 
     private static HttpRequestDef<UnfreezeDeviceRequest, UnfreezeDeviceResponse> genForunfreezeDevice() {
         // basic
@@ -1650,35 +1489,30 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("device_id",
+        builder.<String>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UnfreezeDeviceRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UnfreezeDeviceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UnfreezeDeviceResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(UnfreezeDeviceResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
@@ -1694,39 +1528,35 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("device_id",
+        builder.<String>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateDeviceRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateDeviceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateDevice>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateDevice.class,
+            TypeCasts.uncheckedConversion(UpdateDevice.class),
             f -> f.withMarshaller(UpdateDeviceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowDeviceShadowRequest, ShowDeviceShadowResponse> showDeviceShadow = genForshowDeviceShadow();
+    public static final HttpRequestDef<ShowDeviceShadowRequest, ShowDeviceShadowResponse> showDeviceShadow =
+        genForshowDeviceShadow();
 
     private static HttpRequestDef<ShowDeviceShadowRequest, ShowDeviceShadowResponse> genForshowDeviceShadow() {
         // basic
@@ -1737,74 +1567,70 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("device_id",
+        builder.<String>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDeviceShadowRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDeviceShadowRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateDeviceShadowDesiredDataRequest, UpdateDeviceShadowDesiredDataResponse> updateDeviceShadowDesiredData = genForupdateDeviceShadowDesiredData();
+    public static final HttpRequestDef<UpdateDeviceShadowDesiredDataRequest, UpdateDeviceShadowDesiredDataResponse> updateDeviceShadowDesiredData =
+        genForupdateDeviceShadowDesiredData();
 
     private static HttpRequestDef<UpdateDeviceShadowDesiredDataRequest, UpdateDeviceShadowDesiredDataResponse> genForupdateDeviceShadowDesiredData() {
         // basic
         HttpRequestDef.Builder<UpdateDeviceShadowDesiredDataRequest, UpdateDeviceShadowDesiredDataResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateDeviceShadowDesiredDataRequest.class, UpdateDeviceShadowDesiredDataResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateDeviceShadowDesiredDataRequest.class,
+                    UpdateDeviceShadowDesiredDataResponse.class)
                 .withName("UpdateDeviceShadowDesiredData")
                 .withUri("/v5/iot/{project_id}/devices/{device_id}/shadow")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("device_id",
+        builder.<String>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateDeviceShadowDesiredDataRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateDeviceShadowDesiredDataRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateDesireds>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateDesireds.class,
+            TypeCasts.uncheckedConversion(UpdateDesireds.class),
             f -> f.withMarshaller(UpdateDeviceShadowDesiredDataRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateMessageRequest, CreateMessageResponse> createMessage = genForcreateMessage();
+    public static final HttpRequestDef<CreateMessageRequest, CreateMessageResponse> createMessage =
+        genForcreateMessage();
 
     private static HttpRequestDef<CreateMessageRequest, CreateMessageResponse> genForcreateMessage() {
         // basic
@@ -1815,39 +1641,35 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("device_id",
+        builder.<String>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateMessageRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateMessageRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<DeviceMessageRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DeviceMessageRequest.class,
+            TypeCasts.uncheckedConversion(DeviceMessageRequest.class),
             f -> f.withMarshaller(CreateMessageRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListDeviceMessagesRequest, ListDeviceMessagesResponse> listDeviceMessages = genForlistDeviceMessages();
+    public static final HttpRequestDef<ListDeviceMessagesRequest, ListDeviceMessagesResponse> listDeviceMessages =
+        genForlistDeviceMessages();
 
     private static HttpRequestDef<ListDeviceMessagesRequest, ListDeviceMessagesResponse> genForlistDeviceMessages() {
         // basic
@@ -1858,31 +1680,28 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("device_id",
+        builder.<String>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDeviceMessagesRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDeviceMessagesRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowDeviceMessageRequest, ShowDeviceMessageResponse> showDeviceMessage = genForshowDeviceMessage();
+    public static final HttpRequestDef<ShowDeviceMessageRequest, ShowDeviceMessageResponse> showDeviceMessage =
+        genForshowDeviceMessage();
 
     private static HttpRequestDef<ShowDeviceMessageRequest, ShowDeviceMessageResponse> genForshowDeviceMessage() {
         // basic
@@ -1893,39 +1712,35 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("device_id",
+        builder.<String>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDeviceMessageRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("message_id",
+            }));
+        builder.<String>withRequestField("message_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDeviceMessageRequest::getMessageId, (req, v) -> {
                 req.setMessageId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDeviceMessageRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateProductRequest, CreateProductResponse> createProduct = genForcreateProduct();
+    public static final HttpRequestDef<CreateProductRequest, CreateProductResponse> createProduct =
+        genForcreateProduct();
 
     private static HttpRequestDef<CreateProductRequest, CreateProductResponse> genForcreateProduct() {
         // basic
@@ -1936,31 +1751,28 @@ public class IoTDAMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("Instance-Id",
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateProductRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<AddProduct>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            AddProduct.class,
+            TypeCasts.uncheckedConversion(AddProduct.class),
             f -> f.withMarshaller(CreateProductRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteProductRequest, DeleteProductResponse> deleteProduct = genFordeleteProduct();
+    public static final HttpRequestDef<DeleteProductRequest, DeleteProductResponse> deleteProduct =
+        genFordeleteProduct();
 
     private static HttpRequestDef<DeleteProductRequest, DeleteProductResponse> genFordeleteProduct() {
         // basic
@@ -1971,43 +1783,37 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("product_id",
+        builder.<String>withRequestField("product_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteProductRequest::getProductId, (req, v) -> {
                 req.setProductId(v);
-            })
-        );
-        builder.withRequestField("app_id",
+            }));
+        builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteProductRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteProductRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteProductResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(DeleteProductResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
@@ -2023,50 +1829,43 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListProductsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListProductsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("app_id",
+            }));
+        builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListProductsRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListProductsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListProductsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2082,39 +1881,35 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("product_id",
+        builder.<String>withRequestField("product_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowProductRequest::getProductId, (req, v) -> {
                 req.setProductId(v);
-            })
-        );
-        builder.withRequestField("app_id",
+            }));
+        builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowProductRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowProductRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateProductRequest, UpdateProductResponse> updateProduct = genForupdateProduct();
+    public static final HttpRequestDef<UpdateProductRequest, UpdateProductResponse> updateProduct =
+        genForupdateProduct();
 
     private static HttpRequestDef<UpdateProductRequest, UpdateProductResponse> genForupdateProduct() {
         // basic
@@ -2125,39 +1920,35 @@ public class IoTDAMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("product_id",
+        builder.<String>withRequestField("product_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateProductRequest::getProductId, (req, v) -> {
                 req.setProductId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateProductRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateProduct>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateProduct.class,
+            TypeCasts.uncheckedConversion(UpdateProduct.class),
             f -> f.withMarshaller(UpdateProductRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPropertiesRequest, ListPropertiesResponse> listProperties = genForlistProperties();
+    public static final HttpRequestDef<ListPropertiesRequest, ListPropertiesResponse> listProperties =
+        genForlistProperties();
 
     private static HttpRequestDef<ListPropertiesRequest, ListPropertiesResponse> genForlistProperties() {
         // basic
@@ -2168,39 +1959,35 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("device_id",
+        builder.<String>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPropertiesRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("service_id",
+            }));
+        builder.<String>withRequestField("service_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPropertiesRequest::getServiceId, (req, v) -> {
                 req.setServiceId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPropertiesRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdatePropertiesRequest, UpdatePropertiesResponse> updateProperties = genForupdateProperties();
+    public static final HttpRequestDef<UpdatePropertiesRequest, UpdatePropertiesResponse> updateProperties =
+        genForupdateProperties();
 
     private static HttpRequestDef<UpdatePropertiesRequest, UpdatePropertiesResponse> genForupdateProperties() {
         // basic
@@ -2211,39 +1998,35 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("device_id",
+        builder.<String>withRequestField("device_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdatePropertiesRequest::getDeviceId, (req, v) -> {
                 req.setDeviceId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdatePropertiesRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<DevicePropertiesRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DevicePropertiesRequest.class,
+            TypeCasts.uncheckedConversion(DevicePropertiesRequest.class),
             f -> f.withMarshaller(UpdatePropertiesRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateRoutingRuleRequest, CreateRoutingRuleResponse> createRoutingRule = genForcreateRoutingRule();
+    public static final HttpRequestDef<CreateRoutingRuleRequest, CreateRoutingRuleResponse> createRoutingRule =
+        genForcreateRoutingRule();
 
     private static HttpRequestDef<CreateRoutingRuleRequest, CreateRoutingRuleResponse> genForcreateRoutingRule() {
         // basic
@@ -2254,31 +2037,28 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Instance-Id",
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateRoutingRuleRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<AddRuleReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            AddRuleReq.class,
+            TypeCasts.uncheckedConversion(AddRuleReq.class),
             f -> f.withMarshaller(CreateRoutingRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateRuleActionRequest, CreateRuleActionResponse> createRuleAction = genForcreateRuleAction();
+    public static final HttpRequestDef<CreateRuleActionRequest, CreateRuleActionResponse> createRuleAction =
+        genForcreateRuleAction();
 
     private static HttpRequestDef<CreateRuleActionRequest, CreateRuleActionResponse> genForcreateRuleAction() {
         // basic
@@ -2289,31 +2069,28 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Instance-Id",
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateRuleActionRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<AddActionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            AddActionReq.class,
+            TypeCasts.uncheckedConversion(AddActionReq.class),
             f -> f.withMarshaller(CreateRuleActionRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteRoutingRuleRequest, DeleteRoutingRuleResponse> deleteRoutingRule = genFordeleteRoutingRule();
+    public static final HttpRequestDef<DeleteRoutingRuleRequest, DeleteRoutingRuleResponse> deleteRoutingRule =
+        genFordeleteRoutingRule();
 
     private static HttpRequestDef<DeleteRoutingRuleRequest, DeleteRoutingRuleResponse> genFordeleteRoutingRule() {
         // basic
@@ -2324,40 +2101,36 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("rule_id",
+        builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteRoutingRuleRequest::getRuleId, (req, v) -> {
                 req.setRuleId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteRoutingRuleRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteRoutingRuleResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(DeleteRoutingRuleResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteRuleActionRequest, DeleteRuleActionResponse> deleteRuleAction = genFordeleteRuleAction();
+    public static final HttpRequestDef<DeleteRuleActionRequest, DeleteRuleActionResponse> deleteRuleAction =
+        genFordeleteRuleAction();
 
     private static HttpRequestDef<DeleteRuleActionRequest, DeleteRuleActionResponse> genFordeleteRuleAction() {
         // basic
@@ -2368,40 +2141,36 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("action_id",
+        builder.<String>withRequestField("action_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteRuleActionRequest::getActionId, (req, v) -> {
                 req.setActionId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteRuleActionRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteRuleActionResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(DeleteRuleActionResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRoutingRulesRequest, ListRoutingRulesResponse> listRoutingRules = genForlistRoutingRules();
+    public static final HttpRequestDef<ListRoutingRulesRequest, ListRoutingRulesResponse> listRoutingRules =
+        genForlistRoutingRules();
 
     private static HttpRequestDef<ListRoutingRulesRequest, ListRoutingRulesResponse> genForlistRoutingRules() {
         // basic
@@ -2412,87 +2181,77 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("resource",
+        builder.<String>withRequestField("resource",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRoutingRulesRequest::getResource, (req, v) -> {
                 req.setResource(v);
-            })
-        );
-        builder.withRequestField("event",
+            }));
+        builder.<String>withRequestField("event",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRoutingRulesRequest::getEvent, (req, v) -> {
                 req.setEvent(v);
-            })
-        );
-        builder.withRequestField("app_type",
+            }));
+        builder.<String>withRequestField("app_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRoutingRulesRequest::getAppType, (req, v) -> {
                 req.setAppType(v);
-            })
-        );
-        builder.withRequestField("app_id",
+            }));
+        builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRoutingRulesRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
-            })
-        );
-        builder.withRequestField("rule_name",
+            }));
+        builder.<String>withRequestField("rule_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRoutingRulesRequest::getRuleName, (req, v) -> {
                 req.setRuleName(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRoutingRulesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRoutingRulesRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRoutingRulesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRoutingRulesRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListRuleActionsRequest, ListRuleActionsResponse> listRuleActions = genForlistRuleActions();
+    public static final HttpRequestDef<ListRuleActionsRequest, ListRuleActionsResponse> listRuleActions =
+        genForlistRuleActions();
 
     private static HttpRequestDef<ListRuleActionsRequest, ListRuleActionsResponse> genForlistRuleActions() {
         // basic
@@ -2503,79 +2262,70 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("rule_id",
+        builder.<String>withRequestField("rule_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRuleActionsRequest::getRuleId, (req, v) -> {
                 req.setRuleId(v);
-            })
-        );
-        builder.withRequestField("channel",
+            }));
+        builder.<String>withRequestField("channel",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRuleActionsRequest::getChannel, (req, v) -> {
                 req.setChannel(v);
-            })
-        );
-        builder.withRequestField("app_type",
+            }));
+        builder.<String>withRequestField("app_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRuleActionsRequest::getAppType, (req, v) -> {
                 req.setAppType(v);
-            })
-        );
-        builder.withRequestField("app_id",
+            }));
+        builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRuleActionsRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRuleActionsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRuleActionsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRuleActionsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRuleActionsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowRoutingRuleRequest, ShowRoutingRuleResponse> showRoutingRule = genForshowRoutingRule();
+    public static final HttpRequestDef<ShowRoutingRuleRequest, ShowRoutingRuleResponse> showRoutingRule =
+        genForshowRoutingRule();
 
     private static HttpRequestDef<ShowRoutingRuleRequest, ShowRoutingRuleResponse> genForshowRoutingRule() {
         // basic
@@ -2586,31 +2336,28 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("rule_id",
+        builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowRoutingRuleRequest::getRuleId, (req, v) -> {
                 req.setRuleId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowRoutingRuleRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowRuleActionRequest, ShowRuleActionResponse> showRuleAction = genForshowRuleAction();
+    public static final HttpRequestDef<ShowRuleActionRequest, ShowRuleActionResponse> showRuleAction =
+        genForshowRuleAction();
 
     private static HttpRequestDef<ShowRuleActionRequest, ShowRuleActionResponse> genForshowRuleAction() {
         // basic
@@ -2621,31 +2368,28 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("action_id",
+        builder.<String>withRequestField("action_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowRuleActionRequest::getActionId, (req, v) -> {
                 req.setActionId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowRuleActionRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateRoutingRuleRequest, UpdateRoutingRuleResponse> updateRoutingRule = genForupdateRoutingRule();
+    public static final HttpRequestDef<UpdateRoutingRuleRequest, UpdateRoutingRuleResponse> updateRoutingRule =
+        genForupdateRoutingRule();
 
     private static HttpRequestDef<UpdateRoutingRuleRequest, UpdateRoutingRuleResponse> genForupdateRoutingRule() {
         // basic
@@ -2656,39 +2400,35 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("rule_id",
+        builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateRoutingRuleRequest::getRuleId, (req, v) -> {
                 req.setRuleId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateRoutingRuleRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateRuleReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateRuleReq.class,
+            TypeCasts.uncheckedConversion(UpdateRuleReq.class),
             f -> f.withMarshaller(UpdateRoutingRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateRuleActionRequest, UpdateRuleActionResponse> updateRuleAction = genForupdateRuleAction();
+    public static final HttpRequestDef<UpdateRuleActionRequest, UpdateRuleActionResponse> updateRuleAction =
+        genForupdateRuleAction();
 
     private static HttpRequestDef<UpdateRuleActionRequest, UpdateRuleActionResponse> genForupdateRuleAction() {
         // basic
@@ -2699,39 +2439,35 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("action_id",
+        builder.<String>withRequestField("action_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateRuleActionRequest::getActionId, (req, v) -> {
                 req.setActionId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateRuleActionRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateActionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateActionReq.class,
+            TypeCasts.uncheckedConversion(UpdateActionReq.class),
             f -> f.withMarshaller(UpdateRuleActionRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ChangeRuleStatusRequest, ChangeRuleStatusResponse> changeRuleStatus = genForchangeRuleStatus();
+    public static final HttpRequestDef<ChangeRuleStatusRequest, ChangeRuleStatusResponse> changeRuleStatus =
+        genForchangeRuleStatus();
 
     private static HttpRequestDef<ChangeRuleStatusRequest, ChangeRuleStatusResponse> genForchangeRuleStatus() {
         // basic
@@ -2742,34 +2478,29 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("rule_id",
+        builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ChangeRuleStatusRequest::getRuleId, (req, v) -> {
                 req.setRuleId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ChangeRuleStatusRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<RuleStatus>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            RuleStatus.class,
+            TypeCasts.uncheckedConversion(RuleStatus.class),
             f -> f.withMarshaller(ChangeRuleStatusRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2785,26 +2516,22 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Instance-Id",
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateRuleRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<Rule>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Rule.class,
+            TypeCasts.uncheckedConversion(Rule.class),
             f -> f.withMarshaller(CreateRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2820,35 +2547,30 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("rule_id",
+        builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteRuleRequest::getRuleId, (req, v) -> {
                 req.setRuleId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteRuleRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteRuleResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(DeleteRuleResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
@@ -2864,58 +2586,50 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("app_id",
+        builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRulesRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
-            })
-        );
-        builder.withRequestField("rule_type",
+            }));
+        builder.<String>withRequestField("rule_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRulesRequest::getRuleType, (req, v) -> {
                 req.setRuleType(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRulesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRulesRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRulesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRulesRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2931,26 +2645,22 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("rule_id",
+        builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowRuleRequest::getRuleId, (req, v) -> {
                 req.setRuleId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowRuleRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2966,39 +2676,35 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("rule_id",
+        builder.<String>withRequestField("rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateRuleRequest::getRuleId, (req, v) -> {
                 req.setRuleId(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateRuleRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<Rule>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Rule.class,
+            TypeCasts.uncheckedConversion(Rule.class),
             f -> f.withMarshaller(UpdateRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListResourcesByTagsRequest, ListResourcesByTagsResponse> listResourcesByTags = genForlistResourcesByTags();
+    public static final HttpRequestDef<ListResourcesByTagsRequest, ListResourcesByTagsResponse> listResourcesByTags =
+        genForlistResourcesByTags();
 
     private static HttpRequestDef<ListResourcesByTagsRequest, ListResourcesByTagsResponse> genForlistResourcesByTags() {
         // basic
@@ -3009,50 +2715,43 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListResourcesByTagsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourcesByTagsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListResourcesByTagsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("Instance-Id",
+            }));
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourcesByTagsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<QueryResourceByTagsDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            QueryResourceByTagsDTO.class,
+            TypeCasts.uncheckedConversion(QueryResourceByTagsDTO.class),
             f -> f.withMarshaller(ListResourcesByTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -3068,35 +2767,30 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Instance-Id",
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(TagDeviceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<BindTagsDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            BindTagsDTO.class,
+            TypeCasts.uncheckedConversion(BindTagsDTO.class),
             f -> f.withMarshaller(TagDeviceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(TagDeviceResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(TagDeviceResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
@@ -3112,35 +2806,30 @@ public class IoTDAMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Instance-Id",
+        builder.<String>withRequestField("Instance-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UntagDeviceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UnbindTagsDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            UnbindTagsDTO.class,
+            TypeCasts.uncheckedConversion(UnbindTagsDTO.class),
             f -> f.withMarshaller(UntagDeviceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(UntagDeviceResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(UntagDeviceResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }

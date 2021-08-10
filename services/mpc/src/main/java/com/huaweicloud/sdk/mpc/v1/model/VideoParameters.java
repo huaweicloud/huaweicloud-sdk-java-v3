@@ -1,47 +1,32 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.OutputPolicy;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * VideoParameters
- */
-public class VideoParameters  {
+/** VideoParameters */
+public class VideoParameters {
 
-    /**
-     * 输出策略。  取值如下： - discard - transcode  >- 当视频参数中的“output_policy”为\"discard\"，且音频参数中的“output_policy”为“transcode”时，表示只输出音频。 >- 当视频参数中的“output_policy”为\"transcode\"，且音频参数中的“output_policy”为“discard”时，表示只输出视频。 >- 同时为\"discard\"时不合法。 >- 同时为“transcode”时，表示输出音视频。 
-     */
+    /** 输出策略。 取值如下： - discard - transcode >-
+     * 当视频参数中的“output_policy”为\"discard\"，且音频参数中的“output_policy”为“transcode”时，表示只输出音频。 >-
+     * 当视频参数中的“output_policy”为\"transcode\"，且音频参数中的“output_policy”为“discard”时，表示只输出视频。 >- 同时为\"discard\"时不合法。 >-
+     * 同时为“transcode”时，表示输出音视频。 */
     public static final class OutputPolicyEnum {
 
-        
-        /**
-         * Enum TRANSCODE for value: "transcode"
-         */
+        /** Enum TRANSCODE for value: "transcode" */
         public static final OutputPolicyEnum TRANSCODE = new OutputPolicyEnum("transcode");
-        
-        /**
-         * Enum DISCARD for value: "discard"
-         */
+
+        /** Enum DISCARD for value: "discard" */
         public static final OutputPolicyEnum DISCARD = new OutputPolicyEnum("discard");
-        
-        /**
-         * Enum COPY for value: "copy"
-         */
+
+        /** Enum COPY for value: "copy" */
         public static final OutputPolicyEnum COPY = new OutputPolicyEnum("copy");
-        
 
         private static final Map<String, OutputPolicyEnum> STATIC_FIELDS = createStaticFields();
 
@@ -71,7 +56,7 @@ public class VideoParameters  {
 
         @JsonCreator
         public static OutputPolicyEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OutputPolicyEnum result = STATIC_FIELDS.get(value);
@@ -82,7 +67,7 @@ public class VideoParameters  {
         }
 
         public static OutputPolicyEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OutputPolicyEnum result = STATIC_FIELDS.get(value);
@@ -106,100 +91,84 @@ public class VideoParameters  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output_policy")
-    
+    @JsonProperty(value = "output_policy")
+
     private OutputPolicyEnum outputPolicy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="codec")
-    
+    @JsonProperty(value = "codec")
+
     private Integer codec;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bitrate")
-    
+    @JsonProperty(value = "bitrate")
+
     private Integer bitrate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="profile")
-    
+    @JsonProperty(value = "profile")
+
     private Integer profile;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="level")
-    
+    @JsonProperty(value = "level")
+
     private Integer level;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="preset")
-    
+    @JsonProperty(value = "preset")
+
     private Integer preset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ref_frames_count")
-    
+    @JsonProperty(value = "ref_frames_count")
+
     private Integer refFramesCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_iframes_interval")
-    
+    @JsonProperty(value = "max_iframes_interval")
+
     private Integer maxIframesInterval;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bframes_count")
-    
+    @JsonProperty(value = "bframes_count")
+
     private Integer bframesCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="frame_rate")
-    
+    @JsonProperty(value = "frame_rate")
+
     private Integer frameRate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="width")
-    
+    @JsonProperty(value = "width")
+
     private Integer width;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="height")
-    
+    @JsonProperty(value = "height")
+
     private Integer height;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="aspect_ratio")
-    
+    @JsonProperty(value = "aspect_ratio")
+
     private Integer aspectRatio;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="black_cut")
-    
+    @JsonProperty(value = "black_cut")
+
     private Integer blackCut;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="GOP_structure")
-    
+    @JsonProperty(value = "GOP_structure")
+
     private Boolean goPStructure;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sr_factor")
-    
+    @JsonProperty(value = "sr_factor")
+
     private String srFactor;
 
     public VideoParameters withOutputPolicy(OutputPolicyEnum outputPolicy) {
@@ -207,13 +176,12 @@ public class VideoParameters  {
         return this;
     }
 
-    
-
-
-    /**
-     * 输出策略。  取值如下： - discard - transcode  >- 当视频参数中的“output_policy”为\"discard\"，且音频参数中的“output_policy”为“transcode”时，表示只输出音频。 >- 当视频参数中的“output_policy”为\"transcode\"，且音频参数中的“output_policy”为“discard”时，表示只输出视频。 >- 同时为\"discard\"时不合法。 >- 同时为“transcode”时，表示输出音视频。 
-     * @return outputPolicy
-     */
+    /** 输出策略。 取值如下： - discard - transcode >-
+     * 当视频参数中的“output_policy”为\"discard\"，且音频参数中的“output_policy”为“transcode”时，表示只输出音频。 >-
+     * 当视频参数中的“output_policy”为\"transcode\"，且音频参数中的“output_policy”为“discard”时，表示只输出视频。 >- 同时为\"discard\"时不合法。 >-
+     * 同时为“transcode”时，表示输出音视频。
+     * 
+     * @return outputPolicy */
     public OutputPolicyEnum getOutputPolicy() {
         return outputPolicy;
     }
@@ -222,22 +190,14 @@ public class VideoParameters  {
         this.outputPolicy = outputPolicy;
     }
 
-    
-
     public VideoParameters withCodec(Integer codec) {
         this.codec = codec;
         return this;
     }
 
-    
-
-
-    /**
-     * 视频编码格式。  取值如下： - 1：VIDEO_CODEC_H264 - 2：VIDEO_CODEC_H265 
-     * minimum: 0
-     * maximum: 3
-     * @return codec
-     */
+    /** 视频编码格式。 取值如下： - 1：VIDEO_CODEC_H264 - 2：VIDEO_CODEC_H265 minimum: 0 maximum: 3
+     * 
+     * @return codec */
     public Integer getCodec() {
         return codec;
     }
@@ -246,22 +206,14 @@ public class VideoParameters  {
         this.codec = codec;
     }
 
-    
-
     public VideoParameters withBitrate(Integer bitrate) {
         this.bitrate = bitrate;
         return this;
     }
 
-    
-
-
-    /**
-     * 输出平均码率。  取值范围：0或[40,30000]之间的整数。  单位：kbit/s  若设置为0，则输出平均码率为自适应值。 
-     * minimum: 0
-     * maximum: 30000
-     * @return bitrate
-     */
+    /** 输出平均码率。 取值范围：0或[40,30000]之间的整数。 单位：kbit/s 若设置为0，则输出平均码率为自适应值。 minimum: 0 maximum: 30000
+     * 
+     * @return bitrate */
     public Integer getBitrate() {
         return bitrate;
     }
@@ -270,22 +222,15 @@ public class VideoParameters  {
         this.bitrate = bitrate;
     }
 
-    
-
     public VideoParameters withProfile(Integer profile) {
         this.profile = profile;
         return this;
     }
 
-    
-
-
-    /**
-     * 编码档次  取值如下： - 1：VIDEO_PROFILE_H264_BASE - 2：VIDEO_PROFILE_H264_MAIN - 3：VIDEO_PROFILE_H264_HIGH - 4：VIDEO_PROFILE_H265_MAIN 
-     * minimum: 0
-     * maximum: 5
-     * @return profile
-     */
+    /** 编码档次 取值如下： - 1：VIDEO_PROFILE_H264_BASE - 2：VIDEO_PROFILE_H264_MAIN - 3：VIDEO_PROFILE_H264_HIGH -
+     * 4：VIDEO_PROFILE_H265_MAIN minimum: 0 maximum: 5
+     * 
+     * @return profile */
     public Integer getProfile() {
         return profile;
     }
@@ -294,22 +239,17 @@ public class VideoParameters  {
         this.profile = profile;
     }
 
-    
-
     public VideoParameters withLevel(Integer level) {
         this.level = level;
         return this;
     }
 
-    
-
-
-    /**
-     * 编码级别  取值如下： - 1：VIDEO_LEVEL_1_0 - 2：VIDEO_LEVEL_1_1 - 3：VIDEO_LEVEL_1_2 - 4：VIDEO_LEVEL_1_3 - 5：VIDEO_LEVEL_2_0 - 6：VIDEO_LEVEL_2_1 - 7：VIDEO_LEVEL_2_2 - 8：VIDEO_LEVEL_3_0 - 9：VIDEO_LEVEL_3_1 - 10：VIDEO_LEVEL_3_2 - 11：VIDEO_LEVEL_4_0 - 12：VIDEO_LEVEL_4_1 - 13：VIDEO_LEVEL_4_2 - 14：VIDEO_LEVEL_5_0 - 15：VIDEO_LEVEL_5_1 - 16：VIDEO_LEVEL_x_x 
-     * minimum: 0
-     * maximum: 16
-     * @return level
-     */
+    /** 编码级别 取值如下： - 1：VIDEO_LEVEL_1_0 - 2：VIDEO_LEVEL_1_1 - 3：VIDEO_LEVEL_1_2 - 4：VIDEO_LEVEL_1_3 - 5：VIDEO_LEVEL_2_0 -
+     * 6：VIDEO_LEVEL_2_1 - 7：VIDEO_LEVEL_2_2 - 8：VIDEO_LEVEL_3_0 - 9：VIDEO_LEVEL_3_1 - 10：VIDEO_LEVEL_3_2 -
+     * 11：VIDEO_LEVEL_4_0 - 12：VIDEO_LEVEL_4_1 - 13：VIDEO_LEVEL_4_2 - 14：VIDEO_LEVEL_5_0 - 15：VIDEO_LEVEL_5_1 -
+     * 16：VIDEO_LEVEL_x_x minimum: 0 maximum: 16
+     * 
+     * @return level */
     public Integer getLevel() {
         return level;
     }
@@ -318,22 +258,15 @@ public class VideoParameters  {
         this.level = level;
     }
 
-    
-
     public VideoParameters withPreset(Integer preset) {
         this.preset = preset;
         return this;
     }
 
-    
-
-
-    /**
-     * 编码质量等级  取值如下： - 1：VIDEO_PRESET_HSPEED2 (只用于h.265, h.265 default) - 2：VIDEO_PRESET_HSPEED (只用于h.265) - 3：VIDEO_PRESET_NORMAL (h264/h.265可用，h.264 default) 
-     * minimum: 0
-     * maximum: 4
-     * @return preset
-     */
+    /** 编码质量等级 取值如下： - 1：VIDEO_PRESET_HSPEED2 (只用于h.265, h.265 default) - 2：VIDEO_PRESET_HSPEED (只用于h.265) -
+     * 3：VIDEO_PRESET_NORMAL (h264/h.265可用，h.264 default) minimum: 0 maximum: 4
+     * 
+     * @return preset */
     public Integer getPreset() {
         return preset;
     }
@@ -342,22 +275,14 @@ public class VideoParameters  {
         this.preset = preset;
     }
 
-    
-
     public VideoParameters withRefFramesCount(Integer refFramesCount) {
         this.refFramesCount = refFramesCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 最大参考帧数。  取值范围： - H264：[1，8]，默认值为4 。 - H265：固定值4。  单位：帧。 
-     * minimum: 0
-     * maximum: 8
-     * @return refFramesCount
-     */
+    /** 最大参考帧数。 取值范围： - H264：[1，8]，默认值为4 。 - H265：固定值4。 单位：帧。 minimum: 0 maximum: 8
+     * 
+     * @return refFramesCount */
     public Integer getRefFramesCount() {
         return refFramesCount;
     }
@@ -366,22 +291,14 @@ public class VideoParameters  {
         this.refFramesCount = refFramesCount;
     }
 
-    
-
     public VideoParameters withMaxIframesInterval(Integer maxIframesInterval) {
         this.maxIframesInterval = maxIframesInterval;
         return this;
     }
 
-    
-
-
-    /**
-     * I帧最大间隔  取值范围：[2，10]。  默认值：5。  单位：秒。 
-     * minimum: 2
-     * maximum: 10
-     * @return maxIframesInterval
-     */
+    /** I帧最大间隔 取值范围：[2，10]。 默认值：5。 单位：秒。 minimum: 2 maximum: 10
+     * 
+     * @return maxIframesInterval */
     public Integer getMaxIframesInterval() {
         return maxIframesInterval;
     }
@@ -390,22 +307,14 @@ public class VideoParameters  {
         this.maxIframesInterval = maxIframesInterval;
     }
 
-    
-
     public VideoParameters withBframesCount(Integer bframesCount) {
         this.bframesCount = bframesCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 最大B帧间隔。  取值范围： - H264：[0，7]，默认值为4。 - H265：[0，7]，默认值为7。  单位：帧。 
-     * minimum: 0
-     * maximum: 8
-     * @return bframesCount
-     */
+    /** 最大B帧间隔。 取值范围： - H264：[0，7]，默认值为4。 - H265：[0，7]，默认值为7。 单位：帧。 minimum: 0 maximum: 8
+     * 
+     * @return bframesCount */
     public Integer getBframesCount() {
         return bframesCount;
     }
@@ -414,22 +323,15 @@ public class VideoParameters  {
         this.bframesCount = bframesCount;
     }
 
-    
-
     public VideoParameters withFrameRate(Integer frameRate) {
         this.frameRate = frameRate;
         return this;
     }
 
-    
-
-
-    /**
-     * 帧率。  取值范围：0或[5,60]，0表示自适应。  单位：帧每秒。  > 若设置的帧率不在取值范围内，则自动调整为0，若设置的帧率高于片源帧率，则自动调整为片源帧率。 
-     * minimum: 0
-     * maximum: 2147483647
-     * @return frameRate
-     */
+    /** 帧率。 取值范围：0或[5,60]，0表示自适应。 单位：帧每秒。 > 若设置的帧率不在取值范围内，则自动调整为0，若设置的帧率高于片源帧率，则自动调整为片源帧率。 minimum: 0 maximum:
+     * 2147483647
+     * 
+     * @return frameRate */
     public Integer getFrameRate() {
         return frameRate;
     }
@@ -438,22 +340,14 @@ public class VideoParameters  {
         this.frameRate = frameRate;
     }
 
-    
-
     public VideoParameters withWidth(Integer width) {
         this.width = width;
         return this;
     }
 
-    
-
-
-    /**
-     * 视频宽度（单位：像素）  - H264：范围[32,4096]，必须为2的倍数 - H265：范围[320,4096]，必须是4的倍数 
-     * minimum: 0
-     * maximum: 4096
-     * @return width
-     */
+    /** 视频宽度（单位：像素） - H264：范围[32,4096]，必须为2的倍数 - H265：范围[320,4096]，必须是4的倍数 minimum: 0 maximum: 4096
+     * 
+     * @return width */
     public Integer getWidth() {
         return width;
     }
@@ -462,22 +356,14 @@ public class VideoParameters  {
         this.width = width;
     }
 
-    
-
     public VideoParameters withHeight(Integer height) {
         this.height = height;
         return this;
     }
 
-    
-
-
-    /**
-     * 视频高度（单位：像素）  - H264：范围[32,2880]，必须为2的倍数 - H265：范围[240,2880] ，必须是4的倍数 
-     * minimum: 0
-     * maximum: 2880
-     * @return height
-     */
+    /** 视频高度（单位：像素） - H264：范围[32,2880]，必须为2的倍数 - H265：范围[240,2880] ，必须是4的倍数 minimum: 0 maximum: 2880
+     * 
+     * @return height */
     public Integer getHeight() {
         return height;
     }
@@ -486,22 +372,14 @@ public class VideoParameters  {
         this.height = height;
     }
 
-    
-
     public VideoParameters withAspectRatio(Integer aspectRatio) {
         this.aspectRatio = aspectRatio;
         return this;
     }
 
-    
-
-
-    /**
-     * 纵横比（保留，图像缩放方式）  - 0：自适应（保持原有宽高比） - 1：补黑边（16:9） - 2：裁黑边（18:9） 
-     * minimum: 0
-     * maximum: 2
-     * @return aspectRatio
-     */
+    /** 纵横比（保留，图像缩放方式） - 0：自适应（保持原有宽高比） - 1：补黑边（16:9） - 2：裁黑边（18:9） minimum: 0 maximum: 2
+     * 
+     * @return aspectRatio */
     public Integer getAspectRatio() {
         return aspectRatio;
     }
@@ -510,22 +388,14 @@ public class VideoParameters  {
         this.aspectRatio = aspectRatio;
     }
 
-    
-
     public VideoParameters withBlackCut(Integer blackCut) {
         this.blackCut = blackCut;
         return this;
     }
 
-    
-
-
-    /**
-     * 黑边剪裁类型  - 0：不开启黑边剪裁 - 1：开启黑边剪裁，低复杂度算法，针对长视频（>5分钟） - 2：开启黑边剪裁，高复杂度算法，针对短视频（<=5分钟） 
-     * minimum: 0
-     * maximum: 2
-     * @return blackCut
-     */
+    /** 黑边剪裁类型 - 0：不开启黑边剪裁 - 1：开启黑边剪裁，低复杂度算法，针对长视频（>5分钟） - 2：开启黑边剪裁，高复杂度算法，针对短视频（<=5分钟） minimum: 0 maximum: 2
+     * 
+     * @return blackCut */
     public Integer getBlackCut() {
         return blackCut;
     }
@@ -534,20 +404,14 @@ public class VideoParameters  {
         this.blackCut = blackCut;
     }
 
-    
-
     public VideoParameters withGoPStructure(Boolean goPStructure) {
         this.goPStructure = goPStructure;
         return this;
     }
 
-    
-
-
-    /**
-     * GOP类型（暂不开放） - 0: Closed (Default) - 1:Open 
-     * @return goPStructure
-     */
+    /** GOP类型（暂不开放） - 0: Closed (Default) - 1:Open
+     * 
+     * @return goPStructure */
     public Boolean getGoPStructure() {
         return goPStructure;
     }
@@ -556,20 +420,14 @@ public class VideoParameters  {
         this.goPStructure = goPStructure;
     }
 
-    
-
     public VideoParameters withSrFactor(String srFactor) {
         this.srFactor = srFactor;
         return this;
     }
 
-    
-
-
-    /**
-     * 超分倍数  取值如下： - 2：两倍超分 
-     * @return srFactor
-     */
+    /** 超分倍数 取值如下： - 2：两倍超分
+     * 
+     * @return srFactor */
     public String getSrFactor() {
         return srFactor;
     }
@@ -577,8 +435,6 @@ public class VideoParameters  {
     public void setSrFactor(String srFactor) {
         this.srFactor = srFactor;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -589,27 +445,42 @@ public class VideoParameters  {
             return false;
         }
         VideoParameters videoParameters = (VideoParameters) o;
-        return Objects.equals(this.outputPolicy, videoParameters.outputPolicy) &&
-            Objects.equals(this.codec, videoParameters.codec) &&
-            Objects.equals(this.bitrate, videoParameters.bitrate) &&
-            Objects.equals(this.profile, videoParameters.profile) &&
-            Objects.equals(this.level, videoParameters.level) &&
-            Objects.equals(this.preset, videoParameters.preset) &&
-            Objects.equals(this.refFramesCount, videoParameters.refFramesCount) &&
-            Objects.equals(this.maxIframesInterval, videoParameters.maxIframesInterval) &&
-            Objects.equals(this.bframesCount, videoParameters.bframesCount) &&
-            Objects.equals(this.frameRate, videoParameters.frameRate) &&
-            Objects.equals(this.width, videoParameters.width) &&
-            Objects.equals(this.height, videoParameters.height) &&
-            Objects.equals(this.aspectRatio, videoParameters.aspectRatio) &&
-            Objects.equals(this.blackCut, videoParameters.blackCut) &&
-            Objects.equals(this.goPStructure, videoParameters.goPStructure) &&
-            Objects.equals(this.srFactor, videoParameters.srFactor);
+        return Objects.equals(this.outputPolicy, videoParameters.outputPolicy)
+            && Objects.equals(this.codec, videoParameters.codec)
+            && Objects.equals(this.bitrate, videoParameters.bitrate)
+            && Objects.equals(this.profile, videoParameters.profile)
+            && Objects.equals(this.level, videoParameters.level) && Objects.equals(this.preset, videoParameters.preset)
+            && Objects.equals(this.refFramesCount, videoParameters.refFramesCount)
+            && Objects.equals(this.maxIframesInterval, videoParameters.maxIframesInterval)
+            && Objects.equals(this.bframesCount, videoParameters.bframesCount)
+            && Objects.equals(this.frameRate, videoParameters.frameRate)
+            && Objects.equals(this.width, videoParameters.width) && Objects.equals(this.height, videoParameters.height)
+            && Objects.equals(this.aspectRatio, videoParameters.aspectRatio)
+            && Objects.equals(this.blackCut, videoParameters.blackCut)
+            && Objects.equals(this.goPStructure, videoParameters.goPStructure)
+            && Objects.equals(this.srFactor, videoParameters.srFactor);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(outputPolicy, codec, bitrate, profile, level, preset, refFramesCount, maxIframesInterval, bframesCount, frameRate, width, height, aspectRatio, blackCut, goPStructure, srFactor);
+        return Objects.hash(outputPolicy,
+            codec,
+            bitrate,
+            profile,
+            level,
+            preset,
+            refFramesCount,
+            maxIframesInterval,
+            bframesCount,
+            frameRate,
+            width,
+            height,
+            aspectRatio,
+            blackCut,
+            goPStructure,
+            srFactor);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -633,16 +504,13 @@ public class VideoParameters  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

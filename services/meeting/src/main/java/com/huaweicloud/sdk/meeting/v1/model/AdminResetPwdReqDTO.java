@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * AdminResetPwdReqDTO
- */
-public class AdminResetPwdReqDTO  {
-
-
+/** AdminResetPwdReqDTO */
+public class AdminResetPwdReqDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="account")
-    
+    @JsonProperty(value = "account")
+
     private String account;
 
     public AdminResetPwdReqDTO withAccount(String account) {
@@ -28,13 +18,9 @@ public class AdminResetPwdReqDTO  {
         return this;
     }
 
-    
-
-
-    /**
-     * 被修改密码的用户账号 maxLength：255 minLength：1 
-     * @return account
-     */
+    /** 被修改密码的用户账号 maxLength：255 minLength：1
+     * 
+     * @return account */
     public String getAccount() {
         return account;
     }
@@ -42,8 +28,6 @@ public class AdminResetPwdReqDTO  {
     public void setAccount(String account) {
         this.account = account;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class AdminResetPwdReqDTO  {
         AdminResetPwdReqDTO adminResetPwdReqDTO = (AdminResetPwdReqDTO) o;
         return Objects.equals(this.account, adminResetPwdReqDTO.account);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(account);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class AdminResetPwdReqDTO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

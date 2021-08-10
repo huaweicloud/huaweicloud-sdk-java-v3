@@ -1,52 +1,34 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * DeleteResult
- */
-public class DeleteResult  {
-
-
+/** DeleteResult */
+public class DeleteResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="asset_id")
-    
+    @JsonProperty(value = "asset_id")
+
     private String assetId;
-    /**
-     * 删除状态。  取值如下： - DELETED：已删除。 - FAILED：删除失败。
-     */
+
+    /** 删除状态。 取值如下： - DELETED：已删除。 - FAILED：删除失败。 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum FAILED for value: "FAILED"
-         */
+        /** Enum FAILED for value: "FAILED" */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
-        
-        /**
-         * Enum DELETED for value: "DELETED"
-         */
+
+        /** Enum DELETED for value: "DELETED" */
         public static final StatusEnum DELETED = new StatusEnum("DELETED");
-        
-        /**
-         * Enum UNKNOW for value: "UNKNOW"
-         */
+
+        /** Enum UNKNOW for value: "UNKNOW" */
         public static final StatusEnum UNKNOW = new StatusEnum("UNKNOW");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,7 +58,7 @@ public class DeleteResult  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -87,7 +69,7 @@ public class DeleteResult  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -111,10 +93,9 @@ public class DeleteResult  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
     public DeleteResult withAssetId(String assetId) {
@@ -122,13 +103,9 @@ public class DeleteResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 媒资ID。
-     * @return assetId
-     */
+    /** 媒资ID。
+     * 
+     * @return assetId */
     public String getAssetId() {
         return assetId;
     }
@@ -137,20 +114,14 @@ public class DeleteResult  {
         this.assetId = assetId;
     }
 
-    
-
     public DeleteResult withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 删除状态。  取值如下： - DELETED：已删除。 - FAILED：删除失败。
-     * @return status
-     */
+    /** 删除状态。 取值如下： - DELETED：已删除。 - FAILED：删除失败。
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -158,8 +129,6 @@ public class DeleteResult  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -170,13 +139,14 @@ public class DeleteResult  {
             return false;
         }
         DeleteResult deleteResult = (DeleteResult) o;
-        return Objects.equals(this.assetId, deleteResult.assetId) &&
-            Objects.equals(this.status, deleteResult.status);
+        return Objects.equals(this.assetId, deleteResult.assetId) && Objects.equals(this.status, deleteResult.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(assetId, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -186,16 +156,13 @@ public class DeleteResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

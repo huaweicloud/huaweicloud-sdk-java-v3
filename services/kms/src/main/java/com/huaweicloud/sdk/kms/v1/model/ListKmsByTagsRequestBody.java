@@ -1,60 +1,44 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.Tag;
-import com.huaweicloud.sdk.kms.v1.model.TagItem;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ListKmsByTagsRequestBody
- */
-public class ListKmsByTagsRequestBody  {
-
-
+/** ListKmsByTagsRequestBody */
+public class ListKmsByTagsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private String limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private String offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private String action;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<Tag> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="matches")
-    
+    @JsonProperty(value = "matches")
+
     private List<TagItem> matches = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sequence")
-    
+    @JsonProperty(value = "sequence")
+
     private String sequence;
 
     public ListKmsByTagsRequestBody withLimit(String limit) {
@@ -62,13 +46,9 @@ public class ListKmsByTagsRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 查询记录数（“action”为“count”时，无需设置此参数），如果“action”为“filter”，默认为“10”。 limit的取值范围为“1-1000”。
-     * @return limit
-     */
+    /** 查询记录数（“action”为“count”时，无需设置此参数），如果“action”为“filter”，默认为“10”。 limit的取值范围为“1-1000”。
+     * 
+     * @return limit */
     public String getLimit() {
         return limit;
     }
@@ -77,20 +57,15 @@ public class ListKmsByTagsRequestBody  {
         this.limit = limit;
     }
 
-    
-
     public ListKmsByTagsRequestBody withOffset(String offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 索引位置。从offset指定的下一条数据开始查询。查询第一页数据时，将查询前一页数据时响应体中的值带入此参数（“action”为“count”时，无需设置此参数）。如果“action”为“filter”，offset默认为“0”。 offset必须为数字，不能为负数。
-     * @return offset
-     */
+    /** 索引位置。从offset指定的下一条数据开始查询。查询第一页数据时，将查询前一页数据时响应体中的值带入此参数（“action”为“count”时，无需设置此参数）。如果“action”为“filter”，offset默认为“0”。
+     * offset必须为数字，不能为负数。
+     * 
+     * @return offset */
     public String getOffset() {
         return offset;
     }
@@ -99,20 +74,14 @@ public class ListKmsByTagsRequestBody  {
         this.offset = offset;
     }
 
-    
-
     public ListKmsByTagsRequestBody withAction(String action) {
         this.action = action;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作标识（可设置为“filter”或者“count”）。  - filter：表示过滤。  - count：表示查询总条数。
-     * @return action
-     */
+    /** 操作标识（可设置为“filter”或者“count”）。 - filter：表示过滤。 - count：表示查询总条数。
+     * 
+     * @return action */
     public String getAction() {
         return action;
     }
@@ -121,16 +90,13 @@ public class ListKmsByTagsRequestBody  {
         this.action = action;
     }
 
-    
-
     public ListKmsByTagsRequestBody withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public ListKmsByTagsRequestBody addTagsItem(Tag tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -138,17 +104,17 @@ public class ListKmsByTagsRequestBody  {
     }
 
     public ListKmsByTagsRequestBody withTags(Consumer<List<Tag>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 标签列表，key和value键值对的集合。  - key：表示标签键，一个密钥下最多包含10个key，key不能为空，不能重复，同一个key中value不能重复。key最大长度为36个字符。  - value：表示标签值。每个值最大长度43个字符，value之间为“与”的关系。
-     * @return tags
-     */
+    /** 标签列表，key和value键值对的集合。 - key：表示标签键，一个密钥下最多包含10个key，key不能为空，不能重复，同一个key中value不能重复。key最大长度为36个字符。 -
+     * value：表示标签值。每个值最大长度43个字符，value之间为“与”的关系。
+     * 
+     * @return tags */
     public List<Tag> getTags() {
         return tags;
     }
@@ -157,16 +123,13 @@ public class ListKmsByTagsRequestBody  {
         this.tags = tags;
     }
 
-    
-
     public ListKmsByTagsRequestBody withMatches(List<TagItem> matches) {
         this.matches = matches;
         return this;
     }
 
-    
     public ListKmsByTagsRequestBody addMatchesItem(TagItem matchesItem) {
-        if(this.matches == null) {
+        if (this.matches == null) {
             this.matches = new ArrayList<>();
         }
         this.matches.add(matchesItem);
@@ -174,17 +137,16 @@ public class ListKmsByTagsRequestBody  {
     }
 
     public ListKmsByTagsRequestBody withMatches(Consumer<List<TagItem>> matchesSetter) {
-        if(this.matches == null) {
+        if (this.matches == null) {
             this.matches = new ArrayList<>();
         }
         matchesSetter.accept(this.matches);
         return this;
     }
 
-    /**
-     * 搜索字段。  - key为要匹配的字段，例如：resource_name等。  - value为匹配的值，最大长度为255个字符，不能为空。
-     * @return matches
-     */
+    /** 搜索字段。 - key为要匹配的字段，例如：resource_name等。 - value为匹配的值，最大长度为255个字符，不能为空。
+     * 
+     * @return matches */
     public List<TagItem> getMatches() {
         return matches;
     }
@@ -193,20 +155,14 @@ public class ListKmsByTagsRequestBody  {
         this.matches = matches;
     }
 
-    
-
     public ListKmsByTagsRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
-     * @return sequence
-     */
+    /** 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
+     * 
+     * @return sequence */
     public String getSequence() {
         return sequence;
     }
@@ -214,8 +170,6 @@ public class ListKmsByTagsRequestBody  {
     public void setSequence(String sequence) {
         this.sequence = sequence;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -226,17 +180,19 @@ public class ListKmsByTagsRequestBody  {
             return false;
         }
         ListKmsByTagsRequestBody listKmsByTagsRequestBody = (ListKmsByTagsRequestBody) o;
-        return Objects.equals(this.limit, listKmsByTagsRequestBody.limit) &&
-            Objects.equals(this.offset, listKmsByTagsRequestBody.offset) &&
-            Objects.equals(this.action, listKmsByTagsRequestBody.action) &&
-            Objects.equals(this.tags, listKmsByTagsRequestBody.tags) &&
-            Objects.equals(this.matches, listKmsByTagsRequestBody.matches) &&
-            Objects.equals(this.sequence, listKmsByTagsRequestBody.sequence);
+        return Objects.equals(this.limit, listKmsByTagsRequestBody.limit)
+            && Objects.equals(this.offset, listKmsByTagsRequestBody.offset)
+            && Objects.equals(this.action, listKmsByTagsRequestBody.action)
+            && Objects.equals(this.tags, listKmsByTagsRequestBody.tags)
+            && Objects.equals(this.matches, listKmsByTagsRequestBody.matches)
+            && Objects.equals(this.sequence, listKmsByTagsRequestBody.sequence);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(limit, offset, action, tags, matches, sequence);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -250,16 +206,13 @@ public class ListKmsByTagsRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListMigprojectsRequest  {
-
-
+/** Request Object */
+public class ListMigprojectsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
     public ListMigprojectsRequest withLimit(Integer limit) {
@@ -34,15 +23,9 @@ public class ListMigprojectsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 每一页记录的迁移项目
-     * minimum: 0
-     * maximum: 100
-     * @return limit
-     */
+    /** 每一页记录的迁移项目 minimum: 0 maximum: 100
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -51,22 +34,14 @@ public class ListMigprojectsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListMigprojectsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量
-     * minimum: 0
-     * maximum: 65535
-     * @return offset
-     */
+    /** 偏移量 minimum: 0 maximum: 65535
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -74,8 +49,6 @@ public class ListMigprojectsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -86,13 +59,15 @@ public class ListMigprojectsRequest  {
             return false;
         }
         ListMigprojectsRequest listMigprojectsRequest = (ListMigprojectsRequest) o;
-        return Objects.equals(this.limit, listMigprojectsRequest.limit) &&
-            Objects.equals(this.offset, listMigprojectsRequest.offset);
+        return Objects.equals(this.limit, listMigprojectsRequest.limit)
+            && Objects.equals(this.offset, listMigprojectsRequest.offset);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(limit, offset);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -102,16 +77,13 @@ public class ListMigprojectsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

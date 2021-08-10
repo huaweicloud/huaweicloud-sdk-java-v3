@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.cloudide.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListInstancesRequest  {
-
-
+/** Request Object */
+public class ListInstancesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Long limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Long offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_temporary")
-    
+    @JsonProperty(value = "is_temporary")
+
     private Boolean isTemporary;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="label")
-    
+    @JsonProperty(value = "label")
+
     private String label;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="search")
-    
+    @JsonProperty(value = "search")
+
     private String search;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sort_dir")
-    
+    @JsonProperty(value = "sort_dir")
+
     private String sortDir;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sort_key")
-    
+    @JsonProperty(value = "sort_key")
+
     private String sortKey;
 
     public ListInstancesRequest withLimit(Long limit) {
@@ -64,15 +48,9 @@ public class ListInstancesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示的条目数量 10/15/30
-     * minimum: 10
-     * maximum: 30
-     * @return limit
-     */
+    /** 每页显示的条目数量 10/15/30 minimum: 10 maximum: 30
+     * 
+     * @return limit */
     public Long getLimit() {
         return limit;
     }
@@ -81,22 +59,14 @@ public class ListInstancesRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListInstancesRequest withOffset(Long offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询
-     * minimum: 0
-     * maximum: 999
-     * @return offset
-     */
+    /** 偏移量，表示从此偏移量开始查询 minimum: 0 maximum: 999
+     * 
+     * @return offset */
     public Long getOffset() {
         return offset;
     }
@@ -105,20 +75,14 @@ public class ListInstancesRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListInstancesRequest withIsTemporary(Boolean isTemporary) {
         this.isTemporary = isTemporary;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否页面显示（以标签配置为准）
-     * @return isTemporary
-     */
+    /** 是否页面显示（以标签配置为准）
+     * 
+     * @return isTemporary */
     public Boolean getIsTemporary() {
         return isTemporary;
     }
@@ -127,20 +91,14 @@ public class ListInstancesRequest  {
         this.isTemporary = isTemporary;
     }
 
-    
-
     public ListInstancesRequest withLabel(String label) {
         this.label = label;
         return this;
     }
 
-    
-
-
-    /**
-     * 标签
-     * @return label
-     */
+    /** 标签
+     * 
+     * @return label */
     public String getLabel() {
         return label;
     }
@@ -149,20 +107,14 @@ public class ListInstancesRequest  {
         this.label = label;
     }
 
-    
-
     public ListInstancesRequest withSearch(String search) {
         this.search = search;
         return this;
     }
 
-    
-
-
-    /**
-     * 关键字查询(根据实例名，描述模糊查询)
-     * @return search
-     */
+    /** 关键字查询(根据实例名，描述模糊查询)
+     * 
+     * @return search */
     public String getSearch() {
         return search;
     }
@@ -171,20 +123,14 @@ public class ListInstancesRequest  {
         this.search = search;
     }
 
-    
-
     public ListInstancesRequest withSortDir(String sortDir) {
         this.sortDir = sortDir;
         return this;
     }
 
-    
-
-
-    /**
-     * 排序方式 asc/desc
-     * @return sortDir
-     */
+    /** 排序方式 asc/desc
+     * 
+     * @return sortDir */
     public String getSortDir() {
         return sortDir;
     }
@@ -193,20 +139,14 @@ public class ListInstancesRequest  {
         this.sortDir = sortDir;
     }
 
-    
-
     public ListInstancesRequest withSortKey(String sortKey) {
         this.sortKey = sortKey;
         return this;
     }
 
-    
-
-
-    /**
-     * 排序字段。 display_name 实例名、status状态、pvc_quantity 存储容量、created_time 创建时间、stack_id 技术栈
-     * @return sortKey
-     */
+    /** 排序字段。 display_name 实例名、status状态、pvc_quantity 存储容量、created_time 创建时间、stack_id 技术栈
+     * 
+     * @return sortKey */
     public String getSortKey() {
         return sortKey;
     }
@@ -214,8 +154,6 @@ public class ListInstancesRequest  {
     public void setSortKey(String sortKey) {
         this.sortKey = sortKey;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -226,18 +164,20 @@ public class ListInstancesRequest  {
             return false;
         }
         ListInstancesRequest listInstancesRequest = (ListInstancesRequest) o;
-        return Objects.equals(this.limit, listInstancesRequest.limit) &&
-            Objects.equals(this.offset, listInstancesRequest.offset) &&
-            Objects.equals(this.isTemporary, listInstancesRequest.isTemporary) &&
-            Objects.equals(this.label, listInstancesRequest.label) &&
-            Objects.equals(this.search, listInstancesRequest.search) &&
-            Objects.equals(this.sortDir, listInstancesRequest.sortDir) &&
-            Objects.equals(this.sortKey, listInstancesRequest.sortKey);
+        return Objects.equals(this.limit, listInstancesRequest.limit)
+            && Objects.equals(this.offset, listInstancesRequest.offset)
+            && Objects.equals(this.isTemporary, listInstancesRequest.isTemporary)
+            && Objects.equals(this.label, listInstancesRequest.label)
+            && Objects.equals(this.search, listInstancesRequest.search)
+            && Objects.equals(this.sortDir, listInstancesRequest.sortDir)
+            && Objects.equals(this.sortKey, listInstancesRequest.sortKey);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(limit, offset, isTemporary, label, search, sortDir, sortKey);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -252,16 +192,13 @@ public class ListInstancesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

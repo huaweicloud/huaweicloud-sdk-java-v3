@@ -21,13 +21,9 @@
 
 package com.huaweicloud.sdk.core.http;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public enum HttpMethod {
-    /**
-     * HTTP request methods
-     */
+    /** HTTP request methods */
     GET,
     POST,
     PUT,

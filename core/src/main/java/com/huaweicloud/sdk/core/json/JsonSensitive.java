@@ -27,12 +27,9 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-/**
- * 对字符串类型生效，能够隐藏字符串
- * 需要调用JsonUtils.getSecureMapperWithoutSensitive() 然后执行操作
+/** 对字符串类型生效，能够隐藏字符串 需要调用JsonUtils.getSecureMapperWithoutSensitive() 然后执行操作
  *
- * @author HuaweiCloud_SDK
- */
+ * @author HuaweiCloud_SDK */
 @Retention(RetentionPolicy.RUNTIME)
 @JacksonAnnotationsInside
 @JsonSerialize(using = SensitiveStringSerializer.class)

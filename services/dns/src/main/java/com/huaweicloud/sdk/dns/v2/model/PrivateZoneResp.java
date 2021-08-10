@@ -1,126 +1,99 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dns.v2.model.PageLink;
-import com.huaweicloud.sdk.dns.v2.model.RouterWithStatus;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * PrivateZoneResp
- */
-public class PrivateZoneResp  {
-
-
+/** PrivateZoneResp */
+public class PrivateZoneResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="email")
-    
+    @JsonProperty(value = "email")
+
     private String email;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="zone_type")
-    
+    @JsonProperty(value = "zone_type")
+
     private String zoneType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ttl")
-    
+    @JsonProperty(value = "ttl")
+
     private Integer ttl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="serial")
-    
+    @JsonProperty(value = "serial")
+
     private Integer serial;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="record_num")
-    
+    @JsonProperty(value = "record_num")
+
     private Integer recordNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pool_id")
-    
+    @JsonProperty(value = "pool_id")
+
     private String poolId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private String updatedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private PageLink links;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="masters")
-    
+    @JsonProperty(value = "masters")
+
     private List<String> masters = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="routers")
-    
+    @JsonProperty(value = "routers")
+
     private List<RouterWithStatus> routers = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public PrivateZoneResp withId(String id) {
@@ -128,13 +101,9 @@ public class PrivateZoneResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * zone的ID，uuid形式的一个资源标识。
-     * @return id
-     */
+    /** zone的ID，uuid形式的一个资源标识。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -143,20 +112,14 @@ public class PrivateZoneResp  {
         this.id = id;
     }
 
-    
-
     public PrivateZoneResp withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * zone名称。
-     * @return name
-     */
+    /** zone名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -165,20 +128,14 @@ public class PrivateZoneResp  {
         this.name = name;
     }
 
-    
-
     public PrivateZoneResp withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 对zone的描述信息。
-     * @return description
-     */
+    /** 对zone的描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -187,20 +144,14 @@ public class PrivateZoneResp  {
         this.description = description;
     }
 
-    
-
     public PrivateZoneResp withEmail(String email) {
         this.email = email;
         return this;
     }
 
-    
-
-
-    /**
-     * 管理该zone的管理员邮箱。
-     * @return email
-     */
+    /** 管理该zone的管理员邮箱。
+     * 
+     * @return email */
     public String getEmail() {
         return email;
     }
@@ -209,20 +160,14 @@ public class PrivateZoneResp  {
         this.email = email;
     }
 
-    
-
     public PrivateZoneResp withZoneType(String zoneType) {
         this.zoneType = zoneType;
         return this;
     }
 
-    
-
-
-    /**
-     * zone类型，公网（public）或者内网（private）。
-     * @return zoneType
-     */
+    /** zone类型，公网（public）或者内网（private）。
+     * 
+     * @return zoneType */
     public String getZoneType() {
         return zoneType;
     }
@@ -231,20 +176,14 @@ public class PrivateZoneResp  {
         this.zoneType = zoneType;
     }
 
-    
-
     public PrivateZoneResp withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
     }
 
-    
-
-
-    /**
-     * 该zone下SOA记录中的ttl值。
-     * @return ttl
-     */
+    /** 该zone下SOA记录中的ttl值。
+     * 
+     * @return ttl */
     public Integer getTtl() {
         return ttl;
     }
@@ -253,20 +192,14 @@ public class PrivateZoneResp  {
         this.ttl = ttl;
     }
 
-    
-
     public PrivateZoneResp withSerial(Integer serial) {
         this.serial = serial;
         return this;
     }
 
-    
-
-
-    /**
-     * 该zone下SOA记录中用于标识zone文件变更的序列值，用于主从节点同步。
-     * @return serial
-     */
+    /** 该zone下SOA记录中用于标识zone文件变更的序列值，用于主从节点同步。
+     * 
+     * @return serial */
     public Integer getSerial() {
         return serial;
     }
@@ -275,20 +208,14 @@ public class PrivateZoneResp  {
         this.serial = serial;
     }
 
-    
-
     public PrivateZoneResp withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源状态。
-     * @return status
-     */
+    /** 资源状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -297,20 +224,14 @@ public class PrivateZoneResp  {
         this.status = status;
     }
 
-    
-
     public PrivateZoneResp withRecordNum(Integer recordNum) {
         this.recordNum = recordNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 该zone下的recordset个数。
-     * @return recordNum
-     */
+    /** 该zone下的recordset个数。
+     * 
+     * @return recordNum */
     public Integer getRecordNum() {
         return recordNum;
     }
@@ -319,20 +240,14 @@ public class PrivateZoneResp  {
         this.recordNum = recordNum;
     }
 
-    
-
     public PrivateZoneResp withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
     }
 
-    
-
-
-    /**
-     * 托管该zone的pool，由系统分配。
-     * @return poolId
-     */
+    /** 托管该zone的pool，由系统分配。
+     * 
+     * @return poolId */
     public String getPoolId() {
         return poolId;
     }
@@ -341,20 +256,14 @@ public class PrivateZoneResp  {
         this.poolId = poolId;
     }
 
-    
-
     public PrivateZoneResp withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * zone所属的项目ID。
-     * @return projectId
-     */
+    /** zone所属的项目ID。
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -363,20 +272,14 @@ public class PrivateZoneResp  {
         this.projectId = projectId;
     }
 
-    
-
     public PrivateZoneResp withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间。
-     * @return createdAt
-     */
+    /** 创建时间。
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -385,20 +288,14 @@ public class PrivateZoneResp  {
         this.createdAt = createdAt;
     }
 
-    
-
     public PrivateZoneResp withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间。
-     * @return updatedAt
-     */
+    /** 更新时间。
+     * 
+     * @return updatedAt */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -407,27 +304,23 @@ public class PrivateZoneResp  {
         this.updatedAt = updatedAt;
     }
 
-    
-
     public PrivateZoneResp withLinks(PageLink links) {
         this.links = links;
         return this;
     }
 
     public PrivateZoneResp withLinks(Consumer<PageLink> linksSetter) {
-        if(this.links == null ){
+        if (this.links == null) {
             this.links = new PageLink();
             linksSetter.accept(this.links);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get links
-     * @return links
-     */
+    /** Get links
+     * 
+     * @return links */
     public PageLink getLinks() {
         return links;
     }
@@ -436,16 +329,13 @@ public class PrivateZoneResp  {
         this.links = links;
     }
 
-    
-
     public PrivateZoneResp withMasters(List<String> masters) {
         this.masters = masters;
         return this;
     }
 
-    
     public PrivateZoneResp addMastersItem(String mastersItem) {
-        if(this.masters == null) {
+        if (this.masters == null) {
             this.masters = new ArrayList<>();
         }
         this.masters.add(mastersItem);
@@ -453,17 +343,16 @@ public class PrivateZoneResp  {
     }
 
     public PrivateZoneResp withMasters(Consumer<List<String>> mastersSetter) {
-        if(this.masters == null) {
+        if (this.masters == null) {
             this.masters = new ArrayList<>();
         }
         mastersSetter.accept(this.masters);
         return this;
     }
 
-    /**
-     * 主从模式中，从DNS服务器用以获取DNS信息。
-     * @return masters
-     */
+    /** 主从模式中，从DNS服务器用以获取DNS信息。
+     * 
+     * @return masters */
     public List<String> getMasters() {
         return masters;
     }
@@ -472,16 +361,13 @@ public class PrivateZoneResp  {
         this.masters = masters;
     }
 
-    
-
     public PrivateZoneResp withRouters(List<RouterWithStatus> routers) {
         this.routers = routers;
         return this;
     }
 
-    
     public PrivateZoneResp addRoutersItem(RouterWithStatus routersItem) {
-        if(this.routers == null) {
+        if (this.routers == null) {
             this.routers = new ArrayList<>();
         }
         this.routers.add(routersItem);
@@ -489,17 +375,16 @@ public class PrivateZoneResp  {
     }
 
     public PrivateZoneResp withRouters(Consumer<List<RouterWithStatus>> routersSetter) {
-        if(this.routers == null) {
+        if (this.routers == null) {
             this.routers = new ArrayList<>();
         }
         routersSetter.accept(this.routers);
         return this;
     }
 
-    /**
-     * 与该zone关联的Router(VPC)列表。
-     * @return routers
-     */
+    /** 与该zone关联的Router(VPC)列表。
+     * 
+     * @return routers */
     public List<RouterWithStatus> getRouters() {
         return routers;
     }
@@ -508,20 +393,14 @@ public class PrivateZoneResp  {
         this.routers = routers;
     }
 
-    
-
     public PrivateZoneResp withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名关联的企业项目ID，长度不超过36个字符。
-     * @return enterpriseProjectId
-     */
+    /** 域名关联的企业项目ID，长度不超过36个字符。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -529,8 +408,6 @@ public class PrivateZoneResp  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -541,28 +418,44 @@ public class PrivateZoneResp  {
             return false;
         }
         PrivateZoneResp privateZoneResp = (PrivateZoneResp) o;
-        return Objects.equals(this.id, privateZoneResp.id) &&
-            Objects.equals(this.name, privateZoneResp.name) &&
-            Objects.equals(this.description, privateZoneResp.description) &&
-            Objects.equals(this.email, privateZoneResp.email) &&
-            Objects.equals(this.zoneType, privateZoneResp.zoneType) &&
-            Objects.equals(this.ttl, privateZoneResp.ttl) &&
-            Objects.equals(this.serial, privateZoneResp.serial) &&
-            Objects.equals(this.status, privateZoneResp.status) &&
-            Objects.equals(this.recordNum, privateZoneResp.recordNum) &&
-            Objects.equals(this.poolId, privateZoneResp.poolId) &&
-            Objects.equals(this.projectId, privateZoneResp.projectId) &&
-            Objects.equals(this.createdAt, privateZoneResp.createdAt) &&
-            Objects.equals(this.updatedAt, privateZoneResp.updatedAt) &&
-            Objects.equals(this.links, privateZoneResp.links) &&
-            Objects.equals(this.masters, privateZoneResp.masters) &&
-            Objects.equals(this.routers, privateZoneResp.routers) &&
-            Objects.equals(this.enterpriseProjectId, privateZoneResp.enterpriseProjectId);
+        return Objects.equals(this.id, privateZoneResp.id) && Objects.equals(this.name, privateZoneResp.name)
+            && Objects.equals(this.description, privateZoneResp.description)
+            && Objects.equals(this.email, privateZoneResp.email)
+            && Objects.equals(this.zoneType, privateZoneResp.zoneType) && Objects.equals(this.ttl, privateZoneResp.ttl)
+            && Objects.equals(this.serial, privateZoneResp.serial)
+            && Objects.equals(this.status, privateZoneResp.status)
+            && Objects.equals(this.recordNum, privateZoneResp.recordNum)
+            && Objects.equals(this.poolId, privateZoneResp.poolId)
+            && Objects.equals(this.projectId, privateZoneResp.projectId)
+            && Objects.equals(this.createdAt, privateZoneResp.createdAt)
+            && Objects.equals(this.updatedAt, privateZoneResp.updatedAt)
+            && Objects.equals(this.links, privateZoneResp.links)
+            && Objects.equals(this.masters, privateZoneResp.masters)
+            && Objects.equals(this.routers, privateZoneResp.routers)
+            && Objects.equals(this.enterpriseProjectId, privateZoneResp.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, email, zoneType, ttl, serial, status, recordNum, poolId, projectId, createdAt, updatedAt, links, masters, routers, enterpriseProjectId);
+        return Objects.hash(id,
+            name,
+            description,
+            email,
+            zoneType,
+            ttl,
+            serial,
+            status,
+            recordNum,
+            poolId,
+            projectId,
+            createdAt,
+            updatedAt,
+            links,
+            masters,
+            routers,
+            enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -587,16 +480,13 @@ public class PrivateZoneResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

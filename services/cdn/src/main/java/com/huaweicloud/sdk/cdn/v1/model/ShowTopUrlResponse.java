@@ -1,51 +1,35 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cdn.v1.model.TopUrlSummary;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowTopUrlResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_area")
-    
+    @JsonProperty(value = "service_area")
+
     private String serviceArea;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="top_url_summary")
-    
+    @JsonProperty(value = "top_url_summary")
+
     private List<TopUrlSummary> topUrlSummary = null;
-    
+
     public ShowTopUrlResponse withServiceArea(String serviceArea) {
         this.serviceArea = serviceArea;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务区域。
-     * @return serviceArea
-     */
+    /** 服务区域。
+     * 
+     * @return serviceArea */
     public String getServiceArea() {
         return serviceArea;
     }
@@ -54,16 +38,13 @@ public class ShowTopUrlResponse extends SdkResponse {
         this.serviceArea = serviceArea;
     }
 
-    
-
     public ShowTopUrlResponse withTopUrlSummary(List<TopUrlSummary> topUrlSummary) {
         this.topUrlSummary = topUrlSummary;
         return this;
     }
 
-    
     public ShowTopUrlResponse addTopUrlSummaryItem(TopUrlSummary topUrlSummaryItem) {
-        if(this.topUrlSummary == null) {
+        if (this.topUrlSummary == null) {
             this.topUrlSummary = new ArrayList<>();
         }
         this.topUrlSummary.add(topUrlSummaryItem);
@@ -71,17 +52,16 @@ public class ShowTopUrlResponse extends SdkResponse {
     }
 
     public ShowTopUrlResponse withTopUrlSummary(Consumer<List<TopUrlSummary>> topUrlSummarySetter) {
-        if(this.topUrlSummary == null) {
+        if (this.topUrlSummary == null) {
             this.topUrlSummary = new ArrayList<>();
         }
         topUrlSummarySetter.accept(this.topUrlSummary);
         return this;
     }
 
-    /**
-     * 详情数据对象。
-     * @return topUrlSummary
-     */
+    /** 详情数据对象。
+     * 
+     * @return topUrlSummary */
     public List<TopUrlSummary> getTopUrlSummary() {
         return topUrlSummary;
     }
@@ -89,8 +69,6 @@ public class ShowTopUrlResponse extends SdkResponse {
     public void setTopUrlSummary(List<TopUrlSummary> topUrlSummary) {
         this.topUrlSummary = topUrlSummary;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ShowTopUrlResponse extends SdkResponse {
             return false;
         }
         ShowTopUrlResponse showTopUrlResponse = (ShowTopUrlResponse) o;
-        return Objects.equals(this.serviceArea, showTopUrlResponse.serviceArea) &&
-            Objects.equals(this.topUrlSummary, showTopUrlResponse.topUrlSummary);
+        return Objects.equals(this.serviceArea, showTopUrlResponse.serviceArea)
+            && Objects.equals(this.topUrlSummary, showTopUrlResponse.topUrlSummary);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(serviceArea, topUrlSummary);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ShowTopUrlResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

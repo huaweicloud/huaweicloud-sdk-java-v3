@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.OperationLog;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowOpLogResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operation_log")
-    
+    @JsonProperty(value = "operation_log")
+
     private OperationLog operationLog;
 
     public ShowOpLogResponse withOperationLog(OperationLog operationLog) {
@@ -32,19 +21,17 @@ public class ShowOpLogResponse extends SdkResponse {
     }
 
     public ShowOpLogResponse withOperationLog(Consumer<OperationLog> operationLogSetter) {
-        if(this.operationLog == null ){
+        if (this.operationLog == null) {
             this.operationLog = new OperationLog();
             operationLogSetter.accept(this.operationLog);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get operationLog
-     * @return operationLog
-     */
+    /** Get operationLog
+     * 
+     * @return operationLog */
     public OperationLog getOperationLog() {
         return operationLog;
     }
@@ -52,8 +39,6 @@ public class ShowOpLogResponse extends SdkResponse {
     public void setOperationLog(OperationLog operationLog) {
         this.operationLog = operationLog;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class ShowOpLogResponse extends SdkResponse {
         ShowOpLogResponse showOpLogResponse = (ShowOpLogResponse) o;
         return Objects.equals(this.operationLog, showOpLogResponse.operationLog);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(operationLog);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class ShowOpLogResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

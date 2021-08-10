@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * AccessoryLimitVo
- */
-public class AccessoryLimitVo  {
-
-
+/** AccessoryLimitVo */
+public class AccessoryLimitVo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit_count")
-    
+    @JsonProperty(value = "limit_count")
+
     private String limitCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit_size")
-    
+    @JsonProperty(value = "limit_size")
+
     private String limitSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit_file_type")
-    
+    @JsonProperty(value = "limit_file_type")
+
     private String limitFileType;
 
     public AccessoryLimitVo withLimitCount(String limitCount) {
@@ -40,13 +28,9 @@ public class AccessoryLimitVo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 限制文件数量
-     * @return limitCount
-     */
+    /** 限制文件数量
+     * 
+     * @return limitCount */
     public String getLimitCount() {
         return limitCount;
     }
@@ -55,20 +39,14 @@ public class AccessoryLimitVo  {
         this.limitCount = limitCount;
     }
 
-    
-
     public AccessoryLimitVo withLimitSize(String limitSize) {
         this.limitSize = limitSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 限制文件大小，单位是M
-     * @return limitSize
-     */
+    /** 限制文件大小，单位是M
+     * 
+     * @return limitSize */
     public String getLimitSize() {
         return limitSize;
     }
@@ -77,20 +55,14 @@ public class AccessoryLimitVo  {
         this.limitSize = limitSize;
     }
 
-    
-
     public AccessoryLimitVo withLimitFileType(String limitFileType) {
         this.limitFileType = limitFileType;
         return this;
     }
 
-    
-
-
-    /**
-     * 限制文件类型
-     * @return limitFileType
-     */
+    /** 限制文件类型
+     * 
+     * @return limitFileType */
     public String getLimitFileType() {
         return limitFileType;
     }
@@ -98,8 +70,6 @@ public class AccessoryLimitVo  {
     public void setLimitFileType(String limitFileType) {
         this.limitFileType = limitFileType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class AccessoryLimitVo  {
             return false;
         }
         AccessoryLimitVo accessoryLimitVo = (AccessoryLimitVo) o;
-        return Objects.equals(this.limitCount, accessoryLimitVo.limitCount) &&
-            Objects.equals(this.limitSize, accessoryLimitVo.limitSize) &&
-            Objects.equals(this.limitFileType, accessoryLimitVo.limitFileType);
+        return Objects.equals(this.limitCount, accessoryLimitVo.limitCount)
+            && Objects.equals(this.limitSize, accessoryLimitVo.limitSize)
+            && Objects.equals(this.limitFileType, accessoryLimitVo.limitFileType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(limitCount, limitSize, limitFileType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class AccessoryLimitVo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

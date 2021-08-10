@@ -1,26 +1,18 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class AssumeroleSessionuser  {
-
-
+public class AssumeroleSessionuser {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public AssumeroleSessionuser withName(String name) {
@@ -28,13 +20,9 @@ public class AssumeroleSessionuser  {
         return this;
     }
 
-    
-
-
-    /**
-     * 委托方对应的企业用户名。用户名需满足如下规则：长度5~32，只能包含大写字母、小写字母、数字（0-9）、特殊字符（\"-\"与\"_\"）且只能以字母开头。
-     * @return name
-     */
+    /** 委托方对应的企业用户名。用户名需满足如下规则：长度5~32，只能包含大写字母、小写字母、数字（0-9）、特殊字符（\"-\"与\"_\"）且只能以字母开头。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -42,8 +30,6 @@ public class AssumeroleSessionuser  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +42,12 @@ public class AssumeroleSessionuser  {
         AssumeroleSessionuser assumeroleSessionuser = (AssumeroleSessionuser) o;
         return Objects.equals(this.name, assumeroleSessionuser.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +56,13 @@ public class AssumeroleSessionuser  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

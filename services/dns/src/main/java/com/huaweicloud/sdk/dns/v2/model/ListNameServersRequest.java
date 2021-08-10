@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListNameServersRequest  {
-
-
+/** Request Object */
+public class ListNameServersRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
     public ListNameServersRequest withType(String type) {
@@ -34,13 +23,10 @@ public class ListNameServersRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 待查询名称服务器的类型。 取值范围: public, private。 如果为空，表示查询所有类型的名称服务器。 如果为public，表示查询公网的名称服务器。 如果为private，表示查询内网的名称服务器。 搜索模式精确搜索。 默认值为空。
-     * @return type
-     */
+    /** 待查询名称服务器的类型。 取值范围: public, private。 如果为空，表示查询所有类型的名称服务器。 如果为public，表示查询公网的名称服务器。 如果为private，表示查询内网的名称服务器。
+     * 搜索模式精确搜索。 默认值为空。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -49,20 +35,14 @@ public class ListNameServersRequest  {
         this.type = type;
     }
 
-    
-
     public ListNameServersRequest withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * 待查询的region ID。 当查询公网的名称服务器时，此处不填。 搜索模式精确搜索。 默认值为空。
-     * @return region
-     */
+    /** 待查询的region ID。 当查询公网的名称服务器时，此处不填。 搜索模式精确搜索。 默认值为空。
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -70,8 +50,6 @@ public class ListNameServersRequest  {
     public void setRegion(String region) {
         this.region = region;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +60,15 @@ public class ListNameServersRequest  {
             return false;
         }
         ListNameServersRequest listNameServersRequest = (ListNameServersRequest) o;
-        return Objects.equals(this.type, listNameServersRequest.type) &&
-            Objects.equals(this.region, listNameServersRequest.region);
+        return Objects.equals(this.type, listNameServersRequest.type)
+            && Objects.equals(this.region, listNameServersRequest.region);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, region);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +78,13 @@ public class ListNameServersRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

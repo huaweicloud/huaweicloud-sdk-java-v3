@@ -1,53 +1,36 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DetachServerVolumeRequest  {
-
-
+/** Request Object */
+public class DetachServerVolumeRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server_id")
-    
+    @JsonProperty(value = "server_id")
+
     private String serverId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_id")
-    
+    @JsonProperty(value = "volume_id")
+
     private String volumeId;
-    /**
-     * 是否强制卸载数据盘。  - 是，值为“1”。  - 否，值为“0”。  默认值为0。
-     */
+
+    /** 是否强制卸载数据盘。 - 是，值为“1”。 - 否，值为“0”。 默认值为0。 */
     public static final class DeleteFlagEnum {
 
-        
-        /**
-         * Enum _0 for value: "0"
-         */
+        /** Enum _0 for value: "0" */
         public static final DeleteFlagEnum _0 = new DeleteFlagEnum("0");
-        
-        /**
-         * Enum _1 for value: "1"
-         */
+
+        /** Enum _1 for value: "1" */
         public static final DeleteFlagEnum _1 = new DeleteFlagEnum("1");
-        
 
         private static final Map<String, DeleteFlagEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,7 +59,7 @@ public class DetachServerVolumeRequest  {
 
         @JsonCreator
         public static DeleteFlagEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DeleteFlagEnum result = STATIC_FIELDS.get(value);
@@ -87,7 +70,7 @@ public class DetachServerVolumeRequest  {
         }
 
         public static DeleteFlagEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DeleteFlagEnum result = STATIC_FIELDS.get(value);
@@ -111,10 +94,9 @@ public class DetachServerVolumeRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="delete_flag")
-    
+    @JsonProperty(value = "delete_flag")
+
     private DeleteFlagEnum deleteFlag;
 
     public DetachServerVolumeRequest withServerId(String serverId) {
@@ -122,13 +104,9 @@ public class DetachServerVolumeRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务器ID。
-     * @return serverId
-     */
+    /** 云服务器ID。
+     * 
+     * @return serverId */
     public String getServerId() {
         return serverId;
     }
@@ -137,20 +115,14 @@ public class DetachServerVolumeRequest  {
         this.serverId = serverId;
     }
 
-    
-
     public DetachServerVolumeRequest withVolumeId(String volumeId) {
         this.volumeId = volumeId;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘ID。
-     * @return volumeId
-     */
+    /** 磁盘ID。
+     * 
+     * @return volumeId */
     public String getVolumeId() {
         return volumeId;
     }
@@ -159,20 +131,14 @@ public class DetachServerVolumeRequest  {
         this.volumeId = volumeId;
     }
 
-    
-
     public DetachServerVolumeRequest withDeleteFlag(DeleteFlagEnum deleteFlag) {
         this.deleteFlag = deleteFlag;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否强制卸载数据盘。  - 是，值为“1”。  - 否，值为“0”。  默认值为0。
-     * @return deleteFlag
-     */
+    /** 是否强制卸载数据盘。 - 是，值为“1”。 - 否，值为“0”。 默认值为0。
+     * 
+     * @return deleteFlag */
     public DeleteFlagEnum getDeleteFlag() {
         return deleteFlag;
     }
@@ -180,8 +146,6 @@ public class DetachServerVolumeRequest  {
     public void setDeleteFlag(DeleteFlagEnum deleteFlag) {
         this.deleteFlag = deleteFlag;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -192,14 +156,16 @@ public class DetachServerVolumeRequest  {
             return false;
         }
         DetachServerVolumeRequest detachServerVolumeRequest = (DetachServerVolumeRequest) o;
-        return Objects.equals(this.serverId, detachServerVolumeRequest.serverId) &&
-            Objects.equals(this.volumeId, detachServerVolumeRequest.volumeId) &&
-            Objects.equals(this.deleteFlag, detachServerVolumeRequest.deleteFlag);
+        return Objects.equals(this.serverId, detachServerVolumeRequest.serverId)
+            && Objects.equals(this.volumeId, detachServerVolumeRequest.volumeId)
+            && Objects.equals(this.deleteFlag, detachServerVolumeRequest.deleteFlag);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(serverId, volumeId, deleteFlag);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -210,16 +176,13 @@ public class DetachServerVolumeRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

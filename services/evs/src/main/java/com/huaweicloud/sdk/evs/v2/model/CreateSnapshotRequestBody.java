@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.evs.v2.model.CreateSnapshotOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * This is a auto create Body Object
- */
-public class CreateSnapshotRequestBody  {
-
-
+/** This is a auto create Body Object */
+public class CreateSnapshotRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="snapshot")
-    
+    @JsonProperty(value = "snapshot")
+
     private CreateSnapshotOption snapshot;
 
     public CreateSnapshotRequestBody withSnapshot(CreateSnapshotOption snapshot) {
@@ -30,19 +20,17 @@ public class CreateSnapshotRequestBody  {
     }
 
     public CreateSnapshotRequestBody withSnapshot(Consumer<CreateSnapshotOption> snapshotSetter) {
-        if(this.snapshot == null ){
+        if (this.snapshot == null) {
             this.snapshot = new CreateSnapshotOption();
             snapshotSetter.accept(this.snapshot);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get snapshot
-     * @return snapshot
-     */
+    /** Get snapshot
+     * 
+     * @return snapshot */
     public CreateSnapshotOption getSnapshot() {
         return snapshot;
     }
@@ -50,8 +38,6 @@ public class CreateSnapshotRequestBody  {
     public void setSnapshot(CreateSnapshotOption snapshot) {
         this.snapshot = snapshot;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class CreateSnapshotRequestBody  {
         CreateSnapshotRequestBody createSnapshotRequestBody = (CreateSnapshotRequestBody) o;
         return Objects.equals(this.snapshot, createSnapshotRequestBody.snapshot);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(snapshot);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class CreateSnapshotRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

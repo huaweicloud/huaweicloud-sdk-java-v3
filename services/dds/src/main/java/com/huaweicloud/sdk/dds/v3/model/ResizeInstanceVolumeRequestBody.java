@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dds.v3.model.ResizeInstanceVolumeOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ResizeInstanceVolumeRequestBody
- */
-public class ResizeInstanceVolumeRequestBody  {
-
-
+/** ResizeInstanceVolumeRequestBody */
+public class ResizeInstanceVolumeRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume")
-    
+    @JsonProperty(value = "volume")
+
     private ResizeInstanceVolumeOption volume;
 
     public ResizeInstanceVolumeRequestBody withVolume(ResizeInstanceVolumeOption volume) {
@@ -30,19 +20,17 @@ public class ResizeInstanceVolumeRequestBody  {
     }
 
     public ResizeInstanceVolumeRequestBody withVolume(Consumer<ResizeInstanceVolumeOption> volumeSetter) {
-        if(this.volume == null ){
+        if (this.volume == null) {
             this.volume = new ResizeInstanceVolumeOption();
             volumeSetter.accept(this.volume);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get volume
-     * @return volume
-     */
+    /** Get volume
+     * 
+     * @return volume */
     public ResizeInstanceVolumeOption getVolume() {
         return volume;
     }
@@ -50,8 +38,6 @@ public class ResizeInstanceVolumeRequestBody  {
     public void setVolume(ResizeInstanceVolumeOption volume) {
         this.volume = volume;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class ResizeInstanceVolumeRequestBody  {
         ResizeInstanceVolumeRequestBody resizeInstanceVolumeRequestBody = (ResizeInstanceVolumeRequestBody) o;
         return Objects.equals(this.volume, resizeInstanceVolumeRequestBody.volume);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(volume);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class ResizeInstanceVolumeRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * DownloadSlowlogResult
- */
-public class DownloadSlowlogResult  {
-
-
+/** DownloadSlowlogResult */
+public class DownloadSlowlogResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_name")
-    
+    @JsonProperty(value = "node_name")
+
     private String nodeName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_name")
-    
+    @JsonProperty(value = "file_name")
+
     private String fileName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_size")
-    
+    @JsonProperty(value = "file_size")
+
     private String fileSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_link")
-    
+    @JsonProperty(value = "file_link")
+
     private String fileLink;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_at")
-    
+    @JsonProperty(value = "update_at")
+
     private Long updateAt;
 
     public DownloadSlowlogResult withNodeName(String nodeName) {
@@ -58,13 +43,9 @@ public class DownloadSlowlogResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 节点名称。
-     * @return nodeName
-     */
+    /** 节点名称。
+     * 
+     * @return nodeName */
     public String getNodeName() {
         return nodeName;
     }
@@ -73,20 +54,14 @@ public class DownloadSlowlogResult  {
         this.nodeName = nodeName;
     }
 
-    
-
     public DownloadSlowlogResult withFileName(String fileName) {
         this.fileName = fileName;
         return this;
     }
 
-    
-
-
-    /**
-     * 生成的下载文件名。
-     * @return fileName
-     */
+    /** 生成的下载文件名。
+     * 
+     * @return fileName */
     public String getFileName() {
         return fileName;
     }
@@ -95,20 +70,14 @@ public class DownloadSlowlogResult  {
         this.fileName = fileName;
     }
 
-    
-
     public DownloadSlowlogResult withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前链接的生成状态。 - SUCCESS，表示下载链接已经生成完成。 - EXPORTING，表示正在生成文件，准备下载链接。 - FAILED，表示存在日志文件准备失败。
-     * @return status
-     */
+    /** 当前链接的生成状态。 - SUCCESS，表示下载链接已经生成完成。 - EXPORTING，表示正在生成文件，准备下载链接。 - FAILED，表示存在日志文件准备失败。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -117,20 +86,14 @@ public class DownloadSlowlogResult  {
         this.status = status;
     }
 
-    
-
     public DownloadSlowlogResult withFileSize(String fileSize) {
         this.fileSize = fileSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件大小，单位为 KB。
-     * @return fileSize
-     */
+    /** 文件大小，单位为 KB。
+     * 
+     * @return fileSize */
     public String getFileSize() {
         return fileSize;
     }
@@ -139,20 +102,14 @@ public class DownloadSlowlogResult  {
         this.fileSize = fileSize;
     }
 
-    
-
     public DownloadSlowlogResult withFileLink(String fileLink) {
         this.fileLink = fileLink;
         return this;
     }
 
-    
-
-
-    /**
-     * 下载链接。注意：下载链接在更新时间的 15分钟内有效，超出时间会重新获取。
-     * @return fileLink
-     */
+    /** 下载链接。注意：下载链接在更新时间的 15分钟内有效，超出时间会重新获取。
+     * 
+     * @return fileLink */
     public String getFileLink() {
         return fileLink;
     }
@@ -161,20 +118,14 @@ public class DownloadSlowlogResult  {
         this.fileLink = fileLink;
     }
 
-    
-
     public DownloadSlowlogResult withUpdateAt(Long updateAt) {
         this.updateAt = updateAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间。
-     * @return updateAt
-     */
+    /** 更新时间。
+     * 
+     * @return updateAt */
     public Long getUpdateAt() {
         return updateAt;
     }
@@ -182,8 +133,6 @@ public class DownloadSlowlogResult  {
     public void setUpdateAt(Long updateAt) {
         this.updateAt = updateAt;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,17 +143,19 @@ public class DownloadSlowlogResult  {
             return false;
         }
         DownloadSlowlogResult downloadSlowlogResult = (DownloadSlowlogResult) o;
-        return Objects.equals(this.nodeName, downloadSlowlogResult.nodeName) &&
-            Objects.equals(this.fileName, downloadSlowlogResult.fileName) &&
-            Objects.equals(this.status, downloadSlowlogResult.status) &&
-            Objects.equals(this.fileSize, downloadSlowlogResult.fileSize) &&
-            Objects.equals(this.fileLink, downloadSlowlogResult.fileLink) &&
-            Objects.equals(this.updateAt, downloadSlowlogResult.updateAt);
+        return Objects.equals(this.nodeName, downloadSlowlogResult.nodeName)
+            && Objects.equals(this.fileName, downloadSlowlogResult.fileName)
+            && Objects.equals(this.status, downloadSlowlogResult.status)
+            && Objects.equals(this.fileSize, downloadSlowlogResult.fileSize)
+            && Objects.equals(this.fileLink, downloadSlowlogResult.fileLink)
+            && Objects.equals(this.updateAt, downloadSlowlogResult.updateAt);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nodeName, fileName, status, fileSize, fileLink, updateAt);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,16 +169,13 @@ public class DownloadSlowlogResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

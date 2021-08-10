@@ -1,53 +1,36 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * address数据结构说明
- */
-public class AddressInfo  {
-
-
+/** address数据结构说明 */
+public class AddressInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="addr")
-    
+    @JsonProperty(value = "addr")
+
     private String addr;
-    /**
-     * IP地址类型。fixed：代表私有IP地址。floating：代表浮动IP地址。
-     */
+
+    /** IP地址类型。fixed：代表私有IP地址。floating：代表浮动IP地址。 */
     public static final class OsEXTIPSTypeEnum {
 
-        
-        /**
-         * Enum FIXED for value: "fixed"
-         */
+        /** Enum FIXED for value: "fixed" */
         public static final OsEXTIPSTypeEnum FIXED = new OsEXTIPSTypeEnum("fixed");
-        
-        /**
-         * Enum FLOATING for value: "floating"
-         */
+
+        /** Enum FLOATING for value: "floating" */
         public static final OsEXTIPSTypeEnum FLOATING = new OsEXTIPSTypeEnum("floating");
-        
 
         private static final Map<String, OsEXTIPSTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,7 +59,7 @@ public class AddressInfo  {
 
         @JsonCreator
         public static OsEXTIPSTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsEXTIPSTypeEnum result = STATIC_FIELDS.get(value);
@@ -87,7 +70,7 @@ public class AddressInfo  {
         }
 
         public static OsEXTIPSTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsEXTIPSTypeEnum result = STATIC_FIELDS.get(value);
@@ -111,22 +94,19 @@ public class AddressInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-IPS:type")
-    
+    @JsonProperty(value = "OS-EXT-IPS:type")
+
     private OsEXTIPSTypeEnum osEXTIPSType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-IPS-MAC:mac_addr")
-    
+    @JsonProperty(value = "OS-EXT-IPS-MAC:mac_addr")
+
     private String osEXTIPSMACMacAddr;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-IPS:port_id")
-    
+    @JsonProperty(value = "OS-EXT-IPS:port_id")
+
     private String osEXTIPSPortId;
 
     public AddressInfo withVersion(String version) {
@@ -134,13 +114,9 @@ public class AddressInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址版本。4：代表IPv4。6：代表IPv6。
-     * @return version
-     */
+    /** IP地址版本。4：代表IPv4。6：代表IPv6。
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -149,20 +125,14 @@ public class AddressInfo  {
         this.version = version;
     }
 
-    
-
     public AddressInfo withAddr(String addr) {
         this.addr = addr;
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址
-     * @return addr
-     */
+    /** IP地址
+     * 
+     * @return addr */
     public String getAddr() {
         return addr;
     }
@@ -171,20 +141,14 @@ public class AddressInfo  {
         this.addr = addr;
     }
 
-    
-
     public AddressInfo withOsEXTIPSType(OsEXTIPSTypeEnum osEXTIPSType) {
         this.osEXTIPSType = osEXTIPSType;
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址类型。fixed：代表私有IP地址。floating：代表浮动IP地址。
-     * @return osEXTIPSType
-     */
+    /** IP地址类型。fixed：代表私有IP地址。floating：代表浮动IP地址。
+     * 
+     * @return osEXTIPSType */
     public OsEXTIPSTypeEnum getOsEXTIPSType() {
         return osEXTIPSType;
     }
@@ -193,20 +157,14 @@ public class AddressInfo  {
         this.osEXTIPSType = osEXTIPSType;
     }
 
-    
-
     public AddressInfo withOsEXTIPSMACMacAddr(String osEXTIPSMACMacAddr) {
         this.osEXTIPSMACMacAddr = osEXTIPSMACMacAddr;
         return this;
     }
 
-    
-
-
-    /**
-     * MAC地址。
-     * @return osEXTIPSMACMacAddr
-     */
+    /** MAC地址。
+     * 
+     * @return osEXTIPSMACMacAddr */
     public String getOsEXTIPSMACMacAddr() {
         return osEXTIPSMACMacAddr;
     }
@@ -215,20 +173,14 @@ public class AddressInfo  {
         this.osEXTIPSMACMacAddr = osEXTIPSMACMacAddr;
     }
 
-    
-
     public AddressInfo withOsEXTIPSPortId(String osEXTIPSPortId) {
         this.osEXTIPSPortId = osEXTIPSPortId;
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址对应的端口ID
-     * @return osEXTIPSPortId
-     */
+    /** IP地址对应的端口ID
+     * 
+     * @return osEXTIPSPortId */
     public String getOsEXTIPSPortId() {
         return osEXTIPSPortId;
     }
@@ -236,8 +188,6 @@ public class AddressInfo  {
     public void setOsEXTIPSPortId(String osEXTIPSPortId) {
         this.osEXTIPSPortId = osEXTIPSPortId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -248,16 +198,17 @@ public class AddressInfo  {
             return false;
         }
         AddressInfo addressInfo = (AddressInfo) o;
-        return Objects.equals(this.version, addressInfo.version) &&
-            Objects.equals(this.addr, addressInfo.addr) &&
-            Objects.equals(this.osEXTIPSType, addressInfo.osEXTIPSType) &&
-            Objects.equals(this.osEXTIPSMACMacAddr, addressInfo.osEXTIPSMACMacAddr) &&
-            Objects.equals(this.osEXTIPSPortId, addressInfo.osEXTIPSPortId);
+        return Objects.equals(this.version, addressInfo.version) && Objects.equals(this.addr, addressInfo.addr)
+            && Objects.equals(this.osEXTIPSType, addressInfo.osEXTIPSType)
+            && Objects.equals(this.osEXTIPSMACMacAddr, addressInfo.osEXTIPSMACMacAddr)
+            && Objects.equals(this.osEXTIPSPortId, addressInfo.osEXTIPSPortId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(version, addr, osEXTIPSType, osEXTIPSMACMacAddr, osEXTIPSPortId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -270,16 +221,13 @@ public class AddressInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

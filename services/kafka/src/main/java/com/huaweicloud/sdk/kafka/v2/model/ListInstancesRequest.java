@@ -1,88 +1,56 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListInstancesRequest  {
-
-
+/** Request Object */
+public class ListInstancesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engine")
-    
+    @JsonProperty(value = "engine")
+
     private String engine;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
-    /**
-     * 实例状态。详细状态说明见[实例状态说明](https://support.huaweicloud.com/api-kafka/kafka-api-180514012.html)。
-     */
+
+    /** 实例状态。详细状态说明见[实例状态说明](https://support.huaweicloud.com/api-kafka/kafka-api-180514012.html)。 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum CREATING for value: "CREATING"
-         */
+        /** Enum CREATING for value: "CREATING" */
         public static final StatusEnum CREATING = new StatusEnum("CREATING");
-        
-        /**
-         * Enum RUNNING for value: "RUNNING"
-         */
+
+        /** Enum RUNNING for value: "RUNNING" */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
-        
-        /**
-         * Enum FAULTY for value: "FAULTY"
-         */
+
+        /** Enum FAULTY for value: "FAULTY" */
         public static final StatusEnum FAULTY = new StatusEnum("FAULTY");
-        
-        /**
-         * Enum RESTARTING for value: "RESTARTING"
-         */
+
+        /** Enum RESTARTING for value: "RESTARTING" */
         public static final StatusEnum RESTARTING = new StatusEnum("RESTARTING");
-        
-        /**
-         * Enum RESIZING for value: "RESIZING"
-         */
+
+        /** Enum RESIZING for value: "RESIZING" */
         public static final StatusEnum RESIZING = new StatusEnum("RESIZING");
-        
-        /**
-         * Enum RESIZING_FAILED for value: "RESIZING FAILED"
-         */
+
+        /** Enum RESIZING_FAILED for value: "RESIZING FAILED" */
         public static final StatusEnum RESIZING_FAILED = new StatusEnum("RESIZING FAILED");
-        
-        /**
-         * Enum FROZEN for value: "FROZEN"
-         */
+
+        /** Enum FROZEN for value: "FROZEN" */
         public static final StatusEnum FROZEN = new StatusEnum("FROZEN");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -116,7 +84,7 @@ public class ListInstancesRequest  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -127,7 +95,7 @@ public class ListInstancesRequest  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -151,27 +119,19 @@ public class ListInstancesRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
-    /**
-     * 是否返回创建失败的实例数。  当参数值为“true”时，返回创建失败的实例数。参数值为“false”或者其他值，不返回创建失败的实例数。
-     */
+
+    /** 是否返回创建失败的实例数。 当参数值为“true”时，返回创建失败的实例数。参数值为“false”或者其他值，不返回创建失败的实例数。 */
     public static final class IncludeFailureEnum {
 
-        
-        /**
-         * Enum TRUE for value: "true"
-         */
+        /** Enum TRUE for value: "true" */
         public static final IncludeFailureEnum TRUE = new IncludeFailureEnum("true");
-        
-        /**
-         * Enum FALSE for value: "false"
-         */
+
+        /** Enum FALSE for value: "false" */
         public static final IncludeFailureEnum FALSE = new IncludeFailureEnum("false");
-        
 
         private static final Map<String, IncludeFailureEnum> STATIC_FIELDS = createStaticFields();
 
@@ -200,7 +160,7 @@ public class ListInstancesRequest  {
 
         @JsonCreator
         public static IncludeFailureEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             IncludeFailureEnum result = STATIC_FIELDS.get(value);
@@ -211,7 +171,7 @@ public class ListInstancesRequest  {
         }
 
         public static IncludeFailureEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             IncludeFailureEnum result = STATIC_FIELDS.get(value);
@@ -235,27 +195,19 @@ public class ListInstancesRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="include_failure")
-    
+    @JsonProperty(value = "include_failure")
+
     private IncludeFailureEnum includeFailure;
-    /**
-     * 是否按照实例名称进行精确匹配查询。  默认为“false”，表示模糊匹配实例名称查询。若参数值为“true”表示按照实例名称进行精确匹配查询。
-     */
+
+    /** 是否按照实例名称进行精确匹配查询。 默认为“false”，表示模糊匹配实例名称查询。若参数值为“true”表示按照实例名称进行精确匹配查询。 */
     public static final class ExactMatchNameEnum {
 
-        
-        /**
-         * Enum TRUE for value: "true"
-         */
+        /** Enum TRUE for value: "true" */
         public static final ExactMatchNameEnum TRUE = new ExactMatchNameEnum("true");
-        
-        /**
-         * Enum FALSE for value: "false"
-         */
+
+        /** Enum FALSE for value: "false" */
         public static final ExactMatchNameEnum FALSE = new ExactMatchNameEnum("false");
-        
 
         private static final Map<String, ExactMatchNameEnum> STATIC_FIELDS = createStaticFields();
 
@@ -284,7 +236,7 @@ public class ListInstancesRequest  {
 
         @JsonCreator
         public static ExactMatchNameEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ExactMatchNameEnum result = STATIC_FIELDS.get(value);
@@ -295,7 +247,7 @@ public class ListInstancesRequest  {
         }
 
         public static ExactMatchNameEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ExactMatchNameEnum result = STATIC_FIELDS.get(value);
@@ -319,16 +271,14 @@ public class ListInstancesRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="exact_match_name")
-    
+    @JsonProperty(value = "exact_match_name")
+
     private ExactMatchNameEnum exactMatchName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public ListInstancesRequest withEngine(String engine) {
@@ -336,13 +286,9 @@ public class ListInstancesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 消息引擎：kafka。
-     * @return engine
-     */
+    /** 消息引擎：kafka。
+     * 
+     * @return engine */
     public String getEngine() {
         return engine;
     }
@@ -351,20 +297,14 @@ public class ListInstancesRequest  {
         this.engine = engine;
     }
 
-    
-
     public ListInstancesRequest withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例名称。
-     * @return name
-     */
+    /** 实例名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -373,20 +313,14 @@ public class ListInstancesRequest  {
         this.name = name;
     }
 
-    
-
     public ListInstancesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -395,20 +329,14 @@ public class ListInstancesRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListInstancesRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例状态。详细状态说明见[实例状态说明](https://support.huaweicloud.com/api-kafka/kafka-api-180514012.html)。
-     * @return status
-     */
+    /** 实例状态。详细状态说明见[实例状态说明](https://support.huaweicloud.com/api-kafka/kafka-api-180514012.html)。
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -417,20 +345,14 @@ public class ListInstancesRequest  {
         this.status = status;
     }
 
-    
-
     public ListInstancesRequest withIncludeFailure(IncludeFailureEnum includeFailure) {
         this.includeFailure = includeFailure;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否返回创建失败的实例数。  当参数值为“true”时，返回创建失败的实例数。参数值为“false”或者其他值，不返回创建失败的实例数。
-     * @return includeFailure
-     */
+    /** 是否返回创建失败的实例数。 当参数值为“true”时，返回创建失败的实例数。参数值为“false”或者其他值，不返回创建失败的实例数。
+     * 
+     * @return includeFailure */
     public IncludeFailureEnum getIncludeFailure() {
         return includeFailure;
     }
@@ -439,20 +361,14 @@ public class ListInstancesRequest  {
         this.includeFailure = includeFailure;
     }
 
-    
-
     public ListInstancesRequest withExactMatchName(ExactMatchNameEnum exactMatchName) {
         this.exactMatchName = exactMatchName;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否按照实例名称进行精确匹配查询。  默认为“false”，表示模糊匹配实例名称查询。若参数值为“true”表示按照实例名称进行精确匹配查询。
-     * @return exactMatchName
-     */
+    /** 是否按照实例名称进行精确匹配查询。 默认为“false”，表示模糊匹配实例名称查询。若参数值为“true”表示按照实例名称进行精确匹配查询。
+     * 
+     * @return exactMatchName */
     public ExactMatchNameEnum getExactMatchName() {
         return exactMatchName;
     }
@@ -461,20 +377,14 @@ public class ListInstancesRequest  {
         this.exactMatchName = exactMatchName;
     }
 
-    
-
     public ListInstancesRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID。
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -482,8 +392,6 @@ public class ListInstancesRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -494,18 +402,20 @@ public class ListInstancesRequest  {
             return false;
         }
         ListInstancesRequest listInstancesRequest = (ListInstancesRequest) o;
-        return Objects.equals(this.engine, listInstancesRequest.engine) &&
-            Objects.equals(this.name, listInstancesRequest.name) &&
-            Objects.equals(this.instanceId, listInstancesRequest.instanceId) &&
-            Objects.equals(this.status, listInstancesRequest.status) &&
-            Objects.equals(this.includeFailure, listInstancesRequest.includeFailure) &&
-            Objects.equals(this.exactMatchName, listInstancesRequest.exactMatchName) &&
-            Objects.equals(this.enterpriseProjectId, listInstancesRequest.enterpriseProjectId);
+        return Objects.equals(this.engine, listInstancesRequest.engine)
+            && Objects.equals(this.name, listInstancesRequest.name)
+            && Objects.equals(this.instanceId, listInstancesRequest.instanceId)
+            && Objects.equals(this.status, listInstancesRequest.status)
+            && Objects.equals(this.includeFailure, listInstancesRequest.includeFailure)
+            && Objects.equals(this.exactMatchName, listInstancesRequest.exactMatchName)
+            && Objects.equals(this.enterpriseProjectId, listInstancesRequest.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(engine, name, instanceId, status, includeFailure, exactMatchName, enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -520,16 +430,13 @@ public class ListInstancesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

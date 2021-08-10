@@ -1,28 +1,17 @@
 package com.huaweicloud.sdk.lts.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateLogGroupResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="log_group_id")
-    
+    @JsonProperty(value = "log_group_id")
+
     private String logGroupId;
 
     public CreateLogGroupResponse withLogGroupId(String logGroupId) {
@@ -30,13 +19,9 @@ public class CreateLogGroupResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 创建的日志组的Id。
-     * @return logGroupId
-     */
+    /** 创建的日志组的Id。
+     * 
+     * @return logGroupId */
     public String getLogGroupId() {
         return logGroupId;
     }
@@ -44,8 +29,6 @@ public class CreateLogGroupResponse extends SdkResponse {
     public void setLogGroupId(String logGroupId) {
         this.logGroupId = logGroupId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -58,10 +41,12 @@ public class CreateLogGroupResponse extends SdkResponse {
         CreateLogGroupResponse createLogGroupResponse = (CreateLogGroupResponse) o;
         return Objects.equals(this.logGroupId, createLogGroupResponse.logGroupId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(logGroupId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -70,16 +55,13 @@ public class CreateLogGroupResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

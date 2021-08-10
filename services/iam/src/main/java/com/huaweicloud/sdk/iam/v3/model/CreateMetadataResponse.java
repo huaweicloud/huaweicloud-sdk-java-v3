@@ -1,28 +1,17 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateMetadataResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message")
-    
+    @JsonProperty(value = "message")
+
     private String message;
 
     public CreateMetadataResponse withMessage(String message) {
@@ -30,13 +19,9 @@ public class CreateMetadataResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 导入结果信息。
-     * @return message
-     */
+    /** 导入结果信息。
+     * 
+     * @return message */
     public String getMessage() {
         return message;
     }
@@ -44,8 +29,6 @@ public class CreateMetadataResponse extends SdkResponse {
     public void setMessage(String message) {
         this.message = message;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -58,10 +41,12 @@ public class CreateMetadataResponse extends SdkResponse {
         CreateMetadataResponse createMetadataResponse = (CreateMetadataResponse) o;
         return Objects.equals(this.message, createMetadataResponse.message);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(message);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -70,16 +55,13 @@ public class CreateMetadataResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

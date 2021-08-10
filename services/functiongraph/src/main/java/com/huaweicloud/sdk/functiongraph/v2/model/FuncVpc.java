@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 函数vpc配置。
- */
-public class FuncVpc  {
-
-
+/** 函数vpc配置。 */
+public class FuncVpc {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_name")
-    
+    @JsonProperty(value = "vpc_name")
+
     private String vpcName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_name")
-    
+    @JsonProperty(value = "subnet_name")
+
     private String subnetName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
+
     private String subnetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cidr")
-    
+    @JsonProperty(value = "cidr")
+
     private String cidr;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gateway")
-    
+    @JsonProperty(value = "gateway")
+
     private String gateway;
 
     public FuncVpc withVpcName(String vpcName) {
@@ -58,13 +43,9 @@ public class FuncVpc  {
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟私有云名称。
-     * @return vpcName
-     */
+    /** 虚拟私有云名称。
+     * 
+     * @return vpcName */
     public String getVpcName() {
         return vpcName;
     }
@@ -73,20 +54,14 @@ public class FuncVpc  {
         this.vpcName = vpcName;
     }
 
-    
-
     public FuncVpc withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟私有云唯一标识。
-     * @return vpcId
-     */
+    /** 虚拟私有云唯一标识。
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -95,20 +70,14 @@ public class FuncVpc  {
         this.vpcId = vpcId;
     }
 
-    
-
     public FuncVpc withSubnetName(String subnetName) {
         this.subnetName = subnetName;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网名称。
-     * @return subnetName
-     */
+    /** 子网名称。
+     * 
+     * @return subnetName */
     public String getSubnetName() {
         return subnetName;
     }
@@ -117,20 +86,14 @@ public class FuncVpc  {
         this.subnetName = subnetName;
     }
 
-    
-
     public FuncVpc withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网编号。
-     * @return subnetId
-     */
+    /** 子网编号。
+     * 
+     * @return subnetId */
     public String getSubnetId() {
         return subnetId;
     }
@@ -139,20 +102,14 @@ public class FuncVpc  {
         this.subnetId = subnetId;
     }
 
-    
-
     public FuncVpc withCidr(String cidr) {
         this.cidr = cidr;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网掩码。
-     * @return cidr
-     */
+    /** 子网掩码。
+     * 
+     * @return cidr */
     public String getCidr() {
         return cidr;
     }
@@ -161,20 +118,14 @@ public class FuncVpc  {
         this.cidr = cidr;
     }
 
-    
-
     public FuncVpc withGateway(String gateway) {
         this.gateway = gateway;
         return this;
     }
 
-    
-
-
-    /**
-     * 网关。
-     * @return gateway
-     */
+    /** 网关。
+     * 
+     * @return gateway */
     public String getGateway() {
         return gateway;
     }
@@ -182,8 +133,6 @@ public class FuncVpc  {
     public void setGateway(String gateway) {
         this.gateway = gateway;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,17 +143,16 @@ public class FuncVpc  {
             return false;
         }
         FuncVpc funcVpc = (FuncVpc) o;
-        return Objects.equals(this.vpcName, funcVpc.vpcName) &&
-            Objects.equals(this.vpcId, funcVpc.vpcId) &&
-            Objects.equals(this.subnetName, funcVpc.subnetName) &&
-            Objects.equals(this.subnetId, funcVpc.subnetId) &&
-            Objects.equals(this.cidr, funcVpc.cidr) &&
-            Objects.equals(this.gateway, funcVpc.gateway);
+        return Objects.equals(this.vpcName, funcVpc.vpcName) && Objects.equals(this.vpcId, funcVpc.vpcId)
+            && Objects.equals(this.subnetName, funcVpc.subnetName) && Objects.equals(this.subnetId, funcVpc.subnetId)
+            && Objects.equals(this.cidr, funcVpc.cidr) && Objects.equals(this.gateway, funcVpc.gateway);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(vpcName, vpcId, subnetName, subnetId, cidr, gateway);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,16 +166,13 @@ public class FuncVpc  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

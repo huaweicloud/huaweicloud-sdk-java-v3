@@ -1,51 +1,34 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * BatchRestartOrDeleteInstanceReq
- */
-public class BatchRestartOrDeleteInstanceReq  {
-
-
+/** BatchRestartOrDeleteInstanceReq */
+public class BatchRestartOrDeleteInstanceReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instances")
-    
+    @JsonProperty(value = "instances")
+
     private List<String> instances = null;
-        /**
-     * 对实例的操作：restart、delete
-     */
+
+    /** 对实例的操作：restart、delete */
     public static final class ActionEnum {
 
-        
-        /**
-         * Enum RESTART for value: "restart"
-         */
+        /** Enum RESTART for value: "restart" */
         public static final ActionEnum RESTART = new ActionEnum("restart");
-        
-        /**
-         * Enum DELETE for value: "delete"
-         */
+
+        /** Enum DELETE for value: "delete" */
         public static final ActionEnum DELETE = new ActionEnum("delete");
-        
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -74,7 +57,7 @@ public class BatchRestartOrDeleteInstanceReq  {
 
         @JsonCreator
         public static ActionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -85,7 +68,7 @@ public class BatchRestartOrDeleteInstanceReq  {
         }
 
         public static ActionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -109,32 +92,22 @@ public class BatchRestartOrDeleteInstanceReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private ActionEnum action;
-    /**
-     * 参数值为kafka，表示删除租户所有创建失败的Kafka实例。
-     */
+
+    /** 参数值为kafka，表示删除租户所有创建失败的Kafka实例。 */
     public static final class AllFailureEnum {
 
-        
-        /**
-         * Enum TRUE for value: "true"
-         */
+        /** Enum TRUE for value: "true" */
         public static final AllFailureEnum TRUE = new AllFailureEnum("true");
-        
-        /**
-         * Enum FALSE for value: "false"
-         */
+
+        /** Enum FALSE for value: "false" */
         public static final AllFailureEnum FALSE = new AllFailureEnum("false");
-        
-        /**
-         * Enum KAFKA for value: "kafka"
-         */
+
+        /** Enum KAFKA for value: "kafka" */
         public static final AllFailureEnum KAFKA = new AllFailureEnum("kafka");
-        
 
         private static final Map<String, AllFailureEnum> STATIC_FIELDS = createStaticFields();
 
@@ -164,7 +137,7 @@ public class BatchRestartOrDeleteInstanceReq  {
 
         @JsonCreator
         public static AllFailureEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AllFailureEnum result = STATIC_FIELDS.get(value);
@@ -175,7 +148,7 @@ public class BatchRestartOrDeleteInstanceReq  {
         }
 
         public static AllFailureEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AllFailureEnum result = STATIC_FIELDS.get(value);
@@ -199,10 +172,9 @@ public class BatchRestartOrDeleteInstanceReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="all_failure")
-    
+    @JsonProperty(value = "all_failure")
+
     private AllFailureEnum allFailure;
 
     public BatchRestartOrDeleteInstanceReq withInstances(List<String> instances) {
@@ -210,9 +182,8 @@ public class BatchRestartOrDeleteInstanceReq  {
         return this;
     }
 
-    
     public BatchRestartOrDeleteInstanceReq addInstancesItem(String instancesItem) {
-        if(this.instances == null) {
+        if (this.instances == null) {
             this.instances = new ArrayList<>();
         }
         this.instances.add(instancesItem);
@@ -220,17 +191,16 @@ public class BatchRestartOrDeleteInstanceReq  {
     }
 
     public BatchRestartOrDeleteInstanceReq withInstances(Consumer<List<String>> instancesSetter) {
-        if(this.instances == null) {
+        if (this.instances == null) {
             this.instances = new ArrayList<>();
         }
         instancesSetter.accept(this.instances);
         return this;
     }
 
-    /**
-     * 实例的ID列表。
-     * @return instances
-     */
+    /** 实例的ID列表。
+     * 
+     * @return instances */
     public List<String> getInstances() {
         return instances;
     }
@@ -239,20 +209,14 @@ public class BatchRestartOrDeleteInstanceReq  {
         this.instances = instances;
     }
 
-    
-
     public BatchRestartOrDeleteInstanceReq withAction(ActionEnum action) {
         this.action = action;
         return this;
     }
 
-    
-
-
-    /**
-     * 对实例的操作：restart、delete
-     * @return action
-     */
+    /** 对实例的操作：restart、delete
+     * 
+     * @return action */
     public ActionEnum getAction() {
         return action;
     }
@@ -261,20 +225,14 @@ public class BatchRestartOrDeleteInstanceReq  {
         this.action = action;
     }
 
-    
-
     public BatchRestartOrDeleteInstanceReq withAllFailure(AllFailureEnum allFailure) {
         this.allFailure = allFailure;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数值为kafka，表示删除租户所有创建失败的Kafka实例。
-     * @return allFailure
-     */
+    /** 参数值为kafka，表示删除租户所有创建失败的Kafka实例。
+     * 
+     * @return allFailure */
     public AllFailureEnum getAllFailure() {
         return allFailure;
     }
@@ -282,8 +240,6 @@ public class BatchRestartOrDeleteInstanceReq  {
     public void setAllFailure(AllFailureEnum allFailure) {
         this.allFailure = allFailure;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -294,14 +250,16 @@ public class BatchRestartOrDeleteInstanceReq  {
             return false;
         }
         BatchRestartOrDeleteInstanceReq batchRestartOrDeleteInstanceReq = (BatchRestartOrDeleteInstanceReq) o;
-        return Objects.equals(this.instances, batchRestartOrDeleteInstanceReq.instances) &&
-            Objects.equals(this.action, batchRestartOrDeleteInstanceReq.action) &&
-            Objects.equals(this.allFailure, batchRestartOrDeleteInstanceReq.allFailure);
+        return Objects.equals(this.instances, batchRestartOrDeleteInstanceReq.instances)
+            && Objects.equals(this.action, batchRestartOrDeleteInstanceReq.action)
+            && Objects.equals(this.allFailure, batchRestartOrDeleteInstanceReq.allFailure);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instances, action, allFailure);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -312,16 +270,13 @@ public class BatchRestartOrDeleteInstanceReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

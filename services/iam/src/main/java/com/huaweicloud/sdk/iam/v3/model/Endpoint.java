@@ -1,69 +1,54 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.Links;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class Endpoint  {
-
-
+public class Endpoint {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_id")
-    
+    @JsonProperty(value = "service_id")
+
     private String serviceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_id")
-    
+    @JsonProperty(value = "region_id")
+
     private String regionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private Links links;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="interface")
-    
+    @JsonProperty(value = "interface")
+
     private String _interface;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private String url;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enabled")
-    
+    @JsonProperty(value = "enabled")
+
     private Boolean enabled;
 
     public Endpoint withServiceId(String serviceId) {
@@ -71,13 +56,9 @@ public class Endpoint  {
         return this;
     }
 
-    
-
-
-    /**
-     * 终端节点所属服务的ID。
-     * @return serviceId
-     */
+    /** 终端节点所属服务的ID。
+     * 
+     * @return serviceId */
     public String getServiceId() {
         return serviceId;
     }
@@ -86,20 +67,14 @@ public class Endpoint  {
         this.serviceId = serviceId;
     }
 
-    
-
     public Endpoint withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
     }
 
-    
-
-
-    /**
-     * 终端节点所属区域的ID。
-     * @return regionId
-     */
+    /** 终端节点所属区域的ID。
+     * 
+     * @return regionId */
     public String getRegionId() {
         return regionId;
     }
@@ -108,27 +83,23 @@ public class Endpoint  {
         this.regionId = regionId;
     }
 
-    
-
     public Endpoint withLinks(Links links) {
         this.links = links;
         return this;
     }
 
     public Endpoint withLinks(Consumer<Links> linksSetter) {
-        if(this.links == null ){
+        if (this.links == null) {
             this.links = new Links();
             linksSetter.accept(this.links);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get links
-     * @return links
-     */
+    /** Get links
+     * 
+     * @return links */
     public Links getLinks() {
         return links;
     }
@@ -137,20 +108,14 @@ public class Endpoint  {
         this.links = links;
     }
 
-    
-
     public Endpoint withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 终端节点ID。
-     * @return id
-     */
+    /** 终端节点ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -159,20 +124,14 @@ public class Endpoint  {
         this.id = id;
     }
 
-    
-
     public Endpoint withInterface(String _interface) {
         this._interface = _interface;
         return this;
     }
 
-    
-
-
-    /**
-     * 终端节点平面。
-     * @return _interface
-     */
+    /** 终端节点平面。
+     * 
+     * @return _interface */
     public String getInterface() {
         return _interface;
     }
@@ -181,20 +140,14 @@ public class Endpoint  {
         this._interface = _interface;
     }
 
-    
-
     public Endpoint withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * 终端节点所属区域。
-     * @return region
-     */
+    /** 终端节点所属区域。
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -203,20 +156,14 @@ public class Endpoint  {
         this.region = region;
     }
 
-    
-
     public Endpoint withUrl(String url) {
         this.url = url;
         return this;
     }
 
-    
-
-
-    /**
-     * 终端节点的地址。
-     * @return url
-     */
+    /** 终端节点的地址。
+     * 
+     * @return url */
     public String getUrl() {
         return url;
     }
@@ -225,20 +172,14 @@ public class Endpoint  {
         this.url = url;
     }
 
-    
-
     public Endpoint withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
     }
 
-    
-
-
-    /**
-     * 终端节点是否可用。
-     * @return enabled
-     */
+    /** 终端节点是否可用。
+     * 
+     * @return enabled */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -246,8 +187,6 @@ public class Endpoint  {
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -258,19 +197,17 @@ public class Endpoint  {
             return false;
         }
         Endpoint endpoint = (Endpoint) o;
-        return Objects.equals(this.serviceId, endpoint.serviceId) &&
-            Objects.equals(this.regionId, endpoint.regionId) &&
-            Objects.equals(this.links, endpoint.links) &&
-            Objects.equals(this.id, endpoint.id) &&
-            Objects.equals(this._interface, endpoint._interface) &&
-            Objects.equals(this.region, endpoint.region) &&
-            Objects.equals(this.url, endpoint.url) &&
-            Objects.equals(this.enabled, endpoint.enabled);
+        return Objects.equals(this.serviceId, endpoint.serviceId) && Objects.equals(this.regionId, endpoint.regionId)
+            && Objects.equals(this.links, endpoint.links) && Objects.equals(this.id, endpoint.id)
+            && Objects.equals(this._interface, endpoint._interface) && Objects.equals(this.region, endpoint.region)
+            && Objects.equals(this.url, endpoint.url) && Objects.equals(this.enabled, endpoint.enabled);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(serviceId, regionId, links, id, _interface, region, url, enabled);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -286,16 +223,13 @@ public class Endpoint  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

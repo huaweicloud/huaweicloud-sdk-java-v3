@@ -1,125 +1,76 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dgc.v1.model.Condition;
-import com.huaweicloud.sdk.dgc.v1.model.Cron;
-import com.huaweicloud.sdk.dgc.v1.model.Event;
-import com.huaweicloud.sdk.dgc.v1.model.Location;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Node
- */
-public class Node  {
-
-
+/** Node */
+public class Node {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 节点的类型
-     */
+
+    /** 节点的类型 */
     public static final class NodeTypeEnum {
 
-        
-        /**
-         * Enum HIVESQL for value: "HiveSQL"
-         */
+        /** Enum HIVESQL for value: "HiveSQL" */
         public static final NodeTypeEnum HIVESQL = new NodeTypeEnum("HiveSQL");
-        
-        /**
-         * Enum SPARKSQL for value: "SparkSQL"
-         */
+
+        /** Enum SPARKSQL for value: "SparkSQL" */
         public static final NodeTypeEnum SPARKSQL = new NodeTypeEnum("SparkSQL");
-        
-        /**
-         * Enum DWSSQL for value: "DWSSQL"
-         */
+
+        /** Enum DWSSQL for value: "DWSSQL" */
         public static final NodeTypeEnum DWSSQL = new NodeTypeEnum("DWSSQL");
-        
-        /**
-         * Enum DLISQL for value: "DLISQL"
-         */
+
+        /** Enum DLISQL for value: "DLISQL" */
         public static final NodeTypeEnum DLISQL = new NodeTypeEnum("DLISQL");
-        
-        /**
-         * Enum SHELL for value: "Shell"
-         */
+
+        /** Enum SHELL for value: "Shell" */
         public static final NodeTypeEnum SHELL = new NodeTypeEnum("Shell");
-        
-        /**
-         * Enum CDMJOB for value: "CDMJob"
-         */
+
+        /** Enum CDMJOB for value: "CDMJob" */
         public static final NodeTypeEnum CDMJOB = new NodeTypeEnum("CDMJob");
-        
-        /**
-         * Enum DISTRANSFERTASK for value: "DISTransferTask"
-         */
+
+        /** Enum DISTRANSFERTASK for value: "DISTransferTask" */
         public static final NodeTypeEnum DISTRANSFERTASK = new NodeTypeEnum("DISTransferTask");
-        
-        /**
-         * Enum CSJOB for value: "CSJob"
-         */
+
+        /** Enum CSJOB for value: "CSJob" */
         public static final NodeTypeEnum CSJOB = new NodeTypeEnum("CSJob");
-        
-        /**
-         * Enum CLOUDTABLEMANAGE for value: "CloudTableManage"
-         */
+
+        /** Enum CLOUDTABLEMANAGE for value: "CloudTableManage" */
         public static final NodeTypeEnum CLOUDTABLEMANAGE = new NodeTypeEnum("CloudTableManage");
-        
-        /**
-         * Enum OBSMANAGER for value: "OBSManager"
-         */
+
+        /** Enum OBSMANAGER for value: "OBSManager" */
         public static final NodeTypeEnum OBSMANAGER = new NodeTypeEnum("OBSManager");
-        
-        /**
-         * Enum RESTAPI for value: "RESTAPI"
-         */
+
+        /** Enum RESTAPI for value: "RESTAPI" */
         public static final NodeTypeEnum RESTAPI = new NodeTypeEnum("RESTAPI");
-        
-        /**
-         * Enum MACHINELEARNING for value: "MachineLearning"
-         */
+
+        /** Enum MACHINELEARNING for value: "MachineLearning" */
         public static final NodeTypeEnum MACHINELEARNING = new NodeTypeEnum("MachineLearning");
-        
-        /**
-         * Enum SMN for value: "SMN"
-         */
+
+        /** Enum SMN for value: "SMN" */
         public static final NodeTypeEnum SMN = new NodeTypeEnum("SMN");
-        
-        /**
-         * Enum MRSSPARK for value: "MRSSpark"
-         */
+
+        /** Enum MRSSPARK for value: "MRSSpark" */
         public static final NodeTypeEnum MRSSPARK = new NodeTypeEnum("MRSSpark");
-        
-        /**
-         * Enum MAPREDUCE for value: "MapReduce"
-         */
+
+        /** Enum MAPREDUCE for value: "MapReduce" */
         public static final NodeTypeEnum MAPREDUCE = new NodeTypeEnum("MapReduce");
-        
-        /**
-         * Enum DLISPARK for value: "DLISpark"
-         */
+
+        /** Enum DLISPARK for value: "DLISpark" */
         public static final NodeTypeEnum DLISPARK = new NodeTypeEnum("DLISpark");
-        
 
         private static final Map<String, NodeTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -162,7 +113,7 @@ public class Node  {
 
         @JsonCreator
         public static NodeTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             NodeTypeEnum result = STATIC_FIELDS.get(value);
@@ -173,7 +124,7 @@ public class Node  {
         }
 
         public static NodeTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             NodeTypeEnum result = STATIC_FIELDS.get(value);
@@ -197,80 +148,62 @@ public class Node  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodeType")
-    
+    @JsonProperty(value = "nodeType")
+
     private NodeTypeEnum nodeType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="location")
-    
+    @JsonProperty(value = "location")
+
     private Location location;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="preNodeNames")
-    
+    @JsonProperty(value = "preNodeNames")
+
     private String preNodeNames;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="condition")
-    
+    @JsonProperty(value = "condition")
+
     private List<Condition> condition = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodeProperties")
-    
+    @JsonProperty(value = "nodeProperties")
+
     private String nodeProperties;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pollingInterval")
-    
+    @JsonProperty(value = "pollingInterval")
+
     private Integer pollingInterval;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maxExecutionTime")
-    
+    @JsonProperty(value = "maxExecutionTime")
+
     private Integer maxExecutionTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="retryTimes")
-    
+    @JsonProperty(value = "retryTimes")
+
     private Integer retryTimes;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="retryInterval")
-    
+    @JsonProperty(value = "retryInterval")
+
     private Integer retryInterval;
-    /**
-     * 作业失败策略
-     */
+
+    /** 作业失败策略 */
     public static final class FailPolicyEnum {
 
-        
-        /**
-         * Enum FAIL for value: "FAIL"
-         */
+        /** Enum FAIL for value: "FAIL" */
         public static final FailPolicyEnum FAIL = new FailPolicyEnum("FAIL");
-        
-        /**
-         * Enum IGNORE for value: "IGNORE"
-         */
+
+        /** Enum IGNORE for value: "IGNORE" */
         public static final FailPolicyEnum IGNORE = new FailPolicyEnum("IGNORE");
-        
-        /**
-         * Enum SUSPEND for value: "SUSPEND"
-         */
+
+        /** Enum SUSPEND for value: "SUSPEND" */
         public static final FailPolicyEnum SUSPEND = new FailPolicyEnum("SUSPEND");
-        
 
         private static final Map<String, FailPolicyEnum> STATIC_FIELDS = createStaticFields();
 
@@ -300,7 +233,7 @@ public class Node  {
 
         @JsonCreator
         public static FailPolicyEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             FailPolicyEnum result = STATIC_FIELDS.get(value);
@@ -311,7 +244,7 @@ public class Node  {
         }
 
         public static FailPolicyEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             FailPolicyEnum result = STATIC_FIELDS.get(value);
@@ -335,22 +268,19 @@ public class Node  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="failPolicy")
-    
+    @JsonProperty(value = "failPolicy")
+
     private FailPolicyEnum failPolicy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="eventTrigger")
-    
+    @JsonProperty(value = "eventTrigger")
+
     private Event eventTrigger;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cronTrigger")
-    
+    @JsonProperty(value = "cronTrigger")
+
     private Cron cronTrigger;
 
     public Node withName(String name) {
@@ -358,13 +288,9 @@ public class Node  {
         return this;
     }
 
-    
-
-
-    /**
-     * Get name
-     * @return name
-     */
+    /** Get name
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -373,20 +299,14 @@ public class Node  {
         this.name = name;
     }
 
-    
-
     public Node withNodeType(NodeTypeEnum nodeType) {
         this.nodeType = nodeType;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点的类型
-     * @return nodeType
-     */
+    /** 节点的类型
+     * 
+     * @return nodeType */
     public NodeTypeEnum getNodeType() {
         return nodeType;
     }
@@ -395,27 +315,23 @@ public class Node  {
         this.nodeType = nodeType;
     }
 
-    
-
     public Node withLocation(Location location) {
         this.location = location;
         return this;
     }
 
     public Node withLocation(Consumer<Location> locationSetter) {
-        if(this.location == null ){
+        if (this.location == null) {
             this.location = new Location();
             locationSetter.accept(this.location);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get location
-     * @return location
-     */
+    /** Get location
+     * 
+     * @return location */
     public Location getLocation() {
         return location;
     }
@@ -424,20 +340,14 @@ public class Node  {
         this.location = location;
     }
 
-    
-
     public Node withPreNodeNames(String preNodeNames) {
         this.preNodeNames = preNodeNames;
         return this;
     }
 
-    
-
-
-    /**
-     * 本节点依赖的前一个节点名称
-     * @return preNodeNames
-     */
+    /** 本节点依赖的前一个节点名称
+     * 
+     * @return preNodeNames */
     public String getPreNodeNames() {
         return preNodeNames;
     }
@@ -446,16 +356,13 @@ public class Node  {
         this.preNodeNames = preNodeNames;
     }
 
-    
-
     public Node withCondition(List<Condition> condition) {
         this.condition = condition;
         return this;
     }
 
-    
     public Node addConditionItem(Condition conditionItem) {
-        if(this.condition == null) {
+        if (this.condition == null) {
             this.condition = new ArrayList<>();
         }
         this.condition.add(conditionItem);
@@ -463,17 +370,16 @@ public class Node  {
     }
 
     public Node withCondition(Consumer<List<Condition>> conditionSetter) {
-        if(this.condition == null) {
+        if (this.condition == null) {
             this.condition = new ArrayList<>();
         }
         conditionSetter.accept(this.condition);
         return this;
     }
 
-    /**
-     * 节点执行条件
-     * @return condition
-     */
+    /** 节点执行条件
+     * 
+     * @return condition */
     public List<Condition> getCondition() {
         return condition;
     }
@@ -482,20 +388,14 @@ public class Node  {
         this.condition = condition;
     }
 
-    
-
     public Node withNodeProperties(String nodeProperties) {
         this.nodeProperties = nodeProperties;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点的属性
-     * @return nodeProperties
-     */
+    /** 节点的属性
+     * 
+     * @return nodeProperties */
     public String getNodeProperties() {
         return nodeProperties;
     }
@@ -504,20 +404,14 @@ public class Node  {
         this.nodeProperties = nodeProperties;
     }
 
-    
-
     public Node withPollingInterval(Integer pollingInterval) {
         this.pollingInterval = pollingInterval;
         return this;
     }
 
-    
-
-
-    /**
-     * 轮询节点执行结果时间间隔
-     * @return pollingInterval
-     */
+    /** 轮询节点执行结果时间间隔
+     * 
+     * @return pollingInterval */
     public Integer getPollingInterval() {
         return pollingInterval;
     }
@@ -526,20 +420,14 @@ public class Node  {
         this.pollingInterval = pollingInterval;
     }
 
-    
-
     public Node withMaxExecutionTime(Integer maxExecutionTime) {
         this.maxExecutionTime = maxExecutionTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点最大执行时间
-     * @return maxExecutionTime
-     */
+    /** 节点最大执行时间
+     * 
+     * @return maxExecutionTime */
     public Integer getMaxExecutionTime() {
         return maxExecutionTime;
     }
@@ -548,20 +436,14 @@ public class Node  {
         this.maxExecutionTime = maxExecutionTime;
     }
 
-    
-
     public Node withRetryTimes(Integer retryTimes) {
         this.retryTimes = retryTimes;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点失败重试次数
-     * @return retryTimes
-     */
+    /** 节点失败重试次数
+     * 
+     * @return retryTimes */
     public Integer getRetryTimes() {
         return retryTimes;
     }
@@ -570,20 +452,14 @@ public class Node  {
         this.retryTimes = retryTimes;
     }
 
-    
-
     public Node withRetryInterval(Integer retryInterval) {
         this.retryInterval = retryInterval;
         return this;
     }
 
-    
-
-
-    /**
-     * 失败重试时间间隔
-     * @return retryInterval
-     */
+    /** 失败重试时间间隔
+     * 
+     * @return retryInterval */
     public Integer getRetryInterval() {
         return retryInterval;
     }
@@ -592,20 +468,14 @@ public class Node  {
         this.retryInterval = retryInterval;
     }
 
-    
-
     public Node withFailPolicy(FailPolicyEnum failPolicy) {
         this.failPolicy = failPolicy;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业失败策略
-     * @return failPolicy
-     */
+    /** 作业失败策略
+     * 
+     * @return failPolicy */
     public FailPolicyEnum getFailPolicy() {
         return failPolicy;
     }
@@ -614,27 +484,23 @@ public class Node  {
         this.failPolicy = failPolicy;
     }
 
-    
-
     public Node withEventTrigger(Event eventTrigger) {
         this.eventTrigger = eventTrigger;
         return this;
     }
 
     public Node withEventTrigger(Consumer<Event> eventTriggerSetter) {
-        if(this.eventTrigger == null ){
+        if (this.eventTrigger == null) {
             this.eventTrigger = new Event();
             eventTriggerSetter.accept(this.eventTrigger);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get eventTrigger
-     * @return eventTrigger
-     */
+    /** Get eventTrigger
+     * 
+     * @return eventTrigger */
     public Event getEventTrigger() {
         return eventTrigger;
     }
@@ -643,27 +509,23 @@ public class Node  {
         this.eventTrigger = eventTrigger;
     }
 
-    
-
     public Node withCronTrigger(Cron cronTrigger) {
         this.cronTrigger = cronTrigger;
         return this;
     }
 
     public Node withCronTrigger(Consumer<Cron> cronTriggerSetter) {
-        if(this.cronTrigger == null ){
+        if (this.cronTrigger == null) {
             this.cronTrigger = new Cron();
             cronTriggerSetter.accept(this.cronTrigger);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get cronTrigger
-     * @return cronTrigger
-     */
+    /** Get cronTrigger
+     * 
+     * @return cronTrigger */
     public Cron getCronTrigger() {
         return cronTrigger;
     }
@@ -671,8 +533,6 @@ public class Node  {
     public void setCronTrigger(Cron cronTrigger) {
         this.cronTrigger = cronTrigger;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -683,24 +543,35 @@ public class Node  {
             return false;
         }
         Node node = (Node) o;
-        return Objects.equals(this.name, node.name) &&
-            Objects.equals(this.nodeType, node.nodeType) &&
-            Objects.equals(this.location, node.location) &&
-            Objects.equals(this.preNodeNames, node.preNodeNames) &&
-            Objects.equals(this.condition, node.condition) &&
-            Objects.equals(this.nodeProperties, node.nodeProperties) &&
-            Objects.equals(this.pollingInterval, node.pollingInterval) &&
-            Objects.equals(this.maxExecutionTime, node.maxExecutionTime) &&
-            Objects.equals(this.retryTimes, node.retryTimes) &&
-            Objects.equals(this.retryInterval, node.retryInterval) &&
-            Objects.equals(this.failPolicy, node.failPolicy) &&
-            Objects.equals(this.eventTrigger, node.eventTrigger) &&
-            Objects.equals(this.cronTrigger, node.cronTrigger);
+        return Objects.equals(this.name, node.name) && Objects.equals(this.nodeType, node.nodeType)
+            && Objects.equals(this.location, node.location) && Objects.equals(this.preNodeNames, node.preNodeNames)
+            && Objects.equals(this.condition, node.condition)
+            && Objects.equals(this.nodeProperties, node.nodeProperties)
+            && Objects.equals(this.pollingInterval, node.pollingInterval)
+            && Objects.equals(this.maxExecutionTime, node.maxExecutionTime)
+            && Objects.equals(this.retryTimes, node.retryTimes)
+            && Objects.equals(this.retryInterval, node.retryInterval)
+            && Objects.equals(this.failPolicy, node.failPolicy) && Objects.equals(this.eventTrigger, node.eventTrigger)
+            && Objects.equals(this.cronTrigger, node.cronTrigger);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, nodeType, location, preNodeNames, condition, nodeProperties, pollingInterval, maxExecutionTime, retryTimes, retryInterval, failPolicy, eventTrigger, cronTrigger);
+        return Objects.hash(name,
+            nodeType,
+            location,
+            preNodeNames,
+            condition,
+            nodeProperties,
+            pollingInterval,
+            maxExecutionTime,
+            retryTimes,
+            retryInterval,
+            failPolicy,
+            eventTrigger,
+            cronTrigger);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -721,16 +592,13 @@ public class Node  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

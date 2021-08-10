@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.dws.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 节点类型详细
- */
-public class Detail  {
-
-
+/** 节点类型详细 */
+public class Detail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unit")
-    
+    @JsonProperty(value = "unit")
+
     private String unit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private String value;
 
     public Detail withUnit(String unit) {
@@ -40,13 +28,9 @@ public class Detail  {
         return this;
     }
 
-    
-
-
-    /**
-     * 属性单位
-     * @return unit
-     */
+    /** 属性单位
+     * 
+     * @return unit */
     public String getUnit() {
         return unit;
     }
@@ -55,20 +39,14 @@ public class Detail  {
         this.unit = unit;
     }
 
-    
-
     public Detail withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 属性类型
-     * @return type
-     */
+    /** 属性类型
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -77,20 +55,14 @@ public class Detail  {
         this.type = type;
     }
 
-    
-
     public Detail withValue(String value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 属性值
-     * @return value
-     */
+    /** 属性值
+     * 
+     * @return value */
     public String getValue() {
         return value;
     }
@@ -98,8 +70,6 @@ public class Detail  {
     public void setValue(String value) {
         this.value = value;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,15 @@ public class Detail  {
             return false;
         }
         Detail detail = (Detail) o;
-        return Objects.equals(this.unit, detail.unit) &&
-            Objects.equals(this.type, detail.type) &&
-            Objects.equals(this.value, detail.value);
+        return Objects.equals(this.unit, detail.unit) && Objects.equals(this.type, detail.type)
+            && Objects.equals(this.value, detail.value);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(unit, type, value);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +99,13 @@ public class Detail  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,67 +1,49 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v3.model.LoadBalancerStatusL7Rule;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * lb状态树的策略状态信息
- */
-public class LoadBalancerStatusPolicy  {
-
-
+/** lb状态树的策略状态信息 */
+public class LoadBalancerStatusPolicy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private String action;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provisioning_status")
-    
+    @JsonProperty(value = "provisioning_status")
+
     private String provisioningStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rules")
-    
+    @JsonProperty(value = "rules")
+
     private List<LoadBalancerStatusL7Rule> rules = null;
-    
+
     public LoadBalancerStatusPolicy withAction(String action) {
         this.action = action;
         return this;
     }
 
-    
-
-
-    /**
-     * 匹配动作。 支持REDIRECT_TO_POOL和REDIRECT_TO_LISTENER。
-     * @return action
-     */
+    /** 匹配动作。 支持REDIRECT_TO_POOL和REDIRECT_TO_LISTENER。
+     * 
+     * @return action */
     public String getAction() {
         return action;
     }
@@ -70,20 +52,14 @@ public class LoadBalancerStatusPolicy  {
         this.action = action;
     }
 
-    
-
     public LoadBalancerStatusPolicy withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略ID。
-     * @return id
-     */
+    /** 策略ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -92,20 +68,14 @@ public class LoadBalancerStatusPolicy  {
         this.id = id;
     }
 
-    
-
     public LoadBalancerStatusPolicy withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * provisioning的状态。 可以为：ACTIVE、PENDING_CREATE 或者ERROR。默认为ACTIVE。
-     * @return provisioningStatus
-     */
+    /** provisioning的状态。 可以为：ACTIVE、PENDING_CREATE 或者ERROR。默认为ACTIVE。
+     * 
+     * @return provisioningStatus */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -114,20 +84,14 @@ public class LoadBalancerStatusPolicy  {
         this.provisioningStatus = provisioningStatus;
     }
 
-    
-
     public LoadBalancerStatusPolicy withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略名称。
-     * @return name
-     */
+    /** 策略名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -136,16 +100,13 @@ public class LoadBalancerStatusPolicy  {
         this.name = name;
     }
 
-    
-
     public LoadBalancerStatusPolicy withRules(List<LoadBalancerStatusL7Rule> rules) {
         this.rules = rules;
         return this;
     }
 
-    
     public LoadBalancerStatusPolicy addRulesItem(LoadBalancerStatusL7Rule rulesItem) {
-        if(this.rules == null) {
+        if (this.rules == null) {
             this.rules = new ArrayList<>();
         }
         this.rules.add(rulesItem);
@@ -153,17 +114,16 @@ public class LoadBalancerStatusPolicy  {
     }
 
     public LoadBalancerStatusPolicy withRules(Consumer<List<LoadBalancerStatusL7Rule>> rulesSetter) {
-        if(this.rules == null) {
+        if (this.rules == null) {
             this.rules = new ArrayList<>();
         }
         rulesSetter.accept(this.rules);
         return this;
     }
 
-    /**
-     * 规则。
-     * @return rules
-     */
+    /** 规则。
+     * 
+     * @return rules */
     public List<LoadBalancerStatusL7Rule> getRules() {
         return rules;
     }
@@ -171,8 +131,6 @@ public class LoadBalancerStatusPolicy  {
     public void setRules(List<LoadBalancerStatusL7Rule> rules) {
         this.rules = rules;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -183,16 +141,18 @@ public class LoadBalancerStatusPolicy  {
             return false;
         }
         LoadBalancerStatusPolicy loadBalancerStatusPolicy = (LoadBalancerStatusPolicy) o;
-        return Objects.equals(this.action, loadBalancerStatusPolicy.action) &&
-            Objects.equals(this.id, loadBalancerStatusPolicy.id) &&
-            Objects.equals(this.provisioningStatus, loadBalancerStatusPolicy.provisioningStatus) &&
-            Objects.equals(this.name, loadBalancerStatusPolicy.name) &&
-            Objects.equals(this.rules, loadBalancerStatusPolicy.rules);
+        return Objects.equals(this.action, loadBalancerStatusPolicy.action)
+            && Objects.equals(this.id, loadBalancerStatusPolicy.id)
+            && Objects.equals(this.provisioningStatus, loadBalancerStatusPolicy.provisioningStatus)
+            && Objects.equals(this.name, loadBalancerStatusPolicy.name)
+            && Objects.equals(this.rules, loadBalancerStatusPolicy.rules);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(action, id, provisioningStatus, name, rules);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -205,16 +165,13 @@ public class LoadBalancerStatusPolicy  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iec.v1.model.UpdateSubnetRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateSubnetRequest  {
-
-
+/** Request Object */
+public class UpdateSubnetRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
+
     private String subnetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateSubnetRequestBody body;
 
     public UpdateSubnetRequest withSubnetId(String subnetId) {
@@ -35,13 +24,9 @@ public class UpdateSubnetRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 子网ID。
-     * @return subnetId
-     */
+    /** 子网ID。
+     * 
+     * @return subnetId */
     public String getSubnetId() {
         return subnetId;
     }
@@ -50,27 +35,23 @@ public class UpdateSubnetRequest  {
         this.subnetId = subnetId;
     }
 
-    
-
     public UpdateSubnetRequest withBody(UpdateSubnetRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdateSubnetRequest withBody(Consumer<UpdateSubnetRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateSubnetRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateSubnetRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdateSubnetRequest  {
     public void setBody(UpdateSubnetRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdateSubnetRequest  {
             return false;
         }
         UpdateSubnetRequest updateSubnetRequest = (UpdateSubnetRequest) o;
-        return Objects.equals(this.subnetId, updateSubnetRequest.subnetId) &&
-            Objects.equals(this.body, updateSubnetRequest.body);
+        return Objects.equals(this.subnetId, updateSubnetRequest.subnetId)
+            && Objects.equals(this.body, updateSubnetRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(subnetId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdateSubnetRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

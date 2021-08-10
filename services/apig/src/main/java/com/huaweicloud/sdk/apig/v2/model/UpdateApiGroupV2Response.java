@@ -1,110 +1,86 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.apig.v2.model.UrlDomainsResp;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class UpdateApiGroupV2Response extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url_domains")
-    
+    @JsonProperty(value = "url_domains")
+
     private List<UrlDomainsResp> urlDomains = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="call_limits")
-    
+    @JsonProperty(value = "call_limits")
+
     private Integer callLimits;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private OffsetDateTime updateTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time_unit")
-    
+    @JsonProperty(value = "time_unit")
+
     private String timeUnit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="on_sell_status")
-    
+    @JsonProperty(value = "on_sell_status")
+
     private Integer onSellStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
+
     private String remark;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sl_domain")
-    
+    @JsonProperty(value = "sl_domain")
+
     private String slDomain;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sl_domains")
-    
+    @JsonProperty(value = "sl_domains")
+
     private List<String> slDomains = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time_interval")
-    
+    @JsonProperty(value = "time_interval")
+
     private Integer timeInterval;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="register_time")
-    
+    @JsonProperty(value = "register_time")
+
     private OffsetDateTime registerTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_default")
-    
+    @JsonProperty(value = "is_default")
+
     private Integer isDefault;
 
     public UpdateApiGroupV2Response withUrlDomains(List<UrlDomainsResp> urlDomains) {
@@ -112,9 +88,8 @@ public class UpdateApiGroupV2Response extends SdkResponse {
         return this;
     }
 
-    
     public UpdateApiGroupV2Response addUrlDomainsItem(UrlDomainsResp urlDomainsItem) {
-        if(this.urlDomains == null) {
+        if (this.urlDomains == null) {
             this.urlDomains = new ArrayList<>();
         }
         this.urlDomains.add(urlDomainsItem);
@@ -122,17 +97,16 @@ public class UpdateApiGroupV2Response extends SdkResponse {
     }
 
     public UpdateApiGroupV2Response withUrlDomains(Consumer<List<UrlDomainsResp>> urlDomainsSetter) {
-        if(this.urlDomains == null) {
+        if (this.urlDomains == null) {
             this.urlDomains = new ArrayList<>();
         }
         urlDomainsSetter.accept(this.urlDomains);
         return this;
     }
 
-    /**
-     * 分组上绑定的独立域名列表
-     * @return urlDomains
-     */
+    /** 分组上绑定的独立域名列表
+     * 
+     * @return urlDomains */
     public List<UrlDomainsResp> getUrlDomains() {
         return urlDomains;
     }
@@ -141,20 +115,14 @@ public class UpdateApiGroupV2Response extends SdkResponse {
         this.urlDomains = urlDomains;
     }
 
-    
-
     public UpdateApiGroupV2Response withCallLimits(Integer callLimits) {
         this.callLimits = callLimits;
         return this;
     }
 
-    
-
-
-    /**
-     * 流控时长内分组下的API的总访问次数限制，默认不限，请根据服务的负载能力自行设置  暂不支持
-     * @return callLimits
-     */
+    /** 流控时长内分组下的API的总访问次数限制，默认不限，请根据服务的负载能力自行设置 暂不支持
+     * 
+     * @return callLimits */
     public Integer getCallLimits() {
         return callLimits;
     }
@@ -163,20 +131,14 @@ public class UpdateApiGroupV2Response extends SdkResponse {
         this.callLimits = callLimits;
     }
 
-    
-
     public UpdateApiGroupV2Response withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 最近修改时间
-     * @return updateTime
-     */
+    /** 最近修改时间
+     * 
+     * @return updateTime */
     public OffsetDateTime getUpdateTime() {
         return updateTime;
     }
@@ -185,20 +147,14 @@ public class UpdateApiGroupV2Response extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     public UpdateApiGroupV2Response withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * API分组名称
-     * @return name
-     */
+    /** API分组名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -207,20 +163,14 @@ public class UpdateApiGroupV2Response extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public UpdateApiGroupV2Response withTimeUnit(String timeUnit) {
         this.timeUnit = timeUnit;
         return this;
     }
 
-    
-
-
-    /**
-     * 流控的时间单位  暂不支持
-     * @return timeUnit
-     */
+    /** 流控的时间单位 暂不支持
+     * 
+     * @return timeUnit */
     public String getTimeUnit() {
         return timeUnit;
     }
@@ -229,20 +179,14 @@ public class UpdateApiGroupV2Response extends SdkResponse {
         this.timeUnit = timeUnit;
     }
 
-    
-
     public UpdateApiGroupV2Response withOnSellStatus(Integer onSellStatus) {
         this.onSellStatus = onSellStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否已上架云市场： - 1：已上架 - 2：未上架 - 3：审核中
-     * @return onSellStatus
-     */
+    /** 是否已上架云市场： - 1：已上架 - 2：未上架 - 3：审核中
+     * 
+     * @return onSellStatus */
     public Integer getOnSellStatus() {
         return onSellStatus;
     }
@@ -251,20 +195,14 @@ public class UpdateApiGroupV2Response extends SdkResponse {
         this.onSellStatus = onSellStatus;
     }
 
-    
-
     public UpdateApiGroupV2Response withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述
-     * @return remark
-     */
+    /** 描述
+     * 
+     * @return remark */
     public String getRemark() {
         return remark;
     }
@@ -273,20 +211,14 @@ public class UpdateApiGroupV2Response extends SdkResponse {
         this.remark = remark;
     }
 
-    
-
     public UpdateApiGroupV2Response withSlDomain(String slDomain) {
         this.slDomain = slDomain;
         return this;
     }
 
-    
-
-
-    /**
-     * 系统默认分配的子域名
-     * @return slDomain
-     */
+    /** 系统默认分配的子域名
+     * 
+     * @return slDomain */
     public String getSlDomain() {
         return slDomain;
     }
@@ -295,16 +227,13 @@ public class UpdateApiGroupV2Response extends SdkResponse {
         this.slDomain = slDomain;
     }
 
-    
-
     public UpdateApiGroupV2Response withSlDomains(List<String> slDomains) {
         this.slDomains = slDomains;
         return this;
     }
 
-    
     public UpdateApiGroupV2Response addSlDomainsItem(String slDomainsItem) {
-        if(this.slDomains == null) {
+        if (this.slDomains == null) {
             this.slDomains = new ArrayList<>();
         }
         this.slDomains.add(slDomainsItem);
@@ -312,17 +241,16 @@ public class UpdateApiGroupV2Response extends SdkResponse {
     }
 
     public UpdateApiGroupV2Response withSlDomains(Consumer<List<String>> slDomainsSetter) {
-        if(this.slDomains == null) {
+        if (this.slDomains == null) {
             this.slDomains = new ArrayList<>();
         }
         slDomainsSetter.accept(this.slDomains);
         return this;
     }
 
-    /**
-     * 系统默认分配的子域名列表
-     * @return slDomains
-     */
+    /** 系统默认分配的子域名列表
+     * 
+     * @return slDomains */
     public List<String> getSlDomains() {
         return slDomains;
     }
@@ -331,20 +259,14 @@ public class UpdateApiGroupV2Response extends SdkResponse {
         this.slDomains = slDomains;
     }
 
-    
-
     public UpdateApiGroupV2Response withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 编号
-     * @return id
-     */
+    /** 编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -353,20 +275,14 @@ public class UpdateApiGroupV2Response extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public UpdateApiGroupV2Response withTimeInterval(Integer timeInterval) {
         this.timeInterval = timeInterval;
         return this;
     }
 
-    
-
-
-    /**
-     * 流控时长  暂不支持
-     * @return timeInterval
-     */
+    /** 流控时长 暂不支持
+     * 
+     * @return timeInterval */
     public Integer getTimeInterval() {
         return timeInterval;
     }
@@ -375,20 +291,14 @@ public class UpdateApiGroupV2Response extends SdkResponse {
         this.timeInterval = timeInterval;
     }
 
-    
-
     public UpdateApiGroupV2Response withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return registerTime
-     */
+    /** 创建时间
+     * 
+     * @return registerTime */
     public OffsetDateTime getRegisterTime() {
         return registerTime;
     }
@@ -397,20 +307,14 @@ public class UpdateApiGroupV2Response extends SdkResponse {
         this.registerTime = registerTime;
     }
 
-    
-
     public UpdateApiGroupV2Response withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态   - 1： 有效
-     * @return status
-     */
+    /** 状态 - 1： 有效
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -419,20 +323,14 @@ public class UpdateApiGroupV2Response extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public UpdateApiGroupV2Response withIsDefault(Integer isDefault) {
         this.isDefault = isDefault;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否为默认分组
-     * @return isDefault
-     */
+    /** 是否为默认分组
+     * 
+     * @return isDefault */
     public Integer getIsDefault() {
         return isDefault;
     }
@@ -440,8 +338,6 @@ public class UpdateApiGroupV2Response extends SdkResponse {
     public void setIsDefault(Integer isDefault) {
         this.isDefault = isDefault;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -452,25 +348,40 @@ public class UpdateApiGroupV2Response extends SdkResponse {
             return false;
         }
         UpdateApiGroupV2Response updateApiGroupV2Response = (UpdateApiGroupV2Response) o;
-        return Objects.equals(this.urlDomains, updateApiGroupV2Response.urlDomains) &&
-            Objects.equals(this.callLimits, updateApiGroupV2Response.callLimits) &&
-            Objects.equals(this.updateTime, updateApiGroupV2Response.updateTime) &&
-            Objects.equals(this.name, updateApiGroupV2Response.name) &&
-            Objects.equals(this.timeUnit, updateApiGroupV2Response.timeUnit) &&
-            Objects.equals(this.onSellStatus, updateApiGroupV2Response.onSellStatus) &&
-            Objects.equals(this.remark, updateApiGroupV2Response.remark) &&
-            Objects.equals(this.slDomain, updateApiGroupV2Response.slDomain) &&
-            Objects.equals(this.slDomains, updateApiGroupV2Response.slDomains) &&
-            Objects.equals(this.id, updateApiGroupV2Response.id) &&
-            Objects.equals(this.timeInterval, updateApiGroupV2Response.timeInterval) &&
-            Objects.equals(this.registerTime, updateApiGroupV2Response.registerTime) &&
-            Objects.equals(this.status, updateApiGroupV2Response.status) &&
-            Objects.equals(this.isDefault, updateApiGroupV2Response.isDefault);
+        return Objects.equals(this.urlDomains, updateApiGroupV2Response.urlDomains)
+            && Objects.equals(this.callLimits, updateApiGroupV2Response.callLimits)
+            && Objects.equals(this.updateTime, updateApiGroupV2Response.updateTime)
+            && Objects.equals(this.name, updateApiGroupV2Response.name)
+            && Objects.equals(this.timeUnit, updateApiGroupV2Response.timeUnit)
+            && Objects.equals(this.onSellStatus, updateApiGroupV2Response.onSellStatus)
+            && Objects.equals(this.remark, updateApiGroupV2Response.remark)
+            && Objects.equals(this.slDomain, updateApiGroupV2Response.slDomain)
+            && Objects.equals(this.slDomains, updateApiGroupV2Response.slDomains)
+            && Objects.equals(this.id, updateApiGroupV2Response.id)
+            && Objects.equals(this.timeInterval, updateApiGroupV2Response.timeInterval)
+            && Objects.equals(this.registerTime, updateApiGroupV2Response.registerTime)
+            && Objects.equals(this.status, updateApiGroupV2Response.status)
+            && Objects.equals(this.isDefault, updateApiGroupV2Response.isDefault);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(urlDomains, callLimits, updateTime, name, timeUnit, onSellStatus, remark, slDomain, slDomains, id, timeInterval, registerTime, status, isDefault);
+        return Objects.hash(urlDomains,
+            callLimits,
+            updateTime,
+            name,
+            timeUnit,
+            onSellStatus,
+            remark,
+            slDomain,
+            slDomains,
+            id,
+            timeInterval,
+            registerTime,
+            status,
+            isDefault);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -492,16 +403,13 @@ public class UpdateApiGroupV2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

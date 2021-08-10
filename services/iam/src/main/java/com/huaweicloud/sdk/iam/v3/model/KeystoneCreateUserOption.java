@@ -1,50 +1,38 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class KeystoneCreateUserOption  {
-
-
+public class KeystoneCreateUserOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="password")
-    
+    @JsonProperty(value = "password")
+
     private String password;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enabled")
-    
+    @JsonProperty(value = "enabled")
+
     private Boolean enabled;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public KeystoneCreateUserOption withName(String name) {
@@ -52,13 +40,9 @@ public class KeystoneCreateUserOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户名，长度5~32之间，首位不能为数字，特殊字符只能包含下划线“_”、中划线“-”和空格。
-     * @return name
-     */
+    /** IAM用户名，长度5~32之间，首位不能为数字，特殊字符只能包含下划线“_”、中划线“-”和空格。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -67,20 +51,14 @@ public class KeystoneCreateUserOption  {
         this.name = name;
     }
 
-    
-
     public KeystoneCreateUserOption withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户所属账号ID。
-     * @return domainId
-     */
+    /** IAM用户所属账号ID。
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -89,20 +67,15 @@ public class KeystoneCreateUserOption  {
         this.domainId = domainId;
     }
 
-    
-
     public KeystoneCreateUserOption withPassword(String password) {
         this.password = password;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户密码。   - 系统默认密码最小长度为6位字符，在6-32位之间支持用户自定义密码长度。   - 至少包含以下四种字符中的两种： 大写字母、小写字母、数字和特殊字符。   - 不能包含手机号和邮箱。   - 必须满足账户设置中密码策略的要求。
-     * @return password
-     */
+    /** IAM用户密码。 - 系统默认密码最小长度为6位字符，在6-32位之间支持用户自定义密码长度。 - 至少包含以下四种字符中的两种： 大写字母、小写字母、数字和特殊字符。 - 不能包含手机号和邮箱。 -
+     * 必须满足账户设置中密码策略的要求。
+     * 
+     * @return password */
     public String getPassword() {
         return password;
     }
@@ -111,20 +84,14 @@ public class KeystoneCreateUserOption  {
         this.password = password;
     }
 
-    
-
     public KeystoneCreateUserOption withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否启用IAM用户。true为启用，false为停用，默认为true。
-     * @return enabled
-     */
+    /** 是否启用IAM用户。true为启用，false为停用，默认为true。
+     * 
+     * @return enabled */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -133,20 +100,14 @@ public class KeystoneCreateUserOption  {
         this.enabled = enabled;
     }
 
-    
-
     public KeystoneCreateUserOption withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户描述信息。
-     * @return description
-     */
+    /** IAM用户描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -154,8 +115,6 @@ public class KeystoneCreateUserOption  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +125,18 @@ public class KeystoneCreateUserOption  {
             return false;
         }
         KeystoneCreateUserOption keystoneCreateUserOption = (KeystoneCreateUserOption) o;
-        return Objects.equals(this.name, keystoneCreateUserOption.name) &&
-            Objects.equals(this.domainId, keystoneCreateUserOption.domainId) &&
-            Objects.equals(this.password, keystoneCreateUserOption.password) &&
-            Objects.equals(this.enabled, keystoneCreateUserOption.enabled) &&
-            Objects.equals(this.description, keystoneCreateUserOption.description);
+        return Objects.equals(this.name, keystoneCreateUserOption.name)
+            && Objects.equals(this.domainId, keystoneCreateUserOption.domainId)
+            && Objects.equals(this.password, keystoneCreateUserOption.password)
+            && Objects.equals(this.enabled, keystoneCreateUserOption.enabled)
+            && Objects.equals(this.description, keystoneCreateUserOption.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, domainId, password, enabled, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +149,13 @@ public class KeystoneCreateUserOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

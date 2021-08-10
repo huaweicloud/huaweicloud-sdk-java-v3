@@ -1,70 +1,46 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dcs.v2.model.HotkeysBody;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateHotkeyScanTaskResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
-    /**
-     * 分析任务状态
-     */
+
+    /** 分析任务状态 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum WAITING for value: "waiting"
-         */
+        /** Enum WAITING for value: "waiting" */
         public static final StatusEnum WAITING = new StatusEnum("waiting");
-        
-        /**
-         * Enum RUNNING for value: "running"
-         */
+
+        /** Enum RUNNING for value: "running" */
         public static final StatusEnum RUNNING = new StatusEnum("running");
-        
-        /**
-         * Enum SUCCESS for value: "success"
-         */
+
+        /** Enum SUCCESS for value: "success" */
         public static final StatusEnum SUCCESS = new StatusEnum("success");
-        
-        /**
-         * Enum FAILED for value: "failed"
-         */
+
+        /** Enum FAILED for value: "failed" */
         public static final StatusEnum FAILED = new StatusEnum("failed");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -95,7 +71,7 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -106,7 +82,7 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -130,27 +106,19 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
-    /**
-     * 分析方式
-     */
+
+    /** 分析方式 */
     public static final class ScanTypeEnum {
 
-        
-        /**
-         * Enum MANUAL for value: "manual"
-         */
+        /** Enum MANUAL for value: "manual" */
         public static final ScanTypeEnum MANUAL = new ScanTypeEnum("manual");
-        
-        /**
-         * Enum AUTO for value: "auto"
-         */
+
+        /** Enum AUTO for value: "auto" */
         public static final ScanTypeEnum AUTO = new ScanTypeEnum("auto");
-        
 
         private static final Map<String, ScanTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -179,7 +147,7 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
 
         @JsonCreator
         public static ScanTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ScanTypeEnum result = STATIC_FIELDS.get(value);
@@ -190,7 +158,7 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
         }
 
         public static ScanTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ScanTypeEnum result = STATIC_FIELDS.get(value);
@@ -214,54 +182,44 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scan_type")
-    
+    @JsonProperty(value = "scan_type")
+
     private ScanTypeEnum scanType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="started_at")
-    
+    @JsonProperty(value = "started_at")
+
     private String startedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="finished_at")
-    
+    @JsonProperty(value = "finished_at")
+
     private String finishedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="num")
-    
+    @JsonProperty(value = "num")
+
     private Integer num;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="keys")
-    
+    @JsonProperty(value = "keys")
+
     private List<HotkeysBody> keys = null;
-    
+
     public CreateHotkeyScanTaskResponse withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 热key分析记录ID
-     * @return id
-     */
+    /** 热key分析记录ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -270,20 +228,14 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public CreateHotkeyScanTaskResponse withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -292,20 +244,14 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
         this.instanceId = instanceId;
     }
 
-    
-
     public CreateHotkeyScanTaskResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 分析任务状态
-     * @return status
-     */
+    /** 分析任务状态
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -314,20 +260,14 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public CreateHotkeyScanTaskResponse withScanType(ScanTypeEnum scanType) {
         this.scanType = scanType;
         return this;
     }
 
-    
-
-
-    /**
-     * 分析方式
-     * @return scanType
-     */
+    /** 分析方式
+     * 
+     * @return scanType */
     public ScanTypeEnum getScanType() {
         return scanType;
     }
@@ -336,20 +276,14 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
         this.scanType = scanType;
     }
 
-    
-
     public CreateHotkeyScanTaskResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 分析任务创建时间,格式为：\"2020-06-15T02:21:18.669Z\"
-     * @return createdAt
-     */
+    /** 分析任务创建时间,格式为：\"2020-06-15T02:21:18.669Z\"
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -358,20 +292,14 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
         this.createdAt = createdAt;
     }
 
-    
-
     public CreateHotkeyScanTaskResponse withStartedAt(String startedAt) {
         this.startedAt = startedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 分析任务开始时间,格式为：\"2020-06-15T02:21:18.669Z\"
-     * @return startedAt
-     */
+    /** 分析任务开始时间,格式为：\"2020-06-15T02:21:18.669Z\"
+     * 
+     * @return startedAt */
     public String getStartedAt() {
         return startedAt;
     }
@@ -380,20 +308,14 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
         this.startedAt = startedAt;
     }
 
-    
-
     public CreateHotkeyScanTaskResponse withFinishedAt(String finishedAt) {
         this.finishedAt = finishedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 分析任务结束时间,格式为：\"2020-06-15T02:21:18.669Z\"
-     * @return finishedAt
-     */
+    /** 分析任务结束时间,格式为：\"2020-06-15T02:21:18.669Z\"
+     * 
+     * @return finishedAt */
     public String getFinishedAt() {
         return finishedAt;
     }
@@ -402,20 +324,14 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
         this.finishedAt = finishedAt;
     }
 
-    
-
     public CreateHotkeyScanTaskResponse withNum(Integer num) {
         this.num = num;
         return this;
     }
 
-    
-
-
-    /**
-     * 热key的数量
-     * @return num
-     */
+    /** 热key的数量
+     * 
+     * @return num */
     public Integer getNum() {
         return num;
     }
@@ -424,16 +340,13 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
         this.num = num;
     }
 
-    
-
     public CreateHotkeyScanTaskResponse withKeys(List<HotkeysBody> keys) {
         this.keys = keys;
         return this;
     }
 
-    
     public CreateHotkeyScanTaskResponse addKeysItem(HotkeysBody keysItem) {
-        if(this.keys == null) {
+        if (this.keys == null) {
             this.keys = new ArrayList<>();
         }
         this.keys.add(keysItem);
@@ -441,17 +354,16 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
     }
 
     public CreateHotkeyScanTaskResponse withKeys(Consumer<List<HotkeysBody>> keysSetter) {
-        if(this.keys == null) {
+        if (this.keys == null) {
             this.keys = new ArrayList<>();
         }
         keysSetter.accept(this.keys);
         return this;
     }
 
-    /**
-     * 热key记录
-     * @return keys
-     */
+    /** 热key记录
+     * 
+     * @return keys */
     public List<HotkeysBody> getKeys() {
         return keys;
     }
@@ -459,8 +371,6 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
     public void setKeys(List<HotkeysBody> keys) {
         this.keys = keys;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -471,20 +381,22 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
             return false;
         }
         CreateHotkeyScanTaskResponse createHotkeyScanTaskResponse = (CreateHotkeyScanTaskResponse) o;
-        return Objects.equals(this.id, createHotkeyScanTaskResponse.id) &&
-            Objects.equals(this.instanceId, createHotkeyScanTaskResponse.instanceId) &&
-            Objects.equals(this.status, createHotkeyScanTaskResponse.status) &&
-            Objects.equals(this.scanType, createHotkeyScanTaskResponse.scanType) &&
-            Objects.equals(this.createdAt, createHotkeyScanTaskResponse.createdAt) &&
-            Objects.equals(this.startedAt, createHotkeyScanTaskResponse.startedAt) &&
-            Objects.equals(this.finishedAt, createHotkeyScanTaskResponse.finishedAt) &&
-            Objects.equals(this.num, createHotkeyScanTaskResponse.num) &&
-            Objects.equals(this.keys, createHotkeyScanTaskResponse.keys);
+        return Objects.equals(this.id, createHotkeyScanTaskResponse.id)
+            && Objects.equals(this.instanceId, createHotkeyScanTaskResponse.instanceId)
+            && Objects.equals(this.status, createHotkeyScanTaskResponse.status)
+            && Objects.equals(this.scanType, createHotkeyScanTaskResponse.scanType)
+            && Objects.equals(this.createdAt, createHotkeyScanTaskResponse.createdAt)
+            && Objects.equals(this.startedAt, createHotkeyScanTaskResponse.startedAt)
+            && Objects.equals(this.finishedAt, createHotkeyScanTaskResponse.finishedAt)
+            && Objects.equals(this.num, createHotkeyScanTaskResponse.num)
+            && Objects.equals(this.keys, createHotkeyScanTaskResponse.keys);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, instanceId, status, scanType, createdAt, startedAt, finishedAt, num, keys);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -501,16 +413,13 @@ public class CreateHotkeyScanTaskResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

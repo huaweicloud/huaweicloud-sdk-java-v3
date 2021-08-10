@@ -1,46 +1,29 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 文本检测结果
- */
-public class TextReviewRet  {
+/** 文本检测结果 */
+public class TextReviewRet {
 
-    /**
-     * 检测结果是否通过。  取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。
-     */
+    /** 检测结果是否通过。 取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。 */
     public static final class SuggestionEnum {
 
-        
-        /**
-         * Enum BLOCK for value: "block"
-         */
+        /** Enum BLOCK for value: "block" */
         public static final SuggestionEnum BLOCK = new SuggestionEnum("block");
-        
-        /**
-         * Enum PASS for value: "pass"
-         */
+
+        /** Enum PASS for value: "pass" */
         public static final SuggestionEnum PASS = new SuggestionEnum("pass");
-        
-        /**
-         * Enum REVIEW for value: "review"
-         */
+
+        /** Enum REVIEW for value: "review" */
         public static final SuggestionEnum REVIEW = new SuggestionEnum("review");
-        
 
         private static final Map<String, SuggestionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,7 +53,7 @@ public class TextReviewRet  {
 
         @JsonCreator
         public static SuggestionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SuggestionEnum result = STATIC_FIELDS.get(value);
@@ -81,7 +64,7 @@ public class TextReviewRet  {
         }
 
         public static SuggestionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SuggestionEnum result = STATIC_FIELDS.get(value);
@@ -105,28 +88,24 @@ public class TextReviewRet  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="suggestion")
-    
+    @JsonProperty(value = "suggestion")
+
     private SuggestionEnum suggestion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="politics")
-    
+    @JsonProperty(value = "politics")
+
     private String politics;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="porn")
-    
+    @JsonProperty(value = "porn")
+
     private String porn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="abuse")
-    
+    @JsonProperty(value = "abuse")
+
     private String abuse;
 
     public TextReviewRet withSuggestion(SuggestionEnum suggestion) {
@@ -134,13 +113,9 @@ public class TextReviewRet  {
         return this;
     }
 
-    
-
-
-    /**
-     * 检测结果是否通过。  取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。
-     * @return suggestion
-     */
+    /** 检测结果是否通过。 取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。
+     * 
+     * @return suggestion */
     public SuggestionEnum getSuggestion() {
         return suggestion;
     }
@@ -149,20 +124,14 @@ public class TextReviewRet  {
         this.suggestion = suggestion;
     }
 
-    
-
     public TextReviewRet withPolitics(String politics) {
         this.politics = politics;
         return this;
     }
 
-    
-
-
-    /**
-     * 涉政敏感词列表
-     * @return politics
-     */
+    /** 涉政敏感词列表
+     * 
+     * @return politics */
     public String getPolitics() {
         return politics;
     }
@@ -171,20 +140,14 @@ public class TextReviewRet  {
         this.politics = politics;
     }
 
-    
-
     public TextReviewRet withPorn(String porn) {
         this.porn = porn;
         return this;
     }
 
-    
-
-
-    /**
-     * 涉黄敏感词列表
-     * @return porn
-     */
+    /** 涉黄敏感词列表
+     * 
+     * @return porn */
     public String getPorn() {
         return porn;
     }
@@ -193,20 +156,14 @@ public class TextReviewRet  {
         this.porn = porn;
     }
 
-    
-
     public TextReviewRet withAbuse(String abuse) {
         this.abuse = abuse;
         return this;
     }
 
-    
-
-
-    /**
-     * 辱骂敏感词列表
-     * @return abuse
-     */
+    /** 辱骂敏感词列表
+     * 
+     * @return abuse */
     public String getAbuse() {
         return abuse;
     }
@@ -214,8 +171,6 @@ public class TextReviewRet  {
     public void setAbuse(String abuse) {
         this.abuse = abuse;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -226,15 +181,16 @@ public class TextReviewRet  {
             return false;
         }
         TextReviewRet textReviewRet = (TextReviewRet) o;
-        return Objects.equals(this.suggestion, textReviewRet.suggestion) &&
-            Objects.equals(this.politics, textReviewRet.politics) &&
-            Objects.equals(this.porn, textReviewRet.porn) &&
-            Objects.equals(this.abuse, textReviewRet.abuse);
+        return Objects.equals(this.suggestion, textReviewRet.suggestion)
+            && Objects.equals(this.politics, textReviewRet.politics) && Objects.equals(this.porn, textReviewRet.porn)
+            && Objects.equals(this.abuse, textReviewRet.abuse);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(suggestion, politics, porn, abuse);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -246,16 +202,13 @@ public class TextReviewRet  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ValidateRomaAppRequest  {
-
-
+/** Request Object */
+public class ValidateRomaAppRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
     public ValidateRomaAppRequest withInstanceId(String instanceId) {
@@ -46,13 +33,9 @@ public class ValidateRomaAppRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -61,20 +44,14 @@ public class ValidateRomaAppRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ValidateRomaAppRequest withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名称，不支持模糊匹配
-     * @return name
-     */
+    /** 应用名称，不支持模糊匹配
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -83,20 +60,14 @@ public class ValidateRomaAppRequest  {
         this.name = name;
     }
 
-    
-
     public ValidateRomaAppRequest withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用ID
-     * @return id
-     */
+    /** 应用ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -105,20 +76,14 @@ public class ValidateRomaAppRequest  {
         this.id = id;
     }
 
-    
-
     public ValidateRomaAppRequest withKey(String key) {
         this.key = key;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用key
-     * @return key
-     */
+    /** 应用key
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -126,8 +91,6 @@ public class ValidateRomaAppRequest  {
     public void setKey(String key) {
         this.key = key;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class ValidateRomaAppRequest  {
             return false;
         }
         ValidateRomaAppRequest validateRomaAppRequest = (ValidateRomaAppRequest) o;
-        return Objects.equals(this.instanceId, validateRomaAppRequest.instanceId) &&
-            Objects.equals(this.name, validateRomaAppRequest.name) &&
-            Objects.equals(this.id, validateRomaAppRequest.id) &&
-            Objects.equals(this.key, validateRomaAppRequest.key);
+        return Objects.equals(this.instanceId, validateRomaAppRequest.instanceId)
+            && Objects.equals(this.name, validateRomaAppRequest.name)
+            && Objects.equals(this.id, validateRomaAppRequest.id)
+            && Objects.equals(this.key, validateRomaAppRequest.key);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, name, id, key);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class ValidateRomaAppRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

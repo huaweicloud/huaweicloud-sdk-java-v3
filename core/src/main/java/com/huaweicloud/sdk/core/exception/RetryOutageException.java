@@ -21,10 +21,9 @@
 
 package com.huaweicloud.sdk.core.exception;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public class RetryOutageException extends RequestTimeoutException {
+
     public RetryOutageException(String message) {
         super(message);
     }

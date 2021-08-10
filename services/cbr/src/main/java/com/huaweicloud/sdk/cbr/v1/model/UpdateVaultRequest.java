@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.VaultUpdateReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateVaultRequest  {
-
-
+/** Request Object */
+public class UpdateVaultRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vault_id")
-    
+    @JsonProperty(value = "vault_id")
+
     private String vaultId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private VaultUpdateReq body;
 
     public UpdateVaultRequest withVaultId(String vaultId) {
@@ -35,13 +24,9 @@ public class UpdateVaultRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 存储库ID
-     * @return vaultId
-     */
+    /** 存储库ID
+     * 
+     * @return vaultId */
     public String getVaultId() {
         return vaultId;
     }
@@ -50,27 +35,23 @@ public class UpdateVaultRequest  {
         this.vaultId = vaultId;
     }
 
-    
-
     public UpdateVaultRequest withBody(VaultUpdateReq body) {
         this.body = body;
         return this;
     }
 
     public UpdateVaultRequest withBody(Consumer<VaultUpdateReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new VaultUpdateReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public VaultUpdateReq getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdateVaultRequest  {
     public void setBody(VaultUpdateReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdateVaultRequest  {
             return false;
         }
         UpdateVaultRequest updateVaultRequest = (UpdateVaultRequest) o;
-        return Objects.equals(this.vaultId, updateVaultRequest.vaultId) &&
-            Objects.equals(this.body, updateVaultRequest.body);
+        return Objects.equals(this.vaultId, updateVaultRequest.vaultId)
+            && Objects.equals(this.body, updateVaultRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(vaultId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdateVaultRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

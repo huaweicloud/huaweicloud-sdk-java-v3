@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 终端类型
- */
-public class QueryDeviceTypeResultDTO  {
-
-
+/** 终端类型 */
+public class QueryDeviceTypeResultDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="model")
-    
+    @JsonProperty(value = "model")
+
     private String model;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enableActiveCode")
-    
+    @JsonProperty(value = "enableActiveCode")
+
     private Boolean enableActiveCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resolution")
-    
+    @JsonProperty(value = "resolution")
+
     private String resolution;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="supportProjectionCode")
-    
+    @JsonProperty(value = "supportProjectionCode")
+
     private Boolean supportProjectionCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="supportSVC")
-    
+    @JsonProperty(value = "supportSVC")
+
     private Boolean supportSVC;
 
     public QueryDeviceTypeResultDTO withType(String type) {
@@ -58,13 +43,9 @@ public class QueryDeviceTypeResultDTO  {
         return this;
     }
 
-    
-
-
-    /**
-     * 终端类型，区分自研和第三方终端
-     * @return type
-     */
+    /** 终端类型，区分自研和第三方终端
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -73,20 +54,14 @@ public class QueryDeviceTypeResultDTO  {
         this.type = type;
     }
 
-    
-
     public QueryDeviceTypeResultDTO withModel(String model) {
         this.model = model;
         return this;
     }
 
-    
-
-
-    /**
-     * 终端型号，枚举类型。当前支持TE系列硬件终端，具体的终端类型可以通过获取所有终端类型接口查询。
-     * @return model
-     */
+    /** 终端型号，枚举类型。当前支持TE系列硬件终端，具体的终端类型可以通过获取所有终端类型接口查询。
+     * 
+     * @return model */
     public String getModel() {
         return model;
     }
@@ -95,20 +70,14 @@ public class QueryDeviceTypeResultDTO  {
         this.model = model;
     }
 
-    
-
     public QueryDeviceTypeResultDTO withEnableActiveCode(Boolean enableActiveCode) {
         this.enableActiveCode = enableActiveCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否支持激活码
-     * @return enableActiveCode
-     */
+    /** 是否支持激活码
+     * 
+     * @return enableActiveCode */
     public Boolean getEnableActiveCode() {
         return enableActiveCode;
     }
@@ -117,20 +86,14 @@ public class QueryDeviceTypeResultDTO  {
         this.enableActiveCode = enableActiveCode;
     }
 
-    
-
     public QueryDeviceTypeResultDTO withResolution(String resolution) {
         this.resolution = resolution;
         return this;
     }
 
-    
-
-
-    /**
-     * 屏幕分辨率。1080P、720P等。
-     * @return resolution
-     */
+    /** 屏幕分辨率。1080P、720P等。
+     * 
+     * @return resolution */
     public String getResolution() {
         return resolution;
     }
@@ -139,20 +102,14 @@ public class QueryDeviceTypeResultDTO  {
         this.resolution = resolution;
     }
 
-    
-
     public QueryDeviceTypeResultDTO withSupportProjectionCode(Boolean supportProjectionCode) {
         this.supportProjectionCode = supportProjectionCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否支持投影码
-     * @return supportProjectionCode
-     */
+    /** 是否支持投影码
+     * 
+     * @return supportProjectionCode */
     public Boolean getSupportProjectionCode() {
         return supportProjectionCode;
     }
@@ -161,20 +118,14 @@ public class QueryDeviceTypeResultDTO  {
         this.supportProjectionCode = supportProjectionCode;
     }
 
-    
-
     public QueryDeviceTypeResultDTO withSupportSVC(Boolean supportSVC) {
         this.supportSVC = supportSVC;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否支持SVC
-     * @return supportSVC
-     */
+    /** 是否支持SVC
+     * 
+     * @return supportSVC */
     public Boolean getSupportSVC() {
         return supportSVC;
     }
@@ -182,8 +133,6 @@ public class QueryDeviceTypeResultDTO  {
     public void setSupportSVC(Boolean supportSVC) {
         this.supportSVC = supportSVC;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,17 +143,19 @@ public class QueryDeviceTypeResultDTO  {
             return false;
         }
         QueryDeviceTypeResultDTO queryDeviceTypeResultDTO = (QueryDeviceTypeResultDTO) o;
-        return Objects.equals(this.type, queryDeviceTypeResultDTO.type) &&
-            Objects.equals(this.model, queryDeviceTypeResultDTO.model) &&
-            Objects.equals(this.enableActiveCode, queryDeviceTypeResultDTO.enableActiveCode) &&
-            Objects.equals(this.resolution, queryDeviceTypeResultDTO.resolution) &&
-            Objects.equals(this.supportProjectionCode, queryDeviceTypeResultDTO.supportProjectionCode) &&
-            Objects.equals(this.supportSVC, queryDeviceTypeResultDTO.supportSVC);
+        return Objects.equals(this.type, queryDeviceTypeResultDTO.type)
+            && Objects.equals(this.model, queryDeviceTypeResultDTO.model)
+            && Objects.equals(this.enableActiveCode, queryDeviceTypeResultDTO.enableActiveCode)
+            && Objects.equals(this.resolution, queryDeviceTypeResultDTO.resolution)
+            && Objects.equals(this.supportProjectionCode, queryDeviceTypeResultDTO.supportProjectionCode)
+            && Objects.equals(this.supportSVC, queryDeviceTypeResultDTO.supportSVC);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, model, enableActiveCode, resolution, supportProjectionCode, supportSVC);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,16 +169,13 @@ public class QueryDeviceTypeResultDTO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

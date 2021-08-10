@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.CreateCommandRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateCommandRequest  {
-
-
+/** Request Object */
+public class CreateCommandRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_id")
-    
+    @JsonProperty(value = "service_id")
+
     private String serviceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private CreateCommandRequestBody body;
 
     public CreateCommandRequest withInstanceId(String instanceId) {
@@ -41,13 +29,9 @@ public class CreateCommandRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -56,20 +40,14 @@ public class CreateCommandRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public CreateCommandRequest withServiceId(String serviceId) {
         this.serviceId = serviceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务ID
-     * @return serviceId
-     */
+    /** 服务ID
+     * 
+     * @return serviceId */
     public String getServiceId() {
         return serviceId;
     }
@@ -78,27 +56,23 @@ public class CreateCommandRequest  {
         this.serviceId = serviceId;
     }
 
-    
-
     public CreateCommandRequest withBody(CreateCommandRequestBody body) {
         this.body = body;
         return this;
     }
 
     public CreateCommandRequest withBody(Consumer<CreateCommandRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CreateCommandRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public CreateCommandRequestBody getBody() {
         return body;
     }
@@ -106,8 +80,6 @@ public class CreateCommandRequest  {
     public void setBody(CreateCommandRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class CreateCommandRequest  {
             return false;
         }
         CreateCommandRequest createCommandRequest = (CreateCommandRequest) o;
-        return Objects.equals(this.instanceId, createCommandRequest.instanceId) &&
-            Objects.equals(this.serviceId, createCommandRequest.serviceId) &&
-            Objects.equals(this.body, createCommandRequest.body);
+        return Objects.equals(this.instanceId, createCommandRequest.instanceId)
+            && Objects.equals(this.serviceId, createCommandRequest.serviceId)
+            && Objects.equals(this.body, createCommandRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, serviceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class CreateCommandRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

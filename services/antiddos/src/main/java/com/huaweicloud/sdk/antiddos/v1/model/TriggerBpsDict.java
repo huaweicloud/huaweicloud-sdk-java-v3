@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.antiddos.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 流量限制列表
- */
-public class TriggerBpsDict  {
-
-
+/** 流量限制列表 */
+public class TriggerBpsDict {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="traffic_pos_id")
-    
+    @JsonProperty(value = "traffic_pos_id")
+
     private Long trafficPosId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="traffic_per_second")
-    
+    @JsonProperty(value = "traffic_per_second")
+
     private Long trafficPerSecond;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="packet_per_second")
-    
+    @JsonProperty(value = "packet_per_second")
+
     private Long packetPerSecond;
 
     public TriggerBpsDict withTrafficPosId(Long trafficPosId) {
@@ -40,13 +28,9 @@ public class TriggerBpsDict  {
         return this;
     }
 
-    
-
-
-    /**
-     * 流量分段ID
-     * @return trafficPosId
-     */
+    /** 流量分段ID
+     * 
+     * @return trafficPosId */
     public Long getTrafficPosId() {
         return trafficPosId;
     }
@@ -55,20 +39,14 @@ public class TriggerBpsDict  {
         this.trafficPosId = trafficPosId;
     }
 
-    
-
     public TriggerBpsDict withTrafficPerSecond(Long trafficPerSecond) {
         this.trafficPerSecond = trafficPerSecond;
         return this;
     }
 
-    
-
-
-    /**
-     * 每秒流量（Mbit/s）阈值
-     * @return trafficPerSecond
-     */
+    /** 每秒流量（Mbit/s）阈值
+     * 
+     * @return trafficPerSecond */
     public Long getTrafficPerSecond() {
         return trafficPerSecond;
     }
@@ -77,20 +55,14 @@ public class TriggerBpsDict  {
         this.trafficPerSecond = trafficPerSecond;
     }
 
-    
-
     public TriggerBpsDict withPacketPerSecond(Long packetPerSecond) {
         this.packetPerSecond = packetPerSecond;
         return this;
     }
 
-    
-
-
-    /**
-     * 每秒报文数（个/s）阈值
-     * @return packetPerSecond
-     */
+    /** 每秒报文数（个/s）阈值
+     * 
+     * @return packetPerSecond */
     public Long getPacketPerSecond() {
         return packetPerSecond;
     }
@@ -98,8 +70,6 @@ public class TriggerBpsDict  {
     public void setPacketPerSecond(Long packetPerSecond) {
         this.packetPerSecond = packetPerSecond;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class TriggerBpsDict  {
             return false;
         }
         TriggerBpsDict triggerBpsDict = (TriggerBpsDict) o;
-        return Objects.equals(this.trafficPosId, triggerBpsDict.trafficPosId) &&
-            Objects.equals(this.trafficPerSecond, triggerBpsDict.trafficPerSecond) &&
-            Objects.equals(this.packetPerSecond, triggerBpsDict.packetPerSecond);
+        return Objects.equals(this.trafficPosId, triggerBpsDict.trafficPosId)
+            && Objects.equals(this.trafficPerSecond, triggerBpsDict.trafficPerSecond)
+            && Objects.equals(this.packetPerSecond, triggerBpsDict.packetPerSecond);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(trafficPosId, trafficPerSecond, packetPerSecond);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class TriggerBpsDict  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

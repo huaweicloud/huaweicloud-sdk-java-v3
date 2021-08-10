@@ -1,38 +1,25 @@
 package com.huaweicloud.sdk.cts.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cts.v3.model.MetaData;
-import com.huaweicloud.sdk.cts.v3.model.Traces;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListTracesResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="traces")
-    
+    @JsonProperty(value = "traces")
+
     private List<Traces> traces = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="meta_data")
-    
+    @JsonProperty(value = "meta_data")
+
     private MetaData metaData;
 
     public ListTracesResponse withTraces(List<Traces> traces) {
@@ -40,9 +27,8 @@ public class ListTracesResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListTracesResponse addTracesItem(Traces tracesItem) {
-        if(this.traces == null) {
+        if (this.traces == null) {
             this.traces = new ArrayList<>();
         }
         this.traces.add(tracesItem);
@@ -50,17 +36,16 @@ public class ListTracesResponse extends SdkResponse {
     }
 
     public ListTracesResponse withTraces(Consumer<List<Traces>> tracesSetter) {
-        if(this.traces == null) {
+        if (this.traces == null) {
             this.traces = new ArrayList<>();
         }
         tracesSetter.accept(this.traces);
         return this;
     }
 
-    /**
-     * 本次查询事件列表返回事件数组。
-     * @return traces
-     */
+    /** 本次查询事件列表返回事件数组。
+     * 
+     * @return traces */
     public List<Traces> getTraces() {
         return traces;
     }
@@ -69,27 +54,23 @@ public class ListTracesResponse extends SdkResponse {
         this.traces = traces;
     }
 
-    
-
     public ListTracesResponse withMetaData(MetaData metaData) {
         this.metaData = metaData;
         return this;
     }
 
     public ListTracesResponse withMetaData(Consumer<MetaData> metaDataSetter) {
-        if(this.metaData == null ){
+        if (this.metaData == null) {
             this.metaData = new MetaData();
             metaDataSetter.accept(this.metaData);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get metaData
-     * @return metaData
-     */
+    /** Get metaData
+     * 
+     * @return metaData */
     public MetaData getMetaData() {
         return metaData;
     }
@@ -97,8 +78,6 @@ public class ListTracesResponse extends SdkResponse {
     public void setMetaData(MetaData metaData) {
         this.metaData = metaData;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,13 +88,15 @@ public class ListTracesResponse extends SdkResponse {
             return false;
         }
         ListTracesResponse listTracesResponse = (ListTracesResponse) o;
-        return Objects.equals(this.traces, listTracesResponse.traces) &&
-            Objects.equals(this.metaData, listTracesResponse.metaData);
+        return Objects.equals(this.traces, listTracesResponse.traces)
+            && Objects.equals(this.metaData, listTracesResponse.metaData);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(traces, metaData);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -125,16 +106,13 @@ public class ListTracesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

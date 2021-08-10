@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class CancelAssetTranscodeTaskRequest  {
-
-
+/** Request Object */
+public class CancelAssetTranscodeTaskRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Authorization")
-    
+    @JsonProperty(value = "Authorization")
+
     private String authorization;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Sdk-Date")
-    
+    @JsonProperty(value = "X-Sdk-Date")
+
     private String xSdkDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="asset_id")
-    
+    @JsonProperty(value = "asset_id")
+
     private String assetId;
 
     public CancelAssetTranscodeTaskRequest withAuthorization(String authorization) {
@@ -40,13 +28,9 @@ public class CancelAssetTranscodeTaskRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
+    /** 使用AK/SK方式认证时必选，携带的鉴权信息。
+     * 
+     * @return authorization */
     public String getAuthorization() {
         return authorization;
     }
@@ -55,22 +39,16 @@ public class CancelAssetTranscodeTaskRequest  {
         this.authorization = authorization;
     }
 
-    
-
     public CancelAssetTranscodeTaskRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 使用AK/SK方式认证时必选，请求的发生时间。 
-     * @return xSdkDate
-     */
+    /** 使用AK/SK方式认证时必选，请求的发生时间。
+     * 
+     * @return xSdkDate */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Sdk-Date")
+    @JsonProperty(value = "X-Sdk-Date")
     public String getXSdkDate() {
         return xSdkDate;
     }
@@ -79,20 +57,14 @@ public class CancelAssetTranscodeTaskRequest  {
         this.xSdkDate = xSdkDate;
     }
 
-    
-
     public CancelAssetTranscodeTaskRequest withAssetId(String assetId) {
         this.assetId = assetId;
         return this;
     }
 
-    
-
-
-    /**
-     * 媒资ID。
-     * @return assetId
-     */
+    /** 媒资ID。
+     * 
+     * @return assetId */
     public String getAssetId() {
         return assetId;
     }
@@ -100,8 +72,6 @@ public class CancelAssetTranscodeTaskRequest  {
     public void setAssetId(String assetId) {
         this.assetId = assetId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +82,16 @@ public class CancelAssetTranscodeTaskRequest  {
             return false;
         }
         CancelAssetTranscodeTaskRequest cancelAssetTranscodeTaskRequest = (CancelAssetTranscodeTaskRequest) o;
-        return Objects.equals(this.authorization, cancelAssetTranscodeTaskRequest.authorization) &&
-            Objects.equals(this.xSdkDate, cancelAssetTranscodeTaskRequest.xSdkDate) &&
-            Objects.equals(this.assetId, cancelAssetTranscodeTaskRequest.assetId);
+        return Objects.equals(this.authorization, cancelAssetTranscodeTaskRequest.authorization)
+            && Objects.equals(this.xSdkDate, cancelAssetTranscodeTaskRequest.xSdkDate)
+            && Objects.equals(this.assetId, cancelAssetTranscodeTaskRequest.assetId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(authorization, xSdkDate, assetId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +102,13 @@ public class CancelAssetTranscodeTaskRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -4,6 +4,7 @@ import com.huaweicloud.sdk.core.auth.BasicCredentials;
 import com.huaweicloud.sdk.core.utils.JsonUtils;
 import com.huaweicloud.sdk.ecs.v2.EcsClient;
 import com.huaweicloud.sdk.ecs.v2.model.ServerImage;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -28,15 +29,12 @@ public class TestEcsClient {
         }
     }
 
-
     @Before
     public void init() {
         EcsClient.newBuilder()
-                .withCredential(new BasicCredentials().withProjectId("11")
-                        .withAk("11")
-                        .withSk("11"))
-                .withEndpoint("11")
-                .build();
+            .withCredential(new BasicCredentials().withProjectId("11").withAk("11").withSk("11"))
+            .withEndpoint("11")
+            .build();
     }
 
     @Test

@@ -1,80 +1,61 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * PolicyoODCreate
- */
-public class PolicyoODCreate  {
-
-
+/** PolicyoODCreate */
+public class PolicyoODCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="day_backups")
-    
+    @JsonProperty(value = "day_backups")
+
     private Integer dayBackups;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination_project_id")
-    
+    @JsonProperty(value = "destination_project_id")
+
     private String destinationProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination_region")
-    
+    @JsonProperty(value = "destination_region")
+
     private String destinationRegion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable_acceleration")
-    
+    @JsonProperty(value = "enable_acceleration")
+
     private Boolean enableAcceleration;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_backups")
-    
+    @JsonProperty(value = "max_backups")
+
     private Integer maxBackups;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="month_backups")
-    
+    @JsonProperty(value = "month_backups")
+
     private Integer monthBackups;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="retention_duration_days")
-    
+    @JsonProperty(value = "retention_duration_days")
+
     private Integer retentionDurationDays;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timezone")
-    
+    @JsonProperty(value = "timezone")
+
     private String timezone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="week_backups")
-    
+    @JsonProperty(value = "week_backups")
+
     private Integer weekBackups;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="year_backups")
-    
+    @JsonProperty(value = "year_backups")
+
     private Integer yearBackups;
 
     public PolicyoODCreate withDayBackups(Integer dayBackups) {
@@ -82,15 +63,9 @@ public class PolicyoODCreate  {
         return this;
     }
 
-    
-
-
-    /**
-     * 保留日备个数，该备份不受保留最大备份数限制。取值为0到100。若选择该参数，则timezone 也必选。
-     * minimum: 0
-     * maximum: 100
-     * @return dayBackups
-     */
+    /** 保留日备个数，该备份不受保留最大备份数限制。取值为0到100。若选择该参数，则timezone 也必选。 minimum: 0 maximum: 100
+     * 
+     * @return dayBackups */
     public Integer getDayBackups() {
         return dayBackups;
     }
@@ -99,20 +74,14 @@ public class PolicyoODCreate  {
         this.dayBackups = dayBackups;
     }
 
-    
-
     public PolicyoODCreate withDestinationProjectId(String destinationProjectId) {
         this.destinationProjectId = destinationProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 复制的目标项目ID，仅在跨区域复制时才会使用并且必须指定。
-     * @return destinationProjectId
-     */
+    /** 复制的目标项目ID，仅在跨区域复制时才会使用并且必须指定。
+     * 
+     * @return destinationProjectId */
     public String getDestinationProjectId() {
         return destinationProjectId;
     }
@@ -121,20 +90,14 @@ public class PolicyoODCreate  {
         this.destinationProjectId = destinationProjectId;
     }
 
-    
-
     public PolicyoODCreate withDestinationRegion(String destinationRegion) {
         this.destinationRegion = destinationRegion;
         return this;
     }
 
-    
-
-
-    /**
-     * 复制的目标区域，仅在跨区域复制时才会使用并且必须指定。长度限制：0- 255，只能由字母、数字、“_”、“-”组成
-     * @return destinationRegion
-     */
+    /** 复制的目标区域，仅在跨区域复制时才会使用并且必须指定。长度限制：0- 255，只能由字母、数字、“_”、“-”组成
+     * 
+     * @return destinationRegion */
     public String getDestinationRegion() {
         return destinationRegion;
     }
@@ -143,20 +106,14 @@ public class PolicyoODCreate  {
         this.destinationRegion = destinationRegion;
     }
 
-    
-
     public PolicyoODCreate withEnableAcceleration(Boolean enableAcceleration) {
         this.enableAcceleration = enableAcceleration;
         return this;
     }
 
-    
-
-
-    /**
-     * 跨区域复制时，是否启用加速从而缩减复制的时间，如果不指定，默认不启用加速。
-     * @return enableAcceleration
-     */
+    /** 跨区域复制时，是否启用加速从而缩减复制的时间，如果不指定，默认不启用加速。
+     * 
+     * @return enableAcceleration */
     public Boolean getEnableAcceleration() {
         return enableAcceleration;
     }
@@ -165,22 +122,14 @@ public class PolicyoODCreate  {
         this.enableAcceleration = enableAcceleration;
     }
 
-    
-
     public PolicyoODCreate withMaxBackups(Integer maxBackups) {
         this.maxBackups = maxBackups;
         return this;
     }
 
-    
-
-
-    /**
-     * 单个备份对象自动备份的最大备份数。取值为-1或0-99999。-1代表不按备份数清理。若该字段和retention_duration_days字段同时为空，备份会永久保留。
-     * minimum: 1
-     * maximum: 99999
-     * @return maxBackups
-     */
+    /** 单个备份对象自动备份的最大备份数。取值为-1或0-99999。-1代表不按备份数清理。若该字段和retention_duration_days字段同时为空，备份会永久保留。 minimum: 1 maximum: 99999
+     * 
+     * @return maxBackups */
     public Integer getMaxBackups() {
         return maxBackups;
     }
@@ -189,22 +138,14 @@ public class PolicyoODCreate  {
         this.maxBackups = maxBackups;
     }
 
-    
-
     public PolicyoODCreate withMonthBackups(Integer monthBackups) {
         this.monthBackups = monthBackups;
         return this;
     }
 
-    
-
-
-    /**
-     * 保留月备个数，该备份不受保留最大备份数限制。取值为0到100。若选择该参数，则timezone 也必选。
-     * minimum: 0
-     * maximum: 100
-     * @return monthBackups
-     */
+    /** 保留月备个数，该备份不受保留最大备份数限制。取值为0到100。若选择该参数，则timezone 也必选。 minimum: 0 maximum: 100
+     * 
+     * @return monthBackups */
     public Integer getMonthBackups() {
         return monthBackups;
     }
@@ -213,22 +154,14 @@ public class PolicyoODCreate  {
         this.monthBackups = monthBackups;
     }
 
-    
-
     public PolicyoODCreate withRetentionDurationDays(Integer retentionDurationDays) {
         this.retentionDurationDays = retentionDurationDays;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份保留时长，单位天。最长支持99999天。-1代表不按时间清理。若该字段和max_backups 参数同时为空，备份会永久保留。
-     * minimum: 1
-     * maximum: 99999
-     * @return retentionDurationDays
-     */
+    /** 备份保留时长，单位天。最长支持99999天。-1代表不按时间清理。若该字段和max_backups 参数同时为空，备份会永久保留。 minimum: 1 maximum: 99999
+     * 
+     * @return retentionDurationDays */
     public Integer getRetentionDurationDays() {
         return retentionDurationDays;
     }
@@ -237,20 +170,14 @@ public class PolicyoODCreate  {
         this.retentionDurationDays = retentionDurationDays;
     }
 
-    
-
     public PolicyoODCreate withTimezone(String timezone) {
         this.timezone = timezone;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户所在时区,格式形如UTC+08:00,若没有选择年备，月备，周备，日备中任一参数，则不能选择该参数。
-     * @return timezone
-     */
+    /** 用户所在时区,格式形如UTC+08:00,若没有选择年备，月备，周备，日备中任一参数，则不能选择该参数。
+     * 
+     * @return timezone */
     public String getTimezone() {
         return timezone;
     }
@@ -259,20 +186,14 @@ public class PolicyoODCreate  {
         this.timezone = timezone;
     }
 
-    
-
     public PolicyoODCreate withWeekBackups(Integer weekBackups) {
         this.weekBackups = weekBackups;
         return this;
     }
 
-    
-
-
-    /**
-     * 保留周备个数，该备份不受保留最大备份数限制。取值为0到100。若选择该参数，则timezone 也必选。
-     * @return weekBackups
-     */
+    /** 保留周备个数，该备份不受保留最大备份数限制。取值为0到100。若选择该参数，则timezone 也必选。
+     * 
+     * @return weekBackups */
     public Integer getWeekBackups() {
         return weekBackups;
     }
@@ -281,22 +202,14 @@ public class PolicyoODCreate  {
         this.weekBackups = weekBackups;
     }
 
-    
-
     public PolicyoODCreate withYearBackups(Integer yearBackups) {
         this.yearBackups = yearBackups;
         return this;
     }
 
-    
-
-
-    /**
-     * 保留年备个数，该备份不受保留最大备份数限制。取值为0到100。若选择该参数，则timezone 也必选。
-     * minimum: 0
-     * maximum: 100
-     * @return yearBackups
-     */
+    /** 保留年备个数，该备份不受保留最大备份数限制。取值为0到100。若选择该参数，则timezone 也必选。 minimum: 0 maximum: 100
+     * 
+     * @return yearBackups */
     public Integer getYearBackups() {
         return yearBackups;
     }
@@ -304,8 +217,6 @@ public class PolicyoODCreate  {
     public void setYearBackups(Integer yearBackups) {
         this.yearBackups = yearBackups;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -316,21 +227,32 @@ public class PolicyoODCreate  {
             return false;
         }
         PolicyoODCreate policyoODCreate = (PolicyoODCreate) o;
-        return Objects.equals(this.dayBackups, policyoODCreate.dayBackups) &&
-            Objects.equals(this.destinationProjectId, policyoODCreate.destinationProjectId) &&
-            Objects.equals(this.destinationRegion, policyoODCreate.destinationRegion) &&
-            Objects.equals(this.enableAcceleration, policyoODCreate.enableAcceleration) &&
-            Objects.equals(this.maxBackups, policyoODCreate.maxBackups) &&
-            Objects.equals(this.monthBackups, policyoODCreate.monthBackups) &&
-            Objects.equals(this.retentionDurationDays, policyoODCreate.retentionDurationDays) &&
-            Objects.equals(this.timezone, policyoODCreate.timezone) &&
-            Objects.equals(this.weekBackups, policyoODCreate.weekBackups) &&
-            Objects.equals(this.yearBackups, policyoODCreate.yearBackups);
+        return Objects.equals(this.dayBackups, policyoODCreate.dayBackups)
+            && Objects.equals(this.destinationProjectId, policyoODCreate.destinationProjectId)
+            && Objects.equals(this.destinationRegion, policyoODCreate.destinationRegion)
+            && Objects.equals(this.enableAcceleration, policyoODCreate.enableAcceleration)
+            && Objects.equals(this.maxBackups, policyoODCreate.maxBackups)
+            && Objects.equals(this.monthBackups, policyoODCreate.monthBackups)
+            && Objects.equals(this.retentionDurationDays, policyoODCreate.retentionDurationDays)
+            && Objects.equals(this.timezone, policyoODCreate.timezone)
+            && Objects.equals(this.weekBackups, policyoODCreate.weekBackups)
+            && Objects.equals(this.yearBackups, policyoODCreate.yearBackups);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(dayBackups, destinationProjectId, destinationRegion, enableAcceleration, maxBackups, monthBackups, retentionDurationDays, timezone, weekBackups, yearBackups);
+        return Objects.hash(dayBackups,
+            destinationProjectId,
+            destinationRegion,
+            enableAcceleration,
+            maxBackups,
+            monthBackups,
+            retentionDurationDays,
+            timezone,
+            weekBackups,
+            yearBackups);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -348,16 +270,13 @@ public class PolicyoODCreate  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

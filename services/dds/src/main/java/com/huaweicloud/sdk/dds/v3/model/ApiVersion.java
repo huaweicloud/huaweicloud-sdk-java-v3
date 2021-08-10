@@ -1,59 +1,44 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dds.v3.model.Links;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * API版本详细信息列表。
- */
-public class ApiVersion  {
-
-
+/** API版本详细信息列表。 */
+public class ApiVersion {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private List<Links> links = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="min_version")
-    
+    @JsonProperty(value = "min_version")
+
     private String minVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
+
     private String updated;
 
     public ApiVersion withId(String id) {
@@ -61,13 +46,9 @@ public class ApiVersion  {
         return this;
     }
 
-    
-
-
-    /**
-     * API版本号。
-     * @return id
-     */
+    /** API版本号。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -76,16 +57,13 @@ public class ApiVersion  {
         this.id = id;
     }
 
-    
-
     public ApiVersion withLinks(List<Links> links) {
         this.links = links;
         return this;
     }
 
-    
     public ApiVersion addLinksItem(Links linksItem) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         this.links.add(linksItem);
@@ -93,17 +71,16 @@ public class ApiVersion  {
     }
 
     public ApiVersion withLinks(Consumer<List<Links>> linksSetter) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);
         return this;
     }
 
-    /**
-     * 对应API的链接信息,v3版本该字段为[]。
-     * @return links
-     */
+    /** 对应API的链接信息,v3版本该字段为[]。
+     * 
+     * @return links */
     public List<Links> getLinks() {
         return links;
     }
@@ -112,20 +89,14 @@ public class ApiVersion  {
         this.links = links;
     }
 
-    
-
     public ApiVersion withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 版本状态。 取值为“CURRENT”，表示该版本目前已对外公布。
-     * @return status
-     */
+    /** 版本状态。 取值为“CURRENT”，表示该版本目前已对外公布。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -134,20 +105,14 @@ public class ApiVersion  {
         this.status = status;
     }
 
-    
-
     public ApiVersion withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * API版本的子版本信息。
-     * @return version
-     */
+    /** API版本的子版本信息。
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -156,20 +121,14 @@ public class ApiVersion  {
         this.version = version;
     }
 
-    
-
     public ApiVersion withMinVersion(String minVersion) {
         this.minVersion = minVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * API版本的最小版本号。
-     * @return minVersion
-     */
+    /** API版本的最小版本号。
+     * 
+     * @return minVersion */
     public String getMinVersion() {
         return minVersion;
     }
@@ -178,20 +137,14 @@ public class ApiVersion  {
         this.minVersion = minVersion;
     }
 
-    
-
     public ApiVersion withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
 
-    
-
-
-    /**
-     * 版本更新时间。 格式为“yyyy-mm-dd Thh:mm:ssZ”。 其中，T指某个时间的开始，Z指UTC时间。
-     * @return updated
-     */
+    /** 版本更新时间。 格式为“yyyy-mm-dd Thh:mm:ssZ”。 其中，T指某个时间的开始，Z指UTC时间。
+     * 
+     * @return updated */
     public String getUpdated() {
         return updated;
     }
@@ -199,8 +152,6 @@ public class ApiVersion  {
     public void setUpdated(String updated) {
         this.updated = updated;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -211,17 +162,17 @@ public class ApiVersion  {
             return false;
         }
         ApiVersion apiVersion = (ApiVersion) o;
-        return Objects.equals(this.id, apiVersion.id) &&
-            Objects.equals(this.links, apiVersion.links) &&
-            Objects.equals(this.status, apiVersion.status) &&
-            Objects.equals(this.version, apiVersion.version) &&
-            Objects.equals(this.minVersion, apiVersion.minVersion) &&
-            Objects.equals(this.updated, apiVersion.updated);
+        return Objects.equals(this.id, apiVersion.id) && Objects.equals(this.links, apiVersion.links)
+            && Objects.equals(this.status, apiVersion.status) && Objects.equals(this.version, apiVersion.version)
+            && Objects.equals(this.minVersion, apiVersion.minVersion)
+            && Objects.equals(this.updated, apiVersion.updated);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, links, status, version, minVersion, updated);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -235,16 +186,13 @@ public class ApiVersion  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

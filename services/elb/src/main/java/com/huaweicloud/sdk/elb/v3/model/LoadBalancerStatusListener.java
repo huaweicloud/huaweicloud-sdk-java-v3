@@ -1,60 +1,44 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v3.model.LoadBalancerStatusPolicy;
-import com.huaweicloud.sdk.elb.v3.model.LoadBalancerStatusPool;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * lb状态树的监听器状态信息
- */
-public class LoadBalancerStatusListener  {
-
-
+/** lb状态树的监听器状态信息 */
+public class LoadBalancerStatusListener {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provisioning_status")
-    
+    @JsonProperty(value = "provisioning_status")
+
     private String provisioningStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pools")
-    
+    @JsonProperty(value = "pools")
+
     private List<LoadBalancerStatusPool> pools = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="l7policies")
-    
+    @JsonProperty(value = "l7policies")
+
     private List<LoadBalancerStatusPolicy> l7policies = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operating_status")
-    
+    @JsonProperty(value = "operating_status")
+
     private String operatingStatus;
 
     public LoadBalancerStatusListener withName(String name) {
@@ -62,13 +46,9 @@ public class LoadBalancerStatusListener  {
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器下监听器的名称。
-     * @return name
-     */
+    /** 负载均衡器下监听器的名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -77,20 +57,14 @@ public class LoadBalancerStatusListener  {
         this.name = name;
     }
 
-    
-
     public LoadBalancerStatusListener withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * provisioning状态。 可以为ACTIVE、PENDING_CREATE 或者ERROR。
-     * @return provisioningStatus
-     */
+    /** provisioning状态。 可以为ACTIVE、PENDING_CREATE 或者ERROR。
+     * 
+     * @return provisioningStatus */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -99,16 +73,13 @@ public class LoadBalancerStatusListener  {
         this.provisioningStatus = provisioningStatus;
     }
 
-    
-
     public LoadBalancerStatusListener withPools(List<LoadBalancerStatusPool> pools) {
         this.pools = pools;
         return this;
     }
 
-    
     public LoadBalancerStatusListener addPoolsItem(LoadBalancerStatusPool poolsItem) {
-        if(this.pools == null) {
+        if (this.pools == null) {
             this.pools = new ArrayList<>();
         }
         this.pools.add(poolsItem);
@@ -116,17 +87,16 @@ public class LoadBalancerStatusListener  {
     }
 
     public LoadBalancerStatusListener withPools(Consumer<List<LoadBalancerStatusPool>> poolsSetter) {
-        if(this.pools == null) {
+        if (this.pools == null) {
             this.pools = new ArrayList<>();
         }
         poolsSetter.accept(this.pools);
         return this;
     }
 
-    /**
-     * 挂载在监听器下的后端主机组。
-     * @return pools
-     */
+    /** 挂载在监听器下的后端主机组。
+     * 
+     * @return pools */
     public List<LoadBalancerStatusPool> getPools() {
         return pools;
     }
@@ -135,16 +105,13 @@ public class LoadBalancerStatusListener  {
         this.pools = pools;
     }
 
-    
-
     public LoadBalancerStatusListener withL7policies(List<LoadBalancerStatusPolicy> l7policies) {
         this.l7policies = l7policies;
         return this;
     }
 
-    
     public LoadBalancerStatusListener addL7policiesItem(LoadBalancerStatusPolicy l7policiesItem) {
-        if(this.l7policies == null) {
+        if (this.l7policies == null) {
             this.l7policies = new ArrayList<>();
         }
         this.l7policies.add(l7policiesItem);
@@ -152,17 +119,16 @@ public class LoadBalancerStatusListener  {
     }
 
     public LoadBalancerStatusListener withL7policies(Consumer<List<LoadBalancerStatusPolicy>> l7policiesSetter) {
-        if(this.l7policies == null) {
+        if (this.l7policies == null) {
             this.l7policies = new ArrayList<>();
         }
         l7policiesSetter.accept(this.l7policies);
         return this;
     }
 
-    /**
-     * 7层转发策略
-     * @return l7policies
-     */
+    /** 7层转发策略
+     * 
+     * @return l7policies */
     public List<LoadBalancerStatusPolicy> getL7policies() {
         return l7policies;
     }
@@ -171,20 +137,14 @@ public class LoadBalancerStatusListener  {
         this.l7policies = l7policies;
     }
 
-    
-
     public LoadBalancerStatusListener withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器ID。
-     * @return id
-     */
+    /** 监听器ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -193,20 +153,14 @@ public class LoadBalancerStatusListener  {
         this.id = id;
     }
 
-    
-
     public LoadBalancerStatusListener withOperatingStatus(String operatingStatus) {
         this.operatingStatus = operatingStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作状态。 可以为：ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。说明：该字段为预留字段，暂未启用，默认为ONLINE。
-     * @return operatingStatus
-     */
+    /** 操作状态。 可以为：ONLINE、OFFLINE、DEGRADED、DISABLED或NO_MONITOR。说明：该字段为预留字段，暂未启用，默认为ONLINE。
+     * 
+     * @return operatingStatus */
     public String getOperatingStatus() {
         return operatingStatus;
     }
@@ -214,8 +168,6 @@ public class LoadBalancerStatusListener  {
     public void setOperatingStatus(String operatingStatus) {
         this.operatingStatus = operatingStatus;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -226,17 +178,19 @@ public class LoadBalancerStatusListener  {
             return false;
         }
         LoadBalancerStatusListener loadBalancerStatusListener = (LoadBalancerStatusListener) o;
-        return Objects.equals(this.name, loadBalancerStatusListener.name) &&
-            Objects.equals(this.provisioningStatus, loadBalancerStatusListener.provisioningStatus) &&
-            Objects.equals(this.pools, loadBalancerStatusListener.pools) &&
-            Objects.equals(this.l7policies, loadBalancerStatusListener.l7policies) &&
-            Objects.equals(this.id, loadBalancerStatusListener.id) &&
-            Objects.equals(this.operatingStatus, loadBalancerStatusListener.operatingStatus);
+        return Objects.equals(this.name, loadBalancerStatusListener.name)
+            && Objects.equals(this.provisioningStatus, loadBalancerStatusListener.provisioningStatus)
+            && Objects.equals(this.pools, loadBalancerStatusListener.pools)
+            && Objects.equals(this.l7policies, loadBalancerStatusListener.l7policies)
+            && Objects.equals(this.id, loadBalancerStatusListener.id)
+            && Objects.equals(this.operatingStatus, loadBalancerStatusListener.operatingStatus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, provisioningStatus, pools, l7policies, id, operatingStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -250,16 +204,13 @@ public class LoadBalancerStatusListener  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

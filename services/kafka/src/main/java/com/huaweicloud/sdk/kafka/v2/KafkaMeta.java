@@ -6,146 +6,141 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.kafka.v2.model.*;
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class KafkaMeta {
 
-    public static final HttpRequestDef<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse> batchCreateOrDeleteKafkaTag = genForbatchCreateOrDeleteKafkaTag();
+    public static final HttpRequestDef<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse> batchCreateOrDeleteKafkaTag =
+        genForbatchCreateOrDeleteKafkaTag();
 
     private static HttpRequestDef<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse> genForbatchCreateOrDeleteKafkaTag() {
         // basic
         HttpRequestDef.Builder<BatchCreateOrDeleteKafkaTagRequest, BatchCreateOrDeleteKafkaTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchCreateOrDeleteKafkaTagRequest.class, BatchCreateOrDeleteKafkaTagResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateOrDeleteKafkaTagRequest.class,
+                    BatchCreateOrDeleteKafkaTagResponse.class)
                 .withName("BatchCreateOrDeleteKafkaTag")
                 .withUri("/v2/{project_id}/kafka/{instance_id}/tags/action")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchCreateOrDeleteKafkaTagRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<BatchCreateOrDeleteTagReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchCreateOrDeleteTagReq.class,
+            TypeCasts.uncheckedConversion(BatchCreateOrDeleteTagReq.class),
             f -> f.withMarshaller(BatchCreateOrDeleteKafkaTagRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchDeleteInstanceTopicRequest, BatchDeleteInstanceTopicResponse> batchDeleteInstanceTopic = genForbatchDeleteInstanceTopic();
+    public static final HttpRequestDef<BatchDeleteInstanceTopicRequest, BatchDeleteInstanceTopicResponse> batchDeleteInstanceTopic =
+        genForbatchDeleteInstanceTopic();
 
     private static HttpRequestDef<BatchDeleteInstanceTopicRequest, BatchDeleteInstanceTopicResponse> genForbatchDeleteInstanceTopic() {
         // basic
         HttpRequestDef.Builder<BatchDeleteInstanceTopicRequest, BatchDeleteInstanceTopicResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteInstanceTopicRequest.class, BatchDeleteInstanceTopicResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST, BatchDeleteInstanceTopicRequest.class, BatchDeleteInstanceTopicResponse.class)
                 .withName("BatchDeleteInstanceTopic")
                 .withUri("/v2/{project_id}/instances/{instance_id}/topics/delete")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchDeleteInstanceTopicRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<BatchDeleteInstanceTopicReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchDeleteInstanceTopicReq.class,
+            TypeCasts.uncheckedConversion(BatchDeleteInstanceTopicReq.class),
             f -> f.withMarshaller(BatchDeleteInstanceTopicRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse> batchDeleteInstanceUsers = genForbatchDeleteInstanceUsers();
+    public static final HttpRequestDef<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse> batchDeleteInstanceUsers =
+        genForbatchDeleteInstanceUsers();
 
     private static HttpRequestDef<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse> genForbatchDeleteInstanceUsers() {
         // basic
         HttpRequestDef.Builder<BatchDeleteInstanceUsersRequest, BatchDeleteInstanceUsersResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, BatchDeleteInstanceUsersRequest.class, BatchDeleteInstanceUsersResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.PUT, BatchDeleteInstanceUsersRequest.class, BatchDeleteInstanceUsersResponse.class)
                 .withName("BatchDeleteInstanceUsers")
                 .withUri("/v2/{project_id}/instances/{instance_id}/users")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchDeleteInstanceUsersRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<BatchDeleteInstanceUsersReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchDeleteInstanceUsersReq.class,
+            TypeCasts.uncheckedConversion(BatchDeleteInstanceUsersReq.class),
             f -> f.withMarshaller(BatchDeleteInstanceUsersRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> batchRestartOrDeleteInstances = genForbatchRestartOrDeleteInstances();
+    public static final HttpRequestDef<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> batchRestartOrDeleteInstances =
+        genForbatchRestartOrDeleteInstances();
 
     private static HttpRequestDef<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> genForbatchRestartOrDeleteInstances() {
         // basic
         HttpRequestDef.Builder<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchRestartOrDeleteInstancesRequest.class, BatchRestartOrDeleteInstancesResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchRestartOrDeleteInstancesRequest.class,
+                    BatchRestartOrDeleteInstancesResponse.class)
                 .withName("BatchRestartOrDeleteInstances")
                 .withUri("/v2/{project_id}/instances/action")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<BatchRestartOrDeleteInstanceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchRestartOrDeleteInstanceReq.class,
+            TypeCasts.uncheckedConversion(BatchRestartOrDeleteInstanceReq.class),
             f -> f.withMarshaller(BatchRestartOrDeleteInstancesRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateConnectorRequest, CreateConnectorResponse> createConnector = genForcreateConnector();
+    public static final HttpRequestDef<CreateConnectorRequest, CreateConnectorResponse> createConnector =
+        genForcreateConnector();
 
     private static HttpRequestDef<CreateConnectorRequest, CreateConnectorResponse> genForcreateConnector() {
         // basic
@@ -156,31 +151,28 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateConnectorRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateConnectorReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateConnectorReq.class,
+            TypeCasts.uncheckedConversion(CreateConnectorReq.class),
             f -> f.withMarshaller(CreateConnectorRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateInstanceTopicRequest, CreateInstanceTopicResponse> createInstanceTopic = genForcreateInstanceTopic();
+    public static final HttpRequestDef<CreateInstanceTopicRequest, CreateInstanceTopicResponse> createInstanceTopic =
+        genForcreateInstanceTopic();
 
     private static HttpRequestDef<CreateInstanceTopicRequest, CreateInstanceTopicResponse> genForcreateInstanceTopic() {
         // basic
@@ -191,31 +183,28 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateInstanceTopicRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateInstanceTopicReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateInstanceTopicReq.class,
+            TypeCasts.uncheckedConversion(CreateInstanceTopicReq.class),
             f -> f.withMarshaller(CreateInstanceTopicRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateInstanceUserRequest, CreateInstanceUserResponse> createInstanceUser = genForcreateInstanceUser();
+    public static final HttpRequestDef<CreateInstanceUserRequest, CreateInstanceUserResponse> createInstanceUser =
+        genForcreateInstanceUser();
 
     private static HttpRequestDef<CreateInstanceUserRequest, CreateInstanceUserResponse> genForcreateInstanceUser() {
         // basic
@@ -226,31 +215,28 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateInstanceUserRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateInstanceUserReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateInstanceUserReq.class,
+            TypeCasts.uncheckedConversion(CreateInstanceUserReq.class),
             f -> f.withMarshaller(CreateInstanceUserRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreatePartitionRequest, CreatePartitionResponse> createPartition = genForcreatePartition();
+    public static final HttpRequestDef<CreatePartitionRequest, CreatePartitionResponse> createPartition =
+        genForcreatePartition();
 
     private static HttpRequestDef<CreatePartitionRequest, CreatePartitionResponse> genForcreatePartition() {
         // basic
@@ -261,66 +247,60 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreatePartitionRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("topic",
+            }));
+        builder.<String>withRequestField("topic",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreatePartitionRequest::getTopic, (req, v) -> {
                 req.setTopic(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreatePartitionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreatePartitionReq.class,
+            TypeCasts.uncheckedConversion(CreatePartitionReq.class),
             f -> f.withMarshaller(CreatePartitionRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> createPostPaidInstance = genForcreatePostPaidInstance();
+    public static final HttpRequestDef<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> createPostPaidInstance =
+        genForcreatePostPaidInstance();
 
     private static HttpRequestDef<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> genForcreatePostPaidInstance() {
         // basic
-        HttpRequestDef.Builder<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreatePostPaidInstanceRequest.class, CreatePostPaidInstanceResponse.class)
-                .withName("CreatePostPaidInstance")
-                .withUri("/v2/{project_id}/instances")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreatePostPaidInstanceRequest.class, CreatePostPaidInstanceResponse.class)
+            .withName("CreatePostPaidInstance")
+            .withUri("/v2/{project_id}/instances")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreatePostPaidInstanceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreatePostPaidInstanceReq.class,
+            TypeCasts.uncheckedConversion(CreatePostPaidInstanceReq.class),
             f -> f.withMarshaller(CreatePostPaidInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateSinkTaskRequest, CreateSinkTaskResponse> createSinkTask = genForcreateSinkTask();
+    public static final HttpRequestDef<CreateSinkTaskRequest, CreateSinkTaskResponse> createSinkTask =
+        genForcreateSinkTask();
 
     private static HttpRequestDef<CreateSinkTaskRequest, CreateSinkTaskResponse> genForcreateSinkTask() {
         // basic
@@ -331,66 +311,60 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("connector_id",
+        builder.<String>withRequestField("connector_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateSinkTaskRequest::getConnectorId, (req, v) -> {
                 req.setConnectorId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateSinkTaskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateSinkTaskReq.class,
+            TypeCasts.uncheckedConversion(CreateSinkTaskReq.class),
             f -> f.withMarshaller(CreateSinkTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> deleteBackgroundTask = genFordeleteBackgroundTask();
+    public static final HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> deleteBackgroundTask =
+        genFordeleteBackgroundTask();
 
     private static HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> genFordeleteBackgroundTask() {
         // basic
-        HttpRequestDef.Builder<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteBackgroundTaskRequest.class, DeleteBackgroundTaskResponse.class)
-                .withName("DeleteBackgroundTask")
-                .withUri("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteBackgroundTaskRequest.class, DeleteBackgroundTaskResponse.class)
+            .withName("DeleteBackgroundTask")
+            .withUri("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteBackgroundTaskRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("task_id",
+            }));
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteBackgroundTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstance = genFordeleteInstance();
+    public static final HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstance =
+        genFordeleteInstance();
 
     private static HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> genFordeleteInstance() {
         // basic
@@ -401,23 +375,21 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteSinkTaskRequest, DeleteSinkTaskResponse> deleteSinkTask = genFordeleteSinkTask();
+    public static final HttpRequestDef<DeleteSinkTaskRequest, DeleteSinkTaskResponse> deleteSinkTask =
+        genFordeleteSinkTask();
 
     private static HttpRequestDef<DeleteSinkTaskRequest, DeleteSinkTaskResponse> genFordeleteSinkTask() {
         // basic
@@ -428,31 +400,28 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("connector_id",
+        builder.<String>withRequestField("connector_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSinkTaskRequest::getConnectorId, (req, v) -> {
                 req.setConnectorId(v);
-            })
-        );
-        builder.withRequestField("task_id",
+            }));
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSinkTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZones = genForlistAvailableZones();
+    public static final HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZones =
+        genForlistAvailableZones();
 
     private static HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> genForlistAvailableZones() {
         // basic
@@ -465,13 +434,12 @@ public class KafkaMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListBackgroundTasksRequest, ListBackgroundTasksResponse> listBackgroundTasks = genForlistBackgroundTasks();
+    public static final HttpRequestDef<ListBackgroundTasksRequest, ListBackgroundTasksResponse> listBackgroundTasks =
+        genForlistBackgroundTasks();
 
     private static HttpRequestDef<ListBackgroundTasksRequest, ListBackgroundTasksResponse> genForlistBackgroundTasks() {
         // basic
@@ -482,55 +450,49 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBackgroundTasksRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("start",
+            }));
+        builder.<Integer>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListBackgroundTasksRequest::getStart, (req, v) -> {
                 req.setStart(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListBackgroundTasksRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("begin_time",
+            }));
+        builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBackgroundTasksRequest::getBeginTime, (req, v) -> {
                 req.setBeginTime(v);
-            })
-        );
-        builder.withRequestField("end_time",
+            }));
+        builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBackgroundTasksRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListInstanceTopicsRequest, ListInstanceTopicsResponse> listInstanceTopics = genForlistInstanceTopics();
+    public static final HttpRequestDef<ListInstanceTopicsRequest, ListInstanceTopicsResponse> listInstanceTopics =
+        genForlistInstanceTopics();
 
     private static HttpRequestDef<ListInstanceTopicsRequest, ListInstanceTopicsResponse> genForlistInstanceTopics() {
         // basic
@@ -541,23 +503,21 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstanceTopicsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListInstancesRequest, ListInstancesResponse> listInstances = genForlistInstances();
+    public static final HttpRequestDef<ListInstancesRequest, ListInstancesResponse> listInstances =
+        genForlistInstances();
 
     private static HttpRequestDef<ListInstancesRequest, ListInstancesResponse> genForlistInstances() {
         // basic
@@ -568,66 +528,57 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("engine",
+        builder.<String>withRequestField("engine",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("instance_id",
+            }));
+        builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("status",
+            }));
+        builder.<ListInstancesRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListInstancesRequest.StatusEnum.class,
+            TypeCasts.uncheckedConversion(ListInstancesRequest.StatusEnum.class),
             f -> f.withMarshaller(ListInstancesRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
-            })
-        );
-        builder.withRequestField("include_failure",
+            }));
+        builder.<ListInstancesRequest.IncludeFailureEnum>withRequestField("include_failure",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListInstancesRequest.IncludeFailureEnum.class,
+            TypeCasts.uncheckedConversion(ListInstancesRequest.IncludeFailureEnum.class),
             f -> f.withMarshaller(ListInstancesRequest::getIncludeFailure, (req, v) -> {
                 req.setIncludeFailure(v);
-            })
-        );
-        builder.withRequestField("exact_match_name",
+            }));
+        builder.<ListInstancesRequest.ExactMatchNameEnum>withRequestField("exact_match_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListInstancesRequest.ExactMatchNameEnum.class,
+            TypeCasts.uncheckedConversion(ListInstancesRequest.ExactMatchNameEnum.class),
             f -> f.withMarshaller(ListInstancesRequest::getExactMatchName, (req, v) -> {
                 req.setExactMatchName(v);
-            })
-        );
-        builder.withRequestField("enterprise_project_id",
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -643,23 +594,21 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("engine",
+        builder.<String>withRequestField("engine",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListProductsRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSinkTasksRequest, ListSinkTasksResponse> listSinkTasks = genForlistSinkTasks();
+    public static final HttpRequestDef<ListSinkTasksRequest, ListSinkTasksResponse> listSinkTasks =
+        genForlistSinkTasks();
 
     private static HttpRequestDef<ListSinkTasksRequest, ListSinkTasksResponse> genForlistSinkTasks() {
         // basic
@@ -670,58 +619,53 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("connector_id",
+        builder.<String>withRequestField("connector_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSinkTasksRequest::getConnectorId, (req, v) -> {
                 req.setConnectorId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResetManagerPasswordRequest, ResetManagerPasswordResponse> resetManagerPassword = genForresetManagerPassword();
+    public static final HttpRequestDef<ResetManagerPasswordRequest, ResetManagerPasswordResponse> resetManagerPassword =
+        genForresetManagerPassword();
 
     private static HttpRequestDef<ResetManagerPasswordRequest, ResetManagerPasswordResponse> genForresetManagerPassword() {
         // basic
-        HttpRequestDef.Builder<ResetManagerPasswordRequest, ResetManagerPasswordResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, ResetManagerPasswordRequest.class, ResetManagerPasswordResponse.class)
-                .withName("ResetManagerPassword")
-                .withUri("/v2/{project_id}/instances/{instance_id}/kafka-manager-password")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ResetManagerPasswordRequest, ResetManagerPasswordResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, ResetManagerPasswordRequest.class, ResetManagerPasswordResponse.class)
+            .withName("ResetManagerPassword")
+            .withUri("/v2/{project_id}/instances/{instance_id}/kafka-manager-password")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResetManagerPasswordRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ResetManagerPasswordReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ResetManagerPasswordReq.class,
+            TypeCasts.uncheckedConversion(ResetManagerPasswordReq.class),
             f -> f.withMarshaller(ResetManagerPasswordRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResetMessageOffsetRequest, ResetMessageOffsetResponse> resetMessageOffset = genForresetMessageOffset();
+    public static final HttpRequestDef<ResetMessageOffsetRequest, ResetMessageOffsetResponse> resetMessageOffset =
+        genForresetMessageOffset();
 
     private static HttpRequestDef<ResetMessageOffsetRequest, ResetMessageOffsetResponse> genForresetMessageOffset() {
         // basic
@@ -732,39 +676,35 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResetMessageOffsetRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("group",
+            }));
+        builder.<String>withRequestField("group",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResetMessageOffsetRequest::getGroup, (req, v) -> {
                 req.setGroup(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ResetMessageOffsetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ResetMessageOffsetReq.class,
+            TypeCasts.uncheckedConversion(ResetMessageOffsetReq.class),
             f -> f.withMarshaller(ResetMessageOffsetRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> resetPassword = genForresetPassword();
+    public static final HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> resetPassword =
+        genForresetPassword();
 
     private static HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> genForresetPassword() {
         // basic
@@ -775,31 +715,28 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResetPasswordRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ResetPasswordReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ResetPasswordReq.class,
+            TypeCasts.uncheckedConversion(ResetPasswordReq.class),
             f -> f.withMarshaller(ResetPasswordRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResetUserPasswrodRequest, ResetUserPasswrodResponse> resetUserPasswrod = genForresetUserPasswrod();
+    public static final HttpRequestDef<ResetUserPasswrodRequest, ResetUserPasswrodResponse> resetUserPasswrod =
+        genForresetUserPasswrod();
 
     private static HttpRequestDef<ResetUserPasswrodRequest, ResetUserPasswrodResponse> genForresetUserPasswrod() {
         // basic
@@ -810,39 +747,35 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResetUserPasswrodRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("user_name",
+            }));
+        builder.<String>withRequestField("user_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResetUserPasswrodRequest::getUserName, (req, v) -> {
                 req.setUserName(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ResetUserPasswrodReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ResetUserPasswrodReq.class,
+            TypeCasts.uncheckedConversion(ResetUserPasswrodReq.class),
             f -> f.withMarshaller(ResetUserPasswrodRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstance = genForresizeInstance();
+    public static final HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstance =
+        genForresizeInstance();
 
     private static HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> genForresizeInstance() {
         // basic
@@ -853,31 +786,28 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResizeInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ResizeInstanceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ResizeInstanceReq.class,
+            TypeCasts.uncheckedConversion(ResizeInstanceReq.class),
             f -> f.withMarshaller(ResizeInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RestartManagerRequest, RestartManagerResponse> restartManager = genForrestartManager();
+    public static final HttpRequestDef<RestartManagerRequest, RestartManagerResponse> restartManager =
+        genForrestartManager();
 
     private static HttpRequestDef<RestartManagerRequest, RestartManagerResponse> genForrestartManager() {
         // basic
@@ -888,23 +818,21 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RestartManagerRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> showBackgroundTask = genForshowBackgroundTask();
+    public static final HttpRequestDef<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> showBackgroundTask =
+        genForshowBackgroundTask();
 
     private static HttpRequestDef<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> genForshowBackgroundTask() {
         // basic
@@ -915,31 +843,28 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBackgroundTaskRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("task_id",
+            }));
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBackgroundTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowCesHierarchyRequest, ShowCesHierarchyResponse> showCesHierarchy = genForshowCesHierarchy();
+    public static final HttpRequestDef<ShowCesHierarchyRequest, ShowCesHierarchyResponse> showCesHierarchy =
+        genForshowCesHierarchy();
 
     private static HttpRequestDef<ShowCesHierarchyRequest, ShowCesHierarchyResponse> genForshowCesHierarchy() {
         // basic
@@ -950,18 +875,15 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCesHierarchyRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -977,23 +899,21 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowClusterRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowCoordinatorsRequest, ShowCoordinatorsResponse> showCoordinators = genForshowCoordinators();
+    public static final HttpRequestDef<ShowCoordinatorsRequest, ShowCoordinatorsResponse> showCoordinators =
+        genForshowCoordinators();
 
     private static HttpRequestDef<ShowCoordinatorsRequest, ShowCoordinatorsResponse> genForshowCoordinators() {
         // basic
@@ -1004,18 +924,15 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCoordinatorsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1031,26 +948,22 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowGroupsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("group",
+            }));
+        builder.<String>withRequestField("group",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowGroupsRequest::getGroup, (req, v) -> {
                 req.setGroup(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1066,200 +979,183 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> showInstanceExtendProductInfo = genForshowInstanceExtendProductInfo();
+    public static final HttpRequestDef<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> showInstanceExtendProductInfo =
+        genForshowInstanceExtendProductInfo();
 
     private static HttpRequestDef<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> genForshowInstanceExtendProductInfo() {
         // basic
         HttpRequestDef.Builder<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowInstanceExtendProductInfoRequest.class, ShowInstanceExtendProductInfoResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowInstanceExtendProductInfoRequest.class,
+                    ShowInstanceExtendProductInfoResponse.class)
                 .withName("ShowInstanceExtendProductInfo")
                 .withUri("/v2/{project_id}/instances/{instance_id}/extend")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("type",
+            }));
+        builder.<ShowInstanceExtendProductInfoRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ShowInstanceExtendProductInfoRequest.TypeEnum.class,
+            TypeCasts.uncheckedConversion(ShowInstanceExtendProductInfoRequest.TypeEnum.class),
             f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getType, (req, v) -> {
                 req.setType(v);
-            })
-        );
-        builder.withRequestField("engine",
+            }));
+        builder.<String>withRequestField("engine",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse> showInstanceMessages = genForshowInstanceMessages();
+    public static final HttpRequestDef<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse> showInstanceMessages =
+        genForshowInstanceMessages();
 
     private static HttpRequestDef<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse> genForshowInstanceMessages() {
         // basic
-        HttpRequestDef.Builder<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowInstanceMessagesRequest.class, ShowInstanceMessagesResponse.class)
-                .withName("ShowInstanceMessages")
-                .withUri("/v2/{project_id}/instances/{instance_id}/messages")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowInstanceMessagesRequest, ShowInstanceMessagesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowInstanceMessagesRequest.class, ShowInstanceMessagesResponse.class)
+            .withName("ShowInstanceMessages")
+            .withUri("/v2/{project_id}/instances/{instance_id}/messages")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceMessagesRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("topic",
+            }));
+        builder.<String>withRequestField("topic",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceMessagesRequest::getTopic, (req, v) -> {
                 req.setTopic(v);
-            })
-        );
-        builder.withRequestField("asc",
+            }));
+        builder.<Boolean>withRequestField("asc",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ShowInstanceMessagesRequest::getAsc, (req, v) -> {
                 req.setAsc(v);
-            })
-        );
-        builder.withRequestField("start_time",
+            }));
+        builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceMessagesRequest::getStartTime, (req, v) -> {
                 req.setStartTime(v);
-            })
-        );
-        builder.withRequestField("end_time",
+            }));
+        builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceMessagesRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceMessagesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceMessagesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("download",
+            }));
+        builder.<Boolean>withRequestField("download",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ShowInstanceMessagesRequest::getDownload, (req, v) -> {
                 req.setDownload(v);
-            })
-        );
-        builder.withRequestField("message_offset",
+            }));
+        builder.<String>withRequestField("message_offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceMessagesRequest::getMessageOffset, (req, v) -> {
                 req.setMessageOffset(v);
-            })
-        );
-        builder.withRequestField("partition",
+            }));
+        builder.<String>withRequestField("partition",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceMessagesRequest::getPartition, (req, v) -> {
                 req.setPartition(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowInstanceTopicDetailRequest, ShowInstanceTopicDetailResponse> showInstanceTopicDetail = genForshowInstanceTopicDetail();
+    public static final HttpRequestDef<ShowInstanceTopicDetailRequest, ShowInstanceTopicDetailResponse> showInstanceTopicDetail =
+        genForshowInstanceTopicDetail();
 
     private static HttpRequestDef<ShowInstanceTopicDetailRequest, ShowInstanceTopicDetailResponse> genForshowInstanceTopicDetail() {
         // basic
-        HttpRequestDef.Builder<ShowInstanceTopicDetailRequest, ShowInstanceTopicDetailResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowInstanceTopicDetailRequest.class, ShowInstanceTopicDetailResponse.class)
-                .withName("ShowInstanceTopicDetail")
-                .withUri("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowInstanceTopicDetailRequest, ShowInstanceTopicDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowInstanceTopicDetailRequest.class, ShowInstanceTopicDetailResponse.class)
+            .withName("ShowInstanceTopicDetail")
+            .withUri("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceTopicDetailRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("topic",
+            }));
+        builder.<String>withRequestField("topic",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceTopicDetailRequest::getTopic, (req, v) -> {
                 req.setTopic(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowInstanceUsersRequest, ShowInstanceUsersResponse> showInstanceUsers = genForshowInstanceUsers();
+    public static final HttpRequestDef<ShowInstanceUsersRequest, ShowInstanceUsersResponse> showInstanceUsers =
+        genForshowInstanceUsers();
 
     private static HttpRequestDef<ShowInstanceUsersRequest, ShowInstanceUsersResponse> genForshowInstanceUsers() {
         // basic
@@ -1270,42 +1166,39 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceUsersRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse> showKafkaProjectTags = genForshowKafkaProjectTags();
+    public static final HttpRequestDef<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse> showKafkaProjectTags =
+        genForshowKafkaProjectTags();
 
     private static HttpRequestDef<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse> genForshowKafkaProjectTags() {
         // basic
-        HttpRequestDef.Builder<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowKafkaProjectTagsRequest.class, ShowKafkaProjectTagsResponse.class)
-                .withName("ShowKafkaProjectTags")
-                .withUri("/v2/{project_id}/kafka/tags")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowKafkaProjectTagsRequest.class, ShowKafkaProjectTagsResponse.class)
+            .withName("ShowKafkaProjectTags")
+            .withUri("/v2/{project_id}/kafka/tags")
+            .withContentType("application/json");
 
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowKafkaTagsRequest, ShowKafkaTagsResponse> showKafkaTags = genForshowKafkaTags();
+    public static final HttpRequestDef<ShowKafkaTagsRequest, ShowKafkaTagsResponse> showKafkaTags =
+        genForshowKafkaTags();
 
     private static HttpRequestDef<ShowKafkaTagsRequest, ShowKafkaTagsResponse> genForshowKafkaTags() {
         // basic
@@ -1316,74 +1209,70 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowKafkaTagsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse> showKafkaTopicPartitionDiskusage = genForshowKafkaTopicPartitionDiskusage();
+    public static final HttpRequestDef<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse> showKafkaTopicPartitionDiskusage =
+        genForshowKafkaTopicPartitionDiskusage();
 
     private static HttpRequestDef<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse> genForshowKafkaTopicPartitionDiskusage() {
         // basic
         HttpRequestDef.Builder<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowKafkaTopicPartitionDiskusageRequest.class, ShowKafkaTopicPartitionDiskusageResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowKafkaTopicPartitionDiskusageRequest.class,
+                    ShowKafkaTopicPartitionDiskusageResponse.class)
                 .withName("ShowKafkaTopicPartitionDiskusage")
                 .withUri("/v2/{project_id}/instances/{instance_id}/topics/diskusage")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowKafkaTopicPartitionDiskusageRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("minSize",
+            }));
+        builder.<String>withRequestField("minSize",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowKafkaTopicPartitionDiskusageRequest::getMinSize, (req, v) -> {
                 req.setMinSize(v);
-            })
-        );
-        builder.withRequestField("top",
+            }));
+        builder.<String>withRequestField("top",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowKafkaTopicPartitionDiskusageRequest::getTop, (req, v) -> {
                 req.setTop(v);
-            })
-        );
-        builder.withRequestField("percentage",
+            }));
+        builder.<String>withRequestField("percentage",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowKafkaTopicPartitionDiskusageRequest::getPercentage, (req, v) -> {
                 req.setPercentage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> showMaintainWindows = genForshowMaintainWindows();
+    public static final HttpRequestDef<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> showMaintainWindows =
+        genForshowMaintainWindows();
 
     private static HttpRequestDef<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> genForshowMaintainWindows() {
         // basic
@@ -1396,8 +1285,6 @@ public class KafkaMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1413,208 +1300,193 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMessagesRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("topic",
+            }));
+        builder.<String>withRequestField("topic",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMessagesRequest::getTopic, (req, v) -> {
                 req.setTopic(v);
-            })
-        );
-        builder.withRequestField("start_time",
+            }));
+        builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMessagesRequest::getStartTime, (req, v) -> {
                 req.setStartTime(v);
-            })
-        );
-        builder.withRequestField("end_time",
+            }));
+        builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMessagesRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowMessagesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowMessagesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("partition",
+            }));
+        builder.<String>withRequestField("partition",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMessagesRequest::getPartition, (req, v) -> {
                 req.setPartition(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPartitionBeginningMessageRequest, ShowPartitionBeginningMessageResponse> showPartitionBeginningMessage = genForshowPartitionBeginningMessage();
+    public static final HttpRequestDef<ShowPartitionBeginningMessageRequest, ShowPartitionBeginningMessageResponse> showPartitionBeginningMessage =
+        genForshowPartitionBeginningMessage();
 
     private static HttpRequestDef<ShowPartitionBeginningMessageRequest, ShowPartitionBeginningMessageResponse> genForshowPartitionBeginningMessage() {
         // basic
         HttpRequestDef.Builder<ShowPartitionBeginningMessageRequest, ShowPartitionBeginningMessageResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowPartitionBeginningMessageRequest.class, ShowPartitionBeginningMessageResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowPartitionBeginningMessageRequest.class,
+                    ShowPartitionBeginningMessageResponse.class)
                 .withName("ShowPartitionBeginningMessage")
-                .withUri("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/beginning-message")
+                .withUri(
+                    "/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/beginning-message")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPartitionBeginningMessageRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("topic",
+            }));
+        builder.<String>withRequestField("topic",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPartitionBeginningMessageRequest::getTopic, (req, v) -> {
                 req.setTopic(v);
-            })
-        );
-        builder.withRequestField("partition",
+            }));
+        builder.<Integer>withRequestField("partition",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowPartitionBeginningMessageRequest::getPartition, (req, v) -> {
                 req.setPartition(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPartitionEndMessageRequest, ShowPartitionEndMessageResponse> showPartitionEndMessage = genForshowPartitionEndMessage();
+    public static final HttpRequestDef<ShowPartitionEndMessageRequest, ShowPartitionEndMessageResponse> showPartitionEndMessage =
+        genForshowPartitionEndMessage();
 
     private static HttpRequestDef<ShowPartitionEndMessageRequest, ShowPartitionEndMessageResponse> genForshowPartitionEndMessage() {
         // basic
-        HttpRequestDef.Builder<ShowPartitionEndMessageRequest, ShowPartitionEndMessageResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowPartitionEndMessageRequest.class, ShowPartitionEndMessageResponse.class)
-                .withName("ShowPartitionEndMessage")
-                .withUri("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/end-message")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowPartitionEndMessageRequest, ShowPartitionEndMessageResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowPartitionEndMessageRequest.class, ShowPartitionEndMessageResponse.class)
+            .withName("ShowPartitionEndMessage")
+            .withUri(
+                "/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/end-message")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPartitionEndMessageRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("topic",
+            }));
+        builder.<String>withRequestField("topic",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPartitionEndMessageRequest::getTopic, (req, v) -> {
                 req.setTopic(v);
-            })
-        );
-        builder.withRequestField("partition",
+            }));
+        builder.<Integer>withRequestField("partition",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowPartitionEndMessageRequest::getPartition, (req, v) -> {
                 req.setPartition(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPartitionMessageRequest, ShowPartitionMessageResponse> showPartitionMessage = genForshowPartitionMessage();
+    public static final HttpRequestDef<ShowPartitionMessageRequest, ShowPartitionMessageResponse> showPartitionMessage =
+        genForshowPartitionMessage();
 
     private static HttpRequestDef<ShowPartitionMessageRequest, ShowPartitionMessageResponse> genForshowPartitionMessage() {
         // basic
-        HttpRequestDef.Builder<ShowPartitionMessageRequest, ShowPartitionMessageResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowPartitionMessageRequest.class, ShowPartitionMessageResponse.class)
-                .withName("ShowPartitionMessage")
-                .withUri("/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/message")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowPartitionMessageRequest, ShowPartitionMessageResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowPartitionMessageRequest.class, ShowPartitionMessageResponse.class)
+            .withName("ShowPartitionMessage")
+            .withUri(
+                "/v2/{project_id}/instances/{instance_id}/management/topics/{topic}/partitions/{partition}/message")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPartitionMessageRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("topic",
+            }));
+        builder.<String>withRequestField("topic",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPartitionMessageRequest::getTopic, (req, v) -> {
                 req.setTopic(v);
-            })
-        );
-        builder.withRequestField("partition",
+            }));
+        builder.<Integer>withRequestField("partition",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowPartitionMessageRequest::getPartition, (req, v) -> {
                 req.setPartition(v);
-            })
-        );
-        builder.withRequestField("message_offset",
+            }));
+        builder.<String>withRequestField("message_offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPartitionMessageRequest::getMessageOffset, (req, v) -> {
                 req.setMessageOffset(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse> showSinkTaskDetail = genForshowSinkTaskDetail();
+    public static final HttpRequestDef<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse> showSinkTaskDetail =
+        genForshowSinkTaskDetail();
 
     private static HttpRequestDef<ShowSinkTaskDetailRequest, ShowSinkTaskDetailResponse> genForshowSinkTaskDetail() {
         // basic
@@ -1625,66 +1497,60 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("connector_id",
+        builder.<String>withRequestField("connector_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSinkTaskDetailRequest::getConnectorId, (req, v) -> {
                 req.setConnectorId(v);
-            })
-        );
-        builder.withRequestField("task_id",
+            }));
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSinkTaskDetailRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse> showTopicAccessPolicy = genForshowTopicAccessPolicy();
+    public static final HttpRequestDef<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse> showTopicAccessPolicy =
+        genForshowTopicAccessPolicy();
 
     private static HttpRequestDef<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse> genForshowTopicAccessPolicy() {
         // basic
-        HttpRequestDef.Builder<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowTopicAccessPolicyRequest.class, ShowTopicAccessPolicyResponse.class)
-                .withName("ShowTopicAccessPolicy")
-                .withUri("/v1/{project_id}/instances/{instance_id}/topics/{topic_name}/accesspolicy")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowTopicAccessPolicyRequest.class, ShowTopicAccessPolicyResponse.class)
+            .withName("ShowTopicAccessPolicy")
+            .withUri("/v1/{project_id}/instances/{instance_id}/topics/{topic_name}/accesspolicy")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTopicAccessPolicyRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("topic_name",
+            }));
+        builder.<String>withRequestField("topic_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTopicAccessPolicyRequest::getTopicName, (req, v) -> {
                 req.setTopicName(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> updateInstance = genForupdateInstance();
+    public static final HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> updateInstance =
+        genForupdateInstance();
 
     private static HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> genForupdateInstance() {
         // basic
@@ -1695,101 +1561,96 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateInstanceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateInstanceReq.class,
+            TypeCasts.uncheckedConversion(UpdateInstanceReq.class),
             f -> f.withMarshaller(UpdateInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateInstanceAutoCreateTopicRequest, UpdateInstanceAutoCreateTopicResponse> updateInstanceAutoCreateTopic = genForupdateInstanceAutoCreateTopic();
+    public static final HttpRequestDef<UpdateInstanceAutoCreateTopicRequest, UpdateInstanceAutoCreateTopicResponse> updateInstanceAutoCreateTopic =
+        genForupdateInstanceAutoCreateTopic();
 
     private static HttpRequestDef<UpdateInstanceAutoCreateTopicRequest, UpdateInstanceAutoCreateTopicResponse> genForupdateInstanceAutoCreateTopic() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceAutoCreateTopicRequest, UpdateInstanceAutoCreateTopicResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UpdateInstanceAutoCreateTopicRequest.class, UpdateInstanceAutoCreateTopicResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpdateInstanceAutoCreateTopicRequest.class,
+                    UpdateInstanceAutoCreateTopicResponse.class)
                 .withName("UpdateInstanceAutoCreateTopic")
                 .withUri("/v2/{project_id}/instances/{instance_id}/autotopic")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateInstanceAutoCreateTopicRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateInstanceAutoCreateTopicReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateInstanceAutoCreateTopicReq.class,
+            TypeCasts.uncheckedConversion(UpdateInstanceAutoCreateTopicReq.class),
             f -> f.withMarshaller(UpdateInstanceAutoCreateTopicRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateInstanceCrossVpcIpRequest, UpdateInstanceCrossVpcIpResponse> updateInstanceCrossVpcIp = genForupdateInstanceCrossVpcIp();
+    public static final HttpRequestDef<UpdateInstanceCrossVpcIpRequest, UpdateInstanceCrossVpcIpResponse> updateInstanceCrossVpcIp =
+        genForupdateInstanceCrossVpcIp();
 
     private static HttpRequestDef<UpdateInstanceCrossVpcIpRequest, UpdateInstanceCrossVpcIpResponse> genForupdateInstanceCrossVpcIp() {
         // basic
         HttpRequestDef.Builder<UpdateInstanceCrossVpcIpRequest, UpdateInstanceCrossVpcIpResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UpdateInstanceCrossVpcIpRequest.class, UpdateInstanceCrossVpcIpResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST, UpdateInstanceCrossVpcIpRequest.class, UpdateInstanceCrossVpcIpResponse.class)
                 .withName("UpdateInstanceCrossVpcIp")
                 .withUri("/v2/{project_id}/instances/{instance_id}/crossvpc/modify")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateInstanceCrossVpcIpRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateInstanceCrossVpcIpReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateInstanceCrossVpcIpReq.class,
+            TypeCasts.uncheckedConversion(UpdateInstanceCrossVpcIpReq.class),
             f -> f.withMarshaller(UpdateInstanceCrossVpcIpRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateInstanceTopicRequest, UpdateInstanceTopicResponse> updateInstanceTopic = genForupdateInstanceTopic();
+    public static final HttpRequestDef<UpdateInstanceTopicRequest, UpdateInstanceTopicResponse> updateInstanceTopic =
+        genForupdateInstanceTopic();
 
     private static HttpRequestDef<UpdateInstanceTopicRequest, UpdateInstanceTopicResponse> genForupdateInstanceTopic() {
         // basic
@@ -1800,31 +1661,28 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateInstanceTopicRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateInstanceTopicReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateInstanceTopicReq.class,
+            TypeCasts.uncheckedConversion(UpdateInstanceTopicReq.class),
             f -> f.withMarshaller(UpdateInstanceTopicRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse> updateSinkTaskQuota = genForupdateSinkTaskQuota();
+    public static final HttpRequestDef<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse> updateSinkTaskQuota =
+        genForupdateSinkTaskQuota();
 
     private static HttpRequestDef<UpdateSinkTaskQuotaRequest, UpdateSinkTaskQuotaResponse> genForupdateSinkTaskQuota() {
         // basic
@@ -1835,66 +1693,60 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("connector_id",
+        builder.<String>withRequestField("connector_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateSinkTaskQuotaRequest::getConnectorId, (req, v) -> {
                 req.setConnectorId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateSinkTaskQuotaReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateSinkTaskQuotaReq.class,
+            TypeCasts.uncheckedConversion(UpdateSinkTaskQuotaReq.class),
             f -> f.withMarshaller(UpdateSinkTaskQuotaRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> updateTopicAccessPolicy = genForupdateTopicAccessPolicy();
+    public static final HttpRequestDef<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> updateTopicAccessPolicy =
+        genForupdateTopicAccessPolicy();
 
     private static HttpRequestDef<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> genForupdateTopicAccessPolicy() {
         // basic
-        HttpRequestDef.Builder<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UpdateTopicAccessPolicyRequest.class, UpdateTopicAccessPolicyResponse.class)
-                .withName("UpdateTopicAccessPolicy")
-                .withUri("/v1/{project_id}/instances/{instance_id}/topics/accesspolicy")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<UpdateTopicAccessPolicyRequest, UpdateTopicAccessPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpdateTopicAccessPolicyRequest.class, UpdateTopicAccessPolicyResponse.class)
+            .withName("UpdateTopicAccessPolicy")
+            .withUri("/v1/{project_id}/instances/{instance_id}/topics/accesspolicy")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateTopicAccessPolicyRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateTopicAccessPolicyReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateTopicAccessPolicyReq.class,
+            TypeCasts.uncheckedConversion(UpdateTopicAccessPolicyReq.class),
             f -> f.withMarshaller(UpdateTopicAccessPolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateTopicReplicaRequest, UpdateTopicReplicaResponse> updateTopicReplica = genForupdateTopicReplica();
+    public static final HttpRequestDef<UpdateTopicReplicaRequest, UpdateTopicReplicaResponse> updateTopicReplica =
+        genForupdateTopicReplica();
 
     private static HttpRequestDef<UpdateTopicReplicaRequest, UpdateTopicReplicaResponse> genForupdateTopicReplica() {
         // basic
@@ -1905,34 +1757,29 @@ public class KafkaMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateTopicReplicaRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("topic",
+            }));
+        builder.<String>withRequestField("topic",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateTopicReplicaRequest::getTopic, (req, v) -> {
                 req.setTopic(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ResetReplicaReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ResetReplicaReq.class,
+            TypeCasts.uncheckedConversion(ResetReplicaReq.class),
             f -> f.withMarshaller(UpdateTopicReplicaRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

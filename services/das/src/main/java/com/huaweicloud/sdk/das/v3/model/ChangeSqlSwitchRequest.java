@@ -1,48 +1,32 @@
 package com.huaweicloud.sdk.das.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchBody;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ChangeSqlSwitchRequest  {
-
-
+/** Request Object */
+public class ChangeSqlSwitchRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
-    /**
-     * 请求语言类型。
-     */
+
+    /** 请求语言类型。 */
     public static final class XLanguageEnum {
 
-        
-        /**
-         * Enum EN_US for value: "en-us"
-         */
+        /** Enum EN_US for value: "en-us" */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
-        
-        /**
-         * Enum ZH_CN for value: "zh-cn"
-         */
+
+        /** Enum ZH_CN for value: "zh-cn" */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
-        
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
 
@@ -71,7 +55,7 @@ public class ChangeSqlSwitchRequest  {
 
         @JsonCreator
         public static XLanguageEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -82,7 +66,7 @@ public class ChangeSqlSwitchRequest  {
         }
 
         public static XLanguageEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -106,16 +90,14 @@ public class ChangeSqlSwitchRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private XLanguageEnum xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ChangeSqlSwitchBody body;
 
     public ChangeSqlSwitchRequest withInstanceId(String instanceId) {
@@ -123,13 +105,9 @@ public class ChangeSqlSwitchRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -138,22 +116,16 @@ public class ChangeSqlSwitchRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ChangeSqlSwitchRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求语言类型。
-     * @return xLanguage
-     */
+    /** 请求语言类型。
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
         return xLanguage;
     }
@@ -162,27 +134,23 @@ public class ChangeSqlSwitchRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ChangeSqlSwitchRequest withBody(ChangeSqlSwitchBody body) {
         this.body = body;
         return this;
     }
 
     public ChangeSqlSwitchRequest withBody(Consumer<ChangeSqlSwitchBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ChangeSqlSwitchBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ChangeSqlSwitchBody getBody() {
         return body;
     }
@@ -190,8 +158,6 @@ public class ChangeSqlSwitchRequest  {
     public void setBody(ChangeSqlSwitchBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -202,14 +168,16 @@ public class ChangeSqlSwitchRequest  {
             return false;
         }
         ChangeSqlSwitchRequest changeSqlSwitchRequest = (ChangeSqlSwitchRequest) o;
-        return Objects.equals(this.instanceId, changeSqlSwitchRequest.instanceId) &&
-            Objects.equals(this.xLanguage, changeSqlSwitchRequest.xLanguage) &&
-            Objects.equals(this.body, changeSqlSwitchRequest.body);
+        return Objects.equals(this.instanceId, changeSqlSwitchRequest.instanceId)
+            && Objects.equals(this.xLanguage, changeSqlSwitchRequest.xLanguage)
+            && Objects.equals(this.body, changeSqlSwitchRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, xLanguage, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -220,16 +188,13 @@ public class ChangeSqlSwitchRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

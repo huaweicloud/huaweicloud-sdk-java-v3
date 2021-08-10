@@ -1,179 +1,140 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.MeetingStatus;
-import com.huaweicloud.sdk.meeting.v1.model.OpenNotifySetting;
-import com.huaweicloud.sdk.meeting.v1.model.OpenWebinarBaseInfo;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowWebinarResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="conferenceId")
-    
+    @JsonProperty(value = "conferenceId")
+
     private String conferenceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="corpId")
-    
+    @JsonProperty(value = "corpId")
+
     private String corpId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subject")
-    
+    @JsonProperty(value = "subject")
+
     private String subject;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="startTime")
-    
+    @JsonProperty(value = "startTime")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="duration")
-    
+    @JsonProperty(value = "duration")
+
     private Integer duration;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timeZoneId")
-    
+    @JsonProperty(value = "timeZoneId")
+
     private Integer timeZoneId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
+
     private MeetingStatus state;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scheduserId")
-    
+    @JsonProperty(value = "scheduserId")
+
     private String scheduserId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deptName")
-    
+    @JsonProperty(value = "deptName")
+
     private String deptName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scheduserName")
-    
+    @JsonProperty(value = "scheduserName")
+
     private String scheduserName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrPkgName")
-    
+    @JsonProperty(value = "vmrPkgName")
+
     private String vmrPkgName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="callRestriction")
-    
+    @JsonProperty(value = "callRestriction")
+
     private Boolean callRestriction;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scope")
-    
+    @JsonProperty(value = "scope")
+
     private Integer scope;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audienceScope")
-    
+    @JsonProperty(value = "audienceScope")
+
     private Integer audienceScope;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="chairJoinUri")
-    
+    @JsonProperty(value = "chairJoinUri")
+
     private String chairJoinUri;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="chairPasswd")
-    
+    @JsonProperty(value = "chairPasswd")
+
     private String chairPasswd;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="guestJoinUri")
-    
+    @JsonProperty(value = "guestJoinUri")
+
     private String guestJoinUri;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="guestPasswd")
-    
+    @JsonProperty(value = "guestPasswd")
+
     private String guestPasswd;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audienceJoinUri")
-    
+    @JsonProperty(value = "audienceJoinUri")
+
     private String audienceJoinUri;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audiencePasswd")
-    
+    @JsonProperty(value = "audiencePasswd")
+
     private String audiencePasswd;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="notifySetting")
-    
+    @JsonProperty(value = "notifySetting")
+
     private OpenNotifySetting notifySetting;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="attendees")
-    
+    @JsonProperty(value = "attendees")
+
     private List<String> attendees = null;
-    
+
     public ShowWebinarResponse withConferenceId(String conferenceId) {
         this.conferenceId = conferenceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议ID。长度限制为32个字符。
-     * @return conferenceId
-     */
+    /** 会议ID。长度限制为32个字符。
+     * 
+     * @return conferenceId */
     public String getConferenceId() {
         return conferenceId;
     }
@@ -182,20 +143,14 @@ public class ShowWebinarResponse extends SdkResponse {
         this.conferenceId = conferenceId;
     }
 
-    
-
     public ShowWebinarResponse withCorpId(String corpId) {
         this.corpId = corpId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业id
-     * @return corpId
-     */
+    /** 企业id
+     * 
+     * @return corpId */
     public String getCorpId() {
         return corpId;
     }
@@ -204,20 +159,14 @@ public class ShowWebinarResponse extends SdkResponse {
         this.corpId = corpId;
     }
 
-    
-
     public ShowWebinarResponse withSubject(String subject) {
         this.subject = subject;
         return this;
     }
 
-    
-
-
-    /**
-     * 主题
-     * @return subject
-     */
+    /** 主题
+     * 
+     * @return subject */
     public String getSubject() {
         return subject;
     }
@@ -226,20 +175,14 @@ public class ShowWebinarResponse extends SdkResponse {
         this.subject = subject;
     }
 
-    
-
     public ShowWebinarResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述
-     * @return description
-     */
+    /** 描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -248,20 +191,14 @@ public class ShowWebinarResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public ShowWebinarResponse withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 开始时间
-     * @return startTime
-     */
+    /** 开始时间
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -270,20 +207,14 @@ public class ShowWebinarResponse extends SdkResponse {
         this.startTime = startTime;
     }
 
-    
-
     public ShowWebinarResponse withDuration(Integer duration) {
         this.duration = duration;
         return this;
     }
 
-    
-
-
-    /**
-     * 时长，单位分钟
-     * @return duration
-     */
+    /** 时长，单位分钟
+     * 
+     * @return duration */
     public Integer getDuration() {
         return duration;
     }
@@ -292,20 +223,14 @@ public class ShowWebinarResponse extends SdkResponse {
         this.duration = duration;
     }
 
-    
-
     public ShowWebinarResponse withTimeZoneId(Integer timeZoneId) {
         this.timeZoneId = timeZoneId;
         return this;
     }
 
-    
-
-
-    /**
-     * 时区ID
-     * @return timeZoneId
-     */
+    /** 时区ID
+     * 
+     * @return timeZoneId */
     public Integer getTimeZoneId() {
         return timeZoneId;
     }
@@ -314,20 +239,14 @@ public class ShowWebinarResponse extends SdkResponse {
         this.timeZoneId = timeZoneId;
     }
 
-    
-
     public ShowWebinarResponse withState(MeetingStatus state) {
         this.state = state;
         return this;
     }
 
-    
-
-
-    /**
-     * Get state
-     * @return state
-     */
+    /** Get state
+     * 
+     * @return state */
     public MeetingStatus getState() {
         return state;
     }
@@ -336,20 +255,14 @@ public class ShowWebinarResponse extends SdkResponse {
         this.state = state;
     }
 
-    
-
     public ShowWebinarResponse withScheduserId(String scheduserId) {
         this.scheduserId = scheduserId;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议预订者ID
-     * @return scheduserId
-     */
+    /** 会议预订者ID
+     * 
+     * @return scheduserId */
     public String getScheduserId() {
         return scheduserId;
     }
@@ -358,20 +271,14 @@ public class ShowWebinarResponse extends SdkResponse {
         this.scheduserId = scheduserId;
     }
 
-    
-
     public ShowWebinarResponse withDeptName(String deptName) {
         this.deptName = deptName;
         return this;
     }
 
-    
-
-
-    /**
-     * 预订人部门
-     * @return deptName
-     */
+    /** 预订人部门
+     * 
+     * @return deptName */
     public String getDeptName() {
         return deptName;
     }
@@ -380,20 +287,14 @@ public class ShowWebinarResponse extends SdkResponse {
         this.deptName = deptName;
     }
 
-    
-
     public ShowWebinarResponse withScheduserName(String scheduserName) {
         this.scheduserName = scheduserName;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议预订者帐号名称。长度最大限制为96个字符。
-     * @return scheduserName
-     */
+    /** 会议预订者帐号名称。长度最大限制为96个字符。
+     * 
+     * @return scheduserName */
     public String getScheduserName() {
         return scheduserName;
     }
@@ -402,20 +303,14 @@ public class ShowWebinarResponse extends SdkResponse {
         this.scheduserName = scheduserName;
     }
 
-    
-
     public ShowWebinarResponse withVmrPkgName(String vmrPkgName) {
         this.vmrPkgName = vmrPkgName;
         return this;
     }
 
-    
-
-
-    /**
-     * 网络研讨会资源名
-     * @return vmrPkgName
-     */
+    /** 网络研讨会资源名
+     * 
+     * @return vmrPkgName */
     public String getVmrPkgName() {
         return vmrPkgName;
     }
@@ -424,20 +319,14 @@ public class ShowWebinarResponse extends SdkResponse {
         this.vmrPkgName = vmrPkgName;
     }
 
-    
-
     public ShowWebinarResponse withCallRestriction(Boolean callRestriction) {
         this.callRestriction = callRestriction;
         return this;
     }
 
-    
-
-
-    /**
-     * 入会范围开关
-     * @return callRestriction
-     */
+    /** 入会范围开关
+     * 
+     * @return callRestriction */
     public Boolean getCallRestriction() {
         return callRestriction;
     }
@@ -446,20 +335,14 @@ public class ShowWebinarResponse extends SdkResponse {
         this.callRestriction = callRestriction;
     }
 
-    
-
     public ShowWebinarResponse withScope(Integer scope) {
         this.scope = scope;
         return this;
     }
 
-    
-
-
-    /**
-     * 主持人、嘉宾入会范围  0: 所有用户 1: 非匿名用户（手机pstn入会视为匿名入会） 2: 企业内用户 3: 被邀请用户。
-     * @return scope
-     */
+    /** 主持人、嘉宾入会范围 0: 所有用户 1: 非匿名用户（手机pstn入会视为匿名入会） 2: 企业内用户 3: 被邀请用户。
+     * 
+     * @return scope */
     public Integer getScope() {
         return scope;
     }
@@ -468,20 +351,14 @@ public class ShowWebinarResponse extends SdkResponse {
         this.scope = scope;
     }
 
-    
-
     public ShowWebinarResponse withAudienceScope(Integer audienceScope) {
         this.audienceScope = audienceScope;
         return this;
     }
 
-    
-
-
-    /**
-     * 观众入会范围 0: 所有用户 2: 企业内用户和被邀请用户。
-     * @return audienceScope
-     */
+    /** 观众入会范围 0: 所有用户 2: 企业内用户和被邀请用户。
+     * 
+     * @return audienceScope */
     public Integer getAudienceScope() {
         return audienceScope;
     }
@@ -490,20 +367,14 @@ public class ShowWebinarResponse extends SdkResponse {
         this.audienceScope = audienceScope;
     }
 
-    
-
     public ShowWebinarResponse withChairJoinUri(String chairJoinUri) {
         this.chairJoinUri = chairJoinUri;
         return this;
     }
 
-    
-
-
-    /**
-     * 主持人入会地址。
-     * @return chairJoinUri
-     */
+    /** 主持人入会地址。
+     * 
+     * @return chairJoinUri */
     public String getChairJoinUri() {
         return chairJoinUri;
     }
@@ -512,20 +383,14 @@ public class ShowWebinarResponse extends SdkResponse {
         this.chairJoinUri = chairJoinUri;
     }
 
-    
-
     public ShowWebinarResponse withChairPasswd(String chairPasswd) {
         this.chairPasswd = chairPasswd;
         return this;
     }
 
-    
-
-
-    /**
-     * 主持人密码。
-     * @return chairPasswd
-     */
+    /** 主持人密码。
+     * 
+     * @return chairPasswd */
     public String getChairPasswd() {
         return chairPasswd;
     }
@@ -534,20 +399,14 @@ public class ShowWebinarResponse extends SdkResponse {
         this.chairPasswd = chairPasswd;
     }
 
-    
-
     public ShowWebinarResponse withGuestJoinUri(String guestJoinUri) {
         this.guestJoinUri = guestJoinUri;
         return this;
     }
 
-    
-
-
-    /**
-     * 嘉宾入会地址。
-     * @return guestJoinUri
-     */
+    /** 嘉宾入会地址。
+     * 
+     * @return guestJoinUri */
     public String getGuestJoinUri() {
         return guestJoinUri;
     }
@@ -556,20 +415,14 @@ public class ShowWebinarResponse extends SdkResponse {
         this.guestJoinUri = guestJoinUri;
     }
 
-    
-
     public ShowWebinarResponse withGuestPasswd(String guestPasswd) {
         this.guestPasswd = guestPasswd;
         return this;
     }
 
-    
-
-
-    /**
-     * 嘉宾密码。
-     * @return guestPasswd
-     */
+    /** 嘉宾密码。
+     * 
+     * @return guestPasswd */
     public String getGuestPasswd() {
         return guestPasswd;
     }
@@ -578,20 +431,14 @@ public class ShowWebinarResponse extends SdkResponse {
         this.guestPasswd = guestPasswd;
     }
 
-    
-
     public ShowWebinarResponse withAudienceJoinUri(String audienceJoinUri) {
         this.audienceJoinUri = audienceJoinUri;
         return this;
     }
 
-    
-
-
-    /**
-     * 观众入会地址。
-     * @return audienceJoinUri
-     */
+    /** 观众入会地址。
+     * 
+     * @return audienceJoinUri */
     public String getAudienceJoinUri() {
         return audienceJoinUri;
     }
@@ -600,20 +447,14 @@ public class ShowWebinarResponse extends SdkResponse {
         this.audienceJoinUri = audienceJoinUri;
     }
 
-    
-
     public ShowWebinarResponse withAudiencePasswd(String audiencePasswd) {
         this.audiencePasswd = audiencePasswd;
         return this;
     }
 
-    
-
-
-    /**
-     * 观众密码。
-     * @return audiencePasswd
-     */
+    /** 观众密码。
+     * 
+     * @return audiencePasswd */
     public String getAudiencePasswd() {
         return audiencePasswd;
     }
@@ -622,27 +463,23 @@ public class ShowWebinarResponse extends SdkResponse {
         this.audiencePasswd = audiencePasswd;
     }
 
-    
-
     public ShowWebinarResponse withNotifySetting(OpenNotifySetting notifySetting) {
         this.notifySetting = notifySetting;
         return this;
     }
 
     public ShowWebinarResponse withNotifySetting(Consumer<OpenNotifySetting> notifySettingSetter) {
-        if(this.notifySetting == null ){
+        if (this.notifySetting == null) {
             this.notifySetting = new OpenNotifySetting();
             notifySettingSetter.accept(this.notifySetting);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get notifySetting
-     * @return notifySetting
-     */
+    /** Get notifySetting
+     * 
+     * @return notifySetting */
     public OpenNotifySetting getNotifySetting() {
         return notifySetting;
     }
@@ -651,16 +488,13 @@ public class ShowWebinarResponse extends SdkResponse {
         this.notifySetting = notifySetting;
     }
 
-    
-
     public ShowWebinarResponse withAttendees(List<String> attendees) {
         this.attendees = attendees;
         return this;
     }
 
-    
     public ShowWebinarResponse addAttendeesItem(String attendeesItem) {
-        if(this.attendees == null) {
+        if (this.attendees == null) {
             this.attendees = new ArrayList<>();
         }
         this.attendees.add(attendeesItem);
@@ -668,17 +502,16 @@ public class ShowWebinarResponse extends SdkResponse {
     }
 
     public ShowWebinarResponse withAttendees(Consumer<List<String>> attendeesSetter) {
-        if(this.attendees == null) {
+        if (this.attendees == null) {
             this.attendees = new ArrayList<>();
         }
         attendeesSetter.accept(this.attendees);
         return this;
     }
 
-    /**
-     * Get attendees
-     * @return attendees
-     */
+    /** Get attendees
+     * 
+     * @return attendees */
     public List<String> getAttendees() {
         return attendees;
     }
@@ -686,8 +519,6 @@ public class ShowWebinarResponse extends SdkResponse {
     public void setAttendees(List<String> attendees) {
         this.attendees = attendees;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -698,34 +529,58 @@ public class ShowWebinarResponse extends SdkResponse {
             return false;
         }
         ShowWebinarResponse showWebinarResponse = (ShowWebinarResponse) o;
-        return Objects.equals(this.conferenceId, showWebinarResponse.conferenceId) &&
-            Objects.equals(this.corpId, showWebinarResponse.corpId) &&
-            Objects.equals(this.subject, showWebinarResponse.subject) &&
-            Objects.equals(this.description, showWebinarResponse.description) &&
-            Objects.equals(this.startTime, showWebinarResponse.startTime) &&
-            Objects.equals(this.duration, showWebinarResponse.duration) &&
-            Objects.equals(this.timeZoneId, showWebinarResponse.timeZoneId) &&
-            Objects.equals(this.state, showWebinarResponse.state) &&
-            Objects.equals(this.scheduserId, showWebinarResponse.scheduserId) &&
-            Objects.equals(this.deptName, showWebinarResponse.deptName) &&
-            Objects.equals(this.scheduserName, showWebinarResponse.scheduserName) &&
-            Objects.equals(this.vmrPkgName, showWebinarResponse.vmrPkgName) &&
-            Objects.equals(this.callRestriction, showWebinarResponse.callRestriction) &&
-            Objects.equals(this.scope, showWebinarResponse.scope) &&
-            Objects.equals(this.audienceScope, showWebinarResponse.audienceScope) &&
-            Objects.equals(this.chairJoinUri, showWebinarResponse.chairJoinUri) &&
-            Objects.equals(this.chairPasswd, showWebinarResponse.chairPasswd) &&
-            Objects.equals(this.guestJoinUri, showWebinarResponse.guestJoinUri) &&
-            Objects.equals(this.guestPasswd, showWebinarResponse.guestPasswd) &&
-            Objects.equals(this.audienceJoinUri, showWebinarResponse.audienceJoinUri) &&
-            Objects.equals(this.audiencePasswd, showWebinarResponse.audiencePasswd) &&
-            Objects.equals(this.notifySetting, showWebinarResponse.notifySetting) &&
-            Objects.equals(this.attendees, showWebinarResponse.attendees);
+        return Objects.equals(this.conferenceId, showWebinarResponse.conferenceId)
+            && Objects.equals(this.corpId, showWebinarResponse.corpId)
+            && Objects.equals(this.subject, showWebinarResponse.subject)
+            && Objects.equals(this.description, showWebinarResponse.description)
+            && Objects.equals(this.startTime, showWebinarResponse.startTime)
+            && Objects.equals(this.duration, showWebinarResponse.duration)
+            && Objects.equals(this.timeZoneId, showWebinarResponse.timeZoneId)
+            && Objects.equals(this.state, showWebinarResponse.state)
+            && Objects.equals(this.scheduserId, showWebinarResponse.scheduserId)
+            && Objects.equals(this.deptName, showWebinarResponse.deptName)
+            && Objects.equals(this.scheduserName, showWebinarResponse.scheduserName)
+            && Objects.equals(this.vmrPkgName, showWebinarResponse.vmrPkgName)
+            && Objects.equals(this.callRestriction, showWebinarResponse.callRestriction)
+            && Objects.equals(this.scope, showWebinarResponse.scope)
+            && Objects.equals(this.audienceScope, showWebinarResponse.audienceScope)
+            && Objects.equals(this.chairJoinUri, showWebinarResponse.chairJoinUri)
+            && Objects.equals(this.chairPasswd, showWebinarResponse.chairPasswd)
+            && Objects.equals(this.guestJoinUri, showWebinarResponse.guestJoinUri)
+            && Objects.equals(this.guestPasswd, showWebinarResponse.guestPasswd)
+            && Objects.equals(this.audienceJoinUri, showWebinarResponse.audienceJoinUri)
+            && Objects.equals(this.audiencePasswd, showWebinarResponse.audiencePasswd)
+            && Objects.equals(this.notifySetting, showWebinarResponse.notifySetting)
+            && Objects.equals(this.attendees, showWebinarResponse.attendees);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(conferenceId, corpId, subject, description, startTime, duration, timeZoneId, state, scheduserId, deptName, scheduserName, vmrPkgName, callRestriction, scope, audienceScope, chairJoinUri, chairPasswd, guestJoinUri, guestPasswd, audienceJoinUri, audiencePasswd, notifySetting, attendees);
+        return Objects.hash(conferenceId,
+            corpId,
+            subject,
+            description,
+            startTime,
+            duration,
+            timeZoneId,
+            state,
+            scheduserId,
+            deptName,
+            scheduserName,
+            vmrPkgName,
+            callRestriction,
+            scope,
+            audienceScope,
+            chairJoinUri,
+            chairPasswd,
+            guestJoinUri,
+            guestPasswd,
+            audienceJoinUri,
+            audiencePasswd,
+            notifySetting,
+            attendees);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -756,16 +611,13 @@ public class ShowWebinarResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

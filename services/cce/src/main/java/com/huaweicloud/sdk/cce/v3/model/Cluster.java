@@ -1,53 +1,39 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.ClusterMetadata;
-import com.huaweicloud.sdk.cce.v3.model.ClusterSpec;
-import com.huaweicloud.sdk.cce.v3.model.ClusterStatus;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class Cluster  {
-
-
+public class Cluster {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="kind")
-    
+    @JsonProperty(value = "kind")
+
     private String kind;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apiVersion")
-    
+    @JsonProperty(value = "apiVersion")
+
     private String apiVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata")
-    
+    @JsonProperty(value = "metadata")
+
     private ClusterMetadata metadata;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec")
-    
+    @JsonProperty(value = "spec")
+
     private ClusterSpec spec;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private ClusterStatus status;
 
     public Cluster withKind(String kind) {
@@ -55,13 +41,9 @@ public class Cluster  {
         return this;
     }
 
-    
-
-
-    /**
-     * API类型，固定值“Cluster”或“cluster”，该值不可修改。  
-     * @return kind
-     */
+    /** API类型，固定值“Cluster”或“cluster”，该值不可修改。
+     * 
+     * @return kind */
     public String getKind() {
         return kind;
     }
@@ -70,20 +52,14 @@ public class Cluster  {
         this.kind = kind;
     }
 
-    
-
     public Cluster withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * API版本，固定值“v3”，该值不可修改。  
-     * @return apiVersion
-     */
+    /** API版本，固定值“v3”，该值不可修改。
+     * 
+     * @return apiVersion */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -92,27 +68,23 @@ public class Cluster  {
         this.apiVersion = apiVersion;
     }
 
-    
-
     public Cluster withMetadata(ClusterMetadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
     public Cluster withMetadata(Consumer<ClusterMetadata> metadataSetter) {
-        if(this.metadata == null ){
+        if (this.metadata == null) {
             this.metadata = new ClusterMetadata();
             metadataSetter.accept(this.metadata);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get metadata
-     * @return metadata
-     */
+    /** Get metadata
+     * 
+     * @return metadata */
     public ClusterMetadata getMetadata() {
         return metadata;
     }
@@ -121,27 +93,23 @@ public class Cluster  {
         this.metadata = metadata;
     }
 
-    
-
     public Cluster withSpec(ClusterSpec spec) {
         this.spec = spec;
         return this;
     }
 
     public Cluster withSpec(Consumer<ClusterSpec> specSetter) {
-        if(this.spec == null ){
+        if (this.spec == null) {
             this.spec = new ClusterSpec();
             specSetter.accept(this.spec);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get spec
-     * @return spec
-     */
+    /** Get spec
+     * 
+     * @return spec */
     public ClusterSpec getSpec() {
         return spec;
     }
@@ -150,27 +118,23 @@ public class Cluster  {
         this.spec = spec;
     }
 
-    
-
     public Cluster withStatus(ClusterStatus status) {
         this.status = status;
         return this;
     }
 
     public Cluster withStatus(Consumer<ClusterStatus> statusSetter) {
-        if(this.status == null ){
+        if (this.status == null) {
             this.status = new ClusterStatus();
             statusSetter.accept(this.status);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get status
-     * @return status
-     */
+    /** Get status
+     * 
+     * @return status */
     public ClusterStatus getStatus() {
         return status;
     }
@@ -178,8 +142,6 @@ public class Cluster  {
     public void setStatus(ClusterStatus status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -190,16 +152,16 @@ public class Cluster  {
             return false;
         }
         Cluster cluster = (Cluster) o;
-        return Objects.equals(this.kind, cluster.kind) &&
-            Objects.equals(this.apiVersion, cluster.apiVersion) &&
-            Objects.equals(this.metadata, cluster.metadata) &&
-            Objects.equals(this.spec, cluster.spec) &&
-            Objects.equals(this.status, cluster.status);
+        return Objects.equals(this.kind, cluster.kind) && Objects.equals(this.apiVersion, cluster.apiVersion)
+            && Objects.equals(this.metadata, cluster.metadata) && Objects.equals(this.spec, cluster.spec)
+            && Objects.equals(this.status, cluster.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(kind, apiVersion, metadata, spec, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -212,16 +174,13 @@ public class Cluster  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

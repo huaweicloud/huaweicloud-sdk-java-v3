@@ -1,88 +1,69 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 录制信息
- */
-public class RecordResultDO  {
-
-
+/** 录制信息 */
+public class RecordResultDO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confUUID")
-    
+    @JsonProperty(value = "confUUID")
+
     private String confUUID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confID")
-    
+    @JsonProperty(value = "confID")
+
     private String confID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private List<String> url = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rcdTime")
-    
+    @JsonProperty(value = "rcdTime")
+
     private Integer rcdTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rcdSize")
-    
+    @JsonProperty(value = "rcdSize")
+
     private Integer rcdSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subject")
-    
+    @JsonProperty(value = "subject")
+
     private String subject;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scheduserName")
-    
+    @JsonProperty(value = "scheduserName")
+
     private String scheduserName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="startTime")
-    
+    @JsonProperty(value = "startTime")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isDecodeFinish")
-    
+    @JsonProperty(value = "isDecodeFinish")
+
     private Boolean isDecodeFinish;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="decodeEndTime")
-    
+    @JsonProperty(value = "decodeEndTime")
+
     private Long decodeEndTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="available")
-    
+    @JsonProperty(value = "available")
+
     private Boolean available;
 
     public RecordResultDO withConfUUID(String confUUID) {
@@ -90,13 +71,9 @@ public class RecordResultDO  {
         return this;
     }
 
-    
-
-
-    /**
-     * 会议UUID。
-     * @return confUUID
-     */
+    /** 会议UUID。
+     * 
+     * @return confUUID */
     public String getConfUUID() {
         return confUUID;
     }
@@ -105,20 +82,14 @@ public class RecordResultDO  {
         this.confUUID = confUUID;
     }
 
-    
-
     public RecordResultDO withConfID(String confID) {
         this.confID = confID;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议ID。
-     * @return confID
-     */
+    /** 会议ID。
+     * 
+     * @return confID */
     public String getConfID() {
         return confID;
     }
@@ -127,16 +98,13 @@ public class RecordResultDO  {
         this.confID = confID;
     }
 
-    
-
     public RecordResultDO withUrl(List<String> url) {
         this.url = url;
         return this;
     }
 
-    
     public RecordResultDO addUrlItem(String urlItem) {
-        if(this.url == null) {
+        if (this.url == null) {
             this.url = new ArrayList<>();
         }
         this.url.add(urlItem);
@@ -144,17 +112,16 @@ public class RecordResultDO  {
     }
 
     public RecordResultDO withUrl(Consumer<List<String>> urlSetter) {
-        if(this.url == null) {
+        if (this.url == null) {
             this.url = new ArrayList<>();
         }
         urlSetter.accept(this.url);
         return this;
     }
 
-    /**
-     * 点播地址。
-     * @return url
-     */
+    /** 点播地址。
+     * 
+     * @return url */
     public List<String> getUrl() {
         return url;
     }
@@ -163,20 +130,14 @@ public class RecordResultDO  {
         this.url = url;
     }
 
-    
-
     public RecordResultDO withRcdTime(Integer rcdTime) {
         this.rcdTime = rcdTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 录制时长（单位秒）。
-     * @return rcdTime
-     */
+    /** 录制时长（单位秒）。
+     * 
+     * @return rcdTime */
     public Integer getRcdTime() {
         return rcdTime;
     }
@@ -185,20 +146,14 @@ public class RecordResultDO  {
         this.rcdTime = rcdTime;
     }
 
-    
-
     public RecordResultDO withRcdSize(Integer rcdSize) {
         this.rcdSize = rcdSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 录制文件大小（MB）。
-     * @return rcdSize
-     */
+    /** 录制文件大小（MB）。
+     * 
+     * @return rcdSize */
     public Integer getRcdSize() {
         return rcdSize;
     }
@@ -207,20 +162,14 @@ public class RecordResultDO  {
         this.rcdSize = rcdSize;
     }
 
-    
-
     public RecordResultDO withSubject(String subject) {
         this.subject = subject;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议主题。
-     * @return subject
-     */
+    /** 会议主题。
+     * 
+     * @return subject */
     public String getSubject() {
         return subject;
     }
@@ -229,20 +178,14 @@ public class RecordResultDO  {
         this.subject = subject;
     }
 
-    
-
     public RecordResultDO withScheduserName(String scheduserName) {
         this.scheduserName = scheduserName;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议预订者。
-     * @return scheduserName
-     */
+    /** 会议预订者。
+     * 
+     * @return scheduserName */
     public String getScheduserName() {
         return scheduserName;
     }
@@ -251,20 +194,14 @@ public class RecordResultDO  {
         this.scheduserName = scheduserName;
     }
 
-    
-
     public RecordResultDO withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议开始时间。
-     * @return startTime
-     */
+    /** 会议开始时间。
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -273,20 +210,14 @@ public class RecordResultDO  {
         this.startTime = startTime;
     }
 
-    
-
     public RecordResultDO withIsDecodeFinish(Boolean isDecodeFinish) {
         this.isDecodeFinish = isDecodeFinish;
         return this;
     }
 
-    
-
-
-    /**
-     * 录制文件是否转码完成。
-     * @return isDecodeFinish
-     */
+    /** 录制文件是否转码完成。
+     * 
+     * @return isDecodeFinish */
     public Boolean getIsDecodeFinish() {
         return isDecodeFinish;
     }
@@ -295,20 +226,14 @@ public class RecordResultDO  {
         this.isDecodeFinish = isDecodeFinish;
     }
 
-    
-
     public RecordResultDO withDecodeEndTime(Long decodeEndTime) {
         this.decodeEndTime = decodeEndTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 录制文件预计转码完成时间。
-     * @return decodeEndTime
-     */
+    /** 录制文件预计转码完成时间。
+     * 
+     * @return decodeEndTime */
     public Long getDecodeEndTime() {
         return decodeEndTime;
     }
@@ -317,20 +242,14 @@ public class RecordResultDO  {
         this.decodeEndTime = decodeEndTime;
     }
 
-    
-
     public RecordResultDO withAvailable(Boolean available) {
         this.available = available;
         return this;
     }
 
-    
-
-
-    /**
-     * 录播文件是否可观看。
-     * @return available
-     */
+    /** 录播文件是否可观看。
+     * 
+     * @return available */
     public Boolean getAvailable() {
         return available;
     }
@@ -338,8 +257,6 @@ public class RecordResultDO  {
     public void setAvailable(Boolean available) {
         this.available = available;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -350,22 +267,33 @@ public class RecordResultDO  {
             return false;
         }
         RecordResultDO recordResultDO = (RecordResultDO) o;
-        return Objects.equals(this.confUUID, recordResultDO.confUUID) &&
-            Objects.equals(this.confID, recordResultDO.confID) &&
-            Objects.equals(this.url, recordResultDO.url) &&
-            Objects.equals(this.rcdTime, recordResultDO.rcdTime) &&
-            Objects.equals(this.rcdSize, recordResultDO.rcdSize) &&
-            Objects.equals(this.subject, recordResultDO.subject) &&
-            Objects.equals(this.scheduserName, recordResultDO.scheduserName) &&
-            Objects.equals(this.startTime, recordResultDO.startTime) &&
-            Objects.equals(this.isDecodeFinish, recordResultDO.isDecodeFinish) &&
-            Objects.equals(this.decodeEndTime, recordResultDO.decodeEndTime) &&
-            Objects.equals(this.available, recordResultDO.available);
+        return Objects.equals(this.confUUID, recordResultDO.confUUID)
+            && Objects.equals(this.confID, recordResultDO.confID) && Objects.equals(this.url, recordResultDO.url)
+            && Objects.equals(this.rcdTime, recordResultDO.rcdTime)
+            && Objects.equals(this.rcdSize, recordResultDO.rcdSize)
+            && Objects.equals(this.subject, recordResultDO.subject)
+            && Objects.equals(this.scheduserName, recordResultDO.scheduserName)
+            && Objects.equals(this.startTime, recordResultDO.startTime)
+            && Objects.equals(this.isDecodeFinish, recordResultDO.isDecodeFinish)
+            && Objects.equals(this.decodeEndTime, recordResultDO.decodeEndTime)
+            && Objects.equals(this.available, recordResultDO.available);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(confUUID, confID, url, rcdTime, rcdSize, subject, scheduserName, startTime, isDecodeFinish, decodeEndTime, available);
+        return Objects.hash(confUUID,
+            confID,
+            url,
+            rcdTime,
+            rcdSize,
+            subject,
+            scheduserName,
+            startTime,
+            isDecodeFinish,
+            decodeEndTime,
+            available);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -384,16 +312,13 @@ public class RecordResultDO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

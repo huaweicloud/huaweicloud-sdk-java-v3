@@ -1,64 +1,49 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class NeutronListFirewallRulesRequest  {
-
-
+/** Request Object */
+public class NeutronListFirewallRulesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private List<String> id = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private List<String> name = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private List<String> description = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private String action;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
+
     private String tenantId;
 
     public NeutronListFirewallRulesRequest withMarker(String marker) {
@@ -66,13 +51,9 @@ public class NeutronListFirewallRulesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 分页查询起始的资源ID，为空时查询第一页
-     * @return marker
-     */
+    /** 分页查询起始的资源ID，为空时查询第一页
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -81,20 +62,14 @@ public class NeutronListFirewallRulesRequest  {
         this.marker = marker;
     }
 
-    
-
     public NeutronListFirewallRulesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页返回的个数
-     * @return limit
-     */
+    /** 每页返回的个数
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -103,16 +78,13 @@ public class NeutronListFirewallRulesRequest  {
         this.limit = limit;
     }
 
-    
-
     public NeutronListFirewallRulesRequest withId(List<String> id) {
         this.id = id;
         return this;
     }
 
-    
     public NeutronListFirewallRulesRequest addIdItem(String idItem) {
-        if(this.id == null) {
+        if (this.id == null) {
             this.id = new ArrayList<>();
         }
         this.id.add(idItem);
@@ -120,17 +92,16 @@ public class NeutronListFirewallRulesRequest  {
     }
 
     public NeutronListFirewallRulesRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null) {
+        if (this.id == null) {
             this.id = new ArrayList<>();
         }
         idSetter.accept(this.id);
         return this;
     }
 
-    /**
-     * 使用网络ACL规则ID过滤网络ACL规则
-     * @return id
-     */
+    /** 使用网络ACL规则ID过滤网络ACL规则
+     * 
+     * @return id */
     public List<String> getId() {
         return id;
     }
@@ -139,16 +110,13 @@ public class NeutronListFirewallRulesRequest  {
         this.id = id;
     }
 
-    
-
     public NeutronListFirewallRulesRequest withName(List<String> name) {
         this.name = name;
         return this;
     }
 
-    
     public NeutronListFirewallRulesRequest addNameItem(String nameItem) {
-        if(this.name == null) {
+        if (this.name == null) {
             this.name = new ArrayList<>();
         }
         this.name.add(nameItem);
@@ -156,17 +124,16 @@ public class NeutronListFirewallRulesRequest  {
     }
 
     public NeutronListFirewallRulesRequest withName(Consumer<List<String>> nameSetter) {
-        if(this.name == null) {
+        if (this.name == null) {
             this.name = new ArrayList<>();
         }
         nameSetter.accept(this.name);
         return this;
     }
 
-    /**
-     * 使用网络ACL规则name过滤网络ACL规则
-     * @return name
-     */
+    /** 使用网络ACL规则name过滤网络ACL规则
+     * 
+     * @return name */
     public List<String> getName() {
         return name;
     }
@@ -175,16 +142,13 @@ public class NeutronListFirewallRulesRequest  {
         this.name = name;
     }
 
-    
-
     public NeutronListFirewallRulesRequest withDescription(List<String> description) {
         this.description = description;
         return this;
     }
 
-    
     public NeutronListFirewallRulesRequest addDescriptionItem(String descriptionItem) {
-        if(this.description == null) {
+        if (this.description == null) {
             this.description = new ArrayList<>();
         }
         this.description.add(descriptionItem);
@@ -192,17 +156,16 @@ public class NeutronListFirewallRulesRequest  {
     }
 
     public NeutronListFirewallRulesRequest withDescription(Consumer<List<String>> descriptionSetter) {
-        if(this.description == null) {
+        if (this.description == null) {
             this.description = new ArrayList<>();
         }
         descriptionSetter.accept(this.description);
         return this;
     }
 
-    /**
-     * 使用网络ACL规则的description过滤网络ACL规则
-     * @return description
-     */
+    /** 使用网络ACL规则的description过滤网络ACL规则
+     * 
+     * @return description */
     public List<String> getDescription() {
         return description;
     }
@@ -211,20 +174,14 @@ public class NeutronListFirewallRulesRequest  {
         this.description = description;
     }
 
-    
-
     public NeutronListFirewallRulesRequest withAction(String action) {
         this.action = action;
         return this;
     }
 
-    
-
-
-    /**
-     * 使用action过滤查询网络ACL规则
-     * @return action
-     */
+    /** 使用action过滤查询网络ACL规则
+     * 
+     * @return action */
     public String getAction() {
         return action;
     }
@@ -233,20 +190,14 @@ public class NeutronListFirewallRulesRequest  {
         this.action = action;
     }
 
-    
-
     public NeutronListFirewallRulesRequest withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
 
-    
-
-
-    /**
-     * 使用tenant_id过滤查询网络ACL规则
-     * @return tenantId
-     */
+    /** 使用tenant_id过滤查询网络ACL规则
+     * 
+     * @return tenantId */
     public String getTenantId() {
         return tenantId;
     }
@@ -254,8 +205,6 @@ public class NeutronListFirewallRulesRequest  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -266,18 +215,20 @@ public class NeutronListFirewallRulesRequest  {
             return false;
         }
         NeutronListFirewallRulesRequest neutronListFirewallRulesRequest = (NeutronListFirewallRulesRequest) o;
-        return Objects.equals(this.marker, neutronListFirewallRulesRequest.marker) &&
-            Objects.equals(this.limit, neutronListFirewallRulesRequest.limit) &&
-            Objects.equals(this.id, neutronListFirewallRulesRequest.id) &&
-            Objects.equals(this.name, neutronListFirewallRulesRequest.name) &&
-            Objects.equals(this.description, neutronListFirewallRulesRequest.description) &&
-            Objects.equals(this.action, neutronListFirewallRulesRequest.action) &&
-            Objects.equals(this.tenantId, neutronListFirewallRulesRequest.tenantId);
+        return Objects.equals(this.marker, neutronListFirewallRulesRequest.marker)
+            && Objects.equals(this.limit, neutronListFirewallRulesRequest.limit)
+            && Objects.equals(this.id, neutronListFirewallRulesRequest.id)
+            && Objects.equals(this.name, neutronListFirewallRulesRequest.name)
+            && Objects.equals(this.description, neutronListFirewallRulesRequest.description)
+            && Objects.equals(this.action, neutronListFirewallRulesRequest.action)
+            && Objects.equals(this.tenantId, neutronListFirewallRulesRequest.tenantId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(marker, limit, id, name, description, action, tenantId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -292,16 +243,13 @@ public class NeutronListFirewallRulesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

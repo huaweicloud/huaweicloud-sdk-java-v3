@@ -1,103 +1,80 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.Resource;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateEnvironmentResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alias")
-    
+    @JsonProperty(value = "alias")
+
     private String alias;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_mode")
-    
+    @JsonProperty(value = "charge_mode")
+
     private String chargeMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="base_resources")
-    
+    @JsonProperty(value = "base_resources")
+
     private List<Resource> baseResources = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="optional_resources")
-    
+    @JsonProperty(value = "optional_resources")
+
     private List<Resource> optionalResources = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator")
-    
+    @JsonProperty(value = "creator")
+
     private String creator;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private Long createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private Long updateTime;
 
     public CreateEnvironmentResponse withId(String id) {
@@ -105,13 +82,9 @@ public class CreateEnvironmentResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 环境ID。
-     * @return id
-     */
+    /** 环境ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -120,20 +93,14 @@ public class CreateEnvironmentResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public CreateEnvironmentResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境名称。
-     * @return name
-     */
+    /** 环境名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -142,20 +109,14 @@ public class CreateEnvironmentResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public CreateEnvironmentResponse withAlias(String alias) {
         this.alias = alias;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境别名。
-     * @return alias
-     */
+    /** 环境别名。
+     * 
+     * @return alias */
     public String getAlias() {
         return alias;
     }
@@ -164,20 +125,14 @@ public class CreateEnvironmentResponse extends SdkResponse {
         this.alias = alias;
     }
 
-    
-
     public CreateEnvironmentResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境描述。
-     * @return description
-     */
+    /** 环境描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -186,20 +141,14 @@ public class CreateEnvironmentResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public CreateEnvironmentResponse withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目ID。
-     * @return projectId
-     */
+    /** 项目ID。
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -208,20 +157,14 @@ public class CreateEnvironmentResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
-    
-
     public CreateEnvironmentResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID。
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -230,20 +173,14 @@ public class CreateEnvironmentResponse extends SdkResponse {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public CreateEnvironmentResponse withChargeMode(String chargeMode) {
         this.chargeMode = chargeMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 收费模式。
-     * @return chargeMode
-     */
+    /** 收费模式。
+     * 
+     * @return chargeMode */
     public String getChargeMode() {
         return chargeMode;
     }
@@ -252,20 +189,14 @@ public class CreateEnvironmentResponse extends SdkResponse {
         this.chargeMode = chargeMode;
     }
 
-    
-
     public CreateEnvironmentResponse withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟私有云ID。
-     * @return vpcId
-     */
+    /** 虚拟私有云ID。
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -274,16 +205,13 @@ public class CreateEnvironmentResponse extends SdkResponse {
         this.vpcId = vpcId;
     }
 
-    
-
     public CreateEnvironmentResponse withBaseResources(List<Resource> baseResources) {
         this.baseResources = baseResources;
         return this;
     }
 
-    
     public CreateEnvironmentResponse addBaseResourcesItem(Resource baseResourcesItem) {
-        if(this.baseResources == null) {
+        if (this.baseResources == null) {
             this.baseResources = new ArrayList<>();
         }
         this.baseResources.add(baseResourcesItem);
@@ -291,17 +219,16 @@ public class CreateEnvironmentResponse extends SdkResponse {
     }
 
     public CreateEnvironmentResponse withBaseResources(Consumer<List<Resource>> baseResourcesSetter) {
-        if(this.baseResources == null) {
+        if (this.baseResources == null) {
             this.baseResources = new ArrayList<>();
         }
         baseResourcesSetter.accept(this.baseResources);
         return this;
     }
 
-    /**
-     * 基础资源。
-     * @return baseResources
-     */
+    /** 基础资源。
+     * 
+     * @return baseResources */
     public List<Resource> getBaseResources() {
         return baseResources;
     }
@@ -310,16 +237,13 @@ public class CreateEnvironmentResponse extends SdkResponse {
         this.baseResources = baseResources;
     }
 
-    
-
     public CreateEnvironmentResponse withOptionalResources(List<Resource> optionalResources) {
         this.optionalResources = optionalResources;
         return this;
     }
 
-    
     public CreateEnvironmentResponse addOptionalResourcesItem(Resource optionalResourcesItem) {
-        if(this.optionalResources == null) {
+        if (this.optionalResources == null) {
             this.optionalResources = new ArrayList<>();
         }
         this.optionalResources.add(optionalResourcesItem);
@@ -327,17 +251,16 @@ public class CreateEnvironmentResponse extends SdkResponse {
     }
 
     public CreateEnvironmentResponse withOptionalResources(Consumer<List<Resource>> optionalResourcesSetter) {
-        if(this.optionalResources == null) {
+        if (this.optionalResources == null) {
             this.optionalResources = new ArrayList<>();
         }
         optionalResourcesSetter.accept(this.optionalResources);
         return this;
     }
 
-    /**
-     * 可选资源。
-     * @return optionalResources
-     */
+    /** 可选资源。
+     * 
+     * @return optionalResources */
     public List<Resource> getOptionalResources() {
         return optionalResources;
     }
@@ -346,20 +269,14 @@ public class CreateEnvironmentResponse extends SdkResponse {
         this.optionalResources = optionalResources;
     }
 
-    
-
     public CreateEnvironmentResponse withCreator(String creator) {
         this.creator = creator;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建人。
-     * @return creator
-     */
+    /** 创建人。
+     * 
+     * @return creator */
     public String getCreator() {
         return creator;
     }
@@ -368,20 +285,14 @@ public class CreateEnvironmentResponse extends SdkResponse {
         this.creator = creator;
     }
 
-    
-
     public CreateEnvironmentResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间。
-     * @return createTime
-     */
+    /** 创建时间。
+     * 
+     * @return createTime */
     public Long getCreateTime() {
         return createTime;
     }
@@ -390,20 +301,14 @@ public class CreateEnvironmentResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public CreateEnvironmentResponse withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 修改时间。
-     * @return updateTime
-     */
+    /** 修改时间。
+     * 
+     * @return updateTime */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -411,8 +316,6 @@ public class CreateEnvironmentResponse extends SdkResponse {
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -423,24 +326,38 @@ public class CreateEnvironmentResponse extends SdkResponse {
             return false;
         }
         CreateEnvironmentResponse createEnvironmentResponse = (CreateEnvironmentResponse) o;
-        return Objects.equals(this.id, createEnvironmentResponse.id) &&
-            Objects.equals(this.name, createEnvironmentResponse.name) &&
-            Objects.equals(this.alias, createEnvironmentResponse.alias) &&
-            Objects.equals(this.description, createEnvironmentResponse.description) &&
-            Objects.equals(this.projectId, createEnvironmentResponse.projectId) &&
-            Objects.equals(this.enterpriseProjectId, createEnvironmentResponse.enterpriseProjectId) &&
-            Objects.equals(this.chargeMode, createEnvironmentResponse.chargeMode) &&
-            Objects.equals(this.vpcId, createEnvironmentResponse.vpcId) &&
-            Objects.equals(this.baseResources, createEnvironmentResponse.baseResources) &&
-            Objects.equals(this.optionalResources, createEnvironmentResponse.optionalResources) &&
-            Objects.equals(this.creator, createEnvironmentResponse.creator) &&
-            Objects.equals(this.createTime, createEnvironmentResponse.createTime) &&
-            Objects.equals(this.updateTime, createEnvironmentResponse.updateTime);
+        return Objects.equals(this.id, createEnvironmentResponse.id)
+            && Objects.equals(this.name, createEnvironmentResponse.name)
+            && Objects.equals(this.alias, createEnvironmentResponse.alias)
+            && Objects.equals(this.description, createEnvironmentResponse.description)
+            && Objects.equals(this.projectId, createEnvironmentResponse.projectId)
+            && Objects.equals(this.enterpriseProjectId, createEnvironmentResponse.enterpriseProjectId)
+            && Objects.equals(this.chargeMode, createEnvironmentResponse.chargeMode)
+            && Objects.equals(this.vpcId, createEnvironmentResponse.vpcId)
+            && Objects.equals(this.baseResources, createEnvironmentResponse.baseResources)
+            && Objects.equals(this.optionalResources, createEnvironmentResponse.optionalResources)
+            && Objects.equals(this.creator, createEnvironmentResponse.creator)
+            && Objects.equals(this.createTime, createEnvironmentResponse.createTime)
+            && Objects.equals(this.updateTime, createEnvironmentResponse.updateTime);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, alias, description, projectId, enterpriseProjectId, chargeMode, vpcId, baseResources, optionalResources, creator, createTime, updateTime);
+        return Objects.hash(id,
+            name,
+            alias,
+            description,
+            projectId,
+            enterpriseProjectId,
+            chargeMode,
+            vpcId,
+            baseResources,
+            optionalResources,
+            creator,
+            createTime,
+            updateTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -461,16 +378,13 @@ public class CreateEnvironmentResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

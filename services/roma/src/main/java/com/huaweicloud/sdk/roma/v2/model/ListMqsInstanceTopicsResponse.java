@@ -1,61 +1,45 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.ListInstanceTopicsRespTopics;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListMqsInstanceTopicsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="permissions")
-    
+    @JsonProperty(value = "permissions")
+
     private List<String> permissions = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topics")
-    
+    @JsonProperty(value = "topics")
+
     private List<ListInstanceTopicsRespTopics> topics = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remain_partitions")
-    
+    @JsonProperty(value = "remain_partitions")
+
     private Integer remainPartitions;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_partitions")
-    
+    @JsonProperty(value = "max_partitions")
+
     private Integer maxPartitions;
 
     public ListMqsInstanceTopicsResponse withTotal(Integer total) {
@@ -63,13 +47,9 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * topic的总数。
-     * @return total
-     */
+    /** topic的总数。
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -78,20 +58,14 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
         this.total = total;
     }
 
-    
-
     public ListMqsInstanceTopicsResponse withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前查询的topic数量。
-     * @return size
-     */
+    /** 当前查询的topic数量。
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -100,16 +74,13 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
         this.size = size;
     }
 
-    
-
     public ListMqsInstanceTopicsResponse withPermissions(List<String> permissions) {
         this.permissions = permissions;
         return this;
     }
 
-    
     public ListMqsInstanceTopicsResponse addPermissionsItem(String permissionsItem) {
-        if(this.permissions == null) {
+        if (this.permissions == null) {
             this.permissions = new ArrayList<>();
         }
         this.permissions.add(permissionsItem);
@@ -117,17 +88,16 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
     }
 
     public ListMqsInstanceTopicsResponse withPermissions(Consumer<List<String>> permissionsSetter) {
-        if(this.permissions == null) {
+        if (this.permissions == null) {
             this.permissions = new ArrayList<>();
         }
         permissionsSetter.accept(this.permissions);
         return this;
     }
 
-    /**
-     * 允许操作的权限。
-     * @return permissions
-     */
+    /** 允许操作的权限。
+     * 
+     * @return permissions */
     public List<String> getPermissions() {
         return permissions;
     }
@@ -136,16 +106,13 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
         this.permissions = permissions;
     }
 
-    
-
     public ListMqsInstanceTopicsResponse withTopics(List<ListInstanceTopicsRespTopics> topics) {
         this.topics = topics;
         return this;
     }
 
-    
     public ListMqsInstanceTopicsResponse addTopicsItem(ListInstanceTopicsRespTopics topicsItem) {
-        if(this.topics == null) {
+        if (this.topics == null) {
             this.topics = new ArrayList<>();
         }
         this.topics.add(topicsItem);
@@ -153,17 +120,16 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
     }
 
     public ListMqsInstanceTopicsResponse withTopics(Consumer<List<ListInstanceTopicsRespTopics>> topicsSetter) {
-        if(this.topics == null) {
+        if (this.topics == null) {
             this.topics = new ArrayList<>();
         }
         topicsSetter.accept(this.topics);
         return this;
     }
 
-    /**
-     * Topic列表。
-     * @return topics
-     */
+    /** Topic列表。
+     * 
+     * @return topics */
     public List<ListInstanceTopicsRespTopics> getTopics() {
         return topics;
     }
@@ -172,20 +138,14 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
         this.topics = topics;
     }
 
-    
-
     public ListMqsInstanceTopicsResponse withRemainPartitions(Integer remainPartitions) {
         this.remainPartitions = remainPartitions;
         return this;
     }
 
-    
-
-
-    /**
-     * 剩余分区数。
-     * @return remainPartitions
-     */
+    /** 剩余分区数。
+     * 
+     * @return remainPartitions */
     public Integer getRemainPartitions() {
         return remainPartitions;
     }
@@ -194,20 +154,14 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
         this.remainPartitions = remainPartitions;
     }
 
-    
-
     public ListMqsInstanceTopicsResponse withMaxPartitions(Integer maxPartitions) {
         this.maxPartitions = maxPartitions;
         return this;
     }
 
-    
-
-
-    /**
-     * 分区总数。
-     * @return maxPartitions
-     */
+    /** 分区总数。
+     * 
+     * @return maxPartitions */
     public Integer getMaxPartitions() {
         return maxPartitions;
     }
@@ -215,8 +169,6 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
     public void setMaxPartitions(Integer maxPartitions) {
         this.maxPartitions = maxPartitions;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -227,17 +179,19 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
             return false;
         }
         ListMqsInstanceTopicsResponse listMqsInstanceTopicsResponse = (ListMqsInstanceTopicsResponse) o;
-        return Objects.equals(this.total, listMqsInstanceTopicsResponse.total) &&
-            Objects.equals(this.size, listMqsInstanceTopicsResponse.size) &&
-            Objects.equals(this.permissions, listMqsInstanceTopicsResponse.permissions) &&
-            Objects.equals(this.topics, listMqsInstanceTopicsResponse.topics) &&
-            Objects.equals(this.remainPartitions, listMqsInstanceTopicsResponse.remainPartitions) &&
-            Objects.equals(this.maxPartitions, listMqsInstanceTopicsResponse.maxPartitions);
+        return Objects.equals(this.total, listMqsInstanceTopicsResponse.total)
+            && Objects.equals(this.size, listMqsInstanceTopicsResponse.size)
+            && Objects.equals(this.permissions, listMqsInstanceTopicsResponse.permissions)
+            && Objects.equals(this.topics, listMqsInstanceTopicsResponse.topics)
+            && Objects.equals(this.remainPartitions, listMqsInstanceTopicsResponse.remainPartitions)
+            && Objects.equals(this.maxPartitions, listMqsInstanceTopicsResponse.maxPartitions);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(total, size, permissions, topics, remainPartitions, maxPartitions);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -251,16 +205,13 @@ public class ListMqsInstanceTopicsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

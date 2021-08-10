@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Job操作的对象。根据不同Job类型，显示不同的内容。裸金属服务器相关操作显示server_id；网卡相关操作显示nic_id
- */
-public class Entitie  {
-
-
+/** Job操作的对象。根据不同Job类型，显示不同的内容。裸金属服务器相关操作显示server_id；网卡相关操作显示nic_id */
+public class Entitie {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server_id")
-    
+    @JsonProperty(value = "server_id")
+
     private String serverId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nic_id")
-    
+    @JsonProperty(value = "nic_id")
+
     private String nicId;
 
     public Entitie withServerId(String serverId) {
@@ -34,13 +23,9 @@ public class Entitie  {
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器相关操作显示server_id
-     * @return serverId
-     */
+    /** 裸金属服务器相关操作显示server_id
+     * 
+     * @return serverId */
     public String getServerId() {
         return serverId;
     }
@@ -49,20 +34,14 @@ public class Entitie  {
         this.serverId = serverId;
     }
 
-    
-
     public Entitie withNicId(String nicId) {
         this.nicId = nicId;
         return this;
     }
 
-    
-
-
-    /**
-     * 网卡相关操作显示nic_id
-     * @return nicId
-     */
+    /** 网卡相关操作显示nic_id
+     * 
+     * @return nicId */
     public String getNicId() {
         return nicId;
     }
@@ -70,8 +49,6 @@ public class Entitie  {
     public void setNicId(String nicId) {
         this.nicId = nicId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,14 @@ public class Entitie  {
             return false;
         }
         Entitie entitie = (Entitie) o;
-        return Objects.equals(this.serverId, entitie.serverId) &&
-            Objects.equals(this.nicId, entitie.nicId);
+        return Objects.equals(this.serverId, entitie.serverId) && Objects.equals(this.nicId, entitie.nicId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(serverId, nicId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +76,13 @@ public class Entitie  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

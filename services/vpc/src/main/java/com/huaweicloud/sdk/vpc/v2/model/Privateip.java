@@ -1,43 +1,28 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 
  */
-public class Privateip  {
+public class Privateip {
 
-    /**
-     * 私有IP的状态  - ACTIVE：活动的  - DOWN：不可用
-     */
+    /** 私有IP的状态 - ACTIVE：活动的 - DOWN：不可用 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum ACTIVE for value: "ACTIVE"
-         */
+        /** Enum ACTIVE for value: "ACTIVE" */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
-        
-        /**
-         * Enum DOWN for value: "DOWN"
-         */
+
+        /** Enum DOWN for value: "DOWN" */
         public static final StatusEnum DOWN = new StatusEnum("DOWN");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -66,7 +51,7 @@ public class Privateip  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -77,7 +62,7 @@ public class Privateip  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -101,50 +86,40 @@ public class Privateip  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
+
     private String subnetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
+
     private String tenantId;
-    /**
-     * 私有IP的使用者，空表示未使用 取值范围：network:dhcp，network:router_interface_distributed，compute:xxx(xxx对应具体的az名称，例如compute:aa-bb-cc表示是被aa-bb-cc上的虚拟机使用) 约束：此处的取值范围只是本服务支持的类型，其他类型未做标注
-     */
+
+    /** 私有IP的使用者，空表示未使用
+     * 取值范围：network:dhcp，network:router_interface_distributed，compute:xxx(xxx对应具体的az名称，例如compute:aa-bb-cc表示是被aa-bb-cc上的虚拟机使用)
+     * 约束：此处的取值范围只是本服务支持的类型，其他类型未做标注 */
     public static final class DeviceOwnerEnum {
 
-        
-        /**
-         * Enum NETWORK_DHCP for value: "network:dhcp"
-         */
+        /** Enum NETWORK_DHCP for value: "network:dhcp" */
         public static final DeviceOwnerEnum NETWORK_DHCP = new DeviceOwnerEnum("network:dhcp");
-        
-        /**
-         * Enum NETWORK_ROUTER_INTERFACE_DISTRIBUTED for value: "network:router_interface_distributed"
-         */
-        public static final DeviceOwnerEnum NETWORK_ROUTER_INTERFACE_DISTRIBUTED = new DeviceOwnerEnum("network:router_interface_distributed");
-        
-        /**
-         * Enum COMPUTE_XXX for value: "compute:xxx"
-         */
+
+        /** Enum NETWORK_ROUTER_INTERFACE_DISTRIBUTED for value: "network:router_interface_distributed" */
+        public static final DeviceOwnerEnum NETWORK_ROUTER_INTERFACE_DISTRIBUTED =
+            new DeviceOwnerEnum("network:router_interface_distributed");
+
+        /** Enum COMPUTE_XXX for value: "compute:xxx" */
         public static final DeviceOwnerEnum COMPUTE_XXX = new DeviceOwnerEnum("compute:xxx");
-        
 
         private static final Map<String, DeviceOwnerEnum> STATIC_FIELDS = createStaticFields();
 
@@ -174,7 +149,7 @@ public class Privateip  {
 
         @JsonCreator
         public static DeviceOwnerEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DeviceOwnerEnum result = STATIC_FIELDS.get(value);
@@ -185,7 +160,7 @@ public class Privateip  {
         }
 
         public static DeviceOwnerEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DeviceOwnerEnum result = STATIC_FIELDS.get(value);
@@ -209,16 +184,14 @@ public class Privateip  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_owner")
-    
+    @JsonProperty(value = "device_owner")
+
     private DeviceOwnerEnum deviceOwner;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_address")
-    
+    @JsonProperty(value = "ip_address")
+
     private String ipAddress;
 
     public Privateip withStatus(StatusEnum status) {
@@ -226,13 +199,9 @@ public class Privateip  {
         return this;
     }
 
-    
-
-
-    /**
-     * 私有IP的状态  - ACTIVE：活动的  - DOWN：不可用
-     * @return status
-     */
+    /** 私有IP的状态 - ACTIVE：活动的 - DOWN：不可用
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -241,20 +210,14 @@ public class Privateip  {
         this.status = status;
     }
 
-    
-
     public Privateip withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 私有IP ID
-     * @return id
-     */
+    /** 私有IP ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -263,20 +226,14 @@ public class Privateip  {
         this.id = id;
     }
 
-    
-
     public Privateip withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
 
-    
-
-
-    /**
-     * 分配IP的子网标识
-     * @return subnetId
-     */
+    /** 分配IP的子网标识
+     * 
+     * @return subnetId */
     public String getSubnetId() {
         return subnetId;
     }
@@ -285,20 +242,14 @@ public class Privateip  {
         this.subnetId = subnetId;
     }
 
-    
-
     public Privateip withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目ID
-     * @return tenantId
-     */
+    /** 项目ID
+     * 
+     * @return tenantId */
     public String getTenantId() {
         return tenantId;
     }
@@ -307,20 +258,16 @@ public class Privateip  {
         this.tenantId = tenantId;
     }
 
-    
-
     public Privateip withDeviceOwner(DeviceOwnerEnum deviceOwner) {
         this.deviceOwner = deviceOwner;
         return this;
     }
 
-    
-
-
-    /**
-     * 私有IP的使用者，空表示未使用 取值范围：network:dhcp，network:router_interface_distributed，compute:xxx(xxx对应具体的az名称，例如compute:aa-bb-cc表示是被aa-bb-cc上的虚拟机使用) 约束：此处的取值范围只是本服务支持的类型，其他类型未做标注
-     * @return deviceOwner
-     */
+    /** 私有IP的使用者，空表示未使用
+     * 取值范围：network:dhcp，network:router_interface_distributed，compute:xxx(xxx对应具体的az名称，例如compute:aa-bb-cc表示是被aa-bb-cc上的虚拟机使用)
+     * 约束：此处的取值范围只是本服务支持的类型，其他类型未做标注
+     * 
+     * @return deviceOwner */
     public DeviceOwnerEnum getDeviceOwner() {
         return deviceOwner;
     }
@@ -329,20 +276,14 @@ public class Privateip  {
         this.deviceOwner = deviceOwner;
     }
 
-    
-
     public Privateip withIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 申请到的私有IP
-     * @return ipAddress
-     */
+    /** 申请到的私有IP
+     * 
+     * @return ipAddress */
     public String getIpAddress() {
         return ipAddress;
     }
@@ -350,8 +291,6 @@ public class Privateip  {
     public void setIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -362,17 +301,17 @@ public class Privateip  {
             return false;
         }
         Privateip privateip = (Privateip) o;
-        return Objects.equals(this.status, privateip.status) &&
-            Objects.equals(this.id, privateip.id) &&
-            Objects.equals(this.subnetId, privateip.subnetId) &&
-            Objects.equals(this.tenantId, privateip.tenantId) &&
-            Objects.equals(this.deviceOwner, privateip.deviceOwner) &&
-            Objects.equals(this.ipAddress, privateip.ipAddress);
+        return Objects.equals(this.status, privateip.status) && Objects.equals(this.id, privateip.id)
+            && Objects.equals(this.subnetId, privateip.subnetId) && Objects.equals(this.tenantId, privateip.tenantId)
+            && Objects.equals(this.deviceOwner, privateip.deviceOwner)
+            && Objects.equals(this.ipAddress, privateip.ipAddress);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(status, id, subnetId, tenantId, deviceOwner, ipAddress);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -386,16 +325,13 @@ public class Privateip  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

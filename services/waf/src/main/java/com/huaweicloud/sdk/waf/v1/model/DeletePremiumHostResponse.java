@@ -1,88 +1,67 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class DeletePremiumHostResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hostname")
-    
+    @JsonProperty(value = "hostname")
+
     private String hostname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policyid")
-    
+    @JsonProperty(value = "policyid")
+
     private String policyid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protect_status")
-    
+    @JsonProperty(value = "protect_status")
+
     private Integer protectStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_status")
-    
+    @JsonProperty(value = "access_status")
+
     private Integer accessStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flag")
-    
+    @JsonProperty(value = "flag")
+
     private Map<String, String> flag = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mode")
-    
+    @JsonProperty(value = "mode")
+
     private String mode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pool_ids")
-    
+    @JsonProperty(value = "pool_ids")
+
     private List<String> poolIds = null;
-    
+
     public DeletePremiumHostResponse withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名id
-     * @return id
-     */
+    /** 域名id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -91,20 +70,14 @@ public class DeletePremiumHostResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public DeletePremiumHostResponse withHostname(String hostname) {
         this.hostname = hostname;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名
-     * @return hostname
-     */
+    /** 域名
+     * 
+     * @return hostname */
     public String getHostname() {
         return hostname;
     }
@@ -113,20 +86,14 @@ public class DeletePremiumHostResponse extends SdkResponse {
         this.hostname = hostname;
     }
 
-    
-
     public DeletePremiumHostResponse withPolicyid(String policyid) {
         this.policyid = policyid;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略id
-     * @return policyid
-     */
+    /** 策略id
+     * 
+     * @return policyid */
     public String getPolicyid() {
         return policyid;
     }
@@ -135,20 +102,14 @@ public class DeletePremiumHostResponse extends SdkResponse {
         this.policyid = policyid;
     }
 
-    
-
     public DeletePremiumHostResponse withProtectStatus(Integer protectStatus) {
         this.protectStatus = protectStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 防护状态
-     * @return protectStatus
-     */
+    /** 防护状态
+     * 
+     * @return protectStatus */
     public Integer getProtectStatus() {
         return protectStatus;
     }
@@ -157,20 +118,14 @@ public class DeletePremiumHostResponse extends SdkResponse {
         this.protectStatus = protectStatus;
     }
 
-    
-
     public DeletePremiumHostResponse withAccessStatus(Integer accessStatus) {
         this.accessStatus = accessStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 接入状态
-     * @return accessStatus
-     */
+    /** 接入状态
+     * 
+     * @return accessStatus */
     public Integer getAccessStatus() {
         return accessStatus;
     }
@@ -179,17 +134,13 @@ public class DeletePremiumHostResponse extends SdkResponse {
         this.accessStatus = accessStatus;
     }
 
-    
-
     public DeletePremiumHostResponse withFlag(Map<String, String> flag) {
         this.flag = flag;
         return this;
     }
 
-    
-
     public DeletePremiumHostResponse putFlagItem(String key, String flagItem) {
-        if(this.flag == null) {
+        if (this.flag == null) {
             this.flag = new HashMap<>();
         }
         this.flag.put(key, flagItem);
@@ -197,16 +148,16 @@ public class DeletePremiumHostResponse extends SdkResponse {
     }
 
     public DeletePremiumHostResponse withFlag(Consumer<Map<String, String>> flagSetter) {
-        if(this.flag == null) {
+        if (this.flag == null) {
             this.flag = new HashMap<>();
         }
         flagSetter.accept(this.flag);
         return this;
     }
-    /**
-     * 特殊标识
-     * @return flag
-     */
+
+    /** 特殊标识
+     * 
+     * @return flag */
     public Map<String, String> getFlag() {
         return flag;
     }
@@ -215,20 +166,14 @@ public class DeletePremiumHostResponse extends SdkResponse {
         this.flag = flag;
     }
 
-    
-
     public DeletePremiumHostResponse withMode(String mode) {
         this.mode = mode;
         return this;
     }
 
-    
-
-
-    /**
-     * 特殊模式独享引擎的标识（如elb）
-     * @return mode
-     */
+    /** 特殊模式独享引擎的标识（如elb）
+     * 
+     * @return mode */
     public String getMode() {
         return mode;
     }
@@ -237,16 +182,13 @@ public class DeletePremiumHostResponse extends SdkResponse {
         this.mode = mode;
     }
 
-    
-
     public DeletePremiumHostResponse withPoolIds(List<String> poolIds) {
         this.poolIds = poolIds;
         return this;
     }
 
-    
     public DeletePremiumHostResponse addPoolIdsItem(String poolIdsItem) {
-        if(this.poolIds == null) {
+        if (this.poolIds == null) {
             this.poolIds = new ArrayList<>();
         }
         this.poolIds.add(poolIdsItem);
@@ -254,17 +196,16 @@ public class DeletePremiumHostResponse extends SdkResponse {
     }
 
     public DeletePremiumHostResponse withPoolIds(Consumer<List<String>> poolIdsSetter) {
-        if(this.poolIds == null) {
+        if (this.poolIds == null) {
             this.poolIds = new ArrayList<>();
         }
         poolIdsSetter.accept(this.poolIds);
         return this;
     }
 
-    /**
-     * 特殊模式域名所属独享引擎组
-     * @return poolIds
-     */
+    /** 特殊模式域名所属独享引擎组
+     * 
+     * @return poolIds */
     public List<String> getPoolIds() {
         return poolIds;
     }
@@ -272,8 +213,6 @@ public class DeletePremiumHostResponse extends SdkResponse {
     public void setPoolIds(List<String> poolIds) {
         this.poolIds = poolIds;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -284,19 +223,21 @@ public class DeletePremiumHostResponse extends SdkResponse {
             return false;
         }
         DeletePremiumHostResponse deletePremiumHostResponse = (DeletePremiumHostResponse) o;
-        return Objects.equals(this.id, deletePremiumHostResponse.id) &&
-            Objects.equals(this.hostname, deletePremiumHostResponse.hostname) &&
-            Objects.equals(this.policyid, deletePremiumHostResponse.policyid) &&
-            Objects.equals(this.protectStatus, deletePremiumHostResponse.protectStatus) &&
-            Objects.equals(this.accessStatus, deletePremiumHostResponse.accessStatus) &&
-            Objects.equals(this.flag, deletePremiumHostResponse.flag) &&
-            Objects.equals(this.mode, deletePremiumHostResponse.mode) &&
-            Objects.equals(this.poolIds, deletePremiumHostResponse.poolIds);
+        return Objects.equals(this.id, deletePremiumHostResponse.id)
+            && Objects.equals(this.hostname, deletePremiumHostResponse.hostname)
+            && Objects.equals(this.policyid, deletePremiumHostResponse.policyid)
+            && Objects.equals(this.protectStatus, deletePremiumHostResponse.protectStatus)
+            && Objects.equals(this.accessStatus, deletePremiumHostResponse.accessStatus)
+            && Objects.equals(this.flag, deletePremiumHostResponse.flag)
+            && Objects.equals(this.mode, deletePremiumHostResponse.mode)
+            && Objects.equals(this.poolIds, deletePremiumHostResponse.poolIds);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, hostname, policyid, protectStatus, accessStatus, flag, mode, poolIds);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -312,16 +253,13 @@ public class DeletePremiumHostResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * RevokeGrantRequestBody
- */
-public class RevokeGrantRequestBody  {
-
-
+/** RevokeGrantRequestBody */
+public class RevokeGrantRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_id")
-    
+    @JsonProperty(value = "key_id")
+
     private String keyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="grant_id")
-    
+    @JsonProperty(value = "grant_id")
+
     private String grantId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sequence")
-    
+    @JsonProperty(value = "sequence")
+
     private String sequence;
 
     public RevokeGrantRequestBody withKeyId(String keyId) {
@@ -40,13 +28,10 @@ public class RevokeGrantRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥ID，36字节，满足正则匹配“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”。 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
-     * @return keyId
-     */
+    /** 密钥ID，36字节，满足正则匹配“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”。
+     * 例如：0d0466b0-e727-4d9c-b35d-f84bb474a37f。
+     * 
+     * @return keyId */
     public String getKeyId() {
         return keyId;
     }
@@ -55,20 +40,14 @@ public class RevokeGrantRequestBody  {
         this.keyId = keyId;
     }
 
-    
-
     public RevokeGrantRequestBody withGrantId(String grantId) {
         this.grantId = grantId;
         return this;
     }
 
-    
-
-
-    /**
-     * 授权ID，64字节，满足正则匹配“^[A-Fa-f0-9]{64}$”。 例如：7c9a3286af4fcca5f0a385ad13e1d21a50e27b6dbcab50f37f30f93b8939827d
-     * @return grantId
-     */
+    /** 授权ID，64字节，满足正则匹配“^[A-Fa-f0-9]{64}$”。 例如：7c9a3286af4fcca5f0a385ad13e1d21a50e27b6dbcab50f37f30f93b8939827d
+     * 
+     * @return grantId */
     public String getGrantId() {
         return grantId;
     }
@@ -77,20 +56,14 @@ public class RevokeGrantRequestBody  {
         this.grantId = grantId;
     }
 
-    
-
     public RevokeGrantRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求消息序列号，36字节序列号。例如：919c82d4-8046-4722-9094-35c3c6524cff
-     * @return sequence
-     */
+    /** 请求消息序列号，36字节序列号。例如：919c82d4-8046-4722-9094-35c3c6524cff
+     * 
+     * @return sequence */
     public String getSequence() {
         return sequence;
     }
@@ -98,8 +71,6 @@ public class RevokeGrantRequestBody  {
     public void setSequence(String sequence) {
         this.sequence = sequence;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +81,16 @@ public class RevokeGrantRequestBody  {
             return false;
         }
         RevokeGrantRequestBody revokeGrantRequestBody = (RevokeGrantRequestBody) o;
-        return Objects.equals(this.keyId, revokeGrantRequestBody.keyId) &&
-            Objects.equals(this.grantId, revokeGrantRequestBody.grantId) &&
-            Objects.equals(this.sequence, revokeGrantRequestBody.sequence);
+        return Objects.equals(this.keyId, revokeGrantRequestBody.keyId)
+            && Objects.equals(this.grantId, revokeGrantRequestBody.grantId)
+            && Objects.equals(this.sequence, revokeGrantRequestBody.sequence);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(keyId, grantId, sequence);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +101,13 @@ public class RevokeGrantRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

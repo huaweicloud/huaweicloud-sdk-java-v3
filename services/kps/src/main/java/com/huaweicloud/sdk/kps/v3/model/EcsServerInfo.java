@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.kps.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kps.v3.model.Auth;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 需要绑定密钥对的虚拟机信息。
- */
-public class EcsServerInfo  {
-
-
+/** 需要绑定密钥对的虚拟机信息。 */
+public class EcsServerInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth")
-    
+    @JsonProperty(value = "auth")
+
     private Auth auth;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disable_password")
-    
+    @JsonProperty(value = "disable_password")
+
     private Boolean disablePassword;
 
     public EcsServerInfo withId(String id) {
@@ -41,13 +29,9 @@ public class EcsServerInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 需要绑定(替换或重置)SSH密钥对的虚拟机id
-     * @return id
-     */
+    /** 需要绑定(替换或重置)SSH密钥对的虚拟机id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -56,27 +40,23 @@ public class EcsServerInfo  {
         this.id = id;
     }
 
-    
-
     public EcsServerInfo withAuth(Auth auth) {
         this.auth = auth;
         return this;
     }
 
     public EcsServerInfo withAuth(Consumer<Auth> authSetter) {
-        if(this.auth == null ){
+        if (this.auth == null) {
             this.auth = new Auth();
             authSetter.accept(this.auth);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get auth
-     * @return auth
-     */
+    /** Get auth
+     * 
+     * @return auth */
     public Auth getAuth() {
         return auth;
     }
@@ -85,20 +65,14 @@ public class EcsServerInfo  {
         this.auth = auth;
     }
 
-    
-
     public EcsServerInfo withDisablePassword(Boolean disablePassword) {
         this.disablePassword = disablePassword;
         return this;
     }
 
-    
-
-
-    /**
-     * - true：禁用虚拟机的ssh登陆。 - false：不禁用虚拟机的ssh登陆。
-     * @return disablePassword
-     */
+    /** - true：禁用虚拟机的ssh登陆。 - false：不禁用虚拟机的ssh登陆。
+     * 
+     * @return disablePassword */
     public Boolean getDisablePassword() {
         return disablePassword;
     }
@@ -106,8 +80,6 @@ public class EcsServerInfo  {
     public void setDisablePassword(Boolean disablePassword) {
         this.disablePassword = disablePassword;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,15 @@ public class EcsServerInfo  {
             return false;
         }
         EcsServerInfo ecsServerInfo = (EcsServerInfo) o;
-        return Objects.equals(this.id, ecsServerInfo.id) &&
-            Objects.equals(this.auth, ecsServerInfo.auth) &&
-            Objects.equals(this.disablePassword, ecsServerInfo.disablePassword);
+        return Objects.equals(this.id, ecsServerInfo.id) && Objects.equals(this.auth, ecsServerInfo.auth)
+            && Objects.equals(this.disablePassword, ecsServerInfo.disablePassword);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, auth, disablePassword);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +109,13 @@ public class EcsServerInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

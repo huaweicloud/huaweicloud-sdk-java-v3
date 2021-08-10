@@ -1,66 +1,48 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 创建负载均衡器的请求体
- */
-public class CreateLoadbalancerReq  {
-
-
+/** 创建负载均衡器的请求体 */
+public class CreateLoadbalancerReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
+
     private String tenantId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vip_subnet_id")
-    
+    @JsonProperty(value = "vip_subnet_id")
+
     private String vipSubnetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vip_address")
-    
+    @JsonProperty(value = "vip_address")
+
     private String vipAddress;
-    /**
-     * 负载均衡器的供应者名称。只支持vlb
-     */
+
+    /** 负载均衡器的供应者名称。只支持vlb */
     public static final class ProviderEnum {
 
-        
-        /**
-         * Enum VLB for value: "vlb"
-         */
+        /** Enum VLB for value: "vlb" */
         public static final ProviderEnum VLB = new ProviderEnum("vlb");
-        
 
         private static final Map<String, ProviderEnum> STATIC_FIELDS = createStaticFields();
 
@@ -88,7 +70,7 @@ public class CreateLoadbalancerReq  {
 
         @JsonCreator
         public static ProviderEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProviderEnum result = STATIC_FIELDS.get(value);
@@ -99,7 +81,7 @@ public class CreateLoadbalancerReq  {
         }
 
         public static ProviderEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProviderEnum result = STATIC_FIELDS.get(value);
@@ -123,22 +105,19 @@ public class CreateLoadbalancerReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provider")
-    
+    @JsonProperty(value = "provider")
+
     private ProviderEnum provider;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
-    
+    @JsonProperty(value = "admin_state_up")
+
     private Boolean adminStateUp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public CreateLoadbalancerReq withTenantId(String tenantId) {
@@ -146,13 +125,9 @@ public class CreateLoadbalancerReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器所在的项目ID。
-     * @return tenantId
-     */
+    /** 负载均衡器所在的项目ID。
+     * 
+     * @return tenantId */
     public String getTenantId() {
         return tenantId;
     }
@@ -161,20 +136,14 @@ public class CreateLoadbalancerReq  {
         this.tenantId = tenantId;
     }
 
-    
-
     public CreateLoadbalancerReq withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器名称。
-     * @return name
-     */
+    /** 负载均衡器名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -183,20 +152,14 @@ public class CreateLoadbalancerReq  {
         this.name = name;
     }
 
-    
-
     public CreateLoadbalancerReq withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器的描述信息
-     * @return description
-     */
+    /** 负载均衡器的描述信息
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -205,20 +168,14 @@ public class CreateLoadbalancerReq  {
         this.description = description;
     }
 
-    
-
     public CreateLoadbalancerReq withVipSubnetId(String vipSubnetId) {
         this.vipSubnetId = vipSubnetId;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器所在的子网ID
-     * @return vipSubnetId
-     */
+    /** 负载均衡器所在的子网ID
+     * 
+     * @return vipSubnetId */
     public String getVipSubnetId() {
         return vipSubnetId;
     }
@@ -227,20 +184,14 @@ public class CreateLoadbalancerReq  {
         this.vipSubnetId = vipSubnetId;
     }
 
-    
-
     public CreateLoadbalancerReq withVipAddress(String vipAddress) {
         this.vipAddress = vipAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器的虚拟IP。
-     * @return vipAddress
-     */
+    /** 负载均衡器的虚拟IP。
+     * 
+     * @return vipAddress */
     public String getVipAddress() {
         return vipAddress;
     }
@@ -249,20 +200,14 @@ public class CreateLoadbalancerReq  {
         this.vipAddress = vipAddress;
     }
 
-    
-
     public CreateLoadbalancerReq withProvider(ProviderEnum provider) {
         this.provider = provider;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器的供应者名称。只支持vlb
-     * @return provider
-     */
+    /** 负载均衡器的供应者名称。只支持vlb
+     * 
+     * @return provider */
     public ProviderEnum getProvider() {
         return provider;
     }
@@ -271,20 +216,14 @@ public class CreateLoadbalancerReq  {
         this.provider = provider;
     }
 
-    
-
     public CreateLoadbalancerReq withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器的管理状态。只支持设定为true，该字段的值无实际意义。
-     * @return adminStateUp
-     */
+    /** 负载均衡器的管理状态。只支持设定为true，该字段的值无实际意义。
+     * 
+     * @return adminStateUp */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -293,20 +232,15 @@ public class CreateLoadbalancerReq  {
         this.adminStateUp = adminStateUp;
     }
 
-    
-
     public CreateLoadbalancerReq withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID。创建负载均衡器时，给负载均衡器绑定企业项目ID。取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。 关于企业项目ID的获取及企业项目特性的详细信息，请参见《企业管理用户指南》。
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID。创建负载均衡器时，给负载均衡器绑定企业项目ID。取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。
+     * 关于企业项目ID的获取及企业项目特性的详细信息，请参见《企业管理用户指南》。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -314,8 +248,6 @@ public class CreateLoadbalancerReq  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -326,19 +258,22 @@ public class CreateLoadbalancerReq  {
             return false;
         }
         CreateLoadbalancerReq createLoadbalancerReq = (CreateLoadbalancerReq) o;
-        return Objects.equals(this.tenantId, createLoadbalancerReq.tenantId) &&
-            Objects.equals(this.name, createLoadbalancerReq.name) &&
-            Objects.equals(this.description, createLoadbalancerReq.description) &&
-            Objects.equals(this.vipSubnetId, createLoadbalancerReq.vipSubnetId) &&
-            Objects.equals(this.vipAddress, createLoadbalancerReq.vipAddress) &&
-            Objects.equals(this.provider, createLoadbalancerReq.provider) &&
-            Objects.equals(this.adminStateUp, createLoadbalancerReq.adminStateUp) &&
-            Objects.equals(this.enterpriseProjectId, createLoadbalancerReq.enterpriseProjectId);
+        return Objects.equals(this.tenantId, createLoadbalancerReq.tenantId)
+            && Objects.equals(this.name, createLoadbalancerReq.name)
+            && Objects.equals(this.description, createLoadbalancerReq.description)
+            && Objects.equals(this.vipSubnetId, createLoadbalancerReq.vipSubnetId)
+            && Objects.equals(this.vipAddress, createLoadbalancerReq.vipAddress)
+            && Objects.equals(this.provider, createLoadbalancerReq.provider)
+            && Objects.equals(this.adminStateUp, createLoadbalancerReq.adminStateUp)
+            && Objects.equals(this.enterpriseProjectId, createLoadbalancerReq.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(tenantId, name, description, vipSubnetId, vipAddress, provider, adminStateUp, enterpriseProjectId);
+        return Objects
+            .hash(tenantId, name, description, vipSubnetId, vipAddress, provider, adminStateUp, enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -354,16 +289,13 @@ public class CreateLoadbalancerReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

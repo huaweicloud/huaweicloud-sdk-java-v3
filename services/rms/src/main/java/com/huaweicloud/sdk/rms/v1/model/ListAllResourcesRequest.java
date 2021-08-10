@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListAllResourcesRequest  {
-
-
+/** Request Object */
+public class ListAllResourcesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_id")
-    
+    @JsonProperty(value = "region_id")
+
     private String regionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ep_id")
-    
+    @JsonProperty(value = "ep_id")
+
     private String epId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
     public ListAllResourcesRequest withRegionId(String regionId) {
@@ -52,13 +38,9 @@ public class ListAllResourcesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 区域ID
-     * @return regionId
-     */
+    /** 区域ID
+     * 
+     * @return regionId */
     public String getRegionId() {
         return regionId;
     }
@@ -67,20 +49,14 @@ public class ListAllResourcesRequest  {
         this.regionId = regionId;
     }
 
-    
-
     public ListAllResourcesRequest withEpId(String epId) {
         this.epId = epId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID
-     * @return epId
-     */
+    /** 企业项目ID
+     * 
+     * @return epId */
     public String getEpId() {
         return epId;
     }
@@ -89,20 +65,14 @@ public class ListAllResourcesRequest  {
         this.epId = epId;
     }
 
-    
-
     public ListAllResourcesRequest withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源类型（provider.type）
-     * @return type
-     */
+    /** 资源类型（provider.type）
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -111,22 +81,14 @@ public class ListAllResourcesRequest  {
         this.type = type;
     }
 
-    
-
     public ListAllResourcesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 最大的返回数量
-     * minimum: 1
-     * maximum: 200
-     * @return limit
-     */
+    /** 最大的返回数量 minimum: 1 maximum: 200
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -135,20 +97,14 @@ public class ListAllResourcesRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListAllResourcesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页参数，通过上一个请求中返回的marker信息作为输入，获取当前页
-     * @return marker
-     */
+    /** 分页参数，通过上一个请求中返回的marker信息作为输入，获取当前页
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -156,8 +112,6 @@ public class ListAllResourcesRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -168,16 +122,18 @@ public class ListAllResourcesRequest  {
             return false;
         }
         ListAllResourcesRequest listAllResourcesRequest = (ListAllResourcesRequest) o;
-        return Objects.equals(this.regionId, listAllResourcesRequest.regionId) &&
-            Objects.equals(this.epId, listAllResourcesRequest.epId) &&
-            Objects.equals(this.type, listAllResourcesRequest.type) &&
-            Objects.equals(this.limit, listAllResourcesRequest.limit) &&
-            Objects.equals(this.marker, listAllResourcesRequest.marker);
+        return Objects.equals(this.regionId, listAllResourcesRequest.regionId)
+            && Objects.equals(this.epId, listAllResourcesRequest.epId)
+            && Objects.equals(this.type, listAllResourcesRequest.type)
+            && Objects.equals(this.limit, listAllResourcesRequest.limit)
+            && Objects.equals(this.marker, listAllResourcesRequest.marker);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(regionId, epId, type, limit, marker);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -190,16 +146,13 @@ public class ListAllResourcesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

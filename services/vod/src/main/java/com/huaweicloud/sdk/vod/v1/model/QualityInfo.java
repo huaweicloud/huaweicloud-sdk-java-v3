@@ -1,80 +1,54 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vod.v1.model.AudioTemplateInfo;
-import com.huaweicloud.sdk.vod.v1.model.VideoTemplateInfo;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class QualityInfo  {
-
-
+public class QualityInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="video")
-    
+    @JsonProperty(value = "video")
+
     private VideoTemplateInfo video;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audio")
-    
+    @JsonProperty(value = "audio")
+
     private AudioTemplateInfo audio;
-    /**
-     * 格式。
-     */
+
+    /** 格式。 */
     public static final class FormatEnum {
 
-        
-        /**
-         * Enum MP4 for value: "MP4"
-         */
+        /** Enum MP4 for value: "MP4" */
         public static final FormatEnum MP4 = new FormatEnum("MP4");
-        
-        /**
-         * Enum HLS for value: "HLS"
-         */
+
+        /** Enum HLS for value: "HLS" */
         public static final FormatEnum HLS = new FormatEnum("HLS");
-        
-        /**
-         * Enum DASH for value: "DASH"
-         */
+
+        /** Enum DASH for value: "DASH" */
         public static final FormatEnum DASH = new FormatEnum("DASH");
-        
-        /**
-         * Enum DASH_HLS for value: "DASH_HLS"
-         */
+
+        /** Enum DASH_HLS for value: "DASH_HLS" */
         public static final FormatEnum DASH_HLS = new FormatEnum("DASH_HLS");
-        
-        /**
-         * Enum MP3 for value: "MP3"
-         */
+
+        /** Enum MP3 for value: "MP3" */
         public static final FormatEnum MP3 = new FormatEnum("MP3");
-        
-        /**
-         * Enum ADTS for value: "ADTS"
-         */
+
+        /** Enum ADTS for value: "ADTS" */
         public static final FormatEnum ADTS = new FormatEnum("ADTS");
-        
-        /**
-         * Enum UNKNOW for value: "UNKNOW"
-         */
+
+        /** Enum UNKNOW for value: "UNKNOW" */
         public static final FormatEnum UNKNOW = new FormatEnum("UNKNOW");
-        
 
         private static final Map<String, FormatEnum> STATIC_FIELDS = createStaticFields();
 
@@ -108,7 +82,7 @@ public class QualityInfo  {
 
         @JsonCreator
         public static FormatEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             FormatEnum result = STATIC_FIELDS.get(value);
@@ -119,7 +93,7 @@ public class QualityInfo  {
         }
 
         public static FormatEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             FormatEnum result = STATIC_FIELDS.get(value);
@@ -143,10 +117,9 @@ public class QualityInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="format")
-    
+    @JsonProperty(value = "format")
+
     private FormatEnum format;
 
     public QualityInfo withVideo(VideoTemplateInfo video) {
@@ -155,19 +128,17 @@ public class QualityInfo  {
     }
 
     public QualityInfo withVideo(Consumer<VideoTemplateInfo> videoSetter) {
-        if(this.video == null ){
+        if (this.video == null) {
             this.video = new VideoTemplateInfo();
             videoSetter.accept(this.video);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get video
-     * @return video
-     */
+    /** Get video
+     * 
+     * @return video */
     public VideoTemplateInfo getVideo() {
         return video;
     }
@@ -176,27 +147,23 @@ public class QualityInfo  {
         this.video = video;
     }
 
-    
-
     public QualityInfo withAudio(AudioTemplateInfo audio) {
         this.audio = audio;
         return this;
     }
 
     public QualityInfo withAudio(Consumer<AudioTemplateInfo> audioSetter) {
-        if(this.audio == null ){
+        if (this.audio == null) {
             this.audio = new AudioTemplateInfo();
             audioSetter.accept(this.audio);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get audio
-     * @return audio
-     */
+    /** Get audio
+     * 
+     * @return audio */
     public AudioTemplateInfo getAudio() {
         return audio;
     }
@@ -205,20 +172,14 @@ public class QualityInfo  {
         this.audio = audio;
     }
 
-    
-
     public QualityInfo withFormat(FormatEnum format) {
         this.format = format;
         return this;
     }
 
-    
-
-
-    /**
-     * 格式。
-     * @return format
-     */
+    /** 格式。
+     * 
+     * @return format */
     public FormatEnum getFormat() {
         return format;
     }
@@ -226,8 +187,6 @@ public class QualityInfo  {
     public void setFormat(FormatEnum format) {
         this.format = format;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -238,14 +197,15 @@ public class QualityInfo  {
             return false;
         }
         QualityInfo qualityInfo = (QualityInfo) o;
-        return Objects.equals(this.video, qualityInfo.video) &&
-            Objects.equals(this.audio, qualityInfo.audio) &&
-            Objects.equals(this.format, qualityInfo.format);
+        return Objects.equals(this.video, qualityInfo.video) && Objects.equals(this.audio, qualityInfo.audio)
+            && Objects.equals(this.format, qualityInfo.format);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(video, audio, format);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -256,16 +216,13 @@ public class QualityInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

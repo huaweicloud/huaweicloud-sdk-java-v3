@@ -1,62 +1,44 @@
 package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesNodeResult;
-import com.huaweicloud.sdk.gaussdbfornosql.v3.model.Volume;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 实例组信息。
- */
-public class ListInstancesGroupResult  {
-
-
+/** 实例组信息。 */
+public class ListInstancesGroupResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume")
-    
+    @JsonProperty(value = "volume")
+
     private Volume volume;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodes")
-    
+    @JsonProperty(value = "nodes")
+
     private List<ListInstancesNodeResult> nodes = null;
-    
+
     public ListInstancesGroupResult withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 组ID。
-     * @return id
-     */
+    /** 组ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -65,20 +47,14 @@ public class ListInstancesGroupResult  {
         this.id = id;
     }
 
-    
-
     public ListInstancesGroupResult withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 组状态。
-     * @return status
-     */
+    /** 组状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -87,27 +63,23 @@ public class ListInstancesGroupResult  {
         this.status = status;
     }
 
-    
-
     public ListInstancesGroupResult withVolume(Volume volume) {
         this.volume = volume;
         return this;
     }
 
     public ListInstancesGroupResult withVolume(Consumer<Volume> volumeSetter) {
-        if(this.volume == null ){
+        if (this.volume == null) {
             this.volume = new Volume();
             volumeSetter.accept(this.volume);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get volume
-     * @return volume
-     */
+    /** Get volume
+     * 
+     * @return volume */
     public Volume getVolume() {
         return volume;
     }
@@ -116,16 +88,13 @@ public class ListInstancesGroupResult  {
         this.volume = volume;
     }
 
-    
-
     public ListInstancesGroupResult withNodes(List<ListInstancesNodeResult> nodes) {
         this.nodes = nodes;
         return this;
     }
 
-    
     public ListInstancesGroupResult addNodesItem(ListInstancesNodeResult nodesItem) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         this.nodes.add(nodesItem);
@@ -133,17 +102,16 @@ public class ListInstancesGroupResult  {
     }
 
     public ListInstancesGroupResult withNodes(Consumer<List<ListInstancesNodeResult>> nodesSetter) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         nodesSetter.accept(this.nodes);
         return this;
     }
 
-    /**
-     * 节点信息。
-     * @return nodes
-     */
+    /** 节点信息。
+     * 
+     * @return nodes */
     public List<ListInstancesNodeResult> getNodes() {
         return nodes;
     }
@@ -151,8 +119,6 @@ public class ListInstancesGroupResult  {
     public void setNodes(List<ListInstancesNodeResult> nodes) {
         this.nodes = nodes;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -163,15 +129,17 @@ public class ListInstancesGroupResult  {
             return false;
         }
         ListInstancesGroupResult listInstancesGroupResult = (ListInstancesGroupResult) o;
-        return Objects.equals(this.id, listInstancesGroupResult.id) &&
-            Objects.equals(this.status, listInstancesGroupResult.status) &&
-            Objects.equals(this.volume, listInstancesGroupResult.volume) &&
-            Objects.equals(this.nodes, listInstancesGroupResult.nodes);
+        return Objects.equals(this.id, listInstancesGroupResult.id)
+            && Objects.equals(this.status, listInstancesGroupResult.status)
+            && Objects.equals(this.volume, listInstancesGroupResult.volume)
+            && Objects.equals(this.nodes, listInstancesGroupResult.nodes);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, status, volume, nodes);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -183,16 +151,13 @@ public class ListInstancesGroupResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,42 +1,27 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dds.v3.model.AddShardingNodeVolumeOption;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * EnlargeInstanceRequestBody
- */
-public class EnlargeInstanceRequestBody  {
+/** EnlargeInstanceRequestBody */
+public class EnlargeInstanceRequestBody {
 
-    /**
-     * 待扩容的对象类型。 - 扩容mongos节点时，取值为“mongos”。 - 扩容shard组时，取值为“shard”。
-     */
+    /** 待扩容的对象类型。 - 扩容mongos节点时，取值为“mongos”。 - 扩容shard组时，取值为“shard”。 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum MONGOS for value: "mongos"
-         */
+        /** Enum MONGOS for value: "mongos" */
         public static final TypeEnum MONGOS = new TypeEnum("mongos");
-        
-        /**
-         * Enum SHARD for value: "shard"
-         */
+
+        /** Enum SHARD for value: "shard" */
         public static final TypeEnum SHARD = new TypeEnum("shard");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -65,7 +50,7 @@ public class EnlargeInstanceRequestBody  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -76,7 +61,7 @@ public class EnlargeInstanceRequestBody  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -100,28 +85,24 @@ public class EnlargeInstanceRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec_code")
-    
+    @JsonProperty(value = "spec_code")
+
     private String specCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="num")
-    
+    @JsonProperty(value = "num")
+
     private String num;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume")
-    
+    @JsonProperty(value = "volume")
+
     private AddShardingNodeVolumeOption volume;
 
     public EnlargeInstanceRequestBody withType(TypeEnum type) {
@@ -129,13 +110,9 @@ public class EnlargeInstanceRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 待扩容的对象类型。 - 扩容mongos节点时，取值为“mongos”。 - 扩容shard组时，取值为“shard”。
-     * @return type
-     */
+    /** 待扩容的对象类型。 - 扩容mongos节点时，取值为“mongos”。 - 扩容shard组时，取值为“shard”。
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -144,20 +121,14 @@ public class EnlargeInstanceRequestBody  {
         this.type = type;
     }
 
-    
-
     public EnlargeInstanceRequestBody withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源规格编码。
-     * @return specCode
-     */
+    /** 资源规格编码。
+     * 
+     * @return specCode */
     public String getSpecCode() {
         return specCode;
     }
@@ -166,20 +137,14 @@ public class EnlargeInstanceRequestBody  {
         this.specCode = specCode;
     }
 
-    
-
     public EnlargeInstanceRequestBody withNum(String num) {
         this.num = num;
         return this;
     }
 
-    
-
-
-    /**
-     * 一个集群实例下，最多支持16个mongos节点和16个shard组。
-     * @return num
-     */
+    /** 一个集群实例下，最多支持16个mongos节点和16个shard组。
+     * 
+     * @return num */
     public String getNum() {
         return num;
     }
@@ -188,27 +153,23 @@ public class EnlargeInstanceRequestBody  {
         this.num = num;
     }
 
-    
-
     public EnlargeInstanceRequestBody withVolume(AddShardingNodeVolumeOption volume) {
         this.volume = volume;
         return this;
     }
 
     public EnlargeInstanceRequestBody withVolume(Consumer<AddShardingNodeVolumeOption> volumeSetter) {
-        if(this.volume == null ){
+        if (this.volume == null) {
             this.volume = new AddShardingNodeVolumeOption();
             volumeSetter.accept(this.volume);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get volume
-     * @return volume
-     */
+    /** Get volume
+     * 
+     * @return volume */
     public AddShardingNodeVolumeOption getVolume() {
         return volume;
     }
@@ -216,8 +177,6 @@ public class EnlargeInstanceRequestBody  {
     public void setVolume(AddShardingNodeVolumeOption volume) {
         this.volume = volume;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -228,15 +187,17 @@ public class EnlargeInstanceRequestBody  {
             return false;
         }
         EnlargeInstanceRequestBody enlargeInstanceRequestBody = (EnlargeInstanceRequestBody) o;
-        return Objects.equals(this.type, enlargeInstanceRequestBody.type) &&
-            Objects.equals(this.specCode, enlargeInstanceRequestBody.specCode) &&
-            Objects.equals(this.num, enlargeInstanceRequestBody.num) &&
-            Objects.equals(this.volume, enlargeInstanceRequestBody.volume);
+        return Objects.equals(this.type, enlargeInstanceRequestBody.type)
+            && Objects.equals(this.specCode, enlargeInstanceRequestBody.specCode)
+            && Objects.equals(this.num, enlargeInstanceRequestBody.num)
+            && Objects.equals(this.volume, enlargeInstanceRequestBody.volume);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, specCode, num, volume);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,16 +209,13 @@ public class EnlargeInstanceRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

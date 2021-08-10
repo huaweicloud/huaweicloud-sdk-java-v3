@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * NewCustomerV2
- */
-public class NewCustomerV2  {
-
-
+/** NewCustomerV2 */
+public class NewCustomerV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_name")
-    
+    @JsonProperty(value = "customer_name")
+
     private String customerName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mobile_phone")
-    
+    @JsonProperty(value = "mobile_phone")
+
     private String mobilePhone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="use_pri_mobile_phone")
-    
+    @JsonProperty(value = "use_pri_mobile_phone")
+
     private String usePriMobilePhone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="password")
-    
+    @JsonProperty(value = "password")
+
     private String password;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="verification_code")
-    
+    @JsonProperty(value = "verification_code")
+
     private String verificationCode;
 
     public NewCustomerV2 withCustomerName(String customerName) {
@@ -52,13 +38,9 @@ public class NewCustomerV2  {
         return this;
     }
 
-    
-
-
-    /**
-     * 企业子账号登录名。
-     * @return customerName
-     */
+    /** 企业子账号登录名。
+     * 
+     * @return customerName */
     public String getCustomerName() {
         return customerName;
     }
@@ -67,20 +49,14 @@ public class NewCustomerV2  {
         this.customerName = customerName;
     }
 
-    
-
     public NewCustomerV2 withMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业管理员的手机号码。如果use_pri_mobile_phone取值为Y，则这个参数无效，否则必选。
-     * @return mobilePhone
-     */
+    /** 企业管理员的手机号码。如果use_pri_mobile_phone取值为Y，则这个参数无效，否则必选。
+     * 
+     * @return mobilePhone */
     public String getMobilePhone() {
         return mobilePhone;
     }
@@ -89,20 +65,14 @@ public class NewCustomerV2  {
         this.mobilePhone = mobilePhone;
     }
 
-    
-
     public NewCustomerV2 withUsePriMobilePhone(String usePriMobilePhone) {
         this.usePriMobilePhone = usePriMobilePhone;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否使用企业主账号手机号码作为子账号手机号码： Y：是N：否（默认值） 当为Y时，mobile_phone输入无效。
-     * @return usePriMobilePhone
-     */
+    /** 是否使用企业主账号手机号码作为子账号手机号码： Y：是N：否（默认值） 当为Y时，mobile_phone输入无效。
+     * 
+     * @return usePriMobilePhone */
     public String getUsePriMobilePhone() {
         return usePriMobilePhone;
     }
@@ -111,20 +81,14 @@ public class NewCustomerV2  {
         this.usePriMobilePhone = usePriMobilePhone;
     }
 
-    
-
     public NewCustomerV2 withPassword(String password) {
         this.password = password;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业子账号的登录密码。
-     * @return password
-     */
+    /** 企业子账号的登录密码。
+     * 
+     * @return password */
     public String getPassword() {
         return password;
     }
@@ -133,20 +97,14 @@ public class NewCustomerV2  {
         this.password = password;
     }
 
-    
-
     public NewCustomerV2 withVerificationCode(String verificationCode) {
         this.verificationCode = verificationCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 验证码，只有输入企业子账号的手机号的情况下，才需要填写该字段。 具体请参见发送短信验证码。
-     * @return verificationCode
-     */
+    /** 验证码，只有输入企业子账号的手机号的情况下，才需要填写该字段。 具体请参见发送短信验证码。
+     * 
+     * @return verificationCode */
     public String getVerificationCode() {
         return verificationCode;
     }
@@ -154,8 +112,6 @@ public class NewCustomerV2  {
     public void setVerificationCode(String verificationCode) {
         this.verificationCode = verificationCode;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,18 @@ public class NewCustomerV2  {
             return false;
         }
         NewCustomerV2 newCustomerV2 = (NewCustomerV2) o;
-        return Objects.equals(this.customerName, newCustomerV2.customerName) &&
-            Objects.equals(this.mobilePhone, newCustomerV2.mobilePhone) &&
-            Objects.equals(this.usePriMobilePhone, newCustomerV2.usePriMobilePhone) &&
-            Objects.equals(this.password, newCustomerV2.password) &&
-            Objects.equals(this.verificationCode, newCustomerV2.verificationCode);
+        return Objects.equals(this.customerName, newCustomerV2.customerName)
+            && Objects.equals(this.mobilePhone, newCustomerV2.mobilePhone)
+            && Objects.equals(this.usePriMobilePhone, newCustomerV2.usePriMobilePhone)
+            && Objects.equals(this.password, newCustomerV2.password)
+            && Objects.equals(this.verificationCode, newCustomerV2.verificationCode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(customerName, mobilePhone, usePriMobilePhone, password, verificationCode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class NewCustomerV2  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

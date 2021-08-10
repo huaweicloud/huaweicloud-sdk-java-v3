@@ -1,38 +1,28 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class KeystoneUpdateGroupOption  {
-
-
+public class KeystoneUpdateGroupOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public KeystoneUpdateGroupOption withDescription(String description) {
@@ -40,13 +30,9 @@ public class KeystoneUpdateGroupOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 用户组描述信息，长度小于等于255字节。name与description至少填写一个。
-     * @return description
-     */
+    /** 用户组描述信息，长度小于等于255字节。name与description至少填写一个。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -55,20 +41,14 @@ public class KeystoneUpdateGroupOption  {
         this.description = description;
     }
 
-    
-
     public KeystoneUpdateGroupOption withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户组所属账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * @return domainId
-     */
+    /** 用户组所属账号ID，获取方式请参见：[获取账号ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -77,20 +57,14 @@ public class KeystoneUpdateGroupOption  {
         this.domainId = domainId;
     }
 
-    
-
     public KeystoneUpdateGroupOption withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户组名，长度小于等于64字节。name与description至少填写一个。
-     * @return name
-     */
+    /** 用户组名，长度小于等于64字节。name与description至少填写一个。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -98,8 +72,6 @@ public class KeystoneUpdateGroupOption  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +82,16 @@ public class KeystoneUpdateGroupOption  {
             return false;
         }
         KeystoneUpdateGroupOption keystoneUpdateGroupOption = (KeystoneUpdateGroupOption) o;
-        return Objects.equals(this.description, keystoneUpdateGroupOption.description) &&
-            Objects.equals(this.domainId, keystoneUpdateGroupOption.domainId) &&
-            Objects.equals(this.name, keystoneUpdateGroupOption.name);
+        return Objects.equals(this.description, keystoneUpdateGroupOption.description)
+            && Objects.equals(this.domainId, keystoneUpdateGroupOption.domainId)
+            && Objects.equals(this.name, keystoneUpdateGroupOption.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(description, domainId, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +102,13 @@ public class KeystoneUpdateGroupOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

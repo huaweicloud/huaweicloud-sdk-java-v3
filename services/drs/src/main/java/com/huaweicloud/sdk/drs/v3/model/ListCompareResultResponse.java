@@ -1,68 +1,48 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.CompareTaskListResult;
-import com.huaweicloud.sdk.drs.v3.model.ContentCompareResult;
-import com.huaweicloud.sdk.drs.v3.model.LineCompareResult;
-import com.huaweicloud.sdk.drs.v3.model.ObjectCompareResult;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ListCompareResultResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
+
     private String jobId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="object_level_compare_results")
-    
+    @JsonProperty(value = "object_level_compare_results")
+
     private ObjectCompareResult objectLevelCompareResults;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="line_compare_results")
-    
+    @JsonProperty(value = "line_compare_results")
+
     private LineCompareResult lineCompareResults;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content_compare_results")
-    
+    @JsonProperty(value = "content_compare_results")
+
     private ContentCompareResult contentCompareResults;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="compare_task_list_results")
-    
+    @JsonProperty(value = "compare_task_list_results")
+
     private CompareTaskListResult compareTaskListResults;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
+
     private String errorCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_msg")
-    
+    @JsonProperty(value = "error_msg")
+
     private String errorMsg;
 
     public ListCompareResultResponse withJobId(String jobId) {
@@ -70,13 +50,9 @@ public class ListCompareResultResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务id。
-     * @return jobId
-     */
+    /** 任务id。
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -85,27 +61,24 @@ public class ListCompareResultResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
-    
-
     public ListCompareResultResponse withObjectLevelCompareResults(ObjectCompareResult objectLevelCompareResults) {
         this.objectLevelCompareResults = objectLevelCompareResults;
         return this;
     }
 
-    public ListCompareResultResponse withObjectLevelCompareResults(Consumer<ObjectCompareResult> objectLevelCompareResultsSetter) {
-        if(this.objectLevelCompareResults == null ){
+    public ListCompareResultResponse withObjectLevelCompareResults(
+        Consumer<ObjectCompareResult> objectLevelCompareResultsSetter) {
+        if (this.objectLevelCompareResults == null) {
             this.objectLevelCompareResults = new ObjectCompareResult();
             objectLevelCompareResultsSetter.accept(this.objectLevelCompareResults);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get objectLevelCompareResults
-     * @return objectLevelCompareResults
-     */
+    /** Get objectLevelCompareResults
+     * 
+     * @return objectLevelCompareResults */
     public ObjectCompareResult getObjectLevelCompareResults() {
         return objectLevelCompareResults;
     }
@@ -114,27 +87,23 @@ public class ListCompareResultResponse extends SdkResponse {
         this.objectLevelCompareResults = objectLevelCompareResults;
     }
 
-    
-
     public ListCompareResultResponse withLineCompareResults(LineCompareResult lineCompareResults) {
         this.lineCompareResults = lineCompareResults;
         return this;
     }
 
     public ListCompareResultResponse withLineCompareResults(Consumer<LineCompareResult> lineCompareResultsSetter) {
-        if(this.lineCompareResults == null ){
+        if (this.lineCompareResults == null) {
             this.lineCompareResults = new LineCompareResult();
             lineCompareResultsSetter.accept(this.lineCompareResults);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get lineCompareResults
-     * @return lineCompareResults
-     */
+    /** Get lineCompareResults
+     * 
+     * @return lineCompareResults */
     public LineCompareResult getLineCompareResults() {
         return lineCompareResults;
     }
@@ -143,27 +112,24 @@ public class ListCompareResultResponse extends SdkResponse {
         this.lineCompareResults = lineCompareResults;
     }
 
-    
-
     public ListCompareResultResponse withContentCompareResults(ContentCompareResult contentCompareResults) {
         this.contentCompareResults = contentCompareResults;
         return this;
     }
 
-    public ListCompareResultResponse withContentCompareResults(Consumer<ContentCompareResult> contentCompareResultsSetter) {
-        if(this.contentCompareResults == null ){
+    public ListCompareResultResponse withContentCompareResults(
+        Consumer<ContentCompareResult> contentCompareResultsSetter) {
+        if (this.contentCompareResults == null) {
             this.contentCompareResults = new ContentCompareResult();
             contentCompareResultsSetter.accept(this.contentCompareResults);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get contentCompareResults
-     * @return contentCompareResults
-     */
+    /** Get contentCompareResults
+     * 
+     * @return contentCompareResults */
     public ContentCompareResult getContentCompareResults() {
         return contentCompareResults;
     }
@@ -172,27 +138,24 @@ public class ListCompareResultResponse extends SdkResponse {
         this.contentCompareResults = contentCompareResults;
     }
 
-    
-
     public ListCompareResultResponse withCompareTaskListResults(CompareTaskListResult compareTaskListResults) {
         this.compareTaskListResults = compareTaskListResults;
         return this;
     }
 
-    public ListCompareResultResponse withCompareTaskListResults(Consumer<CompareTaskListResult> compareTaskListResultsSetter) {
-        if(this.compareTaskListResults == null ){
+    public ListCompareResultResponse withCompareTaskListResults(
+        Consumer<CompareTaskListResult> compareTaskListResultsSetter) {
+        if (this.compareTaskListResults == null) {
             this.compareTaskListResults = new CompareTaskListResult();
             compareTaskListResultsSetter.accept(this.compareTaskListResults);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get compareTaskListResults
-     * @return compareTaskListResults
-     */
+    /** Get compareTaskListResults
+     * 
+     * @return compareTaskListResults */
     public CompareTaskListResult getCompareTaskListResults() {
         return compareTaskListResults;
     }
@@ -201,20 +164,14 @@ public class ListCompareResultResponse extends SdkResponse {
         this.compareTaskListResults = compareTaskListResults;
     }
 
-    
-
     public ListCompareResultResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误码。
-     * @return errorCode
-     */
+    /** 错误码。
+     * 
+     * @return errorCode */
     public String getErrorCode() {
         return errorCode;
     }
@@ -223,20 +180,14 @@ public class ListCompareResultResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
-    
-
     public ListCompareResultResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误信息。
-     * @return errorMsg
-     */
+    /** 错误信息。
+     * 
+     * @return errorMsg */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -244,8 +195,6 @@ public class ListCompareResultResponse extends SdkResponse {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -256,18 +205,26 @@ public class ListCompareResultResponse extends SdkResponse {
             return false;
         }
         ListCompareResultResponse listCompareResultResponse = (ListCompareResultResponse) o;
-        return Objects.equals(this.jobId, listCompareResultResponse.jobId) &&
-            Objects.equals(this.objectLevelCompareResults, listCompareResultResponse.objectLevelCompareResults) &&
-            Objects.equals(this.lineCompareResults, listCompareResultResponse.lineCompareResults) &&
-            Objects.equals(this.contentCompareResults, listCompareResultResponse.contentCompareResults) &&
-            Objects.equals(this.compareTaskListResults, listCompareResultResponse.compareTaskListResults) &&
-            Objects.equals(this.errorCode, listCompareResultResponse.errorCode) &&
-            Objects.equals(this.errorMsg, listCompareResultResponse.errorMsg);
+        return Objects.equals(this.jobId, listCompareResultResponse.jobId)
+            && Objects.equals(this.objectLevelCompareResults, listCompareResultResponse.objectLevelCompareResults)
+            && Objects.equals(this.lineCompareResults, listCompareResultResponse.lineCompareResults)
+            && Objects.equals(this.contentCompareResults, listCompareResultResponse.contentCompareResults)
+            && Objects.equals(this.compareTaskListResults, listCompareResultResponse.compareTaskListResults)
+            && Objects.equals(this.errorCode, listCompareResultResponse.errorCode)
+            && Objects.equals(this.errorMsg, listCompareResultResponse.errorMsg);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, objectLevelCompareResults, lineCompareResults, contentCompareResults, compareTaskListResults, errorCode, errorMsg);
+        return Objects.hash(jobId,
+            objectLevelCompareResults,
+            lineCompareResults,
+            contentCompareResults,
+            compareTaskListResults,
+            errorCode,
+            errorMsg);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -282,16 +239,13 @@ public class ListCompareResultResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

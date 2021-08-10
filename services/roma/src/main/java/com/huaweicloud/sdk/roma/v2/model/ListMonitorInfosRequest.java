@@ -1,85 +1,59 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListMonitorInfosRequest  {
-
-
+/** Request Object */
+public class ListMonitorInfosRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_name")
-    
+    @JsonProperty(value = "task_name")
+
     private String taskName;
-    /**
-     * 需要搜索任务的执行状态, 只允许如下枚举值：UNSTARTED-未启动, WAITING-等待执行,RUNNING-执行中, SUCCESS-执行成功, CANCELLED-任务取消, ERROR-执行异常</br> 非必填参数，如果为空，搜索所有任务
-     */
+
+    /** 需要搜索任务的执行状态, 只允许如下枚举值：UNSTARTED-未启动, WAITING-等待执行,RUNNING-执行中, SUCCESS-执行成功, CANCELLED-任务取消, ERROR-执行异常</br>
+     * 非必填参数，如果为空，搜索所有任务 */
     public static final class ExecuteStatusEnum {
 
-        
-        /**
-         * Enum UNSTARTED for value: "UNSTARTED"
-         */
+        /** Enum UNSTARTED for value: "UNSTARTED" */
         public static final ExecuteStatusEnum UNSTARTED = new ExecuteStatusEnum("UNSTARTED");
-        
-        /**
-         * Enum WAITING for value: "WAITING"
-         */
+
+        /** Enum WAITING for value: "WAITING" */
         public static final ExecuteStatusEnum WAITING = new ExecuteStatusEnum("WAITING");
-        
-        /**
-         * Enum RUNNING for value: "RUNNING"
-         */
+
+        /** Enum RUNNING for value: "RUNNING" */
         public static final ExecuteStatusEnum RUNNING = new ExecuteStatusEnum("RUNNING");
-        
-        /**
-         * Enum SUCCESS for value: "SUCCESS"
-         */
+
+        /** Enum SUCCESS for value: "SUCCESS" */
         public static final ExecuteStatusEnum SUCCESS = new ExecuteStatusEnum("SUCCESS");
-        
-        /**
-         * Enum CANCELLED for value: "CANCELLED"
-         */
+
+        /** Enum CANCELLED for value: "CANCELLED" */
         public static final ExecuteStatusEnum CANCELLED = new ExecuteStatusEnum("CANCELLED");
-        
-        /**
-         * Enum ERROR for value: "ERROR"
-         */
+
+        /** Enum ERROR for value: "ERROR" */
         public static final ExecuteStatusEnum ERROR = new ExecuteStatusEnum("ERROR");
-        
 
         private static final Map<String, ExecuteStatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -112,7 +86,7 @@ public class ListMonitorInfosRequest  {
 
         @JsonCreator
         public static ExecuteStatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ExecuteStatusEnum result = STATIC_FIELDS.get(value);
@@ -123,7 +97,7 @@ public class ListMonitorInfosRequest  {
         }
 
         public static ExecuteStatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ExecuteStatusEnum result = STATIC_FIELDS.get(value);
@@ -147,10 +121,9 @@ public class ListMonitorInfosRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="execute_status")
-    
+    @JsonProperty(value = "execute_status")
+
     private ExecuteStatusEnum executeStatus;
 
     public ListMonitorInfosRequest withInstanceId(String instanceId) {
@@ -158,13 +131,9 @@ public class ListMonitorInfosRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -173,22 +142,14 @@ public class ListMonitorInfosRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListMonitorInfosRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于1
-     * minimum: 1
-     * maximum: 999999
-     * @return offset
-     */
+    /** 偏移量，表示从此偏移量开始查询， offset大于等于1 minimum: 1 maximum: 999999
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -197,22 +158,14 @@ public class ListMonitorInfosRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListMonitorInfosRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示条目数量，最大数量999，超过999后只返回999
-     * minimum: 0
-     * maximum: 999
-     * @return limit
-     */
+    /** 每页显示条目数量，最大数量999，超过999后只返回999 minimum: 0 maximum: 999
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -221,20 +174,14 @@ public class ListMonitorInfosRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListMonitorInfosRequest withTaskName(String taskName) {
         this.taskName = taskName;
         return this;
     }
 
-    
-
-
-    /**
-     * 需要搜索的任务名称，支持模糊搜索，大小写敏感，非必填参数，如果为空，搜索所有任务
-     * @return taskName
-     */
+    /** 需要搜索的任务名称，支持模糊搜索，大小写敏感，非必填参数，如果为空，搜索所有任务
+     * 
+     * @return taskName */
     public String getTaskName() {
         return taskName;
     }
@@ -243,20 +190,15 @@ public class ListMonitorInfosRequest  {
         this.taskName = taskName;
     }
 
-    
-
     public ListMonitorInfosRequest withExecuteStatus(ExecuteStatusEnum executeStatus) {
         this.executeStatus = executeStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 需要搜索任务的执行状态, 只允许如下枚举值：UNSTARTED-未启动, WAITING-等待执行,RUNNING-执行中, SUCCESS-执行成功, CANCELLED-任务取消, ERROR-执行异常</br> 非必填参数，如果为空，搜索所有任务
-     * @return executeStatus
-     */
+    /** 需要搜索任务的执行状态, 只允许如下枚举值：UNSTARTED-未启动, WAITING-等待执行,RUNNING-执行中, SUCCESS-执行成功, CANCELLED-任务取消, ERROR-执行异常</br>
+     * 非必填参数，如果为空，搜索所有任务
+     * 
+     * @return executeStatus */
     public ExecuteStatusEnum getExecuteStatus() {
         return executeStatus;
     }
@@ -264,8 +206,6 @@ public class ListMonitorInfosRequest  {
     public void setExecuteStatus(ExecuteStatusEnum executeStatus) {
         this.executeStatus = executeStatus;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -276,16 +216,18 @@ public class ListMonitorInfosRequest  {
             return false;
         }
         ListMonitorInfosRequest listMonitorInfosRequest = (ListMonitorInfosRequest) o;
-        return Objects.equals(this.instanceId, listMonitorInfosRequest.instanceId) &&
-            Objects.equals(this.offset, listMonitorInfosRequest.offset) &&
-            Objects.equals(this.limit, listMonitorInfosRequest.limit) &&
-            Objects.equals(this.taskName, listMonitorInfosRequest.taskName) &&
-            Objects.equals(this.executeStatus, listMonitorInfosRequest.executeStatus);
+        return Objects.equals(this.instanceId, listMonitorInfosRequest.instanceId)
+            && Objects.equals(this.offset, listMonitorInfosRequest.offset)
+            && Objects.equals(this.limit, listMonitorInfosRequest.limit)
+            && Objects.equals(this.taskName, listMonitorInfosRequest.taskName)
+            && Objects.equals(this.executeStatus, listMonitorInfosRequest.executeStatus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, offset, limit, taskName, executeStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -298,16 +240,13 @@ public class ListMonitorInfosRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

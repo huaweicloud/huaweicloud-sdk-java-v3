@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dns.v2.model.ValuesItem;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ListApiVersionsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="versions")
-    
+    @JsonProperty(value = "versions")
+
     private ValuesItem versions;
 
     public ListApiVersionsResponse withVersions(ValuesItem versions) {
@@ -32,19 +21,17 @@ public class ListApiVersionsResponse extends SdkResponse {
     }
 
     public ListApiVersionsResponse withVersions(Consumer<ValuesItem> versionsSetter) {
-        if(this.versions == null ){
+        if (this.versions == null) {
             this.versions = new ValuesItem();
             versionsSetter.accept(this.versions);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get versions
-     * @return versions
-     */
+    /** Get versions
+     * 
+     * @return versions */
     public ValuesItem getVersions() {
         return versions;
     }
@@ -52,8 +39,6 @@ public class ListApiVersionsResponse extends SdkResponse {
     public void setVersions(ValuesItem versions) {
         this.versions = versions;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class ListApiVersionsResponse extends SdkResponse {
         ListApiVersionsResponse listApiVersionsResponse = (ListApiVersionsResponse) o;
         return Objects.equals(this.versions, listApiVersionsResponse.versions);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(versions);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class ListApiVersionsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

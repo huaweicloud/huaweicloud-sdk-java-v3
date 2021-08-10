@@ -1,114 +1,89 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.FlavorExtraSpec;
-import com.huaweicloud.sdk.ecs.v2.model.FlavorLink;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 云服务器规格。
- */
-public class ListResizeFlavorsResult  {
-
-
+/** 云服务器规格。 */
+public class ListResizeFlavorsResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vcpus")
-    
+    @JsonProperty(value = "vcpus")
+
     private String vcpus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ram")
-    
+    @JsonProperty(value = "ram")
+
     private Integer ram;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disk")
-    
+    @JsonProperty(value = "disk")
+
     private String disk;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="swap")
-    
+    @JsonProperty(value = "swap")
+
     private String swap;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-FLV-EXT-DATA:ephemeral")
-    
+    @JsonProperty(value = "OS-FLV-EXT-DATA:ephemeral")
+
     private Integer osFLVEXTDATAEphemeral;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-FLV-DISABLED:disabled")
-    
+    @JsonProperty(value = "OS-FLV-DISABLED:disabled")
+
     private Boolean osFLVDISABLEDDisabled;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rxtx_factor")
-    
+    @JsonProperty(value = "rxtx_factor")
+
     private Float rxtxFactor;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rxtx_quota")
-    
+    @JsonProperty(value = "rxtx_quota")
+
     private String rxtxQuota;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rxtx_cap")
-    
+    @JsonProperty(value = "rxtx_cap")
+
     private String rxtxCap;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os-flavor-access:is_public")
-    
+    @JsonProperty(value = "os-flavor-access:is_public")
+
     private Boolean osFlavorAccessIsPublic;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private List<FlavorLink> links = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extra_specs")
-    
+    @JsonProperty(value = "extra_specs")
+
     private FlavorExtraSpec extraSpecs;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_quota")
-    
+    @JsonProperty(value = "instance_quota")
+
     private Object instanceQuota;
 
     public ListResizeFlavorsResult withId(String id) {
@@ -116,13 +91,9 @@ public class ListResizeFlavorsResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务器规格的ID。
-     * @return id
-     */
+    /** 云服务器规格的ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -131,20 +102,14 @@ public class ListResizeFlavorsResult  {
         this.id = id;
     }
 
-    
-
     public ListResizeFlavorsResult withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务器规格的名称。
-     * @return name
-     */
+    /** 云服务器规格的名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -153,20 +118,14 @@ public class ListResizeFlavorsResult  {
         this.name = name;
     }
 
-    
-
     public ListResizeFlavorsResult withVcpus(String vcpus) {
         this.vcpus = vcpus;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务器规格对应的CPU核数。
-     * @return vcpus
-     */
+    /** 云服务器规格对应的CPU核数。
+     * 
+     * @return vcpus */
     public String getVcpus() {
         return vcpus;
     }
@@ -175,20 +134,14 @@ public class ListResizeFlavorsResult  {
         this.vcpus = vcpus;
     }
 
-    
-
     public ListResizeFlavorsResult withRam(Integer ram) {
         this.ram = ram;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务器规格对应的内存大小，单位为MB。
-     * @return ram
-     */
+    /** 云服务器规格对应的内存大小，单位为MB。
+     * 
+     * @return ram */
     public Integer getRam() {
         return ram;
     }
@@ -197,20 +150,14 @@ public class ListResizeFlavorsResult  {
         this.ram = ram;
     }
 
-    
-
     public ListResizeFlavorsResult withDisk(String disk) {
         this.disk = disk;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务器规格对应要求的系统盘大小。  当前未使用该参数，缺省值为0。
-     * @return disk
-     */
+    /** 云服务器规格对应要求的系统盘大小。 当前未使用该参数，缺省值为0。
+     * 
+     * @return disk */
     public String getDisk() {
         return disk;
     }
@@ -219,20 +166,14 @@ public class ListResizeFlavorsResult  {
         this.disk = disk;
     }
 
-    
-
     public ListResizeFlavorsResult withSwap(String swap) {
         this.swap = swap;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务器规格对应要求的交换分区大小。  当前未使用该参数，缺省值为\"\"。
-     * @return swap
-     */
+    /** 云服务器规格对应要求的交换分区大小。 当前未使用该参数，缺省值为\"\"。
+     * 
+     * @return swap */
     public String getSwap() {
         return swap;
     }
@@ -241,20 +182,14 @@ public class ListResizeFlavorsResult  {
         this.swap = swap;
     }
 
-    
-
     public ListResizeFlavorsResult withOsFLVEXTDATAEphemeral(Integer osFLVEXTDATAEphemeral) {
         this.osFLVEXTDATAEphemeral = osFLVEXTDATAEphemeral;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展属性，临时盘大小。  当前未使用该参数，缺省值为0
-     * @return osFLVEXTDATAEphemeral
-     */
+    /** 扩展属性，临时盘大小。 当前未使用该参数，缺省值为0
+     * 
+     * @return osFLVEXTDATAEphemeral */
     public Integer getOsFLVEXTDATAEphemeral() {
         return osFLVEXTDATAEphemeral;
     }
@@ -263,20 +198,14 @@ public class ListResizeFlavorsResult  {
         this.osFLVEXTDATAEphemeral = osFLVEXTDATAEphemeral;
     }
 
-    
-
     public ListResizeFlavorsResult withOsFLVDISABLEDDisabled(Boolean osFLVDISABLEDDisabled) {
         this.osFLVDISABLEDDisabled = osFLVDISABLEDDisabled;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展属性，该云服务器规格是否禁用。  当前未使用该参数，缺省值为false。
-     * @return osFLVDISABLEDDisabled
-     */
+    /** 扩展属性，该云服务器规格是否禁用。 当前未使用该参数，缺省值为false。
+     * 
+     * @return osFLVDISABLEDDisabled */
     public Boolean getOsFLVDISABLEDDisabled() {
         return osFLVDISABLEDDisabled;
     }
@@ -285,20 +214,14 @@ public class ListResizeFlavorsResult  {
         this.osFLVDISABLEDDisabled = osFLVDISABLEDDisabled;
     }
 
-    
-
     public ListResizeFlavorsResult withRxtxFactor(Float rxtxFactor) {
         this.rxtxFactor = rxtxFactor;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务器可使用网络带宽与网络硬件带宽的比例。  当前未使用该参数，缺省值为1.0。
-     * @return rxtxFactor
-     */
+    /** 云服务器可使用网络带宽与网络硬件带宽的比例。 当前未使用该参数，缺省值为1.0。
+     * 
+     * @return rxtxFactor */
     public Float getRxtxFactor() {
         return rxtxFactor;
     }
@@ -307,20 +230,14 @@ public class ListResizeFlavorsResult  {
         this.rxtxFactor = rxtxFactor;
     }
 
-    
-
     public ListResizeFlavorsResult withRxtxQuota(String rxtxQuota) {
         this.rxtxQuota = rxtxQuota;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务器可使用网络带宽的软限制。  当前未使用该参数，缺省值为null。
-     * @return rxtxQuota
-     */
+    /** 云服务器可使用网络带宽的软限制。 当前未使用该参数，缺省值为null。
+     * 
+     * @return rxtxQuota */
     public String getRxtxQuota() {
         return rxtxQuota;
     }
@@ -329,20 +246,14 @@ public class ListResizeFlavorsResult  {
         this.rxtxQuota = rxtxQuota;
     }
 
-    
-
     public ListResizeFlavorsResult withRxtxCap(String rxtxCap) {
         this.rxtxCap = rxtxCap;
         return this;
     }
 
-    
-
-
-    /**
-     *   云服务器可使用网络带宽的硬限制。  当前未使用该参数，缺省值为null。
-     * @return rxtxCap
-     */
+    /** 云服务器可使用网络带宽的硬限制。 当前未使用该参数，缺省值为null。
+     * 
+     * @return rxtxCap */
     public String getRxtxCap() {
         return rxtxCap;
     }
@@ -351,20 +262,14 @@ public class ListResizeFlavorsResult  {
         this.rxtxCap = rxtxCap;
     }
 
-    
-
     public ListResizeFlavorsResult withOsFlavorAccessIsPublic(Boolean osFlavorAccessIsPublic) {
         this.osFlavorAccessIsPublic = osFlavorAccessIsPublic;
         return this;
     }
 
-    
-
-
-    /**
-     * 扩展属性，flavor是否给所有租户使用。  - true：表示给所有租户使用。 - false：表示给指定租户使用。  缺省值为true。
-     * @return osFlavorAccessIsPublic
-     */
+    /** 扩展属性，flavor是否给所有租户使用。 - true：表示给所有租户使用。 - false：表示给指定租户使用。 缺省值为true。
+     * 
+     * @return osFlavorAccessIsPublic */
     public Boolean getOsFlavorAccessIsPublic() {
         return osFlavorAccessIsPublic;
     }
@@ -373,16 +278,13 @@ public class ListResizeFlavorsResult  {
         this.osFlavorAccessIsPublic = osFlavorAccessIsPublic;
     }
 
-    
-
     public ListResizeFlavorsResult withLinks(List<FlavorLink> links) {
         this.links = links;
         return this;
     }
 
-    
     public ListResizeFlavorsResult addLinksItem(FlavorLink linksItem) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         this.links.add(linksItem);
@@ -390,17 +292,16 @@ public class ListResizeFlavorsResult  {
     }
 
     public ListResizeFlavorsResult withLinks(Consumer<List<FlavorLink>> linksSetter) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);
         return this;
     }
 
-    /**
-     * 规格相关快捷链接地址。
-     * @return links
-     */
+    /** 规格相关快捷链接地址。
+     * 
+     * @return links */
     public List<FlavorLink> getLinks() {
         return links;
     }
@@ -409,27 +310,23 @@ public class ListResizeFlavorsResult  {
         this.links = links;
     }
 
-    
-
     public ListResizeFlavorsResult withExtraSpecs(FlavorExtraSpec extraSpecs) {
         this.extraSpecs = extraSpecs;
         return this;
     }
 
     public ListResizeFlavorsResult withExtraSpecs(Consumer<FlavorExtraSpec> extraSpecsSetter) {
-        if(this.extraSpecs == null ){
+        if (this.extraSpecs == null) {
             this.extraSpecs = new FlavorExtraSpec();
             extraSpecsSetter.accept(this.extraSpecs);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get extraSpecs
-     * @return extraSpecs
-     */
+    /** Get extraSpecs
+     * 
+     * @return extraSpecs */
     public FlavorExtraSpec getExtraSpecs() {
         return extraSpecs;
     }
@@ -438,20 +335,14 @@ public class ListResizeFlavorsResult  {
         this.extraSpecs = extraSpecs;
     }
 
-    
-
     public ListResizeFlavorsResult withInstanceQuota(Object instanceQuota) {
         this.instanceQuota = instanceQuota;
         return this;
     }
 
-    
-
-
-    /**
-     * 预留属性。
-     * @return instanceQuota
-     */
+    /** 预留属性。
+     * 
+     * @return instanceQuota */
     public Object getInstanceQuota() {
         return instanceQuota;
     }
@@ -459,8 +350,6 @@ public class ListResizeFlavorsResult  {
     public void setInstanceQuota(Object instanceQuota) {
         this.instanceQuota = instanceQuota;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -471,26 +360,42 @@ public class ListResizeFlavorsResult  {
             return false;
         }
         ListResizeFlavorsResult listResizeFlavorsResult = (ListResizeFlavorsResult) o;
-        return Objects.equals(this.id, listResizeFlavorsResult.id) &&
-            Objects.equals(this.name, listResizeFlavorsResult.name) &&
-            Objects.equals(this.vcpus, listResizeFlavorsResult.vcpus) &&
-            Objects.equals(this.ram, listResizeFlavorsResult.ram) &&
-            Objects.equals(this.disk, listResizeFlavorsResult.disk) &&
-            Objects.equals(this.swap, listResizeFlavorsResult.swap) &&
-            Objects.equals(this.osFLVEXTDATAEphemeral, listResizeFlavorsResult.osFLVEXTDATAEphemeral) &&
-            Objects.equals(this.osFLVDISABLEDDisabled, listResizeFlavorsResult.osFLVDISABLEDDisabled) &&
-            Objects.equals(this.rxtxFactor, listResizeFlavorsResult.rxtxFactor) &&
-            Objects.equals(this.rxtxQuota, listResizeFlavorsResult.rxtxQuota) &&
-            Objects.equals(this.rxtxCap, listResizeFlavorsResult.rxtxCap) &&
-            Objects.equals(this.osFlavorAccessIsPublic, listResizeFlavorsResult.osFlavorAccessIsPublic) &&
-            Objects.equals(this.links, listResizeFlavorsResult.links) &&
-            Objects.equals(this.extraSpecs, listResizeFlavorsResult.extraSpecs) &&
-            Objects.equals(this.instanceQuota, listResizeFlavorsResult.instanceQuota);
+        return Objects.equals(this.id, listResizeFlavorsResult.id)
+            && Objects.equals(this.name, listResizeFlavorsResult.name)
+            && Objects.equals(this.vcpus, listResizeFlavorsResult.vcpus)
+            && Objects.equals(this.ram, listResizeFlavorsResult.ram)
+            && Objects.equals(this.disk, listResizeFlavorsResult.disk)
+            && Objects.equals(this.swap, listResizeFlavorsResult.swap)
+            && Objects.equals(this.osFLVEXTDATAEphemeral, listResizeFlavorsResult.osFLVEXTDATAEphemeral)
+            && Objects.equals(this.osFLVDISABLEDDisabled, listResizeFlavorsResult.osFLVDISABLEDDisabled)
+            && Objects.equals(this.rxtxFactor, listResizeFlavorsResult.rxtxFactor)
+            && Objects.equals(this.rxtxQuota, listResizeFlavorsResult.rxtxQuota)
+            && Objects.equals(this.rxtxCap, listResizeFlavorsResult.rxtxCap)
+            && Objects.equals(this.osFlavorAccessIsPublic, listResizeFlavorsResult.osFlavorAccessIsPublic)
+            && Objects.equals(this.links, listResizeFlavorsResult.links)
+            && Objects.equals(this.extraSpecs, listResizeFlavorsResult.extraSpecs)
+            && Objects.equals(this.instanceQuota, listResizeFlavorsResult.instanceQuota);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, vcpus, ram, disk, swap, osFLVEXTDATAEphemeral, osFLVDISABLEDDisabled, rxtxFactor, rxtxQuota, rxtxCap, osFlavorAccessIsPublic, links, extraSpecs, instanceQuota);
+        return Objects.hash(id,
+            name,
+            vcpus,
+            ram,
+            disk,
+            swap,
+            osFLVEXTDATAEphemeral,
+            osFLVDISABLEDDisabled,
+            rxtxFactor,
+            rxtxQuota,
+            rxtxCap,
+            osFlavorAccessIsPublic,
+            links,
+            extraSpecs,
+            instanceQuota);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -513,16 +418,13 @@ public class ListResizeFlavorsResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

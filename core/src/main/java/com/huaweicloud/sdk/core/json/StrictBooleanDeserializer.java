@@ -27,14 +27,12 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 
 import java.io.IOException;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public class StrictBooleanDeserializer extends JsonDeserializer<Boolean> {
 
     @Override
-    public Boolean deserialize(JsonParser jsonParser, DeserializationContext deserializationContext)
-            throws IOException {
+    public Boolean deserialize(JsonParser jsonParser,
+        DeserializationContext deserializationContext) throws IOException {
         return Boolean.valueOf(jsonParser.getBooleanValue());
     }
 }

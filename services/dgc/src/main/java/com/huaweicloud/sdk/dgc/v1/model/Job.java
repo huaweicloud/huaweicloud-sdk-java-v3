@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Job
- */
-public class Job  {
-
-
+/** Job */
+public class Job {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path")
-    
+    @JsonProperty(value = "path")
+
     private String path;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="params")
-    
+    @JsonProperty(value = "params")
+
     private Object params;
 
     public Job withName(String name) {
@@ -40,13 +28,9 @@ public class Job  {
         return this;
     }
 
-    
-
-
-    /**
-     * Get name
-     * @return name
-     */
+    /** Get name
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -55,20 +39,14 @@ public class Job  {
         this.name = name;
     }
 
-    
-
     public Job withPath(String path) {
         this.path = path;
         return this;
     }
 
-    
-
-
-    /**
-     * Get path
-     * @return path
-     */
+    /** Get path
+     * 
+     * @return path */
     public String getPath() {
         return path;
     }
@@ -77,20 +55,14 @@ public class Job  {
         this.path = path;
     }
 
-    
-
     public Job withParams(Object params) {
         this.params = params;
         return this;
     }
 
-    
-
-
-    /**
-     * Get params
-     * @return params
-     */
+    /** Get params
+     * 
+     * @return params */
     public Object getParams() {
         return params;
     }
@@ -98,8 +70,6 @@ public class Job  {
     public void setParams(Object params) {
         this.params = params;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,15 @@ public class Job  {
             return false;
         }
         Job job = (Job) o;
-        return Objects.equals(this.name, job.name) &&
-            Objects.equals(this.path, job.path) &&
-            Objects.equals(this.params, job.params);
+        return Objects.equals(this.name, job.name) && Objects.equals(this.path, job.path)
+            && Objects.equals(this.params, job.params);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, path, params);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +99,13 @@ public class Job  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

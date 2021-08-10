@@ -1,85 +1,62 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.ProtectableResult;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ProtectablesResp
- */
-public class ProtectablesResp  {
-
-
+/** ProtectablesResp */
+public class ProtectablesResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="children")
-    
+    @JsonProperty(value = "children")
+
     private List<Object> children = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="detail")
-    
+    @JsonProperty(value = "detail")
+
     private Object detail;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protectable")
-    
+    @JsonProperty(value = "protectable")
+
     private ProtectableResult protectable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private String size;
-    /**
-     * 资源状态
-     */
+
+    /** 资源状态 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum ACTIVE for value: "active"
-         */
+        /** Enum ACTIVE for value: "active" */
         public static final StatusEnum ACTIVE = new StatusEnum("active");
-        
-        /**
-         * Enum DELETED for value: "deleted"
-         */
+
+        /** Enum DELETED for value: "deleted" */
         public static final StatusEnum DELETED = new StatusEnum("deleted");
-        
-        /**
-         * Enum ERROR for value: "error"
-         */
+
+        /** Enum ERROR for value: "error" */
         public static final StatusEnum ERROR = new StatusEnum("error");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -109,7 +86,7 @@ public class ProtectablesResp  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -120,7 +97,7 @@ public class ProtectablesResp  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -144,16 +121,14 @@ public class ProtectablesResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
     public ProtectablesResp withChildren(List<Object> children) {
@@ -161,9 +136,8 @@ public class ProtectablesResp  {
         return this;
     }
 
-    
     public ProtectablesResp addChildrenItem(Object childrenItem) {
-        if(this.children == null) {
+        if (this.children == null) {
             this.children = new ArrayList<>();
         }
         this.children.add(childrenItem);
@@ -171,17 +145,16 @@ public class ProtectablesResp  {
     }
 
     public ProtectablesResp withChildren(Consumer<List<Object>> childrenSetter) {
-        if(this.children == null) {
+        if (this.children == null) {
             this.children = new ArrayList<>();
         }
         childrenSetter.accept(this.children);
         return this;
     }
 
-    /**
-     * 子资源
-     * @return children
-     */
+    /** 子资源
+     * 
+     * @return children */
     public List<Object> getChildren() {
         return children;
     }
@@ -190,20 +163,14 @@ public class ProtectablesResp  {
         this.children = children;
     }
 
-    
-
     public ProtectablesResp withDetail(Object detail) {
         this.detail = detail;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源详情
-     * @return detail
-     */
+    /** 资源详情
+     * 
+     * @return detail */
     public Object getDetail() {
         return detail;
     }
@@ -212,20 +179,14 @@ public class ProtectablesResp  {
         this.detail = detail;
     }
 
-    
-
     public ProtectablesResp withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * id
-     * @return id
-     */
+    /** id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -234,20 +195,14 @@ public class ProtectablesResp  {
         this.id = id;
     }
 
-    
-
     public ProtectablesResp withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 名称
-     * @return name
-     */
+    /** 名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -256,27 +211,23 @@ public class ProtectablesResp  {
         this.name = name;
     }
 
-    
-
     public ProtectablesResp withProtectable(ProtectableResult protectable) {
         this.protectable = protectable;
         return this;
     }
 
     public ProtectablesResp withProtectable(Consumer<ProtectableResult> protectableSetter) {
-        if(this.protectable == null ){
+        if (this.protectable == null) {
             this.protectable = new ProtectableResult();
             protectableSetter.accept(this.protectable);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get protectable
-     * @return protectable
-     */
+    /** Get protectable
+     * 
+     * @return protectable */
     public ProtectableResult getProtectable() {
         return protectable;
     }
@@ -285,20 +236,14 @@ public class ProtectablesResp  {
         this.protectable = protectable;
     }
 
-    
-
     public ProtectablesResp withSize(String size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 大小，单位GB
-     * @return size
-     */
+    /** 大小，单位GB
+     * 
+     * @return size */
     public String getSize() {
         return size;
     }
@@ -307,20 +252,14 @@ public class ProtectablesResp  {
         this.size = size;
     }
 
-    
-
     public ProtectablesResp withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源状态
-     * @return status
-     */
+    /** 资源状态
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -329,20 +268,15 @@ public class ProtectablesResp  {
         this.status = status;
     }
 
-    
-
     public ProtectablesResp withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 待备份资源的类型, 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 裸金属服务器: OS::Ironic::BareMetalServer, 线下本地服务器: OS::Native::Server, 弹性文件系统: OS::Sfs::Turbo
-     * @return type
-     */
+    /** 待备份资源的类型, 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 裸金属服务器: OS::Ironic::BareMetalServer, 线下本地服务器:
+     * OS::Native::Server, 弹性文件系统: OS::Sfs::Turbo
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -350,8 +284,6 @@ public class ProtectablesResp  {
     public void setType(String type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -362,19 +294,19 @@ public class ProtectablesResp  {
             return false;
         }
         ProtectablesResp protectablesResp = (ProtectablesResp) o;
-        return Objects.equals(this.children, protectablesResp.children) &&
-            Objects.equals(this.detail, protectablesResp.detail) &&
-            Objects.equals(this.id, protectablesResp.id) &&
-            Objects.equals(this.name, protectablesResp.name) &&
-            Objects.equals(this.protectable, protectablesResp.protectable) &&
-            Objects.equals(this.size, protectablesResp.size) &&
-            Objects.equals(this.status, protectablesResp.status) &&
-            Objects.equals(this.type, protectablesResp.type);
+        return Objects.equals(this.children, protectablesResp.children)
+            && Objects.equals(this.detail, protectablesResp.detail) && Objects.equals(this.id, protectablesResp.id)
+            && Objects.equals(this.name, protectablesResp.name)
+            && Objects.equals(this.protectable, protectablesResp.protectable)
+            && Objects.equals(this.size, protectablesResp.size) && Objects.equals(this.status, protectablesResp.status)
+            && Objects.equals(this.type, protectablesResp.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(children, detail, id, name, protectable, size, status, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -390,16 +322,13 @@ public class ProtectablesResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

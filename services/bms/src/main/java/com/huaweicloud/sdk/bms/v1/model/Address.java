@@ -1,43 +1,26 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 虚拟私有云ID字段数据结构说明
- */
-public class Address  {
+/** 虚拟私有云ID字段数据结构说明 */
+public class Address {
 
-    /**
-     * IP地址版本。4：代表IPv4。6：代表IPv6。
-     */
+    /** IP地址版本。4：代表IPv4。6：代表IPv6。 */
     public static final class VersionEnum {
 
-        
-        /**
-         * Enum NUMBER_4 for value: 4
-         */
+        /** Enum NUMBER_4 for value: 4 */
         public static final VersionEnum NUMBER_4 = new VersionEnum(4);
-        
-        /**
-         * Enum NUMBER_6 for value: 6
-         */
+
+        /** Enum NUMBER_6 for value: 6 */
         public static final VersionEnum NUMBER_6 = new VersionEnum(6);
-        
 
         private static final Map<Integer, VersionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -66,7 +49,7 @@ public class Address  {
 
         @JsonCreator
         public static VersionEnum fromValue(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             VersionEnum result = STATIC_FIELDS.get(value);
@@ -77,7 +60,7 @@ public class Address  {
         }
 
         public static VersionEnum valueOf(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             VersionEnum result = STATIC_FIELDS.get(value);
@@ -101,33 +84,24 @@ public class Address  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private VersionEnum version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="addr")
-    
+    @JsonProperty(value = "addr")
+
     private String addr;
-    /**
-     * IP地址类型。fixed：代表私有IP地址。floating：代表浮动IP地址。
-     */
+
+    /** IP地址类型。fixed：代表私有IP地址。floating：代表浮动IP地址。 */
     public static final class OsEXTIPSTypeEnum {
 
-        
-        /**
-         * Enum FIXED for value: "fixed"
-         */
+        /** Enum FIXED for value: "fixed" */
         public static final OsEXTIPSTypeEnum FIXED = new OsEXTIPSTypeEnum("fixed");
-        
-        /**
-         * Enum FLOATING for value: "floating"
-         */
+
+        /** Enum FLOATING for value: "floating" */
         public static final OsEXTIPSTypeEnum FLOATING = new OsEXTIPSTypeEnum("floating");
-        
 
         private static final Map<String, OsEXTIPSTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -156,7 +130,7 @@ public class Address  {
 
         @JsonCreator
         public static OsEXTIPSTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsEXTIPSTypeEnum result = STATIC_FIELDS.get(value);
@@ -167,7 +141,7 @@ public class Address  {
         }
 
         public static OsEXTIPSTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsEXTIPSTypeEnum result = STATIC_FIELDS.get(value);
@@ -191,22 +165,19 @@ public class Address  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-IPS:type")
-    
+    @JsonProperty(value = "OS-EXT-IPS:type")
+
     private OsEXTIPSTypeEnum osEXTIPSType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-IPS-MAC:mac_addr")
-    
+    @JsonProperty(value = "OS-EXT-IPS-MAC:mac_addr")
+
     private String osEXTIPSMACMacAddr;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-EXT-IPS:port_id")
-    
+    @JsonProperty(value = "OS-EXT-IPS:port_id")
+
     private String osEXTIPSPortId;
 
     public Address withVersion(VersionEnum version) {
@@ -214,13 +185,9 @@ public class Address  {
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址版本。4：代表IPv4。6：代表IPv6。
-     * @return version
-     */
+    /** IP地址版本。4：代表IPv4。6：代表IPv6。
+     * 
+     * @return version */
     public VersionEnum getVersion() {
         return version;
     }
@@ -229,20 +196,14 @@ public class Address  {
         this.version = version;
     }
 
-    
-
     public Address withAddr(String addr) {
         this.addr = addr;
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址
-     * @return addr
-     */
+    /** IP地址
+     * 
+     * @return addr */
     public String getAddr() {
         return addr;
     }
@@ -251,20 +212,14 @@ public class Address  {
         this.addr = addr;
     }
 
-    
-
     public Address withOsEXTIPSType(OsEXTIPSTypeEnum osEXTIPSType) {
         this.osEXTIPSType = osEXTIPSType;
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址类型。fixed：代表私有IP地址。floating：代表浮动IP地址。
-     * @return osEXTIPSType
-     */
+    /** IP地址类型。fixed：代表私有IP地址。floating：代表浮动IP地址。
+     * 
+     * @return osEXTIPSType */
     public OsEXTIPSTypeEnum getOsEXTIPSType() {
         return osEXTIPSType;
     }
@@ -273,20 +228,14 @@ public class Address  {
         this.osEXTIPSType = osEXTIPSType;
     }
 
-    
-
     public Address withOsEXTIPSMACMacAddr(String osEXTIPSMACMacAddr) {
         this.osEXTIPSMACMacAddr = osEXTIPSMACMacAddr;
         return this;
     }
 
-    
-
-
-    /**
-     * MAC地址
-     * @return osEXTIPSMACMacAddr
-     */
+    /** MAC地址
+     * 
+     * @return osEXTIPSMACMacAddr */
     public String getOsEXTIPSMACMacAddr() {
         return osEXTIPSMACMacAddr;
     }
@@ -295,20 +244,14 @@ public class Address  {
         this.osEXTIPSMACMacAddr = osEXTIPSMACMacAddr;
     }
 
-    
-
     public Address withOsEXTIPSPortId(String osEXTIPSPortId) {
         this.osEXTIPSPortId = osEXTIPSPortId;
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址对应的端口ID
-     * @return osEXTIPSPortId
-     */
+    /** IP地址对应的端口ID
+     * 
+     * @return osEXTIPSPortId */
     public String getOsEXTIPSPortId() {
         return osEXTIPSPortId;
     }
@@ -316,8 +259,6 @@ public class Address  {
     public void setOsEXTIPSPortId(String osEXTIPSPortId) {
         this.osEXTIPSPortId = osEXTIPSPortId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -328,16 +269,17 @@ public class Address  {
             return false;
         }
         Address address = (Address) o;
-        return Objects.equals(this.version, address.version) &&
-            Objects.equals(this.addr, address.addr) &&
-            Objects.equals(this.osEXTIPSType, address.osEXTIPSType) &&
-            Objects.equals(this.osEXTIPSMACMacAddr, address.osEXTIPSMACMacAddr) &&
-            Objects.equals(this.osEXTIPSPortId, address.osEXTIPSPortId);
+        return Objects.equals(this.version, address.version) && Objects.equals(this.addr, address.addr)
+            && Objects.equals(this.osEXTIPSType, address.osEXTIPSType)
+            && Objects.equals(this.osEXTIPSMACMacAddr, address.osEXTIPSMACMacAddr)
+            && Objects.equals(this.osEXTIPSPortId, address.osEXTIPSPortId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(version, addr, osEXTIPSType, osEXTIPSMACMacAddr, osEXTIPSPortId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -350,16 +292,13 @@ public class Address  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

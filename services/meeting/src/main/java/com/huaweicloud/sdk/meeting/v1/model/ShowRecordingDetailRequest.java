@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowRecordingDetailRequest  {
-
-
+/** Request Object */
+public class ShowRecordingDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confUUID")
-    
+    @JsonProperty(value = "confUUID")
+
     private String confUUID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="userUUID")
-    
+    @JsonProperty(value = "userUUID")
+
     private String userUUID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Authorization-Type")
-    
+    @JsonProperty(value = "X-Authorization-Type")
+
     private String xAuthorizationType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site-Id")
-    
+    @JsonProperty(value = "X-Site-Id")
+
     private String xSiteId;
 
     public ShowRecordingDetailRequest withConfUUID(String confUUID) {
@@ -46,13 +33,9 @@ public class ShowRecordingDetailRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 会议的ConfUUID(通过查询录制列表获取)。
-     * @return confUUID
-     */
+    /** 会议的ConfUUID(通过查询录制列表获取)。
+     * 
+     * @return confUUID */
     public String getConfUUID() {
         return confUUID;
     }
@@ -61,20 +44,14 @@ public class ShowRecordingDetailRequest  {
         this.confUUID = confUUID;
     }
 
-    
-
     public ShowRecordingDetailRequest withUserUUID(String userUUID) {
         this.userUUID = userUUID;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户的UUID（已在USG注册过的）。
-     * @return userUUID
-     */
+    /** 用户的UUID（已在USG注册过的）。
+     * 
+     * @return userUUID */
     public String getUserUUID() {
         return userUUID;
     }
@@ -83,22 +60,16 @@ public class ShowRecordingDetailRequest  {
         this.userUUID = userUUID;
     }
 
-    
-
     public ShowRecordingDetailRequest withXAuthorizationType(String xAuthorizationType) {
         this.xAuthorizationType = xAuthorizationType;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识是否为第三方portal过来的请求。
-     * @return xAuthorizationType
-     */
+    /** 标识是否为第三方portal过来的请求。
+     * 
+     * @return xAuthorizationType */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Authorization-Type")
+    @JsonProperty(value = "X-Authorization-Type")
     public String getXAuthorizationType() {
         return xAuthorizationType;
     }
@@ -107,22 +78,16 @@ public class ShowRecordingDetailRequest  {
         this.xAuthorizationType = xAuthorizationType;
     }
 
-    
-
     public ShowRecordingDetailRequest withXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用于区分到哪个HCSO站点鉴权。
-     * @return xSiteId
-     */
+    /** 用于区分到哪个HCSO站点鉴权。
+     * 
+     * @return xSiteId */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site-Id")
+    @JsonProperty(value = "X-Site-Id")
     public String getXSiteId() {
         return xSiteId;
     }
@@ -130,8 +95,6 @@ public class ShowRecordingDetailRequest  {
     public void setXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -142,15 +105,17 @@ public class ShowRecordingDetailRequest  {
             return false;
         }
         ShowRecordingDetailRequest showRecordingDetailRequest = (ShowRecordingDetailRequest) o;
-        return Objects.equals(this.confUUID, showRecordingDetailRequest.confUUID) &&
-            Objects.equals(this.userUUID, showRecordingDetailRequest.userUUID) &&
-            Objects.equals(this.xAuthorizationType, showRecordingDetailRequest.xAuthorizationType) &&
-            Objects.equals(this.xSiteId, showRecordingDetailRequest.xSiteId);
+        return Objects.equals(this.confUUID, showRecordingDetailRequest.confUUID)
+            && Objects.equals(this.userUUID, showRecordingDetailRequest.userUUID)
+            && Objects.equals(this.xAuthorizationType, showRecordingDetailRequest.xAuthorizationType)
+            && Objects.equals(this.xSiteId, showRecordingDetailRequest.xSiteId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(confUUID, userUUID, xAuthorizationType, xSiteId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -162,16 +127,13 @@ public class ShowRecordingDetailRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

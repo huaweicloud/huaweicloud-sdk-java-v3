@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 续传任务返回体
- */
-public class RetryTaskResp  {
-
-
+/** 续传任务返回体 */
+public class RetryTaskResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
+
     private String errorCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_msg")
-    
+    @JsonProperty(value = "error_msg")
+
     private String errorMsg;
 
     public RetryTaskResp withId(String id) {
@@ -46,13 +33,9 @@ public class RetryTaskResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务id
-     * @return id
-     */
+    /** 任务id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -61,20 +44,14 @@ public class RetryTaskResp  {
         this.id = id;
     }
 
-    
-
     public RetryTaskResp withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态
-     * @return status
-     */
+    /** 状态
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -83,20 +60,14 @@ public class RetryTaskResp  {
         this.status = status;
     }
 
-    
-
     public RetryTaskResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误码
-     * @return errorCode
-     */
+    /** 错误码
+     * 
+     * @return errorCode */
     public String getErrorCode() {
         return errorCode;
     }
@@ -105,20 +76,14 @@ public class RetryTaskResp  {
         this.errorCode = errorCode;
     }
 
-    
-
     public RetryTaskResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误信息
-     * @return errorMsg
-     */
+    /** 错误信息
+     * 
+     * @return errorMsg */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -126,8 +91,6 @@ public class RetryTaskResp  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,16 @@ public class RetryTaskResp  {
             return false;
         }
         RetryTaskResp retryTaskResp = (RetryTaskResp) o;
-        return Objects.equals(this.id, retryTaskResp.id) &&
-            Objects.equals(this.status, retryTaskResp.status) &&
-            Objects.equals(this.errorCode, retryTaskResp.errorCode) &&
-            Objects.equals(this.errorMsg, retryTaskResp.errorMsg);
+        return Objects.equals(this.id, retryTaskResp.id) && Objects.equals(this.status, retryTaskResp.status)
+            && Objects.equals(this.errorCode, retryTaskResp.errorCode)
+            && Objects.equals(this.errorMsg, retryTaskResp.errorMsg);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, status, errorCode, errorMsg);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +122,13 @@ public class RetryTaskResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

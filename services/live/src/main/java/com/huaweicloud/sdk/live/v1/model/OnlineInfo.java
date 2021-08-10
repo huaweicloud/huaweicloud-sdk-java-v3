@@ -1,61 +1,41 @@
 package com.huaweicloud.sdk.live.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * OnlineInfo
- */
-public class OnlineInfo  {
-
-
+/** OnlineInfo */
+public class OnlineInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publish_domain")
-    
+    @JsonProperty(value = "publish_domain")
+
     private String publishDomain;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app")
-    
+    @JsonProperty(value = "app")
+
     private String app;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stream")
-    
+    @JsonProperty(value = "stream")
+
     private String stream;
-    /**
-     * 视频编码方式 - H264 - H265 
-     */
+
+    /** 视频编码方式 - H264 - H265 */
     public static final class VideoCodecEnum {
 
-        
-        /**
-         * Enum H264 for value: "H264"
-         */
+        /** Enum H264 for value: "H264" */
         public static final VideoCodecEnum H264 = new VideoCodecEnum("H264");
-        
-        /**
-         * Enum H265 for value: "H265"
-         */
+
+        /** Enum H265 for value: "H265" */
         public static final VideoCodecEnum H265 = new VideoCodecEnum("H265");
-        
 
         private static final Map<String, VideoCodecEnum> STATIC_FIELDS = createStaticFields();
 
@@ -84,7 +64,7 @@ public class OnlineInfo  {
 
         @JsonCreator
         public static VideoCodecEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             VideoCodecEnum result = STATIC_FIELDS.get(value);
@@ -95,7 +75,7 @@ public class OnlineInfo  {
         }
 
         public static VideoCodecEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             VideoCodecEnum result = STATIC_FIELDS.get(value);
@@ -119,22 +99,16 @@ public class OnlineInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="video_codec")
-    
+    @JsonProperty(value = "video_codec")
+
     private VideoCodecEnum videoCodec;
-    /**
-     * 音频编码方式 - AAC 
-     */
+
+    /** 音频编码方式 - AAC */
     public static final class AudioCodecEnum {
 
-        
-        /**
-         * Enum AAC for value: "AAC"
-         */
+        /** Enum AAC for value: "AAC" */
         public static final AudioCodecEnum AAC = new AudioCodecEnum("AAC");
-        
 
         private static final Map<String, AudioCodecEnum> STATIC_FIELDS = createStaticFields();
 
@@ -162,7 +136,7 @@ public class OnlineInfo  {
 
         @JsonCreator
         public static AudioCodecEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AudioCodecEnum result = STATIC_FIELDS.get(value);
@@ -173,7 +147,7 @@ public class OnlineInfo  {
         }
 
         public static AudioCodecEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AudioCodecEnum result = STATIC_FIELDS.get(value);
@@ -197,22 +171,19 @@ public class OnlineInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audio_codec")
-    
+    @JsonProperty(value = "audio_codec")
+
     private AudioCodecEnum audioCodec;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="client_ip")
-    
+    @JsonProperty(value = "client_ip")
+
     private String clientIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private String startTime;
 
     public OnlineInfo withPublishDomain(String publishDomain) {
@@ -220,13 +191,9 @@ public class OnlineInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 域名
-     * @return publishDomain
-     */
+    /** 域名
+     * 
+     * @return publishDomain */
     public String getPublishDomain() {
         return publishDomain;
     }
@@ -235,20 +202,14 @@ public class OnlineInfo  {
         this.publishDomain = publishDomain;
     }
 
-    
-
     public OnlineInfo withApp(String app) {
         this.app = app;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名
-     * @return app
-     */
+    /** 应用名
+     * 
+     * @return app */
     public String getApp() {
         return app;
     }
@@ -257,20 +218,14 @@ public class OnlineInfo  {
         this.app = app;
     }
 
-    
-
     public OnlineInfo withStream(String stream) {
         this.stream = stream;
         return this;
     }
 
-    
-
-
-    /**
-     * 流名
-     * @return stream
-     */
+    /** 流名
+     * 
+     * @return stream */
     public String getStream() {
         return stream;
     }
@@ -279,20 +234,14 @@ public class OnlineInfo  {
         this.stream = stream;
     }
 
-    
-
     public OnlineInfo withVideoCodec(VideoCodecEnum videoCodec) {
         this.videoCodec = videoCodec;
         return this;
     }
 
-    
-
-
-    /**
-     * 视频编码方式 - H264 - H265 
-     * @return videoCodec
-     */
+    /** 视频编码方式 - H264 - H265
+     * 
+     * @return videoCodec */
     public VideoCodecEnum getVideoCodec() {
         return videoCodec;
     }
@@ -301,20 +250,14 @@ public class OnlineInfo  {
         this.videoCodec = videoCodec;
     }
 
-    
-
     public OnlineInfo withAudioCodec(AudioCodecEnum audioCodec) {
         this.audioCodec = audioCodec;
         return this;
     }
 
-    
-
-
-    /**
-     * 音频编码方式 - AAC 
-     * @return audioCodec
-     */
+    /** 音频编码方式 - AAC
+     * 
+     * @return audioCodec */
     public AudioCodecEnum getAudioCodec() {
         return audioCodec;
     }
@@ -323,20 +266,14 @@ public class OnlineInfo  {
         this.audioCodec = audioCodec;
     }
 
-    
-
     public OnlineInfo withClientIp(String clientIp) {
         this.clientIp = clientIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 推流设备的ip
-     * @return clientIp
-     */
+    /** 推流设备的ip
+     * 
+     * @return clientIp */
     public String getClientIp() {
         return clientIp;
     }
@@ -345,20 +282,14 @@ public class OnlineInfo  {
         this.clientIp = clientIp;
     }
 
-    
-
     public OnlineInfo withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 开始推流时刻 UTC格式 2006-01-02T15:04:05Z
-     * @return startTime
-     */
+    /** 开始推流时刻 UTC格式 2006-01-02T15:04:05Z
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -366,8 +297,6 @@ public class OnlineInfo  {
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -378,18 +307,18 @@ public class OnlineInfo  {
             return false;
         }
         OnlineInfo onlineInfo = (OnlineInfo) o;
-        return Objects.equals(this.publishDomain, onlineInfo.publishDomain) &&
-            Objects.equals(this.app, onlineInfo.app) &&
-            Objects.equals(this.stream, onlineInfo.stream) &&
-            Objects.equals(this.videoCodec, onlineInfo.videoCodec) &&
-            Objects.equals(this.audioCodec, onlineInfo.audioCodec) &&
-            Objects.equals(this.clientIp, onlineInfo.clientIp) &&
-            Objects.equals(this.startTime, onlineInfo.startTime);
+        return Objects.equals(this.publishDomain, onlineInfo.publishDomain) && Objects.equals(this.app, onlineInfo.app)
+            && Objects.equals(this.stream, onlineInfo.stream) && Objects.equals(this.videoCodec, onlineInfo.videoCodec)
+            && Objects.equals(this.audioCodec, onlineInfo.audioCodec)
+            && Objects.equals(this.clientIp, onlineInfo.clientIp)
+            && Objects.equals(this.startTime, onlineInfo.startTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(publishDomain, app, stream, videoCodec, audioCodec, clientIp, startTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -404,16 +333,13 @@ public class OnlineInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

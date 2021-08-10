@@ -23,11 +23,10 @@ package com.huaweicloud.sdk.core.http;
 
 import java.util.Optional;
 
-/**
- * @param <ReqT> 字段类型
- * @author HuaweiCloud_SDK
- */
+/** @param <ReqT> 字段类型
+ * @author HuaweiCloud_SDK */
 public interface Field<ReqT, FieldT> {
+
     String getName();
 
     LocationType getLocation();
@@ -38,25 +37,20 @@ public interface Field<ReqT, FieldT> {
 
     FieldExistence getExistence();
 
-    /**
-     * 参数是否出现过，对于http query参数，返回内容可能是null值，但是客户确实设置过，
-     * 例如一个整型 intValue， 调用方传递intValue= ，这种情况值会被读取为null，通过这个方法，识别是否传递过值。
+    /** 参数是否出现过，对于http query参数，返回内容可能是null值，但是客户确实设置过， 例如一个整型 intValue， 调用方传递intValue= ，这种情况值会被读取为null，通过这个方法，识别是否传递过值。
      *
      * @param request
-     * @return
-     */
+     * @return */
     boolean isValueProvided(ReqT request);
 
     Optional<FieldT> readValue(ReqT request);
 
     void writeValue(ReqT request, FieldT value, Class<FieldT> clazz);
 
-    /**
-     * 内部会做类型校验
+    /** 内部会做类型校验
      *
      * @param request
      * @param value
-     * @param clazz
-     */
+     * @param clazz */
     void writeValueSafe(ReqT request, Object value, Class<?> clazz);
 }

@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * JobInstance
- */
-public class JobInstance  {
-
-
+/** JobInstance */
+public class JobInstance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobName")
-    
+    @JsonProperty(value = "jobName")
+
     private String jobName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="planTime")
-    
+    @JsonProperty(value = "planTime")
+
     private Integer planTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="startTime")
-    
+    @JsonProperty(value = "startTime")
+
     private Integer startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endTime")
-    
+    @JsonProperty(value = "endTime")
+
     private Integer endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="executeTime")
-    
+    @JsonProperty(value = "executeTime")
+
     private Integer executeTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instancesId")
-    
+    @JsonProperty(value = "instancesId")
+
     private String instancesId;
 
     public JobInstance withJobName(String jobName) {
@@ -64,13 +48,9 @@ public class JobInstance  {
         return this;
     }
 
-    
-
-
-    /**
-     * Get jobName
-     * @return jobName
-     */
+    /** Get jobName
+     * 
+     * @return jobName */
     public String getJobName() {
         return jobName;
     }
@@ -79,20 +59,14 @@ public class JobInstance  {
         this.jobName = jobName;
     }
 
-    
-
     public JobInstance withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * Get status
-     * @return status
-     */
+    /** Get status
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -101,20 +75,14 @@ public class JobInstance  {
         this.status = status;
     }
 
-    
-
     public JobInstance withPlanTime(Integer planTime) {
         this.planTime = planTime;
         return this;
     }
 
-    
-
-
-    /**
-     * Get planTime
-     * @return planTime
-     */
+    /** Get planTime
+     * 
+     * @return planTime */
     public Integer getPlanTime() {
         return planTime;
     }
@@ -123,20 +91,14 @@ public class JobInstance  {
         this.planTime = planTime;
     }
 
-    
-
     public JobInstance withStartTime(Integer startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * Get startTime
-     * @return startTime
-     */
+    /** Get startTime
+     * 
+     * @return startTime */
     public Integer getStartTime() {
         return startTime;
     }
@@ -145,20 +107,14 @@ public class JobInstance  {
         this.startTime = startTime;
     }
 
-    
-
     public JobInstance withEndTime(Integer endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * Get endTime
-     * @return endTime
-     */
+    /** Get endTime
+     * 
+     * @return endTime */
     public Integer getEndTime() {
         return endTime;
     }
@@ -167,20 +123,14 @@ public class JobInstance  {
         this.endTime = endTime;
     }
 
-    
-
     public JobInstance withExecuteTime(Integer executeTime) {
         this.executeTime = executeTime;
         return this;
     }
 
-    
-
-
-    /**
-     * Get executeTime
-     * @return executeTime
-     */
+    /** Get executeTime
+     * 
+     * @return executeTime */
     public Integer getExecuteTime() {
         return executeTime;
     }
@@ -189,20 +139,14 @@ public class JobInstance  {
         this.executeTime = executeTime;
     }
 
-    
-
     public JobInstance withInstancesId(String instancesId) {
         this.instancesId = instancesId;
         return this;
     }
 
-    
-
-
-    /**
-     * Get instancesId
-     * @return instancesId
-     */
+    /** Get instancesId
+     * 
+     * @return instancesId */
     public String getInstancesId() {
         return instancesId;
     }
@@ -210,8 +154,6 @@ public class JobInstance  {
     public void setInstancesId(String instancesId) {
         this.instancesId = instancesId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -222,18 +164,19 @@ public class JobInstance  {
             return false;
         }
         JobInstance jobInstance = (JobInstance) o;
-        return Objects.equals(this.jobName, jobInstance.jobName) &&
-            Objects.equals(this.status, jobInstance.status) &&
-            Objects.equals(this.planTime, jobInstance.planTime) &&
-            Objects.equals(this.startTime, jobInstance.startTime) &&
-            Objects.equals(this.endTime, jobInstance.endTime) &&
-            Objects.equals(this.executeTime, jobInstance.executeTime) &&
-            Objects.equals(this.instancesId, jobInstance.instancesId);
+        return Objects.equals(this.jobName, jobInstance.jobName) && Objects.equals(this.status, jobInstance.status)
+            && Objects.equals(this.planTime, jobInstance.planTime)
+            && Objects.equals(this.startTime, jobInstance.startTime)
+            && Objects.equals(this.endTime, jobInstance.endTime)
+            && Objects.equals(this.executeTime, jobInstance.executeTime)
+            && Objects.equals(this.instancesId, jobInstance.instancesId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobName, status, planTime, startTime, endTime, executeTime, instancesId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,16 +191,13 @@ public class JobInstance  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

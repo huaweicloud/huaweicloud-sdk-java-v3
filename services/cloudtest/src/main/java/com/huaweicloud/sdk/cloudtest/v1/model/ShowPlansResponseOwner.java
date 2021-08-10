@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.cloudtest.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 测试计划创建者信息
- */
-public class ShowPlansResponseOwner  {
-
-
+/** 测试计划创建者信息 */
+public class ShowPlansResponseOwner {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public ShowPlansResponseOwner withId(String id) {
@@ -34,13 +23,9 @@ public class ShowPlansResponseOwner  {
         return this;
     }
 
-    
-
-
-    /**
-     * 测试计划创建者id
-     * @return id
-     */
+    /** 测试计划创建者id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -49,20 +34,14 @@ public class ShowPlansResponseOwner  {
         this.id = id;
     }
 
-    
-
     public ShowPlansResponseOwner withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 测试计划创建者名称
-     * @return name
-     */
+    /** 测试计划创建者名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -70,8 +49,6 @@ public class ShowPlansResponseOwner  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class ShowPlansResponseOwner  {
             return false;
         }
         ShowPlansResponseOwner showPlansResponseOwner = (ShowPlansResponseOwner) o;
-        return Objects.equals(this.id, showPlansResponseOwner.id) &&
-            Objects.equals(this.name, showPlansResponseOwner.name);
+        return Objects.equals(this.id, showPlansResponseOwner.id)
+            && Objects.equals(this.name, showPlansResponseOwner.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class ShowPlansResponseOwner  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

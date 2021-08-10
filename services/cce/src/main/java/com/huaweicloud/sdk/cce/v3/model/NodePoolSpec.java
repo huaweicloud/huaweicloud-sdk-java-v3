@@ -1,44 +1,29 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.NodeManagement;
-import com.huaweicloud.sdk.cce.v3.model.NodePoolNodeAutoscaling;
-import com.huaweicloud.sdk.cce.v3.model.NodeSpec;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class NodePoolSpec  {
+public class NodePoolSpec {
 
-    /**
-     * 节点池类型。不填写时默认为vm。  - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical 
-     */
+    /** 节点池类型。不填写时默认为vm。 - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum VM for value: "vm"
-         */
+        /** Enum VM for value: "vm" */
         public static final TypeEnum VM = new TypeEnum("vm");
-        
-        /**
-         * Enum ELASTICBMS for value: "ElasticBMS"
-         */
+
+        /** Enum ELASTICBMS for value: "ElasticBMS" */
         public static final TypeEnum ELASTICBMS = new TypeEnum("ElasticBMS");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -67,7 +52,7 @@ public class NodePoolSpec  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -78,7 +63,7 @@ public class NodePoolSpec  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -102,34 +87,29 @@ public class NodePoolSpec  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodeTemplate")
-    
+    @JsonProperty(value = "nodeTemplate")
+
     private NodeSpec nodeTemplate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="initialNodeCount")
-    
+    @JsonProperty(value = "initialNodeCount")
+
     private Integer initialNodeCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="autoscaling")
-    
+    @JsonProperty(value = "autoscaling")
+
     private NodePoolNodeAutoscaling autoscaling;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodeManagement")
-    
+    @JsonProperty(value = "nodeManagement")
+
     private NodeManagement nodeManagement;
 
     public NodePoolSpec withType(TypeEnum type) {
@@ -137,13 +117,9 @@ public class NodePoolSpec  {
         return this;
     }
 
-    
-
-
-    /**
-     * 节点池类型。不填写时默认为vm。  - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical 
-     * @return type
-     */
+    /** 节点池类型。不填写时默认为vm。 - vm：弹性云服务器 - ElasticBMS：C6型弹性裸金属通用计算增强型云服务器，规格示例：c6.22xlarge.2.physical
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -152,27 +128,23 @@ public class NodePoolSpec  {
         this.type = type;
     }
 
-    
-
     public NodePoolSpec withNodeTemplate(NodeSpec nodeTemplate) {
         this.nodeTemplate = nodeTemplate;
         return this;
     }
 
     public NodePoolSpec withNodeTemplate(Consumer<NodeSpec> nodeTemplateSetter) {
-        if(this.nodeTemplate == null ){
+        if (this.nodeTemplate == null) {
             this.nodeTemplate = new NodeSpec();
             nodeTemplateSetter.accept(this.nodeTemplate);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get nodeTemplate
-     * @return nodeTemplate
-     */
+    /** Get nodeTemplate
+     * 
+     * @return nodeTemplate */
     public NodeSpec getNodeTemplate() {
         return nodeTemplate;
     }
@@ -181,20 +153,14 @@ public class NodePoolSpec  {
         this.nodeTemplate = nodeTemplate;
     }
 
-    
-
     public NodePoolSpec withInitialNodeCount(Integer initialNodeCount) {
         this.initialNodeCount = initialNodeCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点池初始化节点个数。
-     * @return initialNodeCount
-     */
+    /** 节点池初始化节点个数。
+     * 
+     * @return initialNodeCount */
     public Integer getInitialNodeCount() {
         return initialNodeCount;
     }
@@ -203,27 +169,23 @@ public class NodePoolSpec  {
         this.initialNodeCount = initialNodeCount;
     }
 
-    
-
     public NodePoolSpec withAutoscaling(NodePoolNodeAutoscaling autoscaling) {
         this.autoscaling = autoscaling;
         return this;
     }
 
     public NodePoolSpec withAutoscaling(Consumer<NodePoolNodeAutoscaling> autoscalingSetter) {
-        if(this.autoscaling == null ){
+        if (this.autoscaling == null) {
             this.autoscaling = new NodePoolNodeAutoscaling();
             autoscalingSetter.accept(this.autoscaling);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get autoscaling
-     * @return autoscaling
-     */
+    /** Get autoscaling
+     * 
+     * @return autoscaling */
     public NodePoolNodeAutoscaling getAutoscaling() {
         return autoscaling;
     }
@@ -232,27 +194,23 @@ public class NodePoolSpec  {
         this.autoscaling = autoscaling;
     }
 
-    
-
     public NodePoolSpec withNodeManagement(NodeManagement nodeManagement) {
         this.nodeManagement = nodeManagement;
         return this;
     }
 
     public NodePoolSpec withNodeManagement(Consumer<NodeManagement> nodeManagementSetter) {
-        if(this.nodeManagement == null ){
+        if (this.nodeManagement == null) {
             this.nodeManagement = new NodeManagement();
             nodeManagementSetter.accept(this.nodeManagement);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get nodeManagement
-     * @return nodeManagement
-     */
+    /** Get nodeManagement
+     * 
+     * @return nodeManagement */
     public NodeManagement getNodeManagement() {
         return nodeManagement;
     }
@@ -260,8 +218,6 @@ public class NodePoolSpec  {
     public void setNodeManagement(NodeManagement nodeManagement) {
         this.nodeManagement = nodeManagement;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -272,16 +228,18 @@ public class NodePoolSpec  {
             return false;
         }
         NodePoolSpec nodePoolSpec = (NodePoolSpec) o;
-        return Objects.equals(this.type, nodePoolSpec.type) &&
-            Objects.equals(this.nodeTemplate, nodePoolSpec.nodeTemplate) &&
-            Objects.equals(this.initialNodeCount, nodePoolSpec.initialNodeCount) &&
-            Objects.equals(this.autoscaling, nodePoolSpec.autoscaling) &&
-            Objects.equals(this.nodeManagement, nodePoolSpec.nodeManagement);
+        return Objects.equals(this.type, nodePoolSpec.type)
+            && Objects.equals(this.nodeTemplate, nodePoolSpec.nodeTemplate)
+            && Objects.equals(this.initialNodeCount, nodePoolSpec.initialNodeCount)
+            && Objects.equals(this.autoscaling, nodePoolSpec.autoscaling)
+            && Objects.equals(this.nodeManagement, nodePoolSpec.nodeManagement);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, nodeTemplate, initialNodeCount, autoscaling, nodeManagement);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -294,16 +252,13 @@ public class NodePoolSpec  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

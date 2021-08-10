@@ -1,51 +1,35 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dgc.v1.model.JobInstance;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListJobInstancesResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instances")
-    
+    @JsonProperty(value = "instances")
+
     private List<JobInstance> instances = null;
-    
+
     public ListJobInstancesResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * Get total
-     * @return total
-     */
+    /** Get total
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -54,16 +38,13 @@ public class ListJobInstancesResponse extends SdkResponse {
         this.total = total;
     }
 
-    
-
     public ListJobInstancesResponse withInstances(List<JobInstance> instances) {
         this.instances = instances;
         return this;
     }
 
-    
     public ListJobInstancesResponse addInstancesItem(JobInstance instancesItem) {
-        if(this.instances == null) {
+        if (this.instances == null) {
             this.instances = new ArrayList<>();
         }
         this.instances.add(instancesItem);
@@ -71,17 +52,16 @@ public class ListJobInstancesResponse extends SdkResponse {
     }
 
     public ListJobInstancesResponse withInstances(Consumer<List<JobInstance>> instancesSetter) {
-        if(this.instances == null) {
+        if (this.instances == null) {
             this.instances = new ArrayList<>();
         }
         instancesSetter.accept(this.instances);
         return this;
     }
 
-    /**
-     * Get instances
-     * @return instances
-     */
+    /** Get instances
+     * 
+     * @return instances */
     public List<JobInstance> getInstances() {
         return instances;
     }
@@ -89,8 +69,6 @@ public class ListJobInstancesResponse extends SdkResponse {
     public void setInstances(List<JobInstance> instances) {
         this.instances = instances;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ListJobInstancesResponse extends SdkResponse {
             return false;
         }
         ListJobInstancesResponse listJobInstancesResponse = (ListJobInstancesResponse) o;
-        return Objects.equals(this.total, listJobInstancesResponse.total) &&
-            Objects.equals(this.instances, listJobInstancesResponse.instances);
+        return Objects.equals(this.total, listJobInstancesResponse.total)
+            && Objects.equals(this.instances, listJobInstancesResponse.instances);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(total, instances);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ListJobInstancesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,69 +1,47 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 隐私屏蔽响应体
- */
-public class PrivacyResponseBody  {
-
-
+/** 隐私屏蔽响应体 */
+public class PrivacyResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policyid")
-    
+    @JsonProperty(value = "policyid")
+
     private String policyid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private String url;
-    /**
-     * 屏蔽字段
-     */
+
+    /** 屏蔽字段 */
     public static final class CategoryEnum {
 
-        
-        /**
-         * Enum PARAMS for value: "params"
-         */
+        /** Enum PARAMS for value: "params" */
         public static final CategoryEnum PARAMS = new CategoryEnum("params");
-        
-        /**
-         * Enum COOKIE for value: "cookie"
-         */
+
+        /** Enum COOKIE for value: "cookie" */
         public static final CategoryEnum COOKIE = new CategoryEnum("cookie");
-        
-        /**
-         * Enum HEADER for value: "header"
-         */
+
+        /** Enum HEADER for value: "header" */
         public static final CategoryEnum HEADER = new CategoryEnum("header");
-        
-        /**
-         * Enum FORM for value: "form"
-         */
+
+        /** Enum FORM for value: "form" */
         public static final CategoryEnum FORM = new CategoryEnum("form");
-        
 
         private static final Map<String, CategoryEnum> STATIC_FIELDS = createStaticFields();
 
@@ -94,7 +72,7 @@ public class PrivacyResponseBody  {
 
         @JsonCreator
         public static CategoryEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CategoryEnum result = STATIC_FIELDS.get(value);
@@ -105,7 +83,7 @@ public class PrivacyResponseBody  {
         }
 
         public static CategoryEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CategoryEnum result = STATIC_FIELDS.get(value);
@@ -129,16 +107,14 @@ public class PrivacyResponseBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="category")
-    
+    @JsonProperty(value = "category")
+
     private CategoryEnum category;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="index")
-    
+    @JsonProperty(value = "index")
+
     private String index;
 
     public PrivacyResponseBody withId(String id) {
@@ -146,13 +122,9 @@ public class PrivacyResponseBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 规则id
-     * @return id
-     */
+    /** 规则id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -161,20 +133,14 @@ public class PrivacyResponseBody  {
         this.id = id;
     }
 
-    
-
     public PrivacyResponseBody withPolicyid(String policyid) {
         this.policyid = policyid;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略id
-     * @return policyid
-     */
+    /** 策略id
+     * 
+     * @return policyid */
     public String getPolicyid() {
         return policyid;
     }
@@ -183,20 +149,14 @@ public class PrivacyResponseBody  {
         this.policyid = policyid;
     }
 
-    
-
     public PrivacyResponseBody withUrl(String url) {
         this.url = url;
         return this;
     }
 
-    
-
-
-    /**
-     * 隐私屏蔽规则应用的url
-     * @return url
-     */
+    /** 隐私屏蔽规则应用的url
+     * 
+     * @return url */
     public String getUrl() {
         return url;
     }
@@ -205,20 +165,14 @@ public class PrivacyResponseBody  {
         this.url = url;
     }
 
-    
-
     public PrivacyResponseBody withCategory(CategoryEnum category) {
         this.category = category;
         return this;
     }
 
-    
-
-
-    /**
-     * 屏蔽字段
-     * @return category
-     */
+    /** 屏蔽字段
+     * 
+     * @return category */
     public CategoryEnum getCategory() {
         return category;
     }
@@ -227,20 +181,14 @@ public class PrivacyResponseBody  {
         this.category = category;
     }
 
-    
-
     public PrivacyResponseBody withIndex(String index) {
         this.index = index;
         return this;
     }
 
-    
-
-
-    /**
-     * 屏蔽字段名
-     * @return index
-     */
+    /** 屏蔽字段名
+     * 
+     * @return index */
     public String getIndex() {
         return index;
     }
@@ -248,8 +196,6 @@ public class PrivacyResponseBody  {
     public void setIndex(String index) {
         this.index = index;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -260,16 +206,18 @@ public class PrivacyResponseBody  {
             return false;
         }
         PrivacyResponseBody privacyResponseBody = (PrivacyResponseBody) o;
-        return Objects.equals(this.id, privacyResponseBody.id) &&
-            Objects.equals(this.policyid, privacyResponseBody.policyid) &&
-            Objects.equals(this.url, privacyResponseBody.url) &&
-            Objects.equals(this.category, privacyResponseBody.category) &&
-            Objects.equals(this.index, privacyResponseBody.index);
+        return Objects.equals(this.id, privacyResponseBody.id)
+            && Objects.equals(this.policyid, privacyResponseBody.policyid)
+            && Objects.equals(this.url, privacyResponseBody.url)
+            && Objects.equals(this.category, privacyResponseBody.category)
+            && Objects.equals(this.index, privacyResponseBody.index);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, policyid, url, category, index);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -282,16 +230,13 @@ public class PrivacyResponseBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

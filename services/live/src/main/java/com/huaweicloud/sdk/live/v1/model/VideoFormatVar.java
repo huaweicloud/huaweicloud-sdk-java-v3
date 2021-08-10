@@ -1,39 +1,23 @@
 package com.huaweicloud.sdk.live.v1.model;
 
-
-
-
-
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
-/**
- * Gets or Sets VideoFormatVar
- */
+/** Gets or Sets VideoFormatVar */
 public class VideoFormatVar {
-    
-    /**
-     * Enum FLV for value: "FLV"
-     */
+
+    /** Enum FLV for value: "FLV" */
     public static final VideoFormatVar FLV = new VideoFormatVar("FLV");
-    
-    /**
-     * Enum HLS for value: "HLS"
-     */
+
+    /** Enum HLS for value: "HLS" */
     public static final VideoFormatVar HLS = new VideoFormatVar("HLS");
-    
-    /**
-     * Enum MP4 for value: "MP4"
-     */
+
+    /** Enum MP4 for value: "MP4" */
     public static final VideoFormatVar MP4 = new VideoFormatVar("MP4");
-    
 
     private static final Map<String, VideoFormatVar> STATIC_FIELDS = createStaticFields();
 
@@ -63,7 +47,7 @@ public class VideoFormatVar {
 
     @JsonCreator
     public static VideoFormatVar fromValue(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         VideoFormatVar result = STATIC_FIELDS.get(value);
@@ -74,7 +58,7 @@ public class VideoFormatVar {
     }
 
     public static VideoFormatVar valueOf(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         VideoFormatVar result = STATIC_FIELDS.get(value);
@@ -97,4 +81,3 @@ public class VideoFormatVar {
         return this.value.hashCode();
     }
 }
-

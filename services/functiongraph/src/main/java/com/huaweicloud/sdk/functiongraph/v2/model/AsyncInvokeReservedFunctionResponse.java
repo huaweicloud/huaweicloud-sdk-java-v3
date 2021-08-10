@@ -1,28 +1,17 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class AsyncInvokeReservedFunctionResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
     public AsyncInvokeReservedFunctionResponse withInstanceId(String instanceId) {
@@ -30,13 +19,9 @@ public class AsyncInvokeReservedFunctionResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 预留实例id
-     * @return instanceId
-     */
+    /** 预留实例id
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -44,8 +29,6 @@ public class AsyncInvokeReservedFunctionResponse extends SdkResponse {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -55,13 +38,16 @@ public class AsyncInvokeReservedFunctionResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        AsyncInvokeReservedFunctionResponse asyncInvokeReservedFunctionResponse = (AsyncInvokeReservedFunctionResponse) o;
+        AsyncInvokeReservedFunctionResponse asyncInvokeReservedFunctionResponse =
+            (AsyncInvokeReservedFunctionResponse) o;
         return Objects.equals(this.instanceId, asyncInvokeReservedFunctionResponse.instanceId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -70,16 +56,13 @@ public class AsyncInvokeReservedFunctionResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

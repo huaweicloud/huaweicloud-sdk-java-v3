@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dns.v2.model.CreatePtrReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateEipRecordSetRequest  {
-
-
+/** Request Object */
+public class CreateEipRecordSetRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="floatingip_id")
-    
+    @JsonProperty(value = "floatingip_id")
+
     private String floatingipId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private CreatePtrReq body;
 
     public CreateEipRecordSetRequest withRegion(String region) {
@@ -41,13 +29,9 @@ public class CreateEipRecordSetRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 租户的区域信息。
-     * @return region
-     */
+    /** 租户的区域信息。
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -56,20 +40,14 @@ public class CreateEipRecordSetRequest  {
         this.region = region;
     }
 
-    
-
     public CreateEipRecordSetRequest withFloatingipId(String floatingipId) {
         this.floatingipId = floatingipId;
         return this;
     }
 
-    
-
-
-    /**
-     * 弹性IP的ID。
-     * @return floatingipId
-     */
+    /** 弹性IP的ID。
+     * 
+     * @return floatingipId */
     public String getFloatingipId() {
         return floatingipId;
     }
@@ -78,27 +56,23 @@ public class CreateEipRecordSetRequest  {
         this.floatingipId = floatingipId;
     }
 
-    
-
     public CreateEipRecordSetRequest withBody(CreatePtrReq body) {
         this.body = body;
         return this;
     }
 
     public CreateEipRecordSetRequest withBody(Consumer<CreatePtrReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CreatePtrReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public CreatePtrReq getBody() {
         return body;
     }
@@ -106,8 +80,6 @@ public class CreateEipRecordSetRequest  {
     public void setBody(CreatePtrReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class CreateEipRecordSetRequest  {
             return false;
         }
         CreateEipRecordSetRequest createEipRecordSetRequest = (CreateEipRecordSetRequest) o;
-        return Objects.equals(this.region, createEipRecordSetRequest.region) &&
-            Objects.equals(this.floatingipId, createEipRecordSetRequest.floatingipId) &&
-            Objects.equals(this.body, createEipRecordSetRequest.body);
+        return Objects.equals(this.region, createEipRecordSetRequest.region)
+            && Objects.equals(this.floatingipId, createEipRecordSetRequest.floatingipId)
+            && Objects.equals(this.body, createEipRecordSetRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(region, floatingipId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class CreateEipRecordSetRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

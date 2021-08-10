@@ -1,147 +1,115 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.evs.v2.model.Attachment;
-import com.huaweicloud.sdk.evs.v2.model.Link;
-import com.huaweicloud.sdk.evs.v2.model.VolumeMetadata;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class UpdateVolumeResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="attachments")
-    
+    @JsonProperty(value = "attachments")
+
     private List<Attachment> attachments = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="availability_zone")
-    
+    @JsonProperty(value = "availability_zone")
+
     private String availabilityZone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bootable")
-    
+    @JsonProperty(value = "bootable")
+
     private String bootable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private List<Link> links = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata")
-    
+    @JsonProperty(value = "metadata")
+
     private VolumeMetadata metadata;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="multiattach")
-    
+    @JsonProperty(value = "multiattach")
+
     private Boolean multiattach;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os-vol-host-attr:host")
-    
+    @JsonProperty(value = "os-vol-host-attr:host")
+
     private String osVolHostAttrHost;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os-vol-tenant-attr:tenant_id")
-    
+    @JsonProperty(value = "os-vol-tenant-attr:tenant_id")
+
     private String osVolTenantAttrTenantId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="shareable")
-    
+    @JsonProperty(value = "shareable")
+
     private String shareable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="snapshot_id")
-    
+    @JsonProperty(value = "snapshot_id")
+
     private String snapshotId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_volid")
-    
+    @JsonProperty(value = "source_volid")
+
     private String sourceVolid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_image_metadata")
-    
+    @JsonProperty(value = "volume_image_metadata")
+
     private Object volumeImageMetadata;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_type")
-    
+    @JsonProperty(value = "volume_type")
+
     private String volumeType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os-volume-replication:extended_status")
-    
+    @JsonProperty(value = "os-volume-replication:extended_status")
+
     private String osVolumeReplicationExtendedStatus;
 
     public UpdateVolumeResponse withAttachments(List<Attachment> attachments) {
@@ -149,9 +117,8 @@ public class UpdateVolumeResponse extends SdkResponse {
         return this;
     }
 
-    
     public UpdateVolumeResponse addAttachmentsItem(Attachment attachmentsItem) {
-        if(this.attachments == null) {
+        if (this.attachments == null) {
             this.attachments = new ArrayList<>();
         }
         this.attachments.add(attachmentsItem);
@@ -159,17 +126,16 @@ public class UpdateVolumeResponse extends SdkResponse {
     }
 
     public UpdateVolumeResponse withAttachments(Consumer<List<Attachment>> attachmentsSetter) {
-        if(this.attachments == null) {
+        if (this.attachments == null) {
             this.attachments = new ArrayList<>();
         }
         attachmentsSetter.accept(this.attachments);
         return this;
     }
 
-    /**
-     * 是否挂载信息。
-     * @return attachments
-     */
+    /** 是否挂载信息。
+     * 
+     * @return attachments */
     public List<Attachment> getAttachments() {
         return attachments;
     }
@@ -178,20 +144,14 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.attachments = attachments;
     }
 
-    
-
     public UpdateVolumeResponse withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘所属AZ。
-     * @return availabilityZone
-     */
+    /** 云硬盘所属AZ。
+     * 
+     * @return availabilityZone */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -200,20 +160,14 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.availabilityZone = availabilityZone;
     }
 
-    
-
     public UpdateVolumeResponse withBootable(String bootable) {
         this.bootable = bootable;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否为可启动云硬盘。
-     * @return bootable
-     */
+    /** 是否为可启动云硬盘。
+     * 
+     * @return bootable */
     public String getBootable() {
         return bootable;
     }
@@ -222,20 +176,14 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.bootable = bootable;
     }
 
-    
-
     public UpdateVolumeResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建云硬盘的时间。
-     * @return createdAt
-     */
+    /** 创建云硬盘的时间。
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -244,20 +192,14 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.createdAt = createdAt;
     }
 
-    
-
     public UpdateVolumeResponse withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘ID。
-     * @return id
-     */
+    /** 云硬盘ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -266,16 +208,13 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public UpdateVolumeResponse withLinks(List<Link> links) {
         this.links = links;
         return this;
     }
 
-    
     public UpdateVolumeResponse addLinksItem(Link linksItem) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         this.links.add(linksItem);
@@ -283,17 +222,16 @@ public class UpdateVolumeResponse extends SdkResponse {
     }
 
     public UpdateVolumeResponse withLinks(Consumer<List<Link>> linksSetter) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);
         return this;
     }
 
-    /**
-     * 云硬盘uri自描述信息
-     * @return links
-     */
+    /** 云硬盘uri自描述信息
+     * 
+     * @return links */
     public List<Link> getLinks() {
         return links;
     }
@@ -302,27 +240,23 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.links = links;
     }
 
-    
-
     public UpdateVolumeResponse withMetadata(VolumeMetadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
     public UpdateVolumeResponse withMetadata(Consumer<VolumeMetadata> metadataSetter) {
-        if(this.metadata == null ){
+        if (this.metadata == null) {
             this.metadata = new VolumeMetadata();
             metadataSetter.accept(this.metadata);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get metadata
-     * @return metadata
-     */
+    /** Get metadata
+     * 
+     * @return metadata */
     public VolumeMetadata getMetadata() {
         return metadata;
     }
@@ -331,20 +265,14 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.metadata = metadata;
     }
 
-    
-
     public UpdateVolumeResponse withMultiattach(Boolean multiattach) {
         this.multiattach = multiattach;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否为可共享云硬盘。
-     * @return multiattach
-     */
+    /** 是否为可共享云硬盘。
+     * 
+     * @return multiattach */
     public Boolean getMultiattach() {
         return multiattach;
     }
@@ -353,20 +281,14 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.multiattach = multiattach;
     }
 
-    
-
     public UpdateVolumeResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘名称
-     * @return name
-     */
+    /** 云硬盘名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -375,20 +297,14 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public UpdateVolumeResponse withOsVolHostAttrHost(String osVolHostAttrHost) {
         this.osVolHostAttrHost = osVolHostAttrHost;
         return this;
     }
 
-    
-
-
-    /**
-     * 预留属性。
-     * @return osVolHostAttrHost
-     */
+    /** 预留属性。
+     * 
+     * @return osVolHostAttrHost */
     public String getOsVolHostAttrHost() {
         return osVolHostAttrHost;
     }
@@ -397,20 +313,14 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.osVolHostAttrHost = osVolHostAttrHost;
     }
 
-    
-
     public UpdateVolumeResponse withOsVolTenantAttrTenantId(String osVolTenantAttrTenantId) {
         this.osVolTenantAttrTenantId = osVolTenantAttrTenantId;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘所属的项目ID。
-     * @return osVolTenantAttrTenantId
-     */
+    /** 云硬盘所属的项目ID。
+     * 
+     * @return osVolTenantAttrTenantId */
     public String getOsVolTenantAttrTenantId() {
         return osVolTenantAttrTenantId;
     }
@@ -419,20 +329,14 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.osVolTenantAttrTenantId = osVolTenantAttrTenantId;
     }
 
-    
-
     public UpdateVolumeResponse withShareable(String shareable) {
         this.shareable = shareable;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否为共享云硬盘。
-     * @return shareable
-     */
+    /** 是否为共享云硬盘。
+     * 
+     * @return shareable */
     public String getShareable() {
         return shareable;
     }
@@ -441,20 +345,14 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.shareable = shareable;
     }
 
-    
-
     public UpdateVolumeResponse withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘大小。
-     * @return size
-     */
+    /** 云硬盘大小。
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -463,20 +361,14 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.size = size;
     }
 
-    
-
     public UpdateVolumeResponse withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
         return this;
     }
 
-    
-
-
-    /**
-     * 快照ID。
-     * @return snapshotId
-     */
+    /** 快照ID。
+     * 
+     * @return snapshotId */
     public String getSnapshotId() {
         return snapshotId;
     }
@@ -485,20 +377,14 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.snapshotId = snapshotId;
     }
 
-    
-
     public UpdateVolumeResponse withSourceVolid(String sourceVolid) {
         this.sourceVolid = sourceVolid;
         return this;
     }
 
-    
-
-
-    /**
-     * 预留字段。
-     * @return sourceVolid
-     */
+    /** 预留字段。
+     * 
+     * @return sourceVolid */
     public String getSourceVolid() {
         return sourceVolid;
     }
@@ -507,20 +393,14 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.sourceVolid = sourceVolid;
     }
 
-    
-
     public UpdateVolumeResponse withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘状态。
-     * @return status
-     */
+    /** 云硬盘状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -529,20 +409,15 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public UpdateVolumeResponse withVolumeImageMetadata(Object volumeImageMetadata) {
         this.volumeImageMetadata = volumeImageMetadata;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘镜像的元数据。 > 说明： >  > 关于“volume_image_metadata”字段的详细说明，具体请参见：\"[查询镜像详情](https://support.huaweicloud.com/api-ims/ims_03_0703.html)\"。
-     * @return volumeImageMetadata
-     */
+    /** 云硬盘镜像的元数据。 > 说明： > >
+     * 关于“volume_image_metadata”字段的详细说明，具体请参见：\"[查询镜像详情](https://support.huaweicloud.com/api-ims/ims_03_0703.html)\"。
+     * 
+     * @return volumeImageMetadata */
     public Object getVolumeImageMetadata() {
         return volumeImageMetadata;
     }
@@ -551,20 +426,14 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.volumeImageMetadata = volumeImageMetadata;
     }
 
-    
-
     public UpdateVolumeResponse withVolumeType(String volumeType) {
         this.volumeType = volumeType;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘类型。
-     * @return volumeType
-     */
+    /** 云硬盘类型。
+     * 
+     * @return volumeType */
     public String getVolumeType() {
         return volumeType;
     }
@@ -573,20 +442,14 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.volumeType = volumeType;
     }
 
-    
-
     public UpdateVolumeResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘描述。
-     * @return description
-     */
+    /** 云硬盘描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -595,20 +458,14 @@ public class UpdateVolumeResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public UpdateVolumeResponse withOsVolumeReplicationExtendedStatus(String osVolumeReplicationExtendedStatus) {
         this.osVolumeReplicationExtendedStatus = osVolumeReplicationExtendedStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 预留属性。
-     * @return osVolumeReplicationExtendedStatus
-     */
+    /** 预留属性。
+     * 
+     * @return osVolumeReplicationExtendedStatus */
     public String getOsVolumeReplicationExtendedStatus() {
         return osVolumeReplicationExtendedStatus;
     }
@@ -616,8 +473,6 @@ public class UpdateVolumeResponse extends SdkResponse {
     public void setOsVolumeReplicationExtendedStatus(String osVolumeReplicationExtendedStatus) {
         this.osVolumeReplicationExtendedStatus = osVolumeReplicationExtendedStatus;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -628,31 +483,52 @@ public class UpdateVolumeResponse extends SdkResponse {
             return false;
         }
         UpdateVolumeResponse updateVolumeResponse = (UpdateVolumeResponse) o;
-        return Objects.equals(this.attachments, updateVolumeResponse.attachments) &&
-            Objects.equals(this.availabilityZone, updateVolumeResponse.availabilityZone) &&
-            Objects.equals(this.bootable, updateVolumeResponse.bootable) &&
-            Objects.equals(this.createdAt, updateVolumeResponse.createdAt) &&
-            Objects.equals(this.id, updateVolumeResponse.id) &&
-            Objects.equals(this.links, updateVolumeResponse.links) &&
-            Objects.equals(this.metadata, updateVolumeResponse.metadata) &&
-            Objects.equals(this.multiattach, updateVolumeResponse.multiattach) &&
-            Objects.equals(this.name, updateVolumeResponse.name) &&
-            Objects.equals(this.osVolHostAttrHost, updateVolumeResponse.osVolHostAttrHost) &&
-            Objects.equals(this.osVolTenantAttrTenantId, updateVolumeResponse.osVolTenantAttrTenantId) &&
-            Objects.equals(this.shareable, updateVolumeResponse.shareable) &&
-            Objects.equals(this.size, updateVolumeResponse.size) &&
-            Objects.equals(this.snapshotId, updateVolumeResponse.snapshotId) &&
-            Objects.equals(this.sourceVolid, updateVolumeResponse.sourceVolid) &&
-            Objects.equals(this.status, updateVolumeResponse.status) &&
-            Objects.equals(this.volumeImageMetadata, updateVolumeResponse.volumeImageMetadata) &&
-            Objects.equals(this.volumeType, updateVolumeResponse.volumeType) &&
-            Objects.equals(this.description, updateVolumeResponse.description) &&
-            Objects.equals(this.osVolumeReplicationExtendedStatus, updateVolumeResponse.osVolumeReplicationExtendedStatus);
+        return Objects.equals(this.attachments, updateVolumeResponse.attachments)
+            && Objects.equals(this.availabilityZone, updateVolumeResponse.availabilityZone)
+            && Objects.equals(this.bootable, updateVolumeResponse.bootable)
+            && Objects.equals(this.createdAt, updateVolumeResponse.createdAt)
+            && Objects.equals(this.id, updateVolumeResponse.id)
+            && Objects.equals(this.links, updateVolumeResponse.links)
+            && Objects.equals(this.metadata, updateVolumeResponse.metadata)
+            && Objects.equals(this.multiattach, updateVolumeResponse.multiattach)
+            && Objects.equals(this.name, updateVolumeResponse.name)
+            && Objects.equals(this.osVolHostAttrHost, updateVolumeResponse.osVolHostAttrHost)
+            && Objects.equals(this.osVolTenantAttrTenantId, updateVolumeResponse.osVolTenantAttrTenantId)
+            && Objects.equals(this.shareable, updateVolumeResponse.shareable)
+            && Objects.equals(this.size, updateVolumeResponse.size)
+            && Objects.equals(this.snapshotId, updateVolumeResponse.snapshotId)
+            && Objects.equals(this.sourceVolid, updateVolumeResponse.sourceVolid)
+            && Objects.equals(this.status, updateVolumeResponse.status)
+            && Objects.equals(this.volumeImageMetadata, updateVolumeResponse.volumeImageMetadata)
+            && Objects.equals(this.volumeType, updateVolumeResponse.volumeType)
+            && Objects.equals(this.description, updateVolumeResponse.description) && Objects
+                .equals(this.osVolumeReplicationExtendedStatus, updateVolumeResponse.osVolumeReplicationExtendedStatus);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(attachments, availabilityZone, bootable, createdAt, id, links, metadata, multiattach, name, osVolHostAttrHost, osVolTenantAttrTenantId, shareable, size, snapshotId, sourceVolid, status, volumeImageMetadata, volumeType, description, osVolumeReplicationExtendedStatus);
+        return Objects.hash(attachments,
+            availabilityZone,
+            bootable,
+            createdAt,
+            id,
+            links,
+            metadata,
+            multiattach,
+            name,
+            osVolHostAttrHost,
+            osVolTenantAttrTenantId,
+            shareable,
+            size,
+            snapshotId,
+            sourceVolid,
+            status,
+            volumeImageMetadata,
+            volumeType,
+            description,
+            osVolumeReplicationExtendedStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -676,20 +552,19 @@ public class UpdateVolumeResponse extends SdkResponse {
         sb.append("    volumeImageMetadata: ").append(toIndentedString(volumeImageMetadata)).append("\n");
         sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    osVolumeReplicationExtendedStatus: ").append(toIndentedString(osVolumeReplicationExtendedStatus)).append("\n");
+        sb.append("    osVolumeReplicationExtendedStatus: ")
+            .append(toIndentedString(osVolumeReplicationExtendedStatus))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

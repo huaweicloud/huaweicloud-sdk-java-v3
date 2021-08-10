@@ -1,66 +1,42 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Volume
- */
-public class Volume  {
+/** Volume */
+public class Volume {
 
-    /**
-     * 磁盘类型。 取值范围如下，区分大小写： - COMMON，表示SATA。 - HIGH，表示SAS。 - ULTRAHIGH，表示SSD。 - ULTRAHIGHPRO，表示SSD尊享版，仅支持超高性能型尊享版（需申请权限）。 - CLOUDSSD，表示SSD云盘，仅支持通用型和独享型规格实例。 - LOCALSSD，表示本地SSD。
-     */
+    /** 磁盘类型。 取值范围如下，区分大小写： - COMMON，表示SATA。 - HIGH，表示SAS。 - ULTRAHIGH，表示SSD。 -
+     * ULTRAHIGHPRO，表示SSD尊享版，仅支持超高性能型尊享版（需申请权限）。 - CLOUDSSD，表示SSD云盘，仅支持通用型和独享型规格实例。 - LOCALSSD，表示本地SSD。 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum ULTRAHIGH for value: "ULTRAHIGH"
-         */
+        /** Enum ULTRAHIGH for value: "ULTRAHIGH" */
         public static final TypeEnum ULTRAHIGH = new TypeEnum("ULTRAHIGH");
-        
-        /**
-         * Enum HIGH for value: "HIGH"
-         */
+
+        /** Enum HIGH for value: "HIGH" */
         public static final TypeEnum HIGH = new TypeEnum("HIGH");
-        
-        /**
-         * Enum COMMON for value: "COMMON"
-         */
+
+        /** Enum COMMON for value: "COMMON" */
         public static final TypeEnum COMMON = new TypeEnum("COMMON");
-        
-        /**
-         * Enum NVMESSD for value: "NVMESSD"
-         */
+
+        /** Enum NVMESSD for value: "NVMESSD" */
         public static final TypeEnum NVMESSD = new TypeEnum("NVMESSD");
-        
-        /**
-         * Enum ULTRAHIGHPRO for value: "ULTRAHIGHPRO"
-         */
+
+        /** Enum ULTRAHIGHPRO for value: "ULTRAHIGHPRO" */
         public static final TypeEnum ULTRAHIGHPRO = new TypeEnum("ULTRAHIGHPRO");
-        
-        /**
-         * Enum CLOUDSSD for value: "CLOUDSSD"
-         */
+
+        /** Enum CLOUDSSD for value: "CLOUDSSD" */
         public static final TypeEnum CLOUDSSD = new TypeEnum("CLOUDSSD");
-        
-        /**
-         * Enum LOCALSSD for value: "LOCALSSD"
-         */
+
+        /** Enum LOCALSSD for value: "LOCALSSD" */
         public static final TypeEnum LOCALSSD = new TypeEnum("LOCALSSD");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -94,7 +70,7 @@ public class Volume  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -105,7 +81,7 @@ public class Volume  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -129,16 +105,14 @@ public class Volume  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
     public Volume withType(TypeEnum type) {
@@ -146,13 +120,10 @@ public class Volume  {
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘类型。 取值范围如下，区分大小写： - COMMON，表示SATA。 - HIGH，表示SAS。 - ULTRAHIGH，表示SSD。 - ULTRAHIGHPRO，表示SSD尊享版，仅支持超高性能型尊享版（需申请权限）。 - CLOUDSSD，表示SSD云盘，仅支持通用型和独享型规格实例。 - LOCALSSD，表示本地SSD。
-     * @return type
-     */
+    /** 磁盘类型。 取值范围如下，区分大小写： - COMMON，表示SATA。 - HIGH，表示SAS。 - ULTRAHIGH，表示SSD。 -
+     * ULTRAHIGHPRO，表示SSD尊享版，仅支持超高性能型尊享版（需申请权限）。 - CLOUDSSD，表示SSD云盘，仅支持通用型和独享型规格实例。 - LOCALSSD，表示本地SSD。
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -161,20 +132,15 @@ public class Volume  {
         this.type = type;
     }
 
-    
-
     public Volume withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘大小，单位为GB。 取值范围：40GB~4000GB，必须为10的整数倍。  部分用户支持40GB~6000GB，如果您想创建存储空间最大为6000GB的数据库实例，或提高扩容上限到10000GB，请联系客服开通。  说明：对于只读实例，该参数无效，磁盘大小，默认和主实例相同。
-     * @return size
-     */
+    /** 磁盘大小，单位为GB。 取值范围：40GB~4000GB，必须为10的整数倍。 部分用户支持40GB~6000GB，如果您想创建存储空间最大为6000GB的数据库实例，或提高扩容上限到10000GB，请联系客服开通。
+     * 说明：对于只读实例，该参数无效，磁盘大小，默认和主实例相同。
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -182,8 +148,6 @@ public class Volume  {
     public void setSize(Integer size) {
         this.size = size;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,13 +158,14 @@ public class Volume  {
             return false;
         }
         Volume volume = (Volume) o;
-        return Objects.equals(this.type, volume.type) &&
-            Objects.equals(this.size, volume.size);
+        return Objects.equals(this.type, volume.type) && Objects.equals(this.size, volume.size);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, size);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -210,16 +175,13 @@ public class Volume  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

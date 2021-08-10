@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ims.v2.model.RegisterImageRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class RegisterImageRequest  {
-
-
+/** Request Object */
+public class RegisterImageRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_id")
-    
+    @JsonProperty(value = "image_id")
+
     private String imageId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private RegisterImageRequestBody body;
 
     public RegisterImageRequest withImageId(String imageId) {
@@ -35,13 +24,10 @@ public class RegisterImageRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像ID。 image_id为用户调用创建镜像元数据接口所创建出来镜像的id，使用其他方式创建的镜像id会导致注册失败。 注册接口调用成功后，请根据镜像id查询镜像的状态。镜像状态变为active表示镜像注册成功，详情请参见查询镜像详情（OpenStack原生）。
-     * @return imageId
-     */
+    /** 镜像ID。 image_id为用户调用创建镜像元数据接口所创建出来镜像的id，使用其他方式创建的镜像id会导致注册失败。
+     * 注册接口调用成功后，请根据镜像id查询镜像的状态。镜像状态变为active表示镜像注册成功，详情请参见查询镜像详情（OpenStack原生）。
+     * 
+     * @return imageId */
     public String getImageId() {
         return imageId;
     }
@@ -50,27 +36,23 @@ public class RegisterImageRequest  {
         this.imageId = imageId;
     }
 
-    
-
     public RegisterImageRequest withBody(RegisterImageRequestBody body) {
         this.body = body;
         return this;
     }
 
     public RegisterImageRequest withBody(Consumer<RegisterImageRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new RegisterImageRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public RegisterImageRequestBody getBody() {
         return body;
     }
@@ -78,8 +60,6 @@ public class RegisterImageRequest  {
     public void setBody(RegisterImageRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +70,15 @@ public class RegisterImageRequest  {
             return false;
         }
         RegisterImageRequest registerImageRequest = (RegisterImageRequest) o;
-        return Objects.equals(this.imageId, registerImageRequest.imageId) &&
-            Objects.equals(this.body, registerImageRequest.body);
+        return Objects.equals(this.imageId, registerImageRequest.imageId)
+            && Objects.equals(this.body, registerImageRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(imageId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +88,13 @@ public class RegisterImageRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

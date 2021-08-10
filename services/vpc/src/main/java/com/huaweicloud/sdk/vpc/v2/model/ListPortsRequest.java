@@ -1,95 +1,69 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListPortsRequest  {
-
-
+/** Request Object */
+public class ListPortsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
-    
+    @JsonProperty(value = "admin_state_up")
+
     private Boolean adminStateUp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="network_id")
-    
+    @JsonProperty(value = "network_id")
+
     private String networkId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mac_address")
-    
+    @JsonProperty(value = "mac_address")
+
     private String macAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_id")
-    
+    @JsonProperty(value = "device_id")
+
     private String deviceId;
-    /**
-     * 按照device_owner过滤查询
-     */
+
+    /** 按照device_owner过滤查询 */
     public static final class DeviceOwnerEnum {
 
-        
-        /**
-         * Enum NETWORK_DHCP for value: "network:dhcp"
-         */
+        /** Enum NETWORK_DHCP for value: "network:dhcp" */
         public static final DeviceOwnerEnum NETWORK_DHCP = new DeviceOwnerEnum("network:dhcp");
-        
-        /**
-         * Enum NETWORK_VIP_PORT for value: "network:VIP_PORT"
-         */
+
+        /** Enum NETWORK_VIP_PORT for value: "network:VIP_PORT" */
         public static final DeviceOwnerEnum NETWORK_VIP_PORT = new DeviceOwnerEnum("network:VIP_PORT");
-        
-        /**
-         * Enum NETWORK_ROUTER_INTERFACE_DISTRIBUTED for value: "network:router_interface_distributed"
-         */
-        public static final DeviceOwnerEnum NETWORK_ROUTER_INTERFACE_DISTRIBUTED = new DeviceOwnerEnum("network:router_interface_distributed");
-        
-        /**
-         * Enum NETWORK_ROUTER_CENTRALIZED_SNAT for value: "network:router_centralized_snat"
-         */
-        public static final DeviceOwnerEnum NETWORK_ROUTER_CENTRALIZED_SNAT = new DeviceOwnerEnum("network:router_centralized_snat");
-        
+
+        /** Enum NETWORK_ROUTER_INTERFACE_DISTRIBUTED for value: "network:router_interface_distributed" */
+        public static final DeviceOwnerEnum NETWORK_ROUTER_INTERFACE_DISTRIBUTED =
+            new DeviceOwnerEnum("network:router_interface_distributed");
+
+        /** Enum NETWORK_ROUTER_CENTRALIZED_SNAT for value: "network:router_centralized_snat" */
+        public static final DeviceOwnerEnum NETWORK_ROUTER_CENTRALIZED_SNAT =
+            new DeviceOwnerEnum("network:router_centralized_snat");
 
         private static final Map<String, DeviceOwnerEnum> STATIC_FIELDS = createStaticFields();
 
@@ -120,7 +94,7 @@ public class ListPortsRequest  {
 
         @JsonCreator
         public static DeviceOwnerEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DeviceOwnerEnum result = STATIC_FIELDS.get(value);
@@ -131,7 +105,7 @@ public class ListPortsRequest  {
         }
 
         public static DeviceOwnerEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DeviceOwnerEnum result = STATIC_FIELDS.get(value);
@@ -155,32 +129,22 @@ public class ListPortsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_owner")
-    
+    @JsonProperty(value = "device_owner")
+
     private DeviceOwnerEnum deviceOwner;
-    /**
-     * 功能说明：按照status过滤查询  取值范围：ACTIVE、BUILD、DOWN
-     */
+
+    /** 功能说明：按照status过滤查询 取值范围：ACTIVE、BUILD、DOWN */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum ACTIVE for value: "ACTIVE"
-         */
+        /** Enum ACTIVE for value: "ACTIVE" */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
-        
-        /**
-         * Enum BUILD for value: "BUILD"
-         */
+
+        /** Enum BUILD for value: "BUILD" */
         public static final StatusEnum BUILD = new StatusEnum("BUILD");
-        
-        /**
-         * Enum DOWN for value: "DOWN"
-         */
+
+        /** Enum DOWN for value: "DOWN" */
         public static final StatusEnum DOWN = new StatusEnum("DOWN");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -210,7 +174,7 @@ public class ListPortsRequest  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -221,7 +185,7 @@ public class ListPortsRequest  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -245,28 +209,24 @@ public class ListPortsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fixed_ips")
-    
+    @JsonProperty(value = "fixed_ips")
+
     private String fixedIps;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public ListPortsRequest withName(String name) {
@@ -274,13 +234,9 @@ public class ListPortsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：按照name过滤查询  取值范围：最大长度不超过255
-     * @return name
-     */
+    /** 功能说明：按照name过滤查询 取值范围：最大长度不超过255
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -289,20 +245,14 @@ public class ListPortsRequest  {
         this.name = name;
     }
 
-    
-
     public ListPortsRequest withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 按照port_id过滤查询
-     * @return id
-     */
+    /** 按照port_id过滤查询
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -311,20 +261,14 @@ public class ListPortsRequest  {
         this.id = id;
     }
 
-    
-
     public ListPortsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页返回的个数
-     * @return limit
-     */
+    /** 每页返回的个数
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -333,20 +277,14 @@ public class ListPortsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListPortsRequest withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
     }
 
-    
-
-
-    /**
-     * 按照admin_state_up进行过滤
-     * @return adminStateUp
-     */
+    /** 按照admin_state_up进行过滤
+     * 
+     * @return adminStateUp */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -355,20 +293,14 @@ public class ListPortsRequest  {
         this.adminStateUp = adminStateUp;
     }
 
-    
-
     public ListPortsRequest withNetworkId(String networkId) {
         this.networkId = networkId;
         return this;
     }
 
-    
-
-
-    /**
-     * 按照network_id过滤查询
-     * @return networkId
-     */
+    /** 按照network_id过滤查询
+     * 
+     * @return networkId */
     public String getNetworkId() {
         return networkId;
     }
@@ -377,20 +309,14 @@ public class ListPortsRequest  {
         this.networkId = networkId;
     }
 
-    
-
     public ListPortsRequest withMacAddress(String macAddress) {
         this.macAddress = macAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 按照mac_address过滤查询
-     * @return macAddress
-     */
+    /** 按照mac_address过滤查询
+     * 
+     * @return macAddress */
     public String getMacAddress() {
         return macAddress;
     }
@@ -399,20 +325,14 @@ public class ListPortsRequest  {
         this.macAddress = macAddress;
     }
 
-    
-
     public ListPortsRequest withDeviceId(String deviceId) {
         this.deviceId = deviceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 按照device_id过滤查询
-     * @return deviceId
-     */
+    /** 按照device_id过滤查询
+     * 
+     * @return deviceId */
     public String getDeviceId() {
         return deviceId;
     }
@@ -421,20 +341,14 @@ public class ListPortsRequest  {
         this.deviceId = deviceId;
     }
 
-    
-
     public ListPortsRequest withDeviceOwner(DeviceOwnerEnum deviceOwner) {
         this.deviceOwner = deviceOwner;
         return this;
     }
 
-    
-
-
-    /**
-     * 按照device_owner过滤查询
-     * @return deviceOwner
-     */
+    /** 按照device_owner过滤查询
+     * 
+     * @return deviceOwner */
     public DeviceOwnerEnum getDeviceOwner() {
         return deviceOwner;
     }
@@ -443,20 +357,14 @@ public class ListPortsRequest  {
         this.deviceOwner = deviceOwner;
     }
 
-    
-
     public ListPortsRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：按照status过滤查询  取值范围：ACTIVE、BUILD、DOWN
-     * @return status
-     */
+    /** 功能说明：按照status过滤查询 取值范围：ACTIVE、BUILD、DOWN
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -465,20 +373,14 @@ public class ListPortsRequest  {
         this.status = status;
     }
 
-    
-
     public ListPortsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页查询起始的资源ID，为空时查询第一页
-     * @return marker
-     */
+    /** 分页查询起始的资源ID，为空时查询第一页
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -487,20 +389,14 @@ public class ListPortsRequest  {
         this.marker = marker;
     }
 
-    
-
     public ListPortsRequest withFixedIps(String fixedIps) {
         this.fixedIps = fixedIps;
         return this;
     }
 
-    
-
-
-    /**
-     * 按照fixed_ips=ip_address或者fixed_ips=subnet_id过滤查询
-     * @return fixedIps
-     */
+    /** 按照fixed_ips=ip_address或者fixed_ips=subnet_id过滤查询
+     * 
+     * @return fixedIps */
     public String getFixedIps() {
         return fixedIps;
     }
@@ -509,20 +405,15 @@ public class ListPortsRequest  {
         this.fixedIps = fixedIps;
     }
 
-    
-
     public ListPortsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：企业项目ID，用于基于企业项目的权限管理。  取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。  若需要查询当前用户所有企业项目绑定的端口，请传参all_granted_eps。
-     * @return enterpriseProjectId
-     */
+    /** 功能说明：企业项目ID，用于基于企业项目的权限管理。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。
+     * 若需要查询当前用户所有企业项目绑定的端口，请传参all_granted_eps。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -530,8 +421,6 @@ public class ListPortsRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -542,23 +431,35 @@ public class ListPortsRequest  {
             return false;
         }
         ListPortsRequest listPortsRequest = (ListPortsRequest) o;
-        return Objects.equals(this.name, listPortsRequest.name) &&
-            Objects.equals(this.id, listPortsRequest.id) &&
-            Objects.equals(this.limit, listPortsRequest.limit) &&
-            Objects.equals(this.adminStateUp, listPortsRequest.adminStateUp) &&
-            Objects.equals(this.networkId, listPortsRequest.networkId) &&
-            Objects.equals(this.macAddress, listPortsRequest.macAddress) &&
-            Objects.equals(this.deviceId, listPortsRequest.deviceId) &&
-            Objects.equals(this.deviceOwner, listPortsRequest.deviceOwner) &&
-            Objects.equals(this.status, listPortsRequest.status) &&
-            Objects.equals(this.marker, listPortsRequest.marker) &&
-            Objects.equals(this.fixedIps, listPortsRequest.fixedIps) &&
-            Objects.equals(this.enterpriseProjectId, listPortsRequest.enterpriseProjectId);
+        return Objects.equals(this.name, listPortsRequest.name) && Objects.equals(this.id, listPortsRequest.id)
+            && Objects.equals(this.limit, listPortsRequest.limit)
+            && Objects.equals(this.adminStateUp, listPortsRequest.adminStateUp)
+            && Objects.equals(this.networkId, listPortsRequest.networkId)
+            && Objects.equals(this.macAddress, listPortsRequest.macAddress)
+            && Objects.equals(this.deviceId, listPortsRequest.deviceId)
+            && Objects.equals(this.deviceOwner, listPortsRequest.deviceOwner)
+            && Objects.equals(this.status, listPortsRequest.status)
+            && Objects.equals(this.marker, listPortsRequest.marker)
+            && Objects.equals(this.fixedIps, listPortsRequest.fixedIps)
+            && Objects.equals(this.enterpriseProjectId, listPortsRequest.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, id, limit, adminStateUp, networkId, macAddress, deviceId, deviceOwner, status, marker, fixedIps, enterpriseProjectId);
+        return Objects.hash(name,
+            id,
+            limit,
+            adminStateUp,
+            networkId,
+            macAddress,
+            deviceId,
+            deviceOwner,
+            status,
+            marker,
+            fixedIps,
+            enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -578,16 +479,13 @@ public class ListPortsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

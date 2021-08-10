@@ -1,78 +1,53 @@
 package com.huaweicloud.sdk.nat.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.time.OffsetDateTime;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 公网NAT网关实例的响应体。
- */
-public class NatGatewayResponseBody  {
-
-
+/** 公网NAT网关实例的响应体。 */
+public class NatGatewayResponseBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
+
     private String tenantId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
-    /**
-     * 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 
-     */
+
+    /** 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 */
     public static final class SpecEnum {
 
-        
-        /**
-         * Enum _1 for value: "1"
-         */
+        /** Enum _1 for value: "1" */
         public static final SpecEnum _1 = new SpecEnum("1");
-        
-        /**
-         * Enum _2 for value: "2"
-         */
+
+        /** Enum _2 for value: "2" */
         public static final SpecEnum _2 = new SpecEnum("2");
-        
-        /**
-         * Enum _3 for value: "3"
-         */
+
+        /** Enum _3 for value: "3" */
         public static final SpecEnum _3 = new SpecEnum("3");
-        
-        /**
-         * Enum _4 for value: "4"
-         */
+
+        /** Enum _4 for value: "4" */
         public static final SpecEnum _4 = new SpecEnum("4");
-        
 
         private static final Map<String, SpecEnum> STATIC_FIELDS = createStaticFields();
 
@@ -103,7 +78,7 @@ public class NatGatewayResponseBody  {
 
         @JsonCreator
         public static SpecEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SpecEnum result = STATIC_FIELDS.get(value);
@@ -114,7 +89,7 @@ public class NatGatewayResponseBody  {
         }
 
         public static SpecEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SpecEnum result = STATIC_FIELDS.get(value);
@@ -138,42 +113,28 @@ public class NatGatewayResponseBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec")
-    
+    @JsonProperty(value = "spec")
+
     private SpecEnum spec;
-    /**
-     * 公网NAT网关实例的状态。
-     */
+
+    /** 公网NAT网关实例的状态。 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum ACTIVE for value: "ACTIVE"
-         */
+        /** Enum ACTIVE for value: "ACTIVE" */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
-        
-        /**
-         * Enum PENDING_CREATE for value: "PENDING_CREATE"
-         */
+
+        /** Enum PENDING_CREATE for value: "PENDING_CREATE" */
         public static final StatusEnum PENDING_CREATE = new StatusEnum("PENDING_CREATE");
-        
-        /**
-         * Enum PENDING_UPDATE for value: "PENDING_UPDATE"
-         */
+
+        /** Enum PENDING_UPDATE for value: "PENDING_UPDATE" */
         public static final StatusEnum PENDING_UPDATE = new StatusEnum("PENDING_UPDATE");
-        
-        /**
-         * Enum PENDING_DELETE for value: "PENDING_DELETE"
-         */
+
+        /** Enum PENDING_DELETE for value: "PENDING_DELETE" */
         public static final StatusEnum PENDING_DELETE = new StatusEnum("PENDING_DELETE");
-        
-        /**
-         * Enum INACTIVE for value: "INACTIVE"
-         */
+
+        /** Enum INACTIVE for value: "INACTIVE" */
         public static final StatusEnum INACTIVE = new StatusEnum("INACTIVE");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -205,7 +166,7 @@ public class NatGatewayResponseBody  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -216,7 +177,7 @@ public class NatGatewayResponseBody  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -240,40 +201,34 @@ public class NatGatewayResponseBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
-    
+    @JsonProperty(value = "admin_state_up")
+
     private Boolean adminStateUp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private OffsetDateTime createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="router_id")
-    
+    @JsonProperty(value = "router_id")
+
     private String routerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="internal_network_id")
-    
+    @JsonProperty(value = "internal_network_id")
+
     private String internalNetworkId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public NatGatewayResponseBody withId(String id) {
@@ -281,13 +236,9 @@ public class NatGatewayResponseBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 公网NAT网关实例的ID。
-     * @return id
-     */
+    /** 公网NAT网关实例的ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -296,20 +247,14 @@ public class NatGatewayResponseBody  {
         this.id = id;
     }
 
-    
-
     public NatGatewayResponseBody withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目的ID。
-     * @return tenantId
-     */
+    /** 项目的ID。
+     * 
+     * @return tenantId */
     public String getTenantId() {
         return tenantId;
     }
@@ -318,20 +263,14 @@ public class NatGatewayResponseBody  {
         this.tenantId = tenantId;
     }
 
-    
-
     public NatGatewayResponseBody withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 公网NAT网关实例的名字，长度限制为64。
-     * @return name
-     */
+    /** 公网NAT网关实例的名字，长度限制为64。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -340,20 +279,14 @@ public class NatGatewayResponseBody  {
         this.name = name;
     }
 
-    
-
     public NatGatewayResponseBody withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 公网NAT网关实例的描述，长度限制为255。
-     * @return description
-     */
+    /** 公网NAT网关实例的描述，长度限制为255。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -362,20 +295,14 @@ public class NatGatewayResponseBody  {
         this.description = description;
     }
 
-    
-
     public NatGatewayResponseBody withSpec(SpecEnum spec) {
         this.spec = spec;
         return this;
     }
 
-    
-
-
-    /**
-     * 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000 
-     * @return spec
-     */
+    /** 公网NAT网关的规格。 取值为： “1”：小型，SNAT最大连接数10000 “2”：中型，SNAT最大连接数50000 “3”：大型，SNAT最大连接数200000 “4”：超大型，SNAT最大连接数1000000
+     * 
+     * @return spec */
     public SpecEnum getSpec() {
         return spec;
     }
@@ -384,20 +311,14 @@ public class NatGatewayResponseBody  {
         this.spec = spec;
     }
 
-    
-
     public NatGatewayResponseBody withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 公网NAT网关实例的状态。
-     * @return status
-     */
+    /** 公网NAT网关实例的状态。
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -406,20 +327,14 @@ public class NatGatewayResponseBody  {
         this.status = status;
     }
 
-    
-
     public NatGatewayResponseBody withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
     }
 
-    
-
-
-    /**
-     * 解冻/冻结状态。 取值范围： - \"true\"：解冻 - \"false\"：冻结
-     * @return adminStateUp
-     */
+    /** 解冻/冻结状态。 取值范围： - \"true\"：解冻 - \"false\"：冻结
+     * 
+     * @return adminStateUp */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -428,20 +343,14 @@ public class NatGatewayResponseBody  {
         this.adminStateUp = adminStateUp;
     }
 
-    
-
     public NatGatewayResponseBody withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 公网NAT网关实例的创建时间，遵循UTC时间，格式是yyyy-mm-ddThh:mm:ssZ。
-     * @return createdAt
-     */
+    /** 公网NAT网关实例的创建时间，遵循UTC时间，格式是yyyy-mm-ddThh:mm:ssZ。
+     * 
+     * @return createdAt */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -450,20 +359,14 @@ public class NatGatewayResponseBody  {
         this.createdAt = createdAt;
     }
 
-    
-
     public NatGatewayResponseBody withRouterId(String routerId) {
         this.routerId = routerId;
         return this;
     }
 
-    
-
-
-    /**
-     * VPC的id。
-     * @return routerId
-     */
+    /** VPC的id。
+     * 
+     * @return routerId */
     public String getRouterId() {
         return routerId;
     }
@@ -472,20 +375,14 @@ public class NatGatewayResponseBody  {
         this.routerId = routerId;
     }
 
-    
-
     public NatGatewayResponseBody withInternalNetworkId(String internalNetworkId) {
         this.internalNetworkId = internalNetworkId;
         return this;
     }
 
-    
-
-
-    /**
-     * 公网NAT网关下行口（DVR的下一跳）所属的network id。
-     * @return internalNetworkId
-     */
+    /** 公网NAT网关下行口（DVR的下一跳）所属的network id。
+     * 
+     * @return internalNetworkId */
     public String getInternalNetworkId() {
         return internalNetworkId;
     }
@@ -494,20 +391,14 @@ public class NatGatewayResponseBody  {
         this.internalNetworkId = internalNetworkId;
     }
 
-    
-
     public NatGatewayResponseBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID。 创建公网NAT网关实例时，关联的企业项目ID。
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID。 创建公网NAT网关实例时，关联的企业项目ID。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -515,8 +406,6 @@ public class NatGatewayResponseBody  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -527,22 +416,34 @@ public class NatGatewayResponseBody  {
             return false;
         }
         NatGatewayResponseBody natGatewayResponseBody = (NatGatewayResponseBody) o;
-        return Objects.equals(this.id, natGatewayResponseBody.id) &&
-            Objects.equals(this.tenantId, natGatewayResponseBody.tenantId) &&
-            Objects.equals(this.name, natGatewayResponseBody.name) &&
-            Objects.equals(this.description, natGatewayResponseBody.description) &&
-            Objects.equals(this.spec, natGatewayResponseBody.spec) &&
-            Objects.equals(this.status, natGatewayResponseBody.status) &&
-            Objects.equals(this.adminStateUp, natGatewayResponseBody.adminStateUp) &&
-            Objects.equals(this.createdAt, natGatewayResponseBody.createdAt) &&
-            Objects.equals(this.routerId, natGatewayResponseBody.routerId) &&
-            Objects.equals(this.internalNetworkId, natGatewayResponseBody.internalNetworkId) &&
-            Objects.equals(this.enterpriseProjectId, natGatewayResponseBody.enterpriseProjectId);
+        return Objects.equals(this.id, natGatewayResponseBody.id)
+            && Objects.equals(this.tenantId, natGatewayResponseBody.tenantId)
+            && Objects.equals(this.name, natGatewayResponseBody.name)
+            && Objects.equals(this.description, natGatewayResponseBody.description)
+            && Objects.equals(this.spec, natGatewayResponseBody.spec)
+            && Objects.equals(this.status, natGatewayResponseBody.status)
+            && Objects.equals(this.adminStateUp, natGatewayResponseBody.adminStateUp)
+            && Objects.equals(this.createdAt, natGatewayResponseBody.createdAt)
+            && Objects.equals(this.routerId, natGatewayResponseBody.routerId)
+            && Objects.equals(this.internalNetworkId, natGatewayResponseBody.internalNetworkId)
+            && Objects.equals(this.enterpriseProjectId, natGatewayResponseBody.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, tenantId, name, description, spec, status, adminStateUp, createdAt, routerId, internalNetworkId, enterpriseProjectId);
+        return Objects.hash(id,
+            tenantId,
+            name,
+            description,
+            spec,
+            status,
+            adminStateUp,
+            createdAt,
+            routerId,
+            internalNetworkId,
+            enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -561,16 +462,13 @@ public class NatGatewayResponseBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

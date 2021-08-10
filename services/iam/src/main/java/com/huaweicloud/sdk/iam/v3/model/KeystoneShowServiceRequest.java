@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class KeystoneShowServiceRequest  {
-
-
+/** Request Object */
+public class KeystoneShowServiceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_id")
-    
+    @JsonProperty(value = "service_id")
+
     private String serviceId;
 
     public KeystoneShowServiceRequest withServiceId(String serviceId) {
@@ -28,13 +18,9 @@ public class KeystoneShowServiceRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 待查询的服务ID。
-     * @return serviceId
-     */
+    /** 待查询的服务ID。
+     * 
+     * @return serviceId */
     public String getServiceId() {
         return serviceId;
     }
@@ -42,8 +28,6 @@ public class KeystoneShowServiceRequest  {
     public void setServiceId(String serviceId) {
         this.serviceId = serviceId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class KeystoneShowServiceRequest  {
         KeystoneShowServiceRequest keystoneShowServiceRequest = (KeystoneShowServiceRequest) o;
         return Objects.equals(this.serviceId, keystoneShowServiceRequest.serviceId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(serviceId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class KeystoneShowServiceRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

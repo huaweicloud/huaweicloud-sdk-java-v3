@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteWatermarkTemplateRequest  {
-
-
+/** Request Object */
+public class DeleteWatermarkTemplateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Authorization")
-    
+    @JsonProperty(value = "Authorization")
+
     private String authorization;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Sdk-Date")
-    
+    @JsonProperty(value = "X-Sdk-Date")
+
     private String xSdkDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
     public DeleteWatermarkTemplateRequest withAuthorization(String authorization) {
@@ -40,13 +28,9 @@ public class DeleteWatermarkTemplateRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
+    /** 使用AK/SK方式认证时必选，携带的鉴权信息。
+     * 
+     * @return authorization */
     public String getAuthorization() {
         return authorization;
     }
@@ -55,22 +39,16 @@ public class DeleteWatermarkTemplateRequest  {
         this.authorization = authorization;
     }
 
-    
-
     public DeleteWatermarkTemplateRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 使用AK/SK方式认证时必选，请求的发生时间。 
-     * @return xSdkDate
-     */
+    /** 使用AK/SK方式认证时必选，请求的发生时间。
+     * 
+     * @return xSdkDate */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Sdk-Date")
+    @JsonProperty(value = "X-Sdk-Date")
     public String getXSdkDate() {
         return xSdkDate;
     }
@@ -79,20 +57,14 @@ public class DeleteWatermarkTemplateRequest  {
         this.xSdkDate = xSdkDate;
     }
 
-    
-
     public DeleteWatermarkTemplateRequest withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 水印模板配置id 
-     * @return id
-     */
+    /** 水印模板配置id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -100,8 +72,6 @@ public class DeleteWatermarkTemplateRequest  {
     public void setId(String id) {
         this.id = id;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +82,16 @@ public class DeleteWatermarkTemplateRequest  {
             return false;
         }
         DeleteWatermarkTemplateRequest deleteWatermarkTemplateRequest = (DeleteWatermarkTemplateRequest) o;
-        return Objects.equals(this.authorization, deleteWatermarkTemplateRequest.authorization) &&
-            Objects.equals(this.xSdkDate, deleteWatermarkTemplateRequest.xSdkDate) &&
-            Objects.equals(this.id, deleteWatermarkTemplateRequest.id);
+        return Objects.equals(this.authorization, deleteWatermarkTemplateRequest.authorization)
+            && Objects.equals(this.xSdkDate, deleteWatermarkTemplateRequest.xSdkDate)
+            && Objects.equals(this.id, deleteWatermarkTemplateRequest.id);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(authorization, xSdkDate, id);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +102,13 @@ public class DeleteWatermarkTemplateRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

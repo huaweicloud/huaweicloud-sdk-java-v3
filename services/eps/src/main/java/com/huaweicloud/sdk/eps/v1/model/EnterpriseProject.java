@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.eps.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 企业项目
- */
-public class EnterpriseProject  {
-
-
+/** 企业项目 */
+public class EnterpriseProject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
     public EnterpriseProject withName(String name) {
@@ -40,13 +28,9 @@ public class EnterpriseProject  {
         return this;
     }
 
-    
-
-
-    /**
-     * 只能由中文字符、英文字母（a~zA~Z）、数字（0~9）、下划线（_）、中划线（-）组成，且长度为[1-64]个字符。名称不能为大小写混合的default，且在租户账号内唯一。
-     * @return name
-     */
+    /** 只能由中文字符、英文字母（a~zA~Z）、数字（0~9）、下划线（_）、中划线（-）组成，且长度为[1-64]个字符。名称不能为大小写混合的default，且在租户账号内唯一。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -55,20 +39,14 @@ public class EnterpriseProject  {
         this.name = name;
     }
 
-    
-
     public EnterpriseProject withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 最大长度512个字符。
-     * @return description
-     */
+    /** 最大长度512个字符。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -77,20 +55,14 @@ public class EnterpriseProject  {
         this.description = description;
     }
 
-    
-
     public EnterpriseProject withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目类型
-     * @return type
-     */
+    /** 企业项目类型
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -98,8 +70,6 @@ public class EnterpriseProject  {
     public void setType(String type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class EnterpriseProject  {
             return false;
         }
         EnterpriseProject enterpriseProject = (EnterpriseProject) o;
-        return Objects.equals(this.name, enterpriseProject.name) &&
-            Objects.equals(this.description, enterpriseProject.description) &&
-            Objects.equals(this.type, enterpriseProject.type);
+        return Objects.equals(this.name, enterpriseProject.name)
+            && Objects.equals(this.description, enterpriseProject.description)
+            && Objects.equals(this.type, enterpriseProject.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, description, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class EnterpriseProject  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

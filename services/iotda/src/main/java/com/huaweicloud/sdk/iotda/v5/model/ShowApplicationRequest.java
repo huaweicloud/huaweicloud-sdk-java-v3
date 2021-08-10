@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowApplicationRequest  {
-
-
+/** Request Object */
+public class ShowApplicationRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Instance-Id")
-    
+    @JsonProperty(value = "Instance-Id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
     public ShowApplicationRequest withInstanceId(String instanceId) {
@@ -34,13 +23,9 @@ public class ShowApplicationRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
-     * @return instanceId
-     */
+    /** **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -49,20 +34,15 @@ public class ShowApplicationRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ShowApplicationRequest withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：资源空间ID，唯一标识一个资源空间，由物联网平台在创建资源空间时分配。资源空间对应的是物联网平台原有的应用，在物联网平台的含义与应用一致，只是变更了名称。 **取值范围**：长度不超过36，只允许字母、数字、下划线（_）、连接符（-）的组合。
-     * @return appId
-     */
+    /** **参数说明**：资源空间ID，唯一标识一个资源空间，由物联网平台在创建资源空间时分配。资源空间对应的是物联网平台原有的应用，在物联网平台的含义与应用一致，只是变更了名称。
+     * **取值范围**：长度不超过36，只允许字母、数字、下划线（_）、连接符（-）的组合。
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -70,8 +50,6 @@ public class ShowApplicationRequest  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +60,15 @@ public class ShowApplicationRequest  {
             return false;
         }
         ShowApplicationRequest showApplicationRequest = (ShowApplicationRequest) o;
-        return Objects.equals(this.instanceId, showApplicationRequest.instanceId) &&
-            Objects.equals(this.appId, showApplicationRequest.appId);
+        return Objects.equals(this.instanceId, showApplicationRequest.instanceId)
+            && Objects.equals(this.appId, showApplicationRequest.appId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, appId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +78,13 @@ public class ShowApplicationRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

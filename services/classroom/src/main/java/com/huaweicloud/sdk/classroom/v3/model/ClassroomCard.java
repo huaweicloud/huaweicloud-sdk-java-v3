@@ -1,51 +1,37 @@
 package com.huaweicloud.sdk.classroom.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.math.BigDecimal;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * ClassroomCard
- */
-public class ClassroomCard  {
-
-
+/** ClassroomCard */
+public class ClassroomCard {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="classroom_id")
-    
+    @JsonProperty(value = "classroom_id")
+
     private String classroomId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="credit")
-    
+    @JsonProperty(value = "credit")
+
     private BigDecimal credit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
     public ClassroomCard withClassroomId(String classroomId) {
@@ -53,13 +39,9 @@ public class ClassroomCard  {
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂ID
-     * @return classroomId
-     */
+    /** 课堂ID
+     * 
+     * @return classroomId */
     public String getClassroomId() {
         return classroomId;
     }
@@ -68,20 +50,14 @@ public class ClassroomCard  {
         this.classroomId = classroomId;
     }
 
-    
-
     public ClassroomCard withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂名称
-     * @return name
-     */
+    /** 课堂名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -90,20 +66,14 @@ public class ClassroomCard  {
         this.name = name;
     }
 
-    
-
     public ClassroomCard withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂描述
-     * @return description
-     */
+    /** 课堂描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -112,20 +82,14 @@ public class ClassroomCard  {
         this.description = description;
     }
 
-    
-
     public ClassroomCard withCredit(BigDecimal credit) {
         this.credit = credit;
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂学分
-     * @return credit
-     */
+    /** 课堂学分
+     * 
+     * @return credit */
     public BigDecimal getCredit() {
         return credit;
     }
@@ -134,20 +98,14 @@ public class ClassroomCard  {
         this.credit = credit;
     }
 
-    
-
     public ClassroomCard withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂当前的状态，normal：课堂处于正常状态，archive：课堂已归档
-     * @return status
-     */
+    /** 课堂当前的状态，normal：课堂处于正常状态，archive：课堂已归档
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -155,8 +113,6 @@ public class ClassroomCard  {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -167,16 +123,17 @@ public class ClassroomCard  {
             return false;
         }
         ClassroomCard classroomCard = (ClassroomCard) o;
-        return Objects.equals(this.classroomId, classroomCard.classroomId) &&
-            Objects.equals(this.name, classroomCard.name) &&
-            Objects.equals(this.description, classroomCard.description) &&
-            Objects.equals(this.credit, classroomCard.credit) &&
-            Objects.equals(this.status, classroomCard.status);
+        return Objects.equals(this.classroomId, classroomCard.classroomId)
+            && Objects.equals(this.name, classroomCard.name)
+            && Objects.equals(this.description, classroomCard.description)
+            && Objects.equals(this.credit, classroomCard.credit) && Objects.equals(this.status, classroomCard.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(classroomId, name, description, credit, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -189,16 +146,13 @@ public class ClassroomCard  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

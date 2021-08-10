@@ -1,86 +1,66 @@
 package com.huaweicloud.sdk.swr.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * SyncRepo
- */
-public class SyncRepo  {
-
-
+/** SyncRepo */
+public class SyncRepo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="createdAt")
-    
+    @JsonProperty(value = "createdAt")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domainID")
-    
+    @JsonProperty(value = "domainID")
+
     private String domainID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domainName")
-    
+    @JsonProperty(value = "domainName")
+
     private String domainName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Integer id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
+
     private String namespace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="override")
-    
+    @JsonProperty(value = "override")
+
     private Boolean override;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remoteNamespace")
-    
+    @JsonProperty(value = "remoteNamespace")
+
     private String remoteNamespace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remoteRegionId")
-    
+    @JsonProperty(value = "remoteRegionId")
+
     private String remoteRegionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repoName")
-    
+    @JsonProperty(value = "repoName")
+
     private String repoName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="syncAuto")
-    
+    @JsonProperty(value = "syncAuto")
+
     private Boolean syncAuto;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updatedAt")
-    
+    @JsonProperty(value = "updatedAt")
+
     private String updatedAt;
 
     public SyncRepo withCreatedAt(String createdAt) {
@@ -88,13 +68,9 @@ public class SyncRepo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
-     * @return createdAt
-     */
+    /** 创建时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -103,20 +79,14 @@ public class SyncRepo  {
         this.createdAt = createdAt;
     }
 
-    
-
     public SyncRepo withDomainID(String domainID) {
         this.domainID = domainID;
         return this;
     }
 
-    
-
-
-    /**
-     * 租户ID
-     * @return domainID
-     */
+    /** 租户ID
+     * 
+     * @return domainID */
     public String getDomainID() {
         return domainID;
     }
@@ -125,20 +95,14 @@ public class SyncRepo  {
         this.domainID = domainID;
     }
 
-    
-
     public SyncRepo withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
     }
 
-    
-
-
-    /**
-     * 租户名
-     * @return domainName
-     */
+    /** 租户名
+     * 
+     * @return domainName */
     public String getDomainName() {
         return domainName;
     }
@@ -147,20 +111,14 @@ public class SyncRepo  {
         this.domainName = domainName;
     }
 
-    
-
     public SyncRepo withId(Integer id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * ID
-     * @return id
-     */
+    /** ID
+     * 
+     * @return id */
     public Integer getId() {
         return id;
     }
@@ -169,20 +127,14 @@ public class SyncRepo  {
         this.id = id;
     }
 
-    
-
     public SyncRepo withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
     }
 
-    
-
-
-    /**
-     * 组织名
-     * @return namespace
-     */
+    /** 组织名
+     * 
+     * @return namespace */
     public String getNamespace() {
         return namespace;
     }
@@ -191,20 +143,14 @@ public class SyncRepo  {
         this.namespace = namespace;
     }
 
-    
-
     public SyncRepo withOverride(Boolean override) {
         this.override = override;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否覆盖
-     * @return override
-     */
+    /** 是否覆盖
+     * 
+     * @return override */
     public Boolean getOverride() {
         return override;
     }
@@ -213,20 +159,14 @@ public class SyncRepo  {
         this.override = override;
     }
 
-    
-
     public SyncRepo withRemoteNamespace(String remoteNamespace) {
         this.remoteNamespace = remoteNamespace;
         return this;
     }
 
-    
-
-
-    /**
-     * 目的组织
-     * @return remoteNamespace
-     */
+    /** 目的组织
+     * 
+     * @return remoteNamespace */
     public String getRemoteNamespace() {
         return remoteNamespace;
     }
@@ -235,20 +175,14 @@ public class SyncRepo  {
         this.remoteNamespace = remoteNamespace;
     }
 
-    
-
     public SyncRepo withRemoteRegionId(String remoteRegionId) {
         this.remoteRegionId = remoteRegionId;
         return this;
     }
 
-    
-
-
-    /**
-     * 目的region
-     * @return remoteRegionId
-     */
+    /** 目的region
+     * 
+     * @return remoteRegionId */
     public String getRemoteRegionId() {
         return remoteRegionId;
     }
@@ -257,20 +191,14 @@ public class SyncRepo  {
         this.remoteRegionId = remoteRegionId;
     }
 
-    
-
     public SyncRepo withRepoName(String repoName) {
         this.repoName = repoName;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库名
-     * @return repoName
-     */
+    /** 仓库名
+     * 
+     * @return repoName */
     public String getRepoName() {
         return repoName;
     }
@@ -279,20 +207,14 @@ public class SyncRepo  {
         this.repoName = repoName;
     }
 
-    
-
     public SyncRepo withSyncAuto(Boolean syncAuto) {
         this.syncAuto = syncAuto;
         return this;
     }
 
-    
-
-
-    /**
-     * 自动同步
-     * @return syncAuto
-     */
+    /** 自动同步
+     * 
+     * @return syncAuto */
     public Boolean getSyncAuto() {
         return syncAuto;
     }
@@ -301,20 +223,14 @@ public class SyncRepo  {
         this.syncAuto = syncAuto;
     }
 
-    
-
     public SyncRepo withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
-     * @return updatedAt
-     */
+    /** 更新时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
+     * 
+     * @return updatedAt */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -322,8 +238,6 @@ public class SyncRepo  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -334,22 +248,30 @@ public class SyncRepo  {
             return false;
         }
         SyncRepo syncRepo = (SyncRepo) o;
-        return Objects.equals(this.createdAt, syncRepo.createdAt) &&
-            Objects.equals(this.domainID, syncRepo.domainID) &&
-            Objects.equals(this.domainName, syncRepo.domainName) &&
-            Objects.equals(this.id, syncRepo.id) &&
-            Objects.equals(this.namespace, syncRepo.namespace) &&
-            Objects.equals(this.override, syncRepo.override) &&
-            Objects.equals(this.remoteNamespace, syncRepo.remoteNamespace) &&
-            Objects.equals(this.remoteRegionId, syncRepo.remoteRegionId) &&
-            Objects.equals(this.repoName, syncRepo.repoName) &&
-            Objects.equals(this.syncAuto, syncRepo.syncAuto) &&
-            Objects.equals(this.updatedAt, syncRepo.updatedAt);
+        return Objects.equals(this.createdAt, syncRepo.createdAt) && Objects.equals(this.domainID, syncRepo.domainID)
+            && Objects.equals(this.domainName, syncRepo.domainName) && Objects.equals(this.id, syncRepo.id)
+            && Objects.equals(this.namespace, syncRepo.namespace) && Objects.equals(this.override, syncRepo.override)
+            && Objects.equals(this.remoteNamespace, syncRepo.remoteNamespace)
+            && Objects.equals(this.remoteRegionId, syncRepo.remoteRegionId)
+            && Objects.equals(this.repoName, syncRepo.repoName) && Objects.equals(this.syncAuto, syncRepo.syncAuto)
+            && Objects.equals(this.updatedAt, syncRepo.updatedAt);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(createdAt, domainID, domainName, id, namespace, override, remoteNamespace, remoteRegionId, repoName, syncAuto, updatedAt);
+        return Objects.hash(createdAt,
+            domainID,
+            domainName,
+            id,
+            namespace,
+            override,
+            remoteNamespace,
+            remoteRegionId,
+            repoName,
+            syncAuto,
+            updatedAt);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -368,16 +290,13 @@ public class SyncRepo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

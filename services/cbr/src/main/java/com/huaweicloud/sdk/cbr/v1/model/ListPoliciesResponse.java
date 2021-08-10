@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.Policy;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListPoliciesResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policies")
-    
+    @JsonProperty(value = "policies")
+
     private List<Policy> policies = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
+
     private Integer count;
 
     public ListPoliciesResponse withPolicies(List<Policy> policies) {
@@ -39,9 +27,8 @@ public class ListPoliciesResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListPoliciesResponse addPoliciesItem(Policy policiesItem) {
-        if(this.policies == null) {
+        if (this.policies == null) {
             this.policies = new ArrayList<>();
         }
         this.policies.add(policiesItem);
@@ -49,17 +36,14 @@ public class ListPoliciesResponse extends SdkResponse {
     }
 
     public ListPoliciesResponse withPolicies(Consumer<List<Policy>> policiesSetter) {
-        if(this.policies == null) {
+        if (this.policies == null) {
             this.policies = new ArrayList<>();
         }
         policiesSetter.accept(this.policies);
         return this;
     }
 
-    /**
-     * 
-     * @return policies
-     */
+    /** @return policies */
     public List<Policy> getPolicies() {
         return policies;
     }
@@ -68,20 +52,12 @@ public class ListPoliciesResponse extends SdkResponse {
         this.policies = policies;
     }
 
-    
-
     public ListPoliciesResponse withCount(Integer count) {
         this.count = count;
         return this;
     }
 
-    
-
-
-    /**
-     * 
-     * @return count
-     */
+    /** @return count */
     public Integer getCount() {
         return count;
     }
@@ -89,8 +65,6 @@ public class ListPoliciesResponse extends SdkResponse {
     public void setCount(Integer count) {
         this.count = count;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +75,15 @@ public class ListPoliciesResponse extends SdkResponse {
             return false;
         }
         ListPoliciesResponse listPoliciesResponse = (ListPoliciesResponse) o;
-        return Objects.equals(this.policies, listPoliciesResponse.policies) &&
-            Objects.equals(this.count, listPoliciesResponse.count);
+        return Objects.equals(this.policies, listPoliciesResponse.policies)
+            && Objects.equals(this.count, listPoliciesResponse.count);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(policies, count);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +93,13 @@ public class ListPoliciesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

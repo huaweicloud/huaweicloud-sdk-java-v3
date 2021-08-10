@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListProductTopicsRequest  {
-
-
+/** Request Object */
+public class ListProductTopicsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
-    
+    @JsonProperty(value = "product_id")
+
     private Integer productId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
     public ListProductTopicsRequest withInstanceId(String instanceId) {
@@ -46,13 +33,9 @@ public class ListProductTopicsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -61,22 +44,14 @@ public class ListProductTopicsRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListProductTopicsRequest withProductId(Integer productId) {
         this.productId = productId;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品ID
-     * minimum: 0
-     * maximum: 200376420520689663
-     * @return productId
-     */
+    /** 产品ID minimum: 0 maximum: 200376420520689663
+     * 
+     * @return productId */
     public Integer getProductId() {
         return productId;
     }
@@ -85,22 +60,14 @@ public class ListProductTopicsRequest  {
         this.productId = productId;
     }
 
-    
-
     public ListProductTopicsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示条目数量，最大数量999，超过999后只返回999
-     * minimum: 0
-     * maximum: 999
-     * @return limit
-     */
+    /** 每页显示条目数量，最大数量999，超过999后只返回999 minimum: 0 maximum: 999
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -109,22 +76,14 @@ public class ListProductTopicsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListProductTopicsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于0
-     * minimum: 0
-     * maximum: 999999
-     * @return offset
-     */
+    /** 偏移量，表示从此偏移量开始查询， offset大于等于0 minimum: 0 maximum: 999999
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -132,8 +91,6 @@ public class ListProductTopicsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -144,15 +101,17 @@ public class ListProductTopicsRequest  {
             return false;
         }
         ListProductTopicsRequest listProductTopicsRequest = (ListProductTopicsRequest) o;
-        return Objects.equals(this.instanceId, listProductTopicsRequest.instanceId) &&
-            Objects.equals(this.productId, listProductTopicsRequest.productId) &&
-            Objects.equals(this.limit, listProductTopicsRequest.limit) &&
-            Objects.equals(this.offset, listProductTopicsRequest.offset);
+        return Objects.equals(this.instanceId, listProductTopicsRequest.instanceId)
+            && Objects.equals(this.productId, listProductTopicsRequest.productId)
+            && Objects.equals(this.limit, listProductTopicsRequest.limit)
+            && Objects.equals(this.offset, listProductTopicsRequest.offset);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, productId, limit, offset);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -164,16 +123,13 @@ public class ListProductTopicsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

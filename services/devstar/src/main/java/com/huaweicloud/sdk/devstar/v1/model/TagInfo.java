@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.devstar.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * TagInfo
- */
-public class TagInfo  {
-
-
+/** TagInfo */
+public class TagInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public TagInfo withId(String id) {
@@ -34,13 +23,9 @@ public class TagInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义标签id。
-     * @return id
-     */
+    /** 自定义标签id。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -49,20 +34,14 @@ public class TagInfo  {
         this.id = id;
     }
 
-    
-
     public TagInfo withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义标签名称。
-     * @return name
-     */
+    /** 自定义标签名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -70,8 +49,6 @@ public class TagInfo  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,14 @@ public class TagInfo  {
             return false;
         }
         TagInfo tagInfo = (TagInfo) o;
-        return Objects.equals(this.id, tagInfo.id) &&
-            Objects.equals(this.name, tagInfo.name);
+        return Objects.equals(this.id, tagInfo.id) && Objects.equals(this.name, tagInfo.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +76,13 @@ public class TagInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

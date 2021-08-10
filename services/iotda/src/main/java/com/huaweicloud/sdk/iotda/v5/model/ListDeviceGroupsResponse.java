@@ -1,38 +1,25 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotda.v5.model.DeviceGroupResponseDTO;
-import com.huaweicloud.sdk.iotda.v5.model.Page;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListDeviceGroupsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_groups")
-    
+    @JsonProperty(value = "device_groups")
+
     private List<DeviceGroupResponseDTO> deviceGroups = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page")
-    
+    @JsonProperty(value = "page")
+
     private Page page;
 
     public ListDeviceGroupsResponse withDeviceGroups(List<DeviceGroupResponseDTO> deviceGroups) {
@@ -40,9 +27,8 @@ public class ListDeviceGroupsResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListDeviceGroupsResponse addDeviceGroupsItem(DeviceGroupResponseDTO deviceGroupsItem) {
-        if(this.deviceGroups == null) {
+        if (this.deviceGroups == null) {
             this.deviceGroups = new ArrayList<>();
         }
         this.deviceGroups.add(deviceGroupsItem);
@@ -50,17 +36,16 @@ public class ListDeviceGroupsResponse extends SdkResponse {
     }
 
     public ListDeviceGroupsResponse withDeviceGroups(Consumer<List<DeviceGroupResponseDTO>> deviceGroupsSetter) {
-        if(this.deviceGroups == null) {
+        if (this.deviceGroups == null) {
             this.deviceGroups = new ArrayList<>();
         }
         deviceGroupsSetter.accept(this.deviceGroups);
         return this;
     }
 
-    /**
-     * 设备组信息列表。
-     * @return deviceGroups
-     */
+    /** 设备组信息列表。
+     * 
+     * @return deviceGroups */
     public List<DeviceGroupResponseDTO> getDeviceGroups() {
         return deviceGroups;
     }
@@ -69,27 +54,23 @@ public class ListDeviceGroupsResponse extends SdkResponse {
         this.deviceGroups = deviceGroups;
     }
 
-    
-
     public ListDeviceGroupsResponse withPage(Page page) {
         this.page = page;
         return this;
     }
 
     public ListDeviceGroupsResponse withPage(Consumer<Page> pageSetter) {
-        if(this.page == null ){
+        if (this.page == null) {
             this.page = new Page();
             pageSetter.accept(this.page);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get page
-     * @return page
-     */
+    /** Get page
+     * 
+     * @return page */
     public Page getPage() {
         return page;
     }
@@ -97,8 +78,6 @@ public class ListDeviceGroupsResponse extends SdkResponse {
     public void setPage(Page page) {
         this.page = page;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,13 +88,15 @@ public class ListDeviceGroupsResponse extends SdkResponse {
             return false;
         }
         ListDeviceGroupsResponse listDeviceGroupsResponse = (ListDeviceGroupsResponse) o;
-        return Objects.equals(this.deviceGroups, listDeviceGroupsResponse.deviceGroups) &&
-            Objects.equals(this.page, listDeviceGroupsResponse.page);
+        return Objects.equals(this.deviceGroups, listDeviceGroupsResponse.deviceGroups)
+            && Objects.equals(this.page, listDeviceGroupsResponse.page);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(deviceGroups, page);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -125,16 +106,13 @@ public class ListDeviceGroupsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

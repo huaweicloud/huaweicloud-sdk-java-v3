@@ -1,19 +1,19 @@
 package com.huaweicloud.sdk.ces.v1;
 
+import com.huaweicloud.sdk.ces.v1.model.*;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.ces.v1.model.*;
+
 import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class CesMeta {
 
-    public static final HttpRequestDef<BatchListMetricDataRequest, BatchListMetricDataResponse> batchListMetricData = genForbatchListMetricData();
+    public static final HttpRequestDef<BatchListMetricDataRequest, BatchListMetricDataResponse> batchListMetricData =
+        genForbatchListMetricData();
 
     private static HttpRequestDef<BatchListMetricDataRequest, BatchListMetricDataResponse> genForbatchListMetricData() {
         // basic
@@ -24,18 +24,15 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<BatchListMetricDataRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchListMetricDataRequestBody.class,
+            TypeCasts.uncheckedConversion(BatchListMetricDataRequestBody.class),
             f -> f.withMarshaller(BatchListMetricDataRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -51,23 +48,21 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateAlarmRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateAlarmRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateAlarmRequestBody.class),
             f -> f.withMarshaller(CreateAlarmRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateAlarmTemplateRequest, CreateAlarmTemplateResponse> createAlarmTemplate = genForcreateAlarmTemplate();
+    public static final HttpRequestDef<CreateAlarmTemplateRequest, CreateAlarmTemplateResponse> createAlarmTemplate =
+        genForcreateAlarmTemplate();
 
     private static HttpRequestDef<CreateAlarmTemplateRequest, CreateAlarmTemplateResponse> genForcreateAlarmTemplate() {
         // basic
@@ -78,18 +73,15 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateAlarmTemplateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateAlarmTemplateRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateAlarmTemplateRequestBody.class),
             f -> f.withMarshaller(CreateAlarmTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -105,32 +97,29 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<List<EventItem>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(CreateEventsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            }).withInnerContainerType(EventItem.class)
-        );
+            }).withInnerContainerType(EventItem.class));
 
         // response
-        
-        builder.<List<CreateEventsResponseBody>>withResponseField(
-            "body",
+
+        builder.<List<CreateEventsResponseBody>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(CreateEventsResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(CreateEventsResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            }).withInnerContainerType(CreateEventsResponseBody.class)
-        );
-
+            }).withInnerContainerType(CreateEventsResponseBody.class));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateMetricDataRequest, CreateMetricDataResponse> createMetricData = genForcreateMetricData();
+    public static final HttpRequestDef<CreateMetricDataRequest, CreateMetricDataResponse> createMetricData =
+        genForcreateMetricData();
 
     private static HttpRequestDef<CreateMetricDataRequest, CreateMetricDataResponse> genForcreateMetricData() {
         // basic
@@ -141,23 +130,21 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<List<MetricDataItem>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(CreateMetricDataRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            }).withInnerContainerType(MetricDataItem.class)
-        );
+            }).withInnerContainerType(MetricDataItem.class));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateResourceGroupRequest, CreateResourceGroupResponse> createResourceGroup = genForcreateResourceGroup();
+    public static final HttpRequestDef<CreateResourceGroupRequest, CreateResourceGroupResponse> createResourceGroup =
+        genForcreateResourceGroup();
 
     private static HttpRequestDef<CreateResourceGroupRequest, CreateResourceGroupResponse> genForcreateResourceGroup() {
         // basic
@@ -168,18 +155,15 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateResourceGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateResourceGroupRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateResourceGroupRequestBody.class),
             f -> f.withMarshaller(CreateResourceGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -195,77 +179,71 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("alarm_id",
+        builder.<String>withRequestField("alarm_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAlarmRequest::getAlarmId, (req, v) -> {
                 req.setAlarmId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAlarmTemplateRequest, DeleteAlarmTemplateResponse> deleteAlarmTemplate = genFordeleteAlarmTemplate();
+    public static final HttpRequestDef<DeleteAlarmTemplateRequest, DeleteAlarmTemplateResponse> deleteAlarmTemplate =
+        genFordeleteAlarmTemplate();
 
     private static HttpRequestDef<DeleteAlarmTemplateRequest, DeleteAlarmTemplateResponse> genFordeleteAlarmTemplate() {
         // basic
-        HttpRequestDef.Builder<DeleteAlarmTemplateRequest, DeleteAlarmTemplateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAlarmTemplateRequest.class, DeleteAlarmTemplateResponse.class)
-                .withName("DeleteAlarmTemplate")
-                .withUri("/V1.0/{project_id}/alarm-template/{template_id}")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<DeleteAlarmTemplateRequest, DeleteAlarmTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteAlarmTemplateRequest.class, DeleteAlarmTemplateResponse.class)
+            .withName("DeleteAlarmTemplate")
+            .withUri("/V1.0/{project_id}/alarm-template/{template_id}")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("template_id",
+        builder.<String>withRequestField("template_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAlarmTemplateRequest::getTemplateId, (req, v) -> {
                 req.setTemplateId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteResourceGroupRequest, DeleteResourceGroupResponse> deleteResourceGroup = genFordeleteResourceGroup();
+    public static final HttpRequestDef<DeleteResourceGroupRequest, DeleteResourceGroupResponse> deleteResourceGroup =
+        genFordeleteResourceGroup();
 
     private static HttpRequestDef<DeleteResourceGroupRequest, DeleteResourceGroupResponse> genFordeleteResourceGroup() {
         // basic
-        HttpRequestDef.Builder<DeleteResourceGroupRequest, DeleteResourceGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteResourceGroupRequest.class, DeleteResourceGroupResponse.class)
-                .withName("DeleteResourceGroup")
-                .withUri("/V1.0/{project_id}/resource-groups/{group_id}")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<DeleteResourceGroupRequest, DeleteResourceGroupResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteResourceGroupRequest.class, DeleteResourceGroupResponse.class)
+            .withName("DeleteResourceGroup")
+            .withUri("/V1.0/{project_id}/resource-groups/{group_id}")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("group_id",
+        builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteResourceGroupRequest::getGroupId, (req, v) -> {
                 req.setGroupId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse> listAlarmHistories = genForlistAlarmHistories();
+    public static final HttpRequestDef<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse> listAlarmHistories =
+        genForlistAlarmHistories();
 
     private static HttpRequestDef<ListAlarmHistoriesRequest, ListAlarmHistoriesResponse> genForlistAlarmHistories() {
         // basic
@@ -276,95 +254,84 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("group_id",
+        builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmHistoriesRequest::getGroupId, (req, v) -> {
                 req.setGroupId(v);
-            })
-        );
-        builder.withRequestField("alarm_id",
+            }));
+        builder.<String>withRequestField("alarm_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmHistoriesRequest::getAlarmId, (req, v) -> {
                 req.setAlarmId(v);
-            })
-        );
-        builder.withRequestField("alarm_name",
+            }));
+        builder.<String>withRequestField("alarm_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmHistoriesRequest::getAlarmName, (req, v) -> {
                 req.setAlarmName(v);
-            })
-        );
-        builder.withRequestField("alarm_status",
+            }));
+        builder.<String>withRequestField("alarm_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmHistoriesRequest::getAlarmStatus, (req, v) -> {
                 req.setAlarmStatus(v);
-            })
-        );
-        builder.withRequestField("alarm_level",
+            }));
+        builder.<String>withRequestField("alarm_level",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmHistoriesRequest::getAlarmLevel, (req, v) -> {
                 req.setAlarmLevel(v);
-            })
-        );
-        builder.withRequestField("namespace",
+            }));
+        builder.<String>withRequestField("namespace",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmHistoriesRequest::getNamespace, (req, v) -> {
                 req.setNamespace(v);
-            })
-        );
-        builder.withRequestField("from",
+            }));
+        builder.<String>withRequestField("from",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmHistoriesRequest::getFrom, (req, v) -> {
                 req.setFrom(v);
-            })
-        );
-        builder.withRequestField("to",
+            }));
+        builder.<String>withRequestField("to",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmHistoriesRequest::getTo, (req, v) -> {
                 req.setTo(v);
-            })
-        );
-        builder.withRequestField("start",
+            }));
+        builder.<String>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmHistoriesRequest::getStart, (req, v) -> {
                 req.setStart(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmHistoriesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAlarmTemplatesRequest, ListAlarmTemplatesResponse> listAlarmTemplates = genForlistAlarmTemplates();
+    public static final HttpRequestDef<ListAlarmTemplatesRequest, ListAlarmTemplatesResponse> listAlarmTemplates =
+        genForlistAlarmTemplates();
 
     private static HttpRequestDef<ListAlarmTemplatesRequest, ListAlarmTemplatesResponse> genForlistAlarmTemplates() {
         // basic
@@ -375,50 +342,43 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("alarmTemplateId",
+        builder.<String>withRequestField("alarmTemplateId",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmTemplatesRequest::getAlarmTemplateId, (req, v) -> {
                 req.setAlarmTemplateId(v);
-            })
-        );
-        builder.withRequestField("namespace",
+            }));
+        builder.<String>withRequestField("namespace",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmTemplatesRequest::getNamespace, (req, v) -> {
                 req.setNamespace(v);
-            })
-        );
-        builder.withRequestField("dname",
+            }));
+        builder.<String>withRequestField("dname",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmTemplatesRequest::getDname, (req, v) -> {
                 req.setDname(v);
-            })
-        );
-        builder.withRequestField("start",
+            }));
+        builder.<String>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmTemplatesRequest::getStart, (req, v) -> {
                 req.setStart(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmTemplatesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -434,39 +394,35 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("limit",
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAlarmsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("order",
+            }));
+        builder.<String>withRequestField("order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmsRequest::getOrder, (req, v) -> {
                 req.setOrder(v);
-            })
-        );
-        builder.withRequestField("start",
+            }));
+        builder.<String>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmsRequest::getStart, (req, v) -> {
                 req.setStart(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListEventDetailRequest, ListEventDetailResponse> listEventDetail = genForlistEventDetail();
+    public static final HttpRequestDef<ListEventDetailRequest, ListEventDetailResponse> listEventDetail =
+        genForlistEventDetail();
 
     private static HttpRequestDef<ListEventDetailRequest, ListEventDetailResponse> genForlistEventDetail() {
         // basic
@@ -477,90 +433,78 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("event_name",
+        builder.<String>withRequestField("event_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEventDetailRequest::getEventName, (req, v) -> {
                 req.setEventName(v);
-            })
-        );
-        builder.withRequestField("event_type",
+            }));
+        builder.<ListEventDetailRequest.EventTypeEnum>withRequestField("event_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ListEventDetailRequest.EventTypeEnum.class,
+            TypeCasts.uncheckedConversion(ListEventDetailRequest.EventTypeEnum.class),
             f -> f.withMarshaller(ListEventDetailRequest::getEventType, (req, v) -> {
                 req.setEventType(v);
-            })
-        );
-        builder.withRequestField("event_source",
+            }));
+        builder.<String>withRequestField("event_source",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEventDetailRequest::getEventSource, (req, v) -> {
                 req.setEventSource(v);
-            })
-        );
-        builder.withRequestField("event_level",
+            }));
+        builder.<String>withRequestField("event_level",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEventDetailRequest::getEventLevel, (req, v) -> {
                 req.setEventLevel(v);
-            })
-        );
-        builder.withRequestField("event_user",
+            }));
+        builder.<String>withRequestField("event_user",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEventDetailRequest::getEventUser, (req, v) -> {
                 req.setEventUser(v);
-            })
-        );
-        builder.withRequestField("event_state",
+            }));
+        builder.<String>withRequestField("event_state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEventDetailRequest::getEventState, (req, v) -> {
                 req.setEventState(v);
-            })
-        );
-        builder.withRequestField("from",
+            }));
+        builder.<Long>withRequestField("from",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Long.class,
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListEventDetailRequest::getFrom, (req, v) -> {
                 req.setFrom(v);
-            })
-        );
-        builder.withRequestField("to",
+            }));
+        builder.<Long>withRequestField("to",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Long.class,
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListEventDetailRequest::getTo, (req, v) -> {
                 req.setTo(v);
-            })
-        );
-        builder.withRequestField("start",
+            }));
+        builder.<Integer>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListEventDetailRequest::getStart, (req, v) -> {
                 req.setStart(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListEventDetailRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -576,58 +520,50 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("event_type",
+        builder.<ListEventsRequest.EventTypeEnum>withRequestField("event_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListEventsRequest.EventTypeEnum.class,
+            TypeCasts.uncheckedConversion(ListEventsRequest.EventTypeEnum.class),
             f -> f.withMarshaller(ListEventsRequest::getEventType, (req, v) -> {
                 req.setEventType(v);
-            })
-        );
-        builder.withRequestField("event_name",
+            }));
+        builder.<String>withRequestField("event_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEventsRequest::getEventName, (req, v) -> {
                 req.setEventName(v);
-            })
-        );
-        builder.withRequestField("from",
+            }));
+        builder.<Long>withRequestField("from",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Long.class,
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListEventsRequest::getFrom, (req, v) -> {
                 req.setFrom(v);
-            })
-        );
-        builder.withRequestField("to",
+            }));
+        builder.<Long>withRequestField("to",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Long.class,
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListEventsRequest::getTo, (req, v) -> {
                 req.setTo(v);
-            })
-        );
-        builder.withRequestField("start",
+            }));
+        builder.<Integer>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListEventsRequest::getStart, (req, v) -> {
                 req.setStart(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListEventsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -643,79 +579,70 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("dim.0",
+        builder.<String>withRequestField("dim.0",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMetricsRequest::getDim0, (req, v) -> {
                 req.setDim0(v);
-            })
-        );
-        builder.withRequestField("dim.1",
+            }));
+        builder.<String>withRequestField("dim.1",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMetricsRequest::getDim1, (req, v) -> {
                 req.setDim1(v);
-            })
-        );
-        builder.withRequestField("dim.2",
+            }));
+        builder.<String>withRequestField("dim.2",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMetricsRequest::getDim2, (req, v) -> {
                 req.setDim2(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListMetricsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("metric_name",
+            }));
+        builder.<String>withRequestField("metric_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMetricsRequest::getMetricName, (req, v) -> {
                 req.setMetricName(v);
-            })
-        );
-        builder.withRequestField("namespace",
+            }));
+        builder.<String>withRequestField("namespace",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMetricsRequest::getNamespace, (req, v) -> {
                 req.setNamespace(v);
-            })
-        );
-        builder.withRequestField("order",
+            }));
+        builder.<ListMetricsRequest.OrderEnum>withRequestField("order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListMetricsRequest.OrderEnum.class,
+            TypeCasts.uncheckedConversion(ListMetricsRequest.OrderEnum.class),
             f -> f.withMarshaller(ListMetricsRequest::getOrder, (req, v) -> {
                 req.setOrder(v);
-            })
-        );
-        builder.withRequestField("start",
+            }));
+        builder.<String>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMetricsRequest::getStart, (req, v) -> {
                 req.setStart(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListResourceGroupRequest, ListResourceGroupResponse> listResourceGroup = genForlistResourceGroup();
+    public static final HttpRequestDef<ListResourceGroupRequest, ListResourceGroupResponse> listResourceGroup =
+        genForlistResourceGroup();
 
     private static HttpRequestDef<ListResourceGroupRequest, ListResourceGroupResponse> genForlistResourceGroup() {
         // basic
@@ -726,50 +653,43 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("group_name",
+        builder.<String>withRequestField("group_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourceGroupRequest::getGroupName, (req, v) -> {
                 req.setGroupName(v);
-            })
-        );
-        builder.withRequestField("group_id",
+            }));
+        builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourceGroupRequest::getGroupId, (req, v) -> {
                 req.setGroupId(v);
-            })
-        );
-        builder.withRequestField("status",
+            }));
+        builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourceGroupRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
-            })
-        );
-        builder.withRequestField("start",
+            }));
+        builder.<Integer>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListResourceGroupRequest::getStart, (req, v) -> {
                 req.setStart(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListResourceGroupRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -785,23 +705,21 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("alarm_id",
+        builder.<String>withRequestField("alarm_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAlarmRequest::getAlarmId, (req, v) -> {
                 req.setAlarmId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowEventDataRequest, ShowEventDataResponse> showEventData = genForshowEventData();
+    public static final HttpRequestDef<ShowEventDataRequest, ShowEventDataResponse> showEventData =
+        genForshowEventData();
 
     private static HttpRequestDef<ShowEventDataRequest, ShowEventDataResponse> genForshowEventData() {
         // basic
@@ -812,79 +730,70 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("namespace",
+        builder.<String>withRequestField("namespace",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEventDataRequest::getNamespace, (req, v) -> {
                 req.setNamespace(v);
-            })
-        );
-        builder.withRequestField("dim.0",
+            }));
+        builder.<String>withRequestField("dim.0",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEventDataRequest::getDim0, (req, v) -> {
                 req.setDim0(v);
-            })
-        );
-        builder.withRequestField("dim.1",
+            }));
+        builder.<String>withRequestField("dim.1",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEventDataRequest::getDim1, (req, v) -> {
                 req.setDim1(v);
-            })
-        );
-        builder.withRequestField("dim.2",
+            }));
+        builder.<String>withRequestField("dim.2",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEventDataRequest::getDim2, (req, v) -> {
                 req.setDim2(v);
-            })
-        );
-        builder.withRequestField("dim.3",
+            }));
+        builder.<String>withRequestField("dim.3",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEventDataRequest::getDim3, (req, v) -> {
                 req.setDim3(v);
-            })
-        );
-        builder.withRequestField("type",
+            }));
+        builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEventDataRequest::getType, (req, v) -> {
                 req.setType(v);
-            })
-        );
-        builder.withRequestField("from",
+            }));
+        builder.<Long>withRequestField("from",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Long.class,
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ShowEventDataRequest::getFrom, (req, v) -> {
                 req.setFrom(v);
-            })
-        );
-        builder.withRequestField("to",
+            }));
+        builder.<Long>withRequestField("to",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Long.class,
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ShowEventDataRequest::getTo, (req, v) -> {
                 req.setTo(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowMetricDataRequest, ShowMetricDataResponse> showMetricData = genForshowMetricData();
+    public static final HttpRequestDef<ShowMetricDataRequest, ShowMetricDataResponse> showMetricData =
+        genForshowMetricData();
 
     private static HttpRequestDef<ShowMetricDataRequest, ShowMetricDataResponse> genForshowMetricData() {
         // basic
@@ -895,90 +804,78 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("namespace",
+        builder.<String>withRequestField("namespace",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMetricDataRequest::getNamespace, (req, v) -> {
                 req.setNamespace(v);
-            })
-        );
-        builder.withRequestField("metric_name",
+            }));
+        builder.<String>withRequestField("metric_name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMetricDataRequest::getMetricName, (req, v) -> {
                 req.setMetricName(v);
-            })
-        );
-        builder.withRequestField("dim.0",
+            }));
+        builder.<String>withRequestField("dim.0",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMetricDataRequest::getDim0, (req, v) -> {
                 req.setDim0(v);
-            })
-        );
-        builder.withRequestField("dim.1",
+            }));
+        builder.<String>withRequestField("dim.1",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMetricDataRequest::getDim1, (req, v) -> {
                 req.setDim1(v);
-            })
-        );
-        builder.withRequestField("dim.2",
+            }));
+        builder.<String>withRequestField("dim.2",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMetricDataRequest::getDim2, (req, v) -> {
                 req.setDim2(v);
-            })
-        );
-        builder.withRequestField("dim.3",
+            }));
+        builder.<String>withRequestField("dim.3",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMetricDataRequest::getDim3, (req, v) -> {
                 req.setDim3(v);
-            })
-        );
-        builder.withRequestField("filter",
+            }));
+        builder.<ShowMetricDataRequest.FilterEnum>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ShowMetricDataRequest.FilterEnum.class,
+            TypeCasts.uncheckedConversion(ShowMetricDataRequest.FilterEnum.class),
             f -> f.withMarshaller(ShowMetricDataRequest::getFilter, (req, v) -> {
                 req.setFilter(v);
-            })
-        );
-        builder.withRequestField("period",
+            }));
+        builder.<Integer>withRequestField("period",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowMetricDataRequest::getPeriod, (req, v) -> {
                 req.setPeriod(v);
-            })
-        );
-        builder.withRequestField("from",
+            }));
+        builder.<Long>withRequestField("from",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Long.class,
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ShowMetricDataRequest::getFrom, (req, v) -> {
                 req.setFrom(v);
-            })
-        );
-        builder.withRequestField("to",
+            }));
+        builder.<Long>withRequestField("to",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Long.class,
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ShowMetricDataRequest::getTo, (req, v) -> {
                 req.setTo(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -996,13 +893,12 @@ public class CesMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowResourceGroupRequest, ShowResourceGroupResponse> showResourceGroup = genForshowResourceGroup();
+    public static final HttpRequestDef<ShowResourceGroupRequest, ShowResourceGroupResponse> showResourceGroup =
+        genForshowResourceGroup();
 
     private static HttpRequestDef<ShowResourceGroupRequest, ShowResourceGroupResponse> genForshowResourceGroup() {
         // basic
@@ -1013,58 +909,50 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("group_id",
+        builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowResourceGroupRequest::getGroupId, (req, v) -> {
                 req.setGroupId(v);
-            })
-        );
-        builder.withRequestField("status",
+            }));
+        builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowResourceGroupRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
-            })
-        );
-        builder.withRequestField("namespace",
+            }));
+        builder.<String>withRequestField("namespace",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowResourceGroupRequest::getNamespace, (req, v) -> {
                 req.setNamespace(v);
-            })
-        );
-        builder.withRequestField("dname",
+            }));
+        builder.<String>withRequestField("dname",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowResourceGroupRequest::getDname, (req, v) -> {
                 req.setDname(v);
-            })
-        );
-        builder.withRequestField("start",
+            }));
+        builder.<String>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowResourceGroupRequest::getStart, (req, v) -> {
                 req.setStart(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowResourceGroupRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1080,31 +968,28 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("alarm_id",
+        builder.<String>withRequestField("alarm_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateAlarmRequest::getAlarmId, (req, v) -> {
                 req.setAlarmId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateAlarmRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateAlarmRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateAlarmRequestBody.class),
             f -> f.withMarshaller(UpdateAlarmRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAlarmActionRequest, UpdateAlarmActionResponse> updateAlarmAction = genForupdateAlarmAction();
+    public static final HttpRequestDef<UpdateAlarmActionRequest, UpdateAlarmActionResponse> updateAlarmAction =
+        genForupdateAlarmAction();
 
     private static HttpRequestDef<UpdateAlarmActionRequest, UpdateAlarmActionResponse> genForupdateAlarmAction() {
         // basic
@@ -1115,31 +1000,28 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("alarm_id",
+        builder.<String>withRequestField("alarm_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateAlarmActionRequest::getAlarmId, (req, v) -> {
                 req.setAlarmId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ModifyAlarmActionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ModifyAlarmActionReq.class,
+            TypeCasts.uncheckedConversion(ModifyAlarmActionReq.class),
             f -> f.withMarshaller(UpdateAlarmActionRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAlarmTemplateRequest, UpdateAlarmTemplateResponse> updateAlarmTemplate = genForupdateAlarmTemplate();
+    public static final HttpRequestDef<UpdateAlarmTemplateRequest, UpdateAlarmTemplateResponse> updateAlarmTemplate =
+        genForupdateAlarmTemplate();
 
     private static HttpRequestDef<UpdateAlarmTemplateRequest, UpdateAlarmTemplateResponse> genForupdateAlarmTemplate() {
         // basic
@@ -1150,31 +1032,28 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("template_id",
+        builder.<String>withRequestField("template_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateAlarmTemplateRequest::getTemplateId, (req, v) -> {
                 req.setTemplateId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateAlarmTemplateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateAlarmTemplateRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateAlarmTemplateRequestBody.class),
             f -> f.withMarshaller(UpdateAlarmTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateResourceGroupRequest, UpdateResourceGroupResponse> updateResourceGroup = genForupdateResourceGroup();
+    public static final HttpRequestDef<UpdateResourceGroupRequest, UpdateResourceGroupResponse> updateResourceGroup =
+        genForupdateResourceGroup();
 
     private static HttpRequestDef<UpdateResourceGroupRequest, UpdateResourceGroupResponse> genForupdateResourceGroup() {
         // basic
@@ -1185,26 +1064,22 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("group_id",
+        builder.<String>withRequestField("group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateResourceGroupRequest::getGroupId, (req, v) -> {
                 req.setGroupId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateResourceGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateResourceGroupRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateResourceGroupRequestBody.class),
             f -> f.withMarshaller(UpdateResourceGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

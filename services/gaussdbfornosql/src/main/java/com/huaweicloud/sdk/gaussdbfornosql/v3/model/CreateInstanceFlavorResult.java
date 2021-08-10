@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 实例规格详情，与请求参数相同。
- */
-public class CreateInstanceFlavorResult  {
-
-
+/** 实例规格详情，与请求参数相同。 */
+public class CreateInstanceFlavorResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="num")
-    
+    @JsonProperty(value = "num")
+
     private Integer num;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="storage")
-    
+    @JsonProperty(value = "storage")
+
     private String storage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec_code")
-    
+    @JsonProperty(value = "spec_code")
+
     private String specCode;
 
     public CreateInstanceFlavorResult withNum(Integer num) {
@@ -46,13 +33,10 @@ public class CreateInstanceFlavorResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 节点数量。   - GaussDB(for Cassandra)实例的节点数量可取3~12。   - GaussDB(for Mongo)3.4版本集群实例的节点数量可取3~16。   - GaussDB(for Mongo)4.0版本副本集实例的节点数量可取3。   - GaussDB(for Influx)实例的节点数量可取3~16。
-     * @return num
-     */
+    /** 节点数量。 - GaussDB(for Cassandra)实例的节点数量可取3~12。 - GaussDB(for Mongo)3.4版本集群实例的节点数量可取3~16。 - GaussDB(for
+     * Mongo)4.0版本副本集实例的节点数量可取3。 - GaussDB(for Influx)实例的节点数量可取3~16。
+     * 
+     * @return num */
     public Integer getNum() {
         return num;
     }
@@ -61,20 +45,14 @@ public class CreateInstanceFlavorResult  {
         this.num = num;
     }
 
-    
-
     public CreateInstanceFlavorResult withStorage(String storage) {
         this.storage = storage;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘类型。 取值为“ULTRAHIGH”，表示SSD盘。
-     * @return storage
-     */
+    /** 磁盘类型。 取值为“ULTRAHIGH”，表示SSD盘。
+     * 
+     * @return storage */
     public String getStorage() {
         return storage;
     }
@@ -83,20 +61,14 @@ public class CreateInstanceFlavorResult  {
         this.storage = storage;
     }
 
-    
-
     public CreateInstanceFlavorResult withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘大小。必须为10的整数倍。单位为GB。最小磁盘容量100GB，最大磁盘容量与实例的性能规格有关，详见数据库实例规格。
-     * @return size
-     */
+    /** 磁盘大小。必须为10的整数倍。单位为GB。最小磁盘容量100GB，最大磁盘容量与实例的性能规格有关，详见数据库实例规格。
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -105,20 +77,14 @@ public class CreateInstanceFlavorResult  {
         this.size = size;
     }
 
-    
-
     public CreateInstanceFlavorResult withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源规格编码。获取方法请参见查询所有实例规格信息中响应参数“spec_code”的值。
-     * @return specCode
-     */
+    /** 资源规格编码。获取方法请参见查询所有实例规格信息中响应参数“spec_code”的值。
+     * 
+     * @return specCode */
     public String getSpecCode() {
         return specCode;
     }
@@ -126,8 +92,6 @@ public class CreateInstanceFlavorResult  {
     public void setSpecCode(String specCode) {
         this.specCode = specCode;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +102,17 @@ public class CreateInstanceFlavorResult  {
             return false;
         }
         CreateInstanceFlavorResult createInstanceFlavorResult = (CreateInstanceFlavorResult) o;
-        return Objects.equals(this.num, createInstanceFlavorResult.num) &&
-            Objects.equals(this.storage, createInstanceFlavorResult.storage) &&
-            Objects.equals(this.size, createInstanceFlavorResult.size) &&
-            Objects.equals(this.specCode, createInstanceFlavorResult.specCode);
+        return Objects.equals(this.num, createInstanceFlavorResult.num)
+            && Objects.equals(this.storage, createInstanceFlavorResult.storage)
+            && Objects.equals(this.size, createInstanceFlavorResult.size)
+            && Objects.equals(this.specCode, createInstanceFlavorResult.specCode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(num, storage, size, specCode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +124,13 @@ public class CreateInstanceFlavorResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

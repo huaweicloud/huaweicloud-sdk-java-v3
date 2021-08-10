@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vpc.v2.model.BatchDeleteVpcTagsRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class BatchDeleteVpcTagsRequest  {
-
-
+/** Request Object */
+public class BatchDeleteVpcTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private BatchDeleteVpcTagsRequestBody body;
 
     public BatchDeleteVpcTagsRequest withVpcId(String vpcId) {
@@ -35,13 +24,9 @@ public class BatchDeleteVpcTagsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：虚拟私有云唯一标识 取值范围：合法UUID 约束：ID对应的VPC必须存在
-     * @return vpcId
-     */
+    /** 功能说明：虚拟私有云唯一标识 取值范围：合法UUID 约束：ID对应的VPC必须存在
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -50,27 +35,23 @@ public class BatchDeleteVpcTagsRequest  {
         this.vpcId = vpcId;
     }
 
-    
-
     public BatchDeleteVpcTagsRequest withBody(BatchDeleteVpcTagsRequestBody body) {
         this.body = body;
         return this;
     }
 
     public BatchDeleteVpcTagsRequest withBody(Consumer<BatchDeleteVpcTagsRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new BatchDeleteVpcTagsRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public BatchDeleteVpcTagsRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class BatchDeleteVpcTagsRequest  {
     public void setBody(BatchDeleteVpcTagsRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class BatchDeleteVpcTagsRequest  {
             return false;
         }
         BatchDeleteVpcTagsRequest batchDeleteVpcTagsRequest = (BatchDeleteVpcTagsRequest) o;
-        return Objects.equals(this.vpcId, batchDeleteVpcTagsRequest.vpcId) &&
-            Objects.equals(this.body, batchDeleteVpcTagsRequest.body);
+        return Objects.equals(this.vpcId, batchDeleteVpcTagsRequest.vpcId)
+            && Objects.equals(this.body, batchDeleteVpcTagsRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(vpcId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class BatchDeleteVpcTagsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bms.v1.model.MetaData;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateBaremetalServerMetadataRequest  {
-
-
+/** Request Object */
+public class UpdateBaremetalServerMetadataRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server_id")
-    
+    @JsonProperty(value = "server_id")
+
     private String serverId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private MetaData body;
 
     public UpdateBaremetalServerMetadataRequest withServerId(String serverId) {
@@ -35,13 +24,9 @@ public class UpdateBaremetalServerMetadataRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器ID
-     * @return serverId
-     */
+    /** 裸金属服务器ID
+     * 
+     * @return serverId */
     public String getServerId() {
         return serverId;
     }
@@ -50,27 +35,23 @@ public class UpdateBaremetalServerMetadataRequest  {
         this.serverId = serverId;
     }
 
-    
-
     public UpdateBaremetalServerMetadataRequest withBody(MetaData body) {
         this.body = body;
         return this;
     }
 
     public UpdateBaremetalServerMetadataRequest withBody(Consumer<MetaData> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new MetaData();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public MetaData getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdateBaremetalServerMetadataRequest  {
     public void setBody(MetaData body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -89,14 +68,17 @@ public class UpdateBaremetalServerMetadataRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        UpdateBaremetalServerMetadataRequest updateBaremetalServerMetadataRequest = (UpdateBaremetalServerMetadataRequest) o;
-        return Objects.equals(this.serverId, updateBaremetalServerMetadataRequest.serverId) &&
-            Objects.equals(this.body, updateBaremetalServerMetadataRequest.body);
+        UpdateBaremetalServerMetadataRequest updateBaremetalServerMetadataRequest =
+            (UpdateBaremetalServerMetadataRequest) o;
+        return Objects.equals(this.serverId, updateBaremetalServerMetadataRequest.serverId)
+            && Objects.equals(this.body, updateBaremetalServerMetadataRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(serverId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +88,13 @@ public class UpdateBaremetalServerMetadataRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

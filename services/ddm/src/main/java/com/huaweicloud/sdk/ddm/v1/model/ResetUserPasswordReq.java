@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ResetUserPasswordReq。
- */
-public class ResetUserPasswordReq  {
-
-
+/** ResetUserPasswordReq。 */
+public class ResetUserPasswordReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="password")
-    
+    @JsonProperty(value = "password")
+
     private String password;
 
     public ResetUserPasswordReq withPassword(String password) {
@@ -28,13 +18,9 @@ public class ResetUserPasswordReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 重置后的新密码。
-     * @return password
-     */
+    /** 重置后的新密码。
+     * 
+     * @return password */
     public String getPassword() {
         return password;
     }
@@ -42,8 +28,6 @@ public class ResetUserPasswordReq  {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class ResetUserPasswordReq  {
         ResetUserPasswordReq resetUserPasswordReq = (ResetUserPasswordReq) o;
         return Objects.equals(this.password, resetUserPasswordReq.password);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(password);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class ResetUserPasswordReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

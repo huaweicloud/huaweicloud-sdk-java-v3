@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Command
- */
-public class Command  {
-
-
+/** Command */
+public class Command {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_id")
-    
+    @JsonProperty(value = "service_id")
+
     private Integer serviceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="command_id")
-    
+    @JsonProperty(value = "command_id")
+
     private Integer commandId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="command_name")
-    
+    @JsonProperty(value = "command_name")
+
     private String commandName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public Command withServiceId(Integer serviceId) {
@@ -46,15 +33,9 @@ public class Command  {
         return this;
     }
 
-    
-
-
-    /**
-     * 命令所属服务id
-     * minimum: 0
-     * maximum: 999999999999999999
-     * @return serviceId
-     */
+    /** 命令所属服务id minimum: 0 maximum: 999999999999999999
+     * 
+     * @return serviceId */
     public Integer getServiceId() {
         return serviceId;
     }
@@ -63,22 +44,14 @@ public class Command  {
         this.serviceId = serviceId;
     }
 
-    
-
     public Command withCommandId(Integer commandId) {
         this.commandId = commandId;
         return this;
     }
 
-    
-
-
-    /**
-     * 命令id
-     * minimum: 0
-     * maximum: 999999999999999999
-     * @return commandId
-     */
+    /** 命令id minimum: 0 maximum: 999999999999999999
+     * 
+     * @return commandId */
     public Integer getCommandId() {
         return commandId;
     }
@@ -87,20 +60,14 @@ public class Command  {
         this.commandId = commandId;
     }
 
-    
-
     public Command withCommandName(String commandName) {
         this.commandName = commandName;
         return this;
     }
 
-    
-
-
-    /**
-     * 命令名称
-     * @return commandName
-     */
+    /** 命令名称
+     * 
+     * @return commandName */
     public String getCommandName() {
         return commandName;
     }
@@ -109,20 +76,14 @@ public class Command  {
         this.commandName = commandName;
     }
 
-    
-
     public Command withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 命令描述
-     * @return description
-     */
+    /** 命令描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -130,8 +91,6 @@ public class Command  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -142,15 +101,16 @@ public class Command  {
             return false;
         }
         Command command = (Command) o;
-        return Objects.equals(this.serviceId, command.serviceId) &&
-            Objects.equals(this.commandId, command.commandId) &&
-            Objects.equals(this.commandName, command.commandName) &&
-            Objects.equals(this.description, command.description);
+        return Objects.equals(this.serviceId, command.serviceId) && Objects.equals(this.commandId, command.commandId)
+            && Objects.equals(this.commandName, command.commandName)
+            && Objects.equals(this.description, command.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(serviceId, commandId, commandName, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -162,16 +122,13 @@ public class Command  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,80 +1,61 @@
 package com.huaweicloud.sdk.classroom.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * JobCard
- */
-public class JobCard  {
-
-
+/** JobCard */
+public class JobCard {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
+
     private String jobId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_send")
-    
+    @JsonProperty(value = "is_send")
+
     private String isSend;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="average_score")
-    
+    @JsonProperty(value = "average_score")
+
     private String averageScore;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="submit_job_num")
-    
+    @JsonProperty(value = "submit_job_num")
+
     private Integer submitJobNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_status")
-    
+    @JsonProperty(value = "create_status")
+
     private String createStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="send_type")
-    
+    @JsonProperty(value = "send_type")
+
     private String sendType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_score_visibility")
-    
+    @JsonProperty(value = "is_score_visibility")
+
     private String isScoreVisibility;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="send_time")
-    
+    @JsonProperty(value = "send_time")
+
     private String sendTime;
 
     public JobCard withName(String name) {
@@ -82,13 +63,9 @@ public class JobCard  {
         return this;
     }
 
-    
-
-
-    /**
-     * 作业名称
-     * @return name
-     */
+    /** 作业名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -97,20 +74,14 @@ public class JobCard  {
         this.name = name;
     }
 
-    
-
     public JobCard withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业ID
-     * @return jobId
-     */
+    /** 作业ID
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -119,20 +90,14 @@ public class JobCard  {
         this.jobId = jobId;
     }
 
-    
-
     public JobCard withIsSend(String isSend) {
         this.isSend = isSend;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业下发状态(unsend:作业未下发, send:作业已下发)
-     * @return isSend
-     */
+    /** 作业下发状态(unsend:作业未下发, send:作业已下发)
+     * 
+     * @return isSend */
     public String getIsSend() {
         return isSend;
     }
@@ -141,20 +106,14 @@ public class JobCard  {
         this.isSend = isSend;
     }
 
-    
-
     public JobCard withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业截止时间, 日期格式：yyyy-MM-dd HH:mm:ss
-     * @return endTime
-     */
+    /** 作业截止时间, 日期格式：yyyy-MM-dd HH:mm:ss
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -163,20 +122,14 @@ public class JobCard  {
         this.endTime = endTime;
     }
 
-    
-
     public JobCard withAverageScore(String averageScore) {
         this.averageScore = averageScore;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业均分
-     * @return averageScore
-     */
+    /** 作业均分
+     * 
+     * @return averageScore */
     public String getAverageScore() {
         return averageScore;
     }
@@ -185,20 +138,14 @@ public class JobCard  {
         this.averageScore = averageScore;
     }
 
-    
-
     public JobCard withSubmitJobNum(Integer submitJobNum) {
         this.submitJobNum = submitJobNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业提交人数
-     * @return submitJobNum
-     */
+    /** 作业提交人数
+     * 
+     * @return submitJobNum */
     public Integer getSubmitJobNum() {
         return submitJobNum;
     }
@@ -207,20 +154,14 @@ public class JobCard  {
         this.submitJobNum = submitJobNum;
     }
 
-    
-
     public JobCard withCreateStatus(String createStatus) {
         this.createStatus = createStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业创建状态(yes:作业可以下发, no:作业不能下发)
-     * @return createStatus
-     */
+    /** 作业创建状态(yes:作业可以下发, no:作业不能下发)
+     * 
+     * @return createStatus */
     public String getCreateStatus() {
         return createStatus;
     }
@@ -229,20 +170,14 @@ public class JobCard  {
         this.createStatus = createStatus;
     }
 
-    
-
     public JobCard withSendType(String sendType) {
         this.sendType = sendType;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业下发类型(specific:指定成员下发, all:下发课堂全员)
-     * @return sendType
-     */
+    /** 作业下发类型(specific:指定成员下发, all:下发课堂全员)
+     * 
+     * @return sendType */
     public String getSendType() {
         return sendType;
     }
@@ -251,20 +186,14 @@ public class JobCard  {
         this.sendType = sendType;
     }
 
-    
-
     public JobCard withIsScoreVisibility(String isScoreVisibility) {
         this.isScoreVisibility = isScoreVisibility;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业成绩是否公布(unpublish:表示未公布成绩, publish:表示已公布成绩)
-     * @return isScoreVisibility
-     */
+    /** 作业成绩是否公布(unpublish:表示未公布成绩, publish:表示已公布成绩)
+     * 
+     * @return isScoreVisibility */
     public String getIsScoreVisibility() {
         return isScoreVisibility;
     }
@@ -273,20 +202,14 @@ public class JobCard  {
         this.isScoreVisibility = isScoreVisibility;
     }
 
-    
-
     public JobCard withSendTime(String sendTime) {
         this.sendTime = sendTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业下发时间, 日期格式：yyyy-MM-dd HH:mm:ss
-     * @return sendTime
-     */
+    /** 作业下发时间, 日期格式：yyyy-MM-dd HH:mm:ss
+     * 
+     * @return sendTime */
     public String getSendTime() {
         return sendTime;
     }
@@ -294,8 +217,6 @@ public class JobCard  {
     public void setSendTime(String sendTime) {
         this.sendTime = sendTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -306,21 +227,30 @@ public class JobCard  {
             return false;
         }
         JobCard jobCard = (JobCard) o;
-        return Objects.equals(this.name, jobCard.name) &&
-            Objects.equals(this.jobId, jobCard.jobId) &&
-            Objects.equals(this.isSend, jobCard.isSend) &&
-            Objects.equals(this.endTime, jobCard.endTime) &&
-            Objects.equals(this.averageScore, jobCard.averageScore) &&
-            Objects.equals(this.submitJobNum, jobCard.submitJobNum) &&
-            Objects.equals(this.createStatus, jobCard.createStatus) &&
-            Objects.equals(this.sendType, jobCard.sendType) &&
-            Objects.equals(this.isScoreVisibility, jobCard.isScoreVisibility) &&
-            Objects.equals(this.sendTime, jobCard.sendTime);
+        return Objects.equals(this.name, jobCard.name) && Objects.equals(this.jobId, jobCard.jobId)
+            && Objects.equals(this.isSend, jobCard.isSend) && Objects.equals(this.endTime, jobCard.endTime)
+            && Objects.equals(this.averageScore, jobCard.averageScore)
+            && Objects.equals(this.submitJobNum, jobCard.submitJobNum)
+            && Objects.equals(this.createStatus, jobCard.createStatus)
+            && Objects.equals(this.sendType, jobCard.sendType)
+            && Objects.equals(this.isScoreVisibility, jobCard.isScoreVisibility)
+            && Objects.equals(this.sendTime, jobCard.sendTime);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, jobId, isSend, endTime, averageScore, submitJobNum, createStatus, sendType, isScoreVisibility, sendTime);
+        return Objects.hash(name,
+            jobId,
+            isSend,
+            endTime,
+            averageScore,
+            submitJobNum,
+            createStatus,
+            sendType,
+            isScoreVisibility,
+            sendTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -338,16 +268,13 @@ public class JobCard  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

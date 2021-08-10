@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.swr.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListRetentionHistoriesRequest  {
-
-
+/** Request Object */
+public class ListRetentionHistoriesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
+
     private String namespace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repository")
-    
+    @JsonProperty(value = "repository")
+
     private String repository;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private String offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private String limit;
 
     public ListRetentionHistoriesRequest withNamespace(String namespace) {
@@ -46,13 +33,9 @@ public class ListRetentionHistoriesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
-     * @return namespace
-     */
+    /** 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
+     * 
+     * @return namespace */
     public String getNamespace() {
         return namespace;
     }
@@ -61,20 +44,14 @@ public class ListRetentionHistoriesRequest  {
         this.namespace = namespace;
     }
 
-    
-
     public ListRetentionHistoriesRequest withRepository(String repository) {
         this.repository = repository;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像仓库名称
-     * @return repository
-     */
+    /** 镜像仓库名称
+     * 
+     * @return repository */
     public String getRepository() {
         return repository;
     }
@@ -83,20 +60,14 @@ public class ListRetentionHistoriesRequest  {
         this.repository = repository;
     }
 
-    
-
     public ListRetentionHistoriesRequest withOffset(String offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 起始索引。**注意：offset和limit参数需要配套使用** 
-     * @return offset
-     */
+    /** 起始索引。**注意：offset和limit参数需要配套使用**
+     * 
+     * @return offset */
     public String getOffset() {
         return offset;
     }
@@ -105,20 +76,14 @@ public class ListRetentionHistoriesRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListRetentionHistoriesRequest withLimit(String limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 返回条数。**注意：offset和limit参数需要配套使用** 
-     * @return limit
-     */
+    /** 返回条数。**注意：offset和limit参数需要配套使用**
+     * 
+     * @return limit */
     public String getLimit() {
         return limit;
     }
@@ -126,8 +91,6 @@ public class ListRetentionHistoriesRequest  {
     public void setLimit(String limit) {
         this.limit = limit;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class ListRetentionHistoriesRequest  {
             return false;
         }
         ListRetentionHistoriesRequest listRetentionHistoriesRequest = (ListRetentionHistoriesRequest) o;
-        return Objects.equals(this.namespace, listRetentionHistoriesRequest.namespace) &&
-            Objects.equals(this.repository, listRetentionHistoriesRequest.repository) &&
-            Objects.equals(this.offset, listRetentionHistoriesRequest.offset) &&
-            Objects.equals(this.limit, listRetentionHistoriesRequest.limit);
+        return Objects.equals(this.namespace, listRetentionHistoriesRequest.namespace)
+            && Objects.equals(this.repository, listRetentionHistoriesRequest.repository)
+            && Objects.equals(this.offset, listRetentionHistoriesRequest.offset)
+            && Objects.equals(this.limit, listRetentionHistoriesRequest.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(namespace, repository, offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class ListRetentionHistoriesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

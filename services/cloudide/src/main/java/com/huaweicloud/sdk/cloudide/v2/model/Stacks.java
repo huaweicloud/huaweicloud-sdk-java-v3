@@ -1,116 +1,93 @@
 package com.huaweicloud.sdk.cloudide.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cloudide.v2.model.StacksConfig;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Stacks
- */
-public class Stacks  {
-
-
+/** Stacks */
+public class Stacks {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arm_config")
-    
+    @JsonProperty(value = "arm_config")
+
     private StacksConfig armConfig;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="config")
-    
+    @JsonProperty(value = "config")
+
     private StacksConfig config;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator")
-    
+    @JsonProperty(value = "creator")
+
     private String creator;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disable")
-    
+    @JsonProperty(value = "disable")
+
     private Boolean disable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Long id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="label")
-    
+    @JsonProperty(value = "label")
+
     private String label;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="logo")
-    
+    @JsonProperty(value = "logo")
+
     private String logo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scope")
-    
+    @JsonProperty(value = "scope")
+
     private String scope;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stack_id")
-    
+    @JsonProperty(value = "stack_id")
+
     private String stackId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<String> tags = null;
-    
+
     public Stacks withArmConfig(StacksConfig armConfig) {
         this.armConfig = armConfig;
         return this;
     }
 
     public Stacks withArmConfig(Consumer<StacksConfig> armConfigSetter) {
-        if(this.armConfig == null ){
+        if (this.armConfig == null) {
             this.armConfig = new StacksConfig();
             armConfigSetter.accept(this.armConfig);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get armConfig
-     * @return armConfig
-     */
+    /** Get armConfig
+     * 
+     * @return armConfig */
     public StacksConfig getArmConfig() {
         return armConfig;
     }
@@ -119,27 +96,23 @@ public class Stacks  {
         this.armConfig = armConfig;
     }
 
-    
-
     public Stacks withConfig(StacksConfig config) {
         this.config = config;
         return this;
     }
 
     public Stacks withConfig(Consumer<StacksConfig> configSetter) {
-        if(this.config == null ){
+        if (this.config == null) {
             this.config = new StacksConfig();
             configSetter.accept(this.config);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get config
-     * @return config
-     */
+    /** Get config
+     * 
+     * @return config */
     public StacksConfig getConfig() {
         return config;
     }
@@ -148,20 +121,14 @@ public class Stacks  {
         this.config = config;
     }
 
-    
-
     public Stacks withCreator(String creator) {
         this.creator = creator;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建人
-     * @return creator
-     */
+    /** 创建人
+     * 
+     * @return creator */
     public String getCreator() {
         return creator;
     }
@@ -170,20 +137,14 @@ public class Stacks  {
         this.creator = creator;
     }
 
-    
-
     public Stacks withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述
-     * @return description
-     */
+    /** 描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -192,20 +153,14 @@ public class Stacks  {
         this.description = description;
     }
 
-    
-
     public Stacks withDisable(Boolean disable) {
         this.disable = disable;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否可用
-     * @return disable
-     */
+    /** 是否可用
+     * 
+     * @return disable */
     public Boolean getDisable() {
         return disable;
     }
@@ -214,22 +169,14 @@ public class Stacks  {
         this.disable = disable;
     }
 
-    
-
     public Stacks withId(Long id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * id
-     * minimum: 1
-     * maximum: -9223372036854775616
-     * @return id
-     */
+    /** id minimum: 1 maximum: -9223372036854775616
+     * 
+     * @return id */
     public Long getId() {
         return id;
     }
@@ -238,20 +185,14 @@ public class Stacks  {
         this.id = id;
     }
 
-    
-
     public Stacks withLabel(String label) {
         this.label = label;
         return this;
     }
 
-    
-
-
-    /**
-     * 标签
-     * @return label
-     */
+    /** 标签
+     * 
+     * @return label */
     public String getLabel() {
         return label;
     }
@@ -260,20 +201,14 @@ public class Stacks  {
         this.label = label;
     }
 
-    
-
     public Stacks withLogo(String logo) {
         this.logo = logo;
         return this;
     }
 
-    
-
-
-    /**
-     * 图标
-     * @return logo
-     */
+    /** 图标
+     * 
+     * @return logo */
     public String getLogo() {
         return logo;
     }
@@ -282,20 +217,14 @@ public class Stacks  {
         this.logo = logo;
     }
 
-    
-
     public Stacks withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 技术栈名称
-     * @return name
-     */
+    /** 技术栈名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -304,20 +233,14 @@ public class Stacks  {
         this.name = name;
     }
 
-    
-
     public Stacks withScope(String scope) {
         this.scope = scope;
         return this;
     }
 
-    
-
-
-    /**
-     * 范围
-     * @return scope
-     */
+    /** 范围
+     * 
+     * @return scope */
     public String getScope() {
         return scope;
     }
@@ -326,20 +249,14 @@ public class Stacks  {
         this.scope = scope;
     }
 
-    
-
     public Stacks withStackId(String stackId) {
         this.stackId = stackId;
         return this;
     }
 
-    
-
-
-    /**
-     * 技术栈ID，通过技术栈管理ListStacksByTag接口获取。
-     * @return stackId
-     */
+    /** 技术栈ID，通过技术栈管理ListStacksByTag接口获取。
+     * 
+     * @return stackId */
     public String getStackId() {
         return stackId;
     }
@@ -348,16 +265,13 @@ public class Stacks  {
         this.stackId = stackId;
     }
 
-    
-
     public Stacks withTags(List<String> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public Stacks addTagsItem(String tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -365,17 +279,16 @@ public class Stacks  {
     }
 
     public Stacks withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * tags
-     * @return tags
-     */
+    /** tags
+     * 
+     * @return tags */
     public List<String> getTags() {
         return tags;
     }
@@ -383,8 +296,6 @@ public class Stacks  {
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -395,23 +306,20 @@ public class Stacks  {
             return false;
         }
         Stacks stacks = (Stacks) o;
-        return Objects.equals(this.armConfig, stacks.armConfig) &&
-            Objects.equals(this.config, stacks.config) &&
-            Objects.equals(this.creator, stacks.creator) &&
-            Objects.equals(this.description, stacks.description) &&
-            Objects.equals(this.disable, stacks.disable) &&
-            Objects.equals(this.id, stacks.id) &&
-            Objects.equals(this.label, stacks.label) &&
-            Objects.equals(this.logo, stacks.logo) &&
-            Objects.equals(this.name, stacks.name) &&
-            Objects.equals(this.scope, stacks.scope) &&
-            Objects.equals(this.stackId, stacks.stackId) &&
-            Objects.equals(this.tags, stacks.tags);
+        return Objects.equals(this.armConfig, stacks.armConfig) && Objects.equals(this.config, stacks.config)
+            && Objects.equals(this.creator, stacks.creator) && Objects.equals(this.description, stacks.description)
+            && Objects.equals(this.disable, stacks.disable) && Objects.equals(this.id, stacks.id)
+            && Objects.equals(this.label, stacks.label) && Objects.equals(this.logo, stacks.logo)
+            && Objects.equals(this.name, stacks.name) && Objects.equals(this.scope, stacks.scope)
+            && Objects.equals(this.stackId, stacks.stackId) && Objects.equals(this.tags, stacks.tags);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(armConfig, config, creator, description, disable, id, label, logo, name, scope, stackId, tags);
+        return Objects
+            .hash(armConfig, config, creator, description, disable, id, label, logo, name, scope, stackId, tags);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -431,16 +339,13 @@ public class Stacks  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

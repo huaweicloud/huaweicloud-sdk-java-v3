@@ -1,165 +1,129 @@
 package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesBackupStrategyResult;
-import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesDatastoreResult;
-import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesGroupResult;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 实例信息。
- */
-public class ListInstancesResult  {
-
-
+/** 实例信息。 */
+public class ListInstancesResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
+
     private Integer port;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mode")
-    
+    @JsonProperty(value = "mode")
+
     private String mode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore")
-    
+    @JsonProperty(value = "datastore")
+
     private ListInstancesDatastoreResult datastore;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engine")
-    
+    @JsonProperty(value = "engine")
+
     private String engine;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
+    @JsonProperty(value = "created")
+
     private String created;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
+
     private String updated;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_user_name")
-    
+    @JsonProperty(value = "db_user_name")
+
     private String dbUserName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
+
     private String subnetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_id")
-    
+    @JsonProperty(value = "security_group_id")
+
     private String securityGroupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_strategy")
-    
+    @JsonProperty(value = "backup_strategy")
+
     private ListInstancesBackupStrategyResult backupStrategy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pay_mode")
-    
+    @JsonProperty(value = "pay_mode")
+
     private String payMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maintenance_window")
-    
+    @JsonProperty(value = "maintenance_window")
+
     private String maintenanceWindow;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="groups")
-    
+    @JsonProperty(value = "groups")
+
     private List<ListInstancesGroupResult> groups = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time_zone")
-    
+    @JsonProperty(value = "time_zone")
+
     private String timeZone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="actions")
-    
+    @JsonProperty(value = "actions")
+
     private List<String> actions = null;
-    
+
     public ListInstancesResult withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return id
-     */
+    /** 实例ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -168,20 +132,14 @@ public class ListInstancesResult  {
         this.id = id;
     }
 
-    
-
     public ListInstancesResult withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例名称。
-     * @return name
-     */
+    /** 实例名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -190,20 +148,15 @@ public class ListInstancesResult  {
         this.name = name;
     }
 
-    
-
     public ListInstancesResult withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例状态。 取值： - normal，表示实例正常。 - abnormal，表示实例异常。 - creating，表示实例创建中。 - frozen，表示实例被冻结。 - data_disk_full，表示实例磁盘已满。 - createfail，表示实例创建失败。 - enlargefail，表示实例扩容节点个数失败。
-     * @return status
-     */
+    /** 实例状态。 取值： - normal，表示实例正常。 - abnormal，表示实例异常。 - creating，表示实例创建中。 - frozen，表示实例被冻结。 - data_disk_full，表示实例磁盘已满。 -
+     * createfail，表示实例创建失败。 - enlargefail，表示实例扩容节点个数失败。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -212,20 +165,14 @@ public class ListInstancesResult  {
         this.status = status;
     }
 
-    
-
     public ListInstancesResult withPort(Integer port) {
         this.port = port;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库端口。
-     * @return port
-     */
+    /** 数据库端口。
+     * 
+     * @return port */
     public Integer getPort() {
         return port;
     }
@@ -234,20 +181,14 @@ public class ListInstancesResult  {
         this.port = port;
     }
 
-    
-
     public ListInstancesResult withMode(String mode) {
         this.mode = mode;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例类型。与请求参数相同。
-     * @return mode
-     */
+    /** 实例类型。与请求参数相同。
+     * 
+     * @return mode */
     public String getMode() {
         return mode;
     }
@@ -256,20 +197,14 @@ public class ListInstancesResult  {
         this.mode = mode;
     }
 
-    
-
     public ListInstancesResult withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例所在区域。
-     * @return region
-     */
+    /** 实例所在区域。
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -278,27 +213,23 @@ public class ListInstancesResult  {
         this.region = region;
     }
 
-    
-
     public ListInstancesResult withDatastore(ListInstancesDatastoreResult datastore) {
         this.datastore = datastore;
         return this;
     }
 
     public ListInstancesResult withDatastore(Consumer<ListInstancesDatastoreResult> datastoreSetter) {
-        if(this.datastore == null ){
+        if (this.datastore == null) {
             this.datastore = new ListInstancesDatastoreResult();
             datastoreSetter.accept(this.datastore);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get datastore
-     * @return datastore
-     */
+    /** Get datastore
+     * 
+     * @return datastore */
     public ListInstancesDatastoreResult getDatastore() {
         return datastore;
     }
@@ -307,20 +238,14 @@ public class ListInstancesResult  {
         this.datastore = datastore;
     }
 
-    
-
     public ListInstancesResult withEngine(String engine) {
         this.engine = engine;
         return this;
     }
 
-    
-
-
-    /**
-     * 存储引擎。取值为“rocksDB”。
-     * @return engine
-     */
+    /** 存储引擎。取值为“rocksDB”。
+     * 
+     * @return engine */
     public String getEngine() {
         return engine;
     }
@@ -329,20 +254,14 @@ public class ListInstancesResult  {
         this.engine = engine;
     }
 
-    
-
     public ListInstancesResult withCreated(String created) {
         this.created = created;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例创建时间。
-     * @return created
-     */
+    /** 实例创建时间。
+     * 
+     * @return created */
     public String getCreated() {
         return created;
     }
@@ -351,20 +270,14 @@ public class ListInstancesResult  {
         this.created = created;
     }
 
-    
-
     public ListInstancesResult withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例操作最新变更的时间。
-     * @return updated
-     */
+    /** 实例操作最新变更的时间。
+     * 
+     * @return updated */
     public String getUpdated() {
         return updated;
     }
@@ -373,20 +286,14 @@ public class ListInstancesResult  {
         this.updated = updated;
     }
 
-    
-
     public ListInstancesResult withDbUserName(String dbUserName) {
         this.dbUserName = dbUserName;
         return this;
     }
 
-    
-
-
-    /**
-     * 默认用户名。取值为“rwuser”。
-     * @return dbUserName
-     */
+    /** 默认用户名。取值为“rwuser”。
+     * 
+     * @return dbUserName */
     public String getDbUserName() {
         return dbUserName;
     }
@@ -395,20 +302,14 @@ public class ListInstancesResult  {
         this.dbUserName = dbUserName;
     }
 
-    
-
     public ListInstancesResult withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟私有云ID。
-     * @return vpcId
-     */
+    /** 虚拟私有云ID。
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -417,20 +318,14 @@ public class ListInstancesResult  {
         this.vpcId = vpcId;
     }
 
-    
-
     public ListInstancesResult withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网ID。
-     * @return subnetId
-     */
+    /** 子网ID。
+     * 
+     * @return subnetId */
     public String getSubnetId() {
         return subnetId;
     }
@@ -439,20 +334,14 @@ public class ListInstancesResult  {
         this.subnetId = subnetId;
     }
 
-    
-
     public ListInstancesResult withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组ID。
-     * @return securityGroupId
-     */
+    /** 安全组ID。
+     * 
+     * @return securityGroupId */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -461,27 +350,23 @@ public class ListInstancesResult  {
         this.securityGroupId = securityGroupId;
     }
 
-    
-
     public ListInstancesResult withBackupStrategy(ListInstancesBackupStrategyResult backupStrategy) {
         this.backupStrategy = backupStrategy;
         return this;
     }
 
     public ListInstancesResult withBackupStrategy(Consumer<ListInstancesBackupStrategyResult> backupStrategySetter) {
-        if(this.backupStrategy == null ){
+        if (this.backupStrategy == null) {
             this.backupStrategy = new ListInstancesBackupStrategyResult();
             backupStrategySetter.accept(this.backupStrategy);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get backupStrategy
-     * @return backupStrategy
-     */
+    /** Get backupStrategy
+     * 
+     * @return backupStrategy */
     public ListInstancesBackupStrategyResult getBackupStrategy() {
         return backupStrategy;
     }
@@ -490,20 +375,14 @@ public class ListInstancesResult  {
         this.backupStrategy = backupStrategy;
     }
 
-    
-
     public ListInstancesResult withPayMode(String payMode) {
         this.payMode = payMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 计费方式。 - 取值为“0”，表示按需计费。 - 取值为“1”，表示包年/包月计费。
-     * @return payMode
-     */
+    /** 计费方式。 - 取值为“0”，表示按需计费。 - 取值为“1”，表示包年/包月计费。
+     * 
+     * @return payMode */
     public String getPayMode() {
         return payMode;
     }
@@ -512,20 +391,14 @@ public class ListInstancesResult  {
         this.payMode = payMode;
     }
 
-    
-
     public ListInstancesResult withMaintenanceWindow(String maintenanceWindow) {
         this.maintenanceWindow = maintenanceWindow;
         return this;
     }
 
-    
-
-
-    /**
-     * 系统可维护时间窗。
-     * @return maintenanceWindow
-     */
+    /** 系统可维护时间窗。
+     * 
+     * @return maintenanceWindow */
     public String getMaintenanceWindow() {
         return maintenanceWindow;
     }
@@ -534,16 +407,13 @@ public class ListInstancesResult  {
         this.maintenanceWindow = maintenanceWindow;
     }
 
-    
-
     public ListInstancesResult withGroups(List<ListInstancesGroupResult> groups) {
         this.groups = groups;
         return this;
     }
 
-    
     public ListInstancesResult addGroupsItem(ListInstancesGroupResult groupsItem) {
-        if(this.groups == null) {
+        if (this.groups == null) {
             this.groups = new ArrayList<>();
         }
         this.groups.add(groupsItem);
@@ -551,17 +421,16 @@ public class ListInstancesResult  {
     }
 
     public ListInstancesResult withGroups(Consumer<List<ListInstancesGroupResult>> groupsSetter) {
-        if(this.groups == null) {
+        if (this.groups == null) {
             this.groups = new ArrayList<>();
         }
         groupsSetter.accept(this.groups);
         return this;
     }
 
-    /**
-     * 组信息。
-     * @return groups
-     */
+    /** 组信息。
+     * 
+     * @return groups */
     public List<ListInstancesGroupResult> getGroups() {
         return groups;
     }
@@ -570,20 +439,14 @@ public class ListInstancesResult  {
         this.groups = groups;
     }
 
-    
-
     public ListInstancesResult withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID。取值为“0”，表示为default企业项目。
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID。取值为“0”，表示为default企业项目。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -592,20 +455,14 @@ public class ListInstancesResult  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public ListInstancesResult withTimeZone(String timeZone) {
         this.timeZone = timeZone;
         return this;
     }
 
-    
-
-
-    /**
-     * 时区。
-     * @return timeZone
-     */
+    /** 时区。
+     * 
+     * @return timeZone */
     public String getTimeZone() {
         return timeZone;
     }
@@ -614,16 +471,13 @@ public class ListInstancesResult  {
         this.timeZone = timeZone;
     }
 
-    
-
     public ListInstancesResult withActions(List<String> actions) {
         this.actions = actions;
         return this;
     }
 
-    
     public ListInstancesResult addActionsItem(String actionsItem) {
-        if(this.actions == null) {
+        if (this.actions == null) {
             this.actions = new ArrayList<>();
         }
         this.actions.add(actionsItem);
@@ -631,17 +485,16 @@ public class ListInstancesResult  {
     }
 
     public ListInstancesResult withActions(Consumer<List<String>> actionsSetter) {
-        if(this.actions == null) {
+        if (this.actions == null) {
             this.actions = new ArrayList<>();
         }
         actionsSetter.accept(this.actions);
         return this;
     }
 
-    /**
-     * 实例正在执行的动作。
-     * @return actions
-     */
+    /** 实例正在执行的动作。
+     * 
+     * @return actions */
     public List<String> getActions() {
         return actions;
     }
@@ -649,8 +502,6 @@ public class ListInstancesResult  {
     public void setActions(List<String> actions) {
         this.actions = actions;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -661,32 +512,53 @@ public class ListInstancesResult  {
             return false;
         }
         ListInstancesResult listInstancesResult = (ListInstancesResult) o;
-        return Objects.equals(this.id, listInstancesResult.id) &&
-            Objects.equals(this.name, listInstancesResult.name) &&
-            Objects.equals(this.status, listInstancesResult.status) &&
-            Objects.equals(this.port, listInstancesResult.port) &&
-            Objects.equals(this.mode, listInstancesResult.mode) &&
-            Objects.equals(this.region, listInstancesResult.region) &&
-            Objects.equals(this.datastore, listInstancesResult.datastore) &&
-            Objects.equals(this.engine, listInstancesResult.engine) &&
-            Objects.equals(this.created, listInstancesResult.created) &&
-            Objects.equals(this.updated, listInstancesResult.updated) &&
-            Objects.equals(this.dbUserName, listInstancesResult.dbUserName) &&
-            Objects.equals(this.vpcId, listInstancesResult.vpcId) &&
-            Objects.equals(this.subnetId, listInstancesResult.subnetId) &&
-            Objects.equals(this.securityGroupId, listInstancesResult.securityGroupId) &&
-            Objects.equals(this.backupStrategy, listInstancesResult.backupStrategy) &&
-            Objects.equals(this.payMode, listInstancesResult.payMode) &&
-            Objects.equals(this.maintenanceWindow, listInstancesResult.maintenanceWindow) &&
-            Objects.equals(this.groups, listInstancesResult.groups) &&
-            Objects.equals(this.enterpriseProjectId, listInstancesResult.enterpriseProjectId) &&
-            Objects.equals(this.timeZone, listInstancesResult.timeZone) &&
-            Objects.equals(this.actions, listInstancesResult.actions);
+        return Objects.equals(this.id, listInstancesResult.id) && Objects.equals(this.name, listInstancesResult.name)
+            && Objects.equals(this.status, listInstancesResult.status)
+            && Objects.equals(this.port, listInstancesResult.port)
+            && Objects.equals(this.mode, listInstancesResult.mode)
+            && Objects.equals(this.region, listInstancesResult.region)
+            && Objects.equals(this.datastore, listInstancesResult.datastore)
+            && Objects.equals(this.engine, listInstancesResult.engine)
+            && Objects.equals(this.created, listInstancesResult.created)
+            && Objects.equals(this.updated, listInstancesResult.updated)
+            && Objects.equals(this.dbUserName, listInstancesResult.dbUserName)
+            && Objects.equals(this.vpcId, listInstancesResult.vpcId)
+            && Objects.equals(this.subnetId, listInstancesResult.subnetId)
+            && Objects.equals(this.securityGroupId, listInstancesResult.securityGroupId)
+            && Objects.equals(this.backupStrategy, listInstancesResult.backupStrategy)
+            && Objects.equals(this.payMode, listInstancesResult.payMode)
+            && Objects.equals(this.maintenanceWindow, listInstancesResult.maintenanceWindow)
+            && Objects.equals(this.groups, listInstancesResult.groups)
+            && Objects.equals(this.enterpriseProjectId, listInstancesResult.enterpriseProjectId)
+            && Objects.equals(this.timeZone, listInstancesResult.timeZone)
+            && Objects.equals(this.actions, listInstancesResult.actions);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, status, port, mode, region, datastore, engine, created, updated, dbUserName, vpcId, subnetId, securityGroupId, backupStrategy, payMode, maintenanceWindow, groups, enterpriseProjectId, timeZone, actions);
+        return Objects.hash(id,
+            name,
+            status,
+            port,
+            mode,
+            region,
+            datastore,
+            engine,
+            created,
+            updated,
+            dbUserName,
+            vpcId,
+            subnetId,
+            securityGroupId,
+            backupStrategy,
+            payMode,
+            maintenanceWindow,
+            groups,
+            enterpriseProjectId,
+            timeZone,
+            actions);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -715,16 +587,13 @@ public class ListInstancesResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

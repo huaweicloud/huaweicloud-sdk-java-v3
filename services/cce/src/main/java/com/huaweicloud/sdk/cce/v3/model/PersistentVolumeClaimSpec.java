@@ -1,56 +1,43 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.ResourceRequirements;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class PersistentVolumeClaimSpec  {
-
-
+public class PersistentVolumeClaimSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volumeID")
-    
+    @JsonProperty(value = "volumeID")
+
     private String volumeID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="storageType")
-    
+    @JsonProperty(value = "storageType")
+
     private String storageType;
+
     /**
      * 
      */
     public static final class AccessModesEnum {
 
-        
-        /**
-         * Enum READONLYMANY for value: "ReadOnlyMany"
-         */
+        /** Enum READONLYMANY for value: "ReadOnlyMany" */
         public static final AccessModesEnum READONLYMANY = new AccessModesEnum("ReadOnlyMany");
-        
-        /**
-         * Enum READWRITEMANY for value: "ReadWriteMany"
-         */
+
+        /** Enum READWRITEMANY for value: "ReadWriteMany" */
         public static final AccessModesEnum READWRITEMANY = new AccessModesEnum("ReadWriteMany");
-        
 
         private static final Map<String, AccessModesEnum> STATIC_FIELDS = createStaticFields();
 
@@ -79,7 +66,7 @@ public class PersistentVolumeClaimSpec  {
 
         @JsonCreator
         public static AccessModesEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AccessModesEnum result = STATIC_FIELDS.get(value);
@@ -90,7 +77,7 @@ public class PersistentVolumeClaimSpec  {
         }
 
         public static AccessModesEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AccessModesEnum result = STATIC_FIELDS.get(value);
@@ -114,34 +101,29 @@ public class PersistentVolumeClaimSpec  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="accessModes")
-    
+    @JsonProperty(value = "accessModes")
+
     private List<AccessModesEnum> accessModes = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="storageClassName")
-    
+    @JsonProperty(value = "storageClassName")
+
     private String storageClassName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volumeName")
-    
+    @JsonProperty(value = "volumeName")
+
     private String volumeName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resources")
-    
+    @JsonProperty(value = "resources")
+
     private ResourceRequirements resources;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volumeMode")
-    
+    @JsonProperty(value = "volumeMode")
+
     private String volumeMode;
 
     public PersistentVolumeClaimSpec withVolumeID(String volumeID) {
@@ -149,13 +131,9 @@ public class PersistentVolumeClaimSpec  {
         return this;
     }
 
-    
-
-
-    /**
-     * 资源需为已经存在的存储资源 - 如果存储资源类型是SFS、EVS[、SFS-Turbo](tag:hws)，本参数需要填入对应资源的ID - 如果资源类型为OBS，本参数填入OBS名称
-     * @return volumeID
-     */
+    /** 资源需为已经存在的存储资源 - 如果存储资源类型是SFS、EVS[、SFS-Turbo](tag:hws)，本参数需要填入对应资源的ID - 如果资源类型为OBS，本参数填入OBS名称
+     * 
+     * @return volumeID */
     public String getVolumeID() {
         return volumeID;
     }
@@ -164,20 +142,21 @@ public class PersistentVolumeClaimSpec  {
         this.volumeID = volumeID;
     }
 
-    
-
     public PersistentVolumeClaimSpec withStorageType(String storageType) {
         this.storageType = storageType;
         return this;
     }
 
-    
-
-
-    /**
-     * 云存储的类型，和volumeID搭配使用。即volumeID和storageType必须同时被配置。   - bs：EVS云存储，详情可参见[[使用云硬盘存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0044.html)](tag:hws)[[使用云硬盘存储卷](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0044.html)](tag:hws_hk) 。  - nfs：SFS弹性文件存储，详情可参见[[使用文件存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0111.html)](tag:hws)[[使用文件存储卷](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0111.html)](tag:hws_hk) 。  - obs：OBS对象存储，详情可参见[[使用对象存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0160.html)](tag:hws)[[使用对象存储卷](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0160.html)](tag:hws_hk) 。  [- efs：SFS Turbo极速文件存储，详情可参见[使用极速文件存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0125.html)。](tag:hws)
-     * @return storageType
-     */
+    /** 云存储的类型，和volumeID搭配使用。即volumeID和storageType必须同时被配置。 -
+     * bs：EVS云存储，详情可参见[[使用云硬盘存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0044.html)](tag:hws)[[使用云硬盘存储卷](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0044.html)](tag:hws_hk)
+     * 。 -
+     * nfs：SFS弹性文件存储，详情可参见[[使用文件存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0111.html)](tag:hws)[[使用文件存储卷](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0111.html)](tag:hws_hk)
+     * 。 -
+     * obs：OBS对象存储，详情可参见[[使用对象存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0160.html)](tag:hws)[[使用对象存储卷](https://support.huaweicloud.com/intl/zh-cn/usermanual-cce/cce_01_0160.html)](tag:hws_hk)
+     * 。 [- efs：SFS
+     * Turbo极速文件存储，详情可参见[使用极速文件存储卷](https://support.huaweicloud.com/usermanual-cce/cce_01_0125.html)。](tag:hws)
+     * 
+     * @return storageType */
     public String getStorageType() {
         return storageType;
     }
@@ -186,16 +165,13 @@ public class PersistentVolumeClaimSpec  {
         this.storageType = storageType;
     }
 
-    
-
     public PersistentVolumeClaimSpec withAccessModes(List<AccessModesEnum> accessModes) {
         this.accessModes = accessModes;
         return this;
     }
 
-    
     public PersistentVolumeClaimSpec addAccessModesItem(AccessModesEnum accessModesItem) {
-        if(this.accessModes == null) {
+        if (this.accessModes == null) {
             this.accessModes = new ArrayList<>();
         }
         this.accessModes.add(accessModesItem);
@@ -203,17 +179,18 @@ public class PersistentVolumeClaimSpec  {
     }
 
     public PersistentVolumeClaimSpec withAccessModes(Consumer<List<AccessModesEnum>> accessModesSetter) {
-        if(this.accessModes == null) {
+        if (this.accessModes == null) {
             this.accessModes = new ArrayList<>();
         }
         accessModesSetter.accept(this.accessModes);
         return this;
     }
 
-    /**
-     * 指定volume应该具有的访问模式，列表中仅第一个配置参数有效。 - ReadWriteOnce：该卷可以被单个节点以读/写模式挂载   >集群版本为v1.13.10且storage-driver版本为1.0.19时，才支持此功能。 - ReadOnlyMany：该卷可以被多个节点以只读模式挂载（默认） - ReadWriteMany：该卷可以被多个节点以读/写模式挂载
-     * @return accessModes
-     */
+    /** 指定volume应该具有的访问模式，列表中仅第一个配置参数有效。 - ReadWriteOnce：该卷可以被单个节点以读/写模式挂载
+     * >集群版本为v1.13.10且storage-driver版本为1.0.19时，才支持此功能。 - ReadOnlyMany：该卷可以被多个节点以只读模式挂载（默认） -
+     * ReadWriteMany：该卷可以被多个节点以读/写模式挂载
+     * 
+     * @return accessModes */
     public List<AccessModesEnum> getAccessModes() {
         return accessModes;
     }
@@ -222,20 +199,14 @@ public class PersistentVolumeClaimSpec  {
         this.accessModes = accessModes;
     }
 
-    
-
     public PersistentVolumeClaimSpec withStorageClassName(String storageClassName) {
         this.storageClassName = storageClassName;
         return this;
     }
 
-    
-
-
-    /**
-     * PVC的StorageClass名称
-     * @return storageClassName
-     */
+    /** PVC的StorageClass名称
+     * 
+     * @return storageClassName */
     public String getStorageClassName() {
         return storageClassName;
     }
@@ -244,20 +215,14 @@ public class PersistentVolumeClaimSpec  {
         this.storageClassName = storageClassName;
     }
 
-    
-
     public PersistentVolumeClaimSpec withVolumeName(String volumeName) {
         this.volumeName = volumeName;
         return this;
     }
 
-    
-
-
-    /**
-     * PVC绑定的PV名称
-     * @return volumeName
-     */
+    /** PVC绑定的PV名称
+     * 
+     * @return volumeName */
     public String getVolumeName() {
         return volumeName;
     }
@@ -266,27 +231,23 @@ public class PersistentVolumeClaimSpec  {
         this.volumeName = volumeName;
     }
 
-    
-
     public PersistentVolumeClaimSpec withResources(ResourceRequirements resources) {
         this.resources = resources;
         return this;
     }
 
     public PersistentVolumeClaimSpec withResources(Consumer<ResourceRequirements> resourcesSetter) {
-        if(this.resources == null ){
+        if (this.resources == null) {
             this.resources = new ResourceRequirements();
             resourcesSetter.accept(this.resources);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get resources
-     * @return resources
-     */
+    /** Get resources
+     * 
+     * @return resources */
     public ResourceRequirements getResources() {
         return resources;
     }
@@ -295,20 +256,14 @@ public class PersistentVolumeClaimSpec  {
         this.resources = resources;
     }
 
-    
-
     public PersistentVolumeClaimSpec withVolumeMode(String volumeMode) {
         this.volumeMode = volumeMode;
         return this;
     }
 
-    
-
-
-    /**
-     * PVC指定的PV类型
-     * @return volumeMode
-     */
+    /** PVC指定的PV类型
+     * 
+     * @return volumeMode */
     public String getVolumeMode() {
         return volumeMode;
     }
@@ -316,8 +271,6 @@ public class PersistentVolumeClaimSpec  {
     public void setVolumeMode(String volumeMode) {
         this.volumeMode = volumeMode;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -328,18 +281,20 @@ public class PersistentVolumeClaimSpec  {
             return false;
         }
         PersistentVolumeClaimSpec persistentVolumeClaimSpec = (PersistentVolumeClaimSpec) o;
-        return Objects.equals(this.volumeID, persistentVolumeClaimSpec.volumeID) &&
-            Objects.equals(this.storageType, persistentVolumeClaimSpec.storageType) &&
-            Objects.equals(this.accessModes, persistentVolumeClaimSpec.accessModes) &&
-            Objects.equals(this.storageClassName, persistentVolumeClaimSpec.storageClassName) &&
-            Objects.equals(this.volumeName, persistentVolumeClaimSpec.volumeName) &&
-            Objects.equals(this.resources, persistentVolumeClaimSpec.resources) &&
-            Objects.equals(this.volumeMode, persistentVolumeClaimSpec.volumeMode);
+        return Objects.equals(this.volumeID, persistentVolumeClaimSpec.volumeID)
+            && Objects.equals(this.storageType, persistentVolumeClaimSpec.storageType)
+            && Objects.equals(this.accessModes, persistentVolumeClaimSpec.accessModes)
+            && Objects.equals(this.storageClassName, persistentVolumeClaimSpec.storageClassName)
+            && Objects.equals(this.volumeName, persistentVolumeClaimSpec.volumeName)
+            && Objects.equals(this.resources, persistentVolumeClaimSpec.resources)
+            && Objects.equals(this.volumeMode, persistentVolumeClaimSpec.volumeMode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(volumeID, storageType, accessModes, storageClassName, volumeName, resources, volumeMode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -354,16 +309,13 @@ public class PersistentVolumeClaimSpec  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

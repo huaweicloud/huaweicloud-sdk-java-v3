@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteIpGroupRequest  {
-
-
+/** Request Object */
+public class DeleteIpGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ipgroup_id")
-    
+    @JsonProperty(value = "ipgroup_id")
+
     private String ipgroupId;
 
     public DeleteIpGroupRequest withIpgroupId(String ipgroupId) {
@@ -28,13 +18,9 @@ public class DeleteIpGroupRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 待更新的IP地址组的id
-     * @return ipgroupId
-     */
+    /** 待更新的IP地址组的id
+     * 
+     * @return ipgroupId */
     public String getIpgroupId() {
         return ipgroupId;
     }
@@ -42,8 +28,6 @@ public class DeleteIpGroupRequest  {
     public void setIpgroupId(String ipgroupId) {
         this.ipgroupId = ipgroupId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class DeleteIpGroupRequest  {
         DeleteIpGroupRequest deleteIpGroupRequest = (DeleteIpGroupRequest) o;
         return Objects.equals(this.ipgroupId, deleteIpGroupRequest.ipgroupId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(ipgroupId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class DeleteIpGroupRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

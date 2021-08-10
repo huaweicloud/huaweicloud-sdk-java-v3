@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListValueListRequest  {
-
-
+/** Request Object */
+public class ListValueListRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page")
-    
+    @JsonProperty(value = "page")
+
     private Integer page;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pagesize")
-    
+    @JsonProperty(value = "pagesize")
+
     private Integer pagesize;
 
     public ListValueListRequest withPage(Integer page) {
@@ -34,13 +23,9 @@ public class ListValueListRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 页码
-     * @return page
-     */
+    /** 页码
+     * 
+     * @return page */
     public Integer getPage() {
         return page;
     }
@@ -49,20 +34,14 @@ public class ListValueListRequest  {
         this.page = page;
     }
 
-    
-
     public ListValueListRequest withPagesize(Integer pagesize) {
         this.pagesize = pagesize;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页的条数
-     * @return pagesize
-     */
+    /** 每页的条数
+     * 
+     * @return pagesize */
     public Integer getPagesize() {
         return pagesize;
     }
@@ -70,8 +49,6 @@ public class ListValueListRequest  {
     public void setPagesize(Integer pagesize) {
         this.pagesize = pagesize;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class ListValueListRequest  {
             return false;
         }
         ListValueListRequest listValueListRequest = (ListValueListRequest) o;
-        return Objects.equals(this.page, listValueListRequest.page) &&
-            Objects.equals(this.pagesize, listValueListRequest.pagesize);
+        return Objects.equals(this.page, listValueListRequest.page)
+            && Objects.equals(this.pagesize, listValueListRequest.pagesize);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(page, pagesize);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class ListValueListRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,64 +1,42 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.KerberosVO;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 数据库信息
- */
-public class EndpointVO  {
-
-
+/** 数据库信息 */
+public class EndpointVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="obj_id")
-    
+    @JsonProperty(value = "obj_id")
+
     private String objId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_name")
-    
+    @JsonProperty(value = "instance_name")
+
     private String instanceName;
-    /**
-     * 数据库类型
-     */
+
+    /** 数据库类型 */
     public static final class DbTypeEnum {
 
-        
-        /**
-         * Enum MYSQL for value: "mysql"
-         */
+        /** Enum MYSQL for value: "mysql" */
         public static final DbTypeEnum MYSQL = new DbTypeEnum("mysql");
-        
-        /**
-         * Enum MONGODB for value: "mongodb"
-         */
+
+        /** Enum MONGODB for value: "mongodb" */
         public static final DbTypeEnum MONGODB = new DbTypeEnum("mongodb");
-        
 
         private static final Map<String, DbTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -87,7 +65,7 @@ public class EndpointVO  {
 
         @JsonCreator
         public static DbTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DbTypeEnum result = STATIC_FIELDS.get(value);
@@ -98,7 +76,7 @@ public class EndpointVO  {
         }
 
         public static DbTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DbTypeEnum result = STATIC_FIELDS.get(value);
@@ -122,170 +100,137 @@ public class EndpointVO  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_type")
-    
+    @JsonProperty(value = "db_type")
+
     private DbTypeEnum dbType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_user")
-    
+    @JsonProperty(value = "db_user")
+
     private String dbUser;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_password")
-    
+    @JsonProperty(value = "db_password")
+
     private String dbPassword;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="manage_ip")
-    
+    @JsonProperty(value = "manage_ip")
+
     private String manageIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="traffic_ip")
-    
+    @JsonProperty(value = "traffic_ip")
+
     private String trafficIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_port")
-    
+    @JsonProperty(value = "db_port")
+
     private Integer dbPort;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private String updatedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip")
-    
+    @JsonProperty(value = "ip")
+
     private String ip;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="public_ip")
-    
+    @JsonProperty(value = "public_ip")
+
     private String publicIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="az_code")
-    
+    @JsonProperty(value = "az_code")
+
     private String azCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_id")
-    
+    @JsonProperty(value = "security_group_id")
+
     private String securityGroupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
+
     private String subnetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_size")
-    
+    @JsonProperty(value = "volume_size")
+
     private Long volumeSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="full_trans_user_pwd")
-    
+    @JsonProperty(value = "full_trans_user_pwd")
+
     private String fullTransUserPwd;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="increment_trans_user_pwd")
-    
+    @JsonProperty(value = "increment_trans_user_pwd")
+
     private String incrementTransUserPwd;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ssl_link")
-    
+    @JsonProperty(value = "ssl_link")
+
     private Boolean sslLink;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ssl_cert_key")
-    
+    @JsonProperty(value = "ssl_cert_key")
+
     private String sslCertKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ssl_cert_name")
-    
+    @JsonProperty(value = "ssl_cert_name")
+
     private String sslCertName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ssl_cert_check_sum")
-    
+    @JsonProperty(value = "ssl_cert_check_sum")
+
     private String sslCertCheckSum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ssl_cert_password")
-    
+    @JsonProperty(value = "ssl_cert_password")
+
     private String sslCertPassword;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_version")
-    
+    @JsonProperty(value = "db_version")
+
     private String dbVersion;
-    /**
-     * mongoHa模式
-     */
+
+    /** mongoHa模式 */
     public static final class MongoHaModeEnum {
 
-        
-        /**
-         * Enum SHARDING_ for value: "Sharding 集群"
-         */
+        /** Enum SHARDING_ for value: "Sharding 集群" */
         public static final MongoHaModeEnum SHARDING_ = new MongoHaModeEnum("Sharding 集群");
-        
-        /**
-         * Enum REPLICASET_ for value: "ReplicaSet 副本集"
-         */
+
+        /** Enum REPLICASET_ for value: "ReplicaSet 副本集" */
         public static final MongoHaModeEnum REPLICASET_ = new MongoHaModeEnum("ReplicaSet 副本集");
-        
-        /**
-         * Enum REPLICASINGLE_ for value: "ReplicaSingle 单节点"
-         */
+
+        /** Enum REPLICASINGLE_ for value: "ReplicaSingle 单节点" */
         public static final MongoHaModeEnum REPLICASINGLE_ = new MongoHaModeEnum("ReplicaSingle 单节点");
-        
 
         private static final Map<String, MongoHaModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -315,7 +260,7 @@ public class EndpointVO  {
 
         @JsonCreator
         public static MongoHaModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MongoHaModeEnum result = STATIC_FIELDS.get(value);
@@ -326,7 +271,7 @@ public class EndpointVO  {
         }
 
         public static MongoHaModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MongoHaModeEnum result = STATIC_FIELDS.get(value);
@@ -350,78 +295,54 @@ public class EndpointVO  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mongo_ha_mode")
-    
+    @JsonProperty(value = "mongo_ha_mode")
+
     private MongoHaModeEnum mongoHaMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
-    /**
-     * 集群模式
-     */
+
+    /** 集群模式 */
     public static final class ClusterModeEnum {
 
-        
-        /**
-         * Enum SINGLE_RDS for value: "Single 单节点RDS"
-         */
+        /** Enum SINGLE_RDS for value: "Single 单节点RDS" */
         public static final ClusterModeEnum SINGLE_RDS = new ClusterModeEnum("Single 单节点RDS");
-        
-        /**
-         * Enum HA_RDS for value: "Ha 主备RDS"
-         */
+
+        /** Enum HA_RDS for value: "Ha 主备RDS" */
         public static final ClusterModeEnum HA_RDS = new ClusterModeEnum("Ha 主备RDS");
-        
-        /**
-         * Enum GR_RDS for value: "GR 金融版RDS"
-         */
+
+        /** Enum GR_RDS for value: "GR 金融版RDS" */
         public static final ClusterModeEnum GR_RDS = new ClusterModeEnum("GR 金融版RDS");
-        
-        /**
-         * Enum SHARDING_MONGODB_DDM_ for value: "Sharding mongodb 集群或DDM的模式，均默认为分片"
-         */
-        public static final ClusterModeEnum SHARDING_MONGODB_DDM_ = new ClusterModeEnum("Sharding mongodb 集群或DDM的模式，均默认为分片");
-        
-        /**
-         * Enum REPLICASET_MONGODB_ for value: "ReplicaSet mongodb 副本集"
-         */
+
+        /** Enum SHARDING_MONGODB_DDM_ for value: "Sharding mongodb 集群或DDM的模式，均默认为分片" */
+        public static final ClusterModeEnum SHARDING_MONGODB_DDM_ =
+            new ClusterModeEnum("Sharding mongodb 集群或DDM的模式，均默认为分片");
+
+        /** Enum REPLICASET_MONGODB_ for value: "ReplicaSet mongodb 副本集" */
         public static final ClusterModeEnum REPLICASET_MONGODB_ = new ClusterModeEnum("ReplicaSet mongodb 副本集");
-        
-        /**
-         * Enum REPLICA_RDS_ for value: "Replica RDS只读副本"
-         */
+
+        /** Enum REPLICA_RDS_ for value: "Replica RDS只读副本" */
         public static final ClusterModeEnum REPLICA_RDS_ = new ClusterModeEnum("Replica RDS只读副本");
-        
-        /**
-         * Enum REPLICASINGLE_MONGODB_ for value: "ReplicaSingle mongodb 单节点"
-         */
+
+        /** Enum REPLICASINGLE_MONGODB_ for value: "ReplicaSingle mongodb 单节点" */
         public static final ClusterModeEnum REPLICASINGLE_MONGODB_ = new ClusterModeEnum("ReplicaSingle mongodb 单节点");
-        
-        /**
-         * Enum CLUSTER_ for value: "Cluster 集群"
-         */
+
+        /** Enum CLUSTER_ for value: "Cluster 集群" */
         public static final ClusterModeEnum CLUSTER_ = new ClusterModeEnum("Cluster 集群");
-        
-        /**
-         * Enum INDEPENDENT_GAUSSDBV5_INDEPENDENT_ for value: "Independent gaussdbv5 independent模式"
-         */
-        public static final ClusterModeEnum INDEPENDENT_GAUSSDBV5_INDEPENDENT_ = new ClusterModeEnum("Independent gaussdbv5 independent模式");
-        
-        /**
-         * Enum COMBINED_GAUSSDBV5_COMBINED_ for value: "Combined gaussdbv5 Combined模式"
-         */
-        public static final ClusterModeEnum COMBINED_GAUSSDBV5_COMBINED_ = new ClusterModeEnum("Combined gaussdbv5 Combined模式");
-        
-        /**
-         * Enum DISTRIBUTED_TAURUS for value: "Distributed 分布式taurus"
-         */
+
+        /** Enum INDEPENDENT_GAUSSDBV5_INDEPENDENT_ for value: "Independent gaussdbv5 independent模式" */
+        public static final ClusterModeEnum INDEPENDENT_GAUSSDBV5_INDEPENDENT_ =
+            new ClusterModeEnum("Independent gaussdbv5 independent模式");
+
+        /** Enum COMBINED_GAUSSDBV5_COMBINED_ for value: "Combined gaussdbv5 Combined模式" */
+        public static final ClusterModeEnum COMBINED_GAUSSDBV5_COMBINED_ =
+            new ClusterModeEnum("Combined gaussdbv5 Combined模式");
+
+        /** Enum DISTRIBUTED_TAURUS for value: "Distributed 分布式taurus" */
         public static final ClusterModeEnum DISTRIBUTED_TAURUS = new ClusterModeEnum("Distributed 分布式taurus");
-        
 
         private static final Map<String, ClusterModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -459,7 +380,7 @@ public class EndpointVO  {
 
         @JsonCreator
         public static ClusterModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ClusterModeEnum result = STATIC_FIELDS.get(value);
@@ -470,7 +391,7 @@ public class EndpointVO  {
         }
 
         public static ClusterModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ClusterModeEnum result = STATIC_FIELDS.get(value);
@@ -494,46 +415,39 @@ public class EndpointVO  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_mode")
-    
+    @JsonProperty(value = "cluster_mode")
+
     private ClusterModeEnum clusterMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_name")
-    
+    @JsonProperty(value = "db_name")
+
     private String dbName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic")
-    
+    @JsonProperty(value = "topic")
+
     private String topic;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="safe_mode")
-    
+    @JsonProperty(value = "safe_mode")
+
     private Integer safeMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="kerberos_vo")
-    
+    @JsonProperty(value = "kerberos_vo")
+
     private KerberosVO kerberosVo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="multi_write_db_id")
-    
+    @JsonProperty(value = "multi_write_db_id")
+
     private String multiWriteDbId;
 
     public EndpointVO withId(String id) {
@@ -541,13 +455,9 @@ public class EndpointVO  {
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库id。
-     * @return id
-     */
+    /** 数据库id。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -556,20 +466,14 @@ public class EndpointVO  {
         this.id = id;
     }
 
-    
-
     public EndpointVO withObjId(String objId) {
         this.objId = objId;
         return this;
     }
 
-    
-
-
-    /**
-     * 对象id。
-     * @return objId
-     */
+    /** 对象id。
+     * 
+     * @return objId */
     public String getObjId() {
         return objId;
     }
@@ -578,20 +482,14 @@ public class EndpointVO  {
         this.objId = objId;
     }
 
-    
-
     public EndpointVO withInstanceName(String instanceName) {
         this.instanceName = instanceName;
         return this;
     }
 
-    
-
-
-    /**
-     * RDS实例名称。
-     * @return instanceName
-     */
+    /** RDS实例名称。
+     * 
+     * @return instanceName */
     public String getInstanceName() {
         return instanceName;
     }
@@ -600,20 +498,14 @@ public class EndpointVO  {
         this.instanceName = instanceName;
     }
 
-    
-
     public EndpointVO withDbType(DbTypeEnum dbType) {
         this.dbType = dbType;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库类型
-     * @return dbType
-     */
+    /** 数据库类型
+     * 
+     * @return dbType */
     public DbTypeEnum getDbType() {
         return dbType;
     }
@@ -622,20 +514,14 @@ public class EndpointVO  {
         this.dbType = dbType;
     }
 
-    
-
     public EndpointVO withDbUser(String dbUser) {
         this.dbUser = dbUser;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库用户。
-     * @return dbUser
-     */
+    /** 数据库用户。
+     * 
+     * @return dbUser */
     public String getDbUser() {
         return dbUser;
     }
@@ -644,20 +530,14 @@ public class EndpointVO  {
         this.dbUser = dbUser;
     }
 
-    
-
     public EndpointVO withDbPassword(String dbPassword) {
         this.dbPassword = dbPassword;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库密码。
-     * @return dbPassword
-     */
+    /** 数据库密码。
+     * 
+     * @return dbPassword */
     public String getDbPassword() {
         return dbPassword;
     }
@@ -666,20 +546,14 @@ public class EndpointVO  {
         this.dbPassword = dbPassword;
     }
 
-    
-
     public EndpointVO withManageIp(String manageIp) {
         this.manageIp = manageIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 管理IP。
-     * @return manageIp
-     */
+    /** 管理IP。
+     * 
+     * @return manageIp */
     public String getManageIp() {
         return manageIp;
     }
@@ -688,20 +562,14 @@ public class EndpointVO  {
         this.manageIp = manageIp;
     }
 
-    
-
     public EndpointVO withTrafficIp(String trafficIp) {
         this.trafficIp = trafficIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 流量IP。
-     * @return trafficIp
-     */
+    /** 流量IP。
+     * 
+     * @return trafficIp */
     public String getTrafficIp() {
         return trafficIp;
     }
@@ -710,20 +578,14 @@ public class EndpointVO  {
         this.trafficIp = trafficIp;
     }
 
-    
-
     public EndpointVO withDbPort(Integer dbPort) {
         this.dbPort = dbPort;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库端口。
-     * @return dbPort
-     */
+    /** 数据库端口。
+     * 
+     * @return dbPort */
     public Integer getDbPort() {
         return dbPort;
     }
@@ -732,20 +594,14 @@ public class EndpointVO  {
         this.dbPort = dbPort;
     }
 
-    
-
     public EndpointVO withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * RDS实例所在region。
-     * @return region
-     */
+    /** RDS实例所在region。
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -754,20 +610,14 @@ public class EndpointVO  {
         this.region = region;
     }
 
-    
-
     public EndpointVO withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建日期，格式yyyy-MM-dd'T'HH:mm:ss'Z'
-     * @return createdAt
-     */
+    /** 创建日期，格式yyyy-MM-dd'T'HH:mm:ss'Z'
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -776,20 +626,14 @@ public class EndpointVO  {
         this.createdAt = createdAt;
     }
 
-    
-
     public EndpointVO withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 修改日期，格式yyyy-MM-dd'T'HH:mm:ss'Z'
-     * @return updatedAt
-     */
+    /** 修改日期，格式yyyy-MM-dd'T'HH:mm:ss'Z'
+     * 
+     * @return updatedAt */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -798,20 +642,14 @@ public class EndpointVO  {
         this.updatedAt = updatedAt;
     }
 
-    
-
     public EndpointVO withIp(String ip) {
         this.ip = ip;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移实例所在的私有IP。
-     * @return ip
-     */
+    /** 迁移实例所在的私有IP。
+     * 
+     * @return ip */
     public String getIp() {
         return ip;
     }
@@ -820,20 +658,14 @@ public class EndpointVO  {
         this.ip = ip;
     }
 
-    
-
     public EndpointVO withPublicIp(String publicIp) {
         this.publicIp = publicIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移实例所在的公网IP。
-     * @return publicIp
-     */
+    /** 迁移实例所在的公网IP。
+     * 
+     * @return publicIp */
     public String getPublicIp() {
         return publicIp;
     }
@@ -842,20 +674,14 @@ public class EndpointVO  {
         this.publicIp = publicIp;
     }
 
-    
-
     public EndpointVO withAzCode(String azCode) {
         this.azCode = azCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 可用区azCode。
-     * @return azCode
-     */
+    /** 可用区azCode。
+     * 
+     * @return azCode */
     public String getAzCode() {
         return azCode;
     }
@@ -864,20 +690,14 @@ public class EndpointVO  {
         this.azCode = azCode;
     }
 
-    
-
     public EndpointVO withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 源库所在的安全组id。
-     * @return securityGroupId
-     */
+    /** 源库所在的安全组id。
+     * 
+     * @return securityGroupId */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -886,20 +706,14 @@ public class EndpointVO  {
         this.securityGroupId = securityGroupId;
     }
 
-    
-
     public EndpointVO withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
 
-    
-
-
-    /**
-     * 源库所在的子网id。
-     * @return subnetId
-     */
+    /** 源库所在的子网id。
+     * 
+     * @return subnetId */
     public String getSubnetId() {
         return subnetId;
     }
@@ -908,20 +722,14 @@ public class EndpointVO  {
         this.subnetId = subnetId;
     }
 
-    
-
     public EndpointVO withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
-    
-
-
-    /**
-     * 源库所在的虚拟私有云id。
-     * @return vpcId
-     */
+    /** 源库所在的虚拟私有云id。
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -930,20 +738,14 @@ public class EndpointVO  {
         this.vpcId = vpcId;
     }
 
-    
-
     public EndpointVO withVolumeSize(Long volumeSize) {
         this.volumeSize = volumeSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移实例的磁盘大小。
-     * @return volumeSize
-     */
+    /** 迁移实例的磁盘大小。
+     * 
+     * @return volumeSize */
     public Long getVolumeSize() {
         return volumeSize;
     }
@@ -952,20 +754,14 @@ public class EndpointVO  {
         this.volumeSize = volumeSize;
     }
 
-    
-
     public EndpointVO withFullTransUserPwd(String fullTransUserPwd) {
         this.fullTransUserPwd = fullTransUserPwd;
         return this;
     }
 
-    
-
-
-    /**
-     * 全量迁移用户密码，密文。
-     * @return fullTransUserPwd
-     */
+    /** 全量迁移用户密码，密文。
+     * 
+     * @return fullTransUserPwd */
     public String getFullTransUserPwd() {
         return fullTransUserPwd;
     }
@@ -974,20 +770,14 @@ public class EndpointVO  {
         this.fullTransUserPwd = fullTransUserPwd;
     }
 
-    
-
     public EndpointVO withIncrementTransUserPwd(String incrementTransUserPwd) {
         this.incrementTransUserPwd = incrementTransUserPwd;
         return this;
     }
 
-    
-
-
-    /**
-     * 增量迁移用户密码，密文。
-     * @return incrementTransUserPwd
-     */
+    /** 增量迁移用户密码，密文。
+     * 
+     * @return incrementTransUserPwd */
     public String getIncrementTransUserPwd() {
         return incrementTransUserPwd;
     }
@@ -996,20 +786,14 @@ public class EndpointVO  {
         this.incrementTransUserPwd = incrementTransUserPwd;
     }
 
-    
-
     public EndpointVO withSslLink(Boolean sslLink) {
         this.sslLink = sslLink;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否SSL安全连接。
-     * @return sslLink
-     */
+    /** 是否SSL安全连接。
+     * 
+     * @return sslLink */
     public Boolean getSslLink() {
         return sslLink;
     }
@@ -1018,20 +802,14 @@ public class EndpointVO  {
         this.sslLink = sslLink;
     }
 
-    
-
     public EndpointVO withSslCertKey(String sslCertKey) {
         this.sslCertKey = sslCertKey;
         return this;
     }
 
-    
-
-
-    /**
-     * SSL证书内容。
-     * @return sslCertKey
-     */
+    /** SSL证书内容。
+     * 
+     * @return sslCertKey */
     public String getSslCertKey() {
         return sslCertKey;
     }
@@ -1040,20 +818,14 @@ public class EndpointVO  {
         this.sslCertKey = sslCertKey;
     }
 
-    
-
     public EndpointVO withSslCertName(String sslCertName) {
         this.sslCertName = sslCertName;
         return this;
     }
 
-    
-
-
-    /**
-     * SSL证书名字。
-     * @return sslCertName
-     */
+    /** SSL证书名字。
+     * 
+     * @return sslCertName */
     public String getSslCertName() {
         return sslCertName;
     }
@@ -1062,20 +834,14 @@ public class EndpointVO  {
         this.sslCertName = sslCertName;
     }
 
-    
-
     public EndpointVO withSslCertCheckSum(String sslCertCheckSum) {
         this.sslCertCheckSum = sslCertCheckSum;
         return this;
     }
 
-    
-
-
-    /**
-     * SSL证书内容checksum值。
-     * @return sslCertCheckSum
-     */
+    /** SSL证书内容checksum值。
+     * 
+     * @return sslCertCheckSum */
     public String getSslCertCheckSum() {
         return sslCertCheckSum;
     }
@@ -1084,20 +850,14 @@ public class EndpointVO  {
         this.sslCertCheckSum = sslCertCheckSum;
     }
 
-    
-
     public EndpointVO withSslCertPassword(String sslCertPassword) {
         this.sslCertPassword = sslCertPassword;
         return this;
     }
 
-    
-
-
-    /**
-     * SSL证书密码，密文。
-     * @return sslCertPassword
-     */
+    /** SSL证书密码，密文。
+     * 
+     * @return sslCertPassword */
     public String getSslCertPassword() {
         return sslCertPassword;
     }
@@ -1106,20 +866,14 @@ public class EndpointVO  {
         this.sslCertPassword = sslCertPassword;
     }
 
-    
-
     public EndpointVO withDbVersion(String dbVersion) {
         this.dbVersion = dbVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库版本。
-     * @return dbVersion
-     */
+    /** 数据库版本。
+     * 
+     * @return dbVersion */
     public String getDbVersion() {
         return dbVersion;
     }
@@ -1128,20 +882,14 @@ public class EndpointVO  {
         this.dbVersion = dbVersion;
     }
 
-    
-
     public EndpointVO withMongoHaMode(MongoHaModeEnum mongoHaMode) {
         this.mongoHaMode = mongoHaMode;
         return this;
     }
 
-    
-
-
-    /**
-     * mongoHa模式
-     * @return mongoHaMode
-     */
+    /** mongoHa模式
+     * 
+     * @return mongoHaMode */
     public MongoHaModeEnum getMongoHaMode() {
         return mongoHaMode;
     }
@@ -1150,20 +898,14 @@ public class EndpointVO  {
         this.mongoHaMode = mongoHaMode;
     }
 
-    
-
     public EndpointVO withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * RDS实例projectId。
-     * @return projectId
-     */
+    /** RDS实例projectId。
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -1172,20 +914,14 @@ public class EndpointVO  {
         this.projectId = projectId;
     }
 
-    
-
     public EndpointVO withClusterMode(ClusterModeEnum clusterMode) {
         this.clusterMode = clusterMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 集群模式
-     * @return clusterMode
-     */
+    /** 集群模式
+     * 
+     * @return clusterMode */
     public ClusterModeEnum getClusterMode() {
         return clusterMode;
     }
@@ -1194,20 +930,14 @@ public class EndpointVO  {
         this.clusterMode = clusterMode;
     }
 
-    
-
     public EndpointVO withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * RDS实例id。
-     * @return instanceId
-     */
+    /** RDS实例id。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -1216,20 +946,14 @@ public class EndpointVO  {
         this.instanceId = instanceId;
     }
 
-    
-
     public EndpointVO withDbName(String dbName) {
         this.dbName = dbName;
         return this;
     }
 
-    
-
-
-    /**
-     * Oracle服务名serviceName。
-     * @return dbName
-     */
+    /** Oracle服务名serviceName。
+     * 
+     * @return dbName */
     public String getDbName() {
         return dbName;
     }
@@ -1238,20 +962,14 @@ public class EndpointVO  {
         this.dbName = dbName;
     }
 
-    
-
     public EndpointVO withTopic(String topic) {
         this.topic = topic;
         return this;
     }
 
-    
-
-
-    /**
-     * mrskafka topic名称。
-     * @return topic
-     */
+    /** mrskafka topic名称。
+     * 
+     * @return topic */
     public String getTopic() {
         return topic;
     }
@@ -1260,20 +978,14 @@ public class EndpointVO  {
         this.topic = topic;
     }
 
-    
-
     public EndpointVO withSafeMode(Integer safeMode) {
         this.safeMode = safeMode;
         return this;
     }
 
-    
-
-
-    /**
-     * MRSkafka是否开启kerberos认证 - 0非安全认证 - 1安全认证
-     * @return safeMode
-     */
+    /** MRSkafka是否开启kerberos认证 - 0非安全认证 - 1安全认证
+     * 
+     * @return safeMode */
     public Integer getSafeMode() {
         return safeMode;
     }
@@ -1282,27 +994,23 @@ public class EndpointVO  {
         this.safeMode = safeMode;
     }
 
-    
-
     public EndpointVO withKerberosVo(KerberosVO kerberosVo) {
         this.kerberosVo = kerberosVo;
         return this;
     }
 
     public EndpointVO withKerberosVo(Consumer<KerberosVO> kerberosVoSetter) {
-        if(this.kerberosVo == null ){
+        if (this.kerberosVo == null) {
             this.kerberosVo = new KerberosVO();
             kerberosVoSetter.accept(this.kerberosVo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get kerberosVo
-     * @return kerberosVo
-     */
+    /** Get kerberosVo
+     * 
+     * @return kerberosVo */
     public KerberosVO getKerberosVo() {
         return kerberosVo;
     }
@@ -1311,20 +1019,14 @@ public class EndpointVO  {
         this.kerberosVo = kerberosVo;
     }
 
-    
-
     public EndpointVO withMultiWriteDbId(String multiWriteDbId) {
         this.multiWriteDbId = multiWriteDbId;
         return this;
     }
 
-    
-
-
-    /**
-     * 多写数据库Id。
-     * @return multiWriteDbId
-     */
+    /** 多写数据库Id。
+     * 
+     * @return multiWriteDbId */
     public String getMultiWriteDbId() {
         return multiWriteDbId;
     }
@@ -1332,8 +1034,6 @@ public class EndpointVO  {
     public void setMultiWriteDbId(String multiWriteDbId) {
         this.multiWriteDbId = multiWriteDbId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -1344,47 +1044,75 @@ public class EndpointVO  {
             return false;
         }
         EndpointVO endpointVO = (EndpointVO) o;
-        return Objects.equals(this.id, endpointVO.id) &&
-            Objects.equals(this.objId, endpointVO.objId) &&
-            Objects.equals(this.instanceName, endpointVO.instanceName) &&
-            Objects.equals(this.dbType, endpointVO.dbType) &&
-            Objects.equals(this.dbUser, endpointVO.dbUser) &&
-            Objects.equals(this.dbPassword, endpointVO.dbPassword) &&
-            Objects.equals(this.manageIp, endpointVO.manageIp) &&
-            Objects.equals(this.trafficIp, endpointVO.trafficIp) &&
-            Objects.equals(this.dbPort, endpointVO.dbPort) &&
-            Objects.equals(this.region, endpointVO.region) &&
-            Objects.equals(this.createdAt, endpointVO.createdAt) &&
-            Objects.equals(this.updatedAt, endpointVO.updatedAt) &&
-            Objects.equals(this.ip, endpointVO.ip) &&
-            Objects.equals(this.publicIp, endpointVO.publicIp) &&
-            Objects.equals(this.azCode, endpointVO.azCode) &&
-            Objects.equals(this.securityGroupId, endpointVO.securityGroupId) &&
-            Objects.equals(this.subnetId, endpointVO.subnetId) &&
-            Objects.equals(this.vpcId, endpointVO.vpcId) &&
-            Objects.equals(this.volumeSize, endpointVO.volumeSize) &&
-            Objects.equals(this.fullTransUserPwd, endpointVO.fullTransUserPwd) &&
-            Objects.equals(this.incrementTransUserPwd, endpointVO.incrementTransUserPwd) &&
-            Objects.equals(this.sslLink, endpointVO.sslLink) &&
-            Objects.equals(this.sslCertKey, endpointVO.sslCertKey) &&
-            Objects.equals(this.sslCertName, endpointVO.sslCertName) &&
-            Objects.equals(this.sslCertCheckSum, endpointVO.sslCertCheckSum) &&
-            Objects.equals(this.sslCertPassword, endpointVO.sslCertPassword) &&
-            Objects.equals(this.dbVersion, endpointVO.dbVersion) &&
-            Objects.equals(this.mongoHaMode, endpointVO.mongoHaMode) &&
-            Objects.equals(this.projectId, endpointVO.projectId) &&
-            Objects.equals(this.clusterMode, endpointVO.clusterMode) &&
-            Objects.equals(this.instanceId, endpointVO.instanceId) &&
-            Objects.equals(this.dbName, endpointVO.dbName) &&
-            Objects.equals(this.topic, endpointVO.topic) &&
-            Objects.equals(this.safeMode, endpointVO.safeMode) &&
-            Objects.equals(this.kerberosVo, endpointVO.kerberosVo) &&
-            Objects.equals(this.multiWriteDbId, endpointVO.multiWriteDbId);
+        return Objects.equals(this.id, endpointVO.id) && Objects.equals(this.objId, endpointVO.objId)
+            && Objects.equals(this.instanceName, endpointVO.instanceName)
+            && Objects.equals(this.dbType, endpointVO.dbType) && Objects.equals(this.dbUser, endpointVO.dbUser)
+            && Objects.equals(this.dbPassword, endpointVO.dbPassword)
+            && Objects.equals(this.manageIp, endpointVO.manageIp)
+            && Objects.equals(this.trafficIp, endpointVO.trafficIp) && Objects.equals(this.dbPort, endpointVO.dbPort)
+            && Objects.equals(this.region, endpointVO.region) && Objects.equals(this.createdAt, endpointVO.createdAt)
+            && Objects.equals(this.updatedAt, endpointVO.updatedAt) && Objects.equals(this.ip, endpointVO.ip)
+            && Objects.equals(this.publicIp, endpointVO.publicIp) && Objects.equals(this.azCode, endpointVO.azCode)
+            && Objects.equals(this.securityGroupId, endpointVO.securityGroupId)
+            && Objects.equals(this.subnetId, endpointVO.subnetId) && Objects.equals(this.vpcId, endpointVO.vpcId)
+            && Objects.equals(this.volumeSize, endpointVO.volumeSize)
+            && Objects.equals(this.fullTransUserPwd, endpointVO.fullTransUserPwd)
+            && Objects.equals(this.incrementTransUserPwd, endpointVO.incrementTransUserPwd)
+            && Objects.equals(this.sslLink, endpointVO.sslLink)
+            && Objects.equals(this.sslCertKey, endpointVO.sslCertKey)
+            && Objects.equals(this.sslCertName, endpointVO.sslCertName)
+            && Objects.equals(this.sslCertCheckSum, endpointVO.sslCertCheckSum)
+            && Objects.equals(this.sslCertPassword, endpointVO.sslCertPassword)
+            && Objects.equals(this.dbVersion, endpointVO.dbVersion)
+            && Objects.equals(this.mongoHaMode, endpointVO.mongoHaMode)
+            && Objects.equals(this.projectId, endpointVO.projectId)
+            && Objects.equals(this.clusterMode, endpointVO.clusterMode)
+            && Objects.equals(this.instanceId, endpointVO.instanceId) && Objects.equals(this.dbName, endpointVO.dbName)
+            && Objects.equals(this.topic, endpointVO.topic) && Objects.equals(this.safeMode, endpointVO.safeMode)
+            && Objects.equals(this.kerberosVo, endpointVO.kerberosVo)
+            && Objects.equals(this.multiWriteDbId, endpointVO.multiWriteDbId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, objId, instanceName, dbType, dbUser, dbPassword, manageIp, trafficIp, dbPort, region, createdAt, updatedAt, ip, publicIp, azCode, securityGroupId, subnetId, vpcId, volumeSize, fullTransUserPwd, incrementTransUserPwd, sslLink, sslCertKey, sslCertName, sslCertCheckSum, sslCertPassword, dbVersion, mongoHaMode, projectId, clusterMode, instanceId, dbName, topic, safeMode, kerberosVo, multiWriteDbId);
+        return Objects.hash(id,
+            objId,
+            instanceName,
+            dbType,
+            dbUser,
+            dbPassword,
+            manageIp,
+            trafficIp,
+            dbPort,
+            region,
+            createdAt,
+            updatedAt,
+            ip,
+            publicIp,
+            azCode,
+            securityGroupId,
+            subnetId,
+            vpcId,
+            volumeSize,
+            fullTransUserPwd,
+            incrementTransUserPwd,
+            sslLink,
+            sslCertKey,
+            sslCertName,
+            sslCertCheckSum,
+            sslCertPassword,
+            dbVersion,
+            mongoHaMode,
+            projectId,
+            clusterMode,
+            instanceId,
+            dbName,
+            topic,
+            safeMode,
+            kerberosVo,
+            multiWriteDbId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1428,16 +1156,13 @@ public class EndpointVO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,48 +1,35 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 
  */
-public class CreateVpcRouteOption  {
-
-
+public class CreateVpcRouteOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination")
-    
+    @JsonProperty(value = "destination")
+
     private String destination;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nexthop")
-    
+    @JsonProperty(value = "nexthop")
+
     private String nexthop;
-    /**
-     * 功能说明：路由类型  取值范围：peering
-     */
+
+    /** 功能说明：路由类型 取值范围：peering */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum PEERING for value: "peering"
-         */
+        /** Enum PEERING for value: "peering" */
         public static final TypeEnum PEERING = new TypeEnum("peering");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,7 +57,7 @@ public class CreateVpcRouteOption  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -81,7 +68,7 @@ public class CreateVpcRouteOption  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -105,16 +92,14 @@ public class CreateVpcRouteOption  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
     public CreateVpcRouteOption withDestination(String destination) {
@@ -122,13 +107,9 @@ public class CreateVpcRouteOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 路由目的地址CIDR，如192.168.200.0/24。
-     * @return destination
-     */
+    /** 路由目的地址CIDR，如192.168.200.0/24。
+     * 
+     * @return destination */
     public String getDestination() {
         return destination;
     }
@@ -137,20 +118,14 @@ public class CreateVpcRouteOption  {
         this.destination = destination;
     }
 
-    
-
     public CreateVpcRouteOption withNexthop(String nexthop) {
         this.nexthop = nexthop;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：路由下一跳  取值范围：如果type为peering类型，则nexthop为peering的ID
-     * @return nexthop
-     */
+    /** 功能说明：路由下一跳 取值范围：如果type为peering类型，则nexthop为peering的ID
+     * 
+     * @return nexthop */
     public String getNexthop() {
         return nexthop;
     }
@@ -159,20 +134,14 @@ public class CreateVpcRouteOption  {
         this.nexthop = nexthop;
     }
 
-    
-
     public CreateVpcRouteOption withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：路由类型  取值范围：peering
-     * @return type
-     */
+    /** 功能说明：路由类型 取值范围：peering
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -181,20 +150,14 @@ public class CreateVpcRouteOption  {
         this.type = type;
     }
 
-    
-
     public CreateVpcRouteOption withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求添加路由的VPC ID
-     * @return vpcId
-     */
+    /** 请求添加路由的VPC ID
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -202,8 +165,6 @@ public class CreateVpcRouteOption  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -214,15 +175,17 @@ public class CreateVpcRouteOption  {
             return false;
         }
         CreateVpcRouteOption createVpcRouteOption = (CreateVpcRouteOption) o;
-        return Objects.equals(this.destination, createVpcRouteOption.destination) &&
-            Objects.equals(this.nexthop, createVpcRouteOption.nexthop) &&
-            Objects.equals(this.type, createVpcRouteOption.type) &&
-            Objects.equals(this.vpcId, createVpcRouteOption.vpcId);
+        return Objects.equals(this.destination, createVpcRouteOption.destination)
+            && Objects.equals(this.nexthop, createVpcRouteOption.nexthop)
+            && Objects.equals(this.type, createVpcRouteOption.type)
+            && Objects.equals(this.vpcId, createVpcRouteOption.vpcId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(destination, nexthop, type, vpcId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -234,16 +197,13 @@ public class CreateVpcRouteOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

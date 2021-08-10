@@ -1,67 +1,44 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dgc.v1.model.RealTimeNodeStatus;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowJobStatusResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * Gets or Sets status
-     */
+
+    /** Gets or Sets status */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum STARTTING for value: "STARTTING"
-         */
+        /** Enum STARTTING for value: "STARTTING" */
         public static final StatusEnum STARTTING = new StatusEnum("STARTTING");
-        
-        /**
-         * Enum NORMAL for value: "NORMAL"
-         */
+
+        /** Enum NORMAL for value: "NORMAL" */
         public static final StatusEnum NORMAL = new StatusEnum("NORMAL");
-        
-        /**
-         * Enum EXCEPTION for value: "EXCEPTION"
-         */
+
+        /** Enum EXCEPTION for value: "EXCEPTION" */
         public static final StatusEnum EXCEPTION = new StatusEnum("EXCEPTION");
-        
-        /**
-         * Enum STOPPING for value: "STOPPING"
-         */
+
+        /** Enum STOPPING for value: "STOPPING" */
         public static final StatusEnum STOPPING = new StatusEnum("STOPPING");
-        
-        /**
-         * Enum STOPPED for value: "STOPPED"
-         */
+
+        /** Enum STOPPED for value: "STOPPED" */
         public static final StatusEnum STOPPED = new StatusEnum("STOPPED");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -93,7 +70,7 @@ public class ShowJobStatusResponse extends SdkResponse {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -104,7 +81,7 @@ public class ShowJobStatusResponse extends SdkResponse {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -128,48 +105,39 @@ public class ShowJobStatusResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="starttime")
-    
+    @JsonProperty(value = "starttime")
+
     private String starttime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endTime")
-    
+    @JsonProperty(value = "endTime")
+
     private String endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lastUpdateTime")
-    
+    @JsonProperty(value = "lastUpdateTime")
+
     private String lastUpdateTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodes")
-    
+    @JsonProperty(value = "nodes")
+
     private List<RealTimeNodeStatus> nodes = null;
-    
+
     public ShowJobStatusResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * Get name
-     * @return name
-     */
+    /** Get name
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -178,20 +146,14 @@ public class ShowJobStatusResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowJobStatusResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * Get status
-     * @return status
-     */
+    /** Get status
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -200,20 +162,14 @@ public class ShowJobStatusResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public ShowJobStatusResponse withStarttime(String starttime) {
         this.starttime = starttime;
         return this;
     }
 
-    
-
-
-    /**
-     * Get starttime
-     * @return starttime
-     */
+    /** Get starttime
+     * 
+     * @return starttime */
     public String getStarttime() {
         return starttime;
     }
@@ -222,20 +178,14 @@ public class ShowJobStatusResponse extends SdkResponse {
         this.starttime = starttime;
     }
 
-    
-
     public ShowJobStatusResponse withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * Get endTime
-     * @return endTime
-     */
+    /** Get endTime
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -244,20 +194,14 @@ public class ShowJobStatusResponse extends SdkResponse {
         this.endTime = endTime;
     }
 
-    
-
     public ShowJobStatusResponse withLastUpdateTime(String lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态最后更新时间
-     * @return lastUpdateTime
-     */
+    /** 状态最后更新时间
+     * 
+     * @return lastUpdateTime */
     public String getLastUpdateTime() {
         return lastUpdateTime;
     }
@@ -266,16 +210,13 @@ public class ShowJobStatusResponse extends SdkResponse {
         this.lastUpdateTime = lastUpdateTime;
     }
 
-    
-
     public ShowJobStatusResponse withNodes(List<RealTimeNodeStatus> nodes) {
         this.nodes = nodes;
         return this;
     }
 
-    
     public ShowJobStatusResponse addNodesItem(RealTimeNodeStatus nodesItem) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         this.nodes.add(nodesItem);
@@ -283,17 +224,16 @@ public class ShowJobStatusResponse extends SdkResponse {
     }
 
     public ShowJobStatusResponse withNodes(Consumer<List<RealTimeNodeStatus>> nodesSetter) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         nodesSetter.accept(this.nodes);
         return this;
     }
 
-    /**
-     * Get nodes
-     * @return nodes
-     */
+    /** Get nodes
+     * 
+     * @return nodes */
     public List<RealTimeNodeStatus> getNodes() {
         return nodes;
     }
@@ -301,8 +241,6 @@ public class ShowJobStatusResponse extends SdkResponse {
     public void setNodes(List<RealTimeNodeStatus> nodes) {
         this.nodes = nodes;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -313,17 +251,19 @@ public class ShowJobStatusResponse extends SdkResponse {
             return false;
         }
         ShowJobStatusResponse showJobStatusResponse = (ShowJobStatusResponse) o;
-        return Objects.equals(this.name, showJobStatusResponse.name) &&
-            Objects.equals(this.status, showJobStatusResponse.status) &&
-            Objects.equals(this.starttime, showJobStatusResponse.starttime) &&
-            Objects.equals(this.endTime, showJobStatusResponse.endTime) &&
-            Objects.equals(this.lastUpdateTime, showJobStatusResponse.lastUpdateTime) &&
-            Objects.equals(this.nodes, showJobStatusResponse.nodes);
+        return Objects.equals(this.name, showJobStatusResponse.name)
+            && Objects.equals(this.status, showJobStatusResponse.status)
+            && Objects.equals(this.starttime, showJobStatusResponse.starttime)
+            && Objects.equals(this.endTime, showJobStatusResponse.endTime)
+            && Objects.equals(this.lastUpdateTime, showJobStatusResponse.lastUpdateTime)
+            && Objects.equals(this.nodes, showJobStatusResponse.nodes);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, status, starttime, endTime, lastUpdateTime, nodes);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -337,16 +277,13 @@ public class ShowJobStatusResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

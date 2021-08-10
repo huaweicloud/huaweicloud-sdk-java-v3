@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * DownloadBackupFilesReq
- */
-public class DownloadBackupFilesReq  {
-
-
+/** DownloadBackupFilesReq */
+public class DownloadBackupFilesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expiration")
-    
+    @JsonProperty(value = "expiration")
+
     private Integer expiration;
 
     public DownloadBackupFilesReq withExpiration(Integer expiration) {
@@ -28,13 +18,9 @@ public class DownloadBackupFilesReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 设置URL的有效期，必须在5分钟和24小时之内，单位为秒。
-     * @return expiration
-     */
+    /** 设置URL的有效期，必须在5分钟和24小时之内，单位为秒。
+     * 
+     * @return expiration */
     public Integer getExpiration() {
         return expiration;
     }
@@ -42,8 +28,6 @@ public class DownloadBackupFilesReq  {
     public void setExpiration(Integer expiration) {
         this.expiration = expiration;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class DownloadBackupFilesReq  {
         DownloadBackupFilesReq downloadBackupFilesReq = (DownloadBackupFilesReq) o;
         return Objects.equals(this.expiration, downloadBackupFilesReq.expiration);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(expiration);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class DownloadBackupFilesReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

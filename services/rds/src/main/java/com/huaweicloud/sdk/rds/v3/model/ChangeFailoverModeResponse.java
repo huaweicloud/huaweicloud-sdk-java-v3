@@ -1,40 +1,27 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ChangeFailoverModeResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instanceId")
-    
+    @JsonProperty(value = "instanceId")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replicationMode")
-    
+    @JsonProperty(value = "replicationMode")
+
     private String replicationMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="workflowId")
-    
+    @JsonProperty(value = "workflowId")
+
     private String workflowId;
 
     public ChangeFailoverModeResponse withInstanceId(String instanceId) {
@@ -42,13 +29,9 @@ public class ChangeFailoverModeResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例Id
-     * @return instanceId
-     */
+    /** 实例Id
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -57,20 +40,14 @@ public class ChangeFailoverModeResponse extends SdkResponse {
         this.instanceId = instanceId;
     }
 
-    
-
     public ChangeFailoverModeResponse withReplicationMode(String replicationMode) {
         this.replicationMode = replicationMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 同步模式
-     * @return replicationMode
-     */
+    /** 同步模式
+     * 
+     * @return replicationMode */
     public String getReplicationMode() {
         return replicationMode;
     }
@@ -79,20 +56,14 @@ public class ChangeFailoverModeResponse extends SdkResponse {
         this.replicationMode = replicationMode;
     }
 
-    
-
     public ChangeFailoverModeResponse withWorkflowId(String workflowId) {
         this.workflowId = workflowId;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务id
-     * @return workflowId
-     */
+    /** 任务id
+     * 
+     * @return workflowId */
     public String getWorkflowId() {
         return workflowId;
     }
@@ -100,8 +71,6 @@ public class ChangeFailoverModeResponse extends SdkResponse {
     public void setWorkflowId(String workflowId) {
         this.workflowId = workflowId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +81,16 @@ public class ChangeFailoverModeResponse extends SdkResponse {
             return false;
         }
         ChangeFailoverModeResponse changeFailoverModeResponse = (ChangeFailoverModeResponse) o;
-        return Objects.equals(this.instanceId, changeFailoverModeResponse.instanceId) &&
-            Objects.equals(this.replicationMode, changeFailoverModeResponse.replicationMode) &&
-            Objects.equals(this.workflowId, changeFailoverModeResponse.workflowId);
+        return Objects.equals(this.instanceId, changeFailoverModeResponse.instanceId)
+            && Objects.equals(this.replicationMode, changeFailoverModeResponse.replicationMode)
+            && Objects.equals(this.workflowId, changeFailoverModeResponse.workflowId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, replicationMode, workflowId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +101,13 @@ public class ChangeFailoverModeResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

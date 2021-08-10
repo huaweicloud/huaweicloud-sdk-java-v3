@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
-
-
-
-
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListJobsRequest  {
-
+/** Request Object */
+public class ListJobsRequest {
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -23,10 +15,12 @@ public class ListJobsRequest  {
         }
         return true;
     }
+
     @Override
     public int hashCode() {
         return Objects.hash();
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -34,6 +28,5 @@ public class ListJobsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    
-}
 
+}

@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListMigrationTaskRequest  {
-
-
+/** Request Object */
+public class ListMigrationTaskRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public ListMigrationTaskRequest withOffset(Integer offset) {
@@ -40,13 +28,9 @@ public class ListMigrationTaskRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于0。
-     * @return offset
-     */
+    /** 偏移量，表示从此偏移量开始查询， offset大于等于0。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -55,20 +39,14 @@ public class ListMigrationTaskRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListMigrationTaskRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示的条目数量。
-     * @return limit
-     */
+    /** 每页显示的条目数量。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -77,20 +55,14 @@ public class ListMigrationTaskRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListMigrationTaskRequest withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移任务名称。
-     * @return name
-     */
+    /** 迁移任务名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -98,8 +70,6 @@ public class ListMigrationTaskRequest  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class ListMigrationTaskRequest  {
             return false;
         }
         ListMigrationTaskRequest listMigrationTaskRequest = (ListMigrationTaskRequest) o;
-        return Objects.equals(this.offset, listMigrationTaskRequest.offset) &&
-            Objects.equals(this.limit, listMigrationTaskRequest.limit) &&
-            Objects.equals(this.name, listMigrationTaskRequest.name);
+        return Objects.equals(this.offset, listMigrationTaskRequest.offset)
+            && Objects.equals(this.limit, listMigrationTaskRequest.limit)
+            && Objects.equals(this.name, listMigrationTaskRequest.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(offset, limit, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class ListMigrationTaskRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

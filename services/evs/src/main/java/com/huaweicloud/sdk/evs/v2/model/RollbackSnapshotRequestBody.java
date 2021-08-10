@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.evs.v2.model.RollbackSnapshotOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * This is a auto create Body Object
- */
-public class RollbackSnapshotRequestBody  {
-
-
+/** This is a auto create Body Object */
+public class RollbackSnapshotRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rollback")
-    
+    @JsonProperty(value = "rollback")
+
     private RollbackSnapshotOption rollback;
 
     public RollbackSnapshotRequestBody withRollback(RollbackSnapshotOption rollback) {
@@ -30,19 +20,17 @@ public class RollbackSnapshotRequestBody  {
     }
 
     public RollbackSnapshotRequestBody withRollback(Consumer<RollbackSnapshotOption> rollbackSetter) {
-        if(this.rollback == null ){
+        if (this.rollback == null) {
             this.rollback = new RollbackSnapshotOption();
             rollbackSetter.accept(this.rollback);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get rollback
-     * @return rollback
-     */
+    /** Get rollback
+     * 
+     * @return rollback */
     public RollbackSnapshotOption getRollback() {
         return rollback;
     }
@@ -50,8 +38,6 @@ public class RollbackSnapshotRequestBody  {
     public void setRollback(RollbackSnapshotOption rollback) {
         this.rollback = rollback;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class RollbackSnapshotRequestBody  {
         RollbackSnapshotRequestBody rollbackSnapshotRequestBody = (RollbackSnapshotRequestBody) o;
         return Objects.equals(this.rollback, rollbackSnapshotRequestBody.rollback);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(rollback);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class RollbackSnapshotRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

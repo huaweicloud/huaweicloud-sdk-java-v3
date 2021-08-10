@@ -1,58 +1,39 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 目的端服务器关联磁盘
- */
-public class DiskIntargetServer  {
-
-
+/** 目的端服务器关联磁盘 */
+public class DiskIntargetServer {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Long size;
-    /**
-     * 磁盘的作用 
-     */
+
+    /** 磁盘的作用 */
     public static final class DeviceUseEnum {
 
-        
-        /**
-         * Enum BOOT_ for value: "BOOT：启动盘"
-         */
+        /** Enum BOOT_ for value: "BOOT：启动盘" */
         public static final DeviceUseEnum BOOT_ = new DeviceUseEnum("BOOT：启动盘");
-        
-        /**
-         * Enum OS_ for value: "OS：系统盘"
-         */
+
+        /** Enum OS_ for value: "OS：系统盘" */
         public static final DeviceUseEnum OS_ = new DeviceUseEnum("OS：系统盘");
-        
-        /**
-         * Enum NORMAL_ for value: "NORMAL：普通数据盘"
-         */
+
+        /** Enum NORMAL_ for value: "NORMAL：普通数据盘" */
         public static final DeviceUseEnum NORMAL_ = new DeviceUseEnum("NORMAL：普通数据盘");
-        
 
         private static final Map<String, DeviceUseEnum> STATIC_FIELDS = createStaticFields();
 
@@ -82,7 +63,7 @@ public class DiskIntargetServer  {
 
         @JsonCreator
         public static DeviceUseEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DeviceUseEnum result = STATIC_FIELDS.get(value);
@@ -93,7 +74,7 @@ public class DiskIntargetServer  {
         }
 
         public static DeviceUseEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DeviceUseEnum result = STATIC_FIELDS.get(value);
@@ -117,10 +98,9 @@ public class DiskIntargetServer  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_use")
-    
+    @JsonProperty(value = "device_use")
+
     private DeviceUseEnum deviceUse;
 
     public DiskIntargetServer withName(String name) {
@@ -128,13 +108,9 @@ public class DiskIntargetServer  {
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘名称
-     * @return name
-     */
+    /** 磁盘名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -143,22 +119,14 @@ public class DiskIntargetServer  {
         this.name = name;
     }
 
-    
-
     public DiskIntargetServer withSize(Long size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘大小，单位：字节
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return size
-     */
+    /** 磁盘大小，单位：字节 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return size */
     public Long getSize() {
         return size;
     }
@@ -167,20 +135,14 @@ public class DiskIntargetServer  {
         this.size = size;
     }
 
-    
-
     public DiskIntargetServer withDeviceUse(DeviceUseEnum deviceUse) {
         this.deviceUse = deviceUse;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘的作用 
-     * @return deviceUse
-     */
+    /** 磁盘的作用
+     * 
+     * @return deviceUse */
     public DeviceUseEnum getDeviceUse() {
         return deviceUse;
     }
@@ -188,8 +150,6 @@ public class DiskIntargetServer  {
     public void setDeviceUse(DeviceUseEnum deviceUse) {
         this.deviceUse = deviceUse;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -200,14 +160,15 @@ public class DiskIntargetServer  {
             return false;
         }
         DiskIntargetServer diskIntargetServer = (DiskIntargetServer) o;
-        return Objects.equals(this.name, diskIntargetServer.name) &&
-            Objects.equals(this.size, diskIntargetServer.size) &&
-            Objects.equals(this.deviceUse, diskIntargetServer.deviceUse);
+        return Objects.equals(this.name, diskIntargetServer.name) && Objects.equals(this.size, diskIntargetServer.size)
+            && Objects.equals(this.deviceUse, diskIntargetServer.deviceUse);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, size, deviceUse);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,16 +179,13 @@ public class DiskIntargetServer  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

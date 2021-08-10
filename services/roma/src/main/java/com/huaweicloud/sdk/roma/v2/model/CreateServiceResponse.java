@@ -1,84 +1,63 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.CreatedUser;
-import com.huaweicloud.sdk.roma.v2.model.LastUpdatedUser;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class CreateServiceResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_template_id")
-    
+    @JsonProperty(value = "product_template_id")
+
     private Integer productTemplateId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
-    
+    @JsonProperty(value = "product_id")
+
     private Integer productId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_id")
-    
+    @JsonProperty(value = "service_id")
+
     private Integer serviceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_name")
-    
+    @JsonProperty(value = "service_name")
+
     private String serviceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_user")
-    
+    @JsonProperty(value = "created_user")
+
     private CreatedUser createdUser;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_updated_user")
-    
+    @JsonProperty(value = "last_updated_user")
+
     private LastUpdatedUser lastUpdatedUser;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_datetime")
-    
+    @JsonProperty(value = "created_datetime")
+
     private Long createdDatetime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_updated_datetime")
-    
+    @JsonProperty(value = "last_updated_datetime")
+
     private Long lastUpdatedDatetime;
 
     public CreateServiceResponse withProductTemplateId(Integer productTemplateId) {
@@ -86,15 +65,9 @@ public class CreateServiceResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 服务归属的产品模板ID
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return productTemplateId
-     */
+    /** 服务归属的产品模板ID minimum: 1 maximum: 999999999999999999
+     * 
+     * @return productTemplateId */
     public Integer getProductTemplateId() {
         return productTemplateId;
     }
@@ -103,22 +76,14 @@ public class CreateServiceResponse extends SdkResponse {
         this.productTemplateId = productTemplateId;
     }
 
-    
-
     public CreateServiceResponse withProductId(Integer productId) {
         this.productId = productId;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务归属的产品ID
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return productId
-     */
+    /** 服务归属的产品ID minimum: 1 maximum: 999999999999999999
+     * 
+     * @return productId */
     public Integer getProductId() {
         return productId;
     }
@@ -127,22 +92,14 @@ public class CreateServiceResponse extends SdkResponse {
         this.productId = productId;
     }
 
-    
-
     public CreateServiceResponse withServiceId(Integer serviceId) {
         this.serviceId = serviceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务ID
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return serviceId
-     */
+    /** 服务ID minimum: 1 maximum: 999999999999999999
+     * 
+     * @return serviceId */
     public Integer getServiceId() {
         return serviceId;
     }
@@ -151,20 +108,14 @@ public class CreateServiceResponse extends SdkResponse {
         this.serviceId = serviceId;
     }
 
-    
-
     public CreateServiceResponse withServiceName(String serviceName) {
         this.serviceName = serviceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务名称，支持中文,英文大小写，数字，下划线和中划线,长度2-64
-     * @return serviceName
-     */
+    /** 服务名称，支持中文,英文大小写，数字，下划线和中划线,长度2-64
+     * 
+     * @return serviceName */
     public String getServiceName() {
         return serviceName;
     }
@@ -173,20 +124,14 @@ public class CreateServiceResponse extends SdkResponse {
         this.serviceName = serviceName;
     }
 
-    
-
     public CreateServiceResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务描述，长度0-200
-     * @return description
-     */
+    /** 服务描述，长度0-200
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -195,22 +140,14 @@ public class CreateServiceResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public CreateServiceResponse withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务状态 0-启用 1-停用
-     * minimum: 0
-     * maximum: 10
-     * @return status
-     */
+    /** 服务状态 0-启用 1-停用 minimum: 0 maximum: 10
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -219,27 +156,23 @@ public class CreateServiceResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public CreateServiceResponse withCreatedUser(CreatedUser createdUser) {
         this.createdUser = createdUser;
         return this;
     }
 
     public CreateServiceResponse withCreatedUser(Consumer<CreatedUser> createdUserSetter) {
-        if(this.createdUser == null ){
+        if (this.createdUser == null) {
             this.createdUser = new CreatedUser();
             createdUserSetter.accept(this.createdUser);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get createdUser
-     * @return createdUser
-     */
+    /** Get createdUser
+     * 
+     * @return createdUser */
     public CreatedUser getCreatedUser() {
         return createdUser;
     }
@@ -248,27 +181,23 @@ public class CreateServiceResponse extends SdkResponse {
         this.createdUser = createdUser;
     }
 
-    
-
     public CreateServiceResponse withLastUpdatedUser(LastUpdatedUser lastUpdatedUser) {
         this.lastUpdatedUser = lastUpdatedUser;
         return this;
     }
 
     public CreateServiceResponse withLastUpdatedUser(Consumer<LastUpdatedUser> lastUpdatedUserSetter) {
-        if(this.lastUpdatedUser == null ){
+        if (this.lastUpdatedUser == null) {
             this.lastUpdatedUser = new LastUpdatedUser();
             lastUpdatedUserSetter.accept(this.lastUpdatedUser);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get lastUpdatedUser
-     * @return lastUpdatedUser
-     */
+    /** Get lastUpdatedUser
+     * 
+     * @return lastUpdatedUser */
     public LastUpdatedUser getLastUpdatedUser() {
         return lastUpdatedUser;
     }
@@ -277,22 +206,14 @@ public class CreateServiceResponse extends SdkResponse {
         this.lastUpdatedUser = lastUpdatedUser;
     }
 
-    
-
     public CreateServiceResponse withCreatedDatetime(Long createdDatetime) {
         this.createdDatetime = createdDatetime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间止，格式timestamp(ms)，使用UTC时区
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return createdDatetime
-     */
+    /** 创建时间止，格式timestamp(ms)，使用UTC时区 minimum: 1 maximum: 999999999999999999
+     * 
+     * @return createdDatetime */
     public Long getCreatedDatetime() {
         return createdDatetime;
     }
@@ -301,22 +222,14 @@ public class CreateServiceResponse extends SdkResponse {
         this.createdDatetime = createdDatetime;
     }
 
-    
-
     public CreateServiceResponse withLastUpdatedDatetime(Long lastUpdatedDatetime) {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
         return this;
     }
 
-    
-
-
-    /**
-     * 最后修改时间止，格式timestamp(ms)，使用UTC时区
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return lastUpdatedDatetime
-     */
+    /** 最后修改时间止，格式timestamp(ms)，使用UTC时区 minimum: 1 maximum: 999999999999999999
+     * 
+     * @return lastUpdatedDatetime */
     public Long getLastUpdatedDatetime() {
         return lastUpdatedDatetime;
     }
@@ -324,8 +237,6 @@ public class CreateServiceResponse extends SdkResponse {
     public void setLastUpdatedDatetime(Long lastUpdatedDatetime) {
         this.lastUpdatedDatetime = lastUpdatedDatetime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -336,21 +247,32 @@ public class CreateServiceResponse extends SdkResponse {
             return false;
         }
         CreateServiceResponse createServiceResponse = (CreateServiceResponse) o;
-        return Objects.equals(this.productTemplateId, createServiceResponse.productTemplateId) &&
-            Objects.equals(this.productId, createServiceResponse.productId) &&
-            Objects.equals(this.serviceId, createServiceResponse.serviceId) &&
-            Objects.equals(this.serviceName, createServiceResponse.serviceName) &&
-            Objects.equals(this.description, createServiceResponse.description) &&
-            Objects.equals(this.status, createServiceResponse.status) &&
-            Objects.equals(this.createdUser, createServiceResponse.createdUser) &&
-            Objects.equals(this.lastUpdatedUser, createServiceResponse.lastUpdatedUser) &&
-            Objects.equals(this.createdDatetime, createServiceResponse.createdDatetime) &&
-            Objects.equals(this.lastUpdatedDatetime, createServiceResponse.lastUpdatedDatetime);
+        return Objects.equals(this.productTemplateId, createServiceResponse.productTemplateId)
+            && Objects.equals(this.productId, createServiceResponse.productId)
+            && Objects.equals(this.serviceId, createServiceResponse.serviceId)
+            && Objects.equals(this.serviceName, createServiceResponse.serviceName)
+            && Objects.equals(this.description, createServiceResponse.description)
+            && Objects.equals(this.status, createServiceResponse.status)
+            && Objects.equals(this.createdUser, createServiceResponse.createdUser)
+            && Objects.equals(this.lastUpdatedUser, createServiceResponse.lastUpdatedUser)
+            && Objects.equals(this.createdDatetime, createServiceResponse.createdDatetime)
+            && Objects.equals(this.lastUpdatedDatetime, createServiceResponse.lastUpdatedDatetime);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(productTemplateId, productId, serviceId, serviceName, description, status, createdUser, lastUpdatedUser, createdDatetime, lastUpdatedDatetime);
+        return Objects.hash(productTemplateId,
+            productId,
+            serviceId,
+            serviceName,
+            description,
+            status,
+            createdUser,
+            lastUpdatedUser,
+            createdDatetime,
+            lastUpdatedDatetime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -368,16 +290,13 @@ public class CreateServiceResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

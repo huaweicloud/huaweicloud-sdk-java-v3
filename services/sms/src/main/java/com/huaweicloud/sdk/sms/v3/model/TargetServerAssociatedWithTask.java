@@ -1,65 +1,46 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 任务关联的目的端信息
- */
-public class TargetServerAssociatedWithTask  {
-
-
+/** 任务关联的目的端信息 */
+public class TargetServerAssociatedWithTask {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vm_id")
-    
+    @JsonProperty(value = "vm_id")
+
     private String vmId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip")
-    
+    @JsonProperty(value = "ip")
+
     private String ip;
-    /**
-     * 目的端服务器的OS类型
-     */
+
+    /** 目的端服务器的OS类型 */
     public static final class OsTypeEnum {
 
-        
-        /**
-         * Enum WINDOWS for value: "WINDOWS"
-         */
+        /** Enum WINDOWS for value: "WINDOWS" */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("WINDOWS");
-        
-        /**
-         * Enum LINUX for value: "LINUX"
-         */
+
+        /** Enum LINUX for value: "LINUX" */
         public static final OsTypeEnum LINUX = new OsTypeEnum("LINUX");
-        
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -88,7 +69,7 @@ public class TargetServerAssociatedWithTask  {
 
         @JsonCreator
         public static OsTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsTypeEnum result = STATIC_FIELDS.get(value);
@@ -99,7 +80,7 @@ public class TargetServerAssociatedWithTask  {
         }
 
         public static OsTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsTypeEnum result = STATIC_FIELDS.get(value);
@@ -123,16 +104,14 @@ public class TargetServerAssociatedWithTask  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os_type")
-    
+    @JsonProperty(value = "os_type")
+
     private OsTypeEnum osType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os_version")
-    
+    @JsonProperty(value = "os_version")
+
     private String osVersion;
 
     public TargetServerAssociatedWithTask withId(String id) {
@@ -140,13 +119,9 @@ public class TargetServerAssociatedWithTask  {
         return this;
     }
 
-    
-
-
-    /**
-     * 目的端在SMS数据库中的ID
-     * @return id
-     */
+    /** 目的端在SMS数据库中的ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -155,20 +130,14 @@ public class TargetServerAssociatedWithTask  {
         this.id = id;
     }
 
-    
-
     public TargetServerAssociatedWithTask withVmId(String vmId) {
         this.vmId = vmId;
         return this;
     }
 
-    
-
-
-    /**
-     * 目的端虚机id
-     * @return vmId
-     */
+    /** 目的端虚机id
+     * 
+     * @return vmId */
     public String getVmId() {
         return vmId;
     }
@@ -177,20 +146,14 @@ public class TargetServerAssociatedWithTask  {
         this.vmId = vmId;
     }
 
-    
-
     public TargetServerAssociatedWithTask withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 目的端服务器名称
-     * @return name
-     */
+    /** 目的端服务器名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -199,20 +162,14 @@ public class TargetServerAssociatedWithTask  {
         this.name = name;
     }
 
-    
-
     public TargetServerAssociatedWithTask withIp(String ip) {
         this.ip = ip;
         return this;
     }
 
-    
-
-
-    /**
-     * 目的端服务器ip
-     * @return ip
-     */
+    /** 目的端服务器ip
+     * 
+     * @return ip */
     public String getIp() {
         return ip;
     }
@@ -221,20 +178,14 @@ public class TargetServerAssociatedWithTask  {
         this.ip = ip;
     }
 
-    
-
     public TargetServerAssociatedWithTask withOsType(OsTypeEnum osType) {
         this.osType = osType;
         return this;
     }
 
-    
-
-
-    /**
-     * 目的端服务器的OS类型
-     * @return osType
-     */
+    /** 目的端服务器的OS类型
+     * 
+     * @return osType */
     public OsTypeEnum getOsType() {
         return osType;
     }
@@ -243,20 +194,14 @@ public class TargetServerAssociatedWithTask  {
         this.osType = osType;
     }
 
-    
-
     public TargetServerAssociatedWithTask withOsVersion(String osVersion) {
         this.osVersion = osVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作系统版本
-     * @return osVersion
-     */
+    /** 操作系统版本
+     * 
+     * @return osVersion */
     public String getOsVersion() {
         return osVersion;
     }
@@ -264,8 +209,6 @@ public class TargetServerAssociatedWithTask  {
     public void setOsVersion(String osVersion) {
         this.osVersion = osVersion;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -276,17 +219,19 @@ public class TargetServerAssociatedWithTask  {
             return false;
         }
         TargetServerAssociatedWithTask targetServerAssociatedWithTask = (TargetServerAssociatedWithTask) o;
-        return Objects.equals(this.id, targetServerAssociatedWithTask.id) &&
-            Objects.equals(this.vmId, targetServerAssociatedWithTask.vmId) &&
-            Objects.equals(this.name, targetServerAssociatedWithTask.name) &&
-            Objects.equals(this.ip, targetServerAssociatedWithTask.ip) &&
-            Objects.equals(this.osType, targetServerAssociatedWithTask.osType) &&
-            Objects.equals(this.osVersion, targetServerAssociatedWithTask.osVersion);
+        return Objects.equals(this.id, targetServerAssociatedWithTask.id)
+            && Objects.equals(this.vmId, targetServerAssociatedWithTask.vmId)
+            && Objects.equals(this.name, targetServerAssociatedWithTask.name)
+            && Objects.equals(this.ip, targetServerAssociatedWithTask.ip)
+            && Objects.equals(this.osType, targetServerAssociatedWithTask.osType)
+            && Objects.equals(this.osVersion, targetServerAssociatedWithTask.osVersion);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, vmId, name, ip, osType, osVersion);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -300,16 +245,13 @@ public class TargetServerAssociatedWithTask  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

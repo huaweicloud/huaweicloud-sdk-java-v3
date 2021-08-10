@@ -1,93 +1,69 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ces.v1.model.AlarmActions;
-import com.huaweicloud.sdk.ces.v1.model.Condition;
-import com.huaweicloud.sdk.ces.v1.model.MetricForAlarm;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class CreateAlarmRequestBody  {
-
-
+public class CreateAlarmRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_name")
-    
+    @JsonProperty(value = "alarm_name")
+
     private String alarmName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_description")
-    
+    @JsonProperty(value = "alarm_description")
+
     private String alarmDescription;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metric")
-    
+    @JsonProperty(value = "metric")
+
     private MetricForAlarm metric;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="condition")
-    
+    @JsonProperty(value = "condition")
+
     private Condition condition;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_enabled")
-    
+    @JsonProperty(value = "alarm_enabled")
+
     private Boolean alarmEnabled;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_action_enabled")
-    
+    @JsonProperty(value = "alarm_action_enabled")
+
     private Boolean alarmActionEnabled;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_level")
-    
+    @JsonProperty(value = "alarm_level")
+
     private Integer alarmLevel;
-    /**
-     * 告警类型，支持的枚举类型：EVENT.SYS：针对系统事件的告警规则；EVENT.CUSTOM：针对自定义事件的告警规则；RESOURCE_GROUP：针对资源分组的告警规则。
-     */
+
+    /** 告警类型，支持的枚举类型：EVENT.SYS：针对系统事件的告警规则；EVENT.CUSTOM：针对自定义事件的告警规则；RESOURCE_GROUP：针对资源分组的告警规则。 */
     public static final class AlarmTypeEnum {
 
-        
-        /**
-         * Enum EVENT_SYS for value: "EVENT.SYS"
-         */
+        /** Enum EVENT_SYS for value: "EVENT.SYS" */
         public static final AlarmTypeEnum EVENT_SYS = new AlarmTypeEnum("EVENT.SYS");
-        
-        /**
-         * Enum EVENT_CUSTOM for value: "EVENT.CUSTOM"
-         */
+
+        /** Enum EVENT_CUSTOM for value: "EVENT.CUSTOM" */
         public static final AlarmTypeEnum EVENT_CUSTOM = new AlarmTypeEnum("EVENT.CUSTOM");
-        
-        /**
-         * Enum RESOURCE_GROUP for value: "RESOURCE_GROUP"
-         */
+
+        /** Enum RESOURCE_GROUP for value: "RESOURCE_GROUP" */
         public static final AlarmTypeEnum RESOURCE_GROUP = new AlarmTypeEnum("RESOURCE_GROUP");
-        
 
         private static final Map<String, AlarmTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -117,7 +93,7 @@ public class CreateAlarmRequestBody  {
 
         @JsonCreator
         public static AlarmTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AlarmTypeEnum result = STATIC_FIELDS.get(value);
@@ -128,7 +104,7 @@ public class CreateAlarmRequestBody  {
         }
 
         public static AlarmTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AlarmTypeEnum result = STATIC_FIELDS.get(value);
@@ -152,34 +128,29 @@ public class CreateAlarmRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_type")
-    
+    @JsonProperty(value = "alarm_type")
+
     private AlarmTypeEnum alarmType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_actions")
-    
+    @JsonProperty(value = "alarm_actions")
+
     private List<AlarmActions> alarmActions = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="insufficientdata_actions")
-    
+    @JsonProperty(value = "insufficientdata_actions")
+
     private List<AlarmActions> insufficientdataActions = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ok_actions")
-    
+    @JsonProperty(value = "ok_actions")
+
     private List<AlarmActions> okActions = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public CreateAlarmRequestBody withAlarmName(String alarmName) {
@@ -187,13 +158,9 @@ public class CreateAlarmRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 告警名称，只能包含0-9/a-z/A-Z/_/-或汉字。
-     * @return alarmName
-     */
+    /** 告警名称，只能包含0-9/a-z/A-Z/_/-或汉字。
+     * 
+     * @return alarmName */
     public String getAlarmName() {
         return alarmName;
     }
@@ -202,20 +169,14 @@ public class CreateAlarmRequestBody  {
         this.alarmName = alarmName;
     }
 
-    
-
     public CreateAlarmRequestBody withAlarmDescription(String alarmDescription) {
         this.alarmDescription = alarmDescription;
         return this;
     }
 
-    
-
-
-    /**
-     * 告警描述，长度0-256。
-     * @return alarmDescription
-     */
+    /** 告警描述，长度0-256。
+     * 
+     * @return alarmDescription */
     public String getAlarmDescription() {
         return alarmDescription;
     }
@@ -224,27 +185,23 @@ public class CreateAlarmRequestBody  {
         this.alarmDescription = alarmDescription;
     }
 
-    
-
     public CreateAlarmRequestBody withMetric(MetricForAlarm metric) {
         this.metric = metric;
         return this;
     }
 
     public CreateAlarmRequestBody withMetric(Consumer<MetricForAlarm> metricSetter) {
-        if(this.metric == null ){
+        if (this.metric == null) {
             this.metric = new MetricForAlarm();
             metricSetter.accept(this.metric);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get metric
-     * @return metric
-     */
+    /** Get metric
+     * 
+     * @return metric */
     public MetricForAlarm getMetric() {
         return metric;
     }
@@ -253,27 +210,23 @@ public class CreateAlarmRequestBody  {
         this.metric = metric;
     }
 
-    
-
     public CreateAlarmRequestBody withCondition(Condition condition) {
         this.condition = condition;
         return this;
     }
 
     public CreateAlarmRequestBody withCondition(Consumer<Condition> conditionSetter) {
-        if(this.condition == null ){
+        if (this.condition == null) {
             this.condition = new Condition();
             conditionSetter.accept(this.condition);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get condition
-     * @return condition
-     */
+    /** Get condition
+     * 
+     * @return condition */
     public Condition getCondition() {
         return condition;
     }
@@ -282,20 +235,14 @@ public class CreateAlarmRequestBody  {
         this.condition = condition;
     }
 
-    
-
     public CreateAlarmRequestBody withAlarmEnabled(Boolean alarmEnabled) {
         this.alarmEnabled = alarmEnabled;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否启用该条告警，默认为true。
-     * @return alarmEnabled
-     */
+    /** 是否启用该条告警，默认为true。
+     * 
+     * @return alarmEnabled */
     public Boolean getAlarmEnabled() {
         return alarmEnabled;
     }
@@ -304,20 +251,14 @@ public class CreateAlarmRequestBody  {
         this.alarmEnabled = alarmEnabled;
     }
 
-    
-
     public CreateAlarmRequestBody withAlarmActionEnabled(Boolean alarmActionEnabled) {
         this.alarmActionEnabled = alarmActionEnabled;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否启用该条告警触发的动作，默认为true。注：若alarm_action_enabled为true，对应的alarm_actions、ok_actions至少有一个不能为空。若alarm_actions、ok_actions同时存在时，notificationList值保持一致。
-     * @return alarmActionEnabled
-     */
+    /** 是否启用该条告警触发的动作，默认为true。注：若alarm_action_enabled为true，对应的alarm_actions、ok_actions至少有一个不能为空。若alarm_actions、ok_actions同时存在时，notificationList值保持一致。
+     * 
+     * @return alarmActionEnabled */
     public Boolean getAlarmActionEnabled() {
         return alarmActionEnabled;
     }
@@ -326,20 +267,14 @@ public class CreateAlarmRequestBody  {
         this.alarmActionEnabled = alarmActionEnabled;
     }
 
-    
-
     public CreateAlarmRequestBody withAlarmLevel(Integer alarmLevel) {
         this.alarmLevel = alarmLevel;
         return this;
     }
 
-    
-
-
-    /**
-     * 告警级别，默认为2，级别为1、2、3、4。分别对应紧急、重要、次要、提示。
-     * @return alarmLevel
-     */
+    /** 告警级别，默认为2，级别为1、2、3、4。分别对应紧急、重要、次要、提示。
+     * 
+     * @return alarmLevel */
     public Integer getAlarmLevel() {
         return alarmLevel;
     }
@@ -348,20 +283,14 @@ public class CreateAlarmRequestBody  {
         this.alarmLevel = alarmLevel;
     }
 
-    
-
     public CreateAlarmRequestBody withAlarmType(AlarmTypeEnum alarmType) {
         this.alarmType = alarmType;
         return this;
     }
 
-    
-
-
-    /**
-     * 告警类型，支持的枚举类型：EVENT.SYS：针对系统事件的告警规则；EVENT.CUSTOM：针对自定义事件的告警规则；RESOURCE_GROUP：针对资源分组的告警规则。
-     * @return alarmType
-     */
+    /** 告警类型，支持的枚举类型：EVENT.SYS：针对系统事件的告警规则；EVENT.CUSTOM：针对自定义事件的告警规则；RESOURCE_GROUP：针对资源分组的告警规则。
+     * 
+     * @return alarmType */
     public AlarmTypeEnum getAlarmType() {
         return alarmType;
     }
@@ -370,16 +299,13 @@ public class CreateAlarmRequestBody  {
         this.alarmType = alarmType;
     }
 
-    
-
     public CreateAlarmRequestBody withAlarmActions(List<AlarmActions> alarmActions) {
         this.alarmActions = alarmActions;
         return this;
     }
 
-    
     public CreateAlarmRequestBody addAlarmActionsItem(AlarmActions alarmActionsItem) {
-        if(this.alarmActions == null) {
+        if (this.alarmActions == null) {
             this.alarmActions = new ArrayList<>();
         }
         this.alarmActions.add(alarmActionsItem);
@@ -387,17 +313,17 @@ public class CreateAlarmRequestBody  {
     }
 
     public CreateAlarmRequestBody withAlarmActions(Consumer<List<AlarmActions>> alarmActionsSetter) {
-        if(this.alarmActions == null) {
+        if (this.alarmActions == null) {
             this.alarmActions = new ArrayList<>();
         }
         alarmActionsSetter.accept(this.alarmActions);
         return this;
     }
 
-    /**
-     * 告警触发的动作。 结构样例如下： { \"type\": \"notification\",\"notificationList\": [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"] } type取值： notification：通知。 autoscaling：弹性伸缩。
-     * @return alarmActions
-     */
+    /** 告警触发的动作。 结构样例如下： { \"type\": \"notification\",\"notificationList\":
+     * [\"urn:smn:southchina:68438a86d98e427e907e0097b7e35d47:sd\"] } type取值： notification：通知。 autoscaling：弹性伸缩。
+     * 
+     * @return alarmActions */
     public List<AlarmActions> getAlarmActions() {
         return alarmActions;
     }
@@ -406,34 +332,31 @@ public class CreateAlarmRequestBody  {
         this.alarmActions = alarmActions;
     }
 
-    
-
     public CreateAlarmRequestBody withInsufficientdataActions(List<AlarmActions> insufficientdataActions) {
         this.insufficientdataActions = insufficientdataActions;
         return this;
     }
 
-    
     public CreateAlarmRequestBody addInsufficientdataActionsItem(AlarmActions insufficientdataActionsItem) {
-        if(this.insufficientdataActions == null) {
+        if (this.insufficientdataActions == null) {
             this.insufficientdataActions = new ArrayList<>();
         }
         this.insufficientdataActions.add(insufficientdataActionsItem);
         return this;
     }
 
-    public CreateAlarmRequestBody withInsufficientdataActions(Consumer<List<AlarmActions>> insufficientdataActionsSetter) {
-        if(this.insufficientdataActions == null) {
+    public CreateAlarmRequestBody withInsufficientdataActions(
+        Consumer<List<AlarmActions>> insufficientdataActionsSetter) {
+        if (this.insufficientdataActions == null) {
             this.insufficientdataActions = new ArrayList<>();
         }
         insufficientdataActionsSetter.accept(this.insufficientdataActions);
         return this;
     }
 
-    /**
-     * 数据不足触发的动作（该参数已废弃，建议无需配置）。
-     * @return insufficientdataActions
-     */
+    /** 数据不足触发的动作（该参数已废弃，建议无需配置）。
+     * 
+     * @return insufficientdataActions */
     public List<AlarmActions> getInsufficientdataActions() {
         return insufficientdataActions;
     }
@@ -442,16 +365,13 @@ public class CreateAlarmRequestBody  {
         this.insufficientdataActions = insufficientdataActions;
     }
 
-    
-
     public CreateAlarmRequestBody withOkActions(List<AlarmActions> okActions) {
         this.okActions = okActions;
         return this;
     }
 
-    
     public CreateAlarmRequestBody addOkActionsItem(AlarmActions okActionsItem) {
-        if(this.okActions == null) {
+        if (this.okActions == null) {
             this.okActions = new ArrayList<>();
         }
         this.okActions.add(okActionsItem);
@@ -459,17 +379,16 @@ public class CreateAlarmRequestBody  {
     }
 
     public CreateAlarmRequestBody withOkActions(Consumer<List<AlarmActions>> okActionsSetter) {
-        if(this.okActions == null) {
+        if (this.okActions == null) {
             this.okActions = new ArrayList<>();
         }
         okActionsSetter.accept(this.okActions);
         return this;
     }
 
-    /**
-     * 告警恢复触发的动作
-     * @return okActions
-     */
+    /** 告警恢复触发的动作
+     * 
+     * @return okActions */
     public List<AlarmActions> getOkActions() {
         return okActions;
     }
@@ -478,20 +397,14 @@ public class CreateAlarmRequestBody  {
         this.okActions = okActions;
     }
 
-    
-
     public CreateAlarmRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID。默认值为0，表示默认的企业项目default。说明：此参数在“华东-上海一”区域上线。
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID。默认值为0，表示默认的企业项目default。说明：此参数在“华东-上海一”区域上线。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -499,8 +412,6 @@ public class CreateAlarmRequestBody  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -511,23 +422,36 @@ public class CreateAlarmRequestBody  {
             return false;
         }
         CreateAlarmRequestBody createAlarmRequestBody = (CreateAlarmRequestBody) o;
-        return Objects.equals(this.alarmName, createAlarmRequestBody.alarmName) &&
-            Objects.equals(this.alarmDescription, createAlarmRequestBody.alarmDescription) &&
-            Objects.equals(this.metric, createAlarmRequestBody.metric) &&
-            Objects.equals(this.condition, createAlarmRequestBody.condition) &&
-            Objects.equals(this.alarmEnabled, createAlarmRequestBody.alarmEnabled) &&
-            Objects.equals(this.alarmActionEnabled, createAlarmRequestBody.alarmActionEnabled) &&
-            Objects.equals(this.alarmLevel, createAlarmRequestBody.alarmLevel) &&
-            Objects.equals(this.alarmType, createAlarmRequestBody.alarmType) &&
-            Objects.equals(this.alarmActions, createAlarmRequestBody.alarmActions) &&
-            Objects.equals(this.insufficientdataActions, createAlarmRequestBody.insufficientdataActions) &&
-            Objects.equals(this.okActions, createAlarmRequestBody.okActions) &&
-            Objects.equals(this.enterpriseProjectId, createAlarmRequestBody.enterpriseProjectId);
+        return Objects.equals(this.alarmName, createAlarmRequestBody.alarmName)
+            && Objects.equals(this.alarmDescription, createAlarmRequestBody.alarmDescription)
+            && Objects.equals(this.metric, createAlarmRequestBody.metric)
+            && Objects.equals(this.condition, createAlarmRequestBody.condition)
+            && Objects.equals(this.alarmEnabled, createAlarmRequestBody.alarmEnabled)
+            && Objects.equals(this.alarmActionEnabled, createAlarmRequestBody.alarmActionEnabled)
+            && Objects.equals(this.alarmLevel, createAlarmRequestBody.alarmLevel)
+            && Objects.equals(this.alarmType, createAlarmRequestBody.alarmType)
+            && Objects.equals(this.alarmActions, createAlarmRequestBody.alarmActions)
+            && Objects.equals(this.insufficientdataActions, createAlarmRequestBody.insufficientdataActions)
+            && Objects.equals(this.okActions, createAlarmRequestBody.okActions)
+            && Objects.equals(this.enterpriseProjectId, createAlarmRequestBody.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(alarmName, alarmDescription, metric, condition, alarmEnabled, alarmActionEnabled, alarmLevel, alarmType, alarmActions, insufficientdataActions, okActions, enterpriseProjectId);
+        return Objects.hash(alarmName,
+            alarmDescription,
+            metric,
+            condition,
+            alarmEnabled,
+            alarmActionEnabled,
+            alarmLevel,
+            alarmType,
+            alarmActions,
+            insufficientdataActions,
+            okActions,
+            enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -547,16 +471,13 @@ public class CreateAlarmRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

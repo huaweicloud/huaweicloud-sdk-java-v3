@@ -1,72 +1,54 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v3.model.IpInfo;
-import com.huaweicloud.sdk.elb.v3.model.ListenerRef;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 查询IP地址组返回对象
- */
-public class IpGroup  {
-
-
+/** 查询IP地址组返回对象 */
+public class IpGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_list")
-    
+    @JsonProperty(value = "ip_list")
+
     private List<IpInfo> ipList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="listeners")
-    
+    @JsonProperty(value = "listeners")
+
     private List<ListenerRef> listeners = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private String updatedAt;
 
     public IpGroup withCreatedAt(String createdAt) {
@@ -74,13 +56,9 @@ public class IpGroup  {
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址组的创建时间
-     * @return createdAt
-     */
+    /** IP地址组的创建时间
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -89,20 +67,14 @@ public class IpGroup  {
         this.createdAt = createdAt;
     }
 
-    
-
     public IpGroup withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址组的更新时间。
-     * @return description
-     */
+    /** IP地址组的更新时间。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -111,20 +83,14 @@ public class IpGroup  {
         this.description = description;
     }
 
-    
-
     public IpGroup withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址组的id。
-     * @return id
-     */
+    /** IP地址组的id。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -133,16 +99,13 @@ public class IpGroup  {
         this.id = id;
     }
 
-    
-
     public IpGroup withIpList(List<IpInfo> ipList) {
         this.ipList = ipList;
         return this;
     }
 
-    
     public IpGroup addIpListItem(IpInfo ipListItem) {
-        if(this.ipList == null) {
+        if (this.ipList == null) {
             this.ipList = new ArrayList<>();
         }
         this.ipList.add(ipListItem);
@@ -150,17 +113,16 @@ public class IpGroup  {
     }
 
     public IpGroup withIpList(Consumer<List<IpInfo>> ipListSetter) {
-        if(this.ipList == null) {
+        if (this.ipList == null) {
             this.ipList = new ArrayList<>();
         }
         ipListSetter.accept(this.ipList);
         return this;
     }
 
-    /**
-     * IP地址组中包含的ip或网段列表。[]表示任意ip。
-     * @return ipList
-     */
+    /** IP地址组中包含的ip或网段列表。[]表示任意ip。
+     * 
+     * @return ipList */
     public List<IpInfo> getIpList() {
         return ipList;
     }
@@ -169,16 +131,13 @@ public class IpGroup  {
         this.ipList = ipList;
     }
 
-    
-
     public IpGroup withListeners(List<ListenerRef> listeners) {
         this.listeners = listeners;
         return this;
     }
 
-    
     public IpGroup addListenersItem(ListenerRef listenersItem) {
-        if(this.listeners == null) {
+        if (this.listeners == null) {
             this.listeners = new ArrayList<>();
         }
         this.listeners.add(listenersItem);
@@ -186,17 +145,16 @@ public class IpGroup  {
     }
 
     public IpGroup withListeners(Consumer<List<ListenerRef>> listenersSetter) {
-        if(this.listeners == null) {
+        if (this.listeners == null) {
             this.listeners = new ArrayList<>();
         }
         listenersSetter.accept(this.listeners);
         return this;
     }
 
-    /**
-     * 与IP地址组关联的监听器的id列表。
-     * @return listeners
-     */
+    /** 与IP地址组关联的监听器的id列表。
+     * 
+     * @return listeners */
     public List<ListenerRef> getListeners() {
         return listeners;
     }
@@ -205,20 +163,14 @@ public class IpGroup  {
         this.listeners = listeners;
     }
 
-    
-
     public IpGroup withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址组的名称。
-     * @return name
-     */
+    /** IP地址组的名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -227,20 +179,14 @@ public class IpGroup  {
         this.name = name;
     }
 
-    
-
     public IpGroup withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址组的项目id。
-     * @return projectId
-     */
+    /** IP地址组的项目id。
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -249,20 +195,14 @@ public class IpGroup  {
         this.projectId = projectId;
     }
 
-    
-
     public IpGroup withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址组的更新时间。
-     * @return updatedAt
-     */
+    /** IP地址组的更新时间。
+     * 
+     * @return updatedAt */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -270,8 +210,6 @@ public class IpGroup  {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -282,19 +220,18 @@ public class IpGroup  {
             return false;
         }
         IpGroup ipGroup = (IpGroup) o;
-        return Objects.equals(this.createdAt, ipGroup.createdAt) &&
-            Objects.equals(this.description, ipGroup.description) &&
-            Objects.equals(this.id, ipGroup.id) &&
-            Objects.equals(this.ipList, ipGroup.ipList) &&
-            Objects.equals(this.listeners, ipGroup.listeners) &&
-            Objects.equals(this.name, ipGroup.name) &&
-            Objects.equals(this.projectId, ipGroup.projectId) &&
-            Objects.equals(this.updatedAt, ipGroup.updatedAt);
+        return Objects.equals(this.createdAt, ipGroup.createdAt)
+            && Objects.equals(this.description, ipGroup.description) && Objects.equals(this.id, ipGroup.id)
+            && Objects.equals(this.ipList, ipGroup.ipList) && Objects.equals(this.listeners, ipGroup.listeners)
+            && Objects.equals(this.name, ipGroup.name) && Objects.equals(this.projectId, ipGroup.projectId)
+            && Objects.equals(this.updatedAt, ipGroup.updatedAt);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(createdAt, description, id, ipList, listeners, name, projectId, updatedAt);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -310,16 +247,13 @@ public class IpGroup  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

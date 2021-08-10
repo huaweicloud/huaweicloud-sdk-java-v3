@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowRegionInfoOfMeetingResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="regionIP")
-    
+    @JsonProperty(value = "regionIP")
+
     private String regionIP;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="regionUrl")
-    
+    @JsonProperty(value = "regionUrl")
+
     private String regionUrl;
 
     public ShowRegionInfoOfMeetingResponse withRegionIP(String regionIP) {
@@ -36,13 +24,9 @@ public class ShowRegionInfoOfMeetingResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 会议所在区域的公网IP地址。
-     * @return regionIP
-     */
+    /** 会议所在区域的公网IP地址。
+     * 
+     * @return regionIP */
     public String getRegionIP() {
         return regionIP;
     }
@@ -51,20 +35,14 @@ public class ShowRegionInfoOfMeetingResponse extends SdkResponse {
         this.regionIP = regionIP;
     }
 
-    
-
     public ShowRegionInfoOfMeetingResponse withRegionUrl(String regionUrl) {
         this.regionUrl = regionUrl;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议所在区域的公网域名。
-     * @return regionUrl
-     */
+    /** 会议所在区域的公网域名。
+     * 
+     * @return regionUrl */
     public String getRegionUrl() {
         return regionUrl;
     }
@@ -72,8 +50,6 @@ public class ShowRegionInfoOfMeetingResponse extends SdkResponse {
     public void setRegionUrl(String regionUrl) {
         this.regionUrl = regionUrl;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +60,15 @@ public class ShowRegionInfoOfMeetingResponse extends SdkResponse {
             return false;
         }
         ShowRegionInfoOfMeetingResponse showRegionInfoOfMeetingResponse = (ShowRegionInfoOfMeetingResponse) o;
-        return Objects.equals(this.regionIP, showRegionInfoOfMeetingResponse.regionIP) &&
-            Objects.equals(this.regionUrl, showRegionInfoOfMeetingResponse.regionUrl);
+        return Objects.equals(this.regionIP, showRegionInfoOfMeetingResponse.regionIP)
+            && Objects.equals(this.regionUrl, showRegionInfoOfMeetingResponse.regionUrl);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(regionIP, regionUrl);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +78,13 @@ public class ShowRegionInfoOfMeetingResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

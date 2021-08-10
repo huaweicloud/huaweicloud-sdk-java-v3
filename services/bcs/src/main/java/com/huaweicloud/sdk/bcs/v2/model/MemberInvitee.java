@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 联盟成员中的被邀请方
- */
-public class MemberInvitee  {
-
-
+/** 联盟成员中的被邀请方 */
+public class MemberInvitee {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invitee_bcs_id")
-    
+    @JsonProperty(value = "invitee_bcs_id")
+
     private String inviteeBcsId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invitee_user_id")
-    
+    @JsonProperty(value = "invitee_user_id")
+
     private String inviteeUserId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invitee_username")
-    
+    @JsonProperty(value = "invitee_username")
+
     private String inviteeUsername;
 
     public MemberInvitee withInviteeBcsId(String inviteeBcsId) {
@@ -40,13 +28,9 @@ public class MemberInvitee  {
         return this;
     }
 
-    
-
-
-    /**
-     * 被邀请方实例id
-     * @return inviteeBcsId
-     */
+    /** 被邀请方实例id
+     * 
+     * @return inviteeBcsId */
     public String getInviteeBcsId() {
         return inviteeBcsId;
     }
@@ -55,20 +39,14 @@ public class MemberInvitee  {
         this.inviteeBcsId = inviteeBcsId;
     }
 
-    
-
     public MemberInvitee withInviteeUserId(String inviteeUserId) {
         this.inviteeUserId = inviteeUserId;
         return this;
     }
 
-    
-
-
-    /**
-     * 被邀请方租户id
-     * @return inviteeUserId
-     */
+    /** 被邀请方租户id
+     * 
+     * @return inviteeUserId */
     public String getInviteeUserId() {
         return inviteeUserId;
     }
@@ -77,20 +55,14 @@ public class MemberInvitee  {
         this.inviteeUserId = inviteeUserId;
     }
 
-    
-
     public MemberInvitee withInviteeUsername(String inviteeUsername) {
         this.inviteeUsername = inviteeUsername;
         return this;
     }
 
-    
-
-
-    /**
-     * 被邀请方租户名
-     * @return inviteeUsername
-     */
+    /** 被邀请方租户名
+     * 
+     * @return inviteeUsername */
     public String getInviteeUsername() {
         return inviteeUsername;
     }
@@ -98,8 +70,6 @@ public class MemberInvitee  {
     public void setInviteeUsername(String inviteeUsername) {
         this.inviteeUsername = inviteeUsername;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class MemberInvitee  {
             return false;
         }
         MemberInvitee memberInvitee = (MemberInvitee) o;
-        return Objects.equals(this.inviteeBcsId, memberInvitee.inviteeBcsId) &&
-            Objects.equals(this.inviteeUserId, memberInvitee.inviteeUserId) &&
-            Objects.equals(this.inviteeUsername, memberInvitee.inviteeUsername);
+        return Objects.equals(this.inviteeBcsId, memberInvitee.inviteeBcsId)
+            && Objects.equals(this.inviteeUserId, memberInvitee.inviteeUserId)
+            && Objects.equals(this.inviteeUsername, memberInvitee.inviteeUsername);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(inviteeBcsId, inviteeUserId, inviteeUsername);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class MemberInvitee  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

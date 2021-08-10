@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteAssetCategoryRequest  {
-
-
+/** Request Object */
+public class DeleteAssetCategoryRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Authorization")
-    
+    @JsonProperty(value = "Authorization")
+
     private String authorization;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Sdk-Date")
-    
+    @JsonProperty(value = "X-Sdk-Date")
+
     private String xSdkDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Integer id;
 
     public DeleteAssetCategoryRequest withAuthorization(String authorization) {
@@ -40,13 +28,9 @@ public class DeleteAssetCategoryRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
+    /** 使用AK/SK方式认证时必选，携带的鉴权信息。
+     * 
+     * @return authorization */
     public String getAuthorization() {
         return authorization;
     }
@@ -55,22 +39,16 @@ public class DeleteAssetCategoryRequest  {
         this.authorization = authorization;
     }
 
-    
-
     public DeleteAssetCategoryRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 使用AK/SK方式认证时必选，请求的发生时间。 
-     * @return xSdkDate
-     */
+    /** 使用AK/SK方式认证时必选，请求的发生时间。
+     * 
+     * @return xSdkDate */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Sdk-Date")
+    @JsonProperty(value = "X-Sdk-Date")
     public String getXSdkDate() {
         return xSdkDate;
     }
@@ -79,21 +57,14 @@ public class DeleteAssetCategoryRequest  {
         this.xSdkDate = xSdkDate;
     }
 
-    
-
     public DeleteAssetCategoryRequest withId(Integer id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 视频分类ID
-     * minimum: 0
-     * @return id
-     */
+    /** 视频分类ID minimum: 0
+     * 
+     * @return id */
     public Integer getId() {
         return id;
     }
@@ -101,8 +72,6 @@ public class DeleteAssetCategoryRequest  {
     public void setId(Integer id) {
         this.id = id;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -113,14 +82,16 @@ public class DeleteAssetCategoryRequest  {
             return false;
         }
         DeleteAssetCategoryRequest deleteAssetCategoryRequest = (DeleteAssetCategoryRequest) o;
-        return Objects.equals(this.authorization, deleteAssetCategoryRequest.authorization) &&
-            Objects.equals(this.xSdkDate, deleteAssetCategoryRequest.xSdkDate) &&
-            Objects.equals(this.id, deleteAssetCategoryRequest.id);
+        return Objects.equals(this.authorization, deleteAssetCategoryRequest.authorization)
+            && Objects.equals(this.xSdkDate, deleteAssetCategoryRequest.xSdkDate)
+            && Objects.equals(this.id, deleteAssetCategoryRequest.id);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(authorization, xSdkDate, id);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -131,16 +102,13 @@ public class DeleteAssetCategoryRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 流水线参数
- */
-public class PipelineParam  {
-
-
+/** 流水线参数 */
+public class PipelineParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private String value;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="paramtype")
-    
+    @JsonProperty(value = "paramtype")
+
     private String paramtype;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_static")
-    
+    @JsonProperty(value = "is_static")
+
     private Boolean isStatic;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_default")
-    
+    @JsonProperty(value = "is_default")
+
     private Boolean isDefault;
 
     public PipelineParam withName(String name) {
@@ -58,13 +43,9 @@ public class PipelineParam  {
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线参数名字
-     * @return name
-     */
+    /** 流水线参数名字
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -73,20 +54,14 @@ public class PipelineParam  {
         this.name = name;
     }
 
-    
-
     public PipelineParam withValue(String value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线参数值
-     * @return value
-     */
+    /** 流水线参数值
+     * 
+     * @return value */
     public String getValue() {
         return value;
     }
@@ -95,20 +70,14 @@ public class PipelineParam  {
         this.value = value;
     }
 
-    
-
     public PipelineParam withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线参数描述
-     * @return description
-     */
+    /** 流水线参数描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -117,20 +86,14 @@ public class PipelineParam  {
         this.description = description;
     }
 
-    
-
     public PipelineParam withParamtype(String paramtype) {
         this.paramtype = paramtype;
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线参数类型
-     * @return paramtype
-     */
+    /** 流水线参数类型
+     * 
+     * @return paramtype */
     public String getParamtype() {
         return paramtype;
     }
@@ -139,20 +102,14 @@ public class PipelineParam  {
         this.paramtype = paramtype;
     }
 
-    
-
     public PipelineParam withIsStatic(Boolean isStatic) {
         this.isStatic = isStatic;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否静态参数
-     * @return isStatic
-     */
+    /** 是否静态参数
+     * 
+     * @return isStatic */
     public Boolean getIsStatic() {
         return isStatic;
     }
@@ -161,20 +118,14 @@ public class PipelineParam  {
         this.isStatic = isStatic;
     }
 
-    
-
     public PipelineParam withIsDefault(Boolean isDefault) {
         this.isDefault = isDefault;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否默认参数
-     * @return isDefault
-     */
+    /** 是否默认参数
+     * 
+     * @return isDefault */
     public Boolean getIsDefault() {
         return isDefault;
     }
@@ -182,8 +133,6 @@ public class PipelineParam  {
     public void setIsDefault(Boolean isDefault) {
         this.isDefault = isDefault;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,17 +143,18 @@ public class PipelineParam  {
             return false;
         }
         PipelineParam pipelineParam = (PipelineParam) o;
-        return Objects.equals(this.name, pipelineParam.name) &&
-            Objects.equals(this.value, pipelineParam.value) &&
-            Objects.equals(this.description, pipelineParam.description) &&
-            Objects.equals(this.paramtype, pipelineParam.paramtype) &&
-            Objects.equals(this.isStatic, pipelineParam.isStatic) &&
-            Objects.equals(this.isDefault, pipelineParam.isDefault);
+        return Objects.equals(this.name, pipelineParam.name) && Objects.equals(this.value, pipelineParam.value)
+            && Objects.equals(this.description, pipelineParam.description)
+            && Objects.equals(this.paramtype, pipelineParam.paramtype)
+            && Objects.equals(this.isStatic, pipelineParam.isStatic)
+            && Objects.equals(this.isDefault, pipelineParam.isDefault);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, value, description, paramtype, isStatic, isDefault);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,16 +168,13 @@ public class PipelineParam  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

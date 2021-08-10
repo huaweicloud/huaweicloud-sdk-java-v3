@@ -1,87 +1,66 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rms.v1.model.PolicyParameterDefinition;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 策略定义
- */
-public class PolicyDefinition  {
-
-
+/** 策略定义 */
+public class PolicyDefinition {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_type")
-    
+    @JsonProperty(value = "policy_type")
+
     private String policyType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_rule_type")
-    
+    @JsonProperty(value = "policy_rule_type")
+
     private String policyRuleType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_rule")
-    
+    @JsonProperty(value = "policy_rule")
+
     private Object policyRule;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="keywords")
-    
+    @JsonProperty(value = "keywords")
+
     private List<String> keywords = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parameters")
-    
+    @JsonProperty(value = "parameters")
+
     private Map<String, PolicyParameterDefinition> parameters = null;
-    
+
     public PolicyDefinition withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略id
-     * @return id
-     */
+    /** 策略id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -90,20 +69,14 @@ public class PolicyDefinition  {
         this.id = id;
     }
 
-    
-
     public PolicyDefinition withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略名字
-     * @return name
-     */
+    /** 策略名字
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -112,20 +85,14 @@ public class PolicyDefinition  {
         this.name = name;
     }
 
-    
-
     public PolicyDefinition withPolicyType(String policyType) {
         this.policyType = policyType;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略类型
-     * @return policyType
-     */
+    /** 策略类型
+     * 
+     * @return policyType */
     public String getPolicyType() {
         return policyType;
     }
@@ -134,20 +101,14 @@ public class PolicyDefinition  {
         this.policyType = policyType;
     }
 
-    
-
     public PolicyDefinition withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略描述
-     * @return description
-     */
+    /** 策略描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -156,20 +117,14 @@ public class PolicyDefinition  {
         this.description = description;
     }
 
-    
-
     public PolicyDefinition withPolicyRuleType(String policyRuleType) {
         this.policyRuleType = policyRuleType;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略语法类型
-     * @return policyRuleType
-     */
+    /** 策略语法类型
+     * 
+     * @return policyRuleType */
     public String getPolicyRuleType() {
         return policyRuleType;
     }
@@ -178,20 +133,14 @@ public class PolicyDefinition  {
         this.policyRuleType = policyRuleType;
     }
 
-    
-
     public PolicyDefinition withPolicyRule(Object policyRule) {
         this.policyRule = policyRule;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略规则
-     * @return policyRule
-     */
+    /** 策略规则
+     * 
+     * @return policyRule */
     public Object getPolicyRule() {
         return policyRule;
     }
@@ -200,16 +149,13 @@ public class PolicyDefinition  {
         this.policyRule = policyRule;
     }
 
-    
-
     public PolicyDefinition withKeywords(List<String> keywords) {
         this.keywords = keywords;
         return this;
     }
 
-    
     public PolicyDefinition addKeywordsItem(String keywordsItem) {
-        if(this.keywords == null) {
+        if (this.keywords == null) {
             this.keywords = new ArrayList<>();
         }
         this.keywords.add(keywordsItem);
@@ -217,17 +163,16 @@ public class PolicyDefinition  {
     }
 
     public PolicyDefinition withKeywords(Consumer<List<String>> keywordsSetter) {
-        if(this.keywords == null) {
+        if (this.keywords == null) {
             this.keywords = new ArrayList<>();
         }
         keywordsSetter.accept(this.keywords);
         return this;
     }
 
-    /**
-     * 关键词列表
-     * @return keywords
-     */
+    /** 关键词列表
+     * 
+     * @return keywords */
     public List<String> getKeywords() {
         return keywords;
     }
@@ -236,17 +181,13 @@ public class PolicyDefinition  {
         this.keywords = keywords;
     }
 
-    
-
     public PolicyDefinition withParameters(Map<String, PolicyParameterDefinition> parameters) {
         this.parameters = parameters;
         return this;
     }
 
-    
-
     public PolicyDefinition putParametersItem(String key, PolicyParameterDefinition parametersItem) {
-        if(this.parameters == null) {
+        if (this.parameters == null) {
             this.parameters = new HashMap<>();
         }
         this.parameters.put(key, parametersItem);
@@ -254,16 +195,16 @@ public class PolicyDefinition  {
     }
 
     public PolicyDefinition withParameters(Consumer<Map<String, PolicyParameterDefinition>> parametersSetter) {
-        if(this.parameters == null) {
+        if (this.parameters == null) {
             this.parameters = new HashMap<>();
         }
         parametersSetter.accept(this.parameters);
         return this;
     }
-    /**
-     * 策略参数
-     * @return parameters
-     */
+
+    /** 策略参数
+     * 
+     * @return parameters */
     public Map<String, PolicyParameterDefinition> getParameters() {
         return parameters;
     }
@@ -271,8 +212,6 @@ public class PolicyDefinition  {
     public void setParameters(Map<String, PolicyParameterDefinition> parameters) {
         this.parameters = parameters;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -283,19 +222,20 @@ public class PolicyDefinition  {
             return false;
         }
         PolicyDefinition policyDefinition = (PolicyDefinition) o;
-        return Objects.equals(this.id, policyDefinition.id) &&
-            Objects.equals(this.name, policyDefinition.name) &&
-            Objects.equals(this.policyType, policyDefinition.policyType) &&
-            Objects.equals(this.description, policyDefinition.description) &&
-            Objects.equals(this.policyRuleType, policyDefinition.policyRuleType) &&
-            Objects.equals(this.policyRule, policyDefinition.policyRule) &&
-            Objects.equals(this.keywords, policyDefinition.keywords) &&
-            Objects.equals(this.parameters, policyDefinition.parameters);
+        return Objects.equals(this.id, policyDefinition.id) && Objects.equals(this.name, policyDefinition.name)
+            && Objects.equals(this.policyType, policyDefinition.policyType)
+            && Objects.equals(this.description, policyDefinition.description)
+            && Objects.equals(this.policyRuleType, policyDefinition.policyRuleType)
+            && Objects.equals(this.policyRule, policyDefinition.policyRule)
+            && Objects.equals(this.keywords, policyDefinition.keywords)
+            && Objects.equals(this.parameters, policyDefinition.parameters);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, policyType, description, policyRuleType, policyRule, keywords, parameters);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -311,16 +251,13 @@ public class PolicyDefinition  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

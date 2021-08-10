@@ -1,60 +1,44 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.HealthmonitorsInStatusResp;
-import com.huaweicloud.sdk.elb.v2.model.MembersInStatusResp;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 后端云服务器对象列表，用于状态树中
- */
-public class PoolsInStatusResp  {
-
-
+/** 后端云服务器对象列表，用于状态树中 */
+public class PoolsInStatusResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="members")
-    
+    @JsonProperty(value = "members")
+
     private List<MembersInStatusResp> members = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operating_status")
-    
+    @JsonProperty(value = "operating_status")
+
     private String operatingStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provisioning_status")
-    
+    @JsonProperty(value = "provisioning_status")
+
     private String provisioningStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="healthmonitor")
-    
+    @JsonProperty(value = "healthmonitor")
+
     private HealthmonitorsInStatusResp healthmonitor;
 
     public PoolsInStatusResp withId(String id) {
@@ -62,13 +46,9 @@ public class PoolsInStatusResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 后端云服务器组ID
-     * @return id
-     */
+    /** 后端云服务器组ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -77,20 +57,14 @@ public class PoolsInStatusResp  {
         this.id = id;
     }
 
-    
-
     public PoolsInStatusResp withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端云服务器组名称
-     * @return name
-     */
+    /** 后端云服务器组名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -99,16 +73,13 @@ public class PoolsInStatusResp  {
         this.name = name;
     }
 
-    
-
     public PoolsInStatusResp withMembers(List<MembersInStatusResp> members) {
         this.members = members;
         return this;
     }
 
-    
     public PoolsInStatusResp addMembersItem(MembersInStatusResp membersItem) {
-        if(this.members == null) {
+        if (this.members == null) {
             this.members = new ArrayList<>();
         }
         this.members.add(membersItem);
@@ -116,17 +87,16 @@ public class PoolsInStatusResp  {
     }
 
     public PoolsInStatusResp withMembers(Consumer<List<MembersInStatusResp>> membersSetter) {
-        if(this.members == null) {
+        if (this.members == null) {
             this.members = new ArrayList<>();
         }
         membersSetter.accept(this.members);
         return this;
     }
 
-    /**
-     * 后端云服务器组关联的后端云服务器列表
-     * @return members
-     */
+    /** 后端云服务器组关联的后端云服务器列表
+     * 
+     * @return members */
     public List<MembersInStatusResp> getMembers() {
         return members;
     }
@@ -135,20 +105,14 @@ public class PoolsInStatusResp  {
         this.members = members;
     }
 
-    
-
     public PoolsInStatusResp withOperatingStatus(String operatingStatus) {
         this.operatingStatus = operatingStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端云服务器组的操作状态；该字段为预留字段，暂未启用。默认为ONLINE。
-     * @return operatingStatus
-     */
+    /** 后端云服务器组的操作状态；该字段为预留字段，暂未启用。默认为ONLINE。
+     * 
+     * @return operatingStatus */
     public String getOperatingStatus() {
         return operatingStatus;
     }
@@ -157,20 +121,14 @@ public class PoolsInStatusResp  {
         this.operatingStatus = operatingStatus;
     }
 
-    
-
     public PoolsInStatusResp withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端云服务器组的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
-     * @return provisioningStatus
-     */
+    /** 后端云服务器组的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
+     * 
+     * @return provisioningStatus */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -179,27 +137,23 @@ public class PoolsInStatusResp  {
         this.provisioningStatus = provisioningStatus;
     }
 
-    
-
     public PoolsInStatusResp withHealthmonitor(HealthmonitorsInStatusResp healthmonitor) {
         this.healthmonitor = healthmonitor;
         return this;
     }
 
     public PoolsInStatusResp withHealthmonitor(Consumer<HealthmonitorsInStatusResp> healthmonitorSetter) {
-        if(this.healthmonitor == null ){
+        if (this.healthmonitor == null) {
             this.healthmonitor = new HealthmonitorsInStatusResp();
             healthmonitorSetter.accept(this.healthmonitor);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get healthmonitor
-     * @return healthmonitor
-     */
+    /** Get healthmonitor
+     * 
+     * @return healthmonitor */
     public HealthmonitorsInStatusResp getHealthmonitor() {
         return healthmonitor;
     }
@@ -207,8 +161,6 @@ public class PoolsInStatusResp  {
     public void setHealthmonitor(HealthmonitorsInStatusResp healthmonitor) {
         this.healthmonitor = healthmonitor;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -219,17 +171,18 @@ public class PoolsInStatusResp  {
             return false;
         }
         PoolsInStatusResp poolsInStatusResp = (PoolsInStatusResp) o;
-        return Objects.equals(this.id, poolsInStatusResp.id) &&
-            Objects.equals(this.name, poolsInStatusResp.name) &&
-            Objects.equals(this.members, poolsInStatusResp.members) &&
-            Objects.equals(this.operatingStatus, poolsInStatusResp.operatingStatus) &&
-            Objects.equals(this.provisioningStatus, poolsInStatusResp.provisioningStatus) &&
-            Objects.equals(this.healthmonitor, poolsInStatusResp.healthmonitor);
+        return Objects.equals(this.id, poolsInStatusResp.id) && Objects.equals(this.name, poolsInStatusResp.name)
+            && Objects.equals(this.members, poolsInStatusResp.members)
+            && Objects.equals(this.operatingStatus, poolsInStatusResp.operatingStatus)
+            && Objects.equals(this.provisioningStatus, poolsInStatusResp.provisioningStatus)
+            && Objects.equals(this.healthmonitor, poolsInStatusResp.healthmonitor);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, members, operatingStatus, provisioningStatus, healthmonitor);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -243,16 +196,13 @@ public class PoolsInStatusResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

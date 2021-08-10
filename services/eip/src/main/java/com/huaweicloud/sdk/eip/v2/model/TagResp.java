@@ -1,48 +1,34 @@
 package com.huaweicloud.sdk.eip.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 标签
- */
-public class TagResp  {
-
-
+/** 标签 */
+public class TagResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="values")
-    
+    @JsonProperty(value = "values")
+
     private List<String> values = null;
-    
+
     public TagResp withKey(String key) {
         this.key = key;
         return this;
     }
 
-    
-
-
-    /**
-     * 键，key不能为空。长度不超过36个字符。由英文字母、数字、下划线、中划线、中文字符组成。
-     * @return key
-     */
+    /** 键，key不能为空。长度不超过36个字符。由英文字母、数字、下划线、中划线、中文字符组成。
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -51,16 +37,13 @@ public class TagResp  {
         this.key = key;
     }
 
-    
-
     public TagResp withValues(List<String> values) {
         this.values = values;
         return this;
     }
 
-    
     public TagResp addValuesItem(String valuesItem) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new ArrayList<>();
         }
         this.values.add(valuesItem);
@@ -68,17 +51,16 @@ public class TagResp  {
     }
 
     public TagResp withValues(Consumer<List<String>> valuesSetter) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new ArrayList<>();
         }
         valuesSetter.accept(this.values);
         return this;
     }
 
-    /**
-     * 值列表。
-     * @return values
-     */
+    /** 值列表。
+     * 
+     * @return values */
     public List<String> getValues() {
         return values;
     }
@@ -86,8 +68,6 @@ public class TagResp  {
     public void setValues(List<String> values) {
         this.values = values;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -98,13 +78,14 @@ public class TagResp  {
             return false;
         }
         TagResp tagResp = (TagResp) o;
-        return Objects.equals(this.key, tagResp.key) &&
-            Objects.equals(this.values, tagResp.values);
+        return Objects.equals(this.key, tagResp.key) && Objects.equals(this.values, tagResp.values);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(key, values);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,16 +95,13 @@ public class TagResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

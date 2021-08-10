@@ -1,69 +1,48 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dcs.v2.model.QueryRedisConfig;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListConfigurationsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="config_time")
-    
+    @JsonProperty(value = "config_time")
+
     private String configTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="redis_config")
-    
+    @JsonProperty(value = "redis_config")
+
     private List<QueryRedisConfig> redisConfig = null;
-        /**
-     * 实例修改状态 - UPDATING - FAILURE - SUCCESS 
-     */
+
+    /** 实例修改状态 - UPDATING - FAILURE - SUCCESS */
     public static final class ConfigStatusEnum {
 
-        
-        /**
-         * Enum UPDATING for value: "UPDATING"
-         */
+        /** Enum UPDATING for value: "UPDATING" */
         public static final ConfigStatusEnum UPDATING = new ConfigStatusEnum("UPDATING");
-        
-        /**
-         * Enum FAILURE for value: "FAILURE"
-         */
+
+        /** Enum FAILURE for value: "FAILURE" */
         public static final ConfigStatusEnum FAILURE = new ConfigStatusEnum("FAILURE");
-        
-        /**
-         * Enum SUCCESS for value: "SUCCESS"
-         */
+
+        /** Enum SUCCESS for value: "SUCCESS" */
         public static final ConfigStatusEnum SUCCESS = new ConfigStatusEnum("SUCCESS");
-        
 
         private static final Map<String, ConfigStatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -93,7 +72,7 @@ public class ListConfigurationsResponse extends SdkResponse {
 
         @JsonCreator
         public static ConfigStatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ConfigStatusEnum result = STATIC_FIELDS.get(value);
@@ -104,7 +83,7 @@ public class ListConfigurationsResponse extends SdkResponse {
         }
 
         public static ConfigStatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ConfigStatusEnum result = STATIC_FIELDS.get(value);
@@ -128,16 +107,14 @@ public class ListConfigurationsResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="config_status")
-    
+    @JsonProperty(value = "config_status")
+
     private ConfigStatusEnum configStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
     public ListConfigurationsResponse withConfigTime(String configTime) {
@@ -145,13 +122,9 @@ public class ListConfigurationsResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例操作时间。格式为：2017-03-31T12:24:46.297Z
-     * @return configTime
-     */
+    /** 实例操作时间。格式为：2017-03-31T12:24:46.297Z
+     * 
+     * @return configTime */
     public String getConfigTime() {
         return configTime;
     }
@@ -160,20 +133,14 @@ public class ListConfigurationsResponse extends SdkResponse {
         this.configTime = configTime;
     }
 
-    
-
     public ListConfigurationsResponse withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -182,16 +149,13 @@ public class ListConfigurationsResponse extends SdkResponse {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListConfigurationsResponse withRedisConfig(List<QueryRedisConfig> redisConfig) {
         this.redisConfig = redisConfig;
         return this;
     }
 
-    
     public ListConfigurationsResponse addRedisConfigItem(QueryRedisConfig redisConfigItem) {
-        if(this.redisConfig == null) {
+        if (this.redisConfig == null) {
             this.redisConfig = new ArrayList<>();
         }
         this.redisConfig.add(redisConfigItem);
@@ -199,17 +163,16 @@ public class ListConfigurationsResponse extends SdkResponse {
     }
 
     public ListConfigurationsResponse withRedisConfig(Consumer<List<QueryRedisConfig>> redisConfigSetter) {
-        if(this.redisConfig == null) {
+        if (this.redisConfig == null) {
             this.redisConfig = new ArrayList<>();
         }
         redisConfigSetter.accept(this.redisConfig);
         return this;
     }
 
-    /**
-     * 实例配置项数组。
-     * @return redisConfig
-     */
+    /** 实例配置项数组。
+     * 
+     * @return redisConfig */
     public List<QueryRedisConfig> getRedisConfig() {
         return redisConfig;
     }
@@ -218,20 +181,14 @@ public class ListConfigurationsResponse extends SdkResponse {
         this.redisConfig = redisConfig;
     }
 
-    
-
     public ListConfigurationsResponse withConfigStatus(ConfigStatusEnum configStatus) {
         this.configStatus = configStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例修改状态 - UPDATING - FAILURE - SUCCESS 
-     * @return configStatus
-     */
+    /** 实例修改状态 - UPDATING - FAILURE - SUCCESS
+     * 
+     * @return configStatus */
     public ConfigStatusEnum getConfigStatus() {
         return configStatus;
     }
@@ -240,20 +197,14 @@ public class ListConfigurationsResponse extends SdkResponse {
         this.configStatus = configStatus;
     }
 
-    
-
     public ListConfigurationsResponse withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例运行状态。
-     * @return status
-     */
+    /** 实例运行状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -261,8 +212,6 @@ public class ListConfigurationsResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -273,16 +222,18 @@ public class ListConfigurationsResponse extends SdkResponse {
             return false;
         }
         ListConfigurationsResponse listConfigurationsResponse = (ListConfigurationsResponse) o;
-        return Objects.equals(this.configTime, listConfigurationsResponse.configTime) &&
-            Objects.equals(this.instanceId, listConfigurationsResponse.instanceId) &&
-            Objects.equals(this.redisConfig, listConfigurationsResponse.redisConfig) &&
-            Objects.equals(this.configStatus, listConfigurationsResponse.configStatus) &&
-            Objects.equals(this.status, listConfigurationsResponse.status);
+        return Objects.equals(this.configTime, listConfigurationsResponse.configTime)
+            && Objects.equals(this.instanceId, listConfigurationsResponse.instanceId)
+            && Objects.equals(this.redisConfig, listConfigurationsResponse.redisConfig)
+            && Objects.equals(this.configStatus, listConfigurationsResponse.configStatus)
+            && Objects.equals(this.status, listConfigurationsResponse.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(configTime, instanceId, redisConfig, configStatus, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -295,16 +246,13 @@ public class ListConfigurationsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

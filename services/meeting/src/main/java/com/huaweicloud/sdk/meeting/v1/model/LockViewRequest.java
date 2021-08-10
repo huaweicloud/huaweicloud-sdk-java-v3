@@ -1,45 +1,32 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.RestLockSiteViewReqBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class LockViewRequest  {
-
-
+/** Request Object */
+public class LockViewRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="conferenceID")
-    
+    @JsonProperty(value = "conferenceID")
+
     private String conferenceID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="participantID")
-    
+    @JsonProperty(value = "participantID")
+
     private String participantID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Conference-Authorization")
-    
+    @JsonProperty(value = "X-Conference-Authorization")
+
     private String xConferenceAuthorization;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private RestLockSiteViewReqBody body;
 
     public LockViewRequest withConferenceID(String conferenceID) {
@@ -47,13 +34,9 @@ public class LockViewRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 会议ID。
-     * @return conferenceID
-     */
+    /** 会议ID。
+     * 
+     * @return conferenceID */
     public String getConferenceID() {
         return conferenceID;
     }
@@ -62,20 +45,14 @@ public class LockViewRequest  {
         this.conferenceID = conferenceID;
     }
 
-    
-
     public LockViewRequest withParticipantID(String participantID) {
         this.participantID = participantID;
         return this;
     }
 
-    
-
-
-    /**
-     * 与会者标识。
-     * @return participantID
-     */
+    /** 与会者标识。
+     * 
+     * @return participantID */
     public String getParticipantID() {
         return participantID;
     }
@@ -84,22 +61,16 @@ public class LockViewRequest  {
         this.participantID = participantID;
     }
 
-    
-
     public LockViewRequest withXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
         return this;
     }
 
-    
-
-
-    /**
-     * 会控授权令牌，通过获取会控token接口获得。
-     * @return xConferenceAuthorization
-     */
+    /** 会控授权令牌，通过获取会控token接口获得。
+     * 
+     * @return xConferenceAuthorization */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Conference-Authorization")
+    @JsonProperty(value = "X-Conference-Authorization")
     public String getXConferenceAuthorization() {
         return xConferenceAuthorization;
     }
@@ -108,27 +79,23 @@ public class LockViewRequest  {
         this.xConferenceAuthorization = xConferenceAuthorization;
     }
 
-    
-
     public LockViewRequest withBody(RestLockSiteViewReqBody body) {
         this.body = body;
         return this;
     }
 
     public LockViewRequest withBody(Consumer<RestLockSiteViewReqBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new RestLockSiteViewReqBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public RestLockSiteViewReqBody getBody() {
         return body;
     }
@@ -136,8 +103,6 @@ public class LockViewRequest  {
     public void setBody(RestLockSiteViewReqBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -148,15 +113,17 @@ public class LockViewRequest  {
             return false;
         }
         LockViewRequest lockViewRequest = (LockViewRequest) o;
-        return Objects.equals(this.conferenceID, lockViewRequest.conferenceID) &&
-            Objects.equals(this.participantID, lockViewRequest.participantID) &&
-            Objects.equals(this.xConferenceAuthorization, lockViewRequest.xConferenceAuthorization) &&
-            Objects.equals(this.body, lockViewRequest.body);
+        return Objects.equals(this.conferenceID, lockViewRequest.conferenceID)
+            && Objects.equals(this.participantID, lockViewRequest.participantID)
+            && Objects.equals(this.xConferenceAuthorization, lockViewRequest.xConferenceAuthorization)
+            && Objects.equals(this.body, lockViewRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(conferenceID, participantID, xConferenceAuthorization, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -168,16 +135,13 @@ public class LockViewRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

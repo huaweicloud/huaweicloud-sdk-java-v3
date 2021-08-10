@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 锁定会议消息体。
- */
-public class RestLockReqBody  {
-
-
+/** 锁定会议消息体。 */
+public class RestLockReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isLock")
-    
+    @JsonProperty(value = "isLock")
+
     private Integer isLock;
 
     public RestLockReqBody withIsLock(Integer isLock) {
@@ -28,13 +18,9 @@ public class RestLockReqBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * - 0: 解锁。 - 1: 锁定。
-     * @return isLock
-     */
+    /** - 0: 解锁。 - 1: 锁定。
+     * 
+     * @return isLock */
     public Integer getIsLock() {
         return isLock;
     }
@@ -42,8 +28,6 @@ public class RestLockReqBody  {
     public void setIsLock(Integer isLock) {
         this.isLock = isLock;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class RestLockReqBody  {
         RestLockReqBody restLockReqBody = (RestLockReqBody) o;
         return Objects.equals(this.isLock, restLockReqBody.isLock);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(isLock);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class RestLockReqBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

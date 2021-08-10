@@ -1,93 +1,72 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.time.OffsetDateTime;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * SignApiBindingBase
- */
-public class SignApiBindingBase  {
-
-
+/** SignApiBindingBase */
+public class SignApiBindingBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publish_id")
-    
+    @JsonProperty(value = "publish_id")
+
     private String publishId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_id")
-    
+    @JsonProperty(value = "api_id")
+
     private String apiId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_name")
-    
+    @JsonProperty(value = "group_name")
+
     private String groupName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="binding_time")
-    
+    @JsonProperty(value = "binding_time")
+
     private OffsetDateTime bindingTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_id")
-    
+    @JsonProperty(value = "env_id")
+
     private String envId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_name")
-    
+    @JsonProperty(value = "env_name")
+
     private String envName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_type")
-    
+    @JsonProperty(value = "api_type")
+
     private Integer apiType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_name")
-    
+    @JsonProperty(value = "api_name")
+
     private String apiName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_remark")
-    
+    @JsonProperty(value = "api_remark")
+
     private String apiRemark;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sign_id")
-    
+    @JsonProperty(value = "sign_id")
+
     private String signId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sign_name")
-    
+    @JsonProperty(value = "sign_name")
+
     private String signName;
 
     public SignApiBindingBase withPublishId(String publishId) {
@@ -95,13 +74,9 @@ public class SignApiBindingBase  {
         return this;
     }
 
-    
-
-
-    /**
-     * API的发布编号
-     * @return publishId
-     */
+    /** API的发布编号
+     * 
+     * @return publishId */
     public String getPublishId() {
         return publishId;
     }
@@ -110,20 +85,14 @@ public class SignApiBindingBase  {
         this.publishId = publishId;
     }
 
-    
-
     public SignApiBindingBase withApiId(String apiId) {
         this.apiId = apiId;
         return this;
     }
 
-    
-
-
-    /**
-     * API编号
-     * @return apiId
-     */
+    /** API编号
+     * 
+     * @return apiId */
     public String getApiId() {
         return apiId;
     }
@@ -132,20 +101,14 @@ public class SignApiBindingBase  {
         this.apiId = apiId;
     }
 
-    
-
     public SignApiBindingBase withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
     }
 
-    
-
-
-    /**
-     * API所属分组的名称
-     * @return groupName
-     */
+    /** API所属分组的名称
+     * 
+     * @return groupName */
     public String getGroupName() {
         return groupName;
     }
@@ -154,20 +117,14 @@ public class SignApiBindingBase  {
         this.groupName = groupName;
     }
 
-    
-
     public SignApiBindingBase withBindingTime(OffsetDateTime bindingTime) {
         this.bindingTime = bindingTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 绑定时间
-     * @return bindingTime
-     */
+    /** 绑定时间
+     * 
+     * @return bindingTime */
     public OffsetDateTime getBindingTime() {
         return bindingTime;
     }
@@ -176,20 +133,14 @@ public class SignApiBindingBase  {
         this.bindingTime = bindingTime;
     }
 
-    
-
     public SignApiBindingBase withEnvId(String envId) {
         this.envId = envId;
         return this;
     }
 
-    
-
-
-    /**
-     * API所属环境的编号
-     * @return envId
-     */
+    /** API所属环境的编号
+     * 
+     * @return envId */
     public String getEnvId() {
         return envId;
     }
@@ -198,20 +149,14 @@ public class SignApiBindingBase  {
         this.envId = envId;
     }
 
-    
-
     public SignApiBindingBase withEnvName(String envName) {
         this.envName = envName;
         return this;
     }
 
-    
-
-
-    /**
-     * API所属环境的名称
-     * @return envName
-     */
+    /** API所属环境的名称
+     * 
+     * @return envName */
     public String getEnvName() {
         return envName;
     }
@@ -220,20 +165,14 @@ public class SignApiBindingBase  {
         this.envName = envName;
     }
 
-    
-
     public SignApiBindingBase withApiType(Integer apiType) {
         this.apiType = apiType;
         return this;
     }
 
-    
-
-
-    /**
-     * API类型
-     * @return apiType
-     */
+    /** API类型
+     * 
+     * @return apiType */
     public Integer getApiType() {
         return apiType;
     }
@@ -242,20 +181,14 @@ public class SignApiBindingBase  {
         this.apiType = apiType;
     }
 
-    
-
     public SignApiBindingBase withApiName(String apiName) {
         this.apiName = apiName;
         return this;
     }
 
-    
-
-
-    /**
-     * API名称
-     * @return apiName
-     */
+    /** API名称
+     * 
+     * @return apiName */
     public String getApiName() {
         return apiName;
     }
@@ -264,20 +197,14 @@ public class SignApiBindingBase  {
         this.apiName = apiName;
     }
 
-    
-
     public SignApiBindingBase withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 绑定关系的ID
-     * @return id
-     */
+    /** 绑定关系的ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -286,20 +213,14 @@ public class SignApiBindingBase  {
         this.id = id;
     }
 
-    
-
     public SignApiBindingBase withApiRemark(String apiRemark) {
         this.apiRemark = apiRemark;
         return this;
     }
 
-    
-
-
-    /**
-     * API描述
-     * @return apiRemark
-     */
+    /** API描述
+     * 
+     * @return apiRemark */
     public String getApiRemark() {
         return apiRemark;
     }
@@ -308,20 +229,14 @@ public class SignApiBindingBase  {
         this.apiRemark = apiRemark;
     }
 
-    
-
     public SignApiBindingBase withSignId(String signId) {
         this.signId = signId;
         return this;
     }
 
-    
-
-
-    /**
-     * 签名密钥的编号
-     * @return signId
-     */
+    /** 签名密钥的编号
+     * 
+     * @return signId */
     public String getSignId() {
         return signId;
     }
@@ -330,20 +245,14 @@ public class SignApiBindingBase  {
         this.signId = signId;
     }
 
-    
-
     public SignApiBindingBase withSignName(String signName) {
         this.signName = signName;
         return this;
     }
 
-    
-
-
-    /**
-     * 签名密钥的名称。支持汉字，英文，数字，下划线，且只能以英文和汉字开头，3 ~ 64字符。 > 中文字符必须为UTF-8或者unicode编码。
-     * @return signName
-     */
+    /** 签名密钥的名称。支持汉字，英文，数字，下划线，且只能以英文和汉字开头，3 ~ 64字符。 > 中文字符必须为UTF-8或者unicode编码。
+     * 
+     * @return signName */
     public String getSignName() {
         return signName;
     }
@@ -351,8 +260,6 @@ public class SignApiBindingBase  {
     public void setSignName(String signName) {
         this.signName = signName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -363,23 +270,36 @@ public class SignApiBindingBase  {
             return false;
         }
         SignApiBindingBase signApiBindingBase = (SignApiBindingBase) o;
-        return Objects.equals(this.publishId, signApiBindingBase.publishId) &&
-            Objects.equals(this.apiId, signApiBindingBase.apiId) &&
-            Objects.equals(this.groupName, signApiBindingBase.groupName) &&
-            Objects.equals(this.bindingTime, signApiBindingBase.bindingTime) &&
-            Objects.equals(this.envId, signApiBindingBase.envId) &&
-            Objects.equals(this.envName, signApiBindingBase.envName) &&
-            Objects.equals(this.apiType, signApiBindingBase.apiType) &&
-            Objects.equals(this.apiName, signApiBindingBase.apiName) &&
-            Objects.equals(this.id, signApiBindingBase.id) &&
-            Objects.equals(this.apiRemark, signApiBindingBase.apiRemark) &&
-            Objects.equals(this.signId, signApiBindingBase.signId) &&
-            Objects.equals(this.signName, signApiBindingBase.signName);
+        return Objects.equals(this.publishId, signApiBindingBase.publishId)
+            && Objects.equals(this.apiId, signApiBindingBase.apiId)
+            && Objects.equals(this.groupName, signApiBindingBase.groupName)
+            && Objects.equals(this.bindingTime, signApiBindingBase.bindingTime)
+            && Objects.equals(this.envId, signApiBindingBase.envId)
+            && Objects.equals(this.envName, signApiBindingBase.envName)
+            && Objects.equals(this.apiType, signApiBindingBase.apiType)
+            && Objects.equals(this.apiName, signApiBindingBase.apiName)
+            && Objects.equals(this.id, signApiBindingBase.id)
+            && Objects.equals(this.apiRemark, signApiBindingBase.apiRemark)
+            && Objects.equals(this.signId, signApiBindingBase.signId)
+            && Objects.equals(this.signName, signApiBindingBase.signName);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(publishId, apiId, groupName, bindingTime, envId, envName, apiType, apiName, id, apiRemark, signId, signName);
+        return Objects.hash(publishId,
+            apiId,
+            groupName,
+            bindingTime,
+            envId,
+            envName,
+            apiType,
+            apiName,
+            id,
+            apiRemark,
+            signId,
+            signName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -399,16 +319,13 @@ public class SignApiBindingBase  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

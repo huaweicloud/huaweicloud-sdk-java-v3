@@ -1,65 +1,46 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListProductTemplatesRequest  {
-
-
+/** Request Object */
+public class ListProductTemplatesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Integer id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 产品模板状态 0-启用 1-停用
-     */
+
+    /** 产品模板状态 0-启用 1-停用 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
+        /** Enum NUMBER_0 for value: 0 */
         public static final StatusEnum NUMBER_0 = new StatusEnum(0);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
+
+        /** Enum NUMBER_1 for value: 1 */
         public static final StatusEnum NUMBER_1 = new StatusEnum(1);
-        
 
         private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -88,7 +69,7 @@ public class ListProductTemplatesRequest  {
 
         @JsonCreator
         public static StatusEnum fromValue(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -99,7 +80,7 @@ public class ListProductTemplatesRequest  {
         }
 
         public static StatusEnum valueOf(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -123,34 +104,29 @@ public class ListProductTemplatesRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_user_name")
-    
+    @JsonProperty(value = "created_user_name")
+
     private String createdUserName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_date_start")
-    
+    @JsonProperty(value = "created_date_start")
+
     private Long createdDateStart;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_date_end")
-    
+    @JsonProperty(value = "created_date_end")
+
     private Long createdDateEnd;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
     public ListProductTemplatesRequest withInstanceId(String instanceId) {
@@ -158,13 +134,9 @@ public class ListProductTemplatesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -173,22 +145,14 @@ public class ListProductTemplatesRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListProductTemplatesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示条目数量，最大数量999，超过999后只返回999
-     * minimum: 0
-     * maximum: 999
-     * @return limit
-     */
+    /** 每页显示条目数量，最大数量999，超过999后只返回999 minimum: 0 maximum: 999
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -197,22 +161,14 @@ public class ListProductTemplatesRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListProductTemplatesRequest withId(Integer id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品模板ID
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return id
-     */
+    /** 产品模板ID minimum: 1 maximum: 999999999999999999
+     * 
+     * @return id */
     public Integer getId() {
         return id;
     }
@@ -221,20 +177,14 @@ public class ListProductTemplatesRequest  {
         this.id = id;
     }
 
-    
-
     public ListProductTemplatesRequest withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品模板名称
-     * @return name
-     */
+    /** 产品模板名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -243,22 +193,14 @@ public class ListProductTemplatesRequest  {
         this.name = name;
     }
 
-    
-
     public ListProductTemplatesRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品模板状态 0-启用 1-停用
-     * minimum: 0
-     * maximum: 10
-     * @return status
-     */
+    /** 产品模板状态 0-启用 1-停用 minimum: 0 maximum: 10
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -267,20 +209,14 @@ public class ListProductTemplatesRequest  {
         this.status = status;
     }
 
-    
-
     public ListProductTemplatesRequest withCreatedUserName(String createdUserName) {
         this.createdUserName = createdUserName;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建用户名
-     * @return createdUserName
-     */
+    /** 创建用户名
+     * 
+     * @return createdUserName */
     public String getCreatedUserName() {
         return createdUserName;
     }
@@ -289,22 +225,14 @@ public class ListProductTemplatesRequest  {
         this.createdUserName = createdUserName;
     }
 
-    
-
     public ListProductTemplatesRequest withCreatedDateStart(Long createdDateStart) {
         this.createdDateStart = createdDateStart;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间起始，格式timestamp(ms)，使用UTC时区
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return createdDateStart
-     */
+    /** 创建时间起始，格式timestamp(ms)，使用UTC时区 minimum: 1 maximum: 999999999999999999
+     * 
+     * @return createdDateStart */
     public Long getCreatedDateStart() {
         return createdDateStart;
     }
@@ -313,22 +241,14 @@ public class ListProductTemplatesRequest  {
         this.createdDateStart = createdDateStart;
     }
 
-    
-
     public ListProductTemplatesRequest withCreatedDateEnd(Long createdDateEnd) {
         this.createdDateEnd = createdDateEnd;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间截止，格式timestamp(ms)，使用UTC时区
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return createdDateEnd
-     */
+    /** 创建时间截止，格式timestamp(ms)，使用UTC时区 minimum: 1 maximum: 999999999999999999
+     * 
+     * @return createdDateEnd */
     public Long getCreatedDateEnd() {
         return createdDateEnd;
     }
@@ -337,22 +257,14 @@ public class ListProductTemplatesRequest  {
         this.createdDateEnd = createdDateEnd;
     }
 
-    
-
     public ListProductTemplatesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于0
-     * minimum: 0
-     * maximum: 999999
-     * @return offset
-     */
+    /** 偏移量，表示从此偏移量开始查询， offset大于等于0 minimum: 0 maximum: 999999
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -360,8 +272,6 @@ public class ListProductTemplatesRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -372,20 +282,23 @@ public class ListProductTemplatesRequest  {
             return false;
         }
         ListProductTemplatesRequest listProductTemplatesRequest = (ListProductTemplatesRequest) o;
-        return Objects.equals(this.instanceId, listProductTemplatesRequest.instanceId) &&
-            Objects.equals(this.limit, listProductTemplatesRequest.limit) &&
-            Objects.equals(this.id, listProductTemplatesRequest.id) &&
-            Objects.equals(this.name, listProductTemplatesRequest.name) &&
-            Objects.equals(this.status, listProductTemplatesRequest.status) &&
-            Objects.equals(this.createdUserName, listProductTemplatesRequest.createdUserName) &&
-            Objects.equals(this.createdDateStart, listProductTemplatesRequest.createdDateStart) &&
-            Objects.equals(this.createdDateEnd, listProductTemplatesRequest.createdDateEnd) &&
-            Objects.equals(this.offset, listProductTemplatesRequest.offset);
+        return Objects.equals(this.instanceId, listProductTemplatesRequest.instanceId)
+            && Objects.equals(this.limit, listProductTemplatesRequest.limit)
+            && Objects.equals(this.id, listProductTemplatesRequest.id)
+            && Objects.equals(this.name, listProductTemplatesRequest.name)
+            && Objects.equals(this.status, listProductTemplatesRequest.status)
+            && Objects.equals(this.createdUserName, listProductTemplatesRequest.createdUserName)
+            && Objects.equals(this.createdDateStart, listProductTemplatesRequest.createdDateStart)
+            && Objects.equals(this.createdDateEnd, listProductTemplatesRequest.createdDateEnd)
+            && Objects.equals(this.offset, listProductTemplatesRequest.offset);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, limit, id, name, status, createdUserName, createdDateStart, createdDateEnd, offset);
+        return Objects
+            .hash(instanceId, limit, id, name, status, createdUserName, createdDateStart, createdDateEnd, offset);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -402,16 +315,13 @@ public class ListProductTemplatesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

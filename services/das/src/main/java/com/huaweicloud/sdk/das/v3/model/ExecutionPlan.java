@@ -1,92 +1,71 @@
 package com.huaweicloud.sdk.das.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ExecutionPlan
- */
-public class ExecutionPlan  {
-
-
+/** ExecutionPlan */
+public class ExecutionPlan {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="select_type")
-    
+    @JsonProperty(value = "select_type")
+
     private String selectType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="table")
-    
+    @JsonProperty(value = "table")
+
     private String table;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="partitions")
-    
+    @JsonProperty(value = "partitions")
+
     private String partitions;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="possible_keys")
-    
+    @JsonProperty(value = "possible_keys")
+
     private String possibleKeys;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_len")
-    
+    @JsonProperty(value = "key_len")
+
     private String keyLen;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ref")
-    
+    @JsonProperty(value = "ref")
+
     private String ref;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rows")
-    
+    @JsonProperty(value = "rows")
+
     private String rows;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="filtered")
-    
+    @JsonProperty(value = "filtered")
+
     private String filtered;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extra")
-    
+    @JsonProperty(value = "extra")
+
     private String extra;
 
     public ExecutionPlan withId(String id) {
@@ -94,13 +73,9 @@ public class ExecutionPlan  {
         return this;
     }
 
-    
-
-
-    /**
-     * id
-     * @return id
-     */
+    /** id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -109,20 +84,14 @@ public class ExecutionPlan  {
         this.id = id;
     }
 
-    
-
     public ExecutionPlan withSelectType(String selectType) {
         this.selectType = selectType;
         return this;
     }
 
-    
-
-
-    /**
-     * select子句的类型
-     * @return selectType
-     */
+    /** select子句的类型
+     * 
+     * @return selectType */
     public String getSelectType() {
         return selectType;
     }
@@ -131,20 +100,14 @@ public class ExecutionPlan  {
         this.selectType = selectType;
     }
 
-    
-
     public ExecutionPlan withTable(String table) {
         this.table = table;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库表
-     * @return table
-     */
+    /** 数据库表
+     * 
+     * @return table */
     public String getTable() {
         return table;
     }
@@ -153,20 +116,14 @@ public class ExecutionPlan  {
         this.table = table;
     }
 
-    
-
     public ExecutionPlan withPartitions(String partitions) {
         this.partitions = partitions;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询将匹配记录的分区
-     * @return partitions
-     */
+    /** 查询将匹配记录的分区
+     * 
+     * @return partitions */
     public String getPartitions() {
         return partitions;
     }
@@ -175,20 +132,14 @@ public class ExecutionPlan  {
         this.partitions = partitions;
     }
 
-    
-
     public ExecutionPlan withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 访问类型
-     * @return type
-     */
+    /** 访问类型
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -197,20 +148,14 @@ public class ExecutionPlan  {
         this.type = type;
     }
 
-    
-
     public ExecutionPlan withPossibleKeys(String possibleKeys) {
         this.possibleKeys = possibleKeys;
         return this;
     }
 
-    
-
-
-    /**
-     * 可能使用的键(索引)
-     * @return possibleKeys
-     */
+    /** 可能使用的键(索引)
+     * 
+     * @return possibleKeys */
     public String getPossibleKeys() {
         return possibleKeys;
     }
@@ -219,20 +164,14 @@ public class ExecutionPlan  {
         this.possibleKeys = possibleKeys;
     }
 
-    
-
     public ExecutionPlan withKey(String key) {
         this.key = key;
         return this;
     }
 
-    
-
-
-    /**
-     * 实际使用的键(索引)
-     * @return key
-     */
+    /** 实际使用的键(索引)
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -241,20 +180,14 @@ public class ExecutionPlan  {
         this.key = key;
     }
 
-    
-
     public ExecutionPlan withKeyLen(String keyLen) {
         this.keyLen = keyLen;
         return this;
     }
 
-    
-
-
-    /**
-     * 决定使用的键的长度
-     * @return keyLen
-     */
+    /** 决定使用的键的长度
+     * 
+     * @return keyLen */
     public String getKeyLen() {
         return keyLen;
     }
@@ -263,20 +196,14 @@ public class ExecutionPlan  {
         this.keyLen = keyLen;
     }
 
-    
-
     public ExecutionPlan withRef(String ref) {
         this.ref = ref;
         return this;
     }
 
-    
-
-
-    /**
-     * 使用哪个列或常数与键一起来选择行
-     * @return ref
-     */
+    /** 使用哪个列或常数与键一起来选择行
+     * 
+     * @return ref */
     public String getRef() {
         return ref;
     }
@@ -285,20 +212,14 @@ public class ExecutionPlan  {
         this.ref = ref;
     }
 
-    
-
     public ExecutionPlan withRows(String rows) {
         this.rows = rows;
         return this;
     }
 
-    
-
-
-    /**
-     * MySQL认为它执行查询时必须检查的行数
-     * @return rows
-     */
+    /** MySQL认为它执行查询时必须检查的行数
+     * 
+     * @return rows */
     public String getRows() {
         return rows;
     }
@@ -307,20 +228,14 @@ public class ExecutionPlan  {
         this.rows = rows;
     }
 
-    
-
     public ExecutionPlan withFiltered(String filtered) {
         this.filtered = filtered;
         return this;
     }
 
-    
-
-
-    /**
-     * 按表条件过滤的表行的估计百分比
-     * @return filtered
-     */
+    /** 按表条件过滤的表行的估计百分比
+     * 
+     * @return filtered */
     public String getFiltered() {
         return filtered;
     }
@@ -329,20 +244,14 @@ public class ExecutionPlan  {
         this.filtered = filtered;
     }
 
-    
-
     public ExecutionPlan withExtra(String extra) {
         this.extra = extra;
         return this;
     }
 
-    
-
-
-    /**
-     * 其他信息
-     * @return extra
-     */
+    /** 其他信息
+     * 
+     * @return extra */
     public String getExtra() {
         return extra;
     }
@@ -350,8 +259,6 @@ public class ExecutionPlan  {
     public void setExtra(String extra) {
         this.extra = extra;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -362,23 +269,22 @@ public class ExecutionPlan  {
             return false;
         }
         ExecutionPlan executionPlan = (ExecutionPlan) o;
-        return Objects.equals(this.id, executionPlan.id) &&
-            Objects.equals(this.selectType, executionPlan.selectType) &&
-            Objects.equals(this.table, executionPlan.table) &&
-            Objects.equals(this.partitions, executionPlan.partitions) &&
-            Objects.equals(this.type, executionPlan.type) &&
-            Objects.equals(this.possibleKeys, executionPlan.possibleKeys) &&
-            Objects.equals(this.key, executionPlan.key) &&
-            Objects.equals(this.keyLen, executionPlan.keyLen) &&
-            Objects.equals(this.ref, executionPlan.ref) &&
-            Objects.equals(this.rows, executionPlan.rows) &&
-            Objects.equals(this.filtered, executionPlan.filtered) &&
-            Objects.equals(this.extra, executionPlan.extra);
+        return Objects.equals(this.id, executionPlan.id) && Objects.equals(this.selectType, executionPlan.selectType)
+            && Objects.equals(this.table, executionPlan.table)
+            && Objects.equals(this.partitions, executionPlan.partitions)
+            && Objects.equals(this.type, executionPlan.type)
+            && Objects.equals(this.possibleKeys, executionPlan.possibleKeys)
+            && Objects.equals(this.key, executionPlan.key) && Objects.equals(this.keyLen, executionPlan.keyLen)
+            && Objects.equals(this.ref, executionPlan.ref) && Objects.equals(this.rows, executionPlan.rows)
+            && Objects.equals(this.filtered, executionPlan.filtered) && Objects.equals(this.extra, executionPlan.extra);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, selectType, table, partitions, type, possibleKeys, key, keyLen, ref, rows, filtered, extra);
+        return Objects
+            .hash(id, selectType, table, partitions, type, possibleKeys, key, keyLen, ref, rows, filtered, extra);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -398,16 +304,13 @@ public class ExecutionPlan  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

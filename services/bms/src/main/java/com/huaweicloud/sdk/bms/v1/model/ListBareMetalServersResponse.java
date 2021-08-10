@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bms.v1.model.ServerDetails;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListBareMetalServersResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="servers")
-    
+    @JsonProperty(value = "servers")
+
     private List<ServerDetails> servers = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
+
     private Integer count;
 
     public ListBareMetalServersResponse withServers(List<ServerDetails> servers) {
@@ -39,9 +27,8 @@ public class ListBareMetalServersResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListBareMetalServersResponse addServersItem(ServerDetails serversItem) {
-        if(this.servers == null) {
+        if (this.servers == null) {
             this.servers = new ArrayList<>();
         }
         this.servers.add(serversItem);
@@ -49,17 +36,16 @@ public class ListBareMetalServersResponse extends SdkResponse {
     }
 
     public ListBareMetalServersResponse withServers(Consumer<List<ServerDetails>> serversSetter) {
-        if(this.servers == null) {
+        if (this.servers == null) {
             this.servers = new ArrayList<>();
         }
         serversSetter.accept(this.servers);
         return this;
     }
 
-    /**
-     * 裸金属服务器详情列表
-     * @return servers
-     */
+    /** 裸金属服务器详情列表
+     * 
+     * @return servers */
     public List<ServerDetails> getServers() {
         return servers;
     }
@@ -68,20 +54,14 @@ public class ListBareMetalServersResponse extends SdkResponse {
         this.servers = servers;
     }
 
-    
-
     public ListBareMetalServersResponse withCount(Integer count) {
         this.count = count;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器的列表总数
-     * @return count
-     */
+    /** 裸金属服务器的列表总数
+     * 
+     * @return count */
     public Integer getCount() {
         return count;
     }
@@ -89,8 +69,6 @@ public class ListBareMetalServersResponse extends SdkResponse {
     public void setCount(Integer count) {
         this.count = count;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ListBareMetalServersResponse extends SdkResponse {
             return false;
         }
         ListBareMetalServersResponse listBareMetalServersResponse = (ListBareMetalServersResponse) o;
-        return Objects.equals(this.servers, listBareMetalServersResponse.servers) &&
-            Objects.equals(this.count, listBareMetalServersResponse.count);
+        return Objects.equals(this.servers, listBareMetalServersResponse.servers)
+            && Objects.equals(this.count, listBareMetalServersResponse.count);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(servers, count);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ListBareMetalServersResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

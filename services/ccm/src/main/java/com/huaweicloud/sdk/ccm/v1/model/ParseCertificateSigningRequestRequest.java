@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.ccm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ccm.v1.model.ParseCertificateSigningRequestRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ParseCertificateSigningRequestRequest  {
-
-
+/** Request Object */
+public class ParseCertificateSigningRequestRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ParseCertificateSigningRequestRequestBody body;
 
     public ParseCertificateSigningRequestRequest withBody(ParseCertificateSigningRequestRequestBody body) {
@@ -29,20 +19,19 @@ public class ParseCertificateSigningRequestRequest  {
         return this;
     }
 
-    public ParseCertificateSigningRequestRequest withBody(Consumer<ParseCertificateSigningRequestRequestBody> bodySetter) {
-        if(this.body == null ){
+    public ParseCertificateSigningRequestRequest withBody(
+        Consumer<ParseCertificateSigningRequestRequestBody> bodySetter) {
+        if (this.body == null) {
             this.body = new ParseCertificateSigningRequestRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ParseCertificateSigningRequestRequestBody getBody() {
         return body;
     }
@@ -50,8 +39,6 @@ public class ParseCertificateSigningRequestRequest  {
     public void setBody(ParseCertificateSigningRequestRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -61,13 +48,16 @@ public class ParseCertificateSigningRequestRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ParseCertificateSigningRequestRequest parseCertificateSigningRequestRequest = (ParseCertificateSigningRequestRequest) o;
+        ParseCertificateSigningRequestRequest parseCertificateSigningRequestRequest =
+            (ParseCertificateSigningRequestRequest) o;
         return Objects.equals(this.body, parseCertificateSigningRequestRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +66,13 @@ public class ParseCertificateSigningRequestRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

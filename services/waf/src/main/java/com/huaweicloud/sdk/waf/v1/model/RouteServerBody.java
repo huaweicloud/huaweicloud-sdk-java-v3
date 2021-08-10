@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 类型
- */
-public class RouteServerBody  {
-
-
+/** 类型 */
+public class RouteServerBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="back_protocol")
-    
+    @JsonProperty(value = "back_protocol")
+
     private String backProtocol;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="address")
-    
+    @JsonProperty(value = "address")
+
     private String address;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
+
     private Integer port;
 
     public RouteServerBody withBackProtocol(String backProtocol) {
@@ -40,13 +28,9 @@ public class RouteServerBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 协议
-     * @return backProtocol
-     */
+    /** 协议
+     * 
+     * @return backProtocol */
     public String getBackProtocol() {
         return backProtocol;
     }
@@ -55,20 +39,14 @@ public class RouteServerBody  {
         this.backProtocol = backProtocol;
     }
 
-    
-
     public RouteServerBody withAddress(String address) {
         this.address = address;
         return this;
     }
 
-    
-
-
-    /**
-     * ip信息
-     * @return address
-     */
+    /** ip信息
+     * 
+     * @return address */
     public String getAddress() {
         return address;
     }
@@ -77,20 +55,14 @@ public class RouteServerBody  {
         this.address = address;
     }
 
-    
-
     public RouteServerBody withPort(Integer port) {
         this.port = port;
         return this;
     }
 
-    
-
-
-    /**
-     * 端口信息
-     * @return port
-     */
+    /** 端口信息
+     * 
+     * @return port */
     public Integer getPort() {
         return port;
     }
@@ -98,8 +70,6 @@ public class RouteServerBody  {
     public void setPort(Integer port) {
         this.port = port;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,15 @@ public class RouteServerBody  {
             return false;
         }
         RouteServerBody routeServerBody = (RouteServerBody) o;
-        return Objects.equals(this.backProtocol, routeServerBody.backProtocol) &&
-            Objects.equals(this.address, routeServerBody.address) &&
-            Objects.equals(this.port, routeServerBody.port);
+        return Objects.equals(this.backProtocol, routeServerBody.backProtocol)
+            && Objects.equals(this.address, routeServerBody.address) && Objects.equals(this.port, routeServerBody.port);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(backProtocol, address, port);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +99,13 @@ public class RouteServerBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

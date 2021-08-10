@@ -1,98 +1,76 @@
 package com.huaweicloud.sdk.ocr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * DriverLicenseResult
- */
-public class DriverLicenseResult  {
-
-
+/** DriverLicenseResult */
+public class DriverLicenseResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="number")
-    
+    @JsonProperty(value = "number")
+
     private String number;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sex")
-    
+    @JsonProperty(value = "sex")
+
     private String sex;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nationality")
-    
+    @JsonProperty(value = "nationality")
+
     private String nationality;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="address")
-    
+    @JsonProperty(value = "address")
+
     private String address;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="birth")
-    
+    @JsonProperty(value = "birth")
+
     private String birth;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="issue_date")
-    
+    @JsonProperty(value = "issue_date")
+
     private String issueDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="class")
-    
+    @JsonProperty(value = "class")
+
     private String propertyClass;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="valid_from")
-    
+    @JsonProperty(value = "valid_from")
+
     private String validFrom;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="valid_to")
-    
+    @JsonProperty(value = "valid_to")
+
     private String validTo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="issuing_authority")
-    
+    @JsonProperty(value = "issuing_authority")
+
     private String issuingAuthority;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_number")
-    
+    @JsonProperty(value = "file_number")
+
     private String fileNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="record")
-    
+    @JsonProperty(value = "record")
+
     private String record;
 
     public DriverLicenseResult withNumber(String number) {
@@ -100,13 +78,9 @@ public class DriverLicenseResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 驾驶证号。 
-     * @return number
-     */
+    /** 驾驶证号。
+     * 
+     * @return number */
     public String getNumber() {
         return number;
     }
@@ -115,20 +89,14 @@ public class DriverLicenseResult  {
         this.number = number;
     }
 
-    
-
     public DriverLicenseResult withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 姓名。 
-     * @return name
-     */
+    /** 姓名。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -137,20 +105,14 @@ public class DriverLicenseResult  {
         this.name = name;
     }
 
-    
-
     public DriverLicenseResult withSex(String sex) {
         this.sex = sex;
         return this;
     }
 
-    
-
-
-    /**
-     * 性别。 
-     * @return sex
-     */
+    /** 性别。
+     * 
+     * @return sex */
     public String getSex() {
         return sex;
     }
@@ -159,20 +121,14 @@ public class DriverLicenseResult  {
         this.sex = sex;
     }
 
-    
-
     public DriverLicenseResult withNationality(String nationality) {
         this.nationality = nationality;
         return this;
     }
 
-    
-
-
-    /**
-     * 国籍。 
-     * @return nationality
-     */
+    /** 国籍。
+     * 
+     * @return nationality */
     public String getNationality() {
         return nationality;
     }
@@ -181,20 +137,14 @@ public class DriverLicenseResult  {
         this.nationality = nationality;
     }
 
-    
-
     public DriverLicenseResult withAddress(String address) {
         this.address = address;
         return this;
     }
 
-    
-
-
-    /**
-     * 住址。 
-     * @return address
-     */
+    /** 住址。
+     * 
+     * @return address */
     public String getAddress() {
         return address;
     }
@@ -203,20 +153,14 @@ public class DriverLicenseResult  {
         this.address = address;
     }
 
-    
-
     public DriverLicenseResult withBirth(String birth) {
         this.birth = birth;
         return this;
     }
 
-    
-
-
-    /**
-     * 出生日期。 
-     * @return birth
-     */
+    /** 出生日期。
+     * 
+     * @return birth */
     public String getBirth() {
         return birth;
     }
@@ -225,20 +169,14 @@ public class DriverLicenseResult  {
         this.birth = birth;
     }
 
-    
-
     public DriverLicenseResult withIssueDate(String issueDate) {
         this.issueDate = issueDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 初次领证日期。 
-     * @return issueDate
-     */
+    /** 初次领证日期。
+     * 
+     * @return issueDate */
     public String getIssueDate() {
         return issueDate;
     }
@@ -247,20 +185,14 @@ public class DriverLicenseResult  {
         this.issueDate = issueDate;
     }
 
-    
-
     public DriverLicenseResult withPropertyClass(String propertyClass) {
         this.propertyClass = propertyClass;
         return this;
     }
 
-    
-
-
-    /**
-     * 准驾类型。 
-     * @return propertyClass
-     */
+    /** 准驾类型。
+     * 
+     * @return propertyClass */
     public String getPropertyClass() {
         return propertyClass;
     }
@@ -269,20 +201,14 @@ public class DriverLicenseResult  {
         this.propertyClass = propertyClass;
     }
 
-    
-
     public DriverLicenseResult withValidFrom(String validFrom) {
         this.validFrom = validFrom;
         return this;
     }
 
-    
-
-
-    /**
-     * 有效起始日期。 
-     * @return validFrom
-     */
+    /** 有效起始日期。
+     * 
+     * @return validFrom */
     public String getValidFrom() {
         return validFrom;
     }
@@ -291,20 +217,14 @@ public class DriverLicenseResult  {
         this.validFrom = validFrom;
     }
 
-    
-
     public DriverLicenseResult withValidTo(String validTo) {
         this.validTo = validTo;
         return this;
     }
 
-    
-
-
-    /**
-     * 有效结束日期。 
-     * @return validTo
-     */
+    /** 有效结束日期。
+     * 
+     * @return validTo */
     public String getValidTo() {
         return validTo;
     }
@@ -313,20 +233,14 @@ public class DriverLicenseResult  {
         this.validTo = validTo;
     }
 
-    
-
     public DriverLicenseResult withIssuingAuthority(String issuingAuthority) {
         this.issuingAuthority = issuingAuthority;
         return this;
     }
 
-    
-
-
-    /**
-     * 发证机关。 
-     * @return issuingAuthority
-     */
+    /** 发证机关。
+     * 
+     * @return issuingAuthority */
     public String getIssuingAuthority() {
         return issuingAuthority;
     }
@@ -335,20 +249,14 @@ public class DriverLicenseResult  {
         this.issuingAuthority = issuingAuthority;
     }
 
-    
-
     public DriverLicenseResult withFileNumber(String fileNumber) {
         this.fileNumber = fileNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * 档案编号。 
-     * @return fileNumber
-     */
+    /** 档案编号。
+     * 
+     * @return fileNumber */
     public String getFileNumber() {
         return fileNumber;
     }
@@ -357,20 +265,14 @@ public class DriverLicenseResult  {
         this.fileNumber = fileNumber;
     }
 
-    
-
     public DriverLicenseResult withRecord(String record) {
         this.record = record;
         return this;
     }
 
-    
-
-
-    /**
-     * 记录。 
-     * @return record
-     */
+    /** 记录。
+     * 
+     * @return record */
     public String getRecord() {
         return record;
     }
@@ -378,8 +280,6 @@ public class DriverLicenseResult  {
     public void setRecord(String record) {
         this.record = record;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -390,24 +290,37 @@ public class DriverLicenseResult  {
             return false;
         }
         DriverLicenseResult driverLicenseResult = (DriverLicenseResult) o;
-        return Objects.equals(this.number, driverLicenseResult.number) &&
-            Objects.equals(this.name, driverLicenseResult.name) &&
-            Objects.equals(this.sex, driverLicenseResult.sex) &&
-            Objects.equals(this.nationality, driverLicenseResult.nationality) &&
-            Objects.equals(this.address, driverLicenseResult.address) &&
-            Objects.equals(this.birth, driverLicenseResult.birth) &&
-            Objects.equals(this.issueDate, driverLicenseResult.issueDate) &&
-            Objects.equals(this.propertyClass, driverLicenseResult.propertyClass) &&
-            Objects.equals(this.validFrom, driverLicenseResult.validFrom) &&
-            Objects.equals(this.validTo, driverLicenseResult.validTo) &&
-            Objects.equals(this.issuingAuthority, driverLicenseResult.issuingAuthority) &&
-            Objects.equals(this.fileNumber, driverLicenseResult.fileNumber) &&
-            Objects.equals(this.record, driverLicenseResult.record);
+        return Objects.equals(this.number, driverLicenseResult.number)
+            && Objects.equals(this.name, driverLicenseResult.name) && Objects.equals(this.sex, driverLicenseResult.sex)
+            && Objects.equals(this.nationality, driverLicenseResult.nationality)
+            && Objects.equals(this.address, driverLicenseResult.address)
+            && Objects.equals(this.birth, driverLicenseResult.birth)
+            && Objects.equals(this.issueDate, driverLicenseResult.issueDate)
+            && Objects.equals(this.propertyClass, driverLicenseResult.propertyClass)
+            && Objects.equals(this.validFrom, driverLicenseResult.validFrom)
+            && Objects.equals(this.validTo, driverLicenseResult.validTo)
+            && Objects.equals(this.issuingAuthority, driverLicenseResult.issuingAuthority)
+            && Objects.equals(this.fileNumber, driverLicenseResult.fileNumber)
+            && Objects.equals(this.record, driverLicenseResult.record);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(number, name, sex, nationality, address, birth, issueDate, propertyClass, validFrom, validTo, issuingAuthority, fileNumber, record);
+        return Objects.hash(number,
+            name,
+            sex,
+            nationality,
+            address,
+            birth,
+            issueDate,
+            propertyClass,
+            validFrom,
+            validTo,
+            issuingAuthority,
+            fileNumber,
+            record);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -428,16 +341,13 @@ public class DriverLicenseResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

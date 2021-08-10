@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * PwdResetRequest
- */
-public class PwdResetRequest  {
-
-
+/** PwdResetRequest */
+public class PwdResetRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_user_pwd")
-    
+    @JsonProperty(value = "db_user_pwd")
+
     private String dbUserPwd;
 
     public PwdResetRequest withDbUserPwd(String dbUserPwd) {
@@ -28,13 +18,9 @@ public class PwdResetRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库密码
-     * @return dbUserPwd
-     */
+    /** 数据库密码
+     * 
+     * @return dbUserPwd */
     public String getDbUserPwd() {
         return dbUserPwd;
     }
@@ -42,8 +28,6 @@ public class PwdResetRequest  {
     public void setDbUserPwd(String dbUserPwd) {
         this.dbUserPwd = dbUserPwd;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class PwdResetRequest  {
         PwdResetRequest pwdResetRequest = (PwdResetRequest) o;
         return Objects.equals(this.dbUserPwd, pwdResetRequest.dbUserPwd);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(dbUserPwd);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class PwdResetRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

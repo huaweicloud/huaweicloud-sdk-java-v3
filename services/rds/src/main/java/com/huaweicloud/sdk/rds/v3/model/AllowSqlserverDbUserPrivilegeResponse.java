@@ -1,28 +1,17 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class AllowSqlserverDbUserPrivilegeResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resp")
-    
+    @JsonProperty(value = "resp")
+
     private String resp;
 
     public AllowSqlserverDbUserPrivilegeResponse withResp(String resp) {
@@ -30,13 +19,9 @@ public class AllowSqlserverDbUserPrivilegeResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 操作结果。
-     * @return resp
-     */
+    /** 操作结果。
+     * 
+     * @return resp */
     public String getResp() {
         return resp;
     }
@@ -44,8 +29,6 @@ public class AllowSqlserverDbUserPrivilegeResponse extends SdkResponse {
     public void setResp(String resp) {
         this.resp = resp;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -55,13 +38,16 @@ public class AllowSqlserverDbUserPrivilegeResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        AllowSqlserverDbUserPrivilegeResponse allowSqlserverDbUserPrivilegeResponse = (AllowSqlserverDbUserPrivilegeResponse) o;
+        AllowSqlserverDbUserPrivilegeResponse allowSqlserverDbUserPrivilegeResponse =
+            (AllowSqlserverDbUserPrivilegeResponse) o;
         return Objects.equals(this.resp, allowSqlserverDbUserPrivilegeResponse.resp);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resp);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -70,16 +56,13 @@ public class AllowSqlserverDbUserPrivilegeResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

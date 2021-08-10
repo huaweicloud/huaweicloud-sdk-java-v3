@@ -1,68 +1,51 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * AccountBalanceV2
- */
-public class AccountBalanceV2  {
-
-
+/** AccountBalanceV2 */
+public class AccountBalanceV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="account_id")
-    
+    @JsonProperty(value = "account_id")
+
     private String accountId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="account_type")
-    
+    @JsonProperty(value = "account_type")
+
     private Integer accountType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amount")
-    
+    @JsonProperty(value = "amount")
+
     private Double amount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="currency")
-    
+    @JsonProperty(value = "currency")
+
     private String currency;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="designated_amount")
-    
+    @JsonProperty(value = "designated_amount")
+
     private Double designatedAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="credit_amount")
-    
+    @JsonProperty(value = "credit_amount")
+
     private Double creditAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="measure_id")
-    
+    @JsonProperty(value = "measure_id")
+
     private Integer measureId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="memo")
-    
+    @JsonProperty(value = "memo")
+
     private String memo;
 
     public AccountBalanceV2 withAccountId(String accountId) {
@@ -70,13 +53,9 @@ public class AccountBalanceV2  {
         return this;
     }
 
-    
-
-
-    /**
-     * 账户标识。
-     * @return accountId
-     */
+    /** 账户标识。
+     * 
+     * @return accountId */
     public String getAccountId() {
         return accountId;
     }
@@ -85,20 +64,14 @@ public class AccountBalanceV2  {
         this.accountId = accountId;
     }
 
-    
-
     public AccountBalanceV2 withAccountType(Integer accountType) {
         this.accountType = accountType;
         return this;
     }
 
-    
-
-
-    /**
-     * 账户类型： 1：余额2：信用5：奖励7：保证金8：可拨款
-     * @return accountType
-     */
+    /** 账户类型： 1：余额2：信用5：奖励7：保证金8：可拨款
+     * 
+     * @return accountType */
     public Integer getAccountType() {
         return accountType;
     }
@@ -107,20 +80,14 @@ public class AccountBalanceV2  {
         this.accountType = accountType;
     }
 
-    
-
     public AccountBalanceV2 withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
 
-    
-
-
-    /**
-     * 账户余额。
-     * @return amount
-     */
+    /** 账户余额。
+     * 
+     * @return amount */
     public Double getAmount() {
         return amount;
     }
@@ -129,20 +96,14 @@ public class AccountBalanceV2  {
         this.amount = amount;
     }
 
-    
-
     public AccountBalanceV2 withCurrency(String currency) {
         this.currency = currency;
         return this;
     }
 
-    
-
-
-    /**
-     * 币种。 CNY：人民币。
-     * @return currency
-     */
+    /** 币种。 CNY：人民币。
+     * 
+     * @return currency */
     public String getCurrency() {
         return currency;
     }
@@ -151,20 +112,14 @@ public class AccountBalanceV2  {
         this.currency = currency;
     }
 
-    
-
     public AccountBalanceV2 withDesignatedAmount(Double designatedAmount) {
         this.designatedAmount = designatedAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 专款专用余额。
-     * @return designatedAmount
-     */
+    /** 专款专用余额。
+     * 
+     * @return designatedAmount */
     public Double getDesignatedAmount() {
         return designatedAmount;
     }
@@ -173,20 +128,14 @@ public class AccountBalanceV2  {
         this.designatedAmount = designatedAmount;
     }
 
-    
-
     public AccountBalanceV2 withCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 总信用额度。只有account_type取值为2时，该字段才有效。
-     * @return creditAmount
-     */
+    /** 总信用额度。只有account_type取值为2时，该字段才有效。
+     * 
+     * @return creditAmount */
     public Double getCreditAmount() {
         return creditAmount;
     }
@@ -195,20 +144,14 @@ public class AccountBalanceV2  {
         this.creditAmount = creditAmount;
     }
 
-    
-
     public AccountBalanceV2 withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
     }
 
-    
-
-
-    /**
-     * 度量单位。 1：元。
-     * @return measureId
-     */
+    /** 度量单位。 1：元。
+     * 
+     * @return measureId */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -217,20 +160,14 @@ public class AccountBalanceV2  {
         this.measureId = measureId;
     }
 
-    
-
     public AccountBalanceV2 withMemo(String memo) {
         this.memo = memo;
         return this;
     }
 
-    
-
-
-    /**
-     * 备注。
-     * @return memo
-     */
+    /** 备注。
+     * 
+     * @return memo */
     public String getMemo() {
         return memo;
     }
@@ -238,8 +175,6 @@ public class AccountBalanceV2  {
     public void setMemo(String memo) {
         this.memo = memo;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -250,19 +185,21 @@ public class AccountBalanceV2  {
             return false;
         }
         AccountBalanceV2 accountBalanceV2 = (AccountBalanceV2) o;
-        return Objects.equals(this.accountId, accountBalanceV2.accountId) &&
-            Objects.equals(this.accountType, accountBalanceV2.accountType) &&
-            Objects.equals(this.amount, accountBalanceV2.amount) &&
-            Objects.equals(this.currency, accountBalanceV2.currency) &&
-            Objects.equals(this.designatedAmount, accountBalanceV2.designatedAmount) &&
-            Objects.equals(this.creditAmount, accountBalanceV2.creditAmount) &&
-            Objects.equals(this.measureId, accountBalanceV2.measureId) &&
-            Objects.equals(this.memo, accountBalanceV2.memo);
+        return Objects.equals(this.accountId, accountBalanceV2.accountId)
+            && Objects.equals(this.accountType, accountBalanceV2.accountType)
+            && Objects.equals(this.amount, accountBalanceV2.amount)
+            && Objects.equals(this.currency, accountBalanceV2.currency)
+            && Objects.equals(this.designatedAmount, accountBalanceV2.designatedAmount)
+            && Objects.equals(this.creditAmount, accountBalanceV2.creditAmount)
+            && Objects.equals(this.measureId, accountBalanceV2.measureId)
+            && Objects.equals(this.memo, accountBalanceV2.memo);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(accountId, accountType, amount, currency, designatedAmount, creditAmount, measureId, memo);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -278,16 +215,13 @@ public class AccountBalanceV2  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

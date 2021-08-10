@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteEnvironmentVariableV2Request  {
-
-
+/** Request Object */
+public class DeleteEnvironmentVariableV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_variable_id")
-    
+    @JsonProperty(value = "env_variable_id")
+
     private String envVariableId;
 
     public DeleteEnvironmentVariableV2Request withInstanceId(String instanceId) {
@@ -34,13 +23,9 @@ public class DeleteEnvironmentVariableV2Request  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例编号
-     * @return instanceId
-     */
+    /** 实例编号
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -49,20 +34,14 @@ public class DeleteEnvironmentVariableV2Request  {
         this.instanceId = instanceId;
     }
 
-    
-
     public DeleteEnvironmentVariableV2Request withEnvVariableId(String envVariableId) {
         this.envVariableId = envVariableId;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境变量的ID
-     * @return envVariableId
-     */
+    /** 环境变量的ID
+     * 
+     * @return envVariableId */
     public String getEnvVariableId() {
         return envVariableId;
     }
@@ -70,8 +49,6 @@ public class DeleteEnvironmentVariableV2Request  {
     public void setEnvVariableId(String envVariableId) {
         this.envVariableId = envVariableId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class DeleteEnvironmentVariableV2Request  {
             return false;
         }
         DeleteEnvironmentVariableV2Request deleteEnvironmentVariableV2Request = (DeleteEnvironmentVariableV2Request) o;
-        return Objects.equals(this.instanceId, deleteEnvironmentVariableV2Request.instanceId) &&
-            Objects.equals(this.envVariableId, deleteEnvironmentVariableV2Request.envVariableId);
+        return Objects.equals(this.instanceId, deleteEnvironmentVariableV2Request.instanceId)
+            && Objects.equals(this.envVariableId, deleteEnvironmentVariableV2Request.envVariableId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, envVariableId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class DeleteEnvironmentVariableV2Request  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

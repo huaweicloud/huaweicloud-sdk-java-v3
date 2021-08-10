@@ -1,73 +1,51 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 实例备份信息。
- */
-public class BackupRecordResponse  {
-
-
+/** 实例备份信息。 */
+public class BackupRecordResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_id")
-    
+    @JsonProperty(value = "backup_id")
+
     private String backupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="period")
-    
+    @JsonProperty(value = "period")
+
     private String period;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_name")
-    
+    @JsonProperty(value = "backup_name")
+
     private String backupName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Long size;
-    /**
-     * 备份类型。 - manual：表示备份类型为手动备份 - auto：表示备份类型为自动备份 
-     */
+
+    /** 备份类型。 - manual：表示备份类型为手动备份 - auto：表示备份类型为自动备份 */
     public static final class BackupTypeEnum {
 
-        
-        /**
-         * Enum MANUAL for value: "manual"
-         */
+        /** Enum MANUAL for value: "manual" */
         public static final BackupTypeEnum MANUAL = new BackupTypeEnum("manual");
-        
-        /**
-         * Enum AUTO for value: "auto"
-         */
+
+        /** Enum AUTO for value: "auto" */
         public static final BackupTypeEnum AUTO = new BackupTypeEnum("auto");
-        
 
         private static final Map<String, BackupTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -96,7 +74,7 @@ public class BackupRecordResponse  {
 
         @JsonCreator
         public static BackupTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             BackupTypeEnum result = STATIC_FIELDS.get(value);
@@ -107,7 +85,7 @@ public class BackupRecordResponse  {
         }
 
         public static BackupTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             BackupTypeEnum result = STATIC_FIELDS.get(value);
@@ -131,77 +109,56 @@ public class BackupRecordResponse  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_type")
-    
+    @JsonProperty(value = "backup_type")
+
     private BackupTypeEnum backupType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private String updatedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="progress")
-    
+    @JsonProperty(value = "progress")
+
     private String progress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
+
     private String errorCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
+
     private String remark;
-    /**
-     * 备份状态。 - waiting：等待中。 - backuping：备份中。 - succeed：备份成功。 - failed：备份失败。 - expired：备份文件过期。 - deleted：已手动删除备份文件。 
-     */
+
+    /** 备份状态。 - waiting：等待中。 - backuping：备份中。 - succeed：备份成功。 - failed：备份失败。 - expired：备份文件过期。 - deleted：已手动删除备份文件。 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum WAITING for value: "waiting"
-         */
+        /** Enum WAITING for value: "waiting" */
         public static final StatusEnum WAITING = new StatusEnum("waiting");
-        
-        /**
-         * Enum BACKUPING for value: "backuping"
-         */
+
+        /** Enum BACKUPING for value: "backuping" */
         public static final StatusEnum BACKUPING = new StatusEnum("backuping");
-        
-        /**
-         * Enum SUCCEED for value: "succeed"
-         */
+
+        /** Enum SUCCEED for value: "succeed" */
         public static final StatusEnum SUCCEED = new StatusEnum("succeed");
-        
-        /**
-         * Enum FAILED for value: "failed"
-         */
+
+        /** Enum FAILED for value: "failed" */
         public static final StatusEnum FAILED = new StatusEnum("failed");
-        
-        /**
-         * Enum EXPIRED for value: "expired"
-         */
+
+        /** Enum EXPIRED for value: "expired" */
         public static final StatusEnum EXPIRED = new StatusEnum("expired");
-        
-        /**
-         * Enum DELETED for value: "deleted"
-         */
+
+        /** Enum DELETED for value: "deleted" */
         public static final StatusEnum DELETED = new StatusEnum("deleted");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -234,7 +191,7 @@ public class BackupRecordResponse  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -245,7 +202,7 @@ public class BackupRecordResponse  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -269,16 +226,14 @@ public class BackupRecordResponse  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_support_restore")
-    
+    @JsonProperty(value = "is_support_restore")
+
     private String isSupportRestore;
 
     public BackupRecordResponse withBackupId(String backupId) {
@@ -286,13 +241,9 @@ public class BackupRecordResponse  {
         return this;
     }
 
-    
-
-
-    /**
-     * 备份记录ID。
-     * @return backupId
-     */
+    /** 备份记录ID。
+     * 
+     * @return backupId */
     public String getBackupId() {
         return backupId;
     }
@@ -301,20 +252,14 @@ public class BackupRecordResponse  {
         this.backupId = backupId;
     }
 
-    
-
     public BackupRecordResponse withPeriod(String period) {
         this.period = period;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份执行时间段。
-     * @return period
-     */
+    /** 备份执行时间段。
+     * 
+     * @return period */
     public String getPeriod() {
         return period;
     }
@@ -323,20 +268,14 @@ public class BackupRecordResponse  {
         this.period = period;
     }
 
-    
-
     public BackupRecordResponse withBackupName(String backupName) {
         this.backupName = backupName;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份记录名称。
-     * @return backupName
-     */
+    /** 备份记录名称。
+     * 
+     * @return backupName */
     public String getBackupName() {
         return backupName;
     }
@@ -345,20 +284,14 @@ public class BackupRecordResponse  {
         this.backupName = backupName;
     }
 
-    
-
     public BackupRecordResponse withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -367,20 +300,14 @@ public class BackupRecordResponse  {
         this.instanceId = instanceId;
     }
 
-    
-
     public BackupRecordResponse withSize(Long size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份文件大小（Byte）。
-     * @return size
-     */
+    /** 备份文件大小（Byte）。
+     * 
+     * @return size */
     public Long getSize() {
         return size;
     }
@@ -389,20 +316,14 @@ public class BackupRecordResponse  {
         this.size = size;
     }
 
-    
-
     public BackupRecordResponse withBackupType(BackupTypeEnum backupType) {
         this.backupType = backupType;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份类型。 - manual：表示备份类型为手动备份 - auto：表示备份类型为自动备份 
-     * @return backupType
-     */
+    /** 备份类型。 - manual：表示备份类型为手动备份 - auto：表示备份类型为自动备份
+     * 
+     * @return backupType */
     public BackupTypeEnum getBackupType() {
         return backupType;
     }
@@ -411,20 +332,14 @@ public class BackupRecordResponse  {
         this.backupType = backupType;
     }
 
-    
-
     public BackupRecordResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份任务创建时间。
-     * @return createdAt
-     */
+    /** 备份任务创建时间。
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -433,20 +348,14 @@ public class BackupRecordResponse  {
         this.createdAt = createdAt;
     }
 
-    
-
     public BackupRecordResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份完成时间。
-     * @return updatedAt
-     */
+    /** 备份完成时间。
+     * 
+     * @return updatedAt */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -455,20 +364,14 @@ public class BackupRecordResponse  {
         this.updatedAt = updatedAt;
     }
 
-    
-
     public BackupRecordResponse withProgress(String progress) {
         this.progress = progress;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份进度。
-     * @return progress
-     */
+    /** 备份进度。
+     * 
+     * @return progress */
     public String getProgress() {
         return progress;
     }
@@ -477,20 +380,16 @@ public class BackupRecordResponse  {
         this.progress = progress;
     }
 
-    
-
     public BackupRecordResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份失败后错误码 * `dcs.08.0001` - 启动备份恢复工具失败。 * `dcs.08.0002` - 执行超时。 * `dcs.08.0003` - 删除桶失败。 * `dcs.08.0004` - 获取ak/sk 失败。 * `dcs.08.0005` - 创建桶失败。 * `dcs.08.0006` - 查询备份数据大小失败。 * `dcs.08.0007` - 恢复时同步数据失败。 * `dcs.08.0008` - 自动备份任务未运行，实例正在运行其他任务。 
-     * @return errorCode
-     */
+    /** 备份失败后错误码 * `dcs.08.0001` - 启动备份恢复工具失败。 * `dcs.08.0002` - 执行超时。 * `dcs.08.0003` - 删除桶失败。 * `dcs.08.0004` -
+     * 获取ak/sk 失败。 * `dcs.08.0005` - 创建桶失败。 * `dcs.08.0006` - 查询备份数据大小失败。 * `dcs.08.0007` - 恢复时同步数据失败。 * `dcs.08.0008` -
+     * 自动备份任务未运行，实例正在运行其他任务。
+     * 
+     * @return errorCode */
     public String getErrorCode() {
         return errorCode;
     }
@@ -499,20 +398,14 @@ public class BackupRecordResponse  {
         this.errorCode = errorCode;
     }
 
-    
-
     public BackupRecordResponse withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份缓存实例的备注信息。
-     * @return remark
-     */
+    /** 备份缓存实例的备注信息。
+     * 
+     * @return remark */
     public String getRemark() {
         return remark;
     }
@@ -521,20 +414,14 @@ public class BackupRecordResponse  {
         this.remark = remark;
     }
 
-    
-
     public BackupRecordResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份状态。 - waiting：等待中。 - backuping：备份中。 - succeed：备份成功。 - failed：备份失败。 - expired：备份文件过期。 - deleted：已手动删除备份文件。 
-     * @return status
-     */
+    /** 备份状态。 - waiting：等待中。 - backuping：备份中。 - succeed：备份成功。 - failed：备份失败。 - expired：备份文件过期。 - deleted：已手动删除备份文件。
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -543,20 +430,14 @@ public class BackupRecordResponse  {
         this.status = status;
     }
 
-    
-
     public BackupRecordResponse withIsSupportRestore(String isSupportRestore) {
         this.isSupportRestore = isSupportRestore;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否可以进行恢复操作，取值为TRUE或FALSE。
-     * @return isSupportRestore
-     */
+    /** 是否可以进行恢复操作，取值为TRUE或FALSE。
+     * 
+     * @return isSupportRestore */
     public String getIsSupportRestore() {
         return isSupportRestore;
     }
@@ -564,8 +445,6 @@ public class BackupRecordResponse  {
     public void setIsSupportRestore(String isSupportRestore) {
         this.isSupportRestore = isSupportRestore;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -576,24 +455,38 @@ public class BackupRecordResponse  {
             return false;
         }
         BackupRecordResponse backupRecordResponse = (BackupRecordResponse) o;
-        return Objects.equals(this.backupId, backupRecordResponse.backupId) &&
-            Objects.equals(this.period, backupRecordResponse.period) &&
-            Objects.equals(this.backupName, backupRecordResponse.backupName) &&
-            Objects.equals(this.instanceId, backupRecordResponse.instanceId) &&
-            Objects.equals(this.size, backupRecordResponse.size) &&
-            Objects.equals(this.backupType, backupRecordResponse.backupType) &&
-            Objects.equals(this.createdAt, backupRecordResponse.createdAt) &&
-            Objects.equals(this.updatedAt, backupRecordResponse.updatedAt) &&
-            Objects.equals(this.progress, backupRecordResponse.progress) &&
-            Objects.equals(this.errorCode, backupRecordResponse.errorCode) &&
-            Objects.equals(this.remark, backupRecordResponse.remark) &&
-            Objects.equals(this.status, backupRecordResponse.status) &&
-            Objects.equals(this.isSupportRestore, backupRecordResponse.isSupportRestore);
+        return Objects.equals(this.backupId, backupRecordResponse.backupId)
+            && Objects.equals(this.period, backupRecordResponse.period)
+            && Objects.equals(this.backupName, backupRecordResponse.backupName)
+            && Objects.equals(this.instanceId, backupRecordResponse.instanceId)
+            && Objects.equals(this.size, backupRecordResponse.size)
+            && Objects.equals(this.backupType, backupRecordResponse.backupType)
+            && Objects.equals(this.createdAt, backupRecordResponse.createdAt)
+            && Objects.equals(this.updatedAt, backupRecordResponse.updatedAt)
+            && Objects.equals(this.progress, backupRecordResponse.progress)
+            && Objects.equals(this.errorCode, backupRecordResponse.errorCode)
+            && Objects.equals(this.remark, backupRecordResponse.remark)
+            && Objects.equals(this.status, backupRecordResponse.status)
+            && Objects.equals(this.isSupportRestore, backupRecordResponse.isSupportRestore);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(backupId, period, backupName, instanceId, size, backupType, createdAt, updatedAt, progress, errorCode, remark, status, isSupportRestore);
+        return Objects.hash(backupId,
+            period,
+            backupName,
+            instanceId,
+            size,
+            backupType,
+            createdAt,
+            updatedAt,
+            progress,
+            errorCode,
+            remark,
+            status,
+            isSupportRestore);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -614,16 +507,13 @@ public class BackupRecordResponse  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

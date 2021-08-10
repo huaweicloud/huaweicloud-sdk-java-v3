@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListFlavorsRequest  {
-
-
+/** Request Object */
+public class ListFlavorsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engine_name")
-    
+    @JsonProperty(value = "engine_name")
+
     private String engineName;
 
     public ListFlavorsRequest withRegion(String region) {
@@ -34,13 +23,9 @@ public class ListFlavorsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例所在区域。
-     * @return region
-     */
+    /** 实例所在区域。
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -49,20 +34,15 @@ public class ListFlavorsRequest  {
         this.region = region;
     }
 
-    
-
     public ListFlavorsRequest withEngineName(String engineName) {
         this.engineName = engineName;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库类型。   - 取值为“cassandra”，表示查询GaussDB(for Cassandra)数据库实例支持的规格。   - 取值为“mongodb”，表示查询GaussDB(for Mongo)数据库实例支持的规格。   - 取值为“influxdb”，表示查询GaussDB(for Influx)数据库实例支持的规格。   - 如果不传该参数，默认为“cassandra”。
-     * @return engineName
-     */
+    /** 数据库类型。 - 取值为“cassandra”，表示查询GaussDB(for Cassandra)数据库实例支持的规格。 - 取值为“mongodb”，表示查询GaussDB(for Mongo)数据库实例支持的规格。 -
+     * 取值为“influxdb”，表示查询GaussDB(for Influx)数据库实例支持的规格。 - 如果不传该参数，默认为“cassandra”。
+     * 
+     * @return engineName */
     public String getEngineName() {
         return engineName;
     }
@@ -70,8 +50,6 @@ public class ListFlavorsRequest  {
     public void setEngineName(String engineName) {
         this.engineName = engineName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +60,15 @@ public class ListFlavorsRequest  {
             return false;
         }
         ListFlavorsRequest listFlavorsRequest = (ListFlavorsRequest) o;
-        return Objects.equals(this.region, listFlavorsRequest.region) &&
-            Objects.equals(this.engineName, listFlavorsRequest.engineName);
+        return Objects.equals(this.region, listFlavorsRequest.region)
+            && Objects.equals(this.engineName, listFlavorsRequest.engineName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(region, engineName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +78,13 @@ public class ListFlavorsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

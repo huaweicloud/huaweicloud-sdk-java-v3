@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowDetailsOfAppV2Request  {
-
-
+/** Request Object */
+public class ShowDetailsOfAppV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
     public ShowDetailsOfAppV2Request withInstanceId(String instanceId) {
@@ -34,13 +23,9 @@ public class ShowDetailsOfAppV2Request  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -49,20 +34,14 @@ public class ShowDetailsOfAppV2Request  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ShowDetailsOfAppV2Request withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用编号
-     * @return appId
-     */
+    /** 应用编号
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -70,8 +49,6 @@ public class ShowDetailsOfAppV2Request  {
     public void setAppId(String appId) {
         this.appId = appId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class ShowDetailsOfAppV2Request  {
             return false;
         }
         ShowDetailsOfAppV2Request showDetailsOfAppV2Request = (ShowDetailsOfAppV2Request) o;
-        return Objects.equals(this.instanceId, showDetailsOfAppV2Request.instanceId) &&
-            Objects.equals(this.appId, showDetailsOfAppV2Request.appId);
+        return Objects.equals(this.instanceId, showDetailsOfAppV2Request.instanceId)
+            && Objects.equals(this.appId, showDetailsOfAppV2Request.appId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, appId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class ShowDetailsOfAppV2Request  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

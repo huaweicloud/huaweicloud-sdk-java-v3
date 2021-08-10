@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.dms.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 消息的内容。
- */
-public class ConsumeDeadlettersMessageMessage  {
-
-
+/** 消息的内容。 */
+public class ConsumeDeadlettersMessageMessage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private Object body;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="attributes")
-    
+    @JsonProperty(value = "attributes")
+
     private Object attributes;
 
     public ConsumeDeadlettersMessageMessage withBody(Object body) {
@@ -34,13 +23,9 @@ public class ConsumeDeadlettersMessageMessage  {
         return this;
     }
 
-    
-
-
-    /**
-     * 消息体的内容。
-     * @return body
-     */
+    /** 消息体的内容。
+     * 
+     * @return body */
     public Object getBody() {
         return body;
     }
@@ -49,20 +34,14 @@ public class ConsumeDeadlettersMessageMessage  {
         this.body = body;
     }
 
-    
-
     public ConsumeDeadlettersMessageMessage withAttributes(Object attributes) {
         this.attributes = attributes;
         return this;
     }
 
-    
-
-
-    /**
-     * 属性的列表。
-     * @return attributes
-     */
+    /** 属性的列表。
+     * 
+     * @return attributes */
     public Object getAttributes() {
         return attributes;
     }
@@ -70,8 +49,6 @@ public class ConsumeDeadlettersMessageMessage  {
     public void setAttributes(Object attributes) {
         this.attributes = attributes;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class ConsumeDeadlettersMessageMessage  {
             return false;
         }
         ConsumeDeadlettersMessageMessage consumeDeadlettersMessageMessage = (ConsumeDeadlettersMessageMessage) o;
-        return Objects.equals(this.body, consumeDeadlettersMessageMessage.body) &&
-            Objects.equals(this.attributes, consumeDeadlettersMessageMessage.attributes);
+        return Objects.equals(this.body, consumeDeadlettersMessageMessage.body)
+            && Objects.equals(this.attributes, consumeDeadlettersMessageMessage.attributes);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(body, attributes);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class ConsumeDeadlettersMessageMessage  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

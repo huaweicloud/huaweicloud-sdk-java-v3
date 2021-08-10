@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Rules
- */
-public class Rules  {
-
-
+/** Rules */
+public class Rules {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rule_type")
-    
+    @JsonProperty(value = "rule_type")
+
     private Integer ruleType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content")
-    
+    @JsonProperty(value = "content")
+
     private String content;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ttl")
-    
+    @JsonProperty(value = "ttl")
+
     private Integer ttl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ttl_type")
-    
+    @JsonProperty(value = "ttl_type")
+
     private Integer ttlType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="priority")
-    
+    @JsonProperty(value = "priority")
+
     private Integer priority;
 
     public Rules withRuleType(Integer ruleType) {
@@ -52,13 +38,9 @@ public class Rules  {
         return this;
     }
 
-    
-
-
-    /**
-     * 0：全部类型，表示匹配所有文件，默认值。  1：文件类型，表示按文件后缀匹配。  2：文件夹类型，表示按目录匹配。  3：文件全路径类型，表示按文件全路径匹配。
-     * @return ruleType
-     */
+    /** 0：全部类型，表示匹配所有文件，默认值。 1：文件类型，表示按文件后缀匹配。 2：文件夹类型，表示按目录匹配。 3：文件全路径类型，表示按文件全路径匹配。
+     * 
+     * @return ruleType */
     public Integer getRuleType() {
         return ruleType;
     }
@@ -67,20 +49,15 @@ public class Rules  {
         this.ruleType = ruleType;
     }
 
-    
-
     public Rules withContent(String content) {
         this.content = content;
         return this;
     }
 
-    
-
-
-    /**
-     * 缓存匹配设置。  当rule_type为0时，为空。  当rule_type为1时，为文件后缀，输入首字符为“.”，以“;”进行分隔，如.jpg;.zip;.exe。  当rule_type为2时，为目录，输入要求以“/”作为首字符，以“;”进行分隔，如/test/folder01;/test/folder02。
-     * @return content
-     */
+    /** 缓存匹配设置。 当rule_type为0时，为空。 当rule_type为1时，为文件后缀，输入首字符为“.”，以“;”进行分隔，如.jpg;.zip;.exe。
+     * 当rule_type为2时，为目录，输入要求以“/”作为首字符，以“;”进行分隔，如/test/folder01;/test/folder02。
+     * 
+     * @return content */
     public String getContent() {
         return content;
     }
@@ -89,20 +66,14 @@ public class Rules  {
         this.content = content;
     }
 
-    
-
     public Rules withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
     }
 
-    
-
-
-    /**
-     * 缓存时间。最大支持365天。
-     * @return ttl
-     */
+    /** 缓存时间。最大支持365天。
+     * 
+     * @return ttl */
     public Integer getTtl() {
         return ttl;
     }
@@ -111,20 +82,14 @@ public class Rules  {
         this.ttl = ttl;
     }
 
-    
-
     public Rules withTtlType(Integer ttlType) {
         this.ttlType = ttlType;
         return this;
     }
 
-    
-
-
-    /**
-     * 缓存时间单位。1：秒；2：分；3：小时；4：天。
-     * @return ttlType
-     */
+    /** 缓存时间单位。1：秒；2：分；3：小时；4：天。
+     * 
+     * @return ttlType */
     public Integer getTtlType() {
         return ttlType;
     }
@@ -133,20 +98,14 @@ public class Rules  {
         this.ttlType = ttlType;
     }
 
-    
-
     public Rules withPriority(Integer priority) {
         this.priority = priority;
         return this;
     }
 
-    
-
-
-    /**
-     * 此条配置的权重值, 默认值1，数值越大，优先级越高。取值范围为1-100，权重值不能相同。
-     * @return priority
-     */
+    /** 此条配置的权重值, 默认值1，数值越大，优先级越高。取值范围为1-100，权重值不能相同。
+     * 
+     * @return priority */
     public Integer getPriority() {
         return priority;
     }
@@ -154,8 +113,6 @@ public class Rules  {
     public void setPriority(Integer priority) {
         this.priority = priority;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +123,16 @@ public class Rules  {
             return false;
         }
         Rules rules = (Rules) o;
-        return Objects.equals(this.ruleType, rules.ruleType) &&
-            Objects.equals(this.content, rules.content) &&
-            Objects.equals(this.ttl, rules.ttl) &&
-            Objects.equals(this.ttlType, rules.ttlType) &&
-            Objects.equals(this.priority, rules.priority);
+        return Objects.equals(this.ruleType, rules.ruleType) && Objects.equals(this.content, rules.content)
+            && Objects.equals(this.ttl, rules.ttl) && Objects.equals(this.ttlType, rules.ttlType)
+            && Objects.equals(this.priority, rules.priority);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(ruleType, content, ttl, ttlType, priority);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +145,13 @@ public class Rules  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

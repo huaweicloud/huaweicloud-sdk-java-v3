@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.live.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * PeakBandwidthData
- */
-public class PeakBandwidthData  {
-
-
+/** PeakBandwidthData */
+public class PeakBandwidthData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private Long value;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
+
     private String domain;
 
     public PeakBandwidthData withValue(Long value) {
@@ -34,15 +23,9 @@ public class PeakBandwidthData  {
         return this;
     }
 
-    
-
-
-    /**
-     * 带宽峰值，单位为bps。
-     * minimum: 0
-     * maximum: -1
-     * @return value
-     */
+    /** 带宽峰值，单位为bps。 minimum: 0 maximum: -1
+     * 
+     * @return value */
     public Long getValue() {
         return value;
     }
@@ -51,20 +34,14 @@ public class PeakBandwidthData  {
         this.value = value;
     }
 
-    
-
     public PeakBandwidthData withDomain(String domain) {
         this.domain = domain;
         return this;
     }
 
-    
-
-
-    /**
-     * 播放域名。
-     * @return domain
-     */
+    /** 播放域名。
+     * 
+     * @return domain */
     public String getDomain() {
         return domain;
     }
@@ -72,8 +49,6 @@ public class PeakBandwidthData  {
     public void setDomain(String domain) {
         this.domain = domain;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +59,15 @@ public class PeakBandwidthData  {
             return false;
         }
         PeakBandwidthData peakBandwidthData = (PeakBandwidthData) o;
-        return Objects.equals(this.value, peakBandwidthData.value) &&
-            Objects.equals(this.domain, peakBandwidthData.domain);
+        return Objects.equals(this.value, peakBandwidthData.value)
+            && Objects.equals(this.domain, peakBandwidthData.domain);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(value, domain);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +77,13 @@ public class PeakBandwidthData  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,105 +1,82 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.time.OffsetDateTime;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * ThrottleBindingApiResp
- */
-public class ThrottleBindingApiResp  {
-
-
+/** ThrottleBindingApiResp */
+public class ThrottleBindingApiResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth_type")
-    
+    @JsonProperty(value = "auth_type")
+
     private String authType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_name")
-    
+    @JsonProperty(value = "group_name")
+
     private String groupName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publish_id")
-    
+    @JsonProperty(value = "publish_id")
+
     private String publishId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="throttle_apply_id")
-    
+    @JsonProperty(value = "throttle_apply_id")
+
     private String throttleApplyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apply_time")
-    
+    @JsonProperty(value = "apply_time")
+
     private OffsetDateTime applyTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
+
     private String remark;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="run_env_id")
-    
+    @JsonProperty(value = "run_env_id")
+
     private String runEnvId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private Integer type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="throttle_name")
-    
+    @JsonProperty(value = "throttle_name")
+
     private String throttleName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_uri")
-    
+    @JsonProperty(value = "req_uri")
+
     private String reqUri;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="run_env_name")
-    
+    @JsonProperty(value = "run_env_name")
+
     private String runEnvName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
     public ThrottleBindingApiResp withAuthType(String authType) {
@@ -107,13 +84,9 @@ public class ThrottleBindingApiResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * API的认证方式
-     * @return authType
-     */
+    /** API的认证方式
+     * 
+     * @return authType */
     public String getAuthType() {
         return authType;
     }
@@ -122,20 +95,14 @@ public class ThrottleBindingApiResp  {
         this.authType = authType;
     }
 
-    
-
     public ThrottleBindingApiResp withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
     }
 
-    
-
-
-    /**
-     * API所属分组的名称
-     * @return groupName
-     */
+    /** API所属分组的名称
+     * 
+     * @return groupName */
     public String getGroupName() {
         return groupName;
     }
@@ -144,20 +111,14 @@ public class ThrottleBindingApiResp  {
         this.groupName = groupName;
     }
 
-    
-
     public ThrottleBindingApiResp withPublishId(String publishId) {
         this.publishId = publishId;
         return this;
     }
 
-    
-
-
-    /**
-     * API的发布记录编号
-     * @return publishId
-     */
+    /** API的发布记录编号
+     * 
+     * @return publishId */
     public String getPublishId() {
         return publishId;
     }
@@ -166,20 +127,14 @@ public class ThrottleBindingApiResp  {
         this.publishId = publishId;
     }
 
-    
-
     public ThrottleBindingApiResp withThrottleApplyId(String throttleApplyId) {
         this.throttleApplyId = throttleApplyId;
         return this;
     }
 
-    
-
-
-    /**
-     * 与流控策略的绑定关系编号
-     * @return throttleApplyId
-     */
+    /** 与流控策略的绑定关系编号
+     * 
+     * @return throttleApplyId */
     public String getThrottleApplyId() {
         return throttleApplyId;
     }
@@ -188,20 +143,14 @@ public class ThrottleBindingApiResp  {
         this.throttleApplyId = throttleApplyId;
     }
 
-    
-
     public ThrottleBindingApiResp withApplyTime(OffsetDateTime applyTime) {
         this.applyTime = applyTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 已绑定的流控策略的绑定时间
-     * @return applyTime
-     */
+    /** 已绑定的流控策略的绑定时间
+     * 
+     * @return applyTime */
     public OffsetDateTime getApplyTime() {
         return applyTime;
     }
@@ -210,20 +159,14 @@ public class ThrottleBindingApiResp  {
         this.applyTime = applyTime;
     }
 
-    
-
     public ThrottleBindingApiResp withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
-    
-
-
-    /**
-     * API描述
-     * @return remark
-     */
+    /** API描述
+     * 
+     * @return remark */
     public String getRemark() {
         return remark;
     }
@@ -232,20 +175,14 @@ public class ThrottleBindingApiResp  {
         this.remark = remark;
     }
 
-    
-
     public ThrottleBindingApiResp withRunEnvId(String runEnvId) {
         this.runEnvId = runEnvId;
         return this;
     }
 
-    
-
-
-    /**
-     * 发布的环境id
-     * @return runEnvId
-     */
+    /** 发布的环境id
+     * 
+     * @return runEnvId */
     public String getRunEnvId() {
         return runEnvId;
     }
@@ -254,20 +191,14 @@ public class ThrottleBindingApiResp  {
         this.runEnvId = runEnvId;
     }
 
-    
-
     public ThrottleBindingApiResp withType(Integer type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * API类型
-     * @return type
-     */
+    /** API类型
+     * 
+     * @return type */
     public Integer getType() {
         return type;
     }
@@ -276,20 +207,14 @@ public class ThrottleBindingApiResp  {
         this.type = type;
     }
 
-    
-
     public ThrottleBindingApiResp withThrottleName(String throttleName) {
         this.throttleName = throttleName;
         return this;
     }
 
-    
-
-
-    /**
-     * 绑定的流控策略名称
-     * @return throttleName
-     */
+    /** 绑定的流控策略名称
+     * 
+     * @return throttleName */
     public String getThrottleName() {
         return throttleName;
     }
@@ -298,20 +223,14 @@ public class ThrottleBindingApiResp  {
         this.throttleName = throttleName;
     }
 
-    
-
     public ThrottleBindingApiResp withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
     }
 
-    
-
-
-    /**
-     * API的访问地址
-     * @return reqUri
-     */
+    /** API的访问地址
+     * 
+     * @return reqUri */
     public String getReqUri() {
         return reqUri;
     }
@@ -320,20 +239,14 @@ public class ThrottleBindingApiResp  {
         this.reqUri = reqUri;
     }
 
-    
-
     public ThrottleBindingApiResp withRunEnvName(String runEnvName) {
         this.runEnvName = runEnvName;
         return this;
     }
 
-    
-
-
-    /**
-     * 发布的环境名
-     * @return runEnvName
-     */
+    /** 发布的环境名
+     * 
+     * @return runEnvName */
     public String getRunEnvName() {
         return runEnvName;
     }
@@ -342,20 +255,14 @@ public class ThrottleBindingApiResp  {
         this.runEnvName = runEnvName;
     }
 
-    
-
     public ThrottleBindingApiResp withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * API所属分组的编号
-     * @return groupId
-     */
+    /** API所属分组的编号
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -364,20 +271,14 @@ public class ThrottleBindingApiResp  {
         this.groupId = groupId;
     }
 
-    
-
     public ThrottleBindingApiResp withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * API名称
-     * @return name
-     */
+    /** API名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -386,20 +287,14 @@ public class ThrottleBindingApiResp  {
         this.name = name;
     }
 
-    
-
     public ThrottleBindingApiResp withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * API编号
-     * @return id
-     */
+    /** API编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -407,8 +302,6 @@ public class ThrottleBindingApiResp  {
     public void setId(String id) {
         this.id = id;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -419,25 +312,40 @@ public class ThrottleBindingApiResp  {
             return false;
         }
         ThrottleBindingApiResp throttleBindingApiResp = (ThrottleBindingApiResp) o;
-        return Objects.equals(this.authType, throttleBindingApiResp.authType) &&
-            Objects.equals(this.groupName, throttleBindingApiResp.groupName) &&
-            Objects.equals(this.publishId, throttleBindingApiResp.publishId) &&
-            Objects.equals(this.throttleApplyId, throttleBindingApiResp.throttleApplyId) &&
-            Objects.equals(this.applyTime, throttleBindingApiResp.applyTime) &&
-            Objects.equals(this.remark, throttleBindingApiResp.remark) &&
-            Objects.equals(this.runEnvId, throttleBindingApiResp.runEnvId) &&
-            Objects.equals(this.type, throttleBindingApiResp.type) &&
-            Objects.equals(this.throttleName, throttleBindingApiResp.throttleName) &&
-            Objects.equals(this.reqUri, throttleBindingApiResp.reqUri) &&
-            Objects.equals(this.runEnvName, throttleBindingApiResp.runEnvName) &&
-            Objects.equals(this.groupId, throttleBindingApiResp.groupId) &&
-            Objects.equals(this.name, throttleBindingApiResp.name) &&
-            Objects.equals(this.id, throttleBindingApiResp.id);
+        return Objects.equals(this.authType, throttleBindingApiResp.authType)
+            && Objects.equals(this.groupName, throttleBindingApiResp.groupName)
+            && Objects.equals(this.publishId, throttleBindingApiResp.publishId)
+            && Objects.equals(this.throttleApplyId, throttleBindingApiResp.throttleApplyId)
+            && Objects.equals(this.applyTime, throttleBindingApiResp.applyTime)
+            && Objects.equals(this.remark, throttleBindingApiResp.remark)
+            && Objects.equals(this.runEnvId, throttleBindingApiResp.runEnvId)
+            && Objects.equals(this.type, throttleBindingApiResp.type)
+            && Objects.equals(this.throttleName, throttleBindingApiResp.throttleName)
+            && Objects.equals(this.reqUri, throttleBindingApiResp.reqUri)
+            && Objects.equals(this.runEnvName, throttleBindingApiResp.runEnvName)
+            && Objects.equals(this.groupId, throttleBindingApiResp.groupId)
+            && Objects.equals(this.name, throttleBindingApiResp.name)
+            && Objects.equals(this.id, throttleBindingApiResp.id);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(authType, groupName, publishId, throttleApplyId, applyTime, remark, runEnvId, type, throttleName, reqUri, runEnvName, groupId, name, id);
+        return Objects.hash(authType,
+            groupName,
+            publishId,
+            throttleApplyId,
+            applyTime,
+            remark,
+            runEnvId,
+            type,
+            throttleName,
+            reqUri,
+            runEnvName,
+            groupId,
+            name,
+            id);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -459,16 +367,13 @@ public class ThrottleBindingApiResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

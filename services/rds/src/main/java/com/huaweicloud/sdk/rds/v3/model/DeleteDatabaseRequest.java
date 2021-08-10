@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteDatabaseRequest  {
-
-
+/** Request Object */
+public class DeleteDatabaseRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_name")
-    
+    @JsonProperty(value = "db_name")
+
     private String dbName;
 
     public DeleteDatabaseRequest withXLanguage(String xLanguage) {
@@ -40,15 +28,11 @@ public class DeleteDatabaseRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -57,20 +41,14 @@ public class DeleteDatabaseRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public DeleteDatabaseRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -79,20 +57,14 @@ public class DeleteDatabaseRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public DeleteDatabaseRequest withDbName(String dbName) {
         this.dbName = dbName;
         return this;
     }
 
-    
-
-
-    /**
-     * 需要删除的数据库名。
-     * @return dbName
-     */
+    /** 需要删除的数据库名。
+     * 
+     * @return dbName */
     public String getDbName() {
         return dbName;
     }
@@ -100,8 +72,6 @@ public class DeleteDatabaseRequest  {
     public void setDbName(String dbName) {
         this.dbName = dbName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +82,16 @@ public class DeleteDatabaseRequest  {
             return false;
         }
         DeleteDatabaseRequest deleteDatabaseRequest = (DeleteDatabaseRequest) o;
-        return Objects.equals(this.xLanguage, deleteDatabaseRequest.xLanguage) &&
-            Objects.equals(this.instanceId, deleteDatabaseRequest.instanceId) &&
-            Objects.equals(this.dbName, deleteDatabaseRequest.dbName);
+        return Objects.equals(this.xLanguage, deleteDatabaseRequest.xLanguage)
+            && Objects.equals(this.instanceId, deleteDatabaseRequest.instanceId)
+            && Objects.equals(this.dbName, deleteDatabaseRequest.dbName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, dbName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +102,13 @@ public class DeleteDatabaseRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

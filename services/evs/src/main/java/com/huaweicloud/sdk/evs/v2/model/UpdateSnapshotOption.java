@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * UpdateSnapshotOption
- */
-public class UpdateSnapshotOption  {
-
-
+/** UpdateSnapshotOption */
+public class UpdateSnapshotOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public UpdateSnapshotOption withDescription(String description) {
@@ -34,13 +23,9 @@ public class UpdateSnapshotOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘快照描述。最大支持255个字节。
-     * @return description
-     */
+    /** 云硬盘快照描述。最大支持255个字节。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -49,20 +34,14 @@ public class UpdateSnapshotOption  {
         this.description = description;
     }
 
-    
-
     public UpdateSnapshotOption withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘快照名称。最大支持255个字节。
-     * @return name
-     */
+    /** 云硬盘快照名称。最大支持255个字节。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -70,8 +49,6 @@ public class UpdateSnapshotOption  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class UpdateSnapshotOption  {
             return false;
         }
         UpdateSnapshotOption updateSnapshotOption = (UpdateSnapshotOption) o;
-        return Objects.equals(this.description, updateSnapshotOption.description) &&
-            Objects.equals(this.name, updateSnapshotOption.name);
+        return Objects.equals(this.description, updateSnapshotOption.description)
+            && Objects.equals(this.name, updateSnapshotOption.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(description, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class UpdateSnapshotOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

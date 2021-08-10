@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListPipleineBuildResultRequest  {
-
-
+/** Request Object */
+public class ListPipleineBuildResultRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_date")
-    
+    @JsonProperty(value = "start_date")
+
     private String startDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_date")
-    
+    @JsonProperty(value = "end_date")
+
     private String endDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
     public ListPipleineBuildResultRequest withXLanguage(String xLanguage) {
@@ -58,15 +43,11 @@ public class ListPipleineBuildResultRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * @return xLanguage
-     */
+    /** 语言类型 中文:zh-cn 英文:en-us，默认en-us
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -75,20 +56,14 @@ public class ListPipleineBuildResultRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListPipleineBuildResultRequest withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目id
-     * @return projectId
-     */
+    /** 项目id
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -97,20 +72,14 @@ public class ListPipleineBuildResultRequest  {
         this.projectId = projectId;
     }
 
-    
-
     public ListPipleineBuildResultRequest withStartDate(String startDate) {
         this.startDate = startDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 起始日期,起始日期和结束日期间隔不超过一个月，查询包含起始日期
-     * @return startDate
-     */
+    /** 起始日期,起始日期和结束日期间隔不超过一个月，查询包含起始日期
+     * 
+     * @return startDate */
     public String getStartDate() {
         return startDate;
     }
@@ -119,20 +88,14 @@ public class ListPipleineBuildResultRequest  {
         this.startDate = startDate;
     }
 
-    
-
     public ListPipleineBuildResultRequest withEndDate(String endDate) {
         this.endDate = endDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 结束日期，起始日期和结束日期间隔不超过一个月，查询包含结束日期
-     * @return endDate
-     */
+    /** 结束日期，起始日期和结束日期间隔不超过一个月，查询包含结束日期
+     * 
+     * @return endDate */
     public String getEndDate() {
         return endDate;
     }
@@ -141,22 +104,14 @@ public class ListPipleineBuildResultRequest  {
         this.endDate = endDate;
     }
 
-    
-
     public ListPipleineBuildResultRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量,表示从此偏移量开始查询,offset大于等于0
-     * minimum: 0
-     * maximum: 200000
-     * @return offset
-     */
+    /** 偏移量,表示从此偏移量开始查询,offset大于等于0 minimum: 0 maximum: 200000
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -165,22 +120,14 @@ public class ListPipleineBuildResultRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListPipleineBuildResultRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每次查询的条目数量
-     * minimum: 10
-     * maximum: 500
-     * @return limit
-     */
+    /** 每次查询的条目数量 minimum: 10 maximum: 500
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -188,8 +135,6 @@ public class ListPipleineBuildResultRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -200,17 +145,19 @@ public class ListPipleineBuildResultRequest  {
             return false;
         }
         ListPipleineBuildResultRequest listPipleineBuildResultRequest = (ListPipleineBuildResultRequest) o;
-        return Objects.equals(this.xLanguage, listPipleineBuildResultRequest.xLanguage) &&
-            Objects.equals(this.projectId, listPipleineBuildResultRequest.projectId) &&
-            Objects.equals(this.startDate, listPipleineBuildResultRequest.startDate) &&
-            Objects.equals(this.endDate, listPipleineBuildResultRequest.endDate) &&
-            Objects.equals(this.offset, listPipleineBuildResultRequest.offset) &&
-            Objects.equals(this.limit, listPipleineBuildResultRequest.limit);
+        return Objects.equals(this.xLanguage, listPipleineBuildResultRequest.xLanguage)
+            && Objects.equals(this.projectId, listPipleineBuildResultRequest.projectId)
+            && Objects.equals(this.startDate, listPipleineBuildResultRequest.startDate)
+            && Objects.equals(this.endDate, listPipleineBuildResultRequest.endDate)
+            && Objects.equals(this.offset, listPipleineBuildResultRequest.offset)
+            && Objects.equals(this.limit, listPipleineBuildResultRequest.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, projectId, startDate, endDate, offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -224,16 +171,13 @@ public class ListPipleineBuildResultRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowInstanceStatusRequest  {
-
-
+/** Request Object */
+public class ShowInstanceStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
+    @JsonProperty(value = "task_id")
+
     private String taskId;
 
     public ShowInstanceStatusRequest withXLanguage(String xLanguage) {
@@ -34,15 +23,11 @@ public class ShowInstanceStatusRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * @return xLanguage
-     */
+    /** 语言类型 中文:zh-cn 英文:en-us，默认en-us
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -51,20 +36,14 @@ public class ShowInstanceStatusRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ShowInstanceStatusRequest withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return taskId
-     */
+    /** 实例ID
+     * 
+     * @return taskId */
     public String getTaskId() {
         return taskId;
     }
@@ -72,8 +51,6 @@ public class ShowInstanceStatusRequest  {
     public void setTaskId(String taskId) {
         this.taskId = taskId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +61,15 @@ public class ShowInstanceStatusRequest  {
             return false;
         }
         ShowInstanceStatusRequest showInstanceStatusRequest = (ShowInstanceStatusRequest) o;
-        return Objects.equals(this.xLanguage, showInstanceStatusRequest.xLanguage) &&
-            Objects.equals(this.taskId, showInstanceStatusRequest.taskId);
+        return Objects.equals(this.xLanguage, showInstanceStatusRequest.xLanguage)
+            && Objects.equals(this.taskId, showInstanceStatusRequest.taskId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, taskId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +79,13 @@ public class ShowInstanceStatusRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

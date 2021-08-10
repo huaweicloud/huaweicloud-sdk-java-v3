@@ -1,71 +1,51 @@
 package com.huaweicloud.sdk.das.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListDbUsersRequest  {
-
-
+/** Request Object */
+public class ListDbUsersRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_user_id")
-    
+    @JsonProperty(value = "db_user_id")
+
     private String dbUserId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_username")
-    
+    @JsonProperty(value = "db_username")
+
     private String dbUsername;
-    /**
-     * 语言
-     */
+
+    /** 语言 */
     public static final class XLanguageEnum {
 
-        
-        /**
-         * Enum ZH_CN for value: "zh-cn"
-         */
+        /** Enum ZH_CN for value: "zh-cn" */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
-        
-        /**
-         * Enum EN_US for value: "en-us"
-         */
+
+        /** Enum EN_US for value: "en-us" */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
-        
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
 
@@ -94,7 +74,7 @@ public class ListDbUsersRequest  {
 
         @JsonCreator
         public static XLanguageEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -105,7 +85,7 @@ public class ListDbUsersRequest  {
         }
 
         public static XLanguageEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -129,10 +109,9 @@ public class ListDbUsersRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private XLanguageEnum xLanguage;
 
     public ListDbUsersRequest withInstanceId(String instanceId) {
@@ -140,13 +119,9 @@ public class ListDbUsersRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -155,20 +130,14 @@ public class ListDbUsersRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListDbUsersRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
-     * @return offset
-     */
+    /** 偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -177,20 +146,14 @@ public class ListDbUsersRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListDbUsersRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
-     * @return limit
-     */
+    /** 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -199,20 +162,14 @@ public class ListDbUsersRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListDbUsersRequest withDbUserId(String dbUserId) {
         this.dbUserId = dbUserId;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库用户ID
-     * @return dbUserId
-     */
+    /** 数据库用户ID
+     * 
+     * @return dbUserId */
     public String getDbUserId() {
         return dbUserId;
     }
@@ -221,20 +178,14 @@ public class ListDbUsersRequest  {
         this.dbUserId = dbUserId;
     }
 
-    
-
     public ListDbUsersRequest withDbUsername(String dbUsername) {
         this.dbUsername = dbUsername;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库用户名称
-     * @return dbUsername
-     */
+    /** 数据库用户名称
+     * 
+     * @return dbUsername */
     public String getDbUsername() {
         return dbUsername;
     }
@@ -243,22 +194,16 @@ public class ListDbUsersRequest  {
         this.dbUsername = dbUsername;
     }
 
-    
-
     public ListDbUsersRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
         return xLanguage;
     }
@@ -266,8 +211,6 @@ public class ListDbUsersRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -278,17 +221,19 @@ public class ListDbUsersRequest  {
             return false;
         }
         ListDbUsersRequest listDbUsersRequest = (ListDbUsersRequest) o;
-        return Objects.equals(this.instanceId, listDbUsersRequest.instanceId) &&
-            Objects.equals(this.offset, listDbUsersRequest.offset) &&
-            Objects.equals(this.limit, listDbUsersRequest.limit) &&
-            Objects.equals(this.dbUserId, listDbUsersRequest.dbUserId) &&
-            Objects.equals(this.dbUsername, listDbUsersRequest.dbUsername) &&
-            Objects.equals(this.xLanguage, listDbUsersRequest.xLanguage);
+        return Objects.equals(this.instanceId, listDbUsersRequest.instanceId)
+            && Objects.equals(this.offset, listDbUsersRequest.offset)
+            && Objects.equals(this.limit, listDbUsersRequest.limit)
+            && Objects.equals(this.dbUserId, listDbUsersRequest.dbUserId)
+            && Objects.equals(this.dbUsername, listDbUsersRequest.dbUsername)
+            && Objects.equals(this.xLanguage, listDbUsersRequest.xLanguage);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, offset, limit, dbUserId, dbUsername, xLanguage);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -302,16 +247,13 @@ public class ListDbUsersRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

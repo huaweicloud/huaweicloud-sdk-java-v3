@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class RemovePipelineResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pipeline_id")
-    
+    @JsonProperty(value = "pipeline_id")
+
     private String pipelineId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pipeline_name")
-    
+    @JsonProperty(value = "pipeline_name")
+
     private String pipelineName;
 
     public RemovePipelineResponse withPipelineId(String pipelineId) {
@@ -36,13 +24,9 @@ public class RemovePipelineResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线ID
-     * @return pipelineId
-     */
+    /** 流水线ID
+     * 
+     * @return pipelineId */
     public String getPipelineId() {
         return pipelineId;
     }
@@ -51,20 +35,14 @@ public class RemovePipelineResponse extends SdkResponse {
         this.pipelineId = pipelineId;
     }
 
-    
-
     public RemovePipelineResponse withPipelineName(String pipelineName) {
         this.pipelineName = pipelineName;
         return this;
     }
 
-    
-
-
-    /**
-     * 流水线名字
-     * @return pipelineName
-     */
+    /** 流水线名字
+     * 
+     * @return pipelineName */
     public String getPipelineName() {
         return pipelineName;
     }
@@ -72,8 +50,6 @@ public class RemovePipelineResponse extends SdkResponse {
     public void setPipelineName(String pipelineName) {
         this.pipelineName = pipelineName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +60,15 @@ public class RemovePipelineResponse extends SdkResponse {
             return false;
         }
         RemovePipelineResponse removePipelineResponse = (RemovePipelineResponse) o;
-        return Objects.equals(this.pipelineId, removePipelineResponse.pipelineId) &&
-            Objects.equals(this.pipelineName, removePipelineResponse.pipelineName);
+        return Objects.equals(this.pipelineId, removePipelineResponse.pipelineId)
+            && Objects.equals(this.pipelineName, removePipelineResponse.pipelineName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(pipelineId, pipelineName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +78,13 @@ public class RemovePipelineResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

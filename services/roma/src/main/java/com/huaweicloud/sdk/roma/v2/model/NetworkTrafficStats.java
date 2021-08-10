@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * NetworkTrafficStats
- */
-public class NetworkTrafficStats  {
-
-
+/** NetworkTrafficStats */
+public class NetworkTrafficStats {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output_throughput")
-    
+    @JsonProperty(value = "output_throughput")
+
     private Integer outputThroughput;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="input_throughput")
-    
+    @JsonProperty(value = "input_throughput")
+
     private Integer inputThroughput;
 
     public NetworkTrafficStats withOutputThroughput(Integer outputThroughput) {
@@ -34,13 +23,9 @@ public class NetworkTrafficStats  {
         return this;
     }
 
-    
-
-
-    /**
-     * 下行吞吐量（byte）
-     * @return outputThroughput
-     */
+    /** 下行吞吐量（byte）
+     * 
+     * @return outputThroughput */
     public Integer getOutputThroughput() {
         return outputThroughput;
     }
@@ -49,20 +34,14 @@ public class NetworkTrafficStats  {
         this.outputThroughput = outputThroughput;
     }
 
-    
-
     public NetworkTrafficStats withInputThroughput(Integer inputThroughput) {
         this.inputThroughput = inputThroughput;
         return this;
     }
 
-    
-
-
-    /**
-     * 上行吞吐量（byte）
-     * @return inputThroughput
-     */
+    /** 上行吞吐量（byte）
+     * 
+     * @return inputThroughput */
     public Integer getInputThroughput() {
         return inputThroughput;
     }
@@ -70,8 +49,6 @@ public class NetworkTrafficStats  {
     public void setInputThroughput(Integer inputThroughput) {
         this.inputThroughput = inputThroughput;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class NetworkTrafficStats  {
             return false;
         }
         NetworkTrafficStats networkTrafficStats = (NetworkTrafficStats) o;
-        return Objects.equals(this.outputThroughput, networkTrafficStats.outputThroughput) &&
-            Objects.equals(this.inputThroughput, networkTrafficStats.inputThroughput);
+        return Objects.equals(this.outputThroughput, networkTrafficStats.outputThroughput)
+            && Objects.equals(this.inputThroughput, networkTrafficStats.inputThroughput);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(outputThroughput, inputThroughput);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class NetworkTrafficStats  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

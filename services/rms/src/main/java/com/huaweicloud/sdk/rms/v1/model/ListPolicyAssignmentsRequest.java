@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListPolicyAssignmentsRequest  {
-
+/** Request Object */
+public class ListPolicyAssignmentsRequest {
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -23,10 +15,12 @@ public class ListPolicyAssignmentsRequest  {
         }
         return true;
     }
+
     @Override
     public int hashCode() {
         return Objects.hash();
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -34,6 +28,5 @@ public class ListPolicyAssignmentsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    
-}
 
+}

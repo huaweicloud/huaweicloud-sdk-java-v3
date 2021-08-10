@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * SupportAzsInfo
- */
-public class SupportAzsInfo  {
-
-
+/** SupportAzsInfo */
+public class SupportAzsInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code")
-    
+    @JsonProperty(value = "code")
+
     private String code;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="favored")
-    
+    @JsonProperty(value = "favored")
+
     private Boolean favored;
 
     public SupportAzsInfo withCode(String code) {
@@ -40,13 +28,9 @@ public class SupportAzsInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 可用区编码。
-     * @return code
-     */
+    /** 可用区编码。
+     * 
+     * @return code */
     public String getCode() {
         return code;
     }
@@ -55,20 +39,14 @@ public class SupportAzsInfo  {
         this.code = code;
     }
 
-    
-
     public SupportAzsInfo withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 可用区名称。
-     * @return name
-     */
+    /** 可用区名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -77,20 +55,14 @@ public class SupportAzsInfo  {
         this.name = name;
     }
 
-    
-
     public SupportAzsInfo withFavored(Boolean favored) {
         this.favored = favored;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否支持。
-     * @return favored
-     */
+    /** 是否支持。
+     * 
+     * @return favored */
     public Boolean getFavored() {
         return favored;
     }
@@ -98,8 +70,6 @@ public class SupportAzsInfo  {
     public void setFavored(Boolean favored) {
         this.favored = favored;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,15 @@ public class SupportAzsInfo  {
             return false;
         }
         SupportAzsInfo supportAzsInfo = (SupportAzsInfo) o;
-        return Objects.equals(this.code, supportAzsInfo.code) &&
-            Objects.equals(this.name, supportAzsInfo.name) &&
-            Objects.equals(this.favored, supportAzsInfo.favored);
+        return Objects.equals(this.code, supportAzsInfo.code) && Objects.equals(this.name, supportAzsInfo.name)
+            && Objects.equals(this.favored, supportAzsInfo.favored);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(code, name, favored);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +99,13 @@ public class SupportAzsInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

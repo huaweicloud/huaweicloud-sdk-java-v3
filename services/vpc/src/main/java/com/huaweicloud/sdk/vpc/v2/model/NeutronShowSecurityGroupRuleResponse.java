@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vpc.v2.model.NeutronSecurityGroupRule;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class NeutronShowSecurityGroupRuleResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_rule")
-    
+    @JsonProperty(value = "security_group_rule")
+
     private NeutronSecurityGroupRule securityGroupRule;
 
     public NeutronShowSecurityGroupRuleResponse withSecurityGroupRule(NeutronSecurityGroupRule securityGroupRule) {
@@ -31,20 +20,19 @@ public class NeutronShowSecurityGroupRuleResponse extends SdkResponse {
         return this;
     }
 
-    public NeutronShowSecurityGroupRuleResponse withSecurityGroupRule(Consumer<NeutronSecurityGroupRule> securityGroupRuleSetter) {
-        if(this.securityGroupRule == null ){
+    public NeutronShowSecurityGroupRuleResponse withSecurityGroupRule(
+        Consumer<NeutronSecurityGroupRule> securityGroupRuleSetter) {
+        if (this.securityGroupRule == null) {
             this.securityGroupRule = new NeutronSecurityGroupRule();
             securityGroupRuleSetter.accept(this.securityGroupRule);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get securityGroupRule
-     * @return securityGroupRule
-     */
+    /** Get securityGroupRule
+     * 
+     * @return securityGroupRule */
     public NeutronSecurityGroupRule getSecurityGroupRule() {
         return securityGroupRule;
     }
@@ -52,8 +40,6 @@ public class NeutronShowSecurityGroupRuleResponse extends SdkResponse {
     public void setSecurityGroupRule(NeutronSecurityGroupRule securityGroupRule) {
         this.securityGroupRule = securityGroupRule;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -63,13 +49,16 @@ public class NeutronShowSecurityGroupRuleResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        NeutronShowSecurityGroupRuleResponse neutronShowSecurityGroupRuleResponse = (NeutronShowSecurityGroupRuleResponse) o;
+        NeutronShowSecurityGroupRuleResponse neutronShowSecurityGroupRuleResponse =
+            (NeutronShowSecurityGroupRuleResponse) o;
         return Objects.equals(this.securityGroupRule, neutronShowSecurityGroupRuleResponse.securityGroupRule);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(securityGroupRule);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +67,13 @@ public class NeutronShowSecurityGroupRuleResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,69 +1,52 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iec.v1.model.CoverageResp;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 边缘业务对象
- */
-public class EdgeCloud  {
-
-
+/** 边缘业务对象 */
+public class EdgeCloud {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="coverage")
-    
+    @JsonProperty(value = "coverage")
+
     private CoverageResp coverage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="failed_num")
-    
+    @JsonProperty(value = "failed_num")
+
     private Integer failedNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="success_num")
-    
+    @JsonProperty(value = "success_num")
+
     private Integer successNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_regions")
-    
+    @JsonProperty(value = "edge_regions")
+
     private Integer edgeRegions;
 
     public EdgeCloud withId(String id) {
@@ -71,13 +54,9 @@ public class EdgeCloud  {
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘业务ID。
-     * @return id
-     */
+    /** 边缘业务ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -86,20 +65,14 @@ public class EdgeCloud  {
         this.id = id;
     }
 
-    
-
     public EdgeCloud withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘业务名称。 取值范围：只能由中文字符、大小写英文字母、数字及中划线、下划线组成，且长度为[1-32]个字符。
-     * @return name
-     */
+    /** 边缘业务名称。 取值范围：只能由中文字符、大小写英文字母、数字及中划线、下划线组成，且长度为[1-32]个字符。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -108,20 +81,14 @@ public class EdgeCloud  {
         this.name = name;
     }
 
-    
-
     public EdgeCloud withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘业务描述。最大支持255字节。
-     * @return description
-     */
+    /** 边缘业务描述。最大支持255字节。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -130,27 +97,23 @@ public class EdgeCloud  {
         this.description = description;
     }
 
-    
-
     public EdgeCloud withCoverage(CoverageResp coverage) {
         this.coverage = coverage;
         return this;
     }
 
     public EdgeCloud withCoverage(Consumer<CoverageResp> coverageSetter) {
-        if(this.coverage == null ){
+        if (this.coverage == null) {
             this.coverage = new CoverageResp();
             coverageSetter.accept(this.coverage);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get coverage
-     * @return coverage
-     */
+    /** Get coverage
+     * 
+     * @return coverage */
     public CoverageResp getCoverage() {
         return coverage;
     }
@@ -159,20 +122,14 @@ public class EdgeCloud  {
         this.coverage = coverage;
     }
 
-    
-
     public EdgeCloud withFailedNum(Integer failedNum) {
         this.failedNum = failedNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建失败的虚拟机
-     * @return failedNum
-     */
+    /** 创建失败的虚拟机
+     * 
+     * @return failedNum */
     public Integer getFailedNum() {
         return failedNum;
     }
@@ -181,20 +138,14 @@ public class EdgeCloud  {
         this.failedNum = failedNum;
     }
 
-    
-
     public EdgeCloud withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘业务状态，现存状态有： - creating/scheduling/updating：部署中 - inService：运行中 - failed：创建失败 - deleting：删除中 - delFailed：删除失败
-     * @return status
-     */
+    /** 边缘业务状态，现存状态有： - creating/scheduling/updating：部署中 - inService：运行中 - failed：创建失败 - deleting：删除中 - delFailed：删除失败
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -203,20 +154,14 @@ public class EdgeCloud  {
         this.status = status;
     }
 
-    
-
     public EdgeCloud withSuccessNum(Integer successNum) {
         this.successNum = successNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 成功创建的虚拟机
-     * @return successNum
-     */
+    /** 成功创建的虚拟机
+     * 
+     * @return successNum */
     public Integer getSuccessNum() {
         return successNum;
     }
@@ -225,20 +170,14 @@ public class EdgeCloud  {
         this.successNum = successNum;
     }
 
-    
-
     public EdgeCloud withEdgeRegions(Integer edgeRegions) {
         this.edgeRegions = edgeRegions;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘业务支持的边缘区域数目。
-     * @return edgeRegions
-     */
+    /** 边缘业务支持的边缘区域数目。
+     * 
+     * @return edgeRegions */
     public Integer getEdgeRegions() {
         return edgeRegions;
     }
@@ -246,8 +185,6 @@ public class EdgeCloud  {
     public void setEdgeRegions(Integer edgeRegions) {
         this.edgeRegions = edgeRegions;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -258,19 +195,18 @@ public class EdgeCloud  {
             return false;
         }
         EdgeCloud edgeCloud = (EdgeCloud) o;
-        return Objects.equals(this.id, edgeCloud.id) &&
-            Objects.equals(this.name, edgeCloud.name) &&
-            Objects.equals(this.description, edgeCloud.description) &&
-            Objects.equals(this.coverage, edgeCloud.coverage) &&
-            Objects.equals(this.failedNum, edgeCloud.failedNum) &&
-            Objects.equals(this.status, edgeCloud.status) &&
-            Objects.equals(this.successNum, edgeCloud.successNum) &&
-            Objects.equals(this.edgeRegions, edgeCloud.edgeRegions);
+        return Objects.equals(this.id, edgeCloud.id) && Objects.equals(this.name, edgeCloud.name)
+            && Objects.equals(this.description, edgeCloud.description)
+            && Objects.equals(this.coverage, edgeCloud.coverage) && Objects.equals(this.failedNum, edgeCloud.failedNum)
+            && Objects.equals(this.status, edgeCloud.status) && Objects.equals(this.successNum, edgeCloud.successNum)
+            && Objects.equals(this.edgeRegions, edgeCloud.edgeRegions);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, description, coverage, failedNum, status, successNum, edgeRegions);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -286,16 +222,13 @@ public class EdgeCloud  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

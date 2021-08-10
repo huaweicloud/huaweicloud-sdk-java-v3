@@ -1,82 +1,61 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.AgencyAssumedby;
-import com.huaweicloud.sdk.iam.v3.model.AgencyTokenDomain;
-import com.huaweicloud.sdk.iam.v3.model.AgencyTokenProject;
-import com.huaweicloud.sdk.iam.v3.model.AgencyTokenUser;
-import com.huaweicloud.sdk.iam.v3.model.TokenCatalog;
-import com.huaweicloud.sdk.iam.v3.model.TokenRole;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class AgencyTokenResult  {
-
-
+public class AgencyTokenResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="methods")
-    
+    @JsonProperty(value = "methods")
+
     private List<String> methods = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expires_at")
-    
+    @JsonProperty(value = "expires_at")
+
     private String expiresAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="issued_at")
-    
+    @JsonProperty(value = "issued_at")
+
     private String issuedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="assumed_by")
-    
+    @JsonProperty(value = "assumed_by")
+
     private AgencyAssumedby assumedBy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="catalog")
-    
+    @JsonProperty(value = "catalog")
+
     private List<TokenCatalog> catalog = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
+
     private AgencyTokenDomain domain;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project")
-    
+    @JsonProperty(value = "project")
+
     private AgencyTokenProject project;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roles")
-    
+    @JsonProperty(value = "roles")
+
     private List<TokenRole> roles = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user")
-    
+    @JsonProperty(value = "user")
+
     private AgencyTokenUser user;
 
     public AgencyTokenResult withMethods(List<String> methods) {
@@ -84,9 +63,8 @@ public class AgencyTokenResult  {
         return this;
     }
 
-    
     public AgencyTokenResult addMethodsItem(String methodsItem) {
-        if(this.methods == null) {
+        if (this.methods == null) {
             this.methods = new ArrayList<>();
         }
         this.methods.add(methodsItem);
@@ -94,17 +72,16 @@ public class AgencyTokenResult  {
     }
 
     public AgencyTokenResult withMethods(Consumer<List<String>> methodsSetter) {
-        if(this.methods == null) {
+        if (this.methods == null) {
             this.methods = new ArrayList<>();
         }
         methodsSetter.accept(this.methods);
         return this;
     }
 
-    /**
-     * 获取token的方式。
-     * @return methods
-     */
+    /** 获取token的方式。
+     * 
+     * @return methods */
     public List<String> getMethods() {
         return methods;
     }
@@ -113,20 +90,14 @@ public class AgencyTokenResult  {
         this.methods = methods;
     }
 
-    
-
     public AgencyTokenResult withExpiresAt(String expiresAt) {
         this.expiresAt = expiresAt;
         return this;
     }
 
-    
-
-
-    /**
-     * token到期时间。
-     * @return expiresAt
-     */
+    /** token到期时间。
+     * 
+     * @return expiresAt */
     public String getExpiresAt() {
         return expiresAt;
     }
@@ -135,20 +106,14 @@ public class AgencyTokenResult  {
         this.expiresAt = expiresAt;
     }
 
-    
-
     public AgencyTokenResult withIssuedAt(String issuedAt) {
         this.issuedAt = issuedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * token下发时间。
-     * @return issuedAt
-     */
+    /** token下发时间。
+     * 
+     * @return issuedAt */
     public String getIssuedAt() {
         return issuedAt;
     }
@@ -157,27 +122,23 @@ public class AgencyTokenResult  {
         this.issuedAt = issuedAt;
     }
 
-    
-
     public AgencyTokenResult withAssumedBy(AgencyAssumedby assumedBy) {
         this.assumedBy = assumedBy;
         return this;
     }
 
     public AgencyTokenResult withAssumedBy(Consumer<AgencyAssumedby> assumedBySetter) {
-        if(this.assumedBy == null ){
+        if (this.assumedBy == null) {
             this.assumedBy = new AgencyAssumedby();
             assumedBySetter.accept(this.assumedBy);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get assumedBy
-     * @return assumedBy
-     */
+    /** Get assumedBy
+     * 
+     * @return assumedBy */
     public AgencyAssumedby getAssumedBy() {
         return assumedBy;
     }
@@ -186,16 +147,13 @@ public class AgencyTokenResult  {
         this.assumedBy = assumedBy;
     }
 
-    
-
     public AgencyTokenResult withCatalog(List<TokenCatalog> catalog) {
         this.catalog = catalog;
         return this;
     }
 
-    
     public AgencyTokenResult addCatalogItem(TokenCatalog catalogItem) {
-        if(this.catalog == null) {
+        if (this.catalog == null) {
             this.catalog = new ArrayList<>();
         }
         this.catalog.add(catalogItem);
@@ -203,17 +161,16 @@ public class AgencyTokenResult  {
     }
 
     public AgencyTokenResult withCatalog(Consumer<List<TokenCatalog>> catalogSetter) {
-        if(this.catalog == null) {
+        if (this.catalog == null) {
             this.catalog = new ArrayList<>();
         }
         catalogSetter.accept(this.catalog);
         return this;
     }
 
-    /**
-     * 服务目录信息。
-     * @return catalog
-     */
+    /** 服务目录信息。
+     * 
+     * @return catalog */
     public List<TokenCatalog> getCatalog() {
         return catalog;
     }
@@ -222,27 +179,23 @@ public class AgencyTokenResult  {
         this.catalog = catalog;
     }
 
-    
-
     public AgencyTokenResult withDomain(AgencyTokenDomain domain) {
         this.domain = domain;
         return this;
     }
 
     public AgencyTokenResult withDomain(Consumer<AgencyTokenDomain> domainSetter) {
-        if(this.domain == null ){
+        if (this.domain == null) {
             this.domain = new AgencyTokenDomain();
             domainSetter.accept(this.domain);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get domain
-     * @return domain
-     */
+    /** Get domain
+     * 
+     * @return domain */
     public AgencyTokenDomain getDomain() {
         return domain;
     }
@@ -251,27 +204,23 @@ public class AgencyTokenResult  {
         this.domain = domain;
     }
 
-    
-
     public AgencyTokenResult withProject(AgencyTokenProject project) {
         this.project = project;
         return this;
     }
 
     public AgencyTokenResult withProject(Consumer<AgencyTokenProject> projectSetter) {
-        if(this.project == null ){
+        if (this.project == null) {
             this.project = new AgencyTokenProject();
             projectSetter.accept(this.project);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get project
-     * @return project
-     */
+    /** Get project
+     * 
+     * @return project */
     public AgencyTokenProject getProject() {
         return project;
     }
@@ -280,16 +229,13 @@ public class AgencyTokenResult  {
         this.project = project;
     }
 
-    
-
     public AgencyTokenResult withRoles(List<TokenRole> roles) {
         this.roles = roles;
         return this;
     }
 
-    
     public AgencyTokenResult addRolesItem(TokenRole rolesItem) {
-        if(this.roles == null) {
+        if (this.roles == null) {
             this.roles = new ArrayList<>();
         }
         this.roles.add(rolesItem);
@@ -297,17 +243,16 @@ public class AgencyTokenResult  {
     }
 
     public AgencyTokenResult withRoles(Consumer<List<TokenRole>> rolesSetter) {
-        if(this.roles == null) {
+        if (this.roles == null) {
             this.roles = new ArrayList<>();
         }
         rolesSetter.accept(this.roles);
         return this;
     }
 
-    /**
-     * 委托token的权限信息。
-     * @return roles
-     */
+    /** 委托token的权限信息。
+     * 
+     * @return roles */
     public List<TokenRole> getRoles() {
         return roles;
     }
@@ -316,27 +261,23 @@ public class AgencyTokenResult  {
         this.roles = roles;
     }
 
-    
-
     public AgencyTokenResult withUser(AgencyTokenUser user) {
         this.user = user;
         return this;
     }
 
     public AgencyTokenResult withUser(Consumer<AgencyTokenUser> userSetter) {
-        if(this.user == null ){
+        if (this.user == null) {
             this.user = new AgencyTokenUser();
             userSetter.accept(this.user);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get user
-     * @return user
-     */
+    /** Get user
+     * 
+     * @return user */
     public AgencyTokenUser getUser() {
         return user;
     }
@@ -344,8 +285,6 @@ public class AgencyTokenResult  {
     public void setUser(AgencyTokenUser user) {
         this.user = user;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -356,20 +295,21 @@ public class AgencyTokenResult  {
             return false;
         }
         AgencyTokenResult agencyTokenResult = (AgencyTokenResult) o;
-        return Objects.equals(this.methods, agencyTokenResult.methods) &&
-            Objects.equals(this.expiresAt, agencyTokenResult.expiresAt) &&
-            Objects.equals(this.issuedAt, agencyTokenResult.issuedAt) &&
-            Objects.equals(this.assumedBy, agencyTokenResult.assumedBy) &&
-            Objects.equals(this.catalog, agencyTokenResult.catalog) &&
-            Objects.equals(this.domain, agencyTokenResult.domain) &&
-            Objects.equals(this.project, agencyTokenResult.project) &&
-            Objects.equals(this.roles, agencyTokenResult.roles) &&
-            Objects.equals(this.user, agencyTokenResult.user);
+        return Objects.equals(this.methods, agencyTokenResult.methods)
+            && Objects.equals(this.expiresAt, agencyTokenResult.expiresAt)
+            && Objects.equals(this.issuedAt, agencyTokenResult.issuedAt)
+            && Objects.equals(this.assumedBy, agencyTokenResult.assumedBy)
+            && Objects.equals(this.catalog, agencyTokenResult.catalog)
+            && Objects.equals(this.domain, agencyTokenResult.domain)
+            && Objects.equals(this.project, agencyTokenResult.project)
+            && Objects.equals(this.roles, agencyTokenResult.roles) && Objects.equals(this.user, agencyTokenResult.user);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(methods, expiresAt, issuedAt, assumedBy, catalog, domain, project, roles, user);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -386,16 +326,13 @@ public class AgencyTokenResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

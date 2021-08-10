@@ -1,134 +1,102 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cdn.v1.model.DomainOriginHost;
-import com.huaweicloud.sdk.cdn.v1.model.SourceWithPort;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 域名信息
- */
-public class Domains  {
-
-
+/** 域名信息 */
+public class Domains {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_name")
-    
+    @JsonProperty(value = "domain_name")
+
     private String domainName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="business_type")
-    
+    @JsonProperty(value = "business_type")
+
     private String businessType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_domain_id")
-    
+    @JsonProperty(value = "user_domain_id")
+
     private String userDomainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_status")
-    
+    @JsonProperty(value = "domain_status")
+
     private String domainStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cname")
-    
+    @JsonProperty(value = "cname")
+
     private String cname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sources")
-    
+    @JsonProperty(value = "sources")
+
     private List<SourceWithPort> sources = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_origin_host")
-    
+    @JsonProperty(value = "domain_origin_host")
+
     private DomainOriginHost domainOriginHost;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="https_status")
-    
+    @JsonProperty(value = "https_status")
+
     private Integer httpsStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private Long createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="modify_time")
-    
+    @JsonProperty(value = "modify_time")
+
     private Long modifyTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disabled")
-    
+    @JsonProperty(value = "disabled")
+
     private Integer disabled;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="locked")
-    
+    @JsonProperty(value = "locked")
+
     private Integer locked;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auto_refresh_preheat")
-    
+    @JsonProperty(value = "auto_refresh_preheat")
+
     private Integer autoRefreshPreheat;
-    /**
-     * 华为云CDN提供的加速服务范围，包含：mainland_china中国大陆、outside_mainland_china中国大陆境外、global全球。
-     */
+
+    /** 华为云CDN提供的加速服务范围，包含：mainland_china中国大陆、outside_mainland_china中国大陆境外、global全球。 */
     public static final class ServiceAreaEnum {
 
-        
-        /**
-         * Enum MAINLAND_CHINA for value: "mainland_china"
-         */
+        /** Enum MAINLAND_CHINA for value: "mainland_china" */
         public static final ServiceAreaEnum MAINLAND_CHINA = new ServiceAreaEnum("mainland_china");
-        
-        /**
-         * Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china"
-         */
+
+        /** Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china" */
         public static final ServiceAreaEnum OUTSIDE_MAINLAND_CHINA = new ServiceAreaEnum("outside_mainland_china");
-        
-        /**
-         * Enum GLOBAL for value: "global"
-         */
+
+        /** Enum GLOBAL for value: "global" */
         public static final ServiceAreaEnum GLOBAL = new ServiceAreaEnum("global");
-        
 
         private static final Map<String, ServiceAreaEnum> STATIC_FIELDS = createStaticFields();
 
@@ -158,7 +126,7 @@ public class Domains  {
 
         @JsonCreator
         public static ServiceAreaEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ServiceAreaEnum result = STATIC_FIELDS.get(value);
@@ -169,7 +137,7 @@ public class Domains  {
         }
 
         public static ServiceAreaEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ServiceAreaEnum result = STATIC_FIELDS.get(value);
@@ -193,46 +161,39 @@ public class Domains  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_area")
-    
+    @JsonProperty(value = "service_area")
+
     private ServiceAreaEnum serviceArea;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="range_status")
-    
+    @JsonProperty(value = "range_status")
+
     private String rangeStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="follow_status")
-    
+    @JsonProperty(value = "follow_status")
+
     private String followStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="origin_status")
-    
+    @JsonProperty(value = "origin_status")
+
     private String originStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="banned_reason")
-    
+    @JsonProperty(value = "banned_reason")
+
     private String bannedReason;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="locked_reason")
-    
+    @JsonProperty(value = "locked_reason")
+
     private String lockedReason;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public Domains withId(String id) {
@@ -240,13 +201,9 @@ public class Domains  {
         return this;
     }
 
-    
-
-
-    /**
-     * 加速域名ID。
-     * @return id
-     */
+    /** 加速域名ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -255,20 +212,14 @@ public class Domains  {
         this.id = id;
     }
 
-    
-
     public Domains withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
     }
 
-    
-
-
-    /**
-     * 加速域名。
-     * @return domainName
-     */
+    /** 加速域名。
+     * 
+     * @return domainName */
     public String getDomainName() {
         return domainName;
     }
@@ -277,20 +228,14 @@ public class Domains  {
         this.domainName = domainName;
     }
 
-    
-
     public Domains withBusinessType(String businessType) {
         this.businessType = businessType;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名业务类型，若为web，则表示类型为静态加速；若为download，则表示业务类型为下载加速；若为video，则表示业务类型为流媒体加速；若为wholeSite，则表示类型为全站加速。
-     * @return businessType
-     */
+    /** 域名业务类型，若为web，则表示类型为静态加速；若为download，则表示业务类型为下载加速；若为video，则表示业务类型为流媒体加速；若为wholeSite，则表示类型为全站加速。
+     * 
+     * @return businessType */
     public String getBusinessType() {
         return businessType;
     }
@@ -299,20 +244,14 @@ public class Domains  {
         this.businessType = businessType;
     }
 
-    
-
     public Domains withUserDomainId(String userDomainId) {
         this.userDomainId = userDomainId;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名所属用户的domain_id。
-     * @return userDomainId
-     */
+    /** 域名所属用户的domain_id。
+     * 
+     * @return userDomainId */
     public String getUserDomainId() {
         return userDomainId;
     }
@@ -321,20 +260,15 @@ public class Domains  {
         this.userDomainId = userDomainId;
     }
 
-    
-
     public Domains withDomainStatus(String domainStatus) {
         this.domainStatus = domainStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 加速域名状态。取值意义： - online表示“已开启” - offline表示“已停用” - configuring表示“配置中” - configure_failed表示“配置失败” - checking表示“审核中” - check_failed表示“审核失败” - deleting表示“删除中”
-     * @return domainStatus
-     */
+    /** 加速域名状态。取值意义： - online表示“已开启” - offline表示“已停用” - configuring表示“配置中” - configure_failed表示“配置失败” - checking表示“审核中”
+     * - check_failed表示“审核失败” - deleting表示“删除中”
+     * 
+     * @return domainStatus */
     public String getDomainStatus() {
         return domainStatus;
     }
@@ -343,20 +277,14 @@ public class Domains  {
         this.domainStatus = domainStatus;
     }
 
-    
-
     public Domains withCname(String cname) {
         this.cname = cname;
         return this;
     }
 
-    
-
-
-    /**
-     * 加速域名对应的CNAME。
-     * @return cname
-     */
+    /** 加速域名对应的CNAME。
+     * 
+     * @return cname */
     public String getCname() {
         return cname;
     }
@@ -365,16 +293,13 @@ public class Domains  {
         this.cname = cname;
     }
 
-    
-
     public Domains withSources(List<SourceWithPort> sources) {
         this.sources = sources;
         return this;
     }
 
-    
     public Domains addSourcesItem(SourceWithPort sourcesItem) {
-        if(this.sources == null) {
+        if (this.sources == null) {
             this.sources = new ArrayList<>();
         }
         this.sources.add(sourcesItem);
@@ -382,17 +307,16 @@ public class Domains  {
     }
 
     public Domains withSources(Consumer<List<SourceWithPort>> sourcesSetter) {
-        if(this.sources == null) {
+        if (this.sources == null) {
             this.sources = new ArrayList<>();
         }
         sourcesSetter.accept(this.sources);
         return this;
     }
 
-    /**
-     * 源站域名或源站IP，源站为IP类型时，仅支持IPv4，如需传入多个源站IP，以多个源站对象传入，除IP其他参数请保持一致，主源站最多支持15个源站IP对象，备源站最多支持15个源站IP对象；源站为域名类型时仅支持1个源站对象。不支持IP源站和域名源站混用。
-     * @return sources
-     */
+    /** 源站域名或源站IP，源站为IP类型时，仅支持IPv4，如需传入多个源站IP，以多个源站对象传入，除IP其他参数请保持一致，主源站最多支持15个源站IP对象，备源站最多支持15个源站IP对象；源站为域名类型时仅支持1个源站对象。不支持IP源站和域名源站混用。
+     * 
+     * @return sources */
     public List<SourceWithPort> getSources() {
         return sources;
     }
@@ -401,27 +325,23 @@ public class Domains  {
         this.sources = sources;
     }
 
-    
-
     public Domains withDomainOriginHost(DomainOriginHost domainOriginHost) {
         this.domainOriginHost = domainOriginHost;
         return this;
     }
 
     public Domains withDomainOriginHost(Consumer<DomainOriginHost> domainOriginHostSetter) {
-        if(this.domainOriginHost == null ){
+        if (this.domainOriginHost == null) {
             this.domainOriginHost = new DomainOriginHost();
             domainOriginHostSetter.accept(this.domainOriginHost);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get domainOriginHost
-     * @return domainOriginHost
-     */
+    /** Get domainOriginHost
+     * 
+     * @return domainOriginHost */
     public DomainOriginHost getDomainOriginHost() {
         return domainOriginHost;
     }
@@ -430,20 +350,14 @@ public class Domains  {
         this.domainOriginHost = domainOriginHost;
     }
 
-    
-
     public Domains withHttpsStatus(Integer httpsStatus) {
         this.httpsStatus = httpsStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启HTTPS加速。
-     * @return httpsStatus
-     */
+    /** 是否开启HTTPS加速。
+     * 
+     * @return httpsStatus */
     public Integer getHttpsStatus() {
         return httpsStatus;
     }
@@ -452,20 +366,14 @@ public class Domains  {
         this.httpsStatus = httpsStatus;
     }
 
-    
-
     public Domains withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名创建时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
-     * @return createTime
-     */
+    /** 域名创建时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+     * 
+     * @return createTime */
     public Long getCreateTime() {
         return createTime;
     }
@@ -474,20 +382,14 @@ public class Domains  {
         this.createTime = createTime;
     }
 
-    
-
     public Domains withModifyTime(Long modifyTime) {
         this.modifyTime = modifyTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名修改时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
-     * @return modifyTime
-     */
+    /** 域名修改时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+     * 
+     * @return modifyTime */
     public Long getModifyTime() {
         return modifyTime;
     }
@@ -496,20 +398,14 @@ public class Domains  {
         this.modifyTime = modifyTime;
     }
 
-    
-
     public Domains withDisabled(Integer disabled) {
         this.disabled = disabled;
         return this;
     }
 
-    
-
-
-    /**
-     * 封禁状态（0代表未禁用；1代表禁用）。
-     * @return disabled
-     */
+    /** 封禁状态（0代表未禁用；1代表禁用）。
+     * 
+     * @return disabled */
     public Integer getDisabled() {
         return disabled;
     }
@@ -518,20 +414,14 @@ public class Domains  {
         this.disabled = disabled;
     }
 
-    
-
     public Domains withLocked(Integer locked) {
         this.locked = locked;
         return this;
     }
 
-    
-
-
-    /**
-     * 锁定状态（0代表未锁定；1代表锁定）。
-     * @return locked
-     */
+    /** 锁定状态（0代表未锁定；1代表锁定）。
+     * 
+     * @return locked */
     public Integer getLocked() {
         return locked;
     }
@@ -540,20 +430,14 @@ public class Domains  {
         this.locked = locked;
     }
 
-    
-
     public Domains withAutoRefreshPreheat(Integer autoRefreshPreheat) {
         this.autoRefreshPreheat = autoRefreshPreheat;
         return this;
     }
 
-    
-
-
-    /**
-     * 自动刷新预热（0代表关闭；1代表打开）
-     * @return autoRefreshPreheat
-     */
+    /** 自动刷新预热（0代表关闭；1代表打开）
+     * 
+     * @return autoRefreshPreheat */
     public Integer getAutoRefreshPreheat() {
         return autoRefreshPreheat;
     }
@@ -562,20 +446,14 @@ public class Domains  {
         this.autoRefreshPreheat = autoRefreshPreheat;
     }
 
-    
-
     public Domains withServiceArea(ServiceAreaEnum serviceArea) {
         this.serviceArea = serviceArea;
         return this;
     }
 
-    
-
-
-    /**
-     * 华为云CDN提供的加速服务范围，包含：mainland_china中国大陆、outside_mainland_china中国大陆境外、global全球。
-     * @return serviceArea
-     */
+    /** 华为云CDN提供的加速服务范围，包含：mainland_china中国大陆、outside_mainland_china中国大陆境外、global全球。
+     * 
+     * @return serviceArea */
     public ServiceAreaEnum getServiceArea() {
         return serviceArea;
     }
@@ -584,20 +462,14 @@ public class Domains  {
         this.serviceArea = serviceArea;
     }
 
-    
-
     public Domains withRangeStatus(String rangeStatus) {
         this.rangeStatus = rangeStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * Range回源状态。
-     * @return rangeStatus
-     */
+    /** Range回源状态。
+     * 
+     * @return rangeStatus */
     public String getRangeStatus() {
         return rangeStatus;
     }
@@ -606,20 +478,14 @@ public class Domains  {
         this.rangeStatus = rangeStatus;
     }
 
-    
-
     public Domains withFollowStatus(String followStatus) {
         this.followStatus = followStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 回源跟随状态。
-     * @return followStatus
-     */
+    /** 回源跟随状态。
+     * 
+     * @return followStatus */
     public String getFollowStatus() {
         return followStatus;
     }
@@ -628,20 +494,14 @@ public class Domains  {
         this.followStatus = followStatus;
     }
 
-    
-
     public Domains withOriginStatus(String originStatus) {
         this.originStatus = originStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否暂停源站回源
-     * @return originStatus
-     */
+    /** 是否暂停源站回源
+     * 
+     * @return originStatus */
     public String getOriginStatus() {
         return originStatus;
     }
@@ -650,20 +510,14 @@ public class Domains  {
         this.originStatus = originStatus;
     }
 
-    
-
     public Domains withBannedReason(String bannedReason) {
         this.bannedReason = bannedReason;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名禁用原因
-     * @return bannedReason
-     */
+    /** 域名禁用原因
+     * 
+     * @return bannedReason */
     public String getBannedReason() {
         return bannedReason;
     }
@@ -672,20 +526,14 @@ public class Domains  {
         this.bannedReason = bannedReason;
     }
 
-    
-
     public Domains withLockedReason(String lockedReason) {
         this.lockedReason = lockedReason;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名锁定原因
-     * @return lockedReason
-     */
+    /** 域名锁定原因
+     * 
+     * @return lockedReason */
     public String getLockedReason() {
         return lockedReason;
     }
@@ -694,20 +542,14 @@ public class Domains  {
         this.lockedReason = lockedReason;
     }
 
-    
-
     public Domains withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 当用户开启企业项目功能时返回该参数，表示域名资源所属企业项目ID。
-     * @return enterpriseProjectId
-     */
+    /** 当用户开启企业项目功能时返回该参数，表示域名资源所属企业项目ID。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -715,8 +557,6 @@ public class Domains  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -727,32 +567,51 @@ public class Domains  {
             return false;
         }
         Domains domains = (Domains) o;
-        return Objects.equals(this.id, domains.id) &&
-            Objects.equals(this.domainName, domains.domainName) &&
-            Objects.equals(this.businessType, domains.businessType) &&
-            Objects.equals(this.userDomainId, domains.userDomainId) &&
-            Objects.equals(this.domainStatus, domains.domainStatus) &&
-            Objects.equals(this.cname, domains.cname) &&
-            Objects.equals(this.sources, domains.sources) &&
-            Objects.equals(this.domainOriginHost, domains.domainOriginHost) &&
-            Objects.equals(this.httpsStatus, domains.httpsStatus) &&
-            Objects.equals(this.createTime, domains.createTime) &&
-            Objects.equals(this.modifyTime, domains.modifyTime) &&
-            Objects.equals(this.disabled, domains.disabled) &&
-            Objects.equals(this.locked, domains.locked) &&
-            Objects.equals(this.autoRefreshPreheat, domains.autoRefreshPreheat) &&
-            Objects.equals(this.serviceArea, domains.serviceArea) &&
-            Objects.equals(this.rangeStatus, domains.rangeStatus) &&
-            Objects.equals(this.followStatus, domains.followStatus) &&
-            Objects.equals(this.originStatus, domains.originStatus) &&
-            Objects.equals(this.bannedReason, domains.bannedReason) &&
-            Objects.equals(this.lockedReason, domains.lockedReason) &&
-            Objects.equals(this.enterpriseProjectId, domains.enterpriseProjectId);
+        return Objects.equals(this.id, domains.id) && Objects.equals(this.domainName, domains.domainName)
+            && Objects.equals(this.businessType, domains.businessType)
+            && Objects.equals(this.userDomainId, domains.userDomainId)
+            && Objects.equals(this.domainStatus, domains.domainStatus) && Objects.equals(this.cname, domains.cname)
+            && Objects.equals(this.sources, domains.sources)
+            && Objects.equals(this.domainOriginHost, domains.domainOriginHost)
+            && Objects.equals(this.httpsStatus, domains.httpsStatus)
+            && Objects.equals(this.createTime, domains.createTime)
+            && Objects.equals(this.modifyTime, domains.modifyTime) && Objects.equals(this.disabled, domains.disabled)
+            && Objects.equals(this.locked, domains.locked)
+            && Objects.equals(this.autoRefreshPreheat, domains.autoRefreshPreheat)
+            && Objects.equals(this.serviceArea, domains.serviceArea)
+            && Objects.equals(this.rangeStatus, domains.rangeStatus)
+            && Objects.equals(this.followStatus, domains.followStatus)
+            && Objects.equals(this.originStatus, domains.originStatus)
+            && Objects.equals(this.bannedReason, domains.bannedReason)
+            && Objects.equals(this.lockedReason, domains.lockedReason)
+            && Objects.equals(this.enterpriseProjectId, domains.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, domainName, businessType, userDomainId, domainStatus, cname, sources, domainOriginHost, httpsStatus, createTime, modifyTime, disabled, locked, autoRefreshPreheat, serviceArea, rangeStatus, followStatus, originStatus, bannedReason, lockedReason, enterpriseProjectId);
+        return Objects.hash(id,
+            domainName,
+            businessType,
+            userDomainId,
+            domainStatus,
+            cname,
+            sources,
+            domainOriginHost,
+            httpsStatus,
+            createTime,
+            modifyTime,
+            disabled,
+            locked,
+            autoRefreshPreheat,
+            serviceArea,
+            rangeStatus,
+            followStatus,
+            originStatus,
+            bannedReason,
+            lockedReason,
+            enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -781,16 +640,13 @@ public class Domains  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,58 +1,42 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateAntiTamperRuleResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policyid")
-    
+    @JsonProperty(value = "policyid")
+
     private String policyid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hostname")
-    
+    @JsonProperty(value = "hostname")
+
     private String hostname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private String url;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
     public CreateAntiTamperRuleResponse withId(String id) {
@@ -60,13 +44,9 @@ public class CreateAntiTamperRuleResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 规则id
-     * @return id
-     */
+    /** 规则id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -75,20 +55,14 @@ public class CreateAntiTamperRuleResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public CreateAntiTamperRuleResponse withPolicyid(String policyid) {
         this.policyid = policyid;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略id
-     * @return policyid
-     */
+    /** 策略id
+     * 
+     * @return policyid */
     public String getPolicyid() {
         return policyid;
     }
@@ -97,20 +71,14 @@ public class CreateAntiTamperRuleResponse extends SdkResponse {
         this.policyid = policyid;
     }
 
-    
-
     public CreateAntiTamperRuleResponse withHostname(String hostname) {
         this.hostname = hostname;
         return this;
     }
 
-    
-
-
-    /**
-     * 防篡改的域名
-     * @return hostname
-     */
+    /** 防篡改的域名
+     * 
+     * @return hostname */
     public String getHostname() {
         return hostname;
     }
@@ -119,20 +87,14 @@ public class CreateAntiTamperRuleResponse extends SdkResponse {
         this.hostname = hostname;
     }
 
-    
-
     public CreateAntiTamperRuleResponse withUrl(String url) {
         this.url = url;
         return this;
     }
 
-    
-
-
-    /**
-     * 防篡改的url
-     * @return url
-     */
+    /** 防篡改的url
+     * 
+     * @return url */
     public String getUrl() {
         return url;
     }
@@ -141,20 +103,14 @@ public class CreateAntiTamperRuleResponse extends SdkResponse {
         this.url = url;
     }
 
-    
-
     public CreateAntiTamperRuleResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建规则的时间戳
-     * @return description
-     */
+    /** 创建规则的时间戳
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -163,20 +119,14 @@ public class CreateAntiTamperRuleResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public CreateAntiTamperRuleResponse withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则状态
-     * @return status
-     */
+    /** 规则状态
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -184,8 +134,6 @@ public class CreateAntiTamperRuleResponse extends SdkResponse {
     public void setStatus(Integer status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -196,17 +144,19 @@ public class CreateAntiTamperRuleResponse extends SdkResponse {
             return false;
         }
         CreateAntiTamperRuleResponse createAntiTamperRuleResponse = (CreateAntiTamperRuleResponse) o;
-        return Objects.equals(this.id, createAntiTamperRuleResponse.id) &&
-            Objects.equals(this.policyid, createAntiTamperRuleResponse.policyid) &&
-            Objects.equals(this.hostname, createAntiTamperRuleResponse.hostname) &&
-            Objects.equals(this.url, createAntiTamperRuleResponse.url) &&
-            Objects.equals(this.description, createAntiTamperRuleResponse.description) &&
-            Objects.equals(this.status, createAntiTamperRuleResponse.status);
+        return Objects.equals(this.id, createAntiTamperRuleResponse.id)
+            && Objects.equals(this.policyid, createAntiTamperRuleResponse.policyid)
+            && Objects.equals(this.hostname, createAntiTamperRuleResponse.hostname)
+            && Objects.equals(this.url, createAntiTamperRuleResponse.url)
+            && Objects.equals(this.description, createAntiTamperRuleResponse.description)
+            && Objects.equals(this.status, createAntiTamperRuleResponse.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, policyid, hostname, url, description, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -220,16 +170,13 @@ public class CreateAntiTamperRuleResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

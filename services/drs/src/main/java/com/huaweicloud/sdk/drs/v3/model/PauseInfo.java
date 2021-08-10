@@ -1,47 +1,31 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 暂停任务请求参数
- */
-public class PauseInfo  {
-
-
+/** 暂停任务请求参数 */
+public class PauseInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
+
     private String jobId;
-    /**
-     * 暂停类型，target:停回放,all:停日志抓取和回放
-     */
+
+    /** 暂停类型，target:停回放,all:停日志抓取和回放 */
     public static final class PauseModeEnum {
 
-        
-        /**
-         * Enum TARGET for value: "target"
-         */
+        /** Enum TARGET for value: "target" */
         public static final PauseModeEnum TARGET = new PauseModeEnum("target");
-        
-        /**
-         * Enum ALL for value: "all"
-         */
+
+        /** Enum ALL for value: "all" */
         public static final PauseModeEnum ALL = new PauseModeEnum("all");
-        
 
         private static final Map<String, PauseModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,7 +54,7 @@ public class PauseInfo  {
 
         @JsonCreator
         public static PauseModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             PauseModeEnum result = STATIC_FIELDS.get(value);
@@ -81,7 +65,7 @@ public class PauseInfo  {
         }
 
         public static PauseModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             PauseModeEnum result = STATIC_FIELDS.get(value);
@@ -105,10 +89,9 @@ public class PauseInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pause_mode")
-    
+    @JsonProperty(value = "pause_mode")
+
     private PauseModeEnum pauseMode;
 
     public PauseInfo withJobId(String jobId) {
@@ -116,13 +99,9 @@ public class PauseInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务id
-     * @return jobId
-     */
+    /** 任务id
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -131,20 +110,14 @@ public class PauseInfo  {
         this.jobId = jobId;
     }
 
-    
-
     public PauseInfo withPauseMode(PauseModeEnum pauseMode) {
         this.pauseMode = pauseMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 暂停类型，target:停回放,all:停日志抓取和回放
-     * @return pauseMode
-     */
+    /** 暂停类型，target:停回放,all:停日志抓取和回放
+     * 
+     * @return pauseMode */
     public PauseModeEnum getPauseMode() {
         return pauseMode;
     }
@@ -152,8 +125,6 @@ public class PauseInfo  {
     public void setPauseMode(PauseModeEnum pauseMode) {
         this.pauseMode = pauseMode;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -164,13 +135,14 @@ public class PauseInfo  {
             return false;
         }
         PauseInfo pauseInfo = (PauseInfo) o;
-        return Objects.equals(this.jobId, pauseInfo.jobId) &&
-            Objects.equals(this.pauseMode, pauseInfo.pauseMode);
+        return Objects.equals(this.jobId, pauseInfo.jobId) && Objects.equals(this.pauseMode, pauseInfo.pauseMode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobId, pauseMode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -180,16 +152,13 @@ public class PauseInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

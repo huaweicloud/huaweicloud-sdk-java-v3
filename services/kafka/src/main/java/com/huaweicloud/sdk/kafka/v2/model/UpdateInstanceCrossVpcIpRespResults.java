@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 修改broker跨VPC访问的结果。
- */
-public class UpdateInstanceCrossVpcIpRespResults  {
-
-
+/** 修改broker跨VPC访问的结果。 */
+public class UpdateInstanceCrossVpcIpRespResults {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="advertised_ip")
-    
+    @JsonProperty(value = "advertised_ip")
+
     private String advertisedIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="success")
-    
+    @JsonProperty(value = "success")
+
     private Boolean success;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip")
-    
+    @JsonProperty(value = "ip")
+
     private String ip;
 
     public UpdateInstanceCrossVpcIpRespResults withAdvertisedIp(String advertisedIp) {
@@ -40,13 +28,9 @@ public class UpdateInstanceCrossVpcIpRespResults  {
         return this;
     }
 
-    
-
-
-    /**
-     * advertised.listeners IP/域名。
-     * @return advertisedIp
-     */
+    /** advertised.listeners IP/域名。
+     * 
+     * @return advertisedIp */
     public String getAdvertisedIp() {
         return advertisedIp;
     }
@@ -55,20 +39,14 @@ public class UpdateInstanceCrossVpcIpRespResults  {
         this.advertisedIp = advertisedIp;
     }
 
-    
-
     public UpdateInstanceCrossVpcIpRespResults withSuccess(Boolean success) {
         this.success = success;
         return this;
     }
 
-    
-
-
-    /**
-     * 修改broker跨VPC访问的状态。
-     * @return success
-     */
+    /** 修改broker跨VPC访问的状态。
+     * 
+     * @return success */
     public Boolean getSuccess() {
         return success;
     }
@@ -77,20 +55,14 @@ public class UpdateInstanceCrossVpcIpRespResults  {
         this.success = success;
     }
 
-    
-
     public UpdateInstanceCrossVpcIpRespResults withIp(String ip) {
         this.ip = ip;
         return this;
     }
 
-    
-
-
-    /**
-     * listeners IP。
-     * @return ip
-     */
+    /** listeners IP。
+     * 
+     * @return ip */
     public String getIp() {
         return ip;
     }
@@ -98,8 +70,6 @@ public class UpdateInstanceCrossVpcIpRespResults  {
     public void setIp(String ip) {
         this.ip = ip;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,15 +79,18 @@ public class UpdateInstanceCrossVpcIpRespResults  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        UpdateInstanceCrossVpcIpRespResults updateInstanceCrossVpcIpRespResults = (UpdateInstanceCrossVpcIpRespResults) o;
-        return Objects.equals(this.advertisedIp, updateInstanceCrossVpcIpRespResults.advertisedIp) &&
-            Objects.equals(this.success, updateInstanceCrossVpcIpRespResults.success) &&
-            Objects.equals(this.ip, updateInstanceCrossVpcIpRespResults.ip);
+        UpdateInstanceCrossVpcIpRespResults updateInstanceCrossVpcIpRespResults =
+            (UpdateInstanceCrossVpcIpRespResults) o;
+        return Objects.equals(this.advertisedIp, updateInstanceCrossVpcIpRespResults.advertisedIp)
+            && Objects.equals(this.success, updateInstanceCrossVpcIpRespResults.success)
+            && Objects.equals(this.ip, updateInstanceCrossVpcIpRespResults.ip);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(advertisedIp, success, ip);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +101,13 @@ public class UpdateInstanceCrossVpcIpRespResults  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

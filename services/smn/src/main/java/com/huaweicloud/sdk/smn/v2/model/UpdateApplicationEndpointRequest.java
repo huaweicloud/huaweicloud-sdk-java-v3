@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.smn.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateApplicationEndpointRequest  {
-
-
+/** Request Object */
+public class UpdateApplicationEndpointRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endpoint_urn")
-    
+    @JsonProperty(value = "endpoint_urn")
+
     private String endpointUrn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateApplicationEndpointRequestBody body;
 
     public UpdateApplicationEndpointRequest withEndpointUrn(String endpointUrn) {
@@ -35,13 +24,9 @@ public class UpdateApplicationEndpointRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * Endpoint的唯一资源标识，可通过[查询Application的Endpoint列表](https://support.huaweicloud.com/api-smn/smn_api_58004.html)获取该标识。
-     * @return endpointUrn
-     */
+    /** Endpoint的唯一资源标识，可通过[查询Application的Endpoint列表](https://support.huaweicloud.com/api-smn/smn_api_58004.html)获取该标识。
+     * 
+     * @return endpointUrn */
     public String getEndpointUrn() {
         return endpointUrn;
     }
@@ -50,27 +35,23 @@ public class UpdateApplicationEndpointRequest  {
         this.endpointUrn = endpointUrn;
     }
 
-    
-
     public UpdateApplicationEndpointRequest withBody(UpdateApplicationEndpointRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdateApplicationEndpointRequest withBody(Consumer<UpdateApplicationEndpointRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateApplicationEndpointRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateApplicationEndpointRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdateApplicationEndpointRequest  {
     public void setBody(UpdateApplicationEndpointRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdateApplicationEndpointRequest  {
             return false;
         }
         UpdateApplicationEndpointRequest updateApplicationEndpointRequest = (UpdateApplicationEndpointRequest) o;
-        return Objects.equals(this.endpointUrn, updateApplicationEndpointRequest.endpointUrn) &&
-            Objects.equals(this.body, updateApplicationEndpointRequest.body);
+        return Objects.equals(this.endpointUrn, updateApplicationEndpointRequest.endpointUrn)
+            && Objects.equals(this.body, updateApplicationEndpointRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(endpointUrn, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdateApplicationEndpointRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

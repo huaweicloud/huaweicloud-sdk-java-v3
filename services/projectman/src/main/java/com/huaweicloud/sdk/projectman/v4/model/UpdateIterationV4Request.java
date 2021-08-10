@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.projectman.v4.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.projectman.v4.model.CreateIterationRequestV4;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateIterationV4Request  {
-
-
+/** Request Object */
+public class UpdateIterationV4Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="iteration_id")
-    
+    @JsonProperty(value = "iteration_id")
+
     private Integer iterationId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private CreateIterationRequestV4 body;
 
     public UpdateIterationV4Request withProjectId(String projectId) {
@@ -41,13 +29,9 @@ public class UpdateIterationV4Request  {
         return this;
     }
 
-    
-
-
-    /**
-     * 项目id
-     * @return projectId
-     */
+    /** 项目id
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -56,20 +40,14 @@ public class UpdateIterationV4Request  {
         this.projectId = projectId;
     }
 
-    
-
     public UpdateIterationV4Request withIterationId(Integer iterationId) {
         this.iterationId = iterationId;
         return this;
     }
 
-    
-
-
-    /**
-     * 迭代id
-     * @return iterationId
-     */
+    /** 迭代id
+     * 
+     * @return iterationId */
     public Integer getIterationId() {
         return iterationId;
     }
@@ -78,27 +56,23 @@ public class UpdateIterationV4Request  {
         this.iterationId = iterationId;
     }
 
-    
-
     public UpdateIterationV4Request withBody(CreateIterationRequestV4 body) {
         this.body = body;
         return this;
     }
 
     public UpdateIterationV4Request withBody(Consumer<CreateIterationRequestV4> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CreateIterationRequestV4();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public CreateIterationRequestV4 getBody() {
         return body;
     }
@@ -106,8 +80,6 @@ public class UpdateIterationV4Request  {
     public void setBody(CreateIterationRequestV4 body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class UpdateIterationV4Request  {
             return false;
         }
         UpdateIterationV4Request updateIterationV4Request = (UpdateIterationV4Request) o;
-        return Objects.equals(this.projectId, updateIterationV4Request.projectId) &&
-            Objects.equals(this.iterationId, updateIterationV4Request.iterationId) &&
-            Objects.equals(this.body, updateIterationV4Request.body);
+        return Objects.equals(this.projectId, updateIterationV4Request.projectId)
+            && Objects.equals(this.iterationId, updateIterationV4Request.iterationId)
+            && Objects.equals(this.body, updateIterationV4Request.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(projectId, iterationId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class UpdateIterationV4Request  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

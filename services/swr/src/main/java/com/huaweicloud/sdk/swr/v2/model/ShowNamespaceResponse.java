@@ -1,66 +1,45 @@
 package com.huaweicloud.sdk.swr.v2.model;
 
-
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
-
-
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowNamespaceResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Integer id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator_name")
-    
+    @JsonProperty(value = "creator_name")
+
     private String creatorName;
-    /**
-     * 用户权限。7表示管理权限，3表示编辑权限，1表示读取权限。
-     */
+
+    /** 用户权限。7表示管理权限，3表示编辑权限，1表示读取权限。 */
     public static final class AuthEnum {
 
-        
-        /**
-         * Enum NUMBER_7 for value: 7
-         */
+        /** Enum NUMBER_7 for value: 7 */
         public static final AuthEnum NUMBER_7 = new AuthEnum(7);
-        
-        /**
-         * Enum NUMBER_3 for value: 3
-         */
+
+        /** Enum NUMBER_3 for value: 3 */
         public static final AuthEnum NUMBER_3 = new AuthEnum(3);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
+
+        /** Enum NUMBER_1 for value: 1 */
         public static final AuthEnum NUMBER_1 = new AuthEnum(1);
-        
 
         private static final Map<Integer, AuthEnum> STATIC_FIELDS = createStaticFields();
 
@@ -90,7 +69,7 @@ public class ShowNamespaceResponse extends SdkResponse {
 
         @JsonCreator
         public static AuthEnum fromValue(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AuthEnum result = STATIC_FIELDS.get(value);
@@ -101,7 +80,7 @@ public class ShowNamespaceResponse extends SdkResponse {
         }
 
         public static AuthEnum valueOf(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AuthEnum result = STATIC_FIELDS.get(value);
@@ -125,10 +104,9 @@ public class ShowNamespaceResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth")
-    
+    @JsonProperty(value = "auth")
+
     private AuthEnum auth;
 
     public ShowNamespaceResponse withId(Integer id) {
@@ -136,13 +114,9 @@ public class ShowNamespaceResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * id
-     * @return id
-     */
+    /** id
+     * 
+     * @return id */
     public Integer getId() {
         return id;
     }
@@ -151,20 +125,14 @@ public class ShowNamespaceResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowNamespaceResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
-     * @return name
-     */
+    /** 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -173,20 +141,14 @@ public class ShowNamespaceResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowNamespaceResponse withCreatorName(String creatorName) {
         this.creatorName = creatorName;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户名
-     * @return creatorName
-     */
+    /** IAM用户名
+     * 
+     * @return creatorName */
     public String getCreatorName() {
         return creatorName;
     }
@@ -195,20 +157,14 @@ public class ShowNamespaceResponse extends SdkResponse {
         this.creatorName = creatorName;
     }
 
-    
-
     public ShowNamespaceResponse withAuth(AuthEnum auth) {
         this.auth = auth;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户权限。7表示管理权限，3表示编辑权限，1表示读取权限。
-     * @return auth
-     */
+    /** 用户权限。7表示管理权限，3表示编辑权限，1表示读取权限。
+     * 
+     * @return auth */
     public AuthEnum getAuth() {
         return auth;
     }
@@ -216,8 +172,6 @@ public class ShowNamespaceResponse extends SdkResponse {
     public void setAuth(AuthEnum auth) {
         this.auth = auth;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -228,15 +182,17 @@ public class ShowNamespaceResponse extends SdkResponse {
             return false;
         }
         ShowNamespaceResponse showNamespaceResponse = (ShowNamespaceResponse) o;
-        return Objects.equals(this.id, showNamespaceResponse.id) &&
-            Objects.equals(this.name, showNamespaceResponse.name) &&
-            Objects.equals(this.creatorName, showNamespaceResponse.creatorName) &&
-            Objects.equals(this.auth, showNamespaceResponse.auth);
+        return Objects.equals(this.id, showNamespaceResponse.id)
+            && Objects.equals(this.name, showNamespaceResponse.name)
+            && Objects.equals(this.creatorName, showNamespaceResponse.creatorName)
+            && Objects.equals(this.auth, showNamespaceResponse.auth);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, creatorName, auth);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,16 +204,13 @@ public class ShowNamespaceResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

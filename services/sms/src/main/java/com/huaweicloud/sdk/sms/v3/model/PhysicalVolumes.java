@@ -1,68 +1,51 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 使用大小
- */
-public class PhysicalVolumes  {
-
-
+/** 使用大小 */
+public class PhysicalVolumes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_use")
-    
+    @JsonProperty(value = "device_use")
+
     private String deviceUse;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_system")
-    
+    @JsonProperty(value = "file_system")
+
     private String fileSystem;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="index")
-    
+    @JsonProperty(value = "index")
+
     private Integer index;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mount_point")
-    
+    @JsonProperty(value = "mount_point")
+
     private String mountPoint;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Long size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="used_size")
-    
+    @JsonProperty(value = "used_size")
+
     private Long usedSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="uuid")
-    
+    @JsonProperty(value = "uuid")
+
     private String uuid;
 
     public PhysicalVolumes withDeviceUse(String deviceUse) {
@@ -70,13 +53,9 @@ public class PhysicalVolumes  {
         return this;
     }
 
-    
-
-
-    /**
-     * 分区类型，普通分区，启动分区，系统分区
-     * @return deviceUse
-     */
+    /** 分区类型，普通分区，启动分区，系统分区
+     * 
+     * @return deviceUse */
     public String getDeviceUse() {
         return deviceUse;
     }
@@ -85,20 +64,14 @@ public class PhysicalVolumes  {
         this.deviceUse = deviceUse;
     }
 
-    
-
     public PhysicalVolumes withFileSystem(String fileSystem) {
         this.fileSystem = fileSystem;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件系统类型
-     * @return fileSystem
-     */
+    /** 文件系统类型
+     * 
+     * @return fileSystem */
     public String getFileSystem() {
         return fileSystem;
     }
@@ -107,22 +80,14 @@ public class PhysicalVolumes  {
         this.fileSystem = fileSystem;
     }
 
-    
-
     public PhysicalVolumes withIndex(Integer index) {
         this.index = index;
         return this;
     }
 
-    
-
-
-    /**
-     * 顺序
-     * minimum: 0
-     * maximum: 2147483647
-     * @return index
-     */
+    /** 顺序 minimum: 0 maximum: 2147483647
+     * 
+     * @return index */
     public Integer getIndex() {
         return index;
     }
@@ -131,20 +96,14 @@ public class PhysicalVolumes  {
         this.index = index;
     }
 
-    
-
     public PhysicalVolumes withMountPoint(String mountPoint) {
         this.mountPoint = mountPoint;
         return this;
     }
 
-    
-
-
-    /**
-     * 挂载点
-     * @return mountPoint
-     */
+    /** 挂载点
+     * 
+     * @return mountPoint */
     public String getMountPoint() {
         return mountPoint;
     }
@@ -153,20 +112,14 @@ public class PhysicalVolumes  {
         this.mountPoint = mountPoint;
     }
 
-    
-
     public PhysicalVolumes withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 名称，windows表示盘符，Linux表示设备号
-     * @return name
-     */
+    /** 名称，windows表示盘符，Linux表示设备号
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -175,22 +128,14 @@ public class PhysicalVolumes  {
         this.name = name;
     }
 
-    
-
     public PhysicalVolumes withSize(Long size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 大小
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return size
-     */
+    /** 大小 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return size */
     public Long getSize() {
         return size;
     }
@@ -199,22 +144,14 @@ public class PhysicalVolumes  {
         this.size = size;
     }
 
-    
-
     public PhysicalVolumes withUsedSize(Long usedSize) {
         this.usedSize = usedSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 使用大小
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return usedSize
-     */
+    /** 使用大小 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return usedSize */
     public Long getUsedSize() {
         return usedSize;
     }
@@ -223,20 +160,14 @@ public class PhysicalVolumes  {
         this.usedSize = usedSize;
     }
 
-    
-
     public PhysicalVolumes withUuid(String uuid) {
         this.uuid = uuid;
         return this;
     }
 
-    
-
-
-    /**
-     * GUID，可从源端查询
-     * @return uuid
-     */
+    /** GUID，可从源端查询
+     * 
+     * @return uuid */
     public String getUuid() {
         return uuid;
     }
@@ -244,8 +175,6 @@ public class PhysicalVolumes  {
     public void setUuid(String uuid) {
         this.uuid = uuid;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -256,19 +185,20 @@ public class PhysicalVolumes  {
             return false;
         }
         PhysicalVolumes physicalVolumes = (PhysicalVolumes) o;
-        return Objects.equals(this.deviceUse, physicalVolumes.deviceUse) &&
-            Objects.equals(this.fileSystem, physicalVolumes.fileSystem) &&
-            Objects.equals(this.index, physicalVolumes.index) &&
-            Objects.equals(this.mountPoint, physicalVolumes.mountPoint) &&
-            Objects.equals(this.name, physicalVolumes.name) &&
-            Objects.equals(this.size, physicalVolumes.size) &&
-            Objects.equals(this.usedSize, physicalVolumes.usedSize) &&
-            Objects.equals(this.uuid, physicalVolumes.uuid);
+        return Objects.equals(this.deviceUse, physicalVolumes.deviceUse)
+            && Objects.equals(this.fileSystem, physicalVolumes.fileSystem)
+            && Objects.equals(this.index, physicalVolumes.index)
+            && Objects.equals(this.mountPoint, physicalVolumes.mountPoint)
+            && Objects.equals(this.name, physicalVolumes.name) && Objects.equals(this.size, physicalVolumes.size)
+            && Objects.equals(this.usedSize, physicalVolumes.usedSize)
+            && Objects.equals(this.uuid, physicalVolumes.uuid);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(deviceUse, fileSystem, index, mountPoint, name, size, usedSize, uuid);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -284,16 +214,13 @@ public class PhysicalVolumes  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

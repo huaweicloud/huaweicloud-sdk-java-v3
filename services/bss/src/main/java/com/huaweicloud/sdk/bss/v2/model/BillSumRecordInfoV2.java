@@ -1,128 +1,101 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * BillSumRecordInfoV2
- */
-public class BillSumRecordInfoV2  {
-
-
+/** BillSumRecordInfoV2 */
+public class BillSumRecordInfoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bill_cycle")
-    
+    @JsonProperty(value = "bill_cycle")
+
     private String billCycle;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type_code")
-    
+    @JsonProperty(value = "resource_type_code")
+
     private String resourceTypeCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_type_code")
-    
+    @JsonProperty(value = "service_type_code")
+
     private String serviceTypeCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charging_mode")
-    
+    @JsonProperty(value = "charging_mode")
+
     private Integer chargingMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="official_amount")
-    
+    @JsonProperty(value = "official_amount")
+
     private Double officialAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="official_discount_amount")
-    
+    @JsonProperty(value = "official_discount_amount")
+
     private Double officialDiscountAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="truncated_amount")
-    
+    @JsonProperty(value = "truncated_amount")
+
     private Double truncatedAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="consume_amount")
-    
+    @JsonProperty(value = "consume_amount")
+
     private Double consumeAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="coupon_amount")
-    
+    @JsonProperty(value = "coupon_amount")
+
     private Double couponAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flexipurchase_coupon_amount")
-    
+    @JsonProperty(value = "flexipurchase_coupon_amount")
+
     private Double flexipurchaseCouponAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stored_value_card_amount")
-    
+    @JsonProperty(value = "stored_value_card_amount")
+
     private Double storedValueCardAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="debt_amount")
-    
+    @JsonProperty(value = "debt_amount")
+
     private Double debtAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="writeoff_amount")
-    
+    @JsonProperty(value = "writeoff_amount")
+
     private Double writeoffAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cash_amount")
-    
+    @JsonProperty(value = "cash_amount")
+
     private Double cashAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="credit_amount")
-    
+    @JsonProperty(value = "credit_amount")
+
     private Double creditAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="measure_id")
-    
+    @JsonProperty(value = "measure_id")
+
     private Integer measureId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bill_type")
-    
+    @JsonProperty(value = "bill_type")
+
     private Integer billType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_id")
-    
+    @JsonProperty(value = "customer_id")
+
     private String customerId;
 
     public BillSumRecordInfoV2 withBillCycle(String billCycle) {
@@ -130,13 +103,9 @@ public class BillSumRecordInfoV2  {
         return this;
     }
 
-    
-
-
-    /**
-     * 消费汇总数据所在账期，格式：YYYY-MM。
-     * @return billCycle
-     */
+    /** 消费汇总数据所在账期，格式：YYYY-MM。
+     * 
+     * @return billCycle */
     public String getBillCycle() {
         return billCycle;
     }
@@ -145,20 +114,14 @@ public class BillSumRecordInfoV2  {
         this.billCycle = billCycle;
     }
 
-    
-
     public BillSumRecordInfoV2 withResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
-     * @return resourceTypeCode
-     */
+    /** 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
+     * 
+     * @return resourceTypeCode */
     public String getResourceTypeCode() {
         return resourceTypeCode;
     }
@@ -167,20 +130,14 @@ public class BillSumRecordInfoV2  {
         this.resourceTypeCode = resourceTypeCode;
     }
 
-    
-
     public BillSumRecordInfoV2 withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。您可以调用查询云服务类型列表接口获取。
-     * @return serviceTypeCode
-     */
+    /** 云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。您可以调用查询云服务类型列表接口获取。
+     * 
+     * @return serviceTypeCode */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -189,20 +146,14 @@ public class BillSumRecordInfoV2  {
         this.serviceTypeCode = serviceTypeCode;
     }
 
-    
-
     public BillSumRecordInfoV2 withChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 计费模式。 1：包年/包月3：按需10：预留实例
-     * @return chargingMode
-     */
+    /** 计费模式。 1：包年/包月3：按需10：预留实例
+     * 
+     * @return chargingMode */
     public Integer getChargingMode() {
         return chargingMode;
     }
@@ -211,20 +162,14 @@ public class BillSumRecordInfoV2  {
         this.chargingMode = chargingMode;
     }
 
-    
-
     public BillSumRecordInfoV2 withOfficialAmount(Double officialAmount) {
         this.officialAmount = officialAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 官网价。
-     * @return officialAmount
-     */
+    /** 官网价。
+     * 
+     * @return officialAmount */
     public Double getOfficialAmount() {
         return officialAmount;
     }
@@ -233,20 +178,14 @@ public class BillSumRecordInfoV2  {
         this.officialAmount = officialAmount;
     }
 
-    
-
     public BillSumRecordInfoV2 withOfficialDiscountAmount(Double officialDiscountAmount) {
         this.officialDiscountAmount = officialDiscountAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 折扣金额。
-     * @return officialDiscountAmount
-     */
+    /** 折扣金额。
+     * 
+     * @return officialDiscountAmount */
     public Double getOfficialDiscountAmount() {
         return officialDiscountAmount;
     }
@@ -255,20 +194,14 @@ public class BillSumRecordInfoV2  {
         this.officialDiscountAmount = officialDiscountAmount;
     }
 
-    
-
     public BillSumRecordInfoV2 withTruncatedAmount(Double truncatedAmount) {
         this.truncatedAmount = truncatedAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 抹零金额。
-     * @return truncatedAmount
-     */
+    /** 抹零金额。
+     * 
+     * @return truncatedAmount */
     public Double getTruncatedAmount() {
         return truncatedAmount;
     }
@@ -277,20 +210,14 @@ public class BillSumRecordInfoV2  {
         this.truncatedAmount = truncatedAmount;
     }
 
-    
-
     public BillSumRecordInfoV2 withConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 应付金额。 应付金额=官网价-折扣金额-抹零金额
-     * @return consumeAmount
-     */
+    /** 应付金额。 应付金额=官网价-折扣金额-抹零金额
+     * 
+     * @return consumeAmount */
     public Double getConsumeAmount() {
         return consumeAmount;
     }
@@ -299,20 +226,14 @@ public class BillSumRecordInfoV2  {
         this.consumeAmount = consumeAmount;
     }
 
-    
-
     public BillSumRecordInfoV2 withCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 代金券金额。
-     * @return couponAmount
-     */
+    /** 代金券金额。
+     * 
+     * @return couponAmount */
     public Double getCouponAmount() {
         return couponAmount;
     }
@@ -321,20 +242,14 @@ public class BillSumRecordInfoV2  {
         this.couponAmount = couponAmount;
     }
 
-    
-
     public BillSumRecordInfoV2 withFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 现金券金额，预留。
-     * @return flexipurchaseCouponAmount
-     */
+    /** 现金券金额，预留。
+     * 
+     * @return flexipurchaseCouponAmount */
     public Double getFlexipurchaseCouponAmount() {
         return flexipurchaseCouponAmount;
     }
@@ -343,20 +258,14 @@ public class BillSumRecordInfoV2  {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
     }
 
-    
-
     public BillSumRecordInfoV2 withStoredValueCardAmount(Double storedValueCardAmount) {
         this.storedValueCardAmount = storedValueCardAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 储值卡金额，预留。
-     * @return storedValueCardAmount
-     */
+    /** 储值卡金额，预留。
+     * 
+     * @return storedValueCardAmount */
     public Double getStoredValueCardAmount() {
         return storedValueCardAmount;
     }
@@ -365,20 +274,14 @@ public class BillSumRecordInfoV2  {
         this.storedValueCardAmount = storedValueCardAmount;
     }
 
-    
-
     public BillSumRecordInfoV2 withDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 欠费金额。即伙伴从客户账户扣费时，客户账户金额不足，欠费的金额。
-     * @return debtAmount
-     */
+    /** 欠费金额。即伙伴从客户账户扣费时，客户账户金额不足，欠费的金额。
+     * 
+     * @return debtAmount */
     public Double getDebtAmount() {
         return debtAmount;
     }
@@ -387,20 +290,14 @@ public class BillSumRecordInfoV2  {
         this.debtAmount = debtAmount;
     }
 
-    
-
     public BillSumRecordInfoV2 withWriteoffAmount(Double writeoffAmount) {
         this.writeoffAmount = writeoffAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 欠费核销金额。
-     * @return writeoffAmount
-     */
+    /** 欠费核销金额。
+     * 
+     * @return writeoffAmount */
     public Double getWriteoffAmount() {
         return writeoffAmount;
     }
@@ -409,20 +306,14 @@ public class BillSumRecordInfoV2  {
         this.writeoffAmount = writeoffAmount;
     }
 
-    
-
     public BillSumRecordInfoV2 withCashAmount(Double cashAmount) {
         this.cashAmount = cashAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 现金账户金额。
-     * @return cashAmount
-     */
+    /** 现金账户金额。
+     * 
+     * @return cashAmount */
     public Double getCashAmount() {
         return cashAmount;
     }
@@ -431,20 +322,14 @@ public class BillSumRecordInfoV2  {
         this.cashAmount = cashAmount;
     }
 
-    
-
     public BillSumRecordInfoV2 withCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 信用账户金额。
-     * @return creditAmount
-     */
+    /** 信用账户金额。
+     * 
+     * @return creditAmount */
     public Double getCreditAmount() {
         return creditAmount;
     }
@@ -453,20 +338,14 @@ public class BillSumRecordInfoV2  {
         this.creditAmount = creditAmount;
     }
 
-    
-
     public BillSumRecordInfoV2 withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
     }
 
-    
-
-
-    /**
-     * 金额单位。 1：元
-     * @return measureId
-     */
+    /** 金额单位。 1：元
+     * 
+     * @return measureId */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -475,20 +354,14 @@ public class BillSumRecordInfoV2  {
         this.measureId = measureId;
     }
 
-    
-
     public BillSumRecordInfoV2 withBillType(Integer billType) {
         this.billType = billType;
         return this;
     }
 
-    
-
-
-    /**
-     * 账单类型。 1：消费2：退款3：调账
-     * @return billType
-     */
+    /** 账单类型。 1：消费2：退款3：调账
+     * 
+     * @return billType */
     public Integer getBillType() {
         return billType;
     }
@@ -497,20 +370,15 @@ public class BillSumRecordInfoV2  {
         this.billType = billType;
     }
 
-    
-
     public BillSumRecordInfoV2 withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 消费的客户账号ID。 如果是普通客户或者企业子客户查询消费记录，只能查询到客户自己的消费记录，且此处显示的是客户自己的客户ID。如果是企业主查询消费记录，可以查询到企业主以及企业子客户的消费记录，此处为消费的实际客户ID。如果是企业主自己的消费记录，则为企业主ID；如果是某个企业子客户的消费记录，则此处为企业子账号ID。
-     * @return customerId
-     */
+    /** 消费的客户账号ID。
+     * 如果是普通客户或者企业子客户查询消费记录，只能查询到客户自己的消费记录，且此处显示的是客户自己的客户ID。如果是企业主查询消费记录，可以查询到企业主以及企业子客户的消费记录，此处为消费的实际客户ID。如果是企业主自己的消费记录，则为企业主ID；如果是某个企业子客户的消费记录，则此处为企业子账号ID。
+     * 
+     * @return customerId */
     public String getCustomerId() {
         return customerId;
     }
@@ -518,8 +386,6 @@ public class BillSumRecordInfoV2  {
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -530,29 +396,48 @@ public class BillSumRecordInfoV2  {
             return false;
         }
         BillSumRecordInfoV2 billSumRecordInfoV2 = (BillSumRecordInfoV2) o;
-        return Objects.equals(this.billCycle, billSumRecordInfoV2.billCycle) &&
-            Objects.equals(this.resourceTypeCode, billSumRecordInfoV2.resourceTypeCode) &&
-            Objects.equals(this.serviceTypeCode, billSumRecordInfoV2.serviceTypeCode) &&
-            Objects.equals(this.chargingMode, billSumRecordInfoV2.chargingMode) &&
-            Objects.equals(this.officialAmount, billSumRecordInfoV2.officialAmount) &&
-            Objects.equals(this.officialDiscountAmount, billSumRecordInfoV2.officialDiscountAmount) &&
-            Objects.equals(this.truncatedAmount, billSumRecordInfoV2.truncatedAmount) &&
-            Objects.equals(this.consumeAmount, billSumRecordInfoV2.consumeAmount) &&
-            Objects.equals(this.couponAmount, billSumRecordInfoV2.couponAmount) &&
-            Objects.equals(this.flexipurchaseCouponAmount, billSumRecordInfoV2.flexipurchaseCouponAmount) &&
-            Objects.equals(this.storedValueCardAmount, billSumRecordInfoV2.storedValueCardAmount) &&
-            Objects.equals(this.debtAmount, billSumRecordInfoV2.debtAmount) &&
-            Objects.equals(this.writeoffAmount, billSumRecordInfoV2.writeoffAmount) &&
-            Objects.equals(this.cashAmount, billSumRecordInfoV2.cashAmount) &&
-            Objects.equals(this.creditAmount, billSumRecordInfoV2.creditAmount) &&
-            Objects.equals(this.measureId, billSumRecordInfoV2.measureId) &&
-            Objects.equals(this.billType, billSumRecordInfoV2.billType) &&
-            Objects.equals(this.customerId, billSumRecordInfoV2.customerId);
+        return Objects.equals(this.billCycle, billSumRecordInfoV2.billCycle)
+            && Objects.equals(this.resourceTypeCode, billSumRecordInfoV2.resourceTypeCode)
+            && Objects.equals(this.serviceTypeCode, billSumRecordInfoV2.serviceTypeCode)
+            && Objects.equals(this.chargingMode, billSumRecordInfoV2.chargingMode)
+            && Objects.equals(this.officialAmount, billSumRecordInfoV2.officialAmount)
+            && Objects.equals(this.officialDiscountAmount, billSumRecordInfoV2.officialDiscountAmount)
+            && Objects.equals(this.truncatedAmount, billSumRecordInfoV2.truncatedAmount)
+            && Objects.equals(this.consumeAmount, billSumRecordInfoV2.consumeAmount)
+            && Objects.equals(this.couponAmount, billSumRecordInfoV2.couponAmount)
+            && Objects.equals(this.flexipurchaseCouponAmount, billSumRecordInfoV2.flexipurchaseCouponAmount)
+            && Objects.equals(this.storedValueCardAmount, billSumRecordInfoV2.storedValueCardAmount)
+            && Objects.equals(this.debtAmount, billSumRecordInfoV2.debtAmount)
+            && Objects.equals(this.writeoffAmount, billSumRecordInfoV2.writeoffAmount)
+            && Objects.equals(this.cashAmount, billSumRecordInfoV2.cashAmount)
+            && Objects.equals(this.creditAmount, billSumRecordInfoV2.creditAmount)
+            && Objects.equals(this.measureId, billSumRecordInfoV2.measureId)
+            && Objects.equals(this.billType, billSumRecordInfoV2.billType)
+            && Objects.equals(this.customerId, billSumRecordInfoV2.customerId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(billCycle, resourceTypeCode, serviceTypeCode, chargingMode, officialAmount, officialDiscountAmount, truncatedAmount, consumeAmount, couponAmount, flexipurchaseCouponAmount, storedValueCardAmount, debtAmount, writeoffAmount, cashAmount, creditAmount, measureId, billType, customerId);
+        return Objects.hash(billCycle,
+            resourceTypeCode,
+            serviceTypeCode,
+            chargingMode,
+            officialAmount,
+            officialDiscountAmount,
+            truncatedAmount,
+            consumeAmount,
+            couponAmount,
+            flexipurchaseCouponAmount,
+            storedValueCardAmount,
+            debtAmount,
+            writeoffAmount,
+            cashAmount,
+            creditAmount,
+            measureId,
+            billType,
+            customerId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -578,16 +463,13 @@ public class BillSumRecordInfoV2  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

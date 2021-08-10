@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * used_rds 返回参数
- */
-public class GetDatabaseUsedRds  {
-
-
+/** used_rds 返回参数 */
+public class GetDatabaseUsedRds {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_msg")
-    
+    @JsonProperty(value = "error_msg")
+
     private String errorMsg;
 
     public GetDatabaseUsedRds withId(String id) {
@@ -46,13 +33,9 @@ public class GetDatabaseUsedRds  {
         return this;
     }
 
-    
-
-
-    /**
-     * 关联RDS节点ID。
-     * @return id
-     */
+    /** 关联RDS节点ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -61,20 +44,14 @@ public class GetDatabaseUsedRds  {
         this.id = id;
     }
 
-    
-
     public GetDatabaseUsedRds withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 关联RDS名称
-     * @return name
-     */
+    /** 关联RDS名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -83,20 +60,14 @@ public class GetDatabaseUsedRds  {
         this.name = name;
     }
 
-    
-
     public GetDatabaseUsedRds withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 关联RDS状态。
-     * @return status
-     */
+    /** 关联RDS状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -105,20 +76,14 @@ public class GetDatabaseUsedRds  {
         this.status = status;
     }
 
-    
-
     public GetDatabaseUsedRds withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
 
-    
-
-
-    /**
-     * 响应信息，若无异常信息则不返回该参数。
-     * @return errorMsg
-     */
+    /** 响应信息，若无异常信息则不返回该参数。
+     * 
+     * @return errorMsg */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -126,8 +91,6 @@ public class GetDatabaseUsedRds  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,16 @@ public class GetDatabaseUsedRds  {
             return false;
         }
         GetDatabaseUsedRds getDatabaseUsedRds = (GetDatabaseUsedRds) o;
-        return Objects.equals(this.id, getDatabaseUsedRds.id) &&
-            Objects.equals(this.name, getDatabaseUsedRds.name) &&
-            Objects.equals(this.status, getDatabaseUsedRds.status) &&
-            Objects.equals(this.errorMsg, getDatabaseUsedRds.errorMsg);
+        return Objects.equals(this.id, getDatabaseUsedRds.id) && Objects.equals(this.name, getDatabaseUsedRds.name)
+            && Objects.equals(this.status, getDatabaseUsedRds.status)
+            && Objects.equals(this.errorMsg, getDatabaseUsedRds.errorMsg);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, status, errorMsg);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +122,13 @@ public class GetDatabaseUsedRds  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

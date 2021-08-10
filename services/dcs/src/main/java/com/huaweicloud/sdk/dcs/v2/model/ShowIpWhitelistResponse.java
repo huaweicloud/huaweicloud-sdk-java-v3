@@ -1,51 +1,35 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dcs.v2.model.Whitelist;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowIpWhitelistResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable_whitelist")
-    
+    @JsonProperty(value = "enable_whitelist")
+
     private Boolean enableWhitelist;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="whitelist")
-    
+    @JsonProperty(value = "whitelist")
+
     private List<Whitelist> whitelist = null;
-    
+
     public ShowIpWhitelistResponse withEnableWhitelist(Boolean enableWhitelist) {
         this.enableWhitelist = enableWhitelist;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否启用白名单（true/false）。
-     * @return enableWhitelist
-     */
+    /** 是否启用白名单（true/false）。
+     * 
+     * @return enableWhitelist */
     public Boolean getEnableWhitelist() {
         return enableWhitelist;
     }
@@ -54,16 +38,13 @@ public class ShowIpWhitelistResponse extends SdkResponse {
         this.enableWhitelist = enableWhitelist;
     }
 
-    
-
     public ShowIpWhitelistResponse withWhitelist(List<Whitelist> whitelist) {
         this.whitelist = whitelist;
         return this;
     }
 
-    
     public ShowIpWhitelistResponse addWhitelistItem(Whitelist whitelistItem) {
-        if(this.whitelist == null) {
+        if (this.whitelist == null) {
             this.whitelist = new ArrayList<>();
         }
         this.whitelist.add(whitelistItem);
@@ -71,17 +52,16 @@ public class ShowIpWhitelistResponse extends SdkResponse {
     }
 
     public ShowIpWhitelistResponse withWhitelist(Consumer<List<Whitelist>> whitelistSetter) {
-        if(this.whitelist == null) {
+        if (this.whitelist == null) {
             this.whitelist = new ArrayList<>();
         }
         whitelistSetter.accept(this.whitelist);
         return this;
     }
 
-    /**
-     * IP白名单分组列表。
-     * @return whitelist
-     */
+    /** IP白名单分组列表。
+     * 
+     * @return whitelist */
     public List<Whitelist> getWhitelist() {
         return whitelist;
     }
@@ -89,8 +69,6 @@ public class ShowIpWhitelistResponse extends SdkResponse {
     public void setWhitelist(List<Whitelist> whitelist) {
         this.whitelist = whitelist;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ShowIpWhitelistResponse extends SdkResponse {
             return false;
         }
         ShowIpWhitelistResponse showIpWhitelistResponse = (ShowIpWhitelistResponse) o;
-        return Objects.equals(this.enableWhitelist, showIpWhitelistResponse.enableWhitelist) &&
-            Objects.equals(this.whitelist, showIpWhitelistResponse.whitelist);
+        return Objects.equals(this.enableWhitelist, showIpWhitelistResponse.enableWhitelist)
+            && Objects.equals(this.whitelist, showIpWhitelistResponse.whitelist);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(enableWhitelist, whitelist);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ShowIpWhitelistResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

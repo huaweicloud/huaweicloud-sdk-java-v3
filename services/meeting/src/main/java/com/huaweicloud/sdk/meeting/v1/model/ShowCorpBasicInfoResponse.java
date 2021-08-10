@@ -1,100 +1,77 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowCorpBasicInfoResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="address")
-    
+    @JsonProperty(value = "address")
+
     private String address;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="adminName")
-    
+    @JsonProperty(value = "adminName")
+
     private String adminName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="account")
-    
+    @JsonProperty(value = "account")
+
     private String account;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="phone")
-    
+    @JsonProperty(value = "phone")
+
     private String phone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="country")
-    
+    @JsonProperty(value = "country")
+
     private String country;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="email")
-    
+    @JsonProperty(value = "email")
+
     private String email;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enableSMS")
-    
+    @JsonProperty(value = "enableSMS")
+
     private Boolean enableSMS;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enableCloudDisk")
-    
+    @JsonProperty(value = "enableCloudDisk")
+
     private Boolean enableCloudDisk;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enablePstn")
-    
+    @JsonProperty(value = "enablePstn")
+
     private Boolean enablePstn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="autoUserCreate")
-    
+    @JsonProperty(value = "autoUserCreate")
+
     private Boolean autoUserCreate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="corpType")
-    
+    @JsonProperty(value = "corpType")
+
     private Integer corpType;
 
     public ShowCorpBasicInfoResponse withId(String id) {
@@ -102,13 +79,9 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 企业id
-     * @return id
-     */
+    /** 企业id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -117,20 +90,14 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowCorpBasicInfoResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业名称
-     * @return name
-     */
+    /** 企业名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -139,20 +106,14 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowCorpBasicInfoResponse withAddress(String address) {
         this.address = address;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业所在地
-     * @return address
-     */
+    /** 企业所在地
+     * 
+     * @return address */
     public String getAddress() {
         return address;
     }
@@ -161,20 +122,14 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
         this.address = address;
     }
 
-    
-
     public ShowCorpBasicInfoResponse withAdminName(String adminName) {
         this.adminName = adminName;
         return this;
     }
 
-    
-
-
-    /**
-     * 管理员名称
-     * @return adminName
-     */
+    /** 管理员名称
+     * 
+     * @return adminName */
     public String getAdminName() {
         return adminName;
     }
@@ -183,20 +138,14 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
         this.adminName = adminName;
     }
 
-    
-
     public ShowCorpBasicInfoResponse withAccount(String account) {
         this.account = account;
         return this;
     }
 
-    
-
-
-    /**
-     * 管理员账号
-     * @return account
-     */
+    /** 管理员账号
+     * 
+     * @return account */
     public String getAccount() {
         return account;
     }
@@ -205,20 +154,14 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
         this.account = account;
     }
 
-    
-
     public ShowCorpBasicInfoResponse withPhone(String phone) {
         this.phone = phone;
         return this;
     }
 
-    
-
-
-    /**
-     * 管理员手机
-     * @return phone
-     */
+    /** 管理员手机
+     * 
+     * @return phone */
     public String getPhone() {
         return phone;
     }
@@ -227,20 +170,14 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
         this.phone = phone;
     }
 
-    
-
     public ShowCorpBasicInfoResponse withCountry(String country) {
         this.country = country;
         return this;
     }
 
-    
-
-
-    /**
-     * 管理员手机所属的国家
-     * @return country
-     */
+    /** 管理员手机所属的国家
+     * 
+     * @return country */
     public String getCountry() {
         return country;
     }
@@ -249,20 +186,14 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
         this.country = country;
     }
 
-    
-
     public ShowCorpBasicInfoResponse withEmail(String email) {
         this.email = email;
         return this;
     }
 
-    
-
-
-    /**
-     * 管理员邮箱
-     * @return email
-     */
+    /** 管理员邮箱
+     * 
+     * @return email */
     public String getEmail() {
         return email;
     }
@@ -271,20 +202,14 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
         this.email = email;
     }
 
-    
-
     public ShowCorpBasicInfoResponse withEnableSMS(Boolean enableSMS) {
         this.enableSMS = enableSMS;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否发送短信
-     * @return enableSMS
-     */
+    /** 是否发送短信
+     * 
+     * @return enableSMS */
     public Boolean getEnableSMS() {
         return enableSMS;
     }
@@ -293,20 +218,14 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
         this.enableSMS = enableSMS;
     }
 
-    
-
     public ShowCorpBasicInfoResponse withEnableCloudDisk(Boolean enableCloudDisk) {
         this.enableCloudDisk = enableCloudDisk;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启云盘
-     * @return enableCloudDisk
-     */
+    /** 是否开启云盘
+     * 
+     * @return enableCloudDisk */
     public Boolean getEnableCloudDisk() {
         return enableCloudDisk;
     }
@@ -315,20 +234,14 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
         this.enableCloudDisk = enableCloudDisk;
     }
 
-    
-
     public ShowCorpBasicInfoResponse withEnablePstn(Boolean enablePstn) {
         this.enablePstn = enablePstn;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否具有pstn功能
-     * @return enablePstn
-     */
+    /** 是否具有pstn功能
+     * 
+     * @return enablePstn */
     public Boolean getEnablePstn() {
         return enablePstn;
     }
@@ -337,20 +250,14 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
         this.enablePstn = enablePstn;
     }
 
-    
-
     public ShowCorpBasicInfoResponse withAutoUserCreate(Boolean autoUserCreate) {
         this.autoUserCreate = autoUserCreate;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否支持自动开户
-     * @return autoUserCreate
-     */
+    /** 是否支持自动开户
+     * 
+     * @return autoUserCreate */
     public Boolean getAutoUserCreate() {
         return autoUserCreate;
     }
@@ -359,20 +266,14 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
         this.autoUserCreate = autoUserCreate;
     }
 
-    
-
     public ShowCorpBasicInfoResponse withCorpType(Integer corpType) {
         this.corpType = corpType;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业类型
-     * @return corpType
-     */
+    /** 企业类型
+     * 
+     * @return corpType */
     public Integer getCorpType() {
         return corpType;
     }
@@ -380,8 +281,6 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     public void setCorpType(Integer corpType) {
         this.corpType = corpType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -392,24 +291,38 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
             return false;
         }
         ShowCorpBasicInfoResponse showCorpBasicInfoResponse = (ShowCorpBasicInfoResponse) o;
-        return Objects.equals(this.id, showCorpBasicInfoResponse.id) &&
-            Objects.equals(this.name, showCorpBasicInfoResponse.name) &&
-            Objects.equals(this.address, showCorpBasicInfoResponse.address) &&
-            Objects.equals(this.adminName, showCorpBasicInfoResponse.adminName) &&
-            Objects.equals(this.account, showCorpBasicInfoResponse.account) &&
-            Objects.equals(this.phone, showCorpBasicInfoResponse.phone) &&
-            Objects.equals(this.country, showCorpBasicInfoResponse.country) &&
-            Objects.equals(this.email, showCorpBasicInfoResponse.email) &&
-            Objects.equals(this.enableSMS, showCorpBasicInfoResponse.enableSMS) &&
-            Objects.equals(this.enableCloudDisk, showCorpBasicInfoResponse.enableCloudDisk) &&
-            Objects.equals(this.enablePstn, showCorpBasicInfoResponse.enablePstn) &&
-            Objects.equals(this.autoUserCreate, showCorpBasicInfoResponse.autoUserCreate) &&
-            Objects.equals(this.corpType, showCorpBasicInfoResponse.corpType);
+        return Objects.equals(this.id, showCorpBasicInfoResponse.id)
+            && Objects.equals(this.name, showCorpBasicInfoResponse.name)
+            && Objects.equals(this.address, showCorpBasicInfoResponse.address)
+            && Objects.equals(this.adminName, showCorpBasicInfoResponse.adminName)
+            && Objects.equals(this.account, showCorpBasicInfoResponse.account)
+            && Objects.equals(this.phone, showCorpBasicInfoResponse.phone)
+            && Objects.equals(this.country, showCorpBasicInfoResponse.country)
+            && Objects.equals(this.email, showCorpBasicInfoResponse.email)
+            && Objects.equals(this.enableSMS, showCorpBasicInfoResponse.enableSMS)
+            && Objects.equals(this.enableCloudDisk, showCorpBasicInfoResponse.enableCloudDisk)
+            && Objects.equals(this.enablePstn, showCorpBasicInfoResponse.enablePstn)
+            && Objects.equals(this.autoUserCreate, showCorpBasicInfoResponse.autoUserCreate)
+            && Objects.equals(this.corpType, showCorpBasicInfoResponse.corpType);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, address, adminName, account, phone, country, email, enableSMS, enableCloudDisk, enablePstn, autoUserCreate, corpType);
+        return Objects.hash(id,
+            name,
+            address,
+            adminName,
+            account,
+            phone,
+            country,
+            email,
+            enableSMS,
+            enableCloudDisk,
+            enablePstn,
+            autoUserCreate,
+            corpType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -430,16 +343,13 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

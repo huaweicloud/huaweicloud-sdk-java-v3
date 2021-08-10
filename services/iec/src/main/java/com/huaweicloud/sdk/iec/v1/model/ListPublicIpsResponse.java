@@ -1,51 +1,35 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iec.v1.model.PublicIp;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListPublicIpsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
+
     private Integer count;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publicips")
-    
+    @JsonProperty(value = "publicips")
+
     private List<PublicIp> publicips = null;
-    
+
     public ListPublicIpsResponse withCount(Integer count) {
         this.count = count;
         return this;
     }
 
-    
-
-
-    /**
-     * 弹性公网IP数目。
-     * @return count
-     */
+    /** 弹性公网IP数目。
+     * 
+     * @return count */
     public Integer getCount() {
         return count;
     }
@@ -54,16 +38,13 @@ public class ListPublicIpsResponse extends SdkResponse {
         this.count = count;
     }
 
-    
-
     public ListPublicIpsResponse withPublicips(List<PublicIp> publicips) {
         this.publicips = publicips;
         return this;
     }
 
-    
     public ListPublicIpsResponse addPublicipsItem(PublicIp publicipsItem) {
-        if(this.publicips == null) {
+        if (this.publicips == null) {
             this.publicips = new ArrayList<>();
         }
         this.publicips.add(publicipsItem);
@@ -71,17 +52,16 @@ public class ListPublicIpsResponse extends SdkResponse {
     }
 
     public ListPublicIpsResponse withPublicips(Consumer<List<PublicIp>> publicipsSetter) {
-        if(this.publicips == null) {
+        if (this.publicips == null) {
             this.publicips = new ArrayList<>();
         }
         publicipsSetter.accept(this.publicips);
         return this;
     }
 
-    /**
-     * 弹性公网IP数组对象。
-     * @return publicips
-     */
+    /** 弹性公网IP数组对象。
+     * 
+     * @return publicips */
     public List<PublicIp> getPublicips() {
         return publicips;
     }
@@ -89,8 +69,6 @@ public class ListPublicIpsResponse extends SdkResponse {
     public void setPublicips(List<PublicIp> publicips) {
         this.publicips = publicips;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ListPublicIpsResponse extends SdkResponse {
             return false;
         }
         ListPublicIpsResponse listPublicIpsResponse = (ListPublicIpsResponse) o;
-        return Objects.equals(this.count, listPublicIpsResponse.count) &&
-            Objects.equals(this.publicips, listPublicIpsResponse.publicips);
+        return Objects.equals(this.count, listPublicIpsResponse.count)
+            && Objects.equals(this.publicips, listPublicIpsResponse.publicips);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(count, publicips);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ListPublicIpsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.BackupRestore;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 恢复请求body
- */
-public class BackupRestoreReq  {
-
-
+/** 恢复请求body */
+public class BackupRestoreReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="restore")
-    
+    @JsonProperty(value = "restore")
+
     private BackupRestore restore;
 
     public BackupRestoreReq withRestore(BackupRestore restore) {
@@ -30,19 +20,17 @@ public class BackupRestoreReq  {
     }
 
     public BackupRestoreReq withRestore(Consumer<BackupRestore> restoreSetter) {
-        if(this.restore == null ){
+        if (this.restore == null) {
             this.restore = new BackupRestore();
             restoreSetter.accept(this.restore);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get restore
-     * @return restore
-     */
+    /** Get restore
+     * 
+     * @return restore */
     public BackupRestore getRestore() {
         return restore;
     }
@@ -50,8 +38,6 @@ public class BackupRestoreReq  {
     public void setRestore(BackupRestore restore) {
         this.restore = restore;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class BackupRestoreReq  {
         BackupRestoreReq backupRestoreReq = (BackupRestoreReq) o;
         return Objects.equals(this.restore, backupRestoreReq.restore);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(restore);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class BackupRestoreReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

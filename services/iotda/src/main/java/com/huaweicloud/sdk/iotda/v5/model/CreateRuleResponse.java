@@ -1,86 +1,65 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotda.v5.model.ConditionGroup;
-import com.huaweicloud.sdk.iotda.v5.model.RuleAction;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateRuleResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rule_id")
-    
+    @JsonProperty(value = "rule_id")
+
     private String ruleId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="condition_group")
-    
+    @JsonProperty(value = "condition_group")
+
     private ConditionGroup conditionGroup;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="actions")
-    
+    @JsonProperty(value = "actions")
+
     private List<RuleAction> actions = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rule_type")
-    
+    @JsonProperty(value = "rule_type")
+
     private String ruleType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_node_ids")
-    
+    @JsonProperty(value = "edge_node_ids")
+
     private List<String> edgeNodeIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_update_time")
-    
+    @JsonProperty(value = "last_update_time")
+
     private String lastUpdateTime;
 
     public CreateRuleResponse withRuleId(String ruleId) {
@@ -88,13 +67,9 @@ public class CreateRuleResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 规则id。
-     * @return ruleId
-     */
+    /** 规则id。
+     * 
+     * @return ruleId */
     public String getRuleId() {
         return ruleId;
     }
@@ -103,20 +78,14 @@ public class CreateRuleResponse extends SdkResponse {
         this.ruleId = ruleId;
     }
 
-    
-
     public CreateRuleResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则名称。
-     * @return name
-     */
+    /** 规则名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -125,20 +94,14 @@ public class CreateRuleResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public CreateRuleResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则的描述信息。
-     * @return description
-     */
+    /** 规则的描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -147,27 +110,23 @@ public class CreateRuleResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public CreateRuleResponse withConditionGroup(ConditionGroup conditionGroup) {
         this.conditionGroup = conditionGroup;
         return this;
     }
 
     public CreateRuleResponse withConditionGroup(Consumer<ConditionGroup> conditionGroupSetter) {
-        if(this.conditionGroup == null ){
+        if (this.conditionGroup == null) {
             this.conditionGroup = new ConditionGroup();
             conditionGroupSetter.accept(this.conditionGroup);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get conditionGroup
-     * @return conditionGroup
-     */
+    /** Get conditionGroup
+     * 
+     * @return conditionGroup */
     public ConditionGroup getConditionGroup() {
         return conditionGroup;
     }
@@ -176,16 +135,13 @@ public class CreateRuleResponse extends SdkResponse {
         this.conditionGroup = conditionGroup;
     }
 
-    
-
     public CreateRuleResponse withActions(List<RuleAction> actions) {
         this.actions = actions;
         return this;
     }
 
-    
     public CreateRuleResponse addActionsItem(RuleAction actionsItem) {
-        if(this.actions == null) {
+        if (this.actions == null) {
             this.actions = new ArrayList<>();
         }
         this.actions.add(actionsItem);
@@ -193,17 +149,16 @@ public class CreateRuleResponse extends SdkResponse {
     }
 
     public CreateRuleResponse withActions(Consumer<List<RuleAction>> actionsSetter) {
-        if(this.actions == null) {
+        if (this.actions == null) {
             this.actions = new ArrayList<>();
         }
         actionsSetter.accept(this.actions);
         return this;
     }
 
-    /**
-     * 规则的动作列表，单个规则最多支持设置10个动作。
-     * @return actions
-     */
+    /** 规则的动作列表，单个规则最多支持设置10个动作。
+     * 
+     * @return actions */
     public List<RuleAction> getActions() {
         return actions;
     }
@@ -212,20 +167,14 @@ public class CreateRuleResponse extends SdkResponse {
         this.actions = actions;
     }
 
-    
-
     public CreateRuleResponse withRuleType(String ruleType) {
         this.ruleType = ruleType;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则的类型 - DEVICE_LINKAGE：设备联动。 - DATA_FORWARDING：数据转发。 - EDGE：边缘侧。 
-     * @return ruleType
-     */
+    /** 规则的类型 - DEVICE_LINKAGE：设备联动。 - DATA_FORWARDING：数据转发。 - EDGE：边缘侧。
+     * 
+     * @return ruleType */
     public String getRuleType() {
         return ruleType;
     }
@@ -234,20 +183,14 @@ public class CreateRuleResponse extends SdkResponse {
         this.ruleType = ruleType;
     }
 
-    
-
     public CreateRuleResponse withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则的状态，默认值：active。 - active：激活。 - inactive：未激活。 
-     * @return status
-     */
+    /** 规则的状态，默认值：active。 - active：激活。 - inactive：未激活。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -256,20 +199,14 @@ public class CreateRuleResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public CreateRuleResponse withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源空间ID。此参数为非必选参数，存在多资源空间的用户需要使用该接口时，建议携带该参数指定创建的规则归属到哪个资源空间下，否则创建的规则将会归属到[默认资源空间](https://support.huaweicloud.com/usermanual-iothub/iot_01_0006.html#section0)下。
-     * @return appId
-     */
+    /** 资源空间ID。此参数为非必选参数，存在多资源空间的用户需要使用该接口时，建议携带该参数指定创建的规则归属到哪个资源空间下，否则创建的规则将会归属到[默认资源空间](https://support.huaweicloud.com/usermanual-iothub/iot_01_0006.html#section0)下。
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -278,16 +215,13 @@ public class CreateRuleResponse extends SdkResponse {
         this.appId = appId;
     }
 
-    
-
     public CreateRuleResponse withEdgeNodeIds(List<String> edgeNodeIds) {
         this.edgeNodeIds = edgeNodeIds;
         return this;
     }
 
-    
     public CreateRuleResponse addEdgeNodeIdsItem(String edgeNodeIdsItem) {
-        if(this.edgeNodeIds == null) {
+        if (this.edgeNodeIds == null) {
             this.edgeNodeIds = new ArrayList<>();
         }
         this.edgeNodeIds.add(edgeNodeIdsItem);
@@ -295,17 +229,16 @@ public class CreateRuleResponse extends SdkResponse {
     }
 
     public CreateRuleResponse withEdgeNodeIds(Consumer<List<String>> edgeNodeIdsSetter) {
-        if(this.edgeNodeIds == null) {
+        if (this.edgeNodeIds == null) {
             this.edgeNodeIds = new ArrayList<>();
         }
         edgeNodeIdsSetter.accept(this.edgeNodeIds);
         return this;
     }
 
-    /**
-     * 归属边缘侧节点设备ID列表。
-     * @return edgeNodeIds
-     */
+    /** 归属边缘侧节点设备ID列表。
+     * 
+     * @return edgeNodeIds */
     public List<String> getEdgeNodeIds() {
         return edgeNodeIds;
     }
@@ -314,20 +247,14 @@ public class CreateRuleResponse extends SdkResponse {
         this.edgeNodeIds = edgeNodeIds;
     }
 
-    
-
     public CreateRuleResponse withLastUpdateTime(String lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则最后更新时间，使用UTC时区，格式：yyyyMMdd'T'HHmmss'Z'。
-     * @return lastUpdateTime
-     */
+    /** 规则最后更新时间，使用UTC时区，格式：yyyyMMdd'T'HHmmss'Z'。
+     * 
+     * @return lastUpdateTime */
     public String getLastUpdateTime() {
         return lastUpdateTime;
     }
@@ -335,8 +262,6 @@ public class CreateRuleResponse extends SdkResponse {
     public void setLastUpdateTime(String lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -347,21 +272,32 @@ public class CreateRuleResponse extends SdkResponse {
             return false;
         }
         CreateRuleResponse createRuleResponse = (CreateRuleResponse) o;
-        return Objects.equals(this.ruleId, createRuleResponse.ruleId) &&
-            Objects.equals(this.name, createRuleResponse.name) &&
-            Objects.equals(this.description, createRuleResponse.description) &&
-            Objects.equals(this.conditionGroup, createRuleResponse.conditionGroup) &&
-            Objects.equals(this.actions, createRuleResponse.actions) &&
-            Objects.equals(this.ruleType, createRuleResponse.ruleType) &&
-            Objects.equals(this.status, createRuleResponse.status) &&
-            Objects.equals(this.appId, createRuleResponse.appId) &&
-            Objects.equals(this.edgeNodeIds, createRuleResponse.edgeNodeIds) &&
-            Objects.equals(this.lastUpdateTime, createRuleResponse.lastUpdateTime);
+        return Objects.equals(this.ruleId, createRuleResponse.ruleId)
+            && Objects.equals(this.name, createRuleResponse.name)
+            && Objects.equals(this.description, createRuleResponse.description)
+            && Objects.equals(this.conditionGroup, createRuleResponse.conditionGroup)
+            && Objects.equals(this.actions, createRuleResponse.actions)
+            && Objects.equals(this.ruleType, createRuleResponse.ruleType)
+            && Objects.equals(this.status, createRuleResponse.status)
+            && Objects.equals(this.appId, createRuleResponse.appId)
+            && Objects.equals(this.edgeNodeIds, createRuleResponse.edgeNodeIds)
+            && Objects.equals(this.lastUpdateTime, createRuleResponse.lastUpdateTime);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(ruleId, name, description, conditionGroup, actions, ruleType, status, appId, edgeNodeIds, lastUpdateTime);
+        return Objects.hash(ruleId,
+            name,
+            description,
+            conditionGroup,
+            actions,
+            ruleType,
+            status,
+            appId,
+            edgeNodeIds,
+            lastUpdateTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -379,16 +315,13 @@ public class CreateRuleResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

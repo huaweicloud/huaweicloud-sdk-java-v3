@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteLifecycleHookRequest  {
-
-
+/** Request Object */
+public class DeleteLifecycleHookRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_group_id")
-    
+    @JsonProperty(value = "scaling_group_id")
+
     private String scalingGroupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lifecycle_hook_name")
-    
+    @JsonProperty(value = "lifecycle_hook_name")
+
     private String lifecycleHookName;
 
     public DeleteLifecycleHookRequest withScalingGroupId(String scalingGroupId) {
@@ -34,13 +23,9 @@ public class DeleteLifecycleHookRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩组标识。
-     * @return scalingGroupId
-     */
+    /** 伸缩组标识。
+     * 
+     * @return scalingGroupId */
     public String getScalingGroupId() {
         return scalingGroupId;
     }
@@ -49,20 +34,14 @@ public class DeleteLifecycleHookRequest  {
         this.scalingGroupId = scalingGroupId;
     }
 
-    
-
     public DeleteLifecycleHookRequest withLifecycleHookName(String lifecycleHookName) {
         this.lifecycleHookName = lifecycleHookName;
         return this;
     }
 
-    
-
-
-    /**
-     * 生命周期挂钩标识。
-     * @return lifecycleHookName
-     */
+    /** 生命周期挂钩标识。
+     * 
+     * @return lifecycleHookName */
     public String getLifecycleHookName() {
         return lifecycleHookName;
     }
@@ -70,8 +49,6 @@ public class DeleteLifecycleHookRequest  {
     public void setLifecycleHookName(String lifecycleHookName) {
         this.lifecycleHookName = lifecycleHookName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class DeleteLifecycleHookRequest  {
             return false;
         }
         DeleteLifecycleHookRequest deleteLifecycleHookRequest = (DeleteLifecycleHookRequest) o;
-        return Objects.equals(this.scalingGroupId, deleteLifecycleHookRequest.scalingGroupId) &&
-            Objects.equals(this.lifecycleHookName, deleteLifecycleHookRequest.lifecycleHookName);
+        return Objects.equals(this.scalingGroupId, deleteLifecycleHookRequest.scalingGroupId)
+            && Objects.equals(this.lifecycleHookName, deleteLifecycleHookRequest.lifecycleHookName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(scalingGroupId, lifecycleHookName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class DeleteLifecycleHookRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

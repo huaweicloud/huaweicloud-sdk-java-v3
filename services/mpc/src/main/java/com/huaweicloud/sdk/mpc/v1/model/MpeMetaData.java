@@ -1,98 +1,76 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * MpeMetaData
- */
-public class MpeMetaData  {
-
-
+/** MpeMetaData */
+public class MpeMetaData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pack_type")
-    
+    @JsonProperty(value = "pack_type")
+
     private String packType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="duration")
-    
+    @JsonProperty(value = "duration")
+
     private Double duration;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="video_size")
-    
+    @JsonProperty(value = "video_size")
+
     private Long videoSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="width")
-    
+    @JsonProperty(value = "width")
+
     private Integer width;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="height")
-    
+    @JsonProperty(value = "height")
+
     private Integer height;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bit_rate")
-    
+    @JsonProperty(value = "bit_rate")
+
     private Integer bitRate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audio_bit_rate")
-    
+    @JsonProperty(value = "audio_bit_rate")
+
     private Integer audioBitRate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="frame_rate")
-    
+    @JsonProperty(value = "frame_rate")
+
     private Integer frameRate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="codec_name")
-    
+    @JsonProperty(value = "codec_name")
+
     private String codecName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audio_codec_name")
-    
+    @JsonProperty(value = "audio_codec_name")
+
     private String audioCodecName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="channels")
-    
+    @JsonProperty(value = "channels")
+
     private Integer channels;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sample")
-    
+    @JsonProperty(value = "sample")
+
     private Integer sample;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_audio")
-    
+    @JsonProperty(value = "is_audio")
+
     private Boolean isAudio;
 
     public MpeMetaData withPackType(String packType) {
@@ -100,13 +78,9 @@ public class MpeMetaData  {
         return this;
     }
 
-    
-
-
-    /**
-     * 封装类型。
-     * @return packType
-     */
+    /** 封装类型。
+     * 
+     * @return packType */
     public String getPackType() {
         return packType;
     }
@@ -115,22 +89,14 @@ public class MpeMetaData  {
         this.packType = packType;
     }
 
-    
-
     public MpeMetaData withDuration(Double duration) {
         this.duration = duration;
         return this;
     }
 
-    
-
-
-    /**
-     * 视频时长。
-     * minimum: 0
-     * maximum: 2147483647
-     * @return duration
-     */
+    /** 视频时长。 minimum: 0 maximum: 2147483647
+     * 
+     * @return duration */
     public Double getDuration() {
         return duration;
     }
@@ -139,22 +105,14 @@ public class MpeMetaData  {
         this.duration = duration;
     }
 
-    
-
     public MpeMetaData withVideoSize(Long videoSize) {
         this.videoSize = videoSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 视频大小。
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return videoSize
-     */
+    /** 视频大小。 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return videoSize */
     public Long getVideoSize() {
         return videoSize;
     }
@@ -163,22 +121,14 @@ public class MpeMetaData  {
         this.videoSize = videoSize;
     }
 
-    
-
     public MpeMetaData withWidth(Integer width) {
         this.width = width;
         return this;
     }
 
-    
-
-
-    /**
-     * 视频宽度。
-     * minimum: 0
-     * maximum: 2147483647
-     * @return width
-     */
+    /** 视频宽度。 minimum: 0 maximum: 2147483647
+     * 
+     * @return width */
     public Integer getWidth() {
         return width;
     }
@@ -187,22 +137,14 @@ public class MpeMetaData  {
         this.width = width;
     }
 
-    
-
     public MpeMetaData withHeight(Integer height) {
         this.height = height;
         return this;
     }
 
-    
-
-
-    /**
-     * 视频高度。
-     * minimum: 0
-     * maximum: 2147483647
-     * @return height
-     */
+    /** 视频高度。 minimum: 0 maximum: 2147483647
+     * 
+     * @return height */
     public Integer getHeight() {
         return height;
     }
@@ -211,22 +153,14 @@ public class MpeMetaData  {
         this.height = height;
     }
 
-    
-
     public MpeMetaData withBitRate(Integer bitRate) {
         this.bitRate = bitRate;
         return this;
     }
 
-    
-
-
-    /**
-     * 码率。
-     * minimum: 0
-     * maximum: 2147483647
-     * @return bitRate
-     */
+    /** 码率。 minimum: 0 maximum: 2147483647
+     * 
+     * @return bitRate */
     public Integer getBitRate() {
         return bitRate;
     }
@@ -235,22 +169,14 @@ public class MpeMetaData  {
         this.bitRate = bitRate;
     }
 
-    
-
     public MpeMetaData withAudioBitRate(Integer audioBitRate) {
         this.audioBitRate = audioBitRate;
         return this;
     }
 
-    
-
-
-    /**
-     * 音频码率。
-     * minimum: 0
-     * maximum: 2147483647
-     * @return audioBitRate
-     */
+    /** 音频码率。 minimum: 0 maximum: 2147483647
+     * 
+     * @return audioBitRate */
     public Integer getAudioBitRate() {
         return audioBitRate;
     }
@@ -259,22 +185,15 @@ public class MpeMetaData  {
         this.audioBitRate = audioBitRate;
     }
 
-    
-
     public MpeMetaData withFrameRate(Integer frameRate) {
         this.frameRate = frameRate;
         return this;
     }
 
-    
-
-
-    /**
-     * 帧率。  取值范围：0或[5,60]，0表示自适应。  单位：帧每秒。  > 若设置的帧率不在取值范围内，则自动调整为0，若设置的帧率高于片源帧率，则自动调整为片源帧率。 
-     * minimum: 0
-     * maximum: 2147483647
-     * @return frameRate
-     */
+    /** 帧率。 取值范围：0或[5,60]，0表示自适应。 单位：帧每秒。 > 若设置的帧率不在取值范围内，则自动调整为0，若设置的帧率高于片源帧率，则自动调整为片源帧率。 minimum: 0 maximum:
+     * 2147483647
+     * 
+     * @return frameRate */
     public Integer getFrameRate() {
         return frameRate;
     }
@@ -283,20 +202,14 @@ public class MpeMetaData  {
         this.frameRate = frameRate;
     }
 
-    
-
     public MpeMetaData withCodecName(String codecName) {
         this.codecName = codecName;
         return this;
     }
 
-    
-
-
-    /**
-     * 编码类型名称。
-     * @return codecName
-     */
+    /** 编码类型名称。
+     * 
+     * @return codecName */
     public String getCodecName() {
         return codecName;
     }
@@ -305,20 +218,14 @@ public class MpeMetaData  {
         this.codecName = codecName;
     }
 
-    
-
     public MpeMetaData withAudioCodecName(String audioCodecName) {
         this.audioCodecName = audioCodecName;
         return this;
     }
 
-    
-
-
-    /**
-     * 音频编码类型。
-     * @return audioCodecName
-     */
+    /** 音频编码类型。
+     * 
+     * @return audioCodecName */
     public String getAudioCodecName() {
         return audioCodecName;
     }
@@ -327,22 +234,14 @@ public class MpeMetaData  {
         this.audioCodecName = audioCodecName;
     }
 
-    
-
     public MpeMetaData withChannels(Integer channels) {
         this.channels = channels;
         return this;
     }
 
-    
-
-
-    /**
-     * 声道数。
-     * minimum: 0
-     * maximum: 2147483647
-     * @return channels
-     */
+    /** 声道数。 minimum: 0 maximum: 2147483647
+     * 
+     * @return channels */
     public Integer getChannels() {
         return channels;
     }
@@ -351,22 +250,14 @@ public class MpeMetaData  {
         this.channels = channels;
     }
 
-    
-
     public MpeMetaData withSample(Integer sample) {
         this.sample = sample;
         return this;
     }
 
-    
-
-
-    /**
-     * 采样率。
-     * minimum: 0
-     * maximum: 2147483647
-     * @return sample
-     */
+    /** 采样率。 minimum: 0 maximum: 2147483647
+     * 
+     * @return sample */
     public Integer getSample() {
         return sample;
     }
@@ -375,20 +266,14 @@ public class MpeMetaData  {
         this.sample = sample;
     }
 
-    
-
     public MpeMetaData withIsAudio(Boolean isAudio) {
         this.isAudio = isAudio;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否音频。
-     * @return isAudio
-     */
+    /** 是否音频。
+     * 
+     * @return isAudio */
     public Boolean getIsAudio() {
         return isAudio;
     }
@@ -396,8 +281,6 @@ public class MpeMetaData  {
     public void setIsAudio(Boolean isAudio) {
         this.isAudio = isAudio;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -408,24 +291,35 @@ public class MpeMetaData  {
             return false;
         }
         MpeMetaData mpeMetaData = (MpeMetaData) o;
-        return Objects.equals(this.packType, mpeMetaData.packType) &&
-            Objects.equals(this.duration, mpeMetaData.duration) &&
-            Objects.equals(this.videoSize, mpeMetaData.videoSize) &&
-            Objects.equals(this.width, mpeMetaData.width) &&
-            Objects.equals(this.height, mpeMetaData.height) &&
-            Objects.equals(this.bitRate, mpeMetaData.bitRate) &&
-            Objects.equals(this.audioBitRate, mpeMetaData.audioBitRate) &&
-            Objects.equals(this.frameRate, mpeMetaData.frameRate) &&
-            Objects.equals(this.codecName, mpeMetaData.codecName) &&
-            Objects.equals(this.audioCodecName, mpeMetaData.audioCodecName) &&
-            Objects.equals(this.channels, mpeMetaData.channels) &&
-            Objects.equals(this.sample, mpeMetaData.sample) &&
-            Objects.equals(this.isAudio, mpeMetaData.isAudio);
+        return Objects.equals(this.packType, mpeMetaData.packType)
+            && Objects.equals(this.duration, mpeMetaData.duration)
+            && Objects.equals(this.videoSize, mpeMetaData.videoSize) && Objects.equals(this.width, mpeMetaData.width)
+            && Objects.equals(this.height, mpeMetaData.height) && Objects.equals(this.bitRate, mpeMetaData.bitRate)
+            && Objects.equals(this.audioBitRate, mpeMetaData.audioBitRate)
+            && Objects.equals(this.frameRate, mpeMetaData.frameRate)
+            && Objects.equals(this.codecName, mpeMetaData.codecName)
+            && Objects.equals(this.audioCodecName, mpeMetaData.audioCodecName)
+            && Objects.equals(this.channels, mpeMetaData.channels) && Objects.equals(this.sample, mpeMetaData.sample)
+            && Objects.equals(this.isAudio, mpeMetaData.isAudio);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(packType, duration, videoSize, width, height, bitRate, audioBitRate, frameRate, codecName, audioCodecName, channels, sample, isAudio);
+        return Objects.hash(packType,
+            duration,
+            videoSize,
+            width,
+            height,
+            bitRate,
+            audioBitRate,
+            frameRate,
+            codecName,
+            audioCodecName,
+            channels,
+            sample,
+            isAudio);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -446,16 +340,13 @@ public class MpeMetaData  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

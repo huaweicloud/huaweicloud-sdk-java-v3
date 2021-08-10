@@ -1,90 +1,70 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowRecordingDetailResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confUUID")
-    
+    @JsonProperty(value = "confUUID")
+
     private String confUUID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confID")
-    
+    @JsonProperty(value = "confID")
+
     private String confID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private List<String> url = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rcdTime")
-    
+    @JsonProperty(value = "rcdTime")
+
     private Integer rcdTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rcdSize")
-    
+    @JsonProperty(value = "rcdSize")
+
     private Integer rcdSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subject")
-    
+    @JsonProperty(value = "subject")
+
     private String subject;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scheduserName")
-    
+    @JsonProperty(value = "scheduserName")
+
     private String scheduserName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="startTime")
-    
+    @JsonProperty(value = "startTime")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isDecodeFinish")
-    
+    @JsonProperty(value = "isDecodeFinish")
+
     private Boolean isDecodeFinish;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="decodeEndTime")
-    
+    @JsonProperty(value = "decodeEndTime")
+
     private Long decodeEndTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="available")
-    
+    @JsonProperty(value = "available")
+
     private Boolean available;
 
     public ShowRecordingDetailResponse withConfUUID(String confUUID) {
@@ -92,13 +72,9 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 会议UUID。
-     * @return confUUID
-     */
+    /** 会议UUID。
+     * 
+     * @return confUUID */
     public String getConfUUID() {
         return confUUID;
     }
@@ -107,20 +83,14 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         this.confUUID = confUUID;
     }
 
-    
-
     public ShowRecordingDetailResponse withConfID(String confID) {
         this.confID = confID;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议ID。
-     * @return confID
-     */
+    /** 会议ID。
+     * 
+     * @return confID */
     public String getConfID() {
         return confID;
     }
@@ -129,16 +99,13 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         this.confID = confID;
     }
 
-    
-
     public ShowRecordingDetailResponse withUrl(List<String> url) {
         this.url = url;
         return this;
     }
 
-    
     public ShowRecordingDetailResponse addUrlItem(String urlItem) {
-        if(this.url == null) {
+        if (this.url == null) {
             this.url = new ArrayList<>();
         }
         this.url.add(urlItem);
@@ -146,17 +113,16 @@ public class ShowRecordingDetailResponse extends SdkResponse {
     }
 
     public ShowRecordingDetailResponse withUrl(Consumer<List<String>> urlSetter) {
-        if(this.url == null) {
+        if (this.url == null) {
             this.url = new ArrayList<>();
         }
         urlSetter.accept(this.url);
         return this;
     }
 
-    /**
-     * 点播地址。
-     * @return url
-     */
+    /** 点播地址。
+     * 
+     * @return url */
     public List<String> getUrl() {
         return url;
     }
@@ -165,20 +131,14 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         this.url = url;
     }
 
-    
-
     public ShowRecordingDetailResponse withRcdTime(Integer rcdTime) {
         this.rcdTime = rcdTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 录制时长（单位秒）。
-     * @return rcdTime
-     */
+    /** 录制时长（单位秒）。
+     * 
+     * @return rcdTime */
     public Integer getRcdTime() {
         return rcdTime;
     }
@@ -187,20 +147,14 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         this.rcdTime = rcdTime;
     }
 
-    
-
     public ShowRecordingDetailResponse withRcdSize(Integer rcdSize) {
         this.rcdSize = rcdSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 录制文件大小（MB）。
-     * @return rcdSize
-     */
+    /** 录制文件大小（MB）。
+     * 
+     * @return rcdSize */
     public Integer getRcdSize() {
         return rcdSize;
     }
@@ -209,20 +163,14 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         this.rcdSize = rcdSize;
     }
 
-    
-
     public ShowRecordingDetailResponse withSubject(String subject) {
         this.subject = subject;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议主题。
-     * @return subject
-     */
+    /** 会议主题。
+     * 
+     * @return subject */
     public String getSubject() {
         return subject;
     }
@@ -231,20 +179,14 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         this.subject = subject;
     }
 
-    
-
     public ShowRecordingDetailResponse withScheduserName(String scheduserName) {
         this.scheduserName = scheduserName;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议预订者。
-     * @return scheduserName
-     */
+    /** 会议预订者。
+     * 
+     * @return scheduserName */
     public String getScheduserName() {
         return scheduserName;
     }
@@ -253,20 +195,14 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         this.scheduserName = scheduserName;
     }
 
-    
-
     public ShowRecordingDetailResponse withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议开始时间。
-     * @return startTime
-     */
+    /** 会议开始时间。
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -275,20 +211,14 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         this.startTime = startTime;
     }
 
-    
-
     public ShowRecordingDetailResponse withIsDecodeFinish(Boolean isDecodeFinish) {
         this.isDecodeFinish = isDecodeFinish;
         return this;
     }
 
-    
-
-
-    /**
-     * 录制文件是否转码完成。
-     * @return isDecodeFinish
-     */
+    /** 录制文件是否转码完成。
+     * 
+     * @return isDecodeFinish */
     public Boolean getIsDecodeFinish() {
         return isDecodeFinish;
     }
@@ -297,20 +227,14 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         this.isDecodeFinish = isDecodeFinish;
     }
 
-    
-
     public ShowRecordingDetailResponse withDecodeEndTime(Long decodeEndTime) {
         this.decodeEndTime = decodeEndTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 录制文件预计转码完成时间。
-     * @return decodeEndTime
-     */
+    /** 录制文件预计转码完成时间。
+     * 
+     * @return decodeEndTime */
     public Long getDecodeEndTime() {
         return decodeEndTime;
     }
@@ -319,20 +243,14 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         this.decodeEndTime = decodeEndTime;
     }
 
-    
-
     public ShowRecordingDetailResponse withAvailable(Boolean available) {
         this.available = available;
         return this;
     }
 
-    
-
-
-    /**
-     * 录播文件是否可观看。
-     * @return available
-     */
+    /** 录播文件是否可观看。
+     * 
+     * @return available */
     public Boolean getAvailable() {
         return available;
     }
@@ -340,8 +258,6 @@ public class ShowRecordingDetailResponse extends SdkResponse {
     public void setAvailable(Boolean available) {
         this.available = available;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -352,22 +268,34 @@ public class ShowRecordingDetailResponse extends SdkResponse {
             return false;
         }
         ShowRecordingDetailResponse showRecordingDetailResponse = (ShowRecordingDetailResponse) o;
-        return Objects.equals(this.confUUID, showRecordingDetailResponse.confUUID) &&
-            Objects.equals(this.confID, showRecordingDetailResponse.confID) &&
-            Objects.equals(this.url, showRecordingDetailResponse.url) &&
-            Objects.equals(this.rcdTime, showRecordingDetailResponse.rcdTime) &&
-            Objects.equals(this.rcdSize, showRecordingDetailResponse.rcdSize) &&
-            Objects.equals(this.subject, showRecordingDetailResponse.subject) &&
-            Objects.equals(this.scheduserName, showRecordingDetailResponse.scheduserName) &&
-            Objects.equals(this.startTime, showRecordingDetailResponse.startTime) &&
-            Objects.equals(this.isDecodeFinish, showRecordingDetailResponse.isDecodeFinish) &&
-            Objects.equals(this.decodeEndTime, showRecordingDetailResponse.decodeEndTime) &&
-            Objects.equals(this.available, showRecordingDetailResponse.available);
+        return Objects.equals(this.confUUID, showRecordingDetailResponse.confUUID)
+            && Objects.equals(this.confID, showRecordingDetailResponse.confID)
+            && Objects.equals(this.url, showRecordingDetailResponse.url)
+            && Objects.equals(this.rcdTime, showRecordingDetailResponse.rcdTime)
+            && Objects.equals(this.rcdSize, showRecordingDetailResponse.rcdSize)
+            && Objects.equals(this.subject, showRecordingDetailResponse.subject)
+            && Objects.equals(this.scheduserName, showRecordingDetailResponse.scheduserName)
+            && Objects.equals(this.startTime, showRecordingDetailResponse.startTime)
+            && Objects.equals(this.isDecodeFinish, showRecordingDetailResponse.isDecodeFinish)
+            && Objects.equals(this.decodeEndTime, showRecordingDetailResponse.decodeEndTime)
+            && Objects.equals(this.available, showRecordingDetailResponse.available);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(confUUID, confID, url, rcdTime, rcdSize, subject, scheduserName, startTime, isDecodeFinish, decodeEndTime, available);
+        return Objects.hash(confUUID,
+            confID,
+            url,
+            rcdTime,
+            rcdSize,
+            subject,
+            scheduserName,
+            startTime,
+            isDecodeFinish,
+            decodeEndTime,
+            available);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -386,16 +314,13 @@ public class ShowRecordingDetailResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

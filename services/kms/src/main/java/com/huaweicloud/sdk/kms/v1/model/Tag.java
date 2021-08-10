@@ -1,48 +1,34 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Tag
- */
-public class Tag  {
-
-
+/** Tag */
+public class Tag {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="values")
-    
+    @JsonProperty(value = "values")
+
     private List<String> values = null;
-    
+
     public Tag withKey(String key) {
         this.key = key;
         return this;
     }
 
-    
-
-
-    /**
-     * 键。 最大长度36个unicode字符。 key不能为空。不能包含非打印字符“ASCII(0-31)”、“*”、“<”、“>”、“\\”、“=”。
-     * @return key
-     */
+    /** 键。 最大长度36个unicode字符。 key不能为空。不能包含非打印字符“ASCII(0-31)”、“*”、“<”、“>”、“\\”、“=”。
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -51,16 +37,13 @@ public class Tag  {
         this.key = key;
     }
 
-    
-
     public Tag withValues(List<String> values) {
         this.values = values;
         return this;
     }
 
-    
     public Tag addValuesItem(String valuesItem) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new ArrayList<>();
         }
         this.values.add(valuesItem);
@@ -68,17 +51,16 @@ public class Tag  {
     }
 
     public Tag withValues(Consumer<List<String>> valuesSetter) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new ArrayList<>();
         }
         valuesSetter.accept(this.values);
         return this;
     }
 
-    /**
-     * 标签值集合
-     * @return values
-     */
+    /** 标签值集合
+     * 
+     * @return values */
     public List<String> getValues() {
         return values;
     }
@@ -86,8 +68,6 @@ public class Tag  {
     public void setValues(List<String> values) {
         this.values = values;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -98,13 +78,14 @@ public class Tag  {
             return false;
         }
         Tag tag = (Tag) o;
-        return Objects.equals(this.key, tag.key) &&
-            Objects.equals(this.values, tag.values);
+        return Objects.equals(this.key, tag.key) && Objects.equals(this.values, tag.values);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(key, values);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,16 +95,13 @@ public class Tag  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

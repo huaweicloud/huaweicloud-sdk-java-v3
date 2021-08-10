@@ -1,47 +1,34 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.DeviceInfoSimple;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class BatchFreezeDevicesResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="success")
-    
+    @JsonProperty(value = "success")
+
     private List<DeviceInfoSimple> success = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="failed")
-    
+    @JsonProperty(value = "failed")
+
     private List<DeviceInfoSimple> failed = null;
-    
+
     public BatchFreezeDevicesResponse withSuccess(List<DeviceInfoSimple> success) {
         this.success = success;
         return this;
     }
 
-    
     public BatchFreezeDevicesResponse addSuccessItem(DeviceInfoSimple successItem) {
-        if(this.success == null) {
+        if (this.success == null) {
             this.success = new ArrayList<>();
         }
         this.success.add(successItem);
@@ -49,17 +36,16 @@ public class BatchFreezeDevicesResponse extends SdkResponse {
     }
 
     public BatchFreezeDevicesResponse withSuccess(Consumer<List<DeviceInfoSimple>> successSetter) {
-        if(this.success == null) {
+        if (this.success == null) {
             this.success = new ArrayList<>();
         }
         successSetter.accept(this.success);
         return this;
     }
 
-    /**
-     * 下线成功设备列表
-     * @return success
-     */
+    /** 下线成功设备列表
+     * 
+     * @return success */
     public List<DeviceInfoSimple> getSuccess() {
         return success;
     }
@@ -68,16 +54,13 @@ public class BatchFreezeDevicesResponse extends SdkResponse {
         this.success = success;
     }
 
-    
-
     public BatchFreezeDevicesResponse withFailed(List<DeviceInfoSimple> failed) {
         this.failed = failed;
         return this;
     }
 
-    
     public BatchFreezeDevicesResponse addFailedItem(DeviceInfoSimple failedItem) {
-        if(this.failed == null) {
+        if (this.failed == null) {
             this.failed = new ArrayList<>();
         }
         this.failed.add(failedItem);
@@ -85,17 +68,16 @@ public class BatchFreezeDevicesResponse extends SdkResponse {
     }
 
     public BatchFreezeDevicesResponse withFailed(Consumer<List<DeviceInfoSimple>> failedSetter) {
-        if(this.failed == null) {
+        if (this.failed == null) {
             this.failed = new ArrayList<>();
         }
         failedSetter.accept(this.failed);
         return this;
     }
 
-    /**
-     * 下线失败设备列表
-     * @return failed
-     */
+    /** 下线失败设备列表
+     * 
+     * @return failed */
     public List<DeviceInfoSimple> getFailed() {
         return failed;
     }
@@ -103,8 +85,6 @@ public class BatchFreezeDevicesResponse extends SdkResponse {
     public void setFailed(List<DeviceInfoSimple> failed) {
         this.failed = failed;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -115,13 +95,15 @@ public class BatchFreezeDevicesResponse extends SdkResponse {
             return false;
         }
         BatchFreezeDevicesResponse batchFreezeDevicesResponse = (BatchFreezeDevicesResponse) o;
-        return Objects.equals(this.success, batchFreezeDevicesResponse.success) &&
-            Objects.equals(this.failed, batchFreezeDevicesResponse.failed);
+        return Objects.equals(this.success, batchFreezeDevicesResponse.success)
+            && Objects.equals(this.failed, batchFreezeDevicesResponse.failed);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(success, failed);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -131,16 +113,13 @@ public class BatchFreezeDevicesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

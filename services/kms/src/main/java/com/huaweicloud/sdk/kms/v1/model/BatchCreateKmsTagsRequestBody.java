@@ -1,41 +1,29 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.TagItem;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * BatchCreateKmsTagsRequestBody
- */
-public class BatchCreateKmsTagsRequestBody  {
-
-
+/** BatchCreateKmsTagsRequestBody */
+public class BatchCreateKmsTagsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<TagItem> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private String action;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sequence")
-    
+    @JsonProperty(value = "sequence")
+
     private String sequence;
 
     public BatchCreateKmsTagsRequestBody withTags(List<TagItem> tags) {
@@ -43,9 +31,8 @@ public class BatchCreateKmsTagsRequestBody  {
         return this;
     }
 
-    
     public BatchCreateKmsTagsRequestBody addTagsItem(TagItem tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -53,17 +40,16 @@ public class BatchCreateKmsTagsRequestBody  {
     }
 
     public BatchCreateKmsTagsRequestBody withTags(Consumer<List<TagItem>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 标签列表，key和value键值对的集合。
-     * @return tags
-     */
+    /** 标签列表，key和value键值对的集合。
+     * 
+     * @return tags */
     public List<TagItem> getTags() {
         return tags;
     }
@@ -72,20 +58,14 @@ public class BatchCreateKmsTagsRequestBody  {
         this.tags = tags;
     }
 
-    
-
     public BatchCreateKmsTagsRequestBody withAction(String action) {
         this.action = action;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作标识： 仅限于“create”和“delete”。
-     * @return action
-     */
+    /** 操作标识： 仅限于“create”和“delete”。
+     * 
+     * @return action */
     public String getAction() {
         return action;
     }
@@ -94,20 +74,14 @@ public class BatchCreateKmsTagsRequestBody  {
         this.action = action;
     }
 
-    
-
     public BatchCreateKmsTagsRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
-     * @return sequence
-     */
+    /** 请求消息序列号，36字节序列号。 例如：919c82d4-8046-4722-9094-35c3c6524cff
+     * 
+     * @return sequence */
     public String getSequence() {
         return sequence;
     }
@@ -115,8 +89,6 @@ public class BatchCreateKmsTagsRequestBody  {
     public void setSequence(String sequence) {
         this.sequence = sequence;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,14 +99,16 @@ public class BatchCreateKmsTagsRequestBody  {
             return false;
         }
         BatchCreateKmsTagsRequestBody batchCreateKmsTagsRequestBody = (BatchCreateKmsTagsRequestBody) o;
-        return Objects.equals(this.tags, batchCreateKmsTagsRequestBody.tags) &&
-            Objects.equals(this.action, batchCreateKmsTagsRequestBody.action) &&
-            Objects.equals(this.sequence, batchCreateKmsTagsRequestBody.sequence);
+        return Objects.equals(this.tags, batchCreateKmsTagsRequestBody.tags)
+            && Objects.equals(this.action, batchCreateKmsTagsRequestBody.action)
+            && Objects.equals(this.sequence, batchCreateKmsTagsRequestBody.sequence);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(tags, action, sequence);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -145,16 +119,13 @@ public class BatchCreateKmsTagsRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

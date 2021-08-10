@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.UpdatePermanentAccessKeyRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdatePermanentAccessKeyRequest  {
-
-
+/** Request Object */
+public class UpdatePermanentAccessKeyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_key")
-    
+    @JsonProperty(value = "access_key")
+
     private String accessKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdatePermanentAccessKeyRequestBody body;
 
     public UpdatePermanentAccessKeyRequest withAccessKey(String accessKey) {
@@ -35,13 +24,9 @@ public class UpdatePermanentAccessKeyRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 待修改的指定AK。
-     * @return accessKey
-     */
+    /** 待修改的指定AK。
+     * 
+     * @return accessKey */
     public String getAccessKey() {
         return accessKey;
     }
@@ -50,27 +35,23 @@ public class UpdatePermanentAccessKeyRequest  {
         this.accessKey = accessKey;
     }
 
-    
-
     public UpdatePermanentAccessKeyRequest withBody(UpdatePermanentAccessKeyRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdatePermanentAccessKeyRequest withBody(Consumer<UpdatePermanentAccessKeyRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdatePermanentAccessKeyRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdatePermanentAccessKeyRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdatePermanentAccessKeyRequest  {
     public void setBody(UpdatePermanentAccessKeyRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdatePermanentAccessKeyRequest  {
             return false;
         }
         UpdatePermanentAccessKeyRequest updatePermanentAccessKeyRequest = (UpdatePermanentAccessKeyRequest) o;
-        return Objects.equals(this.accessKey, updatePermanentAccessKeyRequest.accessKey) &&
-            Objects.equals(this.body, updatePermanentAccessKeyRequest.body);
+        return Objects.equals(this.accessKey, updatePermanentAccessKeyRequest.accessKey)
+            && Objects.equals(this.body, updatePermanentAccessKeyRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(accessKey, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdatePermanentAccessKeyRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.ccm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * RevokeCertificateRequestBody
- */
-public class RevokeCertificateRequestBody  {
-
-
+/** RevokeCertificateRequestBody */
+public class RevokeCertificateRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cert_id")
-    
+    @JsonProperty(value = "cert_id")
+
     private String certId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="reason")
-    
+    @JsonProperty(value = "reason")
+
     private String reason;
 
     public RevokeCertificateRequestBody withCertId(String certId) {
@@ -34,13 +23,9 @@ public class RevokeCertificateRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 证书ID
-     * @return certId
-     */
+    /** 证书ID
+     * 
+     * @return certId */
     public String getCertId() {
         return certId;
     }
@@ -49,20 +34,14 @@ public class RevokeCertificateRequestBody  {
         this.certId = certId;
     }
 
-    
-
     public RevokeCertificateRequestBody withReason(String reason) {
         this.reason = reason;
         return this;
     }
 
-    
-
-
-    /**
-     * 吊销理由
-     * @return reason
-     */
+    /** 吊销理由
+     * 
+     * @return reason */
     public String getReason() {
         return reason;
     }
@@ -70,8 +49,6 @@ public class RevokeCertificateRequestBody  {
     public void setReason(String reason) {
         this.reason = reason;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class RevokeCertificateRequestBody  {
             return false;
         }
         RevokeCertificateRequestBody revokeCertificateRequestBody = (RevokeCertificateRequestBody) o;
-        return Objects.equals(this.certId, revokeCertificateRequestBody.certId) &&
-            Objects.equals(this.reason, revokeCertificateRequestBody.reason);
+        return Objects.equals(this.certId, revokeCertificateRequestBody.certId)
+            && Objects.equals(this.reason, revokeCertificateRequestBody.reason);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(certId, reason);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class RevokeCertificateRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

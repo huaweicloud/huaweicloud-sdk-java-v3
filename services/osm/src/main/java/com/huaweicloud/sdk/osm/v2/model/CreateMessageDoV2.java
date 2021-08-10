@@ -1,60 +1,44 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * CreateMessageDoV2
- */
-public class CreateMessageDoV2  {
-
-
+/** CreateMessageDoV2 */
+public class CreateMessageDoV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content")
-    
+    @JsonProperty(value = "content")
+
     private String content;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_authorized")
-    
+    @JsonProperty(value = "is_authorized")
+
     private Integer isAuthorized;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="authorization_content")
-    
+    @JsonProperty(value = "authorization_content")
+
     private String authorizationContent;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="accessory_ids")
-    
+    @JsonProperty(value = "accessory_ids")
+
     private List<String> accessoryIds = null;
-    
+
     public CreateMessageDoV2 withContent(String content) {
         this.content = content;
         return this;
     }
 
-    
-
-
-    /**
-     * 留言内容
-     * @return content
-     */
+    /** 留言内容
+     * 
+     * @return content */
     public String getContent() {
         return content;
     }
@@ -63,22 +47,14 @@ public class CreateMessageDoV2  {
         this.content = content;
     }
 
-    
-
     public CreateMessageDoV2 withIsAuthorized(Integer isAuthorized) {
         this.isAuthorized = isAuthorized;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否授权
-     * minimum: 0
-     * maximum: 1
-     * @return isAuthorized
-     */
+    /** 是否授权 minimum: 0 maximum: 1
+     * 
+     * @return isAuthorized */
     public Integer getIsAuthorized() {
         return isAuthorized;
     }
@@ -87,20 +63,14 @@ public class CreateMessageDoV2  {
         this.isAuthorized = isAuthorized;
     }
 
-    
-
     public CreateMessageDoV2 withAuthorizationContent(String authorizationContent) {
         this.authorizationContent = authorizationContent;
         return this;
     }
 
-    
-
-
-    /**
-     * 机密信息
-     * @return authorizationContent
-     */
+    /** 机密信息
+     * 
+     * @return authorizationContent */
     public String getAuthorizationContent() {
         return authorizationContent;
     }
@@ -109,16 +79,13 @@ public class CreateMessageDoV2  {
         this.authorizationContent = authorizationContent;
     }
 
-    
-
     public CreateMessageDoV2 withAccessoryIds(List<String> accessoryIds) {
         this.accessoryIds = accessoryIds;
         return this;
     }
 
-    
     public CreateMessageDoV2 addAccessoryIdsItem(String accessoryIdsItem) {
-        if(this.accessoryIds == null) {
+        if (this.accessoryIds == null) {
             this.accessoryIds = new ArrayList<>();
         }
         this.accessoryIds.add(accessoryIdsItem);
@@ -126,17 +93,16 @@ public class CreateMessageDoV2  {
     }
 
     public CreateMessageDoV2 withAccessoryIds(Consumer<List<String>> accessoryIdsSetter) {
-        if(this.accessoryIds == null) {
+        if (this.accessoryIds == null) {
             this.accessoryIds = new ArrayList<>();
         }
         accessoryIdsSetter.accept(this.accessoryIds);
         return this;
     }
 
-    /**
-     * 附件id
-     * @return accessoryIds
-     */
+    /** 附件id
+     * 
+     * @return accessoryIds */
     public List<String> getAccessoryIds() {
         return accessoryIds;
     }
@@ -144,8 +110,6 @@ public class CreateMessageDoV2  {
     public void setAccessoryIds(List<String> accessoryIds) {
         this.accessoryIds = accessoryIds;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -156,15 +120,17 @@ public class CreateMessageDoV2  {
             return false;
         }
         CreateMessageDoV2 createMessageDoV2 = (CreateMessageDoV2) o;
-        return Objects.equals(this.content, createMessageDoV2.content) &&
-            Objects.equals(this.isAuthorized, createMessageDoV2.isAuthorized) &&
-            Objects.equals(this.authorizationContent, createMessageDoV2.authorizationContent) &&
-            Objects.equals(this.accessoryIds, createMessageDoV2.accessoryIds);
+        return Objects.equals(this.content, createMessageDoV2.content)
+            && Objects.equals(this.isAuthorized, createMessageDoV2.isAuthorized)
+            && Objects.equals(this.authorizationContent, createMessageDoV2.authorizationContent)
+            && Objects.equals(this.accessoryIds, createMessageDoV2.accessoryIds);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(content, isAuthorized, authorizationContent, accessoryIds);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -176,16 +142,13 @@ public class CreateMessageDoV2  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

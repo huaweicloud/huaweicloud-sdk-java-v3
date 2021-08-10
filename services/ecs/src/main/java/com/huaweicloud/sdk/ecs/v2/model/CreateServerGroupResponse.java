@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.CreateServerGroupResult;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class CreateServerGroupResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server_group")
-    
+    @JsonProperty(value = "server_group")
+
     private CreateServerGroupResult serverGroup;
 
     public CreateServerGroupResponse withServerGroup(CreateServerGroupResult serverGroup) {
@@ -32,19 +21,17 @@ public class CreateServerGroupResponse extends SdkResponse {
     }
 
     public CreateServerGroupResponse withServerGroup(Consumer<CreateServerGroupResult> serverGroupSetter) {
-        if(this.serverGroup == null ){
+        if (this.serverGroup == null) {
             this.serverGroup = new CreateServerGroupResult();
             serverGroupSetter.accept(this.serverGroup);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get serverGroup
-     * @return serverGroup
-     */
+    /** Get serverGroup
+     * 
+     * @return serverGroup */
     public CreateServerGroupResult getServerGroup() {
         return serverGroup;
     }
@@ -52,8 +39,6 @@ public class CreateServerGroupResponse extends SdkResponse {
     public void setServerGroup(CreateServerGroupResult serverGroup) {
         this.serverGroup = serverGroup;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class CreateServerGroupResponse extends SdkResponse {
         CreateServerGroupResponse createServerGroupResponse = (CreateServerGroupResponse) o;
         return Objects.equals(this.serverGroup, createServerGroupResponse.serverGroup);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(serverGroup);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class CreateServerGroupResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

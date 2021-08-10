@@ -1,32 +1,22 @@
 package com.huaweicloud.sdk.projectman.v4.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * id, 领域 14, &#39;性能&#39;, 15, &#39;功能&#39;, 16, &#39;可靠性&#39; 17, &#39;网络安全&#39; 18, &#39;可维护性&#39; 19, &#39;其他DFX&#39; 20, &#39;可用性&#39;
- */
-public class IssueItemSfV4Domain  {
-
-
+/** id, 领域 14, &#39;性能&#39;, 15, &#39;功能&#39;, 16, &#39;可靠性&#39; 17, &#39;网络安全&#39; 18, &#39;可维护性&#39; 19,
+ * &#39;其他DFX&#39; 20, &#39;可用性&#39; */
+public class IssueItemSfV4Domain {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Integer id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public IssueItemSfV4Domain withId(Integer id) {
@@ -34,13 +24,9 @@ public class IssueItemSfV4Domain  {
         return this;
     }
 
-    
-
-
-    /**
-     * 领域id
-     * @return id
-     */
+    /** 领域id
+     * 
+     * @return id */
     public Integer getId() {
         return id;
     }
@@ -49,20 +35,14 @@ public class IssueItemSfV4Domain  {
         this.id = id;
     }
 
-    
-
     public IssueItemSfV4Domain withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 领域
-     * @return name
-     */
+    /** 领域
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -70,8 +50,6 @@ public class IssueItemSfV4Domain  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +60,14 @@ public class IssueItemSfV4Domain  {
             return false;
         }
         IssueItemSfV4Domain issueItemSfV4Domain = (IssueItemSfV4Domain) o;
-        return Objects.equals(this.id, issueItemSfV4Domain.id) &&
-            Objects.equals(this.name, issueItemSfV4Domain.name);
+        return Objects.equals(this.id, issueItemSfV4Domain.id) && Objects.equals(this.name, issueItemSfV4Domain.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class IssueItemSfV4Domain  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

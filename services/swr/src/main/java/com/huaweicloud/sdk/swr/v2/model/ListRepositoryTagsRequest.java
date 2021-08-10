@@ -1,71 +1,51 @@
 package com.huaweicloud.sdk.swr.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListRepositoryTagsRequest  {
-
-
+/** Request Object */
+public class ListRepositoryTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
+
     private String namespace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repository")
-    
+    @JsonProperty(value = "repository")
+
     private String repository;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private String offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private String limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_column")
-    
+    @JsonProperty(value = "order_column")
+
     private String orderColumn;
-    /**
-     * 排序类型，可设置为desc（降序）、asc（升序） 
-     */
+
+    /** 排序类型，可设置为desc（降序）、asc（升序） */
     public static final class OrderTypeEnum {
 
-        
-        /**
-         * Enum DESC for value: "desc"
-         */
+        /** Enum DESC for value: "desc" */
         public static final OrderTypeEnum DESC = new OrderTypeEnum("desc");
-        
-        /**
-         * Enum ASC for value: "asc"
-         */
+
+        /** Enum ASC for value: "asc" */
         public static final OrderTypeEnum ASC = new OrderTypeEnum("asc");
-        
 
         private static final Map<String, OrderTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -94,7 +74,7 @@ public class ListRepositoryTagsRequest  {
 
         @JsonCreator
         public static OrderTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OrderTypeEnum result = STATIC_FIELDS.get(value);
@@ -105,7 +85,7 @@ public class ListRepositoryTagsRequest  {
         }
 
         public static OrderTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OrderTypeEnum result = STATIC_FIELDS.get(value);
@@ -129,16 +109,14 @@ public class ListRepositoryTagsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_type")
-    
+    @JsonProperty(value = "order_type")
+
     private OrderTypeEnum orderType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag")
-    
+    @JsonProperty(value = "tag")
+
     private String tag;
 
     public ListRepositoryTagsRequest withNamespace(String namespace) {
@@ -146,13 +124,9 @@ public class ListRepositoryTagsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
-     * @return namespace
-     */
+    /** 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
+     * 
+     * @return namespace */
     public String getNamespace() {
         return namespace;
     }
@@ -161,20 +135,14 @@ public class ListRepositoryTagsRequest  {
         this.namespace = namespace;
     }
 
-    
-
     public ListRepositoryTagsRequest withRepository(String repository) {
         this.repository = repository;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像仓库名称
-     * @return repository
-     */
+    /** 镜像仓库名称
+     * 
+     * @return repository */
     public String getRepository() {
         return repository;
     }
@@ -183,20 +151,14 @@ public class ListRepositoryTagsRequest  {
         this.repository = repository;
     }
 
-    
-
     public ListRepositoryTagsRequest withOffset(String offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 起始索引。**注意：offset和limit参数需要配套使用** 
-     * @return offset
-     */
+    /** 起始索引。**注意：offset和limit参数需要配套使用**
+     * 
+     * @return offset */
     public String getOffset() {
         return offset;
     }
@@ -205,20 +167,14 @@ public class ListRepositoryTagsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListRepositoryTagsRequest withLimit(String limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 返回条数。**注意：offset和limit参数需要配套使用* 
-     * @return limit
-     */
+    /** 返回条数。**注意：offset和limit参数需要配套使用*
+     * 
+     * @return limit */
     public String getLimit() {
         return limit;
     }
@@ -227,20 +183,14 @@ public class ListRepositoryTagsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListRepositoryTagsRequest withOrderColumn(String orderColumn) {
         this.orderColumn = orderColumn;
         return this;
     }
 
-    
-
-
-    /**
-     * 按列排序，可设置为updated_at（按更新时间排序） 
-     * @return orderColumn
-     */
+    /** 按列排序，可设置为updated_at（按更新时间排序）
+     * 
+     * @return orderColumn */
     public String getOrderColumn() {
         return orderColumn;
     }
@@ -249,20 +199,14 @@ public class ListRepositoryTagsRequest  {
         this.orderColumn = orderColumn;
     }
 
-    
-
     public ListRepositoryTagsRequest withOrderType(OrderTypeEnum orderType) {
         this.orderType = orderType;
         return this;
     }
 
-    
-
-
-    /**
-     * 排序类型，可设置为desc（降序）、asc（升序） 
-     * @return orderType
-     */
+    /** 排序类型，可设置为desc（降序）、asc（升序）
+     * 
+     * @return orderType */
     public OrderTypeEnum getOrderType() {
         return orderType;
     }
@@ -271,20 +215,14 @@ public class ListRepositoryTagsRequest  {
         this.orderType = orderType;
     }
 
-    
-
     public ListRepositoryTagsRequest withTag(String tag) {
         this.tag = tag;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像版本名
-     * @return tag
-     */
+    /** 镜像版本名
+     * 
+     * @return tag */
     public String getTag() {
         return tag;
     }
@@ -292,8 +230,6 @@ public class ListRepositoryTagsRequest  {
     public void setTag(String tag) {
         this.tag = tag;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -304,18 +240,20 @@ public class ListRepositoryTagsRequest  {
             return false;
         }
         ListRepositoryTagsRequest listRepositoryTagsRequest = (ListRepositoryTagsRequest) o;
-        return Objects.equals(this.namespace, listRepositoryTagsRequest.namespace) &&
-            Objects.equals(this.repository, listRepositoryTagsRequest.repository) &&
-            Objects.equals(this.offset, listRepositoryTagsRequest.offset) &&
-            Objects.equals(this.limit, listRepositoryTagsRequest.limit) &&
-            Objects.equals(this.orderColumn, listRepositoryTagsRequest.orderColumn) &&
-            Objects.equals(this.orderType, listRepositoryTagsRequest.orderType) &&
-            Objects.equals(this.tag, listRepositoryTagsRequest.tag);
+        return Objects.equals(this.namespace, listRepositoryTagsRequest.namespace)
+            && Objects.equals(this.repository, listRepositoryTagsRequest.repository)
+            && Objects.equals(this.offset, listRepositoryTagsRequest.offset)
+            && Objects.equals(this.limit, listRepositoryTagsRequest.limit)
+            && Objects.equals(this.orderColumn, listRepositoryTagsRequest.orderColumn)
+            && Objects.equals(this.orderType, listRepositoryTagsRequest.orderType)
+            && Objects.equals(this.tag, listRepositoryTagsRequest.tag);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(namespace, repository, offset, limit, orderColumn, orderType, tag);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -330,16 +268,13 @@ public class ListRepositoryTagsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * links字段数据结构说明
- */
-public class Links  {
-
-
+/** links字段数据结构说明 */
+public class Links {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rel")
-    
+    @JsonProperty(value = "rel")
+
     private String rel;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="href")
-    
+    @JsonProperty(value = "href")
+
     private String href;
 
     public Links withRel(String rel) {
@@ -34,13 +23,9 @@ public class Links  {
         return this;
     }
 
-    
-
-
-    /**
-     * 快捷链接标记名称
-     * @return rel
-     */
+    /** 快捷链接标记名称
+     * 
+     * @return rel */
     public String getRel() {
         return rel;
     }
@@ -49,20 +34,14 @@ public class Links  {
         this.rel = rel;
     }
 
-    
-
     public Links withHref(String href) {
         this.href = href;
         return this;
     }
 
-    
-
-
-    /**
-     * 对应快捷链接
-     * @return href
-     */
+    /** 对应快捷链接
+     * 
+     * @return href */
     public String getHref() {
         return href;
     }
@@ -70,8 +49,6 @@ public class Links  {
     public void setHref(String href) {
         this.href = href;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,14 @@ public class Links  {
             return false;
         }
         Links links = (Links) o;
-        return Objects.equals(this.rel, links.rel) &&
-            Objects.equals(this.href, links.href);
+        return Objects.equals(this.rel, links.rel) && Objects.equals(this.href, links.href);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(rel, href);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +76,13 @@ public class Links  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

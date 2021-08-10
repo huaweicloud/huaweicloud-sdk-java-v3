@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * QueryCorpGroupDTO
- */
-public class QueryCorpGroupDTO  {
-
-
+/** QueryCorpGroupDTO */
+public class QueryCorpGroupDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="groupId")
-    
+    @JsonProperty(value = "groupId")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="groupName")
-    
+    @JsonProperty(value = "groupName")
+
     private String groupName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="groupType")
-    
+    @JsonProperty(value = "groupType")
+
     private Integer groupType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remarks")
-    
+    @JsonProperty(value = "remarks")
+
     private String remarks;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="regionId")
-    
+    @JsonProperty(value = "regionId")
+
     private String regionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
     public QueryCorpGroupDTO withGroupId(String groupId) {
@@ -58,13 +43,9 @@ public class QueryCorpGroupDTO  {
         return this;
     }
 
-    
-
-
-    /**
-     * 分组Id
-     * @return groupId
-     */
+    /** 分组Id
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -73,20 +54,14 @@ public class QueryCorpGroupDTO  {
         this.groupId = groupId;
     }
 
-    
-
     public QueryCorpGroupDTO withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
     }
 
-    
-
-
-    /**
-     * 分组名称
-     * @return groupName
-     */
+    /** 分组名称
+     * 
+     * @return groupName */
     public String getGroupName() {
         return groupName;
     }
@@ -95,20 +70,14 @@ public class QueryCorpGroupDTO  {
         this.groupName = groupName;
     }
 
-    
-
     public QueryCorpGroupDTO withGroupType(Integer groupType) {
         this.groupType = groupType;
         return this;
     }
 
-    
-
-
-    /**
-     * 分组类型
-     * @return groupType
-     */
+    /** 分组类型
+     * 
+     * @return groupType */
     public Integer getGroupType() {
         return groupType;
     }
@@ -117,20 +86,14 @@ public class QueryCorpGroupDTO  {
         this.groupType = groupType;
     }
 
-    
-
     public QueryCorpGroupDTO withRemarks(String remarks) {
         this.remarks = remarks;
         return this;
     }
 
-    
-
-
-    /**
-     * 分组备注信息
-     * @return remarks
-     */
+    /** 分组备注信息
+     * 
+     * @return remarks */
     public String getRemarks() {
         return remarks;
     }
@@ -139,20 +102,14 @@ public class QueryCorpGroupDTO  {
         this.remarks = remarks;
     }
 
-    
-
     public QueryCorpGroupDTO withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
     }
 
-    
-
-
-    /**
-     * 区域ID，仅服务列表类型场景必填
-     * @return regionId
-     */
+    /** 区域ID，仅服务列表类型场景必填
+     * 
+     * @return regionId */
     public String getRegionId() {
         return regionId;
     }
@@ -161,20 +118,14 @@ public class QueryCorpGroupDTO  {
         this.regionId = regionId;
     }
 
-    
-
     public QueryCorpGroupDTO withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 分组状态 - 0: 正常 - 1: 停用，服务列表类型停用后创建企业就不会再自动分配到该分组 
-     * @return status
-     */
+    /** 分组状态 - 0: 正常 - 1: 停用，服务列表类型停用后创建企业就不会再自动分配到该分组
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -182,8 +133,6 @@ public class QueryCorpGroupDTO  {
     public void setStatus(Integer status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,17 +143,19 @@ public class QueryCorpGroupDTO  {
             return false;
         }
         QueryCorpGroupDTO queryCorpGroupDTO = (QueryCorpGroupDTO) o;
-        return Objects.equals(this.groupId, queryCorpGroupDTO.groupId) &&
-            Objects.equals(this.groupName, queryCorpGroupDTO.groupName) &&
-            Objects.equals(this.groupType, queryCorpGroupDTO.groupType) &&
-            Objects.equals(this.remarks, queryCorpGroupDTO.remarks) &&
-            Objects.equals(this.regionId, queryCorpGroupDTO.regionId) &&
-            Objects.equals(this.status, queryCorpGroupDTO.status);
+        return Objects.equals(this.groupId, queryCorpGroupDTO.groupId)
+            && Objects.equals(this.groupName, queryCorpGroupDTO.groupName)
+            && Objects.equals(this.groupType, queryCorpGroupDTO.groupType)
+            && Objects.equals(this.remarks, queryCorpGroupDTO.remarks)
+            && Objects.equals(this.regionId, queryCorpGroupDTO.regionId)
+            && Objects.equals(this.status, queryCorpGroupDTO.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(groupId, groupName, groupType, remarks, regionId, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,16 +169,13 @@ public class QueryCorpGroupDTO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

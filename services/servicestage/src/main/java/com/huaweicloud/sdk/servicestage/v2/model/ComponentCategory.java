@@ -1,39 +1,23 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
-/**
- * 应用组件类型包括：Webapp、MicroService、Common。
- */
+/** 应用组件类型包括：Webapp、MicroService、Common。 */
 public class ComponentCategory {
-    
-    /**
-     * Enum WEBAPP for value: "Webapp"
-     */
+
+    /** Enum WEBAPP for value: "Webapp" */
     public static final ComponentCategory WEBAPP = new ComponentCategory("Webapp");
-    
-    /**
-     * Enum MICROSERVICE for value: "MicroService"
-     */
+
+    /** Enum MICROSERVICE for value: "MicroService" */
     public static final ComponentCategory MICROSERVICE = new ComponentCategory("MicroService");
-    
-    /**
-     * Enum COMMON for value: "Common"
-     */
+
+    /** Enum COMMON for value: "Common" */
     public static final ComponentCategory COMMON = new ComponentCategory("Common");
-    
 
     private static final Map<String, ComponentCategory> STATIC_FIELDS = createStaticFields();
 
@@ -63,7 +47,7 @@ public class ComponentCategory {
 
     @JsonCreator
     public static ComponentCategory fromValue(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         ComponentCategory result = STATIC_FIELDS.get(value);
@@ -74,7 +58,7 @@ public class ComponentCategory {
     }
 
     public static ComponentCategory valueOf(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         ComponentCategory result = STATIC_FIELDS.get(value);
@@ -97,4 +81,3 @@ public class ComponentCategory {
         return this.value.hashCode();
     }
 }
-

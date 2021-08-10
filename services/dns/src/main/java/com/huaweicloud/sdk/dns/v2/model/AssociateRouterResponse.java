@@ -1,40 +1,27 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class AssociateRouterResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="router_id")
-    
+    @JsonProperty(value = "router_id")
+
     private String routerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="router_region")
-    
+    @JsonProperty(value = "router_region")
+
     private String routerRegion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
     public AssociateRouterResponse withRouterId(String routerId) {
@@ -42,13 +29,9 @@ public class AssociateRouterResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * Router(VPC)的ID。
-     * @return routerId
-     */
+    /** Router(VPC)的ID。
+     * 
+     * @return routerId */
     public String getRouterId() {
         return routerId;
     }
@@ -57,20 +40,14 @@ public class AssociateRouterResponse extends SdkResponse {
         this.routerId = routerId;
     }
 
-    
-
     public AssociateRouterResponse withRouterRegion(String routerRegion) {
         this.routerRegion = routerRegion;
         return this;
     }
 
-    
-
-
-    /**
-     * Router(VPC)所在的region。
-     * @return routerRegion
-     */
+    /** Router(VPC)所在的region。
+     * 
+     * @return routerRegion */
     public String getRouterRegion() {
         return routerRegion;
     }
@@ -79,20 +56,14 @@ public class AssociateRouterResponse extends SdkResponse {
         this.routerRegion = routerRegion;
     }
 
-    
-
     public AssociateRouterResponse withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源状态。
-     * @return status
-     */
+    /** 资源状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -100,8 +71,6 @@ public class AssociateRouterResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +81,16 @@ public class AssociateRouterResponse extends SdkResponse {
             return false;
         }
         AssociateRouterResponse associateRouterResponse = (AssociateRouterResponse) o;
-        return Objects.equals(this.routerId, associateRouterResponse.routerId) &&
-            Objects.equals(this.routerRegion, associateRouterResponse.routerRegion) &&
-            Objects.equals(this.status, associateRouterResponse.status);
+        return Objects.equals(this.routerId, associateRouterResponse.routerId)
+            && Objects.equals(this.routerRegion, associateRouterResponse.routerRegion)
+            && Objects.equals(this.status, associateRouterResponse.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(routerId, routerRegion, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +101,13 @@ public class AssociateRouterResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

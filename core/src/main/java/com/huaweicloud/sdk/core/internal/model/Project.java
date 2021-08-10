@@ -24,10 +24,9 @@ package com.huaweicloud.sdk.core.internal.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public class Project {
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_domain")
     private Boolean isDomain;
@@ -61,11 +60,9 @@ public class Project {
         return this;
     }
 
-    /**
-     * false.
+    /** false.
      *
-     * @return isDomain
-     */
+     * @return isDomain */
     public Boolean getIsDomain() {
         return isDomain;
     }
@@ -79,11 +76,9 @@ public class Project {
         return this;
     }
 
-    /**
-     * 项目描述信息。
+    /** 项目描述信息。
      *
-     * @return description
-     */
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -97,11 +92,9 @@ public class Project {
         return this;
     }
 
-    /**
-     * 项目是否可用。
+    /** 项目是否可用。
      *
-     * @return enabled
-     */
+     * @return enabled */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -115,11 +108,9 @@ public class Project {
         return this;
     }
 
-    /**
-     * 项目ID。
+    /** 项目ID。
      *
-     * @return id
-     */
+     * @return id */
     public String getId() {
         return id;
     }
@@ -133,11 +124,9 @@ public class Project {
         return this;
     }
 
-    /**
-     * 如果查询自己创建的项目，则此处返回所属区域的项目ID。    如果查询的是系统内置项目，如cn-north-4，则此处返回账号ID。
+    /** 如果查询自己创建的项目，则此处返回所属区域的项目ID。 如果查询的是系统内置项目，如cn-north-4，则此处返回账号ID。
      *
-     * @return parentId
-     */
+     * @return parentId */
     public String getParentId() {
         return parentId;
     }
@@ -151,11 +140,9 @@ public class Project {
         return this;
     }
 
-    /**
-     * 项目所属账号ID。
+    /** 项目所属账号ID。
      *
-     * @return domainId
-     */
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -169,11 +156,9 @@ public class Project {
         return this;
     }
 
-    /**
-     * 项目名称。
+    /** 项目名称。
      *
-     * @return name
-     */
+     * @return name */
     public String getName() {
         return name;
     }
@@ -182,4 +167,3 @@ public class Project {
         this.name = name;
     }
 }
-

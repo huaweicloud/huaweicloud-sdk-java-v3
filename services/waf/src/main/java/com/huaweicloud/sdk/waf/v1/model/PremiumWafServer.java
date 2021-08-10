@@ -1,43 +1,26 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 独享模式回源服务器配置
- */
-public class PremiumWafServer  {
+/** 独享模式回源服务器配置 */
+public class PremiumWafServer {
 
-    /**
-     * 对外协议
-     */
+    /** 对外协议 */
     public static final class FrontProtocolEnum {
 
-        
-        /**
-         * Enum HTTP for value: "HTTP"
-         */
+        /** Enum HTTP for value: "HTTP" */
         public static final FrontProtocolEnum HTTP = new FrontProtocolEnum("HTTP");
-        
-        /**
-         * Enum HTTPS for value: "HTTPS"
-         */
+
+        /** Enum HTTPS for value: "HTTPS" */
         public static final FrontProtocolEnum HTTPS = new FrontProtocolEnum("HTTPS");
-        
 
         private static final Map<String, FrontProtocolEnum> STATIC_FIELDS = createStaticFields();
 
@@ -66,7 +49,7 @@ public class PremiumWafServer  {
 
         @JsonCreator
         public static FrontProtocolEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             FrontProtocolEnum result = STATIC_FIELDS.get(value);
@@ -77,7 +60,7 @@ public class PremiumWafServer  {
         }
 
         public static FrontProtocolEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             FrontProtocolEnum result = STATIC_FIELDS.get(value);
@@ -101,27 +84,19 @@ public class PremiumWafServer  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="front_protocol")
-    
+    @JsonProperty(value = "front_protocol")
+
     private FrontProtocolEnum frontProtocol;
-    /**
-     * 源站协议
-     */
+
+    /** 源站协议 */
     public static final class BackProtocolEnum {
 
-        
-        /**
-         * Enum HTTP for value: "HTTP"
-         */
+        /** Enum HTTP for value: "HTTP" */
         public static final BackProtocolEnum HTTP = new BackProtocolEnum("HTTP");
-        
-        /**
-         * Enum HTTPS for value: "HTTPS"
-         */
+
+        /** Enum HTTPS for value: "HTTPS" */
         public static final BackProtocolEnum HTTPS = new BackProtocolEnum("HTTPS");
-        
 
         private static final Map<String, BackProtocolEnum> STATIC_FIELDS = createStaticFields();
 
@@ -150,7 +125,7 @@ public class PremiumWafServer  {
 
         @JsonCreator
         public static BackProtocolEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             BackProtocolEnum result = STATIC_FIELDS.get(value);
@@ -161,7 +136,7 @@ public class PremiumWafServer  {
         }
 
         public static BackProtocolEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             BackProtocolEnum result = STATIC_FIELDS.get(value);
@@ -185,34 +160,29 @@ public class PremiumWafServer  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="back_protocol")
-    
+    @JsonProperty(value = "back_protocol")
+
     private BackProtocolEnum backProtocol;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="address")
-    
+    @JsonProperty(value = "address")
+
     private String address;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
+
     private Integer port;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
     public PremiumWafServer withFrontProtocol(FrontProtocolEnum frontProtocol) {
@@ -220,13 +190,9 @@ public class PremiumWafServer  {
         return this;
     }
 
-    
-
-
-    /**
-     * 对外协议
-     * @return frontProtocol
-     */
+    /** 对外协议
+     * 
+     * @return frontProtocol */
     public FrontProtocolEnum getFrontProtocol() {
         return frontProtocol;
     }
@@ -235,20 +201,14 @@ public class PremiumWafServer  {
         this.frontProtocol = frontProtocol;
     }
 
-    
-
     public PremiumWafServer withBackProtocol(BackProtocolEnum backProtocol) {
         this.backProtocol = backProtocol;
         return this;
     }
 
-    
-
-
-    /**
-     * 源站协议
-     * @return backProtocol
-     */
+    /** 源站协议
+     * 
+     * @return backProtocol */
     public BackProtocolEnum getBackProtocol() {
         return backProtocol;
     }
@@ -257,20 +217,14 @@ public class PremiumWafServer  {
         this.backProtocol = backProtocol;
     }
 
-    
-
     public PremiumWafServer withAddress(String address) {
         this.address = address;
         return this;
     }
 
-    
-
-
-    /**
-     * 源站地址
-     * @return address
-     */
+    /** 源站地址
+     * 
+     * @return address */
     public String getAddress() {
         return address;
     }
@@ -279,20 +233,14 @@ public class PremiumWafServer  {
         this.address = address;
     }
 
-    
-
     public PremiumWafServer withPort(Integer port) {
         this.port = port;
         return this;
     }
 
-    
-
-
-    /**
-     * 源站端口
-     * @return port
-     */
+    /** 源站端口
+     * 
+     * @return port */
     public Integer getPort() {
         return port;
     }
@@ -301,20 +249,14 @@ public class PremiumWafServer  {
         this.port = port;
     }
 
-    
-
     public PremiumWafServer withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 源站地址为ipv4或ipv6
-     * @return type
-     */
+    /** 源站地址为ipv4或ipv6
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -323,20 +265,14 @@ public class PremiumWafServer  {
         this.type = type;
     }
 
-    
-
     public PremiumWafServer withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
-    
-
-
-    /**
-     * 独享引擎所在VPC ID（子网id）源站和独享引擎需要在同一子网
-     * @return vpcId
-     */
+    /** 独享引擎所在VPC ID（子网id）源站和独享引擎需要在同一子网
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -344,8 +280,6 @@ public class PremiumWafServer  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -356,17 +290,18 @@ public class PremiumWafServer  {
             return false;
         }
         PremiumWafServer premiumWafServer = (PremiumWafServer) o;
-        return Objects.equals(this.frontProtocol, premiumWafServer.frontProtocol) &&
-            Objects.equals(this.backProtocol, premiumWafServer.backProtocol) &&
-            Objects.equals(this.address, premiumWafServer.address) &&
-            Objects.equals(this.port, premiumWafServer.port) &&
-            Objects.equals(this.type, premiumWafServer.type) &&
-            Objects.equals(this.vpcId, premiumWafServer.vpcId);
+        return Objects.equals(this.frontProtocol, premiumWafServer.frontProtocol)
+            && Objects.equals(this.backProtocol, premiumWafServer.backProtocol)
+            && Objects.equals(this.address, premiumWafServer.address)
+            && Objects.equals(this.port, premiumWafServer.port) && Objects.equals(this.type, premiumWafServer.type)
+            && Objects.equals(this.vpcId, premiumWafServer.vpcId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(frontProtocol, backProtocol, address, port, type, vpcId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -380,16 +315,13 @@ public class PremiumWafServer  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bss.v2.model.CustomerOnDemandResource;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListCustomerOnDemandResourcesResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resources")
-    
+    @JsonProperty(value = "resources")
+
     private List<CustomerOnDemandResource> resources = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
-    
+    @JsonProperty(value = "total_count")
+
     private Integer totalCount;
 
     public ListCustomerOnDemandResourcesResponse withResources(List<CustomerOnDemandResource> resources) {
@@ -39,27 +27,26 @@ public class ListCustomerOnDemandResourcesResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListCustomerOnDemandResourcesResponse addResourcesItem(CustomerOnDemandResource resourcesItem) {
-        if(this.resources == null) {
+        if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
         this.resources.add(resourcesItem);
         return this;
     }
 
-    public ListCustomerOnDemandResourcesResponse withResources(Consumer<List<CustomerOnDemandResource>> resourcesSetter) {
-        if(this.resources == null) {
+    public ListCustomerOnDemandResourcesResponse withResources(
+        Consumer<List<CustomerOnDemandResource>> resourcesSetter) {
+        if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);
         return this;
     }
 
-    /**
-     * 客户资源列表。 具体参见表2。
-     * @return resources
-     */
+    /** 客户资源列表。 具体参见表2。
+     * 
+     * @return resources */
     public List<CustomerOnDemandResource> getResources() {
         return resources;
     }
@@ -68,20 +55,14 @@ public class ListCustomerOnDemandResourcesResponse extends SdkResponse {
         this.resources = resources;
     }
 
-    
-
     public ListCustomerOnDemandResourcesResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询总数。
-     * @return totalCount
-     */
+    /** 查询总数。
+     * 
+     * @return totalCount */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -89,8 +70,6 @@ public class ListCustomerOnDemandResourcesResponse extends SdkResponse {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -100,14 +79,17 @@ public class ListCustomerOnDemandResourcesResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListCustomerOnDemandResourcesResponse listCustomerOnDemandResourcesResponse = (ListCustomerOnDemandResourcesResponse) o;
-        return Objects.equals(this.resources, listCustomerOnDemandResourcesResponse.resources) &&
-            Objects.equals(this.totalCount, listCustomerOnDemandResourcesResponse.totalCount);
+        ListCustomerOnDemandResourcesResponse listCustomerOnDemandResourcesResponse =
+            (ListCustomerOnDemandResourcesResponse) o;
+        return Objects.equals(this.resources, listCustomerOnDemandResourcesResponse.resources)
+            && Objects.equals(this.totalCount, listCustomerOnDemandResourcesResponse.totalCount);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resources, totalCount);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +99,13 @@ public class ListCustomerOnDemandResourcesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

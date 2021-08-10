@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ModifyInstancePasswordBody
- */
-public class ModifyInstancePasswordBody  {
-
-
+/** ModifyInstancePasswordBody */
+public class ModifyInstancePasswordBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="old_password")
-    
+    @JsonProperty(value = "old_password")
+
     private String oldPassword;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="new_password")
-    
+    @JsonProperty(value = "new_password")
+
     private String newPassword;
 
     public ModifyInstancePasswordBody withOldPassword(String oldPassword) {
@@ -34,13 +23,9 @@ public class ModifyInstancePasswordBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 旧密码
-     * @return oldPassword
-     */
+    /** 旧密码
+     * 
+     * @return oldPassword */
     public String getOldPassword() {
         return oldPassword;
     }
@@ -49,20 +34,14 @@ public class ModifyInstancePasswordBody  {
         this.oldPassword = oldPassword;
     }
 
-    
-
     public ModifyInstancePasswordBody withNewPassword(String newPassword) {
         this.newPassword = newPassword;
         return this;
     }
 
-    
-
-
-    /**
-     * 新密码
-     * @return newPassword
-     */
+    /** 新密码
+     * 
+     * @return newPassword */
     public String getNewPassword() {
         return newPassword;
     }
@@ -70,8 +49,6 @@ public class ModifyInstancePasswordBody  {
     public void setNewPassword(String newPassword) {
         this.newPassword = newPassword;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class ModifyInstancePasswordBody  {
             return false;
         }
         ModifyInstancePasswordBody modifyInstancePasswordBody = (ModifyInstancePasswordBody) o;
-        return Objects.equals(this.oldPassword, modifyInstancePasswordBody.oldPassword) &&
-            Objects.equals(this.newPassword, modifyInstancePasswordBody.newPassword);
+        return Objects.equals(this.oldPassword, modifyInstancePasswordBody.oldPassword)
+            && Objects.equals(this.newPassword, modifyInstancePasswordBody.newPassword);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(oldPassword, newPassword);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class ModifyInstancePasswordBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

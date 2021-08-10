@@ -1,81 +1,62 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.evs.v2.model.VolumeType;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Image
- */
-public class Image  {
-
-
+/** Image */
+public class Image {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="container_format")
-    
+    @JsonProperty(value = "container_format")
+
     private String containerFormat;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disk_format")
-    
+    @JsonProperty(value = "disk_format")
+
     private String diskFormat;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="display_description")
-    
+    @JsonProperty(value = "display_description")
+
     private String displayDescription;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_id")
-    
+    @JsonProperty(value = "image_id")
+
     private String imageId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_name")
-    
+    @JsonProperty(value = "image_name")
+
     private String imageName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private String updatedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_type")
-    
+    @JsonProperty(value = "volume_type")
+
     private VolumeType volumeType;
 
     public Image withContainerFormat(String containerFormat) {
@@ -83,13 +64,9 @@ public class Image  {
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘导出镜像的容器类型。  目前支持ami、ari、aki、ovf、bare。默认是bare。
-     * @return containerFormat
-     */
+    /** 云硬盘导出镜像的容器类型。 目前支持ami、ari、aki、ovf、bare。默认是bare。
+     * 
+     * @return containerFormat */
     public String getContainerFormat() {
         return containerFormat;
     }
@@ -98,20 +75,14 @@ public class Image  {
         this.containerFormat = containerFormat;
     }
 
-    
-
     public Image withDiskFormat(String diskFormat) {
         this.diskFormat = diskFormat;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘导出镜像的格式。  目前支持vhd、zvhd、zvhd2、raw、qcow2。默认是vhd。
-     * @return diskFormat
-     */
+    /** 云硬盘导出镜像的格式。 目前支持vhd、zvhd、zvhd2、raw、qcow2。默认是vhd。
+     * 
+     * @return diskFormat */
     public String getDiskFormat() {
         return diskFormat;
     }
@@ -120,20 +91,14 @@ public class Image  {
         this.diskFormat = diskFormat;
     }
 
-    
-
     public Image withDisplayDescription(String displayDescription) {
         this.displayDescription = displayDescription;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘描述信息。
-     * @return displayDescription
-     */
+    /** 云硬盘描述信息。
+     * 
+     * @return displayDescription */
     public String getDisplayDescription() {
         return displayDescription;
     }
@@ -142,20 +107,14 @@ public class Image  {
         this.displayDescription = displayDescription;
     }
 
-    
-
     public Image withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘ID。
-     * @return id
-     */
+    /** 云硬盘ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -164,20 +123,14 @@ public class Image  {
         this.id = id;
     }
 
-    
-
     public Image withImageId(String imageId) {
         this.imageId = imageId;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘导出镜像的ID。
-     * @return imageId
-     */
+    /** 云硬盘导出镜像的ID。
+     * 
+     * @return imageId */
     public String getImageId() {
         return imageId;
     }
@@ -186,20 +139,14 @@ public class Image  {
         this.imageId = imageId;
     }
 
-    
-
     public Image withImageName(String imageName) {
         this.imageName = imageName;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘导出镜像的名称
-     * @return imageName
-     */
+    /** 云硬盘导出镜像的名称
+     * 
+     * @return imageName */
     public String getImageName() {
         return imageName;
     }
@@ -208,20 +155,14 @@ public class Image  {
         this.imageName = imageName;
     }
 
-    
-
     public Image withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘容量。
-     * @return size
-     */
+    /** 云硬盘容量。
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -230,20 +171,14 @@ public class Image  {
         this.size = size;
     }
 
-    
-
     public Image withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘导出镜像后的状态，正常值为 “uploading”。
-     * @return status
-     */
+    /** 云硬盘导出镜像后的状态，正常值为 “uploading”。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -252,20 +187,14 @@ public class Image  {
         this.status = status;
     }
 
-    
-
     public Image withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘更新时间。  时间格式：UTC YYYY-MM-DDTHH:MM:SS.XXXXXX
-     * @return updatedAt
-     */
+    /** 云硬盘更新时间。 时间格式：UTC YYYY-MM-DDTHH:MM:SS.XXXXXX
+     * 
+     * @return updatedAt */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -274,27 +203,23 @@ public class Image  {
         this.updatedAt = updatedAt;
     }
 
-    
-
     public Image withVolumeType(VolumeType volumeType) {
         this.volumeType = volumeType;
         return this;
     }
 
     public Image withVolumeType(Consumer<VolumeType> volumeTypeSetter) {
-        if(this.volumeType == null ){
+        if (this.volumeType == null) {
             this.volumeType = new VolumeType();
             volumeTypeSetter.accept(this.volumeType);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get volumeType
-     * @return volumeType
-     */
+    /** Get volumeType
+     * 
+     * @return volumeType */
     public VolumeType getVolumeType() {
         return volumeType;
     }
@@ -302,8 +227,6 @@ public class Image  {
     public void setVolumeType(VolumeType volumeType) {
         this.volumeType = volumeType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -314,21 +237,28 @@ public class Image  {
             return false;
         }
         Image image = (Image) o;
-        return Objects.equals(this.containerFormat, image.containerFormat) &&
-            Objects.equals(this.diskFormat, image.diskFormat) &&
-            Objects.equals(this.displayDescription, image.displayDescription) &&
-            Objects.equals(this.id, image.id) &&
-            Objects.equals(this.imageId, image.imageId) &&
-            Objects.equals(this.imageName, image.imageName) &&
-            Objects.equals(this.size, image.size) &&
-            Objects.equals(this.status, image.status) &&
-            Objects.equals(this.updatedAt, image.updatedAt) &&
-            Objects.equals(this.volumeType, image.volumeType);
+        return Objects.equals(this.containerFormat, image.containerFormat)
+            && Objects.equals(this.diskFormat, image.diskFormat)
+            && Objects.equals(this.displayDescription, image.displayDescription) && Objects.equals(this.id, image.id)
+            && Objects.equals(this.imageId, image.imageId) && Objects.equals(this.imageName, image.imageName)
+            && Objects.equals(this.size, image.size) && Objects.equals(this.status, image.status)
+            && Objects.equals(this.updatedAt, image.updatedAt) && Objects.equals(this.volumeType, image.volumeType);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(containerFormat, diskFormat, displayDescription, id, imageId, imageName, size, status, updatedAt, volumeType);
+        return Objects.hash(containerFormat,
+            diskFormat,
+            displayDescription,
+            id,
+            imageId,
+            imageName,
+            size,
+            status,
+            updatedAt,
+            volumeType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -346,16 +276,13 @@ public class Image  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

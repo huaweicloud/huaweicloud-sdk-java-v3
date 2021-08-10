@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowJobDetailRequest  {
-
-
+/** Request Object */
+public class ShowJobDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
+
     private String jobId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="desc")
-    
+    @JsonProperty(value = "desc")
+
     private String desc;
 
     public ShowJobDetailRequest withJobId(String jobId) {
@@ -52,13 +38,9 @@ public class ShowJobDetailRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 部署任务ID。
-     * @return jobId
-     */
+    /** 部署任务ID。
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -67,20 +49,14 @@ public class ShowJobDetailRequest  {
         this.jobId = jobId;
     }
 
-    
-
     public ShowJobDetailRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用组件实例ID。
-     * @return instanceId
-     */
+    /** 应用组件实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -89,20 +65,14 @@ public class ShowJobDetailRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ShowJobDetailRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 指定查询的个数，可用于分页查询。
-     * @return limit
-     */
+    /** 指定查询的个数，可用于分页查询。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -111,20 +81,14 @@ public class ShowJobDetailRequest  {
         this.limit = limit;
     }
 
-    
-
     public ShowJobDetailRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 指定查询的偏移量，可用于分页查询。
-     * @return offset
-     */
+    /** 指定查询的偏移量，可用于分页查询。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -133,20 +97,14 @@ public class ShowJobDetailRequest  {
         this.offset = offset;
     }
 
-    
-
     public ShowJobDetailRequest withDesc(String desc) {
         this.desc = desc;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否降序。true表示desc, false表示asc。
-     * @return desc
-     */
+    /** 是否降序。true表示desc, false表示asc。
+     * 
+     * @return desc */
     public String getDesc() {
         return desc;
     }
@@ -154,8 +112,6 @@ public class ShowJobDetailRequest  {
     public void setDesc(String desc) {
         this.desc = desc;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,18 @@ public class ShowJobDetailRequest  {
             return false;
         }
         ShowJobDetailRequest showJobDetailRequest = (ShowJobDetailRequest) o;
-        return Objects.equals(this.jobId, showJobDetailRequest.jobId) &&
-            Objects.equals(this.instanceId, showJobDetailRequest.instanceId) &&
-            Objects.equals(this.limit, showJobDetailRequest.limit) &&
-            Objects.equals(this.offset, showJobDetailRequest.offset) &&
-            Objects.equals(this.desc, showJobDetailRequest.desc);
+        return Objects.equals(this.jobId, showJobDetailRequest.jobId)
+            && Objects.equals(this.instanceId, showJobDetailRequest.instanceId)
+            && Objects.equals(this.limit, showJobDetailRequest.limit)
+            && Objects.equals(this.offset, showJobDetailRequest.offset)
+            && Objects.equals(this.desc, showJobDetailRequest.desc);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobId, instanceId, limit, offset, desc);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class ShowJobDetailRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

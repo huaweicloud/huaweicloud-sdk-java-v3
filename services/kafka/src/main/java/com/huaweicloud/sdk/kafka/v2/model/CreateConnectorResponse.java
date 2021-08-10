@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateConnectorResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
+
     private String jobId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="connector_id")
-    
+    @JsonProperty(value = "connector_id")
+
     private String connectorId;
 
     public CreateConnectorResponse withJobId(String jobId) {
@@ -36,13 +24,9 @@ public class CreateConnectorResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID。 
-     * @return jobId
-     */
+    /** 任务ID。
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -51,20 +35,14 @@ public class CreateConnectorResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
-    
-
     public CreateConnectorResponse withConnectorId(String connectorId) {
         this.connectorId = connectorId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例转储ID。 
-     * @return connectorId
-     */
+    /** 实例转储ID。
+     * 
+     * @return connectorId */
     public String getConnectorId() {
         return connectorId;
     }
@@ -72,8 +50,6 @@ public class CreateConnectorResponse extends SdkResponse {
     public void setConnectorId(String connectorId) {
         this.connectorId = connectorId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +60,15 @@ public class CreateConnectorResponse extends SdkResponse {
             return false;
         }
         CreateConnectorResponse createConnectorResponse = (CreateConnectorResponse) o;
-        return Objects.equals(this.jobId, createConnectorResponse.jobId) &&
-            Objects.equals(this.connectorId, createConnectorResponse.connectorId);
+        return Objects.equals(this.jobId, createConnectorResponse.jobId)
+            && Objects.equals(this.connectorId, createConnectorResponse.connectorId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobId, connectorId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +78,13 @@ public class CreateConnectorResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

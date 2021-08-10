@@ -1,51 +1,37 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.osm.v2.model.UpdateLabelsReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateLabelsRequest  {
-
-
+/** Request Object */
+public class UpdateLabelsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="label_id")
-    
+    @JsonProperty(value = "label_id")
+
     private Integer labelId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site")
-    
+    @JsonProperty(value = "X-Site")
+
     private Integer xSite;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Time-Zone")
-    
+    @JsonProperty(value = "X-Time-Zone")
+
     private String xTimeZone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateLabelsReq body;
 
     public UpdateLabelsRequest withLabelId(Integer labelId) {
@@ -53,15 +39,9 @@ public class UpdateLabelsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 修改标签的id
-     * minimum: 0
-     * maximum: 65535
-     * @return labelId
-     */
+    /** 修改标签的id minimum: 0 maximum: 65535
+     * 
+     * @return labelId */
     public Integer getLabelId() {
         return labelId;
     }
@@ -70,24 +50,16 @@ public class UpdateLabelsRequest  {
         this.labelId = labelId;
     }
 
-    
-
     public UpdateLabelsRequest withXSite(Integer xSite) {
         this.xSite = xSite;
         return this;
     }
 
-    
-
-
-    /**
-     * 对接站点信息。  0（中国站） 1（国际站），不填的话默认为0。
-     * minimum: 0
-     * maximum: 1
-     * @return xSite
-     */
+    /** 对接站点信息。 0（中国站） 1（国际站），不填的话默认为0。 minimum: 0 maximum: 1
+     * 
+     * @return xSite */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site")
+    @JsonProperty(value = "X-Site")
     public Integer getXSite() {
         return xSite;
     }
@@ -96,22 +68,16 @@ public class UpdateLabelsRequest  {
         this.xSite = xSite;
     }
 
-    
-
     public UpdateLabelsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。  会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
-     * @return xLanguage
-     */
+    /** 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。 会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -120,22 +86,16 @@ public class UpdateLabelsRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public UpdateLabelsRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。  涉及时间的数据会根据环境时区处理。
-     * @return xTimeZone
-     */
+    /** 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。 涉及时间的数据会根据环境时区处理。
+     * 
+     * @return xTimeZone */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Time-Zone")
+    @JsonProperty(value = "X-Time-Zone")
     public String getXTimeZone() {
         return xTimeZone;
     }
@@ -144,27 +104,23 @@ public class UpdateLabelsRequest  {
         this.xTimeZone = xTimeZone;
     }
 
-    
-
     public UpdateLabelsRequest withBody(UpdateLabelsReq body) {
         this.body = body;
         return this;
     }
 
     public UpdateLabelsRequest withBody(Consumer<UpdateLabelsReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateLabelsReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateLabelsReq getBody() {
         return body;
     }
@@ -172,8 +128,6 @@ public class UpdateLabelsRequest  {
     public void setBody(UpdateLabelsReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -184,16 +138,18 @@ public class UpdateLabelsRequest  {
             return false;
         }
         UpdateLabelsRequest updateLabelsRequest = (UpdateLabelsRequest) o;
-        return Objects.equals(this.labelId, updateLabelsRequest.labelId) &&
-            Objects.equals(this.xSite, updateLabelsRequest.xSite) &&
-            Objects.equals(this.xLanguage, updateLabelsRequest.xLanguage) &&
-            Objects.equals(this.xTimeZone, updateLabelsRequest.xTimeZone) &&
-            Objects.equals(this.body, updateLabelsRequest.body);
+        return Objects.equals(this.labelId, updateLabelsRequest.labelId)
+            && Objects.equals(this.xSite, updateLabelsRequest.xSite)
+            && Objects.equals(this.xLanguage, updateLabelsRequest.xLanguage)
+            && Objects.equals(this.xTimeZone, updateLabelsRequest.xTimeZone)
+            && Objects.equals(this.body, updateLabelsRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(labelId, xSite, xLanguage, xTimeZone, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -206,16 +162,13 @@ public class UpdateLabelsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

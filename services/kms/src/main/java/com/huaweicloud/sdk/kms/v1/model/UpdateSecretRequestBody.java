@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 更新凭据对象的元数据信息请求体
- */
-public class UpdateSecretRequestBody  {
-
-
+/** 更新凭据对象的元数据信息请求体 */
+public class UpdateSecretRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="kms_key_id")
-    
+    @JsonProperty(value = "kms_key_id")
+
     private String kmsKeyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public UpdateSecretRequestBody withName(String name) {
@@ -40,13 +28,9 @@ public class UpdateSecretRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 凭据名称。  约束：取值范围为1到64个字符，满足正则匹配“^[a-zA-Z0-9._-]{1,64}$”。 
-     * @return name
-     */
+    /** 凭据名称。 约束：取值范围为1到64个字符，满足正则匹配“^[a-zA-Z0-9._-]{1,64}$”。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -55,20 +39,14 @@ public class UpdateSecretRequestBody  {
         this.name = name;
     }
 
-    
-
     public UpdateSecretRequestBody withKmsKeyId(String kmsKeyId) {
         this.kmsKeyId = kmsKeyId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用于加密保护凭据值的KMS主密钥ID。更新凭据的主密钥后，仅新创建的凭据版本使用更新后的主密钥ID加密，之前的凭据版本依旧使用之前的主密钥ID解密。 
-     * @return kmsKeyId
-     */
+    /** 用于加密保护凭据值的KMS主密钥ID。更新凭据的主密钥后，仅新创建的凭据版本使用更新后的主密钥ID加密，之前的凭据版本依旧使用之前的主密钥ID解密。
+     * 
+     * @return kmsKeyId */
     public String getKmsKeyId() {
         return kmsKeyId;
     }
@@ -77,20 +55,14 @@ public class UpdateSecretRequestBody  {
         this.kmsKeyId = kmsKeyId;
     }
 
-    
-
     public UpdateSecretRequestBody withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 凭据的描述信息。  约束：2048字节。 
-     * @return description
-     */
+    /** 凭据的描述信息。 约束：2048字节。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -98,8 +70,6 @@ public class UpdateSecretRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class UpdateSecretRequestBody  {
             return false;
         }
         UpdateSecretRequestBody updateSecretRequestBody = (UpdateSecretRequestBody) o;
-        return Objects.equals(this.name, updateSecretRequestBody.name) &&
-            Objects.equals(this.kmsKeyId, updateSecretRequestBody.kmsKeyId) &&
-            Objects.equals(this.description, updateSecretRequestBody.description);
+        return Objects.equals(this.name, updateSecretRequestBody.name)
+            && Objects.equals(this.kmsKeyId, updateSecretRequestBody.kmsKeyId)
+            && Objects.equals(this.description, updateSecretRequestBody.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, kmsKeyId, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class UpdateSecretRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

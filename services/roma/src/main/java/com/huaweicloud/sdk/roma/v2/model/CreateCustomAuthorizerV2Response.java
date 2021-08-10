@@ -1,56 +1,36 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.AuthorizerBase;
-import com.huaweicloud.sdk.roma.v2.model.Identity;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateCustomAuthorizerV2Response extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 自定义认证类型  - FRONTEND：前端 - BACKEND：后端
-     */
+
+    /** 自定义认证类型 - FRONTEND：前端 - BACKEND：后端 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum FRONTEND for value: "FRONTEND"
-         */
+        /** Enum FRONTEND for value: "FRONTEND" */
         public static final TypeEnum FRONTEND = new TypeEnum("FRONTEND");
-        
-        /**
-         * Enum BACKEND for value: "BACKEND"
-         */
+
+        /** Enum BACKEND for value: "BACKEND" */
         public static final TypeEnum BACKEND = new TypeEnum("BACKEND");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -79,7 +59,7 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -90,7 +70,7 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -114,27 +94,19 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
-    /**
-     * 自定义认证函数类型： - LD：自定义后端函数 - FUNC：函数服务函数
-     */
+
+    /** 自定义认证函数类型： - LD：自定义后端函数 - FUNC：函数服务函数 */
     public static final class AuthorizerTypeEnum {
 
-        
-        /**
-         * Enum LD for value: "LD"
-         */
+        /** Enum LD for value: "LD" */
         public static final AuthorizerTypeEnum LD = new AuthorizerTypeEnum("LD");
-        
-        /**
-         * Enum FUNC for value: "FUNC"
-         */
+
+        /** Enum FUNC for value: "FUNC" */
         public static final AuthorizerTypeEnum FUNC = new AuthorizerTypeEnum("FUNC");
-        
 
         private static final Map<String, AuthorizerTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -163,7 +135,7 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
 
         @JsonCreator
         public static AuthorizerTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AuthorizerTypeEnum result = STATIC_FIELDS.get(value);
@@ -174,7 +146,7 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         }
 
         public static AuthorizerTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AuthorizerTypeEnum result = STATIC_FIELDS.get(value);
@@ -198,70 +170,59 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="authorizer_type")
-    
+    @JsonProperty(value = "authorizer_type")
+
     private AuthorizerTypeEnum authorizerType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="authorizer_uri")
-    
+    @JsonProperty(value = "authorizer_uri")
+
     private String authorizerUri;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="identities")
-    
+    @JsonProperty(value = "identities")
+
     private List<Identity> identities = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ttl")
-    
+    @JsonProperty(value = "ttl")
+
     private Integer ttl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_data")
-    
+    @JsonProperty(value = "user_data")
+
     private String userData;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ld_api_id")
-    
+    @JsonProperty(value = "ld_api_id")
+
     private String ldApiId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="need_body")
-    
+    @JsonProperty(value = "need_body")
+
     private Boolean needBody;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private OffsetDateTime createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roma_app_id")
-    
+    @JsonProperty(value = "roma_app_id")
+
     private String romaAppId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roma_app_name")
-    
+    @JsonProperty(value = "roma_app_name")
+
     private String romaAppName;
 
     public CreateCustomAuthorizerV2Response withName(String name) {
@@ -269,13 +230,9 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义认证的名称。 长度为3 ~ 64位的字符串，字符串由中文、英文字母、数字、“_”组成，且只能以英文或中文开头。 
-     * @return name
-     */
+    /** 自定义认证的名称。 长度为3 ~ 64位的字符串，字符串由中文、英文字母、数字、“_”组成，且只能以英文或中文开头。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -284,20 +241,14 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public CreateCustomAuthorizerV2Response withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义认证类型  - FRONTEND：前端 - BACKEND：后端
-     * @return type
-     */
+    /** 自定义认证类型 - FRONTEND：前端 - BACKEND：后端
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -306,20 +257,14 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         this.type = type;
     }
 
-    
-
     public CreateCustomAuthorizerV2Response withAuthorizerType(AuthorizerTypeEnum authorizerType) {
         this.authorizerType = authorizerType;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义认证函数类型： - LD：自定义后端函数 - FUNC：函数服务函数
-     * @return authorizerType
-     */
+    /** 自定义认证函数类型： - LD：自定义后端函数 - FUNC：函数服务函数
+     * 
+     * @return authorizerType */
     public AuthorizerTypeEnum getAuthorizerType() {
         return authorizerType;
     }
@@ -328,20 +273,14 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         this.authorizerType = authorizerType;
     }
 
-    
-
     public CreateCustomAuthorizerV2Response withAuthorizerUri(String authorizerUri) {
         this.authorizerUri = authorizerUri;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数地址。  注意：使用自定义后端的函数API，API请求方法必须为POST，且API状态必须为已部署。
-     * @return authorizerUri
-     */
+    /** 函数地址。 注意：使用自定义后端的函数API，API请求方法必须为POST，且API状态必须为已部署。
+     * 
+     * @return authorizerUri */
     public String getAuthorizerUri() {
         return authorizerUri;
     }
@@ -350,16 +289,13 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         this.authorizerUri = authorizerUri;
     }
 
-    
-
     public CreateCustomAuthorizerV2Response withIdentities(List<Identity> identities) {
         this.identities = identities;
         return this;
     }
 
-    
     public CreateCustomAuthorizerV2Response addIdentitiesItem(Identity identitiesItem) {
-        if(this.identities == null) {
+        if (this.identities == null) {
             this.identities = new ArrayList<>();
         }
         this.identities.add(identitiesItem);
@@ -367,17 +303,16 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
     }
 
     public CreateCustomAuthorizerV2Response withIdentities(Consumer<List<Identity>> identitiesSetter) {
-        if(this.identities == null) {
+        if (this.identities == null) {
             this.identities = new ArrayList<>();
         }
         identitiesSetter.accept(this.identities);
         return this;
     }
 
-    /**
-     * 认证来源
-     * @return identities
-     */
+    /** 认证来源
+     * 
+     * @return identities */
     public List<Identity> getIdentities() {
         return identities;
     }
@@ -386,20 +321,14 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         this.identities = identities;
     }
 
-    
-
     public CreateCustomAuthorizerV2Response withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
     }
 
-    
-
-
-    /**
-     * 缓存时间
-     * @return ttl
-     */
+    /** 缓存时间
+     * 
+     * @return ttl */
     public Integer getTtl() {
         return ttl;
     }
@@ -408,20 +337,14 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         this.ttl = ttl;
     }
 
-    
-
     public CreateCustomAuthorizerV2Response withUserData(String userData) {
         this.userData = userData;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户数据
-     * @return userData
-     */
+    /** 用户数据
+     * 
+     * @return userData */
     public String getUserData() {
         return userData;
     }
@@ -430,20 +353,14 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         this.userData = userData;
     }
 
-    
-
     public CreateCustomAuthorizerV2Response withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义后端服务ID。  自定义认证函数类型为LD时必填
-     * @return ldApiId
-     */
+    /** 自定义后端服务ID。 自定义认证函数类型为LD时必填
+     * 
+     * @return ldApiId */
     public String getLdApiId() {
         return ldApiId;
     }
@@ -452,20 +369,14 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         this.ldApiId = ldApiId;
     }
 
-    
-
     public CreateCustomAuthorizerV2Response withNeedBody(Boolean needBody) {
         this.needBody = needBody;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否发送body
-     * @return needBody
-     */
+    /** 是否发送body
+     * 
+     * @return needBody */
     public Boolean getNeedBody() {
         return needBody;
     }
@@ -474,20 +385,14 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         this.needBody = needBody;
     }
 
-    
-
     public CreateCustomAuthorizerV2Response withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义认证编号
-     * @return id
-     */
+    /** 自定义认证编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -496,20 +401,14 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public CreateCustomAuthorizerV2Response withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return createTime
-     */
+    /** 创建时间
+     * 
+     * @return createTime */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -518,20 +417,14 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public CreateCustomAuthorizerV2Response withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义认证所属应用编号
-     * @return romaAppId
-     */
+    /** 自定义认证所属应用编号
+     * 
+     * @return romaAppId */
     public String getRomaAppId() {
         return romaAppId;
     }
@@ -540,20 +433,14 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         this.romaAppId = romaAppId;
     }
 
-    
-
     public CreateCustomAuthorizerV2Response withRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义认证所属应用名称
-     * @return romaAppName
-     */
+    /** 自定义认证所属应用名称
+     * 
+     * @return romaAppName */
     public String getRomaAppName() {
         return romaAppName;
     }
@@ -561,8 +448,6 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
     public void setRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -573,24 +458,38 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
             return false;
         }
         CreateCustomAuthorizerV2Response createCustomAuthorizerV2Response = (CreateCustomAuthorizerV2Response) o;
-        return Objects.equals(this.name, createCustomAuthorizerV2Response.name) &&
-            Objects.equals(this.type, createCustomAuthorizerV2Response.type) &&
-            Objects.equals(this.authorizerType, createCustomAuthorizerV2Response.authorizerType) &&
-            Objects.equals(this.authorizerUri, createCustomAuthorizerV2Response.authorizerUri) &&
-            Objects.equals(this.identities, createCustomAuthorizerV2Response.identities) &&
-            Objects.equals(this.ttl, createCustomAuthorizerV2Response.ttl) &&
-            Objects.equals(this.userData, createCustomAuthorizerV2Response.userData) &&
-            Objects.equals(this.ldApiId, createCustomAuthorizerV2Response.ldApiId) &&
-            Objects.equals(this.needBody, createCustomAuthorizerV2Response.needBody) &&
-            Objects.equals(this.id, createCustomAuthorizerV2Response.id) &&
-            Objects.equals(this.createTime, createCustomAuthorizerV2Response.createTime) &&
-            Objects.equals(this.romaAppId, createCustomAuthorizerV2Response.romaAppId) &&
-            Objects.equals(this.romaAppName, createCustomAuthorizerV2Response.romaAppName);
+        return Objects.equals(this.name, createCustomAuthorizerV2Response.name)
+            && Objects.equals(this.type, createCustomAuthorizerV2Response.type)
+            && Objects.equals(this.authorizerType, createCustomAuthorizerV2Response.authorizerType)
+            && Objects.equals(this.authorizerUri, createCustomAuthorizerV2Response.authorizerUri)
+            && Objects.equals(this.identities, createCustomAuthorizerV2Response.identities)
+            && Objects.equals(this.ttl, createCustomAuthorizerV2Response.ttl)
+            && Objects.equals(this.userData, createCustomAuthorizerV2Response.userData)
+            && Objects.equals(this.ldApiId, createCustomAuthorizerV2Response.ldApiId)
+            && Objects.equals(this.needBody, createCustomAuthorizerV2Response.needBody)
+            && Objects.equals(this.id, createCustomAuthorizerV2Response.id)
+            && Objects.equals(this.createTime, createCustomAuthorizerV2Response.createTime)
+            && Objects.equals(this.romaAppId, createCustomAuthorizerV2Response.romaAppId)
+            && Objects.equals(this.romaAppName, createCustomAuthorizerV2Response.romaAppName);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, authorizerType, authorizerUri, identities, ttl, userData, ldApiId, needBody, id, createTime, romaAppId, romaAppName);
+        return Objects.hash(name,
+            type,
+            authorizerType,
+            authorizerUri,
+            identities,
+            ttl,
+            userData,
+            ldApiId,
+            needBody,
+            id,
+            createTime,
+            romaAppId,
+            romaAppName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -611,16 +510,13 @@ public class CreateCustomAuthorizerV2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

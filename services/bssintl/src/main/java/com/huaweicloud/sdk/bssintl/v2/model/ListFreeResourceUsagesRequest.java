@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.bssintl.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bssintl.v2.model.ListFreeResourceUsagesReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ListFreeResourceUsagesRequest  {
-
-
+/** Request Object */
+public class ListFreeResourceUsagesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ListFreeResourceUsagesReq body;
 
     public ListFreeResourceUsagesRequest withXLanguage(String xLanguage) {
@@ -35,15 +24,11 @@ public class ListFreeResourceUsagesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * |忽略大小写，默认 zh_cn：中文 en_us：英文|
-     * @return xLanguage
-     */
+    /** |忽略大小写，默认 zh_cn：中文 en_us：英文|
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -52,27 +37,23 @@ public class ListFreeResourceUsagesRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListFreeResourceUsagesRequest withBody(ListFreeResourceUsagesReq body) {
         this.body = body;
         return this;
     }
 
     public ListFreeResourceUsagesRequest withBody(Consumer<ListFreeResourceUsagesReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ListFreeResourceUsagesReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ListFreeResourceUsagesReq getBody() {
         return body;
     }
@@ -80,8 +61,6 @@ public class ListFreeResourceUsagesRequest  {
     public void setBody(ListFreeResourceUsagesReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -92,13 +71,15 @@ public class ListFreeResourceUsagesRequest  {
             return false;
         }
         ListFreeResourceUsagesRequest listFreeResourceUsagesRequest = (ListFreeResourceUsagesRequest) o;
-        return Objects.equals(this.xLanguage, listFreeResourceUsagesRequest.xLanguage) &&
-            Objects.equals(this.body, listFreeResourceUsagesRequest.body);
+        return Objects.equals(this.xLanguage, listFreeResourceUsagesRequest.xLanguage)
+            && Objects.equals(this.body, listFreeResourceUsagesRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -108,16 +89,13 @@ public class ListFreeResourceUsagesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

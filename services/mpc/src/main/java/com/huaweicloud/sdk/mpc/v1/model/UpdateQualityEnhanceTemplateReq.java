@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.QualityEnhanceTemplate;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * UpdateQualityEnhanceTemplateReq
- */
-public class UpdateQualityEnhanceTemplateReq  {
-
-
+/** UpdateQualityEnhanceTemplateReq */
+public class UpdateQualityEnhanceTemplateReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_id")
-    
+    @JsonProperty(value = "template_id")
+
     private Integer templateId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template")
-    
+    @JsonProperty(value = "template")
+
     private QualityEnhanceTemplate template;
 
     public UpdateQualityEnhanceTemplateReq withTemplateId(Integer templateId) {
@@ -35,15 +24,9 @@ public class UpdateQualityEnhanceTemplateReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 模板ID。 
-     * minimum: 0
-     * maximum: 2147483647
-     * @return templateId
-     */
+    /** 模板ID。 minimum: 0 maximum: 2147483647
+     * 
+     * @return templateId */
     public Integer getTemplateId() {
         return templateId;
     }
@@ -52,27 +35,23 @@ public class UpdateQualityEnhanceTemplateReq  {
         this.templateId = templateId;
     }
 
-    
-
     public UpdateQualityEnhanceTemplateReq withTemplate(QualityEnhanceTemplate template) {
         this.template = template;
         return this;
     }
 
     public UpdateQualityEnhanceTemplateReq withTemplate(Consumer<QualityEnhanceTemplate> templateSetter) {
-        if(this.template == null ){
+        if (this.template == null) {
             this.template = new QualityEnhanceTemplate();
             templateSetter.accept(this.template);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get template
-     * @return template
-     */
+    /** Get template
+     * 
+     * @return template */
     public QualityEnhanceTemplate getTemplate() {
         return template;
     }
@@ -80,8 +59,6 @@ public class UpdateQualityEnhanceTemplateReq  {
     public void setTemplate(QualityEnhanceTemplate template) {
         this.template = template;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -92,13 +69,15 @@ public class UpdateQualityEnhanceTemplateReq  {
             return false;
         }
         UpdateQualityEnhanceTemplateReq updateQualityEnhanceTemplateReq = (UpdateQualityEnhanceTemplateReq) o;
-        return Objects.equals(this.templateId, updateQualityEnhanceTemplateReq.templateId) &&
-            Objects.equals(this.template, updateQualityEnhanceTemplateReq.template);
+        return Objects.equals(this.templateId, updateQualityEnhanceTemplateReq.templateId)
+            && Objects.equals(this.template, updateQualityEnhanceTemplateReq.template);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(templateId, template);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -108,16 +87,13 @@ public class UpdateQualityEnhanceTemplateReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,47 +1,32 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class KeystoneShowSecurityComplianceByOptionRequest  {
-
-
+/** Request Object */
+public class KeystoneShowSecurityComplianceByOptionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
-    /**
-     * 查询条件。该字段内容为：password_regex或password_regex_description。    password_regex：密码强度策略的正则表达式；password_regex_description：密码强度策略的描述。
-     */
+
+    /** 查询条件。该字段内容为：password_regex或password_regex_description。
+     * password_regex：密码强度策略的正则表达式；password_regex_description：密码强度策略的描述。 */
     public static final class OptionEnum {
 
-        
-        /**
-         * Enum PASSWORD_REGEX for value: "password_regex"
-         */
+        /** Enum PASSWORD_REGEX for value: "password_regex" */
         public static final OptionEnum PASSWORD_REGEX = new OptionEnum("password_regex");
-        
-        /**
-         * Enum PASSWORD_REGEX_DESCRIPTION for value: "password_regex_description"
-         */
+
+        /** Enum PASSWORD_REGEX_DESCRIPTION for value: "password_regex_description" */
         public static final OptionEnum PASSWORD_REGEX_DESCRIPTION = new OptionEnum("password_regex_description");
-        
 
         private static final Map<String, OptionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,7 +55,7 @@ public class KeystoneShowSecurityComplianceByOptionRequest  {
 
         @JsonCreator
         public static OptionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OptionEnum result = STATIC_FIELDS.get(value);
@@ -81,7 +66,7 @@ public class KeystoneShowSecurityComplianceByOptionRequest  {
         }
 
         public static OptionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OptionEnum result = STATIC_FIELDS.get(value);
@@ -105,10 +90,9 @@ public class KeystoneShowSecurityComplianceByOptionRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="option")
-    
+    @JsonProperty(value = "option")
+
     private OptionEnum option;
 
     public KeystoneShowSecurityComplianceByOptionRequest withDomainId(String domainId) {
@@ -116,13 +100,9 @@ public class KeystoneShowSecurityComplianceByOptionRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 待查询的账号ID，获取方式请参见：[获取账号、IAM用户、项目、用户组、委托的名称和ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * @return domainId
-     */
+    /** 待查询的账号ID，获取方式请参见：[获取账号、IAM用户、项目、用户组、委托的名称和ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -131,20 +111,15 @@ public class KeystoneShowSecurityComplianceByOptionRequest  {
         this.domainId = domainId;
     }
 
-    
-
     public KeystoneShowSecurityComplianceByOptionRequest withOption(OptionEnum option) {
         this.option = option;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询条件。该字段内容为：password_regex或password_regex_description。    password_regex：密码强度策略的正则表达式；password_regex_description：密码强度策略的描述。
-     * @return option
-     */
+    /** 查询条件。该字段内容为：password_regex或password_regex_description。
+     * password_regex：密码强度策略的正则表达式；password_regex_description：密码强度策略的描述。
+     * 
+     * @return option */
     public OptionEnum getOption() {
         return option;
     }
@@ -152,8 +127,6 @@ public class KeystoneShowSecurityComplianceByOptionRequest  {
     public void setOption(OptionEnum option) {
         this.option = option;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -163,14 +136,17 @@ public class KeystoneShowSecurityComplianceByOptionRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        KeystoneShowSecurityComplianceByOptionRequest keystoneShowSecurityComplianceByOptionRequest = (KeystoneShowSecurityComplianceByOptionRequest) o;
-        return Objects.equals(this.domainId, keystoneShowSecurityComplianceByOptionRequest.domainId) &&
-            Objects.equals(this.option, keystoneShowSecurityComplianceByOptionRequest.option);
+        KeystoneShowSecurityComplianceByOptionRequest keystoneShowSecurityComplianceByOptionRequest =
+            (KeystoneShowSecurityComplianceByOptionRequest) o;
+        return Objects.equals(this.domainId, keystoneShowSecurityComplianceByOptionRequest.domainId)
+            && Objects.equals(this.option, keystoneShowSecurityComplianceByOptionRequest.option);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domainId, option);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -180,16 +156,13 @@ public class KeystoneShowSecurityComplianceByOptionRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

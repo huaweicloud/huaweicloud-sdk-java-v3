@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.EnvironmentModify;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ChangeEnvironmentRequest  {
-
-
+/** Request Object */
+public class ChangeEnvironmentRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="environment_id")
-    
+    @JsonProperty(value = "environment_id")
+
     private String environmentId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private EnvironmentModify body;
 
     public ChangeEnvironmentRequest withEnvironmentId(String environmentId) {
@@ -35,13 +24,9 @@ public class ChangeEnvironmentRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 环境ID。
-     * @return environmentId
-     */
+    /** 环境ID。
+     * 
+     * @return environmentId */
     public String getEnvironmentId() {
         return environmentId;
     }
@@ -50,27 +35,23 @@ public class ChangeEnvironmentRequest  {
         this.environmentId = environmentId;
     }
 
-    
-
     public ChangeEnvironmentRequest withBody(EnvironmentModify body) {
         this.body = body;
         return this;
     }
 
     public ChangeEnvironmentRequest withBody(Consumer<EnvironmentModify> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new EnvironmentModify();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public EnvironmentModify getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class ChangeEnvironmentRequest  {
     public void setBody(EnvironmentModify body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class ChangeEnvironmentRequest  {
             return false;
         }
         ChangeEnvironmentRequest changeEnvironmentRequest = (ChangeEnvironmentRequest) o;
-        return Objects.equals(this.environmentId, changeEnvironmentRequest.environmentId) &&
-            Objects.equals(this.body, changeEnvironmentRequest.body);
+        return Objects.equals(this.environmentId, changeEnvironmentRequest.environmentId)
+            && Objects.equals(this.body, changeEnvironmentRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(environmentId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class ChangeEnvironmentRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

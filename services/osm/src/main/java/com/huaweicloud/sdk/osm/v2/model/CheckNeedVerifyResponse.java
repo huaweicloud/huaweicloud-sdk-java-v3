@@ -1,35 +1,23 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.time.OffsetDateTime;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CheckNeedVerifyResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="need_verify_code")
-    
+    @JsonProperty(value = "need_verify_code")
+
     private Integer needVerifyCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expire_time")
-    
+    @JsonProperty(value = "expire_time")
+
     private OffsetDateTime expireTime;
 
     public CheckNeedVerifyResponse withNeedVerifyCode(Integer needVerifyCode) {
@@ -37,15 +25,9 @@ public class CheckNeedVerifyResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 是否需要验证
-     * minimum: 0
-     * maximum: 1
-     * @return needVerifyCode
-     */
+    /** 是否需要验证 minimum: 0 maximum: 1
+     * 
+     * @return needVerifyCode */
     public Integer getNeedVerifyCode() {
         return needVerifyCode;
     }
@@ -54,20 +36,14 @@ public class CheckNeedVerifyResponse extends SdkResponse {
         this.needVerifyCode = needVerifyCode;
     }
 
-    
-
     public CheckNeedVerifyResponse withExpireTime(OffsetDateTime expireTime) {
         this.expireTime = expireTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 过期时间
-     * @return expireTime
-     */
+    /** 过期时间
+     * 
+     * @return expireTime */
     public OffsetDateTime getExpireTime() {
         return expireTime;
     }
@@ -75,8 +51,6 @@ public class CheckNeedVerifyResponse extends SdkResponse {
     public void setExpireTime(OffsetDateTime expireTime) {
         this.expireTime = expireTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -87,13 +61,15 @@ public class CheckNeedVerifyResponse extends SdkResponse {
             return false;
         }
         CheckNeedVerifyResponse checkNeedVerifyResponse = (CheckNeedVerifyResponse) o;
-        return Objects.equals(this.needVerifyCode, checkNeedVerifyResponse.needVerifyCode) &&
-            Objects.equals(this.expireTime, checkNeedVerifyResponse.expireTime);
+        return Objects.equals(this.needVerifyCode, checkNeedVerifyResponse.needVerifyCode)
+            && Objects.equals(this.expireTime, checkNeedVerifyResponse.expireTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(needVerifyCode, expireTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -103,16 +79,13 @@ public class CheckNeedVerifyResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

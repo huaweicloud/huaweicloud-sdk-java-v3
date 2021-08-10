@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class CheckMd5DuplicationRequest  {
-
-
+/** Request Object */
+public class CheckMd5DuplicationRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Authorization")
-    
+    @JsonProperty(value = "Authorization")
+
     private String authorization;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Sdk-Date")
-    
+    @JsonProperty(value = "X-Sdk-Date")
+
     private String xSdkDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="md5")
-    
+    @JsonProperty(value = "md5")
+
     private String md5;
 
     public CheckMd5DuplicationRequest withAuthorization(String authorization) {
@@ -46,13 +33,9 @@ public class CheckMd5DuplicationRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
+    /** 使用AK/SK方式认证时必选，携带的鉴权信息。
+     * 
+     * @return authorization */
     public String getAuthorization() {
         return authorization;
     }
@@ -61,22 +44,16 @@ public class CheckMd5DuplicationRequest  {
         this.authorization = authorization;
     }
 
-    
-
     public CheckMd5DuplicationRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 使用AK/SK方式认证时必选，请求的发生时间。 
-     * @return xSdkDate
-     */
+    /** 使用AK/SK方式认证时必选，请求的发生时间。
+     * 
+     * @return xSdkDate */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Sdk-Date")
+    @JsonProperty(value = "X-Sdk-Date")
     public String getXSdkDate() {
         return xSdkDate;
     }
@@ -85,20 +62,14 @@ public class CheckMd5DuplicationRequest  {
         this.xSdkDate = xSdkDate;
     }
 
-    
-
     public CheckMd5DuplicationRequest withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件大小
-     * @return size
-     */
+    /** 文件大小
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -107,20 +78,15 @@ public class CheckMd5DuplicationRequest  {
         this.size = size;
     }
 
-    
-
     public CheckMd5DuplicationRequest withMd5(String md5) {
         this.md5 = md5;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件MD5。  建议参考[上传校验](https://support.huaweicloud.com/api-vod/vod_04_0212.html#vod_04_0212__section575102165412)生成对应的MD5值。
-     * @return md5
-     */
+    /** 文件MD5。
+     * 建议参考[上传校验](https://support.huaweicloud.com/api-vod/vod_04_0212.html#vod_04_0212__section575102165412)生成对应的MD5值。
+     * 
+     * @return md5 */
     public String getMd5() {
         return md5;
     }
@@ -128,8 +94,6 @@ public class CheckMd5DuplicationRequest  {
     public void setMd5(String md5) {
         this.md5 = md5;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -140,15 +104,17 @@ public class CheckMd5DuplicationRequest  {
             return false;
         }
         CheckMd5DuplicationRequest checkMd5DuplicationRequest = (CheckMd5DuplicationRequest) o;
-        return Objects.equals(this.authorization, checkMd5DuplicationRequest.authorization) &&
-            Objects.equals(this.xSdkDate, checkMd5DuplicationRequest.xSdkDate) &&
-            Objects.equals(this.size, checkMd5DuplicationRequest.size) &&
-            Objects.equals(this.md5, checkMd5DuplicationRequest.md5);
+        return Objects.equals(this.authorization, checkMd5DuplicationRequest.authorization)
+            && Objects.equals(this.xSdkDate, checkMd5DuplicationRequest.xSdkDate)
+            && Objects.equals(this.size, checkMd5DuplicationRequest.size)
+            && Objects.equals(this.md5, checkMd5DuplicationRequest.md5);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(authorization, xSdkDate, size, md5);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -160,16 +126,13 @@ public class CheckMd5DuplicationRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

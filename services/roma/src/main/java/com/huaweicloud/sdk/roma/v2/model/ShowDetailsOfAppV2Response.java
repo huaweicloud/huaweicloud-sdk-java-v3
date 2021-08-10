@@ -1,65 +1,43 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.AppBaseInfo;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.time.OffsetDateTime;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowDetailsOfAppV2Response extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
+
     private String remark;
-    /**
-     * APP的创建者 - USER：用户自行创建 - MARKET：云市场分配  暂不支持MARKET
-     */
+
+    /** APP的创建者 - USER：用户自行创建 - MARKET：云市场分配 暂不支持MARKET */
     public static final class CreatorEnum {
 
-        
-        /**
-         * Enum USER for value: "USER"
-         */
+        /** Enum USER for value: "USER" */
         public static final CreatorEnum USER = new CreatorEnum("USER");
-        
-        /**
-         * Enum MARKET for value: "MARKET"
-         */
+
+        /** Enum MARKET for value: "MARKET" */
         public static final CreatorEnum MARKET = new CreatorEnum("MARKET");
-        
 
         private static final Map<String, CreatorEnum> STATIC_FIELDS = createStaticFields();
 
@@ -88,7 +66,7 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
 
         @JsonCreator
         public static CreatorEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CreatorEnum result = STATIC_FIELDS.get(value);
@@ -99,7 +77,7 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         }
 
         public static CreatorEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CreatorEnum result = STATIC_FIELDS.get(value);
@@ -123,57 +101,44 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator")
-    
+    @JsonProperty(value = "creator")
+
     private CreatorEnum creator;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private OffsetDateTime updateTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_key")
-    
+    @JsonProperty(value = "app_key")
+
     private String appKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_secret")
-    
+    @JsonProperty(value = "app_secret")
+
     private String appSecret;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="register_time")
-    
+    @JsonProperty(value = "register_time")
+
     private OffsetDateTime registerTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
-    /**
-     * APP的类型： - apig：存量apig应用，不推荐使用 - roma：roma集成应用
-     */
+
+    /** APP的类型： - apig：存量apig应用，不推荐使用 - roma：roma集成应用 */
     public static final class AppTypeEnum {
 
-        
-        /**
-         * Enum APIG for value: "apig"
-         */
+        /** Enum APIG for value: "apig" */
         public static final AppTypeEnum APIG = new AppTypeEnum("apig");
-        
-        /**
-         * Enum ROMA for value: "roma"
-         */
+
+        /** Enum ROMA for value: "roma" */
         public static final AppTypeEnum ROMA = new AppTypeEnum("roma");
-        
 
         private static final Map<String, AppTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -202,7 +167,7 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
 
         @JsonCreator
         public static AppTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AppTypeEnum result = STATIC_FIELDS.get(value);
@@ -213,7 +178,7 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         }
 
         public static AppTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AppTypeEnum result = STATIC_FIELDS.get(value);
@@ -237,16 +202,14 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_type")
-    
+    @JsonProperty(value = "app_type")
+
     private AppTypeEnum appType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roma_app_type")
-    
+    @JsonProperty(value = "roma_app_type")
+
     private Object romaAppType;
 
     public ShowDetailsOfAppV2Response withId(String id) {
@@ -254,13 +217,9 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 编号
-     * @return id
-     */
+    /** 编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -269,20 +228,14 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowDetailsOfAppV2Response withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 名称
-     * @return name
-     */
+    /** 名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -291,20 +244,14 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowDetailsOfAppV2Response withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述
-     * @return remark
-     */
+    /** 描述
+     * 
+     * @return remark */
     public String getRemark() {
         return remark;
     }
@@ -313,20 +260,14 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         this.remark = remark;
     }
 
-    
-
     public ShowDetailsOfAppV2Response withCreator(CreatorEnum creator) {
         this.creator = creator;
         return this;
     }
 
-    
-
-
-    /**
-     * APP的创建者 - USER：用户自行创建 - MARKET：云市场分配  暂不支持MARKET
-     * @return creator
-     */
+    /** APP的创建者 - USER：用户自行创建 - MARKET：云市场分配 暂不支持MARKET
+     * 
+     * @return creator */
     public CreatorEnum getCreator() {
         return creator;
     }
@@ -335,20 +276,14 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         this.creator = creator;
     }
 
-    
-
     public ShowDetailsOfAppV2Response withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间
-     * @return updateTime
-     */
+    /** 更新时间
+     * 
+     * @return updateTime */
     public OffsetDateTime getUpdateTime() {
         return updateTime;
     }
@@ -357,20 +292,14 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     public ShowDetailsOfAppV2Response withAppKey(String appKey) {
         this.appKey = appKey;
         return this;
     }
 
-    
-
-
-    /**
-     * APP的key
-     * @return appKey
-     */
+    /** APP的key
+     * 
+     * @return appKey */
     public String getAppKey() {
         return appKey;
     }
@@ -379,20 +308,14 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         this.appKey = appKey;
     }
 
-    
-
     public ShowDetailsOfAppV2Response withAppSecret(String appSecret) {
         this.appSecret = appSecret;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥
-     * @return appSecret
-     */
+    /** 密钥
+     * 
+     * @return appSecret */
     public String getAppSecret() {
         return appSecret;
     }
@@ -401,20 +324,14 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         this.appSecret = appSecret;
     }
 
-    
-
     public ShowDetailsOfAppV2Response withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 注册时间
-     * @return registerTime
-     */
+    /** 注册时间
+     * 
+     * @return registerTime */
     public OffsetDateTime getRegisterTime() {
         return registerTime;
     }
@@ -423,20 +340,14 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         this.registerTime = registerTime;
     }
 
-    
-
     public ShowDetailsOfAppV2Response withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态   - 1： 有效
-     * @return status
-     */
+    /** 状态 - 1： 有效
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -445,20 +356,14 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public ShowDetailsOfAppV2Response withAppType(AppTypeEnum appType) {
         this.appType = appType;
         return this;
     }
 
-    
-
-
-    /**
-     * APP的类型： - apig：存量apig应用，不推荐使用 - roma：roma集成应用
-     * @return appType
-     */
+    /** APP的类型： - apig：存量apig应用，不推荐使用 - roma：roma集成应用
+     * 
+     * @return appType */
     public AppTypeEnum getAppType() {
         return appType;
     }
@@ -467,20 +372,14 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         this.appType = appType;
     }
 
-    
-
     public ShowDetailsOfAppV2Response withRomaAppType(Object romaAppType) {
         this.romaAppType = romaAppType;
         return this;
     }
 
-    
-
-
-    /**
-     * ROMA_APP的类型： - subscription：订阅应用 - integration：集成应用
-     * @return romaAppType
-     */
+    /** ROMA_APP的类型： - subscription：订阅应用 - integration：集成应用
+     * 
+     * @return romaAppType */
     public Object getRomaAppType() {
         return romaAppType;
     }
@@ -488,8 +387,6 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
     public void setRomaAppType(Object romaAppType) {
         this.romaAppType = romaAppType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -500,22 +397,25 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
             return false;
         }
         ShowDetailsOfAppV2Response showDetailsOfAppV2Response = (ShowDetailsOfAppV2Response) o;
-        return Objects.equals(this.id, showDetailsOfAppV2Response.id) &&
-            Objects.equals(this.name, showDetailsOfAppV2Response.name) &&
-            Objects.equals(this.remark, showDetailsOfAppV2Response.remark) &&
-            Objects.equals(this.creator, showDetailsOfAppV2Response.creator) &&
-            Objects.equals(this.updateTime, showDetailsOfAppV2Response.updateTime) &&
-            Objects.equals(this.appKey, showDetailsOfAppV2Response.appKey) &&
-            Objects.equals(this.appSecret, showDetailsOfAppV2Response.appSecret) &&
-            Objects.equals(this.registerTime, showDetailsOfAppV2Response.registerTime) &&
-            Objects.equals(this.status, showDetailsOfAppV2Response.status) &&
-            Objects.equals(this.appType, showDetailsOfAppV2Response.appType) &&
-            Objects.equals(this.romaAppType, showDetailsOfAppV2Response.romaAppType);
+        return Objects.equals(this.id, showDetailsOfAppV2Response.id)
+            && Objects.equals(this.name, showDetailsOfAppV2Response.name)
+            && Objects.equals(this.remark, showDetailsOfAppV2Response.remark)
+            && Objects.equals(this.creator, showDetailsOfAppV2Response.creator)
+            && Objects.equals(this.updateTime, showDetailsOfAppV2Response.updateTime)
+            && Objects.equals(this.appKey, showDetailsOfAppV2Response.appKey)
+            && Objects.equals(this.appSecret, showDetailsOfAppV2Response.appSecret)
+            && Objects.equals(this.registerTime, showDetailsOfAppV2Response.registerTime)
+            && Objects.equals(this.status, showDetailsOfAppV2Response.status)
+            && Objects.equals(this.appType, showDetailsOfAppV2Response.appType)
+            && Objects.equals(this.romaAppType, showDetailsOfAppV2Response.romaAppType);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, remark, creator, updateTime, appKey, appSecret, registerTime, status, appType, romaAppType);
+        return Objects
+            .hash(id, name, remark, creator, updateTime, appKey, appSecret, registerTime, status, appType, romaAppType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -534,16 +434,13 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

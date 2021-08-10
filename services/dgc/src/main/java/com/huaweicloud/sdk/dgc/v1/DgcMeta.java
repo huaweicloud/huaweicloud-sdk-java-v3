@@ -6,9 +6,6 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.dgc.v1.model.*;
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class DgcMeta {
@@ -24,31 +21,28 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("script_name",
+        builder.<String>withRequestField("script_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CancelScriptRequest::getScriptName, (req, v) -> {
                 req.setScriptName(v);
-            })
-        );
-        builder.withRequestField("instance_id",
+            }));
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CancelScriptRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateConnectionRequest, CreateConnectionResponse> createConnection = genForcreateConnection();
+    public static final HttpRequestDef<CreateConnectionRequest, CreateConnectionResponse> createConnection =
+        genForcreateConnection();
 
     private static HttpRequestDef<CreateConnectionRequest, CreateConnectionResponse> genForcreateConnection() {
         // basic
@@ -59,18 +53,15 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<ConnectionInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ConnectionInfo.class,
+            TypeCasts.uncheckedConversion(ConnectionInfo.class),
             f -> f.withMarshaller(CreateConnectionRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -86,23 +77,21 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<JobInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            JobInfo.class,
+            TypeCasts.uncheckedConversion(JobInfo.class),
             f -> f.withMarshaller(CreateJobRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateResourceRequest, CreateResourceResponse> createResource = genForcreateResource();
+    public static final HttpRequestDef<CreateResourceRequest, CreateResourceResponse> createResource =
+        genForcreateResource();
 
     private static HttpRequestDef<CreateResourceRequest, CreateResourceResponse> genForcreateResource() {
         // basic
@@ -113,27 +102,23 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<ResourceInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ResourceInfo.class,
+            TypeCasts.uncheckedConversion(ResourceInfo.class),
             f -> f.withMarshaller(CreateResourceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreateResourceResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(CreateResourceResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
@@ -149,23 +134,21 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<ScriptInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ScriptInfo.class,
+            TypeCasts.uncheckedConversion(ScriptInfo.class),
             f -> f.withMarshaller(CreateScriptRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteConnctionRequest, DeleteConnctionResponse> deleteConnction = genFordeleteConnction();
+    public static final HttpRequestDef<DeleteConnctionRequest, DeleteConnctionResponse> deleteConnction =
+        genFordeleteConnction();
 
     private static HttpRequestDef<DeleteConnctionRequest, DeleteConnctionResponse> genFordeleteConnction() {
         // basic
@@ -176,18 +159,15 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("connection_name",
+        builder.<String>withRequestField("connection_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteConnctionRequest::getConnectionName, (req, v) -> {
                 req.setConnectionName(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -203,23 +183,21 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("job_name",
+        builder.<String>withRequestField("job_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteJobRequest::getJobName, (req, v) -> {
                 req.setJobName(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteResourceRequest, DeleteResourceResponse> deleteResource = genFordeleteResource();
+    public static final HttpRequestDef<DeleteResourceRequest, DeleteResourceResponse> deleteResource =
+        genFordeleteResource();
 
     private static HttpRequestDef<DeleteResourceRequest, DeleteResourceResponse> genFordeleteResource() {
         // basic
@@ -230,18 +208,15 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("resource_id",
+        builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteResourceRequest::getResourceId, (req, v) -> {
                 req.setResourceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -257,23 +232,21 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("script_name",
+        builder.<String>withRequestField("script_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteScriptRequest::getScriptName, (req, v) -> {
                 req.setScriptName(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ExecuteScriptRequest, ExecuteScriptResponse> executeScript = genForexecuteScript();
+    public static final HttpRequestDef<ExecuteScriptRequest, ExecuteScriptResponse> executeScript =
+        genForexecuteScript();
 
     private static HttpRequestDef<ExecuteScriptRequest, ExecuteScriptResponse> genForexecuteScript() {
         // basic
@@ -284,31 +257,28 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("script_name",
+        builder.<String>withRequestField("script_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExecuteScriptRequest::getScriptName, (req, v) -> {
                 req.setScriptName(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ExecuteScriptReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ExecuteScriptReq.class,
+            TypeCasts.uncheckedConversion(ExecuteScriptReq.class),
             f -> f.withMarshaller(ExecuteScriptRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ExportConnectionsRequest, ExportConnectionsResponse> exportConnections = genForexportConnections();
+    public static final HttpRequestDef<ExportConnectionsRequest, ExportConnectionsResponse> exportConnections =
+        genForexportConnections();
 
     private static HttpRequestDef<ExportConnectionsRequest, ExportConnectionsResponse> genForexportConnections() {
         // basic
@@ -321,8 +291,6 @@ public class DgcMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
@@ -338,23 +306,21 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("job_name",
+        builder.<String>withRequestField("job_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExportJobRequest::getJobName, (req, v) -> {
                 req.setJobName(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ExportJobListRequest, ExportJobListResponse> exportJobList = genForexportJobList();
+    public static final HttpRequestDef<ExportJobListRequest, ExportJobListResponse> exportJobList =
+        genForexportJobList();
 
     private static HttpRequestDef<ExportJobListRequest, ExportJobListResponse> genForexportJobList() {
         // basic
@@ -365,23 +331,21 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<ExportJobsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ExportJobsReq.class,
+            TypeCasts.uncheckedConversion(ExportJobsReq.class),
             f -> f.withMarshaller(ExportJobListRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ImportConnectionsRequest, ImportConnectionsResponse> importConnections = genForimportConnections();
+    public static final HttpRequestDef<ImportConnectionsRequest, ImportConnectionsResponse> importConnections =
+        genForimportConnections();
 
     private static HttpRequestDef<ImportConnectionsRequest, ImportConnectionsResponse> genForimportConnections() {
         // basic
@@ -392,18 +356,15 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<ImportConnectionReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ImportConnectionReq.class,
+            TypeCasts.uncheckedConversion(ImportConnectionReq.class),
             f -> f.withMarshaller(ImportConnectionsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -419,23 +380,21 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<ImportFileReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ImportFileReq.class,
+            TypeCasts.uncheckedConversion(ImportFileReq.class),
             f -> f.withMarshaller(ImportJobRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListConnectionsRequest, ListConnectionsResponse> listConnections = genForlistConnections();
+    public static final HttpRequestDef<ListConnectionsRequest, ListConnectionsResponse> listConnections =
+        genForlistConnections();
 
     private static HttpRequestDef<ListConnectionsRequest, ListConnectionsResponse> genForlistConnections() {
         // basic
@@ -448,13 +407,12 @@ public class DgcMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListJobInstancesRequest, ListJobInstancesResponse> listJobInstances = genForlistJobInstances();
+    public static final HttpRequestDef<ListJobInstancesRequest, ListJobInstancesResponse> listJobInstances =
+        genForlistJobInstances();
 
     private static HttpRequestDef<ListJobInstancesRequest, ListJobInstancesResponse> genForlistJobInstances() {
         // basic
@@ -467,8 +425,6 @@ public class DgcMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
@@ -486,13 +442,12 @@ public class DgcMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListResourcesRequest, ListResourcesResponse> listResources = genForlistResources();
+    public static final HttpRequestDef<ListResourcesRequest, ListResourcesResponse> listResources =
+        genForlistResources();
 
     private static HttpRequestDef<ListResourcesRequest, ListResourcesResponse> genForlistResources() {
         // basic
@@ -505,13 +460,12 @@ public class DgcMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListScriptResultsRequest, ListScriptResultsResponse> listScriptResults = genForlistScriptResults();
+    public static final HttpRequestDef<ListScriptResultsRequest, ListScriptResultsResponse> listScriptResults =
+        genForlistScriptResults();
 
     private static HttpRequestDef<ListScriptResultsRequest, ListScriptResultsResponse> genForlistScriptResults() {
         // basic
@@ -522,26 +476,22 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("script_name",
+        builder.<String>withRequestField("script_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListScriptResultsRequest::getScriptName, (req, v) -> {
                 req.setScriptName(v);
-            })
-        );
-        builder.withRequestField("instance_id",
+            }));
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListScriptResultsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -559,13 +509,12 @@ public class DgcMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSystemTasksRequest, ListSystemTasksResponse> listSystemTasks = genForlistSystemTasks();
+    public static final HttpRequestDef<ListSystemTasksRequest, ListSystemTasksResponse> listSystemTasks =
+        genForlistSystemTasks();
 
     private static HttpRequestDef<ListSystemTasksRequest, ListSystemTasksResponse> genForlistSystemTasks() {
         // basic
@@ -576,23 +525,21 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSystemTasksRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RestoreJobInstanceRequest, RestoreJobInstanceResponse> restoreJobInstance = genForrestoreJobInstance();
+    public static final HttpRequestDef<RestoreJobInstanceRequest, RestoreJobInstanceResponse> restoreJobInstance =
+        genForrestoreJobInstance();
 
     private static HttpRequestDef<RestoreJobInstanceRequest, RestoreJobInstanceResponse> genForrestoreJobInstance() {
         // basic
@@ -603,26 +550,22 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("job_name",
+        builder.<String>withRequestField("job_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RestoreJobInstanceRequest::getJobName, (req, v) -> {
                 req.setJobName(v);
-            })
-        );
-        builder.withRequestField("instance_id",
+            }));
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RestoreJobInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -638,31 +581,28 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("job_name",
+        builder.<String>withRequestField("job_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RunOnceRequest::getJobName, (req, v) -> {
                 req.setJobName(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<StartJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            StartJobReq.class,
+            TypeCasts.uncheckedConversion(StartJobReq.class),
             f -> f.withMarshaller(RunOnceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowConnectionRequest, ShowConnectionResponse> showConnection = genForshowConnection();
+    public static final HttpRequestDef<ShowConnectionRequest, ShowConnectionResponse> showConnection =
+        genForshowConnection();
 
     private static HttpRequestDef<ShowConnectionRequest, ShowConnectionResponse> genForshowConnection() {
         // basic
@@ -673,18 +613,15 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("connection_name",
+        builder.<String>withRequestField("connection_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowConnectionRequest::getConnectionName, (req, v) -> {
                 req.setConnectionName(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -700,18 +637,15 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<FilePath>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            FilePath.class,
+            TypeCasts.uncheckedConversion(FilePath.class),
             f -> f.withMarshaller(ShowFileInfoRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -727,23 +661,21 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("job_name",
+        builder.<String>withRequestField("job_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowJobRequest::getJobName, (req, v) -> {
                 req.setJobName(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobInstanceRequest, ShowJobInstanceResponse> showJobInstance = genForshowJobInstance();
+    public static final HttpRequestDef<ShowJobInstanceRequest, ShowJobInstanceResponse> showJobInstance =
+        genForshowJobInstance();
 
     private static HttpRequestDef<ShowJobInstanceRequest, ShowJobInstanceResponse> genForshowJobInstance() {
         // basic
@@ -754,31 +686,28 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("job_name",
+        builder.<String>withRequestField("job_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowJobInstanceRequest::getJobName, (req, v) -> {
                 req.setJobName(v);
-            })
-        );
-        builder.withRequestField("instance_id",
+            }));
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowJobInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobStatusRequest, ShowJobStatusResponse> showJobStatus = genForshowJobStatus();
+    public static final HttpRequestDef<ShowJobStatusRequest, ShowJobStatusResponse> showJobStatus =
+        genForshowJobStatus();
 
     private static HttpRequestDef<ShowJobStatusRequest, ShowJobStatusResponse> genForshowJobStatus() {
         // basic
@@ -789,18 +718,15 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("job_name",
+        builder.<String>withRequestField("job_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowJobStatusRequest::getJobName, (req, v) -> {
                 req.setJobName(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -816,18 +742,15 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("resource_id",
+        builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowResourceRequest::getResourceId, (req, v) -> {
                 req.setResourceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -843,18 +766,15 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("script_name",
+        builder.<String>withRequestField("script_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowScriptRequest::getScriptName, (req, v) -> {
                 req.setScriptName(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -870,26 +790,22 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("job_name",
+        builder.<String>withRequestField("job_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StartJobRequest::getJobName, (req, v) -> {
                 req.setJobName(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<StartJobReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            StartJobReq.class,
+            TypeCasts.uncheckedConversion(StartJobReq.class),
             f -> f.withMarshaller(StartJobRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -905,23 +821,21 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("job_name",
+        builder.<String>withRequestField("job_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopJobRequest::getJobName, (req, v) -> {
                 req.setJobName(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StopJobInstanceRequest, StopJobInstanceResponse> stopJobInstance = genForstopJobInstance();
+    public static final HttpRequestDef<StopJobInstanceRequest, StopJobInstanceResponse> stopJobInstance =
+        genForstopJobInstance();
 
     private static HttpRequestDef<StopJobInstanceRequest, StopJobInstanceResponse> genForstopJobInstance() {
         // basic
@@ -932,31 +846,28 @@ public class DgcMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("job_name",
+        builder.<String>withRequestField("job_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopJobInstanceRequest::getJobName, (req, v) -> {
                 req.setJobName(v);
-            })
-        );
-        builder.withRequestField("instance_id",
+            }));
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopJobInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateConnectionRequest, UpdateConnectionResponse> updateConnection = genForupdateConnection();
+    public static final HttpRequestDef<UpdateConnectionRequest, UpdateConnectionResponse> updateConnection =
+        genForupdateConnection();
 
     private static HttpRequestDef<UpdateConnectionRequest, UpdateConnectionResponse> genForupdateConnection() {
         // basic
@@ -967,26 +878,22 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("connection_name",
+        builder.<String>withRequestField("connection_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateConnectionRequest::getConnectionName, (req, v) -> {
                 req.setConnectionName(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ConnectionInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ConnectionInfo.class,
+            TypeCasts.uncheckedConversion(ConnectionInfo.class),
             f -> f.withMarshaller(UpdateConnectionRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1002,31 +909,28 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("job_name",
+        builder.<String>withRequestField("job_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateJobRequest::getJobName, (req, v) -> {
                 req.setJobName(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<JobInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            JobInfo.class,
+            TypeCasts.uncheckedConversion(JobInfo.class),
             f -> f.withMarshaller(UpdateJobRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateResourceRequest, UpdateResourceResponse> updateResource = genForupdateResource();
+    public static final HttpRequestDef<UpdateResourceRequest, UpdateResourceResponse> updateResource =
+        genForupdateResource();
 
     private static HttpRequestDef<UpdateResourceRequest, UpdateResourceResponse> genForupdateResource() {
         // basic
@@ -1037,26 +941,22 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("resource_id",
+        builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateResourceRequest::getResourceId, (req, v) -> {
                 req.setResourceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ResourceInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            ResourceInfo.class,
+            TypeCasts.uncheckedConversion(ResourceInfo.class),
             f -> f.withMarshaller(UpdateResourceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1072,26 +972,22 @@ public class DgcMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("script_name",
+        builder.<String>withRequestField("script_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateScriptRequest::getScriptName, (req, v) -> {
                 req.setScriptName(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ScriptInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ScriptInfo.class,
+            TypeCasts.uncheckedConversion(ScriptInfo.class),
             f -> f.withMarshaller(UpdateScriptRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

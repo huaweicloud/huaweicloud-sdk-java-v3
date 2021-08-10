@@ -1,92 +1,71 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 创建服务器证书请求返回对象
- */
-public class CertificateInfo  {
-
-
+/** 创建服务器证书请求返回对象 */
+public class CertificateInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
-    
+    @JsonProperty(value = "admin_state_up")
+
     private Boolean adminStateUp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificate")
-    
+    @JsonProperty(value = "certificate")
+
     private String certificate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
+
     private String domain;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="private_key")
-    
+    @JsonProperty(value = "private_key")
+
     private String privateKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private String updatedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expire_time")
-    
+    @JsonProperty(value = "expire_time")
+
     private String expireTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
     public CertificateInfo withAdminStateUp(Boolean adminStateUp) {
@@ -94,13 +73,9 @@ public class CertificateInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * SSL证书的管理状态；暂不支持
-     * @return adminStateUp
-     */
+    /** SSL证书的管理状态；暂不支持
+     * 
+     * @return adminStateUp */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -109,20 +84,14 @@ public class CertificateInfo  {
         this.adminStateUp = adminStateUp;
     }
 
-    
-
     public CertificateInfo withCertificate(String certificate) {
         this.certificate = certificate;
         return this;
     }
 
-    
-
-
-    /**
-     * HTTPS协议使用的证书内容。 取值范围：PEM编码格式。
-     * @return certificate
-     */
+    /** HTTPS协议使用的证书内容。 取值范围：PEM编码格式。
+     * 
+     * @return certificate */
     public String getCertificate() {
         return certificate;
     }
@@ -131,20 +100,14 @@ public class CertificateInfo  {
         this.certificate = certificate;
     }
 
-    
-
     public CertificateInfo withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * SSL证书的描述。
-     * @return description
-     */
+    /** SSL证书的描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -153,20 +116,16 @@ public class CertificateInfo  {
         this.description = description;
     }
 
-    
-
     public CertificateInfo withDomain(String domain) {
         this.domain = domain;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务器证书所签域名。该字段仅type为server时有效。 总长度为0-1024，由若干普通域名或泛域名组成，域名之间以\",\"分割，不超过30个域名。 普通域名：由若干字符串组成，字符串间以\".\"分割，单个字符串长度不超过63个字符，只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。例：www.test.com； 泛域名：在普通域名的基础上仅允许首字母为\"*\"。例：*.test.com
-     * @return domain
-     */
+    /** 服务器证书所签域名。该字段仅type为server时有效。 总长度为0-1024，由若干普通域名或泛域名组成，域名之间以\",\"分割，不超过30个域名。
+     * 普通域名：由若干字符串组成，字符串间以\".\"分割，单个字符串长度不超过63个字符，只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。例：www.test.com；
+     * 泛域名：在普通域名的基础上仅允许首字母为\"*\"。例：*.test.com
+     * 
+     * @return domain */
     public String getDomain() {
         return domain;
     }
@@ -175,20 +134,14 @@ public class CertificateInfo  {
         this.domain = domain;
     }
 
-    
-
     public CertificateInfo withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书ID。
-     * @return id
-     */
+    /** 证书ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -197,20 +150,14 @@ public class CertificateInfo  {
         this.id = id;
     }
 
-    
-
     public CertificateInfo withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * SSL证书的名称。
-     * @return name
-     */
+    /** SSL证书的名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -219,20 +166,14 @@ public class CertificateInfo  {
         this.name = name;
     }
 
-    
-
     public CertificateInfo withPrivateKey(String privateKey) {
         this.privateKey = privateKey;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务器证书的私钥。仅type为server时有效。type为server时必选。
-     * @return privateKey
-     */
+    /** 服务器证书的私钥。仅type为server时有效。type为server时必选。
+     * 
+     * @return privateKey */
     public String getPrivateKey() {
         return privateKey;
     }
@@ -241,20 +182,14 @@ public class CertificateInfo  {
         this.privateKey = privateKey;
     }
 
-    
-
     public CertificateInfo withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * SSL证书的类型。分为服务器证书(server)和CA证书(client)。 默认值：server
-     * @return type
-     */
+    /** SSL证书的类型。分为服务器证书(server)和CA证书(client)。 默认值：server
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -263,20 +198,14 @@ public class CertificateInfo  {
         this.type = type;
     }
 
-    
-
     public CertificateInfo withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书创建时间。
-     * @return createdAt
-     */
+    /** 证书创建时间。
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -285,20 +214,14 @@ public class CertificateInfo  {
         this.createdAt = createdAt;
     }
 
-    
-
     public CertificateInfo withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书更新时间。
-     * @return updatedAt
-     */
+    /** 证书更新时间。
+     * 
+     * @return updatedAt */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -307,20 +230,14 @@ public class CertificateInfo  {
         this.updatedAt = updatedAt;
     }
 
-    
-
     public CertificateInfo withExpireTime(String expireTime) {
         this.expireTime = expireTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书使用截止时间。
-     * @return expireTime
-     */
+    /** 证书使用截止时间。
+     * 
+     * @return expireTime */
     public String getExpireTime() {
         return expireTime;
     }
@@ -329,20 +246,14 @@ public class CertificateInfo  {
         this.expireTime = expireTime;
     }
 
-    
-
     public CertificateInfo withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目ID。
-     * @return projectId
-     */
+    /** 项目ID。
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -350,8 +261,6 @@ public class CertificateInfo  {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -362,23 +271,35 @@ public class CertificateInfo  {
             return false;
         }
         CertificateInfo certificateInfo = (CertificateInfo) o;
-        return Objects.equals(this.adminStateUp, certificateInfo.adminStateUp) &&
-            Objects.equals(this.certificate, certificateInfo.certificate) &&
-            Objects.equals(this.description, certificateInfo.description) &&
-            Objects.equals(this.domain, certificateInfo.domain) &&
-            Objects.equals(this.id, certificateInfo.id) &&
-            Objects.equals(this.name, certificateInfo.name) &&
-            Objects.equals(this.privateKey, certificateInfo.privateKey) &&
-            Objects.equals(this.type, certificateInfo.type) &&
-            Objects.equals(this.createdAt, certificateInfo.createdAt) &&
-            Objects.equals(this.updatedAt, certificateInfo.updatedAt) &&
-            Objects.equals(this.expireTime, certificateInfo.expireTime) &&
-            Objects.equals(this.projectId, certificateInfo.projectId);
+        return Objects.equals(this.adminStateUp, certificateInfo.adminStateUp)
+            && Objects.equals(this.certificate, certificateInfo.certificate)
+            && Objects.equals(this.description, certificateInfo.description)
+            && Objects.equals(this.domain, certificateInfo.domain) && Objects.equals(this.id, certificateInfo.id)
+            && Objects.equals(this.name, certificateInfo.name)
+            && Objects.equals(this.privateKey, certificateInfo.privateKey)
+            && Objects.equals(this.type, certificateInfo.type)
+            && Objects.equals(this.createdAt, certificateInfo.createdAt)
+            && Objects.equals(this.updatedAt, certificateInfo.updatedAt)
+            && Objects.equals(this.expireTime, certificateInfo.expireTime)
+            && Objects.equals(this.projectId, certificateInfo.projectId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(adminStateUp, certificate, description, domain, id, name, privateKey, type, createdAt, updatedAt, expireTime, projectId);
+        return Objects.hash(adminStateUp,
+            certificate,
+            description,
+            domain,
+            id,
+            name,
+            privateKey,
+            type,
+            createdAt,
+            updatedAt,
+            expireTime,
+            projectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -398,16 +319,13 @@ public class CertificateInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

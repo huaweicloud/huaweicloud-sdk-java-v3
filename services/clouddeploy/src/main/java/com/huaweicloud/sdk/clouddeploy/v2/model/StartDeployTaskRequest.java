@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.clouddeploy.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.clouddeploy.v2.model.EnvExecutionBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class StartDeployTaskRequest  {
-
-
+/** Request Object */
+public class StartDeployTaskRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
+    @JsonProperty(value = "task_id")
+
     private String taskId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private EnvExecutionBody body;
 
     public StartDeployTaskRequest withTaskId(String taskId) {
@@ -35,13 +24,9 @@ public class StartDeployTaskRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 部署任务id
-     * @return taskId
-     */
+    /** 部署任务id
+     * 
+     * @return taskId */
     public String getTaskId() {
         return taskId;
     }
@@ -50,27 +35,23 @@ public class StartDeployTaskRequest  {
         this.taskId = taskId;
     }
 
-    
-
     public StartDeployTaskRequest withBody(EnvExecutionBody body) {
         this.body = body;
         return this;
     }
 
     public StartDeployTaskRequest withBody(Consumer<EnvExecutionBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new EnvExecutionBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public EnvExecutionBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class StartDeployTaskRequest  {
     public void setBody(EnvExecutionBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class StartDeployTaskRequest  {
             return false;
         }
         StartDeployTaskRequest startDeployTaskRequest = (StartDeployTaskRequest) o;
-        return Objects.equals(this.taskId, startDeployTaskRequest.taskId) &&
-            Objects.equals(this.body, startDeployTaskRequest.body);
+        return Objects.equals(this.taskId, startDeployTaskRequest.taskId)
+            && Objects.equals(this.body, startDeployTaskRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(taskId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class StartDeployTaskRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

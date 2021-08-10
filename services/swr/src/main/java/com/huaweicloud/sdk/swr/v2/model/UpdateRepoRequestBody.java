@@ -1,77 +1,49 @@
 package com.huaweicloud.sdk.swr.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * UpdateRepoRequestBody
- */
-public class UpdateRepoRequestBody  {
-
-
+/** UpdateRepoRequestBody */
+public class UpdateRepoRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_public")
-    
+    @JsonProperty(value = "is_public")
+
     private Boolean isPublic;
-    /**
-     * 仓库类型，可设置为app_server, linux, framework_app, database, lang, other, windows, arm。
-     */
+
+    /** 仓库类型，可设置为app_server, linux, framework_app, database, lang, other, windows, arm。 */
     public static final class CategoryEnum {
 
-        
-        /**
-         * Enum APP_SERVER for value: "app_server"
-         */
+        /** Enum APP_SERVER for value: "app_server" */
         public static final CategoryEnum APP_SERVER = new CategoryEnum("app_server");
-        
-        /**
-         * Enum LINUX for value: "linux"
-         */
+
+        /** Enum LINUX for value: "linux" */
         public static final CategoryEnum LINUX = new CategoryEnum("linux");
-        
-        /**
-         * Enum FRAMEWORK_APP for value: "framework_app"
-         */
+
+        /** Enum FRAMEWORK_APP for value: "framework_app" */
         public static final CategoryEnum FRAMEWORK_APP = new CategoryEnum("framework_app");
-        
-        /**
-         * Enum DATABASE for value: "database"
-         */
+
+        /** Enum DATABASE for value: "database" */
         public static final CategoryEnum DATABASE = new CategoryEnum("database");
-        
-        /**
-         * Enum LANG for value: "lang"
-         */
+
+        /** Enum LANG for value: "lang" */
         public static final CategoryEnum LANG = new CategoryEnum("lang");
-        
-        /**
-         * Enum WINDOWS for value: "windows"
-         */
+
+        /** Enum WINDOWS for value: "windows" */
         public static final CategoryEnum WINDOWS = new CategoryEnum("windows");
-        
-        /**
-         * Enum ARMS for value: "arms"
-         */
+
+        /** Enum ARMS for value: "arms" */
         public static final CategoryEnum ARMS = new CategoryEnum("arms");
-        
-        /**
-         * Enum OTHER for value: "other"
-         */
+
+        /** Enum OTHER for value: "other" */
         public static final CategoryEnum OTHER = new CategoryEnum("other");
-        
 
         private static final Map<String, CategoryEnum> STATIC_FIELDS = createStaticFields();
 
@@ -106,7 +78,7 @@ public class UpdateRepoRequestBody  {
 
         @JsonCreator
         public static CategoryEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CategoryEnum result = STATIC_FIELDS.get(value);
@@ -117,7 +89,7 @@ public class UpdateRepoRequestBody  {
         }
 
         public static CategoryEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CategoryEnum result = STATIC_FIELDS.get(value);
@@ -141,16 +113,14 @@ public class UpdateRepoRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="category")
-    
+    @JsonProperty(value = "category")
+
     private CategoryEnum category;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public UpdateRepoRequestBody withIsPublic(Boolean isPublic) {
@@ -158,13 +128,9 @@ public class UpdateRepoRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 是否为公共仓库，可选值为true或false。
-     * @return isPublic
-     */
+    /** 是否为公共仓库，可选值为true或false。
+     * 
+     * @return isPublic */
     public Boolean getIsPublic() {
         return isPublic;
     }
@@ -173,20 +139,14 @@ public class UpdateRepoRequestBody  {
         this.isPublic = isPublic;
     }
 
-    
-
     public UpdateRepoRequestBody withCategory(CategoryEnum category) {
         this.category = category;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库类型，可设置为app_server, linux, framework_app, database, lang, other, windows, arm。
-     * @return category
-     */
+    /** 仓库类型，可设置为app_server, linux, framework_app, database, lang, other, windows, arm。
+     * 
+     * @return category */
     public CategoryEnum getCategory() {
         return category;
     }
@@ -195,20 +155,14 @@ public class UpdateRepoRequestBody  {
         this.category = category;
     }
 
-    
-
     public UpdateRepoRequestBody withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像仓库的描述信息。
-     * @return description
-     */
+    /** 镜像仓库的描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -216,8 +170,6 @@ public class UpdateRepoRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -228,14 +180,16 @@ public class UpdateRepoRequestBody  {
             return false;
         }
         UpdateRepoRequestBody updateRepoRequestBody = (UpdateRepoRequestBody) o;
-        return Objects.equals(this.isPublic, updateRepoRequestBody.isPublic) &&
-            Objects.equals(this.category, updateRepoRequestBody.category) &&
-            Objects.equals(this.description, updateRepoRequestBody.description);
+        return Objects.equals(this.isPublic, updateRepoRequestBody.isPublic)
+            && Objects.equals(this.category, updateRepoRequestBody.category)
+            && Objects.equals(this.description, updateRepoRequestBody.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(isPublic, category, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -246,16 +200,13 @@ public class UpdateRepoRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

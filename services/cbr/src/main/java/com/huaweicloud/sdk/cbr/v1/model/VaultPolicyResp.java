@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 绑定策略返回体
- */
-public class VaultPolicyResp  {
-
-
+/** 绑定策略返回体 */
+public class VaultPolicyResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination_vault_id")
-    
+    @JsonProperty(value = "destination_vault_id")
+
     private String destinationVaultId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_id")
-    
+    @JsonProperty(value = "policy_id")
+
     private String policyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vault_id")
-    
+    @JsonProperty(value = "vault_id")
+
     private String vaultId;
 
     public VaultPolicyResp withDestinationVaultId(String destinationVaultId) {
@@ -40,13 +28,9 @@ public class VaultPolicyResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 目标region的vault ID，仅设置复制策略时有。
-     * @return destinationVaultId
-     */
+    /** 目标region的vault ID，仅设置复制策略时有。
+     * 
+     * @return destinationVaultId */
     public String getDestinationVaultId() {
         return destinationVaultId;
     }
@@ -55,20 +39,14 @@ public class VaultPolicyResp  {
         this.destinationVaultId = destinationVaultId;
     }
 
-    
-
     public VaultPolicyResp withPolicyId(String policyId) {
         this.policyId = policyId;
         return this;
     }
 
-    
-
-
-    /**
-     * 设置的策略ID
-     * @return policyId
-     */
+    /** 设置的策略ID
+     * 
+     * @return policyId */
     public String getPolicyId() {
         return policyId;
     }
@@ -77,20 +55,14 @@ public class VaultPolicyResp  {
         this.policyId = policyId;
     }
 
-    
-
     public VaultPolicyResp withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
     }
 
-    
-
-
-    /**
-     * 设置策略的vault ID
-     * @return vaultId
-     */
+    /** 设置策略的vault ID
+     * 
+     * @return vaultId */
     public String getVaultId() {
         return vaultId;
     }
@@ -98,8 +70,6 @@ public class VaultPolicyResp  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class VaultPolicyResp  {
             return false;
         }
         VaultPolicyResp vaultPolicyResp = (VaultPolicyResp) o;
-        return Objects.equals(this.destinationVaultId, vaultPolicyResp.destinationVaultId) &&
-            Objects.equals(this.policyId, vaultPolicyResp.policyId) &&
-            Objects.equals(this.vaultId, vaultPolicyResp.vaultId);
+        return Objects.equals(this.destinationVaultId, vaultPolicyResp.destinationVaultId)
+            && Objects.equals(this.policyId, vaultPolicyResp.policyId)
+            && Objects.equals(this.vaultId, vaultPolicyResp.vaultId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(destinationVaultId, policyId, vaultId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class VaultPolicyResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

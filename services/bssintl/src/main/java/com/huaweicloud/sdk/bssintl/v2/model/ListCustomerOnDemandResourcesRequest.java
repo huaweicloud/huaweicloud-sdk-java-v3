@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.bssintl.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bssintl.v2.model.QueryCustomerOnDemandResourcesReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ListCustomerOnDemandResourcesRequest  {
-
-
+/** Request Object */
+public class ListCustomerOnDemandResourcesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private QueryCustomerOnDemandResourcesReq body;
 
     public ListCustomerOnDemandResourcesRequest withXLanguage(String xLanguage) {
@@ -35,15 +24,11 @@ public class ListCustomerOnDemandResourcesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：语言| |参数的约束及描述：中文：zh_CN 英文：en_US，缺省为zh_CN|
-     * @return xLanguage
-     */
+    /** |参数名称：语言| |参数的约束及描述：中文：zh_CN 英文：en_US，缺省为zh_CN|
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -52,27 +37,23 @@ public class ListCustomerOnDemandResourcesRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListCustomerOnDemandResourcesRequest withBody(QueryCustomerOnDemandResourcesReq body) {
         this.body = body;
         return this;
     }
 
     public ListCustomerOnDemandResourcesRequest withBody(Consumer<QueryCustomerOnDemandResourcesReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new QueryCustomerOnDemandResourcesReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public QueryCustomerOnDemandResourcesReq getBody() {
         return body;
     }
@@ -80,8 +61,6 @@ public class ListCustomerOnDemandResourcesRequest  {
     public void setBody(QueryCustomerOnDemandResourcesReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -91,14 +70,17 @@ public class ListCustomerOnDemandResourcesRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListCustomerOnDemandResourcesRequest listCustomerOnDemandResourcesRequest = (ListCustomerOnDemandResourcesRequest) o;
-        return Objects.equals(this.xLanguage, listCustomerOnDemandResourcesRequest.xLanguage) &&
-            Objects.equals(this.body, listCustomerOnDemandResourcesRequest.body);
+        ListCustomerOnDemandResourcesRequest listCustomerOnDemandResourcesRequest =
+            (ListCustomerOnDemandResourcesRequest) o;
+        return Objects.equals(this.xLanguage, listCustomerOnDemandResourcesRequest.xLanguage)
+            && Objects.equals(this.body, listCustomerOnDemandResourcesRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -108,16 +90,13 @@ public class ListCustomerOnDemandResourcesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 任务参数校验参数
- */
-public class Constraint  {
-
-
+/** 任务参数校验参数 */
+public class Constraint {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private String value;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errormsg")
-    
+    @JsonProperty(value = "errormsg")
+
     private String errormsg;
 
     public Constraint withType(String type) {
@@ -40,13 +28,9 @@ public class Constraint  {
         return this;
     }
 
-    
-
-
-    /**
-     * 校验规则类型
-     * @return type
-     */
+    /** 校验规则类型
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -55,20 +39,14 @@ public class Constraint  {
         this.type = type;
     }
 
-    
-
     public Constraint withValue(String value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 校验规则
-     * @return value
-     */
+    /** 校验规则
+     * 
+     * @return value */
     public String getValue() {
         return value;
     }
@@ -77,20 +55,14 @@ public class Constraint  {
         this.value = value;
     }
 
-    
-
     public Constraint withErrormsg(String errormsg) {
         this.errormsg = errormsg;
         return this;
     }
 
-    
-
-
-    /**
-     * 校验失败描述
-     * @return errormsg
-     */
+    /** 校验失败描述
+     * 
+     * @return errormsg */
     public String getErrormsg() {
         return errormsg;
     }
@@ -98,8 +70,6 @@ public class Constraint  {
     public void setErrormsg(String errormsg) {
         this.errormsg = errormsg;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,15 @@ public class Constraint  {
             return false;
         }
         Constraint constraint = (Constraint) o;
-        return Objects.equals(this.type, constraint.type) &&
-            Objects.equals(this.value, constraint.value) &&
-            Objects.equals(this.errormsg, constraint.errormsg);
+        return Objects.equals(this.type, constraint.type) && Objects.equals(this.value, constraint.value)
+            && Objects.equals(this.errormsg, constraint.errormsg);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, value, errormsg);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +99,13 @@ public class Constraint  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

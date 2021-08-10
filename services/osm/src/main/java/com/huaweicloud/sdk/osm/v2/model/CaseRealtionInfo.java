@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CaseRealtionInfo
- */
-public class CaseRealtionInfo  {
-
-
+/** CaseRealtionInfo */
+public class CaseRealtionInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="case_id")
-    
+    @JsonProperty(value = "case_id")
+
     private String caseId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="simple_description")
-    
+    @JsonProperty(value = "simple_description")
+
     private String simpleDescription;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_name")
-    
+    @JsonProperty(value = "user_name")
+
     private String userName;
 
     public CaseRealtionInfo withCaseId(String caseId) {
@@ -40,13 +28,9 @@ public class CaseRealtionInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 工单id
-     * @return caseId
-     */
+    /** 工单id
+     * 
+     * @return caseId */
     public String getCaseId() {
         return caseId;
     }
@@ -55,20 +39,14 @@ public class CaseRealtionInfo  {
         this.caseId = caseId;
     }
 
-    
-
     public CaseRealtionInfo withSimpleDescription(String simpleDescription) {
         this.simpleDescription = simpleDescription;
         return this;
     }
 
-    
-
-
-    /**
-     * 简要描述
-     * @return simpleDescription
-     */
+    /** 简要描述
+     * 
+     * @return simpleDescription */
     public String getSimpleDescription() {
         return simpleDescription;
     }
@@ -77,20 +55,14 @@ public class CaseRealtionInfo  {
         this.simpleDescription = simpleDescription;
     }
 
-    
-
     public CaseRealtionInfo withUserName(String userName) {
         this.userName = userName;
         return this;
     }
 
-    
-
-
-    /**
-     * 提交人，即用户名称
-     * @return userName
-     */
+    /** 提交人，即用户名称
+     * 
+     * @return userName */
     public String getUserName() {
         return userName;
     }
@@ -98,8 +70,6 @@ public class CaseRealtionInfo  {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class CaseRealtionInfo  {
             return false;
         }
         CaseRealtionInfo caseRealtionInfo = (CaseRealtionInfo) o;
-        return Objects.equals(this.caseId, caseRealtionInfo.caseId) &&
-            Objects.equals(this.simpleDescription, caseRealtionInfo.simpleDescription) &&
-            Objects.equals(this.userName, caseRealtionInfo.userName);
+        return Objects.equals(this.caseId, caseRealtionInfo.caseId)
+            && Objects.equals(this.simpleDescription, caseRealtionInfo.simpleDescription)
+            && Objects.equals(this.userName, caseRealtionInfo.userName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(caseId, simpleDescription, userName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class CaseRealtionInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

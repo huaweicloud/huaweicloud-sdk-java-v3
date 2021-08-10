@@ -1,38 +1,25 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.ListServerGroupsPageInfoResult;
-import com.huaweicloud.sdk.ecs.v2.model.ListServerGroupsResult;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListServerGroupsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server_groups")
-    
+    @JsonProperty(value = "server_groups")
+
     private List<ListServerGroupsResult> serverGroups = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_info")
-    
+    @JsonProperty(value = "page_info")
+
     private ListServerGroupsPageInfoResult pageInfo;
 
     public ListServerGroupsResponse withServerGroups(List<ListServerGroupsResult> serverGroups) {
@@ -40,9 +27,8 @@ public class ListServerGroupsResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListServerGroupsResponse addServerGroupsItem(ListServerGroupsResult serverGroupsItem) {
-        if(this.serverGroups == null) {
+        if (this.serverGroups == null) {
             this.serverGroups = new ArrayList<>();
         }
         this.serverGroups.add(serverGroupsItem);
@@ -50,17 +36,16 @@ public class ListServerGroupsResponse extends SdkResponse {
     }
 
     public ListServerGroupsResponse withServerGroups(Consumer<List<ListServerGroupsResult>> serverGroupsSetter) {
-        if(this.serverGroups == null) {
+        if (this.serverGroups == null) {
             this.serverGroups = new ArrayList<>();
         }
         serverGroupsSetter.accept(this.serverGroups);
         return this;
     }
 
-    /**
-     * 弹性云服务器组信息
-     * @return serverGroups
-     */
+    /** 弹性云服务器组信息
+     * 
+     * @return serverGroups */
     public List<ListServerGroupsResult> getServerGroups() {
         return serverGroups;
     }
@@ -69,27 +54,23 @@ public class ListServerGroupsResponse extends SdkResponse {
         this.serverGroups = serverGroups;
     }
 
-    
-
     public ListServerGroupsResponse withPageInfo(ListServerGroupsPageInfoResult pageInfo) {
         this.pageInfo = pageInfo;
         return this;
     }
 
     public ListServerGroupsResponse withPageInfo(Consumer<ListServerGroupsPageInfoResult> pageInfoSetter) {
-        if(this.pageInfo == null ){
+        if (this.pageInfo == null) {
             this.pageInfo = new ListServerGroupsPageInfoResult();
             pageInfoSetter.accept(this.pageInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get pageInfo
-     * @return pageInfo
-     */
+    /** Get pageInfo
+     * 
+     * @return pageInfo */
     public ListServerGroupsPageInfoResult getPageInfo() {
         return pageInfo;
     }
@@ -97,8 +78,6 @@ public class ListServerGroupsResponse extends SdkResponse {
     public void setPageInfo(ListServerGroupsPageInfoResult pageInfo) {
         this.pageInfo = pageInfo;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,13 +88,15 @@ public class ListServerGroupsResponse extends SdkResponse {
             return false;
         }
         ListServerGroupsResponse listServerGroupsResponse = (ListServerGroupsResponse) o;
-        return Objects.equals(this.serverGroups, listServerGroupsResponse.serverGroups) &&
-            Objects.equals(this.pageInfo, listServerGroupsResponse.pageInfo);
+        return Objects.equals(this.serverGroups, listServerGroupsResponse.serverGroups)
+            && Objects.equals(this.pageInfo, listServerGroupsResponse.pageInfo);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(serverGroups, pageInfo);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -125,16 +106,13 @@ public class ListServerGroupsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

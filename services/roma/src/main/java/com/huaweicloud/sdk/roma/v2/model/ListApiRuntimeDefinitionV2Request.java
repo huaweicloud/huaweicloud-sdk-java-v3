@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListApiRuntimeDefinitionV2Request  {
-
-
+/** Request Object */
+public class ListApiRuntimeDefinitionV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_id")
-    
+    @JsonProperty(value = "api_id")
+
     private String apiId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_id")
-    
+    @JsonProperty(value = "env_id")
+
     private String envId;
 
     public ListApiRuntimeDefinitionV2Request withInstanceId(String instanceId) {
@@ -40,13 +28,9 @@ public class ListApiRuntimeDefinitionV2Request  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -55,20 +39,14 @@ public class ListApiRuntimeDefinitionV2Request  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListApiRuntimeDefinitionV2Request withApiId(String apiId) {
         this.apiId = apiId;
         return this;
     }
 
-    
-
-
-    /**
-     * API的编号
-     * @return apiId
-     */
+    /** API的编号
+     * 
+     * @return apiId */
     public String getApiId() {
         return apiId;
     }
@@ -77,20 +55,14 @@ public class ListApiRuntimeDefinitionV2Request  {
         this.apiId = apiId;
     }
 
-    
-
     public ListApiRuntimeDefinitionV2Request withEnvId(String envId) {
         this.envId = envId;
         return this;
     }
 
-    
-
-
-    /**
-     * API的发布环境编号
-     * @return envId
-     */
+    /** API的发布环境编号
+     * 
+     * @return envId */
     public String getEnvId() {
         return envId;
     }
@@ -98,8 +70,6 @@ public class ListApiRuntimeDefinitionV2Request  {
     public void setEnvId(String envId) {
         this.envId = envId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class ListApiRuntimeDefinitionV2Request  {
             return false;
         }
         ListApiRuntimeDefinitionV2Request listApiRuntimeDefinitionV2Request = (ListApiRuntimeDefinitionV2Request) o;
-        return Objects.equals(this.instanceId, listApiRuntimeDefinitionV2Request.instanceId) &&
-            Objects.equals(this.apiId, listApiRuntimeDefinitionV2Request.apiId) &&
-            Objects.equals(this.envId, listApiRuntimeDefinitionV2Request.envId);
+        return Objects.equals(this.instanceId, listApiRuntimeDefinitionV2Request.instanceId)
+            && Objects.equals(this.apiId, listApiRuntimeDefinitionV2Request.apiId)
+            && Objects.equals(this.envId, listApiRuntimeDefinitionV2Request.envId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, apiId, envId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class ListApiRuntimeDefinitionV2Request  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

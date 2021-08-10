@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.cloudtest.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateTestCaseRequest  {
-
-
+/** Request Object */
+public class UpdateTestCaseRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="testcase_id")
-    
+    @JsonProperty(value = "testcase_id")
+
     private String testcaseId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateTestCaseRequestBody body;
 
     public UpdateTestCaseRequest withProjectId(String projectId) {
@@ -41,13 +29,9 @@ public class UpdateTestCaseRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 项目唯一标识，固定长度32位字符
-     * @return projectId
-     */
+    /** 项目唯一标识，固定长度32位字符
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -56,20 +40,14 @@ public class UpdateTestCaseRequest  {
         this.projectId = projectId;
     }
 
-    
-
     public UpdateTestCaseRequest withTestcaseId(String testcaseId) {
         this.testcaseId = testcaseId;
         return this;
     }
 
-    
-
-
-    /**
-     * 测试用例唯一标识，固定长度32位字符
-     * @return testcaseId
-     */
+    /** 测试用例唯一标识，固定长度32位字符
+     * 
+     * @return testcaseId */
     public String getTestcaseId() {
         return testcaseId;
     }
@@ -78,27 +56,23 @@ public class UpdateTestCaseRequest  {
         this.testcaseId = testcaseId;
     }
 
-    
-
     public UpdateTestCaseRequest withBody(UpdateTestCaseRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdateTestCaseRequest withBody(Consumer<UpdateTestCaseRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateTestCaseRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateTestCaseRequestBody getBody() {
         return body;
     }
@@ -106,8 +80,6 @@ public class UpdateTestCaseRequest  {
     public void setBody(UpdateTestCaseRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class UpdateTestCaseRequest  {
             return false;
         }
         UpdateTestCaseRequest updateTestCaseRequest = (UpdateTestCaseRequest) o;
-        return Objects.equals(this.projectId, updateTestCaseRequest.projectId) &&
-            Objects.equals(this.testcaseId, updateTestCaseRequest.testcaseId) &&
-            Objects.equals(this.body, updateTestCaseRequest.body);
+        return Objects.equals(this.projectId, updateTestCaseRequest.projectId)
+            && Objects.equals(this.testcaseId, updateTestCaseRequest.testcaseId)
+            && Objects.equals(this.body, updateTestCaseRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(projectId, testcaseId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class UpdateTestCaseRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

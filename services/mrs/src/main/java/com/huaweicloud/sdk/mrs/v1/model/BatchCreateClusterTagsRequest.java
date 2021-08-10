@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mrs.v1.model.BatchCreateClusterTagsReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class BatchCreateClusterTagsRequest  {
-
-
+/** Request Object */
+public class BatchCreateClusterTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
+
     private String clusterId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private BatchCreateClusterTagsReq body;
 
     public BatchCreateClusterTagsRequest withClusterId(String clusterId) {
@@ -35,13 +24,9 @@ public class BatchCreateClusterTagsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 集群ID。获取方法，请参见[获取集群ID](mrs_02_9001.xml)。
-     * @return clusterId
-     */
+    /** 集群ID。获取方法，请参见[获取集群ID](mrs_02_9001.xml)。
+     * 
+     * @return clusterId */
     public String getClusterId() {
         return clusterId;
     }
@@ -50,27 +35,23 @@ public class BatchCreateClusterTagsRequest  {
         this.clusterId = clusterId;
     }
 
-    
-
     public BatchCreateClusterTagsRequest withBody(BatchCreateClusterTagsReq body) {
         this.body = body;
         return this;
     }
 
     public BatchCreateClusterTagsRequest withBody(Consumer<BatchCreateClusterTagsReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new BatchCreateClusterTagsReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public BatchCreateClusterTagsReq getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class BatchCreateClusterTagsRequest  {
     public void setBody(BatchCreateClusterTagsReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class BatchCreateClusterTagsRequest  {
             return false;
         }
         BatchCreateClusterTagsRequest batchCreateClusterTagsRequest = (BatchCreateClusterTagsRequest) o;
-        return Objects.equals(this.clusterId, batchCreateClusterTagsRequest.clusterId) &&
-            Objects.equals(this.body, batchCreateClusterTagsRequest.body);
+        return Objects.equals(this.clusterId, batchCreateClusterTagsRequest.clusterId)
+            && Objects.equals(this.body, batchCreateClusterTagsRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clusterId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class BatchCreateClusterTagsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Calculation
- */
-public class Calculation  {
-
-
+/** Calculation */
+public class Calculation {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="never_connected")
-    
+    @JsonProperty(value = "never_connected")
+
     private Integer neverConnected;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="online")
-    
+    @JsonProperty(value = "online")
+
     private Integer online;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offline")
-    
+    @JsonProperty(value = "offline")
+
     private Integer offline;
 
     public Calculation withNeverConnected(Integer neverConnected) {
@@ -40,15 +28,9 @@ public class Calculation  {
         return this;
     }
 
-    
-
-
-    /**
-     * 从未连接过的设备数量
-     * minimum: 0
-     * maximum: 999999999
-     * @return neverConnected
-     */
+    /** 从未连接过的设备数量 minimum: 0 maximum: 999999999
+     * 
+     * @return neverConnected */
     public Integer getNeverConnected() {
         return neverConnected;
     }
@@ -57,22 +39,14 @@ public class Calculation  {
         this.neverConnected = neverConnected;
     }
 
-    
-
     public Calculation withOnline(Integer online) {
         this.online = online;
         return this;
     }
 
-    
-
-
-    /**
-     * 在线设备数量
-     * minimum: 0
-     * maximum: 999999999
-     * @return online
-     */
+    /** 在线设备数量 minimum: 0 maximum: 999999999
+     * 
+     * @return online */
     public Integer getOnline() {
         return online;
     }
@@ -81,22 +55,14 @@ public class Calculation  {
         this.online = online;
     }
 
-    
-
     public Calculation withOffline(Integer offline) {
         this.offline = offline;
         return this;
     }
 
-    
-
-
-    /**
-     * 离线设备数量
-     * minimum: 0
-     * maximum: 999999999
-     * @return offline
-     */
+    /** 离线设备数量 minimum: 0 maximum: 999999999
+     * 
+     * @return offline */
     public Integer getOffline() {
         return offline;
     }
@@ -104,8 +70,6 @@ public class Calculation  {
     public void setOffline(Integer offline) {
         this.offline = offline;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -116,14 +80,15 @@ public class Calculation  {
             return false;
         }
         Calculation calculation = (Calculation) o;
-        return Objects.equals(this.neverConnected, calculation.neverConnected) &&
-            Objects.equals(this.online, calculation.online) &&
-            Objects.equals(this.offline, calculation.offline);
+        return Objects.equals(this.neverConnected, calculation.neverConnected)
+            && Objects.equals(this.online, calculation.online) && Objects.equals(this.offline, calculation.offline);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(neverConnected, online, offline);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -134,16 +99,13 @@ public class Calculation  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

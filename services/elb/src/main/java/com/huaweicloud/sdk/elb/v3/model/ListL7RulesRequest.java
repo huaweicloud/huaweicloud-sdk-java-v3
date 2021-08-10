@@ -1,114 +1,89 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ListL7RulesRequest  {
-
-
+/** Request Object */
+public class ListL7RulesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="l7policy_id")
-    
+    @JsonProperty(value = "l7policy_id")
+
     private String l7policyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
-    
+    @JsonProperty(value = "admin_state_up")
+
     private Boolean adminStateUp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="compare_type")
-    
+    @JsonProperty(value = "compare_type")
+
     private List<String> compareType = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private List<String> enterpriseProjectId = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private List<String> id = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invert")
-    
+    @JsonProperty(value = "invert")
+
     private Boolean invert;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private List<String> key = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_reverse")
-    
+    @JsonProperty(value = "page_reverse")
+
     private Boolean pageReverse;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provisioning_status")
-    
+    @JsonProperty(value = "provisioning_status")
+
     private List<String> provisioningStatus = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private List<String> type = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private List<String> value = null;
-    
+
     public ListL7RulesRequest withL7policyId(String l7policyId) {
         this.l7policyId = l7policyId;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略ID。
-     * @return l7policyId
-     */
+    /** 策略ID。
+     * 
+     * @return l7policyId */
     public String getL7policyId() {
         return l7policyId;
     }
@@ -117,20 +92,14 @@ public class ListL7RulesRequest  {
         this.l7policyId = l7policyId;
     }
 
-    
-
     public ListL7RulesRequest withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
     }
 
-    
-
-
-    /**
-     * 转发规则的管理状态；该字段为预留字段，暂未启用。默认为true。
-     * @return adminStateUp
-     */
+    /** 转发规则的管理状态；该字段为预留字段，暂未启用。默认为true。
+     * 
+     * @return adminStateUp */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -139,16 +108,13 @@ public class ListL7RulesRequest  {
         this.adminStateUp = adminStateUp;
     }
 
-    
-
     public ListL7RulesRequest withCompareType(List<String> compareType) {
         this.compareType = compareType;
         return this;
     }
 
-    
     public ListL7RulesRequest addCompareTypeItem(String compareTypeItem) {
-        if(this.compareType == null) {
+        if (this.compareType == null) {
             this.compareType = new ArrayList<>();
         }
         this.compareType.add(compareTypeItem);
@@ -156,17 +122,16 @@ public class ListL7RulesRequest  {
     }
 
     public ListL7RulesRequest withCompareType(Consumer<List<String>> compareTypeSetter) {
-        if(this.compareType == null) {
+        if (this.compareType == null) {
             this.compareType = new ArrayList<>();
         }
         compareTypeSetter.accept(this.compareType);
         return this;
     }
 
-    /**
-     * 转发规则的匹配方式。type为HOST_NAME时可以为EQUAL_TO。type为PATH时可以为REGEX， STARTS_WITH，EQUAL_TO。
-     * @return compareType
-     */
+    /** 转发规则的匹配方式。type为HOST_NAME时可以为EQUAL_TO。type为PATH时可以为REGEX， STARTS_WITH，EQUAL_TO。
+     * 
+     * @return compareType */
     public List<String> getCompareType() {
         return compareType;
     }
@@ -175,16 +140,13 @@ public class ListL7RulesRequest  {
         this.compareType = compareType;
     }
 
-    
-
     public ListL7RulesRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
     public ListL7RulesRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
-        if(this.enterpriseProjectId == null) {
+        if (this.enterpriseProjectId == null) {
             this.enterpriseProjectId = new ArrayList<>();
         }
         this.enterpriseProjectId.add(enterpriseProjectIdItem);
@@ -192,17 +154,16 @@ public class ListL7RulesRequest  {
     }
 
     public ListL7RulesRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
-        if(this.enterpriseProjectId == null) {
+        if (this.enterpriseProjectId == null) {
             this.enterpriseProjectId = new ArrayList<>();
         }
         enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
         return this;
     }
 
-    /**
-     * 企业项目ID。
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID。
+     * 
+     * @return enterpriseProjectId */
     public List<String> getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -211,16 +172,13 @@ public class ListL7RulesRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public ListL7RulesRequest withId(List<String> id) {
         this.id = id;
         return this;
     }
 
-    
     public ListL7RulesRequest addIdItem(String idItem) {
-        if(this.id == null) {
+        if (this.id == null) {
             this.id = new ArrayList<>();
         }
         this.id.add(idItem);
@@ -228,17 +186,16 @@ public class ListL7RulesRequest  {
     }
 
     public ListL7RulesRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null) {
+        if (this.id == null) {
             this.id = new ArrayList<>();
         }
         idSetter.accept(this.id);
         return this;
     }
 
-    /**
-     * 转发规则ID。
-     * @return id
-     */
+    /** 转发规则ID。
+     * 
+     * @return id */
     public List<String> getId() {
         return id;
     }
@@ -247,20 +204,14 @@ public class ListL7RulesRequest  {
         this.id = id;
     }
 
-    
-
     public ListL7RulesRequest withInvert(Boolean invert) {
         this.invert = invert;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否反向匹配。使用说明：固定为false。该字段能更新但不会生效。
-     * @return invert
-     */
+    /** 是否反向匹配。使用说明：固定为false。该字段能更新但不会生效。
+     * 
+     * @return invert */
     public Boolean getInvert() {
         return invert;
     }
@@ -269,16 +220,13 @@ public class ListL7RulesRequest  {
         this.invert = invert;
     }
 
-    
-
     public ListL7RulesRequest withKey(List<String> key) {
         this.key = key;
         return this;
     }
 
-    
     public ListL7RulesRequest addKeyItem(String keyItem) {
-        if(this.key == null) {
+        if (this.key == null) {
             this.key = new ArrayList<>();
         }
         this.key.add(keyItem);
@@ -286,17 +234,16 @@ public class ListL7RulesRequest  {
     }
 
     public ListL7RulesRequest withKey(Consumer<List<String>> keySetter) {
-        if(this.key == null) {
+        if (this.key == null) {
             this.key = new ArrayList<>();
         }
         keySetter.accept(this.key);
         return this;
     }
 
-    /**
-     * 匹配内容的键值。目前匹配内容为HOST_NAME和PATH时，该字段不生效。该字段能更新但不会生效。
-     * @return key
-     */
+    /** 匹配内容的键值。目前匹配内容为HOST_NAME和PATH时，该字段不生效。该字段能更新但不会生效。
+     * 
+     * @return key */
     public List<String> getKey() {
         return key;
     }
@@ -305,22 +252,14 @@ public class ListL7RulesRequest  {
         this.key = key;
     }
 
-    
-
     public ListL7RulesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页返回的个数。
-     * minimum: 0
-     * maximum: 2000
-     * @return limit
-     */
+    /** 每页返回的个数。 minimum: 0 maximum: 2000
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -329,20 +268,14 @@ public class ListL7RulesRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListL7RulesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
 
-    
-
-
-    /**
-     * 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
-     * @return marker
-     */
+    /** 上一页最后一条记录的ID。 使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -351,20 +284,14 @@ public class ListL7RulesRequest  {
         this.marker = marker;
     }
 
-    
-
     public ListL7RulesRequest withPageReverse(Boolean pageReverse) {
         this.pageReverse = pageReverse;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 使用说明：必须与limit一起使用。
-     * @return pageReverse
-     */
+    /** 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。 使用说明：必须与limit一起使用。
+     * 
+     * @return pageReverse */
     public Boolean getPageReverse() {
         return pageReverse;
     }
@@ -373,16 +300,13 @@ public class ListL7RulesRequest  {
         this.pageReverse = pageReverse;
     }
 
-    
-
     public ListL7RulesRequest withProvisioningStatus(List<String> provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
     }
 
-    
     public ListL7RulesRequest addProvisioningStatusItem(String provisioningStatusItem) {
-        if(this.provisioningStatus == null) {
+        if (this.provisioningStatus == null) {
             this.provisioningStatus = new ArrayList<>();
         }
         this.provisioningStatus.add(provisioningStatusItem);
@@ -390,17 +314,16 @@ public class ListL7RulesRequest  {
     }
 
     public ListL7RulesRequest withProvisioningStatus(Consumer<List<String>> provisioningStatusSetter) {
-        if(this.provisioningStatus == null) {
+        if (this.provisioningStatus == null) {
             this.provisioningStatus = new ArrayList<>();
         }
         provisioningStatusSetter.accept(this.provisioningStatus);
         return this;
     }
 
-    /**
-     * 转发规则的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
-     * @return provisioningStatus
-     */
+    /** 转发规则的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
+     * 
+     * @return provisioningStatus */
     public List<String> getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -409,16 +332,13 @@ public class ListL7RulesRequest  {
         this.provisioningStatus = provisioningStatus;
     }
 
-    
-
     public ListL7RulesRequest withType(List<String> type) {
         this.type = type;
         return this;
     }
 
-    
     public ListL7RulesRequest addTypeItem(String typeItem) {
-        if(this.type == null) {
+        if (this.type == null) {
             this.type = new ArrayList<>();
         }
         this.type.add(typeItem);
@@ -426,17 +346,16 @@ public class ListL7RulesRequest  {
     }
 
     public ListL7RulesRequest withType(Consumer<List<String>> typeSetter) {
-        if(this.type == null) {
+        if (this.type == null) {
             this.type = new ArrayList<>();
         }
         typeSetter.accept(this.type);
         return this;
     }
 
-    /**
-     * 一个l7policy下创建的l7rule的type不能重复。 匹配内容：可以为HOST_NAME，PATH。
-     * @return type
-     */
+    /** 一个l7policy下创建的l7rule的type不能重复。 匹配内容：可以为HOST_NAME，PATH。
+     * 
+     * @return type */
     public List<String> getType() {
         return type;
     }
@@ -445,16 +364,13 @@ public class ListL7RulesRequest  {
         this.type = type;
     }
 
-    
-
     public ListL7RulesRequest withValue(List<String> value) {
         this.value = value;
         return this;
     }
 
-    
     public ListL7RulesRequest addValueItem(String valueItem) {
-        if(this.value == null) {
+        if (this.value == null) {
             this.value = new ArrayList<>();
         }
         this.value.add(valueItem);
@@ -462,17 +378,17 @@ public class ListL7RulesRequest  {
     }
 
     public ListL7RulesRequest withValue(Consumer<List<String>> valueSetter) {
-        if(this.value == null) {
+        if (this.value == null) {
             this.value = new ArrayList<>();
         }
         valueSetter.accept(this.value);
         return this;
     }
 
-    /**
-     * 匹配内容的值。其值不能包含空格。使用说明：当type为HOST_NAME时，取值范围：String(100)，字符串只能包含英文字母、数字、“-”或“.”，且必须以字母或数字开头。当type为PATH时，取值范围：String(128)。当转发规则的compare_type为STARTS_WITH，EQUAL_TO时，字符串只能包含英文字母、数字、^-%#&$.*+?,=!:| /()[]{}，且必须以\"/\"开头。
-     * @return value
-     */
+    /** 匹配内容的值。其值不能包含空格。使用说明：当type为HOST_NAME时，取值范围：String(100)，字符串只能包含英文字母、数字、“-”或“.”，且必须以字母或数字开头。当type为PATH时，取值范围：String(128)。当转发规则的compare_type为STARTS_WITH，EQUAL_TO时，字符串只能包含英文字母、数字、^-%#&$.*+?,=!:|
+     * /()[]{}，且必须以\"/\"开头。
+     * 
+     * @return value */
     public List<String> getValue() {
         return value;
     }
@@ -480,8 +396,6 @@ public class ListL7RulesRequest  {
     public void setValue(List<String> value) {
         this.value = value;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -492,24 +406,36 @@ public class ListL7RulesRequest  {
             return false;
         }
         ListL7RulesRequest listL7RulesRequest = (ListL7RulesRequest) o;
-        return Objects.equals(this.l7policyId, listL7RulesRequest.l7policyId) &&
-            Objects.equals(this.adminStateUp, listL7RulesRequest.adminStateUp) &&
-            Objects.equals(this.compareType, listL7RulesRequest.compareType) &&
-            Objects.equals(this.enterpriseProjectId, listL7RulesRequest.enterpriseProjectId) &&
-            Objects.equals(this.id, listL7RulesRequest.id) &&
-            Objects.equals(this.invert, listL7RulesRequest.invert) &&
-            Objects.equals(this.key, listL7RulesRequest.key) &&
-            Objects.equals(this.limit, listL7RulesRequest.limit) &&
-            Objects.equals(this.marker, listL7RulesRequest.marker) &&
-            Objects.equals(this.pageReverse, listL7RulesRequest.pageReverse) &&
-            Objects.equals(this.provisioningStatus, listL7RulesRequest.provisioningStatus) &&
-            Objects.equals(this.type, listL7RulesRequest.type) &&
-            Objects.equals(this.value, listL7RulesRequest.value);
+        return Objects.equals(this.l7policyId, listL7RulesRequest.l7policyId)
+            && Objects.equals(this.adminStateUp, listL7RulesRequest.adminStateUp)
+            && Objects.equals(this.compareType, listL7RulesRequest.compareType)
+            && Objects.equals(this.enterpriseProjectId, listL7RulesRequest.enterpriseProjectId)
+            && Objects.equals(this.id, listL7RulesRequest.id) && Objects.equals(this.invert, listL7RulesRequest.invert)
+            && Objects.equals(this.key, listL7RulesRequest.key) && Objects.equals(this.limit, listL7RulesRequest.limit)
+            && Objects.equals(this.marker, listL7RulesRequest.marker)
+            && Objects.equals(this.pageReverse, listL7RulesRequest.pageReverse)
+            && Objects.equals(this.provisioningStatus, listL7RulesRequest.provisioningStatus)
+            && Objects.equals(this.type, listL7RulesRequest.type)
+            && Objects.equals(this.value, listL7RulesRequest.value);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(l7policyId, adminStateUp, compareType, enterpriseProjectId, id, invert, key, limit, marker, pageReverse, provisioningStatus, type, value);
+        return Objects.hash(l7policyId,
+            adminStateUp,
+            compareType,
+            enterpriseProjectId,
+            id,
+            invert,
+            key,
+            limit,
+            marker,
+            pageReverse,
+            provisioningStatus,
+            type,
+            value);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -530,16 +456,13 @@ public class ListL7RulesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

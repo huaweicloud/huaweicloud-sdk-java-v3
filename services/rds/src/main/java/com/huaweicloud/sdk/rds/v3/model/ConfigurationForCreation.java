@@ -1,62 +1,44 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.ParaGroupDatastore;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ConfigurationForCreation
- */
-public class ConfigurationForCreation  {
-
-
+/** ConfigurationForCreation */
+public class ConfigurationForCreation {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore")
-    
+    @JsonProperty(value = "datastore")
+
     private ParaGroupDatastore datastore;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="values")
-    
+    @JsonProperty(value = "values")
+
     private Map<String, String> values = null;
-    
+
     public ConfigurationForCreation withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数模板名称。最长64个字符，只允许大写字母、小写字母、数字、和“-_.”特殊字符。
-     * @return name
-     */
+    /** 参数模板名称。最长64个字符，只允许大写字母、小写字母、数字、和“-_.”特殊字符。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -65,20 +47,14 @@ public class ConfigurationForCreation  {
         this.name = name;
     }
 
-    
-
     public ConfigurationForCreation withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数模板描述。最长256个字符，不支持>!<\"&'=特殊字符。默认为空。
-     * @return description
-     */
+    /** 参数模板描述。最长256个字符，不支持>!<\"&'=特殊字符。默认为空。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -87,27 +63,23 @@ public class ConfigurationForCreation  {
         this.description = description;
     }
 
-    
-
     public ConfigurationForCreation withDatastore(ParaGroupDatastore datastore) {
         this.datastore = datastore;
         return this;
     }
 
     public ConfigurationForCreation withDatastore(Consumer<ParaGroupDatastore> datastoreSetter) {
-        if(this.datastore == null ){
+        if (this.datastore == null) {
             this.datastore = new ParaGroupDatastore();
             datastoreSetter.accept(this.datastore);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get datastore
-     * @return datastore
-     */
+    /** Get datastore
+     * 
+     * @return datastore */
     public ParaGroupDatastore getDatastore() {
         return datastore;
     }
@@ -116,17 +88,13 @@ public class ConfigurationForCreation  {
         this.datastore = datastore;
     }
 
-    
-
     public ConfigurationForCreation withValues(Map<String, String> values) {
         this.values = values;
         return this;
     }
 
-    
-
     public ConfigurationForCreation putValuesItem(String key, String valuesItem) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new HashMap<>();
         }
         this.values.put(key, valuesItem);
@@ -134,16 +102,16 @@ public class ConfigurationForCreation  {
     }
 
     public ConfigurationForCreation withValues(Consumer<Map<String, String>> valuesSetter) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new HashMap<>();
         }
         valuesSetter.accept(this.values);
         return this;
     }
-    /**
-     * 参数值对象，用户基于默认参数模板自定义的参数值。默认不修改参数值。
-     * @return values
-     */
+
+    /** 参数值对象，用户基于默认参数模板自定义的参数值。默认不修改参数值。
+     * 
+     * @return values */
     public Map<String, String> getValues() {
         return values;
     }
@@ -151,8 +119,6 @@ public class ConfigurationForCreation  {
     public void setValues(Map<String, String> values) {
         this.values = values;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -163,15 +129,17 @@ public class ConfigurationForCreation  {
             return false;
         }
         ConfigurationForCreation configurationForCreation = (ConfigurationForCreation) o;
-        return Objects.equals(this.name, configurationForCreation.name) &&
-            Objects.equals(this.description, configurationForCreation.description) &&
-            Objects.equals(this.datastore, configurationForCreation.datastore) &&
-            Objects.equals(this.values, configurationForCreation.values);
+        return Objects.equals(this.name, configurationForCreation.name)
+            && Objects.equals(this.description, configurationForCreation.description)
+            && Objects.equals(this.datastore, configurationForCreation.datastore)
+            && Objects.equals(this.values, configurationForCreation.values);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, description, datastore, values);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -183,16 +151,13 @@ public class ConfigurationForCreation  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

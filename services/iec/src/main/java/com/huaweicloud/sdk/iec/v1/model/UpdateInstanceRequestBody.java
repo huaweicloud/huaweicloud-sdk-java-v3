@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iec.v1.model.UpdateInstanceOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 更新边缘实例请求体
- */
-public class UpdateInstanceRequestBody  {
-
-
+/** 更新边缘实例请求体 */
+public class UpdateInstanceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server")
-    
+    @JsonProperty(value = "server")
+
     private UpdateInstanceOption server;
 
     public UpdateInstanceRequestBody withServer(UpdateInstanceOption server) {
@@ -30,19 +20,17 @@ public class UpdateInstanceRequestBody  {
     }
 
     public UpdateInstanceRequestBody withServer(Consumer<UpdateInstanceOption> serverSetter) {
-        if(this.server == null ){
+        if (this.server == null) {
             this.server = new UpdateInstanceOption();
             serverSetter.accept(this.server);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get server
-     * @return server
-     */
+    /** Get server
+     * 
+     * @return server */
     public UpdateInstanceOption getServer() {
         return server;
     }
@@ -50,8 +38,6 @@ public class UpdateInstanceRequestBody  {
     public void setServer(UpdateInstanceOption server) {
         this.server = server;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class UpdateInstanceRequestBody  {
         UpdateInstanceRequestBody updateInstanceRequestBody = (UpdateInstanceRequestBody) o;
         return Objects.equals(this.server, updateInstanceRequestBody.server);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(server);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class UpdateInstanceRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

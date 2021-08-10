@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.dws.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dws.v2.model.Restore;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * This is a auto create Body Object
- */
-public class RestoreClusterRequestBody  {
-
-
+/** This is a auto create Body Object */
+public class RestoreClusterRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="restore")
-    
+    @JsonProperty(value = "restore")
+
     private Restore restore;
 
     public RestoreClusterRequestBody withRestore(Restore restore) {
@@ -30,19 +20,17 @@ public class RestoreClusterRequestBody  {
     }
 
     public RestoreClusterRequestBody withRestore(Consumer<Restore> restoreSetter) {
-        if(this.restore == null ){
+        if (this.restore == null) {
             this.restore = new Restore();
             restoreSetter.accept(this.restore);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get restore
-     * @return restore
-     */
+    /** Get restore
+     * 
+     * @return restore */
     public Restore getRestore() {
         return restore;
     }
@@ -50,8 +38,6 @@ public class RestoreClusterRequestBody  {
     public void setRestore(Restore restore) {
         this.restore = restore;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class RestoreClusterRequestBody  {
         RestoreClusterRequestBody restoreClusterRequestBody = (RestoreClusterRequestBody) o;
         return Objects.equals(this.restore, restoreClusterRequestBody.restore);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(restore);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class RestoreClusterRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

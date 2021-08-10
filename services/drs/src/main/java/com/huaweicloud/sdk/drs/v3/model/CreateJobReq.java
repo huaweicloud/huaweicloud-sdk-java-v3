@@ -1,66 +1,37 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.Endpoint;
-import com.huaweicloud.sdk.drs.v3.model.ResourceTag;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 创建任务请求体
- */
-public class CreateJobReq  {
-
-
+/** 创建任务请求体 */
+public class CreateJobReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bind_eip")
-    
+    @JsonProperty(value = "bind_eip")
+
     private Boolean bindEip;
-    /**
-     * 迁移场景，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
-     */
+
+    /** 迁移场景，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备 */
     public static final class DbUseTypeEnum {
 
-        
-        /**
-         * Enum MIGRATION for value: "migration"
-         */
+        /** Enum MIGRATION for value: "migration" */
         public static final DbUseTypeEnum MIGRATION = new DbUseTypeEnum("migration");
-        
-        /**
-         * Enum SYNC for value: "sync"
-         */
+
+        /** Enum SYNC for value: "sync" */
         public static final DbUseTypeEnum SYNC = new DbUseTypeEnum("sync");
-        
-        /**
-         * Enum CLOUDDATAGUARD for value: "cloudDataGuard"
-         */
+
+        /** Enum CLOUDDATAGUARD for value: "cloudDataGuard" */
         public static final DbUseTypeEnum CLOUDDATAGUARD = new DbUseTypeEnum("cloudDataGuard");
-        
 
         private static final Map<String, DbUseTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -90,7 +61,7 @@ public class CreateJobReq  {
 
         @JsonCreator
         public static DbUseTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DbUseTypeEnum result = STATIC_FIELDS.get(value);
@@ -101,7 +72,7 @@ public class CreateJobReq  {
         }
 
         public static DbUseTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DbUseTypeEnum result = STATIC_FIELDS.get(value);
@@ -125,44 +96,32 @@ public class CreateJobReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_use_type")
-    
+    @JsonProperty(value = "db_use_type")
+
     private DbUseTypeEnum dbUseType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
-    /**
-     * 引擎类型，mysql：迁移，同步使用；mongodb：迁移使用；cloudDataGuard-mysql：灾备使用。
-     */
+
+    /** 引擎类型，mysql：迁移，同步使用；mongodb：迁移使用；cloudDataGuard-mysql：灾备使用。 */
     public static final class EngineTypeEnum {
 
-        
-        /**
-         * Enum MYSQL for value: "mysql"
-         */
+        /** Enum MYSQL for value: "mysql" */
         public static final EngineTypeEnum MYSQL = new EngineTypeEnum("mysql");
-        
-        /**
-         * Enum MONGODB for value: "mongodb"
-         */
+
+        /** Enum MONGODB for value: "mongodb" */
         public static final EngineTypeEnum MONGODB = new EngineTypeEnum("mongodb");
-        
-        /**
-         * Enum CLOUDDATAGUARD_MYSQL for value: "cloudDataGuard-mysql"
-         */
+
+        /** Enum CLOUDDATAGUARD_MYSQL for value: "cloudDataGuard-mysql" */
         public static final EngineTypeEnum CLOUDDATAGUARD_MYSQL = new EngineTypeEnum("cloudDataGuard-mysql");
-        
 
         private static final Map<String, EngineTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -192,7 +151,7 @@ public class CreateJobReq  {
 
         @JsonCreator
         public static EngineTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             EngineTypeEnum result = STATIC_FIELDS.get(value);
@@ -203,7 +162,7 @@ public class CreateJobReq  {
         }
 
         public static EngineTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             EngineTypeEnum result = STATIC_FIELDS.get(value);
@@ -227,38 +186,27 @@ public class CreateJobReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engine_type")
-    
+    @JsonProperty(value = "engine_type")
+
     private EngineTypeEnum engineType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_target_readonly")
-    
+    @JsonProperty(value = "is_target_readonly")
+
     private Boolean isTargetReadonly;
-    /**
-     * 迁移方向，up ：入云 ，灾备场景时对应本云为备，down：出云，灾备场景时对应本云为主，non-dbs：自建
-     */
+
+    /** 迁移方向，up ：入云 ，灾备场景时对应本云为备，down：出云，灾备场景时对应本云为主，non-dbs：自建 */
     public static final class JobDirectionEnum {
 
-        
-        /**
-         * Enum UP for value: "up"
-         */
+        /** Enum UP for value: "up" */
         public static final JobDirectionEnum UP = new JobDirectionEnum("up");
-        
-        /**
-         * Enum DOWN for value: "down"
-         */
+
+        /** Enum DOWN for value: "down" */
         public static final JobDirectionEnum DOWN = new JobDirectionEnum("down");
-        
-        /**
-         * Enum NON_DBS for value: "non-dbs"
-         */
+
+        /** Enum NON_DBS for value: "non-dbs" */
         public static final JobDirectionEnum NON_DBS = new JobDirectionEnum("non-dbs");
-        
 
         private static final Map<String, JobDirectionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -288,7 +236,7 @@ public class CreateJobReq  {
 
         @JsonCreator
         public static JobDirectionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             JobDirectionEnum result = STATIC_FIELDS.get(value);
@@ -299,7 +247,7 @@ public class CreateJobReq  {
         }
 
         public static JobDirectionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             JobDirectionEnum result = STATIC_FIELDS.get(value);
@@ -323,38 +271,27 @@ public class CreateJobReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_direction")
-    
+    @JsonProperty(value = "job_direction")
+
     private JobDirectionEnum jobDirection;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="multi_write")
-    
+    @JsonProperty(value = "multi_write")
+
     private Boolean multiWrite;
-    /**
-     * 网络类型
-     */
+
+    /** 网络类型 */
     public static final class NetTypeEnum {
 
-        
-        /**
-         * Enum VPN for value: "vpn"
-         */
+        /** Enum VPN for value: "vpn" */
         public static final NetTypeEnum VPN = new NetTypeEnum("vpn");
-        
-        /**
-         * Enum VPC for value: "vpc"
-         */
+
+        /** Enum VPC for value: "vpc" */
         public static final NetTypeEnum VPC = new NetTypeEnum("vpc");
-        
-        /**
-         * Enum EIP for value: "eip"
-         */
+
+        /** Enum EIP for value: "eip" */
         public static final NetTypeEnum EIP = new NetTypeEnum("eip");
-        
 
         private static final Map<String, NetTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -384,7 +321,7 @@ public class CreateJobReq  {
 
         @JsonCreator
         public static NetTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             NetTypeEnum result = STATIC_FIELDS.get(value);
@@ -395,7 +332,7 @@ public class CreateJobReq  {
         }
 
         public static NetTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             NetTypeEnum result = STATIC_FIELDS.get(value);
@@ -419,28 +356,21 @@ public class CreateJobReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="net_type")
-    
+    @JsonProperty(value = "net_type")
+
     private NetTypeEnum netType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_num")
-    
+    @JsonProperty(value = "node_num")
+
     private Integer nodeNum;
-    /**
-     * 规格类型。
-     */
+
+    /** 规格类型。 */
     public static final class NodeTypeEnum {
 
-        
-        /**
-         * Enum HIGH for value: "high"
-         */
+        /** Enum HIGH for value: "high" */
         public static final NodeTypeEnum HIGH = new NodeTypeEnum("high");
-        
 
         private static final Map<String, NodeTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -468,7 +398,7 @@ public class CreateJobReq  {
 
         @JsonCreator
         public static NodeTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             NodeTypeEnum result = STATIC_FIELDS.get(value);
@@ -479,7 +409,7 @@ public class CreateJobReq  {
         }
 
         public static NodeTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             NodeTypeEnum result = STATIC_FIELDS.get(value);
@@ -503,50 +433,37 @@ public class CreateJobReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_type")
-    
+    @JsonProperty(value = "node_type")
+
     private NodeTypeEnum nodeType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_endpoint")
-    
+    @JsonProperty(value = "source_endpoint")
+
     private Endpoint sourceEndpoint;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target_endpoint")
-    
+    @JsonProperty(value = "target_endpoint")
+
     private Endpoint targetEndpoint;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<ResourceTag> tags = null;
-        /**
-     * 迁移模式，FULL_TRANS 全量,FULL_INCR_TRANS 全量+增量,INCR_TRANS 增量，灾备场景单主灾备仅支持全量加增量（FULL_INCR_TRANS）  
-     */
+
+    /** 迁移模式，FULL_TRANS 全量,FULL_INCR_TRANS 全量+增量,INCR_TRANS 增量，灾备场景单主灾备仅支持全量加增量（FULL_INCR_TRANS） */
     public static final class TaskTypeEnum {
 
-        
-        /**
-         * Enum FULL_TRANS for value: "FULL_TRANS"
-         */
+        /** Enum FULL_TRANS for value: "FULL_TRANS" */
         public static final TaskTypeEnum FULL_TRANS = new TaskTypeEnum("FULL_TRANS");
-        
-        /**
-         * Enum FULL_INCR_TRANS for value: "FULL_INCR_TRANS"
-         */
+
+        /** Enum FULL_INCR_TRANS for value: "FULL_INCR_TRANS" */
         public static final TaskTypeEnum FULL_INCR_TRANS = new TaskTypeEnum("FULL_INCR_TRANS");
-        
-        /**
-         * Enum INCR_TRANS for value: "INCR_TRANS"
-         */
+
+        /** Enum INCR_TRANS for value: "INCR_TRANS" */
         public static final TaskTypeEnum INCR_TRANS = new TaskTypeEnum("INCR_TRANS");
-        
 
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -576,7 +493,7 @@ public class CreateJobReq  {
 
         @JsonCreator
         public static TaskTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TaskTypeEnum result = STATIC_FIELDS.get(value);
@@ -587,7 +504,7 @@ public class CreateJobReq  {
         }
 
         public static TaskTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TaskTypeEnum result = STATIC_FIELDS.get(value);
@@ -611,34 +528,29 @@ public class CreateJobReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_type")
-    
+    @JsonProperty(value = "task_type")
+
     private TaskTypeEnum taskType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customize_sutnet_id")
-    
+    @JsonProperty(value = "customize_sutnet_id")
+
     private String customizeSutnetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
-    
+    @JsonProperty(value = "product_id")
+
     private String productId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sys_tags")
-    
+    @JsonProperty(value = "sys_tags")
+
     private List<ResourceTag> sysTags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expired_days")
-    
+    @JsonProperty(value = "expired_days")
+
     private String expiredDays;
 
     public CreateJobReq withBindEip(Boolean bindEip) {
@@ -646,13 +558,9 @@ public class CreateJobReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 是否绑定eip，网络类型为eip时必填且为true
-     * @return bindEip
-     */
+    /** 是否绑定eip，网络类型为eip时必填且为true
+     * 
+     * @return bindEip */
     public Boolean getBindEip() {
         return bindEip;
     }
@@ -661,20 +569,14 @@ public class CreateJobReq  {
         this.bindEip = bindEip;
     }
 
-    
-
     public CreateJobReq withDbUseType(DbUseTypeEnum dbUseType) {
         this.dbUseType = dbUseType;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移场景，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
-     * @return dbUseType
-     */
+    /** 迁移场景，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
+     * 
+     * @return dbUseType */
     public DbUseTypeEnum getDbUseType() {
         return dbUseType;
     }
@@ -683,20 +585,14 @@ public class CreateJobReq  {
         this.dbUseType = dbUseType;
     }
 
-    
-
     public CreateJobReq withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务名称，约束：任务名称在4位到50位之间，不区分大小写，可以包含字母、数字、中划线或下划线，不能包括其他特殊字符。
-     * @return name
-     */
+    /** 任务名称，约束：任务名称在4位到50位之间，不区分大小写，可以包含字母、数字、中划线或下划线，不能包括其他特殊字符。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -705,20 +601,14 @@ public class CreateJobReq  {
         this.name = name;
     }
 
-    
-
     public CreateJobReq withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务描述。  **约束**：任务描述不能超过256位，且不能包含!<>&'\"\\特殊字符。
-     * @return description
-     */
+    /** 任务描述。 **约束**：任务描述不能超过256位，且不能包含!<>&'\"\\特殊字符。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -727,20 +617,14 @@ public class CreateJobReq  {
         this.description = description;
     }
 
-    
-
     public CreateJobReq withEngineType(EngineTypeEnum engineType) {
         this.engineType = engineType;
         return this;
     }
 
-    
-
-
-    /**
-     * 引擎类型，mysql：迁移，同步使用；mongodb：迁移使用；cloudDataGuard-mysql：灾备使用。
-     * @return engineType
-     */
+    /** 引擎类型，mysql：迁移，同步使用；mongodb：迁移使用；cloudDataGuard-mysql：灾备使用。
+     * 
+     * @return engineType */
     public EngineTypeEnum getEngineType() {
         return engineType;
     }
@@ -749,20 +633,14 @@ public class CreateJobReq  {
         this.engineType = engineType;
     }
 
-    
-
     public CreateJobReq withIsTargetReadonly(Boolean isTargetReadonly) {
         this.isTargetReadonly = isTargetReadonly;
         return this;
     }
 
-    
-
-
-    /**
-     * 指定目标实例是否限制为只读，MySQL迁移和灾备，且job_direction为up时设置有效。（灾备场景下，单主灾备且本云为备为必填且为true，不填默认设置为true）。
-     * @return isTargetReadonly
-     */
+    /** 指定目标实例是否限制为只读，MySQL迁移和灾备，且job_direction为up时设置有效。（灾备场景下，单主灾备且本云为备为必填且为true，不填默认设置为true）。
+     * 
+     * @return isTargetReadonly */
     public Boolean getIsTargetReadonly() {
         return isTargetReadonly;
     }
@@ -771,20 +649,14 @@ public class CreateJobReq  {
         this.isTargetReadonly = isTargetReadonly;
     }
 
-    
-
     public CreateJobReq withJobDirection(JobDirectionEnum jobDirection) {
         this.jobDirection = jobDirection;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移方向，up ：入云 ，灾备场景时对应本云为备，down：出云，灾备场景时对应本云为主，non-dbs：自建
-     * @return jobDirection
-     */
+    /** 迁移方向，up ：入云 ，灾备场景时对应本云为备，down：出云，灾备场景时对应本云为主，non-dbs：自建
+     * 
+     * @return jobDirection */
     public JobDirectionEnum getJobDirection() {
         return jobDirection;
     }
@@ -793,20 +665,14 @@ public class CreateJobReq  {
         this.jobDirection = jobDirection;
     }
 
-    
-
     public CreateJobReq withMultiWrite(Boolean multiWrite) {
         this.multiWrite = multiWrite;
         return this;
     }
 
-    
-
-
-    /**
-     * - db_use_type 是cloudDataGuard时，必填，灾备类型是双主灾备时 muti_write取值true, 否则为false。 - db_use_type 是其他类型时，muti_write是非必选参数
-     * @return multiWrite
-     */
+    /** - db_use_type 是cloudDataGuard时，必填，灾备类型是双主灾备时 muti_write取值true, 否则为false。 - db_use_type 是其他类型时，muti_write是非必选参数
+     * 
+     * @return multiWrite */
     public Boolean getMultiWrite() {
         return multiWrite;
     }
@@ -815,20 +681,14 @@ public class CreateJobReq  {
         this.multiWrite = multiWrite;
     }
 
-    
-
     public CreateJobReq withNetType(NetTypeEnum netType) {
         this.netType = netType;
         return this;
     }
 
-    
-
-
-    /**
-     * 网络类型
-     * @return netType
-     */
+    /** 网络类型
+     * 
+     * @return netType */
     public NetTypeEnum getNetType() {
         return netType;
     }
@@ -837,22 +697,14 @@ public class CreateJobReq  {
         this.netType = netType;
     }
 
-    
-
     public CreateJobReq withNodeNum(Integer nodeNum) {
         this.nodeNum = nodeNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点个数。MongoDB数据库时对应源端分片个数，源库为集群时必填，[1-32]，MySQL双主灾备时会默认设置为2。
-     * minimum: 1
-     * maximum: 32
-     * @return nodeNum
-     */
+    /** 节点个数。MongoDB数据库时对应源端分片个数，源库为集群时必填，[1-32]，MySQL双主灾备时会默认设置为2。 minimum: 1 maximum: 32
+     * 
+     * @return nodeNum */
     public Integer getNodeNum() {
         return nodeNum;
     }
@@ -861,20 +713,14 @@ public class CreateJobReq  {
         this.nodeNum = nodeNum;
     }
 
-    
-
     public CreateJobReq withNodeType(NodeTypeEnum nodeType) {
         this.nodeType = nodeType;
         return this;
     }
 
-    
-
-
-    /**
-     * 规格类型。
-     * @return nodeType
-     */
+    /** 规格类型。
+     * 
+     * @return nodeType */
     public NodeTypeEnum getNodeType() {
         return nodeType;
     }
@@ -883,27 +729,23 @@ public class CreateJobReq  {
         this.nodeType = nodeType;
     }
 
-    
-
     public CreateJobReq withSourceEndpoint(Endpoint sourceEndpoint) {
         this.sourceEndpoint = sourceEndpoint;
         return this;
     }
 
     public CreateJobReq withSourceEndpoint(Consumer<Endpoint> sourceEndpointSetter) {
-        if(this.sourceEndpoint == null ){
+        if (this.sourceEndpoint == null) {
             this.sourceEndpoint = new Endpoint();
             sourceEndpointSetter.accept(this.sourceEndpoint);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get sourceEndpoint
-     * @return sourceEndpoint
-     */
+    /** Get sourceEndpoint
+     * 
+     * @return sourceEndpoint */
     public Endpoint getSourceEndpoint() {
         return sourceEndpoint;
     }
@@ -912,27 +754,23 @@ public class CreateJobReq  {
         this.sourceEndpoint = sourceEndpoint;
     }
 
-    
-
     public CreateJobReq withTargetEndpoint(Endpoint targetEndpoint) {
         this.targetEndpoint = targetEndpoint;
         return this;
     }
 
     public CreateJobReq withTargetEndpoint(Consumer<Endpoint> targetEndpointSetter) {
-        if(this.targetEndpoint == null ){
+        if (this.targetEndpoint == null) {
             this.targetEndpoint = new Endpoint();
             targetEndpointSetter.accept(this.targetEndpoint);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get targetEndpoint
-     * @return targetEndpoint
-     */
+    /** Get targetEndpoint
+     * 
+     * @return targetEndpoint */
     public Endpoint getTargetEndpoint() {
         return targetEndpoint;
     }
@@ -941,16 +779,13 @@ public class CreateJobReq  {
         this.targetEndpoint = targetEndpoint;
     }
 
-    
-
     public CreateJobReq withTags(List<ResourceTag> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public CreateJobReq addTagsItem(ResourceTag tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -958,17 +793,16 @@ public class CreateJobReq  {
     }
 
     public CreateJobReq withTags(Consumer<List<ResourceTag>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 标签信息。
-     * @return tags
-     */
+    /** 标签信息。
+     * 
+     * @return tags */
     public List<ResourceTag> getTags() {
         return tags;
     }
@@ -977,20 +811,14 @@ public class CreateJobReq  {
         this.tags = tags;
     }
 
-    
-
     public CreateJobReq withTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移模式，FULL_TRANS 全量,FULL_INCR_TRANS 全量+增量,INCR_TRANS 增量，灾备场景单主灾备仅支持全量加增量（FULL_INCR_TRANS）  
-     * @return taskType
-     */
+    /** 迁移模式，FULL_TRANS 全量,FULL_INCR_TRANS 全量+增量,INCR_TRANS 增量，灾备场景单主灾备仅支持全量加增量（FULL_INCR_TRANS）
+     * 
+     * @return taskType */
     public TaskTypeEnum getTaskType() {
         return taskType;
     }
@@ -999,20 +827,14 @@ public class CreateJobReq  {
         this.taskType = taskType;
     }
 
-    
-
     public CreateJobReq withCustomizeSutnetId(String customizeSutnetId) {
         this.customizeSutnetId = customizeSutnetId;
         return this;
     }
 
-    
-
-
-    /**
-     * drs实例所在子网ID
-     * @return customizeSutnetId
-     */
+    /** drs实例所在子网ID
+     * 
+     * @return customizeSutnetId */
     public String getCustomizeSutnetId() {
         return customizeSutnetId;
     }
@@ -1021,20 +843,14 @@ public class CreateJobReq  {
         this.customizeSutnetId = customizeSutnetId;
     }
 
-    
-
     public CreateJobReq withProductId(String productId) {
         this.productId = productId;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品id。
-     * @return productId
-     */
+    /** 产品id。
+     * 
+     * @return productId */
     public String getProductId() {
         return productId;
     }
@@ -1043,16 +859,13 @@ public class CreateJobReq  {
         this.productId = productId;
     }
 
-    
-
     public CreateJobReq withSysTags(List<ResourceTag> sysTags) {
         this.sysTags = sysTags;
         return this;
     }
 
-    
     public CreateJobReq addSysTagsItem(ResourceTag sysTagsItem) {
-        if(this.sysTags == null) {
+        if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
         this.sysTags.add(sysTagsItem);
@@ -1060,17 +873,16 @@ public class CreateJobReq  {
     }
 
     public CreateJobReq withSysTags(Consumer<List<ResourceTag>> sysTagsSetter) {
-        if(this.sysTags == null) {
+        if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
         sysTagsSetter.accept(this.sysTags);
         return this;
     }
 
-    /**
-     * 企业项目，不填默认为default，key值必须为_sys_enterprise_project_id，value为企业项目ID，只能有一个企业项目。
-     * @return sysTags
-     */
+    /** 企业项目，不填默认为default，key值必须为_sys_enterprise_project_id，value为企业项目ID，只能有一个企业项目。
+     * 
+     * @return sysTags */
     public List<ResourceTag> getSysTags() {
         return sysTags;
     }
@@ -1079,20 +891,14 @@ public class CreateJobReq  {
         this.sysTags = sysTags;
     }
 
-    
-
     public CreateJobReq withExpiredDays(String expiredDays) {
         this.expiredDays = expiredDays;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务处于异常状态一段时间后，将会自动结束，单位为天。(范围14-100)，不传默认为14天。
-     * @return expiredDays
-     */
+    /** 任务处于异常状态一段时间后，将会自动结束，单位为天。(范围14-100)，不传默认为14天。
+     * 
+     * @return expiredDays */
     public String getExpiredDays() {
         return expiredDays;
     }
@@ -1100,8 +906,6 @@ public class CreateJobReq  {
     public void setExpiredDays(String expiredDays) {
         this.expiredDays = expiredDays;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -1112,30 +916,47 @@ public class CreateJobReq  {
             return false;
         }
         CreateJobReq createJobReq = (CreateJobReq) o;
-        return Objects.equals(this.bindEip, createJobReq.bindEip) &&
-            Objects.equals(this.dbUseType, createJobReq.dbUseType) &&
-            Objects.equals(this.name, createJobReq.name) &&
-            Objects.equals(this.description, createJobReq.description) &&
-            Objects.equals(this.engineType, createJobReq.engineType) &&
-            Objects.equals(this.isTargetReadonly, createJobReq.isTargetReadonly) &&
-            Objects.equals(this.jobDirection, createJobReq.jobDirection) &&
-            Objects.equals(this.multiWrite, createJobReq.multiWrite) &&
-            Objects.equals(this.netType, createJobReq.netType) &&
-            Objects.equals(this.nodeNum, createJobReq.nodeNum) &&
-            Objects.equals(this.nodeType, createJobReq.nodeType) &&
-            Objects.equals(this.sourceEndpoint, createJobReq.sourceEndpoint) &&
-            Objects.equals(this.targetEndpoint, createJobReq.targetEndpoint) &&
-            Objects.equals(this.tags, createJobReq.tags) &&
-            Objects.equals(this.taskType, createJobReq.taskType) &&
-            Objects.equals(this.customizeSutnetId, createJobReq.customizeSutnetId) &&
-            Objects.equals(this.productId, createJobReq.productId) &&
-            Objects.equals(this.sysTags, createJobReq.sysTags) &&
-            Objects.equals(this.expiredDays, createJobReq.expiredDays);
+        return Objects.equals(this.bindEip, createJobReq.bindEip)
+            && Objects.equals(this.dbUseType, createJobReq.dbUseType) && Objects.equals(this.name, createJobReq.name)
+            && Objects.equals(this.description, createJobReq.description)
+            && Objects.equals(this.engineType, createJobReq.engineType)
+            && Objects.equals(this.isTargetReadonly, createJobReq.isTargetReadonly)
+            && Objects.equals(this.jobDirection, createJobReq.jobDirection)
+            && Objects.equals(this.multiWrite, createJobReq.multiWrite)
+            && Objects.equals(this.netType, createJobReq.netType) && Objects.equals(this.nodeNum, createJobReq.nodeNum)
+            && Objects.equals(this.nodeType, createJobReq.nodeType)
+            && Objects.equals(this.sourceEndpoint, createJobReq.sourceEndpoint)
+            && Objects.equals(this.targetEndpoint, createJobReq.targetEndpoint)
+            && Objects.equals(this.tags, createJobReq.tags) && Objects.equals(this.taskType, createJobReq.taskType)
+            && Objects.equals(this.customizeSutnetId, createJobReq.customizeSutnetId)
+            && Objects.equals(this.productId, createJobReq.productId)
+            && Objects.equals(this.sysTags, createJobReq.sysTags)
+            && Objects.equals(this.expiredDays, createJobReq.expiredDays);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(bindEip, dbUseType, name, description, engineType, isTargetReadonly, jobDirection, multiWrite, netType, nodeNum, nodeType, sourceEndpoint, targetEndpoint, tags, taskType, customizeSutnetId, productId, sysTags, expiredDays);
+        return Objects.hash(bindEip,
+            dbUseType,
+            name,
+            description,
+            engineType,
+            isTargetReadonly,
+            jobDirection,
+            multiWrite,
+            netType,
+            nodeNum,
+            nodeType,
+            sourceEndpoint,
+            targetEndpoint,
+            tags,
+            taskType,
+            customizeSutnetId,
+            productId,
+            sysTags,
+            expiredDays);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1162,16 +983,13 @@ public class CreateJobReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

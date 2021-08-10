@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ddm.v1.model.UpdateUserDetailReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * This is a auto update request Object
- */
-public class UpdateUserReq  {
-
-
+/** This is a auto update request Object */
+public class UpdateUserReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user")
-    
+    @JsonProperty(value = "user")
+
     private UpdateUserDetailReq user;
 
     public UpdateUserReq withUser(UpdateUserDetailReq user) {
@@ -30,19 +20,17 @@ public class UpdateUserReq  {
     }
 
     public UpdateUserReq withUser(Consumer<UpdateUserDetailReq> userSetter) {
-        if(this.user == null ){
+        if (this.user == null) {
             this.user = new UpdateUserDetailReq();
             userSetter.accept(this.user);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get user
-     * @return user
-     */
+    /** Get user
+     * 
+     * @return user */
     public UpdateUserDetailReq getUser() {
         return user;
     }
@@ -50,8 +38,6 @@ public class UpdateUserReq  {
     public void setUser(UpdateUserDetailReq user) {
         this.user = user;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class UpdateUserReq  {
         UpdateUserReq updateUserReq = (UpdateUserReq) o;
         return Objects.equals(this.user, updateUserReq.user);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(user);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class UpdateUserReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

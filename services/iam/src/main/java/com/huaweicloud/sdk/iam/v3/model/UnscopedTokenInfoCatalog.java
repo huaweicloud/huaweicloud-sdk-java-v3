@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * UnscopedTokenInfoCatalog
- */
-public class UnscopedTokenInfoCatalog  {
-
-
+/** UnscopedTokenInfoCatalog */
+public class UnscopedTokenInfoCatalog {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="interface")
-    
+    @JsonProperty(value = "interface")
+
     private String _interface;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_id")
-    
+    @JsonProperty(value = "region_id")
+
     private String regionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private String url;
 
     public UnscopedTokenInfoCatalog withId(String id) {
@@ -52,13 +38,9 @@ public class UnscopedTokenInfoCatalog  {
         return this;
     }
 
-    
-
-
-    /**
-     * 终端节点ID。
-     * @return id
-     */
+    /** 终端节点ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -67,20 +49,14 @@ public class UnscopedTokenInfoCatalog  {
         this.id = id;
     }
 
-    
-
     public UnscopedTokenInfoCatalog withInterface(String _interface) {
         this._interface = _interface;
         return this;
     }
 
-    
-
-
-    /**
-     * 接口类型，描述接口在该终端节点的可见性。值为“public”，表示该接口为公开接口。
-     * @return _interface
-     */
+    /** 接口类型，描述接口在该终端节点的可见性。值为“public”，表示该接口为公开接口。
+     * 
+     * @return _interface */
     public String getInterface() {
         return _interface;
     }
@@ -89,20 +65,14 @@ public class UnscopedTokenInfoCatalog  {
         this._interface = _interface;
     }
 
-    
-
     public UnscopedTokenInfoCatalog withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * 终端节点所属区域。
-     * @return region
-     */
+    /** 终端节点所属区域。
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -111,20 +81,14 @@ public class UnscopedTokenInfoCatalog  {
         this.region = region;
     }
 
-    
-
     public UnscopedTokenInfoCatalog withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
     }
 
-    
-
-
-    /**
-     * 终端节点所属区域ID。
-     * @return regionId
-     */
+    /** 终端节点所属区域ID。
+     * 
+     * @return regionId */
     public String getRegionId() {
         return regionId;
     }
@@ -133,20 +97,14 @@ public class UnscopedTokenInfoCatalog  {
         this.regionId = regionId;
     }
 
-    
-
     public UnscopedTokenInfoCatalog withUrl(String url) {
         this.url = url;
         return this;
     }
 
-    
-
-
-    /**
-     * 终端节点的URL。
-     * @return url
-     */
+    /** 终端节点的URL。
+     * 
+     * @return url */
     public String getUrl() {
         return url;
     }
@@ -154,8 +112,6 @@ public class UnscopedTokenInfoCatalog  {
     public void setUrl(String url) {
         this.url = url;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,18 @@ public class UnscopedTokenInfoCatalog  {
             return false;
         }
         UnscopedTokenInfoCatalog unscopedTokenInfoCatalog = (UnscopedTokenInfoCatalog) o;
-        return Objects.equals(this.id, unscopedTokenInfoCatalog.id) &&
-            Objects.equals(this._interface, unscopedTokenInfoCatalog._interface) &&
-            Objects.equals(this.region, unscopedTokenInfoCatalog.region) &&
-            Objects.equals(this.regionId, unscopedTokenInfoCatalog.regionId) &&
-            Objects.equals(this.url, unscopedTokenInfoCatalog.url);
+        return Objects.equals(this.id, unscopedTokenInfoCatalog.id)
+            && Objects.equals(this._interface, unscopedTokenInfoCatalog._interface)
+            && Objects.equals(this.region, unscopedTokenInfoCatalog.region)
+            && Objects.equals(this.regionId, unscopedTokenInfoCatalog.regionId)
+            && Objects.equals(this.url, unscopedTokenInfoCatalog.url);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, _interface, region, regionId, url);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class UnscopedTokenInfoCatalog  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

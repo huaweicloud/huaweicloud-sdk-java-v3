@@ -28,12 +28,11 @@ import java.util.Optional;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 
-/**
- * @param <ReqT>
+/** @param <ReqT>
  * @param <FieldT>
- * @author HuaweiCloud_SDK
- */
+ * @author HuaweiCloud_SDK */
 public class FieldImpl<ReqT, FieldT> implements Field<ReqT, FieldT> {
+
     String name;
 
     LocationType locationType;
@@ -142,8 +141,8 @@ public class FieldImpl<ReqT, FieldT> implements Field<ReqT, FieldT> {
         if (fieldType.isAssignableFrom(clazz)) {
             writer.accept(request, (FieldT) value);
         } else {
-            FieldT enumValue = tryFindEnumField(value, clazz).orElseThrow(() -> new SdkException(
-                "input value " + value + " with class " + clazz.getSimpleName()
+            FieldT enumValue = tryFindEnumField(value, clazz)
+                .orElseThrow(() -> new SdkException("input value " + value + " with class " + clazz.getSimpleName()
                     + " is not compatible with expected class " + fieldType.getSimpleName()));
             writer.accept(request, enumValue);
         }
@@ -158,14 +157,12 @@ public class FieldImpl<ReqT, FieldT> implements Field<ReqT, FieldT> {
         }
     }
 
-    /**
-     * 如果客户端请求对应到服务端的path变量定义为enum，则会走到这个分支。允许这种兼容
+    /** 如果客户端请求对应到服务端的path变量定义为enum，则会走到这个分支。允许这种兼容
      *
      * @param value 取值
      * @param clazz 输入的取值的类型
      * @param <T> 输入取值类型参数
-     * @return 如果是enum且匹配上了值，则返回匹配的enum field，否则返回empty。
-     */
+     * @return 如果是enum且匹配上了值，则返回匹配的enum field，否则返回empty。 */
     private <T> Optional<FieldT> tryFindEnumField(Object value, Class<T> clazz) {
         if (!(fieldType.isEnum() && clazz.isAssignableFrom(String.class))) {
             return Optional.empty();

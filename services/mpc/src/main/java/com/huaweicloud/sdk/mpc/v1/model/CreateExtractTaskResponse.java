@@ -1,67 +1,48 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.CommonCreateTaskRsp;
-import com.huaweicloud.sdk.mpc.v1.model.MetaData;
-import com.huaweicloud.sdk.mpc.v1.model.ObsObjInfo;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class CreateExtractTaskResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
+    @JsonProperty(value = "task_id")
+
     private String taskId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private String createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output")
-    
+    @JsonProperty(value = "output")
+
     private ObsObjInfo output;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output_file_name")
-    
+    @JsonProperty(value = "output_file_name")
+
     private String outputFileName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata")
-    
+    @JsonProperty(value = "metadata")
+
     private MetaData metadata;
 
     public CreateExtractTaskResponse withTaskId(String taskId) {
@@ -69,13 +50,9 @@ public class CreateExtractTaskResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID 
-     * @return taskId
-     */
+    /** 任务ID
+     * 
+     * @return taskId */
     public String getTaskId() {
         return taskId;
     }
@@ -84,20 +61,14 @@ public class CreateExtractTaskResponse extends SdkResponse {
         this.taskId = taskId;
     }
 
-    
-
     public CreateExtractTaskResponse withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务状态
-     * @return status
-     */
+    /** 任务状态
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -106,20 +77,14 @@ public class CreateExtractTaskResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public CreateExtractTaskResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务创建时间
-     * @return createTime
-     */
+    /** 任务创建时间
+     * 
+     * @return createTime */
     public String getCreateTime() {
         return createTime;
     }
@@ -128,27 +93,23 @@ public class CreateExtractTaskResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public CreateExtractTaskResponse withOutput(ObsObjInfo output) {
         this.output = output;
         return this;
     }
 
     public CreateExtractTaskResponse withOutput(Consumer<ObsObjInfo> outputSetter) {
-        if(this.output == null ){
+        if (this.output == null) {
             this.output = new ObsObjInfo();
             outputSetter.accept(this.output);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get output
-     * @return output
-     */
+    /** Get output
+     * 
+     * @return output */
     public ObsObjInfo getOutput() {
         return output;
     }
@@ -157,20 +118,14 @@ public class CreateExtractTaskResponse extends SdkResponse {
         this.output = output;
     }
 
-    
-
     public CreateExtractTaskResponse withOutputFileName(String outputFileName) {
         this.outputFileName = outputFileName;
         return this;
     }
 
-    
-
-
-    /**
-     * 解析文件名称
-     * @return outputFileName
-     */
+    /** 解析文件名称
+     * 
+     * @return outputFileName */
     public String getOutputFileName() {
         return outputFileName;
     }
@@ -179,20 +134,14 @@ public class CreateExtractTaskResponse extends SdkResponse {
         this.outputFileName = outputFileName;
     }
 
-    
-
     public CreateExtractTaskResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务描述，如当任务异常时，此字段为异常的具体信息
-     * @return description
-     */
+    /** 任务描述，如当任务异常时，此字段为异常的具体信息
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -201,27 +150,23 @@ public class CreateExtractTaskResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public CreateExtractTaskResponse withMetadata(MetaData metadata) {
         this.metadata = metadata;
         return this;
     }
 
     public CreateExtractTaskResponse withMetadata(Consumer<MetaData> metadataSetter) {
-        if(this.metadata == null ){
+        if (this.metadata == null) {
             this.metadata = new MetaData();
             metadataSetter.accept(this.metadata);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get metadata
-     * @return metadata
-     */
+    /** Get metadata
+     * 
+     * @return metadata */
     public MetaData getMetadata() {
         return metadata;
     }
@@ -229,8 +174,6 @@ public class CreateExtractTaskResponse extends SdkResponse {
     public void setMetadata(MetaData metadata) {
         this.metadata = metadata;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -241,18 +184,20 @@ public class CreateExtractTaskResponse extends SdkResponse {
             return false;
         }
         CreateExtractTaskResponse createExtractTaskResponse = (CreateExtractTaskResponse) o;
-        return Objects.equals(this.taskId, createExtractTaskResponse.taskId) &&
-            Objects.equals(this.status, createExtractTaskResponse.status) &&
-            Objects.equals(this.createTime, createExtractTaskResponse.createTime) &&
-            Objects.equals(this.output, createExtractTaskResponse.output) &&
-            Objects.equals(this.outputFileName, createExtractTaskResponse.outputFileName) &&
-            Objects.equals(this.description, createExtractTaskResponse.description) &&
-            Objects.equals(this.metadata, createExtractTaskResponse.metadata);
+        return Objects.equals(this.taskId, createExtractTaskResponse.taskId)
+            && Objects.equals(this.status, createExtractTaskResponse.status)
+            && Objects.equals(this.createTime, createExtractTaskResponse.createTime)
+            && Objects.equals(this.output, createExtractTaskResponse.output)
+            && Objects.equals(this.outputFileName, createExtractTaskResponse.outputFileName)
+            && Objects.equals(this.description, createExtractTaskResponse.description)
+            && Objects.equals(this.metadata, createExtractTaskResponse.metadata);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(taskId, status, createTime, output, outputFileName, description, metadata);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -267,16 +212,13 @@ public class CreateExtractTaskResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

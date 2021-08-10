@@ -1,27 +1,19 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.CreateAgencyOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class CreateAgencyRequestBody  {
-
-
+public class CreateAgencyRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="agency")
-    
+    @JsonProperty(value = "agency")
+
     private CreateAgencyOption agency;
 
     public CreateAgencyRequestBody withAgency(CreateAgencyOption agency) {
@@ -30,19 +22,17 @@ public class CreateAgencyRequestBody  {
     }
 
     public CreateAgencyRequestBody withAgency(Consumer<CreateAgencyOption> agencySetter) {
-        if(this.agency == null ){
+        if (this.agency == null) {
             this.agency = new CreateAgencyOption();
             agencySetter.accept(this.agency);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get agency
-     * @return agency
-     */
+    /** Get agency
+     * 
+     * @return agency */
     public CreateAgencyOption getAgency() {
         return agency;
     }
@@ -50,8 +40,6 @@ public class CreateAgencyRequestBody  {
     public void setAgency(CreateAgencyOption agency) {
         this.agency = agency;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +52,12 @@ public class CreateAgencyRequestBody  {
         CreateAgencyRequestBody createAgencyRequestBody = (CreateAgencyRequestBody) o;
         return Objects.equals(this.agency, createAgencyRequestBody.agency);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(agency);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +66,13 @@ public class CreateAgencyRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

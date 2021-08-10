@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 规则过滤器
- */
-public class PolicyFilterDefinition  {
-
-
+/** 规则过滤器 */
+public class PolicyFilterDefinition {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_id")
-    
+    @JsonProperty(value = "region_id")
+
     private String regionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_provider")
-    
+    @JsonProperty(value = "resource_provider")
+
     private String resourceProvider;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type")
-    
+    @JsonProperty(value = "resource_type")
+
     private String resourceType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
+    @JsonProperty(value = "resource_id")
+
     private String resourceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag_key")
-    
+    @JsonProperty(value = "tag_key")
+
     private String tagKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag_value")
-    
+    @JsonProperty(value = "tag_value")
+
     private String tagValue;
 
     public PolicyFilterDefinition withRegionId(String regionId) {
@@ -58,13 +43,9 @@ public class PolicyFilterDefinition  {
         return this;
     }
 
-    
-
-
-    /**
-     * 区域ID
-     * @return regionId
-     */
+    /** 区域ID
+     * 
+     * @return regionId */
     public String getRegionId() {
         return regionId;
     }
@@ -73,20 +54,14 @@ public class PolicyFilterDefinition  {
         this.regionId = regionId;
     }
 
-    
-
     public PolicyFilterDefinition withResourceProvider(String resourceProvider) {
         this.resourceProvider = resourceProvider;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源服务
-     * @return resourceProvider
-     */
+    /** 资源服务
+     * 
+     * @return resourceProvider */
     public String getResourceProvider() {
         return resourceProvider;
     }
@@ -95,20 +70,14 @@ public class PolicyFilterDefinition  {
         this.resourceProvider = resourceProvider;
     }
 
-    
-
     public PolicyFilterDefinition withResourceType(String resourceType) {
         this.resourceType = resourceType;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源类型
-     * @return resourceType
-     */
+    /** 资源类型
+     * 
+     * @return resourceType */
     public String getResourceType() {
         return resourceType;
     }
@@ -117,20 +86,14 @@ public class PolicyFilterDefinition  {
         this.resourceType = resourceType;
     }
 
-    
-
     public PolicyFilterDefinition withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源ID
-     * @return resourceId
-     */
+    /** 资源ID
+     * 
+     * @return resourceId */
     public String getResourceId() {
         return resourceId;
     }
@@ -139,20 +102,14 @@ public class PolicyFilterDefinition  {
         this.resourceId = resourceId;
     }
 
-    
-
     public PolicyFilterDefinition withTagKey(String tagKey) {
         this.tagKey = tagKey;
         return this;
     }
 
-    
-
-
-    /**
-     * 标签键
-     * @return tagKey
-     */
+    /** 标签键
+     * 
+     * @return tagKey */
     public String getTagKey() {
         return tagKey;
     }
@@ -161,20 +118,14 @@ public class PolicyFilterDefinition  {
         this.tagKey = tagKey;
     }
 
-    
-
     public PolicyFilterDefinition withTagValue(String tagValue) {
         this.tagValue = tagValue;
         return this;
     }
 
-    
-
-
-    /**
-     * 标签值
-     * @return tagValue
-     */
+    /** 标签值
+     * 
+     * @return tagValue */
     public String getTagValue() {
         return tagValue;
     }
@@ -182,8 +133,6 @@ public class PolicyFilterDefinition  {
     public void setTagValue(String tagValue) {
         this.tagValue = tagValue;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,17 +143,19 @@ public class PolicyFilterDefinition  {
             return false;
         }
         PolicyFilterDefinition policyFilterDefinition = (PolicyFilterDefinition) o;
-        return Objects.equals(this.regionId, policyFilterDefinition.regionId) &&
-            Objects.equals(this.resourceProvider, policyFilterDefinition.resourceProvider) &&
-            Objects.equals(this.resourceType, policyFilterDefinition.resourceType) &&
-            Objects.equals(this.resourceId, policyFilterDefinition.resourceId) &&
-            Objects.equals(this.tagKey, policyFilterDefinition.tagKey) &&
-            Objects.equals(this.tagValue, policyFilterDefinition.tagValue);
+        return Objects.equals(this.regionId, policyFilterDefinition.regionId)
+            && Objects.equals(this.resourceProvider, policyFilterDefinition.resourceProvider)
+            && Objects.equals(this.resourceType, policyFilterDefinition.resourceType)
+            && Objects.equals(this.resourceId, policyFilterDefinition.resourceId)
+            && Objects.equals(this.tagKey, policyFilterDefinition.tagKey)
+            && Objects.equals(this.tagValue, policyFilterDefinition.tagValue);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(regionId, resourceProvider, resourceType, resourceId, tagKey, tagValue);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,16 +169,13 @@ public class PolicyFilterDefinition  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

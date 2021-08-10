@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.projectman.v4.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 更新项目信息
- */
-public class UpdateProjectRequestV4  {
-
-
+/** 更新项目信息 */
+public class UpdateProjectRequestV4 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_name")
-    
+    @JsonProperty(value = "project_name")
+
     private String projectName;
 
     public UpdateProjectRequestV4 withDescription(String description) {
@@ -34,13 +23,9 @@ public class UpdateProjectRequestV4  {
         return this;
     }
 
-    
-
-
-    /**
-     * 项目描述
-     * @return description
-     */
+    /** 项目描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -49,20 +34,14 @@ public class UpdateProjectRequestV4  {
         this.description = description;
     }
 
-    
-
     public UpdateProjectRequestV4 withProjectName(String projectName) {
         this.projectName = projectName;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目名
-     * @return projectName
-     */
+    /** 项目名
+     * 
+     * @return projectName */
     public String getProjectName() {
         return projectName;
     }
@@ -70,8 +49,6 @@ public class UpdateProjectRequestV4  {
     public void setProjectName(String projectName) {
         this.projectName = projectName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class UpdateProjectRequestV4  {
             return false;
         }
         UpdateProjectRequestV4 updateProjectRequestV4 = (UpdateProjectRequestV4) o;
-        return Objects.equals(this.description, updateProjectRequestV4.description) &&
-            Objects.equals(this.projectName, updateProjectRequestV4.projectName);
+        return Objects.equals(this.description, updateProjectRequestV4.description)
+            && Objects.equals(this.projectName, updateProjectRequestV4.projectName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(description, projectName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class UpdateProjectRequestV4  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,56 +1,43 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class QueryCompareResultReq  {
-
-
+public class QueryCompareResultReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
+
     private String jobId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="object_level_compare_id")
-    
+    @JsonProperty(value = "object_level_compare_id")
+
     private String objectLevelCompareId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="line_compare_id")
-    
+    @JsonProperty(value = "line_compare_id")
+
     private String lineCompareId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content_compare_id")
-    
+    @JsonProperty(value = "content_compare_id")
+
     private String contentCompareId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="current_page")
-    
+    @JsonProperty(value = "current_page")
+
     private Integer currentPage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="per_page")
-    
+    @JsonProperty(value = "per_page")
+
     private Integer perPage;
 
     public QueryCompareResultReq withJobId(String jobId) {
@@ -58,13 +45,9 @@ public class QueryCompareResultReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务id。
-     * @return jobId
-     */
+    /** 任务id。
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -73,20 +56,14 @@ public class QueryCompareResultReq  {
         this.jobId = jobId;
     }
 
-    
-
     public QueryCompareResultReq withObjectLevelCompareId(String objectLevelCompareId) {
         this.objectLevelCompareId = objectLevelCompareId;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求查询结果的对象级对比任务id。
-     * @return objectLevelCompareId
-     */
+    /** 请求查询结果的对象级对比任务id。
+     * 
+     * @return objectLevelCompareId */
     public String getObjectLevelCompareId() {
         return objectLevelCompareId;
     }
@@ -95,20 +72,14 @@ public class QueryCompareResultReq  {
         this.objectLevelCompareId = objectLevelCompareId;
     }
 
-    
-
     public QueryCompareResultReq withLineCompareId(String lineCompareId) {
         this.lineCompareId = lineCompareId;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求查询结果的行对比任务id。
-     * @return lineCompareId
-     */
+    /** 请求查询结果的行对比任务id。
+     * 
+     * @return lineCompareId */
     public String getLineCompareId() {
         return lineCompareId;
     }
@@ -117,20 +88,14 @@ public class QueryCompareResultReq  {
         this.lineCompareId = lineCompareId;
     }
 
-    
-
     public QueryCompareResultReq withContentCompareId(String contentCompareId) {
         this.contentCompareId = contentCompareId;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求查询结果的内容对比任务id。
-     * @return contentCompareId
-     */
+    /** 请求查询结果的内容对比任务id。
+     * 
+     * @return contentCompareId */
     public String getContentCompareId() {
         return contentCompareId;
     }
@@ -139,20 +104,14 @@ public class QueryCompareResultReq  {
         this.contentCompareId = contentCompareId;
     }
 
-    
-
     public QueryCompareResultReq withCurrentPage(Integer currentPage) {
         this.currentPage = currentPage;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页查询的当前页码，对查询对比任务的结果生效。
-     * @return currentPage
-     */
+    /** 分页查询的当前页码，对查询对比任务的结果生效。
+     * 
+     * @return currentPage */
     public Integer getCurrentPage() {
         return currentPage;
     }
@@ -161,20 +120,14 @@ public class QueryCompareResultReq  {
         this.currentPage = currentPage;
     }
 
-    
-
     public QueryCompareResultReq withPerPage(Integer perPage) {
         this.perPage = perPage;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页查询的每页个数，对查询对比任务的结果生效。
-     * @return perPage
-     */
+    /** 分页查询的每页个数，对查询对比任务的结果生效。
+     * 
+     * @return perPage */
     public Integer getPerPage() {
         return perPage;
     }
@@ -182,8 +135,6 @@ public class QueryCompareResultReq  {
     public void setPerPage(Integer perPage) {
         this.perPage = perPage;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,17 +145,19 @@ public class QueryCompareResultReq  {
             return false;
         }
         QueryCompareResultReq queryCompareResultReq = (QueryCompareResultReq) o;
-        return Objects.equals(this.jobId, queryCompareResultReq.jobId) &&
-            Objects.equals(this.objectLevelCompareId, queryCompareResultReq.objectLevelCompareId) &&
-            Objects.equals(this.lineCompareId, queryCompareResultReq.lineCompareId) &&
-            Objects.equals(this.contentCompareId, queryCompareResultReq.contentCompareId) &&
-            Objects.equals(this.currentPage, queryCompareResultReq.currentPage) &&
-            Objects.equals(this.perPage, queryCompareResultReq.perPage);
+        return Objects.equals(this.jobId, queryCompareResultReq.jobId)
+            && Objects.equals(this.objectLevelCompareId, queryCompareResultReq.objectLevelCompareId)
+            && Objects.equals(this.lineCompareId, queryCompareResultReq.lineCompareId)
+            && Objects.equals(this.contentCompareId, queryCompareResultReq.contentCompareId)
+            && Objects.equals(this.currentPage, queryCompareResultReq.currentPage)
+            && Objects.equals(this.perPage, queryCompareResultReq.perPage);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobId, objectLevelCompareId, lineCompareId, contentCompareId, currentPage, perPage);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,16 +171,13 @@ public class QueryCompareResultReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * DeviceMessageRequest
- */
-public class DeviceMessageRequest  {
-
-
+/** DeviceMessageRequest */
+public class DeviceMessageRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message_id")
-    
+    @JsonProperty(value = "message_id")
+
     private String messageId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message")
-    
+    @JsonProperty(value = "message")
+
     private Object message;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="encoding")
-    
+    @JsonProperty(value = "encoding")
+
     private String encoding;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="payload_format")
-    
+    @JsonProperty(value = "payload_format")
+
     private String payloadFormat;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic")
-    
+    @JsonProperty(value = "topic")
+
     private String topic;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic_full_name")
-    
+    @JsonProperty(value = "topic_full_name")
+
     private String topicFullName;
 
     public DeviceMessageRequest withMessageId(String messageId) {
@@ -64,13 +48,9 @@ public class DeviceMessageRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：消息id，由用户生成（推荐使用UUID），同一个设备下唯一， 如果用户填写的id在设备下不唯一， 则接口返回错误。
-     * @return messageId
-     */
+    /** **参数说明**：消息id，由用户生成（推荐使用UUID），同一个设备下唯一， 如果用户填写的id在设备下不唯一， 则接口返回错误。
+     * 
+     * @return messageId */
     public String getMessageId() {
         return messageId;
     }
@@ -79,20 +59,14 @@ public class DeviceMessageRequest  {
         this.messageId = messageId;
     }
 
-    
-
     public DeviceMessageRequest withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：消息名称。 **取值范围**：长度不超过128，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
-     * @return name
-     */
+    /** **参数说明**：消息名称。 **取值范围**：长度不超过128，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -101,20 +75,14 @@ public class DeviceMessageRequest  {
         this.name = name;
     }
 
-    
-
     public DeviceMessageRequest withMessage(Object message) {
         this.message = message;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：消息内容，支持string和json格式。
-     * @return message
-     */
+    /** **参数说明**：消息内容，支持string和json格式。
+     * 
+     * @return message */
     public Object getMessage() {
         return message;
     }
@@ -123,20 +91,14 @@ public class DeviceMessageRequest  {
         this.message = message;
     }
 
-    
-
     public DeviceMessageRequest withEncoding(String encoding) {
         this.encoding = encoding;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：消息内容编码格式。默认值none。 **取值范围**： - none  - base64：只能通过topic_full_name字段自定义的topic发送消息,否则会发送失败。
-     * @return encoding
-     */
+    /** **参数说明**：消息内容编码格式。默认值none。 **取值范围**： - none - base64：只能通过topic_full_name字段自定义的topic发送消息,否则会发送失败。
+     * 
+     * @return encoding */
     public String getEncoding() {
         return encoding;
     }
@@ -145,20 +107,15 @@ public class DeviceMessageRequest  {
         this.encoding = encoding;
     }
 
-    
-
     public DeviceMessageRequest withPayloadFormat(String payloadFormat) {
         this.payloadFormat = payloadFormat;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：有效负载格式，在消息内容编码格式为none时有效。默认值standard（平台封装的标准格式）。 **取值范围**： - standard  - raw：时直接将消息内容作为有效负载下发， 注意： 取值为raw时，只能通过topic_full_name字段自定义的topic发送消息，否则会发送失败。
-     * @return payloadFormat
-     */
+    /** **参数说明**：有效负载格式，在消息内容编码格式为none时有效。默认值standard（平台封装的标准格式）。 **取值范围**： - standard - raw：时直接将消息内容作为有效负载下发， 注意：
+     * 取值为raw时，只能通过topic_full_name字段自定义的topic发送消息，否则会发送失败。
+     * 
+     * @return payloadFormat */
     public String getPayloadFormat() {
         return payloadFormat;
     }
@@ -167,20 +124,17 @@ public class DeviceMessageRequest  {
         this.payloadFormat = payloadFormat;
     }
 
-    
-
     public DeviceMessageRequest withTopic(String topic) {
         this.topic = topic;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：消息下行到设备的topic, 可选， 仅适用于MQTT协议接入的设备。 用户只能填写在租户产品界面配置的topic, 否则会校验不通过。 平台给消息topic添加的前缀为$oc/devices/{device_id}/user/， 用户可以在前缀的基础上增加自定义部分， 如增加messageDown，则平台拼接前缀后完整的topic为 $oc/devices/{device_id}/user/messageDown，其中device_id以实际设备的网关id替代。 如果用户指定该topic，消息会通过该topic下行到设备，如果用户不指定， 则消息通过系统默认的topic下行到设备,系统默认的topic格式为： $oc/devices/{device_id}/sys/messages/down。此字段与topic_full_name字段只可填写一个。
-     * @return topic
-     */
+    /** **参数说明**：消息下行到设备的topic, 可选， 仅适用于MQTT协议接入的设备。 用户只能填写在租户产品界面配置的topic, 否则会校验不通过。
+     * 平台给消息topic添加的前缀为$oc/devices/{device_id}/user/， 用户可以在前缀的基础上增加自定义部分， 如增加messageDown，则平台拼接前缀后完整的topic为
+     * $oc/devices/{device_id}/user/messageDown，其中device_id以实际设备的网关id替代。 如果用户指定该topic，消息会通过该topic下行到设备，如果用户不指定，
+     * 则消息通过系统默认的topic下行到设备,系统默认的topic格式为： $oc/devices/{device_id}/sys/messages/down。此字段与topic_full_name字段只可填写一个。
+     * 
+     * @return topic */
     public String getTopic() {
         return topic;
     }
@@ -189,20 +143,15 @@ public class DeviceMessageRequest  {
         this.topic = topic;
     }
 
-    
-
     public DeviceMessageRequest withTopicFullName(String topicFullName) {
         this.topicFullName = topicFullName;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：消息下行到设备的完整topic名称, 可选。用户需要下发用户自定义的topic给设备时，可以使用该参数指定完整的topic名称，物联网平台不校验该topic是否在平台定义，直接透传给设备。设备需要提前订阅该topic。此字段与topic字段只可填写一个。
-     * @return topicFullName
-     */
+    /** **参数说明**：消息下行到设备的完整topic名称,
+     * 可选。用户需要下发用户自定义的topic给设备时，可以使用该参数指定完整的topic名称，物联网平台不校验该topic是否在平台定义，直接透传给设备。设备需要提前订阅该topic。此字段与topic字段只可填写一个。
+     * 
+     * @return topicFullName */
     public String getTopicFullName() {
         return topicFullName;
     }
@@ -210,8 +159,6 @@ public class DeviceMessageRequest  {
     public void setTopicFullName(String topicFullName) {
         this.topicFullName = topicFullName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -222,18 +169,20 @@ public class DeviceMessageRequest  {
             return false;
         }
         DeviceMessageRequest deviceMessageRequest = (DeviceMessageRequest) o;
-        return Objects.equals(this.messageId, deviceMessageRequest.messageId) &&
-            Objects.equals(this.name, deviceMessageRequest.name) &&
-            Objects.equals(this.message, deviceMessageRequest.message) &&
-            Objects.equals(this.encoding, deviceMessageRequest.encoding) &&
-            Objects.equals(this.payloadFormat, deviceMessageRequest.payloadFormat) &&
-            Objects.equals(this.topic, deviceMessageRequest.topic) &&
-            Objects.equals(this.topicFullName, deviceMessageRequest.topicFullName);
+        return Objects.equals(this.messageId, deviceMessageRequest.messageId)
+            && Objects.equals(this.name, deviceMessageRequest.name)
+            && Objects.equals(this.message, deviceMessageRequest.message)
+            && Objects.equals(this.encoding, deviceMessageRequest.encoding)
+            && Objects.equals(this.payloadFormat, deviceMessageRequest.payloadFormat)
+            && Objects.equals(this.topic, deviceMessageRequest.topic)
+            && Objects.equals(this.topicFullName, deviceMessageRequest.topicFullName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(messageId, name, message, encoding, payloadFormat, topic, topicFullName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,16 +197,13 @@ public class DeviceMessageRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

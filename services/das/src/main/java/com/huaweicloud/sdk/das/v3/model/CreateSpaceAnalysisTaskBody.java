@@ -1,38 +1,23 @@
 package com.huaweicloud.sdk.das.v3.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * CreateSpaceAnalysisTaskBody
- */
-public class CreateSpaceAnalysisTaskBody  {
+/** CreateSpaceAnalysisTaskBody */
+public class CreateSpaceAnalysisTaskBody {
 
-    /**
-     * 操作类型
-     */
+    /** 操作类型 */
     public static final class OperateEnum {
 
-        
-        /**
-         * Enum REANALYSIS for value: "reanalysis"
-         */
+        /** Enum REANALYSIS for value: "reanalysis" */
         public static final OperateEnum REANALYSIS = new OperateEnum("reanalysis");
-        
 
         private static final Map<String, OperateEnum> STATIC_FIELDS = createStaticFields();
 
@@ -60,7 +45,7 @@ public class CreateSpaceAnalysisTaskBody  {
 
         @JsonCreator
         public static OperateEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OperateEnum result = STATIC_FIELDS.get(value);
@@ -71,7 +56,7 @@ public class CreateSpaceAnalysisTaskBody  {
         }
 
         public static OperateEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OperateEnum result = STATIC_FIELDS.get(value);
@@ -95,27 +80,19 @@ public class CreateSpaceAnalysisTaskBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operate")
-    
+    @JsonProperty(value = "operate")
+
     private OperateEnum operate;
-    /**
-     * 引擎类型
-     */
+
+    /** 引擎类型 */
     public static final class DatastoreTypeEnum {
 
-        
-        /**
-         * Enum MYSQL for value: "MySQL"
-         */
+        /** Enum MYSQL for value: "MySQL" */
         public static final DatastoreTypeEnum MYSQL = new DatastoreTypeEnum("MySQL");
-        
-        /**
-         * Enum GAUSSDB_FOR_MYSQL_ for value: "GaussDB(for MySQL)"
-         */
+
+        /** Enum GAUSSDB_FOR_MYSQL_ for value: "GaussDB(for MySQL)" */
         public static final DatastoreTypeEnum GAUSSDB_FOR_MYSQL_ = new DatastoreTypeEnum("GaussDB(for MySQL)");
-        
 
         private static final Map<String, DatastoreTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -144,7 +121,7 @@ public class CreateSpaceAnalysisTaskBody  {
 
         @JsonCreator
         public static DatastoreTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DatastoreTypeEnum result = STATIC_FIELDS.get(value);
@@ -155,7 +132,7 @@ public class CreateSpaceAnalysisTaskBody  {
         }
 
         public static DatastoreTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DatastoreTypeEnum result = STATIC_FIELDS.get(value);
@@ -179,10 +156,9 @@ public class CreateSpaceAnalysisTaskBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore_type")
-    
+    @JsonProperty(value = "datastore_type")
+
     private DatastoreTypeEnum datastoreType;
 
     public CreateSpaceAnalysisTaskBody withOperate(OperateEnum operate) {
@@ -190,13 +166,9 @@ public class CreateSpaceAnalysisTaskBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 操作类型
-     * @return operate
-     */
+    /** 操作类型
+     * 
+     * @return operate */
     public OperateEnum getOperate() {
         return operate;
     }
@@ -205,20 +177,14 @@ public class CreateSpaceAnalysisTaskBody  {
         this.operate = operate;
     }
 
-    
-
     public CreateSpaceAnalysisTaskBody withDatastoreType(DatastoreTypeEnum datastoreType) {
         this.datastoreType = datastoreType;
         return this;
     }
 
-    
-
-
-    /**
-     * 引擎类型
-     * @return datastoreType
-     */
+    /** 引擎类型
+     * 
+     * @return datastoreType */
     public DatastoreTypeEnum getDatastoreType() {
         return datastoreType;
     }
@@ -226,8 +192,6 @@ public class CreateSpaceAnalysisTaskBody  {
     public void setDatastoreType(DatastoreTypeEnum datastoreType) {
         this.datastoreType = datastoreType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -238,13 +202,15 @@ public class CreateSpaceAnalysisTaskBody  {
             return false;
         }
         CreateSpaceAnalysisTaskBody createSpaceAnalysisTaskBody = (CreateSpaceAnalysisTaskBody) o;
-        return Objects.equals(this.operate, createSpaceAnalysisTaskBody.operate) &&
-            Objects.equals(this.datastoreType, createSpaceAnalysisTaskBody.datastoreType);
+        return Objects.equals(this.operate, createSpaceAnalysisTaskBody.operate)
+            && Objects.equals(this.datastoreType, createSpaceAnalysisTaskBody.datastoreType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(operate, datastoreType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -254,16 +220,13 @@ public class CreateSpaceAnalysisTaskBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

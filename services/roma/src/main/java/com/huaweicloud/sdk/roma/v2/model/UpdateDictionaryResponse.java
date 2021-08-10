@@ -1,90 +1,68 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.DictionaryType;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.math.BigDecimal;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class UpdateDictionaryResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
+
     private String remark;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code")
-    
+    @JsonProperty(value = "code")
+
     private String code;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order")
-    
+    @JsonProperty(value = "order")
+
     private Integer order;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extend_one")
-    
+    @JsonProperty(value = "extend_one")
+
     private String extendOne;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extend_two")
-    
+    @JsonProperty(value = "extend_two")
+
     private String extendTwo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parent_code")
-    
+    @JsonProperty(value = "parent_code")
+
     private String parentCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private DictionaryType type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private BigDecimal createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private BigDecimal updateTime;
 
     public UpdateDictionaryResponse withId(String id) {
@@ -92,13 +70,9 @@ public class UpdateDictionaryResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 字典ID
-     * @return id
-     */
+    /** 字典ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -107,20 +81,14 @@ public class UpdateDictionaryResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public UpdateDictionaryResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 字典名称 - 字符集：中文、英文字母、数字、下划线和空格 - 约束：实例下唯一
-     * @return name
-     */
+    /** 字典名称 - 字符集：中文、英文字母、数字、下划线和空格 - 约束：实例下唯一
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -129,20 +97,14 @@ public class UpdateDictionaryResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public UpdateDictionaryResponse withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
-    
-
-
-    /**
-     * 字典描述
-     * @return remark
-     */
+    /** 字典描述
+     * 
+     * @return remark */
     public String getRemark() {
         return remark;
     }
@@ -151,20 +113,14 @@ public class UpdateDictionaryResponse extends SdkResponse {
         this.remark = remark;
     }
 
-    
-
     public UpdateDictionaryResponse withCode(String code) {
         this.code = code;
         return this;
     }
 
-    
-
-
-    /**
-     * 字典编码 - 字符集：英文字母、数字、下划线和空格 - 约束：实例下唯一
-     * @return code
-     */
+    /** 字典编码 - 字符集：英文字母、数字、下划线和空格 - 约束：实例下唯一
+     * 
+     * @return code */
     public String getCode() {
         return code;
     }
@@ -173,22 +129,14 @@ public class UpdateDictionaryResponse extends SdkResponse {
         this.code = code;
     }
 
-    
-
     public UpdateDictionaryResponse withOrder(Integer order) {
         this.order = order;
         return this;
     }
 
-    
-
-
-    /**
-     * 字典排序，值越小顺序越靠前
-     * minimum: 1
-     * maximum: 100
-     * @return order
-     */
+    /** 字典排序，值越小顺序越靠前 minimum: 1 maximum: 100
+     * 
+     * @return order */
     public Integer getOrder() {
         return order;
     }
@@ -197,20 +145,14 @@ public class UpdateDictionaryResponse extends SdkResponse {
         this.order = order;
     }
 
-    
-
     public UpdateDictionaryResponse withExtendOne(String extendOne) {
         this.extendOne = extendOne;
         return this;
     }
 
-    
-
-
-    /**
-     * 字典扩展字段1 - 字符集：中文、英文字母、数字、下划线和空格
-     * @return extendOne
-     */
+    /** 字典扩展字段1 - 字符集：中文、英文字母、数字、下划线和空格
+     * 
+     * @return extendOne */
     public String getExtendOne() {
         return extendOne;
     }
@@ -219,20 +161,14 @@ public class UpdateDictionaryResponse extends SdkResponse {
         this.extendOne = extendOne;
     }
 
-    
-
     public UpdateDictionaryResponse withExtendTwo(String extendTwo) {
         this.extendTwo = extendTwo;
         return this;
     }
 
-    
-
-
-    /**
-     * 字典扩展字段2 - 字符集：中文、英文字母、数字、下划线和空格
-     * @return extendTwo
-     */
+    /** 字典扩展字段2 - 字符集：中文、英文字母、数字、下划线和空格
+     * 
+     * @return extendTwo */
     public String getExtendTwo() {
         return extendTwo;
     }
@@ -241,20 +177,14 @@ public class UpdateDictionaryResponse extends SdkResponse {
         this.extendTwo = extendTwo;
     }
 
-    
-
     public UpdateDictionaryResponse withParentCode(String parentCode) {
         this.parentCode = parentCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 父字典编码,为空时代表自身就是最顶级字典
-     * @return parentCode
-     */
+    /** 父字典编码,为空时代表自身就是最顶级字典
+     * 
+     * @return parentCode */
     public String getParentCode() {
         return parentCode;
     }
@@ -263,20 +193,14 @@ public class UpdateDictionaryResponse extends SdkResponse {
         this.parentCode = parentCode;
     }
 
-    
-
     public UpdateDictionaryResponse withType(DictionaryType type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * Get type
-     * @return type
-     */
+    /** Get type
+     * 
+     * @return type */
     public DictionaryType getType() {
         return type;
     }
@@ -285,22 +209,14 @@ public class UpdateDictionaryResponse extends SdkResponse {
         this.type = type;
     }
 
-    
-
     public UpdateDictionaryResponse withCreateTime(BigDecimal createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * minimum: 1
-     * maximum: 128
-     * @return createTime
-     */
+    /** 创建时间 minimum: 1 maximum: 128
+     * 
+     * @return createTime */
     public BigDecimal getCreateTime() {
         return createTime;
     }
@@ -309,22 +225,14 @@ public class UpdateDictionaryResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public UpdateDictionaryResponse withUpdateTime(BigDecimal updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间
-     * minimum: 1
-     * maximum: 128
-     * @return updateTime
-     */
+    /** 更新时间 minimum: 1 maximum: 128
+     * 
+     * @return updateTime */
     public BigDecimal getUpdateTime() {
         return updateTime;
     }
@@ -332,8 +240,6 @@ public class UpdateDictionaryResponse extends SdkResponse {
     public void setUpdateTime(BigDecimal updateTime) {
         this.updateTime = updateTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -344,22 +250,25 @@ public class UpdateDictionaryResponse extends SdkResponse {
             return false;
         }
         UpdateDictionaryResponse updateDictionaryResponse = (UpdateDictionaryResponse) o;
-        return Objects.equals(this.id, updateDictionaryResponse.id) &&
-            Objects.equals(this.name, updateDictionaryResponse.name) &&
-            Objects.equals(this.remark, updateDictionaryResponse.remark) &&
-            Objects.equals(this.code, updateDictionaryResponse.code) &&
-            Objects.equals(this.order, updateDictionaryResponse.order) &&
-            Objects.equals(this.extendOne, updateDictionaryResponse.extendOne) &&
-            Objects.equals(this.extendTwo, updateDictionaryResponse.extendTwo) &&
-            Objects.equals(this.parentCode, updateDictionaryResponse.parentCode) &&
-            Objects.equals(this.type, updateDictionaryResponse.type) &&
-            Objects.equals(this.createTime, updateDictionaryResponse.createTime) &&
-            Objects.equals(this.updateTime, updateDictionaryResponse.updateTime);
+        return Objects.equals(this.id, updateDictionaryResponse.id)
+            && Objects.equals(this.name, updateDictionaryResponse.name)
+            && Objects.equals(this.remark, updateDictionaryResponse.remark)
+            && Objects.equals(this.code, updateDictionaryResponse.code)
+            && Objects.equals(this.order, updateDictionaryResponse.order)
+            && Objects.equals(this.extendOne, updateDictionaryResponse.extendOne)
+            && Objects.equals(this.extendTwo, updateDictionaryResponse.extendTwo)
+            && Objects.equals(this.parentCode, updateDictionaryResponse.parentCode)
+            && Objects.equals(this.type, updateDictionaryResponse.type)
+            && Objects.equals(this.createTime, updateDictionaryResponse.createTime)
+            && Objects.equals(this.updateTime, updateDictionaryResponse.updateTime);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, remark, code, order, extendOne, extendTwo, parentCode, type, createTime, updateTime);
+        return Objects
+            .hash(id, name, remark, code, order, extendOne, extendTwo, parentCode, type, createTime, updateTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -378,16 +287,13 @@ public class UpdateDictionaryResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

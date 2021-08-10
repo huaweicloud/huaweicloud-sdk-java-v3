@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.swr.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.swr.v2.model.ShowReposResp;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListReposDetailsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private List<ShowReposResp> body = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Content-Range")
-    
+    @JsonProperty(value = "Content-Range")
+
     private String contentRange;
 
     public ListReposDetailsResponse withBody(List<ShowReposResp> body) {
@@ -39,9 +27,8 @@ public class ListReposDetailsResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListReposDetailsResponse addBodyItem(ShowReposResp bodyItem) {
-        if(this.body == null) {
+        if (this.body == null) {
             this.body = new ArrayList<>();
         }
         this.body.add(bodyItem);
@@ -49,17 +36,16 @@ public class ListReposDetailsResponse extends SdkResponse {
     }
 
     public ListReposDetailsResponse withBody(Consumer<List<ShowReposResp>> bodySetter) {
-        if(this.body == null) {
+        if (this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);
         return this;
     }
 
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public List<ShowReposResp> getBody() {
         return body;
     }
@@ -68,20 +54,14 @@ public class ListReposDetailsResponse extends SdkResponse {
         this.body = body;
     }
 
-    
-
     public ListReposDetailsResponse withContentRange(String contentRange) {
         this.contentRange = contentRange;
         return this;
     }
 
-    
-
-
-    /**
-     * Get contentRange
-     * @return contentRange
-     */
+    /** Get contentRange
+     * 
+     * @return contentRange */
     public String getContentRange() {
         return contentRange;
     }
@@ -89,8 +69,6 @@ public class ListReposDetailsResponse extends SdkResponse {
     public void setContentRange(String contentRange) {
         this.contentRange = contentRange;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ListReposDetailsResponse extends SdkResponse {
             return false;
         }
         ListReposDetailsResponse listReposDetailsResponse = (ListReposDetailsResponse) o;
-        return Objects.equals(this.body, listReposDetailsResponse.body) &&
-            Objects.equals(this.contentRange, listReposDetailsResponse.contentRange);
+        return Objects.equals(this.body, listReposDetailsResponse.body)
+            && Objects.equals(this.contentRange, listReposDetailsResponse.contentRange);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(body, contentRange);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ListReposDetailsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,34 +1,24 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ExportJobsReq
- */
-public class ExportJobsReq  {
-
-
+/** ExportJobsReq */
+public class ExportJobsReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobList")
-    
+    @JsonProperty(value = "jobList")
+
     private List<String> jobList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="exportDepend")
-    
+    @JsonProperty(value = "exportDepend")
+
     private Boolean exportDepend;
 
     public ExportJobsReq withJobList(List<String> jobList) {
@@ -36,9 +26,8 @@ public class ExportJobsReq  {
         return this;
     }
 
-    
     public ExportJobsReq addJobListItem(String jobListItem) {
-        if(this.jobList == null) {
+        if (this.jobList == null) {
             this.jobList = new ArrayList<>();
         }
         this.jobList.add(jobListItem);
@@ -46,17 +35,16 @@ public class ExportJobsReq  {
     }
 
     public ExportJobsReq withJobList(Consumer<List<String>> jobListSetter) {
-        if(this.jobList == null) {
+        if (this.jobList == null) {
             this.jobList = new ArrayList<>();
         }
         jobListSetter.accept(this.jobList);
         return this;
     }
 
-    /**
-     * Get jobList
-     * @return jobList
-     */
+    /** Get jobList
+     * 
+     * @return jobList */
     public List<String> getJobList() {
         return jobList;
     }
@@ -65,20 +53,14 @@ public class ExportJobsReq  {
         this.jobList = jobList;
     }
 
-    
-
     public ExportJobsReq withExportDepend(Boolean exportDepend) {
         this.exportDepend = exportDepend;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否导出作业依赖的脚本和资源
-     * @return exportDepend
-     */
+    /** 是否导出作业依赖的脚本和资源
+     * 
+     * @return exportDepend */
     public Boolean getExportDepend() {
         return exportDepend;
     }
@@ -86,8 +68,6 @@ public class ExportJobsReq  {
     public void setExportDepend(Boolean exportDepend) {
         this.exportDepend = exportDepend;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -98,13 +78,15 @@ public class ExportJobsReq  {
             return false;
         }
         ExportJobsReq exportJobsReq = (ExportJobsReq) o;
-        return Objects.equals(this.jobList, exportJobsReq.jobList) &&
-            Objects.equals(this.exportDepend, exportJobsReq.exportDepend);
+        return Objects.equals(this.jobList, exportJobsReq.jobList)
+            && Objects.equals(this.exportDepend, exportJobsReq.exportDepend);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobList, exportDepend);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,16 +96,13 @@ public class ExportJobsReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

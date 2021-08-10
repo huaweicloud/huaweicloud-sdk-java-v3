@@ -1,76 +1,56 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.time.OffsetDateTime;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateVersionAliasResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_modified")
-    
+    @JsonProperty(value = "last_modified")
+
     private OffsetDateTime lastModified;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alias_urn")
-    
+    @JsonProperty(value = "alias_urn")
+
     private String aliasUrn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="additional_version_weights")
-    
+    @JsonProperty(value = "additional_version_weights")
+
     private Map<String, Integer> additionalVersionWeights = null;
-    
+
     public CreateVersionAliasResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 要获取的别名名称。
-     * @return name
-     */
+    /** 要获取的别名名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -79,20 +59,14 @@ public class CreateVersionAliasResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public CreateVersionAliasResponse withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 别名对应的版本名称。
-     * @return version
-     */
+    /** 别名对应的版本名称。
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -101,20 +75,14 @@ public class CreateVersionAliasResponse extends SdkResponse {
         this.version = version;
     }
 
-    
-
     public CreateVersionAliasResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 别名描述信息。
-     * @return description
-     */
+    /** 别名描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -123,20 +91,14 @@ public class CreateVersionAliasResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public CreateVersionAliasResponse withLastModified(OffsetDateTime lastModified) {
         this.lastModified = lastModified;
         return this;
     }
 
-    
-
-
-    /**
-     * 别名最后修改时间。
-     * @return lastModified
-     */
+    /** 别名最后修改时间。
+     * 
+     * @return lastModified */
     public OffsetDateTime getLastModified() {
         return lastModified;
     }
@@ -145,20 +107,14 @@ public class CreateVersionAliasResponse extends SdkResponse {
         this.lastModified = lastModified;
     }
 
-    
-
     public CreateVersionAliasResponse withAliasUrn(String aliasUrn) {
         this.aliasUrn = aliasUrn;
         return this;
     }
 
-    
-
-
-    /**
-     * 版本别名唯一标识。
-     * @return aliasUrn
-     */
+    /** 版本别名唯一标识。
+     * 
+     * @return aliasUrn */
     public String getAliasUrn() {
         return aliasUrn;
     }
@@ -167,34 +123,32 @@ public class CreateVersionAliasResponse extends SdkResponse {
         this.aliasUrn = aliasUrn;
     }
 
-    
-
     public CreateVersionAliasResponse withAdditionalVersionWeights(Map<String, Integer> additionalVersionWeights) {
         this.additionalVersionWeights = additionalVersionWeights;
         return this;
     }
 
-    
-
-    public CreateVersionAliasResponse putAdditionalVersionWeightsItem(String key, Integer additionalVersionWeightsItem) {
-        if(this.additionalVersionWeights == null) {
+    public CreateVersionAliasResponse putAdditionalVersionWeightsItem(String key,
+        Integer additionalVersionWeightsItem) {
+        if (this.additionalVersionWeights == null) {
             this.additionalVersionWeights = new HashMap<>();
         }
         this.additionalVersionWeights.put(key, additionalVersionWeightsItem);
         return this;
     }
 
-    public CreateVersionAliasResponse withAdditionalVersionWeights(Consumer<Map<String, Integer>> additionalVersionWeightsSetter) {
-        if(this.additionalVersionWeights == null) {
+    public CreateVersionAliasResponse withAdditionalVersionWeights(
+        Consumer<Map<String, Integer>> additionalVersionWeightsSetter) {
+        if (this.additionalVersionWeights == null) {
             this.additionalVersionWeights = new HashMap<>();
         }
         additionalVersionWeightsSetter.accept(this.additionalVersionWeights);
         return this;
     }
-    /**
-     * 灰度版本信息
-     * @return additionalVersionWeights
-     */
+
+    /** 灰度版本信息
+     * 
+     * @return additionalVersionWeights */
     public Map<String, Integer> getAdditionalVersionWeights() {
         return additionalVersionWeights;
     }
@@ -202,8 +156,6 @@ public class CreateVersionAliasResponse extends SdkResponse {
     public void setAdditionalVersionWeights(Map<String, Integer> additionalVersionWeights) {
         this.additionalVersionWeights = additionalVersionWeights;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -214,17 +166,19 @@ public class CreateVersionAliasResponse extends SdkResponse {
             return false;
         }
         CreateVersionAliasResponse createVersionAliasResponse = (CreateVersionAliasResponse) o;
-        return Objects.equals(this.name, createVersionAliasResponse.name) &&
-            Objects.equals(this.version, createVersionAliasResponse.version) &&
-            Objects.equals(this.description, createVersionAliasResponse.description) &&
-            Objects.equals(this.lastModified, createVersionAliasResponse.lastModified) &&
-            Objects.equals(this.aliasUrn, createVersionAliasResponse.aliasUrn) &&
-            Objects.equals(this.additionalVersionWeights, createVersionAliasResponse.additionalVersionWeights);
+        return Objects.equals(this.name, createVersionAliasResponse.name)
+            && Objects.equals(this.version, createVersionAliasResponse.version)
+            && Objects.equals(this.description, createVersionAliasResponse.description)
+            && Objects.equals(this.lastModified, createVersionAliasResponse.lastModified)
+            && Objects.equals(this.aliasUrn, createVersionAliasResponse.aliasUrn)
+            && Objects.equals(this.additionalVersionWeights, createVersionAliasResponse.additionalVersionWeights);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, version, description, lastModified, aliasUrn, additionalVersionWeights);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -238,16 +192,13 @@ public class CreateVersionAliasResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,39 +1,23 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
-/**
- * 类型。
- */
+/** 类型。 */
 public class ExternalAccessType {
-    
-    /**
-     * Enum AUTO_GENERATED for value: "AUTO_GENERATED"
-     */
+
+    /** Enum AUTO_GENERATED for value: "AUTO_GENERATED" */
     public static final ExternalAccessType AUTO_GENERATED = new ExternalAccessType("AUTO_GENERATED");
-    
-    /**
-     * Enum SPECIFIED for value: "SPECIFIED"
-     */
+
+    /** Enum SPECIFIED for value: "SPECIFIED" */
     public static final ExternalAccessType SPECIFIED = new ExternalAccessType("SPECIFIED");
-    
-    /**
-     * Enum IP_ADDR for value: "IP_ADDR"
-     */
+
+    /** Enum IP_ADDR for value: "IP_ADDR" */
     public static final ExternalAccessType IP_ADDR = new ExternalAccessType("IP_ADDR");
-    
 
     private static final Map<String, ExternalAccessType> STATIC_FIELDS = createStaticFields();
 
@@ -63,7 +47,7 @@ public class ExternalAccessType {
 
     @JsonCreator
     public static ExternalAccessType fromValue(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         ExternalAccessType result = STATIC_FIELDS.get(value);
@@ -74,7 +58,7 @@ public class ExternalAccessType {
     }
 
     public static ExternalAccessType valueOf(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         ExternalAccessType result = STATIC_FIELDS.get(value);
@@ -97,4 +81,3 @@ public class ExternalAccessType {
         return this.value.hashCode();
     }
 }
-

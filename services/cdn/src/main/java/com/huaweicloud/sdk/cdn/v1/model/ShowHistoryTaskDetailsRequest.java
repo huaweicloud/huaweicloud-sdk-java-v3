@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowHistoryTaskDetailsRequest  {
-
-
+/** Request Object */
+public class ShowHistoryTaskDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="history_tasks_id")
-    
+    @JsonProperty(value = "history_tasks_id")
+
     private String historyTasksId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_size")
-    
+    @JsonProperty(value = "page_size")
+
     private Integer pageSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_number")
-    
+    @JsonProperty(value = "page_number")
+
     private Integer pageNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private String url;
 
     public ShowHistoryTaskDetailsRequest withEnterpriseProjectId(String enterpriseProjectId) {
@@ -58,13 +43,9 @@ public class ShowHistoryTaskDetailsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 当用户开启企业项目功能时，该参数生效，表示资源所属企业项目，不传表示默认项目。
-     * @return enterpriseProjectId
-     */
+    /** 当用户开启企业项目功能时，该参数生效，表示资源所属企业项目，不传表示默认项目。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -73,20 +54,14 @@ public class ShowHistoryTaskDetailsRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public ShowHistoryTaskDetailsRequest withHistoryTasksId(String historyTasksId) {
         this.historyTasksId = historyTasksId;
         return this;
     }
 
-    
-
-
-    /**
-     * 刷新任务ID。
-     * @return historyTasksId
-     */
+    /** 刷新任务ID。
+     * 
+     * @return historyTasksId */
     public String getHistoryTasksId() {
         return historyTasksId;
     }
@@ -95,22 +70,14 @@ public class ShowHistoryTaskDetailsRequest  {
         this.historyTasksId = historyTasksId;
     }
 
-    
-
     public ShowHistoryTaskDetailsRequest withPageSize(Integer pageSize) {
         this.pageSize = pageSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 刷新预热的urls所显示单页最大数量，取值范围为1-10000。page_size和page_number必须同时传值。默认值30。
-     * minimum: 1
-     * maximum: 10000
-     * @return pageSize
-     */
+    /** 刷新预热的urls所显示单页最大数量，取值范围为1-10000。page_size和page_number必须同时传值。默认值30。 minimum: 1 maximum: 10000
+     * 
+     * @return pageSize */
     public Integer getPageSize() {
         return pageSize;
     }
@@ -119,22 +86,14 @@ public class ShowHistoryTaskDetailsRequest  {
         this.pageSize = pageSize;
     }
 
-    
-
     public ShowHistoryTaskDetailsRequest withPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * 刷新预热的urls当前查询为第几页，取值范围为1-65535。默认值1。
-     * minimum: 1
-     * maximum: 65535
-     * @return pageNumber
-     */
+    /** 刷新预热的urls当前查询为第几页，取值范围为1-65535。默认值1。 minimum: 1 maximum: 65535
+     * 
+     * @return pageNumber */
     public Integer getPageNumber() {
         return pageNumber;
     }
@@ -143,20 +102,14 @@ public class ShowHistoryTaskDetailsRequest  {
         this.pageNumber = pageNumber;
     }
 
-    
-
     public ShowHistoryTaskDetailsRequest withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * url的状态 processing 处理中，succeed 完成，failed 失败，waiting 等待，refreshing 刷新中，preheating 预热中。
-     * @return status
-     */
+    /** url的状态 processing 处理中，succeed 完成，failed 失败，waiting 等待，refreshing 刷新中，preheating 预热中。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -165,20 +118,14 @@ public class ShowHistoryTaskDetailsRequest  {
         this.status = status;
     }
 
-    
-
     public ShowHistoryTaskDetailsRequest withUrl(String url) {
         this.url = url;
         return this;
     }
 
-    
-
-
-    /**
-     * url的地址。
-     * @return url
-     */
+    /** url的地址。
+     * 
+     * @return url */
     public String getUrl() {
         return url;
     }
@@ -186,8 +133,6 @@ public class ShowHistoryTaskDetailsRequest  {
     public void setUrl(String url) {
         this.url = url;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -198,17 +143,19 @@ public class ShowHistoryTaskDetailsRequest  {
             return false;
         }
         ShowHistoryTaskDetailsRequest showHistoryTaskDetailsRequest = (ShowHistoryTaskDetailsRequest) o;
-        return Objects.equals(this.enterpriseProjectId, showHistoryTaskDetailsRequest.enterpriseProjectId) &&
-            Objects.equals(this.historyTasksId, showHistoryTaskDetailsRequest.historyTasksId) &&
-            Objects.equals(this.pageSize, showHistoryTaskDetailsRequest.pageSize) &&
-            Objects.equals(this.pageNumber, showHistoryTaskDetailsRequest.pageNumber) &&
-            Objects.equals(this.status, showHistoryTaskDetailsRequest.status) &&
-            Objects.equals(this.url, showHistoryTaskDetailsRequest.url);
+        return Objects.equals(this.enterpriseProjectId, showHistoryTaskDetailsRequest.enterpriseProjectId)
+            && Objects.equals(this.historyTasksId, showHistoryTaskDetailsRequest.historyTasksId)
+            && Objects.equals(this.pageSize, showHistoryTaskDetailsRequest.pageSize)
+            && Objects.equals(this.pageNumber, showHistoryTaskDetailsRequest.pageNumber)
+            && Objects.equals(this.status, showHistoryTaskDetailsRequest.status)
+            && Objects.equals(this.url, showHistoryTaskDetailsRequest.url);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(enterpriseProjectId, historyTasksId, pageSize, pageNumber, status, url);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -222,16 +169,13 @@ public class ShowHistoryTaskDetailsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

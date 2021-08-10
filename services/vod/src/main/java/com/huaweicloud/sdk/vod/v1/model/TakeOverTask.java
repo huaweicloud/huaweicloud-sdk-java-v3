@@ -1,108 +1,82 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 
- */
-public class TakeOverTask  {
-
-
+/** TakeOverTask */
+public class TakeOverTask {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bucket")
-    
+    @JsonProperty(value = "bucket")
+
     private String bucket;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="object")
-    
+    @JsonProperty(value = "object")
+
     private String _object;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host_type")
-    
+    @JsonProperty(value = "host_type")
+
     private Integer hostType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output_bucket")
-    
+    @JsonProperty(value = "output_bucket")
+
     private String outputBucket;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output_path")
-    
+    @JsonProperty(value = "output_path")
+
     private String outputPath;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
+    @JsonProperty(value = "task_id")
+
     private String taskId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="suffix")
-    
+    @JsonProperty(value = "suffix")
+
     private List<String> suffix = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_group_name")
-    
+    @JsonProperty(value = "template_group_name")
+
     private String templateGroupName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private String createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
-    /**
-     * 任务状态。
-     */
+
+    /** 任务状态。 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum PROCESSING for value: "PROCESSING"
-         */
+        /** Enum PROCESSING for value: "PROCESSING" */
         public static final StatusEnum PROCESSING = new StatusEnum("PROCESSING");
-        
-        /**
-         * Enum SUCCEED for value: "SUCCEED"
-         */
+
+        /** Enum SUCCEED for value: "SUCCEED" */
         public static final StatusEnum SUCCEED = new StatusEnum("SUCCEED");
-        
-        /**
-         * Enum FAILED for value: "FAILED"
-         */
+
+        /** Enum FAILED for value: "FAILED" */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -132,7 +106,7 @@ public class TakeOverTask  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -143,7 +117,7 @@ public class TakeOverTask  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -167,16 +141,14 @@ public class TakeOverTask  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="exec_desc")
-    
+    @JsonProperty(value = "exec_desc")
+
     private String execDesc;
 
     public TakeOverTask withBucket(String bucket) {
@@ -184,13 +156,9 @@ public class TakeOverTask  {
         return this;
     }
 
-    
-
-
-    /**
-     * 桶名。
-     * @return bucket
-     */
+    /** 桶名。
+     * 
+     * @return bucket */
     public String getBucket() {
         return bucket;
     }
@@ -199,20 +167,14 @@ public class TakeOverTask  {
         this.bucket = bucket;
     }
 
-    
-
     public TakeOverTask withObject(String _object) {
         this._object = _object;
         return this;
     }
 
-    
-
-
-    /**
-     * 目录/文件名。
-     * @return _object
-     */
+    /** 目录/文件名。
+     * 
+     * @return _object */
     public String getObject() {
         return _object;
     }
@@ -221,20 +183,14 @@ public class TakeOverTask  {
         this._object = _object;
     }
 
-    
-
     public TakeOverTask withHostType(Integer hostType) {
         this.hostType = hostType;
         return this;
     }
 
-    
-
-
-    /**
-     * 托管类型： - 0：表示存储到点播桶 - 1：表示存储在租户桶 - 2：表示存储到租户桶，并且源文件名跟随
-     * @return hostType
-     */
+    /** 托管类型。 取值如下： - 0：表示存储到点播桶 - 1：表示存储在租户桶 - 2：表示存储到租户OBS桶中，且输出目录与源文件的存储目录相同。
+     * 
+     * @return hostType */
     public Integer getHostType() {
         return hostType;
     }
@@ -243,20 +199,14 @@ public class TakeOverTask  {
         this.hostType = hostType;
     }
 
-    
-
     public TakeOverTask withOutputBucket(String outputBucket) {
         this.outputBucket = outputBucket;
         return this;
     }
 
-    
-
-
-    /**
-     * 输出桶 。
-     * @return outputBucket
-     */
+    /** 输出桶 。
+     * 
+     * @return outputBucket */
     public String getOutputBucket() {
         return outputBucket;
     }
@@ -265,20 +215,14 @@ public class TakeOverTask  {
         this.outputBucket = outputBucket;
     }
 
-    
-
     public TakeOverTask withOutputPath(String outputPath) {
         this.outputPath = outputPath;
         return this;
     }
 
-    
-
-
-    /**
-     * 输出路径 。
-     * @return outputPath
-     */
+    /** 输出路径 。
+     * 
+     * @return outputPath */
     public String getOutputPath() {
         return outputPath;
     }
@@ -287,20 +231,14 @@ public class TakeOverTask  {
         this.outputPath = outputPath;
     }
 
-    
-
     public TakeOverTask withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID。
-     * @return taskId
-     */
+    /** 任务ID。
+     * 
+     * @return taskId */
     public String getTaskId() {
         return taskId;
     }
@@ -309,16 +247,13 @@ public class TakeOverTask  {
         this.taskId = taskId;
     }
 
-    
-
     public TakeOverTask withSuffix(List<String> suffix) {
         this.suffix = suffix;
         return this;
     }
 
-    
     public TakeOverTask addSuffixItem(String suffixItem) {
-        if(this.suffix == null) {
+        if (this.suffix == null) {
             this.suffix = new ArrayList<>();
         }
         this.suffix.add(suffixItem);
@@ -326,17 +261,16 @@ public class TakeOverTask  {
     }
 
     public TakeOverTask withSuffix(Consumer<List<String>> suffixSetter) {
-        if(this.suffix == null) {
+        if (this.suffix == null) {
             this.suffix = new ArrayList<>();
         }
         suffixSetter.accept(this.suffix);
         return this;
     }
 
-    /**
-     * 托管文件类型。
-     * @return suffix
-     */
+    /** 托管文件类型。
+     * 
+     * @return suffix */
     public List<String> getSuffix() {
         return suffix;
     }
@@ -345,20 +279,14 @@ public class TakeOverTask  {
         this.suffix = suffix;
     }
 
-    
-
     public TakeOverTask withTemplateGroupName(String templateGroupName) {
         this.templateGroupName = templateGroupName;
         return this;
     }
 
-    
-
-
-    /**
-     * 转码模板组 。
-     * @return templateGroupName
-     */
+    /** 转码模板组 。
+     * 
+     * @return templateGroupName */
     public String getTemplateGroupName() {
         return templateGroupName;
     }
@@ -367,20 +295,14 @@ public class TakeOverTask  {
         this.templateGroupName = templateGroupName;
     }
 
-    
-
     public TakeOverTask withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间。
-     * @return createTime
-     */
+    /** 创建时间。
+     * 
+     * @return createTime */
     public String getCreateTime() {
         return createTime;
     }
@@ -389,20 +311,14 @@ public class TakeOverTask  {
         this.createTime = createTime;
     }
 
-    
-
     public TakeOverTask withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 结束时间。
-     * @return endTime
-     */
+    /** 结束时间。
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -411,20 +327,14 @@ public class TakeOverTask  {
         this.endTime = endTime;
     }
 
-    
-
     public TakeOverTask withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务状态。
-     * @return status
-     */
+    /** 任务状态。
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -433,20 +343,14 @@ public class TakeOverTask  {
         this.status = status;
     }
 
-    
-
     public TakeOverTask withExecDesc(String execDesc) {
         this.execDesc = execDesc;
         return this;
     }
 
-    
-
-
-    /**
-     * 媒资的任务执行描述汇总。
-     * @return execDesc
-     */
+    /** 媒资的任务执行描述汇总。
+     * 
+     * @return execDesc */
     public String getExecDesc() {
         return execDesc;
     }
@@ -454,8 +358,6 @@ public class TakeOverTask  {
     public void setExecDesc(String execDesc) {
         this.execDesc = execDesc;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -466,23 +368,33 @@ public class TakeOverTask  {
             return false;
         }
         TakeOverTask takeOverTask = (TakeOverTask) o;
-        return Objects.equals(this.bucket, takeOverTask.bucket) &&
-            Objects.equals(this._object, takeOverTask._object) &&
-            Objects.equals(this.hostType, takeOverTask.hostType) &&
-            Objects.equals(this.outputBucket, takeOverTask.outputBucket) &&
-            Objects.equals(this.outputPath, takeOverTask.outputPath) &&
-            Objects.equals(this.taskId, takeOverTask.taskId) &&
-            Objects.equals(this.suffix, takeOverTask.suffix) &&
-            Objects.equals(this.templateGroupName, takeOverTask.templateGroupName) &&
-            Objects.equals(this.createTime, takeOverTask.createTime) &&
-            Objects.equals(this.endTime, takeOverTask.endTime) &&
-            Objects.equals(this.status, takeOverTask.status) &&
-            Objects.equals(this.execDesc, takeOverTask.execDesc);
+        return Objects.equals(this.bucket, takeOverTask.bucket) && Objects.equals(this._object, takeOverTask._object)
+            && Objects.equals(this.hostType, takeOverTask.hostType)
+            && Objects.equals(this.outputBucket, takeOverTask.outputBucket)
+            && Objects.equals(this.outputPath, takeOverTask.outputPath)
+            && Objects.equals(this.taskId, takeOverTask.taskId) && Objects.equals(this.suffix, takeOverTask.suffix)
+            && Objects.equals(this.templateGroupName, takeOverTask.templateGroupName)
+            && Objects.equals(this.createTime, takeOverTask.createTime)
+            && Objects.equals(this.endTime, takeOverTask.endTime) && Objects.equals(this.status, takeOverTask.status)
+            && Objects.equals(this.execDesc, takeOverTask.execDesc);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(bucket, _object, hostType, outputBucket, outputPath, taskId, suffix, templateGroupName, createTime, endTime, status, execDesc);
+        return Objects.hash(bucket,
+            _object,
+            hostType,
+            outputBucket,
+            outputPath,
+            taskId,
+            suffix,
+            templateGroupName,
+            createTime,
+            endTime,
+            status,
+            execDesc);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -502,16 +414,13 @@ public class TakeOverTask  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

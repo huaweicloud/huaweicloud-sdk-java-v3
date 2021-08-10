@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteHealthmonitorRequest  {
-
-
+/** Request Object */
+public class DeleteHealthmonitorRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="healthmonitor_id")
-    
+    @JsonProperty(value = "healthmonitor_id")
+
     private String healthmonitorId;
 
     public DeleteHealthmonitorRequest withHealthmonitorId(String healthmonitorId) {
@@ -28,13 +18,9 @@ public class DeleteHealthmonitorRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查id
-     * @return healthmonitorId
-     */
+    /** 健康检查id
+     * 
+     * @return healthmonitorId */
     public String getHealthmonitorId() {
         return healthmonitorId;
     }
@@ -42,8 +28,6 @@ public class DeleteHealthmonitorRequest  {
     public void setHealthmonitorId(String healthmonitorId) {
         this.healthmonitorId = healthmonitorId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class DeleteHealthmonitorRequest  {
         DeleteHealthmonitorRequest deleteHealthmonitorRequest = (DeleteHealthmonitorRequest) o;
         return Objects.equals(this.healthmonitorId, deleteHealthmonitorRequest.healthmonitorId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(healthmonitorId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class DeleteHealthmonitorRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

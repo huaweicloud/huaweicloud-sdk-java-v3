@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.BuildInfoParameters;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 构建工程。
- */
-public class BuildInfo  {
-
-
+/** 构建工程。 */
+public class BuildInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parameters")
-    
+    @JsonProperty(value = "parameters")
+
     private BuildInfoParameters parameters;
 
     public BuildInfo withId(String id) {
@@ -35,13 +24,9 @@ public class BuildInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 构建ID，查看构建列表获取。
-     * @return id
-     */
+    /** 构建ID，查看构建列表获取。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -50,27 +35,23 @@ public class BuildInfo  {
         this.id = id;
     }
 
-    
-
     public BuildInfo withParameters(BuildInfoParameters parameters) {
         this.parameters = parameters;
         return this;
     }
 
     public BuildInfo withParameters(Consumer<BuildInfoParameters> parametersSetter) {
-        if(this.parameters == null ){
+        if (this.parameters == null) {
             this.parameters = new BuildInfoParameters();
             parametersSetter.accept(this.parameters);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get parameters
-     * @return parameters
-     */
+    /** Get parameters
+     * 
+     * @return parameters */
     public BuildInfoParameters getParameters() {
         return parameters;
     }
@@ -78,8 +59,6 @@ public class BuildInfo  {
     public void setParameters(BuildInfoParameters parameters) {
         this.parameters = parameters;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,14 @@ public class BuildInfo  {
             return false;
         }
         BuildInfo buildInfo = (BuildInfo) o;
-        return Objects.equals(this.id, buildInfo.id) &&
-            Objects.equals(this.parameters, buildInfo.parameters);
+        return Objects.equals(this.id, buildInfo.id) && Objects.equals(this.parameters, buildInfo.parameters);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, parameters);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +86,13 @@ public class BuildInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

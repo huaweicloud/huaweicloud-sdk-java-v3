@@ -21,12 +21,11 @@
 
 package com.huaweicloud.sdk.core.exception;
 
-/**
- * Connection timeout in SocketTimeoutException with the error message is "connect timed out".
+/** Connection timeout in SocketTimeoutException with the error message is "connect timed out".
  *
- * @author HuaweiCloud_SDK
- */
+ * @author HuaweiCloud_SDK */
 public class ConnectionTimeoutException extends ConnectionException {
+
     public ConnectionTimeoutException(String message) {
         super(message);
     }

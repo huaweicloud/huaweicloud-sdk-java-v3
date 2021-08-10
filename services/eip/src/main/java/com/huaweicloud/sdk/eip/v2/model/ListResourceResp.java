@@ -1,61 +1,44 @@
 package com.huaweicloud.sdk.eip.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.ResourceTagResp;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 资源实例详情
- */
-public class ListResourceResp  {
-
-
+/** 资源实例详情 */
+public class ListResourceResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resouce_detail")
-    
+    @JsonProperty(value = "resouce_detail")
+
     private Object resouceDetail;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
+    @JsonProperty(value = "resource_id")
+
     private String resourceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_name")
-    
+    @JsonProperty(value = "resource_name")
+
     private String resourceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<ResourceTagResp> tags = null;
-    
+
     public ListResourceResp withResouceDetail(Object resouceDetail) {
         this.resouceDetail = resouceDetail;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源详情。 资源对象，用于扩展。默认为空
-     * @return resouceDetail
-     */
+    /** 资源详情。 资源对象，用于扩展。默认为空
+     * 
+     * @return resouceDetail */
     public Object getResouceDetail() {
         return resouceDetail;
     }
@@ -64,20 +47,14 @@ public class ListResourceResp  {
         this.resouceDetail = resouceDetail;
     }
 
-    
-
     public ListResourceResp withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源ID
-     * @return resourceId
-     */
+    /** 资源ID
+     * 
+     * @return resourceId */
     public String getResourceId() {
         return resourceId;
     }
@@ -86,20 +63,14 @@ public class ListResourceResp  {
         this.resourceId = resourceId;
     }
 
-    
-
     public ListResourceResp withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源名称，没有默认为空字符串
-     * @return resourceName
-     */
+    /** 资源名称，没有默认为空字符串
+     * 
+     * @return resourceName */
     public String getResourceName() {
         return resourceName;
     }
@@ -108,16 +79,13 @@ public class ListResourceResp  {
         this.resourceName = resourceName;
     }
 
-    
-
     public ListResourceResp withTags(List<ResourceTagResp> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public ListResourceResp addTagsItem(ResourceTagResp tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -125,17 +93,16 @@ public class ListResourceResp  {
     }
 
     public ListResourceResp withTags(Consumer<List<ResourceTagResp>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 标签列表，没有标签默认为空数组
-     * @return tags
-     */
+    /** 标签列表，没有标签默认为空数组
+     * 
+     * @return tags */
     public List<ResourceTagResp> getTags() {
         return tags;
     }
@@ -143,8 +110,6 @@ public class ListResourceResp  {
     public void setTags(List<ResourceTagResp> tags) {
         this.tags = tags;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -155,15 +120,17 @@ public class ListResourceResp  {
             return false;
         }
         ListResourceResp listResourceResp = (ListResourceResp) o;
-        return Objects.equals(this.resouceDetail, listResourceResp.resouceDetail) &&
-            Objects.equals(this.resourceId, listResourceResp.resourceId) &&
-            Objects.equals(this.resourceName, listResourceResp.resourceName) &&
-            Objects.equals(this.tags, listResourceResp.tags);
+        return Objects.equals(this.resouceDetail, listResourceResp.resouceDetail)
+            && Objects.equals(this.resourceId, listResourceResp.resourceId)
+            && Objects.equals(this.resourceName, listResourceResp.resourceName)
+            && Objects.equals(this.tags, listResourceResp.tags);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resouceDetail, resourceId, resourceName, tags);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -175,16 +142,13 @@ public class ListResourceResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

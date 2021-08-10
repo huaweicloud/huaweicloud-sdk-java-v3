@@ -1,55 +1,39 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iec.v1.model.FirewallPolicy;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 防火墙对象
- */
-public class Firewall  {
-
-
+/** 防火墙对象 */
+public class Firewall {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
-    
+    @JsonProperty(value = "admin_state_up")
+
     private Boolean adminStateUp;
-    /**
-     * 网络ACL状态。  取值范围：INACTIVE
-     */
+
+    /** 网络ACL状态。 取值范围：INACTIVE */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum INACTIVE for value: "INACTIVE"
-         */
+        /** Enum INACTIVE for value: "INACTIVE" */
         public static final StatusEnum INACTIVE = new StatusEnum("INACTIVE");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -77,7 +61,7 @@ public class Firewall  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -88,7 +72,7 @@ public class Firewall  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -112,46 +96,39 @@ public class Firewall  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="egress_firewall_policy")
-    
+    @JsonProperty(value = "egress_firewall_policy")
+
     private FirewallPolicy egressFirewallPolicy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="egress_firewall_rule_count")
-    
+    @JsonProperty(value = "egress_firewall_rule_count")
+
     private Integer egressFirewallRuleCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ingress_firewall_policy")
-    
+    @JsonProperty(value = "ingress_firewall_policy")
+
     private FirewallPolicy ingressFirewallPolicy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ingress_firewall_rule_count")
-    
+    @JsonProperty(value = "ingress_firewall_rule_count")
+
     private Integer ingressFirewallRuleCount;
 
     public Firewall withId(String id) {
@@ -159,13 +136,9 @@ public class Firewall  {
         return this;
     }
 
-    
-
-
-    /**
-     * 网络ACL ID
-     * @return id
-     */
+    /** 网络ACL ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -174,20 +147,14 @@ public class Firewall  {
         this.id = id;
     }
 
-    
-
     public Firewall withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 网络ACL名称。
-     * @return name
-     */
+    /** 网络ACL名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -196,20 +163,14 @@ public class Firewall  {
         this.name = name;
     }
 
-    
-
     public Firewall withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
     }
 
-    
-
-
-    /**
-     * 网络ACL使能开关。  取值范围：true（开启），false（关闭）。默认为true
-     * @return adminStateUp
-     */
+    /** 网络ACL使能开关。 取值范围：true（开启），false（关闭）。默认为true
+     * 
+     * @return adminStateUp */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -218,20 +179,14 @@ public class Firewall  {
         this.adminStateUp = adminStateUp;
     }
 
-    
-
     public Firewall withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 网络ACL状态。  取值范围：INACTIVE
-     * @return status
-     */
+    /** 网络ACL状态。 取值范围：INACTIVE
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -240,20 +195,14 @@ public class Firewall  {
         this.status = status;
     }
 
-    
-
     public Firewall withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 网络ACL描述。
-     * @return description
-     */
+    /** 网络ACL描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -262,20 +211,14 @@ public class Firewall  {
         this.description = description;
     }
 
-    
-
     public Firewall withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
     }
 
-    
-
-
-    /**
-     * 租户domainID
-     * @return domainId
-     */
+    /** 租户domainID
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -284,27 +227,23 @@ public class Firewall  {
         this.domainId = domainId;
     }
 
-    
-
     public Firewall withEgressFirewallPolicy(FirewallPolicy egressFirewallPolicy) {
         this.egressFirewallPolicy = egressFirewallPolicy;
         return this;
     }
 
     public Firewall withEgressFirewallPolicy(Consumer<FirewallPolicy> egressFirewallPolicySetter) {
-        if(this.egressFirewallPolicy == null ){
+        if (this.egressFirewallPolicy == null) {
             this.egressFirewallPolicy = new FirewallPolicy();
             egressFirewallPolicySetter.accept(this.egressFirewallPolicy);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get egressFirewallPolicy
-     * @return egressFirewallPolicy
-     */
+    /** Get egressFirewallPolicy
+     * 
+     * @return egressFirewallPolicy */
     public FirewallPolicy getEgressFirewallPolicy() {
         return egressFirewallPolicy;
     }
@@ -313,20 +252,14 @@ public class Firewall  {
         this.egressFirewallPolicy = egressFirewallPolicy;
     }
 
-    
-
     public Firewall withEgressFirewallRuleCount(Integer egressFirewallRuleCount) {
         this.egressFirewallRuleCount = egressFirewallRuleCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 出方向网络ACL规则个数。
-     * @return egressFirewallRuleCount
-     */
+    /** 出方向网络ACL规则个数。
+     * 
+     * @return egressFirewallRuleCount */
     public Integer getEgressFirewallRuleCount() {
         return egressFirewallRuleCount;
     }
@@ -335,27 +268,23 @@ public class Firewall  {
         this.egressFirewallRuleCount = egressFirewallRuleCount;
     }
 
-    
-
     public Firewall withIngressFirewallPolicy(FirewallPolicy ingressFirewallPolicy) {
         this.ingressFirewallPolicy = ingressFirewallPolicy;
         return this;
     }
 
     public Firewall withIngressFirewallPolicy(Consumer<FirewallPolicy> ingressFirewallPolicySetter) {
-        if(this.ingressFirewallPolicy == null ){
+        if (this.ingressFirewallPolicy == null) {
             this.ingressFirewallPolicy = new FirewallPolicy();
             ingressFirewallPolicySetter.accept(this.ingressFirewallPolicy);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get ingressFirewallPolicy
-     * @return ingressFirewallPolicy
-     */
+    /** Get ingressFirewallPolicy
+     * 
+     * @return ingressFirewallPolicy */
     public FirewallPolicy getIngressFirewallPolicy() {
         return ingressFirewallPolicy;
     }
@@ -364,20 +293,14 @@ public class Firewall  {
         this.ingressFirewallPolicy = ingressFirewallPolicy;
     }
 
-    
-
     public Firewall withIngressFirewallRuleCount(Integer ingressFirewallRuleCount) {
         this.ingressFirewallRuleCount = ingressFirewallRuleCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 入方向网络ACL规则个数。
-     * @return ingressFirewallRuleCount
-     */
+    /** 入方向网络ACL规则个数。
+     * 
+     * @return ingressFirewallRuleCount */
     public Integer getIngressFirewallRuleCount() {
         return ingressFirewallRuleCount;
     }
@@ -385,8 +308,6 @@ public class Firewall  {
     public void setIngressFirewallRuleCount(Integer ingressFirewallRuleCount) {
         this.ingressFirewallRuleCount = ingressFirewallRuleCount;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -397,21 +318,30 @@ public class Firewall  {
             return false;
         }
         Firewall firewall = (Firewall) o;
-        return Objects.equals(this.id, firewall.id) &&
-            Objects.equals(this.name, firewall.name) &&
-            Objects.equals(this.adminStateUp, firewall.adminStateUp) &&
-            Objects.equals(this.status, firewall.status) &&
-            Objects.equals(this.description, firewall.description) &&
-            Objects.equals(this.domainId, firewall.domainId) &&
-            Objects.equals(this.egressFirewallPolicy, firewall.egressFirewallPolicy) &&
-            Objects.equals(this.egressFirewallRuleCount, firewall.egressFirewallRuleCount) &&
-            Objects.equals(this.ingressFirewallPolicy, firewall.ingressFirewallPolicy) &&
-            Objects.equals(this.ingressFirewallRuleCount, firewall.ingressFirewallRuleCount);
+        return Objects.equals(this.id, firewall.id) && Objects.equals(this.name, firewall.name)
+            && Objects.equals(this.adminStateUp, firewall.adminStateUp) && Objects.equals(this.status, firewall.status)
+            && Objects.equals(this.description, firewall.description)
+            && Objects.equals(this.domainId, firewall.domainId)
+            && Objects.equals(this.egressFirewallPolicy, firewall.egressFirewallPolicy)
+            && Objects.equals(this.egressFirewallRuleCount, firewall.egressFirewallRuleCount)
+            && Objects.equals(this.ingressFirewallPolicy, firewall.ingressFirewallPolicy)
+            && Objects.equals(this.ingressFirewallRuleCount, firewall.ingressFirewallRuleCount);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, adminStateUp, status, description, domainId, egressFirewallPolicy, egressFirewallRuleCount, ingressFirewallPolicy, ingressFirewallRuleCount);
+        return Objects.hash(id,
+            name,
+            adminStateUp,
+            status,
+            description,
+            domainId,
+            egressFirewallPolicy,
+            egressFirewallRuleCount,
+            ingressFirewallPolicy,
+            ingressFirewallRuleCount);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -429,16 +359,13 @@ public class Firewall  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

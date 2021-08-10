@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteAppCodeV2Request  {
-
-
+/** Request Object */
+public class DeleteAppCodeV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_code_id")
-    
+    @JsonProperty(value = "app_code_id")
+
     private String appCodeId;
 
     public DeleteAppCodeV2Request withInstanceId(String instanceId) {
@@ -40,13 +28,9 @@ public class DeleteAppCodeV2Request  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -55,20 +39,14 @@ public class DeleteAppCodeV2Request  {
         this.instanceId = instanceId;
     }
 
-    
-
     public DeleteAppCodeV2Request withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用编号
-     * @return appId
-     */
+    /** 应用编号
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -77,20 +55,14 @@ public class DeleteAppCodeV2Request  {
         this.appId = appId;
     }
 
-    
-
     public DeleteAppCodeV2Request withAppCodeId(String appCodeId) {
         this.appCodeId = appCodeId;
         return this;
     }
 
-    
-
-
-    /**
-     * APP Code编号
-     * @return appCodeId
-     */
+    /** APP Code编号
+     * 
+     * @return appCodeId */
     public String getAppCodeId() {
         return appCodeId;
     }
@@ -98,8 +70,6 @@ public class DeleteAppCodeV2Request  {
     public void setAppCodeId(String appCodeId) {
         this.appCodeId = appCodeId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class DeleteAppCodeV2Request  {
             return false;
         }
         DeleteAppCodeV2Request deleteAppCodeV2Request = (DeleteAppCodeV2Request) o;
-        return Objects.equals(this.instanceId, deleteAppCodeV2Request.instanceId) &&
-            Objects.equals(this.appId, deleteAppCodeV2Request.appId) &&
-            Objects.equals(this.appCodeId, deleteAppCodeV2Request.appCodeId);
+        return Objects.equals(this.instanceId, deleteAppCodeV2Request.instanceId)
+            && Objects.equals(this.appId, deleteAppCodeV2Request.appId)
+            && Objects.equals(this.appCodeId, deleteAppCodeV2Request.appCodeId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, appId, appCodeId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class DeleteAppCodeV2Request  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

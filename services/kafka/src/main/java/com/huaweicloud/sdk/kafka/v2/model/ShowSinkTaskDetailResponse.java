@@ -1,59 +1,43 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kafka.v2.model.ShowSinkTaskDetailRespObsDestinationDescriptor;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowSinkTaskDetailResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_name")
-    
+    @JsonProperty(value = "task_name")
+
     private String taskName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination_type")
-    
+    @JsonProperty(value = "destination_type")
+
     private String destinationType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private Long createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topics")
-    
+    @JsonProperty(value = "topics")
+
     private String topics;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="obs_destination_descriptor")
-    
+    @JsonProperty(value = "obs_destination_descriptor")
+
     private ShowSinkTaskDetailRespObsDestinationDescriptor obsDestinationDescriptor;
 
     public ShowSinkTaskDetailResponse withTaskName(String taskName) {
@@ -61,13 +45,9 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 转储任务名称。
-     * @return taskName
-     */
+    /** 转储任务名称。
+     * 
+     * @return taskName */
     public String getTaskName() {
         return taskName;
     }
@@ -76,20 +56,14 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
         this.taskName = taskName;
     }
 
-    
-
     public ShowSinkTaskDetailResponse withDestinationType(String destinationType) {
         this.destinationType = destinationType;
         return this;
     }
 
-    
-
-
-    /**
-     * 转储任务类型。
-     * @return destinationType
-     */
+    /** 转储任务类型。
+     * 
+     * @return destinationType */
     public String getDestinationType() {
         return destinationType;
     }
@@ -98,20 +72,14 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
         this.destinationType = destinationType;
     }
 
-    
-
     public ShowSinkTaskDetailResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 转储任务创建时间戳。
-     * @return createTime
-     */
+    /** 转储任务创建时间戳。
+     * 
+     * @return createTime */
     public Long getCreateTime() {
         return createTime;
     }
@@ -120,20 +88,14 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public ShowSinkTaskDetailResponse withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 转储任务状态。
-     * @return status
-     */
+    /** 转储任务状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -142,20 +104,14 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public ShowSinkTaskDetailResponse withTopics(String topics) {
         this.topics = topics;
         return this;
     }
 
-    
-
-
-    /**
-     * 返回任务转存的topics列表或者正则表达式。
-     * @return topics
-     */
+    /** 返回任务转存的topics列表或者正则表达式。
+     * 
+     * @return topics */
     public String getTopics() {
         return topics;
     }
@@ -164,27 +120,25 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
         this.topics = topics;
     }
 
-    
-
-    public ShowSinkTaskDetailResponse withObsDestinationDescriptor(ShowSinkTaskDetailRespObsDestinationDescriptor obsDestinationDescriptor) {
+    public ShowSinkTaskDetailResponse withObsDestinationDescriptor(
+        ShowSinkTaskDetailRespObsDestinationDescriptor obsDestinationDescriptor) {
         this.obsDestinationDescriptor = obsDestinationDescriptor;
         return this;
     }
 
-    public ShowSinkTaskDetailResponse withObsDestinationDescriptor(Consumer<ShowSinkTaskDetailRespObsDestinationDescriptor> obsDestinationDescriptorSetter) {
-        if(this.obsDestinationDescriptor == null ){
+    public ShowSinkTaskDetailResponse withObsDestinationDescriptor(
+        Consumer<ShowSinkTaskDetailRespObsDestinationDescriptor> obsDestinationDescriptorSetter) {
+        if (this.obsDestinationDescriptor == null) {
             this.obsDestinationDescriptor = new ShowSinkTaskDetailRespObsDestinationDescriptor();
             obsDestinationDescriptorSetter.accept(this.obsDestinationDescriptor);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get obsDestinationDescriptor
-     * @return obsDestinationDescriptor
-     */
+    /** Get obsDestinationDescriptor
+     * 
+     * @return obsDestinationDescriptor */
     public ShowSinkTaskDetailRespObsDestinationDescriptor getObsDestinationDescriptor() {
         return obsDestinationDescriptor;
     }
@@ -192,8 +146,6 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
     public void setObsDestinationDescriptor(ShowSinkTaskDetailRespObsDestinationDescriptor obsDestinationDescriptor) {
         this.obsDestinationDescriptor = obsDestinationDescriptor;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -204,17 +156,19 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
             return false;
         }
         ShowSinkTaskDetailResponse showSinkTaskDetailResponse = (ShowSinkTaskDetailResponse) o;
-        return Objects.equals(this.taskName, showSinkTaskDetailResponse.taskName) &&
-            Objects.equals(this.destinationType, showSinkTaskDetailResponse.destinationType) &&
-            Objects.equals(this.createTime, showSinkTaskDetailResponse.createTime) &&
-            Objects.equals(this.status, showSinkTaskDetailResponse.status) &&
-            Objects.equals(this.topics, showSinkTaskDetailResponse.topics) &&
-            Objects.equals(this.obsDestinationDescriptor, showSinkTaskDetailResponse.obsDestinationDescriptor);
+        return Objects.equals(this.taskName, showSinkTaskDetailResponse.taskName)
+            && Objects.equals(this.destinationType, showSinkTaskDetailResponse.destinationType)
+            && Objects.equals(this.createTime, showSinkTaskDetailResponse.createTime)
+            && Objects.equals(this.status, showSinkTaskDetailResponse.status)
+            && Objects.equals(this.topics, showSinkTaskDetailResponse.topics)
+            && Objects.equals(this.obsDestinationDescriptor, showSinkTaskDetailResponse.obsDestinationDescriptor);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(taskName, destinationType, createTime, status, topics, obsDestinationDescriptor);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -228,16 +182,13 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

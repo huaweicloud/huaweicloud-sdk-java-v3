@@ -21,14 +21,11 @@
 
 package com.huaweicloud.sdk.core.exception;
 
-/**
- * Base Exception for Request Time Out, includes the following situations:
- * 1. CallTimeoutException -- Client sends a single request,
- * and the server processes time out and doesn't return valid responses
- * 2. RetryOutageException -- After several retries without any expected responses
+/** Base Exception for Request Time Out, includes the following situations: 1. CallTimeoutException -- Client sends a
+ * single request, and the server processes time out and doesn't return valid responses 2. RetryOutageException -- After
+ * several retries without any expected responses
  *
- * @author HuaweiCloud_SDK
- */
+ * @author HuaweiCloud_SDK */
 public class RequestTimeoutException extends SdkException {
 
     public RequestTimeoutException(String message) {

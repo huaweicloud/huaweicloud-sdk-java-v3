@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * SMN通道设置对象
- */
-public class TrackerSMNChannelConfigBody  {
-
-
+/** SMN通道设置对象 */
+public class TrackerSMNChannelConfigBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_id")
-    
+    @JsonProperty(value = "region_id")
+
     private String regionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic_urn")
-    
+    @JsonProperty(value = "topic_urn")
+
     private String topicUrn;
 
     public TrackerSMNChannelConfigBody withRegionId(String regionId) {
@@ -40,13 +28,9 @@ public class TrackerSMNChannelConfigBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * region id
-     * @return regionId
-     */
+    /** region id
+     * 
+     * @return regionId */
     public String getRegionId() {
         return regionId;
     }
@@ -55,20 +39,14 @@ public class TrackerSMNChannelConfigBody  {
         this.regionId = regionId;
     }
 
-    
-
     public TrackerSMNChannelConfigBody withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * project id
-     * @return projectId
-     */
+    /** project id
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -77,20 +55,14 @@ public class TrackerSMNChannelConfigBody  {
         this.projectId = projectId;
     }
 
-    
-
     public TrackerSMNChannelConfigBody withTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
         return this;
     }
 
-    
-
-
-    /**
-     * SMN 主题urn
-     * @return topicUrn
-     */
+    /** SMN 主题urn
+     * 
+     * @return topicUrn */
     public String getTopicUrn() {
         return topicUrn;
     }
@@ -98,8 +70,6 @@ public class TrackerSMNChannelConfigBody  {
     public void setTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class TrackerSMNChannelConfigBody  {
             return false;
         }
         TrackerSMNChannelConfigBody trackerSMNChannelConfigBody = (TrackerSMNChannelConfigBody) o;
-        return Objects.equals(this.regionId, trackerSMNChannelConfigBody.regionId) &&
-            Objects.equals(this.projectId, trackerSMNChannelConfigBody.projectId) &&
-            Objects.equals(this.topicUrn, trackerSMNChannelConfigBody.topicUrn);
+        return Objects.equals(this.regionId, trackerSMNChannelConfigBody.regionId)
+            && Objects.equals(this.projectId, trackerSMNChannelConfigBody.projectId)
+            && Objects.equals(this.topicUrn, trackerSMNChannelConfigBody.topicUrn);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(regionId, projectId, topicUrn);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class TrackerSMNChannelConfigBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,80 +1,61 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 攻击类型
- */
-public class ShowEventResponseBodyItems  {
-
-
+/** 攻击类型 */
+public class ShowEventResponseBodyItems {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time")
-    
+    @JsonProperty(value = "time")
+
     private Long time;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policyid")
-    
+    @JsonProperty(value = "policyid")
+
     private String policyid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sip")
-    
+    @JsonProperty(value = "sip")
+
     private String sip;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host")
-    
+    @JsonProperty(value = "host")
+
     private String host;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private String url;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="attack")
-    
+    @JsonProperty(value = "attack")
+
     private String attack;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rule")
-    
+    @JsonProperty(value = "rule")
+
     private String rule;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="payload")
-    
+    @JsonProperty(value = "payload")
+
     private String payload;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private String action;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timestamp")
-    
+    @JsonProperty(value = "timestamp")
+
     private Long timestamp;
 
     public ShowEventResponseBodyItems withTime(Long time) {
@@ -82,13 +63,9 @@ public class ShowEventResponseBodyItems  {
         return this;
     }
 
-    
-
-
-    /**
-     * 次数
-     * @return time
-     */
+    /** 次数
+     * 
+     * @return time */
     public Long getTime() {
         return time;
     }
@@ -97,20 +74,14 @@ public class ShowEventResponseBodyItems  {
         this.time = time;
     }
 
-    
-
     public ShowEventResponseBodyItems withPolicyid(String policyid) {
         this.policyid = policyid;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略id
-     * @return policyid
-     */
+    /** 策略id
+     * 
+     * @return policyid */
     public String getPolicyid() {
         return policyid;
     }
@@ -119,20 +90,14 @@ public class ShowEventResponseBodyItems  {
         this.policyid = policyid;
     }
 
-    
-
     public ShowEventResponseBodyItems withSip(String sip) {
         this.sip = sip;
         return this;
     }
 
-    
-
-
-    /**
-     * 源ip
-     * @return sip
-     */
+    /** 源ip
+     * 
+     * @return sip */
     public String getSip() {
         return sip;
     }
@@ -141,20 +106,14 @@ public class ShowEventResponseBodyItems  {
         this.sip = sip;
     }
 
-    
-
     public ShowEventResponseBodyItems withHost(String host) {
         this.host = host;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名
-     * @return host
-     */
+    /** 域名
+     * 
+     * @return host */
     public String getHost() {
         return host;
     }
@@ -163,20 +122,14 @@ public class ShowEventResponseBodyItems  {
         this.host = host;
     }
 
-    
-
     public ShowEventResponseBodyItems withUrl(String url) {
         this.url = url;
         return this;
     }
 
-    
-
-
-    /**
-     * 攻击的url链接
-     * @return url
-     */
+    /** 攻击的url链接
+     * 
+     * @return url */
     public String getUrl() {
         return url;
     }
@@ -185,20 +138,14 @@ public class ShowEventResponseBodyItems  {
         this.url = url;
     }
 
-    
-
     public ShowEventResponseBodyItems withAttack(String attack) {
         this.attack = attack;
         return this;
     }
 
-    
-
-
-    /**
-     * 攻击类型
-     * @return attack
-     */
+    /** 攻击类型
+     * 
+     * @return attack */
     public String getAttack() {
         return attack;
     }
@@ -207,20 +154,14 @@ public class ShowEventResponseBodyItems  {
         this.attack = attack;
     }
 
-    
-
     public ShowEventResponseBodyItems withRule(String rule) {
         this.rule = rule;
         return this;
     }
 
-    
-
-
-    /**
-     * 命中的规则id
-     * @return rule
-     */
+    /** 命中的规则id
+     * 
+     * @return rule */
     public String getRule() {
         return rule;
     }
@@ -229,20 +170,14 @@ public class ShowEventResponseBodyItems  {
         this.rule = rule;
     }
 
-    
-
     public ShowEventResponseBodyItems withPayload(String payload) {
         this.payload = payload;
         return this;
     }
 
-    
-
-
-    /**
-     * 命中的载荷
-     * @return payload
-     */
+    /** 命中的载荷
+     * 
+     * @return payload */
     public String getPayload() {
         return payload;
     }
@@ -251,20 +186,14 @@ public class ShowEventResponseBodyItems  {
         this.payload = payload;
     }
 
-    
-
     public ShowEventResponseBodyItems withAction(String action) {
         this.action = action;
         return this;
     }
 
-    
-
-
-    /**
-     * 防护动作
-     * @return action
-     */
+    /** 防护动作
+     * 
+     * @return action */
     public String getAction() {
         return action;
     }
@@ -273,20 +202,14 @@ public class ShowEventResponseBodyItems  {
         this.action = action;
     }
 
-    
-
     public ShowEventResponseBodyItems withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
 
-    
-
-
-    /**
-     * 时间戳
-     * @return timestamp
-     */
+    /** 时间戳
+     * 
+     * @return timestamp */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -294,8 +217,6 @@ public class ShowEventResponseBodyItems  {
     public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -306,21 +227,23 @@ public class ShowEventResponseBodyItems  {
             return false;
         }
         ShowEventResponseBodyItems showEventResponseBodyItems = (ShowEventResponseBodyItems) o;
-        return Objects.equals(this.time, showEventResponseBodyItems.time) &&
-            Objects.equals(this.policyid, showEventResponseBodyItems.policyid) &&
-            Objects.equals(this.sip, showEventResponseBodyItems.sip) &&
-            Objects.equals(this.host, showEventResponseBodyItems.host) &&
-            Objects.equals(this.url, showEventResponseBodyItems.url) &&
-            Objects.equals(this.attack, showEventResponseBodyItems.attack) &&
-            Objects.equals(this.rule, showEventResponseBodyItems.rule) &&
-            Objects.equals(this.payload, showEventResponseBodyItems.payload) &&
-            Objects.equals(this.action, showEventResponseBodyItems.action) &&
-            Objects.equals(this.timestamp, showEventResponseBodyItems.timestamp);
+        return Objects.equals(this.time, showEventResponseBodyItems.time)
+            && Objects.equals(this.policyid, showEventResponseBodyItems.policyid)
+            && Objects.equals(this.sip, showEventResponseBodyItems.sip)
+            && Objects.equals(this.host, showEventResponseBodyItems.host)
+            && Objects.equals(this.url, showEventResponseBodyItems.url)
+            && Objects.equals(this.attack, showEventResponseBodyItems.attack)
+            && Objects.equals(this.rule, showEventResponseBodyItems.rule)
+            && Objects.equals(this.payload, showEventResponseBodyItems.payload)
+            && Objects.equals(this.action, showEventResponseBodyItems.action)
+            && Objects.equals(this.timestamp, showEventResponseBodyItems.timestamp);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(time, policyid, sip, host, url, attack, rule, payload, action, timestamp);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -338,16 +261,13 @@ public class ShowEventResponseBodyItems  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

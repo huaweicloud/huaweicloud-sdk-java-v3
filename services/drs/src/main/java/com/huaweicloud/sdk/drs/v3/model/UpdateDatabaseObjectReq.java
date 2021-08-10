@@ -1,61 +1,44 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.DatabaseInfo;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 更新对象选择信息体
- */
-public class UpdateDatabaseObjectReq  {
-
-
+/** 更新对象选择信息体 */
+public class UpdateDatabaseObjectReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
+
     private String jobId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="selected")
-    
+    @JsonProperty(value = "selected")
+
     private Boolean selected;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sync_database")
-    
+    @JsonProperty(value = "sync_database")
+
     private Boolean syncDatabase;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job")
-    
+    @JsonProperty(value = "job")
+
     private List<DatabaseInfo> job = null;
-    
+
     public UpdateDatabaseObjectReq withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID
-     * @return jobId
-     */
+    /** 任务ID
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -64,20 +47,14 @@ public class UpdateDatabaseObjectReq  {
         this.jobId = jobId;
     }
 
-    
-
     public UpdateDatabaseObjectReq withSelected(Boolean selected) {
         this.selected = selected;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否进行对象选择，是：自定义迁移对象，否：全部迁移，不填默认为否。
-     * @return selected
-     */
+    /** 是否进行对象选择，是：自定义迁移对象，否：全部迁移，不填默认为否。
+     * 
+     * @return selected */
     public Boolean getSelected() {
         return selected;
     }
@@ -86,20 +63,14 @@ public class UpdateDatabaseObjectReq  {
         this.selected = selected;
     }
 
-    
-
     public UpdateDatabaseObjectReq withSyncDatabase(Boolean syncDatabase) {
         this.syncDatabase = syncDatabase;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否库级同步
-     * @return syncDatabase
-     */
+    /** 是否库级同步
+     * 
+     * @return syncDatabase */
     public Boolean getSyncDatabase() {
         return syncDatabase;
     }
@@ -108,16 +79,13 @@ public class UpdateDatabaseObjectReq  {
         this.syncDatabase = syncDatabase;
     }
 
-    
-
     public UpdateDatabaseObjectReq withJob(List<DatabaseInfo> job) {
         this.job = job;
         return this;
     }
 
-    
     public UpdateDatabaseObjectReq addJobItem(DatabaseInfo jobItem) {
-        if(this.job == null) {
+        if (this.job == null) {
             this.job = new ArrayList<>();
         }
         this.job.add(jobItem);
@@ -125,17 +93,16 @@ public class UpdateDatabaseObjectReq  {
     }
 
     public UpdateDatabaseObjectReq withJob(Consumer<List<DatabaseInfo>> jobSetter) {
-        if(this.job == null) {
+        if (this.job == null) {
             this.job = new ArrayList<>();
         }
         jobSetter.accept(this.job);
         return this;
     }
 
-    /**
-     * 数据对象选择信息，selected为true时必填。
-     * @return job
-     */
+    /** 数据对象选择信息，selected为true时必填。
+     * 
+     * @return job */
     public List<DatabaseInfo> getJob() {
         return job;
     }
@@ -143,8 +110,6 @@ public class UpdateDatabaseObjectReq  {
     public void setJob(List<DatabaseInfo> job) {
         this.job = job;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -155,15 +120,17 @@ public class UpdateDatabaseObjectReq  {
             return false;
         }
         UpdateDatabaseObjectReq updateDatabaseObjectReq = (UpdateDatabaseObjectReq) o;
-        return Objects.equals(this.jobId, updateDatabaseObjectReq.jobId) &&
-            Objects.equals(this.selected, updateDatabaseObjectReq.selected) &&
-            Objects.equals(this.syncDatabase, updateDatabaseObjectReq.syncDatabase) &&
-            Objects.equals(this.job, updateDatabaseObjectReq.job);
+        return Objects.equals(this.jobId, updateDatabaseObjectReq.jobId)
+            && Objects.equals(this.selected, updateDatabaseObjectReq.selected)
+            && Objects.equals(this.syncDatabase, updateDatabaseObjectReq.syncDatabase)
+            && Objects.equals(this.job, updateDatabaseObjectReq.job);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobId, selected, syncDatabase, job);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -175,16 +142,13 @@ public class UpdateDatabaseObjectReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

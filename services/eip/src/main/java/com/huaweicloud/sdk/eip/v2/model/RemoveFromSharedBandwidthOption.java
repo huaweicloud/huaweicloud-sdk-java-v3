@@ -1,44 +1,29 @@
 package com.huaweicloud.sdk.eip.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.RemovePublicipInfo;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 带宽对象
- */
-public class RemoveFromSharedBandwidthOption  {
+/** 带宽对象 */
+public class RemoveFromSharedBandwidthOption {
 
-    /**
-     * 弹性公网IP从共享带宽移除后，会为此弹性公网IP创建独占带宽进行计费。  此参数表示弹性公网IP从共享带宽移除后，使用的独占带宽的计费类型。（bandwidth/traffic）
-     */
+    /** 弹性公网IP从共享带宽移除后，会为此弹性公网IP创建独占带宽进行计费。 此参数表示弹性公网IP从共享带宽移除后，使用的独占带宽的计费类型。（bandwidth/traffic） */
     public static final class ChargeModeEnum {
 
-        
-        /**
-         * Enum BANDWIDTH for value: "bandwidth"
-         */
+        /** Enum BANDWIDTH for value: "bandwidth" */
         public static final ChargeModeEnum BANDWIDTH = new ChargeModeEnum("bandwidth");
-        
-        /**
-         * Enum TRAFFIC for value: "traffic"
-         */
+
+        /** Enum TRAFFIC for value: "traffic" */
         public static final ChargeModeEnum TRAFFIC = new ChargeModeEnum("traffic");
-        
 
         private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -67,7 +52,7 @@ public class RemoveFromSharedBandwidthOption  {
 
         @JsonCreator
         public static ChargeModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ChargeModeEnum result = STATIC_FIELDS.get(value);
@@ -78,7 +63,7 @@ public class RemoveFromSharedBandwidthOption  {
         }
 
         public static ChargeModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ChargeModeEnum result = STATIC_FIELDS.get(value);
@@ -102,22 +87,19 @@ public class RemoveFromSharedBandwidthOption  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_mode")
-    
+    @JsonProperty(value = "charge_mode")
+
     private ChargeModeEnum chargeMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publicip_info")
-    
+    @JsonProperty(value = "publicip_info")
+
     private List<RemovePublicipInfo> publicipInfo = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
     public RemoveFromSharedBandwidthOption withChargeMode(ChargeModeEnum chargeMode) {
@@ -125,13 +107,9 @@ public class RemoveFromSharedBandwidthOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 弹性公网IP从共享带宽移除后，会为此弹性公网IP创建独占带宽进行计费。  此参数表示弹性公网IP从共享带宽移除后，使用的独占带宽的计费类型。（bandwidth/traffic）
-     * @return chargeMode
-     */
+    /** 弹性公网IP从共享带宽移除后，会为此弹性公网IP创建独占带宽进行计费。 此参数表示弹性公网IP从共享带宽移除后，使用的独占带宽的计费类型。（bandwidth/traffic）
+     * 
+     * @return chargeMode */
     public ChargeModeEnum getChargeMode() {
         return chargeMode;
     }
@@ -140,16 +118,13 @@ public class RemoveFromSharedBandwidthOption  {
         this.chargeMode = chargeMode;
     }
 
-    
-
     public RemoveFromSharedBandwidthOption withPublicipInfo(List<RemovePublicipInfo> publicipInfo) {
         this.publicipInfo = publicipInfo;
         return this;
     }
 
-    
     public RemoveFromSharedBandwidthOption addPublicipInfoItem(RemovePublicipInfo publicipInfoItem) {
-        if(this.publicipInfo == null) {
+        if (this.publicipInfo == null) {
             this.publicipInfo = new ArrayList<>();
         }
         this.publicipInfo.add(publicipInfoItem);
@@ -157,17 +132,16 @@ public class RemoveFromSharedBandwidthOption  {
     }
 
     public RemoveFromSharedBandwidthOption withPublicipInfo(Consumer<List<RemovePublicipInfo>> publicipInfoSetter) {
-        if(this.publicipInfo == null) {
+        if (this.publicipInfo == null) {
             this.publicipInfo = new ArrayList<>();
         }
         publicipInfoSetter.accept(this.publicipInfo);
         return this;
     }
 
-    /**
-     * 功能说明：要从共享带宽中移除的弹性公网IP或者IPv6端口信息  约束：WHOLE类型的带宽支持多个弹性公网IP或者IPv6端口，跟租户的配额相关，默认一个共享带宽的配额为20
-     * @return publicipInfo
-     */
+    /** 功能说明：要从共享带宽中移除的弹性公网IP或者IPv6端口信息 约束：WHOLE类型的带宽支持多个弹性公网IP或者IPv6端口，跟租户的配额相关，默认一个共享带宽的配额为20
+     * 
+     * @return publicipInfo */
     public List<RemovePublicipInfo> getPublicipInfo() {
         return publicipInfo;
     }
@@ -176,20 +150,15 @@ public class RemoveFromSharedBandwidthOption  {
         this.publicipInfo = publicipInfo;
     }
 
-    
-
     public RemoveFromSharedBandwidthOption withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 弹性公网IP从共享带宽移除后，会为此弹性公网IP创建独占带宽进行计费。  此参数表示弹性公网IP从共享带宽移除后，使用的独占带宽的带宽大小。（M）取值范围：默认为1~2000Mbit/s. 可能因为局点配置不同而不同。也跟带宽的计费模式（bandwidth/traffic）相关。
-     * @return size
-     */
+    /** 弹性公网IP从共享带宽移除后，会为此弹性公网IP创建独占带宽进行计费。 此参数表示弹性公网IP从共享带宽移除后，使用的独占带宽的带宽大小。（M）取值范围：默认为1~2000Mbit/s.
+     * 可能因为局点配置不同而不同。也跟带宽的计费模式（bandwidth/traffic）相关。
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -197,8 +166,6 @@ public class RemoveFromSharedBandwidthOption  {
     public void setSize(Integer size) {
         this.size = size;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -209,14 +176,16 @@ public class RemoveFromSharedBandwidthOption  {
             return false;
         }
         RemoveFromSharedBandwidthOption removeFromSharedBandwidthOption = (RemoveFromSharedBandwidthOption) o;
-        return Objects.equals(this.chargeMode, removeFromSharedBandwidthOption.chargeMode) &&
-            Objects.equals(this.publicipInfo, removeFromSharedBandwidthOption.publicipInfo) &&
-            Objects.equals(this.size, removeFromSharedBandwidthOption.size);
+        return Objects.equals(this.chargeMode, removeFromSharedBandwidthOption.chargeMode)
+            && Objects.equals(this.publicipInfo, removeFromSharedBandwidthOption.publicipInfo)
+            && Objects.equals(this.size, removeFromSharedBandwidthOption.size);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(chargeMode, publicipInfo, size);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -227,16 +196,13 @@ public class RemoveFromSharedBandwidthOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

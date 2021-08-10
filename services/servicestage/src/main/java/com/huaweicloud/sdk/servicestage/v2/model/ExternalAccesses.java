@@ -1,71 +1,51 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.ExternalAccessProtocol;
-import com.huaweicloud.sdk.servicestage.v2.model.ExternalAccessStatus;
-import com.huaweicloud.sdk.servicestage.v2.model.ExternalAccessType;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 访问方式。
- */
-public class ExternalAccesses  {
-
-
+/** 访问方式。 */
+public class ExternalAccesses {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
+
     private ExternalAccessProtocol protocol;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="address")
-    
+    @JsonProperty(value = "address")
+
     private String address;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="forward_port")
-    
+    @JsonProperty(value = "forward_port")
+
     private Integer forwardPort;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private ExternalAccessType type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private ExternalAccessStatus status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private Long createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private Long updateTime;
 
     public ExternalAccesses withId(String id) {
@@ -73,13 +53,9 @@ public class ExternalAccesses  {
         return this;
     }
 
-    
-
-
-    /**
-     * ID。
-     * @return id
-     */
+    /** ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -88,20 +64,14 @@ public class ExternalAccesses  {
         this.id = id;
     }
 
-    
-
     public ExternalAccesses withProtocol(ExternalAccessProtocol protocol) {
         this.protocol = protocol;
         return this;
     }
 
-    
-
-
-    /**
-     * Get protocol
-     * @return protocol
-     */
+    /** Get protocol
+     * 
+     * @return protocol */
     public ExternalAccessProtocol getProtocol() {
         return protocol;
     }
@@ -110,20 +80,14 @@ public class ExternalAccesses  {
         this.protocol = protocol;
     }
 
-    
-
     public ExternalAccesses withAddress(String address) {
         this.address = address;
         return this;
     }
 
-    
-
-
-    /**
-     * 访问地址。
-     * @return address
-     */
+    /** 访问地址。
+     * 
+     * @return address */
     public String getAddress() {
         return address;
     }
@@ -132,20 +96,14 @@ public class ExternalAccesses  {
         this.address = address;
     }
 
-    
-
     public ExternalAccesses withForwardPort(Integer forwardPort) {
         this.forwardPort = forwardPort;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用组件进程监听端口
-     * @return forwardPort
-     */
+    /** 应用组件进程监听端口
+     * 
+     * @return forwardPort */
     public Integer getForwardPort() {
         return forwardPort;
     }
@@ -154,20 +112,14 @@ public class ExternalAccesses  {
         this.forwardPort = forwardPort;
     }
 
-    
-
     public ExternalAccesses withType(ExternalAccessType type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * Get type
-     * @return type
-     */
+    /** Get type
+     * 
+     * @return type */
     public ExternalAccessType getType() {
         return type;
     }
@@ -176,20 +128,14 @@ public class ExternalAccesses  {
         this.type = type;
     }
 
-    
-
     public ExternalAccesses withStatus(ExternalAccessStatus status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * Get status
-     * @return status
-     */
+    /** Get status
+     * 
+     * @return status */
     public ExternalAccessStatus getStatus() {
         return status;
     }
@@ -198,20 +144,14 @@ public class ExternalAccesses  {
         this.status = status;
     }
 
-    
-
     public ExternalAccesses withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间。
-     * @return createTime
-     */
+    /** 创建时间。
+     * 
+     * @return createTime */
     public Long getCreateTime() {
         return createTime;
     }
@@ -220,20 +160,14 @@ public class ExternalAccesses  {
         this.createTime = createTime;
     }
 
-    
-
     public ExternalAccesses withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 修改时间。
-     * @return updateTime
-     */
+    /** 修改时间。
+     * 
+     * @return updateTime */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -241,8 +175,6 @@ public class ExternalAccesses  {
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -253,19 +185,19 @@ public class ExternalAccesses  {
             return false;
         }
         ExternalAccesses externalAccesses = (ExternalAccesses) o;
-        return Objects.equals(this.id, externalAccesses.id) &&
-            Objects.equals(this.protocol, externalAccesses.protocol) &&
-            Objects.equals(this.address, externalAccesses.address) &&
-            Objects.equals(this.forwardPort, externalAccesses.forwardPort) &&
-            Objects.equals(this.type, externalAccesses.type) &&
-            Objects.equals(this.status, externalAccesses.status) &&
-            Objects.equals(this.createTime, externalAccesses.createTime) &&
-            Objects.equals(this.updateTime, externalAccesses.updateTime);
+        return Objects.equals(this.id, externalAccesses.id) && Objects.equals(this.protocol, externalAccesses.protocol)
+            && Objects.equals(this.address, externalAccesses.address)
+            && Objects.equals(this.forwardPort, externalAccesses.forwardPort)
+            && Objects.equals(this.type, externalAccesses.type) && Objects.equals(this.status, externalAccesses.status)
+            && Objects.equals(this.createTime, externalAccesses.createTime)
+            && Objects.equals(this.updateTime, externalAccesses.updateTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, protocol, address, forwardPort, type, status, createTime, updateTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -281,16 +213,13 @@ public class ExternalAccesses  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,64 +1,49 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 资源类型详情
- */
-public class ResourceTypeResponse  {
-
-
+/** 资源类型详情 */
+public class ResourceTypeResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="display_name")
-    
+    @JsonProperty(value = "display_name")
+
     private String displayName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="global")
-    
+    @JsonProperty(value = "global")
+
     private Boolean global;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="regions")
-    
+    @JsonProperty(value = "regions")
+
     private List<String> regions = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="console_endpoint_id")
-    
+    @JsonProperty(value = "console_endpoint_id")
+
     private String consoleEndpointId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="console_list_url")
-    
+    @JsonProperty(value = "console_list_url")
+
     private String consoleListUrl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="console_detail_url")
-    
+    @JsonProperty(value = "console_detail_url")
+
     private String consoleDetailUrl;
 
     public ResourceTypeResponse withName(String name) {
@@ -66,13 +51,9 @@ public class ResourceTypeResponse  {
         return this;
     }
 
-    
-
-
-    /**
-     * 资源类型名称
-     * @return name
-     */
+    /** 资源类型名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -81,20 +62,14 @@ public class ResourceTypeResponse  {
         this.name = name;
     }
 
-    
-
     public ResourceTypeResponse withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源类型显示名称，可以通过请求中 'X-Language'设置语言
-     * @return displayName
-     */
+    /** 资源类型显示名称，可以通过请求中 'X-Language'设置语言
+     * 
+     * @return displayName */
     public String getDisplayName() {
         return displayName;
     }
@@ -103,20 +78,14 @@ public class ResourceTypeResponse  {
         this.displayName = displayName;
     }
 
-    
-
     public ResourceTypeResponse withGlobal(Boolean global) {
         this.global = global;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否是全局类型的资源
-     * @return global
-     */
+    /** 是否是全局类型的资源
+     * 
+     * @return global */
     public Boolean getGlobal() {
         return global;
     }
@@ -125,16 +94,13 @@ public class ResourceTypeResponse  {
         this.global = global;
     }
 
-    
-
     public ResourceTypeResponse withRegions(List<String> regions) {
         this.regions = regions;
         return this;
     }
 
-    
     public ResourceTypeResponse addRegionsItem(String regionsItem) {
-        if(this.regions == null) {
+        if (this.regions == null) {
             this.regions = new ArrayList<>();
         }
         this.regions.add(regionsItem);
@@ -142,17 +108,16 @@ public class ResourceTypeResponse  {
     }
 
     public ResourceTypeResponse withRegions(Consumer<List<String>> regionsSetter) {
-        if(this.regions == null) {
+        if (this.regions == null) {
             this.regions = new ArrayList<>();
         }
         regionsSetter.accept(this.regions);
         return this;
     }
 
-    /**
-     * 支持的region列表
-     * @return regions
-     */
+    /** 支持的region列表
+     * 
+     * @return regions */
     public List<String> getRegions() {
         return regions;
     }
@@ -161,20 +126,14 @@ public class ResourceTypeResponse  {
         this.regions = regions;
     }
 
-    
-
     public ResourceTypeResponse withConsoleEndpointId(String consoleEndpointId) {
         this.consoleEndpointId = consoleEndpointId;
         return this;
     }
 
-    
-
-
-    /**
-     * console终端id
-     * @return consoleEndpointId
-     */
+    /** console终端id
+     * 
+     * @return consoleEndpointId */
     public String getConsoleEndpointId() {
         return consoleEndpointId;
     }
@@ -183,20 +142,14 @@ public class ResourceTypeResponse  {
         this.consoleEndpointId = consoleEndpointId;
     }
 
-    
-
     public ResourceTypeResponse withConsoleListUrl(String consoleListUrl) {
         this.consoleListUrl = consoleListUrl;
         return this;
     }
 
-    
-
-
-    /**
-     * console列表页地址
-     * @return consoleListUrl
-     */
+    /** console列表页地址
+     * 
+     * @return consoleListUrl */
     public String getConsoleListUrl() {
         return consoleListUrl;
     }
@@ -205,20 +158,14 @@ public class ResourceTypeResponse  {
         this.consoleListUrl = consoleListUrl;
     }
 
-    
-
     public ResourceTypeResponse withConsoleDetailUrl(String consoleDetailUrl) {
         this.consoleDetailUrl = consoleDetailUrl;
         return this;
     }
 
-    
-
-
-    /**
-     * console详情页地址
-     * @return consoleDetailUrl
-     */
+    /** console详情页地址
+     * 
+     * @return consoleDetailUrl */
     public String getConsoleDetailUrl() {
         return consoleDetailUrl;
     }
@@ -226,8 +173,6 @@ public class ResourceTypeResponse  {
     public void setConsoleDetailUrl(String consoleDetailUrl) {
         this.consoleDetailUrl = consoleDetailUrl;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -238,18 +183,20 @@ public class ResourceTypeResponse  {
             return false;
         }
         ResourceTypeResponse resourceTypeResponse = (ResourceTypeResponse) o;
-        return Objects.equals(this.name, resourceTypeResponse.name) &&
-            Objects.equals(this.displayName, resourceTypeResponse.displayName) &&
-            Objects.equals(this.global, resourceTypeResponse.global) &&
-            Objects.equals(this.regions, resourceTypeResponse.regions) &&
-            Objects.equals(this.consoleEndpointId, resourceTypeResponse.consoleEndpointId) &&
-            Objects.equals(this.consoleListUrl, resourceTypeResponse.consoleListUrl) &&
-            Objects.equals(this.consoleDetailUrl, resourceTypeResponse.consoleDetailUrl);
+        return Objects.equals(this.name, resourceTypeResponse.name)
+            && Objects.equals(this.displayName, resourceTypeResponse.displayName)
+            && Objects.equals(this.global, resourceTypeResponse.global)
+            && Objects.equals(this.regions, resourceTypeResponse.regions)
+            && Objects.equals(this.consoleEndpointId, resourceTypeResponse.consoleEndpointId)
+            && Objects.equals(this.consoleListUrl, resourceTypeResponse.consoleListUrl)
+            && Objects.equals(this.consoleDetailUrl, resourceTypeResponse.consoleDetailUrl);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, displayName, global, regions, consoleEndpointId, consoleListUrl, consoleDetailUrl);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -264,16 +211,13 @@ public class ResourceTypeResponse  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

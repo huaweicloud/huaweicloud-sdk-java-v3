@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cdn.v1.model.DomainBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 域名对象
- */
-public class CreateDomainRequestBody  {
-
-
+/** 域名对象 */
+public class CreateDomainRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
+
     private DomainBody domain;
 
     public CreateDomainRequestBody withDomain(DomainBody domain) {
@@ -30,19 +20,17 @@ public class CreateDomainRequestBody  {
     }
 
     public CreateDomainRequestBody withDomain(Consumer<DomainBody> domainSetter) {
-        if(this.domain == null ){
+        if (this.domain == null) {
             this.domain = new DomainBody();
             domainSetter.accept(this.domain);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get domain
-     * @return domain
-     */
+    /** Get domain
+     * 
+     * @return domain */
     public DomainBody getDomain() {
         return domain;
     }
@@ -50,8 +38,6 @@ public class CreateDomainRequestBody  {
     public void setDomain(DomainBody domain) {
         this.domain = domain;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class CreateDomainRequestBody  {
         CreateDomainRequestBody createDomainRequestBody = (CreateDomainRequestBody) o;
         return Objects.equals(this.domain, createDomainRequestBody.domain);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domain);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class CreateDomainRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

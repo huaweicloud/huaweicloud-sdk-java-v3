@@ -1,35 +1,23 @@
 package com.huaweicloud.sdk.cloudide.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cloudide.v2.model.StacksTag;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ListStacksByTagResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stack")
-    
+    @JsonProperty(value = "stack")
+
     private StacksTag stack;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
     public ListStacksByTagResponse withStack(StacksTag stack) {
@@ -38,19 +26,17 @@ public class ListStacksByTagResponse extends SdkResponse {
     }
 
     public ListStacksByTagResponse withStack(Consumer<StacksTag> stackSetter) {
-        if(this.stack == null ){
+        if (this.stack == null) {
             this.stack = new StacksTag();
             stackSetter.accept(this.stack);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get stack
-     * @return stack
-     */
+    /** Get stack
+     * 
+     * @return stack */
     public StacksTag getStack() {
         return stack;
     }
@@ -59,20 +45,14 @@ public class ListStacksByTagResponse extends SdkResponse {
         this.stack = stack;
     }
 
-    
-
     public ListStacksByTagResponse withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态
-     * @return status
-     */
+    /** 状态
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -80,8 +60,6 @@ public class ListStacksByTagResponse extends SdkResponse {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -92,13 +70,15 @@ public class ListStacksByTagResponse extends SdkResponse {
             return false;
         }
         ListStacksByTagResponse listStacksByTagResponse = (ListStacksByTagResponse) o;
-        return Objects.equals(this.stack, listStacksByTagResponse.stack) &&
-            Objects.equals(this.status, listStacksByTagResponse.status);
+        return Objects.equals(this.stack, listStacksByTagResponse.stack)
+            && Objects.equals(this.status, listStacksByTagResponse.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(stack, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -108,16 +88,13 @@ public class ListStacksByTagResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

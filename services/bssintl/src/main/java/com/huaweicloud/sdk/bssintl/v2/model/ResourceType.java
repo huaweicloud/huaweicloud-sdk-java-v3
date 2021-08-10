@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.bssintl.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ResourceType
- */
-public class ResourceType  {
-
-
+/** ResourceType */
+public class ResourceType {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type_code")
-    
+    @JsonProperty(value = "resource_type_code")
+
     private String resourceTypeCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type_name")
-    
+    @JsonProperty(value = "resource_type_name")
+
     private String resourceTypeName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type_desc")
-    
+    @JsonProperty(value = "resource_type_desc")
+
     private String resourceTypeDesc;
 
     public ResourceType withResourceTypeCode(String resourceTypeCode) {
@@ -40,13 +28,9 @@ public class ResourceType  {
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：资源类型编码| |参数约束及描述：资源类型编码|
-     * @return resourceTypeCode
-     */
+    /** |参数名称：资源类型编码| |参数约束及描述：资源类型编码|
+     * 
+     * @return resourceTypeCode */
     public String getResourceTypeCode() {
         return resourceTypeCode;
     }
@@ -55,20 +39,14 @@ public class ResourceType  {
         this.resourceTypeCode = resourceTypeCode;
     }
 
-    
-
     public ResourceType withResourceTypeName(String resourceTypeName) {
         this.resourceTypeName = resourceTypeName;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：资源类型名称| |参数约束及描述：资源类型名称|
-     * @return resourceTypeName
-     */
+    /** |参数名称：资源类型名称| |参数约束及描述：资源类型名称|
+     * 
+     * @return resourceTypeName */
     public String getResourceTypeName() {
         return resourceTypeName;
     }
@@ -77,20 +55,14 @@ public class ResourceType  {
         this.resourceTypeName = resourceTypeName;
     }
 
-    
-
     public ResourceType withResourceTypeDesc(String resourceTypeDesc) {
         this.resourceTypeDesc = resourceTypeDesc;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：资源类型描述| |参数约束及描述：资源类型描述|
-     * @return resourceTypeDesc
-     */
+    /** |参数名称：资源类型描述| |参数约束及描述：资源类型描述|
+     * 
+     * @return resourceTypeDesc */
     public String getResourceTypeDesc() {
         return resourceTypeDesc;
     }
@@ -98,8 +70,6 @@ public class ResourceType  {
     public void setResourceTypeDesc(String resourceTypeDesc) {
         this.resourceTypeDesc = resourceTypeDesc;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class ResourceType  {
             return false;
         }
         ResourceType resourceType = (ResourceType) o;
-        return Objects.equals(this.resourceTypeCode, resourceType.resourceTypeCode) &&
-            Objects.equals(this.resourceTypeName, resourceType.resourceTypeName) &&
-            Objects.equals(this.resourceTypeDesc, resourceType.resourceTypeDesc);
+        return Objects.equals(this.resourceTypeCode, resourceType.resourceTypeCode)
+            && Objects.equals(this.resourceTypeName, resourceType.resourceTypeName)
+            && Objects.equals(this.resourceTypeDesc, resourceType.resourceTypeDesc);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resourceTypeCode, resourceTypeName, resourceTypeDesc);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class ResourceType  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

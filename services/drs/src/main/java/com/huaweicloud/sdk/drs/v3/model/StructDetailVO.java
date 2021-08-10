@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 灾备初始化对象详情信息体
- */
-public class StructDetailVO  {
-
-
+/** 灾备初始化对象详情信息体 */
+public class StructDetailVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="progress")
-    
+    @JsonProperty(value = "progress")
+
     private Integer progress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="src_DB")
-    
+    @JsonProperty(value = "src_DB")
+
     private String srcDB;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="src_TB")
-    
+    @JsonProperty(value = "src_TB")
+
     private String srcTB;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dst_DB")
-    
+    @JsonProperty(value = "dst_DB")
+
     private String dstDB;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dst_TB")
-    
+    @JsonProperty(value = "dst_TB")
+
     private String dstTB;
 
     public StructDetailVO withProgress(Integer progress) {
@@ -52,13 +38,9 @@ public class StructDetailVO  {
         return this;
     }
 
-    
-
-
-    /**
-     * 进度
-     * @return progress
-     */
+    /** 进度
+     * 
+     * @return progress */
     public Integer getProgress() {
         return progress;
     }
@@ -67,20 +49,14 @@ public class StructDetailVO  {
         this.progress = progress;
     }
 
-    
-
     public StructDetailVO withSrcDB(String srcDB) {
         this.srcDB = srcDB;
         return this;
     }
 
-    
-
-
-    /**
-     * 源数据库名称
-     * @return srcDB
-     */
+    /** 源数据库名称
+     * 
+     * @return srcDB */
     public String getSrcDB() {
         return srcDB;
     }
@@ -89,20 +65,14 @@ public class StructDetailVO  {
         this.srcDB = srcDB;
     }
 
-    
-
     public StructDetailVO withSrcTB(String srcTB) {
         this.srcTB = srcTB;
         return this;
     }
 
-    
-
-
-    /**
-     * 源对象名称
-     * @return srcTB
-     */
+    /** 源对象名称
+     * 
+     * @return srcTB */
     public String getSrcTB() {
         return srcTB;
     }
@@ -111,20 +81,14 @@ public class StructDetailVO  {
         this.srcTB = srcTB;
     }
 
-    
-
     public StructDetailVO withDstDB(String dstDB) {
         this.dstDB = dstDB;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标数据库名称
-     * @return dstDB
-     */
+    /** 目标数据库名称
+     * 
+     * @return dstDB */
     public String getDstDB() {
         return dstDB;
     }
@@ -133,20 +97,14 @@ public class StructDetailVO  {
         this.dstDB = dstDB;
     }
 
-    
-
     public StructDetailVO withDstTB(String dstTB) {
         this.dstTB = dstTB;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标对象名称
-     * @return dstTB
-     */
+    /** 目标对象名称
+     * 
+     * @return dstTB */
     public String getDstTB() {
         return dstTB;
     }
@@ -154,8 +112,6 @@ public class StructDetailVO  {
     public void setDstTB(String dstTB) {
         this.dstTB = dstTB;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,16 @@ public class StructDetailVO  {
             return false;
         }
         StructDetailVO structDetailVO = (StructDetailVO) o;
-        return Objects.equals(this.progress, structDetailVO.progress) &&
-            Objects.equals(this.srcDB, structDetailVO.srcDB) &&
-            Objects.equals(this.srcTB, structDetailVO.srcTB) &&
-            Objects.equals(this.dstDB, structDetailVO.dstDB) &&
-            Objects.equals(this.dstTB, structDetailVO.dstTB);
+        return Objects.equals(this.progress, structDetailVO.progress)
+            && Objects.equals(this.srcDB, structDetailVO.srcDB) && Objects.equals(this.srcTB, structDetailVO.srcTB)
+            && Objects.equals(this.dstDB, structDetailVO.dstDB) && Objects.equals(this.dstTB, structDetailVO.dstTB);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(progress, srcDB, srcTB, dstDB, dstTB);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +144,13 @@ public class StructDetailVO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

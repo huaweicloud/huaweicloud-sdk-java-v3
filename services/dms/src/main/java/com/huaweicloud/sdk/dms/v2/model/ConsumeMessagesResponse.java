@@ -1,41 +1,29 @@
 package com.huaweicloud.sdk.dms.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dms.v2.model.ConsumeMessage;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ConsumeMessagesResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private List<ConsumeMessage> body = null;
-    
+
     public ConsumeMessagesResponse withBody(List<ConsumeMessage> body) {
         this.body = body;
         return this;
     }
 
-    
     public ConsumeMessagesResponse addBodyItem(ConsumeMessage bodyItem) {
-        if(this.body == null) {
+        if (this.body == null) {
             this.body = new ArrayList<>();
         }
         this.body.add(bodyItem);
@@ -43,17 +31,16 @@ public class ConsumeMessagesResponse extends SdkResponse {
     }
 
     public ConsumeMessagesResponse withBody(Consumer<List<ConsumeMessage>> bodySetter) {
-        if(this.body == null) {
+        if (this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);
         return this;
     }
 
-    /**
-     * 消息数组。
-     * @return body
-     */
+    /** 消息数组。
+     * 
+     * @return body */
     public List<ConsumeMessage> getBody() {
         return body;
     }
@@ -61,8 +48,6 @@ public class ConsumeMessagesResponse extends SdkResponse {
     public void setBody(List<ConsumeMessage> body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -75,10 +60,12 @@ public class ConsumeMessagesResponse extends SdkResponse {
         ConsumeMessagesResponse consumeMessagesResponse = (ConsumeMessagesResponse) o;
         return Objects.equals(this.body, consumeMessagesResponse.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -87,16 +74,13 @@ public class ConsumeMessagesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

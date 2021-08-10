@@ -1,34 +1,20 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
-/**
- * 来源类型。支持源码code和artifact软件包。
- */
+/** 来源类型。支持源码code和artifact软件包。 */
 public class SourceKind {
-    
-    /**
-     * Enum CODE for value: "code"
-     */
+
+    /** Enum CODE for value: "code" */
     public static final SourceKind CODE = new SourceKind("code");
-    
-    /**
-     * Enum ARTIFACT for value: "artifact"
-     */
+
+    /** Enum ARTIFACT for value: "artifact" */
     public static final SourceKind ARTIFACT = new SourceKind("artifact");
-    
 
     private static final Map<String, SourceKind> STATIC_FIELDS = createStaticFields();
 
@@ -57,7 +43,7 @@ public class SourceKind {
 
     @JsonCreator
     public static SourceKind fromValue(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         SourceKind result = STATIC_FIELDS.get(value);
@@ -68,7 +54,7 @@ public class SourceKind {
     }
 
     public static SourceKind valueOf(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         SourceKind result = STATIC_FIELDS.get(value);
@@ -91,4 +77,3 @@ public class SourceKind {
         return this.value.hashCode();
     }
 }
-

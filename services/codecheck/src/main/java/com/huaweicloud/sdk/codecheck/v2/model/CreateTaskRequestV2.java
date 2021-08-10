@@ -1,90 +1,69 @@
 package com.huaweicloud.sdk.codecheck.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.codecheck.v2.model.IncConfigV2;
-import com.huaweicloud.sdk.codecheck.v2.model.RuleSetV2;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * CreateTaskRequestV2
- */
-public class CreateTaskRequestV2  {
-
-
+/** CreateTaskRequestV2 */
+public class CreateTaskRequestV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="check_type")
-    
+    @JsonProperty(value = "check_type")
+
     private List<String> checkType = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="git_url")
-    
+    @JsonProperty(value = "git_url")
+
     private String gitUrl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="git_branch")
-    
+    @JsonProperty(value = "git_branch")
+
     private String gitBranch;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="language")
-    
+    @JsonProperty(value = "language")
+
     private List<String> language = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rule_sets")
-    
+    @JsonProperty(value = "rule_sets")
+
     private List<RuleSetV2> ruleSets = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_type")
-    
+    @JsonProperty(value = "task_type")
+
     private String taskType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="username")
-    
+    @JsonProperty(value = "username")
+
     private String username;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_token")
-    
+    @JsonProperty(value = "access_token")
+
     private String accessToken;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="inc_config")
-    
+    @JsonProperty(value = "inc_config")
+
     private IncConfigV2 incConfig;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable_fossbot")
-    
+    @JsonProperty(value = "enable_fossbot")
+
     private Boolean enableFossbot;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_pool_id")
-    
+    @JsonProperty(value = "resource_pool_id")
+
     private String resourcePoolId;
 
     public CreateTaskRequestV2 withCheckType(List<String> checkType) {
@@ -92,9 +71,8 @@ public class CreateTaskRequestV2  {
         return this;
     }
 
-    
     public CreateTaskRequestV2 addCheckTypeItem(String checkTypeItem) {
-        if(this.checkType == null) {
+        if (this.checkType == null) {
             this.checkType = new ArrayList<>();
         }
         this.checkType.add(checkTypeItem);
@@ -102,17 +80,16 @@ public class CreateTaskRequestV2  {
     }
 
     public CreateTaskRequestV2 withCheckType(Consumer<List<String>> checkTypeSetter) {
-        if(this.checkType == null) {
+        if (this.checkType == null) {
             this.checkType = new ArrayList<>();
         }
         checkTypeSetter.accept(this.checkType);
         return this;
     }
 
-    /**
-     * 检查类型，数组格式，默认为source
-     * @return checkType
-     */
+    /** 检查类型，数组格式，默认为source
+     * 
+     * @return checkType */
     public List<String> getCheckType() {
         return checkType;
     }
@@ -121,20 +98,14 @@ public class CreateTaskRequestV2  {
         this.checkType = checkType;
     }
 
-    
-
     public CreateTaskRequestV2 withGitUrl(String gitUrl) {
         this.gitUrl = gitUrl;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库地址
-     * @return gitUrl
-     */
+    /** 仓库地址
+     * 
+     * @return gitUrl */
     public String getGitUrl() {
         return gitUrl;
     }
@@ -143,20 +114,14 @@ public class CreateTaskRequestV2  {
         this.gitUrl = gitUrl;
     }
 
-    
-
     public CreateTaskRequestV2 withGitBranch(String gitBranch) {
         this.gitBranch = gitBranch;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库分支
-     * @return gitBranch
-     */
+    /** 仓库分支
+     * 
+     * @return gitBranch */
     public String getGitBranch() {
         return gitBranch;
     }
@@ -165,16 +130,13 @@ public class CreateTaskRequestV2  {
         this.gitBranch = gitBranch;
     }
 
-    
-
     public CreateTaskRequestV2 withLanguage(List<String> language) {
         this.language = language;
         return this;
     }
 
-    
     public CreateTaskRequestV2 addLanguageItem(String languageItem) {
-        if(this.language == null) {
+        if (this.language == null) {
             this.language = new ArrayList<>();
         }
         this.language.add(languageItem);
@@ -182,17 +144,16 @@ public class CreateTaskRequestV2  {
     }
 
     public CreateTaskRequestV2 withLanguage(Consumer<List<String>> languageSetter) {
-        if(this.language == null) {
+        if (this.language == null) {
             this.language = new ArrayList<>();
         }
         languageSetter.accept(this.language);
         return this;
     }
 
-    /**
-     * 检查语言，数组格式，支持cpp,java,js,python,php,css,html,go,typescript,csharp
-     * @return language
-     */
+    /** 检查语言，数组格式，支持cpp,java,js,python,php,css,html,go,typescript,csharp
+     * 
+     * @return language */
     public List<String> getLanguage() {
         return language;
     }
@@ -201,16 +162,13 @@ public class CreateTaskRequestV2  {
         this.language = language;
     }
 
-    
-
     public CreateTaskRequestV2 withRuleSets(List<RuleSetV2> ruleSets) {
         this.ruleSets = ruleSets;
         return this;
     }
 
-    
     public CreateTaskRequestV2 addRuleSetsItem(RuleSetV2 ruleSetsItem) {
-        if(this.ruleSets == null) {
+        if (this.ruleSets == null) {
             this.ruleSets = new ArrayList<>();
         }
         this.ruleSets.add(ruleSetsItem);
@@ -218,17 +176,16 @@ public class CreateTaskRequestV2  {
     }
 
     public CreateTaskRequestV2 withRuleSets(Consumer<List<RuleSetV2>> ruleSetsSetter) {
-        if(this.ruleSets == null) {
+        if (this.ruleSets == null) {
             this.ruleSets = new ArrayList<>();
         }
         ruleSetsSetter.accept(this.ruleSets);
         return this;
     }
 
-    /**
-     * 指定规则集
-     * @return ruleSets
-     */
+    /** 指定规则集
+     * 
+     * @return ruleSets */
     public List<RuleSetV2> getRuleSets() {
         return ruleSets;
     }
@@ -237,20 +194,14 @@ public class CreateTaskRequestV2  {
         this.ruleSets = ruleSets;
     }
 
-    
-
     public CreateTaskRequestV2 withTaskType(String taskType) {
         this.taskType = taskType;
         return this;
     }
 
-    
-
-
-    /**
-     * 检查类型，支持full/inc两种类型，full表示全量检查，inc表示mr检查
-     * @return taskType
-     */
+    /** 检查类型，支持full/inc两种类型，full表示全量检查，inc表示mr检查
+     * 
+     * @return taskType */
     public String getTaskType() {
         return taskType;
     }
@@ -259,20 +210,14 @@ public class CreateTaskRequestV2  {
         this.taskType = taskType;
     }
 
-    
-
     public CreateTaskRequestV2 withUsername(String username) {
         this.username = username;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库有权限的用户名
-     * @return username
-     */
+    /** 仓库有权限的用户名
+     * 
+     * @return username */
     public String getUsername() {
         return username;
     }
@@ -281,20 +226,14 @@ public class CreateTaskRequestV2  {
         this.username = username;
     }
 
-    
-
     public CreateTaskRequestV2 withAccessToken(String accessToken) {
         this.accessToken = accessToken;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库有权限的用户token
-     * @return accessToken
-     */
+    /** 仓库有权限的用户token
+     * 
+     * @return accessToken */
     public String getAccessToken() {
         return accessToken;
     }
@@ -303,27 +242,23 @@ public class CreateTaskRequestV2  {
         this.accessToken = accessToken;
     }
 
-    
-
     public CreateTaskRequestV2 withIncConfig(IncConfigV2 incConfig) {
         this.incConfig = incConfig;
         return this;
     }
 
     public CreateTaskRequestV2 withIncConfig(Consumer<IncConfigV2> incConfigSetter) {
-        if(this.incConfig == null ){
+        if (this.incConfig == null) {
             this.incConfig = new IncConfigV2();
             incConfigSetter.accept(this.incConfig);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get incConfig
-     * @return incConfig
-     */
+    /** Get incConfig
+     * 
+     * @return incConfig */
     public IncConfigV2 getIncConfig() {
         return incConfig;
     }
@@ -332,20 +267,14 @@ public class CreateTaskRequestV2  {
         this.incConfig = incConfig;
     }
 
-    
-
     public CreateTaskRequestV2 withEnableFossbot(Boolean enableFossbot) {
         this.enableFossbot = enableFossbot;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否打开fossbot检查,默认不开
-     * @return enableFossbot
-     */
+    /** 是否打开fossbot检查,默认不开
+     * 
+     * @return enableFossbot */
     public Boolean getEnableFossbot() {
         return enableFossbot;
     }
@@ -354,20 +283,14 @@ public class CreateTaskRequestV2  {
         this.enableFossbot = enableFossbot;
     }
 
-    
-
     public CreateTaskRequestV2 withResourcePoolId(String resourcePoolId) {
         this.resourcePoolId = resourcePoolId;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源池id，可以从资源池管理页面获取
-     * @return resourcePoolId
-     */
+    /** 资源池id，可以从资源池管理页面获取
+     * 
+     * @return resourcePoolId */
     public String getResourcePoolId() {
         return resourcePoolId;
     }
@@ -375,8 +298,6 @@ public class CreateTaskRequestV2  {
     public void setResourcePoolId(String resourcePoolId) {
         this.resourcePoolId = resourcePoolId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -387,22 +308,34 @@ public class CreateTaskRequestV2  {
             return false;
         }
         CreateTaskRequestV2 createTaskRequestV2 = (CreateTaskRequestV2) o;
-        return Objects.equals(this.checkType, createTaskRequestV2.checkType) &&
-            Objects.equals(this.gitUrl, createTaskRequestV2.gitUrl) &&
-            Objects.equals(this.gitBranch, createTaskRequestV2.gitBranch) &&
-            Objects.equals(this.language, createTaskRequestV2.language) &&
-            Objects.equals(this.ruleSets, createTaskRequestV2.ruleSets) &&
-            Objects.equals(this.taskType, createTaskRequestV2.taskType) &&
-            Objects.equals(this.username, createTaskRequestV2.username) &&
-            Objects.equals(this.accessToken, createTaskRequestV2.accessToken) &&
-            Objects.equals(this.incConfig, createTaskRequestV2.incConfig) &&
-            Objects.equals(this.enableFossbot, createTaskRequestV2.enableFossbot) &&
-            Objects.equals(this.resourcePoolId, createTaskRequestV2.resourcePoolId);
+        return Objects.equals(this.checkType, createTaskRequestV2.checkType)
+            && Objects.equals(this.gitUrl, createTaskRequestV2.gitUrl)
+            && Objects.equals(this.gitBranch, createTaskRequestV2.gitBranch)
+            && Objects.equals(this.language, createTaskRequestV2.language)
+            && Objects.equals(this.ruleSets, createTaskRequestV2.ruleSets)
+            && Objects.equals(this.taskType, createTaskRequestV2.taskType)
+            && Objects.equals(this.username, createTaskRequestV2.username)
+            && Objects.equals(this.accessToken, createTaskRequestV2.accessToken)
+            && Objects.equals(this.incConfig, createTaskRequestV2.incConfig)
+            && Objects.equals(this.enableFossbot, createTaskRequestV2.enableFossbot)
+            && Objects.equals(this.resourcePoolId, createTaskRequestV2.resourcePoolId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(checkType, gitUrl, gitBranch, language, ruleSets, taskType, username, accessToken, incConfig, enableFossbot, resourcePoolId);
+        return Objects.hash(checkType,
+            gitUrl,
+            gitBranch,
+            language,
+            ruleSets,
+            taskType,
+            username,
+            accessToken,
+            incConfig,
+            enableFossbot,
+            resourcePoolId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -421,16 +354,13 @@ public class CreateTaskRequestV2  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

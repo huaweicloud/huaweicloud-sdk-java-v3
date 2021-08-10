@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.antiddos.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.antiddos.v1.model.UpdateAntiDDosServiceRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateDDosRequest  {
-
-
+/** Request Object */
+public class UpdateDDosRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="floating_ip_id")
-    
+    @JsonProperty(value = "floating_ip_id")
+
     private String floatingIpId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip")
-    
+    @JsonProperty(value = "ip")
+
     private String ip;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateAntiDDosServiceRequestBody body;
 
     public UpdateDDosRequest withFloatingIpId(String floatingIpId) {
@@ -41,13 +29,9 @@ public class UpdateDDosRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 用户EIP对应的ID
-     * @return floatingIpId
-     */
+    /** 用户EIP对应的ID
+     * 
+     * @return floatingIpId */
     public String getFloatingIpId() {
         return floatingIpId;
     }
@@ -56,20 +40,14 @@ public class UpdateDDosRequest  {
         this.floatingIpId = floatingIpId;
     }
 
-    
-
     public UpdateDDosRequest withIp(String ip) {
         this.ip = ip;
         return this;
     }
 
-    
-
-
-    /**
-     * ip
-     * @return ip
-     */
+    /** ip
+     * 
+     * @return ip */
     public String getIp() {
         return ip;
     }
@@ -78,27 +56,23 @@ public class UpdateDDosRequest  {
         this.ip = ip;
     }
 
-    
-
     public UpdateDDosRequest withBody(UpdateAntiDDosServiceRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdateDDosRequest withBody(Consumer<UpdateAntiDDosServiceRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateAntiDDosServiceRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateAntiDDosServiceRequestBody getBody() {
         return body;
     }
@@ -106,8 +80,6 @@ public class UpdateDDosRequest  {
     public void setBody(UpdateAntiDDosServiceRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,15 @@ public class UpdateDDosRequest  {
             return false;
         }
         UpdateDDosRequest updateDDosRequest = (UpdateDDosRequest) o;
-        return Objects.equals(this.floatingIpId, updateDDosRequest.floatingIpId) &&
-            Objects.equals(this.ip, updateDDosRequest.ip) &&
-            Objects.equals(this.body, updateDDosRequest.body);
+        return Objects.equals(this.floatingIpId, updateDDosRequest.floatingIpId)
+            && Objects.equals(this.ip, updateDDosRequest.ip) && Objects.equals(this.body, updateDDosRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(floatingIpId, ip, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +109,13 @@ public class UpdateDDosRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

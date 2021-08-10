@@ -1,51 +1,35 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dcs.v2.model.RunlogItem;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListRedislogResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_num")
-    
+    @JsonProperty(value = "total_num")
+
     private Integer totalNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_list")
-    
+    @JsonProperty(value = "file_list")
+
     private List<RunlogItem> fileList = null;
-    
+
     public ListRedislogResponse withTotalNum(Integer totalNum) {
         this.totalNum = totalNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 总数
-     * @return totalNum
-     */
+    /** 总数
+     * 
+     * @return totalNum */
     public Integer getTotalNum() {
         return totalNum;
     }
@@ -54,16 +38,13 @@ public class ListRedislogResponse extends SdkResponse {
         this.totalNum = totalNum;
     }
 
-    
-
     public ListRedislogResponse withFileList(List<RunlogItem> fileList) {
         this.fileList = fileList;
         return this;
     }
 
-    
     public ListRedislogResponse addFileListItem(RunlogItem fileListItem) {
-        if(this.fileList == null) {
+        if (this.fileList == null) {
             this.fileList = new ArrayList<>();
         }
         this.fileList.add(fileListItem);
@@ -71,17 +52,16 @@ public class ListRedislogResponse extends SdkResponse {
     }
 
     public ListRedislogResponse withFileList(Consumer<List<RunlogItem>> fileListSetter) {
-        if(this.fileList == null) {
+        if (this.fileList == null) {
             this.fileList = new ArrayList<>();
         }
         fileListSetter.accept(this.fileList);
         return this;
     }
 
-    /**
-     * 运行日志列表
-     * @return fileList
-     */
+    /** 运行日志列表
+     * 
+     * @return fileList */
     public List<RunlogItem> getFileList() {
         return fileList;
     }
@@ -89,8 +69,6 @@ public class ListRedislogResponse extends SdkResponse {
     public void setFileList(List<RunlogItem> fileList) {
         this.fileList = fileList;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ListRedislogResponse extends SdkResponse {
             return false;
         }
         ListRedislogResponse listRedislogResponse = (ListRedislogResponse) o;
-        return Objects.equals(this.totalNum, listRedislogResponse.totalNum) &&
-            Objects.equals(this.fileList, listRedislogResponse.fileList);
+        return Objects.equals(this.totalNum, listRedislogResponse.totalNum)
+            && Objects.equals(this.fileList, listRedislogResponse.fileList);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(totalNum, fileList);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ListRedislogResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

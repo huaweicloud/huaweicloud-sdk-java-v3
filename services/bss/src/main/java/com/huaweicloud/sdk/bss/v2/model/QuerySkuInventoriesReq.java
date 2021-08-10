@@ -1,39 +1,28 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bss.v2.model.SkuItem;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * QuerySkuInventoriesReq
- */
-public class QuerySkuInventoriesReq  {
-
-
+/** QuerySkuInventoriesReq */
+public class QuerySkuInventoriesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sku_items")
-    
+    @JsonProperty(value = "sku_items")
+
     private List<SkuItem> skuItems = null;
-    
+
     public QuerySkuInventoriesReq withSkuItems(List<SkuItem> skuItems) {
         this.skuItems = skuItems;
         return this;
     }
 
-    
     public QuerySkuInventoriesReq addSkuItemsItem(SkuItem skuItemsItem) {
-        if(this.skuItems == null) {
+        if (this.skuItems == null) {
             this.skuItems = new ArrayList<>();
         }
         this.skuItems.add(skuItemsItem);
@@ -41,17 +30,16 @@ public class QuerySkuInventoriesReq  {
     }
 
     public QuerySkuInventoriesReq withSkuItems(Consumer<List<SkuItem>> skuItemsSetter) {
-        if(this.skuItems == null) {
+        if (this.skuItems == null) {
             this.skuItems = new ArrayList<>();
         }
         skuItemsSetter.accept(this.skuItems);
         return this;
     }
 
-    /**
-     * 待查询库存项，参见表1。
-     * @return skuItems
-     */
+    /** 待查询库存项，参见表1。
+     * 
+     * @return skuItems */
     public List<SkuItem> getSkuItems() {
         return skuItems;
     }
@@ -59,8 +47,6 @@ public class QuerySkuInventoriesReq  {
     public void setSkuItems(List<SkuItem> skuItems) {
         this.skuItems = skuItems;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -73,10 +59,12 @@ public class QuerySkuInventoriesReq  {
         QuerySkuInventoriesReq querySkuInventoriesReq = (QuerySkuInventoriesReq) o;
         return Objects.equals(this.skuItems, querySkuInventoriesReq.skuItems);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(skuItems);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -85,16 +73,13 @@ public class QuerySkuInventoriesReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.PostgresqlDatabaseSchemaReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreatePostgresqlDatabaseSchemaRequest  {
-
-
+/** Request Object */
+public class CreatePostgresqlDatabaseSchemaRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private PostgresqlDatabaseSchemaReq body;
 
     public CreatePostgresqlDatabaseSchemaRequest withXLanguage(String xLanguage) {
@@ -41,15 +29,11 @@ public class CreatePostgresqlDatabaseSchemaRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -58,20 +42,14 @@ public class CreatePostgresqlDatabaseSchemaRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public CreatePostgresqlDatabaseSchemaRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -80,27 +58,23 @@ public class CreatePostgresqlDatabaseSchemaRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public CreatePostgresqlDatabaseSchemaRequest withBody(PostgresqlDatabaseSchemaReq body) {
         this.body = body;
         return this;
     }
 
     public CreatePostgresqlDatabaseSchemaRequest withBody(Consumer<PostgresqlDatabaseSchemaReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new PostgresqlDatabaseSchemaReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public PostgresqlDatabaseSchemaReq getBody() {
         return body;
     }
@@ -108,8 +82,6 @@ public class CreatePostgresqlDatabaseSchemaRequest  {
     public void setBody(PostgresqlDatabaseSchemaReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -119,15 +91,18 @@ public class CreatePostgresqlDatabaseSchemaRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CreatePostgresqlDatabaseSchemaRequest createPostgresqlDatabaseSchemaRequest = (CreatePostgresqlDatabaseSchemaRequest) o;
-        return Objects.equals(this.xLanguage, createPostgresqlDatabaseSchemaRequest.xLanguage) &&
-            Objects.equals(this.instanceId, createPostgresqlDatabaseSchemaRequest.instanceId) &&
-            Objects.equals(this.body, createPostgresqlDatabaseSchemaRequest.body);
+        CreatePostgresqlDatabaseSchemaRequest createPostgresqlDatabaseSchemaRequest =
+            (CreatePostgresqlDatabaseSchemaRequest) o;
+        return Objects.equals(this.xLanguage, createPostgresqlDatabaseSchemaRequest.xLanguage)
+            && Objects.equals(this.instanceId, createPostgresqlDatabaseSchemaRequest.instanceId)
+            && Objects.equals(this.body, createPostgresqlDatabaseSchemaRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -138,16 +113,13 @@ public class CreatePostgresqlDatabaseSchemaRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

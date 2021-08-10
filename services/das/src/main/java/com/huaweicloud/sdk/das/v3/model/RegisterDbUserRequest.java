@@ -1,48 +1,32 @@
 package com.huaweicloud.sdk.das.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.das.v3.model.RegisterDbUserRequestBody;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class RegisterDbUserRequest  {
-
-
+/** Request Object */
+public class RegisterDbUserRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
-    /**
-     * 语言
-     */
+
+    /** 语言 */
     public static final class XLanguageEnum {
 
-        
-        /**
-         * Enum ZH_CN for value: "zh-cn"
-         */
+        /** Enum ZH_CN for value: "zh-cn" */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
-        
-        /**
-         * Enum EN_US for value: "en-us"
-         */
+
+        /** Enum EN_US for value: "en-us" */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
-        
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
 
@@ -71,7 +55,7 @@ public class RegisterDbUserRequest  {
 
         @JsonCreator
         public static XLanguageEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -82,7 +66,7 @@ public class RegisterDbUserRequest  {
         }
 
         public static XLanguageEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -106,16 +90,14 @@ public class RegisterDbUserRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private XLanguageEnum xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private RegisterDbUserRequestBody body;
 
     public RegisterDbUserRequest withInstanceId(String instanceId) {
@@ -123,13 +105,9 @@ public class RegisterDbUserRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -138,22 +116,16 @@ public class RegisterDbUserRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public RegisterDbUserRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
         return xLanguage;
     }
@@ -162,27 +134,23 @@ public class RegisterDbUserRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public RegisterDbUserRequest withBody(RegisterDbUserRequestBody body) {
         this.body = body;
         return this;
     }
 
     public RegisterDbUserRequest withBody(Consumer<RegisterDbUserRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new RegisterDbUserRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public RegisterDbUserRequestBody getBody() {
         return body;
     }
@@ -190,8 +158,6 @@ public class RegisterDbUserRequest  {
     public void setBody(RegisterDbUserRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -202,14 +168,16 @@ public class RegisterDbUserRequest  {
             return false;
         }
         RegisterDbUserRequest registerDbUserRequest = (RegisterDbUserRequest) o;
-        return Objects.equals(this.instanceId, registerDbUserRequest.instanceId) &&
-            Objects.equals(this.xLanguage, registerDbUserRequest.xLanguage) &&
-            Objects.equals(this.body, registerDbUserRequest.body);
+        return Objects.equals(this.instanceId, registerDbUserRequest.instanceId)
+            && Objects.equals(this.xLanguage, registerDbUserRequest.xLanguage)
+            && Objects.equals(this.body, registerDbUserRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, xLanguage, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -220,16 +188,13 @@ public class RegisterDbUserRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

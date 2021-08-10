@@ -1,68 +1,51 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 查询云服务器指定磁盘挂载信息响应信息
- */
-public class ServerBlockDevice  {
-
-
+/** 查询云服务器指定磁盘挂载信息响应信息 */
+public class ServerBlockDevice {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bootIndex")
-    
+    @JsonProperty(value = "bootIndex")
+
     private Integer bootIndex;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pciAddress")
-    
+    @JsonProperty(value = "pciAddress")
+
     private String pciAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volumeId")
-    
+    @JsonProperty(value = "volumeId")
+
     private String volumeId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device")
-    
+    @JsonProperty(value = "device")
+
     private String device;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="serverId")
-    
+    @JsonProperty(value = "serverId")
+
     private String serverId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bus")
-    
+    @JsonProperty(value = "bus")
+
     private String bus;
 
     public ServerBlockDevice withBootIndex(Integer bootIndex) {
@@ -70,13 +53,9 @@ public class ServerBlockDevice  {
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘启动顺序。  - 0为系统盘。  - 非0为数据盘
-     * @return bootIndex
-     */
+    /** 云硬盘启动顺序。 - 0为系统盘。 - 非0为数据盘
+     * 
+     * @return bootIndex */
     public Integer getBootIndex() {
         return bootIndex;
     }
@@ -85,20 +64,14 @@ public class ServerBlockDevice  {
         this.bootIndex = bootIndex;
     }
 
-    
-
     public ServerBlockDevice withPciAddress(String pciAddress) {
         this.pciAddress = pciAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * pci地址。
-     * @return pciAddress
-     */
+    /** pci地址。
+     * 
+     * @return pciAddress */
     public String getPciAddress() {
         return pciAddress;
     }
@@ -107,20 +80,14 @@ public class ServerBlockDevice  {
         this.pciAddress = pciAddress;
     }
 
-    
-
     public ServerBlockDevice withVolumeId(String volumeId) {
         this.volumeId = volumeId;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘ID，UUID格式。
-     * @return volumeId
-     */
+    /** 云硬盘ID，UUID格式。
+     * 
+     * @return volumeId */
     public String getVolumeId() {
         return volumeId;
     }
@@ -129,20 +96,14 @@ public class ServerBlockDevice  {
         this.volumeId = volumeId;
     }
 
-    
-
     public ServerBlockDevice withDevice(String device) {
         this.device = device;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘挂载盘符，即磁盘挂载点。
-     * @return device
-     */
+    /** 云硬盘挂载盘符，即磁盘挂载点。
+     * 
+     * @return device */
     public String getDevice() {
         return device;
     }
@@ -151,20 +112,14 @@ public class ServerBlockDevice  {
         this.device = device;
     }
 
-    
-
     public ServerBlockDevice withServerId(String serverId) {
         this.serverId = serverId;
         return this;
     }
 
-    
-
-
-    /**
-     * 弹性云服务器ID，UUID格式。
-     * @return serverId
-     */
+    /** 弹性云服务器ID，UUID格式。
+     * 
+     * @return serverId */
     public String getServerId() {
         return serverId;
     }
@@ -173,20 +128,14 @@ public class ServerBlockDevice  {
         this.serverId = serverId;
     }
 
-    
-
     public ServerBlockDevice withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 挂载ID，与云硬盘ID相同。UUID格式。
-     * @return id
-     */
+    /** 挂载ID，与云硬盘ID相同。UUID格式。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -195,20 +144,14 @@ public class ServerBlockDevice  {
         this.id = id;
     }
 
-    
-
     public ServerBlockDevice withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘大小，单位GB。
-     * @return size
-     */
+    /** 云硬盘大小，单位GB。
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -217,20 +160,14 @@ public class ServerBlockDevice  {
         this.size = size;
     }
 
-    
-
     public ServerBlockDevice withBus(String bus) {
         this.bus = bus;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘总线类型 。  取值范围：virtio、scsi
-     * @return bus
-     */
+    /** 磁盘总线类型 。 取值范围：virtio、scsi
+     * 
+     * @return bus */
     public String getBus() {
         return bus;
     }
@@ -238,8 +175,6 @@ public class ServerBlockDevice  {
     public void setBus(String bus) {
         this.bus = bus;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -250,19 +185,20 @@ public class ServerBlockDevice  {
             return false;
         }
         ServerBlockDevice serverBlockDevice = (ServerBlockDevice) o;
-        return Objects.equals(this.bootIndex, serverBlockDevice.bootIndex) &&
-            Objects.equals(this.pciAddress, serverBlockDevice.pciAddress) &&
-            Objects.equals(this.volumeId, serverBlockDevice.volumeId) &&
-            Objects.equals(this.device, serverBlockDevice.device) &&
-            Objects.equals(this.serverId, serverBlockDevice.serverId) &&
-            Objects.equals(this.id, serverBlockDevice.id) &&
-            Objects.equals(this.size, serverBlockDevice.size) &&
-            Objects.equals(this.bus, serverBlockDevice.bus);
+        return Objects.equals(this.bootIndex, serverBlockDevice.bootIndex)
+            && Objects.equals(this.pciAddress, serverBlockDevice.pciAddress)
+            && Objects.equals(this.volumeId, serverBlockDevice.volumeId)
+            && Objects.equals(this.device, serverBlockDevice.device)
+            && Objects.equals(this.serverId, serverBlockDevice.serverId)
+            && Objects.equals(this.id, serverBlockDevice.id) && Objects.equals(this.size, serverBlockDevice.size)
+            && Objects.equals(this.bus, serverBlockDevice.bus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(bootIndex, pciAddress, volumeId, device, serverId, id, size, bus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -278,16 +214,13 @@ public class ServerBlockDevice  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListDeploymentsRequest  {
-
-
+/** Request Object */
+public class ListDeploymentsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edgecloud_id")
-    
+    @JsonProperty(value = "edgecloud_id")
+
     private String edgecloudId;
 
     public ListDeploymentsRequest withOffset(Integer offset) {
@@ -52,13 +38,9 @@ public class ListDeploymentsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量。 当前偏移量，默认为0。
-     * @return offset
-     */
+    /** 偏移量。 当前偏移量，默认为0。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -67,22 +49,14 @@ public class ListDeploymentsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListDeploymentsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询返回部署计划列表当前页面的数量。
-     * minimum: 0
-     * maximum: 1000
-     * @return limit
-     */
+    /** 查询返回部署计划列表当前页面的数量。 minimum: 0 maximum: 1000
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -91,20 +65,14 @@ public class ListDeploymentsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListDeploymentsRequest withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询条件，部署计划状态，现只包含如下值： - open:部署计划处于未执行状态，可执行部署计划进行部署 - closed:部署计划已关闭，不可部署。
-     * @return status
-     */
+    /** 查询条件，部署计划状态，现只包含如下值： - open:部署计划处于未执行状态，可执行部署计划进行部署 - closed:部署计划已关闭，不可部署。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -113,20 +81,14 @@ public class ListDeploymentsRequest  {
         this.status = status;
     }
 
-    
-
     public ListDeploymentsRequest withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询条件，部署计划ID。
-     * @return id
-     */
+    /** 查询条件，部署计划ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -135,20 +97,14 @@ public class ListDeploymentsRequest  {
         this.id = id;
     }
 
-    
-
     public ListDeploymentsRequest withEdgecloudId(String edgecloudId) {
         this.edgecloudId = edgecloudId;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询条件，边缘业务ID。
-     * @return edgecloudId
-     */
+    /** 查询条件，边缘业务ID。
+     * 
+     * @return edgecloudId */
     public String getEdgecloudId() {
         return edgecloudId;
     }
@@ -156,8 +112,6 @@ public class ListDeploymentsRequest  {
     public void setEdgecloudId(String edgecloudId) {
         this.edgecloudId = edgecloudId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -168,16 +122,18 @@ public class ListDeploymentsRequest  {
             return false;
         }
         ListDeploymentsRequest listDeploymentsRequest = (ListDeploymentsRequest) o;
-        return Objects.equals(this.offset, listDeploymentsRequest.offset) &&
-            Objects.equals(this.limit, listDeploymentsRequest.limit) &&
-            Objects.equals(this.status, listDeploymentsRequest.status) &&
-            Objects.equals(this.id, listDeploymentsRequest.id) &&
-            Objects.equals(this.edgecloudId, listDeploymentsRequest.edgecloudId);
+        return Objects.equals(this.offset, listDeploymentsRequest.offset)
+            && Objects.equals(this.limit, listDeploymentsRequest.limit)
+            && Objects.equals(this.status, listDeploymentsRequest.status)
+            && Objects.equals(this.id, listDeploymentsRequest.id)
+            && Objects.equals(this.edgecloudId, listDeploymentsRequest.edgecloudId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(offset, limit, status, id, edgecloudId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -190,16 +146,13 @@ public class ListDeploymentsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,39 +1,28 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.PwdPassword;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class PwdIdentity  {
+public class PwdIdentity {
 
-    /**
-     * Gets or Sets methods
-     */
+    /** Gets or Sets methods */
     public static final class MethodsEnum {
 
-        
-        /**
-         * Enum PASSWORD for value: "password"
-         */
+        /** Enum PASSWORD for value: "password" */
         public static final MethodsEnum PASSWORD = new MethodsEnum("password");
-        
 
         private static final Map<String, MethodsEnum> STATIC_FIELDS = createStaticFields();
 
@@ -61,7 +50,7 @@ public class PwdIdentity  {
 
         @JsonCreator
         public static MethodsEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MethodsEnum result = STATIC_FIELDS.get(value);
@@ -72,7 +61,7 @@ public class PwdIdentity  {
         }
 
         public static MethodsEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MethodsEnum result = STATIC_FIELDS.get(value);
@@ -96,16 +85,14 @@ public class PwdIdentity  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="methods")
-    
+    @JsonProperty(value = "methods")
+
     private List<MethodsEnum> methods = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="password")
-    
+    @JsonProperty(value = "password")
+
     private PwdPassword password;
 
     public PwdIdentity withMethods(List<MethodsEnum> methods) {
@@ -113,9 +100,8 @@ public class PwdIdentity  {
         return this;
     }
 
-    
     public PwdIdentity addMethodsItem(MethodsEnum methodsItem) {
-        if(this.methods == null) {
+        if (this.methods == null) {
             this.methods = new ArrayList<>();
         }
         this.methods.add(methodsItem);
@@ -123,17 +109,16 @@ public class PwdIdentity  {
     }
 
     public PwdIdentity withMethods(Consumer<List<MethodsEnum>> methodsSetter) {
-        if(this.methods == null) {
+        if (this.methods == null) {
             this.methods = new ArrayList<>();
         }
         methodsSetter.accept(this.methods);
         return this;
     }
 
-    /**
-     * 认证方法，该字段内容为[\"password\"]。
-     * @return methods
-     */
+    /** 认证方法，该字段内容为[\"password\"]。
+     * 
+     * @return methods */
     public List<MethodsEnum> getMethods() {
         return methods;
     }
@@ -142,27 +127,23 @@ public class PwdIdentity  {
         this.methods = methods;
     }
 
-    
-
     public PwdIdentity withPassword(PwdPassword password) {
         this.password = password;
         return this;
     }
 
     public PwdIdentity withPassword(Consumer<PwdPassword> passwordSetter) {
-        if(this.password == null ){
+        if (this.password == null) {
             this.password = new PwdPassword();
             passwordSetter.accept(this.password);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get password
-     * @return password
-     */
+    /** Get password
+     * 
+     * @return password */
     public PwdPassword getPassword() {
         return password;
     }
@@ -170,8 +151,6 @@ public class PwdIdentity  {
     public void setPassword(PwdPassword password) {
         this.password = password;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -182,13 +161,14 @@ public class PwdIdentity  {
             return false;
         }
         PwdIdentity pwdIdentity = (PwdIdentity) o;
-        return Objects.equals(this.methods, pwdIdentity.methods) &&
-            Objects.equals(this.password, pwdIdentity.password);
+        return Objects.equals(this.methods, pwdIdentity.methods) && Objects.equals(this.password, pwdIdentity.password);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(methods, password);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -198,16 +178,13 @@ public class PwdIdentity  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

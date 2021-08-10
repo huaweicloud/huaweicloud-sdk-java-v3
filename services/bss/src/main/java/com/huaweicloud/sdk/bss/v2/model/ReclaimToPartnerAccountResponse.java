@@ -1,28 +1,17 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ReclaimToPartnerAccountResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trans_id")
-    
+    @JsonProperty(value = "trans_id")
+
     private String transId;
 
     public ReclaimToPartnerAccountResponse withTransId(String transId) {
@@ -30,13 +19,9 @@ public class ReclaimToPartnerAccountResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 事务流水ID，只有成功响应才会返回。
-     * @return transId
-     */
+    /** 事务流水ID，只有成功响应才会返回。
+     * 
+     * @return transId */
     public String getTransId() {
         return transId;
     }
@@ -44,8 +29,6 @@ public class ReclaimToPartnerAccountResponse extends SdkResponse {
     public void setTransId(String transId) {
         this.transId = transId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -58,10 +41,12 @@ public class ReclaimToPartnerAccountResponse extends SdkResponse {
         ReclaimToPartnerAccountResponse reclaimToPartnerAccountResponse = (ReclaimToPartnerAccountResponse) o;
         return Objects.equals(this.transId, reclaimToPartnerAccountResponse.transId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(transId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -70,16 +55,13 @@ public class ReclaimToPartnerAccountResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

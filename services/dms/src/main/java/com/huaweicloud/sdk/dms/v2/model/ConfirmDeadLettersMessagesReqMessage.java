@@ -1,47 +1,31 @@
 package com.huaweicloud.sdk.dms.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * ConfirmDeadLettersMessagesReqMessage
- */
-public class ConfirmDeadLettersMessagesReqMessage  {
-
-
+/** ConfirmDeadLettersMessagesReqMessage */
+public class ConfirmDeadLettersMessagesReqMessage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="handler")
-    
+    @JsonProperty(value = "handler")
+
     private String handler;
-    /**
-     * 客户端处理数据的状态。 取值为“success”或者“fail”。
-     */
+
+    /** 客户端处理数据的状态。 取值为“success”或者“fail”。 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum SUCCESS for value: "success"
-         */
+        /** Enum SUCCESS for value: "success" */
         public static final StatusEnum SUCCESS = new StatusEnum("success");
-        
-        /**
-         * Enum FAIL for value: "fail"
-         */
+
+        /** Enum FAIL for value: "fail" */
         public static final StatusEnum FAIL = new StatusEnum("fail");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,7 +54,7 @@ public class ConfirmDeadLettersMessagesReqMessage  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -81,7 +65,7 @@ public class ConfirmDeadLettersMessagesReqMessage  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -105,10 +89,9 @@ public class ConfirmDeadLettersMessagesReqMessage  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
     public ConfirmDeadLettersMessagesReqMessage withHandler(String handler) {
@@ -116,13 +99,9 @@ public class ConfirmDeadLettersMessagesReqMessage  {
         return this;
     }
 
-    
-
-
-    /**
-     * 消费时返回的ID。
-     * @return handler
-     */
+    /** 消费时返回的ID。
+     * 
+     * @return handler */
     public String getHandler() {
         return handler;
     }
@@ -131,20 +110,14 @@ public class ConfirmDeadLettersMessagesReqMessage  {
         this.handler = handler;
     }
 
-    
-
     public ConfirmDeadLettersMessagesReqMessage withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 客户端处理数据的状态。 取值为“success”或者“fail”。
-     * @return status
-     */
+    /** 客户端处理数据的状态。 取值为“success”或者“fail”。
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -152,8 +125,6 @@ public class ConfirmDeadLettersMessagesReqMessage  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -163,14 +134,17 @@ public class ConfirmDeadLettersMessagesReqMessage  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ConfirmDeadLettersMessagesReqMessage confirmDeadLettersMessagesReqMessage = (ConfirmDeadLettersMessagesReqMessage) o;
-        return Objects.equals(this.handler, confirmDeadLettersMessagesReqMessage.handler) &&
-            Objects.equals(this.status, confirmDeadLettersMessagesReqMessage.status);
+        ConfirmDeadLettersMessagesReqMessage confirmDeadLettersMessagesReqMessage =
+            (ConfirmDeadLettersMessagesReqMessage) o;
+        return Objects.equals(this.handler, confirmDeadLettersMessagesReqMessage.handler)
+            && Objects.equals(this.status, confirmDeadLettersMessagesReqMessage.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(handler, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -180,16 +154,13 @@ public class ConfirmDeadLettersMessagesReqMessage  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

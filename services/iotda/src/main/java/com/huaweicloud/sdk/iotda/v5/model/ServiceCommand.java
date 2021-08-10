@@ -1,56 +1,39 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotda.v5.model.ServiceCommandPara;
-import com.huaweicloud.sdk.iotda.v5.model.ServiceCommandResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 命令服务对象。
- */
-public class ServiceCommand  {
-
-
+/** 命令服务对象。 */
+public class ServiceCommand {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="command_name")
-    
+    @JsonProperty(value = "command_name")
+
     private String commandName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="paras")
-    
+    @JsonProperty(value = "paras")
+
     private List<ServiceCommandPara> paras = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="responses")
-    
+    @JsonProperty(value = "responses")
+
     private List<ServiceCommandResponse> responses = null;
-    
+
     public ServiceCommand withCommandName(String commandName) {
         this.commandName = commandName;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：设备命令名称。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
-     * @return commandName
-     */
+    /** **参数说明**：设备命令名称。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
+     * 
+     * @return commandName */
     public String getCommandName() {
         return commandName;
     }
@@ -59,16 +42,13 @@ public class ServiceCommand  {
         this.commandName = commandName;
     }
 
-    
-
     public ServiceCommand withParas(List<ServiceCommandPara> paras) {
         this.paras = paras;
         return this;
     }
 
-    
     public ServiceCommand addParasItem(ServiceCommandPara parasItem) {
-        if(this.paras == null) {
+        if (this.paras == null) {
             this.paras = new ArrayList<>();
         }
         this.paras.add(parasItem);
@@ -76,17 +56,16 @@ public class ServiceCommand  {
     }
 
     public ServiceCommand withParas(Consumer<List<ServiceCommandPara>> parasSetter) {
-        if(this.paras == null) {
+        if (this.paras == null) {
             this.paras = new ArrayList<>();
         }
         parasSetter.accept(this.paras);
         return this;
     }
 
-    /**
-     * **参数说明**：设备命令的参数列表。
-     * @return paras
-     */
+    /** **参数说明**：设备命令的参数列表。
+     * 
+     * @return paras */
     public List<ServiceCommandPara> getParas() {
         return paras;
     }
@@ -95,16 +74,13 @@ public class ServiceCommand  {
         this.paras = paras;
     }
 
-    
-
     public ServiceCommand withResponses(List<ServiceCommandResponse> responses) {
         this.responses = responses;
         return this;
     }
 
-    
     public ServiceCommand addResponsesItem(ServiceCommandResponse responsesItem) {
-        if(this.responses == null) {
+        if (this.responses == null) {
             this.responses = new ArrayList<>();
         }
         this.responses.add(responsesItem);
@@ -112,17 +88,16 @@ public class ServiceCommand  {
     }
 
     public ServiceCommand withResponses(Consumer<List<ServiceCommandResponse>> responsesSetter) {
-        if(this.responses == null) {
+        if (this.responses == null) {
             this.responses = new ArrayList<>();
         }
         responsesSetter.accept(this.responses);
         return this;
     }
 
-    /**
-     * **参数说明**：设备命令的响应列表。
-     * @return responses
-     */
+    /** **参数说明**：设备命令的响应列表。
+     * 
+     * @return responses */
     public List<ServiceCommandResponse> getResponses() {
         return responses;
     }
@@ -130,8 +105,6 @@ public class ServiceCommand  {
     public void setResponses(List<ServiceCommandResponse> responses) {
         this.responses = responses;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -142,14 +115,16 @@ public class ServiceCommand  {
             return false;
         }
         ServiceCommand serviceCommand = (ServiceCommand) o;
-        return Objects.equals(this.commandName, serviceCommand.commandName) &&
-            Objects.equals(this.paras, serviceCommand.paras) &&
-            Objects.equals(this.responses, serviceCommand.responses);
+        return Objects.equals(this.commandName, serviceCommand.commandName)
+            && Objects.equals(this.paras, serviceCommand.paras)
+            && Objects.equals(this.responses, serviceCommand.responses);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(commandName, paras, responses);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -160,16 +135,13 @@ public class ServiceCommand  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

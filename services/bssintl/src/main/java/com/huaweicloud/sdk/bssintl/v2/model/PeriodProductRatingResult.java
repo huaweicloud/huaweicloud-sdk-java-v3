@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.bssintl.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * PeriodProductRatingResult
- */
-public class PeriodProductRatingResult  {
-
-
+/** PeriodProductRatingResult */
+public class PeriodProductRatingResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
-    
+    @JsonProperty(value = "product_id")
+
     private String productId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amount")
-    
+    @JsonProperty(value = "amount")
+
     private Double amount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="official_website_amount")
-    
+    @JsonProperty(value = "official_website_amount")
+
     private Double officialWebsiteAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="discount_amount")
-    
+    @JsonProperty(value = "discount_amount")
+
     private Double discountAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="measure_id")
-    
+    @JsonProperty(value = "measure_id")
+
     private Integer measureId;
 
     public PeriodProductRatingResult withId(String id) {
@@ -58,13 +43,9 @@ public class PeriodProductRatingResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：ID标识| |参数约束及描述：ID标识，来源于请求中的ID|
-     * @return id
-     */
+    /** |参数名称：ID标识| |参数约束及描述：ID标识，来源于请求中的ID|
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -73,20 +54,14 @@ public class PeriodProductRatingResult  {
         this.id = id;
     }
 
-    
-
     public PeriodProductRatingResult withProductId(String productId) {
         this.productId = productId;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：产品ID| |参数约束及描述：产品ID|
-     * @return productId
-     */
+    /** |参数名称：产品ID| |参数约束及描述：产品ID|
+     * 
+     * @return productId */
     public String getProductId() {
         return productId;
     }
@@ -95,20 +70,14 @@ public class PeriodProductRatingResult  {
         this.productId = productId;
     }
 
-    
-
     public PeriodProductRatingResult withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：总额| |参数约束及描述：即最终优惠的金额|
-     * @return amount
-     */
+    /** |参数名称：总额| |参数约束及描述：即最终优惠的金额|
+     * 
+     * @return amount */
     public Double getAmount() {
         return amount;
     }
@@ -117,20 +86,14 @@ public class PeriodProductRatingResult  {
         this.amount = amount;
     }
 
-    
-
     public PeriodProductRatingResult withOfficialWebsiteAmount(Double officialWebsiteAmount) {
         this.officialWebsiteAmount = officialWebsiteAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：官网价| |参数约束及描述：官网价|
-     * @return officialWebsiteAmount
-     */
+    /** |参数名称：官网价| |参数约束及描述：官网价|
+     * 
+     * @return officialWebsiteAmount */
     public Double getOfficialWebsiteAmount() {
         return officialWebsiteAmount;
     }
@@ -139,20 +102,14 @@ public class PeriodProductRatingResult  {
         this.officialWebsiteAmount = officialWebsiteAmount;
     }
 
-    
-
     public PeriodProductRatingResult withDiscountAmount(Double discountAmount) {
         this.discountAmount = discountAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：优惠额（官网价和总价的差）| |参数约束及描述：优惠额（官网价和总价的差）|
-     * @return discountAmount
-     */
+    /** |参数名称：优惠额（官网价和总价的差）| |参数约束及描述：优惠额（官网价和总价的差）|
+     * 
+     * @return discountAmount */
     public Double getDiscountAmount() {
         return discountAmount;
     }
@@ -161,20 +118,14 @@ public class PeriodProductRatingResult  {
         this.discountAmount = discountAmount;
     }
 
-    
-
     public PeriodProductRatingResult withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：度量单位标识| |参数约束及描述：1：元|
-     * @return measureId
-     */
+    /** |参数名称：度量单位标识| |参数约束及描述：1：元|
+     * 
+     * @return measureId */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -182,8 +133,6 @@ public class PeriodProductRatingResult  {
     public void setMeasureId(Integer measureId) {
         this.measureId = measureId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,17 +143,19 @@ public class PeriodProductRatingResult  {
             return false;
         }
         PeriodProductRatingResult periodProductRatingResult = (PeriodProductRatingResult) o;
-        return Objects.equals(this.id, periodProductRatingResult.id) &&
-            Objects.equals(this.productId, periodProductRatingResult.productId) &&
-            Objects.equals(this.amount, periodProductRatingResult.amount) &&
-            Objects.equals(this.officialWebsiteAmount, periodProductRatingResult.officialWebsiteAmount) &&
-            Objects.equals(this.discountAmount, periodProductRatingResult.discountAmount) &&
-            Objects.equals(this.measureId, periodProductRatingResult.measureId);
+        return Objects.equals(this.id, periodProductRatingResult.id)
+            && Objects.equals(this.productId, periodProductRatingResult.productId)
+            && Objects.equals(this.amount, periodProductRatingResult.amount)
+            && Objects.equals(this.officialWebsiteAmount, periodProductRatingResult.officialWebsiteAmount)
+            && Objects.equals(this.discountAmount, periodProductRatingResult.discountAmount)
+            && Objects.equals(this.measureId, periodProductRatingResult.measureId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, productId, amount, officialWebsiteAmount, discountAmount, measureId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,16 +169,13 @@ public class PeriodProductRatingResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

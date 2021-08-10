@@ -1,58 +1,39 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 健康检查对象，用于状态树中
- */
-public class HealthmonitorsInStatusResp  {
-
-
+/** 健康检查对象，用于状态树中 */
+public class HealthmonitorsInStatusResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 健康检查类型
-     */
+
+    /** 健康检查类型 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum UDP_CONNECT for value: "UDP_CONNECT"
-         */
+        /** Enum UDP_CONNECT for value: "UDP_CONNECT" */
         public static final TypeEnum UDP_CONNECT = new TypeEnum("UDP_CONNECT");
-        
-        /**
-         * Enum TCP for value: "TCP"
-         */
+
+        /** Enum TCP for value: "TCP" */
         public static final TypeEnum TCP = new TypeEnum("TCP");
-        
-        /**
-         * Enum HTTP for value: "HTTP"
-         */
+
+        /** Enum HTTP for value: "HTTP" */
         public static final TypeEnum HTTP = new TypeEnum("HTTP");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -82,7 +63,7 @@ public class HealthmonitorsInStatusResp  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -93,7 +74,7 @@ public class HealthmonitorsInStatusResp  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -117,16 +98,14 @@ public class HealthmonitorsInStatusResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provisioning_status")
-    
+    @JsonProperty(value = "provisioning_status")
+
     private String provisioningStatus;
 
     public HealthmonitorsInStatusResp withId(String id) {
@@ -134,13 +113,9 @@ public class HealthmonitorsInStatusResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查ID
-     * @return id
-     */
+    /** 健康检查ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -149,20 +124,14 @@ public class HealthmonitorsInStatusResp  {
         this.id = id;
     }
 
-    
-
     public HealthmonitorsInStatusResp withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查名称
-     * @return name
-     */
+    /** 健康检查名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -171,20 +140,14 @@ public class HealthmonitorsInStatusResp  {
         this.name = name;
     }
 
-    
-
     public HealthmonitorsInStatusResp withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查类型
-     * @return type
-     */
+    /** 健康检查类型
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -193,20 +156,14 @@ public class HealthmonitorsInStatusResp  {
         this.type = type;
     }
 
-    
-
     public HealthmonitorsInStatusResp withProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
-     * @return provisioningStatus
-     */
+    /** 健康检查的配置状态；该字段为预留字段，暂未启用。默认为ACTIVE。
+     * 
+     * @return provisioningStatus */
     public String getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -214,8 +171,6 @@ public class HealthmonitorsInStatusResp  {
     public void setProvisioningStatus(String provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -226,15 +181,17 @@ public class HealthmonitorsInStatusResp  {
             return false;
         }
         HealthmonitorsInStatusResp healthmonitorsInStatusResp = (HealthmonitorsInStatusResp) o;
-        return Objects.equals(this.id, healthmonitorsInStatusResp.id) &&
-            Objects.equals(this.name, healthmonitorsInStatusResp.name) &&
-            Objects.equals(this.type, healthmonitorsInStatusResp.type) &&
-            Objects.equals(this.provisioningStatus, healthmonitorsInStatusResp.provisioningStatus);
+        return Objects.equals(this.id, healthmonitorsInStatusResp.id)
+            && Objects.equals(this.name, healthmonitorsInStatusResp.name)
+            && Objects.equals(this.type, healthmonitorsInStatusResp.type)
+            && Objects.equals(this.provisioningStatus, healthmonitorsInStatusResp.provisioningStatus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, type, provisioningStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -246,16 +203,13 @@ public class HealthmonitorsInStatusResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

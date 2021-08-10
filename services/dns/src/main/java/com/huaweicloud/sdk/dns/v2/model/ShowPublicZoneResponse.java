@@ -1,121 +1,95 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dns.v2.model.PageLink;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowPublicZoneResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="email")
-    
+    @JsonProperty(value = "email")
+
     private String email;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="zone_type")
-    
+    @JsonProperty(value = "zone_type")
+
     private String zoneType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ttl")
-    
+    @JsonProperty(value = "ttl")
+
     private Integer ttl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="serial")
-    
+    @JsonProperty(value = "serial")
+
     private Integer serial;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="record_num")
-    
+    @JsonProperty(value = "record_num")
+
     private Integer recordNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pool_id")
-    
+    @JsonProperty(value = "pool_id")
+
     private String poolId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private String updatedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="masters")
-    
+    @JsonProperty(value = "masters")
+
     private List<String> masters = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private PageLink links;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
     public ShowPublicZoneResponse withId(String id) {
@@ -123,13 +97,9 @@ public class ShowPublicZoneResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * Zone的ID
-     * @return id
-     */
+    /** Zone的ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -138,20 +108,14 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowPublicZoneResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * zone名称
-     * @return name
-     */
+    /** zone名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -160,20 +124,14 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowPublicZoneResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 对zone的描述信息
-     * @return description
-     */
+    /** 对zone的描述信息
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -182,20 +140,14 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public ShowPublicZoneResponse withEmail(String email) {
         this.email = email;
         return this;
     }
 
-    
-
-
-    /**
-     * 管理该zone的管理员邮箱
-     * @return email
-     */
+    /** 管理该zone的管理员邮箱
+     * 
+     * @return email */
     public String getEmail() {
         return email;
     }
@@ -204,20 +156,14 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.email = email;
     }
 
-    
-
     public ShowPublicZoneResponse withZoneType(String zoneType) {
         this.zoneType = zoneType;
         return this;
     }
 
-    
-
-
-    /**
-     * zone类型，公网（public）或者内网（private）
-     * @return zoneType
-     */
+    /** zone类型，公网（public）或者内网（private）
+     * 
+     * @return zoneType */
     public String getZoneType() {
         return zoneType;
     }
@@ -226,20 +172,14 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.zoneType = zoneType;
     }
 
-    
-
     public ShowPublicZoneResponse withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
     }
 
-    
-
-
-    /**
-     * 该zone下SOA记录中的ttl值
-     * @return ttl
-     */
+    /** 该zone下SOA记录中的ttl值
+     * 
+     * @return ttl */
     public Integer getTtl() {
         return ttl;
     }
@@ -248,20 +188,14 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.ttl = ttl;
     }
 
-    
-
     public ShowPublicZoneResponse withSerial(Integer serial) {
         this.serial = serial;
         return this;
     }
 
-    
-
-
-    /**
-     * 该zone下SOA记录中用于标识zone文件变更的序列值，用于主从节点同步
-     * @return serial
-     */
+    /** 该zone下SOA记录中用于标识zone文件变更的序列值，用于主从节点同步
+     * 
+     * @return serial */
     public Integer getSerial() {
         return serial;
     }
@@ -270,20 +204,14 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.serial = serial;
     }
 
-    
-
     public ShowPublicZoneResponse withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 该zone下的recordset个数
-     * @return status
-     */
+    /** 该zone下的recordset个数
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -292,20 +220,14 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public ShowPublicZoneResponse withRecordNum(Integer recordNum) {
         this.recordNum = recordNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 该zone下的recordset个数
-     * @return recordNum
-     */
+    /** 该zone下的recordset个数
+     * 
+     * @return recordNum */
     public Integer getRecordNum() {
         return recordNum;
     }
@@ -314,20 +236,14 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.recordNum = recordNum;
     }
 
-    
-
     public ShowPublicZoneResponse withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
     }
 
-    
-
-
-    /**
-     * 托管该zone的pool，由系统分配
-     * @return poolId
-     */
+    /** 托管该zone的pool，由系统分配
+     * 
+     * @return poolId */
     public String getPoolId() {
         return poolId;
     }
@@ -336,20 +252,14 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.poolId = poolId;
     }
 
-    
-
     public ShowPublicZoneResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return createdAt
-     */
+    /** 创建时间
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -358,20 +268,14 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.createdAt = createdAt;
     }
 
-    
-
     public ShowPublicZoneResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间
-     * @return updatedAt
-     */
+    /** 更新时间
+     * 
+     * @return updatedAt */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -380,20 +284,14 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.updatedAt = updatedAt;
     }
 
-    
-
     public ShowPublicZoneResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名关联的企业项目ID，长度不超过36个字符
-     * @return enterpriseProjectId
-     */
+    /** 域名关联的企业项目ID，长度不超过36个字符
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -402,16 +300,13 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public ShowPublicZoneResponse withMasters(List<String> masters) {
         this.masters = masters;
         return this;
     }
 
-    
     public ShowPublicZoneResponse addMastersItem(String mastersItem) {
-        if(this.masters == null) {
+        if (this.masters == null) {
             this.masters = new ArrayList<>();
         }
         this.masters.add(mastersItem);
@@ -419,17 +314,16 @@ public class ShowPublicZoneResponse extends SdkResponse {
     }
 
     public ShowPublicZoneResponse withMasters(Consumer<List<String>> mastersSetter) {
-        if(this.masters == null) {
+        if (this.masters == null) {
             this.masters = new ArrayList<>();
         }
         mastersSetter.accept(this.masters);
         return this;
     }
 
-    /**
-     * 主从模式中，从DNS服务器用以获取DNS信息
-     * @return masters
-     */
+    /** 主从模式中，从DNS服务器用以获取DNS信息
+     * 
+     * @return masters */
     public List<String> getMasters() {
         return masters;
     }
@@ -438,27 +332,23 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.masters = masters;
     }
 
-    
-
     public ShowPublicZoneResponse withLinks(PageLink links) {
         this.links = links;
         return this;
     }
 
     public ShowPublicZoneResponse withLinks(Consumer<PageLink> linksSetter) {
-        if(this.links == null ){
+        if (this.links == null) {
             this.links = new PageLink();
             linksSetter.accept(this.links);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get links
-     * @return links
-     */
+    /** Get links
+     * 
+     * @return links */
     public PageLink getLinks() {
         return links;
     }
@@ -467,20 +357,14 @@ public class ShowPublicZoneResponse extends SdkResponse {
         this.links = links;
     }
 
-    
-
     public ShowPublicZoneResponse withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * zone所属的项目ID。
-     * @return projectId
-     */
+    /** zone所属的项目ID。
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -488,8 +372,6 @@ public class ShowPublicZoneResponse extends SdkResponse {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -500,27 +382,44 @@ public class ShowPublicZoneResponse extends SdkResponse {
             return false;
         }
         ShowPublicZoneResponse showPublicZoneResponse = (ShowPublicZoneResponse) o;
-        return Objects.equals(this.id, showPublicZoneResponse.id) &&
-            Objects.equals(this.name, showPublicZoneResponse.name) &&
-            Objects.equals(this.description, showPublicZoneResponse.description) &&
-            Objects.equals(this.email, showPublicZoneResponse.email) &&
-            Objects.equals(this.zoneType, showPublicZoneResponse.zoneType) &&
-            Objects.equals(this.ttl, showPublicZoneResponse.ttl) &&
-            Objects.equals(this.serial, showPublicZoneResponse.serial) &&
-            Objects.equals(this.status, showPublicZoneResponse.status) &&
-            Objects.equals(this.recordNum, showPublicZoneResponse.recordNum) &&
-            Objects.equals(this.poolId, showPublicZoneResponse.poolId) &&
-            Objects.equals(this.createdAt, showPublicZoneResponse.createdAt) &&
-            Objects.equals(this.updatedAt, showPublicZoneResponse.updatedAt) &&
-            Objects.equals(this.enterpriseProjectId, showPublicZoneResponse.enterpriseProjectId) &&
-            Objects.equals(this.masters, showPublicZoneResponse.masters) &&
-            Objects.equals(this.links, showPublicZoneResponse.links) &&
-            Objects.equals(this.projectId, showPublicZoneResponse.projectId);
+        return Objects.equals(this.id, showPublicZoneResponse.id)
+            && Objects.equals(this.name, showPublicZoneResponse.name)
+            && Objects.equals(this.description, showPublicZoneResponse.description)
+            && Objects.equals(this.email, showPublicZoneResponse.email)
+            && Objects.equals(this.zoneType, showPublicZoneResponse.zoneType)
+            && Objects.equals(this.ttl, showPublicZoneResponse.ttl)
+            && Objects.equals(this.serial, showPublicZoneResponse.serial)
+            && Objects.equals(this.status, showPublicZoneResponse.status)
+            && Objects.equals(this.recordNum, showPublicZoneResponse.recordNum)
+            && Objects.equals(this.poolId, showPublicZoneResponse.poolId)
+            && Objects.equals(this.createdAt, showPublicZoneResponse.createdAt)
+            && Objects.equals(this.updatedAt, showPublicZoneResponse.updatedAt)
+            && Objects.equals(this.enterpriseProjectId, showPublicZoneResponse.enterpriseProjectId)
+            && Objects.equals(this.masters, showPublicZoneResponse.masters)
+            && Objects.equals(this.links, showPublicZoneResponse.links)
+            && Objects.equals(this.projectId, showPublicZoneResponse.projectId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, email, zoneType, ttl, serial, status, recordNum, poolId, createdAt, updatedAt, enterpriseProjectId, masters, links, projectId);
+        return Objects.hash(id,
+            name,
+            description,
+            email,
+            zoneType,
+            ttl,
+            serial,
+            status,
+            recordNum,
+            poolId,
+            createdAt,
+            updatedAt,
+            enterpriseProjectId,
+            masters,
+            links,
+            projectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -544,16 +443,13 @@ public class ShowPublicZoneResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

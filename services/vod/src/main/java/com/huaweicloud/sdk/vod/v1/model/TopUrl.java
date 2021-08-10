@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * TopUrl
- */
-public class TopUrl  {
-
-
+/** TopUrl */
+public class TopUrl {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private Long value;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="asset_id")
-    
+    @JsonProperty(value = "asset_id")
+
     private String assetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="title")
-    
+    @JsonProperty(value = "title")
+
     private String title;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="duration")
-    
+    @JsonProperty(value = "duration")
+
     private Integer duration;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Long size;
 
     public TopUrl withValue(Long value) {
@@ -52,13 +38,9 @@ public class TopUrl  {
         return this;
     }
 
-    
-
-
-    /**
-     * 总播放次数。
-     * @return value
-     */
+    /** 总播放次数。
+     * 
+     * @return value */
     public Long getValue() {
         return value;
     }
@@ -67,20 +49,14 @@ public class TopUrl  {
         this.value = value;
     }
 
-    
-
     public TopUrl withAssetId(String assetId) {
         this.assetId = assetId;
         return this;
     }
 
-    
-
-
-    /**
-     * 媒资ID。
-     * @return assetId
-     */
+    /** 媒资ID。
+     * 
+     * @return assetId */
     public String getAssetId() {
         return assetId;
     }
@@ -89,20 +65,14 @@ public class TopUrl  {
         this.assetId = assetId;
     }
 
-    
-
     public TopUrl withTitle(String title) {
         this.title = title;
         return this;
     }
 
-    
-
-
-    /**
-     * 媒资名称。
-     * @return title
-     */
+    /** 媒资名称。
+     * 
+     * @return title */
     public String getTitle() {
         return title;
     }
@@ -111,20 +81,14 @@ public class TopUrl  {
         this.title = title;
     }
 
-    
-
     public TopUrl withDuration(Integer duration) {
         this.duration = duration;
         return this;
     }
 
-    
-
-
-    /**
-     * 媒资时长。  单位：秒。
-     * @return duration
-     */
+    /** 媒资时长。 单位：秒。
+     * 
+     * @return duration */
     public Integer getDuration() {
         return duration;
     }
@@ -133,20 +97,14 @@ public class TopUrl  {
         this.duration = duration;
     }
 
-    
-
     public TopUrl withSize(Long size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 媒资原始大小。  单位：字节。
-     * @return size
-     */
+    /** 媒资原始大小。 单位：字节。
+     * 
+     * @return size */
     public Long getSize() {
         return size;
     }
@@ -154,8 +112,6 @@ public class TopUrl  {
     public void setSize(Long size) {
         this.size = size;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,16 @@ public class TopUrl  {
             return false;
         }
         TopUrl topUrl = (TopUrl) o;
-        return Objects.equals(this.value, topUrl.value) &&
-            Objects.equals(this.assetId, topUrl.assetId) &&
-            Objects.equals(this.title, topUrl.title) &&
-            Objects.equals(this.duration, topUrl.duration) &&
-            Objects.equals(this.size, topUrl.size);
+        return Objects.equals(this.value, topUrl.value) && Objects.equals(this.assetId, topUrl.assetId)
+            && Objects.equals(this.title, topUrl.title) && Objects.equals(this.duration, topUrl.duration)
+            && Objects.equals(this.size, topUrl.size);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(value, assetId, title, duration, size);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +144,13 @@ public class TopUrl  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

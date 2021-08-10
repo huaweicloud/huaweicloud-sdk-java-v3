@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.NovaCreateServersOption;
-import com.huaweicloud.sdk.ecs.v2.model.NovaCreateServersSchedulerHint;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * This is a auto create Body Object
- */
-public class NovaCreateServersRequestBody  {
-
-
+/** This is a auto create Body Object */
+public class NovaCreateServersRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server")
-    
+    @JsonProperty(value = "server")
+
     private NovaCreateServersOption server;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os:scheduler_hints")
-    
+    @JsonProperty(value = "os:scheduler_hints")
+
     private NovaCreateServersSchedulerHint osSchedulerHints;
 
     public NovaCreateServersRequestBody withServer(NovaCreateServersOption server) {
@@ -37,19 +25,17 @@ public class NovaCreateServersRequestBody  {
     }
 
     public NovaCreateServersRequestBody withServer(Consumer<NovaCreateServersOption> serverSetter) {
-        if(this.server == null ){
+        if (this.server == null) {
             this.server = new NovaCreateServersOption();
             serverSetter.accept(this.server);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get server
-     * @return server
-     */
+    /** Get server
+     * 
+     * @return server */
     public NovaCreateServersOption getServer() {
         return server;
     }
@@ -58,27 +44,24 @@ public class NovaCreateServersRequestBody  {
         this.server = server;
     }
 
-    
-
     public NovaCreateServersRequestBody withOsSchedulerHints(NovaCreateServersSchedulerHint osSchedulerHints) {
         this.osSchedulerHints = osSchedulerHints;
         return this;
     }
 
-    public NovaCreateServersRequestBody withOsSchedulerHints(Consumer<NovaCreateServersSchedulerHint> osSchedulerHintsSetter) {
-        if(this.osSchedulerHints == null ){
+    public NovaCreateServersRequestBody withOsSchedulerHints(
+        Consumer<NovaCreateServersSchedulerHint> osSchedulerHintsSetter) {
+        if (this.osSchedulerHints == null) {
             this.osSchedulerHints = new NovaCreateServersSchedulerHint();
             osSchedulerHintsSetter.accept(this.osSchedulerHints);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get osSchedulerHints
-     * @return osSchedulerHints
-     */
+    /** Get osSchedulerHints
+     * 
+     * @return osSchedulerHints */
     public NovaCreateServersSchedulerHint getOsSchedulerHints() {
         return osSchedulerHints;
     }
@@ -86,8 +69,6 @@ public class NovaCreateServersRequestBody  {
     public void setOsSchedulerHints(NovaCreateServersSchedulerHint osSchedulerHints) {
         this.osSchedulerHints = osSchedulerHints;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -98,13 +79,15 @@ public class NovaCreateServersRequestBody  {
             return false;
         }
         NovaCreateServersRequestBody novaCreateServersRequestBody = (NovaCreateServersRequestBody) o;
-        return Objects.equals(this.server, novaCreateServersRequestBody.server) &&
-            Objects.equals(this.osSchedulerHints, novaCreateServersRequestBody.osSchedulerHints);
+        return Objects.equals(this.server, novaCreateServersRequestBody.server)
+            && Objects.equals(this.osSchedulerHints, novaCreateServersRequestBody.osSchedulerHints);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(server, osSchedulerHints);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,16 +97,13 @@ public class NovaCreateServersRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

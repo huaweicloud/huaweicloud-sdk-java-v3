@@ -1,41 +1,29 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 
  */
-public class UpdateProjectOption  {
+public class UpdateProjectOption {
 
-    /**
-     * 项目的状态信息，参数的值为\"suspended\"或\"normal\"。   - status值为\"suspended\"时，会将项目设置为冻结状态。   - status值为\"normal\"时，会将项目设置为正常（解冻）状态。
-     */
+    /** 项目的状态信息，参数的值为\"suspended\"或\"normal\"。 - status值为\"suspended\"时，会将项目设置为冻结状态。 -
+     * status值为\"normal\"时，会将项目设置为正常（解冻）状态。 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum SUSPENDED for value: "suspended"
-         */
+        /** Enum SUSPENDED for value: "suspended" */
         public static final StatusEnum SUSPENDED = new StatusEnum("suspended");
-        
-        /**
-         * Enum NORMAL for value: "normal"
-         */
+
+        /** Enum NORMAL for value: "normal" */
         public static final StatusEnum NORMAL = new StatusEnum("normal");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +52,7 @@ public class UpdateProjectOption  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +63,7 @@ public class UpdateProjectOption  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -99,10 +87,9 @@ public class UpdateProjectOption  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
     public UpdateProjectOption withStatus(StatusEnum status) {
@@ -110,13 +97,10 @@ public class UpdateProjectOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 项目的状态信息，参数的值为\"suspended\"或\"normal\"。   - status值为\"suspended\"时，会将项目设置为冻结状态。   - status值为\"normal\"时，会将项目设置为正常（解冻）状态。
-     * @return status
-     */
+    /** 项目的状态信息，参数的值为\"suspended\"或\"normal\"。 - status值为\"suspended\"时，会将项目设置为冻结状态。 -
+     * status值为\"normal\"时，会将项目设置为正常（解冻）状态。
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -124,8 +108,6 @@ public class UpdateProjectOption  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,10 +120,12 @@ public class UpdateProjectOption  {
         UpdateProjectOption updateProjectOption = (UpdateProjectOption) o;
         return Objects.equals(this.status, updateProjectOption.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -150,16 +134,13 @@ public class UpdateProjectOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

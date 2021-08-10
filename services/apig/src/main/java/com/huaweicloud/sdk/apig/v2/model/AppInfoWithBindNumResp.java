@@ -1,81 +1,62 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.time.OffsetDateTime;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * AppInfoWithBindNumResp
- */
-public class AppInfoWithBindNumResp  {
-
-
+/** AppInfoWithBindNumResp */
+public class AppInfoWithBindNumResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator")
-    
+    @JsonProperty(value = "creator")
+
     private String creator;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private OffsetDateTime updateTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_key")
-    
+    @JsonProperty(value = "app_key")
+
     private String appKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
+
     private String remark;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_secret")
-    
+    @JsonProperty(value = "app_secret")
+
     private String appSecret;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="register_time")
-    
+    @JsonProperty(value = "register_time")
+
     private OffsetDateTime registerTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bind_num")
-    
+    @JsonProperty(value = "bind_num")
+
     private Integer bindNum;
 
     public AppInfoWithBindNumResp withCreator(String creator) {
@@ -83,13 +64,9 @@ public class AppInfoWithBindNumResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * APP的创建者 - USER：用户自行创建 - MARKET：云市场分配
-     * @return creator
-     */
+    /** APP的创建者 - USER：用户自行创建 - MARKET：云市场分配
+     * 
+     * @return creator */
     public String getCreator() {
         return creator;
     }
@@ -98,20 +75,14 @@ public class AppInfoWithBindNumResp  {
         this.creator = creator;
     }
 
-    
-
     public AppInfoWithBindNumResp withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间
-     * @return updateTime
-     */
+    /** 更新时间
+     * 
+     * @return updateTime */
     public OffsetDateTime getUpdateTime() {
         return updateTime;
     }
@@ -120,20 +91,14 @@ public class AppInfoWithBindNumResp  {
         this.updateTime = updateTime;
     }
 
-    
-
     public AppInfoWithBindNumResp withAppKey(String appKey) {
         this.appKey = appKey;
         return this;
     }
 
-    
-
-
-    /**
-     * APP的key
-     * @return appKey
-     */
+    /** APP的key
+     * 
+     * @return appKey */
     public String getAppKey() {
         return appKey;
     }
@@ -142,20 +107,14 @@ public class AppInfoWithBindNumResp  {
         this.appKey = appKey;
     }
 
-    
-
     public AppInfoWithBindNumResp withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 名称
-     * @return name
-     */
+    /** 名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -164,20 +123,14 @@ public class AppInfoWithBindNumResp  {
         this.name = name;
     }
 
-    
-
     public AppInfoWithBindNumResp withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述
-     * @return remark
-     */
+    /** 描述
+     * 
+     * @return remark */
     public String getRemark() {
         return remark;
     }
@@ -186,20 +139,14 @@ public class AppInfoWithBindNumResp  {
         this.remark = remark;
     }
 
-    
-
     public AppInfoWithBindNumResp withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 编号
-     * @return id
-     */
+    /** 编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -208,20 +155,14 @@ public class AppInfoWithBindNumResp  {
         this.id = id;
     }
 
-    
-
     public AppInfoWithBindNumResp withAppSecret(String appSecret) {
         this.appSecret = appSecret;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥
-     * @return appSecret
-     */
+    /** 密钥
+     * 
+     * @return appSecret */
     public String getAppSecret() {
         return appSecret;
     }
@@ -230,20 +171,14 @@ public class AppInfoWithBindNumResp  {
         this.appSecret = appSecret;
     }
 
-    
-
     public AppInfoWithBindNumResp withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 注册时间
-     * @return registerTime
-     */
+    /** 注册时间
+     * 
+     * @return registerTime */
     public OffsetDateTime getRegisterTime() {
         return registerTime;
     }
@@ -252,20 +187,14 @@ public class AppInfoWithBindNumResp  {
         this.registerTime = registerTime;
     }
 
-    
-
     public AppInfoWithBindNumResp withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态   - 1： 有效
-     * @return status
-     */
+    /** 状态 - 1： 有效
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -274,20 +203,14 @@ public class AppInfoWithBindNumResp  {
         this.status = status;
     }
 
-    
-
     public AppInfoWithBindNumResp withBindNum(Integer bindNum) {
         this.bindNum = bindNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 绑定的API数量
-     * @return bindNum
-     */
+    /** 绑定的API数量
+     * 
+     * @return bindNum */
     public Integer getBindNum() {
         return bindNum;
     }
@@ -295,8 +218,6 @@ public class AppInfoWithBindNumResp  {
     public void setBindNum(Integer bindNum) {
         this.bindNum = bindNum;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -307,21 +228,23 @@ public class AppInfoWithBindNumResp  {
             return false;
         }
         AppInfoWithBindNumResp appInfoWithBindNumResp = (AppInfoWithBindNumResp) o;
-        return Objects.equals(this.creator, appInfoWithBindNumResp.creator) &&
-            Objects.equals(this.updateTime, appInfoWithBindNumResp.updateTime) &&
-            Objects.equals(this.appKey, appInfoWithBindNumResp.appKey) &&
-            Objects.equals(this.name, appInfoWithBindNumResp.name) &&
-            Objects.equals(this.remark, appInfoWithBindNumResp.remark) &&
-            Objects.equals(this.id, appInfoWithBindNumResp.id) &&
-            Objects.equals(this.appSecret, appInfoWithBindNumResp.appSecret) &&
-            Objects.equals(this.registerTime, appInfoWithBindNumResp.registerTime) &&
-            Objects.equals(this.status, appInfoWithBindNumResp.status) &&
-            Objects.equals(this.bindNum, appInfoWithBindNumResp.bindNum);
+        return Objects.equals(this.creator, appInfoWithBindNumResp.creator)
+            && Objects.equals(this.updateTime, appInfoWithBindNumResp.updateTime)
+            && Objects.equals(this.appKey, appInfoWithBindNumResp.appKey)
+            && Objects.equals(this.name, appInfoWithBindNumResp.name)
+            && Objects.equals(this.remark, appInfoWithBindNumResp.remark)
+            && Objects.equals(this.id, appInfoWithBindNumResp.id)
+            && Objects.equals(this.appSecret, appInfoWithBindNumResp.appSecret)
+            && Objects.equals(this.registerTime, appInfoWithBindNumResp.registerTime)
+            && Objects.equals(this.status, appInfoWithBindNumResp.status)
+            && Objects.equals(this.bindNum, appInfoWithBindNumResp.bindNum);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(creator, updateTime, appKey, name, remark, id, appSecret, registerTime, status, bindNum);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -339,16 +262,13 @@ public class AppInfoWithBindNumResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

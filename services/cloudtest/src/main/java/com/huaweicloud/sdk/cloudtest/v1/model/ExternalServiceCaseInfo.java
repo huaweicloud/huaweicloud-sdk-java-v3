@@ -1,77 +1,59 @@
 package com.huaweicloud.sdk.cloudtest.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cloudtest.v1.model.ExternalServiceCaseStep;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 测试用例其他扩展信息
- */
-public class ExternalServiceCaseInfo  {
-
-
+/** 测试用例其他扩展信息 */
+public class ExternalServiceCaseInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="preparation")
-    
+    @JsonProperty(value = "preparation")
+
     private String preparation;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="steps")
-    
+    @JsonProperty(value = "steps")
+
     private List<ExternalServiceCaseStep> steps = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="label_list")
-    
+    @JsonProperty(value = "label_list")
+
     private List<String> labelList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="module_id")
-    
+    @JsonProperty(value = "module_id")
+
     private String moduleId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="test_version_id")
-    
+    @JsonProperty(value = "test_version_id")
+
     private String testVersionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fix_version_id")
-    
+    @JsonProperty(value = "fix_version_id")
+
     private String fixVersionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="assigned_id")
-    
+    @JsonProperty(value = "assigned_id")
+
     private String assignedId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="issue_id")
-    
+    @JsonProperty(value = "issue_id")
+
     private String issueId;
 
     public ExternalServiceCaseInfo withDescription(String description) {
@@ -79,13 +61,9 @@ public class ExternalServiceCaseInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 测试用例描述信息，长度为[0-500]位字符
-     * @return description
-     */
+    /** 测试用例描述信息，长度为[0-500]位字符
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -94,20 +72,14 @@ public class ExternalServiceCaseInfo  {
         this.description = description;
     }
 
-    
-
     public ExternalServiceCaseInfo withPreparation(String preparation) {
         this.preparation = preparation;
         return this;
     }
 
-    
-
-
-    /**
-     * 执行该测试用例时需要满足的前置条件，长度为[0-500]位字符
-     * @return preparation
-     */
+    /** 执行该测试用例时需要满足的前置条件，长度为[0-500]位字符
+     * 
+     * @return preparation */
     public String getPreparation() {
         return preparation;
     }
@@ -116,16 +88,13 @@ public class ExternalServiceCaseInfo  {
         this.preparation = preparation;
     }
 
-    
-
     public ExternalServiceCaseInfo withSteps(List<ExternalServiceCaseStep> steps) {
         this.steps = steps;
         return this;
     }
 
-    
     public ExternalServiceCaseInfo addStepsItem(ExternalServiceCaseStep stepsItem) {
-        if(this.steps == null) {
+        if (this.steps == null) {
             this.steps = new ArrayList<>();
         }
         this.steps.add(stepsItem);
@@ -133,17 +102,16 @@ public class ExternalServiceCaseInfo  {
     }
 
     public ExternalServiceCaseInfo withSteps(Consumer<List<ExternalServiceCaseStep>> stepsSetter) {
-        if(this.steps == null) {
+        if (this.steps == null) {
             this.steps = new ArrayList<>();
         }
         stepsSetter.accept(this.steps);
         return this;
     }
 
-    /**
-     * 测试步骤，数组长度小于10
-     * @return steps
-     */
+    /** 测试步骤，数组长度小于10
+     * 
+     * @return steps */
     public List<ExternalServiceCaseStep> getSteps() {
         return steps;
     }
@@ -152,16 +120,13 @@ public class ExternalServiceCaseInfo  {
         this.steps = steps;
     }
 
-    
-
     public ExternalServiceCaseInfo withLabelList(List<String> labelList) {
         this.labelList = labelList;
         return this;
     }
 
-    
     public ExternalServiceCaseInfo addLabelListItem(String labelListItem) {
-        if(this.labelList == null) {
+        if (this.labelList == null) {
             this.labelList = new ArrayList<>();
         }
         this.labelList.add(labelListItem);
@@ -169,17 +134,16 @@ public class ExternalServiceCaseInfo  {
     }
 
     public ExternalServiceCaseInfo withLabelList(Consumer<List<String>> labelListSetter) {
-        if(this.labelList == null) {
+        if (this.labelList == null) {
             this.labelList = new ArrayList<>();
         }
         labelListSetter.accept(this.labelList);
         return this;
     }
 
-    /**
-     * 标签名称列表，数组长度小于25
-     * @return labelList
-     */
+    /** 标签名称列表，数组长度小于25
+     * 
+     * @return labelList */
     public List<String> getLabelList() {
         return labelList;
     }
@@ -188,20 +152,14 @@ public class ExternalServiceCaseInfo  {
         this.labelList = labelList;
     }
 
-    
-
     public ExternalServiceCaseInfo withModuleId(String moduleId) {
         this.moduleId = moduleId;
         return this;
     }
 
-    
-
-
-    /**
-     * 模块号，长度为[0-32]位字符
-     * @return moduleId
-     */
+    /** 模块号，长度为[0-32]位字符
+     * 
+     * @return moduleId */
     public String getModuleId() {
         return moduleId;
     }
@@ -210,20 +168,14 @@ public class ExternalServiceCaseInfo  {
         this.moduleId = moduleId;
     }
 
-    
-
     public ExternalServiceCaseInfo withTestVersionId(String testVersionId) {
         this.testVersionId = testVersionId;
         return this;
     }
 
-    
-
-
-    /**
-     * 测试版本号，长度为[0-10]位字符
-     * @return testVersionId
-     */
+    /** 测试版本号，长度为[0-10]位字符
+     * 
+     * @return testVersionId */
     public String getTestVersionId() {
         return testVersionId;
     }
@@ -232,20 +184,14 @@ public class ExternalServiceCaseInfo  {
         this.testVersionId = testVersionId;
     }
 
-    
-
     public ExternalServiceCaseInfo withFixVersionId(String fixVersionId) {
         this.fixVersionId = fixVersionId;
         return this;
     }
 
-    
-
-
-    /**
-     * 迭代号，长度为[0-32]位字符
-     * @return fixVersionId
-     */
+    /** 迭代号，长度为[0-32]位字符
+     * 
+     * @return fixVersionId */
     public String getFixVersionId() {
         return fixVersionId;
     }
@@ -254,20 +200,14 @@ public class ExternalServiceCaseInfo  {
         this.fixVersionId = fixVersionId;
     }
 
-    
-
     public ExternalServiceCaseInfo withAssignedId(String assignedId) {
         this.assignedId = assignedId;
         return this;
     }
 
-    
-
-
-    /**
-     * 处理者id信息，固定长度32位字符
-     * @return assignedId
-     */
+    /** 处理者id信息，固定长度32位字符
+     * 
+     * @return assignedId */
     public String getAssignedId() {
         return assignedId;
     }
@@ -276,20 +216,14 @@ public class ExternalServiceCaseInfo  {
         this.assignedId = assignedId;
     }
 
-    
-
     public ExternalServiceCaseInfo withIssueId(String issueId) {
         this.issueId = issueId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用例关联的需求id信息，长度为[0-32]位字符
-     * @return issueId
-     */
+    /** 用例关联的需求id信息，长度为[0-32]位字符
+     * 
+     * @return issueId */
     public String getIssueId() {
         return issueId;
     }
@@ -297,8 +231,6 @@ public class ExternalServiceCaseInfo  {
     public void setIssueId(String issueId) {
         this.issueId = issueId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -309,20 +241,30 @@ public class ExternalServiceCaseInfo  {
             return false;
         }
         ExternalServiceCaseInfo externalServiceCaseInfo = (ExternalServiceCaseInfo) o;
-        return Objects.equals(this.description, externalServiceCaseInfo.description) &&
-            Objects.equals(this.preparation, externalServiceCaseInfo.preparation) &&
-            Objects.equals(this.steps, externalServiceCaseInfo.steps) &&
-            Objects.equals(this.labelList, externalServiceCaseInfo.labelList) &&
-            Objects.equals(this.moduleId, externalServiceCaseInfo.moduleId) &&
-            Objects.equals(this.testVersionId, externalServiceCaseInfo.testVersionId) &&
-            Objects.equals(this.fixVersionId, externalServiceCaseInfo.fixVersionId) &&
-            Objects.equals(this.assignedId, externalServiceCaseInfo.assignedId) &&
-            Objects.equals(this.issueId, externalServiceCaseInfo.issueId);
+        return Objects.equals(this.description, externalServiceCaseInfo.description)
+            && Objects.equals(this.preparation, externalServiceCaseInfo.preparation)
+            && Objects.equals(this.steps, externalServiceCaseInfo.steps)
+            && Objects.equals(this.labelList, externalServiceCaseInfo.labelList)
+            && Objects.equals(this.moduleId, externalServiceCaseInfo.moduleId)
+            && Objects.equals(this.testVersionId, externalServiceCaseInfo.testVersionId)
+            && Objects.equals(this.fixVersionId, externalServiceCaseInfo.fixVersionId)
+            && Objects.equals(this.assignedId, externalServiceCaseInfo.assignedId)
+            && Objects.equals(this.issueId, externalServiceCaseInfo.issueId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(description, preparation, steps, labelList, moduleId, testVersionId, fixVersionId, assignedId, issueId);
+        return Objects.hash(description,
+            preparation,
+            steps,
+            labelList,
+            moduleId,
+            testVersionId,
+            fixVersionId,
+            assignedId,
+            issueId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -339,16 +281,13 @@ public class ExternalServiceCaseInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

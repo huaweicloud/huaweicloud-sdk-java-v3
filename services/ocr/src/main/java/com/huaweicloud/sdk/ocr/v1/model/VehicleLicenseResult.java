@@ -1,146 +1,116 @@
 package com.huaweicloud.sdk.ocr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * VehicleLicenseResult
- */
-public class VehicleLicenseResult  {
-
-
+/** VehicleLicenseResult */
+public class VehicleLicenseResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="number")
-    
+    @JsonProperty(value = "number")
+
     private String number;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vehicle_type")
-    
+    @JsonProperty(value = "vehicle_type")
+
     private String vehicleType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="address")
-    
+    @JsonProperty(value = "address")
+
     private String address;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="use_character")
-    
+    @JsonProperty(value = "use_character")
+
     private String useCharacter;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="model")
-    
+    @JsonProperty(value = "model")
+
     private String model;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engine_no")
-    
+    @JsonProperty(value = "engine_no")
+
     private String engineNo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vin")
-    
+    @JsonProperty(value = "vin")
+
     private String vin;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="register_date")
-    
+    @JsonProperty(value = "register_date")
+
     private String registerDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="issue_date")
-    
+    @JsonProperty(value = "issue_date")
+
     private String issueDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="issuing_authority")
-    
+    @JsonProperty(value = "issuing_authority")
+
     private String issuingAuthority;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_no")
-    
+    @JsonProperty(value = "file_no")
+
     private String fileNo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="approved_passengers")
-    
+    @JsonProperty(value = "approved_passengers")
+
     private String approvedPassengers;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gross_mass")
-    
+    @JsonProperty(value = "gross_mass")
+
     private String grossMass;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unladen_mass")
-    
+    @JsonProperty(value = "unladen_mass")
+
     private String unladenMass;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="approved_load")
-    
+    @JsonProperty(value = "approved_load")
+
     private String approvedLoad;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dimension")
-    
+    @JsonProperty(value = "dimension")
+
     private String dimension;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="traction_mass")
-    
+    @JsonProperty(value = "traction_mass")
+
     private String tractionMass;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remarks")
-    
+    @JsonProperty(value = "remarks")
+
     private String remarks;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="inspection_record")
-    
+    @JsonProperty(value = "inspection_record")
+
     private String inspectionRecord;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code_number")
-    
+    @JsonProperty(value = "code_number")
+
     private String codeNumber;
 
     public VehicleLicenseResult withNumber(String number) {
@@ -148,13 +118,9 @@ public class VehicleLicenseResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 号牌号码。 
-     * @return number
-     */
+    /** 号牌号码。
+     * 
+     * @return number */
     public String getNumber() {
         return number;
     }
@@ -163,20 +129,14 @@ public class VehicleLicenseResult  {
         this.number = number;
     }
 
-    
-
     public VehicleLicenseResult withVehicleType(String vehicleType) {
         this.vehicleType = vehicleType;
         return this;
     }
 
-    
-
-
-    /**
-     * 车辆类型。 
-     * @return vehicleType
-     */
+    /** 车辆类型。
+     * 
+     * @return vehicleType */
     public String getVehicleType() {
         return vehicleType;
     }
@@ -185,20 +145,14 @@ public class VehicleLicenseResult  {
         this.vehicleType = vehicleType;
     }
 
-    
-
     public VehicleLicenseResult withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 所有人。 
-     * @return name
-     */
+    /** 所有人。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -207,20 +161,14 @@ public class VehicleLicenseResult  {
         this.name = name;
     }
 
-    
-
     public VehicleLicenseResult withAddress(String address) {
         this.address = address;
         return this;
     }
 
-    
-
-
-    /**
-     * 住址。 
-     * @return address
-     */
+    /** 住址。
+     * 
+     * @return address */
     public String getAddress() {
         return address;
     }
@@ -229,20 +177,14 @@ public class VehicleLicenseResult  {
         this.address = address;
     }
 
-    
-
     public VehicleLicenseResult withUseCharacter(String useCharacter) {
         this.useCharacter = useCharacter;
         return this;
     }
 
-    
-
-
-    /**
-     * 使用性质。 
-     * @return useCharacter
-     */
+    /** 使用性质。
+     * 
+     * @return useCharacter */
     public String getUseCharacter() {
         return useCharacter;
     }
@@ -251,20 +193,14 @@ public class VehicleLicenseResult  {
         this.useCharacter = useCharacter;
     }
 
-    
-
     public VehicleLicenseResult withModel(String model) {
         this.model = model;
         return this;
     }
 
-    
-
-
-    /**
-     * 品牌型号。 
-     * @return model
-     */
+    /** 品牌型号。
+     * 
+     * @return model */
     public String getModel() {
         return model;
     }
@@ -273,20 +209,14 @@ public class VehicleLicenseResult  {
         this.model = model;
     }
 
-    
-
     public VehicleLicenseResult withEngineNo(String engineNo) {
         this.engineNo = engineNo;
         return this;
     }
 
-    
-
-
-    /**
-     * 发动机号码。 
-     * @return engineNo
-     */
+    /** 发动机号码。
+     * 
+     * @return engineNo */
     public String getEngineNo() {
         return engineNo;
     }
@@ -295,20 +225,14 @@ public class VehicleLicenseResult  {
         this.engineNo = engineNo;
     }
 
-    
-
     public VehicleLicenseResult withVin(String vin) {
         this.vin = vin;
         return this;
     }
 
-    
-
-
-    /**
-     * 车辆识别代号。 
-     * @return vin
-     */
+    /** 车辆识别代号。
+     * 
+     * @return vin */
     public String getVin() {
         return vin;
     }
@@ -317,20 +241,14 @@ public class VehicleLicenseResult  {
         this.vin = vin;
     }
 
-    
-
     public VehicleLicenseResult withRegisterDate(String registerDate) {
         this.registerDate = registerDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 注册日期。 
-     * @return registerDate
-     */
+    /** 注册日期。
+     * 
+     * @return registerDate */
     public String getRegisterDate() {
         return registerDate;
     }
@@ -339,20 +257,14 @@ public class VehicleLicenseResult  {
         this.registerDate = registerDate;
     }
 
-    
-
     public VehicleLicenseResult withIssueDate(String issueDate) {
         this.issueDate = issueDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 发证日期。 
-     * @return issueDate
-     */
+    /** 发证日期。
+     * 
+     * @return issueDate */
     public String getIssueDate() {
         return issueDate;
     }
@@ -361,20 +273,14 @@ public class VehicleLicenseResult  {
         this.issueDate = issueDate;
     }
 
-    
-
     public VehicleLicenseResult withIssuingAuthority(String issuingAuthority) {
         this.issuingAuthority = issuingAuthority;
         return this;
     }
 
-    
-
-
-    /**
-     * 发证机关。 
-     * @return issuingAuthority
-     */
+    /** 发证机关。
+     * 
+     * @return issuingAuthority */
     public String getIssuingAuthority() {
         return issuingAuthority;
     }
@@ -383,20 +289,14 @@ public class VehicleLicenseResult  {
         this.issuingAuthority = issuingAuthority;
     }
 
-    
-
     public VehicleLicenseResult withFileNo(String fileNo) {
         this.fileNo = fileNo;
         return this;
     }
 
-    
-
-
-    /**
-     * 档案编码。 
-     * @return fileNo
-     */
+    /** 档案编码。
+     * 
+     * @return fileNo */
     public String getFileNo() {
         return fileNo;
     }
@@ -405,20 +305,14 @@ public class VehicleLicenseResult  {
         this.fileNo = fileNo;
     }
 
-    
-
     public VehicleLicenseResult withApprovedPassengers(String approvedPassengers) {
         this.approvedPassengers = approvedPassengers;
         return this;
     }
 
-    
-
-
-    /**
-     * 核定载人数。 
-     * @return approvedPassengers
-     */
+    /** 核定载人数。
+     * 
+     * @return approvedPassengers */
     public String getApprovedPassengers() {
         return approvedPassengers;
     }
@@ -427,20 +321,14 @@ public class VehicleLicenseResult  {
         this.approvedPassengers = approvedPassengers;
     }
 
-    
-
     public VehicleLicenseResult withGrossMass(String grossMass) {
         this.grossMass = grossMass;
         return this;
     }
 
-    
-
-
-    /**
-     * 总质量。 
-     * @return grossMass
-     */
+    /** 总质量。
+     * 
+     * @return grossMass */
     public String getGrossMass() {
         return grossMass;
     }
@@ -449,20 +337,14 @@ public class VehicleLicenseResult  {
         this.grossMass = grossMass;
     }
 
-    
-
     public VehicleLicenseResult withUnladenMass(String unladenMass) {
         this.unladenMass = unladenMass;
         return this;
     }
 
-    
-
-
-    /**
-     * 整备质量。 
-     * @return unladenMass
-     */
+    /** 整备质量。
+     * 
+     * @return unladenMass */
     public String getUnladenMass() {
         return unladenMass;
     }
@@ -471,20 +353,14 @@ public class VehicleLicenseResult  {
         this.unladenMass = unladenMass;
     }
 
-    
-
     public VehicleLicenseResult withApprovedLoad(String approvedLoad) {
         this.approvedLoad = approvedLoad;
         return this;
     }
 
-    
-
-
-    /**
-     * 核定载质量。 
-     * @return approvedLoad
-     */
+    /** 核定载质量。
+     * 
+     * @return approvedLoad */
     public String getApprovedLoad() {
         return approvedLoad;
     }
@@ -493,20 +369,14 @@ public class VehicleLicenseResult  {
         this.approvedLoad = approvedLoad;
     }
 
-    
-
     public VehicleLicenseResult withDimension(String dimension) {
         this.dimension = dimension;
         return this;
     }
 
-    
-
-
-    /**
-     * 外廓尺寸。 
-     * @return dimension
-     */
+    /** 外廓尺寸。
+     * 
+     * @return dimension */
     public String getDimension() {
         return dimension;
     }
@@ -515,20 +385,14 @@ public class VehicleLicenseResult  {
         this.dimension = dimension;
     }
 
-    
-
     public VehicleLicenseResult withTractionMass(String tractionMass) {
         this.tractionMass = tractionMass;
         return this;
     }
 
-    
-
-
-    /**
-     * 准牵引总质量。 
-     * @return tractionMass
-     */
+    /** 准牵引总质量。
+     * 
+     * @return tractionMass */
     public String getTractionMass() {
         return tractionMass;
     }
@@ -537,20 +401,14 @@ public class VehicleLicenseResult  {
         this.tractionMass = tractionMass;
     }
 
-    
-
     public VehicleLicenseResult withRemarks(String remarks) {
         this.remarks = remarks;
         return this;
     }
 
-    
-
-
-    /**
-     * 备注。 
-     * @return remarks
-     */
+    /** 备注。
+     * 
+     * @return remarks */
     public String getRemarks() {
         return remarks;
     }
@@ -559,20 +417,14 @@ public class VehicleLicenseResult  {
         this.remarks = remarks;
     }
 
-    
-
     public VehicleLicenseResult withInspectionRecord(String inspectionRecord) {
         this.inspectionRecord = inspectionRecord;
         return this;
     }
 
-    
-
-
-    /**
-     * 检验记录。 
-     * @return inspectionRecord
-     */
+    /** 检验记录。
+     * 
+     * @return inspectionRecord */
     public String getInspectionRecord() {
         return inspectionRecord;
     }
@@ -581,20 +433,14 @@ public class VehicleLicenseResult  {
         this.inspectionRecord = inspectionRecord;
     }
 
-    
-
     public VehicleLicenseResult withCodeNumber(String codeNumber) {
         this.codeNumber = codeNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * 条码号。 
-     * @return codeNumber
-     */
+    /** 条码号。
+     * 
+     * @return codeNumber */
     public String getCodeNumber() {
         return codeNumber;
     }
@@ -602,8 +448,6 @@ public class VehicleLicenseResult  {
     public void setCodeNumber(String codeNumber) {
         this.codeNumber = codeNumber;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -614,32 +458,54 @@ public class VehicleLicenseResult  {
             return false;
         }
         VehicleLicenseResult vehicleLicenseResult = (VehicleLicenseResult) o;
-        return Objects.equals(this.number, vehicleLicenseResult.number) &&
-            Objects.equals(this.vehicleType, vehicleLicenseResult.vehicleType) &&
-            Objects.equals(this.name, vehicleLicenseResult.name) &&
-            Objects.equals(this.address, vehicleLicenseResult.address) &&
-            Objects.equals(this.useCharacter, vehicleLicenseResult.useCharacter) &&
-            Objects.equals(this.model, vehicleLicenseResult.model) &&
-            Objects.equals(this.engineNo, vehicleLicenseResult.engineNo) &&
-            Objects.equals(this.vin, vehicleLicenseResult.vin) &&
-            Objects.equals(this.registerDate, vehicleLicenseResult.registerDate) &&
-            Objects.equals(this.issueDate, vehicleLicenseResult.issueDate) &&
-            Objects.equals(this.issuingAuthority, vehicleLicenseResult.issuingAuthority) &&
-            Objects.equals(this.fileNo, vehicleLicenseResult.fileNo) &&
-            Objects.equals(this.approvedPassengers, vehicleLicenseResult.approvedPassengers) &&
-            Objects.equals(this.grossMass, vehicleLicenseResult.grossMass) &&
-            Objects.equals(this.unladenMass, vehicleLicenseResult.unladenMass) &&
-            Objects.equals(this.approvedLoad, vehicleLicenseResult.approvedLoad) &&
-            Objects.equals(this.dimension, vehicleLicenseResult.dimension) &&
-            Objects.equals(this.tractionMass, vehicleLicenseResult.tractionMass) &&
-            Objects.equals(this.remarks, vehicleLicenseResult.remarks) &&
-            Objects.equals(this.inspectionRecord, vehicleLicenseResult.inspectionRecord) &&
-            Objects.equals(this.codeNumber, vehicleLicenseResult.codeNumber);
+        return Objects.equals(this.number, vehicleLicenseResult.number)
+            && Objects.equals(this.vehicleType, vehicleLicenseResult.vehicleType)
+            && Objects.equals(this.name, vehicleLicenseResult.name)
+            && Objects.equals(this.address, vehicleLicenseResult.address)
+            && Objects.equals(this.useCharacter, vehicleLicenseResult.useCharacter)
+            && Objects.equals(this.model, vehicleLicenseResult.model)
+            && Objects.equals(this.engineNo, vehicleLicenseResult.engineNo)
+            && Objects.equals(this.vin, vehicleLicenseResult.vin)
+            && Objects.equals(this.registerDate, vehicleLicenseResult.registerDate)
+            && Objects.equals(this.issueDate, vehicleLicenseResult.issueDate)
+            && Objects.equals(this.issuingAuthority, vehicleLicenseResult.issuingAuthority)
+            && Objects.equals(this.fileNo, vehicleLicenseResult.fileNo)
+            && Objects.equals(this.approvedPassengers, vehicleLicenseResult.approvedPassengers)
+            && Objects.equals(this.grossMass, vehicleLicenseResult.grossMass)
+            && Objects.equals(this.unladenMass, vehicleLicenseResult.unladenMass)
+            && Objects.equals(this.approvedLoad, vehicleLicenseResult.approvedLoad)
+            && Objects.equals(this.dimension, vehicleLicenseResult.dimension)
+            && Objects.equals(this.tractionMass, vehicleLicenseResult.tractionMass)
+            && Objects.equals(this.remarks, vehicleLicenseResult.remarks)
+            && Objects.equals(this.inspectionRecord, vehicleLicenseResult.inspectionRecord)
+            && Objects.equals(this.codeNumber, vehicleLicenseResult.codeNumber);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(number, vehicleType, name, address, useCharacter, model, engineNo, vin, registerDate, issueDate, issuingAuthority, fileNo, approvedPassengers, grossMass, unladenMass, approvedLoad, dimension, tractionMass, remarks, inspectionRecord, codeNumber);
+        return Objects.hash(number,
+            vehicleType,
+            name,
+            address,
+            useCharacter,
+            model,
+            engineNo,
+            vin,
+            registerDate,
+            issueDate,
+            issuingAuthority,
+            fileNo,
+            approvedPassengers,
+            grossMass,
+            unladenMass,
+            approvedLoad,
+            dimension,
+            tractionMass,
+            remarks,
+            inspectionRecord,
+            codeNumber);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -668,16 +534,13 @@ public class VehicleLicenseResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

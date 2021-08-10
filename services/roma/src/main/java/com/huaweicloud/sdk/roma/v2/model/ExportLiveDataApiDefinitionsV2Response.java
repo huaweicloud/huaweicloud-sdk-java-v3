@@ -1,18 +1,11 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
 import com.huaweicloud.sdk.core.SdkStreamResponse;
 
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ExportLiveDataApiDefinitionsV2Response extends SdkStreamResponse {
-
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -24,10 +17,12 @@ public class ExportLiveDataApiDefinitionsV2Response extends SdkStreamResponse {
         }
         return true;
     }
+
     @Override
     public int hashCode() {
         return Objects.hash();
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -35,6 +30,5 @@ public class ExportLiveDataApiDefinitionsV2Response extends SdkStreamResponse {
         sb.append("}");
         return sb.toString();
     }
-    
-}
 
+}

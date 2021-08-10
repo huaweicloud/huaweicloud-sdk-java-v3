@@ -1,84 +1,47 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.apig.v2.model.ApiCreateBase;
-import com.huaweicloud.sdk.apig.v2.model.ApiFuncCreate;
-import com.huaweicloud.sdk.apig.v2.model.ApiMockCreate;
-import com.huaweicloud.sdk.apig.v2.model.ApiPolicyFunctionCreate;
-import com.huaweicloud.sdk.apig.v2.model.ApiPolicyHttpCreate;
-import com.huaweicloud.sdk.apig.v2.model.ApiPolicyMockCreate;
-import com.huaweicloud.sdk.apig.v2.model.AuthOpt;
-import com.huaweicloud.sdk.apig.v2.model.BackendApiCreate;
-import com.huaweicloud.sdk.apig.v2.model.BackendParamBase;
-import com.huaweicloud.sdk.apig.v2.model.ReqParamBase;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ApiCreate
- */
-public class ApiCreate  {
-
-
+/** ApiCreate */
+public class ApiCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private Integer type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
-    /**
-     * API的请求协议 - HTTP - HTTPS - BOTH：同时支持HTTP和HTTPS
-     */
+
+    /** API的请求协议 - HTTP - HTTPS - BOTH：同时支持HTTP和HTTPS */
     public static final class ReqProtocolEnum {
 
-        
-        /**
-         * Enum HTTP for value: "HTTP"
-         */
+        /** Enum HTTP for value: "HTTP" */
         public static final ReqProtocolEnum HTTP = new ReqProtocolEnum("HTTP");
-        
-        /**
-         * Enum HTTPS for value: "HTTPS"
-         */
+
+        /** Enum HTTPS for value: "HTTPS" */
         public static final ReqProtocolEnum HTTPS = new ReqProtocolEnum("HTTPS");
-        
-        /**
-         * Enum BOTH for value: "BOTH"
-         */
+
+        /** Enum BOTH for value: "BOTH" */
         public static final ReqProtocolEnum BOTH = new ReqProtocolEnum("BOTH");
-        
 
         private static final Map<String, ReqProtocolEnum> STATIC_FIELDS = createStaticFields();
 
@@ -108,7 +71,7 @@ public class ApiCreate  {
 
         @JsonCreator
         public static ReqProtocolEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ReqProtocolEnum result = STATIC_FIELDS.get(value);
@@ -119,7 +82,7 @@ public class ApiCreate  {
         }
 
         public static ReqProtocolEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ReqProtocolEnum result = STATIC_FIELDS.get(value);
@@ -143,57 +106,37 @@ public class ApiCreate  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_protocol")
-    
+    @JsonProperty(value = "req_protocol")
+
     private ReqProtocolEnum reqProtocol;
-    /**
-     * API的请求方式
-     */
+
+    /** API的请求方式 */
     public static final class ReqMethodEnum {
 
-        
-        /**
-         * Enum GET for value: "GET"
-         */
+        /** Enum GET for value: "GET" */
         public static final ReqMethodEnum GET = new ReqMethodEnum("GET");
-        
-        /**
-         * Enum POST for value: "POST"
-         */
+
+        /** Enum POST for value: "POST" */
         public static final ReqMethodEnum POST = new ReqMethodEnum("POST");
-        
-        /**
-         * Enum PUT for value: "PUT"
-         */
+
+        /** Enum PUT for value: "PUT" */
         public static final ReqMethodEnum PUT = new ReqMethodEnum("PUT");
-        
-        /**
-         * Enum DELETE for value: "DELETE"
-         */
+
+        /** Enum DELETE for value: "DELETE" */
         public static final ReqMethodEnum DELETE = new ReqMethodEnum("DELETE");
-        
-        /**
-         * Enum HEAD for value: "HEAD"
-         */
+
+        /** Enum HEAD for value: "HEAD" */
         public static final ReqMethodEnum HEAD = new ReqMethodEnum("HEAD");
-        
-        /**
-         * Enum PATCH for value: "PATCH"
-         */
+
+        /** Enum PATCH for value: "PATCH" */
         public static final ReqMethodEnum PATCH = new ReqMethodEnum("PATCH");
-        
-        /**
-         * Enum OPTIONS for value: "OPTIONS"
-         */
+
+        /** Enum OPTIONS for value: "OPTIONS" */
         public static final ReqMethodEnum OPTIONS = new ReqMethodEnum("OPTIONS");
-        
-        /**
-         * Enum ANY for value: "ANY"
-         */
+
+        /** Enum ANY for value: "ANY" */
         public static final ReqMethodEnum ANY = new ReqMethodEnum("ANY");
-        
 
         private static final Map<String, ReqMethodEnum> STATIC_FIELDS = createStaticFields();
 
@@ -228,7 +171,7 @@ public class ApiCreate  {
 
         @JsonCreator
         public static ReqMethodEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ReqMethodEnum result = STATIC_FIELDS.get(value);
@@ -239,7 +182,7 @@ public class ApiCreate  {
         }
 
         public static ReqMethodEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ReqMethodEnum result = STATIC_FIELDS.get(value);
@@ -263,43 +206,30 @@ public class ApiCreate  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_method")
-    
+    @JsonProperty(value = "req_method")
+
     private ReqMethodEnum reqMethod;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_uri")
-    
+    @JsonProperty(value = "req_uri")
+
     private String reqUri;
-    /**
-     * API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
-     */
+
+    /** API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证 */
     public static final class AuthTypeEnum {
 
-        
-        /**
-         * Enum NONE for value: "NONE"
-         */
+        /** Enum NONE for value: "NONE" */
         public static final AuthTypeEnum NONE = new AuthTypeEnum("NONE");
-        
-        /**
-         * Enum APP for value: "APP"
-         */
+
+        /** Enum APP for value: "APP" */
         public static final AuthTypeEnum APP = new AuthTypeEnum("APP");
-        
-        /**
-         * Enum IAM for value: "IAM"
-         */
+
+        /** Enum IAM for value: "IAM" */
         public static final AuthTypeEnum IAM = new AuthTypeEnum("IAM");
-        
-        /**
-         * Enum AUTHORIZER for value: "AUTHORIZER"
-         */
+
+        /** Enum AUTHORIZER for value: "AUTHORIZER" */
         public static final AuthTypeEnum AUTHORIZER = new AuthTypeEnum("AUTHORIZER");
-        
 
         private static final Map<String, AuthTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -330,7 +260,7 @@ public class ApiCreate  {
 
         @JsonCreator
         public static AuthTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AuthTypeEnum result = STATIC_FIELDS.get(value);
@@ -341,7 +271,7 @@ public class ApiCreate  {
         }
 
         public static AuthTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             AuthTypeEnum result = STATIC_FIELDS.get(value);
@@ -365,39 +295,29 @@ public class ApiCreate  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth_type")
-    
+    @JsonProperty(value = "auth_type")
+
     private AuthTypeEnum authType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth_opt")
-    
+    @JsonProperty(value = "auth_opt")
+
     private AuthOpt authOpt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cors")
-    
+    @JsonProperty(value = "cors")
+
     private Boolean cors;
-    /**
-     * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
-     */
+
+    /** API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL */
     public static final class MatchModeEnum {
 
-        
-        /**
-         * Enum SWA for value: "SWA"
-         */
+        /** Enum SWA for value: "SWA" */
         public static final MatchModeEnum SWA = new MatchModeEnum("SWA");
-        
-        /**
-         * Enum NORMAL for value: "NORMAL"
-         */
+
+        /** Enum NORMAL for value: "NORMAL" */
         public static final MatchModeEnum NORMAL = new MatchModeEnum("NORMAL");
-        
 
         private static final Map<String, MatchModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -426,7 +346,7 @@ public class ApiCreate  {
 
         @JsonCreator
         public static MatchModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MatchModeEnum result = STATIC_FIELDS.get(value);
@@ -437,7 +357,7 @@ public class ApiCreate  {
         }
 
         public static MatchModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MatchModeEnum result = STATIC_FIELDS.get(value);
@@ -461,32 +381,22 @@ public class ApiCreate  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="match_mode")
-    
+    @JsonProperty(value = "match_mode")
+
     private MatchModeEnum matchMode;
-    /**
-     * 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端
-     */
+
+    /** 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端 */
     public static final class BackendTypeEnum {
 
-        
-        /**
-         * Enum HTTP for value: "HTTP"
-         */
+        /** Enum HTTP for value: "HTTP" */
         public static final BackendTypeEnum HTTP = new BackendTypeEnum("HTTP");
-        
-        /**
-         * Enum FUNCTION for value: "FUNCTION"
-         */
+
+        /** Enum FUNCTION for value: "FUNCTION" */
         public static final BackendTypeEnum FUNCTION = new BackendTypeEnum("FUNCTION");
-        
-        /**
-         * Enum MOCK for value: "MOCK"
-         */
+
+        /** Enum MOCK for value: "MOCK" */
         public static final BackendTypeEnum MOCK = new BackendTypeEnum("MOCK");
-        
 
         private static final Map<String, BackendTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -516,7 +426,7 @@ public class ApiCreate  {
 
         @JsonCreator
         public static BackendTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             BackendTypeEnum result = STATIC_FIELDS.get(value);
@@ -527,7 +437,7 @@ public class ApiCreate  {
         }
 
         public static BackendTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             BackendTypeEnum result = STATIC_FIELDS.get(value);
@@ -551,138 +461,114 @@ public class ApiCreate  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backend_type")
-    
+    @JsonProperty(value = "backend_type")
+
     private BackendTypeEnum backendType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
+
     private String remark;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body_remark")
-    
+    @JsonProperty(value = "body_remark")
+
     private String bodyRemark;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="result_normal_sample")
-    
+    @JsonProperty(value = "result_normal_sample")
+
     private String resultNormalSample;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="result_failure_sample")
-    
+    @JsonProperty(value = "result_failure_sample")
+
     private String resultFailureSample;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="authorizer_id")
-    
+    @JsonProperty(value = "authorizer_id")
+
     private String authorizerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<String> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="response_id")
-    
+    @JsonProperty(value = "response_id")
+
     private String responseId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roma_app_id")
-    
+    @JsonProperty(value = "roma_app_id")
+
     private String romaAppId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_name")
-    
+    @JsonProperty(value = "domain_name")
+
     private String domainName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag")
-    
+    @JsonProperty(value = "tag")
+
     private String tag;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mock_info")
-    
+    @JsonProperty(value = "mock_info")
+
     private ApiMockCreate mockInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="func_info")
-    
+    @JsonProperty(value = "func_info")
+
     private ApiFuncCreate funcInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_params")
-    
+    @JsonProperty(value = "req_params")
+
     private List<ReqParamBase> reqParams = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backend_params")
-    
+    @JsonProperty(value = "backend_params")
+
     private List<BackendParamBase> backendParams = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_mocks")
-    
+    @JsonProperty(value = "policy_mocks")
+
     private List<ApiPolicyMockCreate> policyMocks = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_functions")
-    
+    @JsonProperty(value = "policy_functions")
+
     private List<ApiPolicyFunctionCreate> policyFunctions = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backend_api")
-    
+    @JsonProperty(value = "backend_api")
+
     private BackendApiCreate backendApi;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_https")
-    
+    @JsonProperty(value = "policy_https")
+
     private List<ApiPolicyHttpCreate> policyHttps = null;
-    
+
     public ApiCreate withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * API名称。  长度为3 ~ 64位的字符串，字符串由中文、英文字母、数字、下划线组成，且只能以英文或中文开头。 > 中文字符必须为UTF-8或者unicode编码。
-     * @return name
-     */
+    /** API名称。 长度为3 ~ 64位的字符串，字符串由中文、英文字母、数字、下划线组成，且只能以英文或中文开头。 > 中文字符必须为UTF-8或者unicode编码。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -691,20 +577,14 @@ public class ApiCreate  {
         this.name = name;
     }
 
-    
-
     public ApiCreate withType(Integer type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * API类型 - 1：公有API - 2：私有API
-     * @return type
-     */
+    /** API类型 - 1：公有API - 2：私有API
+     * 
+     * @return type */
     public Integer getType() {
         return type;
     }
@@ -713,20 +593,14 @@ public class ApiCreate  {
         this.type = type;
     }
 
-    
-
     public ApiCreate withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * API的版本
-     * @return version
-     */
+    /** API的版本
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -735,20 +609,14 @@ public class ApiCreate  {
         this.version = version;
     }
 
-    
-
     public ApiCreate withReqProtocol(ReqProtocolEnum reqProtocol) {
         this.reqProtocol = reqProtocol;
         return this;
     }
 
-    
-
-
-    /**
-     * API的请求协议 - HTTP - HTTPS - BOTH：同时支持HTTP和HTTPS
-     * @return reqProtocol
-     */
+    /** API的请求协议 - HTTP - HTTPS - BOTH：同时支持HTTP和HTTPS
+     * 
+     * @return reqProtocol */
     public ReqProtocolEnum getReqProtocol() {
         return reqProtocol;
     }
@@ -757,20 +625,14 @@ public class ApiCreate  {
         this.reqProtocol = reqProtocol;
     }
 
-    
-
     public ApiCreate withReqMethod(ReqMethodEnum reqMethod) {
         this.reqMethod = reqMethod;
         return this;
     }
 
-    
-
-
-    /**
-     * API的请求方式
-     * @return reqMethod
-     */
+    /** API的请求方式
+     * 
+     * @return reqMethod */
     public ReqMethodEnum getReqMethod() {
         return reqMethod;
     }
@@ -779,20 +641,14 @@ public class ApiCreate  {
         this.reqMethod = reqMethod;
     }
 
-    
-
     public ApiCreate withReqUri(String reqUri) {
         this.reqUri = reqUri;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。 > 需要服从URI规范。
-     * @return reqUri
-     */
+    /** 请求地址。可以包含请求参数，用{}标识，比如/getUserInfo/{userId}，支持 * % - _ . 等特殊字符，总长度不超过512，且满足URI规范。 > 需要服从URI规范。
+     * 
+     * @return reqUri */
     public String getReqUri() {
         return reqUri;
     }
@@ -801,20 +657,14 @@ public class ApiCreate  {
         this.reqUri = reqUri;
     }
 
-    
-
     public ApiCreate withAuthType(AuthTypeEnum authType) {
         this.authType = authType;
         return this;
     }
 
-    
-
-
-    /**
-     * API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
-     * @return authType
-     */
+    /** API的认证方式 - NONE：无认证 - APP：APP认证 - IAM：IAM认证 - AUTHORIZER：自定义认证
+     * 
+     * @return authType */
     public AuthTypeEnum getAuthType() {
         return authType;
     }
@@ -823,27 +673,23 @@ public class ApiCreate  {
         this.authType = authType;
     }
 
-    
-
     public ApiCreate withAuthOpt(AuthOpt authOpt) {
         this.authOpt = authOpt;
         return this;
     }
 
     public ApiCreate withAuthOpt(Consumer<AuthOpt> authOptSetter) {
-        if(this.authOpt == null ){
+        if (this.authOpt == null) {
             this.authOpt = new AuthOpt();
             authOptSetter.accept(this.authOpt);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get authOpt
-     * @return authOpt
-     */
+    /** Get authOpt
+     * 
+     * @return authOpt */
     public AuthOpt getAuthOpt() {
         return authOpt;
     }
@@ -852,20 +698,14 @@ public class ApiCreate  {
         this.authOpt = authOpt;
     }
 
-    
-
     public ApiCreate withCors(Boolean cors) {
         this.cors = cors;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否支持跨域 - TRUE：支持 - FALSE：不支持
-     * @return cors
-     */
+    /** 是否支持跨域 - TRUE：支持 - FALSE：不支持
+     * 
+     * @return cors */
     public Boolean getCors() {
         return cors;
     }
@@ -874,20 +714,14 @@ public class ApiCreate  {
         this.cors = cors;
     }
 
-    
-
     public ApiCreate withMatchMode(MatchModeEnum matchMode) {
         this.matchMode = matchMode;
         return this;
     }
 
-    
-
-
-    /**
-     * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
-     * @return matchMode
-     */
+    /** API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
+     * 
+     * @return matchMode */
     public MatchModeEnum getMatchMode() {
         return matchMode;
     }
@@ -896,20 +730,14 @@ public class ApiCreate  {
         this.matchMode = matchMode;
     }
 
-    
-
     public ApiCreate withBackendType(BackendTypeEnum backendType) {
         this.backendType = backendType;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端
-     * @return backendType
-     */
+    /** 后端类型 - HTTP：web后端 - FUNCTION：函数工作流 - MOCK：模拟的后端
+     * 
+     * @return backendType */
     public BackendTypeEnum getBackendType() {
         return backendType;
     }
@@ -918,20 +746,14 @@ public class ApiCreate  {
         this.backendType = backendType;
     }
 
-    
-
     public ApiCreate withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
-    
-
-
-    /**
-     * API描述。字符长度不超过255 > 中文字符必须为UTF-8或者unicode编码。
-     * @return remark
-     */
+    /** API描述。字符长度不超过255 > 中文字符必须为UTF-8或者unicode编码。
+     * 
+     * @return remark */
     public String getRemark() {
         return remark;
     }
@@ -940,20 +762,14 @@ public class ApiCreate  {
         this.remark = remark;
     }
 
-    
-
     public ApiCreate withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * API所属的分组编号
-     * @return groupId
-     */
+    /** API所属的分组编号
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -962,20 +778,14 @@ public class ApiCreate  {
         this.groupId = groupId;
     }
 
-    
-
     public ApiCreate withBodyRemark(String bodyRemark) {
         this.bodyRemark = bodyRemark;
         return this;
     }
 
-    
-
-
-    /**
-     * API请求体描述，可以是请求体示例、媒体类型、参数等信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。
-     * @return bodyRemark
-     */
+    /** API请求体描述，可以是请求体示例、媒体类型、参数等信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。
+     * 
+     * @return bodyRemark */
     public String getBodyRemark() {
         return bodyRemark;
     }
@@ -984,20 +794,14 @@ public class ApiCreate  {
         this.bodyRemark = bodyRemark;
     }
 
-    
-
     public ApiCreate withResultNormalSample(String resultNormalSample) {
         this.resultNormalSample = resultNormalSample;
         return this;
     }
 
-    
-
-
-    /**
-     * 正常响应示例，描述API的正常返回信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。
-     * @return resultNormalSample
-     */
+    /** 正常响应示例，描述API的正常返回信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。
+     * 
+     * @return resultNormalSample */
     public String getResultNormalSample() {
         return resultNormalSample;
     }
@@ -1006,20 +810,14 @@ public class ApiCreate  {
         this.resultNormalSample = resultNormalSample;
     }
 
-    
-
     public ApiCreate withResultFailureSample(String resultFailureSample) {
         this.resultFailureSample = resultFailureSample;
         return this;
     }
 
-    
-
-
-    /**
-     * 失败返回示例，描述API的异常返回信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。
-     * @return resultFailureSample
-     */
+    /** 失败返回示例，描述API的异常返回信息。字符长度不超过20480 > 中文字符必须为UTF-8或者unicode编码。
+     * 
+     * @return resultFailureSample */
     public String getResultFailureSample() {
         return resultFailureSample;
     }
@@ -1028,20 +826,14 @@ public class ApiCreate  {
         this.resultFailureSample = resultFailureSample;
     }
 
-    
-
     public ApiCreate withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 前端自定义认证对象的ID
-     * @return authorizerId
-     */
+    /** 前端自定义认证对象的ID
+     * 
+     * @return authorizerId */
     public String getAuthorizerId() {
         return authorizerId;
     }
@@ -1050,16 +842,13 @@ public class ApiCreate  {
         this.authorizerId = authorizerId;
     }
 
-    
-
     public ApiCreate withTags(List<String> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public ApiCreate addTagsItem(String tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -1067,17 +856,16 @@ public class ApiCreate  {
     }
 
     public ApiCreate withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 标签。  支持英文，数字，下划线，且只能以英文开头。支持输入多个标签，不同标签以英文逗号分割。 
-     * @return tags
-     */
+    /** 标签。 支持英文，数字，下划线，且只能以英文开头。支持输入多个标签，不同标签以英文逗号分割。
+     * 
+     * @return tags */
     public List<String> getTags() {
         return tags;
     }
@@ -1086,20 +874,14 @@ public class ApiCreate  {
         this.tags = tags;
     }
 
-    
-
     public ApiCreate withResponseId(String responseId) {
         this.responseId = responseId;
         return this;
     }
 
-    
-
-
-    /**
-     * 分组自定义响应ID
-     * @return responseId
-     */
+    /** 分组自定义响应ID
+     * 
+     * @return responseId */
     public String getResponseId() {
         return responseId;
     }
@@ -1108,20 +890,14 @@ public class ApiCreate  {
         this.responseId = responseId;
     }
 
-    
-
     public ApiCreate withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
         return this;
     }
 
-    
-
-
-    /**
-     * 集成应用ID  暂不支持
-     * @return romaAppId
-     */
+    /** 集成应用ID 暂不支持
+     * 
+     * @return romaAppId */
     public String getRomaAppId() {
         return romaAppId;
     }
@@ -1130,20 +906,14 @@ public class ApiCreate  {
         this.romaAppId = romaAppId;
     }
 
-    
-
     public ApiCreate withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
     }
 
-    
-
-
-    /**
-     * API绑定的自定义域名  暂不支持
-     * @return domainName
-     */
+    /** API绑定的自定义域名 暂不支持
+     * 
+     * @return domainName */
     public String getDomainName() {
         return domainName;
     }
@@ -1152,20 +922,14 @@ public class ApiCreate  {
         this.domainName = domainName;
     }
 
-    
-
     public ApiCreate withTag(String tag) {
         this.tag = tag;
         return this;
     }
 
-    
-
-
-    /**
-     * 标签  待废弃，优先使用tags字段
-     * @return tag
-     */
+    /** 标签 待废弃，优先使用tags字段
+     * 
+     * @return tag */
     public String getTag() {
         return tag;
     }
@@ -1174,27 +938,23 @@ public class ApiCreate  {
         this.tag = tag;
     }
 
-    
-
     public ApiCreate withMockInfo(ApiMockCreate mockInfo) {
         this.mockInfo = mockInfo;
         return this;
     }
 
     public ApiCreate withMockInfo(Consumer<ApiMockCreate> mockInfoSetter) {
-        if(this.mockInfo == null ){
+        if (this.mockInfo == null) {
             this.mockInfo = new ApiMockCreate();
             mockInfoSetter.accept(this.mockInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get mockInfo
-     * @return mockInfo
-     */
+    /** Get mockInfo
+     * 
+     * @return mockInfo */
     public ApiMockCreate getMockInfo() {
         return mockInfo;
     }
@@ -1203,27 +963,23 @@ public class ApiCreate  {
         this.mockInfo = mockInfo;
     }
 
-    
-
     public ApiCreate withFuncInfo(ApiFuncCreate funcInfo) {
         this.funcInfo = funcInfo;
         return this;
     }
 
     public ApiCreate withFuncInfo(Consumer<ApiFuncCreate> funcInfoSetter) {
-        if(this.funcInfo == null ){
+        if (this.funcInfo == null) {
             this.funcInfo = new ApiFuncCreate();
             funcInfoSetter.accept(this.funcInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get funcInfo
-     * @return funcInfo
-     */
+    /** Get funcInfo
+     * 
+     * @return funcInfo */
     public ApiFuncCreate getFuncInfo() {
         return funcInfo;
     }
@@ -1232,16 +988,13 @@ public class ApiCreate  {
         this.funcInfo = funcInfo;
     }
 
-    
-
     public ApiCreate withReqParams(List<ReqParamBase> reqParams) {
         this.reqParams = reqParams;
         return this;
     }
 
-    
     public ApiCreate addReqParamsItem(ReqParamBase reqParamsItem) {
-        if(this.reqParams == null) {
+        if (this.reqParams == null) {
             this.reqParams = new ArrayList<>();
         }
         this.reqParams.add(reqParamsItem);
@@ -1249,17 +1002,16 @@ public class ApiCreate  {
     }
 
     public ApiCreate withReqParams(Consumer<List<ReqParamBase>> reqParamsSetter) {
-        if(this.reqParams == null) {
+        if (this.reqParams == null) {
             this.reqParams = new ArrayList<>();
         }
         reqParamsSetter.accept(this.reqParams);
         return this;
     }
 
-    /**
-     * API的请求参数列表
-     * @return reqParams
-     */
+    /** API的请求参数列表
+     * 
+     * @return reqParams */
     public List<ReqParamBase> getReqParams() {
         return reqParams;
     }
@@ -1268,16 +1020,13 @@ public class ApiCreate  {
         this.reqParams = reqParams;
     }
 
-    
-
     public ApiCreate withBackendParams(List<BackendParamBase> backendParams) {
         this.backendParams = backendParams;
         return this;
     }
 
-    
     public ApiCreate addBackendParamsItem(BackendParamBase backendParamsItem) {
-        if(this.backendParams == null) {
+        if (this.backendParams == null) {
             this.backendParams = new ArrayList<>();
         }
         this.backendParams.add(backendParamsItem);
@@ -1285,17 +1034,16 @@ public class ApiCreate  {
     }
 
     public ApiCreate withBackendParams(Consumer<List<BackendParamBase>> backendParamsSetter) {
-        if(this.backendParams == null) {
+        if (this.backendParams == null) {
             this.backendParams = new ArrayList<>();
         }
         backendParamsSetter.accept(this.backendParams);
         return this;
     }
 
-    /**
-     * API的后端参数列表
-     * @return backendParams
-     */
+    /** API的后端参数列表
+     * 
+     * @return backendParams */
     public List<BackendParamBase> getBackendParams() {
         return backendParams;
     }
@@ -1304,16 +1052,13 @@ public class ApiCreate  {
         this.backendParams = backendParams;
     }
 
-    
-
     public ApiCreate withPolicyMocks(List<ApiPolicyMockCreate> policyMocks) {
         this.policyMocks = policyMocks;
         return this;
     }
 
-    
     public ApiCreate addPolicyMocksItem(ApiPolicyMockCreate policyMocksItem) {
-        if(this.policyMocks == null) {
+        if (this.policyMocks == null) {
             this.policyMocks = new ArrayList<>();
         }
         this.policyMocks.add(policyMocksItem);
@@ -1321,17 +1066,16 @@ public class ApiCreate  {
     }
 
     public ApiCreate withPolicyMocks(Consumer<List<ApiPolicyMockCreate>> policyMocksSetter) {
-        if(this.policyMocks == null) {
+        if (this.policyMocks == null) {
             this.policyMocks = new ArrayList<>();
         }
         policyMocksSetter.accept(this.policyMocks);
         return this;
     }
 
-    /**
-     * mock策略后端列表
-     * @return policyMocks
-     */
+    /** mock策略后端列表
+     * 
+     * @return policyMocks */
     public List<ApiPolicyMockCreate> getPolicyMocks() {
         return policyMocks;
     }
@@ -1340,16 +1084,13 @@ public class ApiCreate  {
         this.policyMocks = policyMocks;
     }
 
-    
-
     public ApiCreate withPolicyFunctions(List<ApiPolicyFunctionCreate> policyFunctions) {
         this.policyFunctions = policyFunctions;
         return this;
     }
 
-    
     public ApiCreate addPolicyFunctionsItem(ApiPolicyFunctionCreate policyFunctionsItem) {
-        if(this.policyFunctions == null) {
+        if (this.policyFunctions == null) {
             this.policyFunctions = new ArrayList<>();
         }
         this.policyFunctions.add(policyFunctionsItem);
@@ -1357,17 +1098,16 @@ public class ApiCreate  {
     }
 
     public ApiCreate withPolicyFunctions(Consumer<List<ApiPolicyFunctionCreate>> policyFunctionsSetter) {
-        if(this.policyFunctions == null) {
+        if (this.policyFunctions == null) {
             this.policyFunctions = new ArrayList<>();
         }
         policyFunctionsSetter.accept(this.policyFunctions);
         return this;
     }
 
-    /**
-     * 函数工作流策略后端列表
-     * @return policyFunctions
-     */
+    /** 函数工作流策略后端列表
+     * 
+     * @return policyFunctions */
     public List<ApiPolicyFunctionCreate> getPolicyFunctions() {
         return policyFunctions;
     }
@@ -1376,27 +1116,23 @@ public class ApiCreate  {
         this.policyFunctions = policyFunctions;
     }
 
-    
-
     public ApiCreate withBackendApi(BackendApiCreate backendApi) {
         this.backendApi = backendApi;
         return this;
     }
 
     public ApiCreate withBackendApi(Consumer<BackendApiCreate> backendApiSetter) {
-        if(this.backendApi == null ){
+        if (this.backendApi == null) {
             this.backendApi = new BackendApiCreate();
             backendApiSetter.accept(this.backendApi);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get backendApi
-     * @return backendApi
-     */
+    /** Get backendApi
+     * 
+     * @return backendApi */
     public BackendApiCreate getBackendApi() {
         return backendApi;
     }
@@ -1405,16 +1141,13 @@ public class ApiCreate  {
         this.backendApi = backendApi;
     }
 
-    
-
     public ApiCreate withPolicyHttps(List<ApiPolicyHttpCreate> policyHttps) {
         this.policyHttps = policyHttps;
         return this;
     }
 
-    
     public ApiCreate addPolicyHttpsItem(ApiPolicyHttpCreate policyHttpsItem) {
-        if(this.policyHttps == null) {
+        if (this.policyHttps == null) {
             this.policyHttps = new ArrayList<>();
         }
         this.policyHttps.add(policyHttpsItem);
@@ -1422,17 +1155,16 @@ public class ApiCreate  {
     }
 
     public ApiCreate withPolicyHttps(Consumer<List<ApiPolicyHttpCreate>> policyHttpsSetter) {
-        if(this.policyHttps == null) {
+        if (this.policyHttps == null) {
             this.policyHttps = new ArrayList<>();
         }
         policyHttpsSetter.accept(this.policyHttps);
         return this;
     }
 
-    /**
-     * web策略后端列表
-     * @return policyHttps
-     */
+    /** web策略后端列表
+     * 
+     * @return policyHttps */
     public List<ApiPolicyHttpCreate> getPolicyHttps() {
         return policyHttps;
     }
@@ -1440,8 +1172,6 @@ public class ApiCreate  {
     public void setPolicyHttps(List<ApiPolicyHttpCreate> policyHttps) {
         this.policyHttps = policyHttps;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -1452,41 +1182,63 @@ public class ApiCreate  {
             return false;
         }
         ApiCreate apiCreate = (ApiCreate) o;
-        return Objects.equals(this.name, apiCreate.name) &&
-            Objects.equals(this.type, apiCreate.type) &&
-            Objects.equals(this.version, apiCreate.version) &&
-            Objects.equals(this.reqProtocol, apiCreate.reqProtocol) &&
-            Objects.equals(this.reqMethod, apiCreate.reqMethod) &&
-            Objects.equals(this.reqUri, apiCreate.reqUri) &&
-            Objects.equals(this.authType, apiCreate.authType) &&
-            Objects.equals(this.authOpt, apiCreate.authOpt) &&
-            Objects.equals(this.cors, apiCreate.cors) &&
-            Objects.equals(this.matchMode, apiCreate.matchMode) &&
-            Objects.equals(this.backendType, apiCreate.backendType) &&
-            Objects.equals(this.remark, apiCreate.remark) &&
-            Objects.equals(this.groupId, apiCreate.groupId) &&
-            Objects.equals(this.bodyRemark, apiCreate.bodyRemark) &&
-            Objects.equals(this.resultNormalSample, apiCreate.resultNormalSample) &&
-            Objects.equals(this.resultFailureSample, apiCreate.resultFailureSample) &&
-            Objects.equals(this.authorizerId, apiCreate.authorizerId) &&
-            Objects.equals(this.tags, apiCreate.tags) &&
-            Objects.equals(this.responseId, apiCreate.responseId) &&
-            Objects.equals(this.romaAppId, apiCreate.romaAppId) &&
-            Objects.equals(this.domainName, apiCreate.domainName) &&
-            Objects.equals(this.tag, apiCreate.tag) &&
-            Objects.equals(this.mockInfo, apiCreate.mockInfo) &&
-            Objects.equals(this.funcInfo, apiCreate.funcInfo) &&
-            Objects.equals(this.reqParams, apiCreate.reqParams) &&
-            Objects.equals(this.backendParams, apiCreate.backendParams) &&
-            Objects.equals(this.policyMocks, apiCreate.policyMocks) &&
-            Objects.equals(this.policyFunctions, apiCreate.policyFunctions) &&
-            Objects.equals(this.backendApi, apiCreate.backendApi) &&
-            Objects.equals(this.policyHttps, apiCreate.policyHttps);
+        return Objects.equals(this.name, apiCreate.name) && Objects.equals(this.type, apiCreate.type)
+            && Objects.equals(this.version, apiCreate.version)
+            && Objects.equals(this.reqProtocol, apiCreate.reqProtocol)
+            && Objects.equals(this.reqMethod, apiCreate.reqMethod) && Objects.equals(this.reqUri, apiCreate.reqUri)
+            && Objects.equals(this.authType, apiCreate.authType) && Objects.equals(this.authOpt, apiCreate.authOpt)
+            && Objects.equals(this.cors, apiCreate.cors) && Objects.equals(this.matchMode, apiCreate.matchMode)
+            && Objects.equals(this.backendType, apiCreate.backendType) && Objects.equals(this.remark, apiCreate.remark)
+            && Objects.equals(this.groupId, apiCreate.groupId) && Objects.equals(this.bodyRemark, apiCreate.bodyRemark)
+            && Objects.equals(this.resultNormalSample, apiCreate.resultNormalSample)
+            && Objects.equals(this.resultFailureSample, apiCreate.resultFailureSample)
+            && Objects.equals(this.authorizerId, apiCreate.authorizerId) && Objects.equals(this.tags, apiCreate.tags)
+            && Objects.equals(this.responseId, apiCreate.responseId)
+            && Objects.equals(this.romaAppId, apiCreate.romaAppId)
+            && Objects.equals(this.domainName, apiCreate.domainName) && Objects.equals(this.tag, apiCreate.tag)
+            && Objects.equals(this.mockInfo, apiCreate.mockInfo) && Objects.equals(this.funcInfo, apiCreate.funcInfo)
+            && Objects.equals(this.reqParams, apiCreate.reqParams)
+            && Objects.equals(this.backendParams, apiCreate.backendParams)
+            && Objects.equals(this.policyMocks, apiCreate.policyMocks)
+            && Objects.equals(this.policyFunctions, apiCreate.policyFunctions)
+            && Objects.equals(this.backendApi, apiCreate.backendApi)
+            && Objects.equals(this.policyHttps, apiCreate.policyHttps);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, version, reqProtocol, reqMethod, reqUri, authType, authOpt, cors, matchMode, backendType, remark, groupId, bodyRemark, resultNormalSample, resultFailureSample, authorizerId, tags, responseId, romaAppId, domainName, tag, mockInfo, funcInfo, reqParams, backendParams, policyMocks, policyFunctions, backendApi, policyHttps);
+        return Objects.hash(name,
+            type,
+            version,
+            reqProtocol,
+            reqMethod,
+            reqUri,
+            authType,
+            authOpt,
+            cors,
+            matchMode,
+            backendType,
+            remark,
+            groupId,
+            bodyRemark,
+            resultNormalSample,
+            resultFailureSample,
+            authorizerId,
+            tags,
+            responseId,
+            romaAppId,
+            domainName,
+            tag,
+            mockInfo,
+            funcInfo,
+            reqParams,
+            backendParams,
+            policyMocks,
+            policyFunctions,
+            backendApi,
+            policyHttps);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1524,16 +1276,13 @@ public class ApiCreate  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

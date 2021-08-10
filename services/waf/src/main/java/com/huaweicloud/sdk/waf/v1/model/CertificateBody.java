@@ -1,85 +1,64 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.waf.v1.model.BindHost;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * CertificateBody
- */
-public class CertificateBody  {
-
-
+/** CertificateBody */
+public class CertificateBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content")
-    
+    @JsonProperty(value = "content")
+
     private String content;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expire_time")
-    
+    @JsonProperty(value = "expire_time")
+
     private Long expireTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="exp_status")
-    
+    @JsonProperty(value = "exp_status")
+
     private Integer expStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timestamp")
-    
+    @JsonProperty(value = "timestamp")
+
     private Long timestamp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bind_host")
-    
+    @JsonProperty(value = "bind_host")
+
     private List<BindHost> bindHost = null;
-    
+
     public CertificateBody withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书ID
-     * @return id
-     */
+    /** 证书ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -88,20 +67,14 @@ public class CertificateBody  {
         this.id = id;
     }
 
-    
-
     public CertificateBody withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书名
-     * @return name
-     */
+    /** 证书名
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -110,20 +83,14 @@ public class CertificateBody  {
         this.name = name;
     }
 
-    
-
     public CertificateBody withContent(String content) {
         this.content = content;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书文件，PEM编码
-     * @return content
-     */
+    /** 证书文件，PEM编码
+     * 
+     * @return content */
     public String getContent() {
         return content;
     }
@@ -132,20 +99,14 @@ public class CertificateBody  {
         this.content = content;
     }
 
-    
-
     public CertificateBody withKey(String key) {
         this.key = key;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书私钥，PEM编码
-     * @return key
-     */
+    /** 证书私钥，PEM编码
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -154,20 +115,14 @@ public class CertificateBody  {
         this.key = key;
     }
 
-    
-
     public CertificateBody withExpireTime(Long expireTime) {
         this.expireTime = expireTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书过期时间戳
-     * @return expireTime
-     */
+    /** 证书过期时间戳
+     * 
+     * @return expireTime */
     public Long getExpireTime() {
         return expireTime;
     }
@@ -176,20 +131,14 @@ public class CertificateBody  {
         this.expireTime = expireTime;
     }
 
-    
-
     public CertificateBody withExpStatus(Integer expStatus) {
         this.expStatus = expStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书过期状态，0-未过期，1-已过期，2-即将过期
-     * @return expStatus
-     */
+    /** 证书过期状态，0-未过期，1-已过期，2-即将过期
+     * 
+     * @return expStatus */
     public Integer getExpStatus() {
         return expStatus;
     }
@@ -198,20 +147,14 @@ public class CertificateBody  {
         this.expStatus = expStatus;
     }
 
-    
-
     public CertificateBody withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书上传时间戳
-     * @return timestamp
-     */
+    /** 证书上传时间戳
+     * 
+     * @return timestamp */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -220,16 +163,13 @@ public class CertificateBody  {
         this.timestamp = timestamp;
     }
 
-    
-
     public CertificateBody withBindHost(List<BindHost> bindHost) {
         this.bindHost = bindHost;
         return this;
     }
 
-    
     public CertificateBody addBindHostItem(BindHost bindHostItem) {
-        if(this.bindHost == null) {
+        if (this.bindHost == null) {
             this.bindHost = new ArrayList<>();
         }
         this.bindHost.add(bindHostItem);
@@ -237,17 +177,16 @@ public class CertificateBody  {
     }
 
     public CertificateBody withBindHost(Consumer<List<BindHost>> bindHostSetter) {
-        if(this.bindHost == null) {
+        if (this.bindHost == null) {
             this.bindHost = new ArrayList<>();
         }
         bindHostSetter.accept(this.bindHost);
         return this;
     }
 
-    /**
-     * 证书关联的域名信息
-     * @return bindHost
-     */
+    /** 证书关联的域名信息
+     * 
+     * @return bindHost */
     public List<BindHost> getBindHost() {
         return bindHost;
     }
@@ -255,8 +194,6 @@ public class CertificateBody  {
     public void setBindHost(List<BindHost> bindHost) {
         this.bindHost = bindHost;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -267,19 +204,19 @@ public class CertificateBody  {
             return false;
         }
         CertificateBody certificateBody = (CertificateBody) o;
-        return Objects.equals(this.id, certificateBody.id) &&
-            Objects.equals(this.name, certificateBody.name) &&
-            Objects.equals(this.content, certificateBody.content) &&
-            Objects.equals(this.key, certificateBody.key) &&
-            Objects.equals(this.expireTime, certificateBody.expireTime) &&
-            Objects.equals(this.expStatus, certificateBody.expStatus) &&
-            Objects.equals(this.timestamp, certificateBody.timestamp) &&
-            Objects.equals(this.bindHost, certificateBody.bindHost);
+        return Objects.equals(this.id, certificateBody.id) && Objects.equals(this.name, certificateBody.name)
+            && Objects.equals(this.content, certificateBody.content) && Objects.equals(this.key, certificateBody.key)
+            && Objects.equals(this.expireTime, certificateBody.expireTime)
+            && Objects.equals(this.expStatus, certificateBody.expStatus)
+            && Objects.equals(this.timestamp, certificateBody.timestamp)
+            && Objects.equals(this.bindHost, certificateBody.bindHost);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, content, key, expireTime, expStatus, timestamp, bindHost);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -295,16 +232,13 @@ public class CertificateBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

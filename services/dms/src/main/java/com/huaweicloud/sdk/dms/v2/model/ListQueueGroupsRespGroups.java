@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.dms.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 消费组信息
- */
-public class ListQueueGroupsRespGroups  {
-
-
+/** 消费组信息 */
+public class ListQueueGroupsRespGroups {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="produced_messages")
-    
+    @JsonProperty(value = "produced_messages")
+
     private Integer producedMessages;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="consumed_messages")
-    
+    @JsonProperty(value = "consumed_messages")
+
     private Integer consumedMessages;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="available_messages")
-    
+    @JsonProperty(value = "available_messages")
+
     private Integer availableMessages;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="produced_deadletters")
-    
+    @JsonProperty(value = "produced_deadletters")
+
     private Integer producedDeadletters;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="available_deadletters")
-    
+    @JsonProperty(value = "available_deadletters")
+
     private Integer availableDeadletters;
 
     public ListQueueGroupsRespGroups withId(String id) {
@@ -64,13 +48,9 @@ public class ListQueueGroupsRespGroups  {
         return this;
     }
 
-    
-
-
-    /**
-     * 队列的名称。
-     * @return id
-     */
+    /** 队列的名称。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -79,20 +59,14 @@ public class ListQueueGroupsRespGroups  {
         this.id = id;
     }
 
-    
-
     public ListQueueGroupsRespGroups withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 队列的名称。
-     * @return name
-     */
+    /** 队列的名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -101,20 +75,14 @@ public class ListQueueGroupsRespGroups  {
         this.name = name;
     }
 
-    
-
     public ListQueueGroupsRespGroups withProducedMessages(Integer producedMessages) {
         this.producedMessages = producedMessages;
         return this;
     }
 
-    
-
-
-    /**
-     * 队列的消息总数，不包含过期删除的消息数。
-     * @return producedMessages
-     */
+    /** 队列的消息总数，不包含过期删除的消息数。
+     * 
+     * @return producedMessages */
     public Integer getProducedMessages() {
         return producedMessages;
     }
@@ -123,20 +91,14 @@ public class ListQueueGroupsRespGroups  {
         this.producedMessages = producedMessages;
     }
 
-    
-
     public ListQueueGroupsRespGroups withConsumedMessages(Integer consumedMessages) {
         this.consumedMessages = consumedMessages;
         return this;
     }
 
-    
-
-
-    /**
-     * 已正常消费的消息总数。
-     * @return consumedMessages
-     */
+    /** 已正常消费的消息总数。
+     * 
+     * @return consumedMessages */
     public Integer getConsumedMessages() {
         return consumedMessages;
     }
@@ -145,20 +107,14 @@ public class ListQueueGroupsRespGroups  {
         this.consumedMessages = consumedMessages;
     }
 
-    
-
     public ListQueueGroupsRespGroups withAvailableMessages(Integer availableMessages) {
         this.availableMessages = availableMessages;
         return this;
     }
 
-    
-
-
-    /**
-     * 该消费组可以消费的普通消息数。
-     * @return availableMessages
-     */
+    /** 该消费组可以消费的普通消息数。
+     * 
+     * @return availableMessages */
     public Integer getAvailableMessages() {
         return availableMessages;
     }
@@ -167,20 +123,14 @@ public class ListQueueGroupsRespGroups  {
         this.availableMessages = availableMessages;
     }
 
-    
-
     public ListQueueGroupsRespGroups withProducedDeadletters(Integer producedDeadletters) {
         this.producedDeadletters = producedDeadletters;
         return this;
     }
 
-    
-
-
-    /**
-     * 该消费组产生的死信息消息总数。仅当include_deadletter为true时，才有该响应参数。
-     * @return producedDeadletters
-     */
+    /** 该消费组产生的死信息消息总数。仅当include_deadletter为true时，才有该响应参数。
+     * 
+     * @return producedDeadletters */
     public Integer getProducedDeadletters() {
         return producedDeadletters;
     }
@@ -189,20 +139,14 @@ public class ListQueueGroupsRespGroups  {
         this.producedDeadletters = producedDeadletters;
     }
 
-    
-
     public ListQueueGroupsRespGroups withAvailableDeadletters(Integer availableDeadletters) {
         this.availableDeadletters = availableDeadletters;
         return this;
     }
 
-    
-
-
-    /**
-     * 该消费组未消费的死信消息数。仅当include_deadletter为true时，才有该响应参数。
-     * @return availableDeadletters
-     */
+    /** 该消费组未消费的死信消息数。仅当include_deadletter为true时，才有该响应参数。
+     * 
+     * @return availableDeadletters */
     public Integer getAvailableDeadletters() {
         return availableDeadletters;
     }
@@ -210,8 +154,6 @@ public class ListQueueGroupsRespGroups  {
     public void setAvailableDeadletters(Integer availableDeadletters) {
         this.availableDeadletters = availableDeadletters;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -222,18 +164,26 @@ public class ListQueueGroupsRespGroups  {
             return false;
         }
         ListQueueGroupsRespGroups listQueueGroupsRespGroups = (ListQueueGroupsRespGroups) o;
-        return Objects.equals(this.id, listQueueGroupsRespGroups.id) &&
-            Objects.equals(this.name, listQueueGroupsRespGroups.name) &&
-            Objects.equals(this.producedMessages, listQueueGroupsRespGroups.producedMessages) &&
-            Objects.equals(this.consumedMessages, listQueueGroupsRespGroups.consumedMessages) &&
-            Objects.equals(this.availableMessages, listQueueGroupsRespGroups.availableMessages) &&
-            Objects.equals(this.producedDeadletters, listQueueGroupsRespGroups.producedDeadletters) &&
-            Objects.equals(this.availableDeadletters, listQueueGroupsRespGroups.availableDeadletters);
+        return Objects.equals(this.id, listQueueGroupsRespGroups.id)
+            && Objects.equals(this.name, listQueueGroupsRespGroups.name)
+            && Objects.equals(this.producedMessages, listQueueGroupsRespGroups.producedMessages)
+            && Objects.equals(this.consumedMessages, listQueueGroupsRespGroups.consumedMessages)
+            && Objects.equals(this.availableMessages, listQueueGroupsRespGroups.availableMessages)
+            && Objects.equals(this.producedDeadletters, listQueueGroupsRespGroups.producedDeadletters)
+            && Objects.equals(this.availableDeadletters, listQueueGroupsRespGroups.availableDeadletters);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, producedMessages, consumedMessages, availableMessages, producedDeadletters, availableDeadletters);
+        return Objects.hash(id,
+            name,
+            producedMessages,
+            consumedMessages,
+            availableMessages,
+            producedDeadletters,
+            availableDeadletters);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,16 +198,13 @@ public class ListQueueGroupsRespGroups  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

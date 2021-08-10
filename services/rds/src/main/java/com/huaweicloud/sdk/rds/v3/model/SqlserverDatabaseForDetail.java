@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 数据库信息。
- */
-public class SqlserverDatabaseForDetail  {
-
-
+/** 数据库信息。 */
+public class SqlserverDatabaseForDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="character_set")
-    
+    @JsonProperty(value = "character_set")
+
     private String characterSet;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
+
     private String state;
 
     public SqlserverDatabaseForDetail withName(String name) {
@@ -40,13 +28,9 @@ public class SqlserverDatabaseForDetail  {
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库名称。
-     * @return name
-     */
+    /** 数据库名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -55,20 +39,14 @@ public class SqlserverDatabaseForDetail  {
         this.name = name;
     }
 
-    
-
     public SqlserverDatabaseForDetail withCharacterSet(String characterSet) {
         this.characterSet = characterSet;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库使用的字符集，例如Chinese_PRC_CI_AS等。
-     * @return characterSet
-     */
+    /** 数据库使用的字符集，例如Chinese_PRC_CI_AS等。
+     * 
+     * @return characterSet */
     public String getCharacterSet() {
         return characterSet;
     }
@@ -77,20 +55,14 @@ public class SqlserverDatabaseForDetail  {
         this.characterSet = characterSet;
     }
 
-    
-
     public SqlserverDatabaseForDetail withState(String state) {
         this.state = state;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库状态。取值如下:  Creating:表示创建中。 Running:表示使用中。 Deleting:表示删除中。 NotExists:表示不存在。
-     * @return state
-     */
+    /** 数据库状态。取值如下: Creating:表示创建中。 Running:表示使用中。 Deleting:表示删除中。 NotExists:表示不存在。
+     * 
+     * @return state */
     public String getState() {
         return state;
     }
@@ -98,8 +70,6 @@ public class SqlserverDatabaseForDetail  {
     public void setState(String state) {
         this.state = state;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class SqlserverDatabaseForDetail  {
             return false;
         }
         SqlserverDatabaseForDetail sqlserverDatabaseForDetail = (SqlserverDatabaseForDetail) o;
-        return Objects.equals(this.name, sqlserverDatabaseForDetail.name) &&
-            Objects.equals(this.characterSet, sqlserverDatabaseForDetail.characterSet) &&
-            Objects.equals(this.state, sqlserverDatabaseForDetail.state);
+        return Objects.equals(this.name, sqlserverDatabaseForDetail.name)
+            && Objects.equals(this.characterSet, sqlserverDatabaseForDetail.characterSet)
+            && Objects.equals(this.state, sqlserverDatabaseForDetail.state);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, characterSet, state);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class SqlserverDatabaseForDetail  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

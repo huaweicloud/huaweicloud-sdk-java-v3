@@ -1,51 +1,35 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dcs.v2.model.SlowlogItem;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListSlowlogResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
+
     private Integer count;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="slowlogs")
-    
+    @JsonProperty(value = "slowlogs")
+
     private List<SlowlogItem> slowlogs = null;
-    
+
     public ListSlowlogResponse withCount(Integer count) {
         this.count = count;
         return this;
     }
 
-    
-
-
-    /**
-     * 总数
-     * @return count
-     */
+    /** 总数
+     * 
+     * @return count */
     public Integer getCount() {
         return count;
     }
@@ -54,16 +38,13 @@ public class ListSlowlogResponse extends SdkResponse {
         this.count = count;
     }
 
-    
-
     public ListSlowlogResponse withSlowlogs(List<SlowlogItem> slowlogs) {
         this.slowlogs = slowlogs;
         return this;
     }
 
-    
     public ListSlowlogResponse addSlowlogsItem(SlowlogItem slowlogsItem) {
-        if(this.slowlogs == null) {
+        if (this.slowlogs == null) {
             this.slowlogs = new ArrayList<>();
         }
         this.slowlogs.add(slowlogsItem);
@@ -71,17 +52,16 @@ public class ListSlowlogResponse extends SdkResponse {
     }
 
     public ListSlowlogResponse withSlowlogs(Consumer<List<SlowlogItem>> slowlogsSetter) {
-        if(this.slowlogs == null) {
+        if (this.slowlogs == null) {
             this.slowlogs = new ArrayList<>();
         }
         slowlogsSetter.accept(this.slowlogs);
         return this;
     }
 
-    /**
-     * 慢日志列表
-     * @return slowlogs
-     */
+    /** 慢日志列表
+     * 
+     * @return slowlogs */
     public List<SlowlogItem> getSlowlogs() {
         return slowlogs;
     }
@@ -89,8 +69,6 @@ public class ListSlowlogResponse extends SdkResponse {
     public void setSlowlogs(List<SlowlogItem> slowlogs) {
         this.slowlogs = slowlogs;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ListSlowlogResponse extends SdkResponse {
             return false;
         }
         ListSlowlogResponse listSlowlogResponse = (ListSlowlogResponse) o;
-        return Objects.equals(this.count, listSlowlogResponse.count) &&
-            Objects.equals(this.slowlogs, listSlowlogResponse.slowlogs);
+        return Objects.equals(this.count, listSlowlogResponse.count)
+            && Objects.equals(this.slowlogs, listSlowlogResponse.slowlogs);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(count, slowlogs);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ListSlowlogResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

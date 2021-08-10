@@ -1,59 +1,41 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListOffSiteBackupsRequest  {
-
-
+/** Request Object */
+public class ListOffSiteBackupsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_id")
-    
+    @JsonProperty(value = "backup_id")
+
     private String backupId;
-    /**
-     * 备份类型，取值： - “auto”: 自动全量备份。SQL Server仅支持查询备份类型为“auto”的备份列表 - “incremental”: 自动增量备份
-     */
+
+    /** 备份类型，取值： - “auto”: 自动全量备份。SQL Server仅支持查询备份类型为“auto”的备份列表 - “incremental”: 自动增量备份 */
     public static final class BackupTypeEnum {
 
-        
-        /**
-         * Enum AUTO for value: "auto"
-         */
+        /** Enum AUTO for value: "auto" */
         public static final BackupTypeEnum AUTO = new BackupTypeEnum("auto");
-        
-        /**
-         * Enum INCREMENTAL for value: "incremental"
-         */
+
+        /** Enum INCREMENTAL for value: "incremental" */
         public static final BackupTypeEnum INCREMENTAL = new BackupTypeEnum("incremental");
-        
 
         private static final Map<String, BackupTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -82,7 +64,7 @@ public class ListOffSiteBackupsRequest  {
 
         @JsonCreator
         public static BackupTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             BackupTypeEnum result = STATIC_FIELDS.get(value);
@@ -93,7 +75,7 @@ public class ListOffSiteBackupsRequest  {
         }
 
         public static BackupTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             BackupTypeEnum result = STATIC_FIELDS.get(value);
@@ -117,34 +99,29 @@ public class ListOffSiteBackupsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_type")
-    
+    @JsonProperty(value = "backup_type")
+
     private BackupTypeEnum backupType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="begin_time")
-    
+    @JsonProperty(value = "begin_time")
+
     private String beginTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
     public ListOffSiteBackupsRequest withXLanguage(String xLanguage) {
@@ -152,15 +129,11 @@ public class ListOffSiteBackupsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -169,20 +142,14 @@ public class ListOffSiteBackupsRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListOffSiteBackupsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -191,20 +158,14 @@ public class ListOffSiteBackupsRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListOffSiteBackupsRequest withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份ID。
-     * @return backupId
-     */
+    /** 备份ID。
+     * 
+     * @return backupId */
     public String getBackupId() {
         return backupId;
     }
@@ -213,20 +174,14 @@ public class ListOffSiteBackupsRequest  {
         this.backupId = backupId;
     }
 
-    
-
     public ListOffSiteBackupsRequest withBackupType(BackupTypeEnum backupType) {
         this.backupType = backupType;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份类型，取值： - “auto”: 自动全量备份。SQL Server仅支持查询备份类型为“auto”的备份列表 - “incremental”: 自动增量备份
-     * @return backupType
-     */
+    /** 备份类型，取值： - “auto”: 自动全量备份。SQL Server仅支持查询备份类型为“auto”的备份列表 - “incremental”: 自动增量备份
+     * 
+     * @return backupType */
     public BackupTypeEnum getBackupType() {
         return backupType;
     }
@@ -235,21 +190,14 @@ public class ListOffSiteBackupsRequest  {
         this.backupType = backupType;
     }
 
-    
-
     public ListOffSiteBackupsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
-     * minimum: 0
-     * @return offset
-     */
+    /** 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。 minimum: 0
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -258,22 +206,14 @@ public class ListOffSiteBackupsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListOffSiteBackupsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
-     * minimum: 1
-     * maximum: 100
-     * @return limit
-     */
+    /** 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。 minimum: 1 maximum: 100
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -282,20 +222,14 @@ public class ListOffSiteBackupsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListOffSiteBackupsRequest withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。与end_time必须同时使用。
-     * @return beginTime
-     */
+    /** 查询开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。与end_time必须同时使用。
+     * 
+     * @return beginTime */
     public String getBeginTime() {
         return beginTime;
     }
@@ -304,20 +238,14 @@ public class ListOffSiteBackupsRequest  {
         this.beginTime = beginTime;
     }
 
-    
-
     public ListOffSiteBackupsRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”，且大于查询开始时间。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。与begin_time必须同时使用。
-     * @return endTime
-     */
+    /** 查询结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”，且大于查询开始时间。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。与begin_time必须同时使用。
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -325,8 +253,6 @@ public class ListOffSiteBackupsRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -337,19 +263,21 @@ public class ListOffSiteBackupsRequest  {
             return false;
         }
         ListOffSiteBackupsRequest listOffSiteBackupsRequest = (ListOffSiteBackupsRequest) o;
-        return Objects.equals(this.xLanguage, listOffSiteBackupsRequest.xLanguage) &&
-            Objects.equals(this.instanceId, listOffSiteBackupsRequest.instanceId) &&
-            Objects.equals(this.backupId, listOffSiteBackupsRequest.backupId) &&
-            Objects.equals(this.backupType, listOffSiteBackupsRequest.backupType) &&
-            Objects.equals(this.offset, listOffSiteBackupsRequest.offset) &&
-            Objects.equals(this.limit, listOffSiteBackupsRequest.limit) &&
-            Objects.equals(this.beginTime, listOffSiteBackupsRequest.beginTime) &&
-            Objects.equals(this.endTime, listOffSiteBackupsRequest.endTime);
+        return Objects.equals(this.xLanguage, listOffSiteBackupsRequest.xLanguage)
+            && Objects.equals(this.instanceId, listOffSiteBackupsRequest.instanceId)
+            && Objects.equals(this.backupId, listOffSiteBackupsRequest.backupId)
+            && Objects.equals(this.backupType, listOffSiteBackupsRequest.backupType)
+            && Objects.equals(this.offset, listOffSiteBackupsRequest.offset)
+            && Objects.equals(this.limit, listOffSiteBackupsRequest.limit)
+            && Objects.equals(this.beginTime, listOffSiteBackupsRequest.beginTime)
+            && Objects.equals(this.endTime, listOffSiteBackupsRequest.endTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, backupId, backupType, offset, limit, beginTime, endTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -365,16 +293,13 @@ public class ListOffSiteBackupsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

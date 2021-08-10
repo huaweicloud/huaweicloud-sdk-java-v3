@@ -1,63 +1,43 @@
 package com.huaweicloud.sdk.oms.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.oms.v2.model.Link;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowApiInfoResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private List<Link> links = null;
-        /**
-     * 版本状态。  取值“CURRENT”，表示该版本为主推版本。  取值\"SUPPORTED\"，表示支持该版本。  取值“DEPRECATED”，表示为废弃版本，存在后续删除的可能。
-     */
+
+    /** 版本状态。 取值“CURRENT”，表示该版本为主推版本。 取值\"SUPPORTED\"，表示支持该版本。 取值“DEPRECATED”，表示为废弃版本，存在后续删除的可能。 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum CURRENT for value: "CURRENT"
-         */
+        /** Enum CURRENT for value: "CURRENT" */
         public static final StatusEnum CURRENT = new StatusEnum("CURRENT");
-        
-        /**
-         * Enum DEPRECATED for value: "DEPRECATED"
-         */
+
+        /** Enum DEPRECATED for value: "DEPRECATED" */
         public static final StatusEnum DEPRECATED = new StatusEnum("DEPRECATED");
-        
-        /**
-         * Enum SUPPORTED for value: "SUPPORTED"
-         */
+
+        /** Enum SUPPORTED for value: "SUPPORTED" */
         public static final StatusEnum SUPPORTED = new StatusEnum("SUPPORTED");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -87,7 +67,7 @@ public class ShowApiInfoResponse extends SdkResponse {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -98,7 +78,7 @@ public class ShowApiInfoResponse extends SdkResponse {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -122,16 +102,14 @@ public class ShowApiInfoResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
+
     private String updated;
 
     public ShowApiInfoResponse withId(String id) {
@@ -139,13 +117,9 @@ public class ShowApiInfoResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 版本号，例如v1。
-     * @return id
-     */
+    /** 版本号，例如v1。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -154,16 +128,13 @@ public class ShowApiInfoResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowApiInfoResponse withLinks(List<Link> links) {
         this.links = links;
         return this;
     }
 
-    
     public ShowApiInfoResponse addLinksItem(Link linksItem) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         this.links.add(linksItem);
@@ -171,17 +142,16 @@ public class ShowApiInfoResponse extends SdkResponse {
     }
 
     public ShowApiInfoResponse withLinks(Consumer<List<Link>> linksSetter) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);
         return this;
     }
 
-    /**
-     * 链接地址信息。
-     * @return links
-     */
+    /** 链接地址信息。
+     * 
+     * @return links */
     public List<Link> getLinks() {
         return links;
     }
@@ -190,20 +160,14 @@ public class ShowApiInfoResponse extends SdkResponse {
         this.links = links;
     }
 
-    
-
     public ShowApiInfoResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 版本状态。  取值“CURRENT”，表示该版本为主推版本。  取值\"SUPPORTED\"，表示支持该版本。  取值“DEPRECATED”，表示为废弃版本，存在后续删除的可能。
-     * @return status
-     */
+    /** 版本状态。 取值“CURRENT”，表示该版本为主推版本。 取值\"SUPPORTED\"，表示支持该版本。 取值“DEPRECATED”，表示为废弃版本，存在后续删除的可能。
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -212,20 +176,14 @@ public class ShowApiInfoResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public ShowApiInfoResponse withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
 
-    
-
-
-    /**
-     * 版本更新时间。  格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指UTC时间。
-     * @return updated
-     */
+    /** 版本更新时间。 格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指UTC时间。
+     * 
+     * @return updated */
     public String getUpdated() {
         return updated;
     }
@@ -233,8 +191,6 @@ public class ShowApiInfoResponse extends SdkResponse {
     public void setUpdated(String updated) {
         this.updated = updated;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -245,15 +201,16 @@ public class ShowApiInfoResponse extends SdkResponse {
             return false;
         }
         ShowApiInfoResponse showApiInfoResponse = (ShowApiInfoResponse) o;
-        return Objects.equals(this.id, showApiInfoResponse.id) &&
-            Objects.equals(this.links, showApiInfoResponse.links) &&
-            Objects.equals(this.status, showApiInfoResponse.status) &&
-            Objects.equals(this.updated, showApiInfoResponse.updated);
+        return Objects.equals(this.id, showApiInfoResponse.id) && Objects.equals(this.links, showApiInfoResponse.links)
+            && Objects.equals(this.status, showApiInfoResponse.status)
+            && Objects.equals(this.updated, showApiInfoResponse.updated);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, links, status, updated);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -265,16 +222,13 @@ public class ShowApiInfoResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

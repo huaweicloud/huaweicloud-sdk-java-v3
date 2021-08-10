@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 数据库信息，与请求参数相同。
- */
-public class DatastoreResult  {
-
-
+/** 数据库信息，与请求参数相同。 */
+public class DatastoreResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="storage_engine")
-    
+    @JsonProperty(value = "storage_engine")
+
     private String storageEngine;
 
     public DatastoreResult withType(String type) {
@@ -40,13 +28,10 @@ public class DatastoreResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库类型。 - 支持GaussDB(for Cassandra)，GaussDB(for Mongo)，GaussDB(for Influx)数据库实例。 - 取值为“cassandra”，表示创建GaussDB(for Cassandra)数据库实例。 - 取值为“mongodb”，表示创建GaussDB(for Mongo)数据库实例。 - 取值为“influxdb”，表示创建GaussDB(for Influx)数据库实例。
-     * @return type
-     */
+    /** 数据库类型。 - 支持GaussDB(for Cassandra)，GaussDB(for Mongo)，GaussDB(for Influx)数据库实例。 - 取值为“cassandra”，表示创建GaussDB(for
+     * Cassandra)数据库实例。 - 取值为“mongodb”，表示创建GaussDB(for Mongo)数据库实例。 - 取值为“influxdb”，表示创建GaussDB(for Influx)数据库实例。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -55,20 +40,15 @@ public class DatastoreResult  {
         this.type = type;
     }
 
-    
-
     public DatastoreResult withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库版本。 - GaussDB(for Cassandra)实例支持3.11版本，取值为“3.11”。 - GaussDB(for Mongo)实例支持3.4，4.0版本，取值为\"3.4\"或\"4.0\"。 - GaussDB(for Influx)实例支持1.7版本，取值为“1.7”。
-     * @return version
-     */
+    /** 数据库版本。 - GaussDB(for Cassandra)实例支持3.11版本，取值为“3.11”。 - GaussDB(for Mongo)实例支持3.4，4.0版本，取值为\"3.4\"或\"4.0\"。 -
+     * GaussDB(for Influx)实例支持1.7版本，取值为“1.7”。
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -77,20 +57,15 @@ public class DatastoreResult  {
         this.version = version;
     }
 
-    
-
     public DatastoreResult withStorageEngine(String storageEngine) {
         this.storageEngine = storageEngine;
         return this;
     }
 
-    
-
-
-    /**
-     * 存储引擎。 - GaussDB(for Cassandra)实例支持RocksDB存储引擎，取值为“rocksDB”。 - GaussDB(for Mongo)实例支持RocksDB存储引擎，取值为“rocksDB”。 - GaussDB(for Influx)实例支持RocksDB存储引擎，取值为“rocksDB”。
-     * @return storageEngine
-     */
+    /** 存储引擎。 - GaussDB(for Cassandra)实例支持RocksDB存储引擎，取值为“rocksDB”。 - GaussDB(for Mongo)实例支持RocksDB存储引擎，取值为“rocksDB”。 -
+     * GaussDB(for Influx)实例支持RocksDB存储引擎，取值为“rocksDB”。
+     * 
+     * @return storageEngine */
     public String getStorageEngine() {
         return storageEngine;
     }
@@ -98,8 +73,6 @@ public class DatastoreResult  {
     public void setStorageEngine(String storageEngine) {
         this.storageEngine = storageEngine;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +83,15 @@ public class DatastoreResult  {
             return false;
         }
         DatastoreResult datastoreResult = (DatastoreResult) o;
-        return Objects.equals(this.type, datastoreResult.type) &&
-            Objects.equals(this.version, datastoreResult.version) &&
-            Objects.equals(this.storageEngine, datastoreResult.storageEngine);
+        return Objects.equals(this.type, datastoreResult.type) && Objects.equals(this.version, datastoreResult.version)
+            && Objects.equals(this.storageEngine, datastoreResult.storageEngine);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, version, storageEngine);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +102,13 @@ public class DatastoreResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

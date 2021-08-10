@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cdn.v1.model.PreheatingTaskRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * PreheatingTaskRequest
- */
-public class PreheatingTaskRequest  {
-
-
+/** PreheatingTaskRequest */
+public class PreheatingTaskRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="preheating_task")
-    
+    @JsonProperty(value = "preheating_task")
+
     private PreheatingTaskRequestBody preheatingTask;
 
     public PreheatingTaskRequest withPreheatingTask(PreheatingTaskRequestBody preheatingTask) {
@@ -30,19 +20,17 @@ public class PreheatingTaskRequest  {
     }
 
     public PreheatingTaskRequest withPreheatingTask(Consumer<PreheatingTaskRequestBody> preheatingTaskSetter) {
-        if(this.preheatingTask == null ){
+        if (this.preheatingTask == null) {
             this.preheatingTask = new PreheatingTaskRequestBody();
             preheatingTaskSetter.accept(this.preheatingTask);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get preheatingTask
-     * @return preheatingTask
-     */
+    /** Get preheatingTask
+     * 
+     * @return preheatingTask */
     public PreheatingTaskRequestBody getPreheatingTask() {
         return preheatingTask;
     }
@@ -50,8 +38,6 @@ public class PreheatingTaskRequest  {
     public void setPreheatingTask(PreheatingTaskRequestBody preheatingTask) {
         this.preheatingTask = preheatingTask;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class PreheatingTaskRequest  {
         PreheatingTaskRequest preheatingTaskRequest = (PreheatingTaskRequest) o;
         return Objects.equals(this.preheatingTask, preheatingTaskRequest.preheatingTask);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(preheatingTask);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class PreheatingTaskRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.cloudtest.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Environment
- */
-public class Environment  {
-
-
+/** Environment */
+public class Environment {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="environment_id")
-    
+    @JsonProperty(value = "environment_id")
+
     private String environmentId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="environment_name")
-    
+    @JsonProperty(value = "environment_name")
+
     private String environmentName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="environment_description")
-    
+    @JsonProperty(value = "environment_description")
+
     private String environmentDescription;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_default")
-    
+    @JsonProperty(value = "is_default")
+
     private Boolean isDefault;
 
     public Environment withEnvironmentId(String environmentId) {
@@ -46,13 +33,9 @@ public class Environment  {
         return this;
     }
 
-    
-
-
-    /**
-     * 环境分组id
-     * @return environmentId
-     */
+    /** 环境分组id
+     * 
+     * @return environmentId */
     public String getEnvironmentId() {
         return environmentId;
     }
@@ -61,20 +44,14 @@ public class Environment  {
         this.environmentId = environmentId;
     }
 
-    
-
     public Environment withEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境分组名
-     * @return environmentName
-     */
+    /** 环境分组名
+     * 
+     * @return environmentName */
     public String getEnvironmentName() {
         return environmentName;
     }
@@ -83,20 +60,14 @@ public class Environment  {
         this.environmentName = environmentName;
     }
 
-    
-
     public Environment withEnvironmentDescription(String environmentDescription) {
         this.environmentDescription = environmentDescription;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境分组描述
-     * @return environmentDescription
-     */
+    /** 环境分组描述
+     * 
+     * @return environmentDescription */
     public String getEnvironmentDescription() {
         return environmentDescription;
     }
@@ -105,20 +76,14 @@ public class Environment  {
         this.environmentDescription = environmentDescription;
     }
 
-    
-
     public Environment withIsDefault(Boolean isDefault) {
         this.isDefault = isDefault;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否是默认环境
-     * @return isDefault
-     */
+    /** 是否是默认环境
+     * 
+     * @return isDefault */
     public Boolean getIsDefault() {
         return isDefault;
     }
@@ -126,8 +91,6 @@ public class Environment  {
     public void setIsDefault(Boolean isDefault) {
         this.isDefault = isDefault;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class Environment  {
             return false;
         }
         Environment environment = (Environment) o;
-        return Objects.equals(this.environmentId, environment.environmentId) &&
-            Objects.equals(this.environmentName, environment.environmentName) &&
-            Objects.equals(this.environmentDescription, environment.environmentDescription) &&
-            Objects.equals(this.isDefault, environment.isDefault);
+        return Objects.equals(this.environmentId, environment.environmentId)
+            && Objects.equals(this.environmentName, environment.environmentName)
+            && Objects.equals(this.environmentDescription, environment.environmentDescription)
+            && Objects.equals(this.isDefault, environment.isDefault);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(environmentId, environmentName, environmentDescription, isDefault);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class Environment  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

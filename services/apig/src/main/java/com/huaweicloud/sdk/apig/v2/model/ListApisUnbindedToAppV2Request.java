@@ -1,68 +1,51 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListApisUnbindedToAppV2Request  {
-
-
+/** Request Object */
+public class ListApisUnbindedToAppV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_id")
-    
+    @JsonProperty(value = "env_id")
+
     private String envId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_id")
-    
+    @JsonProperty(value = "api_id")
+
     private String apiId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_name")
-    
+    @JsonProperty(value = "api_name")
+
     private String apiName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Long offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
     public ListApisUnbindedToAppV2Request withInstanceId(String instanceId) {
@@ -70,13 +53,9 @@ public class ListApisUnbindedToAppV2Request  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例编号
-     * @return instanceId
-     */
+    /** 实例编号
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -85,20 +64,14 @@ public class ListApisUnbindedToAppV2Request  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListApisUnbindedToAppV2Request withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用id
-     * @return appId
-     */
+    /** 应用id
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -107,20 +80,14 @@ public class ListApisUnbindedToAppV2Request  {
         this.appId = appId;
     }
 
-    
-
     public ListApisUnbindedToAppV2Request withEnvId(String envId) {
         this.envId = envId;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境id
-     * @return envId
-     */
+    /** 环境id
+     * 
+     * @return envId */
     public String getEnvId() {
         return envId;
     }
@@ -129,20 +96,14 @@ public class ListApisUnbindedToAppV2Request  {
         this.envId = envId;
     }
 
-    
-
     public ListApisUnbindedToAppV2Request withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * API分组编号
-     * @return groupId
-     */
+    /** API分组编号
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -151,20 +112,14 @@ public class ListApisUnbindedToAppV2Request  {
         this.groupId = groupId;
     }
 
-    
-
     public ListApisUnbindedToAppV2Request withApiId(String apiId) {
         this.apiId = apiId;
         return this;
     }
 
-    
-
-
-    /**
-     * API编号
-     * @return apiId
-     */
+    /** API编号
+     * 
+     * @return apiId */
     public String getApiId() {
         return apiId;
     }
@@ -173,20 +128,14 @@ public class ListApisUnbindedToAppV2Request  {
         this.apiId = apiId;
     }
 
-    
-
     public ListApisUnbindedToAppV2Request withApiName(String apiName) {
         this.apiName = apiName;
         return this;
     }
 
-    
-
-
-    /**
-     * API名称
-     * @return apiName
-     */
+    /** API名称
+     * 
+     * @return apiName */
     public String getApiName() {
         return apiName;
     }
@@ -195,20 +144,14 @@ public class ListApisUnbindedToAppV2Request  {
         this.apiName = apiName;
     }
 
-    
-
     public ListApisUnbindedToAppV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
-     * @return offset
-     */
+    /** 偏移量，表示从此偏移量开始查询，偏移量小于0时，自动转换为0
+     * 
+     * @return offset */
     public Long getOffset() {
         return offset;
     }
@@ -217,22 +160,14 @@ public class ListApisUnbindedToAppV2Request  {
         this.offset = offset;
     }
 
-    
-
     public ListApisUnbindedToAppV2Request withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示的条目数量
-     * minimum: 1
-     * maximum: 500
-     * @return limit
-     */
+    /** 每页显示的条目数量 minimum: 1 maximum: 500
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -240,8 +175,6 @@ public class ListApisUnbindedToAppV2Request  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -252,19 +185,21 @@ public class ListApisUnbindedToAppV2Request  {
             return false;
         }
         ListApisUnbindedToAppV2Request listApisUnbindedToAppV2Request = (ListApisUnbindedToAppV2Request) o;
-        return Objects.equals(this.instanceId, listApisUnbindedToAppV2Request.instanceId) &&
-            Objects.equals(this.appId, listApisUnbindedToAppV2Request.appId) &&
-            Objects.equals(this.envId, listApisUnbindedToAppV2Request.envId) &&
-            Objects.equals(this.groupId, listApisUnbindedToAppV2Request.groupId) &&
-            Objects.equals(this.apiId, listApisUnbindedToAppV2Request.apiId) &&
-            Objects.equals(this.apiName, listApisUnbindedToAppV2Request.apiName) &&
-            Objects.equals(this.offset, listApisUnbindedToAppV2Request.offset) &&
-            Objects.equals(this.limit, listApisUnbindedToAppV2Request.limit);
+        return Objects.equals(this.instanceId, listApisUnbindedToAppV2Request.instanceId)
+            && Objects.equals(this.appId, listApisUnbindedToAppV2Request.appId)
+            && Objects.equals(this.envId, listApisUnbindedToAppV2Request.envId)
+            && Objects.equals(this.groupId, listApisUnbindedToAppV2Request.groupId)
+            && Objects.equals(this.apiId, listApisUnbindedToAppV2Request.apiId)
+            && Objects.equals(this.apiName, listApisUnbindedToAppV2Request.apiName)
+            && Objects.equals(this.offset, listApisUnbindedToAppV2Request.offset)
+            && Objects.equals(this.limit, listApisUnbindedToAppV2Request.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, appId, envId, groupId, apiId, apiName, offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -280,16 +215,13 @@ public class ListApisUnbindedToAppV2Request  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,35 +1,23 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dds.v3.model.BalancerActiveWindow;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowShardingBalancerResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_open")
-    
+    @JsonProperty(value = "is_open")
+
     private Boolean isOpen;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="active_window")
-    
+    @JsonProperty(value = "active_window")
+
     private BalancerActiveWindow activeWindow;
 
     public ShowShardingBalancerResponse withIsOpen(Boolean isOpen) {
@@ -37,13 +25,9 @@ public class ShowShardingBalancerResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 集群均衡是否打开。
-     * @return isOpen
-     */
+    /** 集群均衡是否打开。
+     * 
+     * @return isOpen */
     public Boolean getIsOpen() {
         return isOpen;
     }
@@ -52,27 +36,23 @@ public class ShowShardingBalancerResponse extends SdkResponse {
         this.isOpen = isOpen;
     }
 
-    
-
     public ShowShardingBalancerResponse withActiveWindow(BalancerActiveWindow activeWindow) {
         this.activeWindow = activeWindow;
         return this;
     }
 
     public ShowShardingBalancerResponse withActiveWindow(Consumer<BalancerActiveWindow> activeWindowSetter) {
-        if(this.activeWindow == null ){
+        if (this.activeWindow == null) {
             this.activeWindow = new BalancerActiveWindow();
             activeWindowSetter.accept(this.activeWindow);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get activeWindow
-     * @return activeWindow
-     */
+    /** Get activeWindow
+     * 
+     * @return activeWindow */
     public BalancerActiveWindow getActiveWindow() {
         return activeWindow;
     }
@@ -80,8 +60,6 @@ public class ShowShardingBalancerResponse extends SdkResponse {
     public void setActiveWindow(BalancerActiveWindow activeWindow) {
         this.activeWindow = activeWindow;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -92,13 +70,15 @@ public class ShowShardingBalancerResponse extends SdkResponse {
             return false;
         }
         ShowShardingBalancerResponse showShardingBalancerResponse = (ShowShardingBalancerResponse) o;
-        return Objects.equals(this.isOpen, showShardingBalancerResponse.isOpen) &&
-            Objects.equals(this.activeWindow, showShardingBalancerResponse.activeWindow);
+        return Objects.equals(this.isOpen, showShardingBalancerResponse.isOpen)
+            && Objects.equals(this.activeWindow, showShardingBalancerResponse.activeWindow);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(isOpen, activeWindow);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -108,16 +88,13 @@ public class ShowShardingBalancerResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

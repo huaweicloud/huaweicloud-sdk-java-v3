@@ -1,134 +1,106 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 历史召开研讨会议信息
- */
-public class OpenWebinarHistoryInfo  {
-
-
+/** 历史召开研讨会议信息 */
+public class OpenWebinarHistoryInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="conferenceId")
-    
+    @JsonProperty(value = "conferenceId")
+
     private String conferenceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confUUID")
-    
+    @JsonProperty(value = "confUUID")
+
     private String confUUID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subject")
-    
+    @JsonProperty(value = "subject")
+
     private String subject;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scheduserName")
-    
+    @JsonProperty(value = "scheduserName")
+
     private String scheduserName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="moderator")
-    
+    @JsonProperty(value = "moderator")
+
     private String moderator;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deptName")
-    
+    @JsonProperty(value = "deptName")
+
     private String deptName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timeZoneId")
-    
+    @JsonProperty(value = "timeZoneId")
+
     private Integer timeZoneId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="startTime")
-    
+    @JsonProperty(value = "startTime")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="duration")
-    
+    @JsonProperty(value = "duration")
+
     private Integer duration;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="actualStartTime")
-    
+    @JsonProperty(value = "actualStartTime")
+
     private String actualStartTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endTime")
-    
+    @JsonProperty(value = "endTime")
+
     private String endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="actualDuration")
-    
+    @JsonProperty(value = "actualDuration")
+
     private Integer actualDuration;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="attendeeCount")
-    
+    @JsonProperty(value = "attendeeCount")
+
     private Integer attendeeCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="chairCount")
-    
+    @JsonProperty(value = "chairCount")
+
     private Integer chairCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="guestCount")
-    
+    @JsonProperty(value = "guestCount")
+
     private Integer guestCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audienceCount")
-    
+    @JsonProperty(value = "audienceCount")
+
     private Integer audienceCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrId")
-    
+    @JsonProperty(value = "vmrId")
+
     private String vmrId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrPkgAudienceParties")
-    
+    @JsonProperty(value = "vmrPkgAudienceParties")
+
     private Integer vmrPkgAudienceParties;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrPkgName")
-    
+    @JsonProperty(value = "vmrPkgName")
+
     private String vmrPkgName;
 
     public OpenWebinarHistoryInfo withConferenceId(String conferenceId) {
@@ -136,13 +108,9 @@ public class OpenWebinarHistoryInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 会议id
-     * @return conferenceId
-     */
+    /** 会议id
+     * 
+     * @return conferenceId */
     public String getConferenceId() {
         return conferenceId;
     }
@@ -151,20 +119,14 @@ public class OpenWebinarHistoryInfo  {
         this.conferenceId = conferenceId;
     }
 
-    
-
     public OpenWebinarHistoryInfo withConfUUID(String confUUID) {
         this.confUUID = confUUID;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议UUID
-     * @return confUUID
-     */
+    /** 会议UUID
+     * 
+     * @return confUUID */
     public String getConfUUID() {
         return confUUID;
     }
@@ -173,20 +135,14 @@ public class OpenWebinarHistoryInfo  {
         this.confUUID = confUUID;
     }
 
-    
-
     public OpenWebinarHistoryInfo withSubject(String subject) {
         this.subject = subject;
         return this;
     }
 
-    
-
-
-    /**
-     * 主题
-     * @return subject
-     */
+    /** 主题
+     * 
+     * @return subject */
     public String getSubject() {
         return subject;
     }
@@ -195,20 +151,14 @@ public class OpenWebinarHistoryInfo  {
         this.subject = subject;
     }
 
-    
-
     public OpenWebinarHistoryInfo withScheduserName(String scheduserName) {
         this.scheduserName = scheduserName;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议订阅者
-     * @return scheduserName
-     */
+    /** 会议订阅者
+     * 
+     * @return scheduserName */
     public String getScheduserName() {
         return scheduserName;
     }
@@ -217,20 +167,14 @@ public class OpenWebinarHistoryInfo  {
         this.scheduserName = scheduserName;
     }
 
-    
-
     public OpenWebinarHistoryInfo withModerator(String moderator) {
         this.moderator = moderator;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议主持人
-     * @return moderator
-     */
+    /** 会议主持人
+     * 
+     * @return moderator */
     public String getModerator() {
         return moderator;
     }
@@ -239,20 +183,14 @@ public class OpenWebinarHistoryInfo  {
         this.moderator = moderator;
     }
 
-    
-
     public OpenWebinarHistoryInfo withDeptName(String deptName) {
         this.deptName = deptName;
         return this;
     }
 
-    
-
-
-    /**
-     * 部门名称
-     * @return deptName
-     */
+    /** 部门名称
+     * 
+     * @return deptName */
     public String getDeptName() {
         return deptName;
     }
@@ -261,20 +199,14 @@ public class OpenWebinarHistoryInfo  {
         this.deptName = deptName;
     }
 
-    
-
     public OpenWebinarHistoryInfo withTimeZoneId(Integer timeZoneId) {
         this.timeZoneId = timeZoneId;
         return this;
     }
 
-    
-
-
-    /**
-     * 时区ID
-     * @return timeZoneId
-     */
+    /** 时区ID
+     * 
+     * @return timeZoneId */
     public Integer getTimeZoneId() {
         return timeZoneId;
     }
@@ -283,20 +215,14 @@ public class OpenWebinarHistoryInfo  {
         this.timeZoneId = timeZoneId;
     }
 
-    
-
     public OpenWebinarHistoryInfo withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议预约时间
-     * @return startTime
-     */
+    /** 会议预约时间
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -305,20 +231,14 @@ public class OpenWebinarHistoryInfo  {
         this.startTime = startTime;
     }
 
-    
-
     public OpenWebinarHistoryInfo withDuration(Integer duration) {
         this.duration = duration;
         return this;
     }
 
-    
-
-
-    /**
-     * 预约会议时长，单位分钟
-     * @return duration
-     */
+    /** 预约会议时长，单位分钟
+     * 
+     * @return duration */
     public Integer getDuration() {
         return duration;
     }
@@ -327,20 +247,14 @@ public class OpenWebinarHistoryInfo  {
         this.duration = duration;
     }
 
-    
-
     public OpenWebinarHistoryInfo withActualStartTime(String actualStartTime) {
         this.actualStartTime = actualStartTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议开始时间
-     * @return actualStartTime
-     */
+    /** 会议开始时间
+     * 
+     * @return actualStartTime */
     public String getActualStartTime() {
         return actualStartTime;
     }
@@ -349,20 +263,14 @@ public class OpenWebinarHistoryInfo  {
         this.actualStartTime = actualStartTime;
     }
 
-    
-
     public OpenWebinarHistoryInfo withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议结束时间
-     * @return endTime
-     */
+    /** 会议结束时间
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -371,20 +279,14 @@ public class OpenWebinarHistoryInfo  {
         this.endTime = endTime;
     }
 
-    
-
     public OpenWebinarHistoryInfo withActualDuration(Integer actualDuration) {
         this.actualDuration = actualDuration;
         return this;
     }
 
-    
-
-
-    /**
-     * 实际会议时长，单位分钟
-     * @return actualDuration
-     */
+    /** 实际会议时长，单位分钟
+     * 
+     * @return actualDuration */
     public Integer getActualDuration() {
         return actualDuration;
     }
@@ -393,20 +295,14 @@ public class OpenWebinarHistoryInfo  {
         this.actualDuration = actualDuration;
     }
 
-    
-
     public OpenWebinarHistoryInfo withAttendeeCount(Integer attendeeCount) {
         this.attendeeCount = attendeeCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 与会人数
-     * @return attendeeCount
-     */
+    /** 与会人数
+     * 
+     * @return attendeeCount */
     public Integer getAttendeeCount() {
         return attendeeCount;
     }
@@ -415,20 +311,14 @@ public class OpenWebinarHistoryInfo  {
         this.attendeeCount = attendeeCount;
     }
 
-    
-
     public OpenWebinarHistoryInfo withChairCount(Integer chairCount) {
         this.chairCount = chairCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 主持人人数
-     * @return chairCount
-     */
+    /** 主持人人数
+     * 
+     * @return chairCount */
     public Integer getChairCount() {
         return chairCount;
     }
@@ -437,20 +327,14 @@ public class OpenWebinarHistoryInfo  {
         this.chairCount = chairCount;
     }
 
-    
-
     public OpenWebinarHistoryInfo withGuestCount(Integer guestCount) {
         this.guestCount = guestCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 嘉宾人数
-     * @return guestCount
-     */
+    /** 嘉宾人数
+     * 
+     * @return guestCount */
     public Integer getGuestCount() {
         return guestCount;
     }
@@ -459,20 +343,14 @@ public class OpenWebinarHistoryInfo  {
         this.guestCount = guestCount;
     }
 
-    
-
     public OpenWebinarHistoryInfo withAudienceCount(Integer audienceCount) {
         this.audienceCount = audienceCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 观众人数
-     * @return audienceCount
-     */
+    /** 观众人数
+     * 
+     * @return audienceCount */
     public Integer getAudienceCount() {
         return audienceCount;
     }
@@ -481,20 +359,14 @@ public class OpenWebinarHistoryInfo  {
         this.audienceCount = audienceCount;
     }
 
-    
-
     public OpenWebinarHistoryInfo withVmrId(String vmrId) {
         this.vmrId = vmrId;
         return this;
     }
 
-    
-
-
-    /**
-     * VMR ID
-     * @return vmrId
-     */
+    /** VMR ID
+     * 
+     * @return vmrId */
     public String getVmrId() {
         return vmrId;
     }
@@ -503,20 +375,14 @@ public class OpenWebinarHistoryInfo  {
         this.vmrId = vmrId;
     }
 
-    
-
     public OpenWebinarHistoryInfo withVmrPkgAudienceParties(Integer vmrPkgAudienceParties) {
         this.vmrPkgAudienceParties = vmrPkgAudienceParties;
         return this;
     }
 
-    
-
-
-    /**
-     * VMR资源规格-最大观众数
-     * @return vmrPkgAudienceParties
-     */
+    /** VMR资源规格-最大观众数
+     * 
+     * @return vmrPkgAudienceParties */
     public Integer getVmrPkgAudienceParties() {
         return vmrPkgAudienceParties;
     }
@@ -525,20 +391,14 @@ public class OpenWebinarHistoryInfo  {
         this.vmrPkgAudienceParties = vmrPkgAudienceParties;
     }
 
-    
-
     public OpenWebinarHistoryInfo withVmrPkgName(String vmrPkgName) {
         this.vmrPkgName = vmrPkgName;
         return this;
     }
 
-    
-
-
-    /**
-     * 网络研讨会资源名
-     * @return vmrPkgName
-     */
+    /** 网络研讨会资源名
+     * 
+     * @return vmrPkgName */
     public String getVmrPkgName() {
         return vmrPkgName;
     }
@@ -546,8 +406,6 @@ public class OpenWebinarHistoryInfo  {
     public void setVmrPkgName(String vmrPkgName) {
         this.vmrPkgName = vmrPkgName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -558,30 +416,50 @@ public class OpenWebinarHistoryInfo  {
             return false;
         }
         OpenWebinarHistoryInfo openWebinarHistoryInfo = (OpenWebinarHistoryInfo) o;
-        return Objects.equals(this.conferenceId, openWebinarHistoryInfo.conferenceId) &&
-            Objects.equals(this.confUUID, openWebinarHistoryInfo.confUUID) &&
-            Objects.equals(this.subject, openWebinarHistoryInfo.subject) &&
-            Objects.equals(this.scheduserName, openWebinarHistoryInfo.scheduserName) &&
-            Objects.equals(this.moderator, openWebinarHistoryInfo.moderator) &&
-            Objects.equals(this.deptName, openWebinarHistoryInfo.deptName) &&
-            Objects.equals(this.timeZoneId, openWebinarHistoryInfo.timeZoneId) &&
-            Objects.equals(this.startTime, openWebinarHistoryInfo.startTime) &&
-            Objects.equals(this.duration, openWebinarHistoryInfo.duration) &&
-            Objects.equals(this.actualStartTime, openWebinarHistoryInfo.actualStartTime) &&
-            Objects.equals(this.endTime, openWebinarHistoryInfo.endTime) &&
-            Objects.equals(this.actualDuration, openWebinarHistoryInfo.actualDuration) &&
-            Objects.equals(this.attendeeCount, openWebinarHistoryInfo.attendeeCount) &&
-            Objects.equals(this.chairCount, openWebinarHistoryInfo.chairCount) &&
-            Objects.equals(this.guestCount, openWebinarHistoryInfo.guestCount) &&
-            Objects.equals(this.audienceCount, openWebinarHistoryInfo.audienceCount) &&
-            Objects.equals(this.vmrId, openWebinarHistoryInfo.vmrId) &&
-            Objects.equals(this.vmrPkgAudienceParties, openWebinarHistoryInfo.vmrPkgAudienceParties) &&
-            Objects.equals(this.vmrPkgName, openWebinarHistoryInfo.vmrPkgName);
+        return Objects.equals(this.conferenceId, openWebinarHistoryInfo.conferenceId)
+            && Objects.equals(this.confUUID, openWebinarHistoryInfo.confUUID)
+            && Objects.equals(this.subject, openWebinarHistoryInfo.subject)
+            && Objects.equals(this.scheduserName, openWebinarHistoryInfo.scheduserName)
+            && Objects.equals(this.moderator, openWebinarHistoryInfo.moderator)
+            && Objects.equals(this.deptName, openWebinarHistoryInfo.deptName)
+            && Objects.equals(this.timeZoneId, openWebinarHistoryInfo.timeZoneId)
+            && Objects.equals(this.startTime, openWebinarHistoryInfo.startTime)
+            && Objects.equals(this.duration, openWebinarHistoryInfo.duration)
+            && Objects.equals(this.actualStartTime, openWebinarHistoryInfo.actualStartTime)
+            && Objects.equals(this.endTime, openWebinarHistoryInfo.endTime)
+            && Objects.equals(this.actualDuration, openWebinarHistoryInfo.actualDuration)
+            && Objects.equals(this.attendeeCount, openWebinarHistoryInfo.attendeeCount)
+            && Objects.equals(this.chairCount, openWebinarHistoryInfo.chairCount)
+            && Objects.equals(this.guestCount, openWebinarHistoryInfo.guestCount)
+            && Objects.equals(this.audienceCount, openWebinarHistoryInfo.audienceCount)
+            && Objects.equals(this.vmrId, openWebinarHistoryInfo.vmrId)
+            && Objects.equals(this.vmrPkgAudienceParties, openWebinarHistoryInfo.vmrPkgAudienceParties)
+            && Objects.equals(this.vmrPkgName, openWebinarHistoryInfo.vmrPkgName);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(conferenceId, confUUID, subject, scheduserName, moderator, deptName, timeZoneId, startTime, duration, actualStartTime, endTime, actualDuration, attendeeCount, chairCount, guestCount, audienceCount, vmrId, vmrPkgAudienceParties, vmrPkgName);
+        return Objects.hash(conferenceId,
+            confUUID,
+            subject,
+            scheduserName,
+            moderator,
+            deptName,
+            timeZoneId,
+            startTime,
+            duration,
+            actualStartTime,
+            endTime,
+            actualDuration,
+            attendeeCount,
+            chairCount,
+            guestCount,
+            audienceCount,
+            vmrId,
+            vmrPkgAudienceParties,
+            vmrPkgName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -608,16 +486,13 @@ public class OpenWebinarHistoryInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,74 +1,56 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 依赖包信息。
- */
-public class ListDependenciesResult  {
-
-
+/** 依赖包信息。 */
+public class ListDependenciesResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="owner")
-    
+    @JsonProperty(value = "owner")
+
     private String owner;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="link")
-    
+    @JsonProperty(value = "link")
+
     private String link;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="runtime")
-    
+    @JsonProperty(value = "runtime")
+
     private String runtime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="etag")
-    
+    @JsonProperty(value = "etag")
+
     private String etag;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Long size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_name")
-    
+    @JsonProperty(value = "file_name")
+
     private String fileName;
 
     public ListDependenciesResult withId(String id) {
@@ -76,13 +58,9 @@ public class ListDependenciesResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 依赖包ID。
-     * @return id
-     */
+    /** 依赖包ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -91,20 +69,14 @@ public class ListDependenciesResult  {
         this.id = id;
     }
 
-    
-
     public ListDependenciesResult withOwner(String owner) {
         this.owner = owner;
         return this;
     }
 
-    
-
-
-    /**
-     * 依赖包拥有者。
-     * @return owner
-     */
+    /** 依赖包拥有者。
+     * 
+     * @return owner */
     public String getOwner() {
         return owner;
     }
@@ -113,20 +85,14 @@ public class ListDependenciesResult  {
         this.owner = owner;
     }
 
-    
-
     public ListDependenciesResult withLink(String link) {
         this.link = link;
         return this;
     }
 
-    
-
-
-    /**
-     * 依赖包在obs的存储地址。
-     * @return link
-     */
+    /** 依赖包在obs的存储地址。
+     * 
+     * @return link */
     public String getLink() {
         return link;
     }
@@ -135,20 +101,14 @@ public class ListDependenciesResult  {
         this.link = link;
     }
 
-    
-
     public ListDependenciesResult withRuntime(String runtime) {
         this.runtime = runtime;
         return this;
     }
 
-    
-
-
-    /**
-     * 运行时语言。
-     * @return runtime
-     */
+    /** 运行时语言。
+     * 
+     * @return runtime */
     public String getRuntime() {
         return runtime;
     }
@@ -157,20 +117,14 @@ public class ListDependenciesResult  {
         this.runtime = runtime;
     }
 
-    
-
     public ListDependenciesResult withEtag(String etag) {
         this.etag = etag;
         return this;
     }
 
-    
-
-
-    /**
-     * 依赖包唯一标志。
-     * @return etag
-     */
+    /** 依赖包唯一标志。
+     * 
+     * @return etag */
     public String getEtag() {
         return etag;
     }
@@ -179,20 +133,14 @@ public class ListDependenciesResult  {
         this.etag = etag;
     }
 
-    
-
     public ListDependenciesResult withSize(Long size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 依赖包大小。
-     * @return size
-     */
+    /** 依赖包大小。
+     * 
+     * @return size */
     public Long getSize() {
         return size;
     }
@@ -201,20 +149,14 @@ public class ListDependenciesResult  {
         this.size = size;
     }
 
-    
-
     public ListDependenciesResult withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 依赖包名。
-     * @return name
-     */
+    /** 依赖包名。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -223,20 +165,14 @@ public class ListDependenciesResult  {
         this.name = name;
     }
 
-    
-
     public ListDependenciesResult withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 依赖包描述。
-     * @return description
-     */
+    /** 依赖包描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -245,20 +181,14 @@ public class ListDependenciesResult  {
         this.description = description;
     }
 
-    
-
     public ListDependenciesResult withFileName(String fileName) {
         this.fileName = fileName;
         return this;
     }
 
-    
-
-
-    /**
-     * 依赖包文件名。
-     * @return fileName
-     */
+    /** 依赖包文件名。
+     * 
+     * @return fileName */
     public String getFileName() {
         return fileName;
     }
@@ -266,8 +196,6 @@ public class ListDependenciesResult  {
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -278,20 +206,22 @@ public class ListDependenciesResult  {
             return false;
         }
         ListDependenciesResult listDependenciesResult = (ListDependenciesResult) o;
-        return Objects.equals(this.id, listDependenciesResult.id) &&
-            Objects.equals(this.owner, listDependenciesResult.owner) &&
-            Objects.equals(this.link, listDependenciesResult.link) &&
-            Objects.equals(this.runtime, listDependenciesResult.runtime) &&
-            Objects.equals(this.etag, listDependenciesResult.etag) &&
-            Objects.equals(this.size, listDependenciesResult.size) &&
-            Objects.equals(this.name, listDependenciesResult.name) &&
-            Objects.equals(this.description, listDependenciesResult.description) &&
-            Objects.equals(this.fileName, listDependenciesResult.fileName);
+        return Objects.equals(this.id, listDependenciesResult.id)
+            && Objects.equals(this.owner, listDependenciesResult.owner)
+            && Objects.equals(this.link, listDependenciesResult.link)
+            && Objects.equals(this.runtime, listDependenciesResult.runtime)
+            && Objects.equals(this.etag, listDependenciesResult.etag)
+            && Objects.equals(this.size, listDependenciesResult.size)
+            && Objects.equals(this.name, listDependenciesResult.name)
+            && Objects.equals(this.description, listDependenciesResult.description)
+            && Objects.equals(this.fileName, listDependenciesResult.fileName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, owner, link, runtime, etag, size, name, description, fileName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -308,16 +238,13 @@ public class ListDependenciesResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

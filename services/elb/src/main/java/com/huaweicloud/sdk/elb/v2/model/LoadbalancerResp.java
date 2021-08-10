@@ -1,121 +1,88 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.ResourceList;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 负载均衡器响应体
- */
-public class LoadbalancerResp  {
-
-
+/** 负载均衡器响应体 */
+public class LoadbalancerResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
+
     private String tenantId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vip_subnet_id")
-    
+    @JsonProperty(value = "vip_subnet_id")
+
     private String vipSubnetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vip_port_id")
-    
+    @JsonProperty(value = "vip_port_id")
+
     private String vipPortId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vip_address")
-    
+    @JsonProperty(value = "vip_address")
+
     private String vipAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="listeners")
-    
+    @JsonProperty(value = "listeners")
+
     private List<ResourceList> listeners = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pools")
-    
+    @JsonProperty(value = "pools")
+
     private List<ResourceList> pools = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provider")
-    
+    @JsonProperty(value = "provider")
+
     private String provider;
-    /**
-     * 负载均衡器的操作状态
-     */
+
+    /** 负载均衡器的操作状态 */
     public static final class OperatingStatusEnum {
 
-        
-        /**
-         * Enum ONLINE for value: "ONLINE"
-         */
+        /** Enum ONLINE for value: "ONLINE" */
         public static final OperatingStatusEnum ONLINE = new OperatingStatusEnum("ONLINE");
-        
-        /**
-         * Enum OFFLINE for value: "OFFLINE"
-         */
+
+        /** Enum OFFLINE for value: "OFFLINE" */
         public static final OperatingStatusEnum OFFLINE = new OperatingStatusEnum("OFFLINE");
-        
-        /**
-         * Enum DEGRADED for value: "DEGRADED"
-         */
+
+        /** Enum DEGRADED for value: "DEGRADED" */
         public static final OperatingStatusEnum DEGRADED = new OperatingStatusEnum("DEGRADED");
-        
-        /**
-         * Enum DISABLED for value: "DISABLED"
-         */
+
+        /** Enum DISABLED for value: "DISABLED" */
         public static final OperatingStatusEnum DISABLED = new OperatingStatusEnum("DISABLED");
-        
-        /**
-         * Enum NO_MONITOR for value: "NO_MONITOR"
-         */
+
+        /** Enum NO_MONITOR for value: "NO_MONITOR" */
         public static final OperatingStatusEnum NO_MONITOR = new OperatingStatusEnum("NO_MONITOR");
-        
 
         private static final Map<String, OperatingStatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -147,7 +114,7 @@ public class LoadbalancerResp  {
 
         @JsonCreator
         public static OperatingStatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OperatingStatusEnum result = STATIC_FIELDS.get(value);
@@ -158,7 +125,7 @@ public class LoadbalancerResp  {
         }
 
         public static OperatingStatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OperatingStatusEnum result = STATIC_FIELDS.get(value);
@@ -182,32 +149,22 @@ public class LoadbalancerResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operating_status")
-    
+    @JsonProperty(value = "operating_status")
+
     private OperatingStatusEnum operatingStatus;
-    /**
-     * 负载均衡器的配置状态
-     */
+
+    /** 负载均衡器的配置状态 */
     public static final class ProvisioningStatusEnum {
 
-        
-        /**
-         * Enum ACTIVE for value: "ACTIVE"
-         */
+        /** Enum ACTIVE for value: "ACTIVE" */
         public static final ProvisioningStatusEnum ACTIVE = new ProvisioningStatusEnum("ACTIVE");
-        
-        /**
-         * Enum PENDING_CREATE for value: "PENDING_CREATE"
-         */
+
+        /** Enum PENDING_CREATE for value: "PENDING_CREATE" */
         public static final ProvisioningStatusEnum PENDING_CREATE = new ProvisioningStatusEnum("PENDING_CREATE");
-        
-        /**
-         * Enum ERROR for value: "ERROR"
-         */
+
+        /** Enum ERROR for value: "ERROR" */
         public static final ProvisioningStatusEnum ERROR = new ProvisioningStatusEnum("ERROR");
-        
 
         private static final Map<String, ProvisioningStatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -237,7 +194,7 @@ public class LoadbalancerResp  {
 
         @JsonCreator
         public static ProvisioningStatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProvisioningStatusEnum result = STATIC_FIELDS.get(value);
@@ -248,7 +205,7 @@ public class LoadbalancerResp  {
         }
 
         public static ProvisioningStatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProvisioningStatusEnum result = STATIC_FIELDS.get(value);
@@ -272,60 +229,49 @@ public class LoadbalancerResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provisioning_status")
-    
+    @JsonProperty(value = "provisioning_status")
+
     private ProvisioningStatusEnum provisioningStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
-    
+    @JsonProperty(value = "admin_state_up")
+
     private Boolean adminStateUp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private String updatedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<String> tags = null;
-    
+
     public LoadbalancerResp withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器ID
-     * @return id
-     */
+    /** 负载均衡器ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -334,20 +280,14 @@ public class LoadbalancerResp  {
         this.id = id;
     }
 
-    
-
     public LoadbalancerResp withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器所在的项目ID。
-     * @return tenantId
-     */
+    /** 负载均衡器所在的项目ID。
+     * 
+     * @return tenantId */
     public String getTenantId() {
         return tenantId;
     }
@@ -356,20 +296,14 @@ public class LoadbalancerResp  {
         this.tenantId = tenantId;
     }
 
-    
-
     public LoadbalancerResp withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器名称。
-     * @return name
-     */
+    /** 负载均衡器名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -378,20 +312,14 @@ public class LoadbalancerResp  {
         this.name = name;
     }
 
-    
-
     public LoadbalancerResp withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器的描述信息
-     * @return description
-     */
+    /** 负载均衡器的描述信息
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -400,20 +328,14 @@ public class LoadbalancerResp  {
         this.description = description;
     }
 
-    
-
     public LoadbalancerResp withVipSubnetId(String vipSubnetId) {
         this.vipSubnetId = vipSubnetId;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器所在的子网ID。仅支持内网类型。
-     * @return vipSubnetId
-     */
+    /** 负载均衡器所在的子网ID。仅支持内网类型。
+     * 
+     * @return vipSubnetId */
     public String getVipSubnetId() {
         return vipSubnetId;
     }
@@ -422,20 +344,14 @@ public class LoadbalancerResp  {
         this.vipSubnetId = vipSubnetId;
     }
 
-    
-
     public LoadbalancerResp withVipPortId(String vipPortId) {
         this.vipPortId = vipPortId;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器虚拟IP对应的端口ID
-     * @return vipPortId
-     */
+    /** 负载均衡器虚拟IP对应的端口ID
+     * 
+     * @return vipPortId */
     public String getVipPortId() {
         return vipPortId;
     }
@@ -444,20 +360,14 @@ public class LoadbalancerResp  {
         this.vipPortId = vipPortId;
     }
 
-    
-
     public LoadbalancerResp withVipAddress(String vipAddress) {
         this.vipAddress = vipAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器的虚拟IP。
-     * @return vipAddress
-     */
+    /** 负载均衡器的虚拟IP。
+     * 
+     * @return vipAddress */
     public String getVipAddress() {
         return vipAddress;
     }
@@ -466,16 +376,13 @@ public class LoadbalancerResp  {
         this.vipAddress = vipAddress;
     }
 
-    
-
     public LoadbalancerResp withListeners(List<ResourceList> listeners) {
         this.listeners = listeners;
         return this;
     }
 
-    
     public LoadbalancerResp addListenersItem(ResourceList listenersItem) {
-        if(this.listeners == null) {
+        if (this.listeners == null) {
             this.listeners = new ArrayList<>();
         }
         this.listeners.add(listenersItem);
@@ -483,17 +390,16 @@ public class LoadbalancerResp  {
     }
 
     public LoadbalancerResp withListeners(Consumer<List<ResourceList>> listenersSetter) {
-        if(this.listeners == null) {
+        if (this.listeners == null) {
             this.listeners = new ArrayList<>();
         }
         listenersSetter.accept(this.listeners);
         return this;
     }
 
-    /**
-     * 负载均衡器关联的监听器ID的列表
-     * @return listeners
-     */
+    /** 负载均衡器关联的监听器ID的列表
+     * 
+     * @return listeners */
     public List<ResourceList> getListeners() {
         return listeners;
     }
@@ -502,16 +408,13 @@ public class LoadbalancerResp  {
         this.listeners = listeners;
     }
 
-    
-
     public LoadbalancerResp withPools(List<ResourceList> pools) {
         this.pools = pools;
         return this;
     }
 
-    
     public LoadbalancerResp addPoolsItem(ResourceList poolsItem) {
-        if(this.pools == null) {
+        if (this.pools == null) {
             this.pools = new ArrayList<>();
         }
         this.pools.add(poolsItem);
@@ -519,17 +422,16 @@ public class LoadbalancerResp  {
     }
 
     public LoadbalancerResp withPools(Consumer<List<ResourceList>> poolsSetter) {
-        if(this.pools == null) {
+        if (this.pools == null) {
             this.pools = new ArrayList<>();
         }
         poolsSetter.accept(this.pools);
         return this;
     }
 
-    /**
-     * 负载均衡器关联的后端云服务器组ID的列表。
-     * @return pools
-     */
+    /** 负载均衡器关联的后端云服务器组ID的列表。
+     * 
+     * @return pools */
     public List<ResourceList> getPools() {
         return pools;
     }
@@ -538,20 +440,14 @@ public class LoadbalancerResp  {
         this.pools = pools;
     }
 
-    
-
     public LoadbalancerResp withProvider(String provider) {
         this.provider = provider;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器的供应者名称。只支持vlb
-     * @return provider
-     */
+    /** 负载均衡器的供应者名称。只支持vlb
+     * 
+     * @return provider */
     public String getProvider() {
         return provider;
     }
@@ -560,20 +456,14 @@ public class LoadbalancerResp  {
         this.provider = provider;
     }
 
-    
-
     public LoadbalancerResp withOperatingStatus(OperatingStatusEnum operatingStatus) {
         this.operatingStatus = operatingStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器的操作状态
-     * @return operatingStatus
-     */
+    /** 负载均衡器的操作状态
+     * 
+     * @return operatingStatus */
     public OperatingStatusEnum getOperatingStatus() {
         return operatingStatus;
     }
@@ -582,20 +472,14 @@ public class LoadbalancerResp  {
         this.operatingStatus = operatingStatus;
     }
 
-    
-
     public LoadbalancerResp withProvisioningStatus(ProvisioningStatusEnum provisioningStatus) {
         this.provisioningStatus = provisioningStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器的配置状态
-     * @return provisioningStatus
-     */
+    /** 负载均衡器的配置状态
+     * 
+     * @return provisioningStatus */
     public ProvisioningStatusEnum getProvisioningStatus() {
         return provisioningStatus;
     }
@@ -604,20 +488,14 @@ public class LoadbalancerResp  {
         this.provisioningStatus = provisioningStatus;
     }
 
-    
-
     public LoadbalancerResp withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器的管理状态。只支持设定为true，该字段的值无实际意义。
-     * @return adminStateUp
-     */
+    /** 负载均衡器的管理状态。只支持设定为true，该字段的值无实际意义。
+     * 
+     * @return adminStateUp */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -626,20 +504,14 @@ public class LoadbalancerResp  {
         this.adminStateUp = adminStateUp;
     }
 
-    
-
     public LoadbalancerResp withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器的创建时间
-     * @return createdAt
-     */
+    /** 负载均衡器的创建时间
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -648,20 +520,14 @@ public class LoadbalancerResp  {
         this.createdAt = createdAt;
     }
 
-    
-
     public LoadbalancerResp withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器的更新时间
-     * @return updatedAt
-     */
+    /** 负载均衡器的更新时间
+     * 
+     * @return updatedAt */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -670,20 +536,14 @@ public class LoadbalancerResp  {
         this.updatedAt = updatedAt;
     }
 
-    
-
     public LoadbalancerResp withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器的企业项目ID。
-     * @return enterpriseProjectId
-     */
+    /** 负载均衡器的企业项目ID。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -692,20 +552,14 @@ public class LoadbalancerResp  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public LoadbalancerResp withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器所在的项目ID。
-     * @return projectId
-     */
+    /** 负载均衡器所在的项目ID。
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -714,16 +568,13 @@ public class LoadbalancerResp  {
         this.projectId = projectId;
     }
 
-    
-
     public LoadbalancerResp withTags(List<String> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public LoadbalancerResp addTagsItem(String tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -731,17 +582,16 @@ public class LoadbalancerResp  {
     }
 
     public LoadbalancerResp withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 负载均衡器的标签列表
-     * @return tags
-     */
+    /** 负载均衡器的标签列表
+     * 
+     * @return tags */
     public List<String> getTags() {
         return tags;
     }
@@ -749,8 +599,6 @@ public class LoadbalancerResp  {
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -761,29 +609,47 @@ public class LoadbalancerResp  {
             return false;
         }
         LoadbalancerResp loadbalancerResp = (LoadbalancerResp) o;
-        return Objects.equals(this.id, loadbalancerResp.id) &&
-            Objects.equals(this.tenantId, loadbalancerResp.tenantId) &&
-            Objects.equals(this.name, loadbalancerResp.name) &&
-            Objects.equals(this.description, loadbalancerResp.description) &&
-            Objects.equals(this.vipSubnetId, loadbalancerResp.vipSubnetId) &&
-            Objects.equals(this.vipPortId, loadbalancerResp.vipPortId) &&
-            Objects.equals(this.vipAddress, loadbalancerResp.vipAddress) &&
-            Objects.equals(this.listeners, loadbalancerResp.listeners) &&
-            Objects.equals(this.pools, loadbalancerResp.pools) &&
-            Objects.equals(this.provider, loadbalancerResp.provider) &&
-            Objects.equals(this.operatingStatus, loadbalancerResp.operatingStatus) &&
-            Objects.equals(this.provisioningStatus, loadbalancerResp.provisioningStatus) &&
-            Objects.equals(this.adminStateUp, loadbalancerResp.adminStateUp) &&
-            Objects.equals(this.createdAt, loadbalancerResp.createdAt) &&
-            Objects.equals(this.updatedAt, loadbalancerResp.updatedAt) &&
-            Objects.equals(this.enterpriseProjectId, loadbalancerResp.enterpriseProjectId) &&
-            Objects.equals(this.projectId, loadbalancerResp.projectId) &&
-            Objects.equals(this.tags, loadbalancerResp.tags);
+        return Objects.equals(this.id, loadbalancerResp.id) && Objects.equals(this.tenantId, loadbalancerResp.tenantId)
+            && Objects.equals(this.name, loadbalancerResp.name)
+            && Objects.equals(this.description, loadbalancerResp.description)
+            && Objects.equals(this.vipSubnetId, loadbalancerResp.vipSubnetId)
+            && Objects.equals(this.vipPortId, loadbalancerResp.vipPortId)
+            && Objects.equals(this.vipAddress, loadbalancerResp.vipAddress)
+            && Objects.equals(this.listeners, loadbalancerResp.listeners)
+            && Objects.equals(this.pools, loadbalancerResp.pools)
+            && Objects.equals(this.provider, loadbalancerResp.provider)
+            && Objects.equals(this.operatingStatus, loadbalancerResp.operatingStatus)
+            && Objects.equals(this.provisioningStatus, loadbalancerResp.provisioningStatus)
+            && Objects.equals(this.adminStateUp, loadbalancerResp.adminStateUp)
+            && Objects.equals(this.createdAt, loadbalancerResp.createdAt)
+            && Objects.equals(this.updatedAt, loadbalancerResp.updatedAt)
+            && Objects.equals(this.enterpriseProjectId, loadbalancerResp.enterpriseProjectId)
+            && Objects.equals(this.projectId, loadbalancerResp.projectId)
+            && Objects.equals(this.tags, loadbalancerResp.tags);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, tenantId, name, description, vipSubnetId, vipPortId, vipAddress, listeners, pools, provider, operatingStatus, provisioningStatus, adminStateUp, createdAt, updatedAt, enterpriseProjectId, projectId, tags);
+        return Objects.hash(id,
+            tenantId,
+            name,
+            description,
+            vipSubnetId,
+            vipPortId,
+            vipAddress,
+            listeners,
+            pools,
+            provider,
+            operatingStatus,
+            provisioningStatus,
+            adminStateUp,
+            createdAt,
+            updatedAt,
+            enterpriseProjectId,
+            projectId,
+            tags);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -809,16 +675,13 @@ public class LoadbalancerResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

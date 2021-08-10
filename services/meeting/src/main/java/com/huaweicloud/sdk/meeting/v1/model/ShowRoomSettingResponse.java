@@ -1,65 +1,47 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.OpenRoomSettingVO;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowRoomSettingResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roomIntroduce")
-    
+    @JsonProperty(value = "roomIntroduce")
+
     private String roomIntroduce;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cropLogoId")
-    
+    @JsonProperty(value = "cropLogoId")
+
     private String cropLogoId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="coverPictureId")
-    
+    @JsonProperty(value = "coverPictureId")
+
     private String coverPictureId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="showAudienceMode")
-    
+    @JsonProperty(value = "showAudienceMode")
+
     private String showAudienceMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isRedoubleOpen")
-    
+    @JsonProperty(value = "isRedoubleOpen")
+
     private String isRedoubleOpen;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="baseAudienceCount")
-    
+    @JsonProperty(value = "baseAudienceCount")
+
     private Integer baseAudienceCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="multiple")
-    
+    @JsonProperty(value = "multiple")
+
     private Double multiple;
 
     public ShowRoomSettingResponse withRoomIntroduce(String roomIntroduce) {
@@ -67,13 +49,9 @@ public class ShowRoomSettingResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 直播介绍, 最大不超过500个字符
-     * @return roomIntroduce
-     */
+    /** 直播介绍, 最大不超过500个字符
+     * 
+     * @return roomIntroduce */
     public String getRoomIntroduce() {
         return roomIntroduce;
     }
@@ -82,20 +60,14 @@ public class ShowRoomSettingResponse extends SdkResponse {
         this.roomIntroduce = roomIntroduce;
     }
 
-    
-
     public ShowRoomSettingResponse withCropLogoId(String cropLogoId) {
         this.cropLogoId = cropLogoId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业Logo（文件id）,不超过32字符
-     * @return cropLogoId
-     */
+    /** 企业Logo（文件id）,不超过32字符
+     * 
+     * @return cropLogoId */
     public String getCropLogoId() {
         return cropLogoId;
     }
@@ -104,20 +76,14 @@ public class ShowRoomSettingResponse extends SdkResponse {
         this.cropLogoId = cropLogoId;
     }
 
-    
-
     public ShowRoomSettingResponse withCoverPictureId(String coverPictureId) {
         this.coverPictureId = coverPictureId;
         return this;
     }
 
-    
-
-
-    /**
-     * 封面内容(文件id)，不超过32字符
-     * @return coverPictureId
-     */
+    /** 封面内容(文件id)，不超过32字符
+     * 
+     * @return coverPictureId */
     public String getCoverPictureId() {
         return coverPictureId;
     }
@@ -126,20 +92,14 @@ public class ShowRoomSettingResponse extends SdkResponse {
         this.coverPictureId = coverPictureId;
     }
 
-    
-
     public ShowRoomSettingResponse withShowAudienceMode(String showAudienceMode) {
         this.showAudienceMode = showAudienceMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 显示观众人数的模式。默认值为real_time - none:不显示 - real_time:实时显示 
-     * @return showAudienceMode
-     */
+    /** 显示观众人数的模式。默认值为real_time - none:不显示 - real_time:实时显示
+     * 
+     * @return showAudienceMode */
     public String getShowAudienceMode() {
         return showAudienceMode;
     }
@@ -148,20 +108,14 @@ public class ShowRoomSettingResponse extends SdkResponse {
         this.showAudienceMode = showAudienceMode;
     }
 
-    
-
     public ShowRoomSettingResponse withIsRedoubleOpen(String isRedoubleOpen) {
         this.isRedoubleOpen = isRedoubleOpen;
         return this;
     }
 
-    
-
-
-    /**
-     * 智能倍增开关。默认值为Y - Y 开启智能倍增 - N 关闭智能倍增 
-     * @return isRedoubleOpen
-     */
+    /** 智能倍增开关。默认值为Y - Y 开启智能倍增 - N 关闭智能倍增
+     * 
+     * @return isRedoubleOpen */
     public String getIsRedoubleOpen() {
         return isRedoubleOpen;
     }
@@ -170,20 +124,14 @@ public class ShowRoomSettingResponse extends SdkResponse {
         this.isRedoubleOpen = isRedoubleOpen;
     }
 
-    
-
     public ShowRoomSettingResponse withBaseAudienceCount(Integer baseAudienceCount) {
         this.baseAudienceCount = baseAudienceCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 基础设置人数(直播间没人时显示的人数). 取值范围为[0, 10000]。默认值为0
-     * @return baseAudienceCount
-     */
+    /** 基础设置人数(直播间没人时显示的人数). 取值范围为[0, 10000]。默认值为0
+     * 
+     * @return baseAudienceCount */
     public Integer getBaseAudienceCount() {
         return baseAudienceCount;
     }
@@ -192,20 +140,14 @@ public class ShowRoomSettingResponse extends SdkResponse {
         this.baseAudienceCount = baseAudienceCount;
     }
 
-    
-
     public ShowRoomSettingResponse withMultiple(Double multiple) {
         this.multiple = multiple;
         return this;
     }
 
-    
-
-
-    /**
-     * 设置倍数(基础人数+真实人数*倍数). 取值范围为[0, 10]，取1位小数。默认值为1.0
-     * @return multiple
-     */
+    /** 设置倍数(基础人数+真实人数*倍数). 取值范围为[0, 10]，取1位小数。默认值为1.0
+     * 
+     * @return multiple */
     public Double getMultiple() {
         return multiple;
     }
@@ -213,8 +155,6 @@ public class ShowRoomSettingResponse extends SdkResponse {
     public void setMultiple(Double multiple) {
         this.multiple = multiple;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -225,18 +165,26 @@ public class ShowRoomSettingResponse extends SdkResponse {
             return false;
         }
         ShowRoomSettingResponse showRoomSettingResponse = (ShowRoomSettingResponse) o;
-        return Objects.equals(this.roomIntroduce, showRoomSettingResponse.roomIntroduce) &&
-            Objects.equals(this.cropLogoId, showRoomSettingResponse.cropLogoId) &&
-            Objects.equals(this.coverPictureId, showRoomSettingResponse.coverPictureId) &&
-            Objects.equals(this.showAudienceMode, showRoomSettingResponse.showAudienceMode) &&
-            Objects.equals(this.isRedoubleOpen, showRoomSettingResponse.isRedoubleOpen) &&
-            Objects.equals(this.baseAudienceCount, showRoomSettingResponse.baseAudienceCount) &&
-            Objects.equals(this.multiple, showRoomSettingResponse.multiple);
+        return Objects.equals(this.roomIntroduce, showRoomSettingResponse.roomIntroduce)
+            && Objects.equals(this.cropLogoId, showRoomSettingResponse.cropLogoId)
+            && Objects.equals(this.coverPictureId, showRoomSettingResponse.coverPictureId)
+            && Objects.equals(this.showAudienceMode, showRoomSettingResponse.showAudienceMode)
+            && Objects.equals(this.isRedoubleOpen, showRoomSettingResponse.isRedoubleOpen)
+            && Objects.equals(this.baseAudienceCount, showRoomSettingResponse.baseAudienceCount)
+            && Objects.equals(this.multiple, showRoomSettingResponse.multiple);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(roomIntroduce, cropLogoId, coverPictureId, showAudienceMode, isRedoubleOpen, baseAudienceCount, multiple);
+        return Objects.hash(roomIntroduce,
+            cropLogoId,
+            coverPictureId,
+            showAudienceMode,
+            isRedoubleOpen,
+            baseAudienceCount,
+            multiple);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -251,16 +199,13 @@ public class ShowRoomSettingResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

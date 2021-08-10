@@ -1,48 +1,34 @@
 package com.huaweicloud.sdk.eip.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.FloatingIpResp;
-import com.huaweicloud.sdk.eip.v2.model.Pager;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class NeutronListFloatingIpsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="floatingips")
-    
+    @JsonProperty(value = "floatingips")
+
     private List<FloatingIpResp> floatingips = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="floatingips_links")
-    
+    @JsonProperty(value = "floatingips_links")
+
     private List<Pager> floatingipsLinks = null;
-    
+
     public NeutronListFloatingIpsResponse withFloatingips(List<FloatingIpResp> floatingips) {
         this.floatingips = floatingips;
         return this;
     }
 
-    
     public NeutronListFloatingIpsResponse addFloatingipsItem(FloatingIpResp floatingipsItem) {
-        if(this.floatingips == null) {
+        if (this.floatingips == null) {
             this.floatingips = new ArrayList<>();
         }
         this.floatingips.add(floatingipsItem);
@@ -50,17 +36,16 @@ public class NeutronListFloatingIpsResponse extends SdkResponse {
     }
 
     public NeutronListFloatingIpsResponse withFloatingips(Consumer<List<FloatingIpResp>> floatingipsSetter) {
-        if(this.floatingips == null) {
+        if (this.floatingips == null) {
             this.floatingips = new ArrayList<>();
         }
         floatingipsSetter.accept(this.floatingips);
         return this;
     }
 
-    /**
-     * floatingip对象列表
-     * @return floatingips
-     */
+    /** floatingip对象列表
+     * 
+     * @return floatingips */
     public List<FloatingIpResp> getFloatingips() {
         return floatingips;
     }
@@ -69,16 +54,13 @@ public class NeutronListFloatingIpsResponse extends SdkResponse {
         this.floatingips = floatingips;
     }
 
-    
-
     public NeutronListFloatingIpsResponse withFloatingipsLinks(List<Pager> floatingipsLinks) {
         this.floatingipsLinks = floatingipsLinks;
         return this;
     }
 
-    
     public NeutronListFloatingIpsResponse addFloatingipsLinksItem(Pager floatingipsLinksItem) {
-        if(this.floatingipsLinks == null) {
+        if (this.floatingipsLinks == null) {
             this.floatingipsLinks = new ArrayList<>();
         }
         this.floatingipsLinks.add(floatingipsLinksItem);
@@ -86,17 +68,16 @@ public class NeutronListFloatingIpsResponse extends SdkResponse {
     }
 
     public NeutronListFloatingIpsResponse withFloatingipsLinks(Consumer<List<Pager>> floatingipsLinksSetter) {
-        if(this.floatingipsLinks == null) {
+        if (this.floatingipsLinks == null) {
             this.floatingipsLinks = new ArrayList<>();
         }
         floatingipsLinksSetter.accept(this.floatingipsLinks);
         return this;
     }
 
-    /**
-     * marker分页结构
-     * @return floatingipsLinks
-     */
+    /** marker分页结构
+     * 
+     * @return floatingipsLinks */
     public List<Pager> getFloatingipsLinks() {
         return floatingipsLinks;
     }
@@ -104,8 +85,6 @@ public class NeutronListFloatingIpsResponse extends SdkResponse {
     public void setFloatingipsLinks(List<Pager> floatingipsLinks) {
         this.floatingipsLinks = floatingipsLinks;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -116,13 +95,15 @@ public class NeutronListFloatingIpsResponse extends SdkResponse {
             return false;
         }
         NeutronListFloatingIpsResponse neutronListFloatingIpsResponse = (NeutronListFloatingIpsResponse) o;
-        return Objects.equals(this.floatingips, neutronListFloatingIpsResponse.floatingips) &&
-            Objects.equals(this.floatingipsLinks, neutronListFloatingIpsResponse.floatingipsLinks);
+        return Objects.equals(this.floatingips, neutronListFloatingIpsResponse.floatingips)
+            && Objects.equals(this.floatingipsLinks, neutronListFloatingIpsResponse.floatingipsLinks);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(floatingips, floatingipsLinks);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -132,16 +113,13 @@ public class NeutronListFloatingIpsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

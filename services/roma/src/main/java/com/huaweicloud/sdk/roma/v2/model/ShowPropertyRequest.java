@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowPropertyRequest  {
-
-
+/** Request Object */
+public class ShowPropertyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_id")
-    
+    @JsonProperty(value = "service_id")
+
     private String serviceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="property_id")
-    
+    @JsonProperty(value = "property_id")
+
     private Integer propertyId;
 
     public ShowPropertyRequest withInstanceId(String instanceId) {
@@ -40,13 +28,9 @@ public class ShowPropertyRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -55,20 +39,14 @@ public class ShowPropertyRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ShowPropertyRequest withServiceId(String serviceId) {
         this.serviceId = serviceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务ID
-     * @return serviceId
-     */
+    /** 服务ID
+     * 
+     * @return serviceId */
     public String getServiceId() {
         return serviceId;
     }
@@ -77,22 +55,14 @@ public class ShowPropertyRequest  {
         this.serviceId = serviceId;
     }
 
-    
-
     public ShowPropertyRequest withPropertyId(Integer propertyId) {
         this.propertyId = propertyId;
         return this;
     }
 
-    
-
-
-    /**
-     * 属性/请求属性/响应属性ID
-     * minimum: 0
-     * maximum: 200376420520689663
-     * @return propertyId
-     */
+    /** 属性/请求属性/响应属性ID minimum: 0 maximum: 200376420520689663
+     * 
+     * @return propertyId */
     public Integer getPropertyId() {
         return propertyId;
     }
@@ -100,8 +70,6 @@ public class ShowPropertyRequest  {
     public void setPropertyId(Integer propertyId) {
         this.propertyId = propertyId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +80,16 @@ public class ShowPropertyRequest  {
             return false;
         }
         ShowPropertyRequest showPropertyRequest = (ShowPropertyRequest) o;
-        return Objects.equals(this.instanceId, showPropertyRequest.instanceId) &&
-            Objects.equals(this.serviceId, showPropertyRequest.serviceId) &&
-            Objects.equals(this.propertyId, showPropertyRequest.propertyId);
+        return Objects.equals(this.instanceId, showPropertyRequest.instanceId)
+            && Objects.equals(this.serviceId, showPropertyRequest.serviceId)
+            && Objects.equals(this.propertyId, showPropertyRequest.propertyId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, serviceId, propertyId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +100,13 @@ public class ShowPropertyRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

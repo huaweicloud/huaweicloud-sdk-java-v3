@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 流水线阶段执行信息
- */
-public class Stages  {
-
-
+/** 流水线阶段执行信息 */
+public class Stages {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="result")
-    
+    @JsonProperty(value = "result")
+
     private String result;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parameters")
-    
+    @JsonProperty(value = "parameters")
+
     private Object parameters;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order")
-    
+    @JsonProperty(value = "order")
+
     private Integer order;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dsl_method")
-    
+    @JsonProperty(value = "dsl_method")
+
     private String dslMethod;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="display_name")
-    
+    @JsonProperty(value = "display_name")
+
     private String displayName;
 
     public Stages withResult(String result) {
@@ -64,13 +48,9 @@ public class Stages  {
         return this;
     }
 
-    
-
-
-    /**
-     * 阶段执行结果
-     * @return result
-     */
+    /** 阶段执行结果
+     * 
+     * @return result */
     public String getResult() {
         return result;
     }
@@ -79,20 +59,14 @@ public class Stages  {
         this.result = result;
     }
 
-    
-
     public Stages withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 阶段执行状态
-     * @return status
-     */
+    /** 阶段执行状态
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -101,20 +75,14 @@ public class Stages  {
         this.status = status;
     }
 
-    
-
     public Stages withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 阶段名字
-     * @return name
-     */
+    /** 阶段名字
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -123,20 +91,14 @@ public class Stages  {
         this.name = name;
     }
 
-    
-
     public Stages withParameters(Object parameters) {
         this.parameters = parameters;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务参数
-     * @return parameters
-     */
+    /** 任务参数
+     * 
+     * @return parameters */
     public Object getParameters() {
         return parameters;
     }
@@ -145,20 +107,14 @@ public class Stages  {
         this.parameters = parameters;
     }
 
-    
-
     public Stages withOrder(Integer order) {
         this.order = order;
         return this;
     }
 
-    
-
-
-    /**
-     * 阶段顺序
-     * @return order
-     */
+    /** 阶段顺序
+     * 
+     * @return order */
     public Integer getOrder() {
         return order;
     }
@@ -167,20 +123,14 @@ public class Stages  {
         this.order = order;
     }
 
-    
-
     public Stages withDslMethod(String dslMethod) {
         this.dslMethod = dslMethod;
         return this;
     }
 
-    
-
-
-    /**
-     * 阶段类型
-     * @return dslMethod
-     */
+    /** 阶段类型
+     * 
+     * @return dslMethod */
     public String getDslMethod() {
         return dslMethod;
     }
@@ -189,20 +139,14 @@ public class Stages  {
         this.dslMethod = dslMethod;
     }
 
-    
-
     public Stages withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
     }
 
-    
-
-
-    /**
-     * 阶段显示名称
-     * @return displayName
-     */
+    /** 阶段显示名称
+     * 
+     * @return displayName */
     public String getDisplayName() {
         return displayName;
     }
@@ -210,8 +154,6 @@ public class Stages  {
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -222,18 +164,17 @@ public class Stages  {
             return false;
         }
         Stages stages = (Stages) o;
-        return Objects.equals(this.result, stages.result) &&
-            Objects.equals(this.status, stages.status) &&
-            Objects.equals(this.name, stages.name) &&
-            Objects.equals(this.parameters, stages.parameters) &&
-            Objects.equals(this.order, stages.order) &&
-            Objects.equals(this.dslMethod, stages.dslMethod) &&
-            Objects.equals(this.displayName, stages.displayName);
+        return Objects.equals(this.result, stages.result) && Objects.equals(this.status, stages.status)
+            && Objects.equals(this.name, stages.name) && Objects.equals(this.parameters, stages.parameters)
+            && Objects.equals(this.order, stages.order) && Objects.equals(this.dslMethod, stages.dslMethod)
+            && Objects.equals(this.displayName, stages.displayName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(result, status, name, parameters, order, dslMethod, displayName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,16 +189,13 @@ public class Stages  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

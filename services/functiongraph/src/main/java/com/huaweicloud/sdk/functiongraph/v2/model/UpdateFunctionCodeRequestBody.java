@@ -1,61 +1,40 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.functiongraph.v2.model.Dependency;
-import com.huaweicloud.sdk.functiongraph.v2.model.FuncCode;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * UpdateFunctionCodeRequestBody
- */
-public class UpdateFunctionCodeRequestBody  {
-
-
+/** UpdateFunctionCodeRequestBody */
+public class UpdateFunctionCodeRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="handler")
-    
+    @JsonProperty(value = "handler")
+
     private String handler;
-    /**
-     * 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
-     */
+
+    /** 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。 */
     public static final class CodeTypeEnum {
 
-        
-        /**
-         * Enum INLINE for value: "inline"
-         */
+        /** Enum INLINE for value: "inline" */
         public static final CodeTypeEnum INLINE = new CodeTypeEnum("inline");
-        
-        /**
-         * Enum ZIP for value: "zip"
-         */
+
+        /** Enum ZIP for value: "zip" */
         public static final CodeTypeEnum ZIP = new CodeTypeEnum("zip");
-        
-        /**
-         * Enum OBS for value: "obs"
-         */
+
+        /** Enum OBS for value: "obs" */
         public static final CodeTypeEnum OBS = new CodeTypeEnum("obs");
-        
-        /**
-         * Enum JAR for value: "jar"
-         */
+
+        /** Enum JAR for value: "jar" */
         public static final CodeTypeEnum JAR = new CodeTypeEnum("jar");
-        
 
         private static final Map<String, CodeTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -86,7 +65,7 @@ public class UpdateFunctionCodeRequestBody  {
 
         @JsonCreator
         public static CodeTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CodeTypeEnum result = STATIC_FIELDS.get(value);
@@ -97,7 +76,7 @@ public class UpdateFunctionCodeRequestBody  {
         }
 
         public static CodeTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CodeTypeEnum result = STATIC_FIELDS.get(value);
@@ -121,54 +100,44 @@ public class UpdateFunctionCodeRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code_type")
-    
+    @JsonProperty(value = "code_type")
+
     private CodeTypeEnum codeType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code_url")
-    
+    @JsonProperty(value = "code_url")
+
     private String codeUrl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code_filename")
-    
+    @JsonProperty(value = "code_filename")
+
     private String codeFilename;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="func_code")
-    
+    @JsonProperty(value = "func_code")
+
     private FuncCode funcCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="depend_list")
-    
+    @JsonProperty(value = "depend_list")
+
     private List<String> dependList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dependencies")
-    
+    @JsonProperty(value = "dependencies")
+
     private List<Dependency> dependencies = null;
-    
+
     public UpdateFunctionCodeRequestBody withHandler(String handler) {
         this.handler = handler;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数执行入口 规则：xx.xx，必须包含“. ” 举例：对于node.js函数：myfunction.handler，则表示函数的文件名为myfunction.js，执行的入口函数名为handler。
-     * @return handler
-     */
+    /** 函数执行入口 规则：xx.xx，必须包含“. ” 举例：对于node.js函数：myfunction.handler，则表示函数的文件名为myfunction.js，执行的入口函数名为handler。
+     * 
+     * @return handler */
     public String getHandler() {
         return handler;
     }
@@ -177,20 +146,14 @@ public class UpdateFunctionCodeRequestBody  {
         this.handler = handler;
     }
 
-    
-
     public UpdateFunctionCodeRequestBody withCodeType(CodeTypeEnum codeType) {
         this.codeType = codeType;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
-     * @return codeType
-     */
+    /** 函数代码类型，取值有4种。 inline: UI在线编辑代码。 zip: 函数代码为zip包。 obs: 函数代码来源于obs存储。 jar: 函数代码为jar包，主要针对Java函数。
+     * 
+     * @return codeType */
     public CodeTypeEnum getCodeType() {
         return codeType;
     }
@@ -199,20 +162,14 @@ public class UpdateFunctionCodeRequestBody  {
         this.codeType = codeType;
     }
 
-    
-
     public UpdateFunctionCodeRequestBody withCodeUrl(String codeUrl) {
         this.codeUrl = codeUrl;
         return this;
     }
 
-    
-
-
-    /**
-     * 当CodeType为obs时，该值为函数代码包在OBS上的地址，CodeType为其他值时，该字段为空。
-     * @return codeUrl
-     */
+    /** 当CodeType为obs时，该值为函数代码包在OBS上的地址，CodeType为其他值时，该字段为空。
+     * 
+     * @return codeUrl */
     public String getCodeUrl() {
         return codeUrl;
     }
@@ -221,20 +178,14 @@ public class UpdateFunctionCodeRequestBody  {
         this.codeUrl = codeUrl;
     }
 
-    
-
     public UpdateFunctionCodeRequestBody withCodeFilename(String codeFilename) {
         this.codeFilename = codeFilename;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数的文件名，当CodeType为jar/zip时必须提供该字段，inline和obs不需要提供。
-     * @return codeFilename
-     */
+    /** 函数的文件名，当CodeType为jar/zip时必须提供该字段，inline和obs不需要提供。
+     * 
+     * @return codeFilename */
     public String getCodeFilename() {
         return codeFilename;
     }
@@ -243,27 +194,23 @@ public class UpdateFunctionCodeRequestBody  {
         this.codeFilename = codeFilename;
     }
 
-    
-
     public UpdateFunctionCodeRequestBody withFuncCode(FuncCode funcCode) {
         this.funcCode = funcCode;
         return this;
     }
 
     public UpdateFunctionCodeRequestBody withFuncCode(Consumer<FuncCode> funcCodeSetter) {
-        if(this.funcCode == null ){
+        if (this.funcCode == null) {
             this.funcCode = new FuncCode();
             funcCodeSetter.accept(this.funcCode);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get funcCode
-     * @return funcCode
-     */
+    /** Get funcCode
+     * 
+     * @return funcCode */
     public FuncCode getFuncCode() {
         return funcCode;
     }
@@ -272,16 +219,13 @@ public class UpdateFunctionCodeRequestBody  {
         this.funcCode = funcCode;
     }
 
-    
-
     public UpdateFunctionCodeRequestBody withDependList(List<String> dependList) {
         this.dependList = dependList;
         return this;
     }
 
-    
     public UpdateFunctionCodeRequestBody addDependListItem(String dependListItem) {
-        if(this.dependList == null) {
+        if (this.dependList == null) {
             this.dependList = new ArrayList<>();
         }
         this.dependList.add(dependListItem);
@@ -289,17 +233,16 @@ public class UpdateFunctionCodeRequestBody  {
     }
 
     public UpdateFunctionCodeRequestBody withDependList(Consumer<List<String>> dependListSetter) {
-        if(this.dependList == null) {
+        if (this.dependList == null) {
             this.dependList = new ArrayList<>();
         }
         dependListSetter.accept(this.dependList);
         return this;
     }
 
-    /**
-     * 依赖id列表
-     * @return dependList
-     */
+    /** 依赖id列表
+     * 
+     * @return dependList */
     public List<String> getDependList() {
         return dependList;
     }
@@ -308,16 +251,13 @@ public class UpdateFunctionCodeRequestBody  {
         this.dependList = dependList;
     }
 
-    
-
     public UpdateFunctionCodeRequestBody withDependencies(List<Dependency> dependencies) {
         this.dependencies = dependencies;
         return this;
     }
 
-    
     public UpdateFunctionCodeRequestBody addDependenciesItem(Dependency dependenciesItem) {
-        if(this.dependencies == null) {
+        if (this.dependencies == null) {
             this.dependencies = new ArrayList<>();
         }
         this.dependencies.add(dependenciesItem);
@@ -325,17 +265,16 @@ public class UpdateFunctionCodeRequestBody  {
     }
 
     public UpdateFunctionCodeRequestBody withDependencies(Consumer<List<Dependency>> dependenciesSetter) {
-        if(this.dependencies == null) {
+        if (this.dependencies == null) {
             this.dependencies = new ArrayList<>();
         }
         dependenciesSetter.accept(this.dependencies);
         return this;
     }
 
-    /**
-     * 函数依赖代码包列表。
-     * @return dependencies
-     */
+    /** 函数依赖代码包列表。
+     * 
+     * @return dependencies */
     public List<Dependency> getDependencies() {
         return dependencies;
     }
@@ -343,8 +282,6 @@ public class UpdateFunctionCodeRequestBody  {
     public void setDependencies(List<Dependency> dependencies) {
         this.dependencies = dependencies;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -355,18 +292,20 @@ public class UpdateFunctionCodeRequestBody  {
             return false;
         }
         UpdateFunctionCodeRequestBody updateFunctionCodeRequestBody = (UpdateFunctionCodeRequestBody) o;
-        return Objects.equals(this.handler, updateFunctionCodeRequestBody.handler) &&
-            Objects.equals(this.codeType, updateFunctionCodeRequestBody.codeType) &&
-            Objects.equals(this.codeUrl, updateFunctionCodeRequestBody.codeUrl) &&
-            Objects.equals(this.codeFilename, updateFunctionCodeRequestBody.codeFilename) &&
-            Objects.equals(this.funcCode, updateFunctionCodeRequestBody.funcCode) &&
-            Objects.equals(this.dependList, updateFunctionCodeRequestBody.dependList) &&
-            Objects.equals(this.dependencies, updateFunctionCodeRequestBody.dependencies);
+        return Objects.equals(this.handler, updateFunctionCodeRequestBody.handler)
+            && Objects.equals(this.codeType, updateFunctionCodeRequestBody.codeType)
+            && Objects.equals(this.codeUrl, updateFunctionCodeRequestBody.codeUrl)
+            && Objects.equals(this.codeFilename, updateFunctionCodeRequestBody.codeFilename)
+            && Objects.equals(this.funcCode, updateFunctionCodeRequestBody.funcCode)
+            && Objects.equals(this.dependList, updateFunctionCodeRequestBody.dependList)
+            && Objects.equals(this.dependencies, updateFunctionCodeRequestBody.dependencies);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(handler, codeType, codeUrl, codeFilename, funcCode, dependList, dependencies);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -381,16 +320,13 @@ public class UpdateFunctionCodeRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

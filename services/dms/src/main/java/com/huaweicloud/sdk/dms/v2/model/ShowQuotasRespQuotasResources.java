@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.dms.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ShowQuotasRespQuotasResources
- */
-public class ShowQuotasRespQuotasResources  {
-
-
+/** ShowQuotasRespQuotasResources */
+public class ShowQuotasRespQuotasResources {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quota")
-    
+    @JsonProperty(value = "quota")
+
     private Integer quota;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="used")
-    
+    @JsonProperty(value = "used")
+
     private Integer used;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="min")
-    
+    @JsonProperty(value = "min")
+
     private Integer min;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max")
-    
+    @JsonProperty(value = "max")
+
     private Integer max;
 
     public ShowQuotasRespQuotasResources withType(String type) {
@@ -52,13 +38,9 @@ public class ShowQuotasRespQuotasResources  {
         return this;
     }
 
-    
-
-
-    /**
-     * 配额名称。
-     * @return type
-     */
+    /** 配额名称。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -67,20 +49,14 @@ public class ShowQuotasRespQuotasResources  {
         this.type = type;
     }
 
-    
-
     public ShowQuotasRespQuotasResources withQuota(Integer quota) {
         this.quota = quota;
         return this;
     }
 
-    
-
-
-    /**
-     * 配额数量。
-     * @return quota
-     */
+    /** 配额数量。
+     * 
+     * @return quota */
     public Integer getQuota() {
         return quota;
     }
@@ -89,20 +65,14 @@ public class ShowQuotasRespQuotasResources  {
         this.quota = quota;
     }
 
-    
-
     public ShowQuotasRespQuotasResources withUsed(Integer used) {
         this.used = used;
         return this;
     }
 
-    
-
-
-    /**
-     * 已使用的数量。
-     * @return used
-     */
+    /** 已使用的数量。
+     * 
+     * @return used */
     public Integer getUsed() {
         return used;
     }
@@ -111,20 +81,14 @@ public class ShowQuotasRespQuotasResources  {
         this.used = used;
     }
 
-    
-
     public ShowQuotasRespQuotasResources withMin(Integer min) {
         this.min = min;
         return this;
     }
 
-    
-
-
-    /**
-     * 配额调整的最小值。
-     * @return min
-     */
+    /** 配额调整的最小值。
+     * 
+     * @return min */
     public Integer getMin() {
         return min;
     }
@@ -133,20 +97,14 @@ public class ShowQuotasRespQuotasResources  {
         this.min = min;
     }
 
-    
-
     public ShowQuotasRespQuotasResources withMax(Integer max) {
         this.max = max;
         return this;
     }
 
-    
-
-
-    /**
-     * 配额调整的最大值。
-     * @return max
-     */
+    /** 配额调整的最大值。
+     * 
+     * @return max */
     public Integer getMax() {
         return max;
     }
@@ -154,8 +112,6 @@ public class ShowQuotasRespQuotasResources  {
     public void setMax(Integer max) {
         this.max = max;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,18 @@ public class ShowQuotasRespQuotasResources  {
             return false;
         }
         ShowQuotasRespQuotasResources showQuotasRespQuotasResources = (ShowQuotasRespQuotasResources) o;
-        return Objects.equals(this.type, showQuotasRespQuotasResources.type) &&
-            Objects.equals(this.quota, showQuotasRespQuotasResources.quota) &&
-            Objects.equals(this.used, showQuotasRespQuotasResources.used) &&
-            Objects.equals(this.min, showQuotasRespQuotasResources.min) &&
-            Objects.equals(this.max, showQuotasRespQuotasResources.max);
+        return Objects.equals(this.type, showQuotasRespQuotasResources.type)
+            && Objects.equals(this.quota, showQuotasRespQuotasResources.quota)
+            && Objects.equals(this.used, showQuotasRespQuotasResources.used)
+            && Objects.equals(this.min, showQuotasRespQuotasResources.min)
+            && Objects.equals(this.max, showQuotasRespQuotasResources.max);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, quota, used, min, max);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class ShowQuotasRespQuotasResources  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

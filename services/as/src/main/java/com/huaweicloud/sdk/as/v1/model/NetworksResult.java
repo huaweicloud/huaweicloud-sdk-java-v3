@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.Ipv6Bandwidth;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 网络信息
- */
-public class NetworksResult  {
-
-
+/** 网络信息 */
+public class NetworksResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ipv6_enable")
-    
+    @JsonProperty(value = "ipv6_enable")
+
     private Boolean ipv6Enable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ipv6_bandwidth")
-    
+    @JsonProperty(value = "ipv6_bandwidth")
+
     private Ipv6Bandwidth ipv6Bandwidth;
 
     public NetworksResult withId(String id) {
@@ -41,13 +29,9 @@ public class NetworksResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 网络ID
-     * @return id
-     */
+    /** 网络ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -56,20 +40,14 @@ public class NetworksResult  {
         this.id = id;
     }
 
-    
-
     public NetworksResult withIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否启用IPv6。取值为true时，标识此网卡已启用IPv6。
-     * @return ipv6Enable
-     */
+    /** 是否启用IPv6。取值为true时，标识此网卡已启用IPv6。
+     * 
+     * @return ipv6Enable */
     public Boolean getIpv6Enable() {
         return ipv6Enable;
     }
@@ -78,27 +56,23 @@ public class NetworksResult  {
         this.ipv6Enable = ipv6Enable;
     }
 
-    
-
     public NetworksResult withIpv6Bandwidth(Ipv6Bandwidth ipv6Bandwidth) {
         this.ipv6Bandwidth = ipv6Bandwidth;
         return this;
     }
 
     public NetworksResult withIpv6Bandwidth(Consumer<Ipv6Bandwidth> ipv6BandwidthSetter) {
-        if(this.ipv6Bandwidth == null ){
+        if (this.ipv6Bandwidth == null) {
             this.ipv6Bandwidth = new Ipv6Bandwidth();
             ipv6BandwidthSetter.accept(this.ipv6Bandwidth);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get ipv6Bandwidth
-     * @return ipv6Bandwidth
-     */
+    /** Get ipv6Bandwidth
+     * 
+     * @return ipv6Bandwidth */
     public Ipv6Bandwidth getIpv6Bandwidth() {
         return ipv6Bandwidth;
     }
@@ -106,8 +80,6 @@ public class NetworksResult  {
     public void setIpv6Bandwidth(Ipv6Bandwidth ipv6Bandwidth) {
         this.ipv6Bandwidth = ipv6Bandwidth;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,15 @@ public class NetworksResult  {
             return false;
         }
         NetworksResult networksResult = (NetworksResult) o;
-        return Objects.equals(this.id, networksResult.id) &&
-            Objects.equals(this.ipv6Enable, networksResult.ipv6Enable) &&
-            Objects.equals(this.ipv6Bandwidth, networksResult.ipv6Bandwidth);
+        return Objects.equals(this.id, networksResult.id) && Objects.equals(this.ipv6Enable, networksResult.ipv6Enable)
+            && Objects.equals(this.ipv6Bandwidth, networksResult.ipv6Bandwidth);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, ipv6Enable, ipv6Bandwidth);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +109,13 @@ public class NetworksResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,60 +1,46 @@
 package com.huaweicloud.sdk.ocr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class HandwritingWordsBlockList  {
-
-
+public class HandwritingWordsBlockList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="words")
-    
+    @JsonProperty(value = "words")
+
     private String words;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confidence")
-    
+    @JsonProperty(value = "confidence")
+
     private Float confidence;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="location")
-    
+    @JsonProperty(value = "location")
+
     private List<List<Integer>> location = null;
-    
+
     public HandwritingWordsBlockList withWords(String words) {
         this.words = words;
         return this;
     }
 
-    
-
-
-    /**
-     * 文字块识别结果。 
-     * @return words
-     */
+    /** 文字块识别结果。
+     * 
+     * @return words */
     public String getWords() {
         return words;
     }
@@ -63,20 +49,14 @@ public class HandwritingWordsBlockList  {
         this.words = words;
     }
 
-    
-
     public HandwritingWordsBlockList withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 说明该识别结果所属类型，例如：handwriting。 
-     * @return type
-     */
+    /** 说明该识别结果所属类型，例如：handwriting。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -85,20 +65,14 @@ public class HandwritingWordsBlockList  {
         this.type = type;
     }
 
-    
-
     public HandwritingWordsBlockList withConfidence(Float confidence) {
         this.confidence = confidence;
         return this;
     }
 
-    
-
-
-    /**
-     * 文字块words的置信度。 
-     * @return confidence
-     */
+    /** 文字块words的置信度。
+     * 
+     * @return confidence */
     public Float getConfidence() {
         return confidence;
     }
@@ -107,16 +81,13 @@ public class HandwritingWordsBlockList  {
         this.confidence = confidence;
     }
 
-    
-
     public HandwritingWordsBlockList withLocation(List<List<Integer>> location) {
         this.location = location;
         return this;
     }
 
-    
     public HandwritingWordsBlockList addLocationItem(List<Integer> locationItem) {
-        if(this.location == null) {
+        if (this.location == null) {
             this.location = new ArrayList<>();
         }
         this.location.add(locationItem);
@@ -124,17 +95,16 @@ public class HandwritingWordsBlockList  {
     }
 
     public HandwritingWordsBlockList withLocation(Consumer<List<List<Integer>>> locationSetter) {
-        if(this.location == null) {
+        if (this.location == null) {
             this.location = new ArrayList<>();
         }
         locationSetter.accept(this.location);
         return this;
     }
 
-    /**
-     * 文字块words的区域位置信息，列表形式，分别表示文字块顶点的x, y坐标;坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。 
-     * @return location
-     */
+    /** 文字块words的区域位置信息，列表形式，分别表示文字块顶点的x, y坐标;坐标原点为图片左上角，x轴沿水平方向，y轴沿竖直方向。
+     * 
+     * @return location */
     public List<List<Integer>> getLocation() {
         return location;
     }
@@ -142,8 +112,6 @@ public class HandwritingWordsBlockList  {
     public void setLocation(List<List<Integer>> location) {
         this.location = location;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -154,15 +122,17 @@ public class HandwritingWordsBlockList  {
             return false;
         }
         HandwritingWordsBlockList handwritingWordsBlockList = (HandwritingWordsBlockList) o;
-        return Objects.equals(this.words, handwritingWordsBlockList.words) &&
-            Objects.equals(this.type, handwritingWordsBlockList.type) &&
-            Objects.equals(this.confidence, handwritingWordsBlockList.confidence) &&
-            Objects.equals(this.location, handwritingWordsBlockList.location);
+        return Objects.equals(this.words, handwritingWordsBlockList.words)
+            && Objects.equals(this.type, handwritingWordsBlockList.type)
+            && Objects.equals(this.confidence, handwritingWordsBlockList.confidence)
+            && Objects.equals(this.location, handwritingWordsBlockList.location);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(words, type, confidence, location);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -174,16 +144,13 @@ public class HandwritingWordsBlockList  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

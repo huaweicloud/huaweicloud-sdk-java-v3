@@ -1,64 +1,43 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ListEncryptTaskRequest  {
-
-
+/** Request Object */
+public class ListEncryptTaskRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
+    @JsonProperty(value = "task_id")
+
     private List<String> taskId = null;
-        /**
-     * 任务状态。  取值如下： - WAITING：等待启动 - PROCESSING：处理中 - SUCCEEDED：处理成功 - FAILED：处理失败 - CANCELED：已取消 
-     */
+
+    /** 任务状态。 取值如下： - WAITING：等待启动 - PROCESSING：处理中 - SUCCEEDED：处理成功 - FAILED：处理失败 - CANCELED：已取消 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum WAITING for value: "WAITING"
-         */
+        /** Enum WAITING for value: "WAITING" */
         public static final StatusEnum WAITING = new StatusEnum("WAITING");
-        
-        /**
-         * Enum PROCESSING for value: "PROCESSING"
-         */
+
+        /** Enum PROCESSING for value: "PROCESSING" */
         public static final StatusEnum PROCESSING = new StatusEnum("PROCESSING");
-        
-        /**
-         * Enum SUCCEEDED for value: "SUCCEEDED"
-         */
+
+        /** Enum SUCCEEDED for value: "SUCCEEDED" */
         public static final StatusEnum SUCCEEDED = new StatusEnum("SUCCEEDED");
-        
-        /**
-         * Enum FAILED for value: "FAILED"
-         */
+
+        /** Enum FAILED for value: "FAILED" */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
-        
-        /**
-         * Enum CANCELED for value: "CANCELED"
-         */
+
+        /** Enum CANCELED for value: "CANCELED" */
         public static final StatusEnum CANCELED = new StatusEnum("CANCELED");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -90,7 +69,7 @@ public class ListEncryptTaskRequest  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -101,7 +80,7 @@ public class ListEncryptTaskRequest  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -125,34 +104,29 @@ public class ListEncryptTaskRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page")
-    
+    @JsonProperty(value = "page")
+
     private Integer page;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
     public ListEncryptTaskRequest withTaskId(List<String> taskId) {
@@ -160,9 +134,8 @@ public class ListEncryptTaskRequest  {
         return this;
     }
 
-    
     public ListEncryptTaskRequest addTaskIdItem(String taskIdItem) {
-        if(this.taskId == null) {
+        if (this.taskId == null) {
             this.taskId = new ArrayList<>();
         }
         this.taskId.add(taskIdItem);
@@ -170,17 +143,16 @@ public class ListEncryptTaskRequest  {
     }
 
     public ListEncryptTaskRequest withTaskId(Consumer<List<String>> taskIdSetter) {
-        if(this.taskId == null) {
+        if (this.taskId == null) {
             this.taskId = new ArrayList<>();
         }
         taskIdSetter.accept(this.taskId);
         return this;
     }
 
-    /**
-     * 独立加密任务ID。一次最多10个 
-     * @return taskId
-     */
+    /** 独立加密任务ID。一次最多10个
+     * 
+     * @return taskId */
     public List<String> getTaskId() {
         return taskId;
     }
@@ -189,20 +161,14 @@ public class ListEncryptTaskRequest  {
         this.taskId = taskId;
     }
 
-    
-
     public ListEncryptTaskRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务状态。  取值如下： - WAITING：等待启动 - PROCESSING：处理中 - SUCCEEDED：处理成功 - FAILED：处理失败 - CANCELED：已取消 
-     * @return status
-     */
+    /** 任务状态。 取值如下： - WAITING：等待启动 - PROCESSING：处理中 - SUCCEEDED：处理成功 - FAILED：处理失败 - CANCELED：已取消
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -211,20 +177,14 @@ public class ListEncryptTaskRequest  {
         this.status = status;
     }
 
-    
-
     public ListEncryptTaskRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 起始时间。格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效。 
-     * @return startTime
-     */
+    /** 起始时间。格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效。
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -233,20 +193,14 @@ public class ListEncryptTaskRequest  {
         this.startTime = startTime;
     }
 
-    
-
     public ListEncryptTaskRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 结束时间。格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效。 
-     * @return endTime
-     */
+    /** 结束时间。格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效。
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -255,22 +209,14 @@ public class ListEncryptTaskRequest  {
         this.endTime = endTime;
     }
 
-    
-
     public ListEncryptTaskRequest withPage(Integer page) {
         this.page = page;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页编号。查询指定“task_id”时，该参数无效。  默认值：0。 
-     * minimum: 0
-     * maximum: 50000
-     * @return page
-     */
+    /** 分页编号。查询指定“task_id”时，该参数无效。 默认值：0。 minimum: 0 maximum: 50000
+     * 
+     * @return page */
     public Integer getPage() {
         return page;
     }
@@ -279,22 +225,14 @@ public class ListEncryptTaskRequest  {
         this.page = page;
     }
 
-    
-
     public ListEncryptTaskRequest withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页记录数。查询指定“task_id”时，该参数无效。  取值范围：[1,100]。  默认值：10。 
-     * minimum: 1
-     * maximum: 100
-     * @return size
-     */
+    /** 每页记录数。查询指定“task_id”时，该参数无效。 取值范围：[1,100]。 默认值：10。 minimum: 1 maximum: 100
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -302,8 +240,6 @@ public class ListEncryptTaskRequest  {
     public void setSize(Integer size) {
         this.size = size;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -314,17 +250,19 @@ public class ListEncryptTaskRequest  {
             return false;
         }
         ListEncryptTaskRequest listEncryptTaskRequest = (ListEncryptTaskRequest) o;
-        return Objects.equals(this.taskId, listEncryptTaskRequest.taskId) &&
-            Objects.equals(this.status, listEncryptTaskRequest.status) &&
-            Objects.equals(this.startTime, listEncryptTaskRequest.startTime) &&
-            Objects.equals(this.endTime, listEncryptTaskRequest.endTime) &&
-            Objects.equals(this.page, listEncryptTaskRequest.page) &&
-            Objects.equals(this.size, listEncryptTaskRequest.size);
+        return Objects.equals(this.taskId, listEncryptTaskRequest.taskId)
+            && Objects.equals(this.status, listEncryptTaskRequest.status)
+            && Objects.equals(this.startTime, listEncryptTaskRequest.startTime)
+            && Objects.equals(this.endTime, listEncryptTaskRequest.endTime)
+            && Objects.equals(this.page, listEncryptTaskRequest.page)
+            && Objects.equals(this.size, listEncryptTaskRequest.size);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(taskId, status, startTime, endTime, page, size);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -338,16 +276,13 @@ public class ListEncryptTaskRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

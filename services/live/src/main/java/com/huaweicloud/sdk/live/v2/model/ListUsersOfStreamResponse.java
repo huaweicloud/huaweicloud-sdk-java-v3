@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.live.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.live.v2.model.V2UserData;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListUsersOfStreamResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_list")
-    
+    @JsonProperty(value = "data_list")
+
     private List<V2UserData> dataList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-request-id")
-    
+    @JsonProperty(value = "X-request-id")
+
     private String xRequestId;
 
     public ListUsersOfStreamResponse withDataList(List<V2UserData> dataList) {
@@ -39,9 +27,8 @@ public class ListUsersOfStreamResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListUsersOfStreamResponse addDataListItem(V2UserData dataListItem) {
-        if(this.dataList == null) {
+        if (this.dataList == null) {
             this.dataList = new ArrayList<>();
         }
         this.dataList.add(dataListItem);
@@ -49,17 +36,16 @@ public class ListUsersOfStreamResponse extends SdkResponse {
     }
 
     public ListUsersOfStreamResponse withDataList(Consumer<List<V2UserData>> dataListSetter) {
-        if(this.dataList == null) {
+        if (this.dataList == null) {
             this.dataList = new ArrayList<>();
         }
         dataListSetter.accept(this.dataList);
         return this;
     }
 
-    /**
-     * 观众趋势列表。
-     * @return dataList
-     */
+    /** 观众趋势列表。
+     * 
+     * @return dataList */
     public List<V2UserData> getDataList() {
         return dataList;
     }
@@ -68,22 +54,16 @@ public class ListUsersOfStreamResponse extends SdkResponse {
         this.dataList = dataList;
     }
 
-    
-
     public ListUsersOfStreamResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
     }
 
-    
-
-
-    /**
-     * Get xRequestId
-     * @return xRequestId
-     */
+    /** Get xRequestId
+     * 
+     * @return xRequestId */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-request-id")
+    @JsonProperty(value = "X-request-id")
     public String getXRequestId() {
         return xRequestId;
     }
@@ -91,8 +71,6 @@ public class ListUsersOfStreamResponse extends SdkResponse {
     public void setXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -103,13 +81,15 @@ public class ListUsersOfStreamResponse extends SdkResponse {
             return false;
         }
         ListUsersOfStreamResponse listUsersOfStreamResponse = (ListUsersOfStreamResponse) o;
-        return Objects.equals(this.dataList, listUsersOfStreamResponse.dataList) &&
-            Objects.equals(this.xRequestId, listUsersOfStreamResponse.xRequestId);
+        return Objects.equals(this.dataList, listUsersOfStreamResponse.dataList)
+            && Objects.equals(this.xRequestId, listUsersOfStreamResponse.xRequestId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(dataList, xRequestId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -119,16 +99,13 @@ public class ListUsersOfStreamResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

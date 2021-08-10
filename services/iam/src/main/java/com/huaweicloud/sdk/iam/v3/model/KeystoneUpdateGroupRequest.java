@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.KeystoneUpdateGroupRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class KeystoneUpdateGroupRequest  {
-
-
+/** Request Object */
+public class KeystoneUpdateGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private KeystoneUpdateGroupRequestBody body;
 
     public KeystoneUpdateGroupRequest withGroupId(String groupId) {
@@ -35,13 +24,9 @@ public class KeystoneUpdateGroupRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 待更新的用户组ID，获取方式请参见：[获取用户组ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * @return groupId
-     */
+    /** 待更新的用户组ID，获取方式请参见：[获取用户组ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -50,27 +35,23 @@ public class KeystoneUpdateGroupRequest  {
         this.groupId = groupId;
     }
 
-    
-
     public KeystoneUpdateGroupRequest withBody(KeystoneUpdateGroupRequestBody body) {
         this.body = body;
         return this;
     }
 
     public KeystoneUpdateGroupRequest withBody(Consumer<KeystoneUpdateGroupRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new KeystoneUpdateGroupRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public KeystoneUpdateGroupRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class KeystoneUpdateGroupRequest  {
     public void setBody(KeystoneUpdateGroupRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class KeystoneUpdateGroupRequest  {
             return false;
         }
         KeystoneUpdateGroupRequest keystoneUpdateGroupRequest = (KeystoneUpdateGroupRequest) o;
-        return Objects.equals(this.groupId, keystoneUpdateGroupRequest.groupId) &&
-            Objects.equals(this.body, keystoneUpdateGroupRequest.body);
+        return Objects.equals(this.groupId, keystoneUpdateGroupRequest.groupId)
+            && Objects.equals(this.body, keystoneUpdateGroupRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(groupId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class KeystoneUpdateGroupRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

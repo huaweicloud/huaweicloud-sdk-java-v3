@@ -1,52 +1,36 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 
  */
-public class SubnetResult  {
-
-
+public class SubnetResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
-    /**
-     * 功能说明：子网的状态。   取值范围：ACTIVE,UNKNOWN,ERROR       ACTIVE表示子网已挂载到ROUTER上       UNKNOWN表示子网还未挂载到ROUTER上       ERROR表示子网状态故障  
-     */
+
+    /** 功能说明：子网的状态。 取值范围：ACTIVE,UNKNOWN,ERROR ACTIVE表示子网已挂载到ROUTER上 UNKNOWN表示子网还未挂载到ROUTER上 ERROR表示子网状态故障 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum ACTIVE for value: "ACTIVE"
-         */
+        /** Enum ACTIVE for value: "ACTIVE" */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
-        
-        /**
-         * Enum UNKNOWN for value: "UNKNOWN"
-         */
+
+        /** Enum UNKNOWN for value: "UNKNOWN" */
         public static final StatusEnum UNKNOWN = new StatusEnum("UNKNOWN");
-        
-        /**
-         * Enum ERROR for value: "ERROR"
-         */
+
+        /** Enum ERROR for value: "ERROR" */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,7 +60,7 @@ public class SubnetResult  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -87,7 +71,7 @@ public class SubnetResult  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -111,10 +95,9 @@ public class SubnetResult  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
     public SubnetResult withId(String id) {
@@ -122,13 +105,9 @@ public class SubnetResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * uuid形式的一个资源标识。
-     * @return id
-     */
+    /** uuid形式的一个资源标识。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -137,20 +116,14 @@ public class SubnetResult  {
         this.id = id;
     }
 
-    
-
     public SubnetResult withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：子网的状态。   取值范围：ACTIVE,UNKNOWN,ERROR       ACTIVE表示子网已挂载到ROUTER上       UNKNOWN表示子网还未挂载到ROUTER上       ERROR表示子网状态故障  
-     * @return status
-     */
+    /** 功能说明：子网的状态。 取值范围：ACTIVE,UNKNOWN,ERROR ACTIVE表示子网已挂载到ROUTER上 UNKNOWN表示子网还未挂载到ROUTER上 ERROR表示子网状态故障
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -158,8 +131,6 @@ public class SubnetResult  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -170,13 +141,14 @@ public class SubnetResult  {
             return false;
         }
         SubnetResult subnetResult = (SubnetResult) o;
-        return Objects.equals(this.id, subnetResult.id) &&
-            Objects.equals(this.status, subnetResult.status);
+        return Objects.equals(this.id, subnetResult.id) && Objects.equals(this.status, subnetResult.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -186,16 +158,13 @@ public class SubnetResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

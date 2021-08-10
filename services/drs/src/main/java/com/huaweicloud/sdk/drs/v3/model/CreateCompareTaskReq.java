@@ -1,43 +1,31 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.CreateDataLevelCompareReq;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class CreateCompareTaskReq  {
-
-
+public class CreateCompareTaskReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
+
     private String jobId;
-    /**
-     * 对象级对比类型，取值为空代表不创建对象级对比。object_level_compare_type和data_level_compare_info都为空时，只查询已创建的对比任务列表。
-     */
+
+    /** 对象级对比类型，取值为空代表不创建对象级对比。object_level_compare_type和data_level_compare_info都为空时，只查询已创建的对比任务列表。 */
     public static final class ObjectLevelCompareTypeEnum {
 
-        
-        /**
-         * Enum OBJECTS for value: "objects"
-         */
+        /** Enum OBJECTS for value: "objects" */
         public static final ObjectLevelCompareTypeEnum OBJECTS = new ObjectLevelCompareTypeEnum("objects");
-        
 
         private static final Map<String, ObjectLevelCompareTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -65,7 +53,7 @@ public class CreateCompareTaskReq  {
 
         @JsonCreator
         public static ObjectLevelCompareTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ObjectLevelCompareTypeEnum result = STATIC_FIELDS.get(value);
@@ -76,7 +64,7 @@ public class CreateCompareTaskReq  {
         }
 
         public static ObjectLevelCompareTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ObjectLevelCompareTypeEnum result = STATIC_FIELDS.get(value);
@@ -100,16 +88,14 @@ public class CreateCompareTaskReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="object_level_compare_type")
-    
+    @JsonProperty(value = "object_level_compare_type")
+
     private ObjectLevelCompareTypeEnum objectLevelCompareType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_level_compare_info")
-    
+    @JsonProperty(value = "data_level_compare_info")
+
     private CreateDataLevelCompareReq dataLevelCompareInfo;
 
     public CreateCompareTaskReq withJobId(String jobId) {
@@ -117,13 +103,9 @@ public class CreateCompareTaskReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务id。
-     * @return jobId
-     */
+    /** 任务id。
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -132,20 +114,14 @@ public class CreateCompareTaskReq  {
         this.jobId = jobId;
     }
 
-    
-
     public CreateCompareTaskReq withObjectLevelCompareType(ObjectLevelCompareTypeEnum objectLevelCompareType) {
         this.objectLevelCompareType = objectLevelCompareType;
         return this;
     }
 
-    
-
-
-    /**
-     * 对象级对比类型，取值为空代表不创建对象级对比。object_level_compare_type和data_level_compare_info都为空时，只查询已创建的对比任务列表。
-     * @return objectLevelCompareType
-     */
+    /** 对象级对比类型，取值为空代表不创建对象级对比。object_level_compare_type和data_level_compare_info都为空时，只查询已创建的对比任务列表。
+     * 
+     * @return objectLevelCompareType */
     public ObjectLevelCompareTypeEnum getObjectLevelCompareType() {
         return objectLevelCompareType;
     }
@@ -154,27 +130,24 @@ public class CreateCompareTaskReq  {
         this.objectLevelCompareType = objectLevelCompareType;
     }
 
-    
-
     public CreateCompareTaskReq withDataLevelCompareInfo(CreateDataLevelCompareReq dataLevelCompareInfo) {
         this.dataLevelCompareInfo = dataLevelCompareInfo;
         return this;
     }
 
-    public CreateCompareTaskReq withDataLevelCompareInfo(Consumer<CreateDataLevelCompareReq> dataLevelCompareInfoSetter) {
-        if(this.dataLevelCompareInfo == null ){
+    public CreateCompareTaskReq withDataLevelCompareInfo(
+        Consumer<CreateDataLevelCompareReq> dataLevelCompareInfoSetter) {
+        if (this.dataLevelCompareInfo == null) {
             this.dataLevelCompareInfo = new CreateDataLevelCompareReq();
             dataLevelCompareInfoSetter.accept(this.dataLevelCompareInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get dataLevelCompareInfo
-     * @return dataLevelCompareInfo
-     */
+    /** Get dataLevelCompareInfo
+     * 
+     * @return dataLevelCompareInfo */
     public CreateDataLevelCompareReq getDataLevelCompareInfo() {
         return dataLevelCompareInfo;
     }
@@ -182,8 +155,6 @@ public class CreateCompareTaskReq  {
     public void setDataLevelCompareInfo(CreateDataLevelCompareReq dataLevelCompareInfo) {
         this.dataLevelCompareInfo = dataLevelCompareInfo;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,14 +165,16 @@ public class CreateCompareTaskReq  {
             return false;
         }
         CreateCompareTaskReq createCompareTaskReq = (CreateCompareTaskReq) o;
-        return Objects.equals(this.jobId, createCompareTaskReq.jobId) &&
-            Objects.equals(this.objectLevelCompareType, createCompareTaskReq.objectLevelCompareType) &&
-            Objects.equals(this.dataLevelCompareInfo, createCompareTaskReq.dataLevelCompareInfo);
+        return Objects.equals(this.jobId, createCompareTaskReq.jobId)
+            && Objects.equals(this.objectLevelCompareType, createCompareTaskReq.objectLevelCompareType)
+            && Objects.equals(this.dataLevelCompareInfo, createCompareTaskReq.dataLevelCompareInfo);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobId, objectLevelCompareType, dataLevelCompareInfo);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -212,16 +185,13 @@ public class CreateCompareTaskReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

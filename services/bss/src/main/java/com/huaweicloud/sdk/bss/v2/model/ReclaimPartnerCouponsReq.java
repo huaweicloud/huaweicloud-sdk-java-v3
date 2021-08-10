@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ReclaimPartnerCouponsReq
- */
-public class ReclaimPartnerCouponsReq  {
-
-
+/** ReclaimPartnerCouponsReq */
+public class ReclaimPartnerCouponsReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="coupon_id")
-    
+    @JsonProperty(value = "coupon_id")
+
     private String couponId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="indirect_partner_id")
-    
+    @JsonProperty(value = "indirect_partner_id")
+
     private String indirectPartnerId;
 
     public ReclaimPartnerCouponsReq withCouponId(String couponId) {
@@ -34,13 +23,9 @@ public class ReclaimPartnerCouponsReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 待回收的代金券ID。 请从“发放优惠券”或“查询已发放的优惠券”接口的响应参数中获取。
-     * @return couponId
-     */
+    /** 待回收的代金券ID。 请从“发放优惠券”或“查询已发放的优惠券”接口的响应参数中获取。
+     * 
+     * @return couponId */
     public String getCouponId() {
         return couponId;
     }
@@ -49,20 +34,14 @@ public class ReclaimPartnerCouponsReq  {
         this.couponId = couponId;
     }
 
-    
-
     public ReclaimPartnerCouponsReq withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 精英服务商ID。获取方法请参见查询精英服务商列表。 精英服务商回收给子客户发放的优惠券时，需要携带该字段。
-     * @return indirectPartnerId
-     */
+    /** 精英服务商ID。获取方法请参见查询精英服务商列表。 精英服务商回收给子客户发放的优惠券时，需要携带该字段。
+     * 
+     * @return indirectPartnerId */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -70,8 +49,6 @@ public class ReclaimPartnerCouponsReq  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class ReclaimPartnerCouponsReq  {
             return false;
         }
         ReclaimPartnerCouponsReq reclaimPartnerCouponsReq = (ReclaimPartnerCouponsReq) o;
-        return Objects.equals(this.couponId, reclaimPartnerCouponsReq.couponId) &&
-            Objects.equals(this.indirectPartnerId, reclaimPartnerCouponsReq.indirectPartnerId);
+        return Objects.equals(this.couponId, reclaimPartnerCouponsReq.couponId)
+            && Objects.equals(this.indirectPartnerId, reclaimPartnerCouponsReq.indirectPartnerId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(couponId, indirectPartnerId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class ReclaimPartnerCouponsReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

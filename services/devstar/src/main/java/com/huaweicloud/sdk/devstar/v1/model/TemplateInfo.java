@@ -1,243 +1,194 @@
 package com.huaweicloud.sdk.devstar.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.devstar.v1.model.PipelineTemplateInfo;
-import com.huaweicloud.sdk.devstar.v1.model.Reference;
-import com.huaweicloud.sdk.devstar.v1.model.TagInfo;
-import com.huaweicloud.sdk.devstar.v1.model.TemplateProductExt;
-import com.huaweicloud.sdk.devstar.v1.model.TopicCategory;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * TemplateInfo
- */
-public class TemplateInfo  {
-
-
+/** TemplateInfo */
+public class TemplateInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="title")
-    
+    @JsonProperty(value = "title")
+
     private String title;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="productshorts")
-    
+    @JsonProperty(value = "productshorts")
+
     private List<String> productshorts = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="products")
-    
+    @JsonProperty(value = "products")
+
     private List<TemplateProductExt> products = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic")
-    
+    @JsonProperty(value = "topic")
+
     private List<TopicCategory> topic = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator_id")
-    
+    @JsonProperty(value = "creator_id")
+
     private String creatorId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator")
-    
+    @JsonProperty(value = "creator")
+
     private String creator;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nickname")
-    
+    @JsonProperty(value = "nickname")
+
     private String nickname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="score")
-    
+    @JsonProperty(value = "score")
+
     private Integer score;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="label")
-    
+    @JsonProperty(value = "label")
+
     private String label;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="store")
-    
+    @JsonProperty(value = "store")
+
     private Integer store;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="store_info")
-    
+    @JsonProperty(value = "store_info")
+
     private String storeInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="view_count")
-    
+    @JsonProperty(value = "view_count")
+
     private Integer viewCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="usage_count")
-    
+    @JsonProperty(value = "usage_count")
+
     private Integer usageCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private String updatedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="published_at")
-    
+    @JsonProperty(value = "published_at")
+
     private String publishedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="favorite_state")
-    
+    @JsonProperty(value = "favorite_state")
+
     private Integer favoriteState;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<TagInfo> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private Integer type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_static")
-    
+    @JsonProperty(value = "is_static")
+
     private Integer isStatic;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maintainers")
-    
+    @JsonProperty(value = "maintainers")
+
     private List<String> maintainers = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pipeline_template")
-    
+    @JsonProperty(value = "pipeline_template")
+
     private PipelineTemplateInfo pipelineTemplate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="platform_source")
-    
+    @JsonProperty(value = "platform_source")
+
     private Integer platformSource;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="references")
-    
+    @JsonProperty(value = "references")
+
     private List<Reference> references = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="properties")
-    
+    @JsonProperty(value = "properties")
+
     private Object properties;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dependencies")
-    
+    @JsonProperty(value = "dependencies")
+
     private List<Object> dependencies = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dependency_type")
-    
+    @JsonProperty(value = "dependency_type")
+
     private String dependencyType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="forum_id")
-    
+    @JsonProperty(value = "forum_id")
+
     private Integer forumId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_size")
-    
+    @JsonProperty(value = "file_size")
+
     private Integer fileSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deployment")
-    
+    @JsonProperty(value = "deployment")
+
     private Object deployment;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_id")
-    
+    @JsonProperty(value = "update_id")
+
     private String updateId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_support_cloudide")
-    
+    @JsonProperty(value = "is_support_cloudide")
+
     private Boolean isSupportCloudide;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="has_notices")
-    
+    @JsonProperty(value = "has_notices")
+
     private Boolean hasNotices;
 
     public TemplateInfo withId(String id) {
@@ -245,13 +196,9 @@ public class TemplateInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 模板id。
-     * @return id
-     */
+    /** 模板id。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -260,20 +207,14 @@ public class TemplateInfo  {
         this.id = id;
     }
 
-    
-
     public TemplateInfo withTitle(String title) {
         this.title = title;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板名。
-     * @return title
-     */
+    /** 模板名。
+     * 
+     * @return title */
     public String getTitle() {
         return title;
     }
@@ -282,20 +223,14 @@ public class TemplateInfo  {
         this.title = title;
     }
 
-    
-
     public TemplateInfo withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板描述。
-     * @return description
-     */
+    /** 模板描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -304,16 +239,13 @@ public class TemplateInfo  {
         this.description = description;
     }
 
-    
-
     public TemplateInfo withProductshorts(List<String> productshorts) {
         this.productshorts = productshorts;
         return this;
     }
 
-    
     public TemplateInfo addProductshortsItem(String productshortsItem) {
-        if(this.productshorts == null) {
+        if (this.productshorts == null) {
             this.productshorts = new ArrayList<>();
         }
         this.productshorts.add(productshortsItem);
@@ -321,17 +253,16 @@ public class TemplateInfo  {
     }
 
     public TemplateInfo withProductshorts(Consumer<List<String>> productshortsSetter) {
-        if(this.productshorts == null) {
+        if (this.productshorts == null) {
             this.productshorts = new ArrayList<>();
         }
         productshortsSetter.accept(this.productshorts);
         return this;
     }
 
-    /**
-     * 模板关联的所有云服务（产品短名）。
-     * @return productshorts
-     */
+    /** 模板关联的所有云服务（产品短名）。
+     * 
+     * @return productshorts */
     public List<String> getProductshorts() {
         return productshorts;
     }
@@ -340,16 +271,13 @@ public class TemplateInfo  {
         this.productshorts = productshorts;
     }
 
-    
-
     public TemplateInfo withProducts(List<TemplateProductExt> products) {
         this.products = products;
         return this;
     }
 
-    
     public TemplateInfo addProductsItem(TemplateProductExt productsItem) {
-        if(this.products == null) {
+        if (this.products == null) {
             this.products = new ArrayList<>();
         }
         this.products.add(productsItem);
@@ -357,17 +285,16 @@ public class TemplateInfo  {
     }
 
     public TemplateInfo withProducts(Consumer<List<TemplateProductExt>> productsSetter) {
-        if(this.products == null) {
+        if (this.products == null) {
             this.products = new ArrayList<>();
         }
         productsSetter.accept(this.products);
         return this;
     }
 
-    /**
-     * 模板关联的云产品。
-     * @return products
-     */
+    /** 模板关联的云产品。
+     * 
+     * @return products */
     public List<TemplateProductExt> getProducts() {
         return products;
     }
@@ -376,16 +303,13 @@ public class TemplateInfo  {
         this.products = products;
     }
 
-    
-
     public TemplateInfo withTopic(List<TopicCategory> topic) {
         this.topic = topic;
         return this;
     }
 
-    
     public TemplateInfo addTopicItem(TopicCategory topicItem) {
-        if(this.topic == null) {
+        if (this.topic == null) {
             this.topic = new ArrayList<>();
         }
         this.topic.add(topicItem);
@@ -393,17 +317,16 @@ public class TemplateInfo  {
     }
 
     public TemplateInfo withTopic(Consumer<List<TopicCategory>> topicSetter) {
-        if(this.topic == null) {
+        if (this.topic == null) {
             this.topic = new ArrayList<>();
         }
         topicSetter.accept(this.topic);
         return this;
     }
 
-    /**
-     * 模板标签。
-     * @return topic
-     */
+    /** 模板标签。
+     * 
+     * @return topic */
     public List<TopicCategory> getTopic() {
         return topic;
     }
@@ -412,20 +335,14 @@ public class TemplateInfo  {
         this.topic = topic;
     }
 
-    
-
     public TemplateInfo withCreatorId(String creatorId) {
         this.creatorId = creatorId;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板创建者id。
-     * @return creatorId
-     */
+    /** 模板创建者id。
+     * 
+     * @return creatorId */
     public String getCreatorId() {
         return creatorId;
     }
@@ -434,20 +351,14 @@ public class TemplateInfo  {
         this.creatorId = creatorId;
     }
 
-    
-
     public TemplateInfo withCreator(String creator) {
         this.creator = creator;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板创建者,有别名返回别名。
-     * @return creator
-     */
+    /** 模板创建者,有别名返回别名。
+     * 
+     * @return creator */
     public String getCreator() {
         return creator;
     }
@@ -456,20 +367,14 @@ public class TemplateInfo  {
         this.creator = creator;
     }
 
-    
-
     public TemplateInfo withNickname(String nickname) {
         this.nickname = nickname;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板创建者,有别名返回别名。
-     * @return nickname
-     */
+    /** 模板创建者,有别名返回别名。
+     * 
+     * @return nickname */
     public String getNickname() {
         return nickname;
     }
@@ -478,22 +383,14 @@ public class TemplateInfo  {
         this.nickname = nickname;
     }
 
-    
-
     public TemplateInfo withScore(Integer score) {
         this.score = score;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板评分（点赞数）。
-     * minimum: 1
-     * maximum: 99999
-     * @return score
-     */
+    /** 模板评分（点赞数）。 minimum: 1 maximum: 99999
+     * 
+     * @return score */
     public Integer getScore() {
         return score;
     }
@@ -502,20 +399,14 @@ public class TemplateInfo  {
         this.score = score;
     }
 
-    
-
     public TemplateInfo withLabel(String label) {
         this.label = label;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板标签（new、hot等）。
-     * @return label
-     */
+    /** 模板标签（new、hot等）。
+     * 
+     * @return label */
     public String getLabel() {
         return label;
     }
@@ -524,22 +415,14 @@ public class TemplateInfo  {
         this.label = label;
     }
 
-    
-
     public TemplateInfo withStore(Integer store) {
         this.store = store;
         return this;
     }
 
-    
-
-
-    /**
-     * 代码存储位置。
-     * minimum: 0
-     * maximum: 9
-     * @return store
-     */
+    /** 代码存储位置。 minimum: 0 maximum: 9
+     * 
+     * @return store */
     public Integer getStore() {
         return store;
     }
@@ -548,20 +431,14 @@ public class TemplateInfo  {
         this.store = store;
     }
 
-    
-
     public TemplateInfo withStoreInfo(String storeInfo) {
         this.storeInfo = storeInfo;
         return this;
     }
 
-    
-
-
-    /**
-     * 获取代码模版所需的信息。
-     * @return storeInfo
-     */
+    /** 获取代码模版所需的信息。
+     * 
+     * @return storeInfo */
     public String getStoreInfo() {
         return storeInfo;
     }
@@ -570,22 +447,14 @@ public class TemplateInfo  {
         this.storeInfo = storeInfo;
     }
 
-    
-
     public TemplateInfo withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板状态： - 0：审核中 - 1：已上架 - 2：未上架（已下架） - 3：未上架（合规检查不通过） - 4：未上架（待上架） - 5：已删除 
-     * minimum: 0
-     * maximum: 5
-     * @return status
-     */
+    /** 模板状态： - 0：审核中 - 1：已上架 - 2：未上架（已下架） - 3：未上架（合规检查不通过） - 4：未上架（待上架） - 5：已删除 minimum: 0 maximum: 5
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -594,22 +463,14 @@ public class TemplateInfo  {
         this.status = status;
     }
 
-    
-
     public TemplateInfo withViewCount(Integer viewCount) {
         this.viewCount = viewCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 访问量。
-     * minimum: 1
-     * maximum: 99999
-     * @return viewCount
-     */
+    /** 访问量。 minimum: 1 maximum: 99999
+     * 
+     * @return viewCount */
     public Integer getViewCount() {
         return viewCount;
     }
@@ -618,22 +479,14 @@ public class TemplateInfo  {
         this.viewCount = viewCount;
     }
 
-    
-
     public TemplateInfo withUsageCount(Integer usageCount) {
         this.usageCount = usageCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 引用量。
-     * minimum: 1
-     * maximum: 99999
-     * @return usageCount
-     */
+    /** 引用量。 minimum: 1 maximum: 99999
+     * 
+     * @return usageCount */
     public Integer getUsageCount() {
         return usageCount;
     }
@@ -642,20 +495,14 @@ public class TemplateInfo  {
         this.usageCount = usageCount;
     }
 
-    
-
     public TemplateInfo withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间。
-     * @return createdAt
-     */
+    /** 创建时间。
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -664,20 +511,14 @@ public class TemplateInfo  {
         this.createdAt = createdAt;
     }
 
-    
-
     public TemplateInfo withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间。
-     * @return updatedAt
-     */
+    /** 更新时间。
+     * 
+     * @return updatedAt */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -686,20 +527,14 @@ public class TemplateInfo  {
         this.updatedAt = updatedAt;
     }
 
-    
-
     public TemplateInfo withPublishedAt(String publishedAt) {
         this.publishedAt = publishedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板上架时间。
-     * @return publishedAt
-     */
+    /** 模板上架时间。
+     * 
+     * @return publishedAt */
     public String getPublishedAt() {
         return publishedAt;
     }
@@ -708,22 +543,14 @@ public class TemplateInfo  {
         this.publishedAt = publishedAt;
     }
 
-    
-
     public TemplateInfo withFavoriteState(Integer favoriteState) {
         this.favoriteState = favoriteState;
         return this;
     }
 
-    
-
-
-    /**
-     * 点赞状态： - 1：点赞 - 0：未点赞 
-     * minimum: 0
-     * maximum: 1
-     * @return favoriteState
-     */
+    /** 点赞状态： - 1：点赞 - 0：未点赞 minimum: 0 maximum: 1
+     * 
+     * @return favoriteState */
     public Integer getFavoriteState() {
         return favoriteState;
     }
@@ -732,16 +559,13 @@ public class TemplateInfo  {
         this.favoriteState = favoriteState;
     }
 
-    
-
     public TemplateInfo withTags(List<TagInfo> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public TemplateInfo addTagsItem(TagInfo tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -749,17 +573,16 @@ public class TemplateInfo  {
     }
 
     public TemplateInfo withTags(Consumer<List<TagInfo>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 模板标签。
-     * @return tags
-     */
+    /** 模板标签。
+     * 
+     * @return tags */
     public List<TagInfo> getTags() {
         return tags;
     }
@@ -768,22 +591,14 @@ public class TemplateInfo  {
         this.tags = tags;
     }
 
-    
-
     public TemplateInfo withType(Integer type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板类型： - 0：doc - 1：code - 2：pipeline - 3：devops 四种 
-     * minimum: 0
-     * maximum: 3
-     * @return type
-     */
+    /** 模板类型： - 0：doc - 1：code - 2：pipeline - 3：devops 四种 minimum: 0 maximum: 3
+     * 
+     * @return type */
     public Integer getType() {
         return type;
     }
@@ -792,22 +607,14 @@ public class TemplateInfo  {
         this.type = type;
     }
 
-    
-
     public TemplateInfo withIsStatic(Integer isStatic) {
         this.isStatic = isStatic;
         return this;
     }
 
-    
-
-
-    /**
-     * 动、静态代码模板标识： - 0：动态模板codetemplate - 1：静态模板codesample 
-     * minimum: 0
-     * maximum: 1
-     * @return isStatic
-     */
+    /** 动、静态代码模板标识： - 0：动态模板codetemplate - 1：静态模板codesample minimum: 0 maximum: 1
+     * 
+     * @return isStatic */
     public Integer getIsStatic() {
         return isStatic;
     }
@@ -816,16 +623,13 @@ public class TemplateInfo  {
         this.isStatic = isStatic;
     }
 
-    
-
     public TemplateInfo withMaintainers(List<String> maintainers) {
         this.maintainers = maintainers;
         return this;
     }
 
-    
     public TemplateInfo addMaintainersItem(String maintainersItem) {
-        if(this.maintainers == null) {
+        if (this.maintainers == null) {
             this.maintainers = new ArrayList<>();
         }
         this.maintainers.add(maintainersItem);
@@ -833,17 +637,16 @@ public class TemplateInfo  {
     }
 
     public TemplateInfo withMaintainers(Consumer<List<String>> maintainersSetter) {
-        if(this.maintainers == null) {
+        if (this.maintainers == null) {
             this.maintainers = new ArrayList<>();
         }
         maintainersSetter.accept(this.maintainers);
         return this;
     }
 
-    /**
-     * 模板相关联的所有维护人账号名称。
-     * @return maintainers
-     */
+    /** 模板相关联的所有维护人账号名称。
+     * 
+     * @return maintainers */
     public List<String> getMaintainers() {
         return maintainers;
     }
@@ -852,27 +655,23 @@ public class TemplateInfo  {
         this.maintainers = maintainers;
     }
 
-    
-
     public TemplateInfo withPipelineTemplate(PipelineTemplateInfo pipelineTemplate) {
         this.pipelineTemplate = pipelineTemplate;
         return this;
     }
 
     public TemplateInfo withPipelineTemplate(Consumer<PipelineTemplateInfo> pipelineTemplateSetter) {
-        if(this.pipelineTemplate == null ){
+        if (this.pipelineTemplate == null) {
             this.pipelineTemplate = new PipelineTemplateInfo();
             pipelineTemplateSetter.accept(this.pipelineTemplate);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get pipelineTemplate
-     * @return pipelineTemplate
-     */
+    /** Get pipelineTemplate
+     * 
+     * @return pipelineTemplate */
     public PipelineTemplateInfo getPipelineTemplate() {
         return pipelineTemplate;
     }
@@ -881,22 +680,14 @@ public class TemplateInfo  {
         this.pipelineTemplate = pipelineTemplate;
     }
 
-    
-
     public TemplateInfo withPlatformSource(Integer platformSource) {
         this.platformSource = platformSource;
         return this;
     }
 
-    
-
-
-    /**
-     * 平台来源： - 0：codelabs - 1：devstar 
-     * minimum: 0
-     * maximum: 1
-     * @return platformSource
-     */
+    /** 平台来源： - 0：codelabs - 1：devstar minimum: 0 maximum: 1
+     * 
+     * @return platformSource */
     public Integer getPlatformSource() {
         return platformSource;
     }
@@ -905,16 +696,13 @@ public class TemplateInfo  {
         this.platformSource = platformSource;
     }
 
-    
-
     public TemplateInfo withReferences(List<Reference> references) {
         this.references = references;
         return this;
     }
 
-    
     public TemplateInfo addReferencesItem(Reference referencesItem) {
-        if(this.references == null) {
+        if (this.references == null) {
             this.references = new ArrayList<>();
         }
         this.references.add(referencesItem);
@@ -922,17 +710,16 @@ public class TemplateInfo  {
     }
 
     public TemplateInfo withReferences(Consumer<List<Reference>> referencesSetter) {
-        if(this.references == null) {
+        if (this.references == null) {
             this.references = new ArrayList<>();
         }
         referencesSetter.accept(this.references);
         return this;
     }
 
-    /**
-     * 相关文档，示例，帖子。
-     * @return references
-     */
+    /** 相关文档，示例，帖子。
+     * 
+     * @return references */
     public List<Reference> getReferences() {
         return references;
     }
@@ -941,20 +728,14 @@ public class TemplateInfo  {
         this.references = references;
     }
 
-    
-
     public TemplateInfo withProperties(Object properties) {
         this.properties = properties;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板自定义参数列表。
-     * @return properties
-     */
+    /** 模板自定义参数列表。
+     * 
+     * @return properties */
     public Object getProperties() {
         return properties;
     }
@@ -963,16 +744,13 @@ public class TemplateInfo  {
         this.properties = properties;
     }
 
-    
-
     public TemplateInfo withDependencies(List<Object> dependencies) {
         this.dependencies = dependencies;
         return this;
     }
 
-    
     public TemplateInfo addDependenciesItem(Object dependenciesItem) {
-        if(this.dependencies == null) {
+        if (this.dependencies == null) {
             this.dependencies = new ArrayList<>();
         }
         this.dependencies.add(dependenciesItem);
@@ -980,17 +758,16 @@ public class TemplateInfo  {
     }
 
     public TemplateInfo withDependencies(Consumer<List<Object>> dependenciesSetter) {
-        if(this.dependencies == null) {
+        if (this.dependencies == null) {
             this.dependencies = new ArrayList<>();
         }
         dependenciesSetter.accept(this.dependencies);
         return this;
     }
 
-    /**
-     * dependency信息。
-     * @return dependencies
-     */
+    /** dependency信息。
+     * 
+     * @return dependencies */
     public List<Object> getDependencies() {
         return dependencies;
     }
@@ -999,20 +776,14 @@ public class TemplateInfo  {
         this.dependencies = dependencies;
     }
 
-    
-
     public TemplateInfo withDependencyType(String dependencyType) {
         this.dependencyType = dependencyType;
         return this;
     }
 
-    
-
-
-    /**
-     * dependency类型。
-     * @return dependencyType
-     */
+    /** dependency类型。
+     * 
+     * @return dependencyType */
     public String getDependencyType() {
         return dependencyType;
     }
@@ -1021,22 +792,14 @@ public class TemplateInfo  {
         this.dependencyType = dependencyType;
     }
 
-    
-
     public TemplateInfo withForumId(Integer forumId) {
         this.forumId = forumId;
         return this;
     }
 
-    
-
-
-    /**
-     * 关联论坛板块id。
-     * minimum: 0
-     * maximum: 100000
-     * @return forumId
-     */
+    /** 关联论坛板块id。 minimum: 0 maximum: 100000
+     * 
+     * @return forumId */
     public Integer getForumId() {
         return forumId;
     }
@@ -1045,22 +808,14 @@ public class TemplateInfo  {
         this.forumId = forumId;
     }
 
-    
-
     public TemplateInfo withFileSize(Integer fileSize) {
         this.fileSize = fileSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板文件解压缩之后的大小(单位:KB)。
-     * minimum: 0
-     * maximum: 2147483647
-     * @return fileSize
-     */
+    /** 模板文件解压缩之后的大小(单位:KB)。 minimum: 0 maximum: 2147483647
+     * 
+     * @return fileSize */
     public Integer getFileSize() {
         return fileSize;
     }
@@ -1069,20 +824,14 @@ public class TemplateInfo  {
         this.fileSize = fileSize;
     }
 
-    
-
     public TemplateInfo withDeployment(Object deployment) {
         this.deployment = deployment;
         return this;
     }
 
-    
-
-
-    /**
-     * 部署信息。
-     * @return deployment
-     */
+    /** 部署信息。
+     * 
+     * @return deployment */
     public Object getDeployment() {
         return deployment;
     }
@@ -1091,20 +840,14 @@ public class TemplateInfo  {
         this.deployment = deployment;
     }
 
-    
-
     public TemplateInfo withUpdateId(String updateId) {
         this.updateId = updateId;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板关联更新态Id。
-     * @return updateId
-     */
+    /** 模板关联更新态Id。
+     * 
+     * @return updateId */
     public String getUpdateId() {
         return updateId;
     }
@@ -1113,20 +856,14 @@ public class TemplateInfo  {
         this.updateId = updateId;
     }
 
-    
-
     public TemplateInfo withIsSupportCloudide(Boolean isSupportCloudide) {
         this.isSupportCloudide = isSupportCloudide;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否支持使用CloudIDE运行源码。
-     * @return isSupportCloudide
-     */
+    /** 是否支持使用CloudIDE运行源码。
+     * 
+     * @return isSupportCloudide */
     public Boolean getIsSupportCloudide() {
         return isSupportCloudide;
     }
@@ -1135,20 +872,14 @@ public class TemplateInfo  {
         this.isSupportCloudide = isSupportCloudide;
     }
 
-    
-
     public TemplateInfo withHasNotices(Boolean hasNotices) {
         this.hasNotices = hasNotices;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否有消息
-     * @return hasNotices
-     */
+    /** 是否有消息
+     * 
+     * @return hasNotices */
     public Boolean getHasNotices() {
         return hasNotices;
     }
@@ -1156,8 +887,6 @@ public class TemplateInfo  {
     public void setHasNotices(Boolean hasNotices) {
         this.hasNotices = hasNotices;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -1168,47 +897,79 @@ public class TemplateInfo  {
             return false;
         }
         TemplateInfo templateInfo = (TemplateInfo) o;
-        return Objects.equals(this.id, templateInfo.id) &&
-            Objects.equals(this.title, templateInfo.title) &&
-            Objects.equals(this.description, templateInfo.description) &&
-            Objects.equals(this.productshorts, templateInfo.productshorts) &&
-            Objects.equals(this.products, templateInfo.products) &&
-            Objects.equals(this.topic, templateInfo.topic) &&
-            Objects.equals(this.creatorId, templateInfo.creatorId) &&
-            Objects.equals(this.creator, templateInfo.creator) &&
-            Objects.equals(this.nickname, templateInfo.nickname) &&
-            Objects.equals(this.score, templateInfo.score) &&
-            Objects.equals(this.label, templateInfo.label) &&
-            Objects.equals(this.store, templateInfo.store) &&
-            Objects.equals(this.storeInfo, templateInfo.storeInfo) &&
-            Objects.equals(this.status, templateInfo.status) &&
-            Objects.equals(this.viewCount, templateInfo.viewCount) &&
-            Objects.equals(this.usageCount, templateInfo.usageCount) &&
-            Objects.equals(this.createdAt, templateInfo.createdAt) &&
-            Objects.equals(this.updatedAt, templateInfo.updatedAt) &&
-            Objects.equals(this.publishedAt, templateInfo.publishedAt) &&
-            Objects.equals(this.favoriteState, templateInfo.favoriteState) &&
-            Objects.equals(this.tags, templateInfo.tags) &&
-            Objects.equals(this.type, templateInfo.type) &&
-            Objects.equals(this.isStatic, templateInfo.isStatic) &&
-            Objects.equals(this.maintainers, templateInfo.maintainers) &&
-            Objects.equals(this.pipelineTemplate, templateInfo.pipelineTemplate) &&
-            Objects.equals(this.platformSource, templateInfo.platformSource) &&
-            Objects.equals(this.references, templateInfo.references) &&
-            Objects.equals(this.properties, templateInfo.properties) &&
-            Objects.equals(this.dependencies, templateInfo.dependencies) &&
-            Objects.equals(this.dependencyType, templateInfo.dependencyType) &&
-            Objects.equals(this.forumId, templateInfo.forumId) &&
-            Objects.equals(this.fileSize, templateInfo.fileSize) &&
-            Objects.equals(this.deployment, templateInfo.deployment) &&
-            Objects.equals(this.updateId, templateInfo.updateId) &&
-            Objects.equals(this.isSupportCloudide, templateInfo.isSupportCloudide) &&
-            Objects.equals(this.hasNotices, templateInfo.hasNotices);
+        return Objects.equals(this.id, templateInfo.id) && Objects.equals(this.title, templateInfo.title)
+            && Objects.equals(this.description, templateInfo.description)
+            && Objects.equals(this.productshorts, templateInfo.productshorts)
+            && Objects.equals(this.products, templateInfo.products) && Objects.equals(this.topic, templateInfo.topic)
+            && Objects.equals(this.creatorId, templateInfo.creatorId)
+            && Objects.equals(this.creator, templateInfo.creator)
+            && Objects.equals(this.nickname, templateInfo.nickname) && Objects.equals(this.score, templateInfo.score)
+            && Objects.equals(this.label, templateInfo.label) && Objects.equals(this.store, templateInfo.store)
+            && Objects.equals(this.storeInfo, templateInfo.storeInfo)
+            && Objects.equals(this.status, templateInfo.status)
+            && Objects.equals(this.viewCount, templateInfo.viewCount)
+            && Objects.equals(this.usageCount, templateInfo.usageCount)
+            && Objects.equals(this.createdAt, templateInfo.createdAt)
+            && Objects.equals(this.updatedAt, templateInfo.updatedAt)
+            && Objects.equals(this.publishedAt, templateInfo.publishedAt)
+            && Objects.equals(this.favoriteState, templateInfo.favoriteState)
+            && Objects.equals(this.tags, templateInfo.tags) && Objects.equals(this.type, templateInfo.type)
+            && Objects.equals(this.isStatic, templateInfo.isStatic)
+            && Objects.equals(this.maintainers, templateInfo.maintainers)
+            && Objects.equals(this.pipelineTemplate, templateInfo.pipelineTemplate)
+            && Objects.equals(this.platformSource, templateInfo.platformSource)
+            && Objects.equals(this.references, templateInfo.references)
+            && Objects.equals(this.properties, templateInfo.properties)
+            && Objects.equals(this.dependencies, templateInfo.dependencies)
+            && Objects.equals(this.dependencyType, templateInfo.dependencyType)
+            && Objects.equals(this.forumId, templateInfo.forumId)
+            && Objects.equals(this.fileSize, templateInfo.fileSize)
+            && Objects.equals(this.deployment, templateInfo.deployment)
+            && Objects.equals(this.updateId, templateInfo.updateId)
+            && Objects.equals(this.isSupportCloudide, templateInfo.isSupportCloudide)
+            && Objects.equals(this.hasNotices, templateInfo.hasNotices);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, description, productshorts, products, topic, creatorId, creator, nickname, score, label, store, storeInfo, status, viewCount, usageCount, createdAt, updatedAt, publishedAt, favoriteState, tags, type, isStatic, maintainers, pipelineTemplate, platformSource, references, properties, dependencies, dependencyType, forumId, fileSize, deployment, updateId, isSupportCloudide, hasNotices);
+        return Objects.hash(id,
+            title,
+            description,
+            productshorts,
+            products,
+            topic,
+            creatorId,
+            creator,
+            nickname,
+            score,
+            label,
+            store,
+            storeInfo,
+            status,
+            viewCount,
+            usageCount,
+            createdAt,
+            updatedAt,
+            publishedAt,
+            favoriteState,
+            tags,
+            type,
+            isStatic,
+            maintainers,
+            pipelineTemplate,
+            platformSource,
+            references,
+            properties,
+            dependencies,
+            dependencyType,
+            forumId,
+            fileSize,
+            deployment,
+            updateId,
+            isSupportCloudide,
+            hasNotices);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1252,16 +1013,13 @@ public class TemplateInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

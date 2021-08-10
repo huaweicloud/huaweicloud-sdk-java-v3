@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ces.v1.model.Datapoint;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowMetricDataResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datapoints")
-    
+    @JsonProperty(value = "datapoints")
+
     private List<Datapoint> datapoints = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metric_name")
-    
+    @JsonProperty(value = "metric_name")
+
     private String metricName;
 
     public ShowMetricDataResponse withDatapoints(List<Datapoint> datapoints) {
@@ -39,9 +27,8 @@ public class ShowMetricDataResponse extends SdkResponse {
         return this;
     }
 
-    
     public ShowMetricDataResponse addDatapointsItem(Datapoint datapointsItem) {
-        if(this.datapoints == null) {
+        if (this.datapoints == null) {
             this.datapoints = new ArrayList<>();
         }
         this.datapoints.add(datapointsItem);
@@ -49,17 +36,16 @@ public class ShowMetricDataResponse extends SdkResponse {
     }
 
     public ShowMetricDataResponse withDatapoints(Consumer<List<Datapoint>> datapointsSetter) {
-        if(this.datapoints == null) {
+        if (this.datapoints == null) {
             this.datapoints = new ArrayList<>();
         }
         datapointsSetter.accept(this.datapoints);
         return this;
     }
 
-    /**
-     * 指标数据列表。由于查询数据时，云监控会根据所选择的聚合粒度向前取整from参数，所以datapoints中包含的数据点有可能会多于预期。
-     * @return datapoints
-     */
+    /** 指标数据列表。由于查询数据时，云监控会根据所选择的聚合粒度向前取整from参数，所以datapoints中包含的数据点有可能会多于预期。
+     * 
+     * @return datapoints */
     public List<Datapoint> getDatapoints() {
         return datapoints;
     }
@@ -68,20 +54,14 @@ public class ShowMetricDataResponse extends SdkResponse {
         this.datapoints = datapoints;
     }
 
-    
-
     public ShowMetricDataResponse withMetricName(String metricName) {
         this.metricName = metricName;
         return this;
     }
 
-    
-
-
-    /**
-     * 指标名称，例如弹性云服务器监控指标中的cpu_util。
-     * @return metricName
-     */
+    /** 指标名称，例如弹性云服务器监控指标中的cpu_util。
+     * 
+     * @return metricName */
     public String getMetricName() {
         return metricName;
     }
@@ -89,8 +69,6 @@ public class ShowMetricDataResponse extends SdkResponse {
     public void setMetricName(String metricName) {
         this.metricName = metricName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ShowMetricDataResponse extends SdkResponse {
             return false;
         }
         ShowMetricDataResponse showMetricDataResponse = (ShowMetricDataResponse) o;
-        return Objects.equals(this.datapoints, showMetricDataResponse.datapoints) &&
-            Objects.equals(this.metricName, showMetricDataResponse.metricName);
+        return Objects.equals(this.datapoints, showMetricDataResponse.datapoints)
+            && Objects.equals(this.metricName, showMetricDataResponse.metricName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(datapoints, metricName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ShowMetricDataResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

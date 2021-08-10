@@ -1,57 +1,39 @@
 package com.huaweicloud.sdk.lts.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 此参数在请求实体中，采用json字符串格式
- */
-public class QueryLTSLogParams  {
-
-
+/** 此参数在请求实体中，采用json字符串格式 */
+public class QueryLTSLogParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="labels")
-    
+    @JsonProperty(value = "labels")
+
     private Map<String, String> labels = null;
-        /**
-     * 支持关键词精确搜索。关键词指相邻两个分词符之间的单词。
-     */
+
+    /** 支持关键词精确搜索。关键词指相邻两个分词符之间的单词。 */
     public static final class KeywordsEnum {
 
-        
-        /**
-         * Enum ERROR for value: "error"
-         */
+        /** Enum ERROR for value: "error" */
         public static final KeywordsEnum ERROR = new KeywordsEnum("error");
-        
 
         private static final Map<String, KeywordsEnum> STATIC_FIELDS = createStaticFields();
 
@@ -79,7 +61,7 @@ public class QueryLTSLogParams  {
 
         @JsonCreator
         public static KeywordsEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             KeywordsEnum result = STATIC_FIELDS.get(value);
@@ -90,7 +72,7 @@ public class QueryLTSLogParams  {
         }
 
         public static KeywordsEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             KeywordsEnum result = STATIC_FIELDS.get(value);
@@ -114,40 +96,36 @@ public class QueryLTSLogParams  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="keywords")
-    
+    @JsonProperty(value = "keywords")
+
     private KeywordsEnum keywords;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="line_num")
-    
+    @JsonProperty(value = "line_num")
+
     private String lineNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_desc")
-    
+    @JsonProperty(value = "is_desc")
+
     private Boolean isDesc;
-    /**
-     * 首次查询为 “init”, 分页查询时为 “forwards”或者“backwards”, 默认为首次查询“init”, 与 is_desc 参数配合进行分页查询。
-     */
+
+    /** 首次查询为 “init”, 分页查询时为 “forwards”或者“backwards”, 默认为首次查询“init”, 与 is_desc 参数配合进行分页查询。 */
     public static final class SearchTypeEnum {
 
-        
-        /**
-         * Enum FORWARDS for value: "forwards"
-         */
+        /** Enum FORWARDS for value: "forwards" */
         public static final SearchTypeEnum FORWARDS = new SearchTypeEnum("forwards");
-        
+
+        /** Enum BACKWARDS for value: "backwards" */
+        public static final SearchTypeEnum BACKWARDS = new SearchTypeEnum("backwards");
 
         private static final Map<String, SearchTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SearchTypeEnum> createStaticFields() {
             Map<String, SearchTypeEnum> map = new HashMap<>();
             map.put("forwards", FORWARDS);
+            map.put("backwards", BACKWARDS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -169,7 +147,7 @@ public class QueryLTSLogParams  {
 
         @JsonCreator
         public static SearchTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SearchTypeEnum result = STATIC_FIELDS.get(value);
@@ -180,7 +158,7 @@ public class QueryLTSLogParams  {
         }
 
         public static SearchTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SearchTypeEnum result = STATIC_FIELDS.get(value);
@@ -204,30 +182,29 @@ public class QueryLTSLogParams  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="search_type")
-    
+    @JsonProperty(value = "search_type")
+
     private SearchTypeEnum searchType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
-    private Integer limit;
+    @JsonProperty(value = "highlight")
+
+    private Boolean highlight;
 
     public QueryLTSLogParams withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 搜索起始时间（UTC时间，毫秒级）。
-     * @return startTime
-     */
+    /** 搜索起始时间（UTC时间，毫秒级）。
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -236,20 +213,14 @@ public class QueryLTSLogParams  {
         this.startTime = startTime;
     }
 
-    
-
     public QueryLTSLogParams withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 搜索结束时间（UTC时间，毫秒级）。
-     * @return endTime
-     */
+    /** 搜索结束时间（UTC时间，毫秒级）。
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -258,17 +229,13 @@ public class QueryLTSLogParams  {
         this.endTime = endTime;
     }
 
-    
-
     public QueryLTSLogParams withLabels(Map<String, String> labels) {
         this.labels = labels;
         return this;
     }
 
-    
-
     public QueryLTSLogParams putLabelsItem(String key, String labelsItem) {
-        if(this.labels == null) {
+        if (this.labels == null) {
             this.labels = new HashMap<>();
         }
         this.labels.put(key, labelsItem);
@@ -276,16 +243,16 @@ public class QueryLTSLogParams  {
     }
 
     public QueryLTSLogParams withLabels(Consumer<Map<String, String>> labelsSetter) {
-        if(this.labels == null) {
+        if (this.labels == null) {
             this.labels = new HashMap<>();
         }
         labelsSetter.accept(this.labels);
         return this;
     }
-    /**
-     * 日志过滤条件集合，不同日志来源所需字段不同。
-     * @return labels
-     */
+
+    /** 日志过滤条件集合，不同日志来源所需字段不同。
+     * 
+     * @return labels */
     public Map<String, String> getLabels() {
         return labels;
     }
@@ -294,20 +261,14 @@ public class QueryLTSLogParams  {
         this.labels = labels;
     }
 
-    
-
     public QueryLTSLogParams withKeywords(KeywordsEnum keywords) {
         this.keywords = keywords;
         return this;
     }
 
-    
-
-
-    /**
-     * 支持关键词精确搜索。关键词指相邻两个分词符之间的单词。
-     * @return keywords
-     */
+    /** 支持关键词精确搜索。关键词指相邻两个分词符之间的单词。
+     * 
+     * @return keywords */
     public KeywordsEnum getKeywords() {
         return keywords;
     }
@@ -316,20 +277,14 @@ public class QueryLTSLogParams  {
         this.keywords = keywords;
     }
 
-    
-
     public QueryLTSLogParams withLineNum(String lineNum) {
         this.lineNum = lineNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 日志单行序列号，第一次查询时不需要此参数，后续分页查询时需要使用，可从上次查询的返回信息中获取。line_num应在start_time 和 end_time 之间。
-     * @return lineNum
-     */
+    /** 日志单行序列号，第一次查询时不需要此参数，后续分页查询时需要使用，可从上次查询的返回信息中获取。line_num应在start_time 和 end_time 之间。
+     * 
+     * @return lineNum */
     public String getLineNum() {
         return lineNum;
     }
@@ -338,20 +293,14 @@ public class QueryLTSLogParams  {
         this.lineNum = lineNum;
     }
 
-    
-
     public QueryLTSLogParams withIsDesc(Boolean isDesc) {
         this.isDesc = isDesc;
         return this;
     }
 
-    
-
-
-    /**
-     * 顺序或者倒序查询, 默认为false(顺序查询)
-     * @return isDesc
-     */
+    /** 顺序或者倒序查询, 默认为false(顺序查询)
+     * 
+     * @return isDesc */
     public Boolean getIsDesc() {
         return isDesc;
     }
@@ -360,20 +309,14 @@ public class QueryLTSLogParams  {
         this.isDesc = isDesc;
     }
 
-    
-
     public QueryLTSLogParams withSearchType(SearchTypeEnum searchType) {
         this.searchType = searchType;
         return this;
     }
 
-    
-
-
-    /**
-     * 首次查询为 “init”, 分页查询时为 “forwards”或者“backwards”, 默认为首次查询“init”, 与 is_desc 参数配合进行分页查询。
-     * @return searchType
-     */
+    /** 首次查询为 “init”, 分页查询时为 “forwards”或者“backwards”, 默认为首次查询“init”, 与 is_desc 参数配合进行分页查询。
+     * 
+     * @return searchType */
     public SearchTypeEnum getSearchType() {
         return searchType;
     }
@@ -382,22 +325,14 @@ public class QueryLTSLogParams  {
         this.searchType = searchType;
     }
 
-    
-
     public QueryLTSLogParams withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 表示每次查询的日志条数，不填时默认为5000，建议您设置为100。
-     * minimum: 1
-     * maximum: 5000
-     * @return limit
-     */
+    /** 表示每次查询的日志条数，不填时默认为5000，建议您设置为100。 minimum: 1 maximum: 5000
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -406,7 +341,21 @@ public class QueryLTSLogParams  {
         this.limit = limit;
     }
 
-    
+    public QueryLTSLogParams withHighlight(Boolean highlight) {
+        this.highlight = highlight;
+        return this;
+    }
+
+    /** 日志关键词高亮显示，默认为true（高亮显示），false为取消高亮显示。
+     * 
+     * @return highlight */
+    public Boolean getHighlight() {
+        return highlight;
+    }
+
+    public void setHighlight(Boolean highlight) {
+        this.highlight = highlight;
+    }
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -417,19 +366,22 @@ public class QueryLTSLogParams  {
             return false;
         }
         QueryLTSLogParams queryLTSLogParams = (QueryLTSLogParams) o;
-        return Objects.equals(this.startTime, queryLTSLogParams.startTime) &&
-            Objects.equals(this.endTime, queryLTSLogParams.endTime) &&
-            Objects.equals(this.labels, queryLTSLogParams.labels) &&
-            Objects.equals(this.keywords, queryLTSLogParams.keywords) &&
-            Objects.equals(this.lineNum, queryLTSLogParams.lineNum) &&
-            Objects.equals(this.isDesc, queryLTSLogParams.isDesc) &&
-            Objects.equals(this.searchType, queryLTSLogParams.searchType) &&
-            Objects.equals(this.limit, queryLTSLogParams.limit);
+        return Objects.equals(this.startTime, queryLTSLogParams.startTime)
+            && Objects.equals(this.endTime, queryLTSLogParams.endTime)
+            && Objects.equals(this.labels, queryLTSLogParams.labels)
+            && Objects.equals(this.keywords, queryLTSLogParams.keywords)
+            && Objects.equals(this.lineNum, queryLTSLogParams.lineNum)
+            && Objects.equals(this.isDesc, queryLTSLogParams.isDesc)
+            && Objects.equals(this.searchType, queryLTSLogParams.searchType)
+            && Objects.equals(this.limit, queryLTSLogParams.limit)
+            && Objects.equals(this.highlight, queryLTSLogParams.highlight);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(startTime, endTime, labels, keywords, lineNum, isDesc, searchType, limit);
+        return Objects.hash(startTime, endTime, labels, keywords, lineNum, isDesc, searchType, limit, highlight);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -442,19 +394,17 @@ public class QueryLTSLogParams  {
         sb.append("    isDesc: ").append(toIndentedString(isDesc)).append("\n");
         sb.append("    searchType: ").append(toIndentedString(searchType)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    highlight: ").append(toIndentedString(highlight)).append("\n");
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

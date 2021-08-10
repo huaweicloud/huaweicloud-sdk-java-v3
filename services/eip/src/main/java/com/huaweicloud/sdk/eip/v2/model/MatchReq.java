@@ -1,36 +1,23 @@
 package com.huaweicloud.sdk.eip.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 搜索字段
- */
-public class MatchReq  {
+/** 搜索字段 */
+public class MatchReq {
 
-    /**
-     * 键。当前仅限定为resource_name
-     */
+    /** 键。当前仅限定为resource_name */
     public static final class KeyEnum {
 
-        
-        /**
-         * Enum RESOURCE_NAME for value: "resource_name"
-         */
+        /** Enum RESOURCE_NAME for value: "resource_name" */
         public static final KeyEnum RESOURCE_NAME = new KeyEnum("resource_name");
-        
 
         private static final Map<String, KeyEnum> STATIC_FIELDS = createStaticFields();
 
@@ -58,7 +45,7 @@ public class MatchReq  {
 
         @JsonCreator
         public static KeyEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             KeyEnum result = STATIC_FIELDS.get(value);
@@ -69,7 +56,7 @@ public class MatchReq  {
         }
 
         public static KeyEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             KeyEnum result = STATIC_FIELDS.get(value);
@@ -93,16 +80,14 @@ public class MatchReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private KeyEnum key;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private String value;
 
     public MatchReq withKey(KeyEnum key) {
@@ -110,13 +95,9 @@ public class MatchReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 键。当前仅限定为resource_name
-     * @return key
-     */
+    /** 键。当前仅限定为resource_name
+     * 
+     * @return key */
     public KeyEnum getKey() {
         return key;
     }
@@ -125,20 +106,14 @@ public class MatchReq  {
         this.key = key;
     }
 
-    
-
     public MatchReq withValue(String value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 值。每个值最大长度255个unicode字符。
-     * @return value
-     */
+    /** 值。每个值最大长度255个unicode字符。
+     * 
+     * @return value */
     public String getValue() {
         return value;
     }
@@ -146,8 +121,6 @@ public class MatchReq  {
     public void setValue(String value) {
         this.value = value;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -158,13 +131,14 @@ public class MatchReq  {
             return false;
         }
         MatchReq matchReq = (MatchReq) o;
-        return Objects.equals(this.key, matchReq.key) &&
-            Objects.equals(this.value, matchReq.value);
+        return Objects.equals(this.key, matchReq.key) && Objects.equals(this.value, matchReq.value);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(key, value);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -174,16 +148,13 @@ public class MatchReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

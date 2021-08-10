@@ -1,26 +1,18 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class ModifyAlarmActionReq  {
-
-
+public class ModifyAlarmActionReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_enabled")
-    
+    @JsonProperty(value = "alarm_enabled")
+
     private Boolean alarmEnabled;
 
     public ModifyAlarmActionReq withAlarmEnabled(Boolean alarmEnabled) {
@@ -28,13 +20,9 @@ public class ModifyAlarmActionReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 告警是否启用。true：启动。false：停止
-     * @return alarmEnabled
-     */
+    /** 告警是否启用。true：启动。false：停止
+     * 
+     * @return alarmEnabled */
     public Boolean getAlarmEnabled() {
         return alarmEnabled;
     }
@@ -42,8 +30,6 @@ public class ModifyAlarmActionReq  {
     public void setAlarmEnabled(Boolean alarmEnabled) {
         this.alarmEnabled = alarmEnabled;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +42,12 @@ public class ModifyAlarmActionReq  {
         ModifyAlarmActionReq modifyAlarmActionReq = (ModifyAlarmActionReq) o;
         return Objects.equals(this.alarmEnabled, modifyAlarmActionReq.alarmEnabled);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(alarmEnabled);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +56,13 @@ public class ModifyAlarmActionReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

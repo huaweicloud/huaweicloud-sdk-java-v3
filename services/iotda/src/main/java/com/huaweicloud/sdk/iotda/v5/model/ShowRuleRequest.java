@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowRuleRequest  {
-
-
+/** Request Object */
+public class ShowRuleRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Instance-Id")
-    
+    @JsonProperty(value = "Instance-Id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rule_id")
-    
+    @JsonProperty(value = "rule_id")
+
     private String ruleId;
 
     public ShowRuleRequest withInstanceId(String instanceId) {
@@ -34,13 +23,9 @@ public class ShowRuleRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
-     * @return instanceId
-     */
+    /** **参数说明**：实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -49,20 +34,14 @@ public class ShowRuleRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ShowRuleRequest withRuleId(String ruleId) {
         this.ruleId = ruleId;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：规则ID，用于唯一标识一条规则，在创建规则时由物联网平台分配获得。 **取值范围**：长度不超过32，只允许字母、数字的组合。
-     * @return ruleId
-     */
+    /** **参数说明**：规则ID，用于唯一标识一条规则，在创建规则时由物联网平台分配获得。 **取值范围**：长度不超过32，只允许字母、数字的组合。
+     * 
+     * @return ruleId */
     public String getRuleId() {
         return ruleId;
     }
@@ -70,8 +49,6 @@ public class ShowRuleRequest  {
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class ShowRuleRequest  {
             return false;
         }
         ShowRuleRequest showRuleRequest = (ShowRuleRequest) o;
-        return Objects.equals(this.instanceId, showRuleRequest.instanceId) &&
-            Objects.equals(this.ruleId, showRuleRequest.ruleId);
+        return Objects.equals(this.instanceId, showRuleRequest.instanceId)
+            && Objects.equals(this.ruleId, showRuleRequest.ruleId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, ruleId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class ShowRuleRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

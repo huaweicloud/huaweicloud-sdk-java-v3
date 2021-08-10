@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class CheckNeedVerifyRequest  {
-
-
+/** Request Object */
+public class CheckNeedVerifyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="contact_value")
-    
+    @JsonProperty(value = "contact_value")
+
     private String contactValue;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="contact_way")
-    
+    @JsonProperty(value = "contact_way")
+
     private Integer contactWay;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="area_code")
-    
+    @JsonProperty(value = "area_code")
+
     private String areaCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site")
-    
+    @JsonProperty(value = "X-Site")
+
     private Integer xSite;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Time-Zone")
-    
+    @JsonProperty(value = "X-Time-Zone")
+
     private String xTimeZone;
 
     public CheckNeedVerifyRequest withContactValue(String contactValue) {
@@ -58,13 +43,9 @@ public class CheckNeedVerifyRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 联系方式值
-     * @return contactValue
-     */
+    /** 联系方式值
+     * 
+     * @return contactValue */
     public String getContactValue() {
         return contactValue;
     }
@@ -73,22 +54,14 @@ public class CheckNeedVerifyRequest  {
         this.contactValue = contactValue;
     }
 
-    
-
     public CheckNeedVerifyRequest withContactWay(Integer contactWay) {
         this.contactWay = contactWay;
         return this;
     }
 
-    
-
-
-    /**
-     * 联系方式类型
-     * minimum: 0
-     * maximum: 1
-     * @return contactWay
-     */
+    /** 联系方式类型 minimum: 0 maximum: 1
+     * 
+     * @return contactWay */
     public Integer getContactWay() {
         return contactWay;
     }
@@ -97,20 +70,14 @@ public class CheckNeedVerifyRequest  {
         this.contactWay = contactWay;
     }
 
-    
-
     public CheckNeedVerifyRequest withAreaCode(String areaCode) {
         this.areaCode = areaCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 国家码
-     * @return areaCode
-     */
+    /** 国家码
+     * 
+     * @return areaCode */
     public String getAreaCode() {
         return areaCode;
     }
@@ -119,24 +86,16 @@ public class CheckNeedVerifyRequest  {
         this.areaCode = areaCode;
     }
 
-    
-
     public CheckNeedVerifyRequest withXSite(Integer xSite) {
         this.xSite = xSite;
         return this;
     }
 
-    
-
-
-    /**
-     * 对接站点信息。  0（中国站） 1（国际站），不填的话默认为0。
-     * minimum: 0
-     * maximum: 1
-     * @return xSite
-     */
+    /** 对接站点信息。 0（中国站） 1（国际站），不填的话默认为0。 minimum: 0 maximum: 1
+     * 
+     * @return xSite */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site")
+    @JsonProperty(value = "X-Site")
     public Integer getXSite() {
         return xSite;
     }
@@ -145,22 +104,16 @@ public class CheckNeedVerifyRequest  {
         this.xSite = xSite;
     }
 
-    
-
     public CheckNeedVerifyRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。  会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
-     * @return xLanguage
-     */
+    /** 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。 会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -169,22 +122,16 @@ public class CheckNeedVerifyRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public CheckNeedVerifyRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。  涉及时间的数据会根据环境时区处理。
-     * @return xTimeZone
-     */
+    /** 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。 涉及时间的数据会根据环境时区处理。
+     * 
+     * @return xTimeZone */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Time-Zone")
+    @JsonProperty(value = "X-Time-Zone")
     public String getXTimeZone() {
         return xTimeZone;
     }
@@ -192,8 +139,6 @@ public class CheckNeedVerifyRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -204,17 +149,19 @@ public class CheckNeedVerifyRequest  {
             return false;
         }
         CheckNeedVerifyRequest checkNeedVerifyRequest = (CheckNeedVerifyRequest) o;
-        return Objects.equals(this.contactValue, checkNeedVerifyRequest.contactValue) &&
-            Objects.equals(this.contactWay, checkNeedVerifyRequest.contactWay) &&
-            Objects.equals(this.areaCode, checkNeedVerifyRequest.areaCode) &&
-            Objects.equals(this.xSite, checkNeedVerifyRequest.xSite) &&
-            Objects.equals(this.xLanguage, checkNeedVerifyRequest.xLanguage) &&
-            Objects.equals(this.xTimeZone, checkNeedVerifyRequest.xTimeZone);
+        return Objects.equals(this.contactValue, checkNeedVerifyRequest.contactValue)
+            && Objects.equals(this.contactWay, checkNeedVerifyRequest.contactWay)
+            && Objects.equals(this.areaCode, checkNeedVerifyRequest.areaCode)
+            && Objects.equals(this.xSite, checkNeedVerifyRequest.xSite)
+            && Objects.equals(this.xLanguage, checkNeedVerifyRequest.xLanguage)
+            && Objects.equals(this.xTimeZone, checkNeedVerifyRequest.xTimeZone);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(contactValue, contactWay, areaCode, xSite, xLanguage, xTimeZone);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -228,16 +175,13 @@ public class CheckNeedVerifyRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

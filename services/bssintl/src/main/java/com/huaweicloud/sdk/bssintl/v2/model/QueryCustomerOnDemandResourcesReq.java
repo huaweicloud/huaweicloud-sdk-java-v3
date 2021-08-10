@@ -1,82 +1,64 @@
 package com.huaweicloud.sdk.bssintl.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * QueryCustomerOnDemandResourcesReq
- */
-public class QueryCustomerOnDemandResourcesReq  {
-
-
+/** QueryCustomerOnDemandResourcesReq */
+public class QueryCustomerOnDemandResourcesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_id")
-    
+    @JsonProperty(value = "customer_id")
+
     private String customerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_code")
-    
+    @JsonProperty(value = "region_code")
+
     private String regionCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_type_code")
-    
+    @JsonProperty(value = "service_type_code")
+
     private String serviceTypeCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_ids")
-    
+    @JsonProperty(value = "resource_ids")
+
     private List<String> resourceIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="effective_time_begin")
-    
+    @JsonProperty(value = "effective_time_begin")
+
     private String effectiveTimeBegin;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="effective_time_end")
-    
+    @JsonProperty(value = "effective_time_end")
+
     private String effectiveTimeEnd;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="indirect_partner_id")
-    
+    @JsonProperty(value = "indirect_partner_id")
+
     private String indirectPartnerId;
 
     public QueryCustomerOnDemandResourcesReq withCustomerId(String customerId) {
@@ -84,13 +66,9 @@ public class QueryCustomerOnDemandResourcesReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：所属的客户ID。| |参数约束及描述：所属的客户ID。|
-     * @return customerId
-     */
+    /** |参数名称：所属的客户ID。| |参数约束及描述：所属的客户ID。|
+     * 
+     * @return customerId */
     public String getCustomerId() {
         return customerId;
     }
@@ -99,20 +77,15 @@ public class QueryCustomerOnDemandResourcesReq  {
         this.customerId = customerId;
     }
 
-    
-
     public QueryCustomerOnDemandResourcesReq withRegionCode(String regionCode) {
         this.regionCode = regionCode;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。| |参数约束及描述：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。|
-     * @return regionCode
-     */
+    /** |参数名称：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。|
+     * |参数约束及描述：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点地区和终端节点对应云服务的“区域”列的值。|
+     * 
+     * @return regionCode */
     public String getRegionCode() {
         return regionCode;
     }
@@ -121,20 +94,15 @@ public class QueryCustomerOnDemandResourcesReq  {
         this.regionCode = regionCode;
     }
 
-    
-
     public QueryCustomerOnDemandResourcesReq withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。| |参数约束及描述：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
-     * @return serviceTypeCode
-     */
+    /** |参数名称：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
+     * |参数约束及描述：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。具体请参见云服务类型云服务类型云服务类型云服务类型。|
+     * 
+     * @return serviceTypeCode */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -143,16 +111,13 @@ public class QueryCustomerOnDemandResourcesReq  {
         this.serviceTypeCode = serviceTypeCode;
     }
 
-    
-
     public QueryCustomerOnDemandResourcesReq withResourceIds(List<String> resourceIds) {
         this.resourceIds = resourceIds;
         return this;
     }
 
-    
     public QueryCustomerOnDemandResourcesReq addResourceIdsItem(String resourceIdsItem) {
-        if(this.resourceIds == null) {
+        if (this.resourceIds == null) {
             this.resourceIds = new ArrayList<>();
         }
         this.resourceIds.add(resourceIdsItem);
@@ -160,17 +125,16 @@ public class QueryCustomerOnDemandResourcesReq  {
     }
 
     public QueryCustomerOnDemandResourcesReq withResourceIds(Consumer<List<String>> resourceIdsSetter) {
-        if(this.resourceIds == null) {
+        if (this.resourceIds == null) {
             this.resourceIds = new ArrayList<>();
         }
         resourceIdsSetter.accept(this.resourceIds);
         return this;
     }
 
-    /**
-     * |参数名称：资源ID批量查询| |参数约束以及描述：用于查询指定资源ID对应的资源。最多支持同时传递50个Id的列表。|
-     * @return resourceIds
-     */
+    /** |参数名称：资源ID批量查询| |参数约束以及描述：用于查询指定资源ID对应的资源。最多支持同时传递50个Id的列表。|
+     * 
+     * @return resourceIds */
     public List<String> getResourceIds() {
         return resourceIds;
     }
@@ -179,20 +143,15 @@ public class QueryCustomerOnDemandResourcesReq  {
         this.resourceIds = resourceIds;
     }
 
-    
-
     public QueryCustomerOnDemandResourcesReq withEffectiveTimeBegin(String effectiveTimeBegin) {
         this.effectiveTimeBegin = effectiveTimeBegin;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：生效时间的开始时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。| |参数约束及描述：生效时间的开始时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
-     * @return effectiveTimeBegin
-     */
+    /** |参数名称：生效时间的开始时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
+     * |参数约束及描述：生效时间的开始时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
+     * 
+     * @return effectiveTimeBegin */
     public String getEffectiveTimeBegin() {
         return effectiveTimeBegin;
     }
@@ -201,20 +160,15 @@ public class QueryCustomerOnDemandResourcesReq  {
         this.effectiveTimeBegin = effectiveTimeBegin;
     }
 
-    
-
     public QueryCustomerOnDemandResourcesReq withEffectiveTimeEnd(String effectiveTimeEnd) {
         this.effectiveTimeEnd = effectiveTimeEnd;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：生效时间的结束时间UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。| |参数约束及描述：生效时间的结束时间UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
-     * @return effectiveTimeEnd
-     */
+    /** |参数名称：生效时间的结束时间UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
+     * |参数约束及描述：生效时间的结束时间UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。|
+     * 
+     * @return effectiveTimeEnd */
     public String getEffectiveTimeEnd() {
         return effectiveTimeEnd;
     }
@@ -223,22 +177,14 @@ public class QueryCustomerOnDemandResourcesReq  {
         this.effectiveTimeEnd = effectiveTimeEnd;
     }
 
-    
-
     public QueryCustomerOnDemandResourcesReq withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：偏移量，从0开始。默认值：0| |参数的约束及描述：偏移量，从0开始。默认值：0|
-     * minimum: 0
-     * maximum: 2147483647
-     * @return offset
-     */
+    /** |参数名称：偏移量，从0开始。默认值：0| |参数的约束及描述：偏移量，从0开始。默认值：0| minimum: 0 maximum: 2147483647
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -247,22 +193,14 @@ public class QueryCustomerOnDemandResourcesReq  {
         this.offset = offset;
     }
 
-    
-
     public QueryCustomerOnDemandResourcesReq withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：一次查询的条数，默认10条。| |参数的约束及描述：一次查询的条数，默认10条。|
-     * minimum: 1
-     * maximum: 100
-     * @return limit
-     */
+    /** |参数名称：一次查询的条数，默认10条。| |参数的约束及描述：一次查询的条数，默认10条。| minimum: 1 maximum: 100
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -271,22 +209,15 @@ public class QueryCustomerOnDemandResourcesReq  {
         this.limit = limit;
     }
 
-    
-
     public QueryCustomerOnDemandResourcesReq withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：资源状态：1：正常（已开通）；2：宽限期；3：冻结中；4：变更中；5：正在关闭；6：已关闭。| |参数的约束及描述：资源状态：1：正常（已开通）；2：宽限期；3：冻结中；4：变更中；5：正在关闭；6：已关闭。|
-     * minimum: 1
-     * maximum: 6
-     * @return status
-     */
+    /** |参数名称：资源状态：1：正常（已开通）；2：宽限期；3：冻结中；4：变更中；5：正在关闭；6：已关闭。| |参数的约束及描述：资源状态：1：正常（已开通）；2：宽限期；3：冻结中；4：变更中；5：正在关闭；6：已关闭。|
+     * minimum: 1 maximum: 6
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -295,20 +226,15 @@ public class QueryCustomerOnDemandResourcesReq  {
         this.status = status;
     }
 
-    
-
     public QueryCustomerOnDemandResourcesReq withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：二级经销商ID，如果想查询二级经销商的子客户的资源列表，必须携带该字段，否则只能查询自己的子客户的按需资源| |参数约束及描述：二级经销商ID，如果想查询二级经销商的子客户的资源列表，必须携带该字段，否则只能查询自己的子客户的按需资源|
-     * @return indirectPartnerId
-     */
+    /** |参数名称：二级经销商ID，如果想查询二级经销商的子客户的资源列表，必须携带该字段，否则只能查询自己的子客户的按需资源|
+     * |参数约束及描述：二级经销商ID，如果想查询二级经销商的子客户的资源列表，必须携带该字段，否则只能查询自己的子客户的按需资源|
+     * 
+     * @return indirectPartnerId */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -316,8 +242,6 @@ public class QueryCustomerOnDemandResourcesReq  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -328,21 +252,32 @@ public class QueryCustomerOnDemandResourcesReq  {
             return false;
         }
         QueryCustomerOnDemandResourcesReq queryCustomerOnDemandResourcesReq = (QueryCustomerOnDemandResourcesReq) o;
-        return Objects.equals(this.customerId, queryCustomerOnDemandResourcesReq.customerId) &&
-            Objects.equals(this.regionCode, queryCustomerOnDemandResourcesReq.regionCode) &&
-            Objects.equals(this.serviceTypeCode, queryCustomerOnDemandResourcesReq.serviceTypeCode) &&
-            Objects.equals(this.resourceIds, queryCustomerOnDemandResourcesReq.resourceIds) &&
-            Objects.equals(this.effectiveTimeBegin, queryCustomerOnDemandResourcesReq.effectiveTimeBegin) &&
-            Objects.equals(this.effectiveTimeEnd, queryCustomerOnDemandResourcesReq.effectiveTimeEnd) &&
-            Objects.equals(this.offset, queryCustomerOnDemandResourcesReq.offset) &&
-            Objects.equals(this.limit, queryCustomerOnDemandResourcesReq.limit) &&
-            Objects.equals(this.status, queryCustomerOnDemandResourcesReq.status) &&
-            Objects.equals(this.indirectPartnerId, queryCustomerOnDemandResourcesReq.indirectPartnerId);
+        return Objects.equals(this.customerId, queryCustomerOnDemandResourcesReq.customerId)
+            && Objects.equals(this.regionCode, queryCustomerOnDemandResourcesReq.regionCode)
+            && Objects.equals(this.serviceTypeCode, queryCustomerOnDemandResourcesReq.serviceTypeCode)
+            && Objects.equals(this.resourceIds, queryCustomerOnDemandResourcesReq.resourceIds)
+            && Objects.equals(this.effectiveTimeBegin, queryCustomerOnDemandResourcesReq.effectiveTimeBegin)
+            && Objects.equals(this.effectiveTimeEnd, queryCustomerOnDemandResourcesReq.effectiveTimeEnd)
+            && Objects.equals(this.offset, queryCustomerOnDemandResourcesReq.offset)
+            && Objects.equals(this.limit, queryCustomerOnDemandResourcesReq.limit)
+            && Objects.equals(this.status, queryCustomerOnDemandResourcesReq.status)
+            && Objects.equals(this.indirectPartnerId, queryCustomerOnDemandResourcesReq.indirectPartnerId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(customerId, regionCode, serviceTypeCode, resourceIds, effectiveTimeBegin, effectiveTimeEnd, offset, limit, status, indirectPartnerId);
+        return Objects.hash(customerId,
+            regionCode,
+            serviceTypeCode,
+            resourceIds,
+            effectiveTimeBegin,
+            effectiveTimeEnd,
+            offset,
+            limit,
+            status,
+            indirectPartnerId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -360,16 +295,13 @@ public class QueryCustomerOnDemandResourcesReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

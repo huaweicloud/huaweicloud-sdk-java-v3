@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.eps.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowEnterpriseProjectRequest  {
-
-
+/** Request Object */
+public class ShowEnterpriseProjectRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public ShowEnterpriseProjectRequest withEnterpriseProjectId(String enterpriseProjectId) {
@@ -28,13 +18,9 @@ public class ShowEnterpriseProjectRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID。 可以通过查询企业项目列表接口获取。
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID。 可以通过查询企业项目列表接口获取。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -42,8 +28,6 @@ public class ShowEnterpriseProjectRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class ShowEnterpriseProjectRequest  {
         ShowEnterpriseProjectRequest showEnterpriseProjectRequest = (ShowEnterpriseProjectRequest) o;
         return Objects.equals(this.enterpriseProjectId, showEnterpriseProjectRequest.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class ShowEnterpriseProjectRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

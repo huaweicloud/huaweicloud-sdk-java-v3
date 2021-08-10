@@ -1,32 +1,23 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class AgencyTokenScopeProject  {
-
-
+public class AgencyTokenScopeProject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public AgencyTokenScopeProject withId(String id) {
@@ -34,13 +25,9 @@ public class AgencyTokenScopeProject  {
         return this;
     }
 
-    
-
-
-    /**
-     * 委托方A项目的ID，获取方式请参见：[获取账号、IAM用户、项目、用户组、委托的名称和ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * @return id
-     */
+    /** 委托方A项目的ID，获取方式请参见：[获取账号、IAM用户、项目、用户组、委托的名称和ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -49,20 +36,14 @@ public class AgencyTokenScopeProject  {
         this.id = id;
     }
 
-    
-
     public AgencyTokenScopeProject withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 委托方A项目的名称，获取方式请参见：[获取账号、IAM用户、项目、用户组、委托的名称和ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * @return name
-     */
+    /** 委托方A项目的名称，获取方式请参见：[获取账号、IAM用户、项目、用户组、委托的名称和ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -70,8 +51,6 @@ public class AgencyTokenScopeProject  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +61,15 @@ public class AgencyTokenScopeProject  {
             return false;
         }
         AgencyTokenScopeProject agencyTokenScopeProject = (AgencyTokenScopeProject) o;
-        return Objects.equals(this.id, agencyTokenScopeProject.id) &&
-            Objects.equals(this.name, agencyTokenScopeProject.name);
+        return Objects.equals(this.id, agencyTokenScopeProject.id)
+            && Objects.equals(this.name, agencyTokenScopeProject.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +79,13 @@ public class AgencyTokenScopeProject  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

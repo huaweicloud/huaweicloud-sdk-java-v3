@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.live.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListRecordCallbackConfigsRequest  {
-
-
+/** Request Object */
+public class ListRecordCallbackConfigsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publish_domain")
-    
+    @JsonProperty(value = "publish_domain")
+
     private String publishDomain;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app")
-    
+    @JsonProperty(value = "app")
+
     private String app;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
     public ListRecordCallbackConfigsRequest withPublishDomain(String publishDomain) {
@@ -46,13 +33,9 @@ public class ListRecordCallbackConfigsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 直播推流域名
-     * @return publishDomain
-     */
+    /** 直播推流域名
+     * 
+     * @return publishDomain */
     public String getPublishDomain() {
         return publishDomain;
     }
@@ -61,20 +44,14 @@ public class ListRecordCallbackConfigsRequest  {
         this.publishDomain = publishDomain;
     }
 
-    
-
     public ListRecordCallbackConfigsRequest withApp(String app) {
         this.app = app;
         return this;
     }
 
-    
-
-
-    /**
-     * 流应用名称
-     * @return app
-     */
+    /** 流应用名称
+     * 
+     * @return app */
     public String getApp() {
         return app;
     }
@@ -83,22 +60,14 @@ public class ListRecordCallbackConfigsRequest  {
         this.app = app;
     }
 
-    
-
     public ListRecordCallbackConfigsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页编号，从0开始算
-     * minimum: 0
-     * maximum: 4096
-     * @return offset
-     */
+    /** 分页编号，从0开始算 minimum: 0 maximum: 4096
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -107,22 +76,14 @@ public class ListRecordCallbackConfigsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListRecordCallbackConfigsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页记录数，取值范围[1,100]
-     * minimum: 1
-     * maximum: 100
-     * @return limit
-     */
+    /** 每页记录数，取值范围[1,100] minimum: 1 maximum: 100
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -130,8 +91,6 @@ public class ListRecordCallbackConfigsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -142,15 +101,17 @@ public class ListRecordCallbackConfigsRequest  {
             return false;
         }
         ListRecordCallbackConfigsRequest listRecordCallbackConfigsRequest = (ListRecordCallbackConfigsRequest) o;
-        return Objects.equals(this.publishDomain, listRecordCallbackConfigsRequest.publishDomain) &&
-            Objects.equals(this.app, listRecordCallbackConfigsRequest.app) &&
-            Objects.equals(this.offset, listRecordCallbackConfigsRequest.offset) &&
-            Objects.equals(this.limit, listRecordCallbackConfigsRequest.limit);
+        return Objects.equals(this.publishDomain, listRecordCallbackConfigsRequest.publishDomain)
+            && Objects.equals(this.app, listRecordCallbackConfigsRequest.app)
+            && Objects.equals(this.offset, listRecordCallbackConfigsRequest.offset)
+            && Objects.equals(this.limit, listRecordCallbackConfigsRequest.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(publishDomain, app, offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -162,16 +123,13 @@ public class ListRecordCallbackConfigsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

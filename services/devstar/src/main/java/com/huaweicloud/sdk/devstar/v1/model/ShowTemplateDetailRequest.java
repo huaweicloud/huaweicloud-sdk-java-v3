@@ -1,41 +1,26 @@
 package com.huaweicloud.sdk.devstar.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowTemplateDetailRequest  {
+/** Request Object */
+public class ShowTemplateDetailRequest {
 
-    /**
-     * 语言类型，缺省值为“zh-cn”。  枚举值： - zh-cn：中文 - en-us：英文 
-     */
+    /** 语言类型，缺省值为“zh-cn”。 枚举值： - zh-cn：中文 - en-us：英文 */
     public static final class XLanguageEnum {
 
-        
-        /**
-         * Enum ZH_CN for value: "zh-cn"
-         */
+        /** Enum ZH_CN for value: "zh-cn" */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
-        
-        /**
-         * Enum EN_US for value: "en-us"
-         */
+
+        /** Enum EN_US for value: "en-us" */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
-        
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +49,7 @@ public class ShowTemplateDetailRequest  {
 
         @JsonCreator
         public static XLanguageEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +60,7 @@ public class ShowTemplateDetailRequest  {
         }
 
         public static XLanguageEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -99,16 +84,14 @@ public class ShowTemplateDetailRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private XLanguageEnum xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_id")
-    
+    @JsonProperty(value = "template_id")
+
     private String templateId;
 
     public ShowTemplateDetailRequest withXLanguage(XLanguageEnum xLanguage) {
@@ -116,15 +99,11 @@ public class ShowTemplateDetailRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言类型，缺省值为“zh-cn”。  枚举值： - zh-cn：中文 - en-us：英文 
-     * @return xLanguage
-     */
+    /** 语言类型，缺省值为“zh-cn”。 枚举值： - zh-cn：中文 - en-us：英文
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
         return xLanguage;
     }
@@ -133,20 +112,14 @@ public class ShowTemplateDetailRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ShowTemplateDetailRequest withTemplateId(String templateId) {
         this.templateId = templateId;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板ID，通过查询模板列表接口可获取相应模板ID。
-     * @return templateId
-     */
+    /** 模板ID，通过查询模板列表接口可获取相应模板ID。
+     * 
+     * @return templateId */
     public String getTemplateId() {
         return templateId;
     }
@@ -154,8 +127,6 @@ public class ShowTemplateDetailRequest  {
     public void setTemplateId(String templateId) {
         this.templateId = templateId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,13 +137,15 @@ public class ShowTemplateDetailRequest  {
             return false;
         }
         ShowTemplateDetailRequest showTemplateDetailRequest = (ShowTemplateDetailRequest) o;
-        return Objects.equals(this.xLanguage, showTemplateDetailRequest.xLanguage) &&
-            Objects.equals(this.templateId, showTemplateDetailRequest.templateId);
+        return Objects.equals(this.xLanguage, showTemplateDetailRequest.xLanguage)
+            && Objects.equals(this.templateId, showTemplateDetailRequest.templateId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, templateId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -182,16 +155,13 @@ public class ShowTemplateDetailRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

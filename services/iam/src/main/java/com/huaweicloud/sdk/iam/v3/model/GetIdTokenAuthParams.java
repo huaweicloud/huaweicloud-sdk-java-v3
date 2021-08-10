@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.GetIdTokenIdScopeBody;
-import com.huaweicloud.sdk.iam.v3.model.GetIdTokenIdTokenBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * auth信息
- */
-public class GetIdTokenAuthParams  {
-
-
+/** auth信息 */
+public class GetIdTokenAuthParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id_token")
-    
+    @JsonProperty(value = "id_token")
+
     private GetIdTokenIdTokenBody idToken;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scope")
-    
+    @JsonProperty(value = "scope")
+
     private GetIdTokenIdScopeBody scope;
 
     public GetIdTokenAuthParams withIdToken(GetIdTokenIdTokenBody idToken) {
@@ -37,19 +25,17 @@ public class GetIdTokenAuthParams  {
     }
 
     public GetIdTokenAuthParams withIdToken(Consumer<GetIdTokenIdTokenBody> idTokenSetter) {
-        if(this.idToken == null ){
+        if (this.idToken == null) {
             this.idToken = new GetIdTokenIdTokenBody();
             idTokenSetter.accept(this.idToken);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get idToken
-     * @return idToken
-     */
+    /** Get idToken
+     * 
+     * @return idToken */
     public GetIdTokenIdTokenBody getIdToken() {
         return idToken;
     }
@@ -58,27 +44,23 @@ public class GetIdTokenAuthParams  {
         this.idToken = idToken;
     }
 
-    
-
     public GetIdTokenAuthParams withScope(GetIdTokenIdScopeBody scope) {
         this.scope = scope;
         return this;
     }
 
     public GetIdTokenAuthParams withScope(Consumer<GetIdTokenIdScopeBody> scopeSetter) {
-        if(this.scope == null ){
+        if (this.scope == null) {
             this.scope = new GetIdTokenIdScopeBody();
             scopeSetter.accept(this.scope);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get scope
-     * @return scope
-     */
+    /** Get scope
+     * 
+     * @return scope */
     public GetIdTokenIdScopeBody getScope() {
         return scope;
     }
@@ -86,8 +68,6 @@ public class GetIdTokenAuthParams  {
     public void setScope(GetIdTokenIdScopeBody scope) {
         this.scope = scope;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -98,13 +78,15 @@ public class GetIdTokenAuthParams  {
             return false;
         }
         GetIdTokenAuthParams getIdTokenAuthParams = (GetIdTokenAuthParams) o;
-        return Objects.equals(this.idToken, getIdTokenAuthParams.idToken) &&
-            Objects.equals(this.scope, getIdTokenAuthParams.scope);
+        return Objects.equals(this.idToken, getIdTokenAuthParams.idToken)
+            && Objects.equals(this.scope, getIdTokenAuthParams.scope);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(idToken, scope);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,16 +96,13 @@ public class GetIdTokenAuthParams  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

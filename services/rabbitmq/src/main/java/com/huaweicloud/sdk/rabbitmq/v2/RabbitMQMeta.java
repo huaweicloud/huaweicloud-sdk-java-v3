@@ -6,138 +6,132 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.rabbitmq.v2.model.*;
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class RabbitMQMeta {
 
-    public static final HttpRequestDef<BatchCreateOrDeleteRabbitMqTagRequest, BatchCreateOrDeleteRabbitMqTagResponse> batchCreateOrDeleteRabbitMqTag = genForbatchCreateOrDeleteRabbitMqTag();
+    public static final HttpRequestDef<BatchCreateOrDeleteRabbitMqTagRequest, BatchCreateOrDeleteRabbitMqTagResponse> batchCreateOrDeleteRabbitMqTag =
+        genForbatchCreateOrDeleteRabbitMqTag();
 
     private static HttpRequestDef<BatchCreateOrDeleteRabbitMqTagRequest, BatchCreateOrDeleteRabbitMqTagResponse> genForbatchCreateOrDeleteRabbitMqTag() {
         // basic
         HttpRequestDef.Builder<BatchCreateOrDeleteRabbitMqTagRequest, BatchCreateOrDeleteRabbitMqTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchCreateOrDeleteRabbitMqTagRequest.class, BatchCreateOrDeleteRabbitMqTagResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateOrDeleteRabbitMqTagRequest.class,
+                    BatchCreateOrDeleteRabbitMqTagResponse.class)
                 .withName("BatchCreateOrDeleteRabbitMqTag")
                 .withUri("/v2/{project_id}/rabbitmq/{instance_id}/tags/action")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchCreateOrDeleteRabbitMqTagRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<BatchCreateOrDeleteTagReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchCreateOrDeleteTagReq.class,
+            TypeCasts.uncheckedConversion(BatchCreateOrDeleteTagReq.class),
             f -> f.withMarshaller(BatchCreateOrDeleteRabbitMqTagRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> batchRestartOrDeleteInstances = genForbatchRestartOrDeleteInstances();
+    public static final HttpRequestDef<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> batchRestartOrDeleteInstances =
+        genForbatchRestartOrDeleteInstances();
 
     private static HttpRequestDef<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> genForbatchRestartOrDeleteInstances() {
         // basic
         HttpRequestDef.Builder<BatchRestartOrDeleteInstancesRequest, BatchRestartOrDeleteInstancesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchRestartOrDeleteInstancesRequest.class, BatchRestartOrDeleteInstancesResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchRestartOrDeleteInstancesRequest.class,
+                    BatchRestartOrDeleteInstancesResponse.class)
                 .withName("BatchRestartOrDeleteInstances")
                 .withUri("/v2/{project_id}/instances/action")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<BatchRestartOrDeleteInstanceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            BatchRestartOrDeleteInstanceReq.class,
+            TypeCasts.uncheckedConversion(BatchRestartOrDeleteInstanceReq.class),
             f -> f.withMarshaller(BatchRestartOrDeleteInstancesRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> createPostPaidInstance = genForcreatePostPaidInstance();
+    public static final HttpRequestDef<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> createPostPaidInstance =
+        genForcreatePostPaidInstance();
 
     private static HttpRequestDef<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> genForcreatePostPaidInstance() {
         // basic
-        HttpRequestDef.Builder<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreatePostPaidInstanceRequest.class, CreatePostPaidInstanceResponse.class)
-                .withName("CreatePostPaidInstance")
-                .withUri("/v2/{project_id}/instances")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<CreatePostPaidInstanceRequest, CreatePostPaidInstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreatePostPaidInstanceRequest.class, CreatePostPaidInstanceResponse.class)
+            .withName("CreatePostPaidInstance")
+            .withUri("/v2/{project_id}/instances")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateInstanceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateInstanceReq.class,
+            TypeCasts.uncheckedConversion(CreateInstanceReq.class),
             f -> f.withMarshaller(CreatePostPaidInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> deleteBackgroundTask = genFordeleteBackgroundTask();
+    public static final HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> deleteBackgroundTask =
+        genFordeleteBackgroundTask();
 
     private static HttpRequestDef<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> genFordeleteBackgroundTask() {
         // basic
-        HttpRequestDef.Builder<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteBackgroundTaskRequest.class, DeleteBackgroundTaskResponse.class)
-                .withName("DeleteBackgroundTask")
-                .withUri("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<DeleteBackgroundTaskRequest, DeleteBackgroundTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteBackgroundTaskRequest.class, DeleteBackgroundTaskResponse.class)
+            .withName("DeleteBackgroundTask")
+            .withUri("/v2/{project_id}/instances/{instance_id}/tasks/{task_id}")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteBackgroundTaskRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("task_id",
+            }));
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteBackgroundTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstance = genFordeleteInstance();
+    public static final HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstance =
+        genFordeleteInstance();
 
     private static HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> genFordeleteInstance() {
         // basic
@@ -148,23 +142,21 @@ public class RabbitMQMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZones = genForlistAvailableZones();
+    public static final HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZones =
+        genForlistAvailableZones();
 
     private static HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> genForlistAvailableZones() {
         // basic
@@ -177,13 +169,12 @@ public class RabbitMQMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListBackgroundTasksRequest, ListBackgroundTasksResponse> listBackgroundTasks = genForlistBackgroundTasks();
+    public static final HttpRequestDef<ListBackgroundTasksRequest, ListBackgroundTasksResponse> listBackgroundTasks =
+        genForlistBackgroundTasks();
 
     private static HttpRequestDef<ListBackgroundTasksRequest, ListBackgroundTasksResponse> genForlistBackgroundTasks() {
         // basic
@@ -194,125 +185,110 @@ public class RabbitMQMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBackgroundTasksRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("start",
+            }));
+        builder.<Integer>withRequestField("start",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListBackgroundTasksRequest::getStart, (req, v) -> {
                 req.setStart(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListBackgroundTasksRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("begin_time",
+            }));
+        builder.<String>withRequestField("begin_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBackgroundTasksRequest::getBeginTime, (req, v) -> {
                 req.setBeginTime(v);
-            })
-        );
-        builder.withRequestField("end_time",
+            }));
+        builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBackgroundTasksRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListInstancesDetailsRequest, ListInstancesDetailsResponse> listInstancesDetails = genForlistInstancesDetails();
+    public static final HttpRequestDef<ListInstancesDetailsRequest, ListInstancesDetailsResponse> listInstancesDetails =
+        genForlistInstancesDetails();
 
     private static HttpRequestDef<ListInstancesDetailsRequest, ListInstancesDetailsResponse> genForlistInstancesDetails() {
         // basic
-        HttpRequestDef.Builder<ListInstancesDetailsRequest, ListInstancesDetailsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListInstancesDetailsRequest.class, ListInstancesDetailsResponse.class)
-                .withName("ListInstancesDetails")
-                .withUri("/v2/{project_id}/instances")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ListInstancesDetailsRequest, ListInstancesDetailsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListInstancesDetailsRequest.class, ListInstancesDetailsResponse.class)
+            .withName("ListInstancesDetails")
+            .withUri("/v2/{project_id}/instances")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("engine",
+        builder.<String>withRequestField("engine",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesDetailsRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesDetailsRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("instance_id",
+            }));
+        builder.<String>withRequestField("instance_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesDetailsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("status",
+            }));
+        builder.<ListInstancesDetailsRequest.StatusEnum>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListInstancesDetailsRequest.StatusEnum.class,
+            TypeCasts.uncheckedConversion(ListInstancesDetailsRequest.StatusEnum.class),
             f -> f.withMarshaller(ListInstancesDetailsRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
-            })
-        );
-        builder.withRequestField("include_failure",
+            }));
+        builder.<ListInstancesDetailsRequest.IncludeFailureEnum>withRequestField("include_failure",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListInstancesDetailsRequest.IncludeFailureEnum.class,
+            TypeCasts.uncheckedConversion(ListInstancesDetailsRequest.IncludeFailureEnum.class),
             f -> f.withMarshaller(ListInstancesDetailsRequest::getIncludeFailure, (req, v) -> {
                 req.setIncludeFailure(v);
-            })
-        );
-        builder.withRequestField("exact_match_name",
+            }));
+        builder.<ListInstancesDetailsRequest.ExactMatchNameEnum>withRequestField("exact_match_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListInstancesDetailsRequest.ExactMatchNameEnum.class,
+            TypeCasts.uncheckedConversion(ListInstancesDetailsRequest.ExactMatchNameEnum.class),
             f -> f.withMarshaller(ListInstancesDetailsRequest::getExactMatchName, (req, v) -> {
                 req.setExactMatchName(v);
-            })
-        );
-        builder.withRequestField("enterprise_project_id",
+            }));
+        builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesDetailsRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -328,18 +304,15 @@ public class RabbitMQMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPluginsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -355,23 +328,21 @@ public class RabbitMQMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("engine",
+        builder.<String>withRequestField("engine",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListProductsRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> resetPassword = genForresetPassword();
+    public static final HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> resetPassword =
+        genForresetPassword();
 
     private static HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> genForresetPassword() {
         // basic
@@ -382,31 +353,28 @@ public class RabbitMQMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResetPasswordRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ResetPasswordReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ResetPasswordReq.class,
+            TypeCasts.uncheckedConversion(ResetPasswordReq.class),
             f -> f.withMarshaller(ResetPasswordRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstance = genForresizeInstance();
+    public static final HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstance =
+        genForresizeInstance();
 
     private static HttpRequestDef<ResizeInstanceRequest, ResizeInstanceResponse> genForresizeInstance() {
         // basic
@@ -417,31 +385,28 @@ public class RabbitMQMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResizeInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ResizeInstanceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ResizeInstanceReq.class,
+            TypeCasts.uncheckedConversion(ResizeInstanceReq.class),
             f -> f.withMarshaller(ResizeInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> showBackgroundTask = genForshowBackgroundTask();
+    public static final HttpRequestDef<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> showBackgroundTask =
+        genForshowBackgroundTask();
 
     private static HttpRequestDef<ShowBackgroundTaskRequest, ShowBackgroundTaskResponse> genForshowBackgroundTask() {
         // basic
@@ -452,26 +417,22 @@ public class RabbitMQMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBackgroundTaskRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("task_id",
+            }));
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBackgroundTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -487,66 +448,63 @@ public class RabbitMQMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> showInstanceExtendProductInfo = genForshowInstanceExtendProductInfo();
+    public static final HttpRequestDef<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> showInstanceExtendProductInfo =
+        genForshowInstanceExtendProductInfo();
 
     private static HttpRequestDef<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> genForshowInstanceExtendProductInfo() {
         // basic
         HttpRequestDef.Builder<ShowInstanceExtendProductInfoRequest, ShowInstanceExtendProductInfoResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowInstanceExtendProductInfoRequest.class, ShowInstanceExtendProductInfoResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowInstanceExtendProductInfoRequest.class,
+                    ShowInstanceExtendProductInfoResponse.class)
                 .withName("ShowInstanceExtendProductInfo")
                 .withUri("/v2/{project_id}/instances/{instance_id}/extend")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("type",
+            }));
+        builder.<ShowInstanceExtendProductInfoRequest.TypeEnum>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ShowInstanceExtendProductInfoRequest.TypeEnum.class,
+            TypeCasts.uncheckedConversion(ShowInstanceExtendProductInfoRequest.TypeEnum.class),
             f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getType, (req, v) -> {
                 req.setType(v);
-            })
-        );
-        builder.withRequestField("engine",
+            }));
+        builder.<String>withRequestField("engine",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceExtendProductInfoRequest::getEngine, (req, v) -> {
                 req.setEngine(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> showMaintainWindows = genForshowMaintainWindows();
+    public static final HttpRequestDef<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> showMaintainWindows =
+        genForshowMaintainWindows();
 
     private static HttpRequestDef<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> genForshowMaintainWindows() {
         // basic
@@ -559,32 +517,30 @@ public class RabbitMQMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse> showRabbitMqProjectTags = genForshowRabbitMqProjectTags();
+    public static final HttpRequestDef<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse> showRabbitMqProjectTags =
+        genForshowRabbitMqProjectTags();
 
     private static HttpRequestDef<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse> genForshowRabbitMqProjectTags() {
         // basic
-        HttpRequestDef.Builder<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowRabbitMqProjectTagsRequest.class, ShowRabbitMqProjectTagsResponse.class)
-                .withName("ShowRabbitMqProjectTags")
-                .withUri("/v2/{project_id}/rabbitmq/tags")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowRabbitMqProjectTagsRequest, ShowRabbitMqProjectTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowRabbitMqProjectTagsRequest.class, ShowRabbitMqProjectTagsResponse.class)
+            .withName("ShowRabbitMqProjectTags")
+            .withUri("/v2/{project_id}/rabbitmq/tags")
+            .withContentType("application/json");
 
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowRabbitMqTagsRequest, ShowRabbitMqTagsResponse> showRabbitMqTags = genForshowRabbitMqTags();
+    public static final HttpRequestDef<ShowRabbitMqTagsRequest, ShowRabbitMqTagsResponse> showRabbitMqTags =
+        genForshowRabbitMqTags();
 
     private static HttpRequestDef<ShowRabbitMqTagsRequest, ShowRabbitMqTagsResponse> genForshowRabbitMqTags() {
         // basic
@@ -595,23 +551,21 @@ public class RabbitMQMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowRabbitMqTagsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> updateInstance = genForupdateInstance();
+    public static final HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> updateInstance =
+        genForupdateInstance();
 
     private static HttpRequestDef<UpdateInstanceRequest, UpdateInstanceResponse> genForupdateInstance() {
         // basic
@@ -622,31 +576,28 @@ public class RabbitMQMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateInstanceReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateInstanceReq.class,
+            TypeCasts.uncheckedConversion(UpdateInstanceReq.class),
             f -> f.withMarshaller(UpdateInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdatePluginsRequest, UpdatePluginsResponse> updatePlugins = genForupdatePlugins();
+    public static final HttpRequestDef<UpdatePluginsRequest, UpdatePluginsResponse> updatePlugins =
+        genForupdatePlugins();
 
     private static HttpRequestDef<UpdatePluginsRequest, UpdatePluginsResponse> genForupdatePlugins() {
         // basic
@@ -657,26 +608,22 @@ public class RabbitMQMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdatePluginsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdatePluginsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdatePluginsReq.class,
+            TypeCasts.uncheckedConversion(UpdatePluginsReq.class),
             f -> f.withMarshaller(UpdatePluginsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

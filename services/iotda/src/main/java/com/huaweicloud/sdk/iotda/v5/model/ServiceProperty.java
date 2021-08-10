@@ -1,94 +1,74 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 属性服务对象。
- */
-public class ServiceProperty  {
-
-
+/** 属性服务对象。 */
+public class ServiceProperty {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="property_name")
-    
+    @JsonProperty(value = "property_name")
+
     private String propertyName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_type")
-    
+    @JsonProperty(value = "data_type")
+
     private String dataType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="required")
-    
+    @JsonProperty(value = "required")
+
     private Boolean required;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enum_list")
-    
+    @JsonProperty(value = "enum_list")
+
     private List<String> enumList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="min")
-    
+    @JsonProperty(value = "min")
+
     private String min;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max")
-    
+    @JsonProperty(value = "max")
+
     private String max;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_length")
-    
+    @JsonProperty(value = "max_length")
+
     private Integer maxLength;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="step")
-    
+    @JsonProperty(value = "step")
+
     private Double step;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unit")
-    
+    @JsonProperty(value = "unit")
+
     private String unit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="method")
-    
+    @JsonProperty(value = "method")
+
     private String method;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="default_value")
-    
+    @JsonProperty(value = "default_value")
+
     private Object defaultValue;
 
     public ServiceProperty withPropertyName(String propertyName) {
@@ -96,13 +76,9 @@ public class ServiceProperty  {
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：设备属性名称。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
-     * @return propertyName
-     */
+    /** **参数说明**：设备属性名称。 **取值范围**：长度不超过64，只允许中文、字母、数字、以及_?'#().,&%@!-等字符的组合。
+     * 
+     * @return propertyName */
     public String getPropertyName() {
         return propertyName;
     }
@@ -111,20 +87,14 @@ public class ServiceProperty  {
         this.propertyName = propertyName;
     }
 
-    
-
     public ServiceProperty withDataType(String dataType) {
         this.dataType = dataType;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：设备属性的数据类型。 **取值范围**：int，long，decimal，string，DateTime，jsonObject，enum，boolean，string list。
-     * @return dataType
-     */
+    /** **参数说明**：设备属性的数据类型。 **取值范围**：int，long，decimal，string，DateTime，jsonObject，enum，boolean，string list。
+     * 
+     * @return dataType */
     public String getDataType() {
         return dataType;
     }
@@ -133,20 +103,14 @@ public class ServiceProperty  {
         this.dataType = dataType;
     }
 
-    
-
     public ServiceProperty withRequired(Boolean required) {
         this.required = required;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：设备属性是否必选。默认为false。
-     * @return required
-     */
+    /** **参数说明**：设备属性是否必选。默认为false。
+     * 
+     * @return required */
     public Boolean getRequired() {
         return required;
     }
@@ -155,16 +119,13 @@ public class ServiceProperty  {
         this.required = required;
     }
 
-    
-
     public ServiceProperty withEnumList(List<String> enumList) {
         this.enumList = enumList;
         return this;
     }
 
-    
     public ServiceProperty addEnumListItem(String enumListItem) {
-        if(this.enumList == null) {
+        if (this.enumList == null) {
             this.enumList = new ArrayList<>();
         }
         this.enumList.add(enumListItem);
@@ -172,17 +133,16 @@ public class ServiceProperty  {
     }
 
     public ServiceProperty withEnumList(Consumer<List<String>> enumListSetter) {
-        if(this.enumList == null) {
+        if (this.enumList == null) {
             this.enumList = new ArrayList<>();
         }
         enumListSetter.accept(this.enumList);
         return this;
     }
 
-    /**
-     * **参数说明**：设备属性的枚举值列表。
-     * @return enumList
-     */
+    /** **参数说明**：设备属性的枚举值列表。
+     * 
+     * @return enumList */
     public List<String> getEnumList() {
         return enumList;
     }
@@ -191,20 +151,14 @@ public class ServiceProperty  {
         this.enumList = enumList;
     }
 
-    
-
     public ServiceProperty withMin(String min) {
         this.min = min;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：设备属性的最小值。 **取值范围**：长度1-16。
-     * @return min
-     */
+    /** **参数说明**：设备属性的最小值。 **取值范围**：长度1-16。
+     * 
+     * @return min */
     public String getMin() {
         return min;
     }
@@ -213,20 +167,14 @@ public class ServiceProperty  {
         this.min = min;
     }
 
-    
-
     public ServiceProperty withMax(String max) {
         this.max = max;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：设备属性的最大值。 **取值范围**：长度1-16。
-     * @return max
-     */
+    /** **参数说明**：设备属性的最大值。 **取值范围**：长度1-16。
+     * 
+     * @return max */
     public String getMax() {
         return max;
     }
@@ -235,20 +183,14 @@ public class ServiceProperty  {
         this.max = max;
     }
 
-    
-
     public ServiceProperty withMaxLength(Integer maxLength) {
         this.maxLength = maxLength;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：设备属性的最大长度。
-     * @return maxLength
-     */
+    /** **参数说明**：设备属性的最大长度。
+     * 
+     * @return maxLength */
     public Integer getMaxLength() {
         return maxLength;
     }
@@ -257,20 +199,14 @@ public class ServiceProperty  {
         this.maxLength = maxLength;
     }
 
-    
-
     public ServiceProperty withStep(Double step) {
         this.step = step;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：设备属性的步长。
-     * @return step
-     */
+    /** **参数说明**：设备属性的步长。
+     * 
+     * @return step */
     public Double getStep() {
         return step;
     }
@@ -279,20 +215,14 @@ public class ServiceProperty  {
         this.step = step;
     }
 
-    
-
     public ServiceProperty withUnit(String unit) {
         this.unit = unit;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：设备属性的单位。 **取值范围**：长度不超过16。
-     * @return unit
-     */
+    /** **参数说明**：设备属性的单位。 **取值范围**：长度不超过16。
+     * 
+     * @return unit */
     public String getUnit() {
         return unit;
     }
@@ -301,20 +231,14 @@ public class ServiceProperty  {
         this.unit = unit;
     }
 
-    
-
     public ServiceProperty withMethod(String method) {
         this.method = method;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：设备属性的访问模式。 **取值范围**：RWE，RW，RE，WE，E，W，R。 - R：属性值可读 - W：属性值可写 - E：属性值可订阅，即属性值变化时上报事件
-     * @return method
-     */
+    /** **参数说明**：设备属性的访问模式。 **取值范围**：RWE，RW，RE，WE，E，W，R。 - R：属性值可读 - W：属性值可写 - E：属性值可订阅，即属性值变化时上报事件
+     * 
+     * @return method */
     public String getMethod() {
         return method;
     }
@@ -323,20 +247,14 @@ public class ServiceProperty  {
         this.method = method;
     }
 
-    
-
     public ServiceProperty withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：设备属性的描述。 **取值范围**：长度不超过128，只允许中文、字母、数字、空白字符、以及_?'#().,;&%@!- ，、：；。/等字符的组合。
-     * @return description
-     */
+    /** **参数说明**：设备属性的描述。 **取值范围**：长度不超过128，只允许中文、字母、数字、空白字符、以及_?'#().,;&%@!- ，、：；。/等字符的组合。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -345,20 +263,14 @@ public class ServiceProperty  {
         this.description = description;
     }
 
-    
-
     public ServiceProperty withDefaultValue(Object defaultValue) {
         this.defaultValue = defaultValue;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：设备属性的默认值。如果设置了默认值，使用该产品创建设备时，会将该属性的默认值写入到该设备的设备影子预期数据中，待设备上线时将该属性默认值下发给设备。
-     * @return defaultValue
-     */
+    /** **参数说明**：设备属性的默认值。如果设置了默认值，使用该产品创建设备时，会将该属性的默认值写入到该设备的设备影子预期数据中，待设备上线时将该属性默认值下发给设备。
+     * 
+     * @return defaultValue */
     public Object getDefaultValue() {
         return defaultValue;
     }
@@ -366,8 +278,6 @@ public class ServiceProperty  {
     public void setDefaultValue(Object defaultValue) {
         this.defaultValue = defaultValue;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -378,23 +288,34 @@ public class ServiceProperty  {
             return false;
         }
         ServiceProperty serviceProperty = (ServiceProperty) o;
-        return Objects.equals(this.propertyName, serviceProperty.propertyName) &&
-            Objects.equals(this.dataType, serviceProperty.dataType) &&
-            Objects.equals(this.required, serviceProperty.required) &&
-            Objects.equals(this.enumList, serviceProperty.enumList) &&
-            Objects.equals(this.min, serviceProperty.min) &&
-            Objects.equals(this.max, serviceProperty.max) &&
-            Objects.equals(this.maxLength, serviceProperty.maxLength) &&
-            Objects.equals(this.step, serviceProperty.step) &&
-            Objects.equals(this.unit, serviceProperty.unit) &&
-            Objects.equals(this.method, serviceProperty.method) &&
-            Objects.equals(this.description, serviceProperty.description) &&
-            Objects.equals(this.defaultValue, serviceProperty.defaultValue);
+        return Objects.equals(this.propertyName, serviceProperty.propertyName)
+            && Objects.equals(this.dataType, serviceProperty.dataType)
+            && Objects.equals(this.required, serviceProperty.required)
+            && Objects.equals(this.enumList, serviceProperty.enumList) && Objects.equals(this.min, serviceProperty.min)
+            && Objects.equals(this.max, serviceProperty.max)
+            && Objects.equals(this.maxLength, serviceProperty.maxLength)
+            && Objects.equals(this.step, serviceProperty.step) && Objects.equals(this.unit, serviceProperty.unit)
+            && Objects.equals(this.method, serviceProperty.method)
+            && Objects.equals(this.description, serviceProperty.description)
+            && Objects.equals(this.defaultValue, serviceProperty.defaultValue);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(propertyName, dataType, required, enumList, min, max, maxLength, step, unit, method, description, defaultValue);
+        return Objects.hash(propertyName,
+            dataType,
+            required,
+            enumList,
+            min,
+            max,
+            maxLength,
+            step,
+            unit,
+            method,
+            description,
+            defaultValue);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -414,16 +335,13 @@ public class ServiceProperty  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

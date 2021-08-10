@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * AccessPassword
- */
-public class AccessPassword  {
-
-
+/** AccessPassword */
+public class AccessPassword {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user")
-    
+    @JsonProperty(value = "user")
+
     private String user;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="password")
-    
+    @JsonProperty(value = "password")
+
     private String password;
 
     public AccessPassword withName(String name) {
@@ -40,13 +28,9 @@ public class AccessPassword  {
         return this;
     }
 
-    
-
-
-    /**
-     * 授权名称。
-     * @return name
-     */
+    /** 授权名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -55,20 +39,14 @@ public class AccessPassword  {
         this.name = name;
     }
 
-    
-
     public AccessPassword withUser(String user) {
         this.user = user;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库用户名。
-     * @return user
-     */
+    /** 仓库用户名。
+     * 
+     * @return user */
     public String getUser() {
         return user;
     }
@@ -77,20 +55,14 @@ public class AccessPassword  {
         this.user = user;
     }
 
-    
-
     public AccessPassword withPassword(String password) {
         this.password = password;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库密码。
-     * @return password
-     */
+    /** 仓库密码。
+     * 
+     * @return password */
     public String getPassword() {
         return password;
     }
@@ -98,8 +70,6 @@ public class AccessPassword  {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,15 @@ public class AccessPassword  {
             return false;
         }
         AccessPassword accessPassword = (AccessPassword) o;
-        return Objects.equals(this.name, accessPassword.name) &&
-            Objects.equals(this.user, accessPassword.user) &&
-            Objects.equals(this.password, accessPassword.password);
+        return Objects.equals(this.name, accessPassword.name) && Objects.equals(this.user, accessPassword.user)
+            && Objects.equals(this.password, accessPassword.password);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, user, password);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +99,13 @@ public class AccessPassword  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

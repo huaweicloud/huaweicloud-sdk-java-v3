@@ -35,15 +35,15 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public class IgnoreSSLVerificationFactory {
+
     private static final Logger logger = LoggerFactory.getLogger(IgnoreSSLVerificationFactory.class);
 
     private static HostnameVerifier hostnameVerifier = (hostname, sslSession) -> true;
 
     private static X509TrustManager trustAllManager = new X509TrustManager() {
+
         @Override
         public void checkClientTrusted(X509Certificate[] chain, String authType) {
         }
@@ -58,9 +58,7 @@ public class IgnoreSSLVerificationFactory {
         }
     };
 
-    /**
-     * The utility class should hide the public constructor
-     */
+    /** The utility class should hide the public constructor */
     private IgnoreSSLVerificationFactory() {
 
     }

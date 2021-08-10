@@ -1,54 +1,38 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListVpcRoutesRequest  {
-
-
+/** Request Object */
+public class ListVpcRoutesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
-    /**
-     * 功能说明：按照路由类型过滤查询  取值范围：peering
-     */
+
+    /** 功能说明：按照路由类型过滤查询 取值范围：peering */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum PEERING for value: "peering"
-         */
+        /** Enum PEERING for value: "peering" */
         public static final TypeEnum PEERING = new TypeEnum("peering");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,7 +60,7 @@ public class ListVpcRoutesRequest  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -87,7 +71,7 @@ public class ListVpcRoutesRequest  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -111,28 +95,24 @@ public class ListVpcRoutesRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination")
-    
+    @JsonProperty(value = "destination")
+
     private String destination;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
+
     private String tenantId;
 
     public ListVpcRoutesRequest withLimit(Integer limit) {
@@ -140,13 +120,9 @@ public class ListVpcRoutesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 每页返回的个数
-     * @return limit
-     */
+    /** 每页返回的个数
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -155,20 +131,14 @@ public class ListVpcRoutesRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListVpcRoutesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页查询起始的资源ID，为空时查询第一页
-     * @return marker
-     */
+    /** 分页查询起始的资源ID，为空时查询第一页
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -177,20 +147,14 @@ public class ListVpcRoutesRequest  {
         this.marker = marker;
     }
 
-    
-
     public ListVpcRoutesRequest withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 按照routes_id过滤查询
-     * @return id
-     */
+    /** 按照routes_id过滤查询
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -199,20 +163,14 @@ public class ListVpcRoutesRequest  {
         this.id = id;
     }
 
-    
-
     public ListVpcRoutesRequest withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：按照路由类型过滤查询  取值范围：peering
-     * @return type
-     */
+    /** 功能说明：按照路由类型过滤查询 取值范围：peering
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -221,20 +179,14 @@ public class ListVpcRoutesRequest  {
         this.type = type;
     }
 
-    
-
     public ListVpcRoutesRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
-    
-
-
-    /**
-     * 按照vpc_id过滤查询
-     * @return vpcId
-     */
+    /** 按照vpc_id过滤查询
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -243,20 +195,14 @@ public class ListVpcRoutesRequest  {
         this.vpcId = vpcId;
     }
 
-    
-
     public ListVpcRoutesRequest withDestination(String destination) {
         this.destination = destination;
         return this;
     }
 
-    
-
-
-    /**
-     * 按照路由目的地址CIDR过滤查询
-     * @return destination
-     */
+    /** 按照路由目的地址CIDR过滤查询
+     * 
+     * @return destination */
     public String getDestination() {
         return destination;
     }
@@ -265,20 +211,14 @@ public class ListVpcRoutesRequest  {
         this.destination = destination;
     }
 
-    
-
     public ListVpcRoutesRequest withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
 
-    
-
-
-    /**
-     * 按照项目ID过滤查询
-     * @return tenantId
-     */
+    /** 按照项目ID过滤查询
+     * 
+     * @return tenantId */
     public String getTenantId() {
         return tenantId;
     }
@@ -286,8 +226,6 @@ public class ListVpcRoutesRequest  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -298,18 +236,19 @@ public class ListVpcRoutesRequest  {
             return false;
         }
         ListVpcRoutesRequest listVpcRoutesRequest = (ListVpcRoutesRequest) o;
-        return Objects.equals(this.limit, listVpcRoutesRequest.limit) &&
-            Objects.equals(this.marker, listVpcRoutesRequest.marker) &&
-            Objects.equals(this.id, listVpcRoutesRequest.id) &&
-            Objects.equals(this.type, listVpcRoutesRequest.type) &&
-            Objects.equals(this.vpcId, listVpcRoutesRequest.vpcId) &&
-            Objects.equals(this.destination, listVpcRoutesRequest.destination) &&
-            Objects.equals(this.tenantId, listVpcRoutesRequest.tenantId);
+        return Objects.equals(this.limit, listVpcRoutesRequest.limit)
+            && Objects.equals(this.marker, listVpcRoutesRequest.marker)
+            && Objects.equals(this.id, listVpcRoutesRequest.id) && Objects.equals(this.type, listVpcRoutesRequest.type)
+            && Objects.equals(this.vpcId, listVpcRoutesRequest.vpcId)
+            && Objects.equals(this.destination, listVpcRoutesRequest.destination)
+            && Objects.equals(this.tenantId, listVpcRoutesRequest.tenantId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(limit, marker, id, type, vpcId, destination, tenantId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -324,16 +263,13 @@ public class ListVpcRoutesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,41 +1,26 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * RangeStatusRequest
- */
-public class RangeStatusRequest  {
+/** RangeStatusRequest */
+public class RangeStatusRequest {
 
-    /**
-     * range状态（\"off\"/\"on\"）
-     */
+    /** range状态（\"off\"/\"on\"） */
     public static final class RangeStatusEnum {
 
-        
-        /**
-         * Enum OFF for value: "off"
-         */
+        /** Enum OFF for value: "off" */
         public static final RangeStatusEnum OFF = new RangeStatusEnum("off");
-        
-        /**
-         * Enum ON for value: "on"
-         */
+
+        /** Enum ON for value: "on" */
         public static final RangeStatusEnum ON = new RangeStatusEnum("on");
-        
 
         private static final Map<String, RangeStatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +49,7 @@ public class RangeStatusRequest  {
 
         @JsonCreator
         public static RangeStatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             RangeStatusEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +60,7 @@ public class RangeStatusRequest  {
         }
 
         public static RangeStatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             RangeStatusEnum result = STATIC_FIELDS.get(value);
@@ -99,10 +84,9 @@ public class RangeStatusRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="range_status")
-    
+    @JsonProperty(value = "range_status")
+
     private RangeStatusEnum rangeStatus;
 
     public RangeStatusRequest withRangeStatus(RangeStatusEnum rangeStatus) {
@@ -110,13 +94,9 @@ public class RangeStatusRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * range状态（\"off\"/\"on\"）
-     * @return rangeStatus
-     */
+    /** range状态（\"off\"/\"on\"）
+     * 
+     * @return rangeStatus */
     public RangeStatusEnum getRangeStatus() {
         return rangeStatus;
     }
@@ -124,8 +104,6 @@ public class RangeStatusRequest  {
     public void setRangeStatus(RangeStatusEnum rangeStatus) {
         this.rangeStatus = rangeStatus;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,10 +116,12 @@ public class RangeStatusRequest  {
         RangeStatusRequest rangeStatusRequest = (RangeStatusRequest) o;
         return Objects.equals(this.rangeStatus, rangeStatusRequest.rangeStatus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(rangeStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -150,16 +130,13 @@ public class RangeStatusRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

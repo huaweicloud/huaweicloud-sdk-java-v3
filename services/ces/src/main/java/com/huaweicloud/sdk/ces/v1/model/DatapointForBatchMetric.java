@@ -1,56 +1,43 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class DatapointForBatchMetric  {
-
-
+public class DatapointForBatchMetric {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max")
-    
+    @JsonProperty(value = "max")
+
     private Double max;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="min")
-    
+    @JsonProperty(value = "min")
+
     private Double min;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="average")
-    
+    @JsonProperty(value = "average")
+
     private Double average;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sum")
-    
+    @JsonProperty(value = "sum")
+
     private Double sum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="variance")
-    
+    @JsonProperty(value = "variance")
+
     private String variance;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timestamp")
-    
+    @JsonProperty(value = "timestamp")
+
     private Long timestamp;
 
     public DatapointForBatchMetric withMax(Double max) {
@@ -58,13 +45,9 @@ public class DatapointForBatchMetric  {
         return this;
     }
 
-    
-
-
-    /**
-     * 聚合周期内指标数据的最大值。
-     * @return max
-     */
+    /** 聚合周期内指标数据的最大值。
+     * 
+     * @return max */
     public Double getMax() {
         return max;
     }
@@ -73,20 +56,14 @@ public class DatapointForBatchMetric  {
         this.max = max;
     }
 
-    
-
     public DatapointForBatchMetric withMin(Double min) {
         this.min = min;
         return this;
     }
 
-    
-
-
-    /**
-     * 聚合周期内指标数据的最小值。
-     * @return min
-     */
+    /** 聚合周期内指标数据的最小值。
+     * 
+     * @return min */
     public Double getMin() {
         return min;
     }
@@ -95,20 +72,14 @@ public class DatapointForBatchMetric  {
         this.min = min;
     }
 
-    
-
     public DatapointForBatchMetric withAverage(Double average) {
         this.average = average;
         return this;
     }
 
-    
-
-
-    /**
-     * 聚合周期内指标数据的平均值。
-     * @return average
-     */
+    /** 聚合周期内指标数据的平均值。
+     * 
+     * @return average */
     public Double getAverage() {
         return average;
     }
@@ -117,20 +88,14 @@ public class DatapointForBatchMetric  {
         this.average = average;
     }
 
-    
-
     public DatapointForBatchMetric withSum(Double sum) {
         this.sum = sum;
         return this;
     }
 
-    
-
-
-    /**
-     * 聚合周期内指标数据的求和值。
-     * @return sum
-     */
+    /** 聚合周期内指标数据的求和值。
+     * 
+     * @return sum */
     public Double getSum() {
         return sum;
     }
@@ -139,20 +104,14 @@ public class DatapointForBatchMetric  {
         this.sum = sum;
     }
 
-    
-
     public DatapointForBatchMetric withVariance(String variance) {
         this.variance = variance;
         return this;
     }
 
-    
-
-
-    /**
-     * 聚合周期内指标数据的方差。
-     * @return variance
-     */
+    /** 聚合周期内指标数据的方差。
+     * 
+     * @return variance */
     public String getVariance() {
         return variance;
     }
@@ -161,20 +120,14 @@ public class DatapointForBatchMetric  {
         this.variance = variance;
     }
 
-    
-
     public DatapointForBatchMetric withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
 
-    
-
-
-    /**
-     * 指标采集时间，UNIX时间戳，单位毫秒。
-     * @return timestamp
-     */
+    /** 指标采集时间，UNIX时间戳，单位毫秒。
+     * 
+     * @return timestamp */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -182,8 +135,6 @@ public class DatapointForBatchMetric  {
     public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,17 +145,19 @@ public class DatapointForBatchMetric  {
             return false;
         }
         DatapointForBatchMetric datapointForBatchMetric = (DatapointForBatchMetric) o;
-        return Objects.equals(this.max, datapointForBatchMetric.max) &&
-            Objects.equals(this.min, datapointForBatchMetric.min) &&
-            Objects.equals(this.average, datapointForBatchMetric.average) &&
-            Objects.equals(this.sum, datapointForBatchMetric.sum) &&
-            Objects.equals(this.variance, datapointForBatchMetric.variance) &&
-            Objects.equals(this.timestamp, datapointForBatchMetric.timestamp);
+        return Objects.equals(this.max, datapointForBatchMetric.max)
+            && Objects.equals(this.min, datapointForBatchMetric.min)
+            && Objects.equals(this.average, datapointForBatchMetric.average)
+            && Objects.equals(this.sum, datapointForBatchMetric.sum)
+            && Objects.equals(this.variance, datapointForBatchMetric.variance)
+            && Objects.equals(this.timestamp, datapointForBatchMetric.timestamp);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(max, min, average, sum, variance, timestamp);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,16 +171,13 @@ public class DatapointForBatchMetric  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

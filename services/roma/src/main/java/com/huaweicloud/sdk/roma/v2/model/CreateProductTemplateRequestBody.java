@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CreateProductTemplateRequestBody
- */
-public class CreateProductTemplateRequestBody  {
-
-
+/** CreateProductTemplateRequestBody */
+public class CreateProductTemplateRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
     public CreateProductTemplateRequestBody withName(String name) {
@@ -40,13 +28,9 @@ public class CreateProductTemplateRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 产品模板名称，支持中文,英文大小写，数字，下划线和中划线,长度2-64
-     * @return name
-     */
+    /** 产品模板名称，支持中文,英文大小写，数字，下划线和中划线,长度2-64
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -55,20 +39,14 @@ public class CreateProductTemplateRequestBody  {
         this.name = name;
     }
 
-    
-
     public CreateProductTemplateRequestBody withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品模板描述，长度0-200
-     * @return description
-     */
+    /** 产品模板描述，长度0-200
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -77,22 +55,14 @@ public class CreateProductTemplateRequestBody  {
         this.description = description;
     }
 
-    
-
     public CreateProductTemplateRequestBody withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品模板状态 0-启用 1-禁用
-     * minimum: 0
-     * maximum: 1
-     * @return status
-     */
+    /** 产品模板状态 0-启用 1-禁用 minimum: 0 maximum: 1
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -100,8 +70,6 @@ public class CreateProductTemplateRequestBody  {
     public void setStatus(Integer status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +80,16 @@ public class CreateProductTemplateRequestBody  {
             return false;
         }
         CreateProductTemplateRequestBody createProductTemplateRequestBody = (CreateProductTemplateRequestBody) o;
-        return Objects.equals(this.name, createProductTemplateRequestBody.name) &&
-            Objects.equals(this.description, createProductTemplateRequestBody.description) &&
-            Objects.equals(this.status, createProductTemplateRequestBody.status);
+        return Objects.equals(this.name, createProductTemplateRequestBody.name)
+            && Objects.equals(this.description, createProductTemplateRequestBody.description)
+            && Objects.equals(this.status, createProductTemplateRequestBody.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, description, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +100,13 @@ public class CreateProductTemplateRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

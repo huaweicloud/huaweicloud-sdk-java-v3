@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.projectman.v4.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.projectman.v4.model.IssueResponseV4;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListIssuesV4Response extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="issues")
-    
+    @JsonProperty(value = "issues")
+
     private List<IssueResponseV4> issues = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
     public ListIssuesV4Response withIssues(List<IssueResponseV4> issues) {
@@ -39,9 +27,8 @@ public class ListIssuesV4Response extends SdkResponse {
         return this;
     }
 
-    
     public ListIssuesV4Response addIssuesItem(IssueResponseV4 issuesItem) {
-        if(this.issues == null) {
+        if (this.issues == null) {
             this.issues = new ArrayList<>();
         }
         this.issues.add(issuesItem);
@@ -49,17 +36,16 @@ public class ListIssuesV4Response extends SdkResponse {
     }
 
     public ListIssuesV4Response withIssues(Consumer<List<IssueResponseV4>> issuesSetter) {
-        if(this.issues == null) {
+        if (this.issues == null) {
             this.issues = new ArrayList<>();
         }
         issuesSetter.accept(this.issues);
         return this;
     }
 
-    /**
-     * 工作项列表
-     * @return issues
-     */
+    /** 工作项列表
+     * 
+     * @return issues */
     public List<IssueResponseV4> getIssues() {
         return issues;
     }
@@ -68,20 +54,14 @@ public class ListIssuesV4Response extends SdkResponse {
         this.issues = issues;
     }
 
-    
-
     public ListIssuesV4Response withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * 总数
-     * @return total
-     */
+    /** 总数
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -89,8 +69,6 @@ public class ListIssuesV4Response extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ListIssuesV4Response extends SdkResponse {
             return false;
         }
         ListIssuesV4Response listIssuesV4Response = (ListIssuesV4Response) o;
-        return Objects.equals(this.issues, listIssuesV4Response.issues) &&
-            Objects.equals(this.total, listIssuesV4Response.total);
+        return Objects.equals(this.issues, listIssuesV4Response.issues)
+            && Objects.equals(this.total, listIssuesV4Response.total);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(issues, total);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ListIssuesV4Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

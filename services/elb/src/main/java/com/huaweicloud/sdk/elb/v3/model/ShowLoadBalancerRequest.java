@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowLoadBalancerRequest  {
-
-
+/** Request Object */
+public class ShowLoadBalancerRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="loadbalancer_id")
-    
+    @JsonProperty(value = "loadbalancer_id")
+
     private String loadbalancerId;
 
     public ShowLoadBalancerRequest withLoadbalancerId(String loadbalancerId) {
@@ -28,13 +18,9 @@ public class ShowLoadBalancerRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器ID。
-     * @return loadbalancerId
-     */
+    /** 负载均衡器ID。
+     * 
+     * @return loadbalancerId */
     public String getLoadbalancerId() {
         return loadbalancerId;
     }
@@ -42,8 +28,6 @@ public class ShowLoadBalancerRequest  {
     public void setLoadbalancerId(String loadbalancerId) {
         this.loadbalancerId = loadbalancerId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class ShowLoadBalancerRequest  {
         ShowLoadBalancerRequest showLoadBalancerRequest = (ShowLoadBalancerRequest) o;
         return Objects.equals(this.loadbalancerId, showLoadBalancerRequest.loadbalancerId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(loadbalancerId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class ShowLoadBalancerRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

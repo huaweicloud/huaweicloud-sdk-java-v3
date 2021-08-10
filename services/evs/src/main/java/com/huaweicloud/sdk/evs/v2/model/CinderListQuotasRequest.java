@@ -1,42 +1,28 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class CinderListQuotasRequest  {
-
-
+/** Request Object */
+public class CinderListQuotasRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target_project_id")
-    
+    @JsonProperty(value = "target_project_id")
+
     private String targetProjectId;
-    /**
-     * 是否查询配额详细信息。当前只支持传true。
-     */
+
+    /** 是否查询配额详细信息。当前只支持传true。 */
     public static final class UsageEnum {
 
-        
-        /**
-         * Enum TRUE for value: "true"
-         */
+        /** Enum TRUE for value: "true" */
         public static final UsageEnum TRUE = new UsageEnum("true");
-        
 
         private static final Map<String, UsageEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +50,7 @@ public class CinderListQuotasRequest  {
 
         @JsonCreator
         public static UsageEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             UsageEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +61,7 @@ public class CinderListQuotasRequest  {
         }
 
         public static UsageEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             UsageEnum result = STATIC_FIELDS.get(value);
@@ -99,10 +85,9 @@ public class CinderListQuotasRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="usage")
-    
+    @JsonProperty(value = "usage")
+
     private UsageEnum usage;
 
     public CinderListQuotasRequest withTargetProjectId(String targetProjectId) {
@@ -110,13 +95,9 @@ public class CinderListQuotasRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 目标的项目ID。与project_id保持一致即可。
-     * @return targetProjectId
-     */
+    /** 目标的项目ID。与project_id保持一致即可。
+     * 
+     * @return targetProjectId */
     public String getTargetProjectId() {
         return targetProjectId;
     }
@@ -125,20 +106,14 @@ public class CinderListQuotasRequest  {
         this.targetProjectId = targetProjectId;
     }
 
-    
-
     public CinderListQuotasRequest withUsage(UsageEnum usage) {
         this.usage = usage;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否查询配额详细信息。当前只支持传true。
-     * @return usage
-     */
+    /** 是否查询配额详细信息。当前只支持传true。
+     * 
+     * @return usage */
     public UsageEnum getUsage() {
         return usage;
     }
@@ -146,8 +121,6 @@ public class CinderListQuotasRequest  {
     public void setUsage(UsageEnum usage) {
         this.usage = usage;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -158,13 +131,15 @@ public class CinderListQuotasRequest  {
             return false;
         }
         CinderListQuotasRequest cinderListQuotasRequest = (CinderListQuotasRequest) o;
-        return Objects.equals(this.targetProjectId, cinderListQuotasRequest.targetProjectId) &&
-            Objects.equals(this.usage, cinderListQuotasRequest.usage);
+        return Objects.equals(this.targetProjectId, cinderListQuotasRequest.targetProjectId)
+            && Objects.equals(this.usage, cinderListQuotasRequest.usage);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(targetProjectId, usage);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -174,16 +149,13 @@ public class CinderListQuotasRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

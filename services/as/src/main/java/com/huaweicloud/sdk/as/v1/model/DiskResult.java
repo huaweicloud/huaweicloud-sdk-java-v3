@@ -1,65 +1,41 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.MetaData;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 磁盘信息
- */
-public class DiskResult  {
-
-
+/** 磁盘信息 */
+public class DiskResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
-    /**
-     * 磁盘类型。
-     */
+
+    /** 磁盘类型。 */
     public static final class VolumeTypeEnum {
 
-        
-        /**
-         * Enum SATA for value: "SATA"
-         */
+        /** Enum SATA for value: "SATA" */
         public static final VolumeTypeEnum SATA = new VolumeTypeEnum("SATA");
-        
-        /**
-         * Enum SAS for value: "SAS"
-         */
+
+        /** Enum SAS for value: "SAS" */
         public static final VolumeTypeEnum SAS = new VolumeTypeEnum("SAS");
-        
-        /**
-         * Enum SSD for value: "SSD"
-         */
+
+        /** Enum SSD for value: "SSD" */
         public static final VolumeTypeEnum SSD = new VolumeTypeEnum("SSD");
-        
-        /**
-         * Enum CO_PL for value: "co-pl"
-         */
+
+        /** Enum CO_PL for value: "co-pl" */
         public static final VolumeTypeEnum CO_PL = new VolumeTypeEnum("co-pl");
-        
-        /**
-         * Enum UH_11 for value: "uh-11"
-         */
+
+        /** Enum UH_11 for value: "uh-11" */
         public static final VolumeTypeEnum UH_11 = new VolumeTypeEnum("uh-11");
-        
 
         private static final Map<String, VolumeTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -91,7 +67,7 @@ public class DiskResult  {
 
         @JsonCreator
         public static VolumeTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             VolumeTypeEnum result = STATIC_FIELDS.get(value);
@@ -102,7 +78,7 @@ public class DiskResult  {
         }
 
         public static VolumeTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             VolumeTypeEnum result = STATIC_FIELDS.get(value);
@@ -126,27 +102,19 @@ public class DiskResult  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_type")
-    
+    @JsonProperty(value = "volume_type")
+
     private VolumeTypeEnum volumeType;
-    /**
-     * 系统盘还是数据盘，DATA表示为数据盘，SYS表示为系统盘。
-     */
+
+    /** 系统盘还是数据盘，DATA表示为数据盘，SYS表示为系统盘。 */
     public static final class DiskTypeEnum {
 
-        
-        /**
-         * Enum SYS for value: "SYS"
-         */
+        /** Enum SYS for value: "SYS" */
         public static final DiskTypeEnum SYS = new DiskTypeEnum("SYS");
-        
-        /**
-         * Enum DATA for value: "DATA"
-         */
+
+        /** Enum DATA for value: "DATA" */
         public static final DiskTypeEnum DATA = new DiskTypeEnum("DATA");
-        
 
         private static final Map<String, DiskTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -175,7 +143,7 @@ public class DiskResult  {
 
         @JsonCreator
         public static DiskTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DiskTypeEnum result = STATIC_FIELDS.get(value);
@@ -186,7 +154,7 @@ public class DiskResult  {
         }
 
         public static DiskTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DiskTypeEnum result = STATIC_FIELDS.get(value);
@@ -210,34 +178,29 @@ public class DiskResult  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disk_type")
-    
+    @JsonProperty(value = "disk_type")
+
     private DiskTypeEnum diskType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dedicated_storage_id")
-    
+    @JsonProperty(value = "dedicated_storage_id")
+
     private String dedicatedStorageId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_disk_image_id")
-    
+    @JsonProperty(value = "data_disk_image_id")
+
     private String dataDiskImageId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="snapshot_id")
-    
+    @JsonProperty(value = "snapshot_id")
+
     private String snapshotId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata")
-    
+    @JsonProperty(value = "metadata")
+
     private MetaData metadata;
 
     public DiskResult withSize(Integer size) {
@@ -245,13 +208,9 @@ public class DiskResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘大小，容量单位为GB。
-     * @return size
-     */
+    /** 磁盘大小，容量单位为GB。
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -260,20 +219,14 @@ public class DiskResult  {
         this.size = size;
     }
 
-    
-
     public DiskResult withVolumeType(VolumeTypeEnum volumeType) {
         this.volumeType = volumeType;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘类型。
-     * @return volumeType
-     */
+    /** 磁盘类型。
+     * 
+     * @return volumeType */
     public VolumeTypeEnum getVolumeType() {
         return volumeType;
     }
@@ -282,20 +235,14 @@ public class DiskResult  {
         this.volumeType = volumeType;
     }
 
-    
-
     public DiskResult withDiskType(DiskTypeEnum diskType) {
         this.diskType = diskType;
         return this;
     }
 
-    
-
-
-    /**
-     * 系统盘还是数据盘，DATA表示为数据盘，SYS表示为系统盘。
-     * @return diskType
-     */
+    /** 系统盘还是数据盘，DATA表示为数据盘，SYS表示为系统盘。
+     * 
+     * @return diskType */
     public DiskTypeEnum getDiskType() {
         return diskType;
     }
@@ -304,20 +251,14 @@ public class DiskResult  {
         this.diskType = diskType;
     }
 
-    
-
     public DiskResult withDedicatedStorageId(String dedicatedStorageId) {
         this.dedicatedStorageId = dedicatedStorageId;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘所属的专属存储ID。
-     * @return dedicatedStorageId
-     */
+    /** 磁盘所属的专属存储ID。
+     * 
+     * @return dedicatedStorageId */
     public String getDedicatedStorageId() {
         return dedicatedStorageId;
     }
@@ -326,20 +267,14 @@ public class DiskResult  {
         this.dedicatedStorageId = dedicatedStorageId;
     }
 
-    
-
     public DiskResult withDataDiskImageId(String dataDiskImageId) {
         this.dataDiskImageId = dataDiskImageId;
         return this;
     }
 
-    
-
-
-    /**
-     * 导入数据盘的数据盘镜像ID。
-     * @return dataDiskImageId
-     */
+    /** 导入数据盘的数据盘镜像ID。
+     * 
+     * @return dataDiskImageId */
     public String getDataDiskImageId() {
         return dataDiskImageId;
     }
@@ -348,20 +283,14 @@ public class DiskResult  {
         this.dataDiskImageId = dataDiskImageId;
     }
 
-    
-
     public DiskResult withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘备份的快照ID。
-     * @return snapshotId
-     */
+    /** 磁盘备份的快照ID。
+     * 
+     * @return snapshotId */
     public String getSnapshotId() {
         return snapshotId;
     }
@@ -370,27 +299,23 @@ public class DiskResult  {
         this.snapshotId = snapshotId;
     }
 
-    
-
     public DiskResult withMetadata(MetaData metadata) {
         this.metadata = metadata;
         return this;
     }
 
     public DiskResult withMetadata(Consumer<MetaData> metadataSetter) {
-        if(this.metadata == null ){
+        if (this.metadata == null) {
             this.metadata = new MetaData();
             metadataSetter.accept(this.metadata);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get metadata
-     * @return metadata
-     */
+    /** Get metadata
+     * 
+     * @return metadata */
     public MetaData getMetadata() {
         return metadata;
     }
@@ -398,8 +323,6 @@ public class DiskResult  {
     public void setMetadata(MetaData metadata) {
         this.metadata = metadata;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -410,18 +333,19 @@ public class DiskResult  {
             return false;
         }
         DiskResult diskResult = (DiskResult) o;
-        return Objects.equals(this.size, diskResult.size) &&
-            Objects.equals(this.volumeType, diskResult.volumeType) &&
-            Objects.equals(this.diskType, diskResult.diskType) &&
-            Objects.equals(this.dedicatedStorageId, diskResult.dedicatedStorageId) &&
-            Objects.equals(this.dataDiskImageId, diskResult.dataDiskImageId) &&
-            Objects.equals(this.snapshotId, diskResult.snapshotId) &&
-            Objects.equals(this.metadata, diskResult.metadata);
+        return Objects.equals(this.size, diskResult.size) && Objects.equals(this.volumeType, diskResult.volumeType)
+            && Objects.equals(this.diskType, diskResult.diskType)
+            && Objects.equals(this.dedicatedStorageId, diskResult.dedicatedStorageId)
+            && Objects.equals(this.dataDiskImageId, diskResult.dataDiskImageId)
+            && Objects.equals(this.snapshotId, diskResult.snapshotId)
+            && Objects.equals(this.metadata, diskResult.metadata);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(size, volumeType, diskType, dedicatedStorageId, dataDiskImageId, snapshotId, metadata);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -436,16 +360,13 @@ public class DiskResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

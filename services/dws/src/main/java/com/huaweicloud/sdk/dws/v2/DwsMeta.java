@@ -6,14 +6,12 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.dws.v2.model.*;
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class DwsMeta {
 
-    public static final HttpRequestDef<CreateClusterRequest, CreateClusterResponse> createCluster = genForcreateCluster();
+    public static final HttpRequestDef<CreateClusterRequest, CreateClusterResponse> createCluster =
+        genForcreateCluster();
 
     private static HttpRequestDef<CreateClusterRequest, CreateClusterResponse> genForcreateCluster() {
         // basic
@@ -24,23 +22,21 @@ public class DwsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateClusterRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateClusterRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateClusterRequestBody.class),
             f -> f.withMarshaller(CreateClusterRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateSnapshotRequest, CreateSnapshotResponse> createSnapshot = genForcreateSnapshot();
+    public static final HttpRequestDef<CreateSnapshotRequest, CreateSnapshotResponse> createSnapshot =
+        genForcreateSnapshot();
 
     private static HttpRequestDef<CreateSnapshotRequest, CreateSnapshotResponse> genForcreateSnapshot() {
         // basic
@@ -51,23 +47,21 @@ public class DwsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateSnapshotRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateSnapshotRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateSnapshotRequestBody.class),
             f -> f.withMarshaller(CreateSnapshotRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteClusterRequest, DeleteClusterResponse> deleteCluster = genFordeleteCluster();
+    public static final HttpRequestDef<DeleteClusterRequest, DeleteClusterResponse> deleteCluster =
+        genFordeleteCluster();
 
     private static HttpRequestDef<DeleteClusterRequest, DeleteClusterResponse> genFordeleteCluster() {
         // basic
@@ -78,31 +72,28 @@ public class DwsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("cluster_id",
+        builder.<String>withRequestField("cluster_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteClusterRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<DeleteClusterRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DeleteClusterRequestBody.class,
+            TypeCasts.uncheckedConversion(DeleteClusterRequestBody.class),
             f -> f.withMarshaller(DeleteClusterRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteSnapshotRequest, DeleteSnapshotResponse> deleteSnapshot = genFordeleteSnapshot();
+    public static final HttpRequestDef<DeleteSnapshotRequest, DeleteSnapshotResponse> deleteSnapshot =
+        genFordeleteSnapshot();
 
     private static HttpRequestDef<DeleteSnapshotRequest, DeleteSnapshotResponse> genFordeleteSnapshot() {
         // basic
@@ -113,23 +104,21 @@ public class DwsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("snapshot_id",
+        builder.<String>withRequestField("snapshot_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSnapshotRequest::getSnapshotId, (req, v) -> {
                 req.setSnapshotId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListClusterDetailsRequest, ListClusterDetailsResponse> listClusterDetails = genForlistClusterDetails();
+    public static final HttpRequestDef<ListClusterDetailsRequest, ListClusterDetailsResponse> listClusterDetails =
+        genForlistClusterDetails();
 
     private static HttpRequestDef<ListClusterDetailsRequest, ListClusterDetailsResponse> genForlistClusterDetails() {
         // basic
@@ -140,18 +129,15 @@ public class DwsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("cluster_id",
+        builder.<String>withRequestField("cluster_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListClusterDetailsRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -169,13 +155,12 @@ public class DwsMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListNodeTypesRequest, ListNodeTypesResponse> listNodeTypes = genForlistNodeTypes();
+    public static final HttpRequestDef<ListNodeTypesRequest, ListNodeTypesResponse> listNodeTypes =
+        genForlistNodeTypes();
 
     private static HttpRequestDef<ListNodeTypesRequest, ListNodeTypesResponse> genForlistNodeTypes() {
         // basic
@@ -188,13 +173,12 @@ public class DwsMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSnapshotDetailsRequest, ListSnapshotDetailsResponse> listSnapshotDetails = genForlistSnapshotDetails();
+    public static final HttpRequestDef<ListSnapshotDetailsRequest, ListSnapshotDetailsResponse> listSnapshotDetails =
+        genForlistSnapshotDetails();
 
     private static HttpRequestDef<ListSnapshotDetailsRequest, ListSnapshotDetailsResponse> genForlistSnapshotDetails() {
         // basic
@@ -205,23 +189,21 @@ public class DwsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("snapshot_id",
+        builder.<String>withRequestField("snapshot_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSnapshotDetailsRequest::getSnapshotId, (req, v) -> {
                 req.setSnapshotId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshots = genForlistSnapshots();
+    public static final HttpRequestDef<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshots =
+        genForlistSnapshots();
 
     private static HttpRequestDef<ListSnapshotsRequest, ListSnapshotsResponse> genForlistSnapshots() {
         // basic
@@ -234,13 +216,12 @@ public class DwsMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> resetPassword = genForresetPassword();
+    public static final HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> resetPassword =
+        genForresetPassword();
 
     private static HttpRequestDef<ResetPasswordRequest, ResetPasswordResponse> genForresetPassword() {
         // basic
@@ -251,31 +232,28 @@ public class DwsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("cluster_id",
+        builder.<String>withRequestField("cluster_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResetPasswordRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ResetPasswordRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ResetPasswordRequestBody.class,
+            TypeCasts.uncheckedConversion(ResetPasswordRequestBody.class),
             f -> f.withMarshaller(ResetPasswordRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ResizeClusterRequest, ResizeClusterResponse> resizeCluster = genForresizeCluster();
+    public static final HttpRequestDef<ResizeClusterRequest, ResizeClusterResponse> resizeCluster =
+        genForresizeCluster();
 
     private static HttpRequestDef<ResizeClusterRequest, ResizeClusterResponse> genForresizeCluster() {
         // basic
@@ -286,31 +264,28 @@ public class DwsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("cluster_id",
+        builder.<String>withRequestField("cluster_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResizeClusterRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ResizeClusterRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            ResizeClusterRequestBody.class,
+            TypeCasts.uncheckedConversion(ResizeClusterRequestBody.class),
             f -> f.withMarshaller(ResizeClusterRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RestartClusterRequest, RestartClusterResponse> restartCluster = genForrestartCluster();
+    public static final HttpRequestDef<RestartClusterRequest, RestartClusterResponse> restartCluster =
+        genForrestartCluster();
 
     private static HttpRequestDef<RestartClusterRequest, RestartClusterResponse> genForrestartCluster() {
         // basic
@@ -321,31 +296,28 @@ public class DwsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("cluster_id",
+        builder.<String>withRequestField("cluster_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RestartClusterRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<RestartClusterRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            RestartClusterRequestBody.class,
+            TypeCasts.uncheckedConversion(RestartClusterRequestBody.class),
             f -> f.withMarshaller(RestartClusterRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RestoreClusterRequest, RestoreClusterResponse> restoreCluster = genForrestoreCluster();
+    public static final HttpRequestDef<RestoreClusterRequest, RestoreClusterResponse> restoreCluster =
+        genForrestoreCluster();
 
     private static HttpRequestDef<RestoreClusterRequest, RestoreClusterResponse> genForrestoreCluster() {
         // basic
@@ -356,26 +328,22 @@ public class DwsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("snapshot_id",
+        builder.<String>withRequestField("snapshot_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RestoreClusterRequest::getSnapshotId, (req, v) -> {
                 req.setSnapshotId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<RestoreClusterRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            RestoreClusterRequestBody.class,
+            TypeCasts.uncheckedConversion(RestoreClusterRequestBody.class),
             f -> f.withMarshaller(RestoreClusterRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

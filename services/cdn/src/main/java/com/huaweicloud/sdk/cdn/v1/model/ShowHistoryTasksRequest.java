@@ -1,61 +1,41 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowHistoryTasksRequest  {
-
-
+/** Request Object */
+public class ShowHistoryTasksRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_size")
-    
+    @JsonProperty(value = "page_size")
+
     private Integer pageSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_number")
-    
+    @JsonProperty(value = "page_number")
+
     private Integer pageNumber;
-    /**
-     * 任务状态。 task_inprocess 表示任务处理中，task_done表示任务完成。
-     */
+
+    /** 任务状态。 task_inprocess 表示任务处理中，task_done表示任务完成。 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum TASK_INPROCESS for value: "task_inprocess"
-         */
+        /** Enum TASK_INPROCESS for value: "task_inprocess" */
         public static final StatusEnum TASK_INPROCESS = new StatusEnum("task_inprocess");
-        
-        /**
-         * Enum TASK_DONE for value: "task_done"
-         */
+
+        /** Enum TASK_DONE for value: "task_done" */
         public static final StatusEnum TASK_DONE = new StatusEnum("task_done");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -84,7 +64,7 @@ public class ShowHistoryTasksRequest  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -95,7 +75,7 @@ public class ShowHistoryTasksRequest  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -119,51 +99,39 @@ public class ShowHistoryTasksRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_date")
-    
+    @JsonProperty(value = "start_date")
+
     private Long startDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_date")
-    
+    @JsonProperty(value = "end_date")
+
     private Long endDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_field")
-    
+    @JsonProperty(value = "order_field")
+
     private String orderField;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_type")
-    
+    @JsonProperty(value = "order_type")
+
     private String orderType;
-    /**
-     * 默认是文件file。file：文件,directory：目录。
-     */
+
+    /** 默认是文件file。file：文件,directory：目录。 */
     public static final class FileTypeEnum {
 
-        
-        /**
-         * Enum FILE for value: "file"
-         */
+        /** Enum FILE for value: "file" */
         public static final FileTypeEnum FILE = new FileTypeEnum("file");
-        
-        /**
-         * Enum DIRECTORY for value: "directory"
-         */
+
+        /** Enum DIRECTORY for value: "directory" */
         public static final FileTypeEnum DIRECTORY = new FileTypeEnum("directory");
-        
 
         private static final Map<String, FileTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -192,7 +160,7 @@ public class ShowHistoryTasksRequest  {
 
         @JsonCreator
         public static FileTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             FileTypeEnum result = STATIC_FIELDS.get(value);
@@ -203,7 +171,7 @@ public class ShowHistoryTasksRequest  {
         }
 
         public static FileTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             FileTypeEnum result = STATIC_FIELDS.get(value);
@@ -227,10 +195,9 @@ public class ShowHistoryTasksRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_type")
-    
+    @JsonProperty(value = "file_type")
+
     private FileTypeEnum fileType;
 
     public ShowHistoryTasksRequest withEnterpriseProjectId(String enterpriseProjectId) {
@@ -238,13 +205,9 @@ public class ShowHistoryTasksRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 当用户开启企业项目功能时，该参数生效，表示资源所属企业项目，不传表示默认项目。
-     * @return enterpriseProjectId
-     */
+    /** 当用户开启企业项目功能时，该参数生效，表示资源所属企业项目，不传表示默认项目。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -253,22 +216,14 @@ public class ShowHistoryTasksRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public ShowHistoryTasksRequest withPageSize(Integer pageSize) {
         this.pageSize = pageSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 单页最大数量，取值范围为1-10000。page_size和page_number必须同时传值。默认值30。
-     * minimum: 1
-     * maximum: 10000
-     * @return pageSize
-     */
+    /** 单页最大数量，取值范围为1-10000。page_size和page_number必须同时传值。默认值30。 minimum: 1 maximum: 10000
+     * 
+     * @return pageSize */
     public Integer getPageSize() {
         return pageSize;
     }
@@ -277,22 +232,14 @@ public class ShowHistoryTasksRequest  {
         this.pageSize = pageSize;
     }
 
-    
-
     public ShowHistoryTasksRequest withPageNumber(Integer pageNumber) {
         this.pageNumber = pageNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前查询第几页，取值范围为1-65535。默认值1。
-     * minimum: 1
-     * maximum: 65535
-     * @return pageNumber
-     */
+    /** 当前查询第几页，取值范围为1-65535。默认值1。 minimum: 1 maximum: 65535
+     * 
+     * @return pageNumber */
     public Integer getPageNumber() {
         return pageNumber;
     }
@@ -301,20 +248,14 @@ public class ShowHistoryTasksRequest  {
         this.pageNumber = pageNumber;
     }
 
-    
-
     public ShowHistoryTasksRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务状态。 task_inprocess 表示任务处理中，task_done表示任务完成。
-     * @return status
-     */
+    /** 任务状态。 task_inprocess 表示任务处理中，task_done表示任务完成。
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -323,20 +264,14 @@ public class ShowHistoryTasksRequest  {
         this.status = status;
     }
 
-    
-
     public ShowHistoryTasksRequest withStartDate(Long startDate) {
         this.startDate = startDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询起始时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
-     * @return startDate
-     */
+    /** 查询起始时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+     * 
+     * @return startDate */
     public Long getStartDate() {
         return startDate;
     }
@@ -345,20 +280,14 @@ public class ShowHistoryTasksRequest  {
         this.startDate = startDate;
     }
 
-    
-
     public ShowHistoryTasksRequest withEndDate(Long endDate) {
         this.endDate = endDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询结束时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
-     * @return endDate
-     */
+    /** 查询结束时间，相对于UTC 1970-01-01到当前时间相隔的毫秒数。
+     * 
+     * @return endDate */
     public Long getEndDate() {
         return endDate;
     }
@@ -367,20 +296,15 @@ public class ShowHistoryTasksRequest  {
         this.endDate = endDate;
     }
 
-    
-
     public ShowHistoryTasksRequest withOrderField(String orderField) {
         this.orderField = orderField;
         return this;
     }
 
-    
-
-
-    /**
-     * 用来排序的字段，支持的字段有“task_type”，“total”，“processing”， “succeed”，“failed”，“create_time”。order_field和order_type必须同时传值，否则使用默认值\"create_time\" 和 \"desc\"。
-     * @return orderField
-     */
+    /** 用来排序的字段，支持的字段有“task_type”，“total”，“processing”，
+     * “succeed”，“failed”，“create_time”。order_field和order_type必须同时传值，否则使用默认值\"create_time\" 和 \"desc\"。
+     * 
+     * @return orderField */
     public String getOrderField() {
         return orderField;
     }
@@ -389,20 +313,14 @@ public class ShowHistoryTasksRequest  {
         this.orderField = orderField;
     }
 
-    
-
     public ShowHistoryTasksRequest withOrderType(String orderType) {
         this.orderType = orderType;
         return this;
     }
 
-    
-
-
-    /**
-     * desc 或者asc。默认值desc。
-     * @return orderType
-     */
+    /** desc 或者asc。默认值desc。
+     * 
+     * @return orderType */
     public String getOrderType() {
         return orderType;
     }
@@ -411,20 +329,14 @@ public class ShowHistoryTasksRequest  {
         this.orderType = orderType;
     }
 
-    
-
     public ShowHistoryTasksRequest withFileType(FileTypeEnum fileType) {
         this.fileType = fileType;
         return this;
     }
 
-    
-
-
-    /**
-     * 默认是文件file。file：文件,directory：目录。
-     * @return fileType
-     */
+    /** 默认是文件file。file：文件,directory：目录。
+     * 
+     * @return fileType */
     public FileTypeEnum getFileType() {
         return fileType;
     }
@@ -432,8 +344,6 @@ public class ShowHistoryTasksRequest  {
     public void setFileType(FileTypeEnum fileType) {
         this.fileType = fileType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -444,20 +354,30 @@ public class ShowHistoryTasksRequest  {
             return false;
         }
         ShowHistoryTasksRequest showHistoryTasksRequest = (ShowHistoryTasksRequest) o;
-        return Objects.equals(this.enterpriseProjectId, showHistoryTasksRequest.enterpriseProjectId) &&
-            Objects.equals(this.pageSize, showHistoryTasksRequest.pageSize) &&
-            Objects.equals(this.pageNumber, showHistoryTasksRequest.pageNumber) &&
-            Objects.equals(this.status, showHistoryTasksRequest.status) &&
-            Objects.equals(this.startDate, showHistoryTasksRequest.startDate) &&
-            Objects.equals(this.endDate, showHistoryTasksRequest.endDate) &&
-            Objects.equals(this.orderField, showHistoryTasksRequest.orderField) &&
-            Objects.equals(this.orderType, showHistoryTasksRequest.orderType) &&
-            Objects.equals(this.fileType, showHistoryTasksRequest.fileType);
+        return Objects.equals(this.enterpriseProjectId, showHistoryTasksRequest.enterpriseProjectId)
+            && Objects.equals(this.pageSize, showHistoryTasksRequest.pageSize)
+            && Objects.equals(this.pageNumber, showHistoryTasksRequest.pageNumber)
+            && Objects.equals(this.status, showHistoryTasksRequest.status)
+            && Objects.equals(this.startDate, showHistoryTasksRequest.startDate)
+            && Objects.equals(this.endDate, showHistoryTasksRequest.endDate)
+            && Objects.equals(this.orderField, showHistoryTasksRequest.orderField)
+            && Objects.equals(this.orderType, showHistoryTasksRequest.orderType)
+            && Objects.equals(this.fileType, showHistoryTasksRequest.fileType);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, pageSize, pageNumber, status, startDate, endDate, orderField, orderType, fileType);
+        return Objects.hash(enterpriseProjectId,
+            pageSize,
+            pageNumber,
+            status,
+            startDate,
+            endDate,
+            orderField,
+            orderType,
+            fileType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -474,16 +394,13 @@ public class ShowHistoryTasksRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

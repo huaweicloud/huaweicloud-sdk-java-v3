@@ -1,50 +1,30 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.VpcHealthConfig;
+
 import java.time.OffsetDateTime;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 健康检查详情，仅VPC通道类型为2时有效。
- */
-public class VpcHealthConfigInfo  {
+/** 健康检查详情，仅VPC通道类型为2时有效。 */
+public class VpcHealthConfigInfo {
 
-    /**
-     * 使用以下协议，对VPC中主机执行健康检查： - TCP - HTTP - HTTPS
-     */
+    /** 使用以下协议，对VPC中主机执行健康检查： - TCP - HTTP - HTTPS */
     public static final class ProtocolEnum {
 
-        
-        /**
-         * Enum TCP for value: "TCP"
-         */
+        /** Enum TCP for value: "TCP" */
         public static final ProtocolEnum TCP = new ProtocolEnum("TCP");
-        
-        /**
-         * Enum HTTP for value: "HTTP"
-         */
+
+        /** Enum HTTP for value: "HTTP" */
         public static final ProtocolEnum HTTP = new ProtocolEnum("HTTP");
-        
-        /**
-         * Enum HTTPS for value: "HTTPS"
-         */
+
+        /** Enum HTTPS for value: "HTTPS" */
         public static final ProtocolEnum HTTPS = new ProtocolEnum("HTTPS");
-        
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
 
@@ -74,7 +54,7 @@ public class VpcHealthConfigInfo  {
 
         @JsonCreator
         public static ProtocolEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtocolEnum result = STATIC_FIELDS.get(value);
@@ -85,7 +65,7 @@ public class VpcHealthConfigInfo  {
         }
 
         public static ProtocolEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtocolEnum result = STATIC_FIELDS.get(value);
@@ -109,33 +89,24 @@ public class VpcHealthConfigInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
+
     private ProtocolEnum protocol;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path")
-    
+    @JsonProperty(value = "path")
+
     private String path;
-    /**
-     * 健康检查时的请求方法
-     */
+
+    /** 健康检查时的请求方法 */
     public static final class MethodEnum {
 
-        
-        /**
-         * Enum GET for value: "GET"
-         */
+        /** Enum GET for value: "GET" */
         public static final MethodEnum GET = new MethodEnum("GET");
-        
-        /**
-         * Enum HEAD for value: "HEAD"
-         */
+
+        /** Enum HEAD for value: "HEAD" */
         public static final MethodEnum HEAD = new MethodEnum("HEAD");
-        
 
         private static final Map<String, MethodEnum> STATIC_FIELDS = createStaticFields();
 
@@ -164,7 +135,7 @@ public class VpcHealthConfigInfo  {
 
         @JsonCreator
         public static MethodEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MethodEnum result = STATIC_FIELDS.get(value);
@@ -175,7 +146,7 @@ public class VpcHealthConfigInfo  {
         }
 
         public static MethodEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MethodEnum result = STATIC_FIELDS.get(value);
@@ -199,70 +170,59 @@ public class VpcHealthConfigInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="method")
-    
+    @JsonProperty(value = "method")
+
     private MethodEnum method;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
+
     private Integer port;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="threshold_normal")
-    
+    @JsonProperty(value = "threshold_normal")
+
     private Integer thresholdNormal;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="threshold_abnormal")
-    
+    @JsonProperty(value = "threshold_abnormal")
+
     private Integer thresholdAbnormal;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time_interval")
-    
+    @JsonProperty(value = "time_interval")
+
     private Integer timeInterval;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="http_code")
-    
+    @JsonProperty(value = "http_code")
+
     private String httpCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable_client_ssl")
-    
+    @JsonProperty(value = "enable_client_ssl")
+
     private Boolean enableClientSsl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timeout")
-    
+    @JsonProperty(value = "timeout")
+
     private Integer timeout;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_channel_id")
-    
+    @JsonProperty(value = "vpc_channel_id")
+
     private String vpcChannelId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private OffsetDateTime createTime;
 
     public VpcHealthConfigInfo withProtocol(ProtocolEnum protocol) {
@@ -270,13 +230,9 @@ public class VpcHealthConfigInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 使用以下协议，对VPC中主机执行健康检查： - TCP - HTTP - HTTPS
-     * @return protocol
-     */
+    /** 使用以下协议，对VPC中主机执行健康检查： - TCP - HTTP - HTTPS
+     * 
+     * @return protocol */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -285,20 +241,14 @@ public class VpcHealthConfigInfo  {
         this.protocol = protocol;
     }
 
-    
-
     public VpcHealthConfigInfo withPath(String path) {
         this.path = path;
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查时的目标路径。protocol = http或https时必选
-     * @return path
-     */
+    /** 健康检查时的目标路径。protocol = http或https时必选
+     * 
+     * @return path */
     public String getPath() {
         return path;
     }
@@ -307,20 +257,14 @@ public class VpcHealthConfigInfo  {
         this.path = path;
     }
 
-    
-
     public VpcHealthConfigInfo withMethod(MethodEnum method) {
         this.method = method;
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查时的请求方法
-     * @return method
-     */
+    /** 健康检查时的请求方法
+     * 
+     * @return method */
     public MethodEnum getMethod() {
         return method;
     }
@@ -329,22 +273,14 @@ public class VpcHealthConfigInfo  {
         this.method = method;
     }
 
-    
-
     public VpcHealthConfigInfo withPort(Integer port) {
         this.port = port;
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查的目标端口，缺省或port = 0时为VPC中主机的端口号。
-     * minimum: 0
-     * maximum: 65535
-     * @return port
-     */
+    /** 健康检查的目标端口，缺省或port = 0时为VPC中主机的端口号。 minimum: 0 maximum: 65535
+     * 
+     * @return port */
     public Integer getPort() {
         return port;
     }
@@ -353,22 +289,14 @@ public class VpcHealthConfigInfo  {
         this.port = port;
     }
 
-    
-
     public VpcHealthConfigInfo withThresholdNormal(Integer thresholdNormal) {
         this.thresholdNormal = thresholdNormal;
         return this;
     }
 
-    
-
-
-    /**
-     * 正常阈值。判定VPC通道中主机正常的依据为：连续检查x成功，x为您设置的正常阈值。
-     * minimum: 2
-     * maximum: 10
-     * @return thresholdNormal
-     */
+    /** 正常阈值。判定VPC通道中主机正常的依据为：连续检查x成功，x为您设置的正常阈值。 minimum: 2 maximum: 10
+     * 
+     * @return thresholdNormal */
     public Integer getThresholdNormal() {
         return thresholdNormal;
     }
@@ -377,22 +305,14 @@ public class VpcHealthConfigInfo  {
         this.thresholdNormal = thresholdNormal;
     }
 
-    
-
     public VpcHealthConfigInfo withThresholdAbnormal(Integer thresholdAbnormal) {
         this.thresholdAbnormal = thresholdAbnormal;
         return this;
     }
 
-    
-
-
-    /**
-     * 异常阙值。判定VPC通道中主机异常的依据为：连续检查x失败，x为您设置的异常阈值。
-     * minimum: 2
-     * maximum: 10
-     * @return thresholdAbnormal
-     */
+    /** 异常阙值。判定VPC通道中主机异常的依据为：连续检查x失败，x为您设置的异常阈值。 minimum: 2 maximum: 10
+     * 
+     * @return thresholdAbnormal */
     public Integer getThresholdAbnormal() {
         return thresholdAbnormal;
     }
@@ -401,22 +321,14 @@ public class VpcHealthConfigInfo  {
         this.thresholdAbnormal = thresholdAbnormal;
     }
 
-    
-
     public VpcHealthConfigInfo withTimeInterval(Integer timeInterval) {
         this.timeInterval = timeInterval;
         return this;
     }
 
-    
-
-
-    /**
-     * 间隔时间：连续两次检查的间隔时间，单位为秒。必须大于timeout字段取值。
-     * minimum: 5
-     * maximum: 300
-     * @return timeInterval
-     */
+    /** 间隔时间：连续两次检查的间隔时间，单位为秒。必须大于timeout字段取值。 minimum: 5 maximum: 300
+     * 
+     * @return timeInterval */
     public Integer getTimeInterval() {
         return timeInterval;
     }
@@ -425,20 +337,15 @@ public class VpcHealthConfigInfo  {
         this.timeInterval = timeInterval;
     }
 
-    
-
     public VpcHealthConfigInfo withHttpCode(String httpCode) {
         this.httpCode = httpCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 检查目标HTTP响应时，判断成功使用的HTTP响应码。取值范围为100到599之前的任意整数值，支持如下三种格式： - 多个值，如：200,201,202 - 一系列值，如：200-299 - 组合值，如：201,202,210-299 protocol = http时必选
-     * @return httpCode
-     */
+    /** 检查目标HTTP响应时，判断成功使用的HTTP响应码。取值范围为100到599之前的任意整数值，支持如下三种格式： - 多个值，如：200,201,202 - 一系列值，如：200-299 -
+     * 组合值，如：201,202,210-299 protocol = http时必选
+     * 
+     * @return httpCode */
     public String getHttpCode() {
         return httpCode;
     }
@@ -447,20 +354,14 @@ public class VpcHealthConfigInfo  {
         this.httpCode = httpCode;
     }
 
-    
-
     public VpcHealthConfigInfo withEnableClientSsl(Boolean enableClientSsl) {
         this.enableClientSsl = enableClientSsl;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启双向认证。若开启，则使用实例配置中的backend_client_certificate配置项的证书
-     * @return enableClientSsl
-     */
+    /** 是否开启双向认证。若开启，则使用实例配置中的backend_client_certificate配置项的证书
+     * 
+     * @return enableClientSsl */
     public Boolean getEnableClientSsl() {
         return enableClientSsl;
     }
@@ -469,22 +370,14 @@ public class VpcHealthConfigInfo  {
         this.enableClientSsl = enableClientSsl;
     }
 
-    
-
     public VpcHealthConfigInfo withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
     }
 
-    
-
-
-    /**
-     * 超时时间：检查期间，无响应的时间，单位为秒。必须小于time_interval字段取值。
-     * minimum: 2
-     * maximum: 30
-     * @return timeout
-     */
+    /** 超时时间：检查期间，无响应的时间，单位为秒。必须小于time_interval字段取值。 minimum: 2 maximum: 30
+     * 
+     * @return timeout */
     public Integer getTimeout() {
         return timeout;
     }
@@ -493,20 +386,14 @@ public class VpcHealthConfigInfo  {
         this.timeout = timeout;
     }
 
-    
-
     public VpcHealthConfigInfo withVpcChannelId(String vpcChannelId) {
         this.vpcChannelId = vpcChannelId;
         return this;
     }
 
-    
-
-
-    /**
-     * VPC通道的编号
-     * @return vpcChannelId
-     */
+    /** VPC通道的编号
+     * 
+     * @return vpcChannelId */
     public String getVpcChannelId() {
         return vpcChannelId;
     }
@@ -515,20 +402,14 @@ public class VpcHealthConfigInfo  {
         this.vpcChannelId = vpcChannelId;
     }
 
-    
-
     public VpcHealthConfigInfo withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 健康检查的编号
-     * @return id
-     */
+    /** 健康检查的编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -537,20 +418,14 @@ public class VpcHealthConfigInfo  {
         this.id = id;
     }
 
-    
-
     public VpcHealthConfigInfo withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return createTime
-     */
+    /** 创建时间
+     * 
+     * @return createTime */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -558,8 +433,6 @@ public class VpcHealthConfigInfo  {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -570,24 +443,38 @@ public class VpcHealthConfigInfo  {
             return false;
         }
         VpcHealthConfigInfo vpcHealthConfigInfo = (VpcHealthConfigInfo) o;
-        return Objects.equals(this.protocol, vpcHealthConfigInfo.protocol) &&
-            Objects.equals(this.path, vpcHealthConfigInfo.path) &&
-            Objects.equals(this.method, vpcHealthConfigInfo.method) &&
-            Objects.equals(this.port, vpcHealthConfigInfo.port) &&
-            Objects.equals(this.thresholdNormal, vpcHealthConfigInfo.thresholdNormal) &&
-            Objects.equals(this.thresholdAbnormal, vpcHealthConfigInfo.thresholdAbnormal) &&
-            Objects.equals(this.timeInterval, vpcHealthConfigInfo.timeInterval) &&
-            Objects.equals(this.httpCode, vpcHealthConfigInfo.httpCode) &&
-            Objects.equals(this.enableClientSsl, vpcHealthConfigInfo.enableClientSsl) &&
-            Objects.equals(this.timeout, vpcHealthConfigInfo.timeout) &&
-            Objects.equals(this.vpcChannelId, vpcHealthConfigInfo.vpcChannelId) &&
-            Objects.equals(this.id, vpcHealthConfigInfo.id) &&
-            Objects.equals(this.createTime, vpcHealthConfigInfo.createTime);
+        return Objects.equals(this.protocol, vpcHealthConfigInfo.protocol)
+            && Objects.equals(this.path, vpcHealthConfigInfo.path)
+            && Objects.equals(this.method, vpcHealthConfigInfo.method)
+            && Objects.equals(this.port, vpcHealthConfigInfo.port)
+            && Objects.equals(this.thresholdNormal, vpcHealthConfigInfo.thresholdNormal)
+            && Objects.equals(this.thresholdAbnormal, vpcHealthConfigInfo.thresholdAbnormal)
+            && Objects.equals(this.timeInterval, vpcHealthConfigInfo.timeInterval)
+            && Objects.equals(this.httpCode, vpcHealthConfigInfo.httpCode)
+            && Objects.equals(this.enableClientSsl, vpcHealthConfigInfo.enableClientSsl)
+            && Objects.equals(this.timeout, vpcHealthConfigInfo.timeout)
+            && Objects.equals(this.vpcChannelId, vpcHealthConfigInfo.vpcChannelId)
+            && Objects.equals(this.id, vpcHealthConfigInfo.id)
+            && Objects.equals(this.createTime, vpcHealthConfigInfo.createTime);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(protocol, path, method, port, thresholdNormal, thresholdAbnormal, timeInterval, httpCode, enableClientSsl, timeout, vpcChannelId, id, createTime);
+        return Objects.hash(protocol,
+            path,
+            method,
+            port,
+            thresholdNormal,
+            thresholdAbnormal,
+            timeInterval,
+            httpCode,
+            enableClientSsl,
+            timeout,
+            vpcChannelId,
+            id,
+            createTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -608,16 +495,13 @@ public class VpcHealthConfigInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,97 +1,75 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotda.v5.model.ServiceCapability;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class UpdateProductResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_name")
-    
+    @JsonProperty(value = "app_name")
+
     private String appName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
-    
+    @JsonProperty(value = "product_id")
+
     private String productId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_type")
-    
+    @JsonProperty(value = "device_type")
+
     private String deviceType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol_type")
-    
+    @JsonProperty(value = "protocol_type")
+
     private String protocolType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_format")
-    
+    @JsonProperty(value = "data_format")
+
     private String dataFormat;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="manufacturer_name")
-    
+    @JsonProperty(value = "manufacturer_name")
+
     private String manufacturerName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="industry")
-    
+    @JsonProperty(value = "industry")
+
     private String industry;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_capabilities")
-    
+    @JsonProperty(value = "service_capabilities")
+
     private List<ServiceCapability> serviceCapabilities = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private String createTime;
 
     public UpdateProductResponse withAppId(String appId) {
@@ -99,13 +77,9 @@ public class UpdateProductResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 资源空间ID。
-     * @return appId
-     */
+    /** 资源空间ID。
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -114,20 +88,14 @@ public class UpdateProductResponse extends SdkResponse {
         this.appId = appId;
     }
 
-    
-
     public UpdateProductResponse withAppName(String appName) {
         this.appName = appName;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源空间名称。
-     * @return appName
-     */
+    /** 资源空间名称。
+     * 
+     * @return appName */
     public String getAppName() {
         return appName;
     }
@@ -136,20 +104,14 @@ public class UpdateProductResponse extends SdkResponse {
         this.appName = appName;
     }
 
-    
-
     public UpdateProductResponse withProductId(String productId) {
         this.productId = productId;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品ID，用于唯一标识一个产品，在物联网平台创建产品后由平台分配获得。
-     * @return productId
-     */
+    /** 产品ID，用于唯一标识一个产品，在物联网平台创建产品后由平台分配获得。
+     * 
+     * @return productId */
     public String getProductId() {
         return productId;
     }
@@ -158,20 +120,14 @@ public class UpdateProductResponse extends SdkResponse {
         this.productId = productId;
     }
 
-    
-
     public UpdateProductResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品名称。
-     * @return name
-     */
+    /** 产品名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -180,20 +136,14 @@ public class UpdateProductResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public UpdateProductResponse withDeviceType(String deviceType) {
         this.deviceType = deviceType;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备类型。
-     * @return deviceType
-     */
+    /** 设备类型。
+     * 
+     * @return deviceType */
     public String getDeviceType() {
         return deviceType;
     }
@@ -202,20 +152,14 @@ public class UpdateProductResponse extends SdkResponse {
         this.deviceType = deviceType;
     }
 
-    
-
     public UpdateProductResponse withProtocolType(String protocolType) {
         this.protocolType = protocolType;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备使用的协议类型。取值范围：MQTT，CoAP，HTTP，HTTPS，Modbus，ONVIF， OPC-UA，OPC-DA。
-     * @return protocolType
-     */
+    /** 设备使用的协议类型。取值范围：MQTT，CoAP，HTTP，HTTPS，Modbus，ONVIF， OPC-UA，OPC-DA。
+     * 
+     * @return protocolType */
     public String getProtocolType() {
         return protocolType;
     }
@@ -224,20 +168,14 @@ public class UpdateProductResponse extends SdkResponse {
         this.protocolType = protocolType;
     }
 
-    
-
     public UpdateProductResponse withDataFormat(String dataFormat) {
         this.dataFormat = dataFormat;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备上报数据的格式，取值范围：json，binary。
-     * @return dataFormat
-     */
+    /** 设备上报数据的格式，取值范围：json，binary。
+     * 
+     * @return dataFormat */
     public String getDataFormat() {
         return dataFormat;
     }
@@ -246,20 +184,14 @@ public class UpdateProductResponse extends SdkResponse {
         this.dataFormat = dataFormat;
     }
 
-    
-
     public UpdateProductResponse withManufacturerName(String manufacturerName) {
         this.manufacturerName = manufacturerName;
         return this;
     }
 
-    
-
-
-    /**
-     * 厂商名称。
-     * @return manufacturerName
-     */
+    /** 厂商名称。
+     * 
+     * @return manufacturerName */
     public String getManufacturerName() {
         return manufacturerName;
     }
@@ -268,20 +200,14 @@ public class UpdateProductResponse extends SdkResponse {
         this.manufacturerName = manufacturerName;
     }
 
-    
-
     public UpdateProductResponse withIndustry(String industry) {
         this.industry = industry;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备所属行业。
-     * @return industry
-     */
+    /** 设备所属行业。
+     * 
+     * @return industry */
     public String getIndustry() {
         return industry;
     }
@@ -290,20 +216,14 @@ public class UpdateProductResponse extends SdkResponse {
         this.industry = industry;
     }
 
-    
-
     public UpdateProductResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品的描述信息。
-     * @return description
-     */
+    /** 产品的描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -312,16 +232,13 @@ public class UpdateProductResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public UpdateProductResponse withServiceCapabilities(List<ServiceCapability> serviceCapabilities) {
         this.serviceCapabilities = serviceCapabilities;
         return this;
     }
 
-    
     public UpdateProductResponse addServiceCapabilitiesItem(ServiceCapability serviceCapabilitiesItem) {
-        if(this.serviceCapabilities == null) {
+        if (this.serviceCapabilities == null) {
             this.serviceCapabilities = new ArrayList<>();
         }
         this.serviceCapabilities.add(serviceCapabilitiesItem);
@@ -329,17 +246,16 @@ public class UpdateProductResponse extends SdkResponse {
     }
 
     public UpdateProductResponse withServiceCapabilities(Consumer<List<ServiceCapability>> serviceCapabilitiesSetter) {
-        if(this.serviceCapabilities == null) {
+        if (this.serviceCapabilities == null) {
             this.serviceCapabilities = new ArrayList<>();
         }
         serviceCapabilitiesSetter.accept(this.serviceCapabilities);
         return this;
     }
 
-    /**
-     * 设备的服务能力列表。
-     * @return serviceCapabilities
-     */
+    /** 设备的服务能力列表。
+     * 
+     * @return serviceCapabilities */
     public List<ServiceCapability> getServiceCapabilities() {
         return serviceCapabilities;
     }
@@ -348,20 +264,14 @@ public class UpdateProductResponse extends SdkResponse {
         this.serviceCapabilities = serviceCapabilities;
     }
 
-    
-
     public UpdateProductResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 在物联网平台创建产品的时间，格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
-     * @return createTime
-     */
+    /** 在物联网平台创建产品的时间，格式：yyyyMMdd'T'HHmmss'Z'，如20151212T121212Z。
+     * 
+     * @return createTime */
     public String getCreateTime() {
         return createTime;
     }
@@ -369,8 +279,6 @@ public class UpdateProductResponse extends SdkResponse {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -381,23 +289,36 @@ public class UpdateProductResponse extends SdkResponse {
             return false;
         }
         UpdateProductResponse updateProductResponse = (UpdateProductResponse) o;
-        return Objects.equals(this.appId, updateProductResponse.appId) &&
-            Objects.equals(this.appName, updateProductResponse.appName) &&
-            Objects.equals(this.productId, updateProductResponse.productId) &&
-            Objects.equals(this.name, updateProductResponse.name) &&
-            Objects.equals(this.deviceType, updateProductResponse.deviceType) &&
-            Objects.equals(this.protocolType, updateProductResponse.protocolType) &&
-            Objects.equals(this.dataFormat, updateProductResponse.dataFormat) &&
-            Objects.equals(this.manufacturerName, updateProductResponse.manufacturerName) &&
-            Objects.equals(this.industry, updateProductResponse.industry) &&
-            Objects.equals(this.description, updateProductResponse.description) &&
-            Objects.equals(this.serviceCapabilities, updateProductResponse.serviceCapabilities) &&
-            Objects.equals(this.createTime, updateProductResponse.createTime);
+        return Objects.equals(this.appId, updateProductResponse.appId)
+            && Objects.equals(this.appName, updateProductResponse.appName)
+            && Objects.equals(this.productId, updateProductResponse.productId)
+            && Objects.equals(this.name, updateProductResponse.name)
+            && Objects.equals(this.deviceType, updateProductResponse.deviceType)
+            && Objects.equals(this.protocolType, updateProductResponse.protocolType)
+            && Objects.equals(this.dataFormat, updateProductResponse.dataFormat)
+            && Objects.equals(this.manufacturerName, updateProductResponse.manufacturerName)
+            && Objects.equals(this.industry, updateProductResponse.industry)
+            && Objects.equals(this.description, updateProductResponse.description)
+            && Objects.equals(this.serviceCapabilities, updateProductResponse.serviceCapabilities)
+            && Objects.equals(this.createTime, updateProductResponse.createTime);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(appId, appName, productId, name, deviceType, protocolType, dataFormat, manufacturerName, industry, description, serviceCapabilities, createTime);
+        return Objects.hash(appId,
+            appName,
+            productId,
+            name,
+            deviceType,
+            protocolType,
+            dataFormat,
+            manufacturerName,
+            industry,
+            description,
+            serviceCapabilities,
+            createTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -417,16 +338,13 @@ public class UpdateProductResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

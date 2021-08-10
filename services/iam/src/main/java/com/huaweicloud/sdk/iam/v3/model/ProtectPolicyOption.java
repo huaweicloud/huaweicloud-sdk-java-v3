@@ -1,26 +1,18 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class ProtectPolicyOption  {
-
-
+public class ProtectPolicyOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operation_protection")
-    
+    @JsonProperty(value = "operation_protection")
+
     private Boolean operationProtection;
 
     public ProtectPolicyOption withOperationProtection(Boolean operationProtection) {
@@ -28,13 +20,9 @@ public class ProtectPolicyOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启操作保护，开启为\"true\"，未开启为\"false\"。
-     * @return operationProtection
-     */
+    /** 是否开启操作保护，开启为\"true\"，未开启为\"false\"。
+     * 
+     * @return operationProtection */
     public Boolean getOperationProtection() {
         return operationProtection;
     }
@@ -42,8 +30,6 @@ public class ProtectPolicyOption  {
     public void setOperationProtection(Boolean operationProtection) {
         this.operationProtection = operationProtection;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +42,12 @@ public class ProtectPolicyOption  {
         ProtectPolicyOption protectPolicyOption = (ProtectPolicyOption) o;
         return Objects.equals(this.operationProtection, protectPolicyOption.operationProtection);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(operationProtection);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +56,13 @@ public class ProtectPolicyOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,41 +1,26 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * BillingUpdate
- */
-public class BillingUpdate  {
+/** BillingUpdate */
+public class BillingUpdate {
 
-    /**
-     * 存储库规格
-     */
+    /** 存储库规格 */
     public static final class ConsistentLevelEnum {
 
-        
-        /**
-         * Enum APP_CONSISTENT for value: "app_consistent"
-         */
+        /** Enum APP_CONSISTENT for value: "app_consistent" */
         public static final ConsistentLevelEnum APP_CONSISTENT = new ConsistentLevelEnum("app_consistent");
-        
-        /**
-         * Enum CRASH_CONSISTENT for value: "crash_consistent"
-         */
+
+        /** Enum CRASH_CONSISTENT for value: "crash_consistent" */
         public static final ConsistentLevelEnum CRASH_CONSISTENT = new ConsistentLevelEnum("crash_consistent");
-        
 
         private static final Map<String, ConsistentLevelEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +49,7 @@ public class BillingUpdate  {
 
         @JsonCreator
         public static ConsistentLevelEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ConsistentLevelEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +60,7 @@ public class BillingUpdate  {
         }
 
         public static ConsistentLevelEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ConsistentLevelEnum result = STATIC_FIELDS.get(value);
@@ -99,16 +84,14 @@ public class BillingUpdate  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="consistent_level")
-    
+    @JsonProperty(value = "consistent_level")
+
     private ConsistentLevelEnum consistentLevel;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
     public BillingUpdate withConsistentLevel(ConsistentLevelEnum consistentLevel) {
@@ -116,13 +99,9 @@ public class BillingUpdate  {
         return this;
     }
 
-    
-
-
-    /**
-     * 存储库规格
-     * @return consistentLevel
-     */
+    /** 存储库规格
+     * 
+     * @return consistentLevel */
     public ConsistentLevelEnum getConsistentLevel() {
         return consistentLevel;
     }
@@ -131,22 +110,14 @@ public class BillingUpdate  {
         this.consistentLevel = consistentLevel;
     }
 
-    
-
     public BillingUpdate withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 存储库大小，单位为GB
-     * minimum: 1
-     * maximum: 10485760
-     * @return size
-     */
+    /** 存储库大小，单位为GB minimum: 1 maximum: 10485760
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -154,8 +125,6 @@ public class BillingUpdate  {
     public void setSize(Integer size) {
         this.size = size;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,13 +135,15 @@ public class BillingUpdate  {
             return false;
         }
         BillingUpdate billingUpdate = (BillingUpdate) o;
-        return Objects.equals(this.consistentLevel, billingUpdate.consistentLevel) &&
-            Objects.equals(this.size, billingUpdate.size);
+        return Objects.equals(this.consistentLevel, billingUpdate.consistentLevel)
+            && Objects.equals(this.size, billingUpdate.size);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(consistentLevel, size);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -182,16 +153,13 @@ public class BillingUpdate  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

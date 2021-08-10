@@ -1,62 +1,43 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bms.v1.model.Links;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.function.Consumer;
-import java.util.Objects;
 
-/**
- * image数据结构说明
- */
-public class ImageInfo  {
-
-
+/** image数据结构说明 */
+public class ImageInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private UUID id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 镜像的类型。取值为：Linux（包括SUSE/RedHat/CentOS/Oracle Linux/EulerOS/Ubuntu操作系统）Windows（Windows操作系统）Other（ESXi操作系统）
-     */
+
+    /** 镜像的类型。取值为：Linux（包括SUSE/RedHat/CentOS/Oracle Linux/EulerOS/Ubuntu操作系统）Windows（Windows操作系统）Other（ESXi操作系统） */
     public static final class OsTypeEnum {
 
-        
-        /**
-         * Enum LINUX for value: "Linux"
-         */
+        /** Enum LINUX for value: "Linux" */
         public static final OsTypeEnum LINUX = new OsTypeEnum("Linux");
-        
-        /**
-         * Enum WINDOWS for value: "Windows"
-         */
+
+        /** Enum WINDOWS for value: "Windows" */
         public static final OsTypeEnum WINDOWS = new OsTypeEnum("Windows");
-        
-        /**
-         * Enum OTHER for value: "Other"
-         */
+
+        /** Enum OTHER for value: "Other" */
         public static final OsTypeEnum OTHER = new OsTypeEnum("Other");
-        
 
         private static final Map<String, OsTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -86,7 +67,7 @@ public class ImageInfo  {
 
         @JsonCreator
         public static OsTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsTypeEnum result = STATIC_FIELDS.get(value);
@@ -97,7 +78,7 @@ public class ImageInfo  {
         }
 
         public static OsTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsTypeEnum result = STATIC_FIELDS.get(value);
@@ -121,30 +102,24 @@ public class ImageInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__os_type")
-    
+    @JsonProperty(value = "__os_type")
+
     private OsTypeEnum osType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private List<Links> links = null;
-    
+
     public ImageInfo withId(UUID id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像ID，格式为UUID。
-     * @return id
-     */
+    /** 镜像ID，格式为UUID。
+     * 
+     * @return id */
     public UUID getId() {
         return id;
     }
@@ -153,20 +128,14 @@ public class ImageInfo  {
         this.id = id;
     }
 
-    
-
     public ImageInfo withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像的名称
-     * @return name
-     */
+    /** 镜像的名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -175,22 +144,16 @@ public class ImageInfo  {
         this.name = name;
     }
 
-    
-
     public ImageInfo withOsType(OsTypeEnum osType) {
         this.osType = osType;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像的类型。取值为：Linux（包括SUSE/RedHat/CentOS/Oracle Linux/EulerOS/Ubuntu操作系统）Windows（Windows操作系统）Other（ESXi操作系统）
-     * @return osType
-     */
+    /** 镜像的类型。取值为：Linux（包括SUSE/RedHat/CentOS/Oracle Linux/EulerOS/Ubuntu操作系统）Windows（Windows操作系统）Other（ESXi操作系统）
+     * 
+     * @return osType */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="__os_type")
+    @JsonProperty(value = "__os_type")
     public OsTypeEnum getOsType() {
         return osType;
     }
@@ -199,16 +162,13 @@ public class ImageInfo  {
         this.osType = osType;
     }
 
-    
-
     public ImageInfo withLinks(List<Links> links) {
         this.links = links;
         return this;
     }
 
-    
     public ImageInfo addLinksItem(Links linksItem) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         this.links.add(linksItem);
@@ -216,17 +176,16 @@ public class ImageInfo  {
     }
 
     public ImageInfo withLinks(Consumer<List<Links>> linksSetter) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);
         return this;
     }
 
-    /**
-     * 镜像相关快捷链接地址。
-     * @return links
-     */
+    /** 镜像相关快捷链接地址。
+     * 
+     * @return links */
     public List<Links> getLinks() {
         return links;
     }
@@ -234,8 +193,6 @@ public class ImageInfo  {
     public void setLinks(List<Links> links) {
         this.links = links;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -246,15 +203,15 @@ public class ImageInfo  {
             return false;
         }
         ImageInfo imageInfo = (ImageInfo) o;
-        return Objects.equals(this.id, imageInfo.id) &&
-            Objects.equals(this.name, imageInfo.name) &&
-            Objects.equals(this.osType, imageInfo.osType) &&
-            Objects.equals(this.links, imageInfo.links);
+        return Objects.equals(this.id, imageInfo.id) && Objects.equals(this.name, imageInfo.name)
+            && Objects.equals(this.osType, imageInfo.osType) && Objects.equals(this.links, imageInfo.links);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, osType, links);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -266,16 +223,13 @@ public class ImageInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

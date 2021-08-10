@@ -1,132 +1,104 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ListPoolsRequest  {
-
-
+/** Request Object */
+public class ListPoolsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="admin_state_up")
-    
+    @JsonProperty(value = "admin_state_up")
+
     private Boolean adminStateUp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private List<String> description = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private List<String> enterpriseProjectId = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="healthmonitor_id")
-    
+    @JsonProperty(value = "healthmonitor_id")
+
     private List<String> healthmonitorId = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private List<String> id = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_version")
-    
+    @JsonProperty(value = "ip_version")
+
     private List<String> ipVersion = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lb_algorithm")
-    
+    @JsonProperty(value = "lb_algorithm")
+
     private List<String> lbAlgorithm = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="loadbalancer_id")
-    
+    @JsonProperty(value = "loadbalancer_id")
+
     private List<String> loadbalancerId = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="member_address")
-    
+    @JsonProperty(value = "member_address")
+
     private List<String> memberAddress = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="member_deletion_protection_enable")
-    
+    @JsonProperty(value = "member_deletion_protection_enable")
+
     private Boolean memberDeletionProtectionEnable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="member_device_id")
-    
+    @JsonProperty(value = "member_device_id")
+
     private List<String> memberDeviceId = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private List<String> name = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_reverse")
-    
+    @JsonProperty(value = "page_reverse")
+
     private Boolean pageReverse;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
+
     private List<String> protocol = null;
-    
+
     public ListPoolsRequest withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端云服务器组的管理状态；该字段为预留字段，暂未启用。只支持更新为true。
-     * @return adminStateUp
-     */
+    /** 后端云服务器组的管理状态；该字段为预留字段，暂未启用。只支持更新为true。
+     * 
+     * @return adminStateUp */
     public Boolean getAdminStateUp() {
         return adminStateUp;
     }
@@ -135,16 +107,13 @@ public class ListPoolsRequest  {
         this.adminStateUp = adminStateUp;
     }
 
-    
-
     public ListPoolsRequest withDescription(List<String> description) {
         this.description = description;
         return this;
     }
 
-    
     public ListPoolsRequest addDescriptionItem(String descriptionItem) {
-        if(this.description == null) {
+        if (this.description == null) {
             this.description = new ArrayList<>();
         }
         this.description.add(descriptionItem);
@@ -152,17 +121,16 @@ public class ListPoolsRequest  {
     }
 
     public ListPoolsRequest withDescription(Consumer<List<String>> descriptionSetter) {
-        if(this.description == null) {
+        if (this.description == null) {
             this.description = new ArrayList<>();
         }
         descriptionSetter.accept(this.description);
         return this;
     }
 
-    /**
-     * 后端云服务器组的描述信息。
-     * @return description
-     */
+    /** 后端云服务器组的描述信息。
+     * 
+     * @return description */
     public List<String> getDescription() {
         return description;
     }
@@ -171,16 +139,13 @@ public class ListPoolsRequest  {
         this.description = description;
     }
 
-    
-
     public ListPoolsRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
     public ListPoolsRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
-        if(this.enterpriseProjectId == null) {
+        if (this.enterpriseProjectId == null) {
             this.enterpriseProjectId = new ArrayList<>();
         }
         this.enterpriseProjectId.add(enterpriseProjectIdItem);
@@ -188,17 +153,16 @@ public class ListPoolsRequest  {
     }
 
     public ListPoolsRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
-        if(this.enterpriseProjectId == null) {
+        if (this.enterpriseProjectId == null) {
             this.enterpriseProjectId = new ArrayList<>();
         }
         enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
         return this;
     }
 
-    /**
-     * 企业项目ID。
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID。
+     * 
+     * @return enterpriseProjectId */
     public List<String> getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -207,16 +171,13 @@ public class ListPoolsRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public ListPoolsRequest withHealthmonitorId(List<String> healthmonitorId) {
         this.healthmonitorId = healthmonitorId;
         return this;
     }
 
-    
     public ListPoolsRequest addHealthmonitorIdItem(String healthmonitorIdItem) {
-        if(this.healthmonitorId == null) {
+        if (this.healthmonitorId == null) {
             this.healthmonitorId = new ArrayList<>();
         }
         this.healthmonitorId.add(healthmonitorIdItem);
@@ -224,17 +185,16 @@ public class ListPoolsRequest  {
     }
 
     public ListPoolsRequest withHealthmonitorId(Consumer<List<String>> healthmonitorIdSetter) {
-        if(this.healthmonitorId == null) {
+        if (this.healthmonitorId == null) {
             this.healthmonitorId = new ArrayList<>();
         }
         healthmonitorIdSetter.accept(this.healthmonitorId);
         return this;
     }
 
-    /**
-     * 后端云服务器组关联的健康检查的ID。
-     * @return healthmonitorId
-     */
+    /** 后端云服务器组关联的健康检查的ID。
+     * 
+     * @return healthmonitorId */
     public List<String> getHealthmonitorId() {
         return healthmonitorId;
     }
@@ -243,16 +203,13 @@ public class ListPoolsRequest  {
         this.healthmonitorId = healthmonitorId;
     }
 
-    
-
     public ListPoolsRequest withId(List<String> id) {
         this.id = id;
         return this;
     }
 
-    
     public ListPoolsRequest addIdItem(String idItem) {
-        if(this.id == null) {
+        if (this.id == null) {
             this.id = new ArrayList<>();
         }
         this.id.add(idItem);
@@ -260,17 +217,16 @@ public class ListPoolsRequest  {
     }
 
     public ListPoolsRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null) {
+        if (this.id == null) {
             this.id = new ArrayList<>();
         }
         idSetter.accept(this.id);
         return this;
     }
 
-    /**
-     * 后端云服务器组的ID。
-     * @return id
-     */
+    /** 后端云服务器组的ID。
+     * 
+     * @return id */
     public List<String> getId() {
         return id;
     }
@@ -279,16 +235,13 @@ public class ListPoolsRequest  {
         this.id = id;
     }
 
-    
-
     public ListPoolsRequest withIpVersion(List<String> ipVersion) {
         this.ipVersion = ipVersion;
         return this;
     }
 
-    
     public ListPoolsRequest addIpVersionItem(String ipVersionItem) {
-        if(this.ipVersion == null) {
+        if (this.ipVersion == null) {
             this.ipVersion = new ArrayList<>();
         }
         this.ipVersion.add(ipVersionItem);
@@ -296,17 +249,16 @@ public class ListPoolsRequest  {
     }
 
     public ListPoolsRequest withIpVersion(Consumer<List<String>> ipVersionSetter) {
-        if(this.ipVersion == null) {
+        if (this.ipVersion == null) {
             this.ipVersion = new ArrayList<>();
         }
         ipVersionSetter.accept(this.ipVersion);
         return this;
     }
 
-    /**
-     * 后端云服务器组所在ip_version。 取值范围：dualstack,v4,v6。
-     * @return ipVersion
-     */
+    /** 后端云服务器组所在ip_version。 取值范围：dualstack,v4,v6。
+     * 
+     * @return ipVersion */
     public List<String> getIpVersion() {
         return ipVersion;
     }
@@ -315,16 +267,13 @@ public class ListPoolsRequest  {
         this.ipVersion = ipVersion;
     }
 
-    
-
     public ListPoolsRequest withLbAlgorithm(List<String> lbAlgorithm) {
         this.lbAlgorithm = lbAlgorithm;
         return this;
     }
 
-    
     public ListPoolsRequest addLbAlgorithmItem(String lbAlgorithmItem) {
-        if(this.lbAlgorithm == null) {
+        if (this.lbAlgorithm == null) {
             this.lbAlgorithm = new ArrayList<>();
         }
         this.lbAlgorithm.add(lbAlgorithmItem);
@@ -332,17 +281,16 @@ public class ListPoolsRequest  {
     }
 
     public ListPoolsRequest withLbAlgorithm(Consumer<List<String>> lbAlgorithmSetter) {
-        if(this.lbAlgorithm == null) {
+        if (this.lbAlgorithm == null) {
             this.lbAlgorithm = new ArrayList<>();
         }
         lbAlgorithmSetter.accept(this.lbAlgorithm);
         return this;
     }
 
-    /**
-     * 后端云服务器组的负载均衡算法，取值：ROUND_ROBIN：加权轮询算法；LEAST_CONNECTIONS：加权最少连接算法；SOURCE_IP：源IP算法；当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。
-     * @return lbAlgorithm
-     */
+    /** 后端云服务器组的负载均衡算法，取值：ROUND_ROBIN：加权轮询算法；LEAST_CONNECTIONS：加权最少连接算法；SOURCE_IP：源IP算法；当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。
+     * 
+     * @return lbAlgorithm */
     public List<String> getLbAlgorithm() {
         return lbAlgorithm;
     }
@@ -351,22 +299,14 @@ public class ListPoolsRequest  {
         this.lbAlgorithm = lbAlgorithm;
     }
 
-    
-
     public ListPoolsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页返回的个数。
-     * minimum: 0
-     * maximum: 2000
-     * @return limit
-     */
+    /** 每页返回的个数。 minimum: 0 maximum: 2000
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -375,16 +315,13 @@ public class ListPoolsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListPoolsRequest withLoadbalancerId(List<String> loadbalancerId) {
         this.loadbalancerId = loadbalancerId;
         return this;
     }
 
-    
     public ListPoolsRequest addLoadbalancerIdItem(String loadbalancerIdItem) {
-        if(this.loadbalancerId == null) {
+        if (this.loadbalancerId == null) {
             this.loadbalancerId = new ArrayList<>();
         }
         this.loadbalancerId.add(loadbalancerIdItem);
@@ -392,17 +329,16 @@ public class ListPoolsRequest  {
     }
 
     public ListPoolsRequest withLoadbalancerId(Consumer<List<String>> loadbalancerIdSetter) {
-        if(this.loadbalancerId == null) {
+        if (this.loadbalancerId == null) {
             this.loadbalancerId = new ArrayList<>();
         }
         loadbalancerIdSetter.accept(this.loadbalancerId);
         return this;
     }
 
-    /**
-     * 后端云服务器组绑定的负载均衡器ID。
-     * @return loadbalancerId
-     */
+    /** 后端云服务器组绑定的负载均衡器ID。
+     * 
+     * @return loadbalancerId */
     public List<String> getLoadbalancerId() {
         return loadbalancerId;
     }
@@ -411,20 +347,14 @@ public class ListPoolsRequest  {
         this.loadbalancerId = loadbalancerId;
     }
 
-    
-
     public ListPoolsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
 
-    
-
-
-    /**
-     * 上一页最后一条记录的ID。  使用说明：  - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
-     * @return marker
-     */
+    /** 上一页最后一条记录的ID。 使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -433,16 +363,13 @@ public class ListPoolsRequest  {
         this.marker = marker;
     }
 
-    
-
     public ListPoolsRequest withMemberAddress(List<String> memberAddress) {
         this.memberAddress = memberAddress;
         return this;
     }
 
-    
     public ListPoolsRequest addMemberAddressItem(String memberAddressItem) {
-        if(this.memberAddress == null) {
+        if (this.memberAddress == null) {
             this.memberAddress = new ArrayList<>();
         }
         this.memberAddress.add(memberAddressItem);
@@ -450,17 +377,16 @@ public class ListPoolsRequest  {
     }
 
     public ListPoolsRequest withMemberAddress(Consumer<List<String>> memberAddressSetter) {
-        if(this.memberAddress == null) {
+        if (this.memberAddress == null) {
             this.memberAddress = new ArrayList<>();
         }
         memberAddressSetter.accept(this.memberAddress);
         return this;
     }
 
-    /**
-     * 后端云服务器的IP地址。
-     * @return memberAddress
-     */
+    /** 后端云服务器的IP地址。
+     * 
+     * @return memberAddress */
     public List<String> getMemberAddress() {
         return memberAddress;
     }
@@ -469,20 +395,14 @@ public class ListPoolsRequest  {
         this.memberAddress = memberAddress;
     }
 
-    
-
     public ListPoolsRequest withMemberDeletionProtectionEnable(Boolean memberDeletionProtectionEnable) {
         this.memberDeletionProtectionEnable = memberDeletionProtectionEnable;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启删除保护，false不开启，默认为空查询全部
-     * @return memberDeletionProtectionEnable
-     */
+    /** 是否开启删除保护，false不开启，默认为空查询全部
+     * 
+     * @return memberDeletionProtectionEnable */
     public Boolean getMemberDeletionProtectionEnable() {
         return memberDeletionProtectionEnable;
     }
@@ -491,16 +411,13 @@ public class ListPoolsRequest  {
         this.memberDeletionProtectionEnable = memberDeletionProtectionEnable;
     }
 
-    
-
     public ListPoolsRequest withMemberDeviceId(List<String> memberDeviceId) {
         this.memberDeviceId = memberDeviceId;
         return this;
     }
 
-    
     public ListPoolsRequest addMemberDeviceIdItem(String memberDeviceIdItem) {
-        if(this.memberDeviceId == null) {
+        if (this.memberDeviceId == null) {
             this.memberDeviceId = new ArrayList<>();
         }
         this.memberDeviceId.add(memberDeviceIdItem);
@@ -508,17 +425,16 @@ public class ListPoolsRequest  {
     }
 
     public ListPoolsRequest withMemberDeviceId(Consumer<List<String>> memberDeviceIdSetter) {
-        if(this.memberDeviceId == null) {
+        if (this.memberDeviceId == null) {
             this.memberDeviceId = new ArrayList<>();
         }
         memberDeviceIdSetter.accept(this.memberDeviceId);
         return this;
     }
 
-    /**
-     * 后端云服务器对应的弹性云服务器的ID。
-     * @return memberDeviceId
-     */
+    /** 后端云服务器对应的弹性云服务器的ID。
+     * 
+     * @return memberDeviceId */
     public List<String> getMemberDeviceId() {
         return memberDeviceId;
     }
@@ -527,16 +443,13 @@ public class ListPoolsRequest  {
         this.memberDeviceId = memberDeviceId;
     }
 
-    
-
     public ListPoolsRequest withName(List<String> name) {
         this.name = name;
         return this;
     }
 
-    
     public ListPoolsRequest addNameItem(String nameItem) {
-        if(this.name == null) {
+        if (this.name == null) {
             this.name = new ArrayList<>();
         }
         this.name.add(nameItem);
@@ -544,17 +457,16 @@ public class ListPoolsRequest  {
     }
 
     public ListPoolsRequest withName(Consumer<List<String>> nameSetter) {
-        if(this.name == null) {
+        if (this.name == null) {
             this.name = new ArrayList<>();
         }
         nameSetter.accept(this.name);
         return this;
     }
 
-    /**
-     * 后端云服务器组的名称。
-     * @return name
-     */
+    /** 后端云服务器组的名称。
+     * 
+     * @return name */
     public List<String> getName() {
         return name;
     }
@@ -563,20 +475,14 @@ public class ListPoolsRequest  {
         this.name = name;
     }
 
-    
-
     public ListPoolsRequest withPageReverse(Boolean pageReverse) {
         this.pageReverse = pageReverse;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。使用说明：必须与limit一起使用。
-     * @return pageReverse
-     */
+    /** 分页的顺序，true表示从后往前分页，false表示从前往后分页，默认为false。使用说明：必须与limit一起使用。
+     * 
+     * @return pageReverse */
     public Boolean getPageReverse() {
         return pageReverse;
     }
@@ -585,16 +491,13 @@ public class ListPoolsRequest  {
         this.pageReverse = pageReverse;
     }
 
-    
-
     public ListPoolsRequest withProtocol(List<String> protocol) {
         this.protocol = protocol;
         return this;
     }
 
-    
     public ListPoolsRequest addProtocolItem(String protocolItem) {
-        if(this.protocol == null) {
+        if (this.protocol == null) {
             this.protocol = new ArrayList<>();
         }
         this.protocol.add(protocolItem);
@@ -602,17 +505,16 @@ public class ListPoolsRequest  {
     }
 
     public ListPoolsRequest withProtocol(Consumer<List<String>> protocolSetter) {
-        if(this.protocol == null) {
+        if (this.protocol == null) {
             this.protocol = new ArrayList<>();
         }
         protocolSetter.accept(this.protocol);
         return this;
     }
 
-    /**
-     * 后端云服务器组的后端协议。
-     * @return protocol
-     */
+    /** 后端云服务器组的后端协议。
+     * 
+     * @return protocol */
     public List<String> getProtocol() {
         return protocol;
     }
@@ -620,8 +522,6 @@ public class ListPoolsRequest  {
     public void setProtocol(List<String> protocol) {
         this.protocol = protocol;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -632,27 +532,44 @@ public class ListPoolsRequest  {
             return false;
         }
         ListPoolsRequest listPoolsRequest = (ListPoolsRequest) o;
-        return Objects.equals(this.adminStateUp, listPoolsRequest.adminStateUp) &&
-            Objects.equals(this.description, listPoolsRequest.description) &&
-            Objects.equals(this.enterpriseProjectId, listPoolsRequest.enterpriseProjectId) &&
-            Objects.equals(this.healthmonitorId, listPoolsRequest.healthmonitorId) &&
-            Objects.equals(this.id, listPoolsRequest.id) &&
-            Objects.equals(this.ipVersion, listPoolsRequest.ipVersion) &&
-            Objects.equals(this.lbAlgorithm, listPoolsRequest.lbAlgorithm) &&
-            Objects.equals(this.limit, listPoolsRequest.limit) &&
-            Objects.equals(this.loadbalancerId, listPoolsRequest.loadbalancerId) &&
-            Objects.equals(this.marker, listPoolsRequest.marker) &&
-            Objects.equals(this.memberAddress, listPoolsRequest.memberAddress) &&
-            Objects.equals(this.memberDeletionProtectionEnable, listPoolsRequest.memberDeletionProtectionEnable) &&
-            Objects.equals(this.memberDeviceId, listPoolsRequest.memberDeviceId) &&
-            Objects.equals(this.name, listPoolsRequest.name) &&
-            Objects.equals(this.pageReverse, listPoolsRequest.pageReverse) &&
-            Objects.equals(this.protocol, listPoolsRequest.protocol);
+        return Objects.equals(this.adminStateUp, listPoolsRequest.adminStateUp)
+            && Objects.equals(this.description, listPoolsRequest.description)
+            && Objects.equals(this.enterpriseProjectId, listPoolsRequest.enterpriseProjectId)
+            && Objects.equals(this.healthmonitorId, listPoolsRequest.healthmonitorId)
+            && Objects.equals(this.id, listPoolsRequest.id)
+            && Objects.equals(this.ipVersion, listPoolsRequest.ipVersion)
+            && Objects.equals(this.lbAlgorithm, listPoolsRequest.lbAlgorithm)
+            && Objects.equals(this.limit, listPoolsRequest.limit)
+            && Objects.equals(this.loadbalancerId, listPoolsRequest.loadbalancerId)
+            && Objects.equals(this.marker, listPoolsRequest.marker)
+            && Objects.equals(this.memberAddress, listPoolsRequest.memberAddress)
+            && Objects.equals(this.memberDeletionProtectionEnable, listPoolsRequest.memberDeletionProtectionEnable)
+            && Objects.equals(this.memberDeviceId, listPoolsRequest.memberDeviceId)
+            && Objects.equals(this.name, listPoolsRequest.name)
+            && Objects.equals(this.pageReverse, listPoolsRequest.pageReverse)
+            && Objects.equals(this.protocol, listPoolsRequest.protocol);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(adminStateUp, description, enterpriseProjectId, healthmonitorId, id, ipVersion, lbAlgorithm, limit, loadbalancerId, marker, memberAddress, memberDeletionProtectionEnable, memberDeviceId, name, pageReverse, protocol);
+        return Objects.hash(adminStateUp,
+            description,
+            enterpriseProjectId,
+            healthmonitorId,
+            id,
+            ipVersion,
+            lbAlgorithm,
+            limit,
+            loadbalancerId,
+            marker,
+            memberAddress,
+            memberDeletionProtectionEnable,
+            memberDeviceId,
+            name,
+            pageReverse,
+            protocol);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -668,7 +585,9 @@ public class ListPoolsRequest  {
         sb.append("    loadbalancerId: ").append(toIndentedString(loadbalancerId)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    memberAddress: ").append(toIndentedString(memberAddress)).append("\n");
-        sb.append("    memberDeletionProtectionEnable: ").append(toIndentedString(memberDeletionProtectionEnable)).append("\n");
+        sb.append("    memberDeletionProtectionEnable: ")
+            .append(toIndentedString(memberDeletionProtectionEnable))
+            .append("\n");
         sb.append("    memberDeviceId: ").append(toIndentedString(memberDeviceId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    pageReverse: ").append(toIndentedString(pageReverse)).append("\n");
@@ -676,16 +595,13 @@ public class ListPoolsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

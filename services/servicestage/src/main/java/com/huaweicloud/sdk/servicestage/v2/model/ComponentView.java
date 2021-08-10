@@ -1,96 +1,72 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.ComponentCategory;
-import com.huaweicloud.sdk.servicestage.v2.model.ComponentSubCategory;
-import com.huaweicloud.sdk.servicestage.v2.model.RuntimeType;
-import com.huaweicloud.sdk.servicestage.v2.model.SourceObject;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ComponentView
- */
-public class ComponentView  {
-
-
+/** ComponentView */
+public class ComponentView {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="application_id")
-    
+    @JsonProperty(value = "application_id")
+
     private String applicationId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="runtime")
-    
+    @JsonProperty(value = "runtime")
+
     private RuntimeType runtime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="category")
-    
+    @JsonProperty(value = "category")
+
     private ComponentCategory category;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sub_category")
-    
+    @JsonProperty(value = "sub_category")
+
     private ComponentSubCategory subCategory;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source")
-    
+    @JsonProperty(value = "source")
+
     private SourceObject source;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator")
-    
+    @JsonProperty(value = "creator")
+
     private String creator;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private Long createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private Long updateTime;
 
     public ComponentView withId(String id) {
@@ -98,13 +74,9 @@ public class ComponentView  {
         return this;
     }
 
-    
-
-
-    /**
-     * 组件ID。
-     * @return id
-     */
+    /** 组件ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -113,20 +85,14 @@ public class ComponentView  {
         this.id = id;
     }
 
-    
-
     public ComponentView withApplicationId(String applicationId) {
         this.applicationId = applicationId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用ID。
-     * @return applicationId
-     */
+    /** 应用ID。
+     * 
+     * @return applicationId */
     public String getApplicationId() {
         return applicationId;
     }
@@ -135,20 +101,14 @@ public class ComponentView  {
         this.applicationId = applicationId;
     }
 
-    
-
     public ComponentView withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用组件名称。
-     * @return name
-     */
+    /** 应用组件名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -157,20 +117,14 @@ public class ComponentView  {
         this.name = name;
     }
 
-    
-
     public ComponentView withRuntime(RuntimeType runtime) {
         this.runtime = runtime;
         return this;
     }
 
-    
-
-
-    /**
-     * Get runtime
-     * @return runtime
-     */
+    /** Get runtime
+     * 
+     * @return runtime */
     public RuntimeType getRuntime() {
         return runtime;
     }
@@ -179,20 +133,14 @@ public class ComponentView  {
         this.runtime = runtime;
     }
 
-    
-
     public ComponentView withCategory(ComponentCategory category) {
         this.category = category;
         return this;
     }
 
-    
-
-
-    /**
-     * Get category
-     * @return category
-     */
+    /** Get category
+     * 
+     * @return category */
     public ComponentCategory getCategory() {
         return category;
     }
@@ -201,20 +149,14 @@ public class ComponentView  {
         this.category = category;
     }
 
-    
-
     public ComponentView withSubCategory(ComponentSubCategory subCategory) {
         this.subCategory = subCategory;
         return this;
     }
 
-    
-
-
-    /**
-     * Get subCategory
-     * @return subCategory
-     */
+    /** Get subCategory
+     * 
+     * @return subCategory */
     public ComponentSubCategory getSubCategory() {
         return subCategory;
     }
@@ -223,20 +165,14 @@ public class ComponentView  {
         this.subCategory = subCategory;
     }
 
-    
-
     public ComponentView withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 组件描述。
-     * @return description
-     */
+    /** 组件描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -245,20 +181,14 @@ public class ComponentView  {
         this.description = description;
     }
 
-    
-
     public ComponentView withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 取值0或1。  0：表示正常状态。  1：表示正在删除。 
-     * @return status
-     */
+    /** 取值0或1。 0：表示正常状态。 1：表示正在删除。
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -267,27 +197,23 @@ public class ComponentView  {
         this.status = status;
     }
 
-    
-
     public ComponentView withSource(SourceObject source) {
         this.source = source;
         return this;
     }
 
     public ComponentView withSource(Consumer<SourceObject> sourceSetter) {
-        if(this.source == null ){
+        if (this.source == null) {
             this.source = new SourceObject();
             sourceSetter.accept(this.source);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get source
-     * @return source
-     */
+    /** Get source
+     * 
+     * @return source */
     public SourceObject getSource() {
         return source;
     }
@@ -296,20 +222,14 @@ public class ComponentView  {
         this.source = source;
     }
 
-    
-
     public ComponentView withCreator(String creator) {
         this.creator = creator;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建人。
-     * @return creator
-     */
+    /** 创建人。
+     * 
+     * @return creator */
     public String getCreator() {
         return creator;
     }
@@ -318,20 +238,14 @@ public class ComponentView  {
         this.creator = creator;
     }
 
-    
-
     public ComponentView withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间。
-     * @return createTime
-     */
+    /** 创建时间。
+     * 
+     * @return createTime */
     public Long getCreateTime() {
         return createTime;
     }
@@ -340,20 +254,14 @@ public class ComponentView  {
         this.createTime = createTime;
     }
 
-    
-
     public ComponentView withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 修改时间。
-     * @return updateTime
-     */
+    /** 修改时间。
+     * 
+     * @return updateTime */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -361,8 +269,6 @@ public class ComponentView  {
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -373,23 +279,34 @@ public class ComponentView  {
             return false;
         }
         ComponentView componentView = (ComponentView) o;
-        return Objects.equals(this.id, componentView.id) &&
-            Objects.equals(this.applicationId, componentView.applicationId) &&
-            Objects.equals(this.name, componentView.name) &&
-            Objects.equals(this.runtime, componentView.runtime) &&
-            Objects.equals(this.category, componentView.category) &&
-            Objects.equals(this.subCategory, componentView.subCategory) &&
-            Objects.equals(this.description, componentView.description) &&
-            Objects.equals(this.status, componentView.status) &&
-            Objects.equals(this.source, componentView.source) &&
-            Objects.equals(this.creator, componentView.creator) &&
-            Objects.equals(this.createTime, componentView.createTime) &&
-            Objects.equals(this.updateTime, componentView.updateTime);
+        return Objects.equals(this.id, componentView.id)
+            && Objects.equals(this.applicationId, componentView.applicationId)
+            && Objects.equals(this.name, componentView.name) && Objects.equals(this.runtime, componentView.runtime)
+            && Objects.equals(this.category, componentView.category)
+            && Objects.equals(this.subCategory, componentView.subCategory)
+            && Objects.equals(this.description, componentView.description)
+            && Objects.equals(this.status, componentView.status) && Objects.equals(this.source, componentView.source)
+            && Objects.equals(this.creator, componentView.creator)
+            && Objects.equals(this.createTime, componentView.createTime)
+            && Objects.equals(this.updateTime, componentView.updateTime);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, applicationId, name, runtime, category, subCategory, description, status, source, creator, createTime, updateTime);
+        return Objects.hash(id,
+            applicationId,
+            name,
+            runtime,
+            category,
+            subCategory,
+            description,
+            status,
+            source,
+            creator,
+            createTime,
+            updateTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -409,16 +326,13 @@ public class ComponentView  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

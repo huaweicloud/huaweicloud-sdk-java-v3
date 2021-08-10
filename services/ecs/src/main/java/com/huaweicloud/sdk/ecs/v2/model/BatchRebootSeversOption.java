@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.ServerId;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class BatchRebootSeversOption  {
-
-
+public class BatchRebootSeversOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="servers")
-    
+    @JsonProperty(value = "servers")
+
     private List<ServerId> servers = null;
-        /**
-     * 重启类型：  - SOFT：普通重启。 - HARD：强制重启。
-     */
+
+    /** 重启类型： - SOFT：普通重启。 - HARD：强制重启。 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum SOFT for value: "SOFT"
-         */
+        /** Enum SOFT for value: "SOFT" */
         public static final TypeEnum SOFT = new TypeEnum("SOFT");
-        
-        /**
-         * Enum HARD for value: "HARD"
-         */
+
+        /** Enum HARD for value: "HARD" */
         public static final TypeEnum HARD = new TypeEnum("HARD");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -73,7 +59,7 @@ public class BatchRebootSeversOption  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -84,7 +70,7 @@ public class BatchRebootSeversOption  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -108,10 +94,9 @@ public class BatchRebootSeversOption  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
     public BatchRebootSeversOption withServers(List<ServerId> servers) {
@@ -119,9 +104,8 @@ public class BatchRebootSeversOption  {
         return this;
     }
 
-    
     public BatchRebootSeversOption addServersItem(ServerId serversItem) {
-        if(this.servers == null) {
+        if (this.servers == null) {
             this.servers = new ArrayList<>();
         }
         this.servers.add(serversItem);
@@ -129,17 +113,16 @@ public class BatchRebootSeversOption  {
     }
 
     public BatchRebootSeversOption withServers(Consumer<List<ServerId>> serversSetter) {
-        if(this.servers == null) {
+        if (this.servers == null) {
             this.servers = new ArrayList<>();
         }
         serversSetter.accept(this.servers);
         return this;
     }
 
-    /**
-     * 云服务器ID列表。
-     * @return servers
-     */
+    /** 云服务器ID列表。
+     * 
+     * @return servers */
     public List<ServerId> getServers() {
         return servers;
     }
@@ -148,20 +131,14 @@ public class BatchRebootSeversOption  {
         this.servers = servers;
     }
 
-    
-
     public BatchRebootSeversOption withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 重启类型：  - SOFT：普通重启。 - HARD：强制重启。
-     * @return type
-     */
+    /** 重启类型： - SOFT：普通重启。 - HARD：强制重启。
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -169,8 +146,6 @@ public class BatchRebootSeversOption  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -181,13 +156,15 @@ public class BatchRebootSeversOption  {
             return false;
         }
         BatchRebootSeversOption batchRebootSeversOption = (BatchRebootSeversOption) o;
-        return Objects.equals(this.servers, batchRebootSeversOption.servers) &&
-            Objects.equals(this.type, batchRebootSeversOption.type);
+        return Objects.equals(this.servers, batchRebootSeversOption.servers)
+            && Objects.equals(this.type, batchRebootSeversOption.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(servers, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -197,16 +174,13 @@ public class BatchRebootSeversOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

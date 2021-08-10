@@ -1,118 +1,87 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bcs.v2.model.BasicInfo;
-import com.huaweicloud.sdk.bcs.v2.model.ChannelInfo;
-import com.huaweicloud.sdk.bcs.v2.model.CouchDBInfo;
-import com.huaweicloud.sdk.bcs.v2.model.DmsKafkaInfo;
-import com.huaweicloud.sdk.bcs.v2.model.IefInfo;
-import com.huaweicloud.sdk.bcs.v2.model.OBSInfo;
-import com.huaweicloud.sdk.bcs.v2.model.PeerInfo;
-import com.huaweicloud.sdk.bcs.v2.model.SfsInfo;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowBlockchainDetailResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="basic_info")
-    
+    @JsonProperty(value = "basic_info")
+
     private BasicInfo basicInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="channels")
-    
+    @JsonProperty(value = "channels")
+
     private List<ChannelInfo> channels = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="peer_info")
-    
+    @JsonProperty(value = "peer_info")
+
     private List<PeerInfo> peerInfo = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="light_peer_info")
-    
+    @JsonProperty(value = "light_peer_info")
+
     private List<PeerInfo> lightPeerInfo = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="orderer_info")
-    
+    @JsonProperty(value = "orderer_info")
+
     private PeerInfo ordererInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="couch_db_info")
-    
+    @JsonProperty(value = "couch_db_info")
+
     private CouchDBInfo couchDbInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dms_kafka_info")
-    
+    @JsonProperty(value = "dms_kafka_info")
+
     private DmsKafkaInfo dmsKafkaInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ief_info")
-    
+    @JsonProperty(value = "ief_info")
+
     private IefInfo iefInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sfs_info")
-    
+    @JsonProperty(value = "sfs_info")
+
     private SfsInfo sfsInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="agent_info")
-    
+    @JsonProperty(value = "agent_info")
+
     private PeerInfo agentInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="restapi_info")
-    
+    @JsonProperty(value = "restapi_info")
+
     private PeerInfo restapiInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="evs_pvc_info")
-    
+    @JsonProperty(value = "evs_pvc_info")
+
     private Map<String, Map<String, String>> evsPvcInfo = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tc3_taskserver_info")
-    
+    @JsonProperty(value = "tc3_taskserver_info")
+
     private PeerInfo tc3TaskserverInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="obs_bucket_info")
-    
+    @JsonProperty(value = "obs_bucket_info")
+
     private OBSInfo obsBucketInfo;
 
     public ShowBlockchainDetailResponse withBasicInfo(BasicInfo basicInfo) {
@@ -121,19 +90,17 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
     }
 
     public ShowBlockchainDetailResponse withBasicInfo(Consumer<BasicInfo> basicInfoSetter) {
-        if(this.basicInfo == null ){
+        if (this.basicInfo == null) {
             this.basicInfo = new BasicInfo();
             basicInfoSetter.accept(this.basicInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get basicInfo
-     * @return basicInfo
-     */
+    /** Get basicInfo
+     * 
+     * @return basicInfo */
     public BasicInfo getBasicInfo() {
         return basicInfo;
     }
@@ -142,16 +109,13 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         this.basicInfo = basicInfo;
     }
 
-    
-
     public ShowBlockchainDetailResponse withChannels(List<ChannelInfo> channels) {
         this.channels = channels;
         return this;
     }
 
-    
     public ShowBlockchainDetailResponse addChannelsItem(ChannelInfo channelsItem) {
-        if(this.channels == null) {
+        if (this.channels == null) {
             this.channels = new ArrayList<>();
         }
         this.channels.add(channelsItem);
@@ -159,17 +123,16 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
     }
 
     public ShowBlockchainDetailResponse withChannels(Consumer<List<ChannelInfo>> channelsSetter) {
-        if(this.channels == null) {
+        if (this.channels == null) {
             this.channels = new ArrayList<>();
         }
         channelsSetter.accept(this.channels);
         return this;
     }
 
-    /**
-     * 通道信息
-     * @return channels
-     */
+    /** 通道信息
+     * 
+     * @return channels */
     public List<ChannelInfo> getChannels() {
         return channels;
     }
@@ -178,16 +141,13 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         this.channels = channels;
     }
 
-    
-
     public ShowBlockchainDetailResponse withPeerInfo(List<PeerInfo> peerInfo) {
         this.peerInfo = peerInfo;
         return this;
     }
 
-    
     public ShowBlockchainDetailResponse addPeerInfoItem(PeerInfo peerInfoItem) {
-        if(this.peerInfo == null) {
+        if (this.peerInfo == null) {
             this.peerInfo = new ArrayList<>();
         }
         this.peerInfo.add(peerInfoItem);
@@ -195,17 +155,16 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
     }
 
     public ShowBlockchainDetailResponse withPeerInfo(Consumer<List<PeerInfo>> peerInfoSetter) {
-        if(this.peerInfo == null) {
+        if (this.peerInfo == null) {
             this.peerInfo = new ArrayList<>();
         }
         peerInfoSetter.accept(this.peerInfo);
         return this;
     }
 
-    /**
-     * peer组织信息
-     * @return peerInfo
-     */
+    /** peer组织信息
+     * 
+     * @return peerInfo */
     public List<PeerInfo> getPeerInfo() {
         return peerInfo;
     }
@@ -214,16 +173,13 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         this.peerInfo = peerInfo;
     }
 
-    
-
     public ShowBlockchainDetailResponse withLightPeerInfo(List<PeerInfo> lightPeerInfo) {
         this.lightPeerInfo = lightPeerInfo;
         return this;
     }
 
-    
     public ShowBlockchainDetailResponse addLightPeerInfoItem(PeerInfo lightPeerInfoItem) {
-        if(this.lightPeerInfo == null) {
+        if (this.lightPeerInfo == null) {
             this.lightPeerInfo = new ArrayList<>();
         }
         this.lightPeerInfo.add(lightPeerInfoItem);
@@ -231,17 +187,16 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
     }
 
     public ShowBlockchainDetailResponse withLightPeerInfo(Consumer<List<PeerInfo>> lightPeerInfoSetter) {
-        if(this.lightPeerInfo == null) {
+        if (this.lightPeerInfo == null) {
             this.lightPeerInfo = new ArrayList<>();
         }
         lightPeerInfoSetter.accept(this.lightPeerInfo);
         return this;
     }
 
-    /**
-     * light_peer组织信息
-     * @return lightPeerInfo
-     */
+    /** light_peer组织信息
+     * 
+     * @return lightPeerInfo */
     public List<PeerInfo> getLightPeerInfo() {
         return lightPeerInfo;
     }
@@ -250,27 +205,23 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         this.lightPeerInfo = lightPeerInfo;
     }
 
-    
-
     public ShowBlockchainDetailResponse withOrdererInfo(PeerInfo ordererInfo) {
         this.ordererInfo = ordererInfo;
         return this;
     }
 
     public ShowBlockchainDetailResponse withOrdererInfo(Consumer<PeerInfo> ordererInfoSetter) {
-        if(this.ordererInfo == null ){
+        if (this.ordererInfo == null) {
             this.ordererInfo = new PeerInfo();
             ordererInfoSetter.accept(this.ordererInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get ordererInfo
-     * @return ordererInfo
-     */
+    /** Get ordererInfo
+     * 
+     * @return ordererInfo */
     public PeerInfo getOrdererInfo() {
         return ordererInfo;
     }
@@ -279,27 +230,23 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         this.ordererInfo = ordererInfo;
     }
 
-    
-
     public ShowBlockchainDetailResponse withCouchDbInfo(CouchDBInfo couchDbInfo) {
         this.couchDbInfo = couchDbInfo;
         return this;
     }
 
     public ShowBlockchainDetailResponse withCouchDbInfo(Consumer<CouchDBInfo> couchDbInfoSetter) {
-        if(this.couchDbInfo == null ){
+        if (this.couchDbInfo == null) {
             this.couchDbInfo = new CouchDBInfo();
             couchDbInfoSetter.accept(this.couchDbInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get couchDbInfo
-     * @return couchDbInfo
-     */
+    /** Get couchDbInfo
+     * 
+     * @return couchDbInfo */
     public CouchDBInfo getCouchDbInfo() {
         return couchDbInfo;
     }
@@ -308,27 +255,23 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         this.couchDbInfo = couchDbInfo;
     }
 
-    
-
     public ShowBlockchainDetailResponse withDmsKafkaInfo(DmsKafkaInfo dmsKafkaInfo) {
         this.dmsKafkaInfo = dmsKafkaInfo;
         return this;
     }
 
     public ShowBlockchainDetailResponse withDmsKafkaInfo(Consumer<DmsKafkaInfo> dmsKafkaInfoSetter) {
-        if(this.dmsKafkaInfo == null ){
+        if (this.dmsKafkaInfo == null) {
             this.dmsKafkaInfo = new DmsKafkaInfo();
             dmsKafkaInfoSetter.accept(this.dmsKafkaInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get dmsKafkaInfo
-     * @return dmsKafkaInfo
-     */
+    /** Get dmsKafkaInfo
+     * 
+     * @return dmsKafkaInfo */
     public DmsKafkaInfo getDmsKafkaInfo() {
         return dmsKafkaInfo;
     }
@@ -337,27 +280,23 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         this.dmsKafkaInfo = dmsKafkaInfo;
     }
 
-    
-
     public ShowBlockchainDetailResponse withIefInfo(IefInfo iefInfo) {
         this.iefInfo = iefInfo;
         return this;
     }
 
     public ShowBlockchainDetailResponse withIefInfo(Consumer<IefInfo> iefInfoSetter) {
-        if(this.iefInfo == null ){
+        if (this.iefInfo == null) {
             this.iefInfo = new IefInfo();
             iefInfoSetter.accept(this.iefInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get iefInfo
-     * @return iefInfo
-     */
+    /** Get iefInfo
+     * 
+     * @return iefInfo */
     public IefInfo getIefInfo() {
         return iefInfo;
     }
@@ -366,27 +305,23 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         this.iefInfo = iefInfo;
     }
 
-    
-
     public ShowBlockchainDetailResponse withSfsInfo(SfsInfo sfsInfo) {
         this.sfsInfo = sfsInfo;
         return this;
     }
 
     public ShowBlockchainDetailResponse withSfsInfo(Consumer<SfsInfo> sfsInfoSetter) {
-        if(this.sfsInfo == null ){
+        if (this.sfsInfo == null) {
             this.sfsInfo = new SfsInfo();
             sfsInfoSetter.accept(this.sfsInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get sfsInfo
-     * @return sfsInfo
-     */
+    /** Get sfsInfo
+     * 
+     * @return sfsInfo */
     public SfsInfo getSfsInfo() {
         return sfsInfo;
     }
@@ -395,27 +330,23 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         this.sfsInfo = sfsInfo;
     }
 
-    
-
     public ShowBlockchainDetailResponse withAgentInfo(PeerInfo agentInfo) {
         this.agentInfo = agentInfo;
         return this;
     }
 
     public ShowBlockchainDetailResponse withAgentInfo(Consumer<PeerInfo> agentInfoSetter) {
-        if(this.agentInfo == null ){
+        if (this.agentInfo == null) {
             this.agentInfo = new PeerInfo();
             agentInfoSetter.accept(this.agentInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get agentInfo
-     * @return agentInfo
-     */
+    /** Get agentInfo
+     * 
+     * @return agentInfo */
     public PeerInfo getAgentInfo() {
         return agentInfo;
     }
@@ -424,27 +355,23 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         this.agentInfo = agentInfo;
     }
 
-    
-
     public ShowBlockchainDetailResponse withRestapiInfo(PeerInfo restapiInfo) {
         this.restapiInfo = restapiInfo;
         return this;
     }
 
     public ShowBlockchainDetailResponse withRestapiInfo(Consumer<PeerInfo> restapiInfoSetter) {
-        if(this.restapiInfo == null ){
+        if (this.restapiInfo == null) {
             this.restapiInfo = new PeerInfo();
             restapiInfoSetter.accept(this.restapiInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get restapiInfo
-     * @return restapiInfo
-     */
+    /** Get restapiInfo
+     * 
+     * @return restapiInfo */
     public PeerInfo getRestapiInfo() {
         return restapiInfo;
     }
@@ -453,17 +380,13 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         this.restapiInfo = restapiInfo;
     }
 
-    
-
     public ShowBlockchainDetailResponse withEvsPvcInfo(Map<String, Map<String, String>> evsPvcInfo) {
         this.evsPvcInfo = evsPvcInfo;
         return this;
     }
 
-    
-
     public ShowBlockchainDetailResponse putEvsPvcInfoItem(String key, Map<String, String> evsPvcInfoItem) {
-        if(this.evsPvcInfo == null) {
+        if (this.evsPvcInfo == null) {
             this.evsPvcInfo = new HashMap<>();
         }
         this.evsPvcInfo.put(key, evsPvcInfoItem);
@@ -471,16 +394,16 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
     }
 
     public ShowBlockchainDetailResponse withEvsPvcInfo(Consumer<Map<String, Map<String, String>>> evsPvcInfoSetter) {
-        if(this.evsPvcInfo == null) {
+        if (this.evsPvcInfo == null) {
             this.evsPvcInfo = new HashMap<>();
         }
         evsPvcInfoSetter.accept(this.evsPvcInfo);
         return this;
     }
-    /**
-     * 云硬盘存储卷信息
-     * @return evsPvcInfo
-     */
+
+    /** 云硬盘存储卷信息
+     * 
+     * @return evsPvcInfo */
     public Map<String, Map<String, String>> getEvsPvcInfo() {
         return evsPvcInfo;
     }
@@ -489,27 +412,23 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         this.evsPvcInfo = evsPvcInfo;
     }
 
-    
-
     public ShowBlockchainDetailResponse withTc3TaskserverInfo(PeerInfo tc3TaskserverInfo) {
         this.tc3TaskserverInfo = tc3TaskserverInfo;
         return this;
     }
 
     public ShowBlockchainDetailResponse withTc3TaskserverInfo(Consumer<PeerInfo> tc3TaskserverInfoSetter) {
-        if(this.tc3TaskserverInfo == null ){
+        if (this.tc3TaskserverInfo == null) {
             this.tc3TaskserverInfo = new PeerInfo();
             tc3TaskserverInfoSetter.accept(this.tc3TaskserverInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get tc3TaskserverInfo
-     * @return tc3TaskserverInfo
-     */
+    /** Get tc3TaskserverInfo
+     * 
+     * @return tc3TaskserverInfo */
     public PeerInfo getTc3TaskserverInfo() {
         return tc3TaskserverInfo;
     }
@@ -518,27 +437,23 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         this.tc3TaskserverInfo = tc3TaskserverInfo;
     }
 
-    
-
     public ShowBlockchainDetailResponse withObsBucketInfo(OBSInfo obsBucketInfo) {
         this.obsBucketInfo = obsBucketInfo;
         return this;
     }
 
     public ShowBlockchainDetailResponse withObsBucketInfo(Consumer<OBSInfo> obsBucketInfoSetter) {
-        if(this.obsBucketInfo == null ){
+        if (this.obsBucketInfo == null) {
             this.obsBucketInfo = new OBSInfo();
             obsBucketInfoSetter.accept(this.obsBucketInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get obsBucketInfo
-     * @return obsBucketInfo
-     */
+    /** Get obsBucketInfo
+     * 
+     * @return obsBucketInfo */
     public OBSInfo getObsBucketInfo() {
         return obsBucketInfo;
     }
@@ -546,8 +461,6 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
     public void setObsBucketInfo(OBSInfo obsBucketInfo) {
         this.obsBucketInfo = obsBucketInfo;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -558,25 +471,40 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
             return false;
         }
         ShowBlockchainDetailResponse showBlockchainDetailResponse = (ShowBlockchainDetailResponse) o;
-        return Objects.equals(this.basicInfo, showBlockchainDetailResponse.basicInfo) &&
-            Objects.equals(this.channels, showBlockchainDetailResponse.channels) &&
-            Objects.equals(this.peerInfo, showBlockchainDetailResponse.peerInfo) &&
-            Objects.equals(this.lightPeerInfo, showBlockchainDetailResponse.lightPeerInfo) &&
-            Objects.equals(this.ordererInfo, showBlockchainDetailResponse.ordererInfo) &&
-            Objects.equals(this.couchDbInfo, showBlockchainDetailResponse.couchDbInfo) &&
-            Objects.equals(this.dmsKafkaInfo, showBlockchainDetailResponse.dmsKafkaInfo) &&
-            Objects.equals(this.iefInfo, showBlockchainDetailResponse.iefInfo) &&
-            Objects.equals(this.sfsInfo, showBlockchainDetailResponse.sfsInfo) &&
-            Objects.equals(this.agentInfo, showBlockchainDetailResponse.agentInfo) &&
-            Objects.equals(this.restapiInfo, showBlockchainDetailResponse.restapiInfo) &&
-            Objects.equals(this.evsPvcInfo, showBlockchainDetailResponse.evsPvcInfo) &&
-            Objects.equals(this.tc3TaskserverInfo, showBlockchainDetailResponse.tc3TaskserverInfo) &&
-            Objects.equals(this.obsBucketInfo, showBlockchainDetailResponse.obsBucketInfo);
+        return Objects.equals(this.basicInfo, showBlockchainDetailResponse.basicInfo)
+            && Objects.equals(this.channels, showBlockchainDetailResponse.channels)
+            && Objects.equals(this.peerInfo, showBlockchainDetailResponse.peerInfo)
+            && Objects.equals(this.lightPeerInfo, showBlockchainDetailResponse.lightPeerInfo)
+            && Objects.equals(this.ordererInfo, showBlockchainDetailResponse.ordererInfo)
+            && Objects.equals(this.couchDbInfo, showBlockchainDetailResponse.couchDbInfo)
+            && Objects.equals(this.dmsKafkaInfo, showBlockchainDetailResponse.dmsKafkaInfo)
+            && Objects.equals(this.iefInfo, showBlockchainDetailResponse.iefInfo)
+            && Objects.equals(this.sfsInfo, showBlockchainDetailResponse.sfsInfo)
+            && Objects.equals(this.agentInfo, showBlockchainDetailResponse.agentInfo)
+            && Objects.equals(this.restapiInfo, showBlockchainDetailResponse.restapiInfo)
+            && Objects.equals(this.evsPvcInfo, showBlockchainDetailResponse.evsPvcInfo)
+            && Objects.equals(this.tc3TaskserverInfo, showBlockchainDetailResponse.tc3TaskserverInfo)
+            && Objects.equals(this.obsBucketInfo, showBlockchainDetailResponse.obsBucketInfo);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(basicInfo, channels, peerInfo, lightPeerInfo, ordererInfo, couchDbInfo, dmsKafkaInfo, iefInfo, sfsInfo, agentInfo, restapiInfo, evsPvcInfo, tc3TaskserverInfo, obsBucketInfo);
+        return Objects.hash(basicInfo,
+            channels,
+            peerInfo,
+            lightPeerInfo,
+            ordererInfo,
+            couchDbInfo,
+            dmsKafkaInfo,
+            iefInfo,
+            sfsInfo,
+            agentInfo,
+            restapiInfo,
+            evsPvcInfo,
+            tc3TaskserverInfo,
+            obsBucketInfo);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -598,16 +526,13 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

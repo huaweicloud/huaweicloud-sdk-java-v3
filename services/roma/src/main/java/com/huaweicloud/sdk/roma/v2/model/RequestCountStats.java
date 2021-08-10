@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * RequestCountStats
- */
-public class RequestCountStats  {
-
-
+/** RequestCountStats */
+public class RequestCountStats {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_count")
-    
+    @JsonProperty(value = "req_count")
+
     private Integer reqCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_count2xx")
-    
+    @JsonProperty(value = "req_count2xx")
+
     private Integer reqCount2xx;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_count4xx")
-    
+    @JsonProperty(value = "req_count4xx")
+
     private Integer reqCount4xx;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_count5xx")
-    
+    @JsonProperty(value = "req_count5xx")
+
     private Integer reqCount5xx;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_count_error")
-    
+    @JsonProperty(value = "req_count_error")
+
     private Integer reqCountError;
 
     public RequestCountStats withReqCount(Integer reqCount) {
@@ -52,13 +38,9 @@ public class RequestCountStats  {
         return this;
     }
 
-    
-
-
-    /**
-     * 请求总次数
-     * @return reqCount
-     */
+    /** 请求总次数
+     * 
+     * @return reqCount */
     public Integer getReqCount() {
         return reqCount;
     }
@@ -67,20 +49,14 @@ public class RequestCountStats  {
         this.reqCount = reqCount;
     }
 
-    
-
     public RequestCountStats withReqCount2xx(Integer reqCount2xx) {
         this.reqCount2xx = reqCount2xx;
         return this;
     }
 
-    
-
-
-    /**
-     * 2xx响应码总次数
-     * @return reqCount2xx
-     */
+    /** 2xx响应码总次数
+     * 
+     * @return reqCount2xx */
     public Integer getReqCount2xx() {
         return reqCount2xx;
     }
@@ -89,20 +65,14 @@ public class RequestCountStats  {
         this.reqCount2xx = reqCount2xx;
     }
 
-    
-
     public RequestCountStats withReqCount4xx(Integer reqCount4xx) {
         this.reqCount4xx = reqCount4xx;
         return this;
     }
 
-    
-
-
-    /**
-     * 4xx响应码总次数
-     * @return reqCount4xx
-     */
+    /** 4xx响应码总次数
+     * 
+     * @return reqCount4xx */
     public Integer getReqCount4xx() {
         return reqCount4xx;
     }
@@ -111,20 +81,14 @@ public class RequestCountStats  {
         this.reqCount4xx = reqCount4xx;
     }
 
-    
-
     public RequestCountStats withReqCount5xx(Integer reqCount5xx) {
         this.reqCount5xx = reqCount5xx;
         return this;
     }
 
-    
-
-
-    /**
-     * 5xx响应码总次数
-     * @return reqCount5xx
-     */
+    /** 5xx响应码总次数
+     * 
+     * @return reqCount5xx */
     public Integer getReqCount5xx() {
         return reqCount5xx;
     }
@@ -133,20 +97,14 @@ public class RequestCountStats  {
         this.reqCount5xx = reqCount5xx;
     }
 
-    
-
     public RequestCountStats withReqCountError(Integer reqCountError) {
         this.reqCountError = reqCountError;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误次数
-     * @return reqCountError
-     */
+    /** 错误次数
+     * 
+     * @return reqCountError */
     public Integer getReqCountError() {
         return reqCountError;
     }
@@ -154,8 +112,6 @@ public class RequestCountStats  {
     public void setReqCountError(Integer reqCountError) {
         this.reqCountError = reqCountError;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,18 @@ public class RequestCountStats  {
             return false;
         }
         RequestCountStats requestCountStats = (RequestCountStats) o;
-        return Objects.equals(this.reqCount, requestCountStats.reqCount) &&
-            Objects.equals(this.reqCount2xx, requestCountStats.reqCount2xx) &&
-            Objects.equals(this.reqCount4xx, requestCountStats.reqCount4xx) &&
-            Objects.equals(this.reqCount5xx, requestCountStats.reqCount5xx) &&
-            Objects.equals(this.reqCountError, requestCountStats.reqCountError);
+        return Objects.equals(this.reqCount, requestCountStats.reqCount)
+            && Objects.equals(this.reqCount2xx, requestCountStats.reqCount2xx)
+            && Objects.equals(this.reqCount4xx, requestCountStats.reqCount4xx)
+            && Objects.equals(this.reqCount5xx, requestCountStats.reqCount5xx)
+            && Objects.equals(this.reqCountError, requestCountStats.reqCountError);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(reqCount, reqCount2xx, reqCount4xx, reqCount5xx, reqCountError);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class RequestCountStats  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

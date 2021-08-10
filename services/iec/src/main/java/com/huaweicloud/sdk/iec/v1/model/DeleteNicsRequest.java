@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iec.v1.model.DeleteNicsRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class DeleteNicsRequest  {
-
-
+/** Request Object */
+public class DeleteNicsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private DeleteNicsRequestBody body;
 
     public DeleteNicsRequest withInstanceId(String instanceId) {
@@ -35,13 +24,9 @@ public class DeleteNicsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例ID。
-     * @return instanceId
-     */
+    /** 边缘实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -50,27 +35,23 @@ public class DeleteNicsRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public DeleteNicsRequest withBody(DeleteNicsRequestBody body) {
         this.body = body;
         return this;
     }
 
     public DeleteNicsRequest withBody(Consumer<DeleteNicsRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new DeleteNicsRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public DeleteNicsRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class DeleteNicsRequest  {
     public void setBody(DeleteNicsRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class DeleteNicsRequest  {
             return false;
         }
         DeleteNicsRequest deleteNicsRequest = (DeleteNicsRequest) o;
-        return Objects.equals(this.instanceId, deleteNicsRequest.instanceId) &&
-            Objects.equals(this.body, deleteNicsRequest.body);
+        return Objects.equals(this.instanceId, deleteNicsRequest.instanceId)
+            && Objects.equals(this.body, deleteNicsRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class DeleteNicsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

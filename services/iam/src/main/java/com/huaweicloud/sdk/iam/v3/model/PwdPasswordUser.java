@@ -1,39 +1,29 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.PwdPasswordUserDomain;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class PwdPasswordUser  {
-
-
+public class PwdPasswordUser {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
+
     private PwdPasswordUserDomain domain;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="password")
-    
+    @JsonProperty(value = "password")
+
     private String password;
 
     public PwdPasswordUser withDomain(PwdPasswordUserDomain domain) {
@@ -42,19 +32,17 @@ public class PwdPasswordUser  {
     }
 
     public PwdPasswordUser withDomain(Consumer<PwdPasswordUserDomain> domainSetter) {
-        if(this.domain == null ){
+        if (this.domain == null) {
             this.domain = new PwdPasswordUserDomain();
             domainSetter.accept(this.domain);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get domain
-     * @return domain
-     */
+    /** Get domain
+     * 
+     * @return domain */
     public PwdPasswordUserDomain getDomain() {
         return domain;
     }
@@ -63,20 +51,14 @@ public class PwdPasswordUser  {
         this.domain = domain;
     }
 
-    
-
     public PwdPasswordUser withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户名。
-     * @return name
-     */
+    /** IAM用户名。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -85,20 +67,14 @@ public class PwdPasswordUser  {
         this.name = name;
     }
 
-    
-
     public PwdPasswordUser withPassword(String password) {
         this.password = password;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户的登录密码。
-     * @return password
-     */
+    /** IAM用户的登录密码。
+     * 
+     * @return password */
     public String getPassword() {
         return password;
     }
@@ -106,8 +82,6 @@ public class PwdPasswordUser  {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +92,15 @@ public class PwdPasswordUser  {
             return false;
         }
         PwdPasswordUser pwdPasswordUser = (PwdPasswordUser) o;
-        return Objects.equals(this.domain, pwdPasswordUser.domain) &&
-            Objects.equals(this.name, pwdPasswordUser.name) &&
-            Objects.equals(this.password, pwdPasswordUser.password);
+        return Objects.equals(this.domain, pwdPasswordUser.domain) && Objects.equals(this.name, pwdPasswordUser.name)
+            && Objects.equals(this.password, pwdPasswordUser.password);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domain, name, password);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +111,13 @@ public class PwdPasswordUser  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,69 +1,47 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListBigkeyScanTasksRequest  {
-
-
+/** Request Object */
+public class ListBigkeyScanTasksRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
-    /**
-     * 分析任务状态
-     */
+
+    /** 分析任务状态 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum WAITING for value: "waiting"
-         */
+        /** Enum WAITING for value: "waiting" */
         public static final StatusEnum WAITING = new StatusEnum("waiting");
-        
-        /**
-         * Enum RUNNING for value: "running"
-         */
+
+        /** Enum RUNNING for value: "running" */
         public static final StatusEnum RUNNING = new StatusEnum("running");
-        
-        /**
-         * Enum SUCCESS for value: "success"
-         */
+
+        /** Enum SUCCESS for value: "success" */
         public static final StatusEnum SUCCESS = new StatusEnum("success");
-        
-        /**
-         * Enum FAILED for value: "failed"
-         */
+
+        /** Enum FAILED for value: "failed" */
         public static final StatusEnum FAILED = new StatusEnum("failed");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -94,7 +72,7 @@ public class ListBigkeyScanTasksRequest  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -105,7 +83,7 @@ public class ListBigkeyScanTasksRequest  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -129,10 +107,9 @@ public class ListBigkeyScanTasksRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
     public ListBigkeyScanTasksRequest withInstanceId(String instanceId) {
@@ -140,13 +117,9 @@ public class ListBigkeyScanTasksRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -155,20 +128,14 @@ public class ListBigkeyScanTasksRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListBigkeyScanTasksRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于0
-     * @return offset
-     */
+    /** 偏移量，表示从此偏移量开始查询， offset大于等于0
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -177,20 +144,14 @@ public class ListBigkeyScanTasksRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListBigkeyScanTasksRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示的条目数量。
-     * @return limit
-     */
+    /** 每页显示的条目数量。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -199,20 +160,14 @@ public class ListBigkeyScanTasksRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListBigkeyScanTasksRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 分析任务状态
-     * @return status
-     */
+    /** 分析任务状态
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -220,8 +175,6 @@ public class ListBigkeyScanTasksRequest  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -232,15 +185,17 @@ public class ListBigkeyScanTasksRequest  {
             return false;
         }
         ListBigkeyScanTasksRequest listBigkeyScanTasksRequest = (ListBigkeyScanTasksRequest) o;
-        return Objects.equals(this.instanceId, listBigkeyScanTasksRequest.instanceId) &&
-            Objects.equals(this.offset, listBigkeyScanTasksRequest.offset) &&
-            Objects.equals(this.limit, listBigkeyScanTasksRequest.limit) &&
-            Objects.equals(this.status, listBigkeyScanTasksRequest.status);
+        return Objects.equals(this.instanceId, listBigkeyScanTasksRequest.instanceId)
+            && Objects.equals(this.offset, listBigkeyScanTasksRequest.offset)
+            && Objects.equals(this.limit, listBigkeyScanTasksRequest.limit)
+            && Objects.equals(this.status, listBigkeyScanTasksRequest.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, offset, limit, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -252,16 +207,13 @@ public class ListBigkeyScanTasksRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

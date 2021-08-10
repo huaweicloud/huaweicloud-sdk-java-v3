@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * nodes参数说明。
- */
-public class GetDetailfNodesInfo  {
-
-
+/** nodes参数说明。 */
+public class GetDetailfNodesInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
+
     private String port;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip")
-    
+    @JsonProperty(value = "ip")
+
     private String ip;
 
     public GetDetailfNodesInfo withStatus(String status) {
@@ -40,13 +28,9 @@ public class GetDetailfNodesInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * DDM实例节点状态。
-     * @return status
-     */
+    /** DDM实例节点状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -55,20 +39,14 @@ public class GetDetailfNodesInfo  {
         this.status = status;
     }
 
-    
-
     public GetDetailfNodesInfo withPort(String port) {
         this.port = port;
         return this;
     }
 
-    
-
-
-    /**
-     * DDM实例节点port。
-     * @return port
-     */
+    /** DDM实例节点port。
+     * 
+     * @return port */
     public String getPort() {
         return port;
     }
@@ -77,20 +55,14 @@ public class GetDetailfNodesInfo  {
         this.port = port;
     }
 
-    
-
     public GetDetailfNodesInfo withIp(String ip) {
         this.ip = ip;
         return this;
     }
 
-    
-
-
-    /**
-     * DDM实例节点IP。
-     * @return ip
-     */
+    /** DDM实例节点IP。
+     * 
+     * @return ip */
     public String getIp() {
         return ip;
     }
@@ -98,8 +70,6 @@ public class GetDetailfNodesInfo  {
     public void setIp(String ip) {
         this.ip = ip;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,15 @@ public class GetDetailfNodesInfo  {
             return false;
         }
         GetDetailfNodesInfo getDetailfNodesInfo = (GetDetailfNodesInfo) o;
-        return Objects.equals(this.status, getDetailfNodesInfo.status) &&
-            Objects.equals(this.port, getDetailfNodesInfo.port) &&
-            Objects.equals(this.ip, getDetailfNodesInfo.ip);
+        return Objects.equals(this.status, getDetailfNodesInfo.status)
+            && Objects.equals(this.port, getDetailfNodesInfo.port) && Objects.equals(this.ip, getDetailfNodesInfo.ip);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(status, port, ip);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +99,13 @@ public class GetDetailfNodesInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

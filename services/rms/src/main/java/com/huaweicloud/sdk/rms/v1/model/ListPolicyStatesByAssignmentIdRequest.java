@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListPolicyStatesByAssignmentIdRequest  {
-
-
+/** Request Object */
+public class ListPolicyStatesByAssignmentIdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_assignment_id")
-    
+    @JsonProperty(value = "policy_assignment_id")
+
     private String policyAssignmentId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="compliance_state")
-    
+    @JsonProperty(value = "compliance_state")
+
     private String complianceState;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
+    @JsonProperty(value = "resource_id")
+
     private String resourceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_name")
-    
+    @JsonProperty(value = "resource_name")
+
     private String resourceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
     public ListPolicyStatesByAssignmentIdRequest withPolicyAssignmentId(String policyAssignmentId) {
@@ -58,13 +43,9 @@ public class ListPolicyStatesByAssignmentIdRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 规则ID
-     * @return policyAssignmentId
-     */
+    /** 规则ID
+     * 
+     * @return policyAssignmentId */
     public String getPolicyAssignmentId() {
         return policyAssignmentId;
     }
@@ -73,20 +54,14 @@ public class ListPolicyStatesByAssignmentIdRequest  {
         this.policyAssignmentId = policyAssignmentId;
     }
 
-    
-
     public ListPolicyStatesByAssignmentIdRequest withComplianceState(String complianceState) {
         this.complianceState = complianceState;
         return this;
     }
 
-    
-
-
-    /**
-     * 合规状态
-     * @return complianceState
-     */
+    /** 合规状态
+     * 
+     * @return complianceState */
     public String getComplianceState() {
         return complianceState;
     }
@@ -95,20 +70,14 @@ public class ListPolicyStatesByAssignmentIdRequest  {
         this.complianceState = complianceState;
     }
 
-    
-
     public ListPolicyStatesByAssignmentIdRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源ID
-     * @return resourceId
-     */
+    /** 资源ID
+     * 
+     * @return resourceId */
     public String getResourceId() {
         return resourceId;
     }
@@ -117,20 +86,14 @@ public class ListPolicyStatesByAssignmentIdRequest  {
         this.resourceId = resourceId;
     }
 
-    
-
     public ListPolicyStatesByAssignmentIdRequest withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源名称
-     * @return resourceName
-     */
+    /** 资源名称
+     * 
+     * @return resourceName */
     public String getResourceName() {
         return resourceName;
     }
@@ -139,22 +102,14 @@ public class ListPolicyStatesByAssignmentIdRequest  {
         this.resourceName = resourceName;
     }
 
-    
-
     public ListPolicyStatesByAssignmentIdRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 最大的返回数量
-     * minimum: 1
-     * maximum: 200
-     * @return limit
-     */
+    /** 最大的返回数量 minimum: 1 maximum: 200
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -163,20 +118,14 @@ public class ListPolicyStatesByAssignmentIdRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListPolicyStatesByAssignmentIdRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页参数，通过上一个请求中返回的marker信息作为输入，获取当前页
-     * @return marker
-     */
+    /** 分页参数，通过上一个请求中返回的marker信息作为输入，获取当前页
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -184,8 +133,6 @@ public class ListPolicyStatesByAssignmentIdRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -195,18 +142,21 @@ public class ListPolicyStatesByAssignmentIdRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListPolicyStatesByAssignmentIdRequest listPolicyStatesByAssignmentIdRequest = (ListPolicyStatesByAssignmentIdRequest) o;
-        return Objects.equals(this.policyAssignmentId, listPolicyStatesByAssignmentIdRequest.policyAssignmentId) &&
-            Objects.equals(this.complianceState, listPolicyStatesByAssignmentIdRequest.complianceState) &&
-            Objects.equals(this.resourceId, listPolicyStatesByAssignmentIdRequest.resourceId) &&
-            Objects.equals(this.resourceName, listPolicyStatesByAssignmentIdRequest.resourceName) &&
-            Objects.equals(this.limit, listPolicyStatesByAssignmentIdRequest.limit) &&
-            Objects.equals(this.marker, listPolicyStatesByAssignmentIdRequest.marker);
+        ListPolicyStatesByAssignmentIdRequest listPolicyStatesByAssignmentIdRequest =
+            (ListPolicyStatesByAssignmentIdRequest) o;
+        return Objects.equals(this.policyAssignmentId, listPolicyStatesByAssignmentIdRequest.policyAssignmentId)
+            && Objects.equals(this.complianceState, listPolicyStatesByAssignmentIdRequest.complianceState)
+            && Objects.equals(this.resourceId, listPolicyStatesByAssignmentIdRequest.resourceId)
+            && Objects.equals(this.resourceName, listPolicyStatesByAssignmentIdRequest.resourceName)
+            && Objects.equals(this.limit, listPolicyStatesByAssignmentIdRequest.limit)
+            && Objects.equals(this.marker, listPolicyStatesByAssignmentIdRequest.marker);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(policyAssignmentId, complianceState, resourceId, resourceName, limit, marker);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -220,16 +170,13 @@ public class ListPolicyStatesByAssignmentIdRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

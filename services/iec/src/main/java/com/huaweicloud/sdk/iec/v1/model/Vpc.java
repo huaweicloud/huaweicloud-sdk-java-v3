@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 虚拟私有云的数据对象。
- */
-public class Vpc  {
-
-
+/** 虚拟私有云的数据对象。 */
+public class Vpc {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cidr")
-    
+    @JsonProperty(value = "cidr")
+
     private String cidr;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mode")
-    
+    @JsonProperty(value = "mode")
+
     private String mode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_num")
-    
+    @JsonProperty(value = "subnet_num")
+
     private Integer subnetNum;
 
     public Vpc withId(String id) {
@@ -52,13 +38,9 @@ public class Vpc  {
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟私有云的ID。
-     * @return id
-     */
+    /** 虚拟私有云的ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -67,20 +49,14 @@ public class Vpc  {
         this.id = id;
     }
 
-    
-
     public Vpc withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟私有云名称  取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）  约束：同一个帐号下的名称不能重复
-     * @return name
-     */
+    /** 虚拟私有云名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点） 约束：同一个帐号下的名称不能重复
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -89,20 +65,14 @@ public class Vpc  {
         this.name = name;
     }
 
-    
-
     public Vpc withCidr(String cidr) {
         this.cidr = cidr;
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟私有云下可用子网的范围  取值范围： 10.0.0.0/8~24 172.16.0.0/12~24 192.168.0.0/16~24  约束：必须是cidr格式，例如:192.168.0.0/16
-     * @return cidr
-     */
+    /** 虚拟私有云下可用子网的范围 取值范围： 10.0.0.0/8~24 172.16.0.0/12~24 192.168.0.0/16~24 约束：必须是cidr格式，例如:192.168.0.0/16
+     * 
+     * @return cidr */
     public String getCidr() {
         return cidr;
     }
@@ -111,20 +81,14 @@ public class Vpc  {
         this.cidr = cidr;
     }
 
-    
-
     public Vpc withMode(String mode) {
         this.mode = mode;
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟私有云的模式。
-     * @return mode
-     */
+    /** 虚拟私有云的模式。
+     * 
+     * @return mode */
     public String getMode() {
         return mode;
     }
@@ -133,20 +97,14 @@ public class Vpc  {
         this.mode = mode;
     }
 
-    
-
     public Vpc withSubnetNum(Integer subnetNum) {
         this.subnetNum = subnetNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网的数目。
-     * @return subnetNum
-     */
+    /** 子网的数目。
+     * 
+     * @return subnetNum */
     public Integer getSubnetNum() {
         return subnetNum;
     }
@@ -154,8 +112,6 @@ public class Vpc  {
     public void setSubnetNum(Integer subnetNum) {
         this.subnetNum = subnetNum;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,16 @@ public class Vpc  {
             return false;
         }
         Vpc vpc = (Vpc) o;
-        return Objects.equals(this.id, vpc.id) &&
-            Objects.equals(this.name, vpc.name) &&
-            Objects.equals(this.cidr, vpc.cidr) &&
-            Objects.equals(this.mode, vpc.mode) &&
-            Objects.equals(this.subnetNum, vpc.subnetNum);
+        return Objects.equals(this.id, vpc.id) && Objects.equals(this.name, vpc.name)
+            && Objects.equals(this.cidr, vpc.cidr) && Objects.equals(this.mode, vpc.mode)
+            && Objects.equals(this.subnetNum, vpc.subnetNum);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, cidr, mode, subnetNum);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +144,13 @@ public class Vpc  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

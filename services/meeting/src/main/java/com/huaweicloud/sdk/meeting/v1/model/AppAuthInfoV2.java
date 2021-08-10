@@ -7,6 +7,7 @@ import com.huaweicloud.sdk.meeting.v1.utils.HmacSHA256;
 import java.io.Serializable;
 
 public class AppAuthInfoV2 implements Serializable {
+
     private static final long serialVersionUID = 1L;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,11 +30,7 @@ public class AppAuthInfoV2 implements Serializable {
     @JsonProperty("key")
     private String key = null;
 
-    /**
-     * APPID
-     * minLength: 1
-     * maxLength: 64
-     **/
+    /** APPID minLength: 1 maxLength: 64 **/
     public String getAppId() {
         return appId;
     }
@@ -47,11 +44,7 @@ public class AppAuthInfoV2 implements Serializable {
         return this;
     }
 
-    /**
-     * 用户ID
-     * minLength: 1
-     * maxLength: 64
-     **/
+    /** 用户ID minLength: 1 maxLength: 64 **/
     public String getUserId() {
         return userId;
     }
@@ -65,12 +58,8 @@ public class AppAuthInfoV2 implements Serializable {
         return this;
     }
 
-    /**
-     * 应用鉴权信息过期时间戳，单位秒（当收到app鉴权请求时服务端的Unix时间戳大于expireTime时，本次鉴权失败。
-     * 样例：
-     * 如果要求应用鉴权信息10分钟后过期，expireTime = 当前Unix时间戳 + 60*10;
-     * 如果要求应用鉴权信息始终不过期，expireTime = 0）
-     **/
+    /** 应用鉴权信息过期时间戳，单位秒（当收到app鉴权请求时服务端的Unix时间戳大于expireTime时，本次鉴权失败。 样例： 如果要求应用鉴权信息10分钟后过期，expireTime = 当前Unix时间戳 +
+     * 60*10; 如果要求应用鉴权信息始终不过期，expireTime = 0） **/
     public Long getExpireTime() {
         return expireTime;
     }
@@ -84,11 +73,7 @@ public class AppAuthInfoV2 implements Serializable {
         return this;
     }
 
-    /**
-     * 随机字符串，用于计算应用鉴权信息
-     * minLength: 32
-     * maxLength: 64
-     **/
+    /** 随机字符串，用于计算应用鉴权信息 minLength: 32 maxLength: 64 **/
     public String getNonce() {
         return nonce;
     }
@@ -115,21 +100,18 @@ public class AppAuthInfoV2 implements Serializable {
         return this;
     }
 
-    /**
-     * 计算签名
+    /** 计算签名
      *
      * 计算公式：
      * <p>
-     * userId为null或者空字符串：
-     * signature=HexEncode(HMAC256((appId + "::" + expireTime + ":" + nonce), appKey))
+     * userId为null或者空字符串： signature=HexEncode(HMAC256((appId + "::" + expireTime + ":" + nonce), appKey))
      * </p>
      * <p>
-     * userId不为空：
-     * HMAC-SHA256 signature=HexEncode(HMAC256((appId + ":" + userId + ":" + expireTime + ":" + nonce), appKey))
+     * userId不为空： HMAC-SHA256 signature=HexEncode(HMAC256((appId + ":" + userId + ":" + expireTime + ":" + nonce),
+     * appKey))
      * </p>
      *
-     * @return
-     */
+     * @return */
     public String build() {
 
         StringBuilder sb = new StringBuilder(this.appId).append(":");
@@ -138,8 +120,7 @@ public class AppAuthInfoV2 implements Serializable {
         } else {
             sb.append(":");
         }
-        String data = sb.append(this.expireTime).append(":")
-            .append(this.nonce).toString();
+        String data = sb.append(this.expireTime).append(":").append(this.nonce).toString();
         return HmacSHA256.encode(data, this.key);
     }
 

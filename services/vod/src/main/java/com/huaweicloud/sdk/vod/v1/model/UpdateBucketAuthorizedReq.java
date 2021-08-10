@@ -1,32 +1,23 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class UpdateBucketAuthorizedReq  {
-
-
+public class UpdateBucketAuthorizedReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bucket")
-    
+    @JsonProperty(value = "bucket")
+
     private String bucket;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operation")
-    
+    @JsonProperty(value = "operation")
+
     private String operation;
 
     public UpdateBucketAuthorizedReq withBucket(String bucket) {
@@ -34,13 +25,9 @@ public class UpdateBucketAuthorizedReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * OBS桶名称。
-     * @return bucket
-     */
+    /** OBS桶名称。
+     * 
+     * @return bucket */
     public String getBucket() {
         return bucket;
     }
@@ -49,20 +36,14 @@ public class UpdateBucketAuthorizedReq  {
         this.bucket = bucket;
     }
 
-    
-
     public UpdateBucketAuthorizedReq withOperation(String operation) {
         this.operation = operation;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否进行桶授权。  取值如下： - 0：取消授权。 - 1：授权。
-     * @return operation
-     */
+    /** 是否进行桶授权。 取值如下： - 0：取消授权。 - 1：授权。
+     * 
+     * @return operation */
     public String getOperation() {
         return operation;
     }
@@ -70,8 +51,6 @@ public class UpdateBucketAuthorizedReq  {
     public void setOperation(String operation) {
         this.operation = operation;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +61,15 @@ public class UpdateBucketAuthorizedReq  {
             return false;
         }
         UpdateBucketAuthorizedReq updateBucketAuthorizedReq = (UpdateBucketAuthorizedReq) o;
-        return Objects.equals(this.bucket, updateBucketAuthorizedReq.bucket) &&
-            Objects.equals(this.operation, updateBucketAuthorizedReq.operation);
+        return Objects.equals(this.bucket, updateBucketAuthorizedReq.bucket)
+            && Objects.equals(this.operation, updateBucketAuthorizedReq.operation);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(bucket, operation);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +79,13 @@ public class UpdateBucketAuthorizedReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

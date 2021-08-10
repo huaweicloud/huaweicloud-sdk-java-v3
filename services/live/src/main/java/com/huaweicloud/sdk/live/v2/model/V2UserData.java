@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.live.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * V2UserData
- */
-public class V2UserData  {
-
-
+/** V2UserData */
+public class V2UserData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private Long value;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time")
-    
+    @JsonProperty(value = "time")
+
     private String time;
 
     public V2UserData withValue(Long value) {
@@ -34,15 +23,9 @@ public class V2UserData  {
         return this;
     }
 
-    
-
-
-    /**
-     * 采样点观众数。
-     * minimum: 0
-     * maximum: -1
-     * @return value
-     */
+    /** 采样点观众数。 minimum: 0 maximum: -1
+     * 
+     * @return value */
     public Long getValue() {
         return value;
     }
@@ -51,20 +34,14 @@ public class V2UserData  {
         this.value = value;
     }
 
-    
-
     public V2UserData withTime(String time) {
         this.time = time;
         return this;
     }
 
-    
-
-
-    /**
-     * 采样时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。
-     * @return time
-     */
+    /** 采样时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。
+     * 
+     * @return time */
     public String getTime() {
         return time;
     }
@@ -72,8 +49,6 @@ public class V2UserData  {
     public void setTime(String time) {
         this.time = time;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +59,14 @@ public class V2UserData  {
             return false;
         }
         V2UserData v2UserData = (V2UserData) o;
-        return Objects.equals(this.value, v2UserData.value) &&
-            Objects.equals(this.time, v2UserData.time);
+        return Objects.equals(this.value, v2UserData.value) && Objects.equals(this.time, v2UserData.time);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(value, time);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +76,13 @@ public class V2UserData  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

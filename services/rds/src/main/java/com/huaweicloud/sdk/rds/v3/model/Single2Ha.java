@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.Single2HaObject;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Single2Ha
- */
-public class Single2Ha  {
-
-
+/** Single2Ha */
+public class Single2Ha {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="single_to_ha")
-    
+    @JsonProperty(value = "single_to_ha")
+
     private Single2HaObject singleToHa;
 
     public Single2Ha withSingleToHa(Single2HaObject singleToHa) {
@@ -30,19 +20,17 @@ public class Single2Ha  {
     }
 
     public Single2Ha withSingleToHa(Consumer<Single2HaObject> singleToHaSetter) {
-        if(this.singleToHa == null ){
+        if (this.singleToHa == null) {
             this.singleToHa = new Single2HaObject();
             singleToHaSetter.accept(this.singleToHa);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get singleToHa
-     * @return singleToHa
-     */
+    /** Get singleToHa
+     * 
+     * @return singleToHa */
     public Single2HaObject getSingleToHa() {
         return singleToHa;
     }
@@ -50,8 +38,6 @@ public class Single2Ha  {
     public void setSingleToHa(Single2HaObject singleToHa) {
         this.singleToHa = singleToHa;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class Single2Ha  {
         Single2Ha single2Ha = (Single2Ha) o;
         return Objects.equals(this.singleToHa, single2Ha.singleToHa);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(singleToHa);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class Single2Ha  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

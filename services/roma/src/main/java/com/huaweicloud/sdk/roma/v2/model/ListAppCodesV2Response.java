@@ -1,58 +1,40 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.AppCodeBaseInfo;
-import com.huaweicloud.sdk.roma.v2.model.BasePage;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListAppCodesV2Response extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Long total;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_codes")
-    
+    @JsonProperty(value = "app_codes")
+
     private List<AppCodeBaseInfo> appCodes = null;
-    
+
     public ListAppCodesV2Response withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 本次返回的列表长度
-     * @return size
-     */
+    /** 本次返回的列表长度
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -61,20 +43,14 @@ public class ListAppCodesV2Response extends SdkResponse {
         this.size = size;
     }
 
-    
-
     public ListAppCodesV2Response withTotal(Long total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * 满足条件的记录数
-     * @return total
-     */
+    /** 满足条件的记录数
+     * 
+     * @return total */
     public Long getTotal() {
         return total;
     }
@@ -83,16 +59,13 @@ public class ListAppCodesV2Response extends SdkResponse {
         this.total = total;
     }
 
-    
-
     public ListAppCodesV2Response withAppCodes(List<AppCodeBaseInfo> appCodes) {
         this.appCodes = appCodes;
         return this;
     }
 
-    
     public ListAppCodesV2Response addAppCodesItem(AppCodeBaseInfo appCodesItem) {
-        if(this.appCodes == null) {
+        if (this.appCodes == null) {
             this.appCodes = new ArrayList<>();
         }
         this.appCodes.add(appCodesItem);
@@ -100,17 +73,16 @@ public class ListAppCodesV2Response extends SdkResponse {
     }
 
     public ListAppCodesV2Response withAppCodes(Consumer<List<AppCodeBaseInfo>> appCodesSetter) {
-        if(this.appCodes == null) {
+        if (this.appCodes == null) {
             this.appCodes = new ArrayList<>();
         }
         appCodesSetter.accept(this.appCodes);
         return this;
     }
 
-    /**
-     * App Code列表
-     * @return appCodes
-     */
+    /** App Code列表
+     * 
+     * @return appCodes */
     public List<AppCodeBaseInfo> getAppCodes() {
         return appCodes;
     }
@@ -118,8 +90,6 @@ public class ListAppCodesV2Response extends SdkResponse {
     public void setAppCodes(List<AppCodeBaseInfo> appCodes) {
         this.appCodes = appCodes;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,14 +100,16 @@ public class ListAppCodesV2Response extends SdkResponse {
             return false;
         }
         ListAppCodesV2Response listAppCodesV2Response = (ListAppCodesV2Response) o;
-        return Objects.equals(this.size, listAppCodesV2Response.size) &&
-            Objects.equals(this.total, listAppCodesV2Response.total) &&
-            Objects.equals(this.appCodes, listAppCodesV2Response.appCodes);
+        return Objects.equals(this.size, listAppCodesV2Response.size)
+            && Objects.equals(this.total, listAppCodesV2Response.total)
+            && Objects.equals(this.appCodes, listAppCodesV2Response.appCodes);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(size, total, appCodes);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -148,16 +120,13 @@ public class ListAppCodesV2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

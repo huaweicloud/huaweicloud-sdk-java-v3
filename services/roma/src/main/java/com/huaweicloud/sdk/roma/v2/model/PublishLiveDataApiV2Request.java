@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.LdApiDeploy;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class PublishLiveDataApiV2Request  {
-
-
+/** Request Object */
+public class PublishLiveDataApiV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ld_api_id")
-    
+    @JsonProperty(value = "ld_api_id")
+
     private String ldApiId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private LdApiDeploy body;
 
     public PublishLiveDataApiV2Request withInstanceId(String instanceId) {
@@ -41,13 +29,9 @@ public class PublishLiveDataApiV2Request  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -56,20 +40,14 @@ public class PublishLiveDataApiV2Request  {
         this.instanceId = instanceId;
     }
 
-    
-
     public PublishLiveDataApiV2Request withLdApiId(String ldApiId) {
         this.ldApiId = ldApiId;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API的编号
-     * @return ldApiId
-     */
+    /** 后端API的编号
+     * 
+     * @return ldApiId */
     public String getLdApiId() {
         return ldApiId;
     }
@@ -78,27 +56,23 @@ public class PublishLiveDataApiV2Request  {
         this.ldApiId = ldApiId;
     }
 
-    
-
     public PublishLiveDataApiV2Request withBody(LdApiDeploy body) {
         this.body = body;
         return this;
     }
 
     public PublishLiveDataApiV2Request withBody(Consumer<LdApiDeploy> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new LdApiDeploy();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public LdApiDeploy getBody() {
         return body;
     }
@@ -106,8 +80,6 @@ public class PublishLiveDataApiV2Request  {
     public void setBody(LdApiDeploy body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class PublishLiveDataApiV2Request  {
             return false;
         }
         PublishLiveDataApiV2Request publishLiveDataApiV2Request = (PublishLiveDataApiV2Request) o;
-        return Objects.equals(this.instanceId, publishLiveDataApiV2Request.instanceId) &&
-            Objects.equals(this.ldApiId, publishLiveDataApiV2Request.ldApiId) &&
-            Objects.equals(this.body, publishLiveDataApiV2Request.body);
+        return Objects.equals(this.instanceId, publishLiveDataApiV2Request.instanceId)
+            && Objects.equals(this.ldApiId, publishLiveDataApiV2Request.ldApiId)
+            && Objects.equals(this.body, publishLiveDataApiV2Request.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, ldApiId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class PublishLiveDataApiV2Request  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

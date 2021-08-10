@@ -1,58 +1,40 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.JobInfo;
-import com.huaweicloud.sdk.servicestage.v2.model.TaskInfo;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowJobDetailResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_count")
-    
+    @JsonProperty(value = "task_count")
+
     private Integer taskCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job")
-    
+    @JsonProperty(value = "job")
+
     private JobInfo job;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tasks")
-    
+    @JsonProperty(value = "tasks")
+
     private List<TaskInfo> tasks = null;
-    
+
     public ShowJobDetailResponse withTaskCount(Integer taskCount) {
         this.taskCount = taskCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 部署任务数量。
-     * @return taskCount
-     */
+    /** 部署任务数量。
+     * 
+     * @return taskCount */
     public Integer getTaskCount() {
         return taskCount;
     }
@@ -61,27 +43,23 @@ public class ShowJobDetailResponse extends SdkResponse {
         this.taskCount = taskCount;
     }
 
-    
-
     public ShowJobDetailResponse withJob(JobInfo job) {
         this.job = job;
         return this;
     }
 
     public ShowJobDetailResponse withJob(Consumer<JobInfo> jobSetter) {
-        if(this.job == null ){
+        if (this.job == null) {
             this.job = new JobInfo();
             jobSetter.accept(this.job);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get job
-     * @return job
-     */
+    /** Get job
+     * 
+     * @return job */
     public JobInfo getJob() {
         return job;
     }
@@ -90,16 +68,13 @@ public class ShowJobDetailResponse extends SdkResponse {
         this.job = job;
     }
 
-    
-
     public ShowJobDetailResponse withTasks(List<TaskInfo> tasks) {
         this.tasks = tasks;
         return this;
     }
 
-    
     public ShowJobDetailResponse addTasksItem(TaskInfo tasksItem) {
-        if(this.tasks == null) {
+        if (this.tasks == null) {
             this.tasks = new ArrayList<>();
         }
         this.tasks.add(tasksItem);
@@ -107,17 +82,16 @@ public class ShowJobDetailResponse extends SdkResponse {
     }
 
     public ShowJobDetailResponse withTasks(Consumer<List<TaskInfo>> tasksSetter) {
-        if(this.tasks == null) {
+        if (this.tasks == null) {
             this.tasks = new ArrayList<>();
         }
         tasksSetter.accept(this.tasks);
         return this;
     }
 
-    /**
-     * 部署任务列表。
-     * @return tasks
-     */
+    /** 部署任务列表。
+     * 
+     * @return tasks */
     public List<TaskInfo> getTasks() {
         return tasks;
     }
@@ -125,8 +99,6 @@ public class ShowJobDetailResponse extends SdkResponse {
     public void setTasks(List<TaskInfo> tasks) {
         this.tasks = tasks;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -137,14 +109,16 @@ public class ShowJobDetailResponse extends SdkResponse {
             return false;
         }
         ShowJobDetailResponse showJobDetailResponse = (ShowJobDetailResponse) o;
-        return Objects.equals(this.taskCount, showJobDetailResponse.taskCount) &&
-            Objects.equals(this.job, showJobDetailResponse.job) &&
-            Objects.equals(this.tasks, showJobDetailResponse.tasks);
+        return Objects.equals(this.taskCount, showJobDetailResponse.taskCount)
+            && Objects.equals(this.job, showJobDetailResponse.job)
+            && Objects.equals(this.tasks, showJobDetailResponse.tasks);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(taskCount, job, tasks);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -155,16 +129,13 @@ public class ShowJobDetailResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

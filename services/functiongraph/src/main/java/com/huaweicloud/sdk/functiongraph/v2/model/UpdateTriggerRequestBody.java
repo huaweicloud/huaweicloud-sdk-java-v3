@@ -1,41 +1,26 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * UpdateTriggerRequestBody
- */
-public class UpdateTriggerRequestBody  {
+/** UpdateTriggerRequestBody */
+public class UpdateTriggerRequestBody {
 
-    /**
-     * 触发器状态
-     */
+    /** 触发器状态 */
     public static final class TriggerStatusEnum {
 
-        
-        /**
-         * Enum ACTIVE for value: "ACTIVE"
-         */
+        /** Enum ACTIVE for value: "ACTIVE" */
         public static final TriggerStatusEnum ACTIVE = new TriggerStatusEnum("ACTIVE");
-        
-        /**
-         * Enum DISABLED for value: "DISABLED"
-         */
+
+        /** Enum DISABLED for value: "DISABLED" */
         public static final TriggerStatusEnum DISABLED = new TriggerStatusEnum("DISABLED");
-        
 
         private static final Map<String, TriggerStatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +49,7 @@ public class UpdateTriggerRequestBody  {
 
         @JsonCreator
         public static TriggerStatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TriggerStatusEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +60,7 @@ public class UpdateTriggerRequestBody  {
         }
 
         public static TriggerStatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TriggerStatusEnum result = STATIC_FIELDS.get(value);
@@ -99,10 +84,9 @@ public class UpdateTriggerRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trigger_status")
-    
+    @JsonProperty(value = "trigger_status")
+
     private TriggerStatusEnum triggerStatus;
 
     public UpdateTriggerRequestBody withTriggerStatus(TriggerStatusEnum triggerStatus) {
@@ -110,13 +94,9 @@ public class UpdateTriggerRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 触发器状态
-     * @return triggerStatus
-     */
+    /** 触发器状态
+     * 
+     * @return triggerStatus */
     public TriggerStatusEnum getTriggerStatus() {
         return triggerStatus;
     }
@@ -124,8 +104,6 @@ public class UpdateTriggerRequestBody  {
     public void setTriggerStatus(TriggerStatusEnum triggerStatus) {
         this.triggerStatus = triggerStatus;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,10 +116,12 @@ public class UpdateTriggerRequestBody  {
         UpdateTriggerRequestBody updateTriggerRequestBody = (UpdateTriggerRequestBody) o;
         return Objects.equals(this.triggerStatus, updateTriggerRequestBody.triggerStatus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(triggerStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -150,16 +130,13 @@ public class UpdateTriggerRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

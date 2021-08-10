@@ -1,74 +1,56 @@
 package com.huaweicloud.sdk.das.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * SlowLog
- */
-public class SlowLog  {
-
-
+/** SlowLog */
+public class SlowLog {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sql")
-    
+    @JsonProperty(value = "sql")
+
     private String sql;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="database")
-    
+    @JsonProperty(value = "database")
+
     private String database;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="client")
-    
+    @JsonProperty(value = "client")
+
     private String client;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user")
-    
+    @JsonProperty(value = "user")
+
     private String user;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="execute_at")
-    
+    @JsonProperty(value = "execute_at")
+
     private Long executeAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="query_time")
-    
+    @JsonProperty(value = "query_time")
+
     private Double queryTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lock_time")
-    
+    @JsonProperty(value = "lock_time")
+
     private Double lockTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rows_examined")
-    
+    @JsonProperty(value = "rows_examined")
+
     private Long rowsExamined;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rows_sent")
-    
+    @JsonProperty(value = "rows_sent")
+
     private Long rowsSent;
 
     public SlowLog withSql(String sql) {
@@ -76,13 +58,9 @@ public class SlowLog  {
         return this;
     }
 
-    
-
-
-    /**
-     * SQL语句。
-     * @return sql
-     */
+    /** SQL语句。
+     * 
+     * @return sql */
     public String getSql() {
         return sql;
     }
@@ -91,20 +69,14 @@ public class SlowLog  {
         this.sql = sql;
     }
 
-    
-
     public SlowLog withDatabase(String database) {
         this.database = database;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库名。
-     * @return database
-     */
+    /** 数据库名。
+     * 
+     * @return database */
     public String getDatabase() {
         return database;
     }
@@ -113,20 +85,14 @@ public class SlowLog  {
         this.database = database;
     }
 
-    
-
     public SlowLog withClient(String client) {
         this.client = client;
         return this;
     }
 
-    
-
-
-    /**
-     * 客户端。
-     * @return client
-     */
+    /** 客户端。
+     * 
+     * @return client */
     public String getClient() {
         return client;
     }
@@ -135,20 +101,14 @@ public class SlowLog  {
         this.client = client;
     }
 
-    
-
     public SlowLog withUser(String user) {
         this.user = user;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户。
-     * @return user
-     */
+    /** 用户。
+     * 
+     * @return user */
     public String getUser() {
         return user;
     }
@@ -157,20 +117,14 @@ public class SlowLog  {
         this.user = user;
     }
 
-    
-
     public SlowLog withExecuteAt(Long executeAt) {
         this.executeAt = executeAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 执行开始时间（Unix timestamp），单位：毫秒。
-     * @return executeAt
-     */
+    /** 执行开始时间（Unix timestamp），单位：毫秒。
+     * 
+     * @return executeAt */
     public Long getExecuteAt() {
         return executeAt;
     }
@@ -179,20 +133,14 @@ public class SlowLog  {
         this.executeAt = executeAt;
     }
 
-    
-
     public SlowLog withQueryTime(Double queryTime) {
         this.queryTime = queryTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 执行耗时（秒）。
-     * @return queryTime
-     */
+    /** 执行耗时（秒）。
+     * 
+     * @return queryTime */
     public Double getQueryTime() {
         return queryTime;
     }
@@ -201,20 +149,14 @@ public class SlowLog  {
         this.queryTime = queryTime;
     }
 
-    
-
     public SlowLog withLockTime(Double lockTime) {
         this.lockTime = lockTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 锁等待耗时（秒）。
-     * @return lockTime
-     */
+    /** 锁等待耗时（秒）。
+     * 
+     * @return lockTime */
     public Double getLockTime() {
         return lockTime;
     }
@@ -223,20 +165,14 @@ public class SlowLog  {
         this.lockTime = lockTime;
     }
 
-    
-
     public SlowLog withRowsExamined(Long rowsExamined) {
         this.rowsExamined = rowsExamined;
         return this;
     }
 
-    
-
-
-    /**
-     * 扫描行数。
-     * @return rowsExamined
-     */
+    /** 扫描行数。
+     * 
+     * @return rowsExamined */
     public Long getRowsExamined() {
         return rowsExamined;
     }
@@ -245,20 +181,14 @@ public class SlowLog  {
         this.rowsExamined = rowsExamined;
     }
 
-    
-
     public SlowLog withRowsSent(Long rowsSent) {
         this.rowsSent = rowsSent;
         return this;
     }
 
-    
-
-
-    /**
-     * 返回行数。
-     * @return rowsSent
-     */
+    /** 返回行数。
+     * 
+     * @return rowsSent */
     public Long getRowsSent() {
         return rowsSent;
     }
@@ -266,8 +196,6 @@ public class SlowLog  {
     public void setRowsSent(Long rowsSent) {
         this.rowsSent = rowsSent;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -278,20 +206,19 @@ public class SlowLog  {
             return false;
         }
         SlowLog slowLog = (SlowLog) o;
-        return Objects.equals(this.sql, slowLog.sql) &&
-            Objects.equals(this.database, slowLog.database) &&
-            Objects.equals(this.client, slowLog.client) &&
-            Objects.equals(this.user, slowLog.user) &&
-            Objects.equals(this.executeAt, slowLog.executeAt) &&
-            Objects.equals(this.queryTime, slowLog.queryTime) &&
-            Objects.equals(this.lockTime, slowLog.lockTime) &&
-            Objects.equals(this.rowsExamined, slowLog.rowsExamined) &&
-            Objects.equals(this.rowsSent, slowLog.rowsSent);
+        return Objects.equals(this.sql, slowLog.sql) && Objects.equals(this.database, slowLog.database)
+            && Objects.equals(this.client, slowLog.client) && Objects.equals(this.user, slowLog.user)
+            && Objects.equals(this.executeAt, slowLog.executeAt) && Objects.equals(this.queryTime, slowLog.queryTime)
+            && Objects.equals(this.lockTime, slowLog.lockTime)
+            && Objects.equals(this.rowsExamined, slowLog.rowsExamined)
+            && Objects.equals(this.rowsSent, slowLog.rowsSent);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sql, database, client, user, executeAt, queryTime, lockTime, rowsExamined, rowsSent);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -308,16 +235,13 @@ public class SlowLog  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

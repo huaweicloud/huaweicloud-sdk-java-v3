@@ -1,41 +1,26 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * AudioProcess
- */
-public class AudioProcess  {
+/** AudioProcess */
+public class AudioProcess {
 
-    /**
-     * 音量调整方式： - auto：表示自动调整音量。 - dynamic：表示人为调整，需设定音量调整幅值。 
-     */
+    /** 音量调整方式： - auto：表示自动调整音量。 - dynamic：表示人为调整，需设定音量调整幅值。 */
     public static final class VolumeEnum {
 
-        
-        /**
-         * Enum AUTO for value: "auto"
-         */
+        /** Enum AUTO for value: "auto" */
         public static final VolumeEnum AUTO = new VolumeEnum("auto");
-        
-        /**
-         * Enum DYNAMIC for value: "dynamic"
-         */
+
+        /** Enum DYNAMIC for value: "dynamic" */
         public static final VolumeEnum DYNAMIC = new VolumeEnum("dynamic");
-        
 
         private static final Map<String, VolumeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +49,7 @@ public class AudioProcess  {
 
         @JsonCreator
         public static VolumeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             VolumeEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +60,7 @@ public class AudioProcess  {
         }
 
         public static VolumeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             VolumeEnum result = STATIC_FIELDS.get(value);
@@ -99,16 +84,14 @@ public class AudioProcess  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume")
-    
+    @JsonProperty(value = "volume")
+
     private VolumeEnum volume;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_expr")
-    
+    @JsonProperty(value = "volume_expr")
+
     private Integer volumeExpr;
 
     public AudioProcess withVolume(VolumeEnum volume) {
@@ -116,13 +99,9 @@ public class AudioProcess  {
         return this;
     }
 
-    
-
-
-    /**
-     * 音量调整方式： - auto：表示自动调整音量。 - dynamic：表示人为调整，需设定音量调整幅值。 
-     * @return volume
-     */
+    /** 音量调整方式： - auto：表示自动调整音量。 - dynamic：表示人为调整，需设定音量调整幅值。
+     * 
+     * @return volume */
     public VolumeEnum getVolume() {
         return volume;
     }
@@ -131,22 +110,14 @@ public class AudioProcess  {
         this.volume = volume;
     }
 
-    
-
     public AudioProcess withVolumeExpr(Integer volumeExpr) {
         this.volumeExpr = volumeExpr;
         return this;
     }
 
-    
-
-
-    /**
-     * 音量调整幅值，需指定volume为dynamic。  取值范围：[-15,15]  单位：dB 
-     * minimum: -15
-     * maximum: 15
-     * @return volumeExpr
-     */
+    /** 音量调整幅值，需指定volume为dynamic。 取值范围：[-15,15] 单位：dB minimum: -15 maximum: 15
+     * 
+     * @return volumeExpr */
     public Integer getVolumeExpr() {
         return volumeExpr;
     }
@@ -154,8 +125,6 @@ public class AudioProcess  {
     public void setVolumeExpr(Integer volumeExpr) {
         this.volumeExpr = volumeExpr;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,13 +135,15 @@ public class AudioProcess  {
             return false;
         }
         AudioProcess audioProcess = (AudioProcess) o;
-        return Objects.equals(this.volume, audioProcess.volume) &&
-            Objects.equals(this.volumeExpr, audioProcess.volumeExpr);
+        return Objects.equals(this.volume, audioProcess.volume)
+            && Objects.equals(this.volumeExpr, audioProcess.volumeExpr);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(volume, volumeExpr);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -182,16 +153,13 @@ public class AudioProcess  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

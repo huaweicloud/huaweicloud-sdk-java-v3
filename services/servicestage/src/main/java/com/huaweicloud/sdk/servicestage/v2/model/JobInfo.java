@@ -1,52 +1,34 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 构建工程参数。
- */
-public class JobInfo  {
-
-
+/** 构建工程参数。 */
+public class JobInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="CREATED_BY")
-    
+    @JsonProperty(value = "CREATED_BY")
+
     private String createdBy;
-    /**
-     * 执行状态。
-     */
+
+    /** 执行状态。 */
     public static final class ExecutionStatusEnum {
 
-        
-        /**
-         * Enum RUNNING for value: "RUNNING"
-         */
+        /** Enum RUNNING for value: "RUNNING" */
         public static final ExecutionStatusEnum RUNNING = new ExecutionStatusEnum("RUNNING");
-        
-        /**
-         * Enum FAILED for value: "FAILED"
-         */
+
+        /** Enum FAILED for value: "FAILED" */
         public static final ExecutionStatusEnum FAILED = new ExecutionStatusEnum("FAILED");
-        
-        /**
-         * Enum SUCCEEDED for value: "SUCCEEDED"
-         */
+
+        /** Enum SUCCEEDED for value: "SUCCEEDED" */
         public static final ExecutionStatusEnum SUCCEEDED = new ExecutionStatusEnum("SUCCEEDED");
-        
 
         private static final Map<String, ExecutionStatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,7 +58,7 @@ public class JobInfo  {
 
         @JsonCreator
         public static ExecutionStatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ExecutionStatusEnum result = STATIC_FIELDS.get(value);
@@ -87,7 +69,7 @@ public class JobInfo  {
         }
 
         public static ExecutionStatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ExecutionStatusEnum result = STATIC_FIELDS.get(value);
@@ -111,52 +93,44 @@ public class JobInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="EXECUTION_STATUS")
-    
+    @JsonProperty(value = "EXECUTION_STATUS")
+
     private ExecutionStatusEnum executionStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="JOB_DESC")
-    
+    @JsonProperty(value = "JOB_DESC")
+
     private String jobDesc;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="JOB_ID")
-    
+    @JsonProperty(value = "JOB_ID")
+
     private String jobId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="JOB_NAME")
-    
+    @JsonProperty(value = "JOB_NAME")
+
     private String jobName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="JOB_TYPE")
-    
+    @JsonProperty(value = "JOB_TYPE")
+
     private String jobType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ORDER_ID")
-    
+    @JsonProperty(value = "ORDER_ID")
+
     private String orderId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="PROJECT_ID")
-    
+    @JsonProperty(value = "PROJECT_ID")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="SERVICE_INSTANCE_ID")
-    
+    @JsonProperty(value = "SERVICE_INSTANCE_ID")
+
     private String serviceInstanceId;
 
     public JobInfo withCreatedBy(String createdBy) {
@@ -164,13 +138,9 @@ public class JobInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 创建者。
-     * @return createdBy
-     */
+    /** 创建者。
+     * 
+     * @return createdBy */
     public String getCreatedBy() {
         return createdBy;
     }
@@ -179,20 +149,14 @@ public class JobInfo  {
         this.createdBy = createdBy;
     }
 
-    
-
     public JobInfo withExecutionStatus(ExecutionStatusEnum executionStatus) {
         this.executionStatus = executionStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 执行状态。
-     * @return executionStatus
-     */
+    /** 执行状态。
+     * 
+     * @return executionStatus */
     public ExecutionStatusEnum getExecutionStatus() {
         return executionStatus;
     }
@@ -201,20 +165,14 @@ public class JobInfo  {
         this.executionStatus = executionStatus;
     }
 
-    
-
     public JobInfo withJobDesc(String jobDesc) {
         this.jobDesc = jobDesc;
         return this;
     }
 
-    
-
-
-    /**
-     * 工作描述。
-     * @return jobDesc
-     */
+    /** 工作描述。
+     * 
+     * @return jobDesc */
     public String getJobDesc() {
         return jobDesc;
     }
@@ -223,20 +181,14 @@ public class JobInfo  {
         this.jobDesc = jobDesc;
     }
 
-    
-
     public JobInfo withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
 
-    
-
-
-    /**
-     * 工作ID。
-     * @return jobId
-     */
+    /** 工作ID。
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -245,20 +197,14 @@ public class JobInfo  {
         this.jobId = jobId;
     }
 
-    
-
     public JobInfo withJobName(String jobName) {
         this.jobName = jobName;
         return this;
     }
 
-    
-
-
-    /**
-     * 工作名称。
-     * @return jobName
-     */
+    /** 工作名称。
+     * 
+     * @return jobName */
     public String getJobName() {
         return jobName;
     }
@@ -267,20 +213,14 @@ public class JobInfo  {
         this.jobName = jobName;
     }
 
-    
-
     public JobInfo withJobType(String jobType) {
         this.jobType = jobType;
         return this;
     }
 
-    
-
-
-    /**
-     * 类别。
-     * @return jobType
-     */
+    /** 类别。
+     * 
+     * @return jobType */
     public String getJobType() {
         return jobType;
     }
@@ -289,20 +229,14 @@ public class JobInfo  {
         this.jobType = jobType;
     }
 
-    
-
     public JobInfo withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
     }
 
-    
-
-
-    /**
-     * 排序ID。
-     * @return orderId
-     */
+    /** 排序ID。
+     * 
+     * @return orderId */
     public String getOrderId() {
         return orderId;
     }
@@ -311,20 +245,14 @@ public class JobInfo  {
         this.orderId = orderId;
     }
 
-    
-
     public JobInfo withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建租户的项目ID。
-     * @return projectId
-     */
+    /** 创建租户的项目ID。
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -333,20 +261,14 @@ public class JobInfo  {
         this.projectId = projectId;
     }
 
-    
-
     public JobInfo withServiceInstanceId(String serviceInstanceId) {
         this.serviceInstanceId = serviceInstanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return serviceInstanceId
-     */
+    /** 实例ID。
+     * 
+     * @return serviceInstanceId */
     public String getServiceInstanceId() {
         return serviceInstanceId;
     }
@@ -354,8 +276,6 @@ public class JobInfo  {
     public void setServiceInstanceId(String serviceInstanceId) {
         this.serviceInstanceId = serviceInstanceId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -366,20 +286,20 @@ public class JobInfo  {
             return false;
         }
         JobInfo jobInfo = (JobInfo) o;
-        return Objects.equals(this.createdBy, jobInfo.createdBy) &&
-            Objects.equals(this.executionStatus, jobInfo.executionStatus) &&
-            Objects.equals(this.jobDesc, jobInfo.jobDesc) &&
-            Objects.equals(this.jobId, jobInfo.jobId) &&
-            Objects.equals(this.jobName, jobInfo.jobName) &&
-            Objects.equals(this.jobType, jobInfo.jobType) &&
-            Objects.equals(this.orderId, jobInfo.orderId) &&
-            Objects.equals(this.projectId, jobInfo.projectId) &&
-            Objects.equals(this.serviceInstanceId, jobInfo.serviceInstanceId);
+        return Objects.equals(this.createdBy, jobInfo.createdBy)
+            && Objects.equals(this.executionStatus, jobInfo.executionStatus)
+            && Objects.equals(this.jobDesc, jobInfo.jobDesc) && Objects.equals(this.jobId, jobInfo.jobId)
+            && Objects.equals(this.jobName, jobInfo.jobName) && Objects.equals(this.jobType, jobInfo.jobType)
+            && Objects.equals(this.orderId, jobInfo.orderId) && Objects.equals(this.projectId, jobInfo.projectId)
+            && Objects.equals(this.serviceInstanceId, jobInfo.serviceInstanceId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(createdBy, executionStatus, jobDesc, jobId, jobName, jobType, orderId, projectId, serviceInstanceId);
+        return Objects
+            .hash(createdBy, executionStatus, jobDesc, jobId, jobName, jobType, orderId, projectId, serviceInstanceId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -396,16 +316,13 @@ public class JobInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

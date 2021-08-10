@@ -1,59 +1,40 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.ServerAppInfo;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListRomaAppResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apps")
-    
+    @JsonProperty(value = "apps")
+
     private List<ServerAppInfo> apps = null;
-    
+
     public ListRomaAppResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * 总的数量
-     * minimum: 1
-     * maximum: 10
-     * @return total
-     */
+    /** 总的数量 minimum: 1 maximum: 10
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -62,22 +43,14 @@ public class ListRomaAppResponse extends SdkResponse {
         this.total = total;
     }
 
-    
-
     public ListRomaAppResponse withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前页数量
-     * minimum: 1
-     * maximum: 10
-     * @return size
-     */
+    /** 当前页数量 minimum: 1 maximum: 10
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -86,16 +59,13 @@ public class ListRomaAppResponse extends SdkResponse {
         this.size = size;
     }
 
-    
-
     public ListRomaAppResponse withApps(List<ServerAppInfo> apps) {
         this.apps = apps;
         return this;
     }
 
-    
     public ListRomaAppResponse addAppsItem(ServerAppInfo appsItem) {
-        if(this.apps == null) {
+        if (this.apps == null) {
             this.apps = new ArrayList<>();
         }
         this.apps.add(appsItem);
@@ -103,17 +73,16 @@ public class ListRomaAppResponse extends SdkResponse {
     }
 
     public ListRomaAppResponse withApps(Consumer<List<ServerAppInfo>> appsSetter) {
-        if(this.apps == null) {
+        if (this.apps == null) {
             this.apps = new ArrayList<>();
         }
         appsSetter.accept(this.apps);
         return this;
     }
 
-    /**
-     * 创建用户信息
-     * @return apps
-     */
+    /** 创建用户信息
+     * 
+     * @return apps */
     public List<ServerAppInfo> getApps() {
         return apps;
     }
@@ -121,8 +90,6 @@ public class ListRomaAppResponse extends SdkResponse {
     public void setApps(List<ServerAppInfo> apps) {
         this.apps = apps;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -133,14 +100,16 @@ public class ListRomaAppResponse extends SdkResponse {
             return false;
         }
         ListRomaAppResponse listRomaAppResponse = (ListRomaAppResponse) o;
-        return Objects.equals(this.total, listRomaAppResponse.total) &&
-            Objects.equals(this.size, listRomaAppResponse.size) &&
-            Objects.equals(this.apps, listRomaAppResponse.apps);
+        return Objects.equals(this.total, listRomaAppResponse.total)
+            && Objects.equals(this.size, listRomaAppResponse.size)
+            && Objects.equals(this.apps, listRomaAppResponse.apps);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(total, size, apps);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -151,16 +120,13 @@ public class ListRomaAppResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

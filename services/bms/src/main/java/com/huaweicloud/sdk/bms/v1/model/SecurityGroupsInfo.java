@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.UUID;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.UUID;
 
-/**
- * security_groups字段数据结构说明
- */
-public class SecurityGroupsInfo  {
-
-
+/** security_groups字段数据结构说明 */
+public class SecurityGroupsInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private UUID id;
 
     public SecurityGroupsInfo withId(UUID id) {
@@ -29,13 +19,9 @@ public class SecurityGroupsInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器对应的安全组ID，对创建裸金属服务器中配置的所有网卡生效。当该参数未指定时默认给裸金属服务器绑定default安全组。当该参数传值（UUID格式）时需要指定已有安全组的ID。获取已有安全组的方法请参见《虚拟私有云API参考》的“查询安全组列表”章节。
-     * @return id
-     */
+    /** 裸金属服务器对应的安全组ID，对创建裸金属服务器中配置的所有网卡生效。当该参数未指定时默认给裸金属服务器绑定default安全组。当该参数传值（UUID格式）时需要指定已有安全组的ID。获取已有安全组的方法请参见《虚拟私有云API参考》的“查询安全组列表”章节。
+     * 
+     * @return id */
     public UUID getId() {
         return id;
     }
@@ -43,8 +29,6 @@ public class SecurityGroupsInfo  {
     public void setId(UUID id) {
         this.id = id;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -57,10 +41,12 @@ public class SecurityGroupsInfo  {
         SecurityGroupsInfo securityGroupsInfo = (SecurityGroupsInfo) o;
         return Objects.equals(this.id, securityGroupsInfo.id);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -69,16 +55,13 @@ public class SecurityGroupsInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

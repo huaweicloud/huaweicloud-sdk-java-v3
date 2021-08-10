@@ -1,77 +1,59 @@
 package com.huaweicloud.sdk.oms.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.oms.v2.model.ListFile;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 源端节点信息。
- */
-public class SrcNodeReq  {
-
-
+/** 源端节点信息。 */
+public class SrcNodeReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cloud_type")
-    
+    @JsonProperty(value = "cloud_type")
+
     private String cloudType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ak")
-    
+    @JsonProperty(value = "ak")
+
     private String ak;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sk")
-    
+    @JsonProperty(value = "sk")
+
     private String sk;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_token")
-    
+    @JsonProperty(value = "security_token")
+
     private String securityToken;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bucket")
-    
+    @JsonProperty(value = "bucket")
+
     private String bucket;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="object_key")
-    
+    @JsonProperty(value = "object_key")
+
     private List<String> objectKey = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="list_file")
-    
+    @JsonProperty(value = "list_file")
+
     private ListFile listFile;
 
     public SrcNodeReq withCloudType(String cloudType) {
@@ -79,13 +61,10 @@ public class SrcNodeReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 源端云服务提供商，task_type为非url_list时，本参数为URLSource。  可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、URLSource或者UCloud。默认值为Aliyun。
-     * @return cloudType
-     */
+    /** 源端云服务提供商，task_type为非url_list时，本参数为URLSource。
+     * 可选值有AWS、Azure、Aliyun、Tencent、HuaweiCloud、QingCloud、KingsoftCloud、Baidu、Qiniu、URLSource或者UCloud。默认值为Aliyun。
+     * 
+     * @return cloudType */
     public String getCloudType() {
         return cloudType;
     }
@@ -94,20 +73,14 @@ public class SrcNodeReq  {
         this.cloudType = cloudType;
     }
 
-    
-
     public SrcNodeReq withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端桶所处的区域，task_type为非url_list时，本参数为必选。
-     * @return region
-     */
+    /** 源端桶所处的区域，task_type为非url_list时，本参数为必选。
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -116,20 +89,14 @@ public class SrcNodeReq  {
         this.region = region;
     }
 
-    
-
     public SrcNodeReq withAk(String ak) {
         this.ak = ak;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端桶的AK（最大长度100个字符），task_type为非url_list时，本参数为必选。
-     * @return ak
-     */
+    /** 源端桶的AK（最大长度100个字符），task_type为非url_list时，本参数为必选。
+     * 
+     * @return ak */
     public String getAk() {
         return ak;
     }
@@ -138,20 +105,14 @@ public class SrcNodeReq  {
         this.ak = ak;
     }
 
-    
-
     public SrcNodeReq withSk(String sk) {
         this.sk = sk;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端桶的SK（最大长度100个字符），task_type为非url_list时，本参数为必选。
-     * @return sk
-     */
+    /** 源端桶的SK（最大长度100个字符），task_type为非url_list时，本参数为必选。
+     * 
+     * @return sk */
     public String getSk() {
         return sk;
     }
@@ -160,20 +121,14 @@ public class SrcNodeReq  {
         this.sk = sk;
     }
 
-    
-
     public SrcNodeReq withSecurityToken(String securityToken) {
         this.securityToken = securityToken;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端桶的临时Token（最大长度16384个字符）
-     * @return securityToken
-     */
+    /** 源端桶的临时Token（最大长度16384个字符）
+     * 
+     * @return securityToken */
     public String getSecurityToken() {
         return securityToken;
     }
@@ -182,20 +137,14 @@ public class SrcNodeReq  {
         this.securityToken = securityToken;
     }
 
-    
-
     public SrcNodeReq withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 当源端为腾讯云时，需要填写此参数。
-     * @return appId
-     */
+    /** 当源端为腾讯云时，需要填写此参数。
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -204,20 +153,14 @@ public class SrcNodeReq  {
         this.appId = appId;
     }
 
-    
-
     public SrcNodeReq withBucket(String bucket) {
         this.bucket = bucket;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端桶的名称，task_type为非url_list时，本参数为必选。
-     * @return bucket
-     */
+    /** 源端桶的名称，task_type为非url_list时，本参数为必选。
+     * 
+     * @return bucket */
     public String getBucket() {
         return bucket;
     }
@@ -226,16 +169,13 @@ public class SrcNodeReq  {
         this.bucket = bucket;
     }
 
-    
-
     public SrcNodeReq withObjectKey(List<String> objectKey) {
         this.objectKey = objectKey;
         return this;
     }
 
-    
     public SrcNodeReq addObjectKeyItem(String objectKeyItem) {
-        if(this.objectKey == null) {
+        if (this.objectKey == null) {
             this.objectKey = new ArrayList<>();
         }
         this.objectKey.add(objectKeyItem);
@@ -243,17 +183,16 @@ public class SrcNodeReq  {
     }
 
     public SrcNodeReq withObjectKey(Consumer<List<String>> objectKeySetter) {
-        if(this.objectKey == null) {
+        if (this.objectKey == null) {
             this.objectKey = new ArrayList<>();
         }
         objectKeySetter.accept(this.objectKey);
         return this;
     }
 
-    /**
-     * 任务类型为对象迁移任务时，表示待迁移对象名称（以“/”结尾的字符串代表待迁移的文件夹，非“/”结尾的字符串代表待迁移的文件。）； 任务类型为前缀迁移任务时，表示待迁移前缀。 整桶迁移时，此参数设置为[\"\"]。
-     * @return objectKey
-     */
+    /** 任务类型为对象迁移任务时，表示待迁移对象名称（以“/”结尾的字符串代表待迁移的文件夹，非“/”结尾的字符串代表待迁移的文件。）； 任务类型为前缀迁移任务时，表示待迁移前缀。 整桶迁移时，此参数设置为[\"\"]。
+     * 
+     * @return objectKey */
     public List<String> getObjectKey() {
         return objectKey;
     }
@@ -262,27 +201,23 @@ public class SrcNodeReq  {
         this.objectKey = objectKey;
     }
 
-    
-
     public SrcNodeReq withListFile(ListFile listFile) {
         this.listFile = listFile;
         return this;
     }
 
     public SrcNodeReq withListFile(Consumer<ListFile> listFileSetter) {
-        if(this.listFile == null ){
+        if (this.listFile == null) {
             this.listFile = new ListFile();
             listFileSetter.accept(this.listFile);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get listFile
-     * @return listFile
-     */
+    /** Get listFile
+     * 
+     * @return listFile */
     public ListFile getListFile() {
         return listFile;
     }
@@ -290,8 +225,6 @@ public class SrcNodeReq  {
     public void setListFile(ListFile listFile) {
         this.listFile = listFile;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -302,20 +235,19 @@ public class SrcNodeReq  {
             return false;
         }
         SrcNodeReq srcNodeReq = (SrcNodeReq) o;
-        return Objects.equals(this.cloudType, srcNodeReq.cloudType) &&
-            Objects.equals(this.region, srcNodeReq.region) &&
-            Objects.equals(this.ak, srcNodeReq.ak) &&
-            Objects.equals(this.sk, srcNodeReq.sk) &&
-            Objects.equals(this.securityToken, srcNodeReq.securityToken) &&
-            Objects.equals(this.appId, srcNodeReq.appId) &&
-            Objects.equals(this.bucket, srcNodeReq.bucket) &&
-            Objects.equals(this.objectKey, srcNodeReq.objectKey) &&
-            Objects.equals(this.listFile, srcNodeReq.listFile);
+        return Objects.equals(this.cloudType, srcNodeReq.cloudType) && Objects.equals(this.region, srcNodeReq.region)
+            && Objects.equals(this.ak, srcNodeReq.ak) && Objects.equals(this.sk, srcNodeReq.sk)
+            && Objects.equals(this.securityToken, srcNodeReq.securityToken)
+            && Objects.equals(this.appId, srcNodeReq.appId) && Objects.equals(this.bucket, srcNodeReq.bucket)
+            && Objects.equals(this.objectKey, srcNodeReq.objectKey)
+            && Objects.equals(this.listFile, srcNodeReq.listFile);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(cloudType, region, ak, sk, securityToken, appId, bucket, objectKey, listFile);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -332,16 +264,13 @@ public class SrcNodeReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

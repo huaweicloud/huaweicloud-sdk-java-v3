@@ -1,49 +1,31 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class SearchQosParticipantDetailRequest  {
-
-
+/** Request Object */
+public class SearchQosParticipantDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confUUID")
-    
+    @JsonProperty(value = "confUUID")
+
     private String confUUID;
-    /**
-     * 会议类别。 * online：在线会议，在召开的会议。 * history：历史会议，已召开的会议。
-     */
+
+    /** 会议类别。 * online：在线会议，在召开的会议。 * history：历史会议，已召开的会议。 */
     public static final class ConfTypeEnum {
 
-        
-        /**
-         * Enum ONLINE for value: "online"
-         */
+        /** Enum ONLINE for value: "online" */
         public static final ConfTypeEnum ONLINE = new ConfTypeEnum("online");
-        
-        /**
-         * Enum HISTORY for value: "history"
-         */
+
+        /** Enum HISTORY for value: "history" */
         public static final ConfTypeEnum HISTORY = new ConfTypeEnum("history");
-        
 
         private static final Map<String, ConfTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -72,7 +54,7 @@ public class SearchQosParticipantDetailRequest  {
 
         @JsonCreator
         public static ConfTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ConfTypeEnum result = STATIC_FIELDS.get(value);
@@ -83,7 +65,7 @@ public class SearchQosParticipantDetailRequest  {
         }
 
         public static ConfTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ConfTypeEnum result = STATIC_FIELDS.get(value);
@@ -107,43 +89,30 @@ public class SearchQosParticipantDetailRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confType")
-    
+    @JsonProperty(value = "confType")
+
     private ConfTypeEnum confType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="participantID")
-    
+    @JsonProperty(value = "participantID")
+
     private String participantID;
-    /**
-     * Qos类型。 - audio：音频。 - video：视频。 - screen：屏幕共享。 - cpu：cpu。
-     */
+
+    /** Qos类型。 - audio：音频。 - video：视频。 - screen：屏幕共享。 - cpu：cpu。 */
     public static final class QosTypeEnum {
 
-        
-        /**
-         * Enum AUDIO for value: "audio"
-         */
+        /** Enum AUDIO for value: "audio" */
         public static final QosTypeEnum AUDIO = new QosTypeEnum("audio");
-        
-        /**
-         * Enum VIDEO for value: "video"
-         */
+
+        /** Enum VIDEO for value: "video" */
         public static final QosTypeEnum VIDEO = new QosTypeEnum("video");
-        
-        /**
-         * Enum SCREEN for value: "screen"
-         */
+
+        /** Enum SCREEN for value: "screen" */
         public static final QosTypeEnum SCREEN = new QosTypeEnum("screen");
-        
-        /**
-         * Enum CPU for value: "cpu"
-         */
+
+        /** Enum CPU for value: "cpu" */
         public static final QosTypeEnum CPU = new QosTypeEnum("cpu");
-        
 
         private static final Map<String, QosTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -174,7 +143,7 @@ public class SearchQosParticipantDetailRequest  {
 
         @JsonCreator
         public static QosTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             QosTypeEnum result = STATIC_FIELDS.get(value);
@@ -185,7 +154,7 @@ public class SearchQosParticipantDetailRequest  {
         }
 
         public static QosTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             QosTypeEnum result = STATIC_FIELDS.get(value);
@@ -209,10 +178,9 @@ public class SearchQosParticipantDetailRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="qosType")
-    
+    @JsonProperty(value = "qosType")
+
     private QosTypeEnum qosType;
 
     public SearchQosParticipantDetailRequest withConfUUID(String confUUID) {
@@ -220,13 +188,9 @@ public class SearchQosParticipantDetailRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 会议UUID。最大不超过64个字节。
-     * @return confUUID
-     */
+    /** 会议UUID。最大不超过64个字节。
+     * 
+     * @return confUUID */
     public String getConfUUID() {
         return confUUID;
     }
@@ -235,20 +199,14 @@ public class SearchQosParticipantDetailRequest  {
         this.confUUID = confUUID;
     }
 
-    
-
     public SearchQosParticipantDetailRequest withConfType(ConfTypeEnum confType) {
         this.confType = confType;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议类别。 * online：在线会议，在召开的会议。 * history：历史会议，已召开的会议。
-     * @return confType
-     */
+    /** 会议类别。 * online：在线会议，在召开的会议。 * history：历史会议，已召开的会议。
+     * 
+     * @return confType */
     public ConfTypeEnum getConfType() {
         return confType;
     }
@@ -257,20 +215,14 @@ public class SearchQosParticipantDetailRequest  {
         this.confType = confType;
     }
 
-    
-
     public SearchQosParticipantDetailRequest withParticipantID(String participantID) {
         this.participantID = participantID;
         return this;
     }
 
-    
-
-
-    /**
-     * 与会者ID。最大不超过64个字节。
-     * @return participantID
-     */
+    /** 与会者ID。最大不超过64个字节。
+     * 
+     * @return participantID */
     public String getParticipantID() {
         return participantID;
     }
@@ -279,20 +231,14 @@ public class SearchQosParticipantDetailRequest  {
         this.participantID = participantID;
     }
 
-    
-
     public SearchQosParticipantDetailRequest withQosType(QosTypeEnum qosType) {
         this.qosType = qosType;
         return this;
     }
 
-    
-
-
-    /**
-     * Qos类型。 - audio：音频。 - video：视频。 - screen：屏幕共享。 - cpu：cpu。
-     * @return qosType
-     */
+    /** Qos类型。 - audio：音频。 - video：视频。 - screen：屏幕共享。 - cpu：cpu。
+     * 
+     * @return qosType */
     public QosTypeEnum getQosType() {
         return qosType;
     }
@@ -300,8 +246,6 @@ public class SearchQosParticipantDetailRequest  {
     public void setQosType(QosTypeEnum qosType) {
         this.qosType = qosType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -312,15 +256,17 @@ public class SearchQosParticipantDetailRequest  {
             return false;
         }
         SearchQosParticipantDetailRequest searchQosParticipantDetailRequest = (SearchQosParticipantDetailRequest) o;
-        return Objects.equals(this.confUUID, searchQosParticipantDetailRequest.confUUID) &&
-            Objects.equals(this.confType, searchQosParticipantDetailRequest.confType) &&
-            Objects.equals(this.participantID, searchQosParticipantDetailRequest.participantID) &&
-            Objects.equals(this.qosType, searchQosParticipantDetailRequest.qosType);
+        return Objects.equals(this.confUUID, searchQosParticipantDetailRequest.confUUID)
+            && Objects.equals(this.confType, searchQosParticipantDetailRequest.confType)
+            && Objects.equals(this.participantID, searchQosParticipantDetailRequest.participantID)
+            && Objects.equals(this.qosType, searchQosParticipantDetailRequest.qosType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(confUUID, confType, participantID, qosType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -332,16 +278,13 @@ public class SearchQosParticipantDetailRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

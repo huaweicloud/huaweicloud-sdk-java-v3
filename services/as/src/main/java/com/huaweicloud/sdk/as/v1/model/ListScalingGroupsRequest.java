@@ -1,63 +1,42 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListScalingGroupsRequest  {
-
-
+/** Request Object */
+public class ListScalingGroupsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_group_name")
-    
+    @JsonProperty(value = "scaling_group_name")
+
     private String scalingGroupName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_configuration_id")
-    
+    @JsonProperty(value = "scaling_configuration_id")
+
     private String scalingConfigurationId;
-    /**
-     * 伸缩组状态，包括INSERVICE，PAUSED，ERROR，DELETING。
-     */
+
+    /** 伸缩组状态，包括INSERVICE，PAUSED，ERROR，DELETING。 */
     public static final class ScalingGroupStatusEnum {
 
-        
-        /**
-         * Enum INSERVICE for value: "INSERVICE"
-         */
+        /** Enum INSERVICE for value: "INSERVICE" */
         public static final ScalingGroupStatusEnum INSERVICE = new ScalingGroupStatusEnum("INSERVICE");
-        
-        /**
-         * Enum PAUSED for value: "PAUSED"
-         */
+
+        /** Enum PAUSED for value: "PAUSED" */
         public static final ScalingGroupStatusEnum PAUSED = new ScalingGroupStatusEnum("PAUSED");
-        
-        /**
-         * Enum ERROR for value: "ERROR"
-         */
+
+        /** Enum ERROR for value: "ERROR" */
         public static final ScalingGroupStatusEnum ERROR = new ScalingGroupStatusEnum("ERROR");
-        
-        /**
-         * Enum DELETING for value: "DELETING"
-         */
+
+        /** Enum DELETING for value: "DELETING" */
         public static final ScalingGroupStatusEnum DELETING = new ScalingGroupStatusEnum("DELETING");
-        
 
         private static final Map<String, ScalingGroupStatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -88,7 +67,7 @@ public class ListScalingGroupsRequest  {
 
         @JsonCreator
         public static ScalingGroupStatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ScalingGroupStatusEnum result = STATIC_FIELDS.get(value);
@@ -99,7 +78,7 @@ public class ListScalingGroupsRequest  {
         }
 
         public static ScalingGroupStatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ScalingGroupStatusEnum result = STATIC_FIELDS.get(value);
@@ -123,28 +102,24 @@ public class ListScalingGroupsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_group_status")
-    
+    @JsonProperty(value = "scaling_group_status")
+
     private ScalingGroupStatusEnum scalingGroupStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_number")
-    
+    @JsonProperty(value = "start_number")
+
     private Integer startNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public ListScalingGroupsRequest withScalingGroupName(String scalingGroupName) {
@@ -152,13 +127,9 @@ public class ListScalingGroupsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩组名称
-     * @return scalingGroupName
-     */
+    /** 伸缩组名称
+     * 
+     * @return scalingGroupName */
     public String getScalingGroupName() {
         return scalingGroupName;
     }
@@ -167,20 +138,14 @@ public class ListScalingGroupsRequest  {
         this.scalingGroupName = scalingGroupName;
     }
 
-    
-
     public ListScalingGroupsRequest withScalingConfigurationId(String scalingConfigurationId) {
         this.scalingConfigurationId = scalingConfigurationId;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩配置ID，通过查询弹性伸缩配置列表接口获取，详见查询弹性伸缩配置列表。
-     * @return scalingConfigurationId
-     */
+    /** 伸缩配置ID，通过查询弹性伸缩配置列表接口获取，详见查询弹性伸缩配置列表。
+     * 
+     * @return scalingConfigurationId */
     public String getScalingConfigurationId() {
         return scalingConfigurationId;
     }
@@ -189,20 +154,14 @@ public class ListScalingGroupsRequest  {
         this.scalingConfigurationId = scalingConfigurationId;
     }
 
-    
-
     public ListScalingGroupsRequest withScalingGroupStatus(ScalingGroupStatusEnum scalingGroupStatus) {
         this.scalingGroupStatus = scalingGroupStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩组状态，包括INSERVICE，PAUSED，ERROR，DELETING。
-     * @return scalingGroupStatus
-     */
+    /** 伸缩组状态，包括INSERVICE，PAUSED，ERROR，DELETING。
+     * 
+     * @return scalingGroupStatus */
     public ScalingGroupStatusEnum getScalingGroupStatus() {
         return scalingGroupStatus;
     }
@@ -211,20 +170,14 @@ public class ListScalingGroupsRequest  {
         this.scalingGroupStatus = scalingGroupStatus;
     }
 
-    
-
     public ListScalingGroupsRequest withStartNumber(Integer startNumber) {
         this.startNumber = startNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询的起始行号，默认为0。
-     * @return startNumber
-     */
+    /** 查询的起始行号，默认为0。
+     * 
+     * @return startNumber */
     public Integer getStartNumber() {
         return startNumber;
     }
@@ -233,20 +186,14 @@ public class ListScalingGroupsRequest  {
         this.startNumber = startNumber;
     }
 
-    
-
     public ListScalingGroupsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询的记录条数，默认为20。
-     * @return limit
-     */
+    /** 查询的记录条数，默认为20。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -255,20 +202,14 @@ public class ListScalingGroupsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListScalingGroupsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID，当传入all_granted_eps时表示查询该用户所有授权的企业项目下的伸缩组列表
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID，当传入all_granted_eps时表示查询该用户所有授权的企业项目下的伸缩组列表
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -276,8 +217,6 @@ public class ListScalingGroupsRequest  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -288,17 +227,24 @@ public class ListScalingGroupsRequest  {
             return false;
         }
         ListScalingGroupsRequest listScalingGroupsRequest = (ListScalingGroupsRequest) o;
-        return Objects.equals(this.scalingGroupName, listScalingGroupsRequest.scalingGroupName) &&
-            Objects.equals(this.scalingConfigurationId, listScalingGroupsRequest.scalingConfigurationId) &&
-            Objects.equals(this.scalingGroupStatus, listScalingGroupsRequest.scalingGroupStatus) &&
-            Objects.equals(this.startNumber, listScalingGroupsRequest.startNumber) &&
-            Objects.equals(this.limit, listScalingGroupsRequest.limit) &&
-            Objects.equals(this.enterpriseProjectId, listScalingGroupsRequest.enterpriseProjectId);
+        return Objects.equals(this.scalingGroupName, listScalingGroupsRequest.scalingGroupName)
+            && Objects.equals(this.scalingConfigurationId, listScalingGroupsRequest.scalingConfigurationId)
+            && Objects.equals(this.scalingGroupStatus, listScalingGroupsRequest.scalingGroupStatus)
+            && Objects.equals(this.startNumber, listScalingGroupsRequest.startNumber)
+            && Objects.equals(this.limit, listScalingGroupsRequest.limit)
+            && Objects.equals(this.enterpriseProjectId, listScalingGroupsRequest.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(scalingGroupName, scalingConfigurationId, scalingGroupStatus, startNumber, limit, enterpriseProjectId);
+        return Objects.hash(scalingGroupName,
+            scalingConfigurationId,
+            scalingGroupStatus,
+            startNumber,
+            limit,
+            enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -312,16 +258,13 @@ public class ListScalingGroupsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

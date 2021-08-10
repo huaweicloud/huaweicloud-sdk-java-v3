@@ -1,41 +1,26 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Resources
- */
-public class Resources  {
+/** Resources */
+public class Resources {
 
-    /**
-     * 配额类型。枚举值说明:  - CMK，用户主密钥  - grant_per_CMK，单个用户主密钥可创建授权数
-     */
+    /** 配额类型。枚举值说明: - CMK，用户主密钥 - grant_per_CMK，单个用户主密钥可创建授权数 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum CMK for value: "CMK"
-         */
+        /** Enum CMK for value: "CMK" */
         public static final TypeEnum CMK = new TypeEnum("CMK");
-        
-        /**
-         * Enum GRANT_PER_CMK for value: "grant_per_CMK"
-         */
+
+        /** Enum GRANT_PER_CMK for value: "grant_per_CMK" */
         public static final TypeEnum GRANT_PER_CMK = new TypeEnum("grant_per_CMK");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +49,7 @@ public class Resources  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +60,7 @@ public class Resources  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -99,22 +84,19 @@ public class Resources  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="used")
-    
+    @JsonProperty(value = "used")
+
     private Integer used;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quota")
-    
+    @JsonProperty(value = "quota")
+
     private Integer quota;
 
     public Resources withType(TypeEnum type) {
@@ -122,13 +104,9 @@ public class Resources  {
         return this;
     }
 
-    
-
-
-    /**
-     * 配额类型。枚举值说明:  - CMK，用户主密钥  - grant_per_CMK，单个用户主密钥可创建授权数
-     * @return type
-     */
+    /** 配额类型。枚举值说明: - CMK，用户主密钥 - grant_per_CMK，单个用户主密钥可创建授权数
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -137,22 +115,14 @@ public class Resources  {
         this.type = type;
     }
 
-    
-
     public Resources withUsed(Integer used) {
         this.used = used;
         return this;
     }
 
-    
-
-
-    /**
-     * 已使用配额数。
-     * minimum: 0
-     * maximum: 100
-     * @return used
-     */
+    /** 已使用配额数。 minimum: 0 maximum: 100
+     * 
+     * @return used */
     public Integer getUsed() {
         return used;
     }
@@ -161,22 +131,14 @@ public class Resources  {
         this.used = used;
     }
 
-    
-
     public Resources withQuota(Integer quota) {
         this.quota = quota;
         return this;
     }
 
-    
-
-
-    /**
-     * 配额总数。
-     * minimum: 0
-     * maximum: 100
-     * @return quota
-     */
+    /** 配额总数。 minimum: 0 maximum: 100
+     * 
+     * @return quota */
     public Integer getQuota() {
         return quota;
     }
@@ -184,8 +146,6 @@ public class Resources  {
     public void setQuota(Integer quota) {
         this.quota = quota;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -196,14 +156,15 @@ public class Resources  {
             return false;
         }
         Resources resources = (Resources) o;
-        return Objects.equals(this.type, resources.type) &&
-            Objects.equals(this.used, resources.used) &&
-            Objects.equals(this.quota, resources.quota);
+        return Objects.equals(this.type, resources.type) && Objects.equals(this.used, resources.used)
+            && Objects.equals(this.quota, resources.quota);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, used, quota);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -214,16 +175,13 @@ public class Resources  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

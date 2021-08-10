@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ip地址组中的包含的ip 信息对象
- */
-public class UpadateIpGroupIpOption  {
-
-
+/** ip地址组中的包含的ip 信息对象 */
+public class UpadateIpGroupIpOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip")
-    
+    @JsonProperty(value = "ip")
+
     private String ip;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public UpadateIpGroupIpOption withIp(String ip) {
@@ -34,13 +23,9 @@ public class UpadateIpGroupIpOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * ip地址组中的包含的ip。 支持ipv4、ipv6的ip
-     * @return ip
-     */
+    /** ip地址组中的包含的ip。 支持ipv4、ipv6的ip
+     * 
+     * @return ip */
     public String getIp() {
         return ip;
     }
@@ -49,20 +34,14 @@ public class UpadateIpGroupIpOption  {
         this.ip = ip;
     }
 
-    
-
     public UpadateIpGroupIpOption withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址组中ip的备注信息
-     * @return description
-     */
+    /** IP地址组中ip的备注信息
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -70,8 +49,6 @@ public class UpadateIpGroupIpOption  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class UpadateIpGroupIpOption  {
             return false;
         }
         UpadateIpGroupIpOption upadateIpGroupIpOption = (UpadateIpGroupIpOption) o;
-        return Objects.equals(this.ip, upadateIpGroupIpOption.ip) &&
-            Objects.equals(this.description, upadateIpGroupIpOption.description);
+        return Objects.equals(this.ip, upadateIpGroupIpOption.ip)
+            && Objects.equals(this.description, upadateIpGroupIpOption.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(ip, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class UpadateIpGroupIpOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

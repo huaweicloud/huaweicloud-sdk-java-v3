@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.dws.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dws.v2.model.RestartClusterRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class RestartClusterRequest  {
-
-
+/** Request Object */
+public class RestartClusterRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
+
     private String clusterId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private RestartClusterRequestBody body;
 
     public RestartClusterRequest withClusterId(String clusterId) {
@@ -35,13 +24,9 @@ public class RestartClusterRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 指定待重启集群的ID。
-     * @return clusterId
-     */
+    /** 指定待重启集群的ID。
+     * 
+     * @return clusterId */
     public String getClusterId() {
         return clusterId;
     }
@@ -50,27 +35,23 @@ public class RestartClusterRequest  {
         this.clusterId = clusterId;
     }
 
-    
-
     public RestartClusterRequest withBody(RestartClusterRequestBody body) {
         this.body = body;
         return this;
     }
 
     public RestartClusterRequest withBody(Consumer<RestartClusterRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new RestartClusterRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public RestartClusterRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class RestartClusterRequest  {
     public void setBody(RestartClusterRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class RestartClusterRequest  {
             return false;
         }
         RestartClusterRequest restartClusterRequest = (RestartClusterRequest) o;
-        return Objects.equals(this.clusterId, restartClusterRequest.clusterId) &&
-            Objects.equals(this.body, restartClusterRequest.body);
+        return Objects.equals(this.clusterId, restartClusterRequest.clusterId)
+            && Objects.equals(this.body, restartClusterRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clusterId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class RestartClusterRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

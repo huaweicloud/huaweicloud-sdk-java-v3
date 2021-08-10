@@ -1,53 +1,37 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.AddonInstanceStatus;
-import com.huaweicloud.sdk.cce.v3.model.InstanceSpec;
-import com.huaweicloud.sdk.cce.v3.model.Metadata;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 插件实例详细信息-response结构体
- */
-public class AddonInstance  {
-
-
+/** 插件实例详细信息-response结构体 */
+public class AddonInstance {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="kind")
-    
+    @JsonProperty(value = "kind")
+
     private String kind;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apiVersion")
-    
+    @JsonProperty(value = "apiVersion")
+
     private String apiVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata")
-    
+    @JsonProperty(value = "metadata")
+
     private Metadata metadata;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec")
-    
+    @JsonProperty(value = "spec")
+
     private InstanceSpec spec;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private AddonInstanceStatus status;
 
     public AddonInstance withKind(String kind) {
@@ -55,13 +39,9 @@ public class AddonInstance  {
         return this;
     }
 
-    
-
-
-    /**
-     * API类型，固定值“Addon”，该值不可修改。
-     * @return kind
-     */
+    /** API类型，固定值“Addon”，该值不可修改。
+     * 
+     * @return kind */
     public String getKind() {
         return kind;
     }
@@ -70,20 +50,14 @@ public class AddonInstance  {
         this.kind = kind;
     }
 
-    
-
     public AddonInstance withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * API版本，固定值“v3”，该值不可修改。
-     * @return apiVersion
-     */
+    /** API版本，固定值“v3”，该值不可修改。
+     * 
+     * @return apiVersion */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -92,27 +66,23 @@ public class AddonInstance  {
         this.apiVersion = apiVersion;
     }
 
-    
-
     public AddonInstance withMetadata(Metadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
     public AddonInstance withMetadata(Consumer<Metadata> metadataSetter) {
-        if(this.metadata == null ){
+        if (this.metadata == null) {
             this.metadata = new Metadata();
             metadataSetter.accept(this.metadata);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get metadata
-     * @return metadata
-     */
+    /** Get metadata
+     * 
+     * @return metadata */
     public Metadata getMetadata() {
         return metadata;
     }
@@ -121,27 +91,23 @@ public class AddonInstance  {
         this.metadata = metadata;
     }
 
-    
-
     public AddonInstance withSpec(InstanceSpec spec) {
         this.spec = spec;
         return this;
     }
 
     public AddonInstance withSpec(Consumer<InstanceSpec> specSetter) {
-        if(this.spec == null ){
+        if (this.spec == null) {
             this.spec = new InstanceSpec();
             specSetter.accept(this.spec);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get spec
-     * @return spec
-     */
+    /** Get spec
+     * 
+     * @return spec */
     public InstanceSpec getSpec() {
         return spec;
     }
@@ -150,27 +116,23 @@ public class AddonInstance  {
         this.spec = spec;
     }
 
-    
-
     public AddonInstance withStatus(AddonInstanceStatus status) {
         this.status = status;
         return this;
     }
 
     public AddonInstance withStatus(Consumer<AddonInstanceStatus> statusSetter) {
-        if(this.status == null ){
+        if (this.status == null) {
             this.status = new AddonInstanceStatus();
             statusSetter.accept(this.status);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get status
-     * @return status
-     */
+    /** Get status
+     * 
+     * @return status */
     public AddonInstanceStatus getStatus() {
         return status;
     }
@@ -178,8 +140,6 @@ public class AddonInstance  {
     public void setStatus(AddonInstanceStatus status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -190,16 +150,17 @@ public class AddonInstance  {
             return false;
         }
         AddonInstance addonInstance = (AddonInstance) o;
-        return Objects.equals(this.kind, addonInstance.kind) &&
-            Objects.equals(this.apiVersion, addonInstance.apiVersion) &&
-            Objects.equals(this.metadata, addonInstance.metadata) &&
-            Objects.equals(this.spec, addonInstance.spec) &&
-            Objects.equals(this.status, addonInstance.status);
+        return Objects.equals(this.kind, addonInstance.kind)
+            && Objects.equals(this.apiVersion, addonInstance.apiVersion)
+            && Objects.equals(this.metadata, addonInstance.metadata) && Objects.equals(this.spec, addonInstance.spec)
+            && Objects.equals(this.status, addonInstance.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(kind, apiVersion, metadata, spec, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -212,16 +173,13 @@ public class AddonInstance  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

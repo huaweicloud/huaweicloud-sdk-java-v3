@@ -1,58 +1,44 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class NeutronListFirewallPoliciesRequest  {
-
-
+/** Request Object */
+public class NeutronListFirewallPoliciesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private List<String> id = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private List<String> name = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private List<String> description = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
+
     private String tenantId;
 
     public NeutronListFirewallPoliciesRequest withLimit(Integer limit) {
@@ -60,13 +46,9 @@ public class NeutronListFirewallPoliciesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 每页返回的个数
-     * @return limit
-     */
+    /** 每页返回的个数
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -75,20 +57,14 @@ public class NeutronListFirewallPoliciesRequest  {
         this.limit = limit;
     }
 
-    
-
     public NeutronListFirewallPoliciesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页查询起始的资源ID，为空时查询第一页
-     * @return marker
-     */
+    /** 分页查询起始的资源ID，为空时查询第一页
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -97,16 +73,13 @@ public class NeutronListFirewallPoliciesRequest  {
         this.marker = marker;
     }
 
-    
-
     public NeutronListFirewallPoliciesRequest withId(List<String> id) {
         this.id = id;
         return this;
     }
 
-    
     public NeutronListFirewallPoliciesRequest addIdItem(String idItem) {
-        if(this.id == null) {
+        if (this.id == null) {
             this.id = new ArrayList<>();
         }
         this.id.add(idItem);
@@ -114,17 +87,16 @@ public class NeutronListFirewallPoliciesRequest  {
     }
 
     public NeutronListFirewallPoliciesRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null) {
+        if (this.id == null) {
             this.id = new ArrayList<>();
         }
         idSetter.accept(this.id);
         return this;
     }
 
-    /**
-     * 使用网络ACL策略ID过滤网络ACL策略
-     * @return id
-     */
+    /** 使用网络ACL策略ID过滤网络ACL策略
+     * 
+     * @return id */
     public List<String> getId() {
         return id;
     }
@@ -133,16 +105,13 @@ public class NeutronListFirewallPoliciesRequest  {
         this.id = id;
     }
 
-    
-
     public NeutronListFirewallPoliciesRequest withName(List<String> name) {
         this.name = name;
         return this;
     }
 
-    
     public NeutronListFirewallPoliciesRequest addNameItem(String nameItem) {
-        if(this.name == null) {
+        if (this.name == null) {
             this.name = new ArrayList<>();
         }
         this.name.add(nameItem);
@@ -150,17 +119,16 @@ public class NeutronListFirewallPoliciesRequest  {
     }
 
     public NeutronListFirewallPoliciesRequest withName(Consumer<List<String>> nameSetter) {
-        if(this.name == null) {
+        if (this.name == null) {
             this.name = new ArrayList<>();
         }
         nameSetter.accept(this.name);
         return this;
     }
 
-    /**
-     * 使用name过滤网络ACL策略
-     * @return name
-     */
+    /** 使用name过滤网络ACL策略
+     * 
+     * @return name */
     public List<String> getName() {
         return name;
     }
@@ -169,16 +137,13 @@ public class NeutronListFirewallPoliciesRequest  {
         this.name = name;
     }
 
-    
-
     public NeutronListFirewallPoliciesRequest withDescription(List<String> description) {
         this.description = description;
         return this;
     }
 
-    
     public NeutronListFirewallPoliciesRequest addDescriptionItem(String descriptionItem) {
-        if(this.description == null) {
+        if (this.description == null) {
             this.description = new ArrayList<>();
         }
         this.description.add(descriptionItem);
@@ -186,17 +151,16 @@ public class NeutronListFirewallPoliciesRequest  {
     }
 
     public NeutronListFirewallPoliciesRequest withDescription(Consumer<List<String>> descriptionSetter) {
-        if(this.description == null) {
+        if (this.description == null) {
             this.description = new ArrayList<>();
         }
         descriptionSetter.accept(this.description);
         return this;
     }
 
-    /**
-     * 使用网络ACL策略描述过滤查询网络ACL策略
-     * @return description
-     */
+    /** 使用网络ACL策略描述过滤查询网络ACL策略
+     * 
+     * @return description */
     public List<String> getDescription() {
         return description;
     }
@@ -205,20 +169,14 @@ public class NeutronListFirewallPoliciesRequest  {
         this.description = description;
     }
 
-    
-
     public NeutronListFirewallPoliciesRequest withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
 
-    
-
-
-    /**
-     * 使用tenant_id过滤查询网络ACL策略
-     * @return tenantId
-     */
+    /** 使用tenant_id过滤查询网络ACL策略
+     * 
+     * @return tenantId */
     public String getTenantId() {
         return tenantId;
     }
@@ -226,8 +184,6 @@ public class NeutronListFirewallPoliciesRequest  {
     public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -238,17 +194,19 @@ public class NeutronListFirewallPoliciesRequest  {
             return false;
         }
         NeutronListFirewallPoliciesRequest neutronListFirewallPoliciesRequest = (NeutronListFirewallPoliciesRequest) o;
-        return Objects.equals(this.limit, neutronListFirewallPoliciesRequest.limit) &&
-            Objects.equals(this.marker, neutronListFirewallPoliciesRequest.marker) &&
-            Objects.equals(this.id, neutronListFirewallPoliciesRequest.id) &&
-            Objects.equals(this.name, neutronListFirewallPoliciesRequest.name) &&
-            Objects.equals(this.description, neutronListFirewallPoliciesRequest.description) &&
-            Objects.equals(this.tenantId, neutronListFirewallPoliciesRequest.tenantId);
+        return Objects.equals(this.limit, neutronListFirewallPoliciesRequest.limit)
+            && Objects.equals(this.marker, neutronListFirewallPoliciesRequest.marker)
+            && Objects.equals(this.id, neutronListFirewallPoliciesRequest.id)
+            && Objects.equals(this.name, neutronListFirewallPoliciesRequest.name)
+            && Objects.equals(this.description, neutronListFirewallPoliciesRequest.description)
+            && Objects.equals(this.tenantId, neutronListFirewallPoliciesRequest.tenantId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(limit, marker, id, name, description, tenantId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -262,16 +220,13 @@ public class NeutronListFirewallPoliciesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

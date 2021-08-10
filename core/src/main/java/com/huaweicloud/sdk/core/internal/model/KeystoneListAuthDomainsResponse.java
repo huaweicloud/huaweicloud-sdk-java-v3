@@ -29,10 +29,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public class KeystoneListAuthDomainsResponse extends SdkResponse {
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domains")
     private List<Domain> domains = null;
@@ -58,11 +57,9 @@ public class KeystoneListAuthDomainsResponse extends SdkResponse {
         return this;
     }
 
-    /**
-     * 账号信息列表。
+    /** 账号信息列表。
      *
-     * @return domains
-     */
+     * @return domains */
     public List<Domain> getDomains() {
         return domains;
     }
@@ -72,4 +69,3 @@ public class KeystoneListAuthDomainsResponse extends SdkResponse {
     }
 
 }
-

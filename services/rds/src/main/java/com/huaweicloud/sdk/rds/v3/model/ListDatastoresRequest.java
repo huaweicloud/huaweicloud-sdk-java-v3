@@ -1,52 +1,34 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListDatastoresRequest  {
-
-
+/** Request Object */
+public class ListDatastoresRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
-    /**
-     * 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer
-     */
+
+    /** 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer */
     public static final class DatabaseNameEnum {
 
-        
-        /**
-         * Enum MYSQL for value: "MySQL"
-         */
+        /** Enum MYSQL for value: "MySQL" */
         public static final DatabaseNameEnum MYSQL = new DatabaseNameEnum("MySQL");
-        
-        /**
-         * Enum POSTGRESQL for value: "PostgreSQL"
-         */
+
+        /** Enum POSTGRESQL for value: "PostgreSQL" */
         public static final DatabaseNameEnum POSTGRESQL = new DatabaseNameEnum("PostgreSQL");
-        
-        /**
-         * Enum SQLSERVER for value: "SQLServer"
-         */
+
+        /** Enum SQLSERVER for value: "SQLServer" */
         public static final DatabaseNameEnum SQLSERVER = new DatabaseNameEnum("SQLServer");
-        
 
         private static final Map<String, DatabaseNameEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,7 +58,7 @@ public class ListDatastoresRequest  {
 
         @JsonCreator
         public static DatabaseNameEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DatabaseNameEnum result = STATIC_FIELDS.get(value);
@@ -87,7 +69,7 @@ public class ListDatastoresRequest  {
         }
 
         public static DatabaseNameEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DatabaseNameEnum result = STATIC_FIELDS.get(value);
@@ -111,10 +93,9 @@ public class ListDatastoresRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="database_name")
-    
+    @JsonProperty(value = "database_name")
+
     private DatabaseNameEnum databaseName;
 
     public ListDatastoresRequest withXLanguage(String xLanguage) {
@@ -122,15 +103,11 @@ public class ListDatastoresRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -139,20 +116,14 @@ public class ListDatastoresRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListDatastoresRequest withDatabaseName(DatabaseNameEnum databaseName) {
         this.databaseName = databaseName;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer
-     * @return databaseName
-     */
+    /** 数据库引擎。支持的引擎如下，不区分大小写： MySQL PostgreSQL SQLServer
+     * 
+     * @return databaseName */
     public DatabaseNameEnum getDatabaseName() {
         return databaseName;
     }
@@ -160,8 +131,6 @@ public class ListDatastoresRequest  {
     public void setDatabaseName(DatabaseNameEnum databaseName) {
         this.databaseName = databaseName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -172,13 +141,15 @@ public class ListDatastoresRequest  {
             return false;
         }
         ListDatastoresRequest listDatastoresRequest = (ListDatastoresRequest) o;
-        return Objects.equals(this.xLanguage, listDatastoresRequest.xLanguage) &&
-            Objects.equals(this.databaseName, listDatastoresRequest.databaseName);
+        return Objects.equals(this.xLanguage, listDatastoresRequest.xLanguage)
+            && Objects.equals(this.databaseName, listDatastoresRequest.databaseName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, databaseName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +159,13 @@ public class ListDatastoresRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

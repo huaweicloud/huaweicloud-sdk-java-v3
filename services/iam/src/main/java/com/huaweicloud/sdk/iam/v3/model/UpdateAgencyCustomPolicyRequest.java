@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.UpdateAgencyCustomPolicyRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateAgencyCustomPolicyRequest  {
-
-
+/** Request Object */
+public class UpdateAgencyCustomPolicyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="role_id")
-    
+    @JsonProperty(value = "role_id")
+
     private String roleId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateAgencyCustomPolicyRequestBody body;
 
     public UpdateAgencyCustomPolicyRequest withRoleId(String roleId) {
@@ -35,13 +24,9 @@ public class UpdateAgencyCustomPolicyRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 待修改的自定义策略ID，获取方式请参见：[自定义策略ID](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=ListCustomPolicies)。
-     * @return roleId
-     */
+    /** 待修改的自定义策略ID，获取方式请参见：[自定义策略ID](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=IAM&api=ListCustomPolicies)。
+     * 
+     * @return roleId */
     public String getRoleId() {
         return roleId;
     }
@@ -50,27 +35,23 @@ public class UpdateAgencyCustomPolicyRequest  {
         this.roleId = roleId;
     }
 
-    
-
     public UpdateAgencyCustomPolicyRequest withBody(UpdateAgencyCustomPolicyRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdateAgencyCustomPolicyRequest withBody(Consumer<UpdateAgencyCustomPolicyRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateAgencyCustomPolicyRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateAgencyCustomPolicyRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdateAgencyCustomPolicyRequest  {
     public void setBody(UpdateAgencyCustomPolicyRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdateAgencyCustomPolicyRequest  {
             return false;
         }
         UpdateAgencyCustomPolicyRequest updateAgencyCustomPolicyRequest = (UpdateAgencyCustomPolicyRequest) o;
-        return Objects.equals(this.roleId, updateAgencyCustomPolicyRequest.roleId) &&
-            Objects.equals(this.body, updateAgencyCustomPolicyRequest.body);
+        return Objects.equals(this.roleId, updateAgencyCustomPolicyRequest.roleId)
+            && Objects.equals(this.body, updateAgencyCustomPolicyRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(roleId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdateAgencyCustomPolicyRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

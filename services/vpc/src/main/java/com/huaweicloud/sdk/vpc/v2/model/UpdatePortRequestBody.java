@@ -1,27 +1,19 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vpc.v2.model.UpdatePortOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class UpdatePortRequestBody  {
-
-
+public class UpdatePortRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
+
     private UpdatePortOption port;
 
     public UpdatePortRequestBody withPort(UpdatePortOption port) {
@@ -30,19 +22,17 @@ public class UpdatePortRequestBody  {
     }
 
     public UpdatePortRequestBody withPort(Consumer<UpdatePortOption> portSetter) {
-        if(this.port == null ){
+        if (this.port == null) {
             this.port = new UpdatePortOption();
             portSetter.accept(this.port);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get port
-     * @return port
-     */
+    /** Get port
+     * 
+     * @return port */
     public UpdatePortOption getPort() {
         return port;
     }
@@ -50,8 +40,6 @@ public class UpdatePortRequestBody  {
     public void setPort(UpdatePortOption port) {
         this.port = port;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +52,12 @@ public class UpdatePortRequestBody  {
         UpdatePortRequestBody updatePortRequestBody = (UpdatePortRequestBody) o;
         return Objects.equals(this.port, updatePortRequestBody.port);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(port);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +66,13 @@ public class UpdatePortRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

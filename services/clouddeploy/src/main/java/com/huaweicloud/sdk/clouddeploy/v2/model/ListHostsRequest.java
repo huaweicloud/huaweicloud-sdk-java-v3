@@ -1,77 +1,56 @@
 package com.huaweicloud.sdk.clouddeploy.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListHostsRequest  {
-
-
+/** Request Object */
+public class ListHostsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="as_proxy")
-    
+    @JsonProperty(value = "as_proxy")
+
     private Boolean asProxy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sort_key")
-    
+    @JsonProperty(value = "sort_key")
+
     private String sortKey;
-    /**
-     * 排序方式,默认为：DESC
-     */
+
+    /** 排序方式,默认为：DESC */
     public static final class SortDirEnum {
 
-        
-        /**
-         * Enum DESC for value: "DESC"
-         */
+        /** Enum DESC for value: "DESC" */
         public static final SortDirEnum DESC = new SortDirEnum("DESC");
-        
-        /**
-         * Enum ASC for value: "ASC"
-         */
+
+        /** Enum ASC for value: "ASC" */
         public static final SortDirEnum ASC = new SortDirEnum("ASC");
-        
 
         private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
 
@@ -100,7 +79,7 @@ public class ListHostsRequest  {
 
         @JsonCreator
         public static SortDirEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SortDirEnum result = STATIC_FIELDS.get(value);
@@ -111,7 +90,7 @@ public class ListHostsRequest  {
         }
 
         public static SortDirEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SortDirEnum result = STATIC_FIELDS.get(value);
@@ -135,16 +114,14 @@ public class ListHostsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sort_dir")
-    
+    @JsonProperty(value = "sort_dir")
+
     private SortDirEnum sortDir;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="with_auth")
-    
+    @JsonProperty(value = "with_auth")
+
     private Boolean withAuth;
 
     public ListHostsRequest withGroupId(String groupId) {
@@ -152,13 +129,9 @@ public class ListHostsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 主机组id
-     * @return groupId
-     */
+    /** 主机组id
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -167,20 +140,14 @@ public class ListHostsRequest  {
         this.groupId = groupId;
     }
 
-    
-
     public ListHostsRequest withAsProxy(Boolean asProxy) {
         this.asProxy = asProxy;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否为代理机
-     * @return asProxy
-     */
+    /** 是否为代理机
+     * 
+     * @return asProxy */
     public Boolean getAsProxy() {
         return asProxy;
     }
@@ -189,21 +156,14 @@ public class ListHostsRequest  {
         this.asProxy = asProxy;
     }
 
-    
-
     public ListHostsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量,表示从此偏移量开始查询,offset大于等于0
-     * minimum: 0
-     * @return offset
-     */
+    /** 偏移量,表示从此偏移量开始查询,offset大于等于0 minimum: 0
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -212,22 +172,14 @@ public class ListHostsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListHostsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示的条目数量，默认为1000
-     * minimum: 1
-     * maximum: 1000
-     * @return limit
-     */
+    /** 每页显示的条目数量，默认为1000 minimum: 1 maximum: 1000
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -236,20 +188,14 @@ public class ListHostsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListHostsRequest withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 主机名，可输入中英文，数字和符号(-_.)
-     * @return name
-     */
+    /** 主机名，可输入中英文，数字和符号(-_.)
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -258,20 +204,14 @@ public class ListHostsRequest  {
         this.name = name;
     }
 
-    
-
     public ListHostsRequest withSortKey(String sortKey) {
         this.sortKey = sortKey;
         return this;
     }
 
-    
-
-
-    /**
-     * 排序字段，支持：AS_PROXY|HOST_NAME|OS|OWNER_NAME|as_proxy|host_name|os|owner_name|nickName。不填默认为：as_proxy
-     * @return sortKey
-     */
+    /** 排序字段，支持：AS_PROXY|HOST_NAME|OS|OWNER_NAME|as_proxy|host_name|os|owner_name|nickName。不填默认为：as_proxy
+     * 
+     * @return sortKey */
     public String getSortKey() {
         return sortKey;
     }
@@ -280,20 +220,14 @@ public class ListHostsRequest  {
         this.sortKey = sortKey;
     }
 
-    
-
     public ListHostsRequest withSortDir(SortDirEnum sortDir) {
         this.sortDir = sortDir;
         return this;
     }
 
-    
-
-
-    /**
-     * 排序方式,默认为：DESC
-     * @return sortDir
-     */
+    /** 排序方式,默认为：DESC
+     * 
+     * @return sortDir */
     public SortDirEnum getSortDir() {
         return sortDir;
     }
@@ -302,20 +236,14 @@ public class ListHostsRequest  {
         this.sortDir = sortDir;
     }
 
-    
-
     public ListHostsRequest withWithAuth(Boolean withAuth) {
         this.withAuth = withAuth;
         return this;
     }
 
-    
-
-
-    /**
-     * 返回结果是否加密
-     * @return withAuth
-     */
+    /** 返回结果是否加密
+     * 
+     * @return withAuth */
     public Boolean getWithAuth() {
         return withAuth;
     }
@@ -323,8 +251,6 @@ public class ListHostsRequest  {
     public void setWithAuth(Boolean withAuth) {
         this.withAuth = withAuth;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -335,19 +261,20 @@ public class ListHostsRequest  {
             return false;
         }
         ListHostsRequest listHostsRequest = (ListHostsRequest) o;
-        return Objects.equals(this.groupId, listHostsRequest.groupId) &&
-            Objects.equals(this.asProxy, listHostsRequest.asProxy) &&
-            Objects.equals(this.offset, listHostsRequest.offset) &&
-            Objects.equals(this.limit, listHostsRequest.limit) &&
-            Objects.equals(this.name, listHostsRequest.name) &&
-            Objects.equals(this.sortKey, listHostsRequest.sortKey) &&
-            Objects.equals(this.sortDir, listHostsRequest.sortDir) &&
-            Objects.equals(this.withAuth, listHostsRequest.withAuth);
+        return Objects.equals(this.groupId, listHostsRequest.groupId)
+            && Objects.equals(this.asProxy, listHostsRequest.asProxy)
+            && Objects.equals(this.offset, listHostsRequest.offset)
+            && Objects.equals(this.limit, listHostsRequest.limit) && Objects.equals(this.name, listHostsRequest.name)
+            && Objects.equals(this.sortKey, listHostsRequest.sortKey)
+            && Objects.equals(this.sortDir, listHostsRequest.sortDir)
+            && Objects.equals(this.withAuth, listHostsRequest.withAuth);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(groupId, asProxy, offset, limit, name, sortKey, sortDir, withAuth);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -363,16 +290,13 @@ public class ListHostsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

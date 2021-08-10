@@ -1,66 +1,47 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 源端校验项
- */
-public class EnvironmentCheck  {
-
-
+/** 源端校验项 */
+public class EnvironmentCheck {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Long id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="params")
-    
+    @JsonProperty(value = "params")
+
     private List<String> params = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 检查结果
-     */
+
+    /** 检查结果 */
     public static final class ResultEnum {
 
-        
-        /**
-         * Enum OK_ for value: "OK：检查通过"
-         */
+        /** Enum OK_ for value: "OK：检查通过" */
         public static final ResultEnum OK_ = new ResultEnum("OK：检查通过");
-        
-        /**
-         * Enum WARN_ for value: "WARN：告警"
-         */
+
+        /** Enum WARN_ for value: "WARN：告警" */
         public static final ResultEnum WARN_ = new ResultEnum("WARN：告警");
-        
-        /**
-         * Enum ERROR_ for value: "ERROR：检查不通过"
-         */
+
+        /** Enum ERROR_ for value: "ERROR：检查不通过" */
         public static final ResultEnum ERROR_ = new ResultEnum("ERROR：检查不通过");
-        
 
         private static final Map<String, ResultEnum> STATIC_FIELDS = createStaticFields();
 
@@ -90,7 +71,7 @@ public class EnvironmentCheck  {
 
         @JsonCreator
         public static ResultEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ResultEnum result = STATIC_FIELDS.get(value);
@@ -101,7 +82,7 @@ public class EnvironmentCheck  {
         }
 
         public static ResultEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ResultEnum result = STATIC_FIELDS.get(value);
@@ -125,22 +106,19 @@ public class EnvironmentCheck  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="result")
-    
+    @JsonProperty(value = "result")
+
     private ResultEnum result;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
+
     private String errorCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_params")
-    
+    @JsonProperty(value = "error_params")
+
     private String errorParams;
 
     public EnvironmentCheck withId(Long id) {
@@ -148,15 +126,9 @@ public class EnvironmentCheck  {
         return this;
     }
 
-    
-
-
-    /**
-     * 该检查项的ID
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return id
-     */
+    /** 该检查项的ID minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return id */
     public Long getId() {
         return id;
     }
@@ -165,16 +137,13 @@ public class EnvironmentCheck  {
         this.id = id;
     }
 
-    
-
     public EnvironmentCheck withParams(List<String> params) {
         this.params = params;
         return this;
     }
 
-    
     public EnvironmentCheck addParamsItem(String paramsItem) {
-        if(this.params == null) {
+        if (this.params == null) {
             this.params = new ArrayList<>();
         }
         this.params.add(paramsItem);
@@ -182,17 +151,16 @@ public class EnvironmentCheck  {
     }
 
     public EnvironmentCheck withParams(Consumer<List<String>> paramsSetter) {
-        if(this.params == null) {
+        if (this.params == null) {
             this.params = new ArrayList<>();
         }
         paramsSetter.accept(this.params);
         return this;
     }
 
-    /**
-     * 参数
-     * @return params
-     */
+    /** 参数
+     * 
+     * @return params */
     public List<String> getParams() {
         return params;
     }
@@ -201,20 +169,14 @@ public class EnvironmentCheck  {
         this.params = params;
     }
 
-    
-
     public EnvironmentCheck withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 检查项名称
-     * @return name
-     */
+    /** 检查项名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -223,20 +185,14 @@ public class EnvironmentCheck  {
         this.name = name;
     }
 
-    
-
     public EnvironmentCheck withResult(ResultEnum result) {
         this.result = result;
         return this;
     }
 
-    
-
-
-    /**
-     * 检查结果
-     * @return result
-     */
+    /** 检查结果
+     * 
+     * @return result */
     public ResultEnum getResult() {
         return result;
     }
@@ -245,20 +201,14 @@ public class EnvironmentCheck  {
         this.result = result;
     }
 
-    
-
     public EnvironmentCheck withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 检查不通过的错误码
-     * @return errorCode
-     */
+    /** 检查不通过的错误码
+     * 
+     * @return errorCode */
     public String getErrorCode() {
         return errorCode;
     }
@@ -267,20 +217,14 @@ public class EnvironmentCheck  {
         this.errorCode = errorCode;
     }
 
-    
-
     public EnvironmentCheck withErrorParams(String errorParams) {
         this.errorParams = errorParams;
         return this;
     }
 
-    
-
-
-    /**
-     * 检查不通过的错误参数
-     * @return errorParams
-     */
+    /** 检查不通过的错误参数
+     * 
+     * @return errorParams */
     public String getErrorParams() {
         return errorParams;
     }
@@ -288,8 +232,6 @@ public class EnvironmentCheck  {
     public void setErrorParams(String errorParams) {
         this.errorParams = errorParams;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -300,17 +242,17 @@ public class EnvironmentCheck  {
             return false;
         }
         EnvironmentCheck environmentCheck = (EnvironmentCheck) o;
-        return Objects.equals(this.id, environmentCheck.id) &&
-            Objects.equals(this.params, environmentCheck.params) &&
-            Objects.equals(this.name, environmentCheck.name) &&
-            Objects.equals(this.result, environmentCheck.result) &&
-            Objects.equals(this.errorCode, environmentCheck.errorCode) &&
-            Objects.equals(this.errorParams, environmentCheck.errorParams);
+        return Objects.equals(this.id, environmentCheck.id) && Objects.equals(this.params, environmentCheck.params)
+            && Objects.equals(this.name, environmentCheck.name) && Objects.equals(this.result, environmentCheck.result)
+            && Objects.equals(this.errorCode, environmentCheck.errorCode)
+            && Objects.equals(this.errorParams, environmentCheck.errorParams);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, params, name, result, errorCode, errorParams);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -324,16 +266,13 @@ public class EnvironmentCheck  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

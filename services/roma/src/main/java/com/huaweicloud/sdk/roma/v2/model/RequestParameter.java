@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * RequestParameter
- */
-public class RequestParameter  {
-
-
+/** RequestParameter */
+public class RequestParameter {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parameter_name")
-    
+    @JsonProperty(value = "parameter_name")
+
     private String parameterName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parameter_value")
-    
+    @JsonProperty(value = "parameter_value")
+
     private String parameterValue;
 
     public RequestParameter withParameterName(String parameterName) {
@@ -34,13 +23,9 @@ public class RequestParameter  {
         return this;
     }
 
-    
-
-
-    /**
-     * 请求参数名
-     * @return parameterName
-     */
+    /** 请求参数名
+     * 
+     * @return parameterName */
     public String getParameterName() {
         return parameterName;
     }
@@ -49,20 +34,14 @@ public class RequestParameter  {
         this.parameterName = parameterName;
     }
 
-    
-
     public RequestParameter withParameterValue(String parameterValue) {
         this.parameterValue = parameterValue;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求参数值
-     * @return parameterValue
-     */
+    /** 请求参数值
+     * 
+     * @return parameterValue */
     public String getParameterValue() {
         return parameterValue;
     }
@@ -70,8 +49,6 @@ public class RequestParameter  {
     public void setParameterValue(String parameterValue) {
         this.parameterValue = parameterValue;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class RequestParameter  {
             return false;
         }
         RequestParameter requestParameter = (RequestParameter) o;
-        return Objects.equals(this.parameterName, requestParameter.parameterName) &&
-            Objects.equals(this.parameterValue, requestParameter.parameterValue);
+        return Objects.equals(this.parameterName, requestParameter.parameterName)
+            && Objects.equals(this.parameterValue, requestParameter.parameterValue);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(parameterName, parameterValue);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class RequestParameter  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,53 +1,35 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.osm.v2.model.SatisfactionDimensionSimpleInfoV2;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListSatisfactionDimensionsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
-    
+    @JsonProperty(value = "total_count")
+
     private Integer totalCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="satisfaction_dimension_list")
-    
+    @JsonProperty(value = "satisfaction_dimension_list")
+
     private List<SatisfactionDimensionSimpleInfoV2> satisfactionDimensionList = null;
-    
+
     public ListSatisfactionDimensionsResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 总数
-     * minimum: 0
-     * maximum: 65535
-     * @return totalCount
-     */
+    /** 总数 minimum: 0 maximum: 65535
+     * 
+     * @return totalCount */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -56,34 +38,33 @@ public class ListSatisfactionDimensionsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
-    
-
-    public ListSatisfactionDimensionsResponse withSatisfactionDimensionList(List<SatisfactionDimensionSimpleInfoV2> satisfactionDimensionList) {
+    public ListSatisfactionDimensionsResponse withSatisfactionDimensionList(
+        List<SatisfactionDimensionSimpleInfoV2> satisfactionDimensionList) {
         this.satisfactionDimensionList = satisfactionDimensionList;
         return this;
     }
 
-    
-    public ListSatisfactionDimensionsResponse addSatisfactionDimensionListItem(SatisfactionDimensionSimpleInfoV2 satisfactionDimensionListItem) {
-        if(this.satisfactionDimensionList == null) {
+    public ListSatisfactionDimensionsResponse addSatisfactionDimensionListItem(
+        SatisfactionDimensionSimpleInfoV2 satisfactionDimensionListItem) {
+        if (this.satisfactionDimensionList == null) {
             this.satisfactionDimensionList = new ArrayList<>();
         }
         this.satisfactionDimensionList.add(satisfactionDimensionListItem);
         return this;
     }
 
-    public ListSatisfactionDimensionsResponse withSatisfactionDimensionList(Consumer<List<SatisfactionDimensionSimpleInfoV2>> satisfactionDimensionListSetter) {
-        if(this.satisfactionDimensionList == null) {
+    public ListSatisfactionDimensionsResponse withSatisfactionDimensionList(
+        Consumer<List<SatisfactionDimensionSimpleInfoV2>> satisfactionDimensionListSetter) {
+        if (this.satisfactionDimensionList == null) {
             this.satisfactionDimensionList = new ArrayList<>();
         }
         satisfactionDimensionListSetter.accept(this.satisfactionDimensionList);
         return this;
     }
 
-    /**
-     * 满意度分类列表
-     * @return satisfactionDimensionList
-     */
+    /** 满意度分类列表
+     * 
+     * @return satisfactionDimensionList */
     public List<SatisfactionDimensionSimpleInfoV2> getSatisfactionDimensionList() {
         return satisfactionDimensionList;
     }
@@ -91,8 +72,6 @@ public class ListSatisfactionDimensionsResponse extends SdkResponse {
     public void setSatisfactionDimensionList(List<SatisfactionDimensionSimpleInfoV2> satisfactionDimensionList) {
         this.satisfactionDimensionList = satisfactionDimensionList;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -103,13 +82,15 @@ public class ListSatisfactionDimensionsResponse extends SdkResponse {
             return false;
         }
         ListSatisfactionDimensionsResponse listSatisfactionDimensionsResponse = (ListSatisfactionDimensionsResponse) o;
-        return Objects.equals(this.totalCount, listSatisfactionDimensionsResponse.totalCount) &&
-            Objects.equals(this.satisfactionDimensionList, listSatisfactionDimensionsResponse.satisfactionDimensionList);
+        return Objects.equals(this.totalCount, listSatisfactionDimensionsResponse.totalCount) && Objects
+            .equals(this.satisfactionDimensionList, listSatisfactionDimensionsResponse.satisfactionDimensionList);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(totalCount, satisfactionDimensionList);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -119,16 +100,13 @@ public class ListSatisfactionDimensionsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

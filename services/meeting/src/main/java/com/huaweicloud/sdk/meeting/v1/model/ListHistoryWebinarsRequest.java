@@ -1,68 +1,51 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListHistoryWebinarsRequest  {
-
-
+/** Request Object */
+public class ListHistoryWebinarsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Request-Id")
-    
+    @JsonProperty(value = "X-Request-Id")
+
     private String xRequestId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Accept-Language")
-    
+    @JsonProperty(value = "Accept-Language")
+
     private String acceptLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="searchKey")
-    
+    @JsonProperty(value = "searchKey")
+
     private String searchKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sortType")
-    
+    @JsonProperty(value = "sortType")
+
     private String sortType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="startTime")
-    
+    @JsonProperty(value = "startTime")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endTime")
-    
+    @JsonProperty(value = "endTime")
+
     private String endTime;
 
     public ListHistoryWebinarsRequest withXRequestId(String xRequestId) {
@@ -70,15 +53,11 @@ public class ListHistoryWebinarsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
-     * @return xRequestId
-     */
+    /** 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * 
+     * @return xRequestId */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Request-Id")
+    @JsonProperty(value = "X-Request-Id")
     public String getXRequestId() {
         return xRequestId;
     }
@@ -87,20 +66,14 @@ public class ListHistoryWebinarsRequest  {
         this.xRequestId = xRequestId;
     }
 
-    
-
     public ListHistoryWebinarsRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言参数，默认为中文zh_CN, 英文为en_US
-     * @return acceptLanguage
-     */
+    /** 语言参数，默认为中文zh_CN, 英文为en_US
+     * 
+     * @return acceptLanguage */
     public String getAcceptLanguage() {
         return acceptLanguage;
     }
@@ -109,21 +82,14 @@ public class ListHistoryWebinarsRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
-    
-
     public ListHistoryWebinarsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 
-     * minimum: 0
-     * @return offset
-     */
+    /** 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 minimum: 0
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -132,22 +98,14 @@ public class ListHistoryWebinarsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListHistoryWebinarsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询数量 默认值：0 
-     * minimum: 1
-     * maximum: 500
-     * @return limit
-     */
+    /** 查询数量 默认值：0 minimum: 1 maximum: 500
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -156,20 +114,14 @@ public class ListHistoryWebinarsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListHistoryWebinarsRequest withSearchKey(String searchKey) {
         this.searchKey = searchKey;
         return this;
     }
 
-    
-
-
-    /**
-     * 搜索条件。支持账号、姓名、手机、邮箱模糊搜索
-     * @return searchKey
-     */
+    /** 搜索条件。支持账号、姓名、手机、邮箱模糊搜索
+     * 
+     * @return searchKey */
     public String getSearchKey() {
         return searchKey;
     }
@@ -178,20 +130,14 @@ public class ListHistoryWebinarsRequest  {
         this.searchKey = searchKey;
     }
 
-    
-
     public ListHistoryWebinarsRequest withSortType(String sortType) {
         this.sortType = sortType;
         return this;
     }
 
-    
-
-
-    /**
-     * ASC_StartTIME：按会议开始时间升序排序。DSC_StartTIME：按会议开始时间降序排序
-     * @return sortType
-     */
+    /** ASC_StartTIME：按会议开始时间升序排序。DSC_StartTIME：按会议开始时间降序排序
+     * 
+     * @return sortType */
     public String getSortType() {
         return sortType;
     }
@@ -200,20 +146,14 @@ public class ListHistoryWebinarsRequest  {
         this.sortType = sortType;
     }
 
-    
-
     public ListHistoryWebinarsRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 开始时间, 格式：yyyy-MM-dd HH:mm。
-     * @return startTime
-     */
+    /** 开始时间, 格式：yyyy-MM-dd HH:mm。
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -222,20 +162,14 @@ public class ListHistoryWebinarsRequest  {
         this.startTime = startTime;
     }
 
-    
-
     public ListHistoryWebinarsRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 结束时间, 格式：yyyy-MM-dd HH:mm。
-     * @return endTime
-     */
+    /** 结束时间, 格式：yyyy-MM-dd HH:mm。
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -243,8 +177,6 @@ public class ListHistoryWebinarsRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -255,19 +187,21 @@ public class ListHistoryWebinarsRequest  {
             return false;
         }
         ListHistoryWebinarsRequest listHistoryWebinarsRequest = (ListHistoryWebinarsRequest) o;
-        return Objects.equals(this.xRequestId, listHistoryWebinarsRequest.xRequestId) &&
-            Objects.equals(this.acceptLanguage, listHistoryWebinarsRequest.acceptLanguage) &&
-            Objects.equals(this.offset, listHistoryWebinarsRequest.offset) &&
-            Objects.equals(this.limit, listHistoryWebinarsRequest.limit) &&
-            Objects.equals(this.searchKey, listHistoryWebinarsRequest.searchKey) &&
-            Objects.equals(this.sortType, listHistoryWebinarsRequest.sortType) &&
-            Objects.equals(this.startTime, listHistoryWebinarsRequest.startTime) &&
-            Objects.equals(this.endTime, listHistoryWebinarsRequest.endTime);
+        return Objects.equals(this.xRequestId, listHistoryWebinarsRequest.xRequestId)
+            && Objects.equals(this.acceptLanguage, listHistoryWebinarsRequest.acceptLanguage)
+            && Objects.equals(this.offset, listHistoryWebinarsRequest.offset)
+            && Objects.equals(this.limit, listHistoryWebinarsRequest.limit)
+            && Objects.equals(this.searchKey, listHistoryWebinarsRequest.searchKey)
+            && Objects.equals(this.sortType, listHistoryWebinarsRequest.sortType)
+            && Objects.equals(this.startTime, listHistoryWebinarsRequest.startTime)
+            && Objects.equals(this.endTime, listHistoryWebinarsRequest.endTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xRequestId, acceptLanguage, offset, limit, searchKey, sortType, startTime, endTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -283,16 +217,13 @@ public class ListHistoryWebinarsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

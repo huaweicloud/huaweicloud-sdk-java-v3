@@ -1,55 +1,34 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.apig.v2.model.ApiConditionBase;
-import com.huaweicloud.sdk.apig.v2.model.ApiPolicyFunctionBase;
-import com.huaweicloud.sdk.apig.v2.model.ApiPolicyReqBase;
-import com.huaweicloud.sdk.apig.v2.model.BackendParamBase;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ApiPolicyFunctionCreate
- */
-public class ApiPolicyFunctionCreate  {
-
-
+/** ApiPolicyFunctionCreate */
+public class ApiPolicyFunctionCreate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="function_urn")
-    
+    @JsonProperty(value = "function_urn")
+
     private String functionUrn;
-    /**
-     * 调用类型 - async： 异步 - sync：同步
-     */
+
+    /** 调用类型 - async： 异步 - sync：同步 */
     public static final class InvocationTypeEnum {
 
-        
-        /**
-         * Enum ASYNC for value: "async"
-         */
+        /** Enum ASYNC for value: "async" */
         public static final InvocationTypeEnum ASYNC = new InvocationTypeEnum("async");
-        
-        /**
-         * Enum SYNC for value: "sync"
-         */
+
+        /** Enum SYNC for value: "sync" */
         public static final InvocationTypeEnum SYNC = new InvocationTypeEnum("sync");
-        
 
         private static final Map<String, InvocationTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -78,7 +57,7 @@ public class ApiPolicyFunctionCreate  {
 
         @JsonCreator
         public static InvocationTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             InvocationTypeEnum result = STATIC_FIELDS.get(value);
@@ -89,7 +68,7 @@ public class ApiPolicyFunctionCreate  {
         }
 
         public static InvocationTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             InvocationTypeEnum result = STATIC_FIELDS.get(value);
@@ -113,39 +92,29 @@ public class ApiPolicyFunctionCreate  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invocation_type")
-    
+    @JsonProperty(value = "invocation_type")
+
     private InvocationTypeEnum invocationType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timeout")
-    
+    @JsonProperty(value = "timeout")
+
     private Integer timeout;
-    /**
-     * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
-     */
+
+    /** 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件 */
     public static final class EffectModeEnum {
 
-        
-        /**
-         * Enum ALL for value: "ALL"
-         */
+        /** Enum ALL for value: "ALL" */
         public static final EffectModeEnum ALL = new EffectModeEnum("ALL");
-        
-        /**
-         * Enum ANY for value: "ANY"
-         */
+
+        /** Enum ANY for value: "ANY" */
         public static final EffectModeEnum ANY = new EffectModeEnum("ANY");
-        
 
         private static final Map<String, EffectModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -174,7 +143,7 @@ public class ApiPolicyFunctionCreate  {
 
         @JsonCreator
         public static EffectModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             EffectModeEnum result = STATIC_FIELDS.get(value);
@@ -185,7 +154,7 @@ public class ApiPolicyFunctionCreate  {
         }
 
         public static EffectModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             EffectModeEnum result = STATIC_FIELDS.get(value);
@@ -209,34 +178,29 @@ public class ApiPolicyFunctionCreate  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="effect_mode")
-    
+    @JsonProperty(value = "effect_mode")
+
     private EffectModeEnum effectMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backend_params")
-    
+    @JsonProperty(value = "backend_params")
+
     private List<BackendParamBase> backendParams = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="conditions")
-    
+    @JsonProperty(value = "conditions")
+
     private List<ApiConditionBase> conditions = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="authorizer_id")
-    
+    @JsonProperty(value = "authorizer_id")
+
     private String authorizerId;
 
     public ApiPolicyFunctionCreate withFunctionUrn(String functionUrn) {
@@ -244,13 +208,9 @@ public class ApiPolicyFunctionCreate  {
         return this;
     }
 
-    
-
-
-    /**
-     * 函数URN
-     * @return functionUrn
-     */
+    /** 函数URN
+     * 
+     * @return functionUrn */
     public String getFunctionUrn() {
         return functionUrn;
     }
@@ -259,20 +219,14 @@ public class ApiPolicyFunctionCreate  {
         this.functionUrn = functionUrn;
     }
 
-    
-
     public ApiPolicyFunctionCreate withInvocationType(InvocationTypeEnum invocationType) {
         this.invocationType = invocationType;
         return this;
     }
 
-    
-
-
-    /**
-     * 调用类型 - async： 异步 - sync：同步
-     * @return invocationType
-     */
+    /** 调用类型 - async： 异步 - sync：同步
+     * 
+     * @return invocationType */
     public InvocationTypeEnum getInvocationType() {
         return invocationType;
     }
@@ -281,20 +235,14 @@ public class ApiPolicyFunctionCreate  {
         this.invocationType = invocationType;
     }
 
-    
-
     public ApiPolicyFunctionCreate withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 版本。字符长度不超过64
-     * @return version
-     */
+    /** 版本。字符长度不超过64
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -303,21 +251,14 @@ public class ApiPolicyFunctionCreate  {
         this.version = version;
     }
 
-    
-
     public ApiPolicyFunctionCreate withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
     }
 
-    
-
-
-    /**
-     * API网关请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000。  单位：毫秒。
-     * minimum: 1
-     * @return timeout
-     */
+    /** API网关请求后端服务的超时时间。最大超时时间可通过实例特性backend_timeout配置修改，可修改的上限为600000。 单位：毫秒。 minimum: 1
+     * 
+     * @return timeout */
     public Integer getTimeout() {
         return timeout;
     }
@@ -326,20 +267,14 @@ public class ApiPolicyFunctionCreate  {
         this.timeout = timeout;
     }
 
-    
-
     public ApiPolicyFunctionCreate withEffectMode(EffectModeEnum effectMode) {
         this.effectMode = effectMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
-     * @return effectMode
-     */
+    /** 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
+     * 
+     * @return effectMode */
     public EffectModeEnum getEffectMode() {
         return effectMode;
     }
@@ -348,20 +283,14 @@ public class ApiPolicyFunctionCreate  {
         this.effectMode = effectMode;
     }
 
-    
-
     public ApiPolicyFunctionCreate withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略后端名称。字符串由中文、英文字母、数字、下划线组成，且只能以中文或英文开头。
-     * @return name
-     */
+    /** 策略后端名称。字符串由中文、英文字母、数字、下划线组成，且只能以中文或英文开头。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -370,16 +299,13 @@ public class ApiPolicyFunctionCreate  {
         this.name = name;
     }
 
-    
-
     public ApiPolicyFunctionCreate withBackendParams(List<BackendParamBase> backendParams) {
         this.backendParams = backendParams;
         return this;
     }
 
-    
     public ApiPolicyFunctionCreate addBackendParamsItem(BackendParamBase backendParamsItem) {
-        if(this.backendParams == null) {
+        if (this.backendParams == null) {
             this.backendParams = new ArrayList<>();
         }
         this.backendParams.add(backendParamsItem);
@@ -387,17 +313,16 @@ public class ApiPolicyFunctionCreate  {
     }
 
     public ApiPolicyFunctionCreate withBackendParams(Consumer<List<BackendParamBase>> backendParamsSetter) {
-        if(this.backendParams == null) {
+        if (this.backendParams == null) {
             this.backendParams = new ArrayList<>();
         }
         backendParamsSetter.accept(this.backendParams);
         return this;
     }
 
-    /**
-     * 后端参数列表
-     * @return backendParams
-     */
+    /** 后端参数列表
+     * 
+     * @return backendParams */
     public List<BackendParamBase> getBackendParams() {
         return backendParams;
     }
@@ -406,16 +331,13 @@ public class ApiPolicyFunctionCreate  {
         this.backendParams = backendParams;
     }
 
-    
-
     public ApiPolicyFunctionCreate withConditions(List<ApiConditionBase> conditions) {
         this.conditions = conditions;
         return this;
     }
 
-    
     public ApiPolicyFunctionCreate addConditionsItem(ApiConditionBase conditionsItem) {
-        if(this.conditions == null) {
+        if (this.conditions == null) {
             this.conditions = new ArrayList<>();
         }
         this.conditions.add(conditionsItem);
@@ -423,17 +345,16 @@ public class ApiPolicyFunctionCreate  {
     }
 
     public ApiPolicyFunctionCreate withConditions(Consumer<List<ApiConditionBase>> conditionsSetter) {
-        if(this.conditions == null) {
+        if (this.conditions == null) {
             this.conditions = new ArrayList<>();
         }
         conditionsSetter.accept(this.conditions);
         return this;
     }
 
-    /**
-     * 策略条件列表
-     * @return conditions
-     */
+    /** 策略条件列表
+     * 
+     * @return conditions */
     public List<ApiConditionBase> getConditions() {
         return conditions;
     }
@@ -442,20 +363,14 @@ public class ApiPolicyFunctionCreate  {
         this.conditions = conditions;
     }
 
-    
-
     public ApiPolicyFunctionCreate withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端自定义认证对象的ID
-     * @return authorizerId
-     */
+    /** 后端自定义认证对象的ID
+     * 
+     * @return authorizerId */
     public String getAuthorizerId() {
         return authorizerId;
     }
@@ -463,8 +378,6 @@ public class ApiPolicyFunctionCreate  {
     public void setAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -475,20 +388,30 @@ public class ApiPolicyFunctionCreate  {
             return false;
         }
         ApiPolicyFunctionCreate apiPolicyFunctionCreate = (ApiPolicyFunctionCreate) o;
-        return Objects.equals(this.functionUrn, apiPolicyFunctionCreate.functionUrn) &&
-            Objects.equals(this.invocationType, apiPolicyFunctionCreate.invocationType) &&
-            Objects.equals(this.version, apiPolicyFunctionCreate.version) &&
-            Objects.equals(this.timeout, apiPolicyFunctionCreate.timeout) &&
-            Objects.equals(this.effectMode, apiPolicyFunctionCreate.effectMode) &&
-            Objects.equals(this.name, apiPolicyFunctionCreate.name) &&
-            Objects.equals(this.backendParams, apiPolicyFunctionCreate.backendParams) &&
-            Objects.equals(this.conditions, apiPolicyFunctionCreate.conditions) &&
-            Objects.equals(this.authorizerId, apiPolicyFunctionCreate.authorizerId);
+        return Objects.equals(this.functionUrn, apiPolicyFunctionCreate.functionUrn)
+            && Objects.equals(this.invocationType, apiPolicyFunctionCreate.invocationType)
+            && Objects.equals(this.version, apiPolicyFunctionCreate.version)
+            && Objects.equals(this.timeout, apiPolicyFunctionCreate.timeout)
+            && Objects.equals(this.effectMode, apiPolicyFunctionCreate.effectMode)
+            && Objects.equals(this.name, apiPolicyFunctionCreate.name)
+            && Objects.equals(this.backendParams, apiPolicyFunctionCreate.backendParams)
+            && Objects.equals(this.conditions, apiPolicyFunctionCreate.conditions)
+            && Objects.equals(this.authorizerId, apiPolicyFunctionCreate.authorizerId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(functionUrn, invocationType, version, timeout, effectMode, name, backendParams, conditions, authorizerId);
+        return Objects.hash(functionUrn,
+            invocationType,
+            version,
+            timeout,
+            effectMode,
+            name,
+            backendParams,
+            conditions,
+            authorizerId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -505,16 +428,13 @@ public class ApiPolicyFunctionCreate  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * IefInfo
- */
-public class IefInfo  {
-
-
+/** IefInfo */
+public class IefInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deploy_mode")
-    
+    @JsonProperty(value = "deploy_mode")
+
     private Integer deployMode;
 
     public IefInfo withDeployMode(Integer deployMode) {
@@ -28,13 +18,9 @@ public class IefInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * BCS服务边缘节点部署模式，分为：随机模式（0），绑定模式（1）
-     * @return deployMode
-     */
+    /** BCS服务边缘节点部署模式，分为：随机模式（0），绑定模式（1）
+     * 
+     * @return deployMode */
     public Integer getDeployMode() {
         return deployMode;
     }
@@ -42,8 +28,6 @@ public class IefInfo  {
     public void setDeployMode(Integer deployMode) {
         this.deployMode = deployMode;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class IefInfo  {
         IefInfo iefInfo = (IefInfo) o;
         return Objects.equals(this.deployMode, iefInfo.deployMode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(deployMode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class IefInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

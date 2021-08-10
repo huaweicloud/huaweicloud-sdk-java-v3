@@ -1,27 +1,19 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.Tag;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class VaultTagsCreateReq  {
-
-
+public class VaultTagsCreateReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag")
-    
+    @JsonProperty(value = "tag")
+
     private Tag tag;
 
     public VaultTagsCreateReq withTag(Tag tag) {
@@ -30,19 +22,17 @@ public class VaultTagsCreateReq  {
     }
 
     public VaultTagsCreateReq withTag(Consumer<Tag> tagSetter) {
-        if(this.tag == null ){
+        if (this.tag == null) {
             this.tag = new Tag();
             tagSetter.accept(this.tag);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get tag
-     * @return tag
-     */
+    /** Get tag
+     * 
+     * @return tag */
     public Tag getTag() {
         return tag;
     }
@@ -50,8 +40,6 @@ public class VaultTagsCreateReq  {
     public void setTag(Tag tag) {
         this.tag = tag;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +52,12 @@ public class VaultTagsCreateReq  {
         VaultTagsCreateReq vaultTagsCreateReq = (VaultTagsCreateReq) o;
         return Objects.equals(this.tag, vaultTagsCreateReq.tag);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(tag);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +66,13 @@ public class VaultTagsCreateReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

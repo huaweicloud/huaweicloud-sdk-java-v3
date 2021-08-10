@@ -1,73 +1,54 @@
 package com.huaweicloud.sdk.live.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ListUsersOfStreamRequest  {
-
-
+/** Request Object */
+public class ListUsersOfStreamRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="play_domain")
-    
+    @JsonProperty(value = "play_domain")
+
     private String playDomain;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app")
-    
+    @JsonProperty(value = "app")
+
     private String app;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stream")
-    
+    @JsonProperty(value = "stream")
+
     private String stream;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isp")
-    
+    @JsonProperty(value = "isp")
+
     private List<String> isp = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private List<String> region = null;
-        /**
-     * 查询数据的时间粒度，支持60（默认值）, 300秒。不传值时，使用默认值60秒。 
-     */
+
+    /** 查询数据的时间粒度，支持60（默认值）, 300秒。不传值时，使用默认值60秒。 */
     public static final class IntervalEnum {
 
-        
-        /**
-         * Enum NUMBER_60 for value: 60
-         */
+        /** Enum NUMBER_60 for value: 60 */
         public static final IntervalEnum NUMBER_60 = new IntervalEnum(60);
-        
-        /**
-         * Enum NUMBER_300 for value: 300
-         */
+
+        /** Enum NUMBER_300 for value: 300 */
         public static final IntervalEnum NUMBER_300 = new IntervalEnum(300);
-        
 
         private static final Map<Integer, IntervalEnum> STATIC_FIELDS = createStaticFields();
 
@@ -96,7 +77,7 @@ public class ListUsersOfStreamRequest  {
 
         @JsonCreator
         public static IntervalEnum fromValue(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             IntervalEnum result = STATIC_FIELDS.get(value);
@@ -107,7 +88,7 @@ public class ListUsersOfStreamRequest  {
         }
 
         public static IntervalEnum valueOf(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             IntervalEnum result = STATIC_FIELDS.get(value);
@@ -131,22 +112,19 @@ public class ListUsersOfStreamRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="interval")
-    
+    @JsonProperty(value = "interval")
+
     private IntervalEnum interval;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
     public ListUsersOfStreamRequest withPlayDomain(String playDomain) {
@@ -154,13 +132,9 @@ public class ListUsersOfStreamRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 播放域名。 
-     * @return playDomain
-     */
+    /** 播放域名。
+     * 
+     * @return playDomain */
     public String getPlayDomain() {
         return playDomain;
     }
@@ -169,20 +143,14 @@ public class ListUsersOfStreamRequest  {
         this.playDomain = playDomain;
     }
 
-    
-
     public ListUsersOfStreamRequest withApp(String app) {
         this.app = app;
         return this;
     }
 
-    
-
-
-    /**
-     * app名。 
-     * @return app
-     */
+    /** app名。
+     * 
+     * @return app */
     public String getApp() {
         return app;
     }
@@ -191,20 +159,14 @@ public class ListUsersOfStreamRequest  {
         this.app = app;
     }
 
-    
-
     public ListUsersOfStreamRequest withStream(String stream) {
         this.stream = stream;
         return this;
     }
 
-    
-
-
-    /**
-     * 流名。 
-     * @return stream
-     */
+    /** 流名。
+     * 
+     * @return stream */
     public String getStream() {
         return stream;
     }
@@ -213,16 +175,13 @@ public class ListUsersOfStreamRequest  {
         this.stream = stream;
     }
 
-    
-
     public ListUsersOfStreamRequest withIsp(List<String> isp) {
         this.isp = isp;
         return this;
     }
 
-    
     public ListUsersOfStreamRequest addIspItem(String ispItem) {
-        if(this.isp == null) {
+        if (this.isp == null) {
             this.isp = new ArrayList<>();
         }
         this.isp.add(ispItem);
@@ -230,17 +189,16 @@ public class ListUsersOfStreamRequest  {
     }
 
     public ListUsersOfStreamRequest withIsp(Consumer<List<String>> ispSetter) {
-        if(this.isp == null) {
+        if (this.isp == null) {
             this.isp = new ArrayList<>();
         }
         ispSetter.accept(this.isp);
         return this;
     }
 
-    /**
-     * 运营商列表，取值如下： - \"CMCC ：移动\" - \"CTCC ： 电信\" - \"CUCC ：联通\" - \"OTHER: 其他\"  不填写查询所有运营商。 
-     * @return isp
-     */
+    /** 运营商列表，取值如下： - \"CMCC ：移动\" - \"CTCC ： 电信\" - \"CUCC ：联通\" - \"OTHER: 其他\" 不填写查询所有运营商。
+     * 
+     * @return isp */
     public List<String> getIsp() {
         return isp;
     }
@@ -249,16 +207,13 @@ public class ListUsersOfStreamRequest  {
         this.isp = isp;
     }
 
-    
-
     public ListUsersOfStreamRequest withRegion(List<String> region) {
         this.region = region;
         return this;
     }
 
-    
     public ListUsersOfStreamRequest addRegionItem(String regionItem) {
-        if(this.region == null) {
+        if (this.region == null) {
             this.region = new ArrayList<>();
         }
         this.region.add(regionItem);
@@ -266,17 +221,16 @@ public class ListUsersOfStreamRequest  {
     }
 
     public ListUsersOfStreamRequest withRegion(Consumer<List<String>> regionSetter) {
-        if(this.region == null) {
+        if (this.region == null) {
             this.region = new ArrayList<>();
         }
         regionSetter.accept(this.region);
         return this;
     }
 
-    /**
-     * 区域列表。具体取值请参考[省份名称缩写](live_03_0043.xml)，不填写查询所有区域。 
-     * @return region
-     */
+    /** 区域列表。具体取值请参考[省份名称缩写](live_03_0043.xml)，不填写查询所有区域。
+     * 
+     * @return region */
     public List<String> getRegion() {
         return region;
     }
@@ -285,22 +239,14 @@ public class ListUsersOfStreamRequest  {
         this.region = region;
     }
 
-    
-
     public ListUsersOfStreamRequest withInterval(IntervalEnum interval) {
         this.interval = interval;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询数据的时间粒度，支持60（默认值）, 300秒。不传值时，使用默认值60秒。 
-     * minimum: 60
-     * maximum: 300
-     * @return interval
-     */
+    /** 查询数据的时间粒度，支持60（默认值）, 300秒。不传值时，使用默认值60秒。 minimum: 60 maximum: 300
+     * 
+     * @return interval */
     public IntervalEnum getInterval() {
         return interval;
     }
@@ -309,20 +255,14 @@ public class ListUsersOfStreamRequest  {
         this.interval = interval;
     }
 
-    
-
     public ListUsersOfStreamRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度31天，最大查询周期90天。  若参数为空，默认查询7天数据。 
-     * @return startTime
-     */
+    /** 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度31天，最大查询周期90天。 若参数为空，默认查询7天数据。
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -331,20 +271,14 @@ public class ListUsersOfStreamRequest  {
         this.startTime = startTime;
     }
 
-    
-
     public ListUsersOfStreamRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。  若参数为空，默认为当前时间。结束时间需大于起始时间。 
-     * @return endTime
-     */
+    /** 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。 若参数为空，默认为当前时间。结束时间需大于起始时间。
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -352,8 +286,6 @@ public class ListUsersOfStreamRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -364,19 +296,21 @@ public class ListUsersOfStreamRequest  {
             return false;
         }
         ListUsersOfStreamRequest listUsersOfStreamRequest = (ListUsersOfStreamRequest) o;
-        return Objects.equals(this.playDomain, listUsersOfStreamRequest.playDomain) &&
-            Objects.equals(this.app, listUsersOfStreamRequest.app) &&
-            Objects.equals(this.stream, listUsersOfStreamRequest.stream) &&
-            Objects.equals(this.isp, listUsersOfStreamRequest.isp) &&
-            Objects.equals(this.region, listUsersOfStreamRequest.region) &&
-            Objects.equals(this.interval, listUsersOfStreamRequest.interval) &&
-            Objects.equals(this.startTime, listUsersOfStreamRequest.startTime) &&
-            Objects.equals(this.endTime, listUsersOfStreamRequest.endTime);
+        return Objects.equals(this.playDomain, listUsersOfStreamRequest.playDomain)
+            && Objects.equals(this.app, listUsersOfStreamRequest.app)
+            && Objects.equals(this.stream, listUsersOfStreamRequest.stream)
+            && Objects.equals(this.isp, listUsersOfStreamRequest.isp)
+            && Objects.equals(this.region, listUsersOfStreamRequest.region)
+            && Objects.equals(this.interval, listUsersOfStreamRequest.interval)
+            && Objects.equals(this.startTime, listUsersOfStreamRequest.startTime)
+            && Objects.equals(this.endTime, listUsersOfStreamRequest.endTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(playDomain, app, stream, isp, region, interval, startTime, endTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -392,16 +326,13 @@ public class ListUsersOfStreamRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

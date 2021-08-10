@@ -1,40 +1,27 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rms.v1.model.ChannelConfigBody;
-import com.huaweicloud.sdk.rms.v1.model.SelectorConfigBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * TrackerConfig对象
- */
-public class TrackerConfigBody  {
-
-
+/** TrackerConfig对象 */
+public class TrackerConfigBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="channel")
-    
+    @JsonProperty(value = "channel")
+
     private ChannelConfigBody channel;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="selector")
-    
+    @JsonProperty(value = "selector")
+
     private SelectorConfigBody selector;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="agency_name")
-    
+    @JsonProperty(value = "agency_name")
+
     private String agencyName;
 
     public TrackerConfigBody withChannel(ChannelConfigBody channel) {
@@ -43,19 +30,17 @@ public class TrackerConfigBody  {
     }
 
     public TrackerConfigBody withChannel(Consumer<ChannelConfigBody> channelSetter) {
-        if(this.channel == null ){
+        if (this.channel == null) {
             this.channel = new ChannelConfigBody();
             channelSetter.accept(this.channel);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get channel
-     * @return channel
-     */
+    /** Get channel
+     * 
+     * @return channel */
     public ChannelConfigBody getChannel() {
         return channel;
     }
@@ -64,27 +49,23 @@ public class TrackerConfigBody  {
         this.channel = channel;
     }
 
-    
-
     public TrackerConfigBody withSelector(SelectorConfigBody selector) {
         this.selector = selector;
         return this;
     }
 
     public TrackerConfigBody withSelector(Consumer<SelectorConfigBody> selectorSetter) {
-        if(this.selector == null ){
+        if (this.selector == null) {
             this.selector = new SelectorConfigBody();
             selectorSetter.accept(this.selector);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get selector
-     * @return selector
-     */
+    /** Get selector
+     * 
+     * @return selector */
     public SelectorConfigBody getSelector() {
         return selector;
     }
@@ -93,20 +74,14 @@ public class TrackerConfigBody  {
         this.selector = selector;
     }
 
-    
-
     public TrackerConfigBody withAgencyName(String agencyName) {
         this.agencyName = agencyName;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM委托名称
-     * @return agencyName
-     */
+    /** IAM委托名称
+     * 
+     * @return agencyName */
     public String getAgencyName() {
         return agencyName;
     }
@@ -114,8 +89,6 @@ public class TrackerConfigBody  {
     public void setAgencyName(String agencyName) {
         this.agencyName = agencyName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -126,14 +99,16 @@ public class TrackerConfigBody  {
             return false;
         }
         TrackerConfigBody trackerConfigBody = (TrackerConfigBody) o;
-        return Objects.equals(this.channel, trackerConfigBody.channel) &&
-            Objects.equals(this.selector, trackerConfigBody.selector) &&
-            Objects.equals(this.agencyName, trackerConfigBody.agencyName);
+        return Objects.equals(this.channel, trackerConfigBody.channel)
+            && Objects.equals(this.selector, trackerConfigBody.selector)
+            && Objects.equals(this.agencyName, trackerConfigBody.agencyName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(channel, selector, agencyName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -144,16 +119,13 @@ public class TrackerConfigBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

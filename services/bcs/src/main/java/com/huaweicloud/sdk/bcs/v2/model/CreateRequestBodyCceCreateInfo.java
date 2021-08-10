@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 创建新集群信息
- */
-public class CreateRequestBodyCceCreateInfo  {
-
-
+/** 创建新集群信息 */
+public class CreateRequestBodyCceCreateInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_num")
-    
+    @JsonProperty(value = "node_num")
+
     private Integer nodeNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_flavor")
-    
+    @JsonProperty(value = "node_flavor")
+
     private String nodeFlavor;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cce_flavor")
-    
+    @JsonProperty(value = "cce_flavor")
+
     private String cceFlavor;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="init_node_pwd")
-    
+    @JsonProperty(value = "init_node_pwd")
+
     private String initNodePwd;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="az")
-    
+    @JsonProperty(value = "az")
+
     private String az;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_platform_type")
-    
+    @JsonProperty(value = "cluster_platform_type")
+
     private String clusterPlatformType;
 
     public CreateRequestBodyCceCreateInfo withNodeNum(Integer nodeNum) {
@@ -58,13 +43,9 @@ public class CreateRequestBodyCceCreateInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 集群节点数
-     * @return nodeNum
-     */
+    /** 集群节点数
+     * 
+     * @return nodeNum */
     public Integer getNodeNum() {
         return nodeNum;
     }
@@ -73,20 +54,14 @@ public class CreateRequestBodyCceCreateInfo  {
         this.nodeNum = nodeNum;
     }
 
-    
-
     public CreateRequestBodyCceCreateInfo withNodeFlavor(String nodeFlavor) {
         this.nodeFlavor = nodeFlavor;
         return this;
     }
 
-    
-
-
-    /**
-     * 集群节点规格
-     * @return nodeFlavor
-     */
+    /** 集群节点规格
+     * 
+     * @return nodeFlavor */
     public String getNodeFlavor() {
         return nodeFlavor;
     }
@@ -95,20 +70,14 @@ public class CreateRequestBodyCceCreateInfo  {
         this.nodeFlavor = nodeFlavor;
     }
 
-    
-
     public CreateRequestBodyCceCreateInfo withCceFlavor(String cceFlavor) {
         this.cceFlavor = cceFlavor;
         return this;
     }
 
-    
-
-
-    /**
-     * CCE集群规格
-     * @return cceFlavor
-     */
+    /** CCE集群规格
+     * 
+     * @return cceFlavor */
     public String getCceFlavor() {
         return cceFlavor;
     }
@@ -117,20 +86,14 @@ public class CreateRequestBodyCceCreateInfo  {
         this.cceFlavor = cceFlavor;
     }
 
-    
-
     public CreateRequestBodyCceCreateInfo withInitNodePwd(String initNodePwd) {
         this.initNodePwd = initNodePwd;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点初始密码
-     * @return initNodePwd
-     */
+    /** 节点初始密码
+     * 
+     * @return initNodePwd */
     public String getInitNodePwd() {
         return initNodePwd;
     }
@@ -139,20 +102,14 @@ public class CreateRequestBodyCceCreateInfo  {
         this.initNodePwd = initNodePwd;
     }
 
-    
-
     public CreateRequestBodyCceCreateInfo withAz(String az) {
         this.az = az;
         return this;
     }
 
-    
-
-
-    /**
-     * 可用区
-     * @return az
-     */
+    /** 可用区
+     * 
+     * @return az */
     public String getAz() {
         return az;
     }
@@ -161,20 +118,14 @@ public class CreateRequestBodyCceCreateInfo  {
         this.az = az;
     }
 
-    
-
     public CreateRequestBodyCceCreateInfo withClusterPlatformType(String clusterPlatformType) {
         this.clusterPlatformType = clusterPlatformType;
         return this;
     }
 
-    
-
-
-    /**
-     * 集群CPU架构类型：X86（VirtualMachine），ARM（ARM64）
-     * @return clusterPlatformType
-     */
+    /** 集群CPU架构类型：X86（VirtualMachine），ARM（ARM64）
+     * 
+     * @return clusterPlatformType */
     public String getClusterPlatformType() {
         return clusterPlatformType;
     }
@@ -182,8 +133,6 @@ public class CreateRequestBodyCceCreateInfo  {
     public void setClusterPlatformType(String clusterPlatformType) {
         this.clusterPlatformType = clusterPlatformType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,17 +143,19 @@ public class CreateRequestBodyCceCreateInfo  {
             return false;
         }
         CreateRequestBodyCceCreateInfo createRequestBodyCceCreateInfo = (CreateRequestBodyCceCreateInfo) o;
-        return Objects.equals(this.nodeNum, createRequestBodyCceCreateInfo.nodeNum) &&
-            Objects.equals(this.nodeFlavor, createRequestBodyCceCreateInfo.nodeFlavor) &&
-            Objects.equals(this.cceFlavor, createRequestBodyCceCreateInfo.cceFlavor) &&
-            Objects.equals(this.initNodePwd, createRequestBodyCceCreateInfo.initNodePwd) &&
-            Objects.equals(this.az, createRequestBodyCceCreateInfo.az) &&
-            Objects.equals(this.clusterPlatformType, createRequestBodyCceCreateInfo.clusterPlatformType);
+        return Objects.equals(this.nodeNum, createRequestBodyCceCreateInfo.nodeNum)
+            && Objects.equals(this.nodeFlavor, createRequestBodyCceCreateInfo.nodeFlavor)
+            && Objects.equals(this.cceFlavor, createRequestBodyCceCreateInfo.cceFlavor)
+            && Objects.equals(this.initNodePwd, createRequestBodyCceCreateInfo.initNodePwd)
+            && Objects.equals(this.az, createRequestBodyCceCreateInfo.az)
+            && Objects.equals(this.clusterPlatformType, createRequestBodyCceCreateInfo.clusterPlatformType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nodeNum, nodeFlavor, cceFlavor, initNodePwd, az, clusterPlatformType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,16 +169,13 @@ public class CreateRequestBodyCceCreateInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteReservedInstanceByIdRequest  {
-
-
+/** Request Object */
+public class DeleteReservedInstanceByIdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="function_urn")
-    
+    @JsonProperty(value = "function_urn")
+
     private String functionUrn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
     public DeleteReservedInstanceByIdRequest withFunctionUrn(String functionUrn) {
@@ -34,13 +23,9 @@ public class DeleteReservedInstanceByIdRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 函数的URN（Uniform Resource Name），唯一标识函数。
-     * @return functionUrn
-     */
+    /** 函数的URN（Uniform Resource Name），唯一标识函数。
+     * 
+     * @return functionUrn */
     public String getFunctionUrn() {
         return functionUrn;
     }
@@ -49,20 +34,14 @@ public class DeleteReservedInstanceByIdRequest  {
         this.functionUrn = functionUrn;
     }
 
-    
-
     public DeleteReservedInstanceByIdRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 预留实例id。
-     * @return instanceId
-     */
+    /** 预留实例id。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -70,8 +49,6 @@ public class DeleteReservedInstanceByIdRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class DeleteReservedInstanceByIdRequest  {
             return false;
         }
         DeleteReservedInstanceByIdRequest deleteReservedInstanceByIdRequest = (DeleteReservedInstanceByIdRequest) o;
-        return Objects.equals(this.functionUrn, deleteReservedInstanceByIdRequest.functionUrn) &&
-            Objects.equals(this.instanceId, deleteReservedInstanceByIdRequest.instanceId);
+        return Objects.equals(this.functionUrn, deleteReservedInstanceByIdRequest.functionUrn)
+            && Objects.equals(this.instanceId, deleteReservedInstanceByIdRequest.instanceId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(functionUrn, instanceId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class DeleteReservedInstanceByIdRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

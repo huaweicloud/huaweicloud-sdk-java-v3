@@ -1,45 +1,32 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.AppConfigModifyRequestV2;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateAppConfigV2Request  {
-
-
+/** Request Object */
+public class UpdateAppConfigV2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_config_id")
-    
+    @JsonProperty(value = "app_config_id")
+
     private String appConfigId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private AppConfigModifyRequestV2 body;
 
     public UpdateAppConfigV2Request withInstanceId(String instanceId) {
@@ -47,13 +34,9 @@ public class UpdateAppConfigV2Request  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -62,20 +45,14 @@ public class UpdateAppConfigV2Request  {
         this.instanceId = instanceId;
     }
 
-    
-
     public UpdateAppConfigV2Request withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用编号
-     * @return appId
-     */
+    /** 应用编号
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -84,20 +61,14 @@ public class UpdateAppConfigV2Request  {
         this.appId = appId;
     }
 
-    
-
     public UpdateAppConfigV2Request withAppConfigId(String appConfigId) {
         this.appConfigId = appConfigId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用配置编号
-     * @return appConfigId
-     */
+    /** 应用配置编号
+     * 
+     * @return appConfigId */
     public String getAppConfigId() {
         return appConfigId;
     }
@@ -106,27 +77,23 @@ public class UpdateAppConfigV2Request  {
         this.appConfigId = appConfigId;
     }
 
-    
-
     public UpdateAppConfigV2Request withBody(AppConfigModifyRequestV2 body) {
         this.body = body;
         return this;
     }
 
     public UpdateAppConfigV2Request withBody(Consumer<AppConfigModifyRequestV2> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new AppConfigModifyRequestV2();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public AppConfigModifyRequestV2 getBody() {
         return body;
     }
@@ -134,8 +101,6 @@ public class UpdateAppConfigV2Request  {
     public void setBody(AppConfigModifyRequestV2 body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -146,15 +111,17 @@ public class UpdateAppConfigV2Request  {
             return false;
         }
         UpdateAppConfigV2Request updateAppConfigV2Request = (UpdateAppConfigV2Request) o;
-        return Objects.equals(this.instanceId, updateAppConfigV2Request.instanceId) &&
-            Objects.equals(this.appId, updateAppConfigV2Request.appId) &&
-            Objects.equals(this.appConfigId, updateAppConfigV2Request.appConfigId) &&
-            Objects.equals(this.body, updateAppConfigV2Request.body);
+        return Objects.equals(this.instanceId, updateAppConfigV2Request.instanceId)
+            && Objects.equals(this.appId, updateAppConfigV2Request.appId)
+            && Objects.equals(this.appConfigId, updateAppConfigV2Request.appConfigId)
+            && Objects.equals(this.body, updateAppConfigV2Request.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, appId, appConfigId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -166,16 +133,13 @@ public class UpdateAppConfigV2Request  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

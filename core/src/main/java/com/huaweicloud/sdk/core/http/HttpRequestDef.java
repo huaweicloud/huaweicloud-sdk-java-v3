@@ -33,22 +33,19 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-/**
- * @param <ReqT>
+/** @param <ReqT>
  * @param <ResT>
- * @author HuaweiCloud_SDK
- */
+ * @author HuaweiCloud_SDK */
 public interface HttpRequestDef<ReqT, ResT> {
-    /**
-     * Builder of HttpRequestDef
+
+    /** Builder of HttpRequestDef
      *
      * @param method http request method
      * @param r request type
      * @param t response type
      * @param <BuilderReqT> BuilderReqT
      * @param <BuilderRespT> BuilderRespT
-     * @return .
-     */
+     * @return . */
     static <BuilderReqT, BuilderRespT> Builder<BuilderReqT, BuilderRespT> builder(HttpMethod method,
         Class<BuilderReqT> r, Class<BuilderRespT> t) {
         Builder<BuilderReqT, BuilderRespT> builder = new Builder<>(method, r, t);
@@ -66,9 +63,7 @@ public interface HttpRequestDef<ReqT, ResT> {
     @JsonIgnore
     HttpMethod getMethod();
 
-    /**
-     * Content type could be null
-     */
+    /** Content type could be null */
     @JsonIgnore
     String getContentType();
 
@@ -95,6 +90,7 @@ public interface HttpRequestDef<ReqT, ResT> {
     boolean hasResponseField(String name);
 
     class Builder<R, T> {
+
         Impl<R, T> impl;
 
         public Builder(HttpMethod method, Class<R> r, Class<T> t) {
@@ -111,11 +107,11 @@ public interface HttpRequestDef<ReqT, ResT> {
         public HttpRequestDef<R, T> build() {
             // verify path
             impl.requestFields = Collections.unmodifiableList(impl.requestFields);
-            impl.requestFieldsMap = impl.requestFields.stream()
-                .collect(Collectors.toMap(Field::getName, Function.identity()));
+            impl.requestFieldsMap =
+                impl.requestFields.stream().collect(Collectors.toMap(Field::getName, Function.identity()));
             impl.responseFields = Collections.unmodifiableList(impl.responseFields);
-            impl.responseFieldsMap = impl.responseFields.stream()
-                .collect(Collectors.toMap(Field::getName, Function.identity()));
+            impl.responseFieldsMap =
+                impl.responseFields.stream().collect(Collectors.toMap(Field::getName, Function.identity()));
             return impl;
         }
 
@@ -139,11 +135,8 @@ public interface HttpRequestDef<ReqT, ResT> {
             return this;
         }
 
-        public <FieldT> Builder<R, T> withRequestField(String name,
-            LocationType locationType,
-            FieldExistence existence,
-            Class<FieldT> fieldType,
-            Consumer<FieldImpl<R, FieldT>> setter) {
+        public <FieldT> Builder<R, T> withRequestField(String name, LocationType locationType, FieldExistence existence,
+            Class<FieldT> fieldType, Consumer<FieldImpl<R, FieldT>> setter) {
             FieldImpl<R, FieldT> field = new FieldImpl<>(name, locationType, existence, fieldType);
             setter.accept(field);
             impl.requestFields.add(field);
@@ -163,20 +156,21 @@ public interface HttpRequestDef<ReqT, ResT> {
             return this;
         }
 
-        /**
-         * 场景：
-         * 定义了返回值，但是body是空的，例如返回202的场景。 代码生成工具只生成占位函数，实现在这里定义，减少工具和版本的耦合。
+        /** 场景： 定义了返回值，但是body是空的，例如返回202的场景。 代码生成工具只生成占位函数，实现在这里定义，减少工具和版本的耦合。
          *
          * @param nameOfCode code name
-         * @return .
-         */
+         * @return . */
         public Builder<R, T> withResponseVoidBody(String nameOfCode, BiConsumer<T, VoidBody> writer) {
-            return withResponseField(nameOfCode, LocationType.Body, FieldExistence.NULL_IGNORE, VoidBody.class,
+            return withResponseField(nameOfCode,
+                LocationType.Body,
+                FieldExistence.NULL_IGNORE,
+                VoidBody.class,
                 field -> field.withMarshaller(response -> new VoidBody(), writer));
         }
     }
 
     class Impl<R, T> implements HttpRequestDef<R, T> {
+
         Class<R> requestClass;
 
         Class<T> responseClass;

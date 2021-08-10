@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.oms.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.oms.v2.model.UpdateBandwidthPolicyReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateBandwidthPolicyRequest  {
-
-
+/** Request Object */
+public class UpdateBandwidthPolicyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
+    @JsonProperty(value = "task_id")
+
     private Long taskId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateBandwidthPolicyReq body;
 
     public UpdateBandwidthPolicyRequest withTaskId(Long taskId) {
@@ -35,15 +24,9 @@ public class UpdateBandwidthPolicyRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID。
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return taskId
-     */
+    /** 任务ID。 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return taskId */
     public Long getTaskId() {
         return taskId;
     }
@@ -52,27 +35,23 @@ public class UpdateBandwidthPolicyRequest  {
         this.taskId = taskId;
     }
 
-    
-
     public UpdateBandwidthPolicyRequest withBody(UpdateBandwidthPolicyReq body) {
         this.body = body;
         return this;
     }
 
     public UpdateBandwidthPolicyRequest withBody(Consumer<UpdateBandwidthPolicyReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateBandwidthPolicyReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateBandwidthPolicyReq getBody() {
         return body;
     }
@@ -80,8 +59,6 @@ public class UpdateBandwidthPolicyRequest  {
     public void setBody(UpdateBandwidthPolicyReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -92,13 +69,15 @@ public class UpdateBandwidthPolicyRequest  {
             return false;
         }
         UpdateBandwidthPolicyRequest updateBandwidthPolicyRequest = (UpdateBandwidthPolicyRequest) o;
-        return Objects.equals(this.taskId, updateBandwidthPolicyRequest.taskId) &&
-            Objects.equals(this.body, updateBandwidthPolicyRequest.body);
+        return Objects.equals(this.taskId, updateBandwidthPolicyRequest.taskId)
+            && Objects.equals(this.body, updateBandwidthPolicyRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(taskId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -108,16 +87,13 @@ public class UpdateBandwidthPolicyRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

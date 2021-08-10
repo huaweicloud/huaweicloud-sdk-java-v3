@@ -1,98 +1,76 @@
 package com.huaweicloud.sdk.ocr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * TransportationLicenseResult
- */
-public class TransportationLicenseResult  {
-
-
+/** TransportationLicenseResult */
+public class TransportationLicenseResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="owner_name")
-    
+    @JsonProperty(value = "owner_name")
+
     private String ownerName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="license_number")
-    
+    @JsonProperty(value = "license_number")
+
     private String licenseNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vehicle_number")
-    
+    @JsonProperty(value = "vehicle_number")
+
     private String vehicleNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vehicle_type")
-    
+    @JsonProperty(value = "vehicle_type")
+
     private String vehicleType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vehicle_weight")
-    
+    @JsonProperty(value = "vehicle_weight")
+
     private String vehicleWeight;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vehicle_size")
-    
+    @JsonProperty(value = "vehicle_size")
+
     private String vehicleSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="issuing_authority")
-    
+    @JsonProperty(value = "issuing_authority")
+
     private String issuingAuthority;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="issue_date")
-    
+    @JsonProperty(value = "issue_date")
+
     private String issueDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="owner_address")
-    
+    @JsonProperty(value = "owner_address")
+
     private String ownerAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="economic_type")
-    
+    @JsonProperty(value = "economic_type")
+
     private String economicType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="business_certificate")
-    
+    @JsonProperty(value = "business_certificate")
+
     private String businessCertificate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="business_scope")
-    
+    @JsonProperty(value = "business_scope")
+
     private String businessScope;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confidence")
-    
+    @JsonProperty(value = "confidence")
+
     private Object confidence;
 
     public TransportationLicenseResult withOwnerName(String ownerName) {
@@ -100,13 +78,9 @@ public class TransportationLicenseResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 业户名称。 
-     * @return ownerName
-     */
+    /** 业户名称。
+     * 
+     * @return ownerName */
     public String getOwnerName() {
         return ownerName;
     }
@@ -115,20 +89,14 @@ public class TransportationLicenseResult  {
         this.ownerName = ownerName;
     }
 
-    
-
     public TransportationLicenseResult withLicenseNumber(String licenseNumber) {
         this.licenseNumber = licenseNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * 道路运输证号。 
-     * @return licenseNumber
-     */
+    /** 道路运输证号。
+     * 
+     * @return licenseNumber */
     public String getLicenseNumber() {
         return licenseNumber;
     }
@@ -137,20 +105,14 @@ public class TransportationLicenseResult  {
         this.licenseNumber = licenseNumber;
     }
 
-    
-
     public TransportationLicenseResult withVehicleNumber(String vehicleNumber) {
         this.vehicleNumber = vehicleNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * 车辆号牌。 
-     * @return vehicleNumber
-     */
+    /** 车辆号牌。
+     * 
+     * @return vehicleNumber */
     public String getVehicleNumber() {
         return vehicleNumber;
     }
@@ -159,20 +121,14 @@ public class TransportationLicenseResult  {
         this.vehicleNumber = vehicleNumber;
     }
 
-    
-
     public TransportationLicenseResult withVehicleType(String vehicleType) {
         this.vehicleType = vehicleType;
         return this;
     }
 
-    
-
-
-    /**
-     * 车辆类型。 
-     * @return vehicleType
-     */
+    /** 车辆类型。
+     * 
+     * @return vehicleType */
     public String getVehicleType() {
         return vehicleType;
     }
@@ -181,20 +137,14 @@ public class TransportationLicenseResult  {
         this.vehicleType = vehicleType;
     }
 
-    
-
     public TransportationLicenseResult withVehicleWeight(String vehicleWeight) {
         this.vehicleWeight = vehicleWeight;
         return this;
     }
 
-    
-
-
-    /**
-     * 吨(座)位。 
-     * @return vehicleWeight
-     */
+    /** 吨(座)位。
+     * 
+     * @return vehicleWeight */
     public String getVehicleWeight() {
         return vehicleWeight;
     }
@@ -203,20 +153,14 @@ public class TransportationLicenseResult  {
         this.vehicleWeight = vehicleWeight;
     }
 
-    
-
     public TransportationLicenseResult withVehicleSize(String vehicleSize) {
         this.vehicleSize = vehicleSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 车辆尺寸。 
-     * @return vehicleSize
-     */
+    /** 车辆尺寸。
+     * 
+     * @return vehicleSize */
     public String getVehicleSize() {
         return vehicleSize;
     }
@@ -225,20 +169,14 @@ public class TransportationLicenseResult  {
         this.vehicleSize = vehicleSize;
     }
 
-    
-
     public TransportationLicenseResult withIssuingAuthority(String issuingAuthority) {
         this.issuingAuthority = issuingAuthority;
         return this;
     }
 
-    
-
-
-    /**
-     * 核发机关（非必有，依赖对应运输证板式）。 
-     * @return issuingAuthority
-     */
+    /** 核发机关（非必有，依赖对应运输证板式）。
+     * 
+     * @return issuingAuthority */
     public String getIssuingAuthority() {
         return issuingAuthority;
     }
@@ -247,20 +185,14 @@ public class TransportationLicenseResult  {
         this.issuingAuthority = issuingAuthority;
     }
 
-    
-
     public TransportationLicenseResult withIssueDate(String issueDate) {
         this.issueDate = issueDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 签发日期（非必有，依赖对应运输证板式）。 
-     * @return issueDate
-     */
+    /** 签发日期（非必有，依赖对应运输证板式）。
+     * 
+     * @return issueDate */
     public String getIssueDate() {
         return issueDate;
     }
@@ -269,20 +201,14 @@ public class TransportationLicenseResult  {
         this.issueDate = issueDate;
     }
 
-    
-
     public TransportationLicenseResult withOwnerAddress(String ownerAddress) {
         this.ownerAddress = ownerAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 业户地址（非必有，依赖对应运输证板式）。 
-     * @return ownerAddress
-     */
+    /** 业户地址（非必有，依赖对应运输证板式）。
+     * 
+     * @return ownerAddress */
     public String getOwnerAddress() {
         return ownerAddress;
     }
@@ -291,20 +217,14 @@ public class TransportationLicenseResult  {
         this.ownerAddress = ownerAddress;
     }
 
-    
-
     public TransportationLicenseResult withEconomicType(String economicType) {
         this.economicType = economicType;
         return this;
     }
 
-    
-
-
-    /**
-     * 经济类型（非必有，依赖对应运输证板式）。 
-     * @return economicType
-     */
+    /** 经济类型（非必有，依赖对应运输证板式）。
+     * 
+     * @return economicType */
     public String getEconomicType() {
         return economicType;
     }
@@ -313,20 +233,14 @@ public class TransportationLicenseResult  {
         this.economicType = economicType;
     }
 
-    
-
     public TransportationLicenseResult withBusinessCertificate(String businessCertificate) {
         this.businessCertificate = businessCertificate;
         return this;
     }
 
-    
-
-
-    /**
-     * 经营许可证号（非必有，依赖对应运输证板式）。 
-     * @return businessCertificate
-     */
+    /** 经营许可证号（非必有，依赖对应运输证板式）。
+     * 
+     * @return businessCertificate */
     public String getBusinessCertificate() {
         return businessCertificate;
     }
@@ -335,20 +249,14 @@ public class TransportationLicenseResult  {
         this.businessCertificate = businessCertificate;
     }
 
-    
-
     public TransportationLicenseResult withBusinessScope(String businessScope) {
         this.businessScope = businessScope;
         return this;
     }
 
-    
-
-
-    /**
-     * 道路普通货物运输（非必有，依赖对应运输证板式）。 
-     * @return businessScope
-     */
+    /** 道路普通货物运输（非必有，依赖对应运输证板式）。
+     * 
+     * @return businessScope */
     public String getBusinessScope() {
         return businessScope;
     }
@@ -357,20 +265,14 @@ public class TransportationLicenseResult  {
         this.businessScope = businessScope;
     }
 
-    
-
     public TransportationLicenseResult withConfidence(Object confidence) {
         this.confidence = confidence;
         return this;
     }
 
-    
-
-
-    /**
-     * 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。 
-     * @return confidence
-     */
+    /** 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。
+     * 
+     * @return confidence */
     public Object getConfidence() {
         return confidence;
     }
@@ -378,8 +280,6 @@ public class TransportationLicenseResult  {
     public void setConfidence(Object confidence) {
         this.confidence = confidence;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -390,24 +290,38 @@ public class TransportationLicenseResult  {
             return false;
         }
         TransportationLicenseResult transportationLicenseResult = (TransportationLicenseResult) o;
-        return Objects.equals(this.ownerName, transportationLicenseResult.ownerName) &&
-            Objects.equals(this.licenseNumber, transportationLicenseResult.licenseNumber) &&
-            Objects.equals(this.vehicleNumber, transportationLicenseResult.vehicleNumber) &&
-            Objects.equals(this.vehicleType, transportationLicenseResult.vehicleType) &&
-            Objects.equals(this.vehicleWeight, transportationLicenseResult.vehicleWeight) &&
-            Objects.equals(this.vehicleSize, transportationLicenseResult.vehicleSize) &&
-            Objects.equals(this.issuingAuthority, transportationLicenseResult.issuingAuthority) &&
-            Objects.equals(this.issueDate, transportationLicenseResult.issueDate) &&
-            Objects.equals(this.ownerAddress, transportationLicenseResult.ownerAddress) &&
-            Objects.equals(this.economicType, transportationLicenseResult.economicType) &&
-            Objects.equals(this.businessCertificate, transportationLicenseResult.businessCertificate) &&
-            Objects.equals(this.businessScope, transportationLicenseResult.businessScope) &&
-            Objects.equals(this.confidence, transportationLicenseResult.confidence);
+        return Objects.equals(this.ownerName, transportationLicenseResult.ownerName)
+            && Objects.equals(this.licenseNumber, transportationLicenseResult.licenseNumber)
+            && Objects.equals(this.vehicleNumber, transportationLicenseResult.vehicleNumber)
+            && Objects.equals(this.vehicleType, transportationLicenseResult.vehicleType)
+            && Objects.equals(this.vehicleWeight, transportationLicenseResult.vehicleWeight)
+            && Objects.equals(this.vehicleSize, transportationLicenseResult.vehicleSize)
+            && Objects.equals(this.issuingAuthority, transportationLicenseResult.issuingAuthority)
+            && Objects.equals(this.issueDate, transportationLicenseResult.issueDate)
+            && Objects.equals(this.ownerAddress, transportationLicenseResult.ownerAddress)
+            && Objects.equals(this.economicType, transportationLicenseResult.economicType)
+            && Objects.equals(this.businessCertificate, transportationLicenseResult.businessCertificate)
+            && Objects.equals(this.businessScope, transportationLicenseResult.businessScope)
+            && Objects.equals(this.confidence, transportationLicenseResult.confidence);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(ownerName, licenseNumber, vehicleNumber, vehicleType, vehicleWeight, vehicleSize, issuingAuthority, issueDate, ownerAddress, economicType, businessCertificate, businessScope, confidence);
+        return Objects.hash(ownerName,
+            licenseNumber,
+            vehicleNumber,
+            vehicleType,
+            vehicleWeight,
+            vehicleSize,
+            issuingAuthority,
+            issueDate,
+            ownerAddress,
+            economicType,
+            businessCertificate,
+            businessScope,
+            confidence);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -428,16 +342,13 @@ public class TransportationLicenseResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * UsageType
- */
-public class UsageType  {
-
-
+/** UsageType */
+public class UsageType {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code")
-    
+    @JsonProperty(value = "code")
+
     private String code;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type_code")
-    
+    @JsonProperty(value = "resource_type_code")
+
     private String resourceTypeCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_type_code")
-    
+    @JsonProperty(value = "service_type_code")
+
     private String serviceTypeCode;
 
     public UsageType withCode(String code) {
@@ -46,13 +33,9 @@ public class UsageType  {
         return this;
     }
 
-    
-
-
-    /**
-     * 使用量类型编码。如：reqNumber。
-     * @return code
-     */
+    /** 使用量类型编码。如：reqNumber。
+     * 
+     * @return code */
     public String getCode() {
         return code;
     }
@@ -61,20 +44,14 @@ public class UsageType  {
         this.code = code;
     }
 
-    
-
     public UsageType withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 使用量类型名称。如：调用次数。
-     * @return name
-     */
+    /** 使用量类型名称。如：调用次数。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -83,20 +60,14 @@ public class UsageType  {
         this.name = name;
     }
 
-    
-
     public UsageType withResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源类型编码。例如ECS的VM为“hws.resource.type.vm”。
-     * @return resourceTypeCode
-     */
+    /** 资源类型编码。例如ECS的VM为“hws.resource.type.vm”。
+     * 
+     * @return resourceTypeCode */
     public String getResourceTypeCode() {
         return resourceTypeCode;
     }
@@ -105,20 +76,14 @@ public class UsageType  {
         this.resourceTypeCode = resourceTypeCode;
     }
 
-    
-
     public UsageType withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务类型编码。例如ECS的云服务类型编码为“hws.service.type.ec2”。
-     * @return serviceTypeCode
-     */
+    /** 云服务类型编码。例如ECS的云服务类型编码为“hws.service.type.ec2”。
+     * 
+     * @return serviceTypeCode */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -126,8 +91,6 @@ public class UsageType  {
     public void setServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,16 @@ public class UsageType  {
             return false;
         }
         UsageType usageType = (UsageType) o;
-        return Objects.equals(this.code, usageType.code) &&
-            Objects.equals(this.name, usageType.name) &&
-            Objects.equals(this.resourceTypeCode, usageType.resourceTypeCode) &&
-            Objects.equals(this.serviceTypeCode, usageType.serviceTypeCode);
+        return Objects.equals(this.code, usageType.code) && Objects.equals(this.name, usageType.name)
+            && Objects.equals(this.resourceTypeCode, usageType.resourceTypeCode)
+            && Objects.equals(this.serviceTypeCode, usageType.serviceTypeCode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(code, name, resourceTypeCode, serviceTypeCode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +122,13 @@ public class UsageType  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

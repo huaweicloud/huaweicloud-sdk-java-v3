@@ -1,97 +1,75 @@
 package com.huaweicloud.sdk.bssintl.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bssintl.v2.model.BillSumRecordInfoV2;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowCustomerMonthlySumResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
-    
+    @JsonProperty(value = "total_count")
+
     private Integer totalCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bill_sums")
-    
+    @JsonProperty(value = "bill_sums")
+
     private List<BillSumRecordInfoV2> billSums = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="consume_amount")
-    
+    @JsonProperty(value = "consume_amount")
+
     private Double consumeAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="debt_amount")
-    
+    @JsonProperty(value = "debt_amount")
+
     private Double debtAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="coupon_amount")
-    
+    @JsonProperty(value = "coupon_amount")
+
     private Double couponAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flexipurchase_coupon_amount")
-    
+    @JsonProperty(value = "flexipurchase_coupon_amount")
+
     private Double flexipurchaseCouponAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stored_value_card_amount")
-    
+    @JsonProperty(value = "stored_value_card_amount")
+
     private Double storedValueCardAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cash_amount")
-    
+    @JsonProperty(value = "cash_amount")
+
     private Double cashAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="credit_amount")
-    
+    @JsonProperty(value = "credit_amount")
+
     private Double creditAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="writeoff_amount")
-    
+    @JsonProperty(value = "writeoff_amount")
+
     private Double writeoffAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="measure_id")
-    
+    @JsonProperty(value = "measure_id")
+
     private Integer measureId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="currency")
-    
+    @JsonProperty(value = "currency")
+
     private String currency;
 
     public ShowCustomerMonthlySumResponse withTotalCount(Integer totalCount) {
@@ -99,13 +77,9 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：总条数，必须大于等于0。| |参数的约束及描述：总条数，必须大于等于0。|
-     * @return totalCount
-     */
+    /** |参数名称：总条数，必须大于等于0。| |参数的约束及描述：总条数，必须大于等于0。|
+     * 
+     * @return totalCount */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -114,16 +88,13 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
-    
-
     public ShowCustomerMonthlySumResponse withBillSums(List<BillSumRecordInfoV2> billSums) {
         this.billSums = billSums;
         return this;
     }
 
-    
     public ShowCustomerMonthlySumResponse addBillSumsItem(BillSumRecordInfoV2 billSumsItem) {
-        if(this.billSums == null) {
+        if (this.billSums == null) {
             this.billSums = new ArrayList<>();
         }
         this.billSums.add(billSumsItem);
@@ -131,17 +102,16 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
     }
 
     public ShowCustomerMonthlySumResponse withBillSums(Consumer<List<BillSumRecordInfoV2>> billSumsSetter) {
-        if(this.billSums == null) {
+        if (this.billSums == null) {
             this.billSums = new ArrayList<>();
         }
         billSumsSetter.accept(this.billSums);
         return this;
     }
 
-    /**
-     * |参数名称：账单记录，具体参考表 BillSumRecordInfo。| |参数约束以及描述：账单记录，具体参考表 BillSumRecordInfo。|
-     * @return billSums
-     */
+    /** |参数名称：账单记录，具体参考表 BillSumRecordInfo。| |参数约束以及描述：账单记录，具体参考表 BillSumRecordInfo。|
+     * 
+     * @return billSums */
     public List<BillSumRecordInfoV2> getBillSums() {
         return billSums;
     }
@@ -150,20 +120,14 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         this.billSums = billSums;
     }
 
-    
-
     public ShowCustomerMonthlySumResponse withConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：总金额（包含退订）。| |参数的约束及描述：总金额（包含退订）。|
-     * @return consumeAmount
-     */
+    /** |参数名称：总金额（包含退订）。| |参数的约束及描述：总金额（包含退订）。|
+     * 
+     * @return consumeAmount */
     public Double getConsumeAmount() {
         return consumeAmount;
     }
@@ -172,20 +136,14 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         this.consumeAmount = consumeAmount;
     }
 
-    
-
     public ShowCustomerMonthlySumResponse withDebtAmount(Double debtAmount) {
         this.debtAmount = debtAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：总欠费金额。| |参数的约束及描述：总欠费金额。|
-     * @return debtAmount
-     */
+    /** |参数名称：总欠费金额。| |参数的约束及描述：总欠费金额。|
+     * 
+     * @return debtAmount */
     public Double getDebtAmount() {
         return debtAmount;
     }
@@ -194,20 +152,14 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         this.debtAmount = debtAmount;
     }
 
-    
-
     public ShowCustomerMonthlySumResponse withCouponAmount(Double couponAmount) {
         this.couponAmount = couponAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：代金券金额。| |参数的约束及描述：代金券金额。|
-     * @return couponAmount
-     */
+    /** |参数名称：代金券金额。| |参数的约束及描述：代金券金额。|
+     * 
+     * @return couponAmount */
     public Double getCouponAmount() {
         return couponAmount;
     }
@@ -216,20 +168,14 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         this.couponAmount = couponAmount;
     }
 
-    
-
     public ShowCustomerMonthlySumResponse withFlexipurchaseCouponAmount(Double flexipurchaseCouponAmount) {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：现金券金额，预留。| |参数的约束及描述：现金券金额，预留。|
-     * @return flexipurchaseCouponAmount
-     */
+    /** |参数名称：现金券金额，预留。| |参数的约束及描述：现金券金额，预留。|
+     * 
+     * @return flexipurchaseCouponAmount */
     public Double getFlexipurchaseCouponAmount() {
         return flexipurchaseCouponAmount;
     }
@@ -238,20 +184,14 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         this.flexipurchaseCouponAmount = flexipurchaseCouponAmount;
     }
 
-    
-
     public ShowCustomerMonthlySumResponse withStoredValueCardAmount(Double storedValueCardAmount) {
         this.storedValueCardAmount = storedValueCardAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：储值卡金额，预留。| |参数的约束及描述：储值卡金额，预留。|
-     * @return storedValueCardAmount
-     */
+    /** |参数名称：储值卡金额，预留。| |参数的约束及描述：储值卡金额，预留。|
+     * 
+     * @return storedValueCardAmount */
     public Double getStoredValueCardAmount() {
         return storedValueCardAmount;
     }
@@ -260,20 +200,14 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         this.storedValueCardAmount = storedValueCardAmount;
     }
 
-    
-
     public ShowCustomerMonthlySumResponse withCashAmount(Double cashAmount) {
         this.cashAmount = cashAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：现金账户金额。| |参数的约束及描述：现金账户金额。|
-     * @return cashAmount
-     */
+    /** |参数名称：现金账户金额。| |参数的约束及描述：现金账户金额。|
+     * 
+     * @return cashAmount */
     public Double getCashAmount() {
         return cashAmount;
     }
@@ -282,20 +216,14 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         this.cashAmount = cashAmount;
     }
 
-    
-
     public ShowCustomerMonthlySumResponse withCreditAmount(Double creditAmount) {
         this.creditAmount = creditAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：信用账户金额。| |参数的约束及描述：信用账户金额。|
-     * @return creditAmount
-     */
+    /** |参数名称：信用账户金额。| |参数的约束及描述：信用账户金额。|
+     * 
+     * @return creditAmount */
     public Double getCreditAmount() {
         return creditAmount;
     }
@@ -304,20 +232,14 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         this.creditAmount = creditAmount;
     }
 
-    
-
     public ShowCustomerMonthlySumResponse withWriteoffAmount(Double writeoffAmount) {
         this.writeoffAmount = writeoffAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：欠费核销金额| |参数的约束及描述：欠费核销金额|
-     * @return writeoffAmount
-     */
+    /** |参数名称：欠费核销金额| |参数的约束及描述：欠费核销金额|
+     * 
+     * @return writeoffAmount */
     public Double getWriteoffAmount() {
         return writeoffAmount;
     }
@@ -326,20 +248,14 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         this.writeoffAmount = writeoffAmount;
     }
 
-    
-
     public ShowCustomerMonthlySumResponse withMeasureId(Integer measureId) {
         this.measureId = measureId;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：金额单位。1：元| |参数的约束及描述：金额单位。1：元|
-     * @return measureId
-     */
+    /** |参数名称：金额单位。1：元| |参数的约束及描述：金额单位。1：元|
+     * 
+     * @return measureId */
     public Integer getMeasureId() {
         return measureId;
     }
@@ -348,20 +264,14 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         this.measureId = measureId;
     }
 
-    
-
     public ShowCustomerMonthlySumResponse withCurrency(String currency) {
         this.currency = currency;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：币种。CNY：人民币。USD：美元。| |参数约束及描述：币种。CNY：人民币。USD：美元。|
-     * @return currency
-     */
+    /** |参数名称：币种。CNY：人民币。USD：美元。| |参数约束及描述：币种。CNY：人民币。USD：美元。|
+     * 
+     * @return currency */
     public String getCurrency() {
         return currency;
     }
@@ -369,8 +279,6 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -381,23 +289,36 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
             return false;
         }
         ShowCustomerMonthlySumResponse showCustomerMonthlySumResponse = (ShowCustomerMonthlySumResponse) o;
-        return Objects.equals(this.totalCount, showCustomerMonthlySumResponse.totalCount) &&
-            Objects.equals(this.billSums, showCustomerMonthlySumResponse.billSums) &&
-            Objects.equals(this.consumeAmount, showCustomerMonthlySumResponse.consumeAmount) &&
-            Objects.equals(this.debtAmount, showCustomerMonthlySumResponse.debtAmount) &&
-            Objects.equals(this.couponAmount, showCustomerMonthlySumResponse.couponAmount) &&
-            Objects.equals(this.flexipurchaseCouponAmount, showCustomerMonthlySumResponse.flexipurchaseCouponAmount) &&
-            Objects.equals(this.storedValueCardAmount, showCustomerMonthlySumResponse.storedValueCardAmount) &&
-            Objects.equals(this.cashAmount, showCustomerMonthlySumResponse.cashAmount) &&
-            Objects.equals(this.creditAmount, showCustomerMonthlySumResponse.creditAmount) &&
-            Objects.equals(this.writeoffAmount, showCustomerMonthlySumResponse.writeoffAmount) &&
-            Objects.equals(this.measureId, showCustomerMonthlySumResponse.measureId) &&
-            Objects.equals(this.currency, showCustomerMonthlySumResponse.currency);
+        return Objects.equals(this.totalCount, showCustomerMonthlySumResponse.totalCount)
+            && Objects.equals(this.billSums, showCustomerMonthlySumResponse.billSums)
+            && Objects.equals(this.consumeAmount, showCustomerMonthlySumResponse.consumeAmount)
+            && Objects.equals(this.debtAmount, showCustomerMonthlySumResponse.debtAmount)
+            && Objects.equals(this.couponAmount, showCustomerMonthlySumResponse.couponAmount)
+            && Objects.equals(this.flexipurchaseCouponAmount, showCustomerMonthlySumResponse.flexipurchaseCouponAmount)
+            && Objects.equals(this.storedValueCardAmount, showCustomerMonthlySumResponse.storedValueCardAmount)
+            && Objects.equals(this.cashAmount, showCustomerMonthlySumResponse.cashAmount)
+            && Objects.equals(this.creditAmount, showCustomerMonthlySumResponse.creditAmount)
+            && Objects.equals(this.writeoffAmount, showCustomerMonthlySumResponse.writeoffAmount)
+            && Objects.equals(this.measureId, showCustomerMonthlySumResponse.measureId)
+            && Objects.equals(this.currency, showCustomerMonthlySumResponse.currency);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(totalCount, billSums, consumeAmount, debtAmount, couponAmount, flexipurchaseCouponAmount, storedValueCardAmount, cashAmount, creditAmount, writeoffAmount, measureId, currency);
+        return Objects.hash(totalCount,
+            billSums,
+            consumeAmount,
+            debtAmount,
+            couponAmount,
+            flexipurchaseCouponAmount,
+            storedValueCardAmount,
+            cashAmount,
+            creditAmount,
+            writeoffAmount,
+            measureId,
+            currency);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -417,16 +338,13 @@ public class ShowCustomerMonthlySumResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

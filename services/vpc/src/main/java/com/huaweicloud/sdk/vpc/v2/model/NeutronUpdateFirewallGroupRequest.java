@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateFirewallGroupRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class NeutronUpdateFirewallGroupRequest  {
-
-
+/** Request Object */
+public class NeutronUpdateFirewallGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="firewall_group_id")
-    
+    @JsonProperty(value = "firewall_group_id")
+
     private String firewallGroupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private NeutronUpdateFirewallGroupRequestBody body;
 
     public NeutronUpdateFirewallGroupRequest withFirewallGroupId(String firewallGroupId) {
@@ -35,13 +24,9 @@ public class NeutronUpdateFirewallGroupRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 网络ACL防火墙组ID
-     * @return firewallGroupId
-     */
+    /** 网络ACL防火墙组ID
+     * 
+     * @return firewallGroupId */
     public String getFirewallGroupId() {
         return firewallGroupId;
     }
@@ -50,27 +35,23 @@ public class NeutronUpdateFirewallGroupRequest  {
         this.firewallGroupId = firewallGroupId;
     }
 
-    
-
     public NeutronUpdateFirewallGroupRequest withBody(NeutronUpdateFirewallGroupRequestBody body) {
         this.body = body;
         return this;
     }
 
     public NeutronUpdateFirewallGroupRequest withBody(Consumer<NeutronUpdateFirewallGroupRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new NeutronUpdateFirewallGroupRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public NeutronUpdateFirewallGroupRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class NeutronUpdateFirewallGroupRequest  {
     public void setBody(NeutronUpdateFirewallGroupRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class NeutronUpdateFirewallGroupRequest  {
             return false;
         }
         NeutronUpdateFirewallGroupRequest neutronUpdateFirewallGroupRequest = (NeutronUpdateFirewallGroupRequest) o;
-        return Objects.equals(this.firewallGroupId, neutronUpdateFirewallGroupRequest.firewallGroupId) &&
-            Objects.equals(this.body, neutronUpdateFirewallGroupRequest.body);
+        return Objects.equals(this.firewallGroupId, neutronUpdateFirewallGroupRequest.firewallGroupId)
+            && Objects.equals(this.body, neutronUpdateFirewallGroupRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(firewallGroupId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class NeutronUpdateFirewallGroupRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

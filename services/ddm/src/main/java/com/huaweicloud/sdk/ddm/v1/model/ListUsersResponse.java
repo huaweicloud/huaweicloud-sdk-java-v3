@@ -1,55 +1,40 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ddm.v1.model.GetUsersListDetailResponses;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListUsersResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="users")
-    
+    @JsonProperty(value = "users")
+
     private List<GetUsersListDetailResponses> users = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_no")
-    
+    @JsonProperty(value = "page_no")
+
     private Integer pageNo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_size")
-    
+    @JsonProperty(value = "page_size")
+
     private Integer pageSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_record")
-    
+    @JsonProperty(value = "total_record")
+
     private Integer totalRecord;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_page")
-    
+    @JsonProperty(value = "total_page")
+
     private Integer totalPage;
 
     public ListUsersResponse withUsers(List<GetUsersListDetailResponses> users) {
@@ -57,9 +42,8 @@ public class ListUsersResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListUsersResponse addUsersItem(GetUsersListDetailResponses usersItem) {
-        if(this.users == null) {
+        if (this.users == null) {
             this.users = new ArrayList<>();
         }
         this.users.add(usersItem);
@@ -67,17 +51,16 @@ public class ListUsersResponse extends SdkResponse {
     }
 
     public ListUsersResponse withUsers(Consumer<List<GetUsersListDetailResponses>> usersSetter) {
-        if(this.users == null) {
+        if (this.users == null) {
             this.users = new ArrayList<>();
         }
         usersSetter.accept(this.users);
         return this;
     }
 
-    /**
-     * DDM实例帐号相关信息的集合。
-     * @return users
-     */
+    /** DDM实例帐号相关信息的集合。
+     * 
+     * @return users */
     public List<GetUsersListDetailResponses> getUsers() {
         return users;
     }
@@ -86,20 +69,14 @@ public class ListUsersResponse extends SdkResponse {
         this.users = users;
     }
 
-    
-
     public ListUsersResponse withPageNo(Integer pageNo) {
         this.pageNo = pageNo;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前页码
-     * @return pageNo
-     */
+    /** 当前页码
+     * 
+     * @return pageNo */
     public Integer getPageNo() {
         return pageNo;
     }
@@ -108,20 +85,14 @@ public class ListUsersResponse extends SdkResponse {
         this.pageNo = pageNo;
     }
 
-    
-
     public ListUsersResponse withPageSize(Integer pageSize) {
         this.pageSize = pageSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前页码的数据条数
-     * @return pageSize
-     */
+    /** 当前页码的数据条数
+     * 
+     * @return pageSize */
     public Integer getPageSize() {
         return pageSize;
     }
@@ -130,20 +101,14 @@ public class ListUsersResponse extends SdkResponse {
         this.pageSize = pageSize;
     }
 
-    
-
     public ListUsersResponse withTotalRecord(Integer totalRecord) {
         this.totalRecord = totalRecord;
         return this;
     }
 
-    
-
-
-    /**
-     * 总条数
-     * @return totalRecord
-     */
+    /** 总条数
+     * 
+     * @return totalRecord */
     public Integer getTotalRecord() {
         return totalRecord;
     }
@@ -152,20 +117,14 @@ public class ListUsersResponse extends SdkResponse {
         this.totalRecord = totalRecord;
     }
 
-    
-
     public ListUsersResponse withTotalPage(Integer totalPage) {
         this.totalPage = totalPage;
         return this;
     }
 
-    
-
-
-    /**
-     * 总页数
-     * @return totalPage
-     */
+    /** 总页数
+     * 
+     * @return totalPage */
     public Integer getTotalPage() {
         return totalPage;
     }
@@ -173,8 +132,6 @@ public class ListUsersResponse extends SdkResponse {
     public void setTotalPage(Integer totalPage) {
         this.totalPage = totalPage;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -185,16 +142,18 @@ public class ListUsersResponse extends SdkResponse {
             return false;
         }
         ListUsersResponse listUsersResponse = (ListUsersResponse) o;
-        return Objects.equals(this.users, listUsersResponse.users) &&
-            Objects.equals(this.pageNo, listUsersResponse.pageNo) &&
-            Objects.equals(this.pageSize, listUsersResponse.pageSize) &&
-            Objects.equals(this.totalRecord, listUsersResponse.totalRecord) &&
-            Objects.equals(this.totalPage, listUsersResponse.totalPage);
+        return Objects.equals(this.users, listUsersResponse.users)
+            && Objects.equals(this.pageNo, listUsersResponse.pageNo)
+            && Objects.equals(this.pageSize, listUsersResponse.pageSize)
+            && Objects.equals(this.totalRecord, listUsersResponse.totalRecord)
+            && Objects.equals(this.totalPage, listUsersResponse.totalPage);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(users, pageNo, pageSize, totalRecord, totalPage);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -207,16 +166,13 @@ public class ListUsersResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

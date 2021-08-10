@@ -1,41 +1,26 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Runtime
- */
-public class Runtime  {
+/** Runtime */
+public class Runtime {
 
-    /**
-     * 容器运行时，默认为“docker”
-     */
+    /** 容器运行时，默认为“docker” */
     public static final class NameEnum {
 
-        
-        /**
-         * Enum DOCKER for value: "docker"
-         */
+        /** Enum DOCKER for value: "docker" */
         public static final NameEnum DOCKER = new NameEnum("docker");
-        
-        /**
-         * Enum CONTAINERD for value: "containerd"
-         */
+
+        /** Enum CONTAINERD for value: "containerd" */
         public static final NameEnum CONTAINERD = new NameEnum("containerd");
-        
 
         private static final Map<String, NameEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +49,7 @@ public class Runtime  {
 
         @JsonCreator
         public static NameEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             NameEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +60,7 @@ public class Runtime  {
         }
 
         public static NameEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             NameEnum result = STATIC_FIELDS.get(value);
@@ -99,10 +84,9 @@ public class Runtime  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private NameEnum name;
 
     public Runtime withName(NameEnum name) {
@@ -110,13 +94,9 @@ public class Runtime  {
         return this;
     }
 
-    
-
-
-    /**
-     * 容器运行时，默认为“docker”
-     * @return name
-     */
+    /** 容器运行时，默认为“docker”
+     * 
+     * @return name */
     public NameEnum getName() {
         return name;
     }
@@ -124,8 +104,6 @@ public class Runtime  {
     public void setName(NameEnum name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,10 +116,12 @@ public class Runtime  {
         Runtime runtime = (Runtime) o;
         return Objects.equals(this.name, runtime.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -150,16 +130,13 @@ public class Runtime  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

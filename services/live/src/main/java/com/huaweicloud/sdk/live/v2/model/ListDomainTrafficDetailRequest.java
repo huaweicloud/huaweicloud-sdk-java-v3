@@ -1,70 +1,54 @@
 package com.huaweicloud.sdk.live.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ListDomainTrafficDetailRequest  {
-
-
+/** Request Object */
+public class ListDomainTrafficDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="play_domains")
-    
+    @JsonProperty(value = "play_domains")
+
     private List<String> playDomains = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app")
-    
+    @JsonProperty(value = "app")
+
     private String app;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stream")
-    
+    @JsonProperty(value = "stream")
+
     private String stream;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private List<String> region = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isp")
-    
+    @JsonProperty(value = "isp")
+
     private List<String> isp = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="interval")
-    
+    @JsonProperty(value = "interval")
+
     private Integer interval;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
     public ListDomainTrafficDetailRequest withPlayDomains(List<String> playDomains) {
@@ -72,9 +56,8 @@ public class ListDomainTrafficDetailRequest  {
         return this;
     }
 
-    
     public ListDomainTrafficDetailRequest addPlayDomainsItem(String playDomainsItem) {
-        if(this.playDomains == null) {
+        if (this.playDomains == null) {
             this.playDomains = new ArrayList<>();
         }
         this.playDomains.add(playDomainsItem);
@@ -82,17 +65,16 @@ public class ListDomainTrafficDetailRequest  {
     }
 
     public ListDomainTrafficDetailRequest withPlayDomains(Consumer<List<String>> playDomainsSetter) {
-        if(this.playDomains == null) {
+        if (this.playDomains == null) {
             this.playDomains = new ArrayList<>();
         }
         playDomainsSetter.accept(this.playDomains);
         return this;
     }
 
-    /**
-     * 播放域名列表，最多支持查询10个域名，多个域名以逗号分隔。 
-     * @return playDomains
-     */
+    /** 播放域名列表，最多支持查询10个域名，多个域名以逗号分隔。
+     * 
+     * @return playDomains */
     public List<String> getPlayDomains() {
         return playDomains;
     }
@@ -101,20 +83,14 @@ public class ListDomainTrafficDetailRequest  {
         this.playDomains = playDomains;
     }
 
-    
-
     public ListDomainTrafficDetailRequest withApp(String app) {
         this.app = app;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名称。
-     * @return app
-     */
+    /** 应用名称。
+     * 
+     * @return app */
     public String getApp() {
         return app;
     }
@@ -123,20 +99,14 @@ public class ListDomainTrafficDetailRequest  {
         this.app = app;
     }
 
-    
-
     public ListDomainTrafficDetailRequest withStream(String stream) {
         this.stream = stream;
         return this;
     }
 
-    
-
-
-    /**
-     * 流名。
-     * @return stream
-     */
+    /** 流名。
+     * 
+     * @return stream */
     public String getStream() {
         return stream;
     }
@@ -145,16 +115,13 @@ public class ListDomainTrafficDetailRequest  {
         this.stream = stream;
     }
 
-    
-
     public ListDomainTrafficDetailRequest withRegion(List<String> region) {
         this.region = region;
         return this;
     }
 
-    
     public ListDomainTrafficDetailRequest addRegionItem(String regionItem) {
-        if(this.region == null) {
+        if (this.region == null) {
             this.region = new ArrayList<>();
         }
         this.region.add(regionItem);
@@ -162,17 +129,16 @@ public class ListDomainTrafficDetailRequest  {
     }
 
     public ListDomainTrafficDetailRequest withRegion(Consumer<List<String>> regionSetter) {
-        if(this.region == null) {
+        if (this.region == null) {
             this.region = new ArrayList<>();
         }
         regionSetter.accept(this.region);
         return this;
     }
 
-    /**
-     * 区域列表。具体取值请参考[省份名称缩写](live_03_0043.xml)，不填写查询所有区域。 
-     * @return region
-     */
+    /** 区域列表。具体取值请参考[省份名称缩写](live_03_0043.xml)，不填写查询所有区域。
+     * 
+     * @return region */
     public List<String> getRegion() {
         return region;
     }
@@ -181,16 +147,13 @@ public class ListDomainTrafficDetailRequest  {
         this.region = region;
     }
 
-    
-
     public ListDomainTrafficDetailRequest withIsp(List<String> isp) {
         this.isp = isp;
         return this;
     }
 
-    
     public ListDomainTrafficDetailRequest addIspItem(String ispItem) {
-        if(this.isp == null) {
+        if (this.isp == null) {
             this.isp = new ArrayList<>();
         }
         this.isp.add(ispItem);
@@ -198,17 +161,16 @@ public class ListDomainTrafficDetailRequest  {
     }
 
     public ListDomainTrafficDetailRequest withIsp(Consumer<List<String>> ispSetter) {
-        if(this.isp == null) {
+        if (this.isp == null) {
             this.isp = new ArrayList<>();
         }
         ispSetter.accept(this.isp);
         return this;
     }
 
-    /**
-     * 运营商列表，取值如下： - \"CMCC ：移动\" - \"CTCC ： 电信\" - \"CUCC ：联通\" - \"OTHER: 其他\"  不填写查询所有运营商。 
-     * @return isp
-     */
+    /** 运营商列表，取值如下： - \"CMCC ：移动\" - \"CTCC ： 电信\" - \"CUCC ：联通\" - \"OTHER: 其他\" 不填写查询所有运营商。
+     * 
+     * @return isp */
     public List<String> getIsp() {
         return isp;
     }
@@ -217,22 +179,14 @@ public class ListDomainTrafficDetailRequest  {
         this.isp = isp;
     }
 
-    
-
     public ListDomainTrafficDetailRequest withInterval(Integer interval) {
         this.interval = interval;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询数据的时间粒度。支持300（默认值）, 3600和86400秒。不传值时，使用默认值300秒。 
-     * minimum: 300
-     * maximum: 86400
-     * @return interval
-     */
+    /** 查询数据的时间粒度。支持300（默认值）, 3600和86400秒。不传值时，使用默认值300秒。 minimum: 300 maximum: 86400
+     * 
+     * @return interval */
     public Integer getInterval() {
         return interval;
     }
@@ -241,20 +195,14 @@ public class ListDomainTrafficDetailRequest  {
         this.interval = interval;
     }
 
-    
-
     public ListDomainTrafficDetailRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。  格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度31天，最大查询周期90天。  若参数为空，默认查询7天数据。 
-     * @return startTime
-     */
+    /** 起始时间。日期格式按照ISO8601表示法，并使用UTC时间。 格式为：YYYY-MM-DDThh:mm:ssZ。最大查询跨度31天，最大查询周期90天。 若参数为空，默认查询7天数据。
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -263,20 +211,14 @@ public class ListDomainTrafficDetailRequest  {
         this.startTime = startTime;
     }
 
-    
-
     public ListDomainTrafficDetailRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。  若参数为空，默认为当前时间。结束时间需大于起始时间。 
-     * @return endTime
-     */
+    /** 结束时间。日期格式按照ISO8601表示法，并使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。 若参数为空，默认为当前时间。结束时间需大于起始时间。
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -284,8 +226,6 @@ public class ListDomainTrafficDetailRequest  {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -296,19 +236,21 @@ public class ListDomainTrafficDetailRequest  {
             return false;
         }
         ListDomainTrafficDetailRequest listDomainTrafficDetailRequest = (ListDomainTrafficDetailRequest) o;
-        return Objects.equals(this.playDomains, listDomainTrafficDetailRequest.playDomains) &&
-            Objects.equals(this.app, listDomainTrafficDetailRequest.app) &&
-            Objects.equals(this.stream, listDomainTrafficDetailRequest.stream) &&
-            Objects.equals(this.region, listDomainTrafficDetailRequest.region) &&
-            Objects.equals(this.isp, listDomainTrafficDetailRequest.isp) &&
-            Objects.equals(this.interval, listDomainTrafficDetailRequest.interval) &&
-            Objects.equals(this.startTime, listDomainTrafficDetailRequest.startTime) &&
-            Objects.equals(this.endTime, listDomainTrafficDetailRequest.endTime);
+        return Objects.equals(this.playDomains, listDomainTrafficDetailRequest.playDomains)
+            && Objects.equals(this.app, listDomainTrafficDetailRequest.app)
+            && Objects.equals(this.stream, listDomainTrafficDetailRequest.stream)
+            && Objects.equals(this.region, listDomainTrafficDetailRequest.region)
+            && Objects.equals(this.isp, listDomainTrafficDetailRequest.isp)
+            && Objects.equals(this.interval, listDomainTrafficDetailRequest.interval)
+            && Objects.equals(this.startTime, listDomainTrafficDetailRequest.startTime)
+            && Objects.equals(this.endTime, listDomainTrafficDetailRequest.endTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(playDomains, app, stream, region, isp, interval, startTime, endTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -324,16 +266,13 @@ public class ListDomainTrafficDetailRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

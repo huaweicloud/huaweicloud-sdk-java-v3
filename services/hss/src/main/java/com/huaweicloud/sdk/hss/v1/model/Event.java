@@ -1,68 +1,51 @@
 package com.huaweicloud.sdk.hss.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Event
- */
-public class Event  {
-
-
+/** Event */
+public class Event {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host_id")
-    
+    @JsonProperty(value = "host_id")
+
     private String hostId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host_name")
-    
+    @JsonProperty(value = "host_name")
+
     private String hostName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="event_type")
-    
+    @JsonProperty(value = "event_type")
+
     private String eventType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="occur_time")
-    
+    @JsonProperty(value = "occur_time")
+
     private Long occurTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="handle_time")
-    
+    @JsonProperty(value = "handle_time")
+
     private Long handleTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="handle_status")
-    
+    @JsonProperty(value = "handle_status")
+
     private String handleStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="handle_method")
-    
+    @JsonProperty(value = "handle_method")
+
     private String handleMethod;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="append_info")
-    
+    @JsonProperty(value = "append_info")
+
     private Object appendInfo;
 
     public Event withHostId(String hostId) {
@@ -70,13 +53,9 @@ public class Event  {
         return this;
     }
 
-    
-
-
-    /**
-     * 云主机id
-     * @return hostId
-     */
+    /** 云主机id
+     * 
+     * @return hostId */
     public String getHostId() {
         return hostId;
     }
@@ -85,20 +64,14 @@ public class Event  {
         this.hostId = hostId;
     }
 
-    
-
     public Event withHostName(String hostName) {
         this.hostName = hostName;
         return this;
     }
 
-    
-
-
-    /**
-     * 云主机名称
-     * @return hostName
-     */
+    /** 云主机名称
+     * 
+     * @return hostName */
     public String getHostName() {
         return hostName;
     }
@@ -107,20 +80,17 @@ public class Event  {
         this.hostName = hostName;
     }
 
-    
-
     public Event withEventType(String eventType) {
         this.eventType = eventType;
         return this;
     }
 
-    
-
-
-    /**
-     * 事件类型，包含如下:   - Abnormal Login : 账户异常登录   - Invalid System Account : 风险账号   - Brute Force Cracking : 账号暴力破解   - System Start Script Change : 自启动检测   - Process Abnormal Activity : 进程异常行为   - Process Privilege Escalation : 进程提权操作   - File Privilege Escalation : 文件提权操作   - General Malware : 恶意程序（云查杀）   - Abnormal Shell : 异常shell   - Reverse Shell : 反弹Shell   - High-Risk Command Execution : 高危命令执行   - Key File Change : 关键文件变更   - Webshell : 网站后门
-     * @return eventType
-     */
+    /** 事件类型，包含如下: - Abnormal Login : 账户异常登录 - Invalid System Account : 风险账号 - Brute Force Cracking : 账号暴力破解 - System
+     * Start Script Change : 自启动检测 - Process Abnormal Activity : 进程异常行为 - Process Privilege Escalation : 进程提权操作 - File
+     * Privilege Escalation : 文件提权操作 - General Malware : 恶意程序（云查杀） - Abnormal Shell : 异常shell - Reverse Shell : 反弹Shell
+     * - High-Risk Command Execution : 高危命令执行 - Key File Change : 关键文件变更 - Webshell : 网站后门
+     * 
+     * @return eventType */
     public String getEventType() {
         return eventType;
     }
@@ -129,22 +99,14 @@ public class Event  {
         this.eventType = eventType;
     }
 
-    
-
     public Event withOccurTime(Long occurTime) {
         this.occurTime = occurTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 发生时间，毫秒
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return occurTime
-     */
+    /** 发生时间，毫秒 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return occurTime */
     public Long getOccurTime() {
         return occurTime;
     }
@@ -153,22 +115,14 @@ public class Event  {
         this.occurTime = occurTime;
     }
 
-    
-
     public Event withHandleTime(Long handleTime) {
         this.handleTime = handleTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 处理时间，毫秒
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return handleTime
-     */
+    /** 处理时间，毫秒 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return handleTime */
     public Long getHandleTime() {
         return handleTime;
     }
@@ -177,20 +131,14 @@ public class Event  {
         this.handleTime = handleTime;
     }
 
-    
-
     public Event withHandleStatus(String handleStatus) {
         this.handleStatus = handleStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 处理状态，包含如下类型：   - \"unhandled\"：未处理   - \"handled\"：已处理
-     * @return handleStatus
-     */
+    /** 处理状态，包含如下类型： - \"unhandled\"：未处理 - \"handled\"：已处理
+     * 
+     * @return handleStatus */
     public String getHandleStatus() {
         return handleStatus;
     }
@@ -199,20 +147,15 @@ public class Event  {
         this.handleStatus = handleStatus;
     }
 
-    
-
     public Event withHandleMethod(String handleMethod) {
         this.handleMethod = handleMethod;
         return this;
     }
 
-    
-
-
-    /**
-     * 处理方式，包含如下类型：   - \"mark_as_handled\" ： 手动处理   - \"ignore\" ： 忽略   - \"add_to_alarm_whitelist\" ：加入告警白名单   - \"add_to_login_whitelist\" ：加入登录白名单   - \"isolate_and_kill\" ：隔离查杀
-     * @return handleMethod
-     */
+    /** 处理方式，包含如下类型： - \"mark_as_handled\" ： 手动处理 - \"ignore\" ： 忽略 - \"add_to_alarm_whitelist\" ：加入告警白名单 -
+     * \"add_to_login_whitelist\" ：加入登录白名单 - \"isolate_and_kill\" ：隔离查杀
+     * 
+     * @return handleMethod */
     public String getHandleMethod() {
         return handleMethod;
     }
@@ -221,20 +164,14 @@ public class Event  {
         this.handleMethod = handleMethod;
     }
 
-    
-
     public Event withAppendInfo(Object appendInfo) {
         this.appendInfo = appendInfo;
         return this;
     }
 
-    
-
-
-    /**
-     * 事件详细信息，json格式
-     * @return appendInfo
-     */
+    /** 事件详细信息，json格式
+     * 
+     * @return appendInfo */
     public Object getAppendInfo() {
         return appendInfo;
     }
@@ -242,8 +179,6 @@ public class Event  {
     public void setAppendInfo(Object appendInfo) {
         this.appendInfo = appendInfo;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -254,19 +189,19 @@ public class Event  {
             return false;
         }
         Event event = (Event) o;
-        return Objects.equals(this.hostId, event.hostId) &&
-            Objects.equals(this.hostName, event.hostName) &&
-            Objects.equals(this.eventType, event.eventType) &&
-            Objects.equals(this.occurTime, event.occurTime) &&
-            Objects.equals(this.handleTime, event.handleTime) &&
-            Objects.equals(this.handleStatus, event.handleStatus) &&
-            Objects.equals(this.handleMethod, event.handleMethod) &&
-            Objects.equals(this.appendInfo, event.appendInfo);
+        return Objects.equals(this.hostId, event.hostId) && Objects.equals(this.hostName, event.hostName)
+            && Objects.equals(this.eventType, event.eventType) && Objects.equals(this.occurTime, event.occurTime)
+            && Objects.equals(this.handleTime, event.handleTime)
+            && Objects.equals(this.handleStatus, event.handleStatus)
+            && Objects.equals(this.handleMethod, event.handleMethod)
+            && Objects.equals(this.appendInfo, event.appendInfo);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(hostId, hostName, eventType, occurTime, handleTime, handleStatus, handleMethod, appendInfo);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -282,16 +217,13 @@ public class Event  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

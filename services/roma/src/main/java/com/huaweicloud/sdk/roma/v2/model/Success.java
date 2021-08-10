@@ -1,53 +1,36 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Success
- */
-public class Success  {
-
-
+/** Success */
+public class Success {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path")
-    
+    @JsonProperty(value = "path")
+
     private String path;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="method")
-    
+    @JsonProperty(value = "method")
+
     private String method;
-    /**
-     * 导入行为： - update：表示更新API - create：表示新建API
-     */
+
+    /** 导入行为： - update：表示更新API - create：表示新建API */
     public static final class ActionEnum {
 
-        
-        /**
-         * Enum UPDATE for value: "update"
-         */
+        /** Enum UPDATE for value: "update" */
         public static final ActionEnum UPDATE = new ActionEnum("update");
-        
-        /**
-         * Enum CREATE for value: "create"
-         */
+
+        /** Enum CREATE for value: "create" */
         public static final ActionEnum CREATE = new ActionEnum("create");
-        
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,7 +59,7 @@ public class Success  {
 
         @JsonCreator
         public static ActionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -87,7 +70,7 @@ public class Success  {
         }
 
         public static ActionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -111,16 +94,14 @@ public class Success  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private ActionEnum action;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
     public Success withPath(String path) {
@@ -128,13 +109,9 @@ public class Success  {
         return this;
     }
 
-    
-
-
-    /**
-     * API请求路径
-     * @return path
-     */
+    /** API请求路径
+     * 
+     * @return path */
     public String getPath() {
         return path;
     }
@@ -143,20 +120,14 @@ public class Success  {
         this.path = path;
     }
 
-    
-
     public Success withMethod(String method) {
         this.method = method;
         return this;
     }
 
-    
-
-
-    /**
-     * API请求方法
-     * @return method
-     */
+    /** API请求方法
+     * 
+     * @return method */
     public String getMethod() {
         return method;
     }
@@ -165,20 +136,14 @@ public class Success  {
         this.method = method;
     }
 
-    
-
     public Success withAction(ActionEnum action) {
         this.action = action;
         return this;
     }
 
-    
-
-
-    /**
-     * 导入行为： - update：表示更新API - create：表示新建API
-     * @return action
-     */
+    /** 导入行为： - update：表示更新API - create：表示新建API
+     * 
+     * @return action */
     public ActionEnum getAction() {
         return action;
     }
@@ -187,20 +152,14 @@ public class Success  {
         this.action = action;
     }
 
-    
-
     public Success withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 导入成功的API编号
-     * @return id
-     */
+    /** 导入成功的API编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -208,8 +167,6 @@ public class Success  {
     public void setId(String id) {
         this.id = id;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -220,15 +177,15 @@ public class Success  {
             return false;
         }
         Success success = (Success) o;
-        return Objects.equals(this.path, success.path) &&
-            Objects.equals(this.method, success.method) &&
-            Objects.equals(this.action, success.action) &&
-            Objects.equals(this.id, success.id);
+        return Objects.equals(this.path, success.path) && Objects.equals(this.method, success.method)
+            && Objects.equals(this.action, success.action) && Objects.equals(this.id, success.id);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(path, method, action, id);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -240,16 +197,13 @@ public class Success  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

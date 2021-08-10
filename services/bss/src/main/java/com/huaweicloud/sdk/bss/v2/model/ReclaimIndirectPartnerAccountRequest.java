@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bss.v2.model.ReclaimIndirectPartnerAccountReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ReclaimIndirectPartnerAccountRequest  {
-
-
+/** Request Object */
+public class ReclaimIndirectPartnerAccountRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ReclaimIndirectPartnerAccountReq body;
 
     public ReclaimIndirectPartnerAccountRequest withBody(ReclaimIndirectPartnerAccountReq body) {
@@ -30,19 +20,17 @@ public class ReclaimIndirectPartnerAccountRequest  {
     }
 
     public ReclaimIndirectPartnerAccountRequest withBody(Consumer<ReclaimIndirectPartnerAccountReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ReclaimIndirectPartnerAccountReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ReclaimIndirectPartnerAccountReq getBody() {
         return body;
     }
@@ -50,8 +38,6 @@ public class ReclaimIndirectPartnerAccountRequest  {
     public void setBody(ReclaimIndirectPartnerAccountReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -61,13 +47,16 @@ public class ReclaimIndirectPartnerAccountRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ReclaimIndirectPartnerAccountRequest reclaimIndirectPartnerAccountRequest = (ReclaimIndirectPartnerAccountRequest) o;
+        ReclaimIndirectPartnerAccountRequest reclaimIndirectPartnerAccountRequest =
+            (ReclaimIndirectPartnerAccountRequest) o;
         return Objects.equals(this.body, reclaimIndirectPartnerAccountRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +65,13 @@ public class ReclaimIndirectPartnerAccountRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

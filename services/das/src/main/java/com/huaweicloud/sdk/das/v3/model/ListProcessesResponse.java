@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.das.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.das.v3.model.Process;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListProcessesResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="processes")
-    
+    @JsonProperty(value = "processes")
+
     private List<Process> processes = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
+
     private Long count;
 
     public ListProcessesResponse withProcesses(List<Process> processes) {
@@ -39,9 +27,8 @@ public class ListProcessesResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListProcessesResponse addProcessesItem(Process processesItem) {
-        if(this.processes == null) {
+        if (this.processes == null) {
             this.processes = new ArrayList<>();
         }
         this.processes.add(processesItem);
@@ -49,17 +36,16 @@ public class ListProcessesResponse extends SdkResponse {
     }
 
     public ListProcessesResponse withProcesses(Consumer<List<Process>> processesSetter) {
-        if(this.processes == null) {
+        if (this.processes == null) {
             this.processes = new ArrayList<>();
         }
         processesSetter.accept(this.processes);
         return this;
     }
 
-    /**
-     * 会话列表
-     * @return processes
-     */
+    /** 会话列表
+     * 
+     * @return processes */
     public List<Process> getProcesses() {
         return processes;
     }
@@ -68,20 +54,14 @@ public class ListProcessesResponse extends SdkResponse {
         this.processes = processes;
     }
 
-    
-
     public ListProcessesResponse withCount(Long count) {
         this.count = count;
         return this;
     }
 
-    
-
-
-    /**
-     * 总记录数
-     * @return count
-     */
+    /** 总记录数
+     * 
+     * @return count */
     public Long getCount() {
         return count;
     }
@@ -89,8 +69,6 @@ public class ListProcessesResponse extends SdkResponse {
     public void setCount(Long count) {
         this.count = count;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ListProcessesResponse extends SdkResponse {
             return false;
         }
         ListProcessesResponse listProcessesResponse = (ListProcessesResponse) o;
-        return Objects.equals(this.processes, listProcessesResponse.processes) &&
-            Objects.equals(this.count, listProcessesResponse.count);
+        return Objects.equals(this.processes, listProcessesResponse.processes)
+            && Objects.equals(this.count, listProcessesResponse.count);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(processes, count);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ListProcessesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

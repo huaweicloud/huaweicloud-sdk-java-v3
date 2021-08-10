@@ -1,42 +1,23 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * os_extra_specs数据结构说明
- */
-public class OsExtraSpecs  {
+/** os_extra_specs数据结构说明 */
+public class OsExtraSpecs {
 
-    /**
-     * 识该规格对应的资源类型，取值范围为“ironic”。
-     */
+    /** 识该规格对应的资源类型，取值范围为“ironic”。 */
     public static final class ResourceTypeEnum {
 
-        
-        /**
-         * Enum IRONIC for value: "ironic"
-         */
+        /** Enum IRONIC for value: "ironic" */
         public static final ResourceTypeEnum IRONIC = new ResourceTypeEnum("ironic");
-        
 
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +45,7 @@ public class OsExtraSpecs  {
 
         @JsonCreator
         public static ResourceTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ResourceTypeEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +56,7 @@ public class OsExtraSpecs  {
         }
 
         public static ResourceTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ResourceTypeEnum result = STATIC_FIELDS.get(value);
@@ -99,27 +80,19 @@ public class OsExtraSpecs  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type")
-    
+    @JsonProperty(value = "resource_type")
+
     private ResourceTypeEnum resourceType;
-    /**
-     * 裸金属服务器的CPU架构类型，取值为：x86_64（适用于x86机型）aarch64（适用于ARM机型）
-     */
+
+    /** 裸金属服务器的CPU架构类型，取值为：x86_64（适用于x86机型）aarch64（适用于ARM机型） */
     public static final class CapabilitiesCpuArchEnum {
 
-        
-        /**
-         * Enum X86_64 for value: "x86_64"
-         */
+        /** Enum X86_64 for value: "x86_64" */
         public static final CapabilitiesCpuArchEnum X86_64 = new CapabilitiesCpuArchEnum("x86_64");
-        
-        /**
-         * Enum AARCH64 for value: "aarch64"
-         */
+
+        /** Enum AARCH64 for value: "aarch64" */
         public static final CapabilitiesCpuArchEnum AARCH64 = new CapabilitiesCpuArchEnum("aarch64");
-        
 
         private static final Map<String, CapabilitiesCpuArchEnum> STATIC_FIELDS = createStaticFields();
 
@@ -148,7 +121,7 @@ public class OsExtraSpecs  {
 
         @JsonCreator
         public static CapabilitiesCpuArchEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CapabilitiesCpuArchEnum result = STATIC_FIELDS.get(value);
@@ -159,7 +132,7 @@ public class OsExtraSpecs  {
         }
 
         public static CapabilitiesCpuArchEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CapabilitiesCpuArchEnum result = STATIC_FIELDS.get(value);
@@ -183,45 +156,34 @@ public class OsExtraSpecs  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="capabilities:cpu_arch")
-    
+    @JsonProperty(value = "capabilities:cpu_arch")
+
     private CapabilitiesCpuArchEnum capabilitiesCpuArch;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="baremetal:disk_detail")
-    
+    @JsonProperty(value = "baremetal:disk_detail")
+
     private String baremetalDiskDetail;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="capabilities:hypervisor_type")
-    
+    @JsonProperty(value = "capabilities:hypervisor_type")
+
     private String capabilitiesHypervisorType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="baremetal:__support_evs")
-    
+    @JsonProperty(value = "baremetal:__support_evs")
+
     private String baremetalSupportEvs;
-    /**
-     * 裸金属服务器启动源。LocalDisk：本地盘Volume：云硬盘（快速发放）
-     */
+
+    /** 裸金属服务器启动源。LocalDisk：本地盘Volume：云硬盘（快速发放） */
     public static final class BaremetalExtBootTypeEnum {
 
-        
-        /**
-         * Enum LOCALDISK for value: "LocalDisk"
-         */
+        /** Enum LOCALDISK for value: "LocalDisk" */
         public static final BaremetalExtBootTypeEnum LOCALDISK = new BaremetalExtBootTypeEnum("LocalDisk");
-        
-        /**
-         * Enum VOLUME for value: "Volume"
-         */
+
+        /** Enum VOLUME for value: "Volume" */
         public static final BaremetalExtBootTypeEnum VOLUME = new BaremetalExtBootTypeEnum("Volume");
-        
 
         private static final Map<String, BaremetalExtBootTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -250,7 +212,7 @@ public class OsExtraSpecs  {
 
         @JsonCreator
         public static BaremetalExtBootTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             BaremetalExtBootTypeEnum result = STATIC_FIELDS.get(value);
@@ -261,7 +223,7 @@ public class OsExtraSpecs  {
         }
 
         public static BaremetalExtBootTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             BaremetalExtBootTypeEnum result = STATIC_FIELDS.get(value);
@@ -285,72 +247,53 @@ public class OsExtraSpecs  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="baremetal:extBootType")
-    
+    @JsonProperty(value = "baremetal:extBootType")
+
     private BaremetalExtBootTypeEnum baremetalExtBootType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="capabilities:board_type")
-    
+    @JsonProperty(value = "capabilities:board_type")
+
     private String capabilitiesBoardType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="baremetal:net_num")
-    
+    @JsonProperty(value = "baremetal:net_num")
+
     private String baremetalNetNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="baremetal:netcard_detail")
-    
+    @JsonProperty(value = "baremetal:netcard_detail")
+
     private String baremetalNetcardDetail;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="baremetal:cpu_detail")
-    
+    @JsonProperty(value = "baremetal:cpu_detail")
+
     private String baremetalCpuDetail;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="baremetal:memory_detail")
-    
+    @JsonProperty(value = "baremetal:memory_detail")
+
     private String baremetalMemoryDetail;
-    /**
-     * 裸金属服务器规格状态。不配置时等同于normal。normal：正常商用abandon：下线（即不显示）sellout：售罄obt：公测promotion：推荐（等同normal，也是商用）
-     */
+
+    /** 裸金属服务器规格状态。不配置时等同于normal。normal：正常商用abandon：下线（即不显示）sellout：售罄obt：公测promotion：推荐（等同normal，也是商用） */
     public static final class CondOperationStatusEnum {
 
-        
-        /**
-         * Enum NORMAL for value: "normal"
-         */
+        /** Enum NORMAL for value: "normal" */
         public static final CondOperationStatusEnum NORMAL = new CondOperationStatusEnum("normal");
-        
-        /**
-         * Enum ABANDON for value: "abandon"
-         */
+
+        /** Enum ABANDON for value: "abandon" */
         public static final CondOperationStatusEnum ABANDON = new CondOperationStatusEnum("abandon");
-        
-        /**
-         * Enum SELLOUT for value: "sellout"
-         */
+
+        /** Enum SELLOUT for value: "sellout" */
         public static final CondOperationStatusEnum SELLOUT = new CondOperationStatusEnum("sellout");
-        
-        /**
-         * Enum OBT for value: "obt"
-         */
+
+        /** Enum OBT for value: "obt" */
         public static final CondOperationStatusEnum OBT = new CondOperationStatusEnum("obt");
-        
-        /**
-         * Enum PROMOTION for value: "promotion"
-         */
+
+        /** Enum PROMOTION for value: "promotion" */
         public static final CondOperationStatusEnum PROMOTION = new CondOperationStatusEnum("promotion");
-        
 
         private static final Map<String, CondOperationStatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -382,7 +325,7 @@ public class OsExtraSpecs  {
 
         @JsonCreator
         public static CondOperationStatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CondOperationStatusEnum result = STATIC_FIELDS.get(value);
@@ -393,7 +336,7 @@ public class OsExtraSpecs  {
         }
 
         public static CondOperationStatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CondOperationStatusEnum result = STATIC_FIELDS.get(value);
@@ -417,16 +360,14 @@ public class OsExtraSpecs  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cond:operation:status")
-    
+    @JsonProperty(value = "cond:operation:status")
+
     private CondOperationStatusEnum condOperationStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cond:operation:az")
-    
+    @JsonProperty(value = "cond:operation:az")
+
     private String condOperationAz;
 
     public OsExtraSpecs withResourceType(ResourceTypeEnum resourceType) {
@@ -434,13 +375,9 @@ public class OsExtraSpecs  {
         return this;
     }
 
-    
-
-
-    /**
-     * 识该规格对应的资源类型，取值范围为“ironic”。
-     * @return resourceType
-     */
+    /** 识该规格对应的资源类型，取值范围为“ironic”。
+     * 
+     * @return resourceType */
     public ResourceTypeEnum getResourceType() {
         return resourceType;
     }
@@ -449,20 +386,14 @@ public class OsExtraSpecs  {
         this.resourceType = resourceType;
     }
 
-    
-
     public OsExtraSpecs withCapabilitiesCpuArch(CapabilitiesCpuArchEnum capabilitiesCpuArch) {
         this.capabilitiesCpuArch = capabilitiesCpuArch;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器的CPU架构类型，取值为：x86_64（适用于x86机型）aarch64（适用于ARM机型）
-     * @return capabilitiesCpuArch
-     */
+    /** 裸金属服务器的CPU架构类型，取值为：x86_64（适用于x86机型）aarch64（适用于ARM机型）
+     * 
+     * @return capabilitiesCpuArch */
     public CapabilitiesCpuArchEnum getCapabilitiesCpuArch() {
         return capabilitiesCpuArch;
     }
@@ -471,20 +402,14 @@ public class OsExtraSpecs  {
         this.capabilitiesCpuArch = capabilitiesCpuArch;
     }
 
-    
-
     public OsExtraSpecs withBaremetalDiskDetail(String baremetalDiskDetail) {
         this.baremetalDiskDetail = baremetalDiskDetail;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘物理规格描述信息。
-     * @return baremetalDiskDetail
-     */
+    /** 磁盘物理规格描述信息。
+     * 
+     * @return baremetalDiskDetail */
     public String getBaremetalDiskDetail() {
         return baremetalDiskDetail;
     }
@@ -493,20 +418,14 @@ public class OsExtraSpecs  {
         this.baremetalDiskDetail = baremetalDiskDetail;
     }
 
-    
-
     public OsExtraSpecs withCapabilitiesHypervisorType(String capabilitiesHypervisorType) {
         this.capabilitiesHypervisorType = capabilitiesHypervisorType;
         return this;
     }
 
-    
-
-
-    /**
-     * 标示ironic类型的规格。
-     * @return capabilitiesHypervisorType
-     */
+    /** 标示ironic类型的规格。
+     * 
+     * @return capabilitiesHypervisorType */
     public String getCapabilitiesHypervisorType() {
         return capabilitiesHypervisorType;
     }
@@ -515,20 +434,14 @@ public class OsExtraSpecs  {
         this.capabilitiesHypervisorType = capabilitiesHypervisorType;
     }
 
-    
-
     public OsExtraSpecs withBaremetalSupportEvs(String baremetalSupportEvs) {
         this.baremetalSupportEvs = baremetalSupportEvs;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识当前的规格是否支持挂载EVS卷。truefalse
-     * @return baremetalSupportEvs
-     */
+    /** 标识当前的规格是否支持挂载EVS卷。truefalse
+     * 
+     * @return baremetalSupportEvs */
     public String getBaremetalSupportEvs() {
         return baremetalSupportEvs;
     }
@@ -537,20 +450,14 @@ public class OsExtraSpecs  {
         this.baremetalSupportEvs = baremetalSupportEvs;
     }
 
-    
-
     public OsExtraSpecs withBaremetalExtBootType(BaremetalExtBootTypeEnum baremetalExtBootType) {
         this.baremetalExtBootType = baremetalExtBootType;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器启动源。LocalDisk：本地盘Volume：云硬盘（快速发放）
-     * @return baremetalExtBootType
-     */
+    /** 裸金属服务器启动源。LocalDisk：本地盘Volume：云硬盘（快速发放）
+     * 
+     * @return baremetalExtBootType */
     public BaremetalExtBootTypeEnum getBaremetalExtBootType() {
         return baremetalExtBootType;
     }
@@ -559,20 +466,14 @@ public class OsExtraSpecs  {
         this.baremetalExtBootType = baremetalExtBootType;
     }
 
-    
-
     public OsExtraSpecs withCapabilitiesBoardType(String capabilitiesBoardType) {
         this.capabilitiesBoardType = capabilitiesBoardType;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器的规格类型。格式为规格的缩写，例如规格名称为“physical.o2.medium”，则规格类型为“o2m”。
-     * @return capabilitiesBoardType
-     */
+    /** 裸金属服务器的规格类型。格式为规格的缩写，例如规格名称为“physical.o2.medium”，则规格类型为“o2m”。
+     * 
+     * @return capabilitiesBoardType */
     public String getCapabilitiesBoardType() {
         return capabilitiesBoardType;
     }
@@ -581,20 +482,14 @@ public class OsExtraSpecs  {
         this.capabilitiesBoardType = capabilitiesBoardType;
     }
 
-    
-
     public OsExtraSpecs withBaremetalNetNum(String baremetalNetNum) {
         this.baremetalNetNum = baremetalNetNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 实际可挂载网络数量。
-     * @return baremetalNetNum
-     */
+    /** 实际可挂载网络数量。
+     * 
+     * @return baremetalNetNum */
     public String getBaremetalNetNum() {
         return baremetalNetNum;
     }
@@ -603,20 +498,14 @@ public class OsExtraSpecs  {
         this.baremetalNetNum = baremetalNetNum;
     }
 
-    
-
     public OsExtraSpecs withBaremetalNetcardDetail(String baremetalNetcardDetail) {
         this.baremetalNetcardDetail = baremetalNetcardDetail;
         return this;
     }
 
-    
-
-
-    /**
-     * 网卡物理规格描述信息。
-     * @return baremetalNetcardDetail
-     */
+    /** 网卡物理规格描述信息。
+     * 
+     * @return baremetalNetcardDetail */
     public String getBaremetalNetcardDetail() {
         return baremetalNetcardDetail;
     }
@@ -625,20 +514,14 @@ public class OsExtraSpecs  {
         this.baremetalNetcardDetail = baremetalNetcardDetail;
     }
 
-    
-
     public OsExtraSpecs withBaremetalCpuDetail(String baremetalCpuDetail) {
         this.baremetalCpuDetail = baremetalCpuDetail;
         return this;
     }
 
-    
-
-
-    /**
-     * CPU物理规格描述信息。
-     * @return baremetalCpuDetail
-     */
+    /** CPU物理规格描述信息。
+     * 
+     * @return baremetalCpuDetail */
     public String getBaremetalCpuDetail() {
         return baremetalCpuDetail;
     }
@@ -647,20 +530,14 @@ public class OsExtraSpecs  {
         this.baremetalCpuDetail = baremetalCpuDetail;
     }
 
-    
-
     public OsExtraSpecs withBaremetalMemoryDetail(String baremetalMemoryDetail) {
         this.baremetalMemoryDetail = baremetalMemoryDetail;
         return this;
     }
 
-    
-
-
-    /**
-     * 内存物理规格描述信息
-     * @return baremetalMemoryDetail
-     */
+    /** 内存物理规格描述信息
+     * 
+     * @return baremetalMemoryDetail */
     public String getBaremetalMemoryDetail() {
         return baremetalMemoryDetail;
     }
@@ -669,20 +546,14 @@ public class OsExtraSpecs  {
         this.baremetalMemoryDetail = baremetalMemoryDetail;
     }
 
-    
-
     public OsExtraSpecs withCondOperationStatus(CondOperationStatusEnum condOperationStatus) {
         this.condOperationStatus = condOperationStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器规格状态。不配置时等同于normal。normal：正常商用abandon：下线（即不显示）sellout：售罄obt：公测promotion：推荐（等同normal，也是商用）
-     * @return condOperationStatus
-     */
+    /** 裸金属服务器规格状态。不配置时等同于normal。normal：正常商用abandon：下线（即不显示）sellout：售罄obt：公测promotion：推荐（等同normal，也是商用）
+     * 
+     * @return condOperationStatus */
     public CondOperationStatusEnum getCondOperationStatus() {
         return condOperationStatus;
     }
@@ -691,20 +562,15 @@ public class OsExtraSpecs  {
         this.condOperationStatus = condOperationStatus;
     }
 
-    
-
     public OsExtraSpecs withCondOperationAz(String condOperationAz) {
         this.condOperationAz = condOperationAz;
         return this;
     }
 
-    
-
-
-    /**
-     * 在某个AZ的裸金属服务器规格状态。此参数是AZ级配置，某个AZ没有在此参数中配置时默认使用cond:operation:status参数的取值。格式：az(xx)。()内为某个AZ下的裸金属服务器规格状态，()内必须填写状态，不填为无效配置。例如：规格在某个区域的az0正常商用，az1售罄，az2公测，az3正常商用，其他az显示下线，可配置为：“cond:operation:status”设置为“abandon”“cond:operation:az”设置为“az0(normal), az1(sellout), az2(obt), az3(promotion)” 说明：如果规格在某个AZ下的状态与cond:operation:status配置状态不同，必须配置该参数。
-     * @return condOperationAz
-     */
+    /** 在某个AZ的裸金属服务器规格状态。此参数是AZ级配置，某个AZ没有在此参数中配置时默认使用cond:operation:status参数的取值。格式：az(xx)。()内为某个AZ下的裸金属服务器规格状态，()内必须填写状态，不填为无效配置。例如：规格在某个区域的az0正常商用，az1售罄，az2公测，az3正常商用，其他az显示下线，可配置为：“cond:operation:status”设置为“abandon”“cond:operation:az”设置为“az0(normal),
+     * az1(sellout), az2(obt), az3(promotion)” 说明：如果规格在某个AZ下的状态与cond:operation:status配置状态不同，必须配置该参数。
+     * 
+     * @return condOperationAz */
     public String getCondOperationAz() {
         return condOperationAz;
     }
@@ -712,8 +578,6 @@ public class OsExtraSpecs  {
     public void setCondOperationAz(String condOperationAz) {
         this.condOperationAz = condOperationAz;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -724,24 +588,38 @@ public class OsExtraSpecs  {
             return false;
         }
         OsExtraSpecs osExtraSpecs = (OsExtraSpecs) o;
-        return Objects.equals(this.resourceType, osExtraSpecs.resourceType) &&
-            Objects.equals(this.capabilitiesCpuArch, osExtraSpecs.capabilitiesCpuArch) &&
-            Objects.equals(this.baremetalDiskDetail, osExtraSpecs.baremetalDiskDetail) &&
-            Objects.equals(this.capabilitiesHypervisorType, osExtraSpecs.capabilitiesHypervisorType) &&
-            Objects.equals(this.baremetalSupportEvs, osExtraSpecs.baremetalSupportEvs) &&
-            Objects.equals(this.baremetalExtBootType, osExtraSpecs.baremetalExtBootType) &&
-            Objects.equals(this.capabilitiesBoardType, osExtraSpecs.capabilitiesBoardType) &&
-            Objects.equals(this.baremetalNetNum, osExtraSpecs.baremetalNetNum) &&
-            Objects.equals(this.baremetalNetcardDetail, osExtraSpecs.baremetalNetcardDetail) &&
-            Objects.equals(this.baremetalCpuDetail, osExtraSpecs.baremetalCpuDetail) &&
-            Objects.equals(this.baremetalMemoryDetail, osExtraSpecs.baremetalMemoryDetail) &&
-            Objects.equals(this.condOperationStatus, osExtraSpecs.condOperationStatus) &&
-            Objects.equals(this.condOperationAz, osExtraSpecs.condOperationAz);
+        return Objects.equals(this.resourceType, osExtraSpecs.resourceType)
+            && Objects.equals(this.capabilitiesCpuArch, osExtraSpecs.capabilitiesCpuArch)
+            && Objects.equals(this.baremetalDiskDetail, osExtraSpecs.baremetalDiskDetail)
+            && Objects.equals(this.capabilitiesHypervisorType, osExtraSpecs.capabilitiesHypervisorType)
+            && Objects.equals(this.baremetalSupportEvs, osExtraSpecs.baremetalSupportEvs)
+            && Objects.equals(this.baremetalExtBootType, osExtraSpecs.baremetalExtBootType)
+            && Objects.equals(this.capabilitiesBoardType, osExtraSpecs.capabilitiesBoardType)
+            && Objects.equals(this.baremetalNetNum, osExtraSpecs.baremetalNetNum)
+            && Objects.equals(this.baremetalNetcardDetail, osExtraSpecs.baremetalNetcardDetail)
+            && Objects.equals(this.baremetalCpuDetail, osExtraSpecs.baremetalCpuDetail)
+            && Objects.equals(this.baremetalMemoryDetail, osExtraSpecs.baremetalMemoryDetail)
+            && Objects.equals(this.condOperationStatus, osExtraSpecs.condOperationStatus)
+            && Objects.equals(this.condOperationAz, osExtraSpecs.condOperationAz);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(resourceType, capabilitiesCpuArch, baremetalDiskDetail, capabilitiesHypervisorType, baremetalSupportEvs, baremetalExtBootType, capabilitiesBoardType, baremetalNetNum, baremetalNetcardDetail, baremetalCpuDetail, baremetalMemoryDetail, condOperationStatus, condOperationAz);
+        return Objects.hash(resourceType,
+            capabilitiesCpuArch,
+            baremetalDiskDetail,
+            capabilitiesHypervisorType,
+            baremetalSupportEvs,
+            baremetalExtBootType,
+            capabilitiesBoardType,
+            baremetalNetNum,
+            baremetalNetcardDetail,
+            baremetalCpuDetail,
+            baremetalMemoryDetail,
+            condOperationStatus,
+            condOperationAz);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -762,16 +640,13 @@ public class OsExtraSpecs  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

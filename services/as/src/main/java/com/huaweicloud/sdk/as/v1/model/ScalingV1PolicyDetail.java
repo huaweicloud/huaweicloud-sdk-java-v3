@@ -1,72 +1,50 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.ScalingPolicyActionV1;
-import com.huaweicloud.sdk.as.v1.model.ScheduledPolicy;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 伸缩策略
- */
-public class ScalingV1PolicyDetail  {
-
-
+/** 伸缩策略 */
+public class ScalingV1PolicyDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_group_id")
-    
+    @JsonProperty(value = "scaling_group_id")
+
     private String scalingGroupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_policy_name")
-    
+    @JsonProperty(value = "scaling_policy_name")
+
     private String scalingPolicyName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_policy_id")
-    
+    @JsonProperty(value = "scaling_policy_id")
+
     private String scalingPolicyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_status")
-    
+    @JsonProperty(value = "policy_status")
+
     private String policyStatus;
-    /**
-     * 伸缩策略类型：ALARM：告警策略，此时alarm_id有返回，scheduled_policy不会返回。SCHEDULED：定时策略，此时alarm_id不会返回，scheduled_policy有返回，并且recurrence_type、recurrence_value、start_time和end_time不会返回。RECURRENCE：周期策略，此时alarm_id不会返回，scheduled_policy有返回，并且recurrence_type、recurrence_value、start_time和end_time有返回。
-     */
+
+    /** 伸缩策略类型：ALARM：告警策略，此时alarm_id有返回，scheduled_policy不会返回。SCHEDULED：定时策略，此时alarm_id不会返回，scheduled_policy有返回，并且recurrence_type、recurrence_value、start_time和end_time不会返回。RECURRENCE：周期策略，此时alarm_id不会返回，scheduled_policy有返回，并且recurrence_type、recurrence_value、start_time和end_time有返回。 */
     public static final class ScalingPolicyTypeEnum {
 
-        
-        /**
-         * Enum ALARM for value: "ALARM"
-         */
+        /** Enum ALARM for value: "ALARM" */
         public static final ScalingPolicyTypeEnum ALARM = new ScalingPolicyTypeEnum("ALARM");
-        
-        /**
-         * Enum SCHEDULED for value: "SCHEDULED"
-         */
+
+        /** Enum SCHEDULED for value: "SCHEDULED" */
         public static final ScalingPolicyTypeEnum SCHEDULED = new ScalingPolicyTypeEnum("SCHEDULED");
-        
-        /**
-         * Enum RECURRENCE for value: "RECURRENCE"
-         */
+
+        /** Enum RECURRENCE for value: "RECURRENCE" */
         public static final ScalingPolicyTypeEnum RECURRENCE = new ScalingPolicyTypeEnum("RECURRENCE");
-        
 
         private static final Map<String, ScalingPolicyTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -96,7 +74,7 @@ public class ScalingV1PolicyDetail  {
 
         @JsonCreator
         public static ScalingPolicyTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ScalingPolicyTypeEnum result = STATIC_FIELDS.get(value);
@@ -107,7 +85,7 @@ public class ScalingV1PolicyDetail  {
         }
 
         public static ScalingPolicyTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ScalingPolicyTypeEnum result = STATIC_FIELDS.get(value);
@@ -131,40 +109,34 @@ public class ScalingV1PolicyDetail  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_policy_type")
-    
+    @JsonProperty(value = "scaling_policy_type")
+
     private ScalingPolicyTypeEnum scalingPolicyType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_id")
-    
+    @JsonProperty(value = "alarm_id")
+
     private String alarmId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scheduled_policy")
-    
+    @JsonProperty(value = "scheduled_policy")
+
     private ScheduledPolicy scheduledPolicy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_policy_action")
-    
+    @JsonProperty(value = "scaling_policy_action")
+
     private ScalingPolicyActionV1 scalingPolicyAction;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cool_down_time")
-    
+    @JsonProperty(value = "cool_down_time")
+
     private Integer coolDownTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private String createTime;
 
     public ScalingV1PolicyDetail withScalingGroupId(String scalingGroupId) {
@@ -172,13 +144,9 @@ public class ScalingV1PolicyDetail  {
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩组ID。
-     * @return scalingGroupId
-     */
+    /** 伸缩组ID。
+     * 
+     * @return scalingGroupId */
     public String getScalingGroupId() {
         return scalingGroupId;
     }
@@ -187,20 +155,14 @@ public class ScalingV1PolicyDetail  {
         this.scalingGroupId = scalingGroupId;
     }
 
-    
-
     public ScalingV1PolicyDetail withScalingPolicyName(String scalingPolicyName) {
         this.scalingPolicyName = scalingPolicyName;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩策略名称。
-     * @return scalingPolicyName
-     */
+    /** 伸缩策略名称。
+     * 
+     * @return scalingPolicyName */
     public String getScalingPolicyName() {
         return scalingPolicyName;
     }
@@ -209,20 +171,14 @@ public class ScalingV1PolicyDetail  {
         this.scalingPolicyName = scalingPolicyName;
     }
 
-    
-
     public ScalingV1PolicyDetail withScalingPolicyId(String scalingPolicyId) {
         this.scalingPolicyId = scalingPolicyId;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩策略ID。
-     * @return scalingPolicyId
-     */
+    /** 伸缩策略ID。
+     * 
+     * @return scalingPolicyId */
     public String getScalingPolicyId() {
         return scalingPolicyId;
     }
@@ -231,20 +187,14 @@ public class ScalingV1PolicyDetail  {
         this.scalingPolicyId = scalingPolicyId;
     }
 
-    
-
     public ScalingV1PolicyDetail withPolicyStatus(String policyStatus) {
         this.policyStatus = policyStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩策略状态  INSERVICE：已启用 PAUSED：已停用 EXECUTING：执行中
-     * @return policyStatus
-     */
+    /** 伸缩策略状态 INSERVICE：已启用 PAUSED：已停用 EXECUTING：执行中
+     * 
+     * @return policyStatus */
     public String getPolicyStatus() {
         return policyStatus;
     }
@@ -253,20 +203,14 @@ public class ScalingV1PolicyDetail  {
         this.policyStatus = policyStatus;
     }
 
-    
-
     public ScalingV1PolicyDetail withScalingPolicyType(ScalingPolicyTypeEnum scalingPolicyType) {
         this.scalingPolicyType = scalingPolicyType;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩策略类型：ALARM：告警策略，此时alarm_id有返回，scheduled_policy不会返回。SCHEDULED：定时策略，此时alarm_id不会返回，scheduled_policy有返回，并且recurrence_type、recurrence_value、start_time和end_time不会返回。RECURRENCE：周期策略，此时alarm_id不会返回，scheduled_policy有返回，并且recurrence_type、recurrence_value、start_time和end_time有返回。
-     * @return scalingPolicyType
-     */
+    /** 伸缩策略类型：ALARM：告警策略，此时alarm_id有返回，scheduled_policy不会返回。SCHEDULED：定时策略，此时alarm_id不会返回，scheduled_policy有返回，并且recurrence_type、recurrence_value、start_time和end_time不会返回。RECURRENCE：周期策略，此时alarm_id不会返回，scheduled_policy有返回，并且recurrence_type、recurrence_value、start_time和end_time有返回。
+     * 
+     * @return scalingPolicyType */
     public ScalingPolicyTypeEnum getScalingPolicyType() {
         return scalingPolicyType;
     }
@@ -275,20 +219,14 @@ public class ScalingV1PolicyDetail  {
         this.scalingPolicyType = scalingPolicyType;
     }
 
-    
-
     public ScalingV1PolicyDetail withAlarmId(String alarmId) {
         this.alarmId = alarmId;
         return this;
     }
 
-    
-
-
-    /**
-     * 告警ID，即告警规则的ID，当scaling_policy_type为ALARM时该项必选，此时scheduled_policy不生效。创建告警策略成功后，会自动为该告警ID对应的告警规则的alarm_actions字段增加类型为autoscaling的告警触发动作。告警ID通过查询云监控告警规则列表获取，详见《云监控API参考》的“查询告警规则列表”。
-     * @return alarmId
-     */
+    /** 告警ID，即告警规则的ID，当scaling_policy_type为ALARM时该项必选，此时scheduled_policy不生效。创建告警策略成功后，会自动为该告警ID对应的告警规则的alarm_actions字段增加类型为autoscaling的告警触发动作。告警ID通过查询云监控告警规则列表获取，详见《云监控API参考》的“查询告警规则列表”。
+     * 
+     * @return alarmId */
     public String getAlarmId() {
         return alarmId;
     }
@@ -297,27 +235,23 @@ public class ScalingV1PolicyDetail  {
         this.alarmId = alarmId;
     }
 
-    
-
     public ScalingV1PolicyDetail withScheduledPolicy(ScheduledPolicy scheduledPolicy) {
         this.scheduledPolicy = scheduledPolicy;
         return this;
     }
 
     public ScalingV1PolicyDetail withScheduledPolicy(Consumer<ScheduledPolicy> scheduledPolicySetter) {
-        if(this.scheduledPolicy == null ){
+        if (this.scheduledPolicy == null) {
             this.scheduledPolicy = new ScheduledPolicy();
             scheduledPolicySetter.accept(this.scheduledPolicy);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get scheduledPolicy
-     * @return scheduledPolicy
-     */
+    /** Get scheduledPolicy
+     * 
+     * @return scheduledPolicy */
     public ScheduledPolicy getScheduledPolicy() {
         return scheduledPolicy;
     }
@@ -326,27 +260,23 @@ public class ScalingV1PolicyDetail  {
         this.scheduledPolicy = scheduledPolicy;
     }
 
-    
-
     public ScalingV1PolicyDetail withScalingPolicyAction(ScalingPolicyActionV1 scalingPolicyAction) {
         this.scalingPolicyAction = scalingPolicyAction;
         return this;
     }
 
     public ScalingV1PolicyDetail withScalingPolicyAction(Consumer<ScalingPolicyActionV1> scalingPolicyActionSetter) {
-        if(this.scalingPolicyAction == null ){
+        if (this.scalingPolicyAction == null) {
             this.scalingPolicyAction = new ScalingPolicyActionV1();
             scalingPolicyActionSetter.accept(this.scalingPolicyAction);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get scalingPolicyAction
-     * @return scalingPolicyAction
-     */
+    /** Get scalingPolicyAction
+     * 
+     * @return scalingPolicyAction */
     public ScalingPolicyActionV1 getScalingPolicyAction() {
         return scalingPolicyAction;
     }
@@ -355,21 +285,14 @@ public class ScalingV1PolicyDetail  {
         this.scalingPolicyAction = scalingPolicyAction;
     }
 
-    
-
     public ScalingV1PolicyDetail withCoolDownTime(Integer coolDownTime) {
         this.coolDownTime = coolDownTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 冷却时间，取值范围0-86400，默认为300，单位是秒。
-     * maximum: 86400
-     * @return coolDownTime
-     */
+    /** 冷却时间，取值范围0-86400，默认为300，单位是秒。 maximum: 86400
+     * 
+     * @return coolDownTime */
     public Integer getCoolDownTime() {
         return coolDownTime;
     }
@@ -378,20 +301,14 @@ public class ScalingV1PolicyDetail  {
         this.coolDownTime = coolDownTime;
     }
 
-    
-
     public ScalingV1PolicyDetail withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建伸缩策略时间，遵循UTC时间。
-     * @return createTime
-     */
+    /** 创建伸缩策略时间，遵循UTC时间。
+     * 
+     * @return createTime */
     public String getCreateTime() {
         return createTime;
     }
@@ -399,8 +316,6 @@ public class ScalingV1PolicyDetail  {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -411,21 +326,32 @@ public class ScalingV1PolicyDetail  {
             return false;
         }
         ScalingV1PolicyDetail scalingV1PolicyDetail = (ScalingV1PolicyDetail) o;
-        return Objects.equals(this.scalingGroupId, scalingV1PolicyDetail.scalingGroupId) &&
-            Objects.equals(this.scalingPolicyName, scalingV1PolicyDetail.scalingPolicyName) &&
-            Objects.equals(this.scalingPolicyId, scalingV1PolicyDetail.scalingPolicyId) &&
-            Objects.equals(this.policyStatus, scalingV1PolicyDetail.policyStatus) &&
-            Objects.equals(this.scalingPolicyType, scalingV1PolicyDetail.scalingPolicyType) &&
-            Objects.equals(this.alarmId, scalingV1PolicyDetail.alarmId) &&
-            Objects.equals(this.scheduledPolicy, scalingV1PolicyDetail.scheduledPolicy) &&
-            Objects.equals(this.scalingPolicyAction, scalingV1PolicyDetail.scalingPolicyAction) &&
-            Objects.equals(this.coolDownTime, scalingV1PolicyDetail.coolDownTime) &&
-            Objects.equals(this.createTime, scalingV1PolicyDetail.createTime);
+        return Objects.equals(this.scalingGroupId, scalingV1PolicyDetail.scalingGroupId)
+            && Objects.equals(this.scalingPolicyName, scalingV1PolicyDetail.scalingPolicyName)
+            && Objects.equals(this.scalingPolicyId, scalingV1PolicyDetail.scalingPolicyId)
+            && Objects.equals(this.policyStatus, scalingV1PolicyDetail.policyStatus)
+            && Objects.equals(this.scalingPolicyType, scalingV1PolicyDetail.scalingPolicyType)
+            && Objects.equals(this.alarmId, scalingV1PolicyDetail.alarmId)
+            && Objects.equals(this.scheduledPolicy, scalingV1PolicyDetail.scheduledPolicy)
+            && Objects.equals(this.scalingPolicyAction, scalingV1PolicyDetail.scalingPolicyAction)
+            && Objects.equals(this.coolDownTime, scalingV1PolicyDetail.coolDownTime)
+            && Objects.equals(this.createTime, scalingV1PolicyDetail.createTime);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(scalingGroupId, scalingPolicyName, scalingPolicyId, policyStatus, scalingPolicyType, alarmId, scheduledPolicy, scalingPolicyAction, coolDownTime, createTime);
+        return Objects.hash(scalingGroupId,
+            scalingPolicyName,
+            scalingPolicyId,
+            policyStatus,
+            scalingPolicyType,
+            alarmId,
+            scheduledPolicy,
+            scalingPolicyAction,
+            coolDownTime,
+            createTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -443,16 +369,13 @@ public class ScalingV1PolicyDetail  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

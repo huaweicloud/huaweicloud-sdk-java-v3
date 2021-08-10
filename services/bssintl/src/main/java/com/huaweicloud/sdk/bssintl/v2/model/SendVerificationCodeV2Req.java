@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.bssintl.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * SendVerificationCodeV2Req
- */
-public class SendVerificationCodeV2Req  {
-
-
+/** SendVerificationCodeV2Req */
+public class SendVerificationCodeV2Req {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="receiver_type")
-    
+    @JsonProperty(value = "receiver_type")
+
     private Integer receiverType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timeout")
-    
+    @JsonProperty(value = "timeout")
+
     private Integer timeout;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="email")
-    
+    @JsonProperty(value = "email")
+
     private String email;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lang")
-    
+    @JsonProperty(value = "lang")
+
     private String lang;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scene")
-    
+    @JsonProperty(value = "scene")
+
     private Integer scene;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_id")
-    
+    @JsonProperty(value = "customer_id")
+
     private String customerId;
 
     public SendVerificationCodeV2Req withReceiverType(Integer receiverType) {
@@ -58,15 +43,9 @@ public class SendVerificationCodeV2Req  {
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：发送类型：1：发送短信验证码。2：发送邮件验证码。| |参数的约束及描述：发送类型：1：发送短信验证码。2：发送邮件验证码。|
-     * minimum: 1
-     * maximum: 2
-     * @return receiverType
-     */
+    /** |参数名称：发送类型：1：发送短信验证码。2：发送邮件验证码。| |参数的约束及描述：发送类型：1：发送短信验证码。2：发送邮件验证码。| minimum: 1 maximum: 2
+     * 
+     * @return receiverType */
     public Integer getReceiverType() {
         return receiverType;
     }
@@ -75,22 +54,15 @@ public class SendVerificationCodeV2Req  {
         this.receiverType = receiverType;
     }
 
-    
-
     public SendVerificationCodeV2Req withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：验证码超时时间。如果不填的话，采用系统默认超时时间5分钟。单位：分钟| |参数的约束及描述：验证码超时时间。如果不填的话，采用系统默认超时时间5分钟。单位：分钟|
-     * minimum: 1
-     * maximum: 2147483647
-     * @return timeout
-     */
+    /** |参数名称：验证码超时时间。如果不填的话，采用系统默认超时时间5分钟。单位：分钟| |参数的约束及描述：验证码超时时间。如果不填的话，采用系统默认超时时间5分钟。单位：分钟| minimum: 1 maximum:
+     * 2147483647
+     * 
+     * @return timeout */
     public Integer getTimeout() {
         return timeout;
     }
@@ -99,20 +71,14 @@ public class SendVerificationCodeV2Req  {
         this.timeout = timeout;
     }
 
-    
-
     public SendVerificationCodeV2Req withEmail(String email) {
         this.email = email;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：指定发送邮箱地址。| |参数约束及描述：指定发送邮箱地址。|
-     * @return email
-     */
+    /** |参数名称：指定发送邮箱地址。| |参数约束及描述：指定发送邮箱地址。|
+     * 
+     * @return email */
     public String getEmail() {
         return email;
     }
@@ -121,20 +87,15 @@ public class SendVerificationCodeV2Req  {
         this.email = email;
     }
 
-    
-
     public SendVerificationCodeV2Req withLang(String lang) {
         this.lang = lang;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：根据语言如果查询不到对应模板信息，就取系统默认语言对应的模板信息。zh-cn：中文；en-us：英文。| |参数约束及描述：根据语言如果查询不到对应模板信息，就取系统默认语言对应的模板信息。zh-cn：中文；en-us：英文。|
-     * @return lang
-     */
+    /** |参数名称：根据语言如果查询不到对应模板信息，就取系统默认语言对应的模板信息。zh-cn：中文；en-us：英文。|
+     * |参数约束及描述：根据语言如果查询不到对应模板信息，就取系统默认语言对应的模板信息。zh-cn：中文；en-us：英文。|
+     * 
+     * @return lang */
     public String getLang() {
         return lang;
     }
@@ -143,22 +104,14 @@ public class SendVerificationCodeV2Req  {
         this.lang = lang;
     }
 
-    
-
     public SendVerificationCodeV2Req withScene(Integer scene) {
         this.scene = scene;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：场景| |参数的约束及描述：该参数非必填，29：注册；18：实名认证个人银行卡认证；不填写默认为29|
-     * minimum: 18
-     * maximum: 29
-     * @return scene
-     */
+    /** |参数名称：场景| |参数的约束及描述：该参数非必填，29：注册；18：实名认证个人银行卡认证；不填写默认为29| minimum: 18 maximum: 29
+     * 
+     * @return scene */
     public Integer getScene() {
         return scene;
     }
@@ -167,20 +120,14 @@ public class SendVerificationCodeV2Req  {
         this.scene = scene;
     }
 
-    
-
     public SendVerificationCodeV2Req withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：客户ID，如果scene=18的时候必填。| |参数约束及描述：客户ID，如果scene=18的时候必填。|
-     * @return customerId
-     */
+    /** |参数名称：客户ID，如果scene=18的时候必填。| |参数约束及描述：客户ID，如果scene=18的时候必填。|
+     * 
+     * @return customerId */
     public String getCustomerId() {
         return customerId;
     }
@@ -188,8 +135,6 @@ public class SendVerificationCodeV2Req  {
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -200,17 +145,19 @@ public class SendVerificationCodeV2Req  {
             return false;
         }
         SendVerificationCodeV2Req sendVerificationCodeV2Req = (SendVerificationCodeV2Req) o;
-        return Objects.equals(this.receiverType, sendVerificationCodeV2Req.receiverType) &&
-            Objects.equals(this.timeout, sendVerificationCodeV2Req.timeout) &&
-            Objects.equals(this.email, sendVerificationCodeV2Req.email) &&
-            Objects.equals(this.lang, sendVerificationCodeV2Req.lang) &&
-            Objects.equals(this.scene, sendVerificationCodeV2Req.scene) &&
-            Objects.equals(this.customerId, sendVerificationCodeV2Req.customerId);
+        return Objects.equals(this.receiverType, sendVerificationCodeV2Req.receiverType)
+            && Objects.equals(this.timeout, sendVerificationCodeV2Req.timeout)
+            && Objects.equals(this.email, sendVerificationCodeV2Req.email)
+            && Objects.equals(this.lang, sendVerificationCodeV2Req.lang)
+            && Objects.equals(this.scene, sendVerificationCodeV2Req.scene)
+            && Objects.equals(this.customerId, sendVerificationCodeV2Req.customerId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(receiverType, timeout, email, lang, scene, customerId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -224,16 +171,13 @@ public class SendVerificationCodeV2Req  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

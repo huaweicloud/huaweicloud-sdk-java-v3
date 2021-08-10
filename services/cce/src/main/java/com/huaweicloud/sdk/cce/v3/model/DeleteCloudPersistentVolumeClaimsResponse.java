@@ -1,55 +1,38 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.PersistentVolumeClaimMetadata;
-import com.huaweicloud.sdk.cce.v3.model.PersistentVolumeClaimSpec;
-import com.huaweicloud.sdk.cce.v3.model.PersistentVolumeClaimStatus;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class DeleteCloudPersistentVolumeClaimsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apiVersion")
-    
+    @JsonProperty(value = "apiVersion")
+
     private String apiVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="kind")
-    
+    @JsonProperty(value = "kind")
+
     private String kind;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata")
-    
+    @JsonProperty(value = "metadata")
+
     private PersistentVolumeClaimMetadata metadata;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec")
-    
+    @JsonProperty(value = "spec")
+
     private PersistentVolumeClaimSpec spec;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private PersistentVolumeClaimStatus status;
 
     public DeleteCloudPersistentVolumeClaimsResponse withApiVersion(String apiVersion) {
@@ -57,13 +40,9 @@ public class DeleteCloudPersistentVolumeClaimsResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * API版本，固定值**v1**
-     * @return apiVersion
-     */
+    /** API版本，固定值**v1**
+     * 
+     * @return apiVersion */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -72,20 +51,14 @@ public class DeleteCloudPersistentVolumeClaimsResponse extends SdkResponse {
         this.apiVersion = apiVersion;
     }
 
-    
-
     public DeleteCloudPersistentVolumeClaimsResponse withKind(String kind) {
         this.kind = kind;
         return this;
     }
 
-    
-
-
-    /**
-     * API类型，固定值**PersistentVolumeClaim**
-     * @return kind
-     */
+    /** API类型，固定值**PersistentVolumeClaim**
+     * 
+     * @return kind */
     public String getKind() {
         return kind;
     }
@@ -94,27 +67,24 @@ public class DeleteCloudPersistentVolumeClaimsResponse extends SdkResponse {
         this.kind = kind;
     }
 
-    
-
     public DeleteCloudPersistentVolumeClaimsResponse withMetadata(PersistentVolumeClaimMetadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    public DeleteCloudPersistentVolumeClaimsResponse withMetadata(Consumer<PersistentVolumeClaimMetadata> metadataSetter) {
-        if(this.metadata == null ){
+    public DeleteCloudPersistentVolumeClaimsResponse withMetadata(
+        Consumer<PersistentVolumeClaimMetadata> metadataSetter) {
+        if (this.metadata == null) {
             this.metadata = new PersistentVolumeClaimMetadata();
             metadataSetter.accept(this.metadata);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get metadata
-     * @return metadata
-     */
+    /** Get metadata
+     * 
+     * @return metadata */
     public PersistentVolumeClaimMetadata getMetadata() {
         return metadata;
     }
@@ -123,27 +93,23 @@ public class DeleteCloudPersistentVolumeClaimsResponse extends SdkResponse {
         this.metadata = metadata;
     }
 
-    
-
     public DeleteCloudPersistentVolumeClaimsResponse withSpec(PersistentVolumeClaimSpec spec) {
         this.spec = spec;
         return this;
     }
 
     public DeleteCloudPersistentVolumeClaimsResponse withSpec(Consumer<PersistentVolumeClaimSpec> specSetter) {
-        if(this.spec == null ){
+        if (this.spec == null) {
             this.spec = new PersistentVolumeClaimSpec();
             specSetter.accept(this.spec);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get spec
-     * @return spec
-     */
+    /** Get spec
+     * 
+     * @return spec */
     public PersistentVolumeClaimSpec getSpec() {
         return spec;
     }
@@ -152,27 +118,23 @@ public class DeleteCloudPersistentVolumeClaimsResponse extends SdkResponse {
         this.spec = spec;
     }
 
-    
-
     public DeleteCloudPersistentVolumeClaimsResponse withStatus(PersistentVolumeClaimStatus status) {
         this.status = status;
         return this;
     }
 
     public DeleteCloudPersistentVolumeClaimsResponse withStatus(Consumer<PersistentVolumeClaimStatus> statusSetter) {
-        if(this.status == null ){
+        if (this.status == null) {
             this.status = new PersistentVolumeClaimStatus();
             statusSetter.accept(this.status);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get status
-     * @return status
-     */
+    /** Get status
+     * 
+     * @return status */
     public PersistentVolumeClaimStatus getStatus() {
         return status;
     }
@@ -180,8 +142,6 @@ public class DeleteCloudPersistentVolumeClaimsResponse extends SdkResponse {
     public void setStatus(PersistentVolumeClaimStatus status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -191,17 +151,20 @@ public class DeleteCloudPersistentVolumeClaimsResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        DeleteCloudPersistentVolumeClaimsResponse deleteCloudPersistentVolumeClaimsResponse = (DeleteCloudPersistentVolumeClaimsResponse) o;
-        return Objects.equals(this.apiVersion, deleteCloudPersistentVolumeClaimsResponse.apiVersion) &&
-            Objects.equals(this.kind, deleteCloudPersistentVolumeClaimsResponse.kind) &&
-            Objects.equals(this.metadata, deleteCloudPersistentVolumeClaimsResponse.metadata) &&
-            Objects.equals(this.spec, deleteCloudPersistentVolumeClaimsResponse.spec) &&
-            Objects.equals(this.status, deleteCloudPersistentVolumeClaimsResponse.status);
+        DeleteCloudPersistentVolumeClaimsResponse deleteCloudPersistentVolumeClaimsResponse =
+            (DeleteCloudPersistentVolumeClaimsResponse) o;
+        return Objects.equals(this.apiVersion, deleteCloudPersistentVolumeClaimsResponse.apiVersion)
+            && Objects.equals(this.kind, deleteCloudPersistentVolumeClaimsResponse.kind)
+            && Objects.equals(this.metadata, deleteCloudPersistentVolumeClaimsResponse.metadata)
+            && Objects.equals(this.spec, deleteCloudPersistentVolumeClaimsResponse.spec)
+            && Objects.equals(this.status, deleteCloudPersistentVolumeClaimsResponse.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(apiVersion, kind, metadata, spec, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -214,16 +177,13 @@ public class DeleteCloudPersistentVolumeClaimsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

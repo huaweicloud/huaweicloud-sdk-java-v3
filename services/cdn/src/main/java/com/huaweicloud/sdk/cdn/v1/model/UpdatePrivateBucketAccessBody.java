@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 修改私有桶开启关闭状态
- */
-public class UpdatePrivateBucketAccessBody  {
-
-
+/** 修改私有桶开启关闭状态 */
+public class UpdatePrivateBucketAccessBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Boolean status;
 
     public UpdatePrivateBucketAccessBody withStatus(Boolean status) {
@@ -28,13 +18,9 @@ public class UpdatePrivateBucketAccessBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 桶开启关闭状态（true：开启；false：关闭）
-     * @return status
-     */
+    /** 桶开启关闭状态（true：开启；false：关闭）
+     * 
+     * @return status */
     public Boolean getStatus() {
         return status;
     }
@@ -42,8 +28,6 @@ public class UpdatePrivateBucketAccessBody  {
     public void setStatus(Boolean status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class UpdatePrivateBucketAccessBody  {
         UpdatePrivateBucketAccessBody updatePrivateBucketAccessBody = (UpdatePrivateBucketAccessBody) o;
         return Objects.equals(this.status, updatePrivateBucketAccessBody.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class UpdatePrivateBucketAccessBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

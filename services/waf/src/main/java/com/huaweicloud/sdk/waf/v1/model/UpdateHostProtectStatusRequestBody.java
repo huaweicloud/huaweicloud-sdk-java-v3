@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 修改域名防护状态请求体
- */
-public class UpdateHostProtectStatusRequestBody  {
-
-
+/** 修改域名防护状态请求体 */
+public class UpdateHostProtectStatusRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protect_status")
-    
+    @JsonProperty(value = "protect_status")
+
     private Integer protectStatus;
 
     public UpdateHostProtectStatusRequestBody withProtectStatus(Integer protectStatus) {
@@ -28,13 +18,9 @@ public class UpdateHostProtectStatusRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 防护状态（-1：bypass直接放行，0：暂停防护，1：开启防护）
-     * @return protectStatus
-     */
+    /** 防护状态（-1：bypass直接放行，0：暂停防护，1：开启防护）
+     * 
+     * @return protectStatus */
     public Integer getProtectStatus() {
         return protectStatus;
     }
@@ -42,8 +28,6 @@ public class UpdateHostProtectStatusRequestBody  {
     public void setProtectStatus(Integer protectStatus) {
         this.protectStatus = protectStatus;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class UpdateHostProtectStatusRequestBody  {
         UpdateHostProtectStatusRequestBody updateHostProtectStatusRequestBody = (UpdateHostProtectStatusRequestBody) o;
         return Objects.equals(this.protectStatus, updateHostProtectStatusRequestBody.protectStatus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(protectStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class UpdateHostProtectStatusRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

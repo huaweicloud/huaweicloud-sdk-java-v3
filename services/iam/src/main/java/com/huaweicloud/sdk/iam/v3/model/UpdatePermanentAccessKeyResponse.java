@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.UpdateCredentialResult;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class UpdatePermanentAccessKeyResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="credential")
-    
+    @JsonProperty(value = "credential")
+
     private UpdateCredentialResult credential;
 
     public UpdatePermanentAccessKeyResponse withCredential(UpdateCredentialResult credential) {
@@ -32,19 +21,17 @@ public class UpdatePermanentAccessKeyResponse extends SdkResponse {
     }
 
     public UpdatePermanentAccessKeyResponse withCredential(Consumer<UpdateCredentialResult> credentialSetter) {
-        if(this.credential == null ){
+        if (this.credential == null) {
             this.credential = new UpdateCredentialResult();
             credentialSetter.accept(this.credential);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get credential
-     * @return credential
-     */
+    /** Get credential
+     * 
+     * @return credential */
     public UpdateCredentialResult getCredential() {
         return credential;
     }
@@ -52,8 +39,6 @@ public class UpdatePermanentAccessKeyResponse extends SdkResponse {
     public void setCredential(UpdateCredentialResult credential) {
         this.credential = credential;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class UpdatePermanentAccessKeyResponse extends SdkResponse {
         UpdatePermanentAccessKeyResponse updatePermanentAccessKeyResponse = (UpdatePermanentAccessKeyResponse) o;
         return Objects.equals(this.credential, updatePermanentAccessKeyResponse.credential);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(credential);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class UpdatePermanentAccessKeyResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

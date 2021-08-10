@@ -1,39 +1,28 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vod.v1.model.UploadMetaDataByUrl;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * UploadMetaDataByUrlReq
- */
-public class UploadMetaDataByUrlReq  {
-
-
+/** UploadMetaDataByUrlReq */
+public class UploadMetaDataByUrlReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="upload_metadatas")
-    
+    @JsonProperty(value = "upload_metadatas")
+
     private List<UploadMetaDataByUrl> uploadMetadatas = null;
-    
+
     public UploadMetaDataByUrlReq withUploadMetadatas(List<UploadMetaDataByUrl> uploadMetadatas) {
         this.uploadMetadatas = uploadMetadatas;
         return this;
     }
 
-    
     public UploadMetaDataByUrlReq addUploadMetadatasItem(UploadMetaDataByUrl uploadMetadatasItem) {
-        if(this.uploadMetadatas == null) {
+        if (this.uploadMetadatas == null) {
             this.uploadMetadatas = new ArrayList<>();
         }
         this.uploadMetadatas.add(uploadMetadatasItem);
@@ -41,17 +30,16 @@ public class UploadMetaDataByUrlReq  {
     }
 
     public UploadMetaDataByUrlReq withUploadMetadatas(Consumer<List<UploadMetaDataByUrl>> uploadMetadatasSetter) {
-        if(this.uploadMetadatas == null) {
+        if (this.uploadMetadatas == null) {
             this.uploadMetadatas = new ArrayList<>();
         }
         uploadMetadatasSetter.accept(this.uploadMetadatas);
         return this;
     }
 
-    /**
-     * 待拉取创建的媒资元数据
-     * @return uploadMetadatas
-     */
+    /** 待拉取创建的媒资元数据
+     * 
+     * @return uploadMetadatas */
     public List<UploadMetaDataByUrl> getUploadMetadatas() {
         return uploadMetadatas;
     }
@@ -59,8 +47,6 @@ public class UploadMetaDataByUrlReq  {
     public void setUploadMetadatas(List<UploadMetaDataByUrl> uploadMetadatas) {
         this.uploadMetadatas = uploadMetadatas;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -73,10 +59,12 @@ public class UploadMetaDataByUrlReq  {
         UploadMetaDataByUrlReq uploadMetaDataByUrlReq = (UploadMetaDataByUrlReq) o;
         return Objects.equals(this.uploadMetadatas, uploadMetaDataByUrlReq.uploadMetadatas);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(uploadMetadatas);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -85,16 +73,13 @@ public class UploadMetaDataByUrlReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

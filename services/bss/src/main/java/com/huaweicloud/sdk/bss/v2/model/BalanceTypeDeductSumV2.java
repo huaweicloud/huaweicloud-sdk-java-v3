@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * BalanceTypeDeductSumV2
- */
-public class BalanceTypeDeductSumV2  {
-
-
+/** BalanceTypeDeductSumV2 */
+public class BalanceTypeDeductSumV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="balance_type")
-    
+    @JsonProperty(value = "balance_type")
+
     private String balanceType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amount")
-    
+    @JsonProperty(value = "amount")
+
     private Double amount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bill_type")
-    
+    @JsonProperty(value = "bill_type")
+
     private String billType;
 
     public BalanceTypeDeductSumV2 withBalanceType(String balanceType) {
@@ -40,13 +28,11 @@ public class BalanceTypeDeductSumV2  {
         return this;
     }
 
-    
-
-
-    /**
-     * 账户类型。 BALANCE_TYPE_DEBIT：现金BALANCE_TYPE_CREDIT：信用BALANCE_TYPE_BONUS：奖励BALANCE_TYPE_COUPON：代金券BALANCE_TYPE_RCASH_COUPON 现金券。BALANCE_TYPE_STORED_VALUE_CARD：储值卡消费
-     * @return balanceType
-     */
+    /** 账户类型。
+     * BALANCE_TYPE_DEBIT：现金BALANCE_TYPE_CREDIT：信用BALANCE_TYPE_BONUS：奖励BALANCE_TYPE_COUPON：代金券BALANCE_TYPE_RCASH_COUPON
+     * 现金券。BALANCE_TYPE_STORED_VALUE_CARD：储值卡消费
+     * 
+     * @return balanceType */
     public String getBalanceType() {
         return balanceType;
     }
@@ -55,20 +41,14 @@ public class BalanceTypeDeductSumV2  {
         this.balanceType = balanceType;
     }
 
-    
-
     public BalanceTypeDeductSumV2 withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
 
-    
-
-
-    /**
-     * 金额。 对于billType=1或者2的账单，该金额为负值。
-     * @return amount
-     */
+    /** 金额。 对于billType=1或者2的账单，该金额为负值。
+     * 
+     * @return amount */
     public Double getAmount() {
         return amount;
     }
@@ -77,20 +57,14 @@ public class BalanceTypeDeductSumV2  {
         this.amount = amount;
     }
 
-    
-
     public BalanceTypeDeductSumV2 withBillType(String billType) {
         this.billType = billType;
         return this;
     }
 
-    
-
-
-    /**
-     * 账单类型。 0：正常1：退订2：华为核销
-     * @return billType
-     */
+    /** 账单类型。 0：正常1：退订2：华为核销
+     * 
+     * @return billType */
     public String getBillType() {
         return billType;
     }
@@ -98,8 +72,6 @@ public class BalanceTypeDeductSumV2  {
     public void setBillType(String billType) {
         this.billType = billType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +82,16 @@ public class BalanceTypeDeductSumV2  {
             return false;
         }
         BalanceTypeDeductSumV2 balanceTypeDeductSumV2 = (BalanceTypeDeductSumV2) o;
-        return Objects.equals(this.balanceType, balanceTypeDeductSumV2.balanceType) &&
-            Objects.equals(this.amount, balanceTypeDeductSumV2.amount) &&
-            Objects.equals(this.billType, balanceTypeDeductSumV2.billType);
+        return Objects.equals(this.balanceType, balanceTypeDeductSumV2.balanceType)
+            && Objects.equals(this.amount, balanceTypeDeductSumV2.amount)
+            && Objects.equals(this.billType, balanceTypeDeductSumV2.billType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(balanceType, amount, billType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +102,13 @@ public class BalanceTypeDeductSumV2  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

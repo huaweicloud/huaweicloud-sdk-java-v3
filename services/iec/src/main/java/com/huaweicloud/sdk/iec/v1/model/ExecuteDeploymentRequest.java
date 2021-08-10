@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ExecuteDeploymentRequest  {
-
-
+/** Request Object */
+public class ExecuteDeploymentRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deployment_id")
-    
+    @JsonProperty(value = "deployment_id")
+
     private String deploymentId;
 
     public ExecuteDeploymentRequest withDeploymentId(String deploymentId) {
@@ -28,13 +18,9 @@ public class ExecuteDeploymentRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 部署计划ID。  约束： - 该接口只能执行指定名称（name）创建的部署计划。
-     * @return deploymentId
-     */
+    /** 部署计划ID。 约束： - 该接口只能执行指定名称（name）创建的部署计划。
+     * 
+     * @return deploymentId */
     public String getDeploymentId() {
         return deploymentId;
     }
@@ -42,8 +28,6 @@ public class ExecuteDeploymentRequest  {
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class ExecuteDeploymentRequest  {
         ExecuteDeploymentRequest executeDeploymentRequest = (ExecuteDeploymentRequest) o;
         return Objects.equals(this.deploymentId, executeDeploymentRequest.deploymentId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(deploymentId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class ExecuteDeploymentRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

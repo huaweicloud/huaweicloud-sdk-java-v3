@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteWatermarkTemplateRequest  {
-
-
+/** Request Object */
+public class DeleteWatermarkTemplateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_id")
-    
+    @JsonProperty(value = "template_id")
+
     private Integer templateId;
 
     public DeleteWatermarkTemplateRequest withTemplateId(Integer templateId) {
@@ -28,15 +18,9 @@ public class DeleteWatermarkTemplateRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 水印模板ID 
-     * minimum: 0
-     * maximum: 2147483647
-     * @return templateId
-     */
+    /** 水印模板ID minimum: 0 maximum: 2147483647
+     * 
+     * @return templateId */
     public Integer getTemplateId() {
         return templateId;
     }
@@ -44,8 +28,6 @@ public class DeleteWatermarkTemplateRequest  {
     public void setTemplateId(Integer templateId) {
         this.templateId = templateId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -58,10 +40,12 @@ public class DeleteWatermarkTemplateRequest  {
         DeleteWatermarkTemplateRequest deleteWatermarkTemplateRequest = (DeleteWatermarkTemplateRequest) o;
         return Objects.equals(this.templateId, deleteWatermarkTemplateRequest.templateId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(templateId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -70,16 +54,13 @@ public class DeleteWatermarkTemplateRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

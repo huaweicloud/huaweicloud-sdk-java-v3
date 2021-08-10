@@ -1,36 +1,23 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.QosInfo;
-import com.huaweicloud.sdk.meeting.v1.model.QosParticipantInfo;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class SearchQosParticipantDetailResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user")
-    
+    @JsonProperty(value = "user")
+
     private QosParticipantInfo user;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="qos")
-    
+    @JsonProperty(value = "qos")
+
     private QosInfo qos;
 
     public SearchQosParticipantDetailResponse withUser(QosParticipantInfo user) {
@@ -39,19 +26,17 @@ public class SearchQosParticipantDetailResponse extends SdkResponse {
     }
 
     public SearchQosParticipantDetailResponse withUser(Consumer<QosParticipantInfo> userSetter) {
-        if(this.user == null ){
+        if (this.user == null) {
             this.user = new QosParticipantInfo();
             userSetter.accept(this.user);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get user
-     * @return user
-     */
+    /** Get user
+     * 
+     * @return user */
     public QosParticipantInfo getUser() {
         return user;
     }
@@ -60,27 +45,23 @@ public class SearchQosParticipantDetailResponse extends SdkResponse {
         this.user = user;
     }
 
-    
-
     public SearchQosParticipantDetailResponse withQos(QosInfo qos) {
         this.qos = qos;
         return this;
     }
 
     public SearchQosParticipantDetailResponse withQos(Consumer<QosInfo> qosSetter) {
-        if(this.qos == null ){
+        if (this.qos == null) {
             this.qos = new QosInfo();
             qosSetter.accept(this.qos);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get qos
-     * @return qos
-     */
+    /** Get qos
+     * 
+     * @return qos */
     public QosInfo getQos() {
         return qos;
     }
@@ -88,8 +69,6 @@ public class SearchQosParticipantDetailResponse extends SdkResponse {
     public void setQos(QosInfo qos) {
         this.qos = qos;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -100,13 +79,15 @@ public class SearchQosParticipantDetailResponse extends SdkResponse {
             return false;
         }
         SearchQosParticipantDetailResponse searchQosParticipantDetailResponse = (SearchQosParticipantDetailResponse) o;
-        return Objects.equals(this.user, searchQosParticipantDetailResponse.user) &&
-            Objects.equals(this.qos, searchQosParticipantDetailResponse.qos);
+        return Objects.equals(this.user, searchQosParticipantDetailResponse.user)
+            && Objects.equals(this.qos, searchQosParticipantDetailResponse.qos);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(user, qos);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -116,16 +97,13 @@ public class SearchQosParticipantDetailResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

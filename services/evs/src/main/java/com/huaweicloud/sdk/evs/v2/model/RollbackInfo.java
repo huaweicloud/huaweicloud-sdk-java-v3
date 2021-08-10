@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * RollbackInfo
- */
-public class RollbackInfo  {
-
-
+/** RollbackInfo */
+public class RollbackInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_id")
-    
+    @JsonProperty(value = "volume_id")
+
     private String volumeId;
 
     public RollbackInfo withVolumeId(String volumeId) {
@@ -28,13 +18,9 @@ public class RollbackInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 回滚的目标云硬盘UUID。
-     * @return volumeId
-     */
+    /** 回滚的目标云硬盘UUID。
+     * 
+     * @return volumeId */
     public String getVolumeId() {
         return volumeId;
     }
@@ -42,8 +28,6 @@ public class RollbackInfo  {
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class RollbackInfo  {
         RollbackInfo rollbackInfo = (RollbackInfo) o;
         return Objects.equals(this.volumeId, rollbackInfo.volumeId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(volumeId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class RollbackInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

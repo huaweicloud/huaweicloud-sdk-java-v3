@@ -1,58 +1,42 @@
 package com.huaweicloud.sdk.projectman.v4.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowBugsPerDeveloperResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dividend_value")
-    
+    @JsonProperty(value = "dividend_value")
+
     private String dividendValue;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="divisor_value")
-    
+    @JsonProperty(value = "divisor_value")
+
     private String divisorValue;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metric_name")
-    
+    @JsonProperty(value = "metric_name")
+
     private String metricName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metric_value")
-    
+    @JsonProperty(value = "metric_value")
+
     private String metricValue;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_name")
-    
+    @JsonProperty(value = "project_name")
+
     private String projectName;
 
     public ShowBugsPerDeveloperResponse withDividendValue(String dividendValue) {
@@ -60,13 +44,9 @@ public class ShowBugsPerDeveloperResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 指标分子数值
-     * @return dividendValue
-     */
+    /** 指标分子数值
+     * 
+     * @return dividendValue */
     public String getDividendValue() {
         return dividendValue;
     }
@@ -75,20 +55,14 @@ public class ShowBugsPerDeveloperResponse extends SdkResponse {
         this.dividendValue = dividendValue;
     }
 
-    
-
     public ShowBugsPerDeveloperResponse withDivisorValue(String divisorValue) {
         this.divisorValue = divisorValue;
         return this;
     }
 
-    
-
-
-    /**
-     * 指标分母数值
-     * @return divisorValue
-     */
+    /** 指标分母数值
+     * 
+     * @return divisorValue */
     public String getDivisorValue() {
         return divisorValue;
     }
@@ -97,20 +71,14 @@ public class ShowBugsPerDeveloperResponse extends SdkResponse {
         this.divisorValue = divisorValue;
     }
 
-    
-
     public ShowBugsPerDeveloperResponse withMetricName(String metricName) {
         this.metricName = metricName;
         return this;
     }
 
-    
-
-
-    /**
-     * 指标名称
-     * @return metricName
-     */
+    /** 指标名称
+     * 
+     * @return metricName */
     public String getMetricName() {
         return metricName;
     }
@@ -119,20 +87,14 @@ public class ShowBugsPerDeveloperResponse extends SdkResponse {
         this.metricName = metricName;
     }
 
-    
-
     public ShowBugsPerDeveloperResponse withMetricValue(String metricValue) {
         this.metricValue = metricValue;
         return this;
     }
 
-    
-
-
-    /**
-     * 指标数值
-     * @return metricValue
-     */
+    /** 指标数值
+     * 
+     * @return metricValue */
     public String getMetricValue() {
         return metricValue;
     }
@@ -141,20 +103,14 @@ public class ShowBugsPerDeveloperResponse extends SdkResponse {
         this.metricValue = metricValue;
     }
 
-    
-
     public ShowBugsPerDeveloperResponse withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目ID
-     * @return projectId
-     */
+    /** 项目ID
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -163,20 +119,14 @@ public class ShowBugsPerDeveloperResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
-    
-
     public ShowBugsPerDeveloperResponse withProjectName(String projectName) {
         this.projectName = projectName;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目名称
-     * @return projectName
-     */
+    /** 项目名称
+     * 
+     * @return projectName */
     public String getProjectName() {
         return projectName;
     }
@@ -184,8 +134,6 @@ public class ShowBugsPerDeveloperResponse extends SdkResponse {
     public void setProjectName(String projectName) {
         this.projectName = projectName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -196,17 +144,19 @@ public class ShowBugsPerDeveloperResponse extends SdkResponse {
             return false;
         }
         ShowBugsPerDeveloperResponse showBugsPerDeveloperResponse = (ShowBugsPerDeveloperResponse) o;
-        return Objects.equals(this.dividendValue, showBugsPerDeveloperResponse.dividendValue) &&
-            Objects.equals(this.divisorValue, showBugsPerDeveloperResponse.divisorValue) &&
-            Objects.equals(this.metricName, showBugsPerDeveloperResponse.metricName) &&
-            Objects.equals(this.metricValue, showBugsPerDeveloperResponse.metricValue) &&
-            Objects.equals(this.projectId, showBugsPerDeveloperResponse.projectId) &&
-            Objects.equals(this.projectName, showBugsPerDeveloperResponse.projectName);
+        return Objects.equals(this.dividendValue, showBugsPerDeveloperResponse.dividendValue)
+            && Objects.equals(this.divisorValue, showBugsPerDeveloperResponse.divisorValue)
+            && Objects.equals(this.metricName, showBugsPerDeveloperResponse.metricName)
+            && Objects.equals(this.metricValue, showBugsPerDeveloperResponse.metricValue)
+            && Objects.equals(this.projectId, showBugsPerDeveloperResponse.projectId)
+            && Objects.equals(this.projectName, showBugsPerDeveloperResponse.projectName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(dividendValue, divisorValue, metricName, metricValue, projectId, projectName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -220,16 +170,13 @@ public class ShowBugsPerDeveloperResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

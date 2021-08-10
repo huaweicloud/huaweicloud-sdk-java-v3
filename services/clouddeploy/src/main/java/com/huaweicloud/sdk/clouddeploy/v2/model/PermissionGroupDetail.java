@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.clouddeploy.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 主机组相关权限详情类
- */
-public class PermissionGroupDetail  {
-
-
+/** 主机组相关权限详情类 */
+public class PermissionGroupDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="can_view")
-    
+    @JsonProperty(value = "can_view")
+
     private Boolean canView;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="can_edit")
-    
+    @JsonProperty(value = "can_edit")
+
     private Boolean canEdit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="can_delete")
-    
+    @JsonProperty(value = "can_delete")
+
     private Boolean canDelete;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="can_add_host")
-    
+    @JsonProperty(value = "can_add_host")
+
     private Boolean canAddHost;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="can_manage")
-    
+    @JsonProperty(value = "can_manage")
+
     private Boolean canManage;
 
     public PermissionGroupDetail withCanView(Boolean canView) {
@@ -52,13 +38,9 @@ public class PermissionGroupDetail  {
         return this;
     }
 
-    
-
-
-    /**
-     * 是否有查看权限
-     * @return canView
-     */
+    /** 是否有查看权限
+     * 
+     * @return canView */
     public Boolean getCanView() {
         return canView;
     }
@@ -67,20 +49,14 @@ public class PermissionGroupDetail  {
         this.canView = canView;
     }
 
-    
-
     public PermissionGroupDetail withCanEdit(Boolean canEdit) {
         this.canEdit = canEdit;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否有编辑权限
-     * @return canEdit
-     */
+    /** 是否有编辑权限
+     * 
+     * @return canEdit */
     public Boolean getCanEdit() {
         return canEdit;
     }
@@ -89,20 +65,14 @@ public class PermissionGroupDetail  {
         this.canEdit = canEdit;
     }
 
-    
-
     public PermissionGroupDetail withCanDelete(Boolean canDelete) {
         this.canDelete = canDelete;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否有删除权限
-     * @return canDelete
-     */
+    /** 是否有删除权限
+     * 
+     * @return canDelete */
     public Boolean getCanDelete() {
         return canDelete;
     }
@@ -111,20 +81,14 @@ public class PermissionGroupDetail  {
         this.canDelete = canDelete;
     }
 
-    
-
     public PermissionGroupDetail withCanAddHost(Boolean canAddHost) {
         this.canAddHost = canAddHost;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否有添加主机权限
-     * @return canAddHost
-     */
+    /** 是否有添加主机权限
+     * 
+     * @return canAddHost */
     public Boolean getCanAddHost() {
         return canAddHost;
     }
@@ -133,20 +97,14 @@ public class PermissionGroupDetail  {
         this.canAddHost = canAddHost;
     }
 
-    
-
     public PermissionGroupDetail withCanManage(Boolean canManage) {
         this.canManage = canManage;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否有管理权限
-     * @return canManage
-     */
+    /** 是否有管理权限
+     * 
+     * @return canManage */
     public Boolean getCanManage() {
         return canManage;
     }
@@ -154,8 +112,6 @@ public class PermissionGroupDetail  {
     public void setCanManage(Boolean canManage) {
         this.canManage = canManage;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,18 @@ public class PermissionGroupDetail  {
             return false;
         }
         PermissionGroupDetail permissionGroupDetail = (PermissionGroupDetail) o;
-        return Objects.equals(this.canView, permissionGroupDetail.canView) &&
-            Objects.equals(this.canEdit, permissionGroupDetail.canEdit) &&
-            Objects.equals(this.canDelete, permissionGroupDetail.canDelete) &&
-            Objects.equals(this.canAddHost, permissionGroupDetail.canAddHost) &&
-            Objects.equals(this.canManage, permissionGroupDetail.canManage);
+        return Objects.equals(this.canView, permissionGroupDetail.canView)
+            && Objects.equals(this.canEdit, permissionGroupDetail.canEdit)
+            && Objects.equals(this.canDelete, permissionGroupDetail.canDelete)
+            && Objects.equals(this.canAddHost, permissionGroupDetail.canAddHost)
+            && Objects.equals(this.canManage, permissionGroupDetail.canManage);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(canView, canEdit, canDelete, canAddHost, canManage);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class PermissionGroupDetail  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

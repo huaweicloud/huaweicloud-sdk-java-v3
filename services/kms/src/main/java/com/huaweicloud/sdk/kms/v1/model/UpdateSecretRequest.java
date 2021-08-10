@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.UpdateSecretRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateSecretRequest  {
-
-
+/** Request Object */
+public class UpdateSecretRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="secret_id")
-    
+    @JsonProperty(value = "secret_id")
+
     private String secretId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateSecretRequestBody body;
 
     public UpdateSecretRequest withSecretId(String secretId) {
@@ -35,13 +24,9 @@ public class UpdateSecretRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 凭据对象唯一资源标识符。
-     * @return secretId
-     */
+    /** 凭据对象唯一资源标识符。
+     * 
+     * @return secretId */
     public String getSecretId() {
         return secretId;
     }
@@ -50,27 +35,23 @@ public class UpdateSecretRequest  {
         this.secretId = secretId;
     }
 
-    
-
     public UpdateSecretRequest withBody(UpdateSecretRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdateSecretRequest withBody(Consumer<UpdateSecretRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateSecretRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateSecretRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdateSecretRequest  {
     public void setBody(UpdateSecretRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdateSecretRequest  {
             return false;
         }
         UpdateSecretRequest updateSecretRequest = (UpdateSecretRequest) o;
-        return Objects.equals(this.secretId, updateSecretRequest.secretId) &&
-            Objects.equals(this.body, updateSecretRequest.body);
+        return Objects.equals(this.secretId, updateSecretRequest.secretId)
+            && Objects.equals(this.body, updateSecretRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(secretId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdateSecretRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

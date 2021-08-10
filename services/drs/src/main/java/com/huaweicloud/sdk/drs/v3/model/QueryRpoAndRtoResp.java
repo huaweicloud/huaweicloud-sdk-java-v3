@@ -1,51 +1,37 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.RpoAndRtoInfo;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * RPO和RTO信息体
- */
-public class QueryRpoAndRtoResp  {
-
-
+/** RPO和RTO信息体 */
+public class QueryRpoAndRtoResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
+
     private String jobId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rpo_info")
-    
+    @JsonProperty(value = "rpo_info")
+
     private RpoAndRtoInfo rpoInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rto_info")
-    
+    @JsonProperty(value = "rto_info")
+
     private RpoAndRtoInfo rtoInfo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
+
     private String errorCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_msg")
-    
+    @JsonProperty(value = "error_msg")
+
     private String errorMsg;
 
     public QueryRpoAndRtoResp withJobId(String jobId) {
@@ -53,13 +39,9 @@ public class QueryRpoAndRtoResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID
-     * @return jobId
-     */
+    /** 任务ID
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -68,27 +50,23 @@ public class QueryRpoAndRtoResp  {
         this.jobId = jobId;
     }
 
-    
-
     public QueryRpoAndRtoResp withRpoInfo(RpoAndRtoInfo rpoInfo) {
         this.rpoInfo = rpoInfo;
         return this;
     }
 
     public QueryRpoAndRtoResp withRpoInfo(Consumer<RpoAndRtoInfo> rpoInfoSetter) {
-        if(this.rpoInfo == null ){
+        if (this.rpoInfo == null) {
             this.rpoInfo = new RpoAndRtoInfo();
             rpoInfoSetter.accept(this.rpoInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get rpoInfo
-     * @return rpoInfo
-     */
+    /** Get rpoInfo
+     * 
+     * @return rpoInfo */
     public RpoAndRtoInfo getRpoInfo() {
         return rpoInfo;
     }
@@ -97,27 +75,23 @@ public class QueryRpoAndRtoResp  {
         this.rpoInfo = rpoInfo;
     }
 
-    
-
     public QueryRpoAndRtoResp withRtoInfo(RpoAndRtoInfo rtoInfo) {
         this.rtoInfo = rtoInfo;
         return this;
     }
 
     public QueryRpoAndRtoResp withRtoInfo(Consumer<RpoAndRtoInfo> rtoInfoSetter) {
-        if(this.rtoInfo == null ){
+        if (this.rtoInfo == null) {
             this.rtoInfo = new RpoAndRtoInfo();
             rtoInfoSetter.accept(this.rtoInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get rtoInfo
-     * @return rtoInfo
-     */
+    /** Get rtoInfo
+     * 
+     * @return rtoInfo */
     public RpoAndRtoInfo getRtoInfo() {
         return rtoInfo;
     }
@@ -126,20 +100,14 @@ public class QueryRpoAndRtoResp  {
         this.rtoInfo = rtoInfo;
     }
 
-    
-
     public QueryRpoAndRtoResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误码
-     * @return errorCode
-     */
+    /** 错误码
+     * 
+     * @return errorCode */
     public String getErrorCode() {
         return errorCode;
     }
@@ -148,20 +116,14 @@ public class QueryRpoAndRtoResp  {
         this.errorCode = errorCode;
     }
 
-    
-
     public QueryRpoAndRtoResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误信息
-     * @return errorMsg
-     */
+    /** 错误信息
+     * 
+     * @return errorMsg */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -169,8 +131,6 @@ public class QueryRpoAndRtoResp  {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -181,16 +141,18 @@ public class QueryRpoAndRtoResp  {
             return false;
         }
         QueryRpoAndRtoResp queryRpoAndRtoResp = (QueryRpoAndRtoResp) o;
-        return Objects.equals(this.jobId, queryRpoAndRtoResp.jobId) &&
-            Objects.equals(this.rpoInfo, queryRpoAndRtoResp.rpoInfo) &&
-            Objects.equals(this.rtoInfo, queryRpoAndRtoResp.rtoInfo) &&
-            Objects.equals(this.errorCode, queryRpoAndRtoResp.errorCode) &&
-            Objects.equals(this.errorMsg, queryRpoAndRtoResp.errorMsg);
+        return Objects.equals(this.jobId, queryRpoAndRtoResp.jobId)
+            && Objects.equals(this.rpoInfo, queryRpoAndRtoResp.rpoInfo)
+            && Objects.equals(this.rtoInfo, queryRpoAndRtoResp.rtoInfo)
+            && Objects.equals(this.errorCode, queryRpoAndRtoResp.errorCode)
+            && Objects.equals(this.errorMsg, queryRpoAndRtoResp.errorMsg);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobId, rpoInfo, rtoInfo, errorCode, errorMsg);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -203,16 +165,13 @@ public class QueryRpoAndRtoResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

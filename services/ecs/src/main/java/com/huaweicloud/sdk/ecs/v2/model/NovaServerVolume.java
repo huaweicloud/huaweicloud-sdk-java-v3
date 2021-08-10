@@ -1,32 +1,23 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class NovaServerVolume  {
-
-
+public class NovaServerVolume {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="delete_on_termination")
-    
+    @JsonProperty(value = "delete_on_termination")
+
     private Boolean deleteOnTermination;
 
     public NovaServerVolume withId(String id) {
@@ -34,13 +25,9 @@ public class NovaServerVolume  {
         return this;
     }
 
-    
-
-
-    /**
-     * 云磁盘ID。
-     * @return id
-     */
+    /** 云磁盘ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -49,20 +36,14 @@ public class NovaServerVolume  {
         this.id = id;
     }
 
-    
-
     public NovaServerVolume withDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
         return this;
     }
 
-    
-
-
-    /**
-     * 一个标志，指示在删除服务器时是否删除附加的卷。、  默认情况下，这是False  微版本2.3后支持
-     * @return deleteOnTermination
-     */
+    /** 一个标志，指示在删除服务器时是否删除附加的卷。、 默认情况下，这是False 微版本2.3后支持
+     * 
+     * @return deleteOnTermination */
     public Boolean getDeleteOnTermination() {
         return deleteOnTermination;
     }
@@ -70,8 +51,6 @@ public class NovaServerVolume  {
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
         this.deleteOnTermination = deleteOnTermination;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +61,15 @@ public class NovaServerVolume  {
             return false;
         }
         NovaServerVolume novaServerVolume = (NovaServerVolume) o;
-        return Objects.equals(this.id, novaServerVolume.id) &&
-            Objects.equals(this.deleteOnTermination, novaServerVolume.deleteOnTermination);
+        return Objects.equals(this.id, novaServerVolume.id)
+            && Objects.equals(this.deleteOnTermination, novaServerVolume.deleteOnTermination);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, deleteOnTermination);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +79,13 @@ public class NovaServerVolume  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

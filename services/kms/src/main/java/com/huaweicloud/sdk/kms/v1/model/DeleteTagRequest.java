@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteTagRequest  {
-
-
+/** Request Object */
+public class DeleteTagRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_id")
-    
+    @JsonProperty(value = "key_id")
+
     private String keyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version_id")
-    
+    @JsonProperty(value = "version_id")
+
     private String versionId;
 
     public DeleteTagRequest withKeyId(String keyId) {
@@ -40,13 +28,9 @@ public class DeleteTagRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥ID
-     * @return keyId
-     */
+    /** 密钥ID
+     * 
+     * @return keyId */
     public String getKeyId() {
         return keyId;
     }
@@ -55,20 +39,14 @@ public class DeleteTagRequest  {
         this.keyId = keyId;
     }
 
-    
-
     public DeleteTagRequest withKey(String key) {
         this.key = key;
         return this;
     }
 
-    
-
-
-    /**
-     * 标签键的值
-     * @return key
-     */
+    /** 标签键的值
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -77,20 +55,14 @@ public class DeleteTagRequest  {
         this.key = key;
     }
 
-    
-
     public DeleteTagRequest withVersionId(String versionId) {
         this.versionId = versionId;
         return this;
     }
 
-    
-
-
-    /**
-     * API版本号
-     * @return versionId
-     */
+    /** API版本号
+     * 
+     * @return versionId */
     public String getVersionId() {
         return versionId;
     }
@@ -98,8 +70,6 @@ public class DeleteTagRequest  {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,15 @@ public class DeleteTagRequest  {
             return false;
         }
         DeleteTagRequest deleteTagRequest = (DeleteTagRequest) o;
-        return Objects.equals(this.keyId, deleteTagRequest.keyId) &&
-            Objects.equals(this.key, deleteTagRequest.key) &&
-            Objects.equals(this.versionId, deleteTagRequest.versionId);
+        return Objects.equals(this.keyId, deleteTagRequest.keyId) && Objects.equals(this.key, deleteTagRequest.key)
+            && Objects.equals(this.versionId, deleteTagRequest.versionId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(keyId, key, versionId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +99,13 @@ public class DeleteTagRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

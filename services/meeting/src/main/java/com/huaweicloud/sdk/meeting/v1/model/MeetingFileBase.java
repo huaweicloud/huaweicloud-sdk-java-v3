@@ -1,86 +1,66 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 会议纪要文件基类
- */
-public class MeetingFileBase  {
-
-
+/** 会议纪要文件基类 */
+public class MeetingFileBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fileCode")
-    
+    @JsonProperty(value = "fileCode")
+
     private String fileCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic")
-    
+    @JsonProperty(value = "topic")
+
     private String topic;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fileId")
-    
+    @JsonProperty(value = "fileId")
+
     private String fileId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fileName")
-    
+    @JsonProperty(value = "fileName")
+
     private String fileName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fileSize")
-    
+    @JsonProperty(value = "fileSize")
+
     private Long fileSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="thumbnailFileId")
-    
+    @JsonProperty(value = "thumbnailFileId")
+
     private String thumbnailFileId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="thumbnailFileName")
-    
+    @JsonProperty(value = "thumbnailFileName")
+
     private String thumbnailFileName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="thumbnailFileSize")
-    
+    @JsonProperty(value = "thumbnailFileSize")
+
     private Long thumbnailFileSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pdfFileId")
-    
+    @JsonProperty(value = "pdfFileId")
+
     private String pdfFileId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pdfFileName")
-    
+    @JsonProperty(value = "pdfFileName")
+
     private String pdfFileName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pdfFileSize")
-    
+    @JsonProperty(value = "pdfFileSize")
+
     private Long pdfFileSize;
 
     public MeetingFileBase withFileCode(String fileCode) {
@@ -88,13 +68,9 @@ public class MeetingFileBase  {
         return this;
     }
 
-    
-
-
-    /**
-     * 会议纪要文件码
-     * @return fileCode
-     */
+    /** 会议纪要文件码
+     * 
+     * @return fileCode */
     public String getFileCode() {
         return fileCode;
     }
@@ -103,20 +79,14 @@ public class MeetingFileBase  {
         this.fileCode = fileCode;
     }
 
-    
-
     public MeetingFileBase withTopic(String topic) {
         this.topic = topic;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件主题
-     * @return topic
-     */
+    /** 文件主题
+     * 
+     * @return topic */
     public String getTopic() {
         return topic;
     }
@@ -125,20 +95,14 @@ public class MeetingFileBase  {
         this.topic = topic;
     }
 
-    
-
     public MeetingFileBase withFileId(String fileId) {
         this.fileId = fileId;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件Id
-     * @return fileId
-     */
+    /** 文件Id
+     * 
+     * @return fileId */
     public String getFileId() {
         return fileId;
     }
@@ -147,20 +111,14 @@ public class MeetingFileBase  {
         this.fileId = fileId;
     }
 
-    
-
     public MeetingFileBase withFileName(String fileName) {
         this.fileName = fileName;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件名
-     * @return fileName
-     */
+    /** 文件名
+     * 
+     * @return fileName */
     public String getFileName() {
         return fileName;
     }
@@ -169,20 +127,14 @@ public class MeetingFileBase  {
         this.fileName = fileName;
     }
 
-    
-
     public MeetingFileBase withFileSize(Long fileSize) {
         this.fileSize = fileSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件大小，单位字节
-     * @return fileSize
-     */
+    /** 文件大小，单位字节
+     * 
+     * @return fileSize */
     public Long getFileSize() {
         return fileSize;
     }
@@ -191,20 +143,14 @@ public class MeetingFileBase  {
         this.fileSize = fileSize;
     }
 
-    
-
     public MeetingFileBase withThumbnailFileId(String thumbnailFileId) {
         this.thumbnailFileId = thumbnailFileId;
         return this;
     }
 
-    
-
-
-    /**
-     * 缩略图文件Id
-     * @return thumbnailFileId
-     */
+    /** 缩略图文件Id
+     * 
+     * @return thumbnailFileId */
     public String getThumbnailFileId() {
         return thumbnailFileId;
     }
@@ -213,20 +159,14 @@ public class MeetingFileBase  {
         this.thumbnailFileId = thumbnailFileId;
     }
 
-    
-
     public MeetingFileBase withThumbnailFileName(String thumbnailFileName) {
         this.thumbnailFileName = thumbnailFileName;
         return this;
     }
 
-    
-
-
-    /**
-     * 缩略图文件名
-     * @return thumbnailFileName
-     */
+    /** 缩略图文件名
+     * 
+     * @return thumbnailFileName */
     public String getThumbnailFileName() {
         return thumbnailFileName;
     }
@@ -235,20 +175,14 @@ public class MeetingFileBase  {
         this.thumbnailFileName = thumbnailFileName;
     }
 
-    
-
     public MeetingFileBase withThumbnailFileSize(Long thumbnailFileSize) {
         this.thumbnailFileSize = thumbnailFileSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 缩略图文件大小，单位字节
-     * @return thumbnailFileSize
-     */
+    /** 缩略图文件大小，单位字节
+     * 
+     * @return thumbnailFileSize */
     public Long getThumbnailFileSize() {
         return thumbnailFileSize;
     }
@@ -257,20 +191,14 @@ public class MeetingFileBase  {
         this.thumbnailFileSize = thumbnailFileSize;
     }
 
-    
-
     public MeetingFileBase withPdfFileId(String pdfFileId) {
         this.pdfFileId = pdfFileId;
         return this;
     }
 
-    
-
-
-    /**
-     * pdf文件Id
-     * @return pdfFileId
-     */
+    /** pdf文件Id
+     * 
+     * @return pdfFileId */
     public String getPdfFileId() {
         return pdfFileId;
     }
@@ -279,20 +207,14 @@ public class MeetingFileBase  {
         this.pdfFileId = pdfFileId;
     }
 
-    
-
     public MeetingFileBase withPdfFileName(String pdfFileName) {
         this.pdfFileName = pdfFileName;
         return this;
     }
 
-    
-
-
-    /**
-     * pdf文件名
-     * @return pdfFileName
-     */
+    /** pdf文件名
+     * 
+     * @return pdfFileName */
     public String getPdfFileName() {
         return pdfFileName;
     }
@@ -301,20 +223,14 @@ public class MeetingFileBase  {
         this.pdfFileName = pdfFileName;
     }
 
-    
-
     public MeetingFileBase withPdfFileSize(Long pdfFileSize) {
         this.pdfFileSize = pdfFileSize;
         return this;
     }
 
-    
-
-
-    /**
-     * pdf文件大小，单位字节
-     * @return pdfFileSize
-     */
+    /** pdf文件大小，单位字节
+     * 
+     * @return pdfFileSize */
     public Long getPdfFileSize() {
         return pdfFileSize;
     }
@@ -322,8 +238,6 @@ public class MeetingFileBase  {
     public void setPdfFileSize(Long pdfFileSize) {
         this.pdfFileSize = pdfFileSize;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -334,22 +248,33 @@ public class MeetingFileBase  {
             return false;
         }
         MeetingFileBase meetingFileBase = (MeetingFileBase) o;
-        return Objects.equals(this.fileCode, meetingFileBase.fileCode) &&
-            Objects.equals(this.topic, meetingFileBase.topic) &&
-            Objects.equals(this.fileId, meetingFileBase.fileId) &&
-            Objects.equals(this.fileName, meetingFileBase.fileName) &&
-            Objects.equals(this.fileSize, meetingFileBase.fileSize) &&
-            Objects.equals(this.thumbnailFileId, meetingFileBase.thumbnailFileId) &&
-            Objects.equals(this.thumbnailFileName, meetingFileBase.thumbnailFileName) &&
-            Objects.equals(this.thumbnailFileSize, meetingFileBase.thumbnailFileSize) &&
-            Objects.equals(this.pdfFileId, meetingFileBase.pdfFileId) &&
-            Objects.equals(this.pdfFileName, meetingFileBase.pdfFileName) &&
-            Objects.equals(this.pdfFileSize, meetingFileBase.pdfFileSize);
+        return Objects.equals(this.fileCode, meetingFileBase.fileCode)
+            && Objects.equals(this.topic, meetingFileBase.topic) && Objects.equals(this.fileId, meetingFileBase.fileId)
+            && Objects.equals(this.fileName, meetingFileBase.fileName)
+            && Objects.equals(this.fileSize, meetingFileBase.fileSize)
+            && Objects.equals(this.thumbnailFileId, meetingFileBase.thumbnailFileId)
+            && Objects.equals(this.thumbnailFileName, meetingFileBase.thumbnailFileName)
+            && Objects.equals(this.thumbnailFileSize, meetingFileBase.thumbnailFileSize)
+            && Objects.equals(this.pdfFileId, meetingFileBase.pdfFileId)
+            && Objects.equals(this.pdfFileName, meetingFileBase.pdfFileName)
+            && Objects.equals(this.pdfFileSize, meetingFileBase.pdfFileSize);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(fileCode, topic, fileId, fileName, fileSize, thumbnailFileId, thumbnailFileName, thumbnailFileSize, pdfFileId, pdfFileName, pdfFileSize);
+        return Objects.hash(fileCode,
+            topic,
+            fileId,
+            fileName,
+            fileSize,
+            thumbnailFileId,
+            thumbnailFileName,
+            thumbnailFileSize,
+            pdfFileId,
+            pdfFileName,
+            pdfFileSize);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -368,16 +293,13 @@ public class MeetingFileBase  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

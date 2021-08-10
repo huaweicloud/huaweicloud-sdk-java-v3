@@ -1,50 +1,29 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 迁移实例信息体
- */
-public class InstInfo  {
+/** 迁移实例信息体 */
+public class InstInfo {
 
-    /**
-     * 引擎类型
-     */
+    /** 引擎类型 */
     public static final class EngineTypeEnum {
 
-        
-        /**
-         * Enum MYSQL for value: "mysql"
-         */
+        /** Enum MYSQL for value: "mysql" */
         public static final EngineTypeEnum MYSQL = new EngineTypeEnum("mysql");
-        
-        /**
-         * Enum MONGODB for value: "mongodb"
-         */
+
+        /** Enum MONGODB for value: "mongodb" */
         public static final EngineTypeEnum MONGODB = new EngineTypeEnum("mongodb");
-        
-        /**
-         * Enum CLOUDDATAGUARD_MYSQL for value: "cloudDataGuard-mysql"
-         */
+
+        /** Enum CLOUDDATAGUARD_MYSQL for value: "cloudDataGuard-mysql" */
         public static final EngineTypeEnum CLOUDDATAGUARD_MYSQL = new EngineTypeEnum("cloudDataGuard-mysql");
-        
 
         private static final Map<String, EngineTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -74,7 +53,7 @@ public class InstInfo  {
 
         @JsonCreator
         public static EngineTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             EngineTypeEnum result = STATIC_FIELDS.get(value);
@@ -85,7 +64,7 @@ public class InstInfo  {
         }
 
         public static EngineTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             EngineTypeEnum result = STATIC_FIELDS.get(value);
@@ -109,22 +88,16 @@ public class InstInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engine_type")
-    
+    @JsonProperty(value = "engine_type")
+
     private EngineTypeEnum engineType;
-    /**
-     * 实例类型
-     */
+
+    /** 实例类型 */
     public static final class InstTypeEnum {
 
-        
-        /**
-         * Enum HIGH for value: "high"
-         */
+        /** Enum HIGH for value: "high" */
         public static final InstTypeEnum HIGH = new InstTypeEnum("high");
-        
 
         private static final Map<String, InstTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -152,7 +125,7 @@ public class InstInfo  {
 
         @JsonCreator
         public static InstTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             InstTypeEnum result = STATIC_FIELDS.get(value);
@@ -163,7 +136,7 @@ public class InstInfo  {
         }
 
         public static InstTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             InstTypeEnum result = STATIC_FIELDS.get(value);
@@ -187,45 +160,34 @@ public class InstInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="inst_type")
-    
+    @JsonProperty(value = "inst_type")
+
     private InstTypeEnum instType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip")
-    
+    @JsonProperty(value = "ip")
+
     private String ip;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="public_ip")
-    
+    @JsonProperty(value = "public_ip")
+
     private String publicIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private String startTime;
-    /**
-     * 迁移实例的状态
-     */
+
+    /** 迁移实例的状态 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum ACTIVE for value: "active"
-         */
+        /** Enum ACTIVE for value: "active" */
         public static final StatusEnum ACTIVE = new StatusEnum("active");
-        
-        /**
-         * Enum DELETED for value: "deleted"
-         */
+
+        /** Enum DELETED for value: "deleted" */
         public static final StatusEnum DELETED = new StatusEnum("deleted");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -254,7 +216,7 @@ public class InstInfo  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -265,7 +227,7 @@ public class InstInfo  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -289,16 +251,14 @@ public class InstInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_size")
-    
+    @JsonProperty(value = "volume_size")
+
     private Integer volumeSize;
 
     public InstInfo withEngineType(EngineTypeEnum engineType) {
@@ -306,13 +266,9 @@ public class InstInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 引擎类型
-     * @return engineType
-     */
+    /** 引擎类型
+     * 
+     * @return engineType */
     public EngineTypeEnum getEngineType() {
         return engineType;
     }
@@ -321,20 +277,14 @@ public class InstInfo  {
         this.engineType = engineType;
     }
 
-    
-
     public InstInfo withInstType(InstTypeEnum instType) {
         this.instType = instType;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例类型
-     * @return instType
-     */
+    /** 实例类型
+     * 
+     * @return instType */
     public InstTypeEnum getInstType() {
         return instType;
     }
@@ -343,20 +293,14 @@ public class InstInfo  {
         this.instType = instType;
     }
 
-    
-
     public InstInfo withIp(String ip) {
         this.ip = ip;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移实例所在的私有IP
-     * @return ip
-     */
+    /** 迁移实例所在的私有IP
+     * 
+     * @return ip */
     public String getIp() {
         return ip;
     }
@@ -365,20 +309,14 @@ public class InstInfo  {
         this.ip = ip;
     }
 
-    
-
     public InstInfo withPublicIp(String publicIp) {
         this.publicIp = publicIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移实例所在的公网IP
-     * @return publicIp
-     */
+    /** 迁移实例所在的公网IP
+     * 
+     * @return publicIp */
     public String getPublicIp() {
         return publicIp;
     }
@@ -387,20 +325,14 @@ public class InstInfo  {
         this.publicIp = publicIp;
     }
 
-    
-
     public InstInfo withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移实例任务定时启动时间
-     * @return startTime
-     */
+    /** 迁移实例任务定时启动时间
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -409,20 +341,14 @@ public class InstInfo  {
         this.startTime = startTime;
     }
 
-    
-
     public InstInfo withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移实例的状态
-     * @return status
-     */
+    /** 迁移实例的状态
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -431,20 +357,14 @@ public class InstInfo  {
         this.status = status;
     }
 
-    
-
     public InstInfo withVolumeSize(Integer volumeSize) {
         this.volumeSize = volumeSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移实例的磁盘大小
-     * @return volumeSize
-     */
+    /** 迁移实例的磁盘大小
+     * 
+     * @return volumeSize */
     public Integer getVolumeSize() {
         return volumeSize;
     }
@@ -452,8 +372,6 @@ public class InstInfo  {
     public void setVolumeSize(Integer volumeSize) {
         this.volumeSize = volumeSize;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -464,18 +382,17 @@ public class InstInfo  {
             return false;
         }
         InstInfo instInfo = (InstInfo) o;
-        return Objects.equals(this.engineType, instInfo.engineType) &&
-            Objects.equals(this.instType, instInfo.instType) &&
-            Objects.equals(this.ip, instInfo.ip) &&
-            Objects.equals(this.publicIp, instInfo.publicIp) &&
-            Objects.equals(this.startTime, instInfo.startTime) &&
-            Objects.equals(this.status, instInfo.status) &&
-            Objects.equals(this.volumeSize, instInfo.volumeSize);
+        return Objects.equals(this.engineType, instInfo.engineType) && Objects.equals(this.instType, instInfo.instType)
+            && Objects.equals(this.ip, instInfo.ip) && Objects.equals(this.publicIp, instInfo.publicIp)
+            && Objects.equals(this.startTime, instInfo.startTime) && Objects.equals(this.status, instInfo.status)
+            && Objects.equals(this.volumeSize, instInfo.volumeSize);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(engineType, instType, ip, publicIp, startTime, status, volumeSize);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -490,16 +407,13 @@ public class InstInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CdnIps
- */
-public class CdnIps  {
-
-
+/** CdnIps */
+public class CdnIps {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip")
-    
+    @JsonProperty(value = "ip")
+
     private String ip;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="belongs")
-    
+    @JsonProperty(value = "belongs")
+
     private Boolean belongs;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isp")
-    
+    @JsonProperty(value = "isp")
+
     private String isp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="platform")
-    
+    @JsonProperty(value = "platform")
+
     private String platform;
 
     public CdnIps withIp(String ip) {
@@ -52,13 +38,9 @@ public class CdnIps  {
         return this;
     }
 
-    
-
-
-    /**
-     * 需查询的IP地址。
-     * @return ip
-     */
+    /** 需查询的IP地址。
+     * 
+     * @return ip */
     public String getIp() {
         return ip;
     }
@@ -67,20 +49,14 @@ public class CdnIps  {
         this.ip = ip;
     }
 
-    
-
     public CdnIps withBelongs(Boolean belongs) {
         this.belongs = belongs;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否是华为云CDN节点。（true:是华为云CDN节点，false:不是华为云CDN节点）
-     * @return belongs
-     */
+    /** 是否是华为云CDN节点。（true:是华为云CDN节点，false:不是华为云CDN节点）
+     * 
+     * @return belongs */
     public Boolean getBelongs() {
         return belongs;
     }
@@ -89,20 +65,14 @@ public class CdnIps  {
         this.belongs = belongs;
     }
 
-    
-
     public CdnIps withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * IP归属地省份。（Unknown:表示未知归属地）
-     * @return region
-     */
+    /** IP归属地省份。（Unknown:表示未知归属地）
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -111,20 +81,14 @@ public class CdnIps  {
         this.region = region;
     }
 
-    
-
     public CdnIps withIsp(String isp) {
         this.isp = isp;
         return this;
     }
 
-    
-
-
-    /**
-     * 运营商名称。如果IP归属地未知，该字段返回null。
-     * @return isp
-     */
+    /** 运营商名称。如果IP归属地未知，该字段返回null。
+     * 
+     * @return isp */
     public String getIsp() {
         return isp;
     }
@@ -133,20 +97,14 @@ public class CdnIps  {
         this.isp = isp;
     }
 
-    
-
     public CdnIps withPlatform(String platform) {
         this.platform = platform;
         return this;
     }
 
-    
-
-
-    /**
-     * 平台。如果IP归属地未知，该字段返回null。
-     * @return platform
-     */
+    /** 平台。如果IP归属地未知，该字段返回null。
+     * 
+     * @return platform */
     public String getPlatform() {
         return platform;
     }
@@ -154,8 +112,6 @@ public class CdnIps  {
     public void setPlatform(String platform) {
         this.platform = platform;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,16 @@ public class CdnIps  {
             return false;
         }
         CdnIps cdnIps = (CdnIps) o;
-        return Objects.equals(this.ip, cdnIps.ip) &&
-            Objects.equals(this.belongs, cdnIps.belongs) &&
-            Objects.equals(this.region, cdnIps.region) &&
-            Objects.equals(this.isp, cdnIps.isp) &&
-            Objects.equals(this.platform, cdnIps.platform);
+        return Objects.equals(this.ip, cdnIps.ip) && Objects.equals(this.belongs, cdnIps.belongs)
+            && Objects.equals(this.region, cdnIps.region) && Objects.equals(this.isp, cdnIps.isp)
+            && Objects.equals(this.platform, cdnIps.platform);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(ip, belongs, region, isp, platform);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +144,13 @@ public class CdnIps  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

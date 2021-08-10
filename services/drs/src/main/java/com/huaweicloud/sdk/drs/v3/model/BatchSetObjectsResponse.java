@@ -1,51 +1,35 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.DatabaseObjectResp;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class BatchSetObjectsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="all_counts")
-    
+    @JsonProperty(value = "all_counts")
+
     private Long allCounts;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="results")
-    
+    @JsonProperty(value = "results")
+
     private List<DatabaseObjectResp> results = null;
-    
+
     public BatchSetObjectsResponse withAllCounts(Long allCounts) {
         this.allCounts = allCounts;
         return this;
     }
 
-    
-
-
-    /**
-     * 总数
-     * @return allCounts
-     */
+    /** 总数
+     * 
+     * @return allCounts */
     public Long getAllCounts() {
         return allCounts;
     }
@@ -54,16 +38,13 @@ public class BatchSetObjectsResponse extends SdkResponse {
         this.allCounts = allCounts;
     }
 
-    
-
     public BatchSetObjectsResponse withResults(List<DatabaseObjectResp> results) {
         this.results = results;
         return this;
     }
 
-    
     public BatchSetObjectsResponse addResultsItem(DatabaseObjectResp resultsItem) {
-        if(this.results == null) {
+        if (this.results == null) {
             this.results = new ArrayList<>();
         }
         this.results.add(resultsItem);
@@ -71,17 +52,16 @@ public class BatchSetObjectsResponse extends SdkResponse {
     }
 
     public BatchSetObjectsResponse withResults(Consumer<List<DatabaseObjectResp>> resultsSetter) {
-        if(this.results == null) {
+        if (this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);
         return this;
     }
 
-    /**
-     * 批量对象选择响应列表
-     * @return results
-     */
+    /** 批量对象选择响应列表
+     * 
+     * @return results */
     public List<DatabaseObjectResp> getResults() {
         return results;
     }
@@ -89,8 +69,6 @@ public class BatchSetObjectsResponse extends SdkResponse {
     public void setResults(List<DatabaseObjectResp> results) {
         this.results = results;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class BatchSetObjectsResponse extends SdkResponse {
             return false;
         }
         BatchSetObjectsResponse batchSetObjectsResponse = (BatchSetObjectsResponse) o;
-        return Objects.equals(this.allCounts, batchSetObjectsResponse.allCounts) &&
-            Objects.equals(this.results, batchSetObjectsResponse.results);
+        return Objects.equals(this.allCounts, batchSetObjectsResponse.allCounts)
+            && Objects.equals(this.results, batchSetObjectsResponse.results);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(allCounts, results);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class BatchSetObjectsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

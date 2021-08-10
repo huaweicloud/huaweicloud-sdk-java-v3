@@ -1,32 +1,23 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class VersionMediatypes  {
-
-
+public class VersionMediatypes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="base")
-    
+    @JsonProperty(value = "base")
+
     private String base;
 
     public VersionMediatypes withType(String type) {
@@ -34,13 +25,9 @@ public class VersionMediatypes  {
         return this;
     }
 
-    
-
-
-    /**
-     * 媒体类型。
-     * @return type
-     */
+    /** 媒体类型。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -49,20 +36,14 @@ public class VersionMediatypes  {
         this.type = type;
     }
 
-    
-
     public VersionMediatypes withBase(String base) {
         this.base = base;
         return this;
     }
 
-    
-
-
-    /**
-     * 基础类型。
-     * @return base
-     */
+    /** 基础类型。
+     * 
+     * @return base */
     public String getBase() {
         return base;
     }
@@ -70,8 +51,6 @@ public class VersionMediatypes  {
     public void setBase(String base) {
         this.base = base;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +61,14 @@ public class VersionMediatypes  {
             return false;
         }
         VersionMediatypes versionMediatypes = (VersionMediatypes) o;
-        return Objects.equals(this.type, versionMediatypes.type) &&
-            Objects.equals(this.base, versionMediatypes.base);
+        return Objects.equals(this.type, versionMediatypes.type) && Objects.equals(this.base, versionMediatypes.base);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, base);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +78,13 @@ public class VersionMediatypes  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

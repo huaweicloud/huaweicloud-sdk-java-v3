@@ -1,60 +1,44 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 数据盘信息
- */
-public class CreateDataImage  {
-
-
+/** 数据盘信息 */
+public class CreateDataImage {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_id")
-    
+    @JsonProperty(value = "volume_id")
+
     private String volumeId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<String> tags = null;
-    
+
     public CreateDataImage withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据盘镜像名称。
-     * @return name
-     */
+    /** 数据盘镜像名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -63,20 +47,14 @@ public class CreateDataImage  {
         this.name = name;
     }
 
-    
-
     public CreateDataImage withVolumeId(String volumeId) {
         this.volumeId = volumeId;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据盘ID。
-     * @return volumeId
-     */
+    /** 数据盘ID。
+     * 
+     * @return volumeId */
     public String getVolumeId() {
         return volumeId;
     }
@@ -85,20 +63,14 @@ public class CreateDataImage  {
         this.volumeId = volumeId;
     }
 
-    
-
     public CreateDataImage withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据盘描述。
-     * @return description
-     */
+    /** 数据盘描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -107,16 +79,13 @@ public class CreateDataImage  {
         this.description = description;
     }
 
-    
-
     public CreateDataImage withTags(List<String> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public CreateDataImage addTagsItem(String tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -124,17 +93,16 @@ public class CreateDataImage  {
     }
 
     public CreateDataImage withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 数据盘镜像标签。
-     * @return tags
-     */
+    /** 数据盘镜像标签。
+     * 
+     * @return tags */
     public List<String> getTags() {
         return tags;
     }
@@ -142,8 +110,6 @@ public class CreateDataImage  {
     public void setTags(List<String> tags) {
         this.tags = tags;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -154,15 +120,17 @@ public class CreateDataImage  {
             return false;
         }
         CreateDataImage createDataImage = (CreateDataImage) o;
-        return Objects.equals(this.name, createDataImage.name) &&
-            Objects.equals(this.volumeId, createDataImage.volumeId) &&
-            Objects.equals(this.description, createDataImage.description) &&
-            Objects.equals(this.tags, createDataImage.tags);
+        return Objects.equals(this.name, createDataImage.name)
+            && Objects.equals(this.volumeId, createDataImage.volumeId)
+            && Objects.equals(this.description, createDataImage.description)
+            && Objects.equals(this.tags, createDataImage.tags);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, volumeId, description, tags);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -174,16 +142,13 @@ public class CreateDataImage  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

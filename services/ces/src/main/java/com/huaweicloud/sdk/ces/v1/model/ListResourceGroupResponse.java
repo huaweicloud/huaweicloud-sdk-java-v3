@@ -1,38 +1,25 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ces.v1.model.ResourceGroupInfo;
-import com.huaweicloud.sdk.ces.v1.model.TotalMetaData;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListResourceGroupResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_groups")
-    
+    @JsonProperty(value = "resource_groups")
+
     private List<ResourceGroupInfo> resourceGroups = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="meta_data")
-    
+    @JsonProperty(value = "meta_data")
+
     private TotalMetaData metaData;
 
     public ListResourceGroupResponse withResourceGroups(List<ResourceGroupInfo> resourceGroups) {
@@ -40,9 +27,8 @@ public class ListResourceGroupResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListResourceGroupResponse addResourceGroupsItem(ResourceGroupInfo resourceGroupsItem) {
-        if(this.resourceGroups == null) {
+        if (this.resourceGroups == null) {
             this.resourceGroups = new ArrayList<>();
         }
         this.resourceGroups.add(resourceGroupsItem);
@@ -50,17 +36,16 @@ public class ListResourceGroupResponse extends SdkResponse {
     }
 
     public ListResourceGroupResponse withResourceGroups(Consumer<List<ResourceGroupInfo>> resourceGroupsSetter) {
-        if(this.resourceGroups == null) {
+        if (this.resourceGroups == null) {
             this.resourceGroups = new ArrayList<>();
         }
         resourceGroupsSetter.accept(this.resourceGroups);
         return this;
     }
 
-    /**
-     * 一个或者多个资源分组信息。
-     * @return resourceGroups
-     */
+    /** 一个或者多个资源分组信息。
+     * 
+     * @return resourceGroups */
     public List<ResourceGroupInfo> getResourceGroups() {
         return resourceGroups;
     }
@@ -69,27 +54,23 @@ public class ListResourceGroupResponse extends SdkResponse {
         this.resourceGroups = resourceGroups;
     }
 
-    
-
     public ListResourceGroupResponse withMetaData(TotalMetaData metaData) {
         this.metaData = metaData;
         return this;
     }
 
     public ListResourceGroupResponse withMetaData(Consumer<TotalMetaData> metaDataSetter) {
-        if(this.metaData == null ){
+        if (this.metaData == null) {
             this.metaData = new TotalMetaData();
             metaDataSetter.accept(this.metaData);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get metaData
-     * @return metaData
-     */
+    /** Get metaData
+     * 
+     * @return metaData */
     public TotalMetaData getMetaData() {
         return metaData;
     }
@@ -97,8 +78,6 @@ public class ListResourceGroupResponse extends SdkResponse {
     public void setMetaData(TotalMetaData metaData) {
         this.metaData = metaData;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,13 +88,15 @@ public class ListResourceGroupResponse extends SdkResponse {
             return false;
         }
         ListResourceGroupResponse listResourceGroupResponse = (ListResourceGroupResponse) o;
-        return Objects.equals(this.resourceGroups, listResourceGroupResponse.resourceGroups) &&
-            Objects.equals(this.metaData, listResourceGroupResponse.metaData);
+        return Objects.equals(this.resourceGroups, listResourceGroupResponse.resourceGroups)
+            && Objects.equals(this.metaData, listResourceGroupResponse.metaData);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resourceGroups, metaData);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -125,16 +106,13 @@ public class ListResourceGroupResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.AuthorizationVO;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class CreateOAuthResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="authorization")
-    
+    @JsonProperty(value = "authorization")
+
     private AuthorizationVO authorization;
 
     public CreateOAuthResponse withAuthorization(AuthorizationVO authorization) {
@@ -32,19 +21,17 @@ public class CreateOAuthResponse extends SdkResponse {
     }
 
     public CreateOAuthResponse withAuthorization(Consumer<AuthorizationVO> authorizationSetter) {
-        if(this.authorization == null ){
+        if (this.authorization == null) {
             this.authorization = new AuthorizationVO();
             authorizationSetter.accept(this.authorization);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get authorization
-     * @return authorization
-     */
+    /** Get authorization
+     * 
+     * @return authorization */
     public AuthorizationVO getAuthorization() {
         return authorization;
     }
@@ -52,8 +39,6 @@ public class CreateOAuthResponse extends SdkResponse {
     public void setAuthorization(AuthorizationVO authorization) {
         this.authorization = authorization;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class CreateOAuthResponse extends SdkResponse {
         CreateOAuthResponse createOAuthResponse = (CreateOAuthResponse) o;
         return Objects.equals(this.authorization, createOAuthResponse.authorization);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(authorization);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class CreateOAuthResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

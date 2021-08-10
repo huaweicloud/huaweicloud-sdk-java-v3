@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 慢启动信息
- */
-public class UpdatePoolSlowStartOption  {
-
-
+/** 慢启动信息 */
+public class UpdatePoolSlowStartOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable")
-    
+    @JsonProperty(value = "enable")
+
     private Boolean enable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="duration")
-    
+    @JsonProperty(value = "duration")
+
     private Integer duration;
 
     public UpdatePoolSlowStartOption withEnable(Boolean enable) {
@@ -34,13 +23,9 @@ public class UpdatePoolSlowStartOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 慢启动的开关，默认值：false； true：开启； false：关闭 
-     * @return enable
-     */
+    /** 慢启动的开关，默认值：false； true：开启； false：关闭
+     * 
+     * @return enable */
     public Boolean getEnable() {
         return enable;
     }
@@ -49,22 +34,14 @@ public class UpdatePoolSlowStartOption  {
         this.enable = enable;
     }
 
-    
-
     public UpdatePoolSlowStartOption withDuration(Integer duration) {
         this.duration = duration;
         return this;
     }
 
-    
-
-
-    /**
-     * 慢启动的持续时间，单位：s。默认：30； 取值范围：30~1200
-     * minimum: 30
-     * maximum: 1200
-     * @return duration
-     */
+    /** 慢启动的持续时间，单位：s。默认：30； 取值范围：30~1200 minimum: 30 maximum: 1200
+     * 
+     * @return duration */
     public Integer getDuration() {
         return duration;
     }
@@ -72,8 +49,6 @@ public class UpdatePoolSlowStartOption  {
     public void setDuration(Integer duration) {
         this.duration = duration;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +59,15 @@ public class UpdatePoolSlowStartOption  {
             return false;
         }
         UpdatePoolSlowStartOption updatePoolSlowStartOption = (UpdatePoolSlowStartOption) o;
-        return Objects.equals(this.enable, updatePoolSlowStartOption.enable) &&
-            Objects.equals(this.duration, updatePoolSlowStartOption.duration);
+        return Objects.equals(this.enable, updatePoolSlowStartOption.enable)
+            && Objects.equals(this.duration, updatePoolSlowStartOption.duration);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(enable, duration);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +77,13 @@ public class UpdatePoolSlowStartOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteRomaAppRequest  {
-
-
+/** Request Object */
+public class DeleteRomaAppRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
     public DeleteRomaAppRequest withAppId(String appId) {
@@ -34,13 +23,9 @@ public class DeleteRomaAppRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 应用ID
-     * @return appId
-     */
+    /** 应用ID
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -49,20 +34,14 @@ public class DeleteRomaAppRequest  {
         this.appId = appId;
     }
 
-    
-
     public DeleteRomaAppRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -70,8 +49,6 @@ public class DeleteRomaAppRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class DeleteRomaAppRequest  {
             return false;
         }
         DeleteRomaAppRequest deleteRomaAppRequest = (DeleteRomaAppRequest) o;
-        return Objects.equals(this.appId, deleteRomaAppRequest.appId) &&
-            Objects.equals(this.instanceId, deleteRomaAppRequest.instanceId);
+        return Objects.equals(this.appId, deleteRomaAppRequest.appId)
+            && Objects.equals(this.instanceId, deleteRomaAppRequest.instanceId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(appId, instanceId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class DeleteRomaAppRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

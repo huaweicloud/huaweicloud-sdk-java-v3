@@ -1,94 +1,69 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 发布响应信息
- */
-public class PublicationResponseBase  {
-
-
+/** 发布响应信息 */
+public class PublicationResponseBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lastUpdatedBy")
-    
+    @JsonProperty(value = "lastUpdatedBy")
+
     private String lastUpdatedBy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="createTime")
-    
+    @JsonProperty(value = "createTime")
+
     private Long createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updateTime")
-    
+    @JsonProperty(value = "updateTime")
+
     private Long updateTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publishName")
-    
+    @JsonProperty(value = "publishName")
+
     private String publishName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publishScope")
-    
+    @JsonProperty(value = "publishScope")
+
     private String publishScope;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="startTime")
-    
+    @JsonProperty(value = "startTime")
+
     private Long startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endTime")
-    
+    @JsonProperty(value = "endTime")
+
     private Long endTime;
-    /**
-     * 根据当前时间确定发布状态 - NOT_ONLINE-未上线 - PUBLISHING-发布中 - ALREADY_OFFLINE-已下线
-     */
+
+    /** 根据当前时间确定发布状态 - NOT_ONLINE-未上线 - PUBLISHING-发布中 - ALREADY_OFFLINE-已下线 */
     public static final class PublishStatusEnum {
 
-        
-        /**
-         * Enum NOT_ONLINE for value: "NOT_ONLINE"
-         */
+        /** Enum NOT_ONLINE for value: "NOT_ONLINE" */
         public static final PublishStatusEnum NOT_ONLINE = new PublishStatusEnum("NOT_ONLINE");
-        
-        /**
-         * Enum PUBLISHING for value: "PUBLISHING"
-         */
+
+        /** Enum PUBLISHING for value: "PUBLISHING" */
         public static final PublishStatusEnum PUBLISHING = new PublishStatusEnum("PUBLISHING");
-        
-        /**
-         * Enum ALREADY_OFFLINE for value: "ALREADY_OFFLINE"
-         */
+
+        /** Enum ALREADY_OFFLINE for value: "ALREADY_OFFLINE" */
         public static final PublishStatusEnum ALREADY_OFFLINE = new PublishStatusEnum("ALREADY_OFFLINE");
-        
 
         private static final Map<String, PublishStatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -118,7 +93,7 @@ public class PublicationResponseBase  {
 
         @JsonCreator
         public static PublishStatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             PublishStatusEnum result = STATIC_FIELDS.get(value);
@@ -129,7 +104,7 @@ public class PublicationResponseBase  {
         }
 
         public static PublishStatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             PublishStatusEnum result = STATIC_FIELDS.get(value);
@@ -153,10 +128,9 @@ public class PublicationResponseBase  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publishStatus")
-    
+    @JsonProperty(value = "publishStatus")
+
     private PublishStatusEnum publishStatus;
 
     public PublicationResponseBase withId(String id) {
@@ -164,13 +138,9 @@ public class PublicationResponseBase  {
         return this;
     }
 
-    
-
-
-    /**
-     * 发布ID
-     * @return id
-     */
+    /** 发布ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -179,20 +149,14 @@ public class PublicationResponseBase  {
         this.id = id;
     }
 
-    
-
     public PublicationResponseBase withLastUpdatedBy(String lastUpdatedBy) {
         this.lastUpdatedBy = lastUpdatedBy;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新者
-     * @return lastUpdatedBy
-     */
+    /** 更新者
+     * 
+     * @return lastUpdatedBy */
     public String getLastUpdatedBy() {
         return lastUpdatedBy;
     }
@@ -201,20 +165,14 @@ public class PublicationResponseBase  {
         this.lastUpdatedBy = lastUpdatedBy;
     }
 
-    
-
     public PublicationResponseBase withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return createTime
-     */
+    /** 创建时间
+     * 
+     * @return createTime */
     public Long getCreateTime() {
         return createTime;
     }
@@ -223,20 +181,14 @@ public class PublicationResponseBase  {
         this.createTime = createTime;
     }
 
-    
-
     public PublicationResponseBase withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间
-     * @return updateTime
-     */
+    /** 更新时间
+     * 
+     * @return updateTime */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -245,20 +197,14 @@ public class PublicationResponseBase  {
         this.updateTime = updateTime;
     }
 
-    
-
     public PublicationResponseBase withPublishName(String publishName) {
         this.publishName = publishName;
         return this;
     }
 
-    
-
-
-    /**
-     * 发布名称
-     * @return publishName
-     */
+    /** 发布名称
+     * 
+     * @return publishName */
     public String getPublishName() {
         return publishName;
     }
@@ -267,20 +213,14 @@ public class PublicationResponseBase  {
         this.publishName = publishName;
     }
 
-    
-
     public PublicationResponseBase withPublishScope(String publishScope) {
         this.publishScope = publishScope;
         return this;
     }
 
-    
-
-
-    /**
-     * 发布范围
-     * @return publishScope
-     */
+    /** 发布范围
+     * 
+     * @return publishScope */
     public String getPublishScope() {
         return publishScope;
     }
@@ -289,20 +229,14 @@ public class PublicationResponseBase  {
         this.publishScope = publishScope;
     }
 
-    
-
     public PublicationResponseBase withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 开始时间
-     * @return startTime
-     */
+    /** 开始时间
+     * 
+     * @return startTime */
     public Long getStartTime() {
         return startTime;
     }
@@ -311,20 +245,14 @@ public class PublicationResponseBase  {
         this.startTime = startTime;
     }
 
-    
-
     public PublicationResponseBase withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 结束时间
-     * @return endTime
-     */
+    /** 结束时间
+     * 
+     * @return endTime */
     public Long getEndTime() {
         return endTime;
     }
@@ -333,20 +261,14 @@ public class PublicationResponseBase  {
         this.endTime = endTime;
     }
 
-    
-
     public PublicationResponseBase withPublishStatus(PublishStatusEnum publishStatus) {
         this.publishStatus = publishStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 根据当前时间确定发布状态 - NOT_ONLINE-未上线 - PUBLISHING-发布中 - ALREADY_OFFLINE-已下线
-     * @return publishStatus
-     */
+    /** 根据当前时间确定发布状态 - NOT_ONLINE-未上线 - PUBLISHING-发布中 - ALREADY_OFFLINE-已下线
+     * 
+     * @return publishStatus */
     public PublishStatusEnum getPublishStatus() {
         return publishStatus;
     }
@@ -354,8 +276,6 @@ public class PublicationResponseBase  {
     public void setPublishStatus(PublishStatusEnum publishStatus) {
         this.publishStatus = publishStatus;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -366,20 +286,30 @@ public class PublicationResponseBase  {
             return false;
         }
         PublicationResponseBase publicationResponseBase = (PublicationResponseBase) o;
-        return Objects.equals(this.id, publicationResponseBase.id) &&
-            Objects.equals(this.lastUpdatedBy, publicationResponseBase.lastUpdatedBy) &&
-            Objects.equals(this.createTime, publicationResponseBase.createTime) &&
-            Objects.equals(this.updateTime, publicationResponseBase.updateTime) &&
-            Objects.equals(this.publishName, publicationResponseBase.publishName) &&
-            Objects.equals(this.publishScope, publicationResponseBase.publishScope) &&
-            Objects.equals(this.startTime, publicationResponseBase.startTime) &&
-            Objects.equals(this.endTime, publicationResponseBase.endTime) &&
-            Objects.equals(this.publishStatus, publicationResponseBase.publishStatus);
+        return Objects.equals(this.id, publicationResponseBase.id)
+            && Objects.equals(this.lastUpdatedBy, publicationResponseBase.lastUpdatedBy)
+            && Objects.equals(this.createTime, publicationResponseBase.createTime)
+            && Objects.equals(this.updateTime, publicationResponseBase.updateTime)
+            && Objects.equals(this.publishName, publicationResponseBase.publishName)
+            && Objects.equals(this.publishScope, publicationResponseBase.publishScope)
+            && Objects.equals(this.startTime, publicationResponseBase.startTime)
+            && Objects.equals(this.endTime, publicationResponseBase.endTime)
+            && Objects.equals(this.publishStatus, publicationResponseBase.publishStatus);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, lastUpdatedBy, createTime, updateTime, publishName, publishScope, startTime, endTime, publishStatus);
+        return Objects.hash(id,
+            lastUpdatedBy,
+            createTime,
+            updateTime,
+            publishName,
+            publishScope,
+            startTime,
+            endTime,
+            publishStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -396,16 +326,13 @@ public class PublicationResponseBase  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

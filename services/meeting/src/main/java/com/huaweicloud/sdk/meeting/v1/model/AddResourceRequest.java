@@ -1,63 +1,46 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.ResourceDTO;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class AddResourceRequest  {
-
-
+/** Request Object */
+public class AddResourceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Request-Id")
-    
+    @JsonProperty(value = "X-Request-Id")
+
     private String xRequestId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Accept-Language")
-    
+    @JsonProperty(value = "Accept-Language")
+
     private String acceptLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="corp_id")
-    
+    @JsonProperty(value = "corp_id")
+
     private String corpId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private List<ResourceDTO> body = null;
-    
+
     public AddResourceRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
-     * @return xRequestId
-     */
+    /** 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * 
+     * @return xRequestId */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Request-Id")
+    @JsonProperty(value = "X-Request-Id")
     public String getXRequestId() {
         return xRequestId;
     }
@@ -66,20 +49,14 @@ public class AddResourceRequest  {
         this.xRequestId = xRequestId;
     }
 
-    
-
     public AddResourceRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言参数，默认为中文zh_CN, 英文为en_US
-     * @return acceptLanguage
-     */
+    /** 语言参数，默认为中文zh_CN, 英文为en_US
+     * 
+     * @return acceptLanguage */
     public String getAcceptLanguage() {
         return acceptLanguage;
     }
@@ -88,20 +65,14 @@ public class AddResourceRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
-    
-
     public AddResourceRequest withCorpId(String corpId) {
         this.corpId = corpId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业id
-     * @return corpId
-     */
+    /** 企业id
+     * 
+     * @return corpId */
     public String getCorpId() {
         return corpId;
     }
@@ -110,16 +81,13 @@ public class AddResourceRequest  {
         this.corpId = corpId;
     }
 
-    
-
     public AddResourceRequest withBody(List<ResourceDTO> body) {
         this.body = body;
         return this;
     }
 
-    
     public AddResourceRequest addBodyItem(ResourceDTO bodyItem) {
-        if(this.body == null) {
+        if (this.body == null) {
             this.body = new ArrayList<>();
         }
         this.body.add(bodyItem);
@@ -127,17 +95,16 @@ public class AddResourceRequest  {
     }
 
     public AddResourceRequest withBody(Consumer<List<ResourceDTO>> bodySetter) {
-        if(this.body == null) {
+        if (this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);
         return this;
     }
 
-    /**
-     * 待添加的资源列表，最多支持批量处理100个
-     * @return body
-     */
+    /** 待添加的资源列表，最多支持批量处理100个
+     * 
+     * @return body */
     public List<ResourceDTO> getBody() {
         return body;
     }
@@ -145,8 +112,6 @@ public class AddResourceRequest  {
     public void setBody(List<ResourceDTO> body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -157,15 +122,17 @@ public class AddResourceRequest  {
             return false;
         }
         AddResourceRequest addResourceRequest = (AddResourceRequest) o;
-        return Objects.equals(this.xRequestId, addResourceRequest.xRequestId) &&
-            Objects.equals(this.acceptLanguage, addResourceRequest.acceptLanguage) &&
-            Objects.equals(this.corpId, addResourceRequest.corpId) &&
-            Objects.equals(this.body, addResourceRequest.body);
+        return Objects.equals(this.xRequestId, addResourceRequest.xRequestId)
+            && Objects.equals(this.acceptLanguage, addResourceRequest.acceptLanguage)
+            && Objects.equals(this.corpId, addResourceRequest.corpId)
+            && Objects.equals(this.body, addResourceRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xRequestId, acceptLanguage, corpId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -177,16 +144,13 @@ public class AddResourceRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

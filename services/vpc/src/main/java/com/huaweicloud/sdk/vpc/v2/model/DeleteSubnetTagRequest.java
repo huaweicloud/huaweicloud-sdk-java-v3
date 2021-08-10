@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteSubnetTagRequest  {
-
-
+/** Request Object */
+public class DeleteSubnetTagRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
+
     private String subnetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
     public DeleteSubnetTagRequest withSubnetId(String subnetId) {
@@ -34,13 +23,9 @@ public class DeleteSubnetTagRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 子网ID
-     * @return subnetId
-     */
+    /** 子网ID
+     * 
+     * @return subnetId */
     public String getSubnetId() {
         return subnetId;
     }
@@ -49,20 +34,14 @@ public class DeleteSubnetTagRequest  {
         this.subnetId = subnetId;
     }
 
-    
-
     public DeleteSubnetTagRequest withKey(String key) {
         this.key = key;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：键值
-     * @return key
-     */
+    /** 功能说明：键值
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -70,8 +49,6 @@ public class DeleteSubnetTagRequest  {
     public void setKey(String key) {
         this.key = key;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class DeleteSubnetTagRequest  {
             return false;
         }
         DeleteSubnetTagRequest deleteSubnetTagRequest = (DeleteSubnetTagRequest) o;
-        return Objects.equals(this.subnetId, deleteSubnetTagRequest.subnetId) &&
-            Objects.equals(this.key, deleteSubnetTagRequest.key);
+        return Objects.equals(this.subnetId, deleteSubnetTagRequest.subnetId)
+            && Objects.equals(this.key, deleteSubnetTagRequest.key);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(subnetId, key);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class DeleteSubnetTagRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

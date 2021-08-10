@@ -50,20 +50,15 @@ import java.util.stream.Collectors;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
-/**
- * signature certification with AK/SK
+/** signature certification with AK/SK
  *
- * @author HuaweiCloud_SDK
- */
+ * @author HuaweiCloud_SDK */
 public class AKSKSigner {
-    /**
-     * SHA256 hash of an empty request body
-     **/
+
+    /** SHA256 hash of an empty request body **/
     public static final String EMPTY_BODY_SHA256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
 
-    /**
-     * format strings for the date/time and date stamps required during signing
-     **/
+    /** format strings for the date/time and date stamps required during signing **/
     public static final String ISO_8601_BASIC_FORMAT = "yyyyMMdd'T'HHmmss'Z'";
 
     public static Map<String, String> sign(HttpRequest request, AbstractCredentials credential) {
@@ -139,8 +134,8 @@ public class AKSKSigner {
         String payloadHash = buildPayloadHash(request);
 
         // Step 7: Combine elements to create canonical request
-        String canonicalRequest = buildCanonicalRequest(request.getMethod().name(), canonicalUri.toString(),
-            canonicalQueryString, canonicalHeaders, signedHeaderNames, payloadHash);
+        String canonicalRequest = buildCanonicalRequest(request.getMethod()
+            .name(), canonicalUri.toString(), canonicalQueryString, canonicalHeaders, signedHeaderNames, payloadHash);
         String canonicalRequestHash = BinaryUtils.toHex(sha256(canonicalRequest));
         // ************* TASK 2: CREATE THE STRING TO SIGN*************
         // Match the algorithm to the hashing algorithm you use, either SHA-1 or SHA-256 (recommended)
@@ -229,14 +224,11 @@ public class AKSKSigner {
         return sorted;
     }
 
-    /**
-     * Create the canonical headers and signed headers. Header names
-     * and value must be trimmed and lowercase, and sorted in ASCII order.
-     * Note that there is a trailing \n.
+    /** Create the canonical headers and signed headers. Header names and value must be trimmed and lowercase, and
+     * sorted in ASCII order. Note that there is a trailing \n.
      *
      * @param heads
-     * @return
-     */
+     * @return */
     private static String buildCanonicalHeaders(Map<String, String> heads) {
         StringBuilder sb = new StringBuilder();
         heads.forEach((key, value) -> {
@@ -246,10 +238,8 @@ public class AKSKSigner {
         return sb.toString();
     }
 
-    /**
-     * @param request
-     * @return
-     */
+    /** @param request
+     * @return */
     private static String buildPayloadHash(HttpRequest request) {
         if (request.haveHeader(Constants.X_SDK_CONTENT_SHA256)) {
             return request.getHeader(Constants.X_SDK_CONTENT_SHA256);
@@ -261,35 +251,23 @@ public class AKSKSigner {
         return EMPTY_BODY_SHA256;
     }
 
-    /**
-     * @param segments param1 method
-     * param2 canonicalURI
-     * param3 canonicalQueryString
-     * param4 canonicalHeaders
-     * param5 signedHeaderNames
-     * param6 payloadHash
-     * @return
-     */
+    /** @param segments param1 method param2 canonicalURI param3 canonicalQueryString param4 canonicalHeaders param5
+     *            signedHeaderNames param6 payloadHash
+     * @return */
     private static String buildCanonicalRequest(String... segments) {
         return String.join(Constants.LINE_SEPARATOR, segments);
     }
 
-    /**
-     * @param segments param1 sdkSigningAlgorithm
-     * param2 dateTimeStamp
-     * param3 credentialScope
-     * param4 canonicalRequestHash
-     * @return
-     */
+    /** @param segments param1 sdkSigningAlgorithm param2 dateTimeStamp param3 credentialScope param4
+     *            canonicalRequestHash
+     * @return */
     private static String getStringToSign(String... segments) {
         return String.join(Constants.LINE_SEPARATOR, segments);
     }
 
-    /**
-     * @param stringToSign
+    /** @param stringToSign
      * @param secretKey
-     * @return
-     */
+     * @return */
     private static String signature(String stringToSign, String secretKey) {
         byte[] keySecret = secretKey.getBytes(StandardCharsets.UTF_8);
         byte[] signature = hmac(keySecret, stringToSign);
@@ -304,13 +282,10 @@ public class AKSKSigner {
         }
     }
 
-    /**
-     * Hashes the string contents (assumed to be UTF-8) using the SHA-256
-     * algorithm.
+    /** Hashes the string contents (assumed to be UTF-8) using the SHA-256 algorithm.
      *
      * @param text string contents
-     * @return byte[]
-     */
+     * @return byte[] */
     public static byte[] sha256(String text) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");

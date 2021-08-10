@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.RestMuteReqBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class MuteMeetingRequest  {
-
-
+/** Request Object */
+public class MuteMeetingRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="conferenceID")
-    
+    @JsonProperty(value = "conferenceID")
+
     private String conferenceID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Conference-Authorization")
-    
+    @JsonProperty(value = "X-Conference-Authorization")
+
     private String xConferenceAuthorization;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private RestMuteReqBody body;
 
     public MuteMeetingRequest withConferenceID(String conferenceID) {
@@ -41,13 +29,9 @@ public class MuteMeetingRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 会议ID。
-     * @return conferenceID
-     */
+    /** 会议ID。
+     * 
+     * @return conferenceID */
     public String getConferenceID() {
         return conferenceID;
     }
@@ -56,22 +40,16 @@ public class MuteMeetingRequest  {
         this.conferenceID = conferenceID;
     }
 
-    
-
     public MuteMeetingRequest withXConferenceAuthorization(String xConferenceAuthorization) {
         this.xConferenceAuthorization = xConferenceAuthorization;
         return this;
     }
 
-    
-
-
-    /**
-     * 会控授权令牌，通过获取会控token接口获得。
-     * @return xConferenceAuthorization
-     */
+    /** 会控授权令牌，通过获取会控token接口获得。
+     * 
+     * @return xConferenceAuthorization */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Conference-Authorization")
+    @JsonProperty(value = "X-Conference-Authorization")
     public String getXConferenceAuthorization() {
         return xConferenceAuthorization;
     }
@@ -80,27 +58,23 @@ public class MuteMeetingRequest  {
         this.xConferenceAuthorization = xConferenceAuthorization;
     }
 
-    
-
     public MuteMeetingRequest withBody(RestMuteReqBody body) {
         this.body = body;
         return this;
     }
 
     public MuteMeetingRequest withBody(Consumer<RestMuteReqBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new RestMuteReqBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public RestMuteReqBody getBody() {
         return body;
     }
@@ -108,8 +82,6 @@ public class MuteMeetingRequest  {
     public void setBody(RestMuteReqBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -120,14 +92,16 @@ public class MuteMeetingRequest  {
             return false;
         }
         MuteMeetingRequest muteMeetingRequest = (MuteMeetingRequest) o;
-        return Objects.equals(this.conferenceID, muteMeetingRequest.conferenceID) &&
-            Objects.equals(this.xConferenceAuthorization, muteMeetingRequest.xConferenceAuthorization) &&
-            Objects.equals(this.body, muteMeetingRequest.body);
+        return Objects.equals(this.conferenceID, muteMeetingRequest.conferenceID)
+            && Objects.equals(this.xConferenceAuthorization, muteMeetingRequest.xConferenceAuthorization)
+            && Objects.equals(this.body, muteMeetingRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(conferenceID, xConferenceAuthorization, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -138,16 +112,13 @@ public class MuteMeetingRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

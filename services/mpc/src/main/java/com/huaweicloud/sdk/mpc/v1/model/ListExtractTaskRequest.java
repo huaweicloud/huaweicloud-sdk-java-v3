@@ -1,75 +1,51 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ListExtractTaskRequest  {
-
-
+/** Request Object */
+public class ListExtractTaskRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="x-language")
-    
+    @JsonProperty(value = "x-language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
+    @JsonProperty(value = "task_id")
+
     private List<String> taskId = null;
-        /**
-     * 任务执行状态。  取值如下： - INIT：初始状态 - WAITING：等待启动 - PREPROCESSING：处理中 - SUCCEED：处理成功 - FAILED：处理失败 - CANCELED：已取消 
-     */
+
+    /** 任务执行状态。 取值如下： - INIT：初始状态 - WAITING：等待启动 - PREPROCESSING：处理中 - SUCCEED：处理成功 - FAILED：处理失败 - CANCELED：已取消 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum INIT for value: "INIT"
-         */
+        /** Enum INIT for value: "INIT" */
         public static final StatusEnum INIT = new StatusEnum("INIT");
-        
-        /**
-         * Enum WAITING for value: "WAITING"
-         */
+
+        /** Enum WAITING for value: "WAITING" */
         public static final StatusEnum WAITING = new StatusEnum("WAITING");
-        
-        /**
-         * Enum PREPROCESSING for value: "PREPROCESSING"
-         */
+
+        /** Enum PREPROCESSING for value: "PREPROCESSING" */
         public static final StatusEnum PREPROCESSING = new StatusEnum("PREPROCESSING");
-        
-        /**
-         * Enum SUCCEED for value: "SUCCEED"
-         */
+
+        /** Enum SUCCEED for value: "SUCCEED" */
         public static final StatusEnum SUCCEED = new StatusEnum("SUCCEED");
-        
-        /**
-         * Enum FAILED for value: "FAILED"
-         */
+
+        /** Enum FAILED for value: "FAILED" */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
-        
-        /**
-         * Enum CANCELED for value: "CANCELED"
-         */
+
+        /** Enum CANCELED for value: "CANCELED" */
         public static final StatusEnum CANCELED = new StatusEnum("CANCELED");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -102,7 +78,7 @@ public class ListExtractTaskRequest  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -113,7 +89,7 @@ public class ListExtractTaskRequest  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -137,34 +113,29 @@ public class ListExtractTaskRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page")
-    
+    @JsonProperty(value = "page")
+
     private Integer page;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
     public ListExtractTaskRequest withXLanguage(String xLanguage) {
@@ -172,15 +143,11 @@ public class ListExtractTaskRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 客户端语言
-     * @return xLanguage
-     */
+    /** 客户端语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="x-language")
+    @JsonProperty(value = "x-language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -189,16 +156,13 @@ public class ListExtractTaskRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListExtractTaskRequest withTaskId(List<String> taskId) {
         this.taskId = taskId;
         return this;
     }
 
-    
     public ListExtractTaskRequest addTaskIdItem(String taskIdItem) {
-        if(this.taskId == null) {
+        if (this.taskId == null) {
             this.taskId = new ArrayList<>();
         }
         this.taskId.add(taskIdItem);
@@ -206,17 +170,16 @@ public class ListExtractTaskRequest  {
     }
 
     public ListExtractTaskRequest withTaskId(Consumer<List<String>> taskIdSetter) {
-        if(this.taskId == null) {
+        if (this.taskId == null) {
             this.taskId = new ArrayList<>();
         }
         taskIdSetter.accept(this.taskId);
         return this;
     }
 
-    /**
-     * 任务ID。一次最多10个 
-     * @return taskId
-     */
+    /** 任务ID。一次最多10个
+     * 
+     * @return taskId */
     public List<String> getTaskId() {
         return taskId;
     }
@@ -225,20 +188,14 @@ public class ListExtractTaskRequest  {
         this.taskId = taskId;
     }
 
-    
-
     public ListExtractTaskRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务执行状态。  取值如下： - INIT：初始状态 - WAITING：等待启动 - PREPROCESSING：处理中 - SUCCEED：处理成功 - FAILED：处理失败 - CANCELED：已取消 
-     * @return status
-     */
+    /** 任务执行状态。 取值如下： - INIT：初始状态 - WAITING：等待启动 - PREPROCESSING：处理中 - SUCCEED：处理成功 - FAILED：处理失败 - CANCELED：已取消
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -247,20 +204,14 @@ public class ListExtractTaskRequest  {
         this.status = status;
     }
 
-    
-
     public ListExtractTaskRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 起始时间。格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效。 
-     * @return startTime
-     */
+    /** 起始时间。格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效。
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -269,20 +220,14 @@ public class ListExtractTaskRequest  {
         this.startTime = startTime;
     }
 
-    
-
     public ListExtractTaskRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 结束时间。格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效。 
-     * @return endTime
-     */
+    /** 结束时间。格式为yyyymmddhhmmss。必须是与时区无关的UTC时间，指定task_id时该参数无效。
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -291,22 +236,14 @@ public class ListExtractTaskRequest  {
         this.endTime = endTime;
     }
 
-    
-
     public ListExtractTaskRequest withPage(Integer page) {
         this.page = page;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页编号。查询指定“task_id”时，该参数无效。  默认值：0。 
-     * minimum: 0
-     * maximum: 50000
-     * @return page
-     */
+    /** 分页编号。查询指定“task_id”时，该参数无效。 默认值：0。 minimum: 0 maximum: 50000
+     * 
+     * @return page */
     public Integer getPage() {
         return page;
     }
@@ -315,22 +252,14 @@ public class ListExtractTaskRequest  {
         this.page = page;
     }
 
-    
-
     public ListExtractTaskRequest withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页记录数。查询指定“task_id”时，该参数无效。  取值范围：[1,100]。  默认值：10。 
-     * minimum: 1
-     * maximum: 100
-     * @return size
-     */
+    /** 每页记录数。查询指定“task_id”时，该参数无效。 取值范围：[1,100]。 默认值：10。 minimum: 1 maximum: 100
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -338,8 +267,6 @@ public class ListExtractTaskRequest  {
     public void setSize(Integer size) {
         this.size = size;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -350,18 +277,20 @@ public class ListExtractTaskRequest  {
             return false;
         }
         ListExtractTaskRequest listExtractTaskRequest = (ListExtractTaskRequest) o;
-        return Objects.equals(this.xLanguage, listExtractTaskRequest.xLanguage) &&
-            Objects.equals(this.taskId, listExtractTaskRequest.taskId) &&
-            Objects.equals(this.status, listExtractTaskRequest.status) &&
-            Objects.equals(this.startTime, listExtractTaskRequest.startTime) &&
-            Objects.equals(this.endTime, listExtractTaskRequest.endTime) &&
-            Objects.equals(this.page, listExtractTaskRequest.page) &&
-            Objects.equals(this.size, listExtractTaskRequest.size);
+        return Objects.equals(this.xLanguage, listExtractTaskRequest.xLanguage)
+            && Objects.equals(this.taskId, listExtractTaskRequest.taskId)
+            && Objects.equals(this.status, listExtractTaskRequest.status)
+            && Objects.equals(this.startTime, listExtractTaskRequest.startTime)
+            && Objects.equals(this.endTime, listExtractTaskRequest.endTime)
+            && Objects.equals(this.page, listExtractTaskRequest.page)
+            && Objects.equals(this.size, listExtractTaskRequest.size);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, taskId, status, startTime, endTime, page, size);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -376,16 +305,13 @@ public class ListExtractTaskRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

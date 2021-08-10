@@ -1,53 +1,36 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * ImportFileReq
- */
-public class ImportFileReq  {
-
-
+/** ImportFileReq */
+public class ImportFileReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path")
-    
+    @JsonProperty(value = "path")
+
     private String path;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="params")
-    
+    @JsonProperty(value = "params")
+
     private Object params;
-    /**
-     * Gets or Sets sameNamePolicy
-     */
+
+    /** Gets or Sets sameNamePolicy */
     public static final class SameNamePolicyEnum {
 
-        
-        /**
-         * Enum SKIP for value: "SKIP"
-         */
+        /** Enum SKIP for value: "SKIP" */
         public static final SameNamePolicyEnum SKIP = new SameNamePolicyEnum("SKIP");
-        
-        /**
-         * Enum OVERWRITE for value: "OVERWRITE"
-         */
+
+        /** Enum OVERWRITE for value: "OVERWRITE" */
         public static final SameNamePolicyEnum OVERWRITE = new SameNamePolicyEnum("OVERWRITE");
-        
 
         private static final Map<String, SameNamePolicyEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,7 +59,7 @@ public class ImportFileReq  {
 
         @JsonCreator
         public static SameNamePolicyEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SameNamePolicyEnum result = STATIC_FIELDS.get(value);
@@ -87,7 +70,7 @@ public class ImportFileReq  {
         }
 
         public static SameNamePolicyEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SameNamePolicyEnum result = STATIC_FIELDS.get(value);
@@ -111,22 +94,19 @@ public class ImportFileReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sameNamePolicy")
-    
+    @JsonProperty(value = "sameNamePolicy")
+
     private SameNamePolicyEnum sameNamePolicy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobsParam")
-    
+    @JsonProperty(value = "jobsParam")
+
     private Object jobsParam;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="executeUser")
-    
+    @JsonProperty(value = "executeUser")
+
     private String executeUser;
 
     public ImportFileReq withPath(String path) {
@@ -134,13 +114,9 @@ public class ImportFileReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * Get path
-     * @return path
-     */
+    /** Get path
+     * 
+     * @return path */
     public String getPath() {
         return path;
     }
@@ -149,20 +125,14 @@ public class ImportFileReq  {
         this.path = path;
     }
 
-    
-
     public ImportFileReq withParams(Object params) {
         this.params = params;
         return this;
     }
 
-    
-
-
-    /**
-     * 公共作业参数
-     * @return params
-     */
+    /** 公共作业参数
+     * 
+     * @return params */
     public Object getParams() {
         return params;
     }
@@ -171,20 +141,14 @@ public class ImportFileReq  {
         this.params = params;
     }
 
-    
-
     public ImportFileReq withSameNamePolicy(SameNamePolicyEnum sameNamePolicy) {
         this.sameNamePolicy = sameNamePolicy;
         return this;
     }
 
-    
-
-
-    /**
-     * Get sameNamePolicy
-     * @return sameNamePolicy
-     */
+    /** Get sameNamePolicy
+     * 
+     * @return sameNamePolicy */
     public SameNamePolicyEnum getSameNamePolicy() {
         return sameNamePolicy;
     }
@@ -193,20 +157,14 @@ public class ImportFileReq  {
         this.sameNamePolicy = sameNamePolicy;
     }
 
-    
-
     public ImportFileReq withJobsParam(Object jobsParam) {
         this.jobsParam = jobsParam;
         return this;
     }
 
-    
-
-
-    /**
-     * 指定作业参数
-     * @return jobsParam
-     */
+    /** 指定作业参数
+     * 
+     * @return jobsParam */
     public Object getJobsParam() {
         return jobsParam;
     }
@@ -215,20 +173,14 @@ public class ImportFileReq  {
         this.jobsParam = jobsParam;
     }
 
-    
-
     public ImportFileReq withExecuteUser(String executeUser) {
         this.executeUser = executeUser;
         return this;
     }
 
-    
-
-
-    /**
-     * Get executeUser
-     * @return executeUser
-     */
+    /** Get executeUser
+     * 
+     * @return executeUser */
     public String getExecuteUser() {
         return executeUser;
     }
@@ -236,8 +188,6 @@ public class ImportFileReq  {
     public void setExecuteUser(String executeUser) {
         this.executeUser = executeUser;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -248,16 +198,17 @@ public class ImportFileReq  {
             return false;
         }
         ImportFileReq importFileReq = (ImportFileReq) o;
-        return Objects.equals(this.path, importFileReq.path) &&
-            Objects.equals(this.params, importFileReq.params) &&
-            Objects.equals(this.sameNamePolicy, importFileReq.sameNamePolicy) &&
-            Objects.equals(this.jobsParam, importFileReq.jobsParam) &&
-            Objects.equals(this.executeUser, importFileReq.executeUser);
+        return Objects.equals(this.path, importFileReq.path) && Objects.equals(this.params, importFileReq.params)
+            && Objects.equals(this.sameNamePolicy, importFileReq.sameNamePolicy)
+            && Objects.equals(this.jobsParam, importFileReq.jobsParam)
+            && Objects.equals(this.executeUser, importFileReq.executeUser);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(path, params, sameNamePolicy, jobsParam, executeUser);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -270,16 +221,13 @@ public class ImportFileReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

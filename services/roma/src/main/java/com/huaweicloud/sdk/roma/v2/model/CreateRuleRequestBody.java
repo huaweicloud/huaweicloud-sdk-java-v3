@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CreateRuleRequestBody
- */
-public class CreateRuleRequestBody  {
-
-
+/** CreateRuleRequestBody */
+public class CreateRuleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_parsing_status")
-    
+    @JsonProperty(value = "data_parsing_status")
+
     private Integer dataParsingStatus;
 
     public CreateRuleRequestBody withName(String name) {
@@ -52,13 +38,9 @@ public class CreateRuleRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 规则名称，支持英文大小写，数字，下划线和中划线,长度1-64
-     * @return name
-     */
+    /** 规则名称，支持英文大小写，数字，下划线和中划线,长度1-64
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -67,20 +49,14 @@ public class CreateRuleRequestBody  {
         this.name = name;
     }
 
-    
-
     public CreateRuleRequestBody withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用ID
-     * @return appId
-     */
+    /** 应用ID
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -89,20 +65,14 @@ public class CreateRuleRequestBody  {
         this.appId = appId;
     }
 
-    
-
     public CreateRuleRequestBody withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述，长度0-200
-     * @return description
-     */
+    /** 描述，长度0-200
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -111,22 +81,14 @@ public class CreateRuleRequestBody  {
         this.description = description;
     }
 
-    
-
     public CreateRuleRequestBody withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则状态 0-启用 1-停用，不填写时默认为0-启用
-     * minimum: 0
-     * maximum: 10
-     * @return status
-     */
+    /** 规则状态 0-启用 1-停用，不填写时默认为0-启用 minimum: 0 maximum: 10
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -135,22 +97,14 @@ public class CreateRuleRequestBody  {
         this.status = status;
     }
 
-    
-
     public CreateRuleRequestBody withDataParsingStatus(Integer dataParsingStatus) {
         this.dataParsingStatus = dataParsingStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据解析状态，0-启用 1-停用，不填写时默认为1-禁用
-     * minimum: 0
-     * maximum: 10
-     * @return dataParsingStatus
-     */
+    /** 数据解析状态，0-启用 1-停用，不填写时默认为1-禁用 minimum: 0 maximum: 10
+     * 
+     * @return dataParsingStatus */
     public Integer getDataParsingStatus() {
         return dataParsingStatus;
     }
@@ -158,8 +112,6 @@ public class CreateRuleRequestBody  {
     public void setDataParsingStatus(Integer dataParsingStatus) {
         this.dataParsingStatus = dataParsingStatus;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -170,16 +122,18 @@ public class CreateRuleRequestBody  {
             return false;
         }
         CreateRuleRequestBody createRuleRequestBody = (CreateRuleRequestBody) o;
-        return Objects.equals(this.name, createRuleRequestBody.name) &&
-            Objects.equals(this.appId, createRuleRequestBody.appId) &&
-            Objects.equals(this.description, createRuleRequestBody.description) &&
-            Objects.equals(this.status, createRuleRequestBody.status) &&
-            Objects.equals(this.dataParsingStatus, createRuleRequestBody.dataParsingStatus);
+        return Objects.equals(this.name, createRuleRequestBody.name)
+            && Objects.equals(this.appId, createRuleRequestBody.appId)
+            && Objects.equals(this.description, createRuleRequestBody.description)
+            && Objects.equals(this.status, createRuleRequestBody.status)
+            && Objects.equals(this.dataParsingStatus, createRuleRequestBody.dataParsingStatus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, appId, description, status, dataParsingStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -192,16 +146,13 @@ public class CreateRuleRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

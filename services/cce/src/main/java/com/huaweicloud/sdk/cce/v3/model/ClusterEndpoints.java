@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ClusterEndpoints
- */
-public class ClusterEndpoints  {
-
-
+/** ClusterEndpoints */
+public class ClusterEndpoints {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private String url;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
     public ClusterEndpoints withUrl(String url) {
@@ -34,13 +23,9 @@ public class ClusterEndpoints  {
         return this;
     }
 
-    
-
-
-    /**
-     * 集群中 kube-apiserver 的访问地址
-     * @return url
-     */
+    /** 集群中 kube-apiserver 的访问地址
+     * 
+     * @return url */
     public String getUrl() {
         return url;
     }
@@ -49,20 +34,14 @@ public class ClusterEndpoints  {
         this.url = url;
     }
 
-    
-
     public ClusterEndpoints withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 集群访问地址的类型 - Internal：用户子网内访问的地址 - External：公网访问的地址
-     * @return type
-     */
+    /** 集群访问地址的类型 - Internal：用户子网内访问的地址 - External：公网访问的地址
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -70,8 +49,6 @@ public class ClusterEndpoints  {
     public void setType(String type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,14 @@ public class ClusterEndpoints  {
             return false;
         }
         ClusterEndpoints clusterEndpoints = (ClusterEndpoints) o;
-        return Objects.equals(this.url, clusterEndpoints.url) &&
-            Objects.equals(this.type, clusterEndpoints.type);
+        return Objects.equals(this.url, clusterEndpoints.url) && Objects.equals(this.type, clusterEndpoints.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(url, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +76,13 @@ public class ClusterEndpoints  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

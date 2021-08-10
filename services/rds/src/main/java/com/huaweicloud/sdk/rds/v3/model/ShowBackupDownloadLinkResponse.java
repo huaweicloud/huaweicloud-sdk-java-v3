@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.GetBackupDownloadLinkFiles;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowBackupDownloadLinkResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="files")
-    
+    @JsonProperty(value = "files")
+
     private List<GetBackupDownloadLinkFiles> files = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bucket")
-    
+    @JsonProperty(value = "bucket")
+
     private String bucket;
 
     public ShowBackupDownloadLinkResponse withFiles(List<GetBackupDownloadLinkFiles> files) {
@@ -39,9 +27,8 @@ public class ShowBackupDownloadLinkResponse extends SdkResponse {
         return this;
     }
 
-    
     public ShowBackupDownloadLinkResponse addFilesItem(GetBackupDownloadLinkFiles filesItem) {
-        if(this.files == null) {
+        if (this.files == null) {
             this.files = new ArrayList<>();
         }
         this.files.add(filesItem);
@@ -49,17 +36,16 @@ public class ShowBackupDownloadLinkResponse extends SdkResponse {
     }
 
     public ShowBackupDownloadLinkResponse withFiles(Consumer<List<GetBackupDownloadLinkFiles>> filesSetter) {
-        if(this.files == null) {
+        if (this.files == null) {
             this.files = new ArrayList<>();
         }
         filesSetter.accept(this.files);
         return this;
     }
 
-    /**
-     * 备份文件信息。
-     * @return files
-     */
+    /** 备份文件信息。
+     * 
+     * @return files */
     public List<GetBackupDownloadLinkFiles> getFiles() {
         return files;
     }
@@ -68,20 +54,14 @@ public class ShowBackupDownloadLinkResponse extends SdkResponse {
         this.files = files;
     }
 
-    
-
     public ShowBackupDownloadLinkResponse withBucket(String bucket) {
         this.bucket = bucket;
         return this;
     }
 
-    
-
-
-    /**
-     * OBS桶名。
-     * @return bucket
-     */
+    /** OBS桶名。
+     * 
+     * @return bucket */
     public String getBucket() {
         return bucket;
     }
@@ -89,8 +69,6 @@ public class ShowBackupDownloadLinkResponse extends SdkResponse {
     public void setBucket(String bucket) {
         this.bucket = bucket;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ShowBackupDownloadLinkResponse extends SdkResponse {
             return false;
         }
         ShowBackupDownloadLinkResponse showBackupDownloadLinkResponse = (ShowBackupDownloadLinkResponse) o;
-        return Objects.equals(this.files, showBackupDownloadLinkResponse.files) &&
-            Objects.equals(this.bucket, showBackupDownloadLinkResponse.bucket);
+        return Objects.equals(this.files, showBackupDownloadLinkResponse.files)
+            && Objects.equals(this.bucket, showBackupDownloadLinkResponse.bucket);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(files, bucket);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ShowBackupDownloadLinkResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

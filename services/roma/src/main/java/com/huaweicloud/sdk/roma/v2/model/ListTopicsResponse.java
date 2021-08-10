@@ -1,59 +1,40 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.Topic;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListTopicsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="items")
-    
+    @JsonProperty(value = "items")
+
     private List<Topic> items = null;
-    
+
     public ListTopicsResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * 总数
-     * minimum: 1
-     * maximum: 99999
-     * @return total
-     */
+    /** 总数 minimum: 1 maximum: 99999
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -62,22 +43,14 @@ public class ListTopicsResponse extends SdkResponse {
         this.total = total;
     }
 
-    
-
     public ListTopicsResponse withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 本次返回数量
-     * minimum: 1
-     * maximum: 1000
-     * @return size
-     */
+    /** 本次返回数量 minimum: 1 maximum: 1000
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -86,16 +59,13 @@ public class ListTopicsResponse extends SdkResponse {
         this.size = size;
     }
 
-    
-
     public ListTopicsResponse withItems(List<Topic> items) {
         this.items = items;
         return this;
     }
 
-    
     public ListTopicsResponse addItemsItem(Topic itemsItem) {
-        if(this.items == null) {
+        if (this.items == null) {
             this.items = new ArrayList<>();
         }
         this.items.add(itemsItem);
@@ -103,17 +73,16 @@ public class ListTopicsResponse extends SdkResponse {
     }
 
     public ListTopicsResponse withItems(Consumer<List<Topic>> itemsSetter) {
-        if(this.items == null) {
+        if (this.items == null) {
             this.items = new ArrayList<>();
         }
         itemsSetter.accept(this.items);
         return this;
     }
 
-    /**
-     * 主题列表
-     * @return items
-     */
+    /** 主题列表
+     * 
+     * @return items */
     public List<Topic> getItems() {
         return items;
     }
@@ -121,8 +90,6 @@ public class ListTopicsResponse extends SdkResponse {
     public void setItems(List<Topic> items) {
         this.items = items;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -133,14 +100,16 @@ public class ListTopicsResponse extends SdkResponse {
             return false;
         }
         ListTopicsResponse listTopicsResponse = (ListTopicsResponse) o;
-        return Objects.equals(this.total, listTopicsResponse.total) &&
-            Objects.equals(this.size, listTopicsResponse.size) &&
-            Objects.equals(this.items, listTopicsResponse.items);
+        return Objects.equals(this.total, listTopicsResponse.total)
+            && Objects.equals(this.size, listTopicsResponse.size)
+            && Objects.equals(this.items, listTopicsResponse.items);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(total, size, items);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -151,16 +120,13 @@ public class ListTopicsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

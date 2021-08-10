@@ -1,41 +1,29 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.VersionMetadata;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListSecretVersionsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version_metadatas")
-    
+    @JsonProperty(value = "version_metadatas")
+
     private List<VersionMetadata> versionMetadatas = null;
-    
+
     public ListSecretVersionsResponse withVersionMetadatas(List<VersionMetadata> versionMetadatas) {
         this.versionMetadatas = versionMetadatas;
         return this;
     }
 
-    
     public ListSecretVersionsResponse addVersionMetadatasItem(VersionMetadata versionMetadatasItem) {
-        if(this.versionMetadatas == null) {
+        if (this.versionMetadatas == null) {
             this.versionMetadatas = new ArrayList<>();
         }
         this.versionMetadatas.add(versionMetadatasItem);
@@ -43,17 +31,16 @@ public class ListSecretVersionsResponse extends SdkResponse {
     }
 
     public ListSecretVersionsResponse withVersionMetadatas(Consumer<List<VersionMetadata>> versionMetadatasSetter) {
-        if(this.versionMetadatas == null) {
+        if (this.versionMetadatas == null) {
             this.versionMetadatas = new ArrayList<>();
         }
         versionMetadatasSetter.accept(this.versionMetadatas);
         return this;
     }
 
-    /**
-     * version_metadata对象。
-     * @return versionMetadatas
-     */
+    /** version_metadata对象。
+     * 
+     * @return versionMetadatas */
     public List<VersionMetadata> getVersionMetadatas() {
         return versionMetadatas;
     }
@@ -61,8 +48,6 @@ public class ListSecretVersionsResponse extends SdkResponse {
     public void setVersionMetadatas(List<VersionMetadata> versionMetadatas) {
         this.versionMetadatas = versionMetadatas;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -75,10 +60,12 @@ public class ListSecretVersionsResponse extends SdkResponse {
         ListSecretVersionsResponse listSecretVersionsResponse = (ListSecretVersionsResponse) o;
         return Objects.equals(this.versionMetadatas, listSecretVersionsResponse.versionMetadatas);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(versionMetadatas);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -87,16 +74,13 @@ public class ListSecretVersionsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

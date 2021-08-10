@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.ApplicationModify;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ChangeApplicationRequest  {
-
-
+/** Request Object */
+public class ChangeApplicationRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="application_id")
-    
+    @JsonProperty(value = "application_id")
+
     private String applicationId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ApplicationModify body;
 
     public ChangeApplicationRequest withApplicationId(String applicationId) {
@@ -35,13 +24,9 @@ public class ChangeApplicationRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 应用ID。
-     * @return applicationId
-     */
+    /** 应用ID。
+     * 
+     * @return applicationId */
     public String getApplicationId() {
         return applicationId;
     }
@@ -50,27 +35,23 @@ public class ChangeApplicationRequest  {
         this.applicationId = applicationId;
     }
 
-    
-
     public ChangeApplicationRequest withBody(ApplicationModify body) {
         this.body = body;
         return this;
     }
 
     public ChangeApplicationRequest withBody(Consumer<ApplicationModify> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ApplicationModify();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ApplicationModify getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class ChangeApplicationRequest  {
     public void setBody(ApplicationModify body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class ChangeApplicationRequest  {
             return false;
         }
         ChangeApplicationRequest changeApplicationRequest = (ChangeApplicationRequest) o;
-        return Objects.equals(this.applicationId, changeApplicationRequest.applicationId) &&
-            Objects.equals(this.body, changeApplicationRequest.body);
+        return Objects.equals(this.applicationId, changeApplicationRequest.applicationId)
+            && Objects.equals(this.body, changeApplicationRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(applicationId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class ChangeApplicationRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

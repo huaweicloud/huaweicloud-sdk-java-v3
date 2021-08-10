@@ -1,47 +1,31 @@
 package com.huaweicloud.sdk.live.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * LiveDomainModifyReq
- */
-public class LiveDomainModifyReq  {
-
-
+/** LiveDomainModifyReq */
+public class LiveDomainModifyReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
+
     private String domain;
-    /**
-     * 直播域名状态，通过修改此字段，实现域名的启用和停用。注意：域名处于“配置中”状态时，不允对该域名执行启停操作。
-     */
+
+    /** 直播域名状态，通过修改此字段，实现域名的启用和停用。注意：域名处于“配置中”状态时，不允对该域名执行启停操作。 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum ON for value: "on"
-         */
+        /** Enum ON for value: "on" */
         public static final StatusEnum ON = new StatusEnum("on");
-        
-        /**
-         * Enum OFF for value: "off"
-         */
+
+        /** Enum OFF for value: "off" */
         public static final StatusEnum OFF = new StatusEnum("off");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,7 +54,7 @@ public class LiveDomainModifyReq  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -81,7 +65,7 @@ public class LiveDomainModifyReq  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -105,10 +89,9 @@ public class LiveDomainModifyReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
     public LiveDomainModifyReq withDomain(String domain) {
@@ -116,13 +99,9 @@ public class LiveDomainModifyReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 直播域名，不允许修改
-     * @return domain
-     */
+    /** 直播域名，不允许修改
+     * 
+     * @return domain */
     public String getDomain() {
         return domain;
     }
@@ -131,20 +110,14 @@ public class LiveDomainModifyReq  {
         this.domain = domain;
     }
 
-    
-
     public LiveDomainModifyReq withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 直播域名状态，通过修改此字段，实现域名的启用和停用。注意：域名处于“配置中”状态时，不允对该域名执行启停操作。
-     * @return status
-     */
+    /** 直播域名状态，通过修改此字段，实现域名的启用和停用。注意：域名处于“配置中”状态时，不允对该域名执行启停操作。
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -152,8 +125,6 @@ public class LiveDomainModifyReq  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -164,13 +135,15 @@ public class LiveDomainModifyReq  {
             return false;
         }
         LiveDomainModifyReq liveDomainModifyReq = (LiveDomainModifyReq) o;
-        return Objects.equals(this.domain, liveDomainModifyReq.domain) &&
-            Objects.equals(this.status, liveDomainModifyReq.status);
+        return Objects.equals(this.domain, liveDomainModifyReq.domain)
+            && Objects.equals(this.status, liveDomainModifyReq.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domain, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -180,16 +153,13 @@ public class LiveDomainModifyReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

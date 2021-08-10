@@ -1,79 +1,59 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vpc.v2.model.Route;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class Vpc  {
-
-
+public class Vpc {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cidr")
-    
+    @JsonProperty(value = "cidr")
+
     private String cidr;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="routes")
-    
+    @JsonProperty(value = "routes")
+
     private List<Route> routes = null;
-        /**
-     * 功能说明：虚拟私有云的状态 取值范围： - CREATING：创建中 - OK：创建成功
-     */
+
+    /** 功能说明：虚拟私有云的状态 取值范围： - CREATING：创建中 - OK：创建成功 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum CREATING for value: "CREATING"
-         */
+        /** Enum CREATING for value: "CREATING" */
         public static final StatusEnum CREATING = new StatusEnum("CREATING");
-        
-        /**
-         * Enum OK for value: "OK"
-         */
+
+        /** Enum OK for value: "OK" */
         public static final StatusEnum OK = new StatusEnum("OK");
-        
-        /**
-         * Enum ERROR for value: "ERROR"
-         */
+
+        /** Enum ERROR for value: "ERROR" */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -103,7 +83,7 @@ public class Vpc  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -114,7 +94,7 @@ public class Vpc  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -138,16 +118,14 @@ public class Vpc  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public Vpc withId(String id) {
@@ -155,13 +133,9 @@ public class Vpc  {
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：虚拟私有云ID 取值范围：带\"-\"的UUID
-     * @return id
-     */
+    /** 功能说明：虚拟私有云ID 取值范围：带\"-\"的UUID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -170,20 +144,14 @@ public class Vpc  {
         this.id = id;
     }
 
-    
-
     public Vpc withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：虚拟私有云名称 取值范围：0-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点） 约束：如果名称不为空，则同一个租户下的名称不能重复
-     * @return name
-     */
+    /** 功能说明：虚拟私有云名称 取值范围：0-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点） 约束：如果名称不为空，则同一个租户下的名称不能重复
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -192,20 +160,15 @@ public class Vpc  {
         this.name = name;
     }
 
-    
-
     public Vpc withCidr(String cidr) {
         this.cidr = cidr;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：虚拟私有云下可用子网的范围 取值范围： - 10.0.0.0/8~10.255.255.240/28 - 172.16.0.0/12 ~ 172.31.255.240/28 - 192.168.0.0/16 ~ 192.168.255.240/28 不指定cidr时，默认值为空 约束：必须是ipv4 cidr格式，例如:192.168.0.0/16
-     * @return cidr
-     */
+    /** 功能说明：虚拟私有云下可用子网的范围 取值范围： - 10.0.0.0/8~10.255.255.240/28 - 172.16.0.0/12 ~ 172.31.255.240/28 - 192.168.0.0/16 ~
+     * 192.168.255.240/28 不指定cidr时，默认值为空 约束：必须是ipv4 cidr格式，例如:192.168.0.0/16
+     * 
+     * @return cidr */
     public String getCidr() {
         return cidr;
     }
@@ -214,20 +177,14 @@ public class Vpc  {
         this.cidr = cidr;
     }
 
-    
-
     public Vpc withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：虚拟私有云的描述 取值范围：0-255个字符，不能包含“<”和“>”
-     * @return description
-     */
+    /** 功能说明：虚拟私有云的描述 取值范围：0-255个字符，不能包含“<”和“>”
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -236,16 +193,13 @@ public class Vpc  {
         this.description = description;
     }
 
-    
-
     public Vpc withRoutes(List<Route> routes) {
         this.routes = routes;
         return this;
     }
 
-    
     public Vpc addRoutesItem(Route routesItem) {
-        if(this.routes == null) {
+        if (this.routes == null) {
             this.routes = new ArrayList<>();
         }
         this.routes.add(routesItem);
@@ -253,17 +207,16 @@ public class Vpc  {
     }
 
     public Vpc withRoutes(Consumer<List<Route>> routesSetter) {
-        if(this.routes == null) {
+        if (this.routes == null) {
             this.routes = new ArrayList<>();
         }
         routesSetter.accept(this.routes);
         return this;
     }
 
-    /**
-     * 功能说明：路由信息列表，详情参见route对象
-     * @return routes
-     */
+    /** 功能说明：路由信息列表，详情参见route对象
+     * 
+     * @return routes */
     public List<Route> getRoutes() {
         return routes;
     }
@@ -272,20 +225,14 @@ public class Vpc  {
         this.routes = routes;
     }
 
-    
-
     public Vpc withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：虚拟私有云的状态 取值范围： - CREATING：创建中 - OK：创建成功
-     * @return status
-     */
+    /** 功能说明：虚拟私有云的状态 取值范围： - CREATING：创建中 - OK：创建成功
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -294,20 +241,14 @@ public class Vpc  {
         this.status = status;
     }
 
-    
-
     public Vpc withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：企业项目ID。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。
-     * @return enterpriseProjectId
-     */
+    /** 功能说明：企业项目ID。 取值范围：最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -315,8 +256,6 @@ public class Vpc  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -327,18 +266,17 @@ public class Vpc  {
             return false;
         }
         Vpc vpc = (Vpc) o;
-        return Objects.equals(this.id, vpc.id) &&
-            Objects.equals(this.name, vpc.name) &&
-            Objects.equals(this.cidr, vpc.cidr) &&
-            Objects.equals(this.description, vpc.description) &&
-            Objects.equals(this.routes, vpc.routes) &&
-            Objects.equals(this.status, vpc.status) &&
-            Objects.equals(this.enterpriseProjectId, vpc.enterpriseProjectId);
+        return Objects.equals(this.id, vpc.id) && Objects.equals(this.name, vpc.name)
+            && Objects.equals(this.cidr, vpc.cidr) && Objects.equals(this.description, vpc.description)
+            && Objects.equals(this.routes, vpc.routes) && Objects.equals(this.status, vpc.status)
+            && Objects.equals(this.enterpriseProjectId, vpc.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, cidr, description, routes, status, enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -353,16 +291,13 @@ public class Vpc  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

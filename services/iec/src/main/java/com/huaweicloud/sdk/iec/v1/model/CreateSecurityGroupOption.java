@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 创建安全组参数。
- */
-public class CreateSecurityGroupOption  {
-
-
+/** 创建安全组参数。 */
+public class CreateSecurityGroupOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public CreateSecurityGroupOption withName(String name) {
@@ -34,13 +23,9 @@ public class CreateSecurityGroupOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组的名称。
-     * @return name
-     */
+    /** 安全组的名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -49,20 +34,14 @@ public class CreateSecurityGroupOption  {
         this.name = name;
     }
 
-    
-
     public CreateSecurityGroupOption withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组的描述。非必填项，默认值为空。
-     * @return description
-     */
+    /** 安全组的描述。非必填项，默认值为空。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -70,8 +49,6 @@ public class CreateSecurityGroupOption  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class CreateSecurityGroupOption  {
             return false;
         }
         CreateSecurityGroupOption createSecurityGroupOption = (CreateSecurityGroupOption) o;
-        return Objects.equals(this.name, createSecurityGroupOption.name) &&
-            Objects.equals(this.description, createSecurityGroupOption.description);
+        return Objects.equals(this.name, createSecurityGroupOption.name)
+            && Objects.equals(this.description, createSecurityGroupOption.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class CreateSecurityGroupOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

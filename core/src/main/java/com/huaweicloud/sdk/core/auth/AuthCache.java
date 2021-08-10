@@ -26,31 +26,24 @@ import com.huaweicloud.sdk.core.utils.StringUtils;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public class AuthCache {
+
     private static Map<String, String> authMap = new ConcurrentHashMap<>();
 
-    /**
-     * @param akWithName use ak and regionId as key of project, use ak as key of domain
-     * @return find value with akWithName
-     */
+    /** @param akWithName use ak and regionId as key of project, use ak as key of domain
+     * @return find value with akWithName */
     public static String getAuth(String akWithName) {
         return StringUtils.isEmpty(akWithName) ? null : authMap.get(akWithName);
     }
 
-    /**
-     * @param akWithName use ak and regionId as key of project, use ak as key of domain
-     * @param id projectId or domainId of the account
-     */
+    /** @param akWithName use ak and regionId as key of project, use ak as key of domain
+     * @param id projectId or domainId of the account */
     public static void putAuth(String akWithName, String id) {
         authMap.put(akWithName, id);
     }
 
-    /**
-     * @param akWithName use ak and regionId as key of project, use ak as key of domain
-     */
+    /** @param akWithName use ak and regionId as key of project, use ak as key of domain */
     public static void removeAuth(String akWithName) {
         authMap.remove(akWithName);
     }

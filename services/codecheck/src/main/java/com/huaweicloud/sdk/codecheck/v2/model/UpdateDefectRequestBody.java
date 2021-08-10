@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.codecheck.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * UpdateDefectRequestBody
- */
-public class UpdateDefectRequestBody  {
-
-
+/** UpdateDefectRequestBody */
+public class UpdateDefectRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="defect_id")
-    
+    @JsonProperty(value = "defect_id")
+
     private String defectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="defect_status")
-    
+    @JsonProperty(value = "defect_status")
+
     private String defectStatus;
 
     public UpdateDefectRequestBody withDefectId(String defectId) {
@@ -34,13 +23,9 @@ public class UpdateDefectRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 问题id,多个时英文逗号分隔
-     * @return defectId
-     */
+    /** 问题id,多个时英文逗号分隔
+     * 
+     * @return defectId */
     public String getDefectId() {
         return defectId;
     }
@@ -49,20 +34,14 @@ public class UpdateDefectRequestBody  {
         this.defectId = defectId;
     }
 
-    
-
     public UpdateDefectRequestBody withDefectStatus(String defectStatus) {
         this.defectStatus = defectStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态2：已忽略 1：已解决 0：未解决
-     * @return defectStatus
-     */
+    /** 状态2：已忽略 1：已解决 0：未解决
+     * 
+     * @return defectStatus */
     public String getDefectStatus() {
         return defectStatus;
     }
@@ -70,8 +49,6 @@ public class UpdateDefectRequestBody  {
     public void setDefectStatus(String defectStatus) {
         this.defectStatus = defectStatus;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class UpdateDefectRequestBody  {
             return false;
         }
         UpdateDefectRequestBody updateDefectRequestBody = (UpdateDefectRequestBody) o;
-        return Objects.equals(this.defectId, updateDefectRequestBody.defectId) &&
-            Objects.equals(this.defectStatus, updateDefectRequestBody.defectStatus);
+        return Objects.equals(this.defectId, updateDefectRequestBody.defectId)
+            && Objects.equals(this.defectStatus, updateDefectRequestBody.defectStatus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(defectId, defectStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class UpdateDefectRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

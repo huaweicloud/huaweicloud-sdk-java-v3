@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iec.v1.model.UpdateVpcRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateVpcRequest  {
-
-
+/** Request Object */
+public class UpdateVpcRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateVpcRequestBody body;
 
     public UpdateVpcRequest withVpcId(String vpcId) {
@@ -35,13 +24,9 @@ public class UpdateVpcRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟私有云ID。
-     * @return vpcId
-     */
+    /** 虚拟私有云ID。
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -50,27 +35,23 @@ public class UpdateVpcRequest  {
         this.vpcId = vpcId;
     }
 
-    
-
     public UpdateVpcRequest withBody(UpdateVpcRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdateVpcRequest withBody(Consumer<UpdateVpcRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateVpcRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateVpcRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdateVpcRequest  {
     public void setBody(UpdateVpcRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,14 @@ public class UpdateVpcRequest  {
             return false;
         }
         UpdateVpcRequest updateVpcRequest = (UpdateVpcRequest) o;
-        return Objects.equals(this.vpcId, updateVpcRequest.vpcId) &&
-            Objects.equals(this.body, updateVpcRequest.body);
+        return Objects.equals(this.vpcId, updateVpcRequest.vpcId) && Objects.equals(this.body, updateVpcRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(vpcId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +86,13 @@ public class UpdateVpcRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 需要提取音频的参数信息。
- */
-public class Parameter  {
-
-
+/** 需要提取音频的参数信息。 */
+public class Parameter {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="format")
-    
+    @JsonProperty(value = "format")
+
     private String format;
 
     public Parameter withFormat(String format) {
@@ -28,13 +18,9 @@ public class Parameter  {
         return this;
     }
 
-    
-
-
-    /**
-     * 封装格式。  取值如下： - MP3 - AAC
-     * @return format
-     */
+    /** 封装格式。 取值如下： - MP3 - AAC
+     * 
+     * @return format */
     public String getFormat() {
         return format;
     }
@@ -42,8 +28,6 @@ public class Parameter  {
     public void setFormat(String format) {
         this.format = format;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class Parameter  {
         Parameter parameter = (Parameter) o;
         return Objects.equals(this.format, parameter.format);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(format);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class Parameter  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

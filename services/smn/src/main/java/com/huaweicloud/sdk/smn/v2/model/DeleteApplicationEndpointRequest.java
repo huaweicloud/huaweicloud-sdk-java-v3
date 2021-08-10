@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.smn.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteApplicationEndpointRequest  {
-
-
+/** Request Object */
+public class DeleteApplicationEndpointRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endpoint_urn")
-    
+    @JsonProperty(value = "endpoint_urn")
+
     private String endpointUrn;
 
     public DeleteApplicationEndpointRequest withEndpointUrn(String endpointUrn) {
@@ -28,13 +18,9 @@ public class DeleteApplicationEndpointRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * Endpoint的唯一资源标识，可通过[查询Application的Endpoint列表](https://support.huaweicloud.com/api-smn/smn_api_58004.html)获取该标识。
-     * @return endpointUrn
-     */
+    /** Endpoint的唯一资源标识，可通过[查询Application的Endpoint列表](https://support.huaweicloud.com/api-smn/smn_api_58004.html)获取该标识。
+     * 
+     * @return endpointUrn */
     public String getEndpointUrn() {
         return endpointUrn;
     }
@@ -42,8 +28,6 @@ public class DeleteApplicationEndpointRequest  {
     public void setEndpointUrn(String endpointUrn) {
         this.endpointUrn = endpointUrn;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class DeleteApplicationEndpointRequest  {
         DeleteApplicationEndpointRequest deleteApplicationEndpointRequest = (DeleteApplicationEndpointRequest) o;
         return Objects.equals(this.endpointUrn, deleteApplicationEndpointRequest.endpointUrn);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(endpointUrn);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class DeleteApplicationEndpointRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

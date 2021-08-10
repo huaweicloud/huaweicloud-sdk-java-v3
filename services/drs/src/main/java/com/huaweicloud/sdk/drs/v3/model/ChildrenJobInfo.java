@@ -1,66 +1,39 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 子任务信息体
- */
-public class ChildrenJobInfo  {
-
-
+/** 子任务信息体 */
+public class ChildrenJobInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="billing_tag")
-    
+    @JsonProperty(value = "billing_tag")
+
     private String billingTag;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private String createTime;
-    /**
-     * 复制场景
-     */
+
+    /** 复制场景 */
     public static final class DbUseTypeEnum {
 
-        
-        /**
-         * Enum MIGRATION_ for value: "migration:实时迁移"
-         */
+        /** Enum MIGRATION_ for value: "migration:实时迁移" */
         public static final DbUseTypeEnum MIGRATION_ = new DbUseTypeEnum("migration:实时迁移");
-        
-        /**
-         * Enum SYNC_ for value: "sync:实时同步"
-         */
+
+        /** Enum SYNC_ for value: "sync:实时同步" */
         public static final DbUseTypeEnum SYNC_ = new DbUseTypeEnum("sync:实时同步");
-        
-        /**
-         * Enum CLOUDDATAGUARD_ for value: "cloudDataGuard:实时灾备"
-         */
+
+        /** Enum CLOUDDATAGUARD_ for value: "cloudDataGuard:实时灾备" */
         public static final DbUseTypeEnum CLOUDDATAGUARD_ = new DbUseTypeEnum("cloudDataGuard:实时灾备");
-        
 
         private static final Map<String, DbUseTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -90,7 +63,7 @@ public class ChildrenJobInfo  {
 
         @JsonCreator
         public static DbUseTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DbUseTypeEnum result = STATIC_FIELDS.get(value);
@@ -101,7 +74,7 @@ public class ChildrenJobInfo  {
         }
 
         public static DbUseTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DbUseTypeEnum result = STATIC_FIELDS.get(value);
@@ -125,48 +98,35 @@ public class ChildrenJobInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_use_type")
-    
+    @JsonProperty(value = "db_use_type")
+
     private DbUseTypeEnum dbUseType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
-    /**
-     * 引擎类型
-     */
+
+    /** 引擎类型 */
     public static final class EngineTypeEnum {
 
-        
-        /**
-         * Enum CLOUDDATAGUARD_CASSANDRA for value: "cloudDataGuard-cassandra"
-         */
+        /** Enum CLOUDDATAGUARD_CASSANDRA for value: "cloudDataGuard-cassandra" */
         public static final EngineTypeEnum CLOUDDATAGUARD_CASSANDRA = new EngineTypeEnum("cloudDataGuard-cassandra");
-        
-        /**
-         * Enum CLOUDDATAGUARD_DDM for value: "cloudDataGuard-ddm"
-         */
+
+        /** Enum CLOUDDATAGUARD_DDM for value: "cloudDataGuard-ddm" */
         public static final EngineTypeEnum CLOUDDATAGUARD_DDM = new EngineTypeEnum("cloudDataGuard-ddm");
-        
-        /**
-         * Enum CLOUDDATAGUARD_TAURUS_TO_MYSQL for value: "cloudDataGuard-taurus-to-mysql"
-         */
-        public static final EngineTypeEnum CLOUDDATAGUARD_TAURUS_TO_MYSQL = new EngineTypeEnum("cloudDataGuard-taurus-to-mysql");
-        
-        /**
-         * Enum CLOUDDATAGUARD_MYSQL for value: "cloudDataGuard-mysql"
-         */
+
+        /** Enum CLOUDDATAGUARD_TAURUS_TO_MYSQL for value: "cloudDataGuard-taurus-to-mysql" */
+        public static final EngineTypeEnum CLOUDDATAGUARD_TAURUS_TO_MYSQL =
+            new EngineTypeEnum("cloudDataGuard-taurus-to-mysql");
+
+        /** Enum CLOUDDATAGUARD_MYSQL for value: "cloudDataGuard-mysql" */
         public static final EngineTypeEnum CLOUDDATAGUARD_MYSQL = new EngineTypeEnum("cloudDataGuard-mysql");
-        
-        /**
-         * Enum CLOUDDATAGUARD_MYSQL_TO_TAURUS for value: "cloudDataGuard-mysql-to-taurus"
-         */
-        public static final EngineTypeEnum CLOUDDATAGUARD_MYSQL_TO_TAURUS = new EngineTypeEnum("cloudDataGuard-mysql-to-taurus");
-        
+
+        /** Enum CLOUDDATAGUARD_MYSQL_TO_TAURUS for value: "cloudDataGuard-mysql-to-taurus" */
+        public static final EngineTypeEnum CLOUDDATAGUARD_MYSQL_TO_TAURUS =
+            new EngineTypeEnum("cloudDataGuard-mysql-to-taurus");
 
         private static final Map<String, EngineTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -198,7 +158,7 @@ public class ChildrenJobInfo  {
 
         @JsonCreator
         public static EngineTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             EngineTypeEnum result = STATIC_FIELDS.get(value);
@@ -209,7 +169,7 @@ public class ChildrenJobInfo  {
         }
 
         public static EngineTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             EngineTypeEnum result = STATIC_FIELDS.get(value);
@@ -233,44 +193,32 @@ public class ChildrenJobInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engine_type")
-    
+    @JsonProperty(value = "engine_type")
+
     private EngineTypeEnum engineType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_msg")
-    
+    @JsonProperty(value = "error_msg")
+
     private String errorMsg;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
-    /**
-     * 迁移方向
-     */
+
+    /** 迁移方向 */
     public static final class JobDirectionEnum {
 
-        
-        /**
-         * Enum UP for value: "up"
-         */
+        /** Enum UP for value: "up" */
         public static final JobDirectionEnum UP = new JobDirectionEnum("up");
-        
-        /**
-         * Enum DOWN for value: "down"
-         */
+
+        /** Enum DOWN for value: "down" */
         public static final JobDirectionEnum DOWN = new JobDirectionEnum("down");
-        
-        /**
-         * Enum NO_DBS for value: "no-dbs"
-         */
+
+        /** Enum NO_DBS for value: "no-dbs" */
         public static final JobDirectionEnum NO_DBS = new JobDirectionEnum("no-dbs");
-        
 
         private static final Map<String, JobDirectionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -300,7 +248,7 @@ public class ChildrenJobInfo  {
 
         @JsonCreator
         public static JobDirectionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             JobDirectionEnum result = STATIC_FIELDS.get(value);
@@ -311,7 +259,7 @@ public class ChildrenJobInfo  {
         }
 
         public static JobDirectionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             JobDirectionEnum result = STATIC_FIELDS.get(value);
@@ -335,38 +283,27 @@ public class ChildrenJobInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_direction")
-    
+    @JsonProperty(value = "job_direction")
+
     private JobDirectionEnum jobDirection;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 网络类型
-     */
+
+    /** 网络类型 */
     public static final class NetTypeEnum {
 
-        
-        /**
-         * Enum VPC for value: "vpc"
-         */
+        /** Enum VPC for value: "vpc" */
         public static final NetTypeEnum VPC = new NetTypeEnum("vpc");
-        
-        /**
-         * Enum VPN for value: "vpn"
-         */
+
+        /** Enum VPN for value: "vpn" */
         public static final NetTypeEnum VPN = new NetTypeEnum("vpn");
-        
-        /**
-         * Enum EIP for value: "eip"
-         */
+
+        /** Enum EIP for value: "eip" */
         public static final NetTypeEnum EIP = new NetTypeEnum("eip");
-        
 
         private static final Map<String, NetTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -396,7 +333,7 @@ public class ChildrenJobInfo  {
 
         @JsonCreator
         public static NetTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             NetTypeEnum result = STATIC_FIELDS.get(value);
@@ -407,7 +344,7 @@ public class ChildrenJobInfo  {
         }
 
         public static NetTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             NetTypeEnum result = STATIC_FIELDS.get(value);
@@ -431,44 +368,32 @@ public class ChildrenJobInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="net_type")
-    
+    @JsonProperty(value = "net_type")
+
     private NetTypeEnum netType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_newFramework")
-    
+    @JsonProperty(value = "node_newFramework")
+
     private String nodeNewFramework;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
-    /**
-     * 迁移模式
-     */
+
+    /** 迁移模式 */
     public static final class TaskTypeEnum {
 
-        
-        /**
-         * Enum FULL_TRANS_ for value: "FULL_TRANS 全量"
-         */
+        /** Enum FULL_TRANS_ for value: "FULL_TRANS 全量" */
         public static final TaskTypeEnum FULL_TRANS_ = new TaskTypeEnum("FULL_TRANS 全量");
-        
-        /**
-         * Enum FULL_INCR_TRANS_ for value: "FULL_INCR_TRANS 全量+增量"
-         */
+
+        /** Enum FULL_INCR_TRANS_ for value: "FULL_INCR_TRANS 全量+增量" */
         public static final TaskTypeEnum FULL_INCR_TRANS_ = new TaskTypeEnum("FULL_INCR_TRANS 全量+增量");
-        
-        /**
-         * Enum INCR_TRANS_ for value: "INCR_TRANS 增量"
-         */
+
+        /** Enum INCR_TRANS_ for value: "INCR_TRANS 增量" */
         public static final TaskTypeEnum INCR_TRANS_ = new TaskTypeEnum("INCR_TRANS 增量");
-        
 
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -498,7 +423,7 @@ public class ChildrenJobInfo  {
 
         @JsonCreator
         public static TaskTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TaskTypeEnum result = STATIC_FIELDS.get(value);
@@ -509,7 +434,7 @@ public class ChildrenJobInfo  {
         }
 
         public static TaskTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TaskTypeEnum result = STATIC_FIELDS.get(value);
@@ -533,10 +458,9 @@ public class ChildrenJobInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_type")
-    
+    @JsonProperty(value = "task_type")
+
     private TaskTypeEnum taskType;
 
     public ChildrenJobInfo withBillingTag(String billingTag) {
@@ -544,13 +468,9 @@ public class ChildrenJobInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 计费字段
-     * @return billingTag
-     */
+    /** 计费字段
+     * 
+     * @return billingTag */
     public String getBillingTag() {
         return billingTag;
     }
@@ -559,20 +479,14 @@ public class ChildrenJobInfo  {
         this.billingTag = billingTag;
     }
 
-    
-
     public ChildrenJobInfo withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务创建时间
-     * @return createTime
-     */
+    /** 任务创建时间
+     * 
+     * @return createTime */
     public String getCreateTime() {
         return createTime;
     }
@@ -581,20 +495,14 @@ public class ChildrenJobInfo  {
         this.createTime = createTime;
     }
 
-    
-
     public ChildrenJobInfo withDbUseType(DbUseTypeEnum dbUseType) {
         this.dbUseType = dbUseType;
         return this;
     }
 
-    
-
-
-    /**
-     * 复制场景
-     * @return dbUseType
-     */
+    /** 复制场景
+     * 
+     * @return dbUseType */
     public DbUseTypeEnum getDbUseType() {
         return dbUseType;
     }
@@ -603,20 +511,14 @@ public class ChildrenJobInfo  {
         this.dbUseType = dbUseType;
     }
 
-    
-
     public ChildrenJobInfo withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务描述
-     * @return description
-     */
+    /** 任务描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -625,20 +527,14 @@ public class ChildrenJobInfo  {
         this.description = description;
     }
 
-    
-
     public ChildrenJobInfo withEngineType(EngineTypeEnum engineType) {
         this.engineType = engineType;
         return this;
     }
 
-    
-
-
-    /**
-     * 引擎类型
-     * @return engineType
-     */
+    /** 引擎类型
+     * 
+     * @return engineType */
     public EngineTypeEnum getEngineType() {
         return engineType;
     }
@@ -647,20 +543,14 @@ public class ChildrenJobInfo  {
         this.engineType = engineType;
     }
 
-    
-
     public ChildrenJobInfo withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务失败原因
-     * @return errorMsg
-     */
+    /** 任务失败原因
+     * 
+     * @return errorMsg */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -669,20 +559,14 @@ public class ChildrenJobInfo  {
         this.errorMsg = errorMsg;
     }
 
-    
-
     public ChildrenJobInfo withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务id
-     * @return id
-     */
+    /** 任务id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -691,20 +575,14 @@ public class ChildrenJobInfo  {
         this.id = id;
     }
 
-    
-
     public ChildrenJobInfo withJobDirection(JobDirectionEnum jobDirection) {
         this.jobDirection = jobDirection;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移方向
-     * @return jobDirection
-     */
+    /** 迁移方向
+     * 
+     * @return jobDirection */
     public JobDirectionEnum getJobDirection() {
         return jobDirection;
     }
@@ -713,20 +591,14 @@ public class ChildrenJobInfo  {
         this.jobDirection = jobDirection;
     }
 
-    
-
     public ChildrenJobInfo withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务名称
-     * @return name
-     */
+    /** 任务名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -735,20 +607,14 @@ public class ChildrenJobInfo  {
         this.name = name;
     }
 
-    
-
     public ChildrenJobInfo withNetType(NetTypeEnum netType) {
         this.netType = netType;
         return this;
     }
 
-    
-
-
-    /**
-     * 网络类型
-     * @return netType
-     */
+    /** 网络类型
+     * 
+     * @return netType */
     public NetTypeEnum getNetType() {
         return netType;
     }
@@ -757,20 +623,14 @@ public class ChildrenJobInfo  {
         this.netType = netType;
     }
 
-    
-
     public ChildrenJobInfo withNodeNewFramework(String nodeNewFramework) {
         this.nodeNewFramework = nodeNewFramework;
         return this;
     }
 
-    
-
-
-    /**
-     * 新框架
-     * @return nodeNewFramework
-     */
+    /** 新框架
+     * 
+     * @return nodeNewFramework */
     public String getNodeNewFramework() {
         return nodeNewFramework;
     }
@@ -779,20 +639,14 @@ public class ChildrenJobInfo  {
         this.nodeNewFramework = nodeNewFramework;
     }
 
-    
-
     public ChildrenJobInfo withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务状态
-     * @return status
-     */
+    /** 任务状态
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -801,20 +655,14 @@ public class ChildrenJobInfo  {
         this.status = status;
     }
 
-    
-
     public ChildrenJobInfo withTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移模式
-     * @return taskType
-     */
+    /** 迁移模式
+     * 
+     * @return taskType */
     public TaskTypeEnum getTaskType() {
         return taskType;
     }
@@ -822,8 +670,6 @@ public class ChildrenJobInfo  {
     public void setTaskType(TaskTypeEnum taskType) {
         this.taskType = taskType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -834,24 +680,36 @@ public class ChildrenJobInfo  {
             return false;
         }
         ChildrenJobInfo childrenJobInfo = (ChildrenJobInfo) o;
-        return Objects.equals(this.billingTag, childrenJobInfo.billingTag) &&
-            Objects.equals(this.createTime, childrenJobInfo.createTime) &&
-            Objects.equals(this.dbUseType, childrenJobInfo.dbUseType) &&
-            Objects.equals(this.description, childrenJobInfo.description) &&
-            Objects.equals(this.engineType, childrenJobInfo.engineType) &&
-            Objects.equals(this.errorMsg, childrenJobInfo.errorMsg) &&
-            Objects.equals(this.id, childrenJobInfo.id) &&
-            Objects.equals(this.jobDirection, childrenJobInfo.jobDirection) &&
-            Objects.equals(this.name, childrenJobInfo.name) &&
-            Objects.equals(this.netType, childrenJobInfo.netType) &&
-            Objects.equals(this.nodeNewFramework, childrenJobInfo.nodeNewFramework) &&
-            Objects.equals(this.status, childrenJobInfo.status) &&
-            Objects.equals(this.taskType, childrenJobInfo.taskType);
+        return Objects.equals(this.billingTag, childrenJobInfo.billingTag)
+            && Objects.equals(this.createTime, childrenJobInfo.createTime)
+            && Objects.equals(this.dbUseType, childrenJobInfo.dbUseType)
+            && Objects.equals(this.description, childrenJobInfo.description)
+            && Objects.equals(this.engineType, childrenJobInfo.engineType)
+            && Objects.equals(this.errorMsg, childrenJobInfo.errorMsg) && Objects.equals(this.id, childrenJobInfo.id)
+            && Objects.equals(this.jobDirection, childrenJobInfo.jobDirection)
+            && Objects.equals(this.name, childrenJobInfo.name) && Objects.equals(this.netType, childrenJobInfo.netType)
+            && Objects.equals(this.nodeNewFramework, childrenJobInfo.nodeNewFramework)
+            && Objects.equals(this.status, childrenJobInfo.status)
+            && Objects.equals(this.taskType, childrenJobInfo.taskType);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(billingTag, createTime, dbUseType, description, engineType, errorMsg, id, jobDirection, name, netType, nodeNewFramework, status, taskType);
+        return Objects.hash(billingTag,
+            createTime,
+            dbUseType,
+            description,
+            engineType,
+            errorMsg,
+            id,
+            jobDirection,
+            name,
+            netType,
+            nodeNewFramework,
+            status,
+            taskType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -872,16 +730,13 @@ public class ChildrenJobInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

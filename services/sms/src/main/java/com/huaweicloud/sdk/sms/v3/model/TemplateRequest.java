@@ -1,91 +1,62 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.Nics;
-import com.huaweicloud.sdk.sms.v3.model.PublicIp;
-import com.huaweicloud.sdk.sms.v3.model.SgObject;
-import com.huaweicloud.sdk.sms.v3.model.TemplateDisk;
-import com.huaweicloud.sdk.sms.v3.model.VpcObject;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 自动创建虚拟机模板
- */
-public class TemplateRequest  {
-
-
+/** 自动创建虚拟机模板 */
+public class TemplateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_template")
-    
+    @JsonProperty(value = "is_template")
+
     private Boolean isTemplate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="projectid")
-    
+    @JsonProperty(value = "projectid")
+
     private String projectid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target_server_name")
-    
+    @JsonProperty(value = "target_server_name")
+
     private String targetServerName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="availability_zone")
-    
+    @JsonProperty(value = "availability_zone")
+
     private String availabilityZone;
-    /**
-     * 磁盘类型
-     */
+
+    /** 磁盘类型 */
     public static final class VolumetypeEnum {
 
-        
-        /**
-         * Enum SAS_I_O for value: "SAS：高I/O"
-         */
+        /** Enum SAS_I_O for value: "SAS：高I/O" */
         public static final VolumetypeEnum SAS_I_O = new VolumetypeEnum("SAS：高I/O");
-        
-        /**
-         * Enum SSD_I_O for value: "SSD：超高I/O"
-         */
+
+        /** Enum SSD_I_O for value: "SSD：超高I/O" */
         public static final VolumetypeEnum SSD_I_O = new VolumetypeEnum("SSD：超高I/O");
-        
-        /**
-         * Enum SATA_I_O for value: "SATA：普通I/O"
-         */
+
+        /** Enum SATA_I_O for value: "SATA：普通I/O" */
         public static final VolumetypeEnum SATA_I_O = new VolumetypeEnum("SATA：普通I/O");
-        
 
         private static final Map<String, VolumetypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -115,7 +86,7 @@ public class TemplateRequest  {
 
         @JsonCreator
         public static VolumetypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             VolumetypeEnum result = STATIC_FIELDS.get(value);
@@ -126,7 +97,7 @@ public class TemplateRequest  {
         }
 
         public static VolumetypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             VolumetypeEnum result = STATIC_FIELDS.get(value);
@@ -150,68 +121,52 @@ public class TemplateRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volumetype")
-    
+    @JsonProperty(value = "volumetype")
+
     private VolumetypeEnum volumetype;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flavor")
-    
+    @JsonProperty(value = "flavor")
+
     private String flavor;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc")
-    
+    @JsonProperty(value = "vpc")
+
     private VpcObject vpc;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nics")
-    
+    @JsonProperty(value = "nics")
+
     private List<Nics> nics = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_groups")
-    
+    @JsonProperty(value = "security_groups")
+
     private List<SgObject> securityGroups = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publicip")
-    
+    @JsonProperty(value = "publicip")
+
     private PublicIp publicip;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disk")
-    
+    @JsonProperty(value = "disk")
+
     private List<TemplateDisk> disk = null;
-        /**
-     * 数据盘磁盘类型
-     */
+
+    /** 数据盘磁盘类型 */
     public static final class DataVolumeTypeEnum {
 
-        
-        /**
-         * Enum SAS_I_O for value: "SAS：高I/O"
-         */
+        /** Enum SAS_I_O for value: "SAS：高I/O" */
         public static final DataVolumeTypeEnum SAS_I_O = new DataVolumeTypeEnum("SAS：高I/O");
-        
-        /**
-         * Enum SSD_I_O for value: "SSD：超高I/O"
-         */
+
+        /** Enum SSD_I_O for value: "SSD：超高I/O" */
         public static final DataVolumeTypeEnum SSD_I_O = new DataVolumeTypeEnum("SSD：超高I/O");
-        
-        /**
-         * Enum SATA_I_O for value: "SATA：普通I/O"
-         */
+
+        /** Enum SATA_I_O for value: "SATA：普通I/O" */
         public static final DataVolumeTypeEnum SATA_I_O = new DataVolumeTypeEnum("SATA：普通I/O");
-        
 
         private static final Map<String, DataVolumeTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -241,7 +196,7 @@ public class TemplateRequest  {
 
         @JsonCreator
         public static DataVolumeTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DataVolumeTypeEnum result = STATIC_FIELDS.get(value);
@@ -252,7 +207,7 @@ public class TemplateRequest  {
         }
 
         public static DataVolumeTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DataVolumeTypeEnum result = STATIC_FIELDS.get(value);
@@ -276,16 +231,14 @@ public class TemplateRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_volume_type")
-    
+    @JsonProperty(value = "data_volume_type")
+
     private DataVolumeTypeEnum dataVolumeType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target_password")
-    
+    @JsonProperty(value = "target_password")
+
     private String targetPassword;
 
     public TemplateRequest withName(String name) {
@@ -293,13 +246,9 @@ public class TemplateRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 模板名称
-     * @return name
-     */
+    /** 模板名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -308,20 +257,14 @@ public class TemplateRequest  {
         this.name = name;
     }
 
-    
-
     public TemplateRequest withIsTemplate(Boolean isTemplate) {
         this.isTemplate = isTemplate;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否是通用模板，如果模板关联一个任务，则不算通用模板
-     * @return isTemplate
-     */
+    /** 是否是通用模板，如果模板关联一个任务，则不算通用模板
+     * 
+     * @return isTemplate */
     public Boolean getIsTemplate() {
         return isTemplate;
     }
@@ -330,20 +273,14 @@ public class TemplateRequest  {
         this.isTemplate = isTemplate;
     }
 
-    
-
     public TemplateRequest withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * Region信息
-     * @return region
-     */
+    /** Region信息
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -352,20 +289,14 @@ public class TemplateRequest  {
         this.region = region;
     }
 
-    
-
     public TemplateRequest withProjectid(String projectid) {
         this.projectid = projectid;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目ID
-     * @return projectid
-     */
+    /** 项目ID
+     * 
+     * @return projectid */
     public String getProjectid() {
         return projectid;
     }
@@ -374,20 +305,14 @@ public class TemplateRequest  {
         this.projectid = projectid;
     }
 
-    
-
     public TemplateRequest withTargetServerName(String targetServerName) {
         this.targetServerName = targetServerName;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标端服务器名称
-     * @return targetServerName
-     */
+    /** 目标端服务器名称
+     * 
+     * @return targetServerName */
     public String getTargetServerName() {
         return targetServerName;
     }
@@ -396,20 +321,14 @@ public class TemplateRequest  {
         this.targetServerName = targetServerName;
     }
 
-    
-
     public TemplateRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
     }
 
-    
-
-
-    /**
-     * 可用区
-     * @return availabilityZone
-     */
+    /** 可用区
+     * 
+     * @return availabilityZone */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -418,20 +337,14 @@ public class TemplateRequest  {
         this.availabilityZone = availabilityZone;
     }
 
-    
-
     public TemplateRequest withVolumetype(VolumetypeEnum volumetype) {
         this.volumetype = volumetype;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘类型
-     * @return volumetype
-     */
+    /** 磁盘类型
+     * 
+     * @return volumetype */
     public VolumetypeEnum getVolumetype() {
         return volumetype;
     }
@@ -440,20 +353,14 @@ public class TemplateRequest  {
         this.volumetype = volumetype;
     }
 
-    
-
     public TemplateRequest withFlavor(String flavor) {
         this.flavor = flavor;
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟机规格
-     * @return flavor
-     */
+    /** 虚拟机规格
+     * 
+     * @return flavor */
     public String getFlavor() {
         return flavor;
     }
@@ -462,27 +369,23 @@ public class TemplateRequest  {
         this.flavor = flavor;
     }
 
-    
-
     public TemplateRequest withVpc(VpcObject vpc) {
         this.vpc = vpc;
         return this;
     }
 
     public TemplateRequest withVpc(Consumer<VpcObject> vpcSetter) {
-        if(this.vpc == null ){
+        if (this.vpc == null) {
             this.vpc = new VpcObject();
             vpcSetter.accept(this.vpc);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get vpc
-     * @return vpc
-     */
+    /** Get vpc
+     * 
+     * @return vpc */
     public VpcObject getVpc() {
         return vpc;
     }
@@ -491,16 +394,13 @@ public class TemplateRequest  {
         this.vpc = vpc;
     }
 
-    
-
     public TemplateRequest withNics(List<Nics> nics) {
         this.nics = nics;
         return this;
     }
 
-    
     public TemplateRequest addNicsItem(Nics nicsItem) {
-        if(this.nics == null) {
+        if (this.nics == null) {
             this.nics = new ArrayList<>();
         }
         this.nics.add(nicsItem);
@@ -508,17 +408,16 @@ public class TemplateRequest  {
     }
 
     public TemplateRequest withNics(Consumer<List<Nics>> nicsSetter) {
-        if(this.nics == null) {
+        if (this.nics == null) {
             this.nics = new ArrayList<>();
         }
         nicsSetter.accept(this.nics);
         return this;
     }
 
-    /**
-     * 网卡信息，支持多个网卡，如果是自动创建，只填一个，id使用“autoCreate”
-     * @return nics
-     */
+    /** 网卡信息，支持多个网卡，如果是自动创建，只填一个，id使用“autoCreate”
+     * 
+     * @return nics */
     public List<Nics> getNics() {
         return nics;
     }
@@ -527,16 +426,13 @@ public class TemplateRequest  {
         this.nics = nics;
     }
 
-    
-
     public TemplateRequest withSecurityGroups(List<SgObject> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
     }
 
-    
     public TemplateRequest addSecurityGroupsItem(SgObject securityGroupsItem) {
-        if(this.securityGroups == null) {
+        if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         this.securityGroups.add(securityGroupsItem);
@@ -544,17 +440,16 @@ public class TemplateRequest  {
     }
 
     public TemplateRequest withSecurityGroups(Consumer<List<SgObject>> securityGroupsSetter) {
-        if(this.securityGroups == null) {
+        if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);
         return this;
     }
 
-    /**
-     * 安全组，支持多个安全组，如果是自动创建，只填一个，id使用“autoCreate”
-     * @return securityGroups
-     */
+    /** 安全组，支持多个安全组，如果是自动创建，只填一个，id使用“autoCreate”
+     * 
+     * @return securityGroups */
     public List<SgObject> getSecurityGroups() {
         return securityGroups;
     }
@@ -563,27 +458,23 @@ public class TemplateRequest  {
         this.securityGroups = securityGroups;
     }
 
-    
-
     public TemplateRequest withPublicip(PublicIp publicip) {
         this.publicip = publicip;
         return this;
     }
 
     public TemplateRequest withPublicip(Consumer<PublicIp> publicipSetter) {
-        if(this.publicip == null ){
+        if (this.publicip == null) {
             this.publicip = new PublicIp();
             publicipSetter.accept(this.publicip);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get publicip
-     * @return publicip
-     */
+    /** Get publicip
+     * 
+     * @return publicip */
     public PublicIp getPublicip() {
         return publicip;
     }
@@ -592,16 +483,13 @@ public class TemplateRequest  {
         this.publicip = publicip;
     }
 
-    
-
     public TemplateRequest withDisk(List<TemplateDisk> disk) {
         this.disk = disk;
         return this;
     }
 
-    
     public TemplateRequest addDiskItem(TemplateDisk diskItem) {
-        if(this.disk == null) {
+        if (this.disk == null) {
             this.disk = new ArrayList<>();
         }
         this.disk.add(diskItem);
@@ -609,17 +497,16 @@ public class TemplateRequest  {
     }
 
     public TemplateRequest withDisk(Consumer<List<TemplateDisk>> diskSetter) {
-        if(this.disk == null) {
+        if (this.disk == null) {
             this.disk = new ArrayList<>();
         }
         diskSetter.accept(this.disk);
         return this;
     }
 
-    /**
-     * 磁盘信息
-     * @return disk
-     */
+    /** 磁盘信息
+     * 
+     * @return disk */
     public List<TemplateDisk> getDisk() {
         return disk;
     }
@@ -628,20 +515,14 @@ public class TemplateRequest  {
         this.disk = disk;
     }
 
-    
-
     public TemplateRequest withDataVolumeType(DataVolumeTypeEnum dataVolumeType) {
         this.dataVolumeType = dataVolumeType;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据盘磁盘类型
-     * @return dataVolumeType
-     */
+    /** 数据盘磁盘类型
+     * 
+     * @return dataVolumeType */
     public DataVolumeTypeEnum getDataVolumeType() {
         return dataVolumeType;
     }
@@ -650,20 +531,14 @@ public class TemplateRequest  {
         this.dataVolumeType = dataVolumeType;
     }
 
-    
-
     public TemplateRequest withTargetPassword(String targetPassword) {
         this.targetPassword = targetPassword;
         return this;
     }
 
-    
-
-
-    /**
-     * 目的端密码
-     * @return targetPassword
-     */
+    /** 目的端密码
+     * 
+     * @return targetPassword */
     public String getTargetPassword() {
         return targetPassword;
     }
@@ -671,8 +546,6 @@ public class TemplateRequest  {
     public void setTargetPassword(String targetPassword) {
         this.targetPassword = targetPassword;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -683,26 +556,41 @@ public class TemplateRequest  {
             return false;
         }
         TemplateRequest templateRequest = (TemplateRequest) o;
-        return Objects.equals(this.name, templateRequest.name) &&
-            Objects.equals(this.isTemplate, templateRequest.isTemplate) &&
-            Objects.equals(this.region, templateRequest.region) &&
-            Objects.equals(this.projectid, templateRequest.projectid) &&
-            Objects.equals(this.targetServerName, templateRequest.targetServerName) &&
-            Objects.equals(this.availabilityZone, templateRequest.availabilityZone) &&
-            Objects.equals(this.volumetype, templateRequest.volumetype) &&
-            Objects.equals(this.flavor, templateRequest.flavor) &&
-            Objects.equals(this.vpc, templateRequest.vpc) &&
-            Objects.equals(this.nics, templateRequest.nics) &&
-            Objects.equals(this.securityGroups, templateRequest.securityGroups) &&
-            Objects.equals(this.publicip, templateRequest.publicip) &&
-            Objects.equals(this.disk, templateRequest.disk) &&
-            Objects.equals(this.dataVolumeType, templateRequest.dataVolumeType) &&
-            Objects.equals(this.targetPassword, templateRequest.targetPassword);
+        return Objects.equals(this.name, templateRequest.name)
+            && Objects.equals(this.isTemplate, templateRequest.isTemplate)
+            && Objects.equals(this.region, templateRequest.region)
+            && Objects.equals(this.projectid, templateRequest.projectid)
+            && Objects.equals(this.targetServerName, templateRequest.targetServerName)
+            && Objects.equals(this.availabilityZone, templateRequest.availabilityZone)
+            && Objects.equals(this.volumetype, templateRequest.volumetype)
+            && Objects.equals(this.flavor, templateRequest.flavor) && Objects.equals(this.vpc, templateRequest.vpc)
+            && Objects.equals(this.nics, templateRequest.nics)
+            && Objects.equals(this.securityGroups, templateRequest.securityGroups)
+            && Objects.equals(this.publicip, templateRequest.publicip)
+            && Objects.equals(this.disk, templateRequest.disk)
+            && Objects.equals(this.dataVolumeType, templateRequest.dataVolumeType)
+            && Objects.equals(this.targetPassword, templateRequest.targetPassword);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, isTemplate, region, projectid, targetServerName, availabilityZone, volumetype, flavor, vpc, nics, securityGroups, publicip, disk, dataVolumeType, targetPassword);
+        return Objects.hash(name,
+            isTemplate,
+            region,
+            projectid,
+            targetServerName,
+            availabilityZone,
+            volumetype,
+            flavor,
+            vpc,
+            nics,
+            securityGroups,
+            publicip,
+            disk,
+            dataVolumeType,
+            targetPassword);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -725,16 +613,13 @@ public class TemplateRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

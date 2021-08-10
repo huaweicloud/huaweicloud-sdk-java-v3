@@ -1,27 +1,19 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.KeystoneUpdateProjectOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class KeystoneUpdateProjectRequestBody  {
-
-
+public class KeystoneUpdateProjectRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project")
-    
+    @JsonProperty(value = "project")
+
     private KeystoneUpdateProjectOption project;
 
     public KeystoneUpdateProjectRequestBody withProject(KeystoneUpdateProjectOption project) {
@@ -30,19 +22,17 @@ public class KeystoneUpdateProjectRequestBody  {
     }
 
     public KeystoneUpdateProjectRequestBody withProject(Consumer<KeystoneUpdateProjectOption> projectSetter) {
-        if(this.project == null ){
+        if (this.project == null) {
             this.project = new KeystoneUpdateProjectOption();
             projectSetter.accept(this.project);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get project
-     * @return project
-     */
+    /** Get project
+     * 
+     * @return project */
     public KeystoneUpdateProjectOption getProject() {
         return project;
     }
@@ -50,8 +40,6 @@ public class KeystoneUpdateProjectRequestBody  {
     public void setProject(KeystoneUpdateProjectOption project) {
         this.project = project;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +52,12 @@ public class KeystoneUpdateProjectRequestBody  {
         KeystoneUpdateProjectRequestBody keystoneUpdateProjectRequestBody = (KeystoneUpdateProjectRequestBody) o;
         return Objects.equals(this.project, keystoneUpdateProjectRequestBody.project);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(project);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +66,13 @@ public class KeystoneUpdateProjectRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

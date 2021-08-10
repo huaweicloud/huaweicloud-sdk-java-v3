@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class KeystoneDeleteUserRequest  {
-
-
+/** Request Object */
+public class KeystoneDeleteUserRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_id")
-    
+    @JsonProperty(value = "user_id")
+
     private String userId;
 
     public KeystoneDeleteUserRequest withUserId(String userId) {
@@ -28,13 +18,9 @@ public class KeystoneDeleteUserRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 待删除的IAM用户ID，获取方式请参见：[获取用户ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
-     * @return userId
-     */
+    /** 待删除的IAM用户ID，获取方式请参见：[获取用户ID](https://support.huaweicloud.com/api-iam/iam_17_0002.html)。
+     * 
+     * @return userId */
     public String getUserId() {
         return userId;
     }
@@ -42,8 +28,6 @@ public class KeystoneDeleteUserRequest  {
     public void setUserId(String userId) {
         this.userId = userId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class KeystoneDeleteUserRequest  {
         KeystoneDeleteUserRequest keystoneDeleteUserRequest = (KeystoneDeleteUserRequest) o;
         return Objects.equals(this.userId, keystoneDeleteUserRequest.userId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(userId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class KeystoneDeleteUserRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

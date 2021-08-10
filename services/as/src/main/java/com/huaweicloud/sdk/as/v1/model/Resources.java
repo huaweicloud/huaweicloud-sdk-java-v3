@@ -1,47 +1,34 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.ResourceTags;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Resources
- */
-public class Resources  {
-
-
+/** Resources */
+public class Resources {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
+    @JsonProperty(value = "resource_id")
+
     private String resourceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_detail")
-    
+    @JsonProperty(value = "resource_detail")
+
     private String resourceDetail;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<ResourceTags> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_name")
-    
+    @JsonProperty(value = "resource_name")
+
     private String resourceName;
 
     public Resources withResourceId(String resourceId) {
@@ -49,13 +36,9 @@ public class Resources  {
         return this;
     }
 
-    
-
-
-    /**
-     * 资源详情ID。
-     * @return resourceId
-     */
+    /** 资源详情ID。
+     * 
+     * @return resourceId */
     public String getResourceId() {
         return resourceId;
     }
@@ -64,20 +47,14 @@ public class Resources  {
         this.resourceId = resourceId;
     }
 
-    
-
     public Resources withResourceDetail(String resourceDetail) {
         this.resourceDetail = resourceDetail;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源详情。
-     * @return resourceDetail
-     */
+    /** 资源详情。
+     * 
+     * @return resourceDetail */
     public String getResourceDetail() {
         return resourceDetail;
     }
@@ -86,16 +63,13 @@ public class Resources  {
         this.resourceDetail = resourceDetail;
     }
 
-    
-
     public Resources withTags(List<ResourceTags> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public Resources addTagsItem(ResourceTags tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -103,17 +77,16 @@ public class Resources  {
     }
 
     public Resources withTags(Consumer<List<ResourceTags>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 标签列表，没有标签默认为空数组。
-     * @return tags
-     */
+    /** 标签列表，没有标签默认为空数组。
+     * 
+     * @return tags */
     public List<ResourceTags> getTags() {
         return tags;
     }
@@ -122,20 +95,14 @@ public class Resources  {
         this.tags = tags;
     }
 
-    
-
     public Resources withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源名称，没有默认为空字符串。
-     * @return resourceName
-     */
+    /** 资源名称，没有默认为空字符串。
+     * 
+     * @return resourceName */
     public String getResourceName() {
         return resourceName;
     }
@@ -143,8 +110,6 @@ public class Resources  {
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -155,15 +120,16 @@ public class Resources  {
             return false;
         }
         Resources resources = (Resources) o;
-        return Objects.equals(this.resourceId, resources.resourceId) &&
-            Objects.equals(this.resourceDetail, resources.resourceDetail) &&
-            Objects.equals(this.tags, resources.tags) &&
-            Objects.equals(this.resourceName, resources.resourceName);
+        return Objects.equals(this.resourceId, resources.resourceId)
+            && Objects.equals(this.resourceDetail, resources.resourceDetail)
+            && Objects.equals(this.tags, resources.tags) && Objects.equals(this.resourceName, resources.resourceName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resourceId, resourceDetail, tags, resourceName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -175,16 +141,13 @@ public class Resources  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

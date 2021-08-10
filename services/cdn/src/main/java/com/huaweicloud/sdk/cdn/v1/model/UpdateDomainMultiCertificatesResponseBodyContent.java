@@ -1,74 +1,56 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * UpdateDomainMultiCertificatesResponseBodyContent
- */
-public class UpdateDomainMultiCertificatesResponseBodyContent  {
-
-
+/** UpdateDomainMultiCertificatesResponseBodyContent */
+public class UpdateDomainMultiCertificatesResponseBodyContent {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_name")
-    
+    @JsonProperty(value = "domain_name")
+
     private String domainName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="https_switch")
-    
+    @JsonProperty(value = "https_switch")
+
     private Integer httpsSwitch;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_origin_way")
-    
+    @JsonProperty(value = "access_origin_way")
+
     private Integer accessOriginWay;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="force_redirect_https")
-    
+    @JsonProperty(value = "force_redirect_https")
+
     private Integer forceRedirectHttps;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="http2")
-    
+    @JsonProperty(value = "http2")
+
     private Integer http2;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cert_name")
-    
+    @JsonProperty(value = "cert_name")
+
     private String certName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificate")
-    
+    @JsonProperty(value = "certificate")
+
     private String certificate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificate_type")
-    
+    @JsonProperty(value = "certificate_type")
+
     private Integer certificateType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expiration_time")
-    
+    @JsonProperty(value = "expiration_time")
+
     private Long expirationTime;
 
     public UpdateDomainMultiCertificatesResponseBodyContent withDomainName(String domainName) {
@@ -76,13 +58,9 @@ public class UpdateDomainMultiCertificatesResponseBodyContent  {
         return this;
     }
 
-    
-
-
-    /**
-     * 域名列表
-     * @return domainName
-     */
+    /** 域名列表
+     * 
+     * @return domainName */
     public String getDomainName() {
         return domainName;
     }
@@ -91,20 +69,14 @@ public class UpdateDomainMultiCertificatesResponseBodyContent  {
         this.domainName = domainName;
     }
 
-    
-
     public UpdateDomainMultiCertificatesResponseBodyContent withHttpsSwitch(Integer httpsSwitch) {
         this.httpsSwitch = httpsSwitch;
         return this;
     }
 
-    
-
-
-    /**
-     * https开关(0：\"关闭\"；1：\"设置证书\")
-     * @return httpsSwitch
-     */
+    /** https开关(0：\"关闭\"；1：\"设置证书\")
+     * 
+     * @return httpsSwitch */
     public Integer getHttpsSwitch() {
         return httpsSwitch;
     }
@@ -113,20 +85,14 @@ public class UpdateDomainMultiCertificatesResponseBodyContent  {
         this.httpsSwitch = httpsSwitch;
     }
 
-    
-
     public UpdateDomainMultiCertificatesResponseBodyContent withAccessOriginWay(Integer accessOriginWay) {
         this.accessOriginWay = accessOriginWay;
         return this;
     }
 
-    
-
-
-    /**
-     * 回源方式:1：\"PROTOCOL_FOLLOW\"；2：\"HTTP\"(默认)，3：\"https\"
-     * @return accessOriginWay
-     */
+    /** 回源方式:1：\"PROTOCOL_FOLLOW\"；2：\"HTTP\"(默认)，3：\"https\"
+     * 
+     * @return accessOriginWay */
     public Integer getAccessOriginWay() {
         return accessOriginWay;
     }
@@ -135,20 +101,14 @@ public class UpdateDomainMultiCertificatesResponseBodyContent  {
         this.accessOriginWay = accessOriginWay;
     }
 
-    
-
     public UpdateDomainMultiCertificatesResponseBodyContent withForceRedirectHttps(Integer forceRedirectHttps) {
         this.forceRedirectHttps = forceRedirectHttps;
         return this;
     }
 
-    
-
-
-    /**
-     * 强制跳转HTTPS（0：不强制；1：强制）
-     * @return forceRedirectHttps
-     */
+    /** 强制跳转HTTPS（0：不强制；1：强制）
+     * 
+     * @return forceRedirectHttps */
     public Integer getForceRedirectHttps() {
         return forceRedirectHttps;
     }
@@ -157,20 +117,14 @@ public class UpdateDomainMultiCertificatesResponseBodyContent  {
         this.forceRedirectHttps = forceRedirectHttps;
     }
 
-    
-
     public UpdateDomainMultiCertificatesResponseBodyContent withHttp2(Integer http2) {
         this.http2 = http2;
         return this;
     }
 
-    
-
-
-    /**
-     * http2.0（0：关闭；1：开启）
-     * @return http2
-     */
+    /** http2.0（0：关闭；1：开启）
+     * 
+     * @return http2 */
     public Integer getHttp2() {
         return http2;
     }
@@ -179,20 +133,14 @@ public class UpdateDomainMultiCertificatesResponseBodyContent  {
         this.http2 = http2;
     }
 
-    
-
     public UpdateDomainMultiCertificatesResponseBodyContent withCertName(String certName) {
         this.certName = certName;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书名称。（长度限制为3-32字符）。
-     * @return certName
-     */
+    /** 证书名称。（长度限制为3-32字符）。
+     * 
+     * @return certName */
     public String getCertName() {
         return certName;
     }
@@ -201,20 +149,14 @@ public class UpdateDomainMultiCertificatesResponseBodyContent  {
         this.certName = certName;
     }
 
-    
-
     public UpdateDomainMultiCertificatesResponseBodyContent withCertificate(String certificate) {
         this.certificate = certificate;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书内容
-     * @return certificate
-     */
+    /** 证书内容
+     * 
+     * @return certificate */
     public String getCertificate() {
         return certificate;
     }
@@ -223,20 +165,14 @@ public class UpdateDomainMultiCertificatesResponseBodyContent  {
         this.certificate = certificate;
     }
 
-    
-
     public UpdateDomainMultiCertificatesResponseBodyContent withCertificateType(Integer certificateType) {
         this.certificateType = certificateType;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书类型（0为自有证书 ， 1为托管证书）
-     * @return certificateType
-     */
+    /** 证书类型（0为自有证书 ， 1为托管证书）
+     * 
+     * @return certificateType */
     public Integer getCertificateType() {
         return certificateType;
     }
@@ -245,20 +181,14 @@ public class UpdateDomainMultiCertificatesResponseBodyContent  {
         this.certificateType = certificateType;
     }
 
-    
-
     public UpdateDomainMultiCertificatesResponseBodyContent withExpirationTime(Long expirationTime) {
         this.expirationTime = expirationTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书过期时间
-     * @return expirationTime
-     */
+    /** 证书过期时间
+     * 
+     * @return expirationTime */
     public Long getExpirationTime() {
         return expirationTime;
     }
@@ -266,8 +196,6 @@ public class UpdateDomainMultiCertificatesResponseBodyContent  {
     public void setExpirationTime(Long expirationTime) {
         this.expirationTime = expirationTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -277,21 +205,33 @@ public class UpdateDomainMultiCertificatesResponseBodyContent  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        UpdateDomainMultiCertificatesResponseBodyContent updateDomainMultiCertificatesResponseBodyContent = (UpdateDomainMultiCertificatesResponseBodyContent) o;
-        return Objects.equals(this.domainName, updateDomainMultiCertificatesResponseBodyContent.domainName) &&
-            Objects.equals(this.httpsSwitch, updateDomainMultiCertificatesResponseBodyContent.httpsSwitch) &&
-            Objects.equals(this.accessOriginWay, updateDomainMultiCertificatesResponseBodyContent.accessOriginWay) &&
-            Objects.equals(this.forceRedirectHttps, updateDomainMultiCertificatesResponseBodyContent.forceRedirectHttps) &&
-            Objects.equals(this.http2, updateDomainMultiCertificatesResponseBodyContent.http2) &&
-            Objects.equals(this.certName, updateDomainMultiCertificatesResponseBodyContent.certName) &&
-            Objects.equals(this.certificate, updateDomainMultiCertificatesResponseBodyContent.certificate) &&
-            Objects.equals(this.certificateType, updateDomainMultiCertificatesResponseBodyContent.certificateType) &&
-            Objects.equals(this.expirationTime, updateDomainMultiCertificatesResponseBodyContent.expirationTime);
+        UpdateDomainMultiCertificatesResponseBodyContent updateDomainMultiCertificatesResponseBodyContent =
+            (UpdateDomainMultiCertificatesResponseBodyContent) o;
+        return Objects.equals(this.domainName, updateDomainMultiCertificatesResponseBodyContent.domainName)
+            && Objects.equals(this.httpsSwitch, updateDomainMultiCertificatesResponseBodyContent.httpsSwitch)
+            && Objects.equals(this.accessOriginWay, updateDomainMultiCertificatesResponseBodyContent.accessOriginWay)
+            && Objects.equals(this.forceRedirectHttps,
+                updateDomainMultiCertificatesResponseBodyContent.forceRedirectHttps)
+            && Objects.equals(this.http2, updateDomainMultiCertificatesResponseBodyContent.http2)
+            && Objects.equals(this.certName, updateDomainMultiCertificatesResponseBodyContent.certName)
+            && Objects.equals(this.certificate, updateDomainMultiCertificatesResponseBodyContent.certificate)
+            && Objects.equals(this.certificateType, updateDomainMultiCertificatesResponseBodyContent.certificateType)
+            && Objects.equals(this.expirationTime, updateDomainMultiCertificatesResponseBodyContent.expirationTime);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(domainName, httpsSwitch, accessOriginWay, forceRedirectHttps, http2, certName, certificate, certificateType, expirationTime);
+        return Objects.hash(domainName,
+            httpsSwitch,
+            accessOriginWay,
+            forceRedirectHttps,
+            http2,
+            certName,
+            certificate,
+            certificateType,
+            expirationTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -308,16 +248,13 @@ public class UpdateDomainMultiCertificatesResponseBodyContent  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

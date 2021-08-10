@@ -1,40 +1,27 @@
 package com.huaweicloud.sdk.smn.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateApplicationResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="request_id")
-    
+    @JsonProperty(value = "request_id")
+
     private String requestId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="application_urn")
-    
+    @JsonProperty(value = "application_urn")
+
     private String applicationUrn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="application_id")
-    
+    @JsonProperty(value = "application_id")
+
     private String applicationId;
 
     public CreateApplicationResponse withRequestId(String requestId) {
@@ -42,13 +29,9 @@ public class CreateApplicationResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 请求的唯一标识ID。
-     * @return requestId
-     */
+    /** 请求的唯一标识ID。
+     * 
+     * @return requestId */
     public String getRequestId() {
         return requestId;
     }
@@ -57,20 +40,14 @@ public class CreateApplicationResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    
-
     public CreateApplicationResponse withApplicationUrn(String applicationUrn) {
         this.applicationUrn = applicationUrn;
         return this;
     }
 
-    
-
-
-    /**
-     * Application的唯一资源标识。
-     * @return applicationUrn
-     */
+    /** Application的唯一资源标识。
+     * 
+     * @return applicationUrn */
     public String getApplicationUrn() {
         return applicationUrn;
     }
@@ -79,20 +56,14 @@ public class CreateApplicationResponse extends SdkResponse {
         this.applicationUrn = applicationUrn;
     }
 
-    
-
     public CreateApplicationResponse withApplicationId(String applicationId) {
         this.applicationId = applicationId;
         return this;
     }
 
-    
-
-
-    /**
-     * Application资源的ID。
-     * @return applicationId
-     */
+    /** Application资源的ID。
+     * 
+     * @return applicationId */
     public String getApplicationId() {
         return applicationId;
     }
@@ -100,8 +71,6 @@ public class CreateApplicationResponse extends SdkResponse {
     public void setApplicationId(String applicationId) {
         this.applicationId = applicationId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +81,16 @@ public class CreateApplicationResponse extends SdkResponse {
             return false;
         }
         CreateApplicationResponse createApplicationResponse = (CreateApplicationResponse) o;
-        return Objects.equals(this.requestId, createApplicationResponse.requestId) &&
-            Objects.equals(this.applicationUrn, createApplicationResponse.applicationUrn) &&
-            Objects.equals(this.applicationId, createApplicationResponse.applicationId);
+        return Objects.equals(this.requestId, createApplicationResponse.requestId)
+            && Objects.equals(this.applicationUrn, createApplicationResponse.applicationUrn)
+            && Objects.equals(this.applicationId, createApplicationResponse.applicationId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(requestId, applicationUrn, applicationId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +101,13 @@ public class CreateApplicationResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

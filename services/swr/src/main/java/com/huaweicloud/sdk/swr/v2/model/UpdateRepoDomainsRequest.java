@@ -1,45 +1,32 @@
 package com.huaweicloud.sdk.swr.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.swr.v2.model.UpdateRepoDomainsRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateRepoDomainsRequest  {
-
-
+/** Request Object */
+public class UpdateRepoDomainsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
+
     private String namespace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repository")
-    
+    @JsonProperty(value = "repository")
+
     private String repository;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_domain")
-    
+    @JsonProperty(value = "access_domain")
+
     private String accessDomain;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateRepoDomainsRequestBody body;
 
     public UpdateRepoDomainsRequest withNamespace(String namespace) {
@@ -47,13 +34,9 @@ public class UpdateRepoDomainsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
-     * @return namespace
-     */
+    /** 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
+     * 
+     * @return namespace */
     public String getNamespace() {
         return namespace;
     }
@@ -62,20 +45,14 @@ public class UpdateRepoDomainsRequest  {
         this.namespace = namespace;
     }
 
-    
-
     public UpdateRepoDomainsRequest withRepository(String repository) {
         this.repository = repository;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像仓库名称
-     * @return repository
-     */
+    /** 镜像仓库名称
+     * 
+     * @return repository */
     public String getRepository() {
         return repository;
     }
@@ -84,20 +61,14 @@ public class UpdateRepoDomainsRequest  {
         this.repository = repository;
     }
 
-    
-
     public UpdateRepoDomainsRequest withAccessDomain(String accessDomain) {
         this.accessDomain = accessDomain;
         return this;
     }
 
-    
-
-
-    /**
-     * 共享账号
-     * @return accessDomain
-     */
+    /** 共享账号
+     * 
+     * @return accessDomain */
     public String getAccessDomain() {
         return accessDomain;
     }
@@ -106,27 +77,23 @@ public class UpdateRepoDomainsRequest  {
         this.accessDomain = accessDomain;
     }
 
-    
-
     public UpdateRepoDomainsRequest withBody(UpdateRepoDomainsRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdateRepoDomainsRequest withBody(Consumer<UpdateRepoDomainsRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateRepoDomainsRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateRepoDomainsRequestBody getBody() {
         return body;
     }
@@ -134,8 +101,6 @@ public class UpdateRepoDomainsRequest  {
     public void setBody(UpdateRepoDomainsRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -146,15 +111,17 @@ public class UpdateRepoDomainsRequest  {
             return false;
         }
         UpdateRepoDomainsRequest updateRepoDomainsRequest = (UpdateRepoDomainsRequest) o;
-        return Objects.equals(this.namespace, updateRepoDomainsRequest.namespace) &&
-            Objects.equals(this.repository, updateRepoDomainsRequest.repository) &&
-            Objects.equals(this.accessDomain, updateRepoDomainsRequest.accessDomain) &&
-            Objects.equals(this.body, updateRepoDomainsRequest.body);
+        return Objects.equals(this.namespace, updateRepoDomainsRequest.namespace)
+            && Objects.equals(this.repository, updateRepoDomainsRequest.repository)
+            && Objects.equals(this.accessDomain, updateRepoDomainsRequest.accessDomain)
+            && Objects.equals(this.body, updateRepoDomainsRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(namespace, repository, accessDomain, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -166,16 +133,13 @@ public class UpdateRepoDomainsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

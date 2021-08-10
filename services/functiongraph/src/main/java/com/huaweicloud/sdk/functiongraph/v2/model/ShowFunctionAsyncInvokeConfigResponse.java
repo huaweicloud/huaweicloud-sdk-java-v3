@@ -1,59 +1,43 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.functiongraph.v2.model.FuncAsyncDestinationConfig;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowFunctionAsyncInvokeConfigResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="func_urn")
-    
+    @JsonProperty(value = "func_urn")
+
     private String funcUrn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_async_event_age_in_seconds")
-    
+    @JsonProperty(value = "max_async_event_age_in_seconds")
+
     private Integer maxAsyncEventAgeInSeconds;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_async_retry_attempts")
-    
+    @JsonProperty(value = "max_async_retry_attempts")
+
     private Integer maxAsyncRetryAttempts;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination_config")
-    
+    @JsonProperty(value = "destination_config")
+
     private FuncAsyncDestinationConfig destinationConfig;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_time")
-    
+    @JsonProperty(value = "created_time")
+
     private String createdTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_modified")
-    
+    @JsonProperty(value = "last_modified")
+
     private String lastModified;
 
     public ShowFunctionAsyncInvokeConfigResponse withFuncUrn(String funcUrn) {
@@ -61,13 +45,9 @@ public class ShowFunctionAsyncInvokeConfigResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 函数URN。
-     * @return funcUrn
-     */
+    /** 函数URN。
+     * 
+     * @return funcUrn */
     public String getFuncUrn() {
         return funcUrn;
     }
@@ -76,20 +56,14 @@ public class ShowFunctionAsyncInvokeConfigResponse extends SdkResponse {
         this.funcUrn = funcUrn;
     }
 
-    
-
     public ShowFunctionAsyncInvokeConfigResponse withMaxAsyncEventAgeInSeconds(Integer maxAsyncEventAgeInSeconds) {
         this.maxAsyncEventAgeInSeconds = maxAsyncEventAgeInSeconds;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息最大存活时长，取值范围[60，86400]。单位：秒。
-     * @return maxAsyncEventAgeInSeconds
-     */
+    /** 消息最大存活时长，取值范围[60，86400]。单位：秒。
+     * 
+     * @return maxAsyncEventAgeInSeconds */
     public Integer getMaxAsyncEventAgeInSeconds() {
         return maxAsyncEventAgeInSeconds;
     }
@@ -98,20 +72,14 @@ public class ShowFunctionAsyncInvokeConfigResponse extends SdkResponse {
         this.maxAsyncEventAgeInSeconds = maxAsyncEventAgeInSeconds;
     }
 
-    
-
     public ShowFunctionAsyncInvokeConfigResponse withMaxAsyncRetryAttempts(Integer maxAsyncRetryAttempts) {
         this.maxAsyncRetryAttempts = maxAsyncRetryAttempts;
         return this;
     }
 
-    
-
-
-    /**
-     * 异步调用失败后的最大重试次数，默认值为3。取值范围[0，8]。
-     * @return maxAsyncRetryAttempts
-     */
+    /** 异步调用失败后的最大重试次数，默认值为3。取值范围[0，8]。
+     * 
+     * @return maxAsyncRetryAttempts */
     public Integer getMaxAsyncRetryAttempts() {
         return maxAsyncRetryAttempts;
     }
@@ -120,27 +88,24 @@ public class ShowFunctionAsyncInvokeConfigResponse extends SdkResponse {
         this.maxAsyncRetryAttempts = maxAsyncRetryAttempts;
     }
 
-    
-
     public ShowFunctionAsyncInvokeConfigResponse withDestinationConfig(FuncAsyncDestinationConfig destinationConfig) {
         this.destinationConfig = destinationConfig;
         return this;
     }
 
-    public ShowFunctionAsyncInvokeConfigResponse withDestinationConfig(Consumer<FuncAsyncDestinationConfig> destinationConfigSetter) {
-        if(this.destinationConfig == null ){
+    public ShowFunctionAsyncInvokeConfigResponse withDestinationConfig(
+        Consumer<FuncAsyncDestinationConfig> destinationConfigSetter) {
+        if (this.destinationConfig == null) {
             this.destinationConfig = new FuncAsyncDestinationConfig();
             destinationConfigSetter.accept(this.destinationConfig);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get destinationConfig
-     * @return destinationConfig
-     */
+    /** Get destinationConfig
+     * 
+     * @return destinationConfig */
     public FuncAsyncDestinationConfig getDestinationConfig() {
         return destinationConfig;
     }
@@ -149,20 +114,14 @@ public class ShowFunctionAsyncInvokeConfigResponse extends SdkResponse {
         this.destinationConfig = destinationConfig;
     }
 
-    
-
     public ShowFunctionAsyncInvokeConfigResponse withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 异步调用配置的创建时间。
-     * @return createdTime
-     */
+    /** 异步调用配置的创建时间。
+     * 
+     * @return createdTime */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -171,20 +130,14 @@ public class ShowFunctionAsyncInvokeConfigResponse extends SdkResponse {
         this.createdTime = createdTime;
     }
 
-    
-
     public ShowFunctionAsyncInvokeConfigResponse withLastModified(String lastModified) {
         this.lastModified = lastModified;
         return this;
     }
 
-    
-
-
-    /**
-     * 异步调用配置的最后更改时间。
-     * @return lastModified
-     */
+    /** 异步调用配置的最后更改时间。
+     * 
+     * @return lastModified */
     public String getLastModified() {
         return lastModified;
     }
@@ -192,8 +145,6 @@ public class ShowFunctionAsyncInvokeConfigResponse extends SdkResponse {
     public void setLastModified(String lastModified) {
         this.lastModified = lastModified;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -203,18 +154,27 @@ public class ShowFunctionAsyncInvokeConfigResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ShowFunctionAsyncInvokeConfigResponse showFunctionAsyncInvokeConfigResponse = (ShowFunctionAsyncInvokeConfigResponse) o;
-        return Objects.equals(this.funcUrn, showFunctionAsyncInvokeConfigResponse.funcUrn) &&
-            Objects.equals(this.maxAsyncEventAgeInSeconds, showFunctionAsyncInvokeConfigResponse.maxAsyncEventAgeInSeconds) &&
-            Objects.equals(this.maxAsyncRetryAttempts, showFunctionAsyncInvokeConfigResponse.maxAsyncRetryAttempts) &&
-            Objects.equals(this.destinationConfig, showFunctionAsyncInvokeConfigResponse.destinationConfig) &&
-            Objects.equals(this.createdTime, showFunctionAsyncInvokeConfigResponse.createdTime) &&
-            Objects.equals(this.lastModified, showFunctionAsyncInvokeConfigResponse.lastModified);
+        ShowFunctionAsyncInvokeConfigResponse showFunctionAsyncInvokeConfigResponse =
+            (ShowFunctionAsyncInvokeConfigResponse) o;
+        return Objects.equals(this.funcUrn, showFunctionAsyncInvokeConfigResponse.funcUrn)
+            && Objects.equals(this.maxAsyncEventAgeInSeconds,
+                showFunctionAsyncInvokeConfigResponse.maxAsyncEventAgeInSeconds)
+            && Objects.equals(this.maxAsyncRetryAttempts, showFunctionAsyncInvokeConfigResponse.maxAsyncRetryAttempts)
+            && Objects.equals(this.destinationConfig, showFunctionAsyncInvokeConfigResponse.destinationConfig)
+            && Objects.equals(this.createdTime, showFunctionAsyncInvokeConfigResponse.createdTime)
+            && Objects.equals(this.lastModified, showFunctionAsyncInvokeConfigResponse.lastModified);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(funcUrn, maxAsyncEventAgeInSeconds, maxAsyncRetryAttempts, destinationConfig, createdTime, lastModified);
+        return Objects.hash(funcUrn,
+            maxAsyncEventAgeInSeconds,
+            maxAsyncRetryAttempts,
+            destinationConfig,
+            createdTime,
+            lastModified);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -228,16 +188,13 @@ public class ShowFunctionAsyncInvokeConfigResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

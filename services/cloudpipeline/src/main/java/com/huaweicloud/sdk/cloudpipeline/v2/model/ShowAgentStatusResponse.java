@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowAgentStatusResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="agent_id")
-    
+    @JsonProperty(value = "agent_id")
+
     private String agentId;
 
     public ShowAgentStatusResponse withStatus(String status) {
@@ -36,13 +24,9 @@ public class ShowAgentStatusResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * Agent状态
-     * @return status
-     */
+    /** Agent状态
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -51,20 +35,14 @@ public class ShowAgentStatusResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public ShowAgentStatusResponse withAgentId(String agentId) {
         this.agentId = agentId;
         return this;
     }
 
-    
-
-
-    /**
-     * AgentID
-     * @return agentId
-     */
+    /** AgentID
+     * 
+     * @return agentId */
     public String getAgentId() {
         return agentId;
     }
@@ -72,8 +50,6 @@ public class ShowAgentStatusResponse extends SdkResponse {
     public void setAgentId(String agentId) {
         this.agentId = agentId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +60,15 @@ public class ShowAgentStatusResponse extends SdkResponse {
             return false;
         }
         ShowAgentStatusResponse showAgentStatusResponse = (ShowAgentStatusResponse) o;
-        return Objects.equals(this.status, showAgentStatusResponse.status) &&
-            Objects.equals(this.agentId, showAgentStatusResponse.agentId);
+        return Objects.equals(this.status, showAgentStatusResponse.status)
+            && Objects.equals(this.agentId, showAgentStatusResponse.agentId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(status, agentId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +78,13 @@ public class ShowAgentStatusResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.bssintl.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * DiscountSimpleInfo
- */
-public class DiscountSimpleInfo  {
-
-
+/** DiscountSimpleInfo */
+public class DiscountSimpleInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private Integer type;
 
     public DiscountSimpleInfo withId(String id) {
@@ -34,13 +23,9 @@ public class DiscountSimpleInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：折扣ID| |参数约束及描述：折扣ID|
-     * @return id
-     */
+    /** |参数名称：折扣ID| |参数约束及描述：折扣ID|
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -49,22 +34,15 @@ public class DiscountSimpleInfo  {
         this.id = id;
     }
 
-    
-
     public DiscountSimpleInfo withType(Integer type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：折扣类型：取值为1：合同折扣（可以有多组）2：商务优惠（仅有一组）3：合作伙伴授予折扣（仅有一组）609：订单调价折扣| |参数的约束及描述：折扣类型：取值为1：合同折扣（可以有多组）2：商务优惠（仅有一组）3：合作伙伴授予折扣（仅有一组）609：订单调价折扣|
-     * minimum: 0
-     * maximum: 609
-     * @return type
-     */
+    /** |参数名称：折扣类型：取值为1：合同折扣（可以有多组）2：商务优惠（仅有一组）3：合作伙伴授予折扣（仅有一组）609：订单调价折扣|
+     * |参数的约束及描述：折扣类型：取值为1：合同折扣（可以有多组）2：商务优惠（仅有一组）3：合作伙伴授予折扣（仅有一组）609：订单调价折扣| minimum: 0 maximum: 609
+     * 
+     * @return type */
     public Integer getType() {
         return type;
     }
@@ -72,8 +50,6 @@ public class DiscountSimpleInfo  {
     public void setType(Integer type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +60,14 @@ public class DiscountSimpleInfo  {
             return false;
         }
         DiscountSimpleInfo discountSimpleInfo = (DiscountSimpleInfo) o;
-        return Objects.equals(this.id, discountSimpleInfo.id) &&
-            Objects.equals(this.type, discountSimpleInfo.type);
+        return Objects.equals(this.id, discountSimpleInfo.id) && Objects.equals(this.type, discountSimpleInfo.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +77,13 @@ public class DiscountSimpleInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

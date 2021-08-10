@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * DeviceCommandRequest
- */
-public class DeviceCommandRequest  {
-
-
+/** DeviceCommandRequest */
+public class DeviceCommandRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_id")
-    
+    @JsonProperty(value = "service_id")
+
     private String serviceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="command_name")
-    
+    @JsonProperty(value = "command_name")
+
     private String commandName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="paras")
-    
+    @JsonProperty(value = "paras")
+
     private Object paras;
 
     public DeviceCommandRequest withServiceId(String serviceId) {
@@ -40,13 +28,9 @@ public class DeviceCommandRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：设备命令所属的设备服务ID，在设备关联的产品模型中定义。 **取值范围**：长度不超过64的字符串。
-     * @return serviceId
-     */
+    /** **参数说明**：设备命令所属的设备服务ID，在设备关联的产品模型中定义。 **取值范围**：长度不超过64的字符串。
+     * 
+     * @return serviceId */
     public String getServiceId() {
         return serviceId;
     }
@@ -55,20 +39,14 @@ public class DeviceCommandRequest  {
         this.serviceId = serviceId;
     }
 
-    
-
     public DeviceCommandRequest withCommandName(String commandName) {
         this.commandName = commandName;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：设备命令名称，在设备关联的产品模型中定义。 **取值范围**：长度不超过128的字符串。
-     * @return commandName
-     */
+    /** **参数说明**：设备命令名称，在设备关联的产品模型中定义。 **取值范围**：长度不超过128的字符串。
+     * 
+     * @return commandName */
     public String getCommandName() {
         return commandName;
     }
@@ -77,20 +55,14 @@ public class DeviceCommandRequest  {
         this.commandName = commandName;
     }
 
-    
-
     public DeviceCommandRequest withParas(Object paras) {
         this.paras = paras;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：设备执行的命令，Json格式，里面是一个个键值对，如果serviceId不为空，每个键都是profile中命令的参数名（paraName）;如果serviceId为空则由用户自定义命令格式。设备命令示例：{\"value\":\"1\"}，具体格式需要应用和设备约定。
-     * @return paras
-     */
+    /** **参数说明**：设备执行的命令，Json格式，里面是一个个键值对，如果serviceId不为空，每个键都是profile中命令的参数名（paraName）;如果serviceId为空则由用户自定义命令格式。设备命令示例：{\"value\":\"1\"}，具体格式需要应用和设备约定。
+     * 
+     * @return paras */
     public Object getParas() {
         return paras;
     }
@@ -98,8 +70,6 @@ public class DeviceCommandRequest  {
     public void setParas(Object paras) {
         this.paras = paras;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class DeviceCommandRequest  {
             return false;
         }
         DeviceCommandRequest deviceCommandRequest = (DeviceCommandRequest) o;
-        return Objects.equals(this.serviceId, deviceCommandRequest.serviceId) &&
-            Objects.equals(this.commandName, deviceCommandRequest.commandName) &&
-            Objects.equals(this.paras, deviceCommandRequest.paras);
+        return Objects.equals(this.serviceId, deviceCommandRequest.serviceId)
+            && Objects.equals(this.commandName, deviceCommandRequest.commandName)
+            && Objects.equals(this.paras, deviceCommandRequest.paras);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(serviceId, commandName, paras);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class DeviceCommandRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

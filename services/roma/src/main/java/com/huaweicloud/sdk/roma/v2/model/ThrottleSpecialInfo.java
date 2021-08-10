@@ -1,76 +1,57 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.ThrottleSpecialBase;
+
 import java.time.OffsetDateTime;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * ThrottleSpecialInfo
- */
-public class ThrottleSpecialInfo  {
-
-
+/** ThrottleSpecialInfo */
+public class ThrottleSpecialInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="call_limits")
-    
+    @JsonProperty(value = "call_limits")
+
     private Integer callLimits;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apply_time")
-    
+    @JsonProperty(value = "apply_time")
+
     private OffsetDateTime applyTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_name")
-    
+    @JsonProperty(value = "app_name")
+
     private String appName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="object_id")
-    
+    @JsonProperty(value = "object_id")
+
     private String objectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="object_type")
-    
+    @JsonProperty(value = "object_type")
+
     private String objectType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="object_name")
-    
+    @JsonProperty(value = "object_name")
+
     private String objectName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="throttle_id")
-    
+    @JsonProperty(value = "throttle_id")
+
     private String throttleId;
 
     public ThrottleSpecialInfo withId(String id) {
@@ -78,13 +59,9 @@ public class ThrottleSpecialInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 特殊配置的编号
-     * @return id
-     */
+    /** 特殊配置的编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -93,20 +70,14 @@ public class ThrottleSpecialInfo  {
         this.id = id;
     }
 
-    
-
     public ThrottleSpecialInfo withCallLimits(Integer callLimits) {
         this.callLimits = callLimits;
         return this;
     }
 
-    
-
-
-    /**
-     * 特殊对象在流控时间内能够访问API的最大次数限制
-     * @return callLimits
-     */
+    /** 特殊对象在流控时间内能够访问API的最大次数限制
+     * 
+     * @return callLimits */
     public Integer getCallLimits() {
         return callLimits;
     }
@@ -115,20 +86,14 @@ public class ThrottleSpecialInfo  {
         this.callLimits = callLimits;
     }
 
-    
-
     public ThrottleSpecialInfo withApplyTime(OffsetDateTime applyTime) {
         this.applyTime = applyTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 设置时间
-     * @return applyTime
-     */
+    /** 设置时间
+     * 
+     * @return applyTime */
     public OffsetDateTime getApplyTime() {
         return applyTime;
     }
@@ -137,20 +102,14 @@ public class ThrottleSpecialInfo  {
         this.applyTime = applyTime;
     }
 
-    
-
     public ThrottleSpecialInfo withAppName(String appName) {
         this.appName = appName;
         return this;
     }
 
-    
-
-
-    /**
-     * 作用的APP名称
-     * @return appName
-     */
+    /** 作用的APP名称
+     * 
+     * @return appName */
     public String getAppName() {
         return appName;
     }
@@ -159,20 +118,14 @@ public class ThrottleSpecialInfo  {
         this.appName = appName;
     }
 
-    
-
     public ThrottleSpecialInfo withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 作用的APP编号
-     * @return appId
-     */
+    /** 作用的APP编号
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -181,20 +134,14 @@ public class ThrottleSpecialInfo  {
         this.appId = appId;
     }
 
-    
-
     public ThrottleSpecialInfo withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 特殊对象的身份标识
-     * @return objectId
-     */
+    /** 特殊对象的身份标识
+     * 
+     * @return objectId */
     public String getObjectId() {
         return objectId;
     }
@@ -203,20 +150,14 @@ public class ThrottleSpecialInfo  {
         this.objectId = objectId;
     }
 
-    
-
     public ThrottleSpecialInfo withObjectType(String objectType) {
         this.objectType = objectType;
         return this;
     }
 
-    
-
-
-    /**
-     * 特殊对象类型：APP、USER
-     * @return objectType
-     */
+    /** 特殊对象类型：APP、USER
+     * 
+     * @return objectType */
     public String getObjectType() {
         return objectType;
     }
@@ -225,20 +166,14 @@ public class ThrottleSpecialInfo  {
         this.objectType = objectType;
     }
 
-    
-
     public ThrottleSpecialInfo withObjectName(String objectName) {
         this.objectName = objectName;
         return this;
     }
 
-    
-
-
-    /**
-     * 作用的APP或租户的名称
-     * @return objectName
-     */
+    /** 作用的APP或租户的名称
+     * 
+     * @return objectName */
     public String getObjectName() {
         return objectName;
     }
@@ -247,20 +182,14 @@ public class ThrottleSpecialInfo  {
         this.objectName = objectName;
     }
 
-    
-
     public ThrottleSpecialInfo withThrottleId(String throttleId) {
         this.throttleId = throttleId;
         return this;
     }
 
-    
-
-
-    /**
-     * 流控策略编号
-     * @return throttleId
-     */
+    /** 流控策略编号
+     * 
+     * @return throttleId */
     public String getThrottleId() {
         return throttleId;
     }
@@ -268,8 +197,6 @@ public class ThrottleSpecialInfo  {
     public void setThrottleId(String throttleId) {
         this.throttleId = throttleId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -280,20 +207,22 @@ public class ThrottleSpecialInfo  {
             return false;
         }
         ThrottleSpecialInfo throttleSpecialInfo = (ThrottleSpecialInfo) o;
-        return Objects.equals(this.id, throttleSpecialInfo.id) &&
-            Objects.equals(this.callLimits, throttleSpecialInfo.callLimits) &&
-            Objects.equals(this.applyTime, throttleSpecialInfo.applyTime) &&
-            Objects.equals(this.appName, throttleSpecialInfo.appName) &&
-            Objects.equals(this.appId, throttleSpecialInfo.appId) &&
-            Objects.equals(this.objectId, throttleSpecialInfo.objectId) &&
-            Objects.equals(this.objectType, throttleSpecialInfo.objectType) &&
-            Objects.equals(this.objectName, throttleSpecialInfo.objectName) &&
-            Objects.equals(this.throttleId, throttleSpecialInfo.throttleId);
+        return Objects.equals(this.id, throttleSpecialInfo.id)
+            && Objects.equals(this.callLimits, throttleSpecialInfo.callLimits)
+            && Objects.equals(this.applyTime, throttleSpecialInfo.applyTime)
+            && Objects.equals(this.appName, throttleSpecialInfo.appName)
+            && Objects.equals(this.appId, throttleSpecialInfo.appId)
+            && Objects.equals(this.objectId, throttleSpecialInfo.objectId)
+            && Objects.equals(this.objectType, throttleSpecialInfo.objectType)
+            && Objects.equals(this.objectName, throttleSpecialInfo.objectName)
+            && Objects.equals(this.throttleId, throttleSpecialInfo.throttleId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, callLimits, applyTime, appName, appId, objectId, objectType, objectName, throttleId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -310,16 +239,13 @@ public class ThrottleSpecialInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

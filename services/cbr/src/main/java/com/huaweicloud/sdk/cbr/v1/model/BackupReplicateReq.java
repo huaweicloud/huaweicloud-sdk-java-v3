@@ -1,27 +1,19 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.BackupReplicateReqBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class BackupReplicateReq  {
-
-
+public class BackupReplicateReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replicate")
-    
+    @JsonProperty(value = "replicate")
+
     private BackupReplicateReqBody replicate;
 
     public BackupReplicateReq withReplicate(BackupReplicateReqBody replicate) {
@@ -30,19 +22,17 @@ public class BackupReplicateReq  {
     }
 
     public BackupReplicateReq withReplicate(Consumer<BackupReplicateReqBody> replicateSetter) {
-        if(this.replicate == null ){
+        if (this.replicate == null) {
             this.replicate = new BackupReplicateReqBody();
             replicateSetter.accept(this.replicate);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get replicate
-     * @return replicate
-     */
+    /** Get replicate
+     * 
+     * @return replicate */
     public BackupReplicateReqBody getReplicate() {
         return replicate;
     }
@@ -50,8 +40,6 @@ public class BackupReplicateReq  {
     public void setReplicate(BackupReplicateReqBody replicate) {
         this.replicate = replicate;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +52,12 @@ public class BackupReplicateReq  {
         BackupReplicateReq backupReplicateReq = (BackupReplicateReq) o;
         return Objects.equals(this.replicate, backupReplicateReq.replicate);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(replicate);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +66,13 @@ public class BackupReplicateReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

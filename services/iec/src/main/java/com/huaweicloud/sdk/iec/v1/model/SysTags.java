@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 系统标签。
- */
-public class SysTags  {
-
-
+/** 系统标签。 */
+public class SysTags {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private String value;
 
     public SysTags withKey(String key) {
@@ -34,13 +23,9 @@ public class SysTags  {
         return this;
     }
 
-    
-
-
-    /**
-     * 系统标签的Key值。
-     * @return key
-     */
+    /** 系统标签的Key值。
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -49,20 +34,14 @@ public class SysTags  {
         this.key = key;
     }
 
-    
-
     public SysTags withValue(String value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 系统标签的value值。
-     * @return value
-     */
+    /** 系统标签的value值。
+     * 
+     * @return value */
     public String getValue() {
         return value;
     }
@@ -70,8 +49,6 @@ public class SysTags  {
     public void setValue(String value) {
         this.value = value;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,14 @@ public class SysTags  {
             return false;
         }
         SysTags sysTags = (SysTags) o;
-        return Objects.equals(this.key, sysTags.key) &&
-            Objects.equals(this.value, sysTags.value);
+        return Objects.equals(this.key, sysTags.key) && Objects.equals(this.value, sysTags.value);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(key, value);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +76,13 @@ public class SysTags  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

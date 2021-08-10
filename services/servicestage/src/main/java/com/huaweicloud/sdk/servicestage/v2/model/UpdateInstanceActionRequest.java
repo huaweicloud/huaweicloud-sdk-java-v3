@@ -1,45 +1,32 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.InstanceAction;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateInstanceActionRequest  {
-
-
+/** Request Object */
+public class UpdateInstanceActionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="application_id")
-    
+    @JsonProperty(value = "application_id")
+
     private String applicationId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="component_id")
-    
+    @JsonProperty(value = "component_id")
+
     private String componentId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private InstanceAction body;
 
     public UpdateInstanceActionRequest withApplicationId(String applicationId) {
@@ -47,13 +34,9 @@ public class UpdateInstanceActionRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 应用ID。
-     * @return applicationId
-     */
+    /** 应用ID。
+     * 
+     * @return applicationId */
     public String getApplicationId() {
         return applicationId;
     }
@@ -62,20 +45,14 @@ public class UpdateInstanceActionRequest  {
         this.applicationId = applicationId;
     }
 
-    
-
     public UpdateInstanceActionRequest withComponentId(String componentId) {
         this.componentId = componentId;
         return this;
     }
 
-    
-
-
-    /**
-     * 组件ID。
-     * @return componentId
-     */
+    /** 组件ID。
+     * 
+     * @return componentId */
     public String getComponentId() {
         return componentId;
     }
@@ -84,20 +61,14 @@ public class UpdateInstanceActionRequest  {
         this.componentId = componentId;
     }
 
-    
-
     public UpdateInstanceActionRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 组件实例ID。
-     * @return instanceId
-     */
+    /** 组件实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -106,27 +77,23 @@ public class UpdateInstanceActionRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public UpdateInstanceActionRequest withBody(InstanceAction body) {
         this.body = body;
         return this;
     }
 
     public UpdateInstanceActionRequest withBody(Consumer<InstanceAction> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new InstanceAction();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public InstanceAction getBody() {
         return body;
     }
@@ -134,8 +101,6 @@ public class UpdateInstanceActionRequest  {
     public void setBody(InstanceAction body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -146,15 +111,17 @@ public class UpdateInstanceActionRequest  {
             return false;
         }
         UpdateInstanceActionRequest updateInstanceActionRequest = (UpdateInstanceActionRequest) o;
-        return Objects.equals(this.applicationId, updateInstanceActionRequest.applicationId) &&
-            Objects.equals(this.componentId, updateInstanceActionRequest.componentId) &&
-            Objects.equals(this.instanceId, updateInstanceActionRequest.instanceId) &&
-            Objects.equals(this.body, updateInstanceActionRequest.body);
+        return Objects.equals(this.applicationId, updateInstanceActionRequest.applicationId)
+            && Objects.equals(this.componentId, updateInstanceActionRequest.componentId)
+            && Objects.equals(this.instanceId, updateInstanceActionRequest.instanceId)
+            && Objects.equals(this.body, updateInstanceActionRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(applicationId, componentId, instanceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -166,16 +133,13 @@ public class UpdateInstanceActionRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

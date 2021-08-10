@@ -1,28 +1,17 @@
 package com.huaweicloud.sdk.projectman.v4.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CheckProjectNameV4Response extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="exist")
-    
+    @JsonProperty(value = "exist")
+
     private Boolean exist;
 
     public CheckProjectNameV4Response withExist(Boolean exist) {
@@ -30,13 +19,9 @@ public class CheckProjectNameV4Response extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 是否存在相同的项目名称 true 存在， false 不存在
-     * @return exist
-     */
+    /** 是否存在相同的项目名称 true 存在， false 不存在
+     * 
+     * @return exist */
     public Boolean getExist() {
         return exist;
     }
@@ -44,8 +29,6 @@ public class CheckProjectNameV4Response extends SdkResponse {
     public void setExist(Boolean exist) {
         this.exist = exist;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -58,10 +41,12 @@ public class CheckProjectNameV4Response extends SdkResponse {
         CheckProjectNameV4Response checkProjectNameV4Response = (CheckProjectNameV4Response) o;
         return Objects.equals(this.exist, checkProjectNameV4Response.exist);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(exist);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -70,16 +55,13 @@ public class CheckProjectNameV4Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

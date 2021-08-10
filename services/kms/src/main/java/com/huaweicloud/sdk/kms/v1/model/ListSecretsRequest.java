@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListSecretsRequest  {
-
-
+/** Request Object */
+public class ListSecretsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private String limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
     public ListSecretsRequest withLimit(String limit) {
@@ -34,13 +23,9 @@ public class ListSecretsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 每页返回的个数。  默认值：50。 
-     * @return limit
-     */
+    /** 每页返回的个数。 默认值：50。
+     * 
+     * @return limit */
     public String getLimit() {
         return limit;
     }
@@ -49,20 +34,14 @@ public class ListSecretsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListSecretsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页查询起始的资源id，为空时为查询第一页 
-     * @return marker
-     */
+    /** 分页查询起始的资源id，为空时为查询第一页
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -70,8 +49,6 @@ public class ListSecretsRequest  {
     public void setMarker(String marker) {
         this.marker = marker;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class ListSecretsRequest  {
             return false;
         }
         ListSecretsRequest listSecretsRequest = (ListSecretsRequest) o;
-        return Objects.equals(this.limit, listSecretsRequest.limit) &&
-            Objects.equals(this.marker, listSecretsRequest.marker);
+        return Objects.equals(this.limit, listSecretsRequest.limit)
+            && Objects.equals(this.marker, listSecretsRequest.marker);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(limit, marker);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class ListSecretsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

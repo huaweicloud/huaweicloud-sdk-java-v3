@@ -1,43 +1,26 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListStatisticsRequest  {
+/** Request Object */
+public class ListStatisticsRequest {
 
-    /**
-     * 参数过滤器。
-     */
+    /** 参数过滤器。 */
     public static final class FilterEnum {
 
-        
-        /**
-         * Enum MONTHLY_STATISTICS for value: "monthly_statistics"
-         */
+        /** Enum MONTHLY_STATISTICS for value: "monthly_statistics" */
         public static final FilterEnum MONTHLY_STATISTICS = new FilterEnum("monthly_statistics");
-        
-        /**
-         * Enum METRIC for value: "metric"
-         */
+
+        /** Enum METRIC for value: "metric" */
         public static final FilterEnum METRIC = new FilterEnum("metric");
-        
 
         private static final Map<String, FilterEnum> STATIC_FIELDS = createStaticFields();
 
@@ -66,7 +49,7 @@ public class ListStatisticsRequest  {
 
         @JsonCreator
         public static FilterEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             FilterEnum result = STATIC_FIELDS.get(value);
@@ -77,7 +60,7 @@ public class ListStatisticsRequest  {
         }
 
         public static FilterEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             FilterEnum result = STATIC_FIELDS.get(value);
@@ -101,43 +84,31 @@ public class ListStatisticsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="filter")
-    
+    @JsonProperty(value = "filter")
+
     private FilterEnum filter;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="period")
-    
+    @JsonProperty(value = "period")
+
     private String period;
-    /**
-     * 月度统计的维度，与filter参数monthly_statistics配合使用。 \"0\":本月月度统计。 \"1\":上月月度统计。 \"2\":最近三个月月度统计。 \"3\":最近六个月月度计。 取值超出范围时默认取\"0”
-     */
+
+    /** 月度统计的维度，与filter参数monthly_statistics配合使用。 \"0\":本月月度统计。 \"1\":上月月度统计。 \"2\":最近三个月月度统计。 \"3\":最近六个月月度计。
+     * 取值超出范围时默认取\"0” */
     public static final class MonthCodeEnum {
 
-        
-        /**
-         * Enum _0 for value: "0"
-         */
+        /** Enum _0 for value: "0" */
         public static final MonthCodeEnum _0 = new MonthCodeEnum("0");
-        
-        /**
-         * Enum _1 for value: "1"
-         */
+
+        /** Enum _1 for value: "1" */
         public static final MonthCodeEnum _1 = new MonthCodeEnum("1");
-        
-        /**
-         * Enum _2 for value: "2"
-         */
+
+        /** Enum _2 for value: "2" */
         public static final MonthCodeEnum _2 = new MonthCodeEnum("2");
-        
-        /**
-         * Enum _3 for value: "3"
-         */
+
+        /** Enum _3 for value: "3" */
         public static final MonthCodeEnum _3 = new MonthCodeEnum("3");
-        
 
         private static final Map<String, MonthCodeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -168,7 +139,7 @@ public class ListStatisticsRequest  {
 
         @JsonCreator
         public static MonthCodeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MonthCodeEnum result = STATIC_FIELDS.get(value);
@@ -179,7 +150,7 @@ public class ListStatisticsRequest  {
         }
 
         public static MonthCodeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MonthCodeEnum result = STATIC_FIELDS.get(value);
@@ -203,10 +174,9 @@ public class ListStatisticsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="month_code")
-    
+    @JsonProperty(value = "month_code")
+
     private MonthCodeEnum monthCode;
 
     public ListStatisticsRequest withFilter(FilterEnum filter) {
@@ -214,13 +184,9 @@ public class ListStatisticsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 参数过滤器。
-     * @return filter
-     */
+    /** 参数过滤器。
+     * 
+     * @return filter */
     public FilterEnum getFilter() {
         return filter;
     }
@@ -229,20 +195,14 @@ public class ListStatisticsRequest  {
         this.filter = filter;
     }
 
-    
-
     public ListStatisticsRequest withPeriod(String period) {
         this.period = period;
         return this;
     }
 
-    
-
-
-    /**
-     * 时间段单位为分钟，与filter参数metric配合使用。
-     * @return period
-     */
+    /** 时间段单位为分钟，与filter参数metric配合使用。
+     * 
+     * @return period */
     public String getPeriod() {
         return period;
     }
@@ -251,20 +211,15 @@ public class ListStatisticsRequest  {
         this.period = period;
     }
 
-    
-
     public ListStatisticsRequest withMonthCode(MonthCodeEnum monthCode) {
         this.monthCode = monthCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 月度统计的维度，与filter参数monthly_statistics配合使用。 \"0\":本月月度统计。 \"1\":上月月度统计。 \"2\":最近三个月月度统计。 \"3\":最近六个月月度计。 取值超出范围时默认取\"0”
-     * @return monthCode
-     */
+    /** 月度统计的维度，与filter参数monthly_statistics配合使用。 \"0\":本月月度统计。 \"1\":上月月度统计。 \"2\":最近三个月月度统计。 \"3\":最近六个月月度计。
+     * 取值超出范围时默认取\"0”
+     * 
+     * @return monthCode */
     public MonthCodeEnum getMonthCode() {
         return monthCode;
     }
@@ -272,8 +227,6 @@ public class ListStatisticsRequest  {
     public void setMonthCode(MonthCodeEnum monthCode) {
         this.monthCode = monthCode;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -284,14 +237,16 @@ public class ListStatisticsRequest  {
             return false;
         }
         ListStatisticsRequest listStatisticsRequest = (ListStatisticsRequest) o;
-        return Objects.equals(this.filter, listStatisticsRequest.filter) &&
-            Objects.equals(this.period, listStatisticsRequest.period) &&
-            Objects.equals(this.monthCode, listStatisticsRequest.monthCode);
+        return Objects.equals(this.filter, listStatisticsRequest.filter)
+            && Objects.equals(this.period, listStatisticsRequest.period)
+            && Objects.equals(this.monthCode, listStatisticsRequest.monthCode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(filter, period, monthCode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -302,16 +257,13 @@ public class ListStatisticsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

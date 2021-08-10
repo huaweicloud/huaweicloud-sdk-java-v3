@@ -1,54 +1,39 @@
 package com.huaweicloud.sdk.swr.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class DeleteUserRepositoryAuthRequest  {
-
-
+/** Request Object */
+public class DeleteUserRepositoryAuthRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
+
     private String namespace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repository")
-    
+    @JsonProperty(value = "repository")
+
     private String repository;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private List<String> body = null;
-    
+
     public DeleteUserRepositoryAuthRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
     }
 
-    
-
-
-    /**
-     * 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
-     * @return namespace
-     */
+    /** 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
+     * 
+     * @return namespace */
     public String getNamespace() {
         return namespace;
     }
@@ -57,20 +42,14 @@ public class DeleteUserRepositoryAuthRequest  {
         this.namespace = namespace;
     }
 
-    
-
     public DeleteUserRepositoryAuthRequest withRepository(String repository) {
         this.repository = repository;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像仓库名称
-     * @return repository
-     */
+    /** 镜像仓库名称
+     * 
+     * @return repository */
     public String getRepository() {
         return repository;
     }
@@ -79,16 +58,13 @@ public class DeleteUserRepositoryAuthRequest  {
         this.repository = repository;
     }
 
-    
-
     public DeleteUserRepositoryAuthRequest withBody(List<String> body) {
         this.body = body;
         return this;
     }
 
-    
     public DeleteUserRepositoryAuthRequest addBodyItem(String bodyItem) {
-        if(this.body == null) {
+        if (this.body == null) {
             this.body = new ArrayList<>();
         }
         this.body.add(bodyItem);
@@ -96,17 +72,16 @@ public class DeleteUserRepositoryAuthRequest  {
     }
 
     public DeleteUserRepositoryAuthRequest withBody(Consumer<List<String>> bodySetter) {
-        if(this.body == null) {
+        if (this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);
         return this;
     }
 
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public List<String> getBody() {
         return body;
     }
@@ -114,8 +89,6 @@ public class DeleteUserRepositoryAuthRequest  {
     public void setBody(List<String> body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -126,14 +99,16 @@ public class DeleteUserRepositoryAuthRequest  {
             return false;
         }
         DeleteUserRepositoryAuthRequest deleteUserRepositoryAuthRequest = (DeleteUserRepositoryAuthRequest) o;
-        return Objects.equals(this.namespace, deleteUserRepositoryAuthRequest.namespace) &&
-            Objects.equals(this.repository, deleteUserRepositoryAuthRequest.repository) &&
-            Objects.equals(this.body, deleteUserRepositoryAuthRequest.body);
+        return Objects.equals(this.namespace, deleteUserRepositoryAuthRequest.namespace)
+            && Objects.equals(this.repository, deleteUserRepositoryAuthRequest.repository)
+            && Objects.equals(this.body, deleteUserRepositoryAuthRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(namespace, repository, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -144,16 +119,13 @@ public class DeleteUserRepositoryAuthRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

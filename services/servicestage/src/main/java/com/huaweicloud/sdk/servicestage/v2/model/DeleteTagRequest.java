@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteTagRequest  {
-
-
+/** Request Object */
+public class DeleteTagRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Repo-Auth")
-    
+    @JsonProperty(value = "X-Repo-Auth")
+
     private String xRepoAuth;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
+
     private String namespace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project")
-    
+    @JsonProperty(value = "project")
+
     private String project;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag_name")
-    
+    @JsonProperty(value = "tag_name")
+
     private String tagName;
 
     public DeleteTagRequest withXRepoAuth(String xRepoAuth) {
@@ -46,15 +33,11 @@ public class DeleteTagRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 授权名称。
-     * @return xRepoAuth
-     */
+    /** 授权名称。
+     * 
+     * @return xRepoAuth */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Repo-Auth")
+    @JsonProperty(value = "X-Repo-Auth")
     public String getXRepoAuth() {
         return xRepoAuth;
     }
@@ -63,20 +46,14 @@ public class DeleteTagRequest  {
         this.xRepoAuth = xRepoAuth;
     }
 
-    
-
     public DeleteTagRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
     }
 
-    
-
-
-    /**
-     * 组织ID。
-     * @return namespace
-     */
+    /** 组织ID。
+     * 
+     * @return namespace */
     public String getNamespace() {
         return namespace;
     }
@@ -85,20 +62,14 @@ public class DeleteTagRequest  {
         this.namespace = namespace;
     }
 
-    
-
     public DeleteTagRequest withProject(String project) {
         this.project = project;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
-     * @return project
-     */
+    /** 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
+     * 
+     * @return project */
     public String getProject() {
         return project;
     }
@@ -107,20 +78,14 @@ public class DeleteTagRequest  {
         this.project = project;
     }
 
-    
-
     public DeleteTagRequest withTagName(String tagName) {
         this.tagName = tagName;
         return this;
     }
 
-    
-
-
-    /**
-     * tag标签名称。
-     * @return tagName
-     */
+    /** tag标签名称。
+     * 
+     * @return tagName */
     public String getTagName() {
         return tagName;
     }
@@ -128,8 +93,6 @@ public class DeleteTagRequest  {
     public void setTagName(String tagName) {
         this.tagName = tagName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -140,15 +103,17 @@ public class DeleteTagRequest  {
             return false;
         }
         DeleteTagRequest deleteTagRequest = (DeleteTagRequest) o;
-        return Objects.equals(this.xRepoAuth, deleteTagRequest.xRepoAuth) &&
-            Objects.equals(this.namespace, deleteTagRequest.namespace) &&
-            Objects.equals(this.project, deleteTagRequest.project) &&
-            Objects.equals(this.tagName, deleteTagRequest.tagName);
+        return Objects.equals(this.xRepoAuth, deleteTagRequest.xRepoAuth)
+            && Objects.equals(this.namespace, deleteTagRequest.namespace)
+            && Objects.equals(this.project, deleteTagRequest.project)
+            && Objects.equals(this.tagName, deleteTagRequest.tagName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xRepoAuth, namespace, project, tagName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -160,16 +125,13 @@ public class DeleteTagRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

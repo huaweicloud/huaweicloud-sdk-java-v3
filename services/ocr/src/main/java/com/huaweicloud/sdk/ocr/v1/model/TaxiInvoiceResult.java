@@ -1,140 +1,111 @@
 package com.huaweicloud.sdk.ocr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * TaxiInvoiceResult
- */
-public class TaxiInvoiceResult  {
-
-
+/** TaxiInvoiceResult */
+public class TaxiInvoiceResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="location")
-    
+    @JsonProperty(value = "location")
+
     private String location;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code")
-    
+    @JsonProperty(value = "code")
+
     private String code;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="number")
-    
+    @JsonProperty(value = "number")
+
     private String number;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="phone_number")
-    
+    @JsonProperty(value = "phone_number")
+
     private String phoneNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="company")
-    
+    @JsonProperty(value = "company")
+
     private String company;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="taxi_number")
-    
+    @JsonProperty(value = "taxi_number")
+
     private String taxiNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificate_number")
-    
+    @JsonProperty(value = "certificate_number")
+
     private String certificateNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="identification_number")
-    
+    @JsonProperty(value = "identification_number")
+
     private String identificationNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="date")
-    
+    @JsonProperty(value = "date")
+
     private String date;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="boarding_time")
-    
+    @JsonProperty(value = "boarding_time")
+
     private String boardingTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alighting_time")
-    
+    @JsonProperty(value = "alighting_time")
+
     private String alightingTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time")
-    
+    @JsonProperty(value = "time")
+
     private String time;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unit_price")
-    
+    @JsonProperty(value = "unit_price")
+
     private String unitPrice;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="distance")
-    
+    @JsonProperty(value = "distance")
+
     private String distance;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="waiting_time")
-    
+    @JsonProperty(value = "waiting_time")
+
     private String waitingTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fare")
-    
+    @JsonProperty(value = "fare")
+
     private String fare;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fuel_oil_surcharge")
-    
+    @JsonProperty(value = "fuel_oil_surcharge")
+
     private String fuelOilSurcharge;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="call_service_surcharge")
-    
+    @JsonProperty(value = "call_service_surcharge")
+
     private String callServiceSurcharge;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private String total;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confidence")
-    
+    @JsonProperty(value = "confidence")
+
     private Object confidence;
 
     public TaxiInvoiceResult withLocation(String location) {
@@ -142,13 +113,9 @@ public class TaxiInvoiceResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 归属地区。 
-     * @return location
-     */
+    /** 归属地区。
+     * 
+     * @return location */
     public String getLocation() {
         return location;
     }
@@ -157,20 +124,14 @@ public class TaxiInvoiceResult  {
         this.location = location;
     }
 
-    
-
     public TaxiInvoiceResult withCode(String code) {
         this.code = code;
         return this;
     }
 
-    
-
-
-    /**
-     * 发票代码。 
-     * @return code
-     */
+    /** 发票代码。
+     * 
+     * @return code */
     public String getCode() {
         return code;
     }
@@ -179,20 +140,14 @@ public class TaxiInvoiceResult  {
         this.code = code;
     }
 
-    
-
     public TaxiInvoiceResult withNumber(String number) {
         this.number = number;
         return this;
     }
 
-    
-
-
-    /**
-     * 发票号码。 
-     * @return number
-     */
+    /** 发票号码。
+     * 
+     * @return number */
     public String getNumber() {
         return number;
     }
@@ -201,20 +156,14 @@ public class TaxiInvoiceResult  {
         this.number = number;
     }
 
-    
-
     public TaxiInvoiceResult withPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * 电话（包括电话、监督电话）。 
-     * @return phoneNumber
-     */
+    /** 电话（包括电话、监督电话）。
+     * 
+     * @return phoneNumber */
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -223,20 +172,14 @@ public class TaxiInvoiceResult  {
         this.phoneNumber = phoneNumber;
     }
 
-    
-
     public TaxiInvoiceResult withCompany(String company) {
         this.company = company;
         return this;
     }
 
-    
-
-
-    /**
-     * 单位。 
-     * @return company
-     */
+    /** 单位。
+     * 
+     * @return company */
     public String getCompany() {
         return company;
     }
@@ -245,20 +188,14 @@ public class TaxiInvoiceResult  {
         this.company = company;
     }
 
-    
-
     public TaxiInvoiceResult withTaxiNumber(String taxiNumber) {
         this.taxiNumber = taxiNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * 车号。 
-     * @return taxiNumber
-     */
+    /** 车号。
+     * 
+     * @return taxiNumber */
     public String getTaxiNumber() {
         return taxiNumber;
     }
@@ -267,20 +204,14 @@ public class TaxiInvoiceResult  {
         this.taxiNumber = taxiNumber;
     }
 
-    
-
     public TaxiInvoiceResult withCertificateNumber(String certificateNumber) {
         this.certificateNumber = certificateNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * 证号。 
-     * @return certificateNumber
-     */
+    /** 证号。
+     * 
+     * @return certificateNumber */
     public String getCertificateNumber() {
         return certificateNumber;
     }
@@ -289,20 +220,14 @@ public class TaxiInvoiceResult  {
         this.certificateNumber = certificateNumber;
     }
 
-    
-
     public TaxiInvoiceResult withIdentificationNumber(String identificationNumber) {
         this.identificationNumber = identificationNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * 识别编号。 
-     * @return identificationNumber
-     */
+    /** 识别编号。
+     * 
+     * @return identificationNumber */
     public String getIdentificationNumber() {
         return identificationNumber;
     }
@@ -311,20 +236,14 @@ public class TaxiInvoiceResult  {
         this.identificationNumber = identificationNumber;
     }
 
-    
-
     public TaxiInvoiceResult withDate(String date) {
         this.date = date;
         return this;
     }
 
-    
-
-
-    /**
-     * 开票日期。 
-     * @return date
-     */
+    /** 开票日期。
+     * 
+     * @return date */
     public String getDate() {
         return date;
     }
@@ -333,20 +252,14 @@ public class TaxiInvoiceResult  {
         this.date = date;
     }
 
-    
-
     public TaxiInvoiceResult withBoardingTime(String boardingTime) {
         this.boardingTime = boardingTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 上车时间。 
-     * @return boardingTime
-     */
+    /** 上车时间。
+     * 
+     * @return boardingTime */
     public String getBoardingTime() {
         return boardingTime;
     }
@@ -355,20 +268,14 @@ public class TaxiInvoiceResult  {
         this.boardingTime = boardingTime;
     }
 
-    
-
     public TaxiInvoiceResult withAlightingTime(String alightingTime) {
         this.alightingTime = alightingTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 下车时间。 
-     * @return alightingTime
-     */
+    /** 下车时间。
+     * 
+     * @return alightingTime */
     public String getAlightingTime() {
         return alightingTime;
     }
@@ -377,20 +284,14 @@ public class TaxiInvoiceResult  {
         this.alightingTime = alightingTime;
     }
 
-    
-
     public TaxiInvoiceResult withTime(String time) {
         this.time = time;
         return this;
     }
 
-    
-
-
-    /**
-     * 时间(起止时间、上下车时间)。 
-     * @return time
-     */
+    /** 时间(起止时间、上下车时间)。
+     * 
+     * @return time */
     public String getTime() {
         return time;
     }
@@ -399,20 +300,14 @@ public class TaxiInvoiceResult  {
         this.time = time;
     }
 
-    
-
     public TaxiInvoiceResult withUnitPrice(String unitPrice) {
         this.unitPrice = unitPrice;
         return this;
     }
 
-    
-
-
-    /**
-     * 单价。 
-     * @return unitPrice
-     */
+    /** 单价。
+     * 
+     * @return unitPrice */
     public String getUnitPrice() {
         return unitPrice;
     }
@@ -421,20 +316,14 @@ public class TaxiInvoiceResult  {
         this.unitPrice = unitPrice;
     }
 
-    
-
     public TaxiInvoiceResult withDistance(String distance) {
         this.distance = distance;
         return this;
     }
 
-    
-
-
-    /**
-     * 总里程。 
-     * @return distance
-     */
+    /** 总里程。
+     * 
+     * @return distance */
     public String getDistance() {
         return distance;
     }
@@ -443,20 +332,14 @@ public class TaxiInvoiceResult  {
         this.distance = distance;
     }
 
-    
-
     public TaxiInvoiceResult withWaitingTime(String waitingTime) {
         this.waitingTime = waitingTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 等候时间。 
-     * @return waitingTime
-     */
+    /** 等候时间。
+     * 
+     * @return waitingTime */
     public String getWaitingTime() {
         return waitingTime;
     }
@@ -465,20 +348,14 @@ public class TaxiInvoiceResult  {
         this.waitingTime = waitingTime;
     }
 
-    
-
     public TaxiInvoiceResult withFare(String fare) {
         this.fare = fare;
         return this;
     }
 
-    
-
-
-    /**
-     * 金额。 
-     * @return fare
-     */
+    /** 金额。
+     * 
+     * @return fare */
     public String getFare() {
         return fare;
     }
@@ -487,20 +364,14 @@ public class TaxiInvoiceResult  {
         this.fare = fare;
     }
 
-    
-
     public TaxiInvoiceResult withFuelOilSurcharge(String fuelOilSurcharge) {
         this.fuelOilSurcharge = fuelOilSurcharge;
         return this;
     }
 
-    
-
-
-    /**
-     * 燃油附加费。 
-     * @return fuelOilSurcharge
-     */
+    /** 燃油附加费。
+     * 
+     * @return fuelOilSurcharge */
     public String getFuelOilSurcharge() {
         return fuelOilSurcharge;
     }
@@ -509,20 +380,14 @@ public class TaxiInvoiceResult  {
         this.fuelOilSurcharge = fuelOilSurcharge;
     }
 
-    
-
     public TaxiInvoiceResult withCallServiceSurcharge(String callServiceSurcharge) {
         this.callServiceSurcharge = callServiceSurcharge;
         return this;
     }
 
-    
-
-
-    /**
-     * 电调费（预约费）。 
-     * @return callServiceSurcharge
-     */
+    /** 电调费（预约费）。
+     * 
+     * @return callServiceSurcharge */
     public String getCallServiceSurcharge() {
         return callServiceSurcharge;
     }
@@ -531,20 +396,14 @@ public class TaxiInvoiceResult  {
         this.callServiceSurcharge = callServiceSurcharge;
     }
 
-    
-
     public TaxiInvoiceResult withTotal(String total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * 实收金额。 
-     * @return total
-     */
+    /** 实收金额。
+     * 
+     * @return total */
     public String getTotal() {
         return total;
     }
@@ -553,20 +412,14 @@ public class TaxiInvoiceResult  {
         this.total = total;
     }
 
-    
-
     public TaxiInvoiceResult withConfidence(Object confidence) {
         this.confidence = confidence;
         return this;
     }
 
-    
-
-
-    /**
-     * 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。 
-     * @return confidence
-     */
+    /** 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。
+     * 
+     * @return confidence */
     public Object getConfidence() {
         return confidence;
     }
@@ -574,8 +427,6 @@ public class TaxiInvoiceResult  {
     public void setConfidence(Object confidence) {
         this.confidence = confidence;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -586,31 +437,52 @@ public class TaxiInvoiceResult  {
             return false;
         }
         TaxiInvoiceResult taxiInvoiceResult = (TaxiInvoiceResult) o;
-        return Objects.equals(this.location, taxiInvoiceResult.location) &&
-            Objects.equals(this.code, taxiInvoiceResult.code) &&
-            Objects.equals(this.number, taxiInvoiceResult.number) &&
-            Objects.equals(this.phoneNumber, taxiInvoiceResult.phoneNumber) &&
-            Objects.equals(this.company, taxiInvoiceResult.company) &&
-            Objects.equals(this.taxiNumber, taxiInvoiceResult.taxiNumber) &&
-            Objects.equals(this.certificateNumber, taxiInvoiceResult.certificateNumber) &&
-            Objects.equals(this.identificationNumber, taxiInvoiceResult.identificationNumber) &&
-            Objects.equals(this.date, taxiInvoiceResult.date) &&
-            Objects.equals(this.boardingTime, taxiInvoiceResult.boardingTime) &&
-            Objects.equals(this.alightingTime, taxiInvoiceResult.alightingTime) &&
-            Objects.equals(this.time, taxiInvoiceResult.time) &&
-            Objects.equals(this.unitPrice, taxiInvoiceResult.unitPrice) &&
-            Objects.equals(this.distance, taxiInvoiceResult.distance) &&
-            Objects.equals(this.waitingTime, taxiInvoiceResult.waitingTime) &&
-            Objects.equals(this.fare, taxiInvoiceResult.fare) &&
-            Objects.equals(this.fuelOilSurcharge, taxiInvoiceResult.fuelOilSurcharge) &&
-            Objects.equals(this.callServiceSurcharge, taxiInvoiceResult.callServiceSurcharge) &&
-            Objects.equals(this.total, taxiInvoiceResult.total) &&
-            Objects.equals(this.confidence, taxiInvoiceResult.confidence);
+        return Objects.equals(this.location, taxiInvoiceResult.location)
+            && Objects.equals(this.code, taxiInvoiceResult.code)
+            && Objects.equals(this.number, taxiInvoiceResult.number)
+            && Objects.equals(this.phoneNumber, taxiInvoiceResult.phoneNumber)
+            && Objects.equals(this.company, taxiInvoiceResult.company)
+            && Objects.equals(this.taxiNumber, taxiInvoiceResult.taxiNumber)
+            && Objects.equals(this.certificateNumber, taxiInvoiceResult.certificateNumber)
+            && Objects.equals(this.identificationNumber, taxiInvoiceResult.identificationNumber)
+            && Objects.equals(this.date, taxiInvoiceResult.date)
+            && Objects.equals(this.boardingTime, taxiInvoiceResult.boardingTime)
+            && Objects.equals(this.alightingTime, taxiInvoiceResult.alightingTime)
+            && Objects.equals(this.time, taxiInvoiceResult.time)
+            && Objects.equals(this.unitPrice, taxiInvoiceResult.unitPrice)
+            && Objects.equals(this.distance, taxiInvoiceResult.distance)
+            && Objects.equals(this.waitingTime, taxiInvoiceResult.waitingTime)
+            && Objects.equals(this.fare, taxiInvoiceResult.fare)
+            && Objects.equals(this.fuelOilSurcharge, taxiInvoiceResult.fuelOilSurcharge)
+            && Objects.equals(this.callServiceSurcharge, taxiInvoiceResult.callServiceSurcharge)
+            && Objects.equals(this.total, taxiInvoiceResult.total)
+            && Objects.equals(this.confidence, taxiInvoiceResult.confidence);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(location, code, number, phoneNumber, company, taxiNumber, certificateNumber, identificationNumber, date, boardingTime, alightingTime, time, unitPrice, distance, waitingTime, fare, fuelOilSurcharge, callServiceSurcharge, total, confidence);
+        return Objects.hash(location,
+            code,
+            number,
+            phoneNumber,
+            company,
+            taxiNumber,
+            certificateNumber,
+            identificationNumber,
+            date,
+            boardingTime,
+            alightingTime,
+            time,
+            unitPrice,
+            distance,
+            waitingTime,
+            fare,
+            fuelOilSurcharge,
+            callServiceSurcharge,
+            total,
+            confidence);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -638,16 +510,13 @@ public class TaxiInvoiceResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

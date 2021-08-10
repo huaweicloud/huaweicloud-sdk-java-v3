@@ -1,71 +1,51 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowResourceHistoryRequest  {
-
-
+/** Request Object */
+public class ShowResourceHistoryRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
+    @JsonProperty(value = "resource_id")
+
     private String resourceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="earlier_time")
-    
+    @JsonProperty(value = "earlier_time")
+
     private Long earlierTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="later_time")
-    
+    @JsonProperty(value = "later_time")
+
     private Long laterTime;
-    /**
-     * 指定返回数据的时间顺序，默认为倒序
-     */
+
+    /** 指定返回数据的时间顺序，默认为倒序 */
     public static final class ChronologicalOrderEnum {
 
-        
-        /**
-         * Enum FORWARD for value: "Forward"
-         */
+        /** Enum FORWARD for value: "Forward" */
         public static final ChronologicalOrderEnum FORWARD = new ChronologicalOrderEnum("Forward");
-        
-        /**
-         * Enum REVERSE for value: "Reverse"
-         */
+
+        /** Enum REVERSE for value: "Reverse" */
         public static final ChronologicalOrderEnum REVERSE = new ChronologicalOrderEnum("Reverse");
-        
 
         private static final Map<String, ChronologicalOrderEnum> STATIC_FIELDS = createStaticFields();
 
@@ -94,7 +74,7 @@ public class ShowResourceHistoryRequest  {
 
         @JsonCreator
         public static ChronologicalOrderEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ChronologicalOrderEnum result = STATIC_FIELDS.get(value);
@@ -105,7 +85,7 @@ public class ShowResourceHistoryRequest  {
         }
 
         public static ChronologicalOrderEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ChronologicalOrderEnum result = STATIC_FIELDS.get(value);
@@ -129,10 +109,9 @@ public class ShowResourceHistoryRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="chronological_order")
-    
+    @JsonProperty(value = "chronological_order")
+
     private ChronologicalOrderEnum chronologicalOrder;
 
     public ShowResourceHistoryRequest withResourceId(String resourceId) {
@@ -140,13 +119,9 @@ public class ShowResourceHistoryRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 资源ID
-     * @return resourceId
-     */
+    /** 资源ID
+     * 
+     * @return resourceId */
     public String getResourceId() {
         return resourceId;
     }
@@ -155,20 +130,14 @@ public class ShowResourceHistoryRequest  {
         this.resourceId = resourceId;
     }
 
-    
-
     public ShowResourceHistoryRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页参数，通过上一个请求中返回的marker信息作为输入，获取当前页
-     * @return marker
-     */
+    /** 分页参数，通过上一个请求中返回的marker信息作为输入，获取当前页
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -177,22 +146,14 @@ public class ShowResourceHistoryRequest  {
         this.marker = marker;
     }
 
-    
-
     public ShowResourceHistoryRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 最大的返回数量
-     * minimum: 1
-     * maximum: 200
-     * @return limit
-     */
+    /** 最大的返回数量 minimum: 1 maximum: 200
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -201,20 +162,14 @@ public class ShowResourceHistoryRequest  {
         this.limit = limit;
     }
 
-    
-
     public ShowResourceHistoryRequest withEarlierTime(Long earlierTime) {
         this.earlierTime = earlierTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 指定查询范围的起始时间点，如果不设置此参数，默认为最早的时间
-     * @return earlierTime
-     */
+    /** 指定查询范围的起始时间点，如果不设置此参数，默认为最早的时间
+     * 
+     * @return earlierTime */
     public Long getEarlierTime() {
         return earlierTime;
     }
@@ -223,20 +178,14 @@ public class ShowResourceHistoryRequest  {
         this.earlierTime = earlierTime;
     }
 
-    
-
     public ShowResourceHistoryRequest withLaterTime(Long laterTime) {
         this.laterTime = laterTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 指定查询范围的结束时间点，如果不设置此参数，默认为当前时间
-     * @return laterTime
-     */
+    /** 指定查询范围的结束时间点，如果不设置此参数，默认为当前时间
+     * 
+     * @return laterTime */
     public Long getLaterTime() {
         return laterTime;
     }
@@ -245,20 +194,14 @@ public class ShowResourceHistoryRequest  {
         this.laterTime = laterTime;
     }
 
-    
-
     public ShowResourceHistoryRequest withChronologicalOrder(ChronologicalOrderEnum chronologicalOrder) {
         this.chronologicalOrder = chronologicalOrder;
         return this;
     }
 
-    
-
-
-    /**
-     * 指定返回数据的时间顺序，默认为倒序
-     * @return chronologicalOrder
-     */
+    /** 指定返回数据的时间顺序，默认为倒序
+     * 
+     * @return chronologicalOrder */
     public ChronologicalOrderEnum getChronologicalOrder() {
         return chronologicalOrder;
     }
@@ -266,8 +209,6 @@ public class ShowResourceHistoryRequest  {
     public void setChronologicalOrder(ChronologicalOrderEnum chronologicalOrder) {
         this.chronologicalOrder = chronologicalOrder;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -278,17 +219,19 @@ public class ShowResourceHistoryRequest  {
             return false;
         }
         ShowResourceHistoryRequest showResourceHistoryRequest = (ShowResourceHistoryRequest) o;
-        return Objects.equals(this.resourceId, showResourceHistoryRequest.resourceId) &&
-            Objects.equals(this.marker, showResourceHistoryRequest.marker) &&
-            Objects.equals(this.limit, showResourceHistoryRequest.limit) &&
-            Objects.equals(this.earlierTime, showResourceHistoryRequest.earlierTime) &&
-            Objects.equals(this.laterTime, showResourceHistoryRequest.laterTime) &&
-            Objects.equals(this.chronologicalOrder, showResourceHistoryRequest.chronologicalOrder);
+        return Objects.equals(this.resourceId, showResourceHistoryRequest.resourceId)
+            && Objects.equals(this.marker, showResourceHistoryRequest.marker)
+            && Objects.equals(this.limit, showResourceHistoryRequest.limit)
+            && Objects.equals(this.earlierTime, showResourceHistoryRequest.earlierTime)
+            && Objects.equals(this.laterTime, showResourceHistoryRequest.laterTime)
+            && Objects.equals(this.chronologicalOrder, showResourceHistoryRequest.chronologicalOrder);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resourceId, marker, limit, earlierTime, laterTime, chronologicalOrder);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -302,16 +245,13 @@ public class ShowResourceHistoryRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

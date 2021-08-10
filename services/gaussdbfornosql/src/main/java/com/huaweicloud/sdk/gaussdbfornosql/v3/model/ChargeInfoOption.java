@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 计费类型信息，支持包年包月和按需计费，默认为按需计费。
- */
-public class ChargeInfoOption  {
-
-
+/** 计费类型信息，支持包年包月和按需计费，默认为按需计费。 */
+public class ChargeInfoOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_mode")
-    
+    @JsonProperty(value = "charge_mode")
+
     private String chargeMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="period_type")
-    
+    @JsonProperty(value = "period_type")
+
     private String periodType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="period_num")
-    
+    @JsonProperty(value = "period_num")
+
     private String periodNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_auto_renew")
-    
+    @JsonProperty(value = "is_auto_renew")
+
     private String isAutoRenew;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_auto_pay")
-    
+    @JsonProperty(value = "is_auto_pay")
+
     private String isAutoPay;
 
     public ChargeInfoOption withChargeMode(String chargeMode) {
@@ -52,13 +38,9 @@ public class ChargeInfoOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 计费模式。 取值范围：   - prePaid：预付费，即包年/包月。   - postPaid：后付费，即按需付费。
-     * @return chargeMode
-     */
+    /** 计费模式。 取值范围： - prePaid：预付费，即包年/包月。 - postPaid：后付费，即按需付费。
+     * 
+     * @return chargeMode */
     public String getChargeMode() {
         return chargeMode;
     }
@@ -67,20 +49,14 @@ public class ChargeInfoOption  {
         this.chargeMode = chargeMode;
     }
 
-    
-
     public ChargeInfoOption withPeriodType(String periodType) {
         this.periodType = periodType;
         return this;
     }
 
-    
-
-
-    /**
-     * 订购周期类型。 “charge_mode”为“prePaid”时生效，且为必选值。 取值范围：   - month：包月。   - year：包年。
-     * @return periodType
-     */
+    /** 订购周期类型。 “charge_mode”为“prePaid”时生效，且为必选值。 取值范围： - month：包月。 - year：包年。
+     * 
+     * @return periodType */
     public String getPeriodType() {
         return periodType;
     }
@@ -89,20 +65,15 @@ public class ChargeInfoOption  {
         this.periodType = periodType;
     }
 
-    
-
     public ChargeInfoOption withPeriodNum(String periodNum) {
         this.periodNum = periodNum;
         return this;
     }
 
-    
-
-
-    /**
-     * “charge_mode”为“prePaid”时生效，且为必选值，指定订购的时间。 取值范围：   - 当“period_type”为“month”时，取值为1~9。   - 当“period_type”为“year”时，取值为1~3
-     * @return periodNum
-     */
+    /** “charge_mode”为“prePaid”时生效，且为必选值，指定订购的时间。 取值范围： - 当“period_type”为“month”时，取值为1~9。 -
+     * 当“period_type”为“year”时，取值为1~3
+     * 
+     * @return periodNum */
     public String getPeriodNum() {
         return periodNum;
     }
@@ -111,20 +82,14 @@ public class ChargeInfoOption  {
         this.periodNum = periodNum;
     }
 
-    
-
     public ChargeInfoOption withIsAutoRenew(String isAutoRenew) {
         this.isAutoRenew = isAutoRenew;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建包周期实例时可指定，表示是否自动续订，续订的周期和原周期相同，且续订时会自动支付。 取值范围：   - true，表示自动续订。   - false，表示不自动续订，默认为该方式。
-     * @return isAutoRenew
-     */
+    /** 创建包周期实例时可指定，表示是否自动续订，续订的周期和原周期相同，且续订时会自动支付。 取值范围： - true，表示自动续订。 - false，表示不自动续订，默认为该方式。
+     * 
+     * @return isAutoRenew */
     public String getIsAutoRenew() {
         return isAutoRenew;
     }
@@ -133,20 +98,14 @@ public class ChargeInfoOption  {
         this.isAutoRenew = isAutoRenew;
     }
 
-    
-
     public ChargeInfoOption withIsAutoPay(String isAutoPay) {
         this.isAutoPay = isAutoPay;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建包周期实例时可指定，表示是否自动从账户中支付，该字段不影响自动续订的支付方式。 取值范围：   - true，表示自动从账户中支付   - false，表示手动从账户中支付，默认为该支付方式。
-     * @return isAutoPay
-     */
+    /** 创建包周期实例时可指定，表示是否自动从账户中支付，该字段不影响自动续订的支付方式。 取值范围： - true，表示自动从账户中支付 - false，表示手动从账户中支付，默认为该支付方式。
+     * 
+     * @return isAutoPay */
     public String getIsAutoPay() {
         return isAutoPay;
     }
@@ -154,8 +113,6 @@ public class ChargeInfoOption  {
     public void setIsAutoPay(String isAutoPay) {
         this.isAutoPay = isAutoPay;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +123,18 @@ public class ChargeInfoOption  {
             return false;
         }
         ChargeInfoOption chargeInfoOption = (ChargeInfoOption) o;
-        return Objects.equals(this.chargeMode, chargeInfoOption.chargeMode) &&
-            Objects.equals(this.periodType, chargeInfoOption.periodType) &&
-            Objects.equals(this.periodNum, chargeInfoOption.periodNum) &&
-            Objects.equals(this.isAutoRenew, chargeInfoOption.isAutoRenew) &&
-            Objects.equals(this.isAutoPay, chargeInfoOption.isAutoPay);
+        return Objects.equals(this.chargeMode, chargeInfoOption.chargeMode)
+            && Objects.equals(this.periodType, chargeInfoOption.periodType)
+            && Objects.equals(this.periodNum, chargeInfoOption.periodNum)
+            && Objects.equals(this.isAutoRenew, chargeInfoOption.isAutoRenew)
+            && Objects.equals(this.isAutoPay, chargeInfoOption.isAutoPay);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(chargeMode, periodType, periodNum, isAutoRenew, isAutoPay);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +147,13 @@ public class ChargeInfoOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

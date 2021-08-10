@@ -1,98 +1,76 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class SearchResourceOpRecordRequest  {
-
-
+/** Request Object */
+public class SearchResourceOpRecordRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Request-Id")
-    
+    @JsonProperty(value = "X-Request-Id")
+
     private String xRequestId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Accept-Language")
-    
+    @JsonProperty(value = "Accept-Language")
+
     private String acceptLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="searchKey")
-    
+    @JsonProperty(value = "searchKey")
+
     private String searchKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="corp_id")
-    
+    @JsonProperty(value = "corp_id")
+
     private String corpId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="startExpireDate")
-    
+    @JsonProperty(value = "startExpireDate")
+
     private Long startExpireDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endExpireDate")
-    
+    @JsonProperty(value = "endExpireDate")
+
     private Long endExpireDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="startOperateDate")
-    
+    @JsonProperty(value = "startOperateDate")
+
     private Long startOperateDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endOperateDate")
-    
+    @JsonProperty(value = "endOperateDate")
+
     private Long endOperateDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="typeId")
-    
+    @JsonProperty(value = "typeId")
+
     private String typeId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operateType")
-    
+    @JsonProperty(value = "operateType")
+
     private Integer operateType;
 
     public SearchResourceOpRecordRequest withXRequestId(String xRequestId) {
@@ -100,15 +78,11 @@ public class SearchResourceOpRecordRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
-     * @return xRequestId
-     */
+    /** 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * 
+     * @return xRequestId */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Request-Id")
+    @JsonProperty(value = "X-Request-Id")
     public String getXRequestId() {
         return xRequestId;
     }
@@ -117,20 +91,14 @@ public class SearchResourceOpRecordRequest  {
         this.xRequestId = xRequestId;
     }
 
-    
-
     public SearchResourceOpRecordRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言参数，默认为中文zh_CN, 英文为en_US
-     * @return acceptLanguage
-     */
+    /** 语言参数，默认为中文zh_CN, 英文为en_US
+     * 
+     * @return acceptLanguage */
     public String getAcceptLanguage() {
         return acceptLanguage;
     }
@@ -139,21 +107,14 @@ public class SearchResourceOpRecordRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
-    
-
     public SearchResourceOpRecordRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 
-     * minimum: 0
-     * @return offset
-     */
+    /** 查询偏移量,若超过最大数量，则返回最后一页的数据 默认值：0 minimum: 0
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -162,22 +123,14 @@ public class SearchResourceOpRecordRequest  {
         this.offset = offset;
     }
 
-    
-
     public SearchResourceOpRecordRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询数量 默认值：0 
-     * minimum: 1
-     * maximum: 500
-     * @return limit
-     */
+    /** 查询数量 默认值：0 minimum: 1 maximum: 500
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -186,20 +139,14 @@ public class SearchResourceOpRecordRequest  {
         this.limit = limit;
     }
 
-    
-
     public SearchResourceOpRecordRequest withSearchKey(String searchKey) {
         this.searchKey = searchKey;
         return this;
     }
 
-    
-
-
-    /**
-     * 搜索条件
-     * @return searchKey
-     */
+    /** 搜索条件
+     * 
+     * @return searchKey */
     public String getSearchKey() {
         return searchKey;
     }
@@ -208,20 +155,14 @@ public class SearchResourceOpRecordRequest  {
         this.searchKey = searchKey;
     }
 
-    
-
     public SearchResourceOpRecordRequest withCorpId(String corpId) {
         this.corpId = corpId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业id
-     * @return corpId
-     */
+    /** 企业id
+     * 
+     * @return corpId */
     public String getCorpId() {
         return corpId;
     }
@@ -230,20 +171,14 @@ public class SearchResourceOpRecordRequest  {
         this.corpId = corpId;
     }
 
-    
-
     public SearchResourceOpRecordRequest withStartExpireDate(Long startExpireDate) {
         this.startExpireDate = startExpireDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询过期时间在该时间戳之后的订单操作记录
-     * @return startExpireDate
-     */
+    /** 查询过期时间在该时间戳之后的订单操作记录
+     * 
+     * @return startExpireDate */
     public Long getStartExpireDate() {
         return startExpireDate;
     }
@@ -252,20 +187,14 @@ public class SearchResourceOpRecordRequest  {
         this.startExpireDate = startExpireDate;
     }
 
-    
-
     public SearchResourceOpRecordRequest withEndExpireDate(Long endExpireDate) {
         this.endExpireDate = endExpireDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询过期时间在该时间戳之前的订单操作记录
-     * @return endExpireDate
-     */
+    /** 查询过期时间在该时间戳之前的订单操作记录
+     * 
+     * @return endExpireDate */
     public Long getEndExpireDate() {
         return endExpireDate;
     }
@@ -274,20 +203,14 @@ public class SearchResourceOpRecordRequest  {
         this.endExpireDate = endExpireDate;
     }
 
-    
-
     public SearchResourceOpRecordRequest withStartOperateDate(Long startOperateDate) {
         this.startOperateDate = startOperateDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询操作时间在该时间戳之后的订单操作记录
-     * @return startOperateDate
-     */
+    /** 查询操作时间在该时间戳之后的订单操作记录
+     * 
+     * @return startOperateDate */
     public Long getStartOperateDate() {
         return startOperateDate;
     }
@@ -296,20 +219,14 @@ public class SearchResourceOpRecordRequest  {
         this.startOperateDate = startOperateDate;
     }
 
-    
-
     public SearchResourceOpRecordRequest withEndOperateDate(Long endOperateDate) {
         this.endOperateDate = endOperateDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询操作时间在该时间戳之前的订单操作记录
-     * @return endOperateDate
-     */
+    /** 查询操作时间在该时间戳之前的订单操作记录
+     * 
+     * @return endOperateDate */
     public Long getEndOperateDate() {
         return endOperateDate;
     }
@@ -318,20 +235,14 @@ public class SearchResourceOpRecordRequest  {
         this.endOperateDate = endOperateDate;
     }
 
-    
-
     public SearchResourceOpRecordRequest withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 订单资源类型
-     * @return type
-     */
+    /** 订单资源类型
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -340,20 +251,14 @@ public class SearchResourceOpRecordRequest  {
         this.type = type;
     }
 
-    
-
     public SearchResourceOpRecordRequest withTypeId(String typeId) {
         this.typeId = typeId;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前仅当资源类型为vmr时生效
-     * @return typeId
-     */
+    /** 当前仅当资源类型为vmr时生效
+     * 
+     * @return typeId */
     public String getTypeId() {
         return typeId;
     }
@@ -362,22 +267,14 @@ public class SearchResourceOpRecordRequest  {
         this.typeId = typeId;
     }
 
-    
-
     public SearchResourceOpRecordRequest withOperateType(Integer operateType) {
         this.operateType = operateType;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作类型 - 0：添加 - 1：删除 - 2：修改 - 3：停用 - 4：启用
-     * minimum: 0
-     * maximum: 4
-     * @return operateType
-     */
+    /** 操作类型 - 0：添加 - 1：删除 - 2：修改 - 3：停用 - 4：启用 minimum: 0 maximum: 4
+     * 
+     * @return operateType */
     public Integer getOperateType() {
         return operateType;
     }
@@ -385,8 +282,6 @@ public class SearchResourceOpRecordRequest  {
     public void setOperateType(Integer operateType) {
         this.operateType = operateType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -397,24 +292,38 @@ public class SearchResourceOpRecordRequest  {
             return false;
         }
         SearchResourceOpRecordRequest searchResourceOpRecordRequest = (SearchResourceOpRecordRequest) o;
-        return Objects.equals(this.xRequestId, searchResourceOpRecordRequest.xRequestId) &&
-            Objects.equals(this.acceptLanguage, searchResourceOpRecordRequest.acceptLanguage) &&
-            Objects.equals(this.offset, searchResourceOpRecordRequest.offset) &&
-            Objects.equals(this.limit, searchResourceOpRecordRequest.limit) &&
-            Objects.equals(this.searchKey, searchResourceOpRecordRequest.searchKey) &&
-            Objects.equals(this.corpId, searchResourceOpRecordRequest.corpId) &&
-            Objects.equals(this.startExpireDate, searchResourceOpRecordRequest.startExpireDate) &&
-            Objects.equals(this.endExpireDate, searchResourceOpRecordRequest.endExpireDate) &&
-            Objects.equals(this.startOperateDate, searchResourceOpRecordRequest.startOperateDate) &&
-            Objects.equals(this.endOperateDate, searchResourceOpRecordRequest.endOperateDate) &&
-            Objects.equals(this.type, searchResourceOpRecordRequest.type) &&
-            Objects.equals(this.typeId, searchResourceOpRecordRequest.typeId) &&
-            Objects.equals(this.operateType, searchResourceOpRecordRequest.operateType);
+        return Objects.equals(this.xRequestId, searchResourceOpRecordRequest.xRequestId)
+            && Objects.equals(this.acceptLanguage, searchResourceOpRecordRequest.acceptLanguage)
+            && Objects.equals(this.offset, searchResourceOpRecordRequest.offset)
+            && Objects.equals(this.limit, searchResourceOpRecordRequest.limit)
+            && Objects.equals(this.searchKey, searchResourceOpRecordRequest.searchKey)
+            && Objects.equals(this.corpId, searchResourceOpRecordRequest.corpId)
+            && Objects.equals(this.startExpireDate, searchResourceOpRecordRequest.startExpireDate)
+            && Objects.equals(this.endExpireDate, searchResourceOpRecordRequest.endExpireDate)
+            && Objects.equals(this.startOperateDate, searchResourceOpRecordRequest.startOperateDate)
+            && Objects.equals(this.endOperateDate, searchResourceOpRecordRequest.endOperateDate)
+            && Objects.equals(this.type, searchResourceOpRecordRequest.type)
+            && Objects.equals(this.typeId, searchResourceOpRecordRequest.typeId)
+            && Objects.equals(this.operateType, searchResourceOpRecordRequest.operateType);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(xRequestId, acceptLanguage, offset, limit, searchKey, corpId, startExpireDate, endExpireDate, startOperateDate, endOperateDate, type, typeId, operateType);
+        return Objects.hash(xRequestId,
+            acceptLanguage,
+            offset,
+            limit,
+            searchKey,
+            corpId,
+            startExpireDate,
+            endExpireDate,
+            startOperateDate,
+            endOperateDate,
+            type,
+            typeId,
+            operateType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -435,16 +344,13 @@ public class SearchResourceOpRecordRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

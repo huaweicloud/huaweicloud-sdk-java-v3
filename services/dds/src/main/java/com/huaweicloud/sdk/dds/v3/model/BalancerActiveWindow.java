@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 活动时间窗设置。
- */
-public class BalancerActiveWindow  {
-
-
+/** 活动时间窗设置。 */
+public class BalancerActiveWindow {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stop_time")
-    
+    @JsonProperty(value = "stop_time")
+
     private String stopTime;
 
     public BalancerActiveWindow withStartTime(String startTime) {
@@ -34,13 +23,9 @@ public class BalancerActiveWindow  {
         return this;
     }
 
-    
-
-
-    /**
-     * 活动时间窗开始时间。
-     * @return startTime
-     */
+    /** 活动时间窗开始时间。
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -49,20 +34,14 @@ public class BalancerActiveWindow  {
         this.startTime = startTime;
     }
 
-    
-
     public BalancerActiveWindow withStopTime(String stopTime) {
         this.stopTime = stopTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 活动时间窗结束时间。
-     * @return stopTime
-     */
+    /** 活动时间窗结束时间。
+     * 
+     * @return stopTime */
     public String getStopTime() {
         return stopTime;
     }
@@ -70,8 +49,6 @@ public class BalancerActiveWindow  {
     public void setStopTime(String stopTime) {
         this.stopTime = stopTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class BalancerActiveWindow  {
             return false;
         }
         BalancerActiveWindow balancerActiveWindow = (BalancerActiveWindow) o;
-        return Objects.equals(this.startTime, balancerActiveWindow.startTime) &&
-            Objects.equals(this.stopTime, balancerActiveWindow.stopTime);
+        return Objects.equals(this.startTime, balancerActiveWindow.startTime)
+            && Objects.equals(this.stopTime, balancerActiveWindow.stopTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(startTime, stopTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class BalancerActiveWindow  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

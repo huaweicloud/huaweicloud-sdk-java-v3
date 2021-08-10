@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ListGeoIpResponseBodyItems
- */
-public class ListGeoIpResponseBodyItems  {
-
-
+/** ListGeoIpResponseBodyItems */
+public class ListGeoIpResponseBodyItems {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="geoip")
-    
+    @JsonProperty(value = "geoip")
+
     private String geoip;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="white")
-    
+    @JsonProperty(value = "white")
+
     private Integer white;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timestamp")
-    
+    @JsonProperty(value = "timestamp")
+
     private Long timestamp;
 
     public ListGeoIpResponseBodyItems withId(String id) {
@@ -46,13 +33,9 @@ public class ListGeoIpResponseBodyItems  {
         return this;
     }
 
-    
-
-
-    /**
-     * 规则id
-     * @return id
-     */
+    /** 规则id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -61,20 +44,14 @@ public class ListGeoIpResponseBodyItems  {
         this.id = id;
     }
 
-    
-
     public ListGeoIpResponseBodyItems withGeoip(String geoip) {
         this.geoip = geoip;
         return this;
     }
 
-    
-
-
-    /**
-     * 地理位置封禁区域
-     * @return geoip
-     */
+    /** 地理位置封禁区域
+     * 
+     * @return geoip */
     public String getGeoip() {
         return geoip;
     }
@@ -83,20 +60,14 @@ public class ListGeoIpResponseBodyItems  {
         this.geoip = geoip;
     }
 
-    
-
     public ListGeoIpResponseBodyItems withWhite(Integer white) {
         this.white = white;
         return this;
     }
 
-    
-
-
-    /**
-     * 放行或者拦截
-     * @return white
-     */
+    /** 放行或者拦截
+     * 
+     * @return white */
     public Integer getWhite() {
         return white;
     }
@@ -105,20 +76,14 @@ public class ListGeoIpResponseBodyItems  {
         this.white = white;
     }
 
-    
-
     public ListGeoIpResponseBodyItems withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建规则时间戳
-     * @return timestamp
-     */
+    /** 创建规则时间戳
+     * 
+     * @return timestamp */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -126,8 +91,6 @@ public class ListGeoIpResponseBodyItems  {
     public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class ListGeoIpResponseBodyItems  {
             return false;
         }
         ListGeoIpResponseBodyItems listGeoIpResponseBodyItems = (ListGeoIpResponseBodyItems) o;
-        return Objects.equals(this.id, listGeoIpResponseBodyItems.id) &&
-            Objects.equals(this.geoip, listGeoIpResponseBodyItems.geoip) &&
-            Objects.equals(this.white, listGeoIpResponseBodyItems.white) &&
-            Objects.equals(this.timestamp, listGeoIpResponseBodyItems.timestamp);
+        return Objects.equals(this.id, listGeoIpResponseBodyItems.id)
+            && Objects.equals(this.geoip, listGeoIpResponseBodyItems.geoip)
+            && Objects.equals(this.white, listGeoIpResponseBodyItems.white)
+            && Objects.equals(this.timestamp, listGeoIpResponseBodyItems.timestamp);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, geoip, white, timestamp);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class ListGeoIpResponseBodyItems  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

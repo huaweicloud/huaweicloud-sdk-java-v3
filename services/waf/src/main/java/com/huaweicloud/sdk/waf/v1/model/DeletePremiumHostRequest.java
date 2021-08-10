@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeletePremiumHostRequest  {
-
-
+/** Request Object */
+public class DeletePremiumHostRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host_id")
-    
+    @JsonProperty(value = "host_id")
+
     private String hostId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="keepPolicy")
-    
+    @JsonProperty(value = "keepPolicy")
+
     private Boolean keepPolicy;
 
     public DeletePremiumHostRequest withHostId(String hostId) {
@@ -34,13 +23,9 @@ public class DeletePremiumHostRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 独享模式域名ID
-     * @return hostId
-     */
+    /** 独享模式域名ID
+     * 
+     * @return hostId */
     public String getHostId() {
         return hostId;
     }
@@ -49,20 +34,14 @@ public class DeletePremiumHostRequest  {
         this.hostId = hostId;
     }
 
-    
-
     public DeletePremiumHostRequest withKeepPolicy(Boolean keepPolicy) {
         this.keepPolicy = keepPolicy;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否保留规则
-     * @return keepPolicy
-     */
+    /** 是否保留规则
+     * 
+     * @return keepPolicy */
     public Boolean getKeepPolicy() {
         return keepPolicy;
     }
@@ -70,8 +49,6 @@ public class DeletePremiumHostRequest  {
     public void setKeepPolicy(Boolean keepPolicy) {
         this.keepPolicy = keepPolicy;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class DeletePremiumHostRequest  {
             return false;
         }
         DeletePremiumHostRequest deletePremiumHostRequest = (DeletePremiumHostRequest) o;
-        return Objects.equals(this.hostId, deletePremiumHostRequest.hostId) &&
-            Objects.equals(this.keepPolicy, deletePremiumHostRequest.keepPolicy);
+        return Objects.equals(this.hostId, deletePremiumHostRequest.hostId)
+            && Objects.equals(this.keepPolicy, deletePremiumHostRequest.keepPolicy);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(hostId, keepPolicy);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class DeletePremiumHostRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

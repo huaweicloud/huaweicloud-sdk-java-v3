@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vpc.v2.model.NeutronSecurityGroup;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class NeutronUpdateSecurityGroupResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group")
-    
+    @JsonProperty(value = "security_group")
+
     private NeutronSecurityGroup securityGroup;
 
     public NeutronUpdateSecurityGroupResponse withSecurityGroup(NeutronSecurityGroup securityGroup) {
@@ -32,19 +21,17 @@ public class NeutronUpdateSecurityGroupResponse extends SdkResponse {
     }
 
     public NeutronUpdateSecurityGroupResponse withSecurityGroup(Consumer<NeutronSecurityGroup> securityGroupSetter) {
-        if(this.securityGroup == null ){
+        if (this.securityGroup == null) {
             this.securityGroup = new NeutronSecurityGroup();
             securityGroupSetter.accept(this.securityGroup);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get securityGroup
-     * @return securityGroup
-     */
+    /** Get securityGroup
+     * 
+     * @return securityGroup */
     public NeutronSecurityGroup getSecurityGroup() {
         return securityGroup;
     }
@@ -52,8 +39,6 @@ public class NeutronUpdateSecurityGroupResponse extends SdkResponse {
     public void setSecurityGroup(NeutronSecurityGroup securityGroup) {
         this.securityGroup = securityGroup;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class NeutronUpdateSecurityGroupResponse extends SdkResponse {
         NeutronUpdateSecurityGroupResponse neutronUpdateSecurityGroupResponse = (NeutronUpdateSecurityGroupResponse) o;
         return Objects.equals(this.securityGroup, neutronUpdateSecurityGroupResponse.securityGroup);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(securityGroup);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class NeutronUpdateSecurityGroupResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

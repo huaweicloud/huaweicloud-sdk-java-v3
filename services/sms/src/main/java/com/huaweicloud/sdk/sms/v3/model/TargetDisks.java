@@ -1,49 +1,32 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.PhysicalVolumes;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 目的端磁盘信息
- */
-public class TargetDisks  {
+/** 目的端磁盘信息 */
+public class TargetDisks {
 
-    /**
-     * 磁盘类型，普通磁盘，OS所在磁盘，BOOT所在磁盘
-     */
+    /** 磁盘类型，普通磁盘，OS所在磁盘，BOOT所在磁盘 */
     public static final class DeviceUseEnum {
 
-        
-        /**
-         * Enum NORMAL for value: "NORMAL"
-         */
+        /** Enum NORMAL for value: "NORMAL" */
         public static final DeviceUseEnum NORMAL = new DeviceUseEnum("NORMAL");
-        
-        /**
-         * Enum OS for value: "OS"
-         */
+
+        /** Enum OS for value: "OS" */
         public static final DeviceUseEnum OS = new DeviceUseEnum("OS");
-        
-        /**
-         * Enum BOOT for value: "BOOT"
-         */
+
+        /** Enum BOOT for value: "BOOT" */
         public static final DeviceUseEnum BOOT = new DeviceUseEnum("BOOT");
-        
 
         private static final Map<String, DeviceUseEnum> STATIC_FIELDS = createStaticFields();
 
@@ -73,7 +56,7 @@ public class TargetDisks  {
 
         @JsonCreator
         public static DeviceUseEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DeviceUseEnum result = STATIC_FIELDS.get(value);
@@ -84,7 +67,7 @@ public class TargetDisks  {
         }
 
         public static DeviceUseEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DeviceUseEnum result = STATIC_FIELDS.get(value);
@@ -108,40 +91,34 @@ public class TargetDisks  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_use")
-    
+    @JsonProperty(value = "device_use")
+
     private DeviceUseEnum deviceUse;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disk_id")
-    
+    @JsonProperty(value = "disk_id")
+
     private String diskId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="physical_volumes")
-    
+    @JsonProperty(value = "physical_volumes")
+
     private List<PhysicalVolumes> physicalVolumes = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Long size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="used_size")
-    
+    @JsonProperty(value = "used_size")
+
     private Long usedSize;
 
     public TargetDisks withDeviceUse(DeviceUseEnum deviceUse) {
@@ -149,13 +126,9 @@ public class TargetDisks  {
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘类型，普通磁盘，OS所在磁盘，BOOT所在磁盘
-     * @return deviceUse
-     */
+    /** 磁盘类型，普通磁盘，OS所在磁盘，BOOT所在磁盘
+     * 
+     * @return deviceUse */
     public DeviceUseEnum getDeviceUse() {
         return deviceUse;
     }
@@ -164,20 +137,14 @@ public class TargetDisks  {
         this.deviceUse = deviceUse;
     }
 
-    
-
     public TargetDisks withDiskId(String diskId) {
         this.diskId = diskId;
         return this;
     }
 
-    
-
-
-    /**
-     * 磁盘id,自动创建虚拟机不用设置
-     * @return diskId
-     */
+    /** 磁盘id,自动创建虚拟机不用设置
+     * 
+     * @return diskId */
     public String getDiskId() {
         return diskId;
     }
@@ -186,20 +153,14 @@ public class TargetDisks  {
         this.diskId = diskId;
     }
 
-    
-
     public TargetDisks withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 名称，根据磁盘顺序设置为disk X
-     * @return name
-     */
+    /** 名称，根据磁盘顺序设置为disk X
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -208,16 +169,13 @@ public class TargetDisks  {
         this.name = name;
     }
 
-    
-
     public TargetDisks withPhysicalVolumes(List<PhysicalVolumes> physicalVolumes) {
         this.physicalVolumes = physicalVolumes;
         return this;
     }
 
-    
     public TargetDisks addPhysicalVolumesItem(PhysicalVolumes physicalVolumesItem) {
-        if(this.physicalVolumes == null) {
+        if (this.physicalVolumes == null) {
             this.physicalVolumes = new ArrayList<>();
         }
         this.physicalVolumes.add(physicalVolumesItem);
@@ -225,17 +183,16 @@ public class TargetDisks  {
     }
 
     public TargetDisks withPhysicalVolumes(Consumer<List<PhysicalVolumes>> physicalVolumesSetter) {
-        if(this.physicalVolumes == null) {
+        if (this.physicalVolumes == null) {
             this.physicalVolumes = new ArrayList<>();
         }
         physicalVolumesSetter.accept(this.physicalVolumes);
         return this;
     }
 
-    /**
-     * 物理卷信息
-     * @return physicalVolumes
-     */
+    /** 物理卷信息
+     * 
+     * @return physicalVolumes */
     public List<PhysicalVolumes> getPhysicalVolumes() {
         return physicalVolumes;
     }
@@ -244,22 +201,14 @@ public class TargetDisks  {
         this.physicalVolumes = physicalVolumes;
     }
 
-    
-
     public TargetDisks withSize(Long size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 大小
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return size
-     */
+    /** 大小 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return size */
     public Long getSize() {
         return size;
     }
@@ -268,22 +217,14 @@ public class TargetDisks  {
         this.size = size;
     }
 
-    
-
     public TargetDisks withUsedSize(Long usedSize) {
         this.usedSize = usedSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 使用大小
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return usedSize
-     */
+    /** 使用大小 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return usedSize */
     public Long getUsedSize() {
         return usedSize;
     }
@@ -291,8 +232,6 @@ public class TargetDisks  {
     public void setUsedSize(Long usedSize) {
         this.usedSize = usedSize;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -303,17 +242,17 @@ public class TargetDisks  {
             return false;
         }
         TargetDisks targetDisks = (TargetDisks) o;
-        return Objects.equals(this.deviceUse, targetDisks.deviceUse) &&
-            Objects.equals(this.diskId, targetDisks.diskId) &&
-            Objects.equals(this.name, targetDisks.name) &&
-            Objects.equals(this.physicalVolumes, targetDisks.physicalVolumes) &&
-            Objects.equals(this.size, targetDisks.size) &&
-            Objects.equals(this.usedSize, targetDisks.usedSize);
+        return Objects.equals(this.deviceUse, targetDisks.deviceUse) && Objects.equals(this.diskId, targetDisks.diskId)
+            && Objects.equals(this.name, targetDisks.name)
+            && Objects.equals(this.physicalVolumes, targetDisks.physicalVolumes)
+            && Objects.equals(this.size, targetDisks.size) && Objects.equals(this.usedSize, targetDisks.usedSize);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(deviceUse, diskId, name, physicalVolumes, size, usedSize);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -327,16 +266,13 @@ public class TargetDisks  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

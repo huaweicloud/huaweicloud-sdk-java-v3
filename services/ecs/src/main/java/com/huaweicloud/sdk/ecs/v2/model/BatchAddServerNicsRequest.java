@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.BatchAddServerNicsRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class BatchAddServerNicsRequest  {
-
-
+/** Request Object */
+public class BatchAddServerNicsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server_id")
-    
+    @JsonProperty(value = "server_id")
+
     private String serverId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private BatchAddServerNicsRequestBody body;
 
     public BatchAddServerNicsRequest withServerId(String serverId) {
@@ -35,13 +24,9 @@ public class BatchAddServerNicsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务器ID。
-     * @return serverId
-     */
+    /** 云服务器ID。
+     * 
+     * @return serverId */
     public String getServerId() {
         return serverId;
     }
@@ -50,27 +35,23 @@ public class BatchAddServerNicsRequest  {
         this.serverId = serverId;
     }
 
-    
-
     public BatchAddServerNicsRequest withBody(BatchAddServerNicsRequestBody body) {
         this.body = body;
         return this;
     }
 
     public BatchAddServerNicsRequest withBody(Consumer<BatchAddServerNicsRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new BatchAddServerNicsRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public BatchAddServerNicsRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class BatchAddServerNicsRequest  {
     public void setBody(BatchAddServerNicsRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class BatchAddServerNicsRequest  {
             return false;
         }
         BatchAddServerNicsRequest batchAddServerNicsRequest = (BatchAddServerNicsRequest) o;
-        return Objects.equals(this.serverId, batchAddServerNicsRequest.serverId) &&
-            Objects.equals(this.body, batchAddServerNicsRequest.body);
+        return Objects.equals(this.serverId, batchAddServerNicsRequest.serverId)
+            && Objects.equals(this.body, batchAddServerNicsRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(serverId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class BatchAddServerNicsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

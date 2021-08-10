@@ -1,51 +1,37 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.RestScheduleConfDTO;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateMeetingRequest  {
-
-
+/** Request Object */
+public class UpdateMeetingRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="conferenceID")
-    
+    @JsonProperty(value = "conferenceID")
+
     private String conferenceID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="userUUID")
-    
+    @JsonProperty(value = "userUUID")
+
     private String userUUID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Authorization-Type")
-    
+    @JsonProperty(value = "X-Authorization-Type")
+
     private String xAuthorizationType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site-Id")
-    
+    @JsonProperty(value = "X-Site-Id")
+
     private String xSiteId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private RestScheduleConfDTO body;
 
     public UpdateMeetingRequest withConferenceID(String conferenceID) {
@@ -53,13 +39,9 @@ public class UpdateMeetingRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 会议ID
-     * @return conferenceID
-     */
+    /** 会议ID
+     * 
+     * @return conferenceID */
     public String getConferenceID() {
         return conferenceID;
     }
@@ -68,20 +50,14 @@ public class UpdateMeetingRequest  {
         this.conferenceID = conferenceID;
     }
 
-    
-
     public UpdateMeetingRequest withUserUUID(String userUUID) {
         this.userUUID = userUUID;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户的UUID（已在USG注册过的）。
-     * @return userUUID
-     */
+    /** 用户的UUID（已在USG注册过的）。
+     * 
+     * @return userUUID */
     public String getUserUUID() {
         return userUUID;
     }
@@ -90,22 +66,16 @@ public class UpdateMeetingRequest  {
         this.userUUID = userUUID;
     }
 
-    
-
     public UpdateMeetingRequest withXAuthorizationType(String xAuthorizationType) {
         this.xAuthorizationType = xAuthorizationType;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识是否为第三方portal过来的请求。
-     * @return xAuthorizationType
-     */
+    /** 标识是否为第三方portal过来的请求。
+     * 
+     * @return xAuthorizationType */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Authorization-Type")
+    @JsonProperty(value = "X-Authorization-Type")
     public String getXAuthorizationType() {
         return xAuthorizationType;
     }
@@ -114,22 +84,16 @@ public class UpdateMeetingRequest  {
         this.xAuthorizationType = xAuthorizationType;
     }
 
-    
-
     public UpdateMeetingRequest withXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用于区分到哪个HCSO站点鉴权。
-     * @return xSiteId
-     */
+    /** 用于区分到哪个HCSO站点鉴权。
+     * 
+     * @return xSiteId */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site-Id")
+    @JsonProperty(value = "X-Site-Id")
     public String getXSiteId() {
         return xSiteId;
     }
@@ -138,27 +102,23 @@ public class UpdateMeetingRequest  {
         this.xSiteId = xSiteId;
     }
 
-    
-
     public UpdateMeetingRequest withBody(RestScheduleConfDTO body) {
         this.body = body;
         return this;
     }
 
     public UpdateMeetingRequest withBody(Consumer<RestScheduleConfDTO> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new RestScheduleConfDTO();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public RestScheduleConfDTO getBody() {
         return body;
     }
@@ -166,8 +126,6 @@ public class UpdateMeetingRequest  {
     public void setBody(RestScheduleConfDTO body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -178,16 +136,18 @@ public class UpdateMeetingRequest  {
             return false;
         }
         UpdateMeetingRequest updateMeetingRequest = (UpdateMeetingRequest) o;
-        return Objects.equals(this.conferenceID, updateMeetingRequest.conferenceID) &&
-            Objects.equals(this.userUUID, updateMeetingRequest.userUUID) &&
-            Objects.equals(this.xAuthorizationType, updateMeetingRequest.xAuthorizationType) &&
-            Objects.equals(this.xSiteId, updateMeetingRequest.xSiteId) &&
-            Objects.equals(this.body, updateMeetingRequest.body);
+        return Objects.equals(this.conferenceID, updateMeetingRequest.conferenceID)
+            && Objects.equals(this.userUUID, updateMeetingRequest.userUUID)
+            && Objects.equals(this.xAuthorizationType, updateMeetingRequest.xAuthorizationType)
+            && Objects.equals(this.xSiteId, updateMeetingRequest.xSiteId)
+            && Objects.equals(this.body, updateMeetingRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(conferenceID, userUUID, xAuthorizationType, xSiteId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -200,16 +160,13 @@ public class UpdateMeetingRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

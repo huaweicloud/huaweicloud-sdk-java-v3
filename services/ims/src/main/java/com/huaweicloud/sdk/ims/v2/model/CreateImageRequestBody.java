@@ -1,141 +1,105 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ims.v2.model.CreateDataImage;
-import com.huaweicloud.sdk.ims.v2.model.TagKeyValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 创建镜像请求参数体
- */
-public class CreateImageRequestBody  {
-
-
+/** 创建镜像请求参数体 */
+public class CreateImageRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_images")
-    
+    @JsonProperty(value = "data_images")
+
     private List<CreateDataImage> dataImages = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_tags")
-    
+    @JsonProperty(value = "image_tags")
+
     private List<TagKeyValue> imageTags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<String> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_ram")
-    
+    @JsonProperty(value = "max_ram")
+
     private Integer maxRam;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="min_ram")
-    
+    @JsonProperty(value = "min_ram")
+
     private Integer minRam;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os_version")
-    
+    @JsonProperty(value = "os_version")
+
     private String osVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_url")
-    
+    @JsonProperty(value = "image_url")
+
     private String imageUrl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="min_disk")
-    
+    @JsonProperty(value = "min_disk")
+
     private Integer minDisk;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_config")
-    
+    @JsonProperty(value = "is_config")
+
     private Boolean isConfig;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cmk_id")
-    
+    @JsonProperty(value = "cmk_id")
+
     private String cmkId;
-    /**
-     * 镜像的类型。 取值为ECS、BMS、FusionCompute、Ironic。默认使用“ECS”。 ECS/FusionCompute：表示是ECS服务器的镜像。 BMS/Ironic：表示是BMS服务器的镜像。
-     */
+
+    /** 镜像的类型。 取值为ECS、BMS、FusionCompute、Ironic。默认使用“ECS”。 ECS/FusionCompute：表示是ECS服务器的镜像。 BMS/Ironic：表示是BMS服务器的镜像。 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum ECS for value: "ECS"
-         */
+        /** Enum ECS for value: "ECS" */
         public static final TypeEnum ECS = new TypeEnum("ECS");
-        
-        /**
-         * Enum BMS for value: "BMS"
-         */
+
+        /** Enum BMS for value: "BMS" */
         public static final TypeEnum BMS = new TypeEnum("BMS");
-        
-        /**
-         * Enum FUSIONCOMPUTE for value: "FusionCompute"
-         */
+
+        /** Enum FUSIONCOMPUTE for value: "FusionCompute" */
         public static final TypeEnum FUSIONCOMPUTE = new TypeEnum("FusionCompute");
-        
-        /**
-         * Enum IRONIC for value: "Ironic"
-         */
+
+        /** Enum IRONIC for value: "Ironic" */
         public static final TypeEnum IRONIC = new TypeEnum("Ironic");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -166,7 +130,7 @@ public class CreateImageRequestBody  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -177,7 +141,7 @@ public class CreateImageRequestBody  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -201,33 +165,24 @@ public class CreateImageRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_quick_import")
-    
+    @JsonProperty(value = "is_quick_import")
+
     private Boolean isQuickImport;
-    /**
-     * 镜像的架构类型。取值包括： x86 arm 默认使用“x86”。 当架构类型为arm时，镜像引导方式将自动转为UEFI的引导方式。
-     */
+
+    /** 镜像的架构类型。取值包括： x86 arm 默认使用“x86”。 当架构类型为arm时，镜像引导方式将自动转为UEFI的引导方式。 */
     public static final class ArchitectureEnum {
 
-        
-        /**
-         * Enum X86 for value: "x86"
-         */
+        /** Enum X86 for value: "x86" */
         public static final ArchitectureEnum X86 = new ArchitectureEnum("x86");
-        
-        /**
-         * Enum ARM for value: "arm"
-         */
+
+        /** Enum ARM for value: "arm" */
         public static final ArchitectureEnum ARM = new ArchitectureEnum("arm");
-        
 
         private static final Map<String, ArchitectureEnum> STATIC_FIELDS = createStaticFields();
 
@@ -256,7 +211,7 @@ public class CreateImageRequestBody  {
 
         @JsonCreator
         public static ArchitectureEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ArchitectureEnum result = STATIC_FIELDS.get(value);
@@ -267,7 +222,7 @@ public class CreateImageRequestBody  {
         }
 
         public static ArchitectureEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ArchitectureEnum result = STATIC_FIELDS.get(value);
@@ -291,16 +246,14 @@ public class CreateImageRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="architecture")
-    
+    @JsonProperty(value = "architecture")
+
     private ArchitectureEnum architecture;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_id")
-    
+    @JsonProperty(value = "volume_id")
+
     private String volumeId;
 
     public CreateImageRequestBody withDataImages(List<CreateDataImage> dataImages) {
@@ -308,9 +261,8 @@ public class CreateImageRequestBody  {
         return this;
     }
 
-    
     public CreateImageRequestBody addDataImagesItem(CreateDataImage dataImagesItem) {
-        if(this.dataImages == null) {
+        if (this.dataImages == null) {
             this.dataImages = new ArrayList<>();
         }
         this.dataImages.add(dataImagesItem);
@@ -318,17 +270,16 @@ public class CreateImageRequestBody  {
     }
 
     public CreateImageRequestBody withDataImages(Consumer<List<CreateDataImage>> dataImagesSetter) {
-        if(this.dataImages == null) {
+        if (this.dataImages == null) {
             this.dataImages = new ArrayList<>();
         }
         dataImagesSetter.accept(this.dataImages);
         return this;
     }
 
-    /**
-     * 需要转换的数据盘信息，其中，当使用云服务器上的数据盘进行私有数据盘镜像创建时，该字段必选。 如果不是用于制作数据盘镜像，该字段默认为空。
-     * @return dataImages
-     */
+    /** 需要转换的数据盘信息，其中，当使用云服务器上的数据盘进行私有数据盘镜像创建时，该字段必选。 如果不是用于制作数据盘镜像，该字段默认为空。
+     * 
+     * @return dataImages */
     public List<CreateDataImage> getDataImages() {
         return dataImages;
     }
@@ -337,20 +288,14 @@ public class CreateImageRequestBody  {
         this.dataImages = dataImages;
     }
 
-    
-
     public CreateImageRequestBody withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像描述信息。支持字母、数字、中文等，不支持回车、<、 >，长度不能超过1024个字符。默认为空。
-     * @return description
-     */
+    /** 镜像描述信息。支持字母、数字、中文等，不支持回车、<、 >，长度不能超过1024个字符。默认为空。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -359,20 +304,14 @@ public class CreateImageRequestBody  {
         this.description = description;
     }
 
-    
-
     public CreateImageRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 表示当前镜像所属的企业项目。取值为0或无该值，表示属于default企业项目。取值为UUID，表示属于该UUID对应的企业项目。
-     * @return enterpriseProjectId
-     */
+    /** 表示当前镜像所属的企业项目。取值为0或无该值，表示属于default企业项目。取值为UUID，表示属于该UUID对应的企业项目。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -381,16 +320,13 @@ public class CreateImageRequestBody  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public CreateImageRequestBody withImageTags(List<TagKeyValue> imageTags) {
         this.imageTags = imageTags;
         return this;
     }
 
-    
     public CreateImageRequestBody addImageTagsItem(TagKeyValue imageTagsItem) {
-        if(this.imageTags == null) {
+        if (this.imageTags == null) {
             this.imageTags = new ArrayList<>();
         }
         this.imageTags.add(imageTagsItem);
@@ -398,17 +334,16 @@ public class CreateImageRequestBody  {
     }
 
     public CreateImageRequestBody withImageTags(Consumer<List<TagKeyValue>> imageTagsSetter) {
-        if(this.imageTags == null) {
+        if (this.imageTags == null) {
             this.imageTags = new ArrayList<>();
         }
         imageTagsSetter.accept(this.imageTags);
         return this;
     }
 
-    /**
-     * 新规范的镜像标签列表。默认为空。tags和image_tags只能使用一个。
-     * @return imageTags
-     */
+    /** 新规范的镜像标签列表。默认为空。tags和image_tags只能使用一个。
+     * 
+     * @return imageTags */
     public List<TagKeyValue> getImageTags() {
         return imageTags;
     }
@@ -417,20 +352,14 @@ public class CreateImageRequestBody  {
         this.imageTags = imageTags;
     }
 
-    
-
     public CreateImageRequestBody withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 需要转换的云服务器ID。使用instance_id字段，从云服务器制作私有镜像时，该字段填写云服务器ID。
-     * @return instanceId
-     */
+    /** 需要转换的云服务器ID。使用instance_id字段，从云服务器制作私有镜像时，该字段填写云服务器ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -439,20 +368,14 @@ public class CreateImageRequestBody  {
         this.instanceId = instanceId;
     }
 
-    
-
     public CreateImageRequestBody withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像名称
-     * @return name
-     */
+    /** 镜像名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -461,16 +384,13 @@ public class CreateImageRequestBody  {
         this.name = name;
     }
 
-    
-
     public CreateImageRequestBody withTags(List<String> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public CreateImageRequestBody addTagsItem(String tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -478,17 +398,16 @@ public class CreateImageRequestBody  {
     }
 
     public CreateImageRequestBody withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 镜像标签列表。默认为空。tags和image_tags只能使用一个。
-     * @return tags
-     */
+    /** 镜像标签列表。默认为空。tags和image_tags只能使用一个。
+     * 
+     * @return tags */
     public List<String> getTags() {
         return tags;
     }
@@ -497,20 +416,14 @@ public class CreateImageRequestBody  {
         this.tags = tags;
     }
 
-    
-
     public CreateImageRequestBody withMaxRam(Integer maxRam) {
         this.maxRam = maxRam;
         return this;
     }
 
-    
-
-
-    /**
-     * 表示镜像支持的最大内存，单位为MB。
-     * @return maxRam
-     */
+    /** 表示镜像支持的最大内存，单位为MB。
+     * 
+     * @return maxRam */
     public Integer getMaxRam() {
         return maxRam;
     }
@@ -519,20 +432,14 @@ public class CreateImageRequestBody  {
         this.maxRam = maxRam;
     }
 
-    
-
     public CreateImageRequestBody withMinRam(Integer minRam) {
         this.minRam = minRam;
         return this;
     }
 
-    
-
-
-    /**
-     * 表示镜像支持的最小内存，单位为MB，默认为0，表示不受限制。
-     * @return minRam
-     */
+    /** 表示镜像支持的最小内存，单位为MB，默认为0，表示不受限制。
+     * 
+     * @return minRam */
     public Integer getMinRam() {
         return minRam;
     }
@@ -541,20 +448,14 @@ public class CreateImageRequestBody  {
         this.minRam = minRam;
     }
 
-    
-
     public CreateImageRequestBody withOsVersion(String osVersion) {
         this.osVersion = osVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作系统版本。 使用上传至OBS桶中的外部镜像文件制作镜像时生效。 当“is_quick_import”的值为“true”时，即使用镜像文件快速导入方式导入系统盘镜像，则该参数为必填参数。
-     * @return osVersion
-     */
+    /** 操作系统版本。 使用上传至OBS桶中的外部镜像文件制作镜像时生效。 当“is_quick_import”的值为“true”时，即使用镜像文件快速导入方式导入系统盘镜像，则该参数为必填参数。
+     * 
+     * @return osVersion */
     public String getOsVersion() {
         return osVersion;
     }
@@ -563,20 +464,14 @@ public class CreateImageRequestBody  {
         this.osVersion = osVersion;
     }
 
-    
-
     public CreateImageRequestBody withImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
         return this;
     }
 
-    
-
-
-    /**
-     * OBS桶中外部镜像文件地址。 在使用OBS桶的外部镜像文件制作镜像时生效且为必选字段。格式为<OBS桶名>:<OBS镜像文件名称>。
-     * @return imageUrl
-     */
+    /** OBS桶中外部镜像文件地址。 在使用OBS桶的外部镜像文件制作镜像时生效且为必选字段。格式为<OBS桶名>:<OBS镜像文件名称>。
+     * 
+     * @return imageUrl */
     public String getImageUrl() {
         return imageUrl;
     }
@@ -585,20 +480,14 @@ public class CreateImageRequestBody  {
         this.imageUrl = imageUrl;
     }
 
-    
-
     public CreateImageRequestBody withMinDisk(Integer minDisk) {
         this.minDisk = minDisk;
         return this;
     }
 
-    
-
-
-    /**
-     * 最小系统盘大小。 在使用OBS桶的外部镜像文件制作镜像时生效且为必选字段。取值为40～1024GB。
-     * @return minDisk
-     */
+    /** 最小系统盘大小。 在使用OBS桶的外部镜像文件制作镜像时生效且为必选字段。取值为40～1024GB。
+     * 
+     * @return minDisk */
     public Integer getMinDisk() {
         return minDisk;
     }
@@ -607,20 +496,14 @@ public class CreateImageRequestBody  {
         this.minDisk = minDisk;
     }
 
-    
-
     public CreateImageRequestBody withIsConfig(Boolean isConfig) {
         this.isConfig = isConfig;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否自动配置。 取值为true或false。 如果需要后台自动配置，取值为true，否则为false。默认取值为false。
-     * @return isConfig
-     */
+    /** 是否自动配置。 取值为true或false。 如果需要后台自动配置，取值为true，否则为false。默认取值为false。
+     * 
+     * @return isConfig */
     public Boolean getIsConfig() {
         return isConfig;
     }
@@ -629,20 +512,14 @@ public class CreateImageRequestBody  {
         this.isConfig = isConfig;
     }
 
-    
-
     public CreateImageRequestBody withCmkId(String cmkId) {
         this.cmkId = cmkId;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建加密镜像的用户主密钥，具体取值请参考《密钥管理服务用户指南》获取。
-     * @return cmkId
-     */
+    /** 创建加密镜像的用户主密钥，具体取值请参考《密钥管理服务用户指南》获取。
+     * 
+     * @return cmkId */
     public String getCmkId() {
         return cmkId;
     }
@@ -651,20 +528,14 @@ public class CreateImageRequestBody  {
         this.cmkId = cmkId;
     }
 
-    
-
     public CreateImageRequestBody withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像的类型。 取值为ECS、BMS、FusionCompute、Ironic。默认使用“ECS”。 ECS/FusionCompute：表示是ECS服务器的镜像。 BMS/Ironic：表示是BMS服务器的镜像。
-     * @return type
-     */
+    /** 镜像的类型。 取值为ECS、BMS、FusionCompute、Ironic。默认使用“ECS”。 ECS/FusionCompute：表示是ECS服务器的镜像。 BMS/Ironic：表示是BMS服务器的镜像。
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -673,20 +544,14 @@ public class CreateImageRequestBody  {
         this.type = type;
     }
 
-    
-
     public CreateImageRequestBody withIsQuickImport(Boolean isQuickImport) {
         this.isQuickImport = isQuickImport;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否使用镜像文件快速导入方式，导入系统盘镜像。 是，配置为true。 否，配置为false。 关于镜像文件快速导入的约束与限制请参见镜像文件快速导入。
-     * @return isQuickImport
-     */
+    /** 是否使用镜像文件快速导入方式，导入系统盘镜像。 是，配置为true。 否，配置为false。 关于镜像文件快速导入的约束与限制请参见镜像文件快速导入。
+     * 
+     * @return isQuickImport */
     public Boolean getIsQuickImport() {
         return isQuickImport;
     }
@@ -695,20 +560,14 @@ public class CreateImageRequestBody  {
         this.isQuickImport = isQuickImport;
     }
 
-    
-
     public CreateImageRequestBody withArchitecture(ArchitectureEnum architecture) {
         this.architecture = architecture;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像的架构类型。取值包括： x86 arm 默认使用“x86”。 当架构类型为arm时，镜像引导方式将自动转为UEFI的引导方式。
-     * @return architecture
-     */
+    /** 镜像的架构类型。取值包括： x86 arm 默认使用“x86”。 当架构类型为arm时，镜像引导方式将自动转为UEFI的引导方式。
+     * 
+     * @return architecture */
     public ArchitectureEnum getArchitecture() {
         return architecture;
     }
@@ -717,20 +576,14 @@ public class CreateImageRequestBody  {
         this.architecture = architecture;
     }
 
-    
-
     public CreateImageRequestBody withVolumeId(String volumeId) {
         this.volumeId = volumeId;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据盘的卷ID。当数据盘创建系统盘镜像时，该参数必选
-     * @return volumeId
-     */
+    /** 数据盘的卷ID。当数据盘创建系统盘镜像时，该参数必选
+     * 
+     * @return volumeId */
     public String getVolumeId() {
         return volumeId;
     }
@@ -738,8 +591,6 @@ public class CreateImageRequestBody  {
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -750,29 +601,48 @@ public class CreateImageRequestBody  {
             return false;
         }
         CreateImageRequestBody createImageRequestBody = (CreateImageRequestBody) o;
-        return Objects.equals(this.dataImages, createImageRequestBody.dataImages) &&
-            Objects.equals(this.description, createImageRequestBody.description) &&
-            Objects.equals(this.enterpriseProjectId, createImageRequestBody.enterpriseProjectId) &&
-            Objects.equals(this.imageTags, createImageRequestBody.imageTags) &&
-            Objects.equals(this.instanceId, createImageRequestBody.instanceId) &&
-            Objects.equals(this.name, createImageRequestBody.name) &&
-            Objects.equals(this.tags, createImageRequestBody.tags) &&
-            Objects.equals(this.maxRam, createImageRequestBody.maxRam) &&
-            Objects.equals(this.minRam, createImageRequestBody.minRam) &&
-            Objects.equals(this.osVersion, createImageRequestBody.osVersion) &&
-            Objects.equals(this.imageUrl, createImageRequestBody.imageUrl) &&
-            Objects.equals(this.minDisk, createImageRequestBody.minDisk) &&
-            Objects.equals(this.isConfig, createImageRequestBody.isConfig) &&
-            Objects.equals(this.cmkId, createImageRequestBody.cmkId) &&
-            Objects.equals(this.type, createImageRequestBody.type) &&
-            Objects.equals(this.isQuickImport, createImageRequestBody.isQuickImport) &&
-            Objects.equals(this.architecture, createImageRequestBody.architecture) &&
-            Objects.equals(this.volumeId, createImageRequestBody.volumeId);
+        return Objects.equals(this.dataImages, createImageRequestBody.dataImages)
+            && Objects.equals(this.description, createImageRequestBody.description)
+            && Objects.equals(this.enterpriseProjectId, createImageRequestBody.enterpriseProjectId)
+            && Objects.equals(this.imageTags, createImageRequestBody.imageTags)
+            && Objects.equals(this.instanceId, createImageRequestBody.instanceId)
+            && Objects.equals(this.name, createImageRequestBody.name)
+            && Objects.equals(this.tags, createImageRequestBody.tags)
+            && Objects.equals(this.maxRam, createImageRequestBody.maxRam)
+            && Objects.equals(this.minRam, createImageRequestBody.minRam)
+            && Objects.equals(this.osVersion, createImageRequestBody.osVersion)
+            && Objects.equals(this.imageUrl, createImageRequestBody.imageUrl)
+            && Objects.equals(this.minDisk, createImageRequestBody.minDisk)
+            && Objects.equals(this.isConfig, createImageRequestBody.isConfig)
+            && Objects.equals(this.cmkId, createImageRequestBody.cmkId)
+            && Objects.equals(this.type, createImageRequestBody.type)
+            && Objects.equals(this.isQuickImport, createImageRequestBody.isQuickImport)
+            && Objects.equals(this.architecture, createImageRequestBody.architecture)
+            && Objects.equals(this.volumeId, createImageRequestBody.volumeId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(dataImages, description, enterpriseProjectId, imageTags, instanceId, name, tags, maxRam, minRam, osVersion, imageUrl, minDisk, isConfig, cmkId, type, isQuickImport, architecture, volumeId);
+        return Objects.hash(dataImages,
+            description,
+            enterpriseProjectId,
+            imageTags,
+            instanceId,
+            name,
+            tags,
+            maxRam,
+            minRam,
+            osVersion,
+            imageUrl,
+            minDisk,
+            isConfig,
+            cmkId,
+            type,
+            isQuickImport,
+            architecture,
+            volumeId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -798,16 +668,13 @@ public class CreateImageRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

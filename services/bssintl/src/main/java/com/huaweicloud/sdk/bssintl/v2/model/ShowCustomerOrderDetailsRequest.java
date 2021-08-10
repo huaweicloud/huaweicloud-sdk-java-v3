@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.bssintl.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowCustomerOrderDetailsRequest  {
-
-
+/** Request Object */
+public class ShowCustomerOrderDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_id")
-    
+    @JsonProperty(value = "order_id")
+
     private String orderId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="indirect_partner_id")
-    
+    @JsonProperty(value = "indirect_partner_id")
+
     private String indirectPartnerId;
 
     public ShowCustomerOrderDetailsRequest withXLanguage(String xLanguage) {
@@ -52,15 +38,11 @@ public class ShowCustomerOrderDetailsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：语言| |参数的约束及描述：中文：zh_CN 英文：en_US缺省为zh_CN|
-     * @return xLanguage
-     */
+    /** |参数名称：语言| |参数的约束及描述：中文：zh_CN 英文：en_US缺省为zh_CN|
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -69,20 +51,14 @@ public class ShowCustomerOrderDetailsRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ShowCustomerOrderDetailsRequest withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：订单ID。| |参数的约束及描述：|
-     * @return orderId
-     */
+    /** |参数名称：订单ID。| |参数的约束及描述：|
+     * 
+     * @return orderId */
     public String getOrderId() {
         return orderId;
     }
@@ -91,22 +67,14 @@ public class ShowCustomerOrderDetailsRequest  {
         this.orderId = orderId;
     }
 
-    
-
     public ShowCustomerOrderDetailsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：每次查询的大小，默认为10| |参数的约束及描述：|
-     * minimum: 1
-     * maximum: 100
-     * @return limit
-     */
+    /** |参数名称：每次查询的大小，默认为10| |参数的约束及描述：| minimum: 1 maximum: 100
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -115,22 +83,14 @@ public class ShowCustomerOrderDetailsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ShowCustomerOrderDetailsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：偏移量，从0开始，默认为0| |参数的约束及描述：|
-     * minimum: 0
-     * maximum: 2147483647
-     * @return offset
-     */
+    /** |参数名称：偏移量，从0开始，默认为0| |参数的约束及描述：| minimum: 0 maximum: 2147483647
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -139,20 +99,14 @@ public class ShowCustomerOrderDetailsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ShowCustomerOrderDetailsRequest withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：二级经销商ID，只有伙伴用自身token调用的时候，该字段才有含义。| |参数的约束及描述：|
-     * @return indirectPartnerId
-     */
+    /** |参数名称：二级经销商ID，只有伙伴用自身token调用的时候，该字段才有含义。| |参数的约束及描述：|
+     * 
+     * @return indirectPartnerId */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -160,8 +114,6 @@ public class ShowCustomerOrderDetailsRequest  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -172,16 +124,18 @@ public class ShowCustomerOrderDetailsRequest  {
             return false;
         }
         ShowCustomerOrderDetailsRequest showCustomerOrderDetailsRequest = (ShowCustomerOrderDetailsRequest) o;
-        return Objects.equals(this.xLanguage, showCustomerOrderDetailsRequest.xLanguage) &&
-            Objects.equals(this.orderId, showCustomerOrderDetailsRequest.orderId) &&
-            Objects.equals(this.limit, showCustomerOrderDetailsRequest.limit) &&
-            Objects.equals(this.offset, showCustomerOrderDetailsRequest.offset) &&
-            Objects.equals(this.indirectPartnerId, showCustomerOrderDetailsRequest.indirectPartnerId);
+        return Objects.equals(this.xLanguage, showCustomerOrderDetailsRequest.xLanguage)
+            && Objects.equals(this.orderId, showCustomerOrderDetailsRequest.orderId)
+            && Objects.equals(this.limit, showCustomerOrderDetailsRequest.limit)
+            && Objects.equals(this.offset, showCustomerOrderDetailsRequest.offset)
+            && Objects.equals(this.indirectPartnerId, showCustomerOrderDetailsRequest.indirectPartnerId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, orderId, limit, offset, indirectPartnerId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -194,16 +148,13 @@ public class ShowCustomerOrderDetailsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

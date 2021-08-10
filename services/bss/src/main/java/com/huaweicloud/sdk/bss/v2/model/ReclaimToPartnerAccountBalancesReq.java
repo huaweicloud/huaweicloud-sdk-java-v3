@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ReclaimToPartnerAccountBalancesReq
- */
-public class ReclaimToPartnerAccountBalancesReq  {
-
-
+/** ReclaimToPartnerAccountBalancesReq */
+public class ReclaimToPartnerAccountBalancesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_id")
-    
+    @JsonProperty(value = "customer_id")
+
     private String customerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amount")
-    
+    @JsonProperty(value = "amount")
+
     private Double amount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="indirect_partner_id")
-    
+    @JsonProperty(value = "indirect_partner_id")
+
     private String indirectPartnerId;
 
     public ReclaimToPartnerAccountBalancesReq withCustomerId(String customerId) {
@@ -40,13 +28,9 @@ public class ReclaimToPartnerAccountBalancesReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 客户账号ID。您可以调用查询客户列表接口获取customer_id。
-     * @return customerId
-     */
+    /** 客户账号ID。您可以调用查询客户列表接口获取customer_id。
+     * 
+     * @return customerId */
     public String getCustomerId() {
         return customerId;
     }
@@ -55,22 +39,14 @@ public class ReclaimToPartnerAccountBalancesReq  {
         this.customerId = customerId;
     }
 
-    
-
     public ReclaimToPartnerAccountBalancesReq withAmount(Double amount) {
         this.amount = amount;
         return this;
     }
 
-    
-
-
-    /**
-     * 回收的金额。 单位：元。取值大于0且精确到小数点后2位。
-     * minimum: 0
-     * maximum: 2147483647
-     * @return amount
-     */
+    /** 回收的金额。 单位：元。取值大于0且精确到小数点后2位。 minimum: 0 maximum: 2147483647
+     * 
+     * @return amount */
     public Double getAmount() {
         return amount;
     }
@@ -79,20 +55,14 @@ public class ReclaimToPartnerAccountBalancesReq  {
         this.amount = amount;
     }
 
-    
-
     public ReclaimToPartnerAccountBalancesReq withIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 精英服务商ID。获取方法请参见查询精英服务商列表。 华为云伙伴能力中心（一级经销商）回收精英服务商（二级经销商）的子客户账户余额时，需携带此参数；否则只能回收自己的子客户账户余额。
-     * @return indirectPartnerId
-     */
+    /** 精英服务商ID。获取方法请参见查询精英服务商列表。 华为云伙伴能力中心（一级经销商）回收精英服务商（二级经销商）的子客户账户余额时，需携带此参数；否则只能回收自己的子客户账户余额。
+     * 
+     * @return indirectPartnerId */
     public String getIndirectPartnerId() {
         return indirectPartnerId;
     }
@@ -100,8 +70,6 @@ public class ReclaimToPartnerAccountBalancesReq  {
     public void setIndirectPartnerId(String indirectPartnerId) {
         this.indirectPartnerId = indirectPartnerId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +80,16 @@ public class ReclaimToPartnerAccountBalancesReq  {
             return false;
         }
         ReclaimToPartnerAccountBalancesReq reclaimToPartnerAccountBalancesReq = (ReclaimToPartnerAccountBalancesReq) o;
-        return Objects.equals(this.customerId, reclaimToPartnerAccountBalancesReq.customerId) &&
-            Objects.equals(this.amount, reclaimToPartnerAccountBalancesReq.amount) &&
-            Objects.equals(this.indirectPartnerId, reclaimToPartnerAccountBalancesReq.indirectPartnerId);
+        return Objects.equals(this.customerId, reclaimToPartnerAccountBalancesReq.customerId)
+            && Objects.equals(this.amount, reclaimToPartnerAccountBalancesReq.amount)
+            && Objects.equals(this.indirectPartnerId, reclaimToPartnerAccountBalancesReq.indirectPartnerId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(customerId, amount, indirectPartnerId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +100,13 @@ public class ReclaimToPartnerAccountBalancesReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

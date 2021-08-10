@@ -1,51 +1,35 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.AclBatchFailure;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class BatchDeleteAclV2Response extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="success_count")
-    
+    @JsonProperty(value = "success_count")
+
     private Integer successCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="failure")
-    
+    @JsonProperty(value = "failure")
+
     private List<AclBatchFailure> failure = null;
-    
+
     public BatchDeleteAclV2Response withSuccessCount(Integer successCount) {
         this.successCount = successCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 删除成功的ACL策略数量
-     * @return successCount
-     */
+    /** 删除成功的ACL策略数量
+     * 
+     * @return successCount */
     public Integer getSuccessCount() {
         return successCount;
     }
@@ -54,16 +38,13 @@ public class BatchDeleteAclV2Response extends SdkResponse {
         this.successCount = successCount;
     }
 
-    
-
     public BatchDeleteAclV2Response withFailure(List<AclBatchFailure> failure) {
         this.failure = failure;
         return this;
     }
 
-    
     public BatchDeleteAclV2Response addFailureItem(AclBatchFailure failureItem) {
-        if(this.failure == null) {
+        if (this.failure == null) {
             this.failure = new ArrayList<>();
         }
         this.failure.add(failureItem);
@@ -71,17 +52,16 @@ public class BatchDeleteAclV2Response extends SdkResponse {
     }
 
     public BatchDeleteAclV2Response withFailure(Consumer<List<AclBatchFailure>> failureSetter) {
-        if(this.failure == null) {
+        if (this.failure == null) {
             this.failure = new ArrayList<>();
         }
         failureSetter.accept(this.failure);
         return this;
     }
 
-    /**
-     * 删除失败的ACL策略及错误信息
-     * @return failure
-     */
+    /** 删除失败的ACL策略及错误信息
+     * 
+     * @return failure */
     public List<AclBatchFailure> getFailure() {
         return failure;
     }
@@ -89,8 +69,6 @@ public class BatchDeleteAclV2Response extends SdkResponse {
     public void setFailure(List<AclBatchFailure> failure) {
         this.failure = failure;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class BatchDeleteAclV2Response extends SdkResponse {
             return false;
         }
         BatchDeleteAclV2Response batchDeleteAclV2Response = (BatchDeleteAclV2Response) o;
-        return Objects.equals(this.successCount, batchDeleteAclV2Response.successCount) &&
-            Objects.equals(this.failure, batchDeleteAclV2Response.failure);
+        return Objects.equals(this.successCount, batchDeleteAclV2Response.successCount)
+            && Objects.equals(this.failure, batchDeleteAclV2Response.failure);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(successCount, failure);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class BatchDeleteAclV2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

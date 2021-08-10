@@ -1,50 +1,38 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class Credentials  {
-
-
+public class Credentials {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_id")
-    
+    @JsonProperty(value = "user_id")
+
     private String userId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access")
-    
+    @JsonProperty(value = "access")
+
     private String access;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private String createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public Credentials withUserId(String userId) {
@@ -52,13 +40,9 @@ public class Credentials  {
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户ID。
-     * @return userId
-     */
+    /** IAM用户ID。
+     * 
+     * @return userId */
     public String getUserId() {
         return userId;
     }
@@ -67,20 +51,14 @@ public class Credentials  {
         this.userId = userId;
     }
 
-    
-
     public Credentials withAccess(String access) {
         this.access = access;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询的AK。
-     * @return access
-     */
+    /** 查询的AK。
+     * 
+     * @return access */
     public String getAccess() {
         return access;
     }
@@ -89,20 +67,14 @@ public class Credentials  {
         this.access = access;
     }
 
-    
-
     public Credentials withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 访问密钥状态。
-     * @return status
-     */
+    /** 访问密钥状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -111,20 +83,14 @@ public class Credentials  {
         this.status = status;
     }
 
-    
-
     public Credentials withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 访问密钥创建时间。
-     * @return createTime
-     */
+    /** 访问密钥创建时间。
+     * 
+     * @return createTime */
     public String getCreateTime() {
         return createTime;
     }
@@ -133,20 +99,14 @@ public class Credentials  {
         this.createTime = createTime;
     }
 
-    
-
     public Credentials withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 访问密钥描述信息。
-     * @return description
-     */
+    /** 访问密钥描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -154,8 +114,6 @@ public class Credentials  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +124,17 @@ public class Credentials  {
             return false;
         }
         Credentials credentials = (Credentials) o;
-        return Objects.equals(this.userId, credentials.userId) &&
-            Objects.equals(this.access, credentials.access) &&
-            Objects.equals(this.status, credentials.status) &&
-            Objects.equals(this.createTime, credentials.createTime) &&
-            Objects.equals(this.description, credentials.description);
+        return Objects.equals(this.userId, credentials.userId) && Objects.equals(this.access, credentials.access)
+            && Objects.equals(this.status, credentials.status)
+            && Objects.equals(this.createTime, credentials.createTime)
+            && Objects.equals(this.description, credentials.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(userId, access, status, createTime, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +147,13 @@ public class Credentials  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

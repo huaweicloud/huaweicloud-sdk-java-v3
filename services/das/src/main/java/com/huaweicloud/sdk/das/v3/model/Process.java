@@ -1,74 +1,56 @@
 package com.huaweicloud.sdk.das.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Process
- */
-public class Process  {
-
-
+/** Process */
+public class Process {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user")
-    
+    @JsonProperty(value = "user")
+
     private String user;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host")
-    
+    @JsonProperty(value = "host")
+
     private String host;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="database")
-    
+    @JsonProperty(value = "database")
+
     private String database;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="command")
-    
+    @JsonProperty(value = "command")
+
     private String command;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time")
-    
+    @JsonProperty(value = "time")
+
     private String time;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
+
     private String state;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sql")
-    
+    @JsonProperty(value = "sql")
+
     private String sql;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trx_executed_time")
-    
+    @JsonProperty(value = "trx_executed_time")
+
     private String trxExecutedTime;
 
     public Process withId(String id) {
@@ -76,13 +58,9 @@ public class Process  {
         return this;
     }
 
-    
-
-
-    /**
-     * 会话ID
-     * @return id
-     */
+    /** 会话ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -91,20 +69,14 @@ public class Process  {
         this.id = id;
     }
 
-    
-
     public Process withUser(String user) {
         this.user = user;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户
-     * @return user
-     */
+    /** 用户
+     * 
+     * @return user */
     public String getUser() {
         return user;
     }
@@ -113,20 +85,14 @@ public class Process  {
         this.user = user;
     }
 
-    
-
     public Process withHost(String host) {
         this.host = host;
         return this;
     }
 
-    
-
-
-    /**
-     * 主机
-     * @return host
-     */
+    /** 主机
+     * 
+     * @return host */
     public String getHost() {
         return host;
     }
@@ -135,20 +101,14 @@ public class Process  {
         this.host = host;
     }
 
-    
-
     public Process withDatabase(String database) {
         this.database = database;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库
-     * @return database
-     */
+    /** 数据库
+     * 
+     * @return database */
     public String getDatabase() {
         return database;
     }
@@ -157,20 +117,14 @@ public class Process  {
         this.database = database;
     }
 
-    
-
     public Process withCommand(String command) {
         this.command = command;
         return this;
     }
 
-    
-
-
-    /**
-     * 命令
-     * @return command
-     */
+    /** 命令
+     * 
+     * @return command */
     public String getCommand() {
         return command;
     }
@@ -179,20 +133,14 @@ public class Process  {
         this.command = command;
     }
 
-    
-
     public Process withTime(String time) {
         this.time = time;
         return this;
     }
 
-    
-
-
-    /**
-     * 会话持续时间
-     * @return time
-     */
+    /** 会话持续时间
+     * 
+     * @return time */
     public String getTime() {
         return time;
     }
@@ -201,20 +149,14 @@ public class Process  {
         this.time = time;
     }
 
-    
-
     public Process withState(String state) {
         this.state = state;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态
-     * @return state
-     */
+    /** 状态
+     * 
+     * @return state */
     public String getState() {
         return state;
     }
@@ -223,20 +165,14 @@ public class Process  {
         this.state = state;
     }
 
-    
-
     public Process withSql(String sql) {
         this.sql = sql;
         return this;
     }
 
-    
-
-
-    /**
-     * SQL语句
-     * @return sql
-     */
+    /** SQL语句
+     * 
+     * @return sql */
     public String getSql() {
         return sql;
     }
@@ -245,20 +181,14 @@ public class Process  {
         this.sql = sql;
     }
 
-    
-
     public Process withTrxExecutedTime(String trxExecutedTime) {
         this.trxExecutedTime = trxExecutedTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 事务持续时间
-     * @return trxExecutedTime
-     */
+    /** 事务持续时间
+     * 
+     * @return trxExecutedTime */
     public String getTrxExecutedTime() {
         return trxExecutedTime;
     }
@@ -266,8 +196,6 @@ public class Process  {
     public void setTrxExecutedTime(String trxExecutedTime) {
         this.trxExecutedTime = trxExecutedTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -278,20 +206,18 @@ public class Process  {
             return false;
         }
         Process process = (Process) o;
-        return Objects.equals(this.id, process.id) &&
-            Objects.equals(this.user, process.user) &&
-            Objects.equals(this.host, process.host) &&
-            Objects.equals(this.database, process.database) &&
-            Objects.equals(this.command, process.command) &&
-            Objects.equals(this.time, process.time) &&
-            Objects.equals(this.state, process.state) &&
-            Objects.equals(this.sql, process.sql) &&
-            Objects.equals(this.trxExecutedTime, process.trxExecutedTime);
+        return Objects.equals(this.id, process.id) && Objects.equals(this.user, process.user)
+            && Objects.equals(this.host, process.host) && Objects.equals(this.database, process.database)
+            && Objects.equals(this.command, process.command) && Objects.equals(this.time, process.time)
+            && Objects.equals(this.state, process.state) && Objects.equals(this.sql, process.sql)
+            && Objects.equals(this.trxExecutedTime, process.trxExecutedTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, user, host, database, command, time, state, sql, trxExecutedTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -308,16 +234,13 @@ public class Process  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,54 +1,37 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * LiveDataExportReq
- */
-public class LiveDataExportReq  {
-
-
+/** LiveDataExportReq */
+public class LiveDataExportReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
-    /**
-     * 导出的API定义的格式
-     */
+
+    /** 导出的API定义的格式 */
     public static final class FormatEnum {
 
-        
-        /**
-         * Enum JSON for value: "json"
-         */
+        /** Enum JSON for value: "json" */
         public static final FormatEnum JSON = new FormatEnum("json");
-        
-        /**
-         * Enum YAML for value: "yaml"
-         */
+
+        /** Enum YAML for value: "yaml" */
         public static final FormatEnum YAML = new FormatEnum("yaml");
-        
-        /**
-         * Enum YML for value: "yml"
-         */
+
+        /** Enum YML for value: "yml" */
         public static final FormatEnum YML = new FormatEnum("yml");
-        
 
         private static final Map<String, FormatEnum> STATIC_FIELDS = createStaticFields();
 
@@ -78,7 +61,7 @@ public class LiveDataExportReq  {
 
         @JsonCreator
         public static FormatEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             FormatEnum result = STATIC_FIELDS.get(value);
@@ -89,7 +72,7 @@ public class LiveDataExportReq  {
         }
 
         public static FormatEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             FormatEnum result = STATIC_FIELDS.get(value);
@@ -113,22 +96,19 @@ public class LiveDataExportReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="format")
-    
+    @JsonProperty(value = "format")
+
     private FormatEnum format;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apis")
-    
+    @JsonProperty(value = "apis")
+
     private List<String> apis = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
     public LiveDataExportReq withAppId(String appId) {
@@ -136,13 +116,9 @@ public class LiveDataExportReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * API所属的应用ID
-     * @return appId
-     */
+    /** API所属的应用ID
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -151,20 +127,14 @@ public class LiveDataExportReq  {
         this.appId = appId;
     }
 
-    
-
     public LiveDataExportReq withFormat(FormatEnum format) {
         this.format = format;
         return this;
     }
 
-    
-
-
-    /**
-     * 导出的API定义的格式
-     * @return format
-     */
+    /** 导出的API定义的格式
+     * 
+     * @return format */
     public FormatEnum getFormat() {
         return format;
     }
@@ -173,16 +143,13 @@ public class LiveDataExportReq  {
         this.format = format;
     }
 
-    
-
     public LiveDataExportReq withApis(List<String> apis) {
         this.apis = apis;
         return this;
     }
 
-    
     public LiveDataExportReq addApisItem(String apisItem) {
-        if(this.apis == null) {
+        if (this.apis == null) {
             this.apis = new ArrayList<>();
         }
         this.apis.add(apisItem);
@@ -190,17 +157,16 @@ public class LiveDataExportReq  {
     }
 
     public LiveDataExportReq withApis(Consumer<List<String>> apisSetter) {
-        if(this.apis == null) {
+        if (this.apis == null) {
             this.apis = new ArrayList<>();
         }
         apisSetter.accept(this.apis);
         return this;
     }
 
-    /**
-     * 导出的自定义后端API ID列表
-     * @return apis
-     */
+    /** 导出的自定义后端API ID列表
+     * 
+     * @return apis */
     public List<String> getApis() {
         return apis;
     }
@@ -209,20 +175,14 @@ public class LiveDataExportReq  {
         this.apis = apis;
     }
 
-    
-
     public LiveDataExportReq withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 导出的后端API状态： - 1：待开发 - 3：开发中 - 4：已部署
-     * @return status
-     */
+    /** 导出的后端API状态： - 1：待开发 - 3：开发中 - 4：已部署
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -230,8 +190,6 @@ public class LiveDataExportReq  {
     public void setStatus(Integer status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -242,15 +200,17 @@ public class LiveDataExportReq  {
             return false;
         }
         LiveDataExportReq liveDataExportReq = (LiveDataExportReq) o;
-        return Objects.equals(this.appId, liveDataExportReq.appId) &&
-            Objects.equals(this.format, liveDataExportReq.format) &&
-            Objects.equals(this.apis, liveDataExportReq.apis) &&
-            Objects.equals(this.status, liveDataExportReq.status);
+        return Objects.equals(this.appId, liveDataExportReq.appId)
+            && Objects.equals(this.format, liveDataExportReq.format)
+            && Objects.equals(this.apis, liveDataExportReq.apis)
+            && Objects.equals(this.status, liveDataExportReq.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(appId, format, apis, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -262,16 +222,13 @@ public class LiveDataExportReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

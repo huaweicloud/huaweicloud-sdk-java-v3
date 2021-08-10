@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteSubnetRequest  {
-
-
+/** Request Object */
+public class DeleteSubnetRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
+
     private String subnetId;
 
     public DeleteSubnetRequest withVpcId(String vpcId) {
@@ -34,13 +23,9 @@ public class DeleteSubnetRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 子网对应的vpc_id
-     * @return vpcId
-     */
+    /** 子网对应的vpc_id
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -49,20 +34,14 @@ public class DeleteSubnetRequest  {
         this.vpcId = vpcId;
     }
 
-    
-
     public DeleteSubnetRequest withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网ID
-     * @return subnetId
-     */
+    /** 子网ID
+     * 
+     * @return subnetId */
     public String getSubnetId() {
         return subnetId;
     }
@@ -70,8 +49,6 @@ public class DeleteSubnetRequest  {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class DeleteSubnetRequest  {
             return false;
         }
         DeleteSubnetRequest deleteSubnetRequest = (DeleteSubnetRequest) o;
-        return Objects.equals(this.vpcId, deleteSubnetRequest.vpcId) &&
-            Objects.equals(this.subnetId, deleteSubnetRequest.subnetId);
+        return Objects.equals(this.vpcId, deleteSubnetRequest.vpcId)
+            && Objects.equals(this.subnetId, deleteSubnetRequest.subnetId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(vpcId, subnetId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class DeleteSubnetRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

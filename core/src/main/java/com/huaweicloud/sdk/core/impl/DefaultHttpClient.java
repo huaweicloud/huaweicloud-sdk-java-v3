@@ -69,9 +69,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.SSLHandshakeException;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public class DefaultHttpClient implements HttpClient {
 
     private static final String OKHTTP_PREEMPTIVE = "OkHttp-Preemptive";
@@ -88,15 +86,11 @@ public class DefaultHttpClient implements HttpClient {
 
     private static final int DEFAULT_READ_TIMEOUT = 120;
 
-    /**
-     * Set unique connection pool for synchronous and asynchronous requests
-     */
+    /** Set unique connection pool for synchronous and asynchronous requests */
     private static final ConnectionPool CONNECTION_POOL = new ConnectionPool(5, 5L, TimeUnit.MINUTES);
 
-    /**
-     * Set number of maximum threads for asynchronous requests.
-     * If threads number hasn't been limited, each client will occupy one thread which may leads to out of memory.
-     */
+    /** Set number of maximum threads for asynchronous requests. If threads number hasn't been limited, each client will
+     * occupy one thread which may leads to out of memory. */
     private static ExecutorService executorService = new ThreadPoolExecutor(0, MAXIMUM_POOL_SIZE, KEEP_ALIVE_TIME,
         TimeUnit.SECONDS, new SynchronousQueue(), Util.threadFactory("OkHttp Dispatcher", false));
 
@@ -130,8 +124,8 @@ public class DefaultHttpClient implements HttpClient {
         clientBuilder.protocols(Collections.singletonList(Protocol.HTTP_1_1));
         // set proxy
         if (!StringUtils.isEmpty(httpConfig.getProxyHost())) {
-            Proxy proxy = new Proxy(Proxy.Type.HTTP,
-                new InetSocketAddress(httpConfig.getProxyHost(), httpConfig.getProxyPort()));
+            Proxy proxy =
+                new Proxy(Proxy.Type.HTTP, new InetSocketAddress(httpConfig.getProxyHost(), httpConfig.getProxyPort()));
             clientBuilder.proxy(proxy);
         }
         if (!StringUtils.isEmpty(httpConfig.getProxyUsername())) {
@@ -156,8 +150,8 @@ public class DefaultHttpClient implements HttpClient {
     private Request buildOkHttpRequest(HttpRequest httpRequest) {
 
         Request.Builder requestBuilder = new Request.Builder();
-        HttpUrl.Builder urlBuilder = HttpUrl.parse(httpRequest.getEndpoint() + httpRequest.getPathParamsString())
-            .newBuilder();
+        HttpUrl.Builder urlBuilder =
+            HttpUrl.parse(httpRequest.getEndpoint() + httpRequest.getPathParamsString()).newBuilder();
 
         httpRequest.getQueryParams().forEach((key, values) -> {
             if (values.size() == 0) {
@@ -193,8 +187,7 @@ public class DefaultHttpClient implements HttpClient {
 
                     @Override
                     public MediaType contentType() {
-                        return Objects.isNull(filePart.getContentType())
-                            ? null
+                        return Objects.isNull(filePart.getContentType()) ? null
                             : MediaType.parse(filePart.getContentType());
                     }
 
@@ -258,6 +251,7 @@ public class DefaultHttpClient implements HttpClient {
 
     public Callback toCallback(CompletableFuture<Response> future) {
         return new Callback() {
+
             @Override
             public void onFailure(Call call, IOException e) {
                 future.completeExceptionally(e);

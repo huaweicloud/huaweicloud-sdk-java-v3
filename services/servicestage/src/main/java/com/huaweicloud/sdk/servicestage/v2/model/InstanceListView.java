@@ -1,122 +1,96 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.ExternalAccesses;
-import com.huaweicloud.sdk.servicestage.v2.model.InstanceStatusView;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 实例参数。
- */
-public class InstanceListView  {
-
-
+/** 实例参数。 */
+public class InstanceListView {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="application_id")
-    
+    @JsonProperty(value = "application_id")
+
     private String applicationId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="application_name")
-    
+    @JsonProperty(value = "application_name")
+
     private String applicationName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="component_id")
-    
+    @JsonProperty(value = "component_id")
+
     private String componentId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="component_name")
-    
+    @JsonProperty(value = "component_name")
+
     private String componentName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="environment_id")
-    
+    @JsonProperty(value = "environment_id")
+
     private String environmentId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="environment_name")
-    
+    @JsonProperty(value = "environment_name")
+
     private String environmentName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="platform_type")
-    
+    @JsonProperty(value = "platform_type")
+
     private String platformType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="external_accesses")
-    
+    @JsonProperty(value = "external_accesses")
+
     private List<ExternalAccesses> externalAccesses = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="artifacts")
-    
+    @JsonProperty(value = "artifacts")
+
     private Map<String, Object> artifacts = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator")
-    
+    @JsonProperty(value = "creator")
+
     private String creator;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private Long createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private Long updateTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status_detail")
-    
+    @JsonProperty(value = "status_detail")
+
     private InstanceStatusView statusDetail;
 
     public InstanceListView withId(String id) {
@@ -124,13 +98,9 @@ public class InstanceListView  {
         return this;
     }
 
-    
-
-
-    /**
-     * 应用组件实例ID。
-     * @return id
-     */
+    /** 应用组件实例ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -139,20 +109,14 @@ public class InstanceListView  {
         this.id = id;
     }
 
-    
-
     public InstanceListView withApplicationId(String applicationId) {
         this.applicationId = applicationId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用ID。
-     * @return applicationId
-     */
+    /** 应用ID。
+     * 
+     * @return applicationId */
     public String getApplicationId() {
         return applicationId;
     }
@@ -161,20 +125,14 @@ public class InstanceListView  {
         this.applicationId = applicationId;
     }
 
-    
-
     public InstanceListView withApplicationName(String applicationName) {
         this.applicationName = applicationName;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名称。
-     * @return applicationName
-     */
+    /** 应用名称。
+     * 
+     * @return applicationName */
     public String getApplicationName() {
         return applicationName;
     }
@@ -183,20 +141,14 @@ public class InstanceListView  {
         this.applicationName = applicationName;
     }
 
-    
-
     public InstanceListView withComponentId(String componentId) {
         this.componentId = componentId;
         return this;
     }
 
-    
-
-
-    /**
-     * 组件ID。
-     * @return componentId
-     */
+    /** 组件ID。
+     * 
+     * @return componentId */
     public String getComponentId() {
         return componentId;
     }
@@ -205,20 +157,14 @@ public class InstanceListView  {
         this.componentId = componentId;
     }
 
-    
-
     public InstanceListView withComponentName(String componentName) {
         this.componentName = componentName;
         return this;
     }
 
-    
-
-
-    /**
-     * 组件名称。
-     * @return componentName
-     */
+    /** 组件名称。
+     * 
+     * @return componentName */
     public String getComponentName() {
         return componentName;
     }
@@ -227,20 +173,14 @@ public class InstanceListView  {
         this.componentName = componentName;
     }
 
-    
-
     public InstanceListView withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用组件实例名称。
-     * @return name
-     */
+    /** 应用组件实例名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -249,20 +189,14 @@ public class InstanceListView  {
         this.name = name;
     }
 
-    
-
     public InstanceListView withEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用组件环境ID。
-     * @return environmentId
-     */
+    /** 应用组件环境ID。
+     * 
+     * @return environmentId */
     public String getEnvironmentId() {
         return environmentId;
     }
@@ -271,20 +205,14 @@ public class InstanceListView  {
         this.environmentId = environmentId;
     }
 
-    
-
     public InstanceListView withEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境名称。
-     * @return environmentName
-     */
+    /** 环境名称。
+     * 
+     * @return environmentName */
     public String getEnvironmentName() {
         return environmentName;
     }
@@ -293,20 +221,14 @@ public class InstanceListView  {
         this.environmentName = environmentName;
     }
 
-    
-
     public InstanceListView withPlatformType(String platformType) {
         this.platformType = platformType;
         return this;
     }
 
-    
-
-
-    /**
-     * 运行平台类型。 应用可以在不同的平台上运行，可选用的平台的类型有以下几种：cce、vmapp。 
-     * @return platformType
-     */
+    /** 运行平台类型。 应用可以在不同的平台上运行，可选用的平台的类型有以下几种：cce、vmapp。
+     * 
+     * @return platformType */
     public String getPlatformType() {
         return platformType;
     }
@@ -315,20 +237,14 @@ public class InstanceListView  {
         this.platformType = platformType;
     }
 
-    
-
     public InstanceListView withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用组件版本号。
-     * @return version
-     */
+    /** 应用组件版本号。
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -337,16 +253,13 @@ public class InstanceListView  {
         this.version = version;
     }
 
-    
-
     public InstanceListView withExternalAccesses(List<ExternalAccesses> externalAccesses) {
         this.externalAccesses = externalAccesses;
         return this;
     }
 
-    
     public InstanceListView addExternalAccessesItem(ExternalAccesses externalAccessesItem) {
-        if(this.externalAccesses == null) {
+        if (this.externalAccesses == null) {
             this.externalAccesses = new ArrayList<>();
         }
         this.externalAccesses.add(externalAccessesItem);
@@ -354,17 +267,16 @@ public class InstanceListView  {
     }
 
     public InstanceListView withExternalAccesses(Consumer<List<ExternalAccesses>> externalAccessesSetter) {
-        if(this.externalAccesses == null) {
+        if (this.externalAccesses == null) {
             this.externalAccesses = new ArrayList<>();
         }
         externalAccessesSetter.accept(this.externalAccesses);
         return this;
     }
 
-    /**
-     * 访问方式。
-     * @return externalAccesses
-     */
+    /** 访问方式。
+     * 
+     * @return externalAccesses */
     public List<ExternalAccesses> getExternalAccesses() {
         return externalAccesses;
     }
@@ -373,17 +285,13 @@ public class InstanceListView  {
         this.externalAccesses = externalAccesses;
     }
 
-    
-
     public InstanceListView withArtifacts(Map<String, Object> artifacts) {
         this.artifacts = artifacts;
         return this;
     }
 
-    
-
     public InstanceListView putArtifactsItem(String key, Object artifactsItem) {
-        if(this.artifacts == null) {
+        if (this.artifacts == null) {
             this.artifacts = new HashMap<>();
         }
         this.artifacts.put(key, artifactsItem);
@@ -391,16 +299,16 @@ public class InstanceListView  {
     }
 
     public InstanceListView withArtifacts(Consumer<Map<String, Object>> artifactsSetter) {
-        if(this.artifacts == null) {
+        if (this.artifacts == null) {
             this.artifacts = new HashMap<>();
         }
         artifactsSetter.accept(this.artifacts);
         return this;
     }
-    /**
-     * 组件部署件。key为组件component_name，对于Docker多容器场景，key为容器名称。
-     * @return artifacts
-     */
+
+    /** 组件部署件。key为组件component_name，对于Docker多容器场景，key为容器名称。
+     * 
+     * @return artifacts */
     public Map<String, Object> getArtifacts() {
         return artifacts;
     }
@@ -409,20 +317,14 @@ public class InstanceListView  {
         this.artifacts = artifacts;
     }
 
-    
-
     public InstanceListView withCreator(String creator) {
         this.creator = creator;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建人。
-     * @return creator
-     */
+    /** 创建人。
+     * 
+     * @return creator */
     public String getCreator() {
         return creator;
     }
@@ -431,20 +333,14 @@ public class InstanceListView  {
         this.creator = creator;
     }
 
-    
-
     public InstanceListView withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间。
-     * @return createTime
-     */
+    /** 创建时间。
+     * 
+     * @return createTime */
     public Long getCreateTime() {
         return createTime;
     }
@@ -453,20 +349,14 @@ public class InstanceListView  {
         this.createTime = createTime;
     }
 
-    
-
     public InstanceListView withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 修改时间。
-     * @return updateTime
-     */
+    /** 修改时间。
+     * 
+     * @return updateTime */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -475,27 +365,23 @@ public class InstanceListView  {
         this.updateTime = updateTime;
     }
 
-    
-
     public InstanceListView withStatusDetail(InstanceStatusView statusDetail) {
         this.statusDetail = statusDetail;
         return this;
     }
 
     public InstanceListView withStatusDetail(Consumer<InstanceStatusView> statusDetailSetter) {
-        if(this.statusDetail == null ){
+        if (this.statusDetail == null) {
             this.statusDetail = new InstanceStatusView();
             statusDetailSetter.accept(this.statusDetail);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get statusDetail
-     * @return statusDetail
-     */
+    /** Get statusDetail
+     * 
+     * @return statusDetail */
     public InstanceStatusView getStatusDetail() {
         return statusDetail;
     }
@@ -503,8 +389,6 @@ public class InstanceListView  {
     public void setStatusDetail(InstanceStatusView statusDetail) {
         this.statusDetail = statusDetail;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -515,27 +399,44 @@ public class InstanceListView  {
             return false;
         }
         InstanceListView instanceListView = (InstanceListView) o;
-        return Objects.equals(this.id, instanceListView.id) &&
-            Objects.equals(this.applicationId, instanceListView.applicationId) &&
-            Objects.equals(this.applicationName, instanceListView.applicationName) &&
-            Objects.equals(this.componentId, instanceListView.componentId) &&
-            Objects.equals(this.componentName, instanceListView.componentName) &&
-            Objects.equals(this.name, instanceListView.name) &&
-            Objects.equals(this.environmentId, instanceListView.environmentId) &&
-            Objects.equals(this.environmentName, instanceListView.environmentName) &&
-            Objects.equals(this.platformType, instanceListView.platformType) &&
-            Objects.equals(this.version, instanceListView.version) &&
-            Objects.equals(this.externalAccesses, instanceListView.externalAccesses) &&
-            Objects.equals(this.artifacts, instanceListView.artifacts) &&
-            Objects.equals(this.creator, instanceListView.creator) &&
-            Objects.equals(this.createTime, instanceListView.createTime) &&
-            Objects.equals(this.updateTime, instanceListView.updateTime) &&
-            Objects.equals(this.statusDetail, instanceListView.statusDetail);
+        return Objects.equals(this.id, instanceListView.id)
+            && Objects.equals(this.applicationId, instanceListView.applicationId)
+            && Objects.equals(this.applicationName, instanceListView.applicationName)
+            && Objects.equals(this.componentId, instanceListView.componentId)
+            && Objects.equals(this.componentName, instanceListView.componentName)
+            && Objects.equals(this.name, instanceListView.name)
+            && Objects.equals(this.environmentId, instanceListView.environmentId)
+            && Objects.equals(this.environmentName, instanceListView.environmentName)
+            && Objects.equals(this.platformType, instanceListView.platformType)
+            && Objects.equals(this.version, instanceListView.version)
+            && Objects.equals(this.externalAccesses, instanceListView.externalAccesses)
+            && Objects.equals(this.artifacts, instanceListView.artifacts)
+            && Objects.equals(this.creator, instanceListView.creator)
+            && Objects.equals(this.createTime, instanceListView.createTime)
+            && Objects.equals(this.updateTime, instanceListView.updateTime)
+            && Objects.equals(this.statusDetail, instanceListView.statusDetail);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, applicationId, applicationName, componentId, componentName, name, environmentId, environmentName, platformType, version, externalAccesses, artifacts, creator, createTime, updateTime, statusDetail);
+        return Objects.hash(id,
+            applicationId,
+            applicationName,
+            componentId,
+            componentName,
+            name,
+            environmentId,
+            environmentName,
+            platformType,
+            version,
+            externalAccesses,
+            artifacts,
+            creator,
+            createTime,
+            updateTime,
+            statusDetail);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -559,16 +460,13 @@ public class InstanceListView  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

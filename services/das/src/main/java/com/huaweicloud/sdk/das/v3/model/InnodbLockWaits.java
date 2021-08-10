@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.das.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * InnodbLockWaits
- */
-public class InnodbLockWaits  {
-
-
+/** InnodbLockWaits */
+public class InnodbLockWaits {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="requesting_trx_id")
-    
+    @JsonProperty(value = "requesting_trx_id")
+
     private String requestingTrxId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="requested_lock_id")
-    
+    @JsonProperty(value = "requested_lock_id")
+
     private String requestedLockId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="blocking_trx_id")
-    
+    @JsonProperty(value = "blocking_trx_id")
+
     private String blockingTrxId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="blocking_lock_id")
-    
+    @JsonProperty(value = "blocking_lock_id")
+
     private String blockingLockId;
 
     public InnodbLockWaits withRequestingTrxId(String requestingTrxId) {
@@ -46,13 +33,9 @@ public class InnodbLockWaits  {
         return this;
     }
 
-    
-
-
-    /**
-     * 申请锁资源的事务ID
-     * @return requestingTrxId
-     */
+    /** 申请锁资源的事务ID
+     * 
+     * @return requestingTrxId */
     public String getRequestingTrxId() {
         return requestingTrxId;
     }
@@ -61,20 +44,14 @@ public class InnodbLockWaits  {
         this.requestingTrxId = requestingTrxId;
     }
 
-    
-
     public InnodbLockWaits withRequestedLockId(String requestedLockId) {
         this.requestedLockId = requestedLockId;
         return this;
     }
 
-    
-
-
-    /**
-     * 申请的锁的ID
-     * @return requestedLockId
-     */
+    /** 申请的锁的ID
+     * 
+     * @return requestedLockId */
     public String getRequestedLockId() {
         return requestedLockId;
     }
@@ -83,20 +60,14 @@ public class InnodbLockWaits  {
         this.requestedLockId = requestedLockId;
     }
 
-    
-
     public InnodbLockWaits withBlockingTrxId(String blockingTrxId) {
         this.blockingTrxId = blockingTrxId;
         return this;
     }
 
-    
-
-
-    /**
-     * 阻塞的事务ID
-     * @return blockingTrxId
-     */
+    /** 阻塞的事务ID
+     * 
+     * @return blockingTrxId */
     public String getBlockingTrxId() {
         return blockingTrxId;
     }
@@ -105,20 +76,14 @@ public class InnodbLockWaits  {
         this.blockingTrxId = blockingTrxId;
     }
 
-    
-
     public InnodbLockWaits withBlockingLockId(String blockingLockId) {
         this.blockingLockId = blockingLockId;
         return this;
     }
 
-    
-
-
-    /**
-     * 阻塞的锁的ID
-     * @return blockingLockId
-     */
+    /** 阻塞的锁的ID
+     * 
+     * @return blockingLockId */
     public String getBlockingLockId() {
         return blockingLockId;
     }
@@ -126,8 +91,6 @@ public class InnodbLockWaits  {
     public void setBlockingLockId(String blockingLockId) {
         this.blockingLockId = blockingLockId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class InnodbLockWaits  {
             return false;
         }
         InnodbLockWaits innodbLockWaits = (InnodbLockWaits) o;
-        return Objects.equals(this.requestingTrxId, innodbLockWaits.requestingTrxId) &&
-            Objects.equals(this.requestedLockId, innodbLockWaits.requestedLockId) &&
-            Objects.equals(this.blockingTrxId, innodbLockWaits.blockingTrxId) &&
-            Objects.equals(this.blockingLockId, innodbLockWaits.blockingLockId);
+        return Objects.equals(this.requestingTrxId, innodbLockWaits.requestingTrxId)
+            && Objects.equals(this.requestedLockId, innodbLockWaits.requestedLockId)
+            && Objects.equals(this.blockingTrxId, innodbLockWaits.blockingTrxId)
+            && Objects.equals(this.blockingLockId, innodbLockWaits.blockingLockId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(requestingTrxId, requestedLockId, blockingTrxId, blockingLockId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class InnodbLockWaits  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,64 +1,49 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class NeutronListFirewallGroupsRequest  {
-
-
+/** Request Object */
+public class NeutronListFirewallGroupsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private List<String> id = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private List<String> name = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private List<String> description = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ingress_firewall_policy_id")
-    
+    @JsonProperty(value = "ingress_firewall_policy_id")
+
     private String ingressFirewallPolicyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="egress_firewall_policy_id")
-    
+    @JsonProperty(value = "egress_firewall_policy_id")
+
     private String egressFirewallPolicyId;
 
     public NeutronListFirewallGroupsRequest withMarker(String marker) {
@@ -66,13 +51,9 @@ public class NeutronListFirewallGroupsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 分页查询起始的资源ID，为空时查询第一页
-     * @return marker
-     */
+    /** 分页查询起始的资源ID，为空时查询第一页
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -81,20 +62,14 @@ public class NeutronListFirewallGroupsRequest  {
         this.marker = marker;
     }
 
-    
-
     public NeutronListFirewallGroupsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页返回的个数
-     * @return limit
-     */
+    /** 每页返回的个数
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -103,16 +78,13 @@ public class NeutronListFirewallGroupsRequest  {
         this.limit = limit;
     }
 
-    
-
     public NeutronListFirewallGroupsRequest withId(List<String> id) {
         this.id = id;
         return this;
     }
 
-    
     public NeutronListFirewallGroupsRequest addIdItem(String idItem) {
-        if(this.id == null) {
+        if (this.id == null) {
             this.id = new ArrayList<>();
         }
         this.id.add(idItem);
@@ -120,17 +92,16 @@ public class NeutronListFirewallGroupsRequest  {
     }
 
     public NeutronListFirewallGroupsRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null) {
+        if (this.id == null) {
             this.id = new ArrayList<>();
         }
         idSetter.accept(this.id);
         return this;
     }
 
-    /**
-     * 使用id过滤网络ACL组
-     * @return id
-     */
+    /** 使用id过滤网络ACL组
+     * 
+     * @return id */
     public List<String> getId() {
         return id;
     }
@@ -139,16 +110,13 @@ public class NeutronListFirewallGroupsRequest  {
         this.id = id;
     }
 
-    
-
     public NeutronListFirewallGroupsRequest withName(List<String> name) {
         this.name = name;
         return this;
     }
 
-    
     public NeutronListFirewallGroupsRequest addNameItem(String nameItem) {
-        if(this.name == null) {
+        if (this.name == null) {
             this.name = new ArrayList<>();
         }
         this.name.add(nameItem);
@@ -156,17 +124,16 @@ public class NeutronListFirewallGroupsRequest  {
     }
 
     public NeutronListFirewallGroupsRequest withName(Consumer<List<String>> nameSetter) {
-        if(this.name == null) {
+        if (this.name == null) {
             this.name = new ArrayList<>();
         }
         nameSetter.accept(this.name);
         return this;
     }
 
-    /**
-     * 使用name过滤ACL组
-     * @return name
-     */
+    /** 使用name过滤ACL组
+     * 
+     * @return name */
     public List<String> getName() {
         return name;
     }
@@ -175,16 +142,13 @@ public class NeutronListFirewallGroupsRequest  {
         this.name = name;
     }
 
-    
-
     public NeutronListFirewallGroupsRequest withDescription(List<String> description) {
         this.description = description;
         return this;
     }
 
-    
     public NeutronListFirewallGroupsRequest addDescriptionItem(String descriptionItem) {
-        if(this.description == null) {
+        if (this.description == null) {
             this.description = new ArrayList<>();
         }
         this.description.add(descriptionItem);
@@ -192,17 +156,16 @@ public class NeutronListFirewallGroupsRequest  {
     }
 
     public NeutronListFirewallGroupsRequest withDescription(Consumer<List<String>> descriptionSetter) {
-        if(this.description == null) {
+        if (this.description == null) {
             this.description = new ArrayList<>();
         }
         descriptionSetter.accept(this.description);
         return this;
     }
 
-    /**
-     * 使用description过滤ACL组
-     * @return description
-     */
+    /** 使用description过滤ACL组
+     * 
+     * @return description */
     public List<String> getDescription() {
         return description;
     }
@@ -211,20 +174,14 @@ public class NeutronListFirewallGroupsRequest  {
         this.description = description;
     }
 
-    
-
     public NeutronListFirewallGroupsRequest withIngressFirewallPolicyId(String ingressFirewallPolicyId) {
         this.ingressFirewallPolicyId = ingressFirewallPolicyId;
         return this;
     }
 
-    
-
-
-    /**
-     * 使用入方向的网络ACL策略ID过滤网络ACL组
-     * @return ingressFirewallPolicyId
-     */
+    /** 使用入方向的网络ACL策略ID过滤网络ACL组
+     * 
+     * @return ingressFirewallPolicyId */
     public String getIngressFirewallPolicyId() {
         return ingressFirewallPolicyId;
     }
@@ -233,20 +190,14 @@ public class NeutronListFirewallGroupsRequest  {
         this.ingressFirewallPolicyId = ingressFirewallPolicyId;
     }
 
-    
-
     public NeutronListFirewallGroupsRequest withEgressFirewallPolicyId(String egressFirewallPolicyId) {
         this.egressFirewallPolicyId = egressFirewallPolicyId;
         return this;
     }
 
-    
-
-
-    /**
-     * 使用出方向的网络ACL策略过滤查询网络ACL组
-     * @return egressFirewallPolicyId
-     */
+    /** 使用出方向的网络ACL策略过滤查询网络ACL组
+     * 
+     * @return egressFirewallPolicyId */
     public String getEgressFirewallPolicyId() {
         return egressFirewallPolicyId;
     }
@@ -254,8 +205,6 @@ public class NeutronListFirewallGroupsRequest  {
     public void setEgressFirewallPolicyId(String egressFirewallPolicyId) {
         this.egressFirewallPolicyId = egressFirewallPolicyId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -266,18 +215,20 @@ public class NeutronListFirewallGroupsRequest  {
             return false;
         }
         NeutronListFirewallGroupsRequest neutronListFirewallGroupsRequest = (NeutronListFirewallGroupsRequest) o;
-        return Objects.equals(this.marker, neutronListFirewallGroupsRequest.marker) &&
-            Objects.equals(this.limit, neutronListFirewallGroupsRequest.limit) &&
-            Objects.equals(this.id, neutronListFirewallGroupsRequest.id) &&
-            Objects.equals(this.name, neutronListFirewallGroupsRequest.name) &&
-            Objects.equals(this.description, neutronListFirewallGroupsRequest.description) &&
-            Objects.equals(this.ingressFirewallPolicyId, neutronListFirewallGroupsRequest.ingressFirewallPolicyId) &&
-            Objects.equals(this.egressFirewallPolicyId, neutronListFirewallGroupsRequest.egressFirewallPolicyId);
+        return Objects.equals(this.marker, neutronListFirewallGroupsRequest.marker)
+            && Objects.equals(this.limit, neutronListFirewallGroupsRequest.limit)
+            && Objects.equals(this.id, neutronListFirewallGroupsRequest.id)
+            && Objects.equals(this.name, neutronListFirewallGroupsRequest.name)
+            && Objects.equals(this.description, neutronListFirewallGroupsRequest.description)
+            && Objects.equals(this.ingressFirewallPolicyId, neutronListFirewallGroupsRequest.ingressFirewallPolicyId)
+            && Objects.equals(this.egressFirewallPolicyId, neutronListFirewallGroupsRequest.egressFirewallPolicyId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(marker, limit, id, name, description, ingressFirewallPolicyId, egressFirewallPolicyId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -292,16 +243,13 @@ public class NeutronListFirewallGroupsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

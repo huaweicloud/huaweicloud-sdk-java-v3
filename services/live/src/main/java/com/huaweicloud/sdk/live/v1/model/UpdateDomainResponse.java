@@ -1,54 +1,33 @@
 package com.huaweicloud.sdk.live.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.time.OffsetDateTime;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class UpdateDomainResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
+
     private String domain;
-    /**
-     * 域名类型 - pull表示播放域名 - push表示推流域名 
-     */
+
+    /** 域名类型 - pull表示播放域名 - push表示推流域名 */
     public static final class DomainTypeEnum {
 
-        
-        /**
-         * Enum PULL for value: "pull"
-         */
+        /** Enum PULL for value: "pull" */
         public static final DomainTypeEnum PULL = new DomainTypeEnum("pull");
-        
-        /**
-         * Enum PUSH for value: "push"
-         */
+
+        /** Enum PUSH for value: "push" */
         public static final DomainTypeEnum PUSH = new DomainTypeEnum("push");
-        
 
         private static final Map<String, DomainTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -77,7 +56,7 @@ public class UpdateDomainResponse extends SdkResponse {
 
         @JsonCreator
         public static DomainTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DomainTypeEnum result = STATIC_FIELDS.get(value);
@@ -88,7 +67,7 @@ public class UpdateDomainResponse extends SdkResponse {
         }
 
         public static DomainTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DomainTypeEnum result = STATIC_FIELDS.get(value);
@@ -112,49 +91,35 @@ public class UpdateDomainResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_type")
-    
+    @JsonProperty(value = "domain_type")
+
     private DomainTypeEnum domainType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_cname")
-    
+    @JsonProperty(value = "domain_cname")
+
     private String domainCname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
-    /**
-     * 直播域名的状态
-     */
+
+    /** 直播域名的状态 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum ON for value: "on"
-         */
+        /** Enum ON for value: "on" */
         public static final StatusEnum ON = new StatusEnum("on");
-        
-        /**
-         * Enum OFF for value: "off"
-         */
+
+        /** Enum OFF for value: "off" */
         public static final StatusEnum OFF = new StatusEnum("off");
-        
-        /**
-         * Enum CONFIGURING for value: "configuring"
-         */
+
+        /** Enum CONFIGURING for value: "configuring" */
         public static final StatusEnum CONFIGURING = new StatusEnum("configuring");
-        
-        /**
-         * Enum DISABLE for value: "disable"
-         */
+
+        /** Enum DISABLE for value: "disable" */
         public static final StatusEnum DISABLE = new StatusEnum("disable");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -185,7 +150,7 @@ public class UpdateDomainResponse extends SdkResponse {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -196,7 +161,7 @@ public class UpdateDomainResponse extends SdkResponse {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -220,44 +185,32 @@ public class UpdateDomainResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private OffsetDateTime createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status_describe")
-    
+    @JsonProperty(value = "status_describe")
+
     private String statusDescribe;
-    /**
-     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 
-     */
+
+    /** 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 */
     public static final class ServiceAreaEnum {
 
-        
-        /**
-         * Enum MAINLAND_CHINA for value: "mainland_china"
-         */
+        /** Enum MAINLAND_CHINA for value: "mainland_china" */
         public static final ServiceAreaEnum MAINLAND_CHINA = new ServiceAreaEnum("mainland_china");
-        
-        /**
-         * Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china"
-         */
+
+        /** Enum OUTSIDE_MAINLAND_CHINA for value: "outside_mainland_china" */
         public static final ServiceAreaEnum OUTSIDE_MAINLAND_CHINA = new ServiceAreaEnum("outside_mainland_china");
-        
-        /**
-         * Enum GLOBAL for value: "global"
-         */
+
+        /** Enum GLOBAL for value: "global" */
         public static final ServiceAreaEnum GLOBAL = new ServiceAreaEnum("global");
-        
 
         private static final Map<String, ServiceAreaEnum> STATIC_FIELDS = createStaticFields();
 
@@ -287,7 +240,7 @@ public class UpdateDomainResponse extends SdkResponse {
 
         @JsonCreator
         public static ServiceAreaEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ServiceAreaEnum result = STATIC_FIELDS.get(value);
@@ -298,7 +251,7 @@ public class UpdateDomainResponse extends SdkResponse {
         }
 
         public static ServiceAreaEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ServiceAreaEnum result = STATIC_FIELDS.get(value);
@@ -322,10 +275,9 @@ public class UpdateDomainResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_area")
-    
+    @JsonProperty(value = "service_area")
+
     private ServiceAreaEnum serviceArea;
 
     public UpdateDomainResponse withDomain(String domain) {
@@ -333,13 +285,9 @@ public class UpdateDomainResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 直播域名
-     * @return domain
-     */
+    /** 直播域名
+     * 
+     * @return domain */
     public String getDomain() {
         return domain;
     }
@@ -348,20 +296,14 @@ public class UpdateDomainResponse extends SdkResponse {
         this.domain = domain;
     }
 
-    
-
     public UpdateDomainResponse withDomainType(DomainTypeEnum domainType) {
         this.domainType = domainType;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名类型 - pull表示播放域名 - push表示推流域名 
-     * @return domainType
-     */
+    /** 域名类型 - pull表示播放域名 - push表示推流域名
+     * 
+     * @return domainType */
     public DomainTypeEnum getDomainType() {
         return domainType;
     }
@@ -370,20 +312,14 @@ public class UpdateDomainResponse extends SdkResponse {
         this.domainType = domainType;
     }
 
-    
-
     public UpdateDomainResponse withDomainCname(String domainCname) {
         this.domainCname = domainCname;
         return this;
     }
 
-    
-
-
-    /**
-     * 直播域名的CNAME
-     * @return domainCname
-     */
+    /** 直播域名的CNAME
+     * 
+     * @return domainCname */
     public String getDomainCname() {
         return domainCname;
     }
@@ -392,20 +328,14 @@ public class UpdateDomainResponse extends SdkResponse {
         this.domainCname = domainCname;
     }
 
-    
-
     public UpdateDomainResponse withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * 直播所属直播中心
-     * @return region
-     */
+    /** 直播所属直播中心
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -414,20 +344,14 @@ public class UpdateDomainResponse extends SdkResponse {
         this.region = region;
     }
 
-    
-
     public UpdateDomainResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 直播域名的状态
-     * @return status
-     */
+    /** 直播域名的状态
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -436,20 +360,14 @@ public class UpdateDomainResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public UpdateDomainResponse withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名创建时间，格式：yyyy-mm-ddThh:mm:ssZ，UTC时间
-     * @return createTime
-     */
+    /** 域名创建时间，格式：yyyy-mm-ddThh:mm:ssZ，UTC时间
+     * 
+     * @return createTime */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -458,20 +376,14 @@ public class UpdateDomainResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public UpdateDomainResponse withStatusDescribe(String statusDescribe) {
         this.statusDescribe = statusDescribe;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态描述
-     * @return statusDescribe
-     */
+    /** 状态描述
+     * 
+     * @return statusDescribe */
     public String getStatusDescribe() {
         return statusDescribe;
     }
@@ -480,20 +392,14 @@ public class UpdateDomainResponse extends SdkResponse {
         this.statusDescribe = statusDescribe;
     }
 
-    
-
     public UpdateDomainResponse withServiceArea(ServiceAreaEnum serviceArea) {
         this.serviceArea = serviceArea;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域 
-     * @return serviceArea
-     */
+    /** 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球区域
+     * 
+     * @return serviceArea */
     public ServiceAreaEnum getServiceArea() {
         return serviceArea;
     }
@@ -501,8 +407,6 @@ public class UpdateDomainResponse extends SdkResponse {
     public void setServiceArea(ServiceAreaEnum serviceArea) {
         this.serviceArea = serviceArea;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -513,19 +417,21 @@ public class UpdateDomainResponse extends SdkResponse {
             return false;
         }
         UpdateDomainResponse updateDomainResponse = (UpdateDomainResponse) o;
-        return Objects.equals(this.domain, updateDomainResponse.domain) &&
-            Objects.equals(this.domainType, updateDomainResponse.domainType) &&
-            Objects.equals(this.domainCname, updateDomainResponse.domainCname) &&
-            Objects.equals(this.region, updateDomainResponse.region) &&
-            Objects.equals(this.status, updateDomainResponse.status) &&
-            Objects.equals(this.createTime, updateDomainResponse.createTime) &&
-            Objects.equals(this.statusDescribe, updateDomainResponse.statusDescribe) &&
-            Objects.equals(this.serviceArea, updateDomainResponse.serviceArea);
+        return Objects.equals(this.domain, updateDomainResponse.domain)
+            && Objects.equals(this.domainType, updateDomainResponse.domainType)
+            && Objects.equals(this.domainCname, updateDomainResponse.domainCname)
+            && Objects.equals(this.region, updateDomainResponse.region)
+            && Objects.equals(this.status, updateDomainResponse.status)
+            && Objects.equals(this.createTime, updateDomainResponse.createTime)
+            && Objects.equals(this.statusDescribe, updateDomainResponse.statusDescribe)
+            && Objects.equals(this.serviceArea, updateDomainResponse.serviceArea);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domain, domainType, domainCname, region, status, createTime, statusDescribe, serviceArea);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -541,16 +447,13 @@ public class UpdateDomainResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

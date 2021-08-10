@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bms.v1.model.ResetPasswordBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ResetPwdOneClickRequest  {
-
-
+/** Request Object */
+public class ResetPwdOneClickRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server_id")
-    
+    @JsonProperty(value = "server_id")
+
     private String serverId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ResetPasswordBody body;
 
     public ResetPwdOneClickRequest withServerId(String serverId) {
@@ -35,13 +24,9 @@ public class ResetPwdOneClickRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器ID。可以从裸金属服务器控制台查询，或者通过调用7.3.4-查询裸金属服务器列表（OpenStack原生）API获取。
-     * @return serverId
-     */
+    /** 裸金属服务器ID。可以从裸金属服务器控制台查询，或者通过调用7.3.4-查询裸金属服务器列表（OpenStack原生）API获取。
+     * 
+     * @return serverId */
     public String getServerId() {
         return serverId;
     }
@@ -50,27 +35,23 @@ public class ResetPwdOneClickRequest  {
         this.serverId = serverId;
     }
 
-    
-
     public ResetPwdOneClickRequest withBody(ResetPasswordBody body) {
         this.body = body;
         return this;
     }
 
     public ResetPwdOneClickRequest withBody(Consumer<ResetPasswordBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ResetPasswordBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ResetPasswordBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class ResetPwdOneClickRequest  {
     public void setBody(ResetPasswordBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class ResetPwdOneClickRequest  {
             return false;
         }
         ResetPwdOneClickRequest resetPwdOneClickRequest = (ResetPwdOneClickRequest) o;
-        return Objects.equals(this.serverId, resetPwdOneClickRequest.serverId) &&
-            Objects.equals(this.body, resetPwdOneClickRequest.body);
+        return Objects.equals(this.serverId, resetPwdOneClickRequest.serverId)
+            && Objects.equals(this.body, resetPwdOneClickRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(serverId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class ResetPwdOneClickRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

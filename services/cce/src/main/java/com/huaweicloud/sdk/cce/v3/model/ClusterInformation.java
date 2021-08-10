@@ -1,27 +1,19 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.ClusterInformationSpec;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class ClusterInformation  {
-
-
+public class ClusterInformation {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec")
-    
+    @JsonProperty(value = "spec")
+
     private ClusterInformationSpec spec;
 
     public ClusterInformation withSpec(ClusterInformationSpec spec) {
@@ -30,19 +22,17 @@ public class ClusterInformation  {
     }
 
     public ClusterInformation withSpec(Consumer<ClusterInformationSpec> specSetter) {
-        if(this.spec == null ){
+        if (this.spec == null) {
             this.spec = new ClusterInformationSpec();
             specSetter.accept(this.spec);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get spec
-     * @return spec
-     */
+    /** Get spec
+     * 
+     * @return spec */
     public ClusterInformationSpec getSpec() {
         return spec;
     }
@@ -50,8 +40,6 @@ public class ClusterInformation  {
     public void setSpec(ClusterInformationSpec spec) {
         this.spec = spec;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +52,12 @@ public class ClusterInformation  {
         ClusterInformation clusterInformation = (ClusterInformation) o;
         return Objects.equals(this.spec, clusterInformation.spec);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(spec);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +66,13 @@ public class ClusterInformation  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

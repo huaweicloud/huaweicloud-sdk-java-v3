@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateAccessCodeResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_key")
-    
+    @JsonProperty(value = "access_key")
+
     private String accessKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_code")
-    
+    @JsonProperty(value = "access_code")
+
     private String accessCode;
 
     public CreateAccessCodeResponse withAccessKey(String accessKey) {
@@ -36,13 +24,9 @@ public class CreateAccessCodeResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 接入名，随机生成8位字符串
-     * @return accessKey
-     */
+    /** 接入名，随机生成8位字符串
+     * 
+     * @return accessKey */
     public String getAccessKey() {
         return accessKey;
     }
@@ -51,20 +35,14 @@ public class CreateAccessCodeResponse extends SdkResponse {
         this.accessKey = accessKey;
     }
 
-    
-
     public CreateAccessCodeResponse withAccessCode(String accessCode) {
         this.accessCode = accessCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 接入凭证。
-     * @return accessCode
-     */
+    /** 接入凭证。
+     * 
+     * @return accessCode */
     public String getAccessCode() {
         return accessCode;
     }
@@ -72,8 +50,6 @@ public class CreateAccessCodeResponse extends SdkResponse {
     public void setAccessCode(String accessCode) {
         this.accessCode = accessCode;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +60,15 @@ public class CreateAccessCodeResponse extends SdkResponse {
             return false;
         }
         CreateAccessCodeResponse createAccessCodeResponse = (CreateAccessCodeResponse) o;
-        return Objects.equals(this.accessKey, createAccessCodeResponse.accessKey) &&
-            Objects.equals(this.accessCode, createAccessCodeResponse.accessCode);
+        return Objects.equals(this.accessKey, createAccessCodeResponse.accessKey)
+            && Objects.equals(this.accessCode, createAccessCodeResponse.accessCode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(accessKey, accessCode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +78,13 @@ public class CreateAccessCodeResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

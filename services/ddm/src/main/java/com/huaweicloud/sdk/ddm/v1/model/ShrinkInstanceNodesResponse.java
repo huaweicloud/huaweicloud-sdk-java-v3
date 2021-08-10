@@ -1,40 +1,27 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShrinkInstanceNodesResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instanceId")
-    
+    @JsonProperty(value = "instanceId")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instanceName")
-    
+    @JsonProperty(value = "instanceName")
+
     private String instanceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobId")
-    
+    @JsonProperty(value = "jobId")
+
     private String jobId;
 
     public ShrinkInstanceNodesResponse withInstanceId(String instanceId) {
@@ -42,13 +29,9 @@ public class ShrinkInstanceNodesResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * DDM实例ID。
-     * @return instanceId
-     */
+    /** DDM实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -57,20 +40,14 @@ public class ShrinkInstanceNodesResponse extends SdkResponse {
         this.instanceId = instanceId;
     }
 
-    
-
     public ShrinkInstanceNodesResponse withInstanceName(String instanceName) {
         this.instanceName = instanceName;
         return this;
     }
 
-    
-
-
-    /**
-     * DDM实例名称。
-     * @return instanceName
-     */
+    /** DDM实例名称。
+     * 
+     * @return instanceName */
     public String getInstanceName() {
         return instanceName;
     }
@@ -79,20 +56,14 @@ public class ShrinkInstanceNodesResponse extends SdkResponse {
         this.instanceName = instanceName;
     }
 
-    
-
     public ShrinkInstanceNodesResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID。
-     * @return jobId
-     */
+    /** 任务ID。
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -100,8 +71,6 @@ public class ShrinkInstanceNodesResponse extends SdkResponse {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +81,16 @@ public class ShrinkInstanceNodesResponse extends SdkResponse {
             return false;
         }
         ShrinkInstanceNodesResponse shrinkInstanceNodesResponse = (ShrinkInstanceNodesResponse) o;
-        return Objects.equals(this.instanceId, shrinkInstanceNodesResponse.instanceId) &&
-            Objects.equals(this.instanceName, shrinkInstanceNodesResponse.instanceName) &&
-            Objects.equals(this.jobId, shrinkInstanceNodesResponse.jobId);
+        return Objects.equals(this.instanceId, shrinkInstanceNodesResponse.instanceId)
+            && Objects.equals(this.instanceName, shrinkInstanceNodesResponse.instanceName)
+            && Objects.equals(this.jobId, shrinkInstanceNodesResponse.jobId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, instanceName, jobId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +101,13 @@ public class ShrinkInstanceNodesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

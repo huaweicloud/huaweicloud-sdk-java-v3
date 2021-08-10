@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 慢日志单个条目
- */
-public class SlowlogItem  {
-
-
+/** 慢日志单个条目 */
+public class SlowlogItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Integer id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="command")
-    
+    @JsonProperty(value = "command")
+
     private String command;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="duration")
-    
+    @JsonProperty(value = "duration")
+
     private String duration;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="shard_name")
-    
+    @JsonProperty(value = "shard_name")
+
     private String shardName;
 
     public SlowlogItem withId(Integer id) {
@@ -52,13 +38,9 @@ public class SlowlogItem  {
         return this;
     }
 
-    
-
-
-    /**
-     * 慢日志的唯一标识
-     * @return id
-     */
+    /** 慢日志的唯一标识
+     * 
+     * @return id */
     public Integer getId() {
         return id;
     }
@@ -67,20 +49,14 @@ public class SlowlogItem  {
         this.id = id;
     }
 
-    
-
     public SlowlogItem withCommand(String command) {
         this.command = command;
         return this;
     }
 
-    
-
-
-    /**
-     * 慢命令
-     * @return command
-     */
+    /** 慢命令
+     * 
+     * @return command */
     public String getCommand() {
         return command;
     }
@@ -89,20 +65,14 @@ public class SlowlogItem  {
         this.command = command;
     }
 
-    
-
     public SlowlogItem withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 执行开始时间,格式为“2020-06-19T07:06:07Z”
-     * @return startTime
-     */
+    /** 执行开始时间,格式为“2020-06-19T07:06:07Z”
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -111,20 +81,14 @@ public class SlowlogItem  {
         this.startTime = startTime;
     }
 
-    
-
     public SlowlogItem withDuration(String duration) {
         this.duration = duration;
         return this;
     }
 
-    
-
-
-    /**
-     * 持续时间，单位是ms
-     * @return duration
-     */
+    /** 持续时间，单位是ms
+     * 
+     * @return duration */
     public String getDuration() {
         return duration;
     }
@@ -133,20 +97,14 @@ public class SlowlogItem  {
         this.duration = duration;
     }
 
-    
-
     public SlowlogItem withShardName(String shardName) {
         this.shardName = shardName;
         return this;
     }
 
-    
-
-
-    /**
-     * 慢命令所在的分片名称，仅在实例类型为集群时支持
-     * @return shardName
-     */
+    /** 慢命令所在的分片名称，仅在实例类型为集群时支持
+     * 
+     * @return shardName */
     public String getShardName() {
         return shardName;
     }
@@ -154,8 +112,6 @@ public class SlowlogItem  {
     public void setShardName(String shardName) {
         this.shardName = shardName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,17 @@ public class SlowlogItem  {
             return false;
         }
         SlowlogItem slowlogItem = (SlowlogItem) o;
-        return Objects.equals(this.id, slowlogItem.id) &&
-            Objects.equals(this.command, slowlogItem.command) &&
-            Objects.equals(this.startTime, slowlogItem.startTime) &&
-            Objects.equals(this.duration, slowlogItem.duration) &&
-            Objects.equals(this.shardName, slowlogItem.shardName);
+        return Objects.equals(this.id, slowlogItem.id) && Objects.equals(this.command, slowlogItem.command)
+            && Objects.equals(this.startTime, slowlogItem.startTime)
+            && Objects.equals(this.duration, slowlogItem.duration)
+            && Objects.equals(this.shardName, slowlogItem.shardName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, command, startTime, duration, shardName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +145,13 @@ public class SlowlogItem  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * IEFNode
- */
-public class IEFNode  {
-
-
+/** IEFNode */
+public class IEFNode {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="public_ip_address")
-    
+    @JsonProperty(value = "public_ip_address")
+
     private String publicIpAddress;
 
     public IEFNode withId(String id) {
@@ -40,13 +28,9 @@ public class IEFNode  {
         return this;
     }
 
-    
-
-
-    /**
-     * 节点ID
-     * @return id
-     */
+    /** 节点ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -55,20 +39,14 @@ public class IEFNode  {
         this.id = id;
     }
 
-    
-
     public IEFNode withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点状态:\"ACTIVE\"
-     * @return status
-     */
+    /** 节点状态:\"ACTIVE\"
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -77,20 +55,14 @@ public class IEFNode  {
         this.status = status;
     }
 
-    
-
     public IEFNode withPublicIpAddress(String publicIpAddress) {
         this.publicIpAddress = publicIpAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点公有IP
-     * @return publicIpAddress
-     */
+    /** 节点公有IP
+     * 
+     * @return publicIpAddress */
     public String getPublicIpAddress() {
         return publicIpAddress;
     }
@@ -98,8 +70,6 @@ public class IEFNode  {
     public void setPublicIpAddress(String publicIpAddress) {
         this.publicIpAddress = publicIpAddress;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,15 @@ public class IEFNode  {
             return false;
         }
         IEFNode ieFNode = (IEFNode) o;
-        return Objects.equals(this.id, ieFNode.id) &&
-            Objects.equals(this.status, ieFNode.status) &&
-            Objects.equals(this.publicIpAddress, ieFNode.publicIpAddress);
+        return Objects.equals(this.id, ieFNode.id) && Objects.equals(this.status, ieFNode.status)
+            && Objects.equals(this.publicIpAddress, ieFNode.publicIpAddress);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, status, publicIpAddress);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +99,13 @@ public class IEFNode  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

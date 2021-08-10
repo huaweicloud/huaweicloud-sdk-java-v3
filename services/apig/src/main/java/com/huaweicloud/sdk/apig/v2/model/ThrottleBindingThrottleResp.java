@@ -1,123 +1,97 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.time.OffsetDateTime;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * ThrottleBindingThrottleResp
- */
-public class ThrottleBindingThrottleResp  {
-
-
+/** ThrottleBindingThrottleResp */
+public class ThrottleBindingThrottleResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_call_limits")
-    
+    @JsonProperty(value = "api_call_limits")
+
     private Integer apiCallLimits;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_call_limits")
-    
+    @JsonProperty(value = "user_call_limits")
+
     private Integer userCallLimits;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_call_limits")
-    
+    @JsonProperty(value = "app_call_limits")
+
     private Integer appCallLimits;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_call_limits")
-    
+    @JsonProperty(value = "ip_call_limits")
+
     private Integer ipCallLimits;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time_interval")
-    
+    @JsonProperty(value = "time_interval")
+
     private Integer timeInterval;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time_unit")
-    
+    @JsonProperty(value = "time_unit")
+
     private String timeUnit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
+
     private String remark;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private OffsetDateTime createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_include_special_throttle")
-    
+    @JsonProperty(value = "is_include_special_throttle")
+
     private Integer isIncludeSpecialThrottle;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_name")
-    
+    @JsonProperty(value = "env_name")
+
     private String envName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private Integer type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bind_id")
-    
+    @JsonProperty(value = "bind_id")
+
     private String bindId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bind_time")
-    
+    @JsonProperty(value = "bind_time")
+
     private OffsetDateTime bindTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bind_num")
-    
+    @JsonProperty(value = "bind_num")
+
     private Integer bindNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable_adaptive_control")
-    
+    @JsonProperty(value = "enable_adaptive_control")
+
     private String enableAdaptiveControl;
 
     public ThrottleBindingThrottleResp withId(String id) {
@@ -125,13 +99,9 @@ public class ThrottleBindingThrottleResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 流控策略的ID
-     * @return id
-     */
+    /** 流控策略的ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -140,20 +110,14 @@ public class ThrottleBindingThrottleResp  {
         this.id = id;
     }
 
-    
-
     public ThrottleBindingThrottleResp withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 流控策略的名称
-     * @return name
-     */
+    /** 流控策略的名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -162,20 +126,14 @@ public class ThrottleBindingThrottleResp  {
         this.name = name;
     }
 
-    
-
     public ThrottleBindingThrottleResp withApiCallLimits(Integer apiCallLimits) {
         this.apiCallLimits = apiCallLimits;
         return this;
     }
 
-    
-
-
-    /**
-     * 单个API流控时间内能够被访问的次数限制
-     * @return apiCallLimits
-     */
+    /** 单个API流控时间内能够被访问的次数限制
+     * 
+     * @return apiCallLimits */
     public Integer getApiCallLimits() {
         return apiCallLimits;
     }
@@ -184,20 +142,14 @@ public class ThrottleBindingThrottleResp  {
         this.apiCallLimits = apiCallLimits;
     }
 
-    
-
     public ThrottleBindingThrottleResp withUserCallLimits(Integer userCallLimits) {
         this.userCallLimits = userCallLimits;
         return this;
     }
 
-    
-
-
-    /**
-     * 单个用户流控时间内能够访问API的次数限制
-     * @return userCallLimits
-     */
+    /** 单个用户流控时间内能够访问API的次数限制
+     * 
+     * @return userCallLimits */
     public Integer getUserCallLimits() {
         return userCallLimits;
     }
@@ -206,20 +158,14 @@ public class ThrottleBindingThrottleResp  {
         this.userCallLimits = userCallLimits;
     }
 
-    
-
     public ThrottleBindingThrottleResp withAppCallLimits(Integer appCallLimits) {
         this.appCallLimits = appCallLimits;
         return this;
     }
 
-    
-
-
-    /**
-     * 单个APP流控时间内能够访问API的次数限制
-     * @return appCallLimits
-     */
+    /** 单个APP流控时间内能够访问API的次数限制
+     * 
+     * @return appCallLimits */
     public Integer getAppCallLimits() {
         return appCallLimits;
     }
@@ -228,20 +174,14 @@ public class ThrottleBindingThrottleResp  {
         this.appCallLimits = appCallLimits;
     }
 
-    
-
     public ThrottleBindingThrottleResp withIpCallLimits(Integer ipCallLimits) {
         this.ipCallLimits = ipCallLimits;
         return this;
     }
 
-    
-
-
-    /**
-     * 单个源IP流控时间内能够访问API的次数限制
-     * @return ipCallLimits
-     */
+    /** 单个源IP流控时间内能够访问API的次数限制
+     * 
+     * @return ipCallLimits */
     public Integer getIpCallLimits() {
         return ipCallLimits;
     }
@@ -250,20 +190,14 @@ public class ThrottleBindingThrottleResp  {
         this.ipCallLimits = ipCallLimits;
     }
 
-    
-
     public ThrottleBindingThrottleResp withTimeInterval(Integer timeInterval) {
         this.timeInterval = timeInterval;
         return this;
     }
 
-    
-
-
-    /**
-     * 流控的时长
-     * @return timeInterval
-     */
+    /** 流控的时长
+     * 
+     * @return timeInterval */
     public Integer getTimeInterval() {
         return timeInterval;
     }
@@ -272,20 +206,14 @@ public class ThrottleBindingThrottleResp  {
         this.timeInterval = timeInterval;
     }
 
-    
-
     public ThrottleBindingThrottleResp withTimeUnit(String timeUnit) {
         this.timeUnit = timeUnit;
         return this;
     }
 
-    
-
-
-    /**
-     * 流控的时间单位
-     * @return timeUnit
-     */
+    /** 流控的时间单位
+     * 
+     * @return timeUnit */
     public String getTimeUnit() {
         return timeUnit;
     }
@@ -294,20 +222,14 @@ public class ThrottleBindingThrottleResp  {
         this.timeUnit = timeUnit;
     }
 
-    
-
     public ThrottleBindingThrottleResp withRemark(String remark) {
         this.remark = remark;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述
-     * @return remark
-     */
+    /** 描述
+     * 
+     * @return remark */
     public String getRemark() {
         return remark;
     }
@@ -316,20 +238,14 @@ public class ThrottleBindingThrottleResp  {
         this.remark = remark;
     }
 
-    
-
     public ThrottleBindingThrottleResp withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return createTime
-     */
+    /** 创建时间
+     * 
+     * @return createTime */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -338,20 +254,14 @@ public class ThrottleBindingThrottleResp  {
         this.createTime = createTime;
     }
 
-    
-
     public ThrottleBindingThrottleResp withIsIncludeSpecialThrottle(Integer isIncludeSpecialThrottle) {
         this.isIncludeSpecialThrottle = isIncludeSpecialThrottle;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否包含特殊流控 - 1：包含 - 2：不包含
-     * @return isIncludeSpecialThrottle
-     */
+    /** 是否包含特殊流控 - 1：包含 - 2：不包含
+     * 
+     * @return isIncludeSpecialThrottle */
     public Integer getIsIncludeSpecialThrottle() {
         return isIncludeSpecialThrottle;
     }
@@ -360,20 +270,14 @@ public class ThrottleBindingThrottleResp  {
         this.isIncludeSpecialThrottle = isIncludeSpecialThrottle;
     }
 
-    
-
     public ThrottleBindingThrottleResp withEnvName(String envName) {
         this.envName = envName;
         return this;
     }
 
-    
-
-
-    /**
-     * 流控策略生效的环境（即在哪个环境上有效）
-     * @return envName
-     */
+    /** 流控策略生效的环境（即在哪个环境上有效）
+     * 
+     * @return envName */
     public String getEnvName() {
         return envName;
     }
@@ -382,20 +286,14 @@ public class ThrottleBindingThrottleResp  {
         this.envName = envName;
     }
 
-    
-
     public ThrottleBindingThrottleResp withType(Integer type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 流控策略的类型
-     * @return type
-     */
+    /** 流控策略的类型
+     * 
+     * @return type */
     public Integer getType() {
         return type;
     }
@@ -404,20 +302,14 @@ public class ThrottleBindingThrottleResp  {
         this.type = type;
     }
 
-    
-
     public ThrottleBindingThrottleResp withBindId(String bindId) {
         this.bindId = bindId;
         return this;
     }
 
-    
-
-
-    /**
-     * 流控策略与API绑定关系编号
-     * @return bindId
-     */
+    /** 流控策略与API绑定关系编号
+     * 
+     * @return bindId */
     public String getBindId() {
         return bindId;
     }
@@ -426,20 +318,14 @@ public class ThrottleBindingThrottleResp  {
         this.bindId = bindId;
     }
 
-    
-
     public ThrottleBindingThrottleResp withBindTime(OffsetDateTime bindTime) {
         this.bindTime = bindTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 流控策略与API绑定时间
-     * @return bindTime
-     */
+    /** 流控策略与API绑定时间
+     * 
+     * @return bindTime */
     public OffsetDateTime getBindTime() {
         return bindTime;
     }
@@ -448,20 +334,14 @@ public class ThrottleBindingThrottleResp  {
         this.bindTime = bindTime;
     }
 
-    
-
     public ThrottleBindingThrottleResp withBindNum(Integer bindNum) {
         this.bindNum = bindNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 流控策略绑定的API数量
-     * @return bindNum
-     */
+    /** 流控策略绑定的API数量
+     * 
+     * @return bindNum */
     public Integer getBindNum() {
         return bindNum;
     }
@@ -470,20 +350,14 @@ public class ThrottleBindingThrottleResp  {
         this.bindNum = bindNum;
     }
 
-    
-
     public ThrottleBindingThrottleResp withEnableAdaptiveControl(String enableAdaptiveControl) {
         this.enableAdaptiveControl = enableAdaptiveControl;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启动态流控，暂不支持
-     * @return enableAdaptiveControl
-     */
+    /** 是否开启动态流控，暂不支持
+     * 
+     * @return enableAdaptiveControl */
     public String getEnableAdaptiveControl() {
         return enableAdaptiveControl;
     }
@@ -491,8 +365,6 @@ public class ThrottleBindingThrottleResp  {
     public void setEnableAdaptiveControl(String enableAdaptiveControl) {
         this.enableAdaptiveControl = enableAdaptiveControl;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -503,28 +375,46 @@ public class ThrottleBindingThrottleResp  {
             return false;
         }
         ThrottleBindingThrottleResp throttleBindingThrottleResp = (ThrottleBindingThrottleResp) o;
-        return Objects.equals(this.id, throttleBindingThrottleResp.id) &&
-            Objects.equals(this.name, throttleBindingThrottleResp.name) &&
-            Objects.equals(this.apiCallLimits, throttleBindingThrottleResp.apiCallLimits) &&
-            Objects.equals(this.userCallLimits, throttleBindingThrottleResp.userCallLimits) &&
-            Objects.equals(this.appCallLimits, throttleBindingThrottleResp.appCallLimits) &&
-            Objects.equals(this.ipCallLimits, throttleBindingThrottleResp.ipCallLimits) &&
-            Objects.equals(this.timeInterval, throttleBindingThrottleResp.timeInterval) &&
-            Objects.equals(this.timeUnit, throttleBindingThrottleResp.timeUnit) &&
-            Objects.equals(this.remark, throttleBindingThrottleResp.remark) &&
-            Objects.equals(this.createTime, throttleBindingThrottleResp.createTime) &&
-            Objects.equals(this.isIncludeSpecialThrottle, throttleBindingThrottleResp.isIncludeSpecialThrottle) &&
-            Objects.equals(this.envName, throttleBindingThrottleResp.envName) &&
-            Objects.equals(this.type, throttleBindingThrottleResp.type) &&
-            Objects.equals(this.bindId, throttleBindingThrottleResp.bindId) &&
-            Objects.equals(this.bindTime, throttleBindingThrottleResp.bindTime) &&
-            Objects.equals(this.bindNum, throttleBindingThrottleResp.bindNum) &&
-            Objects.equals(this.enableAdaptiveControl, throttleBindingThrottleResp.enableAdaptiveControl);
+        return Objects.equals(this.id, throttleBindingThrottleResp.id)
+            && Objects.equals(this.name, throttleBindingThrottleResp.name)
+            && Objects.equals(this.apiCallLimits, throttleBindingThrottleResp.apiCallLimits)
+            && Objects.equals(this.userCallLimits, throttleBindingThrottleResp.userCallLimits)
+            && Objects.equals(this.appCallLimits, throttleBindingThrottleResp.appCallLimits)
+            && Objects.equals(this.ipCallLimits, throttleBindingThrottleResp.ipCallLimits)
+            && Objects.equals(this.timeInterval, throttleBindingThrottleResp.timeInterval)
+            && Objects.equals(this.timeUnit, throttleBindingThrottleResp.timeUnit)
+            && Objects.equals(this.remark, throttleBindingThrottleResp.remark)
+            && Objects.equals(this.createTime, throttleBindingThrottleResp.createTime)
+            && Objects.equals(this.isIncludeSpecialThrottle, throttleBindingThrottleResp.isIncludeSpecialThrottle)
+            && Objects.equals(this.envName, throttleBindingThrottleResp.envName)
+            && Objects.equals(this.type, throttleBindingThrottleResp.type)
+            && Objects.equals(this.bindId, throttleBindingThrottleResp.bindId)
+            && Objects.equals(this.bindTime, throttleBindingThrottleResp.bindTime)
+            && Objects.equals(this.bindNum, throttleBindingThrottleResp.bindNum)
+            && Objects.equals(this.enableAdaptiveControl, throttleBindingThrottleResp.enableAdaptiveControl);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, apiCallLimits, userCallLimits, appCallLimits, ipCallLimits, timeInterval, timeUnit, remark, createTime, isIncludeSpecialThrottle, envName, type, bindId, bindTime, bindNum, enableAdaptiveControl);
+        return Objects.hash(id,
+            name,
+            apiCallLimits,
+            userCallLimits,
+            appCallLimits,
+            ipCallLimits,
+            timeInterval,
+            timeUnit,
+            remark,
+            createTime,
+            isIncludeSpecialThrottle,
+            envName,
+            type,
+            bindId,
+            bindTime,
+            bindNum,
+            enableAdaptiveControl);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -549,16 +439,13 @@ public class ThrottleBindingThrottleResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

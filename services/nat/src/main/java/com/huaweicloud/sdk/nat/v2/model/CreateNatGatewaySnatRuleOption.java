@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.nat.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 创建SNAT规则的请求体。
- */
-public class CreateNatGatewaySnatRuleOption  {
-
-
+/** 创建SNAT规则的请求体。 */
+public class CreateNatGatewaySnatRuleOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nat_gateway_id")
-    
+    @JsonProperty(value = "nat_gateway_id")
+
     private String natGatewayId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cidr")
-    
+    @JsonProperty(value = "cidr")
+
     private String cidr;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="network_id")
-    
+    @JsonProperty(value = "network_id")
+
     private String networkId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_type")
-    
+    @JsonProperty(value = "source_type")
+
     private Integer sourceType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="floating_ip_id")
-    
+    @JsonProperty(value = "floating_ip_id")
+
     private String floatingIpId;
 
     public CreateNatGatewaySnatRuleOption withNatGatewayId(String natGatewayId) {
@@ -58,13 +43,9 @@ public class CreateNatGatewaySnatRuleOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 公网NAT网关实例的ID。
-     * @return natGatewayId
-     */
+    /** 公网NAT网关实例的ID。
+     * 
+     * @return natGatewayId */
     public String getNatGatewayId() {
         return natGatewayId;
     }
@@ -73,20 +54,14 @@ public class CreateNatGatewaySnatRuleOption  {
         this.natGatewayId = natGatewayId;
     }
 
-    
-
     public CreateNatGatewaySnatRuleOption withCidr(String cidr) {
         this.cidr = cidr;
         return this;
     }
 
-    
-
-
-    /**
-     * cidr，可以是网段或者主机格式，与network_id参数二选一。 Source_type=0时，cidr必须是vpc 子网网段的子集(不能相等）; Source_type=1时，cidr必须指定专线侧网段。 
-     * @return cidr
-     */
+    /** cidr，可以是网段或者主机格式，与network_id参数二选一。 Source_type=0时，cidr必须是vpc 子网网段的子集(不能相等）; Source_type=1时，cidr必须指定专线侧网段。
+     * 
+     * @return cidr */
     public String getCidr() {
         return cidr;
     }
@@ -95,20 +70,14 @@ public class CreateNatGatewaySnatRuleOption  {
         this.cidr = cidr;
     }
 
-    
-
     public CreateNatGatewaySnatRuleOption withNetworkId(String networkId) {
         this.networkId = networkId;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则使用的网络id。与cidr参数二选一。
-     * @return networkId
-     */
+    /** 规则使用的网络id。与cidr参数二选一。
+     * 
+     * @return networkId */
     public String getNetworkId() {
         return networkId;
     }
@@ -117,20 +86,14 @@ public class CreateNatGatewaySnatRuleOption  {
         this.networkId = networkId;
     }
 
-    
-
     public CreateNatGatewaySnatRuleOption withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * SNAT规则的描述，长度限制为255。
-     * @return description
-     */
+    /** SNAT规则的描述，长度限制为255。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -139,20 +102,14 @@ public class CreateNatGatewaySnatRuleOption  {
         this.description = description;
     }
 
-    
-
     public CreateNatGatewaySnatRuleOption withSourceType(Integer sourceType) {
         this.sourceType = sourceType;
         return this;
     }
 
-    
-
-
-    /**
-     * 0：VPC侧，可以指定network_id 或者cidr 1：专线侧，只能指定cidr 不输入默认为0（VPC） 
-     * @return sourceType
-     */
+    /** 0：VPC侧，可以指定network_id 或者cidr 1：专线侧，只能指定cidr 不输入默认为0（VPC）
+     * 
+     * @return sourceType */
     public Integer getSourceType() {
         return sourceType;
     }
@@ -161,20 +118,14 @@ public class CreateNatGatewaySnatRuleOption  {
         this.sourceType = sourceType;
     }
 
-    
-
     public CreateNatGatewaySnatRuleOption withFloatingIpId(String floatingIpId) {
         this.floatingIpId = floatingIpId;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：弹性公网IP的id，多个弹性公网IP使用逗号分隔。 取值范围：最大长度4096字节。 约束：弹性公网IP的id个数不能超过20个。 
-     * @return floatingIpId
-     */
+    /** 功能说明：弹性公网IP的id，多个弹性公网IP使用逗号分隔。 取值范围：最大长度4096字节。 约束：弹性公网IP的id个数不能超过20个。
+     * 
+     * @return floatingIpId */
     public String getFloatingIpId() {
         return floatingIpId;
     }
@@ -182,8 +133,6 @@ public class CreateNatGatewaySnatRuleOption  {
     public void setFloatingIpId(String floatingIpId) {
         this.floatingIpId = floatingIpId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,17 +143,19 @@ public class CreateNatGatewaySnatRuleOption  {
             return false;
         }
         CreateNatGatewaySnatRuleOption createNatGatewaySnatRuleOption = (CreateNatGatewaySnatRuleOption) o;
-        return Objects.equals(this.natGatewayId, createNatGatewaySnatRuleOption.natGatewayId) &&
-            Objects.equals(this.cidr, createNatGatewaySnatRuleOption.cidr) &&
-            Objects.equals(this.networkId, createNatGatewaySnatRuleOption.networkId) &&
-            Objects.equals(this.description, createNatGatewaySnatRuleOption.description) &&
-            Objects.equals(this.sourceType, createNatGatewaySnatRuleOption.sourceType) &&
-            Objects.equals(this.floatingIpId, createNatGatewaySnatRuleOption.floatingIpId);
+        return Objects.equals(this.natGatewayId, createNatGatewaySnatRuleOption.natGatewayId)
+            && Objects.equals(this.cidr, createNatGatewaySnatRuleOption.cidr)
+            && Objects.equals(this.networkId, createNatGatewaySnatRuleOption.networkId)
+            && Objects.equals(this.description, createNatGatewaySnatRuleOption.description)
+            && Objects.equals(this.sourceType, createNatGatewaySnatRuleOption.sourceType)
+            && Objects.equals(this.floatingIpId, createNatGatewaySnatRuleOption.floatingIpId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(natGatewayId, cidr, networkId, description, sourceType, floatingIpId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,16 +169,13 @@ public class CreateNatGatewaySnatRuleOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

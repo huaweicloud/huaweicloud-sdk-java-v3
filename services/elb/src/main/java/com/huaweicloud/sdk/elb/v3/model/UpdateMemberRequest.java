@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v3.model.UpdateMemberRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateMemberRequest  {
-
-
+/** Request Object */
+public class UpdateMemberRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="member_id")
-    
+    @JsonProperty(value = "member_id")
+
     private String memberId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pool_id")
-    
+    @JsonProperty(value = "pool_id")
+
     private String poolId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateMemberRequestBody body;
 
     public UpdateMemberRequest withMemberId(String memberId) {
@@ -41,13 +29,9 @@ public class UpdateMemberRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 后端服务器ID。
-     * @return memberId
-     */
+    /** 后端服务器ID。
+     * 
+     * @return memberId */
     public String getMemberId() {
         return memberId;
     }
@@ -56,20 +40,14 @@ public class UpdateMemberRequest  {
         this.memberId = memberId;
     }
 
-    
-
     public UpdateMemberRequest withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端服务器组ID。
-     * @return poolId
-     */
+    /** 后端服务器组ID。
+     * 
+     * @return poolId */
     public String getPoolId() {
         return poolId;
     }
@@ -78,27 +56,23 @@ public class UpdateMemberRequest  {
         this.poolId = poolId;
     }
 
-    
-
     public UpdateMemberRequest withBody(UpdateMemberRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdateMemberRequest withBody(Consumer<UpdateMemberRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateMemberRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateMemberRequestBody getBody() {
         return body;
     }
@@ -106,8 +80,6 @@ public class UpdateMemberRequest  {
     public void setBody(UpdateMemberRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class UpdateMemberRequest  {
             return false;
         }
         UpdateMemberRequest updateMemberRequest = (UpdateMemberRequest) o;
-        return Objects.equals(this.memberId, updateMemberRequest.memberId) &&
-            Objects.equals(this.poolId, updateMemberRequest.poolId) &&
-            Objects.equals(this.body, updateMemberRequest.body);
+        return Objects.equals(this.memberId, updateMemberRequest.memberId)
+            && Objects.equals(this.poolId, updateMemberRequest.poolId)
+            && Objects.equals(this.body, updateMemberRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(memberId, poolId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class UpdateMemberRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

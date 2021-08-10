@@ -1,38 +1,23 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 创建裸金属服务器的extendparam字段数据结构说明
- */
-public class ExtendParam  {
+/** 创建裸金属服务器的extendparam字段数据结构说明 */
+public class ExtendParam {
 
-    /**
-     * 计费模式。取值范围：prePaid：预付费，即包年包月。默认值是prePaid。
-     */
+    /** 计费模式。取值范围：prePaid：预付费，即包年包月。默认值是prePaid。 */
     public static final class ChargingModeEnum {
 
-        
-        /**
-         * Enum PREPAID for value: "prePaid"
-         */
+        /** Enum PREPAID for value: "prePaid" */
         public static final ChargingModeEnum PREPAID = new ChargingModeEnum("prePaid");
-        
 
         private static final Map<String, ChargingModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -60,7 +45,7 @@ public class ExtendParam  {
 
         @JsonCreator
         public static ChargingModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ChargingModeEnum result = STATIC_FIELDS.get(value);
@@ -71,7 +56,7 @@ public class ExtendParam  {
         }
 
         public static ChargingModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ChargingModeEnum result = STATIC_FIELDS.get(value);
@@ -95,33 +80,24 @@ public class ExtendParam  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="chargingMode")
-    
+    @JsonProperty(value = "chargingMode")
+
     private ChargingModeEnum chargingMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="regionID")
-    
+    @JsonProperty(value = "regionID")
+
     private String regionID;
-    /**
-     * 订购周期类型。取值范围：month：月year：年 说明：chargingMode为prePaid时生效，且为必选值。
-     */
+
+    /** 订购周期类型。取值范围：month：月year：年 说明：chargingMode为prePaid时生效，且为必选值。 */
     public static final class PeriodTypeEnum {
 
-        
-        /**
-         * Enum MONTH for value: "month"
-         */
+        /** Enum MONTH for value: "month" */
         public static final PeriodTypeEnum MONTH = new PeriodTypeEnum("month");
-        
-        /**
-         * Enum YEAR for value: "year"
-         */
+
+        /** Enum YEAR for value: "year" */
         public static final PeriodTypeEnum YEAR = new PeriodTypeEnum("year");
-        
 
         private static final Map<String, PeriodTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -150,7 +126,7 @@ public class ExtendParam  {
 
         @JsonCreator
         public static PeriodTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             PeriodTypeEnum result = STATIC_FIELDS.get(value);
@@ -161,7 +137,7 @@ public class ExtendParam  {
         }
 
         public static PeriodTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             PeriodTypeEnum result = STATIC_FIELDS.get(value);
@@ -185,34 +161,29 @@ public class ExtendParam  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="periodType")
-    
+    @JsonProperty(value = "periodType")
+
     private PeriodTypeEnum periodType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="periodNum")
-    
+    @JsonProperty(value = "periodNum")
+
     private Integer periodNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isAutoRenew")
-    
+    @JsonProperty(value = "isAutoRenew")
+
     private String isAutoRenew;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isAutoPay")
-    
+    @JsonProperty(value = "isAutoPay")
+
     private String isAutoPay;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public ExtendParam withChargingMode(ChargingModeEnum chargingMode) {
@@ -220,13 +191,9 @@ public class ExtendParam  {
         return this;
     }
 
-    
-
-
-    /**
-     * 计费模式。取值范围：prePaid：预付费，即包年包月。默认值是prePaid。
-     * @return chargingMode
-     */
+    /** 计费模式。取值范围：prePaid：预付费，即包年包月。默认值是prePaid。
+     * 
+     * @return chargingMode */
     public ChargingModeEnum getChargingMode() {
         return chargingMode;
     }
@@ -235,20 +202,14 @@ public class ExtendParam  {
         this.chargingMode = chargingMode;
     }
 
-    
-
     public ExtendParam withRegionID(String regionID) {
         this.regionID = regionID;
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器所在区域ID。请参考地区和终端节点获取。
-     * @return regionID
-     */
+    /** 裸金属服务器所在区域ID。请参考地区和终端节点获取。
+     * 
+     * @return regionID */
     public String getRegionID() {
         return regionID;
     }
@@ -257,20 +218,14 @@ public class ExtendParam  {
         this.regionID = regionID;
     }
 
-    
-
     public ExtendParam withPeriodType(PeriodTypeEnum periodType) {
         this.periodType = periodType;
         return this;
     }
 
-    
-
-
-    /**
-     * 订购周期类型。取值范围：month：月year：年 说明：chargingMode为prePaid时生效，且为必选值。
-     * @return periodType
-     */
+    /** 订购周期类型。取值范围：month：月year：年 说明：chargingMode为prePaid时生效，且为必选值。
+     * 
+     * @return periodType */
     public PeriodTypeEnum getPeriodType() {
         return periodType;
     }
@@ -279,20 +234,14 @@ public class ExtendParam  {
         this.periodType = periodType;
     }
 
-    
-
     public ExtendParam withPeriodNum(Integer periodNum) {
         this.periodNum = periodNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 订购周期数。取值范围：periodType=month（周期类型为月）时，取值为[1-9]。periodType=year（周期类型为年）时，取值为1。 说明：chargingMode为prePaid时生效，且为必选值。
-     * @return periodNum
-     */
+    /** 订购周期数。取值范围：periodType=month（周期类型为月）时，取值为[1-9]。periodType=year（周期类型为年）时，取值为1。 说明：chargingMode为prePaid时生效，且为必选值。
+     * 
+     * @return periodNum */
     public Integer getPeriodNum() {
         return periodNum;
     }
@@ -301,20 +250,14 @@ public class ExtendParam  {
         this.periodNum = periodNum;
     }
 
-    
-
     public ExtendParam withIsAutoRenew(String isAutoRenew) {
         this.isAutoRenew = isAutoRenew;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否自动续订。true：自动续订false：不自动续订 说明：chargingMode为prePaid时生效，不指定该参数或者该参数值为空时默认为不自动续订。
-     * @return isAutoRenew
-     */
+    /** 是否自动续订。true：自动续订false：不自动续订 说明：chargingMode为prePaid时生效，不指定该参数或者该参数值为空时默认为不自动续订。
+     * 
+     * @return isAutoRenew */
     public String getIsAutoRenew() {
         return isAutoRenew;
     }
@@ -323,20 +266,15 @@ public class ExtendParam  {
         this.isAutoRenew = isAutoRenew;
     }
 
-    
-
     public ExtendParam withIsAutoPay(String isAutoPay) {
         this.isAutoPay = isAutoPay;
         return this;
     }
 
-    
-
-
-    /**
-     * 下单订购后，是否自动从客户的帐户中支付，而不需要客户手动去支付。true：是（自动支付）false：否（需要客户手动支付） 说明：chargingMode为prePaid时生效，不指定该参数或者该参数值为空时默认为客户手动支付。
-     * @return isAutoPay
-     */
+    /** 下单订购后，是否自动从客户的帐户中支付，而不需要客户手动去支付。true：是（自动支付）false：否（需要客户手动支付）
+     * 说明：chargingMode为prePaid时生效，不指定该参数或者该参数值为空时默认为客户手动支付。
+     * 
+     * @return isAutoPay */
     public String getIsAutoPay() {
         return isAutoPay;
     }
@@ -345,20 +283,14 @@ public class ExtendParam  {
         this.isAutoPay = isAutoPay;
     }
 
-    
-
     public ExtendParam withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID。该字段不传（或传为字符串“0”），则将资源绑定给默认企业项目。 说明：关于企业项目ID的获取及企业项目特性的详细信息，请参见《企业管理API参考》。
-     * @return enterpriseProjectId
-     */
+    /** 企业项目ID。该字段不传（或传为字符串“0”），则将资源绑定给默认企业项目。 说明：关于企业项目ID的获取及企业项目特性的详细信息，请参见《企业管理API参考》。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -366,8 +298,6 @@ public class ExtendParam  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -378,18 +308,20 @@ public class ExtendParam  {
             return false;
         }
         ExtendParam extendParam = (ExtendParam) o;
-        return Objects.equals(this.chargingMode, extendParam.chargingMode) &&
-            Objects.equals(this.regionID, extendParam.regionID) &&
-            Objects.equals(this.periodType, extendParam.periodType) &&
-            Objects.equals(this.periodNum, extendParam.periodNum) &&
-            Objects.equals(this.isAutoRenew, extendParam.isAutoRenew) &&
-            Objects.equals(this.isAutoPay, extendParam.isAutoPay) &&
-            Objects.equals(this.enterpriseProjectId, extendParam.enterpriseProjectId);
+        return Objects.equals(this.chargingMode, extendParam.chargingMode)
+            && Objects.equals(this.regionID, extendParam.regionID)
+            && Objects.equals(this.periodType, extendParam.periodType)
+            && Objects.equals(this.periodNum, extendParam.periodNum)
+            && Objects.equals(this.isAutoRenew, extendParam.isAutoRenew)
+            && Objects.equals(this.isAutoPay, extendParam.isAutoPay)
+            && Objects.equals(this.enterpriseProjectId, extendParam.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(chargingMode, regionID, periodType, periodNum, isAutoRenew, isAutoPay, enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -404,16 +336,13 @@ public class ExtendParam  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,80 +1,61 @@
 package com.huaweicloud.sdk.ocr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * TollInvoiceResult
- */
-public class TollInvoiceResult  {
-
-
+/** TollInvoiceResult */
+public class TollInvoiceResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code")
-    
+    @JsonProperty(value = "code")
+
     private String code;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="number")
-    
+    @JsonProperty(value = "number")
+
     private String number;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="entry")
-    
+    @JsonProperty(value = "entry")
+
     private String entry;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="exit")
-    
+    @JsonProperty(value = "exit")
+
     private String exit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amount")
-    
+    @JsonProperty(value = "amount")
+
     private String amount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cashier")
-    
+    @JsonProperty(value = "cashier")
+
     private String cashier;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vehicle_type")
-    
+    @JsonProperty(value = "vehicle_type")
+
     private String vehicleType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="date")
-    
+    @JsonProperty(value = "date")
+
     private String date;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time")
-    
+    @JsonProperty(value = "time")
+
     private String time;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confidence")
-    
+    @JsonProperty(value = "confidence")
+
     private Object confidence;
 
     public TollInvoiceResult withCode(String code) {
@@ -82,13 +63,9 @@ public class TollInvoiceResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 发票代码。 
-     * @return code
-     */
+    /** 发票代码。
+     * 
+     * @return code */
     public String getCode() {
         return code;
     }
@@ -97,20 +74,14 @@ public class TollInvoiceResult  {
         this.code = code;
     }
 
-    
-
     public TollInvoiceResult withNumber(String number) {
         this.number = number;
         return this;
     }
 
-    
-
-
-    /**
-     * 发票号码。 
-     * @return number
-     */
+    /** 发票号码。
+     * 
+     * @return number */
     public String getNumber() {
         return number;
     }
@@ -119,20 +90,14 @@ public class TollInvoiceResult  {
         this.number = number;
     }
 
-    
-
     public TollInvoiceResult withEntry(String entry) {
         this.entry = entry;
         return this;
     }
 
-    
-
-
-    /**
-     * 入口。 
-     * @return entry
-     */
+    /** 入口。
+     * 
+     * @return entry */
     public String getEntry() {
         return entry;
     }
@@ -141,20 +106,14 @@ public class TollInvoiceResult  {
         this.entry = entry;
     }
 
-    
-
     public TollInvoiceResult withExit(String exit) {
         this.exit = exit;
         return this;
     }
 
-    
-
-
-    /**
-     * 出口。 
-     * @return exit
-     */
+    /** 出口。
+     * 
+     * @return exit */
     public String getExit() {
         return exit;
     }
@@ -163,20 +122,14 @@ public class TollInvoiceResult  {
         this.exit = exit;
     }
 
-    
-
     public TollInvoiceResult withAmount(String amount) {
         this.amount = amount;
         return this;
     }
 
-    
-
-
-    /**
-     * 收费金额。 
-     * @return amount
-     */
+    /** 收费金额。
+     * 
+     * @return amount */
     public String getAmount() {
         return amount;
     }
@@ -185,20 +138,14 @@ public class TollInvoiceResult  {
         this.amount = amount;
     }
 
-    
-
     public TollInvoiceResult withCashier(String cashier) {
         this.cashier = cashier;
         return this;
     }
 
-    
-
-
-    /**
-     * 收费员。 
-     * @return cashier
-     */
+    /** 收费员。
+     * 
+     * @return cashier */
     public String getCashier() {
         return cashier;
     }
@@ -207,20 +154,14 @@ public class TollInvoiceResult  {
         this.cashier = cashier;
     }
 
-    
-
     public TollInvoiceResult withVehicleType(String vehicleType) {
         this.vehicleType = vehicleType;
         return this;
     }
 
-    
-
-
-    /**
-     * 车辆类型。 
-     * @return vehicleType
-     */
+    /** 车辆类型。
+     * 
+     * @return vehicleType */
     public String getVehicleType() {
         return vehicleType;
     }
@@ -229,20 +170,14 @@ public class TollInvoiceResult  {
         this.vehicleType = vehicleType;
     }
 
-    
-
     public TollInvoiceResult withDate(String date) {
         this.date = date;
         return this;
     }
 
-    
-
-
-    /**
-     * 日期。 
-     * @return date
-     */
+    /** 日期。
+     * 
+     * @return date */
     public String getDate() {
         return date;
     }
@@ -251,20 +186,14 @@ public class TollInvoiceResult  {
         this.date = date;
     }
 
-    
-
     public TollInvoiceResult withTime(String time) {
         this.time = time;
         return this;
     }
 
-    
-
-
-    /**
-     * 时间。 
-     * @return time
-     */
+    /** 时间。
+     * 
+     * @return time */
     public String getTime() {
         return time;
     }
@@ -273,20 +202,14 @@ public class TollInvoiceResult  {
         this.time = time;
     }
 
-    
-
     public TollInvoiceResult withConfidence(Object confidence) {
         this.confidence = confidence;
         return this;
     }
 
-    
-
-
-    /**
-     * 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。
-     * @return confidence
-     */
+    /** 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。
+     * 
+     * @return confidence */
     public Object getConfidence() {
         return confidence;
     }
@@ -294,8 +217,6 @@ public class TollInvoiceResult  {
     public void setConfidence(Object confidence) {
         this.confidence = confidence;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -306,21 +227,21 @@ public class TollInvoiceResult  {
             return false;
         }
         TollInvoiceResult tollInvoiceResult = (TollInvoiceResult) o;
-        return Objects.equals(this.code, tollInvoiceResult.code) &&
-            Objects.equals(this.number, tollInvoiceResult.number) &&
-            Objects.equals(this.entry, tollInvoiceResult.entry) &&
-            Objects.equals(this.exit, tollInvoiceResult.exit) &&
-            Objects.equals(this.amount, tollInvoiceResult.amount) &&
-            Objects.equals(this.cashier, tollInvoiceResult.cashier) &&
-            Objects.equals(this.vehicleType, tollInvoiceResult.vehicleType) &&
-            Objects.equals(this.date, tollInvoiceResult.date) &&
-            Objects.equals(this.time, tollInvoiceResult.time) &&
-            Objects.equals(this.confidence, tollInvoiceResult.confidence);
+        return Objects.equals(this.code, tollInvoiceResult.code)
+            && Objects.equals(this.number, tollInvoiceResult.number)
+            && Objects.equals(this.entry, tollInvoiceResult.entry) && Objects.equals(this.exit, tollInvoiceResult.exit)
+            && Objects.equals(this.amount, tollInvoiceResult.amount)
+            && Objects.equals(this.cashier, tollInvoiceResult.cashier)
+            && Objects.equals(this.vehicleType, tollInvoiceResult.vehicleType)
+            && Objects.equals(this.date, tollInvoiceResult.date) && Objects.equals(this.time, tollInvoiceResult.time)
+            && Objects.equals(this.confidence, tollInvoiceResult.confidence);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(code, number, entry, exit, amount, cashier, vehicleType, date, time, confidence);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -338,16 +259,13 @@ public class TollInvoiceResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

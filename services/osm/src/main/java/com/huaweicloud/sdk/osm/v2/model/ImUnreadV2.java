@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ImUnreadV2
- */
-public class ImUnreadV2  {
-
-
+/** ImUnreadV2 */
+public class ImUnreadV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="incident_id")
-    
+    @JsonProperty(value = "incident_id")
+
     private String incidentId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unread_num")
-    
+    @JsonProperty(value = "unread_num")
+
     private Integer unreadNum;
 
     public ImUnreadV2 withStatus(Integer status) {
@@ -40,15 +28,9 @@ public class ImUnreadV2  {
         return this;
     }
 
-    
-
-
-    /**
-     * 状态
-     * minimum: 0
-     * maximum: 20
-     * @return status
-     */
+    /** 状态 minimum: 0 maximum: 20
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -57,20 +39,14 @@ public class ImUnreadV2  {
         this.status = status;
     }
 
-    
-
     public ImUnreadV2 withIncidentId(String incidentId) {
         this.incidentId = incidentId;
         return this;
     }
 
-    
-
-
-    /**
-     * 工单id
-     * @return incidentId
-     */
+    /** 工单id
+     * 
+     * @return incidentId */
     public String getIncidentId() {
         return incidentId;
     }
@@ -79,22 +55,14 @@ public class ImUnreadV2  {
         this.incidentId = incidentId;
     }
 
-    
-
     public ImUnreadV2 withUnreadNum(Integer unreadNum) {
         this.unreadNum = unreadNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 未读数量
-     * minimum: 0
-     * maximum: 65535
-     * @return unreadNum
-     */
+    /** 未读数量 minimum: 0 maximum: 65535
+     * 
+     * @return unreadNum */
     public Integer getUnreadNum() {
         return unreadNum;
     }
@@ -102,8 +70,6 @@ public class ImUnreadV2  {
     public void setUnreadNum(Integer unreadNum) {
         this.unreadNum = unreadNum;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -114,14 +80,15 @@ public class ImUnreadV2  {
             return false;
         }
         ImUnreadV2 imUnreadV2 = (ImUnreadV2) o;
-        return Objects.equals(this.status, imUnreadV2.status) &&
-            Objects.equals(this.incidentId, imUnreadV2.incidentId) &&
-            Objects.equals(this.unreadNum, imUnreadV2.unreadNum);
+        return Objects.equals(this.status, imUnreadV2.status) && Objects.equals(this.incidentId, imUnreadV2.incidentId)
+            && Objects.equals(this.unreadNum, imUnreadV2.unreadNum);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(status, incidentId, unreadNum);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -132,16 +99,13 @@ public class ImUnreadV2  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

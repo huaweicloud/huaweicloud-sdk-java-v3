@@ -1,28 +1,17 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowAuditlogPolicyResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="keep_days")
-    
+    @JsonProperty(value = "keep_days")
+
     private Integer keepDays;
 
     public ShowAuditlogPolicyResponse withKeepDays(Integer keepDays) {
@@ -30,13 +19,9 @@ public class ShowAuditlogPolicyResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 审计日志保存天数，取值范围0~732。0表示关闭审计日志策略。
-     * @return keepDays
-     */
+    /** 审计日志保存天数，取值范围0~732。0表示关闭审计日志策略。
+     * 
+     * @return keepDays */
     public Integer getKeepDays() {
         return keepDays;
     }
@@ -44,8 +29,6 @@ public class ShowAuditlogPolicyResponse extends SdkResponse {
     public void setKeepDays(Integer keepDays) {
         this.keepDays = keepDays;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -58,10 +41,12 @@ public class ShowAuditlogPolicyResponse extends SdkResponse {
         ShowAuditlogPolicyResponse showAuditlogPolicyResponse = (ShowAuditlogPolicyResponse) o;
         return Objects.equals(this.keepDays, showAuditlogPolicyResponse.keepDays);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(keepDays);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -70,16 +55,13 @@ public class ShowAuditlogPolicyResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

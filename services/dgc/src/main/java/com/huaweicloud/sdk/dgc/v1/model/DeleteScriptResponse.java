@@ -1,19 +1,11 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
-
-
-
 import com.huaweicloud.sdk.core.SdkResponse;
 
-
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class DeleteScriptResponse extends SdkResponse {
-
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -25,10 +17,12 @@ public class DeleteScriptResponse extends SdkResponse {
         }
         return true;
     }
+
     @Override
     public int hashCode() {
         return Objects.hash();
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -36,6 +30,5 @@ public class DeleteScriptResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    
-}
 
+}

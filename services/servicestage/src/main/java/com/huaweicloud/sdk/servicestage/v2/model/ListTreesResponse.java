@@ -1,40 +1,29 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListTreesResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="paths")
-    
+    @JsonProperty(value = "paths")
+
     private List<String> paths = null;
-    
+
     public ListTreesResponse withPaths(List<String> paths) {
         this.paths = paths;
         return this;
     }
 
-    
     public ListTreesResponse addPathsItem(String pathsItem) {
-        if(this.paths == null) {
+        if (this.paths == null) {
             this.paths = new ArrayList<>();
         }
         this.paths.add(pathsItem);
@@ -42,17 +31,16 @@ public class ListTreesResponse extends SdkResponse {
     }
 
     public ListTreesResponse withPaths(Consumer<List<String>> pathsSetter) {
-        if(this.paths == null) {
+        if (this.paths == null) {
             this.paths = new ArrayList<>();
         }
         pathsSetter.accept(this.paths);
         return this;
     }
 
-    /**
-     * 仓库文件列表。
-     * @return paths
-     */
+    /** 仓库文件列表。
+     * 
+     * @return paths */
     public List<String> getPaths() {
         return paths;
     }
@@ -60,8 +48,6 @@ public class ListTreesResponse extends SdkResponse {
     public void setPaths(List<String> paths) {
         this.paths = paths;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -74,10 +60,12 @@ public class ListTreesResponse extends SdkResponse {
         ListTreesResponse listTreesResponse = (ListTreesResponse) o;
         return Objects.equals(this.paths, listTreesResponse.paths);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(paths);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -86,16 +74,13 @@ public class ListTreesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

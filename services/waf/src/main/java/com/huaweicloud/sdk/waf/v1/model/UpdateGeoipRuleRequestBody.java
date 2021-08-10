@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 地理位置封禁body
- */
-public class UpdateGeoipRuleRequestBody  {
-
-
+/** 地理位置封禁body */
+public class UpdateGeoipRuleRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="geoip")
-    
+    @JsonProperty(value = "geoip")
+
     private String geoip;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="white")
-    
+    @JsonProperty(value = "white")
+
     private Integer white;
 
     public UpdateGeoipRuleRequestBody withGeoip(String geoip) {
@@ -34,13 +23,9 @@ public class UpdateGeoipRuleRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 地理位置
-     * @return geoip
-     */
+    /** 地理位置
+     * 
+     * @return geoip */
     public String getGeoip() {
         return geoip;
     }
@@ -49,20 +34,14 @@ public class UpdateGeoipRuleRequestBody  {
         this.geoip = geoip;
     }
 
-    
-
     public UpdateGeoipRuleRequestBody withWhite(Integer white) {
         this.white = white;
         return this;
     }
 
-    
-
-
-    /**
-     * 放行或者拦截(0拦截,1放行)
-     * @return white
-     */
+    /** 放行或者拦截(0拦截,1放行)
+     * 
+     * @return white */
     public Integer getWhite() {
         return white;
     }
@@ -70,8 +49,6 @@ public class UpdateGeoipRuleRequestBody  {
     public void setWhite(Integer white) {
         this.white = white;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class UpdateGeoipRuleRequestBody  {
             return false;
         }
         UpdateGeoipRuleRequestBody updateGeoipRuleRequestBody = (UpdateGeoipRuleRequestBody) o;
-        return Objects.equals(this.geoip, updateGeoipRuleRequestBody.geoip) &&
-            Objects.equals(this.white, updateGeoipRuleRequestBody.white);
+        return Objects.equals(this.geoip, updateGeoipRuleRequestBody.geoip)
+            && Objects.equals(this.white, updateGeoipRuleRequestBody.white);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(geoip, white);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class UpdateGeoipRuleRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

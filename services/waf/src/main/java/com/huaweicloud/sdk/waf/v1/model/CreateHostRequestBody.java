@@ -1,65 +1,49 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.waf.v1.model.CloudWafServer;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * CreateHostRequestBody
- */
-public class CreateHostRequestBody  {
-
-
+/** CreateHostRequestBody */
+public class CreateHostRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hostname")
-    
+    @JsonProperty(value = "hostname")
+
     private String hostname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policyid")
-    
+    @JsonProperty(value = "policyid")
+
     private String policyid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server")
-    
+    @JsonProperty(value = "server")
+
     private List<CloudWafServer> server = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificateid")
-    
+    @JsonProperty(value = "certificateid")
+
     private String certificateid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificatename")
-    
+    @JsonProperty(value = "certificatename")
+
     private String certificatename;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="proxy")
-    
+    @JsonProperty(value = "proxy")
+
     private Boolean proxy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public CreateHostRequestBody withHostname(String hostname) {
@@ -67,13 +51,9 @@ public class CreateHostRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 域名
-     * @return hostname
-     */
+    /** 域名
+     * 
+     * @return hostname */
     public String getHostname() {
         return hostname;
     }
@@ -82,20 +62,14 @@ public class CreateHostRequestBody  {
         this.hostname = hostname;
     }
 
-    
-
     public CreateHostRequestBody withPolicyid(String policyid) {
         this.policyid = policyid;
         return this;
     }
 
-    
-
-
-    /**
-     * 防护域名初始绑定的策略ID
-     * @return policyid
-     */
+    /** 防护域名初始绑定的策略ID
+     * 
+     * @return policyid */
     public String getPolicyid() {
         return policyid;
     }
@@ -104,16 +78,13 @@ public class CreateHostRequestBody  {
         this.policyid = policyid;
     }
 
-    
-
     public CreateHostRequestBody withServer(List<CloudWafServer> server) {
         this.server = server;
         return this;
     }
 
-    
     public CreateHostRequestBody addServerItem(CloudWafServer serverItem) {
-        if(this.server == null) {
+        if (this.server == null) {
             this.server = new ArrayList<>();
         }
         this.server.add(serverItem);
@@ -121,17 +92,16 @@ public class CreateHostRequestBody  {
     }
 
     public CreateHostRequestBody withServer(Consumer<List<CloudWafServer>> serverSetter) {
-        if(this.server == null) {
+        if (this.server == null) {
             this.server = new ArrayList<>();
         }
         serverSetter.accept(this.server);
         return this;
     }
 
-    /**
-     * 源站信息
-     * @return server
-     */
+    /** 源站信息
+     * 
+     * @return server */
     public List<CloudWafServer> getServer() {
         return server;
     }
@@ -140,20 +110,14 @@ public class CreateHostRequestBody  {
         this.server = server;
     }
 
-    
-
     public CreateHostRequestBody withCertificateid(String certificateid) {
         this.certificateid = certificateid;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书id
-     * @return certificateid
-     */
+    /** 证书id
+     * 
+     * @return certificateid */
     public String getCertificateid() {
         return certificateid;
     }
@@ -162,20 +126,14 @@ public class CreateHostRequestBody  {
         this.certificateid = certificateid;
     }
 
-    
-
     public CreateHostRequestBody withCertificatename(String certificatename) {
         this.certificatename = certificatename;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书名
-     * @return certificatename
-     */
+    /** 证书名
+     * 
+     * @return certificatename */
     public String getCertificatename() {
         return certificatename;
     }
@@ -184,20 +142,14 @@ public class CreateHostRequestBody  {
         this.certificatename = certificatename;
     }
 
-    
-
     public CreateHostRequestBody withProxy(Boolean proxy) {
         this.proxy = proxy;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否使用代理
-     * @return proxy
-     */
+    /** 是否使用代理
+     * 
+     * @return proxy */
     public Boolean getProxy() {
         return proxy;
     }
@@ -206,20 +158,14 @@ public class CreateHostRequestBody  {
         this.proxy = proxy;
     }
 
-    
-
     public CreateHostRequestBody withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名描述
-     * @return description
-     */
+    /** 域名描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -227,8 +173,6 @@ public class CreateHostRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -239,18 +183,20 @@ public class CreateHostRequestBody  {
             return false;
         }
         CreateHostRequestBody createHostRequestBody = (CreateHostRequestBody) o;
-        return Objects.equals(this.hostname, createHostRequestBody.hostname) &&
-            Objects.equals(this.policyid, createHostRequestBody.policyid) &&
-            Objects.equals(this.server, createHostRequestBody.server) &&
-            Objects.equals(this.certificateid, createHostRequestBody.certificateid) &&
-            Objects.equals(this.certificatename, createHostRequestBody.certificatename) &&
-            Objects.equals(this.proxy, createHostRequestBody.proxy) &&
-            Objects.equals(this.description, createHostRequestBody.description);
+        return Objects.equals(this.hostname, createHostRequestBody.hostname)
+            && Objects.equals(this.policyid, createHostRequestBody.policyid)
+            && Objects.equals(this.server, createHostRequestBody.server)
+            && Objects.equals(this.certificateid, createHostRequestBody.certificateid)
+            && Objects.equals(this.certificatename, createHostRequestBody.certificatename)
+            && Objects.equals(this.proxy, createHostRequestBody.proxy)
+            && Objects.equals(this.description, createHostRequestBody.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(hostname, policyid, server, certificateid, certificatename, proxy, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -265,16 +211,13 @@ public class CreateHostRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

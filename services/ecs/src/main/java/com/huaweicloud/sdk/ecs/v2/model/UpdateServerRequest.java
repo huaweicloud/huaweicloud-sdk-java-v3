@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.UpdateServerRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateServerRequest  {
-
-
+/** Request Object */
+public class UpdateServerRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server_id")
-    
+    @JsonProperty(value = "server_id")
+
     private String serverId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateServerRequestBody body;
 
     public UpdateServerRequest withServerId(String serverId) {
@@ -35,13 +24,9 @@ public class UpdateServerRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务器ID。
-     * @return serverId
-     */
+    /** 云服务器ID。
+     * 
+     * @return serverId */
     public String getServerId() {
         return serverId;
     }
@@ -50,27 +35,23 @@ public class UpdateServerRequest  {
         this.serverId = serverId;
     }
 
-    
-
     public UpdateServerRequest withBody(UpdateServerRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdateServerRequest withBody(Consumer<UpdateServerRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateServerRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateServerRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdateServerRequest  {
     public void setBody(UpdateServerRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdateServerRequest  {
             return false;
         }
         UpdateServerRequest updateServerRequest = (UpdateServerRequest) o;
-        return Objects.equals(this.serverId, updateServerRequest.serverId) &&
-            Objects.equals(this.body, updateServerRequest.body);
+        return Objects.equals(this.serverId, updateServerRequest.serverId)
+            && Objects.equals(this.body, updateServerRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(serverId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdateServerRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

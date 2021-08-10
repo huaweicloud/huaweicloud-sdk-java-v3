@@ -23,9 +23,8 @@ package com.huaweicloud.sdk.core.http;
 
 import java.util.Map;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public interface SdkFormDataBody {
+
     Map<String, FormDataPart> buildFormData();
 }

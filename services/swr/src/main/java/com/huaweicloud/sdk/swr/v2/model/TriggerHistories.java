@@ -1,98 +1,76 @@
 package com.huaweicloud.sdk.swr.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * TriggerHistories
- */
-public class TriggerHistories  {
-
-
+/** TriggerHistories */
+public class TriggerHistories {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private String action;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_type")
-    
+    @JsonProperty(value = "app_type")
+
     private String appType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="application")
-    
+    @JsonProperty(value = "application")
+
     private String application;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
+
     private String clusterId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_name")
-    
+    @JsonProperty(value = "cluster_name")
+
     private String clusterName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_ns")
-    
+    @JsonProperty(value = "cluster_ns")
+
     private String clusterNs;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="condition")
-    
+    @JsonProperty(value = "condition")
+
     private String condition;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="container")
-    
+    @JsonProperty(value = "container")
+
     private String container;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator_name")
-    
+    @JsonProperty(value = "creator_name")
+
     private String creatorName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="detail")
-    
+    @JsonProperty(value = "detail")
+
     private String detail;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="result")
-    
+    @JsonProperty(value = "result")
+
     private String result;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag")
-    
+    @JsonProperty(value = "tag")
+
     private String tag;
 
     public TriggerHistories withAction(String action) {
@@ -100,13 +78,9 @@ public class TriggerHistories  {
         return this;
     }
 
-    
-
-
-    /**
-     * 触发动作，update
-     * @return action
-     */
+    /** 触发动作，update
+     * 
+     * @return action */
     public String getAction() {
         return action;
     }
@@ -115,20 +89,14 @@ public class TriggerHistories  {
         this.action = action;
     }
 
-    
-
     public TriggerHistories withAppType(String appType) {
         this.appType = appType;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用类型，deployments、statefulsets
-     * @return appType
-     */
+    /** 应用类型，deployments、statefulsets
+     * 
+     * @return appType */
     public String getAppType() {
         return appType;
     }
@@ -137,20 +105,14 @@ public class TriggerHistories  {
         this.appType = appType;
     }
 
-    
-
     public TriggerHistories withApplication(String application) {
         this.application = application;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名
-     * @return application
-     */
+    /** 应用名
+     * 
+     * @return application */
     public String getApplication() {
         return application;
     }
@@ -159,20 +121,14 @@ public class TriggerHistories  {
         this.application = application;
     }
 
-    
-
     public TriggerHistories withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
     }
 
-    
-
-
-    /**
-     * 集群ID（cci时为空）
-     * @return clusterId
-     */
+    /** 集群ID（cci时为空）
+     * 
+     * @return clusterId */
     public String getClusterId() {
         return clusterId;
     }
@@ -181,20 +137,14 @@ public class TriggerHistories  {
         this.clusterId = clusterId;
     }
 
-    
-
     public TriggerHistories withClusterName(String clusterName) {
         this.clusterName = clusterName;
         return this;
     }
 
-    
-
-
-    /**
-     * 集群名（cci时为空）
-     * @return clusterName
-     */
+    /** 集群名（cci时为空）
+     * 
+     * @return clusterName */
     public String getClusterName() {
         return clusterName;
     }
@@ -203,20 +153,14 @@ public class TriggerHistories  {
         this.clusterName = clusterName;
     }
 
-    
-
     public TriggerHistories withClusterNs(String clusterNs) {
         this.clusterNs = clusterNs;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名所在的namespace
-     * @return clusterNs
-     */
+    /** 应用名所在的namespace
+     * 
+     * @return clusterNs */
     public String getClusterNs() {
         return clusterNs;
     }
@@ -225,20 +169,14 @@ public class TriggerHistories  {
         this.clusterNs = clusterNs;
     }
 
-    
-
     public TriggerHistories withCondition(String condition) {
         this.condition = condition;
         return this;
     }
 
-    
-
-
-    /**
-     * 触发条件，type为all时为.*,type为tag时为tag名,type为regular时为正则表达式
-     * @return condition
-     */
+    /** 触发条件，type为all时为.*,type为tag时为tag名,type为regular时为正则表达式
+     * 
+     * @return condition */
     public String getCondition() {
         return condition;
     }
@@ -247,20 +185,14 @@ public class TriggerHistories  {
         this.condition = condition;
     }
 
-    
-
     public TriggerHistories withContainer(String container) {
         this.container = container;
         return this;
     }
 
-    
-
-
-    /**
-     * 需更新的container名，默认为所有container
-     * @return container
-     */
+    /** 需更新的container名，默认为所有container
+     * 
+     * @return container */
     public String getContainer() {
         return container;
     }
@@ -269,20 +201,14 @@ public class TriggerHistories  {
         this.container = container;
     }
 
-    
-
     public TriggerHistories withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return createdAt
-     */
+    /** 创建时间
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -291,20 +217,14 @@ public class TriggerHistories  {
         this.createdAt = createdAt;
     }
 
-    
-
     public TriggerHistories withCreatorName(String creatorName) {
         this.creatorName = creatorName;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建人
-     * @return creatorName
-     */
+    /** 创建人
+     * 
+     * @return creatorName */
     public String getCreatorName() {
         return creatorName;
     }
@@ -313,20 +233,14 @@ public class TriggerHistories  {
         this.creatorName = creatorName;
     }
 
-    
-
     public TriggerHistories withDetail(String detail) {
         this.detail = detail;
         return this;
     }
 
-    
-
-
-    /**
-     * 详情
-     * @return detail
-     */
+    /** 详情
+     * 
+     * @return detail */
     public String getDetail() {
         return detail;
     }
@@ -335,20 +249,14 @@ public class TriggerHistories  {
         this.detail = detail;
     }
 
-    
-
     public TriggerHistories withResult(String result) {
         this.result = result;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新结果，success、failed
-     * @return result
-     */
+    /** 更新结果，success、failed
+     * 
+     * @return result */
     public String getResult() {
         return result;
     }
@@ -357,20 +265,14 @@ public class TriggerHistories  {
         this.result = result;
     }
 
-    
-
     public TriggerHistories withTag(String tag) {
         this.tag = tag;
         return this;
     }
 
-    
-
-
-    /**
-     * 触发的版本号
-     * @return tag
-     */
+    /** 触发的版本号
+     * 
+     * @return tag */
     public String getTag() {
         return tag;
     }
@@ -378,8 +280,6 @@ public class TriggerHistories  {
     public void setTag(String tag) {
         this.tag = tag;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -390,24 +290,37 @@ public class TriggerHistories  {
             return false;
         }
         TriggerHistories triggerHistories = (TriggerHistories) o;
-        return Objects.equals(this.action, triggerHistories.action) &&
-            Objects.equals(this.appType, triggerHistories.appType) &&
-            Objects.equals(this.application, triggerHistories.application) &&
-            Objects.equals(this.clusterId, triggerHistories.clusterId) &&
-            Objects.equals(this.clusterName, triggerHistories.clusterName) &&
-            Objects.equals(this.clusterNs, triggerHistories.clusterNs) &&
-            Objects.equals(this.condition, triggerHistories.condition) &&
-            Objects.equals(this.container, triggerHistories.container) &&
-            Objects.equals(this.createdAt, triggerHistories.createdAt) &&
-            Objects.equals(this.creatorName, triggerHistories.creatorName) &&
-            Objects.equals(this.detail, triggerHistories.detail) &&
-            Objects.equals(this.result, triggerHistories.result) &&
-            Objects.equals(this.tag, triggerHistories.tag);
+        return Objects.equals(this.action, triggerHistories.action)
+            && Objects.equals(this.appType, triggerHistories.appType)
+            && Objects.equals(this.application, triggerHistories.application)
+            && Objects.equals(this.clusterId, triggerHistories.clusterId)
+            && Objects.equals(this.clusterName, triggerHistories.clusterName)
+            && Objects.equals(this.clusterNs, triggerHistories.clusterNs)
+            && Objects.equals(this.condition, triggerHistories.condition)
+            && Objects.equals(this.container, triggerHistories.container)
+            && Objects.equals(this.createdAt, triggerHistories.createdAt)
+            && Objects.equals(this.creatorName, triggerHistories.creatorName)
+            && Objects.equals(this.detail, triggerHistories.detail)
+            && Objects.equals(this.result, triggerHistories.result) && Objects.equals(this.tag, triggerHistories.tag);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(action, appType, application, clusterId, clusterName, clusterNs, condition, container, createdAt, creatorName, detail, result, tag);
+        return Objects.hash(action,
+            appType,
+            application,
+            clusterId,
+            clusterName,
+            clusterNs,
+            condition,
+            container,
+            createdAt,
+            creatorName,
+            detail,
+            result,
+            tag);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -428,16 +341,13 @@ public class TriggerHistories  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

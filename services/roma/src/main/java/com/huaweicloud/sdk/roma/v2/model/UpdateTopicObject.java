@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * UpdateTopicObject
- */
-public class UpdateTopicObject  {
-
-
+/** UpdateTopicObject */
+public class UpdateTopicObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="retention_time")
-    
+    @JsonProperty(value = "retention_time")
+
     private Integer retentionTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sync_replication")
-    
+    @JsonProperty(value = "sync_replication")
+
     private Boolean syncReplication;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sync_message_flush")
-    
+    @JsonProperty(value = "sync_message_flush")
+
     private Boolean syncMessageFlush;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sensitive_word")
-    
+    @JsonProperty(value = "sensitive_word")
+
     private String sensitiveWord;
 
     public UpdateTopicObject withName(String name) {
@@ -58,13 +43,9 @@ public class UpdateTopicObject  {
         return this;
     }
 
-    
-
-
-    /**
-     * topic名称。
-     * @return name
-     */
+    /** topic名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -73,20 +54,14 @@ public class UpdateTopicObject  {
         this.name = name;
     }
 
-    
-
     public UpdateTopicObject withRetentionTime(Integer retentionTime) {
         this.retentionTime = retentionTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息老化时间。默认值为72。取值范围1~720，单位小时。
-     * @return retentionTime
-     */
+    /** 消息老化时间。默认值为72。取值范围1~720，单位小时。
+     * 
+     * @return retentionTime */
     public Integer getRetentionTime() {
         return retentionTime;
     }
@@ -95,20 +70,14 @@ public class UpdateTopicObject  {
         this.retentionTime = retentionTime;
     }
 
-    
-
     public UpdateTopicObject withSyncReplication(Boolean syncReplication) {
         this.syncReplication = syncReplication;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启同步复制。
-     * @return syncReplication
-     */
+    /** 是否开启同步复制。
+     * 
+     * @return syncReplication */
     public Boolean getSyncReplication() {
         return syncReplication;
     }
@@ -117,20 +86,14 @@ public class UpdateTopicObject  {
         this.syncReplication = syncReplication;
     }
 
-    
-
     public UpdateTopicObject withSyncMessageFlush(Boolean syncMessageFlush) {
         this.syncMessageFlush = syncMessageFlush;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否使用同步落盘。
-     * @return syncMessageFlush
-     */
+    /** 是否使用同步落盘。
+     * 
+     * @return syncMessageFlush */
     public Boolean getSyncMessageFlush() {
         return syncMessageFlush;
     }
@@ -139,20 +102,14 @@ public class UpdateTopicObject  {
         this.syncMessageFlush = syncMessageFlush;
     }
 
-    
-
     public UpdateTopicObject withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述。
-     * @return description
-     */
+    /** 描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -161,20 +118,14 @@ public class UpdateTopicObject  {
         this.description = description;
     }
 
-    
-
     public UpdateTopicObject withSensitiveWord(String sensitiveWord) {
         this.sensitiveWord = sensitiveWord;
         return this;
     }
 
-    
-
-
-    /**
-     * 敏感字段。
-     * @return sensitiveWord
-     */
+    /** 敏感字段。
+     * 
+     * @return sensitiveWord */
     public String getSensitiveWord() {
         return sensitiveWord;
     }
@@ -182,8 +133,6 @@ public class UpdateTopicObject  {
     public void setSensitiveWord(String sensitiveWord) {
         this.sensitiveWord = sensitiveWord;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,17 +143,19 @@ public class UpdateTopicObject  {
             return false;
         }
         UpdateTopicObject updateTopicObject = (UpdateTopicObject) o;
-        return Objects.equals(this.name, updateTopicObject.name) &&
-            Objects.equals(this.retentionTime, updateTopicObject.retentionTime) &&
-            Objects.equals(this.syncReplication, updateTopicObject.syncReplication) &&
-            Objects.equals(this.syncMessageFlush, updateTopicObject.syncMessageFlush) &&
-            Objects.equals(this.description, updateTopicObject.description) &&
-            Objects.equals(this.sensitiveWord, updateTopicObject.sensitiveWord);
+        return Objects.equals(this.name, updateTopicObject.name)
+            && Objects.equals(this.retentionTime, updateTopicObject.retentionTime)
+            && Objects.equals(this.syncReplication, updateTopicObject.syncReplication)
+            && Objects.equals(this.syncMessageFlush, updateTopicObject.syncMessageFlush)
+            && Objects.equals(this.description, updateTopicObject.description)
+            && Objects.equals(this.sensitiveWord, updateTopicObject.sensitiveWord);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, retentionTime, syncReplication, syncMessageFlush, description, sensitiveWord);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,16 +169,13 @@ public class UpdateTopicObject  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

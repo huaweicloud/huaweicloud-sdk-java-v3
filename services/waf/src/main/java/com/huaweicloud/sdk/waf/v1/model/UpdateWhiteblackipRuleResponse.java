@@ -1,52 +1,37 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class UpdateWhiteblackipRuleResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policyid")
-    
+    @JsonProperty(value = "policyid")
+
     private String policyid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="addr")
-    
+    @JsonProperty(value = "addr")
+
     private String addr;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="white")
-    
+    @JsonProperty(value = "white")
+
     private Integer white;
 
     public UpdateWhiteblackipRuleResponse withId(String id) {
@@ -54,13 +39,9 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 规则id
-     * @return id
-     */
+    /** 规则id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -69,20 +50,14 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public UpdateWhiteblackipRuleResponse withPolicyid(String policyid) {
         this.policyid = policyid;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略id
-     * @return policyid
-     */
+    /** 策略id
+     * 
+     * @return policyid */
     public String getPolicyid() {
         return policyid;
     }
@@ -91,20 +66,14 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
         this.policyid = policyid;
     }
 
-    
-
     public UpdateWhiteblackipRuleResponse withAddr(String addr) {
         this.addr = addr;
         return this;
     }
 
-    
-
-
-    /**
-     * 黑白名单地址
-     * @return addr
-     */
+    /** 黑白名单地址
+     * 
+     * @return addr */
     public String getAddr() {
         return addr;
     }
@@ -113,20 +82,14 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
         this.addr = addr;
     }
 
-    
-
     public UpdateWhiteblackipRuleResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 黑白名单规则描述
-     * @return description
-     */
+    /** 黑白名单规则描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -135,20 +98,14 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public UpdateWhiteblackipRuleResponse withWhite(Integer white) {
         this.white = white;
         return this;
     }
 
-    
-
-
-    /**
-     * 设置的ip地址类型，1放行，0拦截，2仅记录
-     * @return white
-     */
+    /** 设置的ip地址类型，1放行，0拦截，2仅记录
+     * 
+     * @return white */
     public Integer getWhite() {
         return white;
     }
@@ -156,8 +113,6 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
     public void setWhite(Integer white) {
         this.white = white;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -168,16 +123,18 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
             return false;
         }
         UpdateWhiteblackipRuleResponse updateWhiteblackipRuleResponse = (UpdateWhiteblackipRuleResponse) o;
-        return Objects.equals(this.id, updateWhiteblackipRuleResponse.id) &&
-            Objects.equals(this.policyid, updateWhiteblackipRuleResponse.policyid) &&
-            Objects.equals(this.addr, updateWhiteblackipRuleResponse.addr) &&
-            Objects.equals(this.description, updateWhiteblackipRuleResponse.description) &&
-            Objects.equals(this.white, updateWhiteblackipRuleResponse.white);
+        return Objects.equals(this.id, updateWhiteblackipRuleResponse.id)
+            && Objects.equals(this.policyid, updateWhiteblackipRuleResponse.policyid)
+            && Objects.equals(this.addr, updateWhiteblackipRuleResponse.addr)
+            && Objects.equals(this.description, updateWhiteblackipRuleResponse.description)
+            && Objects.equals(this.white, updateWhiteblackipRuleResponse.white);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, policyid, addr, description, white);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -190,16 +147,13 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,55 +1,36 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 转存目标的描述。
- */
-public class ObsDestinationDescriptor  {
-
-
+/** 转存目标的描述。 */
+public class ObsDestinationDescriptor {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topics")
-    
+    @JsonProperty(value = "topics")
+
     private String topics;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topics_regex")
-    
+    @JsonProperty(value = "topics_regex")
+
     private String topicsRegex;
-    /**
-     * 转储启动偏移量：   - latest: 从Topic最后端开始消费。   - earliest: 从Topic最前端消息开始消费。  默认是latest。 
-     */
+
+    /** 转储启动偏移量： - latest: 从Topic最后端开始消费。 - earliest: 从Topic最前端消息开始消费。 默认是latest。 */
     public static final class ConsumerStrategyEnum {
 
-        
-        /**
-         * Enum LATEST for value: "latest"
-         */
+        /** Enum LATEST for value: "latest" */
         public static final ConsumerStrategyEnum LATEST = new ConsumerStrategyEnum("latest");
-        
-        /**
-         * Enum EARLIEST for value: "earliest"
-         */
+
+        /** Enum EARLIEST for value: "earliest" */
         public static final ConsumerStrategyEnum EARLIEST = new ConsumerStrategyEnum("earliest");
-        
 
         private static final Map<String, ConsumerStrategyEnum> STATIC_FIELDS = createStaticFields();
 
@@ -78,7 +59,7 @@ public class ObsDestinationDescriptor  {
 
         @JsonCreator
         public static ConsumerStrategyEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ConsumerStrategyEnum result = STATIC_FIELDS.get(value);
@@ -89,7 +70,7 @@ public class ObsDestinationDescriptor  {
         }
 
         public static ConsumerStrategyEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ConsumerStrategyEnum result = STATIC_FIELDS.get(value);
@@ -113,22 +94,16 @@ public class ObsDestinationDescriptor  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="consumer_strategy")
-    
+    @JsonProperty(value = "consumer_strategy")
+
     private ConsumerStrategyEnum consumerStrategy;
-    /**
-     * 转储文件格式。当前只支持text。 
-     */
+
+    /** 转储文件格式。当前只支持text。 */
     public static final class DestinationFileTypeEnum {
 
-        
-        /**
-         * Enum TEXT for value: "TEXT"
-         */
+        /** Enum TEXT for value: "TEXT" */
         public static final DestinationFileTypeEnum TEXT = new DestinationFileTypeEnum("TEXT");
-        
 
         private static final Map<String, DestinationFileTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -156,7 +131,7 @@ public class ObsDestinationDescriptor  {
 
         @JsonCreator
         public static DestinationFileTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DestinationFileTypeEnum result = STATIC_FIELDS.get(value);
@@ -167,7 +142,7 @@ public class ObsDestinationDescriptor  {
         }
 
         public static DestinationFileTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DestinationFileTypeEnum result = STATIC_FIELDS.get(value);
@@ -191,52 +166,44 @@ public class ObsDestinationDescriptor  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination_file_type")
-    
+    @JsonProperty(value = "destination_file_type")
+
     private DestinationFileTypeEnum destinationFileType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_key")
-    
+    @JsonProperty(value = "access_key")
+
     private String accessKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="secret_key")
-    
+    @JsonProperty(value = "secret_key")
+
     private String secretKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="obs_bucket_name")
-    
+    @JsonProperty(value = "obs_bucket_name")
+
     private String obsBucketName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="obs_path")
-    
+    @JsonProperty(value = "obs_path")
+
     private String obsPath;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="partition_format")
-    
+    @JsonProperty(value = "partition_format")
+
     private String partitionFormat;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="record_delimiter")
-    
+    @JsonProperty(value = "record_delimiter")
+
     private String recordDelimiter;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deliver_time_interval")
-    
+    @JsonProperty(value = "deliver_time_interval")
+
     private Integer deliverTimeInterval;
 
     public ObsDestinationDescriptor withTopics(String topics) {
@@ -244,13 +211,9 @@ public class ObsDestinationDescriptor  {
         return this;
     }
 
-    
-
-
-    /**
-     * 转存的topic列表名称，支持多个topic同时放置，以逗号“,”分隔。同时支持正则表达式。 例如topic1,topic2。 
-     * @return topics
-     */
+    /** 转存的topic列表名称，支持多个topic同时放置，以逗号“,”分隔。同时支持正则表达式。 例如topic1,topic2。
+     * 
+     * @return topics */
     public String getTopics() {
         return topics;
     }
@@ -259,20 +222,14 @@ public class ObsDestinationDescriptor  {
         this.topics = topics;
     }
 
-    
-
     public ObsDestinationDescriptor withTopicsRegex(String topicsRegex) {
         this.topicsRegex = topicsRegex;
         return this;
     }
 
-    
-
-
-    /**
-     * 转存topic的正则表达式，与topics必须二选一，不能同时都设置或者“.*”。 
-     * @return topicsRegex
-     */
+    /** 转存topic的正则表达式，与topics必须二选一，不能同时都设置或者“.*”。
+     * 
+     * @return topicsRegex */
     public String getTopicsRegex() {
         return topicsRegex;
     }
@@ -281,20 +238,14 @@ public class ObsDestinationDescriptor  {
         this.topicsRegex = topicsRegex;
     }
 
-    
-
     public ObsDestinationDescriptor withConsumerStrategy(ConsumerStrategyEnum consumerStrategy) {
         this.consumerStrategy = consumerStrategy;
         return this;
     }
 
-    
-
-
-    /**
-     * 转储启动偏移量：   - latest: 从Topic最后端开始消费。   - earliest: 从Topic最前端消息开始消费。  默认是latest。 
-     * @return consumerStrategy
-     */
+    /** 转储启动偏移量： - latest: 从Topic最后端开始消费。 - earliest: 从Topic最前端消息开始消费。 默认是latest。
+     * 
+     * @return consumerStrategy */
     public ConsumerStrategyEnum getConsumerStrategy() {
         return consumerStrategy;
     }
@@ -303,20 +254,14 @@ public class ObsDestinationDescriptor  {
         this.consumerStrategy = consumerStrategy;
     }
 
-    
-
     public ObsDestinationDescriptor withDestinationFileType(DestinationFileTypeEnum destinationFileType) {
         this.destinationFileType = destinationFileType;
         return this;
     }
 
-    
-
-
-    /**
-     * 转储文件格式。当前只支持text。 
-     * @return destinationFileType
-     */
+    /** 转储文件格式。当前只支持text。
+     * 
+     * @return destinationFileType */
     public DestinationFileTypeEnum getDestinationFileType() {
         return destinationFileType;
     }
@@ -325,20 +270,14 @@ public class ObsDestinationDescriptor  {
         this.destinationFileType = destinationFileType;
     }
 
-    
-
     public ObsDestinationDescriptor withAccessKey(String accessKey) {
         this.accessKey = accessKey;
         return this;
     }
 
-    
-
-
-    /**
-     * 访问密钥AK。 
-     * @return accessKey
-     */
+    /** 访问密钥AK。
+     * 
+     * @return accessKey */
     public String getAccessKey() {
         return accessKey;
     }
@@ -347,20 +286,14 @@ public class ObsDestinationDescriptor  {
         this.accessKey = accessKey;
     }
 
-    
-
     public ObsDestinationDescriptor withSecretKey(String secretKey) {
         this.secretKey = secretKey;
         return this;
     }
 
-    
-
-
-    /**
-     * 访问密钥SK。 
-     * @return secretKey
-     */
+    /** 访问密钥SK。
+     * 
+     * @return secretKey */
     public String getSecretKey() {
         return secretKey;
     }
@@ -369,20 +302,14 @@ public class ObsDestinationDescriptor  {
         this.secretKey = secretKey;
     }
 
-    
-
     public ObsDestinationDescriptor withObsBucketName(String obsBucketName) {
         this.obsBucketName = obsBucketName;
         return this;
     }
 
-    
-
-
-    /**
-     * 存储该通道数据的OBS桶名称。 
-     * @return obsBucketName
-     */
+    /** 存储该通道数据的OBS桶名称。
+     * 
+     * @return obsBucketName */
     public String getObsBucketName() {
         return obsBucketName;
     }
@@ -391,20 +318,14 @@ public class ObsDestinationDescriptor  {
         this.obsBucketName = obsBucketName;
     }
 
-    
-
     public ObsDestinationDescriptor withObsPath(String obsPath) {
         this.obsPath = obsPath;
         return this;
     }
 
-    
-
-
-    /**
-     * 存储在obs的路径，默认可以不填。 取值范围：英文字母、数字、下划线和斜杠，最大长度为50个字符。 默认配置为空。 
-     * @return obsPath
-     */
+    /** 存储在obs的路径，默认可以不填。 取值范围：英文字母、数字、下划线和斜杠，最大长度为50个字符。 默认配置为空。
+     * 
+     * @return obsPath */
     public String getObsPath() {
         return obsPath;
     }
@@ -413,20 +334,16 @@ public class ObsDestinationDescriptor  {
         this.obsPath = obsPath;
     }
 
-    
-
     public ObsDestinationDescriptor withPartitionFormat(String partitionFormat) {
         this.partitionFormat = partitionFormat;
         return this;
     }
 
-    
-
-
-    /**
-     * 将转储文件的生成时间使用“yyyy/MM/dd/HH/mm”格式生成分区字符串，用来定义写到OBS的Object文件所在的目录层次结构。   - N/A：置空，不使用日期时间目录。   - yyyy：年   - yyyy/MM：年/月   - yyyy/MM/dd：年/月/日   - yyyy/MM/dd/HH：年/月/日/时   - yyyy/MM/dd/HH/mm：年/月/日/时/分，例如：2017/11/10/14/49，目录结构就是“2017 > 11 > 10 > 14 > 49”，“2017”表示最外层文件夹。  默认值：空 > 数据转储成功后，存储的目录结构为“obs_bucket_path/file_prefix/partition_format”。默认时间是GMT+8 时间 
-     * @return partitionFormat
-     */
+    /** 将转储文件的生成时间使用“yyyy/MM/dd/HH/mm”格式生成分区字符串，用来定义写到OBS的Object文件所在的目录层次结构。 - N/A：置空，不使用日期时间目录。 - yyyy：年 - yyyy/MM：年/月
+     * - yyyy/MM/dd：年/月/日 - yyyy/MM/dd/HH：年/月/日/时 - yyyy/MM/dd/HH/mm：年/月/日/时/分，例如：2017/11/10/14/49，目录结构就是“2017 > 11 > 10
+     * > 14 > 49”，“2017”表示最外层文件夹。 默认值：空 > 数据转储成功后，存储的目录结构为“obs_bucket_path/file_prefix/partition_format”。默认时间是GMT+8 时间
+     * 
+     * @return partitionFormat */
     public String getPartitionFormat() {
         return partitionFormat;
     }
@@ -435,20 +352,14 @@ public class ObsDestinationDescriptor  {
         this.partitionFormat = partitionFormat;
     }
 
-    
-
     public ObsDestinationDescriptor withRecordDelimiter(String recordDelimiter) {
         this.recordDelimiter = recordDelimiter;
         return this;
     }
 
-    
-
-
-    /**
-     * 转储文件的记录分隔符，用于分隔写入转储文件的用户数据。 取值范围：   - 逗号“,”   - 分号“;”   - 竖线“|”   - 换行符“\\n”   - NULL  默认值：换行符“\\n”。 
-     * @return recordDelimiter
-     */
+    /** 转储文件的记录分隔符，用于分隔写入转储文件的用户数据。 取值范围： - 逗号“,” - 分号“;” - 竖线“|” - 换行符“\\n” - NULL 默认值：换行符“\\n”。
+     * 
+     * @return recordDelimiter */
     public String getRecordDelimiter() {
         return recordDelimiter;
     }
@@ -457,20 +368,14 @@ public class ObsDestinationDescriptor  {
         this.recordDelimiter = recordDelimiter;
     }
 
-    
-
     public ObsDestinationDescriptor withDeliverTimeInterval(Integer deliverTimeInterval) {
         this.deliverTimeInterval = deliverTimeInterval;
         return this;
     }
 
-    
-
-
-    /**
-     * 根据用户配置的时间，周期性的将数据导入OBS，若某个时间段内无数据，则此时间段不会生成打包文件。 取值范围：30～900 单位：秒。 > 使用OBS通道转储流式数据时该参数为必选配置。 
-     * @return deliverTimeInterval
-     */
+    /** 根据用户配置的时间，周期性的将数据导入OBS，若某个时间段内无数据，则此时间段不会生成打包文件。 取值范围：30～900 单位：秒。 > 使用OBS通道转储流式数据时该参数为必选配置。
+     * 
+     * @return deliverTimeInterval */
     public Integer getDeliverTimeInterval() {
         return deliverTimeInterval;
     }
@@ -478,8 +383,6 @@ public class ObsDestinationDescriptor  {
     public void setDeliverTimeInterval(Integer deliverTimeInterval) {
         this.deliverTimeInterval = deliverTimeInterval;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -490,22 +393,34 @@ public class ObsDestinationDescriptor  {
             return false;
         }
         ObsDestinationDescriptor obsDestinationDescriptor = (ObsDestinationDescriptor) o;
-        return Objects.equals(this.topics, obsDestinationDescriptor.topics) &&
-            Objects.equals(this.topicsRegex, obsDestinationDescriptor.topicsRegex) &&
-            Objects.equals(this.consumerStrategy, obsDestinationDescriptor.consumerStrategy) &&
-            Objects.equals(this.destinationFileType, obsDestinationDescriptor.destinationFileType) &&
-            Objects.equals(this.accessKey, obsDestinationDescriptor.accessKey) &&
-            Objects.equals(this.secretKey, obsDestinationDescriptor.secretKey) &&
-            Objects.equals(this.obsBucketName, obsDestinationDescriptor.obsBucketName) &&
-            Objects.equals(this.obsPath, obsDestinationDescriptor.obsPath) &&
-            Objects.equals(this.partitionFormat, obsDestinationDescriptor.partitionFormat) &&
-            Objects.equals(this.recordDelimiter, obsDestinationDescriptor.recordDelimiter) &&
-            Objects.equals(this.deliverTimeInterval, obsDestinationDescriptor.deliverTimeInterval);
+        return Objects.equals(this.topics, obsDestinationDescriptor.topics)
+            && Objects.equals(this.topicsRegex, obsDestinationDescriptor.topicsRegex)
+            && Objects.equals(this.consumerStrategy, obsDestinationDescriptor.consumerStrategy)
+            && Objects.equals(this.destinationFileType, obsDestinationDescriptor.destinationFileType)
+            && Objects.equals(this.accessKey, obsDestinationDescriptor.accessKey)
+            && Objects.equals(this.secretKey, obsDestinationDescriptor.secretKey)
+            && Objects.equals(this.obsBucketName, obsDestinationDescriptor.obsBucketName)
+            && Objects.equals(this.obsPath, obsDestinationDescriptor.obsPath)
+            && Objects.equals(this.partitionFormat, obsDestinationDescriptor.partitionFormat)
+            && Objects.equals(this.recordDelimiter, obsDestinationDescriptor.recordDelimiter)
+            && Objects.equals(this.deliverTimeInterval, obsDestinationDescriptor.deliverTimeInterval);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(topics, topicsRegex, consumerStrategy, destinationFileType, accessKey, secretKey, obsBucketName, obsPath, partitionFormat, recordDelimiter, deliverTimeInterval);
+        return Objects.hash(topics,
+            topicsRegex,
+            consumerStrategy,
+            destinationFileType,
+            accessKey,
+            secretKey,
+            obsBucketName,
+            obsPath,
+            partitionFormat,
+            recordDelimiter,
+            deliverTimeInterval);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -524,16 +439,13 @@ public class ObsDestinationDescriptor  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

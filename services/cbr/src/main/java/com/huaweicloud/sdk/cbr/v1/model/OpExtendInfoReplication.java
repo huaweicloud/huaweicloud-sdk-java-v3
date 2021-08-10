@@ -1,80 +1,61 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * OpExtendInfoReplication
- */
-public class OpExtendInfoReplication  {
-
-
+/** OpExtendInfoReplication */
+public class OpExtendInfoReplication {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination_backup_id")
-    
+    @JsonProperty(value = "destination_backup_id")
+
     private String destinationBackupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination_checkpoint_id")
-    
+    @JsonProperty(value = "destination_checkpoint_id")
+
     private String destinationCheckpointId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination_project_id")
-    
+    @JsonProperty(value = "destination_project_id")
+
     private String destinationProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination_region")
-    
+    @JsonProperty(value = "destination_region")
+
     private String destinationRegion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_backup_id")
-    
+    @JsonProperty(value = "source_backup_id")
+
     private String sourceBackupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_checkpoint_id")
-    
+    @JsonProperty(value = "source_checkpoint_id")
+
     private String sourceCheckpointId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_project_id")
-    
+    @JsonProperty(value = "source_project_id")
+
     private String sourceProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_region")
-    
+    @JsonProperty(value = "source_region")
+
     private String sourceRegion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_backup_name")
-    
+    @JsonProperty(value = "source_backup_name")
+
     private String sourceBackupName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination_backup_name")
-    
+    @JsonProperty(value = "destination_backup_name")
+
     private String destinationBackupName;
 
     public OpExtendInfoReplication withDestinationBackupId(String destinationBackupId) {
@@ -82,13 +63,9 @@ public class OpExtendInfoReplication  {
         return this;
     }
 
-    
-
-
-    /**
-     * 目标副本ID
-     * @return destinationBackupId
-     */
+    /** 目标副本ID
+     * 
+     * @return destinationBackupId */
     public String getDestinationBackupId() {
         return destinationBackupId;
     }
@@ -97,20 +74,14 @@ public class OpExtendInfoReplication  {
         this.destinationBackupId = destinationBackupId;
     }
 
-    
-
     public OpExtendInfoReplication withDestinationCheckpointId(String destinationCheckpointId) {
         this.destinationCheckpointId = destinationCheckpointId;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标还原点ID
-     * @return destinationCheckpointId
-     */
+    /** 目标还原点ID
+     * 
+     * @return destinationCheckpointId */
     public String getDestinationCheckpointId() {
         return destinationCheckpointId;
     }
@@ -119,20 +90,14 @@ public class OpExtendInfoReplication  {
         this.destinationCheckpointId = destinationCheckpointId;
     }
 
-    
-
     public OpExtendInfoReplication withDestinationProjectId(String destinationProjectId) {
         this.destinationProjectId = destinationProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标project_id
-     * @return destinationProjectId
-     */
+    /** 目标project_id
+     * 
+     * @return destinationProjectId */
     public String getDestinationProjectId() {
         return destinationProjectId;
     }
@@ -141,20 +106,14 @@ public class OpExtendInfoReplication  {
         this.destinationProjectId = destinationProjectId;
     }
 
-    
-
     public OpExtendInfoReplication withDestinationRegion(String destinationRegion) {
         this.destinationRegion = destinationRegion;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标区域
-     * @return destinationRegion
-     */
+    /** 目标区域
+     * 
+     * @return destinationRegion */
     public String getDestinationRegion() {
         return destinationRegion;
     }
@@ -163,20 +122,14 @@ public class OpExtendInfoReplication  {
         this.destinationRegion = destinationRegion;
     }
 
-    
-
     public OpExtendInfoReplication withSourceBackupId(String sourceBackupId) {
         this.sourceBackupId = sourceBackupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 源副本ID
-     * @return sourceBackupId
-     */
+    /** 源副本ID
+     * 
+     * @return sourceBackupId */
     public String getSourceBackupId() {
         return sourceBackupId;
     }
@@ -185,20 +138,14 @@ public class OpExtendInfoReplication  {
         this.sourceBackupId = sourceBackupId;
     }
 
-    
-
     public OpExtendInfoReplication withSourceCheckpointId(String sourceCheckpointId) {
         this.sourceCheckpointId = sourceCheckpointId;
         return this;
     }
 
-    
-
-
-    /**
-     * 源还原点ID
-     * @return sourceCheckpointId
-     */
+    /** 源还原点ID
+     * 
+     * @return sourceCheckpointId */
     public String getSourceCheckpointId() {
         return sourceCheckpointId;
     }
@@ -207,20 +154,14 @@ public class OpExtendInfoReplication  {
         this.sourceCheckpointId = sourceCheckpointId;
     }
 
-    
-
     public OpExtendInfoReplication withSourceProjectId(String sourceProjectId) {
         this.sourceProjectId = sourceProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 源project_id
-     * @return sourceProjectId
-     */
+    /** 源project_id
+     * 
+     * @return sourceProjectId */
     public String getSourceProjectId() {
         return sourceProjectId;
     }
@@ -229,20 +170,14 @@ public class OpExtendInfoReplication  {
         this.sourceProjectId = sourceProjectId;
     }
 
-    
-
     public OpExtendInfoReplication withSourceRegion(String sourceRegion) {
         this.sourceRegion = sourceRegion;
         return this;
     }
 
-    
-
-
-    /**
-     * 源区域
-     * @return sourceRegion
-     */
+    /** 源区域
+     * 
+     * @return sourceRegion */
     public String getSourceRegion() {
         return sourceRegion;
     }
@@ -251,20 +186,14 @@ public class OpExtendInfoReplication  {
         this.sourceRegion = sourceRegion;
     }
 
-    
-
     public OpExtendInfoReplication withSourceBackupName(String sourceBackupName) {
         this.sourceBackupName = sourceBackupName;
         return this;
     }
 
-    
-
-
-    /**
-     * 源备份名称
-     * @return sourceBackupName
-     */
+    /** 源备份名称
+     * 
+     * @return sourceBackupName */
     public String getSourceBackupName() {
         return sourceBackupName;
     }
@@ -273,20 +202,14 @@ public class OpExtendInfoReplication  {
         this.sourceBackupName = sourceBackupName;
     }
 
-    
-
     public OpExtendInfoReplication withDestinationBackupName(String destinationBackupName) {
         this.destinationBackupName = destinationBackupName;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标备份名称
-     * @return destinationBackupName
-     */
+    /** 目标备份名称
+     * 
+     * @return destinationBackupName */
     public String getDestinationBackupName() {
         return destinationBackupName;
     }
@@ -294,8 +217,6 @@ public class OpExtendInfoReplication  {
     public void setDestinationBackupName(String destinationBackupName) {
         this.destinationBackupName = destinationBackupName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -306,21 +227,32 @@ public class OpExtendInfoReplication  {
             return false;
         }
         OpExtendInfoReplication opExtendInfoReplication = (OpExtendInfoReplication) o;
-        return Objects.equals(this.destinationBackupId, opExtendInfoReplication.destinationBackupId) &&
-            Objects.equals(this.destinationCheckpointId, opExtendInfoReplication.destinationCheckpointId) &&
-            Objects.equals(this.destinationProjectId, opExtendInfoReplication.destinationProjectId) &&
-            Objects.equals(this.destinationRegion, opExtendInfoReplication.destinationRegion) &&
-            Objects.equals(this.sourceBackupId, opExtendInfoReplication.sourceBackupId) &&
-            Objects.equals(this.sourceCheckpointId, opExtendInfoReplication.sourceCheckpointId) &&
-            Objects.equals(this.sourceProjectId, opExtendInfoReplication.sourceProjectId) &&
-            Objects.equals(this.sourceRegion, opExtendInfoReplication.sourceRegion) &&
-            Objects.equals(this.sourceBackupName, opExtendInfoReplication.sourceBackupName) &&
-            Objects.equals(this.destinationBackupName, opExtendInfoReplication.destinationBackupName);
+        return Objects.equals(this.destinationBackupId, opExtendInfoReplication.destinationBackupId)
+            && Objects.equals(this.destinationCheckpointId, opExtendInfoReplication.destinationCheckpointId)
+            && Objects.equals(this.destinationProjectId, opExtendInfoReplication.destinationProjectId)
+            && Objects.equals(this.destinationRegion, opExtendInfoReplication.destinationRegion)
+            && Objects.equals(this.sourceBackupId, opExtendInfoReplication.sourceBackupId)
+            && Objects.equals(this.sourceCheckpointId, opExtendInfoReplication.sourceCheckpointId)
+            && Objects.equals(this.sourceProjectId, opExtendInfoReplication.sourceProjectId)
+            && Objects.equals(this.sourceRegion, opExtendInfoReplication.sourceRegion)
+            && Objects.equals(this.sourceBackupName, opExtendInfoReplication.sourceBackupName)
+            && Objects.equals(this.destinationBackupName, opExtendInfoReplication.destinationBackupName);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(destinationBackupId, destinationCheckpointId, destinationProjectId, destinationRegion, sourceBackupId, sourceCheckpointId, sourceProjectId, sourceRegion, sourceBackupName, destinationBackupName);
+        return Objects.hash(destinationBackupId,
+            destinationCheckpointId,
+            destinationProjectId,
+            destinationRegion,
+            sourceBackupId,
+            sourceCheckpointId,
+            sourceProjectId,
+            sourceRegion,
+            sourceBackupName,
+            destinationBackupName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -338,16 +270,13 @@ public class OpExtendInfoReplication  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

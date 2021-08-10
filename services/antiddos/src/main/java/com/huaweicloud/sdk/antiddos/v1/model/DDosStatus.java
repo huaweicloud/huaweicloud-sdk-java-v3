@@ -1,68 +1,51 @@
 package com.huaweicloud.sdk.antiddos.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ddos状态响应体
- */
-public class DDosStatus  {
-
-
+/** ddos状态响应体 */
+public class DDosStatus {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="floating_ip_id")
-    
+    @JsonProperty(value = "floating_ip_id")
+
     private String floatingIpId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="floating_ip_address")
-    
+    @JsonProperty(value = "floating_ip_address")
+
     private String floatingIpAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="network_type")
-    
+    @JsonProperty(value = "network_type")
+
     private String networkType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="blackhole_endtime")
-    
+    @JsonProperty(value = "blackhole_endtime")
+
     private Long blackholeEndtime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protect_type")
-    
+    @JsonProperty(value = "protect_type")
+
     private String protectType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="traffic_threshold")
-    
+    @JsonProperty(value = "traffic_threshold")
+
     private Long trafficThreshold;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="http_threshold")
-    
+    @JsonProperty(value = "http_threshold")
+
     private Long httpThreshold;
 
     public DDosStatus withFloatingIpId(String floatingIpId) {
@@ -70,13 +53,9 @@ public class DDosStatus  {
         return this;
     }
 
-    
-
-
-    /**
-     * EIP的ID
-     * @return floatingIpId
-     */
+    /** EIP的ID
+     * 
+     * @return floatingIpId */
     public String getFloatingIpId() {
         return floatingIpId;
     }
@@ -85,20 +64,14 @@ public class DDosStatus  {
         this.floatingIpId = floatingIpId;
     }
 
-    
-
     public DDosStatus withFloatingIpAddress(String floatingIpAddress) {
         this.floatingIpAddress = floatingIpAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 浮动IP地址
-     * @return floatingIpAddress
-     */
+    /** 浮动IP地址
+     * 
+     * @return floatingIpAddress */
     public String getFloatingIpAddress() {
         return floatingIpAddress;
     }
@@ -107,20 +80,14 @@ public class DDosStatus  {
         this.floatingIpAddress = floatingIpAddress;
     }
 
-    
-
     public DDosStatus withNetworkType(String networkType) {
         this.networkType = networkType;
         return this;
     }
 
-    
-
-
-    /**
-     * EIP所属类型，可选范围： - EIP：未绑定到ECS的EIP或绑定到ECS的EIP - ELB：绑定到ELB的EIP
-     * @return networkType
-     */
+    /** EIP所属类型，可选范围： - EIP：未绑定到ECS的EIP或绑定到ECS的EIP - ELB：绑定到ELB的EIP
+     * 
+     * @return networkType */
     public String getNetworkType() {
         return networkType;
     }
@@ -129,20 +96,14 @@ public class DDosStatus  {
         this.networkType = networkType;
     }
 
-    
-
     public DDosStatus withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 防护状态，可选范围： - normal：表示正常 - configging：表示设置中 - notConfig：表示未设置 - packetcleaning：表示清洗 - packetdropping：表示黑洞
-     * @return status
-     */
+    /** 防护状态，可选范围： - normal：表示正常 - configging：表示设置中 - notConfig：表示未设置 - packetcleaning：表示清洗 - packetdropping：表示黑洞
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -151,20 +112,14 @@ public class DDosStatus  {
         this.status = status;
     }
 
-    
-
     public DDosStatus withBlackholeEndtime(Long blackholeEndtime) {
         this.blackholeEndtime = blackholeEndtime;
         return this;
     }
 
-    
-
-
-    /**
-     * 黑洞结束时间
-     * @return blackholeEndtime
-     */
+    /** 黑洞结束时间
+     * 
+     * @return blackholeEndtime */
     public Long getBlackholeEndtime() {
         return blackholeEndtime;
     }
@@ -173,20 +128,14 @@ public class DDosStatus  {
         this.blackholeEndtime = blackholeEndtime;
     }
 
-    
-
     public DDosStatus withProtectType(String protectType) {
         this.protectType = protectType;
         return this;
     }
 
-    
-
-
-    /**
-     * 防护类型
-     * @return protectType
-     */
+    /** 防护类型
+     * 
+     * @return protectType */
     public String getProtectType() {
         return protectType;
     }
@@ -195,20 +144,14 @@ public class DDosStatus  {
         this.protectType = protectType;
     }
 
-    
-
     public DDosStatus withTrafficThreshold(Long trafficThreshold) {
         this.trafficThreshold = trafficThreshold;
         return this;
     }
 
-    
-
-
-    /**
-     * 流量阈值
-     * @return trafficThreshold
-     */
+    /** 流量阈值
+     * 
+     * @return trafficThreshold */
     public Long getTrafficThreshold() {
         return trafficThreshold;
     }
@@ -217,20 +160,14 @@ public class DDosStatus  {
         this.trafficThreshold = trafficThreshold;
     }
 
-    
-
     public DDosStatus withHttpThreshold(Long httpThreshold) {
         this.httpThreshold = httpThreshold;
         return this;
     }
 
-    
-
-
-    /**
-     * http流量阈值
-     * @return httpThreshold
-     */
+    /** http流量阈值
+     * 
+     * @return httpThreshold */
     public Long getHttpThreshold() {
         return httpThreshold;
     }
@@ -238,8 +175,6 @@ public class DDosStatus  {
     public void setHttpThreshold(Long httpThreshold) {
         this.httpThreshold = httpThreshold;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -250,19 +185,28 @@ public class DDosStatus  {
             return false;
         }
         DDosStatus ddosStatus = (DDosStatus) o;
-        return Objects.equals(this.floatingIpId, ddosStatus.floatingIpId) &&
-            Objects.equals(this.floatingIpAddress, ddosStatus.floatingIpAddress) &&
-            Objects.equals(this.networkType, ddosStatus.networkType) &&
-            Objects.equals(this.status, ddosStatus.status) &&
-            Objects.equals(this.blackholeEndtime, ddosStatus.blackholeEndtime) &&
-            Objects.equals(this.protectType, ddosStatus.protectType) &&
-            Objects.equals(this.trafficThreshold, ddosStatus.trafficThreshold) &&
-            Objects.equals(this.httpThreshold, ddosStatus.httpThreshold);
+        return Objects.equals(this.floatingIpId, ddosStatus.floatingIpId)
+            && Objects.equals(this.floatingIpAddress, ddosStatus.floatingIpAddress)
+            && Objects.equals(this.networkType, ddosStatus.networkType)
+            && Objects.equals(this.status, ddosStatus.status)
+            && Objects.equals(this.blackholeEndtime, ddosStatus.blackholeEndtime)
+            && Objects.equals(this.protectType, ddosStatus.protectType)
+            && Objects.equals(this.trafficThreshold, ddosStatus.trafficThreshold)
+            && Objects.equals(this.httpThreshold, ddosStatus.httpThreshold);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(floatingIpId, floatingIpAddress, networkType, status, blackholeEndtime, protectType, trafficThreshold, httpThreshold);
+        return Objects.hash(floatingIpId,
+            floatingIpAddress,
+            networkType,
+            status,
+            blackholeEndtime,
+            protectType,
+            trafficThreshold,
+            httpThreshold);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -278,16 +222,13 @@ public class DDosStatus  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

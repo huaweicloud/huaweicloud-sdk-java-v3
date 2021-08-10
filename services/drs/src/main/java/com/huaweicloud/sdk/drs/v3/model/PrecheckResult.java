@@ -1,55 +1,37 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.PrecheckFailSubJobVO;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 预检查结果信息体
- */
-public class PrecheckResult  {
-
-
+/** 预检查结果信息体 */
+public class PrecheckResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="item")
-    
+    @JsonProperty(value = "item")
+
     private String item;
-    /**
-     * 检查结果
-     */
+
+    /** 检查结果 */
     public static final class ResultEnum {
 
-        
-        /**
-         * Enum PASSED for value: "PASSED"
-         */
+        /** Enum PASSED for value: "PASSED" */
         public static final ResultEnum PASSED = new ResultEnum("PASSED");
-        
-        /**
-         * Enum ALARM for value: "ALARM"
-         */
+
+        /** Enum ALARM for value: "ALARM" */
         public static final ResultEnum ALARM = new ResultEnum("ALARM");
-        
-        /**
-         * Enum FAILED for value: "FAILED"
-         */
+
+        /** Enum FAILED for value: "FAILED" */
         public static final ResultEnum FAILED = new ResultEnum("FAILED");
-        
 
         private static final Map<String, ResultEnum> STATIC_FIELDS = createStaticFields();
 
@@ -79,7 +61,7 @@ public class PrecheckResult  {
 
         @JsonCreator
         public static ResultEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ResultEnum result = STATIC_FIELDS.get(value);
@@ -90,7 +72,7 @@ public class PrecheckResult  {
         }
 
         public static ResultEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ResultEnum result = STATIC_FIELDS.get(value);
@@ -114,54 +96,44 @@ public class PrecheckResult  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="result")
-    
+    @JsonProperty(value = "result")
+
     private ResultEnum result;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="failed_reason")
-    
+    @JsonProperty(value = "failed_reason")
+
     private String failedReason;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data")
-    
+    @JsonProperty(value = "data")
+
     private String data;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="raw_error_msg")
-    
+    @JsonProperty(value = "raw_error_msg")
+
     private String rawErrorMsg;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group")
-    
+    @JsonProperty(value = "group")
+
     private String group;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="failed_sub_jobs")
-    
+    @JsonProperty(value = "failed_sub_jobs")
+
     private List<PrecheckFailSubJobVO> failedSubJobs = null;
-    
+
     public PrecheckResult withItem(String item) {
         this.item = item;
         return this;
     }
 
-    
-
-
-    /**
-     * 检查项。
-     * @return item
-     */
+    /** 检查项。
+     * 
+     * @return item */
     public String getItem() {
         return item;
     }
@@ -170,20 +142,14 @@ public class PrecheckResult  {
         this.item = item;
     }
 
-    
-
     public PrecheckResult withResult(ResultEnum result) {
         this.result = result;
         return this;
     }
 
-    
-
-
-    /**
-     * 检查结果
-     * @return result
-     */
+    /** 检查结果
+     * 
+     * @return result */
     public ResultEnum getResult() {
         return result;
     }
@@ -192,20 +158,14 @@ public class PrecheckResult  {
         this.result = result;
     }
 
-    
-
     public PrecheckResult withFailedReason(String failedReason) {
         this.failedReason = failedReason;
         return this;
     }
 
-    
-
-
-    /**
-     * 失败原因。
-     * @return failedReason
-     */
+    /** 失败原因。
+     * 
+     * @return failedReason */
     public String getFailedReason() {
         return failedReason;
     }
@@ -214,20 +174,14 @@ public class PrecheckResult  {
         this.failedReason = failedReason;
     }
 
-    
-
     public PrecheckResult withData(String data) {
         this.data = data;
         return this;
     }
 
-    
-
-
-    /**
-     * 加密的数据。
-     * @return data
-     */
+    /** 加密的数据。
+     * 
+     * @return data */
     public String getData() {
         return data;
     }
@@ -236,20 +190,14 @@ public class PrecheckResult  {
         this.data = data;
     }
 
-    
-
     public PrecheckResult withRawErrorMsg(String rawErrorMsg) {
         this.rawErrorMsg = rawErrorMsg;
         return this;
     }
 
-    
-
-
-    /**
-     * 行错误信息。
-     * @return rawErrorMsg
-     */
+    /** 行错误信息。
+     * 
+     * @return rawErrorMsg */
     public String getRawErrorMsg() {
         return rawErrorMsg;
     }
@@ -258,20 +206,14 @@ public class PrecheckResult  {
         this.rawErrorMsg = rawErrorMsg;
     }
 
-    
-
     public PrecheckResult withGroup(String group) {
         this.group = group;
         return this;
     }
 
-    
-
-
-    /**
-     * 检查项分组
-     * @return group
-     */
+    /** 检查项分组
+     * 
+     * @return group */
     public String getGroup() {
         return group;
     }
@@ -280,16 +222,13 @@ public class PrecheckResult  {
         this.group = group;
     }
 
-    
-
     public PrecheckResult withFailedSubJobs(List<PrecheckFailSubJobVO> failedSubJobs) {
         this.failedSubJobs = failedSubJobs;
         return this;
     }
 
-    
     public PrecheckResult addFailedSubJobsItem(PrecheckFailSubJobVO failedSubJobsItem) {
-        if(this.failedSubJobs == null) {
+        if (this.failedSubJobs == null) {
             this.failedSubJobs = new ArrayList<>();
         }
         this.failedSubJobs.add(failedSubJobsItem);
@@ -297,17 +236,16 @@ public class PrecheckResult  {
     }
 
     public PrecheckResult withFailedSubJobs(Consumer<List<PrecheckFailSubJobVO>> failedSubJobsSetter) {
-        if(this.failedSubJobs == null) {
+        if (this.failedSubJobs == null) {
             this.failedSubJobs = new ArrayList<>();
         }
         failedSubJobsSetter.accept(this.failedSubJobs);
         return this;
     }
 
-    /**
-     * 失败的子任务信息。
-     * @return failedSubJobs
-     */
+    /** 失败的子任务信息。
+     * 
+     * @return failedSubJobs */
     public List<PrecheckFailSubJobVO> getFailedSubJobs() {
         return failedSubJobs;
     }
@@ -315,8 +253,6 @@ public class PrecheckResult  {
     public void setFailedSubJobs(List<PrecheckFailSubJobVO> failedSubJobs) {
         this.failedSubJobs = failedSubJobs;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -327,18 +263,19 @@ public class PrecheckResult  {
             return false;
         }
         PrecheckResult precheckResult = (PrecheckResult) o;
-        return Objects.equals(this.item, precheckResult.item) &&
-            Objects.equals(this.result, precheckResult.result) &&
-            Objects.equals(this.failedReason, precheckResult.failedReason) &&
-            Objects.equals(this.data, precheckResult.data) &&
-            Objects.equals(this.rawErrorMsg, precheckResult.rawErrorMsg) &&
-            Objects.equals(this.group, precheckResult.group) &&
-            Objects.equals(this.failedSubJobs, precheckResult.failedSubJobs);
+        return Objects.equals(this.item, precheckResult.item) && Objects.equals(this.result, precheckResult.result)
+            && Objects.equals(this.failedReason, precheckResult.failedReason)
+            && Objects.equals(this.data, precheckResult.data)
+            && Objects.equals(this.rawErrorMsg, precheckResult.rawErrorMsg)
+            && Objects.equals(this.group, precheckResult.group)
+            && Objects.equals(this.failedSubJobs, precheckResult.failedSubJobs);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(item, result, failedReason, data, rawErrorMsg, group, failedSubJobs);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -353,16 +290,13 @@ public class PrecheckResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

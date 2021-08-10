@@ -1,35 +1,23 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v3.model.LoadBalancerStatusResult;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowLoadBalancerStatusResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="statuses")
-    
+    @JsonProperty(value = "statuses")
+
     private LoadBalancerStatusResult statuses;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="request_id")
-    
+    @JsonProperty(value = "request_id")
+
     private String requestId;
 
     public ShowLoadBalancerStatusResponse withStatuses(LoadBalancerStatusResult statuses) {
@@ -38,19 +26,17 @@ public class ShowLoadBalancerStatusResponse extends SdkResponse {
     }
 
     public ShowLoadBalancerStatusResponse withStatuses(Consumer<LoadBalancerStatusResult> statusesSetter) {
-        if(this.statuses == null ){
+        if (this.statuses == null) {
             this.statuses = new LoadBalancerStatusResult();
             statusesSetter.accept(this.statuses);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get statuses
-     * @return statuses
-     */
+    /** Get statuses
+     * 
+     * @return statuses */
     public LoadBalancerStatusResult getStatuses() {
         return statuses;
     }
@@ -59,20 +45,14 @@ public class ShowLoadBalancerStatusResponse extends SdkResponse {
         this.statuses = statuses;
     }
 
-    
-
     public ShowLoadBalancerStatusResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求ID。  注：自动生成 。
-     * @return requestId
-     */
+    /** 请求ID。 注：自动生成 。
+     * 
+     * @return requestId */
     public String getRequestId() {
         return requestId;
     }
@@ -80,8 +60,6 @@ public class ShowLoadBalancerStatusResponse extends SdkResponse {
     public void setRequestId(String requestId) {
         this.requestId = requestId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -92,13 +70,15 @@ public class ShowLoadBalancerStatusResponse extends SdkResponse {
             return false;
         }
         ShowLoadBalancerStatusResponse showLoadBalancerStatusResponse = (ShowLoadBalancerStatusResponse) o;
-        return Objects.equals(this.statuses, showLoadBalancerStatusResponse.statuses) &&
-            Objects.equals(this.requestId, showLoadBalancerStatusResponse.requestId);
+        return Objects.equals(this.statuses, showLoadBalancerStatusResponse.statuses)
+            && Objects.equals(this.requestId, showLoadBalancerStatusResponse.requestId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(statuses, requestId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -108,16 +88,13 @@ public class ShowLoadBalancerStatusResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

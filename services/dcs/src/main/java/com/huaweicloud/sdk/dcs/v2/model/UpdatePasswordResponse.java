@@ -1,59 +1,38 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
-
-
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class UpdatePasswordResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lock_time")
-    
+    @JsonProperty(value = "lock_time")
+
     private String lockTime;
-    /**
-     * 密码修改结果： - 成功：success； - 密码验证失败：passwordFailed； - 已锁定：locked； - 失败：failed。 
-     */
+
+    /** 密码修改结果： - 成功：success； - 密码验证失败：passwordFailed； - 已锁定：locked； - 失败：failed。 */
     public static final class ResultEnum {
 
-        
-        /**
-         * Enum SUCCESS for value: "success"
-         */
+        /** Enum SUCCESS for value: "success" */
         public static final ResultEnum SUCCESS = new ResultEnum("success");
-        
-        /**
-         * Enum PASSWORDFAILED for value: "passwordFailed"
-         */
+
+        /** Enum PASSWORDFAILED for value: "passwordFailed" */
         public static final ResultEnum PASSWORDFAILED = new ResultEnum("passwordFailed");
-        
-        /**
-         * Enum LOCKED for value: "locked"
-         */
+
+        /** Enum LOCKED for value: "locked" */
         public static final ResultEnum LOCKED = new ResultEnum("locked");
-        
-        /**
-         * Enum FAILED for value: "failed"
-         */
+
+        /** Enum FAILED for value: "failed" */
         public static final ResultEnum FAILED = new ResultEnum("failed");
-        
 
         private static final Map<String, ResultEnum> STATIC_FIELDS = createStaticFields();
 
@@ -84,7 +63,7 @@ public class UpdatePasswordResponse extends SdkResponse {
 
         @JsonCreator
         public static ResultEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ResultEnum result = STATIC_FIELDS.get(value);
@@ -95,7 +74,7 @@ public class UpdatePasswordResponse extends SdkResponse {
         }
 
         public static ResultEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ResultEnum result = STATIC_FIELDS.get(value);
@@ -119,28 +98,24 @@ public class UpdatePasswordResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="result")
-    
+    @JsonProperty(value = "result")
+
     private ResultEnum result;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lock_time_left")
-    
+    @JsonProperty(value = "lock_time_left")
+
     private String lockTimeLeft;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="retry_times_left")
-    
+    @JsonProperty(value = "retry_times_left")
+
     private String retryTimesLeft;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message")
-    
+    @JsonProperty(value = "message")
+
     private String message;
 
     public UpdatePasswordResponse withLockTime(String lockTime) {
@@ -148,13 +123,9 @@ public class UpdatePasswordResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 锁定时间。验证失败时和锁定时该参数返回不为null
-     * @return lockTime
-     */
+    /** 锁定时间。验证失败时和锁定时该参数返回不为null
+     * 
+     * @return lockTime */
     public String getLockTime() {
         return lockTime;
     }
@@ -163,20 +134,14 @@ public class UpdatePasswordResponse extends SdkResponse {
         this.lockTime = lockTime;
     }
 
-    
-
     public UpdatePasswordResponse withResult(ResultEnum result) {
         this.result = result;
         return this;
     }
 
-    
-
-
-    /**
-     * 密码修改结果： - 成功：success； - 密码验证失败：passwordFailed； - 已锁定：locked； - 失败：failed。 
-     * @return result
-     */
+    /** 密码修改结果： - 成功：success； - 密码验证失败：passwordFailed； - 已锁定：locked； - 失败：failed。
+     * 
+     * @return result */
     public ResultEnum getResult() {
         return result;
     }
@@ -185,20 +150,14 @@ public class UpdatePasswordResponse extends SdkResponse {
         this.result = result;
     }
 
-    
-
     public UpdatePasswordResponse withLockTimeLeft(String lockTimeLeft) {
         this.lockTimeLeft = lockTimeLeft;
         return this;
     }
 
-    
-
-
-    /**
-     * 锁定剩余时间。锁定时该参数返回不为null
-     * @return lockTimeLeft
-     */
+    /** 锁定剩余时间。锁定时该参数返回不为null
+     * 
+     * @return lockTimeLeft */
     public String getLockTimeLeft() {
         return lockTimeLeft;
     }
@@ -207,20 +166,14 @@ public class UpdatePasswordResponse extends SdkResponse {
         this.lockTimeLeft = lockTimeLeft;
     }
 
-    
-
     public UpdatePasswordResponse withRetryTimesLeft(String retryTimesLeft) {
         this.retryTimesLeft = retryTimesLeft;
         return this;
     }
 
-    
-
-
-    /**
-     * 密码验证剩余次数。验证失败时该参数返回不为null
-     * @return retryTimesLeft
-     */
+    /** 密码验证剩余次数。验证失败时该参数返回不为null
+     * 
+     * @return retryTimesLeft */
     public String getRetryTimesLeft() {
         return retryTimesLeft;
     }
@@ -229,20 +182,14 @@ public class UpdatePasswordResponse extends SdkResponse {
         this.retryTimesLeft = retryTimesLeft;
     }
 
-    
-
     public UpdatePasswordResponse withMessage(String message) {
         this.message = message;
         return this;
     }
 
-    
-
-
-    /**
-     * 修改结果。
-     * @return message
-     */
+    /** 修改结果。
+     * 
+     * @return message */
     public String getMessage() {
         return message;
     }
@@ -250,8 +197,6 @@ public class UpdatePasswordResponse extends SdkResponse {
     public void setMessage(String message) {
         this.message = message;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -262,16 +207,18 @@ public class UpdatePasswordResponse extends SdkResponse {
             return false;
         }
         UpdatePasswordResponse updatePasswordResponse = (UpdatePasswordResponse) o;
-        return Objects.equals(this.lockTime, updatePasswordResponse.lockTime) &&
-            Objects.equals(this.result, updatePasswordResponse.result) &&
-            Objects.equals(this.lockTimeLeft, updatePasswordResponse.lockTimeLeft) &&
-            Objects.equals(this.retryTimesLeft, updatePasswordResponse.retryTimesLeft) &&
-            Objects.equals(this.message, updatePasswordResponse.message);
+        return Objects.equals(this.lockTime, updatePasswordResponse.lockTime)
+            && Objects.equals(this.result, updatePasswordResponse.result)
+            && Objects.equals(this.lockTimeLeft, updatePasswordResponse.lockTimeLeft)
+            && Objects.equals(this.retryTimesLeft, updatePasswordResponse.retryTimesLeft)
+            && Objects.equals(this.message, updatePasswordResponse.message);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(lockTime, result, lockTimeLeft, retryTimesLeft, message);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -284,16 +231,13 @@ public class UpdatePasswordResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

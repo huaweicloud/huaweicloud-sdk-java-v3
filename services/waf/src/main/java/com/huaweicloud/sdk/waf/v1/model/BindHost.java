@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 绑定的域名信息
- */
-public class BindHost  {
-
-
+/** 绑定的域名信息 */
+public class BindHost {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hostname")
-    
+    @JsonProperty(value = "hostname")
+
     private String hostname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="waf_type")
-    
+    @JsonProperty(value = "waf_type")
+
     private String wafType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mode")
-    
+    @JsonProperty(value = "mode")
+
     private String mode;
 
     public BindHost withId(String id) {
@@ -46,13 +33,9 @@ public class BindHost  {
         return this;
     }
 
-    
-
-
-    /**
-     * 域名ID
-     * @return id
-     */
+    /** 域名ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -61,20 +44,14 @@ public class BindHost  {
         this.id = id;
     }
 
-    
-
     public BindHost withHostname(String hostname) {
         this.hostname = hostname;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名
-     * @return hostname
-     */
+    /** 域名
+     * 
+     * @return hostname */
     public String getHostname() {
         return hostname;
     }
@@ -83,20 +60,14 @@ public class BindHost  {
         this.hostname = hostname;
     }
 
-    
-
     public BindHost withWafType(String wafType) {
         this.wafType = wafType;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名对应模式：cloud/premium
-     * @return wafType
-     */
+    /** 域名对应模式：cloud/premium
+     * 
+     * @return wafType */
     public String getWafType() {
         return wafType;
     }
@@ -105,20 +76,14 @@ public class BindHost  {
         this.wafType = wafType;
     }
 
-    
-
     public BindHost withMode(String mode) {
         this.mode = mode;
         return this;
     }
 
-    
-
-
-    /**
-     * （仅独享模式）特殊域名模式
-     * @return mode
-     */
+    /** （仅独享模式）特殊域名模式
+     * 
+     * @return mode */
     public String getMode() {
         return mode;
     }
@@ -126,8 +91,6 @@ public class BindHost  {
     public void setMode(String mode) {
         this.mode = mode;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,15 @@ public class BindHost  {
             return false;
         }
         BindHost bindHost = (BindHost) o;
-        return Objects.equals(this.id, bindHost.id) &&
-            Objects.equals(this.hostname, bindHost.hostname) &&
-            Objects.equals(this.wafType, bindHost.wafType) &&
-            Objects.equals(this.mode, bindHost.mode);
+        return Objects.equals(this.id, bindHost.id) && Objects.equals(this.hostname, bindHost.hostname)
+            && Objects.equals(this.wafType, bindHost.wafType) && Objects.equals(this.mode, bindHost.mode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, hostname, wafType, mode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +121,13 @@ public class BindHost  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

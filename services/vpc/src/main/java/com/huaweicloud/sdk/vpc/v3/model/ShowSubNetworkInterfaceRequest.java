@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.vpc.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowSubNetworkInterfaceRequest  {
-
-
+/** Request Object */
+public class ShowSubNetworkInterfaceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sub_network_interface_id")
-    
+    @JsonProperty(value = "sub_network_interface_id")
+
     private String subNetworkInterfaceId;
 
     public ShowSubNetworkInterfaceRequest withSubNetworkInterfaceId(String subNetworkInterfaceId) {
@@ -28,13 +18,9 @@ public class ShowSubNetworkInterfaceRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 辅助弹性网卡的唯一标识
-     * @return subNetworkInterfaceId
-     */
+    /** 辅助弹性网卡的唯一标识
+     * 
+     * @return subNetworkInterfaceId */
     public String getSubNetworkInterfaceId() {
         return subNetworkInterfaceId;
     }
@@ -42,8 +28,6 @@ public class ShowSubNetworkInterfaceRequest  {
     public void setSubNetworkInterfaceId(String subNetworkInterfaceId) {
         this.subNetworkInterfaceId = subNetworkInterfaceId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class ShowSubNetworkInterfaceRequest  {
         ShowSubNetworkInterfaceRequest showSubNetworkInterfaceRequest = (ShowSubNetworkInterfaceRequest) o;
         return Objects.equals(this.subNetworkInterfaceId, showSubNetworkInterfaceRequest.subNetworkInterfaceId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(subNetworkInterfaceId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class ShowSubNetworkInterfaceRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

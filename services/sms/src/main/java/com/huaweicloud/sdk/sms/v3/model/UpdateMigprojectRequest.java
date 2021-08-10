@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.MigProject;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateMigprojectRequest  {
-
-
+/** Request Object */
+public class UpdateMigprojectRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mig_project_id")
-    
+    @JsonProperty(value = "mig_project_id")
+
     private String migProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private MigProject body;
 
     public UpdateMigprojectRequest withMigProjectId(String migProjectId) {
@@ -35,13 +24,9 @@ public class UpdateMigprojectRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移项目id
-     * @return migProjectId
-     */
+    /** 迁移项目id
+     * 
+     * @return migProjectId */
     public String getMigProjectId() {
         return migProjectId;
     }
@@ -50,27 +35,23 @@ public class UpdateMigprojectRequest  {
         this.migProjectId = migProjectId;
     }
 
-    
-
     public UpdateMigprojectRequest withBody(MigProject body) {
         this.body = body;
         return this;
     }
 
     public UpdateMigprojectRequest withBody(Consumer<MigProject> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new MigProject();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public MigProject getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdateMigprojectRequest  {
     public void setBody(MigProject body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdateMigprojectRequest  {
             return false;
         }
         UpdateMigprojectRequest updateMigprojectRequest = (UpdateMigprojectRequest) o;
-        return Objects.equals(this.migProjectId, updateMigprojectRequest.migProjectId) &&
-            Objects.equals(this.body, updateMigprojectRequest.body);
+        return Objects.equals(this.migProjectId, updateMigprojectRequest.migProjectId)
+            && Objects.equals(this.body, updateMigprojectRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(migProjectId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdateMigprojectRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

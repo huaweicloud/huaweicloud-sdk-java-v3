@@ -1,64 +1,44 @@
 package com.huaweicloud.sdk.ugo.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 版本信息描述
- */
-public class VersionDetails  {
-
-
+/** 版本信息描述 */
+public class VersionDetails {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private String links;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
-    /**
-     * 版本的状态
-     */
+
+    /** 版本的状态 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum CURRENT for value: "CURRENT"
-         */
+        /** Enum CURRENT for value: "CURRENT" */
         public static final StatusEnum CURRENT = new StatusEnum("CURRENT");
-        
-        /**
-         * Enum SUPPORTED for value: "SUPPORTED"
-         */
+
+        /** Enum SUPPORTED for value: "SUPPORTED" */
         public static final StatusEnum SUPPORTED = new StatusEnum("SUPPORTED");
-        
-        /**
-         * Enum DEPRECATED for value: "DEPRECATED"
-         */
+
+        /** Enum DEPRECATED for value: "DEPRECATED" */
         public static final StatusEnum DEPRECATED = new StatusEnum("DEPRECATED");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -88,7 +68,7 @@ public class VersionDetails  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -99,7 +79,7 @@ public class VersionDetails  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -123,16 +103,14 @@ public class VersionDetails  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
+
     private String updated;
 
     public VersionDetails withId(String id) {
@@ -140,13 +118,9 @@ public class VersionDetails  {
         return this;
     }
 
-    
-
-
-    /**
-     * 版本ID
-     * @return id
-     */
+    /** 版本ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -155,20 +129,14 @@ public class VersionDetails  {
         this.id = id;
     }
 
-    
-
     public VersionDetails withLinks(String links) {
         this.links = links;
         return this;
     }
 
-    
-
-
-    /**
-     * 版本详情
-     * @return links
-     */
+    /** 版本详情
+     * 
+     * @return links */
     public String getLinks() {
         return links;
     }
@@ -177,20 +145,14 @@ public class VersionDetails  {
         this.links = links;
     }
 
-    
-
     public VersionDetails withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 该版本API的微版本信息
-     * @return version
-     */
+    /** 该版本API的微版本信息
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -199,20 +161,14 @@ public class VersionDetails  {
         this.version = version;
     }
 
-    
-
     public VersionDetails withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 版本的状态
-     * @return status
-     */
+    /** 版本的状态
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -221,20 +177,14 @@ public class VersionDetails  {
         this.status = status;
     }
 
-    
-
     public VersionDetails withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
 
-    
-
-
-    /**
-     * 版本更新时间
-     * @return updated
-     */
+    /** 版本更新时间
+     * 
+     * @return updated */
     public String getUpdated() {
         return updated;
     }
@@ -242,8 +192,6 @@ public class VersionDetails  {
     public void setUpdated(String updated) {
         this.updated = updated;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -254,16 +202,17 @@ public class VersionDetails  {
             return false;
         }
         VersionDetails versionDetails = (VersionDetails) o;
-        return Objects.equals(this.id, versionDetails.id) &&
-            Objects.equals(this.links, versionDetails.links) &&
-            Objects.equals(this.version, versionDetails.version) &&
-            Objects.equals(this.status, versionDetails.status) &&
-            Objects.equals(this.updated, versionDetails.updated);
+        return Objects.equals(this.id, versionDetails.id) && Objects.equals(this.links, versionDetails.links)
+            && Objects.equals(this.version, versionDetails.version)
+            && Objects.equals(this.status, versionDetails.status)
+            && Objects.equals(this.updated, versionDetails.updated);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, links, version, status, updated);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -276,16 +225,13 @@ public class VersionDetails  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

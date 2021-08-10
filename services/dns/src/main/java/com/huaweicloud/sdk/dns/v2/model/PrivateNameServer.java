@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * PrivateNameServer
- */
-public class PrivateNameServer  {
-
-
+/** PrivateNameServer */
+public class PrivateNameServer {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="priority")
-    
+    @JsonProperty(value = "priority")
+
     private Integer priority;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="address")
-    
+    @JsonProperty(value = "address")
+
     private String address;
 
     public PrivateNameServer withPriority(Integer priority) {
@@ -34,13 +23,9 @@ public class PrivateNameServer  {
         return this;
     }
 
-    
-
-
-    /**
-     * 优先级。如果priority的值为“1”，表示会第一个采用该域名服务器进行解析。
-     * @return priority
-     */
+    /** 优先级。如果priority的值为“1”，表示会第一个采用该域名服务器进行解析。
+     * 
+     * @return priority */
     public Integer getPriority() {
         return priority;
     }
@@ -49,20 +34,14 @@ public class PrivateNameServer  {
         this.priority = priority;
     }
 
-    
-
     public PrivateNameServer withAddress(String address) {
         this.address = address;
         return this;
     }
 
-    
-
-
-    /**
-     * DNS服务器地址。
-     * @return address
-     */
+    /** DNS服务器地址。
+     * 
+     * @return address */
     public String getAddress() {
         return address;
     }
@@ -70,8 +49,6 @@ public class PrivateNameServer  {
     public void setAddress(String address) {
         this.address = address;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class PrivateNameServer  {
             return false;
         }
         PrivateNameServer privateNameServer = (PrivateNameServer) o;
-        return Objects.equals(this.priority, privateNameServer.priority) &&
-            Objects.equals(this.address, privateNameServer.address);
+        return Objects.equals(this.priority, privateNameServer.priority)
+            && Objects.equals(this.address, privateNameServer.address);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(priority, address);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class PrivateNameServer  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

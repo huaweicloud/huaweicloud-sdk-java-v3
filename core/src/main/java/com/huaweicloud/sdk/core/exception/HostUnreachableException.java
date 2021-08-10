@@ -21,12 +21,10 @@
 
 package com.huaweicloud.sdk.core.exception;
 
-/**
- * If the host can't be reached, this exception will be thrown.
- * In some cases, if the request returns status code 429, this exception can also be thrown.
+/** If the host can't be reached, this exception will be thrown. In some cases, if the request returns status code 429,
+ * this exception can also be thrown.
  *
- * @author HuaweiCloud_SDK
- */
+ * @author HuaweiCloud_SDK */
 public class HostUnreachableException extends ConnectionException {
 
     public HostUnreachableException(String message) {

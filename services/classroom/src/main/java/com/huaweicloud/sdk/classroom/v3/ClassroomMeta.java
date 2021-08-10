@@ -1,19 +1,17 @@
 package com.huaweicloud.sdk.classroom.v3;
 
+import com.huaweicloud.sdk.classroom.v3.model.*;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.classroom.v3.model.*;
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class ClassroomMeta {
 
-    public static final HttpRequestDef<ApplyJudgementRequest, ApplyJudgementResponse> applyJudgement = genForapplyJudgement();
+    public static final HttpRequestDef<ApplyJudgementRequest, ApplyJudgementResponse> applyJudgement =
+        genForapplyJudgement();
 
     private static HttpRequestDef<ApplyJudgementRequest, ApplyJudgementResponse> genForapplyJudgement() {
         // basic
@@ -24,23 +22,21 @@ public class ClassroomMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<JudgementTaskRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            JudgementTaskRequestBody.class,
+            TypeCasts.uncheckedConversion(JudgementTaskRequestBody.class),
             f -> f.withMarshaller(ApplyJudgementRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJudgementDetailRequest, ShowJudgementDetailResponse> showJudgementDetail = genForshowJudgementDetail();
+    public static final HttpRequestDef<ShowJudgementDetailRequest, ShowJudgementDetailResponse> showJudgementDetail =
+        genForshowJudgementDetail();
 
     private static HttpRequestDef<ShowJudgementDetailRequest, ShowJudgementDetailResponse> genForshowJudgementDetail() {
         // basic
@@ -51,23 +47,21 @@ public class ClassroomMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("judgement_id",
+        builder.<String>withRequestField("judgement_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowJudgementDetailRequest::getJudgementId, (req, v) -> {
                 req.setJudgementId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJudgementFileRequest, ShowJudgementFileResponse> showJudgementFile = genForshowJudgementFile();
+    public static final HttpRequestDef<ShowJudgementFileRequest, ShowJudgementFileResponse> showJudgementFile =
+        genForshowJudgementFile();
 
     private static HttpRequestDef<ShowJudgementFileRequest, ShowJudgementFileResponse> genForshowJudgementFile() {
         // basic
@@ -78,74 +72,67 @@ public class ClassroomMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("file_id",
+        builder.<String>withRequestField("file_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowJudgementFileRequest::getFileId, (req, v) -> {
                 req.setFileId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListClassroomMembersRequest, ListClassroomMembersResponse> listClassroomMembers = genForlistClassroomMembers();
+    public static final HttpRequestDef<ListClassroomMembersRequest, ListClassroomMembersResponse> listClassroomMembers =
+        genForlistClassroomMembers();
 
     private static HttpRequestDef<ListClassroomMembersRequest, ListClassroomMembersResponse> genForlistClassroomMembers() {
         // basic
-        HttpRequestDef.Builder<ListClassroomMembersRequest, ListClassroomMembersResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListClassroomMembersRequest.class, ListClassroomMembersResponse.class)
-                .withName("ListClassroomMembers")
-                .withUri("/v3/classrooms/{classroom_id}/members")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ListClassroomMembersRequest, ListClassroomMembersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListClassroomMembersRequest.class, ListClassroomMembersResponse.class)
+            .withName("ListClassroomMembers")
+            .withUri("/v3/classrooms/{classroom_id}/members")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("classroom_id",
+        builder.<String>withRequestField("classroom_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListClassroomMembersRequest::getClassroomId, (req, v) -> {
                 req.setClassroomId(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListClassroomMembersRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListClassroomMembersRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("filter",
+            }));
+        builder.<String>withRequestField("filter",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListClassroomMembersRequest::getFilter, (req, v) -> {
                 req.setFilter(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListClassroomsRequest, ListClassroomsResponse> listClassrooms = genForlistClassrooms();
+    public static final HttpRequestDef<ListClassroomsRequest, ListClassroomsResponse> listClassrooms =
+        genForlistClassrooms();
 
     private static HttpRequestDef<ListClassroomsRequest, ListClassroomsResponse> genForlistClassrooms() {
         // basic
@@ -156,39 +143,35 @@ public class ClassroomMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListClassroomsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListClassroomsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("query_type",
+            }));
+        builder.<String>withRequestField("query_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListClassroomsRequest::getQueryType, (req, v) -> {
                 req.setQueryType(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowClassroomDetailRequest, ShowClassroomDetailResponse> showClassroomDetail = genForshowClassroomDetail();
+    public static final HttpRequestDef<ShowClassroomDetailRequest, ShowClassroomDetailResponse> showClassroomDetail =
+        genForshowClassroomDetail();
 
     private static HttpRequestDef<ShowClassroomDetailRequest, ShowClassroomDetailResponse> genForshowClassroomDetail() {
         // basic
@@ -199,69 +182,61 @@ public class ClassroomMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("classroom_id",
+        builder.<String>withRequestField("classroom_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowClassroomDetailRequest::getClassroomId, (req, v) -> {
                 req.setClassroomId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListClassroomMemberJobsRequest, ListClassroomMemberJobsResponse> listClassroomMemberJobs = genForlistClassroomMemberJobs();
+    public static final HttpRequestDef<ListClassroomMemberJobsRequest, ListClassroomMemberJobsResponse> listClassroomMemberJobs =
+        genForlistClassroomMemberJobs();
 
     private static HttpRequestDef<ListClassroomMemberJobsRequest, ListClassroomMemberJobsResponse> genForlistClassroomMemberJobs() {
         // basic
-        HttpRequestDef.Builder<ListClassroomMemberJobsRequest, ListClassroomMemberJobsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListClassroomMemberJobsRequest.class, ListClassroomMemberJobsResponse.class)
-                .withName("ListClassroomMemberJobs")
-                .withUri("/v3/classrooms/{classroom_id}/jobs")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ListClassroomMemberJobsRequest, ListClassroomMemberJobsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListClassroomMemberJobsRequest.class, ListClassroomMemberJobsResponse.class)
+            .withName("ListClassroomMemberJobs")
+            .withUri("/v3/classrooms/{classroom_id}/jobs")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("classroom_id",
+        builder.<String>withRequestField("classroom_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListClassroomMemberJobsRequest::getClassroomId, (req, v) -> {
                 req.setClassroomId(v);
-            })
-        );
-        builder.withRequestField("member_id",
+            }));
+        builder.<String>withRequestField("member_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListClassroomMemberJobsRequest::getMemberId, (req, v) -> {
                 req.setMemberId(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListClassroomMemberJobsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListClassroomMemberJobsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -277,106 +252,95 @@ public class ClassroomMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("source_from",
+        builder.<String>withRequestField("source_from",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListJobsRequest::getSourceFrom, (req, v) -> {
                 req.setSourceFrom(v);
-            })
-        );
-        builder.withRequestField("source_id",
+            }));
+        builder.<String>withRequestField("source_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListJobsRequest::getSourceId, (req, v) -> {
                 req.setSourceId(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListJobsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListJobsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListMemberJobRecordsRequest, ListMemberJobRecordsResponse> listMemberJobRecords = genForlistMemberJobRecords();
+    public static final HttpRequestDef<ListMemberJobRecordsRequest, ListMemberJobRecordsResponse> listMemberJobRecords =
+        genForlistMemberJobRecords();
 
     private static HttpRequestDef<ListMemberJobRecordsRequest, ListMemberJobRecordsResponse> genForlistMemberJobRecords() {
         // basic
-        HttpRequestDef.Builder<ListMemberJobRecordsRequest, ListMemberJobRecordsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListMemberJobRecordsRequest.class, ListMemberJobRecordsResponse.class)
-                .withName("ListMemberJobRecords")
-                .withUri("/v3/jobs/{job_id}/exercises/{exercise_id}/records")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ListMemberJobRecordsRequest, ListMemberJobRecordsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListMemberJobRecordsRequest.class, ListMemberJobRecordsResponse.class)
+            .withName("ListMemberJobRecords")
+            .withUri("/v3/jobs/{job_id}/exercises/{exercise_id}/records")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("job_id",
+        builder.<String>withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMemberJobRecordsRequest::getJobId, (req, v) -> {
                 req.setJobId(v);
-            })
-        );
-        builder.withRequestField("exercise_id",
+            }));
+        builder.<String>withRequestField("exercise_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMemberJobRecordsRequest::getExerciseId, (req, v) -> {
                 req.setExerciseId(v);
-            })
-        );
-        builder.withRequestField("member_id",
+            }));
+        builder.<String>withRequestField("member_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMemberJobRecordsRequest::getMemberId, (req, v) -> {
                 req.setMemberId(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListMemberJobRecordsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListMemberJobRecordsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetail = genForshowJobDetail();
+    public static final HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetail =
+        genForshowJobDetail();
 
     private static HttpRequestDef<ShowJobDetailRequest, ShowJobDetailResponse> genForshowJobDetail() {
         // basic
@@ -387,23 +351,21 @@ public class ClassroomMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("job_id",
+        builder.<String>withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowJobDetailRequest::getJobId, (req, v) -> {
                 req.setJobId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowJobExercisesRequest, ShowJobExercisesResponse> showJobExercises = genForshowJobExercises();
+    public static final HttpRequestDef<ShowJobExercisesRequest, ShowJobExercisesResponse> showJobExercises =
+        genForshowJobExercises();
 
     private static HttpRequestDef<ShowJobExercisesRequest, ShowJobExercisesResponse> genForshowJobExercises() {
         // basic
@@ -414,50 +376,43 @@ public class ClassroomMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("job_id",
+        builder.<String>withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowJobExercisesRequest::getJobId, (req, v) -> {
                 req.setJobId(v);
-            })
-        );
-        builder.withRequestField("source_from",
+            }));
+        builder.<String>withRequestField("source_from",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowJobExercisesRequest::getSourceFrom, (req, v) -> {
                 req.setSourceFrom(v);
-            })
-        );
-        builder.withRequestField("source_id",
+            }));
+        builder.<String>withRequestField("source_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowJobExercisesRequest::getSourceId, (req, v) -> {
                 req.setSourceId(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowJobExercisesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowJobExercisesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

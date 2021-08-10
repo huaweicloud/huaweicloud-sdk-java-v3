@@ -1,97 +1,71 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListProductsRequest  {
-
-
+/** Request Object */
+public class ListProductsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="manufacturer_id")
-    
+    @JsonProperty(value = "manufacturer_id")
+
     private String manufacturerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="manufacturer_name")
-    
+    @JsonProperty(value = "manufacturer_name")
+
     private String manufacturerName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="model")
-    
+    @JsonProperty(value = "model")
+
     private String model;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_type")
-    
+    @JsonProperty(value = "device_type")
+
     private String deviceType;
-    /**
-     * 产品类型，0-普通产品(不支持子设备) 1-网关产品
-     */
+
+    /** 产品类型，0-普通产品(不支持子设备) 1-网关产品 */
     public static final class ProductTypeEnum {
 
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
+        /** Enum NUMBER_0 for value: 0 */
         public static final ProductTypeEnum NUMBER_0 = new ProductTypeEnum(0);
-        
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
+
+        /** Enum NUMBER_1 for value: 1 */
         public static final ProductTypeEnum NUMBER_1 = new ProductTypeEnum(1);
-        
 
         private static final Map<Integer, ProductTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -120,7 +94,7 @@ public class ListProductsRequest  {
 
         @JsonCreator
         public static ProductTypeEnum fromValue(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProductTypeEnum result = STATIC_FIELDS.get(value);
@@ -131,7 +105,7 @@ public class ListProductsRequest  {
         }
 
         public static ProductTypeEnum valueOf(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProductTypeEnum result = STATIC_FIELDS.get(value);
@@ -155,32 +129,22 @@ public class ListProductsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_type")
-    
+    @JsonProperty(value = "product_type")
+
     private ProductTypeEnum productType;
-    /**
-     * 产品的协议类型 0-mqtt 2-modbus 4-opcua
-     */
+
+    /** 产品的协议类型 0-mqtt 2-modbus 4-opcua */
     public static final class ProtocolTypeEnum {
 
-        
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
+        /** Enum NUMBER_0 for value: 0 */
         public static final ProtocolTypeEnum NUMBER_0 = new ProtocolTypeEnum(0);
-        
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
+
+        /** Enum NUMBER_2 for value: 2 */
         public static final ProtocolTypeEnum NUMBER_2 = new ProtocolTypeEnum(2);
-        
-        /**
-         * Enum NUMBER_4 for value: 4
-         */
+
+        /** Enum NUMBER_4 for value: 4 */
         public static final ProtocolTypeEnum NUMBER_4 = new ProtocolTypeEnum(4);
-        
 
         private static final Map<Integer, ProtocolTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -210,7 +174,7 @@ public class ListProductsRequest  {
 
         @JsonCreator
         public static ProtocolTypeEnum fromValue(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtocolTypeEnum result = STATIC_FIELDS.get(value);
@@ -221,7 +185,7 @@ public class ListProductsRequest  {
         }
 
         public static ProtocolTypeEnum valueOf(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtocolTypeEnum result = STATIC_FIELDS.get(value);
@@ -245,46 +209,39 @@ public class ListProductsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol_type")
-    
+    @JsonProperty(value = "protocol_type")
+
     private ProtocolTypeEnum protocolType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_user_name")
-    
+    @JsonProperty(value = "created_user_name")
+
     private String createdUserName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_date_start")
-    
+    @JsonProperty(value = "created_date_start")
+
     private Long createdDateStart;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_date_end")
-    
+    @JsonProperty(value = "created_date_end")
+
     private Long createdDateEnd;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_name")
-    
+    @JsonProperty(value = "app_name")
+
     private String appName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_serial")
-    
+    @JsonProperty(value = "product_serial")
+
     private String productSerial;
 
     public ListProductsRequest withInstanceId(String instanceId) {
@@ -292,13 +249,9 @@ public class ListProductsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -307,22 +260,14 @@ public class ListProductsRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListProductsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示条目数量，最大数量999，超过999后只返回999
-     * minimum: 0
-     * maximum: 999
-     * @return limit
-     */
+    /** 每页显示条目数量，最大数量999，超过999后只返回999 minimum: 0 maximum: 999
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -331,20 +276,14 @@ public class ListProductsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListProductsRequest withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用ID
-     * @return appId
-     */
+    /** 应用ID
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -353,20 +292,14 @@ public class ListProductsRequest  {
         this.appId = appId;
     }
 
-    
-
     public ListProductsRequest withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品ID
-     * @return id
-     */
+    /** 产品ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -375,20 +308,14 @@ public class ListProductsRequest  {
         this.id = id;
     }
 
-    
-
     public ListProductsRequest withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品名称
-     * @return name
-     */
+    /** 产品名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -397,20 +324,14 @@ public class ListProductsRequest  {
         this.name = name;
     }
 
-    
-
     public ListProductsRequest withManufacturerId(String manufacturerId) {
         this.manufacturerId = manufacturerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 厂商ID
-     * @return manufacturerId
-     */
+    /** 厂商ID
+     * 
+     * @return manufacturerId */
     public String getManufacturerId() {
         return manufacturerId;
     }
@@ -419,20 +340,14 @@ public class ListProductsRequest  {
         this.manufacturerId = manufacturerId;
     }
 
-    
-
     public ListProductsRequest withManufacturerName(String manufacturerName) {
         this.manufacturerName = manufacturerName;
         return this;
     }
 
-    
-
-
-    /**
-     * 厂商名称
-     * @return manufacturerName
-     */
+    /** 厂商名称
+     * 
+     * @return manufacturerName */
     public String getManufacturerName() {
         return manufacturerName;
     }
@@ -441,20 +356,14 @@ public class ListProductsRequest  {
         this.manufacturerName = manufacturerName;
     }
 
-    
-
     public ListProductsRequest withModel(String model) {
         this.model = model;
         return this;
     }
 
-    
-
-
-    /**
-     * 型号
-     * @return model
-     */
+    /** 型号
+     * 
+     * @return model */
     public String getModel() {
         return model;
     }
@@ -463,20 +372,14 @@ public class ListProductsRequest  {
         this.model = model;
     }
 
-    
-
     public ListProductsRequest withDeviceType(String deviceType) {
         this.deviceType = deviceType;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品的设备类型，默认Default
-     * @return deviceType
-     */
+    /** 产品的设备类型，默认Default
+     * 
+     * @return deviceType */
     public String getDeviceType() {
         return deviceType;
     }
@@ -485,22 +388,14 @@ public class ListProductsRequest  {
         this.deviceType = deviceType;
     }
 
-    
-
     public ListProductsRequest withProductType(ProductTypeEnum productType) {
         this.productType = productType;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品类型，0-普通产品(不支持子设备) 1-网关产品
-     * minimum: 0
-     * maximum: 10
-     * @return productType
-     */
+    /** 产品类型，0-普通产品(不支持子设备) 1-网关产品 minimum: 0 maximum: 10
+     * 
+     * @return productType */
     public ProductTypeEnum getProductType() {
         return productType;
     }
@@ -509,22 +404,14 @@ public class ListProductsRequest  {
         this.productType = productType;
     }
 
-    
-
     public ListProductsRequest withProtocolType(ProtocolTypeEnum protocolType) {
         this.protocolType = protocolType;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品的协议类型 0-mqtt 2-modbus 4-opcua
-     * minimum: 0
-     * maximum: 10
-     * @return protocolType
-     */
+    /** 产品的协议类型 0-mqtt 2-modbus 4-opcua minimum: 0 maximum: 10
+     * 
+     * @return protocolType */
     public ProtocolTypeEnum getProtocolType() {
         return protocolType;
     }
@@ -533,20 +420,14 @@ public class ListProductsRequest  {
         this.protocolType = protocolType;
     }
 
-    
-
     public ListProductsRequest withCreatedUserName(String createdUserName) {
         this.createdUserName = createdUserName;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建用户
-     * @return createdUserName
-     */
+    /** 创建用户
+     * 
+     * @return createdUserName */
     public String getCreatedUserName() {
         return createdUserName;
     }
@@ -555,22 +436,14 @@ public class ListProductsRequest  {
         this.createdUserName = createdUserName;
     }
 
-    
-
     public ListProductsRequest withCreatedDateStart(Long createdDateStart) {
         this.createdDateStart = createdDateStart;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间起始，格式timestamp(ms)，使用UTC时区
-     * minimum: 1
-     * maximum: 99999999999999999
-     * @return createdDateStart
-     */
+    /** 创建时间起始，格式timestamp(ms)，使用UTC时区 minimum: 1 maximum: 99999999999999999
+     * 
+     * @return createdDateStart */
     public Long getCreatedDateStart() {
         return createdDateStart;
     }
@@ -579,22 +452,14 @@ public class ListProductsRequest  {
         this.createdDateStart = createdDateStart;
     }
 
-    
-
     public ListProductsRequest withCreatedDateEnd(Long createdDateEnd) {
         this.createdDateEnd = createdDateEnd;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间截止，格式timestamp(ms)，使用UTC时区
-     * minimum: 1
-     * maximum: 99999999999999999
-     * @return createdDateEnd
-     */
+    /** 创建时间截止，格式timestamp(ms)，使用UTC时区 minimum: 1 maximum: 99999999999999999
+     * 
+     * @return createdDateEnd */
     public Long getCreatedDateEnd() {
         return createdDateEnd;
     }
@@ -603,22 +468,14 @@ public class ListProductsRequest  {
         this.createdDateEnd = createdDateEnd;
     }
 
-    
-
     public ListProductsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于0
-     * minimum: 0
-     * maximum: 999999
-     * @return offset
-     */
+    /** 偏移量，表示从此偏移量开始查询， offset大于等于0 minimum: 0 maximum: 999999
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -627,20 +484,14 @@ public class ListProductsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListProductsRequest withAppName(String appName) {
         this.appName = appName;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名称
-     * @return appName
-     */
+    /** 应用名称
+     * 
+     * @return appName */
     public String getAppName() {
         return appName;
     }
@@ -649,20 +500,14 @@ public class ListProductsRequest  {
         this.appName = appName;
     }
 
-    
-
     public ListProductsRequest withProductSerial(String productSerial) {
         this.productSerial = productSerial;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品唯一序列（系统唯一值，用于MQS的TOPIC中标记产品）
-     * @return productSerial
-     */
+    /** 产品唯一序列（系统唯一值，用于MQS的TOPIC中标记产品）
+     * 
+     * @return productSerial */
     public String getProductSerial() {
         return productSerial;
     }
@@ -670,8 +515,6 @@ public class ListProductsRequest  {
     public void setProductSerial(String productSerial) {
         this.productSerial = productSerial;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -682,28 +525,45 @@ public class ListProductsRequest  {
             return false;
         }
         ListProductsRequest listProductsRequest = (ListProductsRequest) o;
-        return Objects.equals(this.instanceId, listProductsRequest.instanceId) &&
-            Objects.equals(this.limit, listProductsRequest.limit) &&
-            Objects.equals(this.appId, listProductsRequest.appId) &&
-            Objects.equals(this.id, listProductsRequest.id) &&
-            Objects.equals(this.name, listProductsRequest.name) &&
-            Objects.equals(this.manufacturerId, listProductsRequest.manufacturerId) &&
-            Objects.equals(this.manufacturerName, listProductsRequest.manufacturerName) &&
-            Objects.equals(this.model, listProductsRequest.model) &&
-            Objects.equals(this.deviceType, listProductsRequest.deviceType) &&
-            Objects.equals(this.productType, listProductsRequest.productType) &&
-            Objects.equals(this.protocolType, listProductsRequest.protocolType) &&
-            Objects.equals(this.createdUserName, listProductsRequest.createdUserName) &&
-            Objects.equals(this.createdDateStart, listProductsRequest.createdDateStart) &&
-            Objects.equals(this.createdDateEnd, listProductsRequest.createdDateEnd) &&
-            Objects.equals(this.offset, listProductsRequest.offset) &&
-            Objects.equals(this.appName, listProductsRequest.appName) &&
-            Objects.equals(this.productSerial, listProductsRequest.productSerial);
+        return Objects.equals(this.instanceId, listProductsRequest.instanceId)
+            && Objects.equals(this.limit, listProductsRequest.limit)
+            && Objects.equals(this.appId, listProductsRequest.appId) && Objects.equals(this.id, listProductsRequest.id)
+            && Objects.equals(this.name, listProductsRequest.name)
+            && Objects.equals(this.manufacturerId, listProductsRequest.manufacturerId)
+            && Objects.equals(this.manufacturerName, listProductsRequest.manufacturerName)
+            && Objects.equals(this.model, listProductsRequest.model)
+            && Objects.equals(this.deviceType, listProductsRequest.deviceType)
+            && Objects.equals(this.productType, listProductsRequest.productType)
+            && Objects.equals(this.protocolType, listProductsRequest.protocolType)
+            && Objects.equals(this.createdUserName, listProductsRequest.createdUserName)
+            && Objects.equals(this.createdDateStart, listProductsRequest.createdDateStart)
+            && Objects.equals(this.createdDateEnd, listProductsRequest.createdDateEnd)
+            && Objects.equals(this.offset, listProductsRequest.offset)
+            && Objects.equals(this.appName, listProductsRequest.appName)
+            && Objects.equals(this.productSerial, listProductsRequest.productSerial);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, limit, appId, id, name, manufacturerId, manufacturerName, model, deviceType, productType, protocolType, createdUserName, createdDateStart, createdDateEnd, offset, appName, productSerial);
+        return Objects.hash(instanceId,
+            limit,
+            appId,
+            id,
+            name,
+            manufacturerId,
+            manufacturerName,
+            model,
+            deviceType,
+            productType,
+            protocolType,
+            createdUserName,
+            createdDateStart,
+            createdDateEnd,
+            offset,
+            appName,
+            productSerial);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -728,16 +588,13 @@ public class ListProductsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

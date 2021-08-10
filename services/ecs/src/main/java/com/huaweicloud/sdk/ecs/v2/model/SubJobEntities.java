@@ -1,38 +1,28 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class SubJobEntities  {
-
-
+public class SubJobEntities {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server_id")
-    
+    @JsonProperty(value = "server_id")
+
     private String serverId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nic_id")
-    
+    @JsonProperty(value = "nic_id")
+
     private String nicId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorcode_message")
-    
+    @JsonProperty(value = "errorcode_message")
+
     private String errorcodeMessage;
 
     public SubJobEntities withServerId(String serverId) {
@@ -40,13 +30,9 @@ public class SubJobEntities  {
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务器相关操作显示server_id。
-     * @return serverId
-     */
+    /** 云服务器相关操作显示server_id。
+     * 
+     * @return serverId */
     public String getServerId() {
         return serverId;
     }
@@ -55,20 +41,14 @@ public class SubJobEntities  {
         this.serverId = serverId;
     }
 
-    
-
     public SubJobEntities withNicId(String nicId) {
         this.nicId = nicId;
         return this;
     }
 
-    
-
-
-    /**
-     * 网卡相关操作显示nic_id。
-     * @return nicId
-     */
+    /** 网卡相关操作显示nic_id。
+     * 
+     * @return nicId */
     public String getNicId() {
         return nicId;
     }
@@ -77,20 +57,14 @@ public class SubJobEntities  {
         this.nicId = nicId;
     }
 
-    
-
     public SubJobEntities withErrorcodeMessage(String errorcodeMessage) {
         this.errorcodeMessage = errorcodeMessage;
         return this;
     }
 
-    
-
-
-    /**
-     * 子任务执行失败的具体原因。
-     * @return errorcodeMessage
-     */
+    /** 子任务执行失败的具体原因。
+     * 
+     * @return errorcodeMessage */
     public String getErrorcodeMessage() {
         return errorcodeMessage;
     }
@@ -98,8 +72,6 @@ public class SubJobEntities  {
     public void setErrorcodeMessage(String errorcodeMessage) {
         this.errorcodeMessage = errorcodeMessage;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +82,16 @@ public class SubJobEntities  {
             return false;
         }
         SubJobEntities subJobEntities = (SubJobEntities) o;
-        return Objects.equals(this.serverId, subJobEntities.serverId) &&
-            Objects.equals(this.nicId, subJobEntities.nicId) &&
-            Objects.equals(this.errorcodeMessage, subJobEntities.errorcodeMessage);
+        return Objects.equals(this.serverId, subJobEntities.serverId)
+            && Objects.equals(this.nicId, subJobEntities.nicId)
+            && Objects.equals(this.errorcodeMessage, subJobEntities.errorcodeMessage);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(serverId, nicId, errorcodeMessage);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +102,13 @@ public class SubJobEntities  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

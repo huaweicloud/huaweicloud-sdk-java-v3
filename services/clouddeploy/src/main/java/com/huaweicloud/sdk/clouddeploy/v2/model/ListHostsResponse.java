@@ -1,59 +1,40 @@
 package com.huaweicloud.sdk.clouddeploy.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.clouddeploy.v2.model.DeploymentHostDetail;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListHostsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_name")
-    
+    @JsonProperty(value = "group_name")
+
     private String groupName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hosts")
-    
+    @JsonProperty(value = "hosts")
+
     private List<DeploymentHostDetail> hosts = null;
-    
+
     public ListHostsResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * 主机数量
-     * minimum: 0
-     * maximum: 200
-     * @return total
-     */
+    /** 主机数量 minimum: 0 maximum: 200
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -62,20 +43,14 @@ public class ListHostsResponse extends SdkResponse {
         this.total = total;
     }
 
-    
-
     public ListHostsResponse withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
     }
 
-    
-
-
-    /**
-     * 主机组名称
-     * @return groupName
-     */
+    /** 主机组名称
+     * 
+     * @return groupName */
     public String getGroupName() {
         return groupName;
     }
@@ -84,16 +59,13 @@ public class ListHostsResponse extends SdkResponse {
         this.groupName = groupName;
     }
 
-    
-
     public ListHostsResponse withHosts(List<DeploymentHostDetail> hosts) {
         this.hosts = hosts;
         return this;
     }
 
-    
     public ListHostsResponse addHostsItem(DeploymentHostDetail hostsItem) {
-        if(this.hosts == null) {
+        if (this.hosts == null) {
             this.hosts = new ArrayList<>();
         }
         this.hosts.add(hostsItem);
@@ -101,17 +73,16 @@ public class ListHostsResponse extends SdkResponse {
     }
 
     public ListHostsResponse withHosts(Consumer<List<DeploymentHostDetail>> hostsSetter) {
-        if(this.hosts == null) {
+        if (this.hosts == null) {
             this.hosts = new ArrayList<>();
         }
         hostsSetter.accept(this.hosts);
         return this;
     }
 
-    /**
-     * 主机列表信息
-     * @return hosts
-     */
+    /** 主机列表信息
+     * 
+     * @return hosts */
     public List<DeploymentHostDetail> getHosts() {
         return hosts;
     }
@@ -119,8 +90,6 @@ public class ListHostsResponse extends SdkResponse {
     public void setHosts(List<DeploymentHostDetail> hosts) {
         this.hosts = hosts;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -131,14 +100,16 @@ public class ListHostsResponse extends SdkResponse {
             return false;
         }
         ListHostsResponse listHostsResponse = (ListHostsResponse) o;
-        return Objects.equals(this.total, listHostsResponse.total) &&
-            Objects.equals(this.groupName, listHostsResponse.groupName) &&
-            Objects.equals(this.hosts, listHostsResponse.hosts);
+        return Objects.equals(this.total, listHostsResponse.total)
+            && Objects.equals(this.groupName, listHostsResponse.groupName)
+            && Objects.equals(this.hosts, listHostsResponse.hosts);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(total, groupName, hosts);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -149,16 +120,13 @@ public class ListHostsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ces.v1.model.ModifyAlarmActionReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateAlarmActionRequest  {
-
-
+/** Request Object */
+public class UpdateAlarmActionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_id")
-    
+    @JsonProperty(value = "alarm_id")
+
     private String alarmId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ModifyAlarmActionReq body;
 
     public UpdateAlarmActionRequest withAlarmId(String alarmId) {
@@ -35,13 +24,9 @@ public class UpdateAlarmActionRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 告警规则的ID。
-     * @return alarmId
-     */
+    /** 告警规则的ID。
+     * 
+     * @return alarmId */
     public String getAlarmId() {
         return alarmId;
     }
@@ -50,27 +35,23 @@ public class UpdateAlarmActionRequest  {
         this.alarmId = alarmId;
     }
 
-    
-
     public UpdateAlarmActionRequest withBody(ModifyAlarmActionReq body) {
         this.body = body;
         return this;
     }
 
     public UpdateAlarmActionRequest withBody(Consumer<ModifyAlarmActionReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ModifyAlarmActionReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ModifyAlarmActionReq getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdateAlarmActionRequest  {
     public void setBody(ModifyAlarmActionReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdateAlarmActionRequest  {
             return false;
         }
         UpdateAlarmActionRequest updateAlarmActionRequest = (UpdateAlarmActionRequest) o;
-        return Objects.equals(this.alarmId, updateAlarmActionRequest.alarmId) &&
-            Objects.equals(this.body, updateAlarmActionRequest.body);
+        return Objects.equals(this.alarmId, updateAlarmActionRequest.alarmId)
+            && Objects.equals(this.body, updateAlarmActionRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(alarmId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdateAlarmActionRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

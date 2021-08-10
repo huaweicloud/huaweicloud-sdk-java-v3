@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.nat.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowNatGatewayDnatRuleRequest  {
-
-
+/** Request Object */
+public class ShowNatGatewayDnatRuleRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dnat_rule_id")
-    
+    @JsonProperty(value = "dnat_rule_id")
+
     private String dnatRuleId;
 
     public ShowNatGatewayDnatRuleRequest withDnatRuleId(String dnatRuleId) {
@@ -28,13 +18,9 @@ public class ShowNatGatewayDnatRuleRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * DNAT规则的ID。
-     * @return dnatRuleId
-     */
+    /** DNAT规则的ID。
+     * 
+     * @return dnatRuleId */
     public String getDnatRuleId() {
         return dnatRuleId;
     }
@@ -42,8 +28,6 @@ public class ShowNatGatewayDnatRuleRequest  {
     public void setDnatRuleId(String dnatRuleId) {
         this.dnatRuleId = dnatRuleId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class ShowNatGatewayDnatRuleRequest  {
         ShowNatGatewayDnatRuleRequest showNatGatewayDnatRuleRequest = (ShowNatGatewayDnatRuleRequest) o;
         return Objects.equals(this.dnatRuleId, showNatGatewayDnatRuleRequest.dnatRuleId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(dnatRuleId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class ShowNatGatewayDnatRuleRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,64 +1,45 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.KeyDetails;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListKeysResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="keys")
-    
+    @JsonProperty(value = "keys")
+
     private List<String> keys = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_details")
-    
+    @JsonProperty(value = "key_details")
+
     private List<KeyDetails> keyDetails = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="next_marker")
-    
+    @JsonProperty(value = "next_marker")
+
     private String nextMarker;
-    /**
-     * 是否还有下一页： - “true”表示还有数据。 - “false”表示已经是最后一页。
-     */
+
+    /** 是否还有下一页： - “true”表示还有数据。 - “false”表示已经是最后一页。 */
     public static final class TruncatedEnum {
 
-        
-        /**
-         * Enum TRUE for value: "true"
-         */
+        /** Enum TRUE for value: "true" */
         public static final TruncatedEnum TRUE = new TruncatedEnum("true");
-        
-        /**
-         * Enum FALSE for value: "false"
-         */
+
+        /** Enum FALSE for value: "false" */
         public static final TruncatedEnum FALSE = new TruncatedEnum("false");
-        
 
         private static final Map<String, TruncatedEnum> STATIC_FIELDS = createStaticFields();
 
@@ -87,7 +68,7 @@ public class ListKeysResponse extends SdkResponse {
 
         @JsonCreator
         public static TruncatedEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TruncatedEnum result = STATIC_FIELDS.get(value);
@@ -98,7 +79,7 @@ public class ListKeysResponse extends SdkResponse {
         }
 
         public static TruncatedEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TruncatedEnum result = STATIC_FIELDS.get(value);
@@ -122,16 +103,14 @@ public class ListKeysResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="truncated")
-    
+    @JsonProperty(value = "truncated")
+
     private TruncatedEnum truncated;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
     public ListKeysResponse withKeys(List<String> keys) {
@@ -139,9 +118,8 @@ public class ListKeysResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListKeysResponse addKeysItem(String keysItem) {
-        if(this.keys == null) {
+        if (this.keys == null) {
             this.keys = new ArrayList<>();
         }
         this.keys.add(keysItem);
@@ -149,17 +127,16 @@ public class ListKeysResponse extends SdkResponse {
     }
 
     public ListKeysResponse withKeys(Consumer<List<String>> keysSetter) {
-        if(this.keys == null) {
+        if (this.keys == null) {
             this.keys = new ArrayList<>();
         }
         keysSetter.accept(this.keys);
         return this;
     }
 
-    /**
-     * key_id列表。
-     * @return keys
-     */
+    /** key_id列表。
+     * 
+     * @return keys */
     public List<String> getKeys() {
         return keys;
     }
@@ -168,16 +145,13 @@ public class ListKeysResponse extends SdkResponse {
         this.keys = keys;
     }
 
-    
-
     public ListKeysResponse withKeyDetails(List<KeyDetails> keyDetails) {
         this.keyDetails = keyDetails;
         return this;
     }
 
-    
     public ListKeysResponse addKeyDetailsItem(KeyDetails keyDetailsItem) {
-        if(this.keyDetails == null) {
+        if (this.keyDetails == null) {
             this.keyDetails = new ArrayList<>();
         }
         this.keyDetails.add(keyDetailsItem);
@@ -185,17 +159,16 @@ public class ListKeysResponse extends SdkResponse {
     }
 
     public ListKeysResponse withKeyDetails(Consumer<List<KeyDetails>> keyDetailsSetter) {
-        if(this.keyDetails == null) {
+        if (this.keyDetails == null) {
             this.keyDetails = new ArrayList<>();
         }
         keyDetailsSetter.accept(this.keyDetails);
         return this;
     }
 
-    /**
-     * 密钥详情列表。详情参见KeyDetails
-     * @return keyDetails
-     */
+    /** 密钥详情列表。详情参见KeyDetails
+     * 
+     * @return keyDetails */
     public List<KeyDetails> getKeyDetails() {
         return keyDetails;
     }
@@ -204,20 +177,14 @@ public class ListKeysResponse extends SdkResponse {
         this.keyDetails = keyDetails;
     }
 
-    
-
     public ListKeysResponse withNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
         return this;
     }
 
-    
-
-
-    /**
-     * 获取下一页所需要传递的“marker”值。当“truncated”为“false”时，“next_marker”为空。
-     * @return nextMarker
-     */
+    /** 获取下一页所需要传递的“marker”值。当“truncated”为“false”时，“next_marker”为空。
+     * 
+     * @return nextMarker */
     public String getNextMarker() {
         return nextMarker;
     }
@@ -226,20 +193,14 @@ public class ListKeysResponse extends SdkResponse {
         this.nextMarker = nextMarker;
     }
 
-    
-
     public ListKeysResponse withTruncated(TruncatedEnum truncated) {
         this.truncated = truncated;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否还有下一页： - “true”表示还有数据。 - “false”表示已经是最后一页。
-     * @return truncated
-     */
+    /** 是否还有下一页： - “true”表示还有数据。 - “false”表示已经是最后一页。
+     * 
+     * @return truncated */
     public TruncatedEnum getTruncated() {
         return truncated;
     }
@@ -248,22 +209,14 @@ public class ListKeysResponse extends SdkResponse {
         this.truncated = truncated;
     }
 
-    
-
     public ListKeysResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥总条数。
-     * minimum: 0
-     * maximum: 1000
-     * @return total
-     */
+    /** 密钥总条数。 minimum: 0 maximum: 1000
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -271,8 +224,6 @@ public class ListKeysResponse extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -283,16 +234,18 @@ public class ListKeysResponse extends SdkResponse {
             return false;
         }
         ListKeysResponse listKeysResponse = (ListKeysResponse) o;
-        return Objects.equals(this.keys, listKeysResponse.keys) &&
-            Objects.equals(this.keyDetails, listKeysResponse.keyDetails) &&
-            Objects.equals(this.nextMarker, listKeysResponse.nextMarker) &&
-            Objects.equals(this.truncated, listKeysResponse.truncated) &&
-            Objects.equals(this.total, listKeysResponse.total);
+        return Objects.equals(this.keys, listKeysResponse.keys)
+            && Objects.equals(this.keyDetails, listKeysResponse.keyDetails)
+            && Objects.equals(this.nextMarker, listKeysResponse.nextMarker)
+            && Objects.equals(this.truncated, listKeysResponse.truncated)
+            && Objects.equals(this.total, listKeysResponse.total);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(keys, keyDetails, nextMarker, truncated, total);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -305,16 +258,13 @@ public class ListKeysResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

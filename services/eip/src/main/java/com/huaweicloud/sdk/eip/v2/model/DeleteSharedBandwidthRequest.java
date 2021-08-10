@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.eip.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteSharedBandwidthRequest  {
-
-
+/** Request Object */
+public class DeleteSharedBandwidthRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bandwidth_id")
-    
+    @JsonProperty(value = "bandwidth_id")
+
     private String bandwidthId;
 
     public DeleteSharedBandwidthRequest withBandwidthId(String bandwidthId) {
@@ -28,13 +18,9 @@ public class DeleteSharedBandwidthRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 带宽唯一标识  约束： 当前仅支持删除共享带宽
-     * @return bandwidthId
-     */
+    /** 带宽唯一标识 约束： 当前仅支持删除共享带宽
+     * 
+     * @return bandwidthId */
     public String getBandwidthId() {
         return bandwidthId;
     }
@@ -42,8 +28,6 @@ public class DeleteSharedBandwidthRequest  {
     public void setBandwidthId(String bandwidthId) {
         this.bandwidthId = bandwidthId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class DeleteSharedBandwidthRequest  {
         DeleteSharedBandwidthRequest deleteSharedBandwidthRequest = (DeleteSharedBandwidthRequest) o;
         return Objects.equals(this.bandwidthId, deleteSharedBandwidthRequest.bandwidthId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(bandwidthId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class DeleteSharedBandwidthRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowPublicationRequest  {
-
-
+/** Request Object */
+public class ShowPublicationRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Request-Id")
-    
+    @JsonProperty(value = "X-Request-Id")
+
     private String xRequestId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Accept-Language")
-    
+    @JsonProperty(value = "Accept-Language")
+
     private String acceptLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
     public ShowPublicationRequest withXRequestId(String xRequestId) {
@@ -40,15 +28,11 @@ public class ShowPublicationRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
-     * @return xRequestId
-     */
+    /** 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * 
+     * @return xRequestId */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Request-Id")
+    @JsonProperty(value = "X-Request-Id")
     public String getXRequestId() {
         return xRequestId;
     }
@@ -57,20 +41,14 @@ public class ShowPublicationRequest  {
         this.xRequestId = xRequestId;
     }
 
-    
-
     public ShowPublicationRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言参数，默认为中文zh_CN, 英文为en_US
-     * @return acceptLanguage
-     */
+    /** 语言参数，默认为中文zh_CN, 英文为en_US
+     * 
+     * @return acceptLanguage */
     public String getAcceptLanguage() {
         return acceptLanguage;
     }
@@ -79,20 +57,14 @@ public class ShowPublicationRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
-    
-
     public ShowPublicationRequest withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 发布ID
-     * @return id
-     */
+    /** 发布ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -100,8 +72,6 @@ public class ShowPublicationRequest  {
     public void setId(String id) {
         this.id = id;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +82,16 @@ public class ShowPublicationRequest  {
             return false;
         }
         ShowPublicationRequest showPublicationRequest = (ShowPublicationRequest) o;
-        return Objects.equals(this.xRequestId, showPublicationRequest.xRequestId) &&
-            Objects.equals(this.acceptLanguage, showPublicationRequest.acceptLanguage) &&
-            Objects.equals(this.id, showPublicationRequest.id);
+        return Objects.equals(this.xRequestId, showPublicationRequest.xRequestId)
+            && Objects.equals(this.acceptLanguage, showPublicationRequest.acceptLanguage)
+            && Objects.equals(this.id, showPublicationRequest.id);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xRequestId, acceptLanguage, id);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +102,13 @@ public class ShowPublicationRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

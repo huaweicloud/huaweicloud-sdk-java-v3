@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.dws.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dws.v2.model.ScaleOut;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * This is a auto create Body Object
- */
-public class ResizeClusterRequestBody  {
-
-
+/** This is a auto create Body Object */
+public class ResizeClusterRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scale_out")
-    
+    @JsonProperty(value = "scale_out")
+
     private ScaleOut scaleOut;
 
     public ResizeClusterRequestBody withScaleOut(ScaleOut scaleOut) {
@@ -30,19 +20,17 @@ public class ResizeClusterRequestBody  {
     }
 
     public ResizeClusterRequestBody withScaleOut(Consumer<ScaleOut> scaleOutSetter) {
-        if(this.scaleOut == null ){
+        if (this.scaleOut == null) {
             this.scaleOut = new ScaleOut();
             scaleOutSetter.accept(this.scaleOut);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get scaleOut
-     * @return scaleOut
-     */
+    /** Get scaleOut
+     * 
+     * @return scaleOut */
     public ScaleOut getScaleOut() {
         return scaleOut;
     }
@@ -50,8 +38,6 @@ public class ResizeClusterRequestBody  {
     public void setScaleOut(ScaleOut scaleOut) {
         this.scaleOut = scaleOut;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class ResizeClusterRequestBody  {
         ResizeClusterRequestBody resizeClusterRequestBody = (ResizeClusterRequestBody) o;
         return Objects.equals(this.scaleOut, resizeClusterRequestBody.scaleOut);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(scaleOut);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class ResizeClusterRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

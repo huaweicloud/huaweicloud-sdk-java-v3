@@ -1,51 +1,35 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cdn.v1.model.Domains;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListDomainsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domains")
-    
+    @JsonProperty(value = "domains")
+
     private List<Domains> domains = null;
-    
+
     public ListDomainsResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * 总条数。
-     * @return total
-     */
+    /** 总条数。
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -54,16 +38,13 @@ public class ListDomainsResponse extends SdkResponse {
         this.total = total;
     }
 
-    
-
     public ListDomainsResponse withDomains(List<Domains> domains) {
         this.domains = domains;
         return this;
     }
 
-    
     public ListDomainsResponse addDomainsItem(Domains domainsItem) {
-        if(this.domains == null) {
+        if (this.domains == null) {
             this.domains = new ArrayList<>();
         }
         this.domains.add(domainsItem);
@@ -71,17 +52,16 @@ public class ListDomainsResponse extends SdkResponse {
     }
 
     public ListDomainsResponse withDomains(Consumer<List<Domains>> domainsSetter) {
-        if(this.domains == null) {
+        if (this.domains == null) {
             this.domains = new ArrayList<>();
         }
         domainsSetter.accept(this.domains);
         return this;
     }
 
-    /**
-     * 域名信息
-     * @return domains
-     */
+    /** 域名信息
+     * 
+     * @return domains */
     public List<Domains> getDomains() {
         return domains;
     }
@@ -89,8 +69,6 @@ public class ListDomainsResponse extends SdkResponse {
     public void setDomains(List<Domains> domains) {
         this.domains = domains;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ListDomainsResponse extends SdkResponse {
             return false;
         }
         ListDomainsResponse listDomainsResponse = (ListDomainsResponse) o;
-        return Objects.equals(this.total, listDomainsResponse.total) &&
-            Objects.equals(this.domains, listDomainsResponse.domains);
+        return Objects.equals(this.total, listDomainsResponse.total)
+            && Objects.equals(this.domains, listDomainsResponse.domains);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(total, domains);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ListDomainsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

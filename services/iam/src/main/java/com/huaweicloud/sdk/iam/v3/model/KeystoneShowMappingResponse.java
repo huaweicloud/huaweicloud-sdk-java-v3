@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.MappingResult;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class KeystoneShowMappingResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mapping")
-    
+    @JsonProperty(value = "mapping")
+
     private MappingResult mapping;
 
     public KeystoneShowMappingResponse withMapping(MappingResult mapping) {
@@ -32,19 +21,17 @@ public class KeystoneShowMappingResponse extends SdkResponse {
     }
 
     public KeystoneShowMappingResponse withMapping(Consumer<MappingResult> mappingSetter) {
-        if(this.mapping == null ){
+        if (this.mapping == null) {
             this.mapping = new MappingResult();
             mappingSetter.accept(this.mapping);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get mapping
-     * @return mapping
-     */
+    /** Get mapping
+     * 
+     * @return mapping */
     public MappingResult getMapping() {
         return mapping;
     }
@@ -52,8 +39,6 @@ public class KeystoneShowMappingResponse extends SdkResponse {
     public void setMapping(MappingResult mapping) {
         this.mapping = mapping;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class KeystoneShowMappingResponse extends SdkResponse {
         KeystoneShowMappingResponse keystoneShowMappingResponse = (KeystoneShowMappingResponse) o;
         return Objects.equals(this.mapping, keystoneShowMappingResponse.mapping);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(mapping);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class KeystoneShowMappingResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

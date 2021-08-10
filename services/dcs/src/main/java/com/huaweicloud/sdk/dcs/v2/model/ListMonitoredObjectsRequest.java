@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListMonitoredObjectsRequest  {
-
-
+/** Request Object */
+public class ListMonitoredObjectsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dim_name")
-    
+    @JsonProperty(value = "dim_name")
+
     private String dimName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
     public ListMonitoredObjectsRequest withDimName(String dimName) {
@@ -40,13 +28,9 @@ public class ListMonitoredObjectsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 主维度ID，当前支持dcs_instance_id，dcs_memcached_instance_id。
-     * @return dimName
-     */
+    /** 主维度ID，当前支持dcs_instance_id，dcs_memcached_instance_id。
+     * 
+     * @return dimName */
     public String getDimName() {
         return dimName;
     }
@@ -55,20 +39,14 @@ public class ListMonitoredObjectsRequest  {
         this.dimName = dimName;
     }
 
-    
-
     public ListMonitoredObjectsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询，offset大于等于0
-     * @return offset
-     */
+    /** 偏移量，表示从此偏移量开始查询，offset大于等于0
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -77,20 +55,14 @@ public class ListMonitoredObjectsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListMonitoredObjectsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示的条目数量
-     * @return limit
-     */
+    /** 每页显示的条目数量
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -98,8 +70,6 @@ public class ListMonitoredObjectsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class ListMonitoredObjectsRequest  {
             return false;
         }
         ListMonitoredObjectsRequest listMonitoredObjectsRequest = (ListMonitoredObjectsRequest) o;
-        return Objects.equals(this.dimName, listMonitoredObjectsRequest.dimName) &&
-            Objects.equals(this.offset, listMonitoredObjectsRequest.offset) &&
-            Objects.equals(this.limit, listMonitoredObjectsRequest.limit);
+        return Objects.equals(this.dimName, listMonitoredObjectsRequest.dimName)
+            && Objects.equals(this.offset, listMonitoredObjectsRequest.offset)
+            && Objects.equals(this.limit, listMonitoredObjectsRequest.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(dimName, offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class ListMonitoredObjectsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

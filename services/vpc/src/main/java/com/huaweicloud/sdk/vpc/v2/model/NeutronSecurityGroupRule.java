@@ -1,48 +1,34 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.time.OffsetDateTime;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 
  */
-public class NeutronSecurityGroupRule  {
-
-
+public class NeutronSecurityGroupRule {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
-    /**
-     * 功能说明：规则方向 取值范围：ingress、egress
-     */
+
+    /** 功能说明：规则方向 取值范围：ingress、egress */
     public static final class DirectionEnum {
 
-        
-        /**
-         * Enum INGRESS for value: "ingress"
-         */
+        /** Enum INGRESS for value: "ingress" */
         public static final DirectionEnum INGRESS = new DirectionEnum("ingress");
-        
-        /**
-         * Enum EGRESS for value: "egress"
-         */
+
+        /** Enum EGRESS for value: "egress" */
         public static final DirectionEnum EGRESS = new DirectionEnum("egress");
-        
 
         private static final Map<String, DirectionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -71,7 +57,7 @@ public class NeutronSecurityGroupRule  {
 
         @JsonCreator
         public static DirectionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DirectionEnum result = STATIC_FIELDS.get(value);
@@ -82,7 +68,7 @@ public class NeutronSecurityGroupRule  {
         }
 
         public static DirectionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DirectionEnum result = STATIC_FIELDS.get(value);
@@ -106,82 +92,69 @@ public class NeutronSecurityGroupRule  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="direction")
-    
+    @JsonProperty(value = "direction")
+
     private DirectionEnum direction;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ethertype")
-    
+    @JsonProperty(value = "ethertype")
+
     private String ethertype;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port_range_max")
-    
+    @JsonProperty(value = "port_range_max")
+
     private Integer portRangeMax;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port_range_min")
-    
+    @JsonProperty(value = "port_range_min")
+
     private Integer portRangeMin;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
+
     private String protocol;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remote_group_id")
-    
+    @JsonProperty(value = "remote_group_id")
+
     private String remoteGroupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remote_ip_prefix")
-    
+    @JsonProperty(value = "remote_ip_prefix")
+
     private String remoteIpPrefix;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_id")
-    
+    @JsonProperty(value = "security_group_id")
+
     private String securityGroupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
+
     private String tenantId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private OffsetDateTime createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private OffsetDateTime updatedAt;
 
     public NeutronSecurityGroupRule withDescription(String description) {
@@ -189,13 +162,9 @@ public class NeutronSecurityGroupRule  {
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组规则描述
-     * @return description
-     */
+    /** 安全组规则描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -204,20 +173,14 @@ public class NeutronSecurityGroupRule  {
         this.description = description;
     }
 
-    
-
     public NeutronSecurityGroupRule withDirection(DirectionEnum direction) {
         this.direction = direction;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：规则方向 取值范围：ingress、egress
-     * @return direction
-     */
+    /** 功能说明：规则方向 取值范围：ingress、egress
+     * 
+     * @return direction */
     public DirectionEnum getDirection() {
         return direction;
     }
@@ -226,20 +189,14 @@ public class NeutronSecurityGroupRule  {
         this.direction = direction;
     }
 
-    
-
     public NeutronSecurityGroupRule withEthertype(String ethertype) {
         this.ethertype = ethertype;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：网络类型 取值范围：IPv4、IPv6
-     * @return ethertype
-     */
+    /** 功能说明：网络类型 取值范围：IPv4、IPv6
+     * 
+     * @return ethertype */
     public String getEthertype() {
         return ethertype;
     }
@@ -248,20 +205,14 @@ public class NeutronSecurityGroupRule  {
         this.ethertype = ethertype;
     }
 
-    
-
     public NeutronSecurityGroupRule withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组规则ID，查询安全组规则非必选
-     * @return id
-     */
+    /** 安全组规则ID，查询安全组规则非必选
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -270,20 +221,14 @@ public class NeutronSecurityGroupRule  {
         this.id = id;
     }
 
-    
-
     public NeutronSecurityGroupRule withPortRangeMax(Integer portRangeMax) {
         this.portRangeMax = portRangeMax;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：最大端口 取值范围：当协议类型为ICMP时，该值表示ICMP的code
-     * @return portRangeMax
-     */
+    /** 功能说明：最大端口 取值范围：当协议类型为ICMP时，该值表示ICMP的code
+     * 
+     * @return portRangeMax */
     public Integer getPortRangeMax() {
         return portRangeMax;
     }
@@ -292,20 +237,16 @@ public class NeutronSecurityGroupRule  {
         this.portRangeMax = portRangeMax;
     }
 
-    
-
     public NeutronSecurityGroupRule withPortRangeMin(Integer portRangeMin) {
         this.portRangeMin = portRangeMin;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：最小端口 当协议类型为ICMP时，该值表示ICMP的type。protocol为tcp和udp时，port_range_max和port_range_min必须同时输入，且port_range_max应大于等于port_range_min。protocol为icmp时，指定ICMP code（port_range_max）时，必须同时指定ICMP type（port_range_min）。
-     * @return portRangeMin
-     */
+    /** 功能说明：最小端口
+     * 当协议类型为ICMP时，该值表示ICMP的type。protocol为tcp和udp时，port_range_max和port_range_min必须同时输入，且port_range_max应大于等于port_range_min。protocol为icmp时，指定ICMP
+     * code（port_range_max）时，必须同时指定ICMP type（port_range_min）。
+     * 
+     * @return portRangeMin */
     public Integer getPortRangeMin() {
         return portRangeMin;
     }
@@ -314,20 +255,14 @@ public class NeutronSecurityGroupRule  {
         this.portRangeMin = portRangeMin;
     }
 
-    
-
     public NeutronSecurityGroupRule withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：tcp/udp/icmp/icmpv6或IP协议编号（0~255） 约束：协议为icmpv6时，网络类型应该为IPv6；协议为icmp时，网络类型应该为IPv4
-     * @return protocol
-     */
+    /** 功能说明：tcp/udp/icmp/icmpv6或IP协议编号（0~255） 约束：协议为icmpv6时，网络类型应该为IPv6；协议为icmp时，网络类型应该为IPv4
+     * 
+     * @return protocol */
     public String getProtocol() {
         return protocol;
     }
@@ -336,20 +271,14 @@ public class NeutronSecurityGroupRule  {
         this.protocol = protocol;
     }
 
-    
-
     public NeutronSecurityGroupRule withRemoteGroupId(String remoteGroupId) {
         this.remoteGroupId = remoteGroupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 所属安全组的对端ID
-     * @return remoteGroupId
-     */
+    /** 所属安全组的对端ID
+     * 
+     * @return remoteGroupId */
     public String getRemoteGroupId() {
         return remoteGroupId;
     }
@@ -358,20 +287,14 @@ public class NeutronSecurityGroupRule  {
         this.remoteGroupId = remoteGroupId;
     }
 
-    
-
     public NeutronSecurityGroupRule withRemoteIpPrefix(String remoteIpPrefix) {
         this.remoteIpPrefix = remoteIpPrefix;
         return this;
     }
 
-    
-
-
-    /**
-     * 对端ip网段
-     * @return remoteIpPrefix
-     */
+    /** 对端ip网段
+     * 
+     * @return remoteIpPrefix */
     public String getRemoteIpPrefix() {
         return remoteIpPrefix;
     }
@@ -380,20 +303,14 @@ public class NeutronSecurityGroupRule  {
         this.remoteIpPrefix = remoteIpPrefix;
     }
 
-    
-
     public NeutronSecurityGroupRule withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 所属安全组ID
-     * @return securityGroupId
-     */
+    /** 所属安全组ID
+     * 
+     * @return securityGroupId */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -402,20 +319,14 @@ public class NeutronSecurityGroupRule  {
         this.securityGroupId = securityGroupId;
     }
 
-    
-
     public NeutronSecurityGroupRule withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目ID
-     * @return tenantId
-     */
+    /** 项目ID
+     * 
+     * @return tenantId */
     public String getTenantId() {
         return tenantId;
     }
@@ -424,20 +335,14 @@ public class NeutronSecurityGroupRule  {
         this.tenantId = tenantId;
     }
 
-    
-
     public NeutronSecurityGroupRule withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目ID
-     * @return projectId
-     */
+    /** 项目ID
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -446,20 +351,14 @@ public class NeutronSecurityGroupRule  {
         this.projectId = projectId;
     }
 
-    
-
     public NeutronSecurityGroupRule withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：资源创建UTC时间 格式：yyyy-MM-ddTHH:mm:ss
-     * @return createdAt
-     */
+    /** 功能说明：资源创建UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+     * 
+     * @return createdAt */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -468,20 +367,14 @@ public class NeutronSecurityGroupRule  {
         this.createdAt = createdAt;
     }
 
-    
-
     public NeutronSecurityGroupRule withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：资源更新UTC时间 格式：yyyy-MM-ddTHH:mm:ss
-     * @return updatedAt
-     */
+    /** 功能说明：资源更新UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+     * 
+     * @return updatedAt */
     public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
@@ -489,8 +382,6 @@ public class NeutronSecurityGroupRule  {
     public void setUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -501,25 +392,40 @@ public class NeutronSecurityGroupRule  {
             return false;
         }
         NeutronSecurityGroupRule neutronSecurityGroupRule = (NeutronSecurityGroupRule) o;
-        return Objects.equals(this.description, neutronSecurityGroupRule.description) &&
-            Objects.equals(this.direction, neutronSecurityGroupRule.direction) &&
-            Objects.equals(this.ethertype, neutronSecurityGroupRule.ethertype) &&
-            Objects.equals(this.id, neutronSecurityGroupRule.id) &&
-            Objects.equals(this.portRangeMax, neutronSecurityGroupRule.portRangeMax) &&
-            Objects.equals(this.portRangeMin, neutronSecurityGroupRule.portRangeMin) &&
-            Objects.equals(this.protocol, neutronSecurityGroupRule.protocol) &&
-            Objects.equals(this.remoteGroupId, neutronSecurityGroupRule.remoteGroupId) &&
-            Objects.equals(this.remoteIpPrefix, neutronSecurityGroupRule.remoteIpPrefix) &&
-            Objects.equals(this.securityGroupId, neutronSecurityGroupRule.securityGroupId) &&
-            Objects.equals(this.tenantId, neutronSecurityGroupRule.tenantId) &&
-            Objects.equals(this.projectId, neutronSecurityGroupRule.projectId) &&
-            Objects.equals(this.createdAt, neutronSecurityGroupRule.createdAt) &&
-            Objects.equals(this.updatedAt, neutronSecurityGroupRule.updatedAt);
+        return Objects.equals(this.description, neutronSecurityGroupRule.description)
+            && Objects.equals(this.direction, neutronSecurityGroupRule.direction)
+            && Objects.equals(this.ethertype, neutronSecurityGroupRule.ethertype)
+            && Objects.equals(this.id, neutronSecurityGroupRule.id)
+            && Objects.equals(this.portRangeMax, neutronSecurityGroupRule.portRangeMax)
+            && Objects.equals(this.portRangeMin, neutronSecurityGroupRule.portRangeMin)
+            && Objects.equals(this.protocol, neutronSecurityGroupRule.protocol)
+            && Objects.equals(this.remoteGroupId, neutronSecurityGroupRule.remoteGroupId)
+            && Objects.equals(this.remoteIpPrefix, neutronSecurityGroupRule.remoteIpPrefix)
+            && Objects.equals(this.securityGroupId, neutronSecurityGroupRule.securityGroupId)
+            && Objects.equals(this.tenantId, neutronSecurityGroupRule.tenantId)
+            && Objects.equals(this.projectId, neutronSecurityGroupRule.projectId)
+            && Objects.equals(this.createdAt, neutronSecurityGroupRule.createdAt)
+            && Objects.equals(this.updatedAt, neutronSecurityGroupRule.updatedAt);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(description, direction, ethertype, id, portRangeMax, portRangeMin, protocol, remoteGroupId, remoteIpPrefix, securityGroupId, tenantId, projectId, createdAt, updatedAt);
+        return Objects.hash(description,
+            direction,
+            ethertype,
+            id,
+            portRangeMax,
+            portRangeMin,
+            protocol,
+            remoteGroupId,
+            remoteIpPrefix,
+            securityGroupId,
+            tenantId,
+            projectId,
+            createdAt,
+            updatedAt);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -541,16 +447,13 @@ public class NeutronSecurityGroupRule  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.smn.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.smn.v2.model.CreateResourceTagRequestBodyTag;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * CreateResourceTagRequestBody
- */
-public class CreateResourceTagRequestBody  {
-
-
+/** CreateResourceTagRequestBody */
+public class CreateResourceTagRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag")
-    
+    @JsonProperty(value = "tag")
+
     private CreateResourceTagRequestBodyTag tag;
 
     public CreateResourceTagRequestBody withTag(CreateResourceTagRequestBodyTag tag) {
@@ -30,19 +20,17 @@ public class CreateResourceTagRequestBody  {
     }
 
     public CreateResourceTagRequestBody withTag(Consumer<CreateResourceTagRequestBodyTag> tagSetter) {
-        if(this.tag == null ){
+        if (this.tag == null) {
             this.tag = new CreateResourceTagRequestBodyTag();
             tagSetter.accept(this.tag);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get tag
-     * @return tag
-     */
+    /** Get tag
+     * 
+     * @return tag */
     public CreateResourceTagRequestBodyTag getTag() {
         return tag;
     }
@@ -50,8 +38,6 @@ public class CreateResourceTagRequestBody  {
     public void setTag(CreateResourceTagRequestBodyTag tag) {
         this.tag = tag;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class CreateResourceTagRequestBody  {
         CreateResourceTagRequestBody createResourceTagRequestBody = (CreateResourceTagRequestBody) o;
         return Objects.equals(this.tag, createResourceTagRequestBody.tag);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(tag);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class CreateResourceTagRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

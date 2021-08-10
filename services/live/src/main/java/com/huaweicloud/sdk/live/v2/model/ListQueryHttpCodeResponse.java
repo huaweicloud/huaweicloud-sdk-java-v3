@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.live.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.live.v2.model.HttpCodeSummary;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListQueryHttpCodeResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_series")
-    
+    @JsonProperty(value = "data_series")
+
     private List<HttpCodeSummary> dataSeries = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-request-id")
-    
+    @JsonProperty(value = "X-request-id")
+
     private String xRequestId;
 
     public ListQueryHttpCodeResponse withDataSeries(List<HttpCodeSummary> dataSeries) {
@@ -39,9 +27,8 @@ public class ListQueryHttpCodeResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListQueryHttpCodeResponse addDataSeriesItem(HttpCodeSummary dataSeriesItem) {
-        if(this.dataSeries == null) {
+        if (this.dataSeries == null) {
             this.dataSeries = new ArrayList<>();
         }
         this.dataSeries.add(dataSeriesItem);
@@ -49,17 +36,16 @@ public class ListQueryHttpCodeResponse extends SdkResponse {
     }
 
     public ListQueryHttpCodeResponse withDataSeries(Consumer<List<HttpCodeSummary>> dataSeriesSetter) {
-        if(this.dataSeries == null) {
+        if (this.dataSeries == null) {
             this.dataSeries = new ArrayList<>();
         }
         dataSeriesSetter.accept(this.dataSeries);
         return this;
     }
 
-    /**
-     * 基于时间轴的状态码
-     * @return dataSeries
-     */
+    /** 基于时间轴的状态码
+     * 
+     * @return dataSeries */
     public List<HttpCodeSummary> getDataSeries() {
         return dataSeries;
     }
@@ -68,22 +54,16 @@ public class ListQueryHttpCodeResponse extends SdkResponse {
         this.dataSeries = dataSeries;
     }
 
-    
-
     public ListQueryHttpCodeResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
     }
 
-    
-
-
-    /**
-     * Get xRequestId
-     * @return xRequestId
-     */
+    /** Get xRequestId
+     * 
+     * @return xRequestId */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-request-id")
+    @JsonProperty(value = "X-request-id")
     public String getXRequestId() {
         return xRequestId;
     }
@@ -91,8 +71,6 @@ public class ListQueryHttpCodeResponse extends SdkResponse {
     public void setXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -103,13 +81,15 @@ public class ListQueryHttpCodeResponse extends SdkResponse {
             return false;
         }
         ListQueryHttpCodeResponse listQueryHttpCodeResponse = (ListQueryHttpCodeResponse) o;
-        return Objects.equals(this.dataSeries, listQueryHttpCodeResponse.dataSeries) &&
-            Objects.equals(this.xRequestId, listQueryHttpCodeResponse.xRequestId);
+        return Objects.equals(this.dataSeries, listQueryHttpCodeResponse.dataSeries)
+            && Objects.equals(this.xRequestId, listQueryHttpCodeResponse.xRequestId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(dataSeries, xRequestId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -119,16 +99,13 @@ public class ListQueryHttpCodeResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

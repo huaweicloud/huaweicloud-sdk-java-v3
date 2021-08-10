@@ -25,9 +25,7 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public interface HttpResponse {
 
     int getStatusCode();

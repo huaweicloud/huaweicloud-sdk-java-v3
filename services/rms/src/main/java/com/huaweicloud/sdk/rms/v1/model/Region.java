@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 区域
- */
-public class Region  {
-
-
+/** 区域 */
+public class Region {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_id")
-    
+    @JsonProperty(value = "region_id")
+
     private String regionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="display_name")
-    
+    @JsonProperty(value = "display_name")
+
     private String displayName;
 
     public Region withRegionId(String regionId) {
@@ -34,13 +23,9 @@ public class Region  {
         return this;
     }
 
-    
-
-
-    /**
-     * 区域ID
-     * @return regionId
-     */
+    /** 区域ID
+     * 
+     * @return regionId */
     public String getRegionId() {
         return regionId;
     }
@@ -49,20 +34,14 @@ public class Region  {
         this.regionId = regionId;
     }
 
-    
-
     public Region withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
     }
 
-    
-
-
-    /**
-     * 显示名称
-     * @return displayName
-     */
+    /** 显示名称
+     * 
+     * @return displayName */
     public String getDisplayName() {
         return displayName;
     }
@@ -70,8 +49,6 @@ public class Region  {
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,14 @@ public class Region  {
             return false;
         }
         Region region = (Region) o;
-        return Objects.equals(this.regionId, region.regionId) &&
-            Objects.equals(this.displayName, region.displayName);
+        return Objects.equals(this.regionId, region.regionId) && Objects.equals(this.displayName, region.displayName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(regionId, displayName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +76,13 @@ public class Region  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

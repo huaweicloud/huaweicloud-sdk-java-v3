@@ -6,100 +6,95 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.vod.v1.model.*;
+
 import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class VodMeta {
 
-    public static final HttpRequestDef<CancelAssetTranscodeTaskRequest, CancelAssetTranscodeTaskResponse> cancelAssetTranscodeTask = genForcancelAssetTranscodeTask();
+    public static final HttpRequestDef<CancelAssetTranscodeTaskRequest, CancelAssetTranscodeTaskResponse> cancelAssetTranscodeTask =
+        genForcancelAssetTranscodeTask();
 
     private static HttpRequestDef<CancelAssetTranscodeTaskRequest, CancelAssetTranscodeTaskResponse> genForcancelAssetTranscodeTask() {
         // basic
         HttpRequestDef.Builder<CancelAssetTranscodeTaskRequest, CancelAssetTranscodeTaskResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, CancelAssetTranscodeTaskRequest.class, CancelAssetTranscodeTaskResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    CancelAssetTranscodeTaskRequest.class,
+                    CancelAssetTranscodeTaskResponse.class)
                 .withName("CancelAssetTranscodeTask")
                 .withUri("/v1.0/{project_id}/asset/process")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("asset_id",
+        builder.<String>withRequestField("asset_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CancelAssetTranscodeTaskRequest::getAssetId, (req, v) -> {
                 req.setAssetId(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CancelAssetTranscodeTaskRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CancelAssetTranscodeTaskRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CancelExtractAudioTaskRequest, CancelExtractAudioTaskResponse> cancelExtractAudioTask = genForcancelExtractAudioTask();
+    public static final HttpRequestDef<CancelExtractAudioTaskRequest, CancelExtractAudioTaskResponse> cancelExtractAudioTask =
+        genForcancelExtractAudioTask();
 
     private static HttpRequestDef<CancelExtractAudioTaskRequest, CancelExtractAudioTaskResponse> genForcancelExtractAudioTask() {
         // basic
-        HttpRequestDef.Builder<CancelExtractAudioTaskRequest, CancelExtractAudioTaskResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, CancelExtractAudioTaskRequest.class, CancelExtractAudioTaskResponse.class)
-                .withName("CancelExtractAudioTask")
-                .withUri("/v1.0/{project_id}/asset/extract_audio")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<CancelExtractAudioTaskRequest, CancelExtractAudioTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, CancelExtractAudioTaskRequest.class, CancelExtractAudioTaskResponse.class)
+            .withName("CancelExtractAudioTask")
+            .withUri("/v1.0/{project_id}/asset/extract_audio")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("asset_id",
+        builder.<String>withRequestField("asset_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CancelExtractAudioTaskRequest::getAssetId, (req, v) -> {
                 req.setAssetId(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CancelExtractAudioTaskRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CancelExtractAudioTaskRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CheckMd5DuplicationRequest, CheckMd5DuplicationResponse> checkMd5Duplication = genForcheckMd5Duplication();
+    public static final HttpRequestDef<CheckMd5DuplicationRequest, CheckMd5DuplicationResponse> checkMd5Duplication =
+        genForcheckMd5Duplication();
 
     private static HttpRequestDef<CheckMd5DuplicationRequest, CheckMd5DuplicationResponse> genForcheckMd5Duplication() {
         // basic
@@ -110,47 +105,42 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("size",
+        builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(CheckMd5DuplicationRequest::getSize, (req, v) -> {
                 req.setSize(v);
-            })
-        );
-        builder.withRequestField("md5",
+            }));
+        builder.<String>withRequestField("md5",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CheckMd5DuplicationRequest::getMd5, (req, v) -> {
                 req.setMd5(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CheckMd5DuplicationRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CheckMd5DuplicationRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ConfirmAssetUploadRequest, ConfirmAssetUploadResponse> confirmAssetUpload = genForconfirmAssetUpload();
+    public static final HttpRequestDef<ConfirmAssetUploadRequest, ConfirmAssetUploadResponse> confirmAssetUpload =
+        genForconfirmAssetUpload();
 
     private static HttpRequestDef<ConfirmAssetUploadRequest, ConfirmAssetUploadResponse> genForconfirmAssetUpload() {
         // basic
@@ -161,39 +151,35 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ConfirmAssetUploadRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ConfirmAssetUploadRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ConfirmAssetUploadReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ConfirmAssetUploadReq.class,
+            TypeCasts.uncheckedConversion(ConfirmAssetUploadReq.class),
             f -> f.withMarshaller(ConfirmAssetUploadRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ConfirmImageUploadRequest, ConfirmImageUploadResponse> confirmImageUpload = genForconfirmImageUpload();
+    public static final HttpRequestDef<ConfirmImageUploadRequest, ConfirmImageUploadResponse> confirmImageUpload =
+        genForconfirmImageUpload();
 
     private static HttpRequestDef<ConfirmImageUploadRequest, ConfirmImageUploadResponse> genForconfirmImageUpload() {
         // basic
@@ -204,82 +190,74 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ConfirmImageUploadRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ConfirmImageUploadRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ConfirmImageUploadReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ConfirmImageUploadReq.class,
+            TypeCasts.uncheckedConversion(ConfirmImageUploadReq.class),
             f -> f.withMarshaller(ConfirmImageUploadRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateAssetByFileUploadRequest, CreateAssetByFileUploadResponse> createAssetByFileUpload = genForcreateAssetByFileUpload();
+    public static final HttpRequestDef<CreateAssetByFileUploadRequest, CreateAssetByFileUploadResponse> createAssetByFileUpload =
+        genForcreateAssetByFileUpload();
 
     private static HttpRequestDef<CreateAssetByFileUploadRequest, CreateAssetByFileUploadResponse> genForcreateAssetByFileUpload() {
         // basic
-        HttpRequestDef.Builder<CreateAssetByFileUploadRequest, CreateAssetByFileUploadResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateAssetByFileUploadRequest.class, CreateAssetByFileUploadResponse.class)
-                .withName("CreateAssetByFileUpload")
-                .withUri("/v1.0/{project_id}/asset")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<CreateAssetByFileUploadRequest, CreateAssetByFileUploadResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateAssetByFileUploadRequest.class, CreateAssetByFileUploadResponse.class)
+            .withName("CreateAssetByFileUpload")
+            .withUri("/v1.0/{project_id}/asset")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateAssetByFileUploadRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateAssetByFileUploadRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateAssetByFileUploadReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateAssetByFileUploadReq.class,
+            TypeCasts.uncheckedConversion(CreateAssetByFileUploadReq.class),
             f -> f.withMarshaller(CreateAssetByFileUploadRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateAssetCategoryRequest, CreateAssetCategoryResponse> createAssetCategory = genForcreateAssetCategory();
+    public static final HttpRequestDef<CreateAssetCategoryRequest, CreateAssetCategoryResponse> createAssetCategory =
+        genForcreateAssetCategory();
 
     private static HttpRequestDef<CreateAssetCategoryRequest, CreateAssetCategoryResponse> genForcreateAssetCategory() {
         // basic
@@ -290,211 +268,191 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateAssetCategoryRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateAssetCategoryRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateCategoryReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateCategoryReq.class,
+            TypeCasts.uncheckedConversion(CreateCategoryReq.class),
             f -> f.withMarshaller(CreateAssetCategoryRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateAssetProcessTaskRequest, CreateAssetProcessTaskResponse> createAssetProcessTask = genForcreateAssetProcessTask();
+    public static final HttpRequestDef<CreateAssetProcessTaskRequest, CreateAssetProcessTaskResponse> createAssetProcessTask =
+        genForcreateAssetProcessTask();
 
     private static HttpRequestDef<CreateAssetProcessTaskRequest, CreateAssetProcessTaskResponse> genForcreateAssetProcessTask() {
         // basic
-        HttpRequestDef.Builder<CreateAssetProcessTaskRequest, CreateAssetProcessTaskResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateAssetProcessTaskRequest.class, CreateAssetProcessTaskResponse.class)
-                .withName("CreateAssetProcessTask")
-                .withUri("/v1.0/{project_id}/asset/process")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<CreateAssetProcessTaskRequest, CreateAssetProcessTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateAssetProcessTaskRequest.class, CreateAssetProcessTaskResponse.class)
+            .withName("CreateAssetProcessTask")
+            .withUri("/v1.0/{project_id}/asset/process")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateAssetProcessTaskRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateAssetProcessTaskRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<AssetProcessReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            AssetProcessReq.class,
+            TypeCasts.uncheckedConversion(AssetProcessReq.class),
             f -> f.withMarshaller(CreateAssetProcessTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateAssetReviewTaskRequest, CreateAssetReviewTaskResponse> createAssetReviewTask = genForcreateAssetReviewTask();
+    public static final HttpRequestDef<CreateAssetReviewTaskRequest, CreateAssetReviewTaskResponse> createAssetReviewTask =
+        genForcreateAssetReviewTask();
 
     private static HttpRequestDef<CreateAssetReviewTaskRequest, CreateAssetReviewTaskResponse> genForcreateAssetReviewTask() {
         // basic
-        HttpRequestDef.Builder<CreateAssetReviewTaskRequest, CreateAssetReviewTaskResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateAssetReviewTaskRequest.class, CreateAssetReviewTaskResponse.class)
-                .withName("CreateAssetReviewTask")
-                .withUri("/v1.0/{project_id}/asset/review")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<CreateAssetReviewTaskRequest, CreateAssetReviewTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateAssetReviewTaskRequest.class, CreateAssetReviewTaskResponse.class)
+            .withName("CreateAssetReviewTask")
+            .withUri("/v1.0/{project_id}/asset/review")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateAssetReviewTaskRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateAssetReviewTaskRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<AssetReviewReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            AssetReviewReq.class,
+            TypeCasts.uncheckedConversion(AssetReviewReq.class),
             f -> f.withMarshaller(CreateAssetReviewTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateExtractAudioTaskRequest, CreateExtractAudioTaskResponse> createExtractAudioTask = genForcreateExtractAudioTask();
+    public static final HttpRequestDef<CreateExtractAudioTaskRequest, CreateExtractAudioTaskResponse> createExtractAudioTask =
+        genForcreateExtractAudioTask();
 
     private static HttpRequestDef<CreateExtractAudioTaskRequest, CreateExtractAudioTaskResponse> genForcreateExtractAudioTask() {
         // basic
-        HttpRequestDef.Builder<CreateExtractAudioTaskRequest, CreateExtractAudioTaskResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateExtractAudioTaskRequest.class, CreateExtractAudioTaskResponse.class)
-                .withName("CreateExtractAudioTask")
-                .withUri("/v1.0/{project_id}/asset/extract_audio")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<CreateExtractAudioTaskRequest, CreateExtractAudioTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateExtractAudioTaskRequest.class, CreateExtractAudioTaskResponse.class)
+            .withName("CreateExtractAudioTask")
+            .withUri("/v1.0/{project_id}/asset/extract_audio")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateExtractAudioTaskRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateExtractAudioTaskRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ExtractAudioTaskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ExtractAudioTaskReq.class,
+            TypeCasts.uncheckedConversion(ExtractAudioTaskReq.class),
             f -> f.withMarshaller(CreateExtractAudioTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse> createPreheatingAsset = genForcreatePreheatingAsset();
+    public static final HttpRequestDef<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse> createPreheatingAsset =
+        genForcreatePreheatingAsset();
 
     private static HttpRequestDef<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse> genForcreatePreheatingAsset() {
         // basic
-        HttpRequestDef.Builder<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreatePreheatingAssetRequest.class, CreatePreheatingAssetResponse.class)
-                .withName("CreatePreheatingAsset")
-                .withUri("/v1.0/{project_id}/asset/preheating")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreatePreheatingAssetRequest.class, CreatePreheatingAssetResponse.class)
+            .withName("CreatePreheatingAsset")
+            .withUri("/v1.0/{project_id}/asset/preheating")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreatePreheatingAssetRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreatePreheatingAssetRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreatePreheatingAssetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreatePreheatingAssetReq.class,
+            TypeCasts.uncheckedConversion(CreatePreheatingAssetReq.class),
             f -> f.withMarshaller(CreatePreheatingAssetRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse> createTakeOverTask = genForcreateTakeOverTask();
+    public static final HttpRequestDef<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse> createTakeOverTask =
+        genForcreateTakeOverTask();
 
     private static HttpRequestDef<CreateTakeOverTaskRequest, CreateTakeOverTaskResponse> genForcreateTakeOverTask() {
         // basic
@@ -505,39 +463,35 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateTakeOverTaskRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateTakeOverTaskRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateTakeOverTaskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateTakeOverTaskReq.class,
+            TypeCasts.uncheckedConversion(CreateTakeOverTaskReq.class),
             f -> f.withMarshaller(CreateTakeOverTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateTemplateGroupRequest, CreateTemplateGroupResponse> createTemplateGroup = genForcreateTemplateGroup();
+    public static final HttpRequestDef<CreateTemplateGroupRequest, CreateTemplateGroupResponse> createTemplateGroup =
+        genForcreateTemplateGroup();
 
     private static HttpRequestDef<CreateTemplateGroupRequest, CreateTemplateGroupResponse> genForcreateTemplateGroup() {
         // basic
@@ -548,120 +502,107 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateTemplateGroupRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateTemplateGroupRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<TransTemplateGroup>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TransTemplateGroup.class,
+            TypeCasts.uncheckedConversion(TransTemplateGroup.class),
             f -> f.withMarshaller(CreateTemplateGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse> createWatermarkTemplate = genForcreateWatermarkTemplate();
+    public static final HttpRequestDef<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse> createWatermarkTemplate =
+        genForcreateWatermarkTemplate();
 
     private static HttpRequestDef<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse> genForcreateWatermarkTemplate() {
         // basic
-        HttpRequestDef.Builder<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateWatermarkTemplateRequest.class, CreateWatermarkTemplateResponse.class)
-                .withName("CreateWatermarkTemplate")
-                .withUri("/v1.0/{project_id}/template/watermark")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateWatermarkTemplateRequest.class, CreateWatermarkTemplateResponse.class)
+            .withName("CreateWatermarkTemplate")
+            .withUri("/v1.0/{project_id}/template/watermark")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateWatermarkTemplateRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateWatermarkTemplateRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateWatermarkTemplateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateWatermarkTemplateReq.class,
+            TypeCasts.uncheckedConversion(CreateWatermarkTemplateReq.class),
             f -> f.withMarshaller(CreateWatermarkTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAssetCategoryRequest, DeleteAssetCategoryResponse> deleteAssetCategory = genFordeleteAssetCategory();
+    public static final HttpRequestDef<DeleteAssetCategoryRequest, DeleteAssetCategoryResponse> deleteAssetCategory =
+        genFordeleteAssetCategory();
 
     private static HttpRequestDef<DeleteAssetCategoryRequest, DeleteAssetCategoryResponse> genFordeleteAssetCategory() {
         // basic
-        HttpRequestDef.Builder<DeleteAssetCategoryRequest, DeleteAssetCategoryResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAssetCategoryRequest.class, DeleteAssetCategoryResponse.class)
-                .withName("DeleteAssetCategory")
-                .withUri("/v1.0/{project_id}/asset/category")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<DeleteAssetCategoryRequest, DeleteAssetCategoryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteAssetCategoryRequest.class, DeleteAssetCategoryResponse.class)
+            .withName("DeleteAssetCategory")
+            .withUri("/v1.0/{project_id}/asset/category")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("id",
+        builder.<Integer>withRequestField("id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(DeleteAssetCategoryRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAssetCategoryRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAssetCategoryRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -677,125 +618,113 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("asset_id",
+        builder.<List<String>>withRequestField("asset_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(DeleteAssetsRequest::getAssetId, (req, v) -> {
                 req.setAssetId(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAssetsRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAssetsRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse> deleteTemplateGroup = genFordeleteTemplateGroup();
+    public static final HttpRequestDef<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse> deleteTemplateGroup =
+        genFordeleteTemplateGroup();
 
     private static HttpRequestDef<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse> genFordeleteTemplateGroup() {
         // basic
-        HttpRequestDef.Builder<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTemplateGroupRequest.class, DeleteTemplateGroupResponse.class)
-                .withName("DeleteTemplateGroup")
-                .withUri("/v1.0/{project_id}/asset/template_group/transcodings")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<DeleteTemplateGroupRequest, DeleteTemplateGroupResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteTemplateGroupRequest.class, DeleteTemplateGroupResponse.class)
+            .withName("DeleteTemplateGroup")
+            .withUri("/v1.0/{project_id}/asset/template_group/transcodings")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("group_id",
+        builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTemplateGroupRequest::getGroupId, (req, v) -> {
                 req.setGroupId(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTemplateGroupRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTemplateGroupRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse> deleteWatermarkTemplate = genFordeleteWatermarkTemplate();
+    public static final HttpRequestDef<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse> deleteWatermarkTemplate =
+        genFordeleteWatermarkTemplate();
 
     private static HttpRequestDef<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse> genFordeleteWatermarkTemplate() {
         // basic
-        HttpRequestDef.Builder<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteWatermarkTemplateRequest.class, DeleteWatermarkTemplateResponse.class)
-                .withName("DeleteWatermarkTemplate")
-                .withUri("/v1.0/{project_id}/template/watermark")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<DeleteWatermarkTemplateRequest, DeleteWatermarkTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteWatermarkTemplateRequest.class, DeleteWatermarkTemplateResponse.class)
+            .withName("DeleteWatermarkTemplate")
+            .withUri("/v1.0/{project_id}/template/watermark")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("id",
+        builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteWatermarkTemplateRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteWatermarkTemplateRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteWatermarkTemplateRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAssetCategoryRequest, ListAssetCategoryResponse> listAssetCategory = genForlistAssetCategory();
+    public static final HttpRequestDef<ListAssetCategoryRequest, ListAssetCategoryResponse> listAssetCategory =
+        genForlistAssetCategory();
 
     private static HttpRequestDef<ListAssetCategoryRequest, ListAssetCategoryResponse> genForlistAssetCategory() {
         // basic
@@ -806,48 +735,43 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("id",
+        builder.<Integer>withRequestField("id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAssetCategoryRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAssetCategoryRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAssetCategoryRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.<List<QueryCategoryRsp>>withResponseField(
-            "body",
+
+        builder.<List<QueryCategoryRsp>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListAssetCategoryResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(ListAssetCategoryResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            }).withInnerContainerType(QueryCategoryRsp.class)
-        );
-
+            }).withInnerContainerType(QueryCategoryRsp.class));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAssetListRequest, ListAssetListResponse> listAssetList = genForlistAssetList();
+    public static final HttpRequestDef<ListAssetListRequest, ListAssetListResponse> listAssetList =
+        genForlistAssetList();
 
     private static HttpRequestDef<ListAssetListRequest, ListAssetListResponse> genForlistAssetList() {
         // basic
@@ -858,119 +782,105 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("asset_id",
+        builder.<List<String>>withRequestField("asset_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListAssetListRequest::getAssetId, (req, v) -> {
                 req.setAssetId(v);
-            })
-        );
-        builder.withRequestField("status",
+            }));
+        builder.<List<ListAssetListRequest.StatusEnum>>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListAssetListRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
-            })
-        );
-        builder.withRequestField("start_time",
+            }));
+        builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAssetListRequest::getStartTime, (req, v) -> {
                 req.setStartTime(v);
-            })
-        );
-        builder.withRequestField("end_time",
+            }));
+        builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAssetListRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
-            })
-        );
-        builder.withRequestField("category_id",
+            }));
+        builder.<Integer>withRequestField("category_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAssetListRequest::getCategoryId, (req, v) -> {
                 req.setCategoryId(v);
-            })
-        );
-        builder.withRequestField("tags",
+            }));
+        builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAssetListRequest::getTags, (req, v) -> {
                 req.setTags(v);
-            })
-        );
-        builder.withRequestField("query_string",
+            }));
+        builder.<String>withRequestField("query_string",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAssetListRequest::getQueryString, (req, v) -> {
                 req.setQueryString(v);
-            })
-        );
-        builder.withRequestField("media_type",
+            }));
+        builder.<List<String>>withRequestField("media_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListAssetListRequest::getMediaType, (req, v) -> {
                 req.setMediaType(v);
-            })
-        );
-        builder.withRequestField("page",
+            }));
+        builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAssetListRequest::getPage, (req, v) -> {
                 req.setPage(v);
-            })
-        );
-        builder.withRequestField("size",
+            }));
+        builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAssetListRequest::getSize, (req, v) -> {
                 req.setSize(v);
-            })
-        );
-        builder.withRequestField("order",
+            }));
+        builder.<ListAssetListRequest.OrderEnum>withRequestField("order",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            ListAssetListRequest.OrderEnum.class,
+            TypeCasts.uncheckedConversion(ListAssetListRequest.OrderEnum.class),
             f -> f.withMarshaller(ListAssetListRequest::getOrder, (req, v) -> {
                 req.setOrder(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAssetListRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAssetListRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTemplateGroupRequest, ListTemplateGroupResponse> listTemplateGroup = genForlistTemplateGroup();
+    public static final HttpRequestDef<ListTemplateGroupRequest, ListTemplateGroupResponse> listTemplateGroup =
+        genForlistTemplateGroup();
 
     private static HttpRequestDef<ListTemplateGroupRequest, ListTemplateGroupResponse> genForlistTemplateGroup() {
         // basic
@@ -981,63 +891,56 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("group_id",
+        builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTemplateGroupRequest::getGroupId, (req, v) -> {
                 req.setGroupId(v);
-            })
-        );
-        builder.withRequestField("status",
+            }));
+        builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTemplateGroupRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
-            })
-        );
-        builder.withRequestField("page",
+            }));
+        builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTemplateGroupRequest::getPage, (req, v) -> {
                 req.setPage(v);
-            })
-        );
-        builder.withRequestField("size",
+            }));
+        builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTemplateGroupRequest::getSize, (req, v) -> {
                 req.setSize(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTemplateGroupRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTemplateGroupRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTopStatisticsRequest, ListTopStatisticsResponse> listTopStatistics = genForlistTopStatistics();
+    public static final HttpRequestDef<ListTopStatisticsRequest, ListTopStatisticsResponse> listTopStatistics =
+        genForlistTopStatistics();
 
     private static HttpRequestDef<ListTopStatisticsRequest, ListTopStatisticsResponse> genForlistTopStatistics() {
         // basic
@@ -1048,106 +951,95 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("domain",
+        builder.<String>withRequestField("domain",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTopStatisticsRequest::getDomain, (req, v) -> {
                 req.setDomain(v);
-            })
-        );
-        builder.withRequestField("date",
+            }));
+        builder.<String>withRequestField("date",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTopStatisticsRequest::getDate, (req, v) -> {
                 req.setDate(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTopStatisticsRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTopStatisticsRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse> listWatermarkTemplate = genForlistWatermarkTemplate();
+    public static final HttpRequestDef<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse> listWatermarkTemplate =
+        genForlistWatermarkTemplate();
 
     private static HttpRequestDef<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse> genForlistWatermarkTemplate() {
         // basic
-        HttpRequestDef.Builder<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListWatermarkTemplateRequest.class, ListWatermarkTemplateResponse.class)
-                .withName("ListWatermarkTemplate")
-                .withUri("/v1.0/{project_id}/template/watermark")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ListWatermarkTemplateRequest, ListWatermarkTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListWatermarkTemplateRequest.class, ListWatermarkTemplateResponse.class)
+            .withName("ListWatermarkTemplate")
+            .withUri("/v1.0/{project_id}/template/watermark")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("id",
+        builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListWatermarkTemplateRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("page",
+            }));
+        builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListWatermarkTemplateRequest::getPage, (req, v) -> {
                 req.setPage(v);
-            })
-        );
-        builder.withRequestField("size",
+            }));
+        builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListWatermarkTemplateRequest::getSize, (req, v) -> {
                 req.setSize(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListWatermarkTemplateRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListWatermarkTemplateRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<PublishAssetFromObsRequest, PublishAssetFromObsResponse> publishAssetFromObs = genForpublishAssetFromObs();
+    public static final HttpRequestDef<PublishAssetFromObsRequest, PublishAssetFromObsResponse> publishAssetFromObs =
+        genForpublishAssetFromObs();
 
     private static HttpRequestDef<PublishAssetFromObsRequest, PublishAssetFromObsResponse> genForpublishAssetFromObs() {
         // basic
@@ -1158,39 +1050,35 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(PublishAssetFromObsRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(PublishAssetFromObsRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<PublishAssetFromObsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            PublishAssetFromObsReq.class,
+            TypeCasts.uncheckedConversion(PublishAssetFromObsReq.class),
             f -> f.withMarshaller(PublishAssetFromObsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<PublishAssetsRequest, PublishAssetsResponse> publishAssets = genForpublishAssets();
+    public static final HttpRequestDef<PublishAssetsRequest, PublishAssetsResponse> publishAssets =
+        genForpublishAssets();
 
     private static HttpRequestDef<PublishAssetsRequest, PublishAssetsResponse> genForpublishAssets() {
         // basic
@@ -1201,39 +1089,35 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(PublishAssetsRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(PublishAssetsRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<PublishAssetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            PublishAssetReq.class,
+            TypeCasts.uncheckedConversion(PublishAssetReq.class),
             f -> f.withMarshaller(PublishAssetsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAssetCipherRequest, ShowAssetCipherResponse> showAssetCipher = genForshowAssetCipher();
+    public static final HttpRequestDef<ShowAssetCipherRequest, ShowAssetCipherResponse> showAssetCipher =
+        genForshowAssetCipher();
 
     private static HttpRequestDef<ShowAssetCipherRequest, ShowAssetCipherResponse> genForshowAssetCipher() {
         // basic
@@ -1244,39 +1128,35 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("asset_id",
+        builder.<String>withRequestField("asset_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssetCipherRequest::getAssetId, (req, v) -> {
                 req.setAssetId(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssetCipherRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssetCipherRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAssetDetailRequest, ShowAssetDetailResponse> showAssetDetail = genForshowAssetDetail();
+    public static final HttpRequestDef<ShowAssetDetailRequest, ShowAssetDetailResponse> showAssetDetail =
+        genForshowAssetDetail();
 
     private static HttpRequestDef<ShowAssetDetailRequest, ShowAssetDetailResponse> genForshowAssetDetail() {
         // basic
@@ -1287,47 +1167,42 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("asset_id",
+        builder.<String>withRequestField("asset_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssetDetailRequest::getAssetId, (req, v) -> {
                 req.setAssetId(v);
-            })
-        );
-        builder.withRequestField("categories",
+            }));
+        builder.<List<ShowAssetDetailRequest.CategoriesEnum>>withRequestField("categories",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ShowAssetDetailRequest::getCategories, (req, v) -> {
                 req.setCategories(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssetDetailRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssetDetailRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAssetMetaRequest, ShowAssetMetaResponse> showAssetMeta = genForshowAssetMeta();
+    public static final HttpRequestDef<ShowAssetMetaRequest, ShowAssetMetaResponse> showAssetMeta =
+        genForshowAssetMeta();
 
     private static HttpRequestDef<ShowAssetMetaRequest, ShowAssetMetaResponse> genForshowAssetMeta() {
         // basic
@@ -1338,210 +1213,186 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("asset_id",
+        builder.<List<String>>withRequestField("asset_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ShowAssetMetaRequest::getAssetId, (req, v) -> {
                 req.setAssetId(v);
-            })
-        );
-        builder.withRequestField("status",
+            }));
+        builder.<List<ShowAssetMetaRequest.StatusEnum>>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ShowAssetMetaRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
-            })
-        );
-        builder.withRequestField("transcodeStatus",
+            }));
+        builder.<List<ShowAssetMetaRequest.TranscodeStatusEnum>>withRequestField("transcodeStatus",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ShowAssetMetaRequest::getTranscodeStatus, (req, v) -> {
                 req.setTranscodeStatus(v);
-            })
-        );
-        builder.withRequestField("assetStatus",
+            }));
+        builder.<List<ShowAssetMetaRequest.AssetStatusEnum>>withRequestField("assetStatus",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ShowAssetMetaRequest::getAssetStatus, (req, v) -> {
                 req.setAssetStatus(v);
-            })
-        );
-        builder.withRequestField("start_time",
+            }));
+        builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssetMetaRequest::getStartTime, (req, v) -> {
                 req.setStartTime(v);
-            })
-        );
-        builder.withRequestField("end_time",
+            }));
+        builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssetMetaRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
-            })
-        );
-        builder.withRequestField("category_id",
+            }));
+        builder.<Integer>withRequestField("category_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowAssetMetaRequest::getCategoryId, (req, v) -> {
                 req.setCategoryId(v);
-            })
-        );
-        builder.withRequestField("tags",
+            }));
+        builder.<String>withRequestField("tags",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssetMetaRequest::getTags, (req, v) -> {
                 req.setTags(v);
-            })
-        );
-        builder.withRequestField("query_string",
+            }));
+        builder.<String>withRequestField("query_string",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssetMetaRequest::getQueryString, (req, v) -> {
                 req.setQueryString(v);
-            })
-        );
-        builder.withRequestField("page",
+            }));
+        builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowAssetMetaRequest::getPage, (req, v) -> {
                 req.setPage(v);
-            })
-        );
-        builder.withRequestField("size",
+            }));
+        builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowAssetMetaRequest::getSize, (req, v) -> {
                 req.setSize(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssetMetaRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssetMetaRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAssetTempAuthorityRequest, ShowAssetTempAuthorityResponse> showAssetTempAuthority = genForshowAssetTempAuthority();
+    public static final HttpRequestDef<ShowAssetTempAuthorityRequest, ShowAssetTempAuthorityResponse> showAssetTempAuthority =
+        genForshowAssetTempAuthority();
 
     private static HttpRequestDef<ShowAssetTempAuthorityRequest, ShowAssetTempAuthorityResponse> genForshowAssetTempAuthority() {
         // basic
-        HttpRequestDef.Builder<ShowAssetTempAuthorityRequest, ShowAssetTempAuthorityResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowAssetTempAuthorityRequest.class, ShowAssetTempAuthorityResponse.class)
-                .withName("ShowAssetTempAuthority")
-                .withUri("/v1.1/{project_id}/asset/authority")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowAssetTempAuthorityRequest, ShowAssetTempAuthorityResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAssetTempAuthorityRequest.class, ShowAssetTempAuthorityResponse.class)
+            .withName("ShowAssetTempAuthority")
+            .withUri("/v1.1/{project_id}/asset/authority")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("http_verb",
+        builder.<String>withRequestField("http_verb",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getHttpVerb, (req, v) -> {
                 req.setHttpVerb(v);
-            })
-        );
-        builder.withRequestField("bucket",
+            }));
+        builder.<String>withRequestField("bucket",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getBucket, (req, v) -> {
                 req.setBucket(v);
-            })
-        );
-        builder.withRequestField("object_key",
+            }));
+        builder.<String>withRequestField("object_key",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getObjectKey, (req, v) -> {
                 req.setObjectKey(v);
-            })
-        );
-        builder.withRequestField("content_type",
+            }));
+        builder.<String>withRequestField("content_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getContentType, (req, v) -> {
                 req.setContentType(v);
-            })
-        );
-        builder.withRequestField("content_md5",
+            }));
+        builder.<String>withRequestField("content_md5",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getContentMd5, (req, v) -> {
                 req.setContentMd5(v);
-            })
-        );
-        builder.withRequestField("upload_id",
+            }));
+        builder.<String>withRequestField("upload_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getUploadId, (req, v) -> {
                 req.setUploadId(v);
-            })
-        );
-        builder.withRequestField("part_number",
+            }));
+        builder.<Integer>withRequestField("part_number",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getPartNumber, (req, v) -> {
                 req.setPartNumber(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAssetTempAuthorityRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowCdnStatisticsRequest, ShowCdnStatisticsResponse> showCdnStatistics = genForshowCdnStatistics();
+    public static final HttpRequestDef<ShowCdnStatisticsRequest, ShowCdnStatisticsResponse> showCdnStatistics =
+        genForshowCdnStatistics();
 
     private static HttpRequestDef<ShowCdnStatisticsRequest, ShowCdnStatisticsResponse> genForshowCdnStatistics() {
         // basic
@@ -1552,71 +1403,63 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("start_time",
+        builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCdnStatisticsRequest::getStartTime, (req, v) -> {
                 req.setStartTime(v);
-            })
-        );
-        builder.withRequestField("end_time",
+            }));
+        builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCdnStatisticsRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
-            })
-        );
-        builder.withRequestField("stat_type",
+            }));
+        builder.<String>withRequestField("stat_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCdnStatisticsRequest::getStatType, (req, v) -> {
                 req.setStatType(v);
-            })
-        );
-        builder.withRequestField("domain",
+            }));
+        builder.<String>withRequestField("domain",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCdnStatisticsRequest::getDomain, (req, v) -> {
                 req.setDomain(v);
-            })
-        );
-        builder.withRequestField("interval",
+            }));
+        builder.<Integer>withRequestField("interval",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowCdnStatisticsRequest::getInterval, (req, v) -> {
                 req.setInterval(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCdnStatisticsRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCdnStatisticsRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse> showPreheatingAsset = genForshowPreheatingAsset();
+    public static final HttpRequestDef<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse> showPreheatingAsset =
+        genForshowPreheatingAsset();
 
     private static HttpRequestDef<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse> genForshowPreheatingAsset() {
         // basic
@@ -1627,39 +1470,35 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPreheatingAssetRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPreheatingAssetRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPreheatingAssetRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowVodStatisticsRequest, ShowVodStatisticsResponse> showVodStatistics = genForshowVodStatistics();
+    public static final HttpRequestDef<ShowVodStatisticsRequest, ShowVodStatisticsResponse> showVodStatistics =
+        genForshowVodStatistics();
 
     private static HttpRequestDef<ShowVodStatisticsRequest, ShowVodStatisticsResponse> genForshowVodStatistics() {
         // basic
@@ -1670,55 +1509,49 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("start_time",
+        builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowVodStatisticsRequest::getStartTime, (req, v) -> {
                 req.setStartTime(v);
-            })
-        );
-        builder.withRequestField("end_time",
+            }));
+        builder.<String>withRequestField("end_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowVodStatisticsRequest::getEndTime, (req, v) -> {
                 req.setEndTime(v);
-            })
-        );
-        builder.withRequestField("interval",
+            }));
+        builder.<Integer>withRequestField("interval",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowVodStatisticsRequest::getInterval, (req, v) -> {
                 req.setInterval(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowVodStatisticsRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowVodStatisticsRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UnpublishAssetsRequest, UnpublishAssetsResponse> unpublishAssets = genForunpublishAssets();
+    public static final HttpRequestDef<UnpublishAssetsRequest, UnpublishAssetsResponse> unpublishAssets =
+        genForunpublishAssets();
 
     private static HttpRequestDef<UnpublishAssetsRequest, UnpublishAssetsResponse> genForunpublishAssets() {
         // basic
@@ -1729,34 +1562,29 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UnpublishAssetsRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UnpublishAssetsRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<PublishAssetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            PublishAssetReq.class,
+            TypeCasts.uncheckedConversion(PublishAssetReq.class),
             f -> f.withMarshaller(UnpublishAssetsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1772,39 +1600,35 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateAssetRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateAssetRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UploadAssetReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UploadAssetReq.class,
+            TypeCasts.uncheckedConversion(UploadAssetReq.class),
             f -> f.withMarshaller(UpdateAssetRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAssetCategoryRequest, UpdateAssetCategoryResponse> updateAssetCategory = genForupdateAssetCategory();
+    public static final HttpRequestDef<UpdateAssetCategoryRequest, UpdateAssetCategoryResponse> updateAssetCategory =
+        genForupdateAssetCategory();
 
     private static HttpRequestDef<UpdateAssetCategoryRequest, UpdateAssetCategoryResponse> genForupdateAssetCategory() {
         // basic
@@ -1815,39 +1639,35 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateAssetCategoryRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateAssetCategoryRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateCategoryReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateCategoryReq.class,
+            TypeCasts.uncheckedConversion(UpdateCategoryReq.class),
             f -> f.withMarshaller(UpdateAssetCategoryRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAssetMetaRequest, UpdateAssetMetaResponse> updateAssetMeta = genForupdateAssetMeta();
+    public static final HttpRequestDef<UpdateAssetMetaRequest, UpdateAssetMetaResponse> updateAssetMeta =
+        genForupdateAssetMeta();
 
     private static HttpRequestDef<UpdateAssetMetaRequest, UpdateAssetMetaResponse> genForupdateAssetMeta() {
         // basic
@@ -1858,125 +1678,113 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateAssetMetaRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateAssetMetaRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateAssetMetaReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            UpdateAssetMetaReq.class,
+            TypeCasts.uncheckedConversion(UpdateAssetMetaReq.class),
             f -> f.withMarshaller(UpdateAssetMetaRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse> updateBucketAuthorized = genForupdateBucketAuthorized();
+    public static final HttpRequestDef<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse> updateBucketAuthorized =
+        genForupdateBucketAuthorized();
 
     private static HttpRequestDef<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse> genForupdateBucketAuthorized() {
         // basic
-        HttpRequestDef.Builder<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateBucketAuthorizedRequest.class, UpdateBucketAuthorizedResponse.class)
-                .withName("UpdateBucketAuthorized")
-                .withUri("/v1.0/{project_id}/asset/authority")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<UpdateBucketAuthorizedRequest, UpdateBucketAuthorizedResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateBucketAuthorizedRequest.class, UpdateBucketAuthorizedResponse.class)
+            .withName("UpdateBucketAuthorized")
+            .withUri("/v1.0/{project_id}/asset/authority")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateBucketAuthorizedRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateBucketAuthorizedRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateBucketAuthorizedReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateBucketAuthorizedReq.class,
+            TypeCasts.uncheckedConversion(UpdateBucketAuthorizedReq.class),
             f -> f.withMarshaller(UpdateBucketAuthorizedRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateCoverByThumbnailRequest, UpdateCoverByThumbnailResponse> updateCoverByThumbnail = genForupdateCoverByThumbnail();
+    public static final HttpRequestDef<UpdateCoverByThumbnailRequest, UpdateCoverByThumbnailResponse> updateCoverByThumbnail =
+        genForupdateCoverByThumbnail();
 
     private static HttpRequestDef<UpdateCoverByThumbnailRequest, UpdateCoverByThumbnailResponse> genForupdateCoverByThumbnail() {
         // basic
-        HttpRequestDef.Builder<UpdateCoverByThumbnailRequest, UpdateCoverByThumbnailResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateCoverByThumbnailRequest.class, UpdateCoverByThumbnailResponse.class)
-                .withName("UpdateCoverByThumbnail")
-                .withUri("/v1.0/{project_id}/asset/cover")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<UpdateCoverByThumbnailRequest, UpdateCoverByThumbnailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateCoverByThumbnailRequest.class, UpdateCoverByThumbnailResponse.class)
+            .withName("UpdateCoverByThumbnail")
+            .withUri("/v1.0/{project_id}/asset/cover")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateCoverByThumbnailRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateCoverByThumbnailRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateCoverByThumbnailReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateCoverByThumbnailReq.class,
+            TypeCasts.uncheckedConversion(UpdateCoverByThumbnailReq.class),
             f -> f.withMarshaller(UpdateCoverByThumbnailRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateTemplateGroupRequest, UpdateTemplateGroupResponse> updateTemplateGroup = genForupdateTemplateGroup();
+    public static final HttpRequestDef<UpdateTemplateGroupRequest, UpdateTemplateGroupResponse> updateTemplateGroup =
+        genForupdateTemplateGroup();
 
     private static HttpRequestDef<UpdateTemplateGroupRequest, UpdateTemplateGroupResponse> genForupdateTemplateGroup() {
         // basic
@@ -1987,82 +1795,74 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateTemplateGroupRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateTemplateGroupRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ModifyTransTemplateGroup>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ModifyTransTemplateGroup.class,
+            TypeCasts.uncheckedConversion(ModifyTransTemplateGroup.class),
             f -> f.withMarshaller(UpdateTemplateGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse> updateWatermarkTemplate = genForupdateWatermarkTemplate();
+    public static final HttpRequestDef<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse> updateWatermarkTemplate =
+        genForupdateWatermarkTemplate();
 
     private static HttpRequestDef<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse> genForupdateWatermarkTemplate() {
         // basic
-        HttpRequestDef.Builder<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateWatermarkTemplateRequest.class, UpdateWatermarkTemplateResponse.class)
-                .withName("UpdateWatermarkTemplate")
-                .withUri("/v1.0/{project_id}/template/watermark")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<UpdateWatermarkTemplateRequest, UpdateWatermarkTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateWatermarkTemplateRequest.class, UpdateWatermarkTemplateResponse.class)
+            .withName("UpdateWatermarkTemplate")
+            .withUri("/v1.0/{project_id}/template/watermark")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateWatermarkTemplateRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateWatermarkTemplateRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateWatermarkTemplateReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            UpdateWatermarkTemplateReq.class,
+            TypeCasts.uncheckedConversion(UpdateWatermarkTemplateReq.class),
             f -> f.withMarshaller(UpdateWatermarkTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UploadMetaDataByUrlRequest, UploadMetaDataByUrlResponse> uploadMetaDataByUrl = genForuploadMetaDataByUrl();
+    public static final HttpRequestDef<UploadMetaDataByUrlRequest, UploadMetaDataByUrlResponse> uploadMetaDataByUrl =
+        genForuploadMetaDataByUrl();
 
     private static HttpRequestDef<UploadMetaDataByUrlRequest, UploadMetaDataByUrlResponse> genForuploadMetaDataByUrl() {
         // basic
@@ -2073,39 +1873,35 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("Authorization",
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UploadMetaDataByUrlRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UploadMetaDataByUrlRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UploadMetaDataByUrlReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UploadMetaDataByUrlReq.class,
+            TypeCasts.uncheckedConversion(UploadMetaDataByUrlReq.class),
             f -> f.withMarshaller(UploadMetaDataByUrlRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTakeOverTaskRequest, ListTakeOverTaskResponse> listTakeOverTask = genForlistTakeOverTask();
+    public static final HttpRequestDef<ListTakeOverTaskRequest, ListTakeOverTaskResponse> listTakeOverTask =
+        genForlistTakeOverTask();
 
     private static HttpRequestDef<ListTakeOverTaskRequest, ListTakeOverTaskResponse> genForlistTakeOverTask() {
         // basic
@@ -2116,168 +1912,150 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("status",
+        builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTakeOverTaskRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
-            })
-        );
-        builder.withRequestField("task_id",
+            }));
+        builder.<String>withRequestField("task_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTakeOverTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
-        builder.withRequestField("page",
+            }));
+        builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTakeOverTaskRequest::getPage, (req, v) -> {
                 req.setPage(v);
-            })
-        );
-        builder.withRequestField("size",
+            }));
+        builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTakeOverTaskRequest::getSize, (req, v) -> {
                 req.setSize(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTakeOverTaskRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTakeOverTaskRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTakeOverAssetDetailsRequest, ShowTakeOverAssetDetailsResponse> showTakeOverAssetDetails = genForshowTakeOverAssetDetails();
+    public static final HttpRequestDef<ShowTakeOverAssetDetailsRequest, ShowTakeOverAssetDetailsResponse> showTakeOverAssetDetails =
+        genForshowTakeOverAssetDetails();
 
     private static HttpRequestDef<ShowTakeOverAssetDetailsRequest, ShowTakeOverAssetDetailsResponse> genForshowTakeOverAssetDetails() {
         // basic
         HttpRequestDef.Builder<ShowTakeOverAssetDetailsRequest, ShowTakeOverAssetDetailsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowTakeOverAssetDetailsRequest.class, ShowTakeOverAssetDetailsResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowTakeOverAssetDetailsRequest.class, ShowTakeOverAssetDetailsResponse.class)
                 .withName("ShowTakeOverAssetDetails")
                 .withUri("/v1.0/{project_id}/asset/obs/host/task/details")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("source_bucket",
+        builder.<String>withRequestField("source_bucket",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTakeOverAssetDetailsRequest::getSourceBucket, (req, v) -> {
                 req.setSourceBucket(v);
-            })
-        );
-        builder.withRequestField("source_object",
+            }));
+        builder.<String>withRequestField("source_object",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTakeOverAssetDetailsRequest::getSourceObject, (req, v) -> {
                 req.setSourceObject(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTakeOverAssetDetailsRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTakeOverAssetDetailsRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTakeOverTaskDetailsRequest, ShowTakeOverTaskDetailsResponse> showTakeOverTaskDetails = genForshowTakeOverTaskDetails();
+    public static final HttpRequestDef<ShowTakeOverTaskDetailsRequest, ShowTakeOverTaskDetailsResponse> showTakeOverTaskDetails =
+        genForshowTakeOverTaskDetails();
 
     private static HttpRequestDef<ShowTakeOverTaskDetailsRequest, ShowTakeOverTaskDetailsResponse> genForshowTakeOverTaskDetails() {
         // basic
-        HttpRequestDef.Builder<ShowTakeOverTaskDetailsRequest, ShowTakeOverTaskDetailsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowTakeOverTaskDetailsRequest.class, ShowTakeOverTaskDetailsResponse.class)
-                .withName("ShowTakeOverTaskDetails")
-                .withUri("/v1.0/{project_id}/asset/obs/host/stock/task/details")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowTakeOverTaskDetailsRequest, ShowTakeOverTaskDetailsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowTakeOverTaskDetailsRequest.class, ShowTakeOverTaskDetailsResponse.class)
+            .withName("ShowTakeOverTaskDetails")
+            .withUri("/v1.0/{project_id}/asset/obs/host/stock/task/details")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTakeOverTaskDetailsRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
-        builder.withRequestField("page",
+            }));
+        builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowTakeOverTaskDetailsRequest::getPage, (req, v) -> {
                 req.setPage(v);
-            })
-        );
-        builder.withRequestField("size",
+            }));
+        builder.<Integer>withRequestField("size",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowTakeOverTaskDetailsRequest::getSize, (req, v) -> {
                 req.setSize(v);
-            })
-        );
-        builder.withRequestField("Authorization",
+            }));
+        builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTakeOverTaskDetailsRequest::getAuthorization, (req, v) -> {
                 req.setAuthorization(v);
-            })
-        );
-        builder.withRequestField("X-Sdk-Date",
+            }));
+        builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTakeOverTaskDetailsRequest::getXSdkDate, (req, v) -> {
                 req.setXSdkDate(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.das.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.das.v3.model.FullSql;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ExportSqlStatementsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="statements")
-    
+    @JsonProperty(value = "statements")
+
     private List<FullSql> statements = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="next_marker")
-    
+    @JsonProperty(value = "next_marker")
+
     private String nextMarker;
 
     public ExportSqlStatementsResponse withStatements(List<FullSql> statements) {
@@ -39,9 +27,8 @@ public class ExportSqlStatementsResponse extends SdkResponse {
         return this;
     }
 
-    
     public ExportSqlStatementsResponse addStatementsItem(FullSql statementsItem) {
-        if(this.statements == null) {
+        if (this.statements == null) {
             this.statements = new ArrayList<>();
         }
         this.statements.add(statementsItem);
@@ -49,17 +36,16 @@ public class ExportSqlStatementsResponse extends SdkResponse {
     }
 
     public ExportSqlStatementsResponse withStatements(Consumer<List<FullSql>> statementsSetter) {
-        if(this.statements == null) {
+        if (this.statements == null) {
             this.statements = new ArrayList<>();
         }
         statementsSetter.accept(this.statements);
         return this;
     }
 
-    /**
-     * 全量SQL集合。当集合为空时，说明SQL已全部导出。
-     * @return statements
-     */
+    /** 全量SQL集合。当集合为空时，说明SQL已全部导出。
+     * 
+     * @return statements */
     public List<FullSql> getStatements() {
         return statements;
     }
@@ -68,20 +54,14 @@ public class ExportSqlStatementsResponse extends SdkResponse {
         this.statements = statements;
     }
 
-    
-
     public ExportSqlStatementsResponse withNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
         return this;
     }
 
-    
-
-
-    /**
-     * 获取下一页所需的标识符。marker仅在3分钟内有效。
-     * @return nextMarker
-     */
+    /** 获取下一页所需的标识符。marker仅在3分钟内有效。
+     * 
+     * @return nextMarker */
     public String getNextMarker() {
         return nextMarker;
     }
@@ -89,8 +69,6 @@ public class ExportSqlStatementsResponse extends SdkResponse {
     public void setNextMarker(String nextMarker) {
         this.nextMarker = nextMarker;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ExportSqlStatementsResponse extends SdkResponse {
             return false;
         }
         ExportSqlStatementsResponse exportSqlStatementsResponse = (ExportSqlStatementsResponse) o;
-        return Objects.equals(this.statements, exportSqlStatementsResponse.statements) &&
-            Objects.equals(this.nextMarker, exportSqlStatementsResponse.nextMarker);
+        return Objects.equals(this.statements, exportSqlStatementsResponse.statements)
+            && Objects.equals(this.nextMarker, exportSqlStatementsResponse.nextMarker);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(statements, nextMarker);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ExportSqlStatementsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

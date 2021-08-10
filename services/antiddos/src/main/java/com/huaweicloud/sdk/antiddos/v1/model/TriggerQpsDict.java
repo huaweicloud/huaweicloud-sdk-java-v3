@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.antiddos.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * HTTP限制列表
- */
-public class TriggerQpsDict  {
-
-
+/** HTTP限制列表 */
+public class TriggerQpsDict {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="http_request_pos_id")
-    
+    @JsonProperty(value = "http_request_pos_id")
+
     private Long httpRequestPosId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="http_packet_per_second")
-    
+    @JsonProperty(value = "http_packet_per_second")
+
     private Long httpPacketPerSecond;
 
     public TriggerQpsDict withHttpRequestPosId(Long httpRequestPosId) {
@@ -34,13 +23,9 @@ public class TriggerQpsDict  {
         return this;
     }
 
-    
-
-
-    /**
-     * HTTP请求数分段ID
-     * @return httpRequestPosId
-     */
+    /** HTTP请求数分段ID
+     * 
+     * @return httpRequestPosId */
     public Long getHttpRequestPosId() {
         return httpRequestPosId;
     }
@@ -49,20 +34,14 @@ public class TriggerQpsDict  {
         this.httpRequestPosId = httpRequestPosId;
     }
 
-    
-
     public TriggerQpsDict withHttpPacketPerSecond(Long httpPacketPerSecond) {
         this.httpPacketPerSecond = httpPacketPerSecond;
         return this;
     }
 
-    
-
-
-    /**
-     * 每秒HTTP请求数（个/s）阈值
-     * @return httpPacketPerSecond
-     */
+    /** 每秒HTTP请求数（个/s）阈值
+     * 
+     * @return httpPacketPerSecond */
     public Long getHttpPacketPerSecond() {
         return httpPacketPerSecond;
     }
@@ -70,8 +49,6 @@ public class TriggerQpsDict  {
     public void setHttpPacketPerSecond(Long httpPacketPerSecond) {
         this.httpPacketPerSecond = httpPacketPerSecond;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class TriggerQpsDict  {
             return false;
         }
         TriggerQpsDict triggerQpsDict = (TriggerQpsDict) o;
-        return Objects.equals(this.httpRequestPosId, triggerQpsDict.httpRequestPosId) &&
-            Objects.equals(this.httpPacketPerSecond, triggerQpsDict.httpPacketPerSecond);
+        return Objects.equals(this.httpRequestPosId, triggerQpsDict.httpRequestPosId)
+            && Objects.equals(this.httpPacketPerSecond, triggerQpsDict.httpPacketPerSecond);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(httpRequestPosId, httpPacketPerSecond);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class TriggerQpsDict  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

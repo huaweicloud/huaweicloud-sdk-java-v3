@@ -1,141 +1,110 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.Authentication;
-import com.huaweicloud.sdk.roma.v2.model.CreatedUser;
-import com.huaweicloud.sdk.roma.v2.model.LastUpdatedUser;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowProductResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="permissions")
-    
+    @JsonProperty(value = "permissions")
+
     private List<String> permissions = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Integer id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_serial")
-    
+    @JsonProperty(value = "product_serial")
+
     private String productSerial;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="manufacturer_id")
-    
+    @JsonProperty(value = "manufacturer_id")
+
     private String manufacturerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="manufacturer_name")
-    
+    @JsonProperty(value = "manufacturer_name")
+
     private String manufacturerName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="model")
-    
+    @JsonProperty(value = "model")
+
     private String model;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_type")
-    
+    @JsonProperty(value = "product_type")
+
     private Integer productType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol_type")
-    
+    @JsonProperty(value = "protocol_type")
+
     private Integer protocolType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_type")
-    
+    @JsonProperty(value = "device_type")
+
     private String deviceType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_user")
-    
+    @JsonProperty(value = "created_user")
+
     private CreatedUser createdUser;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_updated_user")
-    
+    @JsonProperty(value = "last_updated_user")
+
     private LastUpdatedUser lastUpdatedUser;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="authentication")
-    
+    @JsonProperty(value = "authentication")
+
     private Authentication authentication;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_datetime")
-    
+    @JsonProperty(value = "created_datetime")
+
     private Long createdDatetime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_name")
-    
+    @JsonProperty(value = "app_name")
+
     private String appName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_format")
-    
+    @JsonProperty(value = "data_format")
+
     private Integer dataFormat;
 
     public ShowProductResponse withPermissions(List<String> permissions) {
@@ -143,9 +112,8 @@ public class ShowProductResponse extends SdkResponse {
         return this;
     }
 
-    
     public ShowProductResponse addPermissionsItem(String permissionsItem) {
-        if(this.permissions == null) {
+        if (this.permissions == null) {
             this.permissions = new ArrayList<>();
         }
         this.permissions.add(permissionsItem);
@@ -153,17 +121,16 @@ public class ShowProductResponse extends SdkResponse {
     }
 
     public ShowProductResponse withPermissions(Consumer<List<String>> permissionsSetter) {
-        if(this.permissions == null) {
+        if (this.permissions == null) {
             this.permissions = new ArrayList<>();
         }
         permissionsSetter.accept(this.permissions);
         return this;
     }
 
-    /**
-     * 权限
-     * @return permissions
-     */
+    /** 权限
+     * 
+     * @return permissions */
     public List<String> getPermissions() {
         return permissions;
     }
@@ -172,22 +139,14 @@ public class ShowProductResponse extends SdkResponse {
         this.permissions = permissions;
     }
 
-    
-
     public ShowProductResponse withId(Integer id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品ID
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return id
-     */
+    /** 产品ID minimum: 1 maximum: 999999999999999999
+     * 
+     * @return id */
     public Integer getId() {
         return id;
     }
@@ -196,20 +155,14 @@ public class ShowProductResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowProductResponse withProductSerial(String productSerial) {
         this.productSerial = productSerial;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品唯一序列（系统唯一值，用于MQS的TOPIC中标记产品）
-     * @return productSerial
-     */
+    /** 产品唯一序列（系统唯一值，用于MQS的TOPIC中标记产品）
+     * 
+     * @return productSerial */
     public String getProductSerial() {
         return productSerial;
     }
@@ -218,20 +171,14 @@ public class ShowProductResponse extends SdkResponse {
         this.productSerial = productSerial;
     }
 
-    
-
     public ShowProductResponse withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用ID
-     * @return appId
-     */
+    /** 应用ID
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -240,20 +187,14 @@ public class ShowProductResponse extends SdkResponse {
         this.appId = appId;
     }
 
-    
-
     public ShowProductResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品名称，创建产品时租户内唯一，长度最大64，仅支持中文，英文字母，数字，下划线和中划线
-     * @return name
-     */
+    /** 产品名称，创建产品时租户内唯一，长度最大64，仅支持中文，英文字母，数字，下划线和中划线
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -262,20 +203,14 @@ public class ShowProductResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowProductResponse withManufacturerId(String manufacturerId) {
         this.manufacturerId = manufacturerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品供应商ID
-     * @return manufacturerId
-     */
+    /** 产品供应商ID
+     * 
+     * @return manufacturerId */
     public String getManufacturerId() {
         return manufacturerId;
     }
@@ -284,20 +219,14 @@ public class ShowProductResponse extends SdkResponse {
         this.manufacturerId = manufacturerId;
     }
 
-    
-
     public ShowProductResponse withManufacturerName(String manufacturerName) {
         this.manufacturerName = manufacturerName;
         return this;
     }
 
-    
-
-
-    /**
-     * 厂商名称
-     * @return manufacturerName
-     */
+    /** 厂商名称
+     * 
+     * @return manufacturerName */
     public String getManufacturerName() {
         return manufacturerName;
     }
@@ -306,20 +235,14 @@ public class ShowProductResponse extends SdkResponse {
         this.manufacturerName = manufacturerName;
     }
 
-    
-
     public ShowProductResponse withModel(String model) {
         this.model = model;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品型号
-     * @return model
-     */
+    /** 产品型号
+     * 
+     * @return model */
     public String getModel() {
         return model;
     }
@@ -328,22 +251,14 @@ public class ShowProductResponse extends SdkResponse {
         this.model = model;
     }
 
-    
-
     public ShowProductResponse withProductType(Integer productType) {
         this.productType = productType;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品类型，0-普通产品(不支持子设备) 1-网关产品
-     * minimum: 0
-     * maximum: 10
-     * @return productType
-     */
+    /** 产品类型，0-普通产品(不支持子设备) 1-网关产品 minimum: 0 maximum: 10
+     * 
+     * @return productType */
     public Integer getProductType() {
         return productType;
     }
@@ -352,20 +267,14 @@ public class ShowProductResponse extends SdkResponse {
         this.productType = productType;
     }
 
-    
-
     public ShowProductResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品描述，长度0-200
-     * @return description
-     */
+    /** 产品描述，长度0-200
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -374,22 +283,14 @@ public class ShowProductResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public ShowProductResponse withProtocolType(Integer protocolType) {
         this.protocolType = protocolType;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品的协议类型 0-mqtt 2-modbus 4-opcua
-     * minimum: 0
-     * maximum: 10
-     * @return protocolType
-     */
+    /** 产品的协议类型 0-mqtt 2-modbus 4-opcua minimum: 0 maximum: 10
+     * 
+     * @return protocolType */
     public Integer getProtocolType() {
         return protocolType;
     }
@@ -398,20 +299,14 @@ public class ShowProductResponse extends SdkResponse {
         this.protocolType = protocolType;
     }
 
-    
-
     public ShowProductResponse withDeviceType(String deviceType) {
         this.deviceType = deviceType;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品的设备类型（默认Default）
-     * @return deviceType
-     */
+    /** 产品的设备类型（默认Default）
+     * 
+     * @return deviceType */
     public String getDeviceType() {
         return deviceType;
     }
@@ -420,20 +315,14 @@ public class ShowProductResponse extends SdkResponse {
         this.deviceType = deviceType;
     }
 
-    
-
     public ShowProductResponse withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品版本
-     * @return version
-     */
+    /** 产品版本
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -442,27 +331,23 @@ public class ShowProductResponse extends SdkResponse {
         this.version = version;
     }
 
-    
-
     public ShowProductResponse withCreatedUser(CreatedUser createdUser) {
         this.createdUser = createdUser;
         return this;
     }
 
     public ShowProductResponse withCreatedUser(Consumer<CreatedUser> createdUserSetter) {
-        if(this.createdUser == null ){
+        if (this.createdUser == null) {
             this.createdUser = new CreatedUser();
             createdUserSetter.accept(this.createdUser);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get createdUser
-     * @return createdUser
-     */
+    /** Get createdUser
+     * 
+     * @return createdUser */
     public CreatedUser getCreatedUser() {
         return createdUser;
     }
@@ -471,27 +356,23 @@ public class ShowProductResponse extends SdkResponse {
         this.createdUser = createdUser;
     }
 
-    
-
     public ShowProductResponse withLastUpdatedUser(LastUpdatedUser lastUpdatedUser) {
         this.lastUpdatedUser = lastUpdatedUser;
         return this;
     }
 
     public ShowProductResponse withLastUpdatedUser(Consumer<LastUpdatedUser> lastUpdatedUserSetter) {
-        if(this.lastUpdatedUser == null ){
+        if (this.lastUpdatedUser == null) {
             this.lastUpdatedUser = new LastUpdatedUser();
             lastUpdatedUserSetter.accept(this.lastUpdatedUser);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get lastUpdatedUser
-     * @return lastUpdatedUser
-     */
+    /** Get lastUpdatedUser
+     * 
+     * @return lastUpdatedUser */
     public LastUpdatedUser getLastUpdatedUser() {
         return lastUpdatedUser;
     }
@@ -500,27 +381,23 @@ public class ShowProductResponse extends SdkResponse {
         this.lastUpdatedUser = lastUpdatedUser;
     }
 
-    
-
     public ShowProductResponse withAuthentication(Authentication authentication) {
         this.authentication = authentication;
         return this;
     }
 
     public ShowProductResponse withAuthentication(Consumer<Authentication> authenticationSetter) {
-        if(this.authentication == null ){
+        if (this.authentication == null) {
             this.authentication = new Authentication();
             authenticationSetter.accept(this.authentication);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get authentication
-     * @return authentication
-     */
+    /** Get authentication
+     * 
+     * @return authentication */
     public Authentication getAuthentication() {
         return authentication;
     }
@@ -529,22 +406,14 @@ public class ShowProductResponse extends SdkResponse {
         this.authentication = authentication;
     }
 
-    
-
     public ShowProductResponse withCreatedDatetime(Long createdDatetime) {
         this.createdDatetime = createdDatetime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间，timestamp(ms)，使用UTC时区
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return createdDatetime
-     */
+    /** 创建时间，timestamp(ms)，使用UTC时区 minimum: 1 maximum: 999999999999999999
+     * 
+     * @return createdDatetime */
     public Long getCreatedDatetime() {
         return createdDatetime;
     }
@@ -553,20 +422,14 @@ public class ShowProductResponse extends SdkResponse {
         this.createdDatetime = createdDatetime;
     }
 
-    
-
     public ShowProductResponse withAppName(String appName) {
         this.appName = appName;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名称
-     * @return appName
-     */
+    /** 应用名称
+     * 
+     * @return appName */
     public String getAppName() {
         return appName;
     }
@@ -575,22 +438,14 @@ public class ShowProductResponse extends SdkResponse {
         this.appName = appName;
     }
 
-    
-
     public ShowProductResponse withDataFormat(Integer dataFormat) {
         this.dataFormat = dataFormat;
         return this;
     }
 
-    
-
-
-    /**
-     * data_format 0-JSON 1-USER_DEFINED
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return dataFormat
-     */
+    /** data_format 0-JSON 1-USER_DEFINED minimum: 1 maximum: 999999999999999999
+     * 
+     * @return dataFormat */
     public Integer getDataFormat() {
         return dataFormat;
     }
@@ -598,8 +453,6 @@ public class ShowProductResponse extends SdkResponse {
     public void setDataFormat(Integer dataFormat) {
         this.dataFormat = dataFormat;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -610,30 +463,50 @@ public class ShowProductResponse extends SdkResponse {
             return false;
         }
         ShowProductResponse showProductResponse = (ShowProductResponse) o;
-        return Objects.equals(this.permissions, showProductResponse.permissions) &&
-            Objects.equals(this.id, showProductResponse.id) &&
-            Objects.equals(this.productSerial, showProductResponse.productSerial) &&
-            Objects.equals(this.appId, showProductResponse.appId) &&
-            Objects.equals(this.name, showProductResponse.name) &&
-            Objects.equals(this.manufacturerId, showProductResponse.manufacturerId) &&
-            Objects.equals(this.manufacturerName, showProductResponse.manufacturerName) &&
-            Objects.equals(this.model, showProductResponse.model) &&
-            Objects.equals(this.productType, showProductResponse.productType) &&
-            Objects.equals(this.description, showProductResponse.description) &&
-            Objects.equals(this.protocolType, showProductResponse.protocolType) &&
-            Objects.equals(this.deviceType, showProductResponse.deviceType) &&
-            Objects.equals(this.version, showProductResponse.version) &&
-            Objects.equals(this.createdUser, showProductResponse.createdUser) &&
-            Objects.equals(this.lastUpdatedUser, showProductResponse.lastUpdatedUser) &&
-            Objects.equals(this.authentication, showProductResponse.authentication) &&
-            Objects.equals(this.createdDatetime, showProductResponse.createdDatetime) &&
-            Objects.equals(this.appName, showProductResponse.appName) &&
-            Objects.equals(this.dataFormat, showProductResponse.dataFormat);
+        return Objects.equals(this.permissions, showProductResponse.permissions)
+            && Objects.equals(this.id, showProductResponse.id)
+            && Objects.equals(this.productSerial, showProductResponse.productSerial)
+            && Objects.equals(this.appId, showProductResponse.appId)
+            && Objects.equals(this.name, showProductResponse.name)
+            && Objects.equals(this.manufacturerId, showProductResponse.manufacturerId)
+            && Objects.equals(this.manufacturerName, showProductResponse.manufacturerName)
+            && Objects.equals(this.model, showProductResponse.model)
+            && Objects.equals(this.productType, showProductResponse.productType)
+            && Objects.equals(this.description, showProductResponse.description)
+            && Objects.equals(this.protocolType, showProductResponse.protocolType)
+            && Objects.equals(this.deviceType, showProductResponse.deviceType)
+            && Objects.equals(this.version, showProductResponse.version)
+            && Objects.equals(this.createdUser, showProductResponse.createdUser)
+            && Objects.equals(this.lastUpdatedUser, showProductResponse.lastUpdatedUser)
+            && Objects.equals(this.authentication, showProductResponse.authentication)
+            && Objects.equals(this.createdDatetime, showProductResponse.createdDatetime)
+            && Objects.equals(this.appName, showProductResponse.appName)
+            && Objects.equals(this.dataFormat, showProductResponse.dataFormat);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(permissions, id, productSerial, appId, name, manufacturerId, manufacturerName, model, productType, description, protocolType, deviceType, version, createdUser, lastUpdatedUser, authentication, createdDatetime, appName, dataFormat);
+        return Objects.hash(permissions,
+            id,
+            productSerial,
+            appId,
+            name,
+            manufacturerId,
+            manufacturerName,
+            model,
+            productType,
+            description,
+            protocolType,
+            deviceType,
+            version,
+            createdUser,
+            lastUpdatedUser,
+            authentication,
+            createdDatetime,
+            appName,
+            dataFormat);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -660,16 +533,13 @@ public class ShowProductResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

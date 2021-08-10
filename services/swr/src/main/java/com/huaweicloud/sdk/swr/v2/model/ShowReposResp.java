@@ -1,130 +1,104 @@
 package com.huaweicloud.sdk.swr.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ShowReposResp
- */
-public class ShowReposResp  {
-
-
+/** ShowReposResp */
+public class ShowReposResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="category")
-    
+    @JsonProperty(value = "category")
+
     private String category;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Long size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_public")
-    
+    @JsonProperty(value = "is_public")
+
     private Boolean isPublic;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="num_images")
-    
+    @JsonProperty(value = "num_images")
+
     private Long numImages;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="num_download")
-    
+    @JsonProperty(value = "num_download")
+
     private Long numDownload;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private String updatedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="logo")
-    
+    @JsonProperty(value = "logo")
+
     private String logo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private String url;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path")
-    
+    @JsonProperty(value = "path")
+
     private String path;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="internal_path")
-    
+    @JsonProperty(value = "internal_path")
+
     private String internalPath;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_name")
-    
+    @JsonProperty(value = "domain_name")
+
     private String domainName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
+
     private String namespace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<String> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Boolean status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_range")
-    
+    @JsonProperty(value = "total_range")
+
     private Long totalRange;
 
     public ShowReposResp withName(String name) {
@@ -132,13 +106,9 @@ public class ShowReposResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库名称
-     * @return name
-     */
+    /** 仓库名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -147,20 +117,14 @@ public class ShowReposResp  {
         this.name = name;
     }
 
-    
-
     public ShowReposResp withCategory(String category) {
         this.category = category;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库类型（计划改造，每个镜像会有多个lable标示）
-     * @return category
-     */
+    /** 仓库类型（计划改造，每个镜像会有多个lable标示）
+     * 
+     * @return category */
     public String getCategory() {
         return category;
     }
@@ -169,20 +133,14 @@ public class ShowReposResp  {
         this.category = category;
     }
 
-    
-
     public ShowReposResp withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库描述信息
-     * @return description
-     */
+    /** 仓库描述信息
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -191,20 +149,14 @@ public class ShowReposResp  {
         this.description = description;
     }
 
-    
-
     public ShowReposResp withSize(Long size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库大小 
-     * @return size
-     */
+    /** 仓库大小
+     * 
+     * @return size */
     public Long getSize() {
         return size;
     }
@@ -213,20 +165,14 @@ public class ShowReposResp  {
         this.size = size;
     }
 
-    
-
     public ShowReposResp withIsPublic(Boolean isPublic) {
         this.isPublic = isPublic;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库是否为公共仓库，值为true或false
-     * @return isPublic
-     */
+    /** 仓库是否为公共仓库，值为true或false
+     * 
+     * @return isPublic */
     public Boolean getIsPublic() {
         return isPublic;
     }
@@ -235,20 +181,14 @@ public class ShowReposResp  {
         this.isPublic = isPublic;
     }
 
-    
-
     public ShowReposResp withNumImages(Long numImages) {
         this.numImages = numImages;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库中镜像个数，0 ~ 9223372036854775807
-     * @return numImages
-     */
+    /** 仓库中镜像个数，0 ~ 9223372036854775807
+     * 
+     * @return numImages */
     public Long getNumImages() {
         return numImages;
     }
@@ -257,20 +197,14 @@ public class ShowReposResp  {
         this.numImages = numImages;
     }
 
-    
-
     public ShowReposResp withNumDownload(Long numDownload) {
         this.numDownload = numDownload;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库下载次数
-     * @return numDownload
-     */
+    /** 仓库下载次数
+     * 
+     * @return numDownload */
     public Long getNumDownload() {
         return numDownload;
     }
@@ -279,20 +213,14 @@ public class ShowReposResp  {
         this.numDownload = numDownload;
     }
 
-    
-
     public ShowReposResp withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库创建时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
-     * @return createdAt
-     */
+    /** 仓库创建时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -301,20 +229,14 @@ public class ShowReposResp  {
         this.createdAt = createdAt;
     }
 
-    
-
     public ShowReposResp withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库更新时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
-     * @return updatedAt
-     */
+    /** 仓库更新时间，UTC日期格式，时间为UTC标准时间，用户需要根据本地时间计算偏移量；如东8区需要+8:00
+     * 
+     * @return updatedAt */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -323,20 +245,14 @@ public class ShowReposResp  {
         this.updatedAt = updatedAt;
     }
 
-    
-
     public ShowReposResp withLogo(String logo) {
         this.logo = logo;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库logo地址（暂时未用）
-     * @return logo
-     */
+    /** 仓库logo地址（暂时未用）
+     * 
+     * @return logo */
     public String getLogo() {
         return logo;
     }
@@ -345,20 +261,14 @@ public class ShowReposResp  {
         this.logo = logo;
     }
 
-    
-
     public ShowReposResp withUrl(String url) {
         this.url = url;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库logo图片的URL，URL格式。（暂时未用）
-     * @return url
-     */
+    /** 仓库logo图片的URL，URL格式。（暂时未用）
+     * 
+     * @return url */
     public String getUrl() {
         return url;
     }
@@ -367,20 +277,14 @@ public class ShowReposResp  {
         this.url = url;
     }
 
-    
-
     public ShowReposResp withPath(String path) {
         this.path = path;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像pull路径，格式为 swr.cn-north-1.myhuaweicloud.com/namespace/repository
-     * @return path
-     */
+    /** 镜像pull路径，格式为 swr.cn-north-1.myhuaweicloud.com/namespace/repository
+     * 
+     * @return path */
     public String getPath() {
         return path;
     }
@@ -389,20 +293,14 @@ public class ShowReposResp  {
         this.path = path;
     }
 
-    
-
     public ShowReposResp withInternalPath(String internalPath) {
         this.internalPath = internalPath;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像pull路径，格式为 10.125.0.198:20202/namespace/repository
-     * @return internalPath
-     */
+    /** 镜像pull路径，格式为 10.125.0.198:20202/namespace/repository
+     * 
+     * @return internalPath */
     public String getInternalPath() {
         return internalPath;
     }
@@ -411,20 +309,14 @@ public class ShowReposResp  {
         this.internalPath = internalPath;
     }
 
-    
-
     public ShowReposResp withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
     }
 
-    
-
-
-    /**
-     * 租户名
-     * @return domainName
-     */
+    /** 租户名
+     * 
+     * @return domainName */
     public String getDomainName() {
         return domainName;
     }
@@ -433,20 +325,14 @@ public class ShowReposResp  {
         this.domainName = domainName;
     }
 
-    
-
     public ShowReposResp withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
     }
 
-    
-
-
-    /**
-     * 租户的命名空间名称
-     * @return namespace
-     */
+    /** 租户的命名空间名称
+     * 
+     * @return namespace */
     public String getNamespace() {
         return namespace;
     }
@@ -455,16 +341,13 @@ public class ShowReposResp  {
         this.namespace = namespace;
     }
 
-    
-
     public ShowReposResp withTags(List<String> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public ShowReposResp addTagsItem(String tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -472,17 +355,16 @@ public class ShowReposResp  {
     }
 
     public ShowReposResp withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 镜像版本列表
-     * @return tags
-     */
+    /** 镜像版本列表
+     * 
+     * @return tags */
     public List<String> getTags() {
         return tags;
     }
@@ -491,20 +373,14 @@ public class ShowReposResp  {
         this.tags = tags;
     }
 
-    
-
     public ShowReposResp withStatus(Boolean status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询他人共享镜像：共享是否过期 查询我共享的镜像：默认为false,无意义
-     * @return status
-     */
+    /** 查询他人共享镜像：共享是否过期 查询我共享的镜像：默认为false,无意义
+     * 
+     * @return status */
     public Boolean getStatus() {
         return status;
     }
@@ -513,20 +389,12 @@ public class ShowReposResp  {
         this.status = status;
     }
 
-    
-
     public ShowReposResp withTotalRange(Long totalRange) {
         this.totalRange = totalRange;
         return this;
     }
 
-    
-
-
-    /**
-     * 
-     * @return totalRange
-     */
+    /** @return totalRange */
     public Long getTotalRange() {
         return totalRange;
     }
@@ -534,8 +402,6 @@ public class ShowReposResp  {
     public void setTotalRange(Long totalRange) {
         this.totalRange = totalRange;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -546,29 +412,43 @@ public class ShowReposResp  {
             return false;
         }
         ShowReposResp showReposResp = (ShowReposResp) o;
-        return Objects.equals(this.name, showReposResp.name) &&
-            Objects.equals(this.category, showReposResp.category) &&
-            Objects.equals(this.description, showReposResp.description) &&
-            Objects.equals(this.size, showReposResp.size) &&
-            Objects.equals(this.isPublic, showReposResp.isPublic) &&
-            Objects.equals(this.numImages, showReposResp.numImages) &&
-            Objects.equals(this.numDownload, showReposResp.numDownload) &&
-            Objects.equals(this.createdAt, showReposResp.createdAt) &&
-            Objects.equals(this.updatedAt, showReposResp.updatedAt) &&
-            Objects.equals(this.logo, showReposResp.logo) &&
-            Objects.equals(this.url, showReposResp.url) &&
-            Objects.equals(this.path, showReposResp.path) &&
-            Objects.equals(this.internalPath, showReposResp.internalPath) &&
-            Objects.equals(this.domainName, showReposResp.domainName) &&
-            Objects.equals(this.namespace, showReposResp.namespace) &&
-            Objects.equals(this.tags, showReposResp.tags) &&
-            Objects.equals(this.status, showReposResp.status) &&
-            Objects.equals(this.totalRange, showReposResp.totalRange);
+        return Objects.equals(this.name, showReposResp.name) && Objects.equals(this.category, showReposResp.category)
+            && Objects.equals(this.description, showReposResp.description)
+            && Objects.equals(this.size, showReposResp.size) && Objects.equals(this.isPublic, showReposResp.isPublic)
+            && Objects.equals(this.numImages, showReposResp.numImages)
+            && Objects.equals(this.numDownload, showReposResp.numDownload)
+            && Objects.equals(this.createdAt, showReposResp.createdAt)
+            && Objects.equals(this.updatedAt, showReposResp.updatedAt) && Objects.equals(this.logo, showReposResp.logo)
+            && Objects.equals(this.url, showReposResp.url) && Objects.equals(this.path, showReposResp.path)
+            && Objects.equals(this.internalPath, showReposResp.internalPath)
+            && Objects.equals(this.domainName, showReposResp.domainName)
+            && Objects.equals(this.namespace, showReposResp.namespace) && Objects.equals(this.tags, showReposResp.tags)
+            && Objects.equals(this.status, showReposResp.status)
+            && Objects.equals(this.totalRange, showReposResp.totalRange);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, category, description, size, isPublic, numImages, numDownload, createdAt, updatedAt, logo, url, path, internalPath, domainName, namespace, tags, status, totalRange);
+        return Objects.hash(name,
+            category,
+            description,
+            size,
+            isPublic,
+            numImages,
+            numDownload,
+            createdAt,
+            updatedAt,
+            logo,
+            url,
+            path,
+            internalPath,
+            domainName,
+            namespace,
+            tags,
+            status,
+            totalRange);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -594,16 +474,13 @@ public class ShowReposResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

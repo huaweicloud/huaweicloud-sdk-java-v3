@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.VersionInfo;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowApiVersionResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private VersionInfo version;
 
     public ShowApiVersionResponse withVersion(VersionInfo version) {
@@ -32,19 +21,17 @@ public class ShowApiVersionResponse extends SdkResponse {
     }
 
     public ShowApiVersionResponse withVersion(Consumer<VersionInfo> versionSetter) {
-        if(this.version == null ){
+        if (this.version == null) {
             this.version = new VersionInfo();
             versionSetter.accept(this.version);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get version
-     * @return version
-     */
+    /** Get version
+     * 
+     * @return version */
     public VersionInfo getVersion() {
         return version;
     }
@@ -52,8 +39,6 @@ public class ShowApiVersionResponse extends SdkResponse {
     public void setVersion(VersionInfo version) {
         this.version = version;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class ShowApiVersionResponse extends SdkResponse {
         ShowApiVersionResponse showApiVersionResponse = (ShowApiVersionResponse) o;
         return Objects.equals(this.version, showApiVersionResponse.version);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(version);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class ShowApiVersionResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

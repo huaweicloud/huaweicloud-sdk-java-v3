@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.ReinstallServerWithCloudInitOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * This is a auto create Body Object
- */
-public class ReinstallServerWithCloudInitRequestBody  {
-
-
+/** This is a auto create Body Object */
+public class ReinstallServerWithCloudInitRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os-reinstall")
-    
+    @JsonProperty(value = "os-reinstall")
+
     private ReinstallServerWithCloudInitOption osReinstall;
 
     public ReinstallServerWithCloudInitRequestBody withOsReinstall(ReinstallServerWithCloudInitOption osReinstall) {
@@ -29,20 +19,19 @@ public class ReinstallServerWithCloudInitRequestBody  {
         return this;
     }
 
-    public ReinstallServerWithCloudInitRequestBody withOsReinstall(Consumer<ReinstallServerWithCloudInitOption> osReinstallSetter) {
-        if(this.osReinstall == null ){
+    public ReinstallServerWithCloudInitRequestBody withOsReinstall(
+        Consumer<ReinstallServerWithCloudInitOption> osReinstallSetter) {
+        if (this.osReinstall == null) {
             this.osReinstall = new ReinstallServerWithCloudInitOption();
             osReinstallSetter.accept(this.osReinstall);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get osReinstall
-     * @return osReinstall
-     */
+    /** Get osReinstall
+     * 
+     * @return osReinstall */
     public ReinstallServerWithCloudInitOption getOsReinstall() {
         return osReinstall;
     }
@@ -50,8 +39,6 @@ public class ReinstallServerWithCloudInitRequestBody  {
     public void setOsReinstall(ReinstallServerWithCloudInitOption osReinstall) {
         this.osReinstall = osReinstall;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -61,13 +48,16 @@ public class ReinstallServerWithCloudInitRequestBody  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ReinstallServerWithCloudInitRequestBody reinstallServerWithCloudInitRequestBody = (ReinstallServerWithCloudInitRequestBody) o;
+        ReinstallServerWithCloudInitRequestBody reinstallServerWithCloudInitRequestBody =
+            (ReinstallServerWithCloudInitRequestBody) o;
         return Objects.equals(this.osReinstall, reinstallServerWithCloudInitRequestBody.osReinstall);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(osReinstall);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +66,13 @@ public class ReinstallServerWithCloudInitRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

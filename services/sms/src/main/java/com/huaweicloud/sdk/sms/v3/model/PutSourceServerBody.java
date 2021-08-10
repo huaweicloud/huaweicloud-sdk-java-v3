@@ -1,62 +1,44 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.PutDisk;
-import com.huaweicloud.sdk.sms.v3.model.PutVolumeGroups;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 修改源端信息json的请求体，当前只支持修改源端服务器名称和迁移项目id
- */
-public class PutSourceServerBody  {
-
-
+/** 修改源端信息json的请求体，当前只支持修改源端服务器名称和迁移项目id */
+public class PutSourceServerBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="migprojectid")
-    
+    @JsonProperty(value = "migprojectid")
+
     private String migprojectid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disks")
-    
+    @JsonProperty(value = "disks")
+
     private List<PutDisk> disks = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_groups")
-    
+    @JsonProperty(value = "volume_groups")
+
     private List<PutVolumeGroups> volumeGroups = null;
-    
+
     public PutSourceServerBody withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端服务器修改后的名字
-     * @return name
-     */
+    /** 源端服务器修改后的名字
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -65,20 +47,14 @@ public class PutSourceServerBody  {
         this.name = name;
     }
 
-    
-
     public PutSourceServerBody withMigprojectid(String migprojectid) {
         this.migprojectid = migprojectid;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端服务器修改后所属的迁移项目id
-     * @return migprojectid
-     */
+    /** 源端服务器修改后所属的迁移项目id
+     * 
+     * @return migprojectid */
     public String getMigprojectid() {
         return migprojectid;
     }
@@ -87,16 +63,13 @@ public class PutSourceServerBody  {
         this.migprojectid = migprojectid;
     }
 
-    
-
     public PutSourceServerBody withDisks(List<PutDisk> disks) {
         this.disks = disks;
         return this;
     }
 
-    
     public PutSourceServerBody addDisksItem(PutDisk disksItem) {
-        if(this.disks == null) {
+        if (this.disks == null) {
             this.disks = new ArrayList<>();
         }
         this.disks.add(disksItem);
@@ -104,17 +77,16 @@ public class PutSourceServerBody  {
     }
 
     public PutSourceServerBody withDisks(Consumer<List<PutDisk>> disksSetter) {
-        if(this.disks == null) {
+        if (this.disks == null) {
             this.disks = new ArrayList<>();
         }
         disksSetter.accept(this.disks);
         return this;
     }
 
-    /**
-     * 磁盘
-     * @return disks
-     */
+    /** 磁盘
+     * 
+     * @return disks */
     public List<PutDisk> getDisks() {
         return disks;
     }
@@ -123,16 +95,13 @@ public class PutSourceServerBody  {
         this.disks = disks;
     }
 
-    
-
     public PutSourceServerBody withVolumeGroups(List<PutVolumeGroups> volumeGroups) {
         this.volumeGroups = volumeGroups;
         return this;
     }
 
-    
     public PutSourceServerBody addVolumeGroupsItem(PutVolumeGroups volumeGroupsItem) {
-        if(this.volumeGroups == null) {
+        if (this.volumeGroups == null) {
             this.volumeGroups = new ArrayList<>();
         }
         this.volumeGroups.add(volumeGroupsItem);
@@ -140,17 +109,16 @@ public class PutSourceServerBody  {
     }
 
     public PutSourceServerBody withVolumeGroups(Consumer<List<PutVolumeGroups>> volumeGroupsSetter) {
-        if(this.volumeGroups == null) {
+        if (this.volumeGroups == null) {
             this.volumeGroups = new ArrayList<>();
         }
         volumeGroupsSetter.accept(this.volumeGroups);
         return this;
     }
 
-    /**
-     * 卷组
-     * @return volumeGroups
-     */
+    /** 卷组
+     * 
+     * @return volumeGroups */
     public List<PutVolumeGroups> getVolumeGroups() {
         return volumeGroups;
     }
@@ -158,8 +126,6 @@ public class PutSourceServerBody  {
     public void setVolumeGroups(List<PutVolumeGroups> volumeGroups) {
         this.volumeGroups = volumeGroups;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -170,15 +136,17 @@ public class PutSourceServerBody  {
             return false;
         }
         PutSourceServerBody putSourceServerBody = (PutSourceServerBody) o;
-        return Objects.equals(this.name, putSourceServerBody.name) &&
-            Objects.equals(this.migprojectid, putSourceServerBody.migprojectid) &&
-            Objects.equals(this.disks, putSourceServerBody.disks) &&
-            Objects.equals(this.volumeGroups, putSourceServerBody.volumeGroups);
+        return Objects.equals(this.name, putSourceServerBody.name)
+            && Objects.equals(this.migprojectid, putSourceServerBody.migprojectid)
+            && Objects.equals(this.disks, putSourceServerBody.disks)
+            && Objects.equals(this.volumeGroups, putSourceServerBody.volumeGroups);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, migprojectid, disks, volumeGroups);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -190,16 +158,13 @@ public class PutSourceServerBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

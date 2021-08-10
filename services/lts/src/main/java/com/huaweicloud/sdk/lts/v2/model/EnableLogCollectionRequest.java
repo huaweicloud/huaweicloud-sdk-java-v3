@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.lts.v2.model;
 
-
-
-
-
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class EnableLogCollectionRequest  {
-
+/** Request Object */
+public class EnableLogCollectionRequest {
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -23,10 +15,12 @@ public class EnableLogCollectionRequest  {
         }
         return true;
     }
+
     @Override
     public int hashCode() {
         return Objects.hash();
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -34,6 +28,5 @@ public class EnableLogCollectionRequest  {
         sb.append("}");
         return sb.toString();
     }
-    
-}
 
+}

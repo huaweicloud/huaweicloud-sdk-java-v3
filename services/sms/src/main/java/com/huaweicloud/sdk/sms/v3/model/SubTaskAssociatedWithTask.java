@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 任务关联的子任务信息
- */
-public class SubTaskAssociatedWithTask  {
-
-
+/** 任务关联的子任务信息 */
+public class SubTaskAssociatedWithTask {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Long id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="progress")
-    
+    @JsonProperty(value = "progress")
+
     private Integer progress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_date")
-    
+    @JsonProperty(value = "start_date")
+
     private Long startDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_date")
-    
+    @JsonProperty(value = "end_date")
+
     private Long endDate;
 
     public SubTaskAssociatedWithTask withId(Long id) {
@@ -52,15 +38,9 @@ public class SubTaskAssociatedWithTask  {
         return this;
     }
 
-    
-
-
-    /**
-     * 子任务id
-     * minimum: 0
-     * maximum: 100
-     * @return id
-     */
+    /** 子任务id minimum: 0 maximum: 100
+     * 
+     * @return id */
     public Long getId() {
         return id;
     }
@@ -69,20 +49,14 @@ public class SubTaskAssociatedWithTask  {
         this.id = id;
     }
 
-    
-
     public SubTaskAssociatedWithTask withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 子任务名称
-     * @return name
-     */
+    /** 子任务名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -91,22 +65,14 @@ public class SubTaskAssociatedWithTask  {
         this.name = name;
     }
 
-    
-
     public SubTaskAssociatedWithTask withProgress(Integer progress) {
         this.progress = progress;
         return this;
     }
 
-    
-
-
-    /**
-     * 子任务的进度，取值为0-100之间的整数
-     * minimum: 0
-     * maximum: 100
-     * @return progress
-     */
+    /** 子任务的进度，取值为0-100之间的整数 minimum: 0 maximum: 100
+     * 
+     * @return progress */
     public Integer getProgress() {
         return progress;
     }
@@ -115,22 +81,14 @@ public class SubTaskAssociatedWithTask  {
         this.progress = progress;
     }
 
-    
-
     public SubTaskAssociatedWithTask withStartDate(Long startDate) {
         this.startDate = startDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 子任务开始时间
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return startDate
-     */
+    /** 子任务开始时间 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return startDate */
     public Long getStartDate() {
         return startDate;
     }
@@ -139,22 +97,14 @@ public class SubTaskAssociatedWithTask  {
         this.startDate = startDate;
     }
 
-    
-
     public SubTaskAssociatedWithTask withEndDate(Long endDate) {
         this.endDate = endDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 子任务结束时间（如果子任务还没有结束，则为空）
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return endDate
-     */
+    /** 子任务结束时间（如果子任务还没有结束，则为空） minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return endDate */
     public Long getEndDate() {
         return endDate;
     }
@@ -162,8 +112,6 @@ public class SubTaskAssociatedWithTask  {
     public void setEndDate(Long endDate) {
         this.endDate = endDate;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -174,16 +122,18 @@ public class SubTaskAssociatedWithTask  {
             return false;
         }
         SubTaskAssociatedWithTask subTaskAssociatedWithTask = (SubTaskAssociatedWithTask) o;
-        return Objects.equals(this.id, subTaskAssociatedWithTask.id) &&
-            Objects.equals(this.name, subTaskAssociatedWithTask.name) &&
-            Objects.equals(this.progress, subTaskAssociatedWithTask.progress) &&
-            Objects.equals(this.startDate, subTaskAssociatedWithTask.startDate) &&
-            Objects.equals(this.endDate, subTaskAssociatedWithTask.endDate);
+        return Objects.equals(this.id, subTaskAssociatedWithTask.id)
+            && Objects.equals(this.name, subTaskAssociatedWithTask.name)
+            && Objects.equals(this.progress, subTaskAssociatedWithTask.progress)
+            && Objects.equals(this.startDate, subTaskAssociatedWithTask.startDate)
+            && Objects.equals(this.endDate, subTaskAssociatedWithTask.endDate);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, progress, startDate, endDate);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -196,16 +146,13 @@ public class SubTaskAssociatedWithTask  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

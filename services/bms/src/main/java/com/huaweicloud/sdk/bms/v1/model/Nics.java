@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.UUID;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.UUID;
 
-/**
- * nics字段数据结构说明
- */
-public class Nics  {
-
-
+/** nics字段数据结构说明 */
+public class Nics {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
+
     private UUID subnetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_address")
-    
+    @JsonProperty(value = "ip_address")
+
     private String ipAddress;
 
     public Nics withSubnetId(UUID subnetId) {
@@ -35,13 +24,9 @@ public class Nics  {
         return this;
     }
 
-    
-
-
-    /**
-     * 裸金属服务器网卡所在的子网信息。需要指定vpcid对应VPC下已创建的子网（subnet）的网络ID（network_id），UUID格式。子网（subnet）的网络ID（network_id）可以从虚拟私有云控制台或者参考《虚拟私有云API参考》的“查询子网列表”章节获取。
-     * @return subnetId
-     */
+    /** 裸金属服务器网卡所在的子网信息。需要指定vpcid对应VPC下已创建的子网（subnet）的网络ID（network_id），UUID格式。子网（subnet）的网络ID（network_id）可以从虚拟私有云控制台或者参考《虚拟私有云API参考》的“查询子网列表”章节获取。
+     * 
+     * @return subnetId */
     public UUID getSubnetId() {
         return subnetId;
     }
@@ -50,20 +35,14 @@ public class Nics  {
         this.subnetId = subnetId;
     }
 
-    
-
     public Nics withIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建裸金属服务器网卡的IP地址，IPv4格式,约束：不填或空字符串，默认在网络（network）对应的子网中自动分配一个未使用的IP作网卡的IP地址。若指定IP地址，该IP地址必须在网络（network）对应的子网的网段内，且未被使用。
-     * @return ipAddress
-     */
+    /** 创建裸金属服务器网卡的IP地址，IPv4格式,约束：不填或空字符串，默认在网络（network）对应的子网中自动分配一个未使用的IP作网卡的IP地址。若指定IP地址，该IP地址必须在网络（network）对应的子网的网段内，且未被使用。
+     * 
+     * @return ipAddress */
     public String getIpAddress() {
         return ipAddress;
     }
@@ -71,8 +50,6 @@ public class Nics  {
     public void setIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -83,13 +60,14 @@ public class Nics  {
             return false;
         }
         Nics nics = (Nics) o;
-        return Objects.equals(this.subnetId, nics.subnetId) &&
-            Objects.equals(this.ipAddress, nics.ipAddress);
+        return Objects.equals(this.subnetId, nics.subnetId) && Objects.equals(this.ipAddress, nics.ipAddress);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(subnetId, ipAddress);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -99,16 +77,13 @@ public class Nics  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

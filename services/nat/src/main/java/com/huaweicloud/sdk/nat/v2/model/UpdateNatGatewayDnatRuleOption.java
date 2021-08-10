@@ -1,70 +1,49 @@
 package com.huaweicloud.sdk.nat.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 更新DNAT规则的请求体。
- */
-public class UpdateNatGatewayDnatRuleOption  {
-
-
+/** 更新DNAT规则的请求体。 */
+public class UpdateNatGatewayDnatRuleOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nat_gateway_id")
-    
+    @JsonProperty(value = "nat_gateway_id")
+
     private String natGatewayId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port_id")
-    
+    @JsonProperty(value = "port_id")
+
     private String portId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="private_ip")
-    
+    @JsonProperty(value = "private_ip")
+
     private String privateIp;
-    /**
-     * 协议类型，目前支持TCP/tcp、UDP/udp、ANY/any。 对应协议号6、17、0。
-     */
+
+    /** 协议类型，目前支持TCP/tcp、UDP/udp、ANY/any。 对应协议号6、17、0。 */
     public static final class ProtocolEnum {
 
-        
-        /**
-         * Enum TCP for value: "TCP"
-         */
+        /** Enum TCP for value: "TCP" */
         public static final ProtocolEnum TCP = new ProtocolEnum("TCP");
-        
-        /**
-         * Enum UDP for value: "UDP"
-         */
+
+        /** Enum UDP for value: "UDP" */
         public static final ProtocolEnum UDP = new ProtocolEnum("UDP");
-        
-        /**
-         * Enum ANY for value: "ANY"
-         */
+
+        /** Enum ANY for value: "ANY" */
         public static final ProtocolEnum ANY = new ProtocolEnum("ANY");
-        
 
         private static final Map<String, ProtocolEnum> STATIC_FIELDS = createStaticFields();
 
@@ -94,7 +73,7 @@ public class UpdateNatGatewayDnatRuleOption  {
 
         @JsonCreator
         public static ProtocolEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtocolEnum result = STATIC_FIELDS.get(value);
@@ -105,7 +84,7 @@ public class UpdateNatGatewayDnatRuleOption  {
         }
 
         public static ProtocolEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ProtocolEnum result = STATIC_FIELDS.get(value);
@@ -129,40 +108,34 @@ public class UpdateNatGatewayDnatRuleOption  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
+
     private ProtocolEnum protocol;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="floating_ip_id")
-    
+    @JsonProperty(value = "floating_ip_id")
+
     private String floatingIpId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="internal_service_port")
-    
+    @JsonProperty(value = "internal_service_port")
+
     private Integer internalServicePort;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="external_service_port")
-    
+    @JsonProperty(value = "external_service_port")
+
     private Integer externalServicePort;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="internal_service_port_range")
-    
+    @JsonProperty(value = "internal_service_port_range")
+
     private String internalServicePortRange;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="external_service_port_range")
-    
+    @JsonProperty(value = "external_service_port_range")
+
     private String externalServicePortRange;
 
     public UpdateNatGatewayDnatRuleOption withNatGatewayId(String natGatewayId) {
@@ -170,13 +143,9 @@ public class UpdateNatGatewayDnatRuleOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * NAT网关的id。
-     * @return natGatewayId
-     */
+    /** NAT网关的id。
+     * 
+     * @return natGatewayId */
     public String getNatGatewayId() {
         return natGatewayId;
     }
@@ -185,20 +154,14 @@ public class UpdateNatGatewayDnatRuleOption  {
         this.natGatewayId = natGatewayId;
     }
 
-    
-
     public UpdateNatGatewayDnatRuleOption withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * DNAT规则的描述，长度限制为255。
-     * @return description
-     */
+    /** DNAT规则的描述，长度限制为255。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -207,20 +170,14 @@ public class UpdateNatGatewayDnatRuleOption  {
         this.description = description;
     }
 
-    
-
     public UpdateNatGatewayDnatRuleOption withPortId(String portId) {
         this.portId = portId;
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟机或者裸机的Port ID，对应虚拟私有云场景，与private_ip参数二选一。
-     * @return portId
-     */
+    /** 虚拟机或者裸机的Port ID，对应虚拟私有云场景，与private_ip参数二选一。
+     * 
+     * @return portId */
     public String getPortId() {
         return portId;
     }
@@ -229,20 +186,14 @@ public class UpdateNatGatewayDnatRuleOption  {
         this.portId = portId;
     }
 
-    
-
     public UpdateNatGatewayDnatRuleOption withPrivateIp(String privateIp) {
         this.privateIp = privateIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户私有IP地址，对应专线、云连接场景，与port_id参数二选一。
-     * @return privateIp
-     */
+    /** 用户私有IP地址，对应专线、云连接场景，与port_id参数二选一。
+     * 
+     * @return privateIp */
     public String getPrivateIp() {
         return privateIp;
     }
@@ -251,20 +202,14 @@ public class UpdateNatGatewayDnatRuleOption  {
         this.privateIp = privateIp;
     }
 
-    
-
     public UpdateNatGatewayDnatRuleOption withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
         return this;
     }
 
-    
-
-
-    /**
-     * 协议类型，目前支持TCP/tcp、UDP/udp、ANY/any。 对应协议号6、17、0。
-     * @return protocol
-     */
+    /** 协议类型，目前支持TCP/tcp、UDP/udp、ANY/any。 对应协议号6、17、0。
+     * 
+     * @return protocol */
     public ProtocolEnum getProtocol() {
         return protocol;
     }
@@ -273,20 +218,14 @@ public class UpdateNatGatewayDnatRuleOption  {
         this.protocol = protocol;
     }
 
-    
-
     public UpdateNatGatewayDnatRuleOption withFloatingIpId(String floatingIpId) {
         this.floatingIpId = floatingIpId;
         return this;
     }
 
-    
-
-
-    /**
-     * 弹性公网IP的id。
-     * @return floatingIpId
-     */
+    /** 弹性公网IP的id。
+     * 
+     * @return floatingIpId */
     public String getFloatingIpId() {
         return floatingIpId;
     }
@@ -295,22 +234,14 @@ public class UpdateNatGatewayDnatRuleOption  {
         this.floatingIpId = floatingIpId;
     }
 
-    
-
     public UpdateNatGatewayDnatRuleOption withInternalServicePort(Integer internalServicePort) {
         this.internalServicePort = internalServicePort;
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟机或者裸机对外提供服务的协议端口号。 取值范围：0~65535。
-     * minimum: 0
-     * maximum: 65535
-     * @return internalServicePort
-     */
+    /** 虚拟机或者裸机对外提供服务的协议端口号。 取值范围：0~65535。 minimum: 0 maximum: 65535
+     * 
+     * @return internalServicePort */
     public Integer getInternalServicePort() {
         return internalServicePort;
     }
@@ -319,22 +250,14 @@ public class UpdateNatGatewayDnatRuleOption  {
         this.internalServicePort = internalServicePort;
     }
 
-    
-
     public UpdateNatGatewayDnatRuleOption withExternalServicePort(Integer externalServicePort) {
         this.externalServicePort = externalServicePort;
         return this;
     }
 
-    
-
-
-    /**
-     * Floatingip对外提供服务的端口号。 取值范围：0~65535。
-     * minimum: 0
-     * maximum: 65535
-     * @return externalServicePort
-     */
+    /** Floatingip对外提供服务的端口号。 取值范围：0~65535。 minimum: 0 maximum: 65535
+     * 
+     * @return externalServicePort */
     public Integer getExternalServicePort() {
         return externalServicePort;
     }
@@ -343,20 +266,14 @@ public class UpdateNatGatewayDnatRuleOption  {
         this.externalServicePort = externalServicePort;
     }
 
-    
-
     public UpdateNatGatewayDnatRuleOption withInternalServicePortRange(String internalServicePortRange) {
         this.internalServicePortRange = internalServicePortRange;
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟机或者裸机对外提供服务的协议端口号范围。 功能说明：该端口范围与external _service_port_range按顺序实现1:1映射。 取值范围：1~65535。 约束：只能以’-’字符连接端口范围。
-     * @return internalServicePortRange
-     */
+    /** 虚拟机或者裸机对外提供服务的协议端口号范围。 功能说明：该端口范围与external _service_port_range按顺序实现1:1映射。 取值范围：1~65535。 约束：只能以’-’字符连接端口范围。
+     * 
+     * @return internalServicePortRange */
     public String getInternalServicePortRange() {
         return internalServicePortRange;
     }
@@ -365,20 +282,14 @@ public class UpdateNatGatewayDnatRuleOption  {
         this.internalServicePortRange = internalServicePortRange;
     }
 
-    
-
     public UpdateNatGatewayDnatRuleOption withExternalServicePortRange(String externalServicePortRange) {
         this.externalServicePortRange = externalServicePortRange;
         return this;
     }
 
-    
-
-
-    /**
-     * Floatingip对外提供服务的端口号范围。 功能说明：该端口范围与internal _service_port_range按顺序实现1:1映射。 取值范围：1~65535。 约束：只能以’-’字符连接端口范围。
-     * @return externalServicePortRange
-     */
+    /** Floatingip对外提供服务的端口号范围。 功能说明：该端口范围与internal _service_port_range按顺序实现1:1映射。 取值范围：1~65535。 约束：只能以’-’字符连接端口范围。
+     * 
+     * @return externalServicePortRange */
     public String getExternalServicePortRange() {
         return externalServicePortRange;
     }
@@ -386,8 +297,6 @@ public class UpdateNatGatewayDnatRuleOption  {
     public void setExternalServicePortRange(String externalServicePortRange) {
         this.externalServicePortRange = externalServicePortRange;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -398,21 +307,32 @@ public class UpdateNatGatewayDnatRuleOption  {
             return false;
         }
         UpdateNatGatewayDnatRuleOption updateNatGatewayDnatRuleOption = (UpdateNatGatewayDnatRuleOption) o;
-        return Objects.equals(this.natGatewayId, updateNatGatewayDnatRuleOption.natGatewayId) &&
-            Objects.equals(this.description, updateNatGatewayDnatRuleOption.description) &&
-            Objects.equals(this.portId, updateNatGatewayDnatRuleOption.portId) &&
-            Objects.equals(this.privateIp, updateNatGatewayDnatRuleOption.privateIp) &&
-            Objects.equals(this.protocol, updateNatGatewayDnatRuleOption.protocol) &&
-            Objects.equals(this.floatingIpId, updateNatGatewayDnatRuleOption.floatingIpId) &&
-            Objects.equals(this.internalServicePort, updateNatGatewayDnatRuleOption.internalServicePort) &&
-            Objects.equals(this.externalServicePort, updateNatGatewayDnatRuleOption.externalServicePort) &&
-            Objects.equals(this.internalServicePortRange, updateNatGatewayDnatRuleOption.internalServicePortRange) &&
-            Objects.equals(this.externalServicePortRange, updateNatGatewayDnatRuleOption.externalServicePortRange);
+        return Objects.equals(this.natGatewayId, updateNatGatewayDnatRuleOption.natGatewayId)
+            && Objects.equals(this.description, updateNatGatewayDnatRuleOption.description)
+            && Objects.equals(this.portId, updateNatGatewayDnatRuleOption.portId)
+            && Objects.equals(this.privateIp, updateNatGatewayDnatRuleOption.privateIp)
+            && Objects.equals(this.protocol, updateNatGatewayDnatRuleOption.protocol)
+            && Objects.equals(this.floatingIpId, updateNatGatewayDnatRuleOption.floatingIpId)
+            && Objects.equals(this.internalServicePort, updateNatGatewayDnatRuleOption.internalServicePort)
+            && Objects.equals(this.externalServicePort, updateNatGatewayDnatRuleOption.externalServicePort)
+            && Objects.equals(this.internalServicePortRange, updateNatGatewayDnatRuleOption.internalServicePortRange)
+            && Objects.equals(this.externalServicePortRange, updateNatGatewayDnatRuleOption.externalServicePortRange);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(natGatewayId, description, portId, privateIp, protocol, floatingIpId, internalServicePort, externalServicePort, internalServicePortRange, externalServicePortRange);
+        return Objects.hash(natGatewayId,
+            description,
+            portId,
+            privateIp,
+            protocol,
+            floatingIpId,
+            internalServicePort,
+            externalServicePort,
+            internalServicePortRange,
+            externalServicePortRange);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -430,16 +350,13 @@ public class UpdateNatGatewayDnatRuleOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

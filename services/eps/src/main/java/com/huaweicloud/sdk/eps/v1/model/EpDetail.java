@@ -1,78 +1,57 @@
 package com.huaweicloud.sdk.eps.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.time.OffsetDateTime;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 企业项目详情
- */
-public class EpDetail  {
-
-
+/** 企业项目详情 */
+public class EpDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private OffsetDateTime createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private OffsetDateTime updatedAt;
-    /**
-     * 项目类型： - prod：商用项目 - poc：测试项目
-     */
+
+    /** 项目类型： - prod：商用项目 - poc：测试项目 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum PROD for value: "prod"
-         */
+        /** Enum PROD for value: "prod" */
         public static final TypeEnum PROD = new TypeEnum("prod");
-        
-        /**
-         * Enum POC for value: "poc"
-         */
+
+        /** Enum POC for value: "poc" */
         public static final TypeEnum POC = new TypeEnum("poc");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -101,7 +80,7 @@ public class EpDetail  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -112,7 +91,7 @@ public class EpDetail  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -136,10 +115,9 @@ public class EpDetail  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
     public EpDetail withId(String id) {
@@ -147,13 +125,9 @@ public class EpDetail  {
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目ID
-     * @return id
-     */
+    /** 企业项目ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -162,20 +136,14 @@ public class EpDetail  {
         this.id = id;
     }
 
-    
-
     public EpDetail withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目名称
-     * @return name
-     */
+    /** 企业项目名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -184,20 +152,14 @@ public class EpDetail  {
         this.name = name;
     }
 
-    
-
     public EpDetail withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目描述
-     * @return description
-     */
+    /** 企业项目描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -206,20 +168,14 @@ public class EpDetail  {
         this.description = description;
     }
 
-    
-
     public EpDetail withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目状态。1启用，2停用
-     * @return status
-     */
+    /** 企业项目状态。1启用，2停用
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -228,20 +184,14 @@ public class EpDetail  {
         this.status = status;
     }
 
-    
-
     public EpDetail withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间，格式为UTC格式。如：2018-05-18T06:49:06Z。
-     * @return createdAt
-     */
+    /** 创建时间，格式为UTC格式。如：2018-05-18T06:49:06Z。
+     * 
+     * @return createdAt */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -250,20 +200,14 @@ public class EpDetail  {
         this.createdAt = createdAt;
     }
 
-    
-
     public EpDetail withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 修改时间，格式为UTC格式。如：2018-05-28T02:21:36Z。
-     * @return updatedAt
-     */
+    /** 修改时间，格式为UTC格式。如：2018-05-28T02:21:36Z。
+     * 
+     * @return updatedAt */
     public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
@@ -272,20 +216,14 @@ public class EpDetail  {
         this.updatedAt = updatedAt;
     }
 
-    
-
     public EpDetail withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目类型： - prod：商用项目 - poc：测试项目
-     * @return type
-     */
+    /** 项目类型： - prod：商用项目 - poc：测试项目
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -293,8 +231,6 @@ public class EpDetail  {
     public void setType(TypeEnum type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -305,18 +241,17 @@ public class EpDetail  {
             return false;
         }
         EpDetail epDetail = (EpDetail) o;
-        return Objects.equals(this.id, epDetail.id) &&
-            Objects.equals(this.name, epDetail.name) &&
-            Objects.equals(this.description, epDetail.description) &&
-            Objects.equals(this.status, epDetail.status) &&
-            Objects.equals(this.createdAt, epDetail.createdAt) &&
-            Objects.equals(this.updatedAt, epDetail.updatedAt) &&
-            Objects.equals(this.type, epDetail.type);
+        return Objects.equals(this.id, epDetail.id) && Objects.equals(this.name, epDetail.name)
+            && Objects.equals(this.description, epDetail.description) && Objects.equals(this.status, epDetail.status)
+            && Objects.equals(this.createdAt, epDetail.createdAt) && Objects.equals(this.updatedAt, epDetail.updatedAt)
+            && Objects.equals(this.type, epDetail.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, description, status, createdAt, updatedAt, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -331,16 +266,13 @@ public class EpDetail  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

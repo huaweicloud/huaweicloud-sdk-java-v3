@@ -1,69 +1,49 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kafka.v2.model.ShowCeshierarchyRespDimensions;
-import com.huaweicloud.sdk.kafka.v2.model.ShowCeshierarchyRespGroups;
-import com.huaweicloud.sdk.kafka.v2.model.ShowCeshierarchyRespInstanceIds;
-import com.huaweicloud.sdk.kafka.v2.model.ShowCeshierarchyRespNodes;
-import com.huaweicloud.sdk.kafka.v2.model.ShowCeshierarchyRespQueues;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowCesHierarchyResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dimensions")
-    
+    @JsonProperty(value = "dimensions")
+
     private List<ShowCeshierarchyRespDimensions> dimensions = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_ids")
-    
+    @JsonProperty(value = "instance_ids")
+
     private List<ShowCeshierarchyRespInstanceIds> instanceIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodes")
-    
+    @JsonProperty(value = "nodes")
+
     private List<ShowCeshierarchyRespNodes> nodes = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="queues")
-    
+    @JsonProperty(value = "queues")
+
     private List<ShowCeshierarchyRespQueues> queues = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="groups")
-    
+    @JsonProperty(value = "groups")
+
     private List<ShowCeshierarchyRespGroups> groups = null;
-    
+
     public ShowCesHierarchyResponse withDimensions(List<ShowCeshierarchyRespDimensions> dimensions) {
         this.dimensions = dimensions;
         return this;
     }
 
-    
     public ShowCesHierarchyResponse addDimensionsItem(ShowCeshierarchyRespDimensions dimensionsItem) {
-        if(this.dimensions == null) {
+        if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
         this.dimensions.add(dimensionsItem);
@@ -71,17 +51,16 @@ public class ShowCesHierarchyResponse extends SdkResponse {
     }
 
     public ShowCesHierarchyResponse withDimensions(Consumer<List<ShowCeshierarchyRespDimensions>> dimensionsSetter) {
-        if(this.dimensions == null) {
+        if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
         dimensionsSetter.accept(this.dimensions);
         return this;
     }
 
-    /**
-     * 监控维度。
-     * @return dimensions
-     */
+    /** 监控维度。
+     * 
+     * @return dimensions */
     public List<ShowCeshierarchyRespDimensions> getDimensions() {
         return dimensions;
     }
@@ -90,16 +69,13 @@ public class ShowCesHierarchyResponse extends SdkResponse {
         this.dimensions = dimensions;
     }
 
-    
-
     public ShowCesHierarchyResponse withInstanceIds(List<ShowCeshierarchyRespInstanceIds> instanceIds) {
         this.instanceIds = instanceIds;
         return this;
     }
 
-    
     public ShowCesHierarchyResponse addInstanceIdsItem(ShowCeshierarchyRespInstanceIds instanceIdsItem) {
-        if(this.instanceIds == null) {
+        if (this.instanceIds == null) {
             this.instanceIds = new ArrayList<>();
         }
         this.instanceIds.add(instanceIdsItem);
@@ -107,17 +83,16 @@ public class ShowCesHierarchyResponse extends SdkResponse {
     }
 
     public ShowCesHierarchyResponse withInstanceIds(Consumer<List<ShowCeshierarchyRespInstanceIds>> instanceIdsSetter) {
-        if(this.instanceIds == null) {
+        if (this.instanceIds == null) {
             this.instanceIds = new ArrayList<>();
         }
         instanceIdsSetter.accept(this.instanceIds);
         return this;
     }
 
-    /**
-     * 实例信息。
-     * @return instanceIds
-     */
+    /** 实例信息。
+     * 
+     * @return instanceIds */
     public List<ShowCeshierarchyRespInstanceIds> getInstanceIds() {
         return instanceIds;
     }
@@ -126,16 +101,13 @@ public class ShowCesHierarchyResponse extends SdkResponse {
         this.instanceIds = instanceIds;
     }
 
-    
-
     public ShowCesHierarchyResponse withNodes(List<ShowCeshierarchyRespNodes> nodes) {
         this.nodes = nodes;
         return this;
     }
 
-    
     public ShowCesHierarchyResponse addNodesItem(ShowCeshierarchyRespNodes nodesItem) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         this.nodes.add(nodesItem);
@@ -143,17 +115,16 @@ public class ShowCesHierarchyResponse extends SdkResponse {
     }
 
     public ShowCesHierarchyResponse withNodes(Consumer<List<ShowCeshierarchyRespNodes>> nodesSetter) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         nodesSetter.accept(this.nodes);
         return this;
     }
 
-    /**
-     * 节点信息。
-     * @return nodes
-     */
+    /** 节点信息。
+     * 
+     * @return nodes */
     public List<ShowCeshierarchyRespNodes> getNodes() {
         return nodes;
     }
@@ -162,16 +133,13 @@ public class ShowCesHierarchyResponse extends SdkResponse {
         this.nodes = nodes;
     }
 
-    
-
     public ShowCesHierarchyResponse withQueues(List<ShowCeshierarchyRespQueues> queues) {
         this.queues = queues;
         return this;
     }
 
-    
     public ShowCesHierarchyResponse addQueuesItem(ShowCeshierarchyRespQueues queuesItem) {
-        if(this.queues == null) {
+        if (this.queues == null) {
             this.queues = new ArrayList<>();
         }
         this.queues.add(queuesItem);
@@ -179,17 +147,16 @@ public class ShowCesHierarchyResponse extends SdkResponse {
     }
 
     public ShowCesHierarchyResponse withQueues(Consumer<List<ShowCeshierarchyRespQueues>> queuesSetter) {
-        if(this.queues == null) {
+        if (this.queues == null) {
             this.queues = new ArrayList<>();
         }
         queuesSetter.accept(this.queues);
         return this;
     }
 
-    /**
-     * 队列信息。
-     * @return queues
-     */
+    /** 队列信息。
+     * 
+     * @return queues */
     public List<ShowCeshierarchyRespQueues> getQueues() {
         return queues;
     }
@@ -198,16 +165,13 @@ public class ShowCesHierarchyResponse extends SdkResponse {
         this.queues = queues;
     }
 
-    
-
     public ShowCesHierarchyResponse withGroups(List<ShowCeshierarchyRespGroups> groups) {
         this.groups = groups;
         return this;
     }
 
-    
     public ShowCesHierarchyResponse addGroupsItem(ShowCeshierarchyRespGroups groupsItem) {
-        if(this.groups == null) {
+        if (this.groups == null) {
             this.groups = new ArrayList<>();
         }
         this.groups.add(groupsItem);
@@ -215,17 +179,16 @@ public class ShowCesHierarchyResponse extends SdkResponse {
     }
 
     public ShowCesHierarchyResponse withGroups(Consumer<List<ShowCeshierarchyRespGroups>> groupsSetter) {
-        if(this.groups == null) {
+        if (this.groups == null) {
             this.groups = new ArrayList<>();
         }
         groupsSetter.accept(this.groups);
         return this;
     }
 
-    /**
-     * 消费组信息。
-     * @return groups
-     */
+    /** 消费组信息。
+     * 
+     * @return groups */
     public List<ShowCeshierarchyRespGroups> getGroups() {
         return groups;
     }
@@ -233,8 +196,6 @@ public class ShowCesHierarchyResponse extends SdkResponse {
     public void setGroups(List<ShowCeshierarchyRespGroups> groups) {
         this.groups = groups;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -245,16 +206,18 @@ public class ShowCesHierarchyResponse extends SdkResponse {
             return false;
         }
         ShowCesHierarchyResponse showCesHierarchyResponse = (ShowCesHierarchyResponse) o;
-        return Objects.equals(this.dimensions, showCesHierarchyResponse.dimensions) &&
-            Objects.equals(this.instanceIds, showCesHierarchyResponse.instanceIds) &&
-            Objects.equals(this.nodes, showCesHierarchyResponse.nodes) &&
-            Objects.equals(this.queues, showCesHierarchyResponse.queues) &&
-            Objects.equals(this.groups, showCesHierarchyResponse.groups);
+        return Objects.equals(this.dimensions, showCesHierarchyResponse.dimensions)
+            && Objects.equals(this.instanceIds, showCesHierarchyResponse.instanceIds)
+            && Objects.equals(this.nodes, showCesHierarchyResponse.nodes)
+            && Objects.equals(this.queues, showCesHierarchyResponse.queues)
+            && Objects.equals(this.groups, showCesHierarchyResponse.groups);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(dimensions, instanceIds, nodes, queues, groups);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -267,16 +230,13 @@ public class ShowCesHierarchyResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

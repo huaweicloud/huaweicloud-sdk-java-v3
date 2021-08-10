@@ -1,38 +1,25 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.kms.v1.model.PageInfo;
-import com.huaweicloud.sdk.kms.v1.model.Secret;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListSecretsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="secrets")
-    
+    @JsonProperty(value = "secrets")
+
     private List<Secret> secrets = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_info")
-    
+    @JsonProperty(value = "page_info")
+
     private PageInfo pageInfo;
 
     public ListSecretsResponse withSecrets(List<Secret> secrets) {
@@ -40,9 +27,8 @@ public class ListSecretsResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListSecretsResponse addSecretsItem(Secret secretsItem) {
-        if(this.secrets == null) {
+        if (this.secrets == null) {
             this.secrets = new ArrayList<>();
         }
         this.secrets.add(secretsItem);
@@ -50,17 +36,16 @@ public class ListSecretsResponse extends SdkResponse {
     }
 
     public ListSecretsResponse withSecrets(Consumer<List<Secret>> secretsSetter) {
-        if(this.secrets == null) {
+        if (this.secrets == null) {
             this.secrets = new ArrayList<>();
         }
         secretsSetter.accept(this.secrets);
         return this;
     }
 
-    /**
-     * 凭据详情列表。
-     * @return secrets
-     */
+    /** 凭据详情列表。
+     * 
+     * @return secrets */
     public List<Secret> getSecrets() {
         return secrets;
     }
@@ -69,27 +54,23 @@ public class ListSecretsResponse extends SdkResponse {
         this.secrets = secrets;
     }
 
-    
-
     public ListSecretsResponse withPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
         return this;
     }
 
     public ListSecretsResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
-        if(this.pageInfo == null ){
+        if (this.pageInfo == null) {
             this.pageInfo = new PageInfo();
             pageInfoSetter.accept(this.pageInfo);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get pageInfo
-     * @return pageInfo
-     */
+    /** Get pageInfo
+     * 
+     * @return pageInfo */
     public PageInfo getPageInfo() {
         return pageInfo;
     }
@@ -97,8 +78,6 @@ public class ListSecretsResponse extends SdkResponse {
     public void setPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,13 +88,15 @@ public class ListSecretsResponse extends SdkResponse {
             return false;
         }
         ListSecretsResponse listSecretsResponse = (ListSecretsResponse) o;
-        return Objects.equals(this.secrets, listSecretsResponse.secrets) &&
-            Objects.equals(this.pageInfo, listSecretsResponse.pageInfo);
+        return Objects.equals(this.secrets, listSecretsResponse.secrets)
+            && Objects.equals(this.pageInfo, listSecretsResponse.pageInfo);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(secrets, pageInfo);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -125,16 +106,13 @@ public class ListSecretsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListEdgeCloudRequest  {
-
-
+/** Request Object */
+public class ListEdgeCloudRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
     public ListEdgeCloudRequest withOffset(Integer offset) {
@@ -46,13 +33,9 @@ public class ListEdgeCloudRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量。 当前偏移量，默认为0。
-     * @return offset
-     */
+    /** 偏移量。 当前偏移量，默认为0。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -61,20 +44,14 @@ public class ListEdgeCloudRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListEdgeCloudRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询返回边缘业务列表当前页面的数量。 取值范围：0~1000。
-     * @return limit
-     */
+    /** 查询返回边缘业务列表当前页面的数量。 取值范围：0~1000。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -83,20 +60,14 @@ public class ListEdgeCloudRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListEdgeCloudRequest withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘业务名称。
-     * @return name
-     */
+    /** 边缘业务名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -105,20 +76,14 @@ public class ListEdgeCloudRequest  {
         this.name = name;
     }
 
-    
-
     public ListEdgeCloudRequest withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘业务ID。
-     * @return id
-     */
+    /** 边缘业务ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -126,8 +91,6 @@ public class ListEdgeCloudRequest  {
     public void setId(String id) {
         this.id = id;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,16 @@ public class ListEdgeCloudRequest  {
             return false;
         }
         ListEdgeCloudRequest listEdgeCloudRequest = (ListEdgeCloudRequest) o;
-        return Objects.equals(this.offset, listEdgeCloudRequest.offset) &&
-            Objects.equals(this.limit, listEdgeCloudRequest.limit) &&
-            Objects.equals(this.name, listEdgeCloudRequest.name) &&
-            Objects.equals(this.id, listEdgeCloudRequest.id);
+        return Objects.equals(this.offset, listEdgeCloudRequest.offset)
+            && Objects.equals(this.limit, listEdgeCloudRequest.limit)
+            && Objects.equals(this.name, listEdgeCloudRequest.name) && Objects.equals(this.id, listEdgeCloudRequest.id);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(offset, limit, name, id);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +122,13 @@ public class ListEdgeCloudRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iec.v1.model.FirewallPolicy;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 更新防火墙规则的参数
- */
-public class UpdateFirewallRuleOption  {
-
-
+/** 更新防火墙规则的参数 */
+public class UpdateFirewallRuleOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="egress_firewall_policy")
-    
+    @JsonProperty(value = "egress_firewall_policy")
+
     private FirewallPolicy egressFirewallPolicy;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ingress_firewall_policy")
-    
+    @JsonProperty(value = "ingress_firewall_policy")
+
     private FirewallPolicy ingressFirewallPolicy;
 
     public UpdateFirewallRuleOption withEgressFirewallPolicy(FirewallPolicy egressFirewallPolicy) {
@@ -36,19 +25,17 @@ public class UpdateFirewallRuleOption  {
     }
 
     public UpdateFirewallRuleOption withEgressFirewallPolicy(Consumer<FirewallPolicy> egressFirewallPolicySetter) {
-        if(this.egressFirewallPolicy == null ){
+        if (this.egressFirewallPolicy == null) {
             this.egressFirewallPolicy = new FirewallPolicy();
             egressFirewallPolicySetter.accept(this.egressFirewallPolicy);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get egressFirewallPolicy
-     * @return egressFirewallPolicy
-     */
+    /** Get egressFirewallPolicy
+     * 
+     * @return egressFirewallPolicy */
     public FirewallPolicy getEgressFirewallPolicy() {
         return egressFirewallPolicy;
     }
@@ -57,27 +44,23 @@ public class UpdateFirewallRuleOption  {
         this.egressFirewallPolicy = egressFirewallPolicy;
     }
 
-    
-
     public UpdateFirewallRuleOption withIngressFirewallPolicy(FirewallPolicy ingressFirewallPolicy) {
         this.ingressFirewallPolicy = ingressFirewallPolicy;
         return this;
     }
 
     public UpdateFirewallRuleOption withIngressFirewallPolicy(Consumer<FirewallPolicy> ingressFirewallPolicySetter) {
-        if(this.ingressFirewallPolicy == null ){
+        if (this.ingressFirewallPolicy == null) {
             this.ingressFirewallPolicy = new FirewallPolicy();
             ingressFirewallPolicySetter.accept(this.ingressFirewallPolicy);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get ingressFirewallPolicy
-     * @return ingressFirewallPolicy
-     */
+    /** Get ingressFirewallPolicy
+     * 
+     * @return ingressFirewallPolicy */
     public FirewallPolicy getIngressFirewallPolicy() {
         return ingressFirewallPolicy;
     }
@@ -85,8 +68,6 @@ public class UpdateFirewallRuleOption  {
     public void setIngressFirewallPolicy(FirewallPolicy ingressFirewallPolicy) {
         this.ingressFirewallPolicy = ingressFirewallPolicy;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -97,13 +78,15 @@ public class UpdateFirewallRuleOption  {
             return false;
         }
         UpdateFirewallRuleOption updateFirewallRuleOption = (UpdateFirewallRuleOption) o;
-        return Objects.equals(this.egressFirewallPolicy, updateFirewallRuleOption.egressFirewallPolicy) &&
-            Objects.equals(this.ingressFirewallPolicy, updateFirewallRuleOption.ingressFirewallPolicy);
+        return Objects.equals(this.egressFirewallPolicy, updateFirewallRuleOption.egressFirewallPolicy)
+            && Objects.equals(this.ingressFirewallPolicy, updateFirewallRuleOption.ingressFirewallPolicy);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(egressFirewallPolicy, ingressFirewallPolicy);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -113,16 +96,13 @@ public class UpdateFirewallRuleOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

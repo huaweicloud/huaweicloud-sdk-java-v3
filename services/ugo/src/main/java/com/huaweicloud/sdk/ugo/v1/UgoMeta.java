@@ -6,14 +6,12 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.ugo.v1.model.*;
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class UgoMeta {
 
-    public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions = genForlistApiVersions();
+    public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions =
+        genForlistApiVersions();
 
     private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForlistApiVersions() {
         // basic
@@ -26,13 +24,12 @@ public class UgoMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersion = genForshowApiVersion();
+    public static final HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersion =
+        genForshowApiVersion();
 
     private static HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> genForshowApiVersion() {
         // basic
@@ -43,23 +40,21 @@ public class UgoMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("api_version",
+        builder.<ShowApiVersionRequest.ApiVersionEnum>withRequestField("api_version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ShowApiVersionRequest.ApiVersionEnum.class,
+            TypeCasts.uncheckedConversion(ShowApiVersionRequest.ApiVersionEnum.class),
             f -> f.withMarshaller(ShowApiVersionRequest::getApiVersion, (req, v) -> {
                 req.setApiVersion(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<MigrateSqlStatementRequest, MigrateSqlStatementResponse> migrateSqlStatement = genFormigrateSqlStatement();
+    public static final HttpRequestDef<MigrateSqlStatementRequest, MigrateSqlStatementResponse> migrateSqlStatement =
+        genFormigrateSqlStatement();
 
     private static HttpRequestDef<MigrateSqlStatementRequest, MigrateSqlStatementResponse> genFormigrateSqlStatement() {
         // basic
@@ -70,18 +65,15 @@ public class UgoMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<SqlConvertReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            SqlConvertReq.class,
+            TypeCasts.uncheckedConversion(SqlConvertReq.class),
             f -> f.withMarshaller(MigrateSqlStatementRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

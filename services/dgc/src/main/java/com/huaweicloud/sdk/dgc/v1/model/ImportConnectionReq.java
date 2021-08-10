@@ -1,56 +1,39 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dgc.v1.model.ConnectionParam;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ImportConnectionReq
- */
-public class ImportConnectionReq  {
-
-
+/** ImportConnectionReq */
+public class ImportConnectionReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path")
-    
+    @JsonProperty(value = "path")
+
     private String path;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="params")
-    
+    @JsonProperty(value = "params")
+
     private List<ConnectionParam> params = null;
-        /**
-     * Gets or Sets sameNamePolicy
-     */
+
+    /** Gets or Sets sameNamePolicy */
     public static final class SameNamePolicyEnum {
 
-        
-        /**
-         * Enum SKIP for value: "SKIP"
-         */
+        /** Enum SKIP for value: "SKIP" */
         public static final SameNamePolicyEnum SKIP = new SameNamePolicyEnum("SKIP");
-        
-        /**
-         * Enum OVERWRITE for value: "OVERWRITE"
-         */
+
+        /** Enum OVERWRITE for value: "OVERWRITE" */
         public static final SameNamePolicyEnum OVERWRITE = new SameNamePolicyEnum("OVERWRITE");
-        
 
         private static final Map<String, SameNamePolicyEnum> STATIC_FIELDS = createStaticFields();
 
@@ -79,7 +62,7 @@ public class ImportConnectionReq  {
 
         @JsonCreator
         public static SameNamePolicyEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SameNamePolicyEnum result = STATIC_FIELDS.get(value);
@@ -90,7 +73,7 @@ public class ImportConnectionReq  {
         }
 
         public static SameNamePolicyEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SameNamePolicyEnum result = STATIC_FIELDS.get(value);
@@ -114,10 +97,9 @@ public class ImportConnectionReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sameNamePolicy")
-    
+    @JsonProperty(value = "sameNamePolicy")
+
     private SameNamePolicyEnum sameNamePolicy;
 
     public ImportConnectionReq withPath(String path) {
@@ -125,13 +107,9 @@ public class ImportConnectionReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * Get path
-     * @return path
-     */
+    /** Get path
+     * 
+     * @return path */
     public String getPath() {
         return path;
     }
@@ -140,16 +118,13 @@ public class ImportConnectionReq  {
         this.path = path;
     }
 
-    
-
     public ImportConnectionReq withParams(List<ConnectionParam> params) {
         this.params = params;
         return this;
     }
 
-    
     public ImportConnectionReq addParamsItem(ConnectionParam paramsItem) {
-        if(this.params == null) {
+        if (this.params == null) {
             this.params = new ArrayList<>();
         }
         this.params.add(paramsItem);
@@ -157,17 +132,16 @@ public class ImportConnectionReq  {
     }
 
     public ImportConnectionReq withParams(Consumer<List<ConnectionParam>> paramsSetter) {
-        if(this.params == null) {
+        if (this.params == null) {
             this.params = new ArrayList<>();
         }
         paramsSetter.accept(this.params);
         return this;
     }
 
-    /**
-     * 连接参数
-     * @return params
-     */
+    /** 连接参数
+     * 
+     * @return params */
     public List<ConnectionParam> getParams() {
         return params;
     }
@@ -176,20 +150,14 @@ public class ImportConnectionReq  {
         this.params = params;
     }
 
-    
-
     public ImportConnectionReq withSameNamePolicy(SameNamePolicyEnum sameNamePolicy) {
         this.sameNamePolicy = sameNamePolicy;
         return this;
     }
 
-    
-
-
-    /**
-     * Get sameNamePolicy
-     * @return sameNamePolicy
-     */
+    /** Get sameNamePolicy
+     * 
+     * @return sameNamePolicy */
     public SameNamePolicyEnum getSameNamePolicy() {
         return sameNamePolicy;
     }
@@ -197,8 +165,6 @@ public class ImportConnectionReq  {
     public void setSameNamePolicy(SameNamePolicyEnum sameNamePolicy) {
         this.sameNamePolicy = sameNamePolicy;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -209,14 +175,16 @@ public class ImportConnectionReq  {
             return false;
         }
         ImportConnectionReq importConnectionReq = (ImportConnectionReq) o;
-        return Objects.equals(this.path, importConnectionReq.path) &&
-            Objects.equals(this.params, importConnectionReq.params) &&
-            Objects.equals(this.sameNamePolicy, importConnectionReq.sameNamePolicy);
+        return Objects.equals(this.path, importConnectionReq.path)
+            && Objects.equals(this.params, importConnectionReq.params)
+            && Objects.equals(this.sameNamePolicy, importConnectionReq.sameNamePolicy);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(path, params, sameNamePolicy);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -227,16 +195,13 @@ public class ImportConnectionReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

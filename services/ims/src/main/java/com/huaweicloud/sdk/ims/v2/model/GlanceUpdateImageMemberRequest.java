@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ims.v2.model.GlanceUpdateImageMemberRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class GlanceUpdateImageMemberRequest  {
-
-
+/** Request Object */
+public class GlanceUpdateImageMemberRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_id")
-    
+    @JsonProperty(value = "image_id")
+
     private String imageId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="member_id")
-    
+    @JsonProperty(value = "member_id")
+
     private String memberId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private GlanceUpdateImageMemberRequestBody body;
 
     public GlanceUpdateImageMemberRequest withImageId(String imageId) {
@@ -41,13 +29,9 @@ public class GlanceUpdateImageMemberRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像id
-     * @return imageId
-     */
+    /** 镜像id
+     * 
+     * @return imageId */
     public String getImageId() {
         return imageId;
     }
@@ -56,20 +40,14 @@ public class GlanceUpdateImageMemberRequest  {
         this.imageId = imageId;
     }
 
-    
-
     public GlanceUpdateImageMemberRequest withMemberId(String memberId) {
         this.memberId = memberId;
         return this;
     }
 
-    
-
-
-    /**
-     * 成员id
-     * @return memberId
-     */
+    /** 成员id
+     * 
+     * @return memberId */
     public String getMemberId() {
         return memberId;
     }
@@ -78,27 +56,23 @@ public class GlanceUpdateImageMemberRequest  {
         this.memberId = memberId;
     }
 
-    
-
     public GlanceUpdateImageMemberRequest withBody(GlanceUpdateImageMemberRequestBody body) {
         this.body = body;
         return this;
     }
 
     public GlanceUpdateImageMemberRequest withBody(Consumer<GlanceUpdateImageMemberRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new GlanceUpdateImageMemberRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public GlanceUpdateImageMemberRequestBody getBody() {
         return body;
     }
@@ -106,8 +80,6 @@ public class GlanceUpdateImageMemberRequest  {
     public void setBody(GlanceUpdateImageMemberRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class GlanceUpdateImageMemberRequest  {
             return false;
         }
         GlanceUpdateImageMemberRequest glanceUpdateImageMemberRequest = (GlanceUpdateImageMemberRequest) o;
-        return Objects.equals(this.imageId, glanceUpdateImageMemberRequest.imageId) &&
-            Objects.equals(this.memberId, glanceUpdateImageMemberRequest.memberId) &&
-            Objects.equals(this.body, glanceUpdateImageMemberRequest.body);
+        return Objects.equals(this.imageId, glanceUpdateImageMemberRequest.imageId)
+            && Objects.equals(this.memberId, glanceUpdateImageMemberRequest.memberId)
+            && Objects.equals(this.body, glanceUpdateImageMemberRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(imageId, memberId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class GlanceUpdateImageMemberRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

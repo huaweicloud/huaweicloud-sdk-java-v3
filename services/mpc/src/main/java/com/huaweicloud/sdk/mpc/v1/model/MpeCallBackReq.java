@@ -1,72 +1,45 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.MpeMetaData;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * MpeCallBackReq
- */
-public class MpeCallBackReq  {
+/** MpeCallBackReq */
+public class MpeCallBackReq {
 
-    /**
-     * 任务类型
-     */
+    /** 任务类型 */
     public static final class TaskTypeEnum {
 
-        
-        /**
-         * Enum CONCAT for value: "CONCAT"
-         */
+        /** Enum CONCAT for value: "CONCAT" */
         public static final TaskTypeEnum CONCAT = new TaskTypeEnum("CONCAT");
-        
-        /**
-         * Enum AUDIO for value: "AUDIO"
-         */
+
+        /** Enum AUDIO for value: "AUDIO" */
         public static final TaskTypeEnum AUDIO = new TaskTypeEnum("AUDIO");
-        
-        /**
-         * Enum CUT for value: "CUT"
-         */
+
+        /** Enum CUT for value: "CUT" */
         public static final TaskTypeEnum CUT = new TaskTypeEnum("CUT");
-        
-        /**
-         * Enum PARSE for value: "PARSE"
-         */
+
+        /** Enum PARSE for value: "PARSE" */
         public static final TaskTypeEnum PARSE = new TaskTypeEnum("PARSE");
-        
-        /**
-         * Enum MD5 for value: "MD5"
-         */
+
+        /** Enum MD5 for value: "MD5" */
         public static final TaskTypeEnum MD5 = new TaskTypeEnum("MD5");
-        
-        /**
-         * Enum SNAPSHOT for value: "SNAPSHOT"
-         */
+
+        /** Enum SNAPSHOT for value: "SNAPSHOT" */
         public static final TaskTypeEnum SNAPSHOT = new TaskTypeEnum("SNAPSHOT");
-        
-        /**
-         * Enum REMUX for value: "REMUX"
-         */
+
+        /** Enum REMUX for value: "REMUX" */
         public static final TaskTypeEnum REMUX = new TaskTypeEnum("REMUX");
-        
-        /**
-         * Enum ANIMATION for value: "ANIMATION"
-         */
+
+        /** Enum ANIMATION for value: "ANIMATION" */
         public static final TaskTypeEnum ANIMATION = new TaskTypeEnum("ANIMATION");
-        
 
         private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -101,7 +74,7 @@ public class MpeCallBackReq  {
 
         @JsonCreator
         public static TaskTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TaskTypeEnum result = STATIC_FIELDS.get(value);
@@ -112,7 +85,7 @@ public class MpeCallBackReq  {
         }
 
         public static TaskTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TaskTypeEnum result = STATIC_FIELDS.get(value);
@@ -136,40 +109,34 @@ public class MpeCallBackReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_type")
-    
+    @JsonProperty(value = "task_type")
+
     private TaskTypeEnum taskType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_id")
-    
+    @JsonProperty(value = "task_id")
+
     private String taskId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="complete_ratio")
-    
+    @JsonProperty(value = "complete_ratio")
+
     private Integer completeRatio;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="meta_data")
-    
+    @JsonProperty(value = "meta_data")
+
     private MpeMetaData metaData;
 
     public MpeCallBackReq withTaskType(TaskTypeEnum taskType) {
@@ -177,13 +144,9 @@ public class MpeCallBackReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务类型
-     * @return taskType
-     */
+    /** 任务类型
+     * 
+     * @return taskType */
     public TaskTypeEnum getTaskType() {
         return taskType;
     }
@@ -192,20 +155,14 @@ public class MpeCallBackReq  {
         this.taskType = taskType;
     }
 
-    
-
     public MpeCallBackReq withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID。
-     * @return taskId
-     */
+    /** 任务ID。
+     * 
+     * @return taskId */
     public String getTaskId() {
         return taskId;
     }
@@ -214,20 +171,14 @@ public class MpeCallBackReq  {
         this.taskId = taskId;
     }
 
-    
-
     public MpeCallBackReq withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务状态。
-     * @return status
-     */
+    /** 任务状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -236,22 +187,14 @@ public class MpeCallBackReq  {
         this.status = status;
     }
 
-    
-
     public MpeCallBackReq withCompleteRatio(Integer completeRatio) {
         this.completeRatio = completeRatio;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务完成进度百分比值。 
-     * minimum: 0
-     * maximum: 100
-     * @return completeRatio
-     */
+    /** 任务完成进度百分比值。 minimum: 0 maximum: 100
+     * 
+     * @return completeRatio */
     public Integer getCompleteRatio() {
         return completeRatio;
     }
@@ -260,20 +203,14 @@ public class MpeCallBackReq  {
         this.completeRatio = completeRatio;
     }
 
-    
-
     public MpeCallBackReq withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务执行描述。
-     * @return description
-     */
+    /** 任务执行描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -282,27 +219,23 @@ public class MpeCallBackReq  {
         this.description = description;
     }
 
-    
-
     public MpeCallBackReq withMetaData(MpeMetaData metaData) {
         this.metaData = metaData;
         return this;
     }
 
     public MpeCallBackReq withMetaData(Consumer<MpeMetaData> metaDataSetter) {
-        if(this.metaData == null ){
+        if (this.metaData == null) {
             this.metaData = new MpeMetaData();
             metaDataSetter.accept(this.metaData);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get metaData
-     * @return metaData
-     */
+    /** Get metaData
+     * 
+     * @return metaData */
     public MpeMetaData getMetaData() {
         return metaData;
     }
@@ -310,8 +243,6 @@ public class MpeCallBackReq  {
     public void setMetaData(MpeMetaData metaData) {
         this.metaData = metaData;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -322,17 +253,18 @@ public class MpeCallBackReq  {
             return false;
         }
         MpeCallBackReq mpeCallBackReq = (MpeCallBackReq) o;
-        return Objects.equals(this.taskType, mpeCallBackReq.taskType) &&
-            Objects.equals(this.taskId, mpeCallBackReq.taskId) &&
-            Objects.equals(this.status, mpeCallBackReq.status) &&
-            Objects.equals(this.completeRatio, mpeCallBackReq.completeRatio) &&
-            Objects.equals(this.description, mpeCallBackReq.description) &&
-            Objects.equals(this.metaData, mpeCallBackReq.metaData);
+        return Objects.equals(this.taskType, mpeCallBackReq.taskType)
+            && Objects.equals(this.taskId, mpeCallBackReq.taskId) && Objects.equals(this.status, mpeCallBackReq.status)
+            && Objects.equals(this.completeRatio, mpeCallBackReq.completeRatio)
+            && Objects.equals(this.description, mpeCallBackReq.description)
+            && Objects.equals(this.metaData, mpeCallBackReq.metaData);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(taskType, taskId, status, completeRatio, description, metaData);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -346,16 +278,13 @@ public class MpeCallBackReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

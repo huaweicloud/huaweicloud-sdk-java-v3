@@ -1,45 +1,32 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.CorpAdminDTO;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class AddCorpAdminRequest  {
-
-
+/** Request Object */
+public class AddCorpAdminRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Request-Id")
-    
+    @JsonProperty(value = "X-Request-Id")
+
     private String xRequestId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Accept-Language")
-    
+    @JsonProperty(value = "Accept-Language")
+
     private String acceptLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="accountType")
-    
+    @JsonProperty(value = "accountType")
+
     private Integer accountType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private CorpAdminDTO body;
 
     public AddCorpAdminRequest withXRequestId(String xRequestId) {
@@ -47,15 +34,11 @@ public class AddCorpAdminRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
-     * @return xRequestId
-     */
+    /** 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * 
+     * @return xRequestId */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Request-Id")
+    @JsonProperty(value = "X-Request-Id")
     public String getXRequestId() {
         return xRequestId;
     }
@@ -64,20 +47,14 @@ public class AddCorpAdminRequest  {
         this.xRequestId = xRequestId;
     }
 
-    
-
     public AddCorpAdminRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言参数，默认为中文zh_CN, 英文为en_US
-     * @return acceptLanguage
-     */
+    /** 语言参数，默认为中文zh_CN, 英文为en_US
+     * 
+     * @return acceptLanguage */
     public String getAcceptLanguage() {
         return acceptLanguage;
     }
@@ -86,22 +63,14 @@ public class AddCorpAdminRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
-    
-
     public AddCorpAdminRequest withAccountType(Integer accountType) {
         this.accountType = accountType;
         return this;
     }
 
-    
-
-
-    /**
-     * 账号类型 * 0：会议账号 * 1：表示第三方账号。 默认0 
-     * minimum: 0
-     * maximum: 1
-     * @return accountType
-     */
+    /** 账号类型 * 0：会议账号 * 1：表示第三方账号。 默认0 minimum: 0 maximum: 1
+     * 
+     * @return accountType */
     public Integer getAccountType() {
         return accountType;
     }
@@ -110,27 +79,23 @@ public class AddCorpAdminRequest  {
         this.accountType = accountType;
     }
 
-    
-
     public AddCorpAdminRequest withBody(CorpAdminDTO body) {
         this.body = body;
         return this;
     }
 
     public AddCorpAdminRequest withBody(Consumer<CorpAdminDTO> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CorpAdminDTO();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public CorpAdminDTO getBody() {
         return body;
     }
@@ -138,8 +103,6 @@ public class AddCorpAdminRequest  {
     public void setBody(CorpAdminDTO body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -150,15 +113,17 @@ public class AddCorpAdminRequest  {
             return false;
         }
         AddCorpAdminRequest addCorpAdminRequest = (AddCorpAdminRequest) o;
-        return Objects.equals(this.xRequestId, addCorpAdminRequest.xRequestId) &&
-            Objects.equals(this.acceptLanguage, addCorpAdminRequest.acceptLanguage) &&
-            Objects.equals(this.accountType, addCorpAdminRequest.accountType) &&
-            Objects.equals(this.body, addCorpAdminRequest.body);
+        return Objects.equals(this.xRequestId, addCorpAdminRequest.xRequestId)
+            && Objects.equals(this.acceptLanguage, addCorpAdminRequest.acceptLanguage)
+            && Objects.equals(this.accountType, addCorpAdminRequest.accountType)
+            && Objects.equals(this.body, addCorpAdminRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xRequestId, acceptLanguage, accountType, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -170,16 +135,13 @@ public class AddCorpAdminRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

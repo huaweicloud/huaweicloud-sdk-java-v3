@@ -1,41 +1,26 @@
 package com.huaweicloud.sdk.ces.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListEventsRequest  {
+/** Request Object */
+public class ListEventsRequest {
 
-    /**
-     * 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
-     */
+    /** 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。 */
     public static final class EventTypeEnum {
 
-        
-        /**
-         * Enum EVENT_SYS for value: "EVENT.SYS"
-         */
+        /** Enum EVENT_SYS for value: "EVENT.SYS" */
         public static final EventTypeEnum EVENT_SYS = new EventTypeEnum("EVENT.SYS");
-        
-        /**
-         * Enum EVENT_CUSTOM for value: "EVENT.CUSTOM"
-         */
+
+        /** Enum EVENT_CUSTOM for value: "EVENT.CUSTOM" */
         public static final EventTypeEnum EVENT_CUSTOM = new EventTypeEnum("EVENT.CUSTOM");
-        
 
         private static final Map<String, EventTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +49,7 @@ public class ListEventsRequest  {
 
         @JsonCreator
         public static EventTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             EventTypeEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +60,7 @@ public class ListEventsRequest  {
         }
 
         public static EventTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             EventTypeEnum result = STATIC_FIELDS.get(value);
@@ -99,40 +84,34 @@ public class ListEventsRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="event_type")
-    
+    @JsonProperty(value = "event_type")
+
     private EventTypeEnum eventType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="event_name")
-    
+    @JsonProperty(value = "event_name")
+
     private String eventName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="from")
-    
+    @JsonProperty(value = "from")
+
     private Long from;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="to")
-    
+    @JsonProperty(value = "to")
+
     private Long to;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start")
-    
+    @JsonProperty(value = "start")
+
     private Integer start;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
     public ListEventsRequest withEventType(EventTypeEnum eventType) {
@@ -140,13 +119,9 @@ public class ListEventsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
-     * @return eventType
-     */
+    /** 事件类型，值为EVENT.SYS或EVENT.CUSTOM，EVENT.SYS表示系统事件，EVENT.CUSTOM表示自定义事件。
+     * 
+     * @return eventType */
     public EventTypeEnum getEventType() {
         return eventType;
     }
@@ -155,20 +130,14 @@ public class ListEventsRequest  {
         this.eventType = eventType;
     }
 
-    
-
     public ListEventsRequest withEventName(String eventName) {
         this.eventName = eventName;
         return this;
     }
 
-    
-
-
-    /**
-     * 事件名称，值为系统产生的事件名称，或用户自定义上报的事件名称。
-     * @return eventName
-     */
+    /** 事件名称，值为系统产生的事件名称，或用户自定义上报的事件名称。
+     * 
+     * @return eventName */
     public String getEventName() {
         return eventName;
     }
@@ -177,20 +146,14 @@ public class ListEventsRequest  {
         this.eventName = eventName;
     }
 
-    
-
     public ListEventsRequest withFrom(Long from) {
         this.from = from;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询数据起始时间，UNIX时间戳，单位毫秒；例如：1605952700911。
-     * @return from
-     */
+    /** 查询数据起始时间，UNIX时间戳，单位毫秒；例如：1605952700911。
+     * 
+     * @return from */
     public Long getFrom() {
         return from;
     }
@@ -199,20 +162,14 @@ public class ListEventsRequest  {
         this.from = from;
     }
 
-    
-
     public ListEventsRequest withTo(Long to) {
         this.to = to;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询数据截止时间UNIX时间戳，单位毫秒。from必须小于to，例如：1606557500911。
-     * @return to
-     */
+    /** 查询数据截止时间UNIX时间戳，单位毫秒。from必须小于to，例如：1606557500911。
+     * 
+     * @return to */
     public Long getTo() {
         return to;
     }
@@ -221,20 +178,14 @@ public class ListEventsRequest  {
         this.to = to;
     }
 
-    
-
     public ListEventsRequest withStart(Integer start) {
         this.start = start;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页起始值，类型为integer，默认值为0。
-     * @return start
-     */
+    /** 分页起始值，类型为integer，默认值为0。
+     * 
+     * @return start */
     public Integer getStart() {
         return start;
     }
@@ -243,20 +194,14 @@ public class ListEventsRequest  {
         this.start = start;
     }
 
-    
-
     public ListEventsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 单次查询的条数限制，取值范围(0,100]，默认值为100，用于限制结果数据条数。
-     * @return limit
-     */
+    /** 单次查询的条数限制，取值范围(0,100]，默认值为100，用于限制结果数据条数。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -264,8 +209,6 @@ public class ListEventsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -276,17 +219,18 @@ public class ListEventsRequest  {
             return false;
         }
         ListEventsRequest listEventsRequest = (ListEventsRequest) o;
-        return Objects.equals(this.eventType, listEventsRequest.eventType) &&
-            Objects.equals(this.eventName, listEventsRequest.eventName) &&
-            Objects.equals(this.from, listEventsRequest.from) &&
-            Objects.equals(this.to, listEventsRequest.to) &&
-            Objects.equals(this.start, listEventsRequest.start) &&
-            Objects.equals(this.limit, listEventsRequest.limit);
+        return Objects.equals(this.eventType, listEventsRequest.eventType)
+            && Objects.equals(this.eventName, listEventsRequest.eventName)
+            && Objects.equals(this.from, listEventsRequest.from) && Objects.equals(this.to, listEventsRequest.to)
+            && Objects.equals(this.start, listEventsRequest.start)
+            && Objects.equals(this.limit, listEventsRequest.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(eventType, eventName, from, to, start, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -300,16 +244,13 @@ public class ListEventsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

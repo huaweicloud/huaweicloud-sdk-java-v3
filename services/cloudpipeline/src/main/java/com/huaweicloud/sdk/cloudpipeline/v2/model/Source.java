@@ -1,88 +1,69 @@
 package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 源码仓库参数
- */
-public class Source  {
-
-
+/** 源码仓库参数 */
+public class Source {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="codehub_name")
-    
+    @JsonProperty(value = "codehub_name")
+
     private String codehubName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="branches")
-    
+    @JsonProperty(value = "branches")
+
     private List<String> branches = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scm_type")
-    
+    @JsonProperty(value = "scm_type")
+
     private String scmType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hook_flag")
-    
+    @JsonProperty(value = "hook_flag")
+
     private Boolean hookFlag;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="branch")
-    
+    @JsonProperty(value = "branch")
+
     private String branch;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="git_url")
-    
+    @JsonProperty(value = "git_url")
+
     private String gitUrl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="codehub_id")
-    
+    @JsonProperty(value = "codehub_id")
+
     private String codehubId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="web_url")
-    
+    @JsonProperty(value = "web_url")
+
     private String webUrl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="branch_list")
-    
+    @JsonProperty(value = "branch_list")
+
     private List<String> branchList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="init_id")
-    
+    @JsonProperty(value = "init_id")
+
     private String initId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disable")
-    
+    @JsonProperty(value = "disable")
+
     private Boolean disable;
 
     public Source withCodehubName(String codehubName) {
@@ -90,13 +71,9 @@ public class Source  {
         return this;
     }
 
-    
-
-
-    /**
-     * 源码仓名字
-     * @return codehubName
-     */
+    /** 源码仓名字
+     * 
+     * @return codehubName */
     public String getCodehubName() {
         return codehubName;
     }
@@ -105,16 +82,13 @@ public class Source  {
         this.codehubName = codehubName;
     }
 
-    
-
     public Source withBranches(List<String> branches) {
         this.branches = branches;
         return this;
     }
 
-    
     public Source addBranchesItem(String branchesItem) {
-        if(this.branches == null) {
+        if (this.branches == null) {
             this.branches = new ArrayList<>();
         }
         this.branches.add(branchesItem);
@@ -122,17 +96,16 @@ public class Source  {
     }
 
     public Source withBranches(Consumer<List<String>> branchesSetter) {
-        if(this.branches == null) {
+        if (this.branches == null) {
             this.branches = new ArrayList<>();
         }
         branchesSetter.accept(this.branches);
         return this;
     }
 
-    /**
-     * 触发分支
-     * @return branches
-     */
+    /** 触发分支
+     * 
+     * @return branches */
     public List<String> getBranches() {
         return branches;
     }
@@ -141,20 +114,14 @@ public class Source  {
         this.branches = branches;
     }
 
-    
-
     public Source withScmType(String scmType) {
         this.scmType = scmType;
         return this;
     }
 
-    
-
-
-    /**
-     * 源码仓来源
-     * @return scmType
-     */
+    /** 源码仓来源
+     * 
+     * @return scmType */
     public String getScmType() {
         return scmType;
     }
@@ -163,20 +130,14 @@ public class Source  {
         this.scmType = scmType;
     }
 
-    
-
     public Source withHookFlag(Boolean hookFlag) {
         this.hookFlag = hookFlag;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启触发执行流水线功能
-     * @return hookFlag
-     */
+    /** 是否开启触发执行流水线功能
+     * 
+     * @return hookFlag */
     public Boolean getHookFlag() {
         return hookFlag;
     }
@@ -185,20 +146,14 @@ public class Source  {
         this.hookFlag = hookFlag;
     }
 
-    
-
     public Source withBranch(String branch) {
         this.branch = branch;
         return this;
     }
 
-    
-
-
-    /**
-     * 触发分支
-     * @return branch
-     */
+    /** 触发分支
+     * 
+     * @return branch */
     public String getBranch() {
         return branch;
     }
@@ -207,20 +162,14 @@ public class Source  {
         this.branch = branch;
     }
 
-    
-
     public Source withGitUrl(String gitUrl) {
         this.gitUrl = gitUrl;
         return this;
     }
 
-    
-
-
-    /**
-     * 源码仓ssh地址
-     * @return gitUrl
-     */
+    /** 源码仓ssh地址
+     * 
+     * @return gitUrl */
     public String getGitUrl() {
         return gitUrl;
     }
@@ -229,20 +178,14 @@ public class Source  {
         this.gitUrl = gitUrl;
     }
 
-    
-
     public Source withCodehubId(String codehubId) {
         this.codehubId = codehubId;
         return this;
     }
 
-    
-
-
-    /**
-     * 源码仓ID
-     * @return codehubId
-     */
+    /** 源码仓ID
+     * 
+     * @return codehubId */
     public String getCodehubId() {
         return codehubId;
     }
@@ -251,20 +194,14 @@ public class Source  {
         this.codehubId = codehubId;
     }
 
-    
-
     public Source withWebUrl(String webUrl) {
         this.webUrl = webUrl;
         return this;
     }
 
-    
-
-
-    /**
-     * 源码仓首页url
-     * @return webUrl
-     */
+    /** 源码仓首页url
+     * 
+     * @return webUrl */
     public String getWebUrl() {
         return webUrl;
     }
@@ -273,16 +210,13 @@ public class Source  {
         this.webUrl = webUrl;
     }
 
-    
-
     public Source withBranchList(List<String> branchList) {
         this.branchList = branchList;
         return this;
     }
 
-    
     public Source addBranchListItem(String branchListItem) {
-        if(this.branchList == null) {
+        if (this.branchList == null) {
             this.branchList = new ArrayList<>();
         }
         this.branchList.add(branchListItem);
@@ -290,17 +224,16 @@ public class Source  {
     }
 
     public Source withBranchList(Consumer<List<String>> branchListSetter) {
-        if(this.branchList == null) {
+        if (this.branchList == null) {
             this.branchList = new ArrayList<>();
         }
         branchListSetter.accept(this.branchList);
         return this;
     }
 
-    /**
-     * 分支列表
-     * @return branchList
-     */
+    /** 分支列表
+     * 
+     * @return branchList */
     public List<String> getBranchList() {
         return branchList;
     }
@@ -309,20 +242,14 @@ public class Source  {
         this.branchList = branchList;
     }
 
-    
-
     public Source withInitId(String initId) {
         this.initId = initId;
         return this;
     }
 
-    
-
-
-    /**
-     * 初始化ID
-     * @return initId
-     */
+    /** 初始化ID
+     * 
+     * @return initId */
     public String getInitId() {
         return initId;
     }
@@ -331,20 +258,14 @@ public class Source  {
         this.initId = initId;
     }
 
-    
-
     public Source withDisable(Boolean disable) {
         this.disable = disable;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否废弃
-     * @return disable
-     */
+    /** 是否废弃
+     * 
+     * @return disable */
     public Boolean getDisable() {
         return disable;
     }
@@ -352,8 +273,6 @@ public class Source  {
     public void setDisable(Boolean disable) {
         this.disable = disable;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -364,22 +283,29 @@ public class Source  {
             return false;
         }
         Source source = (Source) o;
-        return Objects.equals(this.codehubName, source.codehubName) &&
-            Objects.equals(this.branches, source.branches) &&
-            Objects.equals(this.scmType, source.scmType) &&
-            Objects.equals(this.hookFlag, source.hookFlag) &&
-            Objects.equals(this.branch, source.branch) &&
-            Objects.equals(this.gitUrl, source.gitUrl) &&
-            Objects.equals(this.codehubId, source.codehubId) &&
-            Objects.equals(this.webUrl, source.webUrl) &&
-            Objects.equals(this.branchList, source.branchList) &&
-            Objects.equals(this.initId, source.initId) &&
-            Objects.equals(this.disable, source.disable);
+        return Objects.equals(this.codehubName, source.codehubName) && Objects.equals(this.branches, source.branches)
+            && Objects.equals(this.scmType, source.scmType) && Objects.equals(this.hookFlag, source.hookFlag)
+            && Objects.equals(this.branch, source.branch) && Objects.equals(this.gitUrl, source.gitUrl)
+            && Objects.equals(this.codehubId, source.codehubId) && Objects.equals(this.webUrl, source.webUrl)
+            && Objects.equals(this.branchList, source.branchList) && Objects.equals(this.initId, source.initId)
+            && Objects.equals(this.disable, source.disable);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(codehubName, branches, scmType, hookFlag, branch, gitUrl, codehubId, webUrl, branchList, initId, disable);
+        return Objects.hash(codehubName,
+            branches,
+            scmType,
+            hookFlag,
+            branch,
+            gitUrl,
+            codehubId,
+            webUrl,
+            branchList,
+            initId,
+            disable);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -398,16 +324,13 @@ public class Source  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

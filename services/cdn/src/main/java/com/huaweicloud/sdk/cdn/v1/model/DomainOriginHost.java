@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * DomainOriginHost
- */
-public class DomainOriginHost  {
-
-
+/** DomainOriginHost */
+public class DomainOriginHost {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="origin_host_type")
-    
+    @JsonProperty(value = "origin_host_type")
+
     private String originHostType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customize_domain")
-    
+    @JsonProperty(value = "customize_domain")
+
     private String customizeDomain;
 
     public DomainOriginHost withDomainId(String domainId) {
@@ -40,13 +28,9 @@ public class DomainOriginHost  {
         return this;
     }
 
-    
-
-
-    /**
-     * 域名ID。获取方法请参见查询加速域名。
-     * @return domainId
-     */
+    /** 域名ID。获取方法请参见查询加速域名。
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -55,20 +39,14 @@ public class DomainOriginHost  {
         this.domainId = domainId;
     }
 
-    
-
     public DomainOriginHost withOriginHostType(String originHostType) {
         this.originHostType = originHostType;
         return this;
     }
 
-    
-
-
-    /**
-     * 回源的类型。
-     * @return originHostType
-     */
+    /** 回源的类型。
+     * 
+     * @return originHostType */
     public String getOriginHostType() {
         return originHostType;
     }
@@ -77,20 +55,14 @@ public class DomainOriginHost  {
         this.originHostType = originHostType;
     }
 
-    
-
     public DomainOriginHost withCustomizeDomain(String customizeDomain) {
         this.customizeDomain = customizeDomain;
         return this;
     }
 
-    
-
-
-    /**
-     * 自定义回源域名。
-     * @return customizeDomain
-     */
+    /** 自定义回源域名。
+     * 
+     * @return customizeDomain */
     public String getCustomizeDomain() {
         return customizeDomain;
     }
@@ -98,8 +70,6 @@ public class DomainOriginHost  {
     public void setCustomizeDomain(String customizeDomain) {
         this.customizeDomain = customizeDomain;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class DomainOriginHost  {
             return false;
         }
         DomainOriginHost domainOriginHost = (DomainOriginHost) o;
-        return Objects.equals(this.domainId, domainOriginHost.domainId) &&
-            Objects.equals(this.originHostType, domainOriginHost.originHostType) &&
-            Objects.equals(this.customizeDomain, domainOriginHost.customizeDomain);
+        return Objects.equals(this.domainId, domainOriginHost.domainId)
+            && Objects.equals(this.originHostType, domainOriginHost.originHostType)
+            && Objects.equals(this.customizeDomain, domainOriginHost.customizeDomain);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domainId, originHostType, customizeDomain);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class DomainOriginHost  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

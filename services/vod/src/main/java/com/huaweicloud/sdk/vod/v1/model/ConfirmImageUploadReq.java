@@ -1,47 +1,33 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 
  */
-public class ConfirmImageUploadReq  {
-
-
+public class ConfirmImageUploadReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
-    /**
-     * 水印上传状态。
-     */
+
+    /** 水印上传状态。 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum SUCCEED for value: "SUCCEED"
-         */
+        /** Enum SUCCEED for value: "SUCCEED" */
         public static final StatusEnum SUCCEED = new StatusEnum("SUCCEED");
-        
-        /**
-         * Enum FAILED for value: "FAILED"
-         */
+
+        /** Enum FAILED for value: "FAILED" */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,7 +56,7 @@ public class ConfirmImageUploadReq  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -81,7 +67,7 @@ public class ConfirmImageUploadReq  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -105,10 +91,9 @@ public class ConfirmImageUploadReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
     public ConfirmImageUploadReq withId(String id) {
@@ -116,13 +101,9 @@ public class ConfirmImageUploadReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 水印配置模板id。
-     * @return id
-     */
+    /** 水印配置模板id。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -131,20 +112,14 @@ public class ConfirmImageUploadReq  {
         this.id = id;
     }
 
-    
-
     public ConfirmImageUploadReq withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 水印上传状态。
-     * @return status
-     */
+    /** 水印上传状态。
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -152,8 +127,6 @@ public class ConfirmImageUploadReq  {
     public void setStatus(StatusEnum status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -164,13 +137,15 @@ public class ConfirmImageUploadReq  {
             return false;
         }
         ConfirmImageUploadReq confirmImageUploadReq = (ConfirmImageUploadReq) o;
-        return Objects.equals(this.id, confirmImageUploadReq.id) &&
-            Objects.equals(this.status, confirmImageUploadReq.status);
+        return Objects.equals(this.id, confirmImageUploadReq.id)
+            && Objects.equals(this.status, confirmImageUploadReq.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -180,16 +155,13 @@ public class ConfirmImageUploadReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

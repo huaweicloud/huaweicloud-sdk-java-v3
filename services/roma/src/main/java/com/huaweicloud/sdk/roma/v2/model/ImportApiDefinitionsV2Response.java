@@ -1,69 +1,49 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.Failure;
-import com.huaweicloud.sdk.roma.v2.model.Ignore;
-import com.huaweicloud.sdk.roma.v2.model.ImportBaseResult;
-import com.huaweicloud.sdk.roma.v2.model.Success;
-import com.huaweicloud.sdk.roma.v2.model.Swagger;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ImportApiDefinitionsV2Response extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="success")
-    
+    @JsonProperty(value = "success")
+
     private List<Success> success = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="failure")
-    
+    @JsonProperty(value = "failure")
+
     private List<Failure> failure = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="swagger")
-    
+    @JsonProperty(value = "swagger")
+
     private Swagger swagger;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ignore")
-    
+    @JsonProperty(value = "ignore")
+
     private List<Ignore> ignore = null;
-    
+
     public ImportApiDefinitionsV2Response withSuccess(List<Success> success) {
         this.success = success;
         return this;
     }
 
-    
     public ImportApiDefinitionsV2Response addSuccessItem(Success successItem) {
-        if(this.success == null) {
+        if (this.success == null) {
             this.success = new ArrayList<>();
         }
         this.success.add(successItem);
@@ -71,17 +51,16 @@ public class ImportApiDefinitionsV2Response extends SdkResponse {
     }
 
     public ImportApiDefinitionsV2Response withSuccess(Consumer<List<Success>> successSetter) {
-        if(this.success == null) {
+        if (this.success == null) {
             this.success = new ArrayList<>();
         }
         successSetter.accept(this.success);
         return this;
     }
 
-    /**
-     * 导入成功信息
-     * @return success
-     */
+    /** 导入成功信息
+     * 
+     * @return success */
     public List<Success> getSuccess() {
         return success;
     }
@@ -90,16 +69,13 @@ public class ImportApiDefinitionsV2Response extends SdkResponse {
         this.success = success;
     }
 
-    
-
     public ImportApiDefinitionsV2Response withFailure(List<Failure> failure) {
         this.failure = failure;
         return this;
     }
 
-    
     public ImportApiDefinitionsV2Response addFailureItem(Failure failureItem) {
-        if(this.failure == null) {
+        if (this.failure == null) {
             this.failure = new ArrayList<>();
         }
         this.failure.add(failureItem);
@@ -107,17 +83,16 @@ public class ImportApiDefinitionsV2Response extends SdkResponse {
     }
 
     public ImportApiDefinitionsV2Response withFailure(Consumer<List<Failure>> failureSetter) {
-        if(this.failure == null) {
+        if (this.failure == null) {
             this.failure = new ArrayList<>();
         }
         failureSetter.accept(this.failure);
         return this;
     }
 
-    /**
-     * 导入失败信息
-     * @return failure
-     */
+    /** 导入失败信息
+     * 
+     * @return failure */
     public List<Failure> getFailure() {
         return failure;
     }
@@ -126,27 +101,23 @@ public class ImportApiDefinitionsV2Response extends SdkResponse {
         this.failure = failure;
     }
 
-    
-
     public ImportApiDefinitionsV2Response withSwagger(Swagger swagger) {
         this.swagger = swagger;
         return this;
     }
 
     public ImportApiDefinitionsV2Response withSwagger(Consumer<Swagger> swaggerSetter) {
-        if(this.swagger == null ){
+        if (this.swagger == null) {
             this.swagger = new Swagger();
             swaggerSetter.accept(this.swagger);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get swagger
-     * @return swagger
-     */
+    /** Get swagger
+     * 
+     * @return swagger */
     public Swagger getSwagger() {
         return swagger;
     }
@@ -155,20 +126,14 @@ public class ImportApiDefinitionsV2Response extends SdkResponse {
         this.swagger = swagger;
     }
 
-    
-
     public ImportApiDefinitionsV2Response withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * API分组编号
-     * @return groupId
-     */
+    /** API分组编号
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -177,16 +142,13 @@ public class ImportApiDefinitionsV2Response extends SdkResponse {
         this.groupId = groupId;
     }
 
-    
-
     public ImportApiDefinitionsV2Response withIgnore(List<Ignore> ignore) {
         this.ignore = ignore;
         return this;
     }
 
-    
     public ImportApiDefinitionsV2Response addIgnoreItem(Ignore ignoreItem) {
-        if(this.ignore == null) {
+        if (this.ignore == null) {
             this.ignore = new ArrayList<>();
         }
         this.ignore.add(ignoreItem);
@@ -194,17 +156,16 @@ public class ImportApiDefinitionsV2Response extends SdkResponse {
     }
 
     public ImportApiDefinitionsV2Response withIgnore(Consumer<List<Ignore>> ignoreSetter) {
-        if(this.ignore == null) {
+        if (this.ignore == null) {
             this.ignore = new ArrayList<>();
         }
         ignoreSetter.accept(this.ignore);
         return this;
     }
 
-    /**
-     * 被忽略导入的API信息
-     * @return ignore
-     */
+    /** 被忽略导入的API信息
+     * 
+     * @return ignore */
     public List<Ignore> getIgnore() {
         return ignore;
     }
@@ -212,8 +173,6 @@ public class ImportApiDefinitionsV2Response extends SdkResponse {
     public void setIgnore(List<Ignore> ignore) {
         this.ignore = ignore;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -224,16 +183,18 @@ public class ImportApiDefinitionsV2Response extends SdkResponse {
             return false;
         }
         ImportApiDefinitionsV2Response importApiDefinitionsV2Response = (ImportApiDefinitionsV2Response) o;
-        return Objects.equals(this.success, importApiDefinitionsV2Response.success) &&
-            Objects.equals(this.failure, importApiDefinitionsV2Response.failure) &&
-            Objects.equals(this.swagger, importApiDefinitionsV2Response.swagger) &&
-            Objects.equals(this.groupId, importApiDefinitionsV2Response.groupId) &&
-            Objects.equals(this.ignore, importApiDefinitionsV2Response.ignore);
+        return Objects.equals(this.success, importApiDefinitionsV2Response.success)
+            && Objects.equals(this.failure, importApiDefinitionsV2Response.failure)
+            && Objects.equals(this.swagger, importApiDefinitionsV2Response.swagger)
+            && Objects.equals(this.groupId, importApiDefinitionsV2Response.groupId)
+            && Objects.equals(this.ignore, importApiDefinitionsV2Response.ignore);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(success, failure, swagger, groupId, ignore);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -246,16 +207,13 @@ public class ImportApiDefinitionsV2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

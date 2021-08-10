@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 云服务器可挂载网卡和卷数。
- */
-public class ServerAttachableQuantity  {
-
-
+/** 云服务器可挂载网卡和卷数。 */
+public class ServerAttachableQuantity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="free_scsi")
-    
+    @JsonProperty(value = "free_scsi")
+
     private Integer freeScsi;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="free_blk")
-    
+    @JsonProperty(value = "free_blk")
+
     private Integer freeBlk;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="free_disk")
-    
+    @JsonProperty(value = "free_disk")
+
     private Integer freeDisk;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="free_nic")
-    
+    @JsonProperty(value = "free_nic")
+
     private Integer freeNic;
 
     public ServerAttachableQuantity withFreeScsi(Integer freeScsi) {
@@ -46,13 +33,9 @@ public class ServerAttachableQuantity  {
         return this;
     }
 
-    
-
-
-    /**
-     * 可挂载scsi卷数。
-     * @return freeScsi
-     */
+    /** 可挂载scsi卷数。
+     * 
+     * @return freeScsi */
     public Integer getFreeScsi() {
         return freeScsi;
     }
@@ -61,20 +44,14 @@ public class ServerAttachableQuantity  {
         this.freeScsi = freeScsi;
     }
 
-    
-
     public ServerAttachableQuantity withFreeBlk(Integer freeBlk) {
         this.freeBlk = freeBlk;
         return this;
     }
 
-    
-
-
-    /**
-     * 可挂载vbd卷数。
-     * @return freeBlk
-     */
+    /** 可挂载vbd卷数。
+     * 
+     * @return freeBlk */
     public Integer getFreeBlk() {
         return freeBlk;
     }
@@ -83,20 +60,14 @@ public class ServerAttachableQuantity  {
         this.freeBlk = freeBlk;
     }
 
-    
-
     public ServerAttachableQuantity withFreeDisk(Integer freeDisk) {
         this.freeDisk = freeDisk;
         return this;
     }
 
-    
-
-
-    /**
-     * 可挂载卷数。
-     * @return freeDisk
-     */
+    /** 可挂载卷数。
+     * 
+     * @return freeDisk */
     public Integer getFreeDisk() {
         return freeDisk;
     }
@@ -105,20 +76,14 @@ public class ServerAttachableQuantity  {
         this.freeDisk = freeDisk;
     }
 
-    
-
     public ServerAttachableQuantity withFreeNic(Integer freeNic) {
         this.freeNic = freeNic;
         return this;
     }
 
-    
-
-
-    /**
-     * 可挂载网卡数。
-     * @return freeNic
-     */
+    /** 可挂载网卡数。
+     * 
+     * @return freeNic */
     public Integer getFreeNic() {
         return freeNic;
     }
@@ -126,8 +91,6 @@ public class ServerAttachableQuantity  {
     public void setFreeNic(Integer freeNic) {
         this.freeNic = freeNic;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class ServerAttachableQuantity  {
             return false;
         }
         ServerAttachableQuantity serverAttachableQuantity = (ServerAttachableQuantity) o;
-        return Objects.equals(this.freeScsi, serverAttachableQuantity.freeScsi) &&
-            Objects.equals(this.freeBlk, serverAttachableQuantity.freeBlk) &&
-            Objects.equals(this.freeDisk, serverAttachableQuantity.freeDisk) &&
-            Objects.equals(this.freeNic, serverAttachableQuantity.freeNic);
+        return Objects.equals(this.freeScsi, serverAttachableQuantity.freeScsi)
+            && Objects.equals(this.freeBlk, serverAttachableQuantity.freeBlk)
+            && Objects.equals(this.freeDisk, serverAttachableQuantity.freeDisk)
+            && Objects.equals(this.freeNic, serverAttachableQuantity.freeNic);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(freeScsi, freeBlk, freeDisk, freeNic);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class ServerAttachableQuantity  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

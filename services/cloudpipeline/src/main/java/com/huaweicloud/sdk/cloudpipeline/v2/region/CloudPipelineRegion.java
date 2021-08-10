@@ -1,21 +1,33 @@
 package com.huaweicloud.sdk.cloudpipeline.v2.region;
 
+import com.huaweicloud.sdk.core.region.Region;
+import com.huaweicloud.sdk.core.utils.StringUtils;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-import com.huaweicloud.sdk.core.region.Region;
-import com.huaweicloud.sdk.core.utils.StringUtils;
-
 public class CloudPipelineRegion {
-    public static final Region CN_NORTH_1 = new Region("cn-north-1", "https://cloudpipeline-ext.cn-north-1.myhuaweicloud.com");
-    public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://cloudpipeline-ext.cn-north-4.myhuaweicloud.com");
-    public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://cloudpipeline-ext.cn-south-1.myhuaweicloud.com");
-    public static final Region CN_SOUTH_2 = new Region("cn-south-2", "https://cloudpipeline-ext.cn-south-2.myhuaweicloud.com");
-    public static final Region CN_EAST_3 = new Region("cn-east-3", "https://cloudpipeline-ext.cn-east-3.myhuaweicloud.com");
-    public static final Region CN_EAST_2 = new Region("cn-east-2", "https://cloudpipeline-ext.cn-east-2.myhuaweicloud.com");
-    
+
+    public static final Region CN_NORTH_1 =
+        new Region("cn-north-1", "https://cloudpipeline-ext.cn-north-1.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_4 =
+        new Region("cn-north-4", "https://cloudpipeline-ext.cn-north-4.myhuaweicloud.com");
+
+    public static final Region CN_SOUTH_1 =
+        new Region("cn-south-1", "https://cloudpipeline-ext.cn-south-1.myhuaweicloud.com");
+
+    public static final Region CN_SOUTH_2 =
+        new Region("cn-south-2", "https://cloudpipeline-ext.cn-south-2.myhuaweicloud.com");
+
+    public static final Region CN_EAST_3 =
+        new Region("cn-east-3", "https://cloudpipeline-ext.cn-east-3.myhuaweicloud.com");
+
+    public static final Region CN_EAST_2 =
+        new Region("cn-east-2", "https://cloudpipeline-ext.cn-east-2.myhuaweicloud.com");
+
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, Region> createStaticFields() {

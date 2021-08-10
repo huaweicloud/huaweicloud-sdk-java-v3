@@ -1,46 +1,34 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cce.v3.model.NodeMetadata;
-import com.huaweicloud.sdk.cce.v3.model.NodeSpec;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class NodeCreateRequest  {
-
-
+public class NodeCreateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="kind")
-    
+    @JsonProperty(value = "kind")
+
     private String kind;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apiVersion")
-    
+    @JsonProperty(value = "apiVersion")
+
     private String apiVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata")
-    
+    @JsonProperty(value = "metadata")
+
     private NodeMetadata metadata;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec")
-    
+    @JsonProperty(value = "spec")
+
     private NodeSpec spec;
 
     public NodeCreateRequest withKind(String kind) {
@@ -48,13 +36,9 @@ public class NodeCreateRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * API类型，固定值“Node”，该值不可修改。  
-     * @return kind
-     */
+    /** API类型，固定值“Node”，该值不可修改。
+     * 
+     * @return kind */
     public String getKind() {
         return kind;
     }
@@ -63,20 +47,14 @@ public class NodeCreateRequest  {
         this.kind = kind;
     }
 
-    
-
     public NodeCreateRequest withApiVersion(String apiVersion) {
         this.apiVersion = apiVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * API版本，固定值“v3”，该值不可修改。  
-     * @return apiVersion
-     */
+    /** API版本，固定值“v3”，该值不可修改。
+     * 
+     * @return apiVersion */
     public String getApiVersion() {
         return apiVersion;
     }
@@ -85,27 +63,23 @@ public class NodeCreateRequest  {
         this.apiVersion = apiVersion;
     }
 
-    
-
     public NodeCreateRequest withMetadata(NodeMetadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
     public NodeCreateRequest withMetadata(Consumer<NodeMetadata> metadataSetter) {
-        if(this.metadata == null ){
+        if (this.metadata == null) {
             this.metadata = new NodeMetadata();
             metadataSetter.accept(this.metadata);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get metadata
-     * @return metadata
-     */
+    /** Get metadata
+     * 
+     * @return metadata */
     public NodeMetadata getMetadata() {
         return metadata;
     }
@@ -114,27 +88,23 @@ public class NodeCreateRequest  {
         this.metadata = metadata;
     }
 
-    
-
     public NodeCreateRequest withSpec(NodeSpec spec) {
         this.spec = spec;
         return this;
     }
 
     public NodeCreateRequest withSpec(Consumer<NodeSpec> specSetter) {
-        if(this.spec == null ){
+        if (this.spec == null) {
             this.spec = new NodeSpec();
             specSetter.accept(this.spec);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get spec
-     * @return spec
-     */
+    /** Get spec
+     * 
+     * @return spec */
     public NodeSpec getSpec() {
         return spec;
     }
@@ -142,8 +112,6 @@ public class NodeCreateRequest  {
     public void setSpec(NodeSpec spec) {
         this.spec = spec;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -154,15 +122,17 @@ public class NodeCreateRequest  {
             return false;
         }
         NodeCreateRequest nodeCreateRequest = (NodeCreateRequest) o;
-        return Objects.equals(this.kind, nodeCreateRequest.kind) &&
-            Objects.equals(this.apiVersion, nodeCreateRequest.apiVersion) &&
-            Objects.equals(this.metadata, nodeCreateRequest.metadata) &&
-            Objects.equals(this.spec, nodeCreateRequest.spec);
+        return Objects.equals(this.kind, nodeCreateRequest.kind)
+            && Objects.equals(this.apiVersion, nodeCreateRequest.apiVersion)
+            && Objects.equals(this.metadata, nodeCreateRequest.metadata)
+            && Objects.equals(this.spec, nodeCreateRequest.spec);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(kind, apiVersion, metadata, spec);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -174,16 +144,13 @@ public class NodeCreateRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

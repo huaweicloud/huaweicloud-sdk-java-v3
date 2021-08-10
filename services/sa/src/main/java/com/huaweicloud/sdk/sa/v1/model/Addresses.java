@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.sa.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Addresses
- */
-public class Addresses  {
-
-
+/** Addresses */
+public class Addresses {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="addr")
-    
+    @JsonProperty(value = "addr")
+
     private String addr;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_type")
-    
+    @JsonProperty(value = "ip_type")
+
     private String ipType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mac_addr")
-    
+    @JsonProperty(value = "mac_addr")
+
     private String macAddr;
 
     public Addresses withVersion(String version) {
@@ -46,13 +33,9 @@ public class Addresses  {
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址版本。“4”：代表IPv4。“6”：代表IPv6。
-     * @return version
-     */
+    /** IP地址版本。“4”：代表IPv4。“6”：代表IPv6。
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -61,20 +44,14 @@ public class Addresses  {
         this.version = version;
     }
 
-    
-
     public Addresses withAddr(String addr) {
         this.addr = addr;
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址。
-     * @return addr
-     */
+    /** IP地址。
+     * 
+     * @return addr */
     public String getAddr() {
         return addr;
     }
@@ -83,20 +60,14 @@ public class Addresses  {
         this.addr = addr;
     }
 
-    
-
     public Addresses withIpType(String ipType) {
         this.ipType = ipType;
         return this;
     }
 
-    
-
-
-    /**
-     * IP地址类型 fixed：代表私有IP地址。floating：代表浮动IP地址。
-     * @return ipType
-     */
+    /** IP地址类型 fixed：代表私有IP地址。floating：代表浮动IP地址。
+     * 
+     * @return ipType */
     public String getIpType() {
         return ipType;
     }
@@ -105,20 +76,14 @@ public class Addresses  {
         this.ipType = ipType;
     }
 
-    
-
     public Addresses withMacAddr(String macAddr) {
         this.macAddr = macAddr;
         return this;
     }
 
-    
-
-
-    /**
-     * MAC地址。
-     * @return macAddr
-     */
+    /** MAC地址。
+     * 
+     * @return macAddr */
     public String getMacAddr() {
         return macAddr;
     }
@@ -126,8 +91,6 @@ public class Addresses  {
     public void setMacAddr(String macAddr) {
         this.macAddr = macAddr;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,15 @@ public class Addresses  {
             return false;
         }
         Addresses addresses = (Addresses) o;
-        return Objects.equals(this.version, addresses.version) &&
-            Objects.equals(this.addr, addresses.addr) &&
-            Objects.equals(this.ipType, addresses.ipType) &&
-            Objects.equals(this.macAddr, addresses.macAddr);
+        return Objects.equals(this.version, addresses.version) && Objects.equals(this.addr, addresses.addr)
+            && Objects.equals(this.ipType, addresses.ipType) && Objects.equals(this.macAddr, addresses.macAddr);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(version, addr, ipType, macAddr);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +121,13 @@ public class Addresses  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,48 +1,36 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class SysTags  {
-
-
+public class SysTags {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="values")
-    
+    @JsonProperty(value = "values")
+
     private List<String> values = null;
-    
+
     public SysTags withKey(String key) {
         this.key = key;
         return this;
     }
 
-    
-
-
-    /**
-     * 键。  系统标签的key，从白名单中取，不能随意定义。 目前仅支持 _sys_enterprise_project_id字段，对应 的value为企业项目ID。
-     * @return key
-     */
+    /** 键。 系统标签的key，从白名单中取，不能随意定义。 目前仅支持 _sys_enterprise_project_id字段，对应 的value为企业项目ID。
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -51,16 +39,13 @@ public class SysTags  {
         this.key = key;
     }
 
-    
-
     public SysTags withValues(List<String> values) {
         this.values = values;
         return this;
     }
 
-    
     public SysTags addValuesItem(String valuesItem) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new ArrayList<>();
         }
         this.values.add(valuesItem);
@@ -68,17 +53,16 @@ public class SysTags  {
     }
 
     public SysTags withValues(Consumer<List<String>> valuesSetter) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new ArrayList<>();
         }
         valuesSetter.accept(this.values);
         return this;
     }
 
-    /**
-     * 值列表。  目前仅会用到企业项目ID，其中默 认的企业项目ID为“0”。
-     * @return values
-     */
+    /** 值列表。 目前仅会用到企业项目ID，其中默 认的企业项目ID为“0”。
+     * 
+     * @return values */
     public List<String> getValues() {
         return values;
     }
@@ -86,8 +70,6 @@ public class SysTags  {
     public void setValues(List<String> values) {
         this.values = values;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -98,13 +80,14 @@ public class SysTags  {
             return false;
         }
         SysTags sysTags = (SysTags) o;
-        return Objects.equals(this.key, sysTags.key) &&
-            Objects.equals(this.values, sysTags.values);
+        return Objects.equals(this.key, sysTags.key) && Objects.equals(this.values, sysTags.values);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(key, values);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,16 +97,13 @@ public class SysTags  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

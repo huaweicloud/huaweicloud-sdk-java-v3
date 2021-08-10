@@ -1,55 +1,36 @@
 package com.huaweicloud.sdk.kps.v3.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 密钥对详细信息
- */
-public class KeypairDetail  {
-
-
+/** 密钥对详细信息 */
+public class KeypairDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Long id;
-    /**
-     * SSH密钥对的类型
-     */
+
+    /** SSH密钥对的类型 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum SSH for value: "ssh"
-         */
+        /** Enum SSH for value: "ssh" */
         public static final TypeEnum SSH = new TypeEnum("ssh");
-        
-        /**
-         * Enum X509 for value: "x509"
-         */
+
+        /** Enum X509 for value: "x509" */
         public static final TypeEnum X509 = new TypeEnum("x509");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -78,7 +59,7 @@ public class KeypairDetail  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -89,7 +70,7 @@ public class KeypairDetail  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -113,27 +94,19 @@ public class KeypairDetail  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
-    /**
-     * 租户级或者用户级
-     */
+
+    /** 租户级或者用户级 */
     public static final class ScopeEnum {
 
-        
-        /**
-         * Enum DOMAIN for value: "domain"
-         */
+        /** Enum DOMAIN for value: "domain" */
         public static final ScopeEnum DOMAIN = new ScopeEnum("domain");
-        
-        /**
-         * Enum USER for value: "user"
-         */
+
+        /** Enum USER for value: "user" */
         public static final ScopeEnum USER = new ScopeEnum("user");
-        
 
         private static final Map<String, ScopeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -162,7 +135,7 @@ public class KeypairDetail  {
 
         @JsonCreator
         public static ScopeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ScopeEnum result = STATIC_FIELDS.get(value);
@@ -173,7 +146,7 @@ public class KeypairDetail  {
         }
 
         public static ScopeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ScopeEnum result = STATIC_FIELDS.get(value);
@@ -197,70 +170,59 @@ public class KeypairDetail  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scope")
-    
+    @JsonProperty(value = "scope")
+
     private ScopeEnum scope;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="public_key")
-    
+    @JsonProperty(value = "public_key")
+
     private String publicKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fingerprint")
-    
+    @JsonProperty(value = "fingerprint")
+
     private String fingerprint;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_key_protection")
-    
+    @JsonProperty(value = "is_key_protection")
+
     private Boolean isKeyProtection;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deleted")
-    
+    @JsonProperty(value = "deleted")
+
     private Boolean deleted;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_id")
-    
+    @JsonProperty(value = "user_id")
+
     private String userId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private Long createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="delete_time")
-    
+    @JsonProperty(value = "delete_time")
+
     private Long deleteTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private Long updateTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="frozen_state")
-    
+    @JsonProperty(value = "frozen_state")
+
     private Integer frozenState;
 
     public KeypairDetail withName(String name) {
@@ -268,13 +230,9 @@ public class KeypairDetail  {
         return this;
     }
 
-    
-
-
-    /**
-     * SSH密钥对的名称
-     * @return name
-     */
+    /** SSH密钥对的名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -283,22 +241,14 @@ public class KeypairDetail  {
         this.name = name;
     }
 
-    
-
     public KeypairDetail withId(Long id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * SSH密钥对的ID
-     * minimum: 0
-     * maximum: 1000000000
-     * @return id
-     */
+    /** SSH密钥对的ID minimum: 0 maximum: 1000000000
+     * 
+     * @return id */
     public Long getId() {
         return id;
     }
@@ -307,20 +257,14 @@ public class KeypairDetail  {
         this.id = id;
     }
 
-    
-
     public KeypairDetail withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * SSH密钥对的类型
-     * @return type
-     */
+    /** SSH密钥对的类型
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -329,20 +273,14 @@ public class KeypairDetail  {
         this.type = type;
     }
 
-    
-
     public KeypairDetail withScope(ScopeEnum scope) {
         this.scope = scope;
         return this;
     }
 
-    
-
-
-    /**
-     * 租户级或者用户级
-     * @return scope
-     */
+    /** 租户级或者用户级
+     * 
+     * @return scope */
     public ScopeEnum getScope() {
         return scope;
     }
@@ -351,20 +289,14 @@ public class KeypairDetail  {
         this.scope = scope;
     }
 
-    
-
     public KeypairDetail withPublicKey(String publicKey) {
         this.publicKey = publicKey;
         return this;
     }
 
-    
-
-
-    /**
-     * SSH密钥对对应的publicKey信息
-     * @return publicKey
-     */
+    /** SSH密钥对对应的publicKey信息
+     * 
+     * @return publicKey */
     public String getPublicKey() {
         return publicKey;
     }
@@ -373,20 +305,14 @@ public class KeypairDetail  {
         this.publicKey = publicKey;
     }
 
-    
-
     public KeypairDetail withFingerprint(String fingerprint) {
         this.fingerprint = fingerprint;
         return this;
     }
 
-    
-
-
-    /**
-     * SSH密钥对应指纹信息
-     * @return fingerprint
-     */
+    /** SSH密钥对应指纹信息
+     * 
+     * @return fingerprint */
     public String getFingerprint() {
         return fingerprint;
     }
@@ -395,20 +321,14 @@ public class KeypairDetail  {
         this.fingerprint = fingerprint;
     }
 
-    
-
     public KeypairDetail withIsKeyProtection(Boolean isKeyProtection) {
         this.isKeyProtection = isKeyProtection;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否托管密钥
-     * @return isKeyProtection
-     */
+    /** 是否托管密钥
+     * 
+     * @return isKeyProtection */
     public Boolean getIsKeyProtection() {
         return isKeyProtection;
     }
@@ -417,20 +337,14 @@ public class KeypairDetail  {
         this.isKeyProtection = isKeyProtection;
     }
 
-    
-
     public KeypairDetail withDeleted(Boolean deleted) {
         this.deleted = deleted;
         return this;
     }
 
-    
-
-
-    /**
-     * SSH密钥对删除的标记
-     * @return deleted
-     */
+    /** SSH密钥对删除的标记
+     * 
+     * @return deleted */
     public Boolean getDeleted() {
         return deleted;
     }
@@ -439,20 +353,14 @@ public class KeypairDetail  {
         this.deleted = deleted;
     }
 
-    
-
     public KeypairDetail withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * SSH密钥对的描述信息
-     * @return description
-     */
+    /** SSH密钥对的描述信息
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -461,20 +369,14 @@ public class KeypairDetail  {
         this.description = description;
     }
 
-    
-
     public KeypairDetail withUserId(String userId) {
         this.userId = userId;
         return this;
     }
 
-    
-
-
-    /**
-     * SSH密钥对所属的用户信息
-     * @return userId
-     */
+    /** SSH密钥对所属的用户信息
+     * 
+     * @return userId */
     public String getUserId() {
         return userId;
     }
@@ -483,22 +385,14 @@ public class KeypairDetail  {
         this.userId = userId;
     }
 
-    
-
     public KeypairDetail withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * SSH密钥对创建的时间，时间戳，即从1970年1月1日至该时间的总秒数
-     * minimum: 0
-     * maximum: 10000000000000
-     * @return createTime
-     */
+    /** SSH密钥对创建的时间，时间戳，即从1970年1月1日至该时间的总秒数 minimum: 0 maximum: 10000000000000
+     * 
+     * @return createTime */
     public Long getCreateTime() {
         return createTime;
     }
@@ -507,22 +401,14 @@ public class KeypairDetail  {
         this.createTime = createTime;
     }
 
-    
-
     public KeypairDetail withDeleteTime(Long deleteTime) {
         this.deleteTime = deleteTime;
         return this;
     }
 
-    
-
-
-    /**
-     * SSH密钥对删除的时间，时间戳，即从1970年1月1日至该时间的总秒数
-     * minimum: 0
-     * maximum: 10000000000000
-     * @return deleteTime
-     */
+    /** SSH密钥对删除的时间，时间戳，即从1970年1月1日至该时间的总秒数 minimum: 0 maximum: 10000000000000
+     * 
+     * @return deleteTime */
     public Long getDeleteTime() {
         return deleteTime;
     }
@@ -531,22 +417,14 @@ public class KeypairDetail  {
         this.deleteTime = deleteTime;
     }
 
-    
-
     public KeypairDetail withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * SSH密钥对的更新时间，时间戳，即从1970年1月1日至该时间的总秒数
-     * minimum: 0
-     * maximum: 10000000000000
-     * @return updateTime
-     */
+    /** SSH密钥对的更新时间，时间戳，即从1970年1月1日至该时间的总秒数 minimum: 0 maximum: 10000000000000
+     * 
+     * @return updateTime */
     public Long getUpdateTime() {
         return updateTime;
     }
@@ -555,22 +433,15 @@ public class KeypairDetail  {
         this.updateTime = updateTime;
     }
 
-    
-
     public KeypairDetail withFrozenState(Integer frozenState) {
         this.frozenState = frozenState;
         return this;
     }
 
-    
-
-
-    /**
-     * 冻结状态 - 0：正常状态 - 1：普通冻结 - 2：公安冻结 - 3：普通冻结及公安冻结 - 4：违规冻结 - 5：普通冻结及违规冻结 - 6：公安冻结及违规冻结 - 7：普通冻结、公安冻结及违规冻结 - 8：未实名认证冻结 - 9：普通冻结及未实名认证冻结 - 10：公安冻结及未实名认证冻结
-     * minimum: 0
-     * maximum: 64
-     * @return frozenState
-     */
+    /** 冻结状态 - 0：正常状态 - 1：普通冻结 - 2：公安冻结 - 3：普通冻结及公安冻结 - 4：违规冻结 - 5：普通冻结及违规冻结 - 6：公安冻结及违规冻结 - 7：普通冻结、公安冻结及违规冻结 -
+     * 8：未实名认证冻结 - 9：普通冻结及未实名认证冻结 - 10：公安冻结及未实名认证冻结 minimum: 0 maximum: 64
+     * 
+     * @return frozenState */
     public Integer getFrozenState() {
         return frozenState;
     }
@@ -578,8 +449,6 @@ public class KeypairDetail  {
     public void setFrozenState(Integer frozenState) {
         this.frozenState = frozenState;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -590,25 +459,38 @@ public class KeypairDetail  {
             return false;
         }
         KeypairDetail keypairDetail = (KeypairDetail) o;
-        return Objects.equals(this.name, keypairDetail.name) &&
-            Objects.equals(this.id, keypairDetail.id) &&
-            Objects.equals(this.type, keypairDetail.type) &&
-            Objects.equals(this.scope, keypairDetail.scope) &&
-            Objects.equals(this.publicKey, keypairDetail.publicKey) &&
-            Objects.equals(this.fingerprint, keypairDetail.fingerprint) &&
-            Objects.equals(this.isKeyProtection, keypairDetail.isKeyProtection) &&
-            Objects.equals(this.deleted, keypairDetail.deleted) &&
-            Objects.equals(this.description, keypairDetail.description) &&
-            Objects.equals(this.userId, keypairDetail.userId) &&
-            Objects.equals(this.createTime, keypairDetail.createTime) &&
-            Objects.equals(this.deleteTime, keypairDetail.deleteTime) &&
-            Objects.equals(this.updateTime, keypairDetail.updateTime) &&
-            Objects.equals(this.frozenState, keypairDetail.frozenState);
+        return Objects.equals(this.name, keypairDetail.name) && Objects.equals(this.id, keypairDetail.id)
+            && Objects.equals(this.type, keypairDetail.type) && Objects.equals(this.scope, keypairDetail.scope)
+            && Objects.equals(this.publicKey, keypairDetail.publicKey)
+            && Objects.equals(this.fingerprint, keypairDetail.fingerprint)
+            && Objects.equals(this.isKeyProtection, keypairDetail.isKeyProtection)
+            && Objects.equals(this.deleted, keypairDetail.deleted)
+            && Objects.equals(this.description, keypairDetail.description)
+            && Objects.equals(this.userId, keypairDetail.userId)
+            && Objects.equals(this.createTime, keypairDetail.createTime)
+            && Objects.equals(this.deleteTime, keypairDetail.deleteTime)
+            && Objects.equals(this.updateTime, keypairDetail.updateTime)
+            && Objects.equals(this.frozenState, keypairDetail.frozenState);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, id, type, scope, publicKey, fingerprint, isKeyProtection, deleted, description, userId, createTime, deleteTime, updateTime, frozenState);
+        return Objects.hash(name,
+            id,
+            type,
+            scope,
+            publicKey,
+            fingerprint,
+            isKeyProtection,
+            deleted,
+            description,
+            userId,
+            createTime,
+            deleteTime,
+            updateTime,
+            frozenState);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -630,16 +512,13 @@ public class KeypairDetail  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

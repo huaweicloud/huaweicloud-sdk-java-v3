@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CreateCertificateRequestBody
- */
-public class CreateCertificateRequestBody  {
-
-
+/** CreateCertificateRequestBody */
+public class CreateCertificateRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content")
-    
+    @JsonProperty(value = "content")
+
     private String content;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
     public CreateCertificateRequestBody withName(String name) {
@@ -40,13 +28,9 @@ public class CreateCertificateRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 证书名
-     * @return name
-     */
+    /** 证书名
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -55,20 +39,14 @@ public class CreateCertificateRequestBody  {
         this.name = name;
     }
 
-    
-
     public CreateCertificateRequestBody withContent(String content) {
         this.content = content;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书文件，PEM编码
-     * @return content
-     */
+    /** 证书文件，PEM编码
+     * 
+     * @return content */
     public String getContent() {
         return content;
     }
@@ -77,20 +55,14 @@ public class CreateCertificateRequestBody  {
         this.content = content;
     }
 
-    
-
     public CreateCertificateRequestBody withKey(String key) {
         this.key = key;
         return this;
     }
 
-    
-
-
-    /**
-     * 证书私钥，PEM编码
-     * @return key
-     */
+    /** 证书私钥，PEM编码
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -98,8 +70,6 @@ public class CreateCertificateRequestBody  {
     public void setKey(String key) {
         this.key = key;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class CreateCertificateRequestBody  {
             return false;
         }
         CreateCertificateRequestBody createCertificateRequestBody = (CreateCertificateRequestBody) o;
-        return Objects.equals(this.name, createCertificateRequestBody.name) &&
-            Objects.equals(this.content, createCertificateRequestBody.content) &&
-            Objects.equals(this.key, createCertificateRequestBody.key);
+        return Objects.equals(this.name, createCertificateRequestBody.name)
+            && Objects.equals(this.content, createCertificateRequestBody.content)
+            && Objects.equals(this.key, createCertificateRequestBody.key);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, content, key);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class CreateCertificateRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

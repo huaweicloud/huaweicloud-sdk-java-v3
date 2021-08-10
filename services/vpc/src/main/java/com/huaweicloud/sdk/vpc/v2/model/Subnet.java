@@ -1,133 +1,104 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vpc.v2.model.ExtraDhcpOption;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class Subnet  {
-
-
+public class Subnet {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cidr")
-    
+    @JsonProperty(value = "cidr")
+
     private String cidr;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gateway_ip")
-    
+    @JsonProperty(value = "gateway_ip")
+
     private String gatewayIp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ipv6_enable")
-    
+    @JsonProperty(value = "ipv6_enable")
+
     private Boolean ipv6Enable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cidr_v6")
-    
+    @JsonProperty(value = "cidr_v6")
+
     private String cidrV6;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gateway_ip_v6")
-    
+    @JsonProperty(value = "gateway_ip_v6")
+
     private String gatewayIpV6;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dhcp_enable")
-    
+    @JsonProperty(value = "dhcp_enable")
+
     private Boolean dhcpEnable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="primary_dns")
-    
+    @JsonProperty(value = "primary_dns")
+
     private String primaryDns;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="secondary_dns")
-    
+    @JsonProperty(value = "secondary_dns")
+
     private String secondaryDns;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dnsList")
-    
+    @JsonProperty(value = "dnsList")
+
     private List<String> dnsList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="availability_zone")
-    
+    @JsonProperty(value = "availability_zone")
+
     private String availabilityZone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
-    /**
-     * 功能说明：子网的状态 取值范围： - ACTIVE：表示子网已挂载到ROUTER上 - UNKNOWN：表示子网还未挂载到ROUTER上 - ERROR：表示子网状态故障
-     */
+
+    /** 功能说明：子网的状态 取值范围： - ACTIVE：表示子网已挂载到ROUTER上 - UNKNOWN：表示子网还未挂载到ROUTER上 - ERROR：表示子网状态故障 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum ACTIVE for value: "ACTIVE"
-         */
+        /** Enum ACTIVE for value: "ACTIVE" */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
-        
-        /**
-         * Enum UNKNOWN for value: "UNKNOWN"
-         */
+
+        /** Enum UNKNOWN for value: "UNKNOWN" */
         public static final StatusEnum UNKNOWN = new StatusEnum("UNKNOWN");
-        
-        /**
-         * Enum ERROR for value: "ERROR"
-         */
+
+        /** Enum ERROR for value: "ERROR" */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -157,7 +128,7 @@ public class Subnet  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -168,7 +139,7 @@ public class Subnet  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -192,40 +163,34 @@ public class Subnet  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="neutron_network_id")
-    
+    @JsonProperty(value = "neutron_network_id")
+
     private String neutronNetworkId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="neutron_subnet_id")
-    
+    @JsonProperty(value = "neutron_subnet_id")
+
     private String neutronSubnetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="neutron_subnet_id_v6")
-    
+    @JsonProperty(value = "neutron_subnet_id_v6")
+
     private String neutronSubnetIdV6;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extra_dhcp_opts")
-    
+    @JsonProperty(value = "extra_dhcp_opts")
+
     private List<ExtraDhcpOption> extraDhcpOpts = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scope")
-    
+    @JsonProperty(value = "scope")
+
     private String scope;
 
     public Subnet withId(String id) {
@@ -233,13 +198,9 @@ public class Subnet  {
         return this;
     }
 
-    
-
-
-    /**
-     * 子网ID
-     * @return id
-     */
+    /** 子网ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -248,20 +209,14 @@ public class Subnet  {
         this.id = id;
     }
 
-    
-
     public Subnet withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：子网名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
-     * @return name
-     */
+    /** 功能说明：子网名称 取值范围：1-64个字符，支持数字、字母、中文、_(下划线)、-（中划线）、.（点）
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -270,20 +225,14 @@ public class Subnet  {
         this.name = name;
     }
 
-    
-
     public Subnet withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：子网描述 取值范围：0-255个字符，不能包含“<”和“>”。
-     * @return description
-     */
+    /** 功能说明：子网描述 取值范围：0-255个字符，不能包含“<”和“>”。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -292,20 +241,14 @@ public class Subnet  {
         this.description = description;
     }
 
-    
-
     public Subnet withCidr(String cidr) {
         this.cidr = cidr;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：子网的网段 取值范围：必须在vpc对应cidr范围内 约束：必须是cidr格式。掩码长度不能大于28
-     * @return cidr
-     */
+    /** 功能说明：子网的网段 取值范围：必须在vpc对应cidr范围内 约束：必须是cidr格式。掩码长度不能大于28
+     * 
+     * @return cidr */
     public String getCidr() {
         return cidr;
     }
@@ -314,20 +257,14 @@ public class Subnet  {
         this.cidr = cidr;
     }
 
-    
-
     public Subnet withGatewayIp(String gatewayIp) {
         this.gatewayIp = gatewayIp;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：子网的网关 取值范围：子网网段中的IP地址 约束：必须是ip格式
-     * @return gatewayIp
-     */
+    /** 功能说明：子网的网关 取值范围：子网网段中的IP地址 约束：必须是ip格式
+     * 
+     * @return gatewayIp */
     public String getGatewayIp() {
         return gatewayIp;
     }
@@ -336,20 +273,14 @@ public class Subnet  {
         this.gatewayIp = gatewayIp;
     }
 
-    
-
     public Subnet withIpv6Enable(Boolean ipv6Enable) {
         this.ipv6Enable = ipv6Enable;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：是否创建cidr_v6 取值范围：true（开启），false（关闭）
-     * @return ipv6Enable
-     */
+    /** 功能说明：是否创建cidr_v6 取值范围：true（开启），false（关闭）
+     * 
+     * @return ipv6Enable */
     public Boolean getIpv6Enable() {
         return ipv6Enable;
     }
@@ -358,20 +289,14 @@ public class Subnet  {
         this.ipv6Enable = ipv6Enable;
     }
 
-    
-
     public Subnet withCidrV6(String cidrV6) {
         this.cidrV6 = cidrV6;
         return this;
     }
 
-    
-
-
-    /**
-     * IPv6子网的网段，如果子网为IPv4子网，则不返回此参数
-     * @return cidrV6
-     */
+    /** IPv6子网的网段，如果子网为IPv4子网，则不返回此参数
+     * 
+     * @return cidrV6 */
     public String getCidrV6() {
         return cidrV6;
     }
@@ -380,20 +305,14 @@ public class Subnet  {
         this.cidrV6 = cidrV6;
     }
 
-    
-
     public Subnet withGatewayIpV6(String gatewayIpV6) {
         this.gatewayIpV6 = gatewayIpV6;
         return this;
     }
 
-    
-
-
-    /**
-     * IPv6子网的网关，如果子网为IPv4子网，则不返回此参数
-     * @return gatewayIpV6
-     */
+    /** IPv6子网的网关，如果子网为IPv4子网，则不返回此参数
+     * 
+     * @return gatewayIpV6 */
     public String getGatewayIpV6() {
         return gatewayIpV6;
     }
@@ -402,20 +321,14 @@ public class Subnet  {
         this.gatewayIpV6 = gatewayIpV6;
     }
 
-    
-
     public Subnet withDhcpEnable(Boolean dhcpEnable) {
         this.dhcpEnable = dhcpEnable;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网是否开启dhcp功能
-     * @return dhcpEnable
-     */
+    /** 子网是否开启dhcp功能
+     * 
+     * @return dhcpEnable */
     public Boolean getDhcpEnable() {
         return dhcpEnable;
     }
@@ -424,20 +337,14 @@ public class Subnet  {
         this.dhcpEnable = dhcpEnable;
     }
 
-    
-
     public Subnet withPrimaryDns(String primaryDns) {
         this.primaryDns = primaryDns;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网dns服务器地址1
-     * @return primaryDns
-     */
+    /** 子网dns服务器地址1
+     * 
+     * @return primaryDns */
     public String getPrimaryDns() {
         return primaryDns;
     }
@@ -446,20 +353,14 @@ public class Subnet  {
         this.primaryDns = primaryDns;
     }
 
-    
-
     public Subnet withSecondaryDns(String secondaryDns) {
         this.secondaryDns = secondaryDns;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网dns服务器地址2
-     * @return secondaryDns
-     */
+    /** 子网dns服务器地址2
+     * 
+     * @return secondaryDns */
     public String getSecondaryDns() {
         return secondaryDns;
     }
@@ -468,16 +369,13 @@ public class Subnet  {
         this.secondaryDns = secondaryDns;
     }
 
-    
-
     public Subnet withDnsList(List<String> dnsList) {
         this.dnsList = dnsList;
         return this;
     }
 
-    
     public Subnet addDnsListItem(String dnsListItem) {
-        if(this.dnsList == null) {
+        if (this.dnsList == null) {
             this.dnsList = new ArrayList<>();
         }
         this.dnsList.add(dnsListItem);
@@ -485,17 +383,16 @@ public class Subnet  {
     }
 
     public Subnet withDnsList(Consumer<List<String>> dnsListSetter) {
-        if(this.dnsList == null) {
+        if (this.dnsList == null) {
             this.dnsList = new ArrayList<>();
         }
         dnsListSetter.accept(this.dnsList);
         return this;
     }
 
-    /**
-     * 子网dns服务器地址列表
-     * @return dnsList
-     */
+    /** 子网dns服务器地址列表
+     * 
+     * @return dnsList */
     public List<String> getDnsList() {
         return dnsList;
     }
@@ -504,20 +401,14 @@ public class Subnet  {
         this.dnsList = dnsList;
     }
 
-    
-
     public Subnet withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网所在的可用区标识
-     * @return availabilityZone
-     */
+    /** 子网所在的可用区标识
+     * 
+     * @return availabilityZone */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
@@ -526,20 +417,14 @@ public class Subnet  {
         this.availabilityZone = availabilityZone;
     }
 
-    
-
     public Subnet withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网所在VPC标识
-     * @return vpcId
-     */
+    /** 子网所在VPC标识
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -548,20 +433,14 @@ public class Subnet  {
         this.vpcId = vpcId;
     }
 
-    
-
     public Subnet withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：子网的状态 取值范围： - ACTIVE：表示子网已挂载到ROUTER上 - UNKNOWN：表示子网还未挂载到ROUTER上 - ERROR：表示子网状态故障
-     * @return status
-     */
+    /** 功能说明：子网的状态 取值范围： - ACTIVE：表示子网已挂载到ROUTER上 - UNKNOWN：表示子网还未挂载到ROUTER上 - ERROR：表示子网状态故障
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -570,20 +449,14 @@ public class Subnet  {
         this.status = status;
     }
 
-    
-
     public Subnet withNeutronNetworkId(String neutronNetworkId) {
         this.neutronNetworkId = neutronNetworkId;
         return this;
     }
 
-    
-
-
-    /**
-     * 对应网络（OpenStack Neutron接口）id
-     * @return neutronNetworkId
-     */
+    /** 对应网络（OpenStack Neutron接口）id
+     * 
+     * @return neutronNetworkId */
     public String getNeutronNetworkId() {
         return neutronNetworkId;
     }
@@ -592,20 +465,14 @@ public class Subnet  {
         this.neutronNetworkId = neutronNetworkId;
     }
 
-    
-
     public Subnet withNeutronSubnetId(String neutronSubnetId) {
         this.neutronSubnetId = neutronSubnetId;
         return this;
     }
 
-    
-
-
-    /**
-     * 对应子网（OpenStack Neutron接口）id
-     * @return neutronSubnetId
-     */
+    /** 对应子网（OpenStack Neutron接口）id
+     * 
+     * @return neutronSubnetId */
     public String getNeutronSubnetId() {
         return neutronSubnetId;
     }
@@ -614,20 +481,14 @@ public class Subnet  {
         this.neutronSubnetId = neutronSubnetId;
     }
 
-    
-
     public Subnet withNeutronSubnetIdV6(String neutronSubnetIdV6) {
         this.neutronSubnetIdV6 = neutronSubnetIdV6;
         return this;
     }
 
-    
-
-
-    /**
-     * 对应IPv6子网（OpenStack Neutron接口）id，如果子网为IPv4子网，则不返回此参数
-     * @return neutronSubnetIdV6
-     */
+    /** 对应IPv6子网（OpenStack Neutron接口）id，如果子网为IPv4子网，则不返回此参数
+     * 
+     * @return neutronSubnetIdV6 */
     public String getNeutronSubnetIdV6() {
         return neutronSubnetIdV6;
     }
@@ -636,16 +497,13 @@ public class Subnet  {
         this.neutronSubnetIdV6 = neutronSubnetIdV6;
     }
 
-    
-
     public Subnet withExtraDhcpOpts(List<ExtraDhcpOption> extraDhcpOpts) {
         this.extraDhcpOpts = extraDhcpOpts;
         return this;
     }
 
-    
     public Subnet addExtraDhcpOptsItem(ExtraDhcpOption extraDhcpOptsItem) {
-        if(this.extraDhcpOpts == null) {
+        if (this.extraDhcpOpts == null) {
             this.extraDhcpOpts = new ArrayList<>();
         }
         this.extraDhcpOpts.add(extraDhcpOptsItem);
@@ -653,17 +511,16 @@ public class Subnet  {
     }
 
     public Subnet withExtraDhcpOpts(Consumer<List<ExtraDhcpOption>> extraDhcpOptsSetter) {
-        if(this.extraDhcpOpts == null) {
+        if (this.extraDhcpOpts == null) {
             this.extraDhcpOpts = new ArrayList<>();
         }
         extraDhcpOptsSetter.accept(this.extraDhcpOpts);
         return this;
     }
 
-    /**
-     * 子网配置的NTP地址
-     * @return extraDhcpOpts
-     */
+    /** 子网配置的NTP地址
+     * 
+     * @return extraDhcpOpts */
     public List<ExtraDhcpOption> getExtraDhcpOpts() {
         return extraDhcpOpts;
     }
@@ -672,20 +529,14 @@ public class Subnet  {
         this.extraDhcpOpts = extraDhcpOpts;
     }
 
-    
-
     public Subnet withScope(String scope) {
         this.scope = scope;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：子网作用域 取值范围：center-表示作用域为中心；{azId}表示作用域为具体的AZ
-     * @return scope
-     */
+    /** 功能说明：子网作用域 取值范围：center-表示作用域为中心；{azId}表示作用域为具体的AZ
+     * 
+     * @return scope */
     public String getScope() {
         return scope;
     }
@@ -693,8 +544,6 @@ public class Subnet  {
     public void setScope(String scope) {
         this.scope = scope;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -705,31 +554,44 @@ public class Subnet  {
             return false;
         }
         Subnet subnet = (Subnet) o;
-        return Objects.equals(this.id, subnet.id) &&
-            Objects.equals(this.name, subnet.name) &&
-            Objects.equals(this.description, subnet.description) &&
-            Objects.equals(this.cidr, subnet.cidr) &&
-            Objects.equals(this.gatewayIp, subnet.gatewayIp) &&
-            Objects.equals(this.ipv6Enable, subnet.ipv6Enable) &&
-            Objects.equals(this.cidrV6, subnet.cidrV6) &&
-            Objects.equals(this.gatewayIpV6, subnet.gatewayIpV6) &&
-            Objects.equals(this.dhcpEnable, subnet.dhcpEnable) &&
-            Objects.equals(this.primaryDns, subnet.primaryDns) &&
-            Objects.equals(this.secondaryDns, subnet.secondaryDns) &&
-            Objects.equals(this.dnsList, subnet.dnsList) &&
-            Objects.equals(this.availabilityZone, subnet.availabilityZone) &&
-            Objects.equals(this.vpcId, subnet.vpcId) &&
-            Objects.equals(this.status, subnet.status) &&
-            Objects.equals(this.neutronNetworkId, subnet.neutronNetworkId) &&
-            Objects.equals(this.neutronSubnetId, subnet.neutronSubnetId) &&
-            Objects.equals(this.neutronSubnetIdV6, subnet.neutronSubnetIdV6) &&
-            Objects.equals(this.extraDhcpOpts, subnet.extraDhcpOpts) &&
-            Objects.equals(this.scope, subnet.scope);
+        return Objects.equals(this.id, subnet.id) && Objects.equals(this.name, subnet.name)
+            && Objects.equals(this.description, subnet.description) && Objects.equals(this.cidr, subnet.cidr)
+            && Objects.equals(this.gatewayIp, subnet.gatewayIp) && Objects.equals(this.ipv6Enable, subnet.ipv6Enable)
+            && Objects.equals(this.cidrV6, subnet.cidrV6) && Objects.equals(this.gatewayIpV6, subnet.gatewayIpV6)
+            && Objects.equals(this.dhcpEnable, subnet.dhcpEnable) && Objects.equals(this.primaryDns, subnet.primaryDns)
+            && Objects.equals(this.secondaryDns, subnet.secondaryDns) && Objects.equals(this.dnsList, subnet.dnsList)
+            && Objects.equals(this.availabilityZone, subnet.availabilityZone)
+            && Objects.equals(this.vpcId, subnet.vpcId) && Objects.equals(this.status, subnet.status)
+            && Objects.equals(this.neutronNetworkId, subnet.neutronNetworkId)
+            && Objects.equals(this.neutronSubnetId, subnet.neutronSubnetId)
+            && Objects.equals(this.neutronSubnetIdV6, subnet.neutronSubnetIdV6)
+            && Objects.equals(this.extraDhcpOpts, subnet.extraDhcpOpts) && Objects.equals(this.scope, subnet.scope);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, cidr, gatewayIp, ipv6Enable, cidrV6, gatewayIpV6, dhcpEnable, primaryDns, secondaryDns, dnsList, availabilityZone, vpcId, status, neutronNetworkId, neutronSubnetId, neutronSubnetIdV6, extraDhcpOpts, scope);
+        return Objects.hash(id,
+            name,
+            description,
+            cidr,
+            gatewayIp,
+            ipv6Enable,
+            cidrV6,
+            gatewayIpV6,
+            dhcpEnable,
+            primaryDns,
+            secondaryDns,
+            dnsList,
+            availabilityZone,
+            vpcId,
+            status,
+            neutronNetworkId,
+            neutronSubnetId,
+            neutronSubnetIdV6,
+            extraDhcpOpts,
+            scope);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -757,16 +619,13 @@ public class Subnet  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateWatermarkTemplateResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="upload_url")
-    
+    @JsonProperty(value = "upload_url")
+
     private String uploadUrl;
 
     public CreateWatermarkTemplateResponse withId(String id) {
@@ -36,13 +24,9 @@ public class CreateWatermarkTemplateResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 水印配置模板id<br/> 
-     * @return id
-     */
+    /** 水印配置模板id<br/>
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -51,20 +35,14 @@ public class CreateWatermarkTemplateResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public CreateWatermarkTemplateResponse withUploadUrl(String uploadUrl) {
         this.uploadUrl = uploadUrl;
         return this;
     }
 
-    
-
-
-    /**
-     * 水印图片上传地址<br/> 
-     * @return uploadUrl
-     */
+    /** 水印图片上传地址<br/>
+     * 
+     * @return uploadUrl */
     public String getUploadUrl() {
         return uploadUrl;
     }
@@ -72,8 +50,6 @@ public class CreateWatermarkTemplateResponse extends SdkResponse {
     public void setUploadUrl(String uploadUrl) {
         this.uploadUrl = uploadUrl;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +60,15 @@ public class CreateWatermarkTemplateResponse extends SdkResponse {
             return false;
         }
         CreateWatermarkTemplateResponse createWatermarkTemplateResponse = (CreateWatermarkTemplateResponse) o;
-        return Objects.equals(this.id, createWatermarkTemplateResponse.id) &&
-            Objects.equals(this.uploadUrl, createWatermarkTemplateResponse.uploadUrl);
+        return Objects.equals(this.id, createWatermarkTemplateResponse.id)
+            && Objects.equals(this.uploadUrl, createWatermarkTemplateResponse.uploadUrl);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, uploadUrl);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +78,13 @@ public class CreateWatermarkTemplateResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

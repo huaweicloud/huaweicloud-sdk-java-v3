@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowSubnetTagsRequest  {
-
-
+/** Request Object */
+public class ShowSubnetTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
+
     private String subnetId;
 
     public ShowSubnetTagsRequest withSubnetId(String subnetId) {
@@ -28,13 +18,9 @@ public class ShowSubnetTagsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 子网ID
-     * @return subnetId
-     */
+    /** 子网ID
+     * 
+     * @return subnetId */
     public String getSubnetId() {
         return subnetId;
     }
@@ -42,8 +28,6 @@ public class ShowSubnetTagsRequest  {
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class ShowSubnetTagsRequest  {
         ShowSubnetTagsRequest showSubnetTagsRequest = (ShowSubnetTagsRequest) o;
         return Objects.equals(this.subnetId, showSubnetTagsRequest.subnetId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(subnetId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class ShowSubnetTagsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

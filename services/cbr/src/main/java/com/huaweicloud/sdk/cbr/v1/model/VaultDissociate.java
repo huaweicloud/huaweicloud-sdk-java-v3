@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * VaultDissociate
- */
-public class VaultDissociate  {
-
-
+/** VaultDissociate */
+public class VaultDissociate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_id")
-    
+    @JsonProperty(value = "policy_id")
+
     private String policyId;
 
     public VaultDissociate withPolicyId(String policyId) {
@@ -28,13 +18,9 @@ public class VaultDissociate  {
         return this;
     }
 
-    
-
-
-    /**
-     * 策略ID
-     * @return policyId
-     */
+    /** 策略ID
+     * 
+     * @return policyId */
     public String getPolicyId() {
         return policyId;
     }
@@ -42,8 +28,6 @@ public class VaultDissociate  {
     public void setPolicyId(String policyId) {
         this.policyId = policyId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class VaultDissociate  {
         VaultDissociate vaultDissociate = (VaultDissociate) o;
         return Objects.equals(this.policyId, vaultDissociate.policyId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(policyId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class VaultDissociate  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

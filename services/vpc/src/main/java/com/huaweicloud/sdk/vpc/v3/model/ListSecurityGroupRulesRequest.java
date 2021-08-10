@@ -1,76 +1,59 @@
 package com.huaweicloud.sdk.vpc.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ListSecurityGroupRulesRequest  {
-
-
+/** Request Object */
+public class ListSecurityGroupRulesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private List<String> id = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_id")
-    
+    @JsonProperty(value = "security_group_id")
+
     private List<String> securityGroupId = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
+
     private List<String> protocol = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private List<String> description = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remote_group_id")
-    
+    @JsonProperty(value = "remote_group_id")
+
     private List<String> remoteGroupId = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="direction")
-    
+    @JsonProperty(value = "direction")
+
     private String direction;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private String action;
 
     public ListSecurityGroupRulesRequest withLimit(Integer limit) {
@@ -78,13 +61,9 @@ public class ListSecurityGroupRulesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：每页返回个数 取值范围：0-2000
-     * @return limit
-     */
+    /** 功能说明：每页返回个数 取值范围：0-2000
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -93,20 +72,14 @@ public class ListSecurityGroupRulesRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListSecurityGroupRulesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页查询起始的资源ID，为空时查询第一页
-     * @return marker
-     */
+    /** 分页查询起始的资源ID，为空时查询第一页
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -115,16 +88,13 @@ public class ListSecurityGroupRulesRequest  {
         this.marker = marker;
     }
 
-    
-
     public ListSecurityGroupRulesRequest withId(List<String> id) {
         this.id = id;
         return this;
     }
 
-    
     public ListSecurityGroupRulesRequest addIdItem(String idItem) {
-        if(this.id == null) {
+        if (this.id == null) {
             this.id = new ArrayList<>();
         }
         this.id.add(idItem);
@@ -132,17 +102,16 @@ public class ListSecurityGroupRulesRequest  {
     }
 
     public ListSecurityGroupRulesRequest withId(Consumer<List<String>> idSetter) {
-        if(this.id == null) {
+        if (this.id == null) {
             this.id = new ArrayList<>();
         }
         idSetter.accept(this.id);
         return this;
     }
 
-    /**
-     * 功能说明：安全组规则ID，支持多个ID过滤
-     * @return id
-     */
+    /** 功能说明：安全组规则ID，支持多个ID过滤
+     * 
+     * @return id */
     public List<String> getId() {
         return id;
     }
@@ -151,16 +120,13 @@ public class ListSecurityGroupRulesRequest  {
         this.id = id;
     }
 
-    
-
     public ListSecurityGroupRulesRequest withSecurityGroupId(List<String> securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
     }
 
-    
     public ListSecurityGroupRulesRequest addSecurityGroupIdItem(String securityGroupIdItem) {
-        if(this.securityGroupId == null) {
+        if (this.securityGroupId == null) {
             this.securityGroupId = new ArrayList<>();
         }
         this.securityGroupId.add(securityGroupIdItem);
@@ -168,17 +134,16 @@ public class ListSecurityGroupRulesRequest  {
     }
 
     public ListSecurityGroupRulesRequest withSecurityGroupId(Consumer<List<String>> securityGroupIdSetter) {
-        if(this.securityGroupId == null) {
+        if (this.securityGroupId == null) {
             this.securityGroupId = new ArrayList<>();
         }
         securityGroupIdSetter.accept(this.securityGroupId);
         return this;
     }
 
-    /**
-     * 功能说明：安全组规则所属安全组ID，支持多个ID过滤
-     * @return securityGroupId
-     */
+    /** 功能说明：安全组规则所属安全组ID，支持多个ID过滤
+     * 
+     * @return securityGroupId */
     public List<String> getSecurityGroupId() {
         return securityGroupId;
     }
@@ -187,16 +152,13 @@ public class ListSecurityGroupRulesRequest  {
         this.securityGroupId = securityGroupId;
     }
 
-    
-
     public ListSecurityGroupRulesRequest withProtocol(List<String> protocol) {
         this.protocol = protocol;
         return this;
     }
 
-    
     public ListSecurityGroupRulesRequest addProtocolItem(String protocolItem) {
-        if(this.protocol == null) {
+        if (this.protocol == null) {
             this.protocol = new ArrayList<>();
         }
         this.protocol.add(protocolItem);
@@ -204,17 +166,16 @@ public class ListSecurityGroupRulesRequest  {
     }
 
     public ListSecurityGroupRulesRequest withProtocol(Consumer<List<String>> protocolSetter) {
-        if(this.protocol == null) {
+        if (this.protocol == null) {
             this.protocol = new ArrayList<>();
         }
         protocolSetter.accept(this.protocol);
         return this;
     }
 
-    /**
-     * 功能说明：安全组规则协议，支持多条过滤
-     * @return protocol
-     */
+    /** 功能说明：安全组规则协议，支持多条过滤
+     * 
+     * @return protocol */
     public List<String> getProtocol() {
         return protocol;
     }
@@ -223,16 +184,13 @@ public class ListSecurityGroupRulesRequest  {
         this.protocol = protocol;
     }
 
-    
-
     public ListSecurityGroupRulesRequest withDescription(List<String> description) {
         this.description = description;
         return this;
     }
 
-    
     public ListSecurityGroupRulesRequest addDescriptionItem(String descriptionItem) {
-        if(this.description == null) {
+        if (this.description == null) {
             this.description = new ArrayList<>();
         }
         this.description.add(descriptionItem);
@@ -240,17 +198,16 @@ public class ListSecurityGroupRulesRequest  {
     }
 
     public ListSecurityGroupRulesRequest withDescription(Consumer<List<String>> descriptionSetter) {
-        if(this.description == null) {
+        if (this.description == null) {
             this.description = new ArrayList<>();
         }
         descriptionSetter.accept(this.description);
         return this;
     }
 
-    /**
-     * 功能说明：安全组规则的描述，支持多个描述同时过滤
-     * @return description
-     */
+    /** 功能说明：安全组规则的描述，支持多个描述同时过滤
+     * 
+     * @return description */
     public List<String> getDescription() {
         return description;
     }
@@ -259,16 +216,13 @@ public class ListSecurityGroupRulesRequest  {
         this.description = description;
     }
 
-    
-
     public ListSecurityGroupRulesRequest withRemoteGroupId(List<String> remoteGroupId) {
         this.remoteGroupId = remoteGroupId;
         return this;
     }
 
-    
     public ListSecurityGroupRulesRequest addRemoteGroupIdItem(String remoteGroupIdItem) {
-        if(this.remoteGroupId == null) {
+        if (this.remoteGroupId == null) {
             this.remoteGroupId = new ArrayList<>();
         }
         this.remoteGroupId.add(remoteGroupIdItem);
@@ -276,17 +230,16 @@ public class ListSecurityGroupRulesRequest  {
     }
 
     public ListSecurityGroupRulesRequest withRemoteGroupId(Consumer<List<String>> remoteGroupIdSetter) {
-        if(this.remoteGroupId == null) {
+        if (this.remoteGroupId == null) {
             this.remoteGroupId = new ArrayList<>();
         }
         remoteGroupIdSetter.accept(this.remoteGroupId);
         return this;
     }
 
-    /**
-     * 功能说明：远端安全组ID，支持多ID过滤
-     * @return remoteGroupId
-     */
+    /** 功能说明：远端安全组ID，支持多ID过滤
+     * 
+     * @return remoteGroupId */
     public List<String> getRemoteGroupId() {
         return remoteGroupId;
     }
@@ -295,20 +248,14 @@ public class ListSecurityGroupRulesRequest  {
         this.remoteGroupId = remoteGroupId;
     }
 
-    
-
     public ListSecurityGroupRulesRequest withDirection(String direction) {
         this.direction = direction;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：安全组规则方向
-     * @return direction
-     */
+    /** 功能说明：安全组规则方向
+     * 
+     * @return direction */
     public String getDirection() {
         return direction;
     }
@@ -317,20 +264,14 @@ public class ListSecurityGroupRulesRequest  {
         this.direction = direction;
     }
 
-    
-
     public ListSecurityGroupRulesRequest withAction(String action) {
         this.action = action;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：安全组规则生效策略
-     * @return action
-     */
+    /** 功能说明：安全组规则生效策略
+     * 
+     * @return action */
     public String getAction() {
         return action;
     }
@@ -338,8 +279,6 @@ public class ListSecurityGroupRulesRequest  {
     public void setAction(String action) {
         this.action = action;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -350,20 +289,23 @@ public class ListSecurityGroupRulesRequest  {
             return false;
         }
         ListSecurityGroupRulesRequest listSecurityGroupRulesRequest = (ListSecurityGroupRulesRequest) o;
-        return Objects.equals(this.limit, listSecurityGroupRulesRequest.limit) &&
-            Objects.equals(this.marker, listSecurityGroupRulesRequest.marker) &&
-            Objects.equals(this.id, listSecurityGroupRulesRequest.id) &&
-            Objects.equals(this.securityGroupId, listSecurityGroupRulesRequest.securityGroupId) &&
-            Objects.equals(this.protocol, listSecurityGroupRulesRequest.protocol) &&
-            Objects.equals(this.description, listSecurityGroupRulesRequest.description) &&
-            Objects.equals(this.remoteGroupId, listSecurityGroupRulesRequest.remoteGroupId) &&
-            Objects.equals(this.direction, listSecurityGroupRulesRequest.direction) &&
-            Objects.equals(this.action, listSecurityGroupRulesRequest.action);
+        return Objects.equals(this.limit, listSecurityGroupRulesRequest.limit)
+            && Objects.equals(this.marker, listSecurityGroupRulesRequest.marker)
+            && Objects.equals(this.id, listSecurityGroupRulesRequest.id)
+            && Objects.equals(this.securityGroupId, listSecurityGroupRulesRequest.securityGroupId)
+            && Objects.equals(this.protocol, listSecurityGroupRulesRequest.protocol)
+            && Objects.equals(this.description, listSecurityGroupRulesRequest.description)
+            && Objects.equals(this.remoteGroupId, listSecurityGroupRulesRequest.remoteGroupId)
+            && Objects.equals(this.direction, listSecurityGroupRulesRequest.direction)
+            && Objects.equals(this.action, listSecurityGroupRulesRequest.action);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker, id, securityGroupId, protocol, description, remoteGroupId, direction, action);
+        return Objects
+            .hash(limit, marker, id, securityGroupId, protocol, description, remoteGroupId, direction, action);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -380,16 +322,13 @@ public class ListSecurityGroupRulesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

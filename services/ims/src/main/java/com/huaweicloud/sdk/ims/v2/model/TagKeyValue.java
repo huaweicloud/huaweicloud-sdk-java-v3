@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 镜像标签
- */
-public class TagKeyValue  {
-
-
+/** 镜像标签 */
+public class TagKeyValue {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private String value;
 
     public TagKeyValue withKey(String key) {
@@ -34,13 +23,9 @@ public class TagKeyValue  {
         return this;
     }
 
-    
-
-
-    /**
-     * 标签的键
-     * @return key
-     */
+    /** 标签的键
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -49,20 +34,14 @@ public class TagKeyValue  {
         this.key = key;
     }
 
-    
-
     public TagKeyValue withValue(String value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 标签的值
-     * @return value
-     */
+    /** 标签的值
+     * 
+     * @return value */
     public String getValue() {
         return value;
     }
@@ -70,8 +49,6 @@ public class TagKeyValue  {
     public void setValue(String value) {
         this.value = value;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,14 @@ public class TagKeyValue  {
             return false;
         }
         TagKeyValue tagKeyValue = (TagKeyValue) o;
-        return Objects.equals(this.key, tagKeyValue.key) &&
-            Objects.equals(this.value, tagKeyValue.value);
+        return Objects.equals(this.key, tagKeyValue.key) && Objects.equals(this.value, tagKeyValue.value);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(key, value);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +76,13 @@ public class TagKeyValue  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,41 +1,29 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vod.v1.model.TopUrl;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListTopStatisticsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="top_urls")
-    
+    @JsonProperty(value = "top_urls")
+
     private List<TopUrl> topUrls = null;
-    
+
     public ListTopStatisticsResponse withTopUrls(List<TopUrl> topUrls) {
         this.topUrls = topUrls;
         return this;
     }
 
-    
     public ListTopStatisticsResponse addTopUrlsItem(TopUrl topUrlsItem) {
-        if(this.topUrls == null) {
+        if (this.topUrls == null) {
             this.topUrls = new ArrayList<>();
         }
         this.topUrls.add(topUrlsItem);
@@ -43,17 +31,16 @@ public class ListTopStatisticsResponse extends SdkResponse {
     }
 
     public ListTopStatisticsResponse withTopUrls(Consumer<List<TopUrl>> topUrlsSetter) {
-        if(this.topUrls == null) {
+        if (this.topUrls == null) {
             this.topUrls = new ArrayList<>();
         }
         topUrlsSetter.accept(this.topUrls);
         return this;
     }
 
-    /**
-     * Get topUrls
-     * @return topUrls
-     */
+    /** Get topUrls
+     * 
+     * @return topUrls */
     public List<TopUrl> getTopUrls() {
         return topUrls;
     }
@@ -61,8 +48,6 @@ public class ListTopStatisticsResponse extends SdkResponse {
     public void setTopUrls(List<TopUrl> topUrls) {
         this.topUrls = topUrls;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -75,10 +60,12 @@ public class ListTopStatisticsResponse extends SdkResponse {
         ListTopStatisticsResponse listTopStatisticsResponse = (ListTopStatisticsResponse) o;
         return Objects.equals(this.topUrls, listTopStatisticsResponse.topUrls);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(topUrls);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -87,16 +74,13 @@ public class ListTopStatisticsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

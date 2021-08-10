@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.ProtectablesResp;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowProtectableResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance")
-    
+    @JsonProperty(value = "instance")
+
     private ProtectablesResp instance;
 
     public ShowProtectableResponse withInstance(ProtectablesResp instance) {
@@ -32,19 +21,17 @@ public class ShowProtectableResponse extends SdkResponse {
     }
 
     public ShowProtectableResponse withInstance(Consumer<ProtectablesResp> instanceSetter) {
-        if(this.instance == null ){
+        if (this.instance == null) {
             this.instance = new ProtectablesResp();
             instanceSetter.accept(this.instance);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get instance
-     * @return instance
-     */
+    /** Get instance
+     * 
+     * @return instance */
     public ProtectablesResp getInstance() {
         return instance;
     }
@@ -52,8 +39,6 @@ public class ShowProtectableResponse extends SdkResponse {
     public void setInstance(ProtectablesResp instance) {
         this.instance = instance;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class ShowProtectableResponse extends SdkResponse {
         ShowProtectableResponse showProtectableResponse = (ShowProtectableResponse) o;
         return Objects.equals(this.instance, showProtectableResponse.instance);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instance);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class ShowProtectableResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,116 +1,91 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * QoS会议信息。
- */
-public class QosConferenceInfo  {
-
-
+/** QoS会议信息。 */
+public class QosConferenceInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confUUID")
-    
+    @JsonProperty(value = "confUUID")
+
     private String confUUID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="conferenceID")
-    
+    @JsonProperty(value = "conferenceID")
+
     private String conferenceID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subject")
-    
+    @JsonProperty(value = "subject")
+
     private String subject;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scheduserName")
-    
+    @JsonProperty(value = "scheduserName")
+
     private String scheduserName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deptName")
-    
+    @JsonProperty(value = "deptName")
+
     private String deptName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm")
-    
+    @JsonProperty(value = "alarm")
+
     private String alarm;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audioAlarm")
-    
+    @JsonProperty(value = "audioAlarm")
+
     private String audioAlarm;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="videoAlarm")
-    
+    @JsonProperty(value = "videoAlarm")
+
     private String videoAlarm;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="screenAlarm")
-    
+    @JsonProperty(value = "screenAlarm")
+
     private String screenAlarm;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cpuAlarm")
-    
+    @JsonProperty(value = "cpuAlarm")
+
     private String cpuAlarm;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timeZoneID")
-    
+    @JsonProperty(value = "timeZoneID")
+
     private String timeZoneID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="startTime")
-    
+    @JsonProperty(value = "startTime")
+
     private Long startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endTime")
-    
+    @JsonProperty(value = "endTime")
+
     private Long endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="duration")
-    
+    @JsonProperty(value = "duration")
+
     private Integer duration;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="participants")
-    
+    @JsonProperty(value = "participants")
+
     private Integer participants;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="webinar")
-    
+    @JsonProperty(value = "webinar")
+
     private Boolean webinar;
 
     public QosConferenceInfo withConfUUID(String confUUID) {
@@ -118,13 +93,9 @@ public class QosConferenceInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 会议UUID。
-     * @return confUUID
-     */
+    /** 会议UUID。
+     * 
+     * @return confUUID */
     public String getConfUUID() {
         return confUUID;
     }
@@ -133,20 +104,14 @@ public class QosConferenceInfo  {
         this.confUUID = confUUID;
     }
 
-    
-
     public QosConferenceInfo withConferenceID(String conferenceID) {
         this.conferenceID = conferenceID;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议ID。
-     * @return conferenceID
-     */
+    /** 会议ID。
+     * 
+     * @return conferenceID */
     public String getConferenceID() {
         return conferenceID;
     }
@@ -155,20 +120,14 @@ public class QosConferenceInfo  {
         this.conferenceID = conferenceID;
     }
 
-    
-
     public QosConferenceInfo withSubject(String subject) {
         this.subject = subject;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议主题。
-     * @return subject
-     */
+    /** 会议主题。
+     * 
+     * @return subject */
     public String getSubject() {
         return subject;
     }
@@ -177,20 +136,14 @@ public class QosConferenceInfo  {
         this.subject = subject;
     }
 
-    
-
     public QosConferenceInfo withScheduserName(String scheduserName) {
         this.scheduserName = scheduserName;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议预订者名称。
-     * @return scheduserName
-     */
+    /** 会议预订者名称。
+     * 
+     * @return scheduserName */
     public String getScheduserName() {
         return scheduserName;
     }
@@ -199,20 +152,14 @@ public class QosConferenceInfo  {
         this.scheduserName = scheduserName;
     }
 
-    
-
     public QosConferenceInfo withDeptName(String deptName) {
         this.deptName = deptName;
         return this;
     }
 
-    
-
-
-    /**
-     * 部门。
-     * @return deptName
-     */
+    /** 部门。
+     * 
+     * @return deptName */
     public String getDeptName() {
         return deptName;
     }
@@ -221,20 +168,14 @@ public class QosConferenceInfo  {
         this.deptName = deptName;
     }
 
-    
-
     public QosConferenceInfo withAlarm(String alarm) {
         this.alarm = alarm;
         return this;
     }
 
-    
-
-
-    /**
-     * 总体告警 YES/NO。 说明： * 会议的音频，视频，屏幕共享，CPU任一项产生告警，总体告警就为YES。
-     * @return alarm
-     */
+    /** 总体告警 YES/NO。 说明： * 会议的音频，视频，屏幕共享，CPU任一项产生告警，总体告警就为YES。
+     * 
+     * @return alarm */
     public String getAlarm() {
         return alarm;
     }
@@ -243,20 +184,14 @@ public class QosConferenceInfo  {
         this.alarm = alarm;
     }
 
-    
-
     public QosConferenceInfo withAudioAlarm(String audioAlarm) {
         this.audioAlarm = audioAlarm;
         return this;
     }
 
-    
-
-
-    /**
-     * 音频告警 YES/NO。 说明： * 会议中任一与会者存在音频告警，会议音频告警就为YES。
-     * @return audioAlarm
-     */
+    /** 音频告警 YES/NO。 说明： * 会议中任一与会者存在音频告警，会议音频告警就为YES。
+     * 
+     * @return audioAlarm */
     public String getAudioAlarm() {
         return audioAlarm;
     }
@@ -265,20 +200,14 @@ public class QosConferenceInfo  {
         this.audioAlarm = audioAlarm;
     }
 
-    
-
     public QosConferenceInfo withVideoAlarm(String videoAlarm) {
         this.videoAlarm = videoAlarm;
         return this;
     }
 
-    
-
-
-    /**
-     * 视频告警 YES/NO。 说明： * 会议中任一与会者存在视频告警，会议视频告警就为YES。
-     * @return videoAlarm
-     */
+    /** 视频告警 YES/NO。 说明： * 会议中任一与会者存在视频告警，会议视频告警就为YES。
+     * 
+     * @return videoAlarm */
     public String getVideoAlarm() {
         return videoAlarm;
     }
@@ -287,20 +216,14 @@ public class QosConferenceInfo  {
         this.videoAlarm = videoAlarm;
     }
 
-    
-
     public QosConferenceInfo withScreenAlarm(String screenAlarm) {
         this.screenAlarm = screenAlarm;
         return this;
     }
 
-    
-
-
-    /**
-     * 屏幕共享告警 YES/NO。 说明： * 会议中任一与会者存在屏幕共享告警，会议屏幕共享告警就为YES。
-     * @return screenAlarm
-     */
+    /** 屏幕共享告警 YES/NO。 说明： * 会议中任一与会者存在屏幕共享告警，会议屏幕共享告警就为YES。
+     * 
+     * @return screenAlarm */
     public String getScreenAlarm() {
         return screenAlarm;
     }
@@ -309,20 +232,14 @@ public class QosConferenceInfo  {
         this.screenAlarm = screenAlarm;
     }
 
-    
-
     public QosConferenceInfo withCpuAlarm(String cpuAlarm) {
         this.cpuAlarm = cpuAlarm;
         return this;
     }
 
-    
-
-
-    /**
-     * CPU告警 YES/NO。 说明： * 会议中任一与会者存在CPU告警，会议CPU告警就为YES。'
-     * @return cpuAlarm
-     */
+    /** CPU告警 YES/NO。 说明： * 会议中任一与会者存在CPU告警，会议CPU告警就为YES。'
+     * 
+     * @return cpuAlarm */
     public String getCpuAlarm() {
         return cpuAlarm;
     }
@@ -331,20 +248,14 @@ public class QosConferenceInfo  {
         this.cpuAlarm = cpuAlarm;
     }
 
-    
-
     public QosConferenceInfo withTimeZoneID(String timeZoneID) {
         this.timeZoneID = timeZoneID;
         return this;
     }
 
-    
-
-
-    /**
-     * 时区。详情参考时区表（云会议帮助中心->服务端API参考->附录->时区表），中国默认时区56-东八区。
-     * @return timeZoneID
-     */
+    /** 时区。详情参考时区表（云会议帮助中心->服务端API参考->附录->时区表），中国默认时区56-东八区。
+     * 
+     * @return timeZoneID */
     public String getTimeZoneID() {
         return timeZoneID;
     }
@@ -353,20 +264,14 @@ public class QosConferenceInfo  {
         this.timeZoneID = timeZoneID;
     }
 
-    
-
     public QosConferenceInfo withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议开始时间(UTC时间), Unix时间戳（单位毫秒）。
-     * @return startTime
-     */
+    /** 会议开始时间(UTC时间), Unix时间戳（单位毫秒）。
+     * 
+     * @return startTime */
     public Long getStartTime() {
         return startTime;
     }
@@ -375,20 +280,14 @@ public class QosConferenceInfo  {
         this.startTime = startTime;
     }
 
-    
-
     public QosConferenceInfo withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议结束时间(UTC时间), Unix时间戳（单位毫秒）。 说明： * 在线会议：会议召开中，endTime = 会议预计结束时间。 * 历史会议：会议已结束，endTime = 会议实际结束时间。
-     * @return endTime
-     */
+    /** 会议结束时间(UTC时间), Unix时间戳（单位毫秒）。 说明： * 在线会议：会议召开中，endTime = 会议预计结束时间。 * 历史会议：会议已结束，endTime = 会议实际结束时间。
+     * 
+     * @return endTime */
     public Long getEndTime() {
         return endTime;
     }
@@ -397,21 +296,14 @@ public class QosConferenceInfo  {
         this.endTime = endTime;
     }
 
-    
-
     public QosConferenceInfo withDuration(Integer duration) {
         this.duration = duration;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议召开时长（分钟）。 说明： * 在线会议：会议召开中，duration = 0。 * 历史会议：会议已结束，duration = 会议实际召开时间。
-     * minimum: 0
-     * @return duration
-     */
+    /** 会议召开时长（分钟）。 说明： * 在线会议：会议召开中，duration = 0。 * 历史会议：会议已结束，duration = 会议实际召开时间。 minimum: 0
+     * 
+     * @return duration */
     public Integer getDuration() {
         return duration;
     }
@@ -420,21 +312,14 @@ public class QosConferenceInfo  {
         this.duration = duration;
     }
 
-    
-
     public QosConferenceInfo withParticipants(Integer participants) {
         this.participants = participants;
         return this;
     }
 
-    
-
-
-    /**
-     * 与会方数。 说明： * 同一用户多次进出会议属于不同的与会，与会方数计算多次。
-     * minimum: 0
-     * @return participants
-     */
+    /** 与会方数。 说明： * 同一用户多次进出会议属于不同的与会，与会方数计算多次。 minimum: 0
+     * 
+     * @return participants */
     public Integer getParticipants() {
         return participants;
     }
@@ -443,20 +328,14 @@ public class QosConferenceInfo  {
         this.participants = participants;
     }
 
-    
-
     public QosConferenceInfo withWebinar(Boolean webinar) {
         this.webinar = webinar;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否网络研讨会。
-     * @return webinar
-     */
+    /** 是否网络研讨会。
+     * 
+     * @return webinar */
     public Boolean getWebinar() {
         return webinar;
     }
@@ -464,8 +343,6 @@ public class QosConferenceInfo  {
     public void setWebinar(Boolean webinar) {
         this.webinar = webinar;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -476,27 +353,44 @@ public class QosConferenceInfo  {
             return false;
         }
         QosConferenceInfo qosConferenceInfo = (QosConferenceInfo) o;
-        return Objects.equals(this.confUUID, qosConferenceInfo.confUUID) &&
-            Objects.equals(this.conferenceID, qosConferenceInfo.conferenceID) &&
-            Objects.equals(this.subject, qosConferenceInfo.subject) &&
-            Objects.equals(this.scheduserName, qosConferenceInfo.scheduserName) &&
-            Objects.equals(this.deptName, qosConferenceInfo.deptName) &&
-            Objects.equals(this.alarm, qosConferenceInfo.alarm) &&
-            Objects.equals(this.audioAlarm, qosConferenceInfo.audioAlarm) &&
-            Objects.equals(this.videoAlarm, qosConferenceInfo.videoAlarm) &&
-            Objects.equals(this.screenAlarm, qosConferenceInfo.screenAlarm) &&
-            Objects.equals(this.cpuAlarm, qosConferenceInfo.cpuAlarm) &&
-            Objects.equals(this.timeZoneID, qosConferenceInfo.timeZoneID) &&
-            Objects.equals(this.startTime, qosConferenceInfo.startTime) &&
-            Objects.equals(this.endTime, qosConferenceInfo.endTime) &&
-            Objects.equals(this.duration, qosConferenceInfo.duration) &&
-            Objects.equals(this.participants, qosConferenceInfo.participants) &&
-            Objects.equals(this.webinar, qosConferenceInfo.webinar);
+        return Objects.equals(this.confUUID, qosConferenceInfo.confUUID)
+            && Objects.equals(this.conferenceID, qosConferenceInfo.conferenceID)
+            && Objects.equals(this.subject, qosConferenceInfo.subject)
+            && Objects.equals(this.scheduserName, qosConferenceInfo.scheduserName)
+            && Objects.equals(this.deptName, qosConferenceInfo.deptName)
+            && Objects.equals(this.alarm, qosConferenceInfo.alarm)
+            && Objects.equals(this.audioAlarm, qosConferenceInfo.audioAlarm)
+            && Objects.equals(this.videoAlarm, qosConferenceInfo.videoAlarm)
+            && Objects.equals(this.screenAlarm, qosConferenceInfo.screenAlarm)
+            && Objects.equals(this.cpuAlarm, qosConferenceInfo.cpuAlarm)
+            && Objects.equals(this.timeZoneID, qosConferenceInfo.timeZoneID)
+            && Objects.equals(this.startTime, qosConferenceInfo.startTime)
+            && Objects.equals(this.endTime, qosConferenceInfo.endTime)
+            && Objects.equals(this.duration, qosConferenceInfo.duration)
+            && Objects.equals(this.participants, qosConferenceInfo.participants)
+            && Objects.equals(this.webinar, qosConferenceInfo.webinar);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(confUUID, conferenceID, subject, scheduserName, deptName, alarm, audioAlarm, videoAlarm, screenAlarm, cpuAlarm, timeZoneID, startTime, endTime, duration, participants, webinar);
+        return Objects.hash(confUUID,
+            conferenceID,
+            subject,
+            scheduserName,
+            deptName,
+            alarm,
+            audioAlarm,
+            videoAlarm,
+            screenAlarm,
+            cpuAlarm,
+            timeZoneID,
+            startTime,
+            endTime,
+            duration,
+            participants,
+            webinar);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -520,16 +414,13 @@ public class QosConferenceInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

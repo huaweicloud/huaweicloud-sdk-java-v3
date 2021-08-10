@@ -1,47 +1,31 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 响应体
- */
-public class CheckJobResp  {
-
-
+/** 响应体 */
+public class CheckJobResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
-    /**
-     * 测试结果
-     */
+
+    /** 测试结果 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum TRUE_ for value: "true表示成功"
-         */
+        /** Enum TRUE_ for value: "true表示成功" */
         public static final StatusEnum TRUE_ = new StatusEnum("true表示成功");
-        
-        /**
-         * Enum FALSE_ for value: "false表示失败"
-         */
+
+        /** Enum FALSE_ for value: "false表示失败" */
         public static final StatusEnum FALSE_ = new StatusEnum("false表示失败");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,7 +54,7 @@ public class CheckJobResp  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -81,7 +65,7 @@ public class CheckJobResp  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -105,28 +89,24 @@ public class CheckJobResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
+
     private String errorCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_msg")
-    
+    @JsonProperty(value = "error_msg")
+
     private String errorMsg;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="success")
-    
+    @JsonProperty(value = "success")
+
     private Boolean success;
 
     public CheckJobResp withId(String id) {
@@ -134,13 +114,9 @@ public class CheckJobResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务id。
-     * @return id
-     */
+    /** 任务id。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -149,20 +125,14 @@ public class CheckJobResp  {
         this.id = id;
     }
 
-    
-
     public CheckJobResp withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 测试结果
-     * @return status
-     */
+    /** 测试结果
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -171,20 +141,14 @@ public class CheckJobResp  {
         this.status = status;
     }
 
-    
-
     public CheckJobResp withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误码。
-     * @return errorCode
-     */
+    /** 错误码。
+     * 
+     * @return errorCode */
     public String getErrorCode() {
         return errorCode;
     }
@@ -193,20 +157,14 @@ public class CheckJobResp  {
         this.errorCode = errorCode;
     }
 
-    
-
     public CheckJobResp withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误信息。
-     * @return errorMsg
-     */
+    /** 错误信息。
+     * 
+     * @return errorMsg */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -215,20 +173,14 @@ public class CheckJobResp  {
         this.errorMsg = errorMsg;
     }
 
-    
-
     public CheckJobResp withSuccess(Boolean success) {
         this.success = success;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否成功
-     * @return success
-     */
+    /** 是否成功
+     * 
+     * @return success */
     public Boolean getSuccess() {
         return success;
     }
@@ -236,8 +188,6 @@ public class CheckJobResp  {
     public void setSuccess(Boolean success) {
         this.success = success;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -248,16 +198,17 @@ public class CheckJobResp  {
             return false;
         }
         CheckJobResp checkJobResp = (CheckJobResp) o;
-        return Objects.equals(this.id, checkJobResp.id) &&
-            Objects.equals(this.status, checkJobResp.status) &&
-            Objects.equals(this.errorCode, checkJobResp.errorCode) &&
-            Objects.equals(this.errorMsg, checkJobResp.errorMsg) &&
-            Objects.equals(this.success, checkJobResp.success);
+        return Objects.equals(this.id, checkJobResp.id) && Objects.equals(this.status, checkJobResp.status)
+            && Objects.equals(this.errorCode, checkJobResp.errorCode)
+            && Objects.equals(this.errorMsg, checkJobResp.errorMsg)
+            && Objects.equals(this.success, checkJobResp.success);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, status, errorCode, errorMsg, success);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -270,16 +221,13 @@ public class CheckJobResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

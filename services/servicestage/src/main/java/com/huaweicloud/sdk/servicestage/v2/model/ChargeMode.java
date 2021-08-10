@@ -1,39 +1,23 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
-/**
- * 收费模式，支持provided、on_demanded、monthly三种模式。  默认provided，表示使用用户提供的已有资源，无需收费。 
- */
+/** 收费模式，支持provided、on_demanded、monthly三种模式。 默认provided，表示使用用户提供的已有资源，无需收费。 */
 public class ChargeMode {
-    
-    /**
-     * Enum PROVIDED for value: "provided"
-     */
+
+    /** Enum PROVIDED for value: "provided" */
     public static final ChargeMode PROVIDED = new ChargeMode("provided");
-    
-    /**
-     * Enum ON_DEMANDED for value: "on_demanded"
-     */
+
+    /** Enum ON_DEMANDED for value: "on_demanded" */
     public static final ChargeMode ON_DEMANDED = new ChargeMode("on_demanded");
-    
-    /**
-     * Enum MONTHLY for value: "monthly"
-     */
+
+    /** Enum MONTHLY for value: "monthly" */
     public static final ChargeMode MONTHLY = new ChargeMode("monthly");
-    
 
     private static final Map<String, ChargeMode> STATIC_FIELDS = createStaticFields();
 
@@ -63,7 +47,7 @@ public class ChargeMode {
 
     @JsonCreator
     public static ChargeMode fromValue(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         ChargeMode result = STATIC_FIELDS.get(value);
@@ -74,7 +58,7 @@ public class ChargeMode {
     }
 
     public static ChargeMode valueOf(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         ChargeMode result = STATIC_FIELDS.get(value);
@@ -97,4 +81,3 @@ public class ChargeMode {
         return this.value.hashCode();
     }
 }
-

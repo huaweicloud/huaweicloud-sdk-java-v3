@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.as.v1.model.ScalingV1PolicyDetail;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class ShowScalingPolicyResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scaling_policy")
-    
+    @JsonProperty(value = "scaling_policy")
+
     private ScalingV1PolicyDetail scalingPolicy;
 
     public ShowScalingPolicyResponse withScalingPolicy(ScalingV1PolicyDetail scalingPolicy) {
@@ -32,19 +21,17 @@ public class ShowScalingPolicyResponse extends SdkResponse {
     }
 
     public ShowScalingPolicyResponse withScalingPolicy(Consumer<ScalingV1PolicyDetail> scalingPolicySetter) {
-        if(this.scalingPolicy == null ){
+        if (this.scalingPolicy == null) {
             this.scalingPolicy = new ScalingV1PolicyDetail();
             scalingPolicySetter.accept(this.scalingPolicy);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get scalingPolicy
-     * @return scalingPolicy
-     */
+    /** Get scalingPolicy
+     * 
+     * @return scalingPolicy */
     public ScalingV1PolicyDetail getScalingPolicy() {
         return scalingPolicy;
     }
@@ -52,8 +39,6 @@ public class ShowScalingPolicyResponse extends SdkResponse {
     public void setScalingPolicy(ScalingV1PolicyDetail scalingPolicy) {
         this.scalingPolicy = scalingPolicy;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -66,10 +51,12 @@ public class ShowScalingPolicyResponse extends SdkResponse {
         ShowScalingPolicyResponse showScalingPolicyResponse = (ShowScalingPolicyResponse) o;
         return Objects.equals(this.scalingPolicy, showScalingPolicyResponse.scalingPolicy);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(scalingPolicy);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +65,13 @@ public class ShowScalingPolicyResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

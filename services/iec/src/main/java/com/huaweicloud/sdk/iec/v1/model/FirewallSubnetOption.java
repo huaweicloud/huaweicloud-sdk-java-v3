@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 防火墙关联的子网对象
- */
-public class FirewallSubnetOption  {
-
-
+/** 防火墙关联的子网对象 */
+public class FirewallSubnetOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
+
     private String vpcId;
 
     public FirewallSubnetOption withId(String id) {
@@ -34,13 +23,9 @@ public class FirewallSubnetOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 子网ID。
-     * @return id
-     */
+    /** 子网ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -49,20 +34,14 @@ public class FirewallSubnetOption  {
         this.id = id;
     }
 
-    
-
     public FirewallSubnetOption withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
-    
-
-
-    /**
-     * 虚拟私有云ID。
-     * @return vpcId
-     */
+    /** 虚拟私有云ID。
+     * 
+     * @return vpcId */
     public String getVpcId() {
         return vpcId;
     }
@@ -70,8 +49,6 @@ public class FirewallSubnetOption  {
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class FirewallSubnetOption  {
             return false;
         }
         FirewallSubnetOption firewallSubnetOption = (FirewallSubnetOption) o;
-        return Objects.equals(this.id, firewallSubnetOption.id) &&
-            Objects.equals(this.vpcId, firewallSubnetOption.vpcId);
+        return Objects.equals(this.id, firewallSubnetOption.id)
+            && Objects.equals(this.vpcId, firewallSubnetOption.vpcId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, vpcId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class FirewallSubnetOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

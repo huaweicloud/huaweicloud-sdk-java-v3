@@ -1,122 +1,96 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 会场信息
- */
-public class ParticipantInfo  {
-
-
+/** 会场信息 */
+public class ParticipantInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="participantID")
-    
+    @JsonProperty(value = "participantID")
+
     private String participantID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subscriberID")
-    
+    @JsonProperty(value = "subscriberID")
+
     private String subscriberID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="role")
-    
+    @JsonProperty(value = "role")
+
     private Integer role;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
+
     private String state;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="address")
-    
+    @JsonProperty(value = "address")
+
     private String address;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="attendeeType")
-    
+    @JsonProperty(value = "attendeeType")
+
     private String attendeeType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="accountId")
-    
+    @JsonProperty(value = "accountId")
+
     private String accountId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="phone2")
-    
+    @JsonProperty(value = "phone2")
+
     private String phone2;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="phone3")
-    
+    @JsonProperty(value = "phone3")
+
     private String phone3;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="email")
-    
+    @JsonProperty(value = "email")
+
     private String email;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sms")
-    
+    @JsonProperty(value = "sms")
+
     private String sms;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deptName")
-    
+    @JsonProperty(value = "deptName")
+
     private String deptName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="userUUID")
-    
+    @JsonProperty(value = "userUUID")
+
     private String userUUID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="appId")
-    
+    @JsonProperty(value = "appId")
+
     private String appId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isAutoInvite")
-    
+    @JsonProperty(value = "isAutoInvite")
+
     private Integer isAutoInvite;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isNotOverlayPidName")
-    
+    @JsonProperty(value = "isNotOverlayPidName")
+
     private Boolean isNotOverlayPidName;
 
     public ParticipantInfo withParticipantID(String participantID) {
@@ -124,13 +98,9 @@ public class ParticipantInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 与会者的号码。
-     * @return participantID
-     */
+    /** 与会者的号码。
+     * 
+     * @return participantID */
     public String getParticipantID() {
         return participantID;
     }
@@ -139,20 +109,14 @@ public class ParticipantInfo  {
         this.participantID = participantID;
     }
 
-    
-
     public ParticipantInfo withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 与会者的名称（昵称）。
-     * @return name
-     */
+    /** 与会者的名称（昵称）。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -161,20 +125,14 @@ public class ParticipantInfo  {
         this.name = name;
     }
 
-    
-
     public ParticipantInfo withSubscriberID(String subscriberID) {
         this.subscriberID = subscriberID;
         return this;
     }
 
-    
-
-
-    /**
-     * 与会者的号码（预留字段）。
-     * @return subscriberID
-     */
+    /** 与会者的号码（预留字段）。
+     * 
+     * @return subscriberID */
     public String getSubscriberID() {
         return subscriberID;
     }
@@ -183,20 +141,14 @@ public class ParticipantInfo  {
         this.subscriberID = subscriberID;
     }
 
-    
-
     public ParticipantInfo withRole(Integer role) {
         this.role = role;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议中的角色。 - 1: 会议主持人。 - 0: 普通与会者。
-     * @return role
-     */
+    /** 会议中的角色。 - 1: 会议主持人。 - 0: 普通与会者。
+     * 
+     * @return role */
     public Integer getRole() {
         return role;
     }
@@ -205,20 +157,14 @@ public class ParticipantInfo  {
         this.role = role;
     }
 
-    
-
     public ParticipantInfo withState(String state) {
         this.state = state;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户状态。目前固定返回MEETTING。
-     * @return state
-     */
+    /** 用户状态。目前固定返回MEETTING。
+     * 
+     * @return state */
     public String getState() {
         return state;
     }
@@ -227,20 +173,14 @@ public class ParticipantInfo  {
         this.state = state;
     }
 
-    
-
     public ParticipantInfo withAddress(String address) {
         this.address = address;
         return this;
     }
 
-    
-
-
-    /**
-     * 终端所在会议室信息。（预留字段）
-     * @return address
-     */
+    /** 终端所在会议室信息。（预留字段）
+     * 
+     * @return address */
     public String getAddress() {
         return address;
     }
@@ -249,20 +189,15 @@ public class ParticipantInfo  {
         this.address = address;
     }
 
-    
-
     public ParticipantInfo withAttendeeType(String attendeeType) {
         this.attendeeType = attendeeType;
         return this;
     }
 
-    
-
-
-    /**
-     * - normal: 软终端。 - telepresence: 智真。单屏、三屏智真均属此类。（预留字段） - terminal: 会议室或硬终端。 - outside: 外部与会人。 - mobile: 用户手机号码。 - telephone: 用户固定电话。（预留字段）
-     * @return attendeeType
-     */
+    /** - normal: 软终端。 - telepresence: 智真。单屏、三屏智真均属此类。（预留字段） - terminal: 会议室或硬终端。 - outside: 外部与会人。 - mobile: 用户手机号码。 -
+     * telephone: 用户固定电话。（预留字段）
+     * 
+     * @return attendeeType */
     public String getAttendeeType() {
         return attendeeType;
     }
@@ -271,20 +206,14 @@ public class ParticipantInfo  {
         this.attendeeType = attendeeType;
     }
 
-    
-
     public ParticipantInfo withAccountId(String accountId) {
         this.accountId = accountId;
         return this;
     }
 
-    
-
-
-    /**
-     * 预订者的账号ID。
-     * @return accountId
-     */
+    /** 预订者的账号ID。
+     * 
+     * @return accountId */
     public String getAccountId() {
         return accountId;
     }
@@ -293,20 +222,14 @@ public class ParticipantInfo  {
         this.accountId = accountId;
     }
 
-    
-
     public ParticipantInfo withPhone2(String phone2) {
         this.phone2 = phone2;
         return this;
     }
 
-    
-
-
-    /**
-     * 当attendeeType为telepresence时，且设备为三屏智真，则该字段填写左屏号码。（预留字段）
-     * @return phone2
-     */
+    /** 当attendeeType为telepresence时，且设备为三屏智真，则该字段填写左屏号码。（预留字段）
+     * 
+     * @return phone2 */
     public String getPhone2() {
         return phone2;
     }
@@ -315,20 +238,14 @@ public class ParticipantInfo  {
         this.phone2 = phone2;
     }
 
-    
-
     public ParticipantInfo withPhone3(String phone3) {
         this.phone3 = phone3;
         return this;
     }
 
-    
-
-
-    /**
-     * 当attendeeType为telepresence时，且设备为三屏智真，则该字段填写右屏号码。（预留字段）
-     * @return phone3
-     */
+    /** 当attendeeType为telepresence时，且设备为三屏智真，则该字段填写右屏号码。（预留字段）
+     * 
+     * @return phone3 */
     public String getPhone3() {
         return phone3;
     }
@@ -337,20 +254,14 @@ public class ParticipantInfo  {
         this.phone3 = phone3;
     }
 
-    
-
     public ParticipantInfo withEmail(String email) {
         this.email = email;
         return this;
     }
 
-    
-
-
-    /**
-     * 邮件地址。最大不超过255个字符。
-     * @return email
-     */
+    /** 邮件地址。最大不超过255个字符。
+     * 
+     * @return email */
     public String getEmail() {
         return email;
     }
@@ -359,20 +270,14 @@ public class ParticipantInfo  {
         this.email = email;
     }
 
-    
-
     public ParticipantInfo withSms(String sms) {
         this.sms = sms;
         return this;
     }
 
-    
-
-
-    /**
-     * 短信通知的手机号码。最大不超过127个字符。
-     * @return sms
-     */
+    /** 短信通知的手机号码。最大不超过127个字符。
+     * 
+     * @return sms */
     public String getSms() {
         return sms;
     }
@@ -381,20 +286,14 @@ public class ParticipantInfo  {
         this.sms = sms;
     }
 
-    
-
     public ParticipantInfo withDeptName(String deptName) {
         this.deptName = deptName;
         return this;
     }
 
-    
-
-
-    /**
-     * 部门名称。最大不超过96个字符。
-     * @return deptName
-     */
+    /** 部门名称。最大不超过96个字符。
+     * 
+     * @return deptName */
     public String getDeptName() {
         return deptName;
     }
@@ -403,20 +302,14 @@ public class ParticipantInfo  {
         this.deptName = deptName;
     }
 
-    
-
     public ParticipantInfo withUserUUID(String userUUID) {
         this.userUUID = userUUID;
         return this;
     }
 
-    
-
-
-    /**
-     * 预订者的用户UUID。
-     * @return userUUID
-     */
+    /** 预订者的用户UUID。
+     * 
+     * @return userUUID */
     public String getUserUUID() {
         return userUUID;
     }
@@ -425,20 +318,14 @@ public class ParticipantInfo  {
         this.userUUID = userUUID;
     }
 
-    
-
     public ParticipantInfo withAppId(String appId) {
         this.appId = appId;
         return this;
     }
 
-    
-
-
-    /**
-     * 第三方应用ID。
-     * @return appId
-     */
+    /** 第三方应用ID。
+     * 
+     * @return appId */
     public String getAppId() {
         return appId;
     }
@@ -447,22 +334,14 @@ public class ParticipantInfo  {
         this.appId = appId;
     }
 
-    
-
     public ParticipantInfo withIsAutoInvite(Integer isAutoInvite) {
         this.isAutoInvite = isAutoInvite;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议开始时是否自动邀请该与会者。
-     * minimum: 0
-     * maximum: 1
-     * @return isAutoInvite
-     */
+    /** 会议开始时是否自动邀请该与会者。 minimum: 0 maximum: 1
+     * 
+     * @return isAutoInvite */
     public Integer getIsAutoInvite() {
         return isAutoInvite;
     }
@@ -471,20 +350,14 @@ public class ParticipantInfo  {
         this.isAutoInvite = isAutoInvite;
     }
 
-    
-
     public ParticipantInfo withIsNotOverlayPidName(Boolean isNotOverlayPidName) {
         this.isNotOverlayPidName = isNotOverlayPidName;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否不叠加会场名。
-     * @return isNotOverlayPidName
-     */
+    /** 是否不叠加会场名。
+     * 
+     * @return isNotOverlayPidName */
     public Boolean getIsNotOverlayPidName() {
         return isNotOverlayPidName;
     }
@@ -492,8 +365,6 @@ public class ParticipantInfo  {
     public void setIsNotOverlayPidName(Boolean isNotOverlayPidName) {
         this.isNotOverlayPidName = isNotOverlayPidName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -504,28 +375,43 @@ public class ParticipantInfo  {
             return false;
         }
         ParticipantInfo participantInfo = (ParticipantInfo) o;
-        return Objects.equals(this.participantID, participantInfo.participantID) &&
-            Objects.equals(this.name, participantInfo.name) &&
-            Objects.equals(this.subscriberID, participantInfo.subscriberID) &&
-            Objects.equals(this.role, participantInfo.role) &&
-            Objects.equals(this.state, participantInfo.state) &&
-            Objects.equals(this.address, participantInfo.address) &&
-            Objects.equals(this.attendeeType, participantInfo.attendeeType) &&
-            Objects.equals(this.accountId, participantInfo.accountId) &&
-            Objects.equals(this.phone2, participantInfo.phone2) &&
-            Objects.equals(this.phone3, participantInfo.phone3) &&
-            Objects.equals(this.email, participantInfo.email) &&
-            Objects.equals(this.sms, participantInfo.sms) &&
-            Objects.equals(this.deptName, participantInfo.deptName) &&
-            Objects.equals(this.userUUID, participantInfo.userUUID) &&
-            Objects.equals(this.appId, participantInfo.appId) &&
-            Objects.equals(this.isAutoInvite, participantInfo.isAutoInvite) &&
-            Objects.equals(this.isNotOverlayPidName, participantInfo.isNotOverlayPidName);
+        return Objects.equals(this.participantID, participantInfo.participantID)
+            && Objects.equals(this.name, participantInfo.name)
+            && Objects.equals(this.subscriberID, participantInfo.subscriberID)
+            && Objects.equals(this.role, participantInfo.role) && Objects.equals(this.state, participantInfo.state)
+            && Objects.equals(this.address, participantInfo.address)
+            && Objects.equals(this.attendeeType, participantInfo.attendeeType)
+            && Objects.equals(this.accountId, participantInfo.accountId)
+            && Objects.equals(this.phone2, participantInfo.phone2)
+            && Objects.equals(this.phone3, participantInfo.phone3) && Objects.equals(this.email, participantInfo.email)
+            && Objects.equals(this.sms, participantInfo.sms) && Objects.equals(this.deptName, participantInfo.deptName)
+            && Objects.equals(this.userUUID, participantInfo.userUUID)
+            && Objects.equals(this.appId, participantInfo.appId)
+            && Objects.equals(this.isAutoInvite, participantInfo.isAutoInvite)
+            && Objects.equals(this.isNotOverlayPidName, participantInfo.isNotOverlayPidName);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(participantID, name, subscriberID, role, state, address, attendeeType, accountId, phone2, phone3, email, sms, deptName, userUUID, appId, isAutoInvite, isNotOverlayPidName);
+        return Objects.hash(participantID,
+            name,
+            subscriberID,
+            role,
+            state,
+            address,
+            attendeeType,
+            accountId,
+            phone2,
+            phone3,
+            email,
+            sms,
+            deptName,
+            userUUID,
+            appId,
+            isAutoInvite,
+            isNotOverlayPidName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -550,16 +436,13 @@ public class ParticipantInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

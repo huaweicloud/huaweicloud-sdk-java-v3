@@ -1,39 +1,28 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.AgencyTokenAssumerole;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class AgencyTokenIdentity  {
+public class AgencyTokenIdentity {
 
-    /**
-     * Gets or Sets methods
-     */
+    /** Gets or Sets methods */
     public static final class MethodsEnum {
 
-        
-        /**
-         * Enum ASSUME_ROLE for value: "assume_role"
-         */
+        /** Enum ASSUME_ROLE for value: "assume_role" */
         public static final MethodsEnum ASSUME_ROLE = new MethodsEnum("assume_role");
-        
 
         private static final Map<String, MethodsEnum> STATIC_FIELDS = createStaticFields();
 
@@ -61,7 +50,7 @@ public class AgencyTokenIdentity  {
 
         @JsonCreator
         public static MethodsEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MethodsEnum result = STATIC_FIELDS.get(value);
@@ -72,7 +61,7 @@ public class AgencyTokenIdentity  {
         }
 
         public static MethodsEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MethodsEnum result = STATIC_FIELDS.get(value);
@@ -96,16 +85,14 @@ public class AgencyTokenIdentity  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="methods")
-    
+    @JsonProperty(value = "methods")
+
     private List<MethodsEnum> methods = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="assume_role")
-    
+    @JsonProperty(value = "assume_role")
+
     private AgencyTokenAssumerole assumeRole;
 
     public AgencyTokenIdentity withMethods(List<MethodsEnum> methods) {
@@ -113,9 +100,8 @@ public class AgencyTokenIdentity  {
         return this;
     }
 
-    
     public AgencyTokenIdentity addMethodsItem(MethodsEnum methodsItem) {
-        if(this.methods == null) {
+        if (this.methods == null) {
             this.methods = new ArrayList<>();
         }
         this.methods.add(methodsItem);
@@ -123,17 +109,16 @@ public class AgencyTokenIdentity  {
     }
 
     public AgencyTokenIdentity withMethods(Consumer<List<MethodsEnum>> methodsSetter) {
-        if(this.methods == null) {
+        if (this.methods == null) {
             this.methods = new ArrayList<>();
         }
         methodsSetter.accept(this.methods);
         return this;
     }
 
-    /**
-     * token的获取方式，该字段内容为[\"assume_role\"]。
-     * @return methods
-     */
+    /** token的获取方式，该字段内容为[\"assume_role\"]。
+     * 
+     * @return methods */
     public List<MethodsEnum> getMethods() {
         return methods;
     }
@@ -142,27 +127,23 @@ public class AgencyTokenIdentity  {
         this.methods = methods;
     }
 
-    
-
     public AgencyTokenIdentity withAssumeRole(AgencyTokenAssumerole assumeRole) {
         this.assumeRole = assumeRole;
         return this;
     }
 
     public AgencyTokenIdentity withAssumeRole(Consumer<AgencyTokenAssumerole> assumeRoleSetter) {
-        if(this.assumeRole == null ){
+        if (this.assumeRole == null) {
             this.assumeRole = new AgencyTokenAssumerole();
             assumeRoleSetter.accept(this.assumeRole);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get assumeRole
-     * @return assumeRole
-     */
+    /** Get assumeRole
+     * 
+     * @return assumeRole */
     public AgencyTokenAssumerole getAssumeRole() {
         return assumeRole;
     }
@@ -170,8 +151,6 @@ public class AgencyTokenIdentity  {
     public void setAssumeRole(AgencyTokenAssumerole assumeRole) {
         this.assumeRole = assumeRole;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -182,13 +161,15 @@ public class AgencyTokenIdentity  {
             return false;
         }
         AgencyTokenIdentity agencyTokenIdentity = (AgencyTokenIdentity) o;
-        return Objects.equals(this.methods, agencyTokenIdentity.methods) &&
-            Objects.equals(this.assumeRole, agencyTokenIdentity.assumeRole);
+        return Objects.equals(this.methods, agencyTokenIdentity.methods)
+            && Objects.equals(this.assumeRole, agencyTokenIdentity.assumeRole);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(methods, assumeRole);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -198,16 +179,13 @@ public class AgencyTokenIdentity  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

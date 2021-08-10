@@ -1,55 +1,35 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bms.v1.model.Entities;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.time.OffsetDateTime;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowJobInfosResponse extends SdkResponse {
 
-    /**
-     * Job的状态。SUCCESS：成功RUNNING：运行中FAIL：失败INIT：正在初始化
-     */
+    /** Job的状态。SUCCESS：成功RUNNING：运行中FAIL：失败INIT：正在初始化 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum SUCCESS for value: "SUCCESS"
-         */
+        /** Enum SUCCESS for value: "SUCCESS" */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
-        
-        /**
-         * Enum RUNNING for value: "RUNNING"
-         */
+
+        /** Enum RUNNING for value: "RUNNING" */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
-        
-        /**
-         * Enum FAIL for value: "FAIL"
-         */
+
+        /** Enum FAIL for value: "FAIL" */
         public static final StatusEnum FAIL = new StatusEnum("FAIL");
-        
-        /**
-         * Enum INIT for value: "INIT"
-         */
+
+        /** Enum INIT for value: "INIT" */
         public static final StatusEnum INIT = new StatusEnum("INIT");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -80,7 +60,7 @@ public class ShowJobInfosResponse extends SdkResponse {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -91,7 +71,7 @@ public class ShowJobInfosResponse extends SdkResponse {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -115,64 +95,54 @@ public class ShowJobInfosResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="entities")
-    
+    @JsonProperty(value = "entities")
+
     private Entities entities;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
+
     private String jobId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_type")
-    
+    @JsonProperty(value = "job_type")
+
     private String jobType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="begin_time")
-    
+    @JsonProperty(value = "begin_time")
+
     private OffsetDateTime beginTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private OffsetDateTime endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
+
     private String errorCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fail_reason")
-    
+    @JsonProperty(value = "fail_reason")
+
     private String failReason;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message")
-    
+    @JsonProperty(value = "message")
+
     private String message;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code")
-    
+    @JsonProperty(value = "code")
+
     private String code;
 
     public ShowJobInfosResponse withStatus(StatusEnum status) {
@@ -180,13 +150,9 @@ public class ShowJobInfosResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * Job的状态。SUCCESS：成功RUNNING：运行中FAIL：失败INIT：正在初始化
-     * @return status
-     */
+    /** Job的状态。SUCCESS：成功RUNNING：运行中FAIL：失败INIT：正在初始化
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -195,27 +161,23 @@ public class ShowJobInfosResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public ShowJobInfosResponse withEntities(Entities entities) {
         this.entities = entities;
         return this;
     }
 
     public ShowJobInfosResponse withEntities(Consumer<Entities> entitiesSetter) {
-        if(this.entities == null ){
+        if (this.entities == null) {
             this.entities = new Entities();
             entitiesSetter.accept(this.entities);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get entities
-     * @return entities
-     */
+    /** Get entities
+     * 
+     * @return entities */
     public Entities getEntities() {
         return entities;
     }
@@ -224,20 +186,14 @@ public class ShowJobInfosResponse extends SdkResponse {
         this.entities = entities;
     }
 
-    
-
     public ShowJobInfosResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
 
-    
-
-
-    /**
-     * Job ID
-     * @return jobId
-     */
+    /** Job ID
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -246,20 +202,14 @@ public class ShowJobInfosResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
-    
-
     public ShowJobInfosResponse withJobType(String jobType) {
         this.jobType = jobType;
         return this;
     }
 
-    
-
-
-    /**
-     * Job的类型，包含以下类型：baremetalBatchCreate：批量创建裸金属服务器baremetalBatchOperate：批量修改裸金属服务器电源状态baremetalBatchCreate：批量创建裸金属服务器baremetalChangeOsVolumeBoot：切换快速发放裸金属服务器操作系统baremetalChangeOsLocalDisk：切换本地盘裸金属服务器操作系统baremetalVolumeBootReinstallOs：重装快速发放裸金属服务器操作系统baremetalReinstallOs：重装本地盘裸金属服务器操作系统baremetalAttachVolume：挂载单个磁盘baremetalDetachVolume：卸载单个磁盘baremetalBatchAttachVolume：裸金属服务器批量挂载共享磁盘
-     * @return jobType
-     */
+    /** Job的类型，包含以下类型：baremetalBatchCreate：批量创建裸金属服务器baremetalBatchOperate：批量修改裸金属服务器电源状态baremetalBatchCreate：批量创建裸金属服务器baremetalChangeOsVolumeBoot：切换快速发放裸金属服务器操作系统baremetalChangeOsLocalDisk：切换本地盘裸金属服务器操作系统baremetalVolumeBootReinstallOs：重装快速发放裸金属服务器操作系统baremetalReinstallOs：重装本地盘裸金属服务器操作系统baremetalAttachVolume：挂载单个磁盘baremetalDetachVolume：卸载单个磁盘baremetalBatchAttachVolume：裸金属服务器批量挂载共享磁盘
+     * 
+     * @return jobType */
     public String getJobType() {
         return jobType;
     }
@@ -268,20 +218,14 @@ public class ShowJobInfosResponse extends SdkResponse {
         this.jobType = jobType;
     }
 
-    
-
     public ShowJobInfosResponse withBeginTime(OffsetDateTime beginTime) {
         this.beginTime = beginTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 开始时间。时间戳格式为ISO 8601，例如：2019-04-25T20:04:47.591Z
-     * @return beginTime
-     */
+    /** 开始时间。时间戳格式为ISO 8601，例如：2019-04-25T20:04:47.591Z
+     * 
+     * @return beginTime */
     public OffsetDateTime getBeginTime() {
         return beginTime;
     }
@@ -290,20 +234,14 @@ public class ShowJobInfosResponse extends SdkResponse {
         this.beginTime = beginTime;
     }
 
-    
-
     public ShowJobInfosResponse withEndTime(OffsetDateTime endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 结束时间。时间戳格式为ISO 8601，例如：2019-04-26T20:04:47.591Z
-     * @return endTime
-     */
+    /** 结束时间。时间戳格式为ISO 8601，例如：2019-04-26T20:04:47.591Z
+     * 
+     * @return endTime */
     public OffsetDateTime getEndTime() {
         return endTime;
     }
@@ -312,20 +250,14 @@ public class ShowJobInfosResponse extends SdkResponse {
         this.endTime = endTime;
     }
 
-    
-
     public ShowJobInfosResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
-    
-
-
-    /**
-     * Job执行失败时的错误码
-     * @return errorCode
-     */
+    /** Job执行失败时的错误码
+     * 
+     * @return errorCode */
     public String getErrorCode() {
         return errorCode;
     }
@@ -334,20 +266,14 @@ public class ShowJobInfosResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
-    
-
     public ShowJobInfosResponse withFailReason(String failReason) {
         this.failReason = failReason;
         return this;
     }
 
-    
-
-
-    /**
-     * Job执行失败时的错误原因
-     * @return failReason
-     */
+    /** Job执行失败时的错误原因
+     * 
+     * @return failReason */
     public String getFailReason() {
         return failReason;
     }
@@ -356,20 +282,14 @@ public class ShowJobInfosResponse extends SdkResponse {
         this.failReason = failReason;
     }
 
-    
-
     public ShowJobInfosResponse withMessage(String message) {
         this.message = message;
         return this;
     }
 
-    
-
-
-    /**
-     * 出现错误时，返回的错误消息
-     * @return message
-     */
+    /** 出现错误时，返回的错误消息
+     * 
+     * @return message */
     public String getMessage() {
         return message;
     }
@@ -378,20 +298,14 @@ public class ShowJobInfosResponse extends SdkResponse {
         this.message = message;
     }
 
-    
-
     public ShowJobInfosResponse withCode(String code) {
         this.code = code;
         return this;
     }
 
-    
-
-
-    /**
-     * 出现错误时，返回的错误码。错误码和其对应的含义请参考8.1-状态码。
-     * @return code
-     */
+    /** 出现错误时，返回的错误码。错误码和其对应的含义请参考8.1-状态码。
+     * 
+     * @return code */
     public String getCode() {
         return code;
     }
@@ -399,8 +313,6 @@ public class ShowJobInfosResponse extends SdkResponse {
     public void setCode(String code) {
         this.code = code;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -411,21 +323,23 @@ public class ShowJobInfosResponse extends SdkResponse {
             return false;
         }
         ShowJobInfosResponse showJobInfosResponse = (ShowJobInfosResponse) o;
-        return Objects.equals(this.status, showJobInfosResponse.status) &&
-            Objects.equals(this.entities, showJobInfosResponse.entities) &&
-            Objects.equals(this.jobId, showJobInfosResponse.jobId) &&
-            Objects.equals(this.jobType, showJobInfosResponse.jobType) &&
-            Objects.equals(this.beginTime, showJobInfosResponse.beginTime) &&
-            Objects.equals(this.endTime, showJobInfosResponse.endTime) &&
-            Objects.equals(this.errorCode, showJobInfosResponse.errorCode) &&
-            Objects.equals(this.failReason, showJobInfosResponse.failReason) &&
-            Objects.equals(this.message, showJobInfosResponse.message) &&
-            Objects.equals(this.code, showJobInfosResponse.code);
+        return Objects.equals(this.status, showJobInfosResponse.status)
+            && Objects.equals(this.entities, showJobInfosResponse.entities)
+            && Objects.equals(this.jobId, showJobInfosResponse.jobId)
+            && Objects.equals(this.jobType, showJobInfosResponse.jobType)
+            && Objects.equals(this.beginTime, showJobInfosResponse.beginTime)
+            && Objects.equals(this.endTime, showJobInfosResponse.endTime)
+            && Objects.equals(this.errorCode, showJobInfosResponse.errorCode)
+            && Objects.equals(this.failReason, showJobInfosResponse.failReason)
+            && Objects.equals(this.message, showJobInfosResponse.message)
+            && Objects.equals(this.code, showJobInfosResponse.code);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(status, entities, jobId, jobType, beginTime, endTime, errorCode, failReason, message, code);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -443,16 +357,13 @@ public class ShowJobInfosResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

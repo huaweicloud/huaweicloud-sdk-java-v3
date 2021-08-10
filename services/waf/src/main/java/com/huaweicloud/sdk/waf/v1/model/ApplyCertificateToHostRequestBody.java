@@ -1,44 +1,33 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 绑定证书和域名的请求体
- */
-public class ApplyCertificateToHostRequestBody  {
-
-
+/** 绑定证书和域名的请求体 */
+public class ApplyCertificateToHostRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cloud_host_ids")
-    
+    @JsonProperty(value = "cloud_host_ids")
+
     private List<String> cloudHostIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="premium_host_ids")
-    
+    @JsonProperty(value = "premium_host_ids")
+
     private List<String> premiumHostIds = null;
-    
+
     public ApplyCertificateToHostRequestBody withCloudHostIds(List<String> cloudHostIds) {
         this.cloudHostIds = cloudHostIds;
         return this;
     }
 
-    
     public ApplyCertificateToHostRequestBody addCloudHostIdsItem(String cloudHostIdsItem) {
-        if(this.cloudHostIds == null) {
+        if (this.cloudHostIds == null) {
             this.cloudHostIds = new ArrayList<>();
         }
         this.cloudHostIds.add(cloudHostIdsItem);
@@ -46,17 +35,16 @@ public class ApplyCertificateToHostRequestBody  {
     }
 
     public ApplyCertificateToHostRequestBody withCloudHostIds(Consumer<List<String>> cloudHostIdsSetter) {
-        if(this.cloudHostIds == null) {
+        if (this.cloudHostIds == null) {
             this.cloudHostIds = new ArrayList<>();
         }
         cloudHostIdsSetter.accept(this.cloudHostIds);
         return this;
     }
 
-    /**
-     * 云模式HTTPS域名ID
-     * @return cloudHostIds
-     */
+    /** 云模式HTTPS域名ID
+     * 
+     * @return cloudHostIds */
     public List<String> getCloudHostIds() {
         return cloudHostIds;
     }
@@ -65,16 +53,13 @@ public class ApplyCertificateToHostRequestBody  {
         this.cloudHostIds = cloudHostIds;
     }
 
-    
-
     public ApplyCertificateToHostRequestBody withPremiumHostIds(List<String> premiumHostIds) {
         this.premiumHostIds = premiumHostIds;
         return this;
     }
 
-    
     public ApplyCertificateToHostRequestBody addPremiumHostIdsItem(String premiumHostIdsItem) {
-        if(this.premiumHostIds == null) {
+        if (this.premiumHostIds == null) {
             this.premiumHostIds = new ArrayList<>();
         }
         this.premiumHostIds.add(premiumHostIdsItem);
@@ -82,17 +67,16 @@ public class ApplyCertificateToHostRequestBody  {
     }
 
     public ApplyCertificateToHostRequestBody withPremiumHostIds(Consumer<List<String>> premiumHostIdsSetter) {
-        if(this.premiumHostIds == null) {
+        if (this.premiumHostIds == null) {
             this.premiumHostIds = new ArrayList<>();
         }
         premiumHostIdsSetter.accept(this.premiumHostIds);
         return this;
     }
 
-    /**
-     * 独享模式HTTPS域名ID
-     * @return premiumHostIds
-     */
+    /** 独享模式HTTPS域名ID
+     * 
+     * @return premiumHostIds */
     public List<String> getPremiumHostIds() {
         return premiumHostIds;
     }
@@ -100,8 +84,6 @@ public class ApplyCertificateToHostRequestBody  {
     public void setPremiumHostIds(List<String> premiumHostIds) {
         this.premiumHostIds = premiumHostIds;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,13 +94,15 @@ public class ApplyCertificateToHostRequestBody  {
             return false;
         }
         ApplyCertificateToHostRequestBody applyCertificateToHostRequestBody = (ApplyCertificateToHostRequestBody) o;
-        return Objects.equals(this.cloudHostIds, applyCertificateToHostRequestBody.cloudHostIds) &&
-            Objects.equals(this.premiumHostIds, applyCertificateToHostRequestBody.premiumHostIds);
+        return Objects.equals(this.cloudHostIds, applyCertificateToHostRequestBody.cloudHostIds)
+            && Objects.equals(this.premiumHostIds, applyCertificateToHostRequestBody.premiumHostIds);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(cloudHostIds, premiumHostIds);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +112,13 @@ public class ApplyCertificateToHostRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

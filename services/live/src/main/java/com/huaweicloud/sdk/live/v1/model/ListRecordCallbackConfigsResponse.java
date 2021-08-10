@@ -1,52 +1,35 @@
 package com.huaweicloud.sdk.live.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.live.v1.model.RecordCallbackConfig;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListRecordCallbackConfigsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="callback_config")
-    
+    @JsonProperty(value = "callback_config")
+
     private List<RecordCallbackConfig> callbackConfig = null;
-    
+
     public ListRecordCallbackConfigsResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询结果的总元素数量
-     * minimum: 0
-     * @return total
-     */
+    /** 查询结果的总元素数量 minimum: 0
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -55,34 +38,31 @@ public class ListRecordCallbackConfigsResponse extends SdkResponse {
         this.total = total;
     }
 
-    
-
     public ListRecordCallbackConfigsResponse withCallbackConfig(List<RecordCallbackConfig> callbackConfig) {
         this.callbackConfig = callbackConfig;
         return this;
     }
 
-    
     public ListRecordCallbackConfigsResponse addCallbackConfigItem(RecordCallbackConfig callbackConfigItem) {
-        if(this.callbackConfig == null) {
+        if (this.callbackConfig == null) {
             this.callbackConfig = new ArrayList<>();
         }
         this.callbackConfig.add(callbackConfigItem);
         return this;
     }
 
-    public ListRecordCallbackConfigsResponse withCallbackConfig(Consumer<List<RecordCallbackConfig>> callbackConfigSetter) {
-        if(this.callbackConfig == null) {
+    public ListRecordCallbackConfigsResponse withCallbackConfig(
+        Consumer<List<RecordCallbackConfig>> callbackConfigSetter) {
+        if (this.callbackConfig == null) {
             this.callbackConfig = new ArrayList<>();
         }
         callbackConfigSetter.accept(this.callbackConfig);
         return this;
     }
 
-    /**
-     * 回调配置
-     * @return callbackConfig
-     */
+    /** 回调配置
+     * 
+     * @return callbackConfig */
     public List<RecordCallbackConfig> getCallbackConfig() {
         return callbackConfig;
     }
@@ -90,8 +70,6 @@ public class ListRecordCallbackConfigsResponse extends SdkResponse {
     public void setCallbackConfig(List<RecordCallbackConfig> callbackConfig) {
         this.callbackConfig = callbackConfig;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -102,13 +80,15 @@ public class ListRecordCallbackConfigsResponse extends SdkResponse {
             return false;
         }
         ListRecordCallbackConfigsResponse listRecordCallbackConfigsResponse = (ListRecordCallbackConfigsResponse) o;
-        return Objects.equals(this.total, listRecordCallbackConfigsResponse.total) &&
-            Objects.equals(this.callbackConfig, listRecordCallbackConfigsResponse.callbackConfig);
+        return Objects.equals(this.total, listRecordCallbackConfigsResponse.total)
+            && Objects.equals(this.callbackConfig, listRecordCallbackConfigsResponse.callbackConfig);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(total, callbackConfig);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -118,16 +98,13 @@ public class ListRecordCallbackConfigsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

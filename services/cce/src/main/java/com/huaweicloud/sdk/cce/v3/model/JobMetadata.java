@@ -1,38 +1,28 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class JobMetadata  {
-
-
+public class JobMetadata {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="uid")
-    
+    @JsonProperty(value = "uid")
+
     private String uid;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creationTimestamp")
-    
+    @JsonProperty(value = "creationTimestamp")
+
     private String creationTimestamp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updateTimestamp")
-    
+    @JsonProperty(value = "updateTimestamp")
+
     private String updateTimestamp;
 
     public JobMetadata withUid(String uid) {
@@ -40,13 +30,9 @@ public class JobMetadata  {
         return this;
     }
 
-    
-
-
-    /**
-     * 作业的ID。
-     * @return uid
-     */
+    /** 作业的ID。
+     * 
+     * @return uid */
     public String getUid() {
         return uid;
     }
@@ -55,20 +41,14 @@ public class JobMetadata  {
         this.uid = uid;
     }
 
-    
-
     public JobMetadata withCreationTimestamp(String creationTimestamp) {
         this.creationTimestamp = creationTimestamp;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业的创建时间。
-     * @return creationTimestamp
-     */
+    /** 作业的创建时间。
+     * 
+     * @return creationTimestamp */
     public String getCreationTimestamp() {
         return creationTimestamp;
     }
@@ -77,20 +57,14 @@ public class JobMetadata  {
         this.creationTimestamp = creationTimestamp;
     }
 
-    
-
     public JobMetadata withUpdateTimestamp(String updateTimestamp) {
         this.updateTimestamp = updateTimestamp;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业的更新时间。
-     * @return updateTimestamp
-     */
+    /** 作业的更新时间。
+     * 
+     * @return updateTimestamp */
     public String getUpdateTimestamp() {
         return updateTimestamp;
     }
@@ -98,8 +72,6 @@ public class JobMetadata  {
     public void setUpdateTimestamp(String updateTimestamp) {
         this.updateTimestamp = updateTimestamp;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +82,16 @@ public class JobMetadata  {
             return false;
         }
         JobMetadata jobMetadata = (JobMetadata) o;
-        return Objects.equals(this.uid, jobMetadata.uid) &&
-            Objects.equals(this.creationTimestamp, jobMetadata.creationTimestamp) &&
-            Objects.equals(this.updateTimestamp, jobMetadata.updateTimestamp);
+        return Objects.equals(this.uid, jobMetadata.uid)
+            && Objects.equals(this.creationTimestamp, jobMetadata.creationTimestamp)
+            && Objects.equals(this.updateTimestamp, jobMetadata.updateTimestamp);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(uid, creationTimestamp, updateTimestamp);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +102,13 @@ public class JobMetadata  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

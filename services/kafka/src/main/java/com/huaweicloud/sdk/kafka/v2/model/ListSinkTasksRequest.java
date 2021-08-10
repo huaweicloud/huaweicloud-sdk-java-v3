@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListSinkTasksRequest  {
-
-
+/** Request Object */
+public class ListSinkTasksRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="connector_id")
-    
+    @JsonProperty(value = "connector_id")
+
     private String connectorId;
 
     public ListSinkTasksRequest withConnectorId(String connectorId) {
@@ -28,13 +18,9 @@ public class ListSinkTasksRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例转储ID。 请参考[实例生命周期][查询实例]接口返回的数据。
-     * @return connectorId
-     */
+    /** 实例转储ID。 请参考[实例生命周期][查询实例]接口返回的数据。
+     * 
+     * @return connectorId */
     public String getConnectorId() {
         return connectorId;
     }
@@ -42,8 +28,6 @@ public class ListSinkTasksRequest  {
     public void setConnectorId(String connectorId) {
         this.connectorId = connectorId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class ListSinkTasksRequest  {
         ListSinkTasksRequest listSinkTasksRequest = (ListSinkTasksRequest) o;
         return Objects.equals(this.connectorId, listSinkTasksRequest.connectorId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(connectorId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class ListSinkTasksRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

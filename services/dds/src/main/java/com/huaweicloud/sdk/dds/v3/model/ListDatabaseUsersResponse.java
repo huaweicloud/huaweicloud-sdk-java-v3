@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListDatabaseUsersResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="users")
-    
+    @JsonProperty(value = "users")
+
     private String users;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
-    
+    @JsonProperty(value = "total_count")
+
     private Integer totalCount;
 
     public ListDatabaseUsersResponse withUsers(String users) {
@@ -36,13 +24,9 @@ public class ListDatabaseUsersResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库用户信息。
-     * @return users
-     */
+    /** 数据库用户信息。
+     * 
+     * @return users */
     public String getUsers() {
         return users;
     }
@@ -51,20 +35,14 @@ public class ListDatabaseUsersResponse extends SdkResponse {
         this.users = users;
     }
 
-    
-
     public ListDatabaseUsersResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库用户总数。
-     * @return totalCount
-     */
+    /** 数据库用户总数。
+     * 
+     * @return totalCount */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -72,8 +50,6 @@ public class ListDatabaseUsersResponse extends SdkResponse {
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +60,15 @@ public class ListDatabaseUsersResponse extends SdkResponse {
             return false;
         }
         ListDatabaseUsersResponse listDatabaseUsersResponse = (ListDatabaseUsersResponse) o;
-        return Objects.equals(this.users, listDatabaseUsersResponse.users) &&
-            Objects.equals(this.totalCount, listDatabaseUsersResponse.totalCount);
+        return Objects.equals(this.users, listDatabaseUsersResponse.users)
+            && Objects.equals(this.totalCount, listDatabaseUsersResponse.totalCount);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(users, totalCount);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +78,13 @@ public class ListDatabaseUsersResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

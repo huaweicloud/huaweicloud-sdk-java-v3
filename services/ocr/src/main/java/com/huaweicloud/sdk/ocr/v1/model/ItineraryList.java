@@ -1,86 +1,66 @@
 package com.huaweicloud.sdk.ocr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 机票行程列表。
- */
-public class ItineraryList  {
-
-
+/** 机票行程列表。 */
+public class ItineraryList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="departure_station")
-    
+    @JsonProperty(value = "departure_station")
+
     private String departureStation;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination_station")
-    
+    @JsonProperty(value = "destination_station")
+
     private String destinationStation;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="carrier")
-    
+    @JsonProperty(value = "carrier")
+
     private String carrier;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flight")
-    
+    @JsonProperty(value = "flight")
+
     private String flight;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cabin_class")
-    
+    @JsonProperty(value = "cabin_class")
+
     private String cabinClass;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="date")
-    
+    @JsonProperty(value = "date")
+
     private String date;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time")
-    
+    @JsonProperty(value = "time")
+
     private String time;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fare_basis")
-    
+    @JsonProperty(value = "fare_basis")
+
     private String fareBasis;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="effective_date")
-    
+    @JsonProperty(value = "effective_date")
+
     private String effectiveDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expiry_date")
-    
+    @JsonProperty(value = "expiry_date")
+
     private String expiryDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="baggage_allowance")
-    
+    @JsonProperty(value = "baggage_allowance")
+
     private String baggageAllowance;
 
     public ItineraryList withDepartureStation(String departureStation) {
@@ -88,13 +68,9 @@ public class ItineraryList  {
         return this;
     }
 
-    
-
-
-    /**
-     * 始发站。 
-     * @return departureStation
-     */
+    /** 始发站。
+     * 
+     * @return departureStation */
     public String getDepartureStation() {
         return departureStation;
     }
@@ -103,20 +79,14 @@ public class ItineraryList  {
         this.departureStation = departureStation;
     }
 
-    
-
     public ItineraryList withDestinationStation(String destinationStation) {
         this.destinationStation = destinationStation;
         return this;
     }
 
-    
-
-
-    /**
-     * 目的站。 
-     * @return destinationStation
-     */
+    /** 目的站。
+     * 
+     * @return destinationStation */
     public String getDestinationStation() {
         return destinationStation;
     }
@@ -125,20 +95,14 @@ public class ItineraryList  {
         this.destinationStation = destinationStation;
     }
 
-    
-
     public ItineraryList withCarrier(String carrier) {
         this.carrier = carrier;
         return this;
     }
 
-    
-
-
-    /**
-     * 承运人。 
-     * @return carrier
-     */
+    /** 承运人。
+     * 
+     * @return carrier */
     public String getCarrier() {
         return carrier;
     }
@@ -147,20 +111,14 @@ public class ItineraryList  {
         this.carrier = carrier;
     }
 
-    
-
     public ItineraryList withFlight(String flight) {
         this.flight = flight;
         return this;
     }
 
-    
-
-
-    /**
-     * 航班号。 
-     * @return flight
-     */
+    /** 航班号。
+     * 
+     * @return flight */
     public String getFlight() {
         return flight;
     }
@@ -169,20 +127,14 @@ public class ItineraryList  {
         this.flight = flight;
     }
 
-    
-
     public ItineraryList withCabinClass(String cabinClass) {
         this.cabinClass = cabinClass;
         return this;
     }
 
-    
-
-
-    /**
-     * 座位等级。 
-     * @return cabinClass
-     */
+    /** 座位等级。
+     * 
+     * @return cabinClass */
     public String getCabinClass() {
         return cabinClass;
     }
@@ -191,20 +143,14 @@ public class ItineraryList  {
         this.cabinClass = cabinClass;
     }
 
-    
-
     public ItineraryList withDate(String date) {
         this.date = date;
         return this;
     }
 
-    
-
-
-    /**
-     * 日期。 
-     * @return date
-     */
+    /** 日期。
+     * 
+     * @return date */
     public String getDate() {
         return date;
     }
@@ -213,20 +159,14 @@ public class ItineraryList  {
         this.date = date;
     }
 
-    
-
     public ItineraryList withTime(String time) {
         this.time = time;
         return this;
     }
 
-    
-
-
-    /**
-     * 时间。 
-     * @return time
-     */
+    /** 时间。
+     * 
+     * @return time */
     public String getTime() {
         return time;
     }
@@ -235,20 +175,14 @@ public class ItineraryList  {
         this.time = time;
     }
 
-    
-
     public ItineraryList withFareBasis(String fareBasis) {
         this.fareBasis = fareBasis;
         return this;
     }
 
-    
-
-
-    /**
-     * 客票类别。 
-     * @return fareBasis
-     */
+    /** 客票类别。
+     * 
+     * @return fareBasis */
     public String getFareBasis() {
         return fareBasis;
     }
@@ -257,20 +191,14 @@ public class ItineraryList  {
         this.fareBasis = fareBasis;
     }
 
-    
-
     public ItineraryList withEffectiveDate(String effectiveDate) {
         this.effectiveDate = effectiveDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 客票生效日期。 
-     * @return effectiveDate
-     */
+    /** 客票生效日期。
+     * 
+     * @return effectiveDate */
     public String getEffectiveDate() {
         return effectiveDate;
     }
@@ -279,20 +207,14 @@ public class ItineraryList  {
         this.effectiveDate = effectiveDate;
     }
 
-    
-
     public ItineraryList withExpiryDate(String expiryDate) {
         this.expiryDate = expiryDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 有效截止日期。 
-     * @return expiryDate
-     */
+    /** 有效截止日期。
+     * 
+     * @return expiryDate */
     public String getExpiryDate() {
         return expiryDate;
     }
@@ -301,20 +223,14 @@ public class ItineraryList  {
         this.expiryDate = expiryDate;
     }
 
-    
-
     public ItineraryList withBaggageAllowance(String baggageAllowance) {
         this.baggageAllowance = baggageAllowance;
         return this;
     }
 
-    
-
-
-    /**
-     * 免费行李。 
-     * @return baggageAllowance
-     */
+    /** 免费行李。
+     * 
+     * @return baggageAllowance */
     public String getBaggageAllowance() {
         return baggageAllowance;
     }
@@ -322,8 +238,6 @@ public class ItineraryList  {
     public void setBaggageAllowance(String baggageAllowance) {
         this.baggageAllowance = baggageAllowance;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -334,22 +248,32 @@ public class ItineraryList  {
             return false;
         }
         ItineraryList itineraryList = (ItineraryList) o;
-        return Objects.equals(this.departureStation, itineraryList.departureStation) &&
-            Objects.equals(this.destinationStation, itineraryList.destinationStation) &&
-            Objects.equals(this.carrier, itineraryList.carrier) &&
-            Objects.equals(this.flight, itineraryList.flight) &&
-            Objects.equals(this.cabinClass, itineraryList.cabinClass) &&
-            Objects.equals(this.date, itineraryList.date) &&
-            Objects.equals(this.time, itineraryList.time) &&
-            Objects.equals(this.fareBasis, itineraryList.fareBasis) &&
-            Objects.equals(this.effectiveDate, itineraryList.effectiveDate) &&
-            Objects.equals(this.expiryDate, itineraryList.expiryDate) &&
-            Objects.equals(this.baggageAllowance, itineraryList.baggageAllowance);
+        return Objects.equals(this.departureStation, itineraryList.departureStation)
+            && Objects.equals(this.destinationStation, itineraryList.destinationStation)
+            && Objects.equals(this.carrier, itineraryList.carrier) && Objects.equals(this.flight, itineraryList.flight)
+            && Objects.equals(this.cabinClass, itineraryList.cabinClass)
+            && Objects.equals(this.date, itineraryList.date) && Objects.equals(this.time, itineraryList.time)
+            && Objects.equals(this.fareBasis, itineraryList.fareBasis)
+            && Objects.equals(this.effectiveDate, itineraryList.effectiveDate)
+            && Objects.equals(this.expiryDate, itineraryList.expiryDate)
+            && Objects.equals(this.baggageAllowance, itineraryList.baggageAllowance);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(departureStation, destinationStation, carrier, flight, cabinClass, date, time, fareBasis, effectiveDate, expiryDate, baggageAllowance);
+        return Objects.hash(departureStation,
+            destinationStation,
+            carrier,
+            flight,
+            cabinClass,
+            date,
+            time,
+            fareBasis,
+            effectiveDate,
+            expiryDate,
+            baggageAllowance);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -368,16 +292,13 @@ public class ItineraryList  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

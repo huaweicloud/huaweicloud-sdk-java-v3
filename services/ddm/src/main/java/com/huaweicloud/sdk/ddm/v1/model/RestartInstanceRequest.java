@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ddm.v1.model.RestartInstanceReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class RestartInstanceRequest  {
-
-
+/** Request Object */
+public class RestartInstanceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private RestartInstanceReq body;
 
     public RestartInstanceRequest withInstanceId(String instanceId) {
@@ -35,13 +24,9 @@ public class RestartInstanceRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * DDM实例ID
-     * @return instanceId
-     */
+    /** DDM实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -50,27 +35,23 @@ public class RestartInstanceRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public RestartInstanceRequest withBody(RestartInstanceReq body) {
         this.body = body;
         return this;
     }
 
     public RestartInstanceRequest withBody(Consumer<RestartInstanceReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new RestartInstanceReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public RestartInstanceReq getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class RestartInstanceRequest  {
     public void setBody(RestartInstanceReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class RestartInstanceRequest  {
             return false;
         }
         RestartInstanceRequest restartInstanceRequest = (RestartInstanceRequest) o;
-        return Objects.equals(this.instanceId, restartInstanceRequest.instanceId) &&
-            Objects.equals(this.body, restartInstanceRequest.body);
+        return Objects.equals(this.instanceId, restartInstanceRequest.instanceId)
+            && Objects.equals(this.body, restartInstanceRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class RestartInstanceRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

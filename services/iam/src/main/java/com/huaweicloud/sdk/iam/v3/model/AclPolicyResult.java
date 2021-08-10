@@ -1,64 +1,53 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.AllowAddressNetmasksResult;
-import com.huaweicloud.sdk.iam.v3.model.AllowIpRangesResult;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class AclPolicyResult  {
-
-
+public class AclPolicyResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="allow_address_netmasks")
-    
+    @JsonProperty(value = "allow_address_netmasks")
+
     private List<AllowAddressNetmasksResult> allowAddressNetmasks = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="allow_ip_ranges")
-    
+    @JsonProperty(value = "allow_ip_ranges")
+
     private List<AllowIpRangesResult> allowIpRanges = null;
-    
+
     public AclPolicyResult withAllowAddressNetmasks(List<AllowAddressNetmasksResult> allowAddressNetmasks) {
         this.allowAddressNetmasks = allowAddressNetmasks;
         return this;
     }
 
-    
     public AclPolicyResult addAllowAddressNetmasksItem(AllowAddressNetmasksResult allowAddressNetmasksItem) {
-        if(this.allowAddressNetmasks == null) {
+        if (this.allowAddressNetmasks == null) {
             this.allowAddressNetmasks = new ArrayList<>();
         }
         this.allowAddressNetmasks.add(allowAddressNetmasksItem);
         return this;
     }
 
-    public AclPolicyResult withAllowAddressNetmasks(Consumer<List<AllowAddressNetmasksResult>> allowAddressNetmasksSetter) {
-        if(this.allowAddressNetmasks == null) {
+    public AclPolicyResult withAllowAddressNetmasks(
+        Consumer<List<AllowAddressNetmasksResult>> allowAddressNetmasksSetter) {
+        if (this.allowAddressNetmasks == null) {
             this.allowAddressNetmasks = new ArrayList<>();
         }
         allowAddressNetmasksSetter.accept(this.allowAddressNetmasks);
         return this;
     }
 
-    /**
-     * 允许访问的IP地址或网段。
-     * @return allowAddressNetmasks
-     */
+    /** 允许访问的IP地址或网段。
+     * 
+     * @return allowAddressNetmasks */
     public List<AllowAddressNetmasksResult> getAllowAddressNetmasks() {
         return allowAddressNetmasks;
     }
@@ -67,16 +56,13 @@ public class AclPolicyResult  {
         this.allowAddressNetmasks = allowAddressNetmasks;
     }
 
-    
-
     public AclPolicyResult withAllowIpRanges(List<AllowIpRangesResult> allowIpRanges) {
         this.allowIpRanges = allowIpRanges;
         return this;
     }
 
-    
     public AclPolicyResult addAllowIpRangesItem(AllowIpRangesResult allowIpRangesItem) {
-        if(this.allowIpRanges == null) {
+        if (this.allowIpRanges == null) {
             this.allowIpRanges = new ArrayList<>();
         }
         this.allowIpRanges.add(allowIpRangesItem);
@@ -84,17 +70,16 @@ public class AclPolicyResult  {
     }
 
     public AclPolicyResult withAllowIpRanges(Consumer<List<AllowIpRangesResult>> allowIpRangesSetter) {
-        if(this.allowIpRanges == null) {
+        if (this.allowIpRanges == null) {
             this.allowIpRanges = new ArrayList<>();
         }
         allowIpRangesSetter.accept(this.allowIpRanges);
         return this;
     }
 
-    /**
-     * 允许访问的IP地址区间。
-     * @return allowIpRanges
-     */
+    /** 允许访问的IP地址区间。
+     * 
+     * @return allowIpRanges */
     public List<AllowIpRangesResult> getAllowIpRanges() {
         return allowIpRanges;
     }
@@ -102,8 +87,6 @@ public class AclPolicyResult  {
     public void setAllowIpRanges(List<AllowIpRangesResult> allowIpRanges) {
         this.allowIpRanges = allowIpRanges;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -114,13 +97,15 @@ public class AclPolicyResult  {
             return false;
         }
         AclPolicyResult aclPolicyResult = (AclPolicyResult) o;
-        return Objects.equals(this.allowAddressNetmasks, aclPolicyResult.allowAddressNetmasks) &&
-            Objects.equals(this.allowIpRanges, aclPolicyResult.allowIpRanges);
+        return Objects.equals(this.allowAddressNetmasks, aclPolicyResult.allowAddressNetmasks)
+            && Objects.equals(this.allowIpRanges, aclPolicyResult.allowIpRanges);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(allowAddressNetmasks, allowIpRanges);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +115,13 @@ public class AclPolicyResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

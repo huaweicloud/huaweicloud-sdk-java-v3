@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 密码信息
- */
-public class PasswordEntry  {
-
-
+/** 密码信息 */
+public class PasswordEntry {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="conferenceRole")
-    
+    @JsonProperty(value = "conferenceRole")
+
     private String conferenceRole;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="password")
-    
+    @JsonProperty(value = "password")
+
     private String password;
 
     public PasswordEntry withConferenceRole(String conferenceRole) {
@@ -34,13 +23,9 @@ public class PasswordEntry  {
         return this;
     }
 
-    
-
-
-    /**
-     * 会议角色。 - chair: 会议主持人。 - general: 普通与会者。
-     * @return conferenceRole
-     */
+    /** 会议角色。 - chair: 会议主持人。 - general: 普通与会者。
+     * 
+     * @return conferenceRole */
     public String getConferenceRole() {
         return conferenceRole;
     }
@@ -49,20 +34,14 @@ public class PasswordEntry  {
         this.conferenceRole = conferenceRole;
     }
 
-    
-
     public PasswordEntry withPassword(String password) {
         this.password = password;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议中角色的密码（明文）。
-     * @return password
-     */
+    /** 会议中角色的密码（明文）。
+     * 
+     * @return password */
     public String getPassword() {
         return password;
     }
@@ -70,8 +49,6 @@ public class PasswordEntry  {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class PasswordEntry  {
             return false;
         }
         PasswordEntry passwordEntry = (PasswordEntry) o;
-        return Objects.equals(this.conferenceRole, passwordEntry.conferenceRole) &&
-            Objects.equals(this.password, passwordEntry.password);
+        return Objects.equals(this.conferenceRole, passwordEntry.conferenceRole)
+            && Objects.equals(this.password, passwordEntry.password);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(conferenceRole, password);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class PasswordEntry  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

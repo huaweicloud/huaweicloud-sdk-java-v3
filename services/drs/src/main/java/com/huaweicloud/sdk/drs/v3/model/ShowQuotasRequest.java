@@ -1,41 +1,26 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowQuotasRequest  {
+/** Request Object */
+public class ShowQuotasRequest {
 
-    /**
-     * 请求语言类型。
-     */
+    /** 请求语言类型。 */
     public static final class XLanguageEnum {
 
-        
-        /**
-         * Enum EN_US for value: "en-us"
-         */
+        /** Enum EN_US for value: "en-us" */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
-        
-        /**
-         * Enum ZH_CN for value: "zh-cn"
-         */
+
+        /** Enum ZH_CN for value: "zh-cn" */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
-        
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +49,7 @@ public class ShowQuotasRequest  {
 
         @JsonCreator
         public static XLanguageEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +60,7 @@ public class ShowQuotasRequest  {
         }
 
         public static XLanguageEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -99,10 +84,9 @@ public class ShowQuotasRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private XLanguageEnum xLanguage;
 
     public ShowQuotasRequest withXLanguage(XLanguageEnum xLanguage) {
@@ -110,15 +94,11 @@ public class ShowQuotasRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 请求语言类型。
-     * @return xLanguage
-     */
+    /** 请求语言类型。
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
         return xLanguage;
     }
@@ -126,8 +106,6 @@ public class ShowQuotasRequest  {
     public void setXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -140,10 +118,12 @@ public class ShowQuotasRequest  {
         ShowQuotasRequest showQuotasRequest = (ShowQuotasRequest) o;
         return Objects.equals(this.xLanguage, showQuotasRequest.xLanguage);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -152,16 +132,13 @@ public class ShowQuotasRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

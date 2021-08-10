@@ -1,56 +1,38 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowResourceResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * Gets or Sets type
-     */
+
+    /** Gets or Sets type */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum ARCHIVE for value: "archive"
-         */
+        /** Enum ARCHIVE for value: "archive" */
         public static final TypeEnum ARCHIVE = new TypeEnum("archive");
-        
-        /**
-         * Enum FILE for value: "file"
-         */
+
+        /** Enum FILE for value: "file" */
         public static final TypeEnum FILE = new TypeEnum("file");
-        
-        /**
-         * Enum JAR for value: "jar"
-         */
+
+        /** Enum JAR for value: "jar" */
         public static final TypeEnum JAR = new TypeEnum("jar");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -80,7 +62,7 @@ public class ShowResourceResponse extends SdkResponse {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -91,7 +73,7 @@ public class ShowResourceResponse extends SdkResponse {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -115,34 +97,29 @@ public class ShowResourceResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="location")
-    
+    @JsonProperty(value = "location")
+
     private String location;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dependFiles")
-    
+    @JsonProperty(value = "dependFiles")
+
     private List<String> dependFiles = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="desc")
-    
+    @JsonProperty(value = "desc")
+
     private String desc;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="directory")
-    
+    @JsonProperty(value = "directory")
+
     private String directory;
 
     public ShowResourceResponse withName(String name) {
@@ -150,13 +127,9 @@ public class ShowResourceResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * Get name
-     * @return name
-     */
+    /** Get name
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -165,20 +138,14 @@ public class ShowResourceResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowResourceResponse withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * Get type
-     * @return type
-     */
+    /** Get type
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -187,20 +154,14 @@ public class ShowResourceResponse extends SdkResponse {
         this.type = type;
     }
 
-    
-
     public ShowResourceResponse withLocation(String location) {
         this.location = location;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源文件所在OBS路径
-     * @return location
-     */
+    /** 资源文件所在OBS路径
+     * 
+     * @return location */
     public String getLocation() {
         return location;
     }
@@ -209,16 +170,13 @@ public class ShowResourceResponse extends SdkResponse {
         this.location = location;
     }
 
-    
-
     public ShowResourceResponse withDependFiles(List<String> dependFiles) {
         this.dependFiles = dependFiles;
         return this;
     }
 
-    
     public ShowResourceResponse addDependFilesItem(String dependFilesItem) {
-        if(this.dependFiles == null) {
+        if (this.dependFiles == null) {
             this.dependFiles = new ArrayList<>();
         }
         this.dependFiles.add(dependFilesItem);
@@ -226,17 +184,16 @@ public class ShowResourceResponse extends SdkResponse {
     }
 
     public ShowResourceResponse withDependFiles(Consumer<List<String>> dependFilesSetter) {
-        if(this.dependFiles == null) {
+        if (this.dependFiles == null) {
             this.dependFiles = new ArrayList<>();
         }
         dependFilesSetter.accept(this.dependFiles);
         return this;
     }
 
-    /**
-     * Get dependFiles
-     * @return dependFiles
-     */
+    /** Get dependFiles
+     * 
+     * @return dependFiles */
     public List<String> getDependFiles() {
         return dependFiles;
     }
@@ -245,20 +202,14 @@ public class ShowResourceResponse extends SdkResponse {
         this.dependFiles = dependFiles;
     }
 
-    
-
     public ShowResourceResponse withDesc(String desc) {
         this.desc = desc;
         return this;
     }
 
-    
-
-
-    /**
-     * Get desc
-     * @return desc
-     */
+    /** Get desc
+     * 
+     * @return desc */
     public String getDesc() {
         return desc;
     }
@@ -267,20 +218,14 @@ public class ShowResourceResponse extends SdkResponse {
         this.desc = desc;
     }
 
-    
-
     public ShowResourceResponse withDirectory(String directory) {
         this.directory = directory;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源所在目录
-     * @return directory
-     */
+    /** 资源所在目录
+     * 
+     * @return directory */
     public String getDirectory() {
         return directory;
     }
@@ -288,8 +233,6 @@ public class ShowResourceResponse extends SdkResponse {
     public void setDirectory(String directory) {
         this.directory = directory;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -300,17 +243,19 @@ public class ShowResourceResponse extends SdkResponse {
             return false;
         }
         ShowResourceResponse showResourceResponse = (ShowResourceResponse) o;
-        return Objects.equals(this.name, showResourceResponse.name) &&
-            Objects.equals(this.type, showResourceResponse.type) &&
-            Objects.equals(this.location, showResourceResponse.location) &&
-            Objects.equals(this.dependFiles, showResourceResponse.dependFiles) &&
-            Objects.equals(this.desc, showResourceResponse.desc) &&
-            Objects.equals(this.directory, showResourceResponse.directory);
+        return Objects.equals(this.name, showResourceResponse.name)
+            && Objects.equals(this.type, showResourceResponse.type)
+            && Objects.equals(this.location, showResourceResponse.location)
+            && Objects.equals(this.dependFiles, showResourceResponse.dependFiles)
+            && Objects.equals(this.desc, showResourceResponse.desc)
+            && Objects.equals(this.directory, showResourceResponse.directory);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, type, location, dependFiles, desc, directory);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -324,16 +269,13 @@ public class ShowResourceResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

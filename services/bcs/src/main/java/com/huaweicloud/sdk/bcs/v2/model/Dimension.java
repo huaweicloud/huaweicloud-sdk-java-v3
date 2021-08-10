@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 指标维度。
- */
-public class Dimension  {
-
-
+/** 指标维度。 */
+public class Dimension {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private String value;
 
     public Dimension withName(String name) {
@@ -34,13 +23,9 @@ public class Dimension  {
         return this;
     }
 
-    
-
-
-    /**
-     * 维度名称。
-     * @return name
-     */
+    /** 维度名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -49,20 +34,14 @@ public class Dimension  {
         this.name = name;
     }
 
-    
-
     public Dimension withValue(String value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 维度取值。
-     * @return value
-     */
+    /** 维度取值。
+     * 
+     * @return value */
     public String getValue() {
         return value;
     }
@@ -70,8 +49,6 @@ public class Dimension  {
     public void setValue(String value) {
         this.value = value;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,14 @@ public class Dimension  {
             return false;
         }
         Dimension dimension = (Dimension) o;
-        return Objects.equals(this.name, dimension.name) &&
-            Objects.equals(this.value, dimension.value);
+        return Objects.equals(this.name, dimension.name) && Objects.equals(this.value, dimension.value);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, value);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +76,13 @@ public class Dimension  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

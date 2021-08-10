@@ -6,14 +6,14 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.elb.v3.model.*;
+
 import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class ElbMeta {
 
-    public static final HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> createCertificate = genForcreateCertificate();
+    public static final HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> createCertificate =
+        genForcreateCertificate();
 
     private static HttpRequestDef<CreateCertificateRequest, CreateCertificateResponse> genForcreateCertificate() {
         // basic
@@ -24,23 +24,21 @@ public class ElbMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateCertificateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateCertificateRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateCertificateRequestBody.class),
             f -> f.withMarshaller(CreateCertificateRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateHealthMonitorRequest, CreateHealthMonitorResponse> createHealthMonitor = genForcreateHealthMonitor();
+    public static final HttpRequestDef<CreateHealthMonitorRequest, CreateHealthMonitorResponse> createHealthMonitor =
+        genForcreateHealthMonitor();
 
     private static HttpRequestDef<CreateHealthMonitorRequest, CreateHealthMonitorResponse> genForcreateHealthMonitor() {
         // basic
@@ -51,23 +49,21 @@ public class ElbMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateHealthMonitorRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateHealthMonitorRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateHealthMonitorRequestBody.class),
             f -> f.withMarshaller(CreateHealthMonitorRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateL7PolicyRequest, CreateL7PolicyResponse> createL7Policy = genForcreateL7Policy();
+    public static final HttpRequestDef<CreateL7PolicyRequest, CreateL7PolicyResponse> createL7Policy =
+        genForcreateL7Policy();
 
     private static HttpRequestDef<CreateL7PolicyRequest, CreateL7PolicyResponse> genForcreateL7Policy() {
         // basic
@@ -78,18 +74,15 @@ public class ElbMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateL7PolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateL7PolicyRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateL7PolicyRequestBody.class),
             f -> f.withMarshaller(CreateL7PolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -105,31 +98,28 @@ public class ElbMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("l7policy_id",
+        builder.<String>withRequestField("l7policy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateL7RuleRequest::getL7policyId, (req, v) -> {
                 req.setL7policyId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateL7RuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateL7RuleRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateL7RuleRequestBody.class),
             f -> f.withMarshaller(CreateL7RuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateListenerRequest, CreateListenerResponse> createListener = genForcreateListener();
+    public static final HttpRequestDef<CreateListenerRequest, CreateListenerResponse> createListener =
+        genForcreateListener();
 
     private static HttpRequestDef<CreateListenerRequest, CreateListenerResponse> genForcreateListener() {
         // basic
@@ -140,23 +130,21 @@ public class ElbMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateListenerRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateListenerRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateListenerRequestBody.class),
             f -> f.withMarshaller(CreateListenerRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateLoadBalancerRequest, CreateLoadBalancerResponse> createLoadBalancer = genForcreateLoadBalancer();
+    public static final HttpRequestDef<CreateLoadBalancerRequest, CreateLoadBalancerResponse> createLoadBalancer =
+        genForcreateLoadBalancer();
 
     private static HttpRequestDef<CreateLoadBalancerRequest, CreateLoadBalancerResponse> genForcreateLoadBalancer() {
         // basic
@@ -167,18 +155,15 @@ public class ElbMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateLoadBalancerRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateLoadBalancerRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateLoadBalancerRequestBody.class),
             f -> f.withMarshaller(CreateLoadBalancerRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -194,26 +179,22 @@ public class ElbMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("pool_id",
+        builder.<String>withRequestField("pool_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateMemberRequest::getPoolId, (req, v) -> {
                 req.setPoolId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateMemberRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateMemberRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateMemberRequestBody.class),
             f -> f.withMarshaller(CreateMemberRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -229,23 +210,21 @@ public class ElbMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreatePoolRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreatePoolRequestBody.class,
+            TypeCasts.uncheckedConversion(CreatePoolRequestBody.class),
             f -> f.withMarshaller(CreatePoolRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificate = genFordeleteCertificate();
+    public static final HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> deleteCertificate =
+        genFordeleteCertificate();
 
     private static HttpRequestDef<DeleteCertificateRequest, DeleteCertificateResponse> genFordeleteCertificate() {
         // basic
@@ -256,50 +235,46 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("certificate_id",
+        builder.<String>withRequestField("certificate_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteCertificateRequest::getCertificateId, (req, v) -> {
                 req.setCertificateId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteHealthMonitorRequest, DeleteHealthMonitorResponse> deleteHealthMonitor = genFordeleteHealthMonitor();
+    public static final HttpRequestDef<DeleteHealthMonitorRequest, DeleteHealthMonitorResponse> deleteHealthMonitor =
+        genFordeleteHealthMonitor();
 
     private static HttpRequestDef<DeleteHealthMonitorRequest, DeleteHealthMonitorResponse> genFordeleteHealthMonitor() {
         // basic
-        HttpRequestDef.Builder<DeleteHealthMonitorRequest, DeleteHealthMonitorResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteHealthMonitorRequest.class, DeleteHealthMonitorResponse.class)
-                .withName("DeleteHealthMonitor")
-                .withUri("/v3/{project_id}/elb/healthmonitors/{healthmonitor_id}")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<DeleteHealthMonitorRequest, DeleteHealthMonitorResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteHealthMonitorRequest.class, DeleteHealthMonitorResponse.class)
+            .withName("DeleteHealthMonitor")
+            .withUri("/v3/{project_id}/elb/healthmonitors/{healthmonitor_id}")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("healthmonitor_id",
+        builder.<String>withRequestField("healthmonitor_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteHealthMonitorRequest::getHealthmonitorId, (req, v) -> {
                 req.setHealthmonitorId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteL7PolicyRequest, DeleteL7PolicyResponse> deleteL7Policy = genFordeleteL7Policy();
+    public static final HttpRequestDef<DeleteL7PolicyRequest, DeleteL7PolicyResponse> deleteL7Policy =
+        genFordeleteL7Policy();
 
     private static HttpRequestDef<DeleteL7PolicyRequest, DeleteL7PolicyResponse> genFordeleteL7Policy() {
         // basic
@@ -310,18 +285,15 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("l7policy_id",
+        builder.<String>withRequestField("l7policy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteL7PolicyRequest::getL7policyId, (req, v) -> {
                 req.setL7policyId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -337,31 +309,28 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("l7policy_id",
+        builder.<String>withRequestField("l7policy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteL7RuleRequest::getL7policyId, (req, v) -> {
                 req.setL7policyId(v);
-            })
-        );
-        builder.withRequestField("l7rule_id",
+            }));
+        builder.<String>withRequestField("l7rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteL7RuleRequest::getL7ruleId, (req, v) -> {
                 req.setL7ruleId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteListenerRequest, DeleteListenerResponse> deleteListener = genFordeleteListener();
+    public static final HttpRequestDef<DeleteListenerRequest, DeleteListenerResponse> deleteListener =
+        genFordeleteListener();
 
     private static HttpRequestDef<DeleteListenerRequest, DeleteListenerResponse> genFordeleteListener() {
         // basic
@@ -372,23 +341,21 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("listener_id",
+        builder.<String>withRequestField("listener_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteListenerRequest::getListenerId, (req, v) -> {
                 req.setListenerId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteLoadBalancerRequest, DeleteLoadBalancerResponse> deleteLoadBalancer = genFordeleteLoadBalancer();
+    public static final HttpRequestDef<DeleteLoadBalancerRequest, DeleteLoadBalancerResponse> deleteLoadBalancer =
+        genFordeleteLoadBalancer();
 
     private static HttpRequestDef<DeleteLoadBalancerRequest, DeleteLoadBalancerResponse> genFordeleteLoadBalancer() {
         // basic
@@ -399,18 +366,15 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("loadbalancer_id",
+        builder.<String>withRequestField("loadbalancer_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteLoadBalancerRequest::getLoadbalancerId, (req, v) -> {
                 req.setLoadbalancerId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -426,26 +390,22 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("member_id",
+        builder.<String>withRequestField("member_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteMemberRequest::getMemberId, (req, v) -> {
                 req.setMemberId(v);
-            })
-        );
-        builder.withRequestField("pool_id",
+            }));
+        builder.<String>withRequestField("pool_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteMemberRequest::getPoolId, (req, v) -> {
                 req.setPoolId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -461,23 +421,21 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("pool_id",
+        builder.<String>withRequestField("pool_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeletePoolRequest::getPoolId, (req, v) -> {
                 req.setPoolId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAllMembersRequest, ListAllMembersResponse> listAllMembers = genForlistAllMembers();
+    public static final HttpRequestDef<ListAllMembersRequest, ListAllMembersResponse> listAllMembers =
+        genForlistAllMembers();
 
     private static HttpRequestDef<ListAllMembersRequest, ListAllMembersResponse> genForlistAllMembers() {
         // basic
@@ -488,154 +446,137 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("address",
+        builder.<List<String>>withRequestField("address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListAllMembersRequest::getAddress, (req, v) -> {
                 req.setAddress(v);
-            })
-        );
-        builder.withRequestField("admin_state_up",
+            }));
+        builder.<Boolean>withRequestField("admin_state_up",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListAllMembersRequest::getAdminStateUp, (req, v) -> {
                 req.setAdminStateUp(v);
-            })
-        );
-        builder.withRequestField("enterprise_project_id",
+            }));
+        builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListAllMembersRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListAllMembersRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("ip_version",
+            }));
+        builder.<String>withRequestField("ip_version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAllMembersRequest::getIpVersion, (req, v) -> {
                 req.setIpVersion(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAllMembersRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("loadbalancer_id",
+            }));
+        builder.<String>withRequestField("loadbalancer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAllMembersRequest::getLoadbalancerId, (req, v) -> {
                 req.setLoadbalancerId(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAllMembersRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListAllMembersRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("operating_status",
+            }));
+        builder.<List<String>>withRequestField("operating_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListAllMembersRequest::getOperatingStatus, (req, v) -> {
                 req.setOperatingStatus(v);
-            })
-        );
-        builder.withRequestField("page_reverse",
+            }));
+        builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListAllMembersRequest::getPageReverse, (req, v) -> {
                 req.setPageReverse(v);
-            })
-        );
-        builder.withRequestField("pool_id",
+            }));
+        builder.<String>withRequestField("pool_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAllMembersRequest::getPoolId, (req, v) -> {
                 req.setPoolId(v);
-            })
-        );
-        builder.withRequestField("protocol_port",
+            }));
+        builder.<List<Integer>>withRequestField("protocol_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListAllMembersRequest::getProtocolPort, (req, v) -> {
                 req.setProtocolPort(v);
-            })
-        );
-        builder.withRequestField("subnet_cidr_id",
+            }));
+        builder.<List<String>>withRequestField("subnet_cidr_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListAllMembersRequest::getSubnetCidrId, (req, v) -> {
                 req.setSubnetCidrId(v);
-            })
-        );
-        builder.withRequestField("weight",
+            }));
+        builder.<List<Integer>>withRequestField("weight",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListAllMembersRequest::getWeight, (req, v) -> {
                 req.setWeight(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> listAvailabilityZones = genForlistAvailabilityZones();
+    public static final HttpRequestDef<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> listAvailabilityZones =
+        genForlistAvailabilityZones();
 
     private static HttpRequestDef<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> genForlistAvailabilityZones() {
         // basic
-        HttpRequestDef.Builder<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListAvailabilityZonesRequest.class, ListAvailabilityZonesResponse.class)
-                .withName("ListAvailabilityZones")
-                .withUri("/v3/{project_id}/elb/availability-zones")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ListAvailabilityZonesRequest, ListAvailabilityZonesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAvailabilityZonesRequest.class, ListAvailabilityZonesResponse.class)
+            .withName("ListAvailabilityZones")
+            .withUri("/v3/{project_id}/elb/availability-zones")
+            .withContentType("application/json");
 
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> listCertificates = genForlistCertificates();
+    public static final HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> listCertificates =
+        genForlistCertificates();
 
     private static HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> genForlistCertificates() {
         // basic
@@ -646,82 +587,71 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("admin_state_up",
+        builder.<Boolean>withRequestField("admin_state_up",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListCertificatesRequest::getAdminStateUp, (req, v) -> {
                 req.setAdminStateUp(v);
-            })
-        );
-        builder.withRequestField("description",
+            }));
+        builder.<List<String>>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListCertificatesRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
-            })
-        );
-        builder.withRequestField("domain",
+            }));
+        builder.<List<String>>withRequestField("domain",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListCertificatesRequest::getDomain, (req, v) -> {
                 req.setDomain(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListCertificatesRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListCertificatesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCertificatesRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListCertificatesRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("page_reverse",
+            }));
+        builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListCertificatesRequest::getPageReverse, (req, v) -> {
                 req.setPageReverse(v);
-            })
-        );
-        builder.withRequestField("type",
+            }));
+        builder.<List<String>>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListCertificatesRequest::getType, (req, v) -> {
                 req.setType(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -737,71 +667,63 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("id",
+        builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListFlavorsRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListFlavorsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlavorsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListFlavorsRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("page_reverse",
+            }));
+        builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListFlavorsRequest::getPageReverse, (req, v) -> {
                 req.setPageReverse(v);
-            })
-        );
-        builder.withRequestField("shared",
+            }));
+        builder.<Boolean>withRequestField("shared",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListFlavorsRequest::getShared, (req, v) -> {
                 req.setShared(v);
-            })
-        );
-        builder.withRequestField("type",
+            }));
+        builder.<List<String>>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListFlavorsRequest::getType, (req, v) -> {
                 req.setType(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListHealthMonitorsRequest, ListHealthMonitorsResponse> listHealthMonitors = genForlistHealthMonitors();
+    public static final HttpRequestDef<ListHealthMonitorsRequest, ListHealthMonitorsResponse> listHealthMonitors =
+        genForlistHealthMonitors();
 
     private static HttpRequestDef<ListHealthMonitorsRequest, ListHealthMonitorsResponse> genForlistHealthMonitors() {
         // basic
@@ -812,151 +734,133 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("admin_state_up",
+        builder.<Boolean>withRequestField("admin_state_up",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListHealthMonitorsRequest::getAdminStateUp, (req, v) -> {
                 req.setAdminStateUp(v);
-            })
-        );
-        builder.withRequestField("delay",
+            }));
+        builder.<List<Integer>>withRequestField("delay",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListHealthMonitorsRequest::getDelay, (req, v) -> {
                 req.setDelay(v);
-            })
-        );
-        builder.withRequestField("domain_name",
+            }));
+        builder.<List<String>>withRequestField("domain_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListHealthMonitorsRequest::getDomainName, (req, v) -> {
                 req.setDomainName(v);
-            })
-        );
-        builder.withRequestField("enterprise_project_id",
+            }));
+        builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListHealthMonitorsRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
-            })
-        );
-        builder.withRequestField("expected_codes",
+            }));
+        builder.<List<String>>withRequestField("expected_codes",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListHealthMonitorsRequest::getExpectedCodes, (req, v) -> {
                 req.setExpectedCodes(v);
-            })
-        );
-        builder.withRequestField("http_method",
+            }));
+        builder.<List<String>>withRequestField("http_method",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListHealthMonitorsRequest::getHttpMethod, (req, v) -> {
                 req.setHttpMethod(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListHealthMonitorsRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListHealthMonitorsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListHealthMonitorsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("max_retries",
+            }));
+        builder.<List<Integer>>withRequestField("max_retries",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListHealthMonitorsRequest::getMaxRetries, (req, v) -> {
                 req.setMaxRetries(v);
-            })
-        );
-        builder.withRequestField("max_retries_down",
+            }));
+        builder.<List<Integer>>withRequestField("max_retries_down",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListHealthMonitorsRequest::getMaxRetriesDown, (req, v) -> {
                 req.setMaxRetriesDown(v);
-            })
-        );
-        builder.withRequestField("monitor_port",
+            }));
+        builder.<List<Integer>>withRequestField("monitor_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListHealthMonitorsRequest::getMonitorPort, (req, v) -> {
                 req.setMonitorPort(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListHealthMonitorsRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("page_reverse",
+            }));
+        builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListHealthMonitorsRequest::getPageReverse, (req, v) -> {
                 req.setPageReverse(v);
-            })
-        );
-        builder.withRequestField("timeout",
+            }));
+        builder.<Integer>withRequestField("timeout",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListHealthMonitorsRequest::getTimeout, (req, v) -> {
                 req.setTimeout(v);
-            })
-        );
-        builder.withRequestField("type",
+            }));
+        builder.<List<String>>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListHealthMonitorsRequest::getType, (req, v) -> {
                 req.setType(v);
-            })
-        );
-        builder.withRequestField("url_path",
+            }));
+        builder.<List<String>>withRequestField("url_path",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListHealthMonitorsRequest::getUrlPath, (req, v) -> {
                 req.setUrlPath(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListL7PoliciesRequest, ListL7PoliciesResponse> listL7Policies = genForlistL7Policies();
+    public static final HttpRequestDef<ListL7PoliciesRequest, ListL7PoliciesResponse> listL7Policies =
+        genForlistL7Policies();
 
     private static HttpRequestDef<ListL7PoliciesRequest, ListL7PoliciesResponse> genForlistL7Policies() {
         // basic
@@ -967,138 +871,120 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("action",
+        builder.<List<String>>withRequestField("action",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListL7PoliciesRequest::getAction, (req, v) -> {
                 req.setAction(v);
-            })
-        );
-        builder.withRequestField("admin_state_up",
+            }));
+        builder.<Boolean>withRequestField("admin_state_up",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListL7PoliciesRequest::getAdminStateUp, (req, v) -> {
                 req.setAdminStateUp(v);
-            })
-        );
-        builder.withRequestField("description",
+            }));
+        builder.<List<String>>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListL7PoliciesRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
-            })
-        );
-        builder.withRequestField("display_all_rules",
+            }));
+        builder.<Boolean>withRequestField("display_all_rules",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListL7PoliciesRequest::getDisplayAllRules, (req, v) -> {
                 req.setDisplayAllRules(v);
-            })
-        );
-        builder.withRequestField("enterprise_project_id",
+            }));
+        builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListL7PoliciesRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListL7PoliciesRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListL7PoliciesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("listener_id",
+            }));
+        builder.<List<String>>withRequestField("listener_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListL7PoliciesRequest::getListenerId, (req, v) -> {
                 req.setListenerId(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListL7PoliciesRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListL7PoliciesRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("page_reverse",
+            }));
+        builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListL7PoliciesRequest::getPageReverse, (req, v) -> {
                 req.setPageReverse(v);
-            })
-        );
-        builder.withRequestField("position",
+            }));
+        builder.<List<Integer>>withRequestField("position",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListL7PoliciesRequest::getPosition, (req, v) -> {
                 req.setPosition(v);
-            })
-        );
-        builder.withRequestField("provisioning_status",
+            }));
+        builder.<List<String>>withRequestField("provisioning_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListL7PoliciesRequest::getProvisioningStatus, (req, v) -> {
                 req.setProvisioningStatus(v);
-            })
-        );
-        builder.withRequestField("redirect_listener_id",
+            }));
+        builder.<List<String>>withRequestField("redirect_listener_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListL7PoliciesRequest::getRedirectListenerId, (req, v) -> {
                 req.setRedirectListenerId(v);
-            })
-        );
-        builder.withRequestField("redirect_pool_id",
+            }));
+        builder.<List<String>>withRequestField("redirect_pool_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListL7PoliciesRequest::getRedirectPoolId, (req, v) -> {
                 req.setRedirectPoolId(v);
-            })
-        );
-        builder.withRequestField("redirect_url",
+            }));
+        builder.<List<String>>withRequestField("redirect_url",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListL7PoliciesRequest::getRedirectUrl, (req, v) -> {
                 req.setRedirectUrl(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1114,119 +1000,105 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("l7policy_id",
+        builder.<String>withRequestField("l7policy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListL7RulesRequest::getL7policyId, (req, v) -> {
                 req.setL7policyId(v);
-            })
-        );
-        builder.withRequestField("admin_state_up",
+            }));
+        builder.<Boolean>withRequestField("admin_state_up",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListL7RulesRequest::getAdminStateUp, (req, v) -> {
                 req.setAdminStateUp(v);
-            })
-        );
-        builder.withRequestField("compare_type",
+            }));
+        builder.<List<String>>withRequestField("compare_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListL7RulesRequest::getCompareType, (req, v) -> {
                 req.setCompareType(v);
-            })
-        );
-        builder.withRequestField("enterprise_project_id",
+            }));
+        builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListL7RulesRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListL7RulesRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("invert",
+            }));
+        builder.<Boolean>withRequestField("invert",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListL7RulesRequest::getInvert, (req, v) -> {
                 req.setInvert(v);
-            })
-        );
-        builder.withRequestField("key",
+            }));
+        builder.<List<String>>withRequestField("key",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListL7RulesRequest::getKey, (req, v) -> {
                 req.setKey(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListL7RulesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListL7RulesRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("page_reverse",
+            }));
+        builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListL7RulesRequest::getPageReverse, (req, v) -> {
                 req.setPageReverse(v);
-            })
-        );
-        builder.withRequestField("provisioning_status",
+            }));
+        builder.<List<String>>withRequestField("provisioning_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListL7RulesRequest::getProvisioningStatus, (req, v) -> {
                 req.setProvisioningStatus(v);
-            })
-        );
-        builder.withRequestField("type",
+            }));
+        builder.<List<String>>withRequestField("type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListL7RulesRequest::getType, (req, v) -> {
                 req.setType(v);
-            })
-        );
-        builder.withRequestField("value",
+            }));
+        builder.<List<String>>withRequestField("value",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListL7RulesRequest::getValue, (req, v) -> {
                 req.setValue(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListListenersRequest, ListListenersResponse> listListeners = genForlistListeners();
+    public static final HttpRequestDef<ListListenersRequest, ListListenersResponse> listListeners =
+        genForlistListeners();
 
     private static HttpRequestDef<ListListenersRequest, ListListenersResponse> genForlistListeners() {
         // basic
@@ -1237,207 +1109,182 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("admin_state_up",
+        builder.<Boolean>withRequestField("admin_state_up",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListListenersRequest::getAdminStateUp, (req, v) -> {
                 req.setAdminStateUp(v);
-            })
-        );
-        builder.withRequestField("client_ca_tls_container_ref",
+            }));
+        builder.<List<String>>withRequestField("client_ca_tls_container_ref",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListListenersRequest::getClientCaTlsContainerRef, (req, v) -> {
                 req.setClientCaTlsContainerRef(v);
-            })
-        );
-        builder.withRequestField("client_timeout",
+            }));
+        builder.<List<Integer>>withRequestField("client_timeout",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListListenersRequest::getClientTimeout, (req, v) -> {
                 req.setClientTimeout(v);
-            })
-        );
-        builder.withRequestField("connection_limit",
+            }));
+        builder.<List<Integer>>withRequestField("connection_limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListListenersRequest::getConnectionLimit, (req, v) -> {
                 req.setConnectionLimit(v);
-            })
-        );
-        builder.withRequestField("default_pool_id",
+            }));
+        builder.<List<String>>withRequestField("default_pool_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListListenersRequest::getDefaultPoolId, (req, v) -> {
                 req.setDefaultPoolId(v);
-            })
-        );
-        builder.withRequestField("default_tls_container_ref",
+            }));
+        builder.<List<String>>withRequestField("default_tls_container_ref",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListListenersRequest::getDefaultTlsContainerRef, (req, v) -> {
                 req.setDefaultTlsContainerRef(v);
-            })
-        );
-        builder.withRequestField("description",
+            }));
+        builder.<List<String>>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListListenersRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
-            })
-        );
-        builder.withRequestField("enable_member_retry",
+            }));
+        builder.<Boolean>withRequestField("enable_member_retry",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListListenersRequest::getEnableMemberRetry, (req, v) -> {
                 req.setEnableMemberRetry(v);
-            })
-        );
-        builder.withRequestField("enterprise_project_id",
+            }));
+        builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListListenersRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
-            })
-        );
-        builder.withRequestField("http2_enable",
+            }));
+        builder.<Boolean>withRequestField("http2_enable",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListListenersRequest::getHttp2Enable, (req, v) -> {
                 req.setHttp2Enable(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListListenersRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("keepalive_timeout",
+            }));
+        builder.<List<Integer>>withRequestField("keepalive_timeout",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListListenersRequest::getKeepaliveTimeout, (req, v) -> {
                 req.setKeepaliveTimeout(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListListenersRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("loadbalancer_id",
+            }));
+        builder.<List<String>>withRequestField("loadbalancer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListListenersRequest::getLoadbalancerId, (req, v) -> {
                 req.setLoadbalancerId(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListListenersRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("member_address",
+            }));
+        builder.<List<String>>withRequestField("member_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListListenersRequest::getMemberAddress, (req, v) -> {
                 req.setMemberAddress(v);
-            })
-        );
-        builder.withRequestField("member_device_id",
+            }));
+        builder.<List<String>>withRequestField("member_device_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListListenersRequest::getMemberDeviceId, (req, v) -> {
                 req.setMemberDeviceId(v);
-            })
-        );
-        builder.withRequestField("member_timeout",
+            }));
+        builder.<List<Integer>>withRequestField("member_timeout",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListListenersRequest::getMemberTimeout, (req, v) -> {
                 req.setMemberTimeout(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListListenersRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("page_reverse",
+            }));
+        builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListListenersRequest::getPageReverse, (req, v) -> {
                 req.setPageReverse(v);
-            })
-        );
-        builder.withRequestField("protocol",
+            }));
+        builder.<List<String>>withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListListenersRequest::getProtocol, (req, v) -> {
                 req.setProtocol(v);
-            })
-        );
-        builder.withRequestField("protocol_port",
+            }));
+        builder.<List<String>>withRequestField("protocol_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListListenersRequest::getProtocolPort, (req, v) -> {
                 req.setProtocolPort(v);
-            })
-        );
-        builder.withRequestField("tls_ciphers_policy",
+            }));
+        builder.<List<String>>withRequestField("tls_ciphers_policy",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListListenersRequest::getTlsCiphersPolicy, (req, v) -> {
                 req.setTlsCiphersPolicy(v);
-            })
-        );
-        builder.withRequestField("transparent_client_ip_enable",
+            }));
+        builder.<Boolean>withRequestField("transparent_client_ip_enable",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListListenersRequest::getTransparentClientIpEnable, (req, v) -> {
                 req.setTransparentClientIpEnable(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListLoadBalancersRequest, ListLoadBalancersResponse> listLoadBalancers = genForlistLoadBalancers();
+    public static final HttpRequestDef<ListLoadBalancersRequest, ListLoadBalancersResponse> listLoadBalancers =
+        genForlistLoadBalancers();
 
     private static HttpRequestDef<ListLoadBalancersRequest, ListLoadBalancersResponse> genForlistLoadBalancers() {
         // basic
@@ -1448,250 +1295,218 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("admin_state_up",
+        builder.<Boolean>withRequestField("admin_state_up",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getAdminStateUp, (req, v) -> {
                 req.setAdminStateUp(v);
-            })
-        );
-        builder.withRequestField("availability_zone_list",
+            }));
+        builder.<List<String>>withRequestField("availability_zone_list",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getAvailabilityZoneList, (req, v) -> {
                 req.setAvailabilityZoneList(v);
-            })
-        );
-        builder.withRequestField("billing_info",
+            }));
+        builder.<List<String>>withRequestField("billing_info",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getBillingInfo, (req, v) -> {
                 req.setBillingInfo(v);
-            })
-        );
-        builder.withRequestField("deletion_protection_enable",
+            }));
+        builder.<Boolean>withRequestField("deletion_protection_enable",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getDeletionProtectionEnable, (req, v) -> {
                 req.setDeletionProtectionEnable(v);
-            })
-        );
-        builder.withRequestField("description",
+            }));
+        builder.<List<String>>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
-            })
-        );
-        builder.withRequestField("eips",
+            }));
+        builder.<List<String>>withRequestField("eips",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getEips, (req, v) -> {
                 req.setEips(v);
-            })
-        );
-        builder.withRequestField("enterprise_project_id",
+            }));
+        builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
-            })
-        );
-        builder.withRequestField("guaranteed",
+            }));
+        builder.<Boolean>withRequestField("guaranteed",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getGuaranteed, (req, v) -> {
                 req.setGuaranteed(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("ip_version",
+            }));
+        builder.<List<Integer>>withRequestField("ip_version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getIpVersion, (req, v) -> {
                 req.setIpVersion(v);
-            })
-        );
-        builder.withRequestField("ipv6_vip_address",
+            }));
+        builder.<List<String>>withRequestField("ipv6_vip_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getIpv6VipAddress, (req, v) -> {
                 req.setIpv6VipAddress(v);
-            })
-        );
-        builder.withRequestField("ipv6_vip_port_id",
+            }));
+        builder.<List<String>>withRequestField("ipv6_vip_port_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getIpv6VipPortId, (req, v) -> {
                 req.setIpv6VipPortId(v);
-            })
-        );
-        builder.withRequestField("ipv6_vip_virsubnet_id",
+            }));
+        builder.<List<String>>withRequestField("ipv6_vip_virsubnet_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getIpv6VipVirsubnetId, (req, v) -> {
                 req.setIpv6VipVirsubnetId(v);
-            })
-        );
-        builder.withRequestField("l4_flavor_id",
+            }));
+        builder.<List<String>>withRequestField("l4_flavor_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getL4FlavorId, (req, v) -> {
                 req.setL4FlavorId(v);
-            })
-        );
-        builder.withRequestField("l4_scale_flavor_id",
+            }));
+        builder.<List<String>>withRequestField("l4_scale_flavor_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getL4ScaleFlavorId, (req, v) -> {
                 req.setL4ScaleFlavorId(v);
-            })
-        );
-        builder.withRequestField("l7_flavor_id",
+            }));
+        builder.<List<String>>withRequestField("l7_flavor_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getL7FlavorId, (req, v) -> {
                 req.setL7FlavorId(v);
-            })
-        );
-        builder.withRequestField("l7_scale_flavor_id",
+            }));
+        builder.<List<String>>withRequestField("l7_scale_flavor_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getL7ScaleFlavorId, (req, v) -> {
                 req.setL7ScaleFlavorId(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("member_address",
+            }));
+        builder.<List<String>>withRequestField("member_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getMemberAddress, (req, v) -> {
                 req.setMemberAddress(v);
-            })
-        );
-        builder.withRequestField("member_device_id",
+            }));
+        builder.<List<String>>withRequestField("member_device_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getMemberDeviceId, (req, v) -> {
                 req.setMemberDeviceId(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("operating_status",
+            }));
+        builder.<List<String>>withRequestField("operating_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getOperatingStatus, (req, v) -> {
                 req.setOperatingStatus(v);
-            })
-        );
-        builder.withRequestField("page_reverse",
+            }));
+        builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getPageReverse, (req, v) -> {
                 req.setPageReverse(v);
-            })
-        );
-        builder.withRequestField("provisioning_status",
+            }));
+        builder.<List<String>>withRequestField("provisioning_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getProvisioningStatus, (req, v) -> {
                 req.setProvisioningStatus(v);
-            })
-        );
-        builder.withRequestField("publicips",
+            }));
+        builder.<List<String>>withRequestField("publicips",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getPublicips, (req, v) -> {
                 req.setPublicips(v);
-            })
-        );
-        builder.withRequestField("vip_address",
+            }));
+        builder.<List<String>>withRequestField("vip_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getVipAddress, (req, v) -> {
                 req.setVipAddress(v);
-            })
-        );
-        builder.withRequestField("vip_port_id",
+            }));
+        builder.<List<String>>withRequestField("vip_port_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getVipPortId, (req, v) -> {
                 req.setVipPortId(v);
-            })
-        );
-        builder.withRequestField("vip_subnet_cidr_id",
+            }));
+        builder.<List<String>>withRequestField("vip_subnet_cidr_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getVipSubnetCidrId, (req, v) -> {
                 req.setVipSubnetCidrId(v);
-            })
-        );
-        builder.withRequestField("vpc_id",
+            }));
+        builder.<List<String>>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getVpcId, (req, v) -> {
                 req.setVpcId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1707,114 +1522,99 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("pool_id",
+        builder.<String>withRequestField("pool_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMembersRequest::getPoolId, (req, v) -> {
                 req.setPoolId(v);
-            })
-        );
-        builder.withRequestField("address",
+            }));
+        builder.<List<String>>withRequestField("address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListMembersRequest::getAddress, (req, v) -> {
                 req.setAddress(v);
-            })
-        );
-        builder.withRequestField("admin_state_up",
+            }));
+        builder.<Boolean>withRequestField("admin_state_up",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListMembersRequest::getAdminStateUp, (req, v) -> {
                 req.setAdminStateUp(v);
-            })
-        );
-        builder.withRequestField("enterprise_project_id",
+            }));
+        builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListMembersRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListMembersRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListMembersRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMembersRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListMembersRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("operating_status",
+            }));
+        builder.<List<String>>withRequestField("operating_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListMembersRequest::getOperatingStatus, (req, v) -> {
                 req.setOperatingStatus(v);
-            })
-        );
-        builder.withRequestField("page_reverse",
+            }));
+        builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListMembersRequest::getPageReverse, (req, v) -> {
                 req.setPageReverse(v);
-            })
-        );
-        builder.withRequestField("protocol_port",
+            }));
+        builder.<List<Integer>>withRequestField("protocol_port",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListMembersRequest::getProtocolPort, (req, v) -> {
                 req.setProtocolPort(v);
-            })
-        );
-        builder.withRequestField("subnet_cidr_id",
+            }));
+        builder.<List<String>>withRequestField("subnet_cidr_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListMembersRequest::getSubnetCidrId, (req, v) -> {
                 req.setSubnetCidrId(v);
-            })
-        );
-        builder.withRequestField("weight",
+            }));
+        builder.<List<Integer>>withRequestField("weight",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListMembersRequest::getWeight, (req, v) -> {
                 req.setWeight(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -1830,143 +1630,126 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("admin_state_up",
+        builder.<Boolean>withRequestField("admin_state_up",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListPoolsRequest::getAdminStateUp, (req, v) -> {
                 req.setAdminStateUp(v);
-            })
-        );
-        builder.withRequestField("description",
+            }));
+        builder.<List<String>>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPoolsRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
-            })
-        );
-        builder.withRequestField("enterprise_project_id",
+            }));
+        builder.<List<String>>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPoolsRequest::getEnterpriseProjectId, (req, v) -> {
                 req.setEnterpriseProjectId(v);
-            })
-        );
-        builder.withRequestField("healthmonitor_id",
+            }));
+        builder.<List<String>>withRequestField("healthmonitor_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPoolsRequest::getHealthmonitorId, (req, v) -> {
                 req.setHealthmonitorId(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPoolsRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("ip_version",
+            }));
+        builder.<List<String>>withRequestField("ip_version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPoolsRequest::getIpVersion, (req, v) -> {
                 req.setIpVersion(v);
-            })
-        );
-        builder.withRequestField("lb_algorithm",
+            }));
+        builder.<List<String>>withRequestField("lb_algorithm",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPoolsRequest::getLbAlgorithm, (req, v) -> {
                 req.setLbAlgorithm(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPoolsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("loadbalancer_id",
+            }));
+        builder.<List<String>>withRequestField("loadbalancer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPoolsRequest::getLoadbalancerId, (req, v) -> {
                 req.setLoadbalancerId(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPoolsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("member_address",
+            }));
+        builder.<List<String>>withRequestField("member_address",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPoolsRequest::getMemberAddress, (req, v) -> {
                 req.setMemberAddress(v);
-            })
-        );
-        builder.withRequestField("member_deletion_protection_enable",
+            }));
+        builder.<Boolean>withRequestField("member_deletion_protection_enable",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListPoolsRequest::getMemberDeletionProtectionEnable, (req, v) -> {
                 req.setMemberDeletionProtectionEnable(v);
-            })
-        );
-        builder.withRequestField("member_device_id",
+            }));
+        builder.<List<String>>withRequestField("member_device_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPoolsRequest::getMemberDeviceId, (req, v) -> {
                 req.setMemberDeviceId(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPoolsRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("page_reverse",
+            }));
+        builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListPoolsRequest::getPageReverse, (req, v) -> {
                 req.setPageReverse(v);
-            })
-        );
-        builder.withRequestField("protocol",
+            }));
+        builder.<List<String>>withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPoolsRequest::getProtocol, (req, v) -> {
                 req.setProtocol(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> showCertificate = genForshowCertificate();
+    public static final HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> showCertificate =
+        genForshowCertificate();
 
     private static HttpRequestDef<ShowCertificateRequest, ShowCertificateResponse> genForshowCertificate() {
         // basic
@@ -1977,18 +1760,15 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("certificate_id",
+        builder.<String>withRequestField("certificate_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCertificateRequest::getCertificateId, (req, v) -> {
                 req.setCertificateId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2004,23 +1784,21 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("flavor_id",
+        builder.<String>withRequestField("flavor_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowFlavorRequest::getFlavorId, (req, v) -> {
                 req.setFlavorId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowHealthMonitorRequest, ShowHealthMonitorResponse> showHealthMonitor = genForshowHealthMonitor();
+    public static final HttpRequestDef<ShowHealthMonitorRequest, ShowHealthMonitorResponse> showHealthMonitor =
+        genForshowHealthMonitor();
 
     private static HttpRequestDef<ShowHealthMonitorRequest, ShowHealthMonitorResponse> genForshowHealthMonitor() {
         // basic
@@ -2031,18 +1809,15 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("healthmonitor_id",
+        builder.<String>withRequestField("healthmonitor_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowHealthMonitorRequest::getHealthmonitorId, (req, v) -> {
                 req.setHealthmonitorId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2058,18 +1833,15 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("l7policy_id",
+        builder.<String>withRequestField("l7policy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowL7PolicyRequest::getL7policyId, (req, v) -> {
                 req.setL7policyId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2085,26 +1857,22 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("l7policy_id",
+        builder.<String>withRequestField("l7policy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowL7RuleRequest::getL7policyId, (req, v) -> {
                 req.setL7policyId(v);
-            })
-        );
-        builder.withRequestField("l7rule_id",
+            }));
+        builder.<String>withRequestField("l7rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowL7RuleRequest::getL7ruleId, (req, v) -> {
                 req.setL7ruleId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2120,23 +1888,21 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("listener_id",
+        builder.<String>withRequestField("listener_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowListenerRequest::getListenerId, (req, v) -> {
                 req.setListenerId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowLoadBalancerRequest, ShowLoadBalancerResponse> showLoadBalancer = genForshowLoadBalancer();
+    public static final HttpRequestDef<ShowLoadBalancerRequest, ShowLoadBalancerResponse> showLoadBalancer =
+        genForshowLoadBalancer();
 
     private static HttpRequestDef<ShowLoadBalancerRequest, ShowLoadBalancerResponse> genForshowLoadBalancer() {
         // basic
@@ -2147,45 +1913,40 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("loadbalancer_id",
+        builder.<String>withRequestField("loadbalancer_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowLoadBalancerRequest::getLoadbalancerId, (req, v) -> {
                 req.setLoadbalancerId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowLoadBalancerStatusRequest, ShowLoadBalancerStatusResponse> showLoadBalancerStatus = genForshowLoadBalancerStatus();
+    public static final HttpRequestDef<ShowLoadBalancerStatusRequest, ShowLoadBalancerStatusResponse> showLoadBalancerStatus =
+        genForshowLoadBalancerStatus();
 
     private static HttpRequestDef<ShowLoadBalancerStatusRequest, ShowLoadBalancerStatusResponse> genForshowLoadBalancerStatus() {
         // basic
-        HttpRequestDef.Builder<ShowLoadBalancerStatusRequest, ShowLoadBalancerStatusResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowLoadBalancerStatusRequest.class, ShowLoadBalancerStatusResponse.class)
-                .withName("ShowLoadBalancerStatus")
-                .withUri("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/statuses")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowLoadBalancerStatusRequest, ShowLoadBalancerStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowLoadBalancerStatusRequest.class, ShowLoadBalancerStatusResponse.class)
+            .withName("ShowLoadBalancerStatus")
+            .withUri("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/statuses")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("loadbalancer_id",
+        builder.<String>withRequestField("loadbalancer_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowLoadBalancerStatusRequest::getLoadbalancerId, (req, v) -> {
                 req.setLoadbalancerId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2201,26 +1962,22 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("member_id",
+        builder.<String>withRequestField("member_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMemberRequest::getMemberId, (req, v) -> {
                 req.setMemberId(v);
-            })
-        );
-        builder.withRequestField("pool_id",
+            }));
+        builder.<String>withRequestField("pool_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMemberRequest::getPoolId, (req, v) -> {
                 req.setPoolId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2236,18 +1993,15 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("pool_id",
+        builder.<String>withRequestField("pool_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPoolRequest::getPoolId, (req, v) -> {
                 req.setPoolId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2265,13 +2019,12 @@ public class ElbMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowQuotaDefaultsRequest, ShowQuotaDefaultsResponse> showQuotaDefaults = genForshowQuotaDefaults();
+    public static final HttpRequestDef<ShowQuotaDefaultsRequest, ShowQuotaDefaultsResponse> showQuotaDefaults =
+        genForshowQuotaDefaults();
 
     private static HttpRequestDef<ShowQuotaDefaultsRequest, ShowQuotaDefaultsResponse> genForshowQuotaDefaults() {
         // basic
@@ -2284,13 +2037,12 @@ public class ElbMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateCertificateRequest, UpdateCertificateResponse> updateCertificate = genForupdateCertificate();
+    public static final HttpRequestDef<UpdateCertificateRequest, UpdateCertificateResponse> updateCertificate =
+        genForupdateCertificate();
 
     private static HttpRequestDef<UpdateCertificateRequest, UpdateCertificateResponse> genForupdateCertificate() {
         // basic
@@ -2301,31 +2053,28 @@ public class ElbMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("certificate_id",
+        builder.<String>withRequestField("certificate_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateCertificateRequest::getCertificateId, (req, v) -> {
                 req.setCertificateId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateCertificateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateCertificateRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateCertificateRequestBody.class),
             f -> f.withMarshaller(UpdateCertificateRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateHealthMonitorRequest, UpdateHealthMonitorResponse> updateHealthMonitor = genForupdateHealthMonitor();
+    public static final HttpRequestDef<UpdateHealthMonitorRequest, UpdateHealthMonitorResponse> updateHealthMonitor =
+        genForupdateHealthMonitor();
 
     private static HttpRequestDef<UpdateHealthMonitorRequest, UpdateHealthMonitorResponse> genForupdateHealthMonitor() {
         // basic
@@ -2336,31 +2085,28 @@ public class ElbMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("healthmonitor_id",
+        builder.<String>withRequestField("healthmonitor_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateHealthMonitorRequest::getHealthmonitorId, (req, v) -> {
                 req.setHealthmonitorId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateHealthMonitorRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateHealthMonitorRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateHealthMonitorRequestBody.class),
             f -> f.withMarshaller(UpdateHealthMonitorRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateL7PolicyRequest, UpdateL7PolicyResponse> updateL7Policy = genForupdateL7Policy();
+    public static final HttpRequestDef<UpdateL7PolicyRequest, UpdateL7PolicyResponse> updateL7Policy =
+        genForupdateL7Policy();
 
     private static HttpRequestDef<UpdateL7PolicyRequest, UpdateL7PolicyResponse> genForupdateL7Policy() {
         // basic
@@ -2371,26 +2117,22 @@ public class ElbMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("l7policy_id",
+        builder.<String>withRequestField("l7policy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateL7PolicyRequest::getL7policyId, (req, v) -> {
                 req.setL7policyId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateL7PolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateL7PolicyRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateL7PolicyRequestBody.class),
             f -> f.withMarshaller(UpdateL7PolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2406,39 +2148,35 @@ public class ElbMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("l7policy_id",
+        builder.<String>withRequestField("l7policy_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateL7RuleRequest::getL7policyId, (req, v) -> {
                 req.setL7policyId(v);
-            })
-        );
-        builder.withRequestField("l7rule_id",
+            }));
+        builder.<String>withRequestField("l7rule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateL7RuleRequest::getL7ruleId, (req, v) -> {
                 req.setL7ruleId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateL7RuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateL7RuleRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateL7RuleRequestBody.class),
             f -> f.withMarshaller(UpdateL7RuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateListenerRequest, UpdateListenerResponse> updateListener = genForupdateListener();
+    public static final HttpRequestDef<UpdateListenerRequest, UpdateListenerResponse> updateListener =
+        genForupdateListener();
 
     private static HttpRequestDef<UpdateListenerRequest, UpdateListenerResponse> genForupdateListener() {
         // basic
@@ -2449,31 +2187,28 @@ public class ElbMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("listener_id",
+        builder.<String>withRequestField("listener_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateListenerRequest::getListenerId, (req, v) -> {
                 req.setListenerId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateListenerRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateListenerRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateListenerRequestBody.class),
             f -> f.withMarshaller(UpdateListenerRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateLoadBalancerRequest, UpdateLoadBalancerResponse> updateLoadBalancer = genForupdateLoadBalancer();
+    public static final HttpRequestDef<UpdateLoadBalancerRequest, UpdateLoadBalancerResponse> updateLoadBalancer =
+        genForupdateLoadBalancer();
 
     private static HttpRequestDef<UpdateLoadBalancerRequest, UpdateLoadBalancerResponse> genForupdateLoadBalancer() {
         // basic
@@ -2484,26 +2219,22 @@ public class ElbMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("loadbalancer_id",
+        builder.<String>withRequestField("loadbalancer_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateLoadBalancerRequest::getLoadbalancerId, (req, v) -> {
                 req.setLoadbalancerId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateLoadBalancerRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateLoadBalancerRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateLoadBalancerRequestBody.class),
             f -> f.withMarshaller(UpdateLoadBalancerRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2519,34 +2250,29 @@ public class ElbMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("member_id",
+        builder.<String>withRequestField("member_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateMemberRequest::getMemberId, (req, v) -> {
                 req.setMemberId(v);
-            })
-        );
-        builder.withRequestField("pool_id",
+            }));
+        builder.<String>withRequestField("pool_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateMemberRequest::getPoolId, (req, v) -> {
                 req.setPoolId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateMemberRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateMemberRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateMemberRequestBody.class),
             f -> f.withMarshaller(UpdateMemberRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2562,31 +2288,28 @@ public class ElbMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("pool_id",
+        builder.<String>withRequestField("pool_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdatePoolRequest::getPoolId, (req, v) -> {
                 req.setPoolId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdatePoolRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdatePoolRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdatePoolRequestBody.class),
             f -> f.withMarshaller(UpdatePoolRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CountPreoccupyIpNumRequest, CountPreoccupyIpNumResponse> countPreoccupyIpNum = genForcountPreoccupyIpNum();
+    public static final HttpRequestDef<CountPreoccupyIpNumRequest, CountPreoccupyIpNumResponse> countPreoccupyIpNum =
+        genForcountPreoccupyIpNum();
 
     private static HttpRequestDef<CountPreoccupyIpNumRequest, CountPreoccupyIpNumResponse> genForcountPreoccupyIpNum() {
         // basic
@@ -2597,55 +2320,49 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("availability_zone_id",
+        builder.<List<String>>withRequestField("availability_zone_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(CountPreoccupyIpNumRequest::getAvailabilityZoneId, (req, v) -> {
                 req.setAvailabilityZoneId(v);
-            })
-        );
-        builder.withRequestField("ip_target_enable",
+            }));
+        builder.<Boolean>withRequestField("ip_target_enable",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(CountPreoccupyIpNumRequest::getIpTargetEnable, (req, v) -> {
                 req.setIpTargetEnable(v);
-            })
-        );
-        builder.withRequestField("ip_version",
+            }));
+        builder.<Integer>withRequestField("ip_version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(CountPreoccupyIpNumRequest::getIpVersion, (req, v) -> {
                 req.setIpVersion(v);
-            })
-        );
-        builder.withRequestField("l7_flavor_id",
+            }));
+        builder.<String>withRequestField("l7_flavor_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CountPreoccupyIpNumRequest::getL7FlavorId, (req, v) -> {
                 req.setL7FlavorId(v);
-            })
-        );
-        builder.withRequestField("loadbalancer_id",
+            }));
+        builder.<String>withRequestField("loadbalancer_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CountPreoccupyIpNumRequest::getLoadbalancerId, (req, v) -> {
                 req.setLoadbalancerId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateIpGroupRequest, CreateIpGroupResponse> createIpGroup = genForcreateIpGroup();
+    public static final HttpRequestDef<CreateIpGroupRequest, CreateIpGroupResponse> createIpGroup =
+        genForcreateIpGroup();
 
     private static HttpRequestDef<CreateIpGroupRequest, CreateIpGroupResponse> genForcreateIpGroup() {
         // basic
@@ -2656,23 +2373,21 @@ public class ElbMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateIpGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateIpGroupRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateIpGroupRequestBody.class),
             f -> f.withMarshaller(CreateIpGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteIpGroupRequest, DeleteIpGroupResponse> deleteIpGroup = genFordeleteIpGroup();
+    public static final HttpRequestDef<DeleteIpGroupRequest, DeleteIpGroupResponse> deleteIpGroup =
+        genFordeleteIpGroup();
 
     private static HttpRequestDef<DeleteIpGroupRequest, DeleteIpGroupResponse> genFordeleteIpGroup() {
         // basic
@@ -2683,18 +2398,15 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("ipgroup_id",
+        builder.<String>withRequestField("ipgroup_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteIpGroupRequest::getIpgroupId, (req, v) -> {
                 req.setIpgroupId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2710,66 +2422,57 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("description",
+        builder.<List<String>>withRequestField("description",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListIpGroupsRequest::getDescription, (req, v) -> {
                 req.setDescription(v);
-            })
-        );
-        builder.withRequestField("id",
+            }));
+        builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListIpGroupsRequest::getId, (req, v) -> {
                 req.setId(v);
-            })
-        );
-        builder.withRequestField("ip_list",
+            }));
+        builder.<List<String>>withRequestField("ip_list",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListIpGroupsRequest::getIpList, (req, v) -> {
                 req.setIpList(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListIpGroupsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListIpGroupsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<List<String>>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            List.class,
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListIpGroupsRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("page_reverse",
+            }));
+        builder.<Boolean>withRequestField("page_reverse",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Boolean.class,
+            TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListIpGroupsRequest::getPageReverse, (req, v) -> {
                 req.setPageReverse(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -2785,23 +2488,21 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("ipgroup_id",
+        builder.<String>withRequestField("ipgroup_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowIpGroupRequest::getIpgroupId, (req, v) -> {
                 req.setIpgroupId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateIpGroupRequest, UpdateIpGroupResponse> updateIpGroup = genForupdateIpGroup();
+    public static final HttpRequestDef<UpdateIpGroupRequest, UpdateIpGroupResponse> updateIpGroup =
+        genForupdateIpGroup();
 
     private static HttpRequestDef<UpdateIpGroupRequest, UpdateIpGroupResponse> genForupdateIpGroup() {
         // basic
@@ -2812,26 +2513,22 @@ public class ElbMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("ipgroup_id",
+        builder.<String>withRequestField("ipgroup_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateIpGroupRequest::getIpgroupId, (req, v) -> {
                 req.setIpgroupId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateIpGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateIpGroupRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateIpGroupRequestBody.class),
             f -> f.withMarshaller(UpdateIpGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

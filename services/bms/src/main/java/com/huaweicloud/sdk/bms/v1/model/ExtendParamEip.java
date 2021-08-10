@@ -1,41 +1,27 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 创建弹性公网IP的extendparam字段数据结构说明
- */
-public class ExtendParamEip  {
+/** 创建弹性公网IP的extendparam字段数据结构说明 */
+public class ExtendParamEip {
 
-    /**
-     * 弹性公网IP的计费模式。若带宽计费类型为bandwidth，则支持prePaid和postPaid；若带宽计费类型为traffic，仅支持postPaid。取值范围：prePaid：预付费，即包年包月postPaid：后付费，即按需付费 说明：如果bandwidth对象中sharetype是WHOLE且id有值，弹性公网IP只能创建为按需付费的，故该参数传参“prePaid”无效。
-     */
+    /** 弹性公网IP的计费模式。若带宽计费类型为bandwidth，则支持prePaid和postPaid；若带宽计费类型为traffic，仅支持postPaid。取值范围：prePaid：预付费，即包年包月postPaid：后付费，即按需付费
+     * 说明：如果bandwidth对象中sharetype是WHOLE且id有值，弹性公网IP只能创建为按需付费的，故该参数传参“prePaid”无效。 */
     public static final class ChargingmodeEnum {
 
-        
-        /**
-         * Enum PREPAID for value: "prePaid"
-         */
+        /** Enum PREPAID for value: "prePaid" */
         public static final ChargingmodeEnum PREPAID = new ChargingmodeEnum("prePaid");
-        
-        /**
-         * Enum POSTPAID for value: "postPaid"
-         */
+
+        /** Enum POSTPAID for value: "postPaid" */
         public static final ChargingmodeEnum POSTPAID = new ChargingmodeEnum("postPaid");
-        
 
         private static final Map<String, ChargingmodeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +50,7 @@ public class ExtendParamEip  {
 
         @JsonCreator
         public static ChargingmodeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ChargingmodeEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +61,7 @@ public class ExtendParamEip  {
         }
 
         public static ChargingmodeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ChargingmodeEnum result = STATIC_FIELDS.get(value);
@@ -99,10 +85,9 @@ public class ExtendParamEip  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="chargingmode")
-    
+    @JsonProperty(value = "chargingmode")
+
     private ChargingmodeEnum chargingmode;
 
     public ExtendParamEip withChargingmode(ChargingmodeEnum chargingmode) {
@@ -110,13 +95,10 @@ public class ExtendParamEip  {
         return this;
     }
 
-    
-
-
-    /**
-     * 弹性公网IP的计费模式。若带宽计费类型为bandwidth，则支持prePaid和postPaid；若带宽计费类型为traffic，仅支持postPaid。取值范围：prePaid：预付费，即包年包月postPaid：后付费，即按需付费 说明：如果bandwidth对象中sharetype是WHOLE且id有值，弹性公网IP只能创建为按需付费的，故该参数传参“prePaid”无效。
-     * @return chargingmode
-     */
+    /** 弹性公网IP的计费模式。若带宽计费类型为bandwidth，则支持prePaid和postPaid；若带宽计费类型为traffic，仅支持postPaid。取值范围：prePaid：预付费，即包年包月postPaid：后付费，即按需付费
+     * 说明：如果bandwidth对象中sharetype是WHOLE且id有值，弹性公网IP只能创建为按需付费的，故该参数传参“prePaid”无效。
+     * 
+     * @return chargingmode */
     public ChargingmodeEnum getChargingmode() {
         return chargingmode;
     }
@@ -124,8 +106,6 @@ public class ExtendParamEip  {
     public void setChargingmode(ChargingmodeEnum chargingmode) {
         this.chargingmode = chargingmode;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,10 +118,12 @@ public class ExtendParamEip  {
         ExtendParamEip extendParamEip = (ExtendParamEip) o;
         return Objects.equals(this.chargingmode, extendParamEip.chargingmode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(chargingmode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -150,16 +132,13 @@ public class ExtendParamEip  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

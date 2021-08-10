@@ -1,56 +1,43 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class SubnetIpAvailability  {
-
-
+public class SubnetIpAvailability {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="used_ips")
-    
+    @JsonProperty(value = "used_ips")
+
     private Integer usedIps;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
+
     private String subnetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_name")
-    
+    @JsonProperty(value = "subnet_name")
+
     private String subnetName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_version")
-    
+    @JsonProperty(value = "ip_version")
+
     private Integer ipVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cidr")
-    
+    @JsonProperty(value = "cidr")
+
     private String cidr;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_ips")
-    
+    @JsonProperty(value = "total_ips")
+
     private Integer totalIps;
 
     public SubnetIpAvailability withUsedIps(Integer usedIps) {
@@ -58,13 +45,9 @@ public class SubnetIpAvailability  {
         return this;
     }
 
-    
-
-
-    /**
-     * 子网中已经使用的IP数目（不包含系统预留地址）
-     * @return usedIps
-     */
+    /** 子网中已经使用的IP数目（不包含系统预留地址）
+     * 
+     * @return usedIps */
     public Integer getUsedIps() {
         return usedIps;
     }
@@ -73,20 +56,14 @@ public class SubnetIpAvailability  {
         this.usedIps = usedIps;
     }
 
-    
-
     public SubnetIpAvailability withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网ID
-     * @return subnetId
-     */
+    /** 子网ID
+     * 
+     * @return subnetId */
     public String getSubnetId() {
         return subnetId;
     }
@@ -95,20 +72,14 @@ public class SubnetIpAvailability  {
         this.subnetId = subnetId;
     }
 
-    
-
     public SubnetIpAvailability withSubnetName(String subnetName) {
         this.subnetName = subnetName;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网名称
-     * @return subnetName
-     */
+    /** 子网名称
+     * 
+     * @return subnetName */
     public String getSubnetName() {
         return subnetName;
     }
@@ -117,20 +88,14 @@ public class SubnetIpAvailability  {
         this.subnetName = subnetName;
     }
 
-    
-
     public SubnetIpAvailability withIpVersion(Integer ipVersion) {
         this.ipVersion = ipVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网的IP版本，取值为4或者6
-     * @return ipVersion
-     */
+    /** 子网的IP版本，取值为4或者6
+     * 
+     * @return ipVersion */
     public Integer getIpVersion() {
         return ipVersion;
     }
@@ -139,20 +104,14 @@ public class SubnetIpAvailability  {
         this.ipVersion = ipVersion;
     }
 
-    
-
     public SubnetIpAvailability withCidr(String cidr) {
         this.cidr = cidr;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网的CIDR
-     * @return cidr
-     */
+    /** 子网的CIDR
+     * 
+     * @return cidr */
     public String getCidr() {
         return cidr;
     }
@@ -161,20 +120,14 @@ public class SubnetIpAvailability  {
         this.cidr = cidr;
     }
 
-    
-
     public SubnetIpAvailability withTotalIps(Integer totalIps) {
         this.totalIps = totalIps;
         return this;
     }
 
-    
-
-
-    /**
-     * 子网中IP总数（不包含系统预留地址）
-     * @return totalIps
-     */
+    /** 子网中IP总数（不包含系统预留地址）
+     * 
+     * @return totalIps */
     public Integer getTotalIps() {
         return totalIps;
     }
@@ -182,8 +135,6 @@ public class SubnetIpAvailability  {
     public void setTotalIps(Integer totalIps) {
         this.totalIps = totalIps;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,17 +145,19 @@ public class SubnetIpAvailability  {
             return false;
         }
         SubnetIpAvailability subnetIpAvailability = (SubnetIpAvailability) o;
-        return Objects.equals(this.usedIps, subnetIpAvailability.usedIps) &&
-            Objects.equals(this.subnetId, subnetIpAvailability.subnetId) &&
-            Objects.equals(this.subnetName, subnetIpAvailability.subnetName) &&
-            Objects.equals(this.ipVersion, subnetIpAvailability.ipVersion) &&
-            Objects.equals(this.cidr, subnetIpAvailability.cidr) &&
-            Objects.equals(this.totalIps, subnetIpAvailability.totalIps);
+        return Objects.equals(this.usedIps, subnetIpAvailability.usedIps)
+            && Objects.equals(this.subnetId, subnetIpAvailability.subnetId)
+            && Objects.equals(this.subnetName, subnetIpAvailability.subnetName)
+            && Objects.equals(this.ipVersion, subnetIpAvailability.ipVersion)
+            && Objects.equals(this.cidr, subnetIpAvailability.cidr)
+            && Objects.equals(this.totalIps, subnetIpAvailability.totalIps);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(usedIps, subnetId, subnetName, ipVersion, cidr, totalIps);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,16 +171,13 @@ public class SubnetIpAvailability  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

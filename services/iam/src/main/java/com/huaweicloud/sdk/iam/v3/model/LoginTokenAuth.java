@@ -1,27 +1,19 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.LoginTokenSecurityToken;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class LoginTokenAuth  {
-
-
+public class LoginTokenAuth {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="securitytoken")
-    
+    @JsonProperty(value = "securitytoken")
+
     private LoginTokenSecurityToken securitytoken;
 
     public LoginTokenAuth withSecuritytoken(LoginTokenSecurityToken securitytoken) {
@@ -30,19 +22,17 @@ public class LoginTokenAuth  {
     }
 
     public LoginTokenAuth withSecuritytoken(Consumer<LoginTokenSecurityToken> securitytokenSetter) {
-        if(this.securitytoken == null ){
+        if (this.securitytoken == null) {
             this.securitytoken = new LoginTokenSecurityToken();
             securitytokenSetter.accept(this.securitytoken);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get securitytoken
-     * @return securitytoken
-     */
+    /** Get securitytoken
+     * 
+     * @return securitytoken */
     public LoginTokenSecurityToken getSecuritytoken() {
         return securitytoken;
     }
@@ -50,8 +40,6 @@ public class LoginTokenAuth  {
     public void setSecuritytoken(LoginTokenSecurityToken securitytoken) {
         this.securitytoken = securitytoken;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +52,12 @@ public class LoginTokenAuth  {
         LoginTokenAuth loginTokenAuth = (LoginTokenAuth) o;
         return Objects.equals(this.securitytoken, loginTokenAuth.securitytoken);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(securitytoken);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +66,13 @@ public class LoginTokenAuth  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

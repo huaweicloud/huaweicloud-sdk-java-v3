@@ -1,63 +1,46 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.servicestage.v2.model.FlavorId;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * FlavorView
- */
-public class FlavorView  {
-
-
+/** FlavorView */
+public class FlavorView {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flavor_id")
-    
+    @JsonProperty(value = "flavor_id")
+
     private FlavorId flavorId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="storage_size")
-    
+    @JsonProperty(value = "storage_size")
+
     private String storageSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="num_cpu")
-    
+    @JsonProperty(value = "num_cpu")
+
     private String numCpu;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="num_cpu_init")
-    
+    @JsonProperty(value = "num_cpu_init")
+
     private String numCpuInit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="memory_size")
-    
+    @JsonProperty(value = "memory_size")
+
     private String memorySize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="memory_size_init")
-    
+    @JsonProperty(value = "memory_size_init")
+
     private String memorySizeInit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="label")
-    
+    @JsonProperty(value = "label")
+
     private String label;
 
     public FlavorView withFlavorId(FlavorId flavorId) {
@@ -65,13 +48,9 @@ public class FlavorView  {
         return this;
     }
 
-    
-
-
-    /**
-     * Get flavorId
-     * @return flavorId
-     */
+    /** Get flavorId
+     * 
+     * @return flavorId */
     public FlavorId getFlavorId() {
         return flavorId;
     }
@@ -80,20 +59,14 @@ public class FlavorView  {
         this.flavorId = flavorId;
     }
 
-    
-
     public FlavorView withStorageSize(String storageSize) {
         this.storageSize = storageSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 存储大小。
-     * @return storageSize
-     */
+    /** 存储大小。
+     * 
+     * @return storageSize */
     public String getStorageSize() {
         return storageSize;
     }
@@ -102,20 +75,14 @@ public class FlavorView  {
         this.storageSize = storageSize;
     }
 
-    
-
     public FlavorView withNumCpu(String numCpu) {
         this.numCpu = numCpu;
         return this;
     }
 
-    
-
-
-    /**
-     * CPU限制。
-     * @return numCpu
-     */
+    /** CPU限制。
+     * 
+     * @return numCpu */
     public String getNumCpu() {
         return numCpu;
     }
@@ -124,20 +91,14 @@ public class FlavorView  {
         this.numCpu = numCpu;
     }
 
-    
-
     public FlavorView withNumCpuInit(String numCpuInit) {
         this.numCpuInit = numCpuInit;
         return this;
     }
 
-    
-
-
-    /**
-     * CPU初始。
-     * @return numCpuInit
-     */
+    /** CPU初始。
+     * 
+     * @return numCpuInit */
     public String getNumCpuInit() {
         return numCpuInit;
     }
@@ -146,20 +107,14 @@ public class FlavorView  {
         this.numCpuInit = numCpuInit;
     }
 
-    
-
     public FlavorView withMemorySize(String memorySize) {
         this.memorySize = memorySize;
         return this;
     }
 
-    
-
-
-    /**
-     * 内存限制。
-     * @return memorySize
-     */
+    /** 内存限制。
+     * 
+     * @return memorySize */
     public String getMemorySize() {
         return memorySize;
     }
@@ -168,20 +123,14 @@ public class FlavorView  {
         this.memorySize = memorySize;
     }
 
-    
-
     public FlavorView withMemorySizeInit(String memorySizeInit) {
         this.memorySizeInit = memorySizeInit;
         return this;
     }
 
-    
-
-
-    /**
-     * 内存初始。
-     * @return memorySizeInit
-     */
+    /** 内存初始。
+     * 
+     * @return memorySizeInit */
     public String getMemorySizeInit() {
         return memorySizeInit;
     }
@@ -190,20 +139,14 @@ public class FlavorView  {
         this.memorySizeInit = memorySizeInit;
     }
 
-    
-
     public FlavorView withLabel(String label) {
         this.label = label;
         return this;
     }
 
-    
-
-
-    /**
-     * 展示标签。
-     * @return label
-     */
+    /** 展示标签。
+     * 
+     * @return label */
     public String getLabel() {
         return label;
     }
@@ -211,8 +154,6 @@ public class FlavorView  {
     public void setLabel(String label) {
         this.label = label;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -223,18 +164,19 @@ public class FlavorView  {
             return false;
         }
         FlavorView flavorView = (FlavorView) o;
-        return Objects.equals(this.flavorId, flavorView.flavorId) &&
-            Objects.equals(this.storageSize, flavorView.storageSize) &&
-            Objects.equals(this.numCpu, flavorView.numCpu) &&
-            Objects.equals(this.numCpuInit, flavorView.numCpuInit) &&
-            Objects.equals(this.memorySize, flavorView.memorySize) &&
-            Objects.equals(this.memorySizeInit, flavorView.memorySizeInit) &&
-            Objects.equals(this.label, flavorView.label);
+        return Objects.equals(this.flavorId, flavorView.flavorId)
+            && Objects.equals(this.storageSize, flavorView.storageSize)
+            && Objects.equals(this.numCpu, flavorView.numCpu) && Objects.equals(this.numCpuInit, flavorView.numCpuInit)
+            && Objects.equals(this.memorySize, flavorView.memorySize)
+            && Objects.equals(this.memorySizeInit, flavorView.memorySizeInit)
+            && Objects.equals(this.label, flavorView.label);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(flavorId, storageSize, numCpu, numCpuInit, memorySize, memorySizeInit, label);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -249,16 +191,13 @@ public class FlavorView  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

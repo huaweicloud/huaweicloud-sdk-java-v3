@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.swr.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * RetentionLog
- */
-public class RetentionLog  {
-
-
+/** RetentionLog */
+public class RetentionLog {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Integer id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
+
     private String namespace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repo")
-    
+    @JsonProperty(value = "repo")
+
     private String repo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="retention_id")
-    
+    @JsonProperty(value = "retention_id")
+
     private Integer retentionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rule_type")
-    
+    @JsonProperty(value = "rule_type")
+
     private String ruleType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag")
-    
+    @JsonProperty(value = "tag")
+
     private String tag;
 
     public RetentionLog withCreatedAt(String createdAt) {
@@ -64,13 +48,9 @@ public class RetentionLog  {
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return createdAt
-     */
+    /** 创建时间
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -79,20 +59,14 @@ public class RetentionLog  {
         this.createdAt = createdAt;
     }
 
-    
-
     public RetentionLog withId(Integer id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * ID
-     * @return id
-     */
+    /** ID
+     * 
+     * @return id */
     public Integer getId() {
         return id;
     }
@@ -101,20 +75,14 @@ public class RetentionLog  {
         this.id = id;
     }
 
-    
-
     public RetentionLog withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
     }
 
-    
-
-
-    /**
-     * 组织名
-     * @return namespace
-     */
+    /** 组织名
+     * 
+     * @return namespace */
     public String getNamespace() {
         return namespace;
     }
@@ -123,20 +91,14 @@ public class RetentionLog  {
         this.namespace = namespace;
     }
 
-    
-
     public RetentionLog withRepo(String repo) {
         this.repo = repo;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像仓库名
-     * @return repo
-     */
+    /** 镜像仓库名
+     * 
+     * @return repo */
     public String getRepo() {
         return repo;
     }
@@ -145,20 +107,14 @@ public class RetentionLog  {
         this.repo = repo;
     }
 
-    
-
     public RetentionLog withRetentionId(Integer retentionId) {
         this.retentionId = retentionId;
         return this;
     }
 
-    
-
-
-    /**
-     * 老化规则ID
-     * @return retentionId
-     */
+    /** 老化规则ID
+     * 
+     * @return retentionId */
     public Integer getRetentionId() {
         return retentionId;
     }
@@ -167,20 +123,14 @@ public class RetentionLog  {
         this.retentionId = retentionId;
     }
 
-    
-
     public RetentionLog withRuleType(String ruleType) {
         this.ruleType = ruleType;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则
-     * @return ruleType
-     */
+    /** 规则
+     * 
+     * @return ruleType */
     public String getRuleType() {
         return ruleType;
     }
@@ -189,20 +139,14 @@ public class RetentionLog  {
         this.ruleType = ruleType;
     }
 
-    
-
     public RetentionLog withTag(String tag) {
         this.tag = tag;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像版本
-     * @return tag
-     */
+    /** 镜像版本
+     * 
+     * @return tag */
     public String getTag() {
         return tag;
     }
@@ -210,8 +154,6 @@ public class RetentionLog  {
     public void setTag(String tag) {
         this.tag = tag;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -222,18 +164,17 @@ public class RetentionLog  {
             return false;
         }
         RetentionLog retentionLog = (RetentionLog) o;
-        return Objects.equals(this.createdAt, retentionLog.createdAt) &&
-            Objects.equals(this.id, retentionLog.id) &&
-            Objects.equals(this.namespace, retentionLog.namespace) &&
-            Objects.equals(this.repo, retentionLog.repo) &&
-            Objects.equals(this.retentionId, retentionLog.retentionId) &&
-            Objects.equals(this.ruleType, retentionLog.ruleType) &&
-            Objects.equals(this.tag, retentionLog.tag);
+        return Objects.equals(this.createdAt, retentionLog.createdAt) && Objects.equals(this.id, retentionLog.id)
+            && Objects.equals(this.namespace, retentionLog.namespace) && Objects.equals(this.repo, retentionLog.repo)
+            && Objects.equals(this.retentionId, retentionLog.retentionId)
+            && Objects.equals(this.ruleType, retentionLog.ruleType) && Objects.equals(this.tag, retentionLog.tag);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(createdAt, id, namespace, repo, retentionId, ruleType, tag);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,16 +189,13 @@ public class RetentionLog  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,86 +1,66 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 快照详情。
- */
-public class SnapshotDetails  {
-
-
+/** 快照详情。 */
+public class SnapshotDetails {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private String updatedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata")
-    
+    @JsonProperty(value = "metadata")
+
     private Object metadata;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_id")
-    
+    @JsonProperty(value = "volume_id")
+
     private String volumeId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os-extended-snapshot-attributes:project_id")
-    
+    @JsonProperty(value = "os-extended-snapshot-attributes:project_id")
+
     private String osExtendedSnapshotAttributesProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os-extended-snapshot-attributes:progress")
-    
+    @JsonProperty(value = "os-extended-snapshot-attributes:progress")
+
     private String osExtendedSnapshotAttributesProgress;
 
     public SnapshotDetails withId(String id) {
@@ -88,13 +68,9 @@ public class SnapshotDetails  {
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘快照ID。
-     * @return id
-     */
+    /** 云硬盘快照ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -103,20 +79,14 @@ public class SnapshotDetails  {
         this.id = id;
     }
 
-    
-
     public SnapshotDetails withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘快照状态。
-     * @return status
-     */
+    /** 云硬盘快照状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -125,20 +95,14 @@ public class SnapshotDetails  {
         this.status = status;
     }
 
-    
-
     public SnapshotDetails withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘快照名称。
-     * @return name
-     */
+    /** 云硬盘快照名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -147,20 +111,14 @@ public class SnapshotDetails  {
         this.name = name;
     }
 
-    
-
     public SnapshotDetails withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘快照描述信息。
-     * @return description
-     */
+    /** 云硬盘快照描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -169,20 +127,14 @@ public class SnapshotDetails  {
         this.description = description;
     }
 
-    
-
     public SnapshotDetails withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘快照创建时间。 时间格式：UTC YYYY-MM-DDTHH:MM:SS.XXXXXX
-     * @return createdAt
-     */
+    /** 云硬盘快照创建时间。 时间格式：UTC YYYY-MM-DDTHH:MM:SS.XXXXXX
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -191,20 +143,14 @@ public class SnapshotDetails  {
         this.createdAt = createdAt;
     }
 
-    
-
     public SnapshotDetails withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 快照更新时间。 时间格式：UTC YYYY-MM-DDTHH:MM:SS.XXXXXX
-     * @return updatedAt
-     */
+    /** 快照更新时间。 时间格式：UTC YYYY-MM-DDTHH:MM:SS.XXXXXX
+     * 
+     * @return updatedAt */
     public String getUpdatedAt() {
         return updatedAt;
     }
@@ -213,20 +159,14 @@ public class SnapshotDetails  {
         this.updatedAt = updatedAt;
     }
 
-    
-
     public SnapshotDetails withMetadata(Object metadata) {
         this.metadata = metadata;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘快照的元数据信息。
-     * @return metadata
-     */
+    /** 云硬盘快照的元数据信息。
+     * 
+     * @return metadata */
     public Object getMetadata() {
         return metadata;
     }
@@ -235,20 +175,14 @@ public class SnapshotDetails  {
         this.metadata = metadata;
     }
 
-    
-
     public SnapshotDetails withVolumeId(String volumeId) {
         this.volumeId = volumeId;
         return this;
     }
 
-    
-
-
-    /**
-     * 快照所属的云硬盘ID。
-     * @return volumeId
-     */
+    /** 快照所属的云硬盘ID。
+     * 
+     * @return volumeId */
     public String getVolumeId() {
         return volumeId;
     }
@@ -257,20 +191,14 @@ public class SnapshotDetails  {
         this.volumeId = volumeId;
     }
 
-    
-
     public SnapshotDetails withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 云硬盘快照大小，单位为GB。
-     * @return size
-     */
+    /** 云硬盘快照大小，单位为GB。
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -279,20 +207,14 @@ public class SnapshotDetails  {
         this.size = size;
     }
 
-    
-
     public SnapshotDetails withOsExtendedSnapshotAttributesProjectId(String osExtendedSnapshotAttributesProjectId) {
         this.osExtendedSnapshotAttributesProjectId = osExtendedSnapshotAttributesProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 预留属性。
-     * @return osExtendedSnapshotAttributesProjectId
-     */
+    /** 预留属性。
+     * 
+     * @return osExtendedSnapshotAttributesProjectId */
     public String getOsExtendedSnapshotAttributesProjectId() {
         return osExtendedSnapshotAttributesProjectId;
     }
@@ -301,20 +223,14 @@ public class SnapshotDetails  {
         this.osExtendedSnapshotAttributesProjectId = osExtendedSnapshotAttributesProjectId;
     }
 
-    
-
     public SnapshotDetails withOsExtendedSnapshotAttributesProgress(String osExtendedSnapshotAttributesProgress) {
         this.osExtendedSnapshotAttributesProgress = osExtendedSnapshotAttributesProgress;
         return this;
     }
 
-    
-
-
-    /**
-     * 预留属性。
-     * @return osExtendedSnapshotAttributesProgress
-     */
+    /** 预留属性。
+     * 
+     * @return osExtendedSnapshotAttributesProgress */
     public String getOsExtendedSnapshotAttributesProgress() {
         return osExtendedSnapshotAttributesProgress;
     }
@@ -322,8 +238,6 @@ public class SnapshotDetails  {
     public void setOsExtendedSnapshotAttributesProgress(String osExtendedSnapshotAttributesProgress) {
         this.osExtendedSnapshotAttributesProgress = osExtendedSnapshotAttributesProgress;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -334,22 +248,35 @@ public class SnapshotDetails  {
             return false;
         }
         SnapshotDetails snapshotDetails = (SnapshotDetails) o;
-        return Objects.equals(this.id, snapshotDetails.id) &&
-            Objects.equals(this.status, snapshotDetails.status) &&
-            Objects.equals(this.name, snapshotDetails.name) &&
-            Objects.equals(this.description, snapshotDetails.description) &&
-            Objects.equals(this.createdAt, snapshotDetails.createdAt) &&
-            Objects.equals(this.updatedAt, snapshotDetails.updatedAt) &&
-            Objects.equals(this.metadata, snapshotDetails.metadata) &&
-            Objects.equals(this.volumeId, snapshotDetails.volumeId) &&
-            Objects.equals(this.size, snapshotDetails.size) &&
-            Objects.equals(this.osExtendedSnapshotAttributesProjectId, snapshotDetails.osExtendedSnapshotAttributesProjectId) &&
-            Objects.equals(this.osExtendedSnapshotAttributesProgress, snapshotDetails.osExtendedSnapshotAttributesProgress);
+        return Objects.equals(this.id, snapshotDetails.id) && Objects.equals(this.status, snapshotDetails.status)
+            && Objects.equals(this.name, snapshotDetails.name)
+            && Objects.equals(this.description, snapshotDetails.description)
+            && Objects.equals(this.createdAt, snapshotDetails.createdAt)
+            && Objects.equals(this.updatedAt, snapshotDetails.updatedAt)
+            && Objects.equals(this.metadata, snapshotDetails.metadata)
+            && Objects.equals(this.volumeId, snapshotDetails.volumeId)
+            && Objects.equals(this.size, snapshotDetails.size)
+            && Objects.equals(this.osExtendedSnapshotAttributesProjectId,
+                snapshotDetails.osExtendedSnapshotAttributesProjectId)
+            && Objects.equals(this.osExtendedSnapshotAttributesProgress,
+                snapshotDetails.osExtendedSnapshotAttributesProgress);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, status, name, description, createdAt, updatedAt, metadata, volumeId, size, osExtendedSnapshotAttributesProjectId, osExtendedSnapshotAttributesProgress);
+        return Objects.hash(id,
+            status,
+            name,
+            description,
+            createdAt,
+            updatedAt,
+            metadata,
+            volumeId,
+            size,
+            osExtendedSnapshotAttributesProjectId,
+            osExtendedSnapshotAttributesProgress);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -363,21 +290,22 @@ public class SnapshotDetails  {
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    volumeId: ").append(toIndentedString(volumeId)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
-        sb.append("    osExtendedSnapshotAttributesProjectId: ").append(toIndentedString(osExtendedSnapshotAttributesProjectId)).append("\n");
-        sb.append("    osExtendedSnapshotAttributesProgress: ").append(toIndentedString(osExtendedSnapshotAttributesProgress)).append("\n");
+        sb.append("    osExtendedSnapshotAttributesProjectId: ")
+            .append(toIndentedString(osExtendedSnapshotAttributesProjectId))
+            .append("\n");
+        sb.append("    osExtendedSnapshotAttributesProgress: ")
+            .append(toIndentedString(osExtendedSnapshotAttributesProgress))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

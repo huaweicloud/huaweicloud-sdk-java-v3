@@ -1,58 +1,46 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 修改的topic。
- */
-public class UpdateInstanceTopicReqTopics  {
-
-
+/** 修改的topic。 */
+public class UpdateInstanceTopicReqTopics {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="retention_time")
-    
+    @JsonProperty(value = "retention_time")
+
     private Integer retentionTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sync_replication")
-    
+    @JsonProperty(value = "sync_replication")
+
     private Boolean syncReplication;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sync_message_flush")
+
+    private Boolean syncMessageFlush;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sync_message_flush")
-    
-    private Boolean syncMessageFlush;
+    @JsonProperty(value = "new_partition_numbers")
+
+    private Integer newPartitionNumbers;
 
     public UpdateInstanceTopicReqTopics withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * topic名称
-     * @return id
-     */
+    /** topic名称
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -61,20 +49,14 @@ public class UpdateInstanceTopicReqTopics  {
         this.id = id;
     }
 
-    
-
     public UpdateInstanceTopicReqTopics withRetentionTime(Integer retentionTime) {
         this.retentionTime = retentionTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 老化时间，单位小时。
-     * @return retentionTime
-     */
+    /** 老化时间，单位小时。
+     * 
+     * @return retentionTime */
     public Integer getRetentionTime() {
         return retentionTime;
     }
@@ -83,20 +65,14 @@ public class UpdateInstanceTopicReqTopics  {
         this.retentionTime = retentionTime;
     }
 
-    
-
     public UpdateInstanceTopicReqTopics withSyncReplication(Boolean syncReplication) {
         this.syncReplication = syncReplication;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否同步复制。
-     * @return syncReplication
-     */
+    /** 是否同步复制。
+     * 
+     * @return syncReplication */
     public Boolean getSyncReplication() {
         return syncReplication;
     }
@@ -105,20 +81,14 @@ public class UpdateInstanceTopicReqTopics  {
         this.syncReplication = syncReplication;
     }
 
-    
-
     public UpdateInstanceTopicReqTopics withSyncMessageFlush(Boolean syncMessageFlush) {
         this.syncMessageFlush = syncMessageFlush;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否同步落盘。
-     * @return syncMessageFlush
-     */
+    /** 是否同步落盘。
+     * 
+     * @return syncMessageFlush */
     public Boolean getSyncMessageFlush() {
         return syncMessageFlush;
     }
@@ -127,7 +97,21 @@ public class UpdateInstanceTopicReqTopics  {
         this.syncMessageFlush = syncMessageFlush;
     }
 
-    
+    public UpdateInstanceTopicReqTopics withNewPartitionNumbers(Integer newPartitionNumbers) {
+        this.newPartitionNumbers = newPartitionNumbers;
+        return this;
+    }
+
+    /** 分区数。
+     * 
+     * @return newPartitionNumbers */
+    public Integer getNewPartitionNumbers() {
+        return newPartitionNumbers;
+    }
+
+    public void setNewPartitionNumbers(Integer newPartitionNumbers) {
+        this.newPartitionNumbers = newPartitionNumbers;
+    }
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +122,18 @@ public class UpdateInstanceTopicReqTopics  {
             return false;
         }
         UpdateInstanceTopicReqTopics updateInstanceTopicReqTopics = (UpdateInstanceTopicReqTopics) o;
-        return Objects.equals(this.id, updateInstanceTopicReqTopics.id) &&
-            Objects.equals(this.retentionTime, updateInstanceTopicReqTopics.retentionTime) &&
-            Objects.equals(this.syncReplication, updateInstanceTopicReqTopics.syncReplication) &&
-            Objects.equals(this.syncMessageFlush, updateInstanceTopicReqTopics.syncMessageFlush);
+        return Objects.equals(this.id, updateInstanceTopicReqTopics.id)
+            && Objects.equals(this.retentionTime, updateInstanceTopicReqTopics.retentionTime)
+            && Objects.equals(this.syncReplication, updateInstanceTopicReqTopics.syncReplication)
+            && Objects.equals(this.syncMessageFlush, updateInstanceTopicReqTopics.syncMessageFlush)
+            && Objects.equals(this.newPartitionNumbers, updateInstanceTopicReqTopics.newPartitionNumbers);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, retentionTime, syncReplication, syncMessageFlush);
+        return Objects.hash(id, retentionTime, syncReplication, syncMessageFlush, newPartitionNumbers);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -155,19 +142,17 @@ public class UpdateInstanceTopicReqTopics  {
         sb.append("    retentionTime: ").append(toIndentedString(retentionTime)).append("\n");
         sb.append("    syncReplication: ").append(toIndentedString(syncReplication)).append("\n");
         sb.append("    syncMessageFlush: ").append(toIndentedString(syncMessageFlush)).append("\n");
+        sb.append("    newPartitionNumbers: ").append(toIndentedString(newPartitionNumbers)).append("\n");
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

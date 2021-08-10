@@ -1,46 +1,32 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class InvokeFunctionResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="request_id")
-    
+    @JsonProperty(value = "request_id")
+
     private String requestId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="result")
-    
+    @JsonProperty(value = "result")
+
     private String result;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="log")
-    
+    @JsonProperty(value = "log")
+
     private String log;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
     public InvokeFunctionResponse withRequestId(String requestId) {
@@ -48,13 +34,9 @@ public class InvokeFunctionResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 请求ID。
-     * @return requestId
-     */
+    /** 请求ID。
+     * 
+     * @return requestId */
     public String getRequestId() {
         return requestId;
     }
@@ -63,20 +45,14 @@ public class InvokeFunctionResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    
-
     public InvokeFunctionResponse withResult(String result) {
         this.result = result;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数执行结果
-     * @return result
-     */
+    /** 函数执行结果
+     * 
+     * @return result */
     public String getResult() {
         return result;
     }
@@ -85,20 +61,14 @@ public class InvokeFunctionResponse extends SdkResponse {
         this.result = result;
     }
 
-    
-
     public InvokeFunctionResponse withLog(String log) {
         this.log = log;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数执行返回日志
-     * @return log
-     */
+    /** 函数执行返回日志
+     * 
+     * @return log */
     public String getLog() {
         return log;
     }
@@ -107,20 +77,14 @@ public class InvokeFunctionResponse extends SdkResponse {
         this.log = log;
     }
 
-    
-
     public InvokeFunctionResponse withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数执行返回状态
-     * @return status
-     */
+    /** 函数执行返回状态
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -128,8 +92,6 @@ public class InvokeFunctionResponse extends SdkResponse {
     public void setStatus(Integer status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -140,15 +102,17 @@ public class InvokeFunctionResponse extends SdkResponse {
             return false;
         }
         InvokeFunctionResponse invokeFunctionResponse = (InvokeFunctionResponse) o;
-        return Objects.equals(this.requestId, invokeFunctionResponse.requestId) &&
-            Objects.equals(this.result, invokeFunctionResponse.result) &&
-            Objects.equals(this.log, invokeFunctionResponse.log) &&
-            Objects.equals(this.status, invokeFunctionResponse.status);
+        return Objects.equals(this.requestId, invokeFunctionResponse.requestId)
+            && Objects.equals(this.result, invokeFunctionResponse.result)
+            && Objects.equals(this.log, invokeFunctionResponse.log)
+            && Objects.equals(this.status, invokeFunctionResponse.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(requestId, result, log, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -160,16 +124,13 @@ public class InvokeFunctionResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

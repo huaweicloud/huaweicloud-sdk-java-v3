@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Source
- */
-public class Source  {
-
-
+/** Source */
+public class Source {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_id")
-    
+    @JsonProperty(value = "backup_id")
+
     private String backupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="restore_time")
-    
+    @JsonProperty(value = "restore_time")
+
     private String restoreTime;
 
     public Source withInstanceId(String instanceId) {
@@ -46,13 +33,9 @@ public class Source  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
-     * @return instanceId
-     */
+    /** 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -61,20 +44,15 @@ public class Source  {
         this.instanceId = instanceId;
     }
 
-    
-
     public Source withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 表示恢复方式，枚举值： - “backup”，表示使用备份文件恢复，按照此方式恢复时，“type”字段为非必选，“backup_id”必选。 - “timestamp”，表示按时间点恢复，按照此方式恢复时，“type”字段必选，“restore_time”必选。
-     * @return type
-     */
+    /** 表示恢复方式，枚举值： - “backup”，表示使用备份文件恢复，按照此方式恢复时，“type”字段为非必选，“backup_id”必选。 -
+     * “timestamp”，表示按时间点恢复，按照此方式恢复时，“type”字段必选，“restore_time”必选。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -83,20 +61,14 @@ public class Source  {
         this.type = type;
     }
 
-    
-
     public Source withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用于恢复的备份ID。当使用备份文件恢复时需要指定该参数。
-     * @return backupId
-     */
+    /** 用于恢复的备份ID。当使用备份文件恢复时需要指定该参数。
+     * 
+     * @return backupId */
     public String getBackupId() {
         return backupId;
     }
@@ -105,20 +77,14 @@ public class Source  {
         this.backupId = backupId;
     }
 
-    
-
     public Source withRestoreTime(String restoreTime) {
         this.restoreTime = restoreTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 恢复数据的时间点，格式为UNIX时间戳，单位是毫秒，时区为UTC。
-     * @return restoreTime
-     */
+    /** 恢复数据的时间点，格式为UNIX时间戳，单位是毫秒，时区为UTC。
+     * 
+     * @return restoreTime */
     public String getRestoreTime() {
         return restoreTime;
     }
@@ -126,8 +92,6 @@ public class Source  {
     public void setRestoreTime(String restoreTime) {
         this.restoreTime = restoreTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +102,15 @@ public class Source  {
             return false;
         }
         Source source = (Source) o;
-        return Objects.equals(this.instanceId, source.instanceId) &&
-            Objects.equals(this.type, source.type) &&
-            Objects.equals(this.backupId, source.backupId) &&
-            Objects.equals(this.restoreTime, source.restoreTime);
+        return Objects.equals(this.instanceId, source.instanceId) && Objects.equals(this.type, source.type)
+            && Objects.equals(this.backupId, source.backupId) && Objects.equals(this.restoreTime, source.restoreTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, type, backupId, restoreTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +122,13 @@ public class Source  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

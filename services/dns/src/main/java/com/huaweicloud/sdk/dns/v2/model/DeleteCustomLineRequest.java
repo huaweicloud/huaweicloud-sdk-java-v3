@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteCustomLineRequest  {
-
-
+/** Request Object */
+public class DeleteCustomLineRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="line_id")
-    
+    @JsonProperty(value = "line_id")
+
     private String lineId;
 
     public DeleteCustomLineRequest withLineId(String lineId) {
@@ -28,13 +18,9 @@ public class DeleteCustomLineRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 解析线路ID。
-     * @return lineId
-     */
+    /** 解析线路ID。
+     * 
+     * @return lineId */
     public String getLineId() {
         return lineId;
     }
@@ -42,8 +28,6 @@ public class DeleteCustomLineRequest  {
     public void setLineId(String lineId) {
         this.lineId = lineId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class DeleteCustomLineRequest  {
         DeleteCustomLineRequest deleteCustomLineRequest = (DeleteCustomLineRequest) o;
         return Objects.equals(this.lineId, deleteCustomLineRequest.lineId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(lineId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class DeleteCustomLineRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

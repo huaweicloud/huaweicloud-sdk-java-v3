@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Redis 3.0 proxy集群中proxy节点监控对象结构
- */
-public class ProxyNodeMonitoredObject  {
-
-
+/** Redis 3.0 proxy集群中proxy节点监控对象结构 */
+public class ProxyNodeMonitoredObject {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dcs_instance_id")
-    
+    @JsonProperty(value = "dcs_instance_id")
+
     private String dcsInstanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dcs_cluster_proxy_node")
-    
+    @JsonProperty(value = "dcs_cluster_proxy_node")
+
     private String dcsClusterProxyNode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
     public ProxyNodeMonitoredObject withDcsInstanceId(String dcsInstanceId) {
@@ -46,13 +33,9 @@ public class ProxyNodeMonitoredObject  {
         return this;
     }
 
-    
-
-
-    /**
-     * 测量对象ID，即节点的ID。
-     * @return dcsInstanceId
-     */
+    /** 测量对象ID，即节点的ID。
+     * 
+     * @return dcsInstanceId */
     public String getDcsInstanceId() {
         return dcsInstanceId;
     }
@@ -61,20 +44,14 @@ public class ProxyNodeMonitoredObject  {
         this.dcsInstanceId = dcsInstanceId;
     }
 
-    
-
     public ProxyNodeMonitoredObject withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 测量对象名称，即节点IP。
-     * @return name
-     */
+    /** 测量对象名称，即节点IP。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -83,20 +60,14 @@ public class ProxyNodeMonitoredObject  {
         this.name = name;
     }
 
-    
-
     public ProxyNodeMonitoredObject withDcsClusterProxyNode(String dcsClusterProxyNode) {
         this.dcsClusterProxyNode = dcsClusterProxyNode;
         return this;
     }
 
-    
-
-
-    /**
-     * 维度dcs_cluster_proxy_node 的测量对象的ID。
-     * @return dcsClusterProxyNode
-     */
+    /** 维度dcs_cluster_proxy_node 的测量对象的ID。
+     * 
+     * @return dcsClusterProxyNode */
     public String getDcsClusterProxyNode() {
         return dcsClusterProxyNode;
     }
@@ -105,20 +76,14 @@ public class ProxyNodeMonitoredObject  {
         this.dcsClusterProxyNode = dcsClusterProxyNode;
     }
 
-    
-
     public ProxyNodeMonitoredObject withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 测量对象状态，即节点状态。
-     * @return status
-     */
+    /** 测量对象状态，即节点状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -126,8 +91,6 @@ public class ProxyNodeMonitoredObject  {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class ProxyNodeMonitoredObject  {
             return false;
         }
         ProxyNodeMonitoredObject proxyNodeMonitoredObject = (ProxyNodeMonitoredObject) o;
-        return Objects.equals(this.dcsInstanceId, proxyNodeMonitoredObject.dcsInstanceId) &&
-            Objects.equals(this.name, proxyNodeMonitoredObject.name) &&
-            Objects.equals(this.dcsClusterProxyNode, proxyNodeMonitoredObject.dcsClusterProxyNode) &&
-            Objects.equals(this.status, proxyNodeMonitoredObject.status);
+        return Objects.equals(this.dcsInstanceId, proxyNodeMonitoredObject.dcsInstanceId)
+            && Objects.equals(this.name, proxyNodeMonitoredObject.name)
+            && Objects.equals(this.dcsClusterProxyNode, proxyNodeMonitoredObject.dcsClusterProxyNode)
+            && Objects.equals(this.status, proxyNodeMonitoredObject.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(dcsInstanceId, name, dcsClusterProxyNode, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class ProxyNodeMonitoredObject  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

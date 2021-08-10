@@ -1,185 +1,114 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.time.OffsetDateTime;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateFeatureV2Response extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
-    /**
-     * 特性名称
-     */
+
+    /** 特性名称 */
     public static final class NameEnum {
 
-        
-        /**
-         * Enum LTS for value: "lts"
-         */
+        /** Enum LTS for value: "lts" */
         public static final NameEnum LTS = new NameEnum("lts");
-        
-        /**
-         * Enum GATEWAY_RESPONSES for value: "gateway_responses"
-         */
+
+        /** Enum GATEWAY_RESPONSES for value: "gateway_responses" */
         public static final NameEnum GATEWAY_RESPONSES = new NameEnum("gateway_responses");
-        
-        /**
-         * Enum RATELIMIT for value: "ratelimit"
-         */
+
+        /** Enum RATELIMIT for value: "ratelimit" */
         public static final NameEnum RATELIMIT = new NameEnum("ratelimit");
-        
-        /**
-         * Enum REQUEST_BODY_SIZE for value: "request_body_size"
-         */
+
+        /** Enum REQUEST_BODY_SIZE for value: "request_body_size" */
         public static final NameEnum REQUEST_BODY_SIZE = new NameEnum("request_body_size");
-        
-        /**
-         * Enum BACKEND_TIMEOUT for value: "backend_timeout"
-         */
+
+        /** Enum BACKEND_TIMEOUT for value: "backend_timeout" */
         public static final NameEnum BACKEND_TIMEOUT = new NameEnum("backend_timeout");
-        
-        /**
-         * Enum APP_TOKEN for value: "app_token"
-         */
+
+        /** Enum APP_TOKEN for value: "app_token" */
         public static final NameEnum APP_TOKEN = new NameEnum("app_token");
-        
-        /**
-         * Enum APP_API_KEY for value: "app_api_key"
-         */
+
+        /** Enum APP_API_KEY for value: "app_api_key" */
         public static final NameEnum APP_API_KEY = new NameEnum("app_api_key");
-        
-        /**
-         * Enum APP_BASIC for value: "app_basic"
-         */
+
+        /** Enum APP_BASIC for value: "app_basic" */
         public static final NameEnum APP_BASIC = new NameEnum("app_basic");
-        
-        /**
-         * Enum APP_SECRET for value: "app_secret"
-         */
+
+        /** Enum APP_SECRET for value: "app_secret" */
         public static final NameEnum APP_SECRET = new NameEnum("app_secret");
-        
-        /**
-         * Enum APP_JWT for value: "app_jwt"
-         */
+
+        /** Enum APP_JWT for value: "app_jwt" */
         public static final NameEnum APP_JWT = new NameEnum("app_jwt");
-        
-        /**
-         * Enum PUBLIC_KEY for value: "public_key"
-         */
+
+        /** Enum PUBLIC_KEY for value: "public_key" */
         public static final NameEnum PUBLIC_KEY = new NameEnum("public_key");
-        
-        /**
-         * Enum BACKEND_TOKEN_ALLOW for value: "backend_token_allow"
-         */
+
+        /** Enum BACKEND_TOKEN_ALLOW for value: "backend_token_allow" */
         public static final NameEnum BACKEND_TOKEN_ALLOW = new NameEnum("backend_token_allow");
-        
-        /**
-         * Enum SIGN_BASIC for value: "sign_basic"
-         */
+
+        /** Enum SIGN_BASIC for value: "sign_basic" */
         public static final NameEnum SIGN_BASIC = new NameEnum("sign_basic");
-        
-        /**
-         * Enum MULTI_AUTH for value: "multi_auth"
-         */
+
+        /** Enum MULTI_AUTH for value: "multi_auth" */
         public static final NameEnum MULTI_AUTH = new NameEnum("multi_auth");
-        
-        /**
-         * Enum BACKEND_CLIENT_CERTIFICATE for value: "backend_client_certificate"
-         */
+
+        /** Enum BACKEND_CLIENT_CERTIFICATE for value: "backend_client_certificate" */
         public static final NameEnum BACKEND_CLIENT_CERTIFICATE = new NameEnum("backend_client_certificate");
-        
-        /**
-         * Enum SSL_CIPHERS for value: "ssl_ciphers"
-         */
+
+        /** Enum SSL_CIPHERS for value: "ssl_ciphers" */
         public static final NameEnum SSL_CIPHERS = new NameEnum("ssl_ciphers");
-        
-        /**
-         * Enum APP_CONFIG for value: "app_config"
-         */
+
+        /** Enum APP_CONFIG for value: "app_config" */
         public static final NameEnum APP_CONFIG = new NameEnum("app_config");
-        
-        /**
-         * Enum GREEN_TUNNEL for value: "green_tunnel"
-         */
+
+        /** Enum GREEN_TUNNEL for value: "green_tunnel" */
         public static final NameEnum GREEN_TUNNEL = new NameEnum("green_tunnel");
-        
-        /**
-         * Enum APP_ROUTE for value: "app_route"
-         */
+
+        /** Enum APP_ROUTE for value: "app_route" */
         public static final NameEnum APP_ROUTE = new NameEnum("app_route");
-        
-        /**
-         * Enum DEFAULT_GROUP_HIDE for value: "default_group_hide"
-         */
+
+        /** Enum DEFAULT_GROUP_HIDE for value: "default_group_hide" */
         public static final NameEnum DEFAULT_GROUP_HIDE = new NameEnum("default_group_hide");
-        
-        /**
-         * Enum CASCADE for value: "cascade"
-         */
+
+        /** Enum CASCADE for value: "cascade" */
         public static final NameEnum CASCADE = new NameEnum("cascade");
-        
-        /**
-         * Enum SANDBOX for value: "sandbox"
-         */
+
+        /** Enum SANDBOX for value: "sandbox" */
         public static final NameEnum SANDBOX = new NameEnum("sandbox");
-        
-        /**
-         * Enum LIVEDATA_CONFIG for value: "livedata_config"
-         */
+
+        /** Enum LIVEDATA_CONFIG for value: "livedata_config" */
         public static final NameEnum LIVEDATA_CONFIG = new NameEnum("livedata_config");
-        
-        /**
-         * Enum APICLIENT_FIRST_USE_X_HW_ID for value: "apiclient_first_use_x_hw_id"
-         */
+
+        /** Enum APICLIENT_FIRST_USE_X_HW_ID for value: "apiclient_first_use_x_hw_id" */
         public static final NameEnum APICLIENT_FIRST_USE_X_HW_ID = new NameEnum("apiclient_first_use_x_hw_id");
-        
-        /**
-         * Enum CORS for value: "cors"
-         */
+
+        /** Enum CORS for value: "cors" */
         public static final NameEnum CORS = new NameEnum("cors");
-        
-        /**
-         * Enum API_TASK for value: "api_task"
-         */
+
+        /** Enum API_TASK for value: "api_task" */
         public static final NameEnum API_TASK = new NameEnum("api_task");
-        
-        /**
-         * Enum APP_QUOTA for value: "app_quota"
-         */
+
+        /** Enum APP_QUOTA for value: "app_quota" */
         public static final NameEnum APP_QUOTA = new NameEnum("app_quota");
-        
-        /**
-         * Enum APP_ACL for value: "app_acl"
-         */
+
+        /** Enum APP_ACL for value: "app_acl" */
         public static final NameEnum APP_ACL = new NameEnum("app_acl");
-        
-        /**
-         * Enum VPC_BACKUP for value: "vpc_backup"
-         */
+
+        /** Enum VPC_BACKUP for value: "vpc_backup" */
         public static final NameEnum VPC_BACKUP = new NameEnum("vpc_backup");
-        
 
         private static final Map<String, NameEnum> STATIC_FIELDS = createStaticFields();
 
@@ -235,7 +164,7 @@ public class CreateFeatureV2Response extends SdkResponse {
 
         @JsonCreator
         public static NameEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             NameEnum result = STATIC_FIELDS.get(value);
@@ -246,7 +175,7 @@ public class CreateFeatureV2Response extends SdkResponse {
         }
 
         public static NameEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             NameEnum result = STATIC_FIELDS.get(value);
@@ -270,34 +199,29 @@ public class CreateFeatureV2Response extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private NameEnum name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable")
-    
+    @JsonProperty(value = "enable")
+
     private Boolean enable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="config")
-    
+    @JsonProperty(value = "config")
+
     private String config;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private OffsetDateTime updateTime;
 
     public CreateFeatureV2Response withId(String id) {
@@ -305,13 +229,9 @@ public class CreateFeatureV2Response extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 特性编号
-     * @return id
-     */
+    /** 特性编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -320,20 +240,14 @@ public class CreateFeatureV2Response extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public CreateFeatureV2Response withName(NameEnum name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 特性名称
-     * @return name
-     */
+    /** 特性名称
+     * 
+     * @return name */
     public NameEnum getName() {
         return name;
     }
@@ -342,20 +256,14 @@ public class CreateFeatureV2Response extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public CreateFeatureV2Response withEnable(Boolean enable) {
         this.enable = enable;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启特性
-     * @return enable
-     */
+    /** 是否开启特性
+     * 
+     * @return enable */
     public Boolean getEnable() {
         return enable;
     }
@@ -364,20 +272,14 @@ public class CreateFeatureV2Response extends SdkResponse {
         this.enable = enable;
     }
 
-    
-
     public CreateFeatureV2Response withConfig(String config) {
         this.config = config;
         return this;
     }
 
-    
-
-
-    /**
-     * 特性参数配置
-     * @return config
-     */
+    /** 特性参数配置
+     * 
+     * @return config */
     public String getConfig() {
         return config;
     }
@@ -386,20 +288,14 @@ public class CreateFeatureV2Response extends SdkResponse {
         this.config = config;
     }
 
-    
-
     public CreateFeatureV2Response withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例编号
-     * @return instanceId
-     */
+    /** 实例编号
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -408,20 +304,14 @@ public class CreateFeatureV2Response extends SdkResponse {
         this.instanceId = instanceId;
     }
 
-    
-
     public CreateFeatureV2Response withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例特性更新时间
-     * @return updateTime
-     */
+    /** 实例特性更新时间
+     * 
+     * @return updateTime */
     public OffsetDateTime getUpdateTime() {
         return updateTime;
     }
@@ -429,8 +319,6 @@ public class CreateFeatureV2Response extends SdkResponse {
     public void setUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -441,17 +329,19 @@ public class CreateFeatureV2Response extends SdkResponse {
             return false;
         }
         CreateFeatureV2Response createFeatureV2Response = (CreateFeatureV2Response) o;
-        return Objects.equals(this.id, createFeatureV2Response.id) &&
-            Objects.equals(this.name, createFeatureV2Response.name) &&
-            Objects.equals(this.enable, createFeatureV2Response.enable) &&
-            Objects.equals(this.config, createFeatureV2Response.config) &&
-            Objects.equals(this.instanceId, createFeatureV2Response.instanceId) &&
-            Objects.equals(this.updateTime, createFeatureV2Response.updateTime);
+        return Objects.equals(this.id, createFeatureV2Response.id)
+            && Objects.equals(this.name, createFeatureV2Response.name)
+            && Objects.equals(this.enable, createFeatureV2Response.enable)
+            && Objects.equals(this.config, createFeatureV2Response.config)
+            && Objects.equals(this.instanceId, createFeatureV2Response.instanceId)
+            && Objects.equals(this.updateTime, createFeatureV2Response.updateTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, enable, config, instanceId, updateTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -465,16 +355,13 @@ public class CreateFeatureV2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

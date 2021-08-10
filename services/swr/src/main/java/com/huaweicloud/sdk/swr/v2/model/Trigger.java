@@ -1,113 +1,89 @@
 package com.huaweicloud.sdk.swr.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.swr.v2.model.TriggerHistories;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Trigger
- */
-public class Trigger  {
-
-
+/** Trigger */
+public class Trigger {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private String action;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_type")
-    
+    @JsonProperty(value = "app_type")
+
     private String appType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="application")
-    
+    @JsonProperty(value = "application")
+
     private String application;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
+
     private String clusterId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_name")
-    
+    @JsonProperty(value = "cluster_name")
+
     private String clusterName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_ns")
-    
+    @JsonProperty(value = "cluster_ns")
+
     private String clusterNs;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="condition")
-    
+    @JsonProperty(value = "condition")
+
     private String condition;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="container")
-    
+    @JsonProperty(value = "container")
+
     private String container;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private String createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator_name")
-    
+    @JsonProperty(value = "creator_name")
+
     private String creatorName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable")
-    
+    @JsonProperty(value = "enable")
+
     private String enable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trigger_history")
-    
+    @JsonProperty(value = "trigger_history")
+
     private List<TriggerHistories> triggerHistory = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trigger_mode")
-    
+    @JsonProperty(value = "trigger_mode")
+
     private String triggerMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trigger_type")
-    
+    @JsonProperty(value = "trigger_type")
+
     private String triggerType;
 
     public Trigger withAction(String action) {
@@ -115,13 +91,9 @@ public class Trigger  {
         return this;
     }
 
-    
-
-
-    /**
-     * 触发动作，update
-     * @return action
-     */
+    /** 触发动作，update
+     * 
+     * @return action */
     public String getAction() {
         return action;
     }
@@ -130,20 +102,14 @@ public class Trigger  {
         this.action = action;
     }
 
-    
-
     public Trigger withAppType(String appType) {
         this.appType = appType;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用类型，deployments、statefulsets
-     * @return appType
-     */
+    /** 应用类型，deployments、statefulsets
+     * 
+     * @return appType */
     public String getAppType() {
         return appType;
     }
@@ -152,20 +118,14 @@ public class Trigger  {
         this.appType = appType;
     }
 
-    
-
     public Trigger withApplication(String application) {
         this.application = application;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名
-     * @return application
-     */
+    /** 应用名
+     * 
+     * @return application */
     public String getApplication() {
         return application;
     }
@@ -174,20 +134,14 @@ public class Trigger  {
         this.application = application;
     }
 
-    
-
     public Trigger withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
     }
 
-    
-
-
-    /**
-     * 集群ID（cci时为空）
-     * @return clusterId
-     */
+    /** 集群ID（cci时为空）
+     * 
+     * @return clusterId */
     public String getClusterId() {
         return clusterId;
     }
@@ -196,20 +150,14 @@ public class Trigger  {
         this.clusterId = clusterId;
     }
 
-    
-
     public Trigger withClusterName(String clusterName) {
         this.clusterName = clusterName;
         return this;
     }
 
-    
-
-
-    /**
-     * 集群名（cci时为空）
-     * @return clusterName
-     */
+    /** 集群名（cci时为空）
+     * 
+     * @return clusterName */
     public String getClusterName() {
         return clusterName;
     }
@@ -218,20 +166,14 @@ public class Trigger  {
         this.clusterName = clusterName;
     }
 
-    
-
     public Trigger withClusterNs(String clusterNs) {
         this.clusterNs = clusterNs;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名所在的namespace
-     * @return clusterNs
-     */
+    /** 应用名所在的namespace
+     * 
+     * @return clusterNs */
     public String getClusterNs() {
         return clusterNs;
     }
@@ -240,20 +182,14 @@ public class Trigger  {
         this.clusterNs = clusterNs;
     }
 
-    
-
     public Trigger withCondition(String condition) {
         this.condition = condition;
         return this;
     }
 
-    
-
-
-    /**
-     * 触发条件，type为all时为.*,type为tag时为tag名,type为regular时为正则表达式
-     * @return condition
-     */
+    /** 触发条件，type为all时为.*,type为tag时为tag名,type为regular时为正则表达式
+     * 
+     * @return condition */
     public String getCondition() {
         return condition;
     }
@@ -262,20 +198,14 @@ public class Trigger  {
         this.condition = condition;
     }
 
-    
-
     public Trigger withContainer(String container) {
         this.container = container;
         return this;
     }
 
-    
-
-
-    /**
-     * 需更新的container名，默认为所有container
-     * @return container
-     */
+    /** 需更新的container名，默认为所有container
+     * 
+     * @return container */
     public String getContainer() {
         return container;
     }
@@ -284,20 +214,14 @@ public class Trigger  {
         this.container = container;
     }
 
-    
-
     public Trigger withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return createdAt
-     */
+    /** 创建时间
+     * 
+     * @return createdAt */
     public String getCreatedAt() {
         return createdAt;
     }
@@ -306,20 +230,14 @@ public class Trigger  {
         this.createdAt = createdAt;
     }
 
-    
-
     public Trigger withCreatorName(String creatorName) {
         this.creatorName = creatorName;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建人
-     * @return creatorName
-     */
+    /** 创建人
+     * 
+     * @return creatorName */
     public String getCreatorName() {
         return creatorName;
     }
@@ -328,20 +246,14 @@ public class Trigger  {
         this.creatorName = creatorName;
     }
 
-    
-
     public Trigger withEnable(String enable) {
         this.enable = enable;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否生效
-     * @return enable
-     */
+    /** 是否生效
+     * 
+     * @return enable */
     public String getEnable() {
         return enable;
     }
@@ -350,20 +262,14 @@ public class Trigger  {
         this.enable = enable;
     }
 
-    
-
     public Trigger withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 触发器名
-     * @return name
-     */
+    /** 触发器名
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -372,16 +278,13 @@ public class Trigger  {
         this.name = name;
     }
 
-    
-
     public Trigger withTriggerHistory(List<TriggerHistories> triggerHistory) {
         this.triggerHistory = triggerHistory;
         return this;
     }
 
-    
     public Trigger addTriggerHistoryItem(TriggerHistories triggerHistoryItem) {
-        if(this.triggerHistory == null) {
+        if (this.triggerHistory == null) {
             this.triggerHistory = new ArrayList<>();
         }
         this.triggerHistory.add(triggerHistoryItem);
@@ -389,17 +292,16 @@ public class Trigger  {
     }
 
     public Trigger withTriggerHistory(Consumer<List<TriggerHistories>> triggerHistorySetter) {
-        if(this.triggerHistory == null) {
+        if (this.triggerHistory == null) {
             this.triggerHistory = new ArrayList<>();
         }
         triggerHistorySetter.accept(this.triggerHistory);
         return this;
     }
 
-    /**
-     * 触发器历史
-     * @return triggerHistory
-     */
+    /** 触发器历史
+     * 
+     * @return triggerHistory */
     public List<TriggerHistories> getTriggerHistory() {
         return triggerHistory;
     }
@@ -408,20 +310,14 @@ public class Trigger  {
         this.triggerHistory = triggerHistory;
     }
 
-    
-
     public Trigger withTriggerMode(String triggerMode) {
         this.triggerMode = triggerMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 触发器类型，cce、cci
-     * @return triggerMode
-     */
+    /** 触发器类型，cce、cci
+     * 
+     * @return triggerMode */
     public String getTriggerMode() {
         return triggerMode;
     }
@@ -430,20 +326,14 @@ public class Trigger  {
         this.triggerMode = triggerMode;
     }
 
-    
-
     public Trigger withTriggerType(String triggerType) {
         this.triggerType = triggerType;
         return this;
     }
 
-    
-
-
-    /**
-     * 触发条件，all、tag、regular
-     * @return triggerType
-     */
+    /** 触发条件，all、tag、regular
+     * 
+     * @return triggerType */
     public String getTriggerType() {
         return triggerType;
     }
@@ -451,8 +341,6 @@ public class Trigger  {
     public void setTriggerType(String triggerType) {
         this.triggerType = triggerType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -463,26 +351,37 @@ public class Trigger  {
             return false;
         }
         Trigger trigger = (Trigger) o;
-        return Objects.equals(this.action, trigger.action) &&
-            Objects.equals(this.appType, trigger.appType) &&
-            Objects.equals(this.application, trigger.application) &&
-            Objects.equals(this.clusterId, trigger.clusterId) &&
-            Objects.equals(this.clusterName, trigger.clusterName) &&
-            Objects.equals(this.clusterNs, trigger.clusterNs) &&
-            Objects.equals(this.condition, trigger.condition) &&
-            Objects.equals(this.container, trigger.container) &&
-            Objects.equals(this.createdAt, trigger.createdAt) &&
-            Objects.equals(this.creatorName, trigger.creatorName) &&
-            Objects.equals(this.enable, trigger.enable) &&
-            Objects.equals(this.name, trigger.name) &&
-            Objects.equals(this.triggerHistory, trigger.triggerHistory) &&
-            Objects.equals(this.triggerMode, trigger.triggerMode) &&
-            Objects.equals(this.triggerType, trigger.triggerType);
+        return Objects.equals(this.action, trigger.action) && Objects.equals(this.appType, trigger.appType)
+            && Objects.equals(this.application, trigger.application)
+            && Objects.equals(this.clusterId, trigger.clusterId)
+            && Objects.equals(this.clusterName, trigger.clusterName)
+            && Objects.equals(this.clusterNs, trigger.clusterNs) && Objects.equals(this.condition, trigger.condition)
+            && Objects.equals(this.container, trigger.container) && Objects.equals(this.createdAt, trigger.createdAt)
+            && Objects.equals(this.creatorName, trigger.creatorName) && Objects.equals(this.enable, trigger.enable)
+            && Objects.equals(this.name, trigger.name) && Objects.equals(this.triggerHistory, trigger.triggerHistory)
+            && Objects.equals(this.triggerMode, trigger.triggerMode)
+            && Objects.equals(this.triggerType, trigger.triggerType);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(action, appType, application, clusterId, clusterName, clusterNs, condition, container, createdAt, creatorName, enable, name, triggerHistory, triggerMode, triggerType);
+        return Objects.hash(action,
+            appType,
+            application,
+            clusterId,
+            clusterName,
+            clusterNs,
+            condition,
+            container,
+            createdAt,
+            creatorName,
+            enable,
+            name,
+            triggerHistory,
+            triggerMode,
+            triggerType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -505,16 +404,13 @@ public class Trigger  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

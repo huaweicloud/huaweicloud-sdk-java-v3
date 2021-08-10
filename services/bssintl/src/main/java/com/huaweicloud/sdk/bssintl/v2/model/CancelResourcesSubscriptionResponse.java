@@ -1,40 +1,29 @@
 package com.huaweicloud.sdk.bssintl.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CancelResourcesSubscriptionResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_ids")
-    
+    @JsonProperty(value = "order_ids")
+
     private List<String> orderIds = null;
-    
+
     public CancelResourcesSubscriptionResponse withOrderIds(List<String> orderIds) {
         this.orderIds = orderIds;
         return this;
     }
 
-    
     public CancelResourcesSubscriptionResponse addOrderIdsItem(String orderIdsItem) {
-        if(this.orderIds == null) {
+        if (this.orderIds == null) {
             this.orderIds = new ArrayList<>();
         }
         this.orderIds.add(orderIdsItem);
@@ -42,17 +31,16 @@ public class CancelResourcesSubscriptionResponse extends SdkResponse {
     }
 
     public CancelResourcesSubscriptionResponse withOrderIds(Consumer<List<String>> orderIdsSetter) {
-        if(this.orderIds == null) {
+        if (this.orderIds == null) {
             this.orderIds = new ArrayList<>();
         }
         orderIdsSetter.accept(this.orderIds);
         return this;
     }
 
-    /**
-     * |参数名称：退订资源生成的订单ID的列表。| |参数约束以及描述：续订资源生成的订单ID的列表。|
-     * @return orderIds
-     */
+    /** |参数名称：退订资源生成的订单ID的列表。| |参数约束以及描述：续订资源生成的订单ID的列表。|
+     * 
+     * @return orderIds */
     public List<String> getOrderIds() {
         return orderIds;
     }
@@ -60,8 +48,6 @@ public class CancelResourcesSubscriptionResponse extends SdkResponse {
     public void setOrderIds(List<String> orderIds) {
         this.orderIds = orderIds;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -71,13 +57,16 @@ public class CancelResourcesSubscriptionResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CancelResourcesSubscriptionResponse cancelResourcesSubscriptionResponse = (CancelResourcesSubscriptionResponse) o;
+        CancelResourcesSubscriptionResponse cancelResourcesSubscriptionResponse =
+            (CancelResourcesSubscriptionResponse) o;
         return Objects.equals(this.orderIds, cancelResourcesSubscriptionResponse.orderIds);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(orderIds);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -86,16 +75,13 @@ public class CancelResourcesSubscriptionResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

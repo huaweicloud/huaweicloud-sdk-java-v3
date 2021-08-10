@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.eip.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.NeutronUpdateFloatingIpRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class NeutronUpdateFloatingIpRequest  {
-
-
+/** Request Object */
+public class NeutronUpdateFloatingIpRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="floatingip_id")
-    
+    @JsonProperty(value = "floatingip_id")
+
     private String floatingipId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private NeutronUpdateFloatingIpRequestBody body;
 
     public NeutronUpdateFloatingIpRequest withFloatingipId(String floatingipId) {
@@ -35,13 +24,9 @@ public class NeutronUpdateFloatingIpRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * floatingip的ID
-     * @return floatingipId
-     */
+    /** floatingip的ID
+     * 
+     * @return floatingipId */
     public String getFloatingipId() {
         return floatingipId;
     }
@@ -50,27 +35,23 @@ public class NeutronUpdateFloatingIpRequest  {
         this.floatingipId = floatingipId;
     }
 
-    
-
     public NeutronUpdateFloatingIpRequest withBody(NeutronUpdateFloatingIpRequestBody body) {
         this.body = body;
         return this;
     }
 
     public NeutronUpdateFloatingIpRequest withBody(Consumer<NeutronUpdateFloatingIpRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new NeutronUpdateFloatingIpRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public NeutronUpdateFloatingIpRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class NeutronUpdateFloatingIpRequest  {
     public void setBody(NeutronUpdateFloatingIpRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class NeutronUpdateFloatingIpRequest  {
             return false;
         }
         NeutronUpdateFloatingIpRequest neutronUpdateFloatingIpRequest = (NeutronUpdateFloatingIpRequest) o;
-        return Objects.equals(this.floatingipId, neutronUpdateFloatingIpRequest.floatingipId) &&
-            Objects.equals(this.body, neutronUpdateFloatingIpRequest.body);
+        return Objects.equals(this.floatingipId, neutronUpdateFloatingIpRequest.floatingipId)
+            && Objects.equals(this.body, neutronUpdateFloatingIpRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(floatingipId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class NeutronUpdateFloatingIpRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,45 +1,34 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.LoginTokenDomain;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class LoginTokenUser  {
-
-
+public class LoginTokenUser {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
+
     private LoginTokenDomain domain;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="password_expires_at")
-    
+    @JsonProperty(value = "password_expires_at")
+
     private String passwordExpiresAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
     public LoginTokenUser withDomain(LoginTokenDomain domain) {
@@ -48,19 +37,17 @@ public class LoginTokenUser  {
     }
 
     public LoginTokenUser withDomain(Consumer<LoginTokenDomain> domainSetter) {
-        if(this.domain == null ){
+        if (this.domain == null) {
             this.domain = new LoginTokenDomain();
             domainSetter.accept(this.domain);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get domain
-     * @return domain
-     */
+    /** Get domain
+     * 
+     * @return domain */
     public LoginTokenDomain getDomain() {
         return domain;
     }
@@ -69,20 +56,14 @@ public class LoginTokenUser  {
         this.domain = domain;
     }
 
-    
-
     public LoginTokenUser withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 被委托方用户名。
-     * @return name
-     */
+    /** 被委托方用户名。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -91,20 +72,14 @@ public class LoginTokenUser  {
         this.name = name;
     }
 
-    
-
     public LoginTokenUser withPasswordExpiresAt(String passwordExpiresAt) {
         this.passwordExpiresAt = passwordExpiresAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 被委托方用户的密码过期时间。
-     * @return passwordExpiresAt
-     */
+    /** 被委托方用户的密码过期时间。
+     * 
+     * @return passwordExpiresAt */
     public String getPasswordExpiresAt() {
         return passwordExpiresAt;
     }
@@ -113,20 +88,14 @@ public class LoginTokenUser  {
         this.passwordExpiresAt = passwordExpiresAt;
     }
 
-    
-
     public LoginTokenUser withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 被委托方用户ID。
-     * @return id
-     */
+    /** 被委托方用户ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -134,8 +103,6 @@ public class LoginTokenUser  {
     public void setId(String id) {
         this.id = id;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -146,15 +113,16 @@ public class LoginTokenUser  {
             return false;
         }
         LoginTokenUser loginTokenUser = (LoginTokenUser) o;
-        return Objects.equals(this.domain, loginTokenUser.domain) &&
-            Objects.equals(this.name, loginTokenUser.name) &&
-            Objects.equals(this.passwordExpiresAt, loginTokenUser.passwordExpiresAt) &&
-            Objects.equals(this.id, loginTokenUser.id);
+        return Objects.equals(this.domain, loginTokenUser.domain) && Objects.equals(this.name, loginTokenUser.name)
+            && Objects.equals(this.passwordExpiresAt, loginTokenUser.passwordExpiresAt)
+            && Objects.equals(this.id, loginTokenUser.id);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domain, name, passwordExpiresAt, id);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -166,16 +134,13 @@ public class LoginTokenUser  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

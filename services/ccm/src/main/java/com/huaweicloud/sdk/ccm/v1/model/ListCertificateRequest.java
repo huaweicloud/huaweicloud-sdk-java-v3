@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.ccm.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListCertificateRequest  {
-
-
+/** Request Object */
+public class ListCertificateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private String limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private String offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
     public ListCertificateRequest withLimit(String limit) {
@@ -46,13 +33,9 @@ public class ListCertificateRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * limit
-     * @return limit
-     */
+    /** limit
+     * 
+     * @return limit */
     public String getLimit() {
         return limit;
     }
@@ -61,20 +44,14 @@ public class ListCertificateRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListCertificateRequest withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * name
-     * @return name
-     */
+    /** name
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -83,20 +60,14 @@ public class ListCertificateRequest  {
         this.name = name;
     }
 
-    
-
     public ListCertificateRequest withOffset(String offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * offset
-     * @return offset
-     */
+    /** offset
+     * 
+     * @return offset */
     public String getOffset() {
         return offset;
     }
@@ -105,20 +76,14 @@ public class ListCertificateRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListCertificateRequest withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * status
-     * @return status
-     */
+    /** status
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -126,8 +91,6 @@ public class ListCertificateRequest  {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class ListCertificateRequest  {
             return false;
         }
         ListCertificateRequest listCertificateRequest = (ListCertificateRequest) o;
-        return Objects.equals(this.limit, listCertificateRequest.limit) &&
-            Objects.equals(this.name, listCertificateRequest.name) &&
-            Objects.equals(this.offset, listCertificateRequest.offset) &&
-            Objects.equals(this.status, listCertificateRequest.status);
+        return Objects.equals(this.limit, listCertificateRequest.limit)
+            && Objects.equals(this.name, listCertificateRequest.name)
+            && Objects.equals(this.offset, listCertificateRequest.offset)
+            && Objects.equals(this.status, listCertificateRequest.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(limit, name, offset, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class ListCertificateRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

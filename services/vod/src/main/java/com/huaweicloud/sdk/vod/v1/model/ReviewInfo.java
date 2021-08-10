@@ -1,50 +1,33 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vod.v1.model.PictureReviewRet;
-import com.huaweicloud.sdk.vod.v1.model.TextReviewRet;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 审核信息数组。  &gt; 仅当审核成功后才能查询到此信息，未审核、正在审核以及审核失败时，无此字段信息。
- */
-public class ReviewInfo  {
+/** 审核信息数组。 &gt; 仅当审核成功后才能查询到此信息，未审核、正在审核以及审核失败时，无此字段信息。 */
+public class ReviewInfo {
 
-    /**
-     * 检测结果是否通过。  取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。  > 当同时检测多个场景时，suggestion的值以最可能包含敏感信息的场景为准。即任一场景出现了block则总的suggestion为block，所有场景都pass时suggestion为pass，这两种情况之外则一定有场景需要review，此时suggestion为review。
-     */
+    /** 检测结果是否通过。 取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。 >
+     * 当同时检测多个场景时，suggestion的值以最可能包含敏感信息的场景为准。即任一场景出现了block则总的suggestion为block，所有场景都pass时suggestion为pass，这两种情况之外则一定有场景需要review，此时suggestion为review。 */
     public static final class SuggestionEnum {
 
-        
-        /**
-         * Enum BLOCK for value: "block"
-         */
+        /** Enum BLOCK for value: "block" */
         public static final SuggestionEnum BLOCK = new SuggestionEnum("block");
-        
-        /**
-         * Enum PASS for value: "pass"
-         */
+
+        /** Enum PASS for value: "pass" */
         public static final SuggestionEnum PASS = new SuggestionEnum("pass");
-        
-        /**
-         * Enum REVIEW for value: "review"
-         */
+
+        /** Enum REVIEW for value: "review" */
         public static final SuggestionEnum REVIEW = new SuggestionEnum("review");
-        
 
         private static final Map<String, SuggestionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -74,7 +57,7 @@ public class ReviewInfo  {
 
         @JsonCreator
         public static SuggestionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SuggestionEnum result = STATIC_FIELDS.get(value);
@@ -85,7 +68,7 @@ public class ReviewInfo  {
         }
 
         public static SuggestionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             SuggestionEnum result = STATIC_FIELDS.get(value);
@@ -109,40 +92,34 @@ public class ReviewInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="suggestion")
-    
+    @JsonProperty(value = "suggestion")
+
     private SuggestionEnum suggestion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="text")
-    
+    @JsonProperty(value = "text")
+
     private TextReviewRet text;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cover")
-    
+    @JsonProperty(value = "cover")
+
     private List<PictureReviewRet> cover = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="video")
-    
+    @JsonProperty(value = "video")
+
     private List<PictureReviewRet> video = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="exec_desc")
-    
+    @JsonProperty(value = "exec_desc")
+
     private String execDesc;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="review_status")
-    
+    @JsonProperty(value = "review_status")
+
     private String reviewStatus;
 
     public ReviewInfo withSuggestion(SuggestionEnum suggestion) {
@@ -150,13 +127,10 @@ public class ReviewInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 检测结果是否通过。  取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。  > 当同时检测多个场景时，suggestion的值以最可能包含敏感信息的场景为准。即任一场景出现了block则总的suggestion为block，所有场景都pass时suggestion为pass，这两种情况之外则一定有场景需要review，此时suggestion为review。
-     * @return suggestion
-     */
+    /** 检测结果是否通过。 取值如下： - block：包含敏感信息，不通过。 - pass：不包含敏感信息，通过。 - review：需要人工复检。 >
+     * 当同时检测多个场景时，suggestion的值以最可能包含敏感信息的场景为准。即任一场景出现了block则总的suggestion为block，所有场景都pass时suggestion为pass，这两种情况之外则一定有场景需要review，此时suggestion为review。
+     * 
+     * @return suggestion */
     public SuggestionEnum getSuggestion() {
         return suggestion;
     }
@@ -165,27 +139,23 @@ public class ReviewInfo  {
         this.suggestion = suggestion;
     }
 
-    
-
     public ReviewInfo withText(TextReviewRet text) {
         this.text = text;
         return this;
     }
 
     public ReviewInfo withText(Consumer<TextReviewRet> textSetter) {
-        if(this.text == null ){
+        if (this.text == null) {
             this.text = new TextReviewRet();
             textSetter.accept(this.text);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get text
-     * @return text
-     */
+    /** Get text
+     * 
+     * @return text */
     public TextReviewRet getText() {
         return text;
     }
@@ -194,16 +164,13 @@ public class ReviewInfo  {
         this.text = text;
     }
 
-    
-
     public ReviewInfo withCover(List<PictureReviewRet> cover) {
         this.cover = cover;
         return this;
     }
 
-    
     public ReviewInfo addCoverItem(PictureReviewRet coverItem) {
-        if(this.cover == null) {
+        if (this.cover == null) {
             this.cover = new ArrayList<>();
         }
         this.cover.add(coverItem);
@@ -211,17 +178,16 @@ public class ReviewInfo  {
     }
 
     public ReviewInfo withCover(Consumer<List<PictureReviewRet>> coverSetter) {
-        if(this.cover == null) {
+        if (this.cover == null) {
             this.cover = new ArrayList<>();
         }
         coverSetter.accept(this.cover);
         return this;
     }
 
-    /**
-     * 封面检测结果。
-     * @return cover
-     */
+    /** 封面检测结果。
+     * 
+     * @return cover */
     public List<PictureReviewRet> getCover() {
         return cover;
     }
@@ -230,16 +196,13 @@ public class ReviewInfo  {
         this.cover = cover;
     }
 
-    
-
     public ReviewInfo withVideo(List<PictureReviewRet> video) {
         this.video = video;
         return this;
     }
 
-    
     public ReviewInfo addVideoItem(PictureReviewRet videoItem) {
-        if(this.video == null) {
+        if (this.video == null) {
             this.video = new ArrayList<>();
         }
         this.video.add(videoItem);
@@ -247,17 +210,16 @@ public class ReviewInfo  {
     }
 
     public ReviewInfo withVideo(Consumer<List<PictureReviewRet>> videoSetter) {
-        if(this.video == null) {
+        if (this.video == null) {
             this.video = new ArrayList<>();
         }
         videoSetter.accept(this.video);
         return this;
     }
 
-    /**
-     * 视频检测结果。
-     * @return video
-     */
+    /** 视频检测结果。
+     * 
+     * @return video */
     public List<PictureReviewRet> getVideo() {
         return video;
     }
@@ -266,20 +228,14 @@ public class ReviewInfo  {
         this.video = video;
     }
 
-    
-
     public ReviewInfo withExecDesc(String execDesc) {
         this.execDesc = execDesc;
         return this;
     }
 
-    
-
-
-    /**
-     * 执行情况描述。
-     * @return execDesc
-     */
+    /** 执行情况描述。
+     * 
+     * @return execDesc */
     public String getExecDesc() {
         return execDesc;
     }
@@ -288,20 +244,15 @@ public class ReviewInfo  {
         this.execDesc = execDesc;
     }
 
-    
-
     public ReviewInfo withReviewStatus(String reviewStatus) {
         this.reviewStatus = reviewStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 审核状态。  取值如下： - UN_REVIEW：未审核 - REVIEWING：审核中 - REVIEW_SUSPICIOUS：审核可疑，需要人工审核 - REVIEW_PASSED：审核通过 - REVIEW_FAILED：审核失败。 - REVIEW_BLOCKED：已屏蔽。
-     * @return reviewStatus
-     */
+    /** 审核状态。 取值如下： - UN_REVIEW：未审核 - REVIEWING：审核中 - REVIEW_SUSPICIOUS：审核可疑，需要人工审核 - REVIEW_PASSED：审核通过 -
+     * REVIEW_FAILED：审核失败。 - REVIEW_BLOCKED：已屏蔽。
+     * 
+     * @return reviewStatus */
     public String getReviewStatus() {
         return reviewStatus;
     }
@@ -309,8 +260,6 @@ public class ReviewInfo  {
     public void setReviewStatus(String reviewStatus) {
         this.reviewStatus = reviewStatus;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -321,17 +270,17 @@ public class ReviewInfo  {
             return false;
         }
         ReviewInfo reviewInfo = (ReviewInfo) o;
-        return Objects.equals(this.suggestion, reviewInfo.suggestion) &&
-            Objects.equals(this.text, reviewInfo.text) &&
-            Objects.equals(this.cover, reviewInfo.cover) &&
-            Objects.equals(this.video, reviewInfo.video) &&
-            Objects.equals(this.execDesc, reviewInfo.execDesc) &&
-            Objects.equals(this.reviewStatus, reviewInfo.reviewStatus);
+        return Objects.equals(this.suggestion, reviewInfo.suggestion) && Objects.equals(this.text, reviewInfo.text)
+            && Objects.equals(this.cover, reviewInfo.cover) && Objects.equals(this.video, reviewInfo.video)
+            && Objects.equals(this.execDesc, reviewInfo.execDesc)
+            && Objects.equals(this.reviewStatus, reviewInfo.reviewStatus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(suggestion, text, cover, video, execDesc, reviewStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -345,16 +294,13 @@ public class ReviewInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

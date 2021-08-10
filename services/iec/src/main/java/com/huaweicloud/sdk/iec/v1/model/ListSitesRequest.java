@@ -1,83 +1,61 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListSitesRequest  {
-
-
+/** Request Object */
+public class ListSitesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="area")
-    
+    @JsonProperty(value = "area")
+
     private String area;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="province")
-    
+    @JsonProperty(value = "province")
+
     private String province;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="city")
-    
+    @JsonProperty(value = "city")
+
     private String city;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flavor")
-    
+    @JsonProperty(value = "flavor")
+
     private String flavor;
-    /**
-     * 过滤支持磁盘类型的站点，多个类型之间用“,”分割。
-     */
+
+    /** 过滤支持磁盘类型的站点，多个类型之间用“,”分割。 */
     public static final class VolumeTypeEnum {
 
-        
-        /**
-         * Enum SATA for value: "SATA"
-         */
+        /** Enum SATA for value: "SATA" */
         public static final VolumeTypeEnum SATA = new VolumeTypeEnum("SATA");
-        
-        /**
-         * Enum SAS for value: "SAS"
-         */
+
+        /** Enum SAS for value: "SAS" */
         public static final VolumeTypeEnum SAS = new VolumeTypeEnum("SAS");
-        
 
         private static final Map<String, VolumeTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -106,7 +84,7 @@ public class ListSitesRequest  {
 
         @JsonCreator
         public static VolumeTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             VolumeTypeEnum result = STATIC_FIELDS.get(value);
@@ -117,7 +95,7 @@ public class ListSitesRequest  {
         }
 
         public static VolumeTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             VolumeTypeEnum result = STATIC_FIELDS.get(value);
@@ -141,10 +119,9 @@ public class ListSitesRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_type")
-    
+    @JsonProperty(value = "volume_type")
+
     private VolumeTypeEnum volumeType;
 
     public ListSitesRequest withLimit(Integer limit) {
@@ -152,15 +129,9 @@ public class ListSitesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 查询返回边缘站点列表当前页面的数量。 取值范围：0~1000。
-     * minimum: 0
-     * maximum: 1000
-     * @return limit
-     */
+    /** 查询返回边缘站点列表当前页面的数量。 取值范围：0~1000。 minimum: 0 maximum: 1000
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -169,20 +140,14 @@ public class ListSitesRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListSitesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询的偏移量。默认为0。
-     * @return offset
-     */
+    /** 查询的偏移量。默认为0。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -191,20 +156,14 @@ public class ListSitesRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListSitesRequest withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询条件，站点ID。
-     * @return id
-     */
+    /** 查询条件，站点ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -213,20 +172,14 @@ public class ListSitesRequest  {
         this.id = id;
     }
 
-    
-
     public ListSitesRequest withArea(String area) {
         this.area = area;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例所在大区。   大小写通用，皆支持。 支持多个查询，中间使用','分隔。
-     * @return area
-     */
+    /** 边缘实例所在大区。 大小写通用，皆支持。 支持多个查询，中间使用','分隔。
+     * 
+     * @return area */
     public String getArea() {
         return area;
     }
@@ -235,20 +188,14 @@ public class ListSitesRequest  {
         this.area = area;
     }
 
-    
-
     public ListSitesRequest withProvince(String province) {
         this.province = province;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例所在省份。  大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
-     * @return province
-     */
+    /** 边缘实例所在省份。 大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
+     * 
+     * @return province */
     public String getProvince() {
         return province;
     }
@@ -257,20 +204,14 @@ public class ListSitesRequest  {
         this.province = province;
     }
 
-    
-
     public ListSitesRequest withCity(String city) {
         this.city = city;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例所在城市。  大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
-     * @return city
-     */
+    /** 边缘实例所在城市。 大小写通用，皆支持。 支持多个查询，中间使用“,”分隔。
+     * 
+     * @return city */
     public String getCity() {
         return city;
     }
@@ -279,20 +220,14 @@ public class ListSitesRequest  {
         this.city = city;
     }
 
-    
-
     public ListSitesRequest withFlavor(String flavor) {
         this.flavor = flavor;
         return this;
     }
 
-    
-
-
-    /**
-     * 边缘实例规格。
-     * @return flavor
-     */
+    /** 边缘实例规格。
+     * 
+     * @return flavor */
     public String getFlavor() {
         return flavor;
     }
@@ -301,20 +236,14 @@ public class ListSitesRequest  {
         this.flavor = flavor;
     }
 
-    
-
     public ListSitesRequest withVolumeType(VolumeTypeEnum volumeType) {
         this.volumeType = volumeType;
         return this;
     }
 
-    
-
-
-    /**
-     * 过滤支持磁盘类型的站点，多个类型之间用“,”分割。
-     * @return volumeType
-     */
+    /** 过滤支持磁盘类型的站点，多个类型之间用“,”分割。
+     * 
+     * @return volumeType */
     public VolumeTypeEnum getVolumeType() {
         return volumeType;
     }
@@ -322,8 +251,6 @@ public class ListSitesRequest  {
     public void setVolumeType(VolumeTypeEnum volumeType) {
         this.volumeType = volumeType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -334,19 +261,19 @@ public class ListSitesRequest  {
             return false;
         }
         ListSitesRequest listSitesRequest = (ListSitesRequest) o;
-        return Objects.equals(this.limit, listSitesRequest.limit) &&
-            Objects.equals(this.offset, listSitesRequest.offset) &&
-            Objects.equals(this.id, listSitesRequest.id) &&
-            Objects.equals(this.area, listSitesRequest.area) &&
-            Objects.equals(this.province, listSitesRequest.province) &&
-            Objects.equals(this.city, listSitesRequest.city) &&
-            Objects.equals(this.flavor, listSitesRequest.flavor) &&
-            Objects.equals(this.volumeType, listSitesRequest.volumeType);
+        return Objects.equals(this.limit, listSitesRequest.limit)
+            && Objects.equals(this.offset, listSitesRequest.offset) && Objects.equals(this.id, listSitesRequest.id)
+            && Objects.equals(this.area, listSitesRequest.area)
+            && Objects.equals(this.province, listSitesRequest.province)
+            && Objects.equals(this.city, listSitesRequest.city) && Objects.equals(this.flavor, listSitesRequest.flavor)
+            && Objects.equals(this.volumeType, listSitesRequest.volumeType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(limit, offset, id, area, province, city, flavor, volumeType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -362,16 +289,13 @@ public class ListSitesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

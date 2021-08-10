@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cdn.v1.model.OriginHostBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * OriginHostRequest
- */
-public class OriginHostRequest  {
-
-
+/** OriginHostRequest */
+public class OriginHostRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="origin_host")
-    
+    @JsonProperty(value = "origin_host")
+
     private OriginHostBody originHost;
 
     public OriginHostRequest withOriginHost(OriginHostBody originHost) {
@@ -30,19 +20,17 @@ public class OriginHostRequest  {
     }
 
     public OriginHostRequest withOriginHost(Consumer<OriginHostBody> originHostSetter) {
-        if(this.originHost == null ){
+        if (this.originHost == null) {
             this.originHost = new OriginHostBody();
             originHostSetter.accept(this.originHost);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get originHost
-     * @return originHost
-     */
+    /** Get originHost
+     * 
+     * @return originHost */
     public OriginHostBody getOriginHost() {
         return originHost;
     }
@@ -50,8 +38,6 @@ public class OriginHostRequest  {
     public void setOriginHost(OriginHostBody originHost) {
         this.originHost = originHost;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class OriginHostRequest  {
         OriginHostRequest originHostRequest = (OriginHostRequest) o;
         return Objects.equals(this.originHost, originHostRequest.originHost);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(originHost);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class OriginHostRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

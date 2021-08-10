@@ -1,72 +1,54 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dns.v2.model.Router;
-import com.huaweicloud.sdk.dns.v2.model.Tag;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * CreatePrivateZoneReq
- */
-public class CreatePrivateZoneReq  {
-
-
+/** CreatePrivateZoneReq */
+public class CreatePrivateZoneReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="zone_type")
-    
+    @JsonProperty(value = "zone_type")
+
     private String zoneType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="email")
-    
+    @JsonProperty(value = "email")
+
     private String email;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ttl")
-    
+    @JsonProperty(value = "ttl")
+
     private String ttl;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="router")
-    
+    @JsonProperty(value = "router")
+
     private Router router;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<Tag> tags = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
     public CreatePrivateZoneReq withName(String name) {
@@ -74,13 +56,9 @@ public class CreatePrivateZoneReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 待创建的域名。
-     * @return name
-     */
+    /** 待创建的域名。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -89,20 +67,14 @@ public class CreatePrivateZoneReq  {
         this.name = name;
     }
 
-    
-
     public CreatePrivateZoneReq withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名的描述信息。
-     * @return description
-     */
+    /** 域名的描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -111,20 +83,14 @@ public class CreatePrivateZoneReq  {
         this.description = description;
     }
 
-    
-
     public CreatePrivateZoneReq withZoneType(String zoneType) {
         this.zoneType = zoneType;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名类型。取值：private。
-     * @return zoneType
-     */
+    /** 域名类型。取值：private。
+     * 
+     * @return zoneType */
     public String getZoneType() {
         return zoneType;
     }
@@ -133,20 +99,14 @@ public class CreatePrivateZoneReq  {
         this.zoneType = zoneType;
     }
 
-    
-
     public CreatePrivateZoneReq withEmail(String email) {
         this.email = email;
         return this;
     }
 
-    
-
-
-    /**
-     * 管理该zone的管理员邮箱。
-     * @return email
-     */
+    /** 管理该zone的管理员邮箱。
+     * 
+     * @return email */
     public String getEmail() {
         return email;
     }
@@ -155,20 +115,14 @@ public class CreatePrivateZoneReq  {
         this.email = email;
     }
 
-    
-
     public CreatePrivateZoneReq withTtl(String ttl) {
         this.ttl = ttl;
         return this;
     }
 
-    
-
-
-    /**
-     * 用于填写默认生成的SOA记录中有效缓存时间，以秒为单位。
-     * @return ttl
-     */
+    /** 用于填写默认生成的SOA记录中有效缓存时间，以秒为单位。
+     * 
+     * @return ttl */
     public String getTtl() {
         return ttl;
     }
@@ -177,27 +131,23 @@ public class CreatePrivateZoneReq  {
         this.ttl = ttl;
     }
 
-    
-
     public CreatePrivateZoneReq withRouter(Router router) {
         this.router = router;
         return this;
     }
 
     public CreatePrivateZoneReq withRouter(Consumer<Router> routerSetter) {
-        if(this.router == null ){
+        if (this.router == null) {
             this.router = new Router();
             routerSetter.accept(this.router);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get router
-     * @return router
-     */
+    /** Get router
+     * 
+     * @return router */
     public Router getRouter() {
         return router;
     }
@@ -206,16 +156,13 @@ public class CreatePrivateZoneReq  {
         this.router = router;
     }
 
-    
-
     public CreatePrivateZoneReq withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public CreatePrivateZoneReq addTagsItem(Tag tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -223,17 +170,16 @@ public class CreatePrivateZoneReq  {
     }
 
     public CreatePrivateZoneReq withTags(Consumer<List<Tag>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 资源标签。
-     * @return tags
-     */
+    /** 资源标签。
+     * 
+     * @return tags */
     public List<Tag> getTags() {
         return tags;
     }
@@ -242,20 +188,14 @@ public class CreatePrivateZoneReq  {
         this.tags = tags;
     }
 
-    
-
     public CreatePrivateZoneReq withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名关联的企业项目ID，长度不超过36个字符。  默认值为0。
-     * @return enterpriseProjectId
-     */
+    /** 域名关联的企业项目ID，长度不超过36个字符。 默认值为0。
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -263,8 +203,6 @@ public class CreatePrivateZoneReq  {
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -275,19 +213,21 @@ public class CreatePrivateZoneReq  {
             return false;
         }
         CreatePrivateZoneReq createPrivateZoneReq = (CreatePrivateZoneReq) o;
-        return Objects.equals(this.name, createPrivateZoneReq.name) &&
-            Objects.equals(this.description, createPrivateZoneReq.description) &&
-            Objects.equals(this.zoneType, createPrivateZoneReq.zoneType) &&
-            Objects.equals(this.email, createPrivateZoneReq.email) &&
-            Objects.equals(this.ttl, createPrivateZoneReq.ttl) &&
-            Objects.equals(this.router, createPrivateZoneReq.router) &&
-            Objects.equals(this.tags, createPrivateZoneReq.tags) &&
-            Objects.equals(this.enterpriseProjectId, createPrivateZoneReq.enterpriseProjectId);
+        return Objects.equals(this.name, createPrivateZoneReq.name)
+            && Objects.equals(this.description, createPrivateZoneReq.description)
+            && Objects.equals(this.zoneType, createPrivateZoneReq.zoneType)
+            && Objects.equals(this.email, createPrivateZoneReq.email)
+            && Objects.equals(this.ttl, createPrivateZoneReq.ttl)
+            && Objects.equals(this.router, createPrivateZoneReq.router)
+            && Objects.equals(this.tags, createPrivateZoneReq.tags)
+            && Objects.equals(this.enterpriseProjectId, createPrivateZoneReq.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, description, zoneType, email, ttl, router, tags, enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -303,16 +243,13 @@ public class CreatePrivateZoneReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

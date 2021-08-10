@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 发送给SMN消息结构
- */
-public class ActionSmnForwarding  {
-
-
+/** 发送给SMN消息结构 */
+public class ActionSmnForwarding {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_name")
-    
+    @JsonProperty(value = "region_name")
+
     private String regionName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="theme_name")
-    
+    @JsonProperty(value = "theme_name")
+
     private String themeName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic_urn")
-    
+    @JsonProperty(value = "topic_urn")
+
     private String topicUrn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message_content")
-    
+    @JsonProperty(value = "message_content")
+
     private String messageContent;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message_title")
-    
+    @JsonProperty(value = "message_title")
+
     private String messageTitle;
 
     public ActionSmnForwarding withRegionName(String regionName) {
@@ -58,13 +43,9 @@ public class ActionSmnForwarding  {
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：SMN服务对应的region区域。
-     * @return regionName
-     */
+    /** **参数说明**：SMN服务对应的region区域。
+     * 
+     * @return regionName */
     public String getRegionName() {
         return regionName;
     }
@@ -73,20 +54,14 @@ public class ActionSmnForwarding  {
         this.regionName = regionName;
     }
 
-    
-
     public ActionSmnForwarding withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：SMN服务对应的projectId信息。
-     * @return projectId
-     */
+    /** **参数说明**：SMN服务对应的projectId信息。
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -95,20 +70,14 @@ public class ActionSmnForwarding  {
         this.projectId = projectId;
     }
 
-    
-
     public ActionSmnForwarding withThemeName(String themeName) {
         this.themeName = themeName;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：SMN服务对应的主题名称。
-     * @return themeName
-     */
+    /** **参数说明**：SMN服务对应的主题名称。
+     * 
+     * @return themeName */
     public String getThemeName() {
         return themeName;
     }
@@ -117,20 +86,14 @@ public class ActionSmnForwarding  {
         this.themeName = themeName;
     }
 
-    
-
     public ActionSmnForwarding withTopicUrn(String topicUrn) {
         this.topicUrn = topicUrn;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：SMN服务对应的topic的主题URN。
-     * @return topicUrn
-     */
+    /** **参数说明**：SMN服务对应的topic的主题URN。
+     * 
+     * @return topicUrn */
     public String getTopicUrn() {
         return topicUrn;
     }
@@ -139,20 +102,14 @@ public class ActionSmnForwarding  {
         this.topicUrn = topicUrn;
     }
 
-    
-
     public ActionSmnForwarding withMessageContent(String messageContent) {
         this.messageContent = messageContent;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：短信或邮件的内容。。
-     * @return messageContent
-     */
+    /** **参数说明**：短信或邮件的内容。。
+     * 
+     * @return messageContent */
     public String getMessageContent() {
         return messageContent;
     }
@@ -161,20 +118,14 @@ public class ActionSmnForwarding  {
         this.messageContent = messageContent;
     }
 
-    
-
     public ActionSmnForwarding withMessageTitle(String messageTitle) {
         this.messageTitle = messageTitle;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：短信或邮件的主题。。
-     * @return messageTitle
-     */
+    /** **参数说明**：短信或邮件的主题。。
+     * 
+     * @return messageTitle */
     public String getMessageTitle() {
         return messageTitle;
     }
@@ -182,8 +133,6 @@ public class ActionSmnForwarding  {
     public void setMessageTitle(String messageTitle) {
         this.messageTitle = messageTitle;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,17 +143,19 @@ public class ActionSmnForwarding  {
             return false;
         }
         ActionSmnForwarding actionSmnForwarding = (ActionSmnForwarding) o;
-        return Objects.equals(this.regionName, actionSmnForwarding.regionName) &&
-            Objects.equals(this.projectId, actionSmnForwarding.projectId) &&
-            Objects.equals(this.themeName, actionSmnForwarding.themeName) &&
-            Objects.equals(this.topicUrn, actionSmnForwarding.topicUrn) &&
-            Objects.equals(this.messageContent, actionSmnForwarding.messageContent) &&
-            Objects.equals(this.messageTitle, actionSmnForwarding.messageTitle);
+        return Objects.equals(this.regionName, actionSmnForwarding.regionName)
+            && Objects.equals(this.projectId, actionSmnForwarding.projectId)
+            && Objects.equals(this.themeName, actionSmnForwarding.themeName)
+            && Objects.equals(this.topicUrn, actionSmnForwarding.topicUrn)
+            && Objects.equals(this.messageContent, actionSmnForwarding.messageContent)
+            && Objects.equals(this.messageTitle, actionSmnForwarding.messageTitle);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(regionName, projectId, themeName, topicUrn, messageContent, messageTitle);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,16 +169,13 @@ public class ActionSmnForwarding  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

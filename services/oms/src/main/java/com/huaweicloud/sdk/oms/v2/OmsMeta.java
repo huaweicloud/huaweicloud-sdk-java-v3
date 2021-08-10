@@ -6,14 +6,12 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.oms.v2.model.*;
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class OmsMeta {
 
-    public static final HttpRequestDef<CreateSyncEventsRequest, CreateSyncEventsResponse> createSyncEvents = genForcreateSyncEvents();
+    public static final HttpRequestDef<CreateSyncEventsRequest, CreateSyncEventsResponse> createSyncEvents =
+        genForcreateSyncEvents();
 
     private static HttpRequestDef<CreateSyncEventsRequest, CreateSyncEventsResponse> genForcreateSyncEvents() {
         // basic
@@ -24,26 +22,22 @@ public class OmsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("sync_task_id",
+        builder.<String>withRequestField("sync_task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateSyncEventsRequest::getSyncTaskId, (req, v) -> {
                 req.setSyncTaskId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<SyncObjectReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            SyncObjectReq.class,
+            TypeCasts.uncheckedConversion(SyncObjectReq.class),
             f -> f.withMarshaller(CreateSyncEventsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -59,18 +53,15 @@ public class OmsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateTaskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateTaskReq.class,
+            TypeCasts.uncheckedConversion(CreateTaskReq.class),
             f -> f.withMarshaller(CreateTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -86,18 +77,15 @@ public class OmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<Long>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Long.class,
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(DeleteTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -113,42 +101,36 @@ public class OmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("group_id",
+        builder.<String>withRequestField("group_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTasksRequest::getGroupId, (req, v) -> {
                 req.setGroupId(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTasksRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTasksRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("status",
+            }));
+        builder.<Integer>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTasksRequest::getStatus, (req, v) -> {
                 req.setStatus(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -164,18 +146,15 @@ public class OmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<Long>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Long.class,
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ShowTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -191,26 +170,22 @@ public class OmsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<Long>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Long.class,
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(StartTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<StartTaskReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            StartTaskReq.class,
+            TypeCasts.uncheckedConversion(StartTaskReq.class),
             f -> f.withMarshaller(StartTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -226,58 +201,53 @@ public class OmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<Long>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Long.class,
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(StopTaskRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse> updateBandwidthPolicy = genForupdateBandwidthPolicy();
+    public static final HttpRequestDef<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse> updateBandwidthPolicy =
+        genForupdateBandwidthPolicy();
 
     private static HttpRequestDef<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse> genForupdateBandwidthPolicy() {
         // basic
-        HttpRequestDef.Builder<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateBandwidthPolicyRequest.class, UpdateBandwidthPolicyResponse.class)
-                .withName("UpdateBandwidthPolicy")
-                .withUri("/v2/{project_id}/tasks/{task_id}/bandwidth-policy")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<UpdateBandwidthPolicyRequest, UpdateBandwidthPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateBandwidthPolicyRequest.class, UpdateBandwidthPolicyResponse.class)
+            .withName("UpdateBandwidthPolicy")
+            .withUri("/v2/{project_id}/tasks/{task_id}/bandwidth-policy")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<Long>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Long.class,
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(UpdateBandwidthPolicyRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateBandwidthPolicyReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateBandwidthPolicyReq.class,
+            TypeCasts.uncheckedConversion(UpdateBandwidthPolicyReq.class),
             f -> f.withMarshaller(UpdateBandwidthPolicyRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions = genForlistApiVersions();
+    public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions =
+        genForlistApiVersions();
 
     private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForlistApiVersions() {
         // basic
@@ -290,8 +260,6 @@ public class OmsMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
@@ -307,18 +275,15 @@ public class OmsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("version",
+        builder.<String>withRequestField("version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowApiInfoRequest::getVersion, (req, v) -> {
                 req.setVersion(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

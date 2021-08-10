@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.projectman.v4.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.projectman.v4.model.MemberListV4Members;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListProjectMembersV4Response extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="members")
-    
+    @JsonProperty(value = "members")
+
     private List<MemberListV4Members> members = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
     public ListProjectMembersV4Response withMembers(List<MemberListV4Members> members) {
@@ -39,9 +27,8 @@ public class ListProjectMembersV4Response extends SdkResponse {
         return this;
     }
 
-    
     public ListProjectMembersV4Response addMembersItem(MemberListV4Members membersItem) {
-        if(this.members == null) {
+        if (this.members == null) {
             this.members = new ArrayList<>();
         }
         this.members.add(membersItem);
@@ -49,17 +36,16 @@ public class ListProjectMembersV4Response extends SdkResponse {
     }
 
     public ListProjectMembersV4Response withMembers(Consumer<List<MemberListV4Members>> membersSetter) {
-        if(this.members == null) {
+        if (this.members == null) {
             this.members = new ArrayList<>();
         }
         membersSetter.accept(this.members);
         return this;
     }
 
-    /**
-     * 项目成员列表
-     * @return members
-     */
+    /** 项目成员列表
+     * 
+     * @return members */
     public List<MemberListV4Members> getMembers() {
         return members;
     }
@@ -68,20 +54,14 @@ public class ListProjectMembersV4Response extends SdkResponse {
         this.members = members;
     }
 
-    
-
     public ListProjectMembersV4Response withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * 总数
-     * @return total
-     */
+    /** 总数
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -89,8 +69,6 @@ public class ListProjectMembersV4Response extends SdkResponse {
     public void setTotal(Integer total) {
         this.total = total;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class ListProjectMembersV4Response extends SdkResponse {
             return false;
         }
         ListProjectMembersV4Response listProjectMembersV4Response = (ListProjectMembersV4Response) o;
-        return Objects.equals(this.members, listProjectMembersV4Response.members) &&
-            Objects.equals(this.total, listProjectMembersV4Response.total);
+        return Objects.equals(this.members, listProjectMembersV4Response.members)
+            && Objects.equals(this.total, listProjectMembersV4Response.total);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(members, total);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class ListProjectMembersV4Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

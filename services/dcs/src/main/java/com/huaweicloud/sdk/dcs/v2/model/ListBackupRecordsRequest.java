@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListBackupRecordsRequest  {
-
-
+/** Request Object */
+public class ListBackupRecordsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="begin_time")
-    
+    @JsonProperty(value = "begin_time")
+
     private String beginTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
     public ListBackupRecordsRequest withInstanceId(String instanceId) {
@@ -52,13 +38,9 @@ public class ListBackupRecordsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -67,20 +49,14 @@ public class ListBackupRecordsRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListBackupRecordsRequest withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询开始时间，时间为UTC时间。格式：yyyyMMddHHmmss，如：20170718235959。
-     * @return beginTime
-     */
+    /** 查询开始时间，时间为UTC时间。格式：yyyyMMddHHmmss，如：20170718235959。
+     * 
+     * @return beginTime */
     public String getBeginTime() {
         return beginTime;
     }
@@ -89,20 +65,14 @@ public class ListBackupRecordsRequest  {
         this.beginTime = beginTime;
     }
 
-    
-
     public ListBackupRecordsRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询结束时间，时间为UTC时间。格式：yyyyMMddHHmmss，如：20170718235959。
-     * @return endTime
-     */
+    /** 查询结束时间，时间为UTC时间。格式：yyyyMMddHHmmss，如：20170718235959。
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -111,20 +81,14 @@ public class ListBackupRecordsRequest  {
         this.endTime = endTime;
     }
 
-    
-
     public ListBackupRecordsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示的条目数量。
-     * @return limit
-     */
+    /** 每页显示的条目数量。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -133,20 +97,14 @@ public class ListBackupRecordsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListBackupRecordsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于0。
-     * @return offset
-     */
+    /** 偏移量，表示从此偏移量开始查询， offset大于等于0。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -154,8 +112,6 @@ public class ListBackupRecordsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,18 @@ public class ListBackupRecordsRequest  {
             return false;
         }
         ListBackupRecordsRequest listBackupRecordsRequest = (ListBackupRecordsRequest) o;
-        return Objects.equals(this.instanceId, listBackupRecordsRequest.instanceId) &&
-            Objects.equals(this.beginTime, listBackupRecordsRequest.beginTime) &&
-            Objects.equals(this.endTime, listBackupRecordsRequest.endTime) &&
-            Objects.equals(this.limit, listBackupRecordsRequest.limit) &&
-            Objects.equals(this.offset, listBackupRecordsRequest.offset);
+        return Objects.equals(this.instanceId, listBackupRecordsRequest.instanceId)
+            && Objects.equals(this.beginTime, listBackupRecordsRequest.beginTime)
+            && Objects.equals(this.endTime, listBackupRecordsRequest.endTime)
+            && Objects.equals(this.limit, listBackupRecordsRequest.limit)
+            && Objects.equals(this.offset, listBackupRecordsRequest.offset);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, beginTime, endTime, limit, offset);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class ListBackupRecordsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

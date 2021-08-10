@@ -1,73 +1,51 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ModDeptDTO
- */
-public class ModDeptDTO  {
-
-
+/** ModDeptDTO */
+public class ModDeptDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deptName")
-    
+    @JsonProperty(value = "deptName")
+
     private String deptName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parentDeptCode")
-    
+    @JsonProperty(value = "parentDeptCode")
+
     private String parentDeptCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="note")
-    
+    @JsonProperty(value = "note")
+
     private String note;
-    /**
-     * 其他用户对该部门下用户的访问权限： - UNLIMITED：默认，不做限制 - OPEN：公开，其他部门都可访问（无论对方权限如何配置） - CLOSE：隐藏，其他部门不可访问（暂未实现） - DESIGNATED_DEPARTMENT：指定部门能访问（暂未实现）
-     */
+
+    /** 其他用户对该部门下用户的访问权限： - UNLIMITED：默认，不做限制 - OPEN：公开，其他部门都可访问（无论对方权限如何配置） - CLOSE：隐藏，其他部门不可访问（暂未实现） -
+     * DESIGNATED_DEPARTMENT：指定部门能访问（暂未实现） */
     public static final class InPermissionEnum {
 
-        
-        /**
-         * Enum UNLIMITED for value: "UNLIMITED"
-         */
+        /** Enum UNLIMITED for value: "UNLIMITED" */
         public static final InPermissionEnum UNLIMITED = new InPermissionEnum("UNLIMITED");
-        
-        /**
-         * Enum OPEN for value: "OPEN"
-         */
+
+        /** Enum OPEN for value: "OPEN" */
         public static final InPermissionEnum OPEN = new InPermissionEnum("OPEN");
-        
-        /**
-         * Enum CLOSE for value: "CLOSE"
-         */
+
+        /** Enum CLOSE for value: "CLOSE" */
         public static final InPermissionEnum CLOSE = new InPermissionEnum("CLOSE");
-        
-        /**
-         * Enum DESIGNATED_DEPARTMENT for value: "DESIGNATED_DEPARTMENT"
-         */
+
+        /** Enum DESIGNATED_DEPARTMENT for value: "DESIGNATED_DEPARTMENT" */
         public static final InPermissionEnum DESIGNATED_DEPARTMENT = new InPermissionEnum("DESIGNATED_DEPARTMENT");
-        
 
         private static final Map<String, InPermissionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -98,7 +76,7 @@ public class ModDeptDTO  {
 
         @JsonCreator
         public static InPermissionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             InPermissionEnum result = STATIC_FIELDS.get(value);
@@ -109,7 +87,7 @@ public class ModDeptDTO  {
         }
 
         public static InPermissionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             InPermissionEnum result = STATIC_FIELDS.get(value);
@@ -133,37 +111,27 @@ public class ModDeptDTO  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="inPermission")
-    
+    @JsonProperty(value = "inPermission")
+
     private InPermissionEnum inPermission;
-    /**
-     * 该部门下用户访问权限控制 - UNLIMITED：不限制 - ONLY_SELF：仅能查询自己 - SELF_AND_CHILD_DEPARTMENT：该部门下用户能查询本部门及子部门通讯 - DESIGNATED_DEPARTMENT：该部门下用户能查询指定部门通讯录
-     */
+
+    /** 该部门下用户访问权限控制 - UNLIMITED：不限制 - ONLY_SELF：仅能查询自己 - SELF_AND_CHILD_DEPARTMENT：该部门下用户能查询本部门及子部门通讯 -
+     * DESIGNATED_DEPARTMENT：该部门下用户能查询指定部门通讯录 */
     public static final class OutPermissionEnum {
 
-        
-        /**
-         * Enum UNLIMITED for value: "UNLIMITED"
-         */
+        /** Enum UNLIMITED for value: "UNLIMITED" */
         public static final OutPermissionEnum UNLIMITED = new OutPermissionEnum("UNLIMITED");
-        
-        /**
-         * Enum ONLY_SELF for value: "ONLY_SELF"
-         */
+
+        /** Enum ONLY_SELF for value: "ONLY_SELF" */
         public static final OutPermissionEnum ONLY_SELF = new OutPermissionEnum("ONLY_SELF");
-        
-        /**
-         * Enum SELF_AND_CHILD_DEPARTMENT for value: "SELF_AND_CHILD_DEPARTMENT"
-         */
-        public static final OutPermissionEnum SELF_AND_CHILD_DEPARTMENT = new OutPermissionEnum("SELF_AND_CHILD_DEPARTMENT");
-        
-        /**
-         * Enum DESIGNATED_DEPARTMENT for value: "DESIGNATED_DEPARTMENT"
-         */
+
+        /** Enum SELF_AND_CHILD_DEPARTMENT for value: "SELF_AND_CHILD_DEPARTMENT" */
+        public static final OutPermissionEnum SELF_AND_CHILD_DEPARTMENT =
+            new OutPermissionEnum("SELF_AND_CHILD_DEPARTMENT");
+
+        /** Enum DESIGNATED_DEPARTMENT for value: "DESIGNATED_DEPARTMENT" */
         public static final OutPermissionEnum DESIGNATED_DEPARTMENT = new OutPermissionEnum("DESIGNATED_DEPARTMENT");
-        
 
         private static final Map<String, OutPermissionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -194,7 +162,7 @@ public class ModDeptDTO  {
 
         @JsonCreator
         public static OutPermissionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OutPermissionEnum result = STATIC_FIELDS.get(value);
@@ -205,7 +173,7 @@ public class ModDeptDTO  {
         }
 
         public static OutPermissionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OutPermissionEnum result = STATIC_FIELDS.get(value);
@@ -229,30 +197,24 @@ public class ModDeptDTO  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="outPermission")
-    
+    @JsonProperty(value = "outPermission")
+
     private OutPermissionEnum outPermission;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="designatedOutDeptCodes")
-    
+    @JsonProperty(value = "designatedOutDeptCodes")
+
     private List<String> designatedOutDeptCodes = null;
-    
+
     public ModDeptDTO withDeptName(String deptName) {
         this.deptName = deptName;
         return this;
     }
 
-    
-
-
-    /**
-     * 部门名称 maxLength：128 minLength：1
-     * @return deptName
-     */
+    /** 部门名称 maxLength：128 minLength：1
+     * 
+     * @return deptName */
     public String getDeptName() {
         return deptName;
     }
@@ -261,20 +223,14 @@ public class ModDeptDTO  {
         this.deptName = deptName;
     }
 
-    
-
     public ModDeptDTO withParentDeptCode(String parentDeptCode) {
         this.parentDeptCode = parentDeptCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 父部门编码 maxLength：32
-     * @return parentDeptCode
-     */
+    /** 父部门编码 maxLength：32
+     * 
+     * @return parentDeptCode */
     public String getParentDeptCode() {
         return parentDeptCode;
     }
@@ -283,20 +239,14 @@ public class ModDeptDTO  {
         this.parentDeptCode = parentDeptCode;
     }
 
-    
-
     public ModDeptDTO withNote(String note) {
         this.note = note;
         return this;
     }
 
-    
-
-
-    /**
-     * 备注 maxLength：96 minLength：0
-     * @return note
-     */
+    /** 备注 maxLength：96 minLength：0
+     * 
+     * @return note */
     public String getNote() {
         return note;
     }
@@ -305,20 +255,15 @@ public class ModDeptDTO  {
         this.note = note;
     }
 
-    
-
     public ModDeptDTO withInPermission(InPermissionEnum inPermission) {
         this.inPermission = inPermission;
         return this;
     }
 
-    
-
-
-    /**
-     * 其他用户对该部门下用户的访问权限： - UNLIMITED：默认，不做限制 - OPEN：公开，其他部门都可访问（无论对方权限如何配置） - CLOSE：隐藏，其他部门不可访问（暂未实现） - DESIGNATED_DEPARTMENT：指定部门能访问（暂未实现）
-     * @return inPermission
-     */
+    /** 其他用户对该部门下用户的访问权限： - UNLIMITED：默认，不做限制 - OPEN：公开，其他部门都可访问（无论对方权限如何配置） - CLOSE：隐藏，其他部门不可访问（暂未实现） -
+     * DESIGNATED_DEPARTMENT：指定部门能访问（暂未实现）
+     * 
+     * @return inPermission */
     public InPermissionEnum getInPermission() {
         return inPermission;
     }
@@ -327,20 +272,15 @@ public class ModDeptDTO  {
         this.inPermission = inPermission;
     }
 
-    
-
     public ModDeptDTO withOutPermission(OutPermissionEnum outPermission) {
         this.outPermission = outPermission;
         return this;
     }
 
-    
-
-
-    /**
-     * 该部门下用户访问权限控制 - UNLIMITED：不限制 - ONLY_SELF：仅能查询自己 - SELF_AND_CHILD_DEPARTMENT：该部门下用户能查询本部门及子部门通讯 - DESIGNATED_DEPARTMENT：该部门下用户能查询指定部门通讯录
-     * @return outPermission
-     */
+    /** 该部门下用户访问权限控制 - UNLIMITED：不限制 - ONLY_SELF：仅能查询自己 - SELF_AND_CHILD_DEPARTMENT：该部门下用户能查询本部门及子部门通讯 -
+     * DESIGNATED_DEPARTMENT：该部门下用户能查询指定部门通讯录
+     * 
+     * @return outPermission */
     public OutPermissionEnum getOutPermission() {
         return outPermission;
     }
@@ -349,16 +289,13 @@ public class ModDeptDTO  {
         this.outPermission = outPermission;
     }
 
-    
-
     public ModDeptDTO withDesignatedOutDeptCodes(List<String> designatedOutDeptCodes) {
         this.designatedOutDeptCodes = designatedOutDeptCodes;
         return this;
     }
 
-    
     public ModDeptDTO addDesignatedOutDeptCodesItem(String designatedOutDeptCodesItem) {
-        if(this.designatedOutDeptCodes == null) {
+        if (this.designatedOutDeptCodes == null) {
             this.designatedOutDeptCodes = new ArrayList<>();
         }
         this.designatedOutDeptCodes.add(designatedOutDeptCodesItem);
@@ -366,17 +303,16 @@ public class ModDeptDTO  {
     }
 
     public ModDeptDTO withDesignatedOutDeptCodes(Consumer<List<String>> designatedOutDeptCodesSetter) {
-        if(this.designatedOutDeptCodes == null) {
+        if (this.designatedOutDeptCodes == null) {
             this.designatedOutDeptCodes = new ArrayList<>();
         }
         designatedOutDeptCodesSetter.accept(this.designatedOutDeptCodes);
         return this;
     }
 
-    /**
-     * 允许访问的部门列表,仅outPermission为DESIGNATED_DEPARTMENT时有效，最多支持配置150
-     * @return designatedOutDeptCodes
-     */
+    /** 允许访问的部门列表,仅outPermission为DESIGNATED_DEPARTMENT时有效，最多支持配置150
+     * 
+     * @return designatedOutDeptCodes */
     public List<String> getDesignatedOutDeptCodes() {
         return designatedOutDeptCodes;
     }
@@ -384,8 +320,6 @@ public class ModDeptDTO  {
     public void setDesignatedOutDeptCodes(List<String> designatedOutDeptCodes) {
         this.designatedOutDeptCodes = designatedOutDeptCodes;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -396,17 +330,18 @@ public class ModDeptDTO  {
             return false;
         }
         ModDeptDTO modDeptDTO = (ModDeptDTO) o;
-        return Objects.equals(this.deptName, modDeptDTO.deptName) &&
-            Objects.equals(this.parentDeptCode, modDeptDTO.parentDeptCode) &&
-            Objects.equals(this.note, modDeptDTO.note) &&
-            Objects.equals(this.inPermission, modDeptDTO.inPermission) &&
-            Objects.equals(this.outPermission, modDeptDTO.outPermission) &&
-            Objects.equals(this.designatedOutDeptCodes, modDeptDTO.designatedOutDeptCodes);
+        return Objects.equals(this.deptName, modDeptDTO.deptName)
+            && Objects.equals(this.parentDeptCode, modDeptDTO.parentDeptCode)
+            && Objects.equals(this.note, modDeptDTO.note) && Objects.equals(this.inPermission, modDeptDTO.inPermission)
+            && Objects.equals(this.outPermission, modDeptDTO.outPermission)
+            && Objects.equals(this.designatedOutDeptCodes, modDeptDTO.designatedOutDeptCodes);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(deptName, parentDeptCode, note, inPermission, outPermission, designatedOutDeptCodes);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -420,16 +355,13 @@ public class ModDeptDTO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

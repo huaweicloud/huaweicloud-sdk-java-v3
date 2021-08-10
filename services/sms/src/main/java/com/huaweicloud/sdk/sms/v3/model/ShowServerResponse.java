@@ -1,160 +1,105 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.BtrfsFileSystem;
-import com.huaweicloud.sdk.sms.v3.model.EnvironmentCheck;
-import com.huaweicloud.sdk.sms.v3.model.InitTargetServer;
-import com.huaweicloud.sdk.sms.v3.model.NetWork;
-import com.huaweicloud.sdk.sms.v3.model.ServerDisk;
-import com.huaweicloud.sdk.sms.v3.model.TaskByServerSource;
-import com.huaweicloud.sdk.sms.v3.model.VolumeGroups;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowServerResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip")
-    
+    @JsonProperty(value = "ip")
+
     private String ip;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hostname")
-    
+    @JsonProperty(value = "hostname")
+
     private String hostname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="add_date")
-    
+    @JsonProperty(value = "add_date")
+
     private Long addDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os_type")
-    
+    @JsonProperty(value = "os_type")
+
     private String osType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os_version")
-    
+    @JsonProperty(value = "os_version")
+
     private String osVersion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="oem_system")
-    
+    @JsonProperty(value = "oem_system")
+
     private Boolean oemSystem;
-    /**
-     * 当前源端服务器状态
-     */
+
+    /** 当前源端服务器状态 */
     public static final class StateEnum {
 
-        
-        /**
-         * Enum UNAVAILABLE_ for value: "unavailable:环境校验不通过"
-         */
+        /** Enum UNAVAILABLE_ for value: "unavailable:环境校验不通过" */
         public static final StateEnum UNAVAILABLE_ = new StateEnum("unavailable:环境校验不通过");
-        
-        /**
-         * Enum WAITING_ for value: "waiting:等待"
-         */
+
+        /** Enum WAITING_ for value: "waiting:等待" */
         public static final StateEnum WAITING_ = new StateEnum("waiting:等待");
-        
-        /**
-         * Enum INITIALIZE_ for value: "initialize:初始化"
-         */
+
+        /** Enum INITIALIZE_ for value: "initialize:初始化" */
         public static final StateEnum INITIALIZE_ = new StateEnum("initialize:初始化");
-        
-        /**
-         * Enum REPLICATE_ for value: "replicate:复制"
-         */
+
+        /** Enum REPLICATE_ for value: "replicate:复制" */
         public static final StateEnum REPLICATE_ = new StateEnum("replicate:复制");
-        
-        /**
-         * Enum SYNCING_ for value: "syncing:持续同步"
-         */
+
+        /** Enum SYNCING_ for value: "syncing:持续同步" */
         public static final StateEnum SYNCING_ = new StateEnum("syncing:持续同步");
-        
-        /**
-         * Enum STOPPING_ for value: "stopping:暂停中"
-         */
+
+        /** Enum STOPPING_ for value: "stopping:暂停中" */
         public static final StateEnum STOPPING_ = new StateEnum("stopping:暂停中");
-        
-        /**
-         * Enum STOPPED_ for value: "stopped:已暂停"
-         */
+
+        /** Enum STOPPED_ for value: "stopped:已暂停" */
         public static final StateEnum STOPPED_ = new StateEnum("stopped:已暂停");
-        
-        /**
-         * Enum DELETING_ for value: "deleting:删除中"
-         */
+
+        /** Enum DELETING_ for value: "deleting:删除中" */
         public static final StateEnum DELETING_ = new StateEnum("deleting:删除中");
-        
-        /**
-         * Enum ERROR_ for value: "error:错误"
-         */
+
+        /** Enum ERROR_ for value: "error:错误" */
         public static final StateEnum ERROR_ = new StateEnum("error:错误");
-        
-        /**
-         * Enum CLONING_ for value: "cloning:等待克隆完成"
-         */
+
+        /** Enum CLONING_ for value: "cloning:等待克隆完成" */
         public static final StateEnum CLONING_ = new StateEnum("cloning:等待克隆完成");
-        
-        /**
-         * Enum TESTING_ for value: "testing:启动目的端中"
-         */
+
+        /** Enum TESTING_ for value: "testing:启动目的端中" */
         public static final StateEnum TESTING_ = new StateEnum("testing:启动目的端中");
-        
-        /**
-         * Enum _FINISHED_ for value: " finished:启动目的端完成"
-         */
+
+        /** Enum _FINISHED_ for value: " finished:启动目的端完成" */
         public static final StateEnum _FINISHED_ = new StateEnum(" finished:启动目的端完成");
-        
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
@@ -193,7 +138,7 @@ public class ShowServerResponse extends SdkResponse {
 
         @JsonCreator
         public static StateEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StateEnum result = STATIC_FIELDS.get(value);
@@ -204,7 +149,7 @@ public class ShowServerResponse extends SdkResponse {
         }
 
         public static StateEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StateEnum result = STATIC_FIELDS.get(value);
@@ -228,33 +173,24 @@ public class ShowServerResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
+
     private StateEnum state;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="connected")
-    
+    @JsonProperty(value = "connected")
+
     private Boolean connected;
-    /**
-     * 源端服务器启动类型，如BIOS或者UEFI
-     */
+
+    /** 源端服务器启动类型，如BIOS或者UEFI */
     public static final class FirmwareEnum {
 
-        
-        /**
-         * Enum BIOS for value: "BIOS"
-         */
+        /** Enum BIOS for value: "BIOS" */
         public static final FirmwareEnum BIOS = new FirmwareEnum("BIOS");
-        
-        /**
-         * Enum UEFI for value: "UEFI"
-         */
+
+        /** Enum UEFI for value: "UEFI" */
         public static final FirmwareEnum UEFI = new FirmwareEnum("UEFI");
-        
 
         private static final Map<String, FirmwareEnum> STATIC_FIELDS = createStaticFields();
 
@@ -283,7 +219,7 @@ public class ShowServerResponse extends SdkResponse {
 
         @JsonCreator
         public static FirmwareEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             FirmwareEnum result = STATIC_FIELDS.get(value);
@@ -294,7 +230,7 @@ public class ShowServerResponse extends SdkResponse {
         }
 
         public static FirmwareEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             FirmwareEnum result = STATIC_FIELDS.get(value);
@@ -318,101 +254,76 @@ public class ShowServerResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="firmware")
-    
+    @JsonProperty(value = "firmware")
+
     private FirmwareEnum firmware;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="init_target_server")
-    
+    @JsonProperty(value = "init_target_server")
+
     private InitTargetServer initTargetServer;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cpu_quantity")
-    
+    @JsonProperty(value = "cpu_quantity")
+
     private Integer cpuQuantity;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="memory")
-    
+    @JsonProperty(value = "memory")
+
     private Long memory;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="current_task")
-    
+    @JsonProperty(value = "current_task")
+
     private TaskByServerSource currentTask;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disks")
-    
+    @JsonProperty(value = "disks")
+
     private List<ServerDisk> disks = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_groups")
-    
+    @JsonProperty(value = "volume_groups")
+
     private List<VolumeGroups> volumeGroups = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="btrfs_list")
-    
+    @JsonProperty(value = "btrfs_list")
+
     private List<BtrfsFileSystem> btrfsList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="networks")
-    
+    @JsonProperty(value = "networks")
+
     private List<NetWork> networks = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="checks")
-    
+    @JsonProperty(value = "checks")
+
     private List<EnvironmentCheck> checks = null;
-        /**
-     * 迁移周期
-     */
+
+    /** 迁移周期 */
     public static final class MigrationCycleEnum {
 
-        
-        /**
-         * Enum CUTOVERING_ for value: "cutovering:启动目的端中"
-         */
+        /** Enum CUTOVERING_ for value: "cutovering:启动目的端中" */
         public static final MigrationCycleEnum CUTOVERING_ = new MigrationCycleEnum("cutovering:启动目的端中");
-        
-        /**
-         * Enum CUTOVERED_ for value: "cutovered:迁移完成"
-         */
+
+        /** Enum CUTOVERED_ for value: "cutovered:迁移完成" */
         public static final MigrationCycleEnum CUTOVERED_ = new MigrationCycleEnum("cutovered:迁移完成");
-        
-        /**
-         * Enum CHECKING_ for value: "checking:源端校验"
-         */
+
+        /** Enum CHECKING_ for value: "checking:源端校验" */
         public static final MigrationCycleEnum CHECKING_ = new MigrationCycleEnum("checking:源端校验");
-        
-        /**
-         * Enum SETTING_ for value: "setting:设置目的端"
-         */
+
+        /** Enum SETTING_ for value: "setting:设置目的端" */
         public static final MigrationCycleEnum SETTING_ = new MigrationCycleEnum("setting:设置目的端");
-        
-        /**
-         * Enum REPLICATING_ for value: "replicating:数据复制中"
-         */
+
+        /** Enum REPLICATING_ for value: "replicating:数据复制中" */
         public static final MigrationCycleEnum REPLICATING_ = new MigrationCycleEnum("replicating:数据复制中");
-        
-        /**
-         * Enum SYNCING_ for value: "syncing:同步中"
-         */
+
+        /** Enum SYNCING_ for value: "syncing:同步中" */
         public static final MigrationCycleEnum SYNCING_ = new MigrationCycleEnum("syncing:同步中");
-        
 
         private static final Map<String, MigrationCycleEnum> STATIC_FIELDS = createStaticFields();
 
@@ -445,7 +356,7 @@ public class ShowServerResponse extends SdkResponse {
 
         @JsonCreator
         public static MigrationCycleEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MigrationCycleEnum result = STATIC_FIELDS.get(value);
@@ -456,7 +367,7 @@ public class ShowServerResponse extends SdkResponse {
         }
 
         public static MigrationCycleEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MigrationCycleEnum result = STATIC_FIELDS.get(value);
@@ -480,46 +391,39 @@ public class ShowServerResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="migration_cycle")
-    
+    @JsonProperty(value = "migration_cycle")
+
     private MigrationCycleEnum migrationCycle;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state_action_time")
-    
+    @JsonProperty(value = "state_action_time")
+
     private Long stateActionTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replicatesize")
-    
+    @JsonProperty(value = "replicatesize")
+
     private Long replicatesize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="totalsize")
-    
+    @JsonProperty(value = "totalsize")
+
     private Long totalsize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_visit_time")
-    
+    @JsonProperty(value = "last_visit_time")
+
     private Long lastVisitTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stage_action_time")
-    
+    @JsonProperty(value = "stage_action_time")
+
     private Long stageActionTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="agent_version")
-    
+    @JsonProperty(value = "agent_version")
+
     private String agentVersion;
 
     public ShowServerResponse withId(String id) {
@@ -527,13 +431,9 @@ public class ShowServerResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 源端服务器id
-     * @return id
-     */
+    /** 源端服务器id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -542,20 +442,14 @@ public class ShowServerResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowServerResponse withIp(String ip) {
         this.ip = ip;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端服务器的ip
-     * @return ip
-     */
+    /** 源端服务器的ip
+     * 
+     * @return ip */
     public String getIp() {
         return ip;
     }
@@ -564,20 +458,14 @@ public class ShowServerResponse extends SdkResponse {
         this.ip = ip;
     }
 
-    
-
     public ShowServerResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 用来区分不同源端服务器的名称
-     * @return name
-     */
+    /** 用来区分不同源端服务器的名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -586,20 +474,14 @@ public class ShowServerResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowServerResponse withHostname(String hostname) {
         this.hostname = hostname;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端主机名，注册源端必选，更新非必选
-     * @return hostname
-     */
+    /** 源端主机名，注册源端必选，更新非必选
+     * 
+     * @return hostname */
     public String getHostname() {
         return hostname;
     }
@@ -608,20 +490,14 @@ public class ShowServerResponse extends SdkResponse {
         this.hostname = hostname;
     }
 
-    
-
     public ShowServerResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目id
-     * @return enterpriseProjectId
-     */
+    /** 企业项目id
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -630,22 +506,14 @@ public class ShowServerResponse extends SdkResponse {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public ShowServerResponse withAddDate(Long addDate) {
         this.addDate = addDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端服务器注册的时间
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return addDate
-     */
+    /** 源端服务器注册的时间 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return addDate */
     public Long getAddDate() {
         return addDate;
     }
@@ -654,20 +522,14 @@ public class ShowServerResponse extends SdkResponse {
         this.addDate = addDate;
     }
 
-    
-
     public ShowServerResponse withOsType(String osType) {
         this.osType = osType;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
-     * @return osType
-     */
+    /** 源端服务器的OS类型，分为Windows和Linux，注册必选，更新非必选
+     * 
+     * @return osType */
     public String getOsType() {
         return osType;
     }
@@ -676,20 +538,14 @@ public class ShowServerResponse extends SdkResponse {
         this.osType = osType;
     }
 
-    
-
     public ShowServerResponse withOsVersion(String osVersion) {
         this.osVersion = osVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作系统版本，注册必选，更新非必选
-     * @return osVersion
-     */
+    /** 操作系统版本，注册必选，更新非必选
+     * 
+     * @return osVersion */
     public String getOsVersion() {
         return osVersion;
     }
@@ -698,20 +554,14 @@ public class ShowServerResponse extends SdkResponse {
         this.osVersion = osVersion;
     }
 
-    
-
     public ShowServerResponse withOemSystem(Boolean oemSystem) {
         this.oemSystem = oemSystem;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否是OEM操作系统(Windows)
-     * @return oemSystem
-     */
+    /** 是否是OEM操作系统(Windows)
+     * 
+     * @return oemSystem */
     public Boolean getOemSystem() {
         return oemSystem;
     }
@@ -720,20 +570,14 @@ public class ShowServerResponse extends SdkResponse {
         this.oemSystem = oemSystem;
     }
 
-    
-
     public ShowServerResponse withState(StateEnum state) {
         this.state = state;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前源端服务器状态
-     * @return state
-     */
+    /** 当前源端服务器状态
+     * 
+     * @return state */
     public StateEnum getState() {
         return state;
     }
@@ -742,20 +586,14 @@ public class ShowServerResponse extends SdkResponse {
         this.state = state;
     }
 
-    
-
     public ShowServerResponse withConnected(Boolean connected) {
         this.connected = connected;
         return this;
     }
 
-    
-
-
-    /**
-     * 与Agent连接状态
-     * @return connected
-     */
+    /** 与Agent连接状态
+     * 
+     * @return connected */
     public Boolean getConnected() {
         return connected;
     }
@@ -764,20 +602,14 @@ public class ShowServerResponse extends SdkResponse {
         this.connected = connected;
     }
 
-    
-
     public ShowServerResponse withFirmware(FirmwareEnum firmware) {
         this.firmware = firmware;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端服务器启动类型，如BIOS或者UEFI
-     * @return firmware
-     */
+    /** 源端服务器启动类型，如BIOS或者UEFI
+     * 
+     * @return firmware */
     public FirmwareEnum getFirmware() {
         return firmware;
     }
@@ -786,27 +618,23 @@ public class ShowServerResponse extends SdkResponse {
         this.firmware = firmware;
     }
 
-    
-
     public ShowServerResponse withInitTargetServer(InitTargetServer initTargetServer) {
         this.initTargetServer = initTargetServer;
         return this;
     }
 
     public ShowServerResponse withInitTargetServer(Consumer<InitTargetServer> initTargetServerSetter) {
-        if(this.initTargetServer == null ){
+        if (this.initTargetServer == null) {
             this.initTargetServer = new InitTargetServer();
             initTargetServerSetter.accept(this.initTargetServer);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get initTargetServer
-     * @return initTargetServer
-     */
+    /** Get initTargetServer
+     * 
+     * @return initTargetServer */
     public InitTargetServer getInitTargetServer() {
         return initTargetServer;
     }
@@ -815,22 +643,14 @@ public class ShowServerResponse extends SdkResponse {
         this.initTargetServer = initTargetServer;
     }
 
-    
-
     public ShowServerResponse withCpuQuantity(Integer cpuQuantity) {
         this.cpuQuantity = cpuQuantity;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端CPU核心数
-     * minimum: 0
-     * maximum: 65535
-     * @return cpuQuantity
-     */
+    /** 源端CPU核心数 minimum: 0 maximum: 65535
+     * 
+     * @return cpuQuantity */
     public Integer getCpuQuantity() {
         return cpuQuantity;
     }
@@ -839,22 +659,14 @@ public class ShowServerResponse extends SdkResponse {
         this.cpuQuantity = cpuQuantity;
     }
 
-    
-
     public ShowServerResponse withMemory(Long memory) {
         this.memory = memory;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端服务器物理内存大小，单位MB
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return memory
-     */
+    /** 源端服务器物理内存大小，单位MB minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return memory */
     public Long getMemory() {
         return memory;
     }
@@ -863,27 +675,23 @@ public class ShowServerResponse extends SdkResponse {
         this.memory = memory;
     }
 
-    
-
     public ShowServerResponse withCurrentTask(TaskByServerSource currentTask) {
         this.currentTask = currentTask;
         return this;
     }
 
     public ShowServerResponse withCurrentTask(Consumer<TaskByServerSource> currentTaskSetter) {
-        if(this.currentTask == null ){
+        if (this.currentTask == null) {
             this.currentTask = new TaskByServerSource();
             currentTaskSetter.accept(this.currentTask);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get currentTask
-     * @return currentTask
-     */
+    /** Get currentTask
+     * 
+     * @return currentTask */
     public TaskByServerSource getCurrentTask() {
         return currentTask;
     }
@@ -892,16 +700,13 @@ public class ShowServerResponse extends SdkResponse {
         this.currentTask = currentTask;
     }
 
-    
-
     public ShowServerResponse withDisks(List<ServerDisk> disks) {
         this.disks = disks;
         return this;
     }
 
-    
     public ShowServerResponse addDisksItem(ServerDisk disksItem) {
-        if(this.disks == null) {
+        if (this.disks == null) {
             this.disks = new ArrayList<>();
         }
         this.disks.add(disksItem);
@@ -909,17 +714,16 @@ public class ShowServerResponse extends SdkResponse {
     }
 
     public ShowServerResponse withDisks(Consumer<List<ServerDisk>> disksSetter) {
-        if(this.disks == null) {
+        if (this.disks == null) {
             this.disks = new ArrayList<>();
         }
         disksSetter.accept(this.disks);
         return this;
     }
 
-    /**
-     * 源端服务器磁盘信息
-     * @return disks
-     */
+    /** 源端服务器磁盘信息
+     * 
+     * @return disks */
     public List<ServerDisk> getDisks() {
         return disks;
     }
@@ -928,16 +732,13 @@ public class ShowServerResponse extends SdkResponse {
         this.disks = disks;
     }
 
-    
-
     public ShowServerResponse withVolumeGroups(List<VolumeGroups> volumeGroups) {
         this.volumeGroups = volumeGroups;
         return this;
     }
 
-    
     public ShowServerResponse addVolumeGroupsItem(VolumeGroups volumeGroupsItem) {
-        if(this.volumeGroups == null) {
+        if (this.volumeGroups == null) {
             this.volumeGroups = new ArrayList<>();
         }
         this.volumeGroups.add(volumeGroupsItem);
@@ -945,17 +746,16 @@ public class ShowServerResponse extends SdkResponse {
     }
 
     public ShowServerResponse withVolumeGroups(Consumer<List<VolumeGroups>> volumeGroupsSetter) {
-        if(this.volumeGroups == null) {
+        if (this.volumeGroups == null) {
             this.volumeGroups = new ArrayList<>();
         }
         volumeGroupsSetter.accept(this.volumeGroups);
         return this;
     }
 
-    /**
-     * 源端服务器的卷组信息，Linux必选，如果没有卷组，输入[]
-     * @return volumeGroups
-     */
+    /** 源端服务器的卷组信息，Linux必选，如果没有卷组，输入[]
+     * 
+     * @return volumeGroups */
     public List<VolumeGroups> getVolumeGroups() {
         return volumeGroups;
     }
@@ -964,16 +764,13 @@ public class ShowServerResponse extends SdkResponse {
         this.volumeGroups = volumeGroups;
     }
 
-    
-
     public ShowServerResponse withBtrfsList(List<BtrfsFileSystem> btrfsList) {
         this.btrfsList = btrfsList;
         return this;
     }
 
-    
     public ShowServerResponse addBtrfsListItem(BtrfsFileSystem btrfsListItem) {
-        if(this.btrfsList == null) {
+        if (this.btrfsList == null) {
             this.btrfsList = new ArrayList<>();
         }
         this.btrfsList.add(btrfsListItem);
@@ -981,17 +778,16 @@ public class ShowServerResponse extends SdkResponse {
     }
 
     public ShowServerResponse withBtrfsList(Consumer<List<BtrfsFileSystem>> btrfsListSetter) {
-        if(this.btrfsList == null) {
+        if (this.btrfsList == null) {
             this.btrfsList = new ArrayList<>();
         }
         btrfsListSetter.accept(this.btrfsList);
         return this;
     }
 
-    /**
-     * Linux 必选，源端的Btrfs信息。如果源端不存在Btrfs，则为[]
-     * @return btrfsList
-     */
+    /** Linux 必选，源端的Btrfs信息。如果源端不存在Btrfs，则为[]
+     * 
+     * @return btrfsList */
     public List<BtrfsFileSystem> getBtrfsList() {
         return btrfsList;
     }
@@ -1000,16 +796,13 @@ public class ShowServerResponse extends SdkResponse {
         this.btrfsList = btrfsList;
     }
 
-    
-
     public ShowServerResponse withNetworks(List<NetWork> networks) {
         this.networks = networks;
         return this;
     }
 
-    
     public ShowServerResponse addNetworksItem(NetWork networksItem) {
-        if(this.networks == null) {
+        if (this.networks == null) {
             this.networks = new ArrayList<>();
         }
         this.networks.add(networksItem);
@@ -1017,17 +810,16 @@ public class ShowServerResponse extends SdkResponse {
     }
 
     public ShowServerResponse withNetworks(Consumer<List<NetWork>> networksSetter) {
-        if(this.networks == null) {
+        if (this.networks == null) {
             this.networks = new ArrayList<>();
         }
         networksSetter.accept(this.networks);
         return this;
     }
 
-    /**
-     * 源端服务器的网卡信息
-     * @return networks
-     */
+    /** 源端服务器的网卡信息
+     * 
+     * @return networks */
     public List<NetWork> getNetworks() {
         return networks;
     }
@@ -1036,16 +828,13 @@ public class ShowServerResponse extends SdkResponse {
         this.networks = networks;
     }
 
-    
-
     public ShowServerResponse withChecks(List<EnvironmentCheck> checks) {
         this.checks = checks;
         return this;
     }
 
-    
     public ShowServerResponse addChecksItem(EnvironmentCheck checksItem) {
-        if(this.checks == null) {
+        if (this.checks == null) {
             this.checks = new ArrayList<>();
         }
         this.checks.add(checksItem);
@@ -1053,17 +842,16 @@ public class ShowServerResponse extends SdkResponse {
     }
 
     public ShowServerResponse withChecks(Consumer<List<EnvironmentCheck>> checksSetter) {
-        if(this.checks == null) {
+        if (this.checks == null) {
             this.checks = new ArrayList<>();
         }
         checksSetter.accept(this.checks);
         return this;
     }
 
-    /**
-     * 源端环境校验信息
-     * @return checks
-     */
+    /** 源端环境校验信息
+     * 
+     * @return checks */
     public List<EnvironmentCheck> getChecks() {
         return checks;
     }
@@ -1072,20 +860,14 @@ public class ShowServerResponse extends SdkResponse {
         this.checks = checks;
     }
 
-    
-
     public ShowServerResponse withMigrationCycle(MigrationCycleEnum migrationCycle) {
         this.migrationCycle = migrationCycle;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移周期
-     * @return migrationCycle
-     */
+    /** 迁移周期
+     * 
+     * @return migrationCycle */
     public MigrationCycleEnum getMigrationCycle() {
         return migrationCycle;
     }
@@ -1094,22 +876,14 @@ public class ShowServerResponse extends SdkResponse {
         this.migrationCycle = migrationCycle;
     }
 
-    
-
     public ShowServerResponse withStateActionTime(Long stateActionTime) {
         this.stateActionTime = stateActionTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 源端状态（state）上次发生变化的时间戳
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return stateActionTime
-     */
+    /** 源端状态（state）上次发生变化的时间戳 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return stateActionTime */
     public Long getStateActionTime() {
         return stateActionTime;
     }
@@ -1118,22 +892,14 @@ public class ShowServerResponse extends SdkResponse {
         this.stateActionTime = stateActionTime;
     }
 
-    
-
     public ShowServerResponse withReplicatesize(Long replicatesize) {
         this.replicatesize = replicatesize;
         return this;
     }
 
-    
-
-
-    /**
-     * 已经完成迁移的大小（B）
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return replicatesize
-     */
+    /** 已经完成迁移的大小（B） minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return replicatesize */
     public Long getReplicatesize() {
         return replicatesize;
     }
@@ -1142,22 +908,14 @@ public class ShowServerResponse extends SdkResponse {
         this.replicatesize = replicatesize;
     }
 
-    
-
     public ShowServerResponse withTotalsize(Long totalsize) {
         this.totalsize = totalsize;
         return this;
     }
 
-    
-
-
-    /**
-     * 需要迁移的数据量总大小（B）
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return totalsize
-     */
+    /** 需要迁移的数据量总大小（B） minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return totalsize */
     public Long getTotalsize() {
         return totalsize;
     }
@@ -1166,22 +924,14 @@ public class ShowServerResponse extends SdkResponse {
         this.totalsize = totalsize;
     }
 
-    
-
     public ShowServerResponse withLastVisitTime(Long lastVisitTime) {
         this.lastVisitTime = lastVisitTime;
         return this;
     }
 
-    
-
-
-    /**
-     * agent上一次连接状态发生变化的时间戳
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return lastVisitTime
-     */
+    /** agent上一次连接状态发生变化的时间戳 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return lastVisitTime */
     public Long getLastVisitTime() {
         return lastVisitTime;
     }
@@ -1190,22 +940,14 @@ public class ShowServerResponse extends SdkResponse {
         this.lastVisitTime = lastVisitTime;
     }
 
-    
-
     public ShowServerResponse withStageActionTime(Long stageActionTime) {
         this.stageActionTime = stageActionTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移周期（migration_cycle）上一次变化的时间戳
-     * minimum: 0
-     * maximum: 9223372036854775807
-     * @return stageActionTime
-     */
+    /** 迁移周期（migration_cycle）上一次变化的时间戳 minimum: 0 maximum: 9223372036854775807
+     * 
+     * @return stageActionTime */
     public Long getStageActionTime() {
         return stageActionTime;
     }
@@ -1214,20 +956,14 @@ public class ShowServerResponse extends SdkResponse {
         this.stageActionTime = stageActionTime;
     }
 
-    
-
     public ShowServerResponse withAgentVersion(String agentVersion) {
         this.agentVersion = agentVersion;
         return this;
     }
 
-    
-
-
-    /**
-     * Agent版本信息
-     * @return agentVersion
-     */
+    /** Agent版本信息
+     * 
+     * @return agentVersion */
     public String getAgentVersion() {
         return agentVersion;
     }
@@ -1235,8 +971,6 @@ public class ShowServerResponse extends SdkResponse {
     public void setAgentVersion(String agentVersion) {
         this.agentVersion = agentVersion;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -1247,39 +981,67 @@ public class ShowServerResponse extends SdkResponse {
             return false;
         }
         ShowServerResponse showServerResponse = (ShowServerResponse) o;
-        return Objects.equals(this.id, showServerResponse.id) &&
-            Objects.equals(this.ip, showServerResponse.ip) &&
-            Objects.equals(this.name, showServerResponse.name) &&
-            Objects.equals(this.hostname, showServerResponse.hostname) &&
-            Objects.equals(this.enterpriseProjectId, showServerResponse.enterpriseProjectId) &&
-            Objects.equals(this.addDate, showServerResponse.addDate) &&
-            Objects.equals(this.osType, showServerResponse.osType) &&
-            Objects.equals(this.osVersion, showServerResponse.osVersion) &&
-            Objects.equals(this.oemSystem, showServerResponse.oemSystem) &&
-            Objects.equals(this.state, showServerResponse.state) &&
-            Objects.equals(this.connected, showServerResponse.connected) &&
-            Objects.equals(this.firmware, showServerResponse.firmware) &&
-            Objects.equals(this.initTargetServer, showServerResponse.initTargetServer) &&
-            Objects.equals(this.cpuQuantity, showServerResponse.cpuQuantity) &&
-            Objects.equals(this.memory, showServerResponse.memory) &&
-            Objects.equals(this.currentTask, showServerResponse.currentTask) &&
-            Objects.equals(this.disks, showServerResponse.disks) &&
-            Objects.equals(this.volumeGroups, showServerResponse.volumeGroups) &&
-            Objects.equals(this.btrfsList, showServerResponse.btrfsList) &&
-            Objects.equals(this.networks, showServerResponse.networks) &&
-            Objects.equals(this.checks, showServerResponse.checks) &&
-            Objects.equals(this.migrationCycle, showServerResponse.migrationCycle) &&
-            Objects.equals(this.stateActionTime, showServerResponse.stateActionTime) &&
-            Objects.equals(this.replicatesize, showServerResponse.replicatesize) &&
-            Objects.equals(this.totalsize, showServerResponse.totalsize) &&
-            Objects.equals(this.lastVisitTime, showServerResponse.lastVisitTime) &&
-            Objects.equals(this.stageActionTime, showServerResponse.stageActionTime) &&
-            Objects.equals(this.agentVersion, showServerResponse.agentVersion);
+        return Objects.equals(this.id, showServerResponse.id) && Objects.equals(this.ip, showServerResponse.ip)
+            && Objects.equals(this.name, showServerResponse.name)
+            && Objects.equals(this.hostname, showServerResponse.hostname)
+            && Objects.equals(this.enterpriseProjectId, showServerResponse.enterpriseProjectId)
+            && Objects.equals(this.addDate, showServerResponse.addDate)
+            && Objects.equals(this.osType, showServerResponse.osType)
+            && Objects.equals(this.osVersion, showServerResponse.osVersion)
+            && Objects.equals(this.oemSystem, showServerResponse.oemSystem)
+            && Objects.equals(this.state, showServerResponse.state)
+            && Objects.equals(this.connected, showServerResponse.connected)
+            && Objects.equals(this.firmware, showServerResponse.firmware)
+            && Objects.equals(this.initTargetServer, showServerResponse.initTargetServer)
+            && Objects.equals(this.cpuQuantity, showServerResponse.cpuQuantity)
+            && Objects.equals(this.memory, showServerResponse.memory)
+            && Objects.equals(this.currentTask, showServerResponse.currentTask)
+            && Objects.equals(this.disks, showServerResponse.disks)
+            && Objects.equals(this.volumeGroups, showServerResponse.volumeGroups)
+            && Objects.equals(this.btrfsList, showServerResponse.btrfsList)
+            && Objects.equals(this.networks, showServerResponse.networks)
+            && Objects.equals(this.checks, showServerResponse.checks)
+            && Objects.equals(this.migrationCycle, showServerResponse.migrationCycle)
+            && Objects.equals(this.stateActionTime, showServerResponse.stateActionTime)
+            && Objects.equals(this.replicatesize, showServerResponse.replicatesize)
+            && Objects.equals(this.totalsize, showServerResponse.totalsize)
+            && Objects.equals(this.lastVisitTime, showServerResponse.lastVisitTime)
+            && Objects.equals(this.stageActionTime, showServerResponse.stageActionTime)
+            && Objects.equals(this.agentVersion, showServerResponse.agentVersion);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, ip, name, hostname, enterpriseProjectId, addDate, osType, osVersion, oemSystem, state, connected, firmware, initTargetServer, cpuQuantity, memory, currentTask, disks, volumeGroups, btrfsList, networks, checks, migrationCycle, stateActionTime, replicatesize, totalsize, lastVisitTime, stageActionTime, agentVersion);
+        return Objects.hash(id,
+            ip,
+            name,
+            hostname,
+            enterpriseProjectId,
+            addDate,
+            osType,
+            osVersion,
+            oemSystem,
+            state,
+            connected,
+            firmware,
+            initTargetServer,
+            cpuQuantity,
+            memory,
+            currentTask,
+            disks,
+            volumeGroups,
+            btrfsList,
+            networks,
+            checks,
+            migrationCycle,
+            stateActionTime,
+            replicatesize,
+            totalsize,
+            lastVisitTime,
+            stageActionTime,
+            agentVersion);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1315,16 +1077,13 @@ public class ShowServerResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

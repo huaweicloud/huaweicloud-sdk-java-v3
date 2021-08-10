@@ -1,87 +1,65 @@
 package com.huaweicloud.sdk.gaussdbfornosql.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ConfigurationParameterResult;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowConfigurationDetailResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore_version_name")
-    
+    @JsonProperty(value = "datastore_version_name")
+
     private String datastoreVersionName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore_name")
-    
+    @JsonProperty(value = "datastore_name")
+
     private String datastoreName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
+    @JsonProperty(value = "created")
+
     private String created;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
+
     private String updated;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="configuration_parameters")
-    
+    @JsonProperty(value = "configuration_parameters")
+
     private List<ConfigurationParameterResult> configurationParameters = null;
-    
+
     public ShowConfigurationDetailResponse withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数模板ID。
-     * @return id
-     */
+    /** 参数模板ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -90,20 +68,14 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowConfigurationDetailResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数模板名称。
-     * @return name
-     */
+    /** 参数模板名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -112,20 +84,14 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowConfigurationDetailResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 参数模板描述。
-     * @return description
-     */
+    /** 参数模板描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -134,20 +100,14 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public ShowConfigurationDetailResponse withDatastoreVersionName(String datastoreVersionName) {
         this.datastoreVersionName = datastoreVersionName;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库版本名称。
-     * @return datastoreVersionName
-     */
+    /** 数据库版本名称。
+     * 
+     * @return datastoreVersionName */
     public String getDatastoreVersionName() {
         return datastoreVersionName;
     }
@@ -156,20 +116,14 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         this.datastoreVersionName = datastoreVersionName;
     }
 
-    
-
     public ShowConfigurationDetailResponse withDatastoreName(String datastoreName) {
         this.datastoreName = datastoreName;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库名称。
-     * @return datastoreName
-     */
+    /** 数据库名称。
+     * 
+     * @return datastoreName */
     public String getDatastoreName() {
         return datastoreName;
     }
@@ -178,20 +132,14 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         this.datastoreName = datastoreName;
     }
 
-    
-
     public ShowConfigurationDetailResponse withCreated(String created) {
         this.created = created;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * @return created
-     */
+    /** 创建时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * 
+     * @return created */
     public String getCreated() {
         return created;
     }
@@ -200,20 +148,14 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         this.created = created;
     }
 
-    
-
     public ShowConfigurationDetailResponse withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * @return updated
-     */
+    /** 更新时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * 
+     * @return updated */
     public String getUpdated() {
         return updated;
     }
@@ -222,34 +164,33 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         this.updated = updated;
     }
 
-    
-
-    public ShowConfigurationDetailResponse withConfigurationParameters(List<ConfigurationParameterResult> configurationParameters) {
+    public ShowConfigurationDetailResponse withConfigurationParameters(
+        List<ConfigurationParameterResult> configurationParameters) {
         this.configurationParameters = configurationParameters;
         return this;
     }
 
-    
-    public ShowConfigurationDetailResponse addConfigurationParametersItem(ConfigurationParameterResult configurationParametersItem) {
-        if(this.configurationParameters == null) {
+    public ShowConfigurationDetailResponse addConfigurationParametersItem(
+        ConfigurationParameterResult configurationParametersItem) {
+        if (this.configurationParameters == null) {
             this.configurationParameters = new ArrayList<>();
         }
         this.configurationParameters.add(configurationParametersItem);
         return this;
     }
 
-    public ShowConfigurationDetailResponse withConfigurationParameters(Consumer<List<ConfigurationParameterResult>> configurationParametersSetter) {
-        if(this.configurationParameters == null) {
+    public ShowConfigurationDetailResponse withConfigurationParameters(
+        Consumer<List<ConfigurationParameterResult>> configurationParametersSetter) {
+        if (this.configurationParameters == null) {
             this.configurationParameters = new ArrayList<>();
         }
         configurationParametersSetter.accept(this.configurationParameters);
         return this;
     }
 
-    /**
-     * 参数对象，用户基于默认参数模板自定义的参数配置。
-     * @return configurationParameters
-     */
+    /** 参数对象，用户基于默认参数模板自定义的参数配置。
+     * 
+     * @return configurationParameters */
     public List<ConfigurationParameterResult> getConfigurationParameters() {
         return configurationParameters;
     }
@@ -257,8 +198,6 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
     public void setConfigurationParameters(List<ConfigurationParameterResult> configurationParameters) {
         this.configurationParameters = configurationParameters;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -269,19 +208,28 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
             return false;
         }
         ShowConfigurationDetailResponse showConfigurationDetailResponse = (ShowConfigurationDetailResponse) o;
-        return Objects.equals(this.id, showConfigurationDetailResponse.id) &&
-            Objects.equals(this.name, showConfigurationDetailResponse.name) &&
-            Objects.equals(this.description, showConfigurationDetailResponse.description) &&
-            Objects.equals(this.datastoreVersionName, showConfigurationDetailResponse.datastoreVersionName) &&
-            Objects.equals(this.datastoreName, showConfigurationDetailResponse.datastoreName) &&
-            Objects.equals(this.created, showConfigurationDetailResponse.created) &&
-            Objects.equals(this.updated, showConfigurationDetailResponse.updated) &&
-            Objects.equals(this.configurationParameters, showConfigurationDetailResponse.configurationParameters);
+        return Objects.equals(this.id, showConfigurationDetailResponse.id)
+            && Objects.equals(this.name, showConfigurationDetailResponse.name)
+            && Objects.equals(this.description, showConfigurationDetailResponse.description)
+            && Objects.equals(this.datastoreVersionName, showConfigurationDetailResponse.datastoreVersionName)
+            && Objects.equals(this.datastoreName, showConfigurationDetailResponse.datastoreName)
+            && Objects.equals(this.created, showConfigurationDetailResponse.created)
+            && Objects.equals(this.updated, showConfigurationDetailResponse.updated)
+            && Objects.equals(this.configurationParameters, showConfigurationDetailResponse.configurationParameters);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, datastoreVersionName, datastoreName, created, updated, configurationParameters);
+        return Objects.hash(id,
+            name,
+            description,
+            datastoreVersionName,
+            datastoreName,
+            created,
+            updated,
+            configurationParameters);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -297,16 +245,13 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

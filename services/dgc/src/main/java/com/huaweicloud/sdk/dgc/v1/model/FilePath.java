@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * FilePath
- */
-public class FilePath  {
-
-
+/** FilePath */
+public class FilePath {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path")
-    
+    @JsonProperty(value = "path")
+
     private String path;
 
     public FilePath withPath(String path) {
@@ -28,13 +18,9 @@ public class FilePath  {
         return this;
     }
 
-    
-
-
-    /**
-     * 文件在OBS上的路径
-     * @return path
-     */
+    /** 文件在OBS上的路径
+     * 
+     * @return path */
     public String getPath() {
         return path;
     }
@@ -42,8 +28,6 @@ public class FilePath  {
     public void setPath(String path) {
         this.path = path;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class FilePath  {
         FilePath filePath = (FilePath) o;
         return Objects.equals(this.path, filePath.path);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(path);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class FilePath  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,58 +1,44 @@
 package com.huaweicloud.sdk.smn.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * MessageTemplate
- */
-public class MessageTemplate  {
-
-
+/** MessageTemplate */
+public class MessageTemplate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message_template_id")
-    
+    @JsonProperty(value = "message_template_id")
+
     private String messageTemplateId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message_template_name")
-    
+    @JsonProperty(value = "message_template_name")
+
     private String messageTemplateName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
+
     private String protocol;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag_names")
-    
+    @JsonProperty(value = "tag_names")
+
     private List<String> tagNames = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private String createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private String updateTime;
 
     public MessageTemplate withMessageTemplateId(String messageTemplateId) {
@@ -60,13 +46,9 @@ public class MessageTemplate  {
         return this;
     }
 
-    
-
-
-    /**
-     * 模板ID。
-     * @return messageTemplateId
-     */
+    /** 模板ID。
+     * 
+     * @return messageTemplateId */
     public String getMessageTemplateId() {
         return messageTemplateId;
     }
@@ -75,20 +57,14 @@ public class MessageTemplate  {
         this.messageTemplateId = messageTemplateId;
     }
 
-    
-
     public MessageTemplate withMessageTemplateName(String messageTemplateName) {
         this.messageTemplateName = messageTemplateName;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板名称。
-     * @return messageTemplateName
-     */
+    /** 模板名称。
+     * 
+     * @return messageTemplateName */
     public String getMessageTemplateName() {
         return messageTemplateName;
     }
@@ -97,20 +73,15 @@ public class MessageTemplate  {
         this.messageTemplateName = messageTemplateName;
     }
 
-    
-
     public MessageTemplate withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板协议类型。  目前支持的协议包括：  “email”：邮件传输协议。  “sms”：短信传输协议。  “functionstage”：FunctionGraph（函数）传输协议。  “dms”：DMS传输协议。  “http”、“https”：HTTP/HTTPS传输协议。
-     * @return protocol
-     */
+    /** 模板协议类型。 目前支持的协议包括： “email”：邮件传输协议。 “sms”：短信传输协议。 “functionstage”：FunctionGraph（函数）传输协议。 “dms”：DMS传输协议。
+     * “http”、“https”：HTTP/HTTPS传输协议。
+     * 
+     * @return protocol */
     public String getProtocol() {
         return protocol;
     }
@@ -119,16 +90,13 @@ public class MessageTemplate  {
         this.protocol = protocol;
     }
 
-    
-
     public MessageTemplate withTagNames(List<String> tagNames) {
         this.tagNames = tagNames;
         return this;
     }
 
-    
     public MessageTemplate addTagNamesItem(String tagNamesItem) {
-        if(this.tagNames == null) {
+        if (this.tagNames == null) {
             this.tagNames = new ArrayList<>();
         }
         this.tagNames.add(tagNamesItem);
@@ -136,17 +104,16 @@ public class MessageTemplate  {
     }
 
     public MessageTemplate withTagNames(Consumer<List<String>> tagNamesSetter) {
-        if(this.tagNames == null) {
+        if (this.tagNames == null) {
             this.tagNames = new ArrayList<>();
         }
         tagNamesSetter.accept(this.tagNames);
         return this;
     }
 
-    /**
-     * 模板tag列表
-     * @return tagNames
-     */
+    /** 模板tag列表
+     * 
+     * @return tagNames */
     public List<String> getTagNames() {
         return tagNames;
     }
@@ -155,20 +122,14 @@ public class MessageTemplate  {
         this.tagNames = tagNames;
     }
 
-    
-
     public MessageTemplate withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板创建时间 时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
-     * @return createTime
-     */
+    /** 模板创建时间 时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+     * 
+     * @return createTime */
     public String getCreateTime() {
         return createTime;
     }
@@ -177,20 +138,14 @@ public class MessageTemplate  {
         this.createTime = createTime;
     }
 
-    
-
     public MessageTemplate withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板最后更新时间 时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
-     * @return updateTime
-     */
+    /** 模板最后更新时间 时间格式为UTC时间，YYYY-MM-DDTHH:MM:SSZ。
+     * 
+     * @return updateTime */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -198,8 +153,6 @@ public class MessageTemplate  {
     public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -210,17 +163,19 @@ public class MessageTemplate  {
             return false;
         }
         MessageTemplate messageTemplate = (MessageTemplate) o;
-        return Objects.equals(this.messageTemplateId, messageTemplate.messageTemplateId) &&
-            Objects.equals(this.messageTemplateName, messageTemplate.messageTemplateName) &&
-            Objects.equals(this.protocol, messageTemplate.protocol) &&
-            Objects.equals(this.tagNames, messageTemplate.tagNames) &&
-            Objects.equals(this.createTime, messageTemplate.createTime) &&
-            Objects.equals(this.updateTime, messageTemplate.updateTime);
+        return Objects.equals(this.messageTemplateId, messageTemplate.messageTemplateId)
+            && Objects.equals(this.messageTemplateName, messageTemplate.messageTemplateName)
+            && Objects.equals(this.protocol, messageTemplate.protocol)
+            && Objects.equals(this.tagNames, messageTemplate.tagNames)
+            && Objects.equals(this.createTime, messageTemplate.createTime)
+            && Objects.equals(this.updateTime, messageTemplate.updateTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(messageTemplateId, messageTemplateName, protocol, tagNames, createTime, updateTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -234,16 +189,13 @@ public class MessageTemplate  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

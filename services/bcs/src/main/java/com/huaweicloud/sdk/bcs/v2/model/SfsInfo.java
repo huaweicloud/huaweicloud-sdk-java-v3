@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * SfsInfo
- */
-public class SfsInfo  {
-
-
+/** SfsInfo */
+public class SfsInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pvc_name")
-    
+    @JsonProperty(value = "pvc_name")
+
     private String pvcName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="addr")
-    
+    @JsonProperty(value = "addr")
+
     private String addr;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
     public SfsInfo withPvcName(String pvcName) {
@@ -46,13 +33,9 @@ public class SfsInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * BCS服务下的SFS文件系统名称
-     * @return pvcName
-     */
+    /** BCS服务下的SFS文件系统名称
+     * 
+     * @return pvcName */
     public String getPvcName() {
         return pvcName;
     }
@@ -61,20 +44,14 @@ public class SfsInfo  {
         this.pvcName = pvcName;
     }
 
-    
-
     public SfsInfo withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * BCS服务网络存储名称
-     * @return name
-     */
+    /** BCS服务网络存储名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -83,20 +60,14 @@ public class SfsInfo  {
         this.name = name;
     }
 
-    
-
     public SfsInfo withAddr(String addr) {
         this.addr = addr;
         return this;
     }
 
-    
-
-
-    /**
-     * BCS服务网络存储地址
-     * @return addr
-     */
+    /** BCS服务网络存储地址
+     * 
+     * @return addr */
     public String getAddr() {
         return addr;
     }
@@ -105,20 +76,14 @@ public class SfsInfo  {
         this.addr = addr;
     }
 
-    
-
     public SfsInfo withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * BCS服务网络存储类型
-     * @return type
-     */
+    /** BCS服务网络存储类型
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -126,8 +91,6 @@ public class SfsInfo  {
     public void setType(String type) {
         this.type = type;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,15 @@ public class SfsInfo  {
             return false;
         }
         SfsInfo sfsInfo = (SfsInfo) o;
-        return Objects.equals(this.pvcName, sfsInfo.pvcName) &&
-            Objects.equals(this.name, sfsInfo.name) &&
-            Objects.equals(this.addr, sfsInfo.addr) &&
-            Objects.equals(this.type, sfsInfo.type);
+        return Objects.equals(this.pvcName, sfsInfo.pvcName) && Objects.equals(this.name, sfsInfo.name)
+            && Objects.equals(this.addr, sfsInfo.addr) && Objects.equals(this.type, sfsInfo.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(pvcName, name, addr, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +121,13 @@ public class SfsInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

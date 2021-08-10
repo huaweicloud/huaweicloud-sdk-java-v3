@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 会话持久性对象。
- */
-public class UpdatePoolSessionPersistenceOption  {
-
-
+/** 会话持久性对象。 */
+public class UpdatePoolSessionPersistenceOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cookie_name")
-    
+    @JsonProperty(value = "cookie_name")
+
     private String cookieName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="persistence_timeout")
-    
+    @JsonProperty(value = "persistence_timeout")
+
     private Integer persistenceTimeout;
 
     public UpdatePoolSessionPersistenceOption withCookieName(String cookieName) {
@@ -40,13 +28,9 @@ public class UpdatePoolSessionPersistenceOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * cookie名称。 只有当type为APP_COOKIE时才支持。 格式要求：仅支持字母数字-_. 
-     * @return cookieName
-     */
+    /** cookie名称。 只有当type为APP_COOKIE时才支持。 格式要求：仅支持字母数字-_.
+     * 
+     * @return cookieName */
     public String getCookieName() {
         return cookieName;
     }
@@ -55,20 +39,15 @@ public class UpdatePoolSessionPersistenceOption  {
         this.cookieName = cookieName;
     }
 
-    
-
     public UpdatePoolSessionPersistenceOption withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 描述：类型，可以为SOURCE_IP、HTTP_COOKIE、APP_COOKIE。   约束：   1、当pool的protocol为TCP、UDP、QUIC时，只按SOURCE_IP生效；   2、当pool的protocol为HTTP、HTTPS时，只按HTTP_COOKIE、APP_COOKIE生效。  
-     * @return type
-     */
+    /** 描述：类型，可以为SOURCE_IP、HTTP_COOKIE、APP_COOKIE。 约束： 1、当pool的protocol为TCP、UDP、QUIC时，只按SOURCE_IP生效；
+     * 2、当pool的protocol为HTTP、HTTPS时，只按HTTP_COOKIE、APP_COOKIE生效。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -77,20 +56,15 @@ public class UpdatePoolSessionPersistenceOption  {
         this.type = type;
     }
 
-    
-
     public UpdatePoolSessionPersistenceOption withPersistenceTimeout(Integer persistenceTimeout) {
         this.persistenceTimeout = persistenceTimeout;
         return this;
     }
 
-    
-
-
-    /**
-     * 会话保持的时间。当type为APP_COOKIE时不生效。 适用范围：如果pool的protocol为TCP、UDP和QUIC则范围为[1,60]（分钟），默认值1；如果pool的protocol为HTTP和HTTPS则范围为[1,1440]（分钟），默认值1440。
-     * @return persistenceTimeout
-     */
+    /** 会话保持的时间。当type为APP_COOKIE时不生效。
+     * 适用范围：如果pool的protocol为TCP、UDP和QUIC则范围为[1,60]（分钟），默认值1；如果pool的protocol为HTTP和HTTPS则范围为[1,1440]（分钟），默认值1440。
+     * 
+     * @return persistenceTimeout */
     public Integer getPersistenceTimeout() {
         return persistenceTimeout;
     }
@@ -98,8 +72,6 @@ public class UpdatePoolSessionPersistenceOption  {
     public void setPersistenceTimeout(Integer persistenceTimeout) {
         this.persistenceTimeout = persistenceTimeout;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +82,16 @@ public class UpdatePoolSessionPersistenceOption  {
             return false;
         }
         UpdatePoolSessionPersistenceOption updatePoolSessionPersistenceOption = (UpdatePoolSessionPersistenceOption) o;
-        return Objects.equals(this.cookieName, updatePoolSessionPersistenceOption.cookieName) &&
-            Objects.equals(this.type, updatePoolSessionPersistenceOption.type) &&
-            Objects.equals(this.persistenceTimeout, updatePoolSessionPersistenceOption.persistenceTimeout);
+        return Objects.equals(this.cookieName, updatePoolSessionPersistenceOption.cookieName)
+            && Objects.equals(this.type, updatePoolSessionPersistenceOption.type)
+            && Objects.equals(this.persistenceTimeout, updatePoolSessionPersistenceOption.persistenceTimeout);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(cookieName, type, persistenceTimeout);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +102,13 @@ public class UpdatePoolSessionPersistenceOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

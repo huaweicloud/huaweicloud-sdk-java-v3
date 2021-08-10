@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.projectman.v4.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CommentUserV4
- */
-public class CommentUserV4  {
-
-
+/** CommentUserV4 */
+public class CommentUserV4 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_num_id")
-    
+    @JsonProperty(value = "user_num_id")
+
     private Integer userNumId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_name")
-    
+    @JsonProperty(value = "user_name")
+
     private String userName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nick_name")
-    
+    @JsonProperty(value = "nick_name")
+
     private String nickName;
 
     public CommentUserV4 withUserNumId(Integer userNumId) {
@@ -40,13 +28,9 @@ public class CommentUserV4  {
         return this;
     }
 
-    
-
-
-    /**
-     * 发表评论用户id
-     * @return userNumId
-     */
+    /** 发表评论用户id
+     * 
+     * @return userNumId */
     public Integer getUserNumId() {
         return userNumId;
     }
@@ -55,20 +39,14 @@ public class CommentUserV4  {
         this.userNumId = userNumId;
     }
 
-    
-
     public CommentUserV4 withUserName(String userName) {
         this.userName = userName;
         return this;
     }
 
-    
-
-
-    /**
-     * 发表评论用户名称
-     * @return userName
-     */
+    /** 发表评论用户名称
+     * 
+     * @return userName */
     public String getUserName() {
         return userName;
     }
@@ -77,20 +55,14 @@ public class CommentUserV4  {
         this.userName = userName;
     }
 
-    
-
     public CommentUserV4 withNickName(String nickName) {
         this.nickName = nickName;
         return this;
     }
 
-    
-
-
-    /**
-     * 发表评论用户昵称
-     * @return nickName
-     */
+    /** 发表评论用户昵称
+     * 
+     * @return nickName */
     public String getNickName() {
         return nickName;
     }
@@ -98,8 +70,6 @@ public class CommentUserV4  {
     public void setNickName(String nickName) {
         this.nickName = nickName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class CommentUserV4  {
             return false;
         }
         CommentUserV4 commentUserV4 = (CommentUserV4) o;
-        return Objects.equals(this.userNumId, commentUserV4.userNumId) &&
-            Objects.equals(this.userName, commentUserV4.userName) &&
-            Objects.equals(this.nickName, commentUserV4.nickName);
+        return Objects.equals(this.userNumId, commentUserV4.userNumId)
+            && Objects.equals(this.userName, commentUserV4.userName)
+            && Objects.equals(this.nickName, commentUserV4.nickName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(userNumId, userName, nickName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class CommentUserV4  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.rds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rds.v3.model.PostgresqlDatabaseForCreation;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreatePostgresqlDatabaseRequest  {
-
-
+/** Request Object */
+public class CreatePostgresqlDatabaseRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private PostgresqlDatabaseForCreation body;
 
     public CreatePostgresqlDatabaseRequest withXLanguage(String xLanguage) {
@@ -41,15 +29,11 @@ public class CreatePostgresqlDatabaseRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -58,20 +42,14 @@ public class CreatePostgresqlDatabaseRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public CreatePostgresqlDatabaseRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -80,27 +58,23 @@ public class CreatePostgresqlDatabaseRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public CreatePostgresqlDatabaseRequest withBody(PostgresqlDatabaseForCreation body) {
         this.body = body;
         return this;
     }
 
     public CreatePostgresqlDatabaseRequest withBody(Consumer<PostgresqlDatabaseForCreation> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new PostgresqlDatabaseForCreation();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public PostgresqlDatabaseForCreation getBody() {
         return body;
     }
@@ -108,8 +82,6 @@ public class CreatePostgresqlDatabaseRequest  {
     public void setBody(PostgresqlDatabaseForCreation body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -120,14 +92,16 @@ public class CreatePostgresqlDatabaseRequest  {
             return false;
         }
         CreatePostgresqlDatabaseRequest createPostgresqlDatabaseRequest = (CreatePostgresqlDatabaseRequest) o;
-        return Objects.equals(this.xLanguage, createPostgresqlDatabaseRequest.xLanguage) &&
-            Objects.equals(this.instanceId, createPostgresqlDatabaseRequest.instanceId) &&
-            Objects.equals(this.body, createPostgresqlDatabaseRequest.body);
+        return Objects.equals(this.xLanguage, createPostgresqlDatabaseRequest.xLanguage)
+            && Objects.equals(this.instanceId, createPostgresqlDatabaseRequest.instanceId)
+            && Objects.equals(this.body, createPostgresqlDatabaseRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -138,16 +112,13 @@ public class CreatePostgresqlDatabaseRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,63 +1,42 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 组件创建信息
- */
-public class Detail  {
-
-
+/** 组件创建信息 */
+public class Detail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
-    /**
-     * 状态
-     */
+
+    /** 状态 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum WAITING for value: "waiting"
-         */
+        /** Enum WAITING for value: "waiting" */
         public static final StatusEnum WAITING = new StatusEnum("waiting");
-        
-        /**
-         * Enum DEPLOYING for value: "deploying"
-         */
+
+        /** Enum DEPLOYING for value: "deploying" */
         public static final StatusEnum DEPLOYING = new StatusEnum("deploying");
-        
-        /**
-         * Enum FINISHED for value: "finished"
-         */
+
+        /** Enum FINISHED for value: "finished" */
         public static final StatusEnum FINISHED = new StatusEnum("finished");
-        
-        /**
-         * Enum FAILED for value: "failed"
-         */
+
+        /** Enum FAILED for value: "failed" */
         public static final StatusEnum FAILED = new StatusEnum("failed");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -88,7 +67,7 @@ public class Detail  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -99,7 +78,7 @@ public class Detail  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -123,16 +102,14 @@ public class Detail  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="detail")
-    
+    @JsonProperty(value = "detail")
+
     private String detail;
 
     public Detail withStartTime(String startTime) {
@@ -140,13 +117,9 @@ public class Detail  {
         return this;
     }
 
-    
-
-
-    /**
-     * 开始时间
-     * @return startTime
-     */
+    /** 开始时间
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -155,20 +128,14 @@ public class Detail  {
         this.startTime = startTime;
     }
 
-    
-
     public Detail withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 结束时间
-     * @return endTime
-     */
+    /** 结束时间
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -177,20 +144,14 @@ public class Detail  {
         this.endTime = endTime;
     }
 
-    
-
     public Detail withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态
-     * @return status
-     */
+    /** 状态
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -199,20 +160,14 @@ public class Detail  {
         this.status = status;
     }
 
-    
-
     public Detail withDetail(String detail) {
         this.detail = detail;
         return this;
     }
 
-    
-
-
-    /**
-     * 细节描述
-     * @return detail
-     */
+    /** 细节描述
+     * 
+     * @return detail */
     public String getDetail() {
         return detail;
     }
@@ -220,8 +175,6 @@ public class Detail  {
     public void setDetail(String detail) {
         this.detail = detail;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -232,15 +185,15 @@ public class Detail  {
             return false;
         }
         Detail detail = (Detail) o;
-        return Objects.equals(this.startTime, detail.startTime) &&
-            Objects.equals(this.endTime, detail.endTime) &&
-            Objects.equals(this.status, detail.status) &&
-            Objects.equals(this.detail, detail.detail);
+        return Objects.equals(this.startTime, detail.startTime) && Objects.equals(this.endTime, detail.endTime)
+            && Objects.equals(this.status, detail.status) && Objects.equals(this.detail, detail.detail);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(startTime, endTime, status, detail);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -252,16 +205,13 @@ public class Detail  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

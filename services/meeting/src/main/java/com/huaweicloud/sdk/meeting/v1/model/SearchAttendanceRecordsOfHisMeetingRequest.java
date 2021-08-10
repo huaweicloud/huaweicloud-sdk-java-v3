@@ -1,68 +1,51 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class SearchAttendanceRecordsOfHisMeetingRequest  {
-
-
+/** Request Object */
+public class SearchAttendanceRecordsOfHisMeetingRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confUUID")
-    
+    @JsonProperty(value = "confUUID")
+
     private String confUUID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="searchKey")
-    
+    @JsonProperty(value = "searchKey")
+
     private String searchKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="userUUID")
-    
+    @JsonProperty(value = "userUUID")
+
     private String userUUID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Authorization-Type")
-    
+    @JsonProperty(value = "X-Authorization-Type")
+
     private String xAuthorizationType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site-Id")
-    
+    @JsonProperty(value = "X-Site-Id")
+
     private String xSiteId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Accept-Language")
-    
+    @JsonProperty(value = "Accept-Language")
+
     private String acceptLanguage;
 
     public SearchAttendanceRecordsOfHisMeetingRequest withConfUUID(String confUUID) {
@@ -70,13 +53,9 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 会议UUID。
-     * @return confUUID
-     */
+    /** 会议UUID。
+     * 
+     * @return confUUID */
     public String getConfUUID() {
         return confUUID;
     }
@@ -85,20 +64,14 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
         this.confUUID = confUUID;
     }
 
-    
-
     public SearchAttendanceRecordsOfHisMeetingRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 指定返回的记录索引。该值必须大于等于0； 默认为0。
-     * @return offset
-     */
+    /** 指定返回的记录索引。该值必须大于等于0； 默认为0。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -107,22 +80,14 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
         this.offset = offset;
     }
 
-    
-
     public SearchAttendanceRecordsOfHisMeetingRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 指定返回的记录数，默认是20，最大500条。
-     * minimum: 0
-     * maximum: 500
-     * @return limit
-     */
+    /** 指定返回的记录数，默认是20，最大500条。 minimum: 0 maximum: 500
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -131,20 +96,14 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
         this.limit = limit;
     }
 
-    
-
     public SearchAttendanceRecordsOfHisMeetingRequest withSearchKey(String searchKey) {
         this.searchKey = searchKey;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询用来当作关键词的字符串。
-     * @return searchKey
-     */
+    /** 查询用来当作关键词的字符串。
+     * 
+     * @return searchKey */
     public String getSearchKey() {
         return searchKey;
     }
@@ -153,20 +112,14 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
         this.searchKey = searchKey;
     }
 
-    
-
     public SearchAttendanceRecordsOfHisMeetingRequest withUserUUID(String userUUID) {
         this.userUUID = userUUID;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户的UUID（已在USG注册过的）。
-     * @return userUUID
-     */
+    /** 用户的UUID（已在USG注册过的）。
+     * 
+     * @return userUUID */
     public String getUserUUID() {
         return userUUID;
     }
@@ -175,22 +128,16 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
         this.userUUID = userUUID;
     }
 
-    
-
     public SearchAttendanceRecordsOfHisMeetingRequest withXAuthorizationType(String xAuthorizationType) {
         this.xAuthorizationType = xAuthorizationType;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识是否为第三方portal过来的请求。
-     * @return xAuthorizationType
-     */
+    /** 标识是否为第三方portal过来的请求。
+     * 
+     * @return xAuthorizationType */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Authorization-Type")
+    @JsonProperty(value = "X-Authorization-Type")
     public String getXAuthorizationType() {
         return xAuthorizationType;
     }
@@ -199,22 +146,16 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
         this.xAuthorizationType = xAuthorizationType;
     }
 
-    
-
     public SearchAttendanceRecordsOfHisMeetingRequest withXSiteId(String xSiteId) {
         this.xSiteId = xSiteId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用于区分到哪个HCSO站点鉴权。
-     * @return xSiteId
-     */
+    /** 用于区分到哪个HCSO站点鉴权。
+     * 
+     * @return xSiteId */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site-Id")
+    @JsonProperty(value = "X-Site-Id")
     public String getXSiteId() {
         return xSiteId;
     }
@@ -223,20 +164,14 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
         this.xSiteId = xSiteId;
     }
 
-    
-
     public SearchAttendanceRecordsOfHisMeetingRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言。默认简体中文。 - zh-CN: 简体中文。 - en-US: 美国英文。
-     * @return acceptLanguage
-     */
+    /** 语言。默认简体中文。 - zh-CN: 简体中文。 - en-US: 美国英文。
+     * 
+     * @return acceptLanguage */
     public String getAcceptLanguage() {
         return acceptLanguage;
     }
@@ -244,8 +179,6 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
     public void setAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -255,20 +188,23 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        SearchAttendanceRecordsOfHisMeetingRequest searchAttendanceRecordsOfHisMeetingRequest = (SearchAttendanceRecordsOfHisMeetingRequest) o;
-        return Objects.equals(this.confUUID, searchAttendanceRecordsOfHisMeetingRequest.confUUID) &&
-            Objects.equals(this.offset, searchAttendanceRecordsOfHisMeetingRequest.offset) &&
-            Objects.equals(this.limit, searchAttendanceRecordsOfHisMeetingRequest.limit) &&
-            Objects.equals(this.searchKey, searchAttendanceRecordsOfHisMeetingRequest.searchKey) &&
-            Objects.equals(this.userUUID, searchAttendanceRecordsOfHisMeetingRequest.userUUID) &&
-            Objects.equals(this.xAuthorizationType, searchAttendanceRecordsOfHisMeetingRequest.xAuthorizationType) &&
-            Objects.equals(this.xSiteId, searchAttendanceRecordsOfHisMeetingRequest.xSiteId) &&
-            Objects.equals(this.acceptLanguage, searchAttendanceRecordsOfHisMeetingRequest.acceptLanguage);
+        SearchAttendanceRecordsOfHisMeetingRequest searchAttendanceRecordsOfHisMeetingRequest =
+            (SearchAttendanceRecordsOfHisMeetingRequest) o;
+        return Objects.equals(this.confUUID, searchAttendanceRecordsOfHisMeetingRequest.confUUID)
+            && Objects.equals(this.offset, searchAttendanceRecordsOfHisMeetingRequest.offset)
+            && Objects.equals(this.limit, searchAttendanceRecordsOfHisMeetingRequest.limit)
+            && Objects.equals(this.searchKey, searchAttendanceRecordsOfHisMeetingRequest.searchKey)
+            && Objects.equals(this.userUUID, searchAttendanceRecordsOfHisMeetingRequest.userUUID)
+            && Objects.equals(this.xAuthorizationType, searchAttendanceRecordsOfHisMeetingRequest.xAuthorizationType)
+            && Objects.equals(this.xSiteId, searchAttendanceRecordsOfHisMeetingRequest.xSiteId)
+            && Objects.equals(this.acceptLanguage, searchAttendanceRecordsOfHisMeetingRequest.acceptLanguage);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(confUUID, offset, limit, searchKey, userUUID, xAuthorizationType, xSiteId, acceptLanguage);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -284,16 +220,13 @@ public class SearchAttendanceRecordsOfHisMeetingRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

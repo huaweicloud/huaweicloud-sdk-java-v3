@@ -1,140 +1,110 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.QueryVmrPkgResResultDTO;
-import com.huaweicloud.sdk.meeting.v1.model.ResDetailDTO;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowCorpResourceResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="te1080pHardCount")
-    
+    @JsonProperty(value = "te1080pHardCount")
+
     private ResDetailDTO te1080pHardCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="te720pHardCount")
-    
+    @JsonProperty(value = "te720pHardCount")
+
     private ResDetailDTO te720pHardCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="teSoftCount")
-    
+    @JsonProperty(value = "teSoftCount")
+
     private ResDetailDTO teSoftCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roomCount")
-    
+    @JsonProperty(value = "roomCount")
+
     private ResDetailDTO roomCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="recordCapability")
-    
+    @JsonProperty(value = "recordCapability")
+
     private ResDetailDTO recordCapability;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confCallCount")
-    
+    @JsonProperty(value = "confCallCount")
+
     private ResDetailDTO confCallCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="liveCount")
-    
+    @JsonProperty(value = "liveCount")
+
     private ResDetailDTO liveCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="thirdPartyHardCount")
-    
+    @JsonProperty(value = "thirdPartyHardCount")
+
     private ResDetailDTO thirdPartyHardCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hwVisionCount")
-    
+    @JsonProperty(value = "hwVisionCount")
+
     private ResDetailDTO hwVisionCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ideaHubCount")
-    
+    @JsonProperty(value = "ideaHubCount")
+
     private ResDetailDTO ideaHubCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmr")
-    
+    @JsonProperty(value = "vmr")
+
     private List<QueryVmrPkgResResultDTO> vmr = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enablePstn")
-    
+    @JsonProperty(value = "enablePstn")
+
     private Boolean enablePstn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enableSMS")
-    
+    @JsonProperty(value = "enableSMS")
+
     private Boolean enableSMS;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enableHybridCloud")
-    
+    @JsonProperty(value = "enableHybridCloud")
+
     private Boolean enableHybridCloud;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enableCloudDisk")
-    
+    @JsonProperty(value = "enableCloudDisk")
+
     private Boolean enableCloudDisk;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enableUc")
-    
+    @JsonProperty(value = "enableUc")
+
     private Boolean enableUc;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enableAiMinutes")
-    
+    @JsonProperty(value = "enableAiMinutes")
+
     private Boolean enableAiMinutes;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="singleConfCallCount")
-    
+    @JsonProperty(value = "singleConfCallCount")
+
     private Integer singleConfCallCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confLength")
-    
+    @JsonProperty(value = "confLength")
+
     private Integer confLength;
 
     public ShowCorpResourceResponse withTe1080pHardCount(ResDetailDTO te1080pHardCount) {
@@ -143,19 +113,17 @@ public class ShowCorpResourceResponse extends SdkResponse {
     }
 
     public ShowCorpResourceResponse withTe1080pHardCount(Consumer<ResDetailDTO> te1080pHardCountSetter) {
-        if(this.te1080pHardCount == null ){
+        if (this.te1080pHardCount == null) {
             this.te1080pHardCount = new ResDetailDTO();
             te1080pHardCountSetter.accept(this.te1080pHardCount);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get te1080pHardCount
-     * @return te1080pHardCount
-     */
+    /** Get te1080pHardCount
+     * 
+     * @return te1080pHardCount */
     public ResDetailDTO getTe1080pHardCount() {
         return te1080pHardCount;
     }
@@ -164,27 +132,23 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.te1080pHardCount = te1080pHardCount;
     }
 
-    
-
     public ShowCorpResourceResponse withTe720pHardCount(ResDetailDTO te720pHardCount) {
         this.te720pHardCount = te720pHardCount;
         return this;
     }
 
     public ShowCorpResourceResponse withTe720pHardCount(Consumer<ResDetailDTO> te720pHardCountSetter) {
-        if(this.te720pHardCount == null ){
+        if (this.te720pHardCount == null) {
             this.te720pHardCount = new ResDetailDTO();
             te720pHardCountSetter.accept(this.te720pHardCount);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get te720pHardCount
-     * @return te720pHardCount
-     */
+    /** Get te720pHardCount
+     * 
+     * @return te720pHardCount */
     public ResDetailDTO getTe720pHardCount() {
         return te720pHardCount;
     }
@@ -193,27 +157,23 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.te720pHardCount = te720pHardCount;
     }
 
-    
-
     public ShowCorpResourceResponse withTeSoftCount(ResDetailDTO teSoftCount) {
         this.teSoftCount = teSoftCount;
         return this;
     }
 
     public ShowCorpResourceResponse withTeSoftCount(Consumer<ResDetailDTO> teSoftCountSetter) {
-        if(this.teSoftCount == null ){
+        if (this.teSoftCount == null) {
             this.teSoftCount = new ResDetailDTO();
             teSoftCountSetter.accept(this.teSoftCount);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get teSoftCount
-     * @return teSoftCount
-     */
+    /** Get teSoftCount
+     * 
+     * @return teSoftCount */
     public ResDetailDTO getTeSoftCount() {
         return teSoftCount;
     }
@@ -222,27 +182,23 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.teSoftCount = teSoftCount;
     }
 
-    
-
     public ShowCorpResourceResponse withRoomCount(ResDetailDTO roomCount) {
         this.roomCount = roomCount;
         return this;
     }
 
     public ShowCorpResourceResponse withRoomCount(Consumer<ResDetailDTO> roomCountSetter) {
-        if(this.roomCount == null ){
+        if (this.roomCount == null) {
             this.roomCount = new ResDetailDTO();
             roomCountSetter.accept(this.roomCount);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get roomCount
-     * @return roomCount
-     */
+    /** Get roomCount
+     * 
+     * @return roomCount */
     public ResDetailDTO getRoomCount() {
         return roomCount;
     }
@@ -251,27 +207,23 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.roomCount = roomCount;
     }
 
-    
-
     public ShowCorpResourceResponse withRecordCapability(ResDetailDTO recordCapability) {
         this.recordCapability = recordCapability;
         return this;
     }
 
     public ShowCorpResourceResponse withRecordCapability(Consumer<ResDetailDTO> recordCapabilitySetter) {
-        if(this.recordCapability == null ){
+        if (this.recordCapability == null) {
             this.recordCapability = new ResDetailDTO();
             recordCapabilitySetter.accept(this.recordCapability);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get recordCapability
-     * @return recordCapability
-     */
+    /** Get recordCapability
+     * 
+     * @return recordCapability */
     public ResDetailDTO getRecordCapability() {
         return recordCapability;
     }
@@ -280,27 +232,23 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.recordCapability = recordCapability;
     }
 
-    
-
     public ShowCorpResourceResponse withConfCallCount(ResDetailDTO confCallCount) {
         this.confCallCount = confCallCount;
         return this;
     }
 
     public ShowCorpResourceResponse withConfCallCount(Consumer<ResDetailDTO> confCallCountSetter) {
-        if(this.confCallCount == null ){
+        if (this.confCallCount == null) {
             this.confCallCount = new ResDetailDTO();
             confCallCountSetter.accept(this.confCallCount);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get confCallCount
-     * @return confCallCount
-     */
+    /** Get confCallCount
+     * 
+     * @return confCallCount */
     public ResDetailDTO getConfCallCount() {
         return confCallCount;
     }
@@ -309,27 +257,23 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.confCallCount = confCallCount;
     }
 
-    
-
     public ShowCorpResourceResponse withLiveCount(ResDetailDTO liveCount) {
         this.liveCount = liveCount;
         return this;
     }
 
     public ShowCorpResourceResponse withLiveCount(Consumer<ResDetailDTO> liveCountSetter) {
-        if(this.liveCount == null ){
+        if (this.liveCount == null) {
             this.liveCount = new ResDetailDTO();
             liveCountSetter.accept(this.liveCount);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get liveCount
-     * @return liveCount
-     */
+    /** Get liveCount
+     * 
+     * @return liveCount */
     public ResDetailDTO getLiveCount() {
         return liveCount;
     }
@@ -338,27 +282,23 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.liveCount = liveCount;
     }
 
-    
-
     public ShowCorpResourceResponse withThirdPartyHardCount(ResDetailDTO thirdPartyHardCount) {
         this.thirdPartyHardCount = thirdPartyHardCount;
         return this;
     }
 
     public ShowCorpResourceResponse withThirdPartyHardCount(Consumer<ResDetailDTO> thirdPartyHardCountSetter) {
-        if(this.thirdPartyHardCount == null ){
+        if (this.thirdPartyHardCount == null) {
             this.thirdPartyHardCount = new ResDetailDTO();
             thirdPartyHardCountSetter.accept(this.thirdPartyHardCount);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get thirdPartyHardCount
-     * @return thirdPartyHardCount
-     */
+    /** Get thirdPartyHardCount
+     * 
+     * @return thirdPartyHardCount */
     public ResDetailDTO getThirdPartyHardCount() {
         return thirdPartyHardCount;
     }
@@ -367,27 +307,23 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.thirdPartyHardCount = thirdPartyHardCount;
     }
 
-    
-
     public ShowCorpResourceResponse withHwVisionCount(ResDetailDTO hwVisionCount) {
         this.hwVisionCount = hwVisionCount;
         return this;
     }
 
     public ShowCorpResourceResponse withHwVisionCount(Consumer<ResDetailDTO> hwVisionCountSetter) {
-        if(this.hwVisionCount == null ){
+        if (this.hwVisionCount == null) {
             this.hwVisionCount = new ResDetailDTO();
             hwVisionCountSetter.accept(this.hwVisionCount);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get hwVisionCount
-     * @return hwVisionCount
-     */
+    /** Get hwVisionCount
+     * 
+     * @return hwVisionCount */
     public ResDetailDTO getHwVisionCount() {
         return hwVisionCount;
     }
@@ -396,27 +332,23 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.hwVisionCount = hwVisionCount;
     }
 
-    
-
     public ShowCorpResourceResponse withIdeaHubCount(ResDetailDTO ideaHubCount) {
         this.ideaHubCount = ideaHubCount;
         return this;
     }
 
     public ShowCorpResourceResponse withIdeaHubCount(Consumer<ResDetailDTO> ideaHubCountSetter) {
-        if(this.ideaHubCount == null ){
+        if (this.ideaHubCount == null) {
             this.ideaHubCount = new ResDetailDTO();
             ideaHubCountSetter.accept(this.ideaHubCount);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get ideaHubCount
-     * @return ideaHubCount
-     */
+    /** Get ideaHubCount
+     * 
+     * @return ideaHubCount */
     public ResDetailDTO getIdeaHubCount() {
         return ideaHubCount;
     }
@@ -425,16 +357,13 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.ideaHubCount = ideaHubCount;
     }
 
-    
-
     public ShowCorpResourceResponse withVmr(List<QueryVmrPkgResResultDTO> vmr) {
         this.vmr = vmr;
         return this;
     }
 
-    
     public ShowCorpResourceResponse addVmrItem(QueryVmrPkgResResultDTO vmrItem) {
-        if(this.vmr == null) {
+        if (this.vmr == null) {
             this.vmr = new ArrayList<>();
         }
         this.vmr.add(vmrItem);
@@ -442,17 +371,16 @@ public class ShowCorpResourceResponse extends SdkResponse {
     }
 
     public ShowCorpResourceResponse withVmr(Consumer<List<QueryVmrPkgResResultDTO>> vmrSetter) {
-        if(this.vmr == null) {
+        if (this.vmr == null) {
             this.vmr = new ArrayList<>();
         }
         vmrSetter.accept(this.vmr);
         return this;
     }
 
-    /**
-     * 查询云会议室套餐包分配数量结果。
-     * @return vmr
-     */
+    /** 查询云会议室套餐包分配数量结果。
+     * 
+     * @return vmr */
     public List<QueryVmrPkgResResultDTO> getVmr() {
         return vmr;
     }
@@ -461,20 +389,14 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.vmr = vmr;
     }
 
-    
-
     public ShowCorpResourceResponse withEnablePstn(Boolean enablePstn) {
         this.enablePstn = enablePstn;
         return this;
     }
 
-    
-
-
-    /**
-     * 在创建企业的时候设置的pstn权限开关
-     * @return enablePstn
-     */
+    /** 在创建企业的时候设置的pstn权限开关
+     * 
+     * @return enablePstn */
     public Boolean getEnablePstn() {
         return enablePstn;
     }
@@ -483,20 +405,14 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.enablePstn = enablePstn;
     }
 
-    
-
     public ShowCorpResourceResponse withEnableSMS(Boolean enableSMS) {
         this.enableSMS = enableSMS;
         return this;
     }
 
-    
-
-
-    /**
-     * 在创建企业的时候设置的短信权限开关
-     * @return enableSMS
-     */
+    /** 在创建企业的时候设置的短信权限开关
+     * 
+     * @return enableSMS */
     public Boolean getEnableSMS() {
         return enableSMS;
     }
@@ -505,20 +421,14 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.enableSMS = enableSMS;
     }
 
-    
-
     public ShowCorpResourceResponse withEnableHybridCloud(Boolean enableHybridCloud) {
         this.enableHybridCloud = enableHybridCloud;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业是否开启混合云模式
-     * @return enableHybridCloud
-     */
+    /** 企业是否开启混合云模式
+     * 
+     * @return enableHybridCloud */
     public Boolean getEnableHybridCloud() {
         return enableHybridCloud;
     }
@@ -527,20 +437,14 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.enableHybridCloud = enableHybridCloud;
     }
 
-    
-
     public ShowCorpResourceResponse withEnableCloudDisk(Boolean enableCloudDisk) {
         this.enableCloudDisk = enableCloudDisk;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启云盘
-     * @return enableCloudDisk
-     */
+    /** 是否开启云盘
+     * 
+     * @return enableCloudDisk */
     public Boolean getEnableCloudDisk() {
         return enableCloudDisk;
     }
@@ -549,20 +453,14 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.enableCloudDisk = enableCloudDisk;
     }
 
-    
-
     public ShowCorpResourceResponse withEnableUc(Boolean enableUc) {
         this.enableUc = enableUc;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启UC功能
-     * @return enableUc
-     */
+    /** 是否开启UC功能
+     * 
+     * @return enableUc */
     public Boolean getEnableUc() {
         return enableUc;
     }
@@ -571,20 +469,14 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.enableUc = enableUc;
     }
 
-    
-
     public ShowCorpResourceResponse withEnableAiMinutes(Boolean enableAiMinutes) {
         this.enableAiMinutes = enableAiMinutes;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启Ai会议纪要
-     * @return enableAiMinutes
-     */
+    /** 是否开启Ai会议纪要
+     * 
+     * @return enableAiMinutes */
     public Boolean getEnableAiMinutes() {
         return enableAiMinutes;
     }
@@ -593,20 +485,14 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.enableAiMinutes = enableAiMinutes;
     }
 
-    
-
     public ShowCorpResourceResponse withSingleConfCallCount(Integer singleConfCallCount) {
         this.singleConfCallCount = singleConfCallCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 单会议并发呼叫数
-     * @return singleConfCallCount
-     */
+    /** 单会议并发呼叫数
+     * 
+     * @return singleConfCallCount */
     public Integer getSingleConfCallCount() {
         return singleConfCallCount;
     }
@@ -615,20 +501,14 @@ public class ShowCorpResourceResponse extends SdkResponse {
         this.singleConfCallCount = singleConfCallCount;
     }
 
-    
-
     public ShowCorpResourceResponse withConfLength(Integer confLength) {
         this.confLength = confLength;
         return this;
     }
 
-    
-
-
-    /**
-     * 会议时长
-     * @return confLength
-     */
+    /** 会议时长
+     * 
+     * @return confLength */
     public Integer getConfLength() {
         return confLength;
     }
@@ -636,8 +516,6 @@ public class ShowCorpResourceResponse extends SdkResponse {
     public void setConfLength(Integer confLength) {
         this.confLength = confLength;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -648,30 +526,50 @@ public class ShowCorpResourceResponse extends SdkResponse {
             return false;
         }
         ShowCorpResourceResponse showCorpResourceResponse = (ShowCorpResourceResponse) o;
-        return Objects.equals(this.te1080pHardCount, showCorpResourceResponse.te1080pHardCount) &&
-            Objects.equals(this.te720pHardCount, showCorpResourceResponse.te720pHardCount) &&
-            Objects.equals(this.teSoftCount, showCorpResourceResponse.teSoftCount) &&
-            Objects.equals(this.roomCount, showCorpResourceResponse.roomCount) &&
-            Objects.equals(this.recordCapability, showCorpResourceResponse.recordCapability) &&
-            Objects.equals(this.confCallCount, showCorpResourceResponse.confCallCount) &&
-            Objects.equals(this.liveCount, showCorpResourceResponse.liveCount) &&
-            Objects.equals(this.thirdPartyHardCount, showCorpResourceResponse.thirdPartyHardCount) &&
-            Objects.equals(this.hwVisionCount, showCorpResourceResponse.hwVisionCount) &&
-            Objects.equals(this.ideaHubCount, showCorpResourceResponse.ideaHubCount) &&
-            Objects.equals(this.vmr, showCorpResourceResponse.vmr) &&
-            Objects.equals(this.enablePstn, showCorpResourceResponse.enablePstn) &&
-            Objects.equals(this.enableSMS, showCorpResourceResponse.enableSMS) &&
-            Objects.equals(this.enableHybridCloud, showCorpResourceResponse.enableHybridCloud) &&
-            Objects.equals(this.enableCloudDisk, showCorpResourceResponse.enableCloudDisk) &&
-            Objects.equals(this.enableUc, showCorpResourceResponse.enableUc) &&
-            Objects.equals(this.enableAiMinutes, showCorpResourceResponse.enableAiMinutes) &&
-            Objects.equals(this.singleConfCallCount, showCorpResourceResponse.singleConfCallCount) &&
-            Objects.equals(this.confLength, showCorpResourceResponse.confLength);
+        return Objects.equals(this.te1080pHardCount, showCorpResourceResponse.te1080pHardCount)
+            && Objects.equals(this.te720pHardCount, showCorpResourceResponse.te720pHardCount)
+            && Objects.equals(this.teSoftCount, showCorpResourceResponse.teSoftCount)
+            && Objects.equals(this.roomCount, showCorpResourceResponse.roomCount)
+            && Objects.equals(this.recordCapability, showCorpResourceResponse.recordCapability)
+            && Objects.equals(this.confCallCount, showCorpResourceResponse.confCallCount)
+            && Objects.equals(this.liveCount, showCorpResourceResponse.liveCount)
+            && Objects.equals(this.thirdPartyHardCount, showCorpResourceResponse.thirdPartyHardCount)
+            && Objects.equals(this.hwVisionCount, showCorpResourceResponse.hwVisionCount)
+            && Objects.equals(this.ideaHubCount, showCorpResourceResponse.ideaHubCount)
+            && Objects.equals(this.vmr, showCorpResourceResponse.vmr)
+            && Objects.equals(this.enablePstn, showCorpResourceResponse.enablePstn)
+            && Objects.equals(this.enableSMS, showCorpResourceResponse.enableSMS)
+            && Objects.equals(this.enableHybridCloud, showCorpResourceResponse.enableHybridCloud)
+            && Objects.equals(this.enableCloudDisk, showCorpResourceResponse.enableCloudDisk)
+            && Objects.equals(this.enableUc, showCorpResourceResponse.enableUc)
+            && Objects.equals(this.enableAiMinutes, showCorpResourceResponse.enableAiMinutes)
+            && Objects.equals(this.singleConfCallCount, showCorpResourceResponse.singleConfCallCount)
+            && Objects.equals(this.confLength, showCorpResourceResponse.confLength);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(te1080pHardCount, te720pHardCount, teSoftCount, roomCount, recordCapability, confCallCount, liveCount, thirdPartyHardCount, hwVisionCount, ideaHubCount, vmr, enablePstn, enableSMS, enableHybridCloud, enableCloudDisk, enableUc, enableAiMinutes, singleConfCallCount, confLength);
+        return Objects.hash(te1080pHardCount,
+            te720pHardCount,
+            teSoftCount,
+            roomCount,
+            recordCapability,
+            confCallCount,
+            liveCount,
+            thirdPartyHardCount,
+            hwVisionCount,
+            ideaHubCount,
+            vmr,
+            enablePstn,
+            enableSMS,
+            enableHybridCloud,
+            enableCloudDisk,
+            enableUc,
+            enableAiMinutes,
+            singleConfCallCount,
+            confLength);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -698,16 +596,13 @@ public class ShowCorpResourceResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

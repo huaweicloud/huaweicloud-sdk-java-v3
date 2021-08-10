@@ -1,129 +1,104 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.Links;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class ShowUserResult  {
-
-
+public class ShowUserResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enabled")
-    
+    @JsonProperty(value = "enabled")
+
     private Boolean enabled;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private Links links;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="xuser_id")
-    
+    @JsonProperty(value = "xuser_id")
+
     private String xuserId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="xuser_type")
-    
+    @JsonProperty(value = "xuser_type")
+
     private String xuserType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="areacode")
-    
+    @JsonProperty(value = "areacode")
+
     private String areacode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="email")
-    
+    @JsonProperty(value = "email")
+
     private String email;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="phone")
-    
+    @JsonProperty(value = "phone")
+
     private String phone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pwd_status")
-    
+    @JsonProperty(value = "pwd_status")
+
     private Boolean pwdStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
+
     private String updateTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private String createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_login_time")
-    
+    @JsonProperty(value = "last_login_time")
+
     private String lastLoginTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pwd_strength")
-    
+    @JsonProperty(value = "pwd_strength")
+
     private String pwdStrength;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_domain_owner")
-    
+    @JsonProperty(value = "is_domain_owner")
+
     private Boolean isDomainOwner;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_mode")
-    
+    @JsonProperty(value = "access_mode")
+
     private String accessMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public ShowUserResult withEnabled(Boolean enabled) {
@@ -131,13 +106,9 @@ public class ShowUserResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户是否启用。true表示启用，false表示停用，默认为true。
-     * @return enabled
-     */
+    /** IAM用户是否启用。true表示启用，false表示停用，默认为true。
+     * 
+     * @return enabled */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -146,20 +117,14 @@ public class ShowUserResult  {
         this.enabled = enabled;
     }
 
-    
-
     public ShowUserResult withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户ID。
-     * @return id
-     */
+    /** IAM用户ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -168,20 +133,14 @@ public class ShowUserResult  {
         this.id = id;
     }
 
-    
-
     public ShowUserResult withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户所属账号ID。
-     * @return domainId
-     */
+    /** IAM用户所属账号ID。
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -190,20 +149,14 @@ public class ShowUserResult  {
         this.domainId = domainId;
     }
 
-    
-
     public ShowUserResult withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户名。
-     * @return name
-     */
+    /** IAM用户名。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -212,27 +165,23 @@ public class ShowUserResult  {
         this.name = name;
     }
 
-    
-
     public ShowUserResult withLinks(Links links) {
         this.links = links;
         return this;
     }
 
     public ShowUserResult withLinks(Consumer<Links> linksSetter) {
-        if(this.links == null ){
+        if (this.links == null) {
             this.links = new Links();
             linksSetter.accept(this.links);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get links
-     * @return links
-     */
+    /** Get links
+     * 
+     * @return links */
     public Links getLinks() {
         return links;
     }
@@ -241,20 +190,14 @@ public class ShowUserResult  {
         this.links = links;
     }
 
-    
-
     public ShowUserResult withXuserId(String xuserId) {
         this.xuserId = xuserId;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户在外部系统中的ID。
-     * @return xuserId
-     */
+    /** IAM用户在外部系统中的ID。
+     * 
+     * @return xuserId */
     public String getXuserId() {
         return xuserId;
     }
@@ -263,20 +206,14 @@ public class ShowUserResult  {
         this.xuserId = xuserId;
     }
 
-    
-
     public ShowUserResult withXuserType(String xuserType) {
         this.xuserType = xuserType;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户在外部系统中的类型。
-     * @return xuserType
-     */
+    /** IAM用户在外部系统中的类型。
+     * 
+     * @return xuserType */
     public String getXuserType() {
         return xuserType;
     }
@@ -285,20 +222,14 @@ public class ShowUserResult  {
         this.xuserType = xuserType;
     }
 
-    
-
     public ShowUserResult withAreacode(String areacode) {
         this.areacode = areacode;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户手机号的国家码。
-     * @return areacode
-     */
+    /** IAM用户手机号的国家码。
+     * 
+     * @return areacode */
     public String getAreacode() {
         return areacode;
     }
@@ -307,20 +238,14 @@ public class ShowUserResult  {
         this.areacode = areacode;
     }
 
-    
-
     public ShowUserResult withEmail(String email) {
         this.email = email;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户邮箱。
-     * @return email
-     */
+    /** IAM用户邮箱。
+     * 
+     * @return email */
     public String getEmail() {
         return email;
     }
@@ -329,20 +254,14 @@ public class ShowUserResult  {
         this.email = email;
     }
 
-    
-
     public ShowUserResult withPhone(String phone) {
         this.phone = phone;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户手机号。
-     * @return phone
-     */
+    /** IAM用户手机号。
+     * 
+     * @return phone */
     public String getPhone() {
         return phone;
     }
@@ -351,20 +270,14 @@ public class ShowUserResult  {
         this.phone = phone;
     }
 
-    
-
     public ShowUserResult withPwdStatus(Boolean pwdStatus) {
         this.pwdStatus = pwdStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户密码状态。true：需要修改密码，false：正常。
-     * @return pwdStatus
-     */
+    /** IAM用户密码状态。true：需要修改密码，false：正常。
+     * 
+     * @return pwdStatus */
     public Boolean getPwdStatus() {
         return pwdStatus;
     }
@@ -373,20 +286,14 @@ public class ShowUserResult  {
         this.pwdStatus = pwdStatus;
     }
 
-    
-
     public ShowUserResult withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户更新时间。
-     * @return updateTime
-     */
+    /** IAM用户更新时间。
+     * 
+     * @return updateTime */
     public String getUpdateTime() {
         return updateTime;
     }
@@ -395,20 +302,14 @@ public class ShowUserResult  {
         this.updateTime = updateTime;
     }
 
-    
-
     public ShowUserResult withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户创建时间。
-     * @return createTime
-     */
+    /** IAM用户创建时间。
+     * 
+     * @return createTime */
     public String getCreateTime() {
         return createTime;
     }
@@ -417,20 +318,14 @@ public class ShowUserResult  {
         this.createTime = createTime;
     }
 
-    
-
     public ShowUserResult withLastLoginTime(String lastLoginTime) {
         this.lastLoginTime = lastLoginTime;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户最后登录时间。
-     * @return lastLoginTime
-     */
+    /** IAM用户最后登录时间。
+     * 
+     * @return lastLoginTime */
     public String getLastLoginTime() {
         return lastLoginTime;
     }
@@ -439,20 +334,14 @@ public class ShowUserResult  {
         this.lastLoginTime = lastLoginTime;
     }
 
-    
-
     public ShowUserResult withPwdStrength(String pwdStrength) {
         this.pwdStrength = pwdStrength;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户密码强度。结果为low/middle/high/none，分别表示密码强度低/中/高/无。
-     * @return pwdStrength
-     */
+    /** IAM用户密码强度。结果为low/middle/high/none，分别表示密码强度低/中/高/无。
+     * 
+     * @return pwdStrength */
     public String getPwdStrength() {
         return pwdStrength;
     }
@@ -461,20 +350,14 @@ public class ShowUserResult  {
         this.pwdStrength = pwdStrength;
     }
 
-    
-
     public ShowUserResult withIsDomainOwner(Boolean isDomainOwner) {
         this.isDomainOwner = isDomainOwner;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户是否为根用户。
-     * @return isDomainOwner
-     */
+    /** IAM用户是否为根用户。
+     * 
+     * @return isDomainOwner */
     public Boolean getIsDomainOwner() {
         return isDomainOwner;
     }
@@ -483,20 +366,14 @@ public class ShowUserResult  {
         this.isDomainOwner = isDomainOwner;
     }
 
-    
-
     public ShowUserResult withAccessMode(String accessMode) {
         this.accessMode = accessMode;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户访问模式。
-     * @return accessMode
-     */
+    /** IAM用户访问模式。
+     * 
+     * @return accessMode */
     public String getAccessMode() {
         return accessMode;
     }
@@ -505,20 +382,14 @@ public class ShowUserResult  {
         this.accessMode = accessMode;
     }
 
-    
-
     public ShowUserResult withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户描述信息
-     * @return description
-     */
+    /** IAM用户描述信息
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -526,8 +397,6 @@ public class ShowUserResult  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -538,29 +407,44 @@ public class ShowUserResult  {
             return false;
         }
         ShowUserResult showUserResult = (ShowUserResult) o;
-        return Objects.equals(this.enabled, showUserResult.enabled) &&
-            Objects.equals(this.id, showUserResult.id) &&
-            Objects.equals(this.domainId, showUserResult.domainId) &&
-            Objects.equals(this.name, showUserResult.name) &&
-            Objects.equals(this.links, showUserResult.links) &&
-            Objects.equals(this.xuserId, showUserResult.xuserId) &&
-            Objects.equals(this.xuserType, showUserResult.xuserType) &&
-            Objects.equals(this.areacode, showUserResult.areacode) &&
-            Objects.equals(this.email, showUserResult.email) &&
-            Objects.equals(this.phone, showUserResult.phone) &&
-            Objects.equals(this.pwdStatus, showUserResult.pwdStatus) &&
-            Objects.equals(this.updateTime, showUserResult.updateTime) &&
-            Objects.equals(this.createTime, showUserResult.createTime) &&
-            Objects.equals(this.lastLoginTime, showUserResult.lastLoginTime) &&
-            Objects.equals(this.pwdStrength, showUserResult.pwdStrength) &&
-            Objects.equals(this.isDomainOwner, showUserResult.isDomainOwner) &&
-            Objects.equals(this.accessMode, showUserResult.accessMode) &&
-            Objects.equals(this.description, showUserResult.description);
+        return Objects.equals(this.enabled, showUserResult.enabled) && Objects.equals(this.id, showUserResult.id)
+            && Objects.equals(this.domainId, showUserResult.domainId) && Objects.equals(this.name, showUserResult.name)
+            && Objects.equals(this.links, showUserResult.links) && Objects.equals(this.xuserId, showUserResult.xuserId)
+            && Objects.equals(this.xuserType, showUserResult.xuserType)
+            && Objects.equals(this.areacode, showUserResult.areacode)
+            && Objects.equals(this.email, showUserResult.email) && Objects.equals(this.phone, showUserResult.phone)
+            && Objects.equals(this.pwdStatus, showUserResult.pwdStatus)
+            && Objects.equals(this.updateTime, showUserResult.updateTime)
+            && Objects.equals(this.createTime, showUserResult.createTime)
+            && Objects.equals(this.lastLoginTime, showUserResult.lastLoginTime)
+            && Objects.equals(this.pwdStrength, showUserResult.pwdStrength)
+            && Objects.equals(this.isDomainOwner, showUserResult.isDomainOwner)
+            && Objects.equals(this.accessMode, showUserResult.accessMode)
+            && Objects.equals(this.description, showUserResult.description);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(enabled, id, domainId, name, links, xuserId, xuserType, areacode, email, phone, pwdStatus, updateTime, createTime, lastLoginTime, pwdStrength, isDomainOwner, accessMode, description);
+        return Objects.hash(enabled,
+            id,
+            domainId,
+            name,
+            links,
+            xuserId,
+            xuserType,
+            areacode,
+            email,
+            phone,
+            pwdStatus,
+            updateTime,
+            createTime,
+            lastLoginTime,
+            pwdStrength,
+            isDomainOwner,
+            accessMode,
+            description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -586,16 +470,13 @@ public class ShowUserResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

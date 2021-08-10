@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.kps.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 更新SSH密钥对描述消息体
- */
-public class UpdateKeypairDescriptionReq  {
-
-
+/** 更新SSH密钥对描述消息体 */
+public class UpdateKeypairDescriptionReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public UpdateKeypairDescriptionReq withDescription(String description) {
@@ -28,13 +18,9 @@ public class UpdateKeypairDescriptionReq  {
         return this;
     }
 
-    
-
-
-    /**
-     * 描述信息
-     * @return description
-     */
+    /** 描述信息
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -42,8 +28,6 @@ public class UpdateKeypairDescriptionReq  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class UpdateKeypairDescriptionReq  {
         UpdateKeypairDescriptionReq updateKeypairDescriptionReq = (UpdateKeypairDescriptionReq) o;
         return Objects.equals(this.description, updateKeypairDescriptionReq.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class UpdateKeypairDescriptionReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

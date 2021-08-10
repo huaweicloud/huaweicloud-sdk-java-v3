@@ -1,40 +1,29 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * DmsKafkaInfo
- */
-public class DmsKafkaInfo  {
-
-
+/** DmsKafkaInfo */
+public class DmsKafkaInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="addr")
-    
+    @JsonProperty(value = "addr")
+
     private List<String> addr = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_fade_enable")
-    
+    @JsonProperty(value = "order_fade_enable")
+
     private Boolean orderFadeEnable;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_fade_cache")
-    
+    @JsonProperty(value = "order_fade_cache")
+
     private Integer orderFadeCache;
 
     public DmsKafkaInfo withAddr(List<String> addr) {
@@ -42,9 +31,8 @@ public class DmsKafkaInfo  {
         return this;
     }
 
-    
     public DmsKafkaInfo addAddrItem(String addrItem) {
-        if(this.addr == null) {
+        if (this.addr == null) {
             this.addr = new ArrayList<>();
         }
         this.addr.add(addrItem);
@@ -52,17 +40,16 @@ public class DmsKafkaInfo  {
     }
 
     public DmsKafkaInfo withAddr(Consumer<List<String>> addrSetter) {
-        if(this.addr == null) {
+        if (this.addr == null) {
             this.addr = new ArrayList<>();
         }
         addrSetter.accept(this.addr);
         return this;
     }
 
-    /**
-     * Kafka连接地址
-     * @return addr
-     */
+    /** Kafka连接地址
+     * 
+     * @return addr */
     public List<String> getAddr() {
         return addr;
     }
@@ -71,20 +58,14 @@ public class DmsKafkaInfo  {
         this.addr = addr;
     }
 
-    
-
     public DmsKafkaInfo withOrderFadeEnable(Boolean orderFadeEnable) {
         this.orderFadeEnable = orderFadeEnable;
         return this;
     }
 
-    
-
-
-    /**
-     * Kafka模式下，是否开启共识节点老化
-     * @return orderFadeEnable
-     */
+    /** Kafka模式下，是否开启共识节点老化
+     * 
+     * @return orderFadeEnable */
     public Boolean getOrderFadeEnable() {
         return orderFadeEnable;
     }
@@ -93,20 +74,14 @@ public class DmsKafkaInfo  {
         this.orderFadeEnable = orderFadeEnable;
     }
 
-    
-
     public DmsKafkaInfo withOrderFadeCache(Integer orderFadeCache) {
         this.orderFadeCache = orderFadeCache;
         return this;
     }
 
-    
-
-
-    /**
-     * Kafka模式下，开启共识节点后的老化阈值
-     * @return orderFadeCache
-     */
+    /** Kafka模式下，开启共识节点后的老化阈值
+     * 
+     * @return orderFadeCache */
     public Integer getOrderFadeCache() {
         return orderFadeCache;
     }
@@ -114,8 +89,6 @@ public class DmsKafkaInfo  {
     public void setOrderFadeCache(Integer orderFadeCache) {
         this.orderFadeCache = orderFadeCache;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -126,14 +99,16 @@ public class DmsKafkaInfo  {
             return false;
         }
         DmsKafkaInfo dmsKafkaInfo = (DmsKafkaInfo) o;
-        return Objects.equals(this.addr, dmsKafkaInfo.addr) &&
-            Objects.equals(this.orderFadeEnable, dmsKafkaInfo.orderFadeEnable) &&
-            Objects.equals(this.orderFadeCache, dmsKafkaInfo.orderFadeCache);
+        return Objects.equals(this.addr, dmsKafkaInfo.addr)
+            && Objects.equals(this.orderFadeEnable, dmsKafkaInfo.orderFadeEnable)
+            && Objects.equals(this.orderFadeCache, dmsKafkaInfo.orderFadeCache);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(addr, orderFadeEnable, orderFadeCache);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -144,16 +119,13 @@ public class DmsKafkaInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

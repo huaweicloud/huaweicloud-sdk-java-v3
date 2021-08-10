@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.classroom.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * MemberJobCard
- */
-public class MemberJobCard  {
-
-
+/** MemberJobCard */
+public class MemberJobCard {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="average_score")
-    
+    @JsonProperty(value = "average_score")
+
     private String averageScore;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="score")
-    
+    @JsonProperty(value = "score")
+
     private Integer score;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="send_time")
-    
+    @JsonProperty(value = "send_time")
+
     private String sendTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_submit_time")
-    
+    @JsonProperty(value = "last_submit_time")
+
     private String lastSubmitTime;
 
     public MemberJobCard withName(String name) {
@@ -52,13 +38,9 @@ public class MemberJobCard  {
         return this;
     }
 
-    
-
-
-    /**
-     * 作业名称
-     * @return name
-     */
+    /** 作业名称
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -67,20 +49,14 @@ public class MemberJobCard  {
         this.name = name;
     }
 
-    
-
     public MemberJobCard withAverageScore(String averageScore) {
         this.averageScore = averageScore;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业均分(作业有均分该字段才返回)
-     * @return averageScore
-     */
+    /** 作业均分(作业有均分该字段才返回)
+     * 
+     * @return averageScore */
     public String getAverageScore() {
         return averageScore;
     }
@@ -89,20 +65,14 @@ public class MemberJobCard  {
         this.averageScore = averageScore;
     }
 
-    
-
     public MemberJobCard withScore(Integer score) {
         this.score = score;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业得分(作业有分数该字段才返回)
-     * @return score
-     */
+    /** 作业得分(作业有分数该字段才返回)
+     * 
+     * @return score */
     public Integer getScore() {
         return score;
     }
@@ -111,20 +81,14 @@ public class MemberJobCard  {
         this.score = score;
     }
 
-    
-
     public MemberJobCard withSendTime(String sendTime) {
         this.sendTime = sendTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业下发时间, 日期格式：yyyy-MM-dd HH:mm:ss
-     * @return sendTime
-     */
+    /** 作业下发时间, 日期格式：yyyy-MM-dd HH:mm:ss
+     * 
+     * @return sendTime */
     public String getSendTime() {
         return sendTime;
     }
@@ -133,20 +97,14 @@ public class MemberJobCard  {
         this.sendTime = sendTime;
     }
 
-    
-
     public MemberJobCard withLastSubmitTime(String lastSubmitTime) {
         this.lastSubmitTime = lastSubmitTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 作业最后一次提交时间, 日期格式：yyyy-MM-dd HH:mm:ss
-     * @return lastSubmitTime
-     */
+    /** 作业最后一次提交时间, 日期格式：yyyy-MM-dd HH:mm:ss
+     * 
+     * @return lastSubmitTime */
     public String getLastSubmitTime() {
         return lastSubmitTime;
     }
@@ -154,8 +112,6 @@ public class MemberJobCard  {
     public void setLastSubmitTime(String lastSubmitTime) {
         this.lastSubmitTime = lastSubmitTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,17 @@ public class MemberJobCard  {
             return false;
         }
         MemberJobCard memberJobCard = (MemberJobCard) o;
-        return Objects.equals(this.name, memberJobCard.name) &&
-            Objects.equals(this.averageScore, memberJobCard.averageScore) &&
-            Objects.equals(this.score, memberJobCard.score) &&
-            Objects.equals(this.sendTime, memberJobCard.sendTime) &&
-            Objects.equals(this.lastSubmitTime, memberJobCard.lastSubmitTime);
+        return Objects.equals(this.name, memberJobCard.name)
+            && Objects.equals(this.averageScore, memberJobCard.averageScore)
+            && Objects.equals(this.score, memberJobCard.score) && Objects.equals(this.sendTime, memberJobCard.sendTime)
+            && Objects.equals(this.lastSubmitTime, memberJobCard.lastSubmitTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, averageScore, score, sendTime, lastSubmitTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +145,13 @@ public class MemberJobCard  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

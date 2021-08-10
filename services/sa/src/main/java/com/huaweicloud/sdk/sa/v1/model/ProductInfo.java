@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.sa.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ProductInfo
- */
-public class ProductInfo  {
-
-
+/** ProductInfo */
+public class ProductInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="company_name")
-    
+    @JsonProperty(value = "company_name")
+
     private String companyName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_name")
-    
+    @JsonProperty(value = "product_name")
+
     private String productName;
 
     public ProductInfo withDomainId(String domainId) {
@@ -52,13 +38,9 @@ public class ProductInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 数据源产品所属账号的ID。
-     * @return domainId
-     */
+    /** 数据源产品所属账号的ID。
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -67,20 +49,14 @@ public class ProductInfo  {
         this.domainId = domainId;
     }
 
-    
-
     public ProductInfo withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据源产品所属项目的ID。
-     * @return projectId
-     */
+    /** 数据源产品所属项目的ID。
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -89,20 +65,14 @@ public class ProductInfo  {
         this.projectId = projectId;
     }
 
-    
-
     public ProductInfo withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据源产品所在区域。
-     * @return region
-     */
+    /** 数据源产品所在区域。
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -111,20 +81,14 @@ public class ProductInfo  {
         this.region = region;
     }
 
-    
-
     public ProductInfo withCompanyName(String companyName) {
         this.companyName = companyName;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据源产品所属公司的名称。
-     * @return companyName
-     */
+    /** 数据源产品所属公司的名称。
+     * 
+     * @return companyName */
     public String getCompanyName() {
         return companyName;
     }
@@ -133,20 +97,14 @@ public class ProductInfo  {
         this.companyName = companyName;
     }
 
-    
-
     public ProductInfo withProductName(String productName) {
         this.productName = productName;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据源产品的名称。
-     * @return productName
-     */
+    /** 数据源产品的名称。
+     * 
+     * @return productName */
     public String getProductName() {
         return productName;
     }
@@ -154,8 +112,6 @@ public class ProductInfo  {
     public void setProductName(String productName) {
         this.productName = productName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,17 @@ public class ProductInfo  {
             return false;
         }
         ProductInfo productInfo = (ProductInfo) o;
-        return Objects.equals(this.domainId, productInfo.domainId) &&
-            Objects.equals(this.projectId, productInfo.projectId) &&
-            Objects.equals(this.region, productInfo.region) &&
-            Objects.equals(this.companyName, productInfo.companyName) &&
-            Objects.equals(this.productName, productInfo.productName);
+        return Objects.equals(this.domainId, productInfo.domainId)
+            && Objects.equals(this.projectId, productInfo.projectId) && Objects.equals(this.region, productInfo.region)
+            && Objects.equals(this.companyName, productInfo.companyName)
+            && Objects.equals(this.productName, productInfo.productName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domainId, projectId, region, companyName, productName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +145,13 @@ public class ProductInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

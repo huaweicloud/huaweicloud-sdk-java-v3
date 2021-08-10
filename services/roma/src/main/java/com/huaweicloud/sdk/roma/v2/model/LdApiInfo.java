@@ -1,73 +1,46 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.LdApiCreate;
-import com.huaweicloud.sdk.roma.v2.model.LdApiParameter;
-import com.huaweicloud.sdk.roma.v2.model.LdApiScript;
+
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 后端API详情
- */
-public class LdApiInfo  {
-
-
+/** 后端API详情 */
+public class LdApiInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path")
-    
+    @JsonProperty(value = "path")
+
     private String path;
-    /**
-     * 后端API请求方法。  支持GET、PUT、POST、DELETE
-     */
+
+    /** 后端API请求方法。 支持GET、PUT、POST、DELETE */
     public static final class MethodEnum {
 
-        
-        /**
-         * Enum GET for value: "GET"
-         */
+        /** Enum GET for value: "GET" */
         public static final MethodEnum GET = new MethodEnum("GET");
-        
-        /**
-         * Enum PUT for value: "PUT"
-         */
+
+        /** Enum PUT for value: "PUT" */
         public static final MethodEnum PUT = new MethodEnum("PUT");
-        
-        /**
-         * Enum POST for value: "POST"
-         */
+
+        /** Enum POST for value: "POST" */
         public static final MethodEnum POST = new MethodEnum("POST");
-        
-        /**
-         * Enum DELETE for value: "DELETE"
-         */
+
+        /** Enum DELETE for value: "DELETE" */
         public static final MethodEnum DELETE = new MethodEnum("DELETE");
-        
 
         private static final Map<String, MethodEnum> STATIC_FIELDS = createStaticFields();
 
@@ -98,7 +71,7 @@ public class LdApiInfo  {
 
         @JsonCreator
         public static MethodEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MethodEnum result = STATIC_FIELDS.get(value);
@@ -109,7 +82,7 @@ public class LdApiInfo  {
         }
 
         public static MethodEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             MethodEnum result = STATIC_FIELDS.get(value);
@@ -133,44 +106,32 @@ public class LdApiInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="method")
-    
+    @JsonProperty(value = "method")
+
     private MethodEnum method;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
-    /**
-     * 后端API返回类型
-     */
+
+    /** 后端API返回类型 */
     public static final class ContentTypeEnum {
 
-        
-        /**
-         * Enum JSON for value: "json"
-         */
+        /** Enum JSON for value: "json" */
         public static final ContentTypeEnum JSON = new ContentTypeEnum("json");
-        
-        /**
-         * Enum XML for value: "xml"
-         */
+
+        /** Enum XML for value: "xml" */
         public static final ContentTypeEnum XML = new ContentTypeEnum("xml");
-        
-        /**
-         * Enum STREAM for value: "stream"
-         */
+
+        /** Enum STREAM for value: "stream" */
         public static final ContentTypeEnum STREAM = new ContentTypeEnum("stream");
-        
 
         private static final Map<String, ContentTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -200,7 +161,7 @@ public class LdApiInfo  {
 
         @JsonCreator
         public static ContentTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ContentTypeEnum result = STATIC_FIELDS.get(value);
@@ -211,7 +172,7 @@ public class LdApiInfo  {
         }
 
         public static ContentTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ContentTypeEnum result = STATIC_FIELDS.get(value);
@@ -235,63 +196,49 @@ public class LdApiInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content_type")
-    
+    @JsonProperty(value = "content_type")
+
     private ContentTypeEnum contentType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_signature_id")
-    
+    @JsonProperty(value = "api_signature_id")
+
     private String apiSignatureId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roma_app_id")
-    
+    @JsonProperty(value = "roma_app_id")
+
     private String romaAppId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="return_format")
-    
+    @JsonProperty(value = "return_format")
+
     private Boolean returnFormat;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parameters")
-    
+    @JsonProperty(value = "parameters")
+
     private List<LdApiParameter> parameters = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance")
-    
+    @JsonProperty(value = "instance")
+
     private String instance;
-    /**
-     * 后端API类型： - data：数据后端 - function： 函数后端
-     */
+
+    /** 后端API类型： - data：数据后端 - function： 函数后端 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum DATA for value: "data"
-         */
+        /** Enum DATA for value: "data" */
         public static final TypeEnum DATA = new TypeEnum("data");
-        
-        /**
-         * Enum FUNCTION for value: "function"
-         */
+
+        /** Enum FUNCTION for value: "function" */
         public static final TypeEnum FUNCTION = new TypeEnum("function");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -320,7 +267,7 @@ public class LdApiInfo  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -331,7 +278,7 @@ public class LdApiInfo  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -355,40 +302,34 @@ public class LdApiInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_time")
-    
+    @JsonProperty(value = "created_time")
+
     private OffsetDateTime createdTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="modified_time")
-    
+    @JsonProperty(value = "modified_time")
+
     private OffsetDateTime modifiedTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scripts")
-    
+    @JsonProperty(value = "scripts")
+
     private List<LdApiScript> scripts = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roma_app_name")
-    
+    @JsonProperty(value = "roma_app_name")
+
     private String romaAppName;
 
     public LdApiInfo withName(String name) {
@@ -396,13 +337,9 @@ public class LdApiInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API名称。  支持汉字、英文、数字、中划线、下划线、点、斜杠、中英文格式下的小括号和冒号、中文格式下的顿号，且只能以英文、汉字和数字开头。
-     * @return name
-     */
+    /** 后端API名称。 支持汉字、英文、数字、中划线、下划线、点、斜杠、中英文格式下的小括号和冒号、中文格式下的顿号，且只能以英文、汉字和数字开头。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -411,20 +348,14 @@ public class LdApiInfo  {
         this.name = name;
     }
 
-    
-
     public LdApiInfo withPath(String path) {
         this.path = path;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API请求路径。  支持英文、数字、中划线、下划线、点等，且以斜杠（/）开头。
-     * @return path
-     */
+    /** 后端API请求路径。 支持英文、数字、中划线、下划线、点等，且以斜杠（/）开头。
+     * 
+     * @return path */
     public String getPath() {
         return path;
     }
@@ -433,20 +364,14 @@ public class LdApiInfo  {
         this.path = path;
     }
 
-    
-
     public LdApiInfo withMethod(MethodEnum method) {
         this.method = method;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API请求方法。  支持GET、PUT、POST、DELETE
-     * @return method
-     */
+    /** 后端API请求方法。 支持GET、PUT、POST、DELETE
+     * 
+     * @return method */
     public MethodEnum getMethod() {
         return method;
     }
@@ -455,20 +380,14 @@ public class LdApiInfo  {
         this.method = method;
     }
 
-    
-
     public LdApiInfo withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API描述。  不支持<，>字符
-     * @return description
-     */
+    /** 后端API描述。 不支持<，>字符
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -477,20 +396,14 @@ public class LdApiInfo  {
         this.description = description;
     }
 
-    
-
     public LdApiInfo withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API版本  支持英文，数字，下划线，中划线，点。
-     * @return version
-     */
+    /** 后端API版本 支持英文，数字，下划线，中划线，点。
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -499,20 +412,14 @@ public class LdApiInfo  {
         this.version = version;
     }
 
-    
-
     public LdApiInfo withContentType(ContentTypeEnum contentType) {
         this.contentType = contentType;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API返回类型
-     * @return contentType
-     */
+    /** 后端API返回类型
+     * 
+     * @return contentType */
     public ContentTypeEnum getContentType() {
         return contentType;
     }
@@ -521,20 +428,14 @@ public class LdApiInfo  {
         this.contentType = contentType;
     }
 
-    
-
     public LdApiInfo withApiSignatureId(String apiSignatureId) {
         this.apiSignatureId = apiSignatureId;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API为签名认证时绑定的签名密钥编号
-     * @return apiSignatureId
-     */
+    /** 后端API为签名认证时绑定的签名密钥编号
+     * 
+     * @return apiSignatureId */
     public String getApiSignatureId() {
         return apiSignatureId;
     }
@@ -543,20 +444,14 @@ public class LdApiInfo  {
         this.apiSignatureId = apiSignatureId;
     }
 
-    
-
     public LdApiInfo withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API归属的集成应用编号
-     * @return romaAppId
-     */
+    /** 后端API归属的集成应用编号
+     * 
+     * @return romaAppId */
     public String getRomaAppId() {
         return romaAppId;
     }
@@ -565,20 +460,14 @@ public class LdApiInfo  {
         this.romaAppId = romaAppId;
     }
 
-    
-
     public LdApiInfo withReturnFormat(Boolean returnFormat) {
         this.returnFormat = returnFormat;
         return this;
     }
 
-    
-
-
-    /**
-     * API响应信息是否格式化  true： 对响应信息进行格式化  false：对响应信息格式化不进行格式化 
-     * @return returnFormat
-     */
+    /** API响应信息是否格式化 true： 对响应信息进行格式化 false：对响应信息格式化不进行格式化
+     * 
+     * @return returnFormat */
     public Boolean getReturnFormat() {
         return returnFormat;
     }
@@ -587,16 +476,13 @@ public class LdApiInfo  {
         this.returnFormat = returnFormat;
     }
 
-    
-
     public LdApiInfo withParameters(List<LdApiParameter> parameters) {
         this.parameters = parameters;
         return this;
     }
 
-    
     public LdApiInfo addParametersItem(LdApiParameter parametersItem) {
-        if(this.parameters == null) {
+        if (this.parameters == null) {
             this.parameters = new ArrayList<>();
         }
         this.parameters.add(parametersItem);
@@ -604,17 +490,16 @@ public class LdApiInfo  {
     }
 
     public LdApiInfo withParameters(Consumer<List<LdApiParameter>> parametersSetter) {
-        if(this.parameters == null) {
+        if (this.parameters == null) {
             this.parameters = new ArrayList<>();
         }
         parametersSetter.accept(this.parameters);
         return this;
     }
 
-    /**
-     * 后端API的请求参数列表
-     * @return parameters
-     */
+    /** 后端API的请求参数列表
+     * 
+     * @return parameters */
     public List<LdApiParameter> getParameters() {
         return parameters;
     }
@@ -623,20 +508,14 @@ public class LdApiInfo  {
         this.parameters = parameters;
     }
 
-    
-
     public LdApiInfo withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API编号
-     * @return id
-     */
+    /** 后端API编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -645,20 +524,14 @@ public class LdApiInfo  {
         this.id = id;
     }
 
-    
-
     public LdApiInfo withInstance(String instance) {
         this.instance = instance;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API所属实例编号
-     * @return instance
-     */
+    /** 后端API所属实例编号
+     * 
+     * @return instance */
     public String getInstance() {
         return instance;
     }
@@ -667,20 +540,14 @@ public class LdApiInfo  {
         this.instance = instance;
     }
 
-    
-
     public LdApiInfo withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API类型： - data：数据后端 - function： 函数后端
-     * @return type
-     */
+    /** 后端API类型： - data：数据后端 - function： 函数后端
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -689,20 +556,14 @@ public class LdApiInfo  {
         this.type = type;
     }
 
-    
-
     public LdApiInfo withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API状态： - 1：待开发 - 3：开发中 - 4：已部署
-     * @return status
-     */
+    /** 后端API状态： - 1：待开发 - 3：开发中 - 4：已部署
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -711,20 +572,14 @@ public class LdApiInfo  {
         this.status = status;
     }
 
-    
-
     public LdApiInfo withCreatedTime(OffsetDateTime createdTime) {
         this.createdTime = createdTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API创建时间
-     * @return createdTime
-     */
+    /** 后端API创建时间
+     * 
+     * @return createdTime */
     public OffsetDateTime getCreatedTime() {
         return createdTime;
     }
@@ -733,20 +588,14 @@ public class LdApiInfo  {
         this.createdTime = createdTime;
     }
 
-    
-
     public LdApiInfo withModifiedTime(OffsetDateTime modifiedTime) {
         this.modifiedTime = modifiedTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API修改时间
-     * @return modifiedTime
-     */
+    /** 后端API修改时间
+     * 
+     * @return modifiedTime */
     public OffsetDateTime getModifiedTime() {
         return modifiedTime;
     }
@@ -755,16 +604,13 @@ public class LdApiInfo  {
         this.modifiedTime = modifiedTime;
     }
 
-    
-
     public LdApiInfo withScripts(List<LdApiScript> scripts) {
         this.scripts = scripts;
         return this;
     }
 
-    
     public LdApiInfo addScriptsItem(LdApiScript scriptsItem) {
-        if(this.scripts == null) {
+        if (this.scripts == null) {
             this.scripts = new ArrayList<>();
         }
         this.scripts.add(scriptsItem);
@@ -772,17 +618,16 @@ public class LdApiInfo  {
     }
 
     public LdApiInfo withScripts(Consumer<List<LdApiScript>> scriptsSetter) {
-        if(this.scripts == null) {
+        if (this.scripts == null) {
             this.scripts = new ArrayList<>();
         }
         scriptsSetter.accept(this.scripts);
         return this;
     }
 
-    /**
-     * 后端API脚本信息
-     * @return scripts
-     */
+    /** 后端API脚本信息
+     * 
+     * @return scripts */
     public List<LdApiScript> getScripts() {
         return scripts;
     }
@@ -791,20 +636,14 @@ public class LdApiInfo  {
         this.scripts = scripts;
     }
 
-    
-
     public LdApiInfo withRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端API归属的集成应用名称
-     * @return romaAppName
-     */
+    /** 后端API归属的集成应用名称
+     * 
+     * @return romaAppName */
     public String getRomaAppName() {
         return romaAppName;
     }
@@ -812,8 +651,6 @@ public class LdApiInfo  {
     public void setRomaAppName(String romaAppName) {
         this.romaAppName = romaAppName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -824,29 +661,43 @@ public class LdApiInfo  {
             return false;
         }
         LdApiInfo ldApiInfo = (LdApiInfo) o;
-        return Objects.equals(this.name, ldApiInfo.name) &&
-            Objects.equals(this.path, ldApiInfo.path) &&
-            Objects.equals(this.method, ldApiInfo.method) &&
-            Objects.equals(this.description, ldApiInfo.description) &&
-            Objects.equals(this.version, ldApiInfo.version) &&
-            Objects.equals(this.contentType, ldApiInfo.contentType) &&
-            Objects.equals(this.apiSignatureId, ldApiInfo.apiSignatureId) &&
-            Objects.equals(this.romaAppId, ldApiInfo.romaAppId) &&
-            Objects.equals(this.returnFormat, ldApiInfo.returnFormat) &&
-            Objects.equals(this.parameters, ldApiInfo.parameters) &&
-            Objects.equals(this.id, ldApiInfo.id) &&
-            Objects.equals(this.instance, ldApiInfo.instance) &&
-            Objects.equals(this.type, ldApiInfo.type) &&
-            Objects.equals(this.status, ldApiInfo.status) &&
-            Objects.equals(this.createdTime, ldApiInfo.createdTime) &&
-            Objects.equals(this.modifiedTime, ldApiInfo.modifiedTime) &&
-            Objects.equals(this.scripts, ldApiInfo.scripts) &&
-            Objects.equals(this.romaAppName, ldApiInfo.romaAppName);
+        return Objects.equals(this.name, ldApiInfo.name) && Objects.equals(this.path, ldApiInfo.path)
+            && Objects.equals(this.method, ldApiInfo.method) && Objects.equals(this.description, ldApiInfo.description)
+            && Objects.equals(this.version, ldApiInfo.version)
+            && Objects.equals(this.contentType, ldApiInfo.contentType)
+            && Objects.equals(this.apiSignatureId, ldApiInfo.apiSignatureId)
+            && Objects.equals(this.romaAppId, ldApiInfo.romaAppId)
+            && Objects.equals(this.returnFormat, ldApiInfo.returnFormat)
+            && Objects.equals(this.parameters, ldApiInfo.parameters) && Objects.equals(this.id, ldApiInfo.id)
+            && Objects.equals(this.instance, ldApiInfo.instance) && Objects.equals(this.type, ldApiInfo.type)
+            && Objects.equals(this.status, ldApiInfo.status) && Objects.equals(this.createdTime, ldApiInfo.createdTime)
+            && Objects.equals(this.modifiedTime, ldApiInfo.modifiedTime)
+            && Objects.equals(this.scripts, ldApiInfo.scripts)
+            && Objects.equals(this.romaAppName, ldApiInfo.romaAppName);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, path, method, description, version, contentType, apiSignatureId, romaAppId, returnFormat, parameters, id, instance, type, status, createdTime, modifiedTime, scripts, romaAppName);
+        return Objects.hash(name,
+            path,
+            method,
+            description,
+            version,
+            contentType,
+            apiSignatureId,
+            romaAppId,
+            returnFormat,
+            parameters,
+            id,
+            instance,
+            type,
+            status,
+            createdTime,
+            modifiedTime,
+            scripts,
+            romaAppName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -872,16 +723,13 @@ public class LdApiInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

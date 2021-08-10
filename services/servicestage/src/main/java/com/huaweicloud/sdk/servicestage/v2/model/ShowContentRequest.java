@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowContentRequest  {
-
-
+/** Request Object */
+public class ShowContentRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Repo-Auth")
-    
+    @JsonProperty(value = "X-Repo-Auth")
+
     private String xRepoAuth;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
+
     private String namespace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project")
-    
+    @JsonProperty(value = "project")
+
     private String project;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path")
-    
+    @JsonProperty(value = "path")
+
     private String path;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ref")
-    
+    @JsonProperty(value = "ref")
+
     private String ref;
 
     public ShowContentRequest withXRepoAuth(String xRepoAuth) {
@@ -52,15 +38,11 @@ public class ShowContentRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 授权名称。
-     * @return xRepoAuth
-     */
+    /** 授权名称。
+     * 
+     * @return xRepoAuth */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Repo-Auth")
+    @JsonProperty(value = "X-Repo-Auth")
     public String getXRepoAuth() {
         return xRepoAuth;
     }
@@ -69,20 +51,14 @@ public class ShowContentRequest  {
         this.xRepoAuth = xRepoAuth;
     }
 
-    
-
     public ShowContentRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
     }
 
-    
-
-
-    /**
-     * 组织ID。
-     * @return namespace
-     */
+    /** 组织ID。
+     * 
+     * @return namespace */
     public String getNamespace() {
         return namespace;
     }
@@ -91,20 +67,14 @@ public class ShowContentRequest  {
         this.namespace = namespace;
     }
 
-    
-
     public ShowContentRequest withProject(String project) {
         this.project = project;
         return this;
     }
 
-    
-
-
-    /**
-     * 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
-     * @return project
-     */
+    /** 仓库项目ID，如果含有“/”，需要将“/”替换为“:”。
+     * 
+     * @return project */
     public String getProject() {
         return project;
     }
@@ -113,20 +83,14 @@ public class ShowContentRequest  {
         this.project = project;
     }
 
-    
-
     public ShowContentRequest withPath(String path) {
         this.path = path;
         return this;
     }
 
-    
-
-
-    /**
-     * 文件路径，需要将“/”替换为“:”。
-     * @return path
-     */
+    /** 文件路径，需要将“/”替换为“:”。
+     * 
+     * @return path */
     public String getPath() {
         return path;
     }
@@ -135,20 +99,14 @@ public class ShowContentRequest  {
         this.path = path;
     }
 
-    
-
     public ShowContentRequest withRef(String ref) {
         this.ref = ref;
         return this;
     }
 
-    
-
-
-    /**
-     * 分支名称或者tag标签名称或者commit sha。
-     * @return ref
-     */
+    /** 分支名称或者tag标签名称或者commit sha。
+     * 
+     * @return ref */
     public String getRef() {
         return ref;
     }
@@ -156,8 +114,6 @@ public class ShowContentRequest  {
     public void setRef(String ref) {
         this.ref = ref;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -168,16 +124,17 @@ public class ShowContentRequest  {
             return false;
         }
         ShowContentRequest showContentRequest = (ShowContentRequest) o;
-        return Objects.equals(this.xRepoAuth, showContentRequest.xRepoAuth) &&
-            Objects.equals(this.namespace, showContentRequest.namespace) &&
-            Objects.equals(this.project, showContentRequest.project) &&
-            Objects.equals(this.path, showContentRequest.path) &&
-            Objects.equals(this.ref, showContentRequest.ref);
+        return Objects.equals(this.xRepoAuth, showContentRequest.xRepoAuth)
+            && Objects.equals(this.namespace, showContentRequest.namespace)
+            && Objects.equals(this.project, showContentRequest.project)
+            && Objects.equals(this.path, showContentRequest.path) && Objects.equals(this.ref, showContentRequest.ref);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xRepoAuth, namespace, project, path, ref);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -190,16 +147,13 @@ public class ShowContentRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

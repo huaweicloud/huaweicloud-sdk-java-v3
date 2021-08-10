@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.CreateAgencyCustomPolicyRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateAgencyCustomPolicyRequest  {
-
-
+/** Request Object */
+public class CreateAgencyCustomPolicyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private CreateAgencyCustomPolicyRequestBody body;
 
     public CreateAgencyCustomPolicyRequest withBody(CreateAgencyCustomPolicyRequestBody body) {
@@ -30,19 +20,17 @@ public class CreateAgencyCustomPolicyRequest  {
     }
 
     public CreateAgencyCustomPolicyRequest withBody(Consumer<CreateAgencyCustomPolicyRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CreateAgencyCustomPolicyRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public CreateAgencyCustomPolicyRequestBody getBody() {
         return body;
     }
@@ -50,8 +38,6 @@ public class CreateAgencyCustomPolicyRequest  {
     public void setBody(CreateAgencyCustomPolicyRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class CreateAgencyCustomPolicyRequest  {
         CreateAgencyCustomPolicyRequest createAgencyCustomPolicyRequest = (CreateAgencyCustomPolicyRequest) o;
         return Objects.equals(this.body, createAgencyCustomPolicyRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class CreateAgencyCustomPolicyRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

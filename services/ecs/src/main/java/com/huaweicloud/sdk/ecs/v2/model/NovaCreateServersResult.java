@@ -1,63 +1,46 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.NovaLink;
-import com.huaweicloud.sdk.ecs.v2.model.NovaServerSecurityGroup;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  *  
  */
-public class NovaCreateServersResult  {
-
-
+public class NovaCreateServersResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private List<NovaLink> links = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_groups")
-    
+    @JsonProperty(value = "security_groups")
+
     private List<NovaServerSecurityGroup> securityGroups = null;
-        /**
-     * diskConfig方式。  - MANUAL，镜像空间不会扩展。 - AUTO，系统盘镜像空间会自动扩展为与flavor大小一致。
-     */
+
+    /** diskConfig方式。 - MANUAL，镜像空间不会扩展。 - AUTO，系统盘镜像空间会自动扩展为与flavor大小一致。 */
     public static final class OsDCFDiskConfigEnum {
 
-        
-        /**
-         * Enum MANUAL for value: "MANUAL"
-         */
+        /** Enum MANUAL for value: "MANUAL" */
         public static final OsDCFDiskConfigEnum MANUAL = new OsDCFDiskConfigEnum("MANUAL");
-        
-        /**
-         * Enum AUTO for value: "AUTO"
-         */
+
+        /** Enum AUTO for value: "AUTO" */
         public static final OsDCFDiskConfigEnum AUTO = new OsDCFDiskConfigEnum("AUTO");
-        
 
         private static final Map<String, OsDCFDiskConfigEnum> STATIC_FIELDS = createStaticFields();
 
@@ -86,7 +69,7 @@ public class NovaCreateServersResult  {
 
         @JsonCreator
         public static OsDCFDiskConfigEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsDCFDiskConfigEnum result = STATIC_FIELDS.get(value);
@@ -97,7 +80,7 @@ public class NovaCreateServersResult  {
         }
 
         public static OsDCFDiskConfigEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OsDCFDiskConfigEnum result = STATIC_FIELDS.get(value);
@@ -121,22 +104,19 @@ public class NovaCreateServersResult  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="OS-DCF:diskConfig")
-    
+    @JsonProperty(value = "OS-DCF:diskConfig")
+
     private OsDCFDiskConfigEnum osDCFDiskConfig;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="reservation_id")
-    
+    @JsonProperty(value = "reservation_id")
+
     private String reservationId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="adminPass")
-    
+    @JsonProperty(value = "adminPass")
+
     private String adminPass;
 
     public NovaCreateServersResult withId(String id) {
@@ -144,13 +124,9 @@ public class NovaCreateServersResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 弹性云服务器uuid。
-     * @return id
-     */
+    /** 弹性云服务器uuid。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -159,16 +135,13 @@ public class NovaCreateServersResult  {
         this.id = id;
     }
 
-    
-
     public NovaCreateServersResult withLinks(List<NovaLink> links) {
         this.links = links;
         return this;
     }
 
-    
     public NovaCreateServersResult addLinksItem(NovaLink linksItem) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         this.links.add(linksItem);
@@ -176,17 +149,16 @@ public class NovaCreateServersResult  {
     }
 
     public NovaCreateServersResult withLinks(Consumer<List<NovaLink>> linksSetter) {
-        if(this.links == null) {
+        if (this.links == null) {
             this.links = new ArrayList<>();
         }
         linksSetter.accept(this.links);
         return this;
     }
 
-    /**
-     * 弹性云服务器URI自描述信息。
-     * @return links
-     */
+    /** 弹性云服务器URI自描述信息。
+     * 
+     * @return links */
     public List<NovaLink> getLinks() {
         return links;
     }
@@ -195,16 +167,13 @@ public class NovaCreateServersResult  {
         this.links = links;
     }
 
-    
-
     public NovaCreateServersResult withSecurityGroups(List<NovaServerSecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
     }
 
-    
     public NovaCreateServersResult addSecurityGroupsItem(NovaServerSecurityGroup securityGroupsItem) {
-        if(this.securityGroups == null) {
+        if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         this.securityGroups.add(securityGroupsItem);
@@ -212,17 +181,16 @@ public class NovaCreateServersResult  {
     }
 
     public NovaCreateServersResult withSecurityGroups(Consumer<List<NovaServerSecurityGroup>> securityGroupsSetter) {
-        if(this.securityGroups == null) {
+        if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);
         return this;
     }
 
-    /**
-     * 弹性云服务器所在安全组。
-     * @return securityGroups
-     */
+    /** 弹性云服务器所在安全组。
+     * 
+     * @return securityGroups */
     public List<NovaServerSecurityGroup> getSecurityGroups() {
         return securityGroups;
     }
@@ -231,20 +199,14 @@ public class NovaCreateServersResult  {
         this.securityGroups = securityGroups;
     }
 
-    
-
     public NovaCreateServersResult withOsDCFDiskConfig(OsDCFDiskConfigEnum osDCFDiskConfig) {
         this.osDCFDiskConfig = osDCFDiskConfig;
         return this;
     }
 
-    
-
-
-    /**
-     * diskConfig方式。  - MANUAL，镜像空间不会扩展。 - AUTO，系统盘镜像空间会自动扩展为与flavor大小一致。
-     * @return osDCFDiskConfig
-     */
+    /** diskConfig方式。 - MANUAL，镜像空间不会扩展。 - AUTO，系统盘镜像空间会自动扩展为与flavor大小一致。
+     * 
+     * @return osDCFDiskConfig */
     public OsDCFDiskConfigEnum getOsDCFDiskConfig() {
         return osDCFDiskConfig;
     }
@@ -253,20 +215,14 @@ public class NovaCreateServersResult  {
         this.osDCFDiskConfig = osDCFDiskConfig;
     }
 
-    
-
     public NovaCreateServersResult withReservationId(String reservationId) {
         this.reservationId = reservationId;
         return this;
     }
 
-    
-
-
-    /**
-     * 通过返回的reservation_id，可以过滤查询到本次创建的弹性云服务器。  > 说明： >  > 批量创建弹性云服务器时，支持使用该字段。
-     * @return reservationId
-     */
+    /** 通过返回的reservation_id，可以过滤查询到本次创建的弹性云服务器。 > 说明： > > 批量创建弹性云服务器时，支持使用该字段。
+     * 
+     * @return reservationId */
     public String getReservationId() {
         return reservationId;
     }
@@ -275,20 +231,14 @@ public class NovaCreateServersResult  {
         this.reservationId = reservationId;
     }
 
-    
-
     public NovaCreateServersResult withAdminPass(String adminPass) {
         this.adminPass = adminPass;
         return this;
     }
 
-    
-
-
-    /**
-     * Windows弹性云服务器Administrator用户的密码。
-     * @return adminPass
-     */
+    /** Windows弹性云服务器Administrator用户的密码。
+     * 
+     * @return adminPass */
     public String getAdminPass() {
         return adminPass;
     }
@@ -296,8 +246,6 @@ public class NovaCreateServersResult  {
     public void setAdminPass(String adminPass) {
         this.adminPass = adminPass;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -308,17 +256,19 @@ public class NovaCreateServersResult  {
             return false;
         }
         NovaCreateServersResult novaCreateServersResult = (NovaCreateServersResult) o;
-        return Objects.equals(this.id, novaCreateServersResult.id) &&
-            Objects.equals(this.links, novaCreateServersResult.links) &&
-            Objects.equals(this.securityGroups, novaCreateServersResult.securityGroups) &&
-            Objects.equals(this.osDCFDiskConfig, novaCreateServersResult.osDCFDiskConfig) &&
-            Objects.equals(this.reservationId, novaCreateServersResult.reservationId) &&
-            Objects.equals(this.adminPass, novaCreateServersResult.adminPass);
+        return Objects.equals(this.id, novaCreateServersResult.id)
+            && Objects.equals(this.links, novaCreateServersResult.links)
+            && Objects.equals(this.securityGroups, novaCreateServersResult.securityGroups)
+            && Objects.equals(this.osDCFDiskConfig, novaCreateServersResult.osDCFDiskConfig)
+            && Objects.equals(this.reservationId, novaCreateServersResult.reservationId)
+            && Objects.equals(this.adminPass, novaCreateServersResult.adminPass);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, links, securityGroups, osDCFDiskConfig, reservationId, adminPass);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -332,16 +282,13 @@ public class NovaCreateServersResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

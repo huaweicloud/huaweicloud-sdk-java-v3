@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 上报设备告警消息结构
- */
-public class ActionDeviceAlarm  {
-
-
+/** 上报设备告警消息结构 */
+public class ActionDeviceAlarm {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_status")
-    
+    @JsonProperty(value = "alarm_status")
+
     private String alarmStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="severity")
-    
+    @JsonProperty(value = "severity")
+
     private String severity;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public ActionDeviceAlarm withName(String name) {
@@ -46,13 +33,9 @@ public class ActionDeviceAlarm  {
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：告警名称。
-     * @return name
-     */
+    /** **参数说明**：告警名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -61,20 +44,14 @@ public class ActionDeviceAlarm  {
         this.name = name;
     }
 
-    
-
     public ActionDeviceAlarm withAlarmStatus(String alarmStatus) {
         this.alarmStatus = alarmStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：告警状态。 **取值范围**： - fault：上报告警。 - recovery：恢复告警。
-     * @return alarmStatus
-     */
+    /** **参数说明**：告警状态。 **取值范围**： - fault：上报告警。 - recovery：恢复告警。
+     * 
+     * @return alarmStatus */
     public String getAlarmStatus() {
         return alarmStatus;
     }
@@ -83,20 +60,14 @@ public class ActionDeviceAlarm  {
         this.alarmStatus = alarmStatus;
     }
 
-    
-
     public ActionDeviceAlarm withSeverity(String severity) {
         this.severity = severity;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：告警级别。 **取值范围**： - warning：警告。 - minor：一般。 - major：严重。 - critical：致命。
-     * @return severity
-     */
+    /** **参数说明**：告警级别。 **取值范围**： - warning：警告。 - minor：一般。 - major：严重。 - critical：致命。
+     * 
+     * @return severity */
     public String getSeverity() {
         return severity;
     }
@@ -105,20 +76,14 @@ public class ActionDeviceAlarm  {
         this.severity = severity;
     }
 
-    
-
     public ActionDeviceAlarm withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * **参数说明**：告警的描述信息。
-     * @return description
-     */
+    /** **参数说明**：告警的描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -126,8 +91,6 @@ public class ActionDeviceAlarm  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class ActionDeviceAlarm  {
             return false;
         }
         ActionDeviceAlarm actionDeviceAlarm = (ActionDeviceAlarm) o;
-        return Objects.equals(this.name, actionDeviceAlarm.name) &&
-            Objects.equals(this.alarmStatus, actionDeviceAlarm.alarmStatus) &&
-            Objects.equals(this.severity, actionDeviceAlarm.severity) &&
-            Objects.equals(this.description, actionDeviceAlarm.description);
+        return Objects.equals(this.name, actionDeviceAlarm.name)
+            && Objects.equals(this.alarmStatus, actionDeviceAlarm.alarmStatus)
+            && Objects.equals(this.severity, actionDeviceAlarm.severity)
+            && Objects.equals(this.description, actionDeviceAlarm.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, alarmStatus, severity, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class ActionDeviceAlarm  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

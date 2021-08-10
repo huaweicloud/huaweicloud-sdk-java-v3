@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.projectman.v4.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 工作项不同状态下的数量
- */
-public class IssueCompletionRateV4IssueStatus  {
-
-
+/** 工作项不同状态下的数量 */
+public class IssueCompletionRateV4IssueStatus {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="closed_num")
-    
+    @JsonProperty(value = "closed_num")
+
     private Integer closedNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="new_num")
-    
+    @JsonProperty(value = "new_num")
+
     private Integer newNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="process_num")
-    
+    @JsonProperty(value = "process_num")
+
     private Integer processNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rejected_num")
-    
+    @JsonProperty(value = "rejected_num")
+
     private Integer rejectedNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="solved_num")
-    
+    @JsonProperty(value = "solved_num")
+
     private Integer solvedNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="test_num")
-    
+    @JsonProperty(value = "test_num")
+
     private Integer testNum;
 
     public IssueCompletionRateV4IssueStatus withClosedNum(Integer closedNum) {
@@ -58,13 +43,9 @@ public class IssueCompletionRateV4IssueStatus  {
         return this;
     }
 
-    
-
-
-    /**
-     * 已关闭的工作项
-     * @return closedNum
-     */
+    /** 已关闭的工作项
+     * 
+     * @return closedNum */
     public Integer getClosedNum() {
         return closedNum;
     }
@@ -73,20 +54,14 @@ public class IssueCompletionRateV4IssueStatus  {
         this.closedNum = closedNum;
     }
 
-    
-
     public IssueCompletionRateV4IssueStatus withNewNum(Integer newNum) {
         this.newNum = newNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 新建的工作项
-     * @return newNum
-     */
+    /** 新建的工作项
+     * 
+     * @return newNum */
     public Integer getNewNum() {
         return newNum;
     }
@@ -95,20 +70,14 @@ public class IssueCompletionRateV4IssueStatus  {
         this.newNum = newNum;
     }
 
-    
-
     public IssueCompletionRateV4IssueStatus withProcessNum(Integer processNum) {
         this.processNum = processNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 进行中的工作项数目
-     * @return processNum
-     */
+    /** 进行中的工作项数目
+     * 
+     * @return processNum */
     public Integer getProcessNum() {
         return processNum;
     }
@@ -117,20 +86,14 @@ public class IssueCompletionRateV4IssueStatus  {
         this.processNum = processNum;
     }
 
-    
-
     public IssueCompletionRateV4IssueStatus withRejectedNum(Integer rejectedNum) {
         this.rejectedNum = rejectedNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 已经拒绝的工作项
-     * @return rejectedNum
-     */
+    /** 已经拒绝的工作项
+     * 
+     * @return rejectedNum */
     public Integer getRejectedNum() {
         return rejectedNum;
     }
@@ -139,20 +102,14 @@ public class IssueCompletionRateV4IssueStatus  {
         this.rejectedNum = rejectedNum;
     }
 
-    
-
     public IssueCompletionRateV4IssueStatus withSolvedNum(Integer solvedNum) {
         this.solvedNum = solvedNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 已经解决的工作项
-     * @return solvedNum
-     */
+    /** 已经解决的工作项
+     * 
+     * @return solvedNum */
     public Integer getSolvedNum() {
         return solvedNum;
     }
@@ -161,20 +118,14 @@ public class IssueCompletionRateV4IssueStatus  {
         this.solvedNum = solvedNum;
     }
 
-    
-
     public IssueCompletionRateV4IssueStatus withTestNum(Integer testNum) {
         this.testNum = testNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 测试中的工作项
-     * @return testNum
-     */
+    /** 测试中的工作项
+     * 
+     * @return testNum */
     public Integer getTestNum() {
         return testNum;
     }
@@ -182,8 +133,6 @@ public class IssueCompletionRateV4IssueStatus  {
     public void setTestNum(Integer testNum) {
         this.testNum = testNum;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,17 +143,19 @@ public class IssueCompletionRateV4IssueStatus  {
             return false;
         }
         IssueCompletionRateV4IssueStatus issueCompletionRateV4IssueStatus = (IssueCompletionRateV4IssueStatus) o;
-        return Objects.equals(this.closedNum, issueCompletionRateV4IssueStatus.closedNum) &&
-            Objects.equals(this.newNum, issueCompletionRateV4IssueStatus.newNum) &&
-            Objects.equals(this.processNum, issueCompletionRateV4IssueStatus.processNum) &&
-            Objects.equals(this.rejectedNum, issueCompletionRateV4IssueStatus.rejectedNum) &&
-            Objects.equals(this.solvedNum, issueCompletionRateV4IssueStatus.solvedNum) &&
-            Objects.equals(this.testNum, issueCompletionRateV4IssueStatus.testNum);
+        return Objects.equals(this.closedNum, issueCompletionRateV4IssueStatus.closedNum)
+            && Objects.equals(this.newNum, issueCompletionRateV4IssueStatus.newNum)
+            && Objects.equals(this.processNum, issueCompletionRateV4IssueStatus.processNum)
+            && Objects.equals(this.rejectedNum, issueCompletionRateV4IssueStatus.rejectedNum)
+            && Objects.equals(this.solvedNum, issueCompletionRateV4IssueStatus.solvedNum)
+            && Objects.equals(this.testNum, issueCompletionRateV4IssueStatus.testNum);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(closedNum, newNum, processNum, rejectedNum, solvedNum, testNum);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,16 +169,13 @@ public class IssueCompletionRateV4IssueStatus  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

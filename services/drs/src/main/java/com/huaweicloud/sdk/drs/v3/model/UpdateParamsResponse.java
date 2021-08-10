@@ -1,49 +1,32 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
-
-
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class UpdateParamsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="success")
-    
+    @JsonProperty(value = "success")
+
     private Boolean success;
-    /**
-     * 是否需要重启
-     */
+
+    /** 是否需要重启 */
     public static final class ShouldRestartEnum {
 
-        
-        /**
-         * Enum TRUE for value: "true"
-         */
+        /** Enum TRUE for value: "true" */
         public static final ShouldRestartEnum TRUE = new ShouldRestartEnum("true");
-        
-        /**
-         * Enum FALSE for value: "false"
-         */
+
+        /** Enum FALSE for value: "false" */
         public static final ShouldRestartEnum FALSE = new ShouldRestartEnum("false");
-        
 
         private static final Map<String, ShouldRestartEnum> STATIC_FIELDS = createStaticFields();
 
@@ -72,7 +55,7 @@ public class UpdateParamsResponse extends SdkResponse {
 
         @JsonCreator
         public static ShouldRestartEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ShouldRestartEnum result = STATIC_FIELDS.get(value);
@@ -83,7 +66,7 @@ public class UpdateParamsResponse extends SdkResponse {
         }
 
         public static ShouldRestartEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ShouldRestartEnum result = STATIC_FIELDS.get(value);
@@ -107,22 +90,19 @@ public class UpdateParamsResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="should_restart")
-    
+    @JsonProperty(value = "should_restart")
+
     private ShouldRestartEnum shouldRestart;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
+
     private String errorCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_msg")
-    
+    @JsonProperty(value = "error_msg")
+
     private String errorMsg;
 
     public UpdateParamsResponse withSuccess(Boolean success) {
@@ -130,13 +110,9 @@ public class UpdateParamsResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 修改参数是否成功
-     * @return success
-     */
+    /** 修改参数是否成功
+     * 
+     * @return success */
     public Boolean getSuccess() {
         return success;
     }
@@ -145,20 +121,14 @@ public class UpdateParamsResponse extends SdkResponse {
         this.success = success;
     }
 
-    
-
     public UpdateParamsResponse withShouldRestart(ShouldRestartEnum shouldRestart) {
         this.shouldRestart = shouldRestart;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否需要重启
-     * @return shouldRestart
-     */
+    /** 是否需要重启
+     * 
+     * @return shouldRestart */
     public ShouldRestartEnum getShouldRestart() {
         return shouldRestart;
     }
@@ -167,20 +137,14 @@ public class UpdateParamsResponse extends SdkResponse {
         this.shouldRestart = shouldRestart;
     }
 
-    
-
     public UpdateParamsResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误码
-     * @return errorCode
-     */
+    /** 错误码
+     * 
+     * @return errorCode */
     public String getErrorCode() {
         return errorCode;
     }
@@ -189,20 +153,14 @@ public class UpdateParamsResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
-    
-
     public UpdateParamsResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误信息
-     * @return errorMsg
-     */
+    /** 错误信息
+     * 
+     * @return errorMsg */
     public String getErrorMsg() {
         return errorMsg;
     }
@@ -210,8 +168,6 @@ public class UpdateParamsResponse extends SdkResponse {
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -222,15 +178,17 @@ public class UpdateParamsResponse extends SdkResponse {
             return false;
         }
         UpdateParamsResponse updateParamsResponse = (UpdateParamsResponse) o;
-        return Objects.equals(this.success, updateParamsResponse.success) &&
-            Objects.equals(this.shouldRestart, updateParamsResponse.shouldRestart) &&
-            Objects.equals(this.errorCode, updateParamsResponse.errorCode) &&
-            Objects.equals(this.errorMsg, updateParamsResponse.errorMsg);
+        return Objects.equals(this.success, updateParamsResponse.success)
+            && Objects.equals(this.shouldRestart, updateParamsResponse.shouldRestart)
+            && Objects.equals(this.errorCode, updateParamsResponse.errorCode)
+            && Objects.equals(this.errorMsg, updateParamsResponse.errorMsg);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(success, shouldRestart, errorCode, errorMsg);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -242,16 +200,13 @@ public class UpdateParamsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

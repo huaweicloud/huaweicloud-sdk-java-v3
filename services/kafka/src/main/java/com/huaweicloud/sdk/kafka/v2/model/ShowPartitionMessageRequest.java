@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowPartitionMessageRequest  {
-
-
+/** Request Object */
+public class ShowPartitionMessageRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic")
-    
+    @JsonProperty(value = "topic")
+
     private String topic;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="partition")
-    
+    @JsonProperty(value = "partition")
+
     private Integer partition;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message_offset")
-    
+    @JsonProperty(value = "message_offset")
+
     private String messageOffset;
 
     public ShowPartitionMessageRequest withInstanceId(String instanceId) {
@@ -46,13 +33,9 @@ public class ShowPartitionMessageRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -61,20 +44,14 @@ public class ShowPartitionMessageRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ShowPartitionMessageRequest withTopic(String topic) {
         this.topic = topic;
         return this;
     }
 
-    
-
-
-    /**
-     * Topic名称。
-     * @return topic
-     */
+    /** Topic名称。
+     * 
+     * @return topic */
     public String getTopic() {
         return topic;
     }
@@ -83,20 +60,14 @@ public class ShowPartitionMessageRequest  {
         this.topic = topic;
     }
 
-    
-
     public ShowPartitionMessageRequest withPartition(Integer partition) {
         this.partition = partition;
         return this;
     }
 
-    
-
-
-    /**
-     * 分区编号。
-     * @return partition
-     */
+    /** 分区编号。
+     * 
+     * @return partition */
     public Integer getPartition() {
         return partition;
     }
@@ -105,20 +76,14 @@ public class ShowPartitionMessageRequest  {
         this.partition = partition;
     }
 
-    
-
     public ShowPartitionMessageRequest withMessageOffset(String messageOffset) {
         this.messageOffset = messageOffset;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息位置。
-     * @return messageOffset
-     */
+    /** 消息位置。
+     * 
+     * @return messageOffset */
     public String getMessageOffset() {
         return messageOffset;
     }
@@ -126,8 +91,6 @@ public class ShowPartitionMessageRequest  {
     public void setMessageOffset(String messageOffset) {
         this.messageOffset = messageOffset;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class ShowPartitionMessageRequest  {
             return false;
         }
         ShowPartitionMessageRequest showPartitionMessageRequest = (ShowPartitionMessageRequest) o;
-        return Objects.equals(this.instanceId, showPartitionMessageRequest.instanceId) &&
-            Objects.equals(this.topic, showPartitionMessageRequest.topic) &&
-            Objects.equals(this.partition, showPartitionMessageRequest.partition) &&
-            Objects.equals(this.messageOffset, showPartitionMessageRequest.messageOffset);
+        return Objects.equals(this.instanceId, showPartitionMessageRequest.instanceId)
+            && Objects.equals(this.topic, showPartitionMessageRequest.topic)
+            && Objects.equals(this.partition, showPartitionMessageRequest.partition)
+            && Objects.equals(this.messageOffset, showPartitionMessageRequest.messageOffset);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, topic, partition, messageOffset);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class ShowPartitionMessageRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

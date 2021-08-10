@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.drs.v3.model.QueryPreCheckResp;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class BatchCheckResultsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="results")
-    
+    @JsonProperty(value = "results")
+
     private List<QueryPreCheckResp> results = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
+
     private Integer count;
 
     public BatchCheckResultsResponse withResults(List<QueryPreCheckResp> results) {
@@ -39,9 +27,8 @@ public class BatchCheckResultsResponse extends SdkResponse {
         return this;
     }
 
-    
     public BatchCheckResultsResponse addResultsItem(QueryPreCheckResp resultsItem) {
-        if(this.results == null) {
+        if (this.results == null) {
             this.results = new ArrayList<>();
         }
         this.results.add(resultsItem);
@@ -49,17 +36,16 @@ public class BatchCheckResultsResponse extends SdkResponse {
     }
 
     public BatchCheckResultsResponse withResults(Consumer<List<QueryPreCheckResp>> resultsSetter) {
-        if(this.results == null) {
+        if (this.results == null) {
             this.results = new ArrayList<>();
         }
         resultsSetter.accept(this.results);
         return this;
     }
 
-    /**
-     * 批量查询预检查结果响应体集合。
-     * @return results
-     */
+    /** 批量查询预检查结果响应体集合。
+     * 
+     * @return results */
     public List<QueryPreCheckResp> getResults() {
         return results;
     }
@@ -68,20 +54,14 @@ public class BatchCheckResultsResponse extends SdkResponse {
         this.results = results;
     }
 
-    
-
     public BatchCheckResultsResponse withCount(Integer count) {
         this.count = count;
         return this;
     }
 
-    
-
-
-    /**
-     * 总记录数。
-     * @return count
-     */
+    /** 总记录数。
+     * 
+     * @return count */
     public Integer getCount() {
         return count;
     }
@@ -89,8 +69,6 @@ public class BatchCheckResultsResponse extends SdkResponse {
     public void setCount(Integer count) {
         this.count = count;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class BatchCheckResultsResponse extends SdkResponse {
             return false;
         }
         BatchCheckResultsResponse batchCheckResultsResponse = (BatchCheckResultsResponse) o;
-        return Objects.equals(this.results, batchCheckResultsResponse.results) &&
-            Objects.equals(this.count, batchCheckResultsResponse.count);
+        return Objects.equals(this.results, batchCheckResultsResponse.results)
+            && Objects.equals(this.count, batchCheckResultsResponse.count);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(results, count);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class BatchCheckResultsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

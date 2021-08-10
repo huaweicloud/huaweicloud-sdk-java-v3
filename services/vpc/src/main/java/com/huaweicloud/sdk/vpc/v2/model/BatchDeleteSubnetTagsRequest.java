@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vpc.v2.model.BatchDeleteSubnetTagsRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class BatchDeleteSubnetTagsRequest  {
-
-
+/** Request Object */
+public class BatchDeleteSubnetTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
+
     private String subnetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private BatchDeleteSubnetTagsRequestBody body;
 
     public BatchDeleteSubnetTagsRequest withSubnetId(String subnetId) {
@@ -35,13 +24,9 @@ public class BatchDeleteSubnetTagsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 子网ID
-     * @return subnetId
-     */
+    /** 子网ID
+     * 
+     * @return subnetId */
     public String getSubnetId() {
         return subnetId;
     }
@@ -50,27 +35,23 @@ public class BatchDeleteSubnetTagsRequest  {
         this.subnetId = subnetId;
     }
 
-    
-
     public BatchDeleteSubnetTagsRequest withBody(BatchDeleteSubnetTagsRequestBody body) {
         this.body = body;
         return this;
     }
 
     public BatchDeleteSubnetTagsRequest withBody(Consumer<BatchDeleteSubnetTagsRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new BatchDeleteSubnetTagsRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public BatchDeleteSubnetTagsRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class BatchDeleteSubnetTagsRequest  {
     public void setBody(BatchDeleteSubnetTagsRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class BatchDeleteSubnetTagsRequest  {
             return false;
         }
         BatchDeleteSubnetTagsRequest batchDeleteSubnetTagsRequest = (BatchDeleteSubnetTagsRequest) o;
-        return Objects.equals(this.subnetId, batchDeleteSubnetTagsRequest.subnetId) &&
-            Objects.equals(this.body, batchDeleteSubnetTagsRequest.body);
+        return Objects.equals(this.subnetId, batchDeleteSubnetTagsRequest.subnetId)
+            && Objects.equals(this.body, batchDeleteSubnetTagsRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(subnetId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class BatchDeleteSubnetTagsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

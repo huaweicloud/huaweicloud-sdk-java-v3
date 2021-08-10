@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * SeverityV2Do
- */
-public class SeverityV2Do  {
-
-
+/** SeverityV2Do */
+public class SeverityV2Do {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="language")
-    
+    @JsonProperty(value = "language")
+
     private String language;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="severity_name")
-    
+    @JsonProperty(value = "severity_name")
+
     private String severityName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="severity_id")
-    
+    @JsonProperty(value = "severity_id")
+
     private String severityId;
 
     public SeverityV2Do withLanguage(String language) {
@@ -40,13 +28,9 @@ public class SeverityV2Do  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return language
-     */
+    /** 语言
+     * 
+     * @return language */
     public String getLanguage() {
         return language;
     }
@@ -55,20 +39,14 @@ public class SeverityV2Do  {
         this.language = language;
     }
 
-    
-
     public SeverityV2Do withSeverityName(String severityName) {
         this.severityName = severityName;
         return this;
     }
 
-    
-
-
-    /**
-     * 严重性名称
-     * @return severityName
-     */
+    /** 严重性名称
+     * 
+     * @return severityName */
     public String getSeverityName() {
         return severityName;
     }
@@ -77,20 +55,14 @@ public class SeverityV2Do  {
         this.severityName = severityName;
     }
 
-    
-
     public SeverityV2Do withSeverityId(String severityId) {
         this.severityId = severityId;
         return this;
     }
 
-    
-
-
-    /**
-     * 严重性id
-     * @return severityId
-     */
+    /** 严重性id
+     * 
+     * @return severityId */
     public String getSeverityId() {
         return severityId;
     }
@@ -98,8 +70,6 @@ public class SeverityV2Do  {
     public void setSeverityId(String severityId) {
         this.severityId = severityId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class SeverityV2Do  {
             return false;
         }
         SeverityV2Do severityV2Do = (SeverityV2Do) o;
-        return Objects.equals(this.language, severityV2Do.language) &&
-            Objects.equals(this.severityName, severityV2Do.severityName) &&
-            Objects.equals(this.severityId, severityV2Do.severityId);
+        return Objects.equals(this.language, severityV2Do.language)
+            && Objects.equals(this.severityName, severityV2Do.severityName)
+            && Objects.equals(this.severityId, severityV2Do.severityId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(language, severityName, severityId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class SeverityV2Do  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

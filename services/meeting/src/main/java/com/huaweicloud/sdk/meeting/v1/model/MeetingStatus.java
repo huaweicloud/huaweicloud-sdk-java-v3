@@ -1,39 +1,23 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
-/**
- * 会议状态。 - schedule:预定状态 - created:会议已经被创建并正在召开 - destroyed:会议已经关闭 
- */
+/** 会议状态。 - schedule:预定状态 - created:会议已经被创建并正在召开 - destroyed:会议已经关闭 */
 public class MeetingStatus {
-    
-    /**
-     * Enum SCHEDULE for value: "schedule"
-     */
+
+    /** Enum SCHEDULE for value: "schedule" */
     public static final MeetingStatus SCHEDULE = new MeetingStatus("schedule");
-    
-    /**
-     * Enum CREATED for value: "created"
-     */
+
+    /** Enum CREATED for value: "created" */
     public static final MeetingStatus CREATED = new MeetingStatus("created");
-    
-    /**
-     * Enum DESTROYED for value: "destroyed"
-     */
+
+    /** Enum DESTROYED for value: "destroyed" */
     public static final MeetingStatus DESTROYED = new MeetingStatus("destroyed");
-    
 
     private static final Map<String, MeetingStatus> STATIC_FIELDS = createStaticFields();
 
@@ -63,7 +47,7 @@ public class MeetingStatus {
 
     @JsonCreator
     public static MeetingStatus fromValue(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         MeetingStatus result = STATIC_FIELDS.get(value);
@@ -74,7 +58,7 @@ public class MeetingStatus {
     }
 
     public static MeetingStatus valueOf(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         MeetingStatus result = STATIC_FIELDS.get(value);
@@ -97,4 +81,3 @@ public class MeetingStatus {
         return this.value.hashCode();
     }
 }
-

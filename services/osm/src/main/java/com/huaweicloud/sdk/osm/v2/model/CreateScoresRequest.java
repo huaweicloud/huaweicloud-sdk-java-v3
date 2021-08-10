@@ -1,51 +1,37 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.osm.v2.model.CreateScoreV2Req;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateScoresRequest  {
-
-
+/** Request Object */
+public class CreateScoresRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="case_id")
-    
+    @JsonProperty(value = "case_id")
+
     private String caseId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site")
-    
+    @JsonProperty(value = "X-Site")
+
     private Integer xSite;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Time-Zone")
-    
+    @JsonProperty(value = "X-Time-Zone")
+
     private String xTimeZone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private CreateScoreV2Req body;
 
     public CreateScoresRequest withCaseId(String caseId) {
@@ -53,13 +39,9 @@ public class CreateScoresRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 工单id
-     * @return caseId
-     */
+    /** 工单id
+     * 
+     * @return caseId */
     public String getCaseId() {
         return caseId;
     }
@@ -68,24 +50,16 @@ public class CreateScoresRequest  {
         this.caseId = caseId;
     }
 
-    
-
     public CreateScoresRequest withXSite(Integer xSite) {
         this.xSite = xSite;
         return this;
     }
 
-    
-
-
-    /**
-     * 对接站点信息。  0（中国站） 1（国际站），不填的话默认为0。
-     * minimum: 0
-     * maximum: 1
-     * @return xSite
-     */
+    /** 对接站点信息。 0（中国站） 1（国际站），不填的话默认为0。 minimum: 0 maximum: 1
+     * 
+     * @return xSite */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site")
+    @JsonProperty(value = "X-Site")
     public Integer getXSite() {
         return xSite;
     }
@@ -94,22 +68,16 @@ public class CreateScoresRequest  {
         this.xSite = xSite;
     }
 
-    
-
     public CreateScoresRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。  会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
-     * @return xLanguage
-     */
+    /** 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。 会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -118,22 +86,16 @@ public class CreateScoresRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public CreateScoresRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。  涉及时间的数据会根据环境时区处理。
-     * @return xTimeZone
-     */
+    /** 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。 涉及时间的数据会根据环境时区处理。
+     * 
+     * @return xTimeZone */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Time-Zone")
+    @JsonProperty(value = "X-Time-Zone")
     public String getXTimeZone() {
         return xTimeZone;
     }
@@ -142,27 +104,23 @@ public class CreateScoresRequest  {
         this.xTimeZone = xTimeZone;
     }
 
-    
-
     public CreateScoresRequest withBody(CreateScoreV2Req body) {
         this.body = body;
         return this;
     }
 
     public CreateScoresRequest withBody(Consumer<CreateScoreV2Req> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CreateScoreV2Req();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public CreateScoreV2Req getBody() {
         return body;
     }
@@ -170,8 +128,6 @@ public class CreateScoresRequest  {
     public void setBody(CreateScoreV2Req body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -182,16 +138,18 @@ public class CreateScoresRequest  {
             return false;
         }
         CreateScoresRequest createScoresRequest = (CreateScoresRequest) o;
-        return Objects.equals(this.caseId, createScoresRequest.caseId) &&
-            Objects.equals(this.xSite, createScoresRequest.xSite) &&
-            Objects.equals(this.xLanguage, createScoresRequest.xLanguage) &&
-            Objects.equals(this.xTimeZone, createScoresRequest.xTimeZone) &&
-            Objects.equals(this.body, createScoresRequest.body);
+        return Objects.equals(this.caseId, createScoresRequest.caseId)
+            && Objects.equals(this.xSite, createScoresRequest.xSite)
+            && Objects.equals(this.xLanguage, createScoresRequest.xLanguage)
+            && Objects.equals(this.xTimeZone, createScoresRequest.xTimeZone)
+            && Objects.equals(this.body, createScoresRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(caseId, xSite, xLanguage, xTimeZone, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -204,16 +162,13 @@ public class CreateScoresRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

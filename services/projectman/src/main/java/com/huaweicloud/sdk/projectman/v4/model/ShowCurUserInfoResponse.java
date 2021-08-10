@@ -1,82 +1,62 @@
 package com.huaweicloud.sdk.projectman.v4.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowCurUserInfoResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_name")
-    
+    @JsonProperty(value = "domain_name")
+
     private String domainName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_num_id")
-    
+    @JsonProperty(value = "user_num_id")
+
     private Integer userNumId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_id")
-    
+    @JsonProperty(value = "user_id")
+
     private String userId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_name")
-    
+    @JsonProperty(value = "user_name")
+
     private String userName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nick_name")
-    
+    @JsonProperty(value = "nick_name")
+
     private String nickName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_time")
-    
+    @JsonProperty(value = "created_time")
+
     private Long createdTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_time")
-    
+    @JsonProperty(value = "updated_time")
+
     private Long updatedTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gender")
-    
+    @JsonProperty(value = "gender")
+
     private String gender;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_type")
-    
+    @JsonProperty(value = "user_type")
+
     private String userType;
 
     public ShowCurUserInfoResponse withDomainId(String domainId) {
@@ -84,13 +64,9 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 租户id
-     * @return domainId
-     */
+    /** 租户id
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -99,20 +75,14 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         this.domainId = domainId;
     }
 
-    
-
     public ShowCurUserInfoResponse withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
     }
 
-    
-
-
-    /**
-     * 租户名
-     * @return domainName
-     */
+    /** 租户名
+     * 
+     * @return domainName */
     public String getDomainName() {
         return domainName;
     }
@@ -121,20 +91,14 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         this.domainName = domainName;
     }
 
-    
-
     public ShowCurUserInfoResponse withUserNumId(Integer userNumId) {
         this.userNumId = userNumId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户数字id
-     * @return userNumId
-     */
+    /** 用户数字id
+     * 
+     * @return userNumId */
     public Integer getUserNumId() {
         return userNumId;
     }
@@ -143,20 +107,14 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         this.userNumId = userNumId;
     }
 
-    
-
     public ShowCurUserInfoResponse withUserId(String userId) {
         this.userId = userId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户id
-     * @return userId
-     */
+    /** 用户id
+     * 
+     * @return userId */
     public String getUserId() {
         return userId;
     }
@@ -165,20 +123,14 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         this.userId = userId;
     }
 
-    
-
     public ShowCurUserInfoResponse withUserName(String userName) {
         this.userName = userName;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户名
-     * @return userName
-     */
+    /** 用户名
+     * 
+     * @return userName */
     public String getUserName() {
         return userName;
     }
@@ -187,20 +139,14 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         this.userName = userName;
     }
 
-    
-
     public ShowCurUserInfoResponse withNickName(String nickName) {
         this.nickName = nickName;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户昵称
-     * @return nickName
-     */
+    /** 用户昵称
+     * 
+     * @return nickName */
     public String getNickName() {
         return nickName;
     }
@@ -209,20 +155,14 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         this.nickName = nickName;
     }
 
-    
-
     public ShowCurUserInfoResponse withCreatedTime(Long createdTime) {
         this.createdTime = createdTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间
-     * @return createdTime
-     */
+    /** 创建时间
+     * 
+     * @return createdTime */
     public Long getCreatedTime() {
         return createdTime;
     }
@@ -231,20 +171,14 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         this.createdTime = createdTime;
     }
 
-    
-
     public ShowCurUserInfoResponse withUpdatedTime(Long updatedTime) {
         this.updatedTime = updatedTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 更新时间
-     * @return updatedTime
-     */
+    /** 更新时间
+     * 
+     * @return updatedTime */
     public Long getUpdatedTime() {
         return updatedTime;
     }
@@ -253,20 +187,14 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         this.updatedTime = updatedTime;
     }
 
-    
-
     public ShowCurUserInfoResponse withGender(String gender) {
         this.gender = gender;
         return this;
     }
 
-    
-
-
-    /**
-     * 性别
-     * @return gender
-     */
+    /** 性别
+     * 
+     * @return gender */
     public String getGender() {
         return gender;
     }
@@ -275,20 +203,14 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         this.gender = gender;
     }
 
-    
-
     public ShowCurUserInfoResponse withUserType(String userType) {
         this.userType = userType;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户类型, User 云用户, Federation 联邦账号,
-     * @return userType
-     */
+    /** 用户类型, User 云用户, Federation 联邦账号,
+     * 
+     * @return userType */
     public String getUserType() {
         return userType;
     }
@@ -296,8 +218,6 @@ public class ShowCurUserInfoResponse extends SdkResponse {
     public void setUserType(String userType) {
         this.userType = userType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -308,21 +228,32 @@ public class ShowCurUserInfoResponse extends SdkResponse {
             return false;
         }
         ShowCurUserInfoResponse showCurUserInfoResponse = (ShowCurUserInfoResponse) o;
-        return Objects.equals(this.domainId, showCurUserInfoResponse.domainId) &&
-            Objects.equals(this.domainName, showCurUserInfoResponse.domainName) &&
-            Objects.equals(this.userNumId, showCurUserInfoResponse.userNumId) &&
-            Objects.equals(this.userId, showCurUserInfoResponse.userId) &&
-            Objects.equals(this.userName, showCurUserInfoResponse.userName) &&
-            Objects.equals(this.nickName, showCurUserInfoResponse.nickName) &&
-            Objects.equals(this.createdTime, showCurUserInfoResponse.createdTime) &&
-            Objects.equals(this.updatedTime, showCurUserInfoResponse.updatedTime) &&
-            Objects.equals(this.gender, showCurUserInfoResponse.gender) &&
-            Objects.equals(this.userType, showCurUserInfoResponse.userType);
+        return Objects.equals(this.domainId, showCurUserInfoResponse.domainId)
+            && Objects.equals(this.domainName, showCurUserInfoResponse.domainName)
+            && Objects.equals(this.userNumId, showCurUserInfoResponse.userNumId)
+            && Objects.equals(this.userId, showCurUserInfoResponse.userId)
+            && Objects.equals(this.userName, showCurUserInfoResponse.userName)
+            && Objects.equals(this.nickName, showCurUserInfoResponse.nickName)
+            && Objects.equals(this.createdTime, showCurUserInfoResponse.createdTime)
+            && Objects.equals(this.updatedTime, showCurUserInfoResponse.updatedTime)
+            && Objects.equals(this.gender, showCurUserInfoResponse.gender)
+            && Objects.equals(this.userType, showCurUserInfoResponse.userType);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(domainId, domainName, userNumId, userId, userName, nickName, createdTime, updatedTime, gender, userType);
+        return Objects.hash(domainId,
+            domainName,
+            userNumId,
+            userId,
+            userName,
+            nickName,
+            createdTime,
+            updatedTime,
+            gender,
+            userType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -340,16 +271,13 @@ public class ShowCurUserInfoResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

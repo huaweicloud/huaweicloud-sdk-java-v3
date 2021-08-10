@@ -1,47 +1,31 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class SetBalancerSwitchRequest  {
-
-
+/** Request Object */
+public class SetBalancerSwitchRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
-    /**
-     * 开启或关闭集群均衡。
-     */
+
+    /** 开启或关闭集群均衡。 */
     public static final class ActionEnum {
 
-        
-        /**
-         * Enum START for value: "start"
-         */
+        /** Enum START for value: "start" */
         public static final ActionEnum START = new ActionEnum("start");
-        
-        /**
-         * Enum STOP for value: "stop"
-         */
+
+        /** Enum STOP for value: "stop" */
         public static final ActionEnum STOP = new ActionEnum("stop");
-        
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,7 +54,7 @@ public class SetBalancerSwitchRequest  {
 
         @JsonCreator
         public static ActionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -81,7 +65,7 @@ public class SetBalancerSwitchRequest  {
         }
 
         public static ActionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -105,10 +89,9 @@ public class SetBalancerSwitchRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private ActionEnum action;
 
     public SetBalancerSwitchRequest withInstanceId(String instanceId) {
@@ -116,13 +99,9 @@ public class SetBalancerSwitchRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
-     * @return instanceId
-     */
+    /** 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -131,20 +110,14 @@ public class SetBalancerSwitchRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public SetBalancerSwitchRequest withAction(ActionEnum action) {
         this.action = action;
         return this;
     }
 
-    
-
-
-    /**
-     * 开启或关闭集群均衡。
-     * @return action
-     */
+    /** 开启或关闭集群均衡。
+     * 
+     * @return action */
     public ActionEnum getAction() {
         return action;
     }
@@ -152,8 +125,6 @@ public class SetBalancerSwitchRequest  {
     public void setAction(ActionEnum action) {
         this.action = action;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -164,13 +135,15 @@ public class SetBalancerSwitchRequest  {
             return false;
         }
         SetBalancerSwitchRequest setBalancerSwitchRequest = (SetBalancerSwitchRequest) o;
-        return Objects.equals(this.instanceId, setBalancerSwitchRequest.instanceId) &&
-            Objects.equals(this.action, setBalancerSwitchRequest.action);
+        return Objects.equals(this.instanceId, setBalancerSwitchRequest.instanceId)
+            && Objects.equals(this.action, setBalancerSwitchRequest.action);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, action);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -180,16 +153,13 @@ public class SetBalancerSwitchRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

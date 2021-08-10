@@ -1,32 +1,23 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class KeystoneUpdatePasswordOption  {
-
-
+public class KeystoneUpdatePasswordOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="password")
-    
+    @JsonProperty(value = "password")
+
     private String password;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="original_password")
-    
+    @JsonProperty(value = "original_password")
+
     private String originalPassword;
 
     public KeystoneUpdatePasswordOption withPassword(String password) {
@@ -34,13 +25,10 @@ public class KeystoneUpdatePasswordOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户的新密码。   - 系统默认密码最小长度为6位字符，在6-32位之间支持用户自定义密码长度。   - 至少包含以下四种字符中的两种： 大写字母、小写字母、数字和特殊字符。   - 不能包含手机号和邮箱。   - 必须满足用户所属账号的[密码策略](https://support.huaweicloud.com/usermanual-iam/iam_01_0607.html)要求。   - 新密码不能与当前密码相同。
-     * @return password
-     */
+    /** IAM用户的新密码。 - 系统默认密码最小长度为6位字符，在6-32位之间支持用户自定义密码长度。 - 至少包含以下四种字符中的两种： 大写字母、小写字母、数字和特殊字符。 - 不能包含手机号和邮箱。 -
+     * 必须满足用户所属账号的[密码策略](https://support.huaweicloud.com/usermanual-iam/iam_01_0607.html)要求。 - 新密码不能与当前密码相同。
+     * 
+     * @return password */
     public String getPassword() {
         return password;
     }
@@ -49,20 +37,14 @@ public class KeystoneUpdatePasswordOption  {
         this.password = password;
     }
 
-    
-
     public KeystoneUpdatePasswordOption withOriginalPassword(String originalPassword) {
         this.originalPassword = originalPassword;
         return this;
     }
 
-    
-
-
-    /**
-     * IAM用户的原密码。
-     * @return originalPassword
-     */
+    /** IAM用户的原密码。
+     * 
+     * @return originalPassword */
     public String getOriginalPassword() {
         return originalPassword;
     }
@@ -70,8 +52,6 @@ public class KeystoneUpdatePasswordOption  {
     public void setOriginalPassword(String originalPassword) {
         this.originalPassword = originalPassword;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +62,15 @@ public class KeystoneUpdatePasswordOption  {
             return false;
         }
         KeystoneUpdatePasswordOption keystoneUpdatePasswordOption = (KeystoneUpdatePasswordOption) o;
-        return Objects.equals(this.password, keystoneUpdatePasswordOption.password) &&
-            Objects.equals(this.originalPassword, keystoneUpdatePasswordOption.originalPassword);
+        return Objects.equals(this.password, keystoneUpdatePasswordOption.password)
+            && Objects.equals(this.originalPassword, keystoneUpdatePasswordOption.originalPassword);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(password, originalPassword);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +80,13 @@ public class KeystoneUpdatePasswordOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

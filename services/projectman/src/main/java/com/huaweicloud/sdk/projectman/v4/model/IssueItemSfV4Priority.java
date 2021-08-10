@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.projectman.v4.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 工作项优先级
- */
-public class IssueItemSfV4Priority  {
-
-
+/** 工作项优先级 */
+public class IssueItemSfV4Priority {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Integer id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public IssueItemSfV4Priority withId(Integer id) {
@@ -34,13 +23,9 @@ public class IssueItemSfV4Priority  {
         return this;
     }
 
-    
-
-
-    /**
-     * 优先级id
-     * @return id
-     */
+    /** 优先级id
+     * 
+     * @return id */
     public Integer getId() {
         return id;
     }
@@ -49,20 +34,14 @@ public class IssueItemSfV4Priority  {
         this.id = id;
     }
 
-    
-
     public IssueItemSfV4Priority withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 优先级
-     * @return name
-     */
+    /** 优先级
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -70,8 +49,6 @@ public class IssueItemSfV4Priority  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class IssueItemSfV4Priority  {
             return false;
         }
         IssueItemSfV4Priority issueItemSfV4Priority = (IssueItemSfV4Priority) o;
-        return Objects.equals(this.id, issueItemSfV4Priority.id) &&
-            Objects.equals(this.name, issueItemSfV4Priority.name);
+        return Objects.equals(this.id, issueItemSfV4Priority.id)
+            && Objects.equals(this.name, issueItemSfV4Priority.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class IssueItemSfV4Priority  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

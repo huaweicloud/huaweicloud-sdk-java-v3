@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.as.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 用户自定义键值对
- */
-public class EipMetaData  {
-
-
+/** 用户自定义键值对 */
+public class EipMetaData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata_bandwidth_share_type")
-    
+    @JsonProperty(value = "metadata_bandwidth_share_type")
+
     private String metadataBandwidthShareType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata_eip_id")
-    
+    @JsonProperty(value = "metadata_eip_id")
+
     private String metadataEipId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadataeip_address")
-    
+    @JsonProperty(value = "metadataeip_address")
+
     private String metadataeipAddress;
 
     public EipMetaData withMetadataBandwidthShareType(String metadataBandwidthShareType) {
@@ -40,13 +28,9 @@ public class EipMetaData  {
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩带宽策略中带宽对应的共享类型。
-     * @return metadataBandwidthShareType
-     */
+    /** 伸缩带宽策略中带宽对应的共享类型。
+     * 
+     * @return metadataBandwidthShareType */
     public String getMetadataBandwidthShareType() {
         return metadataBandwidthShareType;
     }
@@ -55,20 +39,14 @@ public class EipMetaData  {
         this.metadataBandwidthShareType = metadataBandwidthShareType;
     }
 
-    
-
     public EipMetaData withMetadataEipId(String metadataEipId) {
         this.metadataEipId = metadataEipId;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩带宽策略中带宽对应的EIP的ID。
-     * @return metadataEipId
-     */
+    /** 伸缩带宽策略中带宽对应的EIP的ID。
+     * 
+     * @return metadataEipId */
     public String getMetadataEipId() {
         return metadataEipId;
     }
@@ -77,20 +55,14 @@ public class EipMetaData  {
         this.metadataEipId = metadataEipId;
     }
 
-    
-
     public EipMetaData withMetadataeipAddress(String metadataeipAddress) {
         this.metadataeipAddress = metadataeipAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 伸缩带宽策略中带宽对应的EIP地址。
-     * @return metadataeipAddress
-     */
+    /** 伸缩带宽策略中带宽对应的EIP地址。
+     * 
+     * @return metadataeipAddress */
     public String getMetadataeipAddress() {
         return metadataeipAddress;
     }
@@ -98,8 +70,6 @@ public class EipMetaData  {
     public void setMetadataeipAddress(String metadataeipAddress) {
         this.metadataeipAddress = metadataeipAddress;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class EipMetaData  {
             return false;
         }
         EipMetaData eipMetaData = (EipMetaData) o;
-        return Objects.equals(this.metadataBandwidthShareType, eipMetaData.metadataBandwidthShareType) &&
-            Objects.equals(this.metadataEipId, eipMetaData.metadataEipId) &&
-            Objects.equals(this.metadataeipAddress, eipMetaData.metadataeipAddress);
+        return Objects.equals(this.metadataBandwidthShareType, eipMetaData.metadataBandwidthShareType)
+            && Objects.equals(this.metadataEipId, eipMetaData.metadataEipId)
+            && Objects.equals(this.metadataeipAddress, eipMetaData.metadataeipAddress);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(metadataBandwidthShareType, metadataEipId, metadataeipAddress);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class EipMetaData  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,35 +1,23 @@
 package com.huaweicloud.sdk.eip.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.BandwidthResp;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class UpdatePrePaidBandwidthResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bandwidth")
-    
+    @JsonProperty(value = "bandwidth")
+
     private BandwidthResp bandwidth;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_id")
-    
+    @JsonProperty(value = "order_id")
+
     private String orderId;
 
     public UpdatePrePaidBandwidthResponse withBandwidth(BandwidthResp bandwidth) {
@@ -38,19 +26,17 @@ public class UpdatePrePaidBandwidthResponse extends SdkResponse {
     }
 
     public UpdatePrePaidBandwidthResponse withBandwidth(Consumer<BandwidthResp> bandwidthSetter) {
-        if(this.bandwidth == null ){
+        if (this.bandwidth == null) {
             this.bandwidth = new BandwidthResp();
             bandwidthSetter.accept(this.bandwidth);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get bandwidth
-     * @return bandwidth
-     */
+    /** Get bandwidth
+     * 
+     * @return bandwidth */
     public BandwidthResp getBandwidth() {
         return bandwidth;
     }
@@ -59,20 +45,14 @@ public class UpdatePrePaidBandwidthResponse extends SdkResponse {
         this.bandwidth = bandwidth;
     }
 
-    
-
     public UpdatePrePaidBandwidthResponse withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
     }
 
-    
-
-
-    /**
-     * 订单号（包周期场景返回该字段）
-     * @return orderId
-     */
+    /** 订单号（包周期场景返回该字段）
+     * 
+     * @return orderId */
     public String getOrderId() {
         return orderId;
     }
@@ -80,8 +60,6 @@ public class UpdatePrePaidBandwidthResponse extends SdkResponse {
     public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -92,13 +70,15 @@ public class UpdatePrePaidBandwidthResponse extends SdkResponse {
             return false;
         }
         UpdatePrePaidBandwidthResponse updatePrePaidBandwidthResponse = (UpdatePrePaidBandwidthResponse) o;
-        return Objects.equals(this.bandwidth, updatePrePaidBandwidthResponse.bandwidth) &&
-            Objects.equals(this.orderId, updatePrePaidBandwidthResponse.orderId);
+        return Objects.equals(this.bandwidth, updatePrePaidBandwidthResponse.bandwidth)
+            && Objects.equals(this.orderId, updatePrePaidBandwidthResponse.orderId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(bandwidth, orderId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -108,16 +88,13 @@ public class UpdatePrePaidBandwidthResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

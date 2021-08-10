@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bcs.v2.model.ListInstanceMetricRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ListInstanceMetricRequest  {
-
-
+/** Request Object */
+public class ListInstanceMetricRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="blockchain_id")
-    
+    @JsonProperty(value = "blockchain_id")
+
     private String blockchainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ListInstanceMetricRequestBody body;
 
     public ListInstanceMetricRequest withBlockchainId(String blockchainId) {
@@ -35,13 +24,9 @@ public class ListInstanceMetricRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 区块链服务id。
-     * @return blockchainId
-     */
+    /** 区块链服务id。
+     * 
+     * @return blockchainId */
     public String getBlockchainId() {
         return blockchainId;
     }
@@ -50,27 +35,23 @@ public class ListInstanceMetricRequest  {
         this.blockchainId = blockchainId;
     }
 
-    
-
     public ListInstanceMetricRequest withBody(ListInstanceMetricRequestBody body) {
         this.body = body;
         return this;
     }
 
     public ListInstanceMetricRequest withBody(Consumer<ListInstanceMetricRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ListInstanceMetricRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ListInstanceMetricRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class ListInstanceMetricRequest  {
     public void setBody(ListInstanceMetricRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class ListInstanceMetricRequest  {
             return false;
         }
         ListInstanceMetricRequest listInstanceMetricRequest = (ListInstanceMetricRequest) o;
-        return Objects.equals(this.blockchainId, listInstanceMetricRequest.blockchainId) &&
-            Objects.equals(this.body, listInstanceMetricRequest.body);
+        return Objects.equals(this.blockchainId, listInstanceMetricRequest.blockchainId)
+            && Objects.equals(this.body, listInstanceMetricRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(blockchainId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class ListInstanceMetricRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

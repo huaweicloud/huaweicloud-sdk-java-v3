@@ -1,46 +1,32 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowPartitionBeginningMessageResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic")
-    
+    @JsonProperty(value = "topic")
+
     private String topic;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="partition")
-    
+    @JsonProperty(value = "partition")
+
     private Integer partition;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message_offset")
-    
+    @JsonProperty(value = "message_offset")
+
     private Integer messageOffset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timestamp")
-    
+    @JsonProperty(value = "timestamp")
+
     private Long timestamp;
 
     public ShowPartitionBeginningMessageResponse withTopic(String topic) {
@@ -48,13 +34,9 @@ public class ShowPartitionBeginningMessageResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * Topic名称。
-     * @return topic
-     */
+    /** Topic名称。
+     * 
+     * @return topic */
     public String getTopic() {
         return topic;
     }
@@ -63,20 +45,14 @@ public class ShowPartitionBeginningMessageResponse extends SdkResponse {
         this.topic = topic;
     }
 
-    
-
     public ShowPartitionBeginningMessageResponse withPartition(Integer partition) {
         this.partition = partition;
         return this;
     }
 
-    
-
-
-    /**
-     * 分区编号。
-     * @return partition
-     */
+    /** 分区编号。
+     * 
+     * @return partition */
     public Integer getPartition() {
         return partition;
     }
@@ -85,20 +61,14 @@ public class ShowPartitionBeginningMessageResponse extends SdkResponse {
         this.partition = partition;
     }
 
-    
-
     public ShowPartitionBeginningMessageResponse withMessageOffset(Integer messageOffset) {
         this.messageOffset = messageOffset;
         return this;
     }
 
-    
-
-
-    /**
-     * 最新消息位置。
-     * @return messageOffset
-     */
+    /** 最新消息位置。
+     * 
+     * @return messageOffset */
     public Integer getMessageOffset() {
         return messageOffset;
     }
@@ -107,20 +77,14 @@ public class ShowPartitionBeginningMessageResponse extends SdkResponse {
         this.messageOffset = messageOffset;
     }
 
-    
-
     public ShowPartitionBeginningMessageResponse withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
 
-    
-
-
-    /**
-     * 最新消息时间戳。
-     * @return timestamp
-     */
+    /** 生产消息的时间。 格式为Unix时间戳。单位为毫秒。
+     * 
+     * @return timestamp */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -128,8 +92,6 @@ public class ShowPartitionBeginningMessageResponse extends SdkResponse {
     public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -139,16 +101,19 @@ public class ShowPartitionBeginningMessageResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ShowPartitionBeginningMessageResponse showPartitionBeginningMessageResponse = (ShowPartitionBeginningMessageResponse) o;
-        return Objects.equals(this.topic, showPartitionBeginningMessageResponse.topic) &&
-            Objects.equals(this.partition, showPartitionBeginningMessageResponse.partition) &&
-            Objects.equals(this.messageOffset, showPartitionBeginningMessageResponse.messageOffset) &&
-            Objects.equals(this.timestamp, showPartitionBeginningMessageResponse.timestamp);
+        ShowPartitionBeginningMessageResponse showPartitionBeginningMessageResponse =
+            (ShowPartitionBeginningMessageResponse) o;
+        return Objects.equals(this.topic, showPartitionBeginningMessageResponse.topic)
+            && Objects.equals(this.partition, showPartitionBeginningMessageResponse.partition)
+            && Objects.equals(this.messageOffset, showPartitionBeginningMessageResponse.messageOffset)
+            && Objects.equals(this.timestamp, showPartitionBeginningMessageResponse.timestamp);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(topic, partition, messageOffset, timestamp);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -160,16 +125,13 @@ public class ShowPartitionBeginningMessageResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

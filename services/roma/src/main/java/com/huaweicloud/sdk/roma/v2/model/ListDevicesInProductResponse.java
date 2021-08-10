@@ -1,28 +1,17 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListDevicesInProductResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="summary")
-    
+    @JsonProperty(value = "summary")
+
     private Integer summary;
 
     public ListDevicesInProductResponse withSummary(Integer summary) {
@@ -30,15 +19,9 @@ public class ListDevicesInProductResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 产品内设备数量
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return summary
-     */
+    /** 产品内设备数量 minimum: 1 maximum: 999999999999999999
+     * 
+     * @return summary */
     public Integer getSummary() {
         return summary;
     }
@@ -46,8 +29,6 @@ public class ListDevicesInProductResponse extends SdkResponse {
     public void setSummary(Integer summary) {
         this.summary = summary;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -60,10 +41,12 @@ public class ListDevicesInProductResponse extends SdkResponse {
         ListDevicesInProductResponse listDevicesInProductResponse = (ListDevicesInProductResponse) o;
         return Objects.equals(this.summary, listDevicesInProductResponse.summary);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(summary);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -72,16 +55,13 @@ public class ListDevicesInProductResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

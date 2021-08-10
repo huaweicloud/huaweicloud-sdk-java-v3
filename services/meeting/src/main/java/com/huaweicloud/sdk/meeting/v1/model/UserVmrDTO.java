@@ -1,74 +1,56 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * UserVmrDTO
- */
-public class UserVmrDTO  {
-
-
+/** UserVmrDTO */
+public class UserVmrDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrId")
-    
+    @JsonProperty(value = "vmrId")
+
     private String vmrId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrName")
-    
+    @JsonProperty(value = "vmrName")
+
     private String vmrName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrMode")
-    
+    @JsonProperty(value = "vmrMode")
+
     private Integer vmrMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrPkgId")
-    
+    @JsonProperty(value = "vmrPkgId")
+
     private String vmrPkgId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrPkgName")
-    
+    @JsonProperty(value = "vmrPkgName")
+
     private String vmrPkgName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrPkgParties")
-    
+    @JsonProperty(value = "vmrPkgParties")
+
     private Integer vmrPkgParties;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrPkgLength")
-    
+    @JsonProperty(value = "vmrPkgLength")
+
     private Integer vmrPkgLength;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
     public UserVmrDTO withId(String id) {
@@ -76,13 +58,9 @@ public class UserVmrDTO  {
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室的唯一标识
-     * @return id
-     */
+    /** 云会议室的唯一标识
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -91,20 +69,14 @@ public class UserVmrDTO  {
         this.id = id;
     }
 
-    
-
     public UserVmrDTO withVmrId(String vmrId) {
         this.vmrId = vmrId;
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室ID即预约会议的id，分为两种，一种是创建用户时生成的，为用户个人的，另一种是企业管理员分配的专用云会议室
-     * @return vmrId
-     */
+    /** 云会议室ID即预约会议的id，分为两种，一种是创建用户时生成的，为用户个人的，另一种是企业管理员分配的专用云会议室
+     * 
+     * @return vmrId */
     public String getVmrId() {
         return vmrId;
     }
@@ -113,20 +85,14 @@ public class UserVmrDTO  {
         this.vmrId = vmrId;
     }
 
-    
-
     public UserVmrDTO withVmrName(String vmrName) {
         this.vmrName = vmrName;
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室名称
-     * @return vmrName
-     */
+    /** 云会议室名称
+     * 
+     * @return vmrName */
     public String getVmrName() {
         return vmrName;
     }
@@ -135,20 +101,14 @@ public class UserVmrDTO  {
         this.vmrName = vmrName;
     }
 
-    
-
     public UserVmrDTO withVmrMode(Integer vmrMode) {
         this.vmrMode = vmrMode;
         return this;
     }
 
-    
-
-
-    /**
-     * VMR模式。 - 0：个人会议ID - 1: 云会议室 - 2: 网络研讨会 
-     * @return vmrMode
-     */
+    /** VMR模式。 - 0：个人会议ID - 1: 云会议室 - 2: 网络研讨会
+     * 
+     * @return vmrMode */
     public Integer getVmrMode() {
         return vmrMode;
     }
@@ -157,20 +117,14 @@ public class UserVmrDTO  {
         this.vmrMode = vmrMode;
     }
 
-    
-
     public UserVmrDTO withVmrPkgId(String vmrPkgId) {
         this.vmrPkgId = vmrPkgId;
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室套餐包的id，仅专用云会议室返回
-     * @return vmrPkgId
-     */
+    /** 云会议室套餐包的id，仅专用云会议室返回
+     * 
+     * @return vmrPkgId */
     public String getVmrPkgId() {
         return vmrPkgId;
     }
@@ -179,20 +133,14 @@ public class UserVmrDTO  {
         this.vmrPkgId = vmrPkgId;
     }
 
-    
-
     public UserVmrDTO withVmrPkgName(String vmrPkgName) {
         this.vmrPkgName = vmrPkgName;
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室套餐包的名称，仅专用云会议室返回
-     * @return vmrPkgName
-     */
+    /** 云会议室套餐包的名称，仅专用云会议室返回
+     * 
+     * @return vmrPkgName */
     public String getVmrPkgName() {
         return vmrPkgName;
     }
@@ -201,20 +149,14 @@ public class UserVmrDTO  {
         this.vmrPkgName = vmrPkgName;
     }
 
-    
-
     public UserVmrDTO withVmrPkgParties(Integer vmrPkgParties) {
         this.vmrPkgParties = vmrPkgParties;
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室套餐包的会议并发方数，仅专用云会议室返回
-     * @return vmrPkgParties
-     */
+    /** 云会议室套餐包的会议并发方数，仅专用云会议室返回
+     * 
+     * @return vmrPkgParties */
     public Integer getVmrPkgParties() {
         return vmrPkgParties;
     }
@@ -223,20 +165,14 @@ public class UserVmrDTO  {
         this.vmrPkgParties = vmrPkgParties;
     }
 
-    
-
     public UserVmrDTO withVmrPkgLength(Integer vmrPkgLength) {
         this.vmrPkgLength = vmrPkgLength;
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室套餐包的与会时间，若为0则代表无限时长，仅专用云会议室返回
-     * @return vmrPkgLength
-     */
+    /** 云会议室套餐包的与会时间，若为0则代表无限时长，仅专用云会议室返回
+     * 
+     * @return vmrPkgLength */
     public Integer getVmrPkgLength() {
         return vmrPkgLength;
     }
@@ -245,20 +181,14 @@ public class UserVmrDTO  {
         this.vmrPkgLength = vmrPkgLength;
     }
 
-    
-
     public UserVmrDTO withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 云会议室状态。 * 0.正常 * 1.停用 * 2.未分配 
-     * @return status
-     */
+    /** 云会议室状态。 * 0.正常 * 1.停用 * 2.未分配
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -266,8 +196,6 @@ public class UserVmrDTO  {
     public void setStatus(Integer status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -278,20 +206,20 @@ public class UserVmrDTO  {
             return false;
         }
         UserVmrDTO userVmrDTO = (UserVmrDTO) o;
-        return Objects.equals(this.id, userVmrDTO.id) &&
-            Objects.equals(this.vmrId, userVmrDTO.vmrId) &&
-            Objects.equals(this.vmrName, userVmrDTO.vmrName) &&
-            Objects.equals(this.vmrMode, userVmrDTO.vmrMode) &&
-            Objects.equals(this.vmrPkgId, userVmrDTO.vmrPkgId) &&
-            Objects.equals(this.vmrPkgName, userVmrDTO.vmrPkgName) &&
-            Objects.equals(this.vmrPkgParties, userVmrDTO.vmrPkgParties) &&
-            Objects.equals(this.vmrPkgLength, userVmrDTO.vmrPkgLength) &&
-            Objects.equals(this.status, userVmrDTO.status);
+        return Objects.equals(this.id, userVmrDTO.id) && Objects.equals(this.vmrId, userVmrDTO.vmrId)
+            && Objects.equals(this.vmrName, userVmrDTO.vmrName) && Objects.equals(this.vmrMode, userVmrDTO.vmrMode)
+            && Objects.equals(this.vmrPkgId, userVmrDTO.vmrPkgId)
+            && Objects.equals(this.vmrPkgName, userVmrDTO.vmrPkgName)
+            && Objects.equals(this.vmrPkgParties, userVmrDTO.vmrPkgParties)
+            && Objects.equals(this.vmrPkgLength, userVmrDTO.vmrPkgLength)
+            && Objects.equals(this.status, userVmrDTO.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, vmrId, vmrName, vmrMode, vmrPkgId, vmrPkgName, vmrPkgParties, vmrPkgLength, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -308,16 +236,13 @@ public class UserVmrDTO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

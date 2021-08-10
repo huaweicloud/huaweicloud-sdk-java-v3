@@ -1,65 +1,40 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 查询任务列表请求体
- */
-public class QueryJobsReq  {
-
-
+/** 查询任务列表请求体 */
+public class QueryJobsReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cur_page")
-    
+    @JsonProperty(value = "cur_page")
+
     private Integer curPage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="per_page")
-    
+    @JsonProperty(value = "per_page")
+
     private Integer perPage;
-    /**
-     * 迁移场景，migration:实时迁移,sync:实时同步,cloudDataGuard:实时灾备
-     */
+
+    /** 迁移场景，migration:实时迁移,sync:实时同步,cloudDataGuard:实时灾备 */
     public static final class DbUseTypeEnum {
 
-        
-        /**
-         * Enum MIGRATION for value: "migration"
-         */
+        /** Enum MIGRATION for value: "migration" */
         public static final DbUseTypeEnum MIGRATION = new DbUseTypeEnum("migration");
-        
-        /**
-         * Enum SYNC for value: "sync"
-         */
+
+        /** Enum SYNC for value: "sync" */
         public static final DbUseTypeEnum SYNC = new DbUseTypeEnum("sync");
-        
-        /**
-         * Enum CLOUDDATAGUARD for value: "cloudDataGuard"
-         */
+
+        /** Enum CLOUDDATAGUARD for value: "cloudDataGuard" */
         public static final DbUseTypeEnum CLOUDDATAGUARD = new DbUseTypeEnum("cloudDataGuard");
-        
 
         private static final Map<String, DbUseTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -89,7 +64,7 @@ public class QueryJobsReq  {
 
         @JsonCreator
         public static DbUseTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DbUseTypeEnum result = STATIC_FIELDS.get(value);
@@ -100,7 +75,7 @@ public class QueryJobsReq  {
         }
 
         public static DbUseTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DbUseTypeEnum result = STATIC_FIELDS.get(value);
@@ -124,32 +99,22 @@ public class QueryJobsReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_use_type")
-    
+    @JsonProperty(value = "db_use_type")
+
     private DbUseTypeEnum dbUseType;
-    /**
-     * 引擎类型,mysql：迁移，同步使用。mongodb：迁移使用。cloudDataGuard-mysql：灾备使用。
-     */
+
+    /** 引擎类型,mysql：迁移，同步使用。mongodb：迁移使用。cloudDataGuard-mysql：灾备使用。 */
     public static final class EngineTypeEnum {
 
-        
-        /**
-         * Enum MYSQL for value: "mysql"
-         */
+        /** Enum MYSQL for value: "mysql" */
         public static final EngineTypeEnum MYSQL = new EngineTypeEnum("mysql");
-        
-        /**
-         * Enum MONGODB for value: "mongodb"
-         */
+
+        /** Enum MONGODB for value: "mongodb" */
         public static final EngineTypeEnum MONGODB = new EngineTypeEnum("mongodb");
-        
-        /**
-         * Enum CLOUDDATAGUARD_MYSQL for value: "cloudDataGuard-mysql"
-         */
+
+        /** Enum CLOUDDATAGUARD_MYSQL for value: "cloudDataGuard-mysql" */
         public static final EngineTypeEnum CLOUDDATAGUARD_MYSQL = new EngineTypeEnum("cloudDataGuard-mysql");
-        
 
         private static final Map<String, EngineTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -179,7 +144,7 @@ public class QueryJobsReq  {
 
         @JsonCreator
         public static EngineTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             EngineTypeEnum result = STATIC_FIELDS.get(value);
@@ -190,7 +155,7 @@ public class QueryJobsReq  {
         }
 
         public static EngineTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             EngineTypeEnum result = STATIC_FIELDS.get(value);
@@ -214,44 +179,32 @@ public class QueryJobsReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engine_type")
-    
+    @JsonProperty(value = "engine_type")
+
     private EngineTypeEnum engineType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 网络类型
-     */
+
+    /** 网络类型 */
     public static final class NetTypeEnum {
 
-        
-        /**
-         * Enum VPN for value: "vpn"
-         */
+        /** Enum VPN for value: "vpn" */
         public static final NetTypeEnum VPN = new NetTypeEnum("vpn");
-        
-        /**
-         * Enum VPC for value: "vpc"
-         */
+
+        /** Enum VPC for value: "vpc" */
         public static final NetTypeEnum VPC = new NetTypeEnum("vpc");
-        
-        /**
-         * Enum EIP for value: "eip"
-         */
+
+        /** Enum EIP for value: "eip" */
         public static final NetTypeEnum EIP = new NetTypeEnum("eip");
-        
 
         private static final Map<String, NetTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -281,7 +234,7 @@ public class QueryJobsReq  {
 
         @JsonCreator
         public static NetTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             NetTypeEnum result = STATIC_FIELDS.get(value);
@@ -292,7 +245,7 @@ public class QueryJobsReq  {
         }
 
         public static NetTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             NetTypeEnum result = STATIC_FIELDS.get(value);
@@ -316,133 +269,90 @@ public class QueryJobsReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="net_type")
-    
+    @JsonProperty(value = "net_type")
+
     private NetTypeEnum netType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_name")
-    
+    @JsonProperty(value = "service_name")
+
     private String serviceName;
-    /**
-     * 状态，CREATING：创建中,CREATE_FAILED: 创建失败,CONFIGURATION: 配置中,STARTJOBING: 启动中,WAITING_FOR_START：等待启动中,START_JOB_FAILED：任务启动失败,FULL_TRANSFER_STARTED：全量迁移中 灾备场景为初始化,FULL_TRANSFER_FAILED：全量迁移失败  灾备场景为初始化失败,FULL_TRANSFER_COMPLETE：全量迁移完成 灾备场景为初始化完成,INCRE_TRANSFER_STARTED：增量迁移中 灾备场景为灾备中,INCRE_TRANSFER_FAILED：增量迁移失败 灾备场景为灾备异常,RELEASE_RESOURCE_STARTED：结束任务中,RELEASE_RESOURCE_FAILED：结束任务失败,RELEASE_RESOURCE_COMPLETE：已结束,CHANGE_JOB_STARTED：任务变更中,CHANGE_JOB_FAILED：任务变更失败,CHILD_TRANSFER_STARTING：子任务启动中,CHILD_TRANSFER_STARTED：子任务迁移中,CHILD_TRANSFER_COMPLETE：子任务迁移完成,CHILD_TRANSFER_FAILED：子任务迁移失败,RELEASE_CHILD_TRANSFER_STARTED：子任务结束中,RELEASE_CHILD_TRANSFER_COMPLETE：子任务已结束
-     */
+
+    /** 状态，CREATING：创建中,CREATE_FAILED: 创建失败,CONFIGURATION: 配置中,STARTJOBING:
+     * 启动中,WAITING_FOR_START：等待启动中,START_JOB_FAILED：任务启动失败,FULL_TRANSFER_STARTED：全量迁移中
+     * 灾备场景为初始化,FULL_TRANSFER_FAILED：全量迁移失败 灾备场景为初始化失败,FULL_TRANSFER_COMPLETE：全量迁移完成
+     * 灾备场景为初始化完成,INCRE_TRANSFER_STARTED：增量迁移中 灾备场景为灾备中,INCRE_TRANSFER_FAILED：增量迁移失败
+     * 灾备场景为灾备异常,RELEASE_RESOURCE_STARTED：结束任务中,RELEASE_RESOURCE_FAILED：结束任务失败,RELEASE_RESOURCE_COMPLETE：已结束,CHANGE_JOB_STARTED：任务变更中,CHANGE_JOB_FAILED：任务变更失败,CHILD_TRANSFER_STARTING：子任务启动中,CHILD_TRANSFER_STARTED：子任务迁移中,CHILD_TRANSFER_COMPLETE：子任务迁移完成,CHILD_TRANSFER_FAILED：子任务迁移失败,RELEASE_CHILD_TRANSFER_STARTED：子任务结束中,RELEASE_CHILD_TRANSFER_COMPLETE：子任务已结束 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum CREATING for value: "CREATING"
-         */
+        /** Enum CREATING for value: "CREATING" */
         public static final StatusEnum CREATING = new StatusEnum("CREATING");
-        
-        /**
-         * Enum CREATE_FAILED for value: "CREATE_FAILED"
-         */
+
+        /** Enum CREATE_FAILED for value: "CREATE_FAILED" */
         public static final StatusEnum CREATE_FAILED = new StatusEnum("CREATE_FAILED");
-        
-        /**
-         * Enum CONFIGURATION for value: "CONFIGURATION"
-         */
+
+        /** Enum CONFIGURATION for value: "CONFIGURATION" */
         public static final StatusEnum CONFIGURATION = new StatusEnum("CONFIGURATION");
-        
-        /**
-         * Enum STARTJOBING for value: "STARTJOBING"
-         */
+
+        /** Enum STARTJOBING for value: "STARTJOBING" */
         public static final StatusEnum STARTJOBING = new StatusEnum("STARTJOBING");
-        
-        /**
-         * Enum WAITING_FOR_START for value: "WAITING_FOR_START"
-         */
+
+        /** Enum WAITING_FOR_START for value: "WAITING_FOR_START" */
         public static final StatusEnum WAITING_FOR_START = new StatusEnum("WAITING_FOR_START");
-        
-        /**
-         * Enum START_JOB_FAILED for value: "START_JOB_FAILED"
-         */
+
+        /** Enum START_JOB_FAILED for value: "START_JOB_FAILED" */
         public static final StatusEnum START_JOB_FAILED = new StatusEnum("START_JOB_FAILED");
-        
-        /**
-         * Enum FULL_TRANSFER_STARTED for value: "FULL_TRANSFER_STARTED"
-         */
+
+        /** Enum FULL_TRANSFER_STARTED for value: "FULL_TRANSFER_STARTED" */
         public static final StatusEnum FULL_TRANSFER_STARTED = new StatusEnum("FULL_TRANSFER_STARTED");
-        
-        /**
-         * Enum FULL_TRANSFER_FAILED for value: "FULL_TRANSFER_FAILED"
-         */
+
+        /** Enum FULL_TRANSFER_FAILED for value: "FULL_TRANSFER_FAILED" */
         public static final StatusEnum FULL_TRANSFER_FAILED = new StatusEnum("FULL_TRANSFER_FAILED");
-        
-        /**
-         * Enum FULL_TRANSFER_COMPLETE for value: "FULL_TRANSFER_COMPLETE"
-         */
+
+        /** Enum FULL_TRANSFER_COMPLETE for value: "FULL_TRANSFER_COMPLETE" */
         public static final StatusEnum FULL_TRANSFER_COMPLETE = new StatusEnum("FULL_TRANSFER_COMPLETE");
-        
-        /**
-         * Enum INCRE_TRANSFER_STARTED for value: "INCRE_TRANSFER_STARTED"
-         */
+
+        /** Enum INCRE_TRANSFER_STARTED for value: "INCRE_TRANSFER_STARTED" */
         public static final StatusEnum INCRE_TRANSFER_STARTED = new StatusEnum("INCRE_TRANSFER_STARTED");
-        
-        /**
-         * Enum INCRE_TRANSFER_FAILED for value: "INCRE_TRANSFER_FAILED"
-         */
+
+        /** Enum INCRE_TRANSFER_FAILED for value: "INCRE_TRANSFER_FAILED" */
         public static final StatusEnum INCRE_TRANSFER_FAILED = new StatusEnum("INCRE_TRANSFER_FAILED");
-        
-        /**
-         * Enum RELEASE_RESOURCE_STARTED for value: "RELEASE_RESOURCE_STARTED"
-         */
+
+        /** Enum RELEASE_RESOURCE_STARTED for value: "RELEASE_RESOURCE_STARTED" */
         public static final StatusEnum RELEASE_RESOURCE_STARTED = new StatusEnum("RELEASE_RESOURCE_STARTED");
-        
-        /**
-         * Enum RELEASE_RESOURCE_FAILED for value: "RELEASE_RESOURCE_FAILED"
-         */
+
+        /** Enum RELEASE_RESOURCE_FAILED for value: "RELEASE_RESOURCE_FAILED" */
         public static final StatusEnum RELEASE_RESOURCE_FAILED = new StatusEnum("RELEASE_RESOURCE_FAILED");
-        
-        /**
-         * Enum RELEASE_RESOURCE_COMPLETE for value: "RELEASE_RESOURCE_COMPLETE"
-         */
+
+        /** Enum RELEASE_RESOURCE_COMPLETE for value: "RELEASE_RESOURCE_COMPLETE" */
         public static final StatusEnum RELEASE_RESOURCE_COMPLETE = new StatusEnum("RELEASE_RESOURCE_COMPLETE");
-        
-        /**
-         * Enum CHANGE_JOB_STARTED for value: "CHANGE_JOB_STARTED"
-         */
+
+        /** Enum CHANGE_JOB_STARTED for value: "CHANGE_JOB_STARTED" */
         public static final StatusEnum CHANGE_JOB_STARTED = new StatusEnum("CHANGE_JOB_STARTED");
-        
-        /**
-         * Enum CHANGE_JOB_FAILED for value: "CHANGE_JOB_FAILED"
-         */
+
+        /** Enum CHANGE_JOB_FAILED for value: "CHANGE_JOB_FAILED" */
         public static final StatusEnum CHANGE_JOB_FAILED = new StatusEnum("CHANGE_JOB_FAILED");
-        
-        /**
-         * Enum CHILD_TRANSFER_STARTING for value: "CHILD_TRANSFER_STARTING"
-         */
+
+        /** Enum CHILD_TRANSFER_STARTING for value: "CHILD_TRANSFER_STARTING" */
         public static final StatusEnum CHILD_TRANSFER_STARTING = new StatusEnum("CHILD_TRANSFER_STARTING");
-        
-        /**
-         * Enum CHILD_TRANSFER_STARTED for value: "CHILD_TRANSFER_STARTED"
-         */
+
+        /** Enum CHILD_TRANSFER_STARTED for value: "CHILD_TRANSFER_STARTED" */
         public static final StatusEnum CHILD_TRANSFER_STARTED = new StatusEnum("CHILD_TRANSFER_STARTED");
-        
-        /**
-         * Enum CHILD_TRANSFER_COMPLETE for value: "CHILD_TRANSFER_COMPLETE"
-         */
+
+        /** Enum CHILD_TRANSFER_COMPLETE for value: "CHILD_TRANSFER_COMPLETE" */
         public static final StatusEnum CHILD_TRANSFER_COMPLETE = new StatusEnum("CHILD_TRANSFER_COMPLETE");
-        
-        /**
-         * Enum CHILD_TRANSFER_FAILED for value: "CHILD_TRANSFER_FAILED"
-         */
+
+        /** Enum CHILD_TRANSFER_FAILED for value: "CHILD_TRANSFER_FAILED" */
         public static final StatusEnum CHILD_TRANSFER_FAILED = new StatusEnum("CHILD_TRANSFER_FAILED");
-        
-        /**
-         * Enum RELEASE_CHILD_TRANSFER_STARTED for value: "RELEASE_CHILD_TRANSFER_STARTED"
-         */
-        public static final StatusEnum RELEASE_CHILD_TRANSFER_STARTED = new StatusEnum("RELEASE_CHILD_TRANSFER_STARTED");
-        
-        /**
-         * Enum RELEASE_CHILD_TRANSFER_COMPLETE for value: "RELEASE_CHILD_TRANSFER_COMPLETE"
-         */
-        public static final StatusEnum RELEASE_CHILD_TRANSFER_COMPLETE = new StatusEnum("RELEASE_CHILD_TRANSFER_COMPLETE");
-        
+
+        /** Enum RELEASE_CHILD_TRANSFER_STARTED for value: "RELEASE_CHILD_TRANSFER_STARTED" */
+        public static final StatusEnum RELEASE_CHILD_TRANSFER_STARTED =
+            new StatusEnum("RELEASE_CHILD_TRANSFER_STARTED");
+
+        /** Enum RELEASE_CHILD_TRANSFER_COMPLETE for value: "RELEASE_CHILD_TRANSFER_COMPLETE" */
+        public static final StatusEnum RELEASE_CHILD_TRANSFER_COMPLETE =
+            new StatusEnum("RELEASE_CHILD_TRANSFER_COMPLETE");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -491,7 +401,7 @@ public class QueryJobsReq  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -502,7 +412,7 @@ public class QueryJobsReq  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -526,30 +436,24 @@ public class QueryJobsReq  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private Map<String, String> tags = null;
-    
+
     public QueryJobsReq withCurPage(Integer curPage) {
         this.curPage = curPage;
         return this;
     }
 
-    
-
-
-    /**
-     * 第几页
-     * @return curPage
-     */
+    /** 第几页
+     * 
+     * @return curPage */
     public Integer getCurPage() {
         return curPage;
     }
@@ -558,22 +462,14 @@ public class QueryJobsReq  {
         this.curPage = curPage;
     }
 
-    
-
     public QueryJobsReq withPerPage(Integer perPage) {
         this.perPage = perPage;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页记录数
-     * minimum: 0
-     * maximum: 100
-     * @return perPage
-     */
+    /** 每页记录数 minimum: 0 maximum: 100
+     * 
+     * @return perPage */
     public Integer getPerPage() {
         return perPage;
     }
@@ -582,20 +478,14 @@ public class QueryJobsReq  {
         this.perPage = perPage;
     }
 
-    
-
     public QueryJobsReq withDbUseType(DbUseTypeEnum dbUseType) {
         this.dbUseType = dbUseType;
         return this;
     }
 
-    
-
-
-    /**
-     * 迁移场景，migration:实时迁移,sync:实时同步,cloudDataGuard:实时灾备
-     * @return dbUseType
-     */
+    /** 迁移场景，migration:实时迁移,sync:实时同步,cloudDataGuard:实时灾备
+     * 
+     * @return dbUseType */
     public DbUseTypeEnum getDbUseType() {
         return dbUseType;
     }
@@ -604,20 +494,14 @@ public class QueryJobsReq  {
         this.dbUseType = dbUseType;
     }
 
-    
-
     public QueryJobsReq withEngineType(EngineTypeEnum engineType) {
         this.engineType = engineType;
         return this;
     }
 
-    
-
-
-    /**
-     * 引擎类型,mysql：迁移，同步使用。mongodb：迁移使用。cloudDataGuard-mysql：灾备使用。
-     * @return engineType
-     */
+    /** 引擎类型,mysql：迁移，同步使用。mongodb：迁移使用。cloudDataGuard-mysql：灾备使用。
+     * 
+     * @return engineType */
     public EngineTypeEnum getEngineType() {
         return engineType;
     }
@@ -626,20 +510,14 @@ public class QueryJobsReq  {
         this.engineType = engineType;
     }
 
-    
-
     public QueryJobsReq withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目
-     * @return enterpriseProjectId
-     */
+    /** 企业项目
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -648,20 +526,14 @@ public class QueryJobsReq  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public QueryJobsReq withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * name或id
-     * @return name
-     */
+    /** name或id
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -670,20 +542,14 @@ public class QueryJobsReq  {
         this.name = name;
     }
 
-    
-
     public QueryJobsReq withNetType(NetTypeEnum netType) {
         this.netType = netType;
         return this;
     }
 
-    
-
-
-    /**
-     * 网络类型
-     * @return netType
-     */
+    /** 网络类型
+     * 
+     * @return netType */
     public NetTypeEnum getNetType() {
         return netType;
     }
@@ -692,20 +558,14 @@ public class QueryJobsReq  {
         this.netType = netType;
     }
 
-    
-
     public QueryJobsReq withServiceName(String serviceName) {
         this.serviceName = serviceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 开启EPS时使用，值为eps
-     * @return serviceName
-     */
+    /** 开启EPS时使用，值为eps
+     * 
+     * @return serviceName */
     public String getServiceName() {
         return serviceName;
     }
@@ -714,20 +574,18 @@ public class QueryJobsReq  {
         this.serviceName = serviceName;
     }
 
-    
-
     public QueryJobsReq withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态，CREATING：创建中,CREATE_FAILED: 创建失败,CONFIGURATION: 配置中,STARTJOBING: 启动中,WAITING_FOR_START：等待启动中,START_JOB_FAILED：任务启动失败,FULL_TRANSFER_STARTED：全量迁移中 灾备场景为初始化,FULL_TRANSFER_FAILED：全量迁移失败  灾备场景为初始化失败,FULL_TRANSFER_COMPLETE：全量迁移完成 灾备场景为初始化完成,INCRE_TRANSFER_STARTED：增量迁移中 灾备场景为灾备中,INCRE_TRANSFER_FAILED：增量迁移失败 灾备场景为灾备异常,RELEASE_RESOURCE_STARTED：结束任务中,RELEASE_RESOURCE_FAILED：结束任务失败,RELEASE_RESOURCE_COMPLETE：已结束,CHANGE_JOB_STARTED：任务变更中,CHANGE_JOB_FAILED：任务变更失败,CHILD_TRANSFER_STARTING：子任务启动中,CHILD_TRANSFER_STARTED：子任务迁移中,CHILD_TRANSFER_COMPLETE：子任务迁移完成,CHILD_TRANSFER_FAILED：子任务迁移失败,RELEASE_CHILD_TRANSFER_STARTED：子任务结束中,RELEASE_CHILD_TRANSFER_COMPLETE：子任务已结束
-     * @return status
-     */
+    /** 状态，CREATING：创建中,CREATE_FAILED: 创建失败,CONFIGURATION: 配置中,STARTJOBING:
+     * 启动中,WAITING_FOR_START：等待启动中,START_JOB_FAILED：任务启动失败,FULL_TRANSFER_STARTED：全量迁移中
+     * 灾备场景为初始化,FULL_TRANSFER_FAILED：全量迁移失败 灾备场景为初始化失败,FULL_TRANSFER_COMPLETE：全量迁移完成
+     * 灾备场景为初始化完成,INCRE_TRANSFER_STARTED：增量迁移中 灾备场景为灾备中,INCRE_TRANSFER_FAILED：增量迁移失败
+     * 灾备场景为灾备异常,RELEASE_RESOURCE_STARTED：结束任务中,RELEASE_RESOURCE_FAILED：结束任务失败,RELEASE_RESOURCE_COMPLETE：已结束,CHANGE_JOB_STARTED：任务变更中,CHANGE_JOB_FAILED：任务变更失败,CHILD_TRANSFER_STARTING：子任务启动中,CHILD_TRANSFER_STARTED：子任务迁移中,CHILD_TRANSFER_COMPLETE：子任务迁移完成,CHILD_TRANSFER_FAILED：子任务迁移失败,RELEASE_CHILD_TRANSFER_STARTED：子任务结束中,RELEASE_CHILD_TRANSFER_COMPLETE：子任务已结束
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -736,17 +594,13 @@ public class QueryJobsReq  {
         this.status = status;
     }
 
-    
-
     public QueryJobsReq withTags(Map<String, String> tags) {
         this.tags = tags;
         return this;
     }
 
-    
-
     public QueryJobsReq putTagsItem(String key, String tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new HashMap<>();
         }
         this.tags.put(key, tagsItem);
@@ -754,16 +608,16 @@ public class QueryJobsReq  {
     }
 
     public QueryJobsReq withTags(Consumer<Map<String, String>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new HashMap<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
-    /**
-     * 标签
-     * @return tags
-     */
+
+    /** 标签
+     * 
+     * @return tags */
     public Map<String, String> getTags() {
         return tags;
     }
@@ -771,8 +625,6 @@ public class QueryJobsReq  {
     public void setTags(Map<String, String> tags) {
         this.tags = tags;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -783,21 +635,29 @@ public class QueryJobsReq  {
             return false;
         }
         QueryJobsReq queryJobsReq = (QueryJobsReq) o;
-        return Objects.equals(this.curPage, queryJobsReq.curPage) &&
-            Objects.equals(this.perPage, queryJobsReq.perPage) &&
-            Objects.equals(this.dbUseType, queryJobsReq.dbUseType) &&
-            Objects.equals(this.engineType, queryJobsReq.engineType) &&
-            Objects.equals(this.enterpriseProjectId, queryJobsReq.enterpriseProjectId) &&
-            Objects.equals(this.name, queryJobsReq.name) &&
-            Objects.equals(this.netType, queryJobsReq.netType) &&
-            Objects.equals(this.serviceName, queryJobsReq.serviceName) &&
-            Objects.equals(this.status, queryJobsReq.status) &&
-            Objects.equals(this.tags, queryJobsReq.tags);
+        return Objects.equals(this.curPage, queryJobsReq.curPage) && Objects.equals(this.perPage, queryJobsReq.perPage)
+            && Objects.equals(this.dbUseType, queryJobsReq.dbUseType)
+            && Objects.equals(this.engineType, queryJobsReq.engineType)
+            && Objects.equals(this.enterpriseProjectId, queryJobsReq.enterpriseProjectId)
+            && Objects.equals(this.name, queryJobsReq.name) && Objects.equals(this.netType, queryJobsReq.netType)
+            && Objects.equals(this.serviceName, queryJobsReq.serviceName)
+            && Objects.equals(this.status, queryJobsReq.status) && Objects.equals(this.tags, queryJobsReq.tags);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(curPage, perPage, dbUseType, engineType, enterpriseProjectId, name, netType, serviceName, status, tags);
+        return Objects.hash(curPage,
+            perPage,
+            dbUseType,
+            engineType,
+            enterpriseProjectId,
+            name,
+            netType,
+            serviceName,
+            status,
+            tags);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -815,16 +675,13 @@ public class QueryJobsReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

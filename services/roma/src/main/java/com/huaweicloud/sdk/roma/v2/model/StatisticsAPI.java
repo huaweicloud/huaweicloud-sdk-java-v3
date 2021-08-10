@@ -1,137 +1,101 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.roma.v2.model.BackendLatencyStats;
-import com.huaweicloud.sdk.roma.v2.model.InnerLatencyStats;
-import com.huaweicloud.sdk.roma.v2.model.LatencyStats;
-import com.huaweicloud.sdk.roma.v2.model.NetworkTrafficStats;
-import com.huaweicloud.sdk.roma.v2.model.RequestCountStats;
+
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * StatisticsAPI
- */
-public class StatisticsAPI  {
-
-
+/** StatisticsAPI */
+public class StatisticsAPI {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_latency")
-    
+    @JsonProperty(value = "max_latency")
+
     private Integer maxLatency;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="avg_latency")
-    
+    @JsonProperty(value = "avg_latency")
+
     private BigDecimal avgLatency;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_count")
-    
+    @JsonProperty(value = "req_count")
+
     private Integer reqCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_count2xx")
-    
+    @JsonProperty(value = "req_count2xx")
+
     private Integer reqCount2xx;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_count4xx")
-    
+    @JsonProperty(value = "req_count4xx")
+
     private Integer reqCount4xx;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_count5xx")
-    
+    @JsonProperty(value = "req_count5xx")
+
     private Integer reqCount5xx;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_count_error")
-    
+    @JsonProperty(value = "req_count_error")
+
     private Integer reqCountError;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_inner_latency")
-    
+    @JsonProperty(value = "max_inner_latency")
+
     private Integer maxInnerLatency;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="avg_inner_latency")
-    
+    @JsonProperty(value = "avg_inner_latency")
+
     private BigDecimal avgInnerLatency;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_backend_latency")
-    
+    @JsonProperty(value = "max_backend_latency")
+
     private Integer maxBackendLatency;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="avg_backend_latency")
-    
+    @JsonProperty(value = "avg_backend_latency")
+
     private BigDecimal avgBackendLatency;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output_throughput")
-    
+    @JsonProperty(value = "output_throughput")
+
     private Integer outputThroughput;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="input_throughput")
-    
+    @JsonProperty(value = "input_throughput")
+
     private Integer inputThroughput;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="current_minute")
-    
+    @JsonProperty(value = "current_minute")
+
     private Long currentMinute;
-    /**
-     * 查询统计周期
-     */
+
+    /** 查询统计周期 */
     public static final class CycleEnum {
 
-        
-        /**
-         * Enum MINUTE for value: "MINUTE"
-         */
+        /** Enum MINUTE for value: "MINUTE" */
         public static final CycleEnum MINUTE = new CycleEnum("MINUTE");
-        
-        /**
-         * Enum HOUR for value: "HOUR"
-         */
+
+        /** Enum HOUR for value: "HOUR" */
         public static final CycleEnum HOUR = new CycleEnum("HOUR");
-        
-        /**
-         * Enum DAY for value: "DAY"
-         */
+
+        /** Enum DAY for value: "DAY" */
         public static final CycleEnum DAY = new CycleEnum("DAY");
-        
 
         private static final Map<String, CycleEnum> STATIC_FIELDS = createStaticFields();
 
@@ -161,7 +125,7 @@ public class StatisticsAPI  {
 
         @JsonCreator
         public static CycleEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CycleEnum result = STATIC_FIELDS.get(value);
@@ -172,7 +136,7 @@ public class StatisticsAPI  {
         }
 
         public static CycleEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             CycleEnum result = STATIC_FIELDS.get(value);
@@ -196,46 +160,39 @@ public class StatisticsAPI  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cycle")
-    
+    @JsonProperty(value = "cycle")
+
     private CycleEnum cycle;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="api_id")
-    
+    @JsonProperty(value = "api_id")
+
     private String apiId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provider")
-    
+    @JsonProperty(value = "provider")
+
     private String provider;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="req_time")
-    
+    @JsonProperty(value = "req_time")
+
     private OffsetDateTime reqTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="register_time")
-    
+    @JsonProperty(value = "register_time")
+
     private OffsetDateTime registerTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
     public StatisticsAPI withMaxLatency(Integer maxLatency) {
@@ -243,13 +200,9 @@ public class StatisticsAPI  {
         return this;
     }
 
-    
-
-
-    /**
-     * 最大延时
-     * @return maxLatency
-     */
+    /** 最大延时
+     * 
+     * @return maxLatency */
     public Integer getMaxLatency() {
         return maxLatency;
     }
@@ -258,20 +211,14 @@ public class StatisticsAPI  {
         this.maxLatency = maxLatency;
     }
 
-    
-
     public StatisticsAPI withAvgLatency(BigDecimal avgLatency) {
         this.avgLatency = avgLatency;
         return this;
     }
 
-    
-
-
-    /**
-     * 平均延时
-     * @return avgLatency
-     */
+    /** 平均延时
+     * 
+     * @return avgLatency */
     public BigDecimal getAvgLatency() {
         return avgLatency;
     }
@@ -280,20 +227,14 @@ public class StatisticsAPI  {
         this.avgLatency = avgLatency;
     }
 
-    
-
     public StatisticsAPI withReqCount(Integer reqCount) {
         this.reqCount = reqCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求总次数
-     * @return reqCount
-     */
+    /** 请求总次数
+     * 
+     * @return reqCount */
     public Integer getReqCount() {
         return reqCount;
     }
@@ -302,20 +243,14 @@ public class StatisticsAPI  {
         this.reqCount = reqCount;
     }
 
-    
-
     public StatisticsAPI withReqCount2xx(Integer reqCount2xx) {
         this.reqCount2xx = reqCount2xx;
         return this;
     }
 
-    
-
-
-    /**
-     * 2xx响应码总次数
-     * @return reqCount2xx
-     */
+    /** 2xx响应码总次数
+     * 
+     * @return reqCount2xx */
     public Integer getReqCount2xx() {
         return reqCount2xx;
     }
@@ -324,20 +259,14 @@ public class StatisticsAPI  {
         this.reqCount2xx = reqCount2xx;
     }
 
-    
-
     public StatisticsAPI withReqCount4xx(Integer reqCount4xx) {
         this.reqCount4xx = reqCount4xx;
         return this;
     }
 
-    
-
-
-    /**
-     * 4xx响应码总次数
-     * @return reqCount4xx
-     */
+    /** 4xx响应码总次数
+     * 
+     * @return reqCount4xx */
     public Integer getReqCount4xx() {
         return reqCount4xx;
     }
@@ -346,20 +275,14 @@ public class StatisticsAPI  {
         this.reqCount4xx = reqCount4xx;
     }
 
-    
-
     public StatisticsAPI withReqCount5xx(Integer reqCount5xx) {
         this.reqCount5xx = reqCount5xx;
         return this;
     }
 
-    
-
-
-    /**
-     * 5xx响应码总次数
-     * @return reqCount5xx
-     */
+    /** 5xx响应码总次数
+     * 
+     * @return reqCount5xx */
     public Integer getReqCount5xx() {
         return reqCount5xx;
     }
@@ -368,20 +291,14 @@ public class StatisticsAPI  {
         this.reqCount5xx = reqCount5xx;
     }
 
-    
-
     public StatisticsAPI withReqCountError(Integer reqCountError) {
         this.reqCountError = reqCountError;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误次数
-     * @return reqCountError
-     */
+    /** 错误次数
+     * 
+     * @return reqCountError */
     public Integer getReqCountError() {
         return reqCountError;
     }
@@ -390,20 +307,14 @@ public class StatisticsAPI  {
         this.reqCountError = reqCountError;
     }
 
-    
-
     public StatisticsAPI withMaxInnerLatency(Integer maxInnerLatency) {
         this.maxInnerLatency = maxInnerLatency;
         return this;
     }
 
-    
-
-
-    /**
-     * 最大网关内部延时
-     * @return maxInnerLatency
-     */
+    /** 最大网关内部延时
+     * 
+     * @return maxInnerLatency */
     public Integer getMaxInnerLatency() {
         return maxInnerLatency;
     }
@@ -412,20 +323,14 @@ public class StatisticsAPI  {
         this.maxInnerLatency = maxInnerLatency;
     }
 
-    
-
     public StatisticsAPI withAvgInnerLatency(BigDecimal avgInnerLatency) {
         this.avgInnerLatency = avgInnerLatency;
         return this;
     }
 
-    
-
-
-    /**
-     * 平均网关内部延时
-     * @return avgInnerLatency
-     */
+    /** 平均网关内部延时
+     * 
+     * @return avgInnerLatency */
     public BigDecimal getAvgInnerLatency() {
         return avgInnerLatency;
     }
@@ -434,20 +339,14 @@ public class StatisticsAPI  {
         this.avgInnerLatency = avgInnerLatency;
     }
 
-    
-
     public StatisticsAPI withMaxBackendLatency(Integer maxBackendLatency) {
         this.maxBackendLatency = maxBackendLatency;
         return this;
     }
 
-    
-
-
-    /**
-     * 最大后端延时
-     * @return maxBackendLatency
-     */
+    /** 最大后端延时
+     * 
+     * @return maxBackendLatency */
     public Integer getMaxBackendLatency() {
         return maxBackendLatency;
     }
@@ -456,20 +355,14 @@ public class StatisticsAPI  {
         this.maxBackendLatency = maxBackendLatency;
     }
 
-    
-
     public StatisticsAPI withAvgBackendLatency(BigDecimal avgBackendLatency) {
         this.avgBackendLatency = avgBackendLatency;
         return this;
     }
 
-    
-
-
-    /**
-     * 平均后端延时
-     * @return avgBackendLatency
-     */
+    /** 平均后端延时
+     * 
+     * @return avgBackendLatency */
     public BigDecimal getAvgBackendLatency() {
         return avgBackendLatency;
     }
@@ -478,20 +371,14 @@ public class StatisticsAPI  {
         this.avgBackendLatency = avgBackendLatency;
     }
 
-    
-
     public StatisticsAPI withOutputThroughput(Integer outputThroughput) {
         this.outputThroughput = outputThroughput;
         return this;
     }
 
-    
-
-
-    /**
-     * 下行吞吐量（byte）
-     * @return outputThroughput
-     */
+    /** 下行吞吐量（byte）
+     * 
+     * @return outputThroughput */
     public Integer getOutputThroughput() {
         return outputThroughput;
     }
@@ -500,20 +387,14 @@ public class StatisticsAPI  {
         this.outputThroughput = outputThroughput;
     }
 
-    
-
     public StatisticsAPI withInputThroughput(Integer inputThroughput) {
         this.inputThroughput = inputThroughput;
         return this;
     }
 
-    
-
-
-    /**
-     * 上行吞吐量（byte）
-     * @return inputThroughput
-     */
+    /** 上行吞吐量（byte）
+     * 
+     * @return inputThroughput */
     public Integer getInputThroughput() {
         return inputThroughput;
     }
@@ -522,20 +403,14 @@ public class StatisticsAPI  {
         this.inputThroughput = inputThroughput;
     }
 
-    
-
     public StatisticsAPI withCurrentMinute(Long currentMinute) {
         this.currentMinute = currentMinute;
         return this;
     }
 
-    
-
-
-    /**
-     * API访问的UTC时间戳
-     * @return currentMinute
-     */
+    /** API访问的UTC时间戳
+     * 
+     * @return currentMinute */
     public Long getCurrentMinute() {
         return currentMinute;
     }
@@ -544,20 +419,14 @@ public class StatisticsAPI  {
         this.currentMinute = currentMinute;
     }
 
-    
-
     public StatisticsAPI withCycle(CycleEnum cycle) {
         this.cycle = cycle;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询统计周期
-     * @return cycle
-     */
+    /** 查询统计周期
+     * 
+     * @return cycle */
     public CycleEnum getCycle() {
         return cycle;
     }
@@ -566,20 +435,14 @@ public class StatisticsAPI  {
         this.cycle = cycle;
     }
 
-    
-
     public StatisticsAPI withApiId(String apiId) {
         this.apiId = apiId;
         return this;
     }
 
-    
-
-
-    /**
-     * API编号
-     * @return apiId
-     */
+    /** API编号
+     * 
+     * @return apiId */
     public String getApiId() {
         return apiId;
     }
@@ -588,20 +451,14 @@ public class StatisticsAPI  {
         this.apiId = apiId;
     }
 
-    
-
     public StatisticsAPI withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * API分组编号
-     * @return groupId
-     */
+    /** API分组编号
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -610,20 +467,14 @@ public class StatisticsAPI  {
         this.groupId = groupId;
     }
 
-    
-
     public StatisticsAPI withProvider(String provider) {
         this.provider = provider;
         return this;
     }
 
-    
-
-
-    /**
-     * API拥有者
-     * @return provider
-     */
+    /** API拥有者
+     * 
+     * @return provider */
     public String getProvider() {
         return provider;
     }
@@ -632,20 +483,14 @@ public class StatisticsAPI  {
         this.provider = provider;
     }
 
-    
-
     public StatisticsAPI withReqTime(OffsetDateTime reqTime) {
         this.reqTime = reqTime;
         return this;
     }
 
-    
-
-
-    /**
-     * API请求时间
-     * @return reqTime
-     */
+    /** API请求时间
+     * 
+     * @return reqTime */
     public OffsetDateTime getReqTime() {
         return reqTime;
     }
@@ -654,20 +499,14 @@ public class StatisticsAPI  {
         this.reqTime = reqTime;
     }
 
-    
-
     public StatisticsAPI withRegisterTime(OffsetDateTime registerTime) {
         this.registerTime = registerTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 记录时间
-     * @return registerTime
-     */
+    /** 记录时间
+     * 
+     * @return registerTime */
     public OffsetDateTime getRegisterTime() {
         return registerTime;
     }
@@ -676,20 +515,14 @@ public class StatisticsAPI  {
         this.registerTime = registerTime;
     }
 
-    
-
     public StatisticsAPI withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态值： - 1：调度中，未上报CES - 2：已经成功上报CES  预留字段，暂不支持
-     * @return status
-     */
+    /** 状态值： - 1：调度中，未上报CES - 2：已经成功上报CES 预留字段，暂不支持
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -697,8 +530,6 @@ public class StatisticsAPI  {
     public void setStatus(Integer status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -709,32 +540,53 @@ public class StatisticsAPI  {
             return false;
         }
         StatisticsAPI statisticsAPI = (StatisticsAPI) o;
-        return Objects.equals(this.maxLatency, statisticsAPI.maxLatency) &&
-            Objects.equals(this.avgLatency, statisticsAPI.avgLatency) &&
-            Objects.equals(this.reqCount, statisticsAPI.reqCount) &&
-            Objects.equals(this.reqCount2xx, statisticsAPI.reqCount2xx) &&
-            Objects.equals(this.reqCount4xx, statisticsAPI.reqCount4xx) &&
-            Objects.equals(this.reqCount5xx, statisticsAPI.reqCount5xx) &&
-            Objects.equals(this.reqCountError, statisticsAPI.reqCountError) &&
-            Objects.equals(this.maxInnerLatency, statisticsAPI.maxInnerLatency) &&
-            Objects.equals(this.avgInnerLatency, statisticsAPI.avgInnerLatency) &&
-            Objects.equals(this.maxBackendLatency, statisticsAPI.maxBackendLatency) &&
-            Objects.equals(this.avgBackendLatency, statisticsAPI.avgBackendLatency) &&
-            Objects.equals(this.outputThroughput, statisticsAPI.outputThroughput) &&
-            Objects.equals(this.inputThroughput, statisticsAPI.inputThroughput) &&
-            Objects.equals(this.currentMinute, statisticsAPI.currentMinute) &&
-            Objects.equals(this.cycle, statisticsAPI.cycle) &&
-            Objects.equals(this.apiId, statisticsAPI.apiId) &&
-            Objects.equals(this.groupId, statisticsAPI.groupId) &&
-            Objects.equals(this.provider, statisticsAPI.provider) &&
-            Objects.equals(this.reqTime, statisticsAPI.reqTime) &&
-            Objects.equals(this.registerTime, statisticsAPI.registerTime) &&
-            Objects.equals(this.status, statisticsAPI.status);
+        return Objects.equals(this.maxLatency, statisticsAPI.maxLatency)
+            && Objects.equals(this.avgLatency, statisticsAPI.avgLatency)
+            && Objects.equals(this.reqCount, statisticsAPI.reqCount)
+            && Objects.equals(this.reqCount2xx, statisticsAPI.reqCount2xx)
+            && Objects.equals(this.reqCount4xx, statisticsAPI.reqCount4xx)
+            && Objects.equals(this.reqCount5xx, statisticsAPI.reqCount5xx)
+            && Objects.equals(this.reqCountError, statisticsAPI.reqCountError)
+            && Objects.equals(this.maxInnerLatency, statisticsAPI.maxInnerLatency)
+            && Objects.equals(this.avgInnerLatency, statisticsAPI.avgInnerLatency)
+            && Objects.equals(this.maxBackendLatency, statisticsAPI.maxBackendLatency)
+            && Objects.equals(this.avgBackendLatency, statisticsAPI.avgBackendLatency)
+            && Objects.equals(this.outputThroughput, statisticsAPI.outputThroughput)
+            && Objects.equals(this.inputThroughput, statisticsAPI.inputThroughput)
+            && Objects.equals(this.currentMinute, statisticsAPI.currentMinute)
+            && Objects.equals(this.cycle, statisticsAPI.cycle) && Objects.equals(this.apiId, statisticsAPI.apiId)
+            && Objects.equals(this.groupId, statisticsAPI.groupId)
+            && Objects.equals(this.provider, statisticsAPI.provider)
+            && Objects.equals(this.reqTime, statisticsAPI.reqTime)
+            && Objects.equals(this.registerTime, statisticsAPI.registerTime)
+            && Objects.equals(this.status, statisticsAPI.status);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(maxLatency, avgLatency, reqCount, reqCount2xx, reqCount4xx, reqCount5xx, reqCountError, maxInnerLatency, avgInnerLatency, maxBackendLatency, avgBackendLatency, outputThroughput, inputThroughput, currentMinute, cycle, apiId, groupId, provider, reqTime, registerTime, status);
+        return Objects.hash(maxLatency,
+            avgLatency,
+            reqCount,
+            reqCount2xx,
+            reqCount4xx,
+            reqCount5xx,
+            reqCountError,
+            maxInnerLatency,
+            avgInnerLatency,
+            maxBackendLatency,
+            avgBackendLatency,
+            outputThroughput,
+            inputThroughput,
+            currentMinute,
+            cycle,
+            apiId,
+            groupId,
+            provider,
+            reqTime,
+            registerTime,
+            status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -763,16 +615,13 @@ public class StatisticsAPI  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,43 +1,29 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * RefreshTaskRequestBody
- */
-public class RefreshTaskRequestBody  {
+/** RefreshTaskRequestBody */
+public class RefreshTaskRequestBody {
 
-    /**
-     * 刷新的类型，其值可以为file 或directory，默认为file
-     */
+    /** 刷新的类型，其值可以为file 或directory，默认为file */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum FILE for value: "file"
-         */
+        /** Enum FILE for value: "file" */
         public static final TypeEnum FILE = new TypeEnum("file");
-        
-        /**
-         * Enum DIRECTORY for value: "directory"
-         */
+
+        /** Enum DIRECTORY for value: "directory" */
         public static final TypeEnum DIRECTORY = new TypeEnum("directory");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -66,7 +52,7 @@ public class RefreshTaskRequestBody  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -77,7 +63,7 @@ public class RefreshTaskRequestBody  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -101,30 +87,24 @@ public class RefreshTaskRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="urls")
-    
+    @JsonProperty(value = "urls")
+
     private List<String> urls = null;
-    
+
     public RefreshTaskRequestBody withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 刷新的类型，其值可以为file 或directory，默认为file
-     * @return type
-     */
+    /** 刷新的类型，其值可以为file 或directory，默认为file
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -133,16 +113,13 @@ public class RefreshTaskRequestBody  {
         this.type = type;
     }
 
-    
-
     public RefreshTaskRequestBody withUrls(List<String> urls) {
         this.urls = urls;
         return this;
     }
 
-    
     public RefreshTaskRequestBody addUrlsItem(String urlsItem) {
-        if(this.urls == null) {
+        if (this.urls == null) {
             this.urls = new ArrayList<>();
         }
         this.urls.add(urlsItem);
@@ -150,17 +127,16 @@ public class RefreshTaskRequestBody  {
     }
 
     public RefreshTaskRequestBody withUrls(Consumer<List<String>> urlsSetter) {
-        if(this.urls == null) {
+        if (this.urls == null) {
             this.urls = new ArrayList<>();
         }
         urlsSetter.accept(this.urls);
         return this;
     }
 
-    /**
-     * 输入URL必须带有“http://”或“https://”，多个URL用逗号分隔，单个url的长度限制为10240字符，单次最多输入1000个url。
-     * @return urls
-     */
+    /** 输入URL必须带有“http://”或“https://”，多个URL用逗号分隔，单个url的长度限制为10240字符，单次最多输入1000个url。
+     * 
+     * @return urls */
     public List<String> getUrls() {
         return urls;
     }
@@ -168,8 +144,6 @@ public class RefreshTaskRequestBody  {
     public void setUrls(List<String> urls) {
         this.urls = urls;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -180,13 +154,15 @@ public class RefreshTaskRequestBody  {
             return false;
         }
         RefreshTaskRequestBody refreshTaskRequestBody = (RefreshTaskRequestBody) o;
-        return Objects.equals(this.type, refreshTaskRequestBody.type) &&
-            Objects.equals(this.urls, refreshTaskRequestBody.urls);
+        return Objects.equals(this.type, refreshTaskRequestBody.type)
+            && Objects.equals(this.urls, refreshTaskRequestBody.urls);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, urls);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -196,16 +172,13 @@ public class RefreshTaskRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

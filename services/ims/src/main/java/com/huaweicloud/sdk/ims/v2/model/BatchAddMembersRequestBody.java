@@ -1,44 +1,33 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 批量添加镜像成员body
- */
-public class BatchAddMembersRequestBody  {
-
-
+/** 批量添加镜像成员body */
+public class BatchAddMembersRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="images")
-    
+    @JsonProperty(value = "images")
+
     private List<String> images = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="projects")
-    
+    @JsonProperty(value = "projects")
+
     private List<String> projects = null;
-    
+
     public BatchAddMembersRequestBody withImages(List<String> images) {
         this.images = images;
         return this;
     }
 
-    
     public BatchAddMembersRequestBody addImagesItem(String imagesItem) {
-        if(this.images == null) {
+        if (this.images == null) {
             this.images = new ArrayList<>();
         }
         this.images.add(imagesItem);
@@ -46,17 +35,16 @@ public class BatchAddMembersRequestBody  {
     }
 
     public BatchAddMembersRequestBody withImages(Consumer<List<String>> imagesSetter) {
-        if(this.images == null) {
+        if (this.images == null) {
             this.images = new ArrayList<>();
         }
         imagesSetter.accept(this.images);
         return this;
     }
 
-    /**
-     * 镜像ID列表
-     * @return images
-     */
+    /** 镜像ID列表
+     * 
+     * @return images */
     public List<String> getImages() {
         return images;
     }
@@ -65,16 +53,13 @@ public class BatchAddMembersRequestBody  {
         this.images = images;
     }
 
-    
-
     public BatchAddMembersRequestBody withProjects(List<String> projects) {
         this.projects = projects;
         return this;
     }
 
-    
     public BatchAddMembersRequestBody addProjectsItem(String projectsItem) {
-        if(this.projects == null) {
+        if (this.projects == null) {
             this.projects = new ArrayList<>();
         }
         this.projects.add(projectsItem);
@@ -82,17 +67,16 @@ public class BatchAddMembersRequestBody  {
     }
 
     public BatchAddMembersRequestBody withProjects(Consumer<List<String>> projectsSetter) {
-        if(this.projects == null) {
+        if (this.projects == null) {
             this.projects = new ArrayList<>();
         }
         projectsSetter.accept(this.projects);
         return this;
     }
 
-    /**
-     * 项目ID列表
-     * @return projects
-     */
+    /** 项目ID列表
+     * 
+     * @return projects */
     public List<String> getProjects() {
         return projects;
     }
@@ -100,8 +84,6 @@ public class BatchAddMembersRequestBody  {
     public void setProjects(List<String> projects) {
         this.projects = projects;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,13 +94,15 @@ public class BatchAddMembersRequestBody  {
             return false;
         }
         BatchAddMembersRequestBody batchAddMembersRequestBody = (BatchAddMembersRequestBody) o;
-        return Objects.equals(this.images, batchAddMembersRequestBody.images) &&
-            Objects.equals(this.projects, batchAddMembersRequestBody.projects);
+        return Objects.equals(this.images, batchAddMembersRequestBody.images)
+            && Objects.equals(this.projects, batchAddMembersRequestBody.projects);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(images, projects);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +112,13 @@ public class BatchAddMembersRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

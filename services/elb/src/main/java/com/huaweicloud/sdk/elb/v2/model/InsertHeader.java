@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 监听器HTTP扩展头部对象。
- */
-public class InsertHeader  {
-
-
+/** 监听器HTTP扩展头部对象。 */
+public class InsertHeader {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Forwarded-ELB-IP")
-    
+    @JsonProperty(value = "X-Forwarded-ELB-IP")
+
     private Boolean xForwardedELBIP;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Forwarded-Host")
-    
+    @JsonProperty(value = "X-Forwarded-Host")
+
     private Boolean xForwardedHost;
 
     public InsertHeader withXForwardedELBIP(Boolean xForwardedELBIP) {
@@ -34,15 +23,11 @@ public class InsertHeader  {
         return this;
     }
 
-    
-
-
-    /**
-     * 负载均衡器弹性公网IP透传开关。
-     * @return xForwardedELBIP
-     */
+    /** 负载均衡器弹性公网IP透传开关。
+     * 
+     * @return xForwardedELBIP */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Forwarded-ELB-IP")
+    @JsonProperty(value = "X-Forwarded-ELB-IP")
     public Boolean getXForwardedELBIP() {
         return xForwardedELBIP;
     }
@@ -51,22 +36,16 @@ public class InsertHeader  {
         this.xForwardedELBIP = xForwardedELBIP;
     }
 
-    
-
     public InsertHeader withXForwardedHost(Boolean xForwardedHost) {
         this.xForwardedHost = xForwardedHost;
         return this;
     }
 
-    
-
-
-    /**
-     * X-Forwarded-Host设为true可以将客户请求头的第一个X-Forwarded-Host设置为请求头的Host带到后端云服务器。
-     * @return xForwardedHost
-     */
+    /** X-Forwarded-Host设为true可以将客户请求头的第一个X-Forwarded-Host设置为请求头的Host带到后端云服务器。
+     * 
+     * @return xForwardedHost */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Forwarded-Host")
+    @JsonProperty(value = "X-Forwarded-Host")
     public Boolean getXForwardedHost() {
         return xForwardedHost;
     }
@@ -74,8 +53,6 @@ public class InsertHeader  {
     public void setXForwardedHost(Boolean xForwardedHost) {
         this.xForwardedHost = xForwardedHost;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -86,13 +63,15 @@ public class InsertHeader  {
             return false;
         }
         InsertHeader insertHeader = (InsertHeader) o;
-        return Objects.equals(this.xForwardedELBIP, insertHeader.xForwardedELBIP) &&
-            Objects.equals(this.xForwardedHost, insertHeader.xForwardedHost);
+        return Objects.equals(this.xForwardedELBIP, insertHeader.xForwardedELBIP)
+            && Objects.equals(this.xForwardedHost, insertHeader.xForwardedHost);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xForwardedELBIP, xForwardedHost);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -102,16 +81,13 @@ public class InsertHeader  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

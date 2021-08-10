@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class KeystoneListProtocolsRequest  {
-
-
+/** Request Object */
+public class KeystoneListProtocolsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="idp_id")
-    
+    @JsonProperty(value = "idp_id")
+
     private String idpId;
 
     public KeystoneListProtocolsRequest withIdpId(String idpId) {
@@ -28,13 +18,9 @@ public class KeystoneListProtocolsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 身份提供商ID。
-     * @return idpId
-     */
+    /** 身份提供商ID。
+     * 
+     * @return idpId */
     public String getIdpId() {
         return idpId;
     }
@@ -42,8 +28,6 @@ public class KeystoneListProtocolsRequest  {
     public void setIdpId(String idpId) {
         this.idpId = idpId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class KeystoneListProtocolsRequest  {
         KeystoneListProtocolsRequest keystoneListProtocolsRequest = (KeystoneListProtocolsRequest) o;
         return Objects.equals(this.idpId, keystoneListProtocolsRequest.idpId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(idpId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class KeystoneListProtocolsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

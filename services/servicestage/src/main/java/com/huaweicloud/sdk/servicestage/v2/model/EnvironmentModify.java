@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * EnvironmentModify
- */
-public class EnvironmentModify  {
-
-
+/** EnvironmentModify */
+public class EnvironmentModify {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alias")
-    
+    @JsonProperty(value = "alias")
+
     private String alias;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public EnvironmentModify withName(String name) {
@@ -40,13 +28,9 @@ public class EnvironmentModify  {
         return this;
     }
 
-    
-
-
-    /**
-     * 环境名称。
-     * @return name
-     */
+    /** 环境名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -55,20 +39,14 @@ public class EnvironmentModify  {
         this.name = name;
     }
 
-    
-
     public EnvironmentModify withAlias(String alias) {
         this.alias = alias;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境别名。
-     * @return alias
-     */
+    /** 环境别名。
+     * 
+     * @return alias */
     public String getAlias() {
         return alias;
     }
@@ -77,20 +55,14 @@ public class EnvironmentModify  {
         this.alias = alias;
     }
 
-    
-
     public EnvironmentModify withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境描述。
-     * @return description
-     */
+    /** 环境描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -98,8 +70,6 @@ public class EnvironmentModify  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,15 @@ public class EnvironmentModify  {
             return false;
         }
         EnvironmentModify environmentModify = (EnvironmentModify) o;
-        return Objects.equals(this.name, environmentModify.name) &&
-            Objects.equals(this.alias, environmentModify.alias) &&
-            Objects.equals(this.description, environmentModify.description);
+        return Objects.equals(this.name, environmentModify.name) && Objects.equals(this.alias, environmentModify.alias)
+            && Objects.equals(this.description, environmentModify.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, alias, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +99,13 @@ public class EnvironmentModify  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

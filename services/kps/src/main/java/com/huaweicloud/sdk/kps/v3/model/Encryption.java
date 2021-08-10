@@ -1,41 +1,26 @@
 package com.huaweicloud.sdk.kps.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 对私钥进行加密存储的方式。
- */
-public class Encryption  {
+/** 对私钥进行加密存储的方式。 */
+public class Encryption {
 
-    /**
-     * 取值范围：“kms”或“default”。 - “default”为默认加密方式，适用于没有kms服务的局点。 - “kms”为采用kms服务加密方式。 若局点没有kms服务，请填“default”。
-     */
+    /** 取值范围：“kms”或“default”。 - “default”为默认加密方式，适用于没有kms服务的局点。 - “kms”为采用kms服务加密方式。 若局点没有kms服务，请填“default”。 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum DEFAULT for value: "default"
-         */
+        /** Enum DEFAULT for value: "default" */
         public static final TypeEnum DEFAULT = new TypeEnum("default");
-        
-        /**
-         * Enum KMS for value: "kms"
-         */
+
+        /** Enum KMS for value: "kms" */
         public static final TypeEnum KMS = new TypeEnum("kms");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,7 +49,7 @@ public class Encryption  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -75,7 +60,7 @@ public class Encryption  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -99,16 +84,14 @@ public class Encryption  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="kms_key_name")
-    
+    @JsonProperty(value = "kms_key_name")
+
     private String kmsKeyName;
 
     public Encryption withType(TypeEnum type) {
@@ -116,13 +99,9 @@ public class Encryption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 取值范围：“kms”或“default”。 - “default”为默认加密方式，适用于没有kms服务的局点。 - “kms”为采用kms服务加密方式。 若局点没有kms服务，请填“default”。
-     * @return type
-     */
+    /** 取值范围：“kms”或“default”。 - “default”为默认加密方式，适用于没有kms服务的局点。 - “kms”为采用kms服务加密方式。 若局点没有kms服务，请填“default”。
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -131,20 +110,14 @@ public class Encryption  {
         this.type = type;
     }
 
-    
-
     public Encryption withKmsKeyName(String kmsKeyName) {
         this.kmsKeyName = kmsKeyName;
         return this;
     }
 
-    
-
-
-    /**
-     * kms密钥的名称。  - 若“type”为“kms”，则必须填入kms服务密钥名称。
-     * @return kmsKeyName
-     */
+    /** kms密钥的名称。 - 若“type”为“kms”，则必须填入kms服务密钥名称。
+     * 
+     * @return kmsKeyName */
     public String getKmsKeyName() {
         return kmsKeyName;
     }
@@ -152,8 +125,6 @@ public class Encryption  {
     public void setKmsKeyName(String kmsKeyName) {
         this.kmsKeyName = kmsKeyName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -164,13 +135,14 @@ public class Encryption  {
             return false;
         }
         Encryption encryption = (Encryption) o;
-        return Objects.equals(this.type, encryption.type) &&
-            Objects.equals(this.kmsKeyName, encryption.kmsKeyName);
+        return Objects.equals(this.type, encryption.type) && Objects.equals(this.kmsKeyName, encryption.kmsKeyName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, kmsKeyName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -180,16 +152,13 @@ public class Encryption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

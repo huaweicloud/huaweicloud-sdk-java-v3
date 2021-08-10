@@ -1,131 +1,104 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.QueryCorpGroupDTO;
-import com.huaweicloud.sdk.meeting.v1.model.ResDetailDTO;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowSpResourceResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="te1080pHardCount")
-    
+    @JsonProperty(value = "te1080pHardCount")
+
     private ResDetailDTO te1080pHardCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="te720pHardCount")
-    
+    @JsonProperty(value = "te720pHardCount")
+
     private ResDetailDTO te720pHardCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="teSoftCount")
-    
+    @JsonProperty(value = "teSoftCount")
+
     private ResDetailDTO teSoftCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roomCount")
-    
+    @JsonProperty(value = "roomCount")
+
     private ResDetailDTO roomCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="recordCapability")
-    
+    @JsonProperty(value = "recordCapability")
+
     private ResDetailDTO recordCapability;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confCallCount")
-    
+    @JsonProperty(value = "confCallCount")
+
     private ResDetailDTO confCallCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="liveCount")
-    
+    @JsonProperty(value = "liveCount")
+
     private ResDetailDTO liveCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="corpCount")
-    
+    @JsonProperty(value = "corpCount")
+
     private ResDetailDTO corpCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="thirdPartyHardCount")
-    
+    @JsonProperty(value = "thirdPartyHardCount")
+
     private ResDetailDTO thirdPartyHardCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hwVisionCount")
-    
+    @JsonProperty(value = "hwVisionCount")
+
     private ResDetailDTO hwVisionCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ideaHubCount")
-    
+    @JsonProperty(value = "ideaHubCount")
+
     private ResDetailDTO ideaHubCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enablePstn")
-    
+    @JsonProperty(value = "enablePstn")
+
     private Boolean enablePstn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enableSMS")
-    
+    @JsonProperty(value = "enableSMS")
+
     private Boolean enableSMS;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="groupList")
-    
+    @JsonProperty(value = "groupList")
+
     private List<QueryCorpGroupDTO> groupList = null;
-    
+
     public ShowSpResourceResponse withTe1080pHardCount(ResDetailDTO te1080pHardCount) {
         this.te1080pHardCount = te1080pHardCount;
         return this;
     }
 
     public ShowSpResourceResponse withTe1080pHardCount(Consumer<ResDetailDTO> te1080pHardCountSetter) {
-        if(this.te1080pHardCount == null ){
+        if (this.te1080pHardCount == null) {
             this.te1080pHardCount = new ResDetailDTO();
             te1080pHardCountSetter.accept(this.te1080pHardCount);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get te1080pHardCount
-     * @return te1080pHardCount
-     */
+    /** Get te1080pHardCount
+     * 
+     * @return te1080pHardCount */
     public ResDetailDTO getTe1080pHardCount() {
         return te1080pHardCount;
     }
@@ -134,27 +107,23 @@ public class ShowSpResourceResponse extends SdkResponse {
         this.te1080pHardCount = te1080pHardCount;
     }
 
-    
-
     public ShowSpResourceResponse withTe720pHardCount(ResDetailDTO te720pHardCount) {
         this.te720pHardCount = te720pHardCount;
         return this;
     }
 
     public ShowSpResourceResponse withTe720pHardCount(Consumer<ResDetailDTO> te720pHardCountSetter) {
-        if(this.te720pHardCount == null ){
+        if (this.te720pHardCount == null) {
             this.te720pHardCount = new ResDetailDTO();
             te720pHardCountSetter.accept(this.te720pHardCount);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get te720pHardCount
-     * @return te720pHardCount
-     */
+    /** Get te720pHardCount
+     * 
+     * @return te720pHardCount */
     public ResDetailDTO getTe720pHardCount() {
         return te720pHardCount;
     }
@@ -163,27 +132,23 @@ public class ShowSpResourceResponse extends SdkResponse {
         this.te720pHardCount = te720pHardCount;
     }
 
-    
-
     public ShowSpResourceResponse withTeSoftCount(ResDetailDTO teSoftCount) {
         this.teSoftCount = teSoftCount;
         return this;
     }
 
     public ShowSpResourceResponse withTeSoftCount(Consumer<ResDetailDTO> teSoftCountSetter) {
-        if(this.teSoftCount == null ){
+        if (this.teSoftCount == null) {
             this.teSoftCount = new ResDetailDTO();
             teSoftCountSetter.accept(this.teSoftCount);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get teSoftCount
-     * @return teSoftCount
-     */
+    /** Get teSoftCount
+     * 
+     * @return teSoftCount */
     public ResDetailDTO getTeSoftCount() {
         return teSoftCount;
     }
@@ -192,27 +157,23 @@ public class ShowSpResourceResponse extends SdkResponse {
         this.teSoftCount = teSoftCount;
     }
 
-    
-
     public ShowSpResourceResponse withRoomCount(ResDetailDTO roomCount) {
         this.roomCount = roomCount;
         return this;
     }
 
     public ShowSpResourceResponse withRoomCount(Consumer<ResDetailDTO> roomCountSetter) {
-        if(this.roomCount == null ){
+        if (this.roomCount == null) {
             this.roomCount = new ResDetailDTO();
             roomCountSetter.accept(this.roomCount);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get roomCount
-     * @return roomCount
-     */
+    /** Get roomCount
+     * 
+     * @return roomCount */
     public ResDetailDTO getRoomCount() {
         return roomCount;
     }
@@ -221,27 +182,23 @@ public class ShowSpResourceResponse extends SdkResponse {
         this.roomCount = roomCount;
     }
 
-    
-
     public ShowSpResourceResponse withRecordCapability(ResDetailDTO recordCapability) {
         this.recordCapability = recordCapability;
         return this;
     }
 
     public ShowSpResourceResponse withRecordCapability(Consumer<ResDetailDTO> recordCapabilitySetter) {
-        if(this.recordCapability == null ){
+        if (this.recordCapability == null) {
             this.recordCapability = new ResDetailDTO();
             recordCapabilitySetter.accept(this.recordCapability);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get recordCapability
-     * @return recordCapability
-     */
+    /** Get recordCapability
+     * 
+     * @return recordCapability */
     public ResDetailDTO getRecordCapability() {
         return recordCapability;
     }
@@ -250,27 +207,23 @@ public class ShowSpResourceResponse extends SdkResponse {
         this.recordCapability = recordCapability;
     }
 
-    
-
     public ShowSpResourceResponse withConfCallCount(ResDetailDTO confCallCount) {
         this.confCallCount = confCallCount;
         return this;
     }
 
     public ShowSpResourceResponse withConfCallCount(Consumer<ResDetailDTO> confCallCountSetter) {
-        if(this.confCallCount == null ){
+        if (this.confCallCount == null) {
             this.confCallCount = new ResDetailDTO();
             confCallCountSetter.accept(this.confCallCount);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get confCallCount
-     * @return confCallCount
-     */
+    /** Get confCallCount
+     * 
+     * @return confCallCount */
     public ResDetailDTO getConfCallCount() {
         return confCallCount;
     }
@@ -279,27 +232,23 @@ public class ShowSpResourceResponse extends SdkResponse {
         this.confCallCount = confCallCount;
     }
 
-    
-
     public ShowSpResourceResponse withLiveCount(ResDetailDTO liveCount) {
         this.liveCount = liveCount;
         return this;
     }
 
     public ShowSpResourceResponse withLiveCount(Consumer<ResDetailDTO> liveCountSetter) {
-        if(this.liveCount == null ){
+        if (this.liveCount == null) {
             this.liveCount = new ResDetailDTO();
             liveCountSetter.accept(this.liveCount);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get liveCount
-     * @return liveCount
-     */
+    /** Get liveCount
+     * 
+     * @return liveCount */
     public ResDetailDTO getLiveCount() {
         return liveCount;
     }
@@ -308,27 +257,23 @@ public class ShowSpResourceResponse extends SdkResponse {
         this.liveCount = liveCount;
     }
 
-    
-
     public ShowSpResourceResponse withCorpCount(ResDetailDTO corpCount) {
         this.corpCount = corpCount;
         return this;
     }
 
     public ShowSpResourceResponse withCorpCount(Consumer<ResDetailDTO> corpCountSetter) {
-        if(this.corpCount == null ){
+        if (this.corpCount == null) {
             this.corpCount = new ResDetailDTO();
             corpCountSetter.accept(this.corpCount);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get corpCount
-     * @return corpCount
-     */
+    /** Get corpCount
+     * 
+     * @return corpCount */
     public ResDetailDTO getCorpCount() {
         return corpCount;
     }
@@ -337,27 +282,23 @@ public class ShowSpResourceResponse extends SdkResponse {
         this.corpCount = corpCount;
     }
 
-    
-
     public ShowSpResourceResponse withThirdPartyHardCount(ResDetailDTO thirdPartyHardCount) {
         this.thirdPartyHardCount = thirdPartyHardCount;
         return this;
     }
 
     public ShowSpResourceResponse withThirdPartyHardCount(Consumer<ResDetailDTO> thirdPartyHardCountSetter) {
-        if(this.thirdPartyHardCount == null ){
+        if (this.thirdPartyHardCount == null) {
             this.thirdPartyHardCount = new ResDetailDTO();
             thirdPartyHardCountSetter.accept(this.thirdPartyHardCount);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get thirdPartyHardCount
-     * @return thirdPartyHardCount
-     */
+    /** Get thirdPartyHardCount
+     * 
+     * @return thirdPartyHardCount */
     public ResDetailDTO getThirdPartyHardCount() {
         return thirdPartyHardCount;
     }
@@ -366,27 +307,23 @@ public class ShowSpResourceResponse extends SdkResponse {
         this.thirdPartyHardCount = thirdPartyHardCount;
     }
 
-    
-
     public ShowSpResourceResponse withHwVisionCount(ResDetailDTO hwVisionCount) {
         this.hwVisionCount = hwVisionCount;
         return this;
     }
 
     public ShowSpResourceResponse withHwVisionCount(Consumer<ResDetailDTO> hwVisionCountSetter) {
-        if(this.hwVisionCount == null ){
+        if (this.hwVisionCount == null) {
             this.hwVisionCount = new ResDetailDTO();
             hwVisionCountSetter.accept(this.hwVisionCount);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get hwVisionCount
-     * @return hwVisionCount
-     */
+    /** Get hwVisionCount
+     * 
+     * @return hwVisionCount */
     public ResDetailDTO getHwVisionCount() {
         return hwVisionCount;
     }
@@ -395,27 +332,23 @@ public class ShowSpResourceResponse extends SdkResponse {
         this.hwVisionCount = hwVisionCount;
     }
 
-    
-
     public ShowSpResourceResponse withIdeaHubCount(ResDetailDTO ideaHubCount) {
         this.ideaHubCount = ideaHubCount;
         return this;
     }
 
     public ShowSpResourceResponse withIdeaHubCount(Consumer<ResDetailDTO> ideaHubCountSetter) {
-        if(this.ideaHubCount == null ){
+        if (this.ideaHubCount == null) {
             this.ideaHubCount = new ResDetailDTO();
             ideaHubCountSetter.accept(this.ideaHubCount);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get ideaHubCount
-     * @return ideaHubCount
-     */
+    /** Get ideaHubCount
+     * 
+     * @return ideaHubCount */
     public ResDetailDTO getIdeaHubCount() {
         return ideaHubCount;
     }
@@ -424,20 +357,14 @@ public class ShowSpResourceResponse extends SdkResponse {
         this.ideaHubCount = ideaHubCount;
     }
 
-    
-
     public ShowSpResourceResponse withEnablePstn(Boolean enablePstn) {
         this.enablePstn = enablePstn;
         return this;
     }
 
-    
-
-
-    /**
-     * 在创建SP的时候设置的pstn权限开关
-     * @return enablePstn
-     */
+    /** 在创建SP的时候设置的pstn权限开关
+     * 
+     * @return enablePstn */
     public Boolean getEnablePstn() {
         return enablePstn;
     }
@@ -446,20 +373,14 @@ public class ShowSpResourceResponse extends SdkResponse {
         this.enablePstn = enablePstn;
     }
 
-    
-
     public ShowSpResourceResponse withEnableSMS(Boolean enableSMS) {
         this.enableSMS = enableSMS;
         return this;
     }
 
-    
-
-
-    /**
-     * 在创建SP的时候设置发送短信开关
-     * @return enableSMS
-     */
+    /** 在创建SP的时候设置发送短信开关
+     * 
+     * @return enableSMS */
     public Boolean getEnableSMS() {
         return enableSMS;
     }
@@ -468,16 +389,13 @@ public class ShowSpResourceResponse extends SdkResponse {
         this.enableSMS = enableSMS;
     }
 
-    
-
     public ShowSpResourceResponse withGroupList(List<QueryCorpGroupDTO> groupList) {
         this.groupList = groupList;
         return this;
     }
 
-    
     public ShowSpResourceResponse addGroupListItem(QueryCorpGroupDTO groupListItem) {
-        if(this.groupList == null) {
+        if (this.groupList == null) {
             this.groupList = new ArrayList<>();
         }
         this.groupList.add(groupListItem);
@@ -485,17 +403,16 @@ public class ShowSpResourceResponse extends SdkResponse {
     }
 
     public ShowSpResourceResponse withGroupList(Consumer<List<QueryCorpGroupDTO>> groupListSetter) {
-        if(this.groupList == null) {
+        if (this.groupList == null) {
             this.groupList = new ArrayList<>();
         }
         groupListSetter.accept(this.groupList);
         return this;
     }
 
-    /**
-     * sp管理员绑定的分组列表
-     * @return groupList
-     */
+    /** sp管理员绑定的分组列表
+     * 
+     * @return groupList */
     public List<QueryCorpGroupDTO> getGroupList() {
         return groupList;
     }
@@ -503,8 +420,6 @@ public class ShowSpResourceResponse extends SdkResponse {
     public void setGroupList(List<QueryCorpGroupDTO> groupList) {
         this.groupList = groupList;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -515,25 +430,40 @@ public class ShowSpResourceResponse extends SdkResponse {
             return false;
         }
         ShowSpResourceResponse showSpResourceResponse = (ShowSpResourceResponse) o;
-        return Objects.equals(this.te1080pHardCount, showSpResourceResponse.te1080pHardCount) &&
-            Objects.equals(this.te720pHardCount, showSpResourceResponse.te720pHardCount) &&
-            Objects.equals(this.teSoftCount, showSpResourceResponse.teSoftCount) &&
-            Objects.equals(this.roomCount, showSpResourceResponse.roomCount) &&
-            Objects.equals(this.recordCapability, showSpResourceResponse.recordCapability) &&
-            Objects.equals(this.confCallCount, showSpResourceResponse.confCallCount) &&
-            Objects.equals(this.liveCount, showSpResourceResponse.liveCount) &&
-            Objects.equals(this.corpCount, showSpResourceResponse.corpCount) &&
-            Objects.equals(this.thirdPartyHardCount, showSpResourceResponse.thirdPartyHardCount) &&
-            Objects.equals(this.hwVisionCount, showSpResourceResponse.hwVisionCount) &&
-            Objects.equals(this.ideaHubCount, showSpResourceResponse.ideaHubCount) &&
-            Objects.equals(this.enablePstn, showSpResourceResponse.enablePstn) &&
-            Objects.equals(this.enableSMS, showSpResourceResponse.enableSMS) &&
-            Objects.equals(this.groupList, showSpResourceResponse.groupList);
+        return Objects.equals(this.te1080pHardCount, showSpResourceResponse.te1080pHardCount)
+            && Objects.equals(this.te720pHardCount, showSpResourceResponse.te720pHardCount)
+            && Objects.equals(this.teSoftCount, showSpResourceResponse.teSoftCount)
+            && Objects.equals(this.roomCount, showSpResourceResponse.roomCount)
+            && Objects.equals(this.recordCapability, showSpResourceResponse.recordCapability)
+            && Objects.equals(this.confCallCount, showSpResourceResponse.confCallCount)
+            && Objects.equals(this.liveCount, showSpResourceResponse.liveCount)
+            && Objects.equals(this.corpCount, showSpResourceResponse.corpCount)
+            && Objects.equals(this.thirdPartyHardCount, showSpResourceResponse.thirdPartyHardCount)
+            && Objects.equals(this.hwVisionCount, showSpResourceResponse.hwVisionCount)
+            && Objects.equals(this.ideaHubCount, showSpResourceResponse.ideaHubCount)
+            && Objects.equals(this.enablePstn, showSpResourceResponse.enablePstn)
+            && Objects.equals(this.enableSMS, showSpResourceResponse.enableSMS)
+            && Objects.equals(this.groupList, showSpResourceResponse.groupList);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(te1080pHardCount, te720pHardCount, teSoftCount, roomCount, recordCapability, confCallCount, liveCount, corpCount, thirdPartyHardCount, hwVisionCount, ideaHubCount, enablePstn, enableSMS, groupList);
+        return Objects.hash(te1080pHardCount,
+            te720pHardCount,
+            teSoftCount,
+            roomCount,
+            recordCapability,
+            confCallCount,
+            liveCount,
+            corpCount,
+            thirdPartyHardCount,
+            hwVisionCount,
+            ideaHubCount,
+            enablePstn,
+            enableSMS,
+            groupList);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -555,16 +485,13 @@ public class ShowSpResourceResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

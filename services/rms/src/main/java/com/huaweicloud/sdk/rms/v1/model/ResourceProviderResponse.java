@@ -1,61 +1,44 @@
 package com.huaweicloud.sdk.rms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.rms.v1.model.ResourceTypeResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 云服务详情
- */
-public class ResourceProviderResponse  {
-
-
+/** 云服务详情 */
+public class ResourceProviderResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provider")
-    
+    @JsonProperty(value = "provider")
+
     private String provider;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="display_name")
-    
+    @JsonProperty(value = "display_name")
+
     private String displayName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="category_display_name")
-    
+    @JsonProperty(value = "category_display_name")
+
     private String categoryDisplayName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_types")
-    
+    @JsonProperty(value = "resource_types")
+
     private List<ResourceTypeResponse> resourceTypes = null;
-    
+
     public ResourceProviderResponse withProvider(String provider) {
         this.provider = provider;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务名称
-     * @return provider
-     */
+    /** 云服务名称
+     * 
+     * @return provider */
     public String getProvider() {
         return provider;
     }
@@ -64,20 +47,14 @@ public class ResourceProviderResponse  {
         this.provider = provider;
     }
 
-    
-
     public ResourceProviderResponse withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务显示名称，可以通过请求Header中的'X-Language'设置语言
-     * @return displayName
-     */
+    /** 云服务显示名称，可以通过请求Header中的'X-Language'设置语言
+     * 
+     * @return displayName */
     public String getDisplayName() {
         return displayName;
     }
@@ -86,20 +63,14 @@ public class ResourceProviderResponse  {
         this.displayName = displayName;
     }
 
-    
-
     public ResourceProviderResponse withCategoryDisplayName(String categoryDisplayName) {
         this.categoryDisplayName = categoryDisplayName;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务类别显示名称，可以通过请求Header中的'X-Language'设置语言
-     * @return categoryDisplayName
-     */
+    /** 云服务类别显示名称，可以通过请求Header中的'X-Language'设置语言
+     * 
+     * @return categoryDisplayName */
     public String getCategoryDisplayName() {
         return categoryDisplayName;
     }
@@ -108,16 +79,13 @@ public class ResourceProviderResponse  {
         this.categoryDisplayName = categoryDisplayName;
     }
 
-    
-
     public ResourceProviderResponse withResourceTypes(List<ResourceTypeResponse> resourceTypes) {
         this.resourceTypes = resourceTypes;
         return this;
     }
 
-    
     public ResourceProviderResponse addResourceTypesItem(ResourceTypeResponse resourceTypesItem) {
-        if(this.resourceTypes == null) {
+        if (this.resourceTypes == null) {
             this.resourceTypes = new ArrayList<>();
         }
         this.resourceTypes.add(resourceTypesItem);
@@ -125,17 +93,16 @@ public class ResourceProviderResponse  {
     }
 
     public ResourceProviderResponse withResourceTypes(Consumer<List<ResourceTypeResponse>> resourceTypesSetter) {
-        if(this.resourceTypes == null) {
+        if (this.resourceTypes == null) {
             this.resourceTypes = new ArrayList<>();
         }
         resourceTypesSetter.accept(this.resourceTypes);
         return this;
     }
 
-    /**
-     * 资源类型列表
-     * @return resourceTypes
-     */
+    /** 资源类型列表
+     * 
+     * @return resourceTypes */
     public List<ResourceTypeResponse> getResourceTypes() {
         return resourceTypes;
     }
@@ -143,8 +110,6 @@ public class ResourceProviderResponse  {
     public void setResourceTypes(List<ResourceTypeResponse> resourceTypes) {
         this.resourceTypes = resourceTypes;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -155,15 +120,17 @@ public class ResourceProviderResponse  {
             return false;
         }
         ResourceProviderResponse resourceProviderResponse = (ResourceProviderResponse) o;
-        return Objects.equals(this.provider, resourceProviderResponse.provider) &&
-            Objects.equals(this.displayName, resourceProviderResponse.displayName) &&
-            Objects.equals(this.categoryDisplayName, resourceProviderResponse.categoryDisplayName) &&
-            Objects.equals(this.resourceTypes, resourceProviderResponse.resourceTypes);
+        return Objects.equals(this.provider, resourceProviderResponse.provider)
+            && Objects.equals(this.displayName, resourceProviderResponse.displayName)
+            && Objects.equals(this.categoryDisplayName, resourceProviderResponse.categoryDisplayName)
+            && Objects.equals(this.resourceTypes, resourceProviderResponse.resourceTypes);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(provider, displayName, categoryDisplayName, resourceTypes);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -175,16 +142,13 @@ public class ResourceProviderResponse  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

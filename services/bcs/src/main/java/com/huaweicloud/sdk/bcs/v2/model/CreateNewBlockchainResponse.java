@@ -1,40 +1,27 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class CreateNewBlockchainResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="blockchain_id")
-    
+    @JsonProperty(value = "blockchain_id")
+
     private String blockchainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="blockchain_name")
-    
+    @JsonProperty(value = "blockchain_name")
+
     private String blockchainName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operation_id")
-    
+    @JsonProperty(value = "operation_id")
+
     private String operationId;
 
     public CreateNewBlockchainResponse withBlockchainId(String blockchainId) {
@@ -42,13 +29,9 @@ public class CreateNewBlockchainResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 服务实例ID
-     * @return blockchainId
-     */
+    /** 服务实例ID
+     * 
+     * @return blockchainId */
     public String getBlockchainId() {
         return blockchainId;
     }
@@ -57,20 +40,14 @@ public class CreateNewBlockchainResponse extends SdkResponse {
         this.blockchainId = blockchainId;
     }
 
-    
-
     public CreateNewBlockchainResponse withBlockchainName(String blockchainName) {
         this.blockchainName = blockchainName;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务实例名
-     * @return blockchainName
-     */
+    /** 服务实例名
+     * 
+     * @return blockchainName */
     public String getBlockchainName() {
         return blockchainName;
     }
@@ -79,20 +56,14 @@ public class CreateNewBlockchainResponse extends SdkResponse {
         this.blockchainName = blockchainName;
     }
 
-    
-
     public CreateNewBlockchainResponse withOperationId(String operationId) {
         this.operationId = operationId;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作ID
-     * @return operationId
-     */
+    /** 操作ID
+     * 
+     * @return operationId */
     public String getOperationId() {
         return operationId;
     }
@@ -100,8 +71,6 @@ public class CreateNewBlockchainResponse extends SdkResponse {
     public void setOperationId(String operationId) {
         this.operationId = operationId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +81,16 @@ public class CreateNewBlockchainResponse extends SdkResponse {
             return false;
         }
         CreateNewBlockchainResponse createNewBlockchainResponse = (CreateNewBlockchainResponse) o;
-        return Objects.equals(this.blockchainId, createNewBlockchainResponse.blockchainId) &&
-            Objects.equals(this.blockchainName, createNewBlockchainResponse.blockchainName) &&
-            Objects.equals(this.operationId, createNewBlockchainResponse.operationId);
+        return Objects.equals(this.blockchainId, createNewBlockchainResponse.blockchainId)
+            && Objects.equals(this.blockchainName, createNewBlockchainResponse.blockchainName)
+            && Objects.equals(this.operationId, createNewBlockchainResponse.operationId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(blockchainId, blockchainName, operationId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +101,13 @@ public class CreateNewBlockchainResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

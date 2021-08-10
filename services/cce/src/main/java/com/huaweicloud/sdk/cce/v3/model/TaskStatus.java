@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * TaskStatus
- */
-public class TaskStatus  {
-
-
+/** TaskStatus */
+public class TaskStatus {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobID")
-    
+    @JsonProperty(value = "jobID")
+
     private String jobID;
 
     public TaskStatus withJobID(String jobID) {
@@ -28,13 +18,9 @@ public class TaskStatus  {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID，供调用者查询任务进度。
-     * @return jobID
-     */
+    /** 任务ID，供调用者查询任务进度。
+     * 
+     * @return jobID */
     public String getJobID() {
         return jobID;
     }
@@ -42,8 +28,6 @@ public class TaskStatus  {
     public void setJobID(String jobID) {
         this.jobID = jobID;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class TaskStatus  {
         TaskStatus taskStatus = (TaskStatus) o;
         return Objects.equals(this.jobID, taskStatus.jobID);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobID);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class TaskStatus  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

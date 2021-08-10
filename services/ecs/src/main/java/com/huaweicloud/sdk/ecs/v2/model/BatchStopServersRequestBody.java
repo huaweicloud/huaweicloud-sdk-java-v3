@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.BatchStopServersOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * This is a auto create Body Object
- */
-public class BatchStopServersRequestBody  {
-
-
+/** This is a auto create Body Object */
+public class BatchStopServersRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os-stop")
-    
+    @JsonProperty(value = "os-stop")
+
     private BatchStopServersOption osStop;
 
     public BatchStopServersRequestBody withOsStop(BatchStopServersOption osStop) {
@@ -30,19 +20,17 @@ public class BatchStopServersRequestBody  {
     }
 
     public BatchStopServersRequestBody withOsStop(Consumer<BatchStopServersOption> osStopSetter) {
-        if(this.osStop == null ){
+        if (this.osStop == null) {
             this.osStop = new BatchStopServersOption();
             osStopSetter.accept(this.osStop);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get osStop
-     * @return osStop
-     */
+    /** Get osStop
+     * 
+     * @return osStop */
     public BatchStopServersOption getOsStop() {
         return osStop;
     }
@@ -50,8 +38,6 @@ public class BatchStopServersRequestBody  {
     public void setOsStop(BatchStopServersOption osStop) {
         this.osStop = osStop;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class BatchStopServersRequestBody  {
         BatchStopServersRequestBody batchStopServersRequestBody = (BatchStopServersRequestBody) o;
         return Objects.equals(this.osStop, batchStopServersRequestBody.osStop);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(osStop);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class BatchStopServersRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

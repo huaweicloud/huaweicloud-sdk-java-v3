@@ -1,47 +1,34 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * spec是集合类的元素类型，内容为插件实例安装/升级的具体请求信息
- */
-public class InstanceRequestSpec  {
-
-
+/** spec是集合类的元素类型，内容为插件实例安装/升级的具体请求信息 */
+public class InstanceRequestSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="clusterID")
-    
+    @JsonProperty(value = "clusterID")
+
     private String clusterID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="values")
-    
+    @JsonProperty(value = "values")
+
     private Map<String, Object> values = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="addonTemplateName")
-    
+    @JsonProperty(value = "addonTemplateName")
+
     private String addonTemplateName;
 
     public InstanceRequestSpec withVersion(String version) {
@@ -49,13 +36,9 @@ public class InstanceRequestSpec  {
         return this;
     }
 
-    
-
-
-    /**
-     * 待安装、升级插件的具体版本版本号，例如1.0.0
-     * @return version
-     */
+    /** 待安装、升级插件的具体版本版本号，例如1.0.0
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -64,20 +47,14 @@ public class InstanceRequestSpec  {
         this.version = version;
     }
 
-    
-
     public InstanceRequestSpec withClusterID(String clusterID) {
         this.clusterID = clusterID;
         return this;
     }
 
-    
-
-
-    /**
-     * 集群id
-     * @return clusterID
-     */
+    /** 集群id
+     * 
+     * @return clusterID */
     public String getClusterID() {
         return clusterID;
     }
@@ -86,17 +63,13 @@ public class InstanceRequestSpec  {
         this.clusterID = clusterID;
     }
 
-    
-
     public InstanceRequestSpec withValues(Map<String, Object> values) {
         this.values = values;
         return this;
     }
 
-    
-
     public InstanceRequestSpec putValuesItem(String key, Object valuesItem) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new HashMap<>();
         }
         this.values.put(key, valuesItem);
@@ -104,16 +77,16 @@ public class InstanceRequestSpec  {
     }
 
     public InstanceRequestSpec withValues(Consumer<Map<String, Object>> valuesSetter) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new HashMap<>();
         }
         valuesSetter.accept(this.values);
         return this;
     }
-    /**
-     * 插件模板安装参数（各插件不同），升级插件时需要填写全量安装参数，未填写参数将使用插件模板中的默认值，当前插件安装参数可通过查询插件实例接口获取。
-     * @return values
-     */
+
+    /** 插件模板安装参数（各插件不同），升级插件时需要填写全量安装参数，未填写参数将使用插件模板中的默认值，当前插件安装参数可通过查询插件实例接口获取。
+     * 
+     * @return values */
     public Map<String, Object> getValues() {
         return values;
     }
@@ -122,20 +95,14 @@ public class InstanceRequestSpec  {
         this.values = values;
     }
 
-    
-
     public InstanceRequestSpec withAddonTemplateName(String addonTemplateName) {
         this.addonTemplateName = addonTemplateName;
         return this;
     }
 
-    
-
-
-    /**
-     * 待安装插件模板名称，如coredns
-     * @return addonTemplateName
-     */
+    /** 待安装插件模板名称，如coredns
+     * 
+     * @return addonTemplateName */
     public String getAddonTemplateName() {
         return addonTemplateName;
     }
@@ -143,8 +110,6 @@ public class InstanceRequestSpec  {
     public void setAddonTemplateName(String addonTemplateName) {
         this.addonTemplateName = addonTemplateName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -155,15 +120,17 @@ public class InstanceRequestSpec  {
             return false;
         }
         InstanceRequestSpec instanceRequestSpec = (InstanceRequestSpec) o;
-        return Objects.equals(this.version, instanceRequestSpec.version) &&
-            Objects.equals(this.clusterID, instanceRequestSpec.clusterID) &&
-            Objects.equals(this.values, instanceRequestSpec.values) &&
-            Objects.equals(this.addonTemplateName, instanceRequestSpec.addonTemplateName);
+        return Objects.equals(this.version, instanceRequestSpec.version)
+            && Objects.equals(this.clusterID, instanceRequestSpec.clusterID)
+            && Objects.equals(this.values, instanceRequestSpec.values)
+            && Objects.equals(this.addonTemplateName, instanceRequestSpec.addonTemplateName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(version, clusterID, values, addonTemplateName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -175,16 +142,13 @@ public class InstanceRequestSpec  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

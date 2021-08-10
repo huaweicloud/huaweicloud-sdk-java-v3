@@ -1,37 +1,25 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ims.v2.model.GlanceImageMembers;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class GlanceListImageMembersResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="members")
-    
+    @JsonProperty(value = "members")
+
     private List<GlanceImageMembers> members = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="schema")
-    
+    @JsonProperty(value = "schema")
+
     private String schema;
 
     public GlanceListImageMembersResponse withMembers(List<GlanceImageMembers> members) {
@@ -39,9 +27,8 @@ public class GlanceListImageMembersResponse extends SdkResponse {
         return this;
     }
 
-    
     public GlanceListImageMembersResponse addMembersItem(GlanceImageMembers membersItem) {
-        if(this.members == null) {
+        if (this.members == null) {
             this.members = new ArrayList<>();
         }
         this.members.add(membersItem);
@@ -49,17 +36,16 @@ public class GlanceListImageMembersResponse extends SdkResponse {
     }
 
     public GlanceListImageMembersResponse withMembers(Consumer<List<GlanceImageMembers>> membersSetter) {
-        if(this.members == null) {
+        if (this.members == null) {
             this.members = new ArrayList<>();
         }
         membersSetter.accept(this.members);
         return this;
     }
 
-    /**
-     * 成员信息
-     * @return members
-     */
+    /** 成员信息
+     * 
+     * @return members */
     public List<GlanceImageMembers> getMembers() {
         return members;
     }
@@ -68,20 +54,14 @@ public class GlanceListImageMembersResponse extends SdkResponse {
         this.members = members;
     }
 
-    
-
     public GlanceListImageMembersResponse withSchema(String schema) {
         this.schema = schema;
         return this;
     }
 
-    
-
-
-    /**
-     * 视图信息
-     * @return schema
-     */
+    /** 视图信息
+     * 
+     * @return schema */
     public String getSchema() {
         return schema;
     }
@@ -89,8 +69,6 @@ public class GlanceListImageMembersResponse extends SdkResponse {
     public void setSchema(String schema) {
         this.schema = schema;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -101,13 +79,15 @@ public class GlanceListImageMembersResponse extends SdkResponse {
             return false;
         }
         GlanceListImageMembersResponse glanceListImageMembersResponse = (GlanceListImageMembersResponse) o;
-        return Objects.equals(this.members, glanceListImageMembersResponse.members) &&
-            Objects.equals(this.schema, glanceListImageMembersResponse.schema);
+        return Objects.equals(this.members, glanceListImageMembersResponse.members)
+            && Objects.equals(this.schema, glanceListImageMembersResponse.schema);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(members, schema);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,16 +97,13 @@ public class GlanceListImageMembersResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

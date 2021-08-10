@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vpc.v2.model.NeutronUpdateSecurityGroupRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class NeutronUpdateSecurityGroupRequest  {
-
-
+/** Request Object */
+public class NeutronUpdateSecurityGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_id")
-    
+    @JsonProperty(value = "security_group_id")
+
     private String securityGroupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private NeutronUpdateSecurityGroupRequestBody body;
 
     public NeutronUpdateSecurityGroupRequest withSecurityGroupId(String securityGroupId) {
@@ -35,13 +24,9 @@ public class NeutronUpdateSecurityGroupRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组ID
-     * @return securityGroupId
-     */
+    /** 安全组ID
+     * 
+     * @return securityGroupId */
     public String getSecurityGroupId() {
         return securityGroupId;
     }
@@ -50,27 +35,23 @@ public class NeutronUpdateSecurityGroupRequest  {
         this.securityGroupId = securityGroupId;
     }
 
-    
-
     public NeutronUpdateSecurityGroupRequest withBody(NeutronUpdateSecurityGroupRequestBody body) {
         this.body = body;
         return this;
     }
 
     public NeutronUpdateSecurityGroupRequest withBody(Consumer<NeutronUpdateSecurityGroupRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new NeutronUpdateSecurityGroupRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public NeutronUpdateSecurityGroupRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class NeutronUpdateSecurityGroupRequest  {
     public void setBody(NeutronUpdateSecurityGroupRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class NeutronUpdateSecurityGroupRequest  {
             return false;
         }
         NeutronUpdateSecurityGroupRequest neutronUpdateSecurityGroupRequest = (NeutronUpdateSecurityGroupRequest) o;
-        return Objects.equals(this.securityGroupId, neutronUpdateSecurityGroupRequest.securityGroupId) &&
-            Objects.equals(this.body, neutronUpdateSecurityGroupRequest.body);
+        return Objects.equals(this.securityGroupId, neutronUpdateSecurityGroupRequest.securityGroupId)
+            && Objects.equals(this.body, neutronUpdateSecurityGroupRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(securityGroupId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class NeutronUpdateSecurityGroupRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

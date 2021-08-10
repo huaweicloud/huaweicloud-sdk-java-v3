@@ -1,52 +1,32 @@
 package com.huaweicloud.sdk.live.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.time.OffsetDateTime;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * DecoupledLiveDomainInfo
- */
-public class DecoupledLiveDomainInfo  {
-
-
+/** DecoupledLiveDomainInfo */
+public class DecoupledLiveDomainInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
+
     private String domain;
-    /**
-     * 域名类型
-     */
+
+    /** 域名类型 */
     public static final class DomainTypeEnum {
 
-        
-        /**
-         * Enum PULL for value: "pull"
-         */
+        /** Enum PULL for value: "pull" */
         public static final DomainTypeEnum PULL = new DomainTypeEnum("pull");
-        
-        /**
-         * Enum PUSH for value: "push"
-         */
+
+        /** Enum PUSH for value: "push" */
         public static final DomainTypeEnum PUSH = new DomainTypeEnum("push");
-        
 
         private static final Map<String, DomainTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -75,7 +55,7 @@ public class DecoupledLiveDomainInfo  {
 
         @JsonCreator
         public static DomainTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DomainTypeEnum result = STATIC_FIELDS.get(value);
@@ -86,7 +66,7 @@ public class DecoupledLiveDomainInfo  {
         }
 
         public static DomainTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DomainTypeEnum result = STATIC_FIELDS.get(value);
@@ -110,62 +90,40 @@ public class DecoupledLiveDomainInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_type")
-    
+    @JsonProperty(value = "domain_type")
+
     private DomainTypeEnum domainType;
-    /**
-     * CDN厂商
-     */
+
+    /** CDN厂商 */
     public static final class VendorEnum {
 
-        
-        /**
-         * Enum CHINANETCENTER for value: "ChinaNetCenter"
-         */
+        /** Enum CHINANETCENTER for value: "ChinaNetCenter" */
         public static final VendorEnum CHINANETCENTER = new VendorEnum("ChinaNetCenter");
-        
-        /**
-         * Enum KINGSOFT for value: "KingSoft"
-         */
+
+        /** Enum KINGSOFT for value: "KingSoft" */
         public static final VendorEnum KINGSOFT = new VendorEnum("KingSoft");
-        
-        /**
-         * Enum TENCENT for value: "Tencent"
-         */
+
+        /** Enum TENCENT for value: "Tencent" */
         public static final VendorEnum TENCENT = new VendorEnum("Tencent");
-        
-        /**
-         * Enum UCDN for value: "uCDN"
-         */
+
+        /** Enum UCDN for value: "uCDN" */
         public static final VendorEnum UCDN = new VendorEnum("uCDN");
-        
-        /**
-         * Enum TENCENTOUTSIDE for value: "TencentOutside"
-         */
+
+        /** Enum TENCENTOUTSIDE for value: "TencentOutside" */
         public static final VendorEnum TENCENTOUTSIDE = new VendorEnum("TencentOutside");
-        
-        /**
-         * Enum DNION for value: "Dnion"
-         */
+
+        /** Enum DNION for value: "Dnion" */
         public static final VendorEnum DNION = new VendorEnum("Dnion");
-        
-        /**
-         * Enum BAISHAN for value: "Baishan"
-         */
+
+        /** Enum BAISHAN for value: "Baishan" */
         public static final VendorEnum BAISHAN = new VendorEnum("Baishan");
-        
-        /**
-         * Enum BAIDU for value: "Baidu"
-         */
+
+        /** Enum BAIDU for value: "Baidu" */
         public static final VendorEnum BAIDU = new VendorEnum("Baidu");
-        
-        /**
-         * Enum ONETHING for value: "Onething"
-         */
+
+        /** Enum ONETHING for value: "Onething" */
         public static final VendorEnum ONETHING = new VendorEnum("Onething");
-        
 
         private static final Map<String, VendorEnum> STATIC_FIELDS = createStaticFields();
 
@@ -201,7 +159,7 @@ public class DecoupledLiveDomainInfo  {
 
         @JsonCreator
         public static VendorEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             VendorEnum result = STATIC_FIELDS.get(value);
@@ -212,7 +170,7 @@ public class DecoupledLiveDomainInfo  {
         }
 
         public static VendorEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             VendorEnum result = STATIC_FIELDS.get(value);
@@ -236,44 +194,32 @@ public class DecoupledLiveDomainInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vendor")
-    
+    @JsonProperty(value = "vendor")
+
     private VendorEnum vendor;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
+
     private String region;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_cname")
-    
+    @JsonProperty(value = "domain_cname")
+
     private String domainCname;
-    /**
-     * 直播域名的状态
-     */
+
+    /** 直播域名的状态 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum ON for value: "on"
-         */
+        /** Enum ON for value: "on" */
         public static final StatusEnum ON = new StatusEnum("on");
-        
-        /**
-         * Enum OFF for value: "off"
-         */
+
+        /** Enum OFF for value: "off" */
         public static final StatusEnum OFF = new StatusEnum("off");
-        
-        /**
-         * Enum CONFIGURING for value: "configuring"
-         */
+
+        /** Enum CONFIGURING for value: "configuring" */
         public static final StatusEnum CONFIGURING = new StatusEnum("configuring");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -303,7 +249,7 @@ public class DecoupledLiveDomainInfo  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -314,7 +260,7 @@ public class DecoupledLiveDomainInfo  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -338,22 +284,19 @@ public class DecoupledLiveDomainInfo  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="related_domain")
-    
+    @JsonProperty(value = "related_domain")
+
     private String relatedDomain;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private OffsetDateTime createTime;
 
     public DecoupledLiveDomainInfo withDomain(String domain) {
@@ -361,13 +304,9 @@ public class DecoupledLiveDomainInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 直播域名
-     * @return domain
-     */
+    /** 直播域名
+     * 
+     * @return domain */
     public String getDomain() {
         return domain;
     }
@@ -376,20 +315,14 @@ public class DecoupledLiveDomainInfo  {
         this.domain = domain;
     }
 
-    
-
     public DecoupledLiveDomainInfo withDomainType(DomainTypeEnum domainType) {
         this.domainType = domainType;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名类型
-     * @return domainType
-     */
+    /** 域名类型
+     * 
+     * @return domainType */
     public DomainTypeEnum getDomainType() {
         return domainType;
     }
@@ -398,20 +331,14 @@ public class DecoupledLiveDomainInfo  {
         this.domainType = domainType;
     }
 
-    
-
     public DecoupledLiveDomainInfo withVendor(VendorEnum vendor) {
         this.vendor = vendor;
         return this;
     }
 
-    
-
-
-    /**
-     * CDN厂商
-     * @return vendor
-     */
+    /** CDN厂商
+     * 
+     * @return vendor */
     public VendorEnum getVendor() {
         return vendor;
     }
@@ -420,20 +347,14 @@ public class DecoupledLiveDomainInfo  {
         this.vendor = vendor;
     }
 
-    
-
     public DecoupledLiveDomainInfo withRegion(String region) {
         this.region = region;
         return this;
     }
 
-    
-
-
-    /**
-     * 直播所属直播中心
-     * @return region
-     */
+    /** 直播所属直播中心
+     * 
+     * @return region */
     public String getRegion() {
         return region;
     }
@@ -442,20 +363,14 @@ public class DecoupledLiveDomainInfo  {
         this.region = region;
     }
 
-    
-
     public DecoupledLiveDomainInfo withDomainCname(String domainCname) {
         this.domainCname = domainCname;
         return this;
     }
 
-    
-
-
-    /**
-     * 直播域名的CName
-     * @return domainCname
-     */
+    /** 直播域名的CName
+     * 
+     * @return domainCname */
     public String getDomainCname() {
         return domainCname;
     }
@@ -464,20 +379,14 @@ public class DecoupledLiveDomainInfo  {
         this.domainCname = domainCname;
     }
 
-    
-
     public DecoupledLiveDomainInfo withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 直播域名的状态
-     * @return status
-     */
+    /** 直播域名的状态
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -486,20 +395,14 @@ public class DecoupledLiveDomainInfo  {
         this.status = status;
     }
 
-    
-
     public DecoupledLiveDomainInfo withRelatedDomain(String relatedDomain) {
         this.relatedDomain = relatedDomain;
         return this;
     }
 
-    
-
-
-    /**
-     * 播放域名关联的推流域名（只有domain_type为pull的时候有效）
-     * @return relatedDomain
-     */
+    /** 播放域名关联的推流域名（只有domain_type为pull的时候有效）
+     * 
+     * @return relatedDomain */
     public String getRelatedDomain() {
         return relatedDomain;
     }
@@ -508,20 +411,14 @@ public class DecoupledLiveDomainInfo  {
         this.relatedDomain = relatedDomain;
     }
 
-    
-
     public DecoupledLiveDomainInfo withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 域名创建时间，格式：yyyy-mm-ddThh:mm:ssZ，UTC时间
-     * @return createTime
-     */
+    /** 域名创建时间，格式：yyyy-mm-ddThh:mm:ssZ，UTC时间
+     * 
+     * @return createTime */
     public OffsetDateTime getCreateTime() {
         return createTime;
     }
@@ -529,8 +426,6 @@ public class DecoupledLiveDomainInfo  {
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -541,19 +436,21 @@ public class DecoupledLiveDomainInfo  {
             return false;
         }
         DecoupledLiveDomainInfo decoupledLiveDomainInfo = (DecoupledLiveDomainInfo) o;
-        return Objects.equals(this.domain, decoupledLiveDomainInfo.domain) &&
-            Objects.equals(this.domainType, decoupledLiveDomainInfo.domainType) &&
-            Objects.equals(this.vendor, decoupledLiveDomainInfo.vendor) &&
-            Objects.equals(this.region, decoupledLiveDomainInfo.region) &&
-            Objects.equals(this.domainCname, decoupledLiveDomainInfo.domainCname) &&
-            Objects.equals(this.status, decoupledLiveDomainInfo.status) &&
-            Objects.equals(this.relatedDomain, decoupledLiveDomainInfo.relatedDomain) &&
-            Objects.equals(this.createTime, decoupledLiveDomainInfo.createTime);
+        return Objects.equals(this.domain, decoupledLiveDomainInfo.domain)
+            && Objects.equals(this.domainType, decoupledLiveDomainInfo.domainType)
+            && Objects.equals(this.vendor, decoupledLiveDomainInfo.vendor)
+            && Objects.equals(this.region, decoupledLiveDomainInfo.region)
+            && Objects.equals(this.domainCname, decoupledLiveDomainInfo.domainCname)
+            && Objects.equals(this.status, decoupledLiveDomainInfo.status)
+            && Objects.equals(this.relatedDomain, decoupledLiveDomainInfo.relatedDomain)
+            && Objects.equals(this.createTime, decoupledLiveDomainInfo.createTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domain, domainType, vendor, region, domainCname, status, relatedDomain, createTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -569,16 +466,13 @@ public class DecoupledLiveDomainInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

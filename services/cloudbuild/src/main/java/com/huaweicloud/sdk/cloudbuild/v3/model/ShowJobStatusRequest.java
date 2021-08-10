@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.cloudbuild.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowJobStatusRequest  {
-
-
+/** Request Object */
+public class ShowJobStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
+
     private String jobId;
 
     public ShowJobStatusRequest withJobId(String jobId) {
@@ -28,13 +18,10 @@ public class ShowJobStatusRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 构建的任务ID [获取项目下构建任务列表](https://support.huaweicloud.com/api-codeci/ShowJobListByProjectId.html)； 编辑构建任务时，浏览器URL末尾的32位数字、字母组合的字符串。
-     * @return jobId
-     */
+    /** 构建的任务ID [获取项目下构建任务列表](https://support.huaweicloud.com/api-codeci/ShowJobListByProjectId.html)；
+     * 编辑构建任务时，浏览器URL末尾的32位数字、字母组合的字符串。
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -42,8 +29,6 @@ public class ShowJobStatusRequest  {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +41,12 @@ public class ShowJobStatusRequest  {
         ShowJobStatusRequest showJobStatusRequest = (ShowJobStatusRequest) o;
         return Objects.equals(this.jobId, showJobStatusRequest.jobId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +55,13 @@ public class ShowJobStatusRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

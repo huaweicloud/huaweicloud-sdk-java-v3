@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.ocr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ocr.v1.model.DriverLicenseRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class RecognizeDriverLicenseRequest  {
-
-
+/** Request Object */
+public class RecognizeDriverLicenseRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private DriverLicenseRequestBody body;
 
     public RecognizeDriverLicenseRequest withBody(DriverLicenseRequestBody body) {
@@ -30,19 +20,17 @@ public class RecognizeDriverLicenseRequest  {
     }
 
     public RecognizeDriverLicenseRequest withBody(Consumer<DriverLicenseRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new DriverLicenseRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public DriverLicenseRequestBody getBody() {
         return body;
     }
@@ -50,8 +38,6 @@ public class RecognizeDriverLicenseRequest  {
     public void setBody(DriverLicenseRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class RecognizeDriverLicenseRequest  {
         RecognizeDriverLicenseRequest recognizeDriverLicenseRequest = (RecognizeDriverLicenseRequest) o;
         return Objects.equals(this.body, recognizeDriverLicenseRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class RecognizeDriverLicenseRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

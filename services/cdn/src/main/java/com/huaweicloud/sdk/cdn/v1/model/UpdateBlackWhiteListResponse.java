@@ -1,40 +1,27 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class UpdateBlackWhiteListResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code")
-    
+    @JsonProperty(value = "code")
+
     private String code;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="result")
-    
+    @JsonProperty(value = "result")
+
     private String result;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data")
-    
+    @JsonProperty(value = "data")
+
     private Object data;
 
     public UpdateBlackWhiteListResponse withCode(String code) {
@@ -42,13 +29,9 @@ public class UpdateBlackWhiteListResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 编码
-     * @return code
-     */
+    /** 编码
+     * 
+     * @return code */
     public String getCode() {
         return code;
     }
@@ -57,20 +40,14 @@ public class UpdateBlackWhiteListResponse extends SdkResponse {
         this.code = code;
     }
 
-    
-
     public UpdateBlackWhiteListResponse withResult(String result) {
         this.result = result;
         return this;
     }
 
-    
-
-
-    /**
-     * 结果
-     * @return result
-     */
+    /** 结果
+     * 
+     * @return result */
     public String getResult() {
         return result;
     }
@@ -79,20 +56,14 @@ public class UpdateBlackWhiteListResponse extends SdkResponse {
         this.result = result;
     }
 
-    
-
     public UpdateBlackWhiteListResponse withData(Object data) {
         this.data = data;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据
-     * @return data
-     */
+    /** 数据
+     * 
+     * @return data */
     public Object getData() {
         return data;
     }
@@ -100,8 +71,6 @@ public class UpdateBlackWhiteListResponse extends SdkResponse {
     public void setData(Object data) {
         this.data = data;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +81,16 @@ public class UpdateBlackWhiteListResponse extends SdkResponse {
             return false;
         }
         UpdateBlackWhiteListResponse updateBlackWhiteListResponse = (UpdateBlackWhiteListResponse) o;
-        return Objects.equals(this.code, updateBlackWhiteListResponse.code) &&
-            Objects.equals(this.result, updateBlackWhiteListResponse.result) &&
-            Objects.equals(this.data, updateBlackWhiteListResponse.data);
+        return Objects.equals(this.code, updateBlackWhiteListResponse.code)
+            && Objects.equals(this.result, updateBlackWhiteListResponse.result)
+            && Objects.equals(this.data, updateBlackWhiteListResponse.data);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(code, result, data);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +101,13 @@ public class UpdateBlackWhiteListResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

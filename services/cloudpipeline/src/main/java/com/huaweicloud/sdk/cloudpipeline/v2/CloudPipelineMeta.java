@@ -1,200 +1,185 @@
 package com.huaweicloud.sdk.cloudpipeline.v2;
 
+import com.huaweicloud.sdk.cloudpipeline.v2.model.*;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.cloudpipeline.v2.model.*;
+
 import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class CloudPipelineMeta {
 
-    public static final HttpRequestDef<BatchShowPipelinesStatusRequest, BatchShowPipelinesStatusResponse> batchShowPipelinesStatus = genForbatchShowPipelinesStatus();
+    public static final HttpRequestDef<BatchShowPipelinesStatusRequest, BatchShowPipelinesStatusResponse> batchShowPipelinesStatus =
+        genForbatchShowPipelinesStatus();
 
     private static HttpRequestDef<BatchShowPipelinesStatusRequest, BatchShowPipelinesStatusResponse> genForbatchShowPipelinesStatus() {
         // basic
         HttpRequestDef.Builder<BatchShowPipelinesStatusRequest, BatchShowPipelinesStatusResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, BatchShowPipelinesStatusRequest.class, BatchShowPipelinesStatusResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET, BatchShowPipelinesStatusRequest.class, BatchShowPipelinesStatusResponse.class)
                 .withName("BatchShowPipelinesStatus")
                 .withUri("/v3/pipelines/status")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("pipeline_ids",
+        builder.<String>withRequestField("pipeline_ids",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchShowPipelinesStatusRequest::getPipelineIds, (req, v) -> {
                 req.setPipelineIds(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchShowPipelinesStatusRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.<List<PipelineExecuteStates>>withResponseField(
-            "body",
+
+        builder.<List<PipelineExecuteStates>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(BatchShowPipelinesStatusResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(BatchShowPipelinesStatusResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            }).withInnerContainerType(PipelineExecuteStates.class)
-        );
-
+            }).withInnerContainerType(PipelineExecuteStates.class));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreatePipelineByTemplateRequest, CreatePipelineByTemplateResponse> createPipelineByTemplate = genForcreatePipelineByTemplate();
+    public static final HttpRequestDef<CreatePipelineByTemplateRequest, CreatePipelineByTemplateResponse> createPipelineByTemplate =
+        genForcreatePipelineByTemplate();
 
     private static HttpRequestDef<CreatePipelineByTemplateRequest, CreatePipelineByTemplateResponse> genForcreatePipelineByTemplate() {
         // basic
         HttpRequestDef.Builder<CreatePipelineByTemplateRequest, CreatePipelineByTemplateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreatePipelineByTemplateRequest.class, CreatePipelineByTemplateResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreatePipelineByTemplateRequest.class, CreatePipelineByTemplateResponse.class)
                 .withName("CreatePipelineByTemplate")
                 .withUri("/v3/templates/task")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("X-Language",
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreatePipelineByTemplateRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<TemplateCddl>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TemplateCddl.class,
+            TypeCasts.uncheckedConversion(TemplateCddl.class),
             f -> f.withMarshaller(CreatePipelineByTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse> listPipelineSimpleInfo = genForlistPipelineSimpleInfo();
+    public static final HttpRequestDef<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse> listPipelineSimpleInfo =
+        genForlistPipelineSimpleInfo();
 
     private static HttpRequestDef<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse> genForlistPipelineSimpleInfo() {
         // basic
-        HttpRequestDef.Builder<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ListPipelineSimpleInfoRequest.class, ListPipelineSimpleInfoResponse.class)
-                .withName("ListPipelineSimpleInfo")
-                .withUri("/v3/pipelines/list")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ListPipelineSimpleInfoRequest, ListPipelineSimpleInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListPipelineSimpleInfoRequest.class, ListPipelineSimpleInfoResponse.class)
+            .withName("ListPipelineSimpleInfo")
+            .withUri("/v3/pipelines/list")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("X-Language",
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPipelineSimpleInfoRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ListPipelineSimpleInfoRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            ListPipelineSimpleInfoRequestBody.class,
+            TypeCasts.uncheckedConversion(ListPipelineSimpleInfoRequestBody.class),
             f -> f.withMarshaller(ListPipelineSimpleInfoRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPipleineBuildResultRequest, ListPipleineBuildResultResponse> listPipleineBuildResult = genForlistPipleineBuildResult();
+    public static final HttpRequestDef<ListPipleineBuildResultRequest, ListPipleineBuildResultResponse> listPipleineBuildResult =
+        genForlistPipleineBuildResult();
 
     private static HttpRequestDef<ListPipleineBuildResultRequest, ListPipleineBuildResultResponse> genForlistPipleineBuildResult() {
         // basic
-        HttpRequestDef.Builder<ListPipleineBuildResultRequest, ListPipleineBuildResultResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListPipleineBuildResultRequest.class, ListPipleineBuildResultResponse.class)
-                .withName("ListPipleineBuildResult")
-                .withUri("/v3/pipelines/build-result")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ListPipleineBuildResultRequest, ListPipleineBuildResultResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListPipleineBuildResultRequest.class, ListPipleineBuildResultResponse.class)
+            .withName("ListPipleineBuildResult")
+            .withUri("/v3/pipelines/build-result")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("project_id",
+        builder.<String>withRequestField("project_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPipleineBuildResultRequest::getProjectId, (req, v) -> {
                 req.setProjectId(v);
-            })
-        );
-        builder.withRequestField("start_date",
+            }));
+        builder.<String>withRequestField("start_date",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPipleineBuildResultRequest::getStartDate, (req, v) -> {
                 req.setStartDate(v);
-            })
-        );
-        builder.withRequestField("end_date",
+            }));
+        builder.<String>withRequestField("end_date",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPipleineBuildResultRequest::getEndDate, (req, v) -> {
                 req.setEndDate(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPipleineBuildResultRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPipleineBuildResultRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPipleineBuildResultRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> listTemplates = genForlistTemplates();
+    public static final HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> listTemplates =
+        genForlistTemplates();
 
     private static HttpRequestDef<ListTemplatesRequest, ListTemplatesResponse> genForlistTemplates() {
         // basic
@@ -205,79 +190,70 @@ public class CloudPipelineMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("template_type",
+        builder.<String>withRequestField("template_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTemplatesRequest::getTemplateType, (req, v) -> {
                 req.setTemplateType(v);
-            })
-        );
-        builder.withRequestField("is_build_in",
+            }));
+        builder.<String>withRequestField("is_build_in",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTemplatesRequest::getIsBuildIn, (req, v) -> {
                 req.setIsBuildIn(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTemplatesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTemplatesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTemplatesRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("sort",
+            }));
+        builder.<String>withRequestField("sort",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTemplatesRequest::getSort, (req, v) -> {
                 req.setSort(v);
-            })
-        );
-        builder.withRequestField("asc",
+            }));
+        builder.<String>withRequestField("asc",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTemplatesRequest::getAsc, (req, v) -> {
                 req.setAsc(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTemplatesRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RegisterAgentRequest, RegisterAgentResponse> registerAgent = genForregisterAgent();
+    public static final HttpRequestDef<RegisterAgentRequest, RegisterAgentResponse> registerAgent =
+        genForregisterAgent();
 
     private static HttpRequestDef<RegisterAgentRequest, RegisterAgentResponse> genForregisterAgent() {
         // basic
@@ -288,23 +264,21 @@ public class CloudPipelineMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<SlaveRegister>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            SlaveRegister.class,
+            TypeCasts.uncheckedConversion(SlaveRegister.class),
             f -> f.withMarshaller(RegisterAgentRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RemovePipelineRequest, RemovePipelineResponse> removePipeline = genForremovePipeline();
+    public static final HttpRequestDef<RemovePipelineRequest, RemovePipelineResponse> removePipeline =
+        genForremovePipeline();
 
     private static HttpRequestDef<RemovePipelineRequest, RemovePipelineResponse> genForremovePipeline() {
         // basic
@@ -315,31 +289,28 @@ public class CloudPipelineMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("pipeline_id",
+        builder.<String>withRequestField("pipeline_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RemovePipelineRequest::getPipelineId, (req, v) -> {
                 req.setPipelineId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RemovePipelineRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAgentStatusRequest, ShowAgentStatusResponse> showAgentStatus = genForshowAgentStatus();
+    public static final HttpRequestDef<ShowAgentStatusRequest, ShowAgentStatusResponse> showAgentStatus =
+        genForshowAgentStatus();
 
     private static HttpRequestDef<ShowAgentStatusRequest, ShowAgentStatusResponse> genForshowAgentStatus() {
         // basic
@@ -350,31 +321,28 @@ public class CloudPipelineMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("agent_id",
+        builder.<String>withRequestField("agent_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAgentStatusRequest::getAgentId, (req, v) -> {
                 req.setAgentId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAgentStatusRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowInstanceStatusRequest, ShowInstanceStatusResponse> showInstanceStatus = genForshowInstanceStatus();
+    public static final HttpRequestDef<ShowInstanceStatusRequest, ShowInstanceStatusResponse> showInstanceStatus =
+        genForshowInstanceStatus();
 
     private static HttpRequestDef<ShowInstanceStatusRequest, ShowInstanceStatusResponse> genForshowInstanceStatus() {
         // basic
@@ -385,31 +353,28 @@ public class CloudPipelineMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("task_id",
+        builder.<String>withRequestField("task_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceStatusRequest::getTaskId, (req, v) -> {
                 req.setTaskId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceStatusRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowPipleineStatusRequest, ShowPipleineStatusResponse> showPipleineStatus = genForshowPipleineStatus();
+    public static final HttpRequestDef<ShowPipleineStatusRequest, ShowPipleineStatusResponse> showPipleineStatus =
+        genForshowPipleineStatus();
 
     private static HttpRequestDef<ShowPipleineStatusRequest, ShowPipleineStatusResponse> genForshowPipleineStatus() {
         // basic
@@ -420,39 +385,35 @@ public class CloudPipelineMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("pipeline_id",
+        builder.<String>withRequestField("pipeline_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPipleineStatusRequest::getPipelineId, (req, v) -> {
                 req.setPipelineId(v);
-            })
-        );
-        builder.withRequestField("build_id",
+            }));
+        builder.<String>withRequestField("build_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPipleineStatusRequest::getBuildId, (req, v) -> {
                 req.setBuildId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPipleineStatusRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowTemplateDetailRequest, ShowTemplateDetailResponse> showTemplateDetail = genForshowTemplateDetail();
+    public static final HttpRequestDef<ShowTemplateDetailRequest, ShowTemplateDetailResponse> showTemplateDetail =
+        genForshowTemplateDetail();
 
     private static HttpRequestDef<ShowTemplateDetailRequest, ShowTemplateDetailResponse> genForshowTemplateDetail() {
         // basic
@@ -463,47 +424,42 @@ public class CloudPipelineMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("template_id",
+        builder.<String>withRequestField("template_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTemplateDetailRequest::getTemplateId, (req, v) -> {
                 req.setTemplateId(v);
-            })
-        );
-        builder.withRequestField("template_type",
+            }));
+        builder.<String>withRequestField("template_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTemplateDetailRequest::getTemplateType, (req, v) -> {
                 req.setTemplateType(v);
-            })
-        );
-        builder.withRequestField("source",
+            }));
+        builder.<String>withRequestField("source",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTemplateDetailRequest::getSource, (req, v) -> {
                 req.setSource(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTemplateDetailRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StartNewPipelineRequest, StartNewPipelineResponse> startNewPipeline = genForstartNewPipeline();
+    public static final HttpRequestDef<StartNewPipelineRequest, StartNewPipelineResponse> startNewPipeline =
+        genForstartNewPipeline();
 
     private static HttpRequestDef<StartNewPipelineRequest, StartNewPipelineResponse> genForstartNewPipeline() {
         // basic
@@ -514,39 +470,35 @@ public class CloudPipelineMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("pipeline_id",
+        builder.<String>withRequestField("pipeline_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StartNewPipelineRequest::getPipelineId, (req, v) -> {
                 req.setPipelineId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StartNewPipelineRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<StartPipelineParameters>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            StartPipelineParameters.class,
+            TypeCasts.uncheckedConversion(StartPipelineParameters.class),
             f -> f.withMarshaller(StartNewPipelineRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<StopPipelineNewRequest, StopPipelineNewResponse> stopPipelineNew = genForstopPipelineNew();
+    public static final HttpRequestDef<StopPipelineNewRequest, StopPipelineNewResponse> stopPipelineNew =
+        genForstopPipelineNew();
 
     private static HttpRequestDef<StopPipelineNewRequest, StopPipelineNewResponse> genForstopPipelineNew() {
         // basic
@@ -557,34 +509,29 @@ public class CloudPipelineMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("pipeline_id",
+        builder.<String>withRequestField("pipeline_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopPipelineNewRequest::getPipelineId, (req, v) -> {
                 req.setPipelineId(v);
-            })
-        );
-        builder.withRequestField("build_id",
+            }));
+        builder.<String>withRequestField("build_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopPipelineNewRequest::getBuildId, (req, v) -> {
                 req.setBuildId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopPipelineNewRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListAuditlogsRequest  {
-
-
+/** Request Object */
+public class ListAuditlogsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
+
     private String nodeId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
+
     private String startTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
     public ListAuditlogsRequest withXLanguage(String xLanguage) {
@@ -64,15 +48,11 @@ public class ListAuditlogsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言。
-     * @return xLanguage
-     */
+    /** 语言。
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -81,20 +61,14 @@ public class ListAuditlogsRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListAuditlogsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
-     * @return instanceId
-     */
+    /** 实例ID，可以调用“查询实例列表”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -103,20 +77,14 @@ public class ListAuditlogsRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListAuditlogsRequest withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询审计日志的节点ID。不传值，默认查询所有的节点,集群实例审计日志分布在mongos节点上。
-     * @return nodeId
-     */
+    /** 查询审计日志的节点ID。不传值，默认查询所有的节点,集群实例审计日志分布在mongos节点上。
+     * 
+     * @return nodeId */
     public String getNodeId() {
         return nodeId;
     }
@@ -125,20 +93,14 @@ public class ListAuditlogsRequest  {
         this.nodeId = nodeId;
     }
 
-    
-
     public ListAuditlogsRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * @return startTime
-     */
+    /** 查询开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * 
+     * @return startTime */
     public String getStartTime() {
         return startTime;
     }
@@ -147,20 +109,14 @@ public class ListAuditlogsRequest  {
         this.startTime = startTime;
     }
 
-    
-
     public ListAuditlogsRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”，且大于查询开始时间，时间跨度不超过30天。其中，T指某个时间的开始，Z指时区偏移量，例如北京时间偏移显示为+0800。
-     * @return endTime
-     */
+    /** 查询结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”，且大于查询开始时间，时间跨度不超过30天。其中，T指某个时间的开始，Z指时区偏移量，例如北京时间偏移显示为+0800。
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -169,20 +125,14 @@ public class ListAuditlogsRequest  {
         this.endTime = endTime;
     }
 
-    
-
     public ListAuditlogsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
-     * @return offset
-     */
+    /** 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -191,20 +141,14 @@ public class ListAuditlogsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListAuditlogsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询记录数。取值范围：1~100。不传该参数时，默认查询前100条实例信息。
-     * @return limit
-     */
+    /** 查询记录数。取值范围：1~100。不传该参数时，默认查询前100条实例信息。
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -212,8 +156,6 @@ public class ListAuditlogsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -224,18 +166,20 @@ public class ListAuditlogsRequest  {
             return false;
         }
         ListAuditlogsRequest listAuditlogsRequest = (ListAuditlogsRequest) o;
-        return Objects.equals(this.xLanguage, listAuditlogsRequest.xLanguage) &&
-            Objects.equals(this.instanceId, listAuditlogsRequest.instanceId) &&
-            Objects.equals(this.nodeId, listAuditlogsRequest.nodeId) &&
-            Objects.equals(this.startTime, listAuditlogsRequest.startTime) &&
-            Objects.equals(this.endTime, listAuditlogsRequest.endTime) &&
-            Objects.equals(this.offset, listAuditlogsRequest.offset) &&
-            Objects.equals(this.limit, listAuditlogsRequest.limit);
+        return Objects.equals(this.xLanguage, listAuditlogsRequest.xLanguage)
+            && Objects.equals(this.instanceId, listAuditlogsRequest.instanceId)
+            && Objects.equals(this.nodeId, listAuditlogsRequest.nodeId)
+            && Objects.equals(this.startTime, listAuditlogsRequest.startTime)
+            && Objects.equals(this.endTime, listAuditlogsRequest.endTime)
+            && Objects.equals(this.offset, listAuditlogsRequest.offset)
+            && Objects.equals(this.limit, listAuditlogsRequest.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, nodeId, startTime, endTime, offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -250,16 +194,13 @@ public class ListAuditlogsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

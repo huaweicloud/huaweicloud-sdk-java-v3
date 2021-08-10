@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class DeleteSourceRequest  {
-
-
+/** Request Object */
+public class DeleteSourceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rule_id")
-    
+    @JsonProperty(value = "rule_id")
+
     private String ruleId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_id")
-    
+    @JsonProperty(value = "source_id")
+
     private Integer sourceId;
 
     public DeleteSourceRequest withInstanceId(String instanceId) {
@@ -40,13 +28,9 @@ public class DeleteSourceRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -55,20 +39,14 @@ public class DeleteSourceRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public DeleteSourceRequest withRuleId(String ruleId) {
         this.ruleId = ruleId;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则ID
-     * @return ruleId
-     */
+    /** 规则ID
+     * 
+     * @return ruleId */
     public String getRuleId() {
         return ruleId;
     }
@@ -77,22 +55,14 @@ public class DeleteSourceRequest  {
         this.ruleId = ruleId;
     }
 
-    
-
     public DeleteSourceRequest withSourceId(Integer sourceId) {
         this.sourceId = sourceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 源数据源ID
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return sourceId
-     */
+    /** 源数据源ID minimum: 1 maximum: 999999999999999999
+     * 
+     * @return sourceId */
     public Integer getSourceId() {
         return sourceId;
     }
@@ -100,8 +70,6 @@ public class DeleteSourceRequest  {
     public void setSourceId(Integer sourceId) {
         this.sourceId = sourceId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,14 +80,16 @@ public class DeleteSourceRequest  {
             return false;
         }
         DeleteSourceRequest deleteSourceRequest = (DeleteSourceRequest) o;
-        return Objects.equals(this.instanceId, deleteSourceRequest.instanceId) &&
-            Objects.equals(this.ruleId, deleteSourceRequest.ruleId) &&
-            Objects.equals(this.sourceId, deleteSourceRequest.sourceId);
+        return Objects.equals(this.instanceId, deleteSourceRequest.instanceId)
+            && Objects.equals(this.ruleId, deleteSourceRequest.ruleId)
+            && Objects.equals(this.sourceId, deleteSourceRequest.sourceId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, ruleId, sourceId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -130,16 +100,13 @@ public class DeleteSourceRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

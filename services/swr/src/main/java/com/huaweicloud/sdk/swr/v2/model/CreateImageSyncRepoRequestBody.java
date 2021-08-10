@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.swr.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CreateImageSyncRepoRequestBody
- */
-public class CreateImageSyncRepoRequestBody  {
-
-
+/** CreateImageSyncRepoRequestBody */
+public class CreateImageSyncRepoRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remoteRegionId")
-    
+    @JsonProperty(value = "remoteRegionId")
+
     private String remoteRegionId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remoteNamespace")
-    
+    @JsonProperty(value = "remoteNamespace")
+
     private String remoteNamespace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="syncAuto")
-    
+    @JsonProperty(value = "syncAuto")
+
     private Boolean syncAuto;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="override")
-    
+    @JsonProperty(value = "override")
+
     private Boolean override;
 
     public CreateImageSyncRepoRequestBody withRemoteRegionId(String remoteRegionId) {
@@ -46,13 +33,9 @@ public class CreateImageSyncRepoRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 目标region ID。
-     * @return remoteRegionId
-     */
+    /** 目标region ID。
+     * 
+     * @return remoteRegionId */
     public String getRemoteRegionId() {
         return remoteRegionId;
     }
@@ -61,20 +44,14 @@ public class CreateImageSyncRepoRequestBody  {
         this.remoteRegionId = remoteRegionId;
     }
 
-    
-
     public CreateImageSyncRepoRequestBody withRemoteNamespace(String remoteNamespace) {
         this.remoteNamespace = remoteNamespace;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标组织
-     * @return remoteNamespace
-     */
+    /** 目标组织
+     * 
+     * @return remoteNamespace */
     public String getRemoteNamespace() {
         return remoteNamespace;
     }
@@ -83,20 +60,14 @@ public class CreateImageSyncRepoRequestBody  {
         this.remoteNamespace = remoteNamespace;
     }
 
-    
-
     public CreateImageSyncRepoRequestBody withSyncAuto(Boolean syncAuto) {
         this.syncAuto = syncAuto;
         return this;
     }
 
-    
-
-
-    /**
-     * 自动同步，默认为false
-     * @return syncAuto
-     */
+    /** 自动同步，默认为false
+     * 
+     * @return syncAuto */
     public Boolean getSyncAuto() {
         return syncAuto;
     }
@@ -105,20 +76,14 @@ public class CreateImageSyncRepoRequestBody  {
         this.syncAuto = syncAuto;
     }
 
-    
-
     public CreateImageSyncRepoRequestBody withOverride(Boolean override) {
         this.override = override;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否覆盖，默认为false
-     * @return override
-     */
+    /** 是否覆盖，默认为false
+     * 
+     * @return override */
     public Boolean getOverride() {
         return override;
     }
@@ -126,8 +91,6 @@ public class CreateImageSyncRepoRequestBody  {
     public void setOverride(Boolean override) {
         this.override = override;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class CreateImageSyncRepoRequestBody  {
             return false;
         }
         CreateImageSyncRepoRequestBody createImageSyncRepoRequestBody = (CreateImageSyncRepoRequestBody) o;
-        return Objects.equals(this.remoteRegionId, createImageSyncRepoRequestBody.remoteRegionId) &&
-            Objects.equals(this.remoteNamespace, createImageSyncRepoRequestBody.remoteNamespace) &&
-            Objects.equals(this.syncAuto, createImageSyncRepoRequestBody.syncAuto) &&
-            Objects.equals(this.override, createImageSyncRepoRequestBody.override);
+        return Objects.equals(this.remoteRegionId, createImageSyncRepoRequestBody.remoteRegionId)
+            && Objects.equals(this.remoteNamespace, createImageSyncRepoRequestBody.remoteNamespace)
+            && Objects.equals(this.syncAuto, createImageSyncRepoRequestBody.syncAuto)
+            && Objects.equals(this.override, createImageSyncRepoRequestBody.override);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(remoteRegionId, remoteNamespace, syncAuto, override);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class CreateImageSyncRepoRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

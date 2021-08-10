@@ -1,62 +1,43 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 
  */
-public class NodePoolStatus  {
-
-
+public class NodePoolStatus {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="currentNode")
-    
+    @JsonProperty(value = "currentNode")
+
     private Integer currentNode;
-    /**
-     * 节点池状态，为空时节点池处于可用状态。 - Synchronizing：伸缩中 - Synchronized：节点池更新失败时会被置于此状态 - SoldOut：节点资源售罄 - Deleting：删除中 - Error：错误 
-     */
+
+    /** 节点池状态，为空时节点池处于可用状态。 - Synchronizing：伸缩中 - Synchronized：节点池更新失败时会被置于此状态 - SoldOut：节点资源售罄 - Deleting：删除中 -
+     * Error：错误 */
     public static final class PhaseEnum {
 
-        
-        /**
-         * Enum SYNCHRONIZING for value: "Synchronizing"
-         */
+        /** Enum SYNCHRONIZING for value: "Synchronizing" */
         public static final PhaseEnum SYNCHRONIZING = new PhaseEnum("Synchronizing");
-        
-        /**
-         * Enum SYNCHRONIZED for value: "Synchronized"
-         */
+
+        /** Enum SYNCHRONIZED for value: "Synchronized" */
         public static final PhaseEnum SYNCHRONIZED = new PhaseEnum("Synchronized");
-        
-        /**
-         * Enum SOLDOUT for value: "SoldOut"
-         */
+
+        /** Enum SOLDOUT for value: "SoldOut" */
         public static final PhaseEnum SOLDOUT = new PhaseEnum("SoldOut");
-        
-        /**
-         * Enum DELETING for value: "Deleting"
-         */
+
+        /** Enum DELETING for value: "Deleting" */
         public static final PhaseEnum DELETING = new PhaseEnum("Deleting");
-        
-        /**
-         * Enum ERROR for value: "Error"
-         */
+
+        /** Enum ERROR for value: "Error" */
         public static final PhaseEnum ERROR = new PhaseEnum("Error");
-        
 
         private static final Map<String, PhaseEnum> STATIC_FIELDS = createStaticFields();
 
@@ -88,7 +69,7 @@ public class NodePoolStatus  {
 
         @JsonCreator
         public static PhaseEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             PhaseEnum result = STATIC_FIELDS.get(value);
@@ -99,7 +80,7 @@ public class NodePoolStatus  {
         }
 
         public static PhaseEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             PhaseEnum result = STATIC_FIELDS.get(value);
@@ -123,16 +104,14 @@ public class NodePoolStatus  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="phase")
-    
+    @JsonProperty(value = "phase")
+
     private PhaseEnum phase;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobId")
-    
+    @JsonProperty(value = "jobId")
+
     private String jobId;
 
     public NodePoolStatus withCurrentNode(Integer currentNode) {
@@ -140,13 +119,9 @@ public class NodePoolStatus  {
         return this;
     }
 
-    
-
-
-    /**
-     * 当前节点池中节点数量
-     * @return currentNode
-     */
+    /** 当前节点池中节点数量
+     * 
+     * @return currentNode */
     public Integer getCurrentNode() {
         return currentNode;
     }
@@ -155,20 +130,15 @@ public class NodePoolStatus  {
         this.currentNode = currentNode;
     }
 
-    
-
     public NodePoolStatus withPhase(PhaseEnum phase) {
         this.phase = phase;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点池状态，为空时节点池处于可用状态。 - Synchronizing：伸缩中 - Synchronized：节点池更新失败时会被置于此状态 - SoldOut：节点资源售罄 - Deleting：删除中 - Error：错误 
-     * @return phase
-     */
+    /** 节点池状态，为空时节点池处于可用状态。 - Synchronizing：伸缩中 - Synchronized：节点池更新失败时会被置于此状态 - SoldOut：节点资源售罄 - Deleting：删除中 -
+     * Error：错误
+     * 
+     * @return phase */
     public PhaseEnum getPhase() {
         return phase;
     }
@@ -177,20 +147,14 @@ public class NodePoolStatus  {
         this.phase = phase;
     }
 
-    
-
     public NodePoolStatus withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
 
-    
-
-
-    /**
-     * 节点池删除时的 JobID
-     * @return jobId
-     */
+    /** 节点池删除时的 JobID
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -198,8 +162,6 @@ public class NodePoolStatus  {
     public void setJobId(String jobId) {
         this.jobId = jobId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -210,14 +172,15 @@ public class NodePoolStatus  {
             return false;
         }
         NodePoolStatus nodePoolStatus = (NodePoolStatus) o;
-        return Objects.equals(this.currentNode, nodePoolStatus.currentNode) &&
-            Objects.equals(this.phase, nodePoolStatus.phase) &&
-            Objects.equals(this.jobId, nodePoolStatus.jobId);
+        return Objects.equals(this.currentNode, nodePoolStatus.currentNode)
+            && Objects.equals(this.phase, nodePoolStatus.phase) && Objects.equals(this.jobId, nodePoolStatus.jobId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(currentNode, phase, jobId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -228,16 +191,13 @@ public class NodePoolStatus  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

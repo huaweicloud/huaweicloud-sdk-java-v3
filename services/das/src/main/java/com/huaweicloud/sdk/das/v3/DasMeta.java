@@ -6,14 +6,12 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.das.v3.model.*;
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class DasMeta {
 
-    public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions = genForlistApiVersions();
+    public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions =
+        genForlistApiVersions();
 
     private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForlistApiVersions() {
         // basic
@@ -26,13 +24,12 @@ public class DasMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersion = genForshowApiVersion();
+    public static final HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersion =
+        genForshowApiVersion();
 
     private static HttpRequestDef<ShowApiVersionRequest, ShowApiVersionResponse> genForshowApiVersion() {
         // basic
@@ -43,23 +40,21 @@ public class DasMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("version",
+        builder.<String>withRequestField("version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowApiVersionRequest::getVersion, (req, v) -> {
                 req.setVersion(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ChangeSqlSwitchRequest, ChangeSqlSwitchResponse> changeSqlSwitch = genForchangeSqlSwitch();
+    public static final HttpRequestDef<ChangeSqlSwitchRequest, ChangeSqlSwitchResponse> changeSqlSwitch =
+        genForchangeSqlSwitch();
 
     private static HttpRequestDef<ChangeSqlSwitchRequest, ChangeSqlSwitchResponse> genForchangeSqlSwitch() {
         // basic
@@ -70,77 +65,68 @@ public class DasMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ChangeSqlSwitchRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<ChangeSqlSwitchRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            ChangeSqlSwitchRequest.XLanguageEnum.class,
+            TypeCasts.uncheckedConversion(ChangeSqlSwitchRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ChangeSqlSwitchRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ChangeSqlSwitchBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ChangeSqlSwitchBody.class,
+            TypeCasts.uncheckedConversion(ChangeSqlSwitchBody.class),
             f -> f.withMarshaller(ChangeSqlSwitchRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateSpaceAnalysisTaskRequest, CreateSpaceAnalysisTaskResponse> createSpaceAnalysisTask = genForcreateSpaceAnalysisTask();
+    public static final HttpRequestDef<CreateSpaceAnalysisTaskRequest, CreateSpaceAnalysisTaskResponse> createSpaceAnalysisTask =
+        genForcreateSpaceAnalysisTask();
 
     private static HttpRequestDef<CreateSpaceAnalysisTaskRequest, CreateSpaceAnalysisTaskResponse> genForcreateSpaceAnalysisTask() {
         // basic
-        HttpRequestDef.Builder<CreateSpaceAnalysisTaskRequest, CreateSpaceAnalysisTaskResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateSpaceAnalysisTaskRequest.class, CreateSpaceAnalysisTaskResponse.class)
-                .withName("CreateSpaceAnalysisTask")
-                .withUri("/v3/{project_id}/instances/{instance_id}/space-analysis")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<CreateSpaceAnalysisTaskRequest, CreateSpaceAnalysisTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateSpaceAnalysisTaskRequest.class, CreateSpaceAnalysisTaskResponse.class)
+            .withName("CreateSpaceAnalysisTask")
+            .withUri("/v3/{project_id}/instances/{instance_id}/space-analysis")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateSpaceAnalysisTaskRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<CreateSpaceAnalysisTaskRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            CreateSpaceAnalysisTaskRequest.XLanguageEnum.class,
+            TypeCasts.uncheckedConversion(CreateSpaceAnalysisTaskRequest.XLanguageEnum.class),
             f -> f.withMarshaller(CreateSpaceAnalysisTaskRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateSpaceAnalysisTaskBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateSpaceAnalysisTaskBody.class,
+            TypeCasts.uncheckedConversion(CreateSpaceAnalysisTaskBody.class),
             f -> f.withMarshaller(CreateSpaceAnalysisTaskRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -156,39 +142,35 @@ public class DasMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDbUserRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("db_user_id",
+            }));
+        builder.<String>withRequestField("db_user_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDbUserRequest::getDbUserId, (req, v) -> {
                 req.setDbUserId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<DeleteDbUserRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            DeleteDbUserRequest.XLanguageEnum.class,
+            TypeCasts.uncheckedConversion(DeleteDbUserRequest.XLanguageEnum.class),
             f -> f.withMarshaller(DeleteDbUserRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteProcessRequest, DeleteProcessResponse> deleteProcess = genFordeleteProcess();
+    public static final HttpRequestDef<DeleteProcessRequest, DeleteProcessResponse> deleteProcess =
+        genFordeleteProcess();
 
     private static HttpRequestDef<DeleteProcessRequest, DeleteProcessResponse> genFordeleteProcess() {
         // basic
@@ -199,39 +181,35 @@ public class DasMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteProcessRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<DeleteProcessRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            DeleteProcessRequest.XLanguageEnum.class,
+            TypeCasts.uncheckedConversion(DeleteProcessRequest.XLanguageEnum.class),
             f -> f.withMarshaller(DeleteProcessRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<DeleteProcessReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            DeleteProcessReqBody.class,
+            TypeCasts.uncheckedConversion(DeleteProcessReqBody.class),
             f -> f.withMarshaller(DeleteProcessRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ExportSlowQueryLogsRequest, ExportSlowQueryLogsResponse> exportSlowQueryLogs = genForexportSlowQueryLogs();
+    public static final HttpRequestDef<ExportSlowQueryLogsRequest, ExportSlowQueryLogsResponse> exportSlowQueryLogs =
+        genForexportSlowQueryLogs();
 
     private static HttpRequestDef<ExportSlowQueryLogsRequest, ExportSlowQueryLogsResponse> genForexportSlowQueryLogs() {
         // basic
@@ -242,71 +220,63 @@ public class DasMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExportSlowQueryLogsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("datastore_type",
+            }));
+        builder.<String>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExportSlowQueryLogsRequest::getDatastoreType, (req, v) -> {
                 req.setDatastoreType(v);
-            })
-        );
-        builder.withRequestField("start_at",
+            }));
+        builder.<Long>withRequestField("start_at",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Long.class,
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ExportSlowQueryLogsRequest::getStartAt, (req, v) -> {
                 req.setStartAt(v);
-            })
-        );
-        builder.withRequestField("end_at",
+            }));
+        builder.<Long>withRequestField("end_at",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Long.class,
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ExportSlowQueryLogsRequest::getEndAt, (req, v) -> {
                 req.setEndAt(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ExportSlowQueryLogsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExportSlowQueryLogsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<ExportSlowQueryLogsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            ExportSlowQueryLogsRequest.XLanguageEnum.class,
+            TypeCasts.uncheckedConversion(ExportSlowQueryLogsRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ExportSlowQueryLogsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ExportSqlStatementsRequest, ExportSqlStatementsResponse> exportSqlStatements = genForexportSqlStatements();
+    public static final HttpRequestDef<ExportSqlStatementsRequest, ExportSqlStatementsResponse> exportSqlStatements =
+        genForexportSqlStatements();
 
     private static HttpRequestDef<ExportSqlStatementsRequest, ExportSqlStatementsResponse> genForexportSqlStatements() {
         // basic
@@ -317,66 +287,57 @@ public class DasMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExportSqlStatementsRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("start_at",
+            }));
+        builder.<Long>withRequestField("start_at",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Long.class,
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ExportSqlStatementsRequest::getStartAt, (req, v) -> {
                 req.setStartAt(v);
-            })
-        );
-        builder.withRequestField("end_at",
+            }));
+        builder.<Long>withRequestField("end_at",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Long.class,
+            TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ExportSqlStatementsRequest::getEndAt, (req, v) -> {
                 req.setEndAt(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ExportSqlStatementsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("marker",
+            }));
+        builder.<String>withRequestField("marker",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExportSqlStatementsRequest::getMarker, (req, v) -> {
                 req.setMarker(v);
-            })
-        );
-        builder.withRequestField("datastore_type",
+            }));
+        builder.<String>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExportSqlStatementsRequest::getDatastoreType, (req, v) -> {
                 req.setDatastoreType(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<ExportSqlStatementsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            ExportSqlStatementsRequest.XLanguageEnum.class,
+            TypeCasts.uncheckedConversion(ExportSqlStatementsRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ExportSqlStatementsRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -392,63 +353,56 @@ public class DasMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDbUsersRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDbUsersRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDbUsersRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("db_user_id",
+            }));
+        builder.<String>withRequestField("db_user_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDbUsersRequest::getDbUserId, (req, v) -> {
                 req.setDbUserId(v);
-            })
-        );
-        builder.withRequestField("db_username",
+            }));
+        builder.<String>withRequestField("db_username",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDbUsersRequest::getDbUsername, (req, v) -> {
                 req.setDbUsername(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<ListDbUsersRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            ListDbUsersRequest.XLanguageEnum.class,
+            TypeCasts.uncheckedConversion(ListDbUsersRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListDbUsersRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListInnodbLocksRequest, ListInnodbLocksResponse> listInnodbLocks = genForlistInnodbLocks();
+    public static final HttpRequestDef<ListInnodbLocksRequest, ListInnodbLocksResponse> listInnodbLocks =
+        genForlistInnodbLocks();
 
     private static HttpRequestDef<ListInnodbLocksRequest, ListInnodbLocksResponse> genForlistInnodbLocks() {
         // basic
@@ -459,39 +413,35 @@ public class DasMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInnodbLocksRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("db_user_id",
+            }));
+        builder.<String>withRequestField("db_user_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInnodbLocksRequest::getDbUserId, (req, v) -> {
                 req.setDbUserId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<ListInnodbLocksRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            ListInnodbLocksRequest.XLanguageEnum.class,
+            TypeCasts.uncheckedConversion(ListInnodbLocksRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListInnodbLocksRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListMetadataLocksRequest, ListMetadataLocksResponse> listMetadataLocks = genForlistMetadataLocks();
+    public static final HttpRequestDef<ListMetadataLocksRequest, ListMetadataLocksResponse> listMetadataLocks =
+        genForlistMetadataLocks();
 
     private static HttpRequestDef<ListMetadataLocksRequest, ListMetadataLocksResponse> genForlistMetadataLocks() {
         // basic
@@ -502,63 +452,56 @@ public class DasMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMetadataLocksRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("db_user_id",
+            }));
+        builder.<String>withRequestField("db_user_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMetadataLocksRequest::getDbUserId, (req, v) -> {
                 req.setDbUserId(v);
-            })
-        );
-        builder.withRequestField("thread_id",
+            }));
+        builder.<String>withRequestField("thread_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMetadataLocksRequest::getThreadId, (req, v) -> {
                 req.setThreadId(v);
-            })
-        );
-        builder.withRequestField("database",
+            }));
+        builder.<String>withRequestField("database",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMetadataLocksRequest::getDatabase, (req, v) -> {
                 req.setDatabase(v);
-            })
-        );
-        builder.withRequestField("table",
+            }));
+        builder.<String>withRequestField("table",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMetadataLocksRequest::getTable, (req, v) -> {
                 req.setTable(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<ListMetadataLocksRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            ListMetadataLocksRequest.XLanguageEnum.class,
+            TypeCasts.uncheckedConversion(ListMetadataLocksRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListMetadataLocksRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListProcessesRequest, ListProcessesResponse> listProcesses = genForlistProcesses();
+    public static final HttpRequestDef<ListProcessesRequest, ListProcessesResponse> listProcesses =
+        genForlistProcesses();
 
     private static HttpRequestDef<ListProcessesRequest, ListProcessesResponse> genForlistProcesses() {
         // basic
@@ -569,71 +512,63 @@ public class DasMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListProcessesRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("db_user_id",
+            }));
+        builder.<String>withRequestField("db_user_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListProcessesRequest::getDbUserId, (req, v) -> {
                 req.setDbUserId(v);
-            })
-        );
-        builder.withRequestField("user",
+            }));
+        builder.<String>withRequestField("user",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListProcessesRequest::getUser, (req, v) -> {
                 req.setUser(v);
-            })
-        );
-        builder.withRequestField("database",
+            }));
+        builder.<String>withRequestField("database",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListProcessesRequest::getDatabase, (req, v) -> {
                 req.setDatabase(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListProcessesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListProcessesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<ListProcessesRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            ListProcessesRequest.XLanguageEnum.class,
+            TypeCasts.uncheckedConversion(ListProcessesRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListProcessesRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSpaceAnalysisRequest, ListSpaceAnalysisResponse> listSpaceAnalysis = genForlistSpaceAnalysis();
+    public static final HttpRequestDef<ListSpaceAnalysisRequest, ListSpaceAnalysisResponse> listSpaceAnalysis =
+        genForlistSpaceAnalysis();
 
     private static HttpRequestDef<ListSpaceAnalysisRequest, ListSpaceAnalysisResponse> genForlistSpaceAnalysis() {
         // basic
@@ -644,79 +579,70 @@ public class DasMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSpaceAnalysisRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("object_type",
+            }));
+        builder.<ListSpaceAnalysisRequest.ObjectTypeEnum>withRequestField("object_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ListSpaceAnalysisRequest.ObjectTypeEnum.class,
+            TypeCasts.uncheckedConversion(ListSpaceAnalysisRequest.ObjectTypeEnum.class),
             f -> f.withMarshaller(ListSpaceAnalysisRequest::getObjectType, (req, v) -> {
                 req.setObjectType(v);
-            })
-        );
-        builder.withRequestField("database_id",
+            }));
+        builder.<String>withRequestField("database_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSpaceAnalysisRequest::getDatabaseId, (req, v) -> {
                 req.setDatabaseId(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSpaceAnalysisRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSpaceAnalysisRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("show_instance_info",
+            }));
+        builder.<String>withRequestField("show_instance_info",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSpaceAnalysisRequest::getShowInstanceInfo, (req, v) -> {
                 req.setShowInstanceInfo(v);
-            })
-        );
-        builder.withRequestField("datastore_type",
+            }));
+        builder.<ListSpaceAnalysisRequest.DatastoreTypeEnum>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            ListSpaceAnalysisRequest.DatastoreTypeEnum.class,
+            TypeCasts.uncheckedConversion(ListSpaceAnalysisRequest.DatastoreTypeEnum.class),
             f -> f.withMarshaller(ListSpaceAnalysisRequest::getDatastoreType, (req, v) -> {
                 req.setDatastoreType(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSpaceAnalysisRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RegisterDbUserRequest, RegisterDbUserResponse> registerDbUser = genForregisterDbUser();
+    public static final HttpRequestDef<RegisterDbUserRequest, RegisterDbUserResponse> registerDbUser =
+        genForregisterDbUser();
 
     private static HttpRequestDef<RegisterDbUserRequest, RegisterDbUserResponse> genForregisterDbUser() {
         // basic
@@ -727,34 +653,29 @@ public class DasMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RegisterDbUserRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<RegisterDbUserRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            RegisterDbUserRequest.XLanguageEnum.class,
+            TypeCasts.uncheckedConversion(RegisterDbUserRequest.XLanguageEnum.class),
             f -> f.withMarshaller(RegisterDbUserRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<RegisterDbUserRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            RegisterDbUserRequestBody.class,
+            TypeCasts.uncheckedConversion(RegisterDbUserRequestBody.class),
             f -> f.withMarshaller(RegisterDbUserRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -770,34 +691,29 @@ public class DasMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDbUserRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("db_user_id",
+            }));
+        builder.<String>withRequestField("db_user_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDbUserRequest::getDbUserId, (req, v) -> {
                 req.setDbUserId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<ShowDbUserRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            ShowDbUserRequest.XLanguageEnum.class,
+            TypeCasts.uncheckedConversion(ShowDbUserRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowDbUserRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -813,82 +729,74 @@ public class DasMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("X-Language",
+        builder.<ShowQuotasRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            ShowQuotasRequest.XLanguageEnum.class,
+            TypeCasts.uncheckedConversion(ShowQuotasRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowQuotasRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSqlExecutionPlanRequest, ShowSqlExecutionPlanResponse> showSqlExecutionPlan = genForshowSqlExecutionPlan();
+    public static final HttpRequestDef<ShowSqlExecutionPlanRequest, ShowSqlExecutionPlanResponse> showSqlExecutionPlan =
+        genForshowSqlExecutionPlan();
 
     private static HttpRequestDef<ShowSqlExecutionPlanRequest, ShowSqlExecutionPlanResponse> genForshowSqlExecutionPlan() {
         // basic
-        HttpRequestDef.Builder<ShowSqlExecutionPlanRequest, ShowSqlExecutionPlanResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowSqlExecutionPlanRequest.class, ShowSqlExecutionPlanResponse.class)
-                .withName("ShowSqlExecutionPlan")
-                .withUri("/v3/{project_id}/instances/{instance_id}/sql/explain")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ShowSqlExecutionPlanRequest, ShowSqlExecutionPlanResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowSqlExecutionPlanRequest.class, ShowSqlExecutionPlanResponse.class)
+            .withName("ShowSqlExecutionPlan")
+            .withUri("/v3/{project_id}/instances/{instance_id}/sql/explain")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSqlExecutionPlanRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("db_user_id",
+            }));
+        builder.<String>withRequestField("db_user_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSqlExecutionPlanRequest::getDbUserId, (req, v) -> {
                 req.setDbUserId(v);
-            })
-        );
-        builder.withRequestField("database",
+            }));
+        builder.<String>withRequestField("database",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSqlExecutionPlanRequest::getDatabase, (req, v) -> {
                 req.setDatabase(v);
-            })
-        );
-        builder.withRequestField("sql",
+            }));
+        builder.<String>withRequestField("sql",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSqlExecutionPlanRequest::getSql, (req, v) -> {
                 req.setSql(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<ShowSqlExecutionPlanRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            ShowSqlExecutionPlanRequest.XLanguageEnum.class,
+            TypeCasts.uncheckedConversion(ShowSqlExecutionPlanRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowSqlExecutionPlanRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowSqlSwitchStatusRequest, ShowSqlSwitchStatusResponse> showSqlSwitchStatus = genForshowSqlSwitchStatus();
+    public static final HttpRequestDef<ShowSqlSwitchStatusRequest, ShowSqlSwitchStatusResponse> showSqlSwitchStatus =
+        genForshowSqlSwitchStatus();
 
     private static HttpRequestDef<ShowSqlSwitchStatusRequest, ShowSqlSwitchStatusResponse> genForshowSqlSwitchStatus() {
         // basic
@@ -899,42 +807,36 @@ public class DasMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSqlSwitchStatusRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("type",
+            }));
+        builder.<String>withRequestField("type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSqlSwitchStatusRequest::getType, (req, v) -> {
                 req.setType(v);
-            })
-        );
-        builder.withRequestField("datastore_type",
+            }));
+        builder.<String>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSqlSwitchStatusRequest::getDatastoreType, (req, v) -> {
                 req.setDatastoreType(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<ShowSqlSwitchStatusRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            ShowSqlSwitchStatusRequest.XLanguageEnum.class,
+            TypeCasts.uncheckedConversion(ShowSqlSwitchStatusRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowSqlSwitchStatusRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -950,42 +852,36 @@ public class DasMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("instance_id",
+        builder.<String>withRequestField("instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateDbUserRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
-            })
-        );
-        builder.withRequestField("db_user_id",
+            }));
+        builder.<String>withRequestField("db_user_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateDbUserRequest::getDbUserId, (req, v) -> {
                 req.setDbUserId(v);
-            })
-        );
-        builder.withRequestField("X-Language",
+            }));
+        builder.<UpdateDbUserRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
-            UpdateDbUserRequest.XLanguageEnum.class,
+            TypeCasts.uncheckedConversion(UpdateDbUserRequest.XLanguageEnum.class),
             f -> f.withMarshaller(UpdateDbUserRequest::getXLanguage, (req, v) -> {
                 req.setXLanguage(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateDbUserRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateDbUserRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateDbUserRequestBody.class),
             f -> f.withMarshaller(UpdateDbUserRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

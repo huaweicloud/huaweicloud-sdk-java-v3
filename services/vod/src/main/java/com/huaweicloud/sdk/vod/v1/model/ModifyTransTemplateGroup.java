@@ -1,57 +1,41 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vod.v1.model.Common;
-import com.huaweicloud.sdk.vod.v1.model.QualityInfo;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class ModifyTransTemplateGroup  {
-
-
+public class ModifyTransTemplateGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
-    /**
-     * 是否设置默认。
-     */
+
+    /** 是否设置默认。 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum _1 for value: "1"
-         */
+        /** Enum _1 for value: "1" */
         public static final StatusEnum _1 = new StatusEnum("1");
-        
-        /**
-         * Enum _0 for value: "0"
-         */
+
+        /** Enum _0 for value: "0" */
         public static final StatusEnum _0 = new StatusEnum("0");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -80,7 +64,7 @@ public class ModifyTransTemplateGroup  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -91,7 +75,7 @@ public class ModifyTransTemplateGroup  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -115,40 +99,34 @@ public class ModifyTransTemplateGroup  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auto_encrypt")
-    
+    @JsonProperty(value = "auto_encrypt")
+
     private Integer autoEncrypt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quality_info_list")
-    
+    @JsonProperty(value = "quality_info_list")
+
     private List<QualityInfo> qualityInfoList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="watermark_template_ids")
-    
+    @JsonProperty(value = "watermark_template_ids")
+
     private List<String> watermarkTemplateIds = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="common")
-    
+    @JsonProperty(value = "common")
+
     private Common common;
 
     public ModifyTransTemplateGroup withGroupId(String groupId) {
@@ -156,13 +134,9 @@ public class ModifyTransTemplateGroup  {
         return this;
     }
 
-    
-
-
-    /**
-     * 模板组名称。
-     * @return groupId
-     */
+    /** 模板组名称。
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -171,20 +145,14 @@ public class ModifyTransTemplateGroup  {
         this.groupId = groupId;
     }
 
-    
-
     public ModifyTransTemplateGroup withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板组名称。
-     * @return name
-     */
+    /** 模板组名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -193,20 +161,14 @@ public class ModifyTransTemplateGroup  {
         this.name = name;
     }
 
-    
-
     public ModifyTransTemplateGroup withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否设置默认。
-     * @return status
-     */
+    /** 是否设置默认。
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -215,20 +177,14 @@ public class ModifyTransTemplateGroup  {
         this.status = status;
     }
 
-    
-
     public ModifyTransTemplateGroup withAutoEncrypt(Integer autoEncrypt) {
         this.autoEncrypt = autoEncrypt;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否自动加密。  取值如下： - 0：表示不加密。 - 1：表示需要加密。  默认值：0。  加密与转码必须要一起进行，当需要加密时，转码参数不能为空，且转码输出必须要为HLS。
-     * @return autoEncrypt
-     */
+    /** 是否自动加密。 取值如下： - 0：表示不加密。 - 1：表示需要加密。 默认值：0。 加密与转码必须要一起进行，当需要加密时，转码参数不能为空，且转码输出格式必须要为HLS。
+     * 
+     * @return autoEncrypt */
     public Integer getAutoEncrypt() {
         return autoEncrypt;
     }
@@ -237,16 +193,13 @@ public class ModifyTransTemplateGroup  {
         this.autoEncrypt = autoEncrypt;
     }
 
-    
-
     public ModifyTransTemplateGroup withQualityInfoList(List<QualityInfo> qualityInfoList) {
         this.qualityInfoList = qualityInfoList;
         return this;
     }
 
-    
     public ModifyTransTemplateGroup addQualityInfoListItem(QualityInfo qualityInfoListItem) {
-        if(this.qualityInfoList == null) {
+        if (this.qualityInfoList == null) {
             this.qualityInfoList = new ArrayList<>();
         }
         this.qualityInfoList.add(qualityInfoListItem);
@@ -254,17 +207,16 @@ public class ModifyTransTemplateGroup  {
     }
 
     public ModifyTransTemplateGroup withQualityInfoList(Consumer<List<QualityInfo>> qualityInfoListSetter) {
-        if(this.qualityInfoList == null) {
+        if (this.qualityInfoList == null) {
             this.qualityInfoList = new ArrayList<>();
         }
         qualityInfoListSetter.accept(this.qualityInfoList);
         return this;
     }
 
-    /**
-     * 画质配置信息列表。
-     * @return qualityInfoList
-     */
+    /** 画质配置信息列表。
+     * 
+     * @return qualityInfoList */
     public List<QualityInfo> getQualityInfoList() {
         return qualityInfoList;
     }
@@ -273,16 +225,13 @@ public class ModifyTransTemplateGroup  {
         this.qualityInfoList = qualityInfoList;
     }
 
-    
-
     public ModifyTransTemplateGroup withWatermarkTemplateIds(List<String> watermarkTemplateIds) {
         this.watermarkTemplateIds = watermarkTemplateIds;
         return this;
     }
 
-    
     public ModifyTransTemplateGroup addWatermarkTemplateIdsItem(String watermarkTemplateIdsItem) {
-        if(this.watermarkTemplateIds == null) {
+        if (this.watermarkTemplateIds == null) {
             this.watermarkTemplateIds = new ArrayList<>();
         }
         this.watermarkTemplateIds.add(watermarkTemplateIdsItem);
@@ -290,17 +239,16 @@ public class ModifyTransTemplateGroup  {
     }
 
     public ModifyTransTemplateGroup withWatermarkTemplateIds(Consumer<List<String>> watermarkTemplateIdsSetter) {
-        if(this.watermarkTemplateIds == null) {
+        if (this.watermarkTemplateIds == null) {
             this.watermarkTemplateIds = new ArrayList<>();
         }
         watermarkTemplateIdsSetter.accept(this.watermarkTemplateIds);
         return this;
     }
 
-    /**
-     * 绑定的水印模板组ID数组。
-     * @return watermarkTemplateIds
-     */
+    /** 绑定的水印模板组ID数组。
+     * 
+     * @return watermarkTemplateIds */
     public List<String> getWatermarkTemplateIds() {
         return watermarkTemplateIds;
     }
@@ -309,20 +257,14 @@ public class ModifyTransTemplateGroup  {
         this.watermarkTemplateIds = watermarkTemplateIds;
     }
 
-    
-
     public ModifyTransTemplateGroup withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板介绍。
-     * @return description
-     */
+    /** 模板介绍。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -331,27 +273,23 @@ public class ModifyTransTemplateGroup  {
         this.description = description;
     }
 
-    
-
     public ModifyTransTemplateGroup withCommon(Common common) {
         this.common = common;
         return this;
     }
 
     public ModifyTransTemplateGroup withCommon(Consumer<Common> commonSetter) {
-        if(this.common == null ){
+        if (this.common == null) {
             this.common = new Common();
             commonSetter.accept(this.common);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get common
-     * @return common
-     */
+    /** Get common
+     * 
+     * @return common */
     public Common getCommon() {
         return common;
     }
@@ -359,8 +297,6 @@ public class ModifyTransTemplateGroup  {
     public void setCommon(Common common) {
         this.common = common;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -371,19 +307,22 @@ public class ModifyTransTemplateGroup  {
             return false;
         }
         ModifyTransTemplateGroup modifyTransTemplateGroup = (ModifyTransTemplateGroup) o;
-        return Objects.equals(this.groupId, modifyTransTemplateGroup.groupId) &&
-            Objects.equals(this.name, modifyTransTemplateGroup.name) &&
-            Objects.equals(this.status, modifyTransTemplateGroup.status) &&
-            Objects.equals(this.autoEncrypt, modifyTransTemplateGroup.autoEncrypt) &&
-            Objects.equals(this.qualityInfoList, modifyTransTemplateGroup.qualityInfoList) &&
-            Objects.equals(this.watermarkTemplateIds, modifyTransTemplateGroup.watermarkTemplateIds) &&
-            Objects.equals(this.description, modifyTransTemplateGroup.description) &&
-            Objects.equals(this.common, modifyTransTemplateGroup.common);
+        return Objects.equals(this.groupId, modifyTransTemplateGroup.groupId)
+            && Objects.equals(this.name, modifyTransTemplateGroup.name)
+            && Objects.equals(this.status, modifyTransTemplateGroup.status)
+            && Objects.equals(this.autoEncrypt, modifyTransTemplateGroup.autoEncrypt)
+            && Objects.equals(this.qualityInfoList, modifyTransTemplateGroup.qualityInfoList)
+            && Objects.equals(this.watermarkTemplateIds, modifyTransTemplateGroup.watermarkTemplateIds)
+            && Objects.equals(this.description, modifyTransTemplateGroup.description)
+            && Objects.equals(this.common, modifyTransTemplateGroup.common);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(groupId, name, status, autoEncrypt, qualityInfoList, watermarkTemplateIds, description, common);
+        return Objects
+            .hash(groupId, name, status, autoEncrypt, qualityInfoList, watermarkTemplateIds, description, common);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -399,16 +338,13 @@ public class ModifyTransTemplateGroup  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

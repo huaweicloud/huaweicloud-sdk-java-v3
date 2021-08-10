@@ -1,44 +1,33 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class Credential  {
-
-
+public class Credential {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expires_at")
-    
+    @JsonProperty(value = "expires_at")
+
     private String expiresAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access")
-    
+    @JsonProperty(value = "access")
+
     private String access;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="secret")
-    
+    @JsonProperty(value = "secret")
+
     private String secret;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="securitytoken")
-    
+    @JsonProperty(value = "securitytoken")
+
     private String securitytoken;
 
     public Credential withExpiresAt(String expiresAt) {
@@ -46,13 +35,9 @@ public class Credential  {
         return this;
     }
 
-    
-
-
-    /**
-     * AK/SK和securitytoken的过期时间。
-     * @return expiresAt
-     */
+    /** AK/SK和securitytoken的过期时间。
+     * 
+     * @return expiresAt */
     public String getExpiresAt() {
         return expiresAt;
     }
@@ -61,20 +46,14 @@ public class Credential  {
         this.expiresAt = expiresAt;
     }
 
-    
-
     public Credential withAccess(String access) {
         this.access = access;
         return this;
     }
 
-    
-
-
-    /**
-     * 获取的AK。
-     * @return access
-     */
+    /** 获取的AK。
+     * 
+     * @return access */
     public String getAccess() {
         return access;
     }
@@ -83,20 +62,14 @@ public class Credential  {
         this.access = access;
     }
 
-    
-
     public Credential withSecret(String secret) {
         this.secret = secret;
         return this;
     }
 
-    
-
-
-    /**
-     * 获取的SK。
-     * @return secret
-     */
+    /** 获取的SK。
+     * 
+     * @return secret */
     public String getSecret() {
         return secret;
     }
@@ -105,20 +78,14 @@ public class Credential  {
         this.secret = secret;
     }
 
-    
-
     public Credential withSecuritytoken(String securitytoken) {
         this.securitytoken = securitytoken;
         return this;
     }
 
-    
-
-
-    /**
-     * securitytoken是将所获的AK、SK等信息进行加密后的字符串。
-     * @return securitytoken
-     */
+    /** securitytoken是将所获的AK、SK等信息进行加密后的字符串。
+     * 
+     * @return securitytoken */
     public String getSecuritytoken() {
         return securitytoken;
     }
@@ -126,8 +93,6 @@ public class Credential  {
     public void setSecuritytoken(String securitytoken) {
         this.securitytoken = securitytoken;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +103,16 @@ public class Credential  {
             return false;
         }
         Credential credential = (Credential) o;
-        return Objects.equals(this.expiresAt, credential.expiresAt) &&
-            Objects.equals(this.access, credential.access) &&
-            Objects.equals(this.secret, credential.secret) &&
-            Objects.equals(this.securitytoken, credential.securitytoken);
+        return Objects.equals(this.expiresAt, credential.expiresAt) && Objects.equals(this.access, credential.access)
+            && Objects.equals(this.secret, credential.secret)
+            && Objects.equals(this.securitytoken, credential.securitytoken);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(expiresAt, access, secret, securitytoken);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +124,13 @@ public class Credential  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

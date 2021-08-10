@@ -1,34 +1,20 @@
 package com.huaweicloud.sdk.servicestage.v2.model;
 
-
-
-
-
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
-/**
- * 状态。
- */
+/** 状态。 */
 public class ExternalAccessStatus {
-    
-    /**
-     * Enum NORMAL for value: "NORMAL"
-     */
+
+    /** Enum NORMAL for value: "NORMAL" */
     public static final ExternalAccessStatus NORMAL = new ExternalAccessStatus("NORMAL");
-    
-    /**
-     * Enum EXPIRED for value: "EXPIRED"
-     */
+
+    /** Enum EXPIRED for value: "EXPIRED" */
     public static final ExternalAccessStatus EXPIRED = new ExternalAccessStatus("EXPIRED");
-    
 
     private static final Map<String, ExternalAccessStatus> STATIC_FIELDS = createStaticFields();
 
@@ -57,7 +43,7 @@ public class ExternalAccessStatus {
 
     @JsonCreator
     public static ExternalAccessStatus fromValue(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         ExternalAccessStatus result = STATIC_FIELDS.get(value);
@@ -68,7 +54,7 @@ public class ExternalAccessStatus {
     }
 
     public static ExternalAccessStatus valueOf(String value) {
-        if( value == null ){
+        if (value == null) {
             return null;
         }
         ExternalAccessStatus result = STATIC_FIELDS.get(value);
@@ -91,4 +77,3 @@ public class ExternalAccessStatus {
         return this.value.hashCode();
     }
 }
-

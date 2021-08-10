@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * KeyDescriptionInfo
- */
-public class KeyDescriptionInfo  {
-
-
+/** KeyDescriptionInfo */
+public class KeyDescriptionInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_id")
-    
+    @JsonProperty(value = "key_id")
+
     private String keyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_description")
-    
+    @JsonProperty(value = "key_description")
+
     private String keyDescription;
 
     public KeyDescriptionInfo withKeyId(String keyId) {
@@ -34,13 +23,9 @@ public class KeyDescriptionInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥ID。
-     * @return keyId
-     */
+    /** 密钥ID。
+     * 
+     * @return keyId */
     public String getKeyId() {
         return keyId;
     }
@@ -49,20 +34,14 @@ public class KeyDescriptionInfo  {
         this.keyId = keyId;
     }
 
-    
-
     public KeyDescriptionInfo withKeyDescription(String keyDescription) {
         this.keyDescription = keyDescription;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥描述。
-     * @return keyDescription
-     */
+    /** 密钥描述。
+     * 
+     * @return keyDescription */
     public String getKeyDescription() {
         return keyDescription;
     }
@@ -70,8 +49,6 @@ public class KeyDescriptionInfo  {
     public void setKeyDescription(String keyDescription) {
         this.keyDescription = keyDescription;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class KeyDescriptionInfo  {
             return false;
         }
         KeyDescriptionInfo keyDescriptionInfo = (KeyDescriptionInfo) o;
-        return Objects.equals(this.keyId, keyDescriptionInfo.keyId) &&
-            Objects.equals(this.keyDescription, keyDescriptionInfo.keyDescription);
+        return Objects.equals(this.keyId, keyDescriptionInfo.keyId)
+            && Objects.equals(this.keyDescription, keyDescriptionInfo.keyDescription);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(keyId, keyDescription);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class KeyDescriptionInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

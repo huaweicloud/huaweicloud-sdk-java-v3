@@ -1,27 +1,19 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.AgencyAuthIdentity;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class AgencyAuth  {
-
-
+public class AgencyAuth {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="identity")
-    
+    @JsonProperty(value = "identity")
+
     private AgencyAuthIdentity identity;
 
     public AgencyAuth withIdentity(AgencyAuthIdentity identity) {
@@ -30,19 +22,17 @@ public class AgencyAuth  {
     }
 
     public AgencyAuth withIdentity(Consumer<AgencyAuthIdentity> identitySetter) {
-        if(this.identity == null ){
+        if (this.identity == null) {
             this.identity = new AgencyAuthIdentity();
             identitySetter.accept(this.identity);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get identity
-     * @return identity
-     */
+    /** Get identity
+     * 
+     * @return identity */
     public AgencyAuthIdentity getIdentity() {
         return identity;
     }
@@ -50,8 +40,6 @@ public class AgencyAuth  {
     public void setIdentity(AgencyAuthIdentity identity) {
         this.identity = identity;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +52,12 @@ public class AgencyAuth  {
         AgencyAuth agencyAuth = (AgencyAuth) o;
         return Objects.equals(this.identity, agencyAuth.identity);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(identity);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +66,13 @@ public class AgencyAuth  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

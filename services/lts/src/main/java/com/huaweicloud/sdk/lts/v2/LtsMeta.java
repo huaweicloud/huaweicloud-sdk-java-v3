@@ -6,14 +6,12 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.lts.v2.model.*;
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class LtsMeta {
 
-    public static final HttpRequestDef<CreateLogDumpObsRequest, CreateLogDumpObsResponse> createLogDumpObs = genForcreateLogDumpObs();
+    public static final HttpRequestDef<CreateLogDumpObsRequest, CreateLogDumpObsResponse> createLogDumpObs =
+        genForcreateLogDumpObs();
 
     private static HttpRequestDef<CreateLogDumpObsRequest, CreateLogDumpObsResponse> genForcreateLogDumpObs() {
         // basic
@@ -24,23 +22,21 @@ public class LtsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateLogDumpObsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateLogDumpObsRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateLogDumpObsRequestBody.class),
             f -> f.withMarshaller(CreateLogDumpObsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateLogGroupRequest, CreateLogGroupResponse> createLogGroup = genForcreateLogGroup();
+    public static final HttpRequestDef<CreateLogGroupRequest, CreateLogGroupResponse> createLogGroup =
+        genForcreateLogGroup();
 
     private static HttpRequestDef<CreateLogGroupRequest, CreateLogGroupResponse> genForcreateLogGroup() {
         // basic
@@ -51,23 +47,21 @@ public class LtsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateLogGroupParams>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateLogGroupParams.class,
+            TypeCasts.uncheckedConversion(CreateLogGroupParams.class),
             f -> f.withMarshaller(CreateLogGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateLogStreamRequest, CreateLogStreamResponse> createLogStream = genForcreateLogStream();
+    public static final HttpRequestDef<CreateLogStreamRequest, CreateLogStreamResponse> createLogStream =
+        genForcreateLogStream();
 
     private static HttpRequestDef<CreateLogStreamRequest, CreateLogStreamResponse> genForcreateLogStream() {
         // basic
@@ -78,31 +72,28 @@ public class LtsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("log_group_id",
+        builder.<String>withRequestField("log_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateLogStreamRequest::getLogGroupId, (req, v) -> {
                 req.setLogGroupId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateLogStreamParams>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateLogStreamParams.class,
+            TypeCasts.uncheckedConversion(CreateLogStreamParams.class),
             f -> f.withMarshaller(CreateLogStreamRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteLogGroupRequest, DeleteLogGroupResponse> deleteLogGroup = genFordeleteLogGroup();
+    public static final HttpRequestDef<DeleteLogGroupRequest, DeleteLogGroupResponse> deleteLogGroup =
+        genFordeleteLogGroup();
 
     private static HttpRequestDef<DeleteLogGroupRequest, DeleteLogGroupResponse> genFordeleteLogGroup() {
         // basic
@@ -113,32 +104,29 @@ public class LtsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("log_group_id",
+        builder.<String>withRequestField("log_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteLogGroupRequest::getLogGroupId, (req, v) -> {
                 req.setLogGroupId(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteLogGroupResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(DeleteLogGroupResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteLogStreamRequest, DeleteLogStreamResponse> deleteLogStream = genFordeleteLogStream();
+    public static final HttpRequestDef<DeleteLogStreamRequest, DeleteLogStreamResponse> deleteLogStream =
+        genFordeleteLogStream();
 
     private static HttpRequestDef<DeleteLogStreamRequest, DeleteLogStreamResponse> genFordeleteLogStream() {
         // basic
@@ -149,59 +137,54 @@ public class LtsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("log_group_id",
+        builder.<String>withRequestField("log_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteLogStreamRequest::getLogGroupId, (req, v) -> {
                 req.setLogGroupId(v);
-            })
-        );
-        builder.withRequestField("log_stream_id",
+            }));
+        builder.<String>withRequestField("log_stream_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteLogStreamRequest::getLogStreamId, (req, v) -> {
                 req.setLogStreamId(v);
-            })
-        );
+            }));
 
         // response
-        
-        builder.withResponseField(
-            "body",
+
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteLogStreamResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(DeleteLogStreamResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DisableLogCollectionRequest, DisableLogCollectionResponse> disableLogCollection = genFordisableLogCollection();
+    public static final HttpRequestDef<DisableLogCollectionRequest, DisableLogCollectionResponse> disableLogCollection =
+        genFordisableLogCollection();
 
     private static HttpRequestDef<DisableLogCollectionRequest, DisableLogCollectionResponse> genFordisableLogCollection() {
         // basic
-        HttpRequestDef.Builder<DisableLogCollectionRequest, DisableLogCollectionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, DisableLogCollectionRequest.class, DisableLogCollectionResponse.class)
-                .withName("DisableLogCollection")
-                .withUri("/v2/{project_id}/collection/disable")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<DisableLogCollectionRequest, DisableLogCollectionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DisableLogCollectionRequest.class, DisableLogCollectionResponse.class)
+            .withName("DisableLogCollection")
+            .withUri("/v2/{project_id}/collection/disable")
+            .withContentType("application/json");
 
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<EnableLogCollectionRequest, EnableLogCollectionResponse> enableLogCollection = genForenableLogCollection();
+    public static final HttpRequestDef<EnableLogCollectionRequest, EnableLogCollectionResponse> enableLogCollection =
+        genForenableLogCollection();
 
     private static HttpRequestDef<EnableLogCollectionRequest, EnableLogCollectionResponse> genForenableLogCollection() {
         // basic
@@ -214,13 +197,12 @@ public class LtsMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListLogGroupsRequest, ListLogGroupsResponse> listLogGroups = genForlistLogGroups();
+    public static final HttpRequestDef<ListLogGroupsRequest, ListLogGroupsResponse> listLogGroups =
+        genForlistLogGroups();
 
     private static HttpRequestDef<ListLogGroupsRequest, ListLogGroupsResponse> genForlistLogGroups() {
         // basic
@@ -233,13 +215,12 @@ public class LtsMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListLogStreamRequest, ListLogStreamResponse> listLogStream = genForlistLogStream();
+    public static final HttpRequestDef<ListLogStreamRequest, ListLogStreamResponse> listLogStream =
+        genForlistLogStream();
 
     private static HttpRequestDef<ListLogStreamRequest, ListLogStreamResponse> genForlistLogStream() {
         // basic
@@ -250,26 +231,22 @@ public class LtsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("log_group_id",
+        builder.<String>withRequestField("log_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListLogStreamRequest::getLogGroupId, (req, v) -> {
                 req.setLogGroupId(v);
-            })
-        );
-        builder.withRequestField("tag",
+            }));
+        builder.<String>withRequestField("tag",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListLogStreamRequest::getTag, (req, v) -> {
                 req.setTag(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -285,117 +262,109 @@ public class LtsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("log_group_id",
+        builder.<String>withRequestField("log_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListLogsRequest::getLogGroupId, (req, v) -> {
                 req.setLogGroupId(v);
-            })
-        );
-        builder.withRequestField("log_stream_id",
+            }));
+        builder.<String>withRequestField("log_stream_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListLogsRequest::getLogStreamId, (req, v) -> {
                 req.setLogStreamId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<QueryLTSLogParams>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            QueryLTSLogParams.class,
+            TypeCasts.uncheckedConversion(QueryLTSLogParams.class),
             f -> f.withMarshaller(ListLogsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse> listQueryStructuredLogs = genForlistQueryStructuredLogs();
+    public static final HttpRequestDef<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse> listQueryStructuredLogs =
+        genForlistQueryStructuredLogs();
 
     private static HttpRequestDef<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse> genForlistQueryStructuredLogs() {
         // basic
-        HttpRequestDef.Builder<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ListQueryStructuredLogsRequest.class, ListQueryStructuredLogsResponse.class)
-                .withName("ListQueryStructuredLogs")
-                .withUri("/v2/{project_id}/groups/{log_group_id}/streams/{log_stream_id}/struct-content/query")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ListQueryStructuredLogsRequest, ListQueryStructuredLogsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListQueryStructuredLogsRequest.class, ListQueryStructuredLogsResponse.class)
+            .withName("ListQueryStructuredLogs")
+            .withUri("/v2/{project_id}/groups/{log_group_id}/streams/{log_stream_id}/struct-content/query")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("log_group_id",
+        builder.<String>withRequestField("log_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListQueryStructuredLogsRequest::getLogGroupId, (req, v) -> {
                 req.setLogGroupId(v);
-            })
-        );
-        builder.withRequestField("log_stream_id",
+            }));
+        builder.<String>withRequestField("log_stream_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListQueryStructuredLogsRequest::getLogStreamId, (req, v) -> {
                 req.setLogStreamId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<QueryLTSStructLogParams>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            QueryLTSStructLogParams.class,
+            TypeCasts.uncheckedConversion(QueryLTSStructLogParams.class),
             f -> f.withMarshaller(ListQueryStructuredLogsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse> listStructuredLogsWithTimeRange = genForlistStructuredLogsWithTimeRange();
+    public static final HttpRequestDef<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse> listStructuredLogsWithTimeRange =
+        genForlistStructuredLogsWithTimeRange();
 
     private static HttpRequestDef<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse> genForlistStructuredLogsWithTimeRange() {
         // basic
         HttpRequestDef.Builder<ListStructuredLogsWithTimeRangeRequest, ListStructuredLogsWithTimeRangeResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ListStructuredLogsWithTimeRangeRequest.class, ListStructuredLogsWithTimeRangeResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListStructuredLogsWithTimeRangeRequest.class,
+                    ListStructuredLogsWithTimeRangeResponse.class)
                 .withName("ListStructuredLogsWithTimeRange")
                 .withUri("/v2/{project_id}/streams/{log_stream_id}/struct-content/query")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("log_stream_id",
+        builder.<String>withRequestField("log_stream_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListStructuredLogsWithTimeRangeRequest::getLogStreamId, (req, v) -> {
                 req.setLogStreamId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<QueryLTSStructLogParamsNew>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            QueryLTSStructLogParamsNew.class,
+            TypeCasts.uncheckedConversion(QueryLTSStructLogParamsNew.class),
             f -> f.withMarshaller(ListStructuredLogsWithTimeRangeRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateLogGroupRequest, UpdateLogGroupResponse> updateLogGroup = genForupdateLogGroup();
+    public static final HttpRequestDef<UpdateLogGroupRequest, UpdateLogGroupResponse> updateLogGroup =
+        genForupdateLogGroup();
 
     private static HttpRequestDef<UpdateLogGroupRequest, UpdateLogGroupResponse> genForupdateLogGroup() {
         // basic
@@ -406,26 +375,22 @@ public class LtsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("log_group_id",
+        builder.<String>withRequestField("log_group_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateLogGroupRequest::getLogGroupId, (req, v) -> {
                 req.setLogGroupId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateLogGroupParams>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateLogGroupParams.class,
+            TypeCasts.uncheckedConversion(UpdateLogGroupParams.class),
             f -> f.withMarshaller(UpdateLogGroupRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

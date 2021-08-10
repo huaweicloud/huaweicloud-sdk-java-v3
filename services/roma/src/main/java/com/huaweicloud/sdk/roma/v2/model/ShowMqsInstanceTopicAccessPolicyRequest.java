@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowMqsInstanceTopicAccessPolicyRequest  {
-
-
+/** Request Object */
+public class ShowMqsInstanceTopicAccessPolicyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic_name")
-    
+    @JsonProperty(value = "topic_name")
+
     private String topicName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private String offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private String limit;
 
     public ShowMqsInstanceTopicAccessPolicyRequest withInstanceId(String instanceId) {
@@ -46,13 +33,9 @@ public class ShowMqsInstanceTopicAccessPolicyRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -61,20 +44,14 @@ public class ShowMqsInstanceTopicAccessPolicyRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ShowMqsInstanceTopicAccessPolicyRequest withTopicName(String topicName) {
         this.topicName = topicName;
         return this;
     }
 
-    
-
-
-    /**
-     * topic名称。
-     * @return topicName
-     */
+    /** topic名称。
+     * 
+     * @return topicName */
     public String getTopicName() {
         return topicName;
     }
@@ -83,20 +60,14 @@ public class ShowMqsInstanceTopicAccessPolicyRequest  {
         this.topicName = topicName;
     }
 
-    
-
     public ShowMqsInstanceTopicAccessPolicyRequest withOffset(String offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页查询偏移量。
-     * @return offset
-     */
+    /** 分页查询偏移量。
+     * 
+     * @return offset */
     public String getOffset() {
         return offset;
     }
@@ -105,20 +76,14 @@ public class ShowMqsInstanceTopicAccessPolicyRequest  {
         this.offset = offset;
     }
 
-    
-
     public ShowMqsInstanceTopicAccessPolicyRequest withLimit(String limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页查询大小。
-     * @return limit
-     */
+    /** 分页查询大小。
+     * 
+     * @return limit */
     public String getLimit() {
         return limit;
     }
@@ -126,8 +91,6 @@ public class ShowMqsInstanceTopicAccessPolicyRequest  {
     public void setLimit(String limit) {
         this.limit = limit;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -137,16 +100,19 @@ public class ShowMqsInstanceTopicAccessPolicyRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ShowMqsInstanceTopicAccessPolicyRequest showMqsInstanceTopicAccessPolicyRequest = (ShowMqsInstanceTopicAccessPolicyRequest) o;
-        return Objects.equals(this.instanceId, showMqsInstanceTopicAccessPolicyRequest.instanceId) &&
-            Objects.equals(this.topicName, showMqsInstanceTopicAccessPolicyRequest.topicName) &&
-            Objects.equals(this.offset, showMqsInstanceTopicAccessPolicyRequest.offset) &&
-            Objects.equals(this.limit, showMqsInstanceTopicAccessPolicyRequest.limit);
+        ShowMqsInstanceTopicAccessPolicyRequest showMqsInstanceTopicAccessPolicyRequest =
+            (ShowMqsInstanceTopicAccessPolicyRequest) o;
+        return Objects.equals(this.instanceId, showMqsInstanceTopicAccessPolicyRequest.instanceId)
+            && Objects.equals(this.topicName, showMqsInstanceTopicAccessPolicyRequest.topicName)
+            && Objects.equals(this.offset, showMqsInstanceTopicAccessPolicyRequest.offset)
+            && Objects.equals(this.limit, showMqsInstanceTopicAccessPolicyRequest.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, topicName, offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +124,13 @@ public class ShowMqsInstanceTopicAccessPolicyRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

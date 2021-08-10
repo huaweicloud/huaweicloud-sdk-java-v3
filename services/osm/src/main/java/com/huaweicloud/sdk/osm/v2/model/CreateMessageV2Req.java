@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.osm.v2.model.CreateMessageDoV2;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * CreateMessageV2Req
- */
-public class CreateMessageV2Req  {
-
-
+/** CreateMessageV2Req */
+public class CreateMessageV2Req {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message")
-    
+    @JsonProperty(value = "message")
+
     private CreateMessageDoV2 message;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
     public CreateMessageV2Req withMessage(CreateMessageDoV2 message) {
@@ -36,19 +25,17 @@ public class CreateMessageV2Req  {
     }
 
     public CreateMessageV2Req withMessage(Consumer<CreateMessageDoV2> messageSetter) {
-        if(this.message == null ){
+        if (this.message == null) {
             this.message = new CreateMessageDoV2();
             messageSetter.accept(this.message);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get message
-     * @return message
-     */
+    /** Get message
+     * 
+     * @return message */
     public CreateMessageDoV2 getMessage() {
         return message;
     }
@@ -57,20 +44,14 @@ public class CreateMessageV2Req  {
         this.message = message;
     }
 
-    
-
     public CreateMessageV2Req withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 组id
-     * @return groupId
-     */
+    /** 组id
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -78,8 +59,6 @@ public class CreateMessageV2Req  {
     public void setGroupId(String groupId) {
         this.groupId = groupId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class CreateMessageV2Req  {
             return false;
         }
         CreateMessageV2Req createMessageV2Req = (CreateMessageV2Req) o;
-        return Objects.equals(this.message, createMessageV2Req.message) &&
-            Objects.equals(this.groupId, createMessageV2Req.groupId);
+        return Objects.equals(this.message, createMessageV2Req.message)
+            && Objects.equals(this.groupId, createMessageV2Req.groupId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(message, groupId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class CreateMessageV2Req  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

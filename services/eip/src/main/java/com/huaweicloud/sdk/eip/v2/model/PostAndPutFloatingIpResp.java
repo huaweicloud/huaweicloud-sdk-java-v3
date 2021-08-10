@@ -1,82 +1,59 @@
 package com.huaweicloud.sdk.eip.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * floatingip对象
- */
-public class PostAndPutFloatingIpResp  {
-
-
+/** floatingip对象 */
+public class PostAndPutFloatingIpResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fixed_ip_address")
-    
+    @JsonProperty(value = "fixed_ip_address")
+
     private String fixedIpAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="floating_ip_address")
-    
+    @JsonProperty(value = "floating_ip_address")
+
     private String floatingIpAddress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="floating_network_id")
-    
+    @JsonProperty(value = "floating_network_id")
+
     private String floatingNetworkId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port_id")
-    
+    @JsonProperty(value = "port_id")
+
     private String portId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="router_id")
-    
+    @JsonProperty(value = "router_id")
+
     private String routerId;
-    /**
-     * 网络状态，可以为ACTIVE， DOWN或ERROR。  DOWN：未绑定  ACTIVE：绑定  ERROR：异常
-     */
+
+    /** 网络状态，可以为ACTIVE， DOWN或ERROR。 DOWN：未绑定 ACTIVE：绑定 ERROR：异常 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum ACTIVE for value: "ACTIVE"
-         */
+        /** Enum ACTIVE for value: "ACTIVE" */
         public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
-        
-        /**
-         * Enum DOWN for value: "DOWN"
-         */
+
+        /** Enum DOWN for value: "DOWN" */
         public static final StatusEnum DOWN = new StatusEnum("DOWN");
-        
-        /**
-         * Enum ERROR for value: "ERROR"
-         */
+
+        /** Enum ERROR for value: "ERROR" */
         public static final StatusEnum ERROR = new StatusEnum("ERROR");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -106,7 +83,7 @@ public class PostAndPutFloatingIpResp  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -117,7 +94,7 @@ public class PostAndPutFloatingIpResp  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -141,28 +118,24 @@ public class PostAndPutFloatingIpResp  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
+
     private String tenantId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dns_name")
-    
+    @JsonProperty(value = "dns_name")
+
     private String dnsName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dns_domain")
-    
+    @JsonProperty(value = "dns_domain")
+
     private String dnsDomain;
 
     public PostAndPutFloatingIpResp withFixedIpAddress(String fixedIpAddress) {
@@ -170,13 +143,9 @@ public class PostAndPutFloatingIpResp  {
         return this;
     }
 
-    
-
-
-    /**
-     * 关联端口的私有IP地址。
-     * @return fixedIpAddress
-     */
+    /** 关联端口的私有IP地址。
+     * 
+     * @return fixedIpAddress */
     public String getFixedIpAddress() {
         return fixedIpAddress;
     }
@@ -185,20 +154,14 @@ public class PostAndPutFloatingIpResp  {
         this.fixedIpAddress = fixedIpAddress;
     }
 
-    
-
     public PostAndPutFloatingIpResp withFloatingIpAddress(String floatingIpAddress) {
         this.floatingIpAddress = floatingIpAddress;
         return this;
     }
 
-    
-
-
-    /**
-     * 浮动IP地址。
-     * @return floatingIpAddress
-     */
+    /** 浮动IP地址。
+     * 
+     * @return floatingIpAddress */
     public String getFloatingIpAddress() {
         return floatingIpAddress;
     }
@@ -207,20 +170,15 @@ public class PostAndPutFloatingIpResp  {
         this.floatingIpAddress = floatingIpAddress;
     }
 
-    
-
     public PostAndPutFloatingIpResp withFloatingNetworkId(String floatingNetworkId) {
         this.floatingNetworkId = floatingNetworkId;
         return this;
     }
 
-    
-
-
-    /**
-     * 外部网络的id。只能使用固定的外网，外部网络的信息请通过GET /v2.0/networks?router:external=True或GET /v2.0/networks?name={floating_network}或neutron net-external-list方式查询。
-     * @return floatingNetworkId
-     */
+    /** 外部网络的id。只能使用固定的外网，外部网络的信息请通过GET /v2.0/networks?router:external=True或GET
+     * /v2.0/networks?name={floating_network}或neutron net-external-list方式查询。
+     * 
+     * @return floatingNetworkId */
     public String getFloatingNetworkId() {
         return floatingNetworkId;
     }
@@ -229,20 +187,14 @@ public class PostAndPutFloatingIpResp  {
         this.floatingNetworkId = floatingNetworkId;
     }
 
-    
-
     public PostAndPutFloatingIpResp withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 浮动IP地址的id。
-     * @return id
-     */
+    /** 浮动IP地址的id。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -251,20 +203,14 @@ public class PostAndPutFloatingIpResp  {
         this.id = id;
     }
 
-    
-
     public PostAndPutFloatingIpResp withPortId(String portId) {
         this.portId = portId;
         return this;
     }
 
-    
-
-
-    /**
-     * 端口id。
-     * @return portId
-     */
+    /** 端口id。
+     * 
+     * @return portId */
     public String getPortId() {
         return portId;
     }
@@ -273,20 +219,14 @@ public class PostAndPutFloatingIpResp  {
         this.portId = portId;
     }
 
-    
-
     public PostAndPutFloatingIpResp withRouterId(String routerId) {
         this.routerId = routerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 所属路由器id。
-     * @return routerId
-     */
+    /** 所属路由器id。
+     * 
+     * @return routerId */
     public String getRouterId() {
         return routerId;
     }
@@ -295,20 +235,14 @@ public class PostAndPutFloatingIpResp  {
         this.routerId = routerId;
     }
 
-    
-
     public PostAndPutFloatingIpResp withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 网络状态，可以为ACTIVE， DOWN或ERROR。  DOWN：未绑定  ACTIVE：绑定  ERROR：异常
-     * @return status
-     */
+    /** 网络状态，可以为ACTIVE， DOWN或ERROR。 DOWN：未绑定 ACTIVE：绑定 ERROR：异常
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -317,20 +251,14 @@ public class PostAndPutFloatingIpResp  {
         this.status = status;
     }
 
-    
-
     public PostAndPutFloatingIpResp withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目id。
-     * @return tenantId
-     */
+    /** 项目id。
+     * 
+     * @return tenantId */
     public String getTenantId() {
         return tenantId;
     }
@@ -339,20 +267,14 @@ public class PostAndPutFloatingIpResp  {
         this.tenantId = tenantId;
     }
 
-    
-
     public PostAndPutFloatingIpResp withDnsName(String dnsName) {
         this.dnsName = dnsName;
         return this;
     }
 
-    
-
-
-    /**
-     * DNS名称(目前仅广州局点支持)
-     * @return dnsName
-     */
+    /** DNS名称(目前仅广州局点支持)
+     * 
+     * @return dnsName */
     public String getDnsName() {
         return dnsName;
     }
@@ -361,20 +283,14 @@ public class PostAndPutFloatingIpResp  {
         this.dnsName = dnsName;
     }
 
-    
-
     public PostAndPutFloatingIpResp withDnsDomain(String dnsDomain) {
         this.dnsDomain = dnsDomain;
         return this;
     }
 
-    
-
-
-    /**
-     * DNS域地址(目前仅广州局点支持)
-     * @return dnsDomain
-     */
+    /** DNS域地址(目前仅广州局点支持)
+     * 
+     * @return dnsDomain */
     public String getDnsDomain() {
         return dnsDomain;
     }
@@ -382,8 +298,6 @@ public class PostAndPutFloatingIpResp  {
     public void setDnsDomain(String dnsDomain) {
         this.dnsDomain = dnsDomain;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -394,21 +308,32 @@ public class PostAndPutFloatingIpResp  {
             return false;
         }
         PostAndPutFloatingIpResp postAndPutFloatingIpResp = (PostAndPutFloatingIpResp) o;
-        return Objects.equals(this.fixedIpAddress, postAndPutFloatingIpResp.fixedIpAddress) &&
-            Objects.equals(this.floatingIpAddress, postAndPutFloatingIpResp.floatingIpAddress) &&
-            Objects.equals(this.floatingNetworkId, postAndPutFloatingIpResp.floatingNetworkId) &&
-            Objects.equals(this.id, postAndPutFloatingIpResp.id) &&
-            Objects.equals(this.portId, postAndPutFloatingIpResp.portId) &&
-            Objects.equals(this.routerId, postAndPutFloatingIpResp.routerId) &&
-            Objects.equals(this.status, postAndPutFloatingIpResp.status) &&
-            Objects.equals(this.tenantId, postAndPutFloatingIpResp.tenantId) &&
-            Objects.equals(this.dnsName, postAndPutFloatingIpResp.dnsName) &&
-            Objects.equals(this.dnsDomain, postAndPutFloatingIpResp.dnsDomain);
+        return Objects.equals(this.fixedIpAddress, postAndPutFloatingIpResp.fixedIpAddress)
+            && Objects.equals(this.floatingIpAddress, postAndPutFloatingIpResp.floatingIpAddress)
+            && Objects.equals(this.floatingNetworkId, postAndPutFloatingIpResp.floatingNetworkId)
+            && Objects.equals(this.id, postAndPutFloatingIpResp.id)
+            && Objects.equals(this.portId, postAndPutFloatingIpResp.portId)
+            && Objects.equals(this.routerId, postAndPutFloatingIpResp.routerId)
+            && Objects.equals(this.status, postAndPutFloatingIpResp.status)
+            && Objects.equals(this.tenantId, postAndPutFloatingIpResp.tenantId)
+            && Objects.equals(this.dnsName, postAndPutFloatingIpResp.dnsName)
+            && Objects.equals(this.dnsDomain, postAndPutFloatingIpResp.dnsDomain);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(fixedIpAddress, floatingIpAddress, floatingNetworkId, id, portId, routerId, status, tenantId, dnsName, dnsDomain);
+        return Objects.hash(fixedIpAddress,
+            floatingIpAddress,
+            floatingNetworkId,
+            id,
+            portId,
+            routerId,
+            status,
+            tenantId,
+            dnsName,
+            dnsDomain);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -426,16 +351,13 @@ public class PostAndPutFloatingIpResp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

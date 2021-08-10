@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListSecurityGroupsRequest  {
-
-
+/** Request Object */
+public class ListSecurityGroupsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
     public ListSecurityGroupsRequest withLimit(Integer limit) {
@@ -34,15 +23,9 @@ public class ListSecurityGroupsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 查询返回边缘安全组列表数量。取值范围：0~1000。
-     * minimum: 0
-     * maximum: 1000
-     * @return limit
-     */
+    /** 查询返回边缘安全组列表数量。取值范围：0~1000。 minimum: 0 maximum: 1000
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -51,20 +34,14 @@ public class ListSecurityGroupsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListSecurityGroupsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询的偏移量。
-     * @return offset
-     */
+    /** 查询的偏移量。
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -72,8 +49,6 @@ public class ListSecurityGroupsRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +59,15 @@ public class ListSecurityGroupsRequest  {
             return false;
         }
         ListSecurityGroupsRequest listSecurityGroupsRequest = (ListSecurityGroupsRequest) o;
-        return Objects.equals(this.limit, listSecurityGroupsRequest.limit) &&
-            Objects.equals(this.offset, listSecurityGroupsRequest.offset);
+        return Objects.equals(this.limit, listSecurityGroupsRequest.limit)
+            && Objects.equals(this.offset, listSecurityGroupsRequest.offset);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(limit, offset);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +77,13 @@ public class ListSecurityGroupsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

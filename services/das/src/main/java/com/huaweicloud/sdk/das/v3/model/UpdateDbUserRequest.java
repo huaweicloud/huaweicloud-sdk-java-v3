@@ -1,54 +1,37 @@
 package com.huaweicloud.sdk.das.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.das.v3.model.UpdateDbUserRequestBody;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateDbUserRequest  {
-
-
+/** Request Object */
+public class UpdateDbUserRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_user_id")
-    
+    @JsonProperty(value = "db_user_id")
+
     private String dbUserId;
-    /**
-     * 语言
-     */
+
+    /** 语言 */
     public static final class XLanguageEnum {
 
-        
-        /**
-         * Enum ZH_CN for value: "zh-cn"
-         */
+        /** Enum ZH_CN for value: "zh-cn" */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
-        
-        /**
-         * Enum EN_US for value: "en-us"
-         */
+
+        /** Enum EN_US for value: "en-us" */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
-        
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
 
@@ -77,7 +60,7 @@ public class UpdateDbUserRequest  {
 
         @JsonCreator
         public static XLanguageEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -88,7 +71,7 @@ public class UpdateDbUserRequest  {
         }
 
         public static XLanguageEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             XLanguageEnum result = STATIC_FIELDS.get(value);
@@ -112,16 +95,14 @@ public class UpdateDbUserRequest  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private XLanguageEnum xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateDbUserRequestBody body;
 
     public UpdateDbUserRequest withInstanceId(String instanceId) {
@@ -129,13 +110,9 @@ public class UpdateDbUserRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -144,20 +121,14 @@ public class UpdateDbUserRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public UpdateDbUserRequest withDbUserId(String dbUserId) {
         this.dbUserId = dbUserId;
         return this;
     }
 
-    
-
-
-    /**
-     * 数据库用户ID
-     * @return dbUserId
-     */
+    /** 数据库用户ID
+     * 
+     * @return dbUserId */
     public String getDbUserId() {
         return dbUserId;
     }
@@ -166,22 +137,16 @@ public class UpdateDbUserRequest  {
         this.dbUserId = dbUserId;
     }
 
-    
-
     public UpdateDbUserRequest withXLanguage(XLanguageEnum xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言
-     * @return xLanguage
-     */
+    /** 语言
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
         return xLanguage;
     }
@@ -190,27 +155,23 @@ public class UpdateDbUserRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public UpdateDbUserRequest withBody(UpdateDbUserRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdateDbUserRequest withBody(Consumer<UpdateDbUserRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateDbUserRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateDbUserRequestBody getBody() {
         return body;
     }
@@ -218,8 +179,6 @@ public class UpdateDbUserRequest  {
     public void setBody(UpdateDbUserRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -230,15 +189,17 @@ public class UpdateDbUserRequest  {
             return false;
         }
         UpdateDbUserRequest updateDbUserRequest = (UpdateDbUserRequest) o;
-        return Objects.equals(this.instanceId, updateDbUserRequest.instanceId) &&
-            Objects.equals(this.dbUserId, updateDbUserRequest.dbUserId) &&
-            Objects.equals(this.xLanguage, updateDbUserRequest.xLanguage) &&
-            Objects.equals(this.body, updateDbUserRequest.body);
+        return Objects.equals(this.instanceId, updateDbUserRequest.instanceId)
+            && Objects.equals(this.dbUserId, updateDbUserRequest.dbUserId)
+            && Objects.equals(this.xLanguage, updateDbUserRequest.xLanguage)
+            && Objects.equals(this.body, updateDbUserRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, dbUserId, xLanguage, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -250,16 +211,13 @@ public class UpdateDbUserRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

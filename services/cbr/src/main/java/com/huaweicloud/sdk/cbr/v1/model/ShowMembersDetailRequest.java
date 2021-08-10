@@ -1,74 +1,56 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowMembersDetailRequest  {
-
-
+/** Request Object */
+public class ShowMembersDetailRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_id")
-    
+    @JsonProperty(value = "backup_id")
+
     private String backupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dest_project_id")
-    
+    @JsonProperty(value = "dest_project_id")
+
     private String destProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_id")
-    
+    @JsonProperty(value = "image_id")
+
     private String imageId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vault_id")
-    
+    @JsonProperty(value = "vault_id")
+
     private String vaultId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
+
     private String marker;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sort")
-    
+    @JsonProperty(value = "sort")
+
     private String sort;
 
     public ShowMembersDetailRequest withBackupId(String backupId) {
@@ -76,13 +58,9 @@ public class ShowMembersDetailRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 备份id
-     * @return backupId
-     */
+    /** 备份id
+     * 
+     * @return backupId */
     public String getBackupId() {
         return backupId;
     }
@@ -91,20 +69,14 @@ public class ShowMembersDetailRequest  {
         this.backupId = backupId;
     }
 
-    
-
     public ShowMembersDetailRequest withDestProjectId(String destProjectId) {
         this.destProjectId = destProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 接受备份共享的项目id
-     * @return destProjectId
-     */
+    /** 接受备份共享的项目id
+     * 
+     * @return destProjectId */
     public String getDestProjectId() {
         return destProjectId;
     }
@@ -113,20 +85,14 @@ public class ShowMembersDetailRequest  {
         this.destProjectId = destProjectId;
     }
 
-    
-
     public ShowMembersDetailRequest withImageId(String imageId) {
         this.imageId = imageId;
         return this;
     }
 
-    
-
-
-    /**
-     * 接受的共享备份副本注册的镜像id
-     * @return imageId
-     */
+    /** 接受的共享备份副本注册的镜像id
+     * 
+     * @return imageId */
     public String getImageId() {
         return imageId;
     }
@@ -135,20 +101,14 @@ public class ShowMembersDetailRequest  {
         this.imageId = imageId;
     }
 
-    
-
     public ShowMembersDetailRequest withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份共享状态
-     * @return status
-     */
+    /** 备份共享状态
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -157,20 +117,14 @@ public class ShowMembersDetailRequest  {
         this.status = status;
     }
 
-    
-
     public ShowMembersDetailRequest withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标端接受共享备份的存储库id，仅支持uuid
-     * @return vaultId
-     */
+    /** 目标端接受共享备份的存储库id，仅支持uuid
+     * 
+     * @return vaultId */
     public String getVaultId() {
         return vaultId;
     }
@@ -179,20 +133,14 @@ public class ShowMembersDetailRequest  {
         this.vaultId = vaultId;
     }
 
-    
-
     public ShowMembersDetailRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示的条目数量，正整数
-     * @return limit
-     */
+    /** 每页显示的条目数量，正整数
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -201,20 +149,14 @@ public class ShowMembersDetailRequest  {
         this.limit = limit;
     }
 
-    
-
     public ShowMembersDetailRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
 
-    
-
-
-    /**
-     * 上一次查询最后一条的id，仅支持uuid
-     * @return marker
-     */
+    /** 上一次查询最后一条的id，仅支持uuid
+     * 
+     * @return marker */
     public String getMarker() {
         return marker;
     }
@@ -223,20 +165,14 @@ public class ShowMembersDetailRequest  {
         this.marker = marker;
     }
 
-    
-
     public ShowMembersDetailRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移值，正整数
-     * @return offset
-     */
+    /** 偏移值，正整数
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -245,20 +181,15 @@ public class ShowMembersDetailRequest  {
         this.offset = offset;
     }
 
-    
-
     public ShowMembersDetailRequest withSort(String sort) {
         this.sort = sort;
         return this;
     }
 
-    
-
-
-    /**
-     * sort的内容为一组由逗号分隔的属性及可选排序方向组成，形如<key1>[:<direction>],<key2>[:<direction>],其中direction的取值为asc (升序) 或 desc (降序),如没有传入direction参数，默认为降序，sort内容的长度限制为255个字符。
-     * @return sort
-     */
+    /** sort的内容为一组由逗号分隔的属性及可选排序方向组成，形如<key1>[:<direction>],<key2>[:<direction>],其中direction的取值为asc (升序) 或 desc
+     * (降序),如没有传入direction参数，默认为降序，sort内容的长度限制为255个字符。
+     * 
+     * @return sort */
     public String getSort() {
         return sort;
     }
@@ -266,8 +197,6 @@ public class ShowMembersDetailRequest  {
     public void setSort(String sort) {
         this.sort = sort;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -278,20 +207,22 @@ public class ShowMembersDetailRequest  {
             return false;
         }
         ShowMembersDetailRequest showMembersDetailRequest = (ShowMembersDetailRequest) o;
-        return Objects.equals(this.backupId, showMembersDetailRequest.backupId) &&
-            Objects.equals(this.destProjectId, showMembersDetailRequest.destProjectId) &&
-            Objects.equals(this.imageId, showMembersDetailRequest.imageId) &&
-            Objects.equals(this.status, showMembersDetailRequest.status) &&
-            Objects.equals(this.vaultId, showMembersDetailRequest.vaultId) &&
-            Objects.equals(this.limit, showMembersDetailRequest.limit) &&
-            Objects.equals(this.marker, showMembersDetailRequest.marker) &&
-            Objects.equals(this.offset, showMembersDetailRequest.offset) &&
-            Objects.equals(this.sort, showMembersDetailRequest.sort);
+        return Objects.equals(this.backupId, showMembersDetailRequest.backupId)
+            && Objects.equals(this.destProjectId, showMembersDetailRequest.destProjectId)
+            && Objects.equals(this.imageId, showMembersDetailRequest.imageId)
+            && Objects.equals(this.status, showMembersDetailRequest.status)
+            && Objects.equals(this.vaultId, showMembersDetailRequest.vaultId)
+            && Objects.equals(this.limit, showMembersDetailRequest.limit)
+            && Objects.equals(this.marker, showMembersDetailRequest.marker)
+            && Objects.equals(this.offset, showMembersDetailRequest.offset)
+            && Objects.equals(this.sort, showMembersDetailRequest.sort);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(backupId, destProjectId, imageId, status, vaultId, limit, marker, offset, sort);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -308,16 +239,13 @@ public class ShowMembersDetailRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

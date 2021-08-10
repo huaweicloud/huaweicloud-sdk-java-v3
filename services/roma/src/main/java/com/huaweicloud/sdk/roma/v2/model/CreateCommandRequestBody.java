@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CreateCommandRequestBody
- */
-public class CreateCommandRequestBody  {
-
-
+/** CreateCommandRequestBody */
+public class CreateCommandRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public CreateCommandRequestBody withName(String name) {
@@ -34,13 +23,9 @@ public class CreateCommandRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 服务命令名称，支持大小写字母，数字，中划线及下划线，长度2-50
-     * @return name
-     */
+    /** 服务命令名称，支持大小写字母，数字，中划线及下划线，长度2-50
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -49,20 +34,14 @@ public class CreateCommandRequestBody  {
         this.name = name;
     }
 
-    
-
     public CreateCommandRequestBody withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务命令描述，长度0-200
-     * @return description
-     */
+    /** 服务命令描述，长度0-200
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -70,8 +49,6 @@ public class CreateCommandRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class CreateCommandRequestBody  {
             return false;
         }
         CreateCommandRequestBody createCommandRequestBody = (CreateCommandRequestBody) o;
-        return Objects.equals(this.name, createCommandRequestBody.name) &&
-            Objects.equals(this.description, createCommandRequestBody.description);
+        return Objects.equals(this.name, createCommandRequestBody.name)
+            && Objects.equals(this.description, createCommandRequestBody.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class CreateCommandRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

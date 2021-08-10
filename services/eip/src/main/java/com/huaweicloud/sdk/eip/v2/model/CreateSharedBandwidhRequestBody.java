@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.eip.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.CreateSharedBandwidthOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 创建共享带宽请求体
- */
-public class CreateSharedBandwidhRequestBody  {
-
-
+/** 创建共享带宽请求体 */
+public class CreateSharedBandwidhRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bandwidth")
-    
+    @JsonProperty(value = "bandwidth")
+
     private CreateSharedBandwidthOption bandwidth;
 
     public CreateSharedBandwidhRequestBody withBandwidth(CreateSharedBandwidthOption bandwidth) {
@@ -30,19 +20,17 @@ public class CreateSharedBandwidhRequestBody  {
     }
 
     public CreateSharedBandwidhRequestBody withBandwidth(Consumer<CreateSharedBandwidthOption> bandwidthSetter) {
-        if(this.bandwidth == null ){
+        if (this.bandwidth == null) {
             this.bandwidth = new CreateSharedBandwidthOption();
             bandwidthSetter.accept(this.bandwidth);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get bandwidth
-     * @return bandwidth
-     */
+    /** Get bandwidth
+     * 
+     * @return bandwidth */
     public CreateSharedBandwidthOption getBandwidth() {
         return bandwidth;
     }
@@ -50,8 +38,6 @@ public class CreateSharedBandwidhRequestBody  {
     public void setBandwidth(CreateSharedBandwidthOption bandwidth) {
         this.bandwidth = bandwidth;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class CreateSharedBandwidhRequestBody  {
         CreateSharedBandwidhRequestBody createSharedBandwidhRequestBody = (CreateSharedBandwidhRequestBody) o;
         return Objects.equals(this.bandwidth, createSharedBandwidhRequestBody.bandwidth);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(bandwidth);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class CreateSharedBandwidhRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,86 +1,66 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * spec是集合类的元素类型，内容为插件实例具体信息
- */
-public class InstanceSpec  {
-
-
+/** spec是集合类的元素类型，内容为插件实例具体信息 */
+public class InstanceSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="clusterID")
-    
+    @JsonProperty(value = "clusterID")
+
     private String clusterID;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
+
     private String version;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="addonTemplateName")
-    
+    @JsonProperty(value = "addonTemplateName")
+
     private String addonTemplateName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="addonTemplateType")
-    
+    @JsonProperty(value = "addonTemplateType")
+
     private String addonTemplateType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="addonTemplateLogo")
-    
+    @JsonProperty(value = "addonTemplateLogo")
+
     private String addonTemplateLogo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="addonTemplateLabels")
-    
+    @JsonProperty(value = "addonTemplateLabels")
+
     private List<String> addonTemplateLabels = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="values")
-    
+    @JsonProperty(value = "values")
+
     private Map<String, Object> values = null;
-    
+
     public InstanceSpec withClusterID(String clusterID) {
         this.clusterID = clusterID;
         return this;
     }
 
-    
-
-
-    /**
-     * 集群id
-     * @return clusterID
-     */
+    /** 集群id
+     * 
+     * @return clusterID */
     public String getClusterID() {
         return clusterID;
     }
@@ -89,20 +69,14 @@ public class InstanceSpec  {
         this.clusterID = clusterID;
     }
 
-    
-
     public InstanceSpec withVersion(String version) {
         this.version = version;
         return this;
     }
 
-    
-
-
-    /**
-     * 插件模板版本号，如1.0.0
-     * @return version
-     */
+    /** 插件模板版本号，如1.0.0
+     * 
+     * @return version */
     public String getVersion() {
         return version;
     }
@@ -111,20 +85,14 @@ public class InstanceSpec  {
         this.version = version;
     }
 
-    
-
     public InstanceSpec withAddonTemplateName(String addonTemplateName) {
         this.addonTemplateName = addonTemplateName;
         return this;
     }
 
-    
-
-
-    /**
-     * 插件模板名称，如coredns
-     * @return addonTemplateName
-     */
+    /** 插件模板名称，如coredns
+     * 
+     * @return addonTemplateName */
     public String getAddonTemplateName() {
         return addonTemplateName;
     }
@@ -133,20 +101,14 @@ public class InstanceSpec  {
         this.addonTemplateName = addonTemplateName;
     }
 
-    
-
     public InstanceSpec withAddonTemplateType(String addonTemplateType) {
         this.addonTemplateType = addonTemplateType;
         return this;
     }
 
-    
-
-
-    /**
-     * 插件模板类型
-     * @return addonTemplateType
-     */
+    /** 插件模板类型
+     * 
+     * @return addonTemplateType */
     public String getAddonTemplateType() {
         return addonTemplateType;
     }
@@ -155,20 +117,14 @@ public class InstanceSpec  {
         this.addonTemplateType = addonTemplateType;
     }
 
-    
-
     public InstanceSpec withAddonTemplateLogo(String addonTemplateLogo) {
         this.addonTemplateLogo = addonTemplateLogo;
         return this;
     }
 
-    
-
-
-    /**
-     * 插件模板logo图片的地址
-     * @return addonTemplateLogo
-     */
+    /** 插件模板logo图片的地址
+     * 
+     * @return addonTemplateLogo */
     public String getAddonTemplateLogo() {
         return addonTemplateLogo;
     }
@@ -177,16 +133,13 @@ public class InstanceSpec  {
         this.addonTemplateLogo = addonTemplateLogo;
     }
 
-    
-
     public InstanceSpec withAddonTemplateLabels(List<String> addonTemplateLabels) {
         this.addonTemplateLabels = addonTemplateLabels;
         return this;
     }
 
-    
     public InstanceSpec addAddonTemplateLabelsItem(String addonTemplateLabelsItem) {
-        if(this.addonTemplateLabels == null) {
+        if (this.addonTemplateLabels == null) {
             this.addonTemplateLabels = new ArrayList<>();
         }
         this.addonTemplateLabels.add(addonTemplateLabelsItem);
@@ -194,17 +147,16 @@ public class InstanceSpec  {
     }
 
     public InstanceSpec withAddonTemplateLabels(Consumer<List<String>> addonTemplateLabelsSetter) {
-        if(this.addonTemplateLabels == null) {
+        if (this.addonTemplateLabels == null) {
             this.addonTemplateLabels = new ArrayList<>();
         }
         addonTemplateLabelsSetter.accept(this.addonTemplateLabels);
         return this;
     }
 
-    /**
-     * 插件模板所属类型
-     * @return addonTemplateLabels
-     */
+    /** 插件模板所属类型
+     * 
+     * @return addonTemplateLabels */
     public List<String> getAddonTemplateLabels() {
         return addonTemplateLabels;
     }
@@ -213,20 +165,14 @@ public class InstanceSpec  {
         this.addonTemplateLabels = addonTemplateLabels;
     }
 
-    
-
     public InstanceSpec withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 插件模板描述
-     * @return description
-     */
+    /** 插件模板描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -235,17 +181,13 @@ public class InstanceSpec  {
         this.description = description;
     }
 
-    
-
     public InstanceSpec withValues(Map<String, Object> values) {
         this.values = values;
         return this;
     }
 
-    
-
     public InstanceSpec putValuesItem(String key, Object valuesItem) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new HashMap<>();
         }
         this.values.put(key, valuesItem);
@@ -253,16 +195,16 @@ public class InstanceSpec  {
     }
 
     public InstanceSpec withValues(Consumer<Map<String, Object>> valuesSetter) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new HashMap<>();
         }
         valuesSetter.accept(this.values);
         return this;
     }
-    /**
-     * 插件模板安装参数（各插件不同），请根据具体插件模板信息填写安装参数。
-     * @return values
-     */
+
+    /** 插件模板安装参数（各插件不同），请根据具体插件模板信息填写安装参数。
+     * 
+     * @return values */
     public Map<String, Object> getValues() {
         return values;
     }
@@ -270,8 +212,6 @@ public class InstanceSpec  {
     public void setValues(Map<String, Object> values) {
         this.values = values;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -282,19 +222,28 @@ public class InstanceSpec  {
             return false;
         }
         InstanceSpec instanceSpec = (InstanceSpec) o;
-        return Objects.equals(this.clusterID, instanceSpec.clusterID) &&
-            Objects.equals(this.version, instanceSpec.version) &&
-            Objects.equals(this.addonTemplateName, instanceSpec.addonTemplateName) &&
-            Objects.equals(this.addonTemplateType, instanceSpec.addonTemplateType) &&
-            Objects.equals(this.addonTemplateLogo, instanceSpec.addonTemplateLogo) &&
-            Objects.equals(this.addonTemplateLabels, instanceSpec.addonTemplateLabels) &&
-            Objects.equals(this.description, instanceSpec.description) &&
-            Objects.equals(this.values, instanceSpec.values);
+        return Objects.equals(this.clusterID, instanceSpec.clusterID)
+            && Objects.equals(this.version, instanceSpec.version)
+            && Objects.equals(this.addonTemplateName, instanceSpec.addonTemplateName)
+            && Objects.equals(this.addonTemplateType, instanceSpec.addonTemplateType)
+            && Objects.equals(this.addonTemplateLogo, instanceSpec.addonTemplateLogo)
+            && Objects.equals(this.addonTemplateLabels, instanceSpec.addonTemplateLabels)
+            && Objects.equals(this.description, instanceSpec.description)
+            && Objects.equals(this.values, instanceSpec.values);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(clusterID, version, addonTemplateName, addonTemplateType, addonTemplateLogo, addonTemplateLabels, description, values);
+        return Objects.hash(clusterID,
+            version,
+            addonTemplateName,
+            addonTemplateType,
+            addonTemplateLogo,
+            addonTemplateLabels,
+            description,
+            values);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -310,16 +259,13 @@ public class InstanceSpec  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

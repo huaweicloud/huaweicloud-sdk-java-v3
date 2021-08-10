@@ -1,61 +1,45 @@
 package com.huaweicloud.sdk.ddm.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceBeanResponse;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListInstancesResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instances")
-    
+    @JsonProperty(value = "instances")
+
     private List<ShowInstanceBeanResponse> instances = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_num")
-    
+    @JsonProperty(value = "instance_num")
+
     private Integer instanceNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_no")
-    
+    @JsonProperty(value = "page_no")
+
     private Integer pageNo;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_size")
-    
+    @JsonProperty(value = "page_size")
+
     private Integer pageSize;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_record")
-    
+    @JsonProperty(value = "total_record")
+
     private Integer totalRecord;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_page")
-    
+    @JsonProperty(value = "total_page")
+
     private Integer totalPage;
 
     public ListInstancesResponse withInstances(List<ShowInstanceBeanResponse> instances) {
@@ -63,9 +47,8 @@ public class ListInstancesResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListInstancesResponse addInstancesItem(ShowInstanceBeanResponse instancesItem) {
-        if(this.instances == null) {
+        if (this.instances == null) {
             this.instances = new ArrayList<>();
         }
         this.instances.add(instancesItem);
@@ -73,17 +56,16 @@ public class ListInstancesResponse extends SdkResponse {
     }
 
     public ListInstancesResponse withInstances(Consumer<List<ShowInstanceBeanResponse>> instancesSetter) {
-        if(this.instances == null) {
+        if (this.instances == null) {
             this.instances = new ArrayList<>();
         }
         instancesSetter.accept(this.instances);
         return this;
     }
 
-    /**
-     * DDM实例的信息。
-     * @return instances
-     */
+    /** DDM实例的信息。
+     * 
+     * @return instances */
     public List<ShowInstanceBeanResponse> getInstances() {
         return instances;
     }
@@ -92,20 +74,14 @@ public class ListInstancesResponse extends SdkResponse {
         this.instances = instances;
     }
 
-    
-
     public ListInstancesResponse withInstanceNum(Integer instanceNum) {
         this.instanceNum = instanceNum;
         return this;
     }
 
-    
-
-
-    /**
-     * 租户下的DDM实例个数
-     * @return instanceNum
-     */
+    /** 租户下的DDM实例个数
+     * 
+     * @return instanceNum */
     public Integer getInstanceNum() {
         return instanceNum;
     }
@@ -114,20 +90,14 @@ public class ListInstancesResponse extends SdkResponse {
         this.instanceNum = instanceNum;
     }
 
-    
-
     public ListInstancesResponse withPageNo(Integer pageNo) {
         this.pageNo = pageNo;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前页码
-     * @return pageNo
-     */
+    /** 当前页码
+     * 
+     * @return pageNo */
     public Integer getPageNo() {
         return pageNo;
     }
@@ -136,20 +106,14 @@ public class ListInstancesResponse extends SdkResponse {
         this.pageNo = pageNo;
     }
 
-    
-
     public ListInstancesResponse withPageSize(Integer pageSize) {
         this.pageSize = pageSize;
         return this;
     }
 
-    
-
-
-    /**
-     * 当前页码的数据条数
-     * @return pageSize
-     */
+    /** 当前页码的数据条数
+     * 
+     * @return pageSize */
     public Integer getPageSize() {
         return pageSize;
     }
@@ -158,20 +122,14 @@ public class ListInstancesResponse extends SdkResponse {
         this.pageSize = pageSize;
     }
 
-    
-
     public ListInstancesResponse withTotalRecord(Integer totalRecord) {
         this.totalRecord = totalRecord;
         return this;
     }
 
-    
-
-
-    /**
-     * 总条数
-     * @return totalRecord
-     */
+    /** 总条数
+     * 
+     * @return totalRecord */
     public Integer getTotalRecord() {
         return totalRecord;
     }
@@ -180,20 +138,14 @@ public class ListInstancesResponse extends SdkResponse {
         this.totalRecord = totalRecord;
     }
 
-    
-
     public ListInstancesResponse withTotalPage(Integer totalPage) {
         this.totalPage = totalPage;
         return this;
     }
 
-    
-
-
-    /**
-     * 总页数
-     * @return totalPage
-     */
+    /** 总页数
+     * 
+     * @return totalPage */
     public Integer getTotalPage() {
         return totalPage;
     }
@@ -201,8 +153,6 @@ public class ListInstancesResponse extends SdkResponse {
     public void setTotalPage(Integer totalPage) {
         this.totalPage = totalPage;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -213,17 +163,19 @@ public class ListInstancesResponse extends SdkResponse {
             return false;
         }
         ListInstancesResponse listInstancesResponse = (ListInstancesResponse) o;
-        return Objects.equals(this.instances, listInstancesResponse.instances) &&
-            Objects.equals(this.instanceNum, listInstancesResponse.instanceNum) &&
-            Objects.equals(this.pageNo, listInstancesResponse.pageNo) &&
-            Objects.equals(this.pageSize, listInstancesResponse.pageSize) &&
-            Objects.equals(this.totalRecord, listInstancesResponse.totalRecord) &&
-            Objects.equals(this.totalPage, listInstancesResponse.totalPage);
+        return Objects.equals(this.instances, listInstancesResponse.instances)
+            && Objects.equals(this.instanceNum, listInstancesResponse.instanceNum)
+            && Objects.equals(this.pageNo, listInstancesResponse.pageNo)
+            && Objects.equals(this.pageSize, listInstancesResponse.pageSize)
+            && Objects.equals(this.totalRecord, listInstancesResponse.totalRecord)
+            && Objects.equals(this.totalPage, listInstancesResponse.totalPage);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instances, instanceNum, pageNo, pageSize, totalRecord, totalPage);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -237,16 +189,13 @@ public class ListInstancesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

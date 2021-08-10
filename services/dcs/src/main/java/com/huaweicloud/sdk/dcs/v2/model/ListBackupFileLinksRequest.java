@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dcs.v2.model.DownloadBackupFilesReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ListBackupFileLinksRequest  {
-
-
+/** Request Object */
+public class ListBackupFileLinksRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_id")
-    
+    @JsonProperty(value = "backup_id")
+
     private String backupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private DownloadBackupFilesReq body;
 
     public ListBackupFileLinksRequest withInstanceId(String instanceId) {
@@ -41,13 +29,9 @@ public class ListBackupFileLinksRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID。
-     * @return instanceId
-     */
+    /** 实例ID。
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -56,20 +40,14 @@ public class ListBackupFileLinksRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListBackupFileLinksRequest withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份记录ID。
-     * @return backupId
-     */
+    /** 备份记录ID。
+     * 
+     * @return backupId */
     public String getBackupId() {
         return backupId;
     }
@@ -78,27 +56,23 @@ public class ListBackupFileLinksRequest  {
         this.backupId = backupId;
     }
 
-    
-
     public ListBackupFileLinksRequest withBody(DownloadBackupFilesReq body) {
         this.body = body;
         return this;
     }
 
     public ListBackupFileLinksRequest withBody(Consumer<DownloadBackupFilesReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new DownloadBackupFilesReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public DownloadBackupFilesReq getBody() {
         return body;
     }
@@ -106,8 +80,6 @@ public class ListBackupFileLinksRequest  {
     public void setBody(DownloadBackupFilesReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class ListBackupFileLinksRequest  {
             return false;
         }
         ListBackupFileLinksRequest listBackupFileLinksRequest = (ListBackupFileLinksRequest) o;
-        return Objects.equals(this.instanceId, listBackupFileLinksRequest.instanceId) &&
-            Objects.equals(this.backupId, listBackupFileLinksRequest.backupId) &&
-            Objects.equals(this.body, listBackupFileLinksRequest.body);
+        return Objects.equals(this.instanceId, listBackupFileLinksRequest.instanceId)
+            && Objects.equals(this.backupId, listBackupFileLinksRequest.backupId)
+            && Objects.equals(this.body, listBackupFileLinksRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, backupId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class ListBackupFileLinksRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

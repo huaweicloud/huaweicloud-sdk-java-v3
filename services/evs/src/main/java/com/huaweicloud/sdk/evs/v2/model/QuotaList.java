@@ -1,152 +1,107 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.evs.v2.model.QuotaDetailBackupGigabytes;
-import com.huaweicloud.sdk.evs.v2.model.QuotaDetailBackups;
-import com.huaweicloud.sdk.evs.v2.model.QuotaDetailGigabytes;
-import com.huaweicloud.sdk.evs.v2.model.QuotaDetailGigabytesGPSSD;
-import com.huaweicloud.sdk.evs.v2.model.QuotaDetailGigabytesSAS;
-import com.huaweicloud.sdk.evs.v2.model.QuotaDetailGigabytesSATA;
-import com.huaweicloud.sdk.evs.v2.model.QuotaDetailGigabytesSSD;
-import com.huaweicloud.sdk.evs.v2.model.QuotaDetailPerVolumeGigabytes;
-import com.huaweicloud.sdk.evs.v2.model.QuotaDetailSnapshots;
-import com.huaweicloud.sdk.evs.v2.model.QuotaDetailSnapshotsGPSSD;
-import com.huaweicloud.sdk.evs.v2.model.QuotaDetailSnapshotsSAS;
-import com.huaweicloud.sdk.evs.v2.model.QuotaDetailSnapshotsSATA;
-import com.huaweicloud.sdk.evs.v2.model.QuotaDetailSnapshotsSSD;
-import com.huaweicloud.sdk.evs.v2.model.QuotaDetailVolumes;
-import com.huaweicloud.sdk.evs.v2.model.QuotaDetailVolumesGPSSD;
-import com.huaweicloud.sdk.evs.v2.model.QuotaDetailVolumesSAS;
-import com.huaweicloud.sdk.evs.v2.model.QuotaDetailVolumesSATA;
-import com.huaweicloud.sdk.evs.v2.model.QuotaDetailVolumesSSD;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 配额信息。
- */
-public class QuotaList  {
-
-
+/** 配额信息。 */
+public class QuotaList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_gigabytes")
-    
+    @JsonProperty(value = "backup_gigabytes")
+
     private QuotaDetailBackupGigabytes backupGigabytes;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backups")
-    
+    @JsonProperty(value = "backups")
+
     private QuotaDetailBackups backups;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gigabytes")
-    
+    @JsonProperty(value = "gigabytes")
+
     private QuotaDetailGigabytes gigabytes;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="snapshots")
-    
+    @JsonProperty(value = "snapshots")
+
     private QuotaDetailSnapshots snapshots;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volumes")
-    
+    @JsonProperty(value = "volumes")
+
     private QuotaDetailVolumes volumes;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gigabytes_SATA")
-    
+    @JsonProperty(value = "gigabytes_SATA")
+
     private QuotaDetailGigabytesSATA gigabytesSATA;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="snapshots_SATA")
-    
+    @JsonProperty(value = "snapshots_SATA")
+
     private QuotaDetailSnapshotsSATA snapshotsSATA;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volumes_SATA")
-    
+    @JsonProperty(value = "volumes_SATA")
+
     private QuotaDetailVolumesSATA volumesSATA;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gigabytes_SAS")
-    
+    @JsonProperty(value = "gigabytes_SAS")
+
     private QuotaDetailGigabytesSAS gigabytesSAS;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="snapshots_SAS")
-    
+    @JsonProperty(value = "snapshots_SAS")
+
     private QuotaDetailSnapshotsSAS snapshotsSAS;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volumes_SAS")
-    
+    @JsonProperty(value = "volumes_SAS")
+
     private QuotaDetailVolumesSAS volumesSAS;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gigabytes_SSD")
-    
+    @JsonProperty(value = "gigabytes_SSD")
+
     private QuotaDetailGigabytesSSD gigabytesSSD;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="snapshots_SSD")
-    
+    @JsonProperty(value = "snapshots_SSD")
+
     private QuotaDetailSnapshotsSSD snapshotsSSD;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volumes_SSD")
-    
+    @JsonProperty(value = "volumes_SSD")
+
     private QuotaDetailVolumesSSD volumesSSD;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gigabytes_GPSSD")
-    
+    @JsonProperty(value = "gigabytes_GPSSD")
+
     private QuotaDetailGigabytesGPSSD gigabytesGPSSD;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="snapshots_GPSSD")
-    
+    @JsonProperty(value = "snapshots_GPSSD")
+
     private QuotaDetailSnapshotsGPSSD snapshotsGPSSD;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volumes_GPSSD")
-    
+    @JsonProperty(value = "volumes_GPSSD")
+
     private QuotaDetailVolumesGPSSD volumesGPSSD;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="per_volume_gigabytes")
-    
+    @JsonProperty(value = "per_volume_gigabytes")
+
     private QuotaDetailPerVolumeGigabytes perVolumeGigabytes;
 
     public QuotaList withBackupGigabytes(QuotaDetailBackupGigabytes backupGigabytes) {
@@ -155,19 +110,17 @@ public class QuotaList  {
     }
 
     public QuotaList withBackupGigabytes(Consumer<QuotaDetailBackupGigabytes> backupGigabytesSetter) {
-        if(this.backupGigabytes == null ){
+        if (this.backupGigabytes == null) {
             this.backupGigabytes = new QuotaDetailBackupGigabytes();
             backupGigabytesSetter.accept(this.backupGigabytes);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get backupGigabytes
-     * @return backupGigabytes
-     */
+    /** Get backupGigabytes
+     * 
+     * @return backupGigabytes */
     public QuotaDetailBackupGigabytes getBackupGigabytes() {
         return backupGigabytes;
     }
@@ -176,27 +129,23 @@ public class QuotaList  {
         this.backupGigabytes = backupGigabytes;
     }
 
-    
-
     public QuotaList withBackups(QuotaDetailBackups backups) {
         this.backups = backups;
         return this;
     }
 
     public QuotaList withBackups(Consumer<QuotaDetailBackups> backupsSetter) {
-        if(this.backups == null ){
+        if (this.backups == null) {
             this.backups = new QuotaDetailBackups();
             backupsSetter.accept(this.backups);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get backups
-     * @return backups
-     */
+    /** Get backups
+     * 
+     * @return backups */
     public QuotaDetailBackups getBackups() {
         return backups;
     }
@@ -205,27 +154,23 @@ public class QuotaList  {
         this.backups = backups;
     }
 
-    
-
     public QuotaList withGigabytes(QuotaDetailGigabytes gigabytes) {
         this.gigabytes = gigabytes;
         return this;
     }
 
     public QuotaList withGigabytes(Consumer<QuotaDetailGigabytes> gigabytesSetter) {
-        if(this.gigabytes == null ){
+        if (this.gigabytes == null) {
             this.gigabytes = new QuotaDetailGigabytes();
             gigabytesSetter.accept(this.gigabytes);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get gigabytes
-     * @return gigabytes
-     */
+    /** Get gigabytes
+     * 
+     * @return gigabytes */
     public QuotaDetailGigabytes getGigabytes() {
         return gigabytes;
     }
@@ -234,20 +179,14 @@ public class QuotaList  {
         this.gigabytes = gigabytes;
     }
 
-    
-
     public QuotaList withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目ID。
-     * @return id
-     */
+    /** 项目ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -256,27 +195,23 @@ public class QuotaList  {
         this.id = id;
     }
 
-    
-
     public QuotaList withSnapshots(QuotaDetailSnapshots snapshots) {
         this.snapshots = snapshots;
         return this;
     }
 
     public QuotaList withSnapshots(Consumer<QuotaDetailSnapshots> snapshotsSetter) {
-        if(this.snapshots == null ){
+        if (this.snapshots == null) {
             this.snapshots = new QuotaDetailSnapshots();
             snapshotsSetter.accept(this.snapshots);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get snapshots
-     * @return snapshots
-     */
+    /** Get snapshots
+     * 
+     * @return snapshots */
     public QuotaDetailSnapshots getSnapshots() {
         return snapshots;
     }
@@ -285,27 +220,23 @@ public class QuotaList  {
         this.snapshots = snapshots;
     }
 
-    
-
     public QuotaList withVolumes(QuotaDetailVolumes volumes) {
         this.volumes = volumes;
         return this;
     }
 
     public QuotaList withVolumes(Consumer<QuotaDetailVolumes> volumesSetter) {
-        if(this.volumes == null ){
+        if (this.volumes == null) {
             this.volumes = new QuotaDetailVolumes();
             volumesSetter.accept(this.volumes);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get volumes
-     * @return volumes
-     */
+    /** Get volumes
+     * 
+     * @return volumes */
     public QuotaDetailVolumes getVolumes() {
         return volumes;
     }
@@ -314,27 +245,23 @@ public class QuotaList  {
         this.volumes = volumes;
     }
 
-    
-
     public QuotaList withGigabytesSATA(QuotaDetailGigabytesSATA gigabytesSATA) {
         this.gigabytesSATA = gigabytesSATA;
         return this;
     }
 
     public QuotaList withGigabytesSATA(Consumer<QuotaDetailGigabytesSATA> gigabytesSATASetter) {
-        if(this.gigabytesSATA == null ){
+        if (this.gigabytesSATA == null) {
             this.gigabytesSATA = new QuotaDetailGigabytesSATA();
             gigabytesSATASetter.accept(this.gigabytesSATA);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get gigabytesSATA
-     * @return gigabytesSATA
-     */
+    /** Get gigabytesSATA
+     * 
+     * @return gigabytesSATA */
     public QuotaDetailGigabytesSATA getGigabytesSATA() {
         return gigabytesSATA;
     }
@@ -343,27 +270,23 @@ public class QuotaList  {
         this.gigabytesSATA = gigabytesSATA;
     }
 
-    
-
     public QuotaList withSnapshotsSATA(QuotaDetailSnapshotsSATA snapshotsSATA) {
         this.snapshotsSATA = snapshotsSATA;
         return this;
     }
 
     public QuotaList withSnapshotsSATA(Consumer<QuotaDetailSnapshotsSATA> snapshotsSATASetter) {
-        if(this.snapshotsSATA == null ){
+        if (this.snapshotsSATA == null) {
             this.snapshotsSATA = new QuotaDetailSnapshotsSATA();
             snapshotsSATASetter.accept(this.snapshotsSATA);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get snapshotsSATA
-     * @return snapshotsSATA
-     */
+    /** Get snapshotsSATA
+     * 
+     * @return snapshotsSATA */
     public QuotaDetailSnapshotsSATA getSnapshotsSATA() {
         return snapshotsSATA;
     }
@@ -372,27 +295,23 @@ public class QuotaList  {
         this.snapshotsSATA = snapshotsSATA;
     }
 
-    
-
     public QuotaList withVolumesSATA(QuotaDetailVolumesSATA volumesSATA) {
         this.volumesSATA = volumesSATA;
         return this;
     }
 
     public QuotaList withVolumesSATA(Consumer<QuotaDetailVolumesSATA> volumesSATASetter) {
-        if(this.volumesSATA == null ){
+        if (this.volumesSATA == null) {
             this.volumesSATA = new QuotaDetailVolumesSATA();
             volumesSATASetter.accept(this.volumesSATA);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get volumesSATA
-     * @return volumesSATA
-     */
+    /** Get volumesSATA
+     * 
+     * @return volumesSATA */
     public QuotaDetailVolumesSATA getVolumesSATA() {
         return volumesSATA;
     }
@@ -401,27 +320,23 @@ public class QuotaList  {
         this.volumesSATA = volumesSATA;
     }
 
-    
-
     public QuotaList withGigabytesSAS(QuotaDetailGigabytesSAS gigabytesSAS) {
         this.gigabytesSAS = gigabytesSAS;
         return this;
     }
 
     public QuotaList withGigabytesSAS(Consumer<QuotaDetailGigabytesSAS> gigabytesSASSetter) {
-        if(this.gigabytesSAS == null ){
+        if (this.gigabytesSAS == null) {
             this.gigabytesSAS = new QuotaDetailGigabytesSAS();
             gigabytesSASSetter.accept(this.gigabytesSAS);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get gigabytesSAS
-     * @return gigabytesSAS
-     */
+    /** Get gigabytesSAS
+     * 
+     * @return gigabytesSAS */
     public QuotaDetailGigabytesSAS getGigabytesSAS() {
         return gigabytesSAS;
     }
@@ -430,27 +345,23 @@ public class QuotaList  {
         this.gigabytesSAS = gigabytesSAS;
     }
 
-    
-
     public QuotaList withSnapshotsSAS(QuotaDetailSnapshotsSAS snapshotsSAS) {
         this.snapshotsSAS = snapshotsSAS;
         return this;
     }
 
     public QuotaList withSnapshotsSAS(Consumer<QuotaDetailSnapshotsSAS> snapshotsSASSetter) {
-        if(this.snapshotsSAS == null ){
+        if (this.snapshotsSAS == null) {
             this.snapshotsSAS = new QuotaDetailSnapshotsSAS();
             snapshotsSASSetter.accept(this.snapshotsSAS);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get snapshotsSAS
-     * @return snapshotsSAS
-     */
+    /** Get snapshotsSAS
+     * 
+     * @return snapshotsSAS */
     public QuotaDetailSnapshotsSAS getSnapshotsSAS() {
         return snapshotsSAS;
     }
@@ -459,27 +370,23 @@ public class QuotaList  {
         this.snapshotsSAS = snapshotsSAS;
     }
 
-    
-
     public QuotaList withVolumesSAS(QuotaDetailVolumesSAS volumesSAS) {
         this.volumesSAS = volumesSAS;
         return this;
     }
 
     public QuotaList withVolumesSAS(Consumer<QuotaDetailVolumesSAS> volumesSASSetter) {
-        if(this.volumesSAS == null ){
+        if (this.volumesSAS == null) {
             this.volumesSAS = new QuotaDetailVolumesSAS();
             volumesSASSetter.accept(this.volumesSAS);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get volumesSAS
-     * @return volumesSAS
-     */
+    /** Get volumesSAS
+     * 
+     * @return volumesSAS */
     public QuotaDetailVolumesSAS getVolumesSAS() {
         return volumesSAS;
     }
@@ -488,27 +395,23 @@ public class QuotaList  {
         this.volumesSAS = volumesSAS;
     }
 
-    
-
     public QuotaList withGigabytesSSD(QuotaDetailGigabytesSSD gigabytesSSD) {
         this.gigabytesSSD = gigabytesSSD;
         return this;
     }
 
     public QuotaList withGigabytesSSD(Consumer<QuotaDetailGigabytesSSD> gigabytesSSDSetter) {
-        if(this.gigabytesSSD == null ){
+        if (this.gigabytesSSD == null) {
             this.gigabytesSSD = new QuotaDetailGigabytesSSD();
             gigabytesSSDSetter.accept(this.gigabytesSSD);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get gigabytesSSD
-     * @return gigabytesSSD
-     */
+    /** Get gigabytesSSD
+     * 
+     * @return gigabytesSSD */
     public QuotaDetailGigabytesSSD getGigabytesSSD() {
         return gigabytesSSD;
     }
@@ -517,27 +420,23 @@ public class QuotaList  {
         this.gigabytesSSD = gigabytesSSD;
     }
 
-    
-
     public QuotaList withSnapshotsSSD(QuotaDetailSnapshotsSSD snapshotsSSD) {
         this.snapshotsSSD = snapshotsSSD;
         return this;
     }
 
     public QuotaList withSnapshotsSSD(Consumer<QuotaDetailSnapshotsSSD> snapshotsSSDSetter) {
-        if(this.snapshotsSSD == null ){
+        if (this.snapshotsSSD == null) {
             this.snapshotsSSD = new QuotaDetailSnapshotsSSD();
             snapshotsSSDSetter.accept(this.snapshotsSSD);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get snapshotsSSD
-     * @return snapshotsSSD
-     */
+    /** Get snapshotsSSD
+     * 
+     * @return snapshotsSSD */
     public QuotaDetailSnapshotsSSD getSnapshotsSSD() {
         return snapshotsSSD;
     }
@@ -546,27 +445,23 @@ public class QuotaList  {
         this.snapshotsSSD = snapshotsSSD;
     }
 
-    
-
     public QuotaList withVolumesSSD(QuotaDetailVolumesSSD volumesSSD) {
         this.volumesSSD = volumesSSD;
         return this;
     }
 
     public QuotaList withVolumesSSD(Consumer<QuotaDetailVolumesSSD> volumesSSDSetter) {
-        if(this.volumesSSD == null ){
+        if (this.volumesSSD == null) {
             this.volumesSSD = new QuotaDetailVolumesSSD();
             volumesSSDSetter.accept(this.volumesSSD);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get volumesSSD
-     * @return volumesSSD
-     */
+    /** Get volumesSSD
+     * 
+     * @return volumesSSD */
     public QuotaDetailVolumesSSD getVolumesSSD() {
         return volumesSSD;
     }
@@ -575,27 +470,23 @@ public class QuotaList  {
         this.volumesSSD = volumesSSD;
     }
 
-    
-
     public QuotaList withGigabytesGPSSD(QuotaDetailGigabytesGPSSD gigabytesGPSSD) {
         this.gigabytesGPSSD = gigabytesGPSSD;
         return this;
     }
 
     public QuotaList withGigabytesGPSSD(Consumer<QuotaDetailGigabytesGPSSD> gigabytesGPSSDSetter) {
-        if(this.gigabytesGPSSD == null ){
+        if (this.gigabytesGPSSD == null) {
             this.gigabytesGPSSD = new QuotaDetailGigabytesGPSSD();
             gigabytesGPSSDSetter.accept(this.gigabytesGPSSD);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get gigabytesGPSSD
-     * @return gigabytesGPSSD
-     */
+    /** Get gigabytesGPSSD
+     * 
+     * @return gigabytesGPSSD */
     public QuotaDetailGigabytesGPSSD getGigabytesGPSSD() {
         return gigabytesGPSSD;
     }
@@ -604,27 +495,23 @@ public class QuotaList  {
         this.gigabytesGPSSD = gigabytesGPSSD;
     }
 
-    
-
     public QuotaList withSnapshotsGPSSD(QuotaDetailSnapshotsGPSSD snapshotsGPSSD) {
         this.snapshotsGPSSD = snapshotsGPSSD;
         return this;
     }
 
     public QuotaList withSnapshotsGPSSD(Consumer<QuotaDetailSnapshotsGPSSD> snapshotsGPSSDSetter) {
-        if(this.snapshotsGPSSD == null ){
+        if (this.snapshotsGPSSD == null) {
             this.snapshotsGPSSD = new QuotaDetailSnapshotsGPSSD();
             snapshotsGPSSDSetter.accept(this.snapshotsGPSSD);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get snapshotsGPSSD
-     * @return snapshotsGPSSD
-     */
+    /** Get snapshotsGPSSD
+     * 
+     * @return snapshotsGPSSD */
     public QuotaDetailSnapshotsGPSSD getSnapshotsGPSSD() {
         return snapshotsGPSSD;
     }
@@ -633,27 +520,23 @@ public class QuotaList  {
         this.snapshotsGPSSD = snapshotsGPSSD;
     }
 
-    
-
     public QuotaList withVolumesGPSSD(QuotaDetailVolumesGPSSD volumesGPSSD) {
         this.volumesGPSSD = volumesGPSSD;
         return this;
     }
 
     public QuotaList withVolumesGPSSD(Consumer<QuotaDetailVolumesGPSSD> volumesGPSSDSetter) {
-        if(this.volumesGPSSD == null ){
+        if (this.volumesGPSSD == null) {
             this.volumesGPSSD = new QuotaDetailVolumesGPSSD();
             volumesGPSSDSetter.accept(this.volumesGPSSD);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get volumesGPSSD
-     * @return volumesGPSSD
-     */
+    /** Get volumesGPSSD
+     * 
+     * @return volumesGPSSD */
     public QuotaDetailVolumesGPSSD getVolumesGPSSD() {
         return volumesGPSSD;
     }
@@ -662,27 +545,23 @@ public class QuotaList  {
         this.volumesGPSSD = volumesGPSSD;
     }
 
-    
-
     public QuotaList withPerVolumeGigabytes(QuotaDetailPerVolumeGigabytes perVolumeGigabytes) {
         this.perVolumeGigabytes = perVolumeGigabytes;
         return this;
     }
 
     public QuotaList withPerVolumeGigabytes(Consumer<QuotaDetailPerVolumeGigabytes> perVolumeGigabytesSetter) {
-        if(this.perVolumeGigabytes == null ){
+        if (this.perVolumeGigabytes == null) {
             this.perVolumeGigabytes = new QuotaDetailPerVolumeGigabytes();
             perVolumeGigabytesSetter.accept(this.perVolumeGigabytes);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get perVolumeGigabytes
-     * @return perVolumeGigabytes
-     */
+    /** Get perVolumeGigabytes
+     * 
+     * @return perVolumeGigabytes */
     public QuotaDetailPerVolumeGigabytes getPerVolumeGigabytes() {
         return perVolumeGigabytes;
     }
@@ -690,8 +569,6 @@ public class QuotaList  {
     public void setPerVolumeGigabytes(QuotaDetailPerVolumeGigabytes perVolumeGigabytes) {
         this.perVolumeGigabytes = perVolumeGigabytes;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -702,30 +579,48 @@ public class QuotaList  {
             return false;
         }
         QuotaList quotaList = (QuotaList) o;
-        return Objects.equals(this.backupGigabytes, quotaList.backupGigabytes) &&
-            Objects.equals(this.backups, quotaList.backups) &&
-            Objects.equals(this.gigabytes, quotaList.gigabytes) &&
-            Objects.equals(this.id, quotaList.id) &&
-            Objects.equals(this.snapshots, quotaList.snapshots) &&
-            Objects.equals(this.volumes, quotaList.volumes) &&
-            Objects.equals(this.gigabytesSATA, quotaList.gigabytesSATA) &&
-            Objects.equals(this.snapshotsSATA, quotaList.snapshotsSATA) &&
-            Objects.equals(this.volumesSATA, quotaList.volumesSATA) &&
-            Objects.equals(this.gigabytesSAS, quotaList.gigabytesSAS) &&
-            Objects.equals(this.snapshotsSAS, quotaList.snapshotsSAS) &&
-            Objects.equals(this.volumesSAS, quotaList.volumesSAS) &&
-            Objects.equals(this.gigabytesSSD, quotaList.gigabytesSSD) &&
-            Objects.equals(this.snapshotsSSD, quotaList.snapshotsSSD) &&
-            Objects.equals(this.volumesSSD, quotaList.volumesSSD) &&
-            Objects.equals(this.gigabytesGPSSD, quotaList.gigabytesGPSSD) &&
-            Objects.equals(this.snapshotsGPSSD, quotaList.snapshotsGPSSD) &&
-            Objects.equals(this.volumesGPSSD, quotaList.volumesGPSSD) &&
-            Objects.equals(this.perVolumeGigabytes, quotaList.perVolumeGigabytes);
+        return Objects.equals(this.backupGigabytes, quotaList.backupGigabytes)
+            && Objects.equals(this.backups, quotaList.backups) && Objects.equals(this.gigabytes, quotaList.gigabytes)
+            && Objects.equals(this.id, quotaList.id) && Objects.equals(this.snapshots, quotaList.snapshots)
+            && Objects.equals(this.volumes, quotaList.volumes)
+            && Objects.equals(this.gigabytesSATA, quotaList.gigabytesSATA)
+            && Objects.equals(this.snapshotsSATA, quotaList.snapshotsSATA)
+            && Objects.equals(this.volumesSATA, quotaList.volumesSATA)
+            && Objects.equals(this.gigabytesSAS, quotaList.gigabytesSAS)
+            && Objects.equals(this.snapshotsSAS, quotaList.snapshotsSAS)
+            && Objects.equals(this.volumesSAS, quotaList.volumesSAS)
+            && Objects.equals(this.gigabytesSSD, quotaList.gigabytesSSD)
+            && Objects.equals(this.snapshotsSSD, quotaList.snapshotsSSD)
+            && Objects.equals(this.volumesSSD, quotaList.volumesSSD)
+            && Objects.equals(this.gigabytesGPSSD, quotaList.gigabytesGPSSD)
+            && Objects.equals(this.snapshotsGPSSD, quotaList.snapshotsGPSSD)
+            && Objects.equals(this.volumesGPSSD, quotaList.volumesGPSSD)
+            && Objects.equals(this.perVolumeGigabytes, quotaList.perVolumeGigabytes);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(backupGigabytes, backups, gigabytes, id, snapshots, volumes, gigabytesSATA, snapshotsSATA, volumesSATA, gigabytesSAS, snapshotsSAS, volumesSAS, gigabytesSSD, snapshotsSSD, volumesSSD, gigabytesGPSSD, snapshotsGPSSD, volumesGPSSD, perVolumeGigabytes);
+        return Objects.hash(backupGigabytes,
+            backups,
+            gigabytes,
+            id,
+            snapshots,
+            volumes,
+            gigabytesSATA,
+            snapshotsSATA,
+            volumesSATA,
+            gigabytesSAS,
+            snapshotsSAS,
+            volumesSAS,
+            gigabytesSSD,
+            snapshotsSSD,
+            volumesSSD,
+            gigabytesGPSSD,
+            snapshotsGPSSD,
+            volumesGPSSD,
+            perVolumeGigabytes);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -752,16 +647,13 @@ public class QuotaList  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

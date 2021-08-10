@@ -1,46 +1,29 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 备份共享更新信息
- */
-public class UpdateMember  {
+/** 备份共享更新信息 */
+public class UpdateMember {
 
-    /**
-     * 备份共享状态
-     */
+    /** 备份共享状态 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum ACCEPTED for value: "accepted"
-         */
+        /** Enum ACCEPTED for value: "accepted" */
         public static final StatusEnum ACCEPTED = new StatusEnum("accepted");
-        
-        /**
-         * Enum PENDING for value: "pending"
-         */
+
+        /** Enum PENDING for value: "pending" */
         public static final StatusEnum PENDING = new StatusEnum("pending");
-        
-        /**
-         * Enum REJECTED for value: "rejected"
-         */
+
+        /** Enum REJECTED for value: "rejected" */
         public static final StatusEnum REJECTED = new StatusEnum("rejected");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,7 +53,7 @@ public class UpdateMember  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -81,7 +64,7 @@ public class UpdateMember  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -105,16 +88,14 @@ public class UpdateMember  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vault_id")
-    
+    @JsonProperty(value = "vault_id")
+
     private String vaultId;
 
     public UpdateMember withStatus(StatusEnum status) {
@@ -122,13 +103,9 @@ public class UpdateMember  {
         return this;
     }
 
-    
-
-
-    /**
-     * 备份共享状态
-     * @return status
-     */
+    /** 备份共享状态
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -137,20 +114,14 @@ public class UpdateMember  {
         this.status = status;
     }
 
-    
-
     public UpdateMember withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
     }
 
-    
-
-
-    /**
-     * 共享的备份将存入的存储库，仅支持uuid 更新member状态的时候，如果是接受，必须传入vault_id，如果是拒绝，则无需
-     * @return vaultId
-     */
+    /** 共享的备份将存入的存储库，仅支持uuid 更新member状态的时候，如果是接受，必须传入vault_id，如果是拒绝，则无需
+     * 
+     * @return vaultId */
     public String getVaultId() {
         return vaultId;
     }
@@ -158,8 +129,6 @@ public class UpdateMember  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -170,13 +139,14 @@ public class UpdateMember  {
             return false;
         }
         UpdateMember updateMember = (UpdateMember) o;
-        return Objects.equals(this.status, updateMember.status) &&
-            Objects.equals(this.vaultId, updateMember.vaultId);
+        return Objects.equals(this.status, updateMember.status) && Objects.equals(this.vaultId, updateMember.vaultId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(status, vaultId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -186,16 +156,13 @@ public class UpdateMember  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

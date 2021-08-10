@@ -1,56 +1,41 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class BatchDeleteMaterialsRequest  {
-
-
+/** Request Object */
+public class BatchDeleteMaterialsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Request-Id")
-    
+    @JsonProperty(value = "X-Request-Id")
+
     private String xRequestId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Accept-Language")
-    
+    @JsonProperty(value = "Accept-Language")
+
     private String acceptLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private List<String> body = null;
-    
+
     public BatchDeleteMaterialsRequest withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
-     * @return xRequestId
-     */
+    /** 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * 
+     * @return xRequestId */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Request-Id")
+    @JsonProperty(value = "X-Request-Id")
     public String getXRequestId() {
         return xRequestId;
     }
@@ -59,20 +44,14 @@ public class BatchDeleteMaterialsRequest  {
         this.xRequestId = xRequestId;
     }
 
-    
-
     public BatchDeleteMaterialsRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言参数，默认为中文zh_CN, 英文为en_US
-     * @return acceptLanguage
-     */
+    /** 语言参数，默认为中文zh_CN, 英文为en_US
+     * 
+     * @return acceptLanguage */
     public String getAcceptLanguage() {
         return acceptLanguage;
     }
@@ -81,16 +60,13 @@ public class BatchDeleteMaterialsRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
-    
-
     public BatchDeleteMaterialsRequest withBody(List<String> body) {
         this.body = body;
         return this;
     }
 
-    
     public BatchDeleteMaterialsRequest addBodyItem(String bodyItem) {
-        if(this.body == null) {
+        if (this.body == null) {
             this.body = new ArrayList<>();
         }
         this.body.add(bodyItem);
@@ -98,17 +74,16 @@ public class BatchDeleteMaterialsRequest  {
     }
 
     public BatchDeleteMaterialsRequest withBody(Consumer<List<String>> bodySetter) {
-        if(this.body == null) {
+        if (this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);
         return this;
     }
 
-    /**
-     * 素材ID列表
-     * @return body
-     */
+    /** 素材ID列表
+     * 
+     * @return body */
     public List<String> getBody() {
         return body;
     }
@@ -116,8 +91,6 @@ public class BatchDeleteMaterialsRequest  {
     public void setBody(List<String> body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -128,14 +101,16 @@ public class BatchDeleteMaterialsRequest  {
             return false;
         }
         BatchDeleteMaterialsRequest batchDeleteMaterialsRequest = (BatchDeleteMaterialsRequest) o;
-        return Objects.equals(this.xRequestId, batchDeleteMaterialsRequest.xRequestId) &&
-            Objects.equals(this.acceptLanguage, batchDeleteMaterialsRequest.acceptLanguage) &&
-            Objects.equals(this.body, batchDeleteMaterialsRequest.body);
+        return Objects.equals(this.xRequestId, batchDeleteMaterialsRequest.xRequestId)
+            && Objects.equals(this.acceptLanguage, batchDeleteMaterialsRequest.acceptLanguage)
+            && Objects.equals(this.body, batchDeleteMaterialsRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xRequestId, acceptLanguage, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -146,16 +121,13 @@ public class BatchDeleteMaterialsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

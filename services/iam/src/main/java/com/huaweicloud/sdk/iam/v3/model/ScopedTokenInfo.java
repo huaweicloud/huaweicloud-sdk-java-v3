@@ -1,89 +1,64 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.DomainInfo;
-import com.huaweicloud.sdk.iam.v3.model.FederationUserBody;
-import com.huaweicloud.sdk.iam.v3.model.ProjectInfo;
-import com.huaweicloud.sdk.iam.v3.model.UnscopedTokenInfoCatalog;
-import com.huaweicloud.sdk.iam.v3.model.UnscopedTokenInfoRoles;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * token详细信息
- */
-public class ScopedTokenInfo  {
-
-
+/** token详细信息 */
+public class ScopedTokenInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expires_at")
-    
+    @JsonProperty(value = "expires_at")
+
     private String expiresAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="methods")
-    
+    @JsonProperty(value = "methods")
+
     private List<String> methods = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="issued_at")
-    
+    @JsonProperty(value = "issued_at")
+
     private String issuedAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user")
-    
+    @JsonProperty(value = "user")
+
     private FederationUserBody user;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
+
     private DomainInfo domain;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project")
-    
+    @JsonProperty(value = "project")
+
     private ProjectInfo project;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roles")
-    
+    @JsonProperty(value = "roles")
+
     private List<UnscopedTokenInfoRoles> roles = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="catalog")
-    
+    @JsonProperty(value = "catalog")
+
     private List<UnscopedTokenInfoCatalog> catalog = null;
-    
+
     public ScopedTokenInfo withExpiresAt(String expiresAt) {
         this.expiresAt = expiresAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 过期时间
-     * @return expiresAt
-     */
+    /** 过期时间
+     * 
+     * @return expiresAt */
     public String getExpiresAt() {
         return expiresAt;
     }
@@ -92,16 +67,13 @@ public class ScopedTokenInfo  {
         this.expiresAt = expiresAt;
     }
 
-    
-
     public ScopedTokenInfo withMethods(List<String> methods) {
         this.methods = methods;
         return this;
     }
 
-    
     public ScopedTokenInfo addMethodsItem(String methodsItem) {
-        if(this.methods == null) {
+        if (this.methods == null) {
             this.methods = new ArrayList<>();
         }
         this.methods.add(methodsItem);
@@ -109,17 +81,16 @@ public class ScopedTokenInfo  {
     }
 
     public ScopedTokenInfo withMethods(Consumer<List<String>> methodsSetter) {
-        if(this.methods == null) {
+        if (this.methods == null) {
             this.methods = new ArrayList<>();
         }
         methodsSetter.accept(this.methods);
         return this;
     }
 
-    /**
-     * 获取token的方式，联邦用户默认为mapped
-     * @return methods
-     */
+    /** 获取token的方式，联邦用户默认为mapped
+     * 
+     * @return methods */
     public List<String> getMethods() {
         return methods;
     }
@@ -128,20 +99,14 @@ public class ScopedTokenInfo  {
         this.methods = methods;
     }
 
-    
-
     public ScopedTokenInfo withIssuedAt(String issuedAt) {
         this.issuedAt = issuedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 生成时间
-     * @return issuedAt
-     */
+    /** 生成时间
+     * 
+     * @return issuedAt */
     public String getIssuedAt() {
         return issuedAt;
     }
@@ -150,27 +115,23 @@ public class ScopedTokenInfo  {
         this.issuedAt = issuedAt;
     }
 
-    
-
     public ScopedTokenInfo withUser(FederationUserBody user) {
         this.user = user;
         return this;
     }
 
     public ScopedTokenInfo withUser(Consumer<FederationUserBody> userSetter) {
-        if(this.user == null ){
+        if (this.user == null) {
             this.user = new FederationUserBody();
             userSetter.accept(this.user);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get user
-     * @return user
-     */
+    /** Get user
+     * 
+     * @return user */
     public FederationUserBody getUser() {
         return user;
     }
@@ -179,27 +140,23 @@ public class ScopedTokenInfo  {
         this.user = user;
     }
 
-    
-
     public ScopedTokenInfo withDomain(DomainInfo domain) {
         this.domain = domain;
         return this;
     }
 
     public ScopedTokenInfo withDomain(Consumer<DomainInfo> domainSetter) {
-        if(this.domain == null ){
+        if (this.domain == null) {
             this.domain = new DomainInfo();
             domainSetter.accept(this.domain);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get domain
-     * @return domain
-     */
+    /** Get domain
+     * 
+     * @return domain */
     public DomainInfo getDomain() {
         return domain;
     }
@@ -208,27 +165,23 @@ public class ScopedTokenInfo  {
         this.domain = domain;
     }
 
-    
-
     public ScopedTokenInfo withProject(ProjectInfo project) {
         this.project = project;
         return this;
     }
 
     public ScopedTokenInfo withProject(Consumer<ProjectInfo> projectSetter) {
-        if(this.project == null ){
+        if (this.project == null) {
             this.project = new ProjectInfo();
             projectSetter.accept(this.project);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get project
-     * @return project
-     */
+    /** Get project
+     * 
+     * @return project */
     public ProjectInfo getProject() {
         return project;
     }
@@ -237,16 +190,13 @@ public class ScopedTokenInfo  {
         this.project = project;
     }
 
-    
-
     public ScopedTokenInfo withRoles(List<UnscopedTokenInfoRoles> roles) {
         this.roles = roles;
         return this;
     }
 
-    
     public ScopedTokenInfo addRolesItem(UnscopedTokenInfoRoles rolesItem) {
-        if(this.roles == null) {
+        if (this.roles == null) {
             this.roles = new ArrayList<>();
         }
         this.roles.add(rolesItem);
@@ -254,17 +204,16 @@ public class ScopedTokenInfo  {
     }
 
     public ScopedTokenInfo withRoles(Consumer<List<UnscopedTokenInfoRoles>> rolesSetter) {
-        if(this.roles == null) {
+        if (this.roles == null) {
             this.roles = new ArrayList<>();
         }
         rolesSetter.accept(this.roles);
         return this;
     }
 
-    /**
-     * roles信息
-     * @return roles
-     */
+    /** roles信息
+     * 
+     * @return roles */
     public List<UnscopedTokenInfoRoles> getRoles() {
         return roles;
     }
@@ -273,16 +222,13 @@ public class ScopedTokenInfo  {
         this.roles = roles;
     }
 
-    
-
     public ScopedTokenInfo withCatalog(List<UnscopedTokenInfoCatalog> catalog) {
         this.catalog = catalog;
         return this;
     }
 
-    
     public ScopedTokenInfo addCatalogItem(UnscopedTokenInfoCatalog catalogItem) {
-        if(this.catalog == null) {
+        if (this.catalog == null) {
             this.catalog = new ArrayList<>();
         }
         this.catalog.add(catalogItem);
@@ -290,17 +236,16 @@ public class ScopedTokenInfo  {
     }
 
     public ScopedTokenInfo withCatalog(Consumer<List<UnscopedTokenInfoCatalog>> catalogSetter) {
-        if(this.catalog == null) {
+        if (this.catalog == null) {
             this.catalog = new ArrayList<>();
         }
         catalogSetter.accept(this.catalog);
         return this;
     }
 
-    /**
-     * catalog信息
-     * @return catalog
-     */
+    /** catalog信息
+     * 
+     * @return catalog */
     public List<UnscopedTokenInfoCatalog> getCatalog() {
         return catalog;
     }
@@ -308,8 +253,6 @@ public class ScopedTokenInfo  {
     public void setCatalog(List<UnscopedTokenInfoCatalog> catalog) {
         this.catalog = catalog;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -320,19 +263,20 @@ public class ScopedTokenInfo  {
             return false;
         }
         ScopedTokenInfo scopedTokenInfo = (ScopedTokenInfo) o;
-        return Objects.equals(this.expiresAt, scopedTokenInfo.expiresAt) &&
-            Objects.equals(this.methods, scopedTokenInfo.methods) &&
-            Objects.equals(this.issuedAt, scopedTokenInfo.issuedAt) &&
-            Objects.equals(this.user, scopedTokenInfo.user) &&
-            Objects.equals(this.domain, scopedTokenInfo.domain) &&
-            Objects.equals(this.project, scopedTokenInfo.project) &&
-            Objects.equals(this.roles, scopedTokenInfo.roles) &&
-            Objects.equals(this.catalog, scopedTokenInfo.catalog);
+        return Objects.equals(this.expiresAt, scopedTokenInfo.expiresAt)
+            && Objects.equals(this.methods, scopedTokenInfo.methods)
+            && Objects.equals(this.issuedAt, scopedTokenInfo.issuedAt)
+            && Objects.equals(this.user, scopedTokenInfo.user) && Objects.equals(this.domain, scopedTokenInfo.domain)
+            && Objects.equals(this.project, scopedTokenInfo.project)
+            && Objects.equals(this.roles, scopedTokenInfo.roles)
+            && Objects.equals(this.catalog, scopedTokenInfo.catalog);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(expiresAt, methods, issuedAt, user, domain, project, roles, catalog);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -348,16 +292,13 @@ public class ScopedTokenInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

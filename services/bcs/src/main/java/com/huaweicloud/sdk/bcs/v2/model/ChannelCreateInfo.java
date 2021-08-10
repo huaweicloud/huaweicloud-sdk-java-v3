@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 通道信息
- */
-public class ChannelCreateInfo  {
-
-
+/** 通道信息 */
+public class ChannelCreateInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="channel_name")
-    
+    @JsonProperty(value = "channel_name")
+
     private String channelName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="channel_description")
-    
+    @JsonProperty(value = "channel_description")
+
     private String channelDescription;
 
     public ChannelCreateInfo withChannelName(String channelName) {
@@ -34,13 +23,9 @@ public class ChannelCreateInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 通道名称，字符串长度4-24，必须包含a-z，0-9，以小写字母开头，以小写字母或者数字结尾
-     * @return channelName
-     */
+    /** 通道名称，字符串长度4-24，必须包含a-z，0-9，以小写字母开头，以小写字母或者数字结尾
+     * 
+     * @return channelName */
     public String getChannelName() {
         return channelName;
     }
@@ -49,20 +34,14 @@ public class ChannelCreateInfo  {
         this.channelName = channelName;
     }
 
-    
-
     public ChannelCreateInfo withChannelDescription(String channelDescription) {
         this.channelDescription = channelDescription;
         return this;
     }
 
-    
-
-
-    /**
-     * 通道描述
-     * @return channelDescription
-     */
+    /** 通道描述
+     * 
+     * @return channelDescription */
     public String getChannelDescription() {
         return channelDescription;
     }
@@ -70,8 +49,6 @@ public class ChannelCreateInfo  {
     public void setChannelDescription(String channelDescription) {
         this.channelDescription = channelDescription;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class ChannelCreateInfo  {
             return false;
         }
         ChannelCreateInfo channelCreateInfo = (ChannelCreateInfo) o;
-        return Objects.equals(this.channelName, channelCreateInfo.channelName) &&
-            Objects.equals(this.channelDescription, channelCreateInfo.channelDescription);
+        return Objects.equals(this.channelName, channelCreateInfo.channelName)
+            && Objects.equals(this.channelDescription, channelCreateInfo.channelDescription);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(channelName, channelDescription);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class ChannelCreateInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

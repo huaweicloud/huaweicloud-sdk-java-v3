@@ -1,34 +1,22 @@
 package com.huaweicloud.sdk.kms.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class DeleteKeyResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_id")
-    
+    @JsonProperty(value = "key_id")
+
     private String keyId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key_state")
-    
+    @JsonProperty(value = "key_state")
+
     private String keyState;
 
     public DeleteKeyResponse withKeyId(String keyId) {
@@ -36,13 +24,9 @@ public class DeleteKeyResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥ID
-     * @return keyId
-     */
+    /** 密钥ID
+     * 
+     * @return keyId */
     public String getKeyId() {
         return keyId;
     }
@@ -51,20 +35,14 @@ public class DeleteKeyResponse extends SdkResponse {
         this.keyId = keyId;
     }
 
-    
-
     public DeleteKeyResponse withKeyState(String keyState) {
         this.keyState = keyState;
         return this;
     }
 
-    
-
-
-    /**
-     * 密钥状态： - 2为启用状态 - 3为禁用状态 - 4为计划删除状态 - 5为等待导入状态 - 7为冻结状态
-     * @return keyState
-     */
+    /** 密钥状态： - 2为启用状态 - 3为禁用状态 - 4为计划删除状态 - 5为等待导入状态 - 7为冻结状态
+     * 
+     * @return keyState */
     public String getKeyState() {
         return keyState;
     }
@@ -72,8 +50,6 @@ public class DeleteKeyResponse extends SdkResponse {
     public void setKeyState(String keyState) {
         this.keyState = keyState;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -84,13 +60,15 @@ public class DeleteKeyResponse extends SdkResponse {
             return false;
         }
         DeleteKeyResponse deleteKeyResponse = (DeleteKeyResponse) o;
-        return Objects.equals(this.keyId, deleteKeyResponse.keyId) &&
-            Objects.equals(this.keyState, deleteKeyResponse.keyState);
+        return Objects.equals(this.keyId, deleteKeyResponse.keyId)
+            && Objects.equals(this.keyState, deleteKeyResponse.keyState);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(keyId, keyState);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,16 +78,13 @@ public class DeleteKeyResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

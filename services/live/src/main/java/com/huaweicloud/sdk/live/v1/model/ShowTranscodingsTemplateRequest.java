@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.live.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ShowTranscodingsTemplateRequest  {
-
-
+/** Request Object */
+public class ShowTranscodingsTemplateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
+
     private String domain;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_name")
-    
+    @JsonProperty(value = "app_name")
+
     private String appName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page")
-    
+    @JsonProperty(value = "page")
+
     private Integer page;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
     public ShowTranscodingsTemplateRequest withDomain(String domain) {
@@ -46,13 +33,9 @@ public class ShowTranscodingsTemplateRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 播放域名
-     * @return domain
-     */
+    /** 播放域名
+     * 
+     * @return domain */
     public String getDomain() {
         return domain;
     }
@@ -61,20 +44,14 @@ public class ShowTranscodingsTemplateRequest  {
         this.domain = domain;
     }
 
-    
-
     public ShowTranscodingsTemplateRequest withAppName(String appName) {
         this.appName = appName;
         return this;
     }
 
-    
-
-
-    /**
-     * 应用名称
-     * @return appName
-     */
+    /** 应用名称
+     * 
+     * @return appName */
     public String getAppName() {
         return appName;
     }
@@ -83,21 +60,14 @@ public class ShowTranscodingsTemplateRequest  {
         this.appName = appName;
     }
 
-    
-
     public ShowTranscodingsTemplateRequest withPage(Integer page) {
         this.page = page;
         return this;
     }
 
-    
-
-
-    /**
-     * 分页编号，默认为0。
-     * minimum: 0
-     * @return page
-     */
+    /** 分页编号，默认为0。 minimum: 0
+     * 
+     * @return page */
     public Integer getPage() {
         return page;
     }
@@ -106,22 +76,14 @@ public class ShowTranscodingsTemplateRequest  {
         this.page = page;
     }
 
-    
-
     public ShowTranscodingsTemplateRequest withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页记录数。  取值范围：1-100。  默认为10。 
-     * minimum: 1
-     * maximum: 100
-     * @return size
-     */
+    /** 每页记录数。 取值范围：1-100。 默认为10。 minimum: 1 maximum: 100
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -129,8 +91,6 @@ public class ShowTranscodingsTemplateRequest  {
     public void setSize(Integer size) {
         this.size = size;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -141,15 +101,17 @@ public class ShowTranscodingsTemplateRequest  {
             return false;
         }
         ShowTranscodingsTemplateRequest showTranscodingsTemplateRequest = (ShowTranscodingsTemplateRequest) o;
-        return Objects.equals(this.domain, showTranscodingsTemplateRequest.domain) &&
-            Objects.equals(this.appName, showTranscodingsTemplateRequest.appName) &&
-            Objects.equals(this.page, showTranscodingsTemplateRequest.page) &&
-            Objects.equals(this.size, showTranscodingsTemplateRequest.size);
+        return Objects.equals(this.domain, showTranscodingsTemplateRequest.domain)
+            && Objects.equals(this.appName, showTranscodingsTemplateRequest.appName)
+            && Objects.equals(this.page, showTranscodingsTemplateRequest.page)
+            && Objects.equals(this.size, showTranscodingsTemplateRequest.size);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domain, appName, page, size);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -161,16 +123,13 @@ public class ShowTranscodingsTemplateRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

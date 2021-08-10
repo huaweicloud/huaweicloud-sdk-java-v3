@@ -1,104 +1,81 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListCustomerBillsMonthlyBreakDownRequest  {
-
-
+/** Request Object */
+public class ListCustomerBillsMonthlyBreakDownRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="shared_month")
-    
+    @JsonProperty(value = "shared_month")
+
     private String sharedMonth;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charging_mode")
-    
+    @JsonProperty(value = "charging_mode")
+
     private Integer chargingMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_type_code")
-    
+    @JsonProperty(value = "service_type_code")
+
     private String serviceTypeCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type_code")
-    
+    @JsonProperty(value = "resource_type_code")
+
     private String resourceTypeCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_code")
-    
+    @JsonProperty(value = "region_code")
+
     private String regionCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bill_type")
-    
+    @JsonProperty(value = "bill_type")
+
     private Integer billType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
+    @JsonProperty(value = "resource_id")
+
     private String resourceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_name")
-    
+    @JsonProperty(value = "resource_name")
+
     private String resourceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="method")
-    
+    @JsonProperty(value = "method")
+
     private String method;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sub_customer_id")
-    
+    @JsonProperty(value = "sub_customer_id")
+
     private String subCustomerId;
 
     public ListCustomerBillsMonthlyBreakDownRequest withXLanguage(String xLanguage) {
@@ -106,15 +83,11 @@ public class ListCustomerBillsMonthlyBreakDownRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * |忽略大小写，默认 zh_cn：中文 en_us：英文|
-     * @return xLanguage
-     */
+    /** |忽略大小写，默认 zh_cn：中文 en_us：英文|
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -123,20 +96,14 @@ public class ListCustomerBillsMonthlyBreakDownRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListCustomerBillsMonthlyBreakDownRequest withSharedMonth(String sharedMonth) {
         this.sharedMonth = sharedMonth;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询分摊成本的月份，格式：YYYY-MM。
-     * @return sharedMonth
-     */
+    /** |参数名称：分摊月| |参数的约束及描述：格式：YYYY-MM。|
+     * 
+     * @return sharedMonth */
     public String getSharedMonth() {
         return sharedMonth;
     }
@@ -145,22 +112,14 @@ public class ListCustomerBillsMonthlyBreakDownRequest  {
         this.sharedMonth = sharedMonth;
     }
 
-    
-
     public ListCustomerBillsMonthlyBreakDownRequest withChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 计费模式。1：包年/包月3：按需10：预留实例
-     * minimum: 0
-     * maximum: 10
-     * @return chargingMode
-     */
+    /** |参数名称：计费模式| |参数的约束及描述：枚举型，1、包周期；3、按需；10、预留实例,不传查询全部| minimum: 0 maximum: 10
+     * 
+     * @return chargingMode */
     public Integer getChargingMode() {
         return chargingMode;
     }
@@ -169,20 +128,14 @@ public class ListCustomerBillsMonthlyBreakDownRequest  {
         this.chargingMode = chargingMode;
     }
 
-    
-
     public ListCustomerBillsMonthlyBreakDownRequest withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。您可以调用查询云服务类型列表接口获取。
-     * @return serviceTypeCode
-     */
+    /** |参数名称：云服务类型编码| |参数的约束及描述：例如ECS的云服务类型编码为“hws.service.type.ec2”。您可以调用查询云服务类型列表接口获取。|
+     * 
+     * @return serviceTypeCode */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -191,20 +144,14 @@ public class ListCustomerBillsMonthlyBreakDownRequest  {
         this.serviceTypeCode = serviceTypeCode;
     }
 
-    
-
     public ListCustomerBillsMonthlyBreakDownRequest withResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
-     * @return resourceTypeCode
-     */
+    /** |参数名称：资源类型编码| |参数的约束及描述：|
+     * 
+     * @return resourceTypeCode */
     public String getResourceTypeCode() {
         return resourceTypeCode;
     }
@@ -213,20 +160,14 @@ public class ListCustomerBillsMonthlyBreakDownRequest  {
         this.resourceTypeCode = resourceTypeCode;
     }
 
-    
-
     public ListCustomerBillsMonthlyBreakDownRequest withRegionCode(String regionCode) {
         this.regionCode = regionCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
-     * @return regionCode
-     */
+    /** |参数名称：云服务区编码，| |参数的约束及描述：例如：“cn-north-1”。具体请参见地区和终端节点地区对应云服务的“区域”列的值。|
+     * 
+     * @return regionCode */
     public String getRegionCode() {
         return regionCode;
     }
@@ -235,22 +176,15 @@ public class ListCustomerBillsMonthlyBreakDownRequest  {
         this.regionCode = regionCode;
     }
 
-    
-
     public ListCustomerBillsMonthlyBreakDownRequest withBillType(Integer billType) {
         this.billType = billType;
         return this;
     }
 
-    
-
-
-    /**
-     * 账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费
-     * minimum: 1
-     * maximum: 102
-     * @return billType
-     */
+    /** |参数名称：账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿12：消费-按时计费13：消费-退订手续费14：消费-服务支持计划月末扣费15：消费-税金16：调账-扣费17：消费-保底差额保底差额=客户签约保底合同后，如果没有达到保底消费，客户需要补交的费用，仅限于直销或者伙伴推荐类子客户，且为后付费用户。100：退款-退订税金101：调账-补偿税金102：调账-扣费税金|
+     * |参数的约束及描述：| minimum: 1 maximum: 102
+     * 
+     * @return billType */
     public Integer getBillType() {
         return billType;
     }
@@ -259,22 +193,14 @@ public class ListCustomerBillsMonthlyBreakDownRequest  {
         this.billType = billType;
     }
 
-    
-
     public ListCustomerBillsMonthlyBreakDownRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量，从0开始。默认值为0。 说明： offset用于分页处理，如不涉及分页，请使用默认值0。offset表示相对于满足条件的第一个数据的偏移量。如offset = 1，则返回满足条件的第二个数据至最后一个数据。例如，满足查询条件的结果共10条数据，limit取值为10，offset取值为1，则返回的数据为2~10，第一条数据不返回。
-     * minimum: 0
-     * maximum: 2147483647
-     * @return offset
-     */
+    /** |参数名称：偏移量，从0开始。默认值为0| |参数的约束及描述：| minimum: 0 maximum: 2147483647
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -283,22 +209,14 @@ public class ListCustomerBillsMonthlyBreakDownRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListCustomerBillsMonthlyBreakDownRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每次查询的数量限制。默认值为10。
-     * minimum: 1
-     * maximum: 1000
-     * @return limit
-     */
+    /** |参数名称：每次查询的数量限制。默认值为10。| |参数的约束及描述：| minimum: 1 maximum: 1000
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -307,20 +225,14 @@ public class ListCustomerBillsMonthlyBreakDownRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListCustomerBillsMonthlyBreakDownRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源ID。
-     * @return resourceId
-     */
+    /** |参数名称：资源ID。| |参数的约束及描述：|
+     * 
+     * @return resourceId */
     public String getResourceId() {
         return resourceId;
     }
@@ -329,20 +241,14 @@ public class ListCustomerBillsMonthlyBreakDownRequest  {
         this.resourceId = resourceId;
     }
 
-    
-
     public ListCustomerBillsMonthlyBreakDownRequest withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源名称
-     * @return resourceName
-     */
+    /** |参数名称：资源名称| |参数的约束及描述：|
+     * 
+     * @return resourceName */
     public String getResourceName() {
         return resourceName;
     }
@@ -351,20 +257,14 @@ public class ListCustomerBillsMonthlyBreakDownRequest  {
         this.resourceName = resourceName;
     }
 
-    
-
     public ListCustomerBillsMonthlyBreakDownRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目标识（企业项目ID）。default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
-     * @return enterpriseProjectId
-     */
+    /** |参数名称：企业项目标识（企业项目ID）。default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。| |参数的约束及描述：|
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -373,20 +273,15 @@ public class ListCustomerBillsMonthlyBreakDownRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public ListCustomerBillsMonthlyBreakDownRequest withMethod(String method) {
         this.method = method;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询资源消费记录的方式。oneself：客户自己sub_customer：企业子客户all：客户自己和企业子客户默认为all，如果没有企业子客户，取值为all时查询的是客户自己的资源消费记录。
-     * @return method
-     */
+    /** |参数名称：查询资源消费记录的方式。oneself：客户自己sub_customer：企业子客户all：客户自己和企业子客户默认为all，如果没有企业子客户，取值为all时查询的是客户自己的资源消费记录。|
+     * |参数的约束及描述：|
+     * 
+     * @return method */
     public String getMethod() {
         return method;
     }
@@ -395,20 +290,14 @@ public class ListCustomerBillsMonthlyBreakDownRequest  {
         this.method = method;
     }
 
-    
-
     public ListCustomerBillsMonthlyBreakDownRequest withSubCustomerId(String subCustomerId) {
         this.subCustomerId = subCustomerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业子账号ID。 说明： 如果method取值不为sub_customer，则该参数无效。如果method取值为sub_customer，则该参数不能为空。
-     * @return subCustomerId
-     */
+    /** |参数名称：企业子账号ID。如果method取值不为sub_customer，则该参数无效。如果method取值为sub_customer，则该参数不能为空。| |参数的约束及描述：|
+     * 
+     * @return subCustomerId */
     public String getSubCustomerId() {
         return subCustomerId;
     }
@@ -416,8 +305,6 @@ public class ListCustomerBillsMonthlyBreakDownRequest  {
     public void setSubCustomerId(String subCustomerId) {
         this.subCustomerId = subCustomerId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -427,26 +314,42 @@ public class ListCustomerBillsMonthlyBreakDownRequest  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListCustomerBillsMonthlyBreakDownRequest listCustomerBillsMonthlyBreakDownRequest = (ListCustomerBillsMonthlyBreakDownRequest) o;
-        return Objects.equals(this.xLanguage, listCustomerBillsMonthlyBreakDownRequest.xLanguage) &&
-            Objects.equals(this.sharedMonth, listCustomerBillsMonthlyBreakDownRequest.sharedMonth) &&
-            Objects.equals(this.chargingMode, listCustomerBillsMonthlyBreakDownRequest.chargingMode) &&
-            Objects.equals(this.serviceTypeCode, listCustomerBillsMonthlyBreakDownRequest.serviceTypeCode) &&
-            Objects.equals(this.resourceTypeCode, listCustomerBillsMonthlyBreakDownRequest.resourceTypeCode) &&
-            Objects.equals(this.regionCode, listCustomerBillsMonthlyBreakDownRequest.regionCode) &&
-            Objects.equals(this.billType, listCustomerBillsMonthlyBreakDownRequest.billType) &&
-            Objects.equals(this.offset, listCustomerBillsMonthlyBreakDownRequest.offset) &&
-            Objects.equals(this.limit, listCustomerBillsMonthlyBreakDownRequest.limit) &&
-            Objects.equals(this.resourceId, listCustomerBillsMonthlyBreakDownRequest.resourceId) &&
-            Objects.equals(this.resourceName, listCustomerBillsMonthlyBreakDownRequest.resourceName) &&
-            Objects.equals(this.enterpriseProjectId, listCustomerBillsMonthlyBreakDownRequest.enterpriseProjectId) &&
-            Objects.equals(this.method, listCustomerBillsMonthlyBreakDownRequest.method) &&
-            Objects.equals(this.subCustomerId, listCustomerBillsMonthlyBreakDownRequest.subCustomerId);
+        ListCustomerBillsMonthlyBreakDownRequest listCustomerBillsMonthlyBreakDownRequest =
+            (ListCustomerBillsMonthlyBreakDownRequest) o;
+        return Objects.equals(this.xLanguage, listCustomerBillsMonthlyBreakDownRequest.xLanguage)
+            && Objects.equals(this.sharedMonth, listCustomerBillsMonthlyBreakDownRequest.sharedMonth)
+            && Objects.equals(this.chargingMode, listCustomerBillsMonthlyBreakDownRequest.chargingMode)
+            && Objects.equals(this.serviceTypeCode, listCustomerBillsMonthlyBreakDownRequest.serviceTypeCode)
+            && Objects.equals(this.resourceTypeCode, listCustomerBillsMonthlyBreakDownRequest.resourceTypeCode)
+            && Objects.equals(this.regionCode, listCustomerBillsMonthlyBreakDownRequest.regionCode)
+            && Objects.equals(this.billType, listCustomerBillsMonthlyBreakDownRequest.billType)
+            && Objects.equals(this.offset, listCustomerBillsMonthlyBreakDownRequest.offset)
+            && Objects.equals(this.limit, listCustomerBillsMonthlyBreakDownRequest.limit)
+            && Objects.equals(this.resourceId, listCustomerBillsMonthlyBreakDownRequest.resourceId)
+            && Objects.equals(this.resourceName, listCustomerBillsMonthlyBreakDownRequest.resourceName)
+            && Objects.equals(this.enterpriseProjectId, listCustomerBillsMonthlyBreakDownRequest.enterpriseProjectId)
+            && Objects.equals(this.method, listCustomerBillsMonthlyBreakDownRequest.method)
+            && Objects.equals(this.subCustomerId, listCustomerBillsMonthlyBreakDownRequest.subCustomerId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, sharedMonth, chargingMode, serviceTypeCode, resourceTypeCode, regionCode, billType, offset, limit, resourceId, resourceName, enterpriseProjectId, method, subCustomerId);
+        return Objects.hash(xLanguage,
+            sharedMonth,
+            chargingMode,
+            serviceTypeCode,
+            resourceTypeCode,
+            regionCode,
+            billType,
+            offset,
+            limit,
+            resourceId,
+            resourceName,
+            enterpriseProjectId,
+            method,
+            subCustomerId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -468,16 +371,13 @@ public class ListCustomerBillsMonthlyBreakDownRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

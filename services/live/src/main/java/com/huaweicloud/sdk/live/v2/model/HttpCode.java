@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.live.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * HttpCode
- */
-public class HttpCode  {
-
-
+/** HttpCode */
+public class HttpCode {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code")
-    
+    @JsonProperty(value = "code")
+
     private Integer code;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
+
     private Integer count;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="proportion")
-    
+    @JsonProperty(value = "proportion")
+
     private Double proportion;
 
     public HttpCode withCode(Integer code) {
@@ -40,15 +28,9 @@ public class HttpCode  {
         return this;
     }
 
-    
-
-
-    /**
-     * 状态码
-     * minimum: 0
-     * maximum: 2147483647
-     * @return code
-     */
+    /** 状态码 minimum: 0 maximum: 2147483647
+     * 
+     * @return code */
     public Integer getCode() {
         return code;
     }
@@ -57,22 +39,14 @@ public class HttpCode  {
         this.code = code;
     }
 
-    
-
     public HttpCode withCount(Integer count) {
         this.count = count;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态码出现次数
-     * minimum: 0
-     * maximum: 2147483647
-     * @return count
-     */
+    /** 状态码出现次数 minimum: 0 maximum: 2147483647
+     * 
+     * @return count */
     public Integer getCount() {
         return count;
     }
@@ -81,22 +55,14 @@ public class HttpCode  {
         this.count = count;
     }
 
-    
-
     public HttpCode withProportion(Double proportion) {
         this.proportion = proportion;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态码在对应时间点中的占比，保留4位小数。 
-     * minimum: 0
-     * maximum: 1
-     * @return proportion
-     */
+    /** 状态码在对应时间点中的占比，保留4位小数。 minimum: 0 maximum: 1
+     * 
+     * @return proportion */
     public Double getProportion() {
         return proportion;
     }
@@ -104,8 +70,6 @@ public class HttpCode  {
     public void setProportion(Double proportion) {
         this.proportion = proportion;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -116,14 +80,15 @@ public class HttpCode  {
             return false;
         }
         HttpCode httpCode = (HttpCode) o;
-        return Objects.equals(this.code, httpCode.code) &&
-            Objects.equals(this.count, httpCode.count) &&
-            Objects.equals(this.proportion, httpCode.proportion);
+        return Objects.equals(this.code, httpCode.code) && Objects.equals(this.count, httpCode.count)
+            && Objects.equals(this.proportion, httpCode.proportion);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(code, count, proportion);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -134,16 +99,13 @@ public class HttpCode  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

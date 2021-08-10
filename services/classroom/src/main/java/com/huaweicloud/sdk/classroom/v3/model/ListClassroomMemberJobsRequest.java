@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.classroom.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListClassroomMemberJobsRequest  {
-
-
+/** Request Object */
+public class ListClassroomMemberJobsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="classroom_id")
-    
+    @JsonProperty(value = "classroom_id")
+
     private String classroomId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="member_id")
-    
+    @JsonProperty(value = "member_id")
+
     private String memberId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
     public ListClassroomMemberJobsRequest withClassroomId(String classroomId) {
@@ -46,13 +33,9 @@ public class ListClassroomMemberJobsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 课堂ID
-     * @return classroomId
-     */
+    /** 课堂ID
+     * 
+     * @return classroomId */
     public String getClassroomId() {
         return classroomId;
     }
@@ -61,20 +44,14 @@ public class ListClassroomMemberJobsRequest  {
         this.classroomId = classroomId;
     }
 
-    
-
     public ListClassroomMemberJobsRequest withMemberId(String memberId) {
         this.memberId = memberId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户ID
-     * @return memberId
-     */
+    /** 用户ID
+     * 
+     * @return memberId */
     public String getMemberId() {
         return memberId;
     }
@@ -83,22 +60,14 @@ public class ListClassroomMemberJobsRequest  {
         this.memberId = memberId;
     }
 
-    
-
     public ListClassroomMemberJobsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 信息记录的起始编号
-     * minimum: 1
-     * maximum: 1000
-     * @return offset
-     */
+    /** 信息记录的起始编号 minimum: 1 maximum: 1000
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -107,22 +76,14 @@ public class ListClassroomMemberJobsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListClassroomMemberJobsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页包含的信息记录数
-     * minimum: 1
-     * maximum: 100
-     * @return limit
-     */
+    /** 每页包含的信息记录数 minimum: 1 maximum: 100
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -130,8 +91,6 @@ public class ListClassroomMemberJobsRequest  {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -142,15 +101,17 @@ public class ListClassroomMemberJobsRequest  {
             return false;
         }
         ListClassroomMemberJobsRequest listClassroomMemberJobsRequest = (ListClassroomMemberJobsRequest) o;
-        return Objects.equals(this.classroomId, listClassroomMemberJobsRequest.classroomId) &&
-            Objects.equals(this.memberId, listClassroomMemberJobsRequest.memberId) &&
-            Objects.equals(this.offset, listClassroomMemberJobsRequest.offset) &&
-            Objects.equals(this.limit, listClassroomMemberJobsRequest.limit);
+        return Objects.equals(this.classroomId, listClassroomMemberJobsRequest.classroomId)
+            && Objects.equals(this.memberId, listClassroomMemberJobsRequest.memberId)
+            && Objects.equals(this.offset, listClassroomMemberJobsRequest.offset)
+            && Objects.equals(this.limit, listClassroomMemberJobsRequest.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(classroomId, memberId, offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -162,16 +123,13 @@ public class ListClassroomMemberJobsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

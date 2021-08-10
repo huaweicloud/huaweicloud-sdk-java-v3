@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.dns.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dns.v2.model.SetRecordSetsStatusReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class SetRecordSetsStatusRequest  {
-
-
+/** Request Object */
+public class SetRecordSetsStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="recordset_id")
-    
+    @JsonProperty(value = "recordset_id")
+
     private String recordsetId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private SetRecordSetsStatusReq body;
 
     public SetRecordSetsStatusRequest withRecordsetId(String recordsetId) {
@@ -35,13 +24,9 @@ public class SetRecordSetsStatusRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * Get recordsetId
-     * @return recordsetId
-     */
+    /** Get recordsetId
+     * 
+     * @return recordsetId */
     public String getRecordsetId() {
         return recordsetId;
     }
@@ -50,27 +35,23 @@ public class SetRecordSetsStatusRequest  {
         this.recordsetId = recordsetId;
     }
 
-    
-
     public SetRecordSetsStatusRequest withBody(SetRecordSetsStatusReq body) {
         this.body = body;
         return this;
     }
 
     public SetRecordSetsStatusRequest withBody(Consumer<SetRecordSetsStatusReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new SetRecordSetsStatusReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public SetRecordSetsStatusReq getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class SetRecordSetsStatusRequest  {
     public void setBody(SetRecordSetsStatusReq body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class SetRecordSetsStatusRequest  {
             return false;
         }
         SetRecordSetsStatusRequest setRecordSetsStatusRequest = (SetRecordSetsStatusRequest) o;
-        return Objects.equals(this.recordsetId, setRecordSetsStatusRequest.recordsetId) &&
-            Objects.equals(this.body, setRecordSetsStatusRequest.body);
+        return Objects.equals(this.recordsetId, setRecordSetsStatusRequest.recordsetId)
+            && Objects.equals(this.body, setRecordSetsStatusRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(recordsetId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class SetRecordSetsStatusRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

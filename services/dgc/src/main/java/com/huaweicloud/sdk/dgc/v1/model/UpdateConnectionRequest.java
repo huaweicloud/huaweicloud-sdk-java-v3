@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dgc.v1.model.ConnectionInfo;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateConnectionRequest  {
-
-
+/** Request Object */
+public class UpdateConnectionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="connection_name")
-    
+    @JsonProperty(value = "connection_name")
+
     private String connectionName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ConnectionInfo body;
 
     public UpdateConnectionRequest withConnectionName(String connectionName) {
@@ -35,13 +24,9 @@ public class UpdateConnectionRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 连接名称.
-     * @return connectionName
-     */
+    /** 连接名称.
+     * 
+     * @return connectionName */
     public String getConnectionName() {
         return connectionName;
     }
@@ -50,27 +35,23 @@ public class UpdateConnectionRequest  {
         this.connectionName = connectionName;
     }
 
-    
-
     public UpdateConnectionRequest withBody(ConnectionInfo body) {
         this.body = body;
         return this;
     }
 
     public UpdateConnectionRequest withBody(Consumer<ConnectionInfo> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ConnectionInfo();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ConnectionInfo getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdateConnectionRequest  {
     public void setBody(ConnectionInfo body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdateConnectionRequest  {
             return false;
         }
         UpdateConnectionRequest updateConnectionRequest = (UpdateConnectionRequest) o;
-        return Objects.equals(this.connectionName, updateConnectionRequest.connectionName) &&
-            Objects.equals(this.body, updateConnectionRequest.body);
+        return Objects.equals(this.connectionName, updateConnectionRequest.connectionName)
+            && Objects.equals(this.body, updateConnectionRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(connectionName, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdateConnectionRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

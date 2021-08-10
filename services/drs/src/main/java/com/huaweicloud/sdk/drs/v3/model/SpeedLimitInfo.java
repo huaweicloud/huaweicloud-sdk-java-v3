@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 限制迁移速度请求体
- */
-public class SpeedLimitInfo  {
-
-
+/** 限制迁移速度请求体 */
+public class SpeedLimitInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="begin")
-    
+    @JsonProperty(value = "begin")
+
     private String begin;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end")
-    
+    @JsonProperty(value = "end")
+
     private String end;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="speed")
-    
+    @JsonProperty(value = "speed")
+
     private String speed;
 
     public SpeedLimitInfo withBegin(String begin) {
@@ -40,13 +28,9 @@ public class SpeedLimitInfo  {
         return this;
     }
 
-    
-
-
-    /**
-     * 开始限速时间, 此时间为UTC时间，开始时间为整时，若有分钟，则会忽略，格式为hh:mm，小时数为两位，例如：01:00。
-     * @return begin
-     */
+    /** 开始限速时间, 此时间为UTC时间，开始时间为整时，若有分钟，则会忽略，格式为hh:mm，小时数为两位，例如：01:00。
+     * 
+     * @return begin */
     public String getBegin() {
         return begin;
     }
@@ -55,20 +39,14 @@ public class SpeedLimitInfo  {
         this.begin = begin;
     }
 
-    
-
     public SpeedLimitInfo withEnd(String end) {
         this.end = end;
         return this;
     }
 
-    
-
-
-    /**
-     * 结束时间,此时间为UTC时间,输入必须为59分结尾，格式为hh:mm，小时数为两位，例如：05:59。
-     * @return end
-     */
+    /** 结束时间,此时间为UTC时间,输入必须为59分结尾，格式为hh:mm，小时数为两位，例如：05:59。
+     * 
+     * @return end */
     public String getEnd() {
         return end;
     }
@@ -77,20 +55,14 @@ public class SpeedLimitInfo  {
         this.end = end;
     }
 
-    
-
     public SpeedLimitInfo withSpeed(String speed) {
         this.speed = speed;
         return this;
     }
 
-    
-
-
-    /**
-     * 限速，取值范围为1~9999 ,单位为MB/s
-     * @return speed
-     */
+    /** 限速，取值范围为1~9999 ,单位为MB/s
+     * 
+     * @return speed */
     public String getSpeed() {
         return speed;
     }
@@ -98,8 +70,6 @@ public class SpeedLimitInfo  {
     public void setSpeed(String speed) {
         this.speed = speed;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,15 @@ public class SpeedLimitInfo  {
             return false;
         }
         SpeedLimitInfo speedLimitInfo = (SpeedLimitInfo) o;
-        return Objects.equals(this.begin, speedLimitInfo.begin) &&
-            Objects.equals(this.end, speedLimitInfo.end) &&
-            Objects.equals(this.speed, speedLimitInfo.speed);
+        return Objects.equals(this.begin, speedLimitInfo.begin) && Objects.equals(this.end, speedLimitInfo.end)
+            && Objects.equals(this.speed, speedLimitInfo.speed);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(begin, end, speed);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +99,13 @@ public class SpeedLimitInfo  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

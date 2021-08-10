@@ -1,52 +1,34 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * 源站信息
- */
-public class SourceWithPort  {
-
-
+/** 源站信息 */
+public class SourceWithPort {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_or_domain")
-    
+    @JsonProperty(value = "ip_or_domain")
+
     private String ipOrDomain;
-    /**
-     * 源站类型（\"ipaddr\"： \"IP源站\"；\"domain\"： \"域名源站\"；\"obs_bucket\"： \"OBS Bucket源站\"）
-     */
+
+    /** 源站类型（\"ipaddr\"： \"IP源站\"；\"domain\"： \"域名源站\"；\"obs_bucket\"： \"OBS Bucket源站\"） */
     public static final class OriginTypeEnum {
 
-        
-        /**
-         * Enum IPADDR for value: "ipaddr"
-         */
+        /** Enum IPADDR for value: "ipaddr" */
         public static final OriginTypeEnum IPADDR = new OriginTypeEnum("ipaddr");
-        
-        /**
-         * Enum DOMAIN for value: "domain"
-         */
+
+        /** Enum DOMAIN for value: "domain" */
         public static final OriginTypeEnum DOMAIN = new OriginTypeEnum("domain");
-        
-        /**
-         * Enum OBS_BUCKET for value: "obs_bucket"
-         */
+
+        /** Enum OBS_BUCKET for value: "obs_bucket" */
         public static final OriginTypeEnum OBS_BUCKET = new OriginTypeEnum("obs_bucket");
-        
 
         private static final Map<String, OriginTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,7 +58,7 @@ public class SourceWithPort  {
 
         @JsonCreator
         public static OriginTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OriginTypeEnum result = STATIC_FIELDS.get(value);
@@ -87,7 +69,7 @@ public class SourceWithPort  {
         }
 
         public static OriginTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             OriginTypeEnum result = STATIC_FIELDS.get(value);
@@ -111,34 +93,29 @@ public class SourceWithPort  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="origin_type")
-    
+    @JsonProperty(value = "origin_type")
+
     private OriginTypeEnum originType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="active_standby")
-    
+    @JsonProperty(value = "active_standby")
+
     private Integer activeStandby;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable_obs_web_hosting")
-    
+    @JsonProperty(value = "enable_obs_web_hosting")
+
     private Integer enableObsWebHosting;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="http_port")
-    
+    @JsonProperty(value = "http_port")
+
     private Integer httpPort;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="https_port")
-    
+    @JsonProperty(value = "https_port")
+
     private Integer httpsPort;
 
     public SourceWithPort withIpOrDomain(String ipOrDomain) {
@@ -146,13 +123,9 @@ public class SourceWithPort  {
         return this;
     }
 
-    
-
-
-    /**
-     * 源站IP或者域名。
-     * @return ipOrDomain
-     */
+    /** 源站IP或者域名。
+     * 
+     * @return ipOrDomain */
     public String getIpOrDomain() {
         return ipOrDomain;
     }
@@ -161,20 +134,14 @@ public class SourceWithPort  {
         this.ipOrDomain = ipOrDomain;
     }
 
-    
-
     public SourceWithPort withOriginType(OriginTypeEnum originType) {
         this.originType = originType;
         return this;
     }
 
-    
-
-
-    /**
-     * 源站类型（\"ipaddr\"： \"IP源站\"；\"domain\"： \"域名源站\"；\"obs_bucket\"： \"OBS Bucket源站\"）
-     * @return originType
-     */
+    /** 源站类型（\"ipaddr\"： \"IP源站\"；\"domain\"： \"域名源站\"；\"obs_bucket\"： \"OBS Bucket源站\"）
+     * 
+     * @return originType */
     public OriginTypeEnum getOriginType() {
         return originType;
     }
@@ -183,20 +150,14 @@ public class SourceWithPort  {
         this.originType = originType;
     }
 
-    
-
     public SourceWithPort withActiveStandby(Integer activeStandby) {
         this.activeStandby = activeStandby;
         return this;
     }
 
-    
-
-
-    /**
-     * 主备状态（1代表主站；0代表备站）；主源站必须存在，备源站可选。
-     * @return activeStandby
-     */
+    /** 主备状态（1代表主站；0代表备站）；主源站必须存在，备源站可选。
+     * 
+     * @return activeStandby */
     public Integer getActiveStandby() {
         return activeStandby;
     }
@@ -205,20 +166,14 @@ public class SourceWithPort  {
         this.activeStandby = activeStandby;
     }
 
-    
-
     public SourceWithPort withEnableObsWebHosting(Integer enableObsWebHosting) {
         this.enableObsWebHosting = enableObsWebHosting;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否开启Obs静态网站托管(0表示关闭,1表示则为开启)，源站类型为obs_bucket时传递。
-     * @return enableObsWebHosting
-     */
+    /** 是否开启Obs静态网站托管(0表示关闭,1表示则为开启)，源站类型为obs_bucket时传递。
+     * 
+     * @return enableObsWebHosting */
     public Integer getEnableObsWebHosting() {
         return enableObsWebHosting;
     }
@@ -227,20 +182,14 @@ public class SourceWithPort  {
         this.enableObsWebHosting = enableObsWebHosting;
     }
 
-    
-
     public SourceWithPort withHttpPort(Integer httpPort) {
         this.httpPort = httpPort;
         return this;
     }
 
-    
-
-
-    /**
-     * HTTP端口，默认80
-     * @return httpPort
-     */
+    /** HTTP端口，默认80
+     * 
+     * @return httpPort */
     public Integer getHttpPort() {
         return httpPort;
     }
@@ -249,20 +198,14 @@ public class SourceWithPort  {
         this.httpPort = httpPort;
     }
 
-    
-
     public SourceWithPort withHttpsPort(Integer httpsPort) {
         this.httpsPort = httpsPort;
         return this;
     }
 
-    
-
-
-    /**
-     * HTTPS端口，默认443
-     * @return httpsPort
-     */
+    /** HTTPS端口，默认443
+     * 
+     * @return httpsPort */
     public Integer getHttpsPort() {
         return httpsPort;
     }
@@ -270,8 +213,6 @@ public class SourceWithPort  {
     public void setHttpsPort(Integer httpsPort) {
         this.httpsPort = httpsPort;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -282,17 +223,19 @@ public class SourceWithPort  {
             return false;
         }
         SourceWithPort sourceWithPort = (SourceWithPort) o;
-        return Objects.equals(this.ipOrDomain, sourceWithPort.ipOrDomain) &&
-            Objects.equals(this.originType, sourceWithPort.originType) &&
-            Objects.equals(this.activeStandby, sourceWithPort.activeStandby) &&
-            Objects.equals(this.enableObsWebHosting, sourceWithPort.enableObsWebHosting) &&
-            Objects.equals(this.httpPort, sourceWithPort.httpPort) &&
-            Objects.equals(this.httpsPort, sourceWithPort.httpsPort);
+        return Objects.equals(this.ipOrDomain, sourceWithPort.ipOrDomain)
+            && Objects.equals(this.originType, sourceWithPort.originType)
+            && Objects.equals(this.activeStandby, sourceWithPort.activeStandby)
+            && Objects.equals(this.enableObsWebHosting, sourceWithPort.enableObsWebHosting)
+            && Objects.equals(this.httpPort, sourceWithPort.httpPort)
+            && Objects.equals(this.httpsPort, sourceWithPort.httpsPort);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(ipOrDomain, originType, activeStandby, enableObsWebHosting, httpPort, httpsPort);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -306,16 +249,13 @@ public class SourceWithPort  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

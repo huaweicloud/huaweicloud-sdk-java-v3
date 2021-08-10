@@ -1,61 +1,46 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.TokenCatalogEndpoint;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class TokenCatalog  {
-
-
+public class TokenCatalog {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endpoints")
-    
+    @JsonProperty(value = "endpoints")
+
     private List<TokenCatalogEndpoint> endpoints = null;
-    
+
     public TokenCatalog withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 该接口所属服务。
-     * @return type
-     */
+    /** 该接口所属服务。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -64,20 +49,14 @@ public class TokenCatalog  {
         this.type = type;
     }
 
-    
-
     public TokenCatalog withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务ID。
-     * @return id
-     */
+    /** 服务ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -86,20 +65,14 @@ public class TokenCatalog  {
         this.id = id;
     }
 
-    
-
     public TokenCatalog withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务名称。
-     * @return name
-     */
+    /** 服务名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -108,16 +81,13 @@ public class TokenCatalog  {
         this.name = name;
     }
 
-    
-
     public TokenCatalog withEndpoints(List<TokenCatalogEndpoint> endpoints) {
         this.endpoints = endpoints;
         return this;
     }
 
-    
     public TokenCatalog addEndpointsItem(TokenCatalogEndpoint endpointsItem) {
-        if(this.endpoints == null) {
+        if (this.endpoints == null) {
             this.endpoints = new ArrayList<>();
         }
         this.endpoints.add(endpointsItem);
@@ -125,17 +95,16 @@ public class TokenCatalog  {
     }
 
     public TokenCatalog withEndpoints(Consumer<List<TokenCatalogEndpoint>> endpointsSetter) {
-        if(this.endpoints == null) {
+        if (this.endpoints == null) {
             this.endpoints = new ArrayList<>();
         }
         endpointsSetter.accept(this.endpoints);
         return this;
     }
 
-    /**
-     * 终端节点。
-     * @return endpoints
-     */
+    /** 终端节点。
+     * 
+     * @return endpoints */
     public List<TokenCatalogEndpoint> getEndpoints() {
         return endpoints;
     }
@@ -143,8 +112,6 @@ public class TokenCatalog  {
     public void setEndpoints(List<TokenCatalogEndpoint> endpoints) {
         this.endpoints = endpoints;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -155,15 +122,15 @@ public class TokenCatalog  {
             return false;
         }
         TokenCatalog tokenCatalog = (TokenCatalog) o;
-        return Objects.equals(this.type, tokenCatalog.type) &&
-            Objects.equals(this.id, tokenCatalog.id) &&
-            Objects.equals(this.name, tokenCatalog.name) &&
-            Objects.equals(this.endpoints, tokenCatalog.endpoints);
+        return Objects.equals(this.type, tokenCatalog.type) && Objects.equals(this.id, tokenCatalog.id)
+            && Objects.equals(this.name, tokenCatalog.name) && Objects.equals(this.endpoints, tokenCatalog.endpoints);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, id, name, endpoints);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -175,16 +142,13 @@ public class TokenCatalog  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

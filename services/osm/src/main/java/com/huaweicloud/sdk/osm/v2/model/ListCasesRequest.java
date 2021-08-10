@@ -1,118 +1,94 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ListCasesRequest  {
-
-
+/** Request Object */
+public class ListCasesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="search_key")
-    
+    @JsonProperty(value = "search_key")
+
     private List<String> searchKey = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="label_id_list")
-    
+    @JsonProperty(value = "label_id_list")
+
     private List<String> labelIdList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_key")
-    
+    @JsonProperty(value = "app_key")
+
     private String appKey;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="incident_id")
-    
+    @JsonProperty(value = "incident_id")
+
     private String incidentId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="query_start_time")
-    
+    @JsonProperty(value = "query_start_time")
+
     private String queryStartTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="query_end_time")
-    
+    @JsonProperty(value = "query_end_time")
+
     private String queryEndTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="incident_status")
-    
+    @JsonProperty(value = "incident_status")
+
     private String incidentStatus;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="x_customer_id")
-    
+    @JsonProperty(value = "x_customer_id")
+
     private String xCustomerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="x_customer_name")
-    
+    @JsonProperty(value = "x_customer_name")
+
     private String xCustomerName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site")
-    
+    @JsonProperty(value = "X-Site")
+
     private Integer xSite;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Time-Zone")
-    
+    @JsonProperty(value = "X-Time-Zone")
+
     private String xTimeZone;
 
     public ListCasesRequest withSearchKey(List<String> searchKey) {
@@ -120,9 +96,8 @@ public class ListCasesRequest  {
         return this;
     }
 
-    
     public ListCasesRequest addSearchKeyItem(String searchKeyItem) {
-        if(this.searchKey == null) {
+        if (this.searchKey == null) {
             this.searchKey = new ArrayList<>();
         }
         this.searchKey.add(searchKeyItem);
@@ -130,17 +105,16 @@ public class ListCasesRequest  {
     }
 
     public ListCasesRequest withSearchKey(Consumer<List<String>> searchKeySetter) {
-        if(this.searchKey == null) {
+        if (this.searchKey == null) {
             this.searchKey = new ArrayList<>();
         }
         searchKeySetter.accept(this.searchKey);
         return this;
     }
 
-    /**
-     * 关键字查询，支持多个空格隔开
-     * @return searchKey
-     */
+    /** 关键字查询，支持多个空格隔开
+     * 
+     * @return searchKey */
     public List<String> getSearchKey() {
         return searchKey;
     }
@@ -149,16 +123,13 @@ public class ListCasesRequest  {
         this.searchKey = searchKey;
     }
 
-    
-
     public ListCasesRequest withLabelIdList(List<String> labelIdList) {
         this.labelIdList = labelIdList;
         return this;
     }
 
-    
     public ListCasesRequest addLabelIdListItem(String labelIdListItem) {
-        if(this.labelIdList == null) {
+        if (this.labelIdList == null) {
             this.labelIdList = new ArrayList<>();
         }
         this.labelIdList.add(labelIdListItem);
@@ -166,17 +137,16 @@ public class ListCasesRequest  {
     }
 
     public ListCasesRequest withLabelIdList(Consumer<List<String>> labelIdListSetter) {
-        if(this.labelIdList == null) {
+        if (this.labelIdList == null) {
             this.labelIdList = new ArrayList<>();
         }
         labelIdListSetter.accept(this.labelIdList);
         return this;
     }
 
-    /**
-     * 标签列表，最多支持5个
-     * @return labelIdList
-     */
+    /** 标签列表，最多支持5个
+     * 
+     * @return labelIdList */
     public List<String> getLabelIdList() {
         return labelIdList;
     }
@@ -185,20 +155,14 @@ public class ListCasesRequest  {
         this.labelIdList = labelIdList;
     }
 
-    
-
     public ListCasesRequest withAppKey(String appKey) {
         this.appKey = appKey;
         return this;
     }
 
-    
-
-
-    /**
-     * app关键字查询
-     * @return appKey
-     */
+    /** app关键字查询
+     * 
+     * @return appKey */
     public String getAppKey() {
         return appKey;
     }
@@ -207,20 +171,14 @@ public class ListCasesRequest  {
         this.appKey = appKey;
     }
 
-    
-
     public ListCasesRequest withIncidentId(String incidentId) {
         this.incidentId = incidentId;
         return this;
     }
 
-    
-
-
-    /**
-     * 工单id
-     * @return incidentId
-     */
+    /** 工单id
+     * 
+     * @return incidentId */
     public String getIncidentId() {
         return incidentId;
     }
@@ -229,20 +187,14 @@ public class ListCasesRequest  {
         this.incidentId = incidentId;
     }
 
-    
-
     public ListCasesRequest withQueryStartTime(String queryStartTime) {
         this.queryStartTime = queryStartTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询开始时间
-     * @return queryStartTime
-     */
+    /** 查询开始时间
+     * 
+     * @return queryStartTime */
     public String getQueryStartTime() {
         return queryStartTime;
     }
@@ -251,20 +203,14 @@ public class ListCasesRequest  {
         this.queryStartTime = queryStartTime;
     }
 
-    
-
     public ListCasesRequest withQueryEndTime(String queryEndTime) {
         this.queryEndTime = queryEndTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询结束时间
-     * @return queryEndTime
-     */
+    /** 查询结束时间
+     * 
+     * @return queryEndTime */
     public String getQueryEndTime() {
         return queryEndTime;
     }
@@ -273,22 +219,14 @@ public class ListCasesRequest  {
         this.queryEndTime = queryEndTime;
     }
 
-    
-
     public ListCasesRequest withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态 0：待受理 1：处理中 2：待确认结果 3：已完成 4：已撤销 12：无效 17： 待反馈
-     * minimum: 0
-     * maximum: 20
-     * @return status
-     */
+    /** 状态 0：待受理 1：处理中 2：待确认结果 3：已完成 4：已撤销 12：无效 17： 待反馈 minimum: 0 maximum: 20
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -297,20 +235,14 @@ public class ListCasesRequest  {
         this.status = status;
     }
 
-    
-
     public ListCasesRequest withIncidentStatus(String incidentStatus) {
         this.incidentStatus = incidentStatus;
         return this;
     }
 
-    
-
-
-    /**
-     * 状态列表
-     * @return incidentStatus
-     */
+    /** 状态列表
+     * 
+     * @return incidentStatus */
     public String getIncidentStatus() {
         return incidentStatus;
     }
@@ -319,22 +251,16 @@ public class ListCasesRequest  {
         this.incidentStatus = incidentStatus;
     }
 
-    
-
     public ListCasesRequest withXCustomerId(String xCustomerId) {
         this.xCustomerId = xCustomerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 子用户id
-     * @return xCustomerId
-     */
+    /** 子用户id
+     * 
+     * @return xCustomerId */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="x_customer_id")
+    @JsonProperty(value = "x_customer_id")
     public String getXCustomerId() {
         return xCustomerId;
     }
@@ -343,22 +269,16 @@ public class ListCasesRequest  {
         this.xCustomerId = xCustomerId;
     }
 
-    
-
     public ListCasesRequest withXCustomerName(String xCustomerName) {
         this.xCustomerName = xCustomerName;
         return this;
     }
 
-    
-
-
-    /**
-     * 子用户名称
-     * @return xCustomerName
-     */
+    /** 子用户名称
+     * 
+     * @return xCustomerName */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="x_customer_name")
+    @JsonProperty(value = "x_customer_name")
     public String getXCustomerName() {
         return xCustomerName;
     }
@@ -367,20 +287,14 @@ public class ListCasesRequest  {
         this.xCustomerName = xCustomerName;
     }
 
-    
-
     public ListCasesRequest withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 组id
-     * @return groupId
-     */
+    /** 组id
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -389,22 +303,14 @@ public class ListCasesRequest  {
         this.groupId = groupId;
     }
 
-    
-
     public ListCasesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询偏移量
-     * minimum: 0
-     * maximum: 65535
-     * @return offset
-     */
+    /** 查询偏移量 minimum: 0 maximum: 65535
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -413,22 +319,14 @@ public class ListCasesRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListCasesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 查询限制数量
-     * minimum: 0
-     * maximum: 100
-     * @return limit
-     */
+    /** 查询限制数量 minimum: 0 maximum: 100
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -437,24 +335,16 @@ public class ListCasesRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListCasesRequest withXSite(Integer xSite) {
         this.xSite = xSite;
         return this;
     }
 
-    
-
-
-    /**
-     * 对接站点信息。  0（中国站） 1（国际站），不填的话默认为0。
-     * minimum: 0
-     * maximum: 1
-     * @return xSite
-     */
+    /** 对接站点信息。 0（中国站） 1（国际站），不填的话默认为0。 minimum: 0 maximum: 1
+     * 
+     * @return xSite */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Site")
+    @JsonProperty(value = "X-Site")
     public Integer getXSite() {
         return xSite;
     }
@@ -463,22 +353,16 @@ public class ListCasesRequest  {
         this.xSite = xSite;
     }
 
-    
-
     public ListCasesRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。  会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
-     * @return xLanguage
-     */
+    /** 语言环境，值为通用的语言描述字符串，比如zh-cn等，默认为zh-cn。 会根据语言环境对应展示一些国际化的信息，比如工单类型名称等。
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -487,22 +371,16 @@ public class ListCasesRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListCasesRequest withXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
         return this;
     }
 
-    
-
-
-    /**
-     * 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。  涉及时间的数据会根据环境时区处理。
-     * @return xTimeZone
-     */
+    /** 环境时区，值为通用的时区描述字符串，比如GMT+8等，默认为GMT+8。 涉及时间的数据会根据环境时区处理。
+     * 
+     * @return xTimeZone */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Time-Zone")
+    @JsonProperty(value = "X-Time-Zone")
     public String getXTimeZone() {
         return xTimeZone;
     }
@@ -510,8 +388,6 @@ public class ListCasesRequest  {
     public void setXTimeZone(String xTimeZone) {
         this.xTimeZone = xTimeZone;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -522,27 +398,43 @@ public class ListCasesRequest  {
             return false;
         }
         ListCasesRequest listCasesRequest = (ListCasesRequest) o;
-        return Objects.equals(this.searchKey, listCasesRequest.searchKey) &&
-            Objects.equals(this.labelIdList, listCasesRequest.labelIdList) &&
-            Objects.equals(this.appKey, listCasesRequest.appKey) &&
-            Objects.equals(this.incidentId, listCasesRequest.incidentId) &&
-            Objects.equals(this.queryStartTime, listCasesRequest.queryStartTime) &&
-            Objects.equals(this.queryEndTime, listCasesRequest.queryEndTime) &&
-            Objects.equals(this.status, listCasesRequest.status) &&
-            Objects.equals(this.incidentStatus, listCasesRequest.incidentStatus) &&
-            Objects.equals(this.xCustomerId, listCasesRequest.xCustomerId) &&
-            Objects.equals(this.xCustomerName, listCasesRequest.xCustomerName) &&
-            Objects.equals(this.groupId, listCasesRequest.groupId) &&
-            Objects.equals(this.offset, listCasesRequest.offset) &&
-            Objects.equals(this.limit, listCasesRequest.limit) &&
-            Objects.equals(this.xSite, listCasesRequest.xSite) &&
-            Objects.equals(this.xLanguage, listCasesRequest.xLanguage) &&
-            Objects.equals(this.xTimeZone, listCasesRequest.xTimeZone);
+        return Objects.equals(this.searchKey, listCasesRequest.searchKey)
+            && Objects.equals(this.labelIdList, listCasesRequest.labelIdList)
+            && Objects.equals(this.appKey, listCasesRequest.appKey)
+            && Objects.equals(this.incidentId, listCasesRequest.incidentId)
+            && Objects.equals(this.queryStartTime, listCasesRequest.queryStartTime)
+            && Objects.equals(this.queryEndTime, listCasesRequest.queryEndTime)
+            && Objects.equals(this.status, listCasesRequest.status)
+            && Objects.equals(this.incidentStatus, listCasesRequest.incidentStatus)
+            && Objects.equals(this.xCustomerId, listCasesRequest.xCustomerId)
+            && Objects.equals(this.xCustomerName, listCasesRequest.xCustomerName)
+            && Objects.equals(this.groupId, listCasesRequest.groupId)
+            && Objects.equals(this.offset, listCasesRequest.offset)
+            && Objects.equals(this.limit, listCasesRequest.limit) && Objects.equals(this.xSite, listCasesRequest.xSite)
+            && Objects.equals(this.xLanguage, listCasesRequest.xLanguage)
+            && Objects.equals(this.xTimeZone, listCasesRequest.xTimeZone);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(searchKey, labelIdList, appKey, incidentId, queryStartTime, queryEndTime, status, incidentStatus, xCustomerId, xCustomerName, groupId, offset, limit, xSite, xLanguage, xTimeZone);
+        return Objects.hash(searchKey,
+            labelIdList,
+            appKey,
+            incidentId,
+            queryStartTime,
+            queryEndTime,
+            status,
+            incidentStatus,
+            xCustomerId,
+            xCustomerName,
+            groupId,
+            offset,
+            limit,
+            xSite,
+            xLanguage,
+            xTimeZone);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -566,16 +458,13 @@ public class ListCasesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

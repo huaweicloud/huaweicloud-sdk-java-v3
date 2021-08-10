@@ -1,44 +1,29 @@
 package com.huaweicloud.sdk.dds.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dds.v3.model.TagItem;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * BatchOperateInstanceTagRequestBody
- */
-public class BatchOperateInstanceTagRequestBody  {
+/** BatchOperateInstanceTagRequestBody */
+public class BatchOperateInstanceTagRequestBody {
 
-    /**
-     * 操作标识。取值： - create，表示添加标签。 - delete，表示删除标签。
-     */
+    /** 操作标识。取值： - create，表示添加标签。 - delete，表示删除标签。 */
     public static final class ActionEnum {
 
-        
-        /**
-         * Enum CREATE for value: "create"
-         */
+        /** Enum CREATE for value: "create" */
         public static final ActionEnum CREATE = new ActionEnum("create");
-        
-        /**
-         * Enum DELETE for value: "delete"
-         */
+
+        /** Enum DELETE for value: "delete" */
         public static final ActionEnum DELETE = new ActionEnum("delete");
-        
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -67,7 +52,7 @@ public class BatchOperateInstanceTagRequestBody  {
 
         @JsonCreator
         public static ActionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -78,7 +63,7 @@ public class BatchOperateInstanceTagRequestBody  {
         }
 
         public static ActionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             ActionEnum result = STATIC_FIELDS.get(value);
@@ -102,30 +87,24 @@ public class BatchOperateInstanceTagRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
+
     private ActionEnum action;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<TagItem> tags = null;
-    
+
     public BatchOperateInstanceTagRequestBody withAction(ActionEnum action) {
         this.action = action;
         return this;
     }
 
-    
-
-
-    /**
-     * 操作标识。取值： - create，表示添加标签。 - delete，表示删除标签。
-     * @return action
-     */
+    /** 操作标识。取值： - create，表示添加标签。 - delete，表示删除标签。
+     * 
+     * @return action */
     public ActionEnum getAction() {
         return action;
     }
@@ -134,16 +113,13 @@ public class BatchOperateInstanceTagRequestBody  {
         this.action = action;
     }
 
-    
-
     public BatchOperateInstanceTagRequestBody withTags(List<TagItem> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public BatchOperateInstanceTagRequestBody addTagsItem(TagItem tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -151,17 +127,16 @@ public class BatchOperateInstanceTagRequestBody  {
     }
 
     public BatchOperateInstanceTagRequestBody withTags(Consumer<List<TagItem>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
 
-    /**
-     * 标签列表。
-     * @return tags
-     */
+    /** 标签列表。
+     * 
+     * @return tags */
     public List<TagItem> getTags() {
         return tags;
     }
@@ -169,8 +144,6 @@ public class BatchOperateInstanceTagRequestBody  {
     public void setTags(List<TagItem> tags) {
         this.tags = tags;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -181,13 +154,15 @@ public class BatchOperateInstanceTagRequestBody  {
             return false;
         }
         BatchOperateInstanceTagRequestBody batchOperateInstanceTagRequestBody = (BatchOperateInstanceTagRequestBody) o;
-        return Objects.equals(this.action, batchOperateInstanceTagRequestBody.action) &&
-            Objects.equals(this.tags, batchOperateInstanceTagRequestBody.tags);
+        return Objects.equals(this.action, batchOperateInstanceTagRequestBody.action)
+            && Objects.equals(this.tags, batchOperateInstanceTagRequestBody.tags);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(action, tags);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -197,16 +172,13 @@ public class BatchOperateInstanceTagRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

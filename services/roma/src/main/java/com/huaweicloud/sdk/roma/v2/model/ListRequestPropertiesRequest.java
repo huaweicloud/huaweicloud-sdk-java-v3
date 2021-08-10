@@ -1,62 +1,46 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListRequestPropertiesRequest  {
-
-
+/** Request Object */
+public class ListRequestPropertiesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_id")
-    
+    @JsonProperty(value = "service_id")
+
     private String serviceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="command_id")
-    
+    @JsonProperty(value = "command_id")
+
     private Integer commandId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="request_id")
-    
+    @JsonProperty(value = "request_id")
+
     private Integer requestId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="request_name")
-    
+    @JsonProperty(value = "request_name")
+
     private String requestName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
     public ListRequestPropertiesRequest withInstanceId(String instanceId) {
@@ -64,13 +48,9 @@ public class ListRequestPropertiesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
+    /** 实例ID
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -79,20 +59,14 @@ public class ListRequestPropertiesRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListRequestPropertiesRequest withServiceId(String serviceId) {
         this.serviceId = serviceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 服务ID
-     * @return serviceId
-     */
+    /** 服务ID
+     * 
+     * @return serviceId */
     public String getServiceId() {
         return serviceId;
     }
@@ -101,22 +75,14 @@ public class ListRequestPropertiesRequest  {
         this.serviceId = serviceId;
     }
 
-    
-
     public ListRequestPropertiesRequest withCommandId(Integer commandId) {
         this.commandId = commandId;
         return this;
     }
 
-    
-
-
-    /**
-     * 命令ID
-     * minimum: 0
-     * maximum: 200376420520689663
-     * @return commandId
-     */
+    /** 命令ID minimum: 0 maximum: 200376420520689663
+     * 
+     * @return commandId */
     public Integer getCommandId() {
         return commandId;
     }
@@ -125,22 +91,14 @@ public class ListRequestPropertiesRequest  {
         this.commandId = commandId;
     }
 
-    
-
     public ListRequestPropertiesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示条目数量，最大数量999，超过999后只返回999
-     * minimum: 0
-     * maximum: 999
-     * @return limit
-     */
+    /** 每页显示条目数量，最大数量999，超过999后只返回999 minimum: 0 maximum: 999
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -149,22 +107,14 @@ public class ListRequestPropertiesRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListRequestPropertiesRequest withRequestId(Integer requestId) {
         this.requestId = requestId;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求属性ID
-     * minimum: 1
-     * maximum: 999999999999999999
-     * @return requestId
-     */
+    /** 请求属性ID minimum: 1 maximum: 999999999999999999
+     * 
+     * @return requestId */
     public Integer getRequestId() {
         return requestId;
     }
@@ -173,20 +123,14 @@ public class ListRequestPropertiesRequest  {
         this.requestId = requestId;
     }
 
-    
-
     public ListRequestPropertiesRequest withRequestName(String requestName) {
         this.requestName = requestName;
         return this;
     }
 
-    
-
-
-    /**
-     * 请求属性名称
-     * @return requestName
-     */
+    /** 请求属性名称
+     * 
+     * @return requestName */
     public String getRequestName() {
         return requestName;
     }
@@ -195,22 +139,14 @@ public class ListRequestPropertiesRequest  {
         this.requestName = requestName;
     }
 
-    
-
     public ListRequestPropertiesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于0
-     * minimum: 0
-     * maximum: 999999
-     * @return offset
-     */
+    /** 偏移量，表示从此偏移量开始查询， offset大于等于0 minimum: 0 maximum: 999999
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -218,8 +154,6 @@ public class ListRequestPropertiesRequest  {
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -230,18 +164,20 @@ public class ListRequestPropertiesRequest  {
             return false;
         }
         ListRequestPropertiesRequest listRequestPropertiesRequest = (ListRequestPropertiesRequest) o;
-        return Objects.equals(this.instanceId, listRequestPropertiesRequest.instanceId) &&
-            Objects.equals(this.serviceId, listRequestPropertiesRequest.serviceId) &&
-            Objects.equals(this.commandId, listRequestPropertiesRequest.commandId) &&
-            Objects.equals(this.limit, listRequestPropertiesRequest.limit) &&
-            Objects.equals(this.requestId, listRequestPropertiesRequest.requestId) &&
-            Objects.equals(this.requestName, listRequestPropertiesRequest.requestName) &&
-            Objects.equals(this.offset, listRequestPropertiesRequest.offset);
+        return Objects.equals(this.instanceId, listRequestPropertiesRequest.instanceId)
+            && Objects.equals(this.serviceId, listRequestPropertiesRequest.serviceId)
+            && Objects.equals(this.commandId, listRequestPropertiesRequest.commandId)
+            && Objects.equals(this.limit, listRequestPropertiesRequest.limit)
+            && Objects.equals(this.requestId, listRequestPropertiesRequest.requestId)
+            && Objects.equals(this.requestName, listRequestPropertiesRequest.requestName)
+            && Objects.equals(this.offset, listRequestPropertiesRequest.offset);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, serviceId, commandId, limit, requestId, requestName, offset);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -256,16 +192,13 @@ public class ListRequestPropertiesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

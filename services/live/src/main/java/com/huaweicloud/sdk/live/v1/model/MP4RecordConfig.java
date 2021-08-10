@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.live.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * MP4RecordConfig
- */
-public class MP4RecordConfig  {
-
-
+/** MP4RecordConfig */
+public class MP4RecordConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="record_cycle")
-    
+    @JsonProperty(value = "record_cycle")
+
     private Integer recordCycle;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="record_prefix")
-    
+    @JsonProperty(value = "record_prefix")
+
     private String recordPrefix;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="record_max_duration_to_merge_file")
-    
+    @JsonProperty(value = "record_max_duration_to_merge_file")
+
     private Integer recordMaxDurationToMergeFile;
 
     public MP4RecordConfig withRecordCycle(Integer recordCycle) {
@@ -40,15 +28,9 @@ public class MP4RecordConfig  {
         return this;
     }
 
-    
-
-
-    /**
-     * 单位为秒，周期录制时长，最小1分钟，最大12小时。如果为0则整个流录制一个文件。
-     * minimum: 0
-     * maximum: 43200
-     * @return recordCycle
-     */
+    /** 单位为秒，周期录制时长，最小1分钟，最大12小时。如果为0则整个流录制一个文件。 minimum: 0 maximum: 43200
+     * 
+     * @return recordCycle */
     public Integer getRecordCycle() {
         return recordCycle;
     }
@@ -57,20 +39,15 @@ public class MP4RecordConfig  {
         this.recordCycle = recordCycle;
     }
 
-    
-
     public MP4RecordConfig withRecordPrefix(String recordPrefix) {
         this.recordPrefix = recordPrefix;
         return this;
     }
 
-    
-
-
-    /**
-     * 录制文件含路径和文件名的前缀， 默认Record/{publish_domain}/{app}/{record_type}/{record_format}/{stream}_{file_start_time}/{file_start_time}
-     * @return recordPrefix
-     */
+    /** 录制文件含路径和文件名的前缀，
+     * 默认Record/{publish_domain}/{app}/{record_type}/{record_format}/{stream}_{file_start_time}/{file_start_time}
+     * 
+     * @return recordPrefix */
     public String getRecordPrefix() {
         return recordPrefix;
     }
@@ -79,22 +56,14 @@ public class MP4RecordConfig  {
         this.recordPrefix = recordPrefix;
     }
 
-    
-
     public MP4RecordConfig withRecordMaxDurationToMergeFile(Integer recordMaxDurationToMergeFile) {
         this.recordMaxDurationToMergeFile = recordMaxDurationToMergeFile;
         return this;
     }
 
-    
-
-
-    /**
-     * 录制mp4拼接时长，如果流中断超过该时间，则生成新文件。单位秒。如果为0表示流中断就生成新文件。默认为0。
-     * minimum: 0
-     * maximum: 300
-     * @return recordMaxDurationToMergeFile
-     */
+    /** 录制mp4拼接时长，如果流中断超过该时间，则生成新文件。单位秒。如果为0表示流中断就生成新文件。默认为0。 minimum: 0 maximum: 300
+     * 
+     * @return recordMaxDurationToMergeFile */
     public Integer getRecordMaxDurationToMergeFile() {
         return recordMaxDurationToMergeFile;
     }
@@ -102,8 +71,6 @@ public class MP4RecordConfig  {
     public void setRecordMaxDurationToMergeFile(Integer recordMaxDurationToMergeFile) {
         this.recordMaxDurationToMergeFile = recordMaxDurationToMergeFile;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -114,34 +81,35 @@ public class MP4RecordConfig  {
             return false;
         }
         MP4RecordConfig mp4RecordConfig = (MP4RecordConfig) o;
-        return Objects.equals(this.recordCycle, mp4RecordConfig.recordCycle) &&
-            Objects.equals(this.recordPrefix, mp4RecordConfig.recordPrefix) &&
-            Objects.equals(this.recordMaxDurationToMergeFile, mp4RecordConfig.recordMaxDurationToMergeFile);
+        return Objects.equals(this.recordCycle, mp4RecordConfig.recordCycle)
+            && Objects.equals(this.recordPrefix, mp4RecordConfig.recordPrefix)
+            && Objects.equals(this.recordMaxDurationToMergeFile, mp4RecordConfig.recordMaxDurationToMergeFile);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(recordCycle, recordPrefix, recordMaxDurationToMergeFile);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MP4RecordConfig {\n");
         sb.append("    recordCycle: ").append(toIndentedString(recordCycle)).append("\n");
         sb.append("    recordPrefix: ").append(toIndentedString(recordPrefix)).append("\n");
-        sb.append("    recordMaxDurationToMergeFile: ").append(toIndentedString(recordMaxDurationToMergeFile)).append("\n");
+        sb.append("    recordMaxDurationToMergeFile: ")
+            .append(toIndentedString(recordMaxDurationToMergeFile))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

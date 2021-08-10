@@ -1,97 +1,75 @@
 package com.huaweicloud.sdk.projectman.v4.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.projectman.v4.model.Chart;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowIterationV4Response extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="begin_time")
-    
+    @JsonProperty(value = "begin_time")
+
     private String beginTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charts")
-    
+    @JsonProperty(value = "charts")
+
     private List<Chart> charts = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="closed_total")
-    
+    @JsonProperty(value = "closed_total")
+
     private Integer closedTotal;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_time")
-    
+    @JsonProperty(value = "created_time")
+
     private String createdTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="have_task")
-    
+    @JsonProperty(value = "have_task")
+
     private Boolean haveTask;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="iteration_id")
-    
+    @JsonProperty(value = "iteration_id")
+
     private Integer iterationId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="opened_total")
-    
+    @JsonProperty(value = "opened_total")
+
     private Integer openedTotal;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="progress")
-    
+    @JsonProperty(value = "progress")
+
     private String progress;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_time")
-    
+    @JsonProperty(value = "updated_time")
+
     private String updatedTime;
 
     public ShowIterationV4Response withBeginTime(String beginTime) {
@@ -99,13 +77,9 @@ public class ShowIterationV4Response extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 迭代结束时间，年-月-日
-     * @return beginTime
-     */
+    /** 迭代结束时间，年-月-日
+     * 
+     * @return beginTime */
     public String getBeginTime() {
         return beginTime;
     }
@@ -114,16 +88,13 @@ public class ShowIterationV4Response extends SdkResponse {
         this.beginTime = beginTime;
     }
 
-    
-
     public ShowIterationV4Response withCharts(List<Chart> charts) {
         this.charts = charts;
         return this;
     }
 
-    
     public ShowIterationV4Response addChartsItem(Chart chartsItem) {
-        if(this.charts == null) {
+        if (this.charts == null) {
             this.charts = new ArrayList<>();
         }
         this.charts.add(chartsItem);
@@ -131,17 +102,16 @@ public class ShowIterationV4Response extends SdkResponse {
     }
 
     public ShowIterationV4Response withCharts(Consumer<List<Chart>> chartsSetter) {
-        if(this.charts == null) {
+        if (this.charts == null) {
             this.charts = new ArrayList<>();
         }
         chartsSetter.accept(this.charts);
         return this;
     }
 
-    /**
-     * 燃尽图
-     * @return charts
-     */
+    /** 燃尽图
+     * 
+     * @return charts */
     public List<Chart> getCharts() {
         return charts;
     }
@@ -150,20 +120,14 @@ public class ShowIterationV4Response extends SdkResponse {
         this.charts = charts;
     }
 
-    
-
     public ShowIterationV4Response withClosedTotal(Integer closedTotal) {
         this.closedTotal = closedTotal;
         return this;
     }
 
-    
-
-
-    /**
-     * 已关闭的工单数
-     * @return closedTotal
-     */
+    /** 已关闭的工单数
+     * 
+     * @return closedTotal */
     public Integer getClosedTotal() {
         return closedTotal;
     }
@@ -172,20 +136,14 @@ public class ShowIterationV4Response extends SdkResponse {
         this.closedTotal = closedTotal;
     }
 
-    
-
     public ShowIterationV4Response withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 迭代创建时间
-     * @return createdTime
-     */
+    /** 迭代创建时间
+     * 
+     * @return createdTime */
     public String getCreatedTime() {
         return createdTime;
     }
@@ -194,20 +152,14 @@ public class ShowIterationV4Response extends SdkResponse {
         this.createdTime = createdTime;
     }
 
-    
-
     public ShowIterationV4Response withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 迭代开始时间，年-月-日
-     * @return endTime
-     */
+    /** 迭代开始时间，年-月-日
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -216,20 +168,14 @@ public class ShowIterationV4Response extends SdkResponse {
         this.endTime = endTime;
     }
 
-    
-
     public ShowIterationV4Response withHaveTask(Boolean haveTask) {
         this.haveTask = haveTask;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否有task
-     * @return haveTask
-     */
+    /** 是否有task
+     * 
+     * @return haveTask */
     public Boolean getHaveTask() {
         return haveTask;
     }
@@ -238,20 +184,14 @@ public class ShowIterationV4Response extends SdkResponse {
         this.haveTask = haveTask;
     }
 
-    
-
     public ShowIterationV4Response withIterationId(Integer iterationId) {
         this.iterationId = iterationId;
         return this;
     }
 
-    
-
-
-    /**
-     * 迭代id
-     * @return iterationId
-     */
+    /** 迭代id
+     * 
+     * @return iterationId */
     public Integer getIterationId() {
         return iterationId;
     }
@@ -260,20 +200,14 @@ public class ShowIterationV4Response extends SdkResponse {
         this.iterationId = iterationId;
     }
 
-    
-
     public ShowIterationV4Response withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 迭代标题
-     * @return name
-     */
+    /** 迭代标题
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -282,20 +216,14 @@ public class ShowIterationV4Response extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowIterationV4Response withOpenedTotal(Integer openedTotal) {
         this.openedTotal = openedTotal;
         return this;
     }
 
-    
-
-
-    /**
-     * 开启的工单数
-     * @return openedTotal
-     */
+    /** 开启的工单数
+     * 
+     * @return openedTotal */
     public Integer getOpenedTotal() {
         return openedTotal;
     }
@@ -304,20 +232,14 @@ public class ShowIterationV4Response extends SdkResponse {
         this.openedTotal = openedTotal;
     }
 
-    
-
     public ShowIterationV4Response withProgress(String progress) {
         this.progress = progress;
         return this;
     }
 
-    
-
-
-    /**
-     * 工作进展
-     * @return progress
-     */
+    /** 工作进展
+     * 
+     * @return progress */
     public String getProgress() {
         return progress;
     }
@@ -326,20 +248,14 @@ public class ShowIterationV4Response extends SdkResponse {
         this.progress = progress;
     }
 
-    
-
     public ShowIterationV4Response withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * 工单总数
-     * @return total
-     */
+    /** 工单总数
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -348,20 +264,14 @@ public class ShowIterationV4Response extends SdkResponse {
         this.total = total;
     }
 
-    
-
     public ShowIterationV4Response withUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 迭代更新时间
-     * @return updatedTime
-     */
+    /** 迭代更新时间
+     * 
+     * @return updatedTime */
     public String getUpdatedTime() {
         return updatedTime;
     }
@@ -369,8 +279,6 @@ public class ShowIterationV4Response extends SdkResponse {
     public void setUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -381,23 +289,36 @@ public class ShowIterationV4Response extends SdkResponse {
             return false;
         }
         ShowIterationV4Response showIterationV4Response = (ShowIterationV4Response) o;
-        return Objects.equals(this.beginTime, showIterationV4Response.beginTime) &&
-            Objects.equals(this.charts, showIterationV4Response.charts) &&
-            Objects.equals(this.closedTotal, showIterationV4Response.closedTotal) &&
-            Objects.equals(this.createdTime, showIterationV4Response.createdTime) &&
-            Objects.equals(this.endTime, showIterationV4Response.endTime) &&
-            Objects.equals(this.haveTask, showIterationV4Response.haveTask) &&
-            Objects.equals(this.iterationId, showIterationV4Response.iterationId) &&
-            Objects.equals(this.name, showIterationV4Response.name) &&
-            Objects.equals(this.openedTotal, showIterationV4Response.openedTotal) &&
-            Objects.equals(this.progress, showIterationV4Response.progress) &&
-            Objects.equals(this.total, showIterationV4Response.total) &&
-            Objects.equals(this.updatedTime, showIterationV4Response.updatedTime);
+        return Objects.equals(this.beginTime, showIterationV4Response.beginTime)
+            && Objects.equals(this.charts, showIterationV4Response.charts)
+            && Objects.equals(this.closedTotal, showIterationV4Response.closedTotal)
+            && Objects.equals(this.createdTime, showIterationV4Response.createdTime)
+            && Objects.equals(this.endTime, showIterationV4Response.endTime)
+            && Objects.equals(this.haveTask, showIterationV4Response.haveTask)
+            && Objects.equals(this.iterationId, showIterationV4Response.iterationId)
+            && Objects.equals(this.name, showIterationV4Response.name)
+            && Objects.equals(this.openedTotal, showIterationV4Response.openedTotal)
+            && Objects.equals(this.progress, showIterationV4Response.progress)
+            && Objects.equals(this.total, showIterationV4Response.total)
+            && Objects.equals(this.updatedTime, showIterationV4Response.updatedTime);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(beginTime, charts, closedTotal, createdTime, endTime, haveTask, iterationId, name, openedTotal, progress, total, updatedTime);
+        return Objects.hash(beginTime,
+            charts,
+            closedTotal,
+            createdTime,
+            endTime,
+            haveTask,
+            iterationId,
+            name,
+            openedTotal,
+            progress,
+            total,
+            updatedTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -417,16 +338,13 @@ public class ShowIterationV4Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

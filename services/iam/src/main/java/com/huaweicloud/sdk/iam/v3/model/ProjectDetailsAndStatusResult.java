@@ -1,68 +1,53 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class ProjectDetailsAndStatusResult  {
-
-
+public class ProjectDetailsAndStatusResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_domain")
-    
+    @JsonProperty(value = "is_domain")
+
     private Boolean isDomain;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parent_id")
-    
+    @JsonProperty(value = "parent_id")
+
     private String parentId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enabled")
-    
+    @JsonProperty(value = "enabled")
+
     private Boolean enabled;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
     public ProjectDetailsAndStatusResult withDomainId(String domainId) {
@@ -70,13 +55,9 @@ public class ProjectDetailsAndStatusResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 项目所属账号ID。
-     * @return domainId
-     */
+    /** 项目所属账号ID。
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -85,20 +66,14 @@ public class ProjectDetailsAndStatusResult  {
         this.domainId = domainId;
     }
 
-    
-
     public ProjectDetailsAndStatusResult withIsDomain(Boolean isDomain) {
         this.isDomain = isDomain;
         return this;
     }
 
-    
-
-
-    /**
-     * false.
-     * @return isDomain
-     */
+    /** false.
+     * 
+     * @return isDomain */
     public Boolean getIsDomain() {
         return isDomain;
     }
@@ -107,20 +82,14 @@ public class ProjectDetailsAndStatusResult  {
         this.isDomain = isDomain;
     }
 
-    
-
     public ProjectDetailsAndStatusResult withParentId(String parentId) {
         this.parentId = parentId;
         return this;
     }
 
-    
-
-
-    /**
-     * 如果查询自己创建的项目，则此处返回所属区域的项目ID。    如果查询的是系统内置项目，如cn-north-4，则此处返回账号ID。  
-     * @return parentId
-     */
+    /** 如果查询自己创建的项目，则此处返回所属区域的项目ID。 如果查询的是系统内置项目，如cn-north-4，则此处返回账号ID。
+     * 
+     * @return parentId */
     public String getParentId() {
         return parentId;
     }
@@ -129,20 +98,14 @@ public class ProjectDetailsAndStatusResult  {
         this.parentId = parentId;
     }
 
-    
-
     public ProjectDetailsAndStatusResult withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目名称。
-     * @return name
-     */
+    /** 项目名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -151,20 +114,14 @@ public class ProjectDetailsAndStatusResult  {
         this.name = name;
     }
 
-    
-
     public ProjectDetailsAndStatusResult withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目描述信息。
-     * @return description
-     */
+    /** 项目描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -173,20 +130,14 @@ public class ProjectDetailsAndStatusResult  {
         this.description = description;
     }
 
-    
-
     public ProjectDetailsAndStatusResult withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目ID。
-     * @return id
-     */
+    /** 项目ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -195,20 +146,14 @@ public class ProjectDetailsAndStatusResult  {
         this.id = id;
     }
 
-    
-
     public ProjectDetailsAndStatusResult withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目是否可用。
-     * @return enabled
-     */
+    /** 项目是否可用。
+     * 
+     * @return enabled */
     public Boolean getEnabled() {
         return enabled;
     }
@@ -217,20 +162,14 @@ public class ProjectDetailsAndStatusResult  {
         this.enabled = enabled;
     }
 
-    
-
     public ProjectDetailsAndStatusResult withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目状态。
-     * @return status
-     */
+    /** 项目状态。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -238,8 +177,6 @@ public class ProjectDetailsAndStatusResult  {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -250,19 +187,21 @@ public class ProjectDetailsAndStatusResult  {
             return false;
         }
         ProjectDetailsAndStatusResult projectDetailsAndStatusResult = (ProjectDetailsAndStatusResult) o;
-        return Objects.equals(this.domainId, projectDetailsAndStatusResult.domainId) &&
-            Objects.equals(this.isDomain, projectDetailsAndStatusResult.isDomain) &&
-            Objects.equals(this.parentId, projectDetailsAndStatusResult.parentId) &&
-            Objects.equals(this.name, projectDetailsAndStatusResult.name) &&
-            Objects.equals(this.description, projectDetailsAndStatusResult.description) &&
-            Objects.equals(this.id, projectDetailsAndStatusResult.id) &&
-            Objects.equals(this.enabled, projectDetailsAndStatusResult.enabled) &&
-            Objects.equals(this.status, projectDetailsAndStatusResult.status);
+        return Objects.equals(this.domainId, projectDetailsAndStatusResult.domainId)
+            && Objects.equals(this.isDomain, projectDetailsAndStatusResult.isDomain)
+            && Objects.equals(this.parentId, projectDetailsAndStatusResult.parentId)
+            && Objects.equals(this.name, projectDetailsAndStatusResult.name)
+            && Objects.equals(this.description, projectDetailsAndStatusResult.description)
+            && Objects.equals(this.id, projectDetailsAndStatusResult.id)
+            && Objects.equals(this.enabled, projectDetailsAndStatusResult.enabled)
+            && Objects.equals(this.status, projectDetailsAndStatusResult.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domainId, isDomain, parentId, name, description, id, enabled, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -278,16 +217,13 @@ public class ProjectDetailsAndStatusResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

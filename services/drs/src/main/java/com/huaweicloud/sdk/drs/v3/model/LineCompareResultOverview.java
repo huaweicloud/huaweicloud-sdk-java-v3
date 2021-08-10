@@ -1,78 +1,56 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 
  */
-public class LineCompareResultOverview  {
-
-
+public class LineCompareResultOverview {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_db_name")
-    
+    @JsonProperty(value = "source_db_name")
+
     private String sourceDbName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target_db_name")
-    
+    @JsonProperty(value = "target_db_name")
+
     private String targetDbName;
-    /**
-     * 对比结果。
-     */
+
+    /** 对比结果。 */
     public static final class LineCompareResultEnum {
 
-        
-        /**
-         * Enum CONSISTENT_ for value: "CONSISTENT-一致"
-         */
+        /** Enum CONSISTENT_ for value: "CONSISTENT-一致" */
         public static final LineCompareResultEnum CONSISTENT_ = new LineCompareResultEnum("CONSISTENT-一致");
-        
-        /**
-         * Enum INCONSISTENT_ for value: "INCONSISTENT-不一致"
-         */
+
+        /** Enum INCONSISTENT_ for value: "INCONSISTENT-不一致" */
         public static final LineCompareResultEnum INCONSISTENT_ = new LineCompareResultEnum("INCONSISTENT-不一致");
-        
-        /**
-         * Enum COMPARING_ for value: "COMPARING-正在对比"
-         */
+
+        /** Enum COMPARING_ for value: "COMPARING-正在对比" */
         public static final LineCompareResultEnum COMPARING_ = new LineCompareResultEnum("COMPARING-正在对比");
-        
-        /**
-         * Enum WAITING_FOR_COMPARISON_ for value: "WAITING_FOR_COMPARISON-等待对比"
-         */
-        public static final LineCompareResultEnum WAITING_FOR_COMPARISON_ = new LineCompareResultEnum("WAITING_FOR_COMPARISON-等待对比");
-        
-        /**
-         * Enum FAILED_TO_COMPARE_ for value: "FAILED_TO_COMPARE-对比失败"
-         */
-        public static final LineCompareResultEnum FAILED_TO_COMPARE_ = new LineCompareResultEnum("FAILED_TO_COMPARE-对比失败");
-        
-        /**
-         * Enum TARGET_DB_NOT_EXIT_ for value: "TARGET_DB_NOT_EXIT-目标库不存在"
-         */
-        public static final LineCompareResultEnum TARGET_DB_NOT_EXIT_ = new LineCompareResultEnum("TARGET_DB_NOT_EXIT-目标库不存在");
-        
-        /**
-         * Enum CAN_NOT_COMPARE_ for value: "CAN_NOT_COMPARE-无法对比"
-         */
+
+        /** Enum WAITING_FOR_COMPARISON_ for value: "WAITING_FOR_COMPARISON-等待对比" */
+        public static final LineCompareResultEnum WAITING_FOR_COMPARISON_ =
+            new LineCompareResultEnum("WAITING_FOR_COMPARISON-等待对比");
+
+        /** Enum FAILED_TO_COMPARE_ for value: "FAILED_TO_COMPARE-对比失败" */
+        public static final LineCompareResultEnum FAILED_TO_COMPARE_ =
+            new LineCompareResultEnum("FAILED_TO_COMPARE-对比失败");
+
+        /** Enum TARGET_DB_NOT_EXIT_ for value: "TARGET_DB_NOT_EXIT-目标库不存在" */
+        public static final LineCompareResultEnum TARGET_DB_NOT_EXIT_ =
+            new LineCompareResultEnum("TARGET_DB_NOT_EXIT-目标库不存在");
+
+        /** Enum CAN_NOT_COMPARE_ for value: "CAN_NOT_COMPARE-无法对比" */
         public static final LineCompareResultEnum CAN_NOT_COMPARE_ = new LineCompareResultEnum("CAN_NOT_COMPARE-无法对比");
-        
 
         private static final Map<String, LineCompareResultEnum> STATIC_FIELDS = createStaticFields();
 
@@ -106,7 +84,7 @@ public class LineCompareResultOverview  {
 
         @JsonCreator
         public static LineCompareResultEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             LineCompareResultEnum result = STATIC_FIELDS.get(value);
@@ -117,7 +95,7 @@ public class LineCompareResultOverview  {
         }
 
         public static LineCompareResultEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             LineCompareResultEnum result = STATIC_FIELDS.get(value);
@@ -141,10 +119,9 @@ public class LineCompareResultOverview  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="line_compare_result")
-    
+    @JsonProperty(value = "line_compare_result")
+
     private LineCompareResultEnum lineCompareResult;
 
     public LineCompareResultOverview withSourceDbName(String sourceDbName) {
@@ -152,13 +129,9 @@ public class LineCompareResultOverview  {
         return this;
     }
 
-    
-
-
-    /**
-     * 源库名称。
-     * @return sourceDbName
-     */
+    /** 源库名称。
+     * 
+     * @return sourceDbName */
     public String getSourceDbName() {
         return sourceDbName;
     }
@@ -167,20 +140,14 @@ public class LineCompareResultOverview  {
         this.sourceDbName = sourceDbName;
     }
 
-    
-
     public LineCompareResultOverview withTargetDbName(String targetDbName) {
         this.targetDbName = targetDbName;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标库名称。
-     * @return targetDbName
-     */
+    /** 目标库名称。
+     * 
+     * @return targetDbName */
     public String getTargetDbName() {
         return targetDbName;
     }
@@ -189,20 +156,14 @@ public class LineCompareResultOverview  {
         this.targetDbName = targetDbName;
     }
 
-    
-
     public LineCompareResultOverview withLineCompareResult(LineCompareResultEnum lineCompareResult) {
         this.lineCompareResult = lineCompareResult;
         return this;
     }
 
-    
-
-
-    /**
-     * 对比结果。
-     * @return lineCompareResult
-     */
+    /** 对比结果。
+     * 
+     * @return lineCompareResult */
     public LineCompareResultEnum getLineCompareResult() {
         return lineCompareResult;
     }
@@ -210,8 +171,6 @@ public class LineCompareResultOverview  {
     public void setLineCompareResult(LineCompareResultEnum lineCompareResult) {
         this.lineCompareResult = lineCompareResult;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -222,14 +181,16 @@ public class LineCompareResultOverview  {
             return false;
         }
         LineCompareResultOverview lineCompareResultOverview = (LineCompareResultOverview) o;
-        return Objects.equals(this.sourceDbName, lineCompareResultOverview.sourceDbName) &&
-            Objects.equals(this.targetDbName, lineCompareResultOverview.targetDbName) &&
-            Objects.equals(this.lineCompareResult, lineCompareResultOverview.lineCompareResult);
+        return Objects.equals(this.sourceDbName, lineCompareResultOverview.sourceDbName)
+            && Objects.equals(this.targetDbName, lineCompareResultOverview.targetDbName)
+            && Objects.equals(this.lineCompareResult, lineCompareResultOverview.lineCompareResult);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sourceDbName, targetDbName, lineCompareResult);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -240,16 +201,13 @@ public class LineCompareResultOverview  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

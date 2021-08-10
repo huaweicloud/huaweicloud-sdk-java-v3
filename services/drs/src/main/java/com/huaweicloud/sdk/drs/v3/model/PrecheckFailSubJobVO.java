@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.drs.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 预检查失败子任务信息体
- */
-public class PrecheckFailSubJobVO  {
-
-
+/** 预检查失败子任务信息体 */
+public class PrecheckFailSubJobVO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="check_result")
-    
+    @JsonProperty(value = "check_result")
+
     private String checkResult;
 
     public PrecheckFailSubJobVO withId(String id) {
@@ -40,13 +28,9 @@ public class PrecheckFailSubJobVO  {
         return this;
     }
 
-    
-
-
-    /**
-     * 预检查失败子任务id。
-     * @return id
-     */
+    /** 预检查失败子任务id。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -55,20 +39,14 @@ public class PrecheckFailSubJobVO  {
         this.id = id;
     }
 
-    
-
     public PrecheckFailSubJobVO withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 预检查失败子任务名称。
-     * @return name
-     */
+    /** 预检查失败子任务名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -77,20 +55,14 @@ public class PrecheckFailSubJobVO  {
         this.name = name;
     }
 
-    
-
     public PrecheckFailSubJobVO withCheckResult(String checkResult) {
         this.checkResult = checkResult;
         return this;
     }
 
-    
-
-
-    /**
-     * 检查结果。
-     * @return checkResult
-     */
+    /** 检查结果。
+     * 
+     * @return checkResult */
     public String getCheckResult() {
         return checkResult;
     }
@@ -98,8 +70,6 @@ public class PrecheckFailSubJobVO  {
     public void setCheckResult(String checkResult) {
         this.checkResult = checkResult;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,15 @@ public class PrecheckFailSubJobVO  {
             return false;
         }
         PrecheckFailSubJobVO precheckFailSubJobVO = (PrecheckFailSubJobVO) o;
-        return Objects.equals(this.id, precheckFailSubJobVO.id) &&
-            Objects.equals(this.name, precheckFailSubJobVO.name) &&
-            Objects.equals(this.checkResult, precheckFailSubJobVO.checkResult);
+        return Objects.equals(this.id, precheckFailSubJobVO.id) && Objects.equals(this.name, precheckFailSubJobVO.name)
+            && Objects.equals(this.checkResult, precheckFailSubJobVO.checkResult);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, checkResult);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +99,13 @@ public class PrecheckFailSubJobVO  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

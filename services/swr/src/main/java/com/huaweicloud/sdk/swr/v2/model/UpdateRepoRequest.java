@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.swr.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.swr.v2.model.UpdateRepoRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateRepoRequest  {
-
-
+/** Request Object */
+public class UpdateRepoRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
+
     private String namespace;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="repository")
-    
+    @JsonProperty(value = "repository")
+
     private String repository;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdateRepoRequestBody body;
 
     public UpdateRepoRequest withNamespace(String namespace) {
@@ -41,13 +29,9 @@ public class UpdateRepoRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
-     * @return namespace
-     */
+    /** 组织名称。小写字母开头，后面跟小写字母、数字、小数点、下划线或中划线（其中下划线最多允许连续两个，小数点、下划线、中划线不能直接相连），小写字母或数字结尾，1-64个字符。
+     * 
+     * @return namespace */
     public String getNamespace() {
         return namespace;
     }
@@ -56,20 +40,14 @@ public class UpdateRepoRequest  {
         this.namespace = namespace;
     }
 
-    
-
     public UpdateRepoRequest withRepository(String repository) {
         this.repository = repository;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像仓库名称。小写字母或数字开头，后面跟小写字母、数字、小数点、斜杠、下划线或中划线（其中下划线最多允许连续两个，小数点、斜杠、下划线、中划线不能直接相连），小写字母或数字结尾，1-128个字符。
-     * @return repository
-     */
+    /** 镜像仓库名称。小写字母或数字开头，后面跟小写字母、数字、小数点、斜杠、下划线或中划线（其中下划线最多允许连续两个，小数点、斜杠、下划线、中划线不能直接相连），小写字母或数字结尾，1-128个字符。
+     * 
+     * @return repository */
     public String getRepository() {
         return repository;
     }
@@ -78,27 +56,23 @@ public class UpdateRepoRequest  {
         this.repository = repository;
     }
 
-    
-
     public UpdateRepoRequest withBody(UpdateRepoRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdateRepoRequest withBody(Consumer<UpdateRepoRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateRepoRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdateRepoRequestBody getBody() {
         return body;
     }
@@ -106,8 +80,6 @@ public class UpdateRepoRequest  {
     public void setBody(UpdateRepoRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class UpdateRepoRequest  {
             return false;
         }
         UpdateRepoRequest updateRepoRequest = (UpdateRepoRequest) o;
-        return Objects.equals(this.namespace, updateRepoRequest.namespace) &&
-            Objects.equals(this.repository, updateRepoRequest.repository) &&
-            Objects.equals(this.body, updateRepoRequest.body);
+        return Objects.equals(this.namespace, updateRepoRequest.namespace)
+            && Objects.equals(this.repository, updateRepoRequest.repository)
+            && Objects.equals(this.body, updateRepoRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(namespace, repository, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class UpdateRepoRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

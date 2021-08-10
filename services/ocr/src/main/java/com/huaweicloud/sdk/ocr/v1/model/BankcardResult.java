@@ -1,56 +1,43 @@
 package com.huaweicloud.sdk.ocr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class BankcardResult  {
-
-
+public class BankcardResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bank_name")
-    
+    @JsonProperty(value = "bank_name")
+
     private String bankName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="card_number")
-    
+    @JsonProperty(value = "card_number")
+
     private String cardNumber;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="issue_date")
-    
+    @JsonProperty(value = "issue_date")
+
     private String issueDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expiry_date")
-    
+    @JsonProperty(value = "expiry_date")
+
     private String expiryDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private String type;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confidence")
-    
+    @JsonProperty(value = "confidence")
+
     private Object confidence;
 
     public BankcardResult withBankName(String bankName) {
@@ -58,13 +45,9 @@ public class BankcardResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 发卡行。 
-     * @return bankName
-     */
+    /** 发卡行。
+     * 
+     * @return bankName */
     public String getBankName() {
         return bankName;
     }
@@ -73,20 +56,14 @@ public class BankcardResult  {
         this.bankName = bankName;
     }
 
-    
-
     public BankcardResult withCardNumber(String cardNumber) {
         this.cardNumber = cardNumber;
         return this;
     }
 
-    
-
-
-    /**
-     * 银行卡号。 
-     * @return cardNumber
-     */
+    /** 银行卡号。
+     * 
+     * @return cardNumber */
     public String getCardNumber() {
         return cardNumber;
     }
@@ -95,20 +72,14 @@ public class BankcardResult  {
         this.cardNumber = cardNumber;
     }
 
-    
-
     public BankcardResult withIssueDate(String issueDate) {
         this.issueDate = issueDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 有效期开始日期。 
-     * @return issueDate
-     */
+    /** 有效期开始日期。
+     * 
+     * @return issueDate */
     public String getIssueDate() {
         return issueDate;
     }
@@ -117,20 +88,14 @@ public class BankcardResult  {
         this.issueDate = issueDate;
     }
 
-    
-
     public BankcardResult withExpiryDate(String expiryDate) {
         this.expiryDate = expiryDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 有效期截止日期。 
-     * @return expiryDate
-     */
+    /** 有效期截止日期。
+     * 
+     * @return expiryDate */
     public String getExpiryDate() {
         return expiryDate;
     }
@@ -139,20 +104,14 @@ public class BankcardResult  {
         this.expiryDate = expiryDate;
     }
 
-    
-
     public BankcardResult withType(String type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 银行卡类别，如：储蓄卡，信用卡。 
-     * @return type
-     */
+    /** 银行卡类别，如：储蓄卡，信用卡。
+     * 
+     * @return type */
     public String getType() {
         return type;
     }
@@ -161,20 +120,14 @@ public class BankcardResult  {
         this.type = type;
     }
 
-    
-
     public BankcardResult withConfidence(Object confidence) {
         this.confidence = confidence;
         return this;
     }
 
-    
-
-
-    /**
-     * 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。 
-     * @return confidence
-     */
+    /** 相关字段的置信度信息，置信度越大，表示本次识别的对应字段的可靠性越高，在统计意义上，置信度越大，准确率越高。 置信度由算法给出，不直接等价于对应字段的准确率。
+     * 
+     * @return confidence */
     public Object getConfidence() {
         return confidence;
     }
@@ -182,8 +135,6 @@ public class BankcardResult  {
     public void setConfidence(Object confidence) {
         this.confidence = confidence;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,17 +145,19 @@ public class BankcardResult  {
             return false;
         }
         BankcardResult bankcardResult = (BankcardResult) o;
-        return Objects.equals(this.bankName, bankcardResult.bankName) &&
-            Objects.equals(this.cardNumber, bankcardResult.cardNumber) &&
-            Objects.equals(this.issueDate, bankcardResult.issueDate) &&
-            Objects.equals(this.expiryDate, bankcardResult.expiryDate) &&
-            Objects.equals(this.type, bankcardResult.type) &&
-            Objects.equals(this.confidence, bankcardResult.confidence);
+        return Objects.equals(this.bankName, bankcardResult.bankName)
+            && Objects.equals(this.cardNumber, bankcardResult.cardNumber)
+            && Objects.equals(this.issueDate, bankcardResult.issueDate)
+            && Objects.equals(this.expiryDate, bankcardResult.expiryDate)
+            && Objects.equals(this.type, bankcardResult.type)
+            && Objects.equals(this.confidence, bankcardResult.confidence);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(bankName, cardNumber, issueDate, expiryDate, type, confidence);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,16 +171,13 @@ public class BankcardResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

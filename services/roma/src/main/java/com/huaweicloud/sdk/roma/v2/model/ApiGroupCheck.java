@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.roma.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ApiGroupCheck
- */
-public class ApiGroupCheck  {
-
-
+/** ApiGroupCheck */
+public class ApiGroupCheck {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_name")
-    
+    @JsonProperty(value = "group_name")
+
     private String groupName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="roma_app_id")
-    
+    @JsonProperty(value = "roma_app_id")
+
     private String romaAppId;
 
     public ApiGroupCheck withGroupName(String groupName) {
@@ -34,13 +23,9 @@ public class ApiGroupCheck  {
         return this;
     }
 
-    
-
-
-    /**
-     * 待校验的API分组名称
-     * @return groupName
-     */
+    /** 待校验的API分组名称
+     * 
+     * @return groupName */
     public String getGroupName() {
         return groupName;
     }
@@ -49,20 +34,14 @@ public class ApiGroupCheck  {
         this.groupName = groupName;
     }
 
-    
-
     public ApiGroupCheck withRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
         return this;
     }
 
-    
-
-
-    /**
-     * 集成应用ID  校验分组在集成应用下是否重名时必填，不填写默认校验全局分组是否重名
-     * @return romaAppId
-     */
+    /** 集成应用ID 校验分组在集成应用下是否重名时必填，不填写默认校验全局分组是否重名
+     * 
+     * @return romaAppId */
     public String getRomaAppId() {
         return romaAppId;
     }
@@ -70,8 +49,6 @@ public class ApiGroupCheck  {
     public void setRomaAppId(String romaAppId) {
         this.romaAppId = romaAppId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class ApiGroupCheck  {
             return false;
         }
         ApiGroupCheck apiGroupCheck = (ApiGroupCheck) o;
-        return Objects.equals(this.groupName, apiGroupCheck.groupName) &&
-            Objects.equals(this.romaAppId, apiGroupCheck.romaAppId);
+        return Objects.equals(this.groupName, apiGroupCheck.groupName)
+            && Objects.equals(this.romaAppId, apiGroupCheck.romaAppId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(groupName, romaAppId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class ApiGroupCheck  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

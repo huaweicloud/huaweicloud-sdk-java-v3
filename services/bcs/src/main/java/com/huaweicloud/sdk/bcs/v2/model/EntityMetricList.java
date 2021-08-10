@@ -1,35 +1,24 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bcs.v2.model.Dimension;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * BCS组织维度监控数据列表结构
- */
-public class EntityMetricList  {
-
-
+/** BCS组织维度监控数据列表结构 */
+public class EntityMetricList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dimensions")
-    
+    @JsonProperty(value = "dimensions")
+
     private List<Dimension> dimensions = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="values")
-    
+    @JsonProperty(value = "values")
+
     private Object values;
 
     public EntityMetricList withDimensions(List<Dimension> dimensions) {
@@ -37,9 +26,8 @@ public class EntityMetricList  {
         return this;
     }
 
-    
     public EntityMetricList addDimensionsItem(Dimension dimensionsItem) {
-        if(this.dimensions == null) {
+        if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
         this.dimensions.add(dimensionsItem);
@@ -47,17 +35,16 @@ public class EntityMetricList  {
     }
 
     public EntityMetricList withDimensions(Consumer<List<Dimension>> dimensionsSetter) {
-        if(this.dimensions == null) {
+        if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
         dimensionsSetter.accept(this.dimensions);
         return this;
     }
 
-    /**
-     * 指标对象列表。
-     * @return dimensions
-     */
+    /** 指标对象列表。
+     * 
+     * @return dimensions */
     public List<Dimension> getDimensions() {
         return dimensions;
     }
@@ -66,20 +53,14 @@ public class EntityMetricList  {
         this.dimensions = dimensions;
     }
 
-    
-
     public EntityMetricList withValues(Object values) {
         this.values = values;
         return this;
     }
 
-    
-
-
-    /**
-     * 监控数据列表项目。
-     * @return values
-     */
+    /** 监控数据列表项目。
+     * 
+     * @return values */
     public Object getValues() {
         return values;
     }
@@ -87,8 +68,6 @@ public class EntityMetricList  {
     public void setValues(Object values) {
         this.values = values;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -99,13 +78,15 @@ public class EntityMetricList  {
             return false;
         }
         EntityMetricList entityMetricList = (EntityMetricList) o;
-        return Objects.equals(this.dimensions, entityMetricList.dimensions) &&
-            Objects.equals(this.values, entityMetricList.values);
+        return Objects.equals(this.dimensions, entityMetricList.dimensions)
+            && Objects.equals(this.values, entityMetricList.values);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(dimensions, values);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -115,16 +96,13 @@ public class EntityMetricList  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

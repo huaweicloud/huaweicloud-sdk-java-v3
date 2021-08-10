@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vod.v1.model.ModifyTransTemplateGroup;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdateTemplateGroupRequest  {
-
-
+/** Request Object */
+public class UpdateTemplateGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Authorization")
-    
+    @JsonProperty(value = "Authorization")
+
     private String authorization;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Sdk-Date")
-    
+    @JsonProperty(value = "X-Sdk-Date")
+
     private String xSdkDate;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private ModifyTransTemplateGroup body;
 
     public UpdateTemplateGroupRequest withAuthorization(String authorization) {
@@ -41,13 +29,9 @@ public class UpdateTemplateGroupRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 使用AK/SK方式认证时必选，携带的鉴权信息。 
-     * @return authorization
-     */
+    /** 使用AK/SK方式认证时必选，携带的鉴权信息。
+     * 
+     * @return authorization */
     public String getAuthorization() {
         return authorization;
     }
@@ -56,22 +40,16 @@ public class UpdateTemplateGroupRequest  {
         this.authorization = authorization;
     }
 
-    
-
     public UpdateTemplateGroupRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
         return this;
     }
 
-    
-
-
-    /**
-     * 使用AK/SK方式认证时必选，请求的发生时间。 
-     * @return xSdkDate
-     */
+    /** 使用AK/SK方式认证时必选，请求的发生时间。
+     * 
+     * @return xSdkDate */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Sdk-Date")
+    @JsonProperty(value = "X-Sdk-Date")
     public String getXSdkDate() {
         return xSdkDate;
     }
@@ -80,27 +58,23 @@ public class UpdateTemplateGroupRequest  {
         this.xSdkDate = xSdkDate;
     }
 
-    
-
     public UpdateTemplateGroupRequest withBody(ModifyTransTemplateGroup body) {
         this.body = body;
         return this;
     }
 
     public UpdateTemplateGroupRequest withBody(Consumer<ModifyTransTemplateGroup> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ModifyTransTemplateGroup();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public ModifyTransTemplateGroup getBody() {
         return body;
     }
@@ -108,8 +82,6 @@ public class UpdateTemplateGroupRequest  {
     public void setBody(ModifyTransTemplateGroup body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -120,14 +92,16 @@ public class UpdateTemplateGroupRequest  {
             return false;
         }
         UpdateTemplateGroupRequest updateTemplateGroupRequest = (UpdateTemplateGroupRequest) o;
-        return Objects.equals(this.authorization, updateTemplateGroupRequest.authorization) &&
-            Objects.equals(this.xSdkDate, updateTemplateGroupRequest.xSdkDate) &&
-            Objects.equals(this.body, updateTemplateGroupRequest.body);
+        return Objects.equals(this.authorization, updateTemplateGroupRequest.authorization)
+            && Objects.equals(this.xSdkDate, updateTemplateGroupRequest.xSdkDate)
+            && Objects.equals(this.body, updateTemplateGroupRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(authorization, xSdkDate, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -138,16 +112,13 @@ public class UpdateTemplateGroupRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

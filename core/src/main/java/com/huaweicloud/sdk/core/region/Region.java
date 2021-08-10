@@ -21,10 +21,9 @@
 
 package com.huaweicloud.sdk.core.region;
 
-/**
- * @author HuaweiCloud_SDK
- */
+/** @author HuaweiCloud_SDK */
 public class Region {
+
     private String id;
 
     private String endpoint;

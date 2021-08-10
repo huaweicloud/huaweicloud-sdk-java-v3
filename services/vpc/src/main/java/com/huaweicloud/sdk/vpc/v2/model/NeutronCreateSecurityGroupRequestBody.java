@@ -1,27 +1,19 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vpc.v2.model.NeutronCreateSecurityGroupOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class NeutronCreateSecurityGroupRequestBody  {
-
-
+public class NeutronCreateSecurityGroupRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group")
-    
+    @JsonProperty(value = "security_group")
+
     private NeutronCreateSecurityGroupOption securityGroup;
 
     public NeutronCreateSecurityGroupRequestBody withSecurityGroup(NeutronCreateSecurityGroupOption securityGroup) {
@@ -29,20 +21,19 @@ public class NeutronCreateSecurityGroupRequestBody  {
         return this;
     }
 
-    public NeutronCreateSecurityGroupRequestBody withSecurityGroup(Consumer<NeutronCreateSecurityGroupOption> securityGroupSetter) {
-        if(this.securityGroup == null ){
+    public NeutronCreateSecurityGroupRequestBody withSecurityGroup(
+        Consumer<NeutronCreateSecurityGroupOption> securityGroupSetter) {
+        if (this.securityGroup == null) {
             this.securityGroup = new NeutronCreateSecurityGroupOption();
             securityGroupSetter.accept(this.securityGroup);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get securityGroup
-     * @return securityGroup
-     */
+    /** Get securityGroup
+     * 
+     * @return securityGroup */
     public NeutronCreateSecurityGroupOption getSecurityGroup() {
         return securityGroup;
     }
@@ -50,8 +41,6 @@ public class NeutronCreateSecurityGroupRequestBody  {
     public void setSecurityGroup(NeutronCreateSecurityGroupOption securityGroup) {
         this.securityGroup = securityGroup;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -61,13 +50,16 @@ public class NeutronCreateSecurityGroupRequestBody  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        NeutronCreateSecurityGroupRequestBody neutronCreateSecurityGroupRequestBody = (NeutronCreateSecurityGroupRequestBody) o;
+        NeutronCreateSecurityGroupRequestBody neutronCreateSecurityGroupRequestBody =
+            (NeutronCreateSecurityGroupRequestBody) o;
         return Objects.equals(this.securityGroup, neutronCreateSecurityGroupRequestBody.securityGroup);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(securityGroup);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +68,13 @@ public class NeutronCreateSecurityGroupRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

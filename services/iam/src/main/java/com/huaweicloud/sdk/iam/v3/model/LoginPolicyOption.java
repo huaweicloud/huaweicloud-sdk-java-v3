@@ -1,62 +1,48 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class LoginPolicyOption  {
-
-
+public class LoginPolicyOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="account_validity_period")
-    
+    @JsonProperty(value = "account_validity_period")
+
     private Integer accountValidityPeriod;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="custom_info_for_login")
-    
+    @JsonProperty(value = "custom_info_for_login")
+
     private String customInfoForLogin;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lockout_duration")
-    
+    @JsonProperty(value = "lockout_duration")
+
     private Integer lockoutDuration;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="login_failed_times")
-    
+    @JsonProperty(value = "login_failed_times")
+
     private Integer loginFailedTimes;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="period_with_login_failures")
-    
+    @JsonProperty(value = "period_with_login_failures")
+
     private Integer periodWithLoginFailures;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="session_timeout")
-    
+    @JsonProperty(value = "session_timeout")
+
     private Integer sessionTimeout;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="show_recent_login_info")
-    
+    @JsonProperty(value = "show_recent_login_info")
+
     private Boolean showRecentLoginInfo;
 
     public LoginPolicyOption withAccountValidityPeriod(Integer accountValidityPeriod) {
@@ -64,13 +50,9 @@ public class LoginPolicyOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 登录提示信息，取值范围[0,240]。
-     * @return accountValidityPeriod
-     */
+    /** 登录提示信息，取值范围[0,240]。
+     * 
+     * @return accountValidityPeriod */
     public Integer getAccountValidityPeriod() {
         return accountValidityPeriod;
     }
@@ -79,20 +61,14 @@ public class LoginPolicyOption  {
         this.accountValidityPeriod = accountValidityPeriod;
     }
 
-    
-
     public LoginPolicyOption withCustomInfoForLogin(String customInfoForLogin) {
         this.customInfoForLogin = customInfoForLogin;
         return this;
     }
 
-    
-
-
-    /**
-     * 登录提示信息。
-     * @return customInfoForLogin
-     */
+    /** 登录提示信息。
+     * 
+     * @return customInfoForLogin */
     public String getCustomInfoForLogin() {
         return customInfoForLogin;
     }
@@ -101,20 +77,14 @@ public class LoginPolicyOption  {
         this.customInfoForLogin = customInfoForLogin;
     }
 
-    
-
     public LoginPolicyOption withLockoutDuration(Integer lockoutDuration) {
         this.lockoutDuration = lockoutDuration;
         return this;
     }
 
-    
-
-
-    /**
-     * 帐号锁定时长（分钟），取值范围[15,30]。
-     * @return lockoutDuration
-     */
+    /** 帐号锁定时长（分钟），取值范围[15,30]。
+     * 
+     * @return lockoutDuration */
     public Integer getLockoutDuration() {
         return lockoutDuration;
     }
@@ -123,20 +93,14 @@ public class LoginPolicyOption  {
         this.lockoutDuration = lockoutDuration;
     }
 
-    
-
     public LoginPolicyOption withLoginFailedTimes(Integer loginFailedTimes) {
         this.loginFailedTimes = loginFailedTimes;
         return this;
     }
 
-    
-
-
-    /**
-     * 限定时间内登录失败次数，取值范围[3,10]。
-     * @return loginFailedTimes
-     */
+    /** 限定时间内登录失败次数，取值范围[3,10]。
+     * 
+     * @return loginFailedTimes */
     public Integer getLoginFailedTimes() {
         return loginFailedTimes;
     }
@@ -145,20 +109,14 @@ public class LoginPolicyOption  {
         this.loginFailedTimes = loginFailedTimes;
     }
 
-    
-
     public LoginPolicyOption withPeriodWithLoginFailures(Integer periodWithLoginFailures) {
         this.periodWithLoginFailures = periodWithLoginFailures;
         return this;
     }
 
-    
-
-
-    /**
-     * 限定时间长度（分钟），取值范围[15,60]。
-     * @return periodWithLoginFailures
-     */
+    /** 限定时间长度（分钟），取值范围[15,60]。
+     * 
+     * @return periodWithLoginFailures */
     public Integer getPeriodWithLoginFailures() {
         return periodWithLoginFailures;
     }
@@ -167,20 +125,14 @@ public class LoginPolicyOption  {
         this.periodWithLoginFailures = periodWithLoginFailures;
     }
 
-    
-
     public LoginPolicyOption withSessionTimeout(Integer sessionTimeout) {
         this.sessionTimeout = sessionTimeout;
         return this;
     }
 
-    
-
-
-    /**
-     * 登录会话失效时间，取值范围[15,1440]。
-     * @return sessionTimeout
-     */
+    /** 登录会话失效时间，取值范围[15,1440]。
+     * 
+     * @return sessionTimeout */
     public Integer getSessionTimeout() {
         return sessionTimeout;
     }
@@ -189,20 +141,14 @@ public class LoginPolicyOption  {
         this.sessionTimeout = sessionTimeout;
     }
 
-    
-
     public LoginPolicyOption withShowRecentLoginInfo(Boolean showRecentLoginInfo) {
         this.showRecentLoginInfo = showRecentLoginInfo;
         return this;
     }
 
-    
-
-
-    /**
-     * 显示最近一次的登录信息。取值范围true或false。
-     * @return showRecentLoginInfo
-     */
+    /** 显示最近一次的登录信息。取值范围true或false。
+     * 
+     * @return showRecentLoginInfo */
     public Boolean getShowRecentLoginInfo() {
         return showRecentLoginInfo;
     }
@@ -210,8 +156,6 @@ public class LoginPolicyOption  {
     public void setShowRecentLoginInfo(Boolean showRecentLoginInfo) {
         this.showRecentLoginInfo = showRecentLoginInfo;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -222,18 +166,26 @@ public class LoginPolicyOption  {
             return false;
         }
         LoginPolicyOption loginPolicyOption = (LoginPolicyOption) o;
-        return Objects.equals(this.accountValidityPeriod, loginPolicyOption.accountValidityPeriod) &&
-            Objects.equals(this.customInfoForLogin, loginPolicyOption.customInfoForLogin) &&
-            Objects.equals(this.lockoutDuration, loginPolicyOption.lockoutDuration) &&
-            Objects.equals(this.loginFailedTimes, loginPolicyOption.loginFailedTimes) &&
-            Objects.equals(this.periodWithLoginFailures, loginPolicyOption.periodWithLoginFailures) &&
-            Objects.equals(this.sessionTimeout, loginPolicyOption.sessionTimeout) &&
-            Objects.equals(this.showRecentLoginInfo, loginPolicyOption.showRecentLoginInfo);
+        return Objects.equals(this.accountValidityPeriod, loginPolicyOption.accountValidityPeriod)
+            && Objects.equals(this.customInfoForLogin, loginPolicyOption.customInfoForLogin)
+            && Objects.equals(this.lockoutDuration, loginPolicyOption.lockoutDuration)
+            && Objects.equals(this.loginFailedTimes, loginPolicyOption.loginFailedTimes)
+            && Objects.equals(this.periodWithLoginFailures, loginPolicyOption.periodWithLoginFailures)
+            && Objects.equals(this.sessionTimeout, loginPolicyOption.sessionTimeout)
+            && Objects.equals(this.showRecentLoginInfo, loginPolicyOption.showRecentLoginInfo);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(accountValidityPeriod, customInfoForLogin, lockoutDuration, loginFailedTimes, periodWithLoginFailures, sessionTimeout, showRecentLoginInfo);
+        return Objects.hash(accountValidityPeriod,
+            customInfoForLogin,
+            lockoutDuration,
+            loginFailedTimes,
+            periodWithLoginFailures,
+            sessionTimeout,
+            showRecentLoginInfo);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,16 +200,13 @@ public class LoginPolicyOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

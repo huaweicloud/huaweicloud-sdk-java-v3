@@ -1,64 +1,47 @@
 package com.huaweicloud.sdk.bssintl.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListPostpaidBillSumResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bill_cycle")
-    
+    @JsonProperty(value = "bill_cycle")
+
     private String billCycle;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="initial_amount_due")
-    
+    @JsonProperty(value = "initial_amount_due")
+
     private Double initialAmountDue;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="consume_amount")
-    
+    @JsonProperty(value = "consume_amount")
+
     private Double consumeAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="refunds")
-    
+    @JsonProperty(value = "refunds")
+
     private Double refunds;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="adjustments")
-    
+    @JsonProperty(value = "adjustments")
+
     private Double adjustments;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tax_amount")
-    
+    @JsonProperty(value = "tax_amount")
+
     private Double taxAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="currency")
-    
+    @JsonProperty(value = "currency")
+
     private String currency;
 
     public ListPostpaidBillSumResponse withBillCycle(String billCycle) {
@@ -66,13 +49,9 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：结算周期，只有成功才返回这个参数。表示某年某月的账单汇总。格式：YYYY-MM| |参数约束及描述：结算周期，只有成功才返回这个参数。表示某年某月的账单汇总。格式：YYYY-MM|
-     * @return billCycle
-     */
+    /** |参数名称：结算周期，只有成功才返回这个参数。表示某年某月的账单汇总。格式：YYYY-MM| |参数约束及描述：结算周期，只有成功才返回这个参数。表示某年某月的账单汇总。格式：YYYY-MM|
+     * 
+     * @return billCycle */
     public String getBillCycle() {
         return billCycle;
     }
@@ -81,20 +60,14 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         this.billCycle = billCycle;
     }
 
-    
-
     public ListPostpaidBillSumResponse withInitialAmountDue(Double initialAmountDue) {
         this.initialAmountDue = initialAmountDue;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：初始应还金额（含税）| |参数的约束及描述：初始应还金额（含税）|
-     * @return initialAmountDue
-     */
+    /** |参数名称：初始应还金额（含税）| |参数的约束及描述：初始应还金额（含税）|
+     * 
+     * @return initialAmountDue */
     public Double getInitialAmountDue() {
         return initialAmountDue;
     }
@@ -103,20 +76,14 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         this.initialAmountDue = initialAmountDue;
     }
 
-    
-
     public ListPostpaidBillSumResponse withConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：消费金额| |参数的约束及描述：消费金额|
-     * @return consumeAmount
-     */
+    /** |参数名称：消费金额| |参数的约束及描述：消费金额|
+     * 
+     * @return consumeAmount */
     public Double getConsumeAmount() {
         return consumeAmount;
     }
@@ -125,20 +92,14 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         this.consumeAmount = consumeAmount;
     }
 
-    
-
     public ListPostpaidBillSumResponse withRefunds(Double refunds) {
         this.refunds = refunds;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：退款| |参数的约束及描述：退款|
-     * @return refunds
-     */
+    /** |参数名称：退款| |参数的约束及描述：退款|
+     * 
+     * @return refunds */
     public Double getRefunds() {
         return refunds;
     }
@@ -147,20 +108,14 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         this.refunds = refunds;
     }
 
-    
-
     public ListPostpaidBillSumResponse withAdjustments(Double adjustments) {
         this.adjustments = adjustments;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：调账| |参数的约束及描述：调账|
-     * @return adjustments
-     */
+    /** |参数名称：调账| |参数的约束及描述：调账|
+     * 
+     * @return adjustments */
     public Double getAdjustments() {
         return adjustments;
     }
@@ -169,20 +124,14 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         this.adjustments = adjustments;
     }
 
-    
-
     public ListPostpaidBillSumResponse withTaxAmount(Double taxAmount) {
         this.taxAmount = taxAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：销项税金额| |参数的约束及描述：销项税金额|
-     * @return taxAmount
-     */
+    /** |参数名称：销项税金额| |参数的约束及描述：销项税金额|
+     * 
+     * @return taxAmount */
     public Double getTaxAmount() {
         return taxAmount;
     }
@@ -191,20 +140,14 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         this.taxAmount = taxAmount;
     }
 
-    
-
     public ListPostpaidBillSumResponse withCurrency(String currency) {
         this.currency = currency;
         return this;
     }
 
-    
-
-
-    /**
-     * |参数名称：只有成功才返回这个参数。人民币：CNY美金：USD| |参数约束及描述：只有成功才返回这个参数。人民币：CNY美金：USD|
-     * @return currency
-     */
+    /** |参数名称：只有成功才返回这个参数。人民币：CNY美金：USD| |参数约束及描述：只有成功才返回这个参数。人民币：CNY美金：USD|
+     * 
+     * @return currency */
     public String getCurrency() {
         return currency;
     }
@@ -212,8 +155,6 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -224,18 +165,20 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
             return false;
         }
         ListPostpaidBillSumResponse listPostpaidBillSumResponse = (ListPostpaidBillSumResponse) o;
-        return Objects.equals(this.billCycle, listPostpaidBillSumResponse.billCycle) &&
-            Objects.equals(this.initialAmountDue, listPostpaidBillSumResponse.initialAmountDue) &&
-            Objects.equals(this.consumeAmount, listPostpaidBillSumResponse.consumeAmount) &&
-            Objects.equals(this.refunds, listPostpaidBillSumResponse.refunds) &&
-            Objects.equals(this.adjustments, listPostpaidBillSumResponse.adjustments) &&
-            Objects.equals(this.taxAmount, listPostpaidBillSumResponse.taxAmount) &&
-            Objects.equals(this.currency, listPostpaidBillSumResponse.currency);
+        return Objects.equals(this.billCycle, listPostpaidBillSumResponse.billCycle)
+            && Objects.equals(this.initialAmountDue, listPostpaidBillSumResponse.initialAmountDue)
+            && Objects.equals(this.consumeAmount, listPostpaidBillSumResponse.consumeAmount)
+            && Objects.equals(this.refunds, listPostpaidBillSumResponse.refunds)
+            && Objects.equals(this.adjustments, listPostpaidBillSumResponse.adjustments)
+            && Objects.equals(this.taxAmount, listPostpaidBillSumResponse.taxAmount)
+            && Objects.equals(this.currency, listPostpaidBillSumResponse.currency);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(billCycle, initialAmountDue, consumeAmount, refunds, adjustments, taxAmount, currency);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -250,16 +193,13 @@ public class ListPostpaidBillSumResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

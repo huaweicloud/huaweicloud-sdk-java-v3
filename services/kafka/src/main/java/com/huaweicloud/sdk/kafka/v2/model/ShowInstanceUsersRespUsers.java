@@ -1,44 +1,31 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ShowInstanceUsersRespUsers
- */
-public class ShowInstanceUsersRespUsers  {
-
-
+/** ShowInstanceUsersRespUsers */
+public class ShowInstanceUsersRespUsers {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_name")
-    
+    @JsonProperty(value = "user_name")
+
     private String userName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="role")
-    
+    @JsonProperty(value = "role")
+
     private String role;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="default_app")
-    
+    @JsonProperty(value = "default_app")
+
     private Boolean defaultApp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_time")
-    
+    @JsonProperty(value = "created_time")
+
     private Long createdTime;
 
     public ShowInstanceUsersRespUsers withUserName(String userName) {
@@ -46,13 +33,9 @@ public class ShowInstanceUsersRespUsers  {
         return this;
     }
 
-    
-
-
-    /**
-     * 用户名称。
-     * @return userName
-     */
+    /** 用户名称。
+     * 
+     * @return userName */
     public String getUserName() {
         return userName;
     }
@@ -61,20 +44,14 @@ public class ShowInstanceUsersRespUsers  {
         this.userName = userName;
     }
 
-    
-
     public ShowInstanceUsersRespUsers withRole(String role) {
         this.role = role;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户角色。
-     * @return role
-     */
+    /** 用户角色。
+     * 
+     * @return role */
     public String getRole() {
         return role;
     }
@@ -83,20 +60,14 @@ public class ShowInstanceUsersRespUsers  {
         this.role = role;
     }
 
-    
-
     public ShowInstanceUsersRespUsers withDefaultApp(Boolean defaultApp) {
         this.defaultApp = defaultApp;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否为默认应用。
-     * @return defaultApp
-     */
+    /** 是否为默认应用。
+     * 
+     * @return defaultApp */
     public Boolean getDefaultApp() {
         return defaultApp;
     }
@@ -105,20 +76,14 @@ public class ShowInstanceUsersRespUsers  {
         this.defaultApp = defaultApp;
     }
 
-    
-
     public ShowInstanceUsersRespUsers withCreatedTime(Long createdTime) {
         this.createdTime = createdTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间。
-     * @return createdTime
-     */
+    /** 创建时间。
+     * 
+     * @return createdTime */
     public Long getCreatedTime() {
         return createdTime;
     }
@@ -126,8 +91,6 @@ public class ShowInstanceUsersRespUsers  {
     public void setCreatedTime(Long createdTime) {
         this.createdTime = createdTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,15 +101,17 @@ public class ShowInstanceUsersRespUsers  {
             return false;
         }
         ShowInstanceUsersRespUsers showInstanceUsersRespUsers = (ShowInstanceUsersRespUsers) o;
-        return Objects.equals(this.userName, showInstanceUsersRespUsers.userName) &&
-            Objects.equals(this.role, showInstanceUsersRespUsers.role) &&
-            Objects.equals(this.defaultApp, showInstanceUsersRespUsers.defaultApp) &&
-            Objects.equals(this.createdTime, showInstanceUsersRespUsers.createdTime);
+        return Objects.equals(this.userName, showInstanceUsersRespUsers.userName)
+            && Objects.equals(this.role, showInstanceUsersRespUsers.role)
+            && Objects.equals(this.defaultApp, showInstanceUsersRespUsers.defaultApp)
+            && Objects.equals(this.createdTime, showInstanceUsersRespUsers.createdTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(userName, role, defaultApp, createdTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,16 +123,13 @@ public class ShowInstanceUsersRespUsers  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

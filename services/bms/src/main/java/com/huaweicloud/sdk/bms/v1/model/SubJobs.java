@@ -1,53 +1,34 @@
 package com.huaweicloud.sdk.bms.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bms.v1.model.Entitie;
+
 import java.time.OffsetDateTime;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * sub_jobs字段数据结构说明
- */
-public class SubJobs  {
+/** sub_jobs字段数据结构说明 */
+public class SubJobs {
 
-    /**
-     * Job的状态。SUCCESS：成功RUNNING：运行中FAIL：失败INIT：正在初始化
-     */
+    /** Job的状态。SUCCESS：成功RUNNING：运行中FAIL：失败INIT：正在初始化 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum SUCCESS for value: "SUCCESS"
-         */
+        /** Enum SUCCESS for value: "SUCCESS" */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
-        
-        /**
-         * Enum RUNNING for value: "RUNNING"
-         */
+
+        /** Enum RUNNING for value: "RUNNING" */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
-        
-        /**
-         * Enum FAIL for value: "FAIL"
-         */
+
+        /** Enum FAIL for value: "FAIL" */
         public static final StatusEnum FAIL = new StatusEnum("FAIL");
-        
-        /**
-         * Enum INIT for value: "INIT"
-         */
+
+        /** Enum INIT for value: "INIT" */
         public static final StatusEnum INIT = new StatusEnum("INIT");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -78,7 +59,7 @@ public class SubJobs  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -89,7 +70,7 @@ public class SubJobs  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -113,64 +94,54 @@ public class SubJobs  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="entities")
-    
+    @JsonProperty(value = "entities")
+
     private Entitie entities;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
+
     private String jobId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_type")
-    
+    @JsonProperty(value = "job_type")
+
     private String jobType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="begin_time")
-    
+    @JsonProperty(value = "begin_time")
+
     private OffsetDateTime beginTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private OffsetDateTime endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
+
     private String errorCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fail_reason")
-    
+    @JsonProperty(value = "fail_reason")
+
     private String failReason;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message")
-    
+    @JsonProperty(value = "message")
+
     private String message;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code")
-    
+    @JsonProperty(value = "code")
+
     private String code;
 
     public SubJobs withStatus(StatusEnum status) {
@@ -178,13 +149,9 @@ public class SubJobs  {
         return this;
     }
 
-    
-
-
-    /**
-     * Job的状态。SUCCESS：成功RUNNING：运行中FAIL：失败INIT：正在初始化
-     * @return status
-     */
+    /** Job的状态。SUCCESS：成功RUNNING：运行中FAIL：失败INIT：正在初始化
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -193,27 +160,23 @@ public class SubJobs  {
         this.status = status;
     }
 
-    
-
     public SubJobs withEntities(Entitie entities) {
         this.entities = entities;
         return this;
     }
 
     public SubJobs withEntities(Consumer<Entitie> entitiesSetter) {
-        if(this.entities == null ){
+        if (this.entities == null) {
             this.entities = new Entitie();
             entitiesSetter.accept(this.entities);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get entities
-     * @return entities
-     */
+    /** Get entities
+     * 
+     * @return entities */
     public Entitie getEntities() {
         return entities;
     }
@@ -222,20 +185,14 @@ public class SubJobs  {
         this.entities = entities;
     }
 
-    
-
     public SubJobs withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
 
-    
-
-
-    /**
-     * Job ID
-     * @return jobId
-     */
+    /** Job ID
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -244,20 +201,14 @@ public class SubJobs  {
         this.jobId = jobId;
     }
 
-    
-
     public SubJobs withJobType(String jobType) {
         this.jobType = jobType;
         return this;
     }
 
-    
-
-
-    /**
-     * Job的类型，包含以下类型：baremetalSingleCreate：创建单个裸金属服务器；baremetalSingleOperate：修改单个裸金属服务器电源状态；baremetalAttachSingleVolume：挂载单个共享磁盘
-     * @return jobType
-     */
+    /** Job的类型，包含以下类型：baremetalSingleCreate：创建单个裸金属服务器；baremetalSingleOperate：修改单个裸金属服务器电源状态；baremetalAttachSingleVolume：挂载单个共享磁盘
+     * 
+     * @return jobType */
     public String getJobType() {
         return jobType;
     }
@@ -266,20 +217,14 @@ public class SubJobs  {
         this.jobType = jobType;
     }
 
-    
-
     public SubJobs withBeginTime(OffsetDateTime beginTime) {
         this.beginTime = beginTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 开始时间。时间戳格式为ISO 8601，例如：2019-04-25T20:04:47.591Z
-     * @return beginTime
-     */
+    /** 开始时间。时间戳格式为ISO 8601，例如：2019-04-25T20:04:47.591Z
+     * 
+     * @return beginTime */
     public OffsetDateTime getBeginTime() {
         return beginTime;
     }
@@ -288,20 +233,14 @@ public class SubJobs  {
         this.beginTime = beginTime;
     }
 
-    
-
     public SubJobs withEndTime(OffsetDateTime endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 结束时间。时间戳格式为ISO 8601，例如：2019-04-26T20:04:47.591Z
-     * @return endTime
-     */
+    /** 结束时间。时间戳格式为ISO 8601，例如：2019-04-26T20:04:47.591Z
+     * 
+     * @return endTime */
     public OffsetDateTime getEndTime() {
         return endTime;
     }
@@ -310,20 +249,14 @@ public class SubJobs  {
         this.endTime = endTime;
     }
 
-    
-
     public SubJobs withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
-    
-
-
-    /**
-     * Job执行失败时的错误码
-     * @return errorCode
-     */
+    /** Job执行失败时的错误码
+     * 
+     * @return errorCode */
     public String getErrorCode() {
         return errorCode;
     }
@@ -332,20 +265,14 @@ public class SubJobs  {
         this.errorCode = errorCode;
     }
 
-    
-
     public SubJobs withFailReason(String failReason) {
         this.failReason = failReason;
         return this;
     }
 
-    
-
-
-    /**
-     * Job执行失败时的错误原因
-     * @return failReason
-     */
+    /** Job执行失败时的错误原因
+     * 
+     * @return failReason */
     public String getFailReason() {
         return failReason;
     }
@@ -354,20 +281,14 @@ public class SubJobs  {
         this.failReason = failReason;
     }
 
-    
-
     public SubJobs withMessage(String message) {
         this.message = message;
         return this;
     }
 
-    
-
-
-    /**
-     * 出现错误时，返回的错误消息
-     * @return message
-     */
+    /** 出现错误时，返回的错误消息
+     * 
+     * @return message */
     public String getMessage() {
         return message;
     }
@@ -376,20 +297,14 @@ public class SubJobs  {
         this.message = message;
     }
 
-    
-
     public SubJobs withCode(String code) {
         this.code = code;
         return this;
     }
 
-    
-
-
-    /**
-     * 出现错误时，返回的错误码
-     * @return code
-     */
+    /** 出现错误时，返回的错误码
+     * 
+     * @return code */
     public String getCode() {
         return code;
     }
@@ -397,8 +312,6 @@ public class SubJobs  {
     public void setCode(String code) {
         this.code = code;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -409,21 +322,18 @@ public class SubJobs  {
             return false;
         }
         SubJobs subJobs = (SubJobs) o;
-        return Objects.equals(this.status, subJobs.status) &&
-            Objects.equals(this.entities, subJobs.entities) &&
-            Objects.equals(this.jobId, subJobs.jobId) &&
-            Objects.equals(this.jobType, subJobs.jobType) &&
-            Objects.equals(this.beginTime, subJobs.beginTime) &&
-            Objects.equals(this.endTime, subJobs.endTime) &&
-            Objects.equals(this.errorCode, subJobs.errorCode) &&
-            Objects.equals(this.failReason, subJobs.failReason) &&
-            Objects.equals(this.message, subJobs.message) &&
-            Objects.equals(this.code, subJobs.code);
+        return Objects.equals(this.status, subJobs.status) && Objects.equals(this.entities, subJobs.entities)
+            && Objects.equals(this.jobId, subJobs.jobId) && Objects.equals(this.jobType, subJobs.jobType)
+            && Objects.equals(this.beginTime, subJobs.beginTime) && Objects.equals(this.endTime, subJobs.endTime)
+            && Objects.equals(this.errorCode, subJobs.errorCode) && Objects.equals(this.failReason, subJobs.failReason)
+            && Objects.equals(this.message, subJobs.message) && Objects.equals(this.code, subJobs.code);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(status, entities, jobId, jobType, beginTime, endTime, errorCode, failReason, message, code);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -441,16 +351,13 @@ public class SubJobs  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

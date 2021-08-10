@@ -1,26 +1,18 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  *  
  */
-public class NovaAddSecurityGroupOption  {
-
-
+public class NovaAddSecurityGroupOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
     public NovaAddSecurityGroupOption withName(String name) {
@@ -28,13 +20,9 @@ public class NovaAddSecurityGroupOption  {
         return this;
     }
 
-    
-
-
-    /**
-     * 弹性云服务器添加的安全组名称，会对云服务器中配置的网卡生效。
-     * @return name
-     */
+    /** 弹性云服务器添加的安全组名称，会对云服务器中配置的网卡生效。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -42,8 +30,6 @@ public class NovaAddSecurityGroupOption  {
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +42,12 @@ public class NovaAddSecurityGroupOption  {
         NovaAddSecurityGroupOption novaAddSecurityGroupOption = (NovaAddSecurityGroupOption) o;
         return Objects.equals(this.name, novaAddSecurityGroupOption.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +56,13 @@ public class NovaAddSecurityGroupOption  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

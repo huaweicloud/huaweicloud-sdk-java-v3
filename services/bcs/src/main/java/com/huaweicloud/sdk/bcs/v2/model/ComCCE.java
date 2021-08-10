@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.bcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bcs.v2.model.Detail;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * CCE组件
- */
-public class ComCCE  {
-
-
+/** CCE组件 */
+public class ComCCE {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster")
-    
+    @JsonProperty(value = "cluster")
+
     private Detail cluster;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="network")
-    
+    @JsonProperty(value = "network")
+
     private Detail network;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group")
-    
+    @JsonProperty(value = "security_group")
+
     private Detail securityGroup;
 
     public ComCCE withCluster(Detail cluster) {
@@ -42,19 +30,17 @@ public class ComCCE  {
     }
 
     public ComCCE withCluster(Consumer<Detail> clusterSetter) {
-        if(this.cluster == null ){
+        if (this.cluster == null) {
             this.cluster = new Detail();
             clusterSetter.accept(this.cluster);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get cluster
-     * @return cluster
-     */
+    /** Get cluster
+     * 
+     * @return cluster */
     public Detail getCluster() {
         return cluster;
     }
@@ -63,27 +49,23 @@ public class ComCCE  {
         this.cluster = cluster;
     }
 
-    
-
     public ComCCE withNetwork(Detail network) {
         this.network = network;
         return this;
     }
 
     public ComCCE withNetwork(Consumer<Detail> networkSetter) {
-        if(this.network == null ){
+        if (this.network == null) {
             this.network = new Detail();
             networkSetter.accept(this.network);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get network
-     * @return network
-     */
+    /** Get network
+     * 
+     * @return network */
     public Detail getNetwork() {
         return network;
     }
@@ -92,27 +74,23 @@ public class ComCCE  {
         this.network = network;
     }
 
-    
-
     public ComCCE withSecurityGroup(Detail securityGroup) {
         this.securityGroup = securityGroup;
         return this;
     }
 
     public ComCCE withSecurityGroup(Consumer<Detail> securityGroupSetter) {
-        if(this.securityGroup == null ){
+        if (this.securityGroup == null) {
             this.securityGroup = new Detail();
             securityGroupSetter.accept(this.securityGroup);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get securityGroup
-     * @return securityGroup
-     */
+    /** Get securityGroup
+     * 
+     * @return securityGroup */
     public Detail getSecurityGroup() {
         return securityGroup;
     }
@@ -120,8 +98,6 @@ public class ComCCE  {
     public void setSecurityGroup(Detail securityGroup) {
         this.securityGroup = securityGroup;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -132,14 +108,15 @@ public class ComCCE  {
             return false;
         }
         ComCCE comCCE = (ComCCE) o;
-        return Objects.equals(this.cluster, comCCE.cluster) &&
-            Objects.equals(this.network, comCCE.network) &&
-            Objects.equals(this.securityGroup, comCCE.securityGroup);
+        return Objects.equals(this.cluster, comCCE.cluster) && Objects.equals(this.network, comCCE.network)
+            && Objects.equals(this.securityGroup, comCCE.securityGroup);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(cluster, network, securityGroup);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -150,16 +127,13 @@ public class ComCCE  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

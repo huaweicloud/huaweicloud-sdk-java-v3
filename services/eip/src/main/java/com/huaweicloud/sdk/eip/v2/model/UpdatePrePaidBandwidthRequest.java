@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.eip.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.eip.v2.model.UpdatePrePaidBandwidthRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class UpdatePrePaidBandwidthRequest  {
-
-
+/** Request Object */
+public class UpdatePrePaidBandwidthRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bandwidth_id")
-    
+    @JsonProperty(value = "bandwidth_id")
+
     private String bandwidthId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private UpdatePrePaidBandwidthRequestBody body;
 
     public UpdatePrePaidBandwidthRequest withBandwidthId(String bandwidthId) {
@@ -35,13 +24,9 @@ public class UpdatePrePaidBandwidthRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 带宽唯一标识。通过弹性公网IP详情获取，且此弹性公网IP是包周期的。
-     * @return bandwidthId
-     */
+    /** 带宽唯一标识。通过弹性公网IP详情获取，且此弹性公网IP是包周期的。
+     * 
+     * @return bandwidthId */
     public String getBandwidthId() {
         return bandwidthId;
     }
@@ -50,27 +35,23 @@ public class UpdatePrePaidBandwidthRequest  {
         this.bandwidthId = bandwidthId;
     }
 
-    
-
     public UpdatePrePaidBandwidthRequest withBody(UpdatePrePaidBandwidthRequestBody body) {
         this.body = body;
         return this;
     }
 
     public UpdatePrePaidBandwidthRequest withBody(Consumer<UpdatePrePaidBandwidthRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdatePrePaidBandwidthRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public UpdatePrePaidBandwidthRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class UpdatePrePaidBandwidthRequest  {
     public void setBody(UpdatePrePaidBandwidthRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class UpdatePrePaidBandwidthRequest  {
             return false;
         }
         UpdatePrePaidBandwidthRequest updatePrePaidBandwidthRequest = (UpdatePrePaidBandwidthRequest) o;
-        return Objects.equals(this.bandwidthId, updatePrePaidBandwidthRequest.bandwidthId) &&
-            Objects.equals(this.body, updatePrePaidBandwidthRequest.body);
+        return Objects.equals(this.bandwidthId, updatePrePaidBandwidthRequest.bandwidthId)
+            && Objects.equals(this.body, updatePrePaidBandwidthRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(bandwidthId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class UpdatePrePaidBandwidthRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

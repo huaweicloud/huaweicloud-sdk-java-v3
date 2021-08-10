@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.mpc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mpc.v1.model.MetaData;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * MbTaskParameter
- */
-public class MbTaskParameter  {
-
-
+/** MbTaskParameter */
+public class MbTaskParameter {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status_description")
-    
+    @JsonProperty(value = "status_description")
+
     private String statusDescription;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output_filename")
-    
+    @JsonProperty(value = "output_filename")
+
     private String outputFilename;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata")
-    
+    @JsonProperty(value = "metadata")
+
     private MetaData metadata;
 
     public MbTaskParameter withStatusDescription(String statusDescription) {
@@ -41,13 +29,9 @@ public class MbTaskParameter  {
         return this;
     }
 
-    
-
-
-    /**
-     * 具体状态描述，FAILED时可用于分析问题。 
-     * @return statusDescription
-     */
+    /** 具体状态描述，FAILED时可用于分析问题。
+     * 
+     * @return statusDescription */
     public String getStatusDescription() {
         return statusDescription;
     }
@@ -56,20 +40,14 @@ public class MbTaskParameter  {
         this.statusDescription = statusDescription;
     }
 
-    
-
     public MbTaskParameter withOutputFilename(String outputFilename) {
         this.outputFilename = outputFilename;
         return this;
     }
 
-    
-
-
-    /**
-     * 输出文件名称。 
-     * @return outputFilename
-     */
+    /** 输出文件名称。
+     * 
+     * @return outputFilename */
     public String getOutputFilename() {
         return outputFilename;
     }
@@ -78,27 +56,23 @@ public class MbTaskParameter  {
         this.outputFilename = outputFilename;
     }
 
-    
-
     public MbTaskParameter withMetadata(MetaData metadata) {
         this.metadata = metadata;
         return this;
     }
 
     public MbTaskParameter withMetadata(Consumer<MetaData> metadataSetter) {
-        if(this.metadata == null ){
+        if (this.metadata == null) {
             this.metadata = new MetaData();
             metadataSetter.accept(this.metadata);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get metadata
-     * @return metadata
-     */
+    /** Get metadata
+     * 
+     * @return metadata */
     public MetaData getMetadata() {
         return metadata;
     }
@@ -106,8 +80,6 @@ public class MbTaskParameter  {
     public void setMetadata(MetaData metadata) {
         this.metadata = metadata;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -118,14 +90,16 @@ public class MbTaskParameter  {
             return false;
         }
         MbTaskParameter mbTaskParameter = (MbTaskParameter) o;
-        return Objects.equals(this.statusDescription, mbTaskParameter.statusDescription) &&
-            Objects.equals(this.outputFilename, mbTaskParameter.outputFilename) &&
-            Objects.equals(this.metadata, mbTaskParameter.metadata);
+        return Objects.equals(this.statusDescription, mbTaskParameter.statusDescription)
+            && Objects.equals(this.outputFilename, mbTaskParameter.outputFilename)
+            && Objects.equals(this.metadata, mbTaskParameter.metadata);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(statusDescription, outputFilename, metadata);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,16 +110,13 @@ public class MbTaskParameter  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

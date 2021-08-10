@@ -1,85 +1,65 @@
 package com.huaweicloud.sdk.cdn.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cdn.v1.model.UrlObject;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowHistoryTaskDetailsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_type")
-    
+    @JsonProperty(value = "task_type")
+
     private String taskType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private String status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="urls")
-    
+    @JsonProperty(value = "urls")
+
     private List<UrlObject> urls = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private Long createTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="processing")
-    
+    @JsonProperty(value = "processing")
+
     private Integer processing;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="succeed")
-    
+    @JsonProperty(value = "succeed")
+
     private Integer succeed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="failed")
-    
+    @JsonProperty(value = "failed")
+
     private Integer failed;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
+
     private Integer total;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_type")
-    
+    @JsonProperty(value = "file_type")
+
     private String fileType;
 
     public ShowHistoryTaskDetailsResponse withId(String id) {
@@ -87,13 +67,9 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务id。
-     * @return id
-     */
+    /** 任务id。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -102,20 +78,14 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowHistoryTaskDetailsResponse withTaskType(String taskType) {
         this.taskType = taskType;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务的类型， 其值可以为refresh或preheating。
-     * @return taskType
-     */
+    /** 任务的类型， 其值可以为refresh或preheating。
+     * 
+     * @return taskType */
     public String getTaskType() {
         return taskType;
     }
@@ -124,20 +94,14 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         this.taskType = taskType;
     }
 
-    
-
     public ShowHistoryTaskDetailsResponse withStatus(String status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务执行结果。task_done表示成功，task_inprocess表示处理中。
-     * @return status
-     */
+    /** 任务执行结果。task_done表示成功，task_inprocess表示处理中。
+     * 
+     * @return status */
     public String getStatus() {
         return status;
     }
@@ -146,16 +110,13 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public ShowHistoryTaskDetailsResponse withUrls(List<UrlObject> urls) {
         this.urls = urls;
         return this;
     }
 
-    
     public ShowHistoryTaskDetailsResponse addUrlsItem(UrlObject urlsItem) {
-        if(this.urls == null) {
+        if (this.urls == null) {
             this.urls = new ArrayList<>();
         }
         this.urls.add(urlsItem);
@@ -163,17 +124,16 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
     }
 
     public ShowHistoryTaskDetailsResponse withUrls(Consumer<List<UrlObject>> urlsSetter) {
-        if(this.urls == null) {
+        if (this.urls == null) {
             this.urls = new ArrayList<>();
         }
         urlsSetter.accept(this.urls);
         return this;
     }
 
-    /**
-     * 本次提交的url列表。
-     * @return urls
-     */
+    /** 本次提交的url列表。
+     * 
+     * @return urls */
     public List<UrlObject> getUrls() {
         return urls;
     }
@@ -182,20 +142,14 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         this.urls = urls;
     }
 
-    
-
     public ShowHistoryTaskDetailsResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 创建时间。
-     * @return createTime
-     */
+    /** 创建时间。
+     * 
+     * @return createTime */
     public Long getCreateTime() {
         return createTime;
     }
@@ -204,20 +158,14 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public ShowHistoryTaskDetailsResponse withProcessing(Integer processing) {
         this.processing = processing;
         return this;
     }
 
-    
-
-
-    /**
-     * 处理中的url个数。
-     * @return processing
-     */
+    /** 处理中的url个数。
+     * 
+     * @return processing */
     public Integer getProcessing() {
         return processing;
     }
@@ -226,20 +174,14 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         this.processing = processing;
     }
 
-    
-
     public ShowHistoryTaskDetailsResponse withSucceed(Integer succeed) {
         this.succeed = succeed;
         return this;
     }
 
-    
-
-
-    /**
-     * 成功处理的url个数。
-     * @return succeed
-     */
+    /** 成功处理的url个数。
+     * 
+     * @return succeed */
     public Integer getSucceed() {
         return succeed;
     }
@@ -248,20 +190,14 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         this.succeed = succeed;
     }
 
-    
-
     public ShowHistoryTaskDetailsResponse withFailed(Integer failed) {
         this.failed = failed;
         return this;
     }
 
-    
-
-
-    /**
-     * 处理失败的url个数。
-     * @return failed
-     */
+    /** 处理失败的url个数。
+     * 
+     * @return failed */
     public Integer getFailed() {
         return failed;
     }
@@ -270,20 +206,14 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         this.failed = failed;
     }
 
-    
-
     public ShowHistoryTaskDetailsResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
-    
-
-
-    /**
-     * 历史任务的url个数。
-     * @return total
-     */
+    /** 历史任务的url个数。
+     * 
+     * @return total */
     public Integer getTotal() {
         return total;
     }
@@ -292,20 +222,14 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         this.total = total;
     }
 
-    
-
     public ShowHistoryTaskDetailsResponse withFileType(String fileType) {
         this.fileType = fileType;
         return this;
     }
 
-    
-
-
-    /**
-     * 默认是文件file,file：文件,directory：目录。
-     * @return fileType
-     */
+    /** 默认是文件file,file：文件,directory：目录。
+     * 
+     * @return fileType */
     public String getFileType() {
         return fileType;
     }
@@ -313,8 +237,6 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
     public void setFileType(String fileType) {
         this.fileType = fileType;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -325,21 +247,23 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
             return false;
         }
         ShowHistoryTaskDetailsResponse showHistoryTaskDetailsResponse = (ShowHistoryTaskDetailsResponse) o;
-        return Objects.equals(this.id, showHistoryTaskDetailsResponse.id) &&
-            Objects.equals(this.taskType, showHistoryTaskDetailsResponse.taskType) &&
-            Objects.equals(this.status, showHistoryTaskDetailsResponse.status) &&
-            Objects.equals(this.urls, showHistoryTaskDetailsResponse.urls) &&
-            Objects.equals(this.createTime, showHistoryTaskDetailsResponse.createTime) &&
-            Objects.equals(this.processing, showHistoryTaskDetailsResponse.processing) &&
-            Objects.equals(this.succeed, showHistoryTaskDetailsResponse.succeed) &&
-            Objects.equals(this.failed, showHistoryTaskDetailsResponse.failed) &&
-            Objects.equals(this.total, showHistoryTaskDetailsResponse.total) &&
-            Objects.equals(this.fileType, showHistoryTaskDetailsResponse.fileType);
+        return Objects.equals(this.id, showHistoryTaskDetailsResponse.id)
+            && Objects.equals(this.taskType, showHistoryTaskDetailsResponse.taskType)
+            && Objects.equals(this.status, showHistoryTaskDetailsResponse.status)
+            && Objects.equals(this.urls, showHistoryTaskDetailsResponse.urls)
+            && Objects.equals(this.createTime, showHistoryTaskDetailsResponse.createTime)
+            && Objects.equals(this.processing, showHistoryTaskDetailsResponse.processing)
+            && Objects.equals(this.succeed, showHistoryTaskDetailsResponse.succeed)
+            && Objects.equals(this.failed, showHistoryTaskDetailsResponse.failed)
+            && Objects.equals(this.total, showHistoryTaskDetailsResponse.total)
+            && Objects.equals(this.fileType, showHistoryTaskDetailsResponse.fileType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, taskType, status, urls, createTime, processing, succeed, failed, total, fileType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -357,16 +281,13 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

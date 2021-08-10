@@ -1,26 +1,16 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListAddonTemplatesRequest  {
-
-
+/** Request Object */
+public class ListAddonTemplatesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="addon_template_name")
-    
+    @JsonProperty(value = "addon_template_name")
+
     private String addonTemplateName;
 
     public ListAddonTemplatesRequest withAddonTemplateName(String addonTemplateName) {
@@ -28,13 +18,9 @@ public class ListAddonTemplatesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 指定的模板名称，不填写则查询列表。
-     * @return addonTemplateName
-     */
+    /** 指定的模板名称，不填写则查询列表。
+     * 
+     * @return addonTemplateName */
     public String getAddonTemplateName() {
         return addonTemplateName;
     }
@@ -42,8 +28,6 @@ public class ListAddonTemplatesRequest  {
     public void setAddonTemplateName(String addonTemplateName) {
         this.addonTemplateName = addonTemplateName;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,10 +40,12 @@ public class ListAddonTemplatesRequest  {
         ListAddonTemplatesRequest listAddonTemplatesRequest = (ListAddonTemplatesRequest) o;
         return Objects.equals(this.addonTemplateName, listAddonTemplatesRequest.addonTemplateName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(addonTemplateName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,16 +54,13 @@ public class ListAddonTemplatesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

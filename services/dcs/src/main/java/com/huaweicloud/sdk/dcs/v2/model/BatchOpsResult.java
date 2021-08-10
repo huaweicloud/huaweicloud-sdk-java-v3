@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.dcs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 批量删除实例接口返回结构体
- */
-public class BatchOpsResult  {
-
-
+/** 批量删除实例接口返回结构体 */
+public class BatchOpsResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="result")
-    
+    @JsonProperty(value = "result")
+
     private String result;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance")
-    
+    @JsonProperty(value = "instance")
+
     private String instance;
 
     public BatchOpsResult withResult(String result) {
@@ -34,13 +23,9 @@ public class BatchOpsResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 操作结果，取值有success或failed。
-     * @return result
-     */
+    /** 操作结果，取值有success或failed。
+     * 
+     * @return result */
     public String getResult() {
         return result;
     }
@@ -49,20 +34,14 @@ public class BatchOpsResult  {
         this.result = result;
     }
 
-    
-
     public BatchOpsResult withInstance(String instance) {
         this.instance = instance;
         return this;
     }
 
-    
-
-
-    /**
-     * 缓存实例ID。
-     * @return instance
-     */
+    /** 缓存实例ID。
+     * 
+     * @return instance */
     public String getInstance() {
         return instance;
     }
@@ -70,8 +49,6 @@ public class BatchOpsResult  {
     public void setInstance(String instance) {
         this.instance = instance;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class BatchOpsResult  {
             return false;
         }
         BatchOpsResult batchOpsResult = (BatchOpsResult) o;
-        return Objects.equals(this.result, batchOpsResult.result) &&
-            Objects.equals(this.instance, batchOpsResult.instance);
+        return Objects.equals(this.result, batchOpsResult.result)
+            && Objects.equals(this.instance, batchOpsResult.instance);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(result, instance);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class BatchOpsResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

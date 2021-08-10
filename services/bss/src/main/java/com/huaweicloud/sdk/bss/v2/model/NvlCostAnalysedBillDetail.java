@@ -1,236 +1,191 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * NvlCostAnalysedBillDetail
- */
-public class NvlCostAnalysedBillDetail  {
-
-
+/** NvlCostAnalysedBillDetail */
+public class NvlCostAnalysedBillDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="shared_month")
-    
+    @JsonProperty(value = "shared_month")
+
     private String sharedMonth;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bill_cycle")
-    
+    @JsonProperty(value = "bill_cycle")
+
     private String billCycle;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bill_type")
-    
+    @JsonProperty(value = "bill_type")
+
     private Integer billType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customer_id")
-    
+    @JsonProperty(value = "customer_id")
+
     private String customerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_code")
-    
+    @JsonProperty(value = "region_code")
+
     private String regionCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_name")
-    
+    @JsonProperty(value = "region_name")
+
     private String regionName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_type_code")
-    
+    @JsonProperty(value = "service_type_code")
+
     private String serviceTypeCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type_code")
-    
+    @JsonProperty(value = "resource_type_code")
+
     private String resourceTypeCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="effective_time")
-    
+    @JsonProperty(value = "effective_time")
+
     private String effectiveTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expire_time")
-    
+    @JsonProperty(value = "expire_time")
+
     private String expireTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
+    @JsonProperty(value = "resource_id")
+
     private String resourceId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_name")
-    
+    @JsonProperty(value = "resource_name")
+
     private String resourceName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_tag")
-    
+    @JsonProperty(value = "resource_tag")
+
     private String resourceTag;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_spec_desc")
-    
+    @JsonProperty(value = "product_spec_desc")
+
     private String productSpecDesc;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
+
     private String enterpriseProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_name")
-    
+    @JsonProperty(value = "enterprise_project_name")
+
     private String enterpriseProjectName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charging_mode")
-    
+    @JsonProperty(value = "charging_mode")
+
     private Integer chargingMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_id")
-    
+    @JsonProperty(value = "order_id")
+
     private String orderId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="period_type")
-    
+    @JsonProperty(value = "period_type")
+
     private Integer periodType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="usage_type")
-    
+    @JsonProperty(value = "usage_type")
+
     private String usageType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="usage")
-    
+    @JsonProperty(value = "usage")
+
     private Double usage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="usage_measure_id")
-    
+    @JsonProperty(value = "usage_measure_id")
+
     private Integer usageMeasureId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="free_resource_usage")
-    
+    @JsonProperty(value = "free_resource_usage")
+
     private Double freeResourceUsage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="free_resource_measure_id")
-    
+    @JsonProperty(value = "free_resource_measure_id")
+
     private Integer freeResourceMeasureId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ri_usage")
-    
+    @JsonProperty(value = "ri_usage")
+
     private Double riUsage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ri_usage_measure_id")
-    
+    @JsonProperty(value = "ri_usage_measure_id")
+
     private Integer riUsageMeasureId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="consume_amount")
-    
+    @JsonProperty(value = "consume_amount")
+
     private Double consumeAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="past_months_amortized_amount")
-    
+    @JsonProperty(value = "past_months_amortized_amount")
+
     private Double pastMonthsAmortizedAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="current_month_amortized_amount")
-    
+    @JsonProperty(value = "current_month_amortized_amount")
+
     private Double currentMonthAmortizedAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="future_months_amortized_amount")
-    
+    @JsonProperty(value = "future_months_amortized_amount")
+
     private Double futureMonthsAmortizedAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amortized_cash_amount")
-    
+    @JsonProperty(value = "amortized_cash_amount")
+
     private Double amortizedCashAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amortized_credit_amount")
-    
+    @JsonProperty(value = "amortized_credit_amount")
+
     private Double amortizedCreditAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amortized_coupon_amount")
-    
+    @JsonProperty(value = "amortized_coupon_amount")
+
     private Double amortizedCouponAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amortized_flexipurchase_coupon_amount")
-    
+    @JsonProperty(value = "amortized_flexipurchase_coupon_amount")
+
     private Double amortizedFlexipurchaseCouponAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amortized_stored_value_card_amount")
-    
+    @JsonProperty(value = "amortized_stored_value_card_amount")
+
     private Double amortizedStoredValueCardAmount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="amortized_bonus_amount")
-    
+    @JsonProperty(value = "amortized_bonus_amount")
+
     private Double amortizedBonusAmount;
 
     public NvlCostAnalysedBillDetail withSharedMonth(String sharedMonth) {
@@ -238,13 +193,9 @@ public class NvlCostAnalysedBillDetail  {
         return this;
     }
 
-    
-
-
-    /**
-     * 查询分摊成本的月份。 格式为YYYY-MM，按照东八区截取。
-     * @return sharedMonth
-     */
+    /** |参数名称：分摊月，格式为YYYY-MM，按照东八区截取。| |参数约束及描述：|
+     * 
+     * @return sharedMonth */
     public String getSharedMonth() {
         return sharedMonth;
     }
@@ -253,20 +204,14 @@ public class NvlCostAnalysedBillDetail  {
         this.sharedMonth = sharedMonth;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withBillCycle(String billCycle) {
         this.billCycle = billCycle;
         return this;
     }
 
-    
-
-
-    /**
-     * 账期。 格式：YYYY-MM。按照东八区截取。
-     * @return billCycle
-     */
+    /** |参数名称：账期。格式：YYYY-MM。按照东八区截取。| |参数约束及描述：|
+     * 
+     * @return billCycle */
     public String getBillCycle() {
         return billCycle;
     }
@@ -275,20 +220,15 @@ public class NvlCostAnalysedBillDetail  {
         this.billCycle = billCycle;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withBillType(Integer billType) {
         this.billType = billType;
         return this;
     }
 
-    
-
-
-    /**
-     * 账单类型。 1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿14：消费-服务支持计划月末扣费16：调账-扣费
-     * @return billType
-     */
+    /** |参数名称：账单类型。1：消费-新购2：消费-续订3：消费-变更4：退款-退订5：消费-使用8：消费-自动续订9：调账-补偿12：消费-按时计费13：消费-退订手续费14：消费-服务支持计划月末扣费15：消费-税金16：调账-扣费17：消费-保底差额保底差额=客户签约保底合同后，如果没有达到保底消费，客户需要补交的费用，仅限于直销或者伙伴推荐类子客户，且为后付费用户。100：退款-退订税金101：调账-补偿税金102：调账-扣费税金|
+     * |参数的约束及描述：|
+     * 
+     * @return billType */
     public Integer getBillType() {
         return billType;
     }
@@ -297,20 +237,15 @@ public class NvlCostAnalysedBillDetail  {
         this.billType = billType;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 消费的客户账号ID。 如果是普通客户或者企业子查询消费记录，只能查询到自身的消费记录，则这个地方显示的是自身的客户ID。如果是企业主查询消费记录，可以查询到自身以及企业子的消费记录，这个地方是消费的实际客户ID，如果是企业主自身消费，为企业主ID，如果这条消费记录是某个企业子客户的消费，这个地方的ID是企业子账号ID。
-     * @return customerId
-     */
+    /** |参数名称：消费的客户账号ID。如果是普通客户或者企业子查询消费记录，只能查询到自身的消费记录，则这个地方显示的是自身的客户ID如果是企业主查询消费记录，可以查询到自身以及企业子的消费记录，这个地方是消费的实际客户ID，如果是企业主自身消费，为企业主ID，如果这条消费记录是某个企业子客户的消费，这个地方的ID是企业子账号ID。|
+     * |参数约束及描述：|
+     * 
+     * @return customerId */
     public String getCustomerId() {
         return customerId;
     }
@@ -319,20 +254,14 @@ public class NvlCostAnalysedBillDetail  {
         this.customerId = customerId;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withRegionCode(String regionCode) {
         this.regionCode = regionCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。
-     * @return regionCode
-     */
+    /** |参数名称：云服务区编码，例如：“cn-north-1”。具体请参见地区和终端节点对应云服务的“区域”列的值。| |参数约束及描述：|
+     * 
+     * @return regionCode */
     public String getRegionCode() {
         return regionCode;
     }
@@ -341,20 +270,14 @@ public class NvlCostAnalysedBillDetail  {
         this.regionCode = regionCode;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withRegionName(String regionName) {
         this.regionName = regionName;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务区名称，例如：“华北-北京一”。具体请参见地区和终端节点对应云服务的“区域名称”列的值。
-     * @return regionName
-     */
+    /** |参数名称：云服务区名称，例如：“华北-北京一”。具体请参见地区和终端节点对应云服务的“区域名称”列的值。| |参数约束及描述：|
+     * 
+     * @return regionName */
     public String getRegionName() {
         return regionName;
     }
@@ -363,20 +286,14 @@ public class NvlCostAnalysedBillDetail  {
         this.regionName = regionName;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withServiceTypeCode(String serviceTypeCode) {
         this.serviceTypeCode = serviceTypeCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。您可以调用查询云服务类型列表接口获取。
-     * @return serviceTypeCode
-     */
+    /** |参数名称：云服务类型编码，例如ECS的云服务类型编码为“hws.service.type.ec2”。您可以调用查询云服务类型列表接口获取。| |参数约束及描述：|
+     * 
+     * @return serviceTypeCode */
     public String getServiceTypeCode() {
         return serviceTypeCode;
     }
@@ -385,20 +302,14 @@ public class NvlCostAnalysedBillDetail  {
         this.serviceTypeCode = serviceTypeCode;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withResourceTypeCode(String resourceTypeCode) {
         this.resourceTypeCode = resourceTypeCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。
-     * @return resourceTypeCode
-     */
+    /** |参数名称：资源类型编码，例如ECS的VM为“hws.resource.type.vm”。您可以调用查询资源类型列表接口获取。| |参数约束及描述：|
+     * 
+     * @return resourceTypeCode */
     public String getResourceTypeCode() {
         return resourceTypeCode;
     }
@@ -407,20 +318,14 @@ public class NvlCostAnalysedBillDetail  {
         this.resourceTypeCode = resourceTypeCode;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withEffectiveTime(String effectiveTime) {
         this.effectiveTime = effectiveTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 费用对应的资源使用的开始时间，按需有效，包年/包月该字段保留。
-     * @return effectiveTime
-     */
+    /** |参数名称：费用对应的资源使用的开始时间，按需为资源使用时间，包周期为下单后，对应那一单的资源生效时间。| |参数约束及描述：|
+     * 
+     * @return effectiveTime */
     public String getEffectiveTime() {
         return effectiveTime;
     }
@@ -429,20 +334,14 @@ public class NvlCostAnalysedBillDetail  {
         this.effectiveTime = effectiveTime;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withExpireTime(String expireTime) {
         this.expireTime = expireTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 费用对应的资源使用的结束时间，按需有效，包年/包月该字段保留。
-     * @return expireTime
-     */
+    /** |参数名称：费用对应的资源使用的结束时间，按需为资源使用时间，包周期为下单后，对应那一单的资源失效时间。| |参数约束及描述：|
+     * 
+     * @return expireTime */
     public String getExpireTime() {
         return expireTime;
     }
@@ -451,20 +350,14 @@ public class NvlCostAnalysedBillDetail  {
         this.expireTime = expireTime;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源ID。
-     * @return resourceId
-     */
+    /** |参数名称：资源ID。| |参数约束及描述：|
+     * 
+     * @return resourceId */
     public String getResourceId() {
         return resourceId;
     }
@@ -473,20 +366,14 @@ public class NvlCostAnalysedBillDetail  {
         this.resourceId = resourceId;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源名称。
-     * @return resourceName
-     */
+    /** |参数名称：资源名称。| |参数约束及描述：|
+     * 
+     * @return resourceName */
     public String getResourceName() {
         return resourceName;
     }
@@ -495,20 +382,14 @@ public class NvlCostAnalysedBillDetail  {
         this.resourceName = resourceName;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withResourceTag(String resourceTag) {
         this.resourceTag = resourceTag;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源标签。
-     * @return resourceTag
-     */
+    /** |参数名称：资源标签。| |参数约束及描述：|
+     * 
+     * @return resourceTag */
     public String getResourceTag() {
         return resourceTag;
     }
@@ -517,20 +398,14 @@ public class NvlCostAnalysedBillDetail  {
         this.resourceTag = resourceTag;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withProductSpecDesc(String productSpecDesc) {
         this.productSpecDesc = productSpecDesc;
         return this;
     }
 
-    
-
-
-    /**
-     * 产品的规格描述。
-     * @return productSpecDesc
-     */
+    /** |参数名称：产品的规格描述。| |参数约束及描述：|
+     * 
+     * @return productSpecDesc */
     public String getProductSpecDesc() {
         return productSpecDesc;
     }
@@ -539,20 +414,14 @@ public class NvlCostAnalysedBillDetail  {
         this.productSpecDesc = productSpecDesc;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目标识（企业项目ID）。 default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。
-     * @return enterpriseProjectId
-     */
+    /** |参数名称：企业项目标识（企业项目ID）。default项目对应ID：0未归集（表示该云服务不支持企业项目管理能力）项目对应ID：-1其余项目对应ID获取方法请参见如何获取企业项目ID。| |参数约束及描述：|
+     * 
+     * @return enterpriseProjectId */
     public String getEnterpriseProjectId() {
         return enterpriseProjectId;
     }
@@ -561,20 +430,14 @@ public class NvlCostAnalysedBillDetail  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withEnterpriseProjectName(String enterpriseProjectName) {
         this.enterpriseProjectName = enterpriseProjectName;
         return this;
     }
 
-    
-
-
-    /**
-     * 企业项目的名称。
-     * @return enterpriseProjectName
-     */
+    /** |参数名称：企业项目的名称| |参数约束及描述：|
+     * 
+     * @return enterpriseProjectName */
     public String getEnterpriseProjectName() {
         return enterpriseProjectName;
     }
@@ -583,20 +446,14 @@ public class NvlCostAnalysedBillDetail  {
         this.enterpriseProjectName = enterpriseProjectName;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 计费模式。 1：包年/包月3：按需10：预留实例
-     * @return chargingMode
-     */
+    /** |参数名称：计费模式。1：包年/包月3：按需10：预留实例| |参数约束及描述：|
+     * 
+     * @return chargingMode */
     public Integer getChargingMode() {
         return chargingMode;
     }
@@ -605,20 +462,14 @@ public class NvlCostAnalysedBillDetail  {
         this.chargingMode = chargingMode;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
     }
 
-    
-
-
-    /**
-     * 订单ID。  说明： 包年/包月资源的使用记录才有该字段，按需资源则为空。
-     * @return orderId
-     */
+    /** |参数名称：订单ID。包年/包月资源的使用记录才有该字段，按需资源则为空。| |参数约束及描述：|
+     * 
+     * @return orderId */
     public String getOrderId() {
         return orderId;
     }
@@ -627,20 +478,14 @@ public class NvlCostAnalysedBillDetail  {
         this.orderId = orderId;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withPeriodType(Integer periodType) {
         this.periodType = periodType;
         return this;
     }
 
-    
-
-
-    /**
-     * 周期类型： 19：年20：月24：天25：小时5：一次性
-     * @return periodType
-     */
+    /** |参数名称：周期类型：19：年20：月24：天25：小时5：一次性| |参数约束及描述：|
+     * 
+     * @return periodType */
     public Integer getPeriodType() {
         return periodType;
     }
@@ -649,20 +494,14 @@ public class NvlCostAnalysedBillDetail  {
         this.periodType = periodType;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withUsageType(String usageType) {
         this.usageType = usageType;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源使用量的类型，您可以调用查询使用量类型列表接口获取。
-     * @return usageType
-     */
+    /** |参数名称：资源使用量的类型，您可以调用查询使用量类型列表接口获取。| |参数约束及描述：|
+     * 
+     * @return usageType */
     public String getUsageType() {
         return usageType;
     }
@@ -671,20 +510,14 @@ public class NvlCostAnalysedBillDetail  {
         this.usageType = usageType;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withUsage(Double usage) {
         this.usage = usage;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源的使用量。
-     * @return usage
-     */
+    /** |参数名称：资源的使用量。| |参数的约束及描述：|
+     * 
+     * @return usage */
     public Double getUsage() {
         return usage;
     }
@@ -693,20 +526,14 @@ public class NvlCostAnalysedBillDetail  {
         this.usage = usage;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withUsageMeasureId(Integer usageMeasureId) {
         this.usageMeasureId = usageMeasureId;
         return this;
     }
 
-    
-
-
-    /**
-     * 资源使用量的度量单位，您可以调用查询度量单位列表接口获取。
-     * @return usageMeasureId
-     */
+    /** |参数名称：资源使用量的度量单位，您可以调用查询使用量单位列表接口获取。| |参数的约束及描述：|
+     * 
+     * @return usageMeasureId */
     public Integer getUsageMeasureId() {
         return usageMeasureId;
     }
@@ -715,20 +542,14 @@ public class NvlCostAnalysedBillDetail  {
         this.usageMeasureId = usageMeasureId;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withFreeResourceUsage(Double freeResourceUsage) {
         this.freeResourceUsage = freeResourceUsage;
         return this;
     }
 
-    
-
-
-    /**
-     * 套餐内使用量。
-     * @return freeResourceUsage
-     */
+    /** |参数名称：套餐内使用量| |参数的约束及描述：
+     * 
+     * @return freeResourceUsage */
     public Double getFreeResourceUsage() {
         return freeResourceUsage;
     }
@@ -737,20 +558,14 @@ public class NvlCostAnalysedBillDetail  {
         this.freeResourceUsage = freeResourceUsage;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withFreeResourceMeasureId(Integer freeResourceMeasureId) {
         this.freeResourceMeasureId = freeResourceMeasureId;
         return this;
     }
 
-    
-
-
-    /**
-     * 套餐内使用量的度量单位，您可以调用查询度量单位列表接口获取。
-     * @return freeResourceMeasureId
-     */
+    /** |参数名称：套餐内使用量的度量单位，您可以调用查询使用量单位列表接口获取。| |参数的约束及描述：|
+     * 
+     * @return freeResourceMeasureId */
     public Integer getFreeResourceMeasureId() {
         return freeResourceMeasureId;
     }
@@ -759,20 +574,14 @@ public class NvlCostAnalysedBillDetail  {
         this.freeResourceMeasureId = freeResourceMeasureId;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withRiUsage(Double riUsage) {
         this.riUsage = riUsage;
         return this;
     }
 
-    
-
-
-    /**
-     * 预留实例使用量。
-     * @return riUsage
-     */
+    /** |参数名称：预留实例使用量。| |参数的约束及描述：|
+     * 
+     * @return riUsage */
     public Double getRiUsage() {
         return riUsage;
     }
@@ -781,20 +590,14 @@ public class NvlCostAnalysedBillDetail  {
         this.riUsage = riUsage;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withRiUsageMeasureId(Integer riUsageMeasureId) {
         this.riUsageMeasureId = riUsageMeasureId;
         return this;
     }
 
-    
-
-
-    /**
-     * 预留实例使用量单位。
-     * @return riUsageMeasureId
-     */
+    /** |参数名称：预留实例使用量单位。| |参数的约束及描述：|
+     * 
+     * @return riUsageMeasureId */
     public Integer getRiUsageMeasureId() {
         return riUsageMeasureId;
     }
@@ -803,20 +606,14 @@ public class NvlCostAnalysedBillDetail  {
         this.riUsageMeasureId = riUsageMeasureId;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withConsumeAmount(Double consumeAmount) {
         this.consumeAmount = consumeAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 消费金额（应付金额）。 消费金额=期初已分摊金额+当月分摊金额+期末未分摊金额
-     * @return consumeAmount
-     */
+    /** |参数名称：消费金额（应付金额）| |参数的约束及描述：|
+     * 
+     * @return consumeAmount */
     public Double getConsumeAmount() {
         return consumeAmount;
     }
@@ -825,20 +622,14 @@ public class NvlCostAnalysedBillDetail  {
         this.consumeAmount = consumeAmount;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withPastMonthsAmortizedAmount(Double pastMonthsAmortizedAmount) {
         this.pastMonthsAmortizedAmount = pastMonthsAmortizedAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 期初已分摊金额。  说明： 包周期和预留实例预付时有效；计费类型为按需，预留实例为按时计费时该值为0。
-     * @return pastMonthsAmortizedAmount
-     */
+    /** |参数名称：期初已分摊金额（包周期和预留实例预付时有效，计费类型为按需，预留实例按时计费时为0）| |参数的约束及描述：|
+     * 
+     * @return pastMonthsAmortizedAmount */
     public Double getPastMonthsAmortizedAmount() {
         return pastMonthsAmortizedAmount;
     }
@@ -847,20 +638,14 @@ public class NvlCostAnalysedBillDetail  {
         this.pastMonthsAmortizedAmount = pastMonthsAmortizedAmount;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withCurrentMonthAmortizedAmount(Double currentMonthAmortizedAmount) {
         this.currentMonthAmortizedAmount = currentMonthAmortizedAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 当月分摊金额。 当月分摊金额=现金分摊金额+信用额度分摊金额+代金券分摊金额+现金券分摊金额+储值卡分摊金额+奖励金分摊金额
-     * @return currentMonthAmortizedAmount
-     */
+    /** |参数名称：当月分摊金额| |参数的约束及描述：|
+     * 
+     * @return currentMonthAmortizedAmount */
     public Double getCurrentMonthAmortizedAmount() {
         return currentMonthAmortizedAmount;
     }
@@ -869,20 +654,14 @@ public class NvlCostAnalysedBillDetail  {
         this.currentMonthAmortizedAmount = currentMonthAmortizedAmount;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withFutureMonthsAmortizedAmount(Double futureMonthsAmortizedAmount) {
         this.futureMonthsAmortizedAmount = futureMonthsAmortizedAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 期末未分摊金额。月度成本分摊时，当月以后还未分摊的金额。  说明： 包周期和预留实例预付时有效；计费类型为按需，预留实例为按时计费时该值为0。
-     * @return futureMonthsAmortizedAmount
-     */
+    /** |参数名称：期末未分摊金额（包周期和预留实例预付时有效，计费类型为按需，预留实例按时计费时为0）| |参数的约束及描述：|
+     * 
+     * @return futureMonthsAmortizedAmount */
     public Double getFutureMonthsAmortizedAmount() {
         return futureMonthsAmortizedAmount;
     }
@@ -891,20 +670,14 @@ public class NvlCostAnalysedBillDetail  {
         this.futureMonthsAmortizedAmount = futureMonthsAmortizedAmount;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withAmortizedCashAmount(Double amortizedCashAmount) {
         this.amortizedCashAmount = amortizedCashAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 月度成本分摊时，当月已分摊金额中包含的现金金额。
-     * @return amortizedCashAmount
-     */
+    /** |参数名称：现金分摊金额| |参数的约束及描述：|
+     * 
+     * @return amortizedCashAmount */
     public Double getAmortizedCashAmount() {
         return amortizedCashAmount;
     }
@@ -913,20 +686,14 @@ public class NvlCostAnalysedBillDetail  {
         this.amortizedCashAmount = amortizedCashAmount;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withAmortizedCreditAmount(Double amortizedCreditAmount) {
         this.amortizedCreditAmount = amortizedCreditAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 月度成本分摊时，当月已分摊金额中包含的信用额度分摊金额。
-     * @return amortizedCreditAmount
-     */
+    /** |参数名称：信用额度分摊金额| |参数的约束及描述：|
+     * 
+     * @return amortizedCreditAmount */
     public Double getAmortizedCreditAmount() {
         return amortizedCreditAmount;
     }
@@ -935,20 +702,14 @@ public class NvlCostAnalysedBillDetail  {
         this.amortizedCreditAmount = amortizedCreditAmount;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withAmortizedCouponAmount(Double amortizedCouponAmount) {
         this.amortizedCouponAmount = amortizedCouponAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 月度成本分摊时，当月已分摊金额中包含的代金券分摊金额。
-     * @return amortizedCouponAmount
-     */
+    /** |参数名称：代金券分摊金额| |参数的约束及描述：|
+     * 
+     * @return amortizedCouponAmount */
     public Double getAmortizedCouponAmount() {
         return amortizedCouponAmount;
     }
@@ -957,20 +718,14 @@ public class NvlCostAnalysedBillDetail  {
         this.amortizedCouponAmount = amortizedCouponAmount;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withAmortizedFlexipurchaseCouponAmount(Double amortizedFlexipurchaseCouponAmount) {
         this.amortizedFlexipurchaseCouponAmount = amortizedFlexipurchaseCouponAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 月度成本分摊时，当月已分摊金额中包含的现金券分摊金额。
-     * @return amortizedFlexipurchaseCouponAmount
-     */
+    /** |参数名称：现金券分摊金额| |参数的约束及描述：|
+     * 
+     * @return amortizedFlexipurchaseCouponAmount */
     public Double getAmortizedFlexipurchaseCouponAmount() {
         return amortizedFlexipurchaseCouponAmount;
     }
@@ -979,20 +734,14 @@ public class NvlCostAnalysedBillDetail  {
         this.amortizedFlexipurchaseCouponAmount = amortizedFlexipurchaseCouponAmount;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withAmortizedStoredValueCardAmount(Double amortizedStoredValueCardAmount) {
         this.amortizedStoredValueCardAmount = amortizedStoredValueCardAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 月度成本分摊时，当月已分摊金额中包含的储值卡分摊金额。
-     * @return amortizedStoredValueCardAmount
-     */
+    /** |参数名称：储值卡分摊金额| |参数的约束及描述：|
+     * 
+     * @return amortizedStoredValueCardAmount */
     public Double getAmortizedStoredValueCardAmount() {
         return amortizedStoredValueCardAmount;
     }
@@ -1001,20 +750,14 @@ public class NvlCostAnalysedBillDetail  {
         this.amortizedStoredValueCardAmount = amortizedStoredValueCardAmount;
     }
 
-    
-
     public NvlCostAnalysedBillDetail withAmortizedBonusAmount(Double amortizedBonusAmount) {
         this.amortizedBonusAmount = amortizedBonusAmount;
         return this;
     }
 
-    
-
-
-    /**
-     * 月度成本分摊时，当月已分摊金额中包含的奖励金分摊金额（用于现网未清干净的奖励金）。
-     * @return amortizedBonusAmount
-     */
+    /** |参数名称：奖励金分摊金额（用于现网未清干净的奖励金）| |参数的约束及描述：|
+     * 
+     * @return amortizedBonusAmount */
     public Double getAmortizedBonusAmount() {
         return amortizedBonusAmount;
     }
@@ -1022,8 +765,6 @@ public class NvlCostAnalysedBillDetail  {
     public void setAmortizedBonusAmount(Double amortizedBonusAmount) {
         this.amortizedBonusAmount = amortizedBonusAmount;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -1034,47 +775,86 @@ public class NvlCostAnalysedBillDetail  {
             return false;
         }
         NvlCostAnalysedBillDetail nvlCostAnalysedBillDetail = (NvlCostAnalysedBillDetail) o;
-        return Objects.equals(this.sharedMonth, nvlCostAnalysedBillDetail.sharedMonth) &&
-            Objects.equals(this.billCycle, nvlCostAnalysedBillDetail.billCycle) &&
-            Objects.equals(this.billType, nvlCostAnalysedBillDetail.billType) &&
-            Objects.equals(this.customerId, nvlCostAnalysedBillDetail.customerId) &&
-            Objects.equals(this.regionCode, nvlCostAnalysedBillDetail.regionCode) &&
-            Objects.equals(this.regionName, nvlCostAnalysedBillDetail.regionName) &&
-            Objects.equals(this.serviceTypeCode, nvlCostAnalysedBillDetail.serviceTypeCode) &&
-            Objects.equals(this.resourceTypeCode, nvlCostAnalysedBillDetail.resourceTypeCode) &&
-            Objects.equals(this.effectiveTime, nvlCostAnalysedBillDetail.effectiveTime) &&
-            Objects.equals(this.expireTime, nvlCostAnalysedBillDetail.expireTime) &&
-            Objects.equals(this.resourceId, nvlCostAnalysedBillDetail.resourceId) &&
-            Objects.equals(this.resourceName, nvlCostAnalysedBillDetail.resourceName) &&
-            Objects.equals(this.resourceTag, nvlCostAnalysedBillDetail.resourceTag) &&
-            Objects.equals(this.productSpecDesc, nvlCostAnalysedBillDetail.productSpecDesc) &&
-            Objects.equals(this.enterpriseProjectId, nvlCostAnalysedBillDetail.enterpriseProjectId) &&
-            Objects.equals(this.enterpriseProjectName, nvlCostAnalysedBillDetail.enterpriseProjectName) &&
-            Objects.equals(this.chargingMode, nvlCostAnalysedBillDetail.chargingMode) &&
-            Objects.equals(this.orderId, nvlCostAnalysedBillDetail.orderId) &&
-            Objects.equals(this.periodType, nvlCostAnalysedBillDetail.periodType) &&
-            Objects.equals(this.usageType, nvlCostAnalysedBillDetail.usageType) &&
-            Objects.equals(this.usage, nvlCostAnalysedBillDetail.usage) &&
-            Objects.equals(this.usageMeasureId, nvlCostAnalysedBillDetail.usageMeasureId) &&
-            Objects.equals(this.freeResourceUsage, nvlCostAnalysedBillDetail.freeResourceUsage) &&
-            Objects.equals(this.freeResourceMeasureId, nvlCostAnalysedBillDetail.freeResourceMeasureId) &&
-            Objects.equals(this.riUsage, nvlCostAnalysedBillDetail.riUsage) &&
-            Objects.equals(this.riUsageMeasureId, nvlCostAnalysedBillDetail.riUsageMeasureId) &&
-            Objects.equals(this.consumeAmount, nvlCostAnalysedBillDetail.consumeAmount) &&
-            Objects.equals(this.pastMonthsAmortizedAmount, nvlCostAnalysedBillDetail.pastMonthsAmortizedAmount) &&
-            Objects.equals(this.currentMonthAmortizedAmount, nvlCostAnalysedBillDetail.currentMonthAmortizedAmount) &&
-            Objects.equals(this.futureMonthsAmortizedAmount, nvlCostAnalysedBillDetail.futureMonthsAmortizedAmount) &&
-            Objects.equals(this.amortizedCashAmount, nvlCostAnalysedBillDetail.amortizedCashAmount) &&
-            Objects.equals(this.amortizedCreditAmount, nvlCostAnalysedBillDetail.amortizedCreditAmount) &&
-            Objects.equals(this.amortizedCouponAmount, nvlCostAnalysedBillDetail.amortizedCouponAmount) &&
-            Objects.equals(this.amortizedFlexipurchaseCouponAmount, nvlCostAnalysedBillDetail.amortizedFlexipurchaseCouponAmount) &&
-            Objects.equals(this.amortizedStoredValueCardAmount, nvlCostAnalysedBillDetail.amortizedStoredValueCardAmount) &&
-            Objects.equals(this.amortizedBonusAmount, nvlCostAnalysedBillDetail.amortizedBonusAmount);
+        return Objects.equals(this.sharedMonth, nvlCostAnalysedBillDetail.sharedMonth)
+            && Objects.equals(this.billCycle, nvlCostAnalysedBillDetail.billCycle)
+            && Objects.equals(this.billType, nvlCostAnalysedBillDetail.billType)
+            && Objects.equals(this.customerId, nvlCostAnalysedBillDetail.customerId)
+            && Objects.equals(this.regionCode, nvlCostAnalysedBillDetail.regionCode)
+            && Objects.equals(this.regionName, nvlCostAnalysedBillDetail.regionName)
+            && Objects.equals(this.serviceTypeCode, nvlCostAnalysedBillDetail.serviceTypeCode)
+            && Objects.equals(this.resourceTypeCode, nvlCostAnalysedBillDetail.resourceTypeCode)
+            && Objects.equals(this.effectiveTime, nvlCostAnalysedBillDetail.effectiveTime)
+            && Objects.equals(this.expireTime, nvlCostAnalysedBillDetail.expireTime)
+            && Objects.equals(this.resourceId, nvlCostAnalysedBillDetail.resourceId)
+            && Objects.equals(this.resourceName, nvlCostAnalysedBillDetail.resourceName)
+            && Objects.equals(this.resourceTag, nvlCostAnalysedBillDetail.resourceTag)
+            && Objects.equals(this.productSpecDesc, nvlCostAnalysedBillDetail.productSpecDesc)
+            && Objects.equals(this.enterpriseProjectId, nvlCostAnalysedBillDetail.enterpriseProjectId)
+            && Objects.equals(this.enterpriseProjectName, nvlCostAnalysedBillDetail.enterpriseProjectName)
+            && Objects.equals(this.chargingMode, nvlCostAnalysedBillDetail.chargingMode)
+            && Objects.equals(this.orderId, nvlCostAnalysedBillDetail.orderId)
+            && Objects.equals(this.periodType, nvlCostAnalysedBillDetail.periodType)
+            && Objects.equals(this.usageType, nvlCostAnalysedBillDetail.usageType)
+            && Objects.equals(this.usage, nvlCostAnalysedBillDetail.usage)
+            && Objects.equals(this.usageMeasureId, nvlCostAnalysedBillDetail.usageMeasureId)
+            && Objects.equals(this.freeResourceUsage, nvlCostAnalysedBillDetail.freeResourceUsage)
+            && Objects.equals(this.freeResourceMeasureId, nvlCostAnalysedBillDetail.freeResourceMeasureId)
+            && Objects.equals(this.riUsage, nvlCostAnalysedBillDetail.riUsage)
+            && Objects.equals(this.riUsageMeasureId, nvlCostAnalysedBillDetail.riUsageMeasureId)
+            && Objects.equals(this.consumeAmount, nvlCostAnalysedBillDetail.consumeAmount)
+            && Objects.equals(this.pastMonthsAmortizedAmount, nvlCostAnalysedBillDetail.pastMonthsAmortizedAmount)
+            && Objects.equals(this.currentMonthAmortizedAmount, nvlCostAnalysedBillDetail.currentMonthAmortizedAmount)
+            && Objects.equals(this.futureMonthsAmortizedAmount, nvlCostAnalysedBillDetail.futureMonthsAmortizedAmount)
+            && Objects.equals(this.amortizedCashAmount, nvlCostAnalysedBillDetail.amortizedCashAmount)
+            && Objects.equals(this.amortizedCreditAmount, nvlCostAnalysedBillDetail.amortizedCreditAmount)
+            && Objects.equals(this.amortizedCouponAmount, nvlCostAnalysedBillDetail.amortizedCouponAmount)
+            && Objects.equals(this.amortizedFlexipurchaseCouponAmount,
+                nvlCostAnalysedBillDetail.amortizedFlexipurchaseCouponAmount)
+            && Objects.equals(this.amortizedStoredValueCardAmount,
+                nvlCostAnalysedBillDetail.amortizedStoredValueCardAmount)
+            && Objects.equals(this.amortizedBonusAmount, nvlCostAnalysedBillDetail.amortizedBonusAmount);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(sharedMonth, billCycle, billType, customerId, regionCode, regionName, serviceTypeCode, resourceTypeCode, effectiveTime, expireTime, resourceId, resourceName, resourceTag, productSpecDesc, enterpriseProjectId, enterpriseProjectName, chargingMode, orderId, periodType, usageType, usage, usageMeasureId, freeResourceUsage, freeResourceMeasureId, riUsage, riUsageMeasureId, consumeAmount, pastMonthsAmortizedAmount, currentMonthAmortizedAmount, futureMonthsAmortizedAmount, amortizedCashAmount, amortizedCreditAmount, amortizedCouponAmount, amortizedFlexipurchaseCouponAmount, amortizedStoredValueCardAmount, amortizedBonusAmount);
+        return Objects.hash(sharedMonth,
+            billCycle,
+            billType,
+            customerId,
+            regionCode,
+            regionName,
+            serviceTypeCode,
+            resourceTypeCode,
+            effectiveTime,
+            expireTime,
+            resourceId,
+            resourceName,
+            resourceTag,
+            productSpecDesc,
+            enterpriseProjectId,
+            enterpriseProjectName,
+            chargingMode,
+            orderId,
+            periodType,
+            usageType,
+            usage,
+            usageMeasureId,
+            freeResourceUsage,
+            freeResourceMeasureId,
+            riUsage,
+            riUsageMeasureId,
+            consumeAmount,
+            pastMonthsAmortizedAmount,
+            currentMonthAmortizedAmount,
+            futureMonthsAmortizedAmount,
+            amortizedCashAmount,
+            amortizedCreditAmount,
+            amortizedCouponAmount,
+            amortizedFlexipurchaseCouponAmount,
+            amortizedStoredValueCardAmount,
+            amortizedBonusAmount);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1107,27 +887,32 @@ public class NvlCostAnalysedBillDetail  {
         sb.append("    riUsageMeasureId: ").append(toIndentedString(riUsageMeasureId)).append("\n");
         sb.append("    consumeAmount: ").append(toIndentedString(consumeAmount)).append("\n");
         sb.append("    pastMonthsAmortizedAmount: ").append(toIndentedString(pastMonthsAmortizedAmount)).append("\n");
-        sb.append("    currentMonthAmortizedAmount: ").append(toIndentedString(currentMonthAmortizedAmount)).append("\n");
-        sb.append("    futureMonthsAmortizedAmount: ").append(toIndentedString(futureMonthsAmortizedAmount)).append("\n");
+        sb.append("    currentMonthAmortizedAmount: ")
+            .append(toIndentedString(currentMonthAmortizedAmount))
+            .append("\n");
+        sb.append("    futureMonthsAmortizedAmount: ")
+            .append(toIndentedString(futureMonthsAmortizedAmount))
+            .append("\n");
         sb.append("    amortizedCashAmount: ").append(toIndentedString(amortizedCashAmount)).append("\n");
         sb.append("    amortizedCreditAmount: ").append(toIndentedString(amortizedCreditAmount)).append("\n");
         sb.append("    amortizedCouponAmount: ").append(toIndentedString(amortizedCouponAmount)).append("\n");
-        sb.append("    amortizedFlexipurchaseCouponAmount: ").append(toIndentedString(amortizedFlexipurchaseCouponAmount)).append("\n");
-        sb.append("    amortizedStoredValueCardAmount: ").append(toIndentedString(amortizedStoredValueCardAmount)).append("\n");
+        sb.append("    amortizedFlexipurchaseCouponAmount: ")
+            .append(toIndentedString(amortizedFlexipurchaseCouponAmount))
+            .append("\n");
+        sb.append("    amortizedStoredValueCardAmount: ")
+            .append(toIndentedString(amortizedStoredValueCardAmount))
+            .append("\n");
         sb.append("    amortizedBonusAmount: ").append(toIndentedString(amortizedBonusAmount)).append("\n");
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

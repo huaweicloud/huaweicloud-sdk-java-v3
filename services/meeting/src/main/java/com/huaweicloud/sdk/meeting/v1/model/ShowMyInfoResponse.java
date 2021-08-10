@@ -1,190 +1,150 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.CorpBasicInfoDTO;
-import com.huaweicloud.sdk.meeting.v1.model.QueryDeviceInfoResultDTO;
-import com.huaweicloud.sdk.meeting.v1.model.UserFunctionDTO;
-import com.huaweicloud.sdk.meeting.v1.model.UserVmrDTO;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowMyInfoResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="userAccount")
-    
+    @JsonProperty(value = "userAccount")
+
     private String userAccount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="englishName")
-    
+    @JsonProperty(value = "englishName")
+
     private String englishName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="phone")
-    
+    @JsonProperty(value = "phone")
+
     private String phone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="country")
-    
+    @JsonProperty(value = "country")
+
     private String country;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="email")
-    
+    @JsonProperty(value = "email")
+
     private String email;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sipNum")
-    
+    @JsonProperty(value = "sipNum")
+
     private String sipNum;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vmrList")
-    
+    @JsonProperty(value = "vmrList")
+
     private List<UserVmrDTO> vmrList = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deptCode")
-    
+    @JsonProperty(value = "deptCode")
+
     private String deptCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deptName")
-    
+    @JsonProperty(value = "deptName")
+
     private String deptName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deptNamePath")
-    
+    @JsonProperty(value = "deptNamePath")
+
     private String deptNamePath;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="userType")
-    
+    @JsonProperty(value = "userType")
+
     private Integer userType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="adminType")
-    
+    @JsonProperty(value = "adminType")
+
     private Integer adminType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="signature")
-    
+    @JsonProperty(value = "signature")
+
     private String signature;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="title")
-    
+    @JsonProperty(value = "title")
+
     private String title;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="desc")
-    
+    @JsonProperty(value = "desc")
+
     private String desc;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="corp")
-    
+    @JsonProperty(value = "corp")
+
     private CorpBasicInfoDTO corp;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="function")
-    
+    @JsonProperty(value = "function")
+
     private UserFunctionDTO function;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="devType")
-    
+    @JsonProperty(value = "devType")
+
     private QueryDeviceInfoResultDTO devType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private Integer status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sortLevel")
-    
+    @JsonProperty(value = "sortLevel")
+
     private Integer sortLevel;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hidePhone")
-    
+    @JsonProperty(value = "hidePhone")
+
     private Boolean hidePhone;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="visionAccount")
-    
+    @JsonProperty(value = "visionAccount")
+
     private String visionAccount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="thirdAccount")
-    
+    @JsonProperty(value = "thirdAccount")
+
     private String thirdAccount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="license")
-    
+    @JsonProperty(value = "license")
+
     private Integer license;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="activeTime")
-    
+    @JsonProperty(value = "activeTime")
+
     private Long activeTime;
 
     public ShowMyInfoResponse withId(String id) {
@@ -192,13 +152,9 @@ public class ShowMyInfoResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 用户id
-     * @return id
-     */
+    /** 用户id
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -207,20 +163,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowMyInfoResponse withUserAccount(String userAccount) {
         this.userAccount = userAccount;
         return this;
     }
 
-    
-
-
-    /**
-     * 账号
-     * @return userAccount
-     */
+    /** 账号
+     * 
+     * @return userAccount */
     public String getUserAccount() {
         return userAccount;
     }
@@ -229,20 +179,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.userAccount = userAccount;
     }
 
-    
-
     public ShowMyInfoResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 姓名
-     * @return name
-     */
+    /** 姓名
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -251,20 +195,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowMyInfoResponse withEnglishName(String englishName) {
         this.englishName = englishName;
         return this;
     }
 
-    
-
-
-    /**
-     * 英文名称
-     * @return englishName
-     */
+    /** 英文名称
+     * 
+     * @return englishName */
     public String getEnglishName() {
         return englishName;
     }
@@ -273,20 +211,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.englishName = englishName;
     }
 
-    
-
     public ShowMyInfoResponse withPhone(String phone) {
         this.phone = phone;
         return this;
     }
 
-    
-
-
-    /**
-     * 联系电话
-     * @return phone
-     */
+    /** 联系电话
+     * 
+     * @return phone */
     public String getPhone() {
         return phone;
     }
@@ -295,20 +227,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.phone = phone;
     }
 
-    
-
     public ShowMyInfoResponse withCountry(String country) {
         this.country = country;
         return this;
     }
 
-    
-
-
-    /**
-     * 联系电话所属的国家
-     * @return country
-     */
+    /** 联系电话所属的国家
+     * 
+     * @return country */
     public String getCountry() {
         return country;
     }
@@ -317,20 +243,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.country = country;
     }
 
-    
-
     public ShowMyInfoResponse withEmail(String email) {
         this.email = email;
         return this;
     }
 
-    
-
-
-    /**
-     * 邮箱
-     * @return email
-     */
+    /** 邮箱
+     * 
+     * @return email */
     public String getEmail() {
         return email;
     }
@@ -339,20 +259,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.email = email;
     }
 
-    
-
     public ShowMyInfoResponse withSipNum(String sipNum) {
         this.sipNum = sipNum;
         return this;
     }
 
-    
-
-
-    /**
-     * SIP号码
-     * @return sipNum
-     */
+    /** SIP号码
+     * 
+     * @return sipNum */
     public String getSipNum() {
         return sipNum;
     }
@@ -361,16 +275,13 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.sipNum = sipNum;
     }
 
-    
-
     public ShowMyInfoResponse withVmrList(List<UserVmrDTO> vmrList) {
         this.vmrList = vmrList;
         return this;
     }
 
-    
     public ShowMyInfoResponse addVmrListItem(UserVmrDTO vmrListItem) {
-        if(this.vmrList == null) {
+        if (this.vmrList == null) {
             this.vmrList = new ArrayList<>();
         }
         this.vmrList.add(vmrListItem);
@@ -378,17 +289,16 @@ public class ShowMyInfoResponse extends SdkResponse {
     }
 
     public ShowMyInfoResponse withVmrList(Consumer<List<UserVmrDTO>> vmrListSetter) {
-        if(this.vmrList == null) {
+        if (this.vmrList == null) {
             this.vmrList = new ArrayList<>();
         }
         vmrListSetter.accept(this.vmrList);
         return this;
     }
 
-    /**
-     * 云会议室列表
-     * @return vmrList
-     */
+    /** 云会议室列表
+     * 
+     * @return vmrList */
     public List<UserVmrDTO> getVmrList() {
         return vmrList;
     }
@@ -397,20 +307,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.vmrList = vmrList;
     }
 
-    
-
     public ShowMyInfoResponse withDeptCode(String deptCode) {
         this.deptCode = deptCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 部门编码
-     * @return deptCode
-     */
+    /** 部门编码
+     * 
+     * @return deptCode */
     public String getDeptCode() {
         return deptCode;
     }
@@ -419,20 +323,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.deptCode = deptCode;
     }
 
-    
-
     public ShowMyInfoResponse withDeptName(String deptName) {
         this.deptName = deptName;
         return this;
     }
 
-    
-
-
-    /**
-     * 部门名称
-     * @return deptName
-     */
+    /** 部门名称
+     * 
+     * @return deptName */
     public String getDeptName() {
         return deptName;
     }
@@ -441,20 +339,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.deptName = deptName;
     }
 
-    
-
     public ShowMyInfoResponse withDeptNamePath(String deptNamePath) {
         this.deptNamePath = deptNamePath;
         return this;
     }
 
-    
-
-
-    /**
-     * 部门完整名称
-     * @return deptNamePath
-     */
+    /** 部门完整名称
+     * 
+     * @return deptNamePath */
     public String getDeptNamePath() {
         return deptNamePath;
     }
@@ -463,20 +355,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.deptNamePath = deptNamePath;
     }
 
-    
-
     public ShowMyInfoResponse withUserType(Integer userType) {
         this.userType = userType;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户类型 - 2：企业成员账户
-     * @return userType
-     */
+    /** 用户类型 - 2：企业成员账户
+     * 
+     * @return userType */
     public Integer getUserType() {
         return userType;
     }
@@ -485,20 +371,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.userType = userType;
     }
 
-    
-
     public ShowMyInfoResponse withAdminType(Integer adminType) {
         this.adminType = adminType;
         return this;
     }
 
-    
-
-
-    /**
-     * 管理员类型 - 0：默认（超级）管理员 - 1：普通管理员 - 2：非管理员（即为普通企业成员，UserType是2时有效）
-     * @return adminType
-     */
+    /** 管理员类型 - 0：默认（超级）管理员 - 1：普通管理员 - 2：非管理员（即为普通企业成员，UserType是2时有效）
+     * 
+     * @return adminType */
     public Integer getAdminType() {
         return adminType;
     }
@@ -507,20 +387,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.adminType = adminType;
     }
 
-    
-
     public ShowMyInfoResponse withSignature(String signature) {
         this.signature = signature;
         return this;
     }
 
-    
-
-
-    /**
-     * 签名
-     * @return signature
-     */
+    /** 签名
+     * 
+     * @return signature */
     public String getSignature() {
         return signature;
     }
@@ -529,20 +403,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.signature = signature;
     }
 
-    
-
     public ShowMyInfoResponse withTitle(String title) {
         this.title = title;
         return this;
     }
 
-    
-
-
-    /**
-     * 职位
-     * @return title
-     */
+    /** 职位
+     * 
+     * @return title */
     public String getTitle() {
         return title;
     }
@@ -551,20 +419,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.title = title;
     }
 
-    
-
     public ShowMyInfoResponse withDesc(String desc) {
         this.desc = desc;
         return this;
     }
 
-    
-
-
-    /**
-     * 备注
-     * @return desc
-     */
+    /** 备注
+     * 
+     * @return desc */
     public String getDesc() {
         return desc;
     }
@@ -573,27 +435,23 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.desc = desc;
     }
 
-    
-
     public ShowMyInfoResponse withCorp(CorpBasicInfoDTO corp) {
         this.corp = corp;
         return this;
     }
 
     public ShowMyInfoResponse withCorp(Consumer<CorpBasicInfoDTO> corpSetter) {
-        if(this.corp == null ){
+        if (this.corp == null) {
             this.corp = new CorpBasicInfoDTO();
             corpSetter.accept(this.corp);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get corp
-     * @return corp
-     */
+    /** Get corp
+     * 
+     * @return corp */
     public CorpBasicInfoDTO getCorp() {
         return corp;
     }
@@ -602,27 +460,23 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.corp = corp;
     }
 
-    
-
     public ShowMyInfoResponse withFunction(UserFunctionDTO function) {
         this.function = function;
         return this;
     }
 
     public ShowMyInfoResponse withFunction(Consumer<UserFunctionDTO> functionSetter) {
-        if(this.function == null ){
+        if (this.function == null) {
             this.function = new UserFunctionDTO();
             functionSetter.accept(this.function);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get function
-     * @return function
-     */
+    /** Get function
+     * 
+     * @return function */
     public UserFunctionDTO getFunction() {
         return function;
     }
@@ -631,27 +485,23 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.function = function;
     }
 
-    
-
     public ShowMyInfoResponse withDevType(QueryDeviceInfoResultDTO devType) {
         this.devType = devType;
         return this;
     }
 
     public ShowMyInfoResponse withDevType(Consumer<QueryDeviceInfoResultDTO> devTypeSetter) {
-        if(this.devType == null ){
+        if (this.devType == null) {
             this.devType = new QueryDeviceInfoResultDTO();
             devTypeSetter.accept(this.devType);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get devType
-     * @return devType
-     */
+    /** Get devType
+     * 
+     * @return devType */
     public QueryDeviceInfoResultDTO getDevType() {
         return devType;
     }
@@ -660,20 +510,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.devType = devType;
     }
 
-    
-
     public ShowMyInfoResponse withStatus(Integer status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户状态 * 0、正常 * 1、停用 
-     * @return status
-     */
+    /** 用户状态 * 0、正常 * 1、停用
+     * 
+     * @return status */
     public Integer getStatus() {
         return status;
     }
@@ -682,20 +526,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public ShowMyInfoResponse withSortLevel(Integer sortLevel) {
         this.sortLevel = sortLevel;
         return this;
     }
 
-    
-
-
-    /**
-     * 通讯录排序等级，序号越低优先级越高
-     * @return sortLevel
-     */
+    /** 通讯录排序等级，序号越低优先级越高
+     * 
+     * @return sortLevel */
     public Integer getSortLevel() {
         return sortLevel;
     }
@@ -704,20 +542,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.sortLevel = sortLevel;
     }
 
-    
-
     public ShowMyInfoResponse withHidePhone(Boolean hidePhone) {
         this.hidePhone = hidePhone;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否隐藏手机号码
-     * @return hidePhone
-     */
+    /** 是否隐藏手机号码
+     * 
+     * @return hidePhone */
     public Boolean getHidePhone() {
         return hidePhone;
     }
@@ -726,20 +558,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.hidePhone = hidePhone;
     }
 
-    
-
     public ShowMyInfoResponse withVisionAccount(String visionAccount) {
         this.visionAccount = visionAccount;
         return this;
     }
 
-    
-
-
-    /**
-     * 智慧屏唯一账号
-     * @return visionAccount
-     */
+    /** 智慧屏唯一账号
+     * 
+     * @return visionAccount */
     public String getVisionAccount() {
         return visionAccount;
     }
@@ -748,20 +574,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.visionAccount = visionAccount;
     }
 
-    
-
     public ShowMyInfoResponse withThirdAccount(String thirdAccount) {
         this.thirdAccount = thirdAccount;
         return this;
     }
 
-    
-
-
-    /**
-     * 第三方账号，自动开户的第三方账号、Ideahub账号的sn等
-     * @return thirdAccount
-     */
+    /** 第三方账号，自动开户的第三方账号、Ideahub账号的sn等
+     * 
+     * @return thirdAccount */
     public String getThirdAccount() {
         return thirdAccount;
     }
@@ -770,20 +590,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.thirdAccount = thirdAccount;
     }
 
-    
-
     public ShowMyInfoResponse withLicense(Integer license) {
         this.license = license;
         return this;
     }
 
-    
-
-
-    /**
-     * 许可证 * 0：商用； * 1：免费试用。 
-     * @return license
-     */
+    /** 许可证 * 0：商用； * 1：免费试用。
+     * 
+     * @return license */
     public Integer getLicense() {
         return license;
     }
@@ -792,20 +606,14 @@ public class ShowMyInfoResponse extends SdkResponse {
         this.license = license;
     }
 
-    
-
     public ShowMyInfoResponse withActiveTime(Long activeTime) {
         this.activeTime = activeTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 激活时间，utc时间戳
-     * @return activeTime
-     */
+    /** 激活时间，utc时间戳
+     * 
+     * @return activeTime */
     public Long getActiveTime() {
         return activeTime;
     }
@@ -813,8 +621,6 @@ public class ShowMyInfoResponse extends SdkResponse {
     public void setActiveTime(Long activeTime) {
         this.activeTime = activeTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -825,38 +631,65 @@ public class ShowMyInfoResponse extends SdkResponse {
             return false;
         }
         ShowMyInfoResponse showMyInfoResponse = (ShowMyInfoResponse) o;
-        return Objects.equals(this.id, showMyInfoResponse.id) &&
-            Objects.equals(this.userAccount, showMyInfoResponse.userAccount) &&
-            Objects.equals(this.name, showMyInfoResponse.name) &&
-            Objects.equals(this.englishName, showMyInfoResponse.englishName) &&
-            Objects.equals(this.phone, showMyInfoResponse.phone) &&
-            Objects.equals(this.country, showMyInfoResponse.country) &&
-            Objects.equals(this.email, showMyInfoResponse.email) &&
-            Objects.equals(this.sipNum, showMyInfoResponse.sipNum) &&
-            Objects.equals(this.vmrList, showMyInfoResponse.vmrList) &&
-            Objects.equals(this.deptCode, showMyInfoResponse.deptCode) &&
-            Objects.equals(this.deptName, showMyInfoResponse.deptName) &&
-            Objects.equals(this.deptNamePath, showMyInfoResponse.deptNamePath) &&
-            Objects.equals(this.userType, showMyInfoResponse.userType) &&
-            Objects.equals(this.adminType, showMyInfoResponse.adminType) &&
-            Objects.equals(this.signature, showMyInfoResponse.signature) &&
-            Objects.equals(this.title, showMyInfoResponse.title) &&
-            Objects.equals(this.desc, showMyInfoResponse.desc) &&
-            Objects.equals(this.corp, showMyInfoResponse.corp) &&
-            Objects.equals(this.function, showMyInfoResponse.function) &&
-            Objects.equals(this.devType, showMyInfoResponse.devType) &&
-            Objects.equals(this.status, showMyInfoResponse.status) &&
-            Objects.equals(this.sortLevel, showMyInfoResponse.sortLevel) &&
-            Objects.equals(this.hidePhone, showMyInfoResponse.hidePhone) &&
-            Objects.equals(this.visionAccount, showMyInfoResponse.visionAccount) &&
-            Objects.equals(this.thirdAccount, showMyInfoResponse.thirdAccount) &&
-            Objects.equals(this.license, showMyInfoResponse.license) &&
-            Objects.equals(this.activeTime, showMyInfoResponse.activeTime);
+        return Objects.equals(this.id, showMyInfoResponse.id)
+            && Objects.equals(this.userAccount, showMyInfoResponse.userAccount)
+            && Objects.equals(this.name, showMyInfoResponse.name)
+            && Objects.equals(this.englishName, showMyInfoResponse.englishName)
+            && Objects.equals(this.phone, showMyInfoResponse.phone)
+            && Objects.equals(this.country, showMyInfoResponse.country)
+            && Objects.equals(this.email, showMyInfoResponse.email)
+            && Objects.equals(this.sipNum, showMyInfoResponse.sipNum)
+            && Objects.equals(this.vmrList, showMyInfoResponse.vmrList)
+            && Objects.equals(this.deptCode, showMyInfoResponse.deptCode)
+            && Objects.equals(this.deptName, showMyInfoResponse.deptName)
+            && Objects.equals(this.deptNamePath, showMyInfoResponse.deptNamePath)
+            && Objects.equals(this.userType, showMyInfoResponse.userType)
+            && Objects.equals(this.adminType, showMyInfoResponse.adminType)
+            && Objects.equals(this.signature, showMyInfoResponse.signature)
+            && Objects.equals(this.title, showMyInfoResponse.title)
+            && Objects.equals(this.desc, showMyInfoResponse.desc) && Objects.equals(this.corp, showMyInfoResponse.corp)
+            && Objects.equals(this.function, showMyInfoResponse.function)
+            && Objects.equals(this.devType, showMyInfoResponse.devType)
+            && Objects.equals(this.status, showMyInfoResponse.status)
+            && Objects.equals(this.sortLevel, showMyInfoResponse.sortLevel)
+            && Objects.equals(this.hidePhone, showMyInfoResponse.hidePhone)
+            && Objects.equals(this.visionAccount, showMyInfoResponse.visionAccount)
+            && Objects.equals(this.thirdAccount, showMyInfoResponse.thirdAccount)
+            && Objects.equals(this.license, showMyInfoResponse.license)
+            && Objects.equals(this.activeTime, showMyInfoResponse.activeTime);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, userAccount, name, englishName, phone, country, email, sipNum, vmrList, deptCode, deptName, deptNamePath, userType, adminType, signature, title, desc, corp, function, devType, status, sortLevel, hidePhone, visionAccount, thirdAccount, license, activeTime);
+        return Objects.hash(id,
+            userAccount,
+            name,
+            englishName,
+            phone,
+            country,
+            email,
+            sipNum,
+            vmrList,
+            deptCode,
+            deptName,
+            deptNamePath,
+            userType,
+            adminType,
+            signature,
+            title,
+            desc,
+            corp,
+            function,
+            devType,
+            status,
+            sortLevel,
+            hidePhone,
+            visionAccount,
+            thirdAccount,
+            license,
+            activeTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -891,16 +724,13 @@ public class ShowMyInfoResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

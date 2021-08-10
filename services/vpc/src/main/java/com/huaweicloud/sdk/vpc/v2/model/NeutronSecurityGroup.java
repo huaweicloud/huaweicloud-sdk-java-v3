@@ -1,72 +1,57 @@
 package com.huaweicloud.sdk.vpc.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.vpc.v2.model.NeutronSecurityGroupRule;
+
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class NeutronSecurityGroup  {
-
-
+public class NeutronSecurityGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_rules")
-    
+    @JsonProperty(value = "security_group_rules")
+
     private List<NeutronSecurityGroupRule> securityGroupRules = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
+
     private String tenantId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
+
     private OffsetDateTime createdAt;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
+
     private OffsetDateTime updatedAt;
 
     public NeutronSecurityGroup withDescription(String description) {
@@ -74,13 +59,9 @@ public class NeutronSecurityGroup  {
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：安全组描述 取值范围：0-255个字符
-     * @return description
-     */
+    /** 功能说明：安全组描述 取值范围：0-255个字符
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -89,20 +70,14 @@ public class NeutronSecurityGroup  {
         this.description = description;
     }
 
-    
-
     public NeutronSecurityGroup withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组ID
-     * @return id
-     */
+    /** 安全组ID
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -111,20 +86,14 @@ public class NeutronSecurityGroup  {
         this.id = id;
     }
 
-    
-
     public NeutronSecurityGroup withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：安全组名称 取值范围：0-255个字符
-     * @return name
-     */
+    /** 功能说明：安全组名称 取值范围：0-255个字符
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -133,34 +102,31 @@ public class NeutronSecurityGroup  {
         this.name = name;
     }
 
-    
-
     public NeutronSecurityGroup withSecurityGroupRules(List<NeutronSecurityGroupRule> securityGroupRules) {
         this.securityGroupRules = securityGroupRules;
         return this;
     }
 
-    
     public NeutronSecurityGroup addSecurityGroupRulesItem(NeutronSecurityGroupRule securityGroupRulesItem) {
-        if(this.securityGroupRules == null) {
+        if (this.securityGroupRules == null) {
             this.securityGroupRules = new ArrayList<>();
         }
         this.securityGroupRules.add(securityGroupRulesItem);
         return this;
     }
 
-    public NeutronSecurityGroup withSecurityGroupRules(Consumer<List<NeutronSecurityGroupRule>> securityGroupRulesSetter) {
-        if(this.securityGroupRules == null) {
+    public NeutronSecurityGroup withSecurityGroupRules(
+        Consumer<List<NeutronSecurityGroupRule>> securityGroupRulesSetter) {
+        if (this.securityGroupRules == null) {
             this.securityGroupRules = new ArrayList<>();
         }
         securityGroupRulesSetter.accept(this.securityGroupRules);
         return this;
     }
 
-    /**
-     * 安全组规则，详情参见Security Group Rule对象
-     * @return securityGroupRules
-     */
+    /** 安全组规则，详情参见Security Group Rule对象
+     * 
+     * @return securityGroupRules */
     public List<NeutronSecurityGroupRule> getSecurityGroupRules() {
         return securityGroupRules;
     }
@@ -169,20 +135,14 @@ public class NeutronSecurityGroup  {
         this.securityGroupRules = securityGroupRules;
     }
 
-    
-
     public NeutronSecurityGroup withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目ID
-     * @return tenantId
-     */
+    /** 项目ID
+     * 
+     * @return tenantId */
     public String getTenantId() {
         return tenantId;
     }
@@ -191,20 +151,14 @@ public class NeutronSecurityGroup  {
         this.tenantId = tenantId;
     }
 
-    
-
     public NeutronSecurityGroup withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目ID
-     * @return projectId
-     */
+    /** 项目ID
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -213,20 +167,14 @@ public class NeutronSecurityGroup  {
         this.projectId = projectId;
     }
 
-    
-
     public NeutronSecurityGroup withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：资源创建UTC时间 格式：yyyy-MM-ddTHH:mm:ss
-     * @return createdAt
-     */
+    /** 功能说明：资源创建UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+     * 
+     * @return createdAt */
     public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
@@ -235,20 +183,14 @@ public class NeutronSecurityGroup  {
         this.createdAt = createdAt;
     }
 
-    
-
     public NeutronSecurityGroup withUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
 
-    
-
-
-    /**
-     * 功能说明：资源更新UTC时间 格式：yyyy-MM-ddTHH:mm:ss
-     * @return updatedAt
-     */
+    /** 功能说明：资源更新UTC时间 格式：yyyy-MM-ddTHH:mm:ss
+     * 
+     * @return updatedAt */
     public OffsetDateTime getUpdatedAt() {
         return updatedAt;
     }
@@ -256,8 +198,6 @@ public class NeutronSecurityGroup  {
     public void setUpdatedAt(OffsetDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -268,19 +208,20 @@ public class NeutronSecurityGroup  {
             return false;
         }
         NeutronSecurityGroup neutronSecurityGroup = (NeutronSecurityGroup) o;
-        return Objects.equals(this.description, neutronSecurityGroup.description) &&
-            Objects.equals(this.id, neutronSecurityGroup.id) &&
-            Objects.equals(this.name, neutronSecurityGroup.name) &&
-            Objects.equals(this.securityGroupRules, neutronSecurityGroup.securityGroupRules) &&
-            Objects.equals(this.tenantId, neutronSecurityGroup.tenantId) &&
-            Objects.equals(this.projectId, neutronSecurityGroup.projectId) &&
-            Objects.equals(this.createdAt, neutronSecurityGroup.createdAt) &&
-            Objects.equals(this.updatedAt, neutronSecurityGroup.updatedAt);
+        return Objects.equals(this.description, neutronSecurityGroup.description)
+            && Objects.equals(this.id, neutronSecurityGroup.id) && Objects.equals(this.name, neutronSecurityGroup.name)
+            && Objects.equals(this.securityGroupRules, neutronSecurityGroup.securityGroupRules)
+            && Objects.equals(this.tenantId, neutronSecurityGroup.tenantId)
+            && Objects.equals(this.projectId, neutronSecurityGroup.projectId)
+            && Objects.equals(this.createdAt, neutronSecurityGroup.createdAt)
+            && Objects.equals(this.updatedAt, neutronSecurityGroup.updatedAt);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(description, id, name, securityGroupRules, tenantId, projectId, createdAt, updatedAt);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -296,16 +237,13 @@ public class NeutronSecurityGroup  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

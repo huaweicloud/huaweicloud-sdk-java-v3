@@ -1,27 +1,17 @@
 package com.huaweicloud.sdk.ecs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ecs.v2.model.ResizePostPaidServerOption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * This is a auto create Body Object
- */
-public class ResizePostPaidServerRequestBody  {
-
-
+/** This is a auto create Body Object */
+public class ResizePostPaidServerRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resize")
-    
+    @JsonProperty(value = "resize")
+
     private ResizePostPaidServerOption resize;
 
     public ResizePostPaidServerRequestBody withResize(ResizePostPaidServerOption resize) {
@@ -30,19 +20,17 @@ public class ResizePostPaidServerRequestBody  {
     }
 
     public ResizePostPaidServerRequestBody withResize(Consumer<ResizePostPaidServerOption> resizeSetter) {
-        if(this.resize == null ){
+        if (this.resize == null) {
             this.resize = new ResizePostPaidServerOption();
             resizeSetter.accept(this.resize);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get resize
-     * @return resize
-     */
+    /** Get resize
+     * 
+     * @return resize */
     public ResizePostPaidServerOption getResize() {
         return resize;
     }
@@ -50,8 +38,6 @@ public class ResizePostPaidServerRequestBody  {
     public void setResize(ResizePostPaidServerOption resize) {
         this.resize = resize;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -64,10 +50,12 @@ public class ResizePostPaidServerRequestBody  {
         ResizePostPaidServerRequestBody resizePostPaidServerRequestBody = (ResizePostPaidServerRequestBody) o;
         return Objects.equals(this.resize, resizePostPaidServerRequestBody.resize);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resize);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,16 +64,13 @@ public class ResizePostPaidServerRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

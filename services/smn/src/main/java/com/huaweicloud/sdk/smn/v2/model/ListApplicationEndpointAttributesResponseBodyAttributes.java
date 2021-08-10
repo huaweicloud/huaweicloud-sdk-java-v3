@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.smn.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ListApplicationEndpointAttributesResponseBodyAttributes
- */
-public class ListApplicationEndpointAttributesResponseBodyAttributes  {
-
-
+/** ListApplicationEndpointAttributesResponseBodyAttributes */
+public class ListApplicationEndpointAttributesResponseBodyAttributes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enabled")
-    
+    @JsonProperty(value = "enabled")
+
     private String enabled;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="token")
-    
+    @JsonProperty(value = "token")
+
     private String token;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_data")
-    
+    @JsonProperty(value = "user_data")
+
     private String userData;
 
     public ListApplicationEndpointAttributesResponseBodyAttributes withEnabled(String enabled) {
@@ -40,13 +28,9 @@ public class ListApplicationEndpointAttributesResponseBodyAttributes  {
         return this;
     }
 
-    
-
-
-    /**
-     * 设备是否可用。
-     * @return enabled
-     */
+    /** 设备是否可用。
+     * 
+     * @return enabled */
     public String getEnabled() {
         return enabled;
     }
@@ -55,20 +39,14 @@ public class ListApplicationEndpointAttributesResponseBodyAttributes  {
         this.enabled = enabled;
     }
 
-    
-
     public ListApplicationEndpointAttributesResponseBodyAttributes withToken(String token) {
         this.token = token;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备token。
-     * @return token
-     */
+    /** 设备token。
+     * 
+     * @return token */
     public String getToken() {
         return token;
     }
@@ -77,20 +55,14 @@ public class ListApplicationEndpointAttributesResponseBodyAttributes  {
         this.token = token;
     }
 
-    
-
     public ListApplicationEndpointAttributesResponseBodyAttributes withUserData(String userData) {
         this.userData = userData;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户数据。
-     * @return userData
-     */
+    /** 用户数据。
+     * 
+     * @return userData */
     public String getUserData() {
         return userData;
     }
@@ -98,8 +70,6 @@ public class ListApplicationEndpointAttributesResponseBodyAttributes  {
     public void setUserData(String userData) {
         this.userData = userData;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,15 +79,18 @@ public class ListApplicationEndpointAttributesResponseBodyAttributes  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListApplicationEndpointAttributesResponseBodyAttributes listApplicationEndpointAttributesResponseBodyAttributes = (ListApplicationEndpointAttributesResponseBodyAttributes) o;
-        return Objects.equals(this.enabled, listApplicationEndpointAttributesResponseBodyAttributes.enabled) &&
-            Objects.equals(this.token, listApplicationEndpointAttributesResponseBodyAttributes.token) &&
-            Objects.equals(this.userData, listApplicationEndpointAttributesResponseBodyAttributes.userData);
+        ListApplicationEndpointAttributesResponseBodyAttributes listApplicationEndpointAttributesResponseBodyAttributes =
+            (ListApplicationEndpointAttributesResponseBodyAttributes) o;
+        return Objects.equals(this.enabled, listApplicationEndpointAttributesResponseBodyAttributes.enabled)
+            && Objects.equals(this.token, listApplicationEndpointAttributesResponseBodyAttributes.token)
+            && Objects.equals(this.userData, listApplicationEndpointAttributesResponseBodyAttributes.userData);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(enabled, token, userData);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +101,13 @@ public class ListApplicationEndpointAttributesResponseBodyAttributes  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

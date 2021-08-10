@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.sa.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sa.v1.model.Events;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class ImportEventsRequest  {
-
-
+/** Request Object */
+public class ImportEventsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private Events body;
 
     public ImportEventsRequest withXLanguage(String xLanguage) {
@@ -35,15 +24,11 @@ public class ImportEventsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * Get xLanguage
-     * @return xLanguage
-     */
+    /** Get xLanguage
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -52,27 +37,23 @@ public class ImportEventsRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ImportEventsRequest withBody(Events body) {
         this.body = body;
         return this;
     }
 
     public ImportEventsRequest withBody(Consumer<Events> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new Events();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public Events getBody() {
         return body;
     }
@@ -80,8 +61,6 @@ public class ImportEventsRequest  {
     public void setBody(Events body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -92,13 +71,15 @@ public class ImportEventsRequest  {
             return false;
         }
         ImportEventsRequest importEventsRequest = (ImportEventsRequest) o;
-        return Objects.equals(this.xLanguage, importEventsRequest.xLanguage) &&
-            Objects.equals(this.body, importEventsRequest.body);
+        return Objects.equals(this.xLanguage, importEventsRequest.xLanguage)
+            && Objects.equals(this.body, importEventsRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -108,16 +89,13 @@ public class ImportEventsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

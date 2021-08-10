@@ -1,53 +1,38 @@
 package com.huaweicloud.sdk.sms.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.sms.v3.model.BtrfsFileSystem;
-import com.huaweicloud.sdk.sms.v3.model.Disk;
-import com.huaweicloud.sdk.sms.v3.model.VolumeGroups;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * This is a auto create Body Object
- */
-public class PutDiskInfoReq  {
-
-
+/** This is a auto create Body Object */
+public class PutDiskInfoReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disks")
-    
+    @JsonProperty(value = "disks")
+
     private List<Disk> disks = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volumegroups")
-    
+    @JsonProperty(value = "volumegroups")
+
     private List<VolumeGroups> volumegroups = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="btrfs_list")
-    
+    @JsonProperty(value = "btrfs_list")
+
     private List<BtrfsFileSystem> btrfsList = null;
-    
+
     public PutDiskInfoReq withDisks(List<Disk> disks) {
         this.disks = disks;
         return this;
     }
 
-    
     public PutDiskInfoReq addDisksItem(Disk disksItem) {
-        if(this.disks == null) {
+        if (this.disks == null) {
             this.disks = new ArrayList<>();
         }
         this.disks.add(disksItem);
@@ -55,17 +40,16 @@ public class PutDiskInfoReq  {
     }
 
     public PutDiskInfoReq withDisks(Consumer<List<Disk>> disksSetter) {
-        if(this.disks == null) {
+        if (this.disks == null) {
             this.disks = new ArrayList<>();
         }
         disksSetter.accept(this.disks);
         return this;
     }
 
-    /**
-     * 更新的磁盘信息
-     * @return disks
-     */
+    /** 更新的磁盘信息
+     * 
+     * @return disks */
     public List<Disk> getDisks() {
         return disks;
     }
@@ -74,16 +58,13 @@ public class PutDiskInfoReq  {
         this.disks = disks;
     }
 
-    
-
     public PutDiskInfoReq withVolumegroups(List<VolumeGroups> volumegroups) {
         this.volumegroups = volumegroups;
         return this;
     }
 
-    
     public PutDiskInfoReq addVolumegroupsItem(VolumeGroups volumegroupsItem) {
-        if(this.volumegroups == null) {
+        if (this.volumegroups == null) {
             this.volumegroups = new ArrayList<>();
         }
         this.volumegroups.add(volumegroupsItem);
@@ -91,17 +72,16 @@ public class PutDiskInfoReq  {
     }
 
     public PutDiskInfoReq withVolumegroups(Consumer<List<VolumeGroups>> volumegroupsSetter) {
-        if(this.volumegroups == null) {
+        if (this.volumegroups == null) {
             this.volumegroups = new ArrayList<>();
         }
         volumegroupsSetter.accept(this.volumegroups);
         return this;
     }
 
-    /**
-     * 更新的卷信息
-     * @return volumegroups
-     */
+    /** 更新的卷信息
+     * 
+     * @return volumegroups */
     public List<VolumeGroups> getVolumegroups() {
         return volumegroups;
     }
@@ -110,16 +90,13 @@ public class PutDiskInfoReq  {
         this.volumegroups = volumegroups;
     }
 
-    
-
     public PutDiskInfoReq withBtrfsList(List<BtrfsFileSystem> btrfsList) {
         this.btrfsList = btrfsList;
         return this;
     }
 
-    
     public PutDiskInfoReq addBtrfsListItem(BtrfsFileSystem btrfsListItem) {
-        if(this.btrfsList == null) {
+        if (this.btrfsList == null) {
             this.btrfsList = new ArrayList<>();
         }
         this.btrfsList.add(btrfsListItem);
@@ -127,17 +104,16 @@ public class PutDiskInfoReq  {
     }
 
     public PutDiskInfoReq withBtrfsList(Consumer<List<BtrfsFileSystem>> btrfsListSetter) {
-        if(this.btrfsList == null) {
+        if (this.btrfsList == null) {
             this.btrfsList = new ArrayList<>();
         }
         btrfsListSetter.accept(this.btrfsList);
         return this;
     }
 
-    /**
-     * 更新的btrfs信息
-     * @return btrfsList
-     */
+    /** 更新的btrfs信息
+     * 
+     * @return btrfsList */
     public List<BtrfsFileSystem> getBtrfsList() {
         return btrfsList;
     }
@@ -145,8 +121,6 @@ public class PutDiskInfoReq  {
     public void setBtrfsList(List<BtrfsFileSystem> btrfsList) {
         this.btrfsList = btrfsList;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -157,14 +131,16 @@ public class PutDiskInfoReq  {
             return false;
         }
         PutDiskInfoReq putDiskInfoReq = (PutDiskInfoReq) o;
-        return Objects.equals(this.disks, putDiskInfoReq.disks) &&
-            Objects.equals(this.volumegroups, putDiskInfoReq.volumegroups) &&
-            Objects.equals(this.btrfsList, putDiskInfoReq.btrfsList);
+        return Objects.equals(this.disks, putDiskInfoReq.disks)
+            && Objects.equals(this.volumegroups, putDiskInfoReq.volumegroups)
+            && Objects.equals(this.btrfsList, putDiskInfoReq.btrfsList);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(disks, volumegroups, btrfsList);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -175,16 +151,13 @@ public class PutDiskInfoReq  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,53 +1,35 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.osm.v2.model.IncidentInfoV2;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListCasesResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
-    
+    @JsonProperty(value = "total_count")
+
     private Integer totalCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="incident_info_list")
-    
+    @JsonProperty(value = "incident_info_list")
+
     private List<IncidentInfoV2> incidentInfoList = null;
-    
+
     public ListCasesResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 总数
-     * minimum: 0
-     * maximum: 65535
-     * @return totalCount
-     */
+    /** 总数 minimum: 0 maximum: 65535
+     * 
+     * @return totalCount */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -56,16 +38,13 @@ public class ListCasesResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
-    
-
     public ListCasesResponse withIncidentInfoList(List<IncidentInfoV2> incidentInfoList) {
         this.incidentInfoList = incidentInfoList;
         return this;
     }
 
-    
     public ListCasesResponse addIncidentInfoListItem(IncidentInfoV2 incidentInfoListItem) {
-        if(this.incidentInfoList == null) {
+        if (this.incidentInfoList == null) {
             this.incidentInfoList = new ArrayList<>();
         }
         this.incidentInfoList.add(incidentInfoListItem);
@@ -73,17 +52,16 @@ public class ListCasesResponse extends SdkResponse {
     }
 
     public ListCasesResponse withIncidentInfoList(Consumer<List<IncidentInfoV2>> incidentInfoListSetter) {
-        if(this.incidentInfoList == null) {
+        if (this.incidentInfoList == null) {
             this.incidentInfoList = new ArrayList<>();
         }
         incidentInfoListSetter.accept(this.incidentInfoList);
         return this;
     }
 
-    /**
-     * 工单列表
-     * @return incidentInfoList
-     */
+    /** 工单列表
+     * 
+     * @return incidentInfoList */
     public List<IncidentInfoV2> getIncidentInfoList() {
         return incidentInfoList;
     }
@@ -91,8 +69,6 @@ public class ListCasesResponse extends SdkResponse {
     public void setIncidentInfoList(List<IncidentInfoV2> incidentInfoList) {
         this.incidentInfoList = incidentInfoList;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -103,13 +79,15 @@ public class ListCasesResponse extends SdkResponse {
             return false;
         }
         ListCasesResponse listCasesResponse = (ListCasesResponse) o;
-        return Objects.equals(this.totalCount, listCasesResponse.totalCount) &&
-            Objects.equals(this.incidentInfoList, listCasesResponse.incidentInfoList);
+        return Objects.equals(this.totalCount, listCasesResponse.totalCount)
+            && Objects.equals(this.incidentInfoList, listCasesResponse.incidentInfoList);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(totalCount, incidentInfoList);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -119,16 +97,13 @@ public class ListCasesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

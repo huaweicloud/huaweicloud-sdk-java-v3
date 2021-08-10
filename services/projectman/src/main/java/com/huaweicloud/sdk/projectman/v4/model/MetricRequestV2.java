@@ -1,45 +1,32 @@
 package com.huaweicloud.sdk.projectman.v4.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.projectman.v4.model.MetricRequestV2Dividend;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * MetricRequestV2
- */
-public class MetricRequestV2  {
-
-
+/** MetricRequestV2 */
+public class MetricRequestV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="date_range")
-    
+    @JsonProperty(value = "date_range")
+
     private String dateRange;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metric_type")
-    
+    @JsonProperty(value = "metric_type")
+
     private String metricType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dividend")
-    
+    @JsonProperty(value = "dividend")
+
     private MetricRequestV2Dividend dividend;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="divisor")
-    
+    @JsonProperty(value = "divisor")
+
     private Object divisor;
 
     public MetricRequestV2 withDateRange(String dateRange) {
@@ -47,13 +34,9 @@ public class MetricRequestV2  {
         return this;
     }
 
-    
-
-
-    /**
-     * 统计周期
-     * @return dateRange
-     */
+    /** 统计周期
+     * 
+     * @return dateRange */
     public String getDateRange() {
         return dateRange;
     }
@@ -62,20 +45,14 @@ public class MetricRequestV2  {
         this.dateRange = dateRange;
     }
 
-    
-
     public MetricRequestV2 withMetricType(String metricType) {
         this.metricType = metricType;
         return this;
     }
 
-    
-
-
-    /**
-     * 指标类型
-     * @return metricType
-     */
+    /** 指标类型
+     * 
+     * @return metricType */
     public String getMetricType() {
         return metricType;
     }
@@ -84,27 +61,23 @@ public class MetricRequestV2  {
         this.metricType = metricType;
     }
 
-    
-
     public MetricRequestV2 withDividend(MetricRequestV2Dividend dividend) {
         this.dividend = dividend;
         return this;
     }
 
     public MetricRequestV2 withDividend(Consumer<MetricRequestV2Dividend> dividendSetter) {
-        if(this.dividend == null ){
+        if (this.dividend == null) {
             this.dividend = new MetricRequestV2Dividend();
             dividendSetter.accept(this.dividend);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get dividend
-     * @return dividend
-     */
+    /** Get dividend
+     * 
+     * @return dividend */
     public MetricRequestV2Dividend getDividend() {
         return dividend;
     }
@@ -113,20 +86,14 @@ public class MetricRequestV2  {
         this.dividend = dividend;
     }
 
-    
-
     public MetricRequestV2 withDivisor(Object divisor) {
         this.divisor = divisor;
         return this;
     }
 
-    
-
-
-    /**
-     * 指标分母过滤条件
-     * @return divisor
-     */
+    /** 指标分母过滤条件
+     * 
+     * @return divisor */
     public Object getDivisor() {
         return divisor;
     }
@@ -134,8 +101,6 @@ public class MetricRequestV2  {
     public void setDivisor(Object divisor) {
         this.divisor = divisor;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -146,15 +111,17 @@ public class MetricRequestV2  {
             return false;
         }
         MetricRequestV2 metricRequestV2 = (MetricRequestV2) o;
-        return Objects.equals(this.dateRange, metricRequestV2.dateRange) &&
-            Objects.equals(this.metricType, metricRequestV2.metricType) &&
-            Objects.equals(this.dividend, metricRequestV2.dividend) &&
-            Objects.equals(this.divisor, metricRequestV2.divisor);
+        return Objects.equals(this.dateRange, metricRequestV2.dateRange)
+            && Objects.equals(this.metricType, metricRequestV2.metricType)
+            && Objects.equals(this.dividend, metricRequestV2.dividend)
+            && Objects.equals(this.divisor, metricRequestV2.divisor);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(dateRange, metricType, dividend, divisor);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -166,16 +133,13 @@ public class MetricRequestV2  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

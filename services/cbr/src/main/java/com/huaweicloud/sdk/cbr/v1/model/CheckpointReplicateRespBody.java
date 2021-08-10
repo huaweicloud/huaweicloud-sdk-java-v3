@@ -1,71 +1,54 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbr.v1.model.CheckpointReplicateRespbackups;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * CheckpointReplicateRespBody
- */
-public class CheckpointReplicateRespBody  {
-
-
+/** CheckpointReplicateRespBody */
+public class CheckpointReplicateRespBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backups")
-    
+    @JsonProperty(value = "backups")
+
     private List<CheckpointReplicateRespbackups> backups = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination_project_id")
-    
+    @JsonProperty(value = "destination_project_id")
+
     private String destinationProjectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination_region")
-    
+    @JsonProperty(value = "destination_region")
+
     private String destinationRegion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination_vault_id")
-    
+    @JsonProperty(value = "destination_vault_id")
+
     private String destinationVaultId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provider_id")
-    
+    @JsonProperty(value = "provider_id")
+
     private String providerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_region")
-    
+    @JsonProperty(value = "source_region")
+
     private String sourceRegion;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vault_id")
-    
+    @JsonProperty(value = "vault_id")
+
     private String vaultId;
 
     public CheckpointReplicateRespBody withBackups(List<CheckpointReplicateRespbackups> backups) {
@@ -73,9 +56,8 @@ public class CheckpointReplicateRespBody  {
         return this;
     }
 
-    
     public CheckpointReplicateRespBody addBackupsItem(CheckpointReplicateRespbackups backupsItem) {
-        if(this.backups == null) {
+        if (this.backups == null) {
             this.backups = new ArrayList<>();
         }
         this.backups.add(backupsItem);
@@ -83,17 +65,16 @@ public class CheckpointReplicateRespBody  {
     }
 
     public CheckpointReplicateRespBody withBackups(Consumer<List<CheckpointReplicateRespbackups>> backupsSetter) {
-        if(this.backups == null) {
+        if (this.backups == null) {
             this.backups = new ArrayList<>();
         }
         backupsSetter.accept(this.backups);
         return this;
     }
 
-    /**
-     * 待复制的备份列表
-     * @return backups
-     */
+    /** 待复制的备份列表
+     * 
+     * @return backups */
     public List<CheckpointReplicateRespbackups> getBackups() {
         return backups;
     }
@@ -102,20 +83,14 @@ public class CheckpointReplicateRespBody  {
         this.backups = backups;
     }
 
-    
-
     public CheckpointReplicateRespBody withDestinationProjectId(String destinationProjectId) {
         this.destinationProjectId = destinationProjectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 复制的目标项目ID
-     * @return destinationProjectId
-     */
+    /** 复制的目标项目ID
+     * 
+     * @return destinationProjectId */
     public String getDestinationProjectId() {
         return destinationProjectId;
     }
@@ -124,20 +99,14 @@ public class CheckpointReplicateRespBody  {
         this.destinationProjectId = destinationProjectId;
     }
 
-    
-
     public CheckpointReplicateRespBody withDestinationRegion(String destinationRegion) {
         this.destinationRegion = destinationRegion;
         return this;
     }
 
-    
-
-
-    /**
-     * 复制的目标区域
-     * @return destinationRegion
-     */
+    /** 复制的目标区域
+     * 
+     * @return destinationRegion */
     public String getDestinationRegion() {
         return destinationRegion;
     }
@@ -146,20 +115,14 @@ public class CheckpointReplicateRespBody  {
         this.destinationRegion = destinationRegion;
     }
 
-    
-
     public CheckpointReplicateRespBody withDestinationVaultId(String destinationVaultId) {
         this.destinationVaultId = destinationVaultId;
         return this;
     }
 
-    
-
-
-    /**
-     * 目标区域存储库ID
-     * @return destinationVaultId
-     */
+    /** 目标区域存储库ID
+     * 
+     * @return destinationVaultId */
     public String getDestinationVaultId() {
         return destinationVaultId;
     }
@@ -168,20 +131,14 @@ public class CheckpointReplicateRespBody  {
         this.destinationVaultId = destinationVaultId;
     }
 
-    
-
     public CheckpointReplicateRespBody withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 执行复制的项目ID
-     * @return projectId
-     */
+    /** 执行复制的项目ID
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -190,20 +147,14 @@ public class CheckpointReplicateRespBody  {
         this.projectId = projectId;
     }
 
-    
-
     public CheckpointReplicateRespBody withProviderId(String providerId) {
         this.providerId = providerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 备份提供商ID
-     * @return providerId
-     */
+    /** 备份提供商ID
+     * 
+     * @return providerId */
     public String getProviderId() {
         return providerId;
     }
@@ -212,20 +163,14 @@ public class CheckpointReplicateRespBody  {
         this.providerId = providerId;
     }
 
-    
-
     public CheckpointReplicateRespBody withSourceRegion(String sourceRegion) {
         this.sourceRegion = sourceRegion;
         return this;
     }
 
-    
-
-
-    /**
-     * 复制的源区域
-     * @return sourceRegion
-     */
+    /** 复制的源区域
+     * 
+     * @return sourceRegion */
     public String getSourceRegion() {
         return sourceRegion;
     }
@@ -234,20 +179,14 @@ public class CheckpointReplicateRespBody  {
         this.sourceRegion = sourceRegion;
     }
 
-    
-
     public CheckpointReplicateRespBody withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
     }
 
-    
-
-
-    /**
-     * 存储库ID
-     * @return vaultId
-     */
+    /** 存储库ID
+     * 
+     * @return vaultId */
     public String getVaultId() {
         return vaultId;
     }
@@ -255,8 +194,6 @@ public class CheckpointReplicateRespBody  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -267,19 +204,28 @@ public class CheckpointReplicateRespBody  {
             return false;
         }
         CheckpointReplicateRespBody checkpointReplicateRespBody = (CheckpointReplicateRespBody) o;
-        return Objects.equals(this.backups, checkpointReplicateRespBody.backups) &&
-            Objects.equals(this.destinationProjectId, checkpointReplicateRespBody.destinationProjectId) &&
-            Objects.equals(this.destinationRegion, checkpointReplicateRespBody.destinationRegion) &&
-            Objects.equals(this.destinationVaultId, checkpointReplicateRespBody.destinationVaultId) &&
-            Objects.equals(this.projectId, checkpointReplicateRespBody.projectId) &&
-            Objects.equals(this.providerId, checkpointReplicateRespBody.providerId) &&
-            Objects.equals(this.sourceRegion, checkpointReplicateRespBody.sourceRegion) &&
-            Objects.equals(this.vaultId, checkpointReplicateRespBody.vaultId);
+        return Objects.equals(this.backups, checkpointReplicateRespBody.backups)
+            && Objects.equals(this.destinationProjectId, checkpointReplicateRespBody.destinationProjectId)
+            && Objects.equals(this.destinationRegion, checkpointReplicateRespBody.destinationRegion)
+            && Objects.equals(this.destinationVaultId, checkpointReplicateRespBody.destinationVaultId)
+            && Objects.equals(this.projectId, checkpointReplicateRespBody.projectId)
+            && Objects.equals(this.providerId, checkpointReplicateRespBody.providerId)
+            && Objects.equals(this.sourceRegion, checkpointReplicateRespBody.sourceRegion)
+            && Objects.equals(this.vaultId, checkpointReplicateRespBody.vaultId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(backups, destinationProjectId, destinationRegion, destinationVaultId, projectId, providerId, sourceRegion, vaultId);
+        return Objects.hash(backups,
+            destinationProjectId,
+            destinationRegion,
+            destinationVaultId,
+            projectId,
+            providerId,
+            sourceRegion,
+            vaultId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -295,16 +241,13 @@ public class CheckpointReplicateRespBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

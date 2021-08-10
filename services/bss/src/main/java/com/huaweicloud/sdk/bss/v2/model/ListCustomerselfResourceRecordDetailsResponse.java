@@ -1,43 +1,30 @@
 package com.huaweicloud.sdk.bss.v2.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.bss.v2.model.MonthlyBillRes;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ListCustomerselfResourceRecordDetailsResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="monthly_records")
-    
+    @JsonProperty(value = "monthly_records")
+
     private List<MonthlyBillRes> monthlyRecords = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
-    
+    @JsonProperty(value = "total_count")
+
     private Integer totalCount;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="currency")
-    
+    @JsonProperty(value = "currency")
+
     private String currency;
 
     public ListCustomerselfResourceRecordDetailsResponse withMonthlyRecords(List<MonthlyBillRes> monthlyRecords) {
@@ -45,27 +32,26 @@ public class ListCustomerselfResourceRecordDetailsResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListCustomerselfResourceRecordDetailsResponse addMonthlyRecordsItem(MonthlyBillRes monthlyRecordsItem) {
-        if(this.monthlyRecords == null) {
+        if (this.monthlyRecords == null) {
             this.monthlyRecords = new ArrayList<>();
         }
         this.monthlyRecords.add(monthlyRecordsItem);
         return this;
     }
 
-    public ListCustomerselfResourceRecordDetailsResponse withMonthlyRecords(Consumer<List<MonthlyBillRes>> monthlyRecordsSetter) {
-        if(this.monthlyRecords == null) {
+    public ListCustomerselfResourceRecordDetailsResponse withMonthlyRecords(
+        Consumer<List<MonthlyBillRes>> monthlyRecordsSetter) {
+        if (this.monthlyRecords == null) {
             this.monthlyRecords = new ArrayList<>();
         }
         monthlyRecordsSetter.accept(this.monthlyRecords);
         return this;
     }
 
-    /**
-     * 资源详单数据记录。 具体请参见表1。
-     * @return monthlyRecords
-     */
+    /** 资源详单数据记录。 具体请参见表1。
+     * 
+     * @return monthlyRecords */
     public List<MonthlyBillRes> getMonthlyRecords() {
         return monthlyRecords;
     }
@@ -74,20 +60,14 @@ public class ListCustomerselfResourceRecordDetailsResponse extends SdkResponse {
         this.monthlyRecords = monthlyRecords;
     }
 
-    
-
     public ListCustomerselfResourceRecordDetailsResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
 
-    
-
-
-    /**
-     * 结果集数量，只有成功才返回这个参数。
-     * @return totalCount
-     */
+    /** 结果集数量，只有成功才返回这个参数。
+     * 
+     * @return totalCount */
     public Integer getTotalCount() {
         return totalCount;
     }
@@ -96,20 +76,14 @@ public class ListCustomerselfResourceRecordDetailsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
-    
-
     public ListCustomerselfResourceRecordDetailsResponse withCurrency(String currency) {
         this.currency = currency;
         return this;
     }
 
-    
-
-
-    /**
-     * 货币单位代码： CNY：人民币
-     * @return currency
-     */
+    /** 货币单位代码： CNY：人民币
+     * 
+     * @return currency */
     public String getCurrency() {
         return currency;
     }
@@ -117,8 +91,6 @@ public class ListCustomerselfResourceRecordDetailsResponse extends SdkResponse {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -128,15 +100,18 @@ public class ListCustomerselfResourceRecordDetailsResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        ListCustomerselfResourceRecordDetailsResponse listCustomerselfResourceRecordDetailsResponse = (ListCustomerselfResourceRecordDetailsResponse) o;
-        return Objects.equals(this.monthlyRecords, listCustomerselfResourceRecordDetailsResponse.monthlyRecords) &&
-            Objects.equals(this.totalCount, listCustomerselfResourceRecordDetailsResponse.totalCount) &&
-            Objects.equals(this.currency, listCustomerselfResourceRecordDetailsResponse.currency);
+        ListCustomerselfResourceRecordDetailsResponse listCustomerselfResourceRecordDetailsResponse =
+            (ListCustomerselfResourceRecordDetailsResponse) o;
+        return Objects.equals(this.monthlyRecords, listCustomerselfResourceRecordDetailsResponse.monthlyRecords)
+            && Objects.equals(this.totalCount, listCustomerselfResourceRecordDetailsResponse.totalCount)
+            && Objects.equals(this.currency, listCustomerselfResourceRecordDetailsResponse.currency);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(monthlyRecords, totalCount, currency);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -147,16 +122,13 @@ public class ListCustomerselfResourceRecordDetailsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.functiongraph.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * FuncCode结构返回体。
- */
-public class FuncCode  {
-
-
+/** FuncCode结构返回体。 */
+public class FuncCode {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file")
-    
+    @JsonProperty(value = "file")
+
     private String file;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="link")
-    
+    @JsonProperty(value = "link")
+
     private String link;
 
     public FuncCode withFile(String file) {
@@ -34,13 +23,9 @@ public class FuncCode  {
         return this;
     }
 
-    
-
-
-    /**
-     * 函数代码，当CodeTye为inline/zip/jar时必选，且代码必须要进行base64编码。
-     * @return file
-     */
+    /** 函数代码，当CodeTye为inline/zip/jar时必选，且代码必须要进行base64编码。
+     * 
+     * @return file */
     public String getFile() {
         return file;
     }
@@ -49,20 +34,14 @@ public class FuncCode  {
         this.file = file;
     }
 
-    
-
     public FuncCode withLink(String link) {
         this.link = link;
         return this;
     }
 
-    
-
-
-    /**
-     * 函数代码链接。
-     * @return link
-     */
+    /** 函数代码链接。
+     * 
+     * @return link */
     public String getLink() {
         return link;
     }
@@ -70,8 +49,6 @@ public class FuncCode  {
     public void setLink(String link) {
         this.link = link;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,14 @@ public class FuncCode  {
             return false;
         }
         FuncCode funcCode = (FuncCode) o;
-        return Objects.equals(this.file, funcCode.file) &&
-            Objects.equals(this.link, funcCode.link);
+        return Objects.equals(this.file, funcCode.file) && Objects.equals(this.link, funcCode.link);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(file, link);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +76,13 @@ public class FuncCode  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

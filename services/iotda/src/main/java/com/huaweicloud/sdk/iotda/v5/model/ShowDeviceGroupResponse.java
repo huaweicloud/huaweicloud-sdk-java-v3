@@ -1,46 +1,32 @@
 package com.huaweicloud.sdk.iotda.v5.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowDeviceGroupResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
+
     private String groupId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="super_group_id")
-    
+    @JsonProperty(value = "super_group_id")
+
     private String superGroupId;
 
     public ShowDeviceGroupResponse withGroupId(String groupId) {
@@ -48,13 +34,9 @@ public class ShowDeviceGroupResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 设备组ID，用于唯一标识一个设备组，在创建设备组时由物联网平台分配。
-     * @return groupId
-     */
+    /** 设备组ID，用于唯一标识一个设备组，在创建设备组时由物联网平台分配。
+     * 
+     * @return groupId */
     public String getGroupId() {
         return groupId;
     }
@@ -63,20 +45,14 @@ public class ShowDeviceGroupResponse extends SdkResponse {
         this.groupId = groupId;
     }
 
-    
-
     public ShowDeviceGroupResponse withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备组名称，单个资源空间下不可重复。
-     * @return name
-     */
+    /** 设备组名称，单个资源空间下不可重复。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -85,20 +61,14 @@ public class ShowDeviceGroupResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowDeviceGroupResponse withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 设备组描述。
-     * @return description
-     */
+    /** 设备组描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -107,20 +77,14 @@ public class ShowDeviceGroupResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public ShowDeviceGroupResponse withSuperGroupId(String superGroupId) {
         this.superGroupId = superGroupId;
         return this;
     }
 
-    
-
-
-    /**
-     * 父设备组ID，该设备组的父设备组ID。
-     * @return superGroupId
-     */
+    /** 父设备组ID，该设备组的父设备组ID。
+     * 
+     * @return superGroupId */
     public String getSuperGroupId() {
         return superGroupId;
     }
@@ -128,8 +92,6 @@ public class ShowDeviceGroupResponse extends SdkResponse {
     public void setSuperGroupId(String superGroupId) {
         this.superGroupId = superGroupId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -140,15 +102,17 @@ public class ShowDeviceGroupResponse extends SdkResponse {
             return false;
         }
         ShowDeviceGroupResponse showDeviceGroupResponse = (ShowDeviceGroupResponse) o;
-        return Objects.equals(this.groupId, showDeviceGroupResponse.groupId) &&
-            Objects.equals(this.name, showDeviceGroupResponse.name) &&
-            Objects.equals(this.description, showDeviceGroupResponse.description) &&
-            Objects.equals(this.superGroupId, showDeviceGroupResponse.superGroupId);
+        return Objects.equals(this.groupId, showDeviceGroupResponse.groupId)
+            && Objects.equals(this.name, showDeviceGroupResponse.name)
+            && Objects.equals(this.description, showDeviceGroupResponse.description)
+            && Objects.equals(this.superGroupId, showDeviceGroupResponse.superGroupId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(groupId, name, description, superGroupId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -160,16 +124,13 @@ public class ShowDeviceGroupResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

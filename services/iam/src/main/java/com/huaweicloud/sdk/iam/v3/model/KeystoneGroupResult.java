@@ -1,57 +1,44 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.Links;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class KeystoneGroupResult  {
-
-
+public class KeystoneGroupResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
+
     private String domainId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="links")
-    
+    @JsonProperty(value = "links")
+
     private Links links;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
+
     private Long createTime;
 
     public KeystoneGroupResult withDescription(String description) {
@@ -59,13 +46,9 @@ public class KeystoneGroupResult  {
         return this;
     }
 
-    
-
-
-    /**
-     * 用户组描述信息。
-     * @return description
-     */
+    /** 用户组描述信息。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -74,20 +57,14 @@ public class KeystoneGroupResult  {
         this.description = description;
     }
 
-    
-
     public KeystoneGroupResult withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户组ID。
-     * @return id
-     */
+    /** 用户组ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -96,20 +73,14 @@ public class KeystoneGroupResult  {
         this.id = id;
     }
 
-    
-
     public KeystoneGroupResult withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户组所属账号ID。
-     * @return domainId
-     */
+    /** 用户组所属账号ID。
+     * 
+     * @return domainId */
     public String getDomainId() {
         return domainId;
     }
@@ -118,20 +89,14 @@ public class KeystoneGroupResult  {
         this.domainId = domainId;
     }
 
-    
-
     public KeystoneGroupResult withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户组名称。
-     * @return name
-     */
+    /** 用户组名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -140,27 +105,23 @@ public class KeystoneGroupResult  {
         this.name = name;
     }
 
-    
-
     public KeystoneGroupResult withLinks(Links links) {
         this.links = links;
         return this;
     }
 
     public KeystoneGroupResult withLinks(Consumer<Links> linksSetter) {
-        if(this.links == null ){
+        if (this.links == null) {
             this.links = new Links();
             linksSetter.accept(this.links);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get links
-     * @return links
-     */
+    /** Get links
+     * 
+     * @return links */
     public Links getLinks() {
         return links;
     }
@@ -169,20 +130,14 @@ public class KeystoneGroupResult  {
         this.links = links;
     }
 
-    
-
     public KeystoneGroupResult withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 用户组创建时间。
-     * @return createTime
-     */
+    /** 用户组创建时间。
+     * 
+     * @return createTime */
     public Long getCreateTime() {
         return createTime;
     }
@@ -190,8 +145,6 @@ public class KeystoneGroupResult  {
     public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -202,17 +155,19 @@ public class KeystoneGroupResult  {
             return false;
         }
         KeystoneGroupResult keystoneGroupResult = (KeystoneGroupResult) o;
-        return Objects.equals(this.description, keystoneGroupResult.description) &&
-            Objects.equals(this.id, keystoneGroupResult.id) &&
-            Objects.equals(this.domainId, keystoneGroupResult.domainId) &&
-            Objects.equals(this.name, keystoneGroupResult.name) &&
-            Objects.equals(this.links, keystoneGroupResult.links) &&
-            Objects.equals(this.createTime, keystoneGroupResult.createTime);
+        return Objects.equals(this.description, keystoneGroupResult.description)
+            && Objects.equals(this.id, keystoneGroupResult.id)
+            && Objects.equals(this.domainId, keystoneGroupResult.domainId)
+            && Objects.equals(this.name, keystoneGroupResult.name)
+            && Objects.equals(this.links, keystoneGroupResult.links)
+            && Objects.equals(this.createTime, keystoneGroupResult.createTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(description, id, domainId, name, links, createTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -226,16 +181,13 @@ public class KeystoneGroupResult  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

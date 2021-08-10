@@ -1,39 +1,27 @@
 package com.huaweicloud.sdk.meeting.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.meeting.v1.model.AddDeviceDTO;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class AddDeviceRequest  {
-
-
+/** Request Object */
+public class AddDeviceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Request-Id")
-    
+    @JsonProperty(value = "X-Request-Id")
+
     private String xRequestId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Accept-Language")
-    
+    @JsonProperty(value = "Accept-Language")
+
     private String acceptLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private AddDeviceDTO body;
 
     public AddDeviceRequest withXRequestId(String xRequestId) {
@@ -41,15 +29,11 @@ public class AddDeviceRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
-     * @return xRequestId
-     */
+    /** 请求requestId，用来标识一路请求，用于问题跟踪定位，建议使用uuId，若不携带，则后台自动生成
+     * 
+     * @return xRequestId */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Request-Id")
+    @JsonProperty(value = "X-Request-Id")
     public String getXRequestId() {
         return xRequestId;
     }
@@ -58,20 +42,14 @@ public class AddDeviceRequest  {
         this.xRequestId = xRequestId;
     }
 
-    
-
     public AddDeviceRequest withAcceptLanguage(String acceptLanguage) {
         this.acceptLanguage = acceptLanguage;
         return this;
     }
 
-    
-
-
-    /**
-     * 语言参数，默认为中文zh_CN, 英文为en_US
-     * @return acceptLanguage
-     */
+    /** 语言参数，默认为中文zh_CN, 英文为en_US
+     * 
+     * @return acceptLanguage */
     public String getAcceptLanguage() {
         return acceptLanguage;
     }
@@ -80,27 +58,23 @@ public class AddDeviceRequest  {
         this.acceptLanguage = acceptLanguage;
     }
 
-    
-
     public AddDeviceRequest withBody(AddDeviceDTO body) {
         this.body = body;
         return this;
     }
 
     public AddDeviceRequest withBody(Consumer<AddDeviceDTO> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new AddDeviceDTO();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public AddDeviceDTO getBody() {
         return body;
     }
@@ -108,8 +82,6 @@ public class AddDeviceRequest  {
     public void setBody(AddDeviceDTO body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -120,14 +92,16 @@ public class AddDeviceRequest  {
             return false;
         }
         AddDeviceRequest addDeviceRequest = (AddDeviceRequest) o;
-        return Objects.equals(this.xRequestId, addDeviceRequest.xRequestId) &&
-            Objects.equals(this.acceptLanguage, addDeviceRequest.acceptLanguage) &&
-            Objects.equals(this.body, addDeviceRequest.body);
+        return Objects.equals(this.xRequestId, addDeviceRequest.xRequestId)
+            && Objects.equals(this.acceptLanguage, addDeviceRequest.acceptLanguage)
+            && Objects.equals(this.body, addDeviceRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xRequestId, acceptLanguage, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -138,16 +112,13 @@ public class AddDeviceRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

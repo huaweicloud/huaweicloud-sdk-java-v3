@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.dgc.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class CancelScriptRequest  {
-
-
+/** Request Object */
+public class CancelScriptRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="script_name")
-    
+    @JsonProperty(value = "script_name")
+
     private String scriptName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
+
     private String instanceId;
 
     public CancelScriptRequest withScriptName(String scriptName) {
@@ -34,13 +23,9 @@ public class CancelScriptRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * Get scriptName
-     * @return scriptName
-     */
+    /** Get scriptName
+     * 
+     * @return scriptName */
     public String getScriptName() {
         return scriptName;
     }
@@ -49,20 +34,14 @@ public class CancelScriptRequest  {
         this.scriptName = scriptName;
     }
 
-    
-
     public CancelScriptRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
 
-    
-
-
-    /**
-     * Get instanceId
-     * @return instanceId
-     */
+    /** Get instanceId
+     * 
+     * @return instanceId */
     public String getInstanceId() {
         return instanceId;
     }
@@ -70,8 +49,6 @@ public class CancelScriptRequest  {
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class CancelScriptRequest  {
             return false;
         }
         CancelScriptRequest cancelScriptRequest = (CancelScriptRequest) o;
-        return Objects.equals(this.scriptName, cancelScriptRequest.scriptName) &&
-            Objects.equals(this.instanceId, cancelScriptRequest.instanceId);
+        return Objects.equals(this.scriptName, cancelScriptRequest.scriptName)
+            && Objects.equals(this.instanceId, cancelScriptRequest.instanceId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(scriptName, instanceId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class CancelScriptRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

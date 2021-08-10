@@ -1,35 +1,23 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v3.model.Member;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class UpdateMemberResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="request_id")
-    
+    @JsonProperty(value = "request_id")
+
     private String requestId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="member")
-    
+    @JsonProperty(value = "member")
+
     private Member member;
 
     public UpdateMemberResponse withRequestId(String requestId) {
@@ -37,13 +25,9 @@ public class UpdateMemberResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 请求ID。  注：自动生成 。
-     * @return requestId
-     */
+    /** 请求ID。 注：自动生成 。
+     * 
+     * @return requestId */
     public String getRequestId() {
         return requestId;
     }
@@ -52,27 +36,23 @@ public class UpdateMemberResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    
-
     public UpdateMemberResponse withMember(Member member) {
         this.member = member;
         return this;
     }
 
     public UpdateMemberResponse withMember(Consumer<Member> memberSetter) {
-        if(this.member == null ){
+        if (this.member == null) {
             this.member = new Member();
             memberSetter.accept(this.member);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get member
-     * @return member
-     */
+    /** Get member
+     * 
+     * @return member */
     public Member getMember() {
         return member;
     }
@@ -80,8 +60,6 @@ public class UpdateMemberResponse extends SdkResponse {
     public void setMember(Member member) {
         this.member = member;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -92,13 +70,15 @@ public class UpdateMemberResponse extends SdkResponse {
             return false;
         }
         UpdateMemberResponse updateMemberResponse = (UpdateMemberResponse) o;
-        return Objects.equals(this.requestId, updateMemberResponse.requestId) &&
-            Objects.equals(this.member, updateMemberResponse.member);
+        return Objects.equals(this.requestId, updateMemberResponse.requestId)
+            && Objects.equals(this.member, updateMemberResponse.member);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(requestId, member);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -108,16 +88,13 @@ public class UpdateMemberResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

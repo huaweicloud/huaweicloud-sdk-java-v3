@@ -1,54 +1,34 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
-
-
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ims.v2.model.JobEntities;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Response Object
- */
+/** Response Object */
 public class ShowJobResponse extends SdkResponse {
 
-    /**
-     * 任务状态，目前取值如下： SUCCESS：表示该任务执行已经结束，任务执行成功。 FAIL：表示该任务执行已经结束，任务执行失败。 RUNNING：表示该任务正在执行。 INIT：表给任务还未执行，正在初始化。
-     */
+    /** 任务状态，目前取值如下： SUCCESS：表示该任务执行已经结束，任务执行成功。 FAIL：表示该任务执行已经结束，任务执行失败。 RUNNING：表示该任务正在执行。 INIT：表给任务还未执行，正在初始化。 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum SUCCESS for value: "SUCCESS"
-         */
+        /** Enum SUCCESS for value: "SUCCESS" */
         public static final StatusEnum SUCCESS = new StatusEnum("SUCCESS");
-        
-        /**
-         * Enum FAIL for value: "FAIL"
-         */
+
+        /** Enum FAIL for value: "FAIL" */
         public static final StatusEnum FAIL = new StatusEnum("FAIL");
-        
-        /**
-         * Enum RUNNING for value: "RUNNING"
-         */
+
+        /** Enum RUNNING for value: "RUNNING" */
         public static final StatusEnum RUNNING = new StatusEnum("RUNNING");
-        
-        /**
-         * Enum INIT for value: "INIT"
-         */
+
+        /** Enum INIT for value: "INIT" */
         public static final StatusEnum INIT = new StatusEnum("INIT");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -79,7 +59,7 @@ public class ShowJobResponse extends SdkResponse {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -90,7 +70,7 @@ public class ShowJobResponse extends SdkResponse {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -114,52 +94,44 @@ public class ShowJobResponse extends SdkResponse {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
+
     private String jobId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_type")
-    
+    @JsonProperty(value = "job_type")
+
     private String jobType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="begin_time")
-    
+    @JsonProperty(value = "begin_time")
+
     private String beginTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
+
     private String endTime;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
+
     private String errorCode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fail_reason")
-    
+    @JsonProperty(value = "fail_reason")
+
     private String failReason;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="entities")
-    
+    @JsonProperty(value = "entities")
+
     private JobEntities entities;
 
     public ShowJobResponse withStatus(StatusEnum status) {
@@ -167,13 +139,9 @@ public class ShowJobResponse extends SdkResponse {
         return this;
     }
 
-    
-
-
-    /**
-     * 任务状态，目前取值如下： SUCCESS：表示该任务执行已经结束，任务执行成功。 FAIL：表示该任务执行已经结束，任务执行失败。 RUNNING：表示该任务正在执行。 INIT：表给任务还未执行，正在初始化。
-     * @return status
-     */
+    /** 任务状态，目前取值如下： SUCCESS：表示该任务执行已经结束，任务执行成功。 FAIL：表示该任务执行已经结束，任务执行失败。 RUNNING：表示该任务正在执行。 INIT：表给任务还未执行，正在初始化。
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -182,20 +150,14 @@ public class ShowJobResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public ShowJobResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务ID。
-     * @return jobId
-     */
+    /** 任务ID。
+     * 
+     * @return jobId */
     public String getJobId() {
         return jobId;
     }
@@ -204,20 +166,14 @@ public class ShowJobResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
-    
-
     public ShowJobResponse withJobType(String jobType) {
         this.jobType = jobType;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务类型。
-     * @return jobType
-     */
+    /** 任务类型。
+     * 
+     * @return jobType */
     public String getJobType() {
         return jobType;
     }
@@ -226,20 +182,14 @@ public class ShowJobResponse extends SdkResponse {
         this.jobType = jobType;
     }
 
-    
-
     public ShowJobResponse withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务开始执行时间。格式为UTC时间。
-     * @return beginTime
-     */
+    /** 任务开始执行时间。格式为UTC时间。
+     * 
+     * @return beginTime */
     public String getBeginTime() {
         return beginTime;
     }
@@ -248,20 +198,14 @@ public class ShowJobResponse extends SdkResponse {
         this.beginTime = beginTime;
     }
 
-    
-
     public ShowJobResponse withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
 
-    
-
-
-    /**
-     * 任务结束时间。格式为UTC时间。
-     * @return endTime
-     */
+    /** 任务结束时间。格式为UTC时间。
+     * 
+     * @return endTime */
     public String getEndTime() {
         return endTime;
     }
@@ -270,20 +214,14 @@ public class ShowJobResponse extends SdkResponse {
         this.endTime = endTime;
     }
 
-    
-
     public ShowJobResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
-    
-
-
-    /**
-     * 错误码。
-     * @return errorCode
-     */
+    /** 错误码。
+     * 
+     * @return errorCode */
     public String getErrorCode() {
         return errorCode;
     }
@@ -292,20 +230,14 @@ public class ShowJobResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
-    
-
     public ShowJobResponse withFailReason(String failReason) {
         this.failReason = failReason;
         return this;
     }
 
-    
-
-
-    /**
-     * 失败原因。
-     * @return failReason
-     */
+    /** 失败原因。
+     * 
+     * @return failReason */
     public String getFailReason() {
         return failReason;
     }
@@ -314,27 +246,23 @@ public class ShowJobResponse extends SdkResponse {
         this.failReason = failReason;
     }
 
-    
-
     public ShowJobResponse withEntities(JobEntities entities) {
         this.entities = entities;
         return this;
     }
 
     public ShowJobResponse withEntities(Consumer<JobEntities> entitiesSetter) {
-        if(this.entities == null ){
+        if (this.entities == null) {
             this.entities = new JobEntities();
             entitiesSetter.accept(this.entities);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get entities
-     * @return entities
-     */
+    /** Get entities
+     * 
+     * @return entities */
     public JobEntities getEntities() {
         return entities;
     }
@@ -342,8 +270,6 @@ public class ShowJobResponse extends SdkResponse {
     public void setEntities(JobEntities entities) {
         this.entities = entities;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -354,19 +280,20 @@ public class ShowJobResponse extends SdkResponse {
             return false;
         }
         ShowJobResponse showJobResponse = (ShowJobResponse) o;
-        return Objects.equals(this.status, showJobResponse.status) &&
-            Objects.equals(this.jobId, showJobResponse.jobId) &&
-            Objects.equals(this.jobType, showJobResponse.jobType) &&
-            Objects.equals(this.beginTime, showJobResponse.beginTime) &&
-            Objects.equals(this.endTime, showJobResponse.endTime) &&
-            Objects.equals(this.errorCode, showJobResponse.errorCode) &&
-            Objects.equals(this.failReason, showJobResponse.failReason) &&
-            Objects.equals(this.entities, showJobResponse.entities);
+        return Objects.equals(this.status, showJobResponse.status) && Objects.equals(this.jobId, showJobResponse.jobId)
+            && Objects.equals(this.jobType, showJobResponse.jobType)
+            && Objects.equals(this.beginTime, showJobResponse.beginTime)
+            && Objects.equals(this.endTime, showJobResponse.endTime)
+            && Objects.equals(this.errorCode, showJobResponse.errorCode)
+            && Objects.equals(this.failReason, showJobResponse.failReason)
+            && Objects.equals(this.entities, showJobResponse.entities);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(status, jobId, jobType, beginTime, endTime, errorCode, failReason, entities);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -382,16 +309,13 @@ public class ShowJobResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

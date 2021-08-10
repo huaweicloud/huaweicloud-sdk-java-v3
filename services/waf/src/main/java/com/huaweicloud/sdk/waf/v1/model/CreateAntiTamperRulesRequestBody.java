@@ -1,38 +1,26 @@
 package com.huaweicloud.sdk.waf.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * CreateAntiTamperRulesRequestBody
- */
-public class CreateAntiTamperRulesRequestBody  {
-
-
+/** CreateAntiTamperRulesRequestBody */
+public class CreateAntiTamperRulesRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hostname")
-    
+    @JsonProperty(value = "hostname")
+
     private String hostname;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
+
     private String url;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public CreateAntiTamperRulesRequestBody withHostname(String hostname) {
@@ -40,13 +28,9 @@ public class CreateAntiTamperRulesRequestBody  {
         return this;
     }
 
-    
-
-
-    /**
-     * 防护网站（查询云模式防护域名列表获取防护域名，响应体的hostname字段）
-     * @return hostname
-     */
+    /** 防护网站（查询云模式防护域名列表获取防护域名，响应体的hostname字段）
+     * 
+     * @return hostname */
     public String getHostname() {
         return hostname;
     }
@@ -55,20 +39,14 @@ public class CreateAntiTamperRulesRequestBody  {
         this.hostname = hostname;
     }
 
-    
-
     public CreateAntiTamperRulesRequestBody withUrl(String url) {
         this.url = url;
         return this;
     }
 
-    
-
-
-    /**
-     * 防篡改的url
-     * @return url
-     */
+    /** 防篡改的url
+     * 
+     * @return url */
     public String getUrl() {
         return url;
     }
@@ -77,20 +55,14 @@ public class CreateAntiTamperRulesRequestBody  {
         this.url = url;
     }
 
-    
-
     public CreateAntiTamperRulesRequestBody withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 规则描述
-     * @return description
-     */
+    /** 规则描述
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -98,8 +70,6 @@ public class CreateAntiTamperRulesRequestBody  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,14 +80,16 @@ public class CreateAntiTamperRulesRequestBody  {
             return false;
         }
         CreateAntiTamperRulesRequestBody createAntiTamperRulesRequestBody = (CreateAntiTamperRulesRequestBody) o;
-        return Objects.equals(this.hostname, createAntiTamperRulesRequestBody.hostname) &&
-            Objects.equals(this.url, createAntiTamperRulesRequestBody.url) &&
-            Objects.equals(this.description, createAntiTamperRulesRequestBody.description);
+        return Objects.equals(this.hostname, createAntiTamperRulesRequestBody.hostname)
+            && Objects.equals(this.url, createAntiTamperRulesRequestBody.url)
+            && Objects.equals(this.description, createAntiTamperRulesRequestBody.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(hostname, url, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,16 +100,13 @@ public class CreateAntiTamperRulesRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

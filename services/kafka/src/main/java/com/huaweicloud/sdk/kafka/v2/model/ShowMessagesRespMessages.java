@@ -1,50 +1,36 @@
 package com.huaweicloud.sdk.kafka.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * ShowMessagesRespMessages
- */
-public class ShowMessagesRespMessages  {
-
-
+/** ShowMessagesRespMessages */
+public class ShowMessagesRespMessages {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic")
-    
+    @JsonProperty(value = "topic")
+
     private String topic;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="partition")
-    
+    @JsonProperty(value = "partition")
+
     private Integer partition;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message_offset")
-    
+    @JsonProperty(value = "message_offset")
+
     private Integer messageOffset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
+
     private Integer size;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timestamp")
-    
+    @JsonProperty(value = "timestamp")
+
     private Long timestamp;
 
     public ShowMessagesRespMessages withTopic(String topic) {
@@ -52,13 +38,9 @@ public class ShowMessagesRespMessages  {
         return this;
     }
 
-    
-
-
-    /**
-     * topic名称。
-     * @return topic
-     */
+    /** topic名称。
+     * 
+     * @return topic */
     public String getTopic() {
         return topic;
     }
@@ -67,20 +49,14 @@ public class ShowMessagesRespMessages  {
         this.topic = topic;
     }
 
-    
-
     public ShowMessagesRespMessages withPartition(Integer partition) {
         this.partition = partition;
         return this;
     }
 
-    
-
-
-    /**
-     * 分区编号。
-     * @return partition
-     */
+    /** 分区编号。
+     * 
+     * @return partition */
     public Integer getPartition() {
         return partition;
     }
@@ -89,20 +65,14 @@ public class ShowMessagesRespMessages  {
         this.partition = partition;
     }
 
-    
-
     public ShowMessagesRespMessages withMessageOffset(Integer messageOffset) {
         this.messageOffset = messageOffset;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息编号。
-     * @return messageOffset
-     */
+    /** 消息编号。
+     * 
+     * @return messageOffset */
     public Integer getMessageOffset() {
         return messageOffset;
     }
@@ -111,20 +81,14 @@ public class ShowMessagesRespMessages  {
         this.messageOffset = messageOffset;
     }
 
-    
-
     public ShowMessagesRespMessages withSize(Integer size) {
         this.size = size;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息大小，单位字节。
-     * @return size
-     */
+    /** 消息大小，单位字节。
+     * 
+     * @return size */
     public Integer getSize() {
         return size;
     }
@@ -133,20 +97,14 @@ public class ShowMessagesRespMessages  {
         this.size = size;
     }
 
-    
-
     public ShowMessagesRespMessages withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
 
-    
-
-
-    /**
-     * 消息时间戳。
-     * @return timestamp
-     */
+    /** 生产消息的时间。 格式为Unix时间戳。单位为毫秒。
+     * 
+     * @return timestamp */
     public Long getTimestamp() {
         return timestamp;
     }
@@ -154,8 +112,6 @@ public class ShowMessagesRespMessages  {
     public void setTimestamp(Long timestamp) {
         this.timestamp = timestamp;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,16 +122,18 @@ public class ShowMessagesRespMessages  {
             return false;
         }
         ShowMessagesRespMessages showMessagesRespMessages = (ShowMessagesRespMessages) o;
-        return Objects.equals(this.topic, showMessagesRespMessages.topic) &&
-            Objects.equals(this.partition, showMessagesRespMessages.partition) &&
-            Objects.equals(this.messageOffset, showMessagesRespMessages.messageOffset) &&
-            Objects.equals(this.size, showMessagesRespMessages.size) &&
-            Objects.equals(this.timestamp, showMessagesRespMessages.timestamp);
+        return Objects.equals(this.topic, showMessagesRespMessages.topic)
+            && Objects.equals(this.partition, showMessagesRespMessages.partition)
+            && Objects.equals(this.messageOffset, showMessagesRespMessages.messageOffset)
+            && Objects.equals(this.size, showMessagesRespMessages.size)
+            && Objects.equals(this.timestamp, showMessagesRespMessages.timestamp);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(topic, partition, messageOffset, size, timestamp);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,16 +146,13 @@ public class ShowMessagesRespMessages  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

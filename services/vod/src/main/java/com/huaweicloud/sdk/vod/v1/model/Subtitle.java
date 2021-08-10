@@ -1,44 +1,28 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
-/**
- * Subtitle
- */
-public class Subtitle  {
-
-
+/** Subtitle */
+public class Subtitle {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private Integer id;
-    /**
-     * 字幕文件类型，目前暂只支持“SRT”。
-     */
+
+    /** 字幕文件类型，目前暂只支持“SRT”。 */
     public static final class TypeEnum {
 
-        
-        /**
-         * Enum SRT for value: "SRT"
-         */
+        /** Enum SRT for value: "SRT" */
         public static final TypeEnum SRT = new TypeEnum("SRT");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -66,7 +50,7 @@ public class Subtitle  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -77,7 +61,7 @@ public class Subtitle  {
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             TypeEnum result = STATIC_FIELDS.get(value);
@@ -101,27 +85,19 @@ public class Subtitle  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
+
     private TypeEnum type;
-    /**
-     * 字幕语音类型。  取值如下： - CN：表示中文字幕。 - EN：表示英文字幕。
-     */
+
+    /** 字幕语音类型。 取值如下： - CN：表示中文字幕。 - EN：表示英文字幕。 */
     public static final class LanguageEnum {
 
-        
-        /**
-         * Enum CN for value: "CN"
-         */
+        /** Enum CN for value: "CN" */
         public static final LanguageEnum CN = new LanguageEnum("CN");
-        
-        /**
-         * Enum EN for value: "EN"
-         */
+
+        /** Enum EN for value: "EN" */
         public static final LanguageEnum EN = new LanguageEnum("EN");
-        
 
         private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
 
@@ -150,7 +126,7 @@ public class Subtitle  {
 
         @JsonCreator
         public static LanguageEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             LanguageEnum result = STATIC_FIELDS.get(value);
@@ -161,7 +137,7 @@ public class Subtitle  {
         }
 
         public static LanguageEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             LanguageEnum result = STATIC_FIELDS.get(value);
@@ -185,22 +161,19 @@ public class Subtitle  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="language")
-    
+    @JsonProperty(value = "language")
+
     private LanguageEnum language;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="md5")
-    
+    @JsonProperty(value = "md5")
+
     private String md5;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
+
     private String description;
 
     public Subtitle withId(Integer id) {
@@ -208,13 +181,9 @@ public class Subtitle  {
         return this;
     }
 
-    
-
-
-    /**
-     * 字幕id。  取值范围：[1,8]。
-     * @return id
-     */
+    /** 字幕id。 取值范围：[1,8]。
+     * 
+     * @return id */
     public Integer getId() {
         return id;
     }
@@ -223,20 +192,14 @@ public class Subtitle  {
         this.id = id;
     }
 
-    
-
     public Subtitle withType(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    
-
-
-    /**
-     * 字幕文件类型，目前暂只支持“SRT”。
-     * @return type
-     */
+    /** 字幕文件类型，目前暂只支持“SRT”。
+     * 
+     * @return type */
     public TypeEnum getType() {
         return type;
     }
@@ -245,20 +208,14 @@ public class Subtitle  {
         this.type = type;
     }
 
-    
-
     public Subtitle withLanguage(LanguageEnum language) {
         this.language = language;
         return this;
     }
 
-    
-
-
-    /**
-     * 字幕语音类型。  取值如下： - CN：表示中文字幕。 - EN：表示英文字幕。
-     * @return language
-     */
+    /** 字幕语音类型。 取值如下： - CN：表示中文字幕。 - EN：表示英文字幕。
+     * 
+     * @return language */
     public LanguageEnum getLanguage() {
         return language;
     }
@@ -267,20 +224,14 @@ public class Subtitle  {
         this.language = language;
     }
 
-    
-
     public Subtitle withMd5(String md5) {
         this.md5 = md5;
         return this;
     }
 
-    
-
-
-    /**
-     * 字幕文件的MD5值。
-     * @return md5
-     */
+    /** 字幕文件的MD5值。
+     * 
+     * @return md5 */
     public String getMd5() {
         return md5;
     }
@@ -289,20 +240,14 @@ public class Subtitle  {
         this.md5 = md5;
     }
 
-    
-
     public Subtitle withDescription(String description) {
         this.description = description;
         return this;
     }
 
-    
-
-
-    /**
-     * 字幕描述。
-     * @return description
-     */
+    /** 字幕描述。
+     * 
+     * @return description */
     public String getDescription() {
         return description;
     }
@@ -310,8 +255,6 @@ public class Subtitle  {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -322,16 +265,16 @@ public class Subtitle  {
             return false;
         }
         Subtitle subtitle = (Subtitle) o;
-        return Objects.equals(this.id, subtitle.id) &&
-            Objects.equals(this.type, subtitle.type) &&
-            Objects.equals(this.language, subtitle.language) &&
-            Objects.equals(this.md5, subtitle.md5) &&
-            Objects.equals(this.description, subtitle.description);
+        return Objects.equals(this.id, subtitle.id) && Objects.equals(this.type, subtitle.type)
+            && Objects.equals(this.language, subtitle.language) && Objects.equals(this.md5, subtitle.md5)
+            && Objects.equals(this.description, subtitle.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, type, language, md5, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -344,16 +287,13 @@ public class Subtitle  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

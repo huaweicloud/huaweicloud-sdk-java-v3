@@ -1,68 +1,51 @@
 package com.huaweicloud.sdk.cloudpipeline.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * Request Object
- */
-public class ListTemplatesRequest  {
-
-
+/** Request Object */
+public class ListTemplatesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
+
     private String xLanguage;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_type")
-    
+    @JsonProperty(value = "template_type")
+
     private String templateType;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_build_in")
-    
+    @JsonProperty(value = "is_build_in")
+
     private String isBuildIn;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
+
     private Integer offset;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
+
     private Integer limit;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sort")
-    
+    @JsonProperty(value = "sort")
+
     private String sort;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="asc")
-    
+    @JsonProperty(value = "asc")
+
     private String asc;
 
     public ListTemplatesRequest withXLanguage(String xLanguage) {
@@ -70,15 +53,11 @@ public class ListTemplatesRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 语言类型 中文:zh-cn 英文:en-us，默认en-us
-     * @return xLanguage
-     */
+    /** 语言类型 中文:zh-cn 英文:en-us，默认en-us
+     * 
+     * @return xLanguage */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -87,20 +66,14 @@ public class ListTemplatesRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListTemplatesRequest withTemplateType(String templateType) {
         this.templateType = templateType;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板类型
-     * @return templateType
-     */
+    /** 模板类型
+     * 
+     * @return templateType */
     public String getTemplateType() {
         return templateType;
     }
@@ -109,20 +82,14 @@ public class ListTemplatesRequest  {
         this.templateType = templateType;
     }
 
-    
-
     public ListTemplatesRequest withIsBuildIn(String isBuildIn) {
         this.isBuildIn = isBuildIn;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否内置模板
-     * @return isBuildIn
-     */
+    /** 是否内置模板
+     * 
+     * @return isBuildIn */
     public String getIsBuildIn() {
         return isBuildIn;
     }
@@ -131,22 +98,14 @@ public class ListTemplatesRequest  {
         this.isBuildIn = isBuildIn;
     }
 
-    
-
     public ListTemplatesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
-    
-
-
-    /**
-     * 偏移量,表示从此偏移量开始查询,offset大于等于0
-     * minimum: 0
-     * maximum: 100
-     * @return offset
-     */
+    /** 偏移量,表示从此偏移量开始查询,offset大于等于0 minimum: 0 maximum: 100
+     * 
+     * @return offset */
     public Integer getOffset() {
         return offset;
     }
@@ -155,22 +114,14 @@ public class ListTemplatesRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListTemplatesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
-    
-
-
-    /**
-     * 每页显示的条目数量
-     * minimum: 1
-     * maximum: 100
-     * @return limit
-     */
+    /** 每页显示的条目数量 minimum: 1 maximum: 100
+     * 
+     * @return limit */
     public Integer getLimit() {
         return limit;
     }
@@ -179,20 +130,14 @@ public class ListTemplatesRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListTemplatesRequest withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 模板名称，匹配规则为模糊匹配
-     * @return name
-     */
+    /** 模板名称，匹配规则为模糊匹配
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -201,20 +146,14 @@ public class ListTemplatesRequest  {
         this.name = name;
     }
 
-    
-
     public ListTemplatesRequest withSort(String sort) {
         this.sort = sort;
         return this;
     }
 
-    
-
-
-    /**
-     * 排序字段
-     * @return sort
-     */
+    /** 排序字段
+     * 
+     * @return sort */
     public String getSort() {
         return sort;
     }
@@ -223,20 +162,14 @@ public class ListTemplatesRequest  {
         this.sort = sort;
     }
 
-    
-
     public ListTemplatesRequest withAsc(String asc) {
         this.asc = asc;
         return this;
     }
 
-    
-
-
-    /**
-     * 是否正序
-     * @return asc
-     */
+    /** 是否正序
+     * 
+     * @return asc */
     public String getAsc() {
         return asc;
     }
@@ -244,8 +177,6 @@ public class ListTemplatesRequest  {
     public void setAsc(String asc) {
         this.asc = asc;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -256,19 +187,21 @@ public class ListTemplatesRequest  {
             return false;
         }
         ListTemplatesRequest listTemplatesRequest = (ListTemplatesRequest) o;
-        return Objects.equals(this.xLanguage, listTemplatesRequest.xLanguage) &&
-            Objects.equals(this.templateType, listTemplatesRequest.templateType) &&
-            Objects.equals(this.isBuildIn, listTemplatesRequest.isBuildIn) &&
-            Objects.equals(this.offset, listTemplatesRequest.offset) &&
-            Objects.equals(this.limit, listTemplatesRequest.limit) &&
-            Objects.equals(this.name, listTemplatesRequest.name) &&
-            Objects.equals(this.sort, listTemplatesRequest.sort) &&
-            Objects.equals(this.asc, listTemplatesRequest.asc);
+        return Objects.equals(this.xLanguage, listTemplatesRequest.xLanguage)
+            && Objects.equals(this.templateType, listTemplatesRequest.templateType)
+            && Objects.equals(this.isBuildIn, listTemplatesRequest.isBuildIn)
+            && Objects.equals(this.offset, listTemplatesRequest.offset)
+            && Objects.equals(this.limit, listTemplatesRequest.limit)
+            && Objects.equals(this.name, listTemplatesRequest.name)
+            && Objects.equals(this.sort, listTemplatesRequest.sort)
+            && Objects.equals(this.asc, listTemplatesRequest.asc);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, templateType, isBuildIn, offset, limit, name, sort, asc);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -284,16 +217,13 @@ public class ListTemplatesRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

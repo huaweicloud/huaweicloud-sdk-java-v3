@@ -1,55 +1,40 @@
 package com.huaweicloud.sdk.ims.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 更新镜像成员状态请求体
- */
-public class BatchUpdateMembersRequestBody  {
-
-
+/** 更新镜像成员状态请求体 */
+public class BatchUpdateMembersRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="images")
-    
+    @JsonProperty(value = "images")
+
     private List<String> images = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
+
     private String projectId;
-    /**
-     * 镜像成员的状态。 取值如下： accepted：表示接受共享镜像。接受后，该镜像在用户镜像列表中可见，用户可以使用该镜像创建云服务器。 rejected：表示拒绝共享镜像。拒绝后，该镜像在用户镜像列表中不可见，但是，用户仍然可以使用该镜像创建云服务器。
-     */
+
+    /** 镜像成员的状态。 取值如下： accepted：表示接受共享镜像。接受后，该镜像在用户镜像列表中可见，用户可以使用该镜像创建云服务器。
+     * rejected：表示拒绝共享镜像。拒绝后，该镜像在用户镜像列表中不可见，但是，用户仍然可以使用该镜像创建云服务器。 */
     public static final class StatusEnum {
 
-        
-        /**
-         * Enum ACCEPTED for value: "accepted"
-         */
+        /** Enum ACCEPTED for value: "accepted" */
         public static final StatusEnum ACCEPTED = new StatusEnum("accepted");
-        
-        /**
-         * Enum REJECTED for value: "rejected"
-         */
+
+        /** Enum REJECTED for value: "rejected" */
         public static final StatusEnum REJECTED = new StatusEnum("rejected");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -78,7 +63,7 @@ public class BatchUpdateMembersRequestBody  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -89,7 +74,7 @@ public class BatchUpdateMembersRequestBody  {
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             StatusEnum result = STATIC_FIELDS.get(value);
@@ -113,16 +98,14 @@ public class BatchUpdateMembersRequestBody  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
+
     private StatusEnum status;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vault_id")
-    
+    @JsonProperty(value = "vault_id")
+
     private String vaultId;
 
     public BatchUpdateMembersRequestBody withImages(List<String> images) {
@@ -130,9 +113,8 @@ public class BatchUpdateMembersRequestBody  {
         return this;
     }
 
-    
     public BatchUpdateMembersRequestBody addImagesItem(String imagesItem) {
-        if(this.images == null) {
+        if (this.images == null) {
             this.images = new ArrayList<>();
         }
         this.images.add(imagesItem);
@@ -140,17 +122,16 @@ public class BatchUpdateMembersRequestBody  {
     }
 
     public BatchUpdateMembersRequestBody withImages(Consumer<List<String>> imagesSetter) {
-        if(this.images == null) {
+        if (this.images == null) {
             this.images = new ArrayList<>();
         }
         imagesSetter.accept(this.images);
         return this;
     }
 
-    /**
-     * 镜像ID列表。
-     * @return images
-     */
+    /** 镜像ID列表。
+     * 
+     * @return images */
     public List<String> getImages() {
         return images;
     }
@@ -159,20 +140,14 @@ public class BatchUpdateMembersRequestBody  {
         this.images = images;
     }
 
-    
-
     public BatchUpdateMembersRequestBody withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
-    
-
-
-    /**
-     * 项目ID。
-     * @return projectId
-     */
+    /** 项目ID。
+     * 
+     * @return projectId */
     public String getProjectId() {
         return projectId;
     }
@@ -181,20 +156,15 @@ public class BatchUpdateMembersRequestBody  {
         this.projectId = projectId;
     }
 
-    
-
     public BatchUpdateMembersRequestBody withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
-    
-
-
-    /**
-     * 镜像成员的状态。 取值如下： accepted：表示接受共享镜像。接受后，该镜像在用户镜像列表中可见，用户可以使用该镜像创建云服务器。 rejected：表示拒绝共享镜像。拒绝后，该镜像在用户镜像列表中不可见，但是，用户仍然可以使用该镜像创建云服务器。
-     * @return status
-     */
+    /** 镜像成员的状态。 取值如下： accepted：表示接受共享镜像。接受后，该镜像在用户镜像列表中可见，用户可以使用该镜像创建云服务器。
+     * rejected：表示拒绝共享镜像。拒绝后，该镜像在用户镜像列表中不可见，但是，用户仍然可以使用该镜像创建云服务器。
+     * 
+     * @return status */
     public StatusEnum getStatus() {
         return status;
     }
@@ -203,20 +173,14 @@ public class BatchUpdateMembersRequestBody  {
         this.status = status;
     }
 
-    
-
     public BatchUpdateMembersRequestBody withVaultId(String vaultId) {
         this.vaultId = vaultId;
         return this;
     }
 
-    
-
-
-    /**
-     * 存储库ID。 如果是通过CBR创建的整机镜像，则在接受该共享镜像时，为必选参数，需传入该值。
-     * @return vaultId
-     */
+    /** 存储库ID。 如果是通过CBR创建的整机镜像，则在接受该共享镜像时，为必选参数，需传入该值。
+     * 
+     * @return vaultId */
     public String getVaultId() {
         return vaultId;
     }
@@ -224,8 +188,6 @@ public class BatchUpdateMembersRequestBody  {
     public void setVaultId(String vaultId) {
         this.vaultId = vaultId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -236,15 +198,17 @@ public class BatchUpdateMembersRequestBody  {
             return false;
         }
         BatchUpdateMembersRequestBody batchUpdateMembersRequestBody = (BatchUpdateMembersRequestBody) o;
-        return Objects.equals(this.images, batchUpdateMembersRequestBody.images) &&
-            Objects.equals(this.projectId, batchUpdateMembersRequestBody.projectId) &&
-            Objects.equals(this.status, batchUpdateMembersRequestBody.status) &&
-            Objects.equals(this.vaultId, batchUpdateMembersRequestBody.vaultId);
+        return Objects.equals(this.images, batchUpdateMembersRequestBody.images)
+            && Objects.equals(this.projectId, batchUpdateMembersRequestBody.projectId)
+            && Objects.equals(this.status, batchUpdateMembersRequestBody.status)
+            && Objects.equals(this.vaultId, batchUpdateMembersRequestBody.vaultId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(images, projectId, status, vaultId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -256,16 +220,13 @@ public class BatchUpdateMembersRequestBody  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,51 +1,34 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.apig.v2.model.BackendParam;
-import com.huaweicloud.sdk.apig.v2.model.CoditionResp;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * ApiPolicyRespBase
- */
-public class ApiPolicyRespBase  {
-
-
+/** ApiPolicyRespBase */
+public class ApiPolicyRespBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
-    /**
-     * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
-     */
+
+    /** 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件 */
     public static final class EffectModeEnum {
 
-        
-        /**
-         * Enum ALL for value: "ALL"
-         */
+        /** Enum ALL for value: "ALL" */
         public static final EffectModeEnum ALL = new EffectModeEnum("ALL");
-        
-        /**
-         * Enum ANY for value: "ANY"
-         */
+
+        /** Enum ANY for value: "ANY" */
         public static final EffectModeEnum ANY = new EffectModeEnum("ANY");
-        
 
         private static final Map<String, EffectModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -74,7 +57,7 @@ public class ApiPolicyRespBase  {
 
         @JsonCreator
         public static EffectModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             EffectModeEnum result = STATIC_FIELDS.get(value);
@@ -85,7 +68,7 @@ public class ApiPolicyRespBase  {
         }
 
         public static EffectModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             EffectModeEnum result = STATIC_FIELDS.get(value);
@@ -109,34 +92,29 @@ public class ApiPolicyRespBase  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="effect_mode")
-    
+    @JsonProperty(value = "effect_mode")
+
     private EffectModeEnum effectMode;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backend_params")
-    
+    @JsonProperty(value = "backend_params")
+
     private List<BackendParam> backendParams = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="conditions")
-    
+    @JsonProperty(value = "conditions")
+
     private List<CoditionResp> conditions = null;
-    
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="authorizer_id")
-    
+    @JsonProperty(value = "authorizer_id")
+
     private String authorizerId;
 
     public ApiPolicyRespBase withId(String id) {
@@ -144,13 +122,9 @@ public class ApiPolicyRespBase  {
         return this;
     }
 
-    
-
-
-    /**
-     * 编号
-     * @return id
-     */
+    /** 编号
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -159,20 +133,14 @@ public class ApiPolicyRespBase  {
         this.id = id;
     }
 
-    
-
     public ApiPolicyRespBase withEffectMode(EffectModeEnum effectMode) {
         this.effectMode = effectMode;
         return this;
     }
 
-    
-
-
-    /**
-     * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
-     * @return effectMode
-     */
+    /** 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
+     * 
+     * @return effectMode */
     public EffectModeEnum getEffectMode() {
         return effectMode;
     }
@@ -181,20 +149,14 @@ public class ApiPolicyRespBase  {
         this.effectMode = effectMode;
     }
 
-    
-
     public ApiPolicyRespBase withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 策略后端名称。字符串由中文、英文字母、数字、下划线组成，且只能以中文或英文开头。
-     * @return name
-     */
+    /** 策略后端名称。字符串由中文、英文字母、数字、下划线组成，且只能以中文或英文开头。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -203,16 +165,13 @@ public class ApiPolicyRespBase  {
         this.name = name;
     }
 
-    
-
     public ApiPolicyRespBase withBackendParams(List<BackendParam> backendParams) {
         this.backendParams = backendParams;
         return this;
     }
 
-    
     public ApiPolicyRespBase addBackendParamsItem(BackendParam backendParamsItem) {
-        if(this.backendParams == null) {
+        if (this.backendParams == null) {
             this.backendParams = new ArrayList<>();
         }
         this.backendParams.add(backendParamsItem);
@@ -220,17 +179,16 @@ public class ApiPolicyRespBase  {
     }
 
     public ApiPolicyRespBase withBackendParams(Consumer<List<BackendParam>> backendParamsSetter) {
-        if(this.backendParams == null) {
+        if (this.backendParams == null) {
             this.backendParams = new ArrayList<>();
         }
         backendParamsSetter.accept(this.backendParams);
         return this;
     }
 
-    /**
-     * 后端参数列表
-     * @return backendParams
-     */
+    /** 后端参数列表
+     * 
+     * @return backendParams */
     public List<BackendParam> getBackendParams() {
         return backendParams;
     }
@@ -239,16 +197,13 @@ public class ApiPolicyRespBase  {
         this.backendParams = backendParams;
     }
 
-    
-
     public ApiPolicyRespBase withConditions(List<CoditionResp> conditions) {
         this.conditions = conditions;
         return this;
     }
 
-    
     public ApiPolicyRespBase addConditionsItem(CoditionResp conditionsItem) {
-        if(this.conditions == null) {
+        if (this.conditions == null) {
             this.conditions = new ArrayList<>();
         }
         this.conditions.add(conditionsItem);
@@ -256,17 +211,16 @@ public class ApiPolicyRespBase  {
     }
 
     public ApiPolicyRespBase withConditions(Consumer<List<CoditionResp>> conditionsSetter) {
-        if(this.conditions == null) {
+        if (this.conditions == null) {
             this.conditions = new ArrayList<>();
         }
         conditionsSetter.accept(this.conditions);
         return this;
     }
 
-    /**
-     * 策略条件列表
-     * @return conditions
-     */
+    /** 策略条件列表
+     * 
+     * @return conditions */
     public List<CoditionResp> getConditions() {
         return conditions;
     }
@@ -275,20 +229,14 @@ public class ApiPolicyRespBase  {
         this.conditions = conditions;
     }
 
-    
-
     public ApiPolicyRespBase withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
     }
 
-    
-
-
-    /**
-     * 后端自定义认证对象的ID
-     * @return authorizerId
-     */
+    /** 后端自定义认证对象的ID
+     * 
+     * @return authorizerId */
     public String getAuthorizerId() {
         return authorizerId;
     }
@@ -296,8 +244,6 @@ public class ApiPolicyRespBase  {
     public void setAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -308,17 +254,19 @@ public class ApiPolicyRespBase  {
             return false;
         }
         ApiPolicyRespBase apiPolicyRespBase = (ApiPolicyRespBase) o;
-        return Objects.equals(this.id, apiPolicyRespBase.id) &&
-            Objects.equals(this.effectMode, apiPolicyRespBase.effectMode) &&
-            Objects.equals(this.name, apiPolicyRespBase.name) &&
-            Objects.equals(this.backendParams, apiPolicyRespBase.backendParams) &&
-            Objects.equals(this.conditions, apiPolicyRespBase.conditions) &&
-            Objects.equals(this.authorizerId, apiPolicyRespBase.authorizerId);
+        return Objects.equals(this.id, apiPolicyRespBase.id)
+            && Objects.equals(this.effectMode, apiPolicyRespBase.effectMode)
+            && Objects.equals(this.name, apiPolicyRespBase.name)
+            && Objects.equals(this.backendParams, apiPolicyRespBase.backendParams)
+            && Objects.equals(this.conditions, apiPolicyRespBase.conditions)
+            && Objects.equals(this.authorizerId, apiPolicyRespBase.authorizerId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, effectMode, name, backendParams, conditions, authorizerId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -332,16 +280,13 @@ public class ApiPolicyRespBase  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

@@ -1,32 +1,21 @@
 package com.huaweicloud.sdk.iec.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
-/**
- * 边缘实例关联的安全组
- */
-public class InstanceSecurityGroup  {
-
-
+/** 边缘实例关联的安全组 */
+public class InstanceSecurityGroup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
     public InstanceSecurityGroup withName(String name) {
@@ -34,13 +23,9 @@ public class InstanceSecurityGroup  {
         return this;
     }
 
-    
-
-
-    /**
-     * 安全组名称或者UUID。
-     * @return name
-     */
+    /** 安全组名称或者UUID。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -49,20 +34,14 @@ public class InstanceSecurityGroup  {
         this.name = name;
     }
 
-    
-
     public InstanceSecurityGroup withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 实例使用安全组规则的ID。
-     * @return id
-     */
+    /** 实例使用安全组规则的ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -70,8 +49,6 @@ public class InstanceSecurityGroup  {
     public void setId(String id) {
         this.id = id;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +59,15 @@ public class InstanceSecurityGroup  {
             return false;
         }
         InstanceSecurityGroup instanceSecurityGroup = (InstanceSecurityGroup) o;
-        return Objects.equals(this.name, instanceSecurityGroup.name) &&
-            Objects.equals(this.id, instanceSecurityGroup.id);
+        return Objects.equals(this.name, instanceSecurityGroup.name)
+            && Objects.equals(this.id, instanceSecurityGroup.id);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, id);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +77,13 @@ public class InstanceSecurityGroup  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

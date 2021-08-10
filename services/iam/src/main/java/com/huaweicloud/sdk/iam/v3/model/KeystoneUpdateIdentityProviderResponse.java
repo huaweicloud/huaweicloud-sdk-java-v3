@@ -1,29 +1,18 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iam.v3.model.IdentityprovidersResult;
-import java.util.function.Consumer;
-import java.util.Objects;
+import com.huaweicloud.sdk.core.SdkResponse;
 
-/**
- * Response Object
- */
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/** Response Object */
 public class KeystoneUpdateIdentityProviderResponse extends SdkResponse {
 
-
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="identity_provider")
-    
+    @JsonProperty(value = "identity_provider")
+
     private IdentityprovidersResult identityProvider;
 
     public KeystoneUpdateIdentityProviderResponse withIdentityProvider(IdentityprovidersResult identityProvider) {
@@ -31,20 +20,19 @@ public class KeystoneUpdateIdentityProviderResponse extends SdkResponse {
         return this;
     }
 
-    public KeystoneUpdateIdentityProviderResponse withIdentityProvider(Consumer<IdentityprovidersResult> identityProviderSetter) {
-        if(this.identityProvider == null ){
+    public KeystoneUpdateIdentityProviderResponse withIdentityProvider(
+        Consumer<IdentityprovidersResult> identityProviderSetter) {
+        if (this.identityProvider == null) {
             this.identityProvider = new IdentityprovidersResult();
             identityProviderSetter.accept(this.identityProvider);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get identityProvider
-     * @return identityProvider
-     */
+    /** Get identityProvider
+     * 
+     * @return identityProvider */
     public IdentityprovidersResult getIdentityProvider() {
         return identityProvider;
     }
@@ -52,8 +40,6 @@ public class KeystoneUpdateIdentityProviderResponse extends SdkResponse {
     public void setIdentityProvider(IdentityprovidersResult identityProvider) {
         this.identityProvider = identityProvider;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -63,13 +49,16 @@ public class KeystoneUpdateIdentityProviderResponse extends SdkResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        KeystoneUpdateIdentityProviderResponse keystoneUpdateIdentityProviderResponse = (KeystoneUpdateIdentityProviderResponse) o;
+        KeystoneUpdateIdentityProviderResponse keystoneUpdateIdentityProviderResponse =
+            (KeystoneUpdateIdentityProviderResponse) o;
         return Objects.equals(this.identityProvider, keystoneUpdateIdentityProviderResponse.identityProvider);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(identityProvider);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -78,16 +67,13 @@ public class KeystoneUpdateIdentityProviderResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

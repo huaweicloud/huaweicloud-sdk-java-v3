@@ -6,14 +6,12 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.smn.v2.model.*;
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class SmnMeta {
 
-    public static final HttpRequestDef<AddSubscriptionRequest, AddSubscriptionResponse> addSubscription = genForaddSubscription();
+    public static final HttpRequestDef<AddSubscriptionRequest, AddSubscriptionResponse> addSubscription =
+        genForaddSubscription();
 
     private static HttpRequestDef<AddSubscriptionRequest, AddSubscriptionResponse> genForaddSubscription() {
         // basic
@@ -24,74 +22,70 @@ public class SmnMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("topic_urn",
+        builder.<String>withRequestField("topic_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AddSubscriptionRequest::getTopicUrn, (req, v) -> {
                 req.setTopicUrn(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<AddSubscriptionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            AddSubscriptionRequestBody.class,
+            TypeCasts.uncheckedConversion(AddSubscriptionRequestBody.class),
             f -> f.withMarshaller(AddSubscriptionRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchCreateOrDeleteResourceTagsRequest, BatchCreateOrDeleteResourceTagsResponse> batchCreateOrDeleteResourceTags = genForbatchCreateOrDeleteResourceTags();
+    public static final HttpRequestDef<BatchCreateOrDeleteResourceTagsRequest, BatchCreateOrDeleteResourceTagsResponse> batchCreateOrDeleteResourceTags =
+        genForbatchCreateOrDeleteResourceTags();
 
     private static HttpRequestDef<BatchCreateOrDeleteResourceTagsRequest, BatchCreateOrDeleteResourceTagsResponse> genForbatchCreateOrDeleteResourceTags() {
         // basic
         HttpRequestDef.Builder<BatchCreateOrDeleteResourceTagsRequest, BatchCreateOrDeleteResourceTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchCreateOrDeleteResourceTagsRequest.class, BatchCreateOrDeleteResourceTagsResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateOrDeleteResourceTagsRequest.class,
+                    BatchCreateOrDeleteResourceTagsResponse.class)
                 .withName("BatchCreateOrDeleteResourceTags")
                 .withUri("/v2/{project_id}/{resource_type}/{resource_id}/tags/action")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("resource_type",
+        builder.<String>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchCreateOrDeleteResourceTagsRequest::getResourceType, (req, v) -> {
                 req.setResourceType(v);
-            })
-        );
-        builder.withRequestField("resource_id",
+            }));
+        builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchCreateOrDeleteResourceTagsRequest::getResourceId, (req, v) -> {
                 req.setResourceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<BatchCreateOrDeleteResourceTagsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            BatchCreateOrDeleteResourceTagsRequestBody.class,
+            TypeCasts.uncheckedConversion(BatchCreateOrDeleteResourceTagsRequestBody.class),
             f -> f.withMarshaller(BatchCreateOrDeleteResourceTagsRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CancelSubscriptionRequest, CancelSubscriptionResponse> cancelSubscription = genForcancelSubscription();
+    public static final HttpRequestDef<CancelSubscriptionRequest, CancelSubscriptionResponse> cancelSubscription =
+        genForcancelSubscription();
 
     private static HttpRequestDef<CancelSubscriptionRequest, CancelSubscriptionResponse> genForcancelSubscription() {
         // basic
@@ -102,50 +96,46 @@ public class SmnMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("subscription_urn",
+        builder.<String>withRequestField("subscription_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CancelSubscriptionRequest::getSubscriptionUrn, (req, v) -> {
                 req.setSubscriptionUrn(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateMessageTemplateRequest, CreateMessageTemplateResponse> createMessageTemplate = genForcreateMessageTemplate();
+    public static final HttpRequestDef<CreateMessageTemplateRequest, CreateMessageTemplateResponse> createMessageTemplate =
+        genForcreateMessageTemplate();
 
     private static HttpRequestDef<CreateMessageTemplateRequest, CreateMessageTemplateResponse> genForcreateMessageTemplate() {
         // basic
-        HttpRequestDef.Builder<CreateMessageTemplateRequest, CreateMessageTemplateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateMessageTemplateRequest.class, CreateMessageTemplateResponse.class)
-                .withName("CreateMessageTemplate")
-                .withUri("/v2/{project_id}/notifications/message_template")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<CreateMessageTemplateRequest, CreateMessageTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateMessageTemplateRequest.class, CreateMessageTemplateResponse.class)
+            .withName("CreateMessageTemplate")
+            .withUri("/v2/{project_id}/notifications/message_template")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateMessageTemplateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            CreateMessageTemplateRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateMessageTemplateRequestBody.class),
             f -> f.withMarshaller(CreateMessageTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateResourceTagRequest, CreateResourceTagResponse> createResourceTag = genForcreateResourceTag();
+    public static final HttpRequestDef<CreateResourceTagRequest, CreateResourceTagResponse> createResourceTag =
+        genForcreateResourceTag();
 
     private static HttpRequestDef<CreateResourceTagRequest, CreateResourceTagResponse> genForcreateResourceTag() {
         // basic
@@ -156,34 +146,29 @@ public class SmnMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("resource_type",
+        builder.<String>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateResourceTagRequest::getResourceType, (req, v) -> {
                 req.setResourceType(v);
-            })
-        );
-        builder.withRequestField("resource_id",
+            }));
+        builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateResourceTagRequest::getResourceId, (req, v) -> {
                 req.setResourceId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateResourceTagRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            CreateResourceTagRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateResourceTagRequestBody.class),
             f -> f.withMarshaller(CreateResourceTagRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -199,50 +184,46 @@ public class SmnMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateTopicRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            CreateTopicRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateTopicRequestBody.class),
             f -> f.withMarshaller(CreateTopicRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteMessageTemplateRequest, DeleteMessageTemplateResponse> deleteMessageTemplate = genFordeleteMessageTemplate();
+    public static final HttpRequestDef<DeleteMessageTemplateRequest, DeleteMessageTemplateResponse> deleteMessageTemplate =
+        genFordeleteMessageTemplate();
 
     private static HttpRequestDef<DeleteMessageTemplateRequest, DeleteMessageTemplateResponse> genFordeleteMessageTemplate() {
         // basic
-        HttpRequestDef.Builder<DeleteMessageTemplateRequest, DeleteMessageTemplateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteMessageTemplateRequest.class, DeleteMessageTemplateResponse.class)
-                .withName("DeleteMessageTemplate")
-                .withUri("/v2/{project_id}/notifications/message_template/{message_template_id}")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<DeleteMessageTemplateRequest, DeleteMessageTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteMessageTemplateRequest.class, DeleteMessageTemplateResponse.class)
+            .withName("DeleteMessageTemplate")
+            .withUri("/v2/{project_id}/notifications/message_template/{message_template_id}")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("message_template_id",
+        builder.<String>withRequestField("message_template_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteMessageTemplateRequest::getMessageTemplateId, (req, v) -> {
                 req.setMessageTemplateId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteResourceTagRequest, DeleteResourceTagResponse> deleteResourceTag = genFordeleteResourceTag();
+    public static final HttpRequestDef<DeleteResourceTagRequest, DeleteResourceTagResponse> deleteResourceTag =
+        genFordeleteResourceTag();
 
     private static HttpRequestDef<DeleteResourceTagRequest, DeleteResourceTagResponse> genFordeleteResourceTag() {
         // basic
@@ -253,34 +234,29 @@ public class SmnMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("resource_type",
+        builder.<String>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteResourceTagRequest::getResourceType, (req, v) -> {
                 req.setResourceType(v);
-            })
-        );
-        builder.withRequestField("resource_id",
+            }));
+        builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteResourceTagRequest::getResourceId, (req, v) -> {
                 req.setResourceId(v);
-            })
-        );
-        builder.withRequestField("key",
+            }));
+        builder.<String>withRequestField("key",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteResourceTagRequest::getKey, (req, v) -> {
                 req.setKey(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -296,163 +272,155 @@ public class SmnMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("topic_urn",
+        builder.<String>withRequestField("topic_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTopicRequest::getTopicUrn, (req, v) -> {
                 req.setTopicUrn(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTopicAttributeByNameRequest, DeleteTopicAttributeByNameResponse> deleteTopicAttributeByName = genFordeleteTopicAttributeByName();
+    public static final HttpRequestDef<DeleteTopicAttributeByNameRequest, DeleteTopicAttributeByNameResponse> deleteTopicAttributeByName =
+        genFordeleteTopicAttributeByName();
 
     private static HttpRequestDef<DeleteTopicAttributeByNameRequest, DeleteTopicAttributeByNameResponse> genFordeleteTopicAttributeByName() {
         // basic
         HttpRequestDef.Builder<DeleteTopicAttributeByNameRequest, DeleteTopicAttributeByNameResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTopicAttributeByNameRequest.class, DeleteTopicAttributeByNameResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteTopicAttributeByNameRequest.class,
+                    DeleteTopicAttributeByNameResponse.class)
                 .withName("DeleteTopicAttributeByName")
                 .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/attributes/{name}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("topic_urn",
+        builder.<String>withRequestField("topic_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTopicAttributeByNameRequest::getTopicUrn, (req, v) -> {
                 req.setTopicUrn(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTopicAttributeByNameRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteTopicAttributesRequest, DeleteTopicAttributesResponse> deleteTopicAttributes = genFordeleteTopicAttributes();
+    public static final HttpRequestDef<DeleteTopicAttributesRequest, DeleteTopicAttributesResponse> deleteTopicAttributes =
+        genFordeleteTopicAttributes();
 
     private static HttpRequestDef<DeleteTopicAttributesRequest, DeleteTopicAttributesResponse> genFordeleteTopicAttributes() {
         // basic
-        HttpRequestDef.Builder<DeleteTopicAttributesRequest, DeleteTopicAttributesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTopicAttributesRequest.class, DeleteTopicAttributesResponse.class)
-                .withName("DeleteTopicAttributes")
-                .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/attributes")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<DeleteTopicAttributesRequest, DeleteTopicAttributesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteTopicAttributesRequest.class, DeleteTopicAttributesResponse.class)
+            .withName("DeleteTopicAttributes")
+            .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/attributes")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("topic_urn",
+        builder.<String>withRequestField("topic_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTopicAttributesRequest::getTopicUrn, (req, v) -> {
                 req.setTopicUrn(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListMessageTemplateDetailsRequest, ListMessageTemplateDetailsResponse> listMessageTemplateDetails = genForlistMessageTemplateDetails();
+    public static final HttpRequestDef<ListMessageTemplateDetailsRequest, ListMessageTemplateDetailsResponse> listMessageTemplateDetails =
+        genForlistMessageTemplateDetails();
 
     private static HttpRequestDef<ListMessageTemplateDetailsRequest, ListMessageTemplateDetailsResponse> genForlistMessageTemplateDetails() {
         // basic
         HttpRequestDef.Builder<ListMessageTemplateDetailsRequest, ListMessageTemplateDetailsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListMessageTemplateDetailsRequest.class, ListMessageTemplateDetailsResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListMessageTemplateDetailsRequest.class,
+                    ListMessageTemplateDetailsResponse.class)
                 .withName("ListMessageTemplateDetails")
                 .withUri("/v2/{project_id}/notifications/message_template/{message_template_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("message_template_id",
+        builder.<String>withRequestField("message_template_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMessageTemplateDetailsRequest::getMessageTemplateId, (req, v) -> {
                 req.setMessageTemplateId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListMessageTemplatesRequest, ListMessageTemplatesResponse> listMessageTemplates = genForlistMessageTemplates();
+    public static final HttpRequestDef<ListMessageTemplatesRequest, ListMessageTemplatesResponse> listMessageTemplates =
+        genForlistMessageTemplates();
 
     private static HttpRequestDef<ListMessageTemplatesRequest, ListMessageTemplatesResponse> genForlistMessageTemplates() {
         // basic
-        HttpRequestDef.Builder<ListMessageTemplatesRequest, ListMessageTemplatesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListMessageTemplatesRequest.class, ListMessageTemplatesResponse.class)
-                .withName("ListMessageTemplates")
-                .withUri("/v2/{project_id}/notifications/message_template")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ListMessageTemplatesRequest, ListMessageTemplatesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListMessageTemplatesRequest.class, ListMessageTemplatesResponse.class)
+            .withName("ListMessageTemplates")
+            .withUri("/v2/{project_id}/notifications/message_template")
+            .withContentType("application/json");
 
         // requests
-        builder.withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListMessageTemplatesRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListMessageTemplatesRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("message_template_name",
+            }));
+        builder.<String>withRequestField("message_template_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMessageTemplatesRequest::getMessageTemplateName, (req, v) -> {
                 req.setMessageTemplateName(v);
-            })
-        );
-        builder.withRequestField("protocol",
+            }));
+        builder.<String>withRequestField("protocol",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMessageTemplatesRequest::getProtocol, (req, v) -> {
                 req.setProtocol(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags = genForlistProjectTags();
+    public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags =
+        genForlistProjectTags();
 
     private static HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> genForlistProjectTags() {
         // basic
@@ -463,58 +431,53 @@ public class SmnMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("resource_type",
+        builder.<String>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListProjectTagsRequest::getResourceType, (req, v) -> {
                 req.setResourceType(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> listResourceInstances = genForlistResourceInstances();
+    public static final HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> listResourceInstances =
+        genForlistResourceInstances();
 
     private static HttpRequestDef<ListResourceInstancesRequest, ListResourceInstancesResponse> genForlistResourceInstances() {
         // basic
-        HttpRequestDef.Builder<ListResourceInstancesRequest, ListResourceInstancesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ListResourceInstancesRequest.class, ListResourceInstancesResponse.class)
-                .withName("ListResourceInstances")
-                .withUri("/v2/{project_id}/{resource_type}/resource_instances/action")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<ListResourceInstancesRequest, ListResourceInstancesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListResourceInstancesRequest.class, ListResourceInstancesResponse.class)
+            .withName("ListResourceInstances")
+            .withUri("/v2/{project_id}/{resource_type}/resource_instances/action")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("resource_type",
+        builder.<String>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourceInstancesRequest::getResourceType, (req, v) -> {
                 req.setResourceType(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<ListInstanceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            ListInstanceRequestBody.class,
+            TypeCasts.uncheckedConversion(ListInstanceRequestBody.class),
             f -> f.withMarshaller(ListResourceInstancesRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListResourceTagsRequest, ListResourceTagsResponse> listResourceTags = genForlistResourceTags();
+    public static final HttpRequestDef<ListResourceTagsRequest, ListResourceTagsResponse> listResourceTags =
+        genForlistResourceTags();
 
     private static HttpRequestDef<ListResourceTagsRequest, ListResourceTagsResponse> genForlistResourceTags() {
         // basic
@@ -525,31 +488,28 @@ public class SmnMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("resource_type",
+        builder.<String>withRequestField("resource_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourceTagsRequest::getResourceType, (req, v) -> {
                 req.setResourceType(v);
-            })
-        );
-        builder.withRequestField("resource_id",
+            }));
+        builder.<String>withRequestField("resource_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourceTagsRequest::getResourceId, (req, v) -> {
                 req.setResourceId(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSubscriptionsRequest, ListSubscriptionsResponse> listSubscriptions = genForlistSubscriptions();
+    public static final HttpRequestDef<ListSubscriptionsRequest, ListSubscriptionsResponse> listSubscriptions =
+        genForlistSubscriptions();
 
     private static HttpRequestDef<ListSubscriptionsRequest, ListSubscriptionsResponse> genForlistSubscriptions() {
         // basic
@@ -560,74 +520,68 @@ public class SmnMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSubscriptionsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSubscriptionsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse> listSubscriptionsByTopic = genForlistSubscriptionsByTopic();
+    public static final HttpRequestDef<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse> listSubscriptionsByTopic =
+        genForlistSubscriptionsByTopic();
 
     private static HttpRequestDef<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse> genForlistSubscriptionsByTopic() {
         // basic
         HttpRequestDef.Builder<ListSubscriptionsByTopicRequest, ListSubscriptionsByTopicResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListSubscriptionsByTopicRequest.class, ListSubscriptionsByTopicResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListSubscriptionsByTopicRequest.class, ListSubscriptionsByTopicResponse.class)
                 .withName("ListSubscriptionsByTopic")
                 .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/subscriptions")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("topic_urn",
+        builder.<String>withRequestField("topic_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSubscriptionsByTopicRequest::getTopicUrn, (req, v) -> {
                 req.setTopicUrn(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSubscriptionsByTopicRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListSubscriptionsByTopicRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTopicAttributesRequest, ListTopicAttributesResponse> listTopicAttributes = genForlistTopicAttributes();
+    public static final HttpRequestDef<ListTopicAttributesRequest, ListTopicAttributesResponse> listTopicAttributes =
+        genForlistTopicAttributes();
 
     private static HttpRequestDef<ListTopicAttributesRequest, ListTopicAttributesResponse> genForlistTopicAttributes() {
         // basic
@@ -638,31 +592,28 @@ public class SmnMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("topic_urn",
+        builder.<String>withRequestField("topic_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTopicAttributesRequest::getTopicUrn, (req, v) -> {
                 req.setTopicUrn(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTopicAttributesRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListTopicDetailsRequest, ListTopicDetailsResponse> listTopicDetails = genForlistTopicDetails();
+    public static final HttpRequestDef<ListTopicDetailsRequest, ListTopicDetailsResponse> listTopicDetails =
+        genForlistTopicDetails();
 
     private static HttpRequestDef<ListTopicDetailsRequest, ListTopicDetailsResponse> genForlistTopicDetails() {
         // basic
@@ -673,18 +624,15 @@ public class SmnMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("topic_urn",
+        builder.<String>withRequestField("topic_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTopicDetailsRequest::getTopicUrn, (req, v) -> {
                 req.setTopicUrn(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -700,26 +648,22 @@ public class SmnMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTopicsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTopicsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -735,18 +679,15 @@ public class SmnMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("api_version",
+        builder.<String>withRequestField("api_version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVersionRequest::getApiVersion, (req, v) -> {
                 req.setApiVersion(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -764,13 +705,12 @@ public class SmnMeta {
         // requests
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<PublishMessageRequest, PublishMessageResponse> publishMessage = genForpublishMessage();
+    public static final HttpRequestDef<PublishMessageRequest, PublishMessageResponse> publishMessage =
+        genForpublishMessage();
 
     private static HttpRequestDef<PublishMessageRequest, PublishMessageResponse> genForpublishMessage() {
         // basic
@@ -781,61 +721,54 @@ public class SmnMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("topic_urn",
+        builder.<String>withRequestField("topic_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(PublishMessageRequest::getTopicUrn, (req, v) -> {
                 req.setTopicUrn(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<PublishMessageRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            PublishMessageRequestBody.class,
+            TypeCasts.uncheckedConversion(PublishMessageRequestBody.class),
             f -> f.withMarshaller(PublishMessageRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateMessageTemplateRequest, UpdateMessageTemplateResponse> updateMessageTemplate = genForupdateMessageTemplate();
+    public static final HttpRequestDef<UpdateMessageTemplateRequest, UpdateMessageTemplateResponse> updateMessageTemplate =
+        genForupdateMessageTemplate();
 
     private static HttpRequestDef<UpdateMessageTemplateRequest, UpdateMessageTemplateResponse> genForupdateMessageTemplate() {
         // basic
-        HttpRequestDef.Builder<UpdateMessageTemplateRequest, UpdateMessageTemplateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateMessageTemplateRequest.class, UpdateMessageTemplateResponse.class)
-                .withName("UpdateMessageTemplate")
-                .withUri("/v2/{project_id}/notifications/message_template/{message_template_id}")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<UpdateMessageTemplateRequest, UpdateMessageTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateMessageTemplateRequest.class, UpdateMessageTemplateResponse.class)
+            .withName("UpdateMessageTemplate")
+            .withUri("/v2/{project_id}/notifications/message_template/{message_template_id}")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("message_template_id",
+        builder.<String>withRequestField("message_template_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateMessageTemplateRequest::getMessageTemplateId, (req, v) -> {
                 req.setMessageTemplateId(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateMessageTemplateRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            UpdateMessageTemplateRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateMessageTemplateRequestBody.class),
             f -> f.withMarshaller(UpdateMessageTemplateRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
@@ -851,74 +784,67 @@ public class SmnMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("topic_urn",
+        builder.<String>withRequestField("topic_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateTopicRequest::getTopicUrn, (req, v) -> {
                 req.setTopicUrn(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateTopicRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateTopicRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateTopicRequestBody.class),
             f -> f.withMarshaller(UpdateTopicRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateTopicAttributeRequest, UpdateTopicAttributeResponse> updateTopicAttribute = genForupdateTopicAttribute();
+    public static final HttpRequestDef<UpdateTopicAttributeRequest, UpdateTopicAttributeResponse> updateTopicAttribute =
+        genForupdateTopicAttribute();
 
     private static HttpRequestDef<UpdateTopicAttributeRequest, UpdateTopicAttributeResponse> genForupdateTopicAttribute() {
         // basic
-        HttpRequestDef.Builder<UpdateTopicAttributeRequest, UpdateTopicAttributeResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateTopicAttributeRequest.class, UpdateTopicAttributeResponse.class)
-                .withName("UpdateTopicAttribute")
-                .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/attributes/{name}")
-                .withContentType("application/json;charset=UTF-8");
+        HttpRequestDef.Builder<UpdateTopicAttributeRequest, UpdateTopicAttributeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateTopicAttributeRequest.class, UpdateTopicAttributeResponse.class)
+            .withName("UpdateTopicAttribute")
+            .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/attributes/{name}")
+            .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("topic_urn",
+        builder.<String>withRequestField("topic_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateTopicAttributeRequest::getTopicUrn, (req, v) -> {
                 req.setTopicUrn(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateTopicAttributeRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateTopicAttributeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            UpdateTopicAttributeRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateTopicAttributeRequestBody.class),
             f -> f.withMarshaller(UpdateTopicAttributeRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateApplicationRequest, CreateApplicationResponse> createApplication = genForcreateApplication();
+    public static final HttpRequestDef<CreateApplicationRequest, CreateApplicationResponse> createApplication =
+        genForcreateApplication();
 
     private static HttpRequestDef<CreateApplicationRequest, CreateApplicationResponse> genForcreateApplication() {
         // basic
@@ -929,23 +855,21 @@ public class SmnMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("body",
+        builder.<CreateApplicationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            CreateApplicationRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateApplicationRequestBody.class),
             f -> f.withMarshaller(CreateApplicationRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteApplicationRequest, DeleteApplicationResponse> deleteApplication = genFordeleteApplication();
+    public static final HttpRequestDef<DeleteApplicationRequest, DeleteApplicationResponse> deleteApplication =
+        genFordeleteApplication();
 
     private static HttpRequestDef<DeleteApplicationRequest, DeleteApplicationResponse> genFordeleteApplication() {
         // basic
@@ -956,50 +880,49 @@ public class SmnMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("application_urn",
+        builder.<String>withRequestField("application_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteApplicationRequest::getApplicationUrn, (req, v) -> {
                 req.setApplicationUrn(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListApplicationAttributesRequest, ListApplicationAttributesResponse> listApplicationAttributes = genForlistApplicationAttributes();
+    public static final HttpRequestDef<ListApplicationAttributesRequest, ListApplicationAttributesResponse> listApplicationAttributes =
+        genForlistApplicationAttributes();
 
     private static HttpRequestDef<ListApplicationAttributesRequest, ListApplicationAttributesResponse> genForlistApplicationAttributes() {
         // basic
         HttpRequestDef.Builder<ListApplicationAttributesRequest, ListApplicationAttributesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListApplicationAttributesRequest.class, ListApplicationAttributesResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListApplicationAttributesRequest.class,
+                    ListApplicationAttributesResponse.class)
                 .withName("ListApplicationAttributes")
                 .withUri("/v2/{project_id}/notifications/applications/{application_urn}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("application_urn",
+        builder.<String>withRequestField("application_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApplicationAttributesRequest::getApplicationUrn, (req, v) -> {
                 req.setApplicationUrn(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListApplicationsRequest, ListApplicationsResponse> listApplications = genForlistApplications();
+    public static final HttpRequestDef<ListApplicationsRequest, ListApplicationsResponse> listApplications =
+        genForlistApplications();
 
     private static HttpRequestDef<ListApplicationsRequest, ListApplicationsResponse> genForlistApplications() {
         // basic
@@ -1010,47 +933,42 @@ public class SmnMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("offset",
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListApplicationsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListApplicationsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("name",
+            }));
+        builder.<String>withRequestField("name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApplicationsRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
-        builder.withRequestField("platform",
+            }));
+        builder.<String>withRequestField("platform",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApplicationsRequest::getPlatform, (req, v) -> {
                 req.setPlatform(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<PublishAppMessageRequest, PublishAppMessageResponse> publishAppMessage = genForpublishAppMessage();
+    public static final HttpRequestDef<PublishAppMessageRequest, PublishAppMessageResponse> publishAppMessage =
+        genForpublishAppMessage();
 
     private static HttpRequestDef<PublishAppMessageRequest, PublishAppMessageResponse> genForpublishAppMessage() {
         // basic
@@ -1061,31 +979,28 @@ public class SmnMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("endpoint_urn",
+        builder.<String>withRequestField("endpoint_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(PublishAppMessageRequest::getEndpointUrn, (req, v) -> {
                 req.setEndpointUrn(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<PublishAppMessageRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            PublishAppMessageRequestBody.class,
+            TypeCasts.uncheckedConversion(PublishAppMessageRequestBody.class),
             f -> f.withMarshaller(PublishAppMessageRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateApplicationRequest, UpdateApplicationResponse> updateApplication = genForupdateApplication();
+    public static final HttpRequestDef<UpdateApplicationRequest, UpdateApplicationResponse> updateApplication =
+        genForupdateApplication();
 
     private static HttpRequestDef<UpdateApplicationRequest, UpdateApplicationResponse> genForupdateApplication() {
         // basic
@@ -1096,217 +1011,209 @@ public class SmnMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("application_urn",
+        builder.<String>withRequestField("application_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateApplicationRequest::getApplicationUrn, (req, v) -> {
                 req.setApplicationUrn(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateApplicationRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            UpdateApplicationRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateApplicationRequestBody.class),
             f -> f.withMarshaller(UpdateApplicationRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateApplicationEndpointRequest, CreateApplicationEndpointResponse> createApplicationEndpoint = genForcreateApplicationEndpoint();
+    public static final HttpRequestDef<CreateApplicationEndpointRequest, CreateApplicationEndpointResponse> createApplicationEndpoint =
+        genForcreateApplicationEndpoint();
 
     private static HttpRequestDef<CreateApplicationEndpointRequest, CreateApplicationEndpointResponse> genForcreateApplicationEndpoint() {
         // basic
         HttpRequestDef.Builder<CreateApplicationEndpointRequest, CreateApplicationEndpointResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateApplicationEndpointRequest.class, CreateApplicationEndpointResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateApplicationEndpointRequest.class,
+                    CreateApplicationEndpointResponse.class)
                 .withName("CreateApplicationEndpoint")
                 .withUri("/v2/{project_id}/notifications/applications/{application_urn}/endpoints")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("application_urn",
+        builder.<String>withRequestField("application_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateApplicationEndpointRequest::getApplicationUrn, (req, v) -> {
                 req.setApplicationUrn(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<CreateApplicationEndpointRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            CreateApplicationEndpointRequestBody.class,
+            TypeCasts.uncheckedConversion(CreateApplicationEndpointRequestBody.class),
             f -> f.withMarshaller(CreateApplicationEndpointRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteApplicationEndpointRequest, DeleteApplicationEndpointResponse> deleteApplicationEndpoint = genFordeleteApplicationEndpoint();
+    public static final HttpRequestDef<DeleteApplicationEndpointRequest, DeleteApplicationEndpointResponse> deleteApplicationEndpoint =
+        genFordeleteApplicationEndpoint();
 
     private static HttpRequestDef<DeleteApplicationEndpointRequest, DeleteApplicationEndpointResponse> genFordeleteApplicationEndpoint() {
         // basic
         HttpRequestDef.Builder<DeleteApplicationEndpointRequest, DeleteApplicationEndpointResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteApplicationEndpointRequest.class, DeleteApplicationEndpointResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteApplicationEndpointRequest.class,
+                    DeleteApplicationEndpointResponse.class)
                 .withName("DeleteApplicationEndpoint")
                 .withUri("/v2/{project_id}/notifications/endpoints/{endpoint_urn}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("endpoint_urn",
+        builder.<String>withRequestField("endpoint_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteApplicationEndpointRequest::getEndpointUrn, (req, v) -> {
                 req.setEndpointUrn(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListApplicationEndpointAttributesRequest, ListApplicationEndpointAttributesResponse> listApplicationEndpointAttributes = genForlistApplicationEndpointAttributes();
+    public static final HttpRequestDef<ListApplicationEndpointAttributesRequest, ListApplicationEndpointAttributesResponse> listApplicationEndpointAttributes =
+        genForlistApplicationEndpointAttributes();
 
     private static HttpRequestDef<ListApplicationEndpointAttributesRequest, ListApplicationEndpointAttributesResponse> genForlistApplicationEndpointAttributes() {
         // basic
         HttpRequestDef.Builder<ListApplicationEndpointAttributesRequest, ListApplicationEndpointAttributesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListApplicationEndpointAttributesRequest.class, ListApplicationEndpointAttributesResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListApplicationEndpointAttributesRequest.class,
+                    ListApplicationEndpointAttributesResponse.class)
                 .withName("ListApplicationEndpointAttributes")
                 .withUri("/v2/{project_id}/notifications/endpoints/{endpoint_urn}")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("endpoint_urn",
+        builder.<String>withRequestField("endpoint_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApplicationEndpointAttributesRequest::getEndpointUrn, (req, v) -> {
                 req.setEndpointUrn(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListApplicationEndpointsRequest, ListApplicationEndpointsResponse> listApplicationEndpoints = genForlistApplicationEndpoints();
+    public static final HttpRequestDef<ListApplicationEndpointsRequest, ListApplicationEndpointsResponse> listApplicationEndpoints =
+        genForlistApplicationEndpoints();
 
     private static HttpRequestDef<ListApplicationEndpointsRequest, ListApplicationEndpointsResponse> genForlistApplicationEndpoints() {
         // basic
         HttpRequestDef.Builder<ListApplicationEndpointsRequest, ListApplicationEndpointsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListApplicationEndpointsRequest.class, ListApplicationEndpointsResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListApplicationEndpointsRequest.class, ListApplicationEndpointsResponse.class)
                 .withName("ListApplicationEndpoints")
                 .withUri("/v2/{project_id}/notifications/applications/{application_urn}/endpoints")
                 .withContentType("application/json");
 
         // requests
-        builder.withRequestField("application_urn",
+        builder.<String>withRequestField("application_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApplicationEndpointsRequest::getApplicationUrn, (req, v) -> {
                 req.setApplicationUrn(v);
-            })
-        );
-        builder.withRequestField("offset",
+            }));
+        builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListApplicationEndpointsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
-        builder.withRequestField("limit",
+            }));
+        builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            Integer.class,
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListApplicationEndpointsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
-        builder.withRequestField("enabled",
+            }));
+        builder.<String>withRequestField("enabled",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApplicationEndpointsRequest::getEnabled, (req, v) -> {
                 req.setEnabled(v);
-            })
-        );
-        builder.withRequestField("token",
+            }));
+        builder.<String>withRequestField("token",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApplicationEndpointsRequest::getToken, (req, v) -> {
                 req.setToken(v);
-            })
-        );
-        builder.withRequestField("user_data",
+            }));
+        builder.<String>withRequestField("user_data",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApplicationEndpointsRequest::getUserData, (req, v) -> {
                 req.setUserData(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateApplicationEndpointRequest, UpdateApplicationEndpointResponse> updateApplicationEndpoint = genForupdateApplicationEndpoint();
+    public static final HttpRequestDef<UpdateApplicationEndpointRequest, UpdateApplicationEndpointResponse> updateApplicationEndpoint =
+        genForupdateApplicationEndpoint();
 
     private static HttpRequestDef<UpdateApplicationEndpointRequest, UpdateApplicationEndpointResponse> genForupdateApplicationEndpoint() {
         // basic
         HttpRequestDef.Builder<UpdateApplicationEndpointRequest, UpdateApplicationEndpointResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateApplicationEndpointRequest.class, UpdateApplicationEndpointResponse.class)
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateApplicationEndpointRequest.class,
+                    UpdateApplicationEndpointResponse.class)
                 .withName("UpdateApplicationEndpoint")
                 .withUri("/v2/{project_id}/notifications/endpoints/{endpoint_urn}")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.withRequestField("endpoint_urn",
+        builder.<String>withRequestField("endpoint_urn",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
-            String.class,
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateApplicationEndpointRequest::getEndpointUrn, (req, v) -> {
                 req.setEndpointUrn(v);
-            })
-        );
-        builder.withRequestField("body",
+            }));
+        builder.<UpdateApplicationEndpointRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            UpdateApplicationEndpointRequestBody.class,
+            TypeCasts.uncheckedConversion(UpdateApplicationEndpointRequestBody.class),
             f -> f.withMarshaller(UpdateApplicationEndpointRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        
-
 
         return builder.build();
     }

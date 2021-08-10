@@ -1,32 +1,23 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class Match  {
-
-
+public class Match {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
+
     private String key;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private String value;
 
     public Match withKey(String key) {
@@ -34,13 +25,9 @@ public class Match  {
         return this;
     }
 
-    
-
-
-    /**
-     * 键。 key取值范围为：\"resource_name\"，资源名称
-     * @return key
-     */
+    /** 键。 key取值范围为：\"resource_name\"，资源名称
+     * 
+     * @return key */
     public String getKey() {
         return key;
     }
@@ -49,20 +36,14 @@ public class Match  {
         this.key = key;
     }
 
-    
-
     public Match withValue(String value) {
         this.value = value;
         return this;
     }
 
-    
-
-
-    /**
-     * 值。 最大长度255个字符。 key为\"resource_name\"时，value为空字符串时精确匹配，为非空字符串时模糊匹配。
-     * @return value
-     */
+    /** 值。 最大长度255个字符。 key为\"resource_name\"时，value为空字符串时精确匹配，为非空字符串时模糊匹配。
+     * 
+     * @return value */
     public String getValue() {
         return value;
     }
@@ -70,8 +51,6 @@ public class Match  {
     public void setValue(String value) {
         this.value = value;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -82,13 +61,14 @@ public class Match  {
             return false;
         }
         Match match = (Match) o;
-        return Objects.equals(this.key, match.key) &&
-            Objects.equals(this.value, match.value);
+        return Objects.equals(this.key, match.key) && Objects.equals(this.value, match.value);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(key, value);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,16 +78,13 @@ public class Match  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

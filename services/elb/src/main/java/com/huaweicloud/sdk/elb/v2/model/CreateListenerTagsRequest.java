@@ -1,33 +1,22 @@
 package com.huaweicloud.sdk.elb.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.elb.v2.model.CreateListenerTagsRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * Request Object
- */
-public class CreateListenerTagsRequest  {
-
-
+/** Request Object */
+public class CreateListenerTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="listener_id")
-    
+    @JsonProperty(value = "listener_id")
+
     private String listenerId;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private CreateListenerTagsRequestBody body;
 
     public CreateListenerTagsRequest withListenerId(String listenerId) {
@@ -35,13 +24,9 @@ public class CreateListenerTagsRequest  {
         return this;
     }
 
-    
-
-
-    /**
-     * 监听器ID。
-     * @return listenerId
-     */
+    /** 监听器ID。
+     * 
+     * @return listenerId */
     public String getListenerId() {
         return listenerId;
     }
@@ -50,27 +35,23 @@ public class CreateListenerTagsRequest  {
         this.listenerId = listenerId;
     }
 
-    
-
     public CreateListenerTagsRequest withBody(CreateListenerTagsRequestBody body) {
         this.body = body;
         return this;
     }
 
     public CreateListenerTagsRequest withBody(Consumer<CreateListenerTagsRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CreateListenerTagsRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
 
-
-    /**
-     * Get body
-     * @return body
-     */
+    /** Get body
+     * 
+     * @return body */
     public CreateListenerTagsRequestBody getBody() {
         return body;
     }
@@ -78,8 +59,6 @@ public class CreateListenerTagsRequest  {
     public void setBody(CreateListenerTagsRequestBody body) {
         this.body = body;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -90,13 +69,15 @@ public class CreateListenerTagsRequest  {
             return false;
         }
         CreateListenerTagsRequest createListenerTagsRequest = (CreateListenerTagsRequest) o;
-        return Objects.equals(this.listenerId, createListenerTagsRequest.listenerId) &&
-            Objects.equals(this.body, createListenerTagsRequest.body);
+        return Objects.equals(this.listenerId, createListenerTagsRequest.listenerId)
+            && Objects.equals(this.body, createListenerTagsRequest.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(listenerId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,16 +87,13 @@ public class CreateListenerTagsRequest  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

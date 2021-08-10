@@ -1,54 +1,39 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * QueryCategoryRsp
- */
-public class QueryCategoryRsp  {
-
-
+/** QueryCategoryRsp */
+public class QueryCategoryRsp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
+
     private String id;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
+
     private String name;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="children")
-    
+    @JsonProperty(value = "children")
+
     private List<QueryCategoryRsp> children = null;
-    
+
     public QueryCategoryRsp withId(String id) {
         this.id = id;
         return this;
     }
 
-    
-
-
-    /**
-     * 分类ID。
-     * @return id
-     */
+    /** 分类ID。
+     * 
+     * @return id */
     public String getId() {
         return id;
     }
@@ -57,20 +42,14 @@ public class QueryCategoryRsp  {
         this.id = id;
     }
 
-    
-
     public QueryCategoryRsp withName(String name) {
         this.name = name;
         return this;
     }
 
-    
-
-
-    /**
-     * 分类名称。
-     * @return name
-     */
+    /** 分类名称。
+     * 
+     * @return name */
     public String getName() {
         return name;
     }
@@ -79,16 +58,13 @@ public class QueryCategoryRsp  {
         this.name = name;
     }
 
-    
-
     public QueryCategoryRsp withChildren(List<QueryCategoryRsp> children) {
         this.children = children;
         return this;
     }
 
-    
     public QueryCategoryRsp addChildrenItem(QueryCategoryRsp childrenItem) {
-        if(this.children == null) {
+        if (this.children == null) {
             this.children = new ArrayList<>();
         }
         this.children.add(childrenItem);
@@ -96,17 +72,16 @@ public class QueryCategoryRsp  {
     }
 
     public QueryCategoryRsp withChildren(Consumer<List<QueryCategoryRsp>> childrenSetter) {
-        if(this.children == null) {
+        if (this.children == null) {
             this.children = new ArrayList<>();
         }
         childrenSetter.accept(this.children);
         return this;
     }
 
-    /**
-     * 子分类列表。
-     * @return children
-     */
+    /** 子分类列表。
+     * 
+     * @return children */
     public List<QueryCategoryRsp> getChildren() {
         return children;
     }
@@ -114,8 +89,6 @@ public class QueryCategoryRsp  {
     public void setChildren(List<QueryCategoryRsp> children) {
         this.children = children;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -126,14 +99,15 @@ public class QueryCategoryRsp  {
             return false;
         }
         QueryCategoryRsp queryCategoryRsp = (QueryCategoryRsp) o;
-        return Objects.equals(this.id, queryCategoryRsp.id) &&
-            Objects.equals(this.name, queryCategoryRsp.name) &&
-            Objects.equals(this.children, queryCategoryRsp.children);
+        return Objects.equals(this.id, queryCategoryRsp.id) && Objects.equals(this.name, queryCategoryRsp.name)
+            && Objects.equals(this.children, queryCategoryRsp.children);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, children);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -144,16 +118,13 @@ public class QueryCategoryRsp  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}

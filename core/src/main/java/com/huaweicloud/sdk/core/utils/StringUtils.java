@@ -21,35 +21,28 @@
 
 package com.huaweicloud.sdk.core.utils;
 
-/**
- * The type String utils
+/** The type String utils
  *
- * @author HuaweiCloud_SDK
- */
+ * @author HuaweiCloud_SDK */
 public final class StringUtils {
-    /**
-     * The utility class should hide the public constructor
-     */
+
+    /** The utility class should hide the public constructor */
     private StringUtils() {
 
     }
 
-    /**
-     * Check if a char sequence is empty
+    /** Check if a char sequence is empty
      *
      * @param cs CharSequence
-     * @return true of false
-     */
+     * @return true of false */
     public static boolean isEmpty(CharSequence cs) {
         return cs == null || cs.length() == 0;
     }
 
-    /**
-     * Convert camel string to underscore
+    /** Convert camel string to underscore
      *
      * @param camelString camel string
-     * @return underscore string
-     */
+     * @return underscore string */
     public static String camelToUnderscore(String camelString) {
         final String underscore = "_";
         StringBuilder sb = new StringBuilder(camelString);

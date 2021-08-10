@@ -1,55 +1,39 @@
 package com.huaweicloud.sdk.cts.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
-/**
- * 追踪桶信息。
- */
-public class DataBucketQuery  {
-
-
+/** 追踪桶信息。 */
+public class DataBucketQuery {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_bucket_name")
-    
+    @JsonProperty(value = "data_bucket_name")
+
     private String dataBucketName;
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="search_enabled")
-    
+    @JsonProperty(value = "search_enabled")
+
     private Boolean searchEnabled;
-    /**
-     * Gets or Sets dataEvent
-     */
+
+    /** Gets or Sets dataEvent */
     public static final class DataEventEnum {
 
-        
-        /**
-         * Enum WRITE for value: "WRITE"
-         */
+        /** Enum WRITE for value: "WRITE" */
         public static final DataEventEnum WRITE = new DataEventEnum("WRITE");
-        
-        /**
-         * Enum READ for value: "READ"
-         */
+
+        /** Enum READ for value: "READ" */
         public static final DataEventEnum READ = new DataEventEnum("READ");
-        
 
         private static final Map<String, DataEventEnum> STATIC_FIELDS = createStaticFields();
 
@@ -78,7 +62,7 @@ public class DataBucketQuery  {
 
         @JsonCreator
         public static DataEventEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DataEventEnum result = STATIC_FIELDS.get(value);
@@ -89,7 +73,7 @@ public class DataBucketQuery  {
         }
 
         public static DataEventEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
             DataEventEnum result = STATIC_FIELDS.get(value);
@@ -113,24 +97,19 @@ public class DataBucketQuery  {
         }
     }
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_event")
-    
+    @JsonProperty(value = "data_event")
+
     private List<DataEventEnum> dataEvent = null;
-    
+
     public DataBucketQuery withDataBucketName(String dataBucketName) {
         this.dataBucketName = dataBucketName;
         return this;
     }
 
-    
-
-
-    /**
-     * 标识OBS桶名称。由数字或字母开头，支持小写字母、数字、“-”、“.”，长度为3～63个字符。
-     * @return dataBucketName
-     */
+    /** 标识OBS桶名称。由数字或字母开头，支持小写字母、数字、“-”、“.”，长度为3～63个字符。
+     * 
+     * @return dataBucketName */
     public String getDataBucketName() {
         return dataBucketName;
     }
@@ -139,20 +118,14 @@ public class DataBucketQuery  {
         this.dataBucketName = dataBucketName;
     }
 
-    
-
     public DataBucketQuery withSearchEnabled(Boolean searchEnabled) {
         this.searchEnabled = searchEnabled;
         return this;
     }
 
-    
-
-
-    /**
-     * 追踪桶日志是否支持搜索。
-     * @return searchEnabled
-     */
+    /** 追踪桶日志是否支持搜索。
+     * 
+     * @return searchEnabled */
     public Boolean getSearchEnabled() {
         return searchEnabled;
     }
@@ -161,16 +134,13 @@ public class DataBucketQuery  {
         this.searchEnabled = searchEnabled;
     }
 
-    
-
     public DataBucketQuery withDataEvent(List<DataEventEnum> dataEvent) {
         this.dataEvent = dataEvent;
         return this;
     }
 
-    
     public DataBucketQuery addDataEventItem(DataEventEnum dataEventItem) {
-        if(this.dataEvent == null) {
+        if (this.dataEvent == null) {
             this.dataEvent = new ArrayList<>();
         }
         this.dataEvent.add(dataEventItem);
@@ -178,17 +148,16 @@ public class DataBucketQuery  {
     }
 
     public DataBucketQuery withDataEvent(Consumer<List<DataEventEnum>> dataEventSetter) {
-        if(this.dataEvent == null) {
+        if (this.dataEvent == null) {
             this.dataEvent = new ArrayList<>();
         }
         dataEventSetter.accept(this.dataEvent);
         return this;
     }
 
-    /**
-     * 数据类追踪器追踪对象的桶名。 - 当启用或者停用数据类追踪器时，该参数为必选。 - 管理类追踪器无此参数。 - 追踪器一旦创建追踪桶无法修改。
-     * @return dataEvent
-     */
+    /** 数据类追踪器追踪对象的桶名。 - 当启用或者停用数据类追踪器时，该参数为必选。 - 管理类追踪器无此参数。 - 追踪器一旦创建追踪桶无法修改。
+     * 
+     * @return dataEvent */
     public List<DataEventEnum> getDataEvent() {
         return dataEvent;
     }
@@ -196,8 +165,6 @@ public class DataBucketQuery  {
     public void setDataEvent(List<DataEventEnum> dataEvent) {
         this.dataEvent = dataEvent;
     }
-
-    
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -208,14 +175,16 @@ public class DataBucketQuery  {
             return false;
         }
         DataBucketQuery dataBucketQuery = (DataBucketQuery) o;
-        return Objects.equals(this.dataBucketName, dataBucketQuery.dataBucketName) &&
-            Objects.equals(this.searchEnabled, dataBucketQuery.searchEnabled) &&
-            Objects.equals(this.dataEvent, dataBucketQuery.dataEvent);
+        return Objects.equals(this.dataBucketName, dataBucketQuery.dataBucketName)
+            && Objects.equals(this.searchEnabled, dataBucketQuery.searchEnabled)
+            && Objects.equals(this.dataEvent, dataBucketQuery.dataEvent);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(dataBucketName, searchEnabled, dataEvent);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -226,16 +195,13 @@ public class DataBucketQuery  {
         sb.append("}");
         return sb.toString();
     }
-    /**
-     * Convert the given object to string with each line indented by 4 spaces
-     * (except the first line).
-     */
+
+    /** Convert the given object to string with each line indented by 4 spaces (except the first line). */
     private String toIndentedString(java.lang.Object o) {
         if (o == null) {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-}
 
+}
